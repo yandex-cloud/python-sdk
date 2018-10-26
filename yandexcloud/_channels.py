@@ -40,7 +40,7 @@ class Channels(object):
             endpoints = resp.endpoints
 
             plugin = _auth_plugin.Credentials(
-                self._token, self._unauthenticated_channel)
+                self._token, lambda: self._channels["iam"])
             call_creds = grpc.metadata_call_credentials(plugin)
             creds = grpc.composite_channel_credentials(
                 self._channel_creds, call_creds)
