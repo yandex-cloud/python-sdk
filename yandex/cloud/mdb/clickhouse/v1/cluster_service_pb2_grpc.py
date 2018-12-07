@@ -141,7 +141,7 @@ class ClusterServiceServicer(object):
 
   def ListLogs(self, request, context):
     """Retrieves logs for the specified ClickHouse cluster.
-    For more information about logs, see the [Logs](/yandex-mdb-guide/concepts/logs) section in the Developer's Guide.
+    For more information about logs, see the [Logs](/docs/yandex-mdb-guide/concepts/logs) section in the Developer's Guide.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')

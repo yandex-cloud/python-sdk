@@ -84,6 +84,7 @@ class ImageServiceServicer(object):
     """Creates an image in the specified folder.
 
     You can create an image from a disk, snapshot, other image or URI.
+    Method starts an asynchronous operation that can be cancelled while it is in progress.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')

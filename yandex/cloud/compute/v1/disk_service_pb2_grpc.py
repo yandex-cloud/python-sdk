@@ -72,6 +72,7 @@ class DiskServiceServicer(object):
     """Creates a disk in the specified folder.
 
     You can create an empty disk or restore it from a snapshot or an image.
+    Method starts an asynchronous operation that can be cancelled while it is in progress.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')

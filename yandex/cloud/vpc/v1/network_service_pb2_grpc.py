@@ -75,6 +75,7 @@ class NetworkServiceServicer(object):
 
   def Create(self, request, context):
     """Creates a network in the specified folder using the data specified in the request.
+    Method starts an asynchronous operation that can be cancelled while it is in progress.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -82,6 +83,7 @@ class NetworkServiceServicer(object):
 
   def Update(self, request, context):
     """Updates the specified network.
+    Method starts an asynchronous operation that can be cancelled while it is in progress.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')

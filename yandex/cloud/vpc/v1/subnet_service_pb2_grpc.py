@@ -70,6 +70,7 @@ class SubnetServiceServicer(object):
 
   def Create(self, request, context):
     """Creates a subnet in the specified folder and network.
+    Method starts an asynchronous operation that can be cancelled while it is in progress.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -77,6 +78,7 @@ class SubnetServiceServicer(object):
 
   def Update(self, request, context):
     """Updates the specified subnet.
+    Method starts an asynchronous operation that can be cancelled while it is in progress.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')

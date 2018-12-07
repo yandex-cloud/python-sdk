@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/iam/v1/iam_token_service.proto',
   package='yandex.cloud.iam.v1',
   syntax='proto3',
-  serialized_pb=_b('\n+yandex/cloud/iam/v1/iam_token_service.proto\x12\x13yandex.cloud.iam.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1dyandex/cloud/validation.proto\"P\n\x15\x43reateIamTokenRequest\x12%\n\x1byandex_passport_oauth_token\x18\x01 \x01(\tH\x00\x42\x10\n\x08identity\x12\x04\xc0\xc1\x31\x01\"+\n\x16\x43reateIamTokenResponse\x12\x11\n\tiam_token\x18\x01 \x01(\t2\x8f\x01\n\x0fIamTokenService\x12|\n\x06\x43reate\x12*.yandex.cloud.iam.v1.CreateIamTokenRequest\x1a+.yandex.cloud.iam.v1.CreateIamTokenResponse\"\x19\x82\xd3\xe4\x93\x02\x13\"\x0e/iam/v1/tokens:\x01*B=Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3')
+  serialized_pb=_b('\n+yandex/cloud/iam/v1/iam_token_service.proto\x12\x13yandex.cloud.iam.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1dyandex/cloud/validation.proto\"_\n\x15\x43reateIamTokenRequest\x12%\n\x1byandex_passport_oauth_token\x18\x01 \x01(\tH\x00\x12\r\n\x03jwt\x18\x02 \x01(\tH\x00\x42\x10\n\x08identity\x12\x04\xc0\xc1\x31\x01\"+\n\x16\x43reateIamTokenResponse\x12\x11\n\tiam_token\x18\x01 \x01(\t2\x8f\x01\n\x0fIamTokenService\x12|\n\x06\x43reate\x12*.yandex.cloud.iam.v1.CreateIamTokenRequest\x1a+.yandex.cloud.iam.v1.CreateIamTokenResponse\"\x19\x82\xd3\xe4\x93\x02\x13\"\x0e/iam/v1/tokens:\x01*B=Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -42,6 +42,13 @@ _CREATEIAMTOKENREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='jwt', full_name='yandex.cloud.iam.v1.CreateIamTokenRequest.jwt', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -58,7 +65,7 @@ _CREATEIAMTOKENREQUEST = _descriptor.Descriptor(
       index=0, containing_type=None, fields=[], options=_descriptor._ParseOptions(descriptor_pb2.OneofOptions(), _b('\300\3011\001'))),
   ],
   serialized_start=129,
-  serialized_end=209,
+  serialized_end=224,
 )
 
 
@@ -88,13 +95,16 @@ _CREATEIAMTOKENRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=211,
-  serialized_end=254,
+  serialized_start=226,
+  serialized_end=269,
 )
 
 _CREATEIAMTOKENREQUEST.oneofs_by_name['identity'].fields.append(
   _CREATEIAMTOKENREQUEST.fields_by_name['yandex_passport_oauth_token'])
 _CREATEIAMTOKENREQUEST.fields_by_name['yandex_passport_oauth_token'].containing_oneof = _CREATEIAMTOKENREQUEST.oneofs_by_name['identity']
+_CREATEIAMTOKENREQUEST.oneofs_by_name['identity'].fields.append(
+  _CREATEIAMTOKENREQUEST.fields_by_name['jwt'])
+_CREATEIAMTOKENREQUEST.fields_by_name['jwt'].containing_oneof = _CREATEIAMTOKENREQUEST.oneofs_by_name['identity']
 DESCRIPTOR.message_types_by_name['CreateIamTokenRequest'] = _CREATEIAMTOKENREQUEST
 DESCRIPTOR.message_types_by_name['CreateIamTokenResponse'] = _CREATEIAMTOKENRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -125,8 +135,8 @@ _IAMTOKENSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   options=None,
-  serialized_start=257,
-  serialized_end=400,
+  serialized_start=272,
+  serialized_end=415,
   methods=[
   _descriptor.MethodDescriptor(
     name='Create',

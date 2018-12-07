@@ -6,7 +6,7 @@ from yandex.cloud.compute.v1 import disk_type_service_pb2 as yandex_dot_cloud_do
 
 
 class DiskTypeServiceStub(object):
-  """A set of methods for managing DiskType resources.
+  """A set of methods to retrieve information about disk types.
   """
 
   def __init__(self, channel):
@@ -28,20 +28,20 @@ class DiskTypeServiceStub(object):
 
 
 class DiskTypeServiceServicer(object):
-  """A set of methods for managing DiskType resources.
+  """A set of methods to retrieve information about disk types.
   """
 
   def Get(self, request, context):
-    """Returns the specified DiskType resource.
+    """Returns the information about specified disk type.
 
-    To get the list of available DiskType resources, make a [List] request.
+    To get the list of available disk types, make a [List] request.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def List(self, request, context):
-    """Retrieves the list of DiskType resources in the specified folder.
+    """Retrieves the list of disk types for the specified folder.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')

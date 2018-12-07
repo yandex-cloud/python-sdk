@@ -100,6 +100,7 @@ class InstanceServiceServicer(object):
 
   def Create(self, request, context):
     """Creates an instance in the specified folder.
+    Method starts an asynchronous operation that can be cancelled while it is in progress.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')

@@ -6,7 +6,7 @@ from yandex.cloud.compute.v1 import zone_service_pb2 as yandex_dot_cloud_dot_com
 
 
 class ZoneServiceStub(object):
-  """A set of methods for managing Zone resources.
+  """A set of methods to retrieve information about availability zones.
   """
 
   def __init__(self, channel):
@@ -28,20 +28,20 @@ class ZoneServiceStub(object):
 
 
 class ZoneServiceServicer(object):
-  """A set of methods for managing Zone resources.
+  """A set of methods to retrieve information about availability zones.
   """
 
   def Get(self, request, context):
-    """Returns the specified zone resource.
+    """Returns the information about the specified availability zone.
 
-    To get the list of available Zone resources, make a [List] request.
+    To get the list of availability zones, make a [List] request.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def List(self, request, context):
-    """Retrieves the list of Zone resources.
+    """Retrieves the list of availability zones.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
