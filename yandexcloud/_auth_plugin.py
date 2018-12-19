@@ -1,20 +1,16 @@
-
-import threading
-from concurrent import futures
-from datetime import datetime
-
 import grpc
+
+from datetime import datetime
 from six.moves.urllib.parse import urlparse
 
-from yandex.cloud.iam.v1.iam_token_service_pb2 import CreateIamTokenRequest
 from yandex.cloud.iam.v1.iam_token_service_pb2_grpc import IamTokenServiceStub
 
 TIMEOUT_SECONDS = 20
 
 
 class Credentials(grpc.AuthMetadataPlugin):
-    def __init__(self, oauth_token, lazy_channel):
-        self._oauth_token = oauth_token
+    def __init__(self, token_request_func, lazy_channel):
+        self.__token_request_func = token_request_func
         self._lazy_channel = lazy_channel
         self._channel = None
         self._cached_iam_token = None
@@ -28,8 +24,7 @@ class Credentials(grpc.AuthMetadataPlugin):
 
     def _call(self, context, callback):
         u = urlparse(context.service_url)
-        if u.path == '/yandex.cloud.iam.v1.IamTokenService' or \
-            u.path == '/yandex.cloud.endpoint.ApiEndpointService':
+        if u.path == '/yandex.cloud.iam.v1.IamTokenService' or u.path == '/yandex.cloud.endpoint.ApiEndpointService':
             callback(None, None)
             return
 
@@ -37,8 +32,7 @@ class Credentials(grpc.AuthMetadataPlugin):
             self._channel = self._lazy_channel()
 
         if self._cached_iam_token is None or not self._fresh():
-            token_future = IamTokenServiceStub(self._channel).Create.future(CreateIamTokenRequest(
-                yandex_passport_oauth_token=self._oauth_token))
+            token_future = IamTokenServiceStub(self._channel).Create.future(self.__token_request_func())
             token_future.add_done_callback(self.create_done_callback(callback))
             return
 

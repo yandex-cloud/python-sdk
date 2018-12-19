@@ -5,27 +5,19 @@ from yandex.cloud.endpoint.api_endpoint_service_pb2_grpc import ApiEndpointServi
 from yandex.cloud.endpoint.api_endpoint_service_pb2 import ListApiEndpointsRequest
 
 from yandexcloud import _auth_plugin
-
-
-def _fill_defaults(opts):
-    opts['root_certificates'] = opts.get('root_certificates')
-    opts['private_key'] = opts.get('private_key')
-    opts['certificate_chain'] = opts.get('certificate_chain')
-    opts['endpoint'] = opts.get('endpoint', 'api.cloud.yandex.net')
+from yandexcloud._auth_fabric import get_auth_token_request_func
 
 
 class Channels(object):
     def __init__(self, **kwargs):
-        opts = {x: y for x, y in kwargs.items()}
-        _fill_defaults(opts)
-
         self._channel_creds = grpc.ssl_channel_credentials(
-            root_certificates=opts['root_certificates'],
-            private_key=opts['private_key'],
-            certificate_chain=opts['certificate_chain'],
+            root_certificates=kwargs.get('root_certificates'),
+            private_key=kwargs.get('private_key'),
+            certificate_chain=kwargs.get('certificate_chain'),
         )
-        self._endpoint = opts['endpoint']
-        self._token = opts['token']
+        self._endpoint = kwargs.get('endpoint', 'api.cloud.yandex.net')
+        self._token_request_func = get_auth_token_request_func(token=kwargs.get("token"),
+                                                               service_account_key=kwargs.get("service_account_key"))
 
         self._unauthenticated_channel = None
         self._channels = None
@@ -40,7 +32,7 @@ class Channels(object):
             endpoints = resp.endpoints
 
             plugin = _auth_plugin.Credentials(
-                self._token, lambda: self._channels["iam"])
+                self._token_request_func, lambda: self._channels["iam"])
             call_creds = grpc.metadata_call_credentials(plugin)
             creds = grpc.composite_channel_credentials(
                 self._channel_creds, call_creds)
