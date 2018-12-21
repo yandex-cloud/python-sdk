@@ -2,6 +2,7 @@
 import inspect
 
 from yandexcloud import _channels
+from yandexcloud import _operation_waiter
 
 
 class SDK(object):
@@ -12,6 +13,9 @@ class SDK(object):
         service = _service_for_ctor(stub_ctor)
         channel = self._channels.channel(service)
         return stub_ctor(channel)
+
+    def waiter(self, operation_id):
+        return _operation_waiter.operation_waiter(self, operation_id, timeout=None)
 
 
 def _service_for_ctor(stub_ctor):

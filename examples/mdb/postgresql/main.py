@@ -4,8 +4,6 @@ import time
 
 from google.protobuf.field_mask_pb2 import FieldMask
 
-from yandex.cloud.operation.operation_service_pb2 import GetOperationRequest
-from yandex.cloud.operation.operation_service_pb2_grpc import OperationServiceStub
 from yandex.cloud.vpc.v1.network_service_pb2 import ListNetworksRequest
 from yandex.cloud.vpc.v1.network_service_pb2_grpc import NetworkServiceStub
 from yandex.cloud.vpc.v1.subnet_service_pb2 import ListSubnetsRequest
@@ -18,6 +16,17 @@ import yandex.cloud.mdb.postgresql.v1.cluster_service_pb2 as cluster_service
 import yandex.cloud.mdb.postgresql.v1.cluster_service_pb2_grpc as cluster_service_grpc
 
 import yandexcloud
+
+
+def wait_for_operation(sdk, op):
+    waiter = sdk.waiter(op.id)
+    for _ in waiter:
+        sys.stdout.write('.')
+        sys.stdout.flush()
+        time.sleep(1)
+
+    print('done')
+    return waiter.operation
 
 
 def main():
@@ -35,20 +44,6 @@ def main():
     finally:
         if cluster is not None:
             delete_cluster(sdk, cluster)
-
-
-def wait_for_operation(sdk, op):
-    operation_service = sdk.client(OperationServiceStub)
-    while True:
-        new_op = operation_service.Get(GetOperationRequest(operation_id=op.id))
-        if new_op.done:
-            if new_op.HasField('error'):
-                raise RuntimeError('Operation error: {}'.format(new_op.error))
-            print('done')
-            return new_op
-        sys.stdout.write('.')
-        sys.stdout.flush()
-        time.sleep(1)
 
 
 def parse_cmd():

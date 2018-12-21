@@ -1,4 +1,3 @@
-
 import argparse
 import sys
 import time
@@ -8,12 +7,21 @@ from yandex.cloud.compute.v1.image_service_pb2_grpc import ImageServiceStub
 from yandex.cloud.compute.v1.instance_pb2 import IPV4, Instance
 from yandex.cloud.compute.v1.instance_service_pb2 import CreateInstanceRequest, ResourcesSpec, AttachedDiskSpec, NetworkInterfaceSpec, PrimaryAddressSpec, OneToOneNatSpec, DeleteInstanceRequest, CreateInstanceMetadata
 from yandex.cloud.compute.v1.instance_service_pb2_grpc import InstanceServiceStub
-from yandex.cloud.operation.operation_service_pb2 import GetOperationRequest
-from yandex.cloud.operation.operation_service_pb2_grpc import OperationServiceStub
 from yandex.cloud.vpc.v1.subnet_service_pb2 import ListSubnetsRequest
 from yandex.cloud.vpc.v1.subnet_service_pb2_grpc import SubnetServiceStub
 
 import yandexcloud
+
+
+def wait_for_operation(sdk, op):
+    waiter = sdk.waiter(op.id)
+    for _ in waiter:
+        sys.stdout.write('.')
+        sys.stdout.flush()
+        time.sleep(1)
+
+    print('done')
+    return waiter.operation
 
 
 def get_subnet(sdk, folder_id, zone):
@@ -70,20 +78,6 @@ def delete_instance(sdk, instance_id):
     instance_service = sdk.client(InstanceServiceStub)
     return instance_service.Delete(
         DeleteInstanceRequest(instance_id=instance_id))
-
-
-def wait_for_operation(sdk, op):
-    operation_service = sdk.client(OperationServiceStub)
-    while True:
-        new_op = operation_service.Get(GetOperationRequest(operation_id=op.id))
-        if new_op.done:
-            if new_op.HasField('error'):
-                raise RuntimeError('Operation error: {}'.format(new_op.error))
-            print('done')
-            return new_op
-        sys.stdout.write('.')
-        sys.stdout.flush()
-        time.sleep(1)
 
 
 def main(token, folder_id, zone, name, subnet_id):
