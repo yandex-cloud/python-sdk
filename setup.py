@@ -7,7 +7,7 @@ setup(name='yandexcloud',
       description='The Yandex.Cloud official SDK',
       url='https://github.com/yandex-cloud/python-sdk',
       author='Yandex LLC',
-      author_email='FIXME',
+      author_email='cloud@support.yandex.ru',
       license='MIT',
       install_requires=[
           'cryptography',
