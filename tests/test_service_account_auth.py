@@ -12,6 +12,20 @@ def test_both_params_error(token, service_account_key):
     assert str(e.value) == "Conflicting API credentials properties 'token' and 'service-account-key' are set."
 
 
+def test_both_params_empty_error():
+    with pytest.raises(RuntimeError) as e:
+        get_auth_token_request_func()
+
+    assert str(e.value) == "Please provide API credentials, non empty 'token' or 'service-account-key'"
+
+
+def test_invalid_service_account_type():
+    with pytest.raises(RuntimeError) as e:
+        get_auth_token_request_func(service_account_key=[])
+
+    assert str(e.value).startswith("Invalid Service Account Key: expecting dictionary, actually got")
+
+
 @pytest.mark.parametrize("key, error_msg", [
     ("id", "Invalid Service Account Key: missing key object id."),
     ("service_account_id", "Invalid Service Account Key: missing service account id."),

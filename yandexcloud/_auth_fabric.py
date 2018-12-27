@@ -10,6 +10,9 @@ from yandex.cloud.iam.v1.iam_token_service_pb2 import CreateIamTokenRequest
 
 
 def __validate_service_account_key(sa_key):
+    if not isinstance(sa_key, dict):
+        raise RuntimeError("Invalid Service Account Key: expecting dictionary, actually got {}".format(type(sa_key)))
+
     obj_id = sa_key.get("id")
     sa_id = sa_key.get("service_account_id")
     private_key = sa_key.get("private_key")
@@ -30,6 +33,9 @@ def get_auth_token_request_func(token=None, service_account_key=None):
 
     if token:
         return TokenAuth(token=token).get_token_request
+
+    if service_account_key is None:
+        raise RuntimeError("Please provide API credentials, non empty 'token' or 'service-account-key'")
 
     __validate_service_account_key(service_account_key)
     return ServiceAccountAuth(service_account_key).get_token_request
