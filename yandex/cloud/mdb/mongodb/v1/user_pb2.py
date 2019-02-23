@@ -7,7 +7,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -20,7 +19,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/mdb/mongodb/v1/user.proto',
   package='yandex.cloud.mdb.mongodb.v1',
   syntax='proto3',
-  serialized_pb=_b('\n&yandex/cloud/mdb/mongodb/v1/user.proto\x12\x1byandex.cloud.mdb.mongodb.v1\x1a\x1dyandex/cloud/validation.proto\"f\n\x04User\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12<\n\x0bpermissions\x18\x03 \x03(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.Permission\"2\n\nPermission\x12\x15\n\rdatabase_name\x18\x01 \x01(\t\x12\r\n\x05roles\x18\x02 \x03(\t\"\x96\x01\n\x08UserSpec\x12+\n\x04name\x18\x01 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04\x31-63\xf2\xc7\x31\r[a-zA-Z0-9_]+\x12\x1f\n\x08password\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x38-128\x12<\n\x0bpermissions\x18\x03 \x03(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.PermissionBIZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1;mongodbb\x06proto3')
+  serialized_options=_b('ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1;mongodb'),
+  serialized_pb=_b('\n&yandex/cloud/mdb/mongodb/v1/user.proto\x12\x1byandex.cloud.mdb.mongodb.v1\x1a\x1dyandex/cloud/validation.proto\"f\n\x04User\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12<\n\x0bpermissions\x18\x03 \x03(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.Permission\"2\n\nPermission\x12\x15\n\rdatabase_name\x18\x01 \x01(\t\x12\r\n\x05roles\x18\x02 \x03(\t\"\x96\x01\n\x08UserSpec\x12+\n\x04name\x18\x01 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\r[a-zA-Z0-9_]*\x12\x1f\n\x08password\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x38-128\x12<\n\x0bpermissions\x18\x03 \x03(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.PermissionBIZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1;mongodbb\x06proto3')
   ,
   dependencies=[yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -40,28 +40,28 @@ _USER = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.User.cluster_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='permissions', full_name='yandex.cloud.mdb.mongodb.v1.User.permissions', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -85,21 +85,21 @@ _PERMISSION = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='roles', full_name='yandex.cloud.mdb.mongodb.v1.Permission.roles', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -123,28 +123,28 @@ _USERSPEC = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\0041-63\362\3071\r[a-zA-Z0-9_]+')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=63\362\3071\r[a-zA-Z0-9_]*'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='yandex.cloud.mdb.mongodb.v1.UserSpec.password', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\0058-128')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\0058-128'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='permissions', full_name='yandex.cloud.mdb.mongodb.v1.UserSpec.permissions', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -183,10 +183,7 @@ UserSpec = _reflection.GeneratedProtocolMessageType('UserSpec', (_message.Messag
 _sym_db.RegisterMessage(UserSpec)
 
 
-DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1;mongodb'))
-_USERSPEC.fields_by_name['name'].has_options = True
-_USERSPEC.fields_by_name['name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\0041-63\362\3071\r[a-zA-Z0-9_]+'))
-_USERSPEC.fields_by_name['password'].has_options = True
-_USERSPEC.fields_by_name['password']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\0058-128'))
+DESCRIPTOR._options = None
+_USERSPEC.fields_by_name['name']._options = None
+_USERSPEC.fields_by_name['password']._options = None
 # @@protoc_insertion_point(module_scope)

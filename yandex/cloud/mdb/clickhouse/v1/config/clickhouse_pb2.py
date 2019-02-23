@@ -7,7 +7,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -21,7 +20,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/mdb/clickhouse/v1/config/clickhouse.proto',
   package='yandex.cloud.mdb.clickhouse.v1.config',
   syntax='proto3',
-  serialized_pb=_b('\n6yandex/cloud/mdb/clickhouse/v1/config/clickhouse.proto\x12%yandex.cloud.mdb.clickhouse.v1.config\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\xad$\n\x10\x43lickhouseConfig\x12S\n\tlog_level\x18\x01 \x01(\x0e\x32@.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.LogLevel\x12U\n\nmerge_tree\x18\x02 \x01(\x0b\x32\x41.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.MergeTree\x12X\n\x0b\x63ompression\x18\x03 \x03(\x0b\x32\x43.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.Compression\x12`\n\x0c\x64ictionaries\x18\x04 \x03(\x0b\x32J.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary\x12_\n\x0fgraphite_rollup\x18\x05 \x03(\x0b\x32\x46.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.GraphiteRollup\x12>\n\x0fmax_connections\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x08\xfa\xc7\x31\x04>=10\x12\x45\n\x16max_concurrent_queries\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x08\xfa\xc7\x31\x04>=10\x12\x37\n\x12keep_alive_timeout\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12<\n\x17uncompressed_cache_size\x18\t \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x45\n\x0fmark_cache_size\x18\n \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0f\xfa\xc7\x31\x0b>5368709120\x12;\n\x16max_table_size_to_drop\x18\x0b \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12I\n$builtin_dictionaries_reload_interval\x18\x0c \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x1a\x9f\x01\n\tMergeTree\x12\x44\n\x1freplicated_deduplication_window\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12L\n\'replicated_deduplication_window_seconds\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x1a\xdb\x01\n\x0b\x43ompression\x12Z\n\x06method\x18\x01 \x01(\x0e\x32J.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.Compression.Method\x12\x1e\n\rmin_part_size\x18\x02 \x01(\x03\x42\x07\xfa\xc7\x31\x03>=1\x12\x1b\n\x13min_part_size_ratio\x18\x03 \x01(\x01\"3\n\x06Method\x12\x16\n\x12METHOD_UNSPECIFIED\x10\x00\x12\x07\n\x03LZ4\x10\x01\x12\x08\n\x04ZSTD\x10\x02\x1a\xa5\x16\n\x12\x45xternalDictionary\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12m\n\tstructure\x18\x02 \x01(\x0b\x32T.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.StructureB\x04\xe8\xc7\x31\x01\x12g\n\x06layout\x18\x03 \x01(\x0b\x32Q.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.LayoutB\x04\xe8\xc7\x31\x01\x12\x18\n\x0e\x66ixed_lifetime\x18\x04 \x01(\x03H\x00\x12j\n\x0elifetime_range\x18\x05 \x01(\x0b\x32P.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.RangeH\x00\x12l\n\x0bhttp_source\x18\x06 \x01(\x0b\x32U.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.HttpSourceH\x01\x12n\n\x0cmysql_source\x18\x07 \x01(\x0b\x32V.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.MysqlSourceH\x01\x12x\n\x11\x63lickhouse_source\x18\x08 \x01(\x0b\x32[.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.ClickhouseSourceH\x01\x12r\n\x0emongodb_source\x18\t \x01(\x0b\x32X.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.MongodbSourceH\x01\x1a\x35\n\nHttpSource\x12\x11\n\x03url\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x14\n\x06\x66ormat\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x1a\xf8\x03\n\x0bMysqlSource\x12)\n\x02\x64\x62\x18\x01 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04\x31-63\xf2\xc7\x31\r[a-zA-Z0-9_]+\x12,\n\x05table\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04\x31-63\xf2\xc7\x31\r[a-zA-Z0-9_]+\x12\x19\n\x04port\x18\x03 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-65535\x12\'\n\x04user\x18\x04 \x01(\tB\x19\x8a\xc8\x31\x04\x31-63\xf2\xc7\x31\r[a-zA-Z0-9_]+\x12\x10\n\x08password\x18\x05 \x01(\t\x12x\n\x08replicas\x18\x06 \x03(\x0b\x32^.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.MysqlSource.ReplicaB\x06\x82\xc8\x31\x02>0\x12\r\n\x05where\x18\x07 \x01(\t\x12\x18\n\x10invalidate_query\x18\x08 \x01(\t\x1a\x96\x01\n\x07Replica\x12\x1b\n\x04host\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=253\x12\x18\n\x08priority\x18\x02 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\x12\x19\n\x04port\x18\x03 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-65535\x12\'\n\x04user\x18\x04 \x01(\tB\x19\x8a\xc8\x31\x04\x31-63\xf2\xc7\x31\r[a-zA-Z0-9_]+\x12\x10\n\x08password\x18\x05 \x01(\t\x1a\xed\x01\n\x10\x43lickhouseSource\x12)\n\x02\x64\x62\x18\x01 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04\x31-63\xf2\xc7\x31\r[a-zA-Z0-9_]+\x12,\n\x05table\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04\x31-63\xf2\xc7\x31\r[a-zA-Z0-9_]+\x12\x1b\n\x04host\x18\x03 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=253\x12\x19\n\x04port\x18\x04 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-65535\x12\'\n\x04user\x18\x05 \x01(\tB\x19\x8a\xc8\x31\x04\x31-63\xf2\xc7\x31\r[a-zA-Z0-9_]+\x12\x10\n\x08password\x18\x06 \x01(\t\x12\r\n\x05where\x18\x07 \x01(\t\x1a\xe0\x01\n\rMongodbSource\x12)\n\x02\x64\x62\x18\x01 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04\x31-63\xf2\xc7\x31\r[a-zA-Z0-9_]+\x12\x31\n\ncollection\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04\x31-63\xf2\xc7\x31\r[a-zA-Z0-9_]+\x12\x1b\n\x04host\x18\x03 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=253\x12\x19\n\x04port\x18\x04 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-65535\x12\'\n\x04user\x18\x05 \x01(\tB\x19\x8a\xc8\x31\x04\x31-63\xf2\xc7\x31\r[a-zA-Z0-9_]+\x12\x10\n\x08password\x18\x06 \x01(\t\x1a\xf8\x04\n\tStructure\x12\x63\n\x02id\x18\x01 \x01(\x0b\x32W.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.Structure.Id\x12\x65\n\x03key\x18\x03 \x01(\x0b\x32X.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.Structure.Key\x12z\n\nattributes\x18\x02 \x03(\x0b\x32^.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.Structure.AttributeB\x06\x82\xc8\x31\x02>0\x1a\x84\x01\n\tAttribute\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x12\n\x04type\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x12\n\nnull_value\x18\x03 \x01(\t\x12\x12\n\nexpression\x18\x04 \x01(\t\x12\x14\n\x0chierarchical\x18\x05 \x01(\x08\x12\x11\n\tinjective\x18\x06 \x01(\x08\x1a\x18\n\x02Id\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x1a\x81\x01\n\x03Key\x12z\n\nattributes\x18\x01 \x03(\x0b\x32^.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.Structure.AttributeB\x06\x82\xc8\x31\x02>0\x1a\x8b\x02\n\x06Layout\x12j\n\x04type\x18\x01 \x01(\x0e\x32V.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.Layout.TypeB\x04\xe8\xc7\x31\x01\x12\x15\n\rsize_in_cells\x18\x02 \x01(\x03\"~\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x08\n\x04\x46LAT\x10\x01\x12\n\n\x06HASHED\x10\x02\x12\x16\n\x12\x43OMPLEX_KEY_HASHED\x10\x03\x12\x10\n\x0cRANGE_HASHED\x10\x04\x12\t\n\x05\x43\x41\x43HE\x10\x05\x12\x15\n\x11\x43OMPLEX_KEY_CACHE\x10\x06\x1a!\n\x05Range\x12\x0b\n\x03min\x18\x01 \x01(\x03\x12\x0b\n\x03max\x18\x02 \x01(\x03\x42\x10\n\x08lifetime\x12\x04\xc0\xc1\x31\x01\x42\x0e\n\x06source\x12\x04\xc0\xc1\x31\x01\x1a\xf4\x02\n\x0eGraphiteRollup\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12h\n\x08patterns\x18\x02 \x03(\x0b\x32N.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.GraphiteRollup.PatternB\x06\x82\xc8\x31\x02>0\x1a\xe3\x01\n\x07Pattern\x12\x0e\n\x06regexp\x18\x01 \x01(\t\x12\x16\n\x08\x66unction\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12s\n\tretention\x18\x03 \x03(\x0b\x32X.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.GraphiteRollup.Pattern.RetentionB\x06\x82\xc8\x31\x02>0\x1a;\n\tRetention\x12\x13\n\x03\x61ge\x18\x01 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\x12\x19\n\tprecision\x18\x02 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\"d\n\x08LogLevel\x12\x19\n\x15LOG_LEVEL_UNSPECIFIED\x10\x00\x12\t\n\x05TRACE\x10\x01\x12\t\n\x05\x44\x45\x42UG\x10\x02\x12\x0f\n\x0bINFORMATION\x10\x03\x12\x0b\n\x07WARNING\x10\x04\x12\t\n\x05\x45RROR\x10\x05\"\x8d\x02\n\x13\x43lickhouseConfigSet\x12W\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32\x37.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfigB\x04\xe8\xc7\x31\x01\x12L\n\x0buser_config\x18\x02 \x01(\x0b\x32\x37.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig\x12O\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32\x37.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfigBVZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/clickhouse/v1/config;clickhouseb\x06proto3')
+  serialized_options=_b('ZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/clickhouse/v1/config;clickhouse'),
+  serialized_pb=_b('\n6yandex/cloud/mdb/clickhouse/v1/config/clickhouse.proto\x12%yandex.cloud.mdb.clickhouse.v1.config\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\xb6\"\n\x10\x43lickhouseConfig\x12S\n\tlog_level\x18\x01 \x01(\x0e\x32@.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.LogLevel\x12U\n\nmerge_tree\x18\x02 \x01(\x0b\x32\x41.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.MergeTree\x12X\n\x0b\x63ompression\x18\x03 \x03(\x0b\x32\x43.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.Compression\x12`\n\x0c\x64ictionaries\x18\x04 \x03(\x0b\x32J.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary\x12_\n\x0fgraphite_rollup\x18\x05 \x03(\x0b\x32\x46.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.GraphiteRollup\x12>\n\x0fmax_connections\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x08\xfa\xc7\x31\x04>=10\x12\x45\n\x16max_concurrent_queries\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x08\xfa\xc7\x31\x04>=10\x12\x37\n\x12keep_alive_timeout\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12<\n\x17uncompressed_cache_size\x18\t \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x45\n\x0fmark_cache_size\x18\n \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0f\xfa\xc7\x31\x0b>5368709120\x12;\n\x16max_table_size_to_drop\x18\x0b \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12I\n$builtin_dictionaries_reload_interval\x18\x0c \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x1a\x9f\x01\n\tMergeTree\x12\x44\n\x1freplicated_deduplication_window\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12L\n\'replicated_deduplication_window_seconds\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x1a\xdb\x01\n\x0b\x43ompression\x12Z\n\x06method\x18\x01 \x01(\x0e\x32J.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.Compression.Method\x12\x1e\n\rmin_part_size\x18\x02 \x01(\x03\x42\x07\xfa\xc7\x31\x03>=1\x12\x1b\n\x13min_part_size_ratio\x18\x03 \x01(\x01\"3\n\x06Method\x12\x16\n\x12METHOD_UNSPECIFIED\x10\x00\x12\x07\n\x03LZ4\x10\x01\x12\x08\n\x04ZSTD\x10\x02\x1a\xae\x14\n\x12\x45xternalDictionary\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12m\n\tstructure\x18\x02 \x01(\x0b\x32T.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.StructureB\x04\xe8\xc7\x31\x01\x12g\n\x06layout\x18\x03 \x01(\x0b\x32Q.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.LayoutB\x04\xe8\xc7\x31\x01\x12\x18\n\x0e\x66ixed_lifetime\x18\x04 \x01(\x03H\x00\x12j\n\x0elifetime_range\x18\x05 \x01(\x0b\x32P.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.RangeH\x00\x12l\n\x0bhttp_source\x18\x06 \x01(\x0b\x32U.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.HttpSourceH\x01\x12n\n\x0cmysql_source\x18\x07 \x01(\x0b\x32V.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.MysqlSourceH\x01\x12x\n\x11\x63lickhouse_source\x18\x08 \x01(\x0b\x32[.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.ClickhouseSourceH\x01\x12r\n\x0emongodb_source\x18\t \x01(\x0b\x32X.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.MongodbSourceH\x01\x1a\x35\n\nHttpSource\x12\x11\n\x03url\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x14\n\x06\x66ormat\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x1a\x8f\x03\n\x0bMysqlSource\x12\x10\n\x02\x64\x62\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x13\n\x05table\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x19\n\x04port\x18\x03 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-65535\x12\x0c\n\x04user\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12x\n\x08replicas\x18\x06 \x03(\x0b\x32^.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.MysqlSource.ReplicaB\x06\x82\xc8\x31\x02>0\x12\r\n\x05where\x18\x07 \x01(\t\x12\x18\n\x10invalidate_query\x18\x08 \x01(\t\x1a{\n\x07Replica\x12\x1b\n\x04host\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=253\x12\x18\n\x08priority\x18\x02 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\x12\x19\n\x04port\x18\x03 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-65535\x12\x0c\n\x04user\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x1a\xa6\x01\n\x10\x43lickhouseSource\x12\x10\n\x02\x64\x62\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x13\n\x05table\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1b\n\x04host\x18\x03 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=253\x12\x19\n\x04port\x18\x04 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-65535\x12\x12\n\x04user\x18\x05 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x10\n\x08password\x18\x06 \x01(\t\x12\r\n\x05where\x18\x07 \x01(\t\x1a\x99\x01\n\rMongodbSource\x12\x10\n\x02\x64\x62\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x18\n\ncollection\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1b\n\x04host\x18\x03 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=253\x12\x19\n\x04port\x18\x04 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-65535\x12\x12\n\x04user\x18\x05 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x10\n\x08password\x18\x06 \x01(\t\x1a\xf8\x04\n\tStructure\x12\x63\n\x02id\x18\x01 \x01(\x0b\x32W.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.Structure.Id\x12\x65\n\x03key\x18\x03 \x01(\x0b\x32X.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.Structure.Key\x12z\n\nattributes\x18\x02 \x03(\x0b\x32^.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.Structure.AttributeB\x06\x82\xc8\x31\x02>0\x1a\x84\x01\n\tAttribute\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x12\n\x04type\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x12\n\nnull_value\x18\x03 \x01(\t\x12\x12\n\nexpression\x18\x04 \x01(\t\x12\x14\n\x0chierarchical\x18\x05 \x01(\x08\x12\x11\n\tinjective\x18\x06 \x01(\x08\x1a\x18\n\x02Id\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x1a\x81\x01\n\x03Key\x12z\n\nattributes\x18\x01 \x03(\x0b\x32^.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.Structure.AttributeB\x06\x82\xc8\x31\x02>0\x1a\x8b\x02\n\x06Layout\x12j\n\x04type\x18\x01 \x01(\x0e\x32V.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.Layout.TypeB\x04\xe8\xc7\x31\x01\x12\x15\n\rsize_in_cells\x18\x02 \x01(\x03\"~\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x08\n\x04\x46LAT\x10\x01\x12\n\n\x06HASHED\x10\x02\x12\x16\n\x12\x43OMPLEX_KEY_HASHED\x10\x03\x12\x10\n\x0cRANGE_HASHED\x10\x04\x12\t\n\x05\x43\x41\x43HE\x10\x05\x12\x15\n\x11\x43OMPLEX_KEY_CACHE\x10\x06\x1a!\n\x05Range\x12\x0b\n\x03min\x18\x01 \x01(\x03\x12\x0b\n\x03max\x18\x02 \x01(\x03\x42\x10\n\x08lifetime\x12\x04\xc0\xc1\x31\x01\x42\x0e\n\x06source\x12\x04\xc0\xc1\x31\x01\x1a\xf4\x02\n\x0eGraphiteRollup\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12h\n\x08patterns\x18\x02 \x03(\x0b\x32N.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.GraphiteRollup.PatternB\x06\x82\xc8\x31\x02>0\x1a\xe3\x01\n\x07Pattern\x12\x0e\n\x06regexp\x18\x01 \x01(\t\x12\x16\n\x08\x66unction\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12s\n\tretention\x18\x03 \x03(\x0b\x32X.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.GraphiteRollup.Pattern.RetentionB\x06\x82\xc8\x31\x02>0\x1a;\n\tRetention\x12\x13\n\x03\x61ge\x18\x01 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\x12\x19\n\tprecision\x18\x02 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\"d\n\x08LogLevel\x12\x19\n\x15LOG_LEVEL_UNSPECIFIED\x10\x00\x12\t\n\x05TRACE\x10\x01\x12\t\n\x05\x44\x45\x42UG\x10\x02\x12\x0f\n\x0bINFORMATION\x10\x03\x12\x0b\n\x07WARNING\x10\x04\x12\t\n\x05\x45RROR\x10\x05\"\x8d\x02\n\x13\x43lickhouseConfigSet\x12W\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32\x37.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfigB\x04\xe8\xc7\x31\x01\x12L\n\x0buser_config\x18\x02 \x01(\x0b\x32\x37.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig\x12O\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32\x37.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfigBVZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/clickhouse/v1/config;clickhouseb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -35,19 +35,19 @@ _CLICKHOUSECONFIG_COMPRESSION_METHOD = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='METHOD_UNSPECIFIED', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='LZ4', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='ZSTD', index=2, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
+  serialized_options=None,
   serialized_start=1430,
   serialized_end=1481,
 )
@@ -61,37 +61,37 @@ _CLICKHOUSECONFIG_EXTERNALDICTIONARY_LAYOUT_TYPE = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='TYPE_UNSPECIFIED', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='FLAT', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='HASHED', index=2, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='COMPLEX_KEY_HASHED', index=3, number=3,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='RANGE_HASHED', index=4, number=4,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='CACHE', index=5, number=5,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='COMPLEX_KEY_CACHE', index=6, number=6,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
-  serialized_start=4142,
-  serialized_end=4268,
+  serialized_options=None,
+  serialized_start=3895,
+  serialized_end=4021,
 )
 _sym_db.RegisterEnumDescriptor(_CLICKHOUSECONFIG_EXTERNALDICTIONARY_LAYOUT_TYPE)
 
@@ -103,33 +103,33 @@ _CLICKHOUSECONFIG_LOGLEVEL = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='LOG_LEVEL_UNSPECIFIED', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='TRACE', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='DEBUG', index=2, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='INFORMATION', index=3, number=3,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='WARNING', index=4, number=4,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='ERROR', index=5, number=5,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
-  serialized_start=4714,
-  serialized_end=4814,
+  serialized_options=None,
+  serialized_start=4467,
+  serialized_end=4567,
 )
 _sym_db.RegisterEnumDescriptor(_CLICKHOUSECONFIG_LOGLEVEL)
 
@@ -147,21 +147,21 @@ _CLICKHOUSECONFIG_MERGETREE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='replicated_deduplication_window_seconds', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.MergeTree.replicated_deduplication_window_seconds', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -184,21 +184,21 @@ _CLICKHOUSECONFIG_COMPRESSION = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='min_part_size', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.Compression.min_part_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\003>=1')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\003>=1'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='min_part_size_ratio', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.Compression.min_part_size_ratio', index=2,
       number=3, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -206,7 +206,7 @@ _CLICKHOUSECONFIG_COMPRESSION = _descriptor.Descriptor(
   enum_types=[
     _CLICKHOUSECONFIG_COMPRESSION_METHOD,
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -229,21 +229,21 @@ _CLICKHOUSECONFIG_EXTERNALDICTIONARY_HTTPSOURCE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='format', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.HttpSource.format', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -266,49 +266,49 @@ _CLICKHOUSECONFIG_EXTERNALDICTIONARY_MYSQLSOURCE_REPLICA = _descriptor.Descripto
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\005<=253')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\005<=253'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='priority', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.MysqlSource.Replica.priority', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\002>0')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\002>0'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.MysqlSource.Replica.port', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\0070-65535')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\0070-65535'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.MysqlSource.Replica.user', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\0041-63\362\3071\r[a-zA-Z0-9_]+')), file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.MysqlSource.Replica.password', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2746,
-  serialized_end=2896,
+  serialized_start=2668,
+  serialized_end=2791,
 )
 
 _CLICKHOUSECONFIG_EXTERNALDICTIONARY_MYSQLSOURCE = _descriptor.Descriptor(
@@ -324,70 +324,70 @@ _CLICKHOUSECONFIG_EXTERNALDICTIONARY_MYSQLSOURCE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\0041-63\362\3071\r[a-zA-Z0-9_]+')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='table', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.MysqlSource.table', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\0041-63\362\3071\r[a-zA-Z0-9_]+')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.MysqlSource.port', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\0070-65535')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\0070-65535'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.MysqlSource.user', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\0041-63\362\3071\r[a-zA-Z0-9_]+')), file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.MysqlSource.password', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='replicas', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.MysqlSource.replicas', index=5,
       number=6, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\002>0')), file=DESCRIPTOR),
+      serialized_options=_b('\202\3101\002>0'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='where', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.MysqlSource.where', index=6,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='invalidate_query', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.MysqlSource.invalidate_query', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MYSQLSOURCE_REPLICA, ],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
   serialized_start=2392,
-  serialized_end=2896,
+  serialized_end=2791,
 )
 
 _CLICKHOUSECONFIG_EXTERNALDICTIONARY_CLICKHOUSESOURCE = _descriptor.Descriptor(
@@ -403,63 +403,63 @@ _CLICKHOUSECONFIG_EXTERNALDICTIONARY_CLICKHOUSESOURCE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\0041-63\362\3071\r[a-zA-Z0-9_]+')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='table', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.ClickhouseSource.table', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\0041-63\362\3071\r[a-zA-Z0-9_]+')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='host', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.ClickhouseSource.host', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\005<=253')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\005<=253'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.ClickhouseSource.port', index=3,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\0070-65535')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\0070-65535'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.ClickhouseSource.user', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\0041-63\362\3071\r[a-zA-Z0-9_]+')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.ClickhouseSource.password', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='where', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.ClickhouseSource.where', index=6,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2899,
-  serialized_end=3136,
+  serialized_start=2794,
+  serialized_end=2960,
 )
 
 _CLICKHOUSECONFIG_EXTERNALDICTIONARY_MONGODBSOURCE = _descriptor.Descriptor(
@@ -475,56 +475,56 @@ _CLICKHOUSECONFIG_EXTERNALDICTIONARY_MONGODBSOURCE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\0041-63\362\3071\r[a-zA-Z0-9_]+')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='collection', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.MongodbSource.collection', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\0041-63\362\3071\r[a-zA-Z0-9_]+')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='host', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.MongodbSource.host', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\005<=253')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\005<=253'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='port', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.MongodbSource.port', index=3,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\0070-65535')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\0070-65535'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.MongodbSource.user', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\0041-63\362\3071\r[a-zA-Z0-9_]+')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.MongodbSource.password', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3139,
-  serialized_end=3363,
+  serialized_start=2963,
+  serialized_end=3116,
 )
 
 _CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE_ATTRIBUTE = _descriptor.Descriptor(
@@ -540,56 +540,56 @@ _CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE_ATTRIBUTE = _descriptor.Descripto
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='type', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.Structure.Attribute.type', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='null_value', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.Structure.Attribute.null_value', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='expression', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.Structure.Attribute.expression', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='hierarchical', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.Structure.Attribute.hierarchical', index=4,
       number=5, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='injective', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.Structure.Attribute.injective', index=5,
       number=6, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3708,
-  serialized_end=3840,
+  serialized_start=3461,
+  serialized_end=3593,
 )
 
 _CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE_ID = _descriptor.Descriptor(
@@ -605,21 +605,21 @@ _CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE_ID = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3842,
-  serialized_end=3866,
+  serialized_start=3595,
+  serialized_end=3619,
 )
 
 _CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE_KEY = _descriptor.Descriptor(
@@ -635,21 +635,21 @@ _CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE_KEY = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\002>0')), file=DESCRIPTOR),
+      serialized_options=_b('\202\3101\002>0'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3869,
-  serialized_end=3998,
+  serialized_start=3622,
+  serialized_end=3751,
 )
 
 _CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE = _descriptor.Descriptor(
@@ -665,35 +665,35 @@ _CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='key', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.Structure.key', index=1,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='attributes', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.Structure.attributes', index=2,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\002>0')), file=DESCRIPTOR),
+      serialized_options=_b('\202\3101\002>0'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[_CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE_ATTRIBUTE, _CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE_ID, _CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE_KEY, ],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3366,
-  serialized_end=3998,
+  serialized_start=3119,
+  serialized_end=3751,
 )
 
 _CLICKHOUSECONFIG_EXTERNALDICTIONARY_LAYOUT = _descriptor.Descriptor(
@@ -709,14 +709,14 @@ _CLICKHOUSECONFIG_EXTERNALDICTIONARY_LAYOUT = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='size_in_cells', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.Layout.size_in_cells', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -724,14 +724,14 @@ _CLICKHOUSECONFIG_EXTERNALDICTIONARY_LAYOUT = _descriptor.Descriptor(
   enum_types=[
     _CLICKHOUSECONFIG_EXTERNALDICTIONARY_LAYOUT_TYPE,
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4001,
-  serialized_end=4268,
+  serialized_start=3754,
+  serialized_end=4021,
 )
 
 _CLICKHOUSECONFIG_EXTERNALDICTIONARY_RANGE = _descriptor.Descriptor(
@@ -747,28 +747,28 @@ _CLICKHOUSECONFIG_EXTERNALDICTIONARY_RANGE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='max', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.Range.max', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4270,
-  serialized_end=4303,
+  serialized_start=4023,
+  serialized_end=4056,
 )
 
 _CLICKHOUSECONFIG_EXTERNALDICTIONARY = _descriptor.Descriptor(
@@ -784,83 +784,83 @@ _CLICKHOUSECONFIG_EXTERNALDICTIONARY = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='structure', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.structure', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='layout', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.layout', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='fixed_lifetime', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.fixed_lifetime', index=3,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='lifetime_range', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.lifetime_range', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='http_source', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.http_source', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='mysql_source', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.mysql_source', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='clickhouse_source', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.clickhouse_source', index=7,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='mongodb_source', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.mongodb_source', index=8,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[_CLICKHOUSECONFIG_EXTERNALDICTIONARY_HTTPSOURCE, _CLICKHOUSECONFIG_EXTERNALDICTIONARY_MYSQLSOURCE, _CLICKHOUSECONFIG_EXTERNALDICTIONARY_CLICKHOUSESOURCE, _CLICKHOUSECONFIG_EXTERNALDICTIONARY_MONGODBSOURCE, _CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE, _CLICKHOUSECONFIG_EXTERNALDICTIONARY_LAYOUT, _CLICKHOUSECONFIG_EXTERNALDICTIONARY_RANGE, ],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
       name='lifetime', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.lifetime',
-      index=0, containing_type=None, fields=[], options=_descriptor._ParseOptions(descriptor_pb2.OneofOptions(), _b('\300\3011\001'))),
+      index=0, containing_type=None, fields=[], serialized_options=_b('\300\3011\001')),
     _descriptor.OneofDescriptor(
       name='source', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.source',
-      index=1, containing_type=None, fields=[], options=_descriptor._ParseOptions(descriptor_pb2.OneofOptions(), _b('\300\3011\001'))),
+      index=1, containing_type=None, fields=[], serialized_options=_b('\300\3011\001')),
   ],
   serialized_start=1484,
-  serialized_end=4337,
+  serialized_end=4090,
 )
 
 _CLICKHOUSECONFIG_GRAPHITEROLLUP_PATTERN_RETENTION = _descriptor.Descriptor(
@@ -876,28 +876,28 @@ _CLICKHOUSECONFIG_GRAPHITEROLLUP_PATTERN_RETENTION = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\002>0')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\002>0'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='precision', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.GraphiteRollup.Pattern.Retention.precision', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\002>0')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\002>0'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4653,
-  serialized_end=4712,
+  serialized_start=4406,
+  serialized_end=4465,
 )
 
 _CLICKHOUSECONFIG_GRAPHITEROLLUP_PATTERN = _descriptor.Descriptor(
@@ -913,35 +913,35 @@ _CLICKHOUSECONFIG_GRAPHITEROLLUP_PATTERN = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='function', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.GraphiteRollup.Pattern.function', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='retention', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.GraphiteRollup.Pattern.retention', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\002>0')), file=DESCRIPTOR),
+      serialized_options=_b('\202\3101\002>0'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[_CLICKHOUSECONFIG_GRAPHITEROLLUP_PATTERN_RETENTION, ],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4485,
-  serialized_end=4712,
+  serialized_start=4238,
+  serialized_end=4465,
 )
 
 _CLICKHOUSECONFIG_GRAPHITEROLLUP = _descriptor.Descriptor(
@@ -957,28 +957,28 @@ _CLICKHOUSECONFIG_GRAPHITEROLLUP = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='patterns', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.GraphiteRollup.patterns', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\002>0')), file=DESCRIPTOR),
+      serialized_options=_b('\202\3101\002>0'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[_CLICKHOUSECONFIG_GRAPHITEROLLUP_PATTERN, ],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4340,
-  serialized_end=4712,
+  serialized_start=4093,
+  serialized_end=4465,
 )
 
 _CLICKHOUSECONFIG = _descriptor.Descriptor(
@@ -994,84 +994,84 @@ _CLICKHOUSECONFIG = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='merge_tree', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.merge_tree', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='compression', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.compression', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dictionaries', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.dictionaries', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='graphite_rollup', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.graphite_rollup', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='max_connections', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.max_connections', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\004>=10')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\004>=10'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='max_concurrent_queries', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.max_concurrent_queries', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\004>=10')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\004>=10'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='keep_alive_timeout', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.keep_alive_timeout', index=7,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='uncompressed_cache_size', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.uncompressed_cache_size', index=8,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='mark_cache_size', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.mark_cache_size', index=9,
       number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\013>5368709120')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\013>5368709120'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='max_table_size_to_drop', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.max_table_size_to_drop', index=10,
       number=11, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='builtin_dictionaries_reload_interval', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.builtin_dictionaries_reload_interval', index=11,
       number=12, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1079,14 +1079,14 @@ _CLICKHOUSECONFIG = _descriptor.Descriptor(
   enum_types=[
     _CLICKHOUSECONFIG_LOGLEVEL,
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
   serialized_start=161,
-  serialized_end=4814,
+  serialized_end=4567,
 )
 
 
@@ -1103,35 +1103,35 @@ _CLICKHOUSECONFIGSET = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user_config', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfigSet.user_config', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='default_config', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfigSet.default_config', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4817,
-  serialized_end=5086,
+  serialized_start=4570,
+  serialized_end=4839,
 )
 
 _CLICKHOUSECONFIG_MERGETREE.fields_by_name['replicated_deduplication_window'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
@@ -1360,92 +1360,46 @@ ClickhouseConfigSet = _reflection.GeneratedProtocolMessageType('ClickhouseConfig
 _sym_db.RegisterMessage(ClickhouseConfigSet)
 
 
-DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('ZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/clickhouse/v1/config;clickhouse'))
-_CLICKHOUSECONFIG_COMPRESSION.fields_by_name['min_part_size'].has_options = True
-_CLICKHOUSECONFIG_COMPRESSION.fields_by_name['min_part_size']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\003>=1'))
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_HTTPSOURCE.fields_by_name['url'].has_options = True
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_HTTPSOURCE.fields_by_name['url']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001'))
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_HTTPSOURCE.fields_by_name['format'].has_options = True
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_HTTPSOURCE.fields_by_name['format']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001'))
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MYSQLSOURCE_REPLICA.fields_by_name['host'].has_options = True
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MYSQLSOURCE_REPLICA.fields_by_name['host']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\005<=253'))
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MYSQLSOURCE_REPLICA.fields_by_name['priority'].has_options = True
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MYSQLSOURCE_REPLICA.fields_by_name['priority']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\002>0'))
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MYSQLSOURCE_REPLICA.fields_by_name['port'].has_options = True
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MYSQLSOURCE_REPLICA.fields_by_name['port']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\0070-65535'))
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MYSQLSOURCE_REPLICA.fields_by_name['user'].has_options = True
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MYSQLSOURCE_REPLICA.fields_by_name['user']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\0041-63\362\3071\r[a-zA-Z0-9_]+'))
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MYSQLSOURCE.fields_by_name['db'].has_options = True
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MYSQLSOURCE.fields_by_name['db']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\0041-63\362\3071\r[a-zA-Z0-9_]+'))
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MYSQLSOURCE.fields_by_name['table'].has_options = True
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MYSQLSOURCE.fields_by_name['table']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\0041-63\362\3071\r[a-zA-Z0-9_]+'))
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MYSQLSOURCE.fields_by_name['port'].has_options = True
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MYSQLSOURCE.fields_by_name['port']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\0070-65535'))
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MYSQLSOURCE.fields_by_name['user'].has_options = True
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MYSQLSOURCE.fields_by_name['user']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\0041-63\362\3071\r[a-zA-Z0-9_]+'))
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MYSQLSOURCE.fields_by_name['replicas'].has_options = True
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MYSQLSOURCE.fields_by_name['replicas']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\002>0'))
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_CLICKHOUSESOURCE.fields_by_name['db'].has_options = True
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_CLICKHOUSESOURCE.fields_by_name['db']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\0041-63\362\3071\r[a-zA-Z0-9_]+'))
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_CLICKHOUSESOURCE.fields_by_name['table'].has_options = True
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_CLICKHOUSESOURCE.fields_by_name['table']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\0041-63\362\3071\r[a-zA-Z0-9_]+'))
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_CLICKHOUSESOURCE.fields_by_name['host'].has_options = True
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_CLICKHOUSESOURCE.fields_by_name['host']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\005<=253'))
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_CLICKHOUSESOURCE.fields_by_name['port'].has_options = True
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_CLICKHOUSESOURCE.fields_by_name['port']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\0070-65535'))
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_CLICKHOUSESOURCE.fields_by_name['user'].has_options = True
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_CLICKHOUSESOURCE.fields_by_name['user']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\0041-63\362\3071\r[a-zA-Z0-9_]+'))
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MONGODBSOURCE.fields_by_name['db'].has_options = True
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MONGODBSOURCE.fields_by_name['db']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\0041-63\362\3071\r[a-zA-Z0-9_]+'))
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MONGODBSOURCE.fields_by_name['collection'].has_options = True
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MONGODBSOURCE.fields_by_name['collection']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\0041-63\362\3071\r[a-zA-Z0-9_]+'))
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MONGODBSOURCE.fields_by_name['host'].has_options = True
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MONGODBSOURCE.fields_by_name['host']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\005<=253'))
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MONGODBSOURCE.fields_by_name['port'].has_options = True
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MONGODBSOURCE.fields_by_name['port']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\0070-65535'))
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MONGODBSOURCE.fields_by_name['user'].has_options = True
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MONGODBSOURCE.fields_by_name['user']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\0041-63\362\3071\r[a-zA-Z0-9_]+'))
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE_ATTRIBUTE.fields_by_name['name'].has_options = True
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE_ATTRIBUTE.fields_by_name['name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001'))
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE_ATTRIBUTE.fields_by_name['type'].has_options = True
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE_ATTRIBUTE.fields_by_name['type']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001'))
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE_ID.fields_by_name['name'].has_options = True
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE_ID.fields_by_name['name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001'))
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE_KEY.fields_by_name['attributes'].has_options = True
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE_KEY.fields_by_name['attributes']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\002>0'))
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE.fields_by_name['attributes'].has_options = True
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE.fields_by_name['attributes']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\002>0'))
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_LAYOUT.fields_by_name['type'].has_options = True
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY_LAYOUT.fields_by_name['type']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001'))
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY.oneofs_by_name['lifetime'].has_options = True
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY.oneofs_by_name['lifetime']._options = _descriptor._ParseOptions(descriptor_pb2.OneofOptions(), _b('\300\3011\001'))
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY.oneofs_by_name['source'].has_options = True
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY.oneofs_by_name['source']._options = _descriptor._ParseOptions(descriptor_pb2.OneofOptions(), _b('\300\3011\001'))
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY.fields_by_name['name'].has_options = True
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY.fields_by_name['name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001'))
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY.fields_by_name['structure'].has_options = True
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY.fields_by_name['structure']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001'))
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY.fields_by_name['layout'].has_options = True
-_CLICKHOUSECONFIG_EXTERNALDICTIONARY.fields_by_name['layout']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001'))
-_CLICKHOUSECONFIG_GRAPHITEROLLUP_PATTERN_RETENTION.fields_by_name['age'].has_options = True
-_CLICKHOUSECONFIG_GRAPHITEROLLUP_PATTERN_RETENTION.fields_by_name['age']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\002>0'))
-_CLICKHOUSECONFIG_GRAPHITEROLLUP_PATTERN_RETENTION.fields_by_name['precision'].has_options = True
-_CLICKHOUSECONFIG_GRAPHITEROLLUP_PATTERN_RETENTION.fields_by_name['precision']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\002>0'))
-_CLICKHOUSECONFIG_GRAPHITEROLLUP_PATTERN.fields_by_name['function'].has_options = True
-_CLICKHOUSECONFIG_GRAPHITEROLLUP_PATTERN.fields_by_name['function']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001'))
-_CLICKHOUSECONFIG_GRAPHITEROLLUP_PATTERN.fields_by_name['retention'].has_options = True
-_CLICKHOUSECONFIG_GRAPHITEROLLUP_PATTERN.fields_by_name['retention']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\002>0'))
-_CLICKHOUSECONFIG_GRAPHITEROLLUP.fields_by_name['name'].has_options = True
-_CLICKHOUSECONFIG_GRAPHITEROLLUP.fields_by_name['name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001'))
-_CLICKHOUSECONFIG_GRAPHITEROLLUP.fields_by_name['patterns'].has_options = True
-_CLICKHOUSECONFIG_GRAPHITEROLLUP.fields_by_name['patterns']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\002>0'))
-_CLICKHOUSECONFIG.fields_by_name['max_connections'].has_options = True
-_CLICKHOUSECONFIG.fields_by_name['max_connections']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\004>=10'))
-_CLICKHOUSECONFIG.fields_by_name['max_concurrent_queries'].has_options = True
-_CLICKHOUSECONFIG.fields_by_name['max_concurrent_queries']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\004>=10'))
-_CLICKHOUSECONFIG.fields_by_name['mark_cache_size'].has_options = True
-_CLICKHOUSECONFIG.fields_by_name['mark_cache_size']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\013>5368709120'))
-_CLICKHOUSECONFIGSET.fields_by_name['effective_config'].has_options = True
-_CLICKHOUSECONFIGSET.fields_by_name['effective_config']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001'))
+DESCRIPTOR._options = None
+_CLICKHOUSECONFIG_COMPRESSION.fields_by_name['min_part_size']._options = None
+_CLICKHOUSECONFIG_EXTERNALDICTIONARY_HTTPSOURCE.fields_by_name['url']._options = None
+_CLICKHOUSECONFIG_EXTERNALDICTIONARY_HTTPSOURCE.fields_by_name['format']._options = None
+_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MYSQLSOURCE_REPLICA.fields_by_name['host']._options = None
+_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MYSQLSOURCE_REPLICA.fields_by_name['priority']._options = None
+_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MYSQLSOURCE_REPLICA.fields_by_name['port']._options = None
+_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MYSQLSOURCE.fields_by_name['db']._options = None
+_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MYSQLSOURCE.fields_by_name['table']._options = None
+_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MYSQLSOURCE.fields_by_name['port']._options = None
+_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MYSQLSOURCE.fields_by_name['replicas']._options = None
+_CLICKHOUSECONFIG_EXTERNALDICTIONARY_CLICKHOUSESOURCE.fields_by_name['db']._options = None
+_CLICKHOUSECONFIG_EXTERNALDICTIONARY_CLICKHOUSESOURCE.fields_by_name['table']._options = None
+_CLICKHOUSECONFIG_EXTERNALDICTIONARY_CLICKHOUSESOURCE.fields_by_name['host']._options = None
+_CLICKHOUSECONFIG_EXTERNALDICTIONARY_CLICKHOUSESOURCE.fields_by_name['port']._options = None
+_CLICKHOUSECONFIG_EXTERNALDICTIONARY_CLICKHOUSESOURCE.fields_by_name['user']._options = None
+_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MONGODBSOURCE.fields_by_name['db']._options = None
+_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MONGODBSOURCE.fields_by_name['collection']._options = None
+_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MONGODBSOURCE.fields_by_name['host']._options = None
+_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MONGODBSOURCE.fields_by_name['port']._options = None
+_CLICKHOUSECONFIG_EXTERNALDICTIONARY_MONGODBSOURCE.fields_by_name['user']._options = None
+_CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE_ATTRIBUTE.fields_by_name['name']._options = None
+_CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE_ATTRIBUTE.fields_by_name['type']._options = None
+_CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE_ID.fields_by_name['name']._options = None
+_CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE_KEY.fields_by_name['attributes']._options = None
+_CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE.fields_by_name['attributes']._options = None
+_CLICKHOUSECONFIG_EXTERNALDICTIONARY_LAYOUT.fields_by_name['type']._options = None
+_CLICKHOUSECONFIG_EXTERNALDICTIONARY.oneofs_by_name['lifetime']._options = None
+_CLICKHOUSECONFIG_EXTERNALDICTIONARY.oneofs_by_name['source']._options = None
+_CLICKHOUSECONFIG_EXTERNALDICTIONARY.fields_by_name['name']._options = None
+_CLICKHOUSECONFIG_EXTERNALDICTIONARY.fields_by_name['structure']._options = None
+_CLICKHOUSECONFIG_EXTERNALDICTIONARY.fields_by_name['layout']._options = None
+_CLICKHOUSECONFIG_GRAPHITEROLLUP_PATTERN_RETENTION.fields_by_name['age']._options = None
+_CLICKHOUSECONFIG_GRAPHITEROLLUP_PATTERN_RETENTION.fields_by_name['precision']._options = None
+_CLICKHOUSECONFIG_GRAPHITEROLLUP_PATTERN.fields_by_name['function']._options = None
+_CLICKHOUSECONFIG_GRAPHITEROLLUP_PATTERN.fields_by_name['retention']._options = None
+_CLICKHOUSECONFIG_GRAPHITEROLLUP.fields_by_name['name']._options = None
+_CLICKHOUSECONFIG_GRAPHITEROLLUP.fields_by_name['patterns']._options = None
+_CLICKHOUSECONFIG.fields_by_name['max_connections']._options = None
+_CLICKHOUSECONFIG.fields_by_name['max_concurrent_queries']._options = None
+_CLICKHOUSECONFIG.fields_by_name['mark_cache_size']._options = None
+_CLICKHOUSECONFIGSET.fields_by_name['effective_config']._options = None
 # @@protoc_insertion_point(module_scope)

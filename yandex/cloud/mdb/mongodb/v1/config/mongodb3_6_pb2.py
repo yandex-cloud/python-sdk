@@ -7,7 +7,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -21,6 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/mdb/mongodb/v1/config/mongodb3_6.proto',
   package='yandex.cloud.mdb.mongodb.v1.config',
   syntax='proto3',
+  serialized_options=_b('ZNgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1/config;mongodb'),
   serialized_pb=_b('\n3yandex/cloud/mdb/mongodb/v1/config/mongodb3_6.proto\x12\"yandex.cloud.mdb.mongodb.v1.config\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\x9e\x0b\n\x0fMongodConfig3_6\x12L\n\x07storage\x18\x01 \x01(\x0b\x32;.yandex.cloud.mdb.mongodb.v1.config.MongodConfig3_6.Storage\x12\x63\n\x13operation_profiling\x18\x02 \x01(\x0b\x32\x46.yandex.cloud.mdb.mongodb.v1.config.MongodConfig3_6.OperationProfiling\x12H\n\x03net\x18\x03 \x01(\x0b\x32;.yandex.cloud.mdb.mongodb.v1.config.MongodConfig3_6.Network\x1a\xc6\x06\n\x07Storage\x12[\n\x0bwired_tiger\x18\x01 \x01(\x0b\x32\x46.yandex.cloud.mdb.mongodb.v1.config.MongodConfig3_6.Storage.WiredTiger\x12T\n\x07journal\x18\x02 \x01(\x0b\x32\x43.yandex.cloud.mdb.mongodb.v1.config.MongodConfig3_6.Storage.Journal\x1a\x8e\x04\n\nWiredTiger\x12j\n\rengine_config\x18\x01 \x01(\x0b\x32S.yandex.cloud.mdb.mongodb.v1.config.MongodConfig3_6.Storage.WiredTiger.EngineConfig\x12r\n\x11\x63ollection_config\x18\x02 \x01(\x0b\x32W.yandex.cloud.mdb.mongodb.v1.config.MongodConfig3_6.Storage.WiredTiger.CollectionConfig\x1a\x43\n\x0c\x45ngineConfig\x12\x33\n\rcache_size_gb\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\x1a\xda\x01\n\x10\x43ollectionConfig\x12|\n\x10\x62lock_compressor\x18\x01 \x01(\x0e\x32\x62.yandex.cloud.mdb.mongodb.v1.config.MongodConfig3_6.Storage.WiredTiger.CollectionConfig.Compressor\"H\n\nCompressor\x12\x1a\n\x16\x43OMPRESSOR_UNSPECIFIED\x10\x00\x12\x08\n\x04NONE\x10\x01\x12\n\n\x06SNAPPY\x10\x02\x12\x08\n\x04ZLIB\x10\x03\x1aw\n\x07Journal\x12+\n\x07\x65nabled\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12?\n\x0f\x63ommit_interval\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\t\xfa\xc7\x31\x05\x31-500\x1a\xec\x01\n\x12OperationProfiling\x12Y\n\x04mode\x18\x01 \x01(\x0e\x32K.yandex.cloud.mdb.mongodb.v1.config.MongodConfig3_6.OperationProfiling.Mode\x12>\n\x11slow_op_threshold\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x06\xfa\xc7\x31\x02>0\";\n\x04Mode\x12\x14\n\x10MODE_UNSPECIFIED\x10\x00\x12\x07\n\x03OFF\x10\x01\x12\x0b\n\x07SLOW_OP\x10\x02\x12\x07\n\x03\x41LL\x10\x03\x1aV\n\x07Network\x12K\n\x18max_incoming_connections\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0c\xfa\xc7\x31\x08\x31\x30-16384\"\xfa\x01\n\x12MongodConfigSet3_6\x12M\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32\x33.yandex.cloud.mdb.mongodb.v1.config.MongodConfig3_6\x12H\n\x0buser_config\x18\x02 \x01(\x0b\x32\x33.yandex.cloud.mdb.mongodb.v1.config.MongodConfig3_6\x12K\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32\x33.yandex.cloud.mdb.mongodb.v1.config.MongodConfig3_6BPZNgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1/config;mongodbb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
@@ -35,23 +35,23 @@ _MONGODCONFIG3_6_STORAGE_WIREDTIGER_COLLECTIONCONFIG_COMPRESSOR = _descriptor.En
   values=[
     _descriptor.EnumValueDescriptor(
       name='COMPRESSOR_UNSPECIFIED', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='NONE', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='SNAPPY', index=2, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='ZLIB', index=3, number=3,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
+  serialized_options=None,
   serialized_start=1073,
   serialized_end=1145,
 )
@@ -65,23 +65,23 @@ _MONGODCONFIG3_6_OPERATIONPROFILING_MODE = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='MODE_UNSPECIFIED', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='OFF', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='SLOW_OP', index=2, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='ALL', index=3, number=3,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
+  serialized_options=None,
   serialized_start=1446,
   serialized_end=1505,
 )
@@ -101,14 +101,14 @@ _MONGODCONFIG3_6_STORAGE_WIREDTIGER_ENGINECONFIG = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -131,7 +131,7 @@ _MONGODCONFIG3_6_STORAGE_WIREDTIGER_COLLECTIONCONFIG = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -139,7 +139,7 @@ _MONGODCONFIG3_6_STORAGE_WIREDTIGER_COLLECTIONCONFIG = _descriptor.Descriptor(
   enum_types=[
     _MONGODCONFIG3_6_STORAGE_WIREDTIGER_COLLECTIONCONFIG_COMPRESSOR,
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -162,21 +162,21 @@ _MONGODCONFIG3_6_STORAGE_WIREDTIGER = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='collection_config', full_name='yandex.cloud.mdb.mongodb.v1.config.MongodConfig3_6.Storage.WiredTiger.collection_config', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[_MONGODCONFIG3_6_STORAGE_WIREDTIGER_ENGINECONFIG, _MONGODCONFIG3_6_STORAGE_WIREDTIGER_COLLECTIONCONFIG, ],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -199,21 +199,21 @@ _MONGODCONFIG3_6_STORAGE_JOURNAL = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='commit_interval', full_name='yandex.cloud.mdb.mongodb.v1.config.MongodConfig3_6.Storage.Journal.commit_interval', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\0051-500')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\0051-500'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -236,21 +236,21 @@ _MONGODCONFIG3_6_STORAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='journal', full_name='yandex.cloud.mdb.mongodb.v1.config.MongodConfig3_6.Storage.journal', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[_MONGODCONFIG3_6_STORAGE_WIREDTIGER, _MONGODCONFIG3_6_STORAGE_JOURNAL, ],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -273,14 +273,14 @@ _MONGODCONFIG3_6_OPERATIONPROFILING = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='slow_op_threshold', full_name='yandex.cloud.mdb.mongodb.v1.config.MongodConfig3_6.OperationProfiling.slow_op_threshold', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\002>0')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\002>0'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -288,7 +288,7 @@ _MONGODCONFIG3_6_OPERATIONPROFILING = _descriptor.Descriptor(
   enum_types=[
     _MONGODCONFIG3_6_OPERATIONPROFILING_MODE,
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -311,14 +311,14 @@ _MONGODCONFIG3_6_NETWORK = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\01010-16384')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\01010-16384'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -341,28 +341,28 @@ _MONGODCONFIG3_6 = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='operation_profiling', full_name='yandex.cloud.mdb.mongodb.v1.config.MongodConfig3_6.operation_profiling', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='net', full_name='yandex.cloud.mdb.mongodb.v1.config.MongodConfig3_6.net', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[_MONGODCONFIG3_6_STORAGE, _MONGODCONFIG3_6_OPERATIONPROFILING, _MONGODCONFIG3_6_NETWORK, ],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -386,28 +386,28 @@ _MONGODCONFIGSET3_6 = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user_config', full_name='yandex.cloud.mdb.mongodb.v1.config.MongodConfigSet3_6.user_config', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='default_config', full_name='yandex.cloud.mdb.mongodb.v1.config.MongodConfigSet3_6.default_config', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -518,12 +518,8 @@ MongodConfigSet3_6 = _reflection.GeneratedProtocolMessageType('MongodConfigSet3_
 _sym_db.RegisterMessage(MongodConfigSet3_6)
 
 
-DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('ZNgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1/config;mongodb'))
-_MONGODCONFIG3_6_STORAGE_JOURNAL.fields_by_name['commit_interval'].has_options = True
-_MONGODCONFIG3_6_STORAGE_JOURNAL.fields_by_name['commit_interval']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\0051-500'))
-_MONGODCONFIG3_6_OPERATIONPROFILING.fields_by_name['slow_op_threshold'].has_options = True
-_MONGODCONFIG3_6_OPERATIONPROFILING.fields_by_name['slow_op_threshold']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\002>0'))
-_MONGODCONFIG3_6_NETWORK.fields_by_name['max_incoming_connections'].has_options = True
-_MONGODCONFIG3_6_NETWORK.fields_by_name['max_incoming_connections']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\01010-16384'))
+DESCRIPTOR._options = None
+_MONGODCONFIG3_6_STORAGE_JOURNAL.fields_by_name['commit_interval']._options = None
+_MONGODCONFIG3_6_OPERATIONPROFILING.fields_by_name['slow_op_threshold']._options = None
+_MONGODCONFIG3_6_NETWORK.fields_by_name['max_incoming_connections']._options = None
 # @@protoc_insertion_point(module_scope)

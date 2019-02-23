@@ -7,7 +7,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -22,6 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/iam/v1/user_account_service.proto',
   package='yandex.cloud.iam.v1',
   syntax='proto3',
+  serialized_options=_b('Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iam'),
   serialized_pb=_b('\n.yandex/cloud/iam/v1/user_account_service.proto\x12\x13yandex.cloud.iam.v1\x1a\x1cgoogle/api/annotations.proto\x1a&yandex/cloud/iam/v1/user_account.proto\x1a\x1dyandex/cloud/validation.proto\">\n\x15GetUserAccountRequest\x12%\n\x0fuser_account_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=502\x9a\x01\n\x12UserAccountService\x12\x83\x01\n\x03Get\x12*.yandex.cloud.iam.v1.GetUserAccountRequest\x1a .yandex.cloud.iam.v1.UserAccount\".\x82\xd3\xe4\x93\x02(\x12&/iam/v1/userAccounts/{user_account_id}B=Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_iam_dot_v1_dot_user__account__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
@@ -42,14 +42,14 @@ _GETUSERACCOUNTREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -70,17 +70,15 @@ GetUserAccountRequest = _reflection.GeneratedProtocolMessageType('GetUserAccount
 _sym_db.RegisterMessage(GetUserAccountRequest)
 
 
-DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iam'))
-_GETUSERACCOUNTREQUEST.fields_by_name['user_account_id'].has_options = True
-_GETUSERACCOUNTREQUEST.fields_by_name['user_account_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
+DESCRIPTOR._options = None
+_GETUSERACCOUNTREQUEST.fields_by_name['user_account_id']._options = None
 
 _USERACCOUNTSERVICE = _descriptor.ServiceDescriptor(
   name='UserAccountService',
   full_name='yandex.cloud.iam.v1.UserAccountService',
   file=DESCRIPTOR,
   index=0,
-  options=None,
+  serialized_options=None,
   serialized_start=237,
   serialized_end=391,
   methods=[
@@ -91,7 +89,7 @@ _USERACCOUNTSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETUSERACCOUNTREQUEST,
     output_type=yandex_dot_cloud_dot_iam_dot_v1_dot_user__account__pb2._USERACCOUNT,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002(\022&/iam/v1/userAccounts/{user_account_id}')),
+    serialized_options=_b('\202\323\344\223\002(\022&/iam/v1/userAccounts/{user_account_id}'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_USERACCOUNTSERVICE)

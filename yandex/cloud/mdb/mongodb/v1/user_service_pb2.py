@@ -7,7 +7,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -25,7 +24,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/mdb/mongodb/v1/user_service.proto',
   package='yandex.cloud.mdb.mongodb.v1',
   syntax='proto3',
-  serialized_pb=_b('\n.yandex/cloud/mdb/mongodb/v1/user_service.proto\x12\x1byandex.cloud.mdb.mongodb.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1dyandex/cloud/validation.proto\x1a&yandex/cloud/operation/operation.proto\x1a&yandex/cloud/mdb/mongodb/v1/user.proto\x1a\x1ayandex/api/operation.proto\"d\n\x0eGetUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x30\n\tuser_name\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04\x31-63\xf2\xc7\x31\r[a-zA-Z0-9_]+\"r\n\x10ListUsersRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"^\n\x11ListUsersResponse\x12\x30\n\x05users\x18\x01 \x03(\x0b\x32!.yandex.cloud.mdb.mongodb.v1.User\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"o\n\x11\x43reateUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x38\n\tuser_spec\x18\x02 \x01(\x0b\x32%.yandex.cloud.mdb.mongodb.v1.UserSpec\";\n\x12\x43reateUserMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\"\xf3\x01\n\x11UpdateUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x30\n\tuser_name\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04\x31-63\xf2\xc7\x31\r[a-zA-Z0-9_]+\x12/\n\x0bupdate_mask\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1b\n\x08password\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05\x38-128\x12<\n\x0bpermissions\x18\x05 \x03(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.Permission\";\n\x12UpdateUserMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\"g\n\x11\x44\x65leteUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x30\n\tuser_name\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04\x31-63\xf2\xc7\x31\r[a-zA-Z0-9_]+\";\n\x12\x44\x65leteUserMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\"\xb3\x01\n\x1aGrantUserPermissionRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x30\n\tuser_name\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04\x31-63\xf2\xc7\x31\r[a-zA-Z0-9_]+\x12\x41\n\npermission\x18\x03 \x01(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.PermissionB\x04\xe8\xc7\x31\x01\"D\n\x1bGrantUserPermissionMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\"\xa7\x01\n\x1bRevokeUserPermissionRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x30\n\tuser_name\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04\x31-63\xf2\xc7\x31\r[a-zA-Z0-9_]+\x12\x34\n\rdatabase_name\x18\x03 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04\x31-63\xf2\xc7\x31\r[a-zA-Z0-9_]+\"E\n\x1cRevokeUserPermissionMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t2\xfb\n\n\x0bUserService\x12\x9a\x01\n\x03Get\x12+.yandex.cloud.mdb.mongodb.v1.GetUserRequest\x1a!.yandex.cloud.mdb.mongodb.v1.User\"C\x82\xd3\xe4\x93\x02=\x12;/managed-mongodb/v1/clusters/{cluster_id}/users/{user_name}\x12\x9e\x01\n\x04List\x12-.yandex.cloud.mdb.mongodb.v1.ListUsersRequest\x1a..yandex.cloud.mdb.mongodb.v1.ListUsersResponse\"7\x82\xd3\xe4\x93\x02\x31\x12//managed-mongodb/v1/clusters/{cluster_id}/users\x12\xb5\x01\n\x06\x43reate\x12..yandex.cloud.mdb.mongodb.v1.CreateUserRequest\x1a!.yandex.cloud.operation.Operation\"X\x82\xd3\xe4\x93\x02\x34\"//managed-mongodb/v1/clusters/{cluster_id}/users:\x01*\xb2\xd2*\x1a\n\x12\x43reateUserMetadata\x12\x04User\x12\xc1\x01\n\x06Update\x12..yandex.cloud.mdb.mongodb.v1.UpdateUserRequest\x1a!.yandex.cloud.operation.Operation\"d\x82\xd3\xe4\x93\x02@2;/managed-mongodb/v1/clusters/{cluster_id}/users/{user_name}:\x01*\xb2\xd2*\x1a\n\x12UpdateUserMetadata\x12\x04User\x12\xcf\x01\n\x06\x44\x65lete\x12..yandex.cloud.mdb.mongodb.v1.DeleteUserRequest\x1a!.yandex.cloud.operation.Operation\"r\x82\xd3\xe4\x93\x02=*;/managed-mongodb/v1/clusters/{cluster_id}/users/{user_name}\xb2\xd2*+\n\x12\x44\x65leteUserMetadata\x12\x15google.protobuf.Empty\x12\xec\x01\n\x0fGrantPermission\x12\x37.yandex.cloud.mdb.mongodb.v1.GrantUserPermissionRequest\x1a!.yandex.cloud.operation.Operation\"}\x82\xd3\xe4\x93\x02P\"K/managed-mongodb/v1/clusters/{cluster_id}/users/{user_name}:grantPermission:\x01*\xb2\xd2*#\n\x1bGrantUserPermissionMetadata\x12\x04User\x12\xf0\x01\n\x10RevokePermission\x12\x38.yandex.cloud.mdb.mongodb.v1.RevokeUserPermissionRequest\x1a!.yandex.cloud.operation.Operation\"\x7f\x82\xd3\xe4\x93\x02Q\"L/managed-mongodb/v1/clusters/{cluster_id}/users/{user_name}:revokePermission:\x01*\xb2\xd2*$\n\x1cRevokeUserPermissionMetadata\x12\x04UserBIZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1;mongodbb\x06proto3')
+  serialized_options=_b('ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1;mongodb'),
+  serialized_pb=_b('\n.yandex/cloud/mdb/mongodb/v1/user_service.proto\x12\x1byandex.cloud.mdb.mongodb.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1dyandex/cloud/validation.proto\x1a&yandex/cloud/operation/operation.proto\x1a&yandex/cloud/mdb/mongodb/v1/user.proto\x1a\x1ayandex/api/operation.proto\"d\n\x0eGetUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x30\n\tuser_name\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\r[a-zA-Z0-9_]*\"r\n\x10ListUsersRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"^\n\x11ListUsersResponse\x12\x30\n\x05users\x18\x01 \x03(\x0b\x32!.yandex.cloud.mdb.mongodb.v1.User\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"o\n\x11\x43reateUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x38\n\tuser_spec\x18\x02 \x01(\x0b\x32%.yandex.cloud.mdb.mongodb.v1.UserSpec\";\n\x12\x43reateUserMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\"\xf3\x01\n\x11UpdateUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x30\n\tuser_name\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\r[a-zA-Z0-9_]*\x12/\n\x0bupdate_mask\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1b\n\x08password\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05\x38-128\x12<\n\x0bpermissions\x18\x05 \x03(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.Permission\";\n\x12UpdateUserMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\"g\n\x11\x44\x65leteUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x30\n\tuser_name\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\r[a-zA-Z0-9_]*\";\n\x12\x44\x65leteUserMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\"\xb3\x01\n\x1aGrantUserPermissionRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x30\n\tuser_name\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\r[a-zA-Z0-9_]*\x12\x41\n\npermission\x18\x03 \x01(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.PermissionB\x04\xe8\xc7\x31\x01\"D\n\x1bGrantUserPermissionMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\"\xa8\x01\n\x1bRevokeUserPermissionRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x30\n\tuser_name\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\r[a-zA-Z0-9_]*\x12\x35\n\rdatabase_name\x18\x03 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"E\n\x1cRevokeUserPermissionMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t2\xfb\n\n\x0bUserService\x12\x9a\x01\n\x03Get\x12+.yandex.cloud.mdb.mongodb.v1.GetUserRequest\x1a!.yandex.cloud.mdb.mongodb.v1.User\"C\x82\xd3\xe4\x93\x02=\x12;/managed-mongodb/v1/clusters/{cluster_id}/users/{user_name}\x12\x9e\x01\n\x04List\x12-.yandex.cloud.mdb.mongodb.v1.ListUsersRequest\x1a..yandex.cloud.mdb.mongodb.v1.ListUsersResponse\"7\x82\xd3\xe4\x93\x02\x31\x12//managed-mongodb/v1/clusters/{cluster_id}/users\x12\xb5\x01\n\x06\x43reate\x12..yandex.cloud.mdb.mongodb.v1.CreateUserRequest\x1a!.yandex.cloud.operation.Operation\"X\x82\xd3\xe4\x93\x02\x34\"//managed-mongodb/v1/clusters/{cluster_id}/users:\x01*\xb2\xd2*\x1a\n\x12\x43reateUserMetadata\x12\x04User\x12\xc1\x01\n\x06Update\x12..yandex.cloud.mdb.mongodb.v1.UpdateUserRequest\x1a!.yandex.cloud.operation.Operation\"d\x82\xd3\xe4\x93\x02@2;/managed-mongodb/v1/clusters/{cluster_id}/users/{user_name}:\x01*\xb2\xd2*\x1a\n\x12UpdateUserMetadata\x12\x04User\x12\xcf\x01\n\x06\x44\x65lete\x12..yandex.cloud.mdb.mongodb.v1.DeleteUserRequest\x1a!.yandex.cloud.operation.Operation\"r\x82\xd3\xe4\x93\x02=*;/managed-mongodb/v1/clusters/{cluster_id}/users/{user_name}\xb2\xd2*+\n\x12\x44\x65leteUserMetadata\x12\x15google.protobuf.Empty\x12\xec\x01\n\x0fGrantPermission\x12\x37.yandex.cloud.mdb.mongodb.v1.GrantUserPermissionRequest\x1a!.yandex.cloud.operation.Operation\"}\x82\xd3\xe4\x93\x02P\"K/managed-mongodb/v1/clusters/{cluster_id}/users/{user_name}:grantPermission:\x01*\xb2\xd2*#\n\x1bGrantUserPermissionMetadata\x12\x04User\x12\xf0\x01\n\x10RevokePermission\x12\x38.yandex.cloud.mdb.mongodb.v1.RevokeUserPermissionRequest\x1a!.yandex.cloud.operation.Operation\"\x7f\x82\xd3\xe4\x93\x02Q\"L/managed-mongodb/v1/clusters/{cluster_id}/users/{user_name}:revokePermission:\x01*\xb2\xd2*$\n\x1cRevokeUserPermissionMetadata\x12\x04UserBIZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1;mongodbb\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_user__pb2.DESCRIPTOR,yandex_dot_api_dot_operation__pb2.DESCRIPTOR,])
 
@@ -45,21 +45,21 @@ _GETUSERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user_name', full_name='yandex.cloud.mdb.mongodb.v1.GetUserRequest.user_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\0041-63\362\3071\r[a-zA-Z0-9_]+')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=63\362\3071\r[a-zA-Z0-9_]*'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -83,28 +83,28 @@ _LISTUSERSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.mdb.mongodb.v1.ListUsersRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\006<=1000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.mdb.mongodb.v1.ListUsersRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=100'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -128,21 +128,21 @@ _LISTUSERSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.mdb.mongodb.v1.ListUsersResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -166,21 +166,21 @@ _CREATEUSERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user_spec', full_name='yandex.cloud.mdb.mongodb.v1.CreateUserRequest.user_spec', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -204,21 +204,21 @@ _CREATEUSERMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user_name', full_name='yandex.cloud.mdb.mongodb.v1.CreateUserMetadata.user_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -242,42 +242,42 @@ _UPDATEUSERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user_name', full_name='yandex.cloud.mdb.mongodb.v1.UpdateUserRequest.user_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\0041-63\362\3071\r[a-zA-Z0-9_]+')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=63\362\3071\r[a-zA-Z0-9_]*'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='update_mask', full_name='yandex.cloud.mdb.mongodb.v1.UpdateUserRequest.update_mask', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='password', full_name='yandex.cloud.mdb.mongodb.v1.UpdateUserRequest.password', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\0058-128')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\0058-128'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='permissions', full_name='yandex.cloud.mdb.mongodb.v1.UpdateUserRequest.permissions', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -301,21 +301,21 @@ _UPDATEUSERMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user_name', full_name='yandex.cloud.mdb.mongodb.v1.UpdateUserMetadata.user_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -339,21 +339,21 @@ _DELETEUSERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user_name', full_name='yandex.cloud.mdb.mongodb.v1.DeleteUserRequest.user_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\0041-63\362\3071\r[a-zA-Z0-9_]+')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=63\362\3071\r[a-zA-Z0-9_]*'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -377,21 +377,21 @@ _DELETEUSERMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user_name', full_name='yandex.cloud.mdb.mongodb.v1.DeleteUserMetadata.user_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -415,28 +415,28 @@ _GRANTUSERPERMISSIONREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user_name', full_name='yandex.cloud.mdb.mongodb.v1.GrantUserPermissionRequest.user_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\0041-63\362\3071\r[a-zA-Z0-9_]+')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=63\362\3071\r[a-zA-Z0-9_]*'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='permission', full_name='yandex.cloud.mdb.mongodb.v1.GrantUserPermissionRequest.permission', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -460,21 +460,21 @@ _GRANTUSERPERMISSIONMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user_name', full_name='yandex.cloud.mdb.mongodb.v1.GrantUserPermissionMetadata.user_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -498,35 +498,35 @@ _REVOKEUSERPERMISSIONREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user_name', full_name='yandex.cloud.mdb.mongodb.v1.RevokeUserPermissionRequest.user_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\0041-63\362\3071\r[a-zA-Z0-9_]+')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=63\362\3071\r[a-zA-Z0-9_]*'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='database_name', full_name='yandex.cloud.mdb.mongodb.v1.RevokeUserPermissionRequest.database_name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\0041-63\362\3071\r[a-zA-Z0-9_]+')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=63\362\3071\016[a-zA-Z0-9_-]*'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
   serialized_start=1496,
-  serialized_end=1663,
+  serialized_end=1664,
 )
 
 
@@ -543,28 +543,28 @@ _REVOKEUSERPERMISSIONMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user_name', full_name='yandex.cloud.mdb.mongodb.v1.RevokeUserPermissionMetadata.user_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1665,
-  serialized_end=1734,
+  serialized_start=1666,
+  serialized_end=1735,
 )
 
 _LISTUSERSRESPONSE.fields_by_name['users'].message_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_user__pb2._USER
@@ -679,51 +679,33 @@ RevokeUserPermissionMetadata = _reflection.GeneratedProtocolMessageType('RevokeU
 _sym_db.RegisterMessage(RevokeUserPermissionMetadata)
 
 
-DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1;mongodb'))
-_GETUSERREQUEST.fields_by_name['cluster_id'].has_options = True
-_GETUSERREQUEST.fields_by_name['cluster_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_GETUSERREQUEST.fields_by_name['user_name'].has_options = True
-_GETUSERREQUEST.fields_by_name['user_name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\0041-63\362\3071\r[a-zA-Z0-9_]+'))
-_LISTUSERSREQUEST.fields_by_name['cluster_id'].has_options = True
-_LISTUSERSREQUEST.fields_by_name['cluster_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_LISTUSERSREQUEST.fields_by_name['page_size'].has_options = True
-_LISTUSERSREQUEST.fields_by_name['page_size']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000'))
-_LISTUSERSREQUEST.fields_by_name['page_token'].has_options = True
-_LISTUSERSREQUEST.fields_by_name['page_token']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100'))
-_CREATEUSERREQUEST.fields_by_name['cluster_id'].has_options = True
-_CREATEUSERREQUEST.fields_by_name['cluster_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_UPDATEUSERREQUEST.fields_by_name['cluster_id'].has_options = True
-_UPDATEUSERREQUEST.fields_by_name['cluster_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_UPDATEUSERREQUEST.fields_by_name['user_name'].has_options = True
-_UPDATEUSERREQUEST.fields_by_name['user_name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\0041-63\362\3071\r[a-zA-Z0-9_]+'))
-_UPDATEUSERREQUEST.fields_by_name['password'].has_options = True
-_UPDATEUSERREQUEST.fields_by_name['password']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\0058-128'))
-_DELETEUSERREQUEST.fields_by_name['cluster_id'].has_options = True
-_DELETEUSERREQUEST.fields_by_name['cluster_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_DELETEUSERREQUEST.fields_by_name['user_name'].has_options = True
-_DELETEUSERREQUEST.fields_by_name['user_name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\0041-63\362\3071\r[a-zA-Z0-9_]+'))
-_GRANTUSERPERMISSIONREQUEST.fields_by_name['cluster_id'].has_options = True
-_GRANTUSERPERMISSIONREQUEST.fields_by_name['cluster_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_GRANTUSERPERMISSIONREQUEST.fields_by_name['user_name'].has_options = True
-_GRANTUSERPERMISSIONREQUEST.fields_by_name['user_name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\0041-63\362\3071\r[a-zA-Z0-9_]+'))
-_GRANTUSERPERMISSIONREQUEST.fields_by_name['permission'].has_options = True
-_GRANTUSERPERMISSIONREQUEST.fields_by_name['permission']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001'))
-_REVOKEUSERPERMISSIONREQUEST.fields_by_name['cluster_id'].has_options = True
-_REVOKEUSERPERMISSIONREQUEST.fields_by_name['cluster_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_REVOKEUSERPERMISSIONREQUEST.fields_by_name['user_name'].has_options = True
-_REVOKEUSERPERMISSIONREQUEST.fields_by_name['user_name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\0041-63\362\3071\r[a-zA-Z0-9_]+'))
-_REVOKEUSERPERMISSIONREQUEST.fields_by_name['database_name'].has_options = True
-_REVOKEUSERPERMISSIONREQUEST.fields_by_name['database_name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\0041-63\362\3071\r[a-zA-Z0-9_]+'))
+DESCRIPTOR._options = None
+_GETUSERREQUEST.fields_by_name['cluster_id']._options = None
+_GETUSERREQUEST.fields_by_name['user_name']._options = None
+_LISTUSERSREQUEST.fields_by_name['cluster_id']._options = None
+_LISTUSERSREQUEST.fields_by_name['page_size']._options = None
+_LISTUSERSREQUEST.fields_by_name['page_token']._options = None
+_CREATEUSERREQUEST.fields_by_name['cluster_id']._options = None
+_UPDATEUSERREQUEST.fields_by_name['cluster_id']._options = None
+_UPDATEUSERREQUEST.fields_by_name['user_name']._options = None
+_UPDATEUSERREQUEST.fields_by_name['password']._options = None
+_DELETEUSERREQUEST.fields_by_name['cluster_id']._options = None
+_DELETEUSERREQUEST.fields_by_name['user_name']._options = None
+_GRANTUSERPERMISSIONREQUEST.fields_by_name['cluster_id']._options = None
+_GRANTUSERPERMISSIONREQUEST.fields_by_name['user_name']._options = None
+_GRANTUSERPERMISSIONREQUEST.fields_by_name['permission']._options = None
+_REVOKEUSERPERMISSIONREQUEST.fields_by_name['cluster_id']._options = None
+_REVOKEUSERPERMISSIONREQUEST.fields_by_name['user_name']._options = None
+_REVOKEUSERPERMISSIONREQUEST.fields_by_name['database_name']._options = None
 
 _USERSERVICE = _descriptor.ServiceDescriptor(
   name='UserService',
   full_name='yandex.cloud.mdb.mongodb.v1.UserService',
   file=DESCRIPTOR,
   index=0,
-  options=None,
-  serialized_start=1737,
-  serialized_end=3140,
+  serialized_options=None,
+  serialized_start=1738,
+  serialized_end=3141,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
@@ -732,7 +714,7 @@ _USERSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETUSERREQUEST,
     output_type=yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_user__pb2._USER,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002=\022;/managed-mongodb/v1/clusters/{cluster_id}/users/{user_name}')),
+    serialized_options=_b('\202\323\344\223\002=\022;/managed-mongodb/v1/clusters/{cluster_id}/users/{user_name}'),
   ),
   _descriptor.MethodDescriptor(
     name='List',
@@ -741,7 +723,7 @@ _USERSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTUSERSREQUEST,
     output_type=_LISTUSERSRESPONSE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\0021\022//managed-mongodb/v1/clusters/{cluster_id}/users')),
+    serialized_options=_b('\202\323\344\223\0021\022//managed-mongodb/v1/clusters/{cluster_id}/users'),
   ),
   _descriptor.MethodDescriptor(
     name='Create',
@@ -750,7 +732,7 @@ _USERSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_CREATEUSERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\0024\"//managed-mongodb/v1/clusters/{cluster_id}/users:\001*\262\322*\032\n\022CreateUserMetadata\022\004User')),
+    serialized_options=_b('\202\323\344\223\0024\"//managed-mongodb/v1/clusters/{cluster_id}/users:\001*\262\322*\032\n\022CreateUserMetadata\022\004User'),
   ),
   _descriptor.MethodDescriptor(
     name='Update',
@@ -759,7 +741,7 @@ _USERSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATEUSERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002@2;/managed-mongodb/v1/clusters/{cluster_id}/users/{user_name}:\001*\262\322*\032\n\022UpdateUserMetadata\022\004User')),
+    serialized_options=_b('\202\323\344\223\002@2;/managed-mongodb/v1/clusters/{cluster_id}/users/{user_name}:\001*\262\322*\032\n\022UpdateUserMetadata\022\004User'),
   ),
   _descriptor.MethodDescriptor(
     name='Delete',
@@ -768,7 +750,7 @@ _USERSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DELETEUSERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002=*;/managed-mongodb/v1/clusters/{cluster_id}/users/{user_name}\262\322*+\n\022DeleteUserMetadata\022\025google.protobuf.Empty')),
+    serialized_options=_b('\202\323\344\223\002=*;/managed-mongodb/v1/clusters/{cluster_id}/users/{user_name}\262\322*+\n\022DeleteUserMetadata\022\025google.protobuf.Empty'),
   ),
   _descriptor.MethodDescriptor(
     name='GrantPermission',
@@ -777,7 +759,7 @@ _USERSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GRANTUSERPERMISSIONREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002P\"K/managed-mongodb/v1/clusters/{cluster_id}/users/{user_name}:grantPermission:\001*\262\322*#\n\033GrantUserPermissionMetadata\022\004User')),
+    serialized_options=_b('\202\323\344\223\002P\"K/managed-mongodb/v1/clusters/{cluster_id}/users/{user_name}:grantPermission:\001*\262\322*#\n\033GrantUserPermissionMetadata\022\004User'),
   ),
   _descriptor.MethodDescriptor(
     name='RevokePermission',
@@ -786,7 +768,7 @@ _USERSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_REVOKEUSERPERMISSIONREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002Q\"L/managed-mongodb/v1/clusters/{cluster_id}/users/{user_name}:revokePermission:\001*\262\322*$\n\034RevokeUserPermissionMetadata\022\004User')),
+    serialized_options=_b('\202\323\344\223\002Q\"L/managed-mongodb/v1/clusters/{cluster_id}/users/{user_name}:revokePermission:\001*\262\322*$\n\034RevokeUserPermissionMetadata\022\004User'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_USERSERVICE)

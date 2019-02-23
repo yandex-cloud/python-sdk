@@ -7,7 +7,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -25,6 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/compute/v1/disk_service.proto',
   package='yandex.cloud.compute.v1',
   syntax='proto3',
+  serialized_options=_b('ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;compute'),
   serialized_pb=_b('\n*yandex/cloud/compute/v1/disk_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1ayandex/api/operation.proto\x1a\"yandex/cloud/compute/v1/disk.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"/\n\x0eGetDiskRequest\x12\x1d\n\x07\x64isk_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x8d\x01\n\x10ListDisksRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"Z\n\x11ListDisksResponse\x12,\n\x05\x64isks\x18\x01 \x03(\x0b\x32\x1d.yandex.cloud.compute.v1.Disk\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xee\x03\n\x11\x43reateDiskRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x87\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x36.yandex.cloud.compute.v1.CreateDiskRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12\x19\n\x07type_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\x07zone_id\x18\x06 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12+\n\x04size\x18\x07 \x01(\x03\x42\x1d\xe8\xc7\x31\x01\xfa\xc7\x31\x15\x34\x31\x39\x34\x33\x30\x34-4398046511104\x12\x1c\n\x08image_id\x18\x08 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1f\n\x0bsnapshot_id\x18\t \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x08\n\x06source\"%\n\x12\x43reateDiskMetadata\x12\x0f\n\x07\x64isk_id\x18\x01 \x01(\t\"\x96\x03\n\x11UpdateDiskRequest\x12\x1d\n\x07\x64isk_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x87\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x36.yandex.cloud.compute.v1.UpdateDiskRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12\'\n\x04size\x18\x06 \x01(\x03\x42\x19\xfa\xc7\x31\x15\x34\x31\x39\x34\x33\x30\x34-4398046511104\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"%\n\x12UpdateDiskMetadata\x12\x0f\n\x07\x64isk_id\x18\x01 \x01(\t\"2\n\x11\x44\x65leteDiskRequest\x12\x1d\n\x07\x64isk_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"%\n\x12\x44\x65leteDiskMetadata\x12\x0f\n\x07\x64isk_id\x18\x01 \x01(\t\"x\n\x19ListDiskOperationsRequest\x12\x1d\n\x07\x64isk_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"l\n\x1aListDiskOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\x8b\x07\n\x0b\x44iskService\x12r\n\x03Get\x12\'.yandex.cloud.compute.v1.GetDiskRequest\x1a\x1d.yandex.cloud.compute.v1.Disk\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/compute/v1/disks/{disk_id}\x12x\n\x04List\x12).yandex.cloud.compute.v1.ListDisksRequest\x1a*.yandex.cloud.compute.v1.ListDisksResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/compute/v1/disks\x12\x93\x01\n\x06\x43reate\x12*.yandex.cloud.compute.v1.CreateDiskRequest\x1a!.yandex.cloud.operation.Operation\":\x82\xd3\xe4\x93\x02\x16\"\x11/compute/v1/disks:\x01*\xb2\xd2*\x1a\n\x12\x43reateDiskMetadata\x12\x04\x44isk\x12\x9d\x01\n\x06Update\x12*.yandex.cloud.compute.v1.UpdateDiskRequest\x1a!.yandex.cloud.operation.Operation\"D\x82\xd3\xe4\x93\x02 2\x1b/compute/v1/disks/{disk_id}:\x01*\xb2\xd2*\x1a\n\x12UpdateDiskMetadata\x12\x04\x44isk\x12\xab\x01\n\x06\x44\x65lete\x12*.yandex.cloud.compute.v1.DeleteDiskRequest\x1a!.yandex.cloud.operation.Operation\"R\x82\xd3\xe4\x93\x02\x1d*\x1b/compute/v1/disks/{disk_id}\xb2\xd2*+\n\x12\x44\x65leteDiskMetadata\x12\x15google.protobuf.Empty\x12\xa9\x01\n\x0eListOperations\x12\x32.yandex.cloud.compute.v1.ListDiskOperationsRequest\x1a\x33.yandex.cloud.compute.v1.ListDiskOperationsResponse\".\x82\xd3\xe4\x93\x02(\x12&/compute/v1/disks/{disk_id}/operationsBEZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_compute_dot_v1_dot_disk__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
@@ -45,14 +45,14 @@ _GETDISKREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -76,35 +76,35 @@ _LISTDISKSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.compute.v1.ListDisksRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\006<=1000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.compute.v1.ListDisksRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=100'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='filter', full_name='yandex.cloud.compute.v1.ListDisksRequest.filter', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\006<=1000')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\006<=1000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -128,21 +128,21 @@ _LISTDISKSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.compute.v1.ListDisksResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -166,21 +166,21 @@ _CREATEDISKREQUEST_LABELSENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='yandex.cloud.compute.v1.CreateDiskRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  serialized_options=_b('8\001'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -203,70 +203,70 @@ _CREATEDISKREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='name', full_name='yandex.cloud.compute.v1.CreateDiskRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]')), file=DESCRIPTOR),
+      serialized_options=_b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='description', full_name='yandex.cloud.compute.v1.CreateDiskRequest.description', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=256')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=256'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='labels', full_name='yandex.cloud.compute.v1.CreateDiskRequest.labels', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*')), file=DESCRIPTOR),
+      serialized_options=_b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='type_id', full_name='yandex.cloud.compute.v1.CreateDiskRequest.type_id', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='zone_id', full_name='yandex.cloud.compute.v1.CreateDiskRequest.zone_id', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='size', full_name='yandex.cloud.compute.v1.CreateDiskRequest.size', index=6,
       number=7, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\372\3071\0254194304-4398046511104')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\372\3071\0254194304-4398046511104'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='image_id', full_name='yandex.cloud.compute.v1.CreateDiskRequest.image_id', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='snapshot_id', full_name='yandex.cloud.compute.v1.CreateDiskRequest.snapshot_id', index=8,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\004<=50'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[_CREATEDISKREQUEST_LABELSENTRY, ],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -293,14 +293,14 @@ _CREATEDISKMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -324,21 +324,21 @@ _UPDATEDISKREQUEST_LABELSENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='yandex.cloud.compute.v1.UpdateDiskRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  serialized_options=_b('8\001'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -361,49 +361,49 @@ _UPDATEDISKREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='update_mask', full_name='yandex.cloud.compute.v1.UpdateDiskRequest.update_mask', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='name', full_name='yandex.cloud.compute.v1.UpdateDiskRequest.name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]')), file=DESCRIPTOR),
+      serialized_options=_b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='description', full_name='yandex.cloud.compute.v1.UpdateDiskRequest.description', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=256')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=256'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='labels', full_name='yandex.cloud.compute.v1.UpdateDiskRequest.labels', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*')), file=DESCRIPTOR),
+      serialized_options=_b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='size', full_name='yandex.cloud.compute.v1.UpdateDiskRequest.size', index=5,
       number=6, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\0254194304-4398046511104')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\0254194304-4398046511104'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[_UPDATEDISKREQUEST_LABELSENTRY, ],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -427,14 +427,14 @@ _UPDATEDISKMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -458,14 +458,14 @@ _DELETEDISKREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -489,14 +489,14 @@ _DELETEDISKMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -520,28 +520,28 @@ _LISTDISKOPERATIONSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.compute.v1.ListDiskOperationsRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\006<=1000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.compute.v1.ListDiskOperationsRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=100'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -565,21 +565,21 @@ _LISTDISKOPERATIONSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.compute.v1.ListDiskOperationsResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -709,65 +709,39 @@ ListDiskOperationsResponse = _reflection.GeneratedProtocolMessageType('ListDiskO
 _sym_db.RegisterMessage(ListDiskOperationsResponse)
 
 
-DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;compute'))
-_GETDISKREQUEST.fields_by_name['disk_id'].has_options = True
-_GETDISKREQUEST.fields_by_name['disk_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_LISTDISKSREQUEST.fields_by_name['folder_id'].has_options = True
-_LISTDISKSREQUEST.fields_by_name['folder_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_LISTDISKSREQUEST.fields_by_name['page_size'].has_options = True
-_LISTDISKSREQUEST.fields_by_name['page_size']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000'))
-_LISTDISKSREQUEST.fields_by_name['page_token'].has_options = True
-_LISTDISKSREQUEST.fields_by_name['page_token']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100'))
-_LISTDISKSREQUEST.fields_by_name['filter'].has_options = True
-_LISTDISKSREQUEST.fields_by_name['filter']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\006<=1000'))
-_CREATEDISKREQUEST_LABELSENTRY.has_options = True
-_CREATEDISKREQUEST_LABELSENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
-_CREATEDISKREQUEST.fields_by_name['folder_id'].has_options = True
-_CREATEDISKREQUEST.fields_by_name['folder_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_CREATEDISKREQUEST.fields_by_name['name'].has_options = True
-_CREATEDISKREQUEST.fields_by_name['name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'))
-_CREATEDISKREQUEST.fields_by_name['description'].has_options = True
-_CREATEDISKREQUEST.fields_by_name['description']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=256'))
-_CREATEDISKREQUEST.fields_by_name['labels'].has_options = True
-_CREATEDISKREQUEST.fields_by_name['labels']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*'))
-_CREATEDISKREQUEST.fields_by_name['type_id'].has_options = True
-_CREATEDISKREQUEST.fields_by_name['type_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\004<=50'))
-_CREATEDISKREQUEST.fields_by_name['zone_id'].has_options = True
-_CREATEDISKREQUEST.fields_by_name['zone_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_CREATEDISKREQUEST.fields_by_name['size'].has_options = True
-_CREATEDISKREQUEST.fields_by_name['size']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\372\3071\0254194304-4398046511104'))
-_CREATEDISKREQUEST.fields_by_name['image_id'].has_options = True
-_CREATEDISKREQUEST.fields_by_name['image_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\004<=50'))
-_CREATEDISKREQUEST.fields_by_name['snapshot_id'].has_options = True
-_CREATEDISKREQUEST.fields_by_name['snapshot_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\004<=50'))
-_UPDATEDISKREQUEST_LABELSENTRY.has_options = True
-_UPDATEDISKREQUEST_LABELSENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
-_UPDATEDISKREQUEST.fields_by_name['disk_id'].has_options = True
-_UPDATEDISKREQUEST.fields_by_name['disk_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_UPDATEDISKREQUEST.fields_by_name['name'].has_options = True
-_UPDATEDISKREQUEST.fields_by_name['name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'))
-_UPDATEDISKREQUEST.fields_by_name['description'].has_options = True
-_UPDATEDISKREQUEST.fields_by_name['description']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=256'))
-_UPDATEDISKREQUEST.fields_by_name['labels'].has_options = True
-_UPDATEDISKREQUEST.fields_by_name['labels']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*'))
-_UPDATEDISKREQUEST.fields_by_name['size'].has_options = True
-_UPDATEDISKREQUEST.fields_by_name['size']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\0254194304-4398046511104'))
-_DELETEDISKREQUEST.fields_by_name['disk_id'].has_options = True
-_DELETEDISKREQUEST.fields_by_name['disk_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_LISTDISKOPERATIONSREQUEST.fields_by_name['disk_id'].has_options = True
-_LISTDISKOPERATIONSREQUEST.fields_by_name['disk_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_LISTDISKOPERATIONSREQUEST.fields_by_name['page_size'].has_options = True
-_LISTDISKOPERATIONSREQUEST.fields_by_name['page_size']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000'))
-_LISTDISKOPERATIONSREQUEST.fields_by_name['page_token'].has_options = True
-_LISTDISKOPERATIONSREQUEST.fields_by_name['page_token']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100'))
+DESCRIPTOR._options = None
+_GETDISKREQUEST.fields_by_name['disk_id']._options = None
+_LISTDISKSREQUEST.fields_by_name['folder_id']._options = None
+_LISTDISKSREQUEST.fields_by_name['page_size']._options = None
+_LISTDISKSREQUEST.fields_by_name['page_token']._options = None
+_LISTDISKSREQUEST.fields_by_name['filter']._options = None
+_CREATEDISKREQUEST_LABELSENTRY._options = None
+_CREATEDISKREQUEST.fields_by_name['folder_id']._options = None
+_CREATEDISKREQUEST.fields_by_name['name']._options = None
+_CREATEDISKREQUEST.fields_by_name['description']._options = None
+_CREATEDISKREQUEST.fields_by_name['labels']._options = None
+_CREATEDISKREQUEST.fields_by_name['type_id']._options = None
+_CREATEDISKREQUEST.fields_by_name['zone_id']._options = None
+_CREATEDISKREQUEST.fields_by_name['size']._options = None
+_CREATEDISKREQUEST.fields_by_name['image_id']._options = None
+_CREATEDISKREQUEST.fields_by_name['snapshot_id']._options = None
+_UPDATEDISKREQUEST_LABELSENTRY._options = None
+_UPDATEDISKREQUEST.fields_by_name['disk_id']._options = None
+_UPDATEDISKREQUEST.fields_by_name['name']._options = None
+_UPDATEDISKREQUEST.fields_by_name['description']._options = None
+_UPDATEDISKREQUEST.fields_by_name['labels']._options = None
+_UPDATEDISKREQUEST.fields_by_name['size']._options = None
+_DELETEDISKREQUEST.fields_by_name['disk_id']._options = None
+_LISTDISKOPERATIONSREQUEST.fields_by_name['disk_id']._options = None
+_LISTDISKOPERATIONSREQUEST.fields_by_name['page_size']._options = None
+_LISTDISKOPERATIONSREQUEST.fields_by_name['page_token']._options = None
 
 _DISKSERVICE = _descriptor.ServiceDescriptor(
   name='DiskService',
   full_name='yandex.cloud.compute.v1.DiskService',
   file=DESCRIPTOR,
   index=0,
-  options=None,
+  serialized_options=None,
   serialized_start=1863,
   serialized_end=2770,
   methods=[
@@ -778,7 +752,7 @@ _DISKSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETDISKREQUEST,
     output_type=yandex_dot_cloud_dot_compute_dot_v1_dot_disk__pb2._DISK,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\035\022\033/compute/v1/disks/{disk_id}')),
+    serialized_options=_b('\202\323\344\223\002\035\022\033/compute/v1/disks/{disk_id}'),
   ),
   _descriptor.MethodDescriptor(
     name='List',
@@ -787,7 +761,7 @@ _DISKSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTDISKSREQUEST,
     output_type=_LISTDISKSRESPONSE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\023\022\021/compute/v1/disks')),
+    serialized_options=_b('\202\323\344\223\002\023\022\021/compute/v1/disks'),
   ),
   _descriptor.MethodDescriptor(
     name='Create',
@@ -796,7 +770,7 @@ _DISKSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_CREATEDISKREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\026\"\021/compute/v1/disks:\001*\262\322*\032\n\022CreateDiskMetadata\022\004Disk')),
+    serialized_options=_b('\202\323\344\223\002\026\"\021/compute/v1/disks:\001*\262\322*\032\n\022CreateDiskMetadata\022\004Disk'),
   ),
   _descriptor.MethodDescriptor(
     name='Update',
@@ -805,7 +779,7 @@ _DISKSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATEDISKREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002 2\033/compute/v1/disks/{disk_id}:\001*\262\322*\032\n\022UpdateDiskMetadata\022\004Disk')),
+    serialized_options=_b('\202\323\344\223\002 2\033/compute/v1/disks/{disk_id}:\001*\262\322*\032\n\022UpdateDiskMetadata\022\004Disk'),
   ),
   _descriptor.MethodDescriptor(
     name='Delete',
@@ -814,7 +788,7 @@ _DISKSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DELETEDISKREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\035*\033/compute/v1/disks/{disk_id}\262\322*+\n\022DeleteDiskMetadata\022\025google.protobuf.Empty')),
+    serialized_options=_b('\202\323\344\223\002\035*\033/compute/v1/disks/{disk_id}\262\322*+\n\022DeleteDiskMetadata\022\025google.protobuf.Empty'),
   ),
   _descriptor.MethodDescriptor(
     name='ListOperations',
@@ -823,7 +797,7 @@ _DISKSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTDISKOPERATIONSREQUEST,
     output_type=_LISTDISKOPERATIONSRESPONSE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002(\022&/compute/v1/disks/{disk_id}/operations')),
+    serialized_options=_b('\202\323\344\223\002(\022&/compute/v1/disks/{disk_id}/operations'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_DISKSERVICE)

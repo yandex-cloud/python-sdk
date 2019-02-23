@@ -7,7 +7,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -22,6 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/operation/operation_service.proto',
   package='yandex.cloud.operation',
   syntax='proto3',
+  serialized_options=_b('ZDgithub.com/yandex-cloud/go-genproto/yandex/cloud/operation;operation'),
   serialized_pb=_b('\n.yandex/cloud/operation/operation_service.proto\x12\x16yandex.cloud.operation\x1a\x1cgoogle/api/annotations.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"1\n\x13GetOperationRequest\x12\x1a\n\x0coperation_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"4\n\x16\x43\x61ncelOperationRequest\x12\x1a\n\x0coperation_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x32\x96\x02\n\x10OperationService\x12y\n\x03Get\x12+.yandex.cloud.operation.GetOperationRequest\x1a!.yandex.cloud.operation.Operation\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/operations/{operation_id}\x12\x86\x01\n\x06\x43\x61ncel\x12..yandex.cloud.operation.CancelOperationRequest\x1a!.yandex.cloud.operation.Operation\")\x82\xd3\xe4\x93\x02#\x12!/operations/{operation_id}:cancelBFZDgithub.com/yandex-cloud/go-genproto/yandex/cloud/operation;operationb\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
@@ -42,14 +42,14 @@ _GETOPERATIONREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -73,14 +73,14 @@ _CANCELOPERATIONREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -109,19 +109,16 @@ CancelOperationRequest = _reflection.GeneratedProtocolMessageType('CancelOperati
 _sym_db.RegisterMessage(CancelOperationRequest)
 
 
-DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('ZDgithub.com/yandex-cloud/go-genproto/yandex/cloud/operation;operation'))
-_GETOPERATIONREQUEST.fields_by_name['operation_id'].has_options = True
-_GETOPERATIONREQUEST.fields_by_name['operation_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001'))
-_CANCELOPERATIONREQUEST.fields_by_name['operation_id'].has_options = True
-_CANCELOPERATIONREQUEST.fields_by_name['operation_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001'))
+DESCRIPTOR._options = None
+_GETOPERATIONREQUEST.fields_by_name['operation_id']._options = None
+_CANCELOPERATIONREQUEST.fields_by_name['operation_id']._options = None
 
 _OPERATIONSERVICE = _descriptor.ServiceDescriptor(
   name='OperationService',
   full_name='yandex.cloud.operation.OperationService',
   file=DESCRIPTOR,
   index=0,
-  options=None,
+  serialized_options=None,
   serialized_start=281,
   serialized_end=559,
   methods=[
@@ -132,7 +129,7 @@ _OPERATIONSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETOPERATIONREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\034\022\032/operations/{operation_id}')),
+    serialized_options=_b('\202\323\344\223\002\034\022\032/operations/{operation_id}'),
   ),
   _descriptor.MethodDescriptor(
     name='Cancel',
@@ -141,7 +138,7 @@ _OPERATIONSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_CANCELOPERATIONREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002#\022!/operations/{operation_id}:cancel')),
+    serialized_options=_b('\202\323\344\223\002#\022!/operations/{operation_id}:cancel'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_OPERATIONSERVICE)

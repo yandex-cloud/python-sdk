@@ -7,7 +7,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -25,6 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/compute/v1/snapshot_service.proto',
   package='yandex.cloud.compute.v1',
   syntax='proto3',
+  serialized_options=_b('ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;compute'),
   serialized_pb=_b('\n.yandex/cloud/compute/v1/snapshot_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1ayandex/api/operation.proto\x1a&yandex/cloud/compute/v1/snapshot.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"7\n\x12GetSnapshotRequest\x12!\n\x0bsnapshot_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x91\x01\n\x14ListSnapshotsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"f\n\x15ListSnapshotsResponse\x12\x34\n\tsnapshots\x18\x01 \x03(\x0b\x32!.yandex.cloud.compute.v1.Snapshot\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xe5\x02\n\x15\x43reateSnapshotRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\x07\x64isk_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8b\x01\n\x06labels\x18\x06 \x03(\x0b\x32:.yandex.cloud.compute.v1.CreateSnapshotRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\">\n\x16\x43reateSnapshotMetadata\x12\x13\n\x0bsnapshot_id\x18\x01 \x01(\t\x12\x0f\n\x07\x64isk_id\x18\x02 \x01(\t\"\xf9\x02\n\x15UpdateSnapshotRequest\x12!\n\x0bsnapshot_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8b\x01\n\x06labels\x18\x05 \x03(\x0b\x32:.yandex.cloud.compute.v1.UpdateSnapshotRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"-\n\x16UpdateSnapshotMetadata\x12\x13\n\x0bsnapshot_id\x18\x01 \x01(\t\":\n\x15\x44\x65leteSnapshotRequest\x12!\n\x0bsnapshot_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"-\n\x16\x44\x65leteSnapshotMetadata\x12\x13\n\x0bsnapshot_id\x18\x01 \x01(\t\"\x80\x01\n\x1dListSnapshotOperationsRequest\x12!\n\x0bsnapshot_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"p\n\x1eListSnapshotOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xf1\x07\n\x0fSnapshotService\x12\x82\x01\n\x03Get\x12+.yandex.cloud.compute.v1.GetSnapshotRequest\x1a!.yandex.cloud.compute.v1.Snapshot\"+\x82\xd3\xe4\x93\x02%\x12#/compute/v1/snapshots/{snapshot_id}\x12\x84\x01\n\x04List\x12-.yandex.cloud.compute.v1.ListSnapshotsRequest\x1a..yandex.cloud.compute.v1.ListSnapshotsResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/compute/v1/snapshots\x12\xa3\x01\n\x06\x43reate\x12..yandex.cloud.compute.v1.CreateSnapshotRequest\x1a!.yandex.cloud.operation.Operation\"F\x82\xd3\xe4\x93\x02\x1a\"\x15/compute/v1/snapshots:\x01*\xb2\xd2*\"\n\x16\x43reateSnapshotMetadata\x12\x08Snapshot\x12\xb1\x01\n\x06Update\x12..yandex.cloud.compute.v1.UpdateSnapshotRequest\x1a!.yandex.cloud.operation.Operation\"T\x82\xd3\xe4\x93\x02(2#/compute/v1/snapshots/{snapshot_id}:\x01*\xb2\xd2*\"\n\x16UpdateSnapshotMetadata\x12\x08Snapshot\x12\xbb\x01\n\x06\x44\x65lete\x12..yandex.cloud.compute.v1.DeleteSnapshotRequest\x1a!.yandex.cloud.operation.Operation\"^\x82\xd3\xe4\x93\x02%*#/compute/v1/snapshots/{snapshot_id}\xb2\xd2*/\n\x16\x44\x65leteSnapshotMetadata\x12\x15google.protobuf.Empty\x12\xb9\x01\n\x0eListOperations\x12\x36.yandex.cloud.compute.v1.ListSnapshotOperationsRequest\x1a\x37.yandex.cloud.compute.v1.ListSnapshotOperationsResponse\"6\x82\xd3\xe4\x93\x02\x30\x12./compute/v1/snapshots/{snapshot_id}/operationsBEZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
@@ -45,14 +45,14 @@ _GETSNAPSHOTREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -76,35 +76,35 @@ _LISTSNAPSHOTSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.compute.v1.ListSnapshotsRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\006<=1000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.compute.v1.ListSnapshotsRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=100'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='filter', full_name='yandex.cloud.compute.v1.ListSnapshotsRequest.filter', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\006<=1000')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\006<=1000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -128,21 +128,21 @@ _LISTSNAPSHOTSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.compute.v1.ListSnapshotsResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -166,21 +166,21 @@ _CREATESNAPSHOTREQUEST_LABELSENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='yandex.cloud.compute.v1.CreateSnapshotRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  serialized_options=_b('8\001'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -203,42 +203,42 @@ _CREATESNAPSHOTREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='disk_id', full_name='yandex.cloud.compute.v1.CreateSnapshotRequest.disk_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='name', full_name='yandex.cloud.compute.v1.CreateSnapshotRequest.name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]')), file=DESCRIPTOR),
+      serialized_options=_b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='description', full_name='yandex.cloud.compute.v1.CreateSnapshotRequest.description', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=256')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=256'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='labels', full_name='yandex.cloud.compute.v1.CreateSnapshotRequest.labels', index=4,
       number=6, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*')), file=DESCRIPTOR),
+      serialized_options=_b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[_CREATESNAPSHOTREQUEST_LABELSENTRY, ],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -262,21 +262,21 @@ _CREATESNAPSHOTMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='disk_id', full_name='yandex.cloud.compute.v1.CreateSnapshotMetadata.disk_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -300,21 +300,21 @@ _UPDATESNAPSHOTREQUEST_LABELSENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='yandex.cloud.compute.v1.UpdateSnapshotRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  serialized_options=_b('8\001'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -337,42 +337,42 @@ _UPDATESNAPSHOTREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='update_mask', full_name='yandex.cloud.compute.v1.UpdateSnapshotRequest.update_mask', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='name', full_name='yandex.cloud.compute.v1.UpdateSnapshotRequest.name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]')), file=DESCRIPTOR),
+      serialized_options=_b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='description', full_name='yandex.cloud.compute.v1.UpdateSnapshotRequest.description', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=256')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=256'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='labels', full_name='yandex.cloud.compute.v1.UpdateSnapshotRequest.labels', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*')), file=DESCRIPTOR),
+      serialized_options=_b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[_UPDATESNAPSHOTREQUEST_LABELSENTRY, ],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -396,14 +396,14 @@ _UPDATESNAPSHOTMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -427,14 +427,14 @@ _DELETESNAPSHOTREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -458,14 +458,14 @@ _DELETESNAPSHOTMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -489,28 +489,28 @@ _LISTSNAPSHOTOPERATIONSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.compute.v1.ListSnapshotOperationsRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\006<=1000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.compute.v1.ListSnapshotOperationsRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=100'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -534,21 +534,21 @@ _LISTSNAPSHOTOPERATIONSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.compute.v1.ListSnapshotOperationsResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -672,55 +672,34 @@ ListSnapshotOperationsResponse = _reflection.GeneratedProtocolMessageType('ListS
 _sym_db.RegisterMessage(ListSnapshotOperationsResponse)
 
 
-DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;compute'))
-_GETSNAPSHOTREQUEST.fields_by_name['snapshot_id'].has_options = True
-_GETSNAPSHOTREQUEST.fields_by_name['snapshot_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_LISTSNAPSHOTSREQUEST.fields_by_name['folder_id'].has_options = True
-_LISTSNAPSHOTSREQUEST.fields_by_name['folder_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_LISTSNAPSHOTSREQUEST.fields_by_name['page_size'].has_options = True
-_LISTSNAPSHOTSREQUEST.fields_by_name['page_size']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000'))
-_LISTSNAPSHOTSREQUEST.fields_by_name['page_token'].has_options = True
-_LISTSNAPSHOTSREQUEST.fields_by_name['page_token']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100'))
-_LISTSNAPSHOTSREQUEST.fields_by_name['filter'].has_options = True
-_LISTSNAPSHOTSREQUEST.fields_by_name['filter']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\006<=1000'))
-_CREATESNAPSHOTREQUEST_LABELSENTRY.has_options = True
-_CREATESNAPSHOTREQUEST_LABELSENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
-_CREATESNAPSHOTREQUEST.fields_by_name['folder_id'].has_options = True
-_CREATESNAPSHOTREQUEST.fields_by_name['folder_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_CREATESNAPSHOTREQUEST.fields_by_name['disk_id'].has_options = True
-_CREATESNAPSHOTREQUEST.fields_by_name['disk_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_CREATESNAPSHOTREQUEST.fields_by_name['name'].has_options = True
-_CREATESNAPSHOTREQUEST.fields_by_name['name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'))
-_CREATESNAPSHOTREQUEST.fields_by_name['description'].has_options = True
-_CREATESNAPSHOTREQUEST.fields_by_name['description']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=256'))
-_CREATESNAPSHOTREQUEST.fields_by_name['labels'].has_options = True
-_CREATESNAPSHOTREQUEST.fields_by_name['labels']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*'))
-_UPDATESNAPSHOTREQUEST_LABELSENTRY.has_options = True
-_UPDATESNAPSHOTREQUEST_LABELSENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
-_UPDATESNAPSHOTREQUEST.fields_by_name['snapshot_id'].has_options = True
-_UPDATESNAPSHOTREQUEST.fields_by_name['snapshot_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_UPDATESNAPSHOTREQUEST.fields_by_name['name'].has_options = True
-_UPDATESNAPSHOTREQUEST.fields_by_name['name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'))
-_UPDATESNAPSHOTREQUEST.fields_by_name['description'].has_options = True
-_UPDATESNAPSHOTREQUEST.fields_by_name['description']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=256'))
-_UPDATESNAPSHOTREQUEST.fields_by_name['labels'].has_options = True
-_UPDATESNAPSHOTREQUEST.fields_by_name['labels']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*'))
-_DELETESNAPSHOTREQUEST.fields_by_name['snapshot_id'].has_options = True
-_DELETESNAPSHOTREQUEST.fields_by_name['snapshot_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_LISTSNAPSHOTOPERATIONSREQUEST.fields_by_name['snapshot_id'].has_options = True
-_LISTSNAPSHOTOPERATIONSREQUEST.fields_by_name['snapshot_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_LISTSNAPSHOTOPERATIONSREQUEST.fields_by_name['page_size'].has_options = True
-_LISTSNAPSHOTOPERATIONSREQUEST.fields_by_name['page_size']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000'))
-_LISTSNAPSHOTOPERATIONSREQUEST.fields_by_name['page_token'].has_options = True
-_LISTSNAPSHOTOPERATIONSREQUEST.fields_by_name['page_token']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100'))
+DESCRIPTOR._options = None
+_GETSNAPSHOTREQUEST.fields_by_name['snapshot_id']._options = None
+_LISTSNAPSHOTSREQUEST.fields_by_name['folder_id']._options = None
+_LISTSNAPSHOTSREQUEST.fields_by_name['page_size']._options = None
+_LISTSNAPSHOTSREQUEST.fields_by_name['page_token']._options = None
+_LISTSNAPSHOTSREQUEST.fields_by_name['filter']._options = None
+_CREATESNAPSHOTREQUEST_LABELSENTRY._options = None
+_CREATESNAPSHOTREQUEST.fields_by_name['folder_id']._options = None
+_CREATESNAPSHOTREQUEST.fields_by_name['disk_id']._options = None
+_CREATESNAPSHOTREQUEST.fields_by_name['name']._options = None
+_CREATESNAPSHOTREQUEST.fields_by_name['description']._options = None
+_CREATESNAPSHOTREQUEST.fields_by_name['labels']._options = None
+_UPDATESNAPSHOTREQUEST_LABELSENTRY._options = None
+_UPDATESNAPSHOTREQUEST.fields_by_name['snapshot_id']._options = None
+_UPDATESNAPSHOTREQUEST.fields_by_name['name']._options = None
+_UPDATESNAPSHOTREQUEST.fields_by_name['description']._options = None
+_UPDATESNAPSHOTREQUEST.fields_by_name['labels']._options = None
+_DELETESNAPSHOTREQUEST.fields_by_name['snapshot_id']._options = None
+_LISTSNAPSHOTOPERATIONSREQUEST.fields_by_name['snapshot_id']._options = None
+_LISTSNAPSHOTOPERATIONSREQUEST.fields_by_name['page_size']._options = None
+_LISTSNAPSHOTOPERATIONSREQUEST.fields_by_name['page_token']._options = None
 
 _SNAPSHOTSERVICE = _descriptor.ServiceDescriptor(
   name='SnapshotService',
   full_name='yandex.cloud.compute.v1.SnapshotService',
   file=DESCRIPTOR,
   index=0,
-  options=None,
+  serialized_options=None,
   serialized_start=1791,
   serialized_end=2800,
   methods=[
@@ -731,7 +710,7 @@ _SNAPSHOTSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETSNAPSHOTREQUEST,
     output_type=yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__pb2._SNAPSHOT,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002%\022#/compute/v1/snapshots/{snapshot_id}')),
+    serialized_options=_b('\202\323\344\223\002%\022#/compute/v1/snapshots/{snapshot_id}'),
   ),
   _descriptor.MethodDescriptor(
     name='List',
@@ -740,7 +719,7 @@ _SNAPSHOTSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTSNAPSHOTSREQUEST,
     output_type=_LISTSNAPSHOTSRESPONSE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\027\022\025/compute/v1/snapshots')),
+    serialized_options=_b('\202\323\344\223\002\027\022\025/compute/v1/snapshots'),
   ),
   _descriptor.MethodDescriptor(
     name='Create',
@@ -749,7 +728,7 @@ _SNAPSHOTSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_CREATESNAPSHOTREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\032\"\025/compute/v1/snapshots:\001*\262\322*\"\n\026CreateSnapshotMetadata\022\010Snapshot')),
+    serialized_options=_b('\202\323\344\223\002\032\"\025/compute/v1/snapshots:\001*\262\322*\"\n\026CreateSnapshotMetadata\022\010Snapshot'),
   ),
   _descriptor.MethodDescriptor(
     name='Update',
@@ -758,7 +737,7 @@ _SNAPSHOTSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATESNAPSHOTREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002(2#/compute/v1/snapshots/{snapshot_id}:\001*\262\322*\"\n\026UpdateSnapshotMetadata\022\010Snapshot')),
+    serialized_options=_b('\202\323\344\223\002(2#/compute/v1/snapshots/{snapshot_id}:\001*\262\322*\"\n\026UpdateSnapshotMetadata\022\010Snapshot'),
   ),
   _descriptor.MethodDescriptor(
     name='Delete',
@@ -767,7 +746,7 @@ _SNAPSHOTSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DELETESNAPSHOTREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002%*#/compute/v1/snapshots/{snapshot_id}\262\322*/\n\026DeleteSnapshotMetadata\022\025google.protobuf.Empty')),
+    serialized_options=_b('\202\323\344\223\002%*#/compute/v1/snapshots/{snapshot_id}\262\322*/\n\026DeleteSnapshotMetadata\022\025google.protobuf.Empty'),
   ),
   _descriptor.MethodDescriptor(
     name='ListOperations',
@@ -776,7 +755,7 @@ _SNAPSHOTSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTSNAPSHOTOPERATIONSREQUEST,
     output_type=_LISTSNAPSHOTOPERATIONSRESPONSE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\0020\022./compute/v1/snapshots/{snapshot_id}/operations')),
+    serialized_options=_b('\202\323\344\223\0020\022./compute/v1/snapshots/{snapshot_id}/operations'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_SNAPSHOTSERVICE)

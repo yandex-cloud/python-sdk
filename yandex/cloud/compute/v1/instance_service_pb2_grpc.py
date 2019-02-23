@@ -41,6 +41,11 @@ class InstanceServiceStub(object):
         request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.DeleteInstanceRequest.SerializeToString,
         response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
         )
+    self.UpdateMetadata = channel.unary_unary(
+        '/yandex.cloud.compute.v1.InstanceService/UpdateMetadata',
+        request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.UpdateInstanceMetadataRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+        )
     self.GetSerialPortOutput = channel.unary_unary(
         '/yandex.cloud.compute.v1.InstanceService/GetSerialPortOutput',
         request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.GetInstanceSerialPortOutputRequest.SerializeToString,
@@ -116,6 +121,13 @@ class InstanceServiceServicer(object):
   def Delete(self, request, context):
     """Deletes the specified instance.
     """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def UpdateMetadata(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
@@ -197,6 +209,11 @@ def add_InstanceServiceServicer_to_server(servicer, server):
       'Delete': grpc.unary_unary_rpc_method_handler(
           servicer.Delete,
           request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.DeleteInstanceRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+      ),
+      'UpdateMetadata': grpc.unary_unary_rpc_method_handler(
+          servicer.UpdateMetadata,
+          request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.UpdateInstanceMetadataRequest.FromString,
           response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
       ),
       'GetSerialPortOutput': grpc.unary_unary_rpc_method_handler(

@@ -8,7 +8,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -26,7 +25,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/compute/v1/instance_service.proto',
   package='yandex.cloud.compute.v1',
   syntax='proto3',
-  serialized_pb=_b('\n.yandex/cloud/compute/v1/instance_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1ayandex/api/operation.proto\x1a&yandex/cloud/compute/v1/instance.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"l\n\x12GetInstanceRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x33\n\x04view\x18\x02 \x01(\x0e\x32%.yandex.cloud.compute.v1.InstanceView\"\x91\x01\n\x14ListInstancesRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"f\n\x15ListInstancesResponse\x12\x34\n\tinstances\x18\x01 \x03(\x0b\x32!.yandex.cloud.compute.v1.Instance\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xfd\x06\n\x15\x43reateInstanceRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8b\x01\n\x06labels\x18\x04 \x03(\x0b\x32:.yandex.cloud.compute.v1.CreateInstanceRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12\x1d\n\x07zone_id\x18\x05 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12(\n\x0bplatform_id\x18\x06 \x01(\tB\x13\xe8\xc7\x31\x01\xf2\xc7\x31\x0bstandard-v1\x12\x44\n\x0eresources_spec\x18\x07 \x01(\x0b\x32&.yandex.cloud.compute.v1.ResourcesSpecB\x04\xe8\xc7\x31\x01\x12N\n\x08metadata\x18\x08 \x03(\x0b\x32<.yandex.cloud.compute.v1.CreateInstanceRequest.MetadataEntry\x12G\n\x0e\x62oot_disk_spec\x18\t \x01(\x0b\x32).yandex.cloud.compute.v1.AttachedDiskSpecB\x04\xe8\xc7\x31\x01\x12P\n\x14secondary_disk_specs\x18\n \x03(\x0b\x32).yandex.cloud.compute.v1.AttachedDiskSpecB\x07\x82\xc8\x31\x03<=3\x12U\n\x17network_interface_specs\x18\x0b \x03(\x0b\x32-.yandex.cloud.compute.v1.NetworkInterfaceSpecB\x05\x82\xc8\x31\x01\x31\x12\x33\n\x08hostname\x18\x0c \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"7\n\x16\x43reateInstanceMetadata\x12\x1d\n\x0binstance_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"\xe0\x04\n\x15UpdateInstanceRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8b\x01\n\x06labels\x18\x05 \x03(\x0b\x32:.yandex.cloud.compute.v1.UpdateInstanceRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12$\n\x0bplatform_id\x18\x06 \x01(\tB\x0f\xf2\xc7\x31\x0bstandard-v1\x12>\n\x0eresources_spec\x18\x07 \x01(\x0b\x32&.yandex.cloud.compute.v1.ResourcesSpec\x12N\n\x08metadata\x18\x08 \x03(\x0b\x32<.yandex.cloud.compute.v1.UpdateInstanceRequest.MetadataEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"-\n\x16UpdateInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\":\n\x15\x44\x65leteInstanceRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"-\n\x16\x44\x65leteInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"G\n\"GetInstanceSerialPortOutputRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"7\n#GetInstanceSerialPortOutputResponse\x12\x10\n\x08\x63ontents\x18\x01 \x01(\t\"8\n\x13StopInstanceRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x14StopInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"9\n\x14StartInstanceRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\",\n\x15StartInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\";\n\x16RestartInstanceRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\".\n\x17RestartInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"\x8b\x01\n\x19\x41ttachInstanceDiskRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12K\n\x12\x61ttached_disk_spec\x18\x02 \x01(\x0b\x32).yandex.cloud.compute.v1.AttachedDiskSpecB\x04\xe8\xc7\x31\x01\"B\n\x1a\x41ttachInstanceDiskMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x0f\n\x07\x64isk_id\x18\x02 \x01(\t\"\x9a\x01\n\x19\x44\x65tachInstanceDiskRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1b\n\x07\x64isk_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12/\n\x0b\x64\x65vice_name\x18\x03 \x01(\tB\x18\xf2\xc7\x31\x14[a-z][a-z0-9-_]{,19}H\x00\x42\x0c\n\x04\x64isk\x12\x04\xc0\xc1\x31\x01\"B\n\x1a\x44\x65tachInstanceDiskMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x0f\n\x07\x64isk_id\x18\x02 \x01(\t\"\x80\x01\n\x1dListInstanceOperationsRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"p\n\x1eListInstanceOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"w\n\rResourcesSpec\x12%\n\x06memory\x18\x01 \x01(\x03\x42\x15\xe8\xc7\x31\x01\xfa\xc7\x31\r<=34359738368\x12\x1b\n\x05\x63ores\x18\x02 \x01(\x03\x42\x0c\xe8\xc7\x31\x01\xfa\xc7\x31\x04<=32\x12\"\n\rcore_fraction\x18\x03 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30,5,100\"\xb4\x04\n\x10\x41ttachedDiskSpec\x12<\n\x04mode\x18\x01 \x01(\x0e\x32..yandex.cloud.compute.v1.AttachedDiskSpec.Mode\x12-\n\x0b\x64\x65vice_name\x18\x02 \x01(\tB\x18\xf2\xc7\x31\x14[a-z][a-z0-9-_]{,19}\x12\x13\n\x0b\x61uto_delete\x18\x03 \x01(\x08\x12G\n\tdisk_spec\x18\x04 \x01(\x0b\x32\x32.yandex.cloud.compute.v1.AttachedDiskSpec.DiskSpecH\x00\x12\x1b\n\x07\x64isk_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x1a\xec\x01\n\x08\x44iskSpec\x12/\n\x04name\x18\x01 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x19\n\x07type_id\x18\x03 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12+\n\x04size\x18\x04 \x01(\x03\x42\x1d\xe8\xc7\x31\x01\xfa\xc7\x31\x15\x34\x31\x39\x34\x33\x30\x34-4398046511104\x12\x1c\n\x08image_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1f\n\x0bsnapshot_id\x18\x06 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x42\x08\n\x06source\";\n\x04Mode\x12\x14\n\x10MODE_UNSPECIFIED\x10\x00\x12\r\n\tREAD_ONLY\x10\x01\x12\x0e\n\nREAD_WRITE\x10\x02\x42\x0c\n\x04\x64isk\x12\x04\xc0\xc1\x31\x01\"\xd3\x01\n\x14NetworkInterfaceSpec\x12\x1f\n\tsubnet_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12L\n\x17primary_v4_address_spec\x18\x02 \x01(\x0b\x32+.yandex.cloud.compute.v1.PrimaryAddressSpec\x12L\n\x17primary_v6_address_spec\x18\x03 \x01(\x0b\x32+.yandex.cloud.compute.v1.PrimaryAddressSpec\"l\n\x12PrimaryAddressSpec\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x45\n\x13one_to_one_nat_spec\x18\x02 \x01(\x0b\x32(.yandex.cloud.compute.v1.OneToOneNatSpec\"O\n\x0fOneToOneNatSpec\x12<\n\nip_version\x18\x01 \x01(\x0e\x32\".yandex.cloud.compute.v1.IpVersionB\x04\xe8\xc7\x31\x01*#\n\x0cInstanceView\x12\t\n\x05\x42\x41SIC\x10\x00\x12\x08\n\x04\x46ULL\x10\x01\x32\x9f\x11\n\x0fInstanceService\x12\x82\x01\n\x03Get\x12+.yandex.cloud.compute.v1.GetInstanceRequest\x1a!.yandex.cloud.compute.v1.Instance\"+\x82\xd3\xe4\x93\x02%\x12#/compute/v1/instances/{instance_id}\x12\x84\x01\n\x04List\x12-.yandex.cloud.compute.v1.ListInstancesRequest\x1a..yandex.cloud.compute.v1.ListInstancesResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/compute/v1/instances\x12\xa3\x01\n\x06\x43reate\x12..yandex.cloud.compute.v1.CreateInstanceRequest\x1a!.yandex.cloud.operation.Operation\"F\x82\xd3\xe4\x93\x02\x1a\"\x15/compute/v1/instances:\x01*\xb2\xd2*\"\n\x16\x43reateInstanceMetadata\x12\x08Instance\x12\xb1\x01\n\x06Update\x12..yandex.cloud.compute.v1.UpdateInstanceRequest\x1a!.yandex.cloud.operation.Operation\"T\x82\xd3\xe4\x93\x02(2#/compute/v1/instances/{instance_id}:\x01*\xb2\xd2*\"\n\x16UpdateInstanceMetadata\x12\x08Instance\x12\xbb\x01\n\x06\x44\x65lete\x12..yandex.cloud.compute.v1.DeleteInstanceRequest\x1a!.yandex.cloud.operation.Operation\"^\x82\xd3\xe4\x93\x02%*#/compute/v1/instances/{instance_id}\xb2\xd2*/\n\x16\x44\x65leteInstanceMetadata\x12\x15google.protobuf.Empty\x12\xce\x01\n\x13GetSerialPortOutput\x12;.yandex.cloud.compute.v1.GetInstanceSerialPortOutputRequest\x1a<.yandex.cloud.compute.v1.GetInstanceSerialPortOutputResponse\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/compute/v1/instances/{instance_id}:serialPortOutput\x12\xba\x01\n\x04Stop\x12,.yandex.cloud.compute.v1.StopInstanceRequest\x1a!.yandex.cloud.operation.Operation\"a\x82\xd3\xe4\x93\x02*\"(/compute/v1/instances/{instance_id}:stop\xb2\xd2*-\n\x14StopInstanceMetadata\x12\x15google.protobuf.Empty\x12\xbe\x01\n\x05Start\x12-.yandex.cloud.compute.v1.StartInstanceRequest\x1a!.yandex.cloud.operation.Operation\"c\x82\xd3\xe4\x93\x02+\")/compute/v1/instances/{instance_id}:start\xb2\xd2*.\n\x15StartInstanceMetadata\x12\x15google.protobuf.Empty\x12\xc6\x01\n\x07Restart\x12/.yandex.cloud.compute.v1.RestartInstanceRequest\x1a!.yandex.cloud.operation.Operation\"g\x82\xd3\xe4\x93\x02-\"+/compute/v1/instances/{instance_id}:restart\xb2\xd2*0\n\x17RestartInstanceMetadata\x12\x15google.protobuf.Empty\x12\xc8\x01\n\nAttachDisk\x12\x32.yandex.cloud.compute.v1.AttachInstanceDiskRequest\x1a!.yandex.cloud.operation.Operation\"c\x82\xd3\xe4\x93\x02\x33\"./compute/v1/instances/{instance_id}:attachDisk:\x01*\xb2\xd2*&\n\x1a\x41ttachInstanceDiskMetadata\x12\x08Instance\x12\xc8\x01\n\nDetachDisk\x12\x32.yandex.cloud.compute.v1.DetachInstanceDiskRequest\x1a!.yandex.cloud.operation.Operation\"c\x82\xd3\xe4\x93\x02\x33\"./compute/v1/instances/{instance_id}:detachDisk:\x01*\xb2\xd2*&\n\x1a\x44\x65tachInstanceDiskMetadata\x12\x08Instance\x12\xb9\x01\n\x0eListOperations\x12\x36.yandex.cloud.compute.v1.ListInstanceOperationsRequest\x1a\x37.yandex.cloud.compute.v1.ListInstanceOperationsResponse\"6\x82\xd3\xe4\x93\x02\x30\x12./compute/v1/instances/{instance_id}/operationsBEZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3')
+  serialized_options=_b('ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;compute'),
+  serialized_pb=_b('\n.yandex/cloud/compute/v1/instance_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1ayandex/api/operation.proto\x1a&yandex/cloud/compute/v1/instance.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"l\n\x12GetInstanceRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x33\n\x04view\x18\x02 \x01(\x0e\x32%.yandex.cloud.compute.v1.InstanceView\"\x91\x01\n\x14ListInstancesRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"f\n\x15ListInstancesResponse\x12\x34\n\tinstances\x18\x01 \x03(\x0b\x32!.yandex.cloud.compute.v1.Instance\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xc3\x07\n\x15\x43reateInstanceRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8b\x01\n\x06labels\x18\x04 \x03(\x0b\x32:.yandex.cloud.compute.v1.CreateInstanceRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12\x1d\n\x07zone_id\x18\x05 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12(\n\x0bplatform_id\x18\x06 \x01(\tB\x13\xe8\xc7\x31\x01\xf2\xc7\x31\x0bstandard-v1\x12\x44\n\x0eresources_spec\x18\x07 \x01(\x0b\x32&.yandex.cloud.compute.v1.ResourcesSpecB\x04\xe8\xc7\x31\x01\x12N\n\x08metadata\x18\x08 \x03(\x0b\x32<.yandex.cloud.compute.v1.CreateInstanceRequest.MetadataEntry\x12G\n\x0e\x62oot_disk_spec\x18\t \x01(\x0b\x32).yandex.cloud.compute.v1.AttachedDiskSpecB\x04\xe8\xc7\x31\x01\x12P\n\x14secondary_disk_specs\x18\n \x03(\x0b\x32).yandex.cloud.compute.v1.AttachedDiskSpecB\x07\x82\xc8\x31\x03<=3\x12U\n\x17network_interface_specs\x18\x0b \x03(\x0b\x32-.yandex.cloud.compute.v1.NetworkInterfaceSpecB\x05\x82\xc8\x31\x01\x31\x12\x33\n\x08hostname\x18\x0c \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x44\n\x11scheduling_policy\x18\r \x01(\x0b\x32).yandex.cloud.compute.v1.SchedulingPolicy\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"7\n\x16\x43reateInstanceMetadata\x12\x1d\n\x0binstance_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"\xe0\x04\n\x15UpdateInstanceRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8b\x01\n\x06labels\x18\x05 \x03(\x0b\x32:.yandex.cloud.compute.v1.UpdateInstanceRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12$\n\x0bplatform_id\x18\x06 \x01(\tB\x0f\xf2\xc7\x31\x0bstandard-v1\x12>\n\x0eresources_spec\x18\x07 \x01(\x0b\x32&.yandex.cloud.compute.v1.ResourcesSpec\x12N\n\x08metadata\x18\x08 \x03(\x0b\x32<.yandex.cloud.compute.v1.UpdateInstanceRequest.MetadataEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"-\n\x16UpdateInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\":\n\x15\x44\x65leteInstanceRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"-\n\x16\x44\x65leteInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"\xc7\x01\n\x1dUpdateInstanceMetadataRequest\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x0e\n\x06\x64\x65lete\x18\x02 \x03(\t\x12R\n\x06upsert\x18\x03 \x03(\x0b\x32\x42.yandex.cloud.compute.v1.UpdateInstanceMetadataRequest.UpsertEntry\x1a-\n\x0bUpsertEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"5\n\x1eUpdateInstanceMetadataMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"G\n\"GetInstanceSerialPortOutputRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"7\n#GetInstanceSerialPortOutputResponse\x12\x10\n\x08\x63ontents\x18\x01 \x01(\t\"8\n\x13StopInstanceRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x14StopInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"9\n\x14StartInstanceRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\",\n\x15StartInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\";\n\x16RestartInstanceRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\".\n\x17RestartInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"\x8b\x01\n\x19\x41ttachInstanceDiskRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12K\n\x12\x61ttached_disk_spec\x18\x02 \x01(\x0b\x32).yandex.cloud.compute.v1.AttachedDiskSpecB\x04\xe8\xc7\x31\x01\"B\n\x1a\x41ttachInstanceDiskMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x0f\n\x07\x64isk_id\x18\x02 \x01(\t\"\x9a\x01\n\x19\x44\x65tachInstanceDiskRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1b\n\x07\x64isk_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12/\n\x0b\x64\x65vice_name\x18\x03 \x01(\tB\x18\xf2\xc7\x31\x14[a-z][a-z0-9-_]{,19}H\x00\x42\x0c\n\x04\x64isk\x12\x04\xc0\xc1\x31\x01\"B\n\x1a\x44\x65tachInstanceDiskMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x0f\n\x07\x64isk_id\x18\x02 \x01(\t\"\x80\x01\n\x1dListInstanceOperationsRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"p\n\x1eListInstanceOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xa1\x01\n\rResourcesSpec\x12&\n\x06memory\x18\x01 \x01(\x03\x42\x16\xe8\xc7\x31\x01\xfa\xc7\x31\x0e<=274877906944\x12\x44\n\x05\x63ores\x18\x02 \x01(\x03\x42\x35\xe8\xc7\x31\x01\xfa\xc7\x31-1,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32\x12\"\n\rcore_fraction\x18\x03 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30,5,100\"\xb4\x04\n\x10\x41ttachedDiskSpec\x12<\n\x04mode\x18\x01 \x01(\x0e\x32..yandex.cloud.compute.v1.AttachedDiskSpec.Mode\x12-\n\x0b\x64\x65vice_name\x18\x02 \x01(\tB\x18\xf2\xc7\x31\x14[a-z][a-z0-9-_]{,19}\x12\x13\n\x0b\x61uto_delete\x18\x03 \x01(\x08\x12G\n\tdisk_spec\x18\x04 \x01(\x0b\x32\x32.yandex.cloud.compute.v1.AttachedDiskSpec.DiskSpecH\x00\x12\x1b\n\x07\x64isk_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x1a\xec\x01\n\x08\x44iskSpec\x12/\n\x04name\x18\x01 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x19\n\x07type_id\x18\x03 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12+\n\x04size\x18\x04 \x01(\x03\x42\x1d\xe8\xc7\x31\x01\xfa\xc7\x31\x15\x34\x31\x39\x34\x33\x30\x34-4398046511104\x12\x1c\n\x08image_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1f\n\x0bsnapshot_id\x18\x06 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x42\x08\n\x06source\";\n\x04Mode\x12\x14\n\x10MODE_UNSPECIFIED\x10\x00\x12\r\n\tREAD_ONLY\x10\x01\x12\x0e\n\nREAD_WRITE\x10\x02\x42\x0c\n\x04\x64isk\x12\x04\xc0\xc1\x31\x01\"\xd3\x01\n\x14NetworkInterfaceSpec\x12\x1f\n\tsubnet_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12L\n\x17primary_v4_address_spec\x18\x02 \x01(\x0b\x32+.yandex.cloud.compute.v1.PrimaryAddressSpec\x12L\n\x17primary_v6_address_spec\x18\x03 \x01(\x0b\x32+.yandex.cloud.compute.v1.PrimaryAddressSpec\"l\n\x12PrimaryAddressSpec\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x45\n\x13one_to_one_nat_spec\x18\x02 \x01(\x0b\x32(.yandex.cloud.compute.v1.OneToOneNatSpec\"O\n\x0fOneToOneNatSpec\x12<\n\nip_version\x18\x01 \x01(\x0e\x32\".yandex.cloud.compute.v1.IpVersionB\x04\xe8\xc7\x31\x01*#\n\x0cInstanceView\x12\t\n\x05\x42\x41SIC\x10\x00\x12\x08\n\x04\x46ULL\x10\x01\x32\xfa\x12\n\x0fInstanceService\x12\x82\x01\n\x03Get\x12+.yandex.cloud.compute.v1.GetInstanceRequest\x1a!.yandex.cloud.compute.v1.Instance\"+\x82\xd3\xe4\x93\x02%\x12#/compute/v1/instances/{instance_id}\x12\x84\x01\n\x04List\x12-.yandex.cloud.compute.v1.ListInstancesRequest\x1a..yandex.cloud.compute.v1.ListInstancesResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/compute/v1/instances\x12\xa3\x01\n\x06\x43reate\x12..yandex.cloud.compute.v1.CreateInstanceRequest\x1a!.yandex.cloud.operation.Operation\"F\x82\xd3\xe4\x93\x02\x1a\"\x15/compute/v1/instances:\x01*\xb2\xd2*\"\n\x16\x43reateInstanceMetadata\x12\x08Instance\x12\xb1\x01\n\x06Update\x12..yandex.cloud.compute.v1.UpdateInstanceRequest\x1a!.yandex.cloud.operation.Operation\"T\x82\xd3\xe4\x93\x02(2#/compute/v1/instances/{instance_id}:\x01*\xb2\xd2*\"\n\x16UpdateInstanceMetadata\x12\x08Instance\x12\xbb\x01\n\x06\x44\x65lete\x12..yandex.cloud.compute.v1.DeleteInstanceRequest\x1a!.yandex.cloud.operation.Operation\"^\x82\xd3\xe4\x93\x02%*#/compute/v1/instances/{instance_id}\xb2\xd2*/\n\x16\x44\x65leteInstanceMetadata\x12\x15google.protobuf.Empty\x12\xd8\x01\n\x0eUpdateMetadata\x12\x36.yandex.cloud.compute.v1.UpdateInstanceMetadataRequest\x1a!.yandex.cloud.operation.Operation\"k\x82\xd3\xe4\x93\x02\x37\"2/compute/v1/instances/{instance_id}/updateMetadata:\x01*\xb2\xd2**\n\x1eUpdateInstanceMetadataMetadata\x12\x08Instance\x12\xce\x01\n\x13GetSerialPortOutput\x12;.yandex.cloud.compute.v1.GetInstanceSerialPortOutputRequest\x1a<.yandex.cloud.compute.v1.GetInstanceSerialPortOutputResponse\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/compute/v1/instances/{instance_id}:serialPortOutput\x12\xba\x01\n\x04Stop\x12,.yandex.cloud.compute.v1.StopInstanceRequest\x1a!.yandex.cloud.operation.Operation\"a\x82\xd3\xe4\x93\x02*\"(/compute/v1/instances/{instance_id}:stop\xb2\xd2*-\n\x14StopInstanceMetadata\x12\x15google.protobuf.Empty\x12\xbe\x01\n\x05Start\x12-.yandex.cloud.compute.v1.StartInstanceRequest\x1a!.yandex.cloud.operation.Operation\"c\x82\xd3\xe4\x93\x02+\")/compute/v1/instances/{instance_id}:start\xb2\xd2*.\n\x15StartInstanceMetadata\x12\x15google.protobuf.Empty\x12\xc6\x01\n\x07Restart\x12/.yandex.cloud.compute.v1.RestartInstanceRequest\x1a!.yandex.cloud.operation.Operation\"g\x82\xd3\xe4\x93\x02-\"+/compute/v1/instances/{instance_id}:restart\xb2\xd2*0\n\x17RestartInstanceMetadata\x12\x15google.protobuf.Empty\x12\xc8\x01\n\nAttachDisk\x12\x32.yandex.cloud.compute.v1.AttachInstanceDiskRequest\x1a!.yandex.cloud.operation.Operation\"c\x82\xd3\xe4\x93\x02\x33\"./compute/v1/instances/{instance_id}:attachDisk:\x01*\xb2\xd2*&\n\x1a\x41ttachInstanceDiskMetadata\x12\x08Instance\x12\xc8\x01\n\nDetachDisk\x12\x32.yandex.cloud.compute.v1.DetachInstanceDiskRequest\x1a!.yandex.cloud.operation.Operation\"c\x82\xd3\xe4\x93\x02\x33\"./compute/v1/instances/{instance_id}:detachDisk:\x01*\xb2\xd2*&\n\x1a\x44\x65tachInstanceDiskMetadata\x12\x08Instance\x12\xb9\x01\n\x0eListOperations\x12\x36.yandex.cloud.compute.v1.ListInstanceOperationsRequest\x1a\x37.yandex.cloud.compute.v1.ListInstanceOperationsResponse\"6\x82\xd3\xe4\x93\x02\x30\x12./compute/v1/instances/{instance_id}/operationsBEZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_compute_dot_v1_dot_instance__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -38,17 +38,17 @@ _INSTANCEVIEW = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='BASIC', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='FULL', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
-  serialized_start=4578,
-  serialized_end=4613,
+  serialized_options=None,
+  serialized_start=4948,
+  serialized_end=4983,
 )
 _sym_db.RegisterEnumDescriptor(_INSTANCEVIEW)
 
@@ -65,21 +65,21 @@ _ATTACHEDDISKSPEC_MODE = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='MODE_UNSPECIFIED', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='READ_ONLY', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='READ_WRITE', index=2, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
-  serialized_start=4098,
-  serialized_end=4157,
+  serialized_options=None,
+  serialized_start=4468,
+  serialized_end=4527,
 )
 _sym_db.RegisterEnumDescriptor(_ATTACHEDDISKSPEC_MODE)
 
@@ -97,21 +97,21 @@ _GETINSTANCEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='view', full_name='yandex.cloud.compute.v1.GetInstanceRequest.view', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -135,35 +135,35 @@ _LISTINSTANCESREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.compute.v1.ListInstancesRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\006<=1000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.compute.v1.ListInstancesRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=100'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='filter', full_name='yandex.cloud.compute.v1.ListInstancesRequest.filter', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\006<=1000')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\006<=1000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -187,21 +187,21 @@ _LISTINSTANCESRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.compute.v1.ListInstancesResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -225,28 +225,28 @@ _CREATEINSTANCEREQUEST_LABELSENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='yandex.cloud.compute.v1.CreateInstanceRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  serialized_options=_b('8\001'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1440,
-  serialized_end=1485,
+  serialized_start=1510,
+  serialized_end=1555,
 )
 
 _CREATEINSTANCEREQUEST_METADATAENTRY = _descriptor.Descriptor(
@@ -262,28 +262,28 @@ _CREATEINSTANCEREQUEST_METADATAENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='yandex.cloud.compute.v1.CreateInstanceRequest.MetadataEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  serialized_options=_b('8\001'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1487,
-  serialized_end=1534,
+  serialized_start=1557,
+  serialized_end=1604,
 )
 
 _CREATEINSTANCEREQUEST = _descriptor.Descriptor(
@@ -299,98 +299,105 @@ _CREATEINSTANCEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='name', full_name='yandex.cloud.compute.v1.CreateInstanceRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]')), file=DESCRIPTOR),
+      serialized_options=_b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='description', full_name='yandex.cloud.compute.v1.CreateInstanceRequest.description', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=256')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=256'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='labels', full_name='yandex.cloud.compute.v1.CreateInstanceRequest.labels', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*')), file=DESCRIPTOR),
+      serialized_options=_b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='zone_id', full_name='yandex.cloud.compute.v1.CreateInstanceRequest.zone_id', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='platform_id', full_name='yandex.cloud.compute.v1.CreateInstanceRequest.platform_id', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\362\3071\013standard-v1')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\362\3071\013standard-v1'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='resources_spec', full_name='yandex.cloud.compute.v1.CreateInstanceRequest.resources_spec', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='metadata', full_name='yandex.cloud.compute.v1.CreateInstanceRequest.metadata', index=7,
       number=8, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='boot_disk_spec', full_name='yandex.cloud.compute.v1.CreateInstanceRequest.boot_disk_spec', index=8,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='secondary_disk_specs', full_name='yandex.cloud.compute.v1.CreateInstanceRequest.secondary_disk_specs', index=9,
       number=10, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\003<=3')), file=DESCRIPTOR),
+      serialized_options=_b('\202\3101\003<=3'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='network_interface_specs', full_name='yandex.cloud.compute.v1.CreateInstanceRequest.network_interface_specs', index=10,
       number=11, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\0011')), file=DESCRIPTOR),
+      serialized_options=_b('\202\3101\0011'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='hostname', full_name='yandex.cloud.compute.v1.CreateInstanceRequest.hostname', index=11,
       number=12, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]')), file=DESCRIPTOR),
+      serialized_options=_b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='scheduling_policy', full_name='yandex.cloud.compute.v1.CreateInstanceRequest.scheduling_policy', index=12,
+      number=13, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[_CREATEINSTANCEREQUEST_LABELSENTRY, _CREATEINSTANCEREQUEST_METADATAENTRY, ],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
   serialized_start=641,
-  serialized_end=1534,
+  serialized_end=1604,
 )
 
 
@@ -407,21 +414,21 @@ _CREATEINSTANCEMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\004<=50'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1536,
-  serialized_end=1591,
+  serialized_start=1606,
+  serialized_end=1661,
 )
 
 
@@ -438,28 +445,28 @@ _UPDATEINSTANCEREQUEST_LABELSENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='yandex.cloud.compute.v1.UpdateInstanceRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  serialized_options=_b('8\001'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1440,
-  serialized_end=1485,
+  serialized_start=1510,
+  serialized_end=1555,
 )
 
 _UPDATEINSTANCEREQUEST_METADATAENTRY = _descriptor.Descriptor(
@@ -475,28 +482,28 @@ _UPDATEINSTANCEREQUEST_METADATAENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='yandex.cloud.compute.v1.UpdateInstanceRequest.MetadataEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  serialized_options=_b('8\001'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1487,
-  serialized_end=1534,
+  serialized_start=1557,
+  serialized_end=1604,
 )
 
 _UPDATEINSTANCEREQUEST = _descriptor.Descriptor(
@@ -512,70 +519,70 @@ _UPDATEINSTANCEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='update_mask', full_name='yandex.cloud.compute.v1.UpdateInstanceRequest.update_mask', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='name', full_name='yandex.cloud.compute.v1.UpdateInstanceRequest.name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]')), file=DESCRIPTOR),
+      serialized_options=_b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='description', full_name='yandex.cloud.compute.v1.UpdateInstanceRequest.description', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=256')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=256'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='labels', full_name='yandex.cloud.compute.v1.UpdateInstanceRequest.labels', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*')), file=DESCRIPTOR),
+      serialized_options=_b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='platform_id', full_name='yandex.cloud.compute.v1.UpdateInstanceRequest.platform_id', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\362\3071\013standard-v1')), file=DESCRIPTOR),
+      serialized_options=_b('\362\3071\013standard-v1'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='resources_spec', full_name='yandex.cloud.compute.v1.UpdateInstanceRequest.resources_spec', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='metadata', full_name='yandex.cloud.compute.v1.UpdateInstanceRequest.metadata', index=7,
       number=8, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[_UPDATEINSTANCEREQUEST_LABELSENTRY, _UPDATEINSTANCEREQUEST_METADATAENTRY, ],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1594,
-  serialized_end=2202,
+  serialized_start=1664,
+  serialized_end=2272,
 )
 
 
@@ -592,21 +599,21 @@ _UPDATEINSTANCEMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2204,
-  serialized_end=2249,
+  serialized_start=2274,
+  serialized_end=2319,
 )
 
 
@@ -623,21 +630,21 @@ _DELETEINSTANCEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2251,
-  serialized_end=2309,
+  serialized_start=2321,
+  serialized_end=2379,
 )
 
 
@@ -654,21 +661,134 @@ _DELETEINSTANCEMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2311,
-  serialized_end=2356,
+  serialized_start=2381,
+  serialized_end=2426,
+)
+
+
+_UPDATEINSTANCEMETADATAREQUEST_UPSERTENTRY = _descriptor.Descriptor(
+  name='UpsertEntry',
+  full_name='yandex.cloud.compute.v1.UpdateInstanceMetadataRequest.UpsertEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='yandex.cloud.compute.v1.UpdateInstanceMetadataRequest.UpsertEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='yandex.cloud.compute.v1.UpdateInstanceMetadataRequest.UpsertEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=_b('8\001'),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2583,
+  serialized_end=2628,
+)
+
+_UPDATEINSTANCEMETADATAREQUEST = _descriptor.Descriptor(
+  name='UpdateInstanceMetadataRequest',
+  full_name='yandex.cloud.compute.v1.UpdateInstanceMetadataRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='instance_id', full_name='yandex.cloud.compute.v1.UpdateInstanceMetadataRequest.instance_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='delete', full_name='yandex.cloud.compute.v1.UpdateInstanceMetadataRequest.delete', index=1,
+      number=2, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='upsert', full_name='yandex.cloud.compute.v1.UpdateInstanceMetadataRequest.upsert', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[_UPDATEINSTANCEMETADATAREQUEST_UPSERTENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2429,
+  serialized_end=2628,
+)
+
+
+_UPDATEINSTANCEMETADATAMETADATA = _descriptor.Descriptor(
+  name='UpdateInstanceMetadataMetadata',
+  full_name='yandex.cloud.compute.v1.UpdateInstanceMetadataMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='instance_id', full_name='yandex.cloud.compute.v1.UpdateInstanceMetadataMetadata.instance_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2630,
+  serialized_end=2683,
 )
 
 
@@ -685,21 +805,21 @@ _GETINSTANCESERIALPORTOUTPUTREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2358,
-  serialized_end=2429,
+  serialized_start=2685,
+  serialized_end=2756,
 )
 
 
@@ -716,21 +836,21 @@ _GETINSTANCESERIALPORTOUTPUTRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2431,
-  serialized_end=2486,
+  serialized_start=2758,
+  serialized_end=2813,
 )
 
 
@@ -747,21 +867,21 @@ _STOPINSTANCEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2488,
-  serialized_end=2544,
+  serialized_start=2815,
+  serialized_end=2871,
 )
 
 
@@ -778,21 +898,21 @@ _STOPINSTANCEMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2546,
-  serialized_end=2589,
+  serialized_start=2873,
+  serialized_end=2916,
 )
 
 
@@ -809,21 +929,21 @@ _STARTINSTANCEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2591,
-  serialized_end=2648,
+  serialized_start=2918,
+  serialized_end=2975,
 )
 
 
@@ -840,21 +960,21 @@ _STARTINSTANCEMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2650,
-  serialized_end=2694,
+  serialized_start=2977,
+  serialized_end=3021,
 )
 
 
@@ -871,21 +991,21 @@ _RESTARTINSTANCEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2696,
-  serialized_end=2755,
+  serialized_start=3023,
+  serialized_end=3082,
 )
 
 
@@ -902,21 +1022,21 @@ _RESTARTINSTANCEMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2757,
-  serialized_end=2803,
+  serialized_start=3084,
+  serialized_end=3130,
 )
 
 
@@ -933,28 +1053,28 @@ _ATTACHINSTANCEDISKREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='attached_disk_spec', full_name='yandex.cloud.compute.v1.AttachInstanceDiskRequest.attached_disk_spec', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2806,
-  serialized_end=2945,
+  serialized_start=3133,
+  serialized_end=3272,
 )
 
 
@@ -971,28 +1091,28 @@ _ATTACHINSTANCEDISKMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='disk_id', full_name='yandex.cloud.compute.v1.AttachInstanceDiskMetadata.disk_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2947,
-  serialized_end=3013,
+  serialized_start=3274,
+  serialized_end=3340,
 )
 
 
@@ -1009,38 +1129,38 @@ _DETACHINSTANCEDISKREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='disk_id', full_name='yandex.cloud.compute.v1.DetachInstanceDiskRequest.disk_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='device_name', full_name='yandex.cloud.compute.v1.DetachInstanceDiskRequest.device_name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\362\3071\024[a-z][a-z0-9-_]{,19}')), file=DESCRIPTOR),
+      serialized_options=_b('\362\3071\024[a-z][a-z0-9-_]{,19}'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
       name='disk', full_name='yandex.cloud.compute.v1.DetachInstanceDiskRequest.disk',
-      index=0, containing_type=None, fields=[], options=_descriptor._ParseOptions(descriptor_pb2.OneofOptions(), _b('\300\3011\001'))),
+      index=0, containing_type=None, fields=[], serialized_options=_b('\300\3011\001')),
   ],
-  serialized_start=3016,
-  serialized_end=3170,
+  serialized_start=3343,
+  serialized_end=3497,
 )
 
 
@@ -1057,28 +1177,28 @@ _DETACHINSTANCEDISKMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='disk_id', full_name='yandex.cloud.compute.v1.DetachInstanceDiskMetadata.disk_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3172,
-  serialized_end=3238,
+  serialized_start=3499,
+  serialized_end=3565,
 )
 
 
@@ -1095,35 +1215,35 @@ _LISTINSTANCEOPERATIONSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.compute.v1.ListInstanceOperationsRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\006<=1000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.compute.v1.ListInstanceOperationsRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=100'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3241,
-  serialized_end=3369,
+  serialized_start=3568,
+  serialized_end=3696,
 )
 
 
@@ -1140,28 +1260,28 @@ _LISTINSTANCEOPERATIONSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.compute.v1.ListInstanceOperationsResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3371,
-  serialized_end=3483,
+  serialized_start=3698,
+  serialized_end=3810,
 )
 
 
@@ -1178,35 +1298,35 @@ _RESOURCESSPEC = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\372\3071\r<=34359738368')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\372\3071\016<=274877906944'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='cores', full_name='yandex.cloud.compute.v1.ResourcesSpec.cores', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\372\3071\004<=32')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\372\3071-1,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='core_fraction', full_name='yandex.cloud.compute.v1.ResourcesSpec.core_fraction', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\0070,5,100')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\0070,5,100'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3485,
-  serialized_end=3604,
+  serialized_start=3813,
+  serialized_end=3974,
 )
 
 
@@ -1223,49 +1343,49 @@ _ATTACHEDDISKSPEC_DISKSPEC = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]')), file=DESCRIPTOR),
+      serialized_options=_b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='description', full_name='yandex.cloud.compute.v1.AttachedDiskSpec.DiskSpec.description', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=256')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=256'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='type_id', full_name='yandex.cloud.compute.v1.AttachedDiskSpec.DiskSpec.type_id', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='size', full_name='yandex.cloud.compute.v1.AttachedDiskSpec.DiskSpec.size', index=3,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\372\3071\0254194304-4398046511104')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\372\3071\0254194304-4398046511104'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='image_id', full_name='yandex.cloud.compute.v1.AttachedDiskSpec.DiskSpec.image_id', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='snapshot_id', full_name='yandex.cloud.compute.v1.AttachedDiskSpec.DiskSpec.snapshot_id', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\004<=50'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1274,8 +1394,8 @@ _ATTACHEDDISKSPEC_DISKSPEC = _descriptor.Descriptor(
       name='source', full_name='yandex.cloud.compute.v1.AttachedDiskSpec.DiskSpec.source',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=3860,
-  serialized_end=4096,
+  serialized_start=4230,
+  serialized_end=4466,
 )
 
 _ATTACHEDDISKSPEC = _descriptor.Descriptor(
@@ -1291,35 +1411,35 @@ _ATTACHEDDISKSPEC = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='device_name', full_name='yandex.cloud.compute.v1.AttachedDiskSpec.device_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\362\3071\024[a-z][a-z0-9-_]{,19}')), file=DESCRIPTOR),
+      serialized_options=_b('\362\3071\024[a-z][a-z0-9-_]{,19}'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='auto_delete', full_name='yandex.cloud.compute.v1.AttachedDiskSpec.auto_delete', index=2,
       number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='disk_spec', full_name='yandex.cloud.compute.v1.AttachedDiskSpec.disk_spec', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='disk_id', full_name='yandex.cloud.compute.v1.AttachedDiskSpec.disk_id', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\004<=50'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1327,17 +1447,17 @@ _ATTACHEDDISKSPEC = _descriptor.Descriptor(
   enum_types=[
     _ATTACHEDDISKSPEC_MODE,
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
       name='disk', full_name='yandex.cloud.compute.v1.AttachedDiskSpec.disk',
-      index=0, containing_type=None, fields=[], options=_descriptor._ParseOptions(descriptor_pb2.OneofOptions(), _b('\300\3011\001'))),
+      index=0, containing_type=None, fields=[], serialized_options=_b('\300\3011\001')),
   ],
-  serialized_start=3607,
-  serialized_end=4171,
+  serialized_start=3977,
+  serialized_end=4541,
 )
 
 
@@ -1354,35 +1474,35 @@ _NETWORKINTERFACESPEC = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='primary_v4_address_spec', full_name='yandex.cloud.compute.v1.NetworkInterfaceSpec.primary_v4_address_spec', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='primary_v6_address_spec', full_name='yandex.cloud.compute.v1.NetworkInterfaceSpec.primary_v6_address_spec', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4174,
-  serialized_end=4385,
+  serialized_start=4544,
+  serialized_end=4755,
 )
 
 
@@ -1399,28 +1519,28 @@ _PRIMARYADDRESSSPEC = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='one_to_one_nat_spec', full_name='yandex.cloud.compute.v1.PrimaryAddressSpec.one_to_one_nat_spec', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4387,
-  serialized_end=4495,
+  serialized_start=4757,
+  serialized_end=4865,
 )
 
 
@@ -1437,21 +1557,21 @@ _ONETOONENATSPEC = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4497,
-  serialized_end=4576,
+  serialized_start=4867,
+  serialized_end=4946,
 )
 
 _GETINSTANCEREQUEST.fields_by_name['view'].enum_type = _INSTANCEVIEW
@@ -1464,12 +1584,15 @@ _CREATEINSTANCEREQUEST.fields_by_name['metadata'].message_type = _CREATEINSTANCE
 _CREATEINSTANCEREQUEST.fields_by_name['boot_disk_spec'].message_type = _ATTACHEDDISKSPEC
 _CREATEINSTANCEREQUEST.fields_by_name['secondary_disk_specs'].message_type = _ATTACHEDDISKSPEC
 _CREATEINSTANCEREQUEST.fields_by_name['network_interface_specs'].message_type = _NETWORKINTERFACESPEC
+_CREATEINSTANCEREQUEST.fields_by_name['scheduling_policy'].message_type = yandex_dot_cloud_dot_compute_dot_v1_dot_instance__pb2._SCHEDULINGPOLICY
 _UPDATEINSTANCEREQUEST_LABELSENTRY.containing_type = _UPDATEINSTANCEREQUEST
 _UPDATEINSTANCEREQUEST_METADATAENTRY.containing_type = _UPDATEINSTANCEREQUEST
 _UPDATEINSTANCEREQUEST.fields_by_name['update_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
 _UPDATEINSTANCEREQUEST.fields_by_name['labels'].message_type = _UPDATEINSTANCEREQUEST_LABELSENTRY
 _UPDATEINSTANCEREQUEST.fields_by_name['resources_spec'].message_type = _RESOURCESSPEC
 _UPDATEINSTANCEREQUEST.fields_by_name['metadata'].message_type = _UPDATEINSTANCEREQUEST_METADATAENTRY
+_UPDATEINSTANCEMETADATAREQUEST_UPSERTENTRY.containing_type = _UPDATEINSTANCEMETADATAREQUEST
+_UPDATEINSTANCEMETADATAREQUEST.fields_by_name['upsert'].message_type = _UPDATEINSTANCEMETADATAREQUEST_UPSERTENTRY
 _ATTACHINSTANCEDISKREQUEST.fields_by_name['attached_disk_spec'].message_type = _ATTACHEDDISKSPEC
 _DETACHINSTANCEDISKREQUEST.oneofs_by_name['disk'].fields.append(
   _DETACHINSTANCEDISKREQUEST.fields_by_name['disk_id'])
@@ -1507,6 +1630,8 @@ DESCRIPTOR.message_types_by_name['UpdateInstanceRequest'] = _UPDATEINSTANCEREQUE
 DESCRIPTOR.message_types_by_name['UpdateInstanceMetadata'] = _UPDATEINSTANCEMETADATA
 DESCRIPTOR.message_types_by_name['DeleteInstanceRequest'] = _DELETEINSTANCEREQUEST
 DESCRIPTOR.message_types_by_name['DeleteInstanceMetadata'] = _DELETEINSTANCEMETADATA
+DESCRIPTOR.message_types_by_name['UpdateInstanceMetadataRequest'] = _UPDATEINSTANCEMETADATAREQUEST
+DESCRIPTOR.message_types_by_name['UpdateInstanceMetadataMetadata'] = _UPDATEINSTANCEMETADATAMETADATA
 DESCRIPTOR.message_types_by_name['GetInstanceSerialPortOutputRequest'] = _GETINSTANCESERIALPORTOUTPUTREQUEST
 DESCRIPTOR.message_types_by_name['GetInstanceSerialPortOutputResponse'] = _GETINSTANCESERIALPORTOUTPUTRESPONSE
 DESCRIPTOR.message_types_by_name['StopInstanceRequest'] = _STOPINSTANCEREQUEST
@@ -1623,6 +1748,28 @@ DeleteInstanceMetadata = _reflection.GeneratedProtocolMessageType('DeleteInstanc
   # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.DeleteInstanceMetadata)
   ))
 _sym_db.RegisterMessage(DeleteInstanceMetadata)
+
+UpdateInstanceMetadataRequest = _reflection.GeneratedProtocolMessageType('UpdateInstanceMetadataRequest', (_message.Message,), dict(
+
+  UpsertEntry = _reflection.GeneratedProtocolMessageType('UpsertEntry', (_message.Message,), dict(
+    DESCRIPTOR = _UPDATEINSTANCEMETADATAREQUEST_UPSERTENTRY,
+    __module__ = 'yandex.cloud.compute.v1.instance_service_pb2'
+    # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.UpdateInstanceMetadataRequest.UpsertEntry)
+    ))
+  ,
+  DESCRIPTOR = _UPDATEINSTANCEMETADATAREQUEST,
+  __module__ = 'yandex.cloud.compute.v1.instance_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.UpdateInstanceMetadataRequest)
+  ))
+_sym_db.RegisterMessage(UpdateInstanceMetadataRequest)
+_sym_db.RegisterMessage(UpdateInstanceMetadataRequest.UpsertEntry)
+
+UpdateInstanceMetadataMetadata = _reflection.GeneratedProtocolMessageType('UpdateInstanceMetadataMetadata', (_message.Message,), dict(
+  DESCRIPTOR = _UPDATEINSTANCEMETADATAMETADATA,
+  __module__ = 'yandex.cloud.compute.v1.instance_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.UpdateInstanceMetadataMetadata)
+  ))
+_sym_db.RegisterMessage(UpdateInstanceMetadataMetadata)
 
 GetInstanceSerialPortOutputRequest = _reflection.GeneratedProtocolMessageType('GetInstanceSerialPortOutputRequest', (_message.Message,), dict(
   DESCRIPTOR = _GETINSTANCESERIALPORTOUTPUTREQUEST,
@@ -1766,125 +1913,71 @@ OneToOneNatSpec = _reflection.GeneratedProtocolMessageType('OneToOneNatSpec', (_
 _sym_db.RegisterMessage(OneToOneNatSpec)
 
 
-DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;compute'))
-_GETINSTANCEREQUEST.fields_by_name['instance_id'].has_options = True
-_GETINSTANCEREQUEST.fields_by_name['instance_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_LISTINSTANCESREQUEST.fields_by_name['folder_id'].has_options = True
-_LISTINSTANCESREQUEST.fields_by_name['folder_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_LISTINSTANCESREQUEST.fields_by_name['page_size'].has_options = True
-_LISTINSTANCESREQUEST.fields_by_name['page_size']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000'))
-_LISTINSTANCESREQUEST.fields_by_name['page_token'].has_options = True
-_LISTINSTANCESREQUEST.fields_by_name['page_token']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100'))
-_LISTINSTANCESREQUEST.fields_by_name['filter'].has_options = True
-_LISTINSTANCESREQUEST.fields_by_name['filter']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\006<=1000'))
-_CREATEINSTANCEREQUEST_LABELSENTRY.has_options = True
-_CREATEINSTANCEREQUEST_LABELSENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
-_CREATEINSTANCEREQUEST_METADATAENTRY.has_options = True
-_CREATEINSTANCEREQUEST_METADATAENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
-_CREATEINSTANCEREQUEST.fields_by_name['folder_id'].has_options = True
-_CREATEINSTANCEREQUEST.fields_by_name['folder_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_CREATEINSTANCEREQUEST.fields_by_name['name'].has_options = True
-_CREATEINSTANCEREQUEST.fields_by_name['name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'))
-_CREATEINSTANCEREQUEST.fields_by_name['description'].has_options = True
-_CREATEINSTANCEREQUEST.fields_by_name['description']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=256'))
-_CREATEINSTANCEREQUEST.fields_by_name['labels'].has_options = True
-_CREATEINSTANCEREQUEST.fields_by_name['labels']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*'))
-_CREATEINSTANCEREQUEST.fields_by_name['zone_id'].has_options = True
-_CREATEINSTANCEREQUEST.fields_by_name['zone_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_CREATEINSTANCEREQUEST.fields_by_name['platform_id'].has_options = True
-_CREATEINSTANCEREQUEST.fields_by_name['platform_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\362\3071\013standard-v1'))
-_CREATEINSTANCEREQUEST.fields_by_name['resources_spec'].has_options = True
-_CREATEINSTANCEREQUEST.fields_by_name['resources_spec']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001'))
-_CREATEINSTANCEREQUEST.fields_by_name['boot_disk_spec'].has_options = True
-_CREATEINSTANCEREQUEST.fields_by_name['boot_disk_spec']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001'))
-_CREATEINSTANCEREQUEST.fields_by_name['secondary_disk_specs'].has_options = True
-_CREATEINSTANCEREQUEST.fields_by_name['secondary_disk_specs']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\003<=3'))
-_CREATEINSTANCEREQUEST.fields_by_name['network_interface_specs'].has_options = True
-_CREATEINSTANCEREQUEST.fields_by_name['network_interface_specs']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\0011'))
-_CREATEINSTANCEREQUEST.fields_by_name['hostname'].has_options = True
-_CREATEINSTANCEREQUEST.fields_by_name['hostname']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'))
-_CREATEINSTANCEMETADATA.fields_by_name['instance_id'].has_options = True
-_CREATEINSTANCEMETADATA.fields_by_name['instance_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\004<=50'))
-_UPDATEINSTANCEREQUEST_LABELSENTRY.has_options = True
-_UPDATEINSTANCEREQUEST_LABELSENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
-_UPDATEINSTANCEREQUEST_METADATAENTRY.has_options = True
-_UPDATEINSTANCEREQUEST_METADATAENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
-_UPDATEINSTANCEREQUEST.fields_by_name['instance_id'].has_options = True
-_UPDATEINSTANCEREQUEST.fields_by_name['instance_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_UPDATEINSTANCEREQUEST.fields_by_name['name'].has_options = True
-_UPDATEINSTANCEREQUEST.fields_by_name['name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'))
-_UPDATEINSTANCEREQUEST.fields_by_name['description'].has_options = True
-_UPDATEINSTANCEREQUEST.fields_by_name['description']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=256'))
-_UPDATEINSTANCEREQUEST.fields_by_name['labels'].has_options = True
-_UPDATEINSTANCEREQUEST.fields_by_name['labels']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*'))
-_UPDATEINSTANCEREQUEST.fields_by_name['platform_id'].has_options = True
-_UPDATEINSTANCEREQUEST.fields_by_name['platform_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\362\3071\013standard-v1'))
-_DELETEINSTANCEREQUEST.fields_by_name['instance_id'].has_options = True
-_DELETEINSTANCEREQUEST.fields_by_name['instance_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_GETINSTANCESERIALPORTOUTPUTREQUEST.fields_by_name['instance_id'].has_options = True
-_GETINSTANCESERIALPORTOUTPUTREQUEST.fields_by_name['instance_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_STOPINSTANCEREQUEST.fields_by_name['instance_id'].has_options = True
-_STOPINSTANCEREQUEST.fields_by_name['instance_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_STARTINSTANCEREQUEST.fields_by_name['instance_id'].has_options = True
-_STARTINSTANCEREQUEST.fields_by_name['instance_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_RESTARTINSTANCEREQUEST.fields_by_name['instance_id'].has_options = True
-_RESTARTINSTANCEREQUEST.fields_by_name['instance_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_ATTACHINSTANCEDISKREQUEST.fields_by_name['instance_id'].has_options = True
-_ATTACHINSTANCEDISKREQUEST.fields_by_name['instance_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_ATTACHINSTANCEDISKREQUEST.fields_by_name['attached_disk_spec'].has_options = True
-_ATTACHINSTANCEDISKREQUEST.fields_by_name['attached_disk_spec']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001'))
-_DETACHINSTANCEDISKREQUEST.oneofs_by_name['disk'].has_options = True
-_DETACHINSTANCEDISKREQUEST.oneofs_by_name['disk']._options = _descriptor._ParseOptions(descriptor_pb2.OneofOptions(), _b('\300\3011\001'))
-_DETACHINSTANCEDISKREQUEST.fields_by_name['instance_id'].has_options = True
-_DETACHINSTANCEDISKREQUEST.fields_by_name['instance_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_DETACHINSTANCEDISKREQUEST.fields_by_name['disk_id'].has_options = True
-_DETACHINSTANCEDISKREQUEST.fields_by_name['disk_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\004<=50'))
-_DETACHINSTANCEDISKREQUEST.fields_by_name['device_name'].has_options = True
-_DETACHINSTANCEDISKREQUEST.fields_by_name['device_name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\362\3071\024[a-z][a-z0-9-_]{,19}'))
-_LISTINSTANCEOPERATIONSREQUEST.fields_by_name['instance_id'].has_options = True
-_LISTINSTANCEOPERATIONSREQUEST.fields_by_name['instance_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_LISTINSTANCEOPERATIONSREQUEST.fields_by_name['page_size'].has_options = True
-_LISTINSTANCEOPERATIONSREQUEST.fields_by_name['page_size']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000'))
-_LISTINSTANCEOPERATIONSREQUEST.fields_by_name['page_token'].has_options = True
-_LISTINSTANCEOPERATIONSREQUEST.fields_by_name['page_token']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100'))
-_RESOURCESSPEC.fields_by_name['memory'].has_options = True
-_RESOURCESSPEC.fields_by_name['memory']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\372\3071\r<=34359738368'))
-_RESOURCESSPEC.fields_by_name['cores'].has_options = True
-_RESOURCESSPEC.fields_by_name['cores']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\372\3071\004<=32'))
-_RESOURCESSPEC.fields_by_name['core_fraction'].has_options = True
-_RESOURCESSPEC.fields_by_name['core_fraction']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\0070,5,100'))
-_ATTACHEDDISKSPEC_DISKSPEC.fields_by_name['name'].has_options = True
-_ATTACHEDDISKSPEC_DISKSPEC.fields_by_name['name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'))
-_ATTACHEDDISKSPEC_DISKSPEC.fields_by_name['description'].has_options = True
-_ATTACHEDDISKSPEC_DISKSPEC.fields_by_name['description']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=256'))
-_ATTACHEDDISKSPEC_DISKSPEC.fields_by_name['type_id'].has_options = True
-_ATTACHEDDISKSPEC_DISKSPEC.fields_by_name['type_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\004<=50'))
-_ATTACHEDDISKSPEC_DISKSPEC.fields_by_name['size'].has_options = True
-_ATTACHEDDISKSPEC_DISKSPEC.fields_by_name['size']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\372\3071\0254194304-4398046511104'))
-_ATTACHEDDISKSPEC_DISKSPEC.fields_by_name['image_id'].has_options = True
-_ATTACHEDDISKSPEC_DISKSPEC.fields_by_name['image_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\004<=50'))
-_ATTACHEDDISKSPEC_DISKSPEC.fields_by_name['snapshot_id'].has_options = True
-_ATTACHEDDISKSPEC_DISKSPEC.fields_by_name['snapshot_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\004<=50'))
-_ATTACHEDDISKSPEC.oneofs_by_name['disk'].has_options = True
-_ATTACHEDDISKSPEC.oneofs_by_name['disk']._options = _descriptor._ParseOptions(descriptor_pb2.OneofOptions(), _b('\300\3011\001'))
-_ATTACHEDDISKSPEC.fields_by_name['device_name'].has_options = True
-_ATTACHEDDISKSPEC.fields_by_name['device_name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\362\3071\024[a-z][a-z0-9-_]{,19}'))
-_ATTACHEDDISKSPEC.fields_by_name['disk_id'].has_options = True
-_ATTACHEDDISKSPEC.fields_by_name['disk_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\004<=50'))
-_NETWORKINTERFACESPEC.fields_by_name['subnet_id'].has_options = True
-_NETWORKINTERFACESPEC.fields_by_name['subnet_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_ONETOONENATSPEC.fields_by_name['ip_version'].has_options = True
-_ONETOONENATSPEC.fields_by_name['ip_version']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001'))
+DESCRIPTOR._options = None
+_GETINSTANCEREQUEST.fields_by_name['instance_id']._options = None
+_LISTINSTANCESREQUEST.fields_by_name['folder_id']._options = None
+_LISTINSTANCESREQUEST.fields_by_name['page_size']._options = None
+_LISTINSTANCESREQUEST.fields_by_name['page_token']._options = None
+_LISTINSTANCESREQUEST.fields_by_name['filter']._options = None
+_CREATEINSTANCEREQUEST_LABELSENTRY._options = None
+_CREATEINSTANCEREQUEST_METADATAENTRY._options = None
+_CREATEINSTANCEREQUEST.fields_by_name['folder_id']._options = None
+_CREATEINSTANCEREQUEST.fields_by_name['name']._options = None
+_CREATEINSTANCEREQUEST.fields_by_name['description']._options = None
+_CREATEINSTANCEREQUEST.fields_by_name['labels']._options = None
+_CREATEINSTANCEREQUEST.fields_by_name['zone_id']._options = None
+_CREATEINSTANCEREQUEST.fields_by_name['platform_id']._options = None
+_CREATEINSTANCEREQUEST.fields_by_name['resources_spec']._options = None
+_CREATEINSTANCEREQUEST.fields_by_name['boot_disk_spec']._options = None
+_CREATEINSTANCEREQUEST.fields_by_name['secondary_disk_specs']._options = None
+_CREATEINSTANCEREQUEST.fields_by_name['network_interface_specs']._options = None
+_CREATEINSTANCEREQUEST.fields_by_name['hostname']._options = None
+_CREATEINSTANCEMETADATA.fields_by_name['instance_id']._options = None
+_UPDATEINSTANCEREQUEST_LABELSENTRY._options = None
+_UPDATEINSTANCEREQUEST_METADATAENTRY._options = None
+_UPDATEINSTANCEREQUEST.fields_by_name['instance_id']._options = None
+_UPDATEINSTANCEREQUEST.fields_by_name['name']._options = None
+_UPDATEINSTANCEREQUEST.fields_by_name['description']._options = None
+_UPDATEINSTANCEREQUEST.fields_by_name['labels']._options = None
+_UPDATEINSTANCEREQUEST.fields_by_name['platform_id']._options = None
+_DELETEINSTANCEREQUEST.fields_by_name['instance_id']._options = None
+_UPDATEINSTANCEMETADATAREQUEST_UPSERTENTRY._options = None
+_GETINSTANCESERIALPORTOUTPUTREQUEST.fields_by_name['instance_id']._options = None
+_STOPINSTANCEREQUEST.fields_by_name['instance_id']._options = None
+_STARTINSTANCEREQUEST.fields_by_name['instance_id']._options = None
+_RESTARTINSTANCEREQUEST.fields_by_name['instance_id']._options = None
+_ATTACHINSTANCEDISKREQUEST.fields_by_name['instance_id']._options = None
+_ATTACHINSTANCEDISKREQUEST.fields_by_name['attached_disk_spec']._options = None
+_DETACHINSTANCEDISKREQUEST.oneofs_by_name['disk']._options = None
+_DETACHINSTANCEDISKREQUEST.fields_by_name['instance_id']._options = None
+_DETACHINSTANCEDISKREQUEST.fields_by_name['disk_id']._options = None
+_DETACHINSTANCEDISKREQUEST.fields_by_name['device_name']._options = None
+_LISTINSTANCEOPERATIONSREQUEST.fields_by_name['instance_id']._options = None
+_LISTINSTANCEOPERATIONSREQUEST.fields_by_name['page_size']._options = None
+_LISTINSTANCEOPERATIONSREQUEST.fields_by_name['page_token']._options = None
+_RESOURCESSPEC.fields_by_name['memory']._options = None
+_RESOURCESSPEC.fields_by_name['cores']._options = None
+_RESOURCESSPEC.fields_by_name['core_fraction']._options = None
+_ATTACHEDDISKSPEC_DISKSPEC.fields_by_name['name']._options = None
+_ATTACHEDDISKSPEC_DISKSPEC.fields_by_name['description']._options = None
+_ATTACHEDDISKSPEC_DISKSPEC.fields_by_name['type_id']._options = None
+_ATTACHEDDISKSPEC_DISKSPEC.fields_by_name['size']._options = None
+_ATTACHEDDISKSPEC_DISKSPEC.fields_by_name['image_id']._options = None
+_ATTACHEDDISKSPEC_DISKSPEC.fields_by_name['snapshot_id']._options = None
+_ATTACHEDDISKSPEC.oneofs_by_name['disk']._options = None
+_ATTACHEDDISKSPEC.fields_by_name['device_name']._options = None
+_ATTACHEDDISKSPEC.fields_by_name['disk_id']._options = None
+_NETWORKINTERFACESPEC.fields_by_name['subnet_id']._options = None
+_ONETOONENATSPEC.fields_by_name['ip_version']._options = None
 
 _INSTANCESERVICE = _descriptor.ServiceDescriptor(
   name='InstanceService',
   full_name='yandex.cloud.compute.v1.InstanceService',
   file=DESCRIPTOR,
   index=0,
-  options=None,
-  serialized_start=4616,
-  serialized_end=6823,
+  serialized_options=None,
+  serialized_start=4986,
+  serialized_end=7412,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
@@ -1893,7 +1986,7 @@ _INSTANCESERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETINSTANCEREQUEST,
     output_type=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__pb2._INSTANCE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002%\022#/compute/v1/instances/{instance_id}')),
+    serialized_options=_b('\202\323\344\223\002%\022#/compute/v1/instances/{instance_id}'),
   ),
   _descriptor.MethodDescriptor(
     name='List',
@@ -1902,7 +1995,7 @@ _INSTANCESERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTINSTANCESREQUEST,
     output_type=_LISTINSTANCESRESPONSE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\027\022\025/compute/v1/instances')),
+    serialized_options=_b('\202\323\344\223\002\027\022\025/compute/v1/instances'),
   ),
   _descriptor.MethodDescriptor(
     name='Create',
@@ -1911,7 +2004,7 @@ _INSTANCESERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_CREATEINSTANCEREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\032\"\025/compute/v1/instances:\001*\262\322*\"\n\026CreateInstanceMetadata\022\010Instance')),
+    serialized_options=_b('\202\323\344\223\002\032\"\025/compute/v1/instances:\001*\262\322*\"\n\026CreateInstanceMetadata\022\010Instance'),
   ),
   _descriptor.MethodDescriptor(
     name='Update',
@@ -1920,7 +2013,7 @@ _INSTANCESERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATEINSTANCEREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002(2#/compute/v1/instances/{instance_id}:\001*\262\322*\"\n\026UpdateInstanceMetadata\022\010Instance')),
+    serialized_options=_b('\202\323\344\223\002(2#/compute/v1/instances/{instance_id}:\001*\262\322*\"\n\026UpdateInstanceMetadata\022\010Instance'),
   ),
   _descriptor.MethodDescriptor(
     name='Delete',
@@ -1929,70 +2022,79 @@ _INSTANCESERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DELETEINSTANCEREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002%*#/compute/v1/instances/{instance_id}\262\322*/\n\026DeleteInstanceMetadata\022\025google.protobuf.Empty')),
+    serialized_options=_b('\202\323\344\223\002%*#/compute/v1/instances/{instance_id}\262\322*/\n\026DeleteInstanceMetadata\022\025google.protobuf.Empty'),
+  ),
+  _descriptor.MethodDescriptor(
+    name='UpdateMetadata',
+    full_name='yandex.cloud.compute.v1.InstanceService.UpdateMetadata',
+    index=5,
+    containing_service=None,
+    input_type=_UPDATEINSTANCEMETADATAREQUEST,
+    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
+    serialized_options=_b('\202\323\344\223\0027\"2/compute/v1/instances/{instance_id}/updateMetadata:\001*\262\322**\n\036UpdateInstanceMetadataMetadata\022\010Instance'),
   ),
   _descriptor.MethodDescriptor(
     name='GetSerialPortOutput',
     full_name='yandex.cloud.compute.v1.InstanceService.GetSerialPortOutput',
-    index=5,
+    index=6,
     containing_service=None,
     input_type=_GETINSTANCESERIALPORTOUTPUTREQUEST,
     output_type=_GETINSTANCESERIALPORTOUTPUTRESPONSE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\0026\0224/compute/v1/instances/{instance_id}:serialPortOutput')),
+    serialized_options=_b('\202\323\344\223\0026\0224/compute/v1/instances/{instance_id}:serialPortOutput'),
   ),
   _descriptor.MethodDescriptor(
     name='Stop',
     full_name='yandex.cloud.compute.v1.InstanceService.Stop',
-    index=6,
+    index=7,
     containing_service=None,
     input_type=_STOPINSTANCEREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002*\"(/compute/v1/instances/{instance_id}:stop\262\322*-\n\024StopInstanceMetadata\022\025google.protobuf.Empty')),
+    serialized_options=_b('\202\323\344\223\002*\"(/compute/v1/instances/{instance_id}:stop\262\322*-\n\024StopInstanceMetadata\022\025google.protobuf.Empty'),
   ),
   _descriptor.MethodDescriptor(
     name='Start',
     full_name='yandex.cloud.compute.v1.InstanceService.Start',
-    index=7,
+    index=8,
     containing_service=None,
     input_type=_STARTINSTANCEREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002+\")/compute/v1/instances/{instance_id}:start\262\322*.\n\025StartInstanceMetadata\022\025google.protobuf.Empty')),
+    serialized_options=_b('\202\323\344\223\002+\")/compute/v1/instances/{instance_id}:start\262\322*.\n\025StartInstanceMetadata\022\025google.protobuf.Empty'),
   ),
   _descriptor.MethodDescriptor(
     name='Restart',
     full_name='yandex.cloud.compute.v1.InstanceService.Restart',
-    index=8,
+    index=9,
     containing_service=None,
     input_type=_RESTARTINSTANCEREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002-\"+/compute/v1/instances/{instance_id}:restart\262\322*0\n\027RestartInstanceMetadata\022\025google.protobuf.Empty')),
+    serialized_options=_b('\202\323\344\223\002-\"+/compute/v1/instances/{instance_id}:restart\262\322*0\n\027RestartInstanceMetadata\022\025google.protobuf.Empty'),
   ),
   _descriptor.MethodDescriptor(
     name='AttachDisk',
     full_name='yandex.cloud.compute.v1.InstanceService.AttachDisk',
-    index=9,
+    index=10,
     containing_service=None,
     input_type=_ATTACHINSTANCEDISKREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\0023\"./compute/v1/instances/{instance_id}:attachDisk:\001*\262\322*&\n\032AttachInstanceDiskMetadata\022\010Instance')),
+    serialized_options=_b('\202\323\344\223\0023\"./compute/v1/instances/{instance_id}:attachDisk:\001*\262\322*&\n\032AttachInstanceDiskMetadata\022\010Instance'),
   ),
   _descriptor.MethodDescriptor(
     name='DetachDisk',
     full_name='yandex.cloud.compute.v1.InstanceService.DetachDisk',
-    index=10,
+    index=11,
     containing_service=None,
     input_type=_DETACHINSTANCEDISKREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\0023\"./compute/v1/instances/{instance_id}:detachDisk:\001*\262\322*&\n\032DetachInstanceDiskMetadata\022\010Instance')),
+    serialized_options=_b('\202\323\344\223\0023\"./compute/v1/instances/{instance_id}:detachDisk:\001*\262\322*&\n\032DetachInstanceDiskMetadata\022\010Instance'),
   ),
   _descriptor.MethodDescriptor(
     name='ListOperations',
     full_name='yandex.cloud.compute.v1.InstanceService.ListOperations',
-    index=11,
+    index=12,
     containing_service=None,
     input_type=_LISTINSTANCEOPERATIONSREQUEST,
     output_type=_LISTINSTANCEOPERATIONSRESPONSE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\0020\022./compute/v1/instances/{instance_id}/operations')),
+    serialized_options=_b('\202\323\344\223\0020\022./compute/v1/instances/{instance_id}/operations'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_INSTANCESERVICE)

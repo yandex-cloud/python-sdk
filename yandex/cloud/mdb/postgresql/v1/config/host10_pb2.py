@@ -7,7 +7,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -21,6 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/mdb/postgresql/v1/config/host10.proto',
   package='yandex.cloud.mdb.postgresql.v1.config',
   syntax='proto3',
+  serialized_options=_b('ZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1/config;postgresql'),
   serialized_pb=_b('\n2yandex/cloud/mdb/postgresql/v1/config/host10.proto\x12%yandex.cloud.mdb.postgresql.v1.config\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\x88(\n\x16PostgresqlHostConfig10\x12=\n\x18recovery_min_apply_delay\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x33\n\x0eshared_buffers\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x31\n\x0ctemp_buffers\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12-\n\x08work_mem\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12<\n\x17replacement_sort_tuples\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x34\n\x0ftemp_file_limit\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x44\n\x13\x62\x61\x63kend_flush_after\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\n\xfa\xc7\x31\x06\x30-2048\x12I\n\x16old_snapshot_threshold\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0c\xfa\xc7\x31\x08-1-86400\x12@\n\x1bmax_standby_streaming_delay\x18\t \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12o\n\x14\x63onstraint_exclusion\x18\n \x01(\x0e\x32Q.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.ConstraintExclusion\x12;\n\x15\x63ursor_tuple_fraction\x18\x0b \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\x12J\n\x13\x66rom_collapse_limit\x18\x0c \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x10\xfa\xc7\x31\x0c\x31-2147483647\x12J\n\x13join_collapse_limit\x18\r \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x10\xfa\xc7\x31\x0c\x31-2147483647\x12l\n\x13\x66orce_parallel_mode\x18\x0e \x01(\x0e\x32O.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.ForceParallelMode\x12\x63\n\x13\x63lient_min_messages\x18\x0f \x01(\x0e\x32\x46.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.LogLevel\x12`\n\x10log_min_messages\x18\x10 \x01(\x0e\x32\x46.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.LogLevel\x12g\n\x17log_min_error_statement\x18\x11 \x01(\x0e\x32\x46.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.LogLevel\x12?\n\x1alog_min_duration_statement\x18\x12 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x33\n\x0flog_checkpoints\x18\x13 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x33\n\x0flog_connections\x18\x14 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x36\n\x12log_disconnections\x18\x15 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x30\n\x0clog_duration\x18\x16 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12l\n\x13log_error_verbosity\x18\x17 \x01(\x0e\x32O.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.LogErrorVerbosity\x12\x32\n\x0elog_lock_waits\x18\x18 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x61\n\rlog_statement\x18\x19 \x01(\x0e\x32J.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.LogStatement\x12\x33\n\x0elog_temp_files\x18\x1a \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x13\n\x0bsearch_path\x18\x1b \x01(\t\x12\x30\n\x0crow_security\x18\x1c \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12y\n\x1d\x64\x65\x66\x61ult_transaction_isolation\x18\x1d \x01(\x0e\x32R.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.TransactionIsolation\x12\x36\n\x11statement_timeout\x18\x1e \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x31\n\x0clock_timeout\x18\x1f \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12H\n#idle_in_transaction_session_timeout\x18  \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12_\n\x0c\x62ytea_output\x18! \x01(\x0e\x32I.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.ByteaOutput\x12Z\n\txmlbinary\x18\" \x01(\x0e\x32G.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.XmlBinary\x12Z\n\txmloption\x18# \x01(\x0e\x32G.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.XmlOption\x12;\n\x16gin_pending_list_limit\x18$ \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x35\n\x10\x64\x65\x61\x64lock_timeout\x18% \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12>\n\x19max_locks_per_transaction\x18& \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x43\n\x1emax_pred_locks_per_transaction\x18\' \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12/\n\x0b\x61rray_nulls\x18( \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x65\n\x0f\x62\x61\x63kslash_quote\x18) \x01(\x0e\x32L.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.BackslashQuote\x12\x35\n\x11\x64\x65\x66\x61ult_with_oids\x18* \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x39\n\x15\x65scape_string_warning\x18+ \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x38\n\x14lo_compat_privileges\x18, \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12?\n\x1boperator_precedence_warning\x18- \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x39\n\x15quote_all_identifiers\x18. \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12?\n\x1bstandard_conforming_strings\x18/ \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x38\n\x14synchronize_seqscans\x18\x30 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x39\n\x15transform_null_equals\x18\x31 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x31\n\rexit_on_error\x18\x32 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x33\n\rseq_page_cost\x18\x33 \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\x12\x36\n\x10random_page_cost\x18\x34 \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\"\x9a\x01\n\x13\x43onstraintExclusion\x12$\n CONSTRAINT_EXCLUSION_UNSPECIFIED\x10\x00\x12\x1b\n\x17\x43ONSTRAINT_EXCLUSION_ON\x10\x01\x12\x1c\n\x18\x43ONSTRAINT_EXCLUSION_OFF\x10\x02\x12\"\n\x1e\x43ONSTRAINT_EXCLUSION_PARTITION\x10\x03\"\x92\x01\n\x11\x46orceParallelMode\x12#\n\x1f\x46ORCE_PARALLEL_MODE_UNSPECIFIED\x10\x00\x12\x1a\n\x16\x46ORCE_PARALLEL_MODE_ON\x10\x01\x12\x1b\n\x17\x46ORCE_PARALLEL_MODE_OFF\x10\x02\x12\x1f\n\x1b\x46ORCE_PARALLEL_MODE_REGRESS\x10\x03\"\x92\x02\n\x08LogLevel\x12\x19\n\x15LOG_LEVEL_UNSPECIFIED\x10\x00\x12\x14\n\x10LOG_LEVEL_DEBUG5\x10\x01\x12\x14\n\x10LOG_LEVEL_DEBUG4\x10\x02\x12\x14\n\x10LOG_LEVEL_DEBUG3\x10\x03\x12\x14\n\x10LOG_LEVEL_DEBUG2\x10\x04\x12\x14\n\x10LOG_LEVEL_DEBUG1\x10\x05\x12\x11\n\rLOG_LEVEL_LOG\x10\x06\x12\x14\n\x10LOG_LEVEL_NOTICE\x10\x07\x12\x15\n\x11LOG_LEVEL_WARNING\x10\x08\x12\x13\n\x0fLOG_LEVEL_ERROR\x10\t\x12\x13\n\x0fLOG_LEVEL_FATAL\x10\n\x12\x13\n\x0fLOG_LEVEL_PANIC\x10\x0b\"\x99\x01\n\x11LogErrorVerbosity\x12#\n\x1fLOG_ERROR_VERBOSITY_UNSPECIFIED\x10\x00\x12\x1d\n\x19LOG_ERROR_VERBOSITY_TERSE\x10\x01\x12\x1f\n\x1bLOG_ERROR_VERBOSITY_DEFAULT\x10\x02\x12\x1f\n\x1bLOG_ERROR_VERBOSITY_VERBOSE\x10\x03\"\x8a\x01\n\x0cLogStatement\x12\x1d\n\x19LOG_STATEMENT_UNSPECIFIED\x10\x00\x12\x16\n\x12LOG_STATEMENT_NONE\x10\x01\x12\x15\n\x11LOG_STATEMENT_DDL\x10\x02\x12\x15\n\x11LOG_STATEMENT_MOD\x10\x03\x12\x15\n\x11LOG_STATEMENT_ALL\x10\x04\"\xe6\x01\n\x14TransactionIsolation\x12%\n!TRANSACTION_ISOLATION_UNSPECIFIED\x10\x00\x12*\n&TRANSACTION_ISOLATION_READ_UNCOMMITTED\x10\x01\x12(\n$TRANSACTION_ISOLATION_READ_COMMITTED\x10\x02\x12)\n%TRANSACTION_ISOLATION_REPEATABLE_READ\x10\x03\x12&\n\"TRANSACTION_ISOLATION_SERIALIZABLE\x10\x04\"[\n\x0b\x42yteaOutput\x12\x1c\n\x18\x42YTEA_OUTPUT_UNSPECIFIED\x10\x00\x12\x14\n\x10\x42YTEA_OUTPUT_HEX\x10\x01\x12\x18\n\x14\x42YTEA_OUTPUT_ESCAPED\x10\x02\"R\n\tXmlBinary\x12\x1a\n\x16XML_BINARY_UNSPECIFIED\x10\x00\x12\x15\n\x11XML_BINARY_BASE64\x10\x01\x12\x12\n\x0eXML_BINARY_HEX\x10\x02\"X\n\tXmlOption\x12\x1a\n\x16XML_OPTION_UNSPECIFIED\x10\x00\x12\x17\n\x13XML_OPTION_DOCUMENT\x10\x01\x12\x16\n\x12XML_OPTION_CONTENT\x10\x02\"\x9a\x01\n\x0e\x42\x61\x63kslashQuote\x12\x1f\n\x1b\x42\x41\x43KSLASH_QUOTE_UNSPECIFIED\x10\x00\x12\x13\n\x0f\x42\x41\x43KSLASH_QUOTE\x10\x01\x12\x16\n\x12\x42\x41\x43KSLASH_QUOTE_ON\x10\x02\x12\x17\n\x13\x42\x41\x43KSLASH_QUOTE_OFF\x10\x03\x12!\n\x1d\x42\x41\x43KSLASH_QUOTE_SAFE_ENCODING\x10\x04\x42VZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1/config;postgresqlb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
@@ -35,23 +35,23 @@ _POSTGRESQLHOSTCONFIG10_CONSTRAINTEXCLUSION = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='CONSTRAINT_EXCLUSION_UNSPECIFIED', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='CONSTRAINT_EXCLUSION_ON', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='CONSTRAINT_EXCLUSION_OFF', index=2, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='CONSTRAINT_EXCLUSION_PARTITION', index=3, number=3,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
+  serialized_options=None,
   serialized_start=3751,
   serialized_end=3905,
 )
@@ -65,23 +65,23 @@ _POSTGRESQLHOSTCONFIG10_FORCEPARALLELMODE = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='FORCE_PARALLEL_MODE_UNSPECIFIED', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='FORCE_PARALLEL_MODE_ON', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='FORCE_PARALLEL_MODE_OFF', index=2, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='FORCE_PARALLEL_MODE_REGRESS', index=3, number=3,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
+  serialized_options=None,
   serialized_start=3908,
   serialized_end=4054,
 )
@@ -95,55 +95,55 @@ _POSTGRESQLHOSTCONFIG10_LOGLEVEL = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='LOG_LEVEL_UNSPECIFIED', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='LOG_LEVEL_DEBUG5', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='LOG_LEVEL_DEBUG4', index=2, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='LOG_LEVEL_DEBUG3', index=3, number=3,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='LOG_LEVEL_DEBUG2', index=4, number=4,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='LOG_LEVEL_DEBUG1', index=5, number=5,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='LOG_LEVEL_LOG', index=6, number=6,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='LOG_LEVEL_NOTICE', index=7, number=7,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='LOG_LEVEL_WARNING', index=8, number=8,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='LOG_LEVEL_ERROR', index=9, number=9,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='LOG_LEVEL_FATAL', index=10, number=10,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='LOG_LEVEL_PANIC', index=11, number=11,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
+  serialized_options=None,
   serialized_start=4057,
   serialized_end=4331,
 )
@@ -157,23 +157,23 @@ _POSTGRESQLHOSTCONFIG10_LOGERRORVERBOSITY = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='LOG_ERROR_VERBOSITY_UNSPECIFIED', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='LOG_ERROR_VERBOSITY_TERSE', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='LOG_ERROR_VERBOSITY_DEFAULT', index=2, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='LOG_ERROR_VERBOSITY_VERBOSE', index=3, number=3,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
+  serialized_options=None,
   serialized_start=4334,
   serialized_end=4487,
 )
@@ -187,27 +187,27 @@ _POSTGRESQLHOSTCONFIG10_LOGSTATEMENT = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='LOG_STATEMENT_UNSPECIFIED', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='LOG_STATEMENT_NONE', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='LOG_STATEMENT_DDL', index=2, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='LOG_STATEMENT_MOD', index=3, number=3,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='LOG_STATEMENT_ALL', index=4, number=4,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
+  serialized_options=None,
   serialized_start=4490,
   serialized_end=4628,
 )
@@ -221,27 +221,27 @@ _POSTGRESQLHOSTCONFIG10_TRANSACTIONISOLATION = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='TRANSACTION_ISOLATION_UNSPECIFIED', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='TRANSACTION_ISOLATION_READ_UNCOMMITTED', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='TRANSACTION_ISOLATION_READ_COMMITTED', index=2, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='TRANSACTION_ISOLATION_REPEATABLE_READ', index=3, number=3,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='TRANSACTION_ISOLATION_SERIALIZABLE', index=4, number=4,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
+  serialized_options=None,
   serialized_start=4631,
   serialized_end=4861,
 )
@@ -255,19 +255,19 @@ _POSTGRESQLHOSTCONFIG10_BYTEAOUTPUT = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='BYTEA_OUTPUT_UNSPECIFIED', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='BYTEA_OUTPUT_HEX', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='BYTEA_OUTPUT_ESCAPED', index=2, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
+  serialized_options=None,
   serialized_start=4863,
   serialized_end=4954,
 )
@@ -281,19 +281,19 @@ _POSTGRESQLHOSTCONFIG10_XMLBINARY = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='XML_BINARY_UNSPECIFIED', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='XML_BINARY_BASE64', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='XML_BINARY_HEX', index=2, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
+  serialized_options=None,
   serialized_start=4956,
   serialized_end=5038,
 )
@@ -307,19 +307,19 @@ _POSTGRESQLHOSTCONFIG10_XMLOPTION = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='XML_OPTION_UNSPECIFIED', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='XML_OPTION_DOCUMENT', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='XML_OPTION_CONTENT', index=2, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
+  serialized_options=None,
   serialized_start=5040,
   serialized_end=5128,
 )
@@ -333,27 +333,27 @@ _POSTGRESQLHOSTCONFIG10_BACKSLASHQUOTE = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='BACKSLASH_QUOTE_UNSPECIFIED', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='BACKSLASH_QUOTE', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='BACKSLASH_QUOTE_ON', index=2, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='BACKSLASH_QUOTE_OFF', index=3, number=3,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='BACKSLASH_QUOTE_SAFE_ENCODING', index=4, number=4,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
+  serialized_options=None,
   serialized_start=5131,
   serialized_end=5285,
 )
@@ -373,364 +373,364 @@ _POSTGRESQLHOSTCONFIG10 = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='shared_buffers', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.shared_buffers', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='temp_buffers', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.temp_buffers', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='work_mem', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.work_mem', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='replacement_sort_tuples', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.replacement_sort_tuples', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='temp_file_limit', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.temp_file_limit', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='backend_flush_after', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.backend_flush_after', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\0060-2048')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\0060-2048'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='old_snapshot_threshold', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.old_snapshot_threshold', index=7,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\010-1-86400')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\010-1-86400'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='max_standby_streaming_delay', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.max_standby_streaming_delay', index=8,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='constraint_exclusion', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.constraint_exclusion', index=9,
       number=10, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='cursor_tuple_fraction', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.cursor_tuple_fraction', index=10,
       number=11, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='from_collapse_limit', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.from_collapse_limit', index=11,
       number=12, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\0141-2147483647')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\0141-2147483647'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='join_collapse_limit', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.join_collapse_limit', index=12,
       number=13, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\0141-2147483647')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\0141-2147483647'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='force_parallel_mode', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.force_parallel_mode', index=13,
       number=14, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='client_min_messages', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.client_min_messages', index=14,
       number=15, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='log_min_messages', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.log_min_messages', index=15,
       number=16, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='log_min_error_statement', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.log_min_error_statement', index=16,
       number=17, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='log_min_duration_statement', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.log_min_duration_statement', index=17,
       number=18, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='log_checkpoints', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.log_checkpoints', index=18,
       number=19, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='log_connections', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.log_connections', index=19,
       number=20, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='log_disconnections', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.log_disconnections', index=20,
       number=21, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='log_duration', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.log_duration', index=21,
       number=22, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='log_error_verbosity', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.log_error_verbosity', index=22,
       number=23, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='log_lock_waits', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.log_lock_waits', index=23,
       number=24, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='log_statement', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.log_statement', index=24,
       number=25, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='log_temp_files', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.log_temp_files', index=25,
       number=26, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='search_path', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.search_path', index=26,
       number=27, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='row_security', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.row_security', index=27,
       number=28, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='default_transaction_isolation', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.default_transaction_isolation', index=28,
       number=29, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='statement_timeout', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.statement_timeout', index=29,
       number=30, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='lock_timeout', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.lock_timeout', index=30,
       number=31, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='idle_in_transaction_session_timeout', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.idle_in_transaction_session_timeout', index=31,
       number=32, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='bytea_output', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.bytea_output', index=32,
       number=33, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='xmlbinary', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.xmlbinary', index=33,
       number=34, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='xmloption', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.xmloption', index=34,
       number=35, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='gin_pending_list_limit', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.gin_pending_list_limit', index=35,
       number=36, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='deadlock_timeout', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.deadlock_timeout', index=36,
       number=37, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='max_locks_per_transaction', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.max_locks_per_transaction', index=37,
       number=38, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='max_pred_locks_per_transaction', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.max_pred_locks_per_transaction', index=38,
       number=39, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='array_nulls', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.array_nulls', index=39,
       number=40, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='backslash_quote', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.backslash_quote', index=40,
       number=41, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='default_with_oids', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.default_with_oids', index=41,
       number=42, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='escape_string_warning', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.escape_string_warning', index=42,
       number=43, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='lo_compat_privileges', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.lo_compat_privileges', index=43,
       number=44, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='operator_precedence_warning', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.operator_precedence_warning', index=44,
       number=45, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='quote_all_identifiers', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.quote_all_identifiers', index=45,
       number=46, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='standard_conforming_strings', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.standard_conforming_strings', index=46,
       number=47, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='synchronize_seqscans', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.synchronize_seqscans', index=47,
       number=48, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='transform_null_equals', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.transform_null_equals', index=48,
       number=49, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='exit_on_error', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.exit_on_error', index=49,
       number=50, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='seq_page_cost', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.seq_page_cost', index=50,
       number=51, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='random_page_cost', full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10.random_page_cost', index=51,
       number=52, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -747,7 +747,7 @@ _POSTGRESQLHOSTCONFIG10 = _descriptor.Descriptor(
     _POSTGRESQLHOSTCONFIG10_XMLOPTION,
     _POSTGRESQLHOSTCONFIG10_BACKSLASHQUOTE,
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -829,14 +829,9 @@ PostgresqlHostConfig10 = _reflection.GeneratedProtocolMessageType('PostgresqlHos
 _sym_db.RegisterMessage(PostgresqlHostConfig10)
 
 
-DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('ZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1/config;postgresql'))
-_POSTGRESQLHOSTCONFIG10.fields_by_name['backend_flush_after'].has_options = True
-_POSTGRESQLHOSTCONFIG10.fields_by_name['backend_flush_after']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\0060-2048'))
-_POSTGRESQLHOSTCONFIG10.fields_by_name['old_snapshot_threshold'].has_options = True
-_POSTGRESQLHOSTCONFIG10.fields_by_name['old_snapshot_threshold']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\010-1-86400'))
-_POSTGRESQLHOSTCONFIG10.fields_by_name['from_collapse_limit'].has_options = True
-_POSTGRESQLHOSTCONFIG10.fields_by_name['from_collapse_limit']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\0141-2147483647'))
-_POSTGRESQLHOSTCONFIG10.fields_by_name['join_collapse_limit'].has_options = True
-_POSTGRESQLHOSTCONFIG10.fields_by_name['join_collapse_limit']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\0141-2147483647'))
+DESCRIPTOR._options = None
+_POSTGRESQLHOSTCONFIG10.fields_by_name['backend_flush_after']._options = None
+_POSTGRESQLHOSTCONFIG10.fields_by_name['old_snapshot_threshold']._options = None
+_POSTGRESQLHOSTCONFIG10.fields_by_name['from_collapse_limit']._options = None
+_POSTGRESQLHOSTCONFIG10.fields_by_name['join_collapse_limit']._options = None
 # @@protoc_insertion_point(module_scope)

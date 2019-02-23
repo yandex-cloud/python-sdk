@@ -7,7 +7,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -20,6 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/iam/v1/user_account.proto',
   package='yandex.cloud.iam.v1',
   syntax='proto3',
+  serialized_options=_b('Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iam'),
   serialized_pb=_b('\n&yandex/cloud/iam/v1/user_account.proto\x12\x13yandex.cloud.iam.v1\x1a\x1dyandex/cloud/validation.proto\"\x81\x01\n\x0bUserAccount\x12\n\n\x02id\x18\x01 \x01(\t\x12V\n\x1cyandex_passport_user_account\x18\x02 \x01(\x0b\x32..yandex.cloud.iam.v1.YandexPassportUserAccountH\x00\x42\x0e\n\x0cuser_account\"A\n\x19YandexPassportUserAccount\x12\r\n\x05login\x18\x01 \x01(\t\x12\x15\n\rdefault_email\x18\x02 \x01(\tB=Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3')
   ,
   dependencies=[yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
@@ -40,21 +40,21 @@ _USERACCOUNT = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='yandex_passport_user_account', full_name='yandex.cloud.iam.v1.UserAccount.yandex_passport_user_account', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -81,21 +81,21 @@ _YANDEXPASSPORTUSERACCOUNT = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='default_email', full_name='yandex.cloud.iam.v1.YandexPassportUserAccount.default_email', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -128,6 +128,5 @@ YandexPassportUserAccount = _reflection.GeneratedProtocolMessageType('YandexPass
 _sym_db.RegisterMessage(YandexPassportUserAccount)
 
 
-DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iam'))
+DESCRIPTOR._options = None
 # @@protoc_insertion_point(module_scope)

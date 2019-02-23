@@ -7,7 +7,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -26,6 +25,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/vpc/v1/network_service.proto',
   package='yandex.cloud.vpc.v1',
   syntax='proto3',
+  serialized_options=_b('Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpc'),
   serialized_pb=_b('\n)yandex/cloud/vpc/v1/network_service.proto\x12\x13yandex.cloud.vpc.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1ayandex/api/operation.proto\x1a!yandex/cloud/vpc/v1/network.proto\x1a yandex/cloud/vpc/v1/subnet.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"5\n\x11GetNetworkRequest\x12 \n\nnetwork_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x90\x01\n\x13ListNetworksRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"_\n\x14ListNetworksResponse\x12.\n\x08networks\x18\x01 \x03(\x0b\x32\x1c.yandex.cloud.vpc.v1.Network\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xc0\x02\n\x14\x43reateNetworkRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x86\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x35.yandex.cloud.vpc.v1.CreateNetworkRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15\x43reateNetworkMetadata\x12\x12\n\nnetwork_id\x18\x01 \x01(\t\"\xf2\x02\n\x14UpdateNetworkRequest\x12 \n\nnetwork_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x86\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x35.yandex.cloud.vpc.v1.UpdateNetworkRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15UpdateNetworkMetadata\x12\x12\n\nnetwork_id\x18\x01 \x01(\t\"8\n\x14\x44\x65leteNetworkRequest\x12 \n\nnetwork_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x44\x65leteNetworkMetadata\x12\x12\n\nnetwork_id\x18\x01 \x01(\t\"{\n\x19ListNetworkSubnetsRequest\x12 \n\nnetwork_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"c\n\x1aListNetworkSubnetsResponse\x12,\n\x07subnets\x18\x01 \x03(\x0b\x32\x1b.yandex.cloud.vpc.v1.Subnet\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"~\n\x1cListNetworkOperationsRequest\x12 \n\nnetwork_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"o\n\x1dListNetworkOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xba\x08\n\x0eNetworkService\x12r\n\x03Get\x12&.yandex.cloud.vpc.v1.GetNetworkRequest\x1a\x1c.yandex.cloud.vpc.v1.Network\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/vpc/v1/networks/{network_id}\x12u\n\x04List\x12(.yandex.cloud.vpc.v1.ListNetworksRequest\x1a).yandex.cloud.vpc.v1.ListNetworksResponse\"\x18\x82\xd3\xe4\x93\x02\x12\x12\x10/vpc/v1/networks\x12\x97\x01\n\x06\x43reate\x12).yandex.cloud.vpc.v1.CreateNetworkRequest\x1a!.yandex.cloud.operation.Operation\"?\x82\xd3\xe4\x93\x02\x15\"\x10/vpc/v1/networks:\x01*\xb2\xd2* \n\x15\x43reateNetworkMetadata\x12\x07Network\x12\xa4\x01\n\x06Update\x12).yandex.cloud.vpc.v1.UpdateNetworkRequest\x1a!.yandex.cloud.operation.Operation\"L\x82\xd3\xe4\x93\x02\"2\x1d/vpc/v1/networks/{network_id}:\x01*\xb2\xd2* \n\x15UpdateNetworkMetadata\x12\x07Network\x12\xaf\x01\n\x06\x44\x65lete\x12).yandex.cloud.vpc.v1.DeleteNetworkRequest\x1a!.yandex.cloud.operation.Operation\"W\x82\xd3\xe4\x93\x02\x1f*\x1d/vpc/v1/networks/{network_id}\xb2\xd2*.\n\x15\x44\x65leteNetworkMetadata\x12\x15google.protobuf.Empty\x12\x9d\x01\n\x0bListSubnets\x12..yandex.cloud.vpc.v1.ListNetworkSubnetsRequest\x1a/.yandex.cloud.vpc.v1.ListNetworkSubnetsResponse\"-\x82\xd3\xe4\x93\x02\'\x12%/vpc/v1/networks/{network_id}/subnets\x12\xa9\x01\n\x0eListOperations\x12\x31.yandex.cloud.vpc.v1.ListNetworkOperationsRequest\x1a\x32.yandex.cloud.vpc.v1.ListNetworkOperationsResponse\"0\x82\xd3\xe4\x93\x02*\x12(/vpc/v1/networks/{network_id}/operationsB=Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpcb\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_vpc_dot_v1_dot_network__pb2.DESCRIPTOR,yandex_dot_cloud_dot_vpc_dot_v1_dot_subnet__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
@@ -46,14 +46,14 @@ _GETNETWORKREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -77,35 +77,35 @@ _LISTNETWORKSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.vpc.v1.ListNetworksRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\006<=1000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.vpc.v1.ListNetworksRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=100'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='filter', full_name='yandex.cloud.vpc.v1.ListNetworksRequest.filter', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\006<=1000')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\006<=1000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -129,21 +129,21 @@ _LISTNETWORKSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.vpc.v1.ListNetworksResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -167,21 +167,21 @@ _CREATENETWORKREQUEST_LABELSENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='yandex.cloud.vpc.v1.CreateNetworkRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  serialized_options=_b('8\001'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -204,35 +204,35 @@ _CREATENETWORKREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='name', full_name='yandex.cloud.vpc.v1.CreateNetworkRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]')), file=DESCRIPTOR),
+      serialized_options=_b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='description', full_name='yandex.cloud.vpc.v1.CreateNetworkRequest.description', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=256')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=256'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='labels', full_name='yandex.cloud.vpc.v1.CreateNetworkRequest.labels', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*')), file=DESCRIPTOR),
+      serialized_options=_b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[_CREATENETWORKREQUEST_LABELSENTRY, ],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -256,14 +256,14 @@ _CREATENETWORKMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -287,21 +287,21 @@ _UPDATENETWORKREQUEST_LABELSENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='yandex.cloud.vpc.v1.UpdateNetworkRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  serialized_options=_b('8\001'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -324,42 +324,42 @@ _UPDATENETWORKREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='update_mask', full_name='yandex.cloud.vpc.v1.UpdateNetworkRequest.update_mask', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='name', full_name='yandex.cloud.vpc.v1.UpdateNetworkRequest.name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]')), file=DESCRIPTOR),
+      serialized_options=_b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='description', full_name='yandex.cloud.vpc.v1.UpdateNetworkRequest.description', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=256')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=256'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='labels', full_name='yandex.cloud.vpc.v1.UpdateNetworkRequest.labels', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*')), file=DESCRIPTOR),
+      serialized_options=_b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[_UPDATENETWORKREQUEST_LABELSENTRY, ],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -383,14 +383,14 @@ _UPDATENETWORKMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -414,14 +414,14 @@ _DELETENETWORKREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -445,14 +445,14 @@ _DELETENETWORKMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -476,28 +476,28 @@ _LISTNETWORKSUBNETSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.vpc.v1.ListNetworkSubnetsRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\006<=1000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.vpc.v1.ListNetworkSubnetsRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=100'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -521,21 +521,21 @@ _LISTNETWORKSUBNETSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.vpc.v1.ListNetworkSubnetsResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -559,28 +559,28 @@ _LISTNETWORKOPERATIONSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.vpc.v1.ListNetworkOperationsRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\006<=1000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.vpc.v1.ListNetworkOperationsRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=100'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -604,21 +604,21 @@ _LISTNETWORKOPERATIONSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.vpc.v1.ListNetworkOperationsResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -759,59 +759,36 @@ ListNetworkOperationsResponse = _reflection.GeneratedProtocolMessageType('ListNe
 _sym_db.RegisterMessage(ListNetworkOperationsResponse)
 
 
-DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpc'))
-_GETNETWORKREQUEST.fields_by_name['network_id'].has_options = True
-_GETNETWORKREQUEST.fields_by_name['network_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_LISTNETWORKSREQUEST.fields_by_name['folder_id'].has_options = True
-_LISTNETWORKSREQUEST.fields_by_name['folder_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_LISTNETWORKSREQUEST.fields_by_name['page_size'].has_options = True
-_LISTNETWORKSREQUEST.fields_by_name['page_size']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000'))
-_LISTNETWORKSREQUEST.fields_by_name['page_token'].has_options = True
-_LISTNETWORKSREQUEST.fields_by_name['page_token']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100'))
-_LISTNETWORKSREQUEST.fields_by_name['filter'].has_options = True
-_LISTNETWORKSREQUEST.fields_by_name['filter']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\006<=1000'))
-_CREATENETWORKREQUEST_LABELSENTRY.has_options = True
-_CREATENETWORKREQUEST_LABELSENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
-_CREATENETWORKREQUEST.fields_by_name['folder_id'].has_options = True
-_CREATENETWORKREQUEST.fields_by_name['folder_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_CREATENETWORKREQUEST.fields_by_name['name'].has_options = True
-_CREATENETWORKREQUEST.fields_by_name['name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'))
-_CREATENETWORKREQUEST.fields_by_name['description'].has_options = True
-_CREATENETWORKREQUEST.fields_by_name['description']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=256'))
-_CREATENETWORKREQUEST.fields_by_name['labels'].has_options = True
-_CREATENETWORKREQUEST.fields_by_name['labels']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*'))
-_UPDATENETWORKREQUEST_LABELSENTRY.has_options = True
-_UPDATENETWORKREQUEST_LABELSENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
-_UPDATENETWORKREQUEST.fields_by_name['network_id'].has_options = True
-_UPDATENETWORKREQUEST.fields_by_name['network_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_UPDATENETWORKREQUEST.fields_by_name['name'].has_options = True
-_UPDATENETWORKREQUEST.fields_by_name['name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'))
-_UPDATENETWORKREQUEST.fields_by_name['description'].has_options = True
-_UPDATENETWORKREQUEST.fields_by_name['description']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=256'))
-_UPDATENETWORKREQUEST.fields_by_name['labels'].has_options = True
-_UPDATENETWORKREQUEST.fields_by_name['labels']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*'))
-_DELETENETWORKREQUEST.fields_by_name['network_id'].has_options = True
-_DELETENETWORKREQUEST.fields_by_name['network_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_LISTNETWORKSUBNETSREQUEST.fields_by_name['network_id'].has_options = True
-_LISTNETWORKSUBNETSREQUEST.fields_by_name['network_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_LISTNETWORKSUBNETSREQUEST.fields_by_name['page_size'].has_options = True
-_LISTNETWORKSUBNETSREQUEST.fields_by_name['page_size']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000'))
-_LISTNETWORKSUBNETSREQUEST.fields_by_name['page_token'].has_options = True
-_LISTNETWORKSUBNETSREQUEST.fields_by_name['page_token']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100'))
-_LISTNETWORKOPERATIONSREQUEST.fields_by_name['network_id'].has_options = True
-_LISTNETWORKOPERATIONSREQUEST.fields_by_name['network_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_LISTNETWORKOPERATIONSREQUEST.fields_by_name['page_size'].has_options = True
-_LISTNETWORKOPERATIONSREQUEST.fields_by_name['page_size']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000'))
-_LISTNETWORKOPERATIONSREQUEST.fields_by_name['page_token'].has_options = True
-_LISTNETWORKOPERATIONSREQUEST.fields_by_name['page_token']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100'))
+DESCRIPTOR._options = None
+_GETNETWORKREQUEST.fields_by_name['network_id']._options = None
+_LISTNETWORKSREQUEST.fields_by_name['folder_id']._options = None
+_LISTNETWORKSREQUEST.fields_by_name['page_size']._options = None
+_LISTNETWORKSREQUEST.fields_by_name['page_token']._options = None
+_LISTNETWORKSREQUEST.fields_by_name['filter']._options = None
+_CREATENETWORKREQUEST_LABELSENTRY._options = None
+_CREATENETWORKREQUEST.fields_by_name['folder_id']._options = None
+_CREATENETWORKREQUEST.fields_by_name['name']._options = None
+_CREATENETWORKREQUEST.fields_by_name['description']._options = None
+_CREATENETWORKREQUEST.fields_by_name['labels']._options = None
+_UPDATENETWORKREQUEST_LABELSENTRY._options = None
+_UPDATENETWORKREQUEST.fields_by_name['network_id']._options = None
+_UPDATENETWORKREQUEST.fields_by_name['name']._options = None
+_UPDATENETWORKREQUEST.fields_by_name['description']._options = None
+_UPDATENETWORKREQUEST.fields_by_name['labels']._options = None
+_DELETENETWORKREQUEST.fields_by_name['network_id']._options = None
+_LISTNETWORKSUBNETSREQUEST.fields_by_name['network_id']._options = None
+_LISTNETWORKSUBNETSREQUEST.fields_by_name['page_size']._options = None
+_LISTNETWORKSUBNETSREQUEST.fields_by_name['page_token']._options = None
+_LISTNETWORKOPERATIONSREQUEST.fields_by_name['network_id']._options = None
+_LISTNETWORKOPERATIONSREQUEST.fields_by_name['page_size']._options = None
+_LISTNETWORKOPERATIONSREQUEST.fields_by_name['page_token']._options = None
 
 _NETWORKSERVICE = _descriptor.ServiceDescriptor(
   name='NetworkService',
   full_name='yandex.cloud.vpc.v1.NetworkService',
   file=DESCRIPTOR,
   index=0,
-  options=None,
+  serialized_options=None,
   serialized_start=1954,
   serialized_end=3036,
   methods=[
@@ -822,7 +799,7 @@ _NETWORKSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETNETWORKREQUEST,
     output_type=yandex_dot_cloud_dot_vpc_dot_v1_dot_network__pb2._NETWORK,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\037\022\035/vpc/v1/networks/{network_id}')),
+    serialized_options=_b('\202\323\344\223\002\037\022\035/vpc/v1/networks/{network_id}'),
   ),
   _descriptor.MethodDescriptor(
     name='List',
@@ -831,7 +808,7 @@ _NETWORKSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTNETWORKSREQUEST,
     output_type=_LISTNETWORKSRESPONSE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\022\022\020/vpc/v1/networks')),
+    serialized_options=_b('\202\323\344\223\002\022\022\020/vpc/v1/networks'),
   ),
   _descriptor.MethodDescriptor(
     name='Create',
@@ -840,7 +817,7 @@ _NETWORKSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_CREATENETWORKREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\025\"\020/vpc/v1/networks:\001*\262\322* \n\025CreateNetworkMetadata\022\007Network')),
+    serialized_options=_b('\202\323\344\223\002\025\"\020/vpc/v1/networks:\001*\262\322* \n\025CreateNetworkMetadata\022\007Network'),
   ),
   _descriptor.MethodDescriptor(
     name='Update',
@@ -849,7 +826,7 @@ _NETWORKSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATENETWORKREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\"2\035/vpc/v1/networks/{network_id}:\001*\262\322* \n\025UpdateNetworkMetadata\022\007Network')),
+    serialized_options=_b('\202\323\344\223\002\"2\035/vpc/v1/networks/{network_id}:\001*\262\322* \n\025UpdateNetworkMetadata\022\007Network'),
   ),
   _descriptor.MethodDescriptor(
     name='Delete',
@@ -858,7 +835,7 @@ _NETWORKSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DELETENETWORKREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\037*\035/vpc/v1/networks/{network_id}\262\322*.\n\025DeleteNetworkMetadata\022\025google.protobuf.Empty')),
+    serialized_options=_b('\202\323\344\223\002\037*\035/vpc/v1/networks/{network_id}\262\322*.\n\025DeleteNetworkMetadata\022\025google.protobuf.Empty'),
   ),
   _descriptor.MethodDescriptor(
     name='ListSubnets',
@@ -867,7 +844,7 @@ _NETWORKSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTNETWORKSUBNETSREQUEST,
     output_type=_LISTNETWORKSUBNETSRESPONSE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\'\022%/vpc/v1/networks/{network_id}/subnets')),
+    serialized_options=_b('\202\323\344\223\002\'\022%/vpc/v1/networks/{network_id}/subnets'),
   ),
   _descriptor.MethodDescriptor(
     name='ListOperations',
@@ -876,7 +853,7 @@ _NETWORKSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTNETWORKOPERATIONSREQUEST,
     output_type=_LISTNETWORKOPERATIONSRESPONSE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002*\022(/vpc/v1/networks/{network_id}/operations')),
+    serialized_options=_b('\202\323\344\223\002*\022(/vpc/v1/networks/{network_id}/operations'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_NETWORKSERVICE)
