@@ -1,17 +1,25 @@
-
 import inspect
+import grpc
 
 from yandexcloud import _channels
 from yandexcloud import _operation_waiter
 
 
 class SDK(object):
-    def __init__(self, **kwargs):
+    def __init__(self, interceptor=None, **kwargs):
         self._channels = _channels.Channels(**kwargs)
+        self._default_interceptor = interceptor
 
-    def client(self, stub_ctor):
+    def set_interceptor(self, interceptor):
+        self._default_interceptor = interceptor
+
+    def client(self, stub_ctor, interceptor=None):
         service = _service_for_ctor(stub_ctor)
         channel = self._channels.channel(service)
+        if interceptor is not None:
+            channel = grpc.intercept_channel(channel, interceptor)
+        elif self._default_interceptor is not None:
+            channel = grpc.intercept_channel(channel, self._default_interceptor)
         return stub_ctor(channel)
 
     def waiter(self, operation_id):

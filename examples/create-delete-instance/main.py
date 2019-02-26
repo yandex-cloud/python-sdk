@@ -1,4 +1,5 @@
 import argparse
+import grpc
 import sys
 import time
 
@@ -81,7 +82,8 @@ def delete_instance(sdk, instance_id):
 
 
 def main(token, folder_id, zone, name, subnet_id):
-    sdk = yandexcloud.SDK(token=token)
+    interceptor = yandexcloud.RetryInterceptor(max_retry_count=5, retriable_codes=[grpc.StatusCode.UNAVAILABLE])
+    sdk = yandexcloud.SDK(interceptor=interceptor, token=token)
     operation = create_instance(sdk, folder_id, zone, name, subnet_id)
     meta = CreateInstanceMetadata()
     operation.metadata.Unpack(meta)
