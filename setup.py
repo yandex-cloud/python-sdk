@@ -11,7 +11,7 @@ setup(name='yandexcloud',
       license='MIT',
       install_requires=[
           'cryptography',
-          'grpcio',
+          'grpcio>=0.17.0',
           'googleapis-common-protos',
           'pyjwt',
           'six',
