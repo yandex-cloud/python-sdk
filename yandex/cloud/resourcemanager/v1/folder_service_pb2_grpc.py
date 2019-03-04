@@ -100,6 +100,8 @@ class FolderServiceServicer(object):
 
   def Delete(self, request, context):
     """Deletes the specified folder.
+
+    The method is temporarily unavailable.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')

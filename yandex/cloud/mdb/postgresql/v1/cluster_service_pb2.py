@@ -7,7 +7,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -26,17 +25,20 @@ from yandex.cloud.mdb.postgresql.v1 import database_pb2 as yandex_dot_cloud_dot_
 from yandex.cloud.mdb.postgresql.v1 import user_pb2 as yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_user__pb2
 from yandex.cloud.mdb.postgresql.v1.config import postgresql9_6_pb2 as yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_config_dot_postgresql9__6__pb2
 from yandex.cloud.mdb.postgresql.v1.config import postgresql10_pb2 as yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_config_dot_postgresql10__pb2
+from yandex.cloud.mdb.postgresql.v1.config import postgresql11_pb2 as yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_config_dot_postgresql11__pb2
 from yandex.cloud.mdb.postgresql.v1.config import host9_6_pb2 as yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_config_dot_host9__6__pb2
 from yandex.cloud.mdb.postgresql.v1.config import host10_pb2 as yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_config_dot_host10__pb2
+from yandex.cloud.mdb.postgresql.v1.config import host11_pb2 as yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_config_dot_host11__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/mdb/postgresql/v1/cluster_service.proto',
   package='yandex.cloud.mdb.postgresql.v1',
   syntax='proto3',
-  serialized_pb=_b('\n4yandex/cloud/mdb/postgresql/v1/cluster_service.proto\x12\x1eyandex.cloud.mdb.postgresql.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1ayandex/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a+yandex/cloud/mdb/postgresql/v1/backup.proto\x1a,yandex/cloud/mdb/postgresql/v1/cluster.proto\x1a-yandex/cloud/mdb/postgresql/v1/database.proto\x1a)yandex/cloud/mdb/postgresql/v1/user.proto\x1a\x39yandex/cloud/mdb/postgresql/v1/config/postgresql9_6.proto\x1a\x38yandex/cloud/mdb/postgresql/v1/config/postgresql10.proto\x1a\x33yandex/cloud/mdb/postgresql/v1/config/host9_6.proto\x1a\x32yandex/cloud/mdb/postgresql/v1/config/host10.proto\"5\n\x11GetClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x90\x01\n\x13ListClustersRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"j\n\x14ListClustersResponse\x12\x39\n\x08\x63lusters\x18\x01 \x03(\x0b\x32\'.yandex.cloud.mdb.postgresql.v1.Cluster\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xdc\x05\n\x14\x43reateClusterRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x33\n\x04name\x18\x02 \x01(\tB%\xe8\xc7\x31\x01\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x91\x01\n\x06labels\x18\x04 \x03(\x0b\x32@.yandex.cloud.mdb.postgresql.v1.CreateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12N\n\x0b\x65nvironment\x18\x05 \x01(\x0e\x32\x33.yandex.cloud.mdb.postgresql.v1.Cluster.EnvironmentB\x04\xe8\xc7\x31\x01\x12\x45\n\x0b\x63onfig_spec\x18\x06 \x01(\x0b\x32*.yandex.cloud.mdb.postgresql.v1.ConfigSpecB\x04\xe8\xc7\x31\x01\x12J\n\x0e\x64\x61tabase_specs\x18\x07 \x03(\x0b\x32,.yandex.cloud.mdb.postgresql.v1.DatabaseSpecB\x04\xe8\xc7\x31\x01\x12\x42\n\nuser_specs\x18\x08 \x03(\x0b\x32(.yandex.cloud.mdb.postgresql.v1.UserSpecB\x04\xe8\xc7\x31\x01\x12\x42\n\nhost_specs\x18\t \x03(\x0b\x32(.yandex.cloud.mdb.postgresql.v1.HostSpecB\x04\xe8\xc7\x31\x01\x12 \n\nnetwork_id\x18\n \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15\x43reateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\x8d\x03\n\x14UpdateClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x91\x01\n\x06labels\x18\x04 \x03(\x0b\x32@.yandex.cloud.mdb.postgresql.v1.UpdateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12?\n\x0b\x63onfig_spec\x18\x05 \x01(\x0b\x32*.yandex.cloud.mdb.postgresql.v1.ConfigSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15UpdateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"8\n\x14\x44\x65leteClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x44\x65leteClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"8\n\x14\x42\x61\x63kupClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x42\x61\x63kupClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\x84\x05\n\x15RestoreClusterRequest\x12\x17\n\tbackup_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12.\n\x04time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12\x16\n\x0etime_inclusive\x18\x03 \x01(\x08\x12\x33\n\x04name\x18\x04 \x01(\tB%\xe8\xc7\x31\x01\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x92\x01\n\x06labels\x18\x06 \x03(\x0b\x32\x41.yandex.cloud.mdb.postgresql.v1.RestoreClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12H\n\x0b\x65nvironment\x18\x07 \x01(\x0e\x32\x33.yandex.cloud.mdb.postgresql.v1.Cluster.Environment\x12?\n\x0b\x63onfig_spec\x18\x08 \x01(\x0b\x32*.yandex.cloud.mdb.postgresql.v1.ConfigSpec\x12\x44\n\nhost_specs\x18\t \x03(\x0b\x32(.yandex.cloud.mdb.postgresql.v1.HostSpecB\x06\x82\xc8\x31\x02>0\x12 \n\nnetwork_id\x18\n \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"?\n\x16RestoreClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tbackup_id\x18\x02 \x01(\t\"\xb3\x01\n\tLogRecord\x12-\n\ttimestamp\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12G\n\x07message\x18\x02 \x03(\x0b\x32\x36.yandex.cloud.mdb.postgresql.v1.LogRecord.MessageEntry\x1a.\n\x0cMessageEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x8e\x03\n\x16ListClusterLogsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x15\n\rcolumn_filter\x18\x02 \x03(\t\x12X\n\x0cservice_type\x18\x03 \x01(\x0e\x32\x42.yandex.cloud.mdb.postgresql.v1.ListClusterLogsRequest.ServiceType\x12-\n\tfrom_time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07to_time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1d\n\tpage_size\x18\x06 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x07 \x01(\tB\t\x8a\xc8\x31\x05<=100\"G\n\x0bServiceType\x12\x1c\n\x18SERVICE_TYPE_UNSPECIFIED\x10\x00\x12\x0e\n\nPOSTGRESQL\x10\x01\x12\n\n\x06POOLER\x10\x02\"k\n\x17ListClusterLogsResponse\x12\x37\n\x04logs\x18\x01 \x03(\x0b\x32).yandex.cloud.mdb.postgresql.v1.LogRecord\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"~\n\x1cListClusterOperationsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"o\n\x1dListClusterOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"{\n\x19ListClusterBackupsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"n\n\x1aListClusterBackupsResponse\x12\x37\n\x07\x62\x61\x63kups\x18\x01 \x03(\x0b\x32&.yandex.cloud.mdb.postgresql.v1.Backup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"y\n\x17ListClusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"h\n\x18ListClusterHostsResponse\x12\x33\n\x05hosts\x18\x01 \x03(\x0b\x32$.yandex.cloud.mdb.postgresql.v1.Host\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x80\x01\n\x16\x41\x64\x64\x43lusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x44\n\nhost_specs\x18\x02 \x03(\x0b\x32(.yandex.cloud.mdb.postgresql.v1.HostSpecB\x06\x82\xc8\x31\x02>0\"A\n\x17\x41\x64\x64\x43lusterHostsMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nhost_names\x18\x02 \x03(\t\"b\n\x19\x44\x65leteClusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12#\n\nhost_names\x18\x02 \x03(\tB\x0f\x82\xc8\x31\x02>0\x8a\xc8\x31\x05<=253\"D\n\x1a\x44\x65leteClusterHostsMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nhost_names\x18\x02 \x03(\t\"\x90\x01\n\x19UpdateClusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12Q\n\x11update_host_specs\x18\x02 \x03(\x0b\x32..yandex.cloud.mdb.postgresql.v1.UpdateHostSpecB\x06\x82\xc8\x31\x02>0\"D\n\x1aUpdateClusterHostsMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nhost_names\x18\x02 \x03(\t\"\xb9\x01\n\x0eUpdateHostSpec\x12\x17\n\thost_name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1a\n\x12replication_source\x18\x02 \x01(\t\x12-\n\x08priority\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x43\n\x0b\x63onfig_spec\x18\x04 \x01(\x0b\x32..yandex.cloud.mdb.postgresql.v1.ConfigHostSpec\"\xec\x01\n\x08HostSpec\x12\x19\n\x07zone_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1b\n\tsubnet_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x18\n\x10\x61ssign_public_ip\x18\x03 \x01(\x08\x12\x1a\n\x12replication_source\x18\x04 \x01(\t\x12-\n\x08priority\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x43\n\x0b\x63onfig_spec\x18\x06 \x01(\x0b\x32..yandex.cloud.mdb.postgresql.v1.ConfigHostSpec\"\xa9\x03\n\nConfigSpec\x12\x0f\n\x07version\x18\x01 \x01(\t\x12[\n\x15postgresql_config_9_6\x18\x02 \x01(\x0b\x32:.yandex.cloud.mdb.postgresql.v1.config.PostgresqlConfig9_6H\x00\x12Y\n\x14postgresql_config_10\x18\x03 \x01(\x0b\x32\x39.yandex.cloud.mdb.postgresql.v1.config.PostgresqlConfig10H\x00\x12M\n\rpooler_config\x18\x04 \x01(\x0b\x32\x36.yandex.cloud.mdb.postgresql.v1.ConnectionPoolerConfig\x12<\n\tresources\x18\x05 \x01(\x0b\x32).yandex.cloud.mdb.postgresql.v1.Resources\x12\x30\n\x0c\x61utofailover\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\x13\n\x11postgresql_config\"\xe5\x01\n\x0e\x43onfigHostSpec\x12_\n\x15postgresql_config_9_6\x18\x01 \x01(\x0b\x32>.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig9_6H\x00\x12]\n\x14postgresql_config_10\x18\x02 \x01(\x0b\x32=.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10H\x00\x42\x13\n\x11postgresql_config2\xe1\x15\n\x0e\x43lusterService\x12\x97\x01\n\x03Get\x12\x31.yandex.cloud.mdb.postgresql.v1.GetClusterRequest\x1a\'.yandex.cloud.mdb.postgresql.v1.Cluster\"4\x82\xd3\xe4\x93\x02.\x12,/managed-postgresql/v1/clusters/{cluster_id}\x12\x9a\x01\n\x04List\x12\x33.yandex.cloud.mdb.postgresql.v1.ListClustersRequest\x1a\x34.yandex.cloud.mdb.postgresql.v1.ListClustersResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/managed-postgresql/v1/clusters\x12\xb1\x01\n\x06\x43reate\x12\x34.yandex.cloud.mdb.postgresql.v1.CreateClusterRequest\x1a!.yandex.cloud.operation.Operation\"N\x82\xd3\xe4\x93\x02$\"\x1f/managed-postgresql/v1/clusters:\x01*\xb2\xd2* \n\x15\x43reateClusterMetadata\x12\x07\x43luster\x12\xbe\x01\n\x06Update\x12\x34.yandex.cloud.mdb.postgresql.v1.UpdateClusterRequest\x1a!.yandex.cloud.operation.Operation\"[\x82\xd3\xe4\x93\x02\x31\x32,/managed-postgresql/v1/clusters/{cluster_id}:\x01*\xb2\xd2* \n\x15UpdateClusterMetadata\x12\x07\x43luster\x12\xc9\x01\n\x06\x44\x65lete\x12\x34.yandex.cloud.mdb.postgresql.v1.DeleteClusterRequest\x1a!.yandex.cloud.operation.Operation\"f\x82\xd3\xe4\x93\x02.*,/managed-postgresql/v1/clusters/{cluster_id}\xb2\xd2*.\n\x15\x44\x65leteClusterMetadata\x12\x15google.protobuf.Empty\x12\xc2\x01\n\x06\x42\x61\x63kup\x12\x34.yandex.cloud.mdb.postgresql.v1.BackupClusterRequest\x1a!.yandex.cloud.operation.Operation\"_\x82\xd3\xe4\x93\x02\x35\"3/managed-postgresql/v1/clusters/{cluster_id}:backup\xb2\xd2* \n\x15\x42\x61\x63kupClusterMetadata\x12\x07\x43luster\x12\xbc\x01\n\x07Restore\x12\x35.yandex.cloud.mdb.postgresql.v1.RestoreClusterRequest\x1a!.yandex.cloud.operation.Operation\"W\x82\xd3\xe4\x93\x02,\"\'/managed-postgresql/v1/clusters:restore:\x01*\xb2\xd2*!\n\x16RestoreClusterMetadata\x12\x07\x43luster\x12\xb6\x01\n\x08ListLogs\x12\x36.yandex.cloud.mdb.postgresql.v1.ListClusterLogsRequest\x1a\x37.yandex.cloud.mdb.postgresql.v1.ListClusterLogsResponse\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/managed-postgresql/v1/clusters/{cluster_id}:logs\x12\xce\x01\n\x0eListOperations\x12<.yandex.cloud.mdb.postgresql.v1.ListClusterOperationsRequest\x1a=.yandex.cloud.mdb.postgresql.v1.ListClusterOperationsResponse\"?\x82\xd3\xe4\x93\x02\x39\x12\x37/managed-postgresql/v1/clusters/{cluster_id}/operations\x12\xc2\x01\n\x0bListBackups\x12\x39.yandex.cloud.mdb.postgresql.v1.ListClusterBackupsRequest\x1a:.yandex.cloud.mdb.postgresql.v1.ListClusterBackupsResponse\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/managed-postgresql/v1/clusters/{cluster_id}/backups\x12\xba\x01\n\tListHosts\x12\x37.yandex.cloud.mdb.postgresql.v1.ListClusterHostsRequest\x1a\x38.yandex.cloud.mdb.postgresql.v1.ListClusterHostsResponse\":\x82\xd3\xe4\x93\x02\x34\x12\x32/managed-postgresql/v1/clusters/{cluster_id}/hosts\x12\xe4\x01\n\x08\x41\x64\x64Hosts\x12\x36.yandex.cloud.mdb.postgresql.v1.AddClusterHostsRequest\x1a!.yandex.cloud.operation.Operation\"}\x82\xd3\xe4\x93\x02\x43\">/managed-postgresql/v1/clusters/{cluster_id}/hosts:batchCreate:\x01*\xb2\xd2*0\n\x17\x41\x64\x64\x43lusterHostsMetadata\x12\x15google.protobuf.Empty\x12\xee\x01\n\x0b\x44\x65leteHosts\x12\x39.yandex.cloud.mdb.postgresql.v1.DeleteClusterHostsRequest\x1a!.yandex.cloud.operation.Operation\"\x80\x01\x82\xd3\xe4\x93\x02\x43\">/managed-postgresql/v1/clusters/{cluster_id}/hosts:batchDelete:\x01*\xb2\xd2*3\n\x1a\x44\x65leteClusterHostsMetadata\x12\x15google.protobuf.Empty\x12\xee\x01\n\x0bUpdateHosts\x12\x39.yandex.cloud.mdb.postgresql.v1.UpdateClusterHostsRequest\x1a!.yandex.cloud.operation.Operation\"\x80\x01\x82\xd3\xe4\x93\x02\x43\">/managed-postgresql/v1/clusters/{cluster_id}/hosts:batchUpdate:\x01*\xb2\xd2*3\n\x1aUpdateClusterHostsMetadata\x12\x15google.protobuf.EmptyBOZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1;postgresqlb\x06proto3')
+  serialized_options=_b('ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1;postgresql'),
+  serialized_pb=_b('\n4yandex/cloud/mdb/postgresql/v1/cluster_service.proto\x12\x1eyandex.cloud.mdb.postgresql.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1ayandex/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a+yandex/cloud/mdb/postgresql/v1/backup.proto\x1a,yandex/cloud/mdb/postgresql/v1/cluster.proto\x1a-yandex/cloud/mdb/postgresql/v1/database.proto\x1a)yandex/cloud/mdb/postgresql/v1/user.proto\x1a\x39yandex/cloud/mdb/postgresql/v1/config/postgresql9_6.proto\x1a\x38yandex/cloud/mdb/postgresql/v1/config/postgresql10.proto\x1a\x38yandex/cloud/mdb/postgresql/v1/config/postgresql11.proto\x1a\x33yandex/cloud/mdb/postgresql/v1/config/host9_6.proto\x1a\x32yandex/cloud/mdb/postgresql/v1/config/host10.proto\x1a\x32yandex/cloud/mdb/postgresql/v1/config/host11.proto\"5\n\x11GetClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x90\x01\n\x13ListClustersRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"j\n\x14ListClustersResponse\x12\x39\n\x08\x63lusters\x18\x01 \x03(\x0b\x32\'.yandex.cloud.mdb.postgresql.v1.Cluster\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xd5\x05\n\x14\x43reateClusterRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12,\n\x04name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x91\x01\n\x06labels\x18\x04 \x03(\x0b\x32@.yandex.cloud.mdb.postgresql.v1.CreateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12N\n\x0b\x65nvironment\x18\x05 \x01(\x0e\x32\x33.yandex.cloud.mdb.postgresql.v1.Cluster.EnvironmentB\x04\xe8\xc7\x31\x01\x12\x45\n\x0b\x63onfig_spec\x18\x06 \x01(\x0b\x32*.yandex.cloud.mdb.postgresql.v1.ConfigSpecB\x04\xe8\xc7\x31\x01\x12J\n\x0e\x64\x61tabase_specs\x18\x07 \x03(\x0b\x32,.yandex.cloud.mdb.postgresql.v1.DatabaseSpecB\x04\xe8\xc7\x31\x01\x12\x42\n\nuser_specs\x18\x08 \x03(\x0b\x32(.yandex.cloud.mdb.postgresql.v1.UserSpecB\x04\xe8\xc7\x31\x01\x12\x42\n\nhost_specs\x18\t \x03(\x0b\x32(.yandex.cloud.mdb.postgresql.v1.HostSpecB\x04\xe8\xc7\x31\x01\x12 \n\nnetwork_id\x18\n \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15\x43reateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\xb7\x03\n\x14UpdateClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x91\x01\n\x06labels\x18\x04 \x03(\x0b\x32@.yandex.cloud.mdb.postgresql.v1.UpdateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12?\n\x0b\x63onfig_spec\x18\x05 \x01(\x0b\x32*.yandex.cloud.mdb.postgresql.v1.ConfigSpec\x12(\n\x04name\x18\x06 \x01(\tB\x1a\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15UpdateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"8\n\x14\x44\x65leteClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x44\x65leteClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"7\n\x13StartClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"*\n\x14StartClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"6\n\x12StopClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\")\n\x13StopClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"8\n\x14\x42\x61\x63kupClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x42\x61\x63kupClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\xfd\x04\n\x15RestoreClusterRequest\x12\x17\n\tbackup_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12.\n\x04time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12\x16\n\x0etime_inclusive\x18\x03 \x01(\x08\x12,\n\x04name\x18\x04 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x1e\n\x0b\x64\x65scription\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x92\x01\n\x06labels\x18\x06 \x03(\x0b\x32\x41.yandex.cloud.mdb.postgresql.v1.RestoreClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12H\n\x0b\x65nvironment\x18\x07 \x01(\x0e\x32\x33.yandex.cloud.mdb.postgresql.v1.Cluster.Environment\x12?\n\x0b\x63onfig_spec\x18\x08 \x01(\x0b\x32*.yandex.cloud.mdb.postgresql.v1.ConfigSpec\x12\x44\n\nhost_specs\x18\t \x03(\x0b\x32(.yandex.cloud.mdb.postgresql.v1.HostSpecB\x06\x82\xc8\x31\x02>0\x12 \n\nnetwork_id\x18\n \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"?\n\x16RestoreClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tbackup_id\x18\x02 \x01(\t\"\xb3\x01\n\tLogRecord\x12-\n\ttimestamp\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12G\n\x07message\x18\x02 \x03(\x0b\x32\x36.yandex.cloud.mdb.postgresql.v1.LogRecord.MessageEntry\x1a.\n\x0cMessageEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xae\x03\n\x16ListClusterLogsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x15\n\rcolumn_filter\x18\x02 \x03(\t\x12X\n\x0cservice_type\x18\x03 \x01(\x0e\x32\x42.yandex.cloud.mdb.postgresql.v1.ListClusterLogsRequest.ServiceType\x12-\n\tfrom_time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07to_time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1d\n\tpage_size\x18\x06 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x07 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1e\n\x16\x61lways_next_page_token\x18\x08 \x01(\x08\"G\n\x0bServiceType\x12\x1c\n\x18SERVICE_TYPE_UNSPECIFIED\x10\x00\x12\x0e\n\nPOSTGRESQL\x10\x01\x12\n\n\x06POOLER\x10\x02\"k\n\x17ListClusterLogsResponse\x12\x37\n\x04logs\x18\x01 \x03(\x0b\x32).yandex.cloud.mdb.postgresql.v1.LogRecord\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"~\n\x1cListClusterOperationsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"o\n\x1dListClusterOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"{\n\x19ListClusterBackupsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"n\n\x1aListClusterBackupsResponse\x12\x37\n\x07\x62\x61\x63kups\x18\x01 \x03(\x0b\x32&.yandex.cloud.mdb.postgresql.v1.Backup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"y\n\x17ListClusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"h\n\x18ListClusterHostsResponse\x12\x33\n\x05hosts\x18\x01 \x03(\x0b\x32$.yandex.cloud.mdb.postgresql.v1.Host\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x80\x01\n\x16\x41\x64\x64\x43lusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x44\n\nhost_specs\x18\x02 \x03(\x0b\x32(.yandex.cloud.mdb.postgresql.v1.HostSpecB\x06\x82\xc8\x31\x02>0\"A\n\x17\x41\x64\x64\x43lusterHostsMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nhost_names\x18\x02 \x03(\t\"b\n\x19\x44\x65leteClusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12#\n\nhost_names\x18\x02 \x03(\tB\x0f\x82\xc8\x31\x02>0\x8a\xc8\x31\x05<=253\"D\n\x1a\x44\x65leteClusterHostsMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nhost_names\x18\x02 \x03(\t\"\x90\x01\n\x19UpdateClusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12Q\n\x11update_host_specs\x18\x02 \x03(\x0b\x32..yandex.cloud.mdb.postgresql.v1.UpdateHostSpecB\x06\x82\xc8\x31\x02>0\"D\n\x1aUpdateClusterHostsMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nhost_names\x18\x02 \x03(\t\"\xb9\x01\n\x0eUpdateHostSpec\x12\x17\n\thost_name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1a\n\x12replication_source\x18\x02 \x01(\t\x12-\n\x08priority\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x43\n\x0b\x63onfig_spec\x18\x04 \x01(\x0b\x32..yandex.cloud.mdb.postgresql.v1.ConfigHostSpec\"\xec\x01\n\x08HostSpec\x12\x19\n\x07zone_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1b\n\tsubnet_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x18\n\x10\x61ssign_public_ip\x18\x03 \x01(\x08\x12\x1a\n\x12replication_source\x18\x04 \x01(\t\x12-\n\x08priority\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x43\n\x0b\x63onfig_spec\x18\x06 \x01(\x0b\x32..yandex.cloud.mdb.postgresql.v1.ConfigHostSpec\"\x84\x04\n\nConfigSpec\x12\x0f\n\x07version\x18\x01 \x01(\t\x12[\n\x15postgresql_config_9_6\x18\x02 \x01(\x0b\x32:.yandex.cloud.mdb.postgresql.v1.config.PostgresqlConfig9_6H\x00\x12Y\n\x14postgresql_config_10\x18\x03 \x01(\x0b\x32\x39.yandex.cloud.mdb.postgresql.v1.config.PostgresqlConfig10H\x00\x12Y\n\x14postgresql_config_11\x18\x07 \x01(\x0b\x32\x39.yandex.cloud.mdb.postgresql.v1.config.PostgresqlConfig11H\x00\x12M\n\rpooler_config\x18\x04 \x01(\x0b\x32\x36.yandex.cloud.mdb.postgresql.v1.ConnectionPoolerConfig\x12<\n\tresources\x18\x05 \x01(\x0b\x32).yandex.cloud.mdb.postgresql.v1.Resources\x12\x30\n\x0c\x61utofailover\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.BoolValueB\x13\n\x11postgresql_config\"\xc4\x02\n\x0e\x43onfigHostSpec\x12_\n\x15postgresql_config_9_6\x18\x01 \x01(\x0b\x32>.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig9_6H\x00\x12]\n\x14postgresql_config_10\x18\x02 \x01(\x0b\x32=.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10H\x00\x12]\n\x14postgresql_config_11\x18\x03 \x01(\x0b\x32=.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig11H\x00\x42\x13\n\x11postgresql_config2\xd7\x18\n\x0e\x43lusterService\x12\x97\x01\n\x03Get\x12\x31.yandex.cloud.mdb.postgresql.v1.GetClusterRequest\x1a\'.yandex.cloud.mdb.postgresql.v1.Cluster\"4\x82\xd3\xe4\x93\x02.\x12,/managed-postgresql/v1/clusters/{cluster_id}\x12\x9a\x01\n\x04List\x12\x33.yandex.cloud.mdb.postgresql.v1.ListClustersRequest\x1a\x34.yandex.cloud.mdb.postgresql.v1.ListClustersResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/managed-postgresql/v1/clusters\x12\xb1\x01\n\x06\x43reate\x12\x34.yandex.cloud.mdb.postgresql.v1.CreateClusterRequest\x1a!.yandex.cloud.operation.Operation\"N\x82\xd3\xe4\x93\x02$\"\x1f/managed-postgresql/v1/clusters:\x01*\xb2\xd2* \n\x15\x43reateClusterMetadata\x12\x07\x43luster\x12\xbe\x01\n\x06Update\x12\x34.yandex.cloud.mdb.postgresql.v1.UpdateClusterRequest\x1a!.yandex.cloud.operation.Operation\"[\x82\xd3\xe4\x93\x02\x31\x32,/managed-postgresql/v1/clusters/{cluster_id}:\x01*\xb2\xd2* \n\x15UpdateClusterMetadata\x12\x07\x43luster\x12\xc9\x01\n\x06\x44\x65lete\x12\x34.yandex.cloud.mdb.postgresql.v1.DeleteClusterRequest\x1a!.yandex.cloud.operation.Operation\"f\x82\xd3\xe4\x93\x02.*,/managed-postgresql/v1/clusters/{cluster_id}\xb2\xd2*.\n\x15\x44\x65leteClusterMetadata\x12\x15google.protobuf.Empty\x12\xba\x01\n\x05Start\x12\x33.yandex.cloud.mdb.postgresql.v1.StartClusterRequest\x1a!.yandex.cloud.operation.Operation\"Y\x82\xd3\xe4\x93\x02\x30\"./mdb/postgresql/v1/clusters/{cluster_id}:start\xb2\xd2*\x1f\n\x14StartClusterMetadata\x12\x07\x43luster\x12\xb6\x01\n\x04Stop\x12\x32.yandex.cloud.mdb.postgresql.v1.StopClusterRequest\x1a!.yandex.cloud.operation.Operation\"W\x82\xd3\xe4\x93\x02/\"-/mdb/postgresql/v1/clusters/{cluster_id}:stop\xb2\xd2*\x1e\n\x13StopClusterMetadata\x12\x07\x43luster\x12\xc2\x01\n\x06\x42\x61\x63kup\x12\x34.yandex.cloud.mdb.postgresql.v1.BackupClusterRequest\x1a!.yandex.cloud.operation.Operation\"_\x82\xd3\xe4\x93\x02\x35\"3/managed-postgresql/v1/clusters/{cluster_id}:backup\xb2\xd2* \n\x15\x42\x61\x63kupClusterMetadata\x12\x07\x43luster\x12\xbc\x01\n\x07Restore\x12\x35.yandex.cloud.mdb.postgresql.v1.RestoreClusterRequest\x1a!.yandex.cloud.operation.Operation\"W\x82\xd3\xe4\x93\x02,\"\'/managed-postgresql/v1/clusters:restore:\x01*\xb2\xd2*!\n\x16RestoreClusterMetadata\x12\x07\x43luster\x12\xb6\x01\n\x08ListLogs\x12\x36.yandex.cloud.mdb.postgresql.v1.ListClusterLogsRequest\x1a\x37.yandex.cloud.mdb.postgresql.v1.ListClusterLogsResponse\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/managed-postgresql/v1/clusters/{cluster_id}:logs\x12\xce\x01\n\x0eListOperations\x12<.yandex.cloud.mdb.postgresql.v1.ListClusterOperationsRequest\x1a=.yandex.cloud.mdb.postgresql.v1.ListClusterOperationsResponse\"?\x82\xd3\xe4\x93\x02\x39\x12\x37/managed-postgresql/v1/clusters/{cluster_id}/operations\x12\xc2\x01\n\x0bListBackups\x12\x39.yandex.cloud.mdb.postgresql.v1.ListClusterBackupsRequest\x1a:.yandex.cloud.mdb.postgresql.v1.ListClusterBackupsResponse\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/managed-postgresql/v1/clusters/{cluster_id}/backups\x12\xba\x01\n\tListHosts\x12\x37.yandex.cloud.mdb.postgresql.v1.ListClusterHostsRequest\x1a\x38.yandex.cloud.mdb.postgresql.v1.ListClusterHostsResponse\":\x82\xd3\xe4\x93\x02\x34\x12\x32/managed-postgresql/v1/clusters/{cluster_id}/hosts\x12\xe4\x01\n\x08\x41\x64\x64Hosts\x12\x36.yandex.cloud.mdb.postgresql.v1.AddClusterHostsRequest\x1a!.yandex.cloud.operation.Operation\"}\x82\xd3\xe4\x93\x02\x43\">/managed-postgresql/v1/clusters/{cluster_id}/hosts:batchCreate:\x01*\xb2\xd2*0\n\x17\x41\x64\x64\x43lusterHostsMetadata\x12\x15google.protobuf.Empty\x12\xee\x01\n\x0b\x44\x65leteHosts\x12\x39.yandex.cloud.mdb.postgresql.v1.DeleteClusterHostsRequest\x1a!.yandex.cloud.operation.Operation\"\x80\x01\x82\xd3\xe4\x93\x02\x43\">/managed-postgresql/v1/clusters/{cluster_id}/hosts:batchDelete:\x01*\xb2\xd2*3\n\x1a\x44\x65leteClusterHostsMetadata\x12\x15google.protobuf.Empty\x12\xee\x01\n\x0bUpdateHosts\x12\x39.yandex.cloud.mdb.postgresql.v1.UpdateClusterHostsRequest\x1a!.yandex.cloud.operation.Operation\"\x80\x01\x82\xd3\xe4\x93\x02\x43\">/managed-postgresql/v1/clusters/{cluster_id}/hosts:batchUpdate:\x01*\xb2\xd2*3\n\x1aUpdateClusterHostsMetadata\x12\x15google.protobuf.EmptyBOZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1;postgresqlb\x06proto3')
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,yandex_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_backup__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_cluster__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_database__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_user__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_config_dot_postgresql9__6__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_config_dot_postgresql10__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_config_dot_host9__6__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_config_dot_host10__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,yandex_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_backup__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_cluster__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_database__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_user__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_config_dot_postgresql9__6__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_config_dot_postgresql10__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_config_dot_postgresql11__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_config_dot_host9__6__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_config_dot_host10__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_config_dot_host11__pb2.DESCRIPTOR,])
 
 
 
@@ -48,21 +50,21 @@ _LISTCLUSTERLOGSREQUEST_SERVICETYPE = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='SERVICE_TYPE_UNSPECIFIED', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='POSTGRESQL', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='POOLER', index=2, number=2,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
-  serialized_start=3682,
-  serialized_end=3753,
+  serialized_options=None,
+  serialized_start=4052,
+  serialized_end=4123,
 )
 _sym_db.RegisterEnumDescriptor(_LISTCLUSTERLOGSREQUEST_SERVICETYPE)
 
@@ -80,21 +82,21 @@ _GETCLUSTERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=719,
-  serialized_end=772,
+  serialized_start=829,
+  serialized_end=882,
 )
 
 
@@ -111,42 +113,42 @@ _LISTCLUSTERSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.mdb.postgresql.v1.ListClustersRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\006<=1000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.mdb.postgresql.v1.ListClustersRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=100'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='filter', full_name='yandex.cloud.mdb.postgresql.v1.ListClustersRequest.filter', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\006<=1000')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\006<=1000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=775,
-  serialized_end=919,
+  serialized_start=885,
+  serialized_end=1029,
 )
 
 
@@ -163,28 +165,28 @@ _LISTCLUSTERSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.mdb.postgresql.v1.ListClustersResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=921,
-  serialized_end=1027,
+  serialized_start=1031,
+  serialized_end=1137,
 )
 
 
@@ -201,28 +203,28 @@ _CREATECLUSTERREQUEST_LABELSENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='yandex.cloud.mdb.postgresql.v1.CreateClusterRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  serialized_options=_b('8\001'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1717,
-  serialized_end=1762,
+  serialized_start=1820,
+  serialized_end=1865,
 )
 
 _CREATECLUSTERREQUEST = _descriptor.Descriptor(
@@ -238,84 +240,84 @@ _CREATECLUSTERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='name', full_name='yandex.cloud.mdb.postgresql.v1.CreateClusterRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=63\362\3071\016[a-zA-Z0-9_-]*'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='description', full_name='yandex.cloud.mdb.postgresql.v1.CreateClusterRequest.description', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=256')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=256'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='labels', full_name='yandex.cloud.mdb.postgresql.v1.CreateClusterRequest.labels', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*')), file=DESCRIPTOR),
+      serialized_options=_b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\004<=63\262\3101\022\022\020[a-z][-_0-9a-z]*'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='environment', full_name='yandex.cloud.mdb.postgresql.v1.CreateClusterRequest.environment', index=4,
       number=5, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='config_spec', full_name='yandex.cloud.mdb.postgresql.v1.CreateClusterRequest.config_spec', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='database_specs', full_name='yandex.cloud.mdb.postgresql.v1.CreateClusterRequest.database_specs', index=6,
       number=7, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user_specs', full_name='yandex.cloud.mdb.postgresql.v1.CreateClusterRequest.user_specs', index=7,
       number=8, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='host_specs', full_name='yandex.cloud.mdb.postgresql.v1.CreateClusterRequest.host_specs', index=8,
       number=9, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='network_id', full_name='yandex.cloud.mdb.postgresql.v1.CreateClusterRequest.network_id', index=9,
       number=10, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[_CREATECLUSTERREQUEST_LABELSENTRY, ],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1030,
-  serialized_end=1762,
+  serialized_start=1140,
+  serialized_end=1865,
 )
 
 
@@ -332,21 +334,21 @@ _CREATECLUSTERMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1764,
-  serialized_end=1807,
+  serialized_start=1867,
+  serialized_end=1910,
 )
 
 
@@ -363,28 +365,28 @@ _UPDATECLUSTERREQUEST_LABELSENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='yandex.cloud.mdb.postgresql.v1.UpdateClusterRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  serialized_options=_b('8\001'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1717,
-  serialized_end=1762,
+  serialized_start=1820,
+  serialized_end=1865,
 )
 
 _UPDATECLUSTERREQUEST = _descriptor.Descriptor(
@@ -400,49 +402,56 @@ _UPDATECLUSTERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='update_mask', full_name='yandex.cloud.mdb.postgresql.v1.UpdateClusterRequest.update_mask', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='description', full_name='yandex.cloud.mdb.postgresql.v1.UpdateClusterRequest.description', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=256')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=256'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='labels', full_name='yandex.cloud.mdb.postgresql.v1.UpdateClusterRequest.labels', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*')), file=DESCRIPTOR),
+      serialized_options=_b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\004<=63\262\3101\022\022\020[a-z][-_0-9a-z]*'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='config_spec', full_name='yandex.cloud.mdb.postgresql.v1.UpdateClusterRequest.config_spec', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='yandex.cloud.mdb.postgresql.v1.UpdateClusterRequest.name', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3101\004<=63\362\3071\016[a-zA-Z0-9_-]*'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[_UPDATECLUSTERREQUEST_LABELSENTRY, ],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1810,
-  serialized_end=2207,
+  serialized_start=1913,
+  serialized_end=2352,
 )
 
 
@@ -459,21 +468,21 @@ _UPDATECLUSTERMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2209,
-  serialized_end=2252,
+  serialized_start=2354,
+  serialized_end=2397,
 )
 
 
@@ -490,21 +499,21 @@ _DELETECLUSTERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2254,
-  serialized_end=2310,
+  serialized_start=2399,
+  serialized_end=2455,
 )
 
 
@@ -521,21 +530,145 @@ _DELETECLUSTERMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2312,
-  serialized_end=2355,
+  serialized_start=2457,
+  serialized_end=2500,
+)
+
+
+_STARTCLUSTERREQUEST = _descriptor.Descriptor(
+  name='StartClusterRequest',
+  full_name='yandex.cloud.mdb.postgresql.v1.StartClusterRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='yandex.cloud.mdb.postgresql.v1.StartClusterRequest.cluster_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2502,
+  serialized_end=2557,
+)
+
+
+_STARTCLUSTERMETADATA = _descriptor.Descriptor(
+  name='StartClusterMetadata',
+  full_name='yandex.cloud.mdb.postgresql.v1.StartClusterMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='yandex.cloud.mdb.postgresql.v1.StartClusterMetadata.cluster_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2559,
+  serialized_end=2601,
+)
+
+
+_STOPCLUSTERREQUEST = _descriptor.Descriptor(
+  name='StopClusterRequest',
+  full_name='yandex.cloud.mdb.postgresql.v1.StopClusterRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='yandex.cloud.mdb.postgresql.v1.StopClusterRequest.cluster_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2603,
+  serialized_end=2657,
+)
+
+
+_STOPCLUSTERMETADATA = _descriptor.Descriptor(
+  name='StopClusterMetadata',
+  full_name='yandex.cloud.mdb.postgresql.v1.StopClusterMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='yandex.cloud.mdb.postgresql.v1.StopClusterMetadata.cluster_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2659,
+  serialized_end=2700,
 )
 
 
@@ -552,21 +685,21 @@ _BACKUPCLUSTERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2357,
-  serialized_end=2413,
+  serialized_start=2702,
+  serialized_end=2758,
 )
 
 
@@ -583,21 +716,21 @@ _BACKUPCLUSTERMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2415,
-  serialized_end=2458,
+  serialized_start=2760,
+  serialized_end=2803,
 )
 
 
@@ -614,28 +747,28 @@ _RESTORECLUSTERREQUEST_LABELSENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='yandex.cloud.mdb.postgresql.v1.RestoreClusterRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  serialized_options=_b('8\001'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1717,
-  serialized_end=1762,
+  serialized_start=1820,
+  serialized_end=1865,
 )
 
 _RESTORECLUSTERREQUEST = _descriptor.Descriptor(
@@ -651,84 +784,84 @@ _RESTORECLUSTERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='time', full_name='yandex.cloud.mdb.postgresql.v1.RestoreClusterRequest.time', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='time_inclusive', full_name='yandex.cloud.mdb.postgresql.v1.RestoreClusterRequest.time_inclusive', index=2,
       number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='name', full_name='yandex.cloud.mdb.postgresql.v1.RestoreClusterRequest.name', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=63\362\3071\016[a-zA-Z0-9_-]*'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='description', full_name='yandex.cloud.mdb.postgresql.v1.RestoreClusterRequest.description', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=256')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=256'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='labels', full_name='yandex.cloud.mdb.postgresql.v1.RestoreClusterRequest.labels', index=5,
       number=6, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*')), file=DESCRIPTOR),
+      serialized_options=_b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\004<=63\262\3101\022\022\020[a-z][-_0-9a-z]*'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='environment', full_name='yandex.cloud.mdb.postgresql.v1.RestoreClusterRequest.environment', index=6,
       number=7, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='config_spec', full_name='yandex.cloud.mdb.postgresql.v1.RestoreClusterRequest.config_spec', index=7,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='host_specs', full_name='yandex.cloud.mdb.postgresql.v1.RestoreClusterRequest.host_specs', index=8,
       number=9, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\002>0')), file=DESCRIPTOR),
+      serialized_options=_b('\202\3101\002>0'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='network_id', full_name='yandex.cloud.mdb.postgresql.v1.RestoreClusterRequest.network_id', index=9,
       number=10, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[_RESTORECLUSTERREQUEST_LABELSENTRY, ],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2461,
-  serialized_end=3105,
+  serialized_start=2806,
+  serialized_end=3443,
 )
 
 
@@ -745,28 +878,28 @@ _RESTORECLUSTERMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='backup_id', full_name='yandex.cloud.mdb.postgresql.v1.RestoreClusterMetadata.backup_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3107,
-  serialized_end=3170,
+  serialized_start=3445,
+  serialized_end=3508,
 )
 
 
@@ -783,28 +916,28 @@ _LOGRECORD_MESSAGEENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='yandex.cloud.mdb.postgresql.v1.LogRecord.MessageEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  serialized_options=_b('8\001'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3306,
-  serialized_end=3352,
+  serialized_start=3644,
+  serialized_end=3690,
 )
 
 _LOGRECORD = _descriptor.Descriptor(
@@ -820,28 +953,28 @@ _LOGRECORD = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='message', full_name='yandex.cloud.mdb.postgresql.v1.LogRecord.message', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[_LOGRECORD_MESSAGEENTRY, ],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3173,
-  serialized_end=3352,
+  serialized_start=3511,
+  serialized_end=3690,
 )
 
 
@@ -858,49 +991,56 @@ _LISTCLUSTERLOGSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='column_filter', full_name='yandex.cloud.mdb.postgresql.v1.ListClusterLogsRequest.column_filter', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='service_type', full_name='yandex.cloud.mdb.postgresql.v1.ListClusterLogsRequest.service_type', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='from_time', full_name='yandex.cloud.mdb.postgresql.v1.ListClusterLogsRequest.from_time', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='to_time', full_name='yandex.cloud.mdb.postgresql.v1.ListClusterLogsRequest.to_time', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.mdb.postgresql.v1.ListClusterLogsRequest.page_size', index=5,
       number=6, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\006<=1000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.mdb.postgresql.v1.ListClusterLogsRequest.page_token', index=6,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=100'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='always_next_page_token', full_name='yandex.cloud.mdb.postgresql.v1.ListClusterLogsRequest.always_next_page_token', index=7,
+      number=8, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -908,14 +1048,14 @@ _LISTCLUSTERLOGSREQUEST = _descriptor.Descriptor(
   enum_types=[
     _LISTCLUSTERLOGSREQUEST_SERVICETYPE,
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3355,
-  serialized_end=3753,
+  serialized_start=3693,
+  serialized_end=4123,
 )
 
 
@@ -932,28 +1072,28 @@ _LISTCLUSTERLOGSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.mdb.postgresql.v1.ListClusterLogsResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3755,
-  serialized_end=3862,
+  serialized_start=4125,
+  serialized_end=4232,
 )
 
 
@@ -970,35 +1110,35 @@ _LISTCLUSTEROPERATIONSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.mdb.postgresql.v1.ListClusterOperationsRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\006<=1000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.mdb.postgresql.v1.ListClusterOperationsRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=100'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3864,
-  serialized_end=3990,
+  serialized_start=4234,
+  serialized_end=4360,
 )
 
 
@@ -1015,28 +1155,28 @@ _LISTCLUSTEROPERATIONSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.mdb.postgresql.v1.ListClusterOperationsResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3992,
-  serialized_end=4103,
+  serialized_start=4362,
+  serialized_end=4473,
 )
 
 
@@ -1053,35 +1193,35 @@ _LISTCLUSTERBACKUPSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.mdb.postgresql.v1.ListClusterBackupsRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\006<=1000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.mdb.postgresql.v1.ListClusterBackupsRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=100'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4105,
-  serialized_end=4228,
+  serialized_start=4475,
+  serialized_end=4598,
 )
 
 
@@ -1098,28 +1238,28 @@ _LISTCLUSTERBACKUPSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.mdb.postgresql.v1.ListClusterBackupsResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4230,
-  serialized_end=4340,
+  serialized_start=4600,
+  serialized_end=4710,
 )
 
 
@@ -1136,35 +1276,35 @@ _LISTCLUSTERHOSTSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.mdb.postgresql.v1.ListClusterHostsRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\006<=1000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.mdb.postgresql.v1.ListClusterHostsRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=100'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4342,
-  serialized_end=4463,
+  serialized_start=4712,
+  serialized_end=4833,
 )
 
 
@@ -1181,28 +1321,28 @@ _LISTCLUSTERHOSTSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.mdb.postgresql.v1.ListClusterHostsResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4465,
-  serialized_end=4569,
+  serialized_start=4835,
+  serialized_end=4939,
 )
 
 
@@ -1219,28 +1359,28 @@ _ADDCLUSTERHOSTSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='host_specs', full_name='yandex.cloud.mdb.postgresql.v1.AddClusterHostsRequest.host_specs', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\002>0')), file=DESCRIPTOR),
+      serialized_options=_b('\202\3101\002>0'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4572,
-  serialized_end=4700,
+  serialized_start=4942,
+  serialized_end=5070,
 )
 
 
@@ -1257,28 +1397,28 @@ _ADDCLUSTERHOSTSMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='host_names', full_name='yandex.cloud.mdb.postgresql.v1.AddClusterHostsMetadata.host_names', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4702,
-  serialized_end=4767,
+  serialized_start=5072,
+  serialized_end=5137,
 )
 
 
@@ -1295,28 +1435,28 @@ _DELETECLUSTERHOSTSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='host_names', full_name='yandex.cloud.mdb.postgresql.v1.DeleteClusterHostsRequest.host_names', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\002>0\212\3101\005<=253')), file=DESCRIPTOR),
+      serialized_options=_b('\202\3101\002>0\212\3101\005<=253'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4769,
-  serialized_end=4867,
+  serialized_start=5139,
+  serialized_end=5237,
 )
 
 
@@ -1333,28 +1473,28 @@ _DELETECLUSTERHOSTSMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='host_names', full_name='yandex.cloud.mdb.postgresql.v1.DeleteClusterHostsMetadata.host_names', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4869,
-  serialized_end=4937,
+  serialized_start=5239,
+  serialized_end=5307,
 )
 
 
@@ -1371,28 +1511,28 @@ _UPDATECLUSTERHOSTSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='update_host_specs', full_name='yandex.cloud.mdb.postgresql.v1.UpdateClusterHostsRequest.update_host_specs', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\002>0')), file=DESCRIPTOR),
+      serialized_options=_b('\202\3101\002>0'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4940,
-  serialized_end=5084,
+  serialized_start=5310,
+  serialized_end=5454,
 )
 
 
@@ -1409,28 +1549,28 @@ _UPDATECLUSTERHOSTSMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='host_names', full_name='yandex.cloud.mdb.postgresql.v1.UpdateClusterHostsMetadata.host_names', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5086,
-  serialized_end=5154,
+  serialized_start=5456,
+  serialized_end=5524,
 )
 
 
@@ -1447,42 +1587,42 @@ _UPDATEHOSTSPEC = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='replication_source', full_name='yandex.cloud.mdb.postgresql.v1.UpdateHostSpec.replication_source', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='priority', full_name='yandex.cloud.mdb.postgresql.v1.UpdateHostSpec.priority', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='config_spec', full_name='yandex.cloud.mdb.postgresql.v1.UpdateHostSpec.config_spec', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5157,
-  serialized_end=5342,
+  serialized_start=5527,
+  serialized_end=5712,
 )
 
 
@@ -1499,56 +1639,56 @@ _HOSTSPEC = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='subnet_id', full_name='yandex.cloud.mdb.postgresql.v1.HostSpec.subnet_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='assign_public_ip', full_name='yandex.cloud.mdb.postgresql.v1.HostSpec.assign_public_ip', index=2,
       number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='replication_source', full_name='yandex.cloud.mdb.postgresql.v1.HostSpec.replication_source', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='priority', full_name='yandex.cloud.mdb.postgresql.v1.HostSpec.priority', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='config_spec', full_name='yandex.cloud.mdb.postgresql.v1.HostSpec.config_spec', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5345,
-  serialized_end=5581,
+  serialized_start=5715,
+  serialized_end=5951,
 )
 
 
@@ -1565,49 +1705,56 @@ _CONFIGSPEC = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='postgresql_config_9_6', full_name='yandex.cloud.mdb.postgresql.v1.ConfigSpec.postgresql_config_9_6', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='postgresql_config_10', full_name='yandex.cloud.mdb.postgresql.v1.ConfigSpec.postgresql_config_10', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='pooler_config', full_name='yandex.cloud.mdb.postgresql.v1.ConfigSpec.pooler_config', index=3,
+      name='postgresql_config_11', full_name='yandex.cloud.mdb.postgresql.v1.ConfigSpec.postgresql_config_11', index=3,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='pooler_config', full_name='yandex.cloud.mdb.postgresql.v1.ConfigSpec.pooler_config', index=4,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='resources', full_name='yandex.cloud.mdb.postgresql.v1.ConfigSpec.resources', index=4,
+      name='resources', full_name='yandex.cloud.mdb.postgresql.v1.ConfigSpec.resources', index=5,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='autofailover', full_name='yandex.cloud.mdb.postgresql.v1.ConfigSpec.autofailover', index=5,
+      name='autofailover', full_name='yandex.cloud.mdb.postgresql.v1.ConfigSpec.autofailover', index=6,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1616,8 +1763,8 @@ _CONFIGSPEC = _descriptor.Descriptor(
       name='postgresql_config', full_name='yandex.cloud.mdb.postgresql.v1.ConfigSpec.postgresql_config',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=5584,
-  serialized_end=6009,
+  serialized_start=5954,
+  serialized_end=6470,
 )
 
 
@@ -1634,21 +1781,28 @@ _CONFIGHOSTSPEC = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='postgresql_config_10', full_name='yandex.cloud.mdb.postgresql.v1.ConfigHostSpec.postgresql_config_10', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='postgresql_config_11', full_name='yandex.cloud.mdb.postgresql.v1.ConfigHostSpec.postgresql_config_11', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -1657,8 +1811,8 @@ _CONFIGHOSTSPEC = _descriptor.Descriptor(
       name='postgresql_config', full_name='yandex.cloud.mdb.postgresql.v1.ConfigHostSpec.postgresql_config',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=6012,
-  serialized_end=6241,
+  serialized_start=6473,
+  serialized_end=6797,
 )
 
 _LISTCLUSTERSRESPONSE.fields_by_name['clusters'].message_type = yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_cluster__pb2._CLUSTER
@@ -1698,6 +1852,7 @@ _HOSTSPEC.fields_by_name['priority'].message_type = google_dot_protobuf_dot_wrap
 _HOSTSPEC.fields_by_name['config_spec'].message_type = _CONFIGHOSTSPEC
 _CONFIGSPEC.fields_by_name['postgresql_config_9_6'].message_type = yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_config_dot_postgresql9__6__pb2._POSTGRESQLCONFIG9_6
 _CONFIGSPEC.fields_by_name['postgresql_config_10'].message_type = yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_config_dot_postgresql10__pb2._POSTGRESQLCONFIG10
+_CONFIGSPEC.fields_by_name['postgresql_config_11'].message_type = yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_config_dot_postgresql11__pb2._POSTGRESQLCONFIG11
 _CONFIGSPEC.fields_by_name['pooler_config'].message_type = yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_cluster__pb2._CONNECTIONPOOLERCONFIG
 _CONFIGSPEC.fields_by_name['resources'].message_type = yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_cluster__pb2._RESOURCES
 _CONFIGSPEC.fields_by_name['autofailover'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
@@ -1707,14 +1862,21 @@ _CONFIGSPEC.fields_by_name['postgresql_config_9_6'].containing_oneof = _CONFIGSP
 _CONFIGSPEC.oneofs_by_name['postgresql_config'].fields.append(
   _CONFIGSPEC.fields_by_name['postgresql_config_10'])
 _CONFIGSPEC.fields_by_name['postgresql_config_10'].containing_oneof = _CONFIGSPEC.oneofs_by_name['postgresql_config']
+_CONFIGSPEC.oneofs_by_name['postgresql_config'].fields.append(
+  _CONFIGSPEC.fields_by_name['postgresql_config_11'])
+_CONFIGSPEC.fields_by_name['postgresql_config_11'].containing_oneof = _CONFIGSPEC.oneofs_by_name['postgresql_config']
 _CONFIGHOSTSPEC.fields_by_name['postgresql_config_9_6'].message_type = yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_config_dot_host9__6__pb2._POSTGRESQLHOSTCONFIG9_6
 _CONFIGHOSTSPEC.fields_by_name['postgresql_config_10'].message_type = yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_config_dot_host10__pb2._POSTGRESQLHOSTCONFIG10
+_CONFIGHOSTSPEC.fields_by_name['postgresql_config_11'].message_type = yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_config_dot_host11__pb2._POSTGRESQLHOSTCONFIG11
 _CONFIGHOSTSPEC.oneofs_by_name['postgresql_config'].fields.append(
   _CONFIGHOSTSPEC.fields_by_name['postgresql_config_9_6'])
 _CONFIGHOSTSPEC.fields_by_name['postgresql_config_9_6'].containing_oneof = _CONFIGHOSTSPEC.oneofs_by_name['postgresql_config']
 _CONFIGHOSTSPEC.oneofs_by_name['postgresql_config'].fields.append(
   _CONFIGHOSTSPEC.fields_by_name['postgresql_config_10'])
 _CONFIGHOSTSPEC.fields_by_name['postgresql_config_10'].containing_oneof = _CONFIGHOSTSPEC.oneofs_by_name['postgresql_config']
+_CONFIGHOSTSPEC.oneofs_by_name['postgresql_config'].fields.append(
+  _CONFIGHOSTSPEC.fields_by_name['postgresql_config_11'])
+_CONFIGHOSTSPEC.fields_by_name['postgresql_config_11'].containing_oneof = _CONFIGHOSTSPEC.oneofs_by_name['postgresql_config']
 DESCRIPTOR.message_types_by_name['GetClusterRequest'] = _GETCLUSTERREQUEST
 DESCRIPTOR.message_types_by_name['ListClustersRequest'] = _LISTCLUSTERSREQUEST
 DESCRIPTOR.message_types_by_name['ListClustersResponse'] = _LISTCLUSTERSRESPONSE
@@ -1724,6 +1886,10 @@ DESCRIPTOR.message_types_by_name['UpdateClusterRequest'] = _UPDATECLUSTERREQUEST
 DESCRIPTOR.message_types_by_name['UpdateClusterMetadata'] = _UPDATECLUSTERMETADATA
 DESCRIPTOR.message_types_by_name['DeleteClusterRequest'] = _DELETECLUSTERREQUEST
 DESCRIPTOR.message_types_by_name['DeleteClusterMetadata'] = _DELETECLUSTERMETADATA
+DESCRIPTOR.message_types_by_name['StartClusterRequest'] = _STARTCLUSTERREQUEST
+DESCRIPTOR.message_types_by_name['StartClusterMetadata'] = _STARTCLUSTERMETADATA
+DESCRIPTOR.message_types_by_name['StopClusterRequest'] = _STOPCLUSTERREQUEST
+DESCRIPTOR.message_types_by_name['StopClusterMetadata'] = _STOPCLUSTERMETADATA
 DESCRIPTOR.message_types_by_name['BackupClusterRequest'] = _BACKUPCLUSTERREQUEST
 DESCRIPTOR.message_types_by_name['BackupClusterMetadata'] = _BACKUPCLUSTERMETADATA
 DESCRIPTOR.message_types_by_name['RestoreClusterRequest'] = _RESTORECLUSTERREQUEST
@@ -1827,6 +1993,34 @@ DeleteClusterMetadata = _reflection.GeneratedProtocolMessageType('DeleteClusterM
   # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.postgresql.v1.DeleteClusterMetadata)
   ))
 _sym_db.RegisterMessage(DeleteClusterMetadata)
+
+StartClusterRequest = _reflection.GeneratedProtocolMessageType('StartClusterRequest', (_message.Message,), dict(
+  DESCRIPTOR = _STARTCLUSTERREQUEST,
+  __module__ = 'yandex.cloud.mdb.postgresql.v1.cluster_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.postgresql.v1.StartClusterRequest)
+  ))
+_sym_db.RegisterMessage(StartClusterRequest)
+
+StartClusterMetadata = _reflection.GeneratedProtocolMessageType('StartClusterMetadata', (_message.Message,), dict(
+  DESCRIPTOR = _STARTCLUSTERMETADATA,
+  __module__ = 'yandex.cloud.mdb.postgresql.v1.cluster_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.postgresql.v1.StartClusterMetadata)
+  ))
+_sym_db.RegisterMessage(StartClusterMetadata)
+
+StopClusterRequest = _reflection.GeneratedProtocolMessageType('StopClusterRequest', (_message.Message,), dict(
+  DESCRIPTOR = _STOPCLUSTERREQUEST,
+  __module__ = 'yandex.cloud.mdb.postgresql.v1.cluster_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.postgresql.v1.StopClusterRequest)
+  ))
+_sym_db.RegisterMessage(StopClusterRequest)
+
+StopClusterMetadata = _reflection.GeneratedProtocolMessageType('StopClusterMetadata', (_message.Message,), dict(
+  DESCRIPTOR = _STOPCLUSTERMETADATA,
+  __module__ = 'yandex.cloud.mdb.postgresql.v1.cluster_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.postgresql.v1.StopClusterMetadata)
+  ))
+_sym_db.RegisterMessage(StopClusterMetadata)
 
 BackupClusterRequest = _reflection.GeneratedProtocolMessageType('BackupClusterRequest', (_message.Message,), dict(
   DESCRIPTOR = _BACKUPCLUSTERREQUEST,
@@ -2006,121 +2200,71 @@ ConfigHostSpec = _reflection.GeneratedProtocolMessageType('ConfigHostSpec', (_me
 _sym_db.RegisterMessage(ConfigHostSpec)
 
 
-DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1;postgresql'))
-_GETCLUSTERREQUEST.fields_by_name['cluster_id'].has_options = True
-_GETCLUSTERREQUEST.fields_by_name['cluster_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_LISTCLUSTERSREQUEST.fields_by_name['folder_id'].has_options = True
-_LISTCLUSTERSREQUEST.fields_by_name['folder_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_LISTCLUSTERSREQUEST.fields_by_name['page_size'].has_options = True
-_LISTCLUSTERSREQUEST.fields_by_name['page_size']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000'))
-_LISTCLUSTERSREQUEST.fields_by_name['page_token'].has_options = True
-_LISTCLUSTERSREQUEST.fields_by_name['page_token']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100'))
-_LISTCLUSTERSREQUEST.fields_by_name['filter'].has_options = True
-_LISTCLUSTERSREQUEST.fields_by_name['filter']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\006<=1000'))
-_CREATECLUSTERREQUEST_LABELSENTRY.has_options = True
-_CREATECLUSTERREQUEST_LABELSENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
-_CREATECLUSTERREQUEST.fields_by_name['folder_id'].has_options = True
-_CREATECLUSTERREQUEST.fields_by_name['folder_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_CREATECLUSTERREQUEST.fields_by_name['name'].has_options = True
-_CREATECLUSTERREQUEST.fields_by_name['name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'))
-_CREATECLUSTERREQUEST.fields_by_name['description'].has_options = True
-_CREATECLUSTERREQUEST.fields_by_name['description']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=256'))
-_CREATECLUSTERREQUEST.fields_by_name['labels'].has_options = True
-_CREATECLUSTERREQUEST.fields_by_name['labels']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*'))
-_CREATECLUSTERREQUEST.fields_by_name['environment'].has_options = True
-_CREATECLUSTERREQUEST.fields_by_name['environment']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001'))
-_CREATECLUSTERREQUEST.fields_by_name['config_spec'].has_options = True
-_CREATECLUSTERREQUEST.fields_by_name['config_spec']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001'))
-_CREATECLUSTERREQUEST.fields_by_name['database_specs'].has_options = True
-_CREATECLUSTERREQUEST.fields_by_name['database_specs']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001'))
-_CREATECLUSTERREQUEST.fields_by_name['user_specs'].has_options = True
-_CREATECLUSTERREQUEST.fields_by_name['user_specs']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001'))
-_CREATECLUSTERREQUEST.fields_by_name['host_specs'].has_options = True
-_CREATECLUSTERREQUEST.fields_by_name['host_specs']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001'))
-_CREATECLUSTERREQUEST.fields_by_name['network_id'].has_options = True
-_CREATECLUSTERREQUEST.fields_by_name['network_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_UPDATECLUSTERREQUEST_LABELSENTRY.has_options = True
-_UPDATECLUSTERREQUEST_LABELSENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
-_UPDATECLUSTERREQUEST.fields_by_name['cluster_id'].has_options = True
-_UPDATECLUSTERREQUEST.fields_by_name['cluster_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_UPDATECLUSTERREQUEST.fields_by_name['description'].has_options = True
-_UPDATECLUSTERREQUEST.fields_by_name['description']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=256'))
-_UPDATECLUSTERREQUEST.fields_by_name['labels'].has_options = True
-_UPDATECLUSTERREQUEST.fields_by_name['labels']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*'))
-_DELETECLUSTERREQUEST.fields_by_name['cluster_id'].has_options = True
-_DELETECLUSTERREQUEST.fields_by_name['cluster_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_BACKUPCLUSTERREQUEST.fields_by_name['cluster_id'].has_options = True
-_BACKUPCLUSTERREQUEST.fields_by_name['cluster_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_RESTORECLUSTERREQUEST_LABELSENTRY.has_options = True
-_RESTORECLUSTERREQUEST_LABELSENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
-_RESTORECLUSTERREQUEST.fields_by_name['backup_id'].has_options = True
-_RESTORECLUSTERREQUEST.fields_by_name['backup_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001'))
-_RESTORECLUSTERREQUEST.fields_by_name['time'].has_options = True
-_RESTORECLUSTERREQUEST.fields_by_name['time']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001'))
-_RESTORECLUSTERREQUEST.fields_by_name['name'].has_options = True
-_RESTORECLUSTERREQUEST.fields_by_name['name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'))
-_RESTORECLUSTERREQUEST.fields_by_name['description'].has_options = True
-_RESTORECLUSTERREQUEST.fields_by_name['description']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=256'))
-_RESTORECLUSTERREQUEST.fields_by_name['labels'].has_options = True
-_RESTORECLUSTERREQUEST.fields_by_name['labels']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*'))
-_RESTORECLUSTERREQUEST.fields_by_name['host_specs'].has_options = True
-_RESTORECLUSTERREQUEST.fields_by_name['host_specs']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\002>0'))
-_RESTORECLUSTERREQUEST.fields_by_name['network_id'].has_options = True
-_RESTORECLUSTERREQUEST.fields_by_name['network_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_LOGRECORD_MESSAGEENTRY.has_options = True
-_LOGRECORD_MESSAGEENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
-_LISTCLUSTERLOGSREQUEST.fields_by_name['cluster_id'].has_options = True
-_LISTCLUSTERLOGSREQUEST.fields_by_name['cluster_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_LISTCLUSTERLOGSREQUEST.fields_by_name['page_size'].has_options = True
-_LISTCLUSTERLOGSREQUEST.fields_by_name['page_size']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000'))
-_LISTCLUSTERLOGSREQUEST.fields_by_name['page_token'].has_options = True
-_LISTCLUSTERLOGSREQUEST.fields_by_name['page_token']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100'))
-_LISTCLUSTEROPERATIONSREQUEST.fields_by_name['cluster_id'].has_options = True
-_LISTCLUSTEROPERATIONSREQUEST.fields_by_name['cluster_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_LISTCLUSTEROPERATIONSREQUEST.fields_by_name['page_size'].has_options = True
-_LISTCLUSTEROPERATIONSREQUEST.fields_by_name['page_size']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000'))
-_LISTCLUSTEROPERATIONSREQUEST.fields_by_name['page_token'].has_options = True
-_LISTCLUSTEROPERATIONSREQUEST.fields_by_name['page_token']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100'))
-_LISTCLUSTERBACKUPSREQUEST.fields_by_name['cluster_id'].has_options = True
-_LISTCLUSTERBACKUPSREQUEST.fields_by_name['cluster_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_LISTCLUSTERBACKUPSREQUEST.fields_by_name['page_size'].has_options = True
-_LISTCLUSTERBACKUPSREQUEST.fields_by_name['page_size']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000'))
-_LISTCLUSTERBACKUPSREQUEST.fields_by_name['page_token'].has_options = True
-_LISTCLUSTERBACKUPSREQUEST.fields_by_name['page_token']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100'))
-_LISTCLUSTERHOSTSREQUEST.fields_by_name['cluster_id'].has_options = True
-_LISTCLUSTERHOSTSREQUEST.fields_by_name['cluster_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_LISTCLUSTERHOSTSREQUEST.fields_by_name['page_size'].has_options = True
-_LISTCLUSTERHOSTSREQUEST.fields_by_name['page_size']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000'))
-_LISTCLUSTERHOSTSREQUEST.fields_by_name['page_token'].has_options = True
-_LISTCLUSTERHOSTSREQUEST.fields_by_name['page_token']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100'))
-_ADDCLUSTERHOSTSREQUEST.fields_by_name['cluster_id'].has_options = True
-_ADDCLUSTERHOSTSREQUEST.fields_by_name['cluster_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_ADDCLUSTERHOSTSREQUEST.fields_by_name['host_specs'].has_options = True
-_ADDCLUSTERHOSTSREQUEST.fields_by_name['host_specs']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\002>0'))
-_DELETECLUSTERHOSTSREQUEST.fields_by_name['cluster_id'].has_options = True
-_DELETECLUSTERHOSTSREQUEST.fields_by_name['cluster_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_DELETECLUSTERHOSTSREQUEST.fields_by_name['host_names'].has_options = True
-_DELETECLUSTERHOSTSREQUEST.fields_by_name['host_names']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\002>0\212\3101\005<=253'))
-_UPDATECLUSTERHOSTSREQUEST.fields_by_name['cluster_id'].has_options = True
-_UPDATECLUSTERHOSTSREQUEST.fields_by_name['cluster_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_UPDATECLUSTERHOSTSREQUEST.fields_by_name['update_host_specs'].has_options = True
-_UPDATECLUSTERHOSTSREQUEST.fields_by_name['update_host_specs']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\002>0'))
-_UPDATEHOSTSPEC.fields_by_name['host_name'].has_options = True
-_UPDATEHOSTSPEC.fields_by_name['host_name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001'))
-_HOSTSPEC.fields_by_name['zone_id'].has_options = True
-_HOSTSPEC.fields_by_name['zone_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\004<=50'))
-_HOSTSPEC.fields_by_name['subnet_id'].has_options = True
-_HOSTSPEC.fields_by_name['subnet_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\004<=50'))
+DESCRIPTOR._options = None
+_GETCLUSTERREQUEST.fields_by_name['cluster_id']._options = None
+_LISTCLUSTERSREQUEST.fields_by_name['folder_id']._options = None
+_LISTCLUSTERSREQUEST.fields_by_name['page_size']._options = None
+_LISTCLUSTERSREQUEST.fields_by_name['page_token']._options = None
+_LISTCLUSTERSREQUEST.fields_by_name['filter']._options = None
+_CREATECLUSTERREQUEST_LABELSENTRY._options = None
+_CREATECLUSTERREQUEST.fields_by_name['folder_id']._options = None
+_CREATECLUSTERREQUEST.fields_by_name['name']._options = None
+_CREATECLUSTERREQUEST.fields_by_name['description']._options = None
+_CREATECLUSTERREQUEST.fields_by_name['labels']._options = None
+_CREATECLUSTERREQUEST.fields_by_name['environment']._options = None
+_CREATECLUSTERREQUEST.fields_by_name['config_spec']._options = None
+_CREATECLUSTERREQUEST.fields_by_name['database_specs']._options = None
+_CREATECLUSTERREQUEST.fields_by_name['user_specs']._options = None
+_CREATECLUSTERREQUEST.fields_by_name['host_specs']._options = None
+_CREATECLUSTERREQUEST.fields_by_name['network_id']._options = None
+_UPDATECLUSTERREQUEST_LABELSENTRY._options = None
+_UPDATECLUSTERREQUEST.fields_by_name['cluster_id']._options = None
+_UPDATECLUSTERREQUEST.fields_by_name['description']._options = None
+_UPDATECLUSTERREQUEST.fields_by_name['labels']._options = None
+_UPDATECLUSTERREQUEST.fields_by_name['name']._options = None
+_DELETECLUSTERREQUEST.fields_by_name['cluster_id']._options = None
+_STARTCLUSTERREQUEST.fields_by_name['cluster_id']._options = None
+_STOPCLUSTERREQUEST.fields_by_name['cluster_id']._options = None
+_BACKUPCLUSTERREQUEST.fields_by_name['cluster_id']._options = None
+_RESTORECLUSTERREQUEST_LABELSENTRY._options = None
+_RESTORECLUSTERREQUEST.fields_by_name['backup_id']._options = None
+_RESTORECLUSTERREQUEST.fields_by_name['time']._options = None
+_RESTORECLUSTERREQUEST.fields_by_name['name']._options = None
+_RESTORECLUSTERREQUEST.fields_by_name['description']._options = None
+_RESTORECLUSTERREQUEST.fields_by_name['labels']._options = None
+_RESTORECLUSTERREQUEST.fields_by_name['host_specs']._options = None
+_RESTORECLUSTERREQUEST.fields_by_name['network_id']._options = None
+_LOGRECORD_MESSAGEENTRY._options = None
+_LISTCLUSTERLOGSREQUEST.fields_by_name['cluster_id']._options = None
+_LISTCLUSTERLOGSREQUEST.fields_by_name['page_size']._options = None
+_LISTCLUSTERLOGSREQUEST.fields_by_name['page_token']._options = None
+_LISTCLUSTEROPERATIONSREQUEST.fields_by_name['cluster_id']._options = None
+_LISTCLUSTEROPERATIONSREQUEST.fields_by_name['page_size']._options = None
+_LISTCLUSTEROPERATIONSREQUEST.fields_by_name['page_token']._options = None
+_LISTCLUSTERBACKUPSREQUEST.fields_by_name['cluster_id']._options = None
+_LISTCLUSTERBACKUPSREQUEST.fields_by_name['page_size']._options = None
+_LISTCLUSTERBACKUPSREQUEST.fields_by_name['page_token']._options = None
+_LISTCLUSTERHOSTSREQUEST.fields_by_name['cluster_id']._options = None
+_LISTCLUSTERHOSTSREQUEST.fields_by_name['page_size']._options = None
+_LISTCLUSTERHOSTSREQUEST.fields_by_name['page_token']._options = None
+_ADDCLUSTERHOSTSREQUEST.fields_by_name['cluster_id']._options = None
+_ADDCLUSTERHOSTSREQUEST.fields_by_name['host_specs']._options = None
+_DELETECLUSTERHOSTSREQUEST.fields_by_name['cluster_id']._options = None
+_DELETECLUSTERHOSTSREQUEST.fields_by_name['host_names']._options = None
+_UPDATECLUSTERHOSTSREQUEST.fields_by_name['cluster_id']._options = None
+_UPDATECLUSTERHOSTSREQUEST.fields_by_name['update_host_specs']._options = None
+_UPDATEHOSTSPEC.fields_by_name['host_name']._options = None
+_HOSTSPEC.fields_by_name['zone_id']._options = None
+_HOSTSPEC.fields_by_name['subnet_id']._options = None
 
 _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
   name='ClusterService',
   full_name='yandex.cloud.mdb.postgresql.v1.ClusterService',
   file=DESCRIPTOR,
   index=0,
-  options=None,
-  serialized_start=6244,
-  serialized_end=9029,
+  serialized_options=None,
+  serialized_start=6800,
+  serialized_end=9959,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
@@ -2129,7 +2273,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETCLUSTERREQUEST,
     output_type=yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_cluster__pb2._CLUSTER,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002.\022,/managed-postgresql/v1/clusters/{cluster_id}')),
+    serialized_options=_b('\202\323\344\223\002.\022,/managed-postgresql/v1/clusters/{cluster_id}'),
   ),
   _descriptor.MethodDescriptor(
     name='List',
@@ -2138,7 +2282,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTCLUSTERSREQUEST,
     output_type=_LISTCLUSTERSRESPONSE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002!\022\037/managed-postgresql/v1/clusters')),
+    serialized_options=_b('\202\323\344\223\002!\022\037/managed-postgresql/v1/clusters'),
   ),
   _descriptor.MethodDescriptor(
     name='Create',
@@ -2147,7 +2291,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_CREATECLUSTERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002$\"\037/managed-postgresql/v1/clusters:\001*\262\322* \n\025CreateClusterMetadata\022\007Cluster')),
+    serialized_options=_b('\202\323\344\223\002$\"\037/managed-postgresql/v1/clusters:\001*\262\322* \n\025CreateClusterMetadata\022\007Cluster'),
   ),
   _descriptor.MethodDescriptor(
     name='Update',
@@ -2156,7 +2300,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATECLUSTERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\00212,/managed-postgresql/v1/clusters/{cluster_id}:\001*\262\322* \n\025UpdateClusterMetadata\022\007Cluster')),
+    serialized_options=_b('\202\323\344\223\00212,/managed-postgresql/v1/clusters/{cluster_id}:\001*\262\322* \n\025UpdateClusterMetadata\022\007Cluster'),
   ),
   _descriptor.MethodDescriptor(
     name='Delete',
@@ -2165,88 +2309,106 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DELETECLUSTERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002.*,/managed-postgresql/v1/clusters/{cluster_id}\262\322*.\n\025DeleteClusterMetadata\022\025google.protobuf.Empty')),
+    serialized_options=_b('\202\323\344\223\002.*,/managed-postgresql/v1/clusters/{cluster_id}\262\322*.\n\025DeleteClusterMetadata\022\025google.protobuf.Empty'),
+  ),
+  _descriptor.MethodDescriptor(
+    name='Start',
+    full_name='yandex.cloud.mdb.postgresql.v1.ClusterService.Start',
+    index=5,
+    containing_service=None,
+    input_type=_STARTCLUSTERREQUEST,
+    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
+    serialized_options=_b('\202\323\344\223\0020\"./mdb/postgresql/v1/clusters/{cluster_id}:start\262\322*\037\n\024StartClusterMetadata\022\007Cluster'),
+  ),
+  _descriptor.MethodDescriptor(
+    name='Stop',
+    full_name='yandex.cloud.mdb.postgresql.v1.ClusterService.Stop',
+    index=6,
+    containing_service=None,
+    input_type=_STOPCLUSTERREQUEST,
+    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
+    serialized_options=_b('\202\323\344\223\002/\"-/mdb/postgresql/v1/clusters/{cluster_id}:stop\262\322*\036\n\023StopClusterMetadata\022\007Cluster'),
   ),
   _descriptor.MethodDescriptor(
     name='Backup',
     full_name='yandex.cloud.mdb.postgresql.v1.ClusterService.Backup',
-    index=5,
+    index=7,
     containing_service=None,
     input_type=_BACKUPCLUSTERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\0025\"3/managed-postgresql/v1/clusters/{cluster_id}:backup\262\322* \n\025BackupClusterMetadata\022\007Cluster')),
+    serialized_options=_b('\202\323\344\223\0025\"3/managed-postgresql/v1/clusters/{cluster_id}:backup\262\322* \n\025BackupClusterMetadata\022\007Cluster'),
   ),
   _descriptor.MethodDescriptor(
     name='Restore',
     full_name='yandex.cloud.mdb.postgresql.v1.ClusterService.Restore',
-    index=6,
+    index=8,
     containing_service=None,
     input_type=_RESTORECLUSTERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002,\"\'/managed-postgresql/v1/clusters:restore:\001*\262\322*!\n\026RestoreClusterMetadata\022\007Cluster')),
+    serialized_options=_b('\202\323\344\223\002,\"\'/managed-postgresql/v1/clusters:restore:\001*\262\322*!\n\026RestoreClusterMetadata\022\007Cluster'),
   ),
   _descriptor.MethodDescriptor(
     name='ListLogs',
     full_name='yandex.cloud.mdb.postgresql.v1.ClusterService.ListLogs',
-    index=7,
+    index=9,
     containing_service=None,
     input_type=_LISTCLUSTERLOGSREQUEST,
     output_type=_LISTCLUSTERLOGSRESPONSE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\0023\0221/managed-postgresql/v1/clusters/{cluster_id}:logs')),
+    serialized_options=_b('\202\323\344\223\0023\0221/managed-postgresql/v1/clusters/{cluster_id}:logs'),
   ),
   _descriptor.MethodDescriptor(
     name='ListOperations',
     full_name='yandex.cloud.mdb.postgresql.v1.ClusterService.ListOperations',
-    index=8,
+    index=10,
     containing_service=None,
     input_type=_LISTCLUSTEROPERATIONSREQUEST,
     output_type=_LISTCLUSTEROPERATIONSRESPONSE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\0029\0227/managed-postgresql/v1/clusters/{cluster_id}/operations')),
+    serialized_options=_b('\202\323\344\223\0029\0227/managed-postgresql/v1/clusters/{cluster_id}/operations'),
   ),
   _descriptor.MethodDescriptor(
     name='ListBackups',
     full_name='yandex.cloud.mdb.postgresql.v1.ClusterService.ListBackups',
-    index=9,
+    index=11,
     containing_service=None,
     input_type=_LISTCLUSTERBACKUPSREQUEST,
     output_type=_LISTCLUSTERBACKUPSRESPONSE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\0026\0224/managed-postgresql/v1/clusters/{cluster_id}/backups')),
+    serialized_options=_b('\202\323\344\223\0026\0224/managed-postgresql/v1/clusters/{cluster_id}/backups'),
   ),
   _descriptor.MethodDescriptor(
     name='ListHosts',
     full_name='yandex.cloud.mdb.postgresql.v1.ClusterService.ListHosts',
-    index=10,
+    index=12,
     containing_service=None,
     input_type=_LISTCLUSTERHOSTSREQUEST,
     output_type=_LISTCLUSTERHOSTSRESPONSE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\0024\0222/managed-postgresql/v1/clusters/{cluster_id}/hosts')),
+    serialized_options=_b('\202\323\344\223\0024\0222/managed-postgresql/v1/clusters/{cluster_id}/hosts'),
   ),
   _descriptor.MethodDescriptor(
     name='AddHosts',
     full_name='yandex.cloud.mdb.postgresql.v1.ClusterService.AddHosts',
-    index=11,
+    index=13,
     containing_service=None,
     input_type=_ADDCLUSTERHOSTSREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002C\">/managed-postgresql/v1/clusters/{cluster_id}/hosts:batchCreate:\001*\262\322*0\n\027AddClusterHostsMetadata\022\025google.protobuf.Empty')),
+    serialized_options=_b('\202\323\344\223\002C\">/managed-postgresql/v1/clusters/{cluster_id}/hosts:batchCreate:\001*\262\322*0\n\027AddClusterHostsMetadata\022\025google.protobuf.Empty'),
   ),
   _descriptor.MethodDescriptor(
     name='DeleteHosts',
     full_name='yandex.cloud.mdb.postgresql.v1.ClusterService.DeleteHosts',
-    index=12,
+    index=14,
     containing_service=None,
     input_type=_DELETECLUSTERHOSTSREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002C\">/managed-postgresql/v1/clusters/{cluster_id}/hosts:batchDelete:\001*\262\322*3\n\032DeleteClusterHostsMetadata\022\025google.protobuf.Empty')),
+    serialized_options=_b('\202\323\344\223\002C\">/managed-postgresql/v1/clusters/{cluster_id}/hosts:batchDelete:\001*\262\322*3\n\032DeleteClusterHostsMetadata\022\025google.protobuf.Empty'),
   ),
   _descriptor.MethodDescriptor(
     name='UpdateHosts',
     full_name='yandex.cloud.mdb.postgresql.v1.ClusterService.UpdateHosts',
-    index=13,
+    index=15,
     containing_service=None,
     input_type=_UPDATECLUSTERHOSTSREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002C\">/managed-postgresql/v1/clusters/{cluster_id}/hosts:batchUpdate:\001*\262\322*3\n\032UpdateClusterHostsMetadata\022\025google.protobuf.Empty')),
+    serialized_options=_b('\202\323\344\223\002C\">/managed-postgresql/v1/clusters/{cluster_id}/hosts:batchUpdate:\001*\262\322*3\n\032UpdateClusterHostsMetadata\022\025google.protobuf.Empty'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_CLUSTERSERVICE)

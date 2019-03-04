@@ -7,7 +7,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -16,6 +15,7 @@ _sym_db = _symbol_database.Default()
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
 from yandex.api import operation_pb2 as yandex_dot_api_dot_operation__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
@@ -30,9 +30,10 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/mdb/clickhouse/v1/cluster_service.proto',
   package='yandex.cloud.mdb.clickhouse.v1',
   syntax='proto3',
-  serialized_pb=_b('\n4yandex/cloud/mdb/clickhouse/v1/cluster_service.proto\x12\x1eyandex.cloud.mdb.clickhouse.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1ayandex/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a+yandex/cloud/mdb/clickhouse/v1/backup.proto\x1a,yandex/cloud/mdb/clickhouse/v1/cluster.proto\x1a-yandex/cloud/mdb/clickhouse/v1/database.proto\x1a)yandex/cloud/mdb/clickhouse/v1/user.proto\x1a\x36yandex/cloud/mdb/clickhouse/v1/config/clickhouse.proto\"5\n\x11GetClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x90\x01\n\x13ListClustersRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"j\n\x14ListClustersResponse\x12\x39\n\x08\x63lusters\x18\x01 \x03(\x0b\x32\'.yandex.cloud.mdb.clickhouse.v1.Cluster\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xe2\x05\n\x14\x43reateClusterRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x33\n\x04name\x18\x02 \x01(\tB%\xe8\xc7\x31\x01\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x91\x01\n\x06labels\x18\x04 \x03(\x0b\x32@.yandex.cloud.mdb.clickhouse.v1.CreateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12N\n\x0b\x65nvironment\x18\x05 \x01(\x0e\x32\x33.yandex.cloud.mdb.clickhouse.v1.Cluster.EnvironmentB\x04\xe8\xc7\x31\x01\x12\x45\n\x0b\x63onfig_spec\x18\x06 \x01(\x0b\x32*.yandex.cloud.mdb.clickhouse.v1.ConfigSpecB\x04\xe8\xc7\x31\x01\x12L\n\x0e\x64\x61tabase_specs\x18\x07 \x03(\x0b\x32,.yandex.cloud.mdb.clickhouse.v1.DatabaseSpecB\x06\x82\xc8\x31\x02>0\x12\x44\n\nuser_specs\x18\x08 \x03(\x0b\x32(.yandex.cloud.mdb.clickhouse.v1.UserSpecB\x06\x82\xc8\x31\x02>0\x12\x44\n\nhost_specs\x18\t \x03(\x0b\x32(.yandex.cloud.mdb.clickhouse.v1.HostSpecB\x06\x82\xc8\x31\x02>0\x12 \n\nnetwork_id\x18\n \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15\x43reateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\x8d\x03\n\x14UpdateClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x91\x01\n\x06labels\x18\x04 \x03(\x0b\x32@.yandex.cloud.mdb.clickhouse.v1.UpdateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12?\n\x0b\x63onfig_spec\x18\x05 \x01(\x0b\x32*.yandex.cloud.mdb.clickhouse.v1.ConfigSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15UpdateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"8\n\x14\x44\x65leteClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x44\x65leteClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"8\n\x14\x42\x61\x63kupClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x42\x61\x63kupClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\xc8\x04\n\x15RestoreClusterRequest\x12\x17\n\tbackup_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x33\n\x04name\x18\x02 \x01(\tB%\xe8\xc7\x31\x01\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x92\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x41.yandex.cloud.mdb.clickhouse.v1.RestoreClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12N\n\x0b\x65nvironment\x18\x05 \x01(\x0e\x32\x33.yandex.cloud.mdb.clickhouse.v1.Cluster.EnvironmentB\x04\xe8\xc7\x31\x01\x12\x45\n\x0b\x63onfig_spec\x18\x06 \x01(\x0b\x32*.yandex.cloud.mdb.clickhouse.v1.ConfigSpecB\x04\xe8\xc7\x31\x01\x12\x44\n\nhost_specs\x18\x07 \x03(\x0b\x32(.yandex.cloud.mdb.clickhouse.v1.HostSpecB\x06\x82\xc8\x31\x02>0\x12 \n\nnetwork_id\x18\x08 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"?\n\x16RestoreClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tbackup_id\x18\x02 \x01(\t\"\xb3\x01\n\tLogRecord\x12-\n\ttimestamp\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12G\n\x07message\x18\x02 \x03(\x0b\x32\x36.yandex.cloud.mdb.clickhouse.v1.LogRecord.MessageEntry\x1a.\n\x0cMessageEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x82\x03\n\x16ListClusterLogsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x15\n\rcolumn_filter\x18\x02 \x03(\t\x12X\n\x0cservice_type\x18\x03 \x01(\x0e\x32\x42.yandex.cloud.mdb.clickhouse.v1.ListClusterLogsRequest.ServiceType\x12-\n\tfrom_time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07to_time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1d\n\tpage_size\x18\x06 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x07 \x01(\tB\t\x8a\xc8\x31\x05<=100\";\n\x0bServiceType\x12\x1c\n\x18SERVICE_TYPE_UNSPECIFIED\x10\x00\x12\x0e\n\nCLICKHOUSE\x10\x01\"k\n\x17ListClusterLogsResponse\x12\x37\n\x04logs\x18\x01 \x03(\x0b\x32).yandex.cloud.mdb.clickhouse.v1.LogRecord\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"~\n\x1cListClusterOperationsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"o\n\x1dListClusterOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"{\n\x19ListClusterBackupsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"n\n\x1aListClusterBackupsResponse\x12\x37\n\x07\x62\x61\x63kups\x18\x01 \x03(\x0b\x32&.yandex.cloud.mdb.clickhouse.v1.Backup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"y\n\x17ListClusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"h\n\x18ListClusterHostsResponse\x12\x33\n\x05hosts\x18\x01 \x03(\x0b\x32$.yandex.cloud.mdb.clickhouse.v1.Host\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x80\x01\n\x16\x41\x64\x64\x43lusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x44\n\nhost_specs\x18\x02 \x03(\x0b\x32(.yandex.cloud.mdb.clickhouse.v1.HostSpecB\x06\x82\xc8\x31\x02>0\"A\n\x17\x41\x64\x64\x43lusterHostsMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nhost_names\x18\x02 \x03(\t\"b\n\x19\x44\x65leteClusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12#\n\nhost_names\x18\x02 \x03(\tB\x0f\x82\xc8\x31\x02>0\x8a\xc8\x31\x05<=253\"D\n\x1a\x44\x65leteClusterHostsMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nhost_names\x18\x02 \x03(\t\"\x9b\x01\n\x08HostSpec\x12\x19\n\x07zone_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12=\n\x04type\x18\x02 \x01(\x0e\x32).yandex.cloud.mdb.clickhouse.v1.Host.TypeB\x04\xe8\xc7\x31\x01\x12\x1b\n\tsubnet_id\x18\x03 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x18\n\x10\x61ssign_public_ip\x18\x04 \x01(\x08\"\x81\x03\n\nConfigSpec\x12I\n\nclickhouse\x18\x01 \x01(\x0b\x32\x35.yandex.cloud.mdb.clickhouse.v1.ConfigSpec.Clickhouse\x12G\n\tzookeeper\x18\x02 \x01(\x0b\x32\x34.yandex.cloud.mdb.clickhouse.v1.ConfigSpec.Zookeeper\x1a\x93\x01\n\nClickhouse\x12G\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x37.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig\x12<\n\tresources\x18\x02 \x01(\x0b\x32).yandex.cloud.mdb.clickhouse.v1.Resources\x1aI\n\tZookeeper\x12<\n\tresources\x18\x01 \x01(\x0b\x32).yandex.cloud.mdb.clickhouse.v1.Resources2\xea\x13\n\x0e\x43lusterService\x12\x97\x01\n\x03Get\x12\x31.yandex.cloud.mdb.clickhouse.v1.GetClusterRequest\x1a\'.yandex.cloud.mdb.clickhouse.v1.Cluster\"4\x82\xd3\xe4\x93\x02.\x12,/managed-clickhouse/v1/clusters/{cluster_id}\x12\x9a\x01\n\x04List\x12\x33.yandex.cloud.mdb.clickhouse.v1.ListClustersRequest\x1a\x34.yandex.cloud.mdb.clickhouse.v1.ListClustersResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/managed-clickhouse/v1/clusters\x12\xb1\x01\n\x06\x43reate\x12\x34.yandex.cloud.mdb.clickhouse.v1.CreateClusterRequest\x1a!.yandex.cloud.operation.Operation\"N\x82\xd3\xe4\x93\x02$\"\x1f/managed-clickhouse/v1/clusters:\x01*\xb2\xd2* \n\x15\x43reateClusterMetadata\x12\x07\x43luster\x12\xbe\x01\n\x06Update\x12\x34.yandex.cloud.mdb.clickhouse.v1.UpdateClusterRequest\x1a!.yandex.cloud.operation.Operation\"[\x82\xd3\xe4\x93\x02\x31\x32,/managed-clickhouse/v1/clusters/{cluster_id}:\x01*\xb2\xd2* \n\x15UpdateClusterMetadata\x12\x07\x43luster\x12\xc9\x01\n\x06\x44\x65lete\x12\x34.yandex.cloud.mdb.clickhouse.v1.DeleteClusterRequest\x1a!.yandex.cloud.operation.Operation\"f\x82\xd3\xe4\x93\x02.*,/managed-clickhouse/v1/clusters/{cluster_id}\xb2\xd2*.\n\x15\x44\x65leteClusterMetadata\x12\x15google.protobuf.Empty\x12\xc2\x01\n\x06\x42\x61\x63kup\x12\x34.yandex.cloud.mdb.clickhouse.v1.BackupClusterRequest\x1a!.yandex.cloud.operation.Operation\"_\x82\xd3\xe4\x93\x02\x35\"3/managed-clickhouse/v1/clusters/{cluster_id}:backup\xb2\xd2* \n\x15\x42\x61\x63kupClusterMetadata\x12\x07\x43luster\x12\xbc\x01\n\x07Restore\x12\x35.yandex.cloud.mdb.clickhouse.v1.RestoreClusterRequest\x1a!.yandex.cloud.operation.Operation\"W\x82\xd3\xe4\x93\x02,\"\'/managed-clickhouse/v1/clusters:restore:\x01*\xb2\xd2*!\n\x16RestoreClusterMetadata\x12\x07\x43luster\x12\xb6\x01\n\x08ListLogs\x12\x36.yandex.cloud.mdb.clickhouse.v1.ListClusterLogsRequest\x1a\x37.yandex.cloud.mdb.clickhouse.v1.ListClusterLogsResponse\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/managed-clickhouse/v1/clusters/{cluster_id}:logs\x12\xce\x01\n\x0eListOperations\x12<.yandex.cloud.mdb.clickhouse.v1.ListClusterOperationsRequest\x1a=.yandex.cloud.mdb.clickhouse.v1.ListClusterOperationsResponse\"?\x82\xd3\xe4\x93\x02\x39\x12\x37/managed-clickhouse/v1/clusters/{cluster_id}/operations\x12\xc2\x01\n\x0bListBackups\x12\x39.yandex.cloud.mdb.clickhouse.v1.ListClusterBackupsRequest\x1a:.yandex.cloud.mdb.clickhouse.v1.ListClusterBackupsResponse\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/managed-clickhouse/v1/clusters/{cluster_id}/backups\x12\xba\x01\n\tListHosts\x12\x37.yandex.cloud.mdb.clickhouse.v1.ListClusterHostsRequest\x1a\x38.yandex.cloud.mdb.clickhouse.v1.ListClusterHostsResponse\":\x82\xd3\xe4\x93\x02\x34\x12\x32/managed-clickhouse/v1/clusters/{cluster_id}/hosts\x12\xe4\x01\n\x08\x41\x64\x64Hosts\x12\x36.yandex.cloud.mdb.clickhouse.v1.AddClusterHostsRequest\x1a!.yandex.cloud.operation.Operation\"}\x82\xd3\xe4\x93\x02\x43\">/managed-clickhouse/v1/clusters/{cluster_id}/hosts:batchCreate:\x01*\xb2\xd2*0\n\x17\x41\x64\x64\x43lusterHostsMetadata\x12\x15google.protobuf.Empty\x12\xe8\x01\n\x0b\x44\x65leteHosts\x12\x39.yandex.cloud.mdb.clickhouse.v1.DeleteClusterHostsRequest\x1a!.yandex.cloud.operation.Operation\"{\x82\xd3\xe4\x93\x02\x43\">/managed-clickhouse/v1/clusters/{cluster_id}/hosts:batchDelete:\x01*\xb2\xd2*.\n\x15\x44\x65leteClusterMetadata\x12\x15google.protobuf.EmptyBOZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/clickhouse/v1;clickhouseb\x06proto3')
+  serialized_options=_b('ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/clickhouse/v1;clickhouse'),
+  serialized_pb=_b('\n4yandex/cloud/mdb/clickhouse/v1/cluster_service.proto\x12\x1eyandex.cloud.mdb.clickhouse.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1ayandex/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a+yandex/cloud/mdb/clickhouse/v1/backup.proto\x1a,yandex/cloud/mdb/clickhouse/v1/cluster.proto\x1a-yandex/cloud/mdb/clickhouse/v1/database.proto\x1a)yandex/cloud/mdb/clickhouse/v1/user.proto\x1a\x36yandex/cloud/mdb/clickhouse/v1/config/clickhouse.proto\"5\n\x11GetClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x90\x01\n\x13ListClustersRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"j\n\x14ListClustersResponse\x12\x39\n\x08\x63lusters\x18\x01 \x03(\x0b\x32\'.yandex.cloud.mdb.clickhouse.v1.Cluster\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x8b\x06\n\x14\x43reateClusterRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12,\n\x04name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x91\x01\n\x06labels\x18\x04 \x03(\x0b\x32@.yandex.cloud.mdb.clickhouse.v1.CreateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12N\n\x0b\x65nvironment\x18\x05 \x01(\x0e\x32\x33.yandex.cloud.mdb.clickhouse.v1.Cluster.EnvironmentB\x04\xe8\xc7\x31\x01\x12\x45\n\x0b\x63onfig_spec\x18\x06 \x01(\x0b\x32*.yandex.cloud.mdb.clickhouse.v1.ConfigSpecB\x04\xe8\xc7\x31\x01\x12L\n\x0e\x64\x61tabase_specs\x18\x07 \x03(\x0b\x32,.yandex.cloud.mdb.clickhouse.v1.DatabaseSpecB\x06\x82\xc8\x31\x02>0\x12\x44\n\nuser_specs\x18\x08 \x03(\x0b\x32(.yandex.cloud.mdb.clickhouse.v1.UserSpecB\x06\x82\xc8\x31\x02>0\x12\x44\n\nhost_specs\x18\t \x03(\x0b\x32(.yandex.cloud.mdb.clickhouse.v1.HostSpecB\x06\x82\xc8\x31\x02>0\x12 \n\nnetwork_id\x18\n \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12.\n\nshard_name\x18\x0b \x01(\tB\x1a\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15\x43reateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\x8d\x03\n\x14UpdateClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x91\x01\n\x06labels\x18\x04 \x03(\x0b\x32@.yandex.cloud.mdb.clickhouse.v1.UpdateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12?\n\x0b\x63onfig_spec\x18\x05 \x01(\x0b\x32*.yandex.cloud.mdb.clickhouse.v1.ConfigSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15UpdateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"8\n\x14\x44\x65leteClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x44\x65leteClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"7\n\x13StartClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"*\n\x14StartClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"6\n\x12StopClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\")\n\x13StopClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"8\n\x14\x42\x61\x63kupClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x42\x61\x63kupClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\xc1\x04\n\x15RestoreClusterRequest\x12\x17\n\tbackup_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12,\n\x04name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x92\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x41.yandex.cloud.mdb.clickhouse.v1.RestoreClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12N\n\x0b\x65nvironment\x18\x05 \x01(\x0e\x32\x33.yandex.cloud.mdb.clickhouse.v1.Cluster.EnvironmentB\x04\xe8\xc7\x31\x01\x12\x45\n\x0b\x63onfig_spec\x18\x06 \x01(\x0b\x32*.yandex.cloud.mdb.clickhouse.v1.ConfigSpecB\x04\xe8\xc7\x31\x01\x12\x44\n\nhost_specs\x18\x07 \x03(\x0b\x32(.yandex.cloud.mdb.clickhouse.v1.HostSpecB\x06\x82\xc8\x31\x02>0\x12 \n\nnetwork_id\x18\x08 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"?\n\x16RestoreClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tbackup_id\x18\x02 \x01(\t\"\xb3\x01\n\tLogRecord\x12-\n\ttimestamp\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12G\n\x07message\x18\x02 \x03(\x0b\x32\x36.yandex.cloud.mdb.clickhouse.v1.LogRecord.MessageEntry\x1a.\n\x0cMessageEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x82\x03\n\x16ListClusterLogsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x15\n\rcolumn_filter\x18\x02 \x03(\t\x12X\n\x0cservice_type\x18\x03 \x01(\x0e\x32\x42.yandex.cloud.mdb.clickhouse.v1.ListClusterLogsRequest.ServiceType\x12-\n\tfrom_time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07to_time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1d\n\tpage_size\x18\x06 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x07 \x01(\tB\t\x8a\xc8\x31\x05<=100\";\n\x0bServiceType\x12\x1c\n\x18SERVICE_TYPE_UNSPECIFIED\x10\x00\x12\x0e\n\nCLICKHOUSE\x10\x01\"k\n\x17ListClusterLogsResponse\x12\x37\n\x04logs\x18\x01 \x03(\x0b\x32).yandex.cloud.mdb.clickhouse.v1.LogRecord\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"~\n\x1cListClusterOperationsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"o\n\x1dListClusterOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"{\n\x19ListClusterBackupsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"n\n\x1aListClusterBackupsResponse\x12\x37\n\x07\x62\x61\x63kups\x18\x01 \x03(\x0b\x32&.yandex.cloud.mdb.clickhouse.v1.Backup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"y\n\x17ListClusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"h\n\x18ListClusterHostsResponse\x12\x33\n\x05hosts\x18\x01 \x03(\x0b\x32$.yandex.cloud.mdb.clickhouse.v1.Host\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x80\x01\n\x16\x41\x64\x64\x43lusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x44\n\nhost_specs\x18\x02 \x03(\x0b\x32(.yandex.cloud.mdb.clickhouse.v1.HostSpecB\x06\x82\xc8\x31\x02>0\"A\n\x17\x41\x64\x64\x43lusterHostsMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nhost_names\x18\x02 \x03(\t\"b\n\x19\x44\x65leteClusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12#\n\nhost_names\x18\x02 \x03(\tB\x0f\x82\xc8\x31\x02>0\x8a\xc8\x31\x05<=253\"D\n\x1a\x44\x65leteClusterHostsMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nhost_names\x18\x02 \x03(\t\"n\n\x16GetClusterShardRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\nshard_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"z\n\x18ListClusterShardsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"k\n\x19ListClusterShardsResponse\x12\x35\n\x06shards\x18\x01 \x03(\x0b\x32%.yandex.cloud.mdb.clickhouse.v1.Shard\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xfa\x01\n\x16\x41\x64\x64\x43lusterShardRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\nshard_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x44\n\x0b\x63onfig_spec\x18\x03 \x01(\x0b\x32/.yandex.cloud.mdb.clickhouse.v1.ShardConfigSpec\x12\x44\n\nhost_specs\x18\x04 \x03(\x0b\x32(.yandex.cloud.mdb.clickhouse.v1.HostSpecB\x06\x82\xc8\x31\x02>0\"A\n\x17\x41\x64\x64\x43lusterShardMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nshard_name\x18\x02 \x01(\t\"\xe8\x01\n\x19UpdateClusterShardRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\nshard_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12/\n\x0bupdate_mask\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x44\n\x0b\x63onfig_spec\x18\x04 \x01(\x0b\x32/.yandex.cloud.mdb.clickhouse.v1.ShardConfigSpec\"D\n\x1aUpdateClusterShardMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nshard_name\x18\x02 \x01(\t\"q\n\x19\x44\x65leteClusterShardRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\nshard_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"D\n\x1a\x44\x65leteClusterShardMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nshard_name\x18\x02 \x01(\t\"\xcb\x01\n\x08HostSpec\x12\x19\n\x07zone_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12=\n\x04type\x18\x02 \x01(\x0e\x32).yandex.cloud.mdb.clickhouse.v1.Host.TypeB\x04\xe8\xc7\x31\x01\x12\x1b\n\tsubnet_id\x18\x03 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x18\n\x10\x61ssign_public_ip\x18\x04 \x01(\x08\x12.\n\nshard_name\x18\x05 \x01(\tB\x1a\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"\x81\x03\n\nConfigSpec\x12I\n\nclickhouse\x18\x01 \x01(\x0b\x32\x35.yandex.cloud.mdb.clickhouse.v1.ConfigSpec.Clickhouse\x12G\n\tzookeeper\x18\x02 \x01(\x0b\x32\x34.yandex.cloud.mdb.clickhouse.v1.ConfigSpec.Zookeeper\x1a\x93\x01\n\nClickhouse\x12G\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x37.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig\x12<\n\tresources\x18\x02 \x01(\x0b\x32).yandex.cloud.mdb.clickhouse.v1.Resources\x1aI\n\tZookeeper\x12<\n\tresources\x18\x01 \x01(\x0b\x32).yandex.cloud.mdb.clickhouse.v1.Resources\"\xa4\x02\n\x0fShardConfigSpec\x12N\n\nclickhouse\x18\x01 \x01(\x0b\x32:.yandex.cloud.mdb.clickhouse.v1.ShardConfigSpec.Clickhouse\x1a\xc0\x01\n\nClickhouse\x12G\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x37.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig\x12<\n\tresources\x18\x02 \x01(\x0b\x32).yandex.cloud.mdb.clickhouse.v1.Resources\x12+\n\x06weight\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value2\xe6\x1e\n\x0e\x43lusterService\x12\x97\x01\n\x03Get\x12\x31.yandex.cloud.mdb.clickhouse.v1.GetClusterRequest\x1a\'.yandex.cloud.mdb.clickhouse.v1.Cluster\"4\x82\xd3\xe4\x93\x02.\x12,/managed-clickhouse/v1/clusters/{cluster_id}\x12\x9a\x01\n\x04List\x12\x33.yandex.cloud.mdb.clickhouse.v1.ListClustersRequest\x1a\x34.yandex.cloud.mdb.clickhouse.v1.ListClustersResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/managed-clickhouse/v1/clusters\x12\xb1\x01\n\x06\x43reate\x12\x34.yandex.cloud.mdb.clickhouse.v1.CreateClusterRequest\x1a!.yandex.cloud.operation.Operation\"N\x82\xd3\xe4\x93\x02$\"\x1f/managed-clickhouse/v1/clusters:\x01*\xb2\xd2* \n\x15\x43reateClusterMetadata\x12\x07\x43luster\x12\xbe\x01\n\x06Update\x12\x34.yandex.cloud.mdb.clickhouse.v1.UpdateClusterRequest\x1a!.yandex.cloud.operation.Operation\"[\x82\xd3\xe4\x93\x02\x31\x32,/managed-clickhouse/v1/clusters/{cluster_id}:\x01*\xb2\xd2* \n\x15UpdateClusterMetadata\x12\x07\x43luster\x12\xc9\x01\n\x06\x44\x65lete\x12\x34.yandex.cloud.mdb.clickhouse.v1.DeleteClusterRequest\x1a!.yandex.cloud.operation.Operation\"f\x82\xd3\xe4\x93\x02.*,/managed-clickhouse/v1/clusters/{cluster_id}\xb2\xd2*.\n\x15\x44\x65leteClusterMetadata\x12\x15google.protobuf.Empty\x12\xba\x01\n\x05Start\x12\x33.yandex.cloud.mdb.clickhouse.v1.StartClusterRequest\x1a!.yandex.cloud.operation.Operation\"Y\x82\xd3\xe4\x93\x02\x30\"./mdb/clickhouse/v1/clusters/{cluster_id}:start\xb2\xd2*\x1f\n\x14StartClusterMetadata\x12\x07\x43luster\x12\xb6\x01\n\x04Stop\x12\x32.yandex.cloud.mdb.clickhouse.v1.StopClusterRequest\x1a!.yandex.cloud.operation.Operation\"W\x82\xd3\xe4\x93\x02/\"-/mdb/clickhouse/v1/clusters/{cluster_id}:stop\xb2\xd2*\x1e\n\x13StopClusterMetadata\x12\x07\x43luster\x12\xc2\x01\n\x06\x42\x61\x63kup\x12\x34.yandex.cloud.mdb.clickhouse.v1.BackupClusterRequest\x1a!.yandex.cloud.operation.Operation\"_\x82\xd3\xe4\x93\x02\x35\"3/managed-clickhouse/v1/clusters/{cluster_id}:backup\xb2\xd2* \n\x15\x42\x61\x63kupClusterMetadata\x12\x07\x43luster\x12\xbc\x01\n\x07Restore\x12\x35.yandex.cloud.mdb.clickhouse.v1.RestoreClusterRequest\x1a!.yandex.cloud.operation.Operation\"W\x82\xd3\xe4\x93\x02,\"\'/managed-clickhouse/v1/clusters:restore:\x01*\xb2\xd2*!\n\x16RestoreClusterMetadata\x12\x07\x43luster\x12\xb6\x01\n\x08ListLogs\x12\x36.yandex.cloud.mdb.clickhouse.v1.ListClusterLogsRequest\x1a\x37.yandex.cloud.mdb.clickhouse.v1.ListClusterLogsResponse\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/managed-clickhouse/v1/clusters/{cluster_id}:logs\x12\xce\x01\n\x0eListOperations\x12<.yandex.cloud.mdb.clickhouse.v1.ListClusterOperationsRequest\x1a=.yandex.cloud.mdb.clickhouse.v1.ListClusterOperationsResponse\"?\x82\xd3\xe4\x93\x02\x39\x12\x37/managed-clickhouse/v1/clusters/{cluster_id}/operations\x12\xc2\x01\n\x0bListBackups\x12\x39.yandex.cloud.mdb.clickhouse.v1.ListClusterBackupsRequest\x1a:.yandex.cloud.mdb.clickhouse.v1.ListClusterBackupsResponse\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/managed-clickhouse/v1/clusters/{cluster_id}/backups\x12\xba\x01\n\tListHosts\x12\x37.yandex.cloud.mdb.clickhouse.v1.ListClusterHostsRequest\x1a\x38.yandex.cloud.mdb.clickhouse.v1.ListClusterHostsResponse\":\x82\xd3\xe4\x93\x02\x34\x12\x32/managed-clickhouse/v1/clusters/{cluster_id}/hosts\x12\xe4\x01\n\x08\x41\x64\x64Hosts\x12\x36.yandex.cloud.mdb.clickhouse.v1.AddClusterHostsRequest\x1a!.yandex.cloud.operation.Operation\"}\x82\xd3\xe4\x93\x02\x43\">/managed-clickhouse/v1/clusters/{cluster_id}/hosts:batchCreate:\x01*\xb2\xd2*0\n\x17\x41\x64\x64\x43lusterHostsMetadata\x12\x15google.protobuf.Empty\x12\xee\x01\n\x0b\x44\x65leteHosts\x12\x39.yandex.cloud.mdb.clickhouse.v1.DeleteClusterHostsRequest\x1a!.yandex.cloud.operation.Operation\"\x80\x01\x82\xd3\xe4\x93\x02\x43\">/managed-clickhouse/v1/clusters/{cluster_id}/hosts:batchDelete:\x01*\xb2\xd2*3\n\x1a\x44\x65leteClusterHostsMetadata\x12\x15google.protobuf.Empty\x12\xaf\x01\n\x08GetShard\x12\x36.yandex.cloud.mdb.clickhouse.v1.GetClusterShardRequest\x1a%.yandex.cloud.mdb.clickhouse.v1.Shard\"D\x82\xd3\xe4\x93\x02>\x12</mdb/clickhouse/v1/clusters/{cluster_id}/shards/{shard_name}\x12\xba\x01\n\nListShards\x12\x38.yandex.cloud.mdb.clickhouse.v1.ListClusterShardsRequest\x1a\x39.yandex.cloud.mdb.clickhouse.v1.ListClusterShardsResponse\"7\x82\xd3\xe4\x93\x02\x31\x12//mdb/clickhouse/v1/clusters/{cluster_id}/shards\x12\xc5\x01\n\x08\x41\x64\x64Shard\x12\x36.yandex.cloud.mdb.clickhouse.v1.AddClusterShardRequest\x1a!.yandex.cloud.operation.Operation\"^\x82\xd3\xe4\x93\x02\x34\"//mdb/clickhouse/v1/clusters/{cluster_id}/shards:\x01*\xb2\xd2* \n\x17\x41\x64\x64\x43lusterShardMetadata\x12\x05Shard\x12\xdb\x01\n\x0bUpdateShard\x12\x39.yandex.cloud.mdb.clickhouse.v1.UpdateClusterShardRequest\x1a!.yandex.cloud.operation.Operation\"n\x82\xd3\xe4\x93\x02\x41\x32</mdb/clickhouse/v1/clusters/{cluster_id}/shards/{shard_name}:\x01*\xb2\xd2*#\n\x1aUpdateClusterShardMetadata\x12\x05Shard\x12\xe8\x01\n\x0b\x44\x65leteShard\x12\x39.yandex.cloud.mdb.clickhouse.v1.DeleteClusterShardRequest\x1a!.yandex.cloud.operation.Operation\"{\x82\xd3\xe4\x93\x02>*</mdb/clickhouse/v1/clusters/{cluster_id}/shards/{shard_name}\xb2\xd2*3\n\x1a\x44\x65leteClusterShardMetadata\x12\x15google.protobuf.EmptyBOZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/clickhouse/v1;clickhouseb\x06proto3')
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_backup__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_database__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_user__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_config_dot_clickhouse__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,yandex_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_backup__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_database__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_user__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_config_dot_clickhouse__pb2.DESCRIPTOR,])
 
 
 
@@ -44,17 +45,17 @@ _LISTCLUSTERLOGSREQUEST_SERVICETYPE = _descriptor.EnumDescriptor(
   values=[
     _descriptor.EnumValueDescriptor(
       name='SERVICE_TYPE_UNSPECIFIED', index=0, number=0,
-      options=None,
+      serialized_options=None,
       type=None),
     _descriptor.EnumValueDescriptor(
       name='CLICKHOUSE', index=1, number=1,
-      options=None,
+      serialized_options=None,
       type=None),
   ],
   containing_type=None,
-  options=None,
-  serialized_start=3430,
-  serialized_end=3489,
+  serialized_options=None,
+  serialized_start=3696,
+  serialized_end=3755,
 )
 _sym_db.RegisterEnumDescriptor(_LISTCLUSTERLOGSREQUEST_SERVICETYPE)
 
@@ -72,21 +73,21 @@ _GETCLUSTERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=521,
-  serialized_end=574,
+  serialized_start=553,
+  serialized_end=606,
 )
 
 
@@ -103,42 +104,42 @@ _LISTCLUSTERSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.mdb.clickhouse.v1.ListClustersRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\006<=1000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.mdb.clickhouse.v1.ListClustersRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=100'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='filter', full_name='yandex.cloud.mdb.clickhouse.v1.ListClustersRequest.filter', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\006<=1000')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\006<=1000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=577,
-  serialized_end=721,
+  serialized_start=609,
+  serialized_end=753,
 )
 
 
@@ -155,28 +156,28 @@ _LISTCLUSTERSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.mdb.clickhouse.v1.ListClustersResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=723,
-  serialized_end=829,
+  serialized_start=755,
+  serialized_end=861,
 )
 
 
@@ -193,28 +194,28 @@ _CREATECLUSTERREQUEST_LABELSENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='yandex.cloud.mdb.clickhouse.v1.CreateClusterRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  serialized_options=_b('8\001'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1525,
-  serialized_end=1570,
+  serialized_start=1598,
+  serialized_end=1643,
 )
 
 _CREATECLUSTERREQUEST = _descriptor.Descriptor(
@@ -230,84 +231,91 @@ _CREATECLUSTERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='name', full_name='yandex.cloud.mdb.clickhouse.v1.CreateClusterRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=63\362\3071\016[a-zA-Z0-9_-]*'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='description', full_name='yandex.cloud.mdb.clickhouse.v1.CreateClusterRequest.description', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=256')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=256'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='labels', full_name='yandex.cloud.mdb.clickhouse.v1.CreateClusterRequest.labels', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*')), file=DESCRIPTOR),
+      serialized_options=_b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\004<=63\262\3101\022\022\020[a-z][-_0-9a-z]*'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='environment', full_name='yandex.cloud.mdb.clickhouse.v1.CreateClusterRequest.environment', index=4,
       number=5, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='config_spec', full_name='yandex.cloud.mdb.clickhouse.v1.CreateClusterRequest.config_spec', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='database_specs', full_name='yandex.cloud.mdb.clickhouse.v1.CreateClusterRequest.database_specs', index=6,
       number=7, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\002>0')), file=DESCRIPTOR),
+      serialized_options=_b('\202\3101\002>0'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='user_specs', full_name='yandex.cloud.mdb.clickhouse.v1.CreateClusterRequest.user_specs', index=7,
       number=8, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\002>0')), file=DESCRIPTOR),
+      serialized_options=_b('\202\3101\002>0'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='host_specs', full_name='yandex.cloud.mdb.clickhouse.v1.CreateClusterRequest.host_specs', index=8,
       number=9, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\002>0')), file=DESCRIPTOR),
+      serialized_options=_b('\202\3101\002>0'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='network_id', full_name='yandex.cloud.mdb.clickhouse.v1.CreateClusterRequest.network_id', index=9,
       number=10, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='shard_name', full_name='yandex.cloud.mdb.clickhouse.v1.CreateClusterRequest.shard_name', index=10,
+      number=11, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3101\004<=63\362\3071\016[a-zA-Z0-9_-]*'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[_CREATECLUSTERREQUEST_LABELSENTRY, ],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=832,
-  serialized_end=1570,
+  serialized_start=864,
+  serialized_end=1643,
 )
 
 
@@ -324,21 +332,21 @@ _CREATECLUSTERMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1572,
-  serialized_end=1615,
+  serialized_start=1645,
+  serialized_end=1688,
 )
 
 
@@ -355,28 +363,28 @@ _UPDATECLUSTERREQUEST_LABELSENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='yandex.cloud.mdb.clickhouse.v1.UpdateClusterRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  serialized_options=_b('8\001'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1525,
-  serialized_end=1570,
+  serialized_start=1598,
+  serialized_end=1643,
 )
 
 _UPDATECLUSTERREQUEST = _descriptor.Descriptor(
@@ -392,49 +400,49 @@ _UPDATECLUSTERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='update_mask', full_name='yandex.cloud.mdb.clickhouse.v1.UpdateClusterRequest.update_mask', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='description', full_name='yandex.cloud.mdb.clickhouse.v1.UpdateClusterRequest.description', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=256')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=256'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='labels', full_name='yandex.cloud.mdb.clickhouse.v1.UpdateClusterRequest.labels', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*')), file=DESCRIPTOR),
+      serialized_options=_b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\004<=63\262\3101\022\022\020[a-z][-_0-9a-z]*'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='config_spec', full_name='yandex.cloud.mdb.clickhouse.v1.UpdateClusterRequest.config_spec', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[_UPDATECLUSTERREQUEST_LABELSENTRY, ],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1618,
-  serialized_end=2015,
+  serialized_start=1691,
+  serialized_end=2088,
 )
 
 
@@ -451,21 +459,21 @@ _UPDATECLUSTERMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2017,
-  serialized_end=2060,
+  serialized_start=2090,
+  serialized_end=2133,
 )
 
 
@@ -482,21 +490,21 @@ _DELETECLUSTERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2062,
-  serialized_end=2118,
+  serialized_start=2135,
+  serialized_end=2191,
 )
 
 
@@ -513,21 +521,145 @@ _DELETECLUSTERMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2120,
-  serialized_end=2163,
+  serialized_start=2193,
+  serialized_end=2236,
+)
+
+
+_STARTCLUSTERREQUEST = _descriptor.Descriptor(
+  name='StartClusterRequest',
+  full_name='yandex.cloud.mdb.clickhouse.v1.StartClusterRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='yandex.cloud.mdb.clickhouse.v1.StartClusterRequest.cluster_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2238,
+  serialized_end=2293,
+)
+
+
+_STARTCLUSTERMETADATA = _descriptor.Descriptor(
+  name='StartClusterMetadata',
+  full_name='yandex.cloud.mdb.clickhouse.v1.StartClusterMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='yandex.cloud.mdb.clickhouse.v1.StartClusterMetadata.cluster_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2295,
+  serialized_end=2337,
+)
+
+
+_STOPCLUSTERREQUEST = _descriptor.Descriptor(
+  name='StopClusterRequest',
+  full_name='yandex.cloud.mdb.clickhouse.v1.StopClusterRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='yandex.cloud.mdb.clickhouse.v1.StopClusterRequest.cluster_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2339,
+  serialized_end=2393,
+)
+
+
+_STOPCLUSTERMETADATA = _descriptor.Descriptor(
+  name='StopClusterMetadata',
+  full_name='yandex.cloud.mdb.clickhouse.v1.StopClusterMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='yandex.cloud.mdb.clickhouse.v1.StopClusterMetadata.cluster_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2395,
+  serialized_end=2436,
 )
 
 
@@ -544,21 +676,21 @@ _BACKUPCLUSTERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2165,
-  serialized_end=2221,
+  serialized_start=2438,
+  serialized_end=2494,
 )
 
 
@@ -575,21 +707,21 @@ _BACKUPCLUSTERMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2223,
-  serialized_end=2266,
+  serialized_start=2496,
+  serialized_end=2539,
 )
 
 
@@ -606,28 +738,28 @@ _RESTORECLUSTERREQUEST_LABELSENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='yandex.cloud.mdb.clickhouse.v1.RestoreClusterRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  serialized_options=_b('8\001'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1525,
-  serialized_end=1570,
+  serialized_start=1598,
+  serialized_end=1643,
 )
 
 _RESTORECLUSTERREQUEST = _descriptor.Descriptor(
@@ -643,70 +775,70 @@ _RESTORECLUSTERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='name', full_name='yandex.cloud.mdb.clickhouse.v1.RestoreClusterRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=63\362\3071\016[a-zA-Z0-9_-]*'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='description', full_name='yandex.cloud.mdb.clickhouse.v1.RestoreClusterRequest.description', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=256')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=256'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='labels', full_name='yandex.cloud.mdb.clickhouse.v1.RestoreClusterRequest.labels', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*')), file=DESCRIPTOR),
+      serialized_options=_b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\004<=63\262\3101\022\022\020[a-z][-_0-9a-z]*'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='environment', full_name='yandex.cloud.mdb.clickhouse.v1.RestoreClusterRequest.environment', index=4,
       number=5, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='config_spec', full_name='yandex.cloud.mdb.clickhouse.v1.RestoreClusterRequest.config_spec', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='host_specs', full_name='yandex.cloud.mdb.clickhouse.v1.RestoreClusterRequest.host_specs', index=6,
       number=7, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\002>0')), file=DESCRIPTOR),
+      serialized_options=_b('\202\3101\002>0'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='network_id', full_name='yandex.cloud.mdb.clickhouse.v1.RestoreClusterRequest.network_id', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[_RESTORECLUSTERREQUEST_LABELSENTRY, ],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2269,
-  serialized_end=2853,
+  serialized_start=2542,
+  serialized_end=3119,
 )
 
 
@@ -723,28 +855,28 @@ _RESTORECLUSTERMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='backup_id', full_name='yandex.cloud.mdb.clickhouse.v1.RestoreClusterMetadata.backup_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2855,
-  serialized_end=2918,
+  serialized_start=3121,
+  serialized_end=3184,
 )
 
 
@@ -761,28 +893,28 @@ _LOGRECORD_MESSAGEENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='yandex.cloud.mdb.clickhouse.v1.LogRecord.MessageEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  serialized_options=_b('8\001'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3054,
-  serialized_end=3100,
+  serialized_start=3320,
+  serialized_end=3366,
 )
 
 _LOGRECORD = _descriptor.Descriptor(
@@ -798,28 +930,28 @@ _LOGRECORD = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='message', full_name='yandex.cloud.mdb.clickhouse.v1.LogRecord.message', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[_LOGRECORD_MESSAGEENTRY, ],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2921,
-  serialized_end=3100,
+  serialized_start=3187,
+  serialized_end=3366,
 )
 
 
@@ -836,49 +968,49 @@ _LISTCLUSTERLOGSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='column_filter', full_name='yandex.cloud.mdb.clickhouse.v1.ListClusterLogsRequest.column_filter', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='service_type', full_name='yandex.cloud.mdb.clickhouse.v1.ListClusterLogsRequest.service_type', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='from_time', full_name='yandex.cloud.mdb.clickhouse.v1.ListClusterLogsRequest.from_time', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='to_time', full_name='yandex.cloud.mdb.clickhouse.v1.ListClusterLogsRequest.to_time', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.mdb.clickhouse.v1.ListClusterLogsRequest.page_size', index=5,
       number=6, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\006<=1000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.mdb.clickhouse.v1.ListClusterLogsRequest.page_token', index=6,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=100'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -886,14 +1018,14 @@ _LISTCLUSTERLOGSREQUEST = _descriptor.Descriptor(
   enum_types=[
     _LISTCLUSTERLOGSREQUEST_SERVICETYPE,
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3103,
-  serialized_end=3489,
+  serialized_start=3369,
+  serialized_end=3755,
 )
 
 
@@ -910,28 +1042,28 @@ _LISTCLUSTERLOGSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.mdb.clickhouse.v1.ListClusterLogsResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3491,
-  serialized_end=3598,
+  serialized_start=3757,
+  serialized_end=3864,
 )
 
 
@@ -948,35 +1080,35 @@ _LISTCLUSTEROPERATIONSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.mdb.clickhouse.v1.ListClusterOperationsRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\006<=1000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.mdb.clickhouse.v1.ListClusterOperationsRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=100'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3600,
-  serialized_end=3726,
+  serialized_start=3866,
+  serialized_end=3992,
 )
 
 
@@ -993,28 +1125,28 @@ _LISTCLUSTEROPERATIONSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.mdb.clickhouse.v1.ListClusterOperationsResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3728,
-  serialized_end=3839,
+  serialized_start=3994,
+  serialized_end=4105,
 )
 
 
@@ -1031,35 +1163,35 @@ _LISTCLUSTERBACKUPSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.mdb.clickhouse.v1.ListClusterBackupsRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\006<=1000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.mdb.clickhouse.v1.ListClusterBackupsRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=100'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3841,
-  serialized_end=3964,
+  serialized_start=4107,
+  serialized_end=4230,
 )
 
 
@@ -1076,28 +1208,28 @@ _LISTCLUSTERBACKUPSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.mdb.clickhouse.v1.ListClusterBackupsResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3966,
-  serialized_end=4076,
+  serialized_start=4232,
+  serialized_end=4342,
 )
 
 
@@ -1114,35 +1246,35 @@ _LISTCLUSTERHOSTSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.mdb.clickhouse.v1.ListClusterHostsRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\006<=1000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.mdb.clickhouse.v1.ListClusterHostsRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=100'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4078,
-  serialized_end=4199,
+  serialized_start=4344,
+  serialized_end=4465,
 )
 
 
@@ -1159,28 +1291,28 @@ _LISTCLUSTERHOSTSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.mdb.clickhouse.v1.ListClusterHostsResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4201,
-  serialized_end=4305,
+  serialized_start=4467,
+  serialized_end=4571,
 )
 
 
@@ -1197,28 +1329,28 @@ _ADDCLUSTERHOSTSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='host_specs', full_name='yandex.cloud.mdb.clickhouse.v1.AddClusterHostsRequest.host_specs', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\002>0')), file=DESCRIPTOR),
+      serialized_options=_b('\202\3101\002>0'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4308,
-  serialized_end=4436,
+  serialized_start=4574,
+  serialized_end=4702,
 )
 
 
@@ -1235,28 +1367,28 @@ _ADDCLUSTERHOSTSMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='host_names', full_name='yandex.cloud.mdb.clickhouse.v1.AddClusterHostsMetadata.host_names', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4438,
-  serialized_end=4503,
+  serialized_start=4704,
+  serialized_end=4769,
 )
 
 
@@ -1273,28 +1405,28 @@ _DELETECLUSTERHOSTSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='host_names', full_name='yandex.cloud.mdb.clickhouse.v1.DeleteClusterHostsRequest.host_names', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\002>0\212\3101\005<=253')), file=DESCRIPTOR),
+      serialized_options=_b('\202\3101\002>0\212\3101\005<=253'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4505,
-  serialized_end=4603,
+  serialized_start=4771,
+  serialized_end=4869,
 )
 
 
@@ -1311,28 +1443,405 @@ _DELETECLUSTERHOSTSMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='host_names', full_name='yandex.cloud.mdb.clickhouse.v1.DeleteClusterHostsMetadata.host_names', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4605,
-  serialized_end=4673,
+  serialized_start=4871,
+  serialized_end=4939,
+)
+
+
+_GETCLUSTERSHARDREQUEST = _descriptor.Descriptor(
+  name='GetClusterShardRequest',
+  full_name='yandex.cloud.mdb.clickhouse.v1.GetClusterShardRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='yandex.cloud.mdb.clickhouse.v1.GetClusterShardRequest.cluster_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='shard_name', full_name='yandex.cloud.mdb.clickhouse.v1.GetClusterShardRequest.shard_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\350\3071\001\212\3101\004<=63\362\3071\016[a-zA-Z0-9_-]*'), file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4941,
+  serialized_end=5051,
+)
+
+
+_LISTCLUSTERSHARDSREQUEST = _descriptor.Descriptor(
+  name='ListClusterShardsRequest',
+  full_name='yandex.cloud.mdb.clickhouse.v1.ListClusterShardsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='yandex.cloud.mdb.clickhouse.v1.ListClusterShardsRequest.cluster_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='page_size', full_name='yandex.cloud.mdb.clickhouse.v1.ListClusterShardsRequest.page_size', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\372\3071\0060-1000'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='page_token', full_name='yandex.cloud.mdb.clickhouse.v1.ListClusterShardsRequest.page_token', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3101\005<=100'), file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5053,
+  serialized_end=5175,
+)
+
+
+_LISTCLUSTERSHARDSRESPONSE = _descriptor.Descriptor(
+  name='ListClusterShardsResponse',
+  full_name='yandex.cloud.mdb.clickhouse.v1.ListClusterShardsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='shards', full_name='yandex.cloud.mdb.clickhouse.v1.ListClusterShardsResponse.shards', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='next_page_token', full_name='yandex.cloud.mdb.clickhouse.v1.ListClusterShardsResponse.next_page_token', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5177,
+  serialized_end=5284,
+)
+
+
+_ADDCLUSTERSHARDREQUEST = _descriptor.Descriptor(
+  name='AddClusterShardRequest',
+  full_name='yandex.cloud.mdb.clickhouse.v1.AddClusterShardRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='yandex.cloud.mdb.clickhouse.v1.AddClusterShardRequest.cluster_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='shard_name', full_name='yandex.cloud.mdb.clickhouse.v1.AddClusterShardRequest.shard_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\350\3071\001\212\3101\004<=63\362\3071\016[a-zA-Z0-9_-]*'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='config_spec', full_name='yandex.cloud.mdb.clickhouse.v1.AddClusterShardRequest.config_spec', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='host_specs', full_name='yandex.cloud.mdb.clickhouse.v1.AddClusterShardRequest.host_specs', index=3,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\202\3101\002>0'), file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5287,
+  serialized_end=5537,
+)
+
+
+_ADDCLUSTERSHARDMETADATA = _descriptor.Descriptor(
+  name='AddClusterShardMetadata',
+  full_name='yandex.cloud.mdb.clickhouse.v1.AddClusterShardMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='yandex.cloud.mdb.clickhouse.v1.AddClusterShardMetadata.cluster_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='shard_name', full_name='yandex.cloud.mdb.clickhouse.v1.AddClusterShardMetadata.shard_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5539,
+  serialized_end=5604,
+)
+
+
+_UPDATECLUSTERSHARDREQUEST = _descriptor.Descriptor(
+  name='UpdateClusterShardRequest',
+  full_name='yandex.cloud.mdb.clickhouse.v1.UpdateClusterShardRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='yandex.cloud.mdb.clickhouse.v1.UpdateClusterShardRequest.cluster_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='shard_name', full_name='yandex.cloud.mdb.clickhouse.v1.UpdateClusterShardRequest.shard_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\350\3071\001\212\3101\004<=63\362\3071\016[a-zA-Z0-9_-]*'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='update_mask', full_name='yandex.cloud.mdb.clickhouse.v1.UpdateClusterShardRequest.update_mask', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='config_spec', full_name='yandex.cloud.mdb.clickhouse.v1.UpdateClusterShardRequest.config_spec', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5607,
+  serialized_end=5839,
+)
+
+
+_UPDATECLUSTERSHARDMETADATA = _descriptor.Descriptor(
+  name='UpdateClusterShardMetadata',
+  full_name='yandex.cloud.mdb.clickhouse.v1.UpdateClusterShardMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='yandex.cloud.mdb.clickhouse.v1.UpdateClusterShardMetadata.cluster_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='shard_name', full_name='yandex.cloud.mdb.clickhouse.v1.UpdateClusterShardMetadata.shard_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5841,
+  serialized_end=5909,
+)
+
+
+_DELETECLUSTERSHARDREQUEST = _descriptor.Descriptor(
+  name='DeleteClusterShardRequest',
+  full_name='yandex.cloud.mdb.clickhouse.v1.DeleteClusterShardRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='yandex.cloud.mdb.clickhouse.v1.DeleteClusterShardRequest.cluster_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='shard_name', full_name='yandex.cloud.mdb.clickhouse.v1.DeleteClusterShardRequest.shard_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\350\3071\001\212\3101\004<=63\362\3071\016[a-zA-Z0-9_-]*'), file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5911,
+  serialized_end=6024,
+)
+
+
+_DELETECLUSTERSHARDMETADATA = _descriptor.Descriptor(
+  name='DeleteClusterShardMetadata',
+  full_name='yandex.cloud.mdb.clickhouse.v1.DeleteClusterShardMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='yandex.cloud.mdb.clickhouse.v1.DeleteClusterShardMetadata.cluster_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='shard_name', full_name='yandex.cloud.mdb.clickhouse.v1.DeleteClusterShardMetadata.shard_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=6026,
+  serialized_end=6094,
 )
 
 
@@ -1349,42 +1858,49 @@ _HOSTSPEC = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='type', full_name='yandex.cloud.mdb.clickhouse.v1.HostSpec.type', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='subnet_id', full_name='yandex.cloud.mdb.clickhouse.v1.HostSpec.subnet_id', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='assign_public_ip', full_name='yandex.cloud.mdb.clickhouse.v1.HostSpec.assign_public_ip', index=3,
       number=4, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='shard_name', full_name='yandex.cloud.mdb.clickhouse.v1.HostSpec.shard_name', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3101\004<=63\362\3071\016[a-zA-Z0-9_-]*'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4676,
-  serialized_end=4831,
+  serialized_start=6097,
+  serialized_end=6300,
 )
 
 
@@ -1401,28 +1917,28 @@ _CONFIGSPEC_CLICKHOUSE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='resources', full_name='yandex.cloud.mdb.clickhouse.v1.ConfigSpec.Clickhouse.resources', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4997,
-  serialized_end=5144,
+  serialized_start=6466,
+  serialized_end=6613,
 )
 
 _CONFIGSPEC_ZOOKEEPER = _descriptor.Descriptor(
@@ -1438,21 +1954,21 @@ _CONFIGSPEC_ZOOKEEPER = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5146,
-  serialized_end=5219,
+  serialized_start=6615,
+  serialized_end=6688,
 )
 
 _CONFIGSPEC = _descriptor.Descriptor(
@@ -1468,28 +1984,103 @@ _CONFIGSPEC = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='zookeeper', full_name='yandex.cloud.mdb.clickhouse.v1.ConfigSpec.zookeeper', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[_CONFIGSPEC_CLICKHOUSE, _CONFIGSPEC_ZOOKEEPER, ],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4834,
-  serialized_end=5219,
+  serialized_start=6303,
+  serialized_end=6688,
+)
+
+
+_SHARDCONFIGSPEC_CLICKHOUSE = _descriptor.Descriptor(
+  name='Clickhouse',
+  full_name='yandex.cloud.mdb.clickhouse.v1.ShardConfigSpec.Clickhouse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='config', full_name='yandex.cloud.mdb.clickhouse.v1.ShardConfigSpec.Clickhouse.config', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='resources', full_name='yandex.cloud.mdb.clickhouse.v1.ShardConfigSpec.Clickhouse.resources', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='weight', full_name='yandex.cloud.mdb.clickhouse.v1.ShardConfigSpec.Clickhouse.weight', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=6791,
+  serialized_end=6983,
+)
+
+_SHARDCONFIGSPEC = _descriptor.Descriptor(
+  name='ShardConfigSpec',
+  full_name='yandex.cloud.mdb.clickhouse.v1.ShardConfigSpec',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='clickhouse', full_name='yandex.cloud.mdb.clickhouse.v1.ShardConfigSpec.clickhouse', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[_SHARDCONFIGSPEC_CLICKHOUSE, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=6691,
+  serialized_end=6983,
 )
 
 _LISTCLUSTERSRESPONSE.fields_by_name['clusters'].message_type = yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__pb2._CLUSTER
@@ -1521,6 +2112,11 @@ _LISTCLUSTEROPERATIONSRESPONSE.fields_by_name['operations'].message_type = yande
 _LISTCLUSTERBACKUPSRESPONSE.fields_by_name['backups'].message_type = yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_backup__pb2._BACKUP
 _LISTCLUSTERHOSTSRESPONSE.fields_by_name['hosts'].message_type = yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__pb2._HOST
 _ADDCLUSTERHOSTSREQUEST.fields_by_name['host_specs'].message_type = _HOSTSPEC
+_LISTCLUSTERSHARDSRESPONSE.fields_by_name['shards'].message_type = yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__pb2._SHARD
+_ADDCLUSTERSHARDREQUEST.fields_by_name['config_spec'].message_type = _SHARDCONFIGSPEC
+_ADDCLUSTERSHARDREQUEST.fields_by_name['host_specs'].message_type = _HOSTSPEC
+_UPDATECLUSTERSHARDREQUEST.fields_by_name['update_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
+_UPDATECLUSTERSHARDREQUEST.fields_by_name['config_spec'].message_type = _SHARDCONFIGSPEC
 _HOSTSPEC.fields_by_name['type'].enum_type = yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__pb2._HOST_TYPE
 _CONFIGSPEC_CLICKHOUSE.fields_by_name['config'].message_type = yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_config_dot_clickhouse__pb2._CLICKHOUSECONFIG
 _CONFIGSPEC_CLICKHOUSE.fields_by_name['resources'].message_type = yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__pb2._RESOURCES
@@ -1529,6 +2125,11 @@ _CONFIGSPEC_ZOOKEEPER.fields_by_name['resources'].message_type = yandex_dot_clou
 _CONFIGSPEC_ZOOKEEPER.containing_type = _CONFIGSPEC
 _CONFIGSPEC.fields_by_name['clickhouse'].message_type = _CONFIGSPEC_CLICKHOUSE
 _CONFIGSPEC.fields_by_name['zookeeper'].message_type = _CONFIGSPEC_ZOOKEEPER
+_SHARDCONFIGSPEC_CLICKHOUSE.fields_by_name['config'].message_type = yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_config_dot_clickhouse__pb2._CLICKHOUSECONFIG
+_SHARDCONFIGSPEC_CLICKHOUSE.fields_by_name['resources'].message_type = yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__pb2._RESOURCES
+_SHARDCONFIGSPEC_CLICKHOUSE.fields_by_name['weight'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_SHARDCONFIGSPEC_CLICKHOUSE.containing_type = _SHARDCONFIGSPEC
+_SHARDCONFIGSPEC.fields_by_name['clickhouse'].message_type = _SHARDCONFIGSPEC_CLICKHOUSE
 DESCRIPTOR.message_types_by_name['GetClusterRequest'] = _GETCLUSTERREQUEST
 DESCRIPTOR.message_types_by_name['ListClustersRequest'] = _LISTCLUSTERSREQUEST
 DESCRIPTOR.message_types_by_name['ListClustersResponse'] = _LISTCLUSTERSRESPONSE
@@ -1538,6 +2139,10 @@ DESCRIPTOR.message_types_by_name['UpdateClusterRequest'] = _UPDATECLUSTERREQUEST
 DESCRIPTOR.message_types_by_name['UpdateClusterMetadata'] = _UPDATECLUSTERMETADATA
 DESCRIPTOR.message_types_by_name['DeleteClusterRequest'] = _DELETECLUSTERREQUEST
 DESCRIPTOR.message_types_by_name['DeleteClusterMetadata'] = _DELETECLUSTERMETADATA
+DESCRIPTOR.message_types_by_name['StartClusterRequest'] = _STARTCLUSTERREQUEST
+DESCRIPTOR.message_types_by_name['StartClusterMetadata'] = _STARTCLUSTERMETADATA
+DESCRIPTOR.message_types_by_name['StopClusterRequest'] = _STOPCLUSTERREQUEST
+DESCRIPTOR.message_types_by_name['StopClusterMetadata'] = _STOPCLUSTERMETADATA
 DESCRIPTOR.message_types_by_name['BackupClusterRequest'] = _BACKUPCLUSTERREQUEST
 DESCRIPTOR.message_types_by_name['BackupClusterMetadata'] = _BACKUPCLUSTERMETADATA
 DESCRIPTOR.message_types_by_name['RestoreClusterRequest'] = _RESTORECLUSTERREQUEST
@@ -1555,8 +2160,18 @@ DESCRIPTOR.message_types_by_name['AddClusterHostsRequest'] = _ADDCLUSTERHOSTSREQ
 DESCRIPTOR.message_types_by_name['AddClusterHostsMetadata'] = _ADDCLUSTERHOSTSMETADATA
 DESCRIPTOR.message_types_by_name['DeleteClusterHostsRequest'] = _DELETECLUSTERHOSTSREQUEST
 DESCRIPTOR.message_types_by_name['DeleteClusterHostsMetadata'] = _DELETECLUSTERHOSTSMETADATA
+DESCRIPTOR.message_types_by_name['GetClusterShardRequest'] = _GETCLUSTERSHARDREQUEST
+DESCRIPTOR.message_types_by_name['ListClusterShardsRequest'] = _LISTCLUSTERSHARDSREQUEST
+DESCRIPTOR.message_types_by_name['ListClusterShardsResponse'] = _LISTCLUSTERSHARDSRESPONSE
+DESCRIPTOR.message_types_by_name['AddClusterShardRequest'] = _ADDCLUSTERSHARDREQUEST
+DESCRIPTOR.message_types_by_name['AddClusterShardMetadata'] = _ADDCLUSTERSHARDMETADATA
+DESCRIPTOR.message_types_by_name['UpdateClusterShardRequest'] = _UPDATECLUSTERSHARDREQUEST
+DESCRIPTOR.message_types_by_name['UpdateClusterShardMetadata'] = _UPDATECLUSTERSHARDMETADATA
+DESCRIPTOR.message_types_by_name['DeleteClusterShardRequest'] = _DELETECLUSTERSHARDREQUEST
+DESCRIPTOR.message_types_by_name['DeleteClusterShardMetadata'] = _DELETECLUSTERSHARDMETADATA
 DESCRIPTOR.message_types_by_name['HostSpec'] = _HOSTSPEC
 DESCRIPTOR.message_types_by_name['ConfigSpec'] = _CONFIGSPEC
+DESCRIPTOR.message_types_by_name['ShardConfigSpec'] = _SHARDCONFIGSPEC
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 GetClusterRequest = _reflection.GeneratedProtocolMessageType('GetClusterRequest', (_message.Message,), dict(
@@ -1637,6 +2252,34 @@ DeleteClusterMetadata = _reflection.GeneratedProtocolMessageType('DeleteClusterM
   # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.clickhouse.v1.DeleteClusterMetadata)
   ))
 _sym_db.RegisterMessage(DeleteClusterMetadata)
+
+StartClusterRequest = _reflection.GeneratedProtocolMessageType('StartClusterRequest', (_message.Message,), dict(
+  DESCRIPTOR = _STARTCLUSTERREQUEST,
+  __module__ = 'yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.clickhouse.v1.StartClusterRequest)
+  ))
+_sym_db.RegisterMessage(StartClusterRequest)
+
+StartClusterMetadata = _reflection.GeneratedProtocolMessageType('StartClusterMetadata', (_message.Message,), dict(
+  DESCRIPTOR = _STARTCLUSTERMETADATA,
+  __module__ = 'yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.clickhouse.v1.StartClusterMetadata)
+  ))
+_sym_db.RegisterMessage(StartClusterMetadata)
+
+StopClusterRequest = _reflection.GeneratedProtocolMessageType('StopClusterRequest', (_message.Message,), dict(
+  DESCRIPTOR = _STOPCLUSTERREQUEST,
+  __module__ = 'yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.clickhouse.v1.StopClusterRequest)
+  ))
+_sym_db.RegisterMessage(StopClusterRequest)
+
+StopClusterMetadata = _reflection.GeneratedProtocolMessageType('StopClusterMetadata', (_message.Message,), dict(
+  DESCRIPTOR = _STOPCLUSTERMETADATA,
+  __module__ = 'yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.clickhouse.v1.StopClusterMetadata)
+  ))
+_sym_db.RegisterMessage(StopClusterMetadata)
 
 BackupClusterRequest = _reflection.GeneratedProtocolMessageType('BackupClusterRequest', (_message.Message,), dict(
   DESCRIPTOR = _BACKUPCLUSTERREQUEST,
@@ -1773,6 +2416,69 @@ DeleteClusterHostsMetadata = _reflection.GeneratedProtocolMessageType('DeleteClu
   ))
 _sym_db.RegisterMessage(DeleteClusterHostsMetadata)
 
+GetClusterShardRequest = _reflection.GeneratedProtocolMessageType('GetClusterShardRequest', (_message.Message,), dict(
+  DESCRIPTOR = _GETCLUSTERSHARDREQUEST,
+  __module__ = 'yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.clickhouse.v1.GetClusterShardRequest)
+  ))
+_sym_db.RegisterMessage(GetClusterShardRequest)
+
+ListClusterShardsRequest = _reflection.GeneratedProtocolMessageType('ListClusterShardsRequest', (_message.Message,), dict(
+  DESCRIPTOR = _LISTCLUSTERSHARDSREQUEST,
+  __module__ = 'yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.clickhouse.v1.ListClusterShardsRequest)
+  ))
+_sym_db.RegisterMessage(ListClusterShardsRequest)
+
+ListClusterShardsResponse = _reflection.GeneratedProtocolMessageType('ListClusterShardsResponse', (_message.Message,), dict(
+  DESCRIPTOR = _LISTCLUSTERSHARDSRESPONSE,
+  __module__ = 'yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.clickhouse.v1.ListClusterShardsResponse)
+  ))
+_sym_db.RegisterMessage(ListClusterShardsResponse)
+
+AddClusterShardRequest = _reflection.GeneratedProtocolMessageType('AddClusterShardRequest', (_message.Message,), dict(
+  DESCRIPTOR = _ADDCLUSTERSHARDREQUEST,
+  __module__ = 'yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.clickhouse.v1.AddClusterShardRequest)
+  ))
+_sym_db.RegisterMessage(AddClusterShardRequest)
+
+AddClusterShardMetadata = _reflection.GeneratedProtocolMessageType('AddClusterShardMetadata', (_message.Message,), dict(
+  DESCRIPTOR = _ADDCLUSTERSHARDMETADATA,
+  __module__ = 'yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.clickhouse.v1.AddClusterShardMetadata)
+  ))
+_sym_db.RegisterMessage(AddClusterShardMetadata)
+
+UpdateClusterShardRequest = _reflection.GeneratedProtocolMessageType('UpdateClusterShardRequest', (_message.Message,), dict(
+  DESCRIPTOR = _UPDATECLUSTERSHARDREQUEST,
+  __module__ = 'yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.clickhouse.v1.UpdateClusterShardRequest)
+  ))
+_sym_db.RegisterMessage(UpdateClusterShardRequest)
+
+UpdateClusterShardMetadata = _reflection.GeneratedProtocolMessageType('UpdateClusterShardMetadata', (_message.Message,), dict(
+  DESCRIPTOR = _UPDATECLUSTERSHARDMETADATA,
+  __module__ = 'yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.clickhouse.v1.UpdateClusterShardMetadata)
+  ))
+_sym_db.RegisterMessage(UpdateClusterShardMetadata)
+
+DeleteClusterShardRequest = _reflection.GeneratedProtocolMessageType('DeleteClusterShardRequest', (_message.Message,), dict(
+  DESCRIPTOR = _DELETECLUSTERSHARDREQUEST,
+  __module__ = 'yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.clickhouse.v1.DeleteClusterShardRequest)
+  ))
+_sym_db.RegisterMessage(DeleteClusterShardRequest)
+
+DeleteClusterShardMetadata = _reflection.GeneratedProtocolMessageType('DeleteClusterShardMetadata', (_message.Message,), dict(
+  DESCRIPTOR = _DELETECLUSTERSHARDMETADATA,
+  __module__ = 'yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.clickhouse.v1.DeleteClusterShardMetadata)
+  ))
+_sym_db.RegisterMessage(DeleteClusterShardMetadata)
+
 HostSpec = _reflection.GeneratedProtocolMessageType('HostSpec', (_message.Message,), dict(
   DESCRIPTOR = _HOSTSPEC,
   __module__ = 'yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2'
@@ -1803,120 +2509,99 @@ _sym_db.RegisterMessage(ConfigSpec)
 _sym_db.RegisterMessage(ConfigSpec.Clickhouse)
 _sym_db.RegisterMessage(ConfigSpec.Zookeeper)
 
+ShardConfigSpec = _reflection.GeneratedProtocolMessageType('ShardConfigSpec', (_message.Message,), dict(
 
-DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/clickhouse/v1;clickhouse'))
-_GETCLUSTERREQUEST.fields_by_name['cluster_id'].has_options = True
-_GETCLUSTERREQUEST.fields_by_name['cluster_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_LISTCLUSTERSREQUEST.fields_by_name['folder_id'].has_options = True
-_LISTCLUSTERSREQUEST.fields_by_name['folder_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_LISTCLUSTERSREQUEST.fields_by_name['page_size'].has_options = True
-_LISTCLUSTERSREQUEST.fields_by_name['page_size']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000'))
-_LISTCLUSTERSREQUEST.fields_by_name['page_token'].has_options = True
-_LISTCLUSTERSREQUEST.fields_by_name['page_token']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100'))
-_LISTCLUSTERSREQUEST.fields_by_name['filter'].has_options = True
-_LISTCLUSTERSREQUEST.fields_by_name['filter']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\006<=1000'))
-_CREATECLUSTERREQUEST_LABELSENTRY.has_options = True
-_CREATECLUSTERREQUEST_LABELSENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
-_CREATECLUSTERREQUEST.fields_by_name['folder_id'].has_options = True
-_CREATECLUSTERREQUEST.fields_by_name['folder_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_CREATECLUSTERREQUEST.fields_by_name['name'].has_options = True
-_CREATECLUSTERREQUEST.fields_by_name['name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'))
-_CREATECLUSTERREQUEST.fields_by_name['description'].has_options = True
-_CREATECLUSTERREQUEST.fields_by_name['description']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=256'))
-_CREATECLUSTERREQUEST.fields_by_name['labels'].has_options = True
-_CREATECLUSTERREQUEST.fields_by_name['labels']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*'))
-_CREATECLUSTERREQUEST.fields_by_name['environment'].has_options = True
-_CREATECLUSTERREQUEST.fields_by_name['environment']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001'))
-_CREATECLUSTERREQUEST.fields_by_name['config_spec'].has_options = True
-_CREATECLUSTERREQUEST.fields_by_name['config_spec']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001'))
-_CREATECLUSTERREQUEST.fields_by_name['database_specs'].has_options = True
-_CREATECLUSTERREQUEST.fields_by_name['database_specs']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\002>0'))
-_CREATECLUSTERREQUEST.fields_by_name['user_specs'].has_options = True
-_CREATECLUSTERREQUEST.fields_by_name['user_specs']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\002>0'))
-_CREATECLUSTERREQUEST.fields_by_name['host_specs'].has_options = True
-_CREATECLUSTERREQUEST.fields_by_name['host_specs']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\002>0'))
-_CREATECLUSTERREQUEST.fields_by_name['network_id'].has_options = True
-_CREATECLUSTERREQUEST.fields_by_name['network_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_UPDATECLUSTERREQUEST_LABELSENTRY.has_options = True
-_UPDATECLUSTERREQUEST_LABELSENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
-_UPDATECLUSTERREQUEST.fields_by_name['cluster_id'].has_options = True
-_UPDATECLUSTERREQUEST.fields_by_name['cluster_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_UPDATECLUSTERREQUEST.fields_by_name['description'].has_options = True
-_UPDATECLUSTERREQUEST.fields_by_name['description']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=256'))
-_UPDATECLUSTERREQUEST.fields_by_name['labels'].has_options = True
-_UPDATECLUSTERREQUEST.fields_by_name['labels']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*'))
-_DELETECLUSTERREQUEST.fields_by_name['cluster_id'].has_options = True
-_DELETECLUSTERREQUEST.fields_by_name['cluster_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_BACKUPCLUSTERREQUEST.fields_by_name['cluster_id'].has_options = True
-_BACKUPCLUSTERREQUEST.fields_by_name['cluster_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_RESTORECLUSTERREQUEST_LABELSENTRY.has_options = True
-_RESTORECLUSTERREQUEST_LABELSENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
-_RESTORECLUSTERREQUEST.fields_by_name['backup_id'].has_options = True
-_RESTORECLUSTERREQUEST.fields_by_name['backup_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001'))
-_RESTORECLUSTERREQUEST.fields_by_name['name'].has_options = True
-_RESTORECLUSTERREQUEST.fields_by_name['name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'))
-_RESTORECLUSTERREQUEST.fields_by_name['description'].has_options = True
-_RESTORECLUSTERREQUEST.fields_by_name['description']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=256'))
-_RESTORECLUSTERREQUEST.fields_by_name['labels'].has_options = True
-_RESTORECLUSTERREQUEST.fields_by_name['labels']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*'))
-_RESTORECLUSTERREQUEST.fields_by_name['environment'].has_options = True
-_RESTORECLUSTERREQUEST.fields_by_name['environment']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001'))
-_RESTORECLUSTERREQUEST.fields_by_name['config_spec'].has_options = True
-_RESTORECLUSTERREQUEST.fields_by_name['config_spec']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001'))
-_RESTORECLUSTERREQUEST.fields_by_name['host_specs'].has_options = True
-_RESTORECLUSTERREQUEST.fields_by_name['host_specs']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\002>0'))
-_RESTORECLUSTERREQUEST.fields_by_name['network_id'].has_options = True
-_RESTORECLUSTERREQUEST.fields_by_name['network_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_LOGRECORD_MESSAGEENTRY.has_options = True
-_LOGRECORD_MESSAGEENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
-_LISTCLUSTERLOGSREQUEST.fields_by_name['cluster_id'].has_options = True
-_LISTCLUSTERLOGSREQUEST.fields_by_name['cluster_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_LISTCLUSTERLOGSREQUEST.fields_by_name['page_size'].has_options = True
-_LISTCLUSTERLOGSREQUEST.fields_by_name['page_size']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000'))
-_LISTCLUSTERLOGSREQUEST.fields_by_name['page_token'].has_options = True
-_LISTCLUSTERLOGSREQUEST.fields_by_name['page_token']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100'))
-_LISTCLUSTEROPERATIONSREQUEST.fields_by_name['cluster_id'].has_options = True
-_LISTCLUSTEROPERATIONSREQUEST.fields_by_name['cluster_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_LISTCLUSTEROPERATIONSREQUEST.fields_by_name['page_size'].has_options = True
-_LISTCLUSTEROPERATIONSREQUEST.fields_by_name['page_size']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000'))
-_LISTCLUSTEROPERATIONSREQUEST.fields_by_name['page_token'].has_options = True
-_LISTCLUSTEROPERATIONSREQUEST.fields_by_name['page_token']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100'))
-_LISTCLUSTERBACKUPSREQUEST.fields_by_name['cluster_id'].has_options = True
-_LISTCLUSTERBACKUPSREQUEST.fields_by_name['cluster_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_LISTCLUSTERBACKUPSREQUEST.fields_by_name['page_size'].has_options = True
-_LISTCLUSTERBACKUPSREQUEST.fields_by_name['page_size']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000'))
-_LISTCLUSTERBACKUPSREQUEST.fields_by_name['page_token'].has_options = True
-_LISTCLUSTERBACKUPSREQUEST.fields_by_name['page_token']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100'))
-_LISTCLUSTERHOSTSREQUEST.fields_by_name['cluster_id'].has_options = True
-_LISTCLUSTERHOSTSREQUEST.fields_by_name['cluster_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_LISTCLUSTERHOSTSREQUEST.fields_by_name['page_size'].has_options = True
-_LISTCLUSTERHOSTSREQUEST.fields_by_name['page_size']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000'))
-_LISTCLUSTERHOSTSREQUEST.fields_by_name['page_token'].has_options = True
-_LISTCLUSTERHOSTSREQUEST.fields_by_name['page_token']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100'))
-_ADDCLUSTERHOSTSREQUEST.fields_by_name['cluster_id'].has_options = True
-_ADDCLUSTERHOSTSREQUEST.fields_by_name['cluster_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_ADDCLUSTERHOSTSREQUEST.fields_by_name['host_specs'].has_options = True
-_ADDCLUSTERHOSTSREQUEST.fields_by_name['host_specs']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\002>0'))
-_DELETECLUSTERHOSTSREQUEST.fields_by_name['cluster_id'].has_options = True
-_DELETECLUSTERHOSTSREQUEST.fields_by_name['cluster_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_DELETECLUSTERHOSTSREQUEST.fields_by_name['host_names'].has_options = True
-_DELETECLUSTERHOSTSREQUEST.fields_by_name['host_names']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\002>0\212\3101\005<=253'))
-_HOSTSPEC.fields_by_name['zone_id'].has_options = True
-_HOSTSPEC.fields_by_name['zone_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\004<=50'))
-_HOSTSPEC.fields_by_name['type'].has_options = True
-_HOSTSPEC.fields_by_name['type']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001'))
-_HOSTSPEC.fields_by_name['subnet_id'].has_options = True
-_HOSTSPEC.fields_by_name['subnet_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\004<=50'))
+  Clickhouse = _reflection.GeneratedProtocolMessageType('Clickhouse', (_message.Message,), dict(
+    DESCRIPTOR = _SHARDCONFIGSPEC_CLICKHOUSE,
+    __module__ = 'yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2'
+    # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.clickhouse.v1.ShardConfigSpec.Clickhouse)
+    ))
+  ,
+  DESCRIPTOR = _SHARDCONFIGSPEC,
+  __module__ = 'yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.clickhouse.v1.ShardConfigSpec)
+  ))
+_sym_db.RegisterMessage(ShardConfigSpec)
+_sym_db.RegisterMessage(ShardConfigSpec.Clickhouse)
+
+
+DESCRIPTOR._options = None
+_GETCLUSTERREQUEST.fields_by_name['cluster_id']._options = None
+_LISTCLUSTERSREQUEST.fields_by_name['folder_id']._options = None
+_LISTCLUSTERSREQUEST.fields_by_name['page_size']._options = None
+_LISTCLUSTERSREQUEST.fields_by_name['page_token']._options = None
+_LISTCLUSTERSREQUEST.fields_by_name['filter']._options = None
+_CREATECLUSTERREQUEST_LABELSENTRY._options = None
+_CREATECLUSTERREQUEST.fields_by_name['folder_id']._options = None
+_CREATECLUSTERREQUEST.fields_by_name['name']._options = None
+_CREATECLUSTERREQUEST.fields_by_name['description']._options = None
+_CREATECLUSTERREQUEST.fields_by_name['labels']._options = None
+_CREATECLUSTERREQUEST.fields_by_name['environment']._options = None
+_CREATECLUSTERREQUEST.fields_by_name['config_spec']._options = None
+_CREATECLUSTERREQUEST.fields_by_name['database_specs']._options = None
+_CREATECLUSTERREQUEST.fields_by_name['user_specs']._options = None
+_CREATECLUSTERREQUEST.fields_by_name['host_specs']._options = None
+_CREATECLUSTERREQUEST.fields_by_name['network_id']._options = None
+_CREATECLUSTERREQUEST.fields_by_name['shard_name']._options = None
+_UPDATECLUSTERREQUEST_LABELSENTRY._options = None
+_UPDATECLUSTERREQUEST.fields_by_name['cluster_id']._options = None
+_UPDATECLUSTERREQUEST.fields_by_name['description']._options = None
+_UPDATECLUSTERREQUEST.fields_by_name['labels']._options = None
+_DELETECLUSTERREQUEST.fields_by_name['cluster_id']._options = None
+_STARTCLUSTERREQUEST.fields_by_name['cluster_id']._options = None
+_STOPCLUSTERREQUEST.fields_by_name['cluster_id']._options = None
+_BACKUPCLUSTERREQUEST.fields_by_name['cluster_id']._options = None
+_RESTORECLUSTERREQUEST_LABELSENTRY._options = None
+_RESTORECLUSTERREQUEST.fields_by_name['backup_id']._options = None
+_RESTORECLUSTERREQUEST.fields_by_name['name']._options = None
+_RESTORECLUSTERREQUEST.fields_by_name['description']._options = None
+_RESTORECLUSTERREQUEST.fields_by_name['labels']._options = None
+_RESTORECLUSTERREQUEST.fields_by_name['environment']._options = None
+_RESTORECLUSTERREQUEST.fields_by_name['config_spec']._options = None
+_RESTORECLUSTERREQUEST.fields_by_name['host_specs']._options = None
+_RESTORECLUSTERREQUEST.fields_by_name['network_id']._options = None
+_LOGRECORD_MESSAGEENTRY._options = None
+_LISTCLUSTERLOGSREQUEST.fields_by_name['cluster_id']._options = None
+_LISTCLUSTERLOGSREQUEST.fields_by_name['page_size']._options = None
+_LISTCLUSTERLOGSREQUEST.fields_by_name['page_token']._options = None
+_LISTCLUSTEROPERATIONSREQUEST.fields_by_name['cluster_id']._options = None
+_LISTCLUSTEROPERATIONSREQUEST.fields_by_name['page_size']._options = None
+_LISTCLUSTEROPERATIONSREQUEST.fields_by_name['page_token']._options = None
+_LISTCLUSTERBACKUPSREQUEST.fields_by_name['cluster_id']._options = None
+_LISTCLUSTERBACKUPSREQUEST.fields_by_name['page_size']._options = None
+_LISTCLUSTERBACKUPSREQUEST.fields_by_name['page_token']._options = None
+_LISTCLUSTERHOSTSREQUEST.fields_by_name['cluster_id']._options = None
+_LISTCLUSTERHOSTSREQUEST.fields_by_name['page_size']._options = None
+_LISTCLUSTERHOSTSREQUEST.fields_by_name['page_token']._options = None
+_ADDCLUSTERHOSTSREQUEST.fields_by_name['cluster_id']._options = None
+_ADDCLUSTERHOSTSREQUEST.fields_by_name['host_specs']._options = None
+_DELETECLUSTERHOSTSREQUEST.fields_by_name['cluster_id']._options = None
+_DELETECLUSTERHOSTSREQUEST.fields_by_name['host_names']._options = None
+_GETCLUSTERSHARDREQUEST.fields_by_name['cluster_id']._options = None
+_GETCLUSTERSHARDREQUEST.fields_by_name['shard_name']._options = None
+_LISTCLUSTERSHARDSREQUEST.fields_by_name['cluster_id']._options = None
+_LISTCLUSTERSHARDSREQUEST.fields_by_name['page_size']._options = None
+_LISTCLUSTERSHARDSREQUEST.fields_by_name['page_token']._options = None
+_ADDCLUSTERSHARDREQUEST.fields_by_name['cluster_id']._options = None
+_ADDCLUSTERSHARDREQUEST.fields_by_name['shard_name']._options = None
+_ADDCLUSTERSHARDREQUEST.fields_by_name['host_specs']._options = None
+_UPDATECLUSTERSHARDREQUEST.fields_by_name['cluster_id']._options = None
+_UPDATECLUSTERSHARDREQUEST.fields_by_name['shard_name']._options = None
+_DELETECLUSTERSHARDREQUEST.fields_by_name['cluster_id']._options = None
+_DELETECLUSTERSHARDREQUEST.fields_by_name['shard_name']._options = None
+_HOSTSPEC.fields_by_name['zone_id']._options = None
+_HOSTSPEC.fields_by_name['type']._options = None
+_HOSTSPEC.fields_by_name['subnet_id']._options = None
+_HOSTSPEC.fields_by_name['shard_name']._options = None
 
 _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
   name='ClusterService',
   full_name='yandex.cloud.mdb.clickhouse.v1.ClusterService',
   file=DESCRIPTOR,
   index=0,
-  options=None,
-  serialized_start=5222,
-  serialized_end=7760,
+  serialized_options=None,
+  serialized_start=6986,
+  serialized_end=10928,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
@@ -1925,7 +2610,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETCLUSTERREQUEST,
     output_type=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__pb2._CLUSTER,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002.\022,/managed-clickhouse/v1/clusters/{cluster_id}')),
+    serialized_options=_b('\202\323\344\223\002.\022,/managed-clickhouse/v1/clusters/{cluster_id}'),
   ),
   _descriptor.MethodDescriptor(
     name='List',
@@ -1934,7 +2619,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTCLUSTERSREQUEST,
     output_type=_LISTCLUSTERSRESPONSE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002!\022\037/managed-clickhouse/v1/clusters')),
+    serialized_options=_b('\202\323\344\223\002!\022\037/managed-clickhouse/v1/clusters'),
   ),
   _descriptor.MethodDescriptor(
     name='Create',
@@ -1943,7 +2628,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_CREATECLUSTERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002$\"\037/managed-clickhouse/v1/clusters:\001*\262\322* \n\025CreateClusterMetadata\022\007Cluster')),
+    serialized_options=_b('\202\323\344\223\002$\"\037/managed-clickhouse/v1/clusters:\001*\262\322* \n\025CreateClusterMetadata\022\007Cluster'),
   ),
   _descriptor.MethodDescriptor(
     name='Update',
@@ -1952,7 +2637,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATECLUSTERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\00212,/managed-clickhouse/v1/clusters/{cluster_id}:\001*\262\322* \n\025UpdateClusterMetadata\022\007Cluster')),
+    serialized_options=_b('\202\323\344\223\00212,/managed-clickhouse/v1/clusters/{cluster_id}:\001*\262\322* \n\025UpdateClusterMetadata\022\007Cluster'),
   ),
   _descriptor.MethodDescriptor(
     name='Delete',
@@ -1961,79 +2646,142 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DELETECLUSTERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002.*,/managed-clickhouse/v1/clusters/{cluster_id}\262\322*.\n\025DeleteClusterMetadata\022\025google.protobuf.Empty')),
+    serialized_options=_b('\202\323\344\223\002.*,/managed-clickhouse/v1/clusters/{cluster_id}\262\322*.\n\025DeleteClusterMetadata\022\025google.protobuf.Empty'),
+  ),
+  _descriptor.MethodDescriptor(
+    name='Start',
+    full_name='yandex.cloud.mdb.clickhouse.v1.ClusterService.Start',
+    index=5,
+    containing_service=None,
+    input_type=_STARTCLUSTERREQUEST,
+    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
+    serialized_options=_b('\202\323\344\223\0020\"./mdb/clickhouse/v1/clusters/{cluster_id}:start\262\322*\037\n\024StartClusterMetadata\022\007Cluster'),
+  ),
+  _descriptor.MethodDescriptor(
+    name='Stop',
+    full_name='yandex.cloud.mdb.clickhouse.v1.ClusterService.Stop',
+    index=6,
+    containing_service=None,
+    input_type=_STOPCLUSTERREQUEST,
+    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
+    serialized_options=_b('\202\323\344\223\002/\"-/mdb/clickhouse/v1/clusters/{cluster_id}:stop\262\322*\036\n\023StopClusterMetadata\022\007Cluster'),
   ),
   _descriptor.MethodDescriptor(
     name='Backup',
     full_name='yandex.cloud.mdb.clickhouse.v1.ClusterService.Backup',
-    index=5,
+    index=7,
     containing_service=None,
     input_type=_BACKUPCLUSTERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\0025\"3/managed-clickhouse/v1/clusters/{cluster_id}:backup\262\322* \n\025BackupClusterMetadata\022\007Cluster')),
+    serialized_options=_b('\202\323\344\223\0025\"3/managed-clickhouse/v1/clusters/{cluster_id}:backup\262\322* \n\025BackupClusterMetadata\022\007Cluster'),
   ),
   _descriptor.MethodDescriptor(
     name='Restore',
     full_name='yandex.cloud.mdb.clickhouse.v1.ClusterService.Restore',
-    index=6,
+    index=8,
     containing_service=None,
     input_type=_RESTORECLUSTERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002,\"\'/managed-clickhouse/v1/clusters:restore:\001*\262\322*!\n\026RestoreClusterMetadata\022\007Cluster')),
+    serialized_options=_b('\202\323\344\223\002,\"\'/managed-clickhouse/v1/clusters:restore:\001*\262\322*!\n\026RestoreClusterMetadata\022\007Cluster'),
   ),
   _descriptor.MethodDescriptor(
     name='ListLogs',
     full_name='yandex.cloud.mdb.clickhouse.v1.ClusterService.ListLogs',
-    index=7,
+    index=9,
     containing_service=None,
     input_type=_LISTCLUSTERLOGSREQUEST,
     output_type=_LISTCLUSTERLOGSRESPONSE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\0023\0221/managed-clickhouse/v1/clusters/{cluster_id}:logs')),
+    serialized_options=_b('\202\323\344\223\0023\0221/managed-clickhouse/v1/clusters/{cluster_id}:logs'),
   ),
   _descriptor.MethodDescriptor(
     name='ListOperations',
     full_name='yandex.cloud.mdb.clickhouse.v1.ClusterService.ListOperations',
-    index=8,
+    index=10,
     containing_service=None,
     input_type=_LISTCLUSTEROPERATIONSREQUEST,
     output_type=_LISTCLUSTEROPERATIONSRESPONSE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\0029\0227/managed-clickhouse/v1/clusters/{cluster_id}/operations')),
+    serialized_options=_b('\202\323\344\223\0029\0227/managed-clickhouse/v1/clusters/{cluster_id}/operations'),
   ),
   _descriptor.MethodDescriptor(
     name='ListBackups',
     full_name='yandex.cloud.mdb.clickhouse.v1.ClusterService.ListBackups',
-    index=9,
+    index=11,
     containing_service=None,
     input_type=_LISTCLUSTERBACKUPSREQUEST,
     output_type=_LISTCLUSTERBACKUPSRESPONSE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\0026\0224/managed-clickhouse/v1/clusters/{cluster_id}/backups')),
+    serialized_options=_b('\202\323\344\223\0026\0224/managed-clickhouse/v1/clusters/{cluster_id}/backups'),
   ),
   _descriptor.MethodDescriptor(
     name='ListHosts',
     full_name='yandex.cloud.mdb.clickhouse.v1.ClusterService.ListHosts',
-    index=10,
+    index=12,
     containing_service=None,
     input_type=_LISTCLUSTERHOSTSREQUEST,
     output_type=_LISTCLUSTERHOSTSRESPONSE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\0024\0222/managed-clickhouse/v1/clusters/{cluster_id}/hosts')),
+    serialized_options=_b('\202\323\344\223\0024\0222/managed-clickhouse/v1/clusters/{cluster_id}/hosts'),
   ),
   _descriptor.MethodDescriptor(
     name='AddHosts',
     full_name='yandex.cloud.mdb.clickhouse.v1.ClusterService.AddHosts',
-    index=11,
+    index=13,
     containing_service=None,
     input_type=_ADDCLUSTERHOSTSREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002C\">/managed-clickhouse/v1/clusters/{cluster_id}/hosts:batchCreate:\001*\262\322*0\n\027AddClusterHostsMetadata\022\025google.protobuf.Empty')),
+    serialized_options=_b('\202\323\344\223\002C\">/managed-clickhouse/v1/clusters/{cluster_id}/hosts:batchCreate:\001*\262\322*0\n\027AddClusterHostsMetadata\022\025google.protobuf.Empty'),
   ),
   _descriptor.MethodDescriptor(
     name='DeleteHosts',
     full_name='yandex.cloud.mdb.clickhouse.v1.ClusterService.DeleteHosts',
-    index=12,
+    index=14,
     containing_service=None,
     input_type=_DELETECLUSTERHOSTSREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002C\">/managed-clickhouse/v1/clusters/{cluster_id}/hosts:batchDelete:\001*\262\322*.\n\025DeleteClusterMetadata\022\025google.protobuf.Empty')),
+    serialized_options=_b('\202\323\344\223\002C\">/managed-clickhouse/v1/clusters/{cluster_id}/hosts:batchDelete:\001*\262\322*3\n\032DeleteClusterHostsMetadata\022\025google.protobuf.Empty'),
+  ),
+  _descriptor.MethodDescriptor(
+    name='GetShard',
+    full_name='yandex.cloud.mdb.clickhouse.v1.ClusterService.GetShard',
+    index=15,
+    containing_service=None,
+    input_type=_GETCLUSTERSHARDREQUEST,
+    output_type=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__pb2._SHARD,
+    serialized_options=_b('\202\323\344\223\002>\022</mdb/clickhouse/v1/clusters/{cluster_id}/shards/{shard_name}'),
+  ),
+  _descriptor.MethodDescriptor(
+    name='ListShards',
+    full_name='yandex.cloud.mdb.clickhouse.v1.ClusterService.ListShards',
+    index=16,
+    containing_service=None,
+    input_type=_LISTCLUSTERSHARDSREQUEST,
+    output_type=_LISTCLUSTERSHARDSRESPONSE,
+    serialized_options=_b('\202\323\344\223\0021\022//mdb/clickhouse/v1/clusters/{cluster_id}/shards'),
+  ),
+  _descriptor.MethodDescriptor(
+    name='AddShard',
+    full_name='yandex.cloud.mdb.clickhouse.v1.ClusterService.AddShard',
+    index=17,
+    containing_service=None,
+    input_type=_ADDCLUSTERSHARDREQUEST,
+    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
+    serialized_options=_b('\202\323\344\223\0024\"//mdb/clickhouse/v1/clusters/{cluster_id}/shards:\001*\262\322* \n\027AddClusterShardMetadata\022\005Shard'),
+  ),
+  _descriptor.MethodDescriptor(
+    name='UpdateShard',
+    full_name='yandex.cloud.mdb.clickhouse.v1.ClusterService.UpdateShard',
+    index=18,
+    containing_service=None,
+    input_type=_UPDATECLUSTERSHARDREQUEST,
+    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
+    serialized_options=_b('\202\323\344\223\002A2</mdb/clickhouse/v1/clusters/{cluster_id}/shards/{shard_name}:\001*\262\322*#\n\032UpdateClusterShardMetadata\022\005Shard'),
+  ),
+  _descriptor.MethodDescriptor(
+    name='DeleteShard',
+    full_name='yandex.cloud.mdb.clickhouse.v1.ClusterService.DeleteShard',
+    index=19,
+    containing_service=None,
+    input_type=_DELETECLUSTERSHARDREQUEST,
+    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
+    serialized_options=_b('\202\323\344\223\002>*</mdb/clickhouse/v1/clusters/{cluster_id}/shards/{shard_name}\262\322*3\n\032DeleteClusterShardMetadata\022\025google.protobuf.Empty'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_CLUSTERSERVICE)

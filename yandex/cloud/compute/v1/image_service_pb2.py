@@ -7,7 +7,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -25,6 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/compute/v1/image_service.proto',
   package='yandex.cloud.compute.v1',
   syntax='proto3',
+  serialized_options=_b('ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;compute'),
   serialized_pb=_b('\n+yandex/cloud/compute/v1/image_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1ayandex/api/operation.proto\x1a#yandex/cloud/compute/v1/image.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"1\n\x0fGetImageRequest\x12\x1e\n\x08image_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"s\n\x1dGetImageLatestByFamilyRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x31\n\x06\x66\x61mily\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\"\x8e\x01\n\x11ListImagesRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"]\n\x12ListImagesResponse\x12.\n\x06images\x18\x01 \x03(\x0b\x32\x1e.yandex.cloud.compute.v1.Image\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xe8\x04\n\x12\x43reateImageRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x88\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x37.yandex.cloud.compute.v1.CreateImageRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12\x31\n\x06\x66\x61mily\x18\x05 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x30\n\rmin_disk_size\x18\x06 \x01(\x03\x42\x19\xfa\xc7\x31\x15\x34\x31\x39\x34\x33\x30\x34-4398046511104\x12\x1d\n\x0bproduct_ids\x18\x07 \x03(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1c\n\x08image_id\x18\x08 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1b\n\x07\x64isk_id\x18\t \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1f\n\x0bsnapshot_id\x18\n \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\r\n\x03uri\x18\x0b \x01(\tH\x00\x12\'\n\x02os\x18\x0c \x01(\x0b\x32\x1b.yandex.cloud.compute.v1.Os\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0e\n\x06source\x12\x04\xc0\xc1\x31\x01\"\'\n\x13\x43reateImageMetadata\x12\x10\n\x08image_id\x18\x01 \x01(\t\"\xa2\x03\n\x12UpdateImageRequest\x12\x1e\n\x08image_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x30\n\rmin_disk_size\x18\x05 \x01(\x03\x42\x19\xfa\xc7\x31\x15\x34\x31\x39\x34\x33\x30\x34-4398046511104\x12\x88\x01\n\x06labels\x18\x06 \x03(\x0b\x32\x37.yandex.cloud.compute.v1.UpdateImageRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\'\n\x13UpdateImageMetadata\x12\x10\n\x08image_id\x18\x01 \x01(\t\"4\n\x12\x44\x65leteImageRequest\x12\x1e\n\x08image_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\'\n\x13\x44\x65leteImageMetadata\x12\x10\n\x08image_id\x18\x01 \x01(\t\"z\n\x1aListImageOperationsRequest\x12\x1e\n\x08image_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"m\n\x1bListImageOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xbd\x08\n\x0cImageService\x12v\n\x03Get\x12(.yandex.cloud.compute.v1.GetImageRequest\x1a\x1e.yandex.cloud.compute.v1.Image\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/compute/v1/images/{image_id}\x12\x96\x01\n\x11GetLatestByFamily\x12\x36.yandex.cloud.compute.v1.GetImageLatestByFamilyRequest\x1a\x1e.yandex.cloud.compute.v1.Image\")\x82\xd3\xe4\x93\x02#\x12!/compute/v1/images:latestByFamily\x12{\n\x04List\x12*.yandex.cloud.compute.v1.ListImagesRequest\x1a+.yandex.cloud.compute.v1.ListImagesResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/compute/v1/images\x12\x97\x01\n\x06\x43reate\x12+.yandex.cloud.compute.v1.CreateImageRequest\x1a!.yandex.cloud.operation.Operation\"=\x82\xd3\xe4\x93\x02\x17\"\x12/compute/v1/images:\x01*\xb2\xd2*\x1c\n\x13\x43reateImageMetadata\x12\x05Image\x12\xa2\x01\n\x06Update\x12+.yandex.cloud.compute.v1.UpdateImageRequest\x1a!.yandex.cloud.operation.Operation\"H\x82\xd3\xe4\x93\x02\"2\x1d/compute/v1/images/{image_id}:\x01*\xb2\xd2*\x1c\n\x13UpdateImageMetadata\x12\x05Image\x12\xaf\x01\n\x06\x44\x65lete\x12+.yandex.cloud.compute.v1.DeleteImageRequest\x1a!.yandex.cloud.operation.Operation\"U\x82\xd3\xe4\x93\x02\x1f*\x1d/compute/v1/images/{image_id}\xb2\xd2*,\n\x13\x44\x65leteImageMetadata\x12\x15google.protobuf.Empty\x12\xad\x01\n\x0eListOperations\x12\x33.yandex.cloud.compute.v1.ListImageOperationsRequest\x1a\x34.yandex.cloud.compute.v1.ListImageOperationsResponse\"0\x82\xd3\xe4\x93\x02*\x12(/compute/v1/images/{image_id}/operationsBEZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_compute_dot_v1_dot_image__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
@@ -45,14 +45,14 @@ _GETIMAGEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -76,21 +76,21 @@ _GETIMAGELATESTBYFAMILYREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='family', full_name='yandex.cloud.compute.v1.GetImageLatestByFamilyRequest.family', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]')), file=DESCRIPTOR),
+      serialized_options=_b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -114,35 +114,35 @@ _LISTIMAGESREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.compute.v1.ListImagesRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\006<=1000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.compute.v1.ListImagesRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=100'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='filter', full_name='yandex.cloud.compute.v1.ListImagesRequest.filter', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\006<=1000')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\006<=1000'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -166,21 +166,21 @@ _LISTIMAGESRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.compute.v1.ListImagesResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -204,21 +204,21 @@ _CREATEIMAGEREQUEST_LABELSENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='yandex.cloud.compute.v1.CreateImageRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  serialized_options=_b('8\001'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -241,98 +241,98 @@ _CREATEIMAGEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='name', full_name='yandex.cloud.compute.v1.CreateImageRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]')), file=DESCRIPTOR),
+      serialized_options=_b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='description', full_name='yandex.cloud.compute.v1.CreateImageRequest.description', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=256')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=256'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='labels', full_name='yandex.cloud.compute.v1.CreateImageRequest.labels', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*')), file=DESCRIPTOR),
+      serialized_options=_b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='family', full_name='yandex.cloud.compute.v1.CreateImageRequest.family', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]')), file=DESCRIPTOR),
+      serialized_options=_b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='min_disk_size', full_name='yandex.cloud.compute.v1.CreateImageRequest.min_disk_size', index=5,
       number=6, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\0254194304-4398046511104')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\0254194304-4398046511104'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='product_ids', full_name='yandex.cloud.compute.v1.CreateImageRequest.product_ids', index=6,
       number=7, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='image_id', full_name='yandex.cloud.compute.v1.CreateImageRequest.image_id', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='disk_id', full_name='yandex.cloud.compute.v1.CreateImageRequest.disk_id', index=8,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='snapshot_id', full_name='yandex.cloud.compute.v1.CreateImageRequest.snapshot_id', index=9,
       number=10, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='uri', full_name='yandex.cloud.compute.v1.CreateImageRequest.uri', index=10,
       number=11, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='os', full_name='yandex.cloud.compute.v1.CreateImageRequest.os', index=11,
       number=12, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[_CREATEIMAGEREQUEST_LABELSENTRY, ],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
       name='source', full_name='yandex.cloud.compute.v1.CreateImageRequest.source',
-      index=0, containing_type=None, fields=[], options=_descriptor._ParseOptions(descriptor_pb2.OneofOptions(), _b('\300\3011\001'))),
+      index=0, containing_type=None, fields=[], serialized_options=_b('\300\3011\001')),
   ],
   serialized_start=681,
   serialized_end=1297,
@@ -352,14 +352,14 @@ _CREATEIMAGEMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -383,21 +383,21 @@ _UPDATEIMAGEREQUEST_LABELSENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='yandex.cloud.compute.v1.UpdateImageRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=_descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001')),
+  serialized_options=_b('8\001'),
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -420,49 +420,49 @@ _UPDATEIMAGEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='update_mask', full_name='yandex.cloud.compute.v1.UpdateImageRequest.update_mask', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='name', full_name='yandex.cloud.compute.v1.UpdateImageRequest.name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]')), file=DESCRIPTOR),
+      serialized_options=_b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='description', full_name='yandex.cloud.compute.v1.UpdateImageRequest.description', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=256')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=256'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='min_disk_size', full_name='yandex.cloud.compute.v1.UpdateImageRequest.min_disk_size', index=4,
       number=5, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\0254194304-4398046511104')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\0254194304-4398046511104'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='labels', full_name='yandex.cloud.compute.v1.UpdateImageRequest.labels', index=5,
       number=6, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*')), file=DESCRIPTOR),
+      serialized_options=_b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[_UPDATEIMAGEREQUEST_LABELSENTRY, ],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -486,14 +486,14 @@ _UPDATEIMAGEMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -517,14 +517,14 @@ _DELETEIMAGEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -548,14 +548,14 @@ _DELETEIMAGEMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -579,28 +579,28 @@ _LISTIMAGEOPERATIONSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.compute.v1.ListImageOperationsRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\006<=1000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.compute.v1.ListImageOperationsRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=100'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -624,21 +624,21 @@ _LISTIMAGEOPERATIONSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.compute.v1.ListImageOperationsResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -783,73 +783,43 @@ ListImageOperationsResponse = _reflection.GeneratedProtocolMessageType('ListImag
 _sym_db.RegisterMessage(ListImageOperationsResponse)
 
 
-DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;compute'))
-_GETIMAGEREQUEST.fields_by_name['image_id'].has_options = True
-_GETIMAGEREQUEST.fields_by_name['image_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_GETIMAGELATESTBYFAMILYREQUEST.fields_by_name['folder_id'].has_options = True
-_GETIMAGELATESTBYFAMILYREQUEST.fields_by_name['folder_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_GETIMAGELATESTBYFAMILYREQUEST.fields_by_name['family'].has_options = True
-_GETIMAGELATESTBYFAMILYREQUEST.fields_by_name['family']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'))
-_LISTIMAGESREQUEST.fields_by_name['folder_id'].has_options = True
-_LISTIMAGESREQUEST.fields_by_name['folder_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_LISTIMAGESREQUEST.fields_by_name['page_size'].has_options = True
-_LISTIMAGESREQUEST.fields_by_name['page_size']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000'))
-_LISTIMAGESREQUEST.fields_by_name['page_token'].has_options = True
-_LISTIMAGESREQUEST.fields_by_name['page_token']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100'))
-_LISTIMAGESREQUEST.fields_by_name['filter'].has_options = True
-_LISTIMAGESREQUEST.fields_by_name['filter']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\006<=1000'))
-_CREATEIMAGEREQUEST_LABELSENTRY.has_options = True
-_CREATEIMAGEREQUEST_LABELSENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
-_CREATEIMAGEREQUEST.oneofs_by_name['source'].has_options = True
-_CREATEIMAGEREQUEST.oneofs_by_name['source']._options = _descriptor._ParseOptions(descriptor_pb2.OneofOptions(), _b('\300\3011\001'))
-_CREATEIMAGEREQUEST.fields_by_name['folder_id'].has_options = True
-_CREATEIMAGEREQUEST.fields_by_name['folder_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_CREATEIMAGEREQUEST.fields_by_name['name'].has_options = True
-_CREATEIMAGEREQUEST.fields_by_name['name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'))
-_CREATEIMAGEREQUEST.fields_by_name['description'].has_options = True
-_CREATEIMAGEREQUEST.fields_by_name['description']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=256'))
-_CREATEIMAGEREQUEST.fields_by_name['labels'].has_options = True
-_CREATEIMAGEREQUEST.fields_by_name['labels']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*'))
-_CREATEIMAGEREQUEST.fields_by_name['family'].has_options = True
-_CREATEIMAGEREQUEST.fields_by_name['family']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'))
-_CREATEIMAGEREQUEST.fields_by_name['min_disk_size'].has_options = True
-_CREATEIMAGEREQUEST.fields_by_name['min_disk_size']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\0254194304-4398046511104'))
-_CREATEIMAGEREQUEST.fields_by_name['product_ids'].has_options = True
-_CREATEIMAGEREQUEST.fields_by_name['product_ids']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\004<=50'))
-_CREATEIMAGEREQUEST.fields_by_name['image_id'].has_options = True
-_CREATEIMAGEREQUEST.fields_by_name['image_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\004<=50'))
-_CREATEIMAGEREQUEST.fields_by_name['disk_id'].has_options = True
-_CREATEIMAGEREQUEST.fields_by_name['disk_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\004<=50'))
-_CREATEIMAGEREQUEST.fields_by_name['snapshot_id'].has_options = True
-_CREATEIMAGEREQUEST.fields_by_name['snapshot_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\004<=50'))
-_UPDATEIMAGEREQUEST_LABELSENTRY.has_options = True
-_UPDATEIMAGEREQUEST_LABELSENTRY._options = _descriptor._ParseOptions(descriptor_pb2.MessageOptions(), _b('8\001'))
-_UPDATEIMAGEREQUEST.fields_by_name['image_id'].has_options = True
-_UPDATEIMAGEREQUEST.fields_by_name['image_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_UPDATEIMAGEREQUEST.fields_by_name['name'].has_options = True
-_UPDATEIMAGEREQUEST.fields_by_name['name']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'))
-_UPDATEIMAGEREQUEST.fields_by_name['description'].has_options = True
-_UPDATEIMAGEREQUEST.fields_by_name['description']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=256'))
-_UPDATEIMAGEREQUEST.fields_by_name['min_disk_size'].has_options = True
-_UPDATEIMAGEREQUEST.fields_by_name['min_disk_size']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\0254194304-4398046511104'))
-_UPDATEIMAGEREQUEST.fields_by_name['labels'].has_options = True
-_UPDATEIMAGEREQUEST.fields_by_name['labels']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*'))
-_DELETEIMAGEREQUEST.fields_by_name['image_id'].has_options = True
-_DELETEIMAGEREQUEST.fields_by_name['image_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_LISTIMAGEOPERATIONSREQUEST.fields_by_name['image_id'].has_options = True
-_LISTIMAGEOPERATIONSREQUEST.fields_by_name['image_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
-_LISTIMAGEOPERATIONSREQUEST.fields_by_name['page_size'].has_options = True
-_LISTIMAGEOPERATIONSREQUEST.fields_by_name['page_size']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000'))
-_LISTIMAGEOPERATIONSREQUEST.fields_by_name['page_token'].has_options = True
-_LISTIMAGEOPERATIONSREQUEST.fields_by_name['page_token']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100'))
+DESCRIPTOR._options = None
+_GETIMAGEREQUEST.fields_by_name['image_id']._options = None
+_GETIMAGELATESTBYFAMILYREQUEST.fields_by_name['folder_id']._options = None
+_GETIMAGELATESTBYFAMILYREQUEST.fields_by_name['family']._options = None
+_LISTIMAGESREQUEST.fields_by_name['folder_id']._options = None
+_LISTIMAGESREQUEST.fields_by_name['page_size']._options = None
+_LISTIMAGESREQUEST.fields_by_name['page_token']._options = None
+_LISTIMAGESREQUEST.fields_by_name['filter']._options = None
+_CREATEIMAGEREQUEST_LABELSENTRY._options = None
+_CREATEIMAGEREQUEST.oneofs_by_name['source']._options = None
+_CREATEIMAGEREQUEST.fields_by_name['folder_id']._options = None
+_CREATEIMAGEREQUEST.fields_by_name['name']._options = None
+_CREATEIMAGEREQUEST.fields_by_name['description']._options = None
+_CREATEIMAGEREQUEST.fields_by_name['labels']._options = None
+_CREATEIMAGEREQUEST.fields_by_name['family']._options = None
+_CREATEIMAGEREQUEST.fields_by_name['min_disk_size']._options = None
+_CREATEIMAGEREQUEST.fields_by_name['product_ids']._options = None
+_CREATEIMAGEREQUEST.fields_by_name['image_id']._options = None
+_CREATEIMAGEREQUEST.fields_by_name['disk_id']._options = None
+_CREATEIMAGEREQUEST.fields_by_name['snapshot_id']._options = None
+_UPDATEIMAGEREQUEST_LABELSENTRY._options = None
+_UPDATEIMAGEREQUEST.fields_by_name['image_id']._options = None
+_UPDATEIMAGEREQUEST.fields_by_name['name']._options = None
+_UPDATEIMAGEREQUEST.fields_by_name['description']._options = None
+_UPDATEIMAGEREQUEST.fields_by_name['min_disk_size']._options = None
+_UPDATEIMAGEREQUEST.fields_by_name['labels']._options = None
+_DELETEIMAGEREQUEST.fields_by_name['image_id']._options = None
+_LISTIMAGEOPERATIONSREQUEST.fields_by_name['image_id']._options = None
+_LISTIMAGEOPERATIONSREQUEST.fields_by_name['page_size']._options = None
+_LISTIMAGEOPERATIONSREQUEST.fields_by_name['page_token']._options = None
 
 _IMAGESERVICE = _descriptor.ServiceDescriptor(
   name='ImageService',
   full_name='yandex.cloud.compute.v1.ImageService',
   file=DESCRIPTOR,
   index=0,
-  options=None,
+  serialized_options=None,
   serialized_start=2133,
   serialized_end=3218,
   methods=[
@@ -860,7 +830,7 @@ _IMAGESERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETIMAGEREQUEST,
     output_type=yandex_dot_cloud_dot_compute_dot_v1_dot_image__pb2._IMAGE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\037\022\035/compute/v1/images/{image_id}')),
+    serialized_options=_b('\202\323\344\223\002\037\022\035/compute/v1/images/{image_id}'),
   ),
   _descriptor.MethodDescriptor(
     name='GetLatestByFamily',
@@ -869,7 +839,7 @@ _IMAGESERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETIMAGELATESTBYFAMILYREQUEST,
     output_type=yandex_dot_cloud_dot_compute_dot_v1_dot_image__pb2._IMAGE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002#\022!/compute/v1/images:latestByFamily')),
+    serialized_options=_b('\202\323\344\223\002#\022!/compute/v1/images:latestByFamily'),
   ),
   _descriptor.MethodDescriptor(
     name='List',
@@ -878,7 +848,7 @@ _IMAGESERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTIMAGESREQUEST,
     output_type=_LISTIMAGESRESPONSE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\024\022\022/compute/v1/images')),
+    serialized_options=_b('\202\323\344\223\002\024\022\022/compute/v1/images'),
   ),
   _descriptor.MethodDescriptor(
     name='Create',
@@ -887,7 +857,7 @@ _IMAGESERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_CREATEIMAGEREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\027\"\022/compute/v1/images:\001*\262\322*\034\n\023CreateImageMetadata\022\005Image')),
+    serialized_options=_b('\202\323\344\223\002\027\"\022/compute/v1/images:\001*\262\322*\034\n\023CreateImageMetadata\022\005Image'),
   ),
   _descriptor.MethodDescriptor(
     name='Update',
@@ -896,7 +866,7 @@ _IMAGESERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATEIMAGEREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\"2\035/compute/v1/images/{image_id}:\001*\262\322*\034\n\023UpdateImageMetadata\022\005Image')),
+    serialized_options=_b('\202\323\344\223\002\"2\035/compute/v1/images/{image_id}:\001*\262\322*\034\n\023UpdateImageMetadata\022\005Image'),
   ),
   _descriptor.MethodDescriptor(
     name='Delete',
@@ -905,7 +875,7 @@ _IMAGESERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DELETEIMAGEREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\037*\035/compute/v1/images/{image_id}\262\322*,\n\023DeleteImageMetadata\022\025google.protobuf.Empty')),
+    serialized_options=_b('\202\323\344\223\002\037*\035/compute/v1/images/{image_id}\262\322*,\n\023DeleteImageMetadata\022\025google.protobuf.Empty'),
   ),
   _descriptor.MethodDescriptor(
     name='ListOperations',
@@ -914,7 +884,7 @@ _IMAGESERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTIMAGEOPERATIONSREQUEST,
     output_type=_LISTIMAGEOPERATIONSRESPONSE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002*\022(/compute/v1/images/{image_id}/operations')),
+    serialized_options=_b('\202\323\344\223\002*\022(/compute/v1/images/{image_id}/operations'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_IMAGESERVICE)

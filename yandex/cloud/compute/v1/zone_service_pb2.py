@@ -7,7 +7,6 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -22,6 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/compute/v1/zone_service.proto',
   package='yandex.cloud.compute.v1',
   syntax='proto3',
+  serialized_options=_b('ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;compute'),
   serialized_pb=_b('\n*yandex/cloud/compute/v1/zone_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a\"yandex/cloud/compute/v1/zone.proto\x1a\x1dyandex/cloud/validation.proto\"P\n\x10ListZonesRequest\x12\x1d\n\tpage_size\x18\x01 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=100\"Z\n\x11ListZonesResponse\x12,\n\x05zones\x18\x01 \x03(\x0b\x32\x1d.yandex.cloud.compute.v1.Zone\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"/\n\x0eGetZoneRequest\x12\x1d\n\x07zone_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=502\xfb\x01\n\x0bZoneService\x12r\n\x03Get\x12\'.yandex.cloud.compute.v1.GetZoneRequest\x1a\x1d.yandex.cloud.compute.v1.Zone\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/compute/v1/zones/{zone_id}\x12x\n\x04List\x12).yandex.cloud.compute.v1.ListZonesRequest\x1a*.yandex.cloud.compute.v1.ListZonesResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/compute/v1/zonesBEZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_compute_dot_v1_dot_zone__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
@@ -42,21 +42,21 @@ _LISTZONESREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000')), file=DESCRIPTOR),
+      serialized_options=_b('\372\3071\006<=1000'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.compute.v1.ListZonesRequest.page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100')), file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\005<=100'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -80,21 +80,21 @@ _LISTZONESRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.compute.v1.ListZonesResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -118,14 +118,14 @@ _GETZONEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50')), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
@@ -163,21 +163,17 @@ GetZoneRequest = _reflection.GeneratedProtocolMessageType('GetZoneRequest', (_me
 _sym_db.RegisterMessage(GetZoneRequest)
 
 
-DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;compute'))
-_LISTZONESREQUEST.fields_by_name['page_size'].has_options = True
-_LISTZONESREQUEST.fields_by_name['page_size']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\372\3071\006<=1000'))
-_LISTZONESREQUEST.fields_by_name['page_token'].has_options = True
-_LISTZONESREQUEST.fields_by_name['page_token']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\212\3101\005<=100'))
-_GETZONEREQUEST.fields_by_name['zone_id'].has_options = True
-_GETZONEREQUEST.fields_by_name['zone_id']._options = _descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\350\3071\001\212\3101\004<=50'))
+DESCRIPTOR._options = None
+_LISTZONESREQUEST.fields_by_name['page_size']._options = None
+_LISTZONESREQUEST.fields_by_name['page_token']._options = None
+_GETZONEREQUEST.fields_by_name['zone_id']._options = None
 
 _ZONESERVICE = _descriptor.ServiceDescriptor(
   name='ZoneService',
   full_name='yandex.cloud.compute.v1.ZoneService',
   file=DESCRIPTOR,
   index=0,
-  options=None,
+  serialized_options=None,
   serialized_start=392,
   serialized_end=643,
   methods=[
@@ -188,7 +184,7 @@ _ZONESERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETZONEREQUEST,
     output_type=yandex_dot_cloud_dot_compute_dot_v1_dot_zone__pb2._ZONE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\035\022\033/compute/v1/zones/{zone_id}')),
+    serialized_options=_b('\202\323\344\223\002\035\022\033/compute/v1/zones/{zone_id}'),
   ),
   _descriptor.MethodDescriptor(
     name='List',
@@ -197,7 +193,7 @@ _ZONESERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTZONESREQUEST,
     output_type=_LISTZONESRESPONSE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\023\022\021/compute/v1/zones')),
+    serialized_options=_b('\202\323\344\223\002\023\022\021/compute/v1/zones'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_ZONESERVICE)

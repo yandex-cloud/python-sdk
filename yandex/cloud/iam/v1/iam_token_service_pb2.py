@@ -7,13 +7,13 @@ from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
-from google.protobuf import descriptor_pb2
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
 
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
@@ -21,9 +21,10 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/iam/v1/iam_token_service.proto',
   package='yandex.cloud.iam.v1',
   syntax='proto3',
-  serialized_pb=_b('\n+yandex/cloud/iam/v1/iam_token_service.proto\x12\x13yandex.cloud.iam.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1dyandex/cloud/validation.proto\"_\n\x15\x43reateIamTokenRequest\x12%\n\x1byandex_passport_oauth_token\x18\x01 \x01(\tH\x00\x12\r\n\x03jwt\x18\x02 \x01(\tH\x00\x42\x10\n\x08identity\x12\x04\xc0\xc1\x31\x01\"+\n\x16\x43reateIamTokenResponse\x12\x11\n\tiam_token\x18\x01 \x01(\t2\x8f\x01\n\x0fIamTokenService\x12|\n\x06\x43reate\x12*.yandex.cloud.iam.v1.CreateIamTokenRequest\x1a+.yandex.cloud.iam.v1.CreateIamTokenResponse\"\x19\x82\xd3\xe4\x93\x02\x13\"\x0e/iam/v1/tokens:\x01*B=Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3')
+  serialized_options=_b('Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iam'),
+  serialized_pb=_b('\n+yandex/cloud/iam/v1/iam_token_service.proto\x12\x13yandex.cloud.iam.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"_\n\x15\x43reateIamTokenRequest\x12%\n\x1byandex_passport_oauth_token\x18\x01 \x01(\tH\x00\x12\r\n\x03jwt\x18\x02 \x01(\tH\x00\x42\x10\n\x08identity\x12\x04\xc0\xc1\x31\x01\"[\n\x16\x43reateIamTokenResponse\x12\x11\n\tiam_token\x18\x01 \x01(\t\x12.\n\nexpires_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp2\x8f\x01\n\x0fIamTokenService\x12|\n\x06\x43reate\x12*.yandex.cloud.iam.v1.CreateIamTokenRequest\x1a+.yandex.cloud.iam.v1.CreateIamTokenResponse\"\x19\x82\xd3\xe4\x93\x02\x13\"\x0e/iam/v1/tokens:\x01*B=Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3')
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
 
 
@@ -41,31 +42,31 @@ _CREATEIAMTOKENREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='jwt', full_name='yandex.cloud.iam.v1.CreateIamTokenRequest.jwt', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
       name='identity', full_name='yandex.cloud.iam.v1.CreateIamTokenRequest.identity',
-      index=0, containing_type=None, fields=[], options=_descriptor._ParseOptions(descriptor_pb2.OneofOptions(), _b('\300\3011\001'))),
+      index=0, containing_type=None, fields=[], serialized_options=_b('\300\3011\001')),
   ],
-  serialized_start=129,
-  serialized_end=224,
+  serialized_start=162,
+  serialized_end=257,
 )
 
 
@@ -82,21 +83,28 @@ _CREATEIAMTOKENRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='expires_at', full_name='yandex.cloud.iam.v1.CreateIamTokenResponse.expires_at', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[],
   enum_types=[
   ],
-  options=None,
+  serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=226,
-  serialized_end=269,
+  serialized_start=259,
+  serialized_end=350,
 )
 
 _CREATEIAMTOKENREQUEST.oneofs_by_name['identity'].fields.append(
@@ -105,6 +113,7 @@ _CREATEIAMTOKENREQUEST.fields_by_name['yandex_passport_oauth_token'].containing_
 _CREATEIAMTOKENREQUEST.oneofs_by_name['identity'].fields.append(
   _CREATEIAMTOKENREQUEST.fields_by_name['jwt'])
 _CREATEIAMTOKENREQUEST.fields_by_name['jwt'].containing_oneof = _CREATEIAMTOKENREQUEST.oneofs_by_name['identity']
+_CREATEIAMTOKENRESPONSE.fields_by_name['expires_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 DESCRIPTOR.message_types_by_name['CreateIamTokenRequest'] = _CREATEIAMTOKENREQUEST
 DESCRIPTOR.message_types_by_name['CreateIamTokenResponse'] = _CREATEIAMTOKENRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -124,19 +133,17 @@ CreateIamTokenResponse = _reflection.GeneratedProtocolMessageType('CreateIamToke
 _sym_db.RegisterMessage(CreateIamTokenResponse)
 
 
-DESCRIPTOR.has_options = True
-DESCRIPTOR._options = _descriptor._ParseOptions(descriptor_pb2.FileOptions(), _b('Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iam'))
-_CREATEIAMTOKENREQUEST.oneofs_by_name['identity'].has_options = True
-_CREATEIAMTOKENREQUEST.oneofs_by_name['identity']._options = _descriptor._ParseOptions(descriptor_pb2.OneofOptions(), _b('\300\3011\001'))
+DESCRIPTOR._options = None
+_CREATEIAMTOKENREQUEST.oneofs_by_name['identity']._options = None
 
 _IAMTOKENSERVICE = _descriptor.ServiceDescriptor(
   name='IamTokenService',
   full_name='yandex.cloud.iam.v1.IamTokenService',
   file=DESCRIPTOR,
   index=0,
-  options=None,
-  serialized_start=272,
-  serialized_end=415,
+  serialized_options=None,
+  serialized_start=353,
+  serialized_end=496,
   methods=[
   _descriptor.MethodDescriptor(
     name='Create',
@@ -145,7 +152,7 @@ _IAMTOKENSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_CREATEIAMTOKENREQUEST,
     output_type=_CREATEIAMTOKENRESPONSE,
-    options=_descriptor._ParseOptions(descriptor_pb2.MethodOptions(), _b('\202\323\344\223\002\023\"\016/iam/v1/tokens:\001*')),
+    serialized_options=_b('\202\323\344\223\002\023\"\016/iam/v1/tokens:\001*'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_IAMTOKENSERVICE)
