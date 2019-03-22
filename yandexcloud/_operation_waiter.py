@@ -14,7 +14,7 @@ class OperationWaiter:
         self.__operation = None
         self.__operation_id = operation_id
         self.__operation_service = operation_service
-        self.__deadline = time.time() + timeout if timeout is not None else None
+        self.__deadline = time.time() + timeout if timeout else None
 
     @property
     def operation(self):
@@ -22,14 +22,13 @@ class OperationWaiter:
 
     @property
     def done(self):
+        self.__operation = self.__operation_service.Get(GetOperationRequest(operation_id=self.__operation_id))
         return self.__operation is not None and self.__operation.done
 
     def __iter__(self):
         return self
 
     def __next__(self):
-        self.__operation = self.__operation_service.Get(GetOperationRequest(operation_id=self.__operation_id))
-
         if self.done or self.__deadline is not None and time.time() >= self.__deadline:
             raise StopIteration()
 
