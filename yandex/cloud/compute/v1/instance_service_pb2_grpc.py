@@ -126,8 +126,8 @@ class InstanceServiceServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def UpdateMetadata(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Updates the metadata of the specified instance.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')

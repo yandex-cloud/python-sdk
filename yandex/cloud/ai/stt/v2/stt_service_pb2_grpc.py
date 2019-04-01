@@ -2,6 +2,7 @@
 import grpc
 
 from yandex.cloud.ai.stt.v2 import stt_service_pb2 as yandex_dot_cloud_dot_ai_dot_stt_dot_v2_dot_stt__service__pb2
+from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 
 
 class SttServiceStub(object):
@@ -14,6 +15,11 @@ class SttServiceStub(object):
     Args:
       channel: A grpc.Channel.
     """
+    self.LongRunningRecognize = channel.unary_unary(
+        '/yandex.cloud.ai.stt.v2.SttService/LongRunningRecognize',
+        request_serializer=yandex_dot_cloud_dot_ai_dot_stt_dot_v2_dot_stt__service__pb2.LongRunningRecognitionRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+        )
     self.StreamingRecognize = channel.stream_stream(
         '/yandex.cloud.ai.stt.v2.SttService/StreamingRecognize',
         request_serializer=yandex_dot_cloud_dot_ai_dot_stt_dot_v2_dot_stt__service__pb2.StreamingRecognitionRequest.SerializeToString,
@@ -25,6 +31,13 @@ class SttServiceServicer(object):
   # missing associated documentation comment in .proto file
   pass
 
+  def LongRunningRecognize(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def StreamingRecognize(self, request_iterator, context):
     # missing associated documentation comment in .proto file
     pass
@@ -35,6 +48,11 @@ class SttServiceServicer(object):
 
 def add_SttServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
+      'LongRunningRecognize': grpc.unary_unary_rpc_method_handler(
+          servicer.LongRunningRecognize,
+          request_deserializer=yandex_dot_cloud_dot_ai_dot_stt_dot_v2_dot_stt__service__pb2.LongRunningRecognitionRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+      ),
       'StreamingRecognize': grpc.stream_stream_rpc_method_handler(
           servicer.StreamingRecognize,
           request_deserializer=yandex_dot_cloud_dot_ai_dot_stt_dot_v2_dot_stt__service__pb2.StreamingRecognitionRequest.FromString,

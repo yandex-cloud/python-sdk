@@ -51,6 +51,11 @@ class ClusterServiceStub(object):
         request_serializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.StopClusterRequest.SerializeToString,
         response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
         )
+    self.Move = channel.unary_unary(
+        '/yandex.cloud.mdb.clickhouse.v1.ClusterService/Move',
+        request_serializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.MoveClusterRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+        )
     self.Backup = channel.unary_unary(
         '/yandex.cloud.mdb.clickhouse.v1.ClusterService/Backup',
         request_serializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.BackupClusterRequest.SerializeToString,
@@ -169,6 +174,13 @@ class ClusterServiceServicer(object):
 
   def Stop(self, request, context):
     """Stop the specified ClickHouse cluster.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def Move(self, request, context):
+    """Moves the specified ClickHouse cluster to the specified folder.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -302,6 +314,11 @@ def add_ClusterServiceServicer_to_server(servicer, server):
       'Stop': grpc.unary_unary_rpc_method_handler(
           servicer.Stop,
           request_deserializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.StopClusterRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+      ),
+      'Move': grpc.unary_unary_rpc_method_handler(
+          servicer.Move,
+          request_deserializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.MoveClusterRequest.FromString,
           response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
       ),
       'Backup': grpc.unary_unary_rpc_method_handler(

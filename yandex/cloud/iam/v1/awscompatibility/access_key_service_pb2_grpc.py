@@ -7,7 +7,7 @@ from yandex.cloud.iam.v1.awscompatibility import access_key_service_pb2 as yande
 
 
 class AccessKeyServiceStub(object):
-  """A set of methods for managing AccessKey resources.
+  """A set of methods for managing access keys.
   """
 
   def __init__(self, channel):
@@ -39,20 +39,20 @@ class AccessKeyServiceStub(object):
 
 
 class AccessKeyServiceServicer(object):
-  """A set of methods for managing AccessKey resources.
+  """A set of methods for managing access keys.
   """
 
   def List(self, request, context):
-    """Retrieves the list of AccessKey resources for the specified service account.
+    """Retrieves the list of access keys for the specified service account.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def Get(self, request, context):
-    """Returns the specified AccessKey resource.
+    """Returns the specified access key.
 
-    To get the list of available AccessKey resources, make a [List] request.
+    To get the list of available access keys, make a [List] request.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')

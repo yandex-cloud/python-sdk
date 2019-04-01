@@ -12,6 +12,10 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
+from google.protobuf import duration_pb2 as google_dot_protobuf_dot_duration__pb2
+from yandex.api import operation_pb2 as yandex_dot_api_dot_operation__pb2
+from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -19,8 +23,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.ai.stt.v2',
   syntax='proto3',
   serialized_options=_b('Z>github.com/yandex-cloud/go-genproto/yandex/cloud/ai/stt/v2;stt'),
-  serialized_pb=_b('\n(yandex/cloud/ai/stt/v2/stt_service.proto\x12\x16yandex.cloud.ai.stt.v2\"\x88\x01\n\x1bStreamingRecognitionRequest\x12;\n\x06\x63onfig\x18\x01 \x01(\x0b\x32).yandex.cloud.ai.stt.v2.RecognitionConfigH\x00\x12\x17\n\raudio_content\x18\x02 \x01(\x0cH\x00\x42\x13\n\x11streaming_request\"f\n\x11RecognitionConfig\x12>\n\rspecification\x18\x01 \x01(\x0b\x32\'.yandex.cloud.ai.stt.v2.RecognitionSpec\x12\x11\n\tfolder_id\x18\x02 \x01(\t\"\xbf\x02\n\x0fRecognitionSpec\x12M\n\x0e\x61udio_encoding\x18\x01 \x01(\x0e\x32\x35.yandex.cloud.ai.stt.v2.RecognitionSpec.AudioEncoding\x12\x19\n\x11sample_rate_hertz\x18\x02 \x01(\x03\x12\x15\n\rlanguage_code\x18\x03 \x01(\t\x12\x18\n\x10profanity_filter\x18\x04 \x01(\x08\x12\r\n\x05model\x18\x05 \x01(\t\x12\x17\n\x0fpartial_results\x18\x07 \x01(\x08\x12\x18\n\x10single_utterance\x18\x08 \x01(\x08\"O\n\rAudioEncoding\x12\x1e\n\x1a\x41UDIO_ENCODING_UNSPECIFIED\x10\x00\x12\x10\n\x0cLINEAR16_PCM\x10\x01\x12\x0c\n\x08OGG_OPUS\x10\x02\"\x7f\n\x1cStreamingRecognitionResponse\x12>\n\x06\x63hunks\x18\x01 \x03(\x0b\x32..yandex.cloud.ai.stt.v2.SpeechRecognitionChunk\x12\x1f\n\x17\x65nd_of_single_utterance\x18\x02 \x01(\x08\"s\n\x16SpeechRecognitionChunk\x12J\n\x0c\x61lternatives\x18\x01 \x03(\x0b\x32\x34.yandex.cloud.ai.stt.v2.SpeechRecognitionAlternative\x12\r\n\x05\x66inal\x18\x02 \x01(\x08\"@\n\x1cSpeechRecognitionAlternative\x12\x0c\n\x04text\x18\x01 \x01(\t\x12\x12\n\nconfidence\x18\x02 \x01(\x02\x32\x94\x01\n\nSttService\x12\x85\x01\n\x12StreamingRecognize\x12\x33.yandex.cloud.ai.stt.v2.StreamingRecognitionRequest\x1a\x34.yandex.cloud.ai.stt.v2.StreamingRecognitionResponse\"\x00(\x01\x30\x01\x42@Z>github.com/yandex-cloud/go-genproto/yandex/cloud/ai/stt/v2;sttb\x06proto3')
-)
+  serialized_pb=_b('\n(yandex/cloud/ai/stt/v2/stt_service.proto\x12\x16yandex.cloud.ai.stt.v2\x1a\x1cgoogle/api/annotations.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1ayandex/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\"\x93\x01\n\x1dLongRunningRecognitionRequest\x12\x39\n\x06\x63onfig\x18\x01 \x01(\x0b\x32).yandex.cloud.ai.stt.v2.RecognitionConfig\x12\x37\n\x05\x61udio\x18\x02 \x01(\x0b\x32(.yandex.cloud.ai.stt.v2.RecognitionAudio\"a\n\x1eLongRunningRecognitionResponse\x12?\n\x06\x63hunks\x18\x01 \x03(\x0b\x32/.yandex.cloud.ai.stt.v2.SpeechRecognitionResult\"\x88\x01\n\x1bStreamingRecognitionRequest\x12;\n\x06\x63onfig\x18\x01 \x01(\x0b\x32).yandex.cloud.ai.stt.v2.RecognitionConfigH\x00\x12\x17\n\raudio_content\x18\x02 \x01(\x0cH\x00\x42\x13\n\x11streaming_request\"\x7f\n\x1cStreamingRecognitionResponse\x12>\n\x06\x63hunks\x18\x01 \x03(\x0b\x32..yandex.cloud.ai.stt.v2.SpeechRecognitionChunk\x12\x1f\n\x17\x65nd_of_single_utterance\x18\x02 \x01(\x08\"D\n\x10RecognitionAudio\x12\x11\n\x07\x63ontent\x18\x01 \x01(\x0cH\x00\x12\r\n\x03uri\x18\x02 \x01(\tH\x00\x42\x0e\n\x0c\x61udio_source\"f\n\x11RecognitionConfig\x12>\n\rspecification\x18\x01 \x01(\x0b\x32\'.yandex.cloud.ai.stt.v2.RecognitionSpec\x12\x11\n\tfolder_id\x18\x02 \x01(\t\"\xdc\x02\n\x0fRecognitionSpec\x12M\n\x0e\x61udio_encoding\x18\x01 \x01(\x0e\x32\x35.yandex.cloud.ai.stt.v2.RecognitionSpec.AudioEncoding\x12\x19\n\x11sample_rate_hertz\x18\x02 \x01(\x03\x12\x15\n\rlanguage_code\x18\x03 \x01(\t\x12\x18\n\x10profanity_filter\x18\x04 \x01(\x08\x12\r\n\x05model\x18\x05 \x01(\t\x12\x17\n\x0fpartial_results\x18\x07 \x01(\x08\x12\x18\n\x10single_utterance\x18\x08 \x01(\x08\x12\x1b\n\x13\x61udio_channel_count\x18\t \x01(\x03\"O\n\rAudioEncoding\x12\x1e\n\x1a\x41UDIO_ENCODING_UNSPECIFIED\x10\x00\x12\x10\n\x0cLINEAR16_PCM\x10\x01\x12\x0c\n\x08OGG_OPUS\x10\x02\"s\n\x16SpeechRecognitionChunk\x12J\n\x0c\x61lternatives\x18\x01 \x03(\x0b\x32\x34.yandex.cloud.ai.stt.v2.SpeechRecognitionAlternative\x12\r\n\x05\x66inal\x18\x02 \x01(\x08\"z\n\x17SpeechRecognitionResult\x12J\n\x0c\x61lternatives\x18\x01 \x03(\x0b\x32\x34.yandex.cloud.ai.stt.v2.SpeechRecognitionAlternative\x12\x13\n\x0b\x63hannel_tag\x18\x02 \x01(\x03\"q\n\x1cSpeechRecognitionAlternative\x12\x0c\n\x04text\x18\x01 \x01(\t\x12\x12\n\nconfidence\x18\x02 \x01(\x02\x12/\n\x05words\x18\x03 \x03(\x0b\x32 .yandex.cloud.ai.stt.v2.WordInfo\"\x88\x01\n\x08WordInfo\x12-\n\nstart_time\x18\x01 \x01(\x0b\x32\x19.google.protobuf.Duration\x12+\n\x08\x65nd_time\x18\x02 \x01(\x0b\x32\x19.google.protobuf.Duration\x12\x0c\n\x04word\x18\x03 \x01(\t\x12\x12\n\nconfidence\x18\x04 \x01(\x02\x32\xdb\x02\n\nSttService\x12\xc4\x01\n\x14LongRunningRecognize\x12\x35.yandex.cloud.ai.stt.v2.LongRunningRecognitionRequest\x1a!.yandex.cloud.operation.Operation\"R\x82\xd3\xe4\x93\x02(\"#/speech/stt/v2/longRunningRecognize:\x01*\xb2\xd2* \x12\x1eLongRunningRecognitionResponse\x12\x85\x01\n\x12StreamingRecognize\x12\x33.yandex.cloud.ai.stt.v2.StreamingRecognitionRequest\x1a\x34.yandex.cloud.ai.stt.v2.StreamingRecognitionResponse\"\x00(\x01\x30\x01\x42@Z>github.com/yandex-cloud/go-genproto/yandex/cloud/ai/stt/v2;sttb\x06proto3')
+  ,
+  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,yandex_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,])
 
 
 
@@ -45,10 +50,79 @@ _RECOGNITIONSPEC_AUDIOENCODING = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=552,
-  serialized_end=631,
+  serialized_start=1159,
+  serialized_end=1238,
 )
 _sym_db.RegisterEnumDescriptor(_RECOGNITIONSPEC_AUDIOENCODING)
+
+
+_LONGRUNNINGRECOGNITIONREQUEST = _descriptor.Descriptor(
+  name='LongRunningRecognitionRequest',
+  full_name='yandex.cloud.ai.stt.v2.LongRunningRecognitionRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='config', full_name='yandex.cloud.ai.stt.v2.LongRunningRecognitionRequest.config', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='audio', full_name='yandex.cloud.ai.stt.v2.LongRunningRecognitionRequest.audio', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=199,
+  serialized_end=346,
+)
+
+
+_LONGRUNNINGRECOGNITIONRESPONSE = _descriptor.Descriptor(
+  name='LongRunningRecognitionResponse',
+  full_name='yandex.cloud.ai.stt.v2.LongRunningRecognitionResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='chunks', full_name='yandex.cloud.ai.stt.v2.LongRunningRecognitionResponse.chunks', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=348,
+  serialized_end=445,
+)
 
 
 _STREAMINGRECOGNITIONREQUEST = _descriptor.Descriptor(
@@ -87,8 +161,87 @@ _STREAMINGRECOGNITIONREQUEST = _descriptor.Descriptor(
       name='streaming_request', full_name='yandex.cloud.ai.stt.v2.StreamingRecognitionRequest.streaming_request',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=69,
-  serialized_end=205,
+  serialized_start=448,
+  serialized_end=584,
+)
+
+
+_STREAMINGRECOGNITIONRESPONSE = _descriptor.Descriptor(
+  name='StreamingRecognitionResponse',
+  full_name='yandex.cloud.ai.stt.v2.StreamingRecognitionResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='chunks', full_name='yandex.cloud.ai.stt.v2.StreamingRecognitionResponse.chunks', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='end_of_single_utterance', full_name='yandex.cloud.ai.stt.v2.StreamingRecognitionResponse.end_of_single_utterance', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=586,
+  serialized_end=713,
+)
+
+
+_RECOGNITIONAUDIO = _descriptor.Descriptor(
+  name='RecognitionAudio',
+  full_name='yandex.cloud.ai.stt.v2.RecognitionAudio',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='content', full_name='yandex.cloud.ai.stt.v2.RecognitionAudio.content', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='uri', full_name='yandex.cloud.ai.stt.v2.RecognitionAudio.uri', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='audio_source', full_name='yandex.cloud.ai.stt.v2.RecognitionAudio.audio_source',
+      index=0, containing_type=None, fields=[]),
+  ],
+  serialized_start=715,
+  serialized_end=783,
 )
 
 
@@ -125,8 +278,8 @@ _RECOGNITIONCONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=207,
-  serialized_end=309,
+  serialized_start=785,
+  serialized_end=887,
 )
 
 
@@ -186,6 +339,13 @@ _RECOGNITIONSPEC = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='audio_channel_count', full_name='yandex.cloud.ai.stt.v2.RecognitionSpec.audio_channel_count', index=7,
+      number=9, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -199,46 +359,8 @@ _RECOGNITIONSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=312,
-  serialized_end=631,
-)
-
-
-_STREAMINGRECOGNITIONRESPONSE = _descriptor.Descriptor(
-  name='StreamingRecognitionResponse',
-  full_name='yandex.cloud.ai.stt.v2.StreamingRecognitionResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='chunks', full_name='yandex.cloud.ai.stt.v2.StreamingRecognitionResponse.chunks', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='end_of_single_utterance', full_name='yandex.cloud.ai.stt.v2.StreamingRecognitionResponse.end_of_single_utterance', index=1,
-      number=2, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=633,
-  serialized_end=760,
+  serialized_start=890,
+  serialized_end=1238,
 )
 
 
@@ -275,8 +397,46 @@ _SPEECHRECOGNITIONCHUNK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=762,
-  serialized_end=877,
+  serialized_start=1240,
+  serialized_end=1355,
+)
+
+
+_SPEECHRECOGNITIONRESULT = _descriptor.Descriptor(
+  name='SpeechRecognitionResult',
+  full_name='yandex.cloud.ai.stt.v2.SpeechRecognitionResult',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='alternatives', full_name='yandex.cloud.ai.stt.v2.SpeechRecognitionResult.alternatives', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='channel_tag', full_name='yandex.cloud.ai.stt.v2.SpeechRecognitionResult.channel_tag', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1357,
+  serialized_end=1479,
 )
 
 
@@ -301,6 +461,13 @@ _SPEECHRECOGNITIONALTERNATIVE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='words', full_name='yandex.cloud.ai.stt.v2.SpeechRecognitionAlternative.words', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -313,10 +480,65 @@ _SPEECHRECOGNITIONALTERNATIVE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=879,
-  serialized_end=943,
+  serialized_start=1481,
+  serialized_end=1594,
 )
 
+
+_WORDINFO = _descriptor.Descriptor(
+  name='WordInfo',
+  full_name='yandex.cloud.ai.stt.v2.WordInfo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='start_time', full_name='yandex.cloud.ai.stt.v2.WordInfo.start_time', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='end_time', full_name='yandex.cloud.ai.stt.v2.WordInfo.end_time', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='word', full_name='yandex.cloud.ai.stt.v2.WordInfo.word', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='confidence', full_name='yandex.cloud.ai.stt.v2.WordInfo.confidence', index=3,
+      number=4, type=2, cpp_type=6, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1597,
+  serialized_end=1733,
+)
+
+_LONGRUNNINGRECOGNITIONREQUEST.fields_by_name['config'].message_type = _RECOGNITIONCONFIG
+_LONGRUNNINGRECOGNITIONREQUEST.fields_by_name['audio'].message_type = _RECOGNITIONAUDIO
+_LONGRUNNINGRECOGNITIONRESPONSE.fields_by_name['chunks'].message_type = _SPEECHRECOGNITIONRESULT
 _STREAMINGRECOGNITIONREQUEST.fields_by_name['config'].message_type = _RECOGNITIONCONFIG
 _STREAMINGRECOGNITIONREQUEST.oneofs_by_name['streaming_request'].fields.append(
   _STREAMINGRECOGNITIONREQUEST.fields_by_name['config'])
@@ -324,18 +546,47 @@ _STREAMINGRECOGNITIONREQUEST.fields_by_name['config'].containing_oneof = _STREAM
 _STREAMINGRECOGNITIONREQUEST.oneofs_by_name['streaming_request'].fields.append(
   _STREAMINGRECOGNITIONREQUEST.fields_by_name['audio_content'])
 _STREAMINGRECOGNITIONREQUEST.fields_by_name['audio_content'].containing_oneof = _STREAMINGRECOGNITIONREQUEST.oneofs_by_name['streaming_request']
+_STREAMINGRECOGNITIONRESPONSE.fields_by_name['chunks'].message_type = _SPEECHRECOGNITIONCHUNK
+_RECOGNITIONAUDIO.oneofs_by_name['audio_source'].fields.append(
+  _RECOGNITIONAUDIO.fields_by_name['content'])
+_RECOGNITIONAUDIO.fields_by_name['content'].containing_oneof = _RECOGNITIONAUDIO.oneofs_by_name['audio_source']
+_RECOGNITIONAUDIO.oneofs_by_name['audio_source'].fields.append(
+  _RECOGNITIONAUDIO.fields_by_name['uri'])
+_RECOGNITIONAUDIO.fields_by_name['uri'].containing_oneof = _RECOGNITIONAUDIO.oneofs_by_name['audio_source']
 _RECOGNITIONCONFIG.fields_by_name['specification'].message_type = _RECOGNITIONSPEC
 _RECOGNITIONSPEC.fields_by_name['audio_encoding'].enum_type = _RECOGNITIONSPEC_AUDIOENCODING
 _RECOGNITIONSPEC_AUDIOENCODING.containing_type = _RECOGNITIONSPEC
-_STREAMINGRECOGNITIONRESPONSE.fields_by_name['chunks'].message_type = _SPEECHRECOGNITIONCHUNK
 _SPEECHRECOGNITIONCHUNK.fields_by_name['alternatives'].message_type = _SPEECHRECOGNITIONALTERNATIVE
+_SPEECHRECOGNITIONRESULT.fields_by_name['alternatives'].message_type = _SPEECHRECOGNITIONALTERNATIVE
+_SPEECHRECOGNITIONALTERNATIVE.fields_by_name['words'].message_type = _WORDINFO
+_WORDINFO.fields_by_name['start_time'].message_type = google_dot_protobuf_dot_duration__pb2._DURATION
+_WORDINFO.fields_by_name['end_time'].message_type = google_dot_protobuf_dot_duration__pb2._DURATION
+DESCRIPTOR.message_types_by_name['LongRunningRecognitionRequest'] = _LONGRUNNINGRECOGNITIONREQUEST
+DESCRIPTOR.message_types_by_name['LongRunningRecognitionResponse'] = _LONGRUNNINGRECOGNITIONRESPONSE
 DESCRIPTOR.message_types_by_name['StreamingRecognitionRequest'] = _STREAMINGRECOGNITIONREQUEST
+DESCRIPTOR.message_types_by_name['StreamingRecognitionResponse'] = _STREAMINGRECOGNITIONRESPONSE
+DESCRIPTOR.message_types_by_name['RecognitionAudio'] = _RECOGNITIONAUDIO
 DESCRIPTOR.message_types_by_name['RecognitionConfig'] = _RECOGNITIONCONFIG
 DESCRIPTOR.message_types_by_name['RecognitionSpec'] = _RECOGNITIONSPEC
-DESCRIPTOR.message_types_by_name['StreamingRecognitionResponse'] = _STREAMINGRECOGNITIONRESPONSE
 DESCRIPTOR.message_types_by_name['SpeechRecognitionChunk'] = _SPEECHRECOGNITIONCHUNK
+DESCRIPTOR.message_types_by_name['SpeechRecognitionResult'] = _SPEECHRECOGNITIONRESULT
 DESCRIPTOR.message_types_by_name['SpeechRecognitionAlternative'] = _SPEECHRECOGNITIONALTERNATIVE
+DESCRIPTOR.message_types_by_name['WordInfo'] = _WORDINFO
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+LongRunningRecognitionRequest = _reflection.GeneratedProtocolMessageType('LongRunningRecognitionRequest', (_message.Message,), dict(
+  DESCRIPTOR = _LONGRUNNINGRECOGNITIONREQUEST,
+  __module__ = 'yandex.cloud.ai.stt.v2.stt_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.ai.stt.v2.LongRunningRecognitionRequest)
+  ))
+_sym_db.RegisterMessage(LongRunningRecognitionRequest)
+
+LongRunningRecognitionResponse = _reflection.GeneratedProtocolMessageType('LongRunningRecognitionResponse', (_message.Message,), dict(
+  DESCRIPTOR = _LONGRUNNINGRECOGNITIONRESPONSE,
+  __module__ = 'yandex.cloud.ai.stt.v2.stt_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.ai.stt.v2.LongRunningRecognitionResponse)
+  ))
+_sym_db.RegisterMessage(LongRunningRecognitionResponse)
 
 StreamingRecognitionRequest = _reflection.GeneratedProtocolMessageType('StreamingRecognitionRequest', (_message.Message,), dict(
   DESCRIPTOR = _STREAMINGRECOGNITIONREQUEST,
@@ -343,6 +594,20 @@ StreamingRecognitionRequest = _reflection.GeneratedProtocolMessageType('Streamin
   # @@protoc_insertion_point(class_scope:yandex.cloud.ai.stt.v2.StreamingRecognitionRequest)
   ))
 _sym_db.RegisterMessage(StreamingRecognitionRequest)
+
+StreamingRecognitionResponse = _reflection.GeneratedProtocolMessageType('StreamingRecognitionResponse', (_message.Message,), dict(
+  DESCRIPTOR = _STREAMINGRECOGNITIONRESPONSE,
+  __module__ = 'yandex.cloud.ai.stt.v2.stt_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.ai.stt.v2.StreamingRecognitionResponse)
+  ))
+_sym_db.RegisterMessage(StreamingRecognitionResponse)
+
+RecognitionAudio = _reflection.GeneratedProtocolMessageType('RecognitionAudio', (_message.Message,), dict(
+  DESCRIPTOR = _RECOGNITIONAUDIO,
+  __module__ = 'yandex.cloud.ai.stt.v2.stt_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.ai.stt.v2.RecognitionAudio)
+  ))
+_sym_db.RegisterMessage(RecognitionAudio)
 
 RecognitionConfig = _reflection.GeneratedProtocolMessageType('RecognitionConfig', (_message.Message,), dict(
   DESCRIPTOR = _RECOGNITIONCONFIG,
@@ -358,13 +623,6 @@ RecognitionSpec = _reflection.GeneratedProtocolMessageType('RecognitionSpec', (_
   ))
 _sym_db.RegisterMessage(RecognitionSpec)
 
-StreamingRecognitionResponse = _reflection.GeneratedProtocolMessageType('StreamingRecognitionResponse', (_message.Message,), dict(
-  DESCRIPTOR = _STREAMINGRECOGNITIONRESPONSE,
-  __module__ = 'yandex.cloud.ai.stt.v2.stt_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.ai.stt.v2.StreamingRecognitionResponse)
-  ))
-_sym_db.RegisterMessage(StreamingRecognitionResponse)
-
 SpeechRecognitionChunk = _reflection.GeneratedProtocolMessageType('SpeechRecognitionChunk', (_message.Message,), dict(
   DESCRIPTOR = _SPEECHRECOGNITIONCHUNK,
   __module__ = 'yandex.cloud.ai.stt.v2.stt_service_pb2'
@@ -372,12 +630,26 @@ SpeechRecognitionChunk = _reflection.GeneratedProtocolMessageType('SpeechRecogni
   ))
 _sym_db.RegisterMessage(SpeechRecognitionChunk)
 
+SpeechRecognitionResult = _reflection.GeneratedProtocolMessageType('SpeechRecognitionResult', (_message.Message,), dict(
+  DESCRIPTOR = _SPEECHRECOGNITIONRESULT,
+  __module__ = 'yandex.cloud.ai.stt.v2.stt_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.ai.stt.v2.SpeechRecognitionResult)
+  ))
+_sym_db.RegisterMessage(SpeechRecognitionResult)
+
 SpeechRecognitionAlternative = _reflection.GeneratedProtocolMessageType('SpeechRecognitionAlternative', (_message.Message,), dict(
   DESCRIPTOR = _SPEECHRECOGNITIONALTERNATIVE,
   __module__ = 'yandex.cloud.ai.stt.v2.stt_service_pb2'
   # @@protoc_insertion_point(class_scope:yandex.cloud.ai.stt.v2.SpeechRecognitionAlternative)
   ))
 _sym_db.RegisterMessage(SpeechRecognitionAlternative)
+
+WordInfo = _reflection.GeneratedProtocolMessageType('WordInfo', (_message.Message,), dict(
+  DESCRIPTOR = _WORDINFO,
+  __module__ = 'yandex.cloud.ai.stt.v2.stt_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.ai.stt.v2.WordInfo)
+  ))
+_sym_db.RegisterMessage(WordInfo)
 
 
 DESCRIPTOR._options = None
@@ -388,13 +660,22 @@ _STTSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=946,
-  serialized_end=1094,
+  serialized_start=1736,
+  serialized_end=2083,
   methods=[
+  _descriptor.MethodDescriptor(
+    name='LongRunningRecognize',
+    full_name='yandex.cloud.ai.stt.v2.SttService.LongRunningRecognize',
+    index=0,
+    containing_service=None,
+    input_type=_LONGRUNNINGRECOGNITIONREQUEST,
+    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
+    serialized_options=_b('\202\323\344\223\002(\"#/speech/stt/v2/longRunningRecognize:\001*\262\322* \022\036LongRunningRecognitionResponse'),
+  ),
   _descriptor.MethodDescriptor(
     name='StreamingRecognize',
     full_name='yandex.cloud.ai.stt.v2.SttService.StreamingRecognize',
-    index=0,
+    index=1,
     containing_service=None,
     input_type=_STREAMINGRECOGNITIONREQUEST,
     output_type=_STREAMINGRECOGNITIONRESPONSE,

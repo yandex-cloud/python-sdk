@@ -41,12 +41,16 @@ def _service_for_ctor(stub_ctor):
 
 _supported_modules = {
     'yandex.cloud.compute': 'compute',
+    'yandex.cloud.containerregistry': 'container-registry',
     'yandex.cloud.endpoint': 'endpoint',
     'yandex.cloud.iam': 'iam',
-    'yandex.cloud.mdb.clickhouse': 'mdb-clickhouse',
-    'yandex.cloud.mdb.mongodb': 'mdb-mongodb',
-    'yandex.cloud.mdb.postgresql': 'mdb-postgresql',
+    'yandex.cloud.loadbalancer': 'load-balancer',
+    'yandex.cloud.mdb.clickhouse': 'managed-clickhouse',
+    'yandex.cloud.mdb.mongodb': 'managed-mongodb',
+    'yandex.cloud.mdb.postgresql': 'managed-postgresql',
+    'yandex.cloud.mdb.mysql': 'managed-mysql',
+    'yandex.cloud.mdb.redis': 'managed-redis',
     'yandex.cloud.operation': 'operation',
-    'yandex.cloud.resourcemanager': 'resourcemanager',
+    'yandex.cloud.resourcemanager': 'resource-manager',
     'yandex.cloud.vpc': 'vpc',
 }
