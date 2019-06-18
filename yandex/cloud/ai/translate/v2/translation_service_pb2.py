@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.ai.translate.v2',
   syntax='proto3',
   serialized_options=_b('ZJgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/translate/v2;translate'),
-  serialized_pb=_b('\n6yandex/cloud/ai/translate/v2/translation_service.proto\x12\x1cyandex.cloud.ai.translate.v2\x1a\x1cgoogle/api/annotations.proto\x1a\x1dyandex/cloud/validation.proto\x1a.yandex/cloud/ai/translate/v2/translation.proto\"\x9b\x02\n\x10TranslateRequest\x12%\n\x14source_language_code\x18\x01 \x01(\tB\x07\x8a\xc8\x31\x03<=3\x12)\n\x14target_language_code\x18\x02 \x01(\tB\x0b\xe8\xc7\x31\x01\x8a\xc8\x31\x03<=3\x12\x45\n\x06\x66ormat\x18\x03 \x01(\x0e\x32\x35.yandex.cloud.ai.translate.v2.TranslateRequest.Format\x12\x15\n\x05texts\x18\x04 \x03(\tB\x06\x82\xc8\x31\x02>0\x12\x1b\n\tfolder_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50\":\n\x06\x46ormat\x12\x16\n\x12\x46ORMAT_UNSPECIFIED\x10\x00\x12\x0e\n\nPLAIN_TEXT\x10\x01\x12\x08\n\x04HTML\x10\x02\"W\n\x11TranslateResponse\x12\x42\n\x0ctranslations\x18\x01 \x03(\x0b\x32,.yandex.cloud.ai.translate.v2.TranslatedText\"\x80\x01\n\x15\x44\x65tectLanguageRequest\x12\x1c\n\x04text\x18\x01 \x01(\tB\x0e\xe8\xc7\x31\x01\x8a\xc8\x31\x06<=1000\x12,\n\x13language_code_hints\x18\x02 \x03(\tB\x0f\x82\xc8\x31\x04<=10\x8a\xc8\x31\x03<=3\x12\x1b\n\tfolder_id\x18\x03 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"/\n\x16\x44\x65tectLanguageResponse\x12\x15\n\rlanguage_code\x18\x01 \x01(\t\"3\n\x14ListLanguagesRequest\x12\x1b\n\tfolder_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"R\n\x15ListLanguagesResponse\x12\x39\n\tlanguages\x18\x01 \x03(\x0b\x32&.yandex.cloud.ai.translate.v2.Language2\xe5\x03\n\x12TranslationService\x12\x90\x01\n\tTranslate\x12..yandex.cloud.ai.translate.v2.TranslateRequest\x1a/.yandex.cloud.ai.translate.v2.TranslateResponse\"\"\x82\xd3\xe4\x93\x02\x1c\"\x17/translate/v2/translate:\x01*\x12\x9c\x01\n\x0e\x44\x65tectLanguage\x12\x33.yandex.cloud.ai.translate.v2.DetectLanguageRequest\x1a\x34.yandex.cloud.ai.translate.v2.DetectLanguageResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/translate/v2/detect:\x01*\x12\x9c\x01\n\rListLanguages\x12\x32.yandex.cloud.ai.translate.v2.ListLanguagesRequest\x1a\x33.yandex.cloud.ai.translate.v2.ListLanguagesResponse\"\"\x82\xd3\xe4\x93\x02\x1c\"\x17/translate/v2/languages:\x01*BLZJgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/translate/v2;translateb\x06proto3')
+  serialized_pb=_b('\n6yandex/cloud/ai/translate/v2/translation_service.proto\x12\x1cyandex.cloud.ai.translate.v2\x1a\x1cgoogle/api/annotations.proto\x1a\x1dyandex/cloud/validation.proto\x1a.yandex/cloud/ai/translate/v2/translation.proto\"\x84\x03\n\x10TranslateRequest\x12%\n\x14source_language_code\x18\x01 \x01(\tB\x07\x8a\xc8\x31\x03<=3\x12)\n\x14target_language_code\x18\x02 \x01(\tB\x0b\xe8\xc7\x31\x01\x8a\xc8\x31\x03<=3\x12\x45\n\x06\x66ormat\x18\x03 \x01(\x0e\x32\x35.yandex.cloud.ai.translate.v2.TranslateRequest.Format\x12\x15\n\x05texts\x18\x04 \x03(\tB\x06\x82\xc8\x31\x02>0\x12\x1b\n\tfolder_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x17\n\x05model\x18\x06 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12N\n\x0fglossary_config\x18\x07 \x01(\x0b\x32\x35.yandex.cloud.ai.translate.v2.TranslateGlossaryConfig\":\n\x06\x46ormat\x12\x16\n\x12\x46ORMAT_UNSPECIFIED\x10\x00\x12\x0e\n\nPLAIN_TEXT\x10\x01\x12\x08\n\x04HTML\x10\x02\"w\n\x17TranslateGlossaryConfig\x12\x43\n\rglossary_data\x18\x01 \x01(\x0b\x32*.yandex.cloud.ai.translate.v2.GlossaryDataH\x00\x42\x17\n\x0fglossary_source\x12\x04\xc0\xc1\x31\x01\"\\\n\x0cGlossaryData\x12L\n\x0eglossary_pairs\x18\x01 \x03(\x0b\x32*.yandex.cloud.ai.translate.v2.GlossaryPairB\x08\x82\xc8\x31\x04\x31-50\"H\n\x0cGlossaryPair\x12\x19\n\x0bsource_text\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\x0ftranslated_text\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"W\n\x11TranslateResponse\x12\x42\n\x0ctranslations\x18\x01 \x03(\x0b\x32,.yandex.cloud.ai.translate.v2.TranslatedText\"\x80\x01\n\x15\x44\x65tectLanguageRequest\x12\x1c\n\x04text\x18\x01 \x01(\tB\x0e\xe8\xc7\x31\x01\x8a\xc8\x31\x06<=1000\x12,\n\x13language_code_hints\x18\x02 \x03(\tB\x0f\x82\xc8\x31\x04<=10\x8a\xc8\x31\x03<=3\x12\x1b\n\tfolder_id\x18\x03 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"/\n\x16\x44\x65tectLanguageResponse\x12\x15\n\rlanguage_code\x18\x01 \x01(\t\"3\n\x14ListLanguagesRequest\x12\x1b\n\tfolder_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"R\n\x15ListLanguagesResponse\x12\x39\n\tlanguages\x18\x01 \x03(\x0b\x32&.yandex.cloud.ai.translate.v2.Language2\xe5\x03\n\x12TranslationService\x12\x90\x01\n\tTranslate\x12..yandex.cloud.ai.translate.v2.TranslateRequest\x1a/.yandex.cloud.ai.translate.v2.TranslateResponse\"\"\x82\xd3\xe4\x93\x02\x1c\"\x17/translate/v2/translate:\x01*\x12\x9c\x01\n\x0e\x44\x65tectLanguage\x12\x33.yandex.cloud.ai.translate.v2.DetectLanguageRequest\x1a\x34.yandex.cloud.ai.translate.v2.DetectLanguageResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/translate/v2/detect:\x01*\x12\x9c\x01\n\rListLanguages\x12\x32.yandex.cloud.ai.translate.v2.ListLanguagesRequest\x1a\x33.yandex.cloud.ai.translate.v2.ListLanguagesResponse\"\"\x82\xd3\xe4\x93\x02\x1c\"\x17/translate/v2/languages:\x01*BLZJgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/translate/v2;translateb\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_ai_dot_translate_dot_v2_dot_translation__pb2.DESCRIPTOR,])
 
@@ -49,8 +49,8 @@ _TRANSLATEREQUEST_FORMAT = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=423,
-  serialized_end=481,
+  serialized_start=528,
+  serialized_end=586,
 )
 _sym_db.RegisterEnumDescriptor(_TRANSLATEREQUEST_FORMAT)
 
@@ -97,6 +97,20 @@ _TRANSLATEREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=_b('\212\3101\004<=50'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='model', full_name='yandex.cloud.ai.translate.v2.TranslateRequest.model', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3101\004<=50'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='glossary_config', full_name='yandex.cloud.ai.translate.v2.TranslateRequest.glossary_config', index=6,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -111,7 +125,110 @@ _TRANSLATEREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=198,
-  serialized_end=481,
+  serialized_end=586,
+)
+
+
+_TRANSLATEGLOSSARYCONFIG = _descriptor.Descriptor(
+  name='TranslateGlossaryConfig',
+  full_name='yandex.cloud.ai.translate.v2.TranslateGlossaryConfig',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='glossary_data', full_name='yandex.cloud.ai.translate.v2.TranslateGlossaryConfig.glossary_data', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='glossary_source', full_name='yandex.cloud.ai.translate.v2.TranslateGlossaryConfig.glossary_source',
+      index=0, containing_type=None, fields=[], serialized_options=_b('\300\3011\001')),
+  ],
+  serialized_start=588,
+  serialized_end=707,
+)
+
+
+_GLOSSARYDATA = _descriptor.Descriptor(
+  name='GlossaryData',
+  full_name='yandex.cloud.ai.translate.v2.GlossaryData',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='glossary_pairs', full_name='yandex.cloud.ai.translate.v2.GlossaryData.glossary_pairs', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\202\3101\0041-50'), file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=709,
+  serialized_end=801,
+)
+
+
+_GLOSSARYPAIR = _descriptor.Descriptor(
+  name='GlossaryPair',
+  full_name='yandex.cloud.ai.translate.v2.GlossaryPair',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='source_text', full_name='yandex.cloud.ai.translate.v2.GlossaryPair.source_text', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='translated_text', full_name='yandex.cloud.ai.translate.v2.GlossaryPair.translated_text', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=803,
+  serialized_end=875,
 )
 
 
@@ -141,8 +258,8 @@ _TRANSLATERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=483,
-  serialized_end=570,
+  serialized_start=877,
+  serialized_end=964,
 )
 
 
@@ -186,8 +303,8 @@ _DETECTLANGUAGEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=573,
-  serialized_end=701,
+  serialized_start=967,
+  serialized_end=1095,
 )
 
 
@@ -217,8 +334,8 @@ _DETECTLANGUAGERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=703,
-  serialized_end=750,
+  serialized_start=1097,
+  serialized_end=1144,
 )
 
 
@@ -248,8 +365,8 @@ _LISTLANGUAGESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=752,
-  serialized_end=803,
+  serialized_start=1146,
+  serialized_end=1197,
 )
 
 
@@ -279,15 +396,24 @@ _LISTLANGUAGESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=805,
-  serialized_end=887,
+  serialized_start=1199,
+  serialized_end=1281,
 )
 
 _TRANSLATEREQUEST.fields_by_name['format'].enum_type = _TRANSLATEREQUEST_FORMAT
+_TRANSLATEREQUEST.fields_by_name['glossary_config'].message_type = _TRANSLATEGLOSSARYCONFIG
 _TRANSLATEREQUEST_FORMAT.containing_type = _TRANSLATEREQUEST
+_TRANSLATEGLOSSARYCONFIG.fields_by_name['glossary_data'].message_type = _GLOSSARYDATA
+_TRANSLATEGLOSSARYCONFIG.oneofs_by_name['glossary_source'].fields.append(
+  _TRANSLATEGLOSSARYCONFIG.fields_by_name['glossary_data'])
+_TRANSLATEGLOSSARYCONFIG.fields_by_name['glossary_data'].containing_oneof = _TRANSLATEGLOSSARYCONFIG.oneofs_by_name['glossary_source']
+_GLOSSARYDATA.fields_by_name['glossary_pairs'].message_type = _GLOSSARYPAIR
 _TRANSLATERESPONSE.fields_by_name['translations'].message_type = yandex_dot_cloud_dot_ai_dot_translate_dot_v2_dot_translation__pb2._TRANSLATEDTEXT
 _LISTLANGUAGESRESPONSE.fields_by_name['languages'].message_type = yandex_dot_cloud_dot_ai_dot_translate_dot_v2_dot_translation__pb2._LANGUAGE
 DESCRIPTOR.message_types_by_name['TranslateRequest'] = _TRANSLATEREQUEST
+DESCRIPTOR.message_types_by_name['TranslateGlossaryConfig'] = _TRANSLATEGLOSSARYCONFIG
+DESCRIPTOR.message_types_by_name['GlossaryData'] = _GLOSSARYDATA
+DESCRIPTOR.message_types_by_name['GlossaryPair'] = _GLOSSARYPAIR
 DESCRIPTOR.message_types_by_name['TranslateResponse'] = _TRANSLATERESPONSE
 DESCRIPTOR.message_types_by_name['DetectLanguageRequest'] = _DETECTLANGUAGEREQUEST
 DESCRIPTOR.message_types_by_name['DetectLanguageResponse'] = _DETECTLANGUAGERESPONSE
@@ -301,6 +427,27 @@ TranslateRequest = _reflection.GeneratedProtocolMessageType('TranslateRequest', 
   # @@protoc_insertion_point(class_scope:yandex.cloud.ai.translate.v2.TranslateRequest)
   ))
 _sym_db.RegisterMessage(TranslateRequest)
+
+TranslateGlossaryConfig = _reflection.GeneratedProtocolMessageType('TranslateGlossaryConfig', (_message.Message,), dict(
+  DESCRIPTOR = _TRANSLATEGLOSSARYCONFIG,
+  __module__ = 'yandex.cloud.ai.translate.v2.translation_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.ai.translate.v2.TranslateGlossaryConfig)
+  ))
+_sym_db.RegisterMessage(TranslateGlossaryConfig)
+
+GlossaryData = _reflection.GeneratedProtocolMessageType('GlossaryData', (_message.Message,), dict(
+  DESCRIPTOR = _GLOSSARYDATA,
+  __module__ = 'yandex.cloud.ai.translate.v2.translation_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.ai.translate.v2.GlossaryData)
+  ))
+_sym_db.RegisterMessage(GlossaryData)
+
+GlossaryPair = _reflection.GeneratedProtocolMessageType('GlossaryPair', (_message.Message,), dict(
+  DESCRIPTOR = _GLOSSARYPAIR,
+  __module__ = 'yandex.cloud.ai.translate.v2.translation_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.ai.translate.v2.GlossaryPair)
+  ))
+_sym_db.RegisterMessage(GlossaryPair)
 
 TranslateResponse = _reflection.GeneratedProtocolMessageType('TranslateResponse', (_message.Message,), dict(
   DESCRIPTOR = _TRANSLATERESPONSE,
@@ -343,6 +490,11 @@ _TRANSLATEREQUEST.fields_by_name['source_language_code']._options = None
 _TRANSLATEREQUEST.fields_by_name['target_language_code']._options = None
 _TRANSLATEREQUEST.fields_by_name['texts']._options = None
 _TRANSLATEREQUEST.fields_by_name['folder_id']._options = None
+_TRANSLATEREQUEST.fields_by_name['model']._options = None
+_TRANSLATEGLOSSARYCONFIG.oneofs_by_name['glossary_source']._options = None
+_GLOSSARYDATA.fields_by_name['glossary_pairs']._options = None
+_GLOSSARYPAIR.fields_by_name['source_text']._options = None
+_GLOSSARYPAIR.fields_by_name['translated_text']._options = None
 _DETECTLANGUAGEREQUEST.fields_by_name['text']._options = None
 _DETECTLANGUAGEREQUEST.fields_by_name['language_code_hints']._options = None
 _DETECTLANGUAGEREQUEST.fields_by_name['folder_id']._options = None
@@ -354,8 +506,8 @@ _TRANSLATIONSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=890,
-  serialized_end=1375,
+  serialized_start=1284,
+  serialized_end=1769,
   methods=[
   _descriptor.MethodDescriptor(
     name='Translate',

@@ -12,6 +12,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
@@ -20,11 +21,67 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.mdb.clickhouse.v1',
   syntax='proto3',
   serialized_options=_b('ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/clickhouse/v1;clickhouse'),
-  serialized_pb=_b('\n)yandex/cloud/mdb/clickhouse/v1/user.proto\x12\x1eyandex.cloud.mdb.clickhouse.v1\x1a\x1dyandex/cloud/validation.proto\"i\n\x04User\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12?\n\x0bpermissions\x18\x03 \x03(\x0b\x32*.yandex.cloud.mdb.clickhouse.v1.Permission\"#\n\nPermission\x12\x15\n\rdatabase_name\x18\x01 \x01(\t\"\x99\x01\n\x08UserSpec\x12+\n\x04name\x18\x01 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\r[a-zA-Z0-9_]*\x12\x1f\n\x08password\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x38-128\x12?\n\x0bpermissions\x18\x03 \x03(\x0b\x32*.yandex.cloud.mdb.clickhouse.v1.PermissionBOZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/clickhouse/v1;clickhouseb\x06proto3')
+  serialized_pb=_b('\n)yandex/cloud/mdb/clickhouse/v1/user.proto\x12\x1eyandex.cloud.mdb.clickhouse.v1\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\xa9\x01\n\x04User\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12?\n\x0bpermissions\x18\x03 \x03(\x0b\x32*.yandex.cloud.mdb.clickhouse.v1.Permission\x12>\n\x08settings\x18\x04 \x01(\x0b\x32,.yandex.cloud.mdb.clickhouse.v1.UserSettings\"#\n\nPermission\x12\x15\n\rdatabase_name\x18\x01 \x01(\t\"\xd9\x01\n\x08UserSpec\x12+\n\x04name\x18\x01 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\r[a-zA-Z0-9_]*\x12\x1f\n\x08password\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x38-128\x12?\n\x0bpermissions\x18\x03 \x03(\x0b\x32*.yandex.cloud.mdb.clickhouse.v1.Permission\x12>\n\x08settings\x18\x04 \x01(\x0b\x32,.yandex.cloud.mdb.clickhouse.v1.UserSettings\"\xa3\x17\n\x0cUserSettings\x12\x36\n\x08readonly\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03\x30-2\x12-\n\tallow_ddl\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12;\n\rinsert_quorum\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12\x46\n\x15insert_quorum_timeout\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\n\xfa\xc7\x31\x06>=1000\x12\x41\n\x1dselect_sequential_consistency\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12Z\n)max_replica_delay_for_distributed_queries\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\n\xfa\xc7\x31\x06>=1000\x12V\n2fallback_to_stale_replicas_for_distributed_queries\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x38\n\x0bmax_threads\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x06\xfa\xc7\x31\x02>0\x12;\n\x0emax_block_size\x18\t \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x06\xfa\xc7\x31\x02>0\x12\x42\n\x15max_insert_block_size\x18\n \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x06\xfa\xc7\x31\x02>0\x12>\n\x10max_memory_usage\x18\x0b \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12G\n\x19max_memory_usage_for_user\x18\x0c \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12>\n\x10max_rows_to_read\x18\r \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12?\n\x11max_bytes_to_read\x18\x0e \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12U\n\x12read_overflow_mode\x18\x0f \x01(\x0e\x32\x39.yandex.cloud.mdb.clickhouse.v1.UserSettings.OverflowMode\x12\x42\n\x14max_rows_to_group_by\x18\x10 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12`\n\x16group_by_overflow_mode\x18\x11 \x01(\x0e\x32@.yandex.cloud.mdb.clickhouse.v1.UserSettings.GroupByOverflowMode\x12>\n\x10max_rows_to_sort\x18\x12 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12?\n\x11max_bytes_to_sort\x18\x13 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12U\n\x12sort_overflow_mode\x18\x14 \x01(\x0e\x32\x39.yandex.cloud.mdb.clickhouse.v1.UserSettings.OverflowMode\x12=\n\x0fmax_result_rows\x18\x15 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12>\n\x10max_result_bytes\x18\x16 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12W\n\x14result_overflow_mode\x18\x17 \x01(\x0e\x32\x39.yandex.cloud.mdb.clickhouse.v1.UserSettings.OverflowMode\x12\x42\n\x14max_rows_in_distinct\x18\x18 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12\x43\n\x15max_bytes_in_distinct\x18\x19 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12Y\n\x16\x64istinct_overflow_mode\x18\x1a \x01(\x0e\x32\x39.yandex.cloud.mdb.clickhouse.v1.UserSettings.OverflowMode\x12\x42\n\x14max_rows_to_transfer\x18\x1b \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12\x43\n\x15max_bytes_to_transfer\x18\x1c \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12Y\n\x16transfer_overflow_mode\x18\x1d \x01(\x0e\x32\x39.yandex.cloud.mdb.clickhouse.v1.UserSettings.OverflowMode\x12@\n\x12max_execution_time\x18\x1e \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12X\n\x15timeout_overflow_mode\x18\x1f \x01(\x0e\x32\x39.yandex.cloud.mdb.clickhouse.v1.UserSettings.OverflowMode\x12\x41\n\x13max_columns_to_read\x18  \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12\x43\n\x15max_temporary_columns\x18! \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12M\n\x1fmax_temporary_non_const_columns\x18\" \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12;\n\x0emax_query_size\x18# \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x06\xfa\xc7\x31\x02>0\x12:\n\rmax_ast_depth\x18$ \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x06\xfa\xc7\x31\x02>0\x12=\n\x10max_ast_elements\x18% \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x06\xfa\xc7\x31\x02>0\x12\x46\n\x19max_expanded_ast_elements\x18& \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x06\xfa\xc7\x31\x02>0\"_\n\x0cOverflowMode\x12\x1d\n\x19OVERFLOW_MODE_UNSPECIFIED\x10\x00\x12\x17\n\x13OVERFLOW_MODE_THROW\x10\x01\x12\x17\n\x13OVERFLOW_MODE_BREAK\x10\x02\"\xa1\x01\n\x13GroupByOverflowMode\x12&\n\"GROUP_BY_OVERFLOW_MODE_UNSPECIFIED\x10\x00\x12 \n\x1cGROUP_BY_OVERFLOW_MODE_THROW\x10\x01\x12 \n\x1cGROUP_BY_OVERFLOW_MODE_BREAK\x10\x02\x12\x1e\n\x1aGROUP_BY_OVERFLOW_MODE_ANY\x10\x03\x42OZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/clickhouse/v1;clickhouseb\x06proto3')
   ,
-  dependencies=[yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
 
+
+_USERSETTINGS_OVERFLOWMODE = _descriptor.EnumDescriptor(
+  name='OverflowMode',
+  full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.OverflowMode',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='OVERFLOW_MODE_UNSPECIFIED', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='OVERFLOW_MODE_THROW', index=1, number=1,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='OVERFLOW_MODE_BREAK', index=2, number=2,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=3290,
+  serialized_end=3385,
+)
+_sym_db.RegisterEnumDescriptor(_USERSETTINGS_OVERFLOWMODE)
+
+_USERSETTINGS_GROUPBYOVERFLOWMODE = _descriptor.EnumDescriptor(
+  name='GroupByOverflowMode',
+  full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.GroupByOverflowMode',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='GROUP_BY_OVERFLOW_MODE_UNSPECIFIED', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='GROUP_BY_OVERFLOW_MODE_THROW', index=1, number=1,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='GROUP_BY_OVERFLOW_MODE_BREAK', index=2, number=2,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='GROUP_BY_OVERFLOW_MODE_ANY', index=3, number=3,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=3388,
+  serialized_end=3549,
+)
+_sym_db.RegisterEnumDescriptor(_USERSETTINGS_GROUPBYOVERFLOWMODE)
 
 
 _USER = _descriptor.Descriptor(
@@ -55,6 +112,13 @@ _USER = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='settings', full_name='yandex.cloud.mdb.clickhouse.v1.User.settings', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -67,8 +131,8 @@ _USER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=108,
-  serialized_end=213,
+  serialized_start=141,
+  serialized_end=310,
 )
 
 
@@ -98,8 +162,8 @@ _PERMISSION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=215,
-  serialized_end=250,
+  serialized_start=312,
+  serialized_end=347,
 )
 
 
@@ -131,6 +195,13 @@ _USERSPEC = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='settings', full_name='yandex.cloud.mdb.clickhouse.v1.UserSpec.settings', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -143,15 +214,350 @@ _USERSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=253,
-  serialized_end=406,
+  serialized_start=350,
+  serialized_end=567,
+)
+
+
+_USERSETTINGS = _descriptor.Descriptor(
+  name='UserSettings',
+  full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='readonly', full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.readonly', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\372\3071\0030-2'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='allow_ddl', full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.allow_ddl', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='insert_quorum', full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.insert_quorum', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\372\3071\003>=0'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='insert_quorum_timeout', full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.insert_quorum_timeout', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\372\3071\006>=1000'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='select_sequential_consistency', full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.select_sequential_consistency', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='max_replica_delay_for_distributed_queries', full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.max_replica_delay_for_distributed_queries', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\372\3071\006>=1000'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='fallback_to_stale_replicas_for_distributed_queries', full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.fallback_to_stale_replicas_for_distributed_queries', index=6,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='max_threads', full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.max_threads', index=7,
+      number=8, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\372\3071\002>0'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='max_block_size', full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.max_block_size', index=8,
+      number=9, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\372\3071\002>0'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='max_insert_block_size', full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.max_insert_block_size', index=9,
+      number=10, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\372\3071\002>0'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='max_memory_usage', full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.max_memory_usage', index=10,
+      number=11, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\372\3071\003>=0'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='max_memory_usage_for_user', full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.max_memory_usage_for_user', index=11,
+      number=12, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\372\3071\003>=0'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='max_rows_to_read', full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.max_rows_to_read', index=12,
+      number=13, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\372\3071\003>=0'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='max_bytes_to_read', full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.max_bytes_to_read', index=13,
+      number=14, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\372\3071\003>=0'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='read_overflow_mode', full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.read_overflow_mode', index=14,
+      number=15, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='max_rows_to_group_by', full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.max_rows_to_group_by', index=15,
+      number=16, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\372\3071\003>=0'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='group_by_overflow_mode', full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.group_by_overflow_mode', index=16,
+      number=17, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='max_rows_to_sort', full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.max_rows_to_sort', index=17,
+      number=18, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\372\3071\003>=0'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='max_bytes_to_sort', full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.max_bytes_to_sort', index=18,
+      number=19, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\372\3071\003>=0'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='sort_overflow_mode', full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.sort_overflow_mode', index=19,
+      number=20, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='max_result_rows', full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.max_result_rows', index=20,
+      number=21, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\372\3071\003>=0'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='max_result_bytes', full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.max_result_bytes', index=21,
+      number=22, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\372\3071\003>=0'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='result_overflow_mode', full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.result_overflow_mode', index=22,
+      number=23, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='max_rows_in_distinct', full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.max_rows_in_distinct', index=23,
+      number=24, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\372\3071\003>=0'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='max_bytes_in_distinct', full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.max_bytes_in_distinct', index=24,
+      number=25, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\372\3071\003>=0'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='distinct_overflow_mode', full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.distinct_overflow_mode', index=25,
+      number=26, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='max_rows_to_transfer', full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.max_rows_to_transfer', index=26,
+      number=27, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\372\3071\003>=0'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='max_bytes_to_transfer', full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.max_bytes_to_transfer', index=27,
+      number=28, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\372\3071\003>=0'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='transfer_overflow_mode', full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.transfer_overflow_mode', index=28,
+      number=29, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='max_execution_time', full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.max_execution_time', index=29,
+      number=30, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\372\3071\003>=0'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='timeout_overflow_mode', full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.timeout_overflow_mode', index=30,
+      number=31, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='max_columns_to_read', full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.max_columns_to_read', index=31,
+      number=32, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\372\3071\003>=0'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='max_temporary_columns', full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.max_temporary_columns', index=32,
+      number=33, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\372\3071\003>=0'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='max_temporary_non_const_columns', full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.max_temporary_non_const_columns', index=33,
+      number=34, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\372\3071\003>=0'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='max_query_size', full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.max_query_size', index=34,
+      number=35, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\372\3071\002>0'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='max_ast_depth', full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.max_ast_depth', index=35,
+      number=36, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\372\3071\002>0'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='max_ast_elements', full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.max_ast_elements', index=36,
+      number=37, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\372\3071\002>0'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='max_expanded_ast_elements', full_name='yandex.cloud.mdb.clickhouse.v1.UserSettings.max_expanded_ast_elements', index=37,
+      number=38, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\372\3071\002>0'), file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+    _USERSETTINGS_OVERFLOWMODE,
+    _USERSETTINGS_GROUPBYOVERFLOWMODE,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=570,
+  serialized_end=3549,
 )
 
 _USER.fields_by_name['permissions'].message_type = _PERMISSION
+_USER.fields_by_name['settings'].message_type = _USERSETTINGS
 _USERSPEC.fields_by_name['permissions'].message_type = _PERMISSION
+_USERSPEC.fields_by_name['settings'].message_type = _USERSETTINGS
+_USERSETTINGS.fields_by_name['readonly'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_USERSETTINGS.fields_by_name['allow_ddl'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
+_USERSETTINGS.fields_by_name['insert_quorum'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_USERSETTINGS.fields_by_name['insert_quorum_timeout'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_USERSETTINGS.fields_by_name['select_sequential_consistency'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
+_USERSETTINGS.fields_by_name['max_replica_delay_for_distributed_queries'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_USERSETTINGS.fields_by_name['fallback_to_stale_replicas_for_distributed_queries'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
+_USERSETTINGS.fields_by_name['max_threads'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_USERSETTINGS.fields_by_name['max_block_size'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_USERSETTINGS.fields_by_name['max_insert_block_size'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_USERSETTINGS.fields_by_name['max_memory_usage'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_USERSETTINGS.fields_by_name['max_memory_usage_for_user'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_USERSETTINGS.fields_by_name['max_rows_to_read'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_USERSETTINGS.fields_by_name['max_bytes_to_read'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_USERSETTINGS.fields_by_name['read_overflow_mode'].enum_type = _USERSETTINGS_OVERFLOWMODE
+_USERSETTINGS.fields_by_name['max_rows_to_group_by'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_USERSETTINGS.fields_by_name['group_by_overflow_mode'].enum_type = _USERSETTINGS_GROUPBYOVERFLOWMODE
+_USERSETTINGS.fields_by_name['max_rows_to_sort'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_USERSETTINGS.fields_by_name['max_bytes_to_sort'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_USERSETTINGS.fields_by_name['sort_overflow_mode'].enum_type = _USERSETTINGS_OVERFLOWMODE
+_USERSETTINGS.fields_by_name['max_result_rows'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_USERSETTINGS.fields_by_name['max_result_bytes'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_USERSETTINGS.fields_by_name['result_overflow_mode'].enum_type = _USERSETTINGS_OVERFLOWMODE
+_USERSETTINGS.fields_by_name['max_rows_in_distinct'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_USERSETTINGS.fields_by_name['max_bytes_in_distinct'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_USERSETTINGS.fields_by_name['distinct_overflow_mode'].enum_type = _USERSETTINGS_OVERFLOWMODE
+_USERSETTINGS.fields_by_name['max_rows_to_transfer'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_USERSETTINGS.fields_by_name['max_bytes_to_transfer'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_USERSETTINGS.fields_by_name['transfer_overflow_mode'].enum_type = _USERSETTINGS_OVERFLOWMODE
+_USERSETTINGS.fields_by_name['max_execution_time'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_USERSETTINGS.fields_by_name['timeout_overflow_mode'].enum_type = _USERSETTINGS_OVERFLOWMODE
+_USERSETTINGS.fields_by_name['max_columns_to_read'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_USERSETTINGS.fields_by_name['max_temporary_columns'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_USERSETTINGS.fields_by_name['max_temporary_non_const_columns'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_USERSETTINGS.fields_by_name['max_query_size'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_USERSETTINGS.fields_by_name['max_ast_depth'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_USERSETTINGS.fields_by_name['max_ast_elements'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_USERSETTINGS.fields_by_name['max_expanded_ast_elements'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_USERSETTINGS_OVERFLOWMODE.containing_type = _USERSETTINGS
+_USERSETTINGS_GROUPBYOVERFLOWMODE.containing_type = _USERSETTINGS
 DESCRIPTOR.message_types_by_name['User'] = _USER
 DESCRIPTOR.message_types_by_name['Permission'] = _PERMISSION
 DESCRIPTOR.message_types_by_name['UserSpec'] = _USERSPEC
+DESCRIPTOR.message_types_by_name['UserSettings'] = _USERSETTINGS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 User = _reflection.GeneratedProtocolMessageType('User', (_message.Message,), dict(
@@ -175,8 +581,43 @@ UserSpec = _reflection.GeneratedProtocolMessageType('UserSpec', (_message.Messag
   ))
 _sym_db.RegisterMessage(UserSpec)
 
+UserSettings = _reflection.GeneratedProtocolMessageType('UserSettings', (_message.Message,), dict(
+  DESCRIPTOR = _USERSETTINGS,
+  __module__ = 'yandex.cloud.mdb.clickhouse.v1.user_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.clickhouse.v1.UserSettings)
+  ))
+_sym_db.RegisterMessage(UserSettings)
+
 
 DESCRIPTOR._options = None
 _USERSPEC.fields_by_name['name']._options = None
 _USERSPEC.fields_by_name['password']._options = None
+_USERSETTINGS.fields_by_name['readonly']._options = None
+_USERSETTINGS.fields_by_name['insert_quorum']._options = None
+_USERSETTINGS.fields_by_name['insert_quorum_timeout']._options = None
+_USERSETTINGS.fields_by_name['max_replica_delay_for_distributed_queries']._options = None
+_USERSETTINGS.fields_by_name['max_threads']._options = None
+_USERSETTINGS.fields_by_name['max_block_size']._options = None
+_USERSETTINGS.fields_by_name['max_insert_block_size']._options = None
+_USERSETTINGS.fields_by_name['max_memory_usage']._options = None
+_USERSETTINGS.fields_by_name['max_memory_usage_for_user']._options = None
+_USERSETTINGS.fields_by_name['max_rows_to_read']._options = None
+_USERSETTINGS.fields_by_name['max_bytes_to_read']._options = None
+_USERSETTINGS.fields_by_name['max_rows_to_group_by']._options = None
+_USERSETTINGS.fields_by_name['max_rows_to_sort']._options = None
+_USERSETTINGS.fields_by_name['max_bytes_to_sort']._options = None
+_USERSETTINGS.fields_by_name['max_result_rows']._options = None
+_USERSETTINGS.fields_by_name['max_result_bytes']._options = None
+_USERSETTINGS.fields_by_name['max_rows_in_distinct']._options = None
+_USERSETTINGS.fields_by_name['max_bytes_in_distinct']._options = None
+_USERSETTINGS.fields_by_name['max_rows_to_transfer']._options = None
+_USERSETTINGS.fields_by_name['max_bytes_to_transfer']._options = None
+_USERSETTINGS.fields_by_name['max_execution_time']._options = None
+_USERSETTINGS.fields_by_name['max_columns_to_read']._options = None
+_USERSETTINGS.fields_by_name['max_temporary_columns']._options = None
+_USERSETTINGS.fields_by_name['max_temporary_non_const_columns']._options = None
+_USERSETTINGS.fields_by_name['max_query_size']._options = None
+_USERSETTINGS.fields_by_name['max_ast_depth']._options = None
+_USERSETTINGS.fields_by_name['max_ast_elements']._options = None
+_USERSETTINGS.fields_by_name['max_expanded_ast_elements']._options = None
 # @@protoc_insertion_point(module_scope)

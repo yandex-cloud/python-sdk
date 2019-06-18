@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.mdb.postgresql.v1',
   syntax='proto3',
   serialized_options=_b('ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1;postgresql'),
-  serialized_pb=_b('\n)yandex/cloud/mdb/postgresql/v1/user.proto\x12\x1eyandex.cloud.mdb.postgresql.v1\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\xbd\x01\n\x04User\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12?\n\x0bpermissions\x18\x03 \x03(\x0b\x32*.yandex.cloud.mdb.postgresql.v1.Permission\x12\x12\n\nconn_limit\x18\x04 \x01(\x03\x12>\n\x08settings\x18\x05 \x01(\x0b\x32,.yandex.cloud.mdb.postgresql.v1.UserSettings\"#\n\nPermission\x12\x15\n\rdatabase_name\x18\x01 \x01(\t\"\x94\x02\n\x08UserSpec\x12+\n\x04name\x18\x01 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\r[a-zA-Z0-9_]*\x12\x1f\n\x08password\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x38-128\x12?\n\x0bpermissions\x18\x03 \x03(\x0b\x32*.yandex.cloud.mdb.postgresql.v1.Permission\x12\x39\n\nconn_limit\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x08\xfa\xc7\x31\x04>=10\x12>\n\x08settings\x18\x05 \x01(\x0b\x32,.yandex.cloud.mdb.postgresql.v1.UserSettings\"\xcd\x07\n\x0cUserSettings\x12h\n\x1d\x64\x65\x66\x61ult_transaction_isolation\x18\x01 \x01(\x0e\x32\x41.yandex.cloud.mdb.postgresql.v1.UserSettings.TransactionIsolation\x12\x31\n\x0clock_timeout\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12?\n\x1alog_min_duration_statement\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12Z\n\x12synchronous_commit\x18\x04 \x01(\x0e\x32>.yandex.cloud.mdb.postgresql.v1.UserSettings.SynchronousCommit\x12\x34\n\x0ftemp_file_limit\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"\xd6\x01\n\x11SynchronousCommit\x12\"\n\x1eSYNCHRONOUS_COMMIT_UNSPECIFIED\x10\x00\x12\x19\n\x15SYNCHRONOUS_COMMIT_ON\x10\x01\x12\x1a\n\x16SYNCHRONOUS_COMMIT_OFF\x10\x02\x12\x1c\n\x18SYNCHRONOUS_COMMIT_LOCAL\x10\x03\x12#\n\x1fSYNCHRONOUS_COMMIT_REMOTE_WRITE\x10\x04\x12#\n\x1fSYNCHRONOUS_COMMIT_REMOTE_APPLY\x10\x05\"\x8a\x01\n\x0cLogStatement\x12\x1d\n\x19LOG_STATEMENT_UNSPECIFIED\x10\x00\x12\x16\n\x12LOG_STATEMENT_NONE\x10\x01\x12\x15\n\x11LOG_STATEMENT_DDL\x10\x02\x12\x15\n\x11LOG_STATEMENT_MOD\x10\x03\x12\x15\n\x11LOG_STATEMENT_ALL\x10\x04\"\xe6\x01\n\x14TransactionIsolation\x12%\n!TRANSACTION_ISOLATION_UNSPECIFIED\x10\x00\x12*\n&TRANSACTION_ISOLATION_READ_UNCOMMITTED\x10\x01\x12(\n$TRANSACTION_ISOLATION_READ_COMMITTED\x10\x02\x12)\n%TRANSACTION_ISOLATION_REPEATABLE_READ\x10\x03\x12&\n\"TRANSACTION_ISOLATION_SERIALIZABLE\x10\x04\x42OZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1;postgresqlb\x06proto3')
+  serialized_pb=_b('\n)yandex/cloud/mdb/postgresql/v1/user.proto\x12\x1eyandex.cloud.mdb.postgresql.v1\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\x93\x02\n\x04User\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12?\n\x0bpermissions\x18\x03 \x03(\x0b\x32*.yandex.cloud.mdb.postgresql.v1.Permission\x12\x12\n\nconn_limit\x18\x04 \x01(\x03\x12>\n\x08settings\x18\x05 \x01(\x0b\x32,.yandex.cloud.mdb.postgresql.v1.UserSettings\x12)\n\x05login\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12)\n\x06grants\x18\x07 \x03(\tB\x19\x8a\xc8\x31\x04<=63\xf2\xc7\x31\r[a-zA-Z0-9_]*\"#\n\nPermission\x12\x15\n\rdatabase_name\x18\x01 \x01(\t\"\xea\x02\n\x08UserSpec\x12+\n\x04name\x18\x01 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\r[a-zA-Z0-9_]*\x12\x1f\n\x08password\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x38-128\x12?\n\x0bpermissions\x18\x03 \x03(\x0b\x32*.yandex.cloud.mdb.postgresql.v1.Permission\x12\x39\n\nconn_limit\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x08\xfa\xc7\x31\x04>=10\x12>\n\x08settings\x18\x05 \x01(\x0b\x32,.yandex.cloud.mdb.postgresql.v1.UserSettings\x12)\n\x05login\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12)\n\x06grants\x18\x07 \x03(\tB\x19\x8a\xc8\x31\x04<=63\xf2\xc7\x31\r[a-zA-Z0-9_]*\"\xcd\x07\n\x0cUserSettings\x12h\n\x1d\x64\x65\x66\x61ult_transaction_isolation\x18\x01 \x01(\x0e\x32\x41.yandex.cloud.mdb.postgresql.v1.UserSettings.TransactionIsolation\x12\x31\n\x0clock_timeout\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12?\n\x1alog_min_duration_statement\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12Z\n\x12synchronous_commit\x18\x04 \x01(\x0e\x32>.yandex.cloud.mdb.postgresql.v1.UserSettings.SynchronousCommit\x12\x34\n\x0ftemp_file_limit\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"\xd6\x01\n\x11SynchronousCommit\x12\"\n\x1eSYNCHRONOUS_COMMIT_UNSPECIFIED\x10\x00\x12\x19\n\x15SYNCHRONOUS_COMMIT_ON\x10\x01\x12\x1a\n\x16SYNCHRONOUS_COMMIT_OFF\x10\x02\x12\x1c\n\x18SYNCHRONOUS_COMMIT_LOCAL\x10\x03\x12#\n\x1fSYNCHRONOUS_COMMIT_REMOTE_WRITE\x10\x04\x12#\n\x1fSYNCHRONOUS_COMMIT_REMOTE_APPLY\x10\x05\"\x8a\x01\n\x0cLogStatement\x12\x1d\n\x19LOG_STATEMENT_UNSPECIFIED\x10\x00\x12\x16\n\x12LOG_STATEMENT_NONE\x10\x01\x12\x15\n\x11LOG_STATEMENT_DDL\x10\x02\x12\x15\n\x11LOG_STATEMENT_MOD\x10\x03\x12\x15\n\x11LOG_STATEMENT_ALL\x10\x04\"\xe6\x01\n\x14TransactionIsolation\x12%\n!TRANSACTION_ISOLATION_UNSPECIFIED\x10\x00\x12*\n&TRANSACTION_ISOLATION_READ_UNCOMMITTED\x10\x01\x12(\n$TRANSACTION_ISOLATION_READ_COMMITTED\x10\x02\x12)\n%TRANSACTION_ISOLATION_REPEATABLE_READ\x10\x03\x12&\n\"TRANSACTION_ISOLATION_SERIALIZABLE\x10\x04\x42OZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1;postgresqlb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -60,8 +60,8 @@ _USERSETTINGS_SYNCHRONOUSCOMMIT = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1034,
-  serialized_end=1248,
+  serialized_start=1206,
+  serialized_end=1420,
 )
 _sym_db.RegisterEnumDescriptor(_USERSETTINGS_SYNCHRONOUSCOMMIT)
 
@@ -94,8 +94,8 @@ _USERSETTINGS_LOGSTATEMENT = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1251,
-  serialized_end=1389,
+  serialized_start=1423,
+  serialized_end=1561,
 )
 _sym_db.RegisterEnumDescriptor(_USERSETTINGS_LOGSTATEMENT)
 
@@ -128,8 +128,8 @@ _USERSETTINGS_TRANSACTIONISOLATION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1392,
-  serialized_end=1622,
+  serialized_start=1564,
+  serialized_end=1794,
 )
 _sym_db.RegisterEnumDescriptor(_USERSETTINGS_TRANSACTIONISOLATION)
 
@@ -176,6 +176,20 @@ _USER = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='login', full_name='yandex.cloud.mdb.postgresql.v1.User.login', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='grants', full_name='yandex.cloud.mdb.postgresql.v1.User.grants', index=6,
+      number=7, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3101\004<=63\362\3071\r[a-zA-Z0-9_]*'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -189,7 +203,7 @@ _USER = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=141,
-  serialized_end=330,
+  serialized_end=416,
 )
 
 
@@ -219,8 +233,8 @@ _PERMISSION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=332,
-  serialized_end=367,
+  serialized_start=418,
+  serialized_end=453,
 )
 
 
@@ -266,6 +280,20 @@ _USERSPEC = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='login', full_name='yandex.cloud.mdb.postgresql.v1.UserSpec.login', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='grants', full_name='yandex.cloud.mdb.postgresql.v1.UserSpec.grants', index=6,
+      number=7, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3101\004<=63\362\3071\r[a-zA-Z0-9_]*'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -278,8 +306,8 @@ _USERSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=370,
-  serialized_end=646,
+  serialized_start=456,
+  serialized_end=818,
 )
 
 
@@ -340,15 +368,17 @@ _USERSETTINGS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=649,
-  serialized_end=1622,
+  serialized_start=821,
+  serialized_end=1794,
 )
 
 _USER.fields_by_name['permissions'].message_type = _PERMISSION
 _USER.fields_by_name['settings'].message_type = _USERSETTINGS
+_USER.fields_by_name['login'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
 _USERSPEC.fields_by_name['permissions'].message_type = _PERMISSION
 _USERSPEC.fields_by_name['conn_limit'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
 _USERSPEC.fields_by_name['settings'].message_type = _USERSETTINGS
+_USERSPEC.fields_by_name['login'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
 _USERSETTINGS.fields_by_name['default_transaction_isolation'].enum_type = _USERSETTINGS_TRANSACTIONISOLATION
 _USERSETTINGS.fields_by_name['lock_timeout'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
 _USERSETTINGS.fields_by_name['log_min_duration_statement'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
@@ -393,7 +423,9 @@ _sym_db.RegisterMessage(UserSettings)
 
 
 DESCRIPTOR._options = None
+_USER.fields_by_name['grants']._options = None
 _USERSPEC.fields_by_name['name']._options = None
 _USERSPEC.fields_by_name['password']._options = None
 _USERSPEC.fields_by_name['conn_limit']._options = None
+_USERSPEC.fields_by_name['grants']._options = None
 # @@protoc_insertion_point(module_scope)

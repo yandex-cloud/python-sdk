@@ -27,6 +27,11 @@ class CloudServiceStub(object):
         request_serializer=yandex_dot_cloud_dot_resourcemanager_dot_v1_dot_cloud__service__pb2.ListCloudsRequest.SerializeToString,
         response_deserializer=yandex_dot_cloud_dot_resourcemanager_dot_v1_dot_cloud__service__pb2.ListCloudsResponse.FromString,
         )
+    self.Update = channel.unary_unary(
+        '/yandex.cloud.resourcemanager.v1.CloudService/Update',
+        request_serializer=yandex_dot_cloud_dot_resourcemanager_dot_v1_dot_cloud__service__pb2.UpdateCloudRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+        )
     self.ListOperations = channel.unary_unary(
         '/yandex.cloud.resourcemanager.v1.CloudService/ListOperations',
         request_serializer=yandex_dot_cloud_dot_resourcemanager_dot_v1_dot_cloud__service__pb2.ListCloudOperationsRequest.SerializeToString,
@@ -64,6 +69,13 @@ class CloudServiceServicer(object):
 
   def List(self, request, context):
     """Retrieves the list of Cloud resources.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def Update(self, request, context):
+    """Updates the specified cloud.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -111,6 +123,11 @@ def add_CloudServiceServicer_to_server(servicer, server):
           servicer.List,
           request_deserializer=yandex_dot_cloud_dot_resourcemanager_dot_v1_dot_cloud__service__pb2.ListCloudsRequest.FromString,
           response_serializer=yandex_dot_cloud_dot_resourcemanager_dot_v1_dot_cloud__service__pb2.ListCloudsResponse.SerializeToString,
+      ),
+      'Update': grpc.unary_unary_rpc_method_handler(
+          servicer.Update,
+          request_deserializer=yandex_dot_cloud_dot_resourcemanager_dot_v1_dot_cloud__service__pb2.UpdateCloudRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
       ),
       'ListOperations': grpc.unary_unary_rpc_method_handler(
           servicer.ListOperations,

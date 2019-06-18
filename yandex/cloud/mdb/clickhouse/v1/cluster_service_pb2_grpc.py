@@ -7,7 +7,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class ClusterServiceStub(object):
-  """A set of methods for managing ClickHouse Cluster resources.
+  """A set of methods for managing ClickHouse clusters.
   """
 
   def __init__(self, channel):
@@ -54,6 +54,11 @@ class ClusterServiceStub(object):
     self.Move = channel.unary_unary(
         '/yandex.cloud.mdb.clickhouse.v1.ClusterService/Move',
         request_serializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.MoveClusterRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+        )
+    self.AddZookeeper = channel.unary_unary(
+        '/yandex.cloud.mdb.clickhouse.v1.ClusterService/AddZookeeper',
+        request_serializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.AddClusterZookeeperRequest.SerializeToString,
         response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
         )
     self.Backup = channel.unary_unary(
@@ -121,23 +126,33 @@ class ClusterServiceStub(object):
         request_serializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.DeleteClusterShardRequest.SerializeToString,
         response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
         )
+    self.CreateExternalDictionary = channel.unary_unary(
+        '/yandex.cloud.mdb.clickhouse.v1.ClusterService/CreateExternalDictionary',
+        request_serializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.CreateClusterExternalDictionaryRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+        )
+    self.DeleteExternalDictionary = channel.unary_unary(
+        '/yandex.cloud.mdb.clickhouse.v1.ClusterService/DeleteExternalDictionary',
+        request_serializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.DeleteClusterExternalDictionaryRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+        )
 
 
 class ClusterServiceServicer(object):
-  """A set of methods for managing ClickHouse Cluster resources.
+  """A set of methods for managing ClickHouse clusters.
   """
 
   def Get(self, request, context):
-    """Returns the specified ClickHouse Cluster resource.
+    """Returns the specified ClickHouse cluster.
 
-    To get the list of available ClickHouse Cluster resources, make a [List] request.
+    To get the list of available ClickHouse clusters, make a [List] request.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def List(self, request, context):
-    """Retrieves a list of ClickHouse Cluster resources that belong
+    """Retrieves a list of ClickHouse clusters that belong
     to the specified folder.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -166,21 +181,28 @@ class ClusterServiceServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def Start(self, request, context):
-    """Start the specified ClickHouse cluster.
+    """Starts the specified ClickHouse cluster.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def Stop(self, request, context):
-    """Stop the specified ClickHouse cluster.
+    """Stops the specified ClickHouse cluster.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def Move(self, request, context):
-    """Moves the specified ClickHouse cluster to the specified folder.
+    """Moves a ClickHouse cluster to the specified folder.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def AddZookeeper(self, request, context):
+    """Add ZooKeeper subcluster to the specififes ClickHouse cluster.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -202,7 +224,7 @@ class ClusterServiceServicer(object):
 
   def ListLogs(self, request, context):
     """Retrieves logs for the specified ClickHouse cluster.
-    For more information about logs, see the [Logs](/docs/yandex-mdb-guide/concepts/logs) section in the Developer's Guide.
+    For more information about logs, see the [Logs](/docs/managed-clickhouse/concepts/logs) section of the documentation.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -251,14 +273,14 @@ class ClusterServiceServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def ListShards(self, request, context):
-    """Retrieves a list of shards.
+    """Retrieves a list of shards that belong to the specified cluster.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def AddShard(self, request, context):
-    """Creates a new shard.
+    """Creates a new shard in the specified cluster.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -274,6 +296,20 @@ class ClusterServiceServicer(object):
   def DeleteShard(self, request, context):
     """Deletes the specified shard.
     """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def CreateExternalDictionary(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def DeleteExternalDictionary(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
@@ -319,6 +355,11 @@ def add_ClusterServiceServicer_to_server(servicer, server):
       'Move': grpc.unary_unary_rpc_method_handler(
           servicer.Move,
           request_deserializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.MoveClusterRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+      ),
+      'AddZookeeper': grpc.unary_unary_rpc_method_handler(
+          servicer.AddZookeeper,
+          request_deserializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.AddClusterZookeeperRequest.FromString,
           response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
       ),
       'Backup': grpc.unary_unary_rpc_method_handler(
@@ -384,6 +425,16 @@ def add_ClusterServiceServicer_to_server(servicer, server):
       'DeleteShard': grpc.unary_unary_rpc_method_handler(
           servicer.DeleteShard,
           request_deserializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.DeleteClusterShardRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+      ),
+      'CreateExternalDictionary': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateExternalDictionary,
+          request_deserializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.CreateClusterExternalDictionaryRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+      ),
+      'DeleteExternalDictionary': grpc.unary_unary_rpc_method_handler(
+          servicer.DeleteExternalDictionary,
+          request_deserializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.DeleteClusterExternalDictionaryRequest.FromString,
           response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
       ),
   }

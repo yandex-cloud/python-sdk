@@ -66,6 +66,11 @@ class ClusterServiceStub(object):
         request_serializer=yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__service__pb2.RestoreClusterRequest.SerializeToString,
         response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
         )
+    self.StartFailover = channel.unary_unary(
+        '/yandex.cloud.mdb.redis.v1.ClusterService/StartFailover',
+        request_serializer=yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__service__pb2.StartClusterFailoverRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+        )
     self.ListLogs = channel.unary_unary(
         '/yandex.cloud.mdb.redis.v1.ClusterService/ListLogs',
         request_serializer=yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__service__pb2.ListClusterLogsRequest.SerializeToString,
@@ -155,7 +160,7 @@ class ClusterServiceServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def Move(self, request, context):
-    """Moves the specified Redis cluster to the specified folder.
+    """Moves a Redis cluster to the specified folder.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -170,6 +175,13 @@ class ClusterServiceServicer(object):
 
   def Restore(self, request, context):
     """Creates a new Redis cluster using the specified backup.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def StartFailover(self, request, context):
+    """Start a manual failover on the specified Redis cluster.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -269,6 +281,11 @@ def add_ClusterServiceServicer_to_server(servicer, server):
       'Restore': grpc.unary_unary_rpc_method_handler(
           servicer.Restore,
           request_deserializer=yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__service__pb2.RestoreClusterRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+      ),
+      'StartFailover': grpc.unary_unary_rpc_method_handler(
+          servicer.StartFailover,
+          request_deserializer=yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__service__pb2.StartClusterFailoverRequest.FromString,
           response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
       ),
       'ListLogs': grpc.unary_unary_rpc_method_handler(
