@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 packages = find_packages('.', include=['yandexcloud*', 'yandex*'])
 
 setup(name='yandexcloud',
-      version='0.10.0',
+      version='0.10.1',
       description='The Yandex.Cloud official SDK',
       url='https://github.com/yandex-cloud/python-sdk',
       author='Yandex LLC',
@@ -15,6 +15,13 @@ setup(name='yandexcloud',
           'googleapis-common-protos',
           'pyjwt',
           'six',
+      ],
+      classifiers=[
+          'Programming Language :: Python',
+          'Programming Language :: Python :: 2',
+          'Programming Language :: Python :: 2.7',
+          'Programming Language :: Python :: 3',
+          'Programming Language :: Python :: 3.7',
       ],
       tests_require=['pytest'],
       packages=packages,
