@@ -25,7 +25,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.iot.devices.v1',
   syntax='proto3',
   serialized_options=_b('ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/iot/devices/v1;devices'),
-  serialized_pb=_b('\n0yandex/cloud/iot/devices/v1/device_service.proto\x12\x1byandex.cloud.iot.devices.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1dyandex/cloud/validation.proto\x1a\x1ayandex/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a(yandex/cloud/iot/devices/v1/device.proto\"3\n\x10GetDeviceRequest\x12\x1f\n\tdevice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x9e\x01\n\x12ListDevicesRequest\x12\x1f\n\x0bregistry_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1d\n\tfolder_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1d\n\tpage_size\x18\x03 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=100B\n\n\x02id\x12\x04\xc0\xc1\x31\x01\"d\n\x13ListDevicesResponse\x12\x34\n\x07\x64\x65vices\x18\x01 \x03(\x0b\x32#.yandex.cloud.iot.devices.v1.Device\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x83\x02\n\x13\x43reateDeviceRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12,\n\x04name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12R\n\x0c\x63\x65rtificates\x18\x04 \x03(\x0b\x32<.yandex.cloud.iot.devices.v1.CreateDeviceRequest.Certificate\x1a\'\n\x0b\x43\x65rtificate\x12\x18\n\x10\x63\x65rtificate_data\x18\x01 \x01(\t\")\n\x14\x43reateDeviceMetadata\x12\x11\n\tdevice_id\x18\x01 \x01(\t\"\xb1\x01\n\x13UpdateDeviceRequest\x12\x1f\n\tdevice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12(\n\x04name\x18\x03 \x01(\tB\x1a\x8a\xc8\x31\x04<=50\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\")\n\x14UpdateDeviceMetadata\x12\x11\n\tdevice_id\x18\x01 \x01(\t\"6\n\x13\x44\x65leteDeviceRequest\x12\x1f\n\tdevice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\")\n\x14\x44\x65leteDeviceMetadata\x12\x11\n\tdevice_id\x18\x01 \x01(\t\"@\n\x1dListDeviceCertificatesRequest\x12\x1f\n\tdevice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"f\n\x1eListDeviceCertificatesResponse\x12\x44\n\x0c\x63\x65rtificates\x18\x01 \x03(\x0b\x32..yandex.cloud.iot.devices.v1.DeviceCertificate\"X\n\x1b\x41\x64\x64\x44\x65viceCertificateRequest\x12\x1f\n\tdevice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x18\n\x10\x63\x65rtificate_data\x18\x03 \x01(\t\"F\n\x1c\x41\x64\x64\x44\x65viceCertificateMetadata\x12\x11\n\tdevice_id\x18\x01 \x01(\t\x12\x13\n\x0b\x66ingerprint\x18\x02 \x01(\t\"d\n\x1e\x44\x65leteDeviceCertificateRequest\x12\x1f\n\tdevice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12!\n\x0b\x66ingerprint\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"e\n\x1f\x44\x65leteDeviceCertificateMetadata\x12\x1f\n\tdevice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12!\n\x0b\x66ingerprint\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x90\x01\n\x1bListDeviceOperationsRequest\x12\x17\n\tdevice_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"n\n\x1cListDeviceOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xa0\r\n\rDeviceService\x12\x86\x01\n\x03Get\x12-.yandex.cloud.iot.devices.v1.GetDeviceRequest\x1a#.yandex.cloud.iot.devices.v1.Device\"+\x82\xd3\xe4\x93\x02%\x12#/iot-devices/v1/devices/{device_id}\x12\x8a\x01\n\x04List\x12/.yandex.cloud.iot.devices.v1.ListDevicesRequest\x1a\x30.yandex.cloud.iot.devices.v1.ListDevicesResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/iot-devices/v1/devices\x12\xa3\x01\n\x06\x43reate\x12\x30.yandex.cloud.iot.devices.v1.CreateDeviceRequest\x1a!.yandex.cloud.operation.Operation\"D\x82\xd3\xe4\x93\x02\x1c\"\x17/iot-devices/v1/devices:\x01*\xb2\xd2*\x1e\n\x14\x43reateDeviceMetadata\x12\x06\x44\x65vice\x12\xaf\x01\n\x06Update\x12\x30.yandex.cloud.iot.devices.v1.UpdateDeviceRequest\x1a!.yandex.cloud.operation.Operation\"P\x82\xd3\xe4\x93\x02(2#/iot-devices/v1/devices/{device_id}:\x01*\xb2\xd2*\x1e\n\x14UpdateDeviceMetadata\x12\x06\x44\x65vice\x12\xbb\x01\n\x06\x44\x65lete\x12\x30.yandex.cloud.iot.devices.v1.DeleteDeviceRequest\x1a!.yandex.cloud.operation.Operation\"\\\x82\xd3\xe4\x93\x02%*#/iot-devices/v1/devices/{device_id}\xb2\xd2*-\n\x14\x44\x65leteDeviceMetadata\x12\x15google.protobuf.Empty\x12\xc5\x01\n\x10ListCertificates\x12:.yandex.cloud.iot.devices.v1.ListDeviceCertificatesRequest\x1a;.yandex.cloud.iot.devices.v1.ListDeviceCertificatesResponse\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/iot-devices/v1/devices/{device_id}/certificates\x12\xdf\x01\n\x0e\x41\x64\x64\x43\x65rtificate\x12\x38.yandex.cloud.iot.devices.v1.AddDeviceCertificateRequest\x1a!.yandex.cloud.operation.Operation\"p\x82\xd3\xe4\x93\x02\x35\"0/iot-devices/v1/devices/{device_id}/certificates:\x01*\xb2\xd2*1\n\x1c\x41\x64\x64\x44\x65viceCertificateMetadata\x12\x11\x44\x65viceCertificate\x12\xf8\x01\n\x11\x44\x65leteCertificate\x12;.yandex.cloud.iot.devices.v1.DeleteDeviceCertificateRequest\x1a!.yandex.cloud.operation.Operation\"\x82\x01\x82\xd3\xe4\x93\x02@*>/iot-devices/v1/devices/{device_id}/certificates/{fingerprint}\xb2\xd2*8\n\x1f\x44\x65leteDeviceCertificateMetadata\x12\x15google.protobuf.Empty\x12\xbd\x01\n\x0eListOperations\x12\x38.yandex.cloud.iot.devices.v1.ListDeviceOperationsRequest\x1a\x39.yandex.cloud.iot.devices.v1.ListDeviceOperationsResponse\"6\x82\xd3\xe4\x93\x02\x30\x12./iot-devices/v1/devices/{device_id}/operationsBIZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/iot/devices/v1;devicesb\x06proto3')
+  serialized_pb=_b('\n0yandex/cloud/iot/devices/v1/device_service.proto\x12\x1byandex.cloud.iot.devices.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1dyandex/cloud/validation.proto\x1a\x1ayandex/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a(yandex/cloud/iot/devices/v1/device.proto\"3\n\x10GetDeviceRequest\x12\x1f\n\tdevice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x9e\x01\n\x12ListDevicesRequest\x12\x1f\n\x0bregistry_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1d\n\tfolder_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1d\n\tpage_size\x18\x03 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=100B\n\n\x02id\x12\x04\xc0\xc1\x31\x01\"d\n\x13ListDevicesResponse\x12\x34\n\x07\x64\x65vices\x18\x01 \x03(\x0b\x32#.yandex.cloud.iot.devices.v1.Device\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x93\x03\n\x13\x43reateDeviceRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12,\n\x04name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12R\n\x0c\x63\x65rtificates\x18\x04 \x03(\x0b\x32<.yandex.cloud.iot.devices.v1.CreateDeviceRequest.Certificate\x12Y\n\rtopic_aliases\x18\x05 \x03(\x0b\x32\x42.yandex.cloud.iot.devices.v1.CreateDeviceRequest.TopicAliasesEntry\x1a\x33\n\x11TopicAliasesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\'\n\x0b\x43\x65rtificate\x12\x18\n\x10\x63\x65rtificate_data\x18\x01 \x01(\t\")\n\x14\x43reateDeviceMetadata\x12\x11\n\tdevice_id\x18\x01 \x01(\t\"\xc1\x02\n\x13UpdateDeviceRequest\x12\x1f\n\tdevice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12(\n\x04name\x18\x03 \x01(\tB\x1a\x8a\xc8\x31\x04<=50\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12Y\n\rtopic_aliases\x18\x05 \x03(\x0b\x32\x42.yandex.cloud.iot.devices.v1.UpdateDeviceRequest.TopicAliasesEntry\x1a\x33\n\x11TopicAliasesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\")\n\x14UpdateDeviceMetadata\x12\x11\n\tdevice_id\x18\x01 \x01(\t\"6\n\x13\x44\x65leteDeviceRequest\x12\x1f\n\tdevice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\")\n\x14\x44\x65leteDeviceMetadata\x12\x11\n\tdevice_id\x18\x01 \x01(\t\"@\n\x1dListDeviceCertificatesRequest\x12\x1f\n\tdevice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"f\n\x1eListDeviceCertificatesResponse\x12\x44\n\x0c\x63\x65rtificates\x18\x01 \x03(\x0b\x32..yandex.cloud.iot.devices.v1.DeviceCertificate\"X\n\x1b\x41\x64\x64\x44\x65viceCertificateRequest\x12\x1f\n\tdevice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x18\n\x10\x63\x65rtificate_data\x18\x03 \x01(\t\"F\n\x1c\x41\x64\x64\x44\x65viceCertificateMetadata\x12\x11\n\tdevice_id\x18\x01 \x01(\t\x12\x13\n\x0b\x66ingerprint\x18\x02 \x01(\t\"d\n\x1e\x44\x65leteDeviceCertificateRequest\x12\x1f\n\tdevice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12!\n\x0b\x66ingerprint\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"e\n\x1f\x44\x65leteDeviceCertificateMetadata\x12\x1f\n\tdevice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12!\n\x0b\x66ingerprint\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x90\x01\n\x1bListDeviceOperationsRequest\x12\x17\n\tdevice_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"n\n\x1cListDeviceOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xa0\r\n\rDeviceService\x12\x86\x01\n\x03Get\x12-.yandex.cloud.iot.devices.v1.GetDeviceRequest\x1a#.yandex.cloud.iot.devices.v1.Device\"+\x82\xd3\xe4\x93\x02%\x12#/iot-devices/v1/devices/{device_id}\x12\x8a\x01\n\x04List\x12/.yandex.cloud.iot.devices.v1.ListDevicesRequest\x1a\x30.yandex.cloud.iot.devices.v1.ListDevicesResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/iot-devices/v1/devices\x12\xa3\x01\n\x06\x43reate\x12\x30.yandex.cloud.iot.devices.v1.CreateDeviceRequest\x1a!.yandex.cloud.operation.Operation\"D\x82\xd3\xe4\x93\x02\x1c\"\x17/iot-devices/v1/devices:\x01*\xb2\xd2*\x1e\n\x14\x43reateDeviceMetadata\x12\x06\x44\x65vice\x12\xaf\x01\n\x06Update\x12\x30.yandex.cloud.iot.devices.v1.UpdateDeviceRequest\x1a!.yandex.cloud.operation.Operation\"P\x82\xd3\xe4\x93\x02(2#/iot-devices/v1/devices/{device_id}:\x01*\xb2\xd2*\x1e\n\x14UpdateDeviceMetadata\x12\x06\x44\x65vice\x12\xbb\x01\n\x06\x44\x65lete\x12\x30.yandex.cloud.iot.devices.v1.DeleteDeviceRequest\x1a!.yandex.cloud.operation.Operation\"\\\x82\xd3\xe4\x93\x02%*#/iot-devices/v1/devices/{device_id}\xb2\xd2*-\n\x14\x44\x65leteDeviceMetadata\x12\x15google.protobuf.Empty\x12\xc5\x01\n\x10ListCertificates\x12:.yandex.cloud.iot.devices.v1.ListDeviceCertificatesRequest\x1a;.yandex.cloud.iot.devices.v1.ListDeviceCertificatesResponse\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/iot-devices/v1/devices/{device_id}/certificates\x12\xdf\x01\n\x0e\x41\x64\x64\x43\x65rtificate\x12\x38.yandex.cloud.iot.devices.v1.AddDeviceCertificateRequest\x1a!.yandex.cloud.operation.Operation\"p\x82\xd3\xe4\x93\x02\x35\"0/iot-devices/v1/devices/{device_id}/certificates:\x01*\xb2\xd2*1\n\x1c\x41\x64\x64\x44\x65viceCertificateMetadata\x12\x11\x44\x65viceCertificate\x12\xf8\x01\n\x11\x44\x65leteCertificate\x12;.yandex.cloud.iot.devices.v1.DeleteDeviceCertificateRequest\x1a!.yandex.cloud.operation.Operation\"\x82\x01\x82\xd3\xe4\x93\x02@*>/iot-devices/v1/devices/{device_id}/certificates/{fingerprint}\xb2\xd2*8\n\x1f\x44\x65leteDeviceCertificateMetadata\x12\x15google.protobuf.Empty\x12\xbd\x01\n\x0eListOperations\x12\x38.yandex.cloud.iot.devices.v1.ListDeviceOperationsRequest\x1a\x39.yandex.cloud.iot.devices.v1.ListDeviceOperationsResponse\"6\x82\xd3\xe4\x93\x02\x30\x12./iot-devices/v1/devices/{device_id}/operationsBIZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/iot/devices/v1;devicesb\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_device__pb2.DESCRIPTOR,])
 
@@ -156,6 +156,43 @@ _LISTDEVICESRESPONSE = _descriptor.Descriptor(
 )
 
 
+_CREATEDEVICEREQUEST_TOPICALIASESENTRY = _descriptor.Descriptor(
+  name='TopicAliasesEntry',
+  full_name='yandex.cloud.iot.devices.v1.CreateDeviceRequest.TopicAliasesEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='yandex.cloud.iot.devices.v1.CreateDeviceRequest.TopicAliasesEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='yandex.cloud.iot.devices.v1.CreateDeviceRequest.TopicAliasesEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=_b('8\001'),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=914,
+  serialized_end=965,
+)
+
 _CREATEDEVICEREQUEST_CERTIFICATE = _descriptor.Descriptor(
   name='Certificate',
   full_name='yandex.cloud.iot.devices.v1.CreateDeviceRequest.Certificate',
@@ -182,8 +219,8 @@ _CREATEDEVICEREQUEST_CERTIFICATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=823,
-  serialized_end=862,
+  serialized_start=967,
+  serialized_end=1006,
 )
 
 _CREATEDEVICEREQUEST = _descriptor.Descriptor(
@@ -221,10 +258,17 @@ _CREATEDEVICEREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='topic_aliases', full_name='yandex.cloud.iot.devices.v1.CreateDeviceRequest.topic_aliases', index=4,
+      number=5, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
-  nested_types=[_CREATEDEVICEREQUEST_CERTIFICATE, ],
+  nested_types=[_CREATEDEVICEREQUEST_TOPICALIASESENTRY, _CREATEDEVICEREQUEST_CERTIFICATE, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -234,7 +278,7 @@ _CREATEDEVICEREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=603,
-  serialized_end=862,
+  serialized_end=1006,
 )
 
 
@@ -264,10 +308,47 @@ _CREATEDEVICEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=864,
-  serialized_end=905,
+  serialized_start=1008,
+  serialized_end=1049,
 )
 
+
+_UPDATEDEVICEREQUEST_TOPICALIASESENTRY = _descriptor.Descriptor(
+  name='TopicAliasesEntry',
+  full_name='yandex.cloud.iot.devices.v1.UpdateDeviceRequest.TopicAliasesEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='yandex.cloud.iot.devices.v1.UpdateDeviceRequest.TopicAliasesEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='yandex.cloud.iot.devices.v1.UpdateDeviceRequest.TopicAliasesEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=_b('8\001'),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=914,
+  serialized_end=965,
+)
 
 _UPDATEDEVICEREQUEST = _descriptor.Descriptor(
   name='UpdateDeviceRequest',
@@ -304,10 +385,17 @@ _UPDATEDEVICEREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=_b('\212\3101\005<=256'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='topic_aliases', full_name='yandex.cloud.iot.devices.v1.UpdateDeviceRequest.topic_aliases', index=4,
+      number=5, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
-  nested_types=[],
+  nested_types=[_UPDATEDEVICEREQUEST_TOPICALIASESENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -316,8 +404,8 @@ _UPDATEDEVICEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=908,
-  serialized_end=1085,
+  serialized_start=1052,
+  serialized_end=1373,
 )
 
 
@@ -347,8 +435,8 @@ _UPDATEDEVICEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1087,
-  serialized_end=1128,
+  serialized_start=1375,
+  serialized_end=1416,
 )
 
 
@@ -378,8 +466,8 @@ _DELETEDEVICEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1130,
-  serialized_end=1184,
+  serialized_start=1418,
+  serialized_end=1472,
 )
 
 
@@ -409,8 +497,8 @@ _DELETEDEVICEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1186,
-  serialized_end=1227,
+  serialized_start=1474,
+  serialized_end=1515,
 )
 
 
@@ -440,8 +528,8 @@ _LISTDEVICECERTIFICATESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1229,
-  serialized_end=1293,
+  serialized_start=1517,
+  serialized_end=1581,
 )
 
 
@@ -471,8 +559,8 @@ _LISTDEVICECERTIFICATESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1295,
-  serialized_end=1397,
+  serialized_start=1583,
+  serialized_end=1685,
 )
 
 
@@ -509,8 +597,8 @@ _ADDDEVICECERTIFICATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1399,
-  serialized_end=1487,
+  serialized_start=1687,
+  serialized_end=1775,
 )
 
 
@@ -547,8 +635,8 @@ _ADDDEVICECERTIFICATEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1489,
-  serialized_end=1559,
+  serialized_start=1777,
+  serialized_end=1847,
 )
 
 
@@ -585,8 +673,8 @@ _DELETEDEVICECERTIFICATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1561,
-  serialized_end=1661,
+  serialized_start=1849,
+  serialized_end=1949,
 )
 
 
@@ -623,8 +711,8 @@ _DELETEDEVICECERTIFICATEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1663,
-  serialized_end=1764,
+  serialized_start=1951,
+  serialized_end=2052,
 )
 
 
@@ -675,8 +763,8 @@ _LISTDEVICEOPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1767,
-  serialized_end=1911,
+  serialized_start=2055,
+  serialized_end=2199,
 )
 
 
@@ -713,8 +801,8 @@ _LISTDEVICEOPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1913,
-  serialized_end=2023,
+  serialized_start=2201,
+  serialized_end=2311,
 )
 
 _LISTDEVICESREQUEST.oneofs_by_name['id'].fields.append(
@@ -724,9 +812,13 @@ _LISTDEVICESREQUEST.oneofs_by_name['id'].fields.append(
   _LISTDEVICESREQUEST.fields_by_name['folder_id'])
 _LISTDEVICESREQUEST.fields_by_name['folder_id'].containing_oneof = _LISTDEVICESREQUEST.oneofs_by_name['id']
 _LISTDEVICESRESPONSE.fields_by_name['devices'].message_type = yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_device__pb2._DEVICE
+_CREATEDEVICEREQUEST_TOPICALIASESENTRY.containing_type = _CREATEDEVICEREQUEST
 _CREATEDEVICEREQUEST_CERTIFICATE.containing_type = _CREATEDEVICEREQUEST
 _CREATEDEVICEREQUEST.fields_by_name['certificates'].message_type = _CREATEDEVICEREQUEST_CERTIFICATE
+_CREATEDEVICEREQUEST.fields_by_name['topic_aliases'].message_type = _CREATEDEVICEREQUEST_TOPICALIASESENTRY
+_UPDATEDEVICEREQUEST_TOPICALIASESENTRY.containing_type = _UPDATEDEVICEREQUEST
 _UPDATEDEVICEREQUEST.fields_by_name['update_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
+_UPDATEDEVICEREQUEST.fields_by_name['topic_aliases'].message_type = _UPDATEDEVICEREQUEST_TOPICALIASESENTRY
 _LISTDEVICECERTIFICATESRESPONSE.fields_by_name['certificates'].message_type = yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_device__pb2._DEVICECERTIFICATE
 _LISTDEVICEOPERATIONSRESPONSE.fields_by_name['operations'].message_type = yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION
 DESCRIPTOR.message_types_by_name['GetDeviceRequest'] = _GETDEVICEREQUEST
@@ -771,6 +863,13 @@ _sym_db.RegisterMessage(ListDevicesResponse)
 
 CreateDeviceRequest = _reflection.GeneratedProtocolMessageType('CreateDeviceRequest', (_message.Message,), dict(
 
+  TopicAliasesEntry = _reflection.GeneratedProtocolMessageType('TopicAliasesEntry', (_message.Message,), dict(
+    DESCRIPTOR = _CREATEDEVICEREQUEST_TOPICALIASESENTRY,
+    __module__ = 'yandex.cloud.iot.devices.v1.device_service_pb2'
+    # @@protoc_insertion_point(class_scope:yandex.cloud.iot.devices.v1.CreateDeviceRequest.TopicAliasesEntry)
+    ))
+  ,
+
   Certificate = _reflection.GeneratedProtocolMessageType('Certificate', (_message.Message,), dict(
     DESCRIPTOR = _CREATEDEVICEREQUEST_CERTIFICATE,
     __module__ = 'yandex.cloud.iot.devices.v1.device_service_pb2'
@@ -782,6 +881,7 @@ CreateDeviceRequest = _reflection.GeneratedProtocolMessageType('CreateDeviceRequ
   # @@protoc_insertion_point(class_scope:yandex.cloud.iot.devices.v1.CreateDeviceRequest)
   ))
 _sym_db.RegisterMessage(CreateDeviceRequest)
+_sym_db.RegisterMessage(CreateDeviceRequest.TopicAliasesEntry)
 _sym_db.RegisterMessage(CreateDeviceRequest.Certificate)
 
 CreateDeviceMetadata = _reflection.GeneratedProtocolMessageType('CreateDeviceMetadata', (_message.Message,), dict(
@@ -792,11 +892,19 @@ CreateDeviceMetadata = _reflection.GeneratedProtocolMessageType('CreateDeviceMet
 _sym_db.RegisterMessage(CreateDeviceMetadata)
 
 UpdateDeviceRequest = _reflection.GeneratedProtocolMessageType('UpdateDeviceRequest', (_message.Message,), dict(
+
+  TopicAliasesEntry = _reflection.GeneratedProtocolMessageType('TopicAliasesEntry', (_message.Message,), dict(
+    DESCRIPTOR = _UPDATEDEVICEREQUEST_TOPICALIASESENTRY,
+    __module__ = 'yandex.cloud.iot.devices.v1.device_service_pb2'
+    # @@protoc_insertion_point(class_scope:yandex.cloud.iot.devices.v1.UpdateDeviceRequest.TopicAliasesEntry)
+    ))
+  ,
   DESCRIPTOR = _UPDATEDEVICEREQUEST,
   __module__ = 'yandex.cloud.iot.devices.v1.device_service_pb2'
   # @@protoc_insertion_point(class_scope:yandex.cloud.iot.devices.v1.UpdateDeviceRequest)
   ))
 _sym_db.RegisterMessage(UpdateDeviceRequest)
+_sym_db.RegisterMessage(UpdateDeviceRequest.TopicAliasesEntry)
 
 UpdateDeviceMetadata = _reflection.GeneratedProtocolMessageType('UpdateDeviceMetadata', (_message.Message,), dict(
   DESCRIPTOR = _UPDATEDEVICEMETADATA,
@@ -883,9 +991,11 @@ _LISTDEVICESREQUEST.fields_by_name['registry_id']._options = None
 _LISTDEVICESREQUEST.fields_by_name['folder_id']._options = None
 _LISTDEVICESREQUEST.fields_by_name['page_size']._options = None
 _LISTDEVICESREQUEST.fields_by_name['page_token']._options = None
+_CREATEDEVICEREQUEST_TOPICALIASESENTRY._options = None
 _CREATEDEVICEREQUEST.fields_by_name['registry_id']._options = None
 _CREATEDEVICEREQUEST.fields_by_name['name']._options = None
 _CREATEDEVICEREQUEST.fields_by_name['description']._options = None
+_UPDATEDEVICEREQUEST_TOPICALIASESENTRY._options = None
 _UPDATEDEVICEREQUEST.fields_by_name['device_id']._options = None
 _UPDATEDEVICEREQUEST.fields_by_name['name']._options = None
 _UPDATEDEVICEREQUEST.fields_by_name['description']._options = None
@@ -907,8 +1017,8 @@ _DEVICESERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=2026,
-  serialized_end=3722,
+  serialized_start=2314,
+  serialized_end=4010,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',

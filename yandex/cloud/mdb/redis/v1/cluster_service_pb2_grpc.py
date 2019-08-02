@@ -101,6 +101,31 @@ class ClusterServiceStub(object):
         request_serializer=yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__service__pb2.DeleteClusterHostsRequest.SerializeToString,
         response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
         )
+    self.GetShard = channel.unary_unary(
+        '/yandex.cloud.mdb.redis.v1.ClusterService/GetShard',
+        request_serializer=yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__service__pb2.GetClusterShardRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__pb2.Shard.FromString,
+        )
+    self.ListShards = channel.unary_unary(
+        '/yandex.cloud.mdb.redis.v1.ClusterService/ListShards',
+        request_serializer=yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__service__pb2.ListClusterShardsRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__service__pb2.ListClusterShardsResponse.FromString,
+        )
+    self.AddShard = channel.unary_unary(
+        '/yandex.cloud.mdb.redis.v1.ClusterService/AddShard',
+        request_serializer=yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__service__pb2.AddClusterShardRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+        )
+    self.DeleteShard = channel.unary_unary(
+        '/yandex.cloud.mdb.redis.v1.ClusterService/DeleteShard',
+        request_serializer=yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__service__pb2.DeleteClusterShardRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+        )
+    self.Rebalance = channel.unary_unary(
+        '/yandex.cloud.mdb.redis.v1.ClusterService/Rebalance',
+        request_serializer=yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__service__pb2.RebalanceClusterRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+        )
 
 
 class ClusterServiceServicer(object):
@@ -230,6 +255,41 @@ class ClusterServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def GetShard(self, request, context):
+    """Returns the specified shard.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def ListShards(self, request, context):
+    """Retrieves a list of shards.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def AddShard(self, request, context):
+    """Creates a new shard.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def DeleteShard(self, request, context):
+    """Deletes the specified shard.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def Rebalance(self, request, context):
+    """Rebalances the cluster. Evenly distributes all the hash slots between the shards.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_ClusterServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -316,6 +376,31 @@ def add_ClusterServiceServicer_to_server(servicer, server):
       'DeleteHosts': grpc.unary_unary_rpc_method_handler(
           servicer.DeleteHosts,
           request_deserializer=yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__service__pb2.DeleteClusterHostsRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+      ),
+      'GetShard': grpc.unary_unary_rpc_method_handler(
+          servicer.GetShard,
+          request_deserializer=yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__service__pb2.GetClusterShardRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__pb2.Shard.SerializeToString,
+      ),
+      'ListShards': grpc.unary_unary_rpc_method_handler(
+          servicer.ListShards,
+          request_deserializer=yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__service__pb2.ListClusterShardsRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__service__pb2.ListClusterShardsResponse.SerializeToString,
+      ),
+      'AddShard': grpc.unary_unary_rpc_method_handler(
+          servicer.AddShard,
+          request_deserializer=yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__service__pb2.AddClusterShardRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+      ),
+      'DeleteShard': grpc.unary_unary_rpc_method_handler(
+          servicer.DeleteShard,
+          request_deserializer=yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__service__pb2.DeleteClusterShardRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+      ),
+      'Rebalance': grpc.unary_unary_rpc_method_handler(
+          servicer.Rebalance,
+          request_deserializer=yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__service__pb2.RebalanceClusterRequest.FromString,
           response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
       ),
   }

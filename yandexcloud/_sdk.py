@@ -40,17 +40,22 @@ def _service_for_ctor(stub_ctor):
 
 
 _supported_modules = {
+    'yandex.cloud.ai.stt': 'ai-stt',
+    'yandex.cloud.ai.translate': 'ai-translate',
+    'yandex.cloud.ai.vision': 'ai-vision',
     'yandex.cloud.compute': 'compute',
     'yandex.cloud.containerregistry': 'container-registry',
     'yandex.cloud.endpoint': 'endpoint',
     'yandex.cloud.iam': 'iam',
+    'yandex.cloud.iot.devices': 'iot-devices',
     'yandex.cloud.loadbalancer': 'load-balancer',
     'yandex.cloud.mdb.clickhouse': 'managed-clickhouse',
     'yandex.cloud.mdb.mongodb': 'managed-mongodb',
-    'yandex.cloud.mdb.postgresql': 'managed-postgresql',
     'yandex.cloud.mdb.mysql': 'managed-mysql',
+    'yandex.cloud.mdb.postgresql': 'managed-postgresql',
     'yandex.cloud.mdb.redis': 'managed-redis',
     'yandex.cloud.operation': 'operation',
     'yandex.cloud.resourcemanager': 'resource-manager',
+    'yandex.cloud.serverless.functions': 'serverless-functions',
     'yandex.cloud.vpc': 'vpc',
 }

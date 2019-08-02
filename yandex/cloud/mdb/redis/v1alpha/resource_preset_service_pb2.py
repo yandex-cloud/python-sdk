@@ -14,6 +14,7 @@ _sym_db = _symbol_database.Default()
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from yandex.cloud.mdb.redis.v1alpha import resource_preset_pb2 as yandex_dot_cloud_dot_mdb_dot_redis_dot_v1alpha_dot_resource__preset__pb2
+from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -21,9 +22,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.mdb.redis.v1alpha',
   syntax='proto3',
   serialized_options=_b('ZHgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/redis/v1alpha;redis'),
-  serialized_pb=_b('\n<yandex/cloud/mdb/redis/v1alpha/resource_preset_service.proto\x12\x1eyandex.cloud.mdb.redis.v1alpha\x1a\x1cgoogle/api/annotations.proto\x1a\x34yandex/cloud/mdb/redis/v1alpha/resource_preset.proto\"6\n\x18GetResourcePresetRequest\x12\x1a\n\x12resource_preset_id\x18\x01 \x01(\t\"C\n\x1aListResourcePresetsRequest\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x80\x01\n\x1bListResourcePresetsResponse\x12H\n\x10resource_presets\x18\x01 \x03(\x0b\x32..yandex.cloud.mdb.redis.v1alpha.ResourcePreset\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\x80\x03\n\x15ResourcePresetService\x12\xb4\x01\n\x03Get\x12\x38.yandex.cloud.mdb.redis.v1alpha.GetResourcePresetRequest\x1a..yandex.cloud.mdb.redis.v1alpha.ResourcePreset\"C\x82\xd3\xe4\x93\x02=\x12;/managed-redis/v1alpha/resourcePresets/{resource_preset_id}\x12\xaf\x01\n\x04List\x12:.yandex.cloud.mdb.redis.v1alpha.ListResourcePresetsRequest\x1a;.yandex.cloud.mdb.redis.v1alpha.ListResourcePresetsResponse\".\x82\xd3\xe4\x93\x02(\x12&/managed-redis/v1alpha/resourcePresetsBJZHgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/redis/v1alpha;redisb\x06proto3')
+  serialized_pb=_b('\n<yandex/cloud/mdb/redis/v1alpha/resource_preset_service.proto\x12\x1eyandex.cloud.mdb.redis.v1alpha\x1a\x1cgoogle/api/annotations.proto\x1a\x34yandex/cloud/mdb/redis/v1alpha/resource_preset.proto\x1a\x1dyandex/cloud/validation.proto\"<\n\x18GetResourcePresetRequest\x12 \n\x12resource_preset_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"C\n\x1aListResourcePresetsRequest\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x80\x01\n\x1bListResourcePresetsResponse\x12H\n\x10resource_presets\x18\x01 \x03(\x0b\x32..yandex.cloud.mdb.redis.v1alpha.ResourcePreset\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\x80\x03\n\x15ResourcePresetService\x12\xb4\x01\n\x03Get\x12\x38.yandex.cloud.mdb.redis.v1alpha.GetResourcePresetRequest\x1a..yandex.cloud.mdb.redis.v1alpha.ResourcePreset\"C\x82\xd3\xe4\x93\x02=\x12;/managed-redis/v1alpha/resourcePresets/{resource_preset_id}\x12\xaf\x01\n\x04List\x12:.yandex.cloud.mdb.redis.v1alpha.ListResourcePresetsRequest\x1a;.yandex.cloud.mdb.redis.v1alpha.ListResourcePresetsResponse\".\x82\xd3\xe4\x93\x02(\x12&/managed-redis/v1alpha/resourcePresetsBJZHgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/redis/v1alpha;redisb\x06proto3')
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_redis_dot_v1alpha_dot_resource__preset__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_redis_dot_v1alpha_dot_resource__preset__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
 
 
@@ -41,7 +42,7 @@ _GETRESOURCEPRESETREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -54,8 +55,8 @@ _GETRESOURCEPRESETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=180,
-  serialized_end=234,
+  serialized_start=211,
+  serialized_end=271,
 )
 
 
@@ -92,8 +93,8 @@ _LISTRESOURCEPRESETSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=236,
-  serialized_end=303,
+  serialized_start=273,
+  serialized_end=340,
 )
 
 
@@ -130,8 +131,8 @@ _LISTRESOURCEPRESETSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=306,
-  serialized_end=434,
+  serialized_start=343,
+  serialized_end=471,
 )
 
 _LISTRESOURCEPRESETSRESPONSE.fields_by_name['resource_presets'].message_type = yandex_dot_cloud_dot_mdb_dot_redis_dot_v1alpha_dot_resource__preset__pb2._RESOURCEPRESET
@@ -163,6 +164,7 @@ _sym_db.RegisterMessage(ListResourcePresetsResponse)
 
 
 DESCRIPTOR._options = None
+_GETRESOURCEPRESETREQUEST.fields_by_name['resource_preset_id']._options = None
 
 _RESOURCEPRESETSERVICE = _descriptor.ServiceDescriptor(
   name='ResourcePresetService',
@@ -170,8 +172,8 @@ _RESOURCEPRESETSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=437,
-  serialized_end=821,
+  serialized_start=474,
+  serialized_end=858,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',

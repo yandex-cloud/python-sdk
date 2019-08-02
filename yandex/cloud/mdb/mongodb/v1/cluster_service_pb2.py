@@ -32,7 +32,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.mdb.mongodb.v1',
   syntax='proto3',
   serialized_options=_b('ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1;mongodb'),
-  serialized_pb=_b('\n1yandex/cloud/mdb/mongodb/v1/cluster_service.proto\x12\x1byandex.cloud.mdb.mongodb.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/type/timeofday.proto\x1a\x1ayandex/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a(yandex/cloud/mdb/mongodb/v1/backup.proto\x1a)yandex/cloud/mdb/mongodb/v1/cluster.proto\x1a*yandex/cloud/mdb/mongodb/v1/database.proto\x1a&yandex/cloud/mdb/mongodb/v1/user.proto\x1a\x33yandex/cloud/mdb/mongodb/v1/config/mongodb3_6.proto\x1a\x33yandex/cloud/mdb/mongodb/v1/config/mongodb4_0.proto\"5\n\x11GetClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x90\x01\n\x13ListClustersRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"g\n\x14ListClustersResponse\x12\x36\n\x08\x63lusters\x18\x01 \x03(\x0b\x32$.yandex.cloud.mdb.mongodb.v1.Cluster\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xc8\x05\n\x14\x43reateClusterRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12+\n\x04name\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\r[a-zA-Z0-9_]*\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8e\x01\n\x06labels\x18\x04 \x03(\x0b\x32=.yandex.cloud.mdb.mongodb.v1.CreateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12K\n\x0b\x65nvironment\x18\x05 \x01(\x0e\x32\x30.yandex.cloud.mdb.mongodb.v1.Cluster.EnvironmentB\x04\xe8\xc7\x31\x01\x12\x42\n\x0b\x63onfig_spec\x18\x06 \x01(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.ConfigSpecB\x04\xe8\xc7\x31\x01\x12I\n\x0e\x64\x61tabase_specs\x18\x07 \x03(\x0b\x32).yandex.cloud.mdb.mongodb.v1.DatabaseSpecB\x06\x82\xc8\x31\x02>0\x12\x41\n\nuser_specs\x18\x08 \x03(\x0b\x32%.yandex.cloud.mdb.mongodb.v1.UserSpecB\x06\x82\xc8\x31\x02>0\x12\x41\n\nhost_specs\x18\t \x03(\x0b\x32%.yandex.cloud.mdb.mongodb.v1.HostSpecB\x06\x82\xc8\x31\x02>0\x12 \n\nnetwork_id\x18\n \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15\x43reateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\x87\x03\n\x14UpdateClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8e\x01\n\x06labels\x18\x04 \x03(\x0b\x32=.yandex.cloud.mdb.mongodb.v1.UpdateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12<\n\x0b\x63onfig_spec\x18\x05 \x01(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.ConfigSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15UpdateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"8\n\x14\x44\x65leteClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x44\x65leteClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"7\n\x13StartClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"*\n\x14StartClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"6\n\x12StopClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\")\n\x13StopClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"c\n\x12MoveClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12+\n\x15\x64\x65stination_folder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"b\n\x13MoveClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x18\n\x10source_folder_id\x18\x02 \x01(\t\x12\x1d\n\x15\x64\x65stination_folder_id\x18\x03 \x01(\t\"8\n\x14\x42\x61\x63kupClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x42\x61\x63kupClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\xb5\x04\n\x15RestoreClusterRequest\x12\x17\n\tbackup_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12,\n\x04name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8f\x01\n\x06labels\x18\x04 \x03(\x0b\x32>.yandex.cloud.mdb.mongodb.v1.RestoreClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12K\n\x0b\x65nvironment\x18\x05 \x01(\x0e\x32\x30.yandex.cloud.mdb.mongodb.v1.Cluster.EnvironmentB\x04\xe8\xc7\x31\x01\x12\x42\n\x0b\x63onfig_spec\x18\x06 \x01(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.ConfigSpecB\x04\xe8\xc7\x31\x01\x12\x41\n\nhost_specs\x18\x07 \x03(\x0b\x32%.yandex.cloud.mdb.mongodb.v1.HostSpecB\x06\x82\xc8\x31\x02>0\x12 \n\nnetwork_id\x18\x08 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"?\n\x16RestoreClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tbackup_id\x18\x02 \x01(\t\"\xb0\x01\n\tLogRecord\x12-\n\ttimestamp\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x44\n\x07message\x18\x02 \x03(\x0b\x32\x33.yandex.cloud.mdb.mongodb.v1.LogRecord.MessageEntry\x1a.\n\x0cMessageEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xfb\x02\n\x16ListClusterLogsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x15\n\rcolumn_filter\x18\x02 \x03(\t\x12U\n\x0cservice_type\x18\x03 \x01(\x0e\x32?.yandex.cloud.mdb.mongodb.v1.ListClusterLogsRequest.ServiceType\x12-\n\tfrom_time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07to_time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1d\n\tpage_size\x18\x06 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x07 \x01(\tB\t\x8a\xc8\x31\x05<=100\"7\n\x0bServiceType\x12\x1c\n\x18SERVICE_TYPE_UNSPECIFIED\x10\x00\x12\n\n\x06MONGOD\x10\x01\"h\n\x17ListClusterLogsResponse\x12\x34\n\x04logs\x18\x01 \x03(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.LogRecord\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"~\n\x1cListClusterOperationsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"o\n\x1dListClusterOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"{\n\x19ListClusterBackupsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"k\n\x1aListClusterBackupsResponse\x12\x34\n\x07\x62\x61\x63kups\x18\x01 \x03(\x0b\x32#.yandex.cloud.mdb.mongodb.v1.Backup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"y\n\x17ListClusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"e\n\x18ListClusterHostsResponse\x12\x30\n\x05hosts\x18\x01 \x03(\x0b\x32!.yandex.cloud.mdb.mongodb.v1.Host\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"}\n\x16\x41\x64\x64\x43lusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x41\n\nhost_specs\x18\x02 \x03(\x0b\x32%.yandex.cloud.mdb.mongodb.v1.HostSpecB\x06\x82\xc8\x31\x02>0\"A\n\x17\x41\x64\x64\x43lusterHostsMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nhost_names\x18\x02 \x03(\t\"b\n\x19\x44\x65leteClusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12#\n\nhost_names\x18\x02 \x03(\tB\x0f\x82\xc8\x31\x02>0\x8a\xc8\x31\x05<=253\"D\n\x1a\x44\x65leteClusterHostsMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nhost_names\x18\x02 \x03(\t\"\xcf\x03\n\x1c\x45nableClusterShardingRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12Z\n\x08mongocfg\x18\x02 \x01(\x0b\x32\x42.yandex.cloud.mdb.mongodb.v1.EnableClusterShardingRequest.MongoCfgB\x04\xe8\xc7\x31\x01\x12V\n\x06mongos\x18\x03 \x01(\x0b\x32@.yandex.cloud.mdb.mongodb.v1.EnableClusterShardingRequest.MongosB\x04\xe8\xc7\x31\x01\x12\x41\n\nhost_specs\x18\x04 \x03(\x0b\x32%.yandex.cloud.mdb.mongodb.v1.HostSpecB\x06\x82\xc8\x31\x02>0\x1aK\n\x08MongoCfg\x12?\n\tresources\x18\x01 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.ResourcesB\x04\xe8\xc7\x31\x01\x1aI\n\x06Mongos\x12?\n\tresources\x18\x01 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.ResourcesB\x04\xe8\xc7\x31\x01\"3\n\x1d\x45nableClusterShardingMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"n\n\x16GetClusterShardRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\nshard_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"z\n\x18ListClusterShardsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"h\n\x19ListClusterShardsResponse\x12\x32\n\x06shards\x18\x01 \x03(\x0b\x32\".yandex.cloud.mdb.mongodb.v1.Shard\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xb1\x01\n\x16\x41\x64\x64\x43lusterShardRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\nshard_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x41\n\nhost_specs\x18\x03 \x03(\x0b\x32%.yandex.cloud.mdb.mongodb.v1.HostSpecB\x06\x82\xc8\x31\x02>0\"A\n\x17\x41\x64\x64\x43lusterShardMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nshard_name\x18\x02 \x01(\t\"q\n\x19\x44\x65leteClusterShardRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\nshard_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"D\n\x1a\x44\x65leteClusterShardMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nshard_name\x18\x02 \x01(\t\"\xc2\x01\n\x08HostSpec\x12\x19\n\x07zone_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1b\n\tsubnet_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x18\n\x10\x61ssign_public_ip\x18\x03 \x01(\x08\x12\x34\n\x04type\x18\x04 \x01(\x0e\x32&.yandex.cloud.mdb.mongodb.v1.Host.Type\x12.\n\nshard_name\x18\x05 \x01(\tB\x1a\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"\x85\x05\n\x0eMongodbSpec3_6\x12\x42\n\x06mongod\x18\x01 \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6.Mongod\x12\x46\n\x08mongocfg\x18\x02 \x01(\x0b\x32\x34.yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6.MongoCfg\x12\x42\n\x06mongos\x18\x03 \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6.Mongos\x1a\x88\x01\n\x06Mongod\x12\x43\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x33.yandex.cloud.mdb.mongodb.v1.config.MongodConfig3_6\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x8c\x01\n\x08MongoCfg\x12\x45\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x35.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig3_6\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x88\x01\n\x06Mongos\x12\x43\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x33.yandex.cloud.mdb.mongodb.v1.config.MongosConfig3_6\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\"\x85\x05\n\x0eMongodbSpec4_0\x12\x42\n\x06mongod\x18\x01 \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0.Mongod\x12\x46\n\x08mongocfg\x18\x02 \x01(\x0b\x32\x34.yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0.MongoCfg\x12\x42\n\x06mongos\x18\x03 \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0.Mongos\x1a\x88\x01\n\x06Mongod\x12\x43\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x33.yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_0\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x8c\x01\n\x08MongoCfg\x12\x45\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x35.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig4_0\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x88\x01\n\x06Mongos\x12\x43\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x33.yandex.cloud.mdb.mongodb.v1.config.MongosConfig4_0\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\"\x9b\x02\n\nConfigSpec\x12\x0f\n\x07version\x18\x01 \x01(\t\x12%\n\x1d\x66\x65\x61ture_compatibility_version\x18\x05 \x01(\t\x12G\n\x10mongodb_spec_3_6\x18\x02 \x01(\x0b\x32+.yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6H\x00\x12G\n\x10mongodb_spec_4_0\x18\x04 \x01(\x0b\x32+.yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0H\x00\x12\x33\n\x13\x62\x61\x63kup_window_start\x18\x03 \x01(\x0b\x32\x16.google.type.TimeOfDayB\x0e\n\x0cmongodb_spec2\xbf\x1f\n\x0e\x43lusterService\x12\x8e\x01\n\x03Get\x12..yandex.cloud.mdb.mongodb.v1.GetClusterRequest\x1a$.yandex.cloud.mdb.mongodb.v1.Cluster\"1\x82\xd3\xe4\x93\x02+\x12)/managed-mongodb/v1/clusters/{cluster_id}\x12\x91\x01\n\x04List\x12\x30.yandex.cloud.mdb.mongodb.v1.ListClustersRequest\x1a\x31.yandex.cloud.mdb.mongodb.v1.ListClustersResponse\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/managed-mongodb/v1/clusters\x12\xab\x01\n\x06\x43reate\x12\x31.yandex.cloud.mdb.mongodb.v1.CreateClusterRequest\x1a!.yandex.cloud.operation.Operation\"K\x82\xd3\xe4\x93\x02!\"\x1c/managed-mongodb/v1/clusters:\x01*\xb2\xd2* \n\x15\x43reateClusterMetadata\x12\x07\x43luster\x12\xb8\x01\n\x06Update\x12\x31.yandex.cloud.mdb.mongodb.v1.UpdateClusterRequest\x1a!.yandex.cloud.operation.Operation\"X\x82\xd3\xe4\x93\x02.2)/managed-mongodb/v1/clusters/{cluster_id}:\x01*\xb2\xd2* \n\x15UpdateClusterMetadata\x12\x07\x43luster\x12\xc3\x01\n\x06\x44\x65lete\x12\x31.yandex.cloud.mdb.mongodb.v1.DeleteClusterRequest\x1a!.yandex.cloud.operation.Operation\"c\x82\xd3\xe4\x93\x02+*)/managed-mongodb/v1/clusters/{cluster_id}\xb2\xd2*.\n\x15\x44\x65leteClusterMetadata\x12\x15google.protobuf.Empty\x12\xb8\x01\n\x05Start\x12\x30.yandex.cloud.mdb.mongodb.v1.StartClusterRequest\x1a!.yandex.cloud.operation.Operation\"Z\x82\xd3\xe4\x93\x02\x31\"//managed-mongodb/v1/clusters/{cluster_id}:start\xb2\xd2*\x1f\n\x14StartClusterMetadata\x12\x07\x43luster\x12\xb4\x01\n\x04Stop\x12/.yandex.cloud.mdb.mongodb.v1.StopClusterRequest\x1a!.yandex.cloud.operation.Operation\"X\x82\xd3\xe4\x93\x02\x30\"./managed-mongodb/v1/clusters/{cluster_id}:stop\xb2\xd2*\x1e\n\x13StopClusterMetadata\x12\x07\x43luster\x12\xb7\x01\n\x04Move\x12/.yandex.cloud.mdb.mongodb.v1.MoveClusterRequest\x1a!.yandex.cloud.operation.Operation\"[\x82\xd3\xe4\x93\x02\x33\"./managed-mongodb/v1/clusters/{cluster_id}:move:\x01*\xb2\xd2*\x1e\n\x13MoveClusterMetadata\x12\x07\x43luster\x12\xbc\x01\n\x06\x42\x61\x63kup\x12\x31.yandex.cloud.mdb.mongodb.v1.BackupClusterRequest\x1a!.yandex.cloud.operation.Operation\"\\\x82\xd3\xe4\x93\x02\x32\"0/managed-mongodb/v1/clusters/{cluster_id}:backup\xb2\xd2* \n\x15\x42\x61\x63kupClusterMetadata\x12\x07\x43luster\x12\xb6\x01\n\x07Restore\x12\x32.yandex.cloud.mdb.mongodb.v1.RestoreClusterRequest\x1a!.yandex.cloud.operation.Operation\"T\x82\xd3\xe4\x93\x02)\"$/managed-mongodb/v1/clusters:restore:\x01*\xb2\xd2*!\n\x16RestoreClusterMetadata\x12\x07\x43luster\x12\xad\x01\n\x08ListLogs\x12\x33.yandex.cloud.mdb.mongodb.v1.ListClusterLogsRequest\x1a\x34.yandex.cloud.mdb.mongodb.v1.ListClusterLogsResponse\"6\x82\xd3\xe4\x93\x02\x30\x12./managed-mongodb/v1/clusters/{cluster_id}:logs\x12\xc5\x01\n\x0eListOperations\x12\x39.yandex.cloud.mdb.mongodb.v1.ListClusterOperationsRequest\x1a:.yandex.cloud.mdb.mongodb.v1.ListClusterOperationsResponse\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/managed-mongodb/v1/clusters/{cluster_id}/operations\x12\xb9\x01\n\x0bListBackups\x12\x36.yandex.cloud.mdb.mongodb.v1.ListClusterBackupsRequest\x1a\x37.yandex.cloud.mdb.mongodb.v1.ListClusterBackupsResponse\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/managed-mongodb/v1/clusters/{cluster_id}/backups\x12\xb1\x01\n\tListHosts\x12\x34.yandex.cloud.mdb.mongodb.v1.ListClusterHostsRequest\x1a\x35.yandex.cloud.mdb.mongodb.v1.ListClusterHostsResponse\"7\x82\xd3\xe4\x93\x02\x31\x12//managed-mongodb/v1/clusters/{cluster_id}/hosts\x12\xde\x01\n\x08\x41\x64\x64Hosts\x12\x33.yandex.cloud.mdb.mongodb.v1.AddClusterHostsRequest\x1a!.yandex.cloud.operation.Operation\"z\x82\xd3\xe4\x93\x02@\";/managed-mongodb/v1/clusters/{cluster_id}/hosts:batchCreate:\x01*\xb2\xd2*0\n\x17\x41\x64\x64\x43lusterHostsMetadata\x12\x15google.protobuf.Empty\x12\xe7\x01\n\x0b\x44\x65leteHosts\x12\x36.yandex.cloud.mdb.mongodb.v1.DeleteClusterHostsRequest\x1a!.yandex.cloud.operation.Operation\"}\x82\xd3\xe4\x93\x02@\";/managed-mongodb/v1/clusters/{cluster_id}/hosts:batchDelete:\x01*\xb2\xd2*3\n\x1a\x44\x65leteClusterHostsMetadata\x12\x15google.protobuf.Empty\x12\xed\x01\n\x0e\x45nableSharding\x12\x39.yandex.cloud.mdb.mongodb.v1.EnableClusterShardingRequest\x1a!.yandex.cloud.operation.Operation\"}\x82\xd3\xe4\x93\x02=\"8/managed-mongodb/v1/clusters/{cluster_id}:enableSharding:\x01*\xb2\xd2*6\n\x1d\x45nableClusterShardingMetadata\x12\x15google.protobuf.Empty\x12\xaa\x01\n\x08GetShard\x12\x33.yandex.cloud.mdb.mongodb.v1.GetClusterShardRequest\x1a\".yandex.cloud.mdb.mongodb.v1.Shard\"E\x82\xd3\xe4\x93\x02?\x12=/managed-mongodb/v1/clusters/{cluster_id}/shards/{shard_name}\x12\xb5\x01\n\nListShards\x12\x35.yandex.cloud.mdb.mongodb.v1.ListClusterShardsRequest\x1a\x36.yandex.cloud.mdb.mongodb.v1.ListClusterShardsResponse\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/managed-mongodb/v1/clusters/{cluster_id}/shards\x12\xc3\x01\n\x08\x41\x64\x64Shard\x12\x33.yandex.cloud.mdb.mongodb.v1.AddClusterShardRequest\x1a!.yandex.cloud.operation.Operation\"_\x82\xd3\xe4\x93\x02\x35\"0/managed-mongodb/v1/clusters/{cluster_id}/shards:\x01*\xb2\xd2* \n\x17\x41\x64\x64\x43lusterShardMetadata\x12\x05Shard\x12\xe6\x01\n\x0b\x44\x65leteShard\x12\x36.yandex.cloud.mdb.mongodb.v1.DeleteClusterShardRequest\x1a!.yandex.cloud.operation.Operation\"|\x82\xd3\xe4\x93\x02?*=/managed-mongodb/v1/clusters/{cluster_id}/shards/{shard_name}\xb2\xd2*3\n\x1a\x44\x65leteClusterShardMetadata\x12\x15google.protobuf.EmptyBIZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1;mongodbb\x06proto3')
+  serialized_pb=_b('\n1yandex/cloud/mdb/mongodb/v1/cluster_service.proto\x12\x1byandex.cloud.mdb.mongodb.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/type/timeofday.proto\x1a\x1ayandex/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a(yandex/cloud/mdb/mongodb/v1/backup.proto\x1a)yandex/cloud/mdb/mongodb/v1/cluster.proto\x1a*yandex/cloud/mdb/mongodb/v1/database.proto\x1a&yandex/cloud/mdb/mongodb/v1/user.proto\x1a\x33yandex/cloud/mdb/mongodb/v1/config/mongodb3_6.proto\x1a\x33yandex/cloud/mdb/mongodb/v1/config/mongodb4_0.proto\"5\n\x11GetClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x90\x01\n\x13ListClustersRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"g\n\x14ListClustersResponse\x12\x36\n\x08\x63lusters\x18\x01 \x03(\x0b\x32$.yandex.cloud.mdb.mongodb.v1.Cluster\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xc8\x05\n\x14\x43reateClusterRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12+\n\x04name\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\r[a-zA-Z0-9_]*\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8e\x01\n\x06labels\x18\x04 \x03(\x0b\x32=.yandex.cloud.mdb.mongodb.v1.CreateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12K\n\x0b\x65nvironment\x18\x05 \x01(\x0e\x32\x30.yandex.cloud.mdb.mongodb.v1.Cluster.EnvironmentB\x04\xe8\xc7\x31\x01\x12\x42\n\x0b\x63onfig_spec\x18\x06 \x01(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.ConfigSpecB\x04\xe8\xc7\x31\x01\x12I\n\x0e\x64\x61tabase_specs\x18\x07 \x03(\x0b\x32).yandex.cloud.mdb.mongodb.v1.DatabaseSpecB\x06\x82\xc8\x31\x02>0\x12\x41\n\nuser_specs\x18\x08 \x03(\x0b\x32%.yandex.cloud.mdb.mongodb.v1.UserSpecB\x06\x82\xc8\x31\x02>0\x12\x41\n\nhost_specs\x18\t \x03(\x0b\x32%.yandex.cloud.mdb.mongodb.v1.HostSpecB\x06\x82\xc8\x31\x02>0\x12 \n\nnetwork_id\x18\n \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15\x43reateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\x87\x03\n\x14UpdateClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8e\x01\n\x06labels\x18\x04 \x03(\x0b\x32=.yandex.cloud.mdb.mongodb.v1.UpdateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12<\n\x0b\x63onfig_spec\x18\x05 \x01(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.ConfigSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15UpdateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"8\n\x14\x44\x65leteClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x44\x65leteClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"7\n\x13StartClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"*\n\x14StartClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"6\n\x12StopClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\")\n\x13StopClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"c\n\x12MoveClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12+\n\x15\x64\x65stination_folder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"b\n\x13MoveClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x18\n\x10source_folder_id\x18\x02 \x01(\t\x12\x1d\n\x15\x64\x65stination_folder_id\x18\x03 \x01(\t\"8\n\x14\x42\x61\x63kupClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x42\x61\x63kupClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\xd2\x04\n\x15RestoreClusterRequest\x12\x17\n\tbackup_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12,\n\x04name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8f\x01\n\x06labels\x18\x04 \x03(\x0b\x32>.yandex.cloud.mdb.mongodb.v1.RestoreClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12K\n\x0b\x65nvironment\x18\x05 \x01(\x0e\x32\x30.yandex.cloud.mdb.mongodb.v1.Cluster.EnvironmentB\x04\xe8\xc7\x31\x01\x12\x42\n\x0b\x63onfig_spec\x18\x06 \x01(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.ConfigSpecB\x04\xe8\xc7\x31\x01\x12\x41\n\nhost_specs\x18\x07 \x03(\x0b\x32%.yandex.cloud.mdb.mongodb.v1.HostSpecB\x06\x82\xc8\x31\x02>0\x12 \n\nnetwork_id\x18\x08 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1b\n\tfolder_id\x18\t \x01(\tB\x08\x8a\xc8\x31\x04<=50\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"?\n\x16RestoreClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tbackup_id\x18\x02 \x01(\t\"\xb0\x01\n\tLogRecord\x12-\n\ttimestamp\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x44\n\x07message\x18\x02 \x03(\x0b\x32\x33.yandex.cloud.mdb.mongodb.v1.LogRecord.MessageEntry\x1a.\n\x0cMessageEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xfb\x02\n\x16ListClusterLogsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x15\n\rcolumn_filter\x18\x02 \x03(\t\x12U\n\x0cservice_type\x18\x03 \x01(\x0e\x32?.yandex.cloud.mdb.mongodb.v1.ListClusterLogsRequest.ServiceType\x12-\n\tfrom_time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07to_time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1d\n\tpage_size\x18\x06 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x07 \x01(\tB\t\x8a\xc8\x31\x05<=100\"7\n\x0bServiceType\x12\x1c\n\x18SERVICE_TYPE_UNSPECIFIED\x10\x00\x12\n\n\x06MONGOD\x10\x01\"h\n\x17ListClusterLogsResponse\x12\x34\n\x04logs\x18\x01 \x03(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.LogRecord\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"~\n\x1cListClusterOperationsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"o\n\x1dListClusterOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"{\n\x19ListClusterBackupsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"k\n\x1aListClusterBackupsResponse\x12\x34\n\x07\x62\x61\x63kups\x18\x01 \x03(\x0b\x32#.yandex.cloud.mdb.mongodb.v1.Backup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"y\n\x17ListClusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"e\n\x18ListClusterHostsResponse\x12\x30\n\x05hosts\x18\x01 \x03(\x0b\x32!.yandex.cloud.mdb.mongodb.v1.Host\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"}\n\x16\x41\x64\x64\x43lusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x41\n\nhost_specs\x18\x02 \x03(\x0b\x32%.yandex.cloud.mdb.mongodb.v1.HostSpecB\x06\x82\xc8\x31\x02>0\"A\n\x17\x41\x64\x64\x43lusterHostsMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nhost_names\x18\x02 \x03(\t\"b\n\x19\x44\x65leteClusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12#\n\nhost_names\x18\x02 \x03(\tB\x0f\x82\xc8\x31\x02>0\x8a\xc8\x31\x05<=253\"D\n\x1a\x44\x65leteClusterHostsMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nhost_names\x18\x02 \x03(\t\"\xcf\x03\n\x1c\x45nableClusterShardingRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12Z\n\x08mongocfg\x18\x02 \x01(\x0b\x32\x42.yandex.cloud.mdb.mongodb.v1.EnableClusterShardingRequest.MongoCfgB\x04\xe8\xc7\x31\x01\x12V\n\x06mongos\x18\x03 \x01(\x0b\x32@.yandex.cloud.mdb.mongodb.v1.EnableClusterShardingRequest.MongosB\x04\xe8\xc7\x31\x01\x12\x41\n\nhost_specs\x18\x04 \x03(\x0b\x32%.yandex.cloud.mdb.mongodb.v1.HostSpecB\x06\x82\xc8\x31\x02>0\x1aK\n\x08MongoCfg\x12?\n\tresources\x18\x01 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.ResourcesB\x04\xe8\xc7\x31\x01\x1aI\n\x06Mongos\x12?\n\tresources\x18\x01 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.ResourcesB\x04\xe8\xc7\x31\x01\"3\n\x1d\x45nableClusterShardingMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"n\n\x16GetClusterShardRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\nshard_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"z\n\x18ListClusterShardsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"h\n\x19ListClusterShardsResponse\x12\x32\n\x06shards\x18\x01 \x03(\x0b\x32\".yandex.cloud.mdb.mongodb.v1.Shard\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xb1\x01\n\x16\x41\x64\x64\x43lusterShardRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\nshard_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x41\n\nhost_specs\x18\x03 \x03(\x0b\x32%.yandex.cloud.mdb.mongodb.v1.HostSpecB\x06\x82\xc8\x31\x02>0\"A\n\x17\x41\x64\x64\x43lusterShardMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nshard_name\x18\x02 \x01(\t\"q\n\x19\x44\x65leteClusterShardRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\nshard_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"D\n\x1a\x44\x65leteClusterShardMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nshard_name\x18\x02 \x01(\t\"\xc2\x01\n\x08HostSpec\x12\x19\n\x07zone_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1b\n\tsubnet_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x18\n\x10\x61ssign_public_ip\x18\x03 \x01(\x08\x12\x34\n\x04type\x18\x04 \x01(\x0e\x32&.yandex.cloud.mdb.mongodb.v1.Host.Type\x12.\n\nshard_name\x18\x05 \x01(\tB\x1a\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"\x85\x05\n\x0eMongodbSpec3_6\x12\x42\n\x06mongod\x18\x01 \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6.Mongod\x12\x46\n\x08mongocfg\x18\x02 \x01(\x0b\x32\x34.yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6.MongoCfg\x12\x42\n\x06mongos\x18\x03 \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6.Mongos\x1a\x88\x01\n\x06Mongod\x12\x43\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x33.yandex.cloud.mdb.mongodb.v1.config.MongodConfig3_6\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x8c\x01\n\x08MongoCfg\x12\x45\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x35.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig3_6\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x88\x01\n\x06Mongos\x12\x43\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x33.yandex.cloud.mdb.mongodb.v1.config.MongosConfig3_6\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\"\x85\x05\n\x0eMongodbSpec4_0\x12\x42\n\x06mongod\x18\x01 \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0.Mongod\x12\x46\n\x08mongocfg\x18\x02 \x01(\x0b\x32\x34.yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0.MongoCfg\x12\x42\n\x06mongos\x18\x03 \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0.Mongos\x1a\x88\x01\n\x06Mongod\x12\x43\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x33.yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_0\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x8c\x01\n\x08MongoCfg\x12\x45\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x35.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig4_0\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x88\x01\n\x06Mongos\x12\x43\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x33.yandex.cloud.mdb.mongodb.v1.config.MongosConfig4_0\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\"\xd0\x02\n\nConfigSpec\x12\x0f\n\x07version\x18\x01 \x01(\t\x12%\n\x1d\x66\x65\x61ture_compatibility_version\x18\x05 \x01(\t\x12G\n\x10mongodb_spec_3_6\x18\x02 \x01(\x0b\x32+.yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6H\x00\x12G\n\x10mongodb_spec_4_0\x18\x04 \x01(\x0b\x32+.yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0H\x00\x12\x33\n\x13\x62\x61\x63kup_window_start\x18\x03 \x01(\x0b\x32\x16.google.type.TimeOfDay\x12\x33\n\x06\x61\x63\x63\x65ss\x18\x06 \x01(\x0b\x32#.yandex.cloud.mdb.mongodb.v1.AccessB\x0e\n\x0cmongodb_spec2\xbf\x1f\n\x0e\x43lusterService\x12\x8e\x01\n\x03Get\x12..yandex.cloud.mdb.mongodb.v1.GetClusterRequest\x1a$.yandex.cloud.mdb.mongodb.v1.Cluster\"1\x82\xd3\xe4\x93\x02+\x12)/managed-mongodb/v1/clusters/{cluster_id}\x12\x91\x01\n\x04List\x12\x30.yandex.cloud.mdb.mongodb.v1.ListClustersRequest\x1a\x31.yandex.cloud.mdb.mongodb.v1.ListClustersResponse\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/managed-mongodb/v1/clusters\x12\xab\x01\n\x06\x43reate\x12\x31.yandex.cloud.mdb.mongodb.v1.CreateClusterRequest\x1a!.yandex.cloud.operation.Operation\"K\x82\xd3\xe4\x93\x02!\"\x1c/managed-mongodb/v1/clusters:\x01*\xb2\xd2* \n\x15\x43reateClusterMetadata\x12\x07\x43luster\x12\xb8\x01\n\x06Update\x12\x31.yandex.cloud.mdb.mongodb.v1.UpdateClusterRequest\x1a!.yandex.cloud.operation.Operation\"X\x82\xd3\xe4\x93\x02.2)/managed-mongodb/v1/clusters/{cluster_id}:\x01*\xb2\xd2* \n\x15UpdateClusterMetadata\x12\x07\x43luster\x12\xc3\x01\n\x06\x44\x65lete\x12\x31.yandex.cloud.mdb.mongodb.v1.DeleteClusterRequest\x1a!.yandex.cloud.operation.Operation\"c\x82\xd3\xe4\x93\x02+*)/managed-mongodb/v1/clusters/{cluster_id}\xb2\xd2*.\n\x15\x44\x65leteClusterMetadata\x12\x15google.protobuf.Empty\x12\xb8\x01\n\x05Start\x12\x30.yandex.cloud.mdb.mongodb.v1.StartClusterRequest\x1a!.yandex.cloud.operation.Operation\"Z\x82\xd3\xe4\x93\x02\x31\"//managed-mongodb/v1/clusters/{cluster_id}:start\xb2\xd2*\x1f\n\x14StartClusterMetadata\x12\x07\x43luster\x12\xb4\x01\n\x04Stop\x12/.yandex.cloud.mdb.mongodb.v1.StopClusterRequest\x1a!.yandex.cloud.operation.Operation\"X\x82\xd3\xe4\x93\x02\x30\"./managed-mongodb/v1/clusters/{cluster_id}:stop\xb2\xd2*\x1e\n\x13StopClusterMetadata\x12\x07\x43luster\x12\xb7\x01\n\x04Move\x12/.yandex.cloud.mdb.mongodb.v1.MoveClusterRequest\x1a!.yandex.cloud.operation.Operation\"[\x82\xd3\xe4\x93\x02\x33\"./managed-mongodb/v1/clusters/{cluster_id}:move:\x01*\xb2\xd2*\x1e\n\x13MoveClusterMetadata\x12\x07\x43luster\x12\xbc\x01\n\x06\x42\x61\x63kup\x12\x31.yandex.cloud.mdb.mongodb.v1.BackupClusterRequest\x1a!.yandex.cloud.operation.Operation\"\\\x82\xd3\xe4\x93\x02\x32\"0/managed-mongodb/v1/clusters/{cluster_id}:backup\xb2\xd2* \n\x15\x42\x61\x63kupClusterMetadata\x12\x07\x43luster\x12\xb6\x01\n\x07Restore\x12\x32.yandex.cloud.mdb.mongodb.v1.RestoreClusterRequest\x1a!.yandex.cloud.operation.Operation\"T\x82\xd3\xe4\x93\x02)\"$/managed-mongodb/v1/clusters:restore:\x01*\xb2\xd2*!\n\x16RestoreClusterMetadata\x12\x07\x43luster\x12\xad\x01\n\x08ListLogs\x12\x33.yandex.cloud.mdb.mongodb.v1.ListClusterLogsRequest\x1a\x34.yandex.cloud.mdb.mongodb.v1.ListClusterLogsResponse\"6\x82\xd3\xe4\x93\x02\x30\x12./managed-mongodb/v1/clusters/{cluster_id}:logs\x12\xc5\x01\n\x0eListOperations\x12\x39.yandex.cloud.mdb.mongodb.v1.ListClusterOperationsRequest\x1a:.yandex.cloud.mdb.mongodb.v1.ListClusterOperationsResponse\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/managed-mongodb/v1/clusters/{cluster_id}/operations\x12\xb9\x01\n\x0bListBackups\x12\x36.yandex.cloud.mdb.mongodb.v1.ListClusterBackupsRequest\x1a\x37.yandex.cloud.mdb.mongodb.v1.ListClusterBackupsResponse\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/managed-mongodb/v1/clusters/{cluster_id}/backups\x12\xb1\x01\n\tListHosts\x12\x34.yandex.cloud.mdb.mongodb.v1.ListClusterHostsRequest\x1a\x35.yandex.cloud.mdb.mongodb.v1.ListClusterHostsResponse\"7\x82\xd3\xe4\x93\x02\x31\x12//managed-mongodb/v1/clusters/{cluster_id}/hosts\x12\xde\x01\n\x08\x41\x64\x64Hosts\x12\x33.yandex.cloud.mdb.mongodb.v1.AddClusterHostsRequest\x1a!.yandex.cloud.operation.Operation\"z\x82\xd3\xe4\x93\x02@\";/managed-mongodb/v1/clusters/{cluster_id}/hosts:batchCreate:\x01*\xb2\xd2*0\n\x17\x41\x64\x64\x43lusterHostsMetadata\x12\x15google.protobuf.Empty\x12\xe7\x01\n\x0b\x44\x65leteHosts\x12\x36.yandex.cloud.mdb.mongodb.v1.DeleteClusterHostsRequest\x1a!.yandex.cloud.operation.Operation\"}\x82\xd3\xe4\x93\x02@\";/managed-mongodb/v1/clusters/{cluster_id}/hosts:batchDelete:\x01*\xb2\xd2*3\n\x1a\x44\x65leteClusterHostsMetadata\x12\x15google.protobuf.Empty\x12\xed\x01\n\x0e\x45nableSharding\x12\x39.yandex.cloud.mdb.mongodb.v1.EnableClusterShardingRequest\x1a!.yandex.cloud.operation.Operation\"}\x82\xd3\xe4\x93\x02=\"8/managed-mongodb/v1/clusters/{cluster_id}:enableSharding:\x01*\xb2\xd2*6\n\x1d\x45nableClusterShardingMetadata\x12\x15google.protobuf.Empty\x12\xaa\x01\n\x08GetShard\x12\x33.yandex.cloud.mdb.mongodb.v1.GetClusterShardRequest\x1a\".yandex.cloud.mdb.mongodb.v1.Shard\"E\x82\xd3\xe4\x93\x02?\x12=/managed-mongodb/v1/clusters/{cluster_id}/shards/{shard_name}\x12\xb5\x01\n\nListShards\x12\x35.yandex.cloud.mdb.mongodb.v1.ListClusterShardsRequest\x1a\x36.yandex.cloud.mdb.mongodb.v1.ListClusterShardsResponse\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/managed-mongodb/v1/clusters/{cluster_id}/shards\x12\xc3\x01\n\x08\x41\x64\x64Shard\x12\x33.yandex.cloud.mdb.mongodb.v1.AddClusterShardRequest\x1a!.yandex.cloud.operation.Operation\"_\x82\xd3\xe4\x93\x02\x35\"0/managed-mongodb/v1/clusters/{cluster_id}/shards:\x01*\xb2\xd2* \n\x17\x41\x64\x64\x43lusterShardMetadata\x12\x05Shard\x12\xe6\x01\n\x0b\x44\x65leteShard\x12\x36.yandex.cloud.mdb.mongodb.v1.DeleteClusterShardRequest\x1a!.yandex.cloud.operation.Operation\"|\x82\xd3\xe4\x93\x02?*=/managed-mongodb/v1/clusters/{cluster_id}/shards/{shard_name}\xb2\xd2*3\n\x1a\x44\x65leteClusterShardMetadata\x12\x15google.protobuf.EmptyBIZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1;mongodbb\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_type_dot_timeofday__pb2.DESCRIPTOR,yandex_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_backup__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_cluster__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_database__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_user__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb3__6__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb4__0__pb2.DESCRIPTOR,])
 
@@ -55,8 +55,8 @@ _LISTCLUSTERLOGSREQUEST_SERVICETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3832,
-  serialized_end=3887,
+  serialized_start=3861,
+  serialized_end=3916,
 )
 _sym_db.RegisterEnumDescriptor(_LISTCLUSTERLOGSREQUEST_SERVICETYPE)
 
@@ -902,6 +902,13 @@ _RESTORECLUSTERREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='folder_id', full_name='yandex.cloud.mdb.mongodb.v1.RestoreClusterRequest.folder_id', index=8,
+      number=9, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3101\004<=50'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -915,7 +922,7 @@ _RESTORECLUSTERREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=2696,
-  serialized_end=3261,
+  serialized_end=3290,
 )
 
 
@@ -952,8 +959,8 @@ _RESTORECLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3263,
-  serialized_end=3326,
+  serialized_start=3292,
+  serialized_end=3355,
 )
 
 
@@ -990,8 +997,8 @@ _LOGRECORD_MESSAGEENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3459,
-  serialized_end=3505,
+  serialized_start=3488,
+  serialized_end=3534,
 )
 
 _LOGRECORD = _descriptor.Descriptor(
@@ -1027,8 +1034,8 @@ _LOGRECORD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3329,
-  serialized_end=3505,
+  serialized_start=3358,
+  serialized_end=3534,
 )
 
 
@@ -1101,8 +1108,8 @@ _LISTCLUSTERLOGSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3508,
-  serialized_end=3887,
+  serialized_start=3537,
+  serialized_end=3916,
 )
 
 
@@ -1139,8 +1146,8 @@ _LISTCLUSTERLOGSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3889,
-  serialized_end=3993,
+  serialized_start=3918,
+  serialized_end=4022,
 )
 
 
@@ -1184,8 +1191,8 @@ _LISTCLUSTEROPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3995,
-  serialized_end=4121,
+  serialized_start=4024,
+  serialized_end=4150,
 )
 
 
@@ -1222,8 +1229,8 @@ _LISTCLUSTEROPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4123,
-  serialized_end=4234,
+  serialized_start=4152,
+  serialized_end=4263,
 )
 
 
@@ -1267,8 +1274,8 @@ _LISTCLUSTERBACKUPSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4236,
-  serialized_end=4359,
+  serialized_start=4265,
+  serialized_end=4388,
 )
 
 
@@ -1305,8 +1312,8 @@ _LISTCLUSTERBACKUPSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4361,
-  serialized_end=4468,
+  serialized_start=4390,
+  serialized_end=4497,
 )
 
 
@@ -1350,8 +1357,8 @@ _LISTCLUSTERHOSTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4470,
-  serialized_end=4591,
+  serialized_start=4499,
+  serialized_end=4620,
 )
 
 
@@ -1388,8 +1395,8 @@ _LISTCLUSTERHOSTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4593,
-  serialized_end=4694,
+  serialized_start=4622,
+  serialized_end=4723,
 )
 
 
@@ -1426,8 +1433,8 @@ _ADDCLUSTERHOSTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4696,
-  serialized_end=4821,
+  serialized_start=4725,
+  serialized_end=4850,
 )
 
 
@@ -1464,8 +1471,8 @@ _ADDCLUSTERHOSTSMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4823,
-  serialized_end=4888,
+  serialized_start=4852,
+  serialized_end=4917,
 )
 
 
@@ -1502,8 +1509,8 @@ _DELETECLUSTERHOSTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4890,
-  serialized_end=4988,
+  serialized_start=4919,
+  serialized_end=5017,
 )
 
 
@@ -1540,8 +1547,8 @@ _DELETECLUSTERHOSTSMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4990,
-  serialized_end=5058,
+  serialized_start=5019,
+  serialized_end=5087,
 )
 
 
@@ -1571,8 +1578,8 @@ _ENABLECLUSTERSHARDINGREQUEST_MONGOCFG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5374,
-  serialized_end=5449,
+  serialized_start=5403,
+  serialized_end=5478,
 )
 
 _ENABLECLUSTERSHARDINGREQUEST_MONGOS = _descriptor.Descriptor(
@@ -1601,8 +1608,8 @@ _ENABLECLUSTERSHARDINGREQUEST_MONGOS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5451,
-  serialized_end=5524,
+  serialized_start=5480,
+  serialized_end=5553,
 )
 
 _ENABLECLUSTERSHARDINGREQUEST = _descriptor.Descriptor(
@@ -1652,8 +1659,8 @@ _ENABLECLUSTERSHARDINGREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5061,
-  serialized_end=5524,
+  serialized_start=5090,
+  serialized_end=5553,
 )
 
 
@@ -1683,8 +1690,8 @@ _ENABLECLUSTERSHARDINGMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5526,
-  serialized_end=5577,
+  serialized_start=5555,
+  serialized_end=5606,
 )
 
 
@@ -1721,8 +1728,8 @@ _GETCLUSTERSHARDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5579,
-  serialized_end=5689,
+  serialized_start=5608,
+  serialized_end=5718,
 )
 
 
@@ -1766,8 +1773,8 @@ _LISTCLUSTERSHARDSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5691,
-  serialized_end=5813,
+  serialized_start=5720,
+  serialized_end=5842,
 )
 
 
@@ -1804,8 +1811,8 @@ _LISTCLUSTERSHARDSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5815,
-  serialized_end=5919,
+  serialized_start=5844,
+  serialized_end=5948,
 )
 
 
@@ -1849,8 +1856,8 @@ _ADDCLUSTERSHARDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5922,
-  serialized_end=6099,
+  serialized_start=5951,
+  serialized_end=6128,
 )
 
 
@@ -1887,8 +1894,8 @@ _ADDCLUSTERSHARDMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6101,
-  serialized_end=6166,
+  serialized_start=6130,
+  serialized_end=6195,
 )
 
 
@@ -1925,8 +1932,8 @@ _DELETECLUSTERSHARDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6168,
-  serialized_end=6281,
+  serialized_start=6197,
+  serialized_end=6310,
 )
 
 
@@ -1963,8 +1970,8 @@ _DELETECLUSTERSHARDMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6283,
-  serialized_end=6351,
+  serialized_start=6312,
+  serialized_end=6380,
 )
 
 
@@ -2022,8 +2029,8 @@ _HOSTSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6354,
-  serialized_end=6548,
+  serialized_start=6383,
+  serialized_end=6577,
 )
 
 
@@ -2060,8 +2067,8 @@ _MONGODBSPEC3_6_MONGOD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6778,
-  serialized_end=6914,
+  serialized_start=6807,
+  serialized_end=6943,
 )
 
 _MONGODBSPEC3_6_MONGOCFG = _descriptor.Descriptor(
@@ -2097,8 +2104,8 @@ _MONGODBSPEC3_6_MONGOCFG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6917,
-  serialized_end=7057,
+  serialized_start=6946,
+  serialized_end=7086,
 )
 
 _MONGODBSPEC3_6_MONGOS = _descriptor.Descriptor(
@@ -2134,8 +2141,8 @@ _MONGODBSPEC3_6_MONGOS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7060,
-  serialized_end=7196,
+  serialized_start=7089,
+  serialized_end=7225,
 )
 
 _MONGODBSPEC3_6 = _descriptor.Descriptor(
@@ -2178,8 +2185,8 @@ _MONGODBSPEC3_6 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6551,
-  serialized_end=7196,
+  serialized_start=6580,
+  serialized_end=7225,
 )
 
 
@@ -2216,8 +2223,8 @@ _MONGODBSPEC4_0_MONGOD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7426,
-  serialized_end=7562,
+  serialized_start=7455,
+  serialized_end=7591,
 )
 
 _MONGODBSPEC4_0_MONGOCFG = _descriptor.Descriptor(
@@ -2253,8 +2260,8 @@ _MONGODBSPEC4_0_MONGOCFG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7565,
-  serialized_end=7705,
+  serialized_start=7594,
+  serialized_end=7734,
 )
 
 _MONGODBSPEC4_0_MONGOS = _descriptor.Descriptor(
@@ -2290,8 +2297,8 @@ _MONGODBSPEC4_0_MONGOS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7708,
-  serialized_end=7844,
+  serialized_start=7737,
+  serialized_end=7873,
 )
 
 _MONGODBSPEC4_0 = _descriptor.Descriptor(
@@ -2334,8 +2341,8 @@ _MONGODBSPEC4_0 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7199,
-  serialized_end=7844,
+  serialized_start=7228,
+  serialized_end=7873,
 )
 
 
@@ -2381,6 +2388,13 @@ _CONFIGSPEC = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='access', full_name='yandex.cloud.mdb.mongodb.v1.ConfigSpec.access', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2396,8 +2410,8 @@ _CONFIGSPEC = _descriptor.Descriptor(
       name='mongodb_spec', full_name='yandex.cloud.mdb.mongodb.v1.ConfigSpec.mongodb_spec',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=7847,
-  serialized_end=8130,
+  serialized_start=7876,
+  serialized_end=8212,
 )
 
 _LISTCLUSTERSRESPONSE.fields_by_name['clusters'].message_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_cluster__pb2._CLUSTER
@@ -2466,6 +2480,7 @@ _MONGODBSPEC4_0.fields_by_name['mongos'].message_type = _MONGODBSPEC4_0_MONGOS
 _CONFIGSPEC.fields_by_name['mongodb_spec_3_6'].message_type = _MONGODBSPEC3_6
 _CONFIGSPEC.fields_by_name['mongodb_spec_4_0'].message_type = _MONGODBSPEC4_0
 _CONFIGSPEC.fields_by_name['backup_window_start'].message_type = google_dot_type_dot_timeofday__pb2._TIMEOFDAY
+_CONFIGSPEC.fields_by_name['access'].message_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_cluster__pb2._ACCESS
 _CONFIGSPEC.oneofs_by_name['mongodb_spec'].fields.append(
   _CONFIGSPEC.fields_by_name['mongodb_spec_3_6'])
 _CONFIGSPEC.fields_by_name['mongodb_spec_3_6'].containing_oneof = _CONFIGSPEC.oneofs_by_name['mongodb_spec']
@@ -2967,6 +2982,7 @@ _RESTORECLUSTERREQUEST.fields_by_name['environment']._options = None
 _RESTORECLUSTERREQUEST.fields_by_name['config_spec']._options = None
 _RESTORECLUSTERREQUEST.fields_by_name['host_specs']._options = None
 _RESTORECLUSTERREQUEST.fields_by_name['network_id']._options = None
+_RESTORECLUSTERREQUEST.fields_by_name['folder_id']._options = None
 _LOGRECORD_MESSAGEENTRY._options = None
 _LISTCLUSTERLOGSREQUEST.fields_by_name['cluster_id']._options = None
 _LISTCLUSTERLOGSREQUEST.fields_by_name['page_size']._options = None
@@ -3010,8 +3026,8 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=8133,
-  serialized_end=12164,
+  serialized_start=8215,
+  serialized_end=12246,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',

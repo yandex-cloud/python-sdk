@@ -202,7 +202,7 @@ class ClusterServiceServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def AddZookeeper(self, request, context):
-    """Add ZooKeeper subcluster to the specififes ClickHouse cluster.
+    """Adds a ZooKeeper subcluster to the specified ClickHouse cluster.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -301,15 +301,15 @@ class ClusterServiceServicer(object):
     raise NotImplementedError('Method not implemented!')
 
   def CreateExternalDictionary(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Creates an external dictionary for the specified ClickHouse cluster.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def DeleteExternalDictionary(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Deletes the specified external dictionary.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')

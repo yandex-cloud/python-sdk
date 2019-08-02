@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.mdb.mysql.v1',
   syntax='proto3',
   serialized_options=_b('ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mysql/v1;mysql'),
-  serialized_pb=_b('\n\'yandex/cloud/mdb/mysql/v1/cluster.proto\x12\x19yandex.cloud.mdb.mysql.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/type/timeofday.proto\x1a/yandex/cloud/mdb/mysql/v1/config/mysql5_7.proto\"\xb5\x06\n\x07\x43luster\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12>\n\x06labels\x18\x06 \x03(\x0b\x32..yandex.cloud.mdb.mysql.v1.Cluster.LabelsEntry\x12\x43\n\x0b\x65nvironment\x18\x07 \x01(\x0e\x32..yandex.cloud.mdb.mysql.v1.Cluster.Environment\x12\x39\n\nmonitoring\x18\x08 \x03(\x0b\x32%.yandex.cloud.mdb.mysql.v1.Monitoring\x12\x38\n\x06\x63onfig\x18\t \x01(\x0b\x32(.yandex.cloud.mdb.mysql.v1.ClusterConfig\x12\x12\n\nnetwork_id\x18\n \x01(\t\x12\x39\n\x06health\x18\x0b \x01(\x0e\x32).yandex.cloud.mdb.mysql.v1.Cluster.Health\x12\x39\n\x06status\x18\x0c \x01(\x0e\x32).yandex.cloud.mdb.mysql.v1.Cluster.Status\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"I\n\x0b\x45nvironment\x12\x1b\n\x17\x45NVIRONMENT_UNSPECIFIED\x10\x00\x12\x0e\n\nPRODUCTION\x10\x01\x12\r\n\tPRESTABLE\x10\x02\"?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\"y\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\t\n\x05\x45RROR\x10\x03\x12\x0c\n\x08UPDATING\x10\x04\x12\x0c\n\x08STOPPING\x10\x05\x12\x0b\n\x07STOPPED\x10\x06\x12\x0c\n\x08STARTING\x10\x07\"=\n\nMonitoring\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0c\n\x04link\x18\x03 \x01(\t\"\xef\x01\n\rClusterConfig\x12\x0f\n\x07version\x18\x01 \x01(\t\x12O\n\x10mysql_config_5_7\x18\x02 \x01(\x0b\x32\x33.yandex.cloud.mdb.mysql.v1.config.MysqlConfigSet5_7H\x00\x12\x37\n\tresources\x18\x03 \x01(\x0b\x32$.yandex.cloud.mdb.mysql.v1.Resources\x12\x33\n\x13\x62\x61\x63kup_window_start\x18\x04 \x01(\x0b\x32\x16.google.type.TimeOfDayB\x0e\n\x0cmysql_config\"\xb5\x03\n\x04Host\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12\x0f\n\x07zone_id\x18\x03 \x01(\t\x12\x37\n\tresources\x18\x04 \x01(\x0b\x32$.yandex.cloud.mdb.mysql.v1.Resources\x12\x32\n\x04role\x18\x05 \x01(\x0e\x32$.yandex.cloud.mdb.mysql.v1.Host.Role\x12\x36\n\x06health\x18\x06 \x01(\x0e\x32&.yandex.cloud.mdb.mysql.v1.Host.Health\x12\x34\n\x08services\x18\x07 \x03(\x0b\x32\".yandex.cloud.mdb.mysql.v1.Service\x12\x11\n\tsubnet_id\x18\x08 \x01(\t\x12\x18\n\x10\x61ssign_public_ip\x18\t \x01(\x08\"1\n\x04Role\x12\x10\n\x0cROLE_UNKNOWN\x10\x00\x12\n\n\x06MASTER\x10\x01\x12\x0b\n\x07REPLICA\x10\x02\"?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\"\xd7\x01\n\x07Service\x12\x35\n\x04type\x18\x01 \x01(\x0e\x32\'.yandex.cloud.mdb.mysql.v1.Service.Type\x12\x39\n\x06health\x18\x02 \x01(\x0e\x32).yandex.cloud.mdb.mysql.v1.Service.Health\"\'\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\t\n\x05MYSQL\x10\x01\"1\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\"P\n\tResources\x12\x1a\n\x12resource_preset_id\x18\x01 \x01(\t\x12\x11\n\tdisk_size\x18\x02 \x01(\x03\x12\x14\n\x0c\x64isk_type_id\x18\x03 \x01(\tBEZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mysql/v1;mysqlb\x06proto3')
+  serialized_pb=_b('\n\'yandex/cloud/mdb/mysql/v1/cluster.proto\x12\x19yandex.cloud.mdb.mysql.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/type/timeofday.proto\x1a/yandex/cloud/mdb/mysql/v1/config/mysql5_7.proto\"\xb5\x06\n\x07\x43luster\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12>\n\x06labels\x18\x06 \x03(\x0b\x32..yandex.cloud.mdb.mysql.v1.Cluster.LabelsEntry\x12\x43\n\x0b\x65nvironment\x18\x07 \x01(\x0e\x32..yandex.cloud.mdb.mysql.v1.Cluster.Environment\x12\x39\n\nmonitoring\x18\x08 \x03(\x0b\x32%.yandex.cloud.mdb.mysql.v1.Monitoring\x12\x38\n\x06\x63onfig\x18\t \x01(\x0b\x32(.yandex.cloud.mdb.mysql.v1.ClusterConfig\x12\x12\n\nnetwork_id\x18\n \x01(\t\x12\x39\n\x06health\x18\x0b \x01(\x0e\x32).yandex.cloud.mdb.mysql.v1.Cluster.Health\x12\x39\n\x06status\x18\x0c \x01(\x0e\x32).yandex.cloud.mdb.mysql.v1.Cluster.Status\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"I\n\x0b\x45nvironment\x12\x1b\n\x17\x45NVIRONMENT_UNSPECIFIED\x10\x00\x12\x0e\n\nPRODUCTION\x10\x01\x12\r\n\tPRESTABLE\x10\x02\"?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\"y\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\t\n\x05\x45RROR\x10\x03\x12\x0c\n\x08UPDATING\x10\x04\x12\x0c\n\x08STOPPING\x10\x05\x12\x0b\n\x07STOPPED\x10\x06\x12\x0c\n\x08STARTING\x10\x07\"=\n\nMonitoring\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0c\n\x04link\x18\x03 \x01(\t\"\xa2\x02\n\rClusterConfig\x12\x0f\n\x07version\x18\x01 \x01(\t\x12O\n\x10mysql_config_5_7\x18\x02 \x01(\x0b\x32\x33.yandex.cloud.mdb.mysql.v1.config.MysqlConfigSet5_7H\x00\x12\x37\n\tresources\x18\x03 \x01(\x0b\x32$.yandex.cloud.mdb.mysql.v1.Resources\x12\x33\n\x13\x62\x61\x63kup_window_start\x18\x04 \x01(\x0b\x32\x16.google.type.TimeOfDay\x12\x31\n\x06\x61\x63\x63\x65ss\x18\x05 \x01(\x0b\x32!.yandex.cloud.mdb.mysql.v1.AccessB\x0e\n\x0cmysql_config\"\xb5\x03\n\x04Host\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12\x0f\n\x07zone_id\x18\x03 \x01(\t\x12\x37\n\tresources\x18\x04 \x01(\x0b\x32$.yandex.cloud.mdb.mysql.v1.Resources\x12\x32\n\x04role\x18\x05 \x01(\x0e\x32$.yandex.cloud.mdb.mysql.v1.Host.Role\x12\x36\n\x06health\x18\x06 \x01(\x0e\x32&.yandex.cloud.mdb.mysql.v1.Host.Health\x12\x34\n\x08services\x18\x07 \x03(\x0b\x32\".yandex.cloud.mdb.mysql.v1.Service\x12\x11\n\tsubnet_id\x18\x08 \x01(\t\x12\x18\n\x10\x61ssign_public_ip\x18\t \x01(\x08\"1\n\x04Role\x12\x10\n\x0cROLE_UNKNOWN\x10\x00\x12\n\n\x06MASTER\x10\x01\x12\x0b\n\x07REPLICA\x10\x02\"?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\"\xd7\x01\n\x07Service\x12\x35\n\x04type\x18\x01 \x01(\x0e\x32\'.yandex.cloud.mdb.mysql.v1.Service.Type\x12\x39\n\x06health\x18\x02 \x01(\x0e\x32).yandex.cloud.mdb.mysql.v1.Service.Health\"\'\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\t\n\x05MYSQL\x10\x01\"1\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\"P\n\tResources\x12\x1a\n\x12resource_preset_id\x18\x01 \x01(\t\x12\x11\n\tdisk_size\x18\x02 \x01(\x03\x12\x14\n\x0c\x64isk_type_id\x18\x03 \x01(\t\"\x1b\n\x06\x41\x63\x63\x65ss\x12\x11\n\tdata_lens\x18\x01 \x01(\x08\x42\x45ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mysql/v1;mysqlb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_type_dot_timeofday__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mysql_dot_v1_dot_config_dot_mysql5__7__pb2.DESCRIPTOR,])
 
@@ -151,8 +151,8 @@ _HOST_ROLE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1634,
-  serialized_end=1683,
+  serialized_start=1685,
+  serialized_end=1734,
 )
 _sym_db.RegisterEnumDescriptor(_HOST_ROLE)
 
@@ -203,8 +203,8 @@ _SERVICE_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1876,
-  serialized_end=1915,
+  serialized_start=1927,
+  serialized_end=1966,
 )
 _sym_db.RegisterEnumDescriptor(_SERVICE_TYPE)
 
@@ -463,6 +463,13 @@ _CLUSTERCONFIG = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='access', full_name='yandex.cloud.mdb.mysql.v1.ClusterConfig.access', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -479,7 +486,7 @@ _CLUSTERCONFIG = _descriptor.Descriptor(
       index=0, containing_type=None, fields=[]),
   ],
   serialized_start=1069,
-  serialized_end=1308,
+  serialized_end=1359,
 )
 
 
@@ -567,8 +574,8 @@ _HOST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1311,
-  serialized_end=1748,
+  serialized_start=1362,
+  serialized_end=1799,
 )
 
 
@@ -607,8 +614,8 @@ _SERVICE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1751,
-  serialized_end=1966,
+  serialized_start=1802,
+  serialized_end=2017,
 )
 
 
@@ -652,8 +659,39 @@ _RESOURCES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1968,
-  serialized_end=2048,
+  serialized_start=2019,
+  serialized_end=2099,
+)
+
+
+_ACCESS = _descriptor.Descriptor(
+  name='Access',
+  full_name='yandex.cloud.mdb.mysql.v1.Access',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='data_lens', full_name='yandex.cloud.mdb.mysql.v1.Access.data_lens', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2101,
+  serialized_end=2128,
 )
 
 _CLUSTER_LABELSENTRY.containing_type = _CLUSTER
@@ -670,6 +708,7 @@ _CLUSTER_STATUS.containing_type = _CLUSTER
 _CLUSTERCONFIG.fields_by_name['mysql_config_5_7'].message_type = yandex_dot_cloud_dot_mdb_dot_mysql_dot_v1_dot_config_dot_mysql5__7__pb2._MYSQLCONFIGSET5_7
 _CLUSTERCONFIG.fields_by_name['resources'].message_type = _RESOURCES
 _CLUSTERCONFIG.fields_by_name['backup_window_start'].message_type = google_dot_type_dot_timeofday__pb2._TIMEOFDAY
+_CLUSTERCONFIG.fields_by_name['access'].message_type = _ACCESS
 _CLUSTERCONFIG.oneofs_by_name['mysql_config'].fields.append(
   _CLUSTERCONFIG.fields_by_name['mysql_config_5_7'])
 _CLUSTERCONFIG.fields_by_name['mysql_config_5_7'].containing_oneof = _CLUSTERCONFIG.oneofs_by_name['mysql_config']
@@ -689,6 +728,7 @@ DESCRIPTOR.message_types_by_name['ClusterConfig'] = _CLUSTERCONFIG
 DESCRIPTOR.message_types_by_name['Host'] = _HOST
 DESCRIPTOR.message_types_by_name['Service'] = _SERVICE
 DESCRIPTOR.message_types_by_name['Resources'] = _RESOURCES
+DESCRIPTOR.message_types_by_name['Access'] = _ACCESS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Cluster = _reflection.GeneratedProtocolMessageType('Cluster', (_message.Message,), dict(
@@ -740,6 +780,13 @@ Resources = _reflection.GeneratedProtocolMessageType('Resources', (_message.Mess
   # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.mysql.v1.Resources)
   ))
 _sym_db.RegisterMessage(Resources)
+
+Access = _reflection.GeneratedProtocolMessageType('Access', (_message.Message,), dict(
+  DESCRIPTOR = _ACCESS,
+  __module__ = 'yandex.cloud.mdb.mysql.v1.cluster_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.mysql.v1.Access)
+  ))
+_sym_db.RegisterMessage(Access)
 
 
 DESCRIPTOR._options = None

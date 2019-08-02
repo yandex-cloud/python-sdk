@@ -56,6 +56,11 @@ class RegistryServiceStub(object):
         request_serializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.DeleteRegistryCertificateRequest.SerializeToString,
         response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
         )
+    self.ListDeviceTopicAliases = channel.unary_unary(
+        '/yandex.cloud.iot.devices.v1.RegistryService/ListDeviceTopicAliases',
+        request_serializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.ListDeviceTopicAliasesRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.ListDeviceTopicAliasesResponse.FromString,
+        )
     self.ListOperations = channel.unary_unary(
         '/yandex.cloud.iot.devices.v1.RegistryService/ListOperations',
         request_serializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.ListRegistryOperationsRequest.SerializeToString,
@@ -123,6 +128,13 @@ class RegistryServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def ListDeviceTopicAliases(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def ListOperations(self, request, context):
     # missing associated documentation comment in .proto file
     pass
@@ -172,6 +184,11 @@ def add_RegistryServiceServicer_to_server(servicer, server):
           servicer.DeleteCertificate,
           request_deserializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.DeleteRegistryCertificateRequest.FromString,
           response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+      ),
+      'ListDeviceTopicAliases': grpc.unary_unary_rpc_method_handler(
+          servicer.ListDeviceTopicAliases,
+          request_deserializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.ListDeviceTopicAliasesRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.ListDeviceTopicAliasesResponse.SerializeToString,
       ),
       'ListOperations': grpc.unary_unary_rpc_method_handler(
           servicer.ListOperations,

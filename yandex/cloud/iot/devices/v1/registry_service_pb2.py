@@ -25,7 +25,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.iot.devices.v1',
   syntax='proto3',
   serialized_options=_b('ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/iot/devices/v1;devices'),
-  serialized_pb=_b('\n2yandex/cloud/iot/devices/v1/registry_service.proto\x12\x1byandex.cloud.iot.devices.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1dyandex/cloud/validation.proto\x1a\x1ayandex/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a*yandex/cloud/iot/devices/v1/registry.proto\"7\n\x12GetRegistryRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"v\n\x15ListRegistriesRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"l\n\x16ListRegistriesResponse\x12\x39\n\nregistries\x18\x01 \x03(\x0b\x32%.yandex.cloud.iot.devices.v1.Registry\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xc6\x03\n\x15\x43reateRegistryRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12,\n\x04name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8f\x01\n\x06labels\x18\x04 \x03(\x0b\x32>.yandex.cloud.iot.devices.v1.CreateRegistryRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12T\n\x0c\x63\x65rtificates\x18\x05 \x03(\x0b\x32>.yandex.cloud.iot.devices.v1.CreateRegistryRequest.Certificate\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\'\n\x0b\x43\x65rtificate\x12\x18\n\x10\x63\x65rtificate_data\x18\x01 \x01(\t\"-\n\x16\x43reateRegistryMetadata\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\"\xf6\x02\n\x15UpdateRegistryRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12(\n\x04name\x18\x03 \x01(\tB\x1a\x8a\xc8\x31\x04<=50\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8f\x01\n\x06labels\x18\x05 \x03(\x0b\x32>.yandex.cloud.iot.devices.v1.UpdateRegistryRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"-\n\x16UpdateRegistryMetadata\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\":\n\x15\x44\x65leteRegistryRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"-\n\x16\x44\x65leteRegistryMetadata\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\"D\n\x1fListRegistryCertificatesRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"j\n ListRegistryCertificatesResponse\x12\x46\n\x0c\x63\x65rtificates\x18\x01 \x03(\x0b\x32\x30.yandex.cloud.iot.devices.v1.RegistryCertificate\"\\\n\x1d\x41\x64\x64RegistryCertificateRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x18\n\x10\x63\x65rtificate_data\x18\x03 \x01(\t\"J\n\x1e\x41\x64\x64RegistryCertificateMetadata\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\x12\x13\n\x0b\x66ingerprint\x18\x02 \x01(\t\"h\n DeleteRegistryCertificateRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12!\n\x0b\x66ingerprint\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"i\n!DeleteRegistryCertificateMetadata\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12!\n\x0b\x66ingerprint\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x94\x01\n\x1dListRegistryOperationsRequest\x12\x19\n\x0bregistry_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"p\n\x1eListRegistryOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xe8\r\n\x0fRegistryService\x12\x8f\x01\n\x03Get\x12/.yandex.cloud.iot.devices.v1.GetRegistryRequest\x1a%.yandex.cloud.iot.devices.v1.Registry\"0\x82\xd3\xe4\x93\x02*\x12(/iot-devices/v1/registries/{registry_id}\x12\x93\x01\n\x04List\x12\x32.yandex.cloud.iot.devices.v1.ListRegistriesRequest\x1a\x33.yandex.cloud.iot.devices.v1.ListRegistriesResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/iot-devices/v1/registries\x12\xac\x01\n\x06\x43reate\x12\x32.yandex.cloud.iot.devices.v1.CreateRegistryRequest\x1a!.yandex.cloud.operation.Operation\"K\x82\xd3\xe4\x93\x02\x1f\"\x1a/iot-devices/v1/registries:\x01*\xb2\xd2*\"\n\x16\x43reateRegistryMetadata\x12\x08Registry\x12\xba\x01\n\x06Update\x12\x32.yandex.cloud.iot.devices.v1.UpdateRegistryRequest\x1a!.yandex.cloud.operation.Operation\"Y\x82\xd3\xe4\x93\x02-2(/iot-devices/v1/registries/{registry_id}:\x01*\xb2\xd2*\"\n\x16UpdateRegistryMetadata\x12\x08Registry\x12\xc4\x01\n\x06\x44\x65lete\x12\x32.yandex.cloud.iot.devices.v1.DeleteRegistryRequest\x1a!.yandex.cloud.operation.Operation\"c\x82\xd3\xe4\x93\x02**(/iot-devices/v1/registries/{registry_id}\xb2\xd2*/\n\x16\x44\x65leteRegistryMetadata\x12\x15google.protobuf.Empty\x12\xce\x01\n\x10ListCertificates\x12<.yandex.cloud.iot.devices.v1.ListRegistryCertificatesRequest\x1a=.yandex.cloud.iot.devices.v1.ListRegistryCertificatesResponse\"=\x82\xd3\xe4\x93\x02\x37\x12\x35/iot-devices/v1/registries/{registry_id}/certificates\x12\xea\x01\n\x0e\x41\x64\x64\x43\x65rtificate\x12:.yandex.cloud.iot.devices.v1.AddRegistryCertificateRequest\x1a!.yandex.cloud.operation.Operation\"y\x82\xd3\xe4\x93\x02:\"5/iot-devices/v1/registries/{registry_id}/certificates:\x01*\xb2\xd2*5\n\x1e\x41\x64\x64RegistryCertificateMetadata\x12\x13RegistryCertificate\x12\xf2\x01\n\x11\x44\x65leteCertificate\x12=.yandex.cloud.iot.devices.v1.DeleteRegistryCertificateRequest\x1a!.yandex.cloud.operation.Operation\"{\x82\xd3\xe4\x93\x02\x37*5/iot-devices/v1/registries/{registry_id}/certificates\xb2\xd2*:\n!DeleteRegistryCertificateMetadata\x12\x15google.protobuf.Empty\x12\xc6\x01\n\x0eListOperations\x12:.yandex.cloud.iot.devices.v1.ListRegistryOperationsRequest\x1a;.yandex.cloud.iot.devices.v1.ListRegistryOperationsResponse\";\x82\xd3\xe4\x93\x02\x35\x12\x33/iot-devices/v1/registries/{registry_id}/operationsBIZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/iot/devices/v1;devicesb\x06proto3')
+  serialized_pb=_b('\n2yandex/cloud/iot/devices/v1/registry_service.proto\x12\x1byandex.cloud.iot.devices.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1dyandex/cloud/validation.proto\x1a\x1ayandex/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a*yandex/cloud/iot/devices/v1/registry.proto\"7\n\x12GetRegistryRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"v\n\x15ListRegistriesRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"l\n\x16ListRegistriesResponse\x12\x39\n\nregistries\x18\x01 \x03(\x0b\x32%.yandex.cloud.iot.devices.v1.Registry\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xc6\x03\n\x15\x43reateRegistryRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12,\n\x04name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8f\x01\n\x06labels\x18\x04 \x03(\x0b\x32>.yandex.cloud.iot.devices.v1.CreateRegistryRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12T\n\x0c\x63\x65rtificates\x18\x05 \x03(\x0b\x32>.yandex.cloud.iot.devices.v1.CreateRegistryRequest.Certificate\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\'\n\x0b\x43\x65rtificate\x12\x18\n\x10\x63\x65rtificate_data\x18\x01 \x01(\t\"-\n\x16\x43reateRegistryMetadata\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\"\xf6\x02\n\x15UpdateRegistryRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12(\n\x04name\x18\x03 \x01(\tB\x1a\x8a\xc8\x31\x04<=50\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8f\x01\n\x06labels\x18\x05 \x03(\x0b\x32>.yandex.cloud.iot.devices.v1.UpdateRegistryRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"-\n\x16UpdateRegistryMetadata\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\":\n\x15\x44\x65leteRegistryRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"-\n\x16\x44\x65leteRegistryMetadata\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\"D\n\x1fListRegistryCertificatesRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"j\n ListRegistryCertificatesResponse\x12\x46\n\x0c\x63\x65rtificates\x18\x01 \x03(\x0b\x32\x30.yandex.cloud.iot.devices.v1.RegistryCertificate\"\\\n\x1d\x41\x64\x64RegistryCertificateRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x18\n\x10\x63\x65rtificate_data\x18\x03 \x01(\t\"J\n\x1e\x41\x64\x64RegistryCertificateMetadata\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\x12\x13\n\x0b\x66ingerprint\x18\x02 \x01(\t\"h\n DeleteRegistryCertificateRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12!\n\x0b\x66ingerprint\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"i\n!DeleteRegistryCertificateMetadata\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12!\n\x0b\x66ingerprint\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x80\x01\n\x1dListDeviceTopicAliasesRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"t\n\x1eListDeviceTopicAliasesResponse\x12\x39\n\x07\x61liases\x18\x01 \x03(\x0b\x32(.yandex.cloud.iot.devices.v1.DeviceAlias\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x94\x01\n\x1dListRegistryOperationsRequest\x12\x19\n\x0bregistry_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"p\n\x1eListRegistryOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xc5\x0f\n\x0fRegistryService\x12\x8f\x01\n\x03Get\x12/.yandex.cloud.iot.devices.v1.GetRegistryRequest\x1a%.yandex.cloud.iot.devices.v1.Registry\"0\x82\xd3\xe4\x93\x02*\x12(/iot-devices/v1/registries/{registry_id}\x12\x93\x01\n\x04List\x12\x32.yandex.cloud.iot.devices.v1.ListRegistriesRequest\x1a\x33.yandex.cloud.iot.devices.v1.ListRegistriesResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/iot-devices/v1/registries\x12\xac\x01\n\x06\x43reate\x12\x32.yandex.cloud.iot.devices.v1.CreateRegistryRequest\x1a!.yandex.cloud.operation.Operation\"K\x82\xd3\xe4\x93\x02\x1f\"\x1a/iot-devices/v1/registries:\x01*\xb2\xd2*\"\n\x16\x43reateRegistryMetadata\x12\x08Registry\x12\xba\x01\n\x06Update\x12\x32.yandex.cloud.iot.devices.v1.UpdateRegistryRequest\x1a!.yandex.cloud.operation.Operation\"Y\x82\xd3\xe4\x93\x02-2(/iot-devices/v1/registries/{registry_id}:\x01*\xb2\xd2*\"\n\x16UpdateRegistryMetadata\x12\x08Registry\x12\xc4\x01\n\x06\x44\x65lete\x12\x32.yandex.cloud.iot.devices.v1.DeleteRegistryRequest\x1a!.yandex.cloud.operation.Operation\"c\x82\xd3\xe4\x93\x02**(/iot-devices/v1/registries/{registry_id}\xb2\xd2*/\n\x16\x44\x65leteRegistryMetadata\x12\x15google.protobuf.Empty\x12\xce\x01\n\x10ListCertificates\x12<.yandex.cloud.iot.devices.v1.ListRegistryCertificatesRequest\x1a=.yandex.cloud.iot.devices.v1.ListRegistryCertificatesResponse\"=\x82\xd3\xe4\x93\x02\x37\x12\x35/iot-devices/v1/registries/{registry_id}/certificates\x12\xea\x01\n\x0e\x41\x64\x64\x43\x65rtificate\x12:.yandex.cloud.iot.devices.v1.AddRegistryCertificateRequest\x1a!.yandex.cloud.operation.Operation\"y\x82\xd3\xe4\x93\x02:\"5/iot-devices/v1/registries/{registry_id}/certificates:\x01*\xb2\xd2*5\n\x1e\x41\x64\x64RegistryCertificateMetadata\x12\x13RegistryCertificate\x12\xf2\x01\n\x11\x44\x65leteCertificate\x12=.yandex.cloud.iot.devices.v1.DeleteRegistryCertificateRequest\x1a!.yandex.cloud.operation.Operation\"{\x82\xd3\xe4\x93\x02\x37*5/iot-devices/v1/registries/{registry_id}/certificates\xb2\xd2*:\n!DeleteRegistryCertificateMetadata\x12\x15google.protobuf.Empty\x12\xda\x01\n\x16ListDeviceTopicAliases\x12:.yandex.cloud.iot.devices.v1.ListDeviceTopicAliasesRequest\x1a;.yandex.cloud.iot.devices.v1.ListDeviceTopicAliasesResponse\"G\x82\xd3\xe4\x93\x02\x41\x12?/iot-devices/v1/registries/{registry_id}:listDeviceTopicAliases\x12\xc6\x01\n\x0eListOperations\x12:.yandex.cloud.iot.devices.v1.ListRegistryOperationsRequest\x1a;.yandex.cloud.iot.devices.v1.ListRegistryOperationsResponse\";\x82\xd3\xe4\x93\x02\x35\x12\x33/iot-devices/v1/registries/{registry_id}/operationsBIZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/iot/devices/v1;devicesb\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__pb2.DESCRIPTOR,])
 
@@ -706,6 +706,89 @@ _DELETEREGISTRYCERTIFICATEMETADATA = _descriptor.Descriptor(
 )
 
 
+_LISTDEVICETOPICALIASESREQUEST = _descriptor.Descriptor(
+  name='ListDeviceTopicAliasesRequest',
+  full_name='yandex.cloud.iot.devices.v1.ListDeviceTopicAliasesRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='registry_id', full_name='yandex.cloud.iot.devices.v1.ListDeviceTopicAliasesRequest.registry_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='page_size', full_name='yandex.cloud.iot.devices.v1.ListDeviceTopicAliasesRequest.page_size', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\372\3071\0060-1000'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='page_token', full_name='yandex.cloud.iot.devices.v1.ListDeviceTopicAliasesRequest.page_token', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3101\005<=100'), file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2174,
+  serialized_end=2302,
+)
+
+
+_LISTDEVICETOPICALIASESRESPONSE = _descriptor.Descriptor(
+  name='ListDeviceTopicAliasesResponse',
+  full_name='yandex.cloud.iot.devices.v1.ListDeviceTopicAliasesResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='aliases', full_name='yandex.cloud.iot.devices.v1.ListDeviceTopicAliasesResponse.aliases', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='next_page_token', full_name='yandex.cloud.iot.devices.v1.ListDeviceTopicAliasesResponse.next_page_token', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2304,
+  serialized_end=2420,
+)
+
+
 _LISTREGISTRYOPERATIONSREQUEST = _descriptor.Descriptor(
   name='ListRegistryOperationsRequest',
   full_name='yandex.cloud.iot.devices.v1.ListRegistryOperationsRequest',
@@ -753,8 +836,8 @@ _LISTREGISTRYOPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2174,
-  serialized_end=2322,
+  serialized_start=2423,
+  serialized_end=2571,
 )
 
 
@@ -791,8 +874,8 @@ _LISTREGISTRYOPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2324,
-  serialized_end=2436,
+  serialized_start=2573,
+  serialized_end=2685,
 )
 
 _LISTREGISTRIESRESPONSE.fields_by_name['registries'].message_type = yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__pb2._REGISTRY
@@ -804,6 +887,7 @@ _UPDATEREGISTRYREQUEST_LABELSENTRY.containing_type = _UPDATEREGISTRYREQUEST
 _UPDATEREGISTRYREQUEST.fields_by_name['update_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
 _UPDATEREGISTRYREQUEST.fields_by_name['labels'].message_type = _UPDATEREGISTRYREQUEST_LABELSENTRY
 _LISTREGISTRYCERTIFICATESRESPONSE.fields_by_name['certificates'].message_type = yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__pb2._REGISTRYCERTIFICATE
+_LISTDEVICETOPICALIASESRESPONSE.fields_by_name['aliases'].message_type = yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__pb2._DEVICEALIAS
 _LISTREGISTRYOPERATIONSRESPONSE.fields_by_name['operations'].message_type = yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION
 DESCRIPTOR.message_types_by_name['GetRegistryRequest'] = _GETREGISTRYREQUEST
 DESCRIPTOR.message_types_by_name['ListRegistriesRequest'] = _LISTREGISTRIESREQUEST
@@ -820,6 +904,8 @@ DESCRIPTOR.message_types_by_name['AddRegistryCertificateRequest'] = _ADDREGISTRY
 DESCRIPTOR.message_types_by_name['AddRegistryCertificateMetadata'] = _ADDREGISTRYCERTIFICATEMETADATA
 DESCRIPTOR.message_types_by_name['DeleteRegistryCertificateRequest'] = _DELETEREGISTRYCERTIFICATEREQUEST
 DESCRIPTOR.message_types_by_name['DeleteRegistryCertificateMetadata'] = _DELETEREGISTRYCERTIFICATEMETADATA
+DESCRIPTOR.message_types_by_name['ListDeviceTopicAliasesRequest'] = _LISTDEVICETOPICALIASESREQUEST
+DESCRIPTOR.message_types_by_name['ListDeviceTopicAliasesResponse'] = _LISTDEVICETOPICALIASESRESPONSE
 DESCRIPTOR.message_types_by_name['ListRegistryOperationsRequest'] = _LISTREGISTRYOPERATIONSREQUEST
 DESCRIPTOR.message_types_by_name['ListRegistryOperationsResponse'] = _LISTREGISTRYOPERATIONSRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -953,6 +1039,20 @@ DeleteRegistryCertificateMetadata = _reflection.GeneratedProtocolMessageType('De
   ))
 _sym_db.RegisterMessage(DeleteRegistryCertificateMetadata)
 
+ListDeviceTopicAliasesRequest = _reflection.GeneratedProtocolMessageType('ListDeviceTopicAliasesRequest', (_message.Message,), dict(
+  DESCRIPTOR = _LISTDEVICETOPICALIASESREQUEST,
+  __module__ = 'yandex.cloud.iot.devices.v1.registry_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.iot.devices.v1.ListDeviceTopicAliasesRequest)
+  ))
+_sym_db.RegisterMessage(ListDeviceTopicAliasesRequest)
+
+ListDeviceTopicAliasesResponse = _reflection.GeneratedProtocolMessageType('ListDeviceTopicAliasesResponse', (_message.Message,), dict(
+  DESCRIPTOR = _LISTDEVICETOPICALIASESRESPONSE,
+  __module__ = 'yandex.cloud.iot.devices.v1.registry_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.iot.devices.v1.ListDeviceTopicAliasesResponse)
+  ))
+_sym_db.RegisterMessage(ListDeviceTopicAliasesResponse)
+
 ListRegistryOperationsRequest = _reflection.GeneratedProtocolMessageType('ListRegistryOperationsRequest', (_message.Message,), dict(
   DESCRIPTOR = _LISTREGISTRYOPERATIONSREQUEST,
   __module__ = 'yandex.cloud.iot.devices.v1.registry_service_pb2'
@@ -990,6 +1090,9 @@ _DELETEREGISTRYCERTIFICATEREQUEST.fields_by_name['registry_id']._options = None
 _DELETEREGISTRYCERTIFICATEREQUEST.fields_by_name['fingerprint']._options = None
 _DELETEREGISTRYCERTIFICATEMETADATA.fields_by_name['registry_id']._options = None
 _DELETEREGISTRYCERTIFICATEMETADATA.fields_by_name['fingerprint']._options = None
+_LISTDEVICETOPICALIASESREQUEST.fields_by_name['registry_id']._options = None
+_LISTDEVICETOPICALIASESREQUEST.fields_by_name['page_size']._options = None
+_LISTDEVICETOPICALIASESREQUEST.fields_by_name['page_token']._options = None
 _LISTREGISTRYOPERATIONSREQUEST.fields_by_name['registry_id']._options = None
 _LISTREGISTRYOPERATIONSREQUEST.fields_by_name['page_size']._options = None
 _LISTREGISTRYOPERATIONSREQUEST.fields_by_name['page_token']._options = None
@@ -1001,8 +1104,8 @@ _REGISTRYSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=2439,
-  serialized_end=4207,
+  serialized_start=2688,
+  serialized_end=4677,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
@@ -1077,9 +1180,18 @@ _REGISTRYSERVICE = _descriptor.ServiceDescriptor(
     serialized_options=_b('\202\323\344\223\0027*5/iot-devices/v1/registries/{registry_id}/certificates\262\322*:\n!DeleteRegistryCertificateMetadata\022\025google.protobuf.Empty'),
   ),
   _descriptor.MethodDescriptor(
+    name='ListDeviceTopicAliases',
+    full_name='yandex.cloud.iot.devices.v1.RegistryService.ListDeviceTopicAliases',
+    index=8,
+    containing_service=None,
+    input_type=_LISTDEVICETOPICALIASESREQUEST,
+    output_type=_LISTDEVICETOPICALIASESRESPONSE,
+    serialized_options=_b('\202\323\344\223\002A\022?/iot-devices/v1/registries/{registry_id}:listDeviceTopicAliases'),
+  ),
+  _descriptor.MethodDescriptor(
     name='ListOperations',
     full_name='yandex.cloud.iot.devices.v1.RegistryService.ListOperations',
-    index=8,
+    index=9,
     containing_service=None,
     input_type=_LISTREGISTRYOPERATIONSREQUEST,
     output_type=_LISTREGISTRYOPERATIONSRESPONSE,

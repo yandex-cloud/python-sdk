@@ -21,12 +21,49 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.iot.devices.v1',
   syntax='proto3',
   serialized_options=_b('ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/iot/devices/v1;devices'),
-  serialized_pb=_b('\n(yandex/cloud/iot/devices/v1/device.proto\x12\x1byandex.cloud.iot.devices.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"|\n\x06\x44\x65vice\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x0bregistry_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\"\x85\x01\n\x11\x44\x65viceCertificate\x12\x11\n\tdevice_id\x18\x01 \x01(\t\x12\x13\n\x0b\x66ingerprint\x18\x02 \x01(\t\x12\x18\n\x10\x63\x65rtificate_data\x18\x03 \x01(\t\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.TimestampBIZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/iot/devices/v1;devicesb\x06proto3')
+  serialized_pb=_b('\n(yandex/cloud/iot/devices/v1/device.proto\x12\x1byandex.cloud.iot.devices.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\xff\x01\n\x06\x44\x65vice\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x0bregistry_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12L\n\rtopic_aliases\x18\x06 \x03(\x0b\x32\x35.yandex.cloud.iot.devices.v1.Device.TopicAliasesEntry\x1a\x33\n\x11TopicAliasesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x85\x01\n\x11\x44\x65viceCertificate\x12\x11\n\tdevice_id\x18\x01 \x01(\t\x12\x13\n\x0b\x66ingerprint\x18\x02 \x01(\t\x12\x18\n\x10\x63\x65rtificate_data\x18\x03 \x01(\t\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.TimestampBIZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/iot/devices/v1;devicesb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
 
 
+
+_DEVICE_TOPICALIASESENTRY = _descriptor.Descriptor(
+  name='TopicAliasesEntry',
+  full_name='yandex.cloud.iot.devices.v1.Device.TopicAliasesEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='yandex.cloud.iot.devices.v1.Device.TopicAliasesEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='yandex.cloud.iot.devices.v1.Device.TopicAliasesEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=_b('8\001'),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=342,
+  serialized_end=393,
+)
 
 _DEVICE = _descriptor.Descriptor(
   name='Device',
@@ -70,10 +107,17 @@ _DEVICE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='topic_aliases', full_name='yandex.cloud.iot.devices.v1.Device.topic_aliases', index=5,
+      number=6, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
-  nested_types=[],
+  nested_types=[_DEVICE_TOPICALIASESENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -82,8 +126,8 @@ _DEVICE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=137,
-  serialized_end=261,
+  serialized_start=138,
+  serialized_end=393,
 )
 
 
@@ -134,22 +178,32 @@ _DEVICECERTIFICATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=264,
-  serialized_end=397,
+  serialized_start=396,
+  serialized_end=529,
 )
 
+_DEVICE_TOPICALIASESENTRY.containing_type = _DEVICE
 _DEVICE.fields_by_name['created_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_DEVICE.fields_by_name['topic_aliases'].message_type = _DEVICE_TOPICALIASESENTRY
 _DEVICECERTIFICATE.fields_by_name['created_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 DESCRIPTOR.message_types_by_name['Device'] = _DEVICE
 DESCRIPTOR.message_types_by_name['DeviceCertificate'] = _DEVICECERTIFICATE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Device = _reflection.GeneratedProtocolMessageType('Device', (_message.Message,), dict(
+
+  TopicAliasesEntry = _reflection.GeneratedProtocolMessageType('TopicAliasesEntry', (_message.Message,), dict(
+    DESCRIPTOR = _DEVICE_TOPICALIASESENTRY,
+    __module__ = 'yandex.cloud.iot.devices.v1.device_pb2'
+    # @@protoc_insertion_point(class_scope:yandex.cloud.iot.devices.v1.Device.TopicAliasesEntry)
+    ))
+  ,
   DESCRIPTOR = _DEVICE,
   __module__ = 'yandex.cloud.iot.devices.v1.device_pb2'
   # @@protoc_insertion_point(class_scope:yandex.cloud.iot.devices.v1.Device)
   ))
 _sym_db.RegisterMessage(Device)
+_sym_db.RegisterMessage(Device.TopicAliasesEntry)
 
 DeviceCertificate = _reflection.GeneratedProtocolMessageType('DeviceCertificate', (_message.Message,), dict(
   DESCRIPTOR = _DEVICECERTIFICATE,
@@ -160,4 +214,5 @@ _sym_db.RegisterMessage(DeviceCertificate)
 
 
 DESCRIPTOR._options = None
+_DEVICE_TOPICALIASESENTRY._options = None
 # @@protoc_insertion_point(module_scope)

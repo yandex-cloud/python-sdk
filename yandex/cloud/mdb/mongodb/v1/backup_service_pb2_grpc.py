@@ -32,16 +32,16 @@ class BackupServiceServicer(object):
   """
 
   def Get(self, request, context):
-    """Returns the specified MongoDB Backup resource.
+    """Returns the specified MongoDB backup.
 
-    To get the list of available MongoDB Backup resources, make a [List] request.
+    To get the list of available MongoDB backups, make a [List] request.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def List(self, request, context):
-    """Retrieves the list of Backup resources available for the specified folder.
+    """Retrieves the list of backups available for the specified folder.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
