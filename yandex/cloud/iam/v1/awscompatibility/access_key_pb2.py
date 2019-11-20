@@ -19,8 +19,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/iam/v1/awscompatibility/access_key.proto',
   package='yandex.cloud.iam.v1.awscompatibility',
   syntax='proto3',
-  serialized_options=_b('ZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1/awscompatibility;awscompatibility'),
-  serialized_pb=_b('\n5yandex/cloud/iam/v1/awscompatibility/access_key.proto\x12$yandex.cloud.iam.v1.awscompatibility\x1a\x1fgoogle/protobuf/timestamp.proto\"\x88\x01\n\tAccessKey\x12\n\n\x02id\x18\x01 \x01(\t\x12\x1a\n\x12service_account_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0e\n\x06key_id\x18\x05 \x01(\tB[ZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1/awscompatibility;awscompatibilityb\x06proto3')
+  serialized_options=_b('\n(yandex.cloud.api.iam.v1.awscompatibilityZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1/awscompatibility;awscompatibility'),
+  serialized_pb=_b('\n5yandex/cloud/iam/v1/awscompatibility/access_key.proto\x12$yandex.cloud.iam.v1.awscompatibility\x1a\x1fgoogle/protobuf/timestamp.proto\"\x88\x01\n\tAccessKey\x12\n\n\x02id\x18\x01 \x01(\t\x12\x1a\n\x12service_account_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0e\n\x06key_id\x18\x05 \x01(\tB\x85\x01\n(yandex.cloud.api.iam.v1.awscompatibilityZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1/awscompatibility;awscompatibilityb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 

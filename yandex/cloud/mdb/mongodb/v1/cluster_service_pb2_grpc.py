@@ -202,7 +202,6 @@ class ClusterServiceServicer(object):
 
   def ListLogs(self, request, context):
     """Retrieves logs for the specified MongoDB cluster.
-    See the [Logs](/docs/yandex-mdb-guide/concepts/logs) section in the developers guide for detailed logs description.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')

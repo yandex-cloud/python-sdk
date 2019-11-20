@@ -20,8 +20,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/mdb/clickhouse/v1/config/clickhouse.proto',
   package='yandex.cloud.mdb.clickhouse.v1.config',
   syntax='proto3',
-  serialized_options=_b('ZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/clickhouse/v1/config;clickhouse'),
-  serialized_pb=_b('\n6yandex/cloud/mdb/clickhouse/v1/config/clickhouse.proto\x12%yandex.cloud.mdb.clickhouse.v1.config\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\x95\'\n\x10\x43lickhouseConfig\x12S\n\tlog_level\x18\x01 \x01(\x0e\x32@.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.LogLevel\x12U\n\nmerge_tree\x18\x02 \x01(\x0b\x32\x41.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.MergeTree\x12X\n\x0b\x63ompression\x18\x03 \x03(\x0b\x32\x43.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.Compression\x12`\n\x0c\x64ictionaries\x18\x04 \x03(\x0b\x32J.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary\x12_\n\x0fgraphite_rollup\x18\x05 \x03(\x0b\x32\x46.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.GraphiteRollup\x12>\n\x0fmax_connections\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x08\xfa\xc7\x31\x04>=10\x12\x45\n\x16max_concurrent_queries\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x08\xfa\xc7\x31\x04>=10\x12\x37\n\x12keep_alive_timeout\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12<\n\x17uncompressed_cache_size\x18\t \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x45\n\x0fmark_cache_size\x18\n \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0f\xfa\xc7\x31\x0b>5368709120\x12;\n\x16max_table_size_to_drop\x18\x0b \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12?\n\x1amax_partition_size_to_drop\x18\r \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12I\n$builtin_dictionaries_reload_interval\x18\x0c \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x10\n\x08timezone\x18\x0e \x01(\t\x1a\x9f\x01\n\tMergeTree\x12\x44\n\x1freplicated_deduplication_window\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12L\n\'replicated_deduplication_window_seconds\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x1a\xdb\x01\n\x0b\x43ompression\x12Z\n\x06method\x18\x01 \x01(\x0e\x32J.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.Compression.Method\x12\x1e\n\rmin_part_size\x18\x02 \x01(\x03\x42\x07\xfa\xc7\x31\x03>=1\x12\x1b\n\x13min_part_size_ratio\x18\x03 \x01(\x01\"3\n\x06Method\x12\x16\n\x12METHOD_UNSPECIFIED\x10\x00\x12\x07\n\x03LZ4\x10\x01\x12\x08\n\x04ZSTD\x10\x02\x1a\xba\x18\n\x12\x45xternalDictionary\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12m\n\tstructure\x18\x02 \x01(\x0b\x32T.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.StructureB\x04\xe8\xc7\x31\x01\x12g\n\x06layout\x18\x03 \x01(\x0b\x32Q.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.LayoutB\x04\xe8\xc7\x31\x01\x12\x18\n\x0e\x66ixed_lifetime\x18\x04 \x01(\x03H\x00\x12j\n\x0elifetime_range\x18\x05 \x01(\x0b\x32P.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.RangeH\x00\x12l\n\x0bhttp_source\x18\x06 \x01(\x0b\x32U.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.HttpSourceH\x01\x12n\n\x0cmysql_source\x18\x07 \x01(\x0b\x32V.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.MysqlSourceH\x01\x12x\n\x11\x63lickhouse_source\x18\x08 \x01(\x0b\x32[.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.ClickhouseSourceH\x01\x12r\n\x0emongodb_source\x18\t \x01(\x0b\x32X.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.MongodbSourceH\x01\x12x\n\x11postgresql_source\x18\n \x01(\x0b\x32[.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.PostgresqlSourceH\x01\x1a\x35\n\nHttpSource\x12\x11\n\x03url\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x14\n\x06\x66ormat\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x1a\x93\x03\n\x0bMysqlSource\x12\x10\n\x02\x64\x62\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x13\n\x05table\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x19\n\x04port\x18\x03 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-65535\x12\x0c\n\x04user\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12x\n\x08replicas\x18\x06 \x03(\x0b\x32^.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.MysqlSource.ReplicaB\x06\x82\xc8\x31\x02>0\x12\r\n\x05where\x18\x07 \x01(\t\x12\x18\n\x10invalidate_query\x18\x08 \x01(\t\x1a\x7f\n\x07Replica\x12\x1b\n\x04host\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=253\x12\x1c\n\x08priority\x18\x02 \x01(\x03\x42\n\xe8\xc7\x31\x01\xfa\xc7\x31\x02>0\x12\x19\n\x04port\x18\x03 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-65535\x12\x0c\n\x04user\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x1a\xa6\x01\n\x10\x43lickhouseSource\x12\x10\n\x02\x64\x62\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x13\n\x05table\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1b\n\x04host\x18\x03 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=253\x12\x19\n\x04port\x18\x04 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-65535\x12\x12\n\x04user\x18\x05 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x10\n\x08password\x18\x06 \x01(\t\x12\r\n\x05where\x18\x07 \x01(\t\x1a\x99\x01\n\rMongodbSource\x12\x10\n\x02\x64\x62\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x18\n\ncollection\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1b\n\x04host\x18\x03 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=253\x12\x19\n\x04port\x18\x04 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-65535\x12\x12\n\x04user\x18\x05 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x10\n\x08password\x18\x06 \x01(\t\x1a\x8b\x03\n\x10PostgresqlSource\x12\x10\n\x02\x64\x62\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x13\n\x05table\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x15\n\x05hosts\x18\x03 \x03(\tB\x06\x82\xc8\x31\x02>0\x12\x19\n\x04port\x18\x04 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-65535\x12\x12\n\x04user\x18\x05 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x10\n\x08password\x18\x06 \x01(\t\x12\x18\n\x10invalidate_query\x18\x07 \x01(\t\x12u\n\x08ssl_mode\x18\x08 \x01(\x0e\x32\x63.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.PostgresqlSource.SslMode\"g\n\x07SslMode\x12\x18\n\x14SSL_MODE_UNSPECIFIED\x10\x00\x12\x0b\n\x07\x44ISABLE\x10\x01\x12\t\n\x05\x41LLOW\x10\x02\x12\n\n\x06PREFER\x10\x03\x12\r\n\tVERIFY_CA\x10\x04\x12\x0f\n\x0bVERIFY_FULL\x10\x05\x1a\xf8\x04\n\tStructure\x12\x63\n\x02id\x18\x01 \x01(\x0b\x32W.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.Structure.Id\x12\x65\n\x03key\x18\x03 \x01(\x0b\x32X.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.Structure.Key\x12z\n\nattributes\x18\x02 \x03(\x0b\x32^.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.Structure.AttributeB\x06\x82\xc8\x31\x02>0\x1a\x84\x01\n\tAttribute\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x12\n\x04type\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x12\n\nnull_value\x18\x03 \x01(\t\x12\x12\n\nexpression\x18\x04 \x01(\t\x12\x14\n\x0chierarchical\x18\x05 \x01(\x08\x12\x11\n\tinjective\x18\x06 \x01(\x08\x1a\x18\n\x02Id\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x1a\x81\x01\n\x03Key\x12z\n\nattributes\x18\x01 \x03(\x0b\x32^.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.Structure.AttributeB\x06\x82\xc8\x31\x02>0\x1a\x8b\x02\n\x06Layout\x12j\n\x04type\x18\x01 \x01(\x0e\x32V.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.Layout.TypeB\x04\xe8\xc7\x31\x01\x12\x15\n\rsize_in_cells\x18\x02 \x01(\x03\"~\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x08\n\x04\x46LAT\x10\x01\x12\n\n\x06HASHED\x10\x02\x12\x16\n\x12\x43OMPLEX_KEY_HASHED\x10\x03\x12\x10\n\x0cRANGE_HASHED\x10\x04\x12\t\n\x05\x43\x41\x43HE\x10\x05\x12\x15\n\x11\x43OMPLEX_KEY_CACHE\x10\x06\x1a!\n\x05Range\x12\x0b\n\x03min\x18\x01 \x01(\x03\x12\x0b\n\x03max\x18\x02 \x01(\x03\x42\x10\n\x08lifetime\x12\x04\xc0\xc1\x31\x01\x42\x0e\n\x06source\x12\x04\xc0\xc1\x31\x01\x1a\xf4\x02\n\x0eGraphiteRollup\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12h\n\x08patterns\x18\x02 \x03(\x0b\x32N.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.GraphiteRollup.PatternB\x06\x82\xc8\x31\x02>0\x1a\xe3\x01\n\x07Pattern\x12\x0e\n\x06regexp\x18\x01 \x01(\t\x12\x16\n\x08\x66unction\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12s\n\tretention\x18\x03 \x03(\x0b\x32X.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.GraphiteRollup.Pattern.RetentionB\x06\x82\xc8\x31\x02>0\x1a;\n\tRetention\x12\x13\n\x03\x61ge\x18\x01 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\x12\x19\n\tprecision\x18\x02 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\"d\n\x08LogLevel\x12\x19\n\x15LOG_LEVEL_UNSPECIFIED\x10\x00\x12\t\n\x05TRACE\x10\x01\x12\t\n\x05\x44\x45\x42UG\x10\x02\x12\x0f\n\x0bINFORMATION\x10\x03\x12\x0b\n\x07WARNING\x10\x04\x12\t\n\x05\x45RROR\x10\x05\"\x8d\x02\n\x13\x43lickhouseConfigSet\x12W\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32\x37.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfigB\x04\xe8\xc7\x31\x01\x12L\n\x0buser_config\x18\x02 \x01(\x0b\x32\x37.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig\x12O\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32\x37.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfigBVZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/clickhouse/v1/config;clickhouseb\x06proto3')
+  serialized_options=_b('\n)yandex.cloud.api.mdb.clickhouse.v1.configZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/clickhouse/v1/config;clickhouse'),
+  serialized_pb=_b('\n6yandex/cloud/mdb/clickhouse/v1/config/clickhouse.proto\x12%yandex.cloud.mdb.clickhouse.v1.config\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\xff+\n\x10\x43lickhouseConfig\x12S\n\tlog_level\x18\x01 \x01(\x0e\x32@.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.LogLevel\x12U\n\nmerge_tree\x18\x02 \x01(\x0b\x32\x41.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.MergeTree\x12X\n\x0b\x63ompression\x18\x03 \x03(\x0b\x32\x43.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.Compression\x12`\n\x0c\x64ictionaries\x18\x04 \x03(\x0b\x32J.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary\x12_\n\x0fgraphite_rollup\x18\x05 \x03(\x0b\x32\x46.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.GraphiteRollup\x12>\n\x0fmax_connections\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x08\xfa\xc7\x31\x04>=10\x12\x45\n\x16max_concurrent_queries\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x08\xfa\xc7\x31\x04>=10\x12\x37\n\x12keep_alive_timeout\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12<\n\x17uncompressed_cache_size\x18\t \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x45\n\x0fmark_cache_size\x18\n \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0f\xfa\xc7\x31\x0b>5368709120\x12;\n\x16max_table_size_to_drop\x18\x0b \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12?\n\x1amax_partition_size_to_drop\x18\r \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12M\n$builtin_dictionaries_reload_interval\x18\x0c \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x02\x18\x01\x12\x10\n\x08timezone\x18\x0e \x01(\t\x12\x13\n\x0bgeobase_uri\x18\x0f \x01(\t\x1a\x8a\x04\n\tMergeTree\x12\x44\n\x1freplicated_deduplication_window\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12L\n\'replicated_deduplication_window_seconds\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12:\n\x15parts_to_delay_insert\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12:\n\x15parts_to_throw_insert\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x43\n\x1emax_replicated_merges_in_queue\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12^\n9number_of_free_entries_in_pool_to_lower_max_size_of_merge\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12L\n\'max_bytes_to_merge_at_min_space_in_pool\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x1a\xdb\x01\n\x0b\x43ompression\x12Z\n\x06method\x18\x01 \x01(\x0e\x32J.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.Compression.Method\x12\x1e\n\rmin_part_size\x18\x02 \x01(\x03\x42\x07\xfa\xc7\x31\x03>=1\x12\x1b\n\x13min_part_size_ratio\x18\x03 \x01(\x01\"3\n\x06Method\x12\x16\n\x12METHOD_UNSPECIFIED\x10\x00\x12\x07\n\x03LZ4\x10\x01\x12\x08\n\x04ZSTD\x10\x02\x1a\xa0\x1a\n\x12\x45xternalDictionary\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12m\n\tstructure\x18\x02 \x01(\x0b\x32T.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.StructureB\x04\xe8\xc7\x31\x01\x12g\n\x06layout\x18\x03 \x01(\x0b\x32Q.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.LayoutB\x04\xe8\xc7\x31\x01\x12\x18\n\x0e\x66ixed_lifetime\x18\x04 \x01(\x03H\x00\x12j\n\x0elifetime_range\x18\x05 \x01(\x0b\x32P.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.RangeH\x00\x12l\n\x0bhttp_source\x18\x06 \x01(\x0b\x32U.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.HttpSourceH\x01\x12n\n\x0cmysql_source\x18\x07 \x01(\x0b\x32V.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.MysqlSourceH\x01\x12x\n\x11\x63lickhouse_source\x18\x08 \x01(\x0b\x32[.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.ClickhouseSourceH\x01\x12r\n\x0emongodb_source\x18\t \x01(\x0b\x32X.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.MongodbSourceH\x01\x12x\n\x11postgresql_source\x18\n \x01(\x0b\x32[.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.PostgresqlSourceH\x01\x1a\x35\n\nHttpSource\x12\x11\n\x03url\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x14\n\x06\x66ormat\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x1a\x93\x03\n\x0bMysqlSource\x12\x10\n\x02\x64\x62\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x13\n\x05table\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x19\n\x04port\x18\x03 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-65535\x12\x0c\n\x04user\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x12x\n\x08replicas\x18\x06 \x03(\x0b\x32^.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.MysqlSource.ReplicaB\x06\x82\xc8\x31\x02>0\x12\r\n\x05where\x18\x07 \x01(\t\x12\x18\n\x10invalidate_query\x18\x08 \x01(\t\x1a\x7f\n\x07Replica\x12\x1b\n\x04host\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=253\x12\x1c\n\x08priority\x18\x02 \x01(\x03\x42\n\xe8\xc7\x31\x01\xfa\xc7\x31\x02>0\x12\x19\n\x04port\x18\x03 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-65535\x12\x0c\n\x04user\x18\x04 \x01(\t\x12\x10\n\x08password\x18\x05 \x01(\t\x1a\xa6\x01\n\x10\x43lickhouseSource\x12\x10\n\x02\x64\x62\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x13\n\x05table\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1b\n\x04host\x18\x03 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=253\x12\x19\n\x04port\x18\x04 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-65535\x12\x12\n\x04user\x18\x05 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x10\n\x08password\x18\x06 \x01(\t\x12\r\n\x05where\x18\x07 \x01(\t\x1a\x99\x01\n\rMongodbSource\x12\x10\n\x02\x64\x62\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x18\n\ncollection\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1b\n\x04host\x18\x03 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=253\x12\x19\n\x04port\x18\x04 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-65535\x12\x12\n\x04user\x18\x05 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x10\n\x08password\x18\x06 \x01(\t\x1a\x8b\x03\n\x10PostgresqlSource\x12\x10\n\x02\x64\x62\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x13\n\x05table\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x15\n\x05hosts\x18\x03 \x03(\tB\x06\x82\xc8\x31\x02>0\x12\x19\n\x04port\x18\x04 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-65535\x12\x12\n\x04user\x18\x05 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x10\n\x08password\x18\x06 \x01(\t\x12\x18\n\x10invalidate_query\x18\x07 \x01(\t\x12u\n\x08ssl_mode\x18\x08 \x01(\x0e\x32\x63.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.PostgresqlSource.SslMode\"g\n\x07SslMode\x12\x18\n\x14SSL_MODE_UNSPECIFIED\x10\x00\x12\x0b\n\x07\x44ISABLE\x10\x01\x12\t\n\x05\x41LLOW\x10\x02\x12\n\n\x06PREFER\x10\x03\x12\r\n\tVERIFY_CA\x10\x04\x12\x0f\n\x0bVERIFY_FULL\x10\x05\x1a\xde\x06\n\tStructure\x12\x63\n\x02id\x18\x01 \x01(\x0b\x32W.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.Structure.Id\x12\x65\n\x03key\x18\x03 \x01(\x0b\x32X.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.Structure.Key\x12q\n\trange_min\x18\x04 \x01(\x0b\x32^.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.Structure.Attribute\x12q\n\trange_max\x18\x05 \x01(\x0b\x32^.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.Structure.Attribute\x12z\n\nattributes\x18\x02 \x03(\x0b\x32^.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.Structure.AttributeB\x06\x82\xc8\x31\x02>0\x1a\x84\x01\n\tAttribute\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x12\n\x04type\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x12\n\nnull_value\x18\x03 \x01(\t\x12\x12\n\nexpression\x18\x04 \x01(\t\x12\x14\n\x0chierarchical\x18\x05 \x01(\x08\x12\x11\n\tinjective\x18\x06 \x01(\x08\x1a\x18\n\x02Id\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x1a\x81\x01\n\x03Key\x12z\n\nattributes\x18\x01 \x03(\x0b\x32^.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.Structure.AttributeB\x06\x82\xc8\x31\x02>0\x1a\x8b\x02\n\x06Layout\x12j\n\x04type\x18\x01 \x01(\x0e\x32V.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.Layout.TypeB\x04\xe8\xc7\x31\x01\x12\x15\n\rsize_in_cells\x18\x02 \x01(\x03\"~\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x08\n\x04\x46LAT\x10\x01\x12\n\n\x06HASHED\x10\x02\x12\x16\n\x12\x43OMPLEX_KEY_HASHED\x10\x03\x12\x10\n\x0cRANGE_HASHED\x10\x04\x12\t\n\x05\x43\x41\x43HE\x10\x05\x12\x15\n\x11\x43OMPLEX_KEY_CACHE\x10\x06\x1a!\n\x05Range\x12\x0b\n\x03min\x18\x01 \x01(\x03\x12\x0b\n\x03max\x18\x02 \x01(\x03\x42\x10\n\x08lifetime\x12\x04\xc0\xc1\x31\x01\x42\x0e\n\x06source\x12\x04\xc0\xc1\x31\x01\x1a\xf4\x02\n\x0eGraphiteRollup\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12h\n\x08patterns\x18\x02 \x03(\x0b\x32N.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.GraphiteRollup.PatternB\x06\x82\xc8\x31\x02>0\x1a\xe3\x01\n\x07Pattern\x12\x0e\n\x06regexp\x18\x01 \x01(\t\x12\x16\n\x08\x66unction\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12s\n\tretention\x18\x03 \x03(\x0b\x32X.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.GraphiteRollup.Pattern.RetentionB\x06\x82\xc8\x31\x02>0\x1a;\n\tRetention\x12\x13\n\x03\x61ge\x18\x01 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\x12\x19\n\tprecision\x18\x02 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\"d\n\x08LogLevel\x12\x19\n\x15LOG_LEVEL_UNSPECIFIED\x10\x00\x12\t\n\x05TRACE\x10\x01\x12\t\n\x05\x44\x45\x42UG\x10\x02\x12\x0f\n\x0bINFORMATION\x10\x03\x12\x0b\n\x07WARNING\x10\x04\x12\t\n\x05\x45RROR\x10\x05\"\x8d\x02\n\x13\x43lickhouseConfigSet\x12W\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32\x37.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfigB\x04\xe8\xc7\x31\x01\x12L\n\x0buser_config\x18\x02 \x01(\x0b\x32\x37.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig\x12O\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32\x37.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfigB\x81\x01\n)yandex.cloud.api.mdb.clickhouse.v1.configZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/clickhouse/v1/config;clickhouseb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -48,8 +48,8 @@ _CLICKHOUSECONFIG_COMPRESSION_METHOD = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1513,
-  serialized_end=1564,
+  serialized_start=1901,
+  serialized_end=1952,
 )
 _sym_db.RegisterEnumDescriptor(_CLICKHOUSECONFIG_COMPRESSION_METHOD)
 
@@ -86,8 +86,8 @@ _CLICKHOUSECONFIG_EXTERNALDICTIONARY_POSTGRESQLSOURCE_SSLMODE = _descriptor.Enum
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3620,
-  serialized_end=3723,
+  serialized_start=4008,
+  serialized_end=4111,
 )
 _sym_db.RegisterEnumDescriptor(_CLICKHOUSECONFIG_EXTERNALDICTIONARY_POSTGRESQLSOURCE_SSLMODE)
 
@@ -128,8 +128,8 @@ _CLICKHOUSECONFIG_EXTERNALDICTIONARY_LAYOUT_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4502,
-  serialized_end=4628,
+  serialized_start=5120,
+  serialized_end=5246,
 )
 _sym_db.RegisterEnumDescriptor(_CLICKHOUSECONFIG_EXTERNALDICTIONARY_LAYOUT_TYPE)
 
@@ -166,8 +166,8 @@ _CLICKHOUSECONFIG_LOGLEVEL = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5074,
-  serialized_end=5174,
+  serialized_start=5692,
+  serialized_end=5792,
 )
 _sym_db.RegisterEnumDescriptor(_CLICKHOUSECONFIG_LOGLEVEL)
 
@@ -193,6 +193,41 @@ _CLICKHOUSECONFIG_MERGETREE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='parts_to_delay_insert', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.MergeTree.parts_to_delay_insert', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='parts_to_throw_insert', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.MergeTree.parts_to_throw_insert', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='max_replicated_merges_in_queue', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.MergeTree.max_replicated_merges_in_queue', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='number_of_free_entries_in_pool_to_lower_max_size_of_merge', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.MergeTree.number_of_free_entries_in_pool_to_lower_max_size_of_merge', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='max_bytes_to_merge_at_min_space_in_pool', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.MergeTree.max_bytes_to_merge_at_min_space_in_pool', index=6,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -205,8 +240,8 @@ _CLICKHOUSECONFIG_MERGETREE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1183,
-  serialized_end=1342,
+  serialized_start=1208,
+  serialized_end=1730,
 )
 
 _CLICKHOUSECONFIG_COMPRESSION = _descriptor.Descriptor(
@@ -250,8 +285,8 @@ _CLICKHOUSECONFIG_COMPRESSION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1345,
-  serialized_end=1564,
+  serialized_start=1733,
+  serialized_end=1952,
 )
 
 _CLICKHOUSECONFIG_EXTERNALDICTIONARY_HTTPSOURCE = _descriptor.Descriptor(
@@ -287,8 +322,8 @@ _CLICKHOUSECONFIG_EXTERNALDICTIONARY_HTTPSOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2541,
-  serialized_end=2594,
+  serialized_start=2929,
+  serialized_end=2982,
 )
 
 _CLICKHOUSECONFIG_EXTERNALDICTIONARY_MYSQLSOURCE_REPLICA = _descriptor.Descriptor(
@@ -345,8 +380,8 @@ _CLICKHOUSECONFIG_EXTERNALDICTIONARY_MYSQLSOURCE_REPLICA = _descriptor.Descripto
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2873,
-  serialized_end=3000,
+  serialized_start=3261,
+  serialized_end=3388,
 )
 
 _CLICKHOUSECONFIG_EXTERNALDICTIONARY_MYSQLSOURCE = _descriptor.Descriptor(
@@ -424,8 +459,8 @@ _CLICKHOUSECONFIG_EXTERNALDICTIONARY_MYSQLSOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2597,
-  serialized_end=3000,
+  serialized_start=2985,
+  serialized_end=3388,
 )
 
 _CLICKHOUSECONFIG_EXTERNALDICTIONARY_CLICKHOUSESOURCE = _descriptor.Descriptor(
@@ -496,8 +531,8 @@ _CLICKHOUSECONFIG_EXTERNALDICTIONARY_CLICKHOUSESOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3003,
-  serialized_end=3169,
+  serialized_start=3391,
+  serialized_end=3557,
 )
 
 _CLICKHOUSECONFIG_EXTERNALDICTIONARY_MONGODBSOURCE = _descriptor.Descriptor(
@@ -561,8 +596,8 @@ _CLICKHOUSECONFIG_EXTERNALDICTIONARY_MONGODBSOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3172,
-  serialized_end=3325,
+  serialized_start=3560,
+  serialized_end=3713,
 )
 
 _CLICKHOUSECONFIG_EXTERNALDICTIONARY_POSTGRESQLSOURCE = _descriptor.Descriptor(
@@ -641,8 +676,8 @@ _CLICKHOUSECONFIG_EXTERNALDICTIONARY_POSTGRESQLSOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3328,
-  serialized_end=3723,
+  serialized_start=3716,
+  serialized_end=4111,
 )
 
 _CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE_ATTRIBUTE = _descriptor.Descriptor(
@@ -706,8 +741,8 @@ _CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE_ATTRIBUTE = _descriptor.Descripto
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4068,
-  serialized_end=4200,
+  serialized_start=4686,
+  serialized_end=4818,
 )
 
 _CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE_ID = _descriptor.Descriptor(
@@ -736,8 +771,8 @@ _CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE_ID = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4202,
-  serialized_end=4226,
+  serialized_start=4820,
+  serialized_end=4844,
 )
 
 _CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE_KEY = _descriptor.Descriptor(
@@ -766,8 +801,8 @@ _CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE_KEY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4229,
-  serialized_end=4358,
+  serialized_start=4847,
+  serialized_end=4976,
 )
 
 _CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE = _descriptor.Descriptor(
@@ -792,7 +827,21 @@ _CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='attributes', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.Structure.attributes', index=2,
+      name='range_min', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.Structure.range_min', index=2,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='range_max', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.Structure.range_max', index=3,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='attributes', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.Structure.attributes', index=4,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -810,8 +859,8 @@ _CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3726,
-  serialized_end=4358,
+  serialized_start=4114,
+  serialized_end=4976,
 )
 
 _CLICKHOUSECONFIG_EXTERNALDICTIONARY_LAYOUT = _descriptor.Descriptor(
@@ -848,8 +897,8 @@ _CLICKHOUSECONFIG_EXTERNALDICTIONARY_LAYOUT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4361,
-  serialized_end=4628,
+  serialized_start=4979,
+  serialized_end=5246,
 )
 
 _CLICKHOUSECONFIG_EXTERNALDICTIONARY_RANGE = _descriptor.Descriptor(
@@ -885,8 +934,8 @@ _CLICKHOUSECONFIG_EXTERNALDICTIONARY_RANGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4630,
-  serialized_end=4663,
+  serialized_start=5248,
+  serialized_end=5281,
 )
 
 _CLICKHOUSECONFIG_EXTERNALDICTIONARY = _descriptor.Descriptor(
@@ -984,8 +1033,8 @@ _CLICKHOUSECONFIG_EXTERNALDICTIONARY = _descriptor.Descriptor(
       name='source', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.ExternalDictionary.source',
       index=1, containing_type=None, fields=[], serialized_options=_b('\300\3011\001')),
   ],
-  serialized_start=1567,
-  serialized_end=4697,
+  serialized_start=1955,
+  serialized_end=5315,
 )
 
 _CLICKHOUSECONFIG_GRAPHITEROLLUP_PATTERN_RETENTION = _descriptor.Descriptor(
@@ -1021,8 +1070,8 @@ _CLICKHOUSECONFIG_GRAPHITEROLLUP_PATTERN_RETENTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5013,
-  serialized_end=5072,
+  serialized_start=5631,
+  serialized_end=5690,
 )
 
 _CLICKHOUSECONFIG_GRAPHITEROLLUP_PATTERN = _descriptor.Descriptor(
@@ -1065,8 +1114,8 @@ _CLICKHOUSECONFIG_GRAPHITEROLLUP_PATTERN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4845,
-  serialized_end=5072,
+  serialized_start=5463,
+  serialized_end=5690,
 )
 
 _CLICKHOUSECONFIG_GRAPHITEROLLUP = _descriptor.Descriptor(
@@ -1102,8 +1151,8 @@ _CLICKHOUSECONFIG_GRAPHITEROLLUP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4700,
-  serialized_end=5072,
+  serialized_start=5318,
+  serialized_end=5690,
 )
 
 _CLICKHOUSECONFIG = _descriptor.Descriptor(
@@ -1203,10 +1252,17 @@ _CLICKHOUSECONFIG = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=_b('\030\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='timezone', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.timezone', index=13,
       number=14, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='geobase_uri', full_name='yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfig.geobase_uri', index=14,
+      number=15, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -1225,7 +1281,7 @@ _CLICKHOUSECONFIG = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=161,
-  serialized_end=5174,
+  serialized_end=5792,
 )
 
 
@@ -1269,12 +1325,17 @@ _CLICKHOUSECONFIGSET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5177,
-  serialized_end=5446,
+  serialized_start=5795,
+  serialized_end=6064,
 )
 
 _CLICKHOUSECONFIG_MERGETREE.fields_by_name['replicated_deduplication_window'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
 _CLICKHOUSECONFIG_MERGETREE.fields_by_name['replicated_deduplication_window_seconds'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_CLICKHOUSECONFIG_MERGETREE.fields_by_name['parts_to_delay_insert'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_CLICKHOUSECONFIG_MERGETREE.fields_by_name['parts_to_throw_insert'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_CLICKHOUSECONFIG_MERGETREE.fields_by_name['max_replicated_merges_in_queue'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_CLICKHOUSECONFIG_MERGETREE.fields_by_name['number_of_free_entries_in_pool_to_lower_max_size_of_merge'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_CLICKHOUSECONFIG_MERGETREE.fields_by_name['max_bytes_to_merge_at_min_space_in_pool'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
 _CLICKHOUSECONFIG_MERGETREE.containing_type = _CLICKHOUSECONFIG
 _CLICKHOUSECONFIG_COMPRESSION.fields_by_name['method'].enum_type = _CLICKHOUSECONFIG_COMPRESSION_METHOD
 _CLICKHOUSECONFIG_COMPRESSION.containing_type = _CLICKHOUSECONFIG
@@ -1294,6 +1355,8 @@ _CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE_KEY.fields_by_name['attributes'].
 _CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE_KEY.containing_type = _CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE
 _CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE.fields_by_name['id'].message_type = _CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE_ID
 _CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE.fields_by_name['key'].message_type = _CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE_KEY
+_CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE.fields_by_name['range_min'].message_type = _CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE_ATTRIBUTE
+_CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE.fields_by_name['range_max'].message_type = _CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE_ATTRIBUTE
 _CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE.fields_by_name['attributes'].message_type = _CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE_ATTRIBUTE
 _CLICKHOUSECONFIG_EXTERNALDICTIONARY_STRUCTURE.containing_type = _CLICKHOUSECONFIG_EXTERNALDICTIONARY
 _CLICKHOUSECONFIG_EXTERNALDICTIONARY_LAYOUT.fields_by_name['type'].enum_type = _CLICKHOUSECONFIG_EXTERNALDICTIONARY_LAYOUT_TYPE
@@ -1561,5 +1624,6 @@ _CLICKHOUSECONFIG_GRAPHITEROLLUP.fields_by_name['patterns']._options = None
 _CLICKHOUSECONFIG.fields_by_name['max_connections']._options = None
 _CLICKHOUSECONFIG.fields_by_name['max_concurrent_queries']._options = None
 _CLICKHOUSECONFIG.fields_by_name['mark_cache_size']._options = None
+_CLICKHOUSECONFIG.fields_by_name['builtin_dictionaries_reload_interval']._options = None
 _CLICKHOUSECONFIGSET.fields_by_name['effective_config']._options = None
 # @@protoc_insertion_point(module_scope)

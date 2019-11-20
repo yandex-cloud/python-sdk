@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
-from yandex.api import operation_pb2 as yandex_dot_api_dot_operation__pb2
+from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.compute.v1 import image_pb2 as yandex_dot_cloud_dot_compute_dot_v1_dot_image__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
@@ -24,10 +24,10 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/compute/v1/image_service.proto',
   package='yandex.cloud.compute.v1',
   syntax='proto3',
-  serialized_options=_b('ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;compute'),
-  serialized_pb=_b('\n+yandex/cloud/compute/v1/image_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1ayandex/api/operation.proto\x1a#yandex/cloud/compute/v1/image.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"1\n\x0fGetImageRequest\x12\x1e\n\x08image_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"s\n\x1dGetImageLatestByFamilyRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x31\n\x06\x66\x61mily\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\"\x8e\x01\n\x11ListImagesRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"]\n\x12ListImagesResponse\x12.\n\x06images\x18\x01 \x03(\x0b\x32\x1e.yandex.cloud.compute.v1.Image\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xe8\x04\n\x12\x43reateImageRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x88\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x37.yandex.cloud.compute.v1.CreateImageRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12\x31\n\x06\x66\x61mily\x18\x05 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x30\n\rmin_disk_size\x18\x06 \x01(\x03\x42\x19\xfa\xc7\x31\x15\x34\x31\x39\x34\x33\x30\x34-4398046511104\x12\x1d\n\x0bproduct_ids\x18\x07 \x03(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1c\n\x08image_id\x18\x08 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1b\n\x07\x64isk_id\x18\t \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1f\n\x0bsnapshot_id\x18\n \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\r\n\x03uri\x18\x0b \x01(\tH\x00\x12\'\n\x02os\x18\x0c \x01(\x0b\x32\x1b.yandex.cloud.compute.v1.Os\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0e\n\x06source\x12\x04\xc0\xc1\x31\x01\"\'\n\x13\x43reateImageMetadata\x12\x10\n\x08image_id\x18\x01 \x01(\t\"\xa2\x03\n\x12UpdateImageRequest\x12\x1e\n\x08image_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x30\n\rmin_disk_size\x18\x05 \x01(\x03\x42\x19\xfa\xc7\x31\x15\x34\x31\x39\x34\x33\x30\x34-4398046511104\x12\x88\x01\n\x06labels\x18\x06 \x03(\x0b\x32\x37.yandex.cloud.compute.v1.UpdateImageRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\'\n\x13UpdateImageMetadata\x12\x10\n\x08image_id\x18\x01 \x01(\t\"4\n\x12\x44\x65leteImageRequest\x12\x1e\n\x08image_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\'\n\x13\x44\x65leteImageMetadata\x12\x10\n\x08image_id\x18\x01 \x01(\t\"z\n\x1aListImageOperationsRequest\x12\x1e\n\x08image_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"m\n\x1bListImageOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xbd\x08\n\x0cImageService\x12v\n\x03Get\x12(.yandex.cloud.compute.v1.GetImageRequest\x1a\x1e.yandex.cloud.compute.v1.Image\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/compute/v1/images/{image_id}\x12\x96\x01\n\x11GetLatestByFamily\x12\x36.yandex.cloud.compute.v1.GetImageLatestByFamilyRequest\x1a\x1e.yandex.cloud.compute.v1.Image\")\x82\xd3\xe4\x93\x02#\x12!/compute/v1/images:latestByFamily\x12{\n\x04List\x12*.yandex.cloud.compute.v1.ListImagesRequest\x1a+.yandex.cloud.compute.v1.ListImagesResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/compute/v1/images\x12\x97\x01\n\x06\x43reate\x12+.yandex.cloud.compute.v1.CreateImageRequest\x1a!.yandex.cloud.operation.Operation\"=\x82\xd3\xe4\x93\x02\x17\"\x12/compute/v1/images:\x01*\xb2\xd2*\x1c\n\x13\x43reateImageMetadata\x12\x05Image\x12\xa2\x01\n\x06Update\x12+.yandex.cloud.compute.v1.UpdateImageRequest\x1a!.yandex.cloud.operation.Operation\"H\x82\xd3\xe4\x93\x02\"2\x1d/compute/v1/images/{image_id}:\x01*\xb2\xd2*\x1c\n\x13UpdateImageMetadata\x12\x05Image\x12\xaf\x01\n\x06\x44\x65lete\x12+.yandex.cloud.compute.v1.DeleteImageRequest\x1a!.yandex.cloud.operation.Operation\"U\x82\xd3\xe4\x93\x02\x1f*\x1d/compute/v1/images/{image_id}\xb2\xd2*,\n\x13\x44\x65leteImageMetadata\x12\x15google.protobuf.Empty\x12\xad\x01\n\x0eListOperations\x12\x33.yandex.cloud.compute.v1.ListImageOperationsRequest\x1a\x34.yandex.cloud.compute.v1.ListImageOperationsResponse\"0\x82\xd3\xe4\x93\x02*\x12(/compute/v1/images/{image_id}/operationsBEZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3')
+  serialized_options=_b('\n\033yandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;compute'),
+  serialized_pb=_b('\n+yandex/cloud/compute/v1/image_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a#yandex/cloud/compute/v1/image.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"1\n\x0fGetImageRequest\x12\x1e\n\x08image_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"s\n\x1dGetImageLatestByFamilyRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x31\n\x06\x66\x61mily\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\"\x8e\x01\n\x11ListImagesRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"]\n\x12ListImagesResponse\x12.\n\x06images\x18\x01 \x03(\x0b\x32\x1e.yandex.cloud.compute.v1.Image\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xe8\x04\n\x12\x43reateImageRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x88\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x37.yandex.cloud.compute.v1.CreateImageRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12\x31\n\x06\x66\x61mily\x18\x05 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x30\n\rmin_disk_size\x18\x06 \x01(\x03\x42\x19\xfa\xc7\x31\x15\x34\x31\x39\x34\x33\x30\x34-4398046511104\x12\x1d\n\x0bproduct_ids\x18\x07 \x03(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1c\n\x08image_id\x18\x08 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1b\n\x07\x64isk_id\x18\t \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1f\n\x0bsnapshot_id\x18\n \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\r\n\x03uri\x18\x0b \x01(\tH\x00\x12\'\n\x02os\x18\x0c \x01(\x0b\x32\x1b.yandex.cloud.compute.v1.Os\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0e\n\x06source\x12\x04\xc0\xc1\x31\x01\"\'\n\x13\x43reateImageMetadata\x12\x10\n\x08image_id\x18\x01 \x01(\t\"\xa2\x03\n\x12UpdateImageRequest\x12\x1e\n\x08image_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x30\n\rmin_disk_size\x18\x05 \x01(\x03\x42\x19\xfa\xc7\x31\x15\x34\x31\x39\x34\x33\x30\x34-4398046511104\x12\x88\x01\n\x06labels\x18\x06 \x03(\x0b\x32\x37.yandex.cloud.compute.v1.UpdateImageRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\'\n\x13UpdateImageMetadata\x12\x10\n\x08image_id\x18\x01 \x01(\t\"4\n\x12\x44\x65leteImageRequest\x12\x1e\n\x08image_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\'\n\x13\x44\x65leteImageMetadata\x12\x10\n\x08image_id\x18\x01 \x01(\t\"z\n\x1aListImageOperationsRequest\x12\x1e\n\x08image_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"m\n\x1bListImageOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xbd\x08\n\x0cImageService\x12v\n\x03Get\x12(.yandex.cloud.compute.v1.GetImageRequest\x1a\x1e.yandex.cloud.compute.v1.Image\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/compute/v1/images/{image_id}\x12\x96\x01\n\x11GetLatestByFamily\x12\x36.yandex.cloud.compute.v1.GetImageLatestByFamilyRequest\x1a\x1e.yandex.cloud.compute.v1.Image\")\x82\xd3\xe4\x93\x02#\x12!/compute/v1/images:latestByFamily\x12{\n\x04List\x12*.yandex.cloud.compute.v1.ListImagesRequest\x1a+.yandex.cloud.compute.v1.ListImagesResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/compute/v1/images\x12\x97\x01\n\x06\x43reate\x12+.yandex.cloud.compute.v1.CreateImageRequest\x1a!.yandex.cloud.operation.Operation\"=\x82\xd3\xe4\x93\x02\x17\"\x12/compute/v1/images:\x01*\xb2\xd2*\x1c\n\x13\x43reateImageMetadata\x12\x05Image\x12\xa2\x01\n\x06Update\x12+.yandex.cloud.compute.v1.UpdateImageRequest\x1a!.yandex.cloud.operation.Operation\"H\x82\xd3\xe4\x93\x02\"2\x1d/compute/v1/images/{image_id}:\x01*\xb2\xd2*\x1c\n\x13UpdateImageMetadata\x12\x05Image\x12\xaf\x01\n\x06\x44\x65lete\x12+.yandex.cloud.compute.v1.DeleteImageRequest\x1a!.yandex.cloud.operation.Operation\"U\x82\xd3\xe4\x93\x02\x1f*\x1d/compute/v1/images/{image_id}\xb2\xd2*,\n\x13\x44\x65leteImageMetadata\x12\x15google.protobuf.Empty\x12\xad\x01\n\x0eListOperations\x12\x33.yandex.cloud.compute.v1.ListImageOperationsRequest\x1a\x34.yandex.cloud.compute.v1.ListImageOperationsResponse\"0\x82\xd3\xe4\x93\x02*\x12(/compute/v1/images/{image_id}/operationsBb\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3')
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_compute_dot_v1_dot_image__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_compute_dot_v1_dot_image__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
 
 
@@ -58,8 +58,8 @@ _GETIMAGEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=272,
-  serialized_end=321,
+  serialized_start=278,
+  serialized_end=327,
 )
 
 
@@ -96,8 +96,8 @@ _GETIMAGELATESTBYFAMILYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=323,
-  serialized_end=438,
+  serialized_start=329,
+  serialized_end=444,
 )
 
 
@@ -148,8 +148,8 @@ _LISTIMAGESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=441,
-  serialized_end=583,
+  serialized_start=447,
+  serialized_end=589,
 )
 
 
@@ -186,8 +186,8 @@ _LISTIMAGESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=585,
-  serialized_end=678,
+  serialized_start=591,
+  serialized_end=684,
 )
 
 
@@ -224,8 +224,8 @@ _CREATEIMAGEREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1236,
-  serialized_end=1281,
+  serialized_start=1242,
+  serialized_end=1287,
 )
 
 _CREATEIMAGEREQUEST = _descriptor.Descriptor(
@@ -334,8 +334,8 @@ _CREATEIMAGEREQUEST = _descriptor.Descriptor(
       name='source', full_name='yandex.cloud.compute.v1.CreateImageRequest.source',
       index=0, containing_type=None, fields=[], serialized_options=_b('\300\3011\001')),
   ],
-  serialized_start=681,
-  serialized_end=1297,
+  serialized_start=687,
+  serialized_end=1303,
 )
 
 
@@ -365,8 +365,8 @@ _CREATEIMAGEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1299,
-  serialized_end=1338,
+  serialized_start=1305,
+  serialized_end=1344,
 )
 
 
@@ -403,8 +403,8 @@ _UPDATEIMAGEREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1236,
-  serialized_end=1281,
+  serialized_start=1242,
+  serialized_end=1287,
 )
 
 _UPDATEIMAGEREQUEST = _descriptor.Descriptor(
@@ -468,8 +468,8 @@ _UPDATEIMAGEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1341,
-  serialized_end=1759,
+  serialized_start=1347,
+  serialized_end=1765,
 )
 
 
@@ -499,8 +499,8 @@ _UPDATEIMAGEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1761,
-  serialized_end=1800,
+  serialized_start=1767,
+  serialized_end=1806,
 )
 
 
@@ -530,8 +530,8 @@ _DELETEIMAGEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1802,
-  serialized_end=1854,
+  serialized_start=1808,
+  serialized_end=1860,
 )
 
 
@@ -561,8 +561,8 @@ _DELETEIMAGEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1856,
-  serialized_end=1895,
+  serialized_start=1862,
+  serialized_end=1901,
 )
 
 
@@ -606,8 +606,8 @@ _LISTIMAGEOPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1897,
-  serialized_end=2019,
+  serialized_start=1903,
+  serialized_end=2025,
 )
 
 
@@ -644,8 +644,8 @@ _LISTIMAGEOPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2021,
-  serialized_end=2130,
+  serialized_start=2027,
+  serialized_end=2136,
 )
 
 _LISTIMAGESRESPONSE.fields_by_name['images'].message_type = yandex_dot_cloud_dot_compute_dot_v1_dot_image__pb2._IMAGE
@@ -820,8 +820,8 @@ _IMAGESERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=2133,
-  serialized_end=3218,
+  serialized_start=2139,
+  serialized_end=3224,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',

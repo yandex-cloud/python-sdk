@@ -19,8 +19,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/validation.proto',
   package='yandex.cloud',
   syntax='proto3',
-  serialized_options=_b('ZFgithub.com/yandex-cloud/go-genproto/yandex/cloud/validation;validation'),
-  serialized_pb=_b('\n\x1dyandex/cloud/validation.proto\x12\x0cyandex.cloud\x1a google/protobuf/descriptor.proto\"<\n\nMapKeySpec\x12\r\n\x05value\x18\x01 \x01(\t\x12\x0f\n\x07pattern\x18\x02 \x01(\t\x12\x0e\n\x06length\x18\x03 \x01(\t:4\n\x0b\x65xactly_one\x12\x1d.google.protobuf.OneofOptions\x18\x98\x98\x06 \x01(\x08:1\n\x08required\x12\x1d.google.protobuf.FieldOptions\x18\xfd\x98\x06 \x01(\x08:0\n\x07pattern\x12\x1d.google.protobuf.FieldOptions\x18\xfe\x98\x06 \x01(\t:.\n\x05value\x12\x1d.google.protobuf.FieldOptions\x18\xff\x98\x06 \x01(\t:-\n\x04size\x12\x1d.google.protobuf.FieldOptions\x18\x80\x99\x06 \x01(\t:/\n\x06length\x12\x1d.google.protobuf.FieldOptions\x18\x81\x99\x06 \x01(\t:J\n\x07map_key\x12\x1d.google.protobuf.FieldOptions\x18\x86\x99\x06 \x01(\x0b\x32\x18.yandex.cloud.MapKeySpecBHZFgithub.com/yandex-cloud/go-genproto/yandex/cloud/validation;validationb\x06proto3')
+  serialized_options=_b('\n\020yandex.cloud.apiZ6github.com/yandex-cloud/go-genproto/yandex/cloud;cloud'),
+  serialized_pb=_b('\n\x1dyandex/cloud/validation.proto\x12\x0cyandex.cloud\x1a google/protobuf/descriptor.proto\"<\n\nMapKeySpec\x12\r\n\x05value\x18\x01 \x01(\t\x12\x0f\n\x07pattern\x18\x02 \x01(\t\x12\x0e\n\x06length\x18\x03 \x01(\t:4\n\x0b\x65xactly_one\x12\x1d.google.protobuf.OneofOptions\x18\x98\x98\x06 \x01(\x08:1\n\x08required\x12\x1d.google.protobuf.FieldOptions\x18\xfd\x98\x06 \x01(\x08:0\n\x07pattern\x12\x1d.google.protobuf.FieldOptions\x18\xfe\x98\x06 \x01(\t:.\n\x05value\x12\x1d.google.protobuf.FieldOptions\x18\xff\x98\x06 \x01(\t:-\n\x04size\x12\x1d.google.protobuf.FieldOptions\x18\x80\x99\x06 \x01(\t:/\n\x06length\x12\x1d.google.protobuf.FieldOptions\x18\x81\x99\x06 \x01(\t:/\n\x06unique\x12\x1d.google.protobuf.FieldOptions\x18\x82\x99\x06 \x01(\x08:J\n\x07map_key\x12\x1d.google.protobuf.FieldOptions\x18\x86\x99\x06 \x01(\x0b\x32\x18.yandex.cloud.MapKeySpecBJ\n\x10yandex.cloud.apiZ6github.com/yandex-cloud/go-genproto/yandex/cloud;cloudb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_descriptor__pb2.DESCRIPTOR,])
 
@@ -73,9 +73,17 @@ length = _descriptor.FieldDescriptor(
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
   serialized_options=None, file=DESCRIPTOR)
+UNIQUE_FIELD_NUMBER = 101506
+unique = _descriptor.FieldDescriptor(
+  name='unique', full_name='yandex.cloud.unique', index=6,
+  number=101506, type=8, cpp_type=7, label=1,
+  has_default_value=False, default_value=False,
+  message_type=None, enum_type=None, containing_type=None,
+  is_extension=True, extension_scope=None,
+  serialized_options=None, file=DESCRIPTOR)
 MAP_KEY_FIELD_NUMBER = 101510
 map_key = _descriptor.FieldDescriptor(
-  name='map_key', full_name='yandex.cloud.map_key', index=6,
+  name='map_key', full_name='yandex.cloud.map_key', index=7,
   number=101510, type=11, cpp_type=10, label=1,
   has_default_value=False, default_value=None,
   message_type=None, enum_type=None, containing_type=None,
@@ -134,6 +142,7 @@ DESCRIPTOR.extensions_by_name['pattern'] = pattern
 DESCRIPTOR.extensions_by_name['value'] = value
 DESCRIPTOR.extensions_by_name['size'] = size
 DESCRIPTOR.extensions_by_name['length'] = length
+DESCRIPTOR.extensions_by_name['unique'] = unique
 DESCRIPTOR.extensions_by_name['map_key'] = map_key
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -150,6 +159,7 @@ google_dot_protobuf_dot_descriptor__pb2.FieldOptions.RegisterExtension(pattern)
 google_dot_protobuf_dot_descriptor__pb2.FieldOptions.RegisterExtension(value)
 google_dot_protobuf_dot_descriptor__pb2.FieldOptions.RegisterExtension(size)
 google_dot_protobuf_dot_descriptor__pb2.FieldOptions.RegisterExtension(length)
+google_dot_protobuf_dot_descriptor__pb2.FieldOptions.RegisterExtension(unique)
 map_key.message_type = _MAPKEYSPEC
 google_dot_protobuf_dot_descriptor__pb2.FieldOptions.RegisterExtension(map_key)
 

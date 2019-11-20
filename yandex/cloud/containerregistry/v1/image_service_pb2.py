@@ -12,7 +12,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from yandex.api import operation_pb2 as yandex_dot_api_dot_operation__pb2
+from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.containerregistry.v1 import image_pb2 as yandex_dot_cloud_dot_containerregistry_dot_v1_dot_image__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
@@ -23,10 +23,10 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/containerregistry/v1/image_service.proto',
   package='yandex.cloud.containerregistry.v1',
   syntax='proto3',
-  serialized_options=_b('ZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/containerregistry/v1;containerregistry'),
-  serialized_pb=_b('\n5yandex/cloud/containerregistry/v1/image_service.proto\x12!yandex.cloud.containerregistry.v1\x1a\x1ayandex/api/operation.proto\x1a-yandex/cloud/containerregistry/v1/image.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a\x1cgoogle/api/annotations.proto\"\xa4\x02\n\x11ListImagesRequest\x12\x1d\n\x0bregistry_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\\\n\x0frepository_name\x18\x02 \x01(\tBC\xf2\xc7\x31?|[a-z0-9]+(?:[._-][a-z0-9]+)*(/([a-z0-9]+(?:[._-][a-z0-9]+)*))*\x12\x1b\n\tfolder_id\x18\x07 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x03 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x05 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1b\n\x08order_by\x18\x06 \x01(\tB\t\x8a\xc8\x31\x05<=100\"g\n\x12ListImagesResponse\x12\x38\n\x06images\x18\x01 \x03(\x0b\x32(.yandex.cloud.containerregistry.v1.Image\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"1\n\x0fGetImageRequest\x12\x1e\n\x08image_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"4\n\x12\x44\x65leteImageRequest\x12\x1e\n\x08image_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\'\n\x13\x44\x65leteImageMetadata\x12\x10\n\x08image_id\x18\x01 \x01(\t2\x8a\x04\n\x0cImageService\x12\x9a\x01\n\x04List\x12\x34.yandex.cloud.containerregistry.v1.ListImagesRequest\x1a\x35.yandex.cloud.containerregistry.v1.ListImagesResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/container-registry/v1/images\x12\x95\x01\n\x03Get\x12\x32.yandex.cloud.containerregistry.v1.GetImageRequest\x1a(.yandex.cloud.containerregistry.v1.Image\"0\x82\xd3\xe4\x93\x02*\x12(/container-registry/v1/images/{image_id}\x12\xc4\x01\n\x06\x44\x65lete\x12\x35.yandex.cloud.containerregistry.v1.DeleteImageRequest\x1a!.yandex.cloud.operation.Operation\"`\x82\xd3\xe4\x93\x02**(/container-registry/v1/images/{image_id}\xb2\xd2*,\n\x13\x44\x65leteImageMetadata\x12\x15google.protobuf.EmptyBYZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/containerregistry/v1;containerregistryb\x06proto3')
+  serialized_options=_b('\n%yandex.cloud.api.containerregistry.v1ZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/containerregistry/v1;containerregistry'),
+  serialized_pb=_b('\n5yandex/cloud/containerregistry/v1/image_service.proto\x12!yandex.cloud.containerregistry.v1\x1a yandex/cloud/api/operation.proto\x1a-yandex/cloud/containerregistry/v1/image.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a\x1cgoogle/api/annotations.proto\"\xa4\x02\n\x11ListImagesRequest\x12\x1d\n\x0bregistry_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\\\n\x0frepository_name\x18\x02 \x01(\tBC\xf2\xc7\x31?|[a-z0-9]+(?:[._-][a-z0-9]+)*(/([a-z0-9]+(?:[._-][a-z0-9]+)*))*\x12\x1b\n\tfolder_id\x18\x07 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x03 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x05 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1b\n\x08order_by\x18\x06 \x01(\tB\t\x8a\xc8\x31\x05<=100\"g\n\x12ListImagesResponse\x12\x38\n\x06images\x18\x01 \x03(\x0b\x32(.yandex.cloud.containerregistry.v1.Image\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"1\n\x0fGetImageRequest\x12\x1e\n\x08image_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"4\n\x12\x44\x65leteImageRequest\x12\x1e\n\x08image_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\'\n\x13\x44\x65leteImageMetadata\x12\x10\n\x08image_id\x18\x01 \x01(\t2\x8a\x04\n\x0cImageService\x12\x9a\x01\n\x04List\x12\x34.yandex.cloud.containerregistry.v1.ListImagesRequest\x1a\x35.yandex.cloud.containerregistry.v1.ListImagesResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/container-registry/v1/images\x12\x95\x01\n\x03Get\x12\x32.yandex.cloud.containerregistry.v1.GetImageRequest\x1a(.yandex.cloud.containerregistry.v1.Image\"0\x82\xd3\xe4\x93\x02*\x12(/container-registry/v1/images/{image_id}\x12\xc4\x01\n\x06\x44\x65lete\x12\x35.yandex.cloud.containerregistry.v1.DeleteImageRequest\x1a!.yandex.cloud.operation.Operation\"`\x82\xd3\xe4\x93\x02**(/container-registry/v1/images/{image_id}\xb2\xd2*,\n\x13\x44\x65leteImageMetadata\x12\x15google.protobuf.EmptyB\x80\x01\n%yandex.cloud.api.containerregistry.v1ZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/containerregistry/v1;containerregistryb\x06proto3')
   ,
-  dependencies=[yandex_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_containerregistry_dot_v1_dot_image__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,])
+  dependencies=[yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_containerregistry_dot_v1_dot_image__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,])
 
 
 
@@ -99,8 +99,8 @@ _LISTIMAGESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=269,
-  serialized_end=561,
+  serialized_start=275,
+  serialized_end=567,
 )
 
 
@@ -137,8 +137,8 @@ _LISTIMAGESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=563,
-  serialized_end=666,
+  serialized_start=569,
+  serialized_end=672,
 )
 
 
@@ -168,8 +168,8 @@ _GETIMAGEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=668,
-  serialized_end=717,
+  serialized_start=674,
+  serialized_end=723,
 )
 
 
@@ -199,8 +199,8 @@ _DELETEIMAGEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=719,
-  serialized_end=771,
+  serialized_start=725,
+  serialized_end=777,
 )
 
 
@@ -230,8 +230,8 @@ _DELETEIMAGEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=773,
-  serialized_end=812,
+  serialized_start=779,
+  serialized_end=818,
 )
 
 _LISTIMAGESRESPONSE.fields_by_name['images'].message_type = yandex_dot_cloud_dot_containerregistry_dot_v1_dot_image__pb2._IMAGE
@@ -295,8 +295,8 @@ _IMAGESERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=815,
-  serialized_end=1337,
+  serialized_start=821,
+  serialized_end=1343,
   methods=[
   _descriptor.MethodDescriptor(
     name='List',

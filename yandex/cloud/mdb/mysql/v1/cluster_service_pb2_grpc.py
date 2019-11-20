@@ -188,7 +188,6 @@ class ClusterServiceServicer(object):
 
   def ListLogs(self, request, context):
     """Retrieves logs for the specified MySQL cluster.
-    For more information about logs, see the [Logs](/docs/managed-mysql/concepts/logs) section in the documentation.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')

@@ -56,6 +56,21 @@ class RegistryServiceStub(object):
         request_serializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.DeleteRegistryCertificateRequest.SerializeToString,
         response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
         )
+    self.ListPasswords = channel.unary_unary(
+        '/yandex.cloud.iot.devices.v1.RegistryService/ListPasswords',
+        request_serializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.ListRegistryPasswordsRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.ListRegistryPasswordsResponse.FromString,
+        )
+    self.AddPassword = channel.unary_unary(
+        '/yandex.cloud.iot.devices.v1.RegistryService/AddPassword',
+        request_serializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.AddRegistryPasswordRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+        )
+    self.DeletePassword = channel.unary_unary(
+        '/yandex.cloud.iot.devices.v1.RegistryService/DeletePassword',
+        request_serializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.DeleteRegistryPasswordRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+        )
     self.ListDeviceTopicAliases = channel.unary_unary(
         '/yandex.cloud.iot.devices.v1.RegistryService/ListDeviceTopicAliases',
         request_serializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.ListDeviceTopicAliasesRequest.SerializeToString,
@@ -128,6 +143,27 @@ class RegistryServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def ListPasswords(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def AddPassword(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def DeletePassword(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def ListDeviceTopicAliases(self, request, context):
     # missing associated documentation comment in .proto file
     pass
@@ -183,6 +219,21 @@ def add_RegistryServiceServicer_to_server(servicer, server):
       'DeleteCertificate': grpc.unary_unary_rpc_method_handler(
           servicer.DeleteCertificate,
           request_deserializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.DeleteRegistryCertificateRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+      ),
+      'ListPasswords': grpc.unary_unary_rpc_method_handler(
+          servicer.ListPasswords,
+          request_deserializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.ListRegistryPasswordsRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.ListRegistryPasswordsResponse.SerializeToString,
+      ),
+      'AddPassword': grpc.unary_unary_rpc_method_handler(
+          servicer.AddPassword,
+          request_deserializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.AddRegistryPasswordRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+      ),
+      'DeletePassword': grpc.unary_unary_rpc_method_handler(
+          servicer.DeletePassword,
+          request_deserializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.DeleteRegistryPasswordRequest.FromString,
           response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
       ),
       'ListDeviceTopicAliases': grpc.unary_unary_rpc_method_handler(

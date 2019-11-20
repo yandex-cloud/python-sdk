@@ -48,6 +48,8 @@ _supported_modules = {
     'yandex.cloud.endpoint': 'endpoint',
     'yandex.cloud.iam': 'iam',
     'yandex.cloud.iot.devices': 'iot-devices',
+    'yandex.cloud.k8s': 'managed-kubernetes',
+    'yandex.cloud.kms': 'kms',
     'yandex.cloud.loadbalancer': 'load-balancer',
     'yandex.cloud.mdb.clickhouse': 'managed-clickhouse',
     'yandex.cloud.mdb.mongodb': 'managed-mongodb',
@@ -57,5 +59,6 @@ _supported_modules = {
     'yandex.cloud.operation': 'operation',
     'yandex.cloud.resourcemanager': 'resource-manager',
     'yandex.cloud.serverless.functions': 'serverless-functions',
+    'yandex.cloud.serverless.triggers': 'serverless-triggers',
     'yandex.cloud.vpc': 'vpc',
 }

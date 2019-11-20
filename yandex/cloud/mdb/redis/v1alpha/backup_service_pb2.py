@@ -21,8 +21,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/mdb/redis/v1alpha/backup_service.proto',
   package='yandex.cloud.mdb.redis.v1alpha',
   syntax='proto3',
-  serialized_options=_b('ZHgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/redis/v1alpha;redis'),
-  serialized_pb=_b('\n3yandex/cloud/mdb/redis/v1alpha/backup_service.proto\x12\x1eyandex.cloud.mdb.redis.v1alpha\x1a\x1cgoogle/api/annotations.proto\x1a\x1dyandex/cloud/validation.proto\x1a+yandex/cloud/mdb/redis/v1alpha/backup.proto\"+\n\x10GetBackupRequest\x12\x17\n\tbackup_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"s\n\x12ListBackupsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"g\n\x13ListBackupsResponse\x12\x37\n\x07\x62\x61\x63kups\x18\x01 \x03(\x0b\x32&.yandex.cloud.mdb.redis.v1alpha.Backup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xb7\x02\n\rBackupService\x12\x8f\x01\n\x03Get\x12\x30.yandex.cloud.mdb.redis.v1alpha.GetBackupRequest\x1a&.yandex.cloud.mdb.redis.v1alpha.Backup\".\x82\xd3\xe4\x93\x02(\x12&/mdb/redis/v1alpha/backups/{backup_id}\x12\x93\x01\n\x04List\x12\x32.yandex.cloud.mdb.redis.v1alpha.ListBackupsRequest\x1a\x33.yandex.cloud.mdb.redis.v1alpha.ListBackupsResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/mdb/redis/v1alpha/backupsBJZHgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/redis/v1alpha;redisb\x06proto3')
+  serialized_options=_b('\n\"yandex.cloud.api.mdb.redis.v1alphaZHgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/redis/v1alpha;redis'),
+  serialized_pb=_b('\n3yandex/cloud/mdb/redis/v1alpha/backup_service.proto\x12\x1eyandex.cloud.mdb.redis.v1alpha\x1a\x1cgoogle/api/annotations.proto\x1a\x1dyandex/cloud/validation.proto\x1a+yandex/cloud/mdb/redis/v1alpha/backup.proto\"+\n\x10GetBackupRequest\x12\x17\n\tbackup_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"s\n\x12ListBackupsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"g\n\x13ListBackupsResponse\x12\x37\n\x07\x62\x61\x63kups\x18\x01 \x03(\x0b\x32&.yandex.cloud.mdb.redis.v1alpha.Backup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xbf\x02\n\rBackupService\x12\x93\x01\n\x03Get\x12\x30.yandex.cloud.mdb.redis.v1alpha.GetBackupRequest\x1a&.yandex.cloud.mdb.redis.v1alpha.Backup\"2\x82\xd3\xe4\x93\x02,\x12*/managed-redis/v1alpha/backups/{backup_id}\x12\x97\x01\n\x04List\x12\x32.yandex.cloud.mdb.redis.v1alpha.ListBackupsRequest\x1a\x33.yandex.cloud.mdb.redis.v1alpha.ListBackupsResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/managed-redis/v1alpha/backupsBn\n\"yandex.cloud.api.mdb.redis.v1alphaZHgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/redis/v1alpha;redisb\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_redis_dot_v1alpha_dot_backup__pb2.DESCRIPTOR,])
 
@@ -183,7 +183,7 @@ _BACKUPSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   serialized_start=461,
-  serialized_end=772,
+  serialized_end=780,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
@@ -192,7 +192,7 @@ _BACKUPSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETBACKUPREQUEST,
     output_type=yandex_dot_cloud_dot_mdb_dot_redis_dot_v1alpha_dot_backup__pb2._BACKUP,
-    serialized_options=_b('\202\323\344\223\002(\022&/mdb/redis/v1alpha/backups/{backup_id}'),
+    serialized_options=_b('\202\323\344\223\002,\022*/managed-redis/v1alpha/backups/{backup_id}'),
   ),
   _descriptor.MethodDescriptor(
     name='List',
@@ -201,7 +201,7 @@ _BACKUPSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTBACKUPSREQUEST,
     output_type=_LISTBACKUPSRESPONSE,
-    serialized_options=_b('\202\323\344\223\002\034\022\032/mdb/redis/v1alpha/backups'),
+    serialized_options=_b('\202\323\344\223\002 \022\036/managed-redis/v1alpha/backups'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_BACKUPSERVICE)

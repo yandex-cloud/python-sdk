@@ -19,8 +19,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/mdb/mongodb/v1/user.proto',
   package='yandex.cloud.mdb.mongodb.v1',
   syntax='proto3',
-  serialized_options=_b('ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1;mongodb'),
-  serialized_pb=_b('\n&yandex/cloud/mdb/mongodb/v1/user.proto\x12\x1byandex.cloud.mdb.mongodb.v1\x1a\x1dyandex/cloud/validation.proto\"f\n\x04User\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12<\n\x0bpermissions\x18\x03 \x03(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.Permission\"2\n\nPermission\x12\x15\n\rdatabase_name\x18\x01 \x01(\t\x12\r\n\x05roles\x18\x02 \x03(\t\"\x96\x01\n\x08UserSpec\x12+\n\x04name\x18\x01 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\r[a-zA-Z0-9_]*\x12\x1f\n\x08password\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x38-128\x12<\n\x0bpermissions\x18\x03 \x03(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.PermissionBIZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1;mongodbb\x06proto3')
+  serialized_options=_b('\n\037yandex.cloud.api.mdb.mongodb.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1;mongodb'),
+  serialized_pb=_b('\n&yandex/cloud/mdb/mongodb/v1/user.proto\x12\x1byandex.cloud.mdb.mongodb.v1\x1a\x1dyandex/cloud/validation.proto\"f\n\x04User\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12<\n\x0bpermissions\x18\x03 \x03(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.Permission\"2\n\nPermission\x12\x15\n\rdatabase_name\x18\x01 \x01(\t\x12\r\n\x05roles\x18\x02 \x03(\t\"\x96\x01\n\x08UserSpec\x12+\n\x04name\x18\x01 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\r[a-zA-Z0-9_]*\x12\x1f\n\x08password\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x38-128\x12<\n\x0bpermissions\x18\x03 \x03(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.PermissionBj\n\x1fyandex.cloud.api.mdb.mongodb.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1;mongodbb\x06proto3')
   ,
   dependencies=[yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 

@@ -18,8 +18,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/compute/v1/disk_type.proto',
   package='yandex.cloud.compute.v1',
   syntax='proto3',
-  serialized_options=_b('ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;compute'),
-  serialized_pb=_b('\n\'yandex/cloud/compute/v1/disk_type.proto\x12\x17yandex.cloud.compute.v1\"=\n\x08\x44iskType\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x10\n\x08zone_ids\x18\x03 \x03(\tBEZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3')
+  serialized_options=_b('\n\033yandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;compute'),
+  serialized_pb=_b('\n\'yandex/cloud/compute/v1/disk_type.proto\x12\x17yandex.cloud.compute.v1\"=\n\x08\x44iskType\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x10\n\x08zone_ids\x18\x03 \x03(\tBb\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3')
 )
 
 

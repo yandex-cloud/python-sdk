@@ -18,8 +18,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/ai/translate/v2/translation.proto',
   package='yandex.cloud.ai.translate.v2',
   syntax='proto3',
-  serialized_options=_b('ZJgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/translate/v2;translate'),
-  serialized_pb=_b('\n.yandex/cloud/ai/translate/v2/translation.proto\x12\x1cyandex.cloud.ai.translate.v2\">\n\x0eTranslatedText\x12\x0c\n\x04text\x18\x01 \x01(\t\x12\x1e\n\x16\x64\x65tected_language_code\x18\x02 \x01(\t\"&\n\x08Language\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\tBLZJgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/translate/v2;translateb\x06proto3')
+  serialized_options=_b('\n yandex.cloud.api.ai.translate.v2ZJgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/translate/v2;translate'),
+  serialized_pb=_b('\n.yandex/cloud/ai/translate/v2/translation.proto\x12\x1cyandex.cloud.ai.translate.v2\">\n\x0eTranslatedText\x12\x0c\n\x04text\x18\x01 \x01(\t\x12\x1e\n\x16\x64\x65tected_language_code\x18\x02 \x01(\t\"&\n\x08Language\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\tBn\n yandex.cloud.api.ai.translate.v2ZJgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/translate/v2;translateb\x06proto3')
 )
 
 

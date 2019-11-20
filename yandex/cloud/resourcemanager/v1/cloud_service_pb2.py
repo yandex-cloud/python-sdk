@@ -15,7 +15,7 @@ _sym_db = _symbol_database.Default()
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from yandex.cloud.resourcemanager.v1 import cloud_pb2 as yandex_dot_cloud_dot_resourcemanager_dot_v1_dot_cloud__pb2
-from yandex.api import operation_pb2 as yandex_dot_api_dot_operation__pb2
+from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.access import access_pb2 as yandex_dot_cloud_dot_access_dot_access__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
@@ -25,10 +25,10 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/resourcemanager/v1/cloud_service.proto',
   package='yandex.cloud.resourcemanager.v1',
   syntax='proto3',
-  serialized_options=_b('ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/resourcemanager/v1;resourcemanager'),
-  serialized_pb=_b('\n3yandex/cloud/resourcemanager/v1/cloud_service.proto\x12\x1fyandex.cloud.resourcemanager.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a+yandex/cloud/resourcemanager/v1/cloud.proto\x1a\x1ayandex/api/operation.proto\x1a yandex/cloud/access/access.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"1\n\x0fGetCloudRequest\x12\x1e\n\x08\x63loud_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"m\n\x11ListCloudsRequest\x12\x1d\n\tpage_size\x18\x01 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"e\n\x12ListCloudsResponse\x12\x36\n\x06\x63louds\x18\x01 \x03(\x0b\x32&.yandex.cloud.resourcemanager.v1.Cloud\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"z\n\x1aListCloudOperationsRequest\x12\x1e\n\x08\x63loud_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"m\n\x1bListCloudOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xb8\x01\n\x12UpdateCloudRequest\x12\x1e\n\x08\x63loud_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x31\n\x04name\x18\x03 \x01(\tB#\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\"\'\n\x13UpdateCloudMetadata\x12\x10\n\x08\x63loud_id\x18\x01 \x01(\t2\xdc\n\n\x0c\x43loudService\x12\x8f\x01\n\x03Get\x12\x30.yandex.cloud.resourcemanager.v1.GetCloudRequest\x1a&.yandex.cloud.resourcemanager.v1.Cloud\".\x82\xd3\xe4\x93\x02(\x12&/resource-manager/v1/clouds/{cloud_id}\x12\x94\x01\n\x04List\x12\x32.yandex.cloud.resourcemanager.v1.ListCloudsRequest\x1a\x33.yandex.cloud.resourcemanager.v1.ListCloudsResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/resource-manager/v1/clouds\x12\xb3\x01\n\x06Update\x12\x33.yandex.cloud.resourcemanager.v1.UpdateCloudRequest\x1a!.yandex.cloud.operation.Operation\"Q\x82\xd3\xe4\x93\x02+2&/resource-manager/v1/clouds/{cloud_id}:\x01*\xb2\xd2*\x1c\n\x13UpdateCloudMetadata\x12\x05\x43loud\x12\xc6\x01\n\x0eListOperations\x12;.yandex.cloud.resourcemanager.v1.ListCloudOperationsRequest\x1a<.yandex.cloud.resourcemanager.v1.ListCloudOperationsResponse\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/resource-manager/v1/clouds/{cloud_id}/operations\x12\xbb\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"D\x82\xd3\xe4\x93\x02>\x12</resource-manager/v1/clouds/{resource_id}:listAccessBindings\x12\xeb\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x83\x01\x82\xd3\xe4\x93\x02@\";/resource-manager/v1/clouds/{resource_id}:setAccessBindings:\x01*\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\xf7\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x89\x01\x82\xd3\xe4\x93\x02\x43\">/resource-manager/v1/clouds/{resource_id}:updateAccessBindings:\x01*\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.EmptyBUZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/resourcemanager/v1;resourcemanagerb\x06proto3')
+  serialized_options=_b('\n#yandex.cloud.api.resourcemanager.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/resourcemanager/v1;resourcemanager'),
+  serialized_pb=_b('\n3yandex/cloud/resourcemanager/v1/cloud_service.proto\x12\x1fyandex.cloud.resourcemanager.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a+yandex/cloud/resourcemanager/v1/cloud.proto\x1a yandex/cloud/api/operation.proto\x1a yandex/cloud/access/access.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"1\n\x0fGetCloudRequest\x12\x1e\n\x08\x63loud_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"m\n\x11ListCloudsRequest\x12\x1d\n\tpage_size\x18\x01 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"e\n\x12ListCloudsResponse\x12\x36\n\x06\x63louds\x18\x01 \x03(\x0b\x32&.yandex.cloud.resourcemanager.v1.Cloud\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"z\n\x1aListCloudOperationsRequest\x12\x1e\n\x08\x63loud_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"m\n\x1bListCloudOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xb8\x01\n\x12UpdateCloudRequest\x12\x1e\n\x08\x63loud_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x31\n\x04name\x18\x03 \x01(\tB#\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\"\'\n\x13UpdateCloudMetadata\x12\x10\n\x08\x63loud_id\x18\x01 \x01(\t2\xdc\n\n\x0c\x43loudService\x12\x8f\x01\n\x03Get\x12\x30.yandex.cloud.resourcemanager.v1.GetCloudRequest\x1a&.yandex.cloud.resourcemanager.v1.Cloud\".\x82\xd3\xe4\x93\x02(\x12&/resource-manager/v1/clouds/{cloud_id}\x12\x94\x01\n\x04List\x12\x32.yandex.cloud.resourcemanager.v1.ListCloudsRequest\x1a\x33.yandex.cloud.resourcemanager.v1.ListCloudsResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/resource-manager/v1/clouds\x12\xb3\x01\n\x06Update\x12\x33.yandex.cloud.resourcemanager.v1.UpdateCloudRequest\x1a!.yandex.cloud.operation.Operation\"Q\x82\xd3\xe4\x93\x02+2&/resource-manager/v1/clouds/{cloud_id}:\x01*\xb2\xd2*\x1c\n\x13UpdateCloudMetadata\x12\x05\x43loud\x12\xc6\x01\n\x0eListOperations\x12;.yandex.cloud.resourcemanager.v1.ListCloudOperationsRequest\x1a<.yandex.cloud.resourcemanager.v1.ListCloudOperationsResponse\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/resource-manager/v1/clouds/{cloud_id}/operations\x12\xbb\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"D\x82\xd3\xe4\x93\x02>\x12</resource-manager/v1/clouds/{resource_id}:listAccessBindings\x12\xeb\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x83\x01\x82\xd3\xe4\x93\x02@\";/resource-manager/v1/clouds/{resource_id}:setAccessBindings:\x01*\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\xf7\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x89\x01\x82\xd3\xe4\x93\x02\x43\">/resource-manager/v1/clouds/{resource_id}:updateAccessBindings:\x01*\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.EmptyBz\n#yandex.cloud.api.resourcemanager.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/resourcemanager/v1;resourcemanagerb\x06proto3')
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_resourcemanager_dot_v1_dot_cloud__pb2.DESCRIPTOR,yandex_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_access_dot_access__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_resourcemanager_dot_v1_dot_cloud__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_access_dot_access__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
 
 
@@ -59,8 +59,8 @@ _GETCLOUDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=330,
-  serialized_end=379,
+  serialized_start=336,
+  serialized_end=385,
 )
 
 
@@ -104,8 +104,8 @@ _LISTCLOUDSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=381,
-  serialized_end=490,
+  serialized_start=387,
+  serialized_end=496,
 )
 
 
@@ -142,8 +142,8 @@ _LISTCLOUDSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=492,
-  serialized_end=593,
+  serialized_start=498,
+  serialized_end=599,
 )
 
 
@@ -187,8 +187,8 @@ _LISTCLOUDOPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=595,
-  serialized_end=717,
+  serialized_start=601,
+  serialized_end=723,
 )
 
 
@@ -225,8 +225,8 @@ _LISTCLOUDOPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=719,
-  serialized_end=828,
+  serialized_start=725,
+  serialized_end=834,
 )
 
 
@@ -277,8 +277,8 @@ _UPDATECLOUDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=831,
-  serialized_end=1015,
+  serialized_start=837,
+  serialized_end=1021,
 )
 
 
@@ -308,8 +308,8 @@ _UPDATECLOUDMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1017,
-  serialized_end=1056,
+  serialized_start=1023,
+  serialized_end=1062,
 )
 
 _LISTCLOUDSRESPONSE.fields_by_name['clouds'].message_type = yandex_dot_cloud_dot_resourcemanager_dot_v1_dot_cloud__pb2._CLOUD
@@ -392,8 +392,8 @@ _CLOUDSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=1059,
-  serialized_end=2431,
+  serialized_start=1065,
+  serialized_end=2437,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',

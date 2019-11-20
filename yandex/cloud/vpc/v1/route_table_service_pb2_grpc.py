@@ -46,6 +46,11 @@ class RouteTableServiceStub(object):
         request_serializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_route__table__service__pb2.ListRouteTableOperationsRequest.SerializeToString,
         response_deserializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_route__table__service__pb2.ListRouteTableOperationsResponse.FromString,
         )
+    self.Move = channel.unary_unary(
+        '/yandex.cloud.vpc.v1.RouteTableService/Move',
+        request_serializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_route__table__service__pb2.MoveRouteTableRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+        )
 
 
 class RouteTableServiceServicer(object):
@@ -98,6 +103,13 @@ class RouteTableServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def Move(self, request, context):
+    """Move route table to another folder.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_RouteTableServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -130,6 +142,11 @@ def add_RouteTableServiceServicer_to_server(servicer, server):
           servicer.ListOperations,
           request_deserializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_route__table__service__pb2.ListRouteTableOperationsRequest.FromString,
           response_serializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_route__table__service__pb2.ListRouteTableOperationsResponse.SerializeToString,
+      ),
+      'Move': grpc.unary_unary_rpc_method_handler(
+          servicer.Move,
+          request_deserializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_route__table__service__pb2.MoveRouteTableRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

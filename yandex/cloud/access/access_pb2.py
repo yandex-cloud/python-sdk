@@ -20,8 +20,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/access/access.proto',
   package='yandex.cloud.access',
   syntax='proto3',
-  serialized_options=_b('Z>github.com/yandex-cloud/go-genproto/yandex/cloud/access;access'),
-  serialized_pb=_b('\n yandex/cloud/access/access.proto\x12\x13yandex.cloud.access\x1a\x1dyandex/cloud/validation.proto\"-\n\x07Subject\x12\x14\n\x02id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x0c\n\x04type\x18\x02 \x01(\t\"_\n\rAccessBinding\x12\x19\n\x07role_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x33\n\x07subject\x18\x02 \x01(\x0b\x32\x1c.yandex.cloud.access.SubjectB\x04\xe8\xc7\x31\x01\"|\n\x19ListAccessBindingsRequest\x12!\n\x0bresource_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"r\n\x1aListAccessBindingsResponse\x12;\n\x0f\x61\x63\x63\x65ss_bindings\x18\x01 \x03(\x0b\x32\".yandex.cloud.access.AccessBinding\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x80\x01\n\x18SetAccessBindingsRequest\x12!\n\x0bresource_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x41\n\x0f\x61\x63\x63\x65ss_bindings\x18\x02 \x03(\x0b\x32\".yandex.cloud.access.AccessBindingB\x04\xe8\xc7\x31\x01\"0\n\x19SetAccessBindingsMetadata\x12\x13\n\x0bresource_id\x18\x01 \x01(\t\"\x8e\x01\n\x1bUpdateAccessBindingsRequest\x12!\n\x0bresource_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12L\n\x15\x61\x63\x63\x65ss_binding_deltas\x18\x02 \x03(\x0b\x32\'.yandex.cloud.access.AccessBindingDeltaB\x04\xe8\xc7\x31\x01\"3\n\x1cUpdateAccessBindingsMetadata\x12\x13\n\x0bresource_id\x18\x01 \x01(\t\"\x96\x01\n\x12\x41\x63\x63\x65ssBindingDelta\x12>\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32(.yandex.cloud.access.AccessBindingActionB\x04\xe8\xc7\x31\x01\x12@\n\x0e\x61\x63\x63\x65ss_binding\x18\x02 \x01(\x0b\x32\".yandex.cloud.access.AccessBindingB\x04\xe8\xc7\x31\x01*Q\n\x13\x41\x63\x63\x65ssBindingAction\x12%\n!ACCESS_BINDING_ACTION_UNSPECIFIED\x10\x00\x12\x07\n\x03\x41\x44\x44\x10\x01\x12\n\n\x06REMOVE\x10\x02\x42@Z>github.com/yandex-cloud/go-genproto/yandex/cloud/access;accessb\x06proto3')
+  serialized_options=_b('\n\027yandex.cloud.api.accessZ>github.com/yandex-cloud/go-genproto/yandex/cloud/access;access'),
+  serialized_pb=_b('\n yandex/cloud/access/access.proto\x12\x13yandex.cloud.access\x1a\x1dyandex/cloud/validation.proto\"-\n\x07Subject\x12\x14\n\x02id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x0c\n\x04type\x18\x02 \x01(\t\"_\n\rAccessBinding\x12\x19\n\x07role_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x33\n\x07subject\x18\x02 \x01(\x0b\x32\x1c.yandex.cloud.access.SubjectB\x04\xe8\xc7\x31\x01\"t\n\x19ListAccessBindingsRequest\x12\x19\n\x0bresource_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"r\n\x1aListAccessBindingsResponse\x12;\n\x0f\x61\x63\x63\x65ss_bindings\x18\x01 \x03(\x0b\x32\".yandex.cloud.access.AccessBinding\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"x\n\x18SetAccessBindingsRequest\x12\x19\n\x0bresource_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x41\n\x0f\x61\x63\x63\x65ss_bindings\x18\x02 \x03(\x0b\x32\".yandex.cloud.access.AccessBindingB\x04\xe8\xc7\x31\x01\"0\n\x19SetAccessBindingsMetadata\x12\x13\n\x0bresource_id\x18\x01 \x01(\t\"\x86\x01\n\x1bUpdateAccessBindingsRequest\x12\x19\n\x0bresource_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12L\n\x15\x61\x63\x63\x65ss_binding_deltas\x18\x02 \x03(\x0b\x32\'.yandex.cloud.access.AccessBindingDeltaB\x04\xe8\xc7\x31\x01\"3\n\x1cUpdateAccessBindingsMetadata\x12\x13\n\x0bresource_id\x18\x01 \x01(\t\"\x96\x01\n\x12\x41\x63\x63\x65ssBindingDelta\x12>\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32(.yandex.cloud.access.AccessBindingActionB\x04\xe8\xc7\x31\x01\x12@\n\x0e\x61\x63\x63\x65ss_binding\x18\x02 \x01(\x0b\x32\".yandex.cloud.access.AccessBindingB\x04\xe8\xc7\x31\x01*Q\n\x13\x41\x63\x63\x65ssBindingAction\x12%\n!ACCESS_BINDING_ACTION_UNSPECIFIED\x10\x00\x12\x07\n\x03\x41\x44\x44\x10\x01\x12\n\n\x06REMOVE\x10\x02\x42Y\n\x17yandex.cloud.api.accessZ>github.com/yandex-cloud/go-genproto/yandex/cloud/access;accessb\x06proto3')
   ,
   dependencies=[yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -46,8 +46,8 @@ _ACCESSBINDINGACTION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1006,
-  serialized_end=1087,
+  serialized_start=981,
+  serialized_end=1062,
 )
 _sym_db.RegisterEnumDescriptor(_ACCESSBINDINGACTION)
 
@@ -147,7 +147,7 @@ _LISTACCESSBINDINGSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.access.ListAccessBindingsRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
@@ -175,7 +175,7 @@ _LISTACCESSBINDINGSREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=232,
-  serialized_end=356,
+  serialized_end=348,
 )
 
 
@@ -212,8 +212,8 @@ _LISTACCESSBINDINGSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=358,
-  serialized_end=472,
+  serialized_start=350,
+  serialized_end=464,
 )
 
 
@@ -230,7 +230,7 @@ _SETACCESSBINDINGSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='access_bindings', full_name='yandex.cloud.access.SetAccessBindingsRequest.access_bindings', index=1,
       number=2, type=11, cpp_type=10, label=3,
@@ -250,8 +250,8 @@ _SETACCESSBINDINGSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=475,
-  serialized_end=603,
+  serialized_start=466,
+  serialized_end=586,
 )
 
 
@@ -281,8 +281,8 @@ _SETACCESSBINDINGSMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=605,
-  serialized_end=653,
+  serialized_start=588,
+  serialized_end=636,
 )
 
 
@@ -299,7 +299,7 @@ _UPDATEACCESSBINDINGSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='access_binding_deltas', full_name='yandex.cloud.access.UpdateAccessBindingsRequest.access_binding_deltas', index=1,
       number=2, type=11, cpp_type=10, label=3,
@@ -319,8 +319,8 @@ _UPDATEACCESSBINDINGSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=656,
-  serialized_end=798,
+  serialized_start=639,
+  serialized_end=773,
 )
 
 
@@ -350,8 +350,8 @@ _UPDATEACCESSBINDINGSMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=800,
-  serialized_end=851,
+  serialized_start=775,
+  serialized_end=826,
 )
 
 
@@ -388,8 +388,8 @@ _ACCESSBINDINGDELTA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=854,
-  serialized_end=1004,
+  serialized_start=829,
+  serialized_end=979,
 )
 
 _ACCESSBINDING.fields_by_name['subject'].message_type = _SUBJECT

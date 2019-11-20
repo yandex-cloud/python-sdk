@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
-from yandex.api import operation_pb2 as yandex_dot_api_dot_operation__pb2
+from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 from yandex.cloud.mdb.mysql.v1 import database_pb2 as yandex_dot_cloud_dot_mdb_dot_mysql_dot_v1_dot_database__pb2
@@ -23,10 +23,10 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/mdb/mysql/v1/database_service.proto',
   package='yandex.cloud.mdb.mysql.v1',
   syntax='proto3',
-  serialized_options=_b('ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mysql/v1;mysql'),
-  serialized_pb=_b('\n0yandex/cloud/mdb/mysql/v1/database_service.proto\x12\x19yandex.cloud.mdb.mysql.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1ayandex/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a(yandex/cloud/mdb/mysql/v1/database.proto\"m\n\x12GetDatabaseRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\rdatabase_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"v\n\x14ListDatabasesRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"h\n\x15ListDatabasesResponse\x12\x36\n\tdatabases\x18\x01 \x03(\x0b\x32#.yandex.cloud.mdb.mysql.v1.Database\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x7f\n\x15\x43reateDatabaseRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x44\n\rdatabase_spec\x18\x02 \x01(\x0b\x32\'.yandex.cloud.mdb.mysql.v1.DatabaseSpecB\x04\xe8\xc7\x31\x01\"C\n\x16\x43reateDatabaseMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x15\n\rdatabase_name\x18\x02 \x01(\t\"p\n\x15\x44\x65leteDatabaseRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\rdatabase_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"C\n\x16\x44\x65leteDatabaseMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x15\n\rdatabase_name\x18\x02 \x01(\t2\x81\x06\n\x0f\x44\x61tabaseService\x12\xa4\x01\n\x03Get\x12-.yandex.cloud.mdb.mysql.v1.GetDatabaseRequest\x1a#.yandex.cloud.mdb.mysql.v1.Database\"I\x82\xd3\xe4\x93\x02\x43\x12\x41/managed-mysql/v1/clusters/{cluster_id}/databases/{database_name}\x12\xa4\x01\n\x04List\x12/.yandex.cloud.mdb.mysql.v1.ListDatabasesRequest\x1a\x30.yandex.cloud.mdb.mysql.v1.ListDatabasesResponse\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/managed-mysql/v1/clusters/{cluster_id}/databases\x12\xc1\x01\n\x06\x43reate\x12\x30.yandex.cloud.mdb.mysql.v1.CreateDatabaseRequest\x1a!.yandex.cloud.operation.Operation\"b\x82\xd3\xe4\x93\x02\x36\"1/managed-mysql/v1/clusters/{cluster_id}/databases:\x01*\xb2\xd2*\"\n\x16\x43reateDatabaseMetadata\x12\x08\x44\x61tabase\x12\xdb\x01\n\x06\x44\x65lete\x12\x30.yandex.cloud.mdb.mysql.v1.DeleteDatabaseRequest\x1a!.yandex.cloud.operation.Operation\"|\x82\xd3\xe4\x93\x02\x43*A/managed-mysql/v1/clusters/{cluster_id}/databases/{database_name}\xb2\xd2*/\n\x16\x44\x65leteDatabaseMetadata\x12\x15google.protobuf.EmptyBEZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mysql/v1;mysqlb\x06proto3')
+  serialized_options=_b('\n\035yandex.cloud.api.mdb.mysql.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mysql/v1;mysql'),
+  serialized_pb=_b('\n0yandex/cloud/mdb/mysql/v1/database_service.proto\x12\x19yandex.cloud.mdb.mysql.v1\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a(yandex/cloud/mdb/mysql/v1/database.proto\"m\n\x12GetDatabaseRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\rdatabase_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"v\n\x14ListDatabasesRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"h\n\x15ListDatabasesResponse\x12\x36\n\tdatabases\x18\x01 \x03(\x0b\x32#.yandex.cloud.mdb.mysql.v1.Database\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x7f\n\x15\x43reateDatabaseRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x44\n\rdatabase_spec\x18\x02 \x01(\x0b\x32\'.yandex.cloud.mdb.mysql.v1.DatabaseSpecB\x04\xe8\xc7\x31\x01\"C\n\x16\x43reateDatabaseMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x15\n\rdatabase_name\x18\x02 \x01(\t\"p\n\x15\x44\x65leteDatabaseRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\rdatabase_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"C\n\x16\x44\x65leteDatabaseMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x15\n\rdatabase_name\x18\x02 \x01(\t2\x81\x06\n\x0f\x44\x61tabaseService\x12\xa4\x01\n\x03Get\x12-.yandex.cloud.mdb.mysql.v1.GetDatabaseRequest\x1a#.yandex.cloud.mdb.mysql.v1.Database\"I\x82\xd3\xe4\x93\x02\x43\x12\x41/managed-mysql/v1/clusters/{cluster_id}/databases/{database_name}\x12\xa4\x01\n\x04List\x12/.yandex.cloud.mdb.mysql.v1.ListDatabasesRequest\x1a\x30.yandex.cloud.mdb.mysql.v1.ListDatabasesResponse\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/managed-mysql/v1/clusters/{cluster_id}/databases\x12\xc1\x01\n\x06\x43reate\x12\x30.yandex.cloud.mdb.mysql.v1.CreateDatabaseRequest\x1a!.yandex.cloud.operation.Operation\"b\x82\xd3\xe4\x93\x02\x36\"1/managed-mysql/v1/clusters/{cluster_id}/databases:\x01*\xb2\xd2*\"\n\x16\x43reateDatabaseMetadata\x12\x08\x44\x61tabase\x12\xdb\x01\n\x06\x44\x65lete\x12\x30.yandex.cloud.mdb.mysql.v1.DeleteDatabaseRequest\x1a!.yandex.cloud.operation.Operation\"|\x82\xd3\xe4\x93\x02\x43*A/managed-mysql/v1/clusters/{cluster_id}/databases/{database_name}\xb2\xd2*/\n\x16\x44\x65leteDatabaseMetadata\x12\x15google.protobuf.EmptyBd\n\x1dyandex.cloud.api.mdb.mysql.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mysql/v1;mysqlb\x06proto3')
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mysql_dot_v1_dot_database__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mysql_dot_v1_dot_database__pb2.DESCRIPTOR,])
 
 
 
@@ -64,8 +64,8 @@ _GETDATABASEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=250,
-  serialized_end=359,
+  serialized_start=256,
+  serialized_end=365,
 )
 
 
@@ -109,8 +109,8 @@ _LISTDATABASESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=361,
-  serialized_end=479,
+  serialized_start=367,
+  serialized_end=485,
 )
 
 
@@ -147,8 +147,8 @@ _LISTDATABASESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=481,
-  serialized_end=585,
+  serialized_start=487,
+  serialized_end=591,
 )
 
 
@@ -185,8 +185,8 @@ _CREATEDATABASEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=587,
-  serialized_end=714,
+  serialized_start=593,
+  serialized_end=720,
 )
 
 
@@ -223,8 +223,8 @@ _CREATEDATABASEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=716,
-  serialized_end=783,
+  serialized_start=722,
+  serialized_end=789,
 )
 
 
@@ -261,8 +261,8 @@ _DELETEDATABASEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=785,
-  serialized_end=897,
+  serialized_start=791,
+  serialized_end=903,
 )
 
 
@@ -299,8 +299,8 @@ _DELETEDATABASEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=899,
-  serialized_end=966,
+  serialized_start=905,
+  serialized_end=972,
 )
 
 _LISTDATABASESRESPONSE.fields_by_name['databases'].message_type = yandex_dot_cloud_dot_mdb_dot_mysql_dot_v1_dot_database__pb2._DATABASE
@@ -381,8 +381,8 @@ _DATABASESERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=969,
-  serialized_end=1738,
+  serialized_start=975,
+  serialized_end=1744,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',

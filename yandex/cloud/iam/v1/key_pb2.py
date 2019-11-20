@@ -19,8 +19,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/iam/v1/key.proto',
   package='yandex.cloud.iam.v1',
   syntax='proto3',
-  serialized_options=_b('Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iam'),
-  serialized_pb=_b('\n\x1dyandex/cloud/iam/v1/key.proto\x12\x13yandex.cloud.iam.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xad\x02\n\x03Key\x12\n\n\x02id\x18\x01 \x01(\t\x12\x19\n\x0fuser_account_id\x18\x02 \x01(\tH\x00\x12\x1c\n\x12service_account_id\x18\x03 \x01(\tH\x00\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x39\n\rkey_algorithm\x18\x06 \x01(\x0e\x32\".yandex.cloud.iam.v1.Key.Algorithm\x12\x12\n\npublic_key\x18\x07 \x01(\t\"B\n\tAlgorithm\x12\x19\n\x15\x41LGORITHM_UNSPECIFIED\x10\x00\x12\x0c\n\x08RSA_2048\x10\x01\x12\x0c\n\x08RSA_4096\x10\x02\x42\t\n\x07subjectB=Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3')
+  serialized_options=_b('\n\027yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iam'),
+  serialized_pb=_b('\n\x1dyandex/cloud/iam/v1/key.proto\x12\x13yandex.cloud.iam.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xad\x02\n\x03Key\x12\n\n\x02id\x18\x01 \x01(\t\x12\x19\n\x0fuser_account_id\x18\x02 \x01(\tH\x00\x12\x1c\n\x12service_account_id\x18\x03 \x01(\tH\x00\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x39\n\rkey_algorithm\x18\x06 \x01(\x0e\x32\".yandex.cloud.iam.v1.Key.Algorithm\x12\x12\n\npublic_key\x18\x07 \x01(\t\"B\n\tAlgorithm\x12\x19\n\x15\x41LGORITHM_UNSPECIFIED\x10\x00\x12\x0c\n\x08RSA_2048\x10\x01\x12\x0c\n\x08RSA_4096\x10\x02\x42\t\n\x07subjectBV\n\x17yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 

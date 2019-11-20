@@ -56,6 +56,21 @@ class DeviceServiceStub(object):
         request_serializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_device__service__pb2.DeleteDeviceCertificateRequest.SerializeToString,
         response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
         )
+    self.ListPasswords = channel.unary_unary(
+        '/yandex.cloud.iot.devices.v1.DeviceService/ListPasswords',
+        request_serializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_device__service__pb2.ListDevicePasswordsRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_device__service__pb2.ListDevicePasswordsResponse.FromString,
+        )
+    self.AddPassword = channel.unary_unary(
+        '/yandex.cloud.iot.devices.v1.DeviceService/AddPassword',
+        request_serializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_device__service__pb2.AddDevicePasswordRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+        )
+    self.DeletePassword = channel.unary_unary(
+        '/yandex.cloud.iot.devices.v1.DeviceService/DeletePassword',
+        request_serializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_device__service__pb2.DeleteDevicePasswordRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+        )
     self.ListOperations = channel.unary_unary(
         '/yandex.cloud.iot.devices.v1.DeviceService/ListOperations',
         request_serializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_device__service__pb2.ListDeviceOperationsRequest.SerializeToString,
@@ -123,6 +138,27 @@ class DeviceServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def ListPasswords(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def AddPassword(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def DeletePassword(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def ListOperations(self, request, context):
     # missing associated documentation comment in .proto file
     pass
@@ -171,6 +207,21 @@ def add_DeviceServiceServicer_to_server(servicer, server):
       'DeleteCertificate': grpc.unary_unary_rpc_method_handler(
           servicer.DeleteCertificate,
           request_deserializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_device__service__pb2.DeleteDeviceCertificateRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+      ),
+      'ListPasswords': grpc.unary_unary_rpc_method_handler(
+          servicer.ListPasswords,
+          request_deserializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_device__service__pb2.ListDevicePasswordsRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_device__service__pb2.ListDevicePasswordsResponse.SerializeToString,
+      ),
+      'AddPassword': grpc.unary_unary_rpc_method_handler(
+          servicer.AddPassword,
+          request_deserializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_device__service__pb2.AddDevicePasswordRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+      ),
+      'DeletePassword': grpc.unary_unary_rpc_method_handler(
+          servicer.DeletePassword,
+          request_deserializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_device__service__pb2.DeleteDevicePasswordRequest.FromString,
           response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
       ),
       'ListOperations': grpc.unary_unary_rpc_method_handler(

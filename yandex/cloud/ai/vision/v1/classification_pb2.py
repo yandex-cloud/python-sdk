@@ -18,8 +18,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/ai/vision/v1/classification.proto',
   package='yandex.cloud.ai.vision.v1',
   syntax='proto3',
-  serialized_options=_b('ZDgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/vision/v1;vision'),
-  serialized_pb=_b('\n.yandex/cloud/ai/vision/v1/classification.proto\x12\x19yandex.cloud.ai.vision.v1\"J\n\x0f\x43lassAnnotation\x12\x37\n\nproperties\x18\x01 \x03(\x0b\x32#.yandex.cloud.ai.vision.v1.Property\"-\n\x08Property\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0bprobability\x18\x02 \x01(\x01\x42\x46ZDgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/vision/v1;visionb\x06proto3')
+  serialized_options=_b('\n\035yandex.cloud.api.ai.vision.v1ZDgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/vision/v1;vision'),
+  serialized_pb=_b('\n.yandex/cloud/ai/vision/v1/classification.proto\x12\x19yandex.cloud.ai.vision.v1\"J\n\x0f\x43lassAnnotation\x12\x37\n\nproperties\x18\x01 \x03(\x0b\x32#.yandex.cloud.ai.vision.v1.Property\"-\n\x08Property\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0bprobability\x18\x02 \x01(\x01\x42\x65\n\x1dyandex.cloud.api.ai.vision.v1ZDgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/vision/v1;visionb\x06proto3')
 )
 
 

@@ -19,8 +19,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/mdb/mongodb/v1/database.proto',
   package='yandex.cloud.mdb.mongodb.v1',
   syntax='proto3',
-  serialized_options=_b('ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1;mongodb'),
-  serialized_pb=_b('\n*yandex/cloud/mdb/mongodb/v1/database.proto\x12\x1byandex.cloud.mdb.mongodb.v1\x1a\x1dyandex/cloud/validation.proto\",\n\x08\x44\x61tabase\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\"A\n\x0c\x44\x61tabaseSpec\x12\x31\n\x04name\x18\x01 \x01(\tB#\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x13[a-zA-Z0-9_-]{1,63}BIZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1;mongodbb\x06proto3')
+  serialized_options=_b('\n\037yandex.cloud.api.mdb.mongodb.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1;mongodb'),
+  serialized_pb=_b('\n*yandex/cloud/mdb/mongodb/v1/database.proto\x12\x1byandex.cloud.mdb.mongodb.v1\x1a\x1dyandex/cloud/validation.proto\",\n\x08\x44\x61tabase\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\"A\n\x0c\x44\x61tabaseSpec\x12\x31\n\x04name\x18\x01 \x01(\tB#\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x13[a-zA-Z0-9_-]{1,63}Bj\n\x1fyandex.cloud.api.mdb.mongodb.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1;mongodbb\x06proto3')
   ,
   dependencies=[yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 

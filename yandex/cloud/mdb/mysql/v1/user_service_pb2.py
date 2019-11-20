@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
-from yandex.api import operation_pb2 as yandex_dot_api_dot_operation__pb2
+from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 from yandex.cloud.mdb.mysql.v1 import user_pb2 as yandex_dot_cloud_dot_mdb_dot_mysql_dot_v1_dot_user__pb2
@@ -24,10 +24,10 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/mdb/mysql/v1/user_service.proto',
   package='yandex.cloud.mdb.mysql.v1',
   syntax='proto3',
-  serialized_options=_b('ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mysql/v1;mysql'),
-  serialized_pb=_b('\n,yandex/cloud/mdb/mysql/v1/user_service.proto\x12\x19yandex.cloud.mdb.mysql.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1ayandex/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a$yandex/cloud/mdb/mysql/v1/user.proto\"d\n\x0eGetUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x30\n\tuser_name\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\r[a-zA-Z0-9_]*\"r\n\x10ListUsersRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"\\\n\x11ListUsersResponse\x12.\n\x05users\x18\x01 \x03(\x0b\x32\x1f.yandex.cloud.mdb.mysql.v1.User\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"s\n\x11\x43reateUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12<\n\tuser_spec\x18\x02 \x01(\x0b\x32#.yandex.cloud.mdb.mysql.v1.UserSpecB\x04\xe8\xc7\x31\x01\";\n\x12\x43reateUserMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\"\xf1\x01\n\x11UpdateUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x30\n\tuser_name\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\r[a-zA-Z0-9_]*\x12/\n\x0bupdate_mask\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1b\n\x08password\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05\x38-128\x12:\n\x0bpermissions\x18\x05 \x03(\x0b\x32%.yandex.cloud.mdb.mysql.v1.Permission\";\n\x12UpdateUserMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\"g\n\x11\x44\x65leteUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x30\n\tuser_name\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\r[a-zA-Z0-9_]*\";\n\x12\x44\x65leteUserMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\"\xb1\x01\n\x1aGrantUserPermissionRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x30\n\tuser_name\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\r[a-zA-Z0-9_]*\x12?\n\npermission\x18\x03 \x01(\x0b\x32%.yandex.cloud.mdb.mysql.v1.PermissionB\x04\xe8\xc7\x31\x01\"D\n\x1bGrantUserPermissionMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\"\xb2\x01\n\x1bRevokeUserPermissionRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x30\n\tuser_name\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\r[a-zA-Z0-9_]*\x12?\n\npermission\x18\x03 \x01(\x0b\x32%.yandex.cloud.mdb.mysql.v1.PermissionB\x04\xe8\xc7\x31\x01\"E\n\x1cRevokeUserPermissionMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t2\xdb\n\n\x0bUserService\x12\x94\x01\n\x03Get\x12).yandex.cloud.mdb.mysql.v1.GetUserRequest\x1a\x1f.yandex.cloud.mdb.mysql.v1.User\"A\x82\xd3\xe4\x93\x02;\x12\x39/managed-mysql/v1/clusters/{cluster_id}/users/{user_name}\x12\x98\x01\n\x04List\x12+.yandex.cloud.mdb.mysql.v1.ListUsersRequest\x1a,.yandex.cloud.mdb.mysql.v1.ListUsersResponse\"5\x82\xd3\xe4\x93\x02/\x12-/managed-mysql/v1/clusters/{cluster_id}/users\x12\xb1\x01\n\x06\x43reate\x12,.yandex.cloud.mdb.mysql.v1.CreateUserRequest\x1a!.yandex.cloud.operation.Operation\"V\x82\xd3\xe4\x93\x02\x32\"-/managed-mysql/v1/clusters/{cluster_id}/users:\x01*\xb2\xd2*\x1a\n\x12\x43reateUserMetadata\x12\x04User\x12\xbd\x01\n\x06Update\x12,.yandex.cloud.mdb.mysql.v1.UpdateUserRequest\x1a!.yandex.cloud.operation.Operation\"b\x82\xd3\xe4\x93\x02>29/managed-mysql/v1/clusters/{cluster_id}/users/{user_name}:\x01*\xb2\xd2*\x1a\n\x12UpdateUserMetadata\x12\x04User\x12\xcb\x01\n\x06\x44\x65lete\x12,.yandex.cloud.mdb.mysql.v1.DeleteUserRequest\x1a!.yandex.cloud.operation.Operation\"p\x82\xd3\xe4\x93\x02;*9/managed-mysql/v1/clusters/{cluster_id}/users/{user_name}\xb2\xd2*+\n\x12\x44\x65leteUserMetadata\x12\x15google.protobuf.Empty\x12\xe8\x01\n\x0fGrantPermission\x12\x35.yandex.cloud.mdb.mysql.v1.GrantUserPermissionRequest\x1a!.yandex.cloud.operation.Operation\"{\x82\xd3\xe4\x93\x02N\"I/managed-mysql/v1/clusters/{cluster_id}/users/{user_name}:grantPermission:\x01*\xb2\xd2*#\n\x1bGrantUserPermissionMetadata\x12\x04User\x12\xec\x01\n\x10RevokePermission\x12\x36.yandex.cloud.mdb.mysql.v1.RevokeUserPermissionRequest\x1a!.yandex.cloud.operation.Operation\"}\x82\xd3\xe4\x93\x02O\"J/managed-mysql/v1/clusters/{cluster_id}/users/{user_name}:revokePermission:\x01*\xb2\xd2*$\n\x1cRevokeUserPermissionMetadata\x12\x04UserBEZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mysql/v1;mysqlb\x06proto3')
+  serialized_options=_b('\n\035yandex.cloud.api.mdb.mysql.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mysql/v1;mysql'),
+  serialized_pb=_b('\n,yandex/cloud/mdb/mysql/v1/user_service.proto\x12\x19yandex.cloud.mdb.mysql.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a$yandex/cloud/mdb/mysql/v1/user.proto\"d\n\x0eGetUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x30\n\tuser_name\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\r[a-zA-Z0-9_]*\"r\n\x10ListUsersRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"\\\n\x11ListUsersResponse\x12.\n\x05users\x18\x01 \x03(\x0b\x32\x1f.yandex.cloud.mdb.mysql.v1.User\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"s\n\x11\x43reateUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12<\n\tuser_spec\x18\x02 \x01(\x0b\x32#.yandex.cloud.mdb.mysql.v1.UserSpecB\x04\xe8\xc7\x31\x01\";\n\x12\x43reateUserMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\"\xf1\x01\n\x11UpdateUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x30\n\tuser_name\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\r[a-zA-Z0-9_]*\x12/\n\x0bupdate_mask\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1b\n\x08password\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05\x38-128\x12:\n\x0bpermissions\x18\x05 \x03(\x0b\x32%.yandex.cloud.mdb.mysql.v1.Permission\";\n\x12UpdateUserMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\"g\n\x11\x44\x65leteUserRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x30\n\tuser_name\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\r[a-zA-Z0-9_]*\";\n\x12\x44\x65leteUserMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\"\xb1\x01\n\x1aGrantUserPermissionRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x30\n\tuser_name\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\r[a-zA-Z0-9_]*\x12?\n\npermission\x18\x03 \x01(\x0b\x32%.yandex.cloud.mdb.mysql.v1.PermissionB\x04\xe8\xc7\x31\x01\"D\n\x1bGrantUserPermissionMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t\"\xb2\x01\n\x1bRevokeUserPermissionRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x30\n\tuser_name\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\r[a-zA-Z0-9_]*\x12?\n\npermission\x18\x03 \x01(\x0b\x32%.yandex.cloud.mdb.mysql.v1.PermissionB\x04\xe8\xc7\x31\x01\"E\n\x1cRevokeUserPermissionMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tuser_name\x18\x02 \x01(\t2\xdb\n\n\x0bUserService\x12\x94\x01\n\x03Get\x12).yandex.cloud.mdb.mysql.v1.GetUserRequest\x1a\x1f.yandex.cloud.mdb.mysql.v1.User\"A\x82\xd3\xe4\x93\x02;\x12\x39/managed-mysql/v1/clusters/{cluster_id}/users/{user_name}\x12\x98\x01\n\x04List\x12+.yandex.cloud.mdb.mysql.v1.ListUsersRequest\x1a,.yandex.cloud.mdb.mysql.v1.ListUsersResponse\"5\x82\xd3\xe4\x93\x02/\x12-/managed-mysql/v1/clusters/{cluster_id}/users\x12\xb1\x01\n\x06\x43reate\x12,.yandex.cloud.mdb.mysql.v1.CreateUserRequest\x1a!.yandex.cloud.operation.Operation\"V\x82\xd3\xe4\x93\x02\x32\"-/managed-mysql/v1/clusters/{cluster_id}/users:\x01*\xb2\xd2*\x1a\n\x12\x43reateUserMetadata\x12\x04User\x12\xbd\x01\n\x06Update\x12,.yandex.cloud.mdb.mysql.v1.UpdateUserRequest\x1a!.yandex.cloud.operation.Operation\"b\x82\xd3\xe4\x93\x02>29/managed-mysql/v1/clusters/{cluster_id}/users/{user_name}:\x01*\xb2\xd2*\x1a\n\x12UpdateUserMetadata\x12\x04User\x12\xcb\x01\n\x06\x44\x65lete\x12,.yandex.cloud.mdb.mysql.v1.DeleteUserRequest\x1a!.yandex.cloud.operation.Operation\"p\x82\xd3\xe4\x93\x02;*9/managed-mysql/v1/clusters/{cluster_id}/users/{user_name}\xb2\xd2*+\n\x12\x44\x65leteUserMetadata\x12\x15google.protobuf.Empty\x12\xe8\x01\n\x0fGrantPermission\x12\x35.yandex.cloud.mdb.mysql.v1.GrantUserPermissionRequest\x1a!.yandex.cloud.operation.Operation\"{\x82\xd3\xe4\x93\x02N\"I/managed-mysql/v1/clusters/{cluster_id}/users/{user_name}:grantPermission:\x01*\xb2\xd2*#\n\x1bGrantUserPermissionMetadata\x12\x04User\x12\xec\x01\n\x10RevokePermission\x12\x36.yandex.cloud.mdb.mysql.v1.RevokeUserPermissionRequest\x1a!.yandex.cloud.operation.Operation\"}\x82\xd3\xe4\x93\x02O\"J/managed-mysql/v1/clusters/{cluster_id}/users/{user_name}:revokePermission:\x01*\xb2\xd2*$\n\x1cRevokeUserPermissionMetadata\x12\x04UserBd\n\x1dyandex.cloud.api.mdb.mysql.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mysql/v1;mysqlb\x06proto3')
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mysql_dot_v1_dot_user__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mysql_dot_v1_dot_user__pb2.DESCRIPTOR,])
 
 
 
@@ -65,8 +65,8 @@ _GETUSERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=276,
-  serialized_end=376,
+  serialized_start=282,
+  serialized_end=382,
 )
 
 
@@ -110,8 +110,8 @@ _LISTUSERSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=378,
-  serialized_end=492,
+  serialized_start=384,
+  serialized_end=498,
 )
 
 
@@ -148,8 +148,8 @@ _LISTUSERSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=494,
-  serialized_end=586,
+  serialized_start=500,
+  serialized_end=592,
 )
 
 
@@ -186,8 +186,8 @@ _CREATEUSERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=588,
-  serialized_end=703,
+  serialized_start=594,
+  serialized_end=709,
 )
 
 
@@ -224,8 +224,8 @@ _CREATEUSERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=705,
-  serialized_end=764,
+  serialized_start=711,
+  serialized_end=770,
 )
 
 
@@ -283,8 +283,8 @@ _UPDATEUSERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=767,
-  serialized_end=1008,
+  serialized_start=773,
+  serialized_end=1014,
 )
 
 
@@ -321,8 +321,8 @@ _UPDATEUSERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1010,
-  serialized_end=1069,
+  serialized_start=1016,
+  serialized_end=1075,
 )
 
 
@@ -359,8 +359,8 @@ _DELETEUSERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1071,
-  serialized_end=1174,
+  serialized_start=1077,
+  serialized_end=1180,
 )
 
 
@@ -397,8 +397,8 @@ _DELETEUSERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1176,
-  serialized_end=1235,
+  serialized_start=1182,
+  serialized_end=1241,
 )
 
 
@@ -442,8 +442,8 @@ _GRANTUSERPERMISSIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1238,
-  serialized_end=1415,
+  serialized_start=1244,
+  serialized_end=1421,
 )
 
 
@@ -480,8 +480,8 @@ _GRANTUSERPERMISSIONMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1417,
-  serialized_end=1485,
+  serialized_start=1423,
+  serialized_end=1491,
 )
 
 
@@ -525,8 +525,8 @@ _REVOKEUSERPERMISSIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1488,
-  serialized_end=1666,
+  serialized_start=1494,
+  serialized_end=1672,
 )
 
 
@@ -563,8 +563,8 @@ _REVOKEUSERPERMISSIONMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1668,
-  serialized_end=1737,
+  serialized_start=1674,
+  serialized_end=1743,
 )
 
 _LISTUSERSRESPONSE.fields_by_name['users'].message_type = yandex_dot_cloud_dot_mdb_dot_mysql_dot_v1_dot_user__pb2._USER
@@ -706,8 +706,8 @@ _USERSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=1740,
-  serialized_end=3111,
+  serialized_start=1746,
+  serialized_end=3117,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',

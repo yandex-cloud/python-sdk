@@ -20,8 +20,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/loadbalancer/v1/health_check.proto',
   package='yandex.cloud.loadbalancer.v1',
   syntax='proto3',
-  serialized_options=_b('ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadbalancer/v1;loadbalancer'),
-  serialized_pb=_b('\n/yandex/cloud/loadbalancer/v1/health_check.proto\x12\x1cyandex.cloud.loadbalancer.v1\x1a\x1egoogle/protobuf/duration.proto\x1a\x1dyandex/cloud/validation.proto\"\xf1\x03\n\x0bHealthCheck\x12/\n\x04name\x18\x01 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12+\n\x08interval\x18\x02 \x01(\x0b\x32\x19.google.protobuf.Duration\x12*\n\x07timeout\x18\x03 \x01(\x0b\x32\x19.google.protobuf.Duration\x12%\n\x13unhealthy_threshold\x18\x04 \x01(\x03\x42\x08\xfa\xc7\x31\x04\x32-10\x12#\n\x11healthy_threshold\x18\x05 \x01(\x03\x42\x08\xfa\xc7\x31\x04\x32-10\x12K\n\x0btcp_options\x18\x06 \x01(\x0b\x32\x34.yandex.cloud.loadbalancer.v1.HealthCheck.TcpOptionsH\x00\x12M\n\x0chttp_options\x18\x07 \x01(\x0b\x32\x35.yandex.cloud.loadbalancer.v1.HealthCheck.HttpOptionsH\x00\x1a\'\n\nTcpOptions\x12\x19\n\x04port\x18\x01 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x31-32767\x1a\x36\n\x0bHttpOptions\x12\x19\n\x04port\x18\x01 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x31-32767\x12\x0c\n\x04path\x18\x02 \x01(\tB\x0f\n\x07options\x12\x04\xc0\xc1\x31\x01\x42OZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadbalancer/v1;loadbalancerb\x06proto3')
+  serialized_options=_b('\n yandex.cloud.api.loadbalancer.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadbalancer/v1;loadbalancer'),
+  serialized_pb=_b('\n/yandex/cloud/loadbalancer/v1/health_check.proto\x12\x1cyandex.cloud.loadbalancer.v1\x1a\x1egoogle/protobuf/duration.proto\x1a\x1dyandex/cloud/validation.proto\"\xf5\x03\n\x0bHealthCheck\x12\x33\n\x04name\x18\x01 \x01(\tB%\xe8\xc7\x31\x01\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12+\n\x08interval\x18\x02 \x01(\x0b\x32\x19.google.protobuf.Duration\x12*\n\x07timeout\x18\x03 \x01(\x0b\x32\x19.google.protobuf.Duration\x12%\n\x13unhealthy_threshold\x18\x04 \x01(\x03\x42\x08\xfa\xc7\x31\x04\x32-10\x12#\n\x11healthy_threshold\x18\x05 \x01(\x03\x42\x08\xfa\xc7\x31\x04\x32-10\x12K\n\x0btcp_options\x18\x06 \x01(\x0b\x32\x34.yandex.cloud.loadbalancer.v1.HealthCheck.TcpOptionsH\x00\x12M\n\x0chttp_options\x18\x07 \x01(\x0b\x32\x35.yandex.cloud.loadbalancer.v1.HealthCheck.HttpOptionsH\x00\x1a\'\n\nTcpOptions\x12\x19\n\x04port\x18\x01 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x31-32767\x1a\x36\n\x0bHttpOptions\x12\x19\n\x04port\x18\x01 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x31-32767\x12\x0c\n\x04path\x18\x02 \x01(\tB\x0f\n\x07options\x12\x04\xc0\xc1\x31\x01\x42q\n yandex.cloud.api.loadbalancer.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadbalancer/v1;loadbalancerb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -54,8 +54,8 @@ _HEALTHCHECK_TCPOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=530,
-  serialized_end=569,
+  serialized_start=534,
+  serialized_end=573,
 )
 
 _HEALTHCHECK_HTTPOPTIONS = _descriptor.Descriptor(
@@ -91,8 +91,8 @@ _HEALTHCHECK_HTTPOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=571,
-  serialized_end=625,
+  serialized_start=575,
+  serialized_end=629,
 )
 
 _HEALTHCHECK = _descriptor.Descriptor(
@@ -108,7 +108,7 @@ _HEALTHCHECK = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'), file=DESCRIPTOR),
+      serialized_options=_b('\350\3071\001\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='interval', full_name='yandex.cloud.loadbalancer.v1.HealthCheck.interval', index=1,
       number=2, type=11, cpp_type=10, label=1,
@@ -167,7 +167,7 @@ _HEALTHCHECK = _descriptor.Descriptor(
       index=0, containing_type=None, fields=[], serialized_options=_b('\300\3011\001')),
   ],
   serialized_start=145,
-  serialized_end=642,
+  serialized_end=646,
 )
 
 _HEALTHCHECK_TCPOPTIONS.containing_type = _HEALTHCHECK

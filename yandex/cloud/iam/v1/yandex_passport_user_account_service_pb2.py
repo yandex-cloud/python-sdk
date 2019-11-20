@@ -21,8 +21,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/iam/v1/yandex_passport_user_account_service.proto',
   package='yandex.cloud.iam.v1',
   syntax='proto3',
-  serialized_options=_b('Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iam'),
-  serialized_pb=_b('\n>yandex/cloud/iam/v1/yandex_passport_user_account_service.proto\x12\x13yandex.cloud.iam.v1\x1a\x1cgoogle/api/annotations.proto\x1a&yandex/cloud/iam/v1/user_account.proto\x1a\x1dyandex/cloud/validation.proto\"3\n\x1cGetUserAccountByLoginRequest\x12\x13\n\x05login\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x32\xba\x01\n YandexPassportUserAccountService\x12\x95\x01\n\nGetByLogin\x12\x31.yandex.cloud.iam.v1.GetUserAccountByLoginRequest\x1a .yandex.cloud.iam.v1.UserAccount\"2\x82\xd3\xe4\x93\x02,\x12*/iam/v1/yandexPassportUserAccounts:byLoginB=Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3')
+  serialized_options=_b('\n\027yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iam'),
+  serialized_pb=_b('\n>yandex/cloud/iam/v1/yandex_passport_user_account_service.proto\x12\x13yandex.cloud.iam.v1\x1a\x1cgoogle/api/annotations.proto\x1a&yandex/cloud/iam/v1/user_account.proto\x1a\x1dyandex/cloud/validation.proto\"3\n\x1cGetUserAccountByLoginRequest\x12\x13\n\x05login\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x32\xba\x01\n YandexPassportUserAccountService\x12\x95\x01\n\nGetByLogin\x12\x31.yandex.cloud.iam.v1.GetUserAccountByLoginRequest\x1a .yandex.cloud.iam.v1.UserAccount\"2\x82\xd3\xe4\x93\x02,\x12*/iam/v1/yandexPassportUserAccounts:byLoginBV\n\x17yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_iam_dot_v1_dot_user__account__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 

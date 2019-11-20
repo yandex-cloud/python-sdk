@@ -46,6 +46,16 @@ class InstanceGroupServiceStub(object):
         request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.UpdateInstanceGroupFromYamlRequest.SerializeToString,
         response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
         )
+    self.Stop = channel.unary_unary(
+        '/yandex.cloud.compute.v1.instancegroup.InstanceGroupService/Stop',
+        request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.StopInstanceGroupRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+        )
+    self.Start = channel.unary_unary(
+        '/yandex.cloud.compute.v1.instancegroup.InstanceGroupService/Start',
+        request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.StartInstanceGroupRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+        )
     self.Delete = channel.unary_unary(
         '/yandex.cloud.compute.v1.instancegroup.InstanceGroupService/Delete',
         request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.DeleteInstanceGroupRequest.SerializeToString,
@@ -120,6 +130,20 @@ class InstanceGroupServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def Stop(self, request, context):
+    """Stops the specified instance group.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def Start(self, request, context):
+    """Starts the specified instance group.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def Delete(self, request, context):
     """Deletes the specified instance group.
     """
@@ -179,6 +203,16 @@ def add_InstanceGroupServiceServicer_to_server(servicer, server):
       'UpdateFromYaml': grpc.unary_unary_rpc_method_handler(
           servicer.UpdateFromYaml,
           request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.UpdateInstanceGroupFromYamlRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+      ),
+      'Stop': grpc.unary_unary_rpc_method_handler(
+          servicer.Stop,
+          request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.StopInstanceGroupRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+      ),
+      'Start': grpc.unary_unary_rpc_method_handler(
+          servicer.Start,
+          request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.StartInstanceGroupRequest.FromString,
           response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
       ),
       'Delete': grpc.unary_unary_rpc_method_handler(

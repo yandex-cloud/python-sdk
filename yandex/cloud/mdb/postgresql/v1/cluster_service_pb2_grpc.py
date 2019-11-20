@@ -66,6 +66,11 @@ class ClusterServiceStub(object):
         request_serializer=yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_cluster__service__pb2.RestoreClusterRequest.SerializeToString,
         response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
         )
+    self.StartFailover = channel.unary_unary(
+        '/yandex.cloud.mdb.postgresql.v1.ClusterService/StartFailover',
+        request_serializer=yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_cluster__service__pb2.StartClusterFailoverRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+        )
     self.ListLogs = channel.unary_unary(
         '/yandex.cloud.mdb.postgresql.v1.ClusterService/ListLogs',
         request_serializer=yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_cluster__service__pb2.ListClusterLogsRequest.SerializeToString,
@@ -180,9 +185,15 @@ class ClusterServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def StartFailover(self, request, context):
+    """Start a manual failover on the specified PostgreSQL cluster.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def ListLogs(self, request, context):
     """Retrieves logs for the specified PostgreSQL cluster.
-    For more information about logs, see the [Logs](/docs/managed-postgresql/concepts/logs) section in the documentation.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
@@ -281,6 +292,11 @@ def add_ClusterServiceServicer_to_server(servicer, server):
       'Restore': grpc.unary_unary_rpc_method_handler(
           servicer.Restore,
           request_deserializer=yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_cluster__service__pb2.RestoreClusterRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+      ),
+      'StartFailover': grpc.unary_unary_rpc_method_handler(
+          servicer.StartFailover,
+          request_deserializer=yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_cluster__service__pb2.StartClusterFailoverRequest.FromString,
           response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
       ),
       'ListLogs': grpc.unary_unary_rpc_method_handler(

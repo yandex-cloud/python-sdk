@@ -19,8 +19,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/mdb/redis/v1alpha/backup.proto',
   package='yandex.cloud.mdb.redis.v1alpha',
   syntax='proto3',
-  serialized_options=_b('ZHgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/redis/v1alpha;redis'),
-  serialized_pb=_b('\n+yandex/cloud/mdb/redis/v1alpha/backup.proto\x12\x1eyandex.cloud.mdb.redis.v1alpha\x1a\x1fgoogle/protobuf/timestamp.proto\"\xa2\x01\n\x06\x42\x61\x63kup\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x19\n\x11source_cluster_id\x18\x04 \x01(\t\x12.\n\nstarted_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.TimestampBJZHgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/redis/v1alpha;redisb\x06proto3')
+  serialized_options=_b('\n\"yandex.cloud.api.mdb.redis.v1alphaZHgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/redis/v1alpha;redis'),
+  serialized_pb=_b('\n+yandex/cloud/mdb/redis/v1alpha/backup.proto\x12\x1eyandex.cloud.mdb.redis.v1alpha\x1a\x1fgoogle/protobuf/timestamp.proto\"\xa2\x01\n\x06\x42\x61\x63kup\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x19\n\x11source_cluster_id\x18\x04 \x01(\t\x12.\n\nstarted_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.TimestampBn\n\"yandex.cloud.api.mdb.redis.v1alphaZHgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/redis/v1alpha;redisb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 

@@ -18,8 +18,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/containerregistry/v1/blob.proto',
   package='yandex.cloud.containerregistry.v1',
   syntax='proto3',
-  serialized_options=_b('ZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/containerregistry/v1;containerregistry'),
-  serialized_pb=_b('\n,yandex/cloud/containerregistry/v1/blob.proto\x12!yandex.cloud.containerregistry.v1\"0\n\x04\x42lob\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06\x64igest\x18\x02 \x01(\t\x12\x0c\n\x04size\x18\x03 \x01(\x03\x42YZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/containerregistry/v1;containerregistryb\x06proto3')
+  serialized_options=_b('\n%yandex.cloud.api.containerregistry.v1ZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/containerregistry/v1;containerregistry'),
+  serialized_pb=_b('\n,yandex/cloud/containerregistry/v1/blob.proto\x12!yandex.cloud.containerregistry.v1\">\n\x04\x42lob\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06\x64igest\x18\x02 \x01(\t\x12\x0c\n\x04size\x18\x03 \x01(\x03\x12\x0c\n\x04urls\x18\x04 \x03(\tB\x80\x01\n%yandex.cloud.api.containerregistry.v1ZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/containerregistry/v1;containerregistryb\x06proto3')
 )
 
 
@@ -53,6 +53,13 @@ _BLOB = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='urls', full_name='yandex.cloud.containerregistry.v1.Blob.urls', index=3,
+      number=4, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -66,7 +73,7 @@ _BLOB = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=83,
-  serialized_end=131,
+  serialized_end=145,
 )
 
 DESCRIPTOR.message_types_by_name['Blob'] = _BLOB

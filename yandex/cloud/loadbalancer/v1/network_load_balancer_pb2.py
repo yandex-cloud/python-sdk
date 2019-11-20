@@ -22,8 +22,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/loadbalancer/v1/network_load_balancer.proto',
   package='yandex.cloud.loadbalancer.v1',
   syntax='proto3',
-  serialized_options=_b('ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadbalancer/v1;loadbalancer'),
-  serialized_pb=_b('\n8yandex/cloud/loadbalancer/v1/network_load_balancer.proto\x12\x1cyandex.cloud.loadbalancer.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\x1a/yandex/cloud/loadbalancer/v1/health_check.proto\"\x8f\x07\n\x13NetworkLoadBalancer\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12M\n\x06labels\x18\x06 \x03(\x0b\x32=.yandex.cloud.loadbalancer.v1.NetworkLoadBalancer.LabelsEntry\x12\x11\n\tregion_id\x18\x07 \x01(\t\x12H\n\x06status\x18\t \x01(\x0e\x32\x38.yandex.cloud.loadbalancer.v1.NetworkLoadBalancer.Status\x12\x44\n\x04type\x18\n \x01(\x0e\x32\x36.yandex.cloud.loadbalancer.v1.NetworkLoadBalancer.Type\x12[\n\x10session_affinity\x18\x0b \x01(\x0e\x32\x41.yandex.cloud.loadbalancer.v1.NetworkLoadBalancer.SessionAffinity\x12\x39\n\tlisteners\x18\x0c \x03(\x0b\x32&.yandex.cloud.loadbalancer.v1.Listener\x12Q\n\x16\x61ttached_target_groups\x18\r \x03(\x0b\x32\x31.yandex.cloud.loadbalancer.v1.AttachedTargetGroup\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x7f\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0c\n\x08STARTING\x10\x02\x12\n\n\x06\x41\x43TIVE\x10\x03\x12\x0c\n\x08STOPPING\x10\x04\x12\x0b\n\x07STOPPED\x10\x05\x12\x0c\n\x08\x44\x45LETING\x10\x06\x12\x0c\n\x08INACTIVE\x10\x07\"*\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x45XTERNAL\x10\x01\"M\n\x0fSessionAffinity\x12 \n\x1cSESSION_AFFINITY_UNSPECIFIED\x10\x00\x12\x18\n\x14\x43LIENT_IP_PORT_PROTO\x10\x01\"\x85\x01\n\x13\x41ttachedTargetGroup\x12%\n\x0ftarget_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12G\n\rhealth_checks\x18\x02 \x03(\x0b\x32).yandex.cloud.loadbalancer.v1.HealthCheckB\x05\x82\xc8\x31\x01\x31\"\xe1\x01\n\x08Listener\x12/\n\x04name\x18\x01 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x0f\n\x07\x61\x64\x64ress\x18\x02 \x01(\t\x12\x0c\n\x04port\x18\x03 \x01(\x03\x12\x41\n\x08protocol\x18\x04 \x01(\x0e\x32/.yandex.cloud.loadbalancer.v1.Listener.Protocol\x12\x13\n\x0btarget_port\x18\x05 \x01(\x03\"-\n\x08Protocol\x12\x18\n\x14PROTOCOL_UNSPECIFIED\x10\x00\x12\x07\n\x03TCP\x10\x01\"\xda\x01\n\x0bTargetState\x12\x11\n\tsubnet_id\x18\x01 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x02 \x01(\t\x12@\n\x06status\x18\x03 \x01(\x0e\x32\x30.yandex.cloud.loadbalancer.v1.TargetState.Status\"e\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0b\n\x07INITIAL\x10\x01\x12\x0b\n\x07HEALTHY\x10\x02\x12\r\n\tUNHEALTHY\x10\x03\x12\x0c\n\x08\x44RAINING\x10\x04\x12\x0c\n\x08INACTIVE\x10\x05*;\n\tIpVersion\x12\x1a\n\x16IP_VERSION_UNSPECIFIED\x10\x00\x12\x08\n\x04IPV4\x10\x01\x12\x08\n\x04IPV6\x10\x02\x42OZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadbalancer/v1;loadbalancerb\x06proto3')
+  serialized_options=_b('\n yandex.cloud.api.loadbalancer.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadbalancer/v1;loadbalancer'),
+  serialized_pb=_b('\n8yandex/cloud/loadbalancer/v1/network_load_balancer.proto\x12\x1cyandex.cloud.loadbalancer.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\x1a/yandex/cloud/loadbalancer/v1/health_check.proto\"\x8f\x07\n\x13NetworkLoadBalancer\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12M\n\x06labels\x18\x06 \x03(\x0b\x32=.yandex.cloud.loadbalancer.v1.NetworkLoadBalancer.LabelsEntry\x12\x11\n\tregion_id\x18\x07 \x01(\t\x12H\n\x06status\x18\t \x01(\x0e\x32\x38.yandex.cloud.loadbalancer.v1.NetworkLoadBalancer.Status\x12\x44\n\x04type\x18\n \x01(\x0e\x32\x36.yandex.cloud.loadbalancer.v1.NetworkLoadBalancer.Type\x12[\n\x10session_affinity\x18\x0b \x01(\x0e\x32\x41.yandex.cloud.loadbalancer.v1.NetworkLoadBalancer.SessionAffinity\x12\x39\n\tlisteners\x18\x0c \x03(\x0b\x32&.yandex.cloud.loadbalancer.v1.Listener\x12Q\n\x16\x61ttached_target_groups\x18\r \x03(\x0b\x32\x31.yandex.cloud.loadbalancer.v1.AttachedTargetGroup\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x7f\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0c\n\x08STARTING\x10\x02\x12\n\n\x06\x41\x43TIVE\x10\x03\x12\x0c\n\x08STOPPING\x10\x04\x12\x0b\n\x07STOPPED\x10\x05\x12\x0c\n\x08\x44\x45LETING\x10\x06\x12\x0c\n\x08INACTIVE\x10\x07\"*\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x45XTERNAL\x10\x01\"M\n\x0fSessionAffinity\x12 \n\x1cSESSION_AFFINITY_UNSPECIFIED\x10\x00\x12\x18\n\x14\x43LIENT_IP_PORT_PROTO\x10\x01\"\x85\x01\n\x13\x41ttachedTargetGroup\x12%\n\x0ftarget_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12G\n\rhealth_checks\x18\x02 \x03(\x0b\x32).yandex.cloud.loadbalancer.v1.HealthCheckB\x05\x82\xc8\x31\x01\x31\"\xbe\x01\n\x08Listener\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x02 \x01(\t\x12\x0c\n\x04port\x18\x03 \x01(\x03\x12\x41\n\x08protocol\x18\x04 \x01(\x0e\x32/.yandex.cloud.loadbalancer.v1.Listener.Protocol\x12\x13\n\x0btarget_port\x18\x05 \x01(\x03\"-\n\x08Protocol\x12\x18\n\x14PROTOCOL_UNSPECIFIED\x10\x00\x12\x07\n\x03TCP\x10\x01\"\xda\x01\n\x0bTargetState\x12\x11\n\tsubnet_id\x18\x01 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x02 \x01(\t\x12@\n\x06status\x18\x03 \x01(\x0e\x32\x30.yandex.cloud.loadbalancer.v1.TargetState.Status\"e\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0b\n\x07INITIAL\x10\x01\x12\x0b\n\x07HEALTHY\x10\x02\x12\r\n\tUNHEALTHY\x10\x03\x12\x0c\n\x08\x44RAINING\x10\x04\x12\x0c\n\x08INACTIVE\x10\x05*;\n\tIpVersion\x12\x1a\n\x16IP_VERSION_UNSPECIFIED\x10\x00\x12\x08\n\x04IPV4\x10\x01\x12\x08\n\x04IPV6\x10\x02\x42q\n yandex.cloud.api.loadbalancer.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadbalancer/v1;loadbalancerb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_loadbalancer_dot_v1_dot_health__check__pb2.DESCRIPTOR,])
 
@@ -48,8 +48,8 @@ _IPVERSION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1702,
-  serialized_end=1761,
+  serialized_start=1667,
+  serialized_end=1726,
 )
 _sym_db.RegisterEnumDescriptor(_IPVERSION)
 
@@ -166,8 +166,8 @@ _LISTENER_PROTOCOL = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1434,
-  serialized_end=1479,
+  serialized_start=1399,
+  serialized_end=1444,
 )
 _sym_db.RegisterEnumDescriptor(_LISTENER_PROTOCOL)
 
@@ -204,8 +204,8 @@ _TARGETSTATE_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1599,
-  serialized_end=1700,
+  serialized_start=1564,
+  serialized_end=1665,
 )
 _sym_db.RegisterEnumDescriptor(_TARGETSTATE_STATUS)
 
@@ -409,7 +409,7 @@ _LISTENER = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'), file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='address', full_name='yandex.cloud.loadbalancer.v1.Listener.address', index=1,
       number=2, type=9, cpp_type=9, label=1,
@@ -452,7 +452,7 @@ _LISTENER = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1254,
-  serialized_end=1479,
+  serialized_end=1444,
 )
 
 
@@ -497,8 +497,8 @@ _TARGETSTATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1482,
-  serialized_end=1700,
+  serialized_start=1447,
+  serialized_end=1665,
 )
 
 _NETWORKLOADBALANCER_LABELSENTRY.containing_type = _NETWORKLOADBALANCER
@@ -565,5 +565,4 @@ DESCRIPTOR._options = None
 _NETWORKLOADBALANCER_LABELSENTRY._options = None
 _ATTACHEDTARGETGROUP.fields_by_name['target_group_id']._options = None
 _ATTACHEDTARGETGROUP.fields_by_name['health_checks']._options = None
-_LISTENER.fields_by_name['name']._options = None
 # @@protoc_insertion_point(module_scope)

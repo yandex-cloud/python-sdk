@@ -18,8 +18,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/compute/v1/zone.proto',
   package='yandex.cloud.compute.v1',
   syntax='proto3',
-  serialized_options=_b('ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;compute'),
-  serialized_pb=_b('\n\"yandex/cloud/compute/v1/zone.proto\x12\x17yandex.cloud.compute.v1\"\x8f\x01\n\x04Zone\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tregion_id\x18\x02 \x01(\t\x12\x34\n\x06status\x18\x03 \x01(\x0e\x32$.yandex.cloud.compute.v1.Zone.Status\"2\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x06\n\x02UP\x10\x01\x12\x08\n\x04\x44OWN\x10\x02\x42\x45ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3')
+  serialized_options=_b('\n\033yandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;compute'),
+  serialized_pb=_b('\n\"yandex/cloud/compute/v1/zone.proto\x12\x17yandex.cloud.compute.v1\"\x8f\x01\n\x04Zone\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tregion_id\x18\x02 \x01(\t\x12\x34\n\x06status\x18\x03 \x01(\x0e\x32$.yandex.cloud.compute.v1.Zone.Status\"2\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x06\n\x02UP\x10\x01\x12\x08\n\x04\x44OWN\x10\x02\x42\x62\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3')
 )
 
 

@@ -12,7 +12,8 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from yandex.api import operation_pb2 as yandex_dot_api_dot_operation__pb2
+from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
+from yandex.cloud.access import access_pb2 as yandex_dot_cloud_dot_access_dot_access__pb2
 from yandex.cloud.containerregistry.v1 import registry_pb2 as yandex_dot_cloud_dot_containerregistry_dot_v1_dot_registry__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
@@ -24,10 +25,10 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/containerregistry/v1/registry_service.proto',
   package='yandex.cloud.containerregistry.v1',
   syntax='proto3',
-  serialized_options=_b('ZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/containerregistry/v1;containerregistry'),
-  serialized_pb=_b('\n8yandex/cloud/containerregistry/v1/registry_service.proto\x12!yandex.cloud.containerregistry.v1\x1a\x1ayandex/api/operation.proto\x1a\x30yandex/cloud/containerregistry/v1/registry.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\"7\n\x12GetRegistryRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x92\x01\n\x15ListRegistriesRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"r\n\x16ListRegistriesResponse\x12?\n\nregistries\x18\x01 \x03(\x0b\x32+.yandex.cloud.containerregistry.v1.Registry\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xb0\x02\n\x15\x43reateRegistryRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x95\x01\n\x06labels\x18\x03 \x03(\x0b\x32\x44.yandex.cloud.containerregistry.v1.CreateRegistryRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"-\n\x16\x43reateRegistryMetadata\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\"\xe3\x02\n\x15UpdateRegistryRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x95\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x44.yandex.cloud.containerregistry.v1.UpdateRegistryRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"-\n\x16UpdateRegistryMetadata\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\":\n\x15\x44\x65leteRegistryRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"-\n\x16\x44\x65leteRegistryMetadata\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t2\xb9\x07\n\x0fRegistryService\x12\xa2\x01\n\x03Get\x12\x35.yandex.cloud.containerregistry.v1.GetRegistryRequest\x1a+.yandex.cloud.containerregistry.v1.Registry\"7\x82\xd3\xe4\x93\x02\x31\x12//container-registry/v1/registries/{registry_id}\x12\xa6\x01\n\x04List\x12\x38.yandex.cloud.containerregistry.v1.ListRegistriesRequest\x1a\x39.yandex.cloud.containerregistry.v1.ListRegistriesResponse\")\x82\xd3\xe4\x93\x02#\x12!/container-registry/v1/registries\x12\xb9\x01\n\x06\x43reate\x12\x38.yandex.cloud.containerregistry.v1.CreateRegistryRequest\x1a!.yandex.cloud.operation.Operation\"R\x82\xd3\xe4\x93\x02&\"!/container-registry/v1/registries:\x01*\xb2\xd2*\"\n\x16\x43reateRegistryMetadata\x12\x08Registry\x12\xc7\x01\n\x06Update\x12\x38.yandex.cloud.containerregistry.v1.UpdateRegistryRequest\x1a!.yandex.cloud.operation.Operation\"`\x82\xd3\xe4\x93\x02\x34\x32//container-registry/v1/registries/{registry_id}:\x01*\xb2\xd2*\"\n\x16UpdateRegistryMetadata\x12\x08Registry\x12\xd1\x01\n\x06\x44\x65lete\x12\x38.yandex.cloud.containerregistry.v1.DeleteRegistryRequest\x1a!.yandex.cloud.operation.Operation\"j\x82\xd3\xe4\x93\x02\x31*//container-registry/v1/registries/{registry_id}\xb2\xd2*/\n\x16\x44\x65leteRegistryMetadata\x12\x15google.protobuf.EmptyBYZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/containerregistry/v1;containerregistryb\x06proto3')
+  serialized_options=_b('\n%yandex.cloud.api.containerregistry.v1ZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/containerregistry/v1;containerregistry'),
+  serialized_pb=_b('\n8yandex/cloud/containerregistry/v1/registry_service.proto\x12!yandex.cloud.containerregistry.v1\x1a yandex/cloud/api/operation.proto\x1a yandex/cloud/access/access.proto\x1a\x30yandex/cloud/containerregistry/v1/registry.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\"7\n\x12GetRegistryRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x92\x01\n\x15ListRegistriesRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"r\n\x16ListRegistriesResponse\x12?\n\nregistries\x18\x01 \x03(\x0b\x32+.yandex.cloud.containerregistry.v1.Registry\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xb0\x02\n\x15\x43reateRegistryRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x95\x01\n\x06labels\x18\x03 \x03(\x0b\x32\x44.yandex.cloud.containerregistry.v1.CreateRegistryRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"-\n\x16\x43reateRegistryMetadata\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\"\xe3\x02\n\x15UpdateRegistryRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x95\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x44.yandex.cloud.containerregistry.v1.UpdateRegistryRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"-\n\x16UpdateRegistryMetadata\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\":\n\x15\x44\x65leteRegistryRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"-\n\x16\x44\x65leteRegistryMetadata\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t2\xf1\x0c\n\x0fRegistryService\x12\xa2\x01\n\x03Get\x12\x35.yandex.cloud.containerregistry.v1.GetRegistryRequest\x1a+.yandex.cloud.containerregistry.v1.Registry\"7\x82\xd3\xe4\x93\x02\x31\x12//container-registry/v1/registries/{registry_id}\x12\xa6\x01\n\x04List\x12\x38.yandex.cloud.containerregistry.v1.ListRegistriesRequest\x1a\x39.yandex.cloud.containerregistry.v1.ListRegistriesResponse\")\x82\xd3\xe4\x93\x02#\x12!/container-registry/v1/registries\x12\xb9\x01\n\x06\x43reate\x12\x38.yandex.cloud.containerregistry.v1.CreateRegistryRequest\x1a!.yandex.cloud.operation.Operation\"R\x82\xd3\xe4\x93\x02&\"!/container-registry/v1/registries:\x01*\xb2\xd2*\"\n\x16\x43reateRegistryMetadata\x12\x08Registry\x12\xc7\x01\n\x06Update\x12\x38.yandex.cloud.containerregistry.v1.UpdateRegistryRequest\x1a!.yandex.cloud.operation.Operation\"`\x82\xd3\xe4\x93\x02\x34\x32//container-registry/v1/registries/{registry_id}:\x01*\xb2\xd2*\"\n\x16UpdateRegistryMetadata\x12\x08Registry\x12\xd1\x01\n\x06\x44\x65lete\x12\x38.yandex.cloud.containerregistry.v1.DeleteRegistryRequest\x1a!.yandex.cloud.operation.Operation\"j\x82\xd3\xe4\x93\x02\x31*//container-registry/v1/registries/{registry_id}\xb2\xd2*/\n\x16\x44\x65leteRegistryMetadata\x12\x15google.protobuf.Empty\x12\xc1\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"J\x82\xd3\xe4\x93\x02\x44\x12\x42/container-registry/v1/registries/{resource_id}:listAccessBindings\x12\xf1\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x89\x01\x82\xd3\xe4\x93\x02\x46\"A/container-registry/v1/registries/{resource_id}:setAccessBindings:\x01*\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\xfd\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x8f\x01\x82\xd3\xe4\x93\x02I\"D/container-registry/v1/registries/{resource_id}:updateAccessBindings:\x01*\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.EmptyB\x80\x01\n%yandex.cloud.api.containerregistry.v1ZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/containerregistry/v1;containerregistryb\x06proto3')
   ,
-  dependencies=[yandex_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_containerregistry_dot_v1_dot_registry__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,])
+  dependencies=[yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_access_dot_access__pb2.DESCRIPTOR,yandex_dot_cloud_dot_containerregistry_dot_v1_dot_registry__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,])
 
 
 
@@ -58,8 +59,8 @@ _GETREGISTRYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=308,
-  serialized_end=363,
+  serialized_start=348,
+  serialized_end=403,
 )
 
 
@@ -110,8 +111,8 @@ _LISTREGISTRIESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=366,
-  serialized_end=512,
+  serialized_start=406,
+  serialized_end=552,
 )
 
 
@@ -148,8 +149,8 @@ _LISTREGISTRIESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=514,
-  serialized_end=628,
+  serialized_start=554,
+  serialized_end=668,
 )
 
 
@@ -186,8 +187,8 @@ _CREATEREGISTRYREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=890,
-  serialized_end=935,
+  serialized_start=930,
+  serialized_end=975,
 )
 
 _CREATEREGISTRYREQUEST = _descriptor.Descriptor(
@@ -230,8 +231,8 @@ _CREATEREGISTRYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=631,
-  serialized_end=935,
+  serialized_start=671,
+  serialized_end=975,
 )
 
 
@@ -261,8 +262,8 @@ _CREATEREGISTRYMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=937,
-  serialized_end=982,
+  serialized_start=977,
+  serialized_end=1022,
 )
 
 
@@ -299,8 +300,8 @@ _UPDATEREGISTRYREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=890,
-  serialized_end=935,
+  serialized_start=930,
+  serialized_end=975,
 )
 
 _UPDATEREGISTRYREQUEST = _descriptor.Descriptor(
@@ -350,8 +351,8 @@ _UPDATEREGISTRYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=985,
-  serialized_end=1340,
+  serialized_start=1025,
+  serialized_end=1380,
 )
 
 
@@ -381,8 +382,8 @@ _UPDATEREGISTRYMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1342,
-  serialized_end=1387,
+  serialized_start=1382,
+  serialized_end=1427,
 )
 
 
@@ -412,8 +413,8 @@ _DELETEREGISTRYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1389,
-  serialized_end=1447,
+  serialized_start=1429,
+  serialized_end=1487,
 )
 
 
@@ -443,8 +444,8 @@ _DELETEREGISTRYMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1449,
-  serialized_end=1494,
+  serialized_start=1489,
+  serialized_end=1534,
 )
 
 _LISTREGISTRIESRESPONSE.fields_by_name['registries'].message_type = yandex_dot_cloud_dot_containerregistry_dot_v1_dot_registry__pb2._REGISTRY
@@ -566,8 +567,8 @@ _REGISTRYSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=1497,
-  serialized_end=2450,
+  serialized_start=1537,
+  serialized_end=3186,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
@@ -613,6 +614,33 @@ _REGISTRYSERVICE = _descriptor.ServiceDescriptor(
     input_type=_DELETEREGISTRYREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=_b('\202\323\344\223\0021*//container-registry/v1/registries/{registry_id}\262\322*/\n\026DeleteRegistryMetadata\022\025google.protobuf.Empty'),
+  ),
+  _descriptor.MethodDescriptor(
+    name='ListAccessBindings',
+    full_name='yandex.cloud.containerregistry.v1.RegistryService.ListAccessBindings',
+    index=5,
+    containing_service=None,
+    input_type=yandex_dot_cloud_dot_access_dot_access__pb2._LISTACCESSBINDINGSREQUEST,
+    output_type=yandex_dot_cloud_dot_access_dot_access__pb2._LISTACCESSBINDINGSRESPONSE,
+    serialized_options=_b('\202\323\344\223\002D\022B/container-registry/v1/registries/{resource_id}:listAccessBindings'),
+  ),
+  _descriptor.MethodDescriptor(
+    name='SetAccessBindings',
+    full_name='yandex.cloud.containerregistry.v1.RegistryService.SetAccessBindings',
+    index=6,
+    containing_service=None,
+    input_type=yandex_dot_cloud_dot_access_dot_access__pb2._SETACCESSBINDINGSREQUEST,
+    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
+    serialized_options=_b('\202\323\344\223\002F\"A/container-registry/v1/registries/{resource_id}:setAccessBindings:\001*\262\322*9\n access.SetAccessBindingsMetadata\022\025google.protobuf.Empty'),
+  ),
+  _descriptor.MethodDescriptor(
+    name='UpdateAccessBindings',
+    full_name='yandex.cloud.containerregistry.v1.RegistryService.UpdateAccessBindings',
+    index=7,
+    containing_service=None,
+    input_type=yandex_dot_cloud_dot_access_dot_access__pb2._UPDATEACCESSBINDINGSREQUEST,
+    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
+    serialized_options=_b('\202\323\344\223\002I\"D/container-registry/v1/registries/{resource_id}:updateAccessBindings:\001*\262\322*<\n#access.UpdateAccessBindingsMetadata\022\025google.protobuf.Empty'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_REGISTRYSERVICE)
