@@ -45,6 +45,8 @@ _supported_modules = {
     'yandex.cloud.ai.vision': 'ai-vision',
     'yandex.cloud.compute': 'compute',
     'yandex.cloud.containerregistry': 'container-registry',
+    'yandex.cloud.dataproc': 'dataproc',
+    'yandex.cloud.dataproc.manager': 'dataproc-manager',
     'yandex.cloud.endpoint': 'endpoint',
     'yandex.cloud.iam': 'iam',
     'yandex.cloud.iot.devices': 'iot-devices',
