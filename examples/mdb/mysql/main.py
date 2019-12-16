@@ -9,12 +9,12 @@ from yandex.cloud.vpc.v1.network_service_pb2 import ListNetworksRequest
 from yandex.cloud.vpc.v1.network_service_pb2_grpc import NetworkServiceStub
 from yandex.cloud.vpc.v1.subnet_service_pb2 import ListSubnetsRequest
 from yandex.cloud.vpc.v1.subnet_service_pb2_grpc import SubnetServiceStub
-from yandex.cloud.mdb.mongodb.v1.database_pb2 import DatabaseSpec
-from yandex.cloud.mdb.mongodb.v1.user_pb2 import Permission, UserSpec
+from yandex.cloud.mdb.mysql.v1.database_pb2 import DatabaseSpec
+from yandex.cloud.mdb.mysql.v1.user_pb2 import Permission, UserSpec
 
-import yandex.cloud.mdb.mongodb.v1.cluster_pb2 as cluster_pb
-import yandex.cloud.mdb.mongodb.v1.cluster_service_pb2 as cluster_service
-import yandex.cloud.mdb.mongodb.v1.cluster_service_pb2_grpc as cluster_service_grpc
+import yandex.cloud.mdb.mysql.v1.cluster_pb2 as cluster_pb
+import yandex.cloud.mdb.mysql.v1.cluster_service_pb2 as cluster_service
+import yandex.cloud.mdb.mysql.v1.cluster_service_pb2_grpc as cluster_service_grpc
 
 import yandexcloud
 
@@ -57,7 +57,7 @@ def parse_cmd():
     parser.add_argument('--zone', default='ru-central1-b', help='Compute Engine zone to deploy to')
     parser.add_argument('--network-id', default='', help='Your Yandex.Cloud network id')
     parser.add_argument('--subnet-id', default='', help='Subnet for the cluster')
-    parser.add_argument('--cluster-name', default='mongodb666', help='New cluster name')
+    parser.add_argument('--cluster-name', default='cluster1', help='New cluster name')
     parser.add_argument('--cluster-desc', default='', help='New cluster description')
     parser.add_argument('--db-name', default='db1', help='New database name')
     parser.add_argument('--user-name', default='user1')
@@ -147,9 +147,7 @@ def create_cluster_request(params):
     host_specs = [cluster_service.HostSpec(zone_id=params.zone, subnet_id=params.subnet_id, assign_public_ip=False)]
     res = cluster_pb.Resources(resource_preset_id="s2.micro", disk_size=10 * (1024 ** 3), disk_type_id="network-ssd")
 
-    config_spec = cluster_service.ConfigSpec(
-        version="3.6",
-        mongodb_spec_3_6=cluster_service.MongodbSpec3_6(mongod=cluster_service.MongodbSpec3_6.Mongod(resources=res)))
+    config_spec = cluster_service.ConfigSpec(version="8.0", resources=res)
 
     return cluster_service.CreateClusterRequest(
         folder_id=params.folder_id,
