@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import argparse
 import sys
 import time
@@ -56,7 +57,7 @@ def parse_cmd():
     parser.add_argument('--zone', default='ru-central1-b', help='Compute Engine zone to deploy to')
     parser.add_argument('--network-id', default='', help='Your Yandex.Cloud network id')
     parser.add_argument('--subnet-id', default='', help='Subnet for the cluster')
-    parser.add_argument('--cluster-name', default='clickhouse666', help='New cluster name')
+    parser.add_argument('--cluster-name', default='cluster1', help='New cluster name')
     parser.add_argument('--cluster-desc', default='', help='New cluster description')
     parser.add_argument('--db-name', default='db1', help='New database name')
     parser.add_argument('--user-name', default='user1')
@@ -155,9 +156,9 @@ def create_cluster_request(params):
         zone_id=params.zone, type="ZOOKEEPER",
         subnet_id=params.subnet_id, assign_public_ip=False)
 
-    host_specs = [host_ch_spec, host_ch_spec, host_zk_spec, host_zk_spec, host_zk_spec]
+    host_specs = [host_ch_spec, host_zk_spec, host_zk_spec, host_zk_spec]
 
-    res = Resources(resource_preset_id="s1.nano", disk_size=10 * (1024 ** 3), disk_type_id="network-nvme")
+    res = Resources(resource_preset_id="s1.nano", disk_size=10 * (1024 ** 3), disk_type_id="network-ssd")
 
     config_spec = cluster_service.ConfigSpec(clickhouse=cluster_service.ConfigSpec.Clickhouse(resources=res),
                                              zookeeper=cluster_service.ConfigSpec.Zookeeper(resources=res))
