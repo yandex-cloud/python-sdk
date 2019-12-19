@@ -7,7 +7,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class SubclusterServiceStub(object):
-  """A set of methods for managing Dataproc subclusters.
+  """A set of methods for managing Data Proc subclusters.
   """
 
   def __init__(self, channel):
@@ -44,41 +44,41 @@ class SubclusterServiceStub(object):
 
 
 class SubclusterServiceServicer(object):
-  """A set of methods for managing Dataproc subclusters.
+  """A set of methods for managing Data Proc subclusters.
   """
 
   def Get(self, request, context):
-    """Returns the specified Dataproc subcluster resource.
+    """Returns the specified subcluster.
 
-    To get the list of available Dataproc subcluster resources, make a [List] request.
+    To get the list of all available subclusters, make a [SubclusterService.List] request.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def List(self, request, context):
-    """Retrieves a list of Dataproc subcluster.
+    """Retrieves a list of subclusters in the specified cluster.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def Create(self, request, context):
-    """Creates a Dataproc subcluster in the specified cluster.
+    """Creates a subcluster in the specified cluster.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def Update(self, request, context):
-    """Updates configuration of the specified Dataproc subcluster.
+    """Updates the specified subcluster.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def Delete(self, request, context):
-    """Deletes the specified Dataproc subcluster.
+    """Deletes the specified subcluster.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')

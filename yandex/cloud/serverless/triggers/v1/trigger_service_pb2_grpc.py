@@ -7,8 +7,8 @@ from yandex.cloud.serverless.triggers.v1 import trigger_service_pb2 as yandex_do
 
 
 class TriggerServiceStub(object):
-  # missing associated documentation comment in .proto file
-  pass
+  """A set of methods for managing triggers for serverless functions.
+  """
 
   def __init__(self, channel):
     """Constructor.
@@ -49,47 +49,49 @@ class TriggerServiceStub(object):
 
 
 class TriggerServiceServicer(object):
-  # missing associated documentation comment in .proto file
-  pass
+  """A set of methods for managing triggers for serverless functions.
+  """
 
   def Get(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Returns the specified trigger.
+
+    To get the list of all available triggers, make a [List] request.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def List(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Retrieves the list of triggers in the specified folder.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def Create(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Creates a trigger in the specified folder.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def Update(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Updates the specified trigger.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def Delete(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Deletes the specified trigger.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def ListOperations(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Lists operations for the specified trigger.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')

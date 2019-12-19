@@ -7,7 +7,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class ClusterServiceStub(object):
-  """A set of methods for managing Dataproc clusters.
+  """A set of methods for managing Data Proc clusters.
   """
 
   def __init__(self, channel):
@@ -64,67 +64,69 @@ class ClusterServiceStub(object):
 
 
 class ClusterServiceServicer(object):
-  """A set of methods for managing Dataproc clusters.
+  """A set of methods for managing Data Proc clusters.
   """
 
   def Get(self, request, context):
-    """Returns the specified Dataproc cluster.
+    """Returns the specified cluster.
+
+    To get the list of all available clusters, make a [ClusterService.List] request.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def List(self, request, context):
-    """Retrieves a list of Dataproc clusters.
+    """Retrieves the list of clusters in the specified folder.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def Create(self, request, context):
-    """Creates a Dataproc cluster.
+    """Creates a cluster in the specified folder.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def Update(self, request, context):
-    """Updates configuration of the specified Dataproc cluster.
+    """Updates the configuration of the specified cluster.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def Delete(self, request, context):
-    """Deletes the specified Dataproc cluster.
+    """Deletes the specified cluster.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def Start(self, request, context):
-    """Start the specified Dataproc cluster.
+    """Starts the specified cluster.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def Stop(self, request, context):
-    """Stop the specified Dataproc cluster.
+    """Stops the specified cluster.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def ListOperations(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Lists operations for the specified cluster.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def ListHosts(self, request, context):
-    """Retrieves a list of hosts.
+    """Retrieves the list of hosts in the specified cluster.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')

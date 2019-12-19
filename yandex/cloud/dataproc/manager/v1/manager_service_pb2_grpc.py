@@ -5,7 +5,7 @@ from yandex.cloud.dataproc.manager.v1 import manager_service_pb2 as yandex_dot_c
 
 
 class DataprocManagerServiceStub(object):
-  """Dataproc manager service defifnition
+  """Data Proc manager service defifnition
   """
 
   def __init__(self, channel):
@@ -22,7 +22,7 @@ class DataprocManagerServiceStub(object):
 
 
 class DataprocManagerServiceServicer(object):
-  """Dataproc manager service defifnition
+  """Data Proc manager service defifnition
   """
 
   def Report(self, request, context):

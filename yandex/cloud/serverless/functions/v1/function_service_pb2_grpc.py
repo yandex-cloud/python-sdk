@@ -8,8 +8,8 @@ from yandex.cloud.serverless.functions.v1 import function_service_pb2 as yandex_
 
 
 class FunctionServiceStub(object):
-  # missing associated documentation comment in .proto file
-  pass
+  """A set of methods for managing serverless functions.
+  """
 
   def __init__(self, channel):
     """Constructor.
@@ -105,124 +105,131 @@ class FunctionServiceStub(object):
 
 
 class FunctionServiceServicer(object):
-  # missing associated documentation comment in .proto file
-  pass
+  """A set of methods for managing serverless functions.
+  """
 
   def Get(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Returns the specified function.
+
+    To get the list of all available functions, make a [List] request.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def List(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Retrieves the list of functions in the specified folder.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def Create(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Creates a function in the specified folder.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def Update(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Updates the specified function.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def Delete(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Deletes the specified function.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def GetVersion(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Returns the specified version of a function.
+
+    To get the list of available version, make a [ListVersions] request.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def GetVersionByTag(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Returns all versions with the specified tag.
+
+    To get the list of all available versions, make a [ListVersions] request.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def ListVersions(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Retrieves the list of versions for the specified function, or of all function versions
+    in the specified folder.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def SetTag(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Set a tag for the specified version of a function.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def RemoveTag(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Remove a tag from the specified version of a function.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def ListTagHistory(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Returns the log of tags assigned to versions of the specified function.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def CreateVersion(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Creates a version for the specified function.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def ListRuntimes(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Lists available runtime environments for the specified function.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def ListOperations(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Lists operations for the specified function.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def ListAccessBindings(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Lists existing access bindings for the specified function.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def SetAccessBindings(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Sets access bindings for the function.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def UpdateAccessBindings(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Updates access bindings for the specified function.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')

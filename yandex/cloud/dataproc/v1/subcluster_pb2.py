@@ -16,6 +16,7 @@ _sym_db = _symbol_database.Default()
 
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from yandex.cloud.dataproc.v1 import common_pb2 as yandex_dot_cloud_dot_dataproc_dot_v1_dot_common__pb2
+from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -23,9 +24,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.dataproc.v1',
   syntax='proto3',
   serialized_options=_b('\n\034yandex.cloud.api.dataproc.v1ZEgithub.com/yandex-cloud/go-genproto/yandex/cloud/dataproc/v1;dataproc'),
-  serialized_pb=_b('\n)yandex/cloud/dataproc/v1/subcluster.proto\x12\x18yandex.cloud.dataproc.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a%yandex/cloud/dataproc/v1/common.proto\"\xf8\x01\n\nSubcluster\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12,\n\x04role\x18\x05 \x01(\x0e\x32\x1e.yandex.cloud.dataproc.v1.Role\x12\x36\n\tresources\x18\x06 \x01(\x0b\x32#.yandex.cloud.dataproc.v1.Resources\x12\x11\n\tsubnet_id\x18\x07 \x01(\t\x12\x13\n\x0bhosts_count\x18\x08 \x01(\x03\"\xa8\x01\n\x04Host\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x15\n\rsubcluster_id\x18\x02 \x01(\t\x12\x30\n\x06health\x18\x03 \x01(\x0e\x32 .yandex.cloud.dataproc.v1.Health\x12\x1b\n\x13\x63ompute_instance_id\x18\x04 \x01(\t\x12,\n\x04role\x18\x05 \x01(\x0e\x32\x1e.yandex.cloud.dataproc.v1.Role*K\n\x04Role\x12\x14\n\x10ROLE_UNSPECIFIED\x10\x00\x12\x0e\n\nMASTERNODE\x10\x01\x12\x0c\n\x08\x44\x41TANODE\x10\x02\x12\x0f\n\x0b\x43OMPUTENODE\x10\x03\x42\x65\n\x1cyandex.cloud.api.dataproc.v1ZEgithub.com/yandex-cloud/go-genproto/yandex/cloud/dataproc/v1;dataprocb\x06proto3')
+  serialized_pb=_b('\n)yandex/cloud/dataproc/v1/subcluster.proto\x12\x18yandex.cloud.dataproc.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a%yandex/cloud/dataproc/v1/common.proto\x1a\x1dyandex/cloud/validation.proto\"\x82\x02\n\nSubcluster\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x16\n\x04name\x18\x04 \x01(\tB\x08\x8a\xc8\x31\x04\x31-63\x12,\n\x04role\x18\x05 \x01(\x0e\x32\x1e.yandex.cloud.dataproc.v1.Role\x12\x36\n\tresources\x18\x06 \x01(\x0b\x32#.yandex.cloud.dataproc.v1.Resources\x12\x11\n\tsubnet_id\x18\x07 \x01(\t\x12\x13\n\x0bhosts_count\x18\x08 \x01(\x03\"\xa8\x01\n\x04Host\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x15\n\rsubcluster_id\x18\x02 \x01(\t\x12\x30\n\x06health\x18\x03 \x01(\x0e\x32 .yandex.cloud.dataproc.v1.Health\x12\x1b\n\x13\x63ompute_instance_id\x18\x04 \x01(\t\x12,\n\x04role\x18\x05 \x01(\x0e\x32\x1e.yandex.cloud.dataproc.v1.Role*K\n\x04Role\x12\x14\n\x10ROLE_UNSPECIFIED\x10\x00\x12\x0e\n\nMASTERNODE\x10\x01\x12\x0c\n\x08\x44\x41TANODE\x10\x02\x12\x0f\n\x0b\x43OMPUTENODE\x10\x03\x42\x65\n\x1cyandex.cloud.api.dataproc.v1ZEgithub.com/yandex-cloud/go-genproto/yandex/cloud/dataproc/v1;dataprocb\x06proto3')
   ,
-  dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_dataproc_dot_v1_dot_common__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_dataproc_dot_v1_dot_common__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
 _ROLE = _descriptor.EnumDescriptor(
   name='Role',
@@ -52,8 +53,8 @@ _ROLE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=565,
-  serialized_end=640,
+  serialized_start=606,
+  serialized_end=681,
 )
 _sym_db.RegisterEnumDescriptor(_ROLE)
 
@@ -99,7 +100,7 @@ _SUBCLUSTER = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=_b('\212\3101\0041-63'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='role', full_name='yandex.cloud.dataproc.v1.Subcluster.role', index=4,
       number=5, type=14, cpp_type=8, label=1,
@@ -140,8 +141,8 @@ _SUBCLUSTER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=144,
-  serialized_end=392,
+  serialized_start=175,
+  serialized_end=433,
 )
 
 
@@ -199,8 +200,8 @@ _HOST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=395,
-  serialized_end=563,
+  serialized_start=436,
+  serialized_end=604,
 )
 
 _SUBCLUSTER.fields_by_name['created_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
@@ -229,4 +230,5 @@ _sym_db.RegisterMessage(Host)
 
 
 DESCRIPTOR._options = None
+_SUBCLUSTER.fields_by_name['name']._options = None
 # @@protoc_insertion_point(module_scope)

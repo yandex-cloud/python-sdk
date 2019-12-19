@@ -7,7 +7,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class JobServiceStub(object):
-  """A set of methods for managing jobs for Dataproc cluster.
+  """A set of methods for managing Data Proc jobs.
   """
 
   def __init__(self, channel):
@@ -34,25 +34,25 @@ class JobServiceStub(object):
 
 
 class JobServiceServicer(object):
-  """A set of methods for managing jobs for Dataproc cluster.
+  """A set of methods for managing Data Proc jobs.
   """
 
   def List(self, request, context):
-    """Retrieves a list of jobs for Dataproc cluster.
+    """Retrieves a list of jobs for a cluster.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def Create(self, request, context):
-    """Creates a job for Dataproc cluster.
+    """Creates a job for a cluster.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def Get(self, request, context):
-    """Returns the specified Dataproc cluster.
+    """Returns the specified job.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')

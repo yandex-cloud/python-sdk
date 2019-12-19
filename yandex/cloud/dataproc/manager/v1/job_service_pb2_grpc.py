@@ -31,7 +31,7 @@ class JobServiceServicer(object):
   pass
 
   def ListActive(self, request, context):
-    """Retrieves a list of jobs for Dataproc cluster.
+    """Retrieves a list of jobs for Data Proc cluster.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
