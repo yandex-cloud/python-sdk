@@ -7,6 +7,11 @@ def token():
 
 
 @pytest.fixture()
+def iam_token():
+    return "xxxxxx"
+
+
+@pytest.fixture()
 def service_account_key():
     return {
         "id": "ajeboa0du6edu6m43c3t",

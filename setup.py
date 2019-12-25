@@ -14,6 +14,7 @@ setup(name='yandexcloud',
           'grpcio>=0.17.0',
           'googleapis-common-protos',
           'pyjwt',
+          'requests',
           'six',
       ],
       classifiers=[

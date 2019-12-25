@@ -9,8 +9,8 @@ TIMEOUT_SECONDS = 20
 
 
 class Credentials(grpc.AuthMetadataPlugin):
-    def __init__(self, token_request_func, lazy_channel):
-        self.__token_request_func = token_request_func
+    def __init__(self, token_requester, lazy_channel):
+        self.__token_requester = token_requester
         self._lazy_channel = lazy_channel
         self._channel = None
         self._cached_iam_token = None
@@ -32,9 +32,18 @@ class Credentials(grpc.AuthMetadataPlugin):
             self._channel = self._lazy_channel()
 
         if self._cached_iam_token is None or not self._fresh():
-            token_future = IamTokenServiceStub(self._channel).Create.future(self.__token_request_func())
-            token_future.add_done_callback(self.create_done_callback(callback))
-            return
+            get_token = getattr(self.__token_requester, "get_token", None)
+            if callable(get_token):
+                self._cached_iam_token = get_token()
+                self._iam_token_timestamp = datetime.now()
+                callback(self._metadata(), None)
+                return
+
+            get_token_request = getattr(self.__token_requester, "get_token_request", None)
+            if callable(get_token_request):
+                token_future = IamTokenServiceStub(self._channel).Create.future(get_token_request())
+                token_future.add_done_callback(self.create_done_callback(callback))
+                return
 
         callback(self._metadata(), None)
 

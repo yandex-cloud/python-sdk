@@ -1,12 +1,18 @@
 import time
 from datetime import datetime
 
+# noinspection PyUnresolvedReferences
 # jwt package depends on cryptography
 import cryptography
 import jwt
-
+import requests
 
 from yandex.cloud.iam.v1.iam_token_service_pb2 import CreateIamTokenRequest
+
+_MDS_ADDR = "169.254.169.254"
+_MDS_URL = "http://{}/computeMetadata/v1/instance/service-accounts/default/token"
+_MDS_HEADERS = {"Metadata-Flavor": "Google"}
+_MDS_TIMEOUT = (1.0, 1.0)  # 1sec connect, 1sec read
 
 
 def __validate_service_account_key(sa_key):
@@ -27,18 +33,32 @@ def __validate_service_account_key(sa_key):
         raise RuntimeError("Invalid Service Account Key: missing private key.")
 
 
-def get_auth_token_request_func(token=None, service_account_key=None):
-    if token and service_account_key:
-        raise RuntimeError("Conflicting API credentials properties 'token' and 'service-account-key' are set.")
+def get_auth_token_requester(token=None, service_account_key=None, metadata_addr=_MDS_ADDR):
+    if token is not None and service_account_key is not None:
+        raise RuntimeError("Conflicting API credentials properties 'token' and 'service_account_key' are set.")
 
-    if token:
-        return TokenAuth(token=token).get_token_request
+    if token is not None:
+        return TokenAuth(token=token)
 
-    if service_account_key is None:
-        raise RuntimeError("Please provide API credentials, non empty 'token' or 'service-account-key'")
+    if service_account_key is not None:
+        __validate_service_account_key(service_account_key)
+        return ServiceAccountAuth(service_account_key)
 
-    __validate_service_account_key(service_account_key)
-    return ServiceAccountAuth(service_account_key).get_token_request
+    return MetadataAuth(metadata_addr=metadata_addr)
+
+
+class MetadataAuth:
+    def __init__(self, metadata_addr):
+        self.__metadata_addr = metadata_addr
+
+    def url(self):
+        return _MDS_URL.format(self.__metadata_addr)
+
+    def get_token(self):
+        r = requests.get(self.url(), headers=_MDS_HEADERS, timeout=_MDS_TIMEOUT)
+        r.raise_for_status()
+        response = r.json()
+        return response['access_token']
 
 
 class TokenAuth:
