@@ -7,7 +7,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class PlacementGroupServiceStub(object):
-  """A set of methods for managing PlacementGroup resources.
+  """A set of methods for managing placement groups.
   """
 
   def __init__(self, channel):
@@ -54,11 +54,13 @@ class PlacementGroupServiceStub(object):
 
 
 class PlacementGroupServiceServicer(object):
-  """A set of methods for managing PlacementGroup resources.
+  """A set of methods for managing placement groups.
   """
 
   def Get(self, request, context):
     """Returns the specified placement group.
+
+    To get the list of all available placement groups, make a [List] request.
     """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')

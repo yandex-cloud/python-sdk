@@ -7,8 +7,8 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class RegistryServiceStub(object):
-  # missing associated documentation comment in .proto file
-  pass
+  """A set of methods for managing registry.
+  """
 
   def __init__(self, channel):
     """Constructor.
@@ -84,96 +84,98 @@ class RegistryServiceStub(object):
 
 
 class RegistryServiceServicer(object):
-  # missing associated documentation comment in .proto file
-  pass
+  """A set of methods for managing registry.
+  """
 
   def Get(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Returns the specified registry.
+
+    To get the list of available registries, make a [List] request.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def List(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Retrieves the list of registries in the specified folder.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def Create(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Creates a registry in the specified folder.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def Update(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Updates the specified registry.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def Delete(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Deletes the specified registry.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def ListCertificates(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Retrieves the list of registry certificates for the specified registry.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def AddCertificate(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Adds a certificate.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def DeleteCertificate(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Deletes the specified registry certificate.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def ListPasswords(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Retrieves the list of passwords for the specified registry.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def AddPassword(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Adds password for the specified registry.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def DeletePassword(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Deletes the specified password.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def ListDeviceTopicAliases(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Retrieves the list of device topic aliases for the specified registry.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def ListOperations(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Lists operations for the specified registry.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')

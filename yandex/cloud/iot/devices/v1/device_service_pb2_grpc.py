@@ -7,8 +7,8 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class DeviceServiceStub(object):
-  # missing associated documentation comment in .proto file
-  pass
+  """A set of methods for managing devices.
+  """
 
   def __init__(self, channel):
     """Constructor.
@@ -79,89 +79,91 @@ class DeviceServiceStub(object):
 
 
 class DeviceServiceServicer(object):
-  # missing associated documentation comment in .proto file
-  pass
+  """A set of methods for managing devices.
+  """
 
   def Get(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Returns the specified device.
+
+    To get the list of available devices, make a [List] request.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def List(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Retrieves the list of devices in the specified registry.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def Create(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Creates a device in the specified registry.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def Update(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Updates the specified device.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def Delete(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Deletes the specified device.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def ListCertificates(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Retrieves the list of device certificates for the specified device.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def AddCertificate(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Adds a certificate.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def DeleteCertificate(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Deletes the specified device certificate.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def ListPasswords(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Retrieves the list of passwords for the specified device.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def AddPassword(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Adds password for the specified device.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def DeletePassword(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Deletes the specified password.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def ListOperations(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Lists operations for the specified device.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
