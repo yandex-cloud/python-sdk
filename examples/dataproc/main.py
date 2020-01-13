@@ -13,13 +13,13 @@ from yandex.cloud.vpc.v1.subnet_service_pb2_grpc import SubnetServiceStub
 from yandex.cloud.iam.v1.service_account_service_pb2 import ListServiceAccountsRequest
 from yandex.cloud.iam.v1.service_account_service_pb2_grpc import ServiceAccountServiceStub
 
-
 import yandex.cloud.dataproc.v1.common_pb2 as common_pb
-
 import yandex.cloud.dataproc.v1.cluster_pb2 as cluster_pb
 import yandex.cloud.dataproc.v1.cluster_service_pb2 as cluster_service_pb
 import yandex.cloud.dataproc.v1.cluster_service_pb2_grpc as cluster_service_grpc_pb
-
+import yandex.cloud.dataproc.v1.job_pb2 as job_pb
+import yandex.cloud.dataproc.v1.job_service_pb2 as job_service_pb
+import yandex.cloud.dataproc.v1.job_service_pb2_grpc as job_service_grpc_pb
 import yandex.cloud.dataproc.v1.subcluster_pb2 as subcluster_pb
 import yandex.cloud.dataproc.v1.subcluster_service_pb2 as subcluster_service_pb
 import yandex.cloud.dataproc.v1.subcluster_service_pb2_grpc as subcluster_service_grpc_pb
@@ -39,25 +39,31 @@ def wait_for_operation(sdk, op):
 
 
 def main():
-    flags = parse_cmd()
-    sdk = yandexcloud.SDK(token=flags.token)
+    arguments = parse_cmd()
+    sdk = yandexcloud.SDK(token=arguments.token)
 
-    fill_missing_flags(sdk, flags)
+    fill_missing_flags(sdk, arguments)
 
     resources = common_pb.Resources(
-        resource_preset_id="s2.small",
+        resource_preset_id='s2.micro',
         disk_size=15 * (1024 ** 3),
-        disk_type_id="network-ssd",
+        disk_type_id='network-ssd',
     )
-    req = create_cluster_request(flags, resources=resources)
-    cluster = None
+    req = create_cluster_request(arguments, resources=resources)
+    cluster_id = None
     try:
         cluster = create_cluster(sdk, req)
-        change_cluster_description(sdk, cluster)
-        add_subcluster(sdk, cluster, flags, resources=resources)
+        cluster_id = cluster.id
+        change_cluster_description(sdk, cluster_id)
+        add_subcluster(sdk, cluster_id, arguments, resources=resources)
+
+        run_hive_job(sdk, cluster_id=cluster_id)
+        run_mapreduce_job(sdk, cluster_id=cluster_id, bucket=arguments.s3_bucket)
+        run_spark_job(sdk, cluster_id=cluster_id, bucket=arguments.s3_bucket)
+        run_pyspark_job(sdk, cluster_id=cluster_id, bucket=arguments.s3_bucket)
     finally:
-        if cluster is not None:
-            delete_cluster(sdk, cluster)
+        if cluster_id is not None:
+            delete_cluster(sdk, cluster_id)
 
 
 def parse_cmd():
@@ -82,19 +88,24 @@ def parse_cmd():
     return parser.parse_args()
 
 
-def fill_missing_flags(sdk, flags):
-    if os.path.exists(flags.ssh_public_key):
-        with open(flags.ssh_public_key) as infile:
-            flags.ssh_public_key = infile.read().strip()
+def fill_missing_flags(sdk, arguments):
+    if os.path.exists(os.path.expanduser(arguments.ssh_public_key)):
+        with open(arguments.ssh_public_key) as infile:
+            arguments.ssh_public_key = infile.read().strip()
 
-    if not flags.network_id:
-        flags.network_id = find_network(sdk, flags.folder_id)
+    if not arguments.network_id:
+        arguments.network_id = find_network(sdk, arguments.folder_id)
 
-    if not flags.subnet_id:
-        flags.subnet_id = find_subnet(sdk, folder_id=flags.folder_id, zone_id=flags.zone, network_id=flags.network_id)
+    if not arguments.subnet_id:
+        arguments.subnet_id = find_subnet(
+            sdk,
+            folder_id=arguments.folder_id,
+            zone_id=arguments.zone,
+            network_id=arguments.network_id
+        )
 
-    if not flags.service_account_id:
-        flags.service_account_id = find_service_account_id(sdk, folder_id=flags.folder_id)
+    if not arguments.service_account_id:
+        arguments.service_account_id = find_service_account_id(sdk, folder_id=arguments.folder_id)
 
 
 def find_service_account_id(sdk, folder_id):
@@ -114,7 +125,7 @@ def find_network(sdk, folder_id):
     networks = [n for n in networks if n.folder_id == folder_id]
 
     if not networks:
-        raise RuntimeError("no networks in folder: {}".format(folder_id))
+        raise RuntimeError('No networks in folder: {}'.format(folder_id))
 
     return networks[0].id
 
@@ -139,7 +150,7 @@ def create_cluster(sdk, req):
     meta = cluster_service_pb.CreateClusterMetadata()
     operation.metadata.Unpack(meta)
 
-    print("Creating cluster {}".format(meta.cluster_id))
+    print('Creating cluster {}'.format(meta.cluster_id))
     operation = wait_for_operation(sdk, operation)
 
     cluster = cluster_pb.Cluster()
@@ -149,10 +160,10 @@ def create_cluster(sdk, req):
     return cluster
 
 
-def add_subcluster(sdk, cluster, params, resources):
-    print("Adding subcluster to cluster {}".format(cluster.id))
+def add_subcluster(sdk, cluster_id, params, resources):
+    print('Adding subcluster to cluster {}'.format(cluster_id))
     req = subcluster_service_pb.CreateSubclusterRequest(
-        cluster_id=cluster.id,
+        cluster_id=cluster_id,
         name='compute',
         role=subcluster_pb.Role.COMPUTENODE,
         resources=resources,
@@ -161,48 +172,181 @@ def add_subcluster(sdk, cluster, params, resources):
     )
 
     operation = sdk.client(subcluster_service_grpc_pb.SubclusterServiceStub).Create(req)
-    wait_for_operation(sdk, operation)
+    operation = wait_for_operation(sdk, operation)
+
+    subcluster = subcluster_pb.Subcluster()
+    operation.response.Unpack(subcluster)
+    return subcluster
 
 
-def change_cluster_description(sdk, cluster):
-    print("Updating cluster {}".format(cluster.id))
-    mask = FieldMask(paths=["description"])
-    update_req = cluster_service_pb.UpdateClusterRequest(cluster_id=cluster.id, update_mask=mask,
-                                                         description="New Description!!!")
+def change_cluster_description(sdk, cluster_id):
+    print('Updating cluster {}'.format(cluster_id))
+    mask = FieldMask(paths=['description'])
+    update_req = cluster_service_pb.UpdateClusterRequest(cluster_id=cluster_id, update_mask=mask,
+                                                         description='New cluster description')
 
     operation = sdk.client(cluster_service_grpc_pb.ClusterServiceStub).Update(update_req)
     wait_for_operation(sdk, operation)
 
 
-def delete_cluster(sdk, cluster):
-    print("Deleting cluster {}".format(cluster.id))
+def delete_cluster(sdk, cluster_id):
+    print('Deleting cluster {}'.format(cluster_id))
     operation = sdk.client(cluster_service_grpc_pb.ClusterServiceStub).Delete(
-        cluster_service_pb.DeleteClusterRequest(cluster_id=cluster.id))
+        cluster_service_pb.DeleteClusterRequest(cluster_id=cluster_id))
     wait_for_operation(sdk, operation)
 
 
+def run_hive_job(self, cluster_id):
+    print('Running Hive job {}'.format(cluster_id))
+    operation = self.client(job_service_grpc_pb.JobServiceStub).Create(
+        job_service_pb.CreateJobRequest(
+            cluster_id=cluster_id,
+            name='Hive job 1',
+            hive_job=job_pb.HiveJob(
+                query_file_uri='s3a://data-proc-public/jobs/sources/hive-001/main.sql',
+                script_variables={
+                    'CITIES_URI': 's3a://data-proc-public/jobs/sources/hive-001/cities/',
+                    'COUNTRY_CODE': 'RU',
+                }
+            )
+        )
+    )
+    wait_for_operation(self, operation)
+    return operation
+
+
+def run_mapreduce_job(sdk, cluster_id, bucket):
+    print('Running Mapreduce job {}'.format(cluster_id))
+    operation = sdk.client(job_service_grpc_pb.JobServiceStub).Create(
+        job_service_pb.CreateJobRequest(
+            cluster_id=cluster_id,
+            name='Mapreduce job 1',
+            mapreduce_job=job_pb.MapreduceJob(
+                main_class='org.apache.hadoop.streaming.HadoopStreaming',
+                file_uris=[
+                    's3a://data-proc-public/jobs/sources/mapreduce-001/mapper.py',
+                    's3a://data-proc-public/jobs/sources/mapreduce-001/reducer.py'
+                ],
+                args=[
+                    '-mapper', 'mapper.py',
+                    '-reducer', 'reducer.py',
+                    '-numReduceTasks', '1',
+                    '-input', 's3a://data-proc-public/jobs/sources/data/cities500.txt.bz2',
+                    '-output', 's3a://{bucket}/dataproc/job/results'.format(bucket=bucket)
+                ],
+                properties={
+                    'yarn.app.mapreduce.am.resource.mb': '2048',
+                    'yarn.app.mapreduce.am.command-opts': '-Xmx2048m',
+                    'mapreduce.job.maps': '6',
+                },
+            )
+        )
+    )
+    wait_for_operation(sdk, operation)
+    return operation
+
+
+def run_spark_job(sdk, cluster_id, bucket):
+    print('Running Spark job {}'.format(cluster_id))
+    operation = sdk.client(job_service_grpc_pb.JobServiceStub).Create(
+        job_service_pb.CreateJobRequest(
+            cluster_id=cluster_id,
+            name='Spark job: Find total urban population in distribution by country',
+            spark_job=job_pb.SparkJob(
+                main_jar_file_uri='s3a://data-proc-public/jobs/sources/java/dataproc-examples-1.0.jar',
+                main_class='ru.yandex.cloud.dataproc.examples.PopulationSparkJob',                
+                file_uris=[
+                    's3a://data-proc-public/jobs/sources/data/config.json',
+                ],
+                archive_uris=[
+                    's3a://data-proc-public/jobs/sources/data/country-codes.csv.zip',
+                ],
+                jar_file_uris=[
+                    's3a://data-proc-public/jobs/sources/java/icu4j-61.1.jar',
+                    's3a://data-proc-public/jobs/sources/java/commons-lang-2.6.jar',
+                    's3a://data-proc-public/jobs/sources/java/opencsv-4.1.jar',
+                    's3a://data-proc-public/jobs/sources/java/json-20190722.jar'
+                ],
+                args=[
+                    's3a://data-proc-public/jobs/sources/data/cities500.txt.bz2',
+                    's3a://{bucket}/dataproc/job/results/${{JOB_ID}}'.format(bucket=bucket),
+                ],
+                properties={
+                    'spark.submit.deployMode': 'cluster',
+                },
+            )
+        )
+    )
+    wait_for_operation(sdk, operation)
+    return operation
+
+
+def run_pyspark_job(sdk, cluster_id, bucket):
+    print('Running Pyspark job {}'.format(cluster_id))
+    operation = sdk.client(job_service_grpc_pb.JobServiceStub).Create(
+        job_service_pb.CreateJobRequest(
+            cluster_id=cluster_id,
+            name='Pyspark job',
+            pyspark_job=job_pb.PysparkJob(
+                main_python_file_uri='s3a://data-proc-public/jobs/sources/pyspark-001/main.py',
+                python_file_uris=[
+                    's3a://data-proc-public/jobs/sources/pyspark-001/geonames.py',
+                ],
+                file_uris=[
+                    's3a://data-proc-public/jobs/sources/data/config.json',
+                ],
+                archive_uris=[
+                    's3a://data-proc-public/jobs/sources/data/country-codes.csv.zip',
+                ],
+                args=[
+                    's3a://data-proc-public/jobs/sources/data/cities500.txt.bz2',
+                    's3a://{bucket}/jobs/results/${{JOB_ID}}'.format(bucket=bucket),
+                ],
+                jar_file_uris=[
+                    's3a://data-proc-public/jobs/sources/java/dataproc-examples-1.0.jar',
+                    's3a://data-proc-public/jobs/sources/java/icu4j-61.1.jar',
+                    's3a://data-proc-public/jobs/sources/java/commons-lang-2.6.jar',
+                ],
+                properties={
+                    'spark.submit.deployMode': 'cluster',
+                },
+            )
+        )
+    )
+    wait_for_operation(sdk, operation)
+    return operation
+
+
 def create_cluster_request(params, resources):
+    # Available services:
+    #  HDFS
+    #  YARN (depends on HDFS)
+    #  MAPREDUCE
+    #  HIVE (depends on HDFS, MAPREDUCE, YARN)
+    #  TEZ (depends on HDFS, YARN)
+    #  ZOOKEEPER
+    #  HBASE (depends on HDFS, YARN, ZOOKEEPER)
+    #  SQOOP
+    #  FLUME
+    #  SPARK (depends on HDFS, YARN)
+    #  ZEPPELIN
+    #  OOZIE
+    services = [
+        'HDFS',
+        'YARN',
+        'MAPREDUCE',
+        'HIVE',
+        'SPARK',
+    ]
+
     return cluster_service_pb.CreateClusterRequest(
         folder_id=params.folder_id,
         name=params.cluster_name,
         description=params.cluster_desc,
         config_spec=cluster_service_pb.CreateClusterConfigSpec(
-            version_id='1.0',
+            version_id='1.1',
             hadoop=cluster_pb.HadoopConfig(
-                services=[
-                    cluster_pb.HadoopConfig.Service.HDFS,
-                    cluster_pb.HadoopConfig.Service.YARN,
-                    cluster_pb.HadoopConfig.Service.MAPREDUCE,
-                    cluster_pb.HadoopConfig.Service.HIVE,
-                    cluster_pb.HadoopConfig.Service.TEZ,
-                    cluster_pb.HadoopConfig.Service.ZOOKEEPER,
-                    cluster_pb.HadoopConfig.Service.HBASE,
-                    cluster_pb.HadoopConfig.Service.SQOOP,
-                    cluster_pb.HadoopConfig.Service.FLUME,
-                    cluster_pb.HadoopConfig.Service.SPARK,
-                    cluster_pb.HadoopConfig.Service.ZEPPELIN,
-                    cluster_pb.HadoopConfig.Service.OOZIE,
-                ],
+                services=services,
                 ssh_public_keys=[params.ssh_public_key],
             ),
             subclusters_spec=[
@@ -218,7 +362,7 @@ def create_cluster_request(params, resources):
                     role=subcluster_pb.Role.DATANODE,
                     resources=resources,
                     subnet_id=params.subnet_id,
-                    hosts_count=1,
+                    hosts_count=2,
                 ),
             ],
         ),
