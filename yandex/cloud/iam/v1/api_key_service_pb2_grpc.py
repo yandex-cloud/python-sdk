@@ -31,6 +31,11 @@ class ApiKeyServiceStub(object):
         request_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_api__key__service__pb2.CreateApiKeyRequest.SerializeToString,
         response_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_api__key__service__pb2.CreateApiKeyResponse.FromString,
         )
+    self.Update = channel.unary_unary(
+        '/yandex.cloud.iam.v1.ApiKeyService/Update',
+        request_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_api__key__service__pb2.UpdateApiKeyRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+        )
     self.Delete = channel.unary_unary(
         '/yandex.cloud.iam.v1.ApiKeyService/Delete',
         request_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_api__key__service__pb2.DeleteApiKeyRequest.SerializeToString,
@@ -70,6 +75,13 @@ class ApiKeyServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def Update(self, request, context):
+    """Updates the specified API key.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def Delete(self, request, context):
     """Deletes the specified API key.
     """
@@ -101,6 +113,11 @@ def add_ApiKeyServiceServicer_to_server(servicer, server):
           servicer.Create,
           request_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_api__key__service__pb2.CreateApiKeyRequest.FromString,
           response_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_api__key__service__pb2.CreateApiKeyResponse.SerializeToString,
+      ),
+      'Update': grpc.unary_unary_rpc_method_handler(
+          servicer.Update,
+          request_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_api__key__service__pb2.UpdateApiKeyRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
       ),
       'Delete': grpc.unary_unary_rpc_method_handler(
           servicer.Delete,

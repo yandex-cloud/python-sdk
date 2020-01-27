@@ -15,6 +15,7 @@ _sym_db = _symbol_database.Default()
 
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
+from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from yandex.cloud.iam.v1 import key_pb2 as yandex_dot_cloud_dot_iam_dot_v1_dot_key__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
@@ -26,9 +27,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.iam.v1',
   syntax='proto3',
   serialized_options=_b('\n\027yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iam'),
-  serialized_pb=_b('\n%yandex/cloud/iam/v1/key_service.proto\x12\x13yandex.cloud.iam.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1dyandex/cloud/iam/v1/key.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"]\n\rGetKeyRequest\x12\x1c\n\x06key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12.\n\x06\x66ormat\x18\x02 \x01(\x0e\x32\x1e.yandex.cloud.iam.v1.KeyFormat\"\xa5\x01\n\x0fListKeysRequest\x12.\n\x06\x66ormat\x18\x01 \x01(\x0e\x32\x1e.yandex.cloud.iam.v1.KeyFormat\x12$\n\x12service_account_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x03 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=100\"S\n\x10ListKeysResponse\x12&\n\x04keys\x18\x01 \x03(\x0b\x32\x18.yandex.cloud.iam.v1.Key\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xc3\x01\n\x10\x43reateKeyRequest\x12$\n\x12service_account_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1e\n\x0b\x64\x65scription\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12.\n\x06\x66ormat\x18\x03 \x01(\x0e\x32\x1e.yandex.cloud.iam.v1.KeyFormat\x12\x39\n\rkey_algorithm\x18\x04 \x01(\x0e\x32\".yandex.cloud.iam.v1.Key.Algorithm\"O\n\x11\x43reateKeyResponse\x12%\n\x03key\x18\x01 \x01(\x0b\x32\x18.yandex.cloud.iam.v1.Key\x12\x13\n\x0bprivate_key\x18\x02 \x01(\t\"0\n\x10\x44\x65leteKeyRequest\x12\x1c\n\x06key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"#\n\x11\x44\x65leteKeyMetadata\x12\x0e\n\x06key_id\x18\x01 \x01(\t\"v\n\x18ListKeyOperationsRequest\x12\x1c\n\x06key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"k\n\x19ListKeyOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t*\x19\n\tKeyFormat\x12\x0c\n\x08PEM_FILE\x10\x00\x32\x8b\x05\n\nKeyService\x12\x62\n\x03Get\x12\".yandex.cloud.iam.v1.GetKeyRequest\x1a\x18.yandex.cloud.iam.v1.Key\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/iam/v1/keys/{key_id}\x12i\n\x04List\x12$.yandex.cloud.iam.v1.ListKeysRequest\x1a%.yandex.cloud.iam.v1.ListKeysResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\x12\x0c/iam/v1/keys\x12p\n\x06\x43reate\x12%.yandex.cloud.iam.v1.CreateKeyRequest\x1a&.yandex.cloud.iam.v1.CreateKeyResponse\"\x17\x82\xd3\xe4\x93\x02\x11\"\x0c/iam/v1/keys:\x01*\x12\x9f\x01\n\x06\x44\x65lete\x12%.yandex.cloud.iam.v1.DeleteKeyRequest\x1a!.yandex.cloud.operation.Operation\"K\x82\xd3\xe4\x93\x02\x17*\x15/iam/v1/keys/{key_id}\xb2\xd2**\n\x11\x44\x65leteKeyMetadata\x12\x15google.protobuf.Empty\x12\x99\x01\n\x0eListOperations\x12-.yandex.cloud.iam.v1.ListKeyOperationsRequest\x1a..yandex.cloud.iam.v1.ListKeyOperationsResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /iam/v1/keys/{key_id}/operationsBV\n\x17yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3')
+  serialized_pb=_b('\n%yandex/cloud/iam/v1/key_service.proto\x12\x13yandex.cloud.iam.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1dyandex/cloud/iam/v1/key.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"]\n\rGetKeyRequest\x12\x1c\n\x06key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12.\n\x06\x66ormat\x18\x02 \x01(\x0e\x32\x1e.yandex.cloud.iam.v1.KeyFormat\"\xa5\x01\n\x0fListKeysRequest\x12.\n\x06\x66ormat\x18\x01 \x01(\x0e\x32\x1e.yandex.cloud.iam.v1.KeyFormat\x12$\n\x12service_account_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x03 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=100\"S\n\x10ListKeysResponse\x12&\n\x04keys\x18\x01 \x03(\x0b\x32\x18.yandex.cloud.iam.v1.Key\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xc3\x01\n\x10\x43reateKeyRequest\x12$\n\x12service_account_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1e\n\x0b\x64\x65scription\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12.\n\x06\x66ormat\x18\x03 \x01(\x0e\x32\x1e.yandex.cloud.iam.v1.KeyFormat\x12\x39\n\rkey_algorithm\x18\x04 \x01(\x0e\x32\".yandex.cloud.iam.v1.Key.Algorithm\"O\n\x11\x43reateKeyResponse\x12%\n\x03key\x18\x01 \x01(\x0b\x32\x18.yandex.cloud.iam.v1.Key\x12\x13\n\x0bprivate_key\x18\x02 \x01(\t\"\x81\x01\n\x10UpdateKeyRequest\x12\x1c\n\x06key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\"#\n\x11UpdateKeyMetadata\x12\x0e\n\x06key_id\x18\x01 \x01(\t\"0\n\x10\x44\x65leteKeyRequest\x12\x1c\n\x06key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"#\n\x11\x44\x65leteKeyMetadata\x12\x0e\n\x06key_id\x18\x01 \x01(\t\"v\n\x18ListKeyOperationsRequest\x12\x1c\n\x06key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"k\n\x19ListKeyOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t*\x19\n\tKeyFormat\x12\x0c\n\x08PEM_FILE\x10\x00\x32\x9e\x06\n\nKeyService\x12\x62\n\x03Get\x12\".yandex.cloud.iam.v1.GetKeyRequest\x1a\x18.yandex.cloud.iam.v1.Key\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/iam/v1/keys/{key_id}\x12i\n\x04List\x12$.yandex.cloud.iam.v1.ListKeysRequest\x1a%.yandex.cloud.iam.v1.ListKeysResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\x12\x0c/iam/v1/keys\x12p\n\x06\x43reate\x12%.yandex.cloud.iam.v1.CreateKeyRequest\x1a&.yandex.cloud.iam.v1.CreateKeyResponse\"\x17\x82\xd3\xe4\x93\x02\x11\"\x0c/iam/v1/keys:\x01*\x12\x90\x01\n\x06Update\x12%.yandex.cloud.iam.v1.UpdateKeyRequest\x1a!.yandex.cloud.operation.Operation\"<\x82\xd3\xe4\x93\x02\x1a\x32\x15/iam/v1/keys/{key_id}:\x01*\xb2\xd2*\x18\n\x11UpdateKeyMetadata\x12\x03Key\x12\x9f\x01\n\x06\x44\x65lete\x12%.yandex.cloud.iam.v1.DeleteKeyRequest\x1a!.yandex.cloud.operation.Operation\"K\x82\xd3\xe4\x93\x02\x17*\x15/iam/v1/keys/{key_id}\xb2\xd2**\n\x11\x44\x65leteKeyMetadata\x12\x15google.protobuf.Empty\x12\x99\x01\n\x0eListOperations\x12-.yandex.cloud.iam.v1.ListKeyOperationsRequest\x1a..yandex.cloud.iam.v1.ListKeyOperationsResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /iam/v1/keys/{key_id}/operationsBV\n\x17yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3')
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_iam_dot_v1_dot_key__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_iam_dot_v1_dot_key__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
 _KEYFORMAT = _descriptor.EnumDescriptor(
   name='KeyFormat',
@@ -43,8 +44,8 @@ _KEYFORMAT = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1171,
-  serialized_end=1196,
+  serialized_start=1374,
+  serialized_end=1399,
 )
 _sym_db.RegisterEnumDescriptor(_KEYFORMAT)
 
@@ -86,8 +87,8 @@ _GETKEYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=228,
-  serialized_end=321,
+  serialized_start=262,
+  serialized_end=355,
 )
 
 
@@ -138,8 +139,8 @@ _LISTKEYSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=324,
-  serialized_end=489,
+  serialized_start=358,
+  serialized_end=523,
 )
 
 
@@ -176,8 +177,8 @@ _LISTKEYSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=491,
-  serialized_end=574,
+  serialized_start=525,
+  serialized_end=608,
 )
 
 
@@ -228,8 +229,8 @@ _CREATEKEYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=577,
-  serialized_end=772,
+  serialized_start=611,
+  serialized_end=806,
 )
 
 
@@ -266,8 +267,84 @@ _CREATEKEYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=774,
-  serialized_end=853,
+  serialized_start=808,
+  serialized_end=887,
+)
+
+
+_UPDATEKEYREQUEST = _descriptor.Descriptor(
+  name='UpdateKeyRequest',
+  full_name='yandex.cloud.iam.v1.UpdateKeyRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key_id', full_name='yandex.cloud.iam.v1.UpdateKeyRequest.key_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\350\3071\001\212\3101\004<=50'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='update_mask', full_name='yandex.cloud.iam.v1.UpdateKeyRequest.update_mask', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='description', full_name='yandex.cloud.iam.v1.UpdateKeyRequest.description', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3101\005<=256'), file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=890,
+  serialized_end=1019,
+)
+
+
+_UPDATEKEYMETADATA = _descriptor.Descriptor(
+  name='UpdateKeyMetadata',
+  full_name='yandex.cloud.iam.v1.UpdateKeyMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key_id', full_name='yandex.cloud.iam.v1.UpdateKeyMetadata.key_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1021,
+  serialized_end=1056,
 )
 
 
@@ -297,8 +374,8 @@ _DELETEKEYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=855,
-  serialized_end=903,
+  serialized_start=1058,
+  serialized_end=1106,
 )
 
 
@@ -328,8 +405,8 @@ _DELETEKEYMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=905,
-  serialized_end=940,
+  serialized_start=1108,
+  serialized_end=1143,
 )
 
 
@@ -373,8 +450,8 @@ _LISTKEYOPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=942,
-  serialized_end=1060,
+  serialized_start=1145,
+  serialized_end=1263,
 )
 
 
@@ -411,8 +488,8 @@ _LISTKEYOPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1062,
-  serialized_end=1169,
+  serialized_start=1265,
+  serialized_end=1372,
 )
 
 _GETKEYREQUEST.fields_by_name['format'].enum_type = _KEYFORMAT
@@ -421,12 +498,15 @@ _LISTKEYSRESPONSE.fields_by_name['keys'].message_type = yandex_dot_cloud_dot_iam
 _CREATEKEYREQUEST.fields_by_name['format'].enum_type = _KEYFORMAT
 _CREATEKEYREQUEST.fields_by_name['key_algorithm'].enum_type = yandex_dot_cloud_dot_iam_dot_v1_dot_key__pb2._KEY_ALGORITHM
 _CREATEKEYRESPONSE.fields_by_name['key'].message_type = yandex_dot_cloud_dot_iam_dot_v1_dot_key__pb2._KEY
+_UPDATEKEYREQUEST.fields_by_name['update_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
 _LISTKEYOPERATIONSRESPONSE.fields_by_name['operations'].message_type = yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION
 DESCRIPTOR.message_types_by_name['GetKeyRequest'] = _GETKEYREQUEST
 DESCRIPTOR.message_types_by_name['ListKeysRequest'] = _LISTKEYSREQUEST
 DESCRIPTOR.message_types_by_name['ListKeysResponse'] = _LISTKEYSRESPONSE
 DESCRIPTOR.message_types_by_name['CreateKeyRequest'] = _CREATEKEYREQUEST
 DESCRIPTOR.message_types_by_name['CreateKeyResponse'] = _CREATEKEYRESPONSE
+DESCRIPTOR.message_types_by_name['UpdateKeyRequest'] = _UPDATEKEYREQUEST
+DESCRIPTOR.message_types_by_name['UpdateKeyMetadata'] = _UPDATEKEYMETADATA
 DESCRIPTOR.message_types_by_name['DeleteKeyRequest'] = _DELETEKEYREQUEST
 DESCRIPTOR.message_types_by_name['DeleteKeyMetadata'] = _DELETEKEYMETADATA
 DESCRIPTOR.message_types_by_name['ListKeyOperationsRequest'] = _LISTKEYOPERATIONSREQUEST
@@ -469,6 +549,20 @@ CreateKeyResponse = _reflection.GeneratedProtocolMessageType('CreateKeyResponse'
   })
 _sym_db.RegisterMessage(CreateKeyResponse)
 
+UpdateKeyRequest = _reflection.GeneratedProtocolMessageType('UpdateKeyRequest', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATEKEYREQUEST,
+  '__module__' : 'yandex.cloud.iam.v1.key_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.iam.v1.UpdateKeyRequest)
+  })
+_sym_db.RegisterMessage(UpdateKeyRequest)
+
+UpdateKeyMetadata = _reflection.GeneratedProtocolMessageType('UpdateKeyMetadata', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATEKEYMETADATA,
+  '__module__' : 'yandex.cloud.iam.v1.key_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.iam.v1.UpdateKeyMetadata)
+  })
+_sym_db.RegisterMessage(UpdateKeyMetadata)
+
 DeleteKeyRequest = _reflection.GeneratedProtocolMessageType('DeleteKeyRequest', (_message.Message,), {
   'DESCRIPTOR' : _DELETEKEYREQUEST,
   '__module__' : 'yandex.cloud.iam.v1.key_service_pb2'
@@ -505,6 +599,8 @@ _LISTKEYSREQUEST.fields_by_name['page_size']._options = None
 _LISTKEYSREQUEST.fields_by_name['page_token']._options = None
 _CREATEKEYREQUEST.fields_by_name['service_account_id']._options = None
 _CREATEKEYREQUEST.fields_by_name['description']._options = None
+_UPDATEKEYREQUEST.fields_by_name['key_id']._options = None
+_UPDATEKEYREQUEST.fields_by_name['description']._options = None
 _DELETEKEYREQUEST.fields_by_name['key_id']._options = None
 _LISTKEYOPERATIONSREQUEST.fields_by_name['key_id']._options = None
 _LISTKEYOPERATIONSREQUEST.fields_by_name['page_size']._options = None
@@ -516,8 +612,8 @@ _KEYSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=1199,
-  serialized_end=1850,
+  serialized_start=1402,
+  serialized_end=2200,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
@@ -547,9 +643,18 @@ _KEYSERVICE = _descriptor.ServiceDescriptor(
     serialized_options=_b('\202\323\344\223\002\021\"\014/iam/v1/keys:\001*'),
   ),
   _descriptor.MethodDescriptor(
+    name='Update',
+    full_name='yandex.cloud.iam.v1.KeyService.Update',
+    index=3,
+    containing_service=None,
+    input_type=_UPDATEKEYREQUEST,
+    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
+    serialized_options=_b('\202\323\344\223\002\0322\025/iam/v1/keys/{key_id}:\001*\262\322*\030\n\021UpdateKeyMetadata\022\003Key'),
+  ),
+  _descriptor.MethodDescriptor(
     name='Delete',
     full_name='yandex.cloud.iam.v1.KeyService.Delete',
-    index=3,
+    index=4,
     containing_service=None,
     input_type=_DELETEKEYREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
@@ -558,7 +663,7 @@ _KEYSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ListOperations',
     full_name='yandex.cloud.iam.v1.KeyService.ListOperations',
-    index=4,
+    index=5,
     containing_service=None,
     input_type=_LISTKEYOPERATIONSREQUEST,
     output_type=_LISTKEYOPERATIONSRESPONSE,

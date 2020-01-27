@@ -31,6 +31,11 @@ class AccessKeyServiceStub(object):
         request_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_awscompatibility_dot_access__key__service__pb2.CreateAccessKeyRequest.SerializeToString,
         response_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_awscompatibility_dot_access__key__service__pb2.CreateAccessKeyResponse.FromString,
         )
+    self.Update = channel.unary_unary(
+        '/yandex.cloud.iam.v1.awscompatibility.AccessKeyService/Update',
+        request_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_awscompatibility_dot_access__key__service__pb2.UpdateAccessKeyRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+        )
     self.Delete = channel.unary_unary(
         '/yandex.cloud.iam.v1.awscompatibility.AccessKeyService/Delete',
         request_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_awscompatibility_dot_access__key__service__pb2.DeleteAccessKeyRequest.SerializeToString,
@@ -70,6 +75,13 @@ class AccessKeyServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def Update(self, request, context):
+    """Updates the specified access key.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def Delete(self, request, context):
     """Deletes the specified access key.
     """
@@ -101,6 +113,11 @@ def add_AccessKeyServiceServicer_to_server(servicer, server):
           servicer.Create,
           request_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_awscompatibility_dot_access__key__service__pb2.CreateAccessKeyRequest.FromString,
           response_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_awscompatibility_dot_access__key__service__pb2.CreateAccessKeyResponse.SerializeToString,
+      ),
+      'Update': grpc.unary_unary_rpc_method_handler(
+          servicer.Update,
+          request_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_awscompatibility_dot_access__key__service__pb2.UpdateAccessKeyRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
       ),
       'Delete': grpc.unary_unary_rpc_method_handler(
           servicer.Delete,

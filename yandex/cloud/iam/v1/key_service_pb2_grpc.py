@@ -31,6 +31,11 @@ class KeyServiceStub(object):
         request_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_key__service__pb2.CreateKeyRequest.SerializeToString,
         response_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_key__service__pb2.CreateKeyResponse.FromString,
         )
+    self.Update = channel.unary_unary(
+        '/yandex.cloud.iam.v1.KeyService/Update',
+        request_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_key__service__pb2.UpdateKeyRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+        )
     self.Delete = channel.unary_unary(
         '/yandex.cloud.iam.v1.KeyService/Delete',
         request_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_key__service__pb2.DeleteKeyRequest.SerializeToString,
@@ -70,6 +75,13 @@ class KeyServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def Update(self, request, context):
+    """Updates the specified key pair.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def Delete(self, request, context):
     """Deletes the specified key pair.
     """
@@ -101,6 +113,11 @@ def add_KeyServiceServicer_to_server(servicer, server):
           servicer.Create,
           request_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_key__service__pb2.CreateKeyRequest.FromString,
           response_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_key__service__pb2.CreateKeyResponse.SerializeToString,
+      ),
+      'Update': grpc.unary_unary_rpc_method_handler(
+          servicer.Update,
+          request_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_key__service__pb2.UpdateKeyRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
       ),
       'Delete': grpc.unary_unary_rpc_method_handler(
           servicer.Delete,
