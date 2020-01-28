@@ -1,17 +1,12 @@
 #!/usr/bin/env python3
 import argparse
-import sys
-import time
+import json
+from sys import stdout
 
 from google.protobuf.field_mask_pb2 import FieldMask
 
-from yandex.cloud.vpc.v1.network_service_pb2 import ListNetworksRequest
-from yandex.cloud.vpc.v1.network_service_pb2_grpc import NetworkServiceStub
-from yandex.cloud.vpc.v1.subnet_service_pb2 import ListSubnetsRequest
-from yandex.cloud.vpc.v1.subnet_service_pb2_grpc import SubnetServiceStub
 from yandex.cloud.mdb.postgresql.v1.database_pb2 import DatabaseSpec
 from yandex.cloud.mdb.postgresql.v1.user_pb2 import Permission, UserSpec
-
 import yandex.cloud.mdb.postgresql.v1.cluster_pb2 as cluster_pb
 import yandex.cloud.mdb.postgresql.v1.cluster_service_pb2 as cluster_service
 import yandex.cloud.mdb.postgresql.v1.cluster_service_pb2_grpc as cluster_service_grpc
@@ -19,29 +14,22 @@ import yandex.cloud.mdb.postgresql.v1.cluster_service_pb2_grpc as cluster_servic
 import yandexcloud
 
 
-def wait_for_operation(sdk, op):
-    waiter = sdk.waiter(op.id)
-    for _ in waiter:
-        sys.stdout.write('.')
-        sys.stdout.flush()
-        time.sleep(1)
-
-    print('done')
-    return waiter.operation
-
-
 def main():
-    flags = parse_cmd()
-    sdk = yandexcloud.SDK(token=flags.token)
+    arguments = parse_cmd()
+    if arguments.token:
+        sdk = yandexcloud.SDK(token=arguments.token)
+    else:
+        with open(arguments.sa_json_path) as infile:
+            sdk = yandexcloud.SDK(service_account_key=json.load(infile))
 
-    fill_missing_flags(sdk, flags)
+    fill_missing_flags(sdk, arguments)
 
-    req = create_cluster_request(flags)
+    req = create_cluster_request(arguments)
     cluster = None
     try:
         cluster = create_cluster(sdk, req)
         change_cluster_description(sdk, cluster)
-        add_cluster_host(sdk, cluster, flags)
+        add_cluster_host(sdk, cluster, arguments)
     finally:
         if cluster is not None:
             delete_cluster(sdk, cluster)
@@ -50,10 +38,16 @@ def main():
 def parse_cmd():
     parser = argparse.ArgumentParser(
         description=__doc__,
-        formatter_class=argparse.RawDescriptionHelpFormatter)
+        formatter_class=argparse.RawTextHelpFormatter)
 
-    parser.add_argument('--token', help='OAuth token')
-    parser.add_argument('--folder-id', help='Your Yandex.Cloud folder id')
+    auth = parser.add_mutually_exclusive_group(required=True)
+    auth.add_argument(
+        '--sa-json-path',
+        help='Path to the service account key JSON file.\nThis file can be created using YC CLI:\n'
+        'yc iam key create --output sa.json --service-account-id <id>',
+    )
+    auth.add_argument('--token', help='OAuth token')
+    parser.add_argument('--folder-id', help='Your Yandex.Cloud folder id', required=True)
     parser.add_argument('--zone', default='ru-central1-b', help='Compute Engine zone to deploy to')
     parser.add_argument('--network-id', default='', help='Your Yandex.Cloud network id')
     parser.add_argument('--subnet-id', default='', help='Subnet for the cluster')
@@ -62,40 +56,19 @@ def parse_cmd():
     parser.add_argument('--db-name', default='db1', help='New database name')
     parser.add_argument('--user-name', default='user1')
     parser.add_argument('--user-password', default='password123')
-
     return parser.parse_args()
 
 
 def fill_missing_flags(sdk, flags):
     if not flags.network_id:
-        flags.network_id = find_network(sdk, flags.folder_id)
+        flags.network_id = sdk.helpers.find_network_id(folder_id=flags.folder_id)
 
     if not flags.subnet_id:
-        flags.subnet_id = find_subnet(sdk, folder_id=flags.folder_id, zone_id=flags.zone, network_id=flags.network_id)
-
-
-def find_network(sdk, folder_id):
-    networks = sdk.client(NetworkServiceStub).List(ListNetworksRequest(folder_id=folder_id)).networks
-    networks = [n for n in networks if n.folder_id == folder_id]
-
-    if not networks:
-        raise RuntimeError("no networks in folder: {}".format(folder_id))
-
-    return networks[0].id
-
-
-def find_subnet(sdk, folder_id, zone_id, network_id):
-    subnet_service = sdk.client(SubnetServiceStub)
-    subnets = subnet_service.List(ListSubnetsRequest(
-        folder_id=folder_id)).subnets
-    applicable = [s for s in subnets if s.zone_id == zone_id and s.network_id == network_id]
-    if len(applicable) == 1:
-        return applicable[0].id
-    if len(applicable) == 0:
-        message = 'There are no subnets in {} zone, please create it.'
-        raise RuntimeError(message.format(zone_id))
-    message = 'There are more than one subnet in {} zone, please specify it'
-    raise RuntimeError(message.format(zone_id))
+        flags.subnet_id = sdk.helpers.find_subnet_id(
+            folder_id=flags.folder_id,
+            zone_id=flags.zone,
+            network_id=flags.network_id,
+        )
 
 
 def create_cluster(sdk, req):
@@ -105,7 +78,7 @@ def create_cluster(sdk, req):
     operation.metadata.Unpack(meta)
 
     print("Creating cluster {}".format(meta.cluster_id))
-    operation = wait_for_operation(sdk, operation)
+    operation = sdk.wait_for_operation(operation.id, print_to_stream=stdout)
 
     cluster = cluster_pb.Cluster()
     operation.response.Unpack(cluster)
@@ -119,7 +92,7 @@ def add_cluster_host(sdk, cluster, params):
     req = cluster_service.AddClusterHostsRequest(cluster_id=cluster.id, host_specs=host_specs)
 
     operation = sdk.client(cluster_service_grpc.ClusterServiceStub).AddHosts(req)
-    wait_for_operation(sdk, operation)
+    sdk.wait_for_operation(operation.id, print_to_stream=stdout)
 
 
 def change_cluster_description(sdk, cluster):
@@ -129,14 +102,14 @@ def change_cluster_description(sdk, cluster):
                                                       description="New Description!!!")
 
     operation = sdk.client(cluster_service_grpc.ClusterServiceStub).Update(update_req)
-    wait_for_operation(sdk, operation)
+    sdk.wait_for_operation(operation.id, print_to_stream=stdout)
 
 
 def delete_cluster(sdk, cluster):
     print("Deleting cluster {}".format(cluster.id))
     operation = sdk.client(cluster_service_grpc.ClusterServiceStub).Delete(
         cluster_service.DeleteClusterRequest(cluster_id=cluster.id))
-    wait_for_operation(sdk, operation)
+    sdk.wait_for_operation(operation.id, print_to_stream=stdout)
 
 
 def create_cluster_request(params):

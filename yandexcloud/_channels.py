@@ -1,4 +1,3 @@
-
 import grpc
 
 from yandex.cloud.endpoint.api_endpoint_service_pb2_grpc import ApiEndpointServiceStub

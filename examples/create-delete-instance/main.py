@@ -1,42 +1,26 @@
+#!/usr/bin/env python3
 import argparse
+import json
+from sys import stdout
+
 import grpc
-import sys
-import time
 
 from yandex.cloud.compute.v1.image_service_pb2 import GetImageLatestByFamilyRequest
 from yandex.cloud.compute.v1.image_service_pb2_grpc import ImageServiceStub
 from yandex.cloud.compute.v1.instance_pb2 import IPV4, Instance
-from yandex.cloud.compute.v1.instance_service_pb2 import CreateInstanceRequest, ResourcesSpec, AttachedDiskSpec, NetworkInterfaceSpec, PrimaryAddressSpec, OneToOneNatSpec, DeleteInstanceRequest, CreateInstanceMetadata
+from yandex.cloud.compute.v1.instance_service_pb2 import (
+    CreateInstanceRequest,
+    ResourcesSpec,
+    AttachedDiskSpec,
+    NetworkInterfaceSpec,
+    PrimaryAddressSpec,
+    OneToOneNatSpec,
+    DeleteInstanceRequest,
+    CreateInstanceMetadata,
+)
 from yandex.cloud.compute.v1.instance_service_pb2_grpc import InstanceServiceStub
-from yandex.cloud.vpc.v1.subnet_service_pb2 import ListSubnetsRequest
-from yandex.cloud.vpc.v1.subnet_service_pb2_grpc import SubnetServiceStub
 
 import yandexcloud
-
-
-def wait_for_operation(sdk, op):
-    waiter = sdk.waiter(op.id)
-    for _ in waiter:
-        sys.stdout.write('.')
-        sys.stdout.flush()
-        time.sleep(1)
-
-    print('done')
-    return waiter.operation
-
-
-def get_subnet(sdk, folder_id, zone):
-    subnet_service = sdk.client(SubnetServiceStub)
-    subnets = subnet_service.List(ListSubnetsRequest(
-        folder_id=folder_id)).subnets
-    applicable = [s for s in subnets if s.zone_id == zone]
-    if len(applicable) == 1:
-        return applicable[0].id
-    if len(applicable) == 0:
-        message = 'There are no subnets in {} zone, please create it.'
-        raise RuntimeError(message.format(zone))
-    message = 'There are more than one subnet in {} zone, please specify it'
-    raise RuntimeError(message.format(zone))
 
 
 def create_instance(sdk, folder_id,  zone, name, subnet_id):
@@ -45,7 +29,7 @@ def create_instance(sdk, folder_id,  zone, name, subnet_id):
         GetImageLatestByFamilyRequest(
             folder_id='standard-images',
             family='debian-9'))
-    subnet_id = subnet_id or get_subnet(sdk, folder_id, zone)
+    subnet_id = subnet_id or sdk.helpers.get_subnet(folder_id, zone)
     instance_service = sdk.client(InstanceServiceStub)
     operation = instance_service.Create(CreateInstanceRequest(
         folder_id=folder_id,
@@ -81,37 +65,60 @@ def delete_instance(sdk, instance_id):
         DeleteInstanceRequest(instance_id=instance_id))
 
 
-def main(token, folder_id, zone, name, subnet_id):
+def main():
+    arguments = parse_args()
     interceptor = yandexcloud.RetryInterceptor(max_retry_count=5, retriable_codes=[grpc.StatusCode.UNAVAILABLE])
-    sdk = yandexcloud.SDK(interceptor=interceptor, token=token)
-    operation = create_instance(sdk, folder_id, zone, name, subnet_id)
+    if arguments.token:
+        sdk = yandexcloud.SDK(interceptor=interceptor, token=arguments.token)
+    else:
+        with open(arguments.sa_json_path) as infile:
+            sdk = yandexcloud.SDK(interceptor=interceptor, service_account_key=json.load(infile))
+
+    subnet_id = arguments.subnet_id
+    if not subnet_id:
+        network_id = sdk.helpers.find_network_id(folder_id=arguments.folder_id)
+        subnet_id = sdk.helpers.find_subnet_id(
+            folder_id=arguments.folder_id,
+            zone_id=arguments.zone,
+            network_id=network_id,
+        )
+    operation = create_instance(sdk, arguments.folder_id, arguments.zone, arguments.name, subnet_id)
     meta = CreateInstanceMetadata()
     operation.metadata.Unpack(meta)
     print('Creating instance {}'.format(meta.instance_id))
-    operation = wait_for_operation(sdk, operation)
+    operation = sdk.wait_for_operation(operation.id, print_to_stream=stdout)
 
     instance = Instance()
     operation.response.Unpack(instance)
 
     print('Deleting instance {}'.format(instance.id))
     operation = delete_instance(sdk, instance.id)
-    wait_for_operation(sdk, operation)
+    sdk.wait_for_operation(operation.id, print_to_stream=stdout)
 
 
-if __name__ == '__main__':
+def parse_args():
     parser = argparse.ArgumentParser(
         description=__doc__,
-        formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument('--token', help='OAuth token')
-    parser.add_argument('--folder-id', help='Your Yandex.Cloud folder id')
+        formatter_class=argparse.RawTextHelpFormatter)
+
+    auth = parser.add_mutually_exclusive_group(required=True)
+    auth.add_argument(
+        '--sa-json-path',
+        help='Path to the service account key JSON file.\nThis file can be created using YC CLI:\n'
+        'yc iam key create --output sa.json --service-account-id <id>',
+    )
+    auth.add_argument('--token', help='OAuth token')
+    parser.add_argument('--folder-id', help='Your Yandex.Cloud folder id', required=True)
     parser.add_argument(
         '--zone', default='ru-central1-b',
         help='Compute Engine zone to deploy to.')
     parser.add_argument(
         '--name', default='demo-instance', help='New instance name.')
     parser.add_argument(
-        '--subnet-id', default='', help='Subnet of the instance')
+        '--subnet-id', help='Subnet of the instance')
 
-    args = parser.parse_args()
+    return parser.parse_args()
 
-    main(args.token, args.folder_id, args.zone, args.name, args.subnet_id)
+
+if __name__ == '__main__':
+    main()

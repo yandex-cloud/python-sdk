@@ -1,14 +1,17 @@
 import inspect
+
 import grpc
 
 from yandexcloud import _channels
 from yandexcloud import _operation_waiter
+from yandexcloud import _helpers
 
 
 class SDK(object):
     def __init__(self, interceptor=None, **kwargs):
         self._channels = _channels.Channels(**kwargs)
         self._default_interceptor = interceptor
+        self.helpers = _helpers.Helpers(self)
 
     def set_interceptor(self, interceptor):
         self._default_interceptor = interceptor
@@ -22,8 +25,14 @@ class SDK(object):
             channel = grpc.intercept_channel(channel, self._default_interceptor)
         return stub_ctor(channel)
 
-    def waiter(self, operation_id):
-        return _operation_waiter.operation_waiter(self, operation_id, timeout=None)
+    def waiter(self, operation_id, timeout=None):
+        return _operation_waiter.operation_waiter(self, operation_id, timeout)
+
+    def wait_for_operation(self, operation_id, timeout=None, print_to_stream=None):
+        return _operation_waiter.wait_for_operation(self, operation_id, timeout, print_to_stream)
+
+    def get_operation_result(self, operation, response_type=None, meta_type=None, timeout=None, logger=None):
+        return _operation_waiter.get_operation_result(self, operation, response_type, meta_type, timeout, logger)
 
 
 def _service_for_ctor(stub_ctor):

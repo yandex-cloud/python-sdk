@@ -36,7 +36,7 @@ def __validate_service_account_key(sa_key):
     private_key_prefix = '-----BEGIN PRIVATE KEY-----'
     if not isinstance(private_key, six.string_types) or not private_key.startswith(private_key_prefix):
         raise RuntimeError(
-            "Invalid Service Account Key: private key is in incorrect format. Should starts with {prefix}.\n"
+            "Invalid Service Account Key: private key is in incorrect format. Should start with {prefix}.\n"
             "To obtain one you can use YC CLI: yc iam key create --output sa.json --service-account-id <id>"
         )
 
