@@ -1,5 +1,6 @@
 import time
 from datetime import datetime
+import six
 
 # noinspection PyUnresolvedReferences
 # jwt package depends on cryptography
@@ -31,6 +32,13 @@ def __validate_service_account_key(sa_key):
 
     if not private_key:
         raise RuntimeError("Invalid Service Account Key: missing private key.")
+
+    private_key_prefix = '-----BEGIN PRIVATE KEY-----'
+    if not isinstance(private_key, six.string_types) or not private_key.startswith(private_key_prefix):
+        raise RuntimeError(
+            "Invalid Service Account Key: private key is in incorrect format. Should starts with {prefix}.\n"
+            "To obtain one you can use YC CLI: yc iam key create --output sa.json --service-account-id <id>"
+        )
 
 
 def get_auth_token_requester(token=None, service_account_key=None, metadata_addr=_MDS_ADDR):
