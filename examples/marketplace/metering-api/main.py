@@ -53,7 +53,7 @@ def main(product_id, sku_id, quantity, timestamp=None, uuid=None):
     service = sdk.client(ImageProductUsageServiceStub)
     request = build_product_usage_write_request(product_id, sku_id, quantity, timestamp, uuid)
 
-    # Step 0. Ensure consumer has all permissions to use the product (validate_only=True)
+    # Step 0. Ensure customer has all permissions to use the product (validate_only=True)
 
     request.validate_only = True
     response = service.Write(request)
