@@ -5,12 +5,11 @@ import logging
 import time
 from uuid import uuid4
 
+import grpc
 import yandexcloud
 from yandex.cloud.marketplace.v1.metering.image_product_usage_service_pb2 import WriteImageProductUsageRequest
 from yandex.cloud.marketplace.v1.metering.image_product_usage_service_pb2_grpc import ImageProductUsageServiceStub
 from yandex.cloud.marketplace.v1.metering.usage_record_pb2 import UsageRecord
-
-LOG = logging.getLogger(__name__)
 
 
 def build_product_usage_write_request(product_id, sku_id, quantity, timestamp=None, uuid=None):
@@ -28,20 +27,19 @@ def build_product_usage_write_request(product_id, sku_id, quantity, timestamp=No
 
     request = WriteImageProductUsageRequest()
 
-    request.validate_only = True
     request.product_id = product_id
     request.usage_records.extend([usage_record])
 
     return request
 
 
-def provide_service(product_id, sku_id):
+def business_logic(product_id, sku_id):
     """Example of service."""
 
-    if product_id == "Secure Firewall" and sku_id == "Ingress network traffic":
+    if product_id == 'Secure Firewall' and sku_id == 'Ingress network traffic':
         return 1 + 1
 
-    if product_id == "Secure Firewall" and sku_id == "Egress network traffic":
+    if product_id == 'Secure Firewall' and sku_id == 'Egress network traffic':
         return 1 * 1
 
     return 0
@@ -49,21 +47,23 @@ def provide_service(product_id, sku_id):
 
 def main(product_id, sku_id, quantity, timestamp=None, uuid=None):
     # NOTE: IAM token will be taken automatically from metadata agent of VM
-    sdk = yandexcloud.SDK()
+
+    interceptor = yandexcloud.RetryInterceptor(max_retry_count=5, retriable_codes=[grpc.StatusCode.UNAVAILABLE])
+    sdk = yandexcloud.SDK(interceptor=interceptor)
     service = sdk.client(ImageProductUsageServiceStub)
     request = build_product_usage_write_request(product_id, sku_id, quantity, timestamp, uuid)
 
-    # Step 0. Ensure customer has all permissions to use the product (validate_only=True)
+    # Step 0. Ensure consumer has all permissions to use the product (validate_only=True)
 
     request.validate_only = True
     response = service.Write(request)
 
     if len(response.accepted) == 0:
-        raise ValueError("Unable to provide the service to customer. Reason: %s" % str(response.rejected))
+        raise ValueError('Unable to provide the service to customer. Reason: %s' % str(response.rejected))
 
     # Step 1. Provide your service to the customer
 
-    provide_service(product_id, sku_id)
+    business_logic(product_id, sku_id)
 
     # Step 2. Write the product usage to Yandex.Cloud API (validate_only=False)
 
@@ -71,7 +71,7 @@ def main(product_id, sku_id, quantity, timestamp=None, uuid=None):
     response = service.Write(request)
 
     if len(response.accepted) == 0:
-        raise ValueError("Unable to write the product usage. Reason: %s" % str(response.rejected))
+        raise ValueError('Unable to write the product usage. Reason: %s' % str(response.rejected))
 
     return response
 
