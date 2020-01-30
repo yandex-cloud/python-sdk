@@ -2,6 +2,8 @@ import time
 from datetime import datetime
 import logging
 
+from google.protobuf.empty_pb2 import Empty
+
 from yandex.cloud.operation.operation_service_pb2_grpc import OperationServiceStub
 from yandex.cloud.operation.operation_service_pb2 import GetOperationRequest
 from yandexcloud.operations import OperationResult, OperationError
@@ -12,21 +14,17 @@ def operation_waiter(sdk, operation_id, timeout):
     return OperationWaiter(operation_id, operation_service, timeout)
 
 
-def wait_for_operation(sdk, operation_id, timeout, print_to_stream=None):
+def wait_for_operation(sdk, operation_id, timeout):
     waiter = operation_waiter(sdk, operation_id, timeout)
     for _ in waiter:
-        if print_to_stream:
-            print_to_stream.write('.')
-            print_to_stream.flush()
         time.sleep(1)
-    if print_to_stream:
-        print_to_stream.write('done')
     return waiter.operation
 
 
 def get_operation_result(sdk, operation, response_type=None, meta_type=None, timeout=None, logger=None):
     if not logger:
-        logger = logging
+        logger = logging.getLogger()
+        logger.addHandler(logging.NullHandler())
     operation_result = OperationResult(operation)
     created_at = datetime.fromtimestamp(operation.created_at.seconds)
     message = 'Running Yandex.Cloud operation. ID: {id}. ' + \
@@ -38,13 +36,13 @@ def get_operation_result(sdk, operation, response_type=None, meta_type=None, tim
         created_at=created_at,
         created_by=operation.created_by,
     )
-    if meta_type:
+    if meta_type and meta_type is not Empty:
         unpacked_meta = meta_type()
         operation.metadata.Unpack(unpacked_meta)
         operation_result.meta = unpacked_meta
         message += ' Meta: {unpacked_meta}.'.format(unpacked_meta=unpacked_meta)
     logger.info(message)
-    result = sdk.wait_for_operation(operation.id, timeout=timeout)
+    result = wait_for_operation(sdk, operation.id, timeout=timeout)
     if result.error and result.error.code:
         error_message = 'Error Yandex.Cloud operation. ID: {id}. ' + \
                         'Error code: {code}. Details: {details}. ' + \
@@ -59,7 +57,7 @@ def get_operation_result(sdk, operation, response_type=None, meta_type=None, tim
         raise OperationError(message=error_message, operation_result=result)
     else:
         log_message = 'Done Yandex.Cloud operation. ID: {id}.'.format(id=operation.id)
-        if response_type:
+        if response_type and response_type is not Empty:
             unpacked_response = response_type()
             result.response.Unpack(unpacked_response)
             operation_result.response = unpacked_response

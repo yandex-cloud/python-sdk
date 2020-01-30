@@ -5,6 +5,7 @@ import grpc
 from yandexcloud import _channels
 from yandexcloud import _operation_waiter
 from yandexcloud import _helpers
+from yandexcloud._wrappers import Wrappers
 
 
 class SDK(object):
@@ -12,6 +13,7 @@ class SDK(object):
         self._channels = _channels.Channels(**kwargs)
         self._default_interceptor = interceptor
         self.helpers = _helpers.Helpers(self)
+        self.wrappers = Wrappers(self)
 
     def set_interceptor(self, interceptor):
         self._default_interceptor = interceptor
@@ -28,11 +30,27 @@ class SDK(object):
     def waiter(self, operation_id, timeout=None):
         return _operation_waiter.operation_waiter(self, operation_id, timeout)
 
-    def wait_for_operation(self, operation_id, timeout=None, print_to_stream=None):
-        return _operation_waiter.wait_for_operation(self, operation_id, timeout, print_to_stream)
-
-    def get_operation_result(self, operation, response_type=None, meta_type=None, timeout=None, logger=None):
+    def wait_operation_and_get_result(self, operation, response_type=None, meta_type=None, timeout=None, logger=None):
         return _operation_waiter.get_operation_result(self, operation, response_type, meta_type, timeout, logger)
+
+    def create_operation_and_get_result(
+            self,
+            request,
+            service,
+            method_name,
+            response_type=None,
+            meta_type=None,
+            timeout=None,
+            logger=None,
+    ):
+        operation = getattr(self.client(service), method_name)(request)
+        return self.wait_operation_and_get_result(
+            operation,
+            response_type=response_type,
+            meta_type=meta_type,
+            timeout=timeout,
+            logger=logger,
+        )
 
 
 def _service_for_ctor(stub_ctor):

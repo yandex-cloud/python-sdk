@@ -11,18 +11,17 @@ from yandex.cloud.vpc.v1.subnet_service_pb2_grpc import SubnetServiceStub
 class Helpers(object):
     def __init__(self, sdk):
         self.sdk = sdk
-        self.client = sdk.client
 
     def find_service_account_id(self, folder_id):
         """
         Get service account id in case the folder has the only one service account
 
         :param folder_id: ID of the folder
-        :type operation: str
+        :type folder_id: str
         :return ID of the service account
         :rtype str
         """
-        service = self.client(ServiceAccountServiceStub)
+        service = self.sdk.client(ServiceAccountServiceStub)
         service_accounts = service.List(ListServiceAccountsRequest(folder_id=folder_id)).service_accounts
         if len(service_accounts) == 1:
             return service_accounts[0].id
@@ -31,7 +30,9 @@ class Helpers(object):
                 'There are no service accounts in folder {folder_id}, please create it.'.format(folder_id=folder_id)
             )
         raise RuntimeError(
-            'There are more than one service account in folder {folder_id}, please specify it'.format(folder_id=folder_id)
+            'There are more than one service account in folder {folder_id}, please specify it'.format(
+                folder_id=folder_id
+            )
         )
 
     def find_network_id(self, folder_id):
@@ -39,13 +40,11 @@ class Helpers(object):
         Get ID of the first network in folder
 
         :param folder_id: ID of the folder
-        :type operation: str
+        :type folder_id: str
         :return ID of the network
         :rtype str
         """
-        networks = self.client(NetworkServiceStub).List(ListNetworksRequest(folder_id=folder_id)).networks
-        networks = [n for n in networks if n.folder_id == folder_id]
-
+        networks = self.sdk.client(NetworkServiceStub).List(ListNetworksRequest(folder_id=folder_id)).networks
         if not networks:
             raise RuntimeError('No networks in folder: {folder_id}'.format(folder_id=folder_id))
         if len(networks) > 1:
@@ -54,23 +53,26 @@ class Helpers(object):
             )
         return networks[0].id
 
-    def find_subnet_id(self, folder_id, zone_id, network_id):
+    def find_subnet_id(self, folder_id, zone_id, network_id=None):
         """
         Get ID of the subnetwork of specified network in specified availability zone
 
         :param folder_id: ID of the folder
-        :type operation: str
+        :type folder_id: str
         :param zone_id: ID of the availability zone
-        :type operation: str
+        :type zone_id: str
         :param network_id: ID of the network
-        :type operation: str
+        :type network_id: str
         :return ID of the subnetwork
         :rtype str
         """
-        subnet_service = self.client(SubnetServiceStub)
+        subnet_service = self.sdk.client(SubnetServiceStub)
         subnets = subnet_service.List(ListSubnetsRequest(
             folder_id=folder_id)).subnets
-        applicable = [s for s in subnets if s.zone_id == zone_id and s.network_id == network_id]
+        if network_id:
+            applicable = [s for s in subnets if s.zone_id == zone_id and s.network_id == network_id]
+        else:
+            applicable = [s for s in subnets if s.zone_id == zone_id]
         if len(applicable) == 1:
             return applicable[0].id
         if len(applicable) == 0:

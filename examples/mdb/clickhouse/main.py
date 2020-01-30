@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import argparse
 import json
-from sys import stdout
+import logging
 
 from google.protobuf.field_mask_pb2 import FieldMask
 
@@ -15,6 +15,7 @@ import yandexcloud
 
 
 def main():
+    logging.basicConfig(level=logging.INFO)
     arguments = parse_cmd()
     if arguments.token:
         sdk = yandexcloud.SDK(token=arguments.token)
@@ -22,17 +23,17 @@ def main():
         with open(arguments.sa_json_path) as infile:
             sdk = yandexcloud.SDK(service_account_key=json.load(infile))
 
-    fill_missing_flags(sdk, arguments)
+    fill_missing_arguments(sdk, arguments)
 
-    req = create_cluster_request(arguments)
-    cluster = None
+    cluster_id = None
     try:
-        cluster = create_cluster(sdk, req)
-        change_cluster_description(sdk, cluster)
-        add_cluster_host(sdk, cluster, arguments)
+        operation_result = create_cluster(sdk, create_cluster_request(arguments))
+        cluster_id = operation_result.response.id
+        change_cluster_description(sdk, cluster_id)
+        add_cluster_host(sdk, cluster_id, arguments)
     finally:
-        if cluster is not None:
-            delete_cluster(sdk, cluster)
+        if cluster_id is not None:
+            delete_cluster(sdk, cluster_id)
 
 
 def parse_cmd():
@@ -59,61 +60,67 @@ def parse_cmd():
     return parser.parse_args()
 
 
-def fill_missing_flags(sdk, flags):
-    if not flags.network_id:
-        flags.network_id = sdk.helpers.find_network_id(flags.folder_id)
+def fill_missing_arguments(sdk, arguments):
+    if not arguments.network_id:
+        arguments.network_id = sdk.helpers.find_network_id(arguments.folder_id)
 
-    if not flags.subnet_id:
-        flags.subnet_id = sdk.helpers.find_subnet_id(
-            folder_id=flags.folder_id,
-            zone_id=flags.zone,
-            network_id=flags.network_id
+    if not arguments.subnet_id:
+        arguments.subnet_id = sdk.helpers.find_subnet_id(
+            folder_id=arguments.folder_id,
+            zone_id=arguments.zone,
+            network_id=arguments.network_id
         )
 
 
-def create_cluster(sdk, req):
-    operation = sdk.client(cluster_service_grpc.ClusterServiceStub).Create(req)
-
-    meta = cluster_service.CreateClusterMetadata()
-    operation.metadata.Unpack(meta)
-
-    print("Creating cluster {}".format(meta.cluster_id))
-    operation = sdk.wait_for_operation(operation.id, print_to_stream=stdout)
-
-    cluster = Cluster()
-    operation.response.Unpack(cluster)
-    return cluster
+def create_cluster(sdk, request):
+    operation = sdk.client(cluster_service_grpc.ClusterServiceStub).Create(request)
+    return sdk.wait_operation_and_get_result(
+        operation,
+        response_type=Cluster,
+        meta_type=cluster_service.CreateClusterMetadata,
+    )
 
 
-def add_cluster_host(sdk, cluster, params):
-    print("Adding host to cluster {}".format(cluster.id))
+def add_cluster_host(sdk, cluster_id, params):
+    print('Adding host to cluster {}'.format(cluster_id))
 
     host_ch_spec = cluster_service.HostSpec(
-        zone_id=params.zone, type="CLICKHOUSE",
+        zone_id=params.zone, type='CLICKHOUSE',
         subnet_id=params.subnet_id, assign_public_ip=False)
 
     host_specs = [host_ch_spec]
-    req = cluster_service.AddClusterHostsRequest(cluster_id=cluster.id, host_specs=host_specs)
+    request = cluster_service.AddClusterHostsRequest(cluster_id=cluster_id, host_specs=host_specs)
 
-    operation = sdk.client(cluster_service_grpc.ClusterServiceStub).AddHosts(req)
-    sdk.wait_for_operation(operation.id, print_to_stream=stdout)
-
-
-def change_cluster_description(sdk, cluster):
-    print("Updating cluster {}".format(cluster.id))
-    mask = FieldMask(paths=["description"])
-    update_req = cluster_service.UpdateClusterRequest(cluster_id=cluster.id, update_mask=mask,
-                                                      description="New Description!!!")
-
-    operation = sdk.client(cluster_service_grpc.ClusterServiceStub).Update(update_req)
-    sdk.wait_for_operation(operation.id, print_to_stream=stdout)
+    operation = sdk.client(cluster_service_grpc.ClusterServiceStub).AddHosts(request)
+    return sdk.wait_operation_and_get_result(
+        operation,
+        meta_type=cluster_service.AddClusterHostsMetadata,
+    )
 
 
-def delete_cluster(sdk, cluster):
-    print("Deleting cluster {}".format(cluster.id))
+def change_cluster_description(sdk, cluster_id):
+    logging.info('Updating cluster {}'.format(cluster_id))
+    mask = FieldMask(paths=['description'])
+    request = cluster_service.UpdateClusterRequest(
+        cluster_id=cluster_id, update_mask=mask,
+        description='New Description'
+    )
+    operation = sdk.client(cluster_service_grpc.ClusterServiceStub).Update(request)
+    return sdk.wait_operation_and_get_result(
+        operation,
+        response_type=Cluster,
+        meta_type=cluster_service.UpdateClusterMetadata,
+    )
+
+
+def delete_cluster(sdk, cluster_id):
+    logging.info('Deleting cluster {}'.format(cluster_id))
     operation = sdk.client(cluster_service_grpc.ClusterServiceStub).Delete(
-        cluster_service.DeleteClusterRequest(cluster_id=cluster.id))
-    sdk.wait_for_operation(operation.id, print_to_stream=stdout)
+        cluster_service.DeleteClusterRequest(cluster_id=cluster_id))
+    return sdk.wait_operation_and_get_result(
+        operation,
+        meta_type=cluster_service.DeleteClusterMetadata,
+    )
 
 
 def create_cluster_request(params):
@@ -122,16 +129,16 @@ def create_cluster_request(params):
     user_specs = [UserSpec(name=params.user_name, password=params.user_password, permissions=permissions)]
 
     host_ch_spec = cluster_service.HostSpec(
-        zone_id=params.zone, type="CLICKHOUSE",
+        zone_id=params.zone, type='CLICKHOUSE',
         subnet_id=params.subnet_id, assign_public_ip=False)
 
     host_zk_spec = cluster_service.HostSpec(
-        zone_id=params.zone, type="ZOOKEEPER",
+        zone_id=params.zone, type='ZOOKEEPER',
         subnet_id=params.subnet_id, assign_public_ip=False)
 
     host_specs = [host_ch_spec, host_zk_spec, host_zk_spec, host_zk_spec]
 
-    res = Resources(resource_preset_id="s1.nano", disk_size=10 * (1024 ** 3), disk_type_id="network-ssd")
+    res = Resources(resource_preset_id='s1.nano', disk_size=10 * (1024 ** 3), disk_type_id='network-ssd')
 
     config_spec = cluster_service.ConfigSpec(clickhouse=cluster_service.ConfigSpec.Clickhouse(resources=res),
                                              zookeeper=cluster_service.ConfigSpec.Zookeeper(resources=res))
@@ -140,7 +147,7 @@ def create_cluster_request(params):
         folder_id=params.folder_id,
         name=params.cluster_name,
         description=params.cluster_desc,
-        environment="PRODUCTION",
+        environment='PRODUCTION',
         config_spec=config_spec,
         database_specs=database_specs,
         user_specs=user_specs,

@@ -43,7 +43,7 @@ def __validate_service_account_key(sa_key):
 
 def get_auth_token_requester(token=None, service_account_key=None, metadata_addr=_MDS_ADDR):
     if token is not None and service_account_key is not None:
-        raise RuntimeError("Conflicting API credentials properties 'token' and 'service_account_key' are set.")
+        raise RuntimeError("Conflicting API credentials properties 'token' and 'service-account-key' are set.")
 
     if token is not None:
         return TokenAuth(token=token)

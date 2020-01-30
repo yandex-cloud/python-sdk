@@ -4,7 +4,6 @@ import json
 import os
 import logging
 
-import google.protobuf.empty_pb2 as empty_pb2
 from google.protobuf.field_mask_pb2 import FieldMask
 
 import yandex.cloud.dataproc.v1.common_pb2 as common_pb
@@ -30,18 +29,17 @@ def main():
         with open(arguments.sa_json_path) as infile:
             sdk = yandexcloud.SDK(service_account_key=json.load(infile))
 
-    fill_missing_flags(sdk, arguments)
+    fill_missing_arguments(sdk, arguments)
 
     resources = common_pb.Resources(
         resource_preset_id='s2.micro',
         disk_size=15 * (1024 ** 3),
         disk_type_id='network-ssd',
     )
-    req = create_cluster_request(arguments, resources=resources)
     cluster_id = None
     try:
-        cluster = create_cluster(sdk, req)
-        cluster_id = cluster.response.id
+        operation_result = create_cluster(sdk, create_cluster_request(arguments, resources=resources))
+        cluster_id = operation_result.response.id
         change_cluster_description(sdk, cluster_id)
         add_subcluster(sdk, cluster_id, arguments, resources=resources)
 
@@ -81,7 +79,7 @@ def parse_cmd():
     return parser.parse_args()
 
 
-def fill_missing_flags(sdk, arguments):
+def fill_missing_arguments(sdk, arguments):
     if os.path.exists(os.path.expanduser(arguments.ssh_public_key)):
         with open(arguments.ssh_public_key) as infile:
             arguments.ssh_public_key = infile.read().strip()
@@ -100,9 +98,9 @@ def fill_missing_flags(sdk, arguments):
         arguments.service_account_id = sdk.helpers.find_service_account_id(folder_id=arguments.folder_id)
 
 
-def create_cluster(sdk, req):
-    operation = sdk.client(cluster_service_grpc_pb.ClusterServiceStub).Create(req)
-    return sdk.get_operation_result(
+def create_cluster(sdk, request):
+    operation = sdk.client(cluster_service_grpc_pb.ClusterServiceStub).Create(request)
+    return sdk.wait_operation_and_get_result(
         operation,
         response_type=cluster_pb.Cluster,
         meta_type=cluster_service_pb.CreateClusterMetadata,
@@ -111,7 +109,7 @@ def create_cluster(sdk, req):
 
 def add_subcluster(sdk, cluster_id, params, resources):
     logging.info('Adding subcluster to cluster {}'.format(cluster_id))
-    req = subcluster_service_pb.CreateSubclusterRequest(
+    request = subcluster_service_pb.CreateSubclusterRequest(
         cluster_id=cluster_id,
         name='compute',
         role=subcluster_pb.Role.COMPUTENODE,
@@ -120,8 +118,8 @@ def add_subcluster(sdk, cluster_id, params, resources):
         hosts_count=1,
     )
 
-    operation = sdk.client(subcluster_service_grpc_pb.SubclusterServiceStub).Create(req)
-    return sdk.get_operation_result(
+    operation = sdk.client(subcluster_service_grpc_pb.SubclusterServiceStub).Create(request)
+    return sdk.wait_operation_and_get_result(
         operation,
         response_type=subcluster_pb.Subcluster,
         meta_type=subcluster_service_pb.CreateSubclusterMetadata,
@@ -131,11 +129,13 @@ def add_subcluster(sdk, cluster_id, params, resources):
 def change_cluster_description(sdk, cluster_id):
     logging.info('Updating cluster {}'.format(cluster_id))
     mask = FieldMask(paths=['description'])
-    update_req = cluster_service_pb.UpdateClusterRequest(cluster_id=cluster_id, update_mask=mask,
-                                                         description='New cluster description')
+    request = cluster_service_pb.UpdateClusterRequest(
+        cluster_id=cluster_id, update_mask=mask,
+        description='New cluster description',
+    )
 
-    operation = sdk.client(cluster_service_grpc_pb.ClusterServiceStub).Update(update_req)
-    return sdk.get_operation_result(
+    operation = sdk.client(cluster_service_grpc_pb.ClusterServiceStub).Update(request)
+    return sdk.wait_operation_and_get_result(
         operation,
         response_type=cluster_pb.Cluster,
         meta_type=cluster_service_pb.UpdateClusterMetadata,
@@ -146,9 +146,8 @@ def delete_cluster(sdk, cluster_id):
     logging.info('Deleting cluster {}'.format(cluster_id))
     operation = sdk.client(cluster_service_grpc_pb.ClusterServiceStub).Delete(
         cluster_service_pb.DeleteClusterRequest(cluster_id=cluster_id))
-    return sdk.get_operation_result(
+    return sdk.wait_operation_and_get_result(
         operation,
-        response_type=empty_pb2.Empty,
         meta_type=cluster_service_pb.DeleteClusterMetadata,
     )
 
@@ -169,7 +168,7 @@ def run_hive_job(sdk, cluster_id):
 
         )
     )
-    return sdk.get_operation_result(operation, response_type=job_pb.Job, meta_type=job_service_pb.CreateJobMetadata)
+    return sdk.wait_operation_and_get_result(operation, response_type=job_pb.Job, meta_type=job_service_pb.CreateJobMetadata)
 
 
 def run_mapreduce_job(sdk, cluster_id, bucket):
@@ -199,7 +198,7 @@ def run_mapreduce_job(sdk, cluster_id, bucket):
             )
         )
     )
-    return sdk.get_operation_result(operation, response_type=job_pb.Job, meta_type=job_service_pb.CreateJobMetadata)
+    return sdk.wait_operation_and_get_result(operation, response_type=job_pb.Job, meta_type=job_service_pb.CreateJobMetadata)
 
 
 def run_spark_job(sdk, cluster_id, bucket):
@@ -233,7 +232,7 @@ def run_spark_job(sdk, cluster_id, bucket):
             )
         )
     )
-    return sdk.get_operation_result(operation, response_type=job_pb.Job, meta_type=job_service_pb.CreateJobMetadata)
+    return sdk.wait_operation_and_get_result(operation, response_type=job_pb.Job, meta_type=job_service_pb.CreateJobMetadata)
 
 
 def run_pyspark_job(sdk, cluster_id, bucket):
@@ -268,7 +267,7 @@ def run_pyspark_job(sdk, cluster_id, bucket):
             )
         )
     )
-    return sdk.get_operation_result(operation, response_type=job_pb.Job, meta_type=job_service_pb.CreateJobMetadata)
+    return sdk.wait_operation_and_get_result(operation, response_type=job_pb.Job, meta_type=job_service_pb.CreateJobMetadata)
 
 
 def create_cluster_request(params, resources):
