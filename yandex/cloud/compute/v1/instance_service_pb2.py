@@ -27,7 +27,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.compute.v1',
   syntax='proto3',
   serialized_options=_b('\n\033yandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;compute'),
-  serialized_pb=_b('\n.yandex/cloud/compute/v1/instance_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/compute/v1/instance.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"l\n\x12GetInstanceRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x33\n\x04view\x18\x02 \x01(\x0e\x32%.yandex.cloud.compute.v1.InstanceView\"\x91\x01\n\x14ListInstancesRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"f\n\x15ListInstancesResponse\x12\x34\n\tinstances\x18\x01 \x03(\x0b\x32!.yandex.cloud.compute.v1.Instance\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xd8\x08\n\x15\x43reateInstanceRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8b\x01\n\x06labels\x18\x04 \x03(\x0b\x32:.yandex.cloud.compute.v1.CreateInstanceRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12\x1d\n\x07zone_id\x18\x05 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x19\n\x0bplatform_id\x18\x06 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x44\n\x0eresources_spec\x18\x07 \x01(\x0b\x32&.yandex.cloud.compute.v1.ResourcesSpecB\x04\xe8\xc7\x31\x01\x12N\n\x08metadata\x18\x08 \x03(\x0b\x32<.yandex.cloud.compute.v1.CreateInstanceRequest.MetadataEntry\x12G\n\x0e\x62oot_disk_spec\x18\t \x01(\x0b\x32).yandex.cloud.compute.v1.AttachedDiskSpecB\x04\xe8\xc7\x31\x01\x12P\n\x14secondary_disk_specs\x18\n \x03(\x0b\x32).yandex.cloud.compute.v1.AttachedDiskSpecB\x07\x82\xc8\x31\x03<=3\x12U\n\x17network_interface_specs\x18\x0b \x03(\x0b\x32-.yandex.cloud.compute.v1.NetworkInterfaceSpecB\x05\x82\xc8\x31\x01\x31\x12\x33\n\x08hostname\x18\x0c \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x44\n\x11scheduling_policy\x18\r \x01(\x0b\x32).yandex.cloud.compute.v1.SchedulingPolicy\x12\x1a\n\x12service_account_id\x18\x0e \x01(\t\x12\x42\n\x10network_settings\x18\x0f \x01(\x0b\x32(.yandex.cloud.compute.v1.NetworkSettings\x12\x42\n\x10placement_policy\x18\x10 \x01(\x0b\x32(.yandex.cloud.compute.v1.PlacementPolicy\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"7\n\x16\x43reateInstanceMetadata\x12\x1d\n\x0binstance_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"\xf3\x05\n\x15UpdateInstanceRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8b\x01\n\x06labels\x18\x05 \x03(\x0b\x32:.yandex.cloud.compute.v1.UpdateInstanceRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12\x13\n\x0bplatform_id\x18\x06 \x01(\t\x12>\n\x0eresources_spec\x18\x07 \x01(\x0b\x32&.yandex.cloud.compute.v1.ResourcesSpec\x12N\n\x08metadata\x18\x08 \x03(\x0b\x32<.yandex.cloud.compute.v1.UpdateInstanceRequest.MetadataEntry\x12\x1a\n\x12service_account_id\x18\t \x01(\t\x12\x42\n\x10network_settings\x18\n \x01(\x0b\x32(.yandex.cloud.compute.v1.NetworkSettings\x12\x42\n\x10placement_policy\x18\x0b \x01(\x0b\x32(.yandex.cloud.compute.v1.PlacementPolicy\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"-\n\x16UpdateInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\":\n\x15\x44\x65leteInstanceRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"-\n\x16\x44\x65leteInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"\xc7\x01\n\x1dUpdateInstanceMetadataRequest\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x0e\n\x06\x64\x65lete\x18\x02 \x03(\t\x12R\n\x06upsert\x18\x03 \x03(\x0b\x32\x42.yandex.cloud.compute.v1.UpdateInstanceMetadataRequest.UpsertEntry\x1a-\n\x0bUpsertEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"5\n\x1eUpdateInstanceMetadataMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"b\n\"GetInstanceSerialPortOutputRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x19\n\x04port\x18\x02 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x31,2,3,4\"7\n#GetInstanceSerialPortOutputResponse\x12\x10\n\x08\x63ontents\x18\x01 \x01(\t\"8\n\x13StopInstanceRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x14StopInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"9\n\x14StartInstanceRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\",\n\x15StartInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\";\n\x16RestartInstanceRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\".\n\x17RestartInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"\x8b\x01\n\x19\x41ttachInstanceDiskRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12K\n\x12\x61ttached_disk_spec\x18\x02 \x01(\x0b\x32).yandex.cloud.compute.v1.AttachedDiskSpecB\x04\xe8\xc7\x31\x01\"B\n\x1a\x41ttachInstanceDiskMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x0f\n\x07\x64isk_id\x18\x02 \x01(\t\"\x9a\x01\n\x19\x44\x65tachInstanceDiskRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1b\n\x07\x64isk_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12/\n\x0b\x64\x65vice_name\x18\x03 \x01(\tB\x18\xf2\xc7\x31\x14[a-z][a-z0-9-_]{,19}H\x00\x42\x0c\n\x04\x64isk\x12\x04\xc0\xc1\x31\x01\"B\n\x1a\x44\x65tachInstanceDiskMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x0f\n\x07\x64isk_id\x18\x02 \x01(\t\"\x80\x01\n\x1dListInstanceOperationsRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"p\n\x1eListInstanceOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xc2\x01\n\rResourcesSpec\x12&\n\x06memory\x18\x01 \x01(\x03\x42\x16\xe8\xc7\x31\x01\xfa\xc7\x31\x0e<=274877906944\x12\x44\n\x05\x63ores\x18\x02 \x01(\x03\x42\x35\xe8\xc7\x31\x01\xfa\xc7\x31-1,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32\x12(\n\rcore_fraction\x18\x03 \x01(\x03\x42\x11\xfa\xc7\x31\r0,5,20,50,100\x12\x19\n\x04gpus\x18\x04 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30,1,2,4\"\xb4\x04\n\x10\x41ttachedDiskSpec\x12<\n\x04mode\x18\x01 \x01(\x0e\x32..yandex.cloud.compute.v1.AttachedDiskSpec.Mode\x12-\n\x0b\x64\x65vice_name\x18\x02 \x01(\tB\x18\xf2\xc7\x31\x14[a-z][a-z0-9-_]{,19}\x12\x13\n\x0b\x61uto_delete\x18\x03 \x01(\x08\x12G\n\tdisk_spec\x18\x04 \x01(\x0b\x32\x32.yandex.cloud.compute.v1.AttachedDiskSpec.DiskSpecH\x00\x12\x1b\n\x07\x64isk_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x1a\xec\x01\n\x08\x44iskSpec\x12/\n\x04name\x18\x01 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x19\n\x07type_id\x18\x03 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12+\n\x04size\x18\x04 \x01(\x03\x42\x1d\xe8\xc7\x31\x01\xfa\xc7\x31\x15\x34\x31\x39\x34\x33\x30\x34-4398046511104\x12\x1c\n\x08image_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1f\n\x0bsnapshot_id\x18\x06 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x42\x08\n\x06source\";\n\x04Mode\x12\x14\n\x10MODE_UNSPECIFIED\x10\x00\x12\r\n\tREAD_ONLY\x10\x01\x12\x0e\n\nREAD_WRITE\x10\x02\x42\x0c\n\x04\x64isk\x12\x04\xc0\xc1\x31\x01\"\xd3\x01\n\x14NetworkInterfaceSpec\x12\x1f\n\tsubnet_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12L\n\x17primary_v4_address_spec\x18\x02 \x01(\x0b\x32+.yandex.cloud.compute.v1.PrimaryAddressSpec\x12L\n\x17primary_v6_address_spec\x18\x03 \x01(\x0b\x32+.yandex.cloud.compute.v1.PrimaryAddressSpec\"l\n\x12PrimaryAddressSpec\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x45\n\x13one_to_one_nat_spec\x18\x02 \x01(\x0b\x32(.yandex.cloud.compute.v1.OneToOneNatSpec\"O\n\x0fOneToOneNatSpec\x12<\n\nip_version\x18\x01 \x01(\x0e\x32\".yandex.cloud.compute.v1.IpVersionB\x04\xe8\xc7\x31\x01*#\n\x0cInstanceView\x12\t\n\x05\x42\x41SIC\x10\x00\x12\x08\n\x04\x46ULL\x10\x01\x32\xed\x12\n\x0fInstanceService\x12\x82\x01\n\x03Get\x12+.yandex.cloud.compute.v1.GetInstanceRequest\x1a!.yandex.cloud.compute.v1.Instance\"+\x82\xd3\xe4\x93\x02%\x12#/compute/v1/instances/{instance_id}\x12\x84\x01\n\x04List\x12-.yandex.cloud.compute.v1.ListInstancesRequest\x1a..yandex.cloud.compute.v1.ListInstancesResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/compute/v1/instances\x12\xa3\x01\n\x06\x43reate\x12..yandex.cloud.compute.v1.CreateInstanceRequest\x1a!.yandex.cloud.operation.Operation\"F\x82\xd3\xe4\x93\x02\x1a\"\x15/compute/v1/instances:\x01*\xb2\xd2*\"\n\x16\x43reateInstanceMetadata\x12\x08Instance\x12\xb1\x01\n\x06Update\x12..yandex.cloud.compute.v1.UpdateInstanceRequest\x1a!.yandex.cloud.operation.Operation\"T\x82\xd3\xe4\x93\x02(2#/compute/v1/instances/{instance_id}:\x01*\xb2\xd2*\"\n\x16UpdateInstanceMetadata\x12\x08Instance\x12\xbb\x01\n\x06\x44\x65lete\x12..yandex.cloud.compute.v1.DeleteInstanceRequest\x1a!.yandex.cloud.operation.Operation\"^\x82\xd3\xe4\x93\x02%*#/compute/v1/instances/{instance_id}\xb2\xd2*/\n\x16\x44\x65leteInstanceMetadata\x12\x15google.protobuf.Empty\x12\xd8\x01\n\x0eUpdateMetadata\x12\x36.yandex.cloud.compute.v1.UpdateInstanceMetadataRequest\x1a!.yandex.cloud.operation.Operation\"k\x82\xd3\xe4\x93\x02\x37\"2/compute/v1/instances/{instance_id}/updateMetadata:\x01*\xb2\xd2**\n\x1eUpdateInstanceMetadataMetadata\x12\x08Instance\x12\xce\x01\n\x13GetSerialPortOutput\x12;.yandex.cloud.compute.v1.GetInstanceSerialPortOutputRequest\x1a<.yandex.cloud.compute.v1.GetInstanceSerialPortOutputResponse\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/compute/v1/instances/{instance_id}:serialPortOutput\x12\xba\x01\n\x04Stop\x12,.yandex.cloud.compute.v1.StopInstanceRequest\x1a!.yandex.cloud.operation.Operation\"a\x82\xd3\xe4\x93\x02*\"(/compute/v1/instances/{instance_id}:stop\xb2\xd2*-\n\x14StopInstanceMetadata\x12\x15google.protobuf.Empty\x12\xb1\x01\n\x05Start\x12-.yandex.cloud.compute.v1.StartInstanceRequest\x1a!.yandex.cloud.operation.Operation\"V\x82\xd3\xe4\x93\x02+\")/compute/v1/instances/{instance_id}:start\xb2\xd2*!\n\x15StartInstanceMetadata\x12\x08Instance\x12\xc6\x01\n\x07Restart\x12/.yandex.cloud.compute.v1.RestartInstanceRequest\x1a!.yandex.cloud.operation.Operation\"g\x82\xd3\xe4\x93\x02-\"+/compute/v1/instances/{instance_id}:restart\xb2\xd2*0\n\x17RestartInstanceMetadata\x12\x15google.protobuf.Empty\x12\xc8\x01\n\nAttachDisk\x12\x32.yandex.cloud.compute.v1.AttachInstanceDiskRequest\x1a!.yandex.cloud.operation.Operation\"c\x82\xd3\xe4\x93\x02\x33\"./compute/v1/instances/{instance_id}:attachDisk:\x01*\xb2\xd2*&\n\x1a\x41ttachInstanceDiskMetadata\x12\x08Instance\x12\xc8\x01\n\nDetachDisk\x12\x32.yandex.cloud.compute.v1.DetachInstanceDiskRequest\x1a!.yandex.cloud.operation.Operation\"c\x82\xd3\xe4\x93\x02\x33\"./compute/v1/instances/{instance_id}:detachDisk:\x01*\xb2\xd2*&\n\x1a\x44\x65tachInstanceDiskMetadata\x12\x08Instance\x12\xb9\x01\n\x0eListOperations\x12\x36.yandex.cloud.compute.v1.ListInstanceOperationsRequest\x1a\x37.yandex.cloud.compute.v1.ListInstanceOperationsResponse\"6\x82\xd3\xe4\x93\x02\x30\x12./compute/v1/instances/{instance_id}/operationsBb\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3')
+  serialized_pb=_b('\n.yandex/cloud/compute/v1/instance_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/compute/v1/instance.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"l\n\x12GetInstanceRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x33\n\x04view\x18\x02 \x01(\x0e\x32%.yandex.cloud.compute.v1.InstanceView\"\x91\x01\n\x14ListInstancesRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"f\n\x15ListInstancesResponse\x12\x34\n\tinstances\x18\x01 \x03(\x0b\x32!.yandex.cloud.compute.v1.Instance\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xd8\x08\n\x15\x43reateInstanceRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8b\x01\n\x06labels\x18\x04 \x03(\x0b\x32:.yandex.cloud.compute.v1.CreateInstanceRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12\x1d\n\x07zone_id\x18\x05 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x19\n\x0bplatform_id\x18\x06 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x44\n\x0eresources_spec\x18\x07 \x01(\x0b\x32&.yandex.cloud.compute.v1.ResourcesSpecB\x04\xe8\xc7\x31\x01\x12N\n\x08metadata\x18\x08 \x03(\x0b\x32<.yandex.cloud.compute.v1.CreateInstanceRequest.MetadataEntry\x12G\n\x0e\x62oot_disk_spec\x18\t \x01(\x0b\x32).yandex.cloud.compute.v1.AttachedDiskSpecB\x04\xe8\xc7\x31\x01\x12P\n\x14secondary_disk_specs\x18\n \x03(\x0b\x32).yandex.cloud.compute.v1.AttachedDiskSpecB\x07\x82\xc8\x31\x03<=3\x12U\n\x17network_interface_specs\x18\x0b \x03(\x0b\x32-.yandex.cloud.compute.v1.NetworkInterfaceSpecB\x05\x82\xc8\x31\x01\x31\x12\x33\n\x08hostname\x18\x0c \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x44\n\x11scheduling_policy\x18\r \x01(\x0b\x32).yandex.cloud.compute.v1.SchedulingPolicy\x12\x1a\n\x12service_account_id\x18\x0e \x01(\t\x12\x42\n\x10network_settings\x18\x0f \x01(\x0b\x32(.yandex.cloud.compute.v1.NetworkSettings\x12\x42\n\x10placement_policy\x18\x10 \x01(\x0b\x32(.yandex.cloud.compute.v1.PlacementPolicy\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"7\n\x16\x43reateInstanceMetadata\x12\x1d\n\x0binstance_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"\xf3\x05\n\x15UpdateInstanceRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8b\x01\n\x06labels\x18\x05 \x03(\x0b\x32:.yandex.cloud.compute.v1.UpdateInstanceRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12\x13\n\x0bplatform_id\x18\x06 \x01(\t\x12>\n\x0eresources_spec\x18\x07 \x01(\x0b\x32&.yandex.cloud.compute.v1.ResourcesSpec\x12N\n\x08metadata\x18\x08 \x03(\x0b\x32<.yandex.cloud.compute.v1.UpdateInstanceRequest.MetadataEntry\x12\x1a\n\x12service_account_id\x18\t \x01(\t\x12\x42\n\x10network_settings\x18\n \x01(\x0b\x32(.yandex.cloud.compute.v1.NetworkSettings\x12\x42\n\x10placement_policy\x18\x0b \x01(\x0b\x32(.yandex.cloud.compute.v1.PlacementPolicy\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"-\n\x16UpdateInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\":\n\x15\x44\x65leteInstanceRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"-\n\x16\x44\x65leteInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"\xc7\x01\n\x1dUpdateInstanceMetadataRequest\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x0e\n\x06\x64\x65lete\x18\x02 \x03(\t\x12R\n\x06upsert\x18\x03 \x03(\x0b\x32\x42.yandex.cloud.compute.v1.UpdateInstanceMetadataRequest.UpsertEntry\x1a-\n\x0bUpsertEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"5\n\x1eUpdateInstanceMetadataMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"b\n\"GetInstanceSerialPortOutputRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x19\n\x04port\x18\x02 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x31,2,3,4\"7\n#GetInstanceSerialPortOutputResponse\x12\x10\n\x08\x63ontents\x18\x01 \x01(\t\"8\n\x13StopInstanceRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x14StopInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"9\n\x14StartInstanceRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\",\n\x15StartInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\";\n\x16RestartInstanceRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\".\n\x17RestartInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"\x8b\x01\n\x19\x41ttachInstanceDiskRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12K\n\x12\x61ttached_disk_spec\x18\x02 \x01(\x0b\x32).yandex.cloud.compute.v1.AttachedDiskSpecB\x04\xe8\xc7\x31\x01\"B\n\x1a\x41ttachInstanceDiskMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x0f\n\x07\x64isk_id\x18\x02 \x01(\t\"\x9a\x01\n\x19\x44\x65tachInstanceDiskRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1b\n\x07\x64isk_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12/\n\x0b\x64\x65vice_name\x18\x03 \x01(\tB\x18\xf2\xc7\x31\x14[a-z][a-z0-9-_]{,19}H\x00\x42\x0c\n\x04\x64isk\x12\x04\xc0\xc1\x31\x01\"B\n\x1a\x44\x65tachInstanceDiskMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x0f\n\x07\x64isk_id\x18\x02 \x01(\t\"\xb6\x01\n\x1d\x41\x64\x64InstanceOneToOneNatRequest\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x1f\n\x17network_interface_index\x18\x02 \x01(\t\x12\x18\n\x10internal_address\x18\x03 \x01(\t\x12\x45\n\x13one_to_one_nat_spec\x18\x04 \x01(\x0b\x32(.yandex.cloud.compute.v1.OneToOneNatSpec\"5\n\x1e\x41\x64\x64InstanceOneToOneNatMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"r\n RemoveInstanceOneToOneNatRequest\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\x12\x1f\n\x17network_interface_index\x18\x02 \x01(\t\x12\x18\n\x10internal_address\x18\x03 \x01(\t\"8\n!RemoveInstanceOneToOneNatMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"\x80\x01\n\x1dListInstanceOperationsRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"p\n\x1eListInstanceOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xc2\x01\n\rResourcesSpec\x12&\n\x06memory\x18\x01 \x01(\x03\x42\x16\xe8\xc7\x31\x01\xfa\xc7\x31\x0e<=274877906944\x12\x44\n\x05\x63ores\x18\x02 \x01(\x03\x42\x35\xe8\xc7\x31\x01\xfa\xc7\x31-1,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32\x12(\n\rcore_fraction\x18\x03 \x01(\x03\x42\x11\xfa\xc7\x31\r0,5,20,50,100\x12\x19\n\x04gpus\x18\x04 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30,1,2,4\"\xb4\x04\n\x10\x41ttachedDiskSpec\x12<\n\x04mode\x18\x01 \x01(\x0e\x32..yandex.cloud.compute.v1.AttachedDiskSpec.Mode\x12-\n\x0b\x64\x65vice_name\x18\x02 \x01(\tB\x18\xf2\xc7\x31\x14[a-z][a-z0-9-_]{,19}\x12\x13\n\x0b\x61uto_delete\x18\x03 \x01(\x08\x12G\n\tdisk_spec\x18\x04 \x01(\x0b\x32\x32.yandex.cloud.compute.v1.AttachedDiskSpec.DiskSpecH\x00\x12\x1b\n\x07\x64isk_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x1a\xec\x01\n\x08\x44iskSpec\x12/\n\x04name\x18\x01 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x19\n\x07type_id\x18\x03 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12+\n\x04size\x18\x04 \x01(\x03\x42\x1d\xe8\xc7\x31\x01\xfa\xc7\x31\x15\x34\x31\x39\x34\x33\x30\x34-4398046511104\x12\x1c\n\x08image_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1f\n\x0bsnapshot_id\x18\x06 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x42\x08\n\x06source\";\n\x04Mode\x12\x14\n\x10MODE_UNSPECIFIED\x10\x00\x12\r\n\tREAD_ONLY\x10\x01\x12\x0e\n\nREAD_WRITE\x10\x02\x42\x0c\n\x04\x64isk\x12\x04\xc0\xc1\x31\x01\"\xd3\x01\n\x14NetworkInterfaceSpec\x12\x1f\n\tsubnet_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12L\n\x17primary_v4_address_spec\x18\x02 \x01(\x0b\x32+.yandex.cloud.compute.v1.PrimaryAddressSpec\x12L\n\x17primary_v6_address_spec\x18\x03 \x01(\x0b\x32+.yandex.cloud.compute.v1.PrimaryAddressSpec\"l\n\x12PrimaryAddressSpec\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x45\n\x13one_to_one_nat_spec\x18\x02 \x01(\x0b\x32(.yandex.cloud.compute.v1.OneToOneNatSpec\"Z\n\x0fOneToOneNatSpec\x12\x36\n\nip_version\x18\x01 \x01(\x0e\x32\".yandex.cloud.compute.v1.IpVersion\x12\x0f\n\x07\x61\x64\x64ress\x18\x02 \x01(\t*#\n\x0cInstanceView\x12\t\n\x05\x42\x41SIC\x10\x00\x12\x08\n\x04\x46ULL\x10\x01\x32\xaf\x16\n\x0fInstanceService\x12\x82\x01\n\x03Get\x12+.yandex.cloud.compute.v1.GetInstanceRequest\x1a!.yandex.cloud.compute.v1.Instance\"+\x82\xd3\xe4\x93\x02%\x12#/compute/v1/instances/{instance_id}\x12\x84\x01\n\x04List\x12-.yandex.cloud.compute.v1.ListInstancesRequest\x1a..yandex.cloud.compute.v1.ListInstancesResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/compute/v1/instances\x12\xa3\x01\n\x06\x43reate\x12..yandex.cloud.compute.v1.CreateInstanceRequest\x1a!.yandex.cloud.operation.Operation\"F\x82\xd3\xe4\x93\x02\x1a\"\x15/compute/v1/instances:\x01*\xb2\xd2*\"\n\x16\x43reateInstanceMetadata\x12\x08Instance\x12\xb1\x01\n\x06Update\x12..yandex.cloud.compute.v1.UpdateInstanceRequest\x1a!.yandex.cloud.operation.Operation\"T\x82\xd3\xe4\x93\x02(2#/compute/v1/instances/{instance_id}:\x01*\xb2\xd2*\"\n\x16UpdateInstanceMetadata\x12\x08Instance\x12\xbb\x01\n\x06\x44\x65lete\x12..yandex.cloud.compute.v1.DeleteInstanceRequest\x1a!.yandex.cloud.operation.Operation\"^\x82\xd3\xe4\x93\x02%*#/compute/v1/instances/{instance_id}\xb2\xd2*/\n\x16\x44\x65leteInstanceMetadata\x12\x15google.protobuf.Empty\x12\xd8\x01\n\x0eUpdateMetadata\x12\x36.yandex.cloud.compute.v1.UpdateInstanceMetadataRequest\x1a!.yandex.cloud.operation.Operation\"k\x82\xd3\xe4\x93\x02\x37\"2/compute/v1/instances/{instance_id}/updateMetadata:\x01*\xb2\xd2**\n\x1eUpdateInstanceMetadataMetadata\x12\x08Instance\x12\xce\x01\n\x13GetSerialPortOutput\x12;.yandex.cloud.compute.v1.GetInstanceSerialPortOutputRequest\x1a<.yandex.cloud.compute.v1.GetInstanceSerialPortOutputResponse\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/compute/v1/instances/{instance_id}:serialPortOutput\x12\xba\x01\n\x04Stop\x12,.yandex.cloud.compute.v1.StopInstanceRequest\x1a!.yandex.cloud.operation.Operation\"a\x82\xd3\xe4\x93\x02*\"(/compute/v1/instances/{instance_id}:stop\xb2\xd2*-\n\x14StopInstanceMetadata\x12\x15google.protobuf.Empty\x12\xb1\x01\n\x05Start\x12-.yandex.cloud.compute.v1.StartInstanceRequest\x1a!.yandex.cloud.operation.Operation\"V\x82\xd3\xe4\x93\x02+\")/compute/v1/instances/{instance_id}:start\xb2\xd2*!\n\x15StartInstanceMetadata\x12\x08Instance\x12\xc6\x01\n\x07Restart\x12/.yandex.cloud.compute.v1.RestartInstanceRequest\x1a!.yandex.cloud.operation.Operation\"g\x82\xd3\xe4\x93\x02-\"+/compute/v1/instances/{instance_id}:restart\xb2\xd2*0\n\x17RestartInstanceMetadata\x12\x15google.protobuf.Empty\x12\xc8\x01\n\nAttachDisk\x12\x32.yandex.cloud.compute.v1.AttachInstanceDiskRequest\x1a!.yandex.cloud.operation.Operation\"c\x82\xd3\xe4\x93\x02\x33\"./compute/v1/instances/{instance_id}:attachDisk:\x01*\xb2\xd2*&\n\x1a\x41ttachInstanceDiskMetadata\x12\x08Instance\x12\xc8\x01\n\nDetachDisk\x12\x32.yandex.cloud.compute.v1.DetachInstanceDiskRequest\x1a!.yandex.cloud.operation.Operation\"c\x82\xd3\xe4\x93\x02\x33\"./compute/v1/instances/{instance_id}:detachDisk:\x01*\xb2\xd2*&\n\x1a\x44\x65tachInstanceDiskMetadata\x12\x08Instance\x12\xd8\x01\n\x0e\x41\x64\x64OneToOneNat\x12\x36.yandex.cloud.compute.v1.AddInstanceOneToOneNatRequest\x1a!.yandex.cloud.operation.Operation\"k\x82\xd3\xe4\x93\x02\x37\"2/compute/v1/instances/{instance_id}/addOneToOneNat:\x01*\xb2\xd2**\n\x1e\x41\x64\x64InstanceOneToOneNatMetadata\x12\x08Instance\x12\xe4\x01\n\x11RemoveOneToOneNat\x12\x39.yandex.cloud.compute.v1.RemoveInstanceOneToOneNatRequest\x1a!.yandex.cloud.operation.Operation\"q\x82\xd3\xe4\x93\x02:\"5/compute/v1/instances/{instance_id}/removeOneToOneNat:\x01*\xb2\xd2*-\n!RemoveInstanceOneToOneNatMetadata\x12\x08Instance\x12\xb9\x01\n\x0eListOperations\x12\x36.yandex.cloud.compute.v1.ListInstanceOperationsRequest\x1a\x37.yandex.cloud.compute.v1.ListInstanceOperationsResponse\"6\x82\xd3\xe4\x93\x02\x30\x12./compute/v1/instances/{instance_id}/operationsBb\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_compute_dot_v1_dot_instance__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -48,8 +48,8 @@ _INSTANCEVIEW = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5310,
-  serialized_end=5345,
+  serialized_start=5735,
+  serialized_end=5770,
 )
 _sym_db.RegisterEnumDescriptor(_INSTANCEVIEW)
 
@@ -79,8 +79,8 @@ _ATTACHEDDISKSPEC_MODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4830,
-  serialized_end=4889,
+  serialized_start=5244,
+  serialized_end=5303,
 )
 _sym_db.RegisterEnumDescriptor(_ATTACHEDDISKSPEC_MODE)
 
@@ -1252,6 +1252,165 @@ _DETACHINSTANCEDISKMETADATA = _descriptor.Descriptor(
 )
 
 
+_ADDINSTANCEONETOONENATREQUEST = _descriptor.Descriptor(
+  name='AddInstanceOneToOneNatRequest',
+  full_name='yandex.cloud.compute.v1.AddInstanceOneToOneNatRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='instance_id', full_name='yandex.cloud.compute.v1.AddInstanceOneToOneNatRequest.instance_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='network_interface_index', full_name='yandex.cloud.compute.v1.AddInstanceOneToOneNatRequest.network_interface_index', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='internal_address', full_name='yandex.cloud.compute.v1.AddInstanceOneToOneNatRequest.internal_address', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='one_to_one_nat_spec', full_name='yandex.cloud.compute.v1.AddInstanceOneToOneNatRequest.one_to_one_nat_spec', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3897,
+  serialized_end=4079,
+)
+
+
+_ADDINSTANCEONETOONENATMETADATA = _descriptor.Descriptor(
+  name='AddInstanceOneToOneNatMetadata',
+  full_name='yandex.cloud.compute.v1.AddInstanceOneToOneNatMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='instance_id', full_name='yandex.cloud.compute.v1.AddInstanceOneToOneNatMetadata.instance_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4081,
+  serialized_end=4134,
+)
+
+
+_REMOVEINSTANCEONETOONENATREQUEST = _descriptor.Descriptor(
+  name='RemoveInstanceOneToOneNatRequest',
+  full_name='yandex.cloud.compute.v1.RemoveInstanceOneToOneNatRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='instance_id', full_name='yandex.cloud.compute.v1.RemoveInstanceOneToOneNatRequest.instance_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='network_interface_index', full_name='yandex.cloud.compute.v1.RemoveInstanceOneToOneNatRequest.network_interface_index', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='internal_address', full_name='yandex.cloud.compute.v1.RemoveInstanceOneToOneNatRequest.internal_address', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4136,
+  serialized_end=4250,
+)
+
+
+_REMOVEINSTANCEONETOONENATMETADATA = _descriptor.Descriptor(
+  name='RemoveInstanceOneToOneNatMetadata',
+  full_name='yandex.cloud.compute.v1.RemoveInstanceOneToOneNatMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='instance_id', full_name='yandex.cloud.compute.v1.RemoveInstanceOneToOneNatMetadata.instance_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4252,
+  serialized_end=4308,
+)
+
+
 _LISTINSTANCEOPERATIONSREQUEST = _descriptor.Descriptor(
   name='ListInstanceOperationsRequest',
   full_name='yandex.cloud.compute.v1.ListInstanceOperationsRequest',
@@ -1292,8 +1451,8 @@ _LISTINSTANCEOPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3897,
-  serialized_end=4025,
+  serialized_start=4311,
+  serialized_end=4439,
 )
 
 
@@ -1330,8 +1489,8 @@ _LISTINSTANCEOPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4027,
-  serialized_end=4139,
+  serialized_start=4441,
+  serialized_end=4553,
 )
 
 
@@ -1382,8 +1541,8 @@ _RESOURCESSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4142,
-  serialized_end=4336,
+  serialized_start=4556,
+  serialized_end=4750,
 )
 
 
@@ -1451,8 +1610,8 @@ _ATTACHEDDISKSPEC_DISKSPEC = _descriptor.Descriptor(
       name='source', full_name='yandex.cloud.compute.v1.AttachedDiskSpec.DiskSpec.source',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=4592,
-  serialized_end=4828,
+  serialized_start=5006,
+  serialized_end=5242,
 )
 
 _ATTACHEDDISKSPEC = _descriptor.Descriptor(
@@ -1513,8 +1672,8 @@ _ATTACHEDDISKSPEC = _descriptor.Descriptor(
       name='disk', full_name='yandex.cloud.compute.v1.AttachedDiskSpec.disk',
       index=0, containing_type=None, fields=[], serialized_options=_b('\300\3011\001')),
   ],
-  serialized_start=4339,
-  serialized_end=4903,
+  serialized_start=4753,
+  serialized_end=5317,
 )
 
 
@@ -1558,8 +1717,8 @@ _NETWORKINTERFACESPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4906,
-  serialized_end=5117,
+  serialized_start=5320,
+  serialized_end=5531,
 )
 
 
@@ -1596,8 +1755,8 @@ _PRIMARYADDRESSSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5119,
-  serialized_end=5227,
+  serialized_start=5533,
+  serialized_end=5641,
 )
 
 
@@ -1614,7 +1773,14 @@ _ONETOONENATSPEC = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='address', full_name='yandex.cloud.compute.v1.OneToOneNatSpec.address', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1627,8 +1793,8 @@ _ONETOONENATSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5229,
-  serialized_end=5308,
+  serialized_start=5643,
+  serialized_end=5733,
 )
 
 _GETINSTANCEREQUEST.fields_by_name['view'].enum_type = _INSTANCEVIEW
@@ -1661,6 +1827,7 @@ _DETACHINSTANCEDISKREQUEST.fields_by_name['disk_id'].containing_oneof = _DETACHI
 _DETACHINSTANCEDISKREQUEST.oneofs_by_name['disk'].fields.append(
   _DETACHINSTANCEDISKREQUEST.fields_by_name['device_name'])
 _DETACHINSTANCEDISKREQUEST.fields_by_name['device_name'].containing_oneof = _DETACHINSTANCEDISKREQUEST.oneofs_by_name['disk']
+_ADDINSTANCEONETOONENATREQUEST.fields_by_name['one_to_one_nat_spec'].message_type = _ONETOONENATSPEC
 _LISTINSTANCEOPERATIONSRESPONSE.fields_by_name['operations'].message_type = yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION
 _ATTACHEDDISKSPEC_DISKSPEC.containing_type = _ATTACHEDDISKSPEC
 _ATTACHEDDISKSPEC_DISKSPEC.oneofs_by_name['source'].fields.append(
@@ -1705,6 +1872,10 @@ DESCRIPTOR.message_types_by_name['AttachInstanceDiskRequest'] = _ATTACHINSTANCED
 DESCRIPTOR.message_types_by_name['AttachInstanceDiskMetadata'] = _ATTACHINSTANCEDISKMETADATA
 DESCRIPTOR.message_types_by_name['DetachInstanceDiskRequest'] = _DETACHINSTANCEDISKREQUEST
 DESCRIPTOR.message_types_by_name['DetachInstanceDiskMetadata'] = _DETACHINSTANCEDISKMETADATA
+DESCRIPTOR.message_types_by_name['AddInstanceOneToOneNatRequest'] = _ADDINSTANCEONETOONENATREQUEST
+DESCRIPTOR.message_types_by_name['AddInstanceOneToOneNatMetadata'] = _ADDINSTANCEONETOONENATMETADATA
+DESCRIPTOR.message_types_by_name['RemoveInstanceOneToOneNatRequest'] = _REMOVEINSTANCEONETOONENATREQUEST
+DESCRIPTOR.message_types_by_name['RemoveInstanceOneToOneNatMetadata'] = _REMOVEINSTANCEONETOONENATMETADATA
 DESCRIPTOR.message_types_by_name['ListInstanceOperationsRequest'] = _LISTINSTANCEOPERATIONSREQUEST
 DESCRIPTOR.message_types_by_name['ListInstanceOperationsResponse'] = _LISTINSTANCEOPERATIONSRESPONSE
 DESCRIPTOR.message_types_by_name['ResourcesSpec'] = _RESOURCESSPEC
@@ -1916,6 +2087,34 @@ DetachInstanceDiskMetadata = _reflection.GeneratedProtocolMessageType('DetachIns
   })
 _sym_db.RegisterMessage(DetachInstanceDiskMetadata)
 
+AddInstanceOneToOneNatRequest = _reflection.GeneratedProtocolMessageType('AddInstanceOneToOneNatRequest', (_message.Message,), {
+  'DESCRIPTOR' : _ADDINSTANCEONETOONENATREQUEST,
+  '__module__' : 'yandex.cloud.compute.v1.instance_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.AddInstanceOneToOneNatRequest)
+  })
+_sym_db.RegisterMessage(AddInstanceOneToOneNatRequest)
+
+AddInstanceOneToOneNatMetadata = _reflection.GeneratedProtocolMessageType('AddInstanceOneToOneNatMetadata', (_message.Message,), {
+  'DESCRIPTOR' : _ADDINSTANCEONETOONENATMETADATA,
+  '__module__' : 'yandex.cloud.compute.v1.instance_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.AddInstanceOneToOneNatMetadata)
+  })
+_sym_db.RegisterMessage(AddInstanceOneToOneNatMetadata)
+
+RemoveInstanceOneToOneNatRequest = _reflection.GeneratedProtocolMessageType('RemoveInstanceOneToOneNatRequest', (_message.Message,), {
+  'DESCRIPTOR' : _REMOVEINSTANCEONETOONENATREQUEST,
+  '__module__' : 'yandex.cloud.compute.v1.instance_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.RemoveInstanceOneToOneNatRequest)
+  })
+_sym_db.RegisterMessage(RemoveInstanceOneToOneNatRequest)
+
+RemoveInstanceOneToOneNatMetadata = _reflection.GeneratedProtocolMessageType('RemoveInstanceOneToOneNatMetadata', (_message.Message,), {
+  'DESCRIPTOR' : _REMOVEINSTANCEONETOONENATMETADATA,
+  '__module__' : 'yandex.cloud.compute.v1.instance_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.RemoveInstanceOneToOneNatMetadata)
+  })
+_sym_db.RegisterMessage(RemoveInstanceOneToOneNatMetadata)
+
 ListInstanceOperationsRequest = _reflection.GeneratedProtocolMessageType('ListInstanceOperationsRequest', (_message.Message,), {
   'DESCRIPTOR' : _LISTINSTANCEOPERATIONSREQUEST,
   '__module__' : 'yandex.cloud.compute.v1.instance_service_pb2'
@@ -2030,7 +2229,6 @@ _ATTACHEDDISKSPEC.oneofs_by_name['disk']._options = None
 _ATTACHEDDISKSPEC.fields_by_name['device_name']._options = None
 _ATTACHEDDISKSPEC.fields_by_name['disk_id']._options = None
 _NETWORKINTERFACESPEC.fields_by_name['subnet_id']._options = None
-_ONETOONENATSPEC.fields_by_name['ip_version']._options = None
 
 _INSTANCESERVICE = _descriptor.ServiceDescriptor(
   name='InstanceService',
@@ -2038,8 +2236,8 @@ _INSTANCESERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=5348,
-  serialized_end=7761,
+  serialized_start=5773,
+  serialized_end=8636,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
@@ -2150,9 +2348,27 @@ _INSTANCESERVICE = _descriptor.ServiceDescriptor(
     serialized_options=_b('\202\323\344\223\0023\"./compute/v1/instances/{instance_id}:detachDisk:\001*\262\322*&\n\032DetachInstanceDiskMetadata\022\010Instance'),
   ),
   _descriptor.MethodDescriptor(
+    name='AddOneToOneNat',
+    full_name='yandex.cloud.compute.v1.InstanceService.AddOneToOneNat',
+    index=12,
+    containing_service=None,
+    input_type=_ADDINSTANCEONETOONENATREQUEST,
+    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
+    serialized_options=_b('\202\323\344\223\0027\"2/compute/v1/instances/{instance_id}/addOneToOneNat:\001*\262\322**\n\036AddInstanceOneToOneNatMetadata\022\010Instance'),
+  ),
+  _descriptor.MethodDescriptor(
+    name='RemoveOneToOneNat',
+    full_name='yandex.cloud.compute.v1.InstanceService.RemoveOneToOneNat',
+    index=13,
+    containing_service=None,
+    input_type=_REMOVEINSTANCEONETOONENATREQUEST,
+    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
+    serialized_options=_b('\202\323\344\223\002:\"5/compute/v1/instances/{instance_id}/removeOneToOneNat:\001*\262\322*-\n!RemoveInstanceOneToOneNatMetadata\022\010Instance'),
+  ),
+  _descriptor.MethodDescriptor(
     name='ListOperations',
     full_name='yandex.cloud.compute.v1.InstanceService.ListOperations',
-    index=12,
+    index=14,
     containing_service=None,
     input_type=_LISTINSTANCEOPERATIONSREQUEST,
     output_type=_LISTINSTANCEOPERATIONSRESPONSE,

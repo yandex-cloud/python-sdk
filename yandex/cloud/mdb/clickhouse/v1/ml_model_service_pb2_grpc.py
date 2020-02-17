@@ -7,8 +7,8 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class MlModelServiceStub(object):
-  # missing associated documentation comment in .proto file
-  pass
+  """A set of methods for managing machine learning models.
+  """
 
   def __init__(self, channel):
     """Constructor.
@@ -44,40 +44,42 @@ class MlModelServiceStub(object):
 
 
 class MlModelServiceServicer(object):
-  # missing associated documentation comment in .proto file
-  pass
+  """A set of methods for managing machine learning models.
+  """
 
   def Get(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Returns the specified machine learning model.
+
+    To get the list of all available models, make a [List] request.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def List(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Retrieves the list of machine learning models in the specified cluster.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def Create(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Creates a machine learning model in the specified cluster.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def Update(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Updates the specified machine learning model.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
   def Delete(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Deletes the specified machine learning model.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')

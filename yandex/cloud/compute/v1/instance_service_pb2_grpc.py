@@ -76,6 +76,16 @@ class InstanceServiceStub(object):
         request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.DetachInstanceDiskRequest.SerializeToString,
         response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
         )
+    self.AddOneToOneNat = channel.unary_unary(
+        '/yandex.cloud.compute.v1.InstanceService/AddOneToOneNat',
+        request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.AddInstanceOneToOneNatRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+        )
+    self.RemoveOneToOneNat = channel.unary_unary(
+        '/yandex.cloud.compute.v1.InstanceService/RemoveOneToOneNat',
+        request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.RemoveInstanceOneToOneNatRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+        )
     self.ListOperations = channel.unary_unary(
         '/yandex.cloud.compute.v1.InstanceService/ListOperations',
         request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.ListInstanceOperationsRequest.SerializeToString,
@@ -176,6 +186,21 @@ class InstanceServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def AddOneToOneNat(self, request, context):
+    """net
+
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def RemoveOneToOneNat(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def ListOperations(self, request, context):
     """Lists operations for the specified instance.
     """
@@ -244,6 +269,16 @@ def add_InstanceServiceServicer_to_server(servicer, server):
       'DetachDisk': grpc.unary_unary_rpc_method_handler(
           servicer.DetachDisk,
           request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.DetachInstanceDiskRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+      ),
+      'AddOneToOneNat': grpc.unary_unary_rpc_method_handler(
+          servicer.AddOneToOneNat,
+          request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.AddInstanceOneToOneNatRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+      ),
+      'RemoveOneToOneNat': grpc.unary_unary_rpc_method_handler(
+          servicer.RemoveOneToOneNat,
+          request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.RemoveInstanceOneToOneNatRequest.FromString,
           response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
       ),
       'ListOperations': grpc.unary_unary_rpc_method_handler(
