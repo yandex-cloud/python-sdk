@@ -13,6 +13,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from yandex.cloud.k8s.v1 import cluster_pb2 as yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__pb2
 
 
@@ -21,9 +22,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.k8s.v1',
   syntax='proto3',
   serialized_options=_b('\n\027yandex.cloud.api.k8s.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/k8s/v1;k8s'),
-  serialized_pb=_b('\n)yandex/cloud/k8s/v1/version_service.proto\x12\x13yandex.cloud.k8s.v1\x1a!yandex/cloud/k8s/v1/cluster.proto\"\x15\n\x13ListVersionsRequest\"Z\n\x14ListVersionsResponse\x12\x42\n\x12\x61vailable_versions\x18\x01 \x03(\x0b\x32&.yandex.cloud.k8s.v1.AvailableVersions\"c\n\x11\x41vailableVersions\x12<\n\x0frelease_channel\x18\x01 \x01(\x0e\x32#.yandex.cloud.k8s.v1.ReleaseChannel\x12\x10\n\x08versions\x18\x02 \x03(\t2m\n\x0eVersionService\x12[\n\x04List\x12(.yandex.cloud.k8s.v1.ListVersionsRequest\x1a).yandex.cloud.k8s.v1.ListVersionsResponseBV\n\x17yandex.cloud.api.k8s.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/k8s/v1;k8sb\x06proto3')
+  serialized_pb=_b('\n)yandex/cloud/k8s/v1/version_service.proto\x12\x13yandex.cloud.k8s.v1\x1a\x1cgoogle/api/annotations.proto\x1a!yandex/cloud/k8s/v1/cluster.proto\"\x15\n\x13ListVersionsRequest\"Z\n\x14ListVersionsResponse\x12\x42\n\x12\x61vailable_versions\x18\x01 \x03(\x0b\x32&.yandex.cloud.k8s.v1.AvailableVersions\"c\n\x11\x41vailableVersions\x12<\n\x0frelease_channel\x18\x01 \x01(\x0e\x32#.yandex.cloud.k8s.v1.ReleaseChannel\x12\x10\n\x08versions\x18\x02 \x03(\t2\x97\x01\n\x0eVersionService\x12\x84\x01\n\x04List\x12(.yandex.cloud.k8s.v1.ListVersionsRequest\x1a).yandex.cloud.k8s.v1.ListVersionsResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/managed-kubernetes/v1/versionsBV\n\x17yandex.cloud.api.k8s.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/k8s/v1;k8sb\x06proto3')
   ,
-  dependencies=[yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__pb2.DESCRIPTOR,])
 
 
 
@@ -47,8 +48,8 @@ _LISTVERSIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=101,
-  serialized_end=122,
+  serialized_start=131,
+  serialized_end=152,
 )
 
 
@@ -78,8 +79,8 @@ _LISTVERSIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=124,
-  serialized_end=214,
+  serialized_start=154,
+  serialized_end=244,
 )
 
 
@@ -116,8 +117,8 @@ _AVAILABLEVERSIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=216,
-  serialized_end=315,
+  serialized_start=246,
+  serialized_end=345,
 )
 
 _LISTVERSIONSRESPONSE.fields_by_name['available_versions'].message_type = _AVAILABLEVERSIONS
@@ -157,8 +158,8 @@ _VERSIONSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=317,
-  serialized_end=426,
+  serialized_start=348,
+  serialized_end=499,
   methods=[
   _descriptor.MethodDescriptor(
     name='List',
@@ -167,7 +168,7 @@ _VERSIONSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTVERSIONSREQUEST,
     output_type=_LISTVERSIONSRESPONSE,
-    serialized_options=None,
+    serialized_options=_b('\202\323\344\223\002!\022\037/managed-kubernetes/v1/versions'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_VERSIONSERVICE)

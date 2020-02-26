@@ -5,8 +5,8 @@ from yandex.cloud.k8s.v1 import version_service_pb2 as yandex_dot_cloud_dot_k8s_
 
 
 class VersionServiceStub(object):
-  # missing associated documentation comment in .proto file
-  pass
+  """A set of methods for managing Kubernetes versions.
+  """
 
   def __init__(self, channel):
     """Constructor.
@@ -22,12 +22,12 @@ class VersionServiceStub(object):
 
 
 class VersionServiceServicer(object):
-  # missing associated documentation comment in .proto file
-  pass
+  """A set of methods for managing Kubernetes versions.
+  """
 
   def List(self, request, context):
-    # missing associated documentation comment in .proto file
-    pass
+    """Retrieves the list of versions in the specified release channel.
+    """
     context.set_code(grpc.StatusCode.UNIMPLEMENTED)
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
