@@ -25,7 +25,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.k8s.v1',
   syntax='proto3',
   serialized_options=_b('\n\027yandex.cloud.api.k8s.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/k8s/v1;k8s'),
-  serialized_pb=_b('\n$yandex/cloud/k8s/v1/node_group.proto\x12\x13yandex.cloud.k8s.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a%yandex/cloud/k8s/v1/maintenance.proto\x1a!yandex/cloud/k8s/v1/version.proto\x1a\x1dyandex/cloud/validation.proto\"\xbd\x06\n\tNodeGroup\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12:\n\x06labels\x18\x06 \x03(\x0b\x32*.yandex.cloud.k8s.v1.NodeGroup.LabelsEntry\x12\x35\n\x06status\x18\x07 \x01(\x0e\x32%.yandex.cloud.k8s.v1.NodeGroup.Status\x12\x38\n\rnode_template\x18\x08 \x01(\x0b\x32!.yandex.cloud.k8s.v1.NodeTemplate\x12\x36\n\x0cscale_policy\x18\t \x01(\x0b\x32 .yandex.cloud.k8s.v1.ScalePolicy\x12I\n\x11\x61llocation_policy\x18\n \x01(\x0b\x32..yandex.cloud.k8s.v1.NodeGroupAllocationPolicy\x12\x19\n\x11instance_group_id\x18\x0b \x01(\t\x12\x14\n\x0cnode_version\x18\x0c \x01(\t\x12\x36\n\x0cversion_info\x18\r \x01(\x0b\x32 .yandex.cloud.k8s.v1.VersionInfo\x12K\n\x12maintenance_policy\x18\x0e \x01(\x0b\x32/.yandex.cloud.k8s.v1.NodeGroupMaintenancePolicy\x12\x1e\n\x16\x61llowed_unsafe_sysctls\x18\x0f \x03(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x87\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x10\n\x0cPROVISIONING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\x0f\n\x0bRECONCILING\x10\x03\x12\x0c\n\x08STOPPING\x10\x04\x12\x0b\n\x07STOPPED\x10\x05\x12\x0c\n\x08\x44\x45LETING\x10\x06\x12\x0c\n\x08STARTING\x10\x07\"\xc1\x03\n\x0cNodeTemplate\x12\x13\n\x0bplatform_id\x18\x01 \x01(\t\x12:\n\x0eresources_spec\x18\x02 \x01(\x0b\x32\".yandex.cloud.k8s.v1.ResourcesSpec\x12\x35\n\x0e\x62oot_disk_spec\x18\x03 \x01(\x0b\x32\x1d.yandex.cloud.k8s.v1.DiskSpec\x12w\n\x08metadata\x18\x04 \x03(\x0b\x32/.yandex.cloud.k8s.v1.NodeTemplate.MetadataEntryB4\x82\xc8\x31\x04<=64\x8a\xc8\x31\x08<=131072\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12=\n\x0fv4_address_spec\x18\x05 \x01(\x0b\x32$.yandex.cloud.k8s.v1.NodeAddressSpec\x12@\n\x11scheduling_policy\x18\x06 \x01(\x0b\x32%.yandex.cloud.k8s.v1.SchedulingPolicy\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"T\n\x0fNodeAddressSpec\x12\x41\n\x13one_to_one_nat_spec\x18\x01 \x01(\x0b\x32$.yandex.cloud.k8s.v1.OneToOneNatSpec\"E\n\x0fOneToOneNatSpec\x12\x32\n\nip_version\x18\x01 \x01(\x0e\x32\x1e.yandex.cloud.k8s.v1.IpVersion\"\xa1\x01\n\rResourcesSpec\x12\"\n\x06memory\x18\x01 \x01(\x03\x42\x12\xfa\xc7\x31\x0e\x30-274877906944\x12\x42\n\x05\x63ores\x18\x02 \x01(\x03\x42\x33\xfa\xc7\x31/0,1,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32\x12(\n\rcore_fraction\x18\x03 \x01(\x03\x42\x11\xfa\xc7\x31\r0,5,20,50,100\"f\n\x08\x44iskSpec\x12\x32\n\x0c\x64isk_type_id\x18\x01 \x01(\tB\x1c\xf2\xc7\x31\x18|network-ssd|network-hdd\x12&\n\tdisk_size\x18\x02 \x01(\x03\x42\x13\xfa\xc7\x31\x0f\x30-4398046511104\"\xb6\x02\n\x0bScalePolicy\x12\x42\n\x0b\x66ixed_scale\x18\x01 \x01(\x0b\x32+.yandex.cloud.k8s.v1.ScalePolicy.FixedScaleH\x00\x12@\n\nauto_scale\x18\x02 \x01(\x0b\x32*.yandex.cloud.k8s.v1.ScalePolicy.AutoScaleH\x00\x1a%\n\nFixedScale\x12\x17\n\x04size\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x1a\x66\n\tAutoScale\x12\x1b\n\x08min_size\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12\x1b\n\x08max_size\x18\x02 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12\x1f\n\x0cinitial_size\x18\x03 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100B\x12\n\nscale_type\x12\x04\xc0\xc1\x31\x01\"V\n\x19NodeGroupAllocationPolicy\x12\x39\n\tlocations\x18\x01 \x03(\x0b\x32&.yandex.cloud.k8s.v1.NodeGroupLocation\"=\n\x11NodeGroupLocation\x12\x15\n\x07zone_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tsubnet_id\x18\x02 \x01(\t\"\'\n\x10SchedulingPolicy\x12\x13\n\x0bpreemptible\x18\x01 \x01(\x08\"\x8b\x01\n\x1aNodeGroupMaintenancePolicy\x12\x14\n\x0c\x61uto_upgrade\x18\x01 \x01(\x08\x12\x13\n\x0b\x61uto_repair\x18\x02 \x01(\x08\x12\x42\n\x12maintenance_window\x18\x03 \x01(\x0b\x32&.yandex.cloud.k8s.v1.MaintenanceWindow*;\n\tIpVersion\x12\x1a\n\x16IP_VERSION_UNSPECIFIED\x10\x00\x12\x08\n\x04IPV4\x10\x01\x12\x08\n\x04IPV6\x10\x02\x42V\n\x17yandex.cloud.api.k8s.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/k8s/v1;k8sb\x06proto3')
+  serialized_pb=_b('\n$yandex/cloud/k8s/v1/node_group.proto\x12\x13yandex.cloud.k8s.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a%yandex/cloud/k8s/v1/maintenance.proto\x1a!yandex/cloud/k8s/v1/version.proto\x1a\x1dyandex/cloud/validation.proto\"\xe6\x07\n\tNodeGroup\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12:\n\x06labels\x18\x06 \x03(\x0b\x32*.yandex.cloud.k8s.v1.NodeGroup.LabelsEntry\x12\x35\n\x06status\x18\x07 \x01(\x0e\x32%.yandex.cloud.k8s.v1.NodeGroup.Status\x12\x38\n\rnode_template\x18\x08 \x01(\x0b\x32!.yandex.cloud.k8s.v1.NodeTemplate\x12\x36\n\x0cscale_policy\x18\t \x01(\x0b\x32 .yandex.cloud.k8s.v1.ScalePolicy\x12I\n\x11\x61llocation_policy\x18\n \x01(\x0b\x32..yandex.cloud.k8s.v1.NodeGroupAllocationPolicy\x12\x19\n\x11instance_group_id\x18\x0b \x01(\t\x12\x14\n\x0cnode_version\x18\x0c \x01(\t\x12\x36\n\x0cversion_info\x18\r \x01(\x0b\x32 .yandex.cloud.k8s.v1.VersionInfo\x12K\n\x12maintenance_policy\x18\x0e \x01(\x0b\x32/.yandex.cloud.k8s.v1.NodeGroupMaintenancePolicy\x12\x1e\n\x16\x61llowed_unsafe_sysctls\x18\x0f \x03(\t\x12/\n\x0bnode_taints\x18\x10 \x03(\x0b\x32\x1a.yandex.cloud.k8s.v1.Taint\x12\x43\n\x0bnode_labels\x18\x11 \x03(\x0b\x32..yandex.cloud.k8s.v1.NodeGroup.NodeLabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x31\n\x0fNodeLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x87\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x10\n\x0cPROVISIONING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\x0f\n\x0bRECONCILING\x10\x03\x12\x0c\n\x08STOPPING\x10\x04\x12\x0b\n\x07STOPPED\x10\x05\x12\x0c\n\x08\x44\x45LETING\x10\x06\x12\x0c\n\x08STARTING\x10\x07\"\xc1\x03\n\x0cNodeTemplate\x12\x13\n\x0bplatform_id\x18\x01 \x01(\t\x12:\n\x0eresources_spec\x18\x02 \x01(\x0b\x32\".yandex.cloud.k8s.v1.ResourcesSpec\x12\x35\n\x0e\x62oot_disk_spec\x18\x03 \x01(\x0b\x32\x1d.yandex.cloud.k8s.v1.DiskSpec\x12w\n\x08metadata\x18\x04 \x03(\x0b\x32/.yandex.cloud.k8s.v1.NodeTemplate.MetadataEntryB4\x82\xc8\x31\x04<=64\x8a\xc8\x31\x08<=131072\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12=\n\x0fv4_address_spec\x18\x05 \x01(\x0b\x32$.yandex.cloud.k8s.v1.NodeAddressSpec\x12@\n\x11scheduling_policy\x18\x06 \x01(\x0b\x32%.yandex.cloud.k8s.v1.SchedulingPolicy\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"T\n\x0fNodeAddressSpec\x12\x41\n\x13one_to_one_nat_spec\x18\x01 \x01(\x0b\x32$.yandex.cloud.k8s.v1.OneToOneNatSpec\"E\n\x0fOneToOneNatSpec\x12\x32\n\nip_version\x18\x01 \x01(\x0e\x32\x1e.yandex.cloud.k8s.v1.IpVersion\"\xa1\x01\n\rResourcesSpec\x12\"\n\x06memory\x18\x01 \x01(\x03\x42\x12\xfa\xc7\x31\x0e\x30-274877906944\x12\x42\n\x05\x63ores\x18\x02 \x01(\x03\x42\x33\xfa\xc7\x31/0,1,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32\x12(\n\rcore_fraction\x18\x03 \x01(\x03\x42\x11\xfa\xc7\x31\r0,5,20,50,100\"f\n\x08\x44iskSpec\x12\x32\n\x0c\x64isk_type_id\x18\x01 \x01(\tB\x1c\xf2\xc7\x31\x18|network-ssd|network-hdd\x12&\n\tdisk_size\x18\x02 \x01(\x03\x42\x13\xfa\xc7\x31\x0f\x30-4398046511104\"\xb6\x02\n\x0bScalePolicy\x12\x42\n\x0b\x66ixed_scale\x18\x01 \x01(\x0b\x32+.yandex.cloud.k8s.v1.ScalePolicy.FixedScaleH\x00\x12@\n\nauto_scale\x18\x02 \x01(\x0b\x32*.yandex.cloud.k8s.v1.ScalePolicy.AutoScaleH\x00\x1a%\n\nFixedScale\x12\x17\n\x04size\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x1a\x66\n\tAutoScale\x12\x1b\n\x08min_size\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12\x1b\n\x08max_size\x18\x02 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12\x1f\n\x0cinitial_size\x18\x03 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100B\x12\n\nscale_type\x12\x04\xc0\xc1\x31\x01\"V\n\x19NodeGroupAllocationPolicy\x12\x39\n\tlocations\x18\x01 \x03(\x0b\x32&.yandex.cloud.k8s.v1.NodeGroupLocation\"=\n\x11NodeGroupLocation\x12\x15\n\x07zone_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tsubnet_id\x18\x02 \x01(\t\"\'\n\x10SchedulingPolicy\x12\x13\n\x0bpreemptible\x18\x01 \x01(\x08\"\x8b\x01\n\x1aNodeGroupMaintenancePolicy\x12\x14\n\x0c\x61uto_upgrade\x18\x01 \x01(\x08\x12\x13\n\x0b\x61uto_repair\x18\x02 \x01(\x08\x12\x42\n\x12maintenance_window\x18\x03 \x01(\x0b\x32&.yandex.cloud.k8s.v1.MaintenanceWindow\"\xb1\x01\n\x05Taint\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\x12\x31\n\x06\x65\x66\x66\x65\x63t\x18\x03 \x01(\x0e\x32!.yandex.cloud.k8s.v1.Taint.Effect\"Y\n\x06\x45\x66\x66\x65\x63t\x12\x16\n\x12\x45\x46\x46\x45\x43T_UNSPECIFIED\x10\x00\x12\x0f\n\x0bNO_SCHEDULE\x10\x01\x12\x16\n\x12PREFER_NO_SCHEDULE\x10\x02\x12\x0e\n\nNO_EXECUTE\x10\x03*;\n\tIpVersion\x12\x1a\n\x16IP_VERSION_UNSPECIFIED\x10\x00\x12\x08\n\x04IPV4\x10\x01\x12\x08\n\x04IPV6\x10\x02\x42V\n\x17yandex.cloud.api.k8s.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/k8s/v1;k8sb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_k8s_dot_v1_dot_maintenance__pb2.DESCRIPTOR,yandex_dot_cloud_dot_k8s_dot_v1_dot_version__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -50,8 +50,8 @@ _IPVERSION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2555,
-  serialized_end=2614,
+  serialized_start=2904,
+  serialized_end=2963,
 )
 _sym_db.RegisterEnumDescriptor(_IPVERSION)
 
@@ -102,10 +102,40 @@ _NODEGROUP_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=894,
-  serialized_end=1029,
+  serialized_start=1063,
+  serialized_end=1198,
 )
 _sym_db.RegisterEnumDescriptor(_NODEGROUP_STATUS)
+
+_TAINT_EFFECT = _descriptor.EnumDescriptor(
+  name='Effect',
+  full_name='yandex.cloud.k8s.v1.Taint.Effect',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='EFFECT_UNSPECIFIED', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='NO_SCHEDULE', index=1, number=1,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='PREFER_NO_SCHEDULE', index=2, number=2,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='NO_EXECUTE', index=3, number=3,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=2813,
+  serialized_end=2902,
+)
+_sym_db.RegisterEnumDescriptor(_TAINT_EFFECT)
 
 
 _NODEGROUP_LABELSENTRY = _descriptor.Descriptor(
@@ -141,8 +171,45 @@ _NODEGROUP_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=846,
-  serialized_end=891,
+  serialized_start=964,
+  serialized_end=1009,
+)
+
+_NODEGROUP_NODELABELSENTRY = _descriptor.Descriptor(
+  name='NodeLabelsEntry',
+  full_name='yandex.cloud.k8s.v1.NodeGroup.NodeLabelsEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='yandex.cloud.k8s.v1.NodeGroup.NodeLabelsEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='yandex.cloud.k8s.v1.NodeGroup.NodeLabelsEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=_b('8\001'),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1011,
+  serialized_end=1060,
 )
 
 _NODEGROUP = _descriptor.Descriptor(
@@ -257,10 +324,24 @@ _NODEGROUP = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='node_taints', full_name='yandex.cloud.k8s.v1.NodeGroup.node_taints', index=15,
+      number=16, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='node_labels', full_name='yandex.cloud.k8s.v1.NodeGroup.node_labels', index=16,
+      number=17, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
-  nested_types=[_NODEGROUP_LABELSENTRY, ],
+  nested_types=[_NODEGROUP_LABELSENTRY, _NODEGROUP_NODELABELSENTRY, ],
   enum_types=[
     _NODEGROUP_STATUS,
   ],
@@ -271,7 +352,7 @@ _NODEGROUP = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=200,
-  serialized_end=1029,
+  serialized_end=1198,
 )
 
 
@@ -308,8 +389,8 @@ _NODETEMPLATE_METADATAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1434,
-  serialized_end=1481,
+  serialized_start=1603,
+  serialized_end=1650,
 )
 
 _NODETEMPLATE = _descriptor.Descriptor(
@@ -373,8 +454,8 @@ _NODETEMPLATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1032,
-  serialized_end=1481,
+  serialized_start=1201,
+  serialized_end=1650,
 )
 
 
@@ -404,8 +485,8 @@ _NODEADDRESSSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1483,
-  serialized_end=1567,
+  serialized_start=1652,
+  serialized_end=1736,
 )
 
 
@@ -435,8 +516,8 @@ _ONETOONENATSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1569,
-  serialized_end=1638,
+  serialized_start=1738,
+  serialized_end=1807,
 )
 
 
@@ -480,8 +561,8 @@ _RESOURCESSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1641,
-  serialized_end=1802,
+  serialized_start=1810,
+  serialized_end=1971,
 )
 
 
@@ -518,8 +599,8 @@ _DISKSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1804,
-  serialized_end=1906,
+  serialized_start=1973,
+  serialized_end=2075,
 )
 
 
@@ -549,8 +630,8 @@ _SCALEPOLICY_FIXEDSCALE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2058,
-  serialized_end=2095,
+  serialized_start=2227,
+  serialized_end=2264,
 )
 
 _SCALEPOLICY_AUTOSCALE = _descriptor.Descriptor(
@@ -593,8 +674,8 @@ _SCALEPOLICY_AUTOSCALE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2097,
-  serialized_end=2199,
+  serialized_start=2266,
+  serialized_end=2368,
 )
 
 _SCALEPOLICY = _descriptor.Descriptor(
@@ -633,8 +714,8 @@ _SCALEPOLICY = _descriptor.Descriptor(
       name='scale_type', full_name='yandex.cloud.k8s.v1.ScalePolicy.scale_type',
       index=0, containing_type=None, fields=[], serialized_options=_b('\300\3011\001')),
   ],
-  serialized_start=1909,
-  serialized_end=2219,
+  serialized_start=2078,
+  serialized_end=2388,
 )
 
 
@@ -664,8 +745,8 @@ _NODEGROUPALLOCATIONPOLICY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2221,
-  serialized_end=2307,
+  serialized_start=2390,
+  serialized_end=2476,
 )
 
 
@@ -702,8 +783,8 @@ _NODEGROUPLOCATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2309,
-  serialized_end=2370,
+  serialized_start=2478,
+  serialized_end=2539,
 )
 
 
@@ -733,8 +814,8 @@ _SCHEDULINGPOLICY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2372,
-  serialized_end=2411,
+  serialized_start=2541,
+  serialized_end=2580,
 )
 
 
@@ -778,11 +859,58 @@ _NODEGROUPMAINTENANCEPOLICY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2414,
-  serialized_end=2553,
+  serialized_start=2583,
+  serialized_end=2722,
+)
+
+
+_TAINT = _descriptor.Descriptor(
+  name='Taint',
+  full_name='yandex.cloud.k8s.v1.Taint',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='yandex.cloud.k8s.v1.Taint.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='yandex.cloud.k8s.v1.Taint.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='effect', full_name='yandex.cloud.k8s.v1.Taint.effect', index=2,
+      number=3, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+    _TAINT_EFFECT,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2725,
+  serialized_end=2902,
 )
 
 _NODEGROUP_LABELSENTRY.containing_type = _NODEGROUP
+_NODEGROUP_NODELABELSENTRY.containing_type = _NODEGROUP
 _NODEGROUP.fields_by_name['created_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _NODEGROUP.fields_by_name['labels'].message_type = _NODEGROUP_LABELSENTRY
 _NODEGROUP.fields_by_name['status'].enum_type = _NODEGROUP_STATUS
@@ -791,6 +919,8 @@ _NODEGROUP.fields_by_name['scale_policy'].message_type = _SCALEPOLICY
 _NODEGROUP.fields_by_name['allocation_policy'].message_type = _NODEGROUPALLOCATIONPOLICY
 _NODEGROUP.fields_by_name['version_info'].message_type = yandex_dot_cloud_dot_k8s_dot_v1_dot_version__pb2._VERSIONINFO
 _NODEGROUP.fields_by_name['maintenance_policy'].message_type = _NODEGROUPMAINTENANCEPOLICY
+_NODEGROUP.fields_by_name['node_taints'].message_type = _TAINT
+_NODEGROUP.fields_by_name['node_labels'].message_type = _NODEGROUP_NODELABELSENTRY
 _NODEGROUP_STATUS.containing_type = _NODEGROUP
 _NODETEMPLATE_METADATAENTRY.containing_type = _NODETEMPLATE
 _NODETEMPLATE.fields_by_name['resources_spec'].message_type = _RESOURCESSPEC
@@ -812,6 +942,8 @@ _SCALEPOLICY.oneofs_by_name['scale_type'].fields.append(
 _SCALEPOLICY.fields_by_name['auto_scale'].containing_oneof = _SCALEPOLICY.oneofs_by_name['scale_type']
 _NODEGROUPALLOCATIONPOLICY.fields_by_name['locations'].message_type = _NODEGROUPLOCATION
 _NODEGROUPMAINTENANCEPOLICY.fields_by_name['maintenance_window'].message_type = yandex_dot_cloud_dot_k8s_dot_v1_dot_maintenance__pb2._MAINTENANCEWINDOW
+_TAINT.fields_by_name['effect'].enum_type = _TAINT_EFFECT
+_TAINT_EFFECT.containing_type = _TAINT
 DESCRIPTOR.message_types_by_name['NodeGroup'] = _NODEGROUP
 DESCRIPTOR.message_types_by_name['NodeTemplate'] = _NODETEMPLATE
 DESCRIPTOR.message_types_by_name['NodeAddressSpec'] = _NODEADDRESSSPEC
@@ -823,6 +955,7 @@ DESCRIPTOR.message_types_by_name['NodeGroupAllocationPolicy'] = _NODEGROUPALLOCA
 DESCRIPTOR.message_types_by_name['NodeGroupLocation'] = _NODEGROUPLOCATION
 DESCRIPTOR.message_types_by_name['SchedulingPolicy'] = _SCHEDULINGPOLICY
 DESCRIPTOR.message_types_by_name['NodeGroupMaintenancePolicy'] = _NODEGROUPMAINTENANCEPOLICY
+DESCRIPTOR.message_types_by_name['Taint'] = _TAINT
 DESCRIPTOR.enum_types_by_name['IpVersion'] = _IPVERSION
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -834,12 +967,20 @@ NodeGroup = _reflection.GeneratedProtocolMessageType('NodeGroup', (_message.Mess
     # @@protoc_insertion_point(class_scope:yandex.cloud.k8s.v1.NodeGroup.LabelsEntry)
     })
   ,
+
+  'NodeLabelsEntry' : _reflection.GeneratedProtocolMessageType('NodeLabelsEntry', (_message.Message,), {
+    'DESCRIPTOR' : _NODEGROUP_NODELABELSENTRY,
+    '__module__' : 'yandex.cloud.k8s.v1.node_group_pb2'
+    # @@protoc_insertion_point(class_scope:yandex.cloud.k8s.v1.NodeGroup.NodeLabelsEntry)
+    })
+  ,
   'DESCRIPTOR' : _NODEGROUP,
   '__module__' : 'yandex.cloud.k8s.v1.node_group_pb2'
   # @@protoc_insertion_point(class_scope:yandex.cloud.k8s.v1.NodeGroup)
   })
 _sym_db.RegisterMessage(NodeGroup)
 _sym_db.RegisterMessage(NodeGroup.LabelsEntry)
+_sym_db.RegisterMessage(NodeGroup.NodeLabelsEntry)
 
 NodeTemplate = _reflection.GeneratedProtocolMessageType('NodeTemplate', (_message.Message,), {
 
@@ -935,9 +1076,17 @@ NodeGroupMaintenancePolicy = _reflection.GeneratedProtocolMessageType('NodeGroup
   })
 _sym_db.RegisterMessage(NodeGroupMaintenancePolicy)
 
+Taint = _reflection.GeneratedProtocolMessageType('Taint', (_message.Message,), {
+  'DESCRIPTOR' : _TAINT,
+  '__module__' : 'yandex.cloud.k8s.v1.node_group_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.k8s.v1.Taint)
+  })
+_sym_db.RegisterMessage(Taint)
+
 
 DESCRIPTOR._options = None
 _NODEGROUP_LABELSENTRY._options = None
+_NODEGROUP_NODELABELSENTRY._options = None
 _NODETEMPLATE_METADATAENTRY._options = None
 _NODETEMPLATE.fields_by_name['metadata']._options = None
 _RESOURCESSPEC.fields_by_name['memory']._options = None

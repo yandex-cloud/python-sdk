@@ -27,7 +27,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.k8s.v1',
   syntax='proto3',
   serialized_options=_b('\n\027yandex.cloud.api.k8s.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/k8s/v1;k8s'),
-  serialized_pb=_b('\n,yandex/cloud/k8s/v1/node_group_service.proto\x12\x13yandex.cloud.k8s.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a$yandex/cloud/k8s/v1/node_group.proto\x1a!yandex/cloud/k8s/v1/version.proto\"2\n\x13GetNodeGroupRequest\x12\x1b\n\rnode_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\x8a\x01\n\x15ListNodeGroupsRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"f\n\x16ListNodeGroupsResponse\x12\x33\n\x0bnode_groups\x18\x01 \x03(\x0b\x32\x1e.yandex.cloud.k8s.v1.NodeGroup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"5\n\x16\x44\x65leteNodeGroupRequest\x12\x1b\n\rnode_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"0\n\x17\x44\x65leteNodeGroupMetadata\x12\x15\n\rnode_group_id\x18\x01 \x01(\t\"\xa5\x06\n\x16UpdateNodeGroupRequest\x12\x1b\n\rnode_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x88\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x37.yandex.cloud.k8s.v1.UpdateNodeGroupRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12\x38\n\rnode_template\x18\x08 \x01(\x0b\x32!.yandex.cloud.k8s.v1.NodeTemplate\x12\x36\n\x0cscale_policy\x18\x06 \x01(\x0b\x32 .yandex.cloud.k8s.v1.ScalePolicy\x12I\n\x11\x61llocation_policy\x18\t \x01(\x0b\x32..yandex.cloud.k8s.v1.NodeGroupAllocationPolicy\x12\x37\n\x07version\x18\n \x01(\x0b\x32&.yandex.cloud.k8s.v1.UpdateVersionSpec\x12K\n\x12maintenance_policy\x18\x0b \x01(\x0b\x32/.yandex.cloud.k8s.v1.NodeGroupMaintenancePolicy\x12o\n\x16\x61llowed_unsafe_sysctls\x18\x0c \x03(\tBO\x8a\xc8\x31\x05<=253\xf2\xc7\x31\x42([a-z0-9]([-_a-z0-9]*[a-z0-9])?\\.)*([a-z0-9][-_a-z0-9]*)?[a-z0-9*]\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"6\n\x17UpdateNodeGroupMetadata\x12\x1b\n\rnode_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\xd5\x05\n\x16\x43reateNodeGroupRequest\x12\x18\n\ncluster_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x88\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x37.yandex.cloud.k8s.v1.CreateNodeGroupRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12>\n\rnode_template\x18\x05 \x01(\x0b\x32!.yandex.cloud.k8s.v1.NodeTemplateB\x04\xe8\xc7\x31\x01\x12<\n\x0cscale_policy\x18\x06 \x01(\x0b\x32 .yandex.cloud.k8s.v1.ScalePolicyB\x04\xe8\xc7\x31\x01\x12I\n\x11\x61llocation_policy\x18\x07 \x01(\x0b\x32..yandex.cloud.k8s.v1.NodeGroupAllocationPolicy\x12\x0f\n\x07version\x18\x08 \x01(\t\x12K\n\x12maintenance_policy\x18\t \x01(\x0b\x32/.yandex.cloud.k8s.v1.NodeGroupMaintenancePolicy\x12o\n\x16\x61llowed_unsafe_sysctls\x18\n \x03(\tBO\x8a\xc8\x31\x05<=253\xf2\xc7\x31\x42([a-z0-9]([-_a-z0-9]*[a-z0-9])?\\.)*([a-z0-9][-_a-z0-9]*)?[a-z0-9*]\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"0\n\x17\x43reateNodeGroupMetadata\x12\x15\n\rnode_group_id\x18\x01 \x01(\t\"5\n\x1c\x41utoUpgradeNodeGroupMetadata\x12\x15\n\rnode_group_id\x18\x01 \x01(\t\"\x97\x01\n\x1eListNodeGroupOperationsRequest\x12\x1b\n\rnode_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"q\n\x1fListNodeGroupOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xac\x08\n\x10NodeGroupService\x12\x8a\x01\n\x03Get\x12(.yandex.cloud.k8s.v1.GetNodeGroupRequest\x1a\x1e.yandex.cloud.k8s.v1.NodeGroup\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/managed-kubernetes/v1/nodeGroups/{node_group_id}\x12\x8a\x01\n\x04List\x12*.yandex.cloud.k8s.v1.ListNodeGroupsRequest\x1a+.yandex.cloud.k8s.v1.ListNodeGroupsResponse\")\x82\xd3\xe4\x93\x02#\x12!/managed-kubernetes/v1/nodeGroups\x12\xae\x01\n\x06\x43reate\x12+.yandex.cloud.k8s.v1.CreateNodeGroupRequest\x1a!.yandex.cloud.operation.Operation\"T\x82\xd3\xe4\x93\x02&\"!/managed-kubernetes/v1/nodeGroups:\x01*\xb2\xd2*$\n\x17\x43reateNodeGroupMetadata\x12\tNodeGroup\x12\xbe\x01\n\x06Update\x12+.yandex.cloud.k8s.v1.UpdateNodeGroupRequest\x1a!.yandex.cloud.operation.Operation\"d\x82\xd3\xe4\x93\x02\x36\x32\x31/managed-kubernetes/v1/nodeGroups/{node_group_id}:\x01*\xb2\xd2*$\n\x17UpdateNodeGroupMetadata\x12\tNodeGroup\x12\xc7\x01\n\x06\x44\x65lete\x12+.yandex.cloud.k8s.v1.DeleteNodeGroupRequest\x1a!.yandex.cloud.operation.Operation\"m\x82\xd3\xe4\x93\x02\x33*1/managed-kubernetes/v1/nodeGroups/{node_group_id}\xb2\xd2*0\n\x17\x44\x65leteNodeGroupMetadata\x12\x15google.protobuf.Empty\x12\xc1\x01\n\x0eListOperations\x12\x33.yandex.cloud.k8s.v1.ListNodeGroupOperationsRequest\x1a\x34.yandex.cloud.k8s.v1.ListNodeGroupOperationsResponse\"D\x82\xd3\xe4\x93\x02>\x12</managed-kubernetes/v1/nodeGroups/{node_group_id}/operationsBV\n\x17yandex.cloud.api.k8s.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/k8s/v1;k8sb\x06proto3')
+  serialized_pb=_b('\n,yandex/cloud/k8s/v1/node_group_service.proto\x12\x13yandex.cloud.k8s.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a$yandex/cloud/k8s/v1/node_group.proto\x1a!yandex/cloud/k8s/v1/version.proto\"2\n\x13GetNodeGroupRequest\x12\x1b\n\rnode_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\x8a\x01\n\x15ListNodeGroupsRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"f\n\x16ListNodeGroupsResponse\x12\x33\n\x0bnode_groups\x18\x01 \x03(\x0b\x32\x1e.yandex.cloud.k8s.v1.NodeGroup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"5\n\x16\x44\x65leteNodeGroupRequest\x12\x1b\n\rnode_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"0\n\x17\x44\x65leteNodeGroupMetadata\x12\x15\n\rnode_group_id\x18\x01 \x01(\t\"\xdb\x07\n\x16UpdateNodeGroupRequest\x12\x1b\n\rnode_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x88\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x37.yandex.cloud.k8s.v1.UpdateNodeGroupRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12\x38\n\rnode_template\x18\x08 \x01(\x0b\x32!.yandex.cloud.k8s.v1.NodeTemplate\x12\x36\n\x0cscale_policy\x18\x06 \x01(\x0b\x32 .yandex.cloud.k8s.v1.ScalePolicy\x12I\n\x11\x61llocation_policy\x18\t \x01(\x0b\x32..yandex.cloud.k8s.v1.NodeGroupAllocationPolicy\x12\x37\n\x07version\x18\n \x01(\x0b\x32&.yandex.cloud.k8s.v1.UpdateVersionSpec\x12K\n\x12maintenance_policy\x18\x0b \x01(\x0b\x32/.yandex.cloud.k8s.v1.NodeGroupMaintenancePolicy\x12o\n\x16\x61llowed_unsafe_sysctls\x18\x0c \x03(\tBO\x8a\xc8\x31\x05<=253\xf2\xc7\x31\x42([a-z0-9]([-_a-z0-9]*[a-z0-9])?\\.)*([a-z0-9][-_a-z0-9]*)?[a-z0-9*]\x12/\n\x0bnode_taints\x18\r \x03(\x0b\x32\x1a.yandex.cloud.k8s.v1.Taint\x12P\n\x0bnode_labels\x18\x0e \x03(\x0b\x32;.yandex.cloud.k8s.v1.UpdateNodeGroupRequest.NodeLabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x31\n\x0fNodeLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"6\n\x17UpdateNodeGroupMetadata\x12\x1b\n\rnode_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\x8b\x07\n\x16\x43reateNodeGroupRequest\x12\x18\n\ncluster_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x88\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x37.yandex.cloud.k8s.v1.CreateNodeGroupRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12>\n\rnode_template\x18\x05 \x01(\x0b\x32!.yandex.cloud.k8s.v1.NodeTemplateB\x04\xe8\xc7\x31\x01\x12<\n\x0cscale_policy\x18\x06 \x01(\x0b\x32 .yandex.cloud.k8s.v1.ScalePolicyB\x04\xe8\xc7\x31\x01\x12I\n\x11\x61llocation_policy\x18\x07 \x01(\x0b\x32..yandex.cloud.k8s.v1.NodeGroupAllocationPolicy\x12\x0f\n\x07version\x18\x08 \x01(\t\x12K\n\x12maintenance_policy\x18\t \x01(\x0b\x32/.yandex.cloud.k8s.v1.NodeGroupMaintenancePolicy\x12o\n\x16\x61llowed_unsafe_sysctls\x18\n \x03(\tBO\x8a\xc8\x31\x05<=253\xf2\xc7\x31\x42([a-z0-9]([-_a-z0-9]*[a-z0-9])?\\.)*([a-z0-9][-_a-z0-9]*)?[a-z0-9*]\x12/\n\x0bnode_taints\x18\x0b \x03(\x0b\x32\x1a.yandex.cloud.k8s.v1.Taint\x12P\n\x0bnode_labels\x18\x0c \x03(\x0b\x32;.yandex.cloud.k8s.v1.CreateNodeGroupRequest.NodeLabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x31\n\x0fNodeLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"0\n\x17\x43reateNodeGroupMetadata\x12\x15\n\rnode_group_id\x18\x01 \x01(\t\"5\n\x1c\x41utoUpgradeNodeGroupMetadata\x12\x15\n\rnode_group_id\x18\x01 \x01(\t\"\x97\x01\n\x1eListNodeGroupOperationsRequest\x12\x1b\n\rnode_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"q\n\x1fListNodeGroupOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xac\x08\n\x10NodeGroupService\x12\x8a\x01\n\x03Get\x12(.yandex.cloud.k8s.v1.GetNodeGroupRequest\x1a\x1e.yandex.cloud.k8s.v1.NodeGroup\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/managed-kubernetes/v1/nodeGroups/{node_group_id}\x12\x8a\x01\n\x04List\x12*.yandex.cloud.k8s.v1.ListNodeGroupsRequest\x1a+.yandex.cloud.k8s.v1.ListNodeGroupsResponse\")\x82\xd3\xe4\x93\x02#\x12!/managed-kubernetes/v1/nodeGroups\x12\xae\x01\n\x06\x43reate\x12+.yandex.cloud.k8s.v1.CreateNodeGroupRequest\x1a!.yandex.cloud.operation.Operation\"T\x82\xd3\xe4\x93\x02&\"!/managed-kubernetes/v1/nodeGroups:\x01*\xb2\xd2*$\n\x17\x43reateNodeGroupMetadata\x12\tNodeGroup\x12\xbe\x01\n\x06Update\x12+.yandex.cloud.k8s.v1.UpdateNodeGroupRequest\x1a!.yandex.cloud.operation.Operation\"d\x82\xd3\xe4\x93\x02\x36\x32\x31/managed-kubernetes/v1/nodeGroups/{node_group_id}:\x01*\xb2\xd2*$\n\x17UpdateNodeGroupMetadata\x12\tNodeGroup\x12\xc7\x01\n\x06\x44\x65lete\x12+.yandex.cloud.k8s.v1.DeleteNodeGroupRequest\x1a!.yandex.cloud.operation.Operation\"m\x82\xd3\xe4\x93\x02\x33*1/managed-kubernetes/v1/nodeGroups/{node_group_id}\xb2\xd2*0\n\x17\x44\x65leteNodeGroupMetadata\x12\x15google.protobuf.Empty\x12\xc1\x01\n\x0eListOperations\x12\x33.yandex.cloud.k8s.v1.ListNodeGroupOperationsRequest\x1a\x34.yandex.cloud.k8s.v1.ListNodeGroupOperationsResponse\"D\x82\xd3\xe4\x93\x02>\x12</managed-kubernetes/v1/nodeGroups/{node_group_id}/operationsBV\n\x17yandex.cloud.api.k8s.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/k8s/v1;k8sb\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_k8s_dot_v1_dot_node__group__pb2.DESCRIPTOR,yandex_dot_cloud_dot_k8s_dot_v1_dot_version__pb2.DESCRIPTOR,])
 
@@ -250,8 +250,45 @@ _UPDATENODEGROUPREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1474,
-  serialized_end=1519,
+  serialized_start=1605,
+  serialized_end=1650,
+)
+
+_UPDATENODEGROUPREQUEST_NODELABELSENTRY = _descriptor.Descriptor(
+  name='NodeLabelsEntry',
+  full_name='yandex.cloud.k8s.v1.UpdateNodeGroupRequest.NodeLabelsEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='yandex.cloud.k8s.v1.UpdateNodeGroupRequest.NodeLabelsEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='yandex.cloud.k8s.v1.UpdateNodeGroupRequest.NodeLabelsEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=_b('8\001'),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1652,
+  serialized_end=1701,
 )
 
 _UPDATENODEGROUPREQUEST = _descriptor.Descriptor(
@@ -338,10 +375,24 @@ _UPDATENODEGROUPREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=_b('\212\3101\005<=253\362\3071B([a-z0-9]([-_a-z0-9]*[a-z0-9])?\\.)*([a-z0-9][-_a-z0-9]*)?[a-z0-9*]'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='node_taints', full_name='yandex.cloud.k8s.v1.UpdateNodeGroupRequest.node_taints', index=11,
+      number=13, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='node_labels', full_name='yandex.cloud.k8s.v1.UpdateNodeGroupRequest.node_labels', index=12,
+      number=14, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
-  nested_types=[_UPDATENODEGROUPREQUEST_LABELSENTRY, ],
+  nested_types=[_UPDATENODEGROUPREQUEST_LABELSENTRY, _UPDATENODEGROUPREQUEST_NODELABELSENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -351,7 +402,7 @@ _UPDATENODEGROUPREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=714,
-  serialized_end=1519,
+  serialized_end=1701,
 )
 
 
@@ -381,8 +432,8 @@ _UPDATENODEGROUPMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1521,
-  serialized_end=1575,
+  serialized_start=1703,
+  serialized_end=1757,
 )
 
 
@@ -419,8 +470,45 @@ _CREATENODEGROUPREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1474,
-  serialized_end=1519,
+  serialized_start=1605,
+  serialized_end=1650,
+)
+
+_CREATENODEGROUPREQUEST_NODELABELSENTRY = _descriptor.Descriptor(
+  name='NodeLabelsEntry',
+  full_name='yandex.cloud.k8s.v1.CreateNodeGroupRequest.NodeLabelsEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='yandex.cloud.k8s.v1.CreateNodeGroupRequest.NodeLabelsEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='yandex.cloud.k8s.v1.CreateNodeGroupRequest.NodeLabelsEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=_b('8\001'),
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1652,
+  serialized_end=1701,
 )
 
 _CREATENODEGROUPREQUEST = _descriptor.Descriptor(
@@ -500,10 +588,24 @@ _CREATENODEGROUPREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=_b('\212\3101\005<=253\362\3071B([a-z0-9]([-_a-z0-9]*[a-z0-9])?\\.)*([a-z0-9][-_a-z0-9]*)?[a-z0-9*]'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='node_taints', full_name='yandex.cloud.k8s.v1.CreateNodeGroupRequest.node_taints', index=10,
+      number=11, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='node_labels', full_name='yandex.cloud.k8s.v1.CreateNodeGroupRequest.node_labels', index=11,
+      number=12, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
-  nested_types=[_CREATENODEGROUPREQUEST_LABELSENTRY, ],
+  nested_types=[_CREATENODEGROUPREQUEST_LABELSENTRY, _CREATENODEGROUPREQUEST_NODELABELSENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -512,8 +614,8 @@ _CREATENODEGROUPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1578,
-  serialized_end=2303,
+  serialized_start=1760,
+  serialized_end=2667,
 )
 
 
@@ -543,8 +645,8 @@ _CREATENODEGROUPMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2305,
-  serialized_end=2353,
+  serialized_start=2669,
+  serialized_end=2717,
 )
 
 
@@ -574,8 +676,8 @@ _AUTOUPGRADENODEGROUPMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2355,
-  serialized_end=2408,
+  serialized_start=2719,
+  serialized_end=2772,
 )
 
 
@@ -626,8 +728,8 @@ _LISTNODEGROUPOPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2411,
-  serialized_end=2562,
+  serialized_start=2775,
+  serialized_end=2926,
 )
 
 
@@ -664,12 +766,13 @@ _LISTNODEGROUPOPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2564,
-  serialized_end=2677,
+  serialized_start=2928,
+  serialized_end=3041,
 )
 
 _LISTNODEGROUPSRESPONSE.fields_by_name['node_groups'].message_type = yandex_dot_cloud_dot_k8s_dot_v1_dot_node__group__pb2._NODEGROUP
 _UPDATENODEGROUPREQUEST_LABELSENTRY.containing_type = _UPDATENODEGROUPREQUEST
+_UPDATENODEGROUPREQUEST_NODELABELSENTRY.containing_type = _UPDATENODEGROUPREQUEST
 _UPDATENODEGROUPREQUEST.fields_by_name['update_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
 _UPDATENODEGROUPREQUEST.fields_by_name['labels'].message_type = _UPDATENODEGROUPREQUEST_LABELSENTRY
 _UPDATENODEGROUPREQUEST.fields_by_name['node_template'].message_type = yandex_dot_cloud_dot_k8s_dot_v1_dot_node__group__pb2._NODETEMPLATE
@@ -677,12 +780,17 @@ _UPDATENODEGROUPREQUEST.fields_by_name['scale_policy'].message_type = yandex_dot
 _UPDATENODEGROUPREQUEST.fields_by_name['allocation_policy'].message_type = yandex_dot_cloud_dot_k8s_dot_v1_dot_node__group__pb2._NODEGROUPALLOCATIONPOLICY
 _UPDATENODEGROUPREQUEST.fields_by_name['version'].message_type = yandex_dot_cloud_dot_k8s_dot_v1_dot_version__pb2._UPDATEVERSIONSPEC
 _UPDATENODEGROUPREQUEST.fields_by_name['maintenance_policy'].message_type = yandex_dot_cloud_dot_k8s_dot_v1_dot_node__group__pb2._NODEGROUPMAINTENANCEPOLICY
+_UPDATENODEGROUPREQUEST.fields_by_name['node_taints'].message_type = yandex_dot_cloud_dot_k8s_dot_v1_dot_node__group__pb2._TAINT
+_UPDATENODEGROUPREQUEST.fields_by_name['node_labels'].message_type = _UPDATENODEGROUPREQUEST_NODELABELSENTRY
 _CREATENODEGROUPREQUEST_LABELSENTRY.containing_type = _CREATENODEGROUPREQUEST
+_CREATENODEGROUPREQUEST_NODELABELSENTRY.containing_type = _CREATENODEGROUPREQUEST
 _CREATENODEGROUPREQUEST.fields_by_name['labels'].message_type = _CREATENODEGROUPREQUEST_LABELSENTRY
 _CREATENODEGROUPREQUEST.fields_by_name['node_template'].message_type = yandex_dot_cloud_dot_k8s_dot_v1_dot_node__group__pb2._NODETEMPLATE
 _CREATENODEGROUPREQUEST.fields_by_name['scale_policy'].message_type = yandex_dot_cloud_dot_k8s_dot_v1_dot_node__group__pb2._SCALEPOLICY
 _CREATENODEGROUPREQUEST.fields_by_name['allocation_policy'].message_type = yandex_dot_cloud_dot_k8s_dot_v1_dot_node__group__pb2._NODEGROUPALLOCATIONPOLICY
 _CREATENODEGROUPREQUEST.fields_by_name['maintenance_policy'].message_type = yandex_dot_cloud_dot_k8s_dot_v1_dot_node__group__pb2._NODEGROUPMAINTENANCEPOLICY
+_CREATENODEGROUPREQUEST.fields_by_name['node_taints'].message_type = yandex_dot_cloud_dot_k8s_dot_v1_dot_node__group__pb2._TAINT
+_CREATENODEGROUPREQUEST.fields_by_name['node_labels'].message_type = _CREATENODEGROUPREQUEST_NODELABELSENTRY
 _LISTNODEGROUPOPERATIONSRESPONSE.fields_by_name['operations'].message_type = yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION
 DESCRIPTOR.message_types_by_name['GetNodeGroupRequest'] = _GETNODEGROUPREQUEST
 DESCRIPTOR.message_types_by_name['ListNodeGroupsRequest'] = _LISTNODEGROUPSREQUEST
@@ -741,12 +849,20 @@ UpdateNodeGroupRequest = _reflection.GeneratedProtocolMessageType('UpdateNodeGro
     # @@protoc_insertion_point(class_scope:yandex.cloud.k8s.v1.UpdateNodeGroupRequest.LabelsEntry)
     })
   ,
+
+  'NodeLabelsEntry' : _reflection.GeneratedProtocolMessageType('NodeLabelsEntry', (_message.Message,), {
+    'DESCRIPTOR' : _UPDATENODEGROUPREQUEST_NODELABELSENTRY,
+    '__module__' : 'yandex.cloud.k8s.v1.node_group_service_pb2'
+    # @@protoc_insertion_point(class_scope:yandex.cloud.k8s.v1.UpdateNodeGroupRequest.NodeLabelsEntry)
+    })
+  ,
   'DESCRIPTOR' : _UPDATENODEGROUPREQUEST,
   '__module__' : 'yandex.cloud.k8s.v1.node_group_service_pb2'
   # @@protoc_insertion_point(class_scope:yandex.cloud.k8s.v1.UpdateNodeGroupRequest)
   })
 _sym_db.RegisterMessage(UpdateNodeGroupRequest)
 _sym_db.RegisterMessage(UpdateNodeGroupRequest.LabelsEntry)
+_sym_db.RegisterMessage(UpdateNodeGroupRequest.NodeLabelsEntry)
 
 UpdateNodeGroupMetadata = _reflection.GeneratedProtocolMessageType('UpdateNodeGroupMetadata', (_message.Message,), {
   'DESCRIPTOR' : _UPDATENODEGROUPMETADATA,
@@ -763,12 +879,20 @@ CreateNodeGroupRequest = _reflection.GeneratedProtocolMessageType('CreateNodeGro
     # @@protoc_insertion_point(class_scope:yandex.cloud.k8s.v1.CreateNodeGroupRequest.LabelsEntry)
     })
   ,
+
+  'NodeLabelsEntry' : _reflection.GeneratedProtocolMessageType('NodeLabelsEntry', (_message.Message,), {
+    'DESCRIPTOR' : _CREATENODEGROUPREQUEST_NODELABELSENTRY,
+    '__module__' : 'yandex.cloud.k8s.v1.node_group_service_pb2'
+    # @@protoc_insertion_point(class_scope:yandex.cloud.k8s.v1.CreateNodeGroupRequest.NodeLabelsEntry)
+    })
+  ,
   'DESCRIPTOR' : _CREATENODEGROUPREQUEST,
   '__module__' : 'yandex.cloud.k8s.v1.node_group_service_pb2'
   # @@protoc_insertion_point(class_scope:yandex.cloud.k8s.v1.CreateNodeGroupRequest)
   })
 _sym_db.RegisterMessage(CreateNodeGroupRequest)
 _sym_db.RegisterMessage(CreateNodeGroupRequest.LabelsEntry)
+_sym_db.RegisterMessage(CreateNodeGroupRequest.NodeLabelsEntry)
 
 CreateNodeGroupMetadata = _reflection.GeneratedProtocolMessageType('CreateNodeGroupMetadata', (_message.Message,), {
   'DESCRIPTOR' : _CREATENODEGROUPMETADATA,
@@ -807,6 +931,7 @@ _LISTNODEGROUPSREQUEST.fields_by_name['page_token']._options = None
 _LISTNODEGROUPSREQUEST.fields_by_name['filter']._options = None
 _DELETENODEGROUPREQUEST.fields_by_name['node_group_id']._options = None
 _UPDATENODEGROUPREQUEST_LABELSENTRY._options = None
+_UPDATENODEGROUPREQUEST_NODELABELSENTRY._options = None
 _UPDATENODEGROUPREQUEST.fields_by_name['node_group_id']._options = None
 _UPDATENODEGROUPREQUEST.fields_by_name['name']._options = None
 _UPDATENODEGROUPREQUEST.fields_by_name['description']._options = None
@@ -814,6 +939,7 @@ _UPDATENODEGROUPREQUEST.fields_by_name['labels']._options = None
 _UPDATENODEGROUPREQUEST.fields_by_name['allowed_unsafe_sysctls']._options = None
 _UPDATENODEGROUPMETADATA.fields_by_name['node_group_id']._options = None
 _CREATENODEGROUPREQUEST_LABELSENTRY._options = None
+_CREATENODEGROUPREQUEST_NODELABELSENTRY._options = None
 _CREATENODEGROUPREQUEST.fields_by_name['cluster_id']._options = None
 _CREATENODEGROUPREQUEST.fields_by_name['name']._options = None
 _CREATENODEGROUPREQUEST.fields_by_name['description']._options = None
@@ -832,8 +958,8 @@ _NODEGROUPSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=2680,
-  serialized_end=3748,
+  serialized_start=3044,
+  serialized_end=4112,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
