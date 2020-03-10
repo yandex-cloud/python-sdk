@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.serverless.triggers.v1',
   syntax='proto3',
   serialized_options=_b('\n\'yandex.cloud.api.serverless.triggers.v1ZPgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/triggers/v1;triggers'),
-  serialized_pb=_b('\n1yandex/cloud/serverless/triggers/v1/trigger.proto\x12#yandex.cloud.serverless.triggers.v1\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\xc4\x13\n\x07Trigger\x12\n\n\x02id\x18\x01 \x01(\t\x12\x1f\n\tfolder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x16\n\x04name\x18\x04 \x01(\tB\x08\x8a\xc8\x31\x04\x33-63\x12\x1e\n\x0b\x64\x65scription\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05\x30-256\x12H\n\x06labels\x18\x06 \x03(\x0b\x32\x38.yandex.cloud.serverless.triggers.v1.Trigger.LabelsEntry\x12\x45\n\x04rule\x18\x08 \x01(\x0b\x32\x31.yandex.cloud.serverless.triggers.v1.Trigger.RuleB\x04\xe8\xc7\x31\x01\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\xd3\x02\n\x04Rule\x12\x43\n\x05timer\x18\x02 \x01(\x0b\x32\x32.yandex.cloud.serverless.triggers.v1.Trigger.TimerH\x00\x12R\n\rmessage_queue\x18\x03 \x01(\x0b\x32\x39.yandex.cloud.serverless.triggers.v1.Trigger.MessageQueueH\x00\x12N\n\x0biot_message\x18\x04 \x01(\x0b\x32\x37.yandex.cloud.serverless.triggers.v1.Trigger.IoTMessageH\x00\x12T\n\x0eobject_storage\x18\x05 \x01(\x0b\x32:.yandex.cloud.serverless.triggers.v1.Trigger.ObjectStorageH\x00\x42\x0c\n\x04rule\x12\x04\xc0\xc1\x31\x01\x1a\xf7\x01\n\x05Timer\x12&\n\x0f\x63ron_expression\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=100\x12R\n\x0finvoke_function\x18\x65 \x01(\x0b\x32\x37.yandex.cloud.serverless.triggers.v1.InvokeFunctionOnceH\x00\x12\x62\n\x1ainvoke_function_with_retry\x18g \x01(\x0b\x32<.yandex.cloud.serverless.triggers.v1.InvokeFunctionWithRetryH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01\x1a\xc8\x02\n\x0cMessageQueue\x12\x16\n\x08queue_id\x18\x0b \x01(\tB\x04\xe8\xc7\x31\x01\x12(\n\x12service_account_id\x18\x03 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12P\n\x0e\x62\x61tch_settings\x18\x04 \x01(\x0b\x32\x32.yandex.cloud.serverless.triggers.v1.BatchSettingsB\x04\xe8\xc7\x31\x01\x12@\n\x12visibility_timeout\x18\x05 \x01(\x0b\x32\x19.google.protobuf.DurationB\t\xfa\xc7\x31\x05<=12h\x12R\n\x0finvoke_function\x18\x65 \x01(\x0b\x32\x37.yandex.cloud.serverless.triggers.v1.InvokeFunctionOnceH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01\x1a\xb7\x01\n\nIoTMessage\x12\x19\n\x0bregistry_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tdevice_id\x18\x02 \x01(\t\x12\x12\n\nmqtt_topic\x18\x03 \x01(\t\x12W\n\x0finvoke_function\x18\x65 \x01(\x0b\x32<.yandex.cloud.serverless.triggers.v1.InvokeFunctionWithRetryH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01\x1a\x8c\x02\n\rObjectStorage\x12_\n\nevent_type\x18\x03 \x03(\x0e\x32\x43.yandex.cloud.serverless.triggers.v1.Trigger.ObjectStorageEventTypeB\x06\x82\xc8\x31\x02>0\x12\x11\n\tbucket_id\x18\x04 \x01(\t\x12\x0e\n\x06prefix\x18\x06 \x01(\t\x12\x0e\n\x06suffix\x18\x07 \x01(\t\x12W\n\x0finvoke_function\x18\x65 \x01(\x0b\x32<.yandex.cloud.serverless.triggers.v1.InvokeFunctionWithRetryH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01\x1a\x9c\x02\n\x11\x43ontainerRegistry\x12\x63\n\nevent_type\x18\x03 \x03(\x0e\x32G.yandex.cloud.serverless.triggers.v1.Trigger.ContainerRegistryEventTypeB\x06\x82\xc8\x31\x02>0\x12\x13\n\x0bregistry_id\x18\x04 \x01(\t\x12\x12\n\nimage_name\x18\x05 \x01(\t\x12\x10\n\x08tag_name\x18\x06 \x01(\t\x12W\n\x0finvoke_function\x18\x65 \x01(\x0b\x32<.yandex.cloud.serverless.triggers.v1.InvokeFunctionWithRetryH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01\"\xca\x01\n\x16ObjectStorageEventType\x12)\n%OBJECT_STORAGE_EVENT_TYPE_UNSPECIFIED\x10\x00\x12+\n\'OBJECT_STORAGE_EVENT_TYPE_CREATE_OBJECT\x10\x01\x12+\n\'OBJECT_STORAGE_EVENT_TYPE_UPDATE_OBJECT\x10\x02\x12+\n\'OBJECT_STORAGE_EVENT_TYPE_DELETE_OBJECT\x10\x03\"\x93\x02\n\x1a\x43ontainerRegistryEventType\x12-\n)CONTAINER_REGISTRY_EVENT_TYPE_UNSPECIFIED\x10\x00\x12.\n*CONTAINER_REGISTRY_EVENT_TYPE_CREATE_IMAGE\x10\x01\x12.\n*CONTAINER_REGISTRY_EVENT_TYPE_DELETE_IMAGE\x10\x02\x12\x32\n.CONTAINER_REGISTRY_EVENT_TYPE_CREATE_IMAGE_TAG\x10\x03\x12\x32\n.CONTAINER_REGISTRY_EVENT_TYPE_DELETE_IMAGE_TAG\x10\x04\"i\n\x12InvokeFunctionOnce\x12!\n\x0b\x66unction_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x14\n\x0c\x66unction_tag\x18\x02 \x01(\t\x12\x1a\n\x12service_account_id\x18\x03 \x01(\t\"\x8b\x02\n\x17InvokeFunctionWithRetry\x12!\n\x0b\x66unction_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x14\n\x0c\x66unction_tag\x18\x02 \x01(\t\x12\x1a\n\x12service_account_id\x18\x03 \x01(\t\x12J\n\x0eretry_settings\x18\x04 \x01(\x0b\x32\x32.yandex.cloud.serverless.triggers.v1.RetrySettings\x12O\n\x11\x64\x65\x61\x64_letter_queue\x18\x05 \x01(\x0b\x32\x34.yandex.cloud.serverless.triggers.v1.PutQueueMessage\"M\n\x0fPutQueueMessage\x12\x10\n\x08queue_id\x18\x0b \x01(\t\x12(\n\x12service_account_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"X\n\rBatchSettings\x12\x16\n\x04size\x18\x01 \x01(\x03\x42\x08\xfa\xc7\x31\x04\x30-10\x12/\n\x06\x63utoff\x18\x02 \x01(\x0b\x32\x19.google.protobuf.DurationB\x04\xe8\xc7\x31\x01\"c\n\rRetrySettings\x12\x1f\n\x0eretry_attempts\x18\x01 \x01(\x03\x42\x07\xfa\xc7\x31\x03\x31-5\x12\x31\n\x08interval\x18\x02 \x01(\x0b\x32\x19.google.protobuf.DurationB\x04\xe8\xc7\x31\x01*\x86\x01\n\x0bTriggerType\x12\x1c\n\x18TRIGGER_TYPE_UNSPECIFIED\x10\x00\x12\t\n\x05TIMER\x10\x02\x12\x11\n\rMESSAGE_QUEUE\x10\x03\x12\x0f\n\x0bIOT_MESSAGE\x10\x04\x12\x12\n\x0eOBJECT_STORAGE\x10\x05\x12\x16\n\x12\x43ONTAINER_REGISTRY\x10\x06\x42{\n\'yandex.cloud.api.serverless.triggers.v1ZPgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/triggers/v1;triggersb\x06proto3')
+  serialized_pb=_b('\n1yandex/cloud/serverless/triggers/v1/trigger.proto\x12#yandex.cloud.serverless.triggers.v1\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\x9d\x14\n\x07Trigger\x12\n\n\x02id\x18\x01 \x01(\t\x12\x1f\n\tfolder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x16\n\x04name\x18\x04 \x01(\tB\x08\x8a\xc8\x31\x04\x33-63\x12\x1e\n\x0b\x64\x65scription\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05\x30-256\x12H\n\x06labels\x18\x06 \x03(\x0b\x32\x38.yandex.cloud.serverless.triggers.v1.Trigger.LabelsEntry\x12\x45\n\x04rule\x18\x08 \x01(\x0b\x32\x31.yandex.cloud.serverless.triggers.v1.Trigger.RuleB\x04\xe8\xc7\x31\x01\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\xb1\x03\n\x04Rule\x12\x43\n\x05timer\x18\x02 \x01(\x0b\x32\x32.yandex.cloud.serverless.triggers.v1.Trigger.TimerH\x00\x12R\n\rmessage_queue\x18\x03 \x01(\x0b\x32\x39.yandex.cloud.serverless.triggers.v1.Trigger.MessageQueueH\x00\x12N\n\x0biot_message\x18\x04 \x01(\x0b\x32\x37.yandex.cloud.serverless.triggers.v1.Trigger.IoTMessageH\x00\x12T\n\x0eobject_storage\x18\x05 \x01(\x0b\x32:.yandex.cloud.serverless.triggers.v1.Trigger.ObjectStorageH\x00\x12\\\n\x12\x63ontainer_registry\x18\x06 \x01(\x0b\x32>.yandex.cloud.serverless.triggers.v1.Trigger.ContainerRegistryH\x00\x42\x0c\n\x04rule\x12\x04\xc0\xc1\x31\x01\x1a\xf7\x01\n\x05Timer\x12&\n\x0f\x63ron_expression\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=100\x12R\n\x0finvoke_function\x18\x65 \x01(\x0b\x32\x37.yandex.cloud.serverless.triggers.v1.InvokeFunctionOnceH\x00\x12\x62\n\x1ainvoke_function_with_retry\x18g \x01(\x0b\x32<.yandex.cloud.serverless.triggers.v1.InvokeFunctionWithRetryH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01\x1a\xc8\x02\n\x0cMessageQueue\x12\x16\n\x08queue_id\x18\x0b \x01(\tB\x04\xe8\xc7\x31\x01\x12(\n\x12service_account_id\x18\x03 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12P\n\x0e\x62\x61tch_settings\x18\x04 \x01(\x0b\x32\x32.yandex.cloud.serverless.triggers.v1.BatchSettingsB\x04\xe8\xc7\x31\x01\x12@\n\x12visibility_timeout\x18\x05 \x01(\x0b\x32\x19.google.protobuf.DurationB\t\xfa\xc7\x31\x05<=12h\x12R\n\x0finvoke_function\x18\x65 \x01(\x0b\x32\x37.yandex.cloud.serverless.triggers.v1.InvokeFunctionOnceH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01\x1a\xb7\x01\n\nIoTMessage\x12\x19\n\x0bregistry_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tdevice_id\x18\x02 \x01(\t\x12\x12\n\nmqtt_topic\x18\x03 \x01(\t\x12W\n\x0finvoke_function\x18\x65 \x01(\x0b\x32<.yandex.cloud.serverless.triggers.v1.InvokeFunctionWithRetryH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01\x1a\x8c\x02\n\rObjectStorage\x12_\n\nevent_type\x18\x03 \x03(\x0e\x32\x43.yandex.cloud.serverless.triggers.v1.Trigger.ObjectStorageEventTypeB\x06\x82\xc8\x31\x02>0\x12\x11\n\tbucket_id\x18\x04 \x01(\t\x12\x0e\n\x06prefix\x18\x06 \x01(\t\x12\x0e\n\x06suffix\x18\x07 \x01(\t\x12W\n\x0finvoke_function\x18\x65 \x01(\x0b\x32<.yandex.cloud.serverless.triggers.v1.InvokeFunctionWithRetryH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01\x1a\x97\x02\n\x11\x43ontainerRegistry\x12\x63\n\nevent_type\x18\x03 \x03(\x0e\x32G.yandex.cloud.serverless.triggers.v1.Trigger.ContainerRegistryEventTypeB\x06\x82\xc8\x31\x02>0\x12\x13\n\x0bregistry_id\x18\x04 \x01(\t\x12\x12\n\nimage_name\x18\x05 \x01(\t\x12\x0b\n\x03tag\x18\x06 \x01(\t\x12W\n\x0finvoke_function\x18\x65 \x01(\x0b\x32<.yandex.cloud.serverless.triggers.v1.InvokeFunctionWithRetryH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01\"\xca\x01\n\x16ObjectStorageEventType\x12)\n%OBJECT_STORAGE_EVENT_TYPE_UNSPECIFIED\x10\x00\x12+\n\'OBJECT_STORAGE_EVENT_TYPE_CREATE_OBJECT\x10\x01\x12+\n\'OBJECT_STORAGE_EVENT_TYPE_UPDATE_OBJECT\x10\x02\x12+\n\'OBJECT_STORAGE_EVENT_TYPE_DELETE_OBJECT\x10\x03\"\x93\x02\n\x1a\x43ontainerRegistryEventType\x12-\n)CONTAINER_REGISTRY_EVENT_TYPE_UNSPECIFIED\x10\x00\x12.\n*CONTAINER_REGISTRY_EVENT_TYPE_CREATE_IMAGE\x10\x01\x12.\n*CONTAINER_REGISTRY_EVENT_TYPE_DELETE_IMAGE\x10\x02\x12\x32\n.CONTAINER_REGISTRY_EVENT_TYPE_CREATE_IMAGE_TAG\x10\x03\x12\x32\n.CONTAINER_REGISTRY_EVENT_TYPE_DELETE_IMAGE_TAG\x10\x04\"i\n\x12InvokeFunctionOnce\x12!\n\x0b\x66unction_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x14\n\x0c\x66unction_tag\x18\x02 \x01(\t\x12\x1a\n\x12service_account_id\x18\x03 \x01(\t\"\x8b\x02\n\x17InvokeFunctionWithRetry\x12!\n\x0b\x66unction_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x14\n\x0c\x66unction_tag\x18\x02 \x01(\t\x12\x1a\n\x12service_account_id\x18\x03 \x01(\t\x12J\n\x0eretry_settings\x18\x04 \x01(\x0b\x32\x32.yandex.cloud.serverless.triggers.v1.RetrySettings\x12O\n\x11\x64\x65\x61\x64_letter_queue\x18\x05 \x01(\x0b\x32\x34.yandex.cloud.serverless.triggers.v1.PutQueueMessage\"M\n\x0fPutQueueMessage\x12\x10\n\x08queue_id\x18\x0b \x01(\t\x12(\n\x12service_account_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"X\n\rBatchSettings\x12\x16\n\x04size\x18\x01 \x01(\x03\x42\x08\xfa\xc7\x31\x04\x30-10\x12/\n\x06\x63utoff\x18\x02 \x01(\x0b\x32\x19.google.protobuf.DurationB\x04\xe8\xc7\x31\x01\"c\n\rRetrySettings\x12\x1f\n\x0eretry_attempts\x18\x01 \x01(\x03\x42\x07\xfa\xc7\x31\x03\x31-5\x12\x31\n\x08interval\x18\x02 \x01(\x0b\x32\x19.google.protobuf.DurationB\x04\xe8\xc7\x31\x01*\x86\x01\n\x0bTriggerType\x12\x1c\n\x18TRIGGER_TYPE_UNSPECIFIED\x10\x00\x12\t\n\x05TIMER\x10\x02\x12\x11\n\rMESSAGE_QUEUE\x10\x03\x12\x0f\n\x0bIOT_MESSAGE\x10\x04\x12\x12\n\x0eOBJECT_STORAGE\x10\x05\x12\x16\n\x12\x43ONTAINER_REGISTRY\x10\x06\x42{\n\'yandex.cloud.api.serverless.triggers.v1ZPgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/triggers/v1;triggersb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -61,8 +61,8 @@ _TRIGGERTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3337,
-  serialized_end=3471,
+  serialized_start=3426,
+  serialized_end=3560,
 )
 _sym_db.RegisterEnumDescriptor(_TRIGGERTYPE)
 
@@ -100,8 +100,8 @@ _TRIGGER_OBJECTSTORAGEEVENTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2207,
-  serialized_end=2409,
+  serialized_start=2296,
+  serialized_end=2498,
 )
 _sym_db.RegisterEnumDescriptor(_TRIGGER_OBJECTSTORAGEEVENTTYPE)
 
@@ -134,8 +134,8 @@ _TRIGGER_CONTAINERREGISTRYEVENTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2412,
-  serialized_end=2687,
+  serialized_start=2501,
+  serialized_end=2776,
 )
 _sym_db.RegisterEnumDescriptor(_TRIGGER_CONTAINERREGISTRYEVENTTYPE)
 
@@ -212,6 +212,13 @@ _TRIGGER_RULE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='container_registry', full_name='yandex.cloud.serverless.triggers.v1.Trigger.Rule.container_registry', index=4,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -228,7 +235,7 @@ _TRIGGER_RULE = _descriptor.Descriptor(
       index=0, containing_type=None, fields=[], serialized_options=_b('\300\3011\001')),
   ],
   serialized_start=540,
-  serialized_end=879,
+  serialized_end=973,
 )
 
 _TRIGGER_TIMER = _descriptor.Descriptor(
@@ -274,8 +281,8 @@ _TRIGGER_TIMER = _descriptor.Descriptor(
       name='action', full_name='yandex.cloud.serverless.triggers.v1.Trigger.Timer.action',
       index=0, containing_type=None, fields=[], serialized_options=_b('\300\3011\001')),
   ],
-  serialized_start=882,
-  serialized_end=1129,
+  serialized_start=976,
+  serialized_end=1223,
 )
 
 _TRIGGER_MESSAGEQUEUE = _descriptor.Descriptor(
@@ -335,8 +342,8 @@ _TRIGGER_MESSAGEQUEUE = _descriptor.Descriptor(
       name='action', full_name='yandex.cloud.serverless.triggers.v1.Trigger.MessageQueue.action',
       index=0, containing_type=None, fields=[], serialized_options=_b('\300\3011\001')),
   ],
-  serialized_start=1132,
-  serialized_end=1460,
+  serialized_start=1226,
+  serialized_end=1554,
 )
 
 _TRIGGER_IOTMESSAGE = _descriptor.Descriptor(
@@ -389,8 +396,8 @@ _TRIGGER_IOTMESSAGE = _descriptor.Descriptor(
       name='action', full_name='yandex.cloud.serverless.triggers.v1.Trigger.IoTMessage.action',
       index=0, containing_type=None, fields=[], serialized_options=_b('\300\3011\001')),
   ],
-  serialized_start=1463,
-  serialized_end=1646,
+  serialized_start=1557,
+  serialized_end=1740,
 )
 
 _TRIGGER_OBJECTSTORAGE = _descriptor.Descriptor(
@@ -450,8 +457,8 @@ _TRIGGER_OBJECTSTORAGE = _descriptor.Descriptor(
       name='action', full_name='yandex.cloud.serverless.triggers.v1.Trigger.ObjectStorage.action',
       index=0, containing_type=None, fields=[], serialized_options=_b('\300\3011\001')),
   ],
-  serialized_start=1649,
-  serialized_end=1917,
+  serialized_start=1743,
+  serialized_end=2011,
 )
 
 _TRIGGER_CONTAINERREGISTRY = _descriptor.Descriptor(
@@ -483,7 +490,7 @@ _TRIGGER_CONTAINERREGISTRY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='tag_name', full_name='yandex.cloud.serverless.triggers.v1.Trigger.ContainerRegistry.tag_name', index=3,
+      name='tag', full_name='yandex.cloud.serverless.triggers.v1.Trigger.ContainerRegistry.tag', index=3,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -511,8 +518,8 @@ _TRIGGER_CONTAINERREGISTRY = _descriptor.Descriptor(
       name='action', full_name='yandex.cloud.serverless.triggers.v1.Trigger.ContainerRegistry.action',
       index=0, containing_type=None, fields=[], serialized_options=_b('\300\3011\001')),
   ],
-  serialized_start=1920,
-  serialized_end=2204,
+  serialized_start=2014,
+  serialized_end=2293,
 )
 
 _TRIGGER = _descriptor.Descriptor(
@@ -586,7 +593,7 @@ _TRIGGER = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=187,
-  serialized_end=2687,
+  serialized_end=2776,
 )
 
 
@@ -630,8 +637,8 @@ _INVOKEFUNCTIONONCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2689,
-  serialized_end=2794,
+  serialized_start=2778,
+  serialized_end=2883,
 )
 
 
@@ -689,8 +696,8 @@ _INVOKEFUNCTIONWITHRETRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2797,
-  serialized_end=3064,
+  serialized_start=2886,
+  serialized_end=3153,
 )
 
 
@@ -727,8 +734,8 @@ _PUTQUEUEMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3066,
-  serialized_end=3143,
+  serialized_start=3155,
+  serialized_end=3232,
 )
 
 
@@ -765,8 +772,8 @@ _BATCHSETTINGS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3145,
-  serialized_end=3233,
+  serialized_start=3234,
+  serialized_end=3322,
 )
 
 
@@ -803,8 +810,8 @@ _RETRYSETTINGS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3235,
-  serialized_end=3334,
+  serialized_start=3324,
+  serialized_end=3423,
 )
 
 _TRIGGER_LABELSENTRY.containing_type = _TRIGGER
@@ -812,6 +819,7 @@ _TRIGGER_RULE.fields_by_name['timer'].message_type = _TRIGGER_TIMER
 _TRIGGER_RULE.fields_by_name['message_queue'].message_type = _TRIGGER_MESSAGEQUEUE
 _TRIGGER_RULE.fields_by_name['iot_message'].message_type = _TRIGGER_IOTMESSAGE
 _TRIGGER_RULE.fields_by_name['object_storage'].message_type = _TRIGGER_OBJECTSTORAGE
+_TRIGGER_RULE.fields_by_name['container_registry'].message_type = _TRIGGER_CONTAINERREGISTRY
 _TRIGGER_RULE.containing_type = _TRIGGER
 _TRIGGER_RULE.oneofs_by_name['rule'].fields.append(
   _TRIGGER_RULE.fields_by_name['timer'])
@@ -825,6 +833,9 @@ _TRIGGER_RULE.fields_by_name['iot_message'].containing_oneof = _TRIGGER_RULE.one
 _TRIGGER_RULE.oneofs_by_name['rule'].fields.append(
   _TRIGGER_RULE.fields_by_name['object_storage'])
 _TRIGGER_RULE.fields_by_name['object_storage'].containing_oneof = _TRIGGER_RULE.oneofs_by_name['rule']
+_TRIGGER_RULE.oneofs_by_name['rule'].fields.append(
+  _TRIGGER_RULE.fields_by_name['container_registry'])
+_TRIGGER_RULE.fields_by_name['container_registry'].containing_oneof = _TRIGGER_RULE.oneofs_by_name['rule']
 _TRIGGER_TIMER.fields_by_name['invoke_function'].message_type = _INVOKEFUNCTIONONCE
 _TRIGGER_TIMER.fields_by_name['invoke_function_with_retry'].message_type = _INVOKEFUNCTIONWITHRETRY
 _TRIGGER_TIMER.containing_type = _TRIGGER
