@@ -62,6 +62,9 @@ def create_instance(sdk, folder_id, zone, name, subnet_id):
                 )
             ),
         ],
+        metadata={
+            'metadata-key': 'metadata-value',
+        },
     ))
     logging.info('Creating initiated')
     return operation
