@@ -61,6 +61,11 @@ class ClusterServiceStub(object):
         request_serializer=yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__service__pb2.ListClusterOperationsRequest.SerializeToString,
         response_deserializer=yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__service__pb2.ListClusterOperationsResponse.FromString,
         )
+    self.ListNodes = channel.unary_unary(
+        '/yandex.cloud.k8s.v1.ClusterService/ListNodes',
+        request_serializer=yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__service__pb2.ListClusterNodesRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__service__pb2.ListClusterNodesResponse.FromString,
+        )
 
 
 class ClusterServiceServicer(object):
@@ -132,6 +137,13 @@ class ClusterServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def ListNodes(self, request, context):
+    """Lists cluster's nodes.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_ClusterServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -179,6 +191,11 @@ def add_ClusterServiceServicer_to_server(servicer, server):
           servicer.ListOperations,
           request_deserializer=yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__service__pb2.ListClusterOperationsRequest.FromString,
           response_serializer=yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__service__pb2.ListClusterOperationsResponse.SerializeToString,
+      ),
+      'ListNodes': grpc.unary_unary_rpc_method_handler(
+          servicer.ListNodes,
+          request_deserializer=yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__service__pb2.ListClusterNodesRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__service__pb2.ListClusterNodesResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

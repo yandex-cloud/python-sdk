@@ -16,11 +16,12 @@ _sym_db = _symbol_database.Default()
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
-from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
-from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 from yandex.cloud.k8s.v1 import cluster_pb2 as yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__pb2
 from yandex.cloud.k8s.v1 import node_group_pb2 as yandex_dot_cloud_dot_k8s_dot_v1_dot_node__group__pb2
+from yandex.cloud.k8s.v1 import node_pb2 as yandex_dot_cloud_dot_k8s_dot_v1_dot_node__pb2
 from yandex.cloud.k8s.v1 import version_pb2 as yandex_dot_cloud_dot_k8s_dot_v1_dot_version__pb2
+from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
+from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -28,9 +29,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.k8s.v1',
   syntax='proto3',
   serialized_options=_b('\n\027yandex.cloud.api.k8s.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/k8s/v1;k8s'),
-  serialized_pb=_b('\n)yandex/cloud/k8s/v1/cluster_service.proto\x12\x13yandex.cloud.k8s.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a!yandex/cloud/k8s/v1/cluster.proto\x1a$yandex/cloud/k8s/v1/node_group.proto\x1a!yandex/cloud/k8s/v1/version.proto\"-\n\x11GetClusterRequest\x12\x18\n\ncluster_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\x88\x01\n\x13ListClustersRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"_\n\x14ListClustersResponse\x12.\n\x08\x63lusters\x18\x01 \x03(\x0b\x32\x1c.yandex.cloud.k8s.v1.Cluster\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"0\n\x14\x44\x65leteClusterRequest\x12\x18\n\ncluster_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"+\n\x15\x44\x65leteClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"J\n\x12StopClusterRequest\x12\x18\n\ncluster_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1a\n\x12service_account_id\x18\x02 \x01(\t\")\n\x13StopClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"/\n\x13StartClusterRequest\x12\x18\n\ncluster_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"*\n\x14StartClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\xdd\x04\n\x14UpdateClusterRequest\x12\x18\n\ncluster_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x86\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x35.yandex.cloud.k8s.v1.UpdateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12(\n\x14gateway_ipv4_address\x18\x06 \x01(\tB\x08\x8a\xc8\x31\x04<=15H\x00\x12:\n\x0bmaster_spec\x18\x07 \x01(\x0b\x32%.yandex.cloud.k8s.v1.MasterUpdateSpec\x12\x1a\n\x12service_account_id\x18\t \x01(\t\x12\x1f\n\x17node_service_account_id\x18\x08 \x01(\t\x12:\n\x0enetwork_policy\x18\n \x01(\x0b\x32\".yandex.cloud.k8s.v1.NetworkPolicy\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x12\n\x10internet_gateway\"\x95\x01\n\x10MasterUpdateSpec\x12\x37\n\x07version\x18\x01 \x01(\x0b\x32&.yandex.cloud.k8s.v1.UpdateVersionSpec\x12H\n\x12maintenance_policy\x18\x02 \x01(\x0b\x32,.yandex.cloud.k8s.v1.MasterMaintenancePolicy\"+\n\x15UpdateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\xcc\x05\n\x14\x43reateClusterRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x86\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x35.yandex.cloud.k8s.v1.CreateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12\x18\n\nnetwork_id\x18\x05 \x01(\tB\x04\xe8\xc7\x31\x01\x12:\n\x0bmaster_spec\x18\x06 \x01(\x0b\x32\x1f.yandex.cloud.k8s.v1.MasterSpecB\x04\xe8\xc7\x31\x01\x12\x45\n\x14ip_allocation_policy\x18\x07 \x01(\x0b\x32\'.yandex.cloud.k8s.v1.IPAllocationPolicy\x12\x1e\n\x14gateway_ipv4_address\x18\x08 \x01(\tH\x00\x12 \n\x12service_account_id\x18\t \x01(\tB\x04\xe8\xc7\x31\x01\x12%\n\x17node_service_account_id\x18\n \x01(\tB\x04\xe8\xc7\x31\x01\x12<\n\x0frelease_channel\x18\x0b \x01(\x0e\x32#.yandex.cloud.k8s.v1.ReleaseChannel\x12:\n\x0enetwork_policy\x18\x0c \x01(\x0b\x32\".yandex.cloud.k8s.v1.NetworkPolicy\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x12\n\x10internet_gateway\"+\n\x15\x43reateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"/\n\x19\x41utoUpgradeMasterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\x92\x01\n\x1cListClusterOperationsRequest\x12\x18\n\ncluster_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"o\n\x1dListClusterOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x92\x01\n\x1cListClusterNodeGroupsRequest\x12\x18\n\ncluster_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"m\n\x1dListClusterNodeGroupsResponse\x12\x33\n\x0bnode_groups\x18\x01 \x03(\x0b\x32\x1e.yandex.cloud.k8s.v1.NodeGroup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x88\x02\n\nMasterSpec\x12\x41\n\x11zonal_master_spec\x18\x01 \x01(\x0b\x32$.yandex.cloud.k8s.v1.ZonalMasterSpecH\x00\x12G\n\x14regional_master_spec\x18\x02 \x01(\x0b\x32\'.yandex.cloud.k8s.v1.RegionalMasterSpecH\x00\x12\x0f\n\x07version\x18\x03 \x01(\t\x12H\n\x12maintenance_policy\x18\x04 \x01(\x0b\x32,.yandex.cloud.k8s.v1.MasterMaintenancePolicyB\x13\n\x0bmaster_type\x12\x04\xc0\xc1\x31\x01\"\xc0\x01\n\x0fZonalMasterSpec\x12\x15\n\x07zone_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12J\n\x18internal_v4_address_spec\x18\x02 \x01(\x0b\x32(.yandex.cloud.k8s.v1.InternalAddressSpec\x12J\n\x18\x65xternal_v4_address_spec\x18\x03 \x01(\x0b\x32(.yandex.cloud.k8s.v1.ExternalAddressSpec\"\xb1\x01\n\x12RegionalMasterSpec\x12\x17\n\tregion_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x36\n\tlocations\x18\x02 \x03(\x0b\x32#.yandex.cloud.k8s.v1.MasterLocation\x12J\n\x18\x65xternal_v4_address_spec\x18\x03 \x01(\x0b\x32(.yandex.cloud.k8s.v1.ExternalAddressSpec\"(\n\x13InternalAddressSpec\x12\x11\n\tsubnet_id\x18\x02 \x01(\t\"\x15\n\x13\x45xternalAddressSpec\"s\n\x0eMasterLocation\x12\x15\n\x07zone_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12J\n\x18internal_v4_address_spec\x18\x02 \x01(\x0b\x32(.yandex.cloud.k8s.v1.InternalAddressSpec2\xa4\x0b\n\x0e\x43lusterService\x12\x81\x01\n\x03Get\x12&.yandex.cloud.k8s.v1.GetClusterRequest\x1a\x1c.yandex.cloud.k8s.v1.Cluster\"4\x82\xd3\xe4\x93\x02.\x12,/managed-kubernetes/v1/clusters/{cluster_id}\x12\x84\x01\n\x04List\x12(.yandex.cloud.k8s.v1.ListClustersRequest\x1a).yandex.cloud.k8s.v1.ListClustersResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/managed-kubernetes/v1/clusters\x12\xa6\x01\n\x06\x43reate\x12).yandex.cloud.k8s.v1.CreateClusterRequest\x1a!.yandex.cloud.operation.Operation\"N\x82\xd3\xe4\x93\x02$\"\x1f/managed-kubernetes/v1/clusters:\x01*\xb2\xd2* \n\x15\x43reateClusterMetadata\x12\x07\x43luster\x12\xb3\x01\n\x06Update\x12).yandex.cloud.k8s.v1.UpdateClusterRequest\x1a!.yandex.cloud.operation.Operation\"[\x82\xd3\xe4\x93\x02\x31\x32,/managed-kubernetes/v1/clusters/{cluster_id}:\x01*\xb2\xd2* \n\x15UpdateClusterMetadata\x12\x07\x43luster\x12\xbe\x01\n\x06\x44\x65lete\x12).yandex.cloud.k8s.v1.DeleteClusterRequest\x1a!.yandex.cloud.operation.Operation\"f\x82\xd3\xe4\x93\x02.*,/managed-kubernetes/v1/clusters/{cluster_id}\xb2\xd2*.\n\x15\x44\x65leteClusterMetadata\x12\x15google.protobuf.Empty\x12v\n\x04Stop\x12\'.yandex.cloud.k8s.v1.StopClusterRequest\x1a!.yandex.cloud.operation.Operation\"\"\xb2\xd2*\x1e\n\x13StopClusterMetadata\x12\x07\x43luster\x12y\n\x05Start\x12(.yandex.cloud.k8s.v1.StartClusterRequest\x1a!.yandex.cloud.operation.Operation\"#\xb2\xd2*\x1f\n\x14StartClusterMetadata\x12\x07\x43luster\x12\xb8\x01\n\x0eListNodeGroups\x12\x31.yandex.cloud.k8s.v1.ListClusterNodeGroupsRequest\x1a\x32.yandex.cloud.k8s.v1.ListClusterNodeGroupsResponse\"?\x82\xd3\xe4\x93\x02\x39\x12\x37/managed-kubernetes/v1/clusters/{cluster_id}/nodeGroups\x12\xb8\x01\n\x0eListOperations\x12\x31.yandex.cloud.k8s.v1.ListClusterOperationsRequest\x1a\x32.yandex.cloud.k8s.v1.ListClusterOperationsResponse\"?\x82\xd3\xe4\x93\x02\x39\x12\x37/managed-kubernetes/v1/clusters/{cluster_id}/operationsBV\n\x17yandex.cloud.api.k8s.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/k8s/v1;k8sb\x06proto3')
+  serialized_pb=_b('\n)yandex/cloud/k8s/v1/cluster_service.proto\x12\x13yandex.cloud.k8s.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a!yandex/cloud/k8s/v1/cluster.proto\x1a$yandex/cloud/k8s/v1/node_group.proto\x1a\x1eyandex/cloud/k8s/v1/node.proto\x1a!yandex/cloud/k8s/v1/version.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"-\n\x11GetClusterRequest\x12\x18\n\ncluster_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\x88\x01\n\x13ListClustersRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"_\n\x14ListClustersResponse\x12.\n\x08\x63lusters\x18\x01 \x03(\x0b\x32\x1c.yandex.cloud.k8s.v1.Cluster\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"0\n\x14\x44\x65leteClusterRequest\x12\x18\n\ncluster_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"+\n\x15\x44\x65leteClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"J\n\x12StopClusterRequest\x12\x18\n\ncluster_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1a\n\x12service_account_id\x18\x02 \x01(\t\")\n\x13StopClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"/\n\x13StartClusterRequest\x12\x18\n\ncluster_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"*\n\x14StartClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\xdd\x04\n\x14UpdateClusterRequest\x12\x18\n\ncluster_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x86\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x35.yandex.cloud.k8s.v1.UpdateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12(\n\x14gateway_ipv4_address\x18\x06 \x01(\tB\x08\x8a\xc8\x31\x04<=15H\x00\x12:\n\x0bmaster_spec\x18\x07 \x01(\x0b\x32%.yandex.cloud.k8s.v1.MasterUpdateSpec\x12\x1a\n\x12service_account_id\x18\t \x01(\t\x12\x1f\n\x17node_service_account_id\x18\x08 \x01(\t\x12:\n\x0enetwork_policy\x18\n \x01(\x0b\x32\".yandex.cloud.k8s.v1.NetworkPolicy\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x12\n\x10internet_gateway\"\x95\x01\n\x10MasterUpdateSpec\x12\x37\n\x07version\x18\x01 \x01(\x0b\x32&.yandex.cloud.k8s.v1.UpdateVersionSpec\x12H\n\x12maintenance_policy\x18\x02 \x01(\x0b\x32,.yandex.cloud.k8s.v1.MasterMaintenancePolicy\"+\n\x15UpdateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\xcc\x05\n\x14\x43reateClusterRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x86\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x35.yandex.cloud.k8s.v1.CreateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12\x18\n\nnetwork_id\x18\x05 \x01(\tB\x04\xe8\xc7\x31\x01\x12:\n\x0bmaster_spec\x18\x06 \x01(\x0b\x32\x1f.yandex.cloud.k8s.v1.MasterSpecB\x04\xe8\xc7\x31\x01\x12\x45\n\x14ip_allocation_policy\x18\x07 \x01(\x0b\x32\'.yandex.cloud.k8s.v1.IPAllocationPolicy\x12\x1e\n\x14gateway_ipv4_address\x18\x08 \x01(\tH\x00\x12 \n\x12service_account_id\x18\t \x01(\tB\x04\xe8\xc7\x31\x01\x12%\n\x17node_service_account_id\x18\n \x01(\tB\x04\xe8\xc7\x31\x01\x12<\n\x0frelease_channel\x18\x0b \x01(\x0e\x32#.yandex.cloud.k8s.v1.ReleaseChannel\x12:\n\x0enetwork_policy\x18\x0c \x01(\x0b\x32\".yandex.cloud.k8s.v1.NetworkPolicy\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x12\n\x10internet_gateway\"+\n\x15\x43reateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"/\n\x19\x41utoUpgradeMasterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\x92\x01\n\x1cListClusterOperationsRequest\x12\x18\n\ncluster_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"o\n\x1dListClusterOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x92\x01\n\x1cListClusterNodeGroupsRequest\x12\x18\n\ncluster_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"m\n\x1dListClusterNodeGroupsResponse\x12\x33\n\x0bnode_groups\x18\x01 \x03(\x0b\x32\x1e.yandex.cloud.k8s.v1.NodeGroup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"q\n\x17ListClusterNodesRequest\x12\x18\n\ncluster_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"]\n\x18ListClusterNodesResponse\x12(\n\x05nodes\x18\x01 \x03(\x0b\x32\x19.yandex.cloud.k8s.v1.Node\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x88\x02\n\nMasterSpec\x12\x41\n\x11zonal_master_spec\x18\x01 \x01(\x0b\x32$.yandex.cloud.k8s.v1.ZonalMasterSpecH\x00\x12G\n\x14regional_master_spec\x18\x02 \x01(\x0b\x32\'.yandex.cloud.k8s.v1.RegionalMasterSpecH\x00\x12\x0f\n\x07version\x18\x03 \x01(\t\x12H\n\x12maintenance_policy\x18\x04 \x01(\x0b\x32,.yandex.cloud.k8s.v1.MasterMaintenancePolicyB\x13\n\x0bmaster_type\x12\x04\xc0\xc1\x31\x01\"\xc0\x01\n\x0fZonalMasterSpec\x12\x15\n\x07zone_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12J\n\x18internal_v4_address_spec\x18\x02 \x01(\x0b\x32(.yandex.cloud.k8s.v1.InternalAddressSpec\x12J\n\x18\x65xternal_v4_address_spec\x18\x03 \x01(\x0b\x32(.yandex.cloud.k8s.v1.ExternalAddressSpec\"\xb1\x01\n\x12RegionalMasterSpec\x12\x17\n\tregion_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x36\n\tlocations\x18\x02 \x03(\x0b\x32#.yandex.cloud.k8s.v1.MasterLocation\x12J\n\x18\x65xternal_v4_address_spec\x18\x03 \x01(\x0b\x32(.yandex.cloud.k8s.v1.ExternalAddressSpec\"(\n\x13InternalAddressSpec\x12\x11\n\tsubnet_id\x18\x02 \x01(\t\"\x15\n\x13\x45xternalAddressSpec\"s\n\x0eMasterLocation\x12\x15\n\x07zone_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12J\n\x18internal_v4_address_spec\x18\x02 \x01(\x0b\x32(.yandex.cloud.k8s.v1.InternalAddressSpec2\xcb\x0c\n\x0e\x43lusterService\x12\x81\x01\n\x03Get\x12&.yandex.cloud.k8s.v1.GetClusterRequest\x1a\x1c.yandex.cloud.k8s.v1.Cluster\"4\x82\xd3\xe4\x93\x02.\x12,/managed-kubernetes/v1/clusters/{cluster_id}\x12\x84\x01\n\x04List\x12(.yandex.cloud.k8s.v1.ListClustersRequest\x1a).yandex.cloud.k8s.v1.ListClustersResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/managed-kubernetes/v1/clusters\x12\xa6\x01\n\x06\x43reate\x12).yandex.cloud.k8s.v1.CreateClusterRequest\x1a!.yandex.cloud.operation.Operation\"N\x82\xd3\xe4\x93\x02$\"\x1f/managed-kubernetes/v1/clusters:\x01*\xb2\xd2* \n\x15\x43reateClusterMetadata\x12\x07\x43luster\x12\xb3\x01\n\x06Update\x12).yandex.cloud.k8s.v1.UpdateClusterRequest\x1a!.yandex.cloud.operation.Operation\"[\x82\xd3\xe4\x93\x02\x31\x32,/managed-kubernetes/v1/clusters/{cluster_id}:\x01*\xb2\xd2* \n\x15UpdateClusterMetadata\x12\x07\x43luster\x12\xbe\x01\n\x06\x44\x65lete\x12).yandex.cloud.k8s.v1.DeleteClusterRequest\x1a!.yandex.cloud.operation.Operation\"f\x82\xd3\xe4\x93\x02.*,/managed-kubernetes/v1/clusters/{cluster_id}\xb2\xd2*.\n\x15\x44\x65leteClusterMetadata\x12\x15google.protobuf.Empty\x12v\n\x04Stop\x12\'.yandex.cloud.k8s.v1.StopClusterRequest\x1a!.yandex.cloud.operation.Operation\"\"\xb2\xd2*\x1e\n\x13StopClusterMetadata\x12\x07\x43luster\x12y\n\x05Start\x12(.yandex.cloud.k8s.v1.StartClusterRequest\x1a!.yandex.cloud.operation.Operation\"#\xb2\xd2*\x1f\n\x14StartClusterMetadata\x12\x07\x43luster\x12\xb8\x01\n\x0eListNodeGroups\x12\x31.yandex.cloud.k8s.v1.ListClusterNodeGroupsRequest\x1a\x32.yandex.cloud.k8s.v1.ListClusterNodeGroupsResponse\"?\x82\xd3\xe4\x93\x02\x39\x12\x37/managed-kubernetes/v1/clusters/{cluster_id}/nodeGroups\x12\xb8\x01\n\x0eListOperations\x12\x31.yandex.cloud.k8s.v1.ListClusterOperationsRequest\x1a\x32.yandex.cloud.k8s.v1.ListClusterOperationsResponse\"?\x82\xd3\xe4\x93\x02\x39\x12\x37/managed-kubernetes/v1/clusters/{cluster_id}/operations\x12\xa4\x01\n\tListNodes\x12,.yandex.cloud.k8s.v1.ListClusterNodesRequest\x1a-.yandex.cloud.k8s.v1.ListClusterNodesResponse\":\x82\xd3\xe4\x93\x02\x34\x12\x32/managed-kubernetes/v1/clusters/{cluster_id}/nodesBV\n\x17yandex.cloud.api.k8s.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/k8s/v1;k8sb\x06proto3')
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__pb2.DESCRIPTOR,yandex_dot_cloud_dot_k8s_dot_v1_dot_node__group__pb2.DESCRIPTOR,yandex_dot_cloud_dot_k8s_dot_v1_dot_version__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__pb2.DESCRIPTOR,yandex_dot_cloud_dot_k8s_dot_v1_dot_node__group__pb2.DESCRIPTOR,yandex_dot_cloud_dot_k8s_dot_v1_dot_node__pb2.DESCRIPTOR,yandex_dot_cloud_dot_k8s_dot_v1_dot_version__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
 
 
@@ -61,8 +62,8 @@ _GETCLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=343,
-  serialized_end=388,
+  serialized_start=375,
+  serialized_end=420,
 )
 
 
@@ -113,8 +114,8 @@ _LISTCLUSTERSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=391,
-  serialized_end=527,
+  serialized_start=423,
+  serialized_end=559,
 )
 
 
@@ -151,8 +152,8 @@ _LISTCLUSTERSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=529,
-  serialized_end=624,
+  serialized_start=561,
+  serialized_end=656,
 )
 
 
@@ -182,8 +183,8 @@ _DELETECLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=626,
-  serialized_end=674,
+  serialized_start=658,
+  serialized_end=706,
 )
 
 
@@ -213,8 +214,8 @@ _DELETECLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=676,
-  serialized_end=719,
+  serialized_start=708,
+  serialized_end=751,
 )
 
 
@@ -251,8 +252,8 @@ _STOPCLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=721,
-  serialized_end=795,
+  serialized_start=753,
+  serialized_end=827,
 )
 
 
@@ -282,8 +283,8 @@ _STOPCLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=797,
-  serialized_end=838,
+  serialized_start=829,
+  serialized_end=870,
 )
 
 
@@ -313,8 +314,8 @@ _STARTCLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=840,
-  serialized_end=887,
+  serialized_start=872,
+  serialized_end=919,
 )
 
 
@@ -344,8 +345,8 @@ _STARTCLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=889,
-  serialized_end=931,
+  serialized_start=921,
+  serialized_end=963,
 )
 
 
@@ -382,8 +383,8 @@ _UPDATECLUSTERREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1474,
-  serialized_end=1519,
+  serialized_start=1506,
+  serialized_end=1551,
 )
 
 _UPDATECLUSTERREQUEST = _descriptor.Descriptor(
@@ -478,8 +479,8 @@ _UPDATECLUSTERREQUEST = _descriptor.Descriptor(
       name='internet_gateway', full_name='yandex.cloud.k8s.v1.UpdateClusterRequest.internet_gateway',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=934,
-  serialized_end=1539,
+  serialized_start=966,
+  serialized_end=1571,
 )
 
 
@@ -516,8 +517,8 @@ _MASTERUPDATESPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1542,
-  serialized_end=1691,
+  serialized_start=1574,
+  serialized_end=1723,
 )
 
 
@@ -547,8 +548,8 @@ _UPDATECLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1693,
-  serialized_end=1736,
+  serialized_start=1725,
+  serialized_end=1768,
 )
 
 
@@ -585,8 +586,8 @@ _CREATECLUSTERREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1474,
-  serialized_end=1519,
+  serialized_start=1506,
+  serialized_end=1551,
 )
 
 _CREATECLUSTERREQUEST = _descriptor.Descriptor(
@@ -695,8 +696,8 @@ _CREATECLUSTERREQUEST = _descriptor.Descriptor(
       name='internet_gateway', full_name='yandex.cloud.k8s.v1.CreateClusterRequest.internet_gateway',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=1739,
-  serialized_end=2455,
+  serialized_start=1771,
+  serialized_end=2487,
 )
 
 
@@ -726,8 +727,8 @@ _CREATECLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2457,
-  serialized_end=2500,
+  serialized_start=2489,
+  serialized_end=2532,
 )
 
 
@@ -757,8 +758,8 @@ _AUTOUPGRADEMASTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2502,
-  serialized_end=2549,
+  serialized_start=2534,
+  serialized_end=2581,
 )
 
 
@@ -809,8 +810,8 @@ _LISTCLUSTEROPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2552,
-  serialized_end=2698,
+  serialized_start=2584,
+  serialized_end=2730,
 )
 
 
@@ -847,8 +848,8 @@ _LISTCLUSTEROPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2700,
-  serialized_end=2811,
+  serialized_start=2732,
+  serialized_end=2843,
 )
 
 
@@ -899,8 +900,8 @@ _LISTCLUSTERNODEGROUPSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2814,
-  serialized_end=2960,
+  serialized_start=2846,
+  serialized_end=2992,
 )
 
 
@@ -937,8 +938,91 @@ _LISTCLUSTERNODEGROUPSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2962,
-  serialized_end=3071,
+  serialized_start=2994,
+  serialized_end=3103,
+)
+
+
+_LISTCLUSTERNODESREQUEST = _descriptor.Descriptor(
+  name='ListClusterNodesRequest',
+  full_name='yandex.cloud.k8s.v1.ListClusterNodesRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='yandex.cloud.k8s.v1.ListClusterNodesRequest.cluster_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\350\3071\001'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='page_size', full_name='yandex.cloud.k8s.v1.ListClusterNodesRequest.page_size', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\372\3071\0060-1000'), file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='page_token', full_name='yandex.cloud.k8s.v1.ListClusterNodesRequest.page_token', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=_b('\212\3101\005<=100'), file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3105,
+  serialized_end=3218,
+)
+
+
+_LISTCLUSTERNODESRESPONSE = _descriptor.Descriptor(
+  name='ListClusterNodesResponse',
+  full_name='yandex.cloud.k8s.v1.ListClusterNodesResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='nodes', full_name='yandex.cloud.k8s.v1.ListClusterNodesResponse.nodes', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='next_page_token', full_name='yandex.cloud.k8s.v1.ListClusterNodesResponse.next_page_token', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3220,
+  serialized_end=3313,
 )
 
 
@@ -992,8 +1076,8 @@ _MASTERSPEC = _descriptor.Descriptor(
       name='master_type', full_name='yandex.cloud.k8s.v1.MasterSpec.master_type',
       index=0, containing_type=None, fields=[], serialized_options=_b('\300\3011\001')),
   ],
-  serialized_start=3074,
-  serialized_end=3338,
+  serialized_start=3316,
+  serialized_end=3580,
 )
 
 
@@ -1037,8 +1121,8 @@ _ZONALMASTERSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3341,
-  serialized_end=3533,
+  serialized_start=3583,
+  serialized_end=3775,
 )
 
 
@@ -1082,8 +1166,8 @@ _REGIONALMASTERSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3536,
-  serialized_end=3713,
+  serialized_start=3778,
+  serialized_end=3955,
 )
 
 
@@ -1113,8 +1197,8 @@ _INTERNALADDRESSSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3715,
-  serialized_end=3755,
+  serialized_start=3957,
+  serialized_end=3997,
 )
 
 
@@ -1137,8 +1221,8 @@ _EXTERNALADDRESSSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3757,
-  serialized_end=3778,
+  serialized_start=3999,
+  serialized_end=4020,
 )
 
 
@@ -1175,8 +1259,8 @@ _MASTERLOCATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3780,
-  serialized_end=3895,
+  serialized_start=4022,
+  serialized_end=4137,
 )
 
 _LISTCLUSTERSRESPONSE.fields_by_name['clusters'].message_type = yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__pb2._CLUSTER
@@ -1201,6 +1285,7 @@ _CREATECLUSTERREQUEST.oneofs_by_name['internet_gateway'].fields.append(
 _CREATECLUSTERREQUEST.fields_by_name['gateway_ipv4_address'].containing_oneof = _CREATECLUSTERREQUEST.oneofs_by_name['internet_gateway']
 _LISTCLUSTEROPERATIONSRESPONSE.fields_by_name['operations'].message_type = yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION
 _LISTCLUSTERNODEGROUPSRESPONSE.fields_by_name['node_groups'].message_type = yandex_dot_cloud_dot_k8s_dot_v1_dot_node__group__pb2._NODEGROUP
+_LISTCLUSTERNODESRESPONSE.fields_by_name['nodes'].message_type = yandex_dot_cloud_dot_k8s_dot_v1_dot_node__pb2._NODE
 _MASTERSPEC.fields_by_name['zonal_master_spec'].message_type = _ZONALMASTERSPEC
 _MASTERSPEC.fields_by_name['regional_master_spec'].message_type = _REGIONALMASTERSPEC
 _MASTERSPEC.fields_by_name['maintenance_policy'].message_type = yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__pb2._MASTERMAINTENANCEPOLICY
@@ -1234,6 +1319,8 @@ DESCRIPTOR.message_types_by_name['ListClusterOperationsRequest'] = _LISTCLUSTERO
 DESCRIPTOR.message_types_by_name['ListClusterOperationsResponse'] = _LISTCLUSTEROPERATIONSRESPONSE
 DESCRIPTOR.message_types_by_name['ListClusterNodeGroupsRequest'] = _LISTCLUSTERNODEGROUPSREQUEST
 DESCRIPTOR.message_types_by_name['ListClusterNodeGroupsResponse'] = _LISTCLUSTERNODEGROUPSRESPONSE
+DESCRIPTOR.message_types_by_name['ListClusterNodesRequest'] = _LISTCLUSTERNODESREQUEST
+DESCRIPTOR.message_types_by_name['ListClusterNodesResponse'] = _LISTCLUSTERNODESRESPONSE
 DESCRIPTOR.message_types_by_name['MasterSpec'] = _MASTERSPEC
 DESCRIPTOR.message_types_by_name['ZonalMasterSpec'] = _ZONALMASTERSPEC
 DESCRIPTOR.message_types_by_name['RegionalMasterSpec'] = _REGIONALMASTERSPEC
@@ -1391,6 +1478,20 @@ ListClusterNodeGroupsResponse = _reflection.GeneratedProtocolMessageType('ListCl
   })
 _sym_db.RegisterMessage(ListClusterNodeGroupsResponse)
 
+ListClusterNodesRequest = _reflection.GeneratedProtocolMessageType('ListClusterNodesRequest', (_message.Message,), {
+  'DESCRIPTOR' : _LISTCLUSTERNODESREQUEST,
+  '__module__' : 'yandex.cloud.k8s.v1.cluster_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.k8s.v1.ListClusterNodesRequest)
+  })
+_sym_db.RegisterMessage(ListClusterNodesRequest)
+
+ListClusterNodesResponse = _reflection.GeneratedProtocolMessageType('ListClusterNodesResponse', (_message.Message,), {
+  'DESCRIPTOR' : _LISTCLUSTERNODESRESPONSE,
+  '__module__' : 'yandex.cloud.k8s.v1.cluster_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.k8s.v1.ListClusterNodesResponse)
+  })
+_sym_db.RegisterMessage(ListClusterNodesResponse)
+
 MasterSpec = _reflection.GeneratedProtocolMessageType('MasterSpec', (_message.Message,), {
   'DESCRIPTOR' : _MASTERSPEC,
   '__module__' : 'yandex.cloud.k8s.v1.cluster_service_pb2'
@@ -1466,6 +1567,9 @@ _LISTCLUSTERNODEGROUPSREQUEST.fields_by_name['cluster_id']._options = None
 _LISTCLUSTERNODEGROUPSREQUEST.fields_by_name['page_size']._options = None
 _LISTCLUSTERNODEGROUPSREQUEST.fields_by_name['page_token']._options = None
 _LISTCLUSTERNODEGROUPSREQUEST.fields_by_name['filter']._options = None
+_LISTCLUSTERNODESREQUEST.fields_by_name['cluster_id']._options = None
+_LISTCLUSTERNODESREQUEST.fields_by_name['page_size']._options = None
+_LISTCLUSTERNODESREQUEST.fields_by_name['page_token']._options = None
 _MASTERSPEC.oneofs_by_name['master_type']._options = None
 _ZONALMASTERSPEC.fields_by_name['zone_id']._options = None
 _REGIONALMASTERSPEC.fields_by_name['region_id']._options = None
@@ -1477,8 +1581,8 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=3898,
-  serialized_end=5342,
+  serialized_start=4140,
+  serialized_end=5751,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
@@ -1560,6 +1664,15 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_LISTCLUSTEROPERATIONSREQUEST,
     output_type=_LISTCLUSTEROPERATIONSRESPONSE,
     serialized_options=_b('\202\323\344\223\0029\0227/managed-kubernetes/v1/clusters/{cluster_id}/operations'),
+  ),
+  _descriptor.MethodDescriptor(
+    name='ListNodes',
+    full_name='yandex.cloud.k8s.v1.ClusterService.ListNodes',
+    index=9,
+    containing_service=None,
+    input_type=_LISTCLUSTERNODESREQUEST,
+    output_type=_LISTCLUSTERNODESRESPONSE,
+    serialized_options=_b('\202\323\344\223\0024\0222/managed-kubernetes/v1/clusters/{cluster_id}/nodes'),
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_CLUSTERSERVICE)

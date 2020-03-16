@@ -46,6 +46,11 @@ class NodeGroupServiceStub(object):
         request_serializer=yandex_dot_cloud_dot_k8s_dot_v1_dot_node__group__service__pb2.ListNodeGroupOperationsRequest.SerializeToString,
         response_deserializer=yandex_dot_cloud_dot_k8s_dot_v1_dot_node__group__service__pb2.ListNodeGroupOperationsResponse.FromString,
         )
+    self.ListNodes = channel.unary_unary(
+        '/yandex.cloud.k8s.v1.NodeGroupService/ListNodes',
+        request_serializer=yandex_dot_cloud_dot_k8s_dot_v1_dot_node__group__service__pb2.ListNodeGroupNodesRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_k8s_dot_v1_dot_node__group__service__pb2.ListNodeGroupNodesResponse.FromString,
+        )
 
 
 class NodeGroupServiceServicer(object):
@@ -96,6 +101,13 @@ class NodeGroupServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def ListNodes(self, request, context):
+    """Retrieves the list of nodes in the specified Kubernetes cluster.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_NodeGroupServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -128,6 +140,11 @@ def add_NodeGroupServiceServicer_to_server(servicer, server):
           servicer.ListOperations,
           request_deserializer=yandex_dot_cloud_dot_k8s_dot_v1_dot_node__group__service__pb2.ListNodeGroupOperationsRequest.FromString,
           response_serializer=yandex_dot_cloud_dot_k8s_dot_v1_dot_node__group__service__pb2.ListNodeGroupOperationsResponse.SerializeToString,
+      ),
+      'ListNodes': grpc.unary_unary_rpc_method_handler(
+          servicer.ListNodes,
+          request_deserializer=yandex_dot_cloud_dot_k8s_dot_v1_dot_node__group__service__pb2.ListNodeGroupNodesRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_k8s_dot_v1_dot_node__group__service__pb2.ListNodeGroupNodesResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

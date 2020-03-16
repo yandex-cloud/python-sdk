@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.ai.vision.v1',
   syntax='proto3',
   serialized_options=_b('\n\035yandex.cloud.api.ai.vision.v1ZDgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/vision/v1;vision'),
-  serialized_pb=_b('\n.yandex/cloud/ai/vision/v1/text_detection.proto\x12\x19yandex.cloud.ai.vision.v1\x1a*yandex/cloud/ai/vision/v1/primitives.proto\"@\n\x0eTextAnnotation\x12.\n\x05pages\x18\x01 \x03(\x0b\x32\x1f.yandex.cloud.ai.vision.v1.Page\"W\n\x04Page\x12\r\n\x05width\x18\x01 \x01(\x03\x12\x0e\n\x06height\x18\x02 \x01(\x03\x12\x30\n\x06\x62locks\x18\x03 \x03(\x0b\x32 .yandex.cloud.ai.vision.v1.Block\"q\n\x05\x42lock\x12\x38\n\x0c\x62ounding_box\x18\x01 \x01(\x0b\x32\".yandex.cloud.ai.vision.v1.Polygon\x12.\n\x05lines\x18\x02 \x03(\x0b\x32\x1f.yandex.cloud.ai.vision.v1.Line\"\x84\x01\n\x04Line\x12\x38\n\x0c\x62ounding_box\x18\x01 \x01(\x0b\x32\".yandex.cloud.ai.vision.v1.Polygon\x12.\n\x05words\x18\x02 \x03(\x0b\x32\x1f.yandex.cloud.ai.vision.v1.Word\x12\x12\n\nconfidence\x18\x03 \x01(\x01\"\xe6\x01\n\x04Word\x12\x38\n\x0c\x62ounding_box\x18\x01 \x01(\x0b\x32\".yandex.cloud.ai.vision.v1.Polygon\x12\x0c\n\x04text\x18\x02 \x01(\t\x12\x12\n\nconfidence\x18\x03 \x01(\x01\x12\x43\n\tlanguages\x18\x04 \x03(\x0b\x32\x30.yandex.cloud.ai.vision.v1.Word.DetectedLanguage\x1a=\n\x10\x44\x65tectedLanguage\x12\x15\n\rlanguage_code\x18\x01 \x01(\t\x12\x12\n\nconfidence\x18\x02 \x01(\x01\x42\x65\n\x1dyandex.cloud.api.ai.vision.v1ZDgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/vision/v1;visionb\x06proto3')
+  serialized_pb=_b('\n.yandex/cloud/ai/vision/v1/text_detection.proto\x12\x19yandex.cloud.ai.vision.v1\x1a*yandex/cloud/ai/vision/v1/primitives.proto\"@\n\x0eTextAnnotation\x12.\n\x05pages\x18\x01 \x03(\x0b\x32\x1f.yandex.cloud.ai.vision.v1.Page\"\x8c\x01\n\x04Page\x12\r\n\x05width\x18\x01 \x01(\x03\x12\x0e\n\x06height\x18\x02 \x01(\x03\x12\x30\n\x06\x62locks\x18\x03 \x03(\x0b\x32 .yandex.cloud.ai.vision.v1.Block\x12\x33\n\x08\x65ntities\x18\x04 \x03(\x0b\x32!.yandex.cloud.ai.vision.v1.Entity\"$\n\x06\x45ntity\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04text\x18\x02 \x01(\t\"q\n\x05\x42lock\x12\x38\n\x0c\x62ounding_box\x18\x01 \x01(\x0b\x32\".yandex.cloud.ai.vision.v1.Polygon\x12.\n\x05lines\x18\x02 \x03(\x0b\x32\x1f.yandex.cloud.ai.vision.v1.Line\"\x84\x01\n\x04Line\x12\x38\n\x0c\x62ounding_box\x18\x01 \x01(\x0b\x32\".yandex.cloud.ai.vision.v1.Polygon\x12.\n\x05words\x18\x02 \x03(\x0b\x32\x1f.yandex.cloud.ai.vision.v1.Word\x12\x12\n\nconfidence\x18\x03 \x01(\x01\"\xfc\x01\n\x04Word\x12\x38\n\x0c\x62ounding_box\x18\x01 \x01(\x0b\x32\".yandex.cloud.ai.vision.v1.Polygon\x12\x0c\n\x04text\x18\x02 \x01(\t\x12\x12\n\nconfidence\x18\x03 \x01(\x01\x12\x43\n\tlanguages\x18\x04 \x03(\x0b\x32\x30.yandex.cloud.ai.vision.v1.Word.DetectedLanguage\x12\x14\n\x0c\x65ntity_index\x18\x05 \x01(\x03\x1a=\n\x10\x44\x65tectedLanguage\x12\x15\n\rlanguage_code\x18\x01 \x01(\t\x12\x12\n\nconfidence\x18\x02 \x01(\x01\x42\x65\n\x1dyandex.cloud.api.ai.vision.v1ZDgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/vision/v1;visionb\x06proto3')
   ,
   dependencies=[yandex_dot_cloud_dot_ai_dot_vision_dot_v1_dot_primitives__pb2.DESCRIPTOR,])
 
@@ -87,6 +87,13 @@ _PAGE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='entities', full_name='yandex.cloud.ai.vision.v1.Page.entities', index=3,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -99,8 +106,46 @@ _PAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=187,
-  serialized_end=274,
+  serialized_start=188,
+  serialized_end=328,
+)
+
+
+_ENTITY = _descriptor.Descriptor(
+  name='Entity',
+  full_name='yandex.cloud.ai.vision.v1.Entity',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='name', full_name='yandex.cloud.ai.vision.v1.Entity.name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='text', full_name='yandex.cloud.ai.vision.v1.Entity.text', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=330,
+  serialized_end=366,
 )
 
 
@@ -137,8 +182,8 @@ _BLOCK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=276,
-  serialized_end=389,
+  serialized_start=368,
+  serialized_end=481,
 )
 
 
@@ -182,8 +227,8 @@ _LINE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=392,
-  serialized_end=524,
+  serialized_start=484,
+  serialized_end=616,
 )
 
 
@@ -220,8 +265,8 @@ _WORD_DETECTEDLANGUAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=696,
-  serialized_end=757,
+  serialized_start=810,
+  serialized_end=871,
 )
 
 _WORD = _descriptor.Descriptor(
@@ -259,6 +304,13 @@ _WORD = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='entity_index', full_name='yandex.cloud.ai.vision.v1.Word.entity_index', index=4,
+      number=5, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -271,12 +323,13 @@ _WORD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=527,
-  serialized_end=757,
+  serialized_start=619,
+  serialized_end=871,
 )
 
 _TEXTANNOTATION.fields_by_name['pages'].message_type = _PAGE
 _PAGE.fields_by_name['blocks'].message_type = _BLOCK
+_PAGE.fields_by_name['entities'].message_type = _ENTITY
 _BLOCK.fields_by_name['bounding_box'].message_type = yandex_dot_cloud_dot_ai_dot_vision_dot_v1_dot_primitives__pb2._POLYGON
 _BLOCK.fields_by_name['lines'].message_type = _LINE
 _LINE.fields_by_name['bounding_box'].message_type = yandex_dot_cloud_dot_ai_dot_vision_dot_v1_dot_primitives__pb2._POLYGON
@@ -286,6 +339,7 @@ _WORD.fields_by_name['bounding_box'].message_type = yandex_dot_cloud_dot_ai_dot_
 _WORD.fields_by_name['languages'].message_type = _WORD_DETECTEDLANGUAGE
 DESCRIPTOR.message_types_by_name['TextAnnotation'] = _TEXTANNOTATION
 DESCRIPTOR.message_types_by_name['Page'] = _PAGE
+DESCRIPTOR.message_types_by_name['Entity'] = _ENTITY
 DESCRIPTOR.message_types_by_name['Block'] = _BLOCK
 DESCRIPTOR.message_types_by_name['Line'] = _LINE
 DESCRIPTOR.message_types_by_name['Word'] = _WORD
@@ -304,6 +358,13 @@ Page = _reflection.GeneratedProtocolMessageType('Page', (_message.Message,), {
   # @@protoc_insertion_point(class_scope:yandex.cloud.ai.vision.v1.Page)
   })
 _sym_db.RegisterMessage(Page)
+
+Entity = _reflection.GeneratedProtocolMessageType('Entity', (_message.Message,), {
+  'DESCRIPTOR' : _ENTITY,
+  '__module__' : 'yandex.cloud.ai.vision.v1.text_detection_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.ai.vision.v1.Entity)
+  })
+_sym_db.RegisterMessage(Entity)
 
 Block = _reflection.GeneratedProtocolMessageType('Block', (_message.Message,), {
   'DESCRIPTOR' : _BLOCK,

@@ -26,7 +26,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.compute.v1',
   syntax='proto3',
   serialized_options=_b('\n\033yandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;compute'),
-  serialized_pb=_b('\n.yandex/cloud/compute/v1/snapshot_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/compute/v1/snapshot.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"7\n\x12GetSnapshotRequest\x12!\n\x0bsnapshot_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x91\x01\n\x14ListSnapshotsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"f\n\x15ListSnapshotsResponse\x12\x34\n\tsnapshots\x18\x01 \x03(\x0b\x32!.yandex.cloud.compute.v1.Snapshot\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xe5\x02\n\x15\x43reateSnapshotRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\x07\x64isk_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8b\x01\n\x06labels\x18\x06 \x03(\x0b\x32:.yandex.cloud.compute.v1.CreateSnapshotRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\">\n\x16\x43reateSnapshotMetadata\x12\x13\n\x0bsnapshot_id\x18\x01 \x01(\t\x12\x0f\n\x07\x64isk_id\x18\x02 \x01(\t\"\xf9\x02\n\x15UpdateSnapshotRequest\x12!\n\x0bsnapshot_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8b\x01\n\x06labels\x18\x05 \x03(\x0b\x32:.yandex.cloud.compute.v1.UpdateSnapshotRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"-\n\x16UpdateSnapshotMetadata\x12\x13\n\x0bsnapshot_id\x18\x01 \x01(\t\":\n\x15\x44\x65leteSnapshotRequest\x12!\n\x0bsnapshot_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"-\n\x16\x44\x65leteSnapshotMetadata\x12\x13\n\x0bsnapshot_id\x18\x01 \x01(\t\"\x80\x01\n\x1dListSnapshotOperationsRequest\x12!\n\x0bsnapshot_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"p\n\x1eListSnapshotOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xf1\x07\n\x0fSnapshotService\x12\x82\x01\n\x03Get\x12+.yandex.cloud.compute.v1.GetSnapshotRequest\x1a!.yandex.cloud.compute.v1.Snapshot\"+\x82\xd3\xe4\x93\x02%\x12#/compute/v1/snapshots/{snapshot_id}\x12\x84\x01\n\x04List\x12-.yandex.cloud.compute.v1.ListSnapshotsRequest\x1a..yandex.cloud.compute.v1.ListSnapshotsResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/compute/v1/snapshots\x12\xa3\x01\n\x06\x43reate\x12..yandex.cloud.compute.v1.CreateSnapshotRequest\x1a!.yandex.cloud.operation.Operation\"F\x82\xd3\xe4\x93\x02\x1a\"\x15/compute/v1/snapshots:\x01*\xb2\xd2*\"\n\x16\x43reateSnapshotMetadata\x12\x08Snapshot\x12\xb1\x01\n\x06Update\x12..yandex.cloud.compute.v1.UpdateSnapshotRequest\x1a!.yandex.cloud.operation.Operation\"T\x82\xd3\xe4\x93\x02(2#/compute/v1/snapshots/{snapshot_id}:\x01*\xb2\xd2*\"\n\x16UpdateSnapshotMetadata\x12\x08Snapshot\x12\xbb\x01\n\x06\x44\x65lete\x12..yandex.cloud.compute.v1.DeleteSnapshotRequest\x1a!.yandex.cloud.operation.Operation\"^\x82\xd3\xe4\x93\x02%*#/compute/v1/snapshots/{snapshot_id}\xb2\xd2*/\n\x16\x44\x65leteSnapshotMetadata\x12\x15google.protobuf.Empty\x12\xb9\x01\n\x0eListOperations\x12\x36.yandex.cloud.compute.v1.ListSnapshotOperationsRequest\x1a\x37.yandex.cloud.compute.v1.ListSnapshotOperationsResponse\"6\x82\xd3\xe4\x93\x02\x30\x12./compute/v1/snapshots/{snapshot_id}/operationsBb\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3')
+  serialized_pb=_b('\n.yandex/cloud/compute/v1/snapshot_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/compute/v1/snapshot.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"7\n\x12GetSnapshotRequest\x12!\n\x0bsnapshot_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x91\x01\n\x14ListSnapshotsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"f\n\x15ListSnapshotsResponse\x12\x34\n\tsnapshots\x18\x01 \x03(\x0b\x32!.yandex.cloud.compute.v1.Snapshot\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xf0\x02\n\x15\x43reateSnapshotRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\x07\x64isk_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x93\x01\n\x06labels\x18\x06 \x03(\x0b\x32:.yandex.cloud.compute.v1.CreateSnapshotRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\">\n\x16\x43reateSnapshotMetadata\x12\x13\n\x0bsnapshot_id\x18\x01 \x01(\t\x12\x0f\n\x07\x64isk_id\x18\x02 \x01(\t\"\x84\x03\n\x15UpdateSnapshotRequest\x12!\n\x0bsnapshot_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x93\x01\n\x06labels\x18\x05 \x03(\x0b\x32:.yandex.cloud.compute.v1.UpdateSnapshotRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"-\n\x16UpdateSnapshotMetadata\x12\x13\n\x0bsnapshot_id\x18\x01 \x01(\t\":\n\x15\x44\x65leteSnapshotRequest\x12!\n\x0bsnapshot_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"-\n\x16\x44\x65leteSnapshotMetadata\x12\x13\n\x0bsnapshot_id\x18\x01 \x01(\t\"\x80\x01\n\x1dListSnapshotOperationsRequest\x12!\n\x0bsnapshot_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"p\n\x1eListSnapshotOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xf1\x07\n\x0fSnapshotService\x12\x82\x01\n\x03Get\x12+.yandex.cloud.compute.v1.GetSnapshotRequest\x1a!.yandex.cloud.compute.v1.Snapshot\"+\x82\xd3\xe4\x93\x02%\x12#/compute/v1/snapshots/{snapshot_id}\x12\x84\x01\n\x04List\x12-.yandex.cloud.compute.v1.ListSnapshotsRequest\x1a..yandex.cloud.compute.v1.ListSnapshotsResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/compute/v1/snapshots\x12\xa3\x01\n\x06\x43reate\x12..yandex.cloud.compute.v1.CreateSnapshotRequest\x1a!.yandex.cloud.operation.Operation\"F\x82\xd3\xe4\x93\x02\x1a\"\x15/compute/v1/snapshots:\x01*\xb2\xd2*\"\n\x16\x43reateSnapshotMetadata\x12\x08Snapshot\x12\xb1\x01\n\x06Update\x12..yandex.cloud.compute.v1.UpdateSnapshotRequest\x1a!.yandex.cloud.operation.Operation\"T\x82\xd3\xe4\x93\x02(2#/compute/v1/snapshots/{snapshot_id}:\x01*\xb2\xd2*\"\n\x16UpdateSnapshotMetadata\x12\x08Snapshot\x12\xbb\x01\n\x06\x44\x65lete\x12..yandex.cloud.compute.v1.DeleteSnapshotRequest\x1a!.yandex.cloud.operation.Operation\"^\x82\xd3\xe4\x93\x02%*#/compute/v1/snapshots/{snapshot_id}\xb2\xd2*/\n\x16\x44\x65leteSnapshotMetadata\x12\x15google.protobuf.Empty\x12\xb9\x01\n\x0eListOperations\x12\x36.yandex.cloud.compute.v1.ListSnapshotOperationsRequest\x1a\x37.yandex.cloud.compute.v1.ListSnapshotOperationsResponse\"6\x82\xd3\xe4\x93\x02\x30\x12./compute/v1/snapshots/{snapshot_id}/operationsBb\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3')
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -187,8 +187,8 @@ _CREATESNAPSHOTREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=906,
-  serialized_end=951,
+  serialized_start=917,
+  serialized_end=962,
 )
 
 _CREATESNAPSHOTREQUEST = _descriptor.Descriptor(
@@ -218,7 +218,7 @@ _CREATESNAPSHOTREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'), file=DESCRIPTOR),
+      serialized_options=_b('\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='description', full_name='yandex.cloud.compute.v1.CreateSnapshotRequest.description', index=3,
       number=4, type=9, cpp_type=9, label=1,
@@ -232,7 +232,7 @@ _CREATESNAPSHOTREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*'), file=DESCRIPTOR),
+      serialized_options=_b('\202\3101\004<=64\212\3101\004<=63\362\3071\017[-_./\\@0-9a-z]*\262\3101\006\032\0041-63\262\3101\026\022\024[a-z][-_./\\@0-9a-z]*'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -246,7 +246,7 @@ _CREATESNAPSHOTREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=594,
-  serialized_end=951,
+  serialized_end=962,
 )
 
 
@@ -283,8 +283,8 @@ _CREATESNAPSHOTMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=953,
-  serialized_end=1015,
+  serialized_start=964,
+  serialized_end=1026,
 )
 
 
@@ -321,8 +321,8 @@ _UPDATESNAPSHOTREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=906,
-  serialized_end=951,
+  serialized_start=917,
+  serialized_end=962,
 )
 
 _UPDATESNAPSHOTREQUEST = _descriptor.Descriptor(
@@ -352,7 +352,7 @@ _UPDATESNAPSHOTREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'), file=DESCRIPTOR),
+      serialized_options=_b('\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?'), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='description', full_name='yandex.cloud.compute.v1.UpdateSnapshotRequest.description', index=3,
       number=4, type=9, cpp_type=9, label=1,
@@ -366,7 +366,7 @@ _UPDATESNAPSHOTREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=_b('\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*'), file=DESCRIPTOR),
+      serialized_options=_b('\202\3101\004<=64\212\3101\004<=63\362\3071\017[-_./\\@0-9a-z]*\262\3101\006\032\0041-63\262\3101\026\022\024[a-z][-_./\\@0-9a-z]*'), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -379,8 +379,8 @@ _UPDATESNAPSHOTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1018,
-  serialized_end=1395,
+  serialized_start=1029,
+  serialized_end=1417,
 )
 
 
@@ -410,8 +410,8 @@ _UPDATESNAPSHOTMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1397,
-  serialized_end=1442,
+  serialized_start=1419,
+  serialized_end=1464,
 )
 
 
@@ -441,8 +441,8 @@ _DELETESNAPSHOTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1444,
-  serialized_end=1502,
+  serialized_start=1466,
+  serialized_end=1524,
 )
 
 
@@ -472,8 +472,8 @@ _DELETESNAPSHOTMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1504,
-  serialized_end=1549,
+  serialized_start=1526,
+  serialized_end=1571,
 )
 
 
@@ -517,8 +517,8 @@ _LISTSNAPSHOTOPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1552,
-  serialized_end=1680,
+  serialized_start=1574,
+  serialized_end=1702,
 )
 
 
@@ -555,8 +555,8 @@ _LISTSNAPSHOTOPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1682,
-  serialized_end=1794,
+  serialized_start=1704,
+  serialized_end=1816,
 )
 
 _LISTSNAPSHOTSRESPONSE.fields_by_name['snapshots'].message_type = yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__pb2._SNAPSHOT
@@ -701,8 +701,8 @@ _SNAPSHOTSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=1797,
-  serialized_end=2806,
+  serialized_start=1819,
+  serialized_end=2828,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
