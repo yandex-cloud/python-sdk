@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.k8s.v1',
   syntax='proto3',
   serialized_options=b'\n\027yandex.cloud.api.k8s.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/k8s/v1;k8s',
-  serialized_pb=b'\n$yandex/cloud/k8s/v1/node_group.proto\x12\x13yandex.cloud.k8s.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a%yandex/cloud/k8s/v1/maintenance.proto\x1a\x1eyandex/cloud/k8s/v1/node.proto\x1a!yandex/cloud/k8s/v1/version.proto\x1a\x1dyandex/cloud/validation.proto\"\xe6\x07\n\tNodeGroup\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12:\n\x06labels\x18\x06 \x03(\x0b\x32*.yandex.cloud.k8s.v1.NodeGroup.LabelsEntry\x12\x35\n\x06status\x18\x07 \x01(\x0e\x32%.yandex.cloud.k8s.v1.NodeGroup.Status\x12\x38\n\rnode_template\x18\x08 \x01(\x0b\x32!.yandex.cloud.k8s.v1.NodeTemplate\x12\x36\n\x0cscale_policy\x18\t \x01(\x0b\x32 .yandex.cloud.k8s.v1.ScalePolicy\x12I\n\x11\x61llocation_policy\x18\n \x01(\x0b\x32..yandex.cloud.k8s.v1.NodeGroupAllocationPolicy\x12\x19\n\x11instance_group_id\x18\x0b \x01(\t\x12\x14\n\x0cnode_version\x18\x0c \x01(\t\x12\x36\n\x0cversion_info\x18\r \x01(\x0b\x32 .yandex.cloud.k8s.v1.VersionInfo\x12K\n\x12maintenance_policy\x18\x0e \x01(\x0b\x32/.yandex.cloud.k8s.v1.NodeGroupMaintenancePolicy\x12\x1e\n\x16\x61llowed_unsafe_sysctls\x18\x0f \x03(\t\x12/\n\x0bnode_taints\x18\x10 \x03(\x0b\x32\x1a.yandex.cloud.k8s.v1.Taint\x12\x43\n\x0bnode_labels\x18\x11 \x03(\x0b\x32..yandex.cloud.k8s.v1.NodeGroup.NodeLabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x31\n\x0fNodeLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x87\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x10\n\x0cPROVISIONING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\x0f\n\x0bRECONCILING\x10\x03\x12\x0c\n\x08STOPPING\x10\x04\x12\x0b\n\x07STOPPED\x10\x05\x12\x0c\n\x08\x44\x45LETING\x10\x06\x12\x0c\n\x08STARTING\x10\x07\"\xb6\x02\n\x0bScalePolicy\x12\x42\n\x0b\x66ixed_scale\x18\x01 \x01(\x0b\x32+.yandex.cloud.k8s.v1.ScalePolicy.FixedScaleH\x00\x12@\n\nauto_scale\x18\x02 \x01(\x0b\x32*.yandex.cloud.k8s.v1.ScalePolicy.AutoScaleH\x00\x1a%\n\nFixedScale\x12\x17\n\x04size\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x1a\x66\n\tAutoScale\x12\x1b\n\x08min_size\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12\x1b\n\x08max_size\x18\x02 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12\x1f\n\x0cinitial_size\x18\x03 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100B\x12\n\nscale_type\x12\x04\xc0\xc1\x31\x01\"V\n\x19NodeGroupAllocationPolicy\x12\x39\n\tlocations\x18\x01 \x03(\x0b\x32&.yandex.cloud.k8s.v1.NodeGroupLocation\"=\n\x11NodeGroupLocation\x12\x15\n\x07zone_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tsubnet_id\x18\x02 \x01(\t\"\x8b\x01\n\x1aNodeGroupMaintenancePolicy\x12\x14\n\x0c\x61uto_upgrade\x18\x01 \x01(\x08\x12\x13\n\x0b\x61uto_repair\x18\x02 \x01(\x08\x12\x42\n\x12maintenance_window\x18\x03 \x01(\x0b\x32&.yandex.cloud.k8s.v1.MaintenanceWindowBV\n\x17yandex.cloud.api.k8s.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/k8s/v1;k8sb\x06proto3'
+  serialized_pb=b'\n$yandex/cloud/k8s/v1/node_group.proto\x12\x13yandex.cloud.k8s.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a%yandex/cloud/k8s/v1/maintenance.proto\x1a\x1eyandex/cloud/k8s/v1/node.proto\x1a!yandex/cloud/k8s/v1/version.proto\x1a\x1dyandex/cloud/validation.proto\"\xa0\x08\n\tNodeGroup\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12:\n\x06labels\x18\x06 \x03(\x0b\x32*.yandex.cloud.k8s.v1.NodeGroup.LabelsEntry\x12\x35\n\x06status\x18\x07 \x01(\x0e\x32%.yandex.cloud.k8s.v1.NodeGroup.Status\x12\x38\n\rnode_template\x18\x08 \x01(\x0b\x32!.yandex.cloud.k8s.v1.NodeTemplate\x12\x36\n\x0cscale_policy\x18\t \x01(\x0b\x32 .yandex.cloud.k8s.v1.ScalePolicy\x12I\n\x11\x61llocation_policy\x18\n \x01(\x0b\x32..yandex.cloud.k8s.v1.NodeGroupAllocationPolicy\x12\x38\n\rdeploy_policy\x18\x12 \x01(\x0b\x32!.yandex.cloud.k8s.v1.DeployPolicy\x12\x19\n\x11instance_group_id\x18\x0b \x01(\t\x12\x14\n\x0cnode_version\x18\x0c \x01(\t\x12\x36\n\x0cversion_info\x18\r \x01(\x0b\x32 .yandex.cloud.k8s.v1.VersionInfo\x12K\n\x12maintenance_policy\x18\x0e \x01(\x0b\x32/.yandex.cloud.k8s.v1.NodeGroupMaintenancePolicy\x12\x1e\n\x16\x61llowed_unsafe_sysctls\x18\x0f \x03(\t\x12/\n\x0bnode_taints\x18\x10 \x03(\x0b\x32\x1a.yandex.cloud.k8s.v1.Taint\x12\x43\n\x0bnode_labels\x18\x11 \x03(\x0b\x32..yandex.cloud.k8s.v1.NodeGroup.NodeLabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x31\n\x0fNodeLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x87\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x10\n\x0cPROVISIONING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\x0f\n\x0bRECONCILING\x10\x03\x12\x0c\n\x08STOPPING\x10\x04\x12\x0b\n\x07STOPPED\x10\x05\x12\x0c\n\x08\x44\x45LETING\x10\x06\x12\x0c\n\x08STARTING\x10\x07\"\xb6\x02\n\x0bScalePolicy\x12\x42\n\x0b\x66ixed_scale\x18\x01 \x01(\x0b\x32+.yandex.cloud.k8s.v1.ScalePolicy.FixedScaleH\x00\x12@\n\nauto_scale\x18\x02 \x01(\x0b\x32*.yandex.cloud.k8s.v1.ScalePolicy.AutoScaleH\x00\x1a%\n\nFixedScale\x12\x17\n\x04size\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x1a\x66\n\tAutoScale\x12\x1b\n\x08min_size\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12\x1b\n\x08max_size\x18\x02 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12\x1f\n\x0cinitial_size\x18\x03 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100B\x12\n\nscale_type\x12\x04\xc0\xc1\x31\x01\"V\n\x19NodeGroupAllocationPolicy\x12\x39\n\tlocations\x18\x01 \x03(\x0b\x32&.yandex.cloud.k8s.v1.NodeGroupLocation\"=\n\x11NodeGroupLocation\x12\x15\n\x07zone_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tsubnet_id\x18\x02 \x01(\t\"\x8b\x01\n\x1aNodeGroupMaintenancePolicy\x12\x14\n\x0c\x61uto_upgrade\x18\x01 \x01(\x08\x12\x13\n\x0b\x61uto_repair\x18\x02 \x01(\x08\x12\x42\n\x12maintenance_window\x18\x03 \x01(\x0b\x32&.yandex.cloud.k8s.v1.MaintenanceWindow\"T\n\x0c\x44\x65ployPolicy\x12\"\n\x0fmax_unavailable\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12 \n\rmax_expansion\x18\x02 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100BV\n\x17yandex.cloud.api.k8s.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/k8s/v1;k8sb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_k8s_dot_v1_dot_maintenance__pb2.DESCRIPTOR,yandex_dot_cloud_dot_k8s_dot_v1_dot_node__pb2.DESCRIPTOR,yandex_dot_cloud_dot_k8s_dot_v1_dot_version__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -70,8 +70,8 @@ _NODEGROUP_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1095,
-  serialized_end=1230,
+  serialized_start=1153,
+  serialized_end=1288,
 )
 _sym_db.RegisterEnumDescriptor(_NODEGROUP_STATUS)
 
@@ -109,8 +109,8 @@ _NODEGROUP_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=996,
-  serialized_end=1041,
+  serialized_start=1054,
+  serialized_end=1099,
 )
 
 _NODEGROUP_NODELABELSENTRY = _descriptor.Descriptor(
@@ -146,8 +146,8 @@ _NODEGROUP_NODELABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1043,
-  serialized_end=1092,
+  serialized_start=1101,
+  serialized_end=1150,
 )
 
 _NODEGROUP = _descriptor.Descriptor(
@@ -228,49 +228,56 @@ _NODEGROUP = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='instance_group_id', full_name='yandex.cloud.k8s.v1.NodeGroup.instance_group_id', index=10,
+      name='deploy_policy', full_name='yandex.cloud.k8s.v1.NodeGroup.deploy_policy', index=10,
+      number=18, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='instance_group_id', full_name='yandex.cloud.k8s.v1.NodeGroup.instance_group_id', index=11,
       number=11, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='node_version', full_name='yandex.cloud.k8s.v1.NodeGroup.node_version', index=11,
+      name='node_version', full_name='yandex.cloud.k8s.v1.NodeGroup.node_version', index=12,
       number=12, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='version_info', full_name='yandex.cloud.k8s.v1.NodeGroup.version_info', index=12,
+      name='version_info', full_name='yandex.cloud.k8s.v1.NodeGroup.version_info', index=13,
       number=13, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='maintenance_policy', full_name='yandex.cloud.k8s.v1.NodeGroup.maintenance_policy', index=13,
+      name='maintenance_policy', full_name='yandex.cloud.k8s.v1.NodeGroup.maintenance_policy', index=14,
       number=14, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='allowed_unsafe_sysctls', full_name='yandex.cloud.k8s.v1.NodeGroup.allowed_unsafe_sysctls', index=14,
+      name='allowed_unsafe_sysctls', full_name='yandex.cloud.k8s.v1.NodeGroup.allowed_unsafe_sysctls', index=15,
       number=15, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='node_taints', full_name='yandex.cloud.k8s.v1.NodeGroup.node_taints', index=15,
+      name='node_taints', full_name='yandex.cloud.k8s.v1.NodeGroup.node_taints', index=16,
       number=16, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='node_labels', full_name='yandex.cloud.k8s.v1.NodeGroup.node_labels', index=16,
+      name='node_labels', full_name='yandex.cloud.k8s.v1.NodeGroup.node_labels', index=17,
       number=17, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -290,7 +297,7 @@ _NODEGROUP = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=232,
-  serialized_end=1230,
+  serialized_end=1288,
 )
 
 
@@ -320,8 +327,8 @@ _SCALEPOLICY_FIXEDSCALE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1382,
-  serialized_end=1419,
+  serialized_start=1440,
+  serialized_end=1477,
 )
 
 _SCALEPOLICY_AUTOSCALE = _descriptor.Descriptor(
@@ -364,8 +371,8 @@ _SCALEPOLICY_AUTOSCALE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1421,
-  serialized_end=1523,
+  serialized_start=1479,
+  serialized_end=1581,
 )
 
 _SCALEPOLICY = _descriptor.Descriptor(
@@ -404,8 +411,8 @@ _SCALEPOLICY = _descriptor.Descriptor(
       name='scale_type', full_name='yandex.cloud.k8s.v1.ScalePolicy.scale_type',
       index=0, containing_type=None, fields=[], serialized_options=b'\300\3011\001'),
   ],
-  serialized_start=1233,
-  serialized_end=1543,
+  serialized_start=1291,
+  serialized_end=1601,
 )
 
 
@@ -435,8 +442,8 @@ _NODEGROUPALLOCATIONPOLICY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1545,
-  serialized_end=1631,
+  serialized_start=1603,
+  serialized_end=1689,
 )
 
 
@@ -473,8 +480,8 @@ _NODEGROUPLOCATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1633,
-  serialized_end=1694,
+  serialized_start=1691,
+  serialized_end=1752,
 )
 
 
@@ -518,8 +525,46 @@ _NODEGROUPMAINTENANCEPOLICY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1697,
-  serialized_end=1836,
+  serialized_start=1755,
+  serialized_end=1894,
+)
+
+
+_DEPLOYPOLICY = _descriptor.Descriptor(
+  name='DeployPolicy',
+  full_name='yandex.cloud.k8s.v1.DeployPolicy',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='max_unavailable', full_name='yandex.cloud.k8s.v1.DeployPolicy.max_unavailable', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\372\3071\0050-100', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='max_expansion', full_name='yandex.cloud.k8s.v1.DeployPolicy.max_expansion', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\372\3071\0050-100', file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1896,
+  serialized_end=1980,
 )
 
 _NODEGROUP_LABELSENTRY.containing_type = _NODEGROUP
@@ -530,6 +575,7 @@ _NODEGROUP.fields_by_name['status'].enum_type = _NODEGROUP_STATUS
 _NODEGROUP.fields_by_name['node_template'].message_type = yandex_dot_cloud_dot_k8s_dot_v1_dot_node__pb2._NODETEMPLATE
 _NODEGROUP.fields_by_name['scale_policy'].message_type = _SCALEPOLICY
 _NODEGROUP.fields_by_name['allocation_policy'].message_type = _NODEGROUPALLOCATIONPOLICY
+_NODEGROUP.fields_by_name['deploy_policy'].message_type = _DEPLOYPOLICY
 _NODEGROUP.fields_by_name['version_info'].message_type = yandex_dot_cloud_dot_k8s_dot_v1_dot_version__pb2._VERSIONINFO
 _NODEGROUP.fields_by_name['maintenance_policy'].message_type = _NODEGROUPMAINTENANCEPOLICY
 _NODEGROUP.fields_by_name['node_taints'].message_type = yandex_dot_cloud_dot_k8s_dot_v1_dot_node__pb2._TAINT
@@ -552,6 +598,7 @@ DESCRIPTOR.message_types_by_name['ScalePolicy'] = _SCALEPOLICY
 DESCRIPTOR.message_types_by_name['NodeGroupAllocationPolicy'] = _NODEGROUPALLOCATIONPOLICY
 DESCRIPTOR.message_types_by_name['NodeGroupLocation'] = _NODEGROUPLOCATION
 DESCRIPTOR.message_types_by_name['NodeGroupMaintenancePolicy'] = _NODEGROUPMAINTENANCEPOLICY
+DESCRIPTOR.message_types_by_name['DeployPolicy'] = _DEPLOYPOLICY
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 NodeGroup = _reflection.GeneratedProtocolMessageType('NodeGroup', (_message.Message,), {
@@ -621,6 +668,13 @@ NodeGroupMaintenancePolicy = _reflection.GeneratedProtocolMessageType('NodeGroup
   })
 _sym_db.RegisterMessage(NodeGroupMaintenancePolicy)
 
+DeployPolicy = _reflection.GeneratedProtocolMessageType('DeployPolicy', (_message.Message,), {
+  'DESCRIPTOR' : _DEPLOYPOLICY,
+  '__module__' : 'yandex.cloud.k8s.v1.node_group_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.k8s.v1.DeployPolicy)
+  })
+_sym_db.RegisterMessage(DeployPolicy)
+
 
 DESCRIPTOR._options = None
 _NODEGROUP_LABELSENTRY._options = None
@@ -631,4 +685,6 @@ _SCALEPOLICY_AUTOSCALE.fields_by_name['max_size']._options = None
 _SCALEPOLICY_AUTOSCALE.fields_by_name['initial_size']._options = None
 _SCALEPOLICY.oneofs_by_name['scale_type']._options = None
 _NODEGROUPLOCATION.fields_by_name['zone_id']._options = None
+_DEPLOYPOLICY.fields_by_name['max_unavailable']._options = None
+_DEPLOYPOLICY.fields_by_name['max_expansion']._options = None
 # @@protoc_insertion_point(module_scope)

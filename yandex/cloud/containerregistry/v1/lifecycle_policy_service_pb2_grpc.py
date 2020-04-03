@@ -49,7 +49,7 @@ class LifecyclePolicyServiceStub(object):
     self.ListDryRunResults = channel.unary_unary(
         '/yandex.cloud.containerregistry.v1.LifecyclePolicyService/ListDryRunResults',
         request_serializer=yandex_dot_cloud_dot_containerregistry_dot_v1_dot_lifecycle__policy__service__pb2.ListDryRunLifecyclePolicyResultsRequest.SerializeToString,
-        response_deserializer=yandex_dot_cloud_dot_containerregistry_dot_v1_dot_lifecycle__policy__service__pb2.ListRunLifecyclePolicyResultsResponse.FromString,
+        response_deserializer=yandex_dot_cloud_dot_containerregistry_dot_v1_dot_lifecycle__policy__service__pb2.ListDryRunLifecyclePolicyResultsResponse.FromString,
         )
     self.ListDryRunResultAffectedImages = channel.unary_unary(
         '/yandex.cloud.containerregistry.v1.LifecyclePolicyService/ListDryRunResultAffectedImages',
@@ -154,7 +154,7 @@ def add_LifecyclePolicyServiceServicer_to_server(servicer, server):
       'ListDryRunResults': grpc.unary_unary_rpc_method_handler(
           servicer.ListDryRunResults,
           request_deserializer=yandex_dot_cloud_dot_containerregistry_dot_v1_dot_lifecycle__policy__service__pb2.ListDryRunLifecyclePolicyResultsRequest.FromString,
-          response_serializer=yandex_dot_cloud_dot_containerregistry_dot_v1_dot_lifecycle__policy__service__pb2.ListRunLifecyclePolicyResultsResponse.SerializeToString,
+          response_serializer=yandex_dot_cloud_dot_containerregistry_dot_v1_dot_lifecycle__policy__service__pb2.ListDryRunLifecyclePolicyResultsResponse.SerializeToString,
       ),
       'ListDryRunResultAffectedImages': grpc.unary_unary_rpc_method_handler(
           servicer.ListDryRunResultAffectedImages,
