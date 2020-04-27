@@ -126,6 +126,16 @@ class ClusterServiceStub(object):
         request_serializer=yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_cluster__service__pb2.DeleteClusterShardRequest.SerializeToString,
         response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
         )
+    self.ResetupHosts = channel.unary_unary(
+        '/yandex.cloud.mdb.mongodb.v1.ClusterService/ResetupHosts',
+        request_serializer=yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_cluster__service__pb2.ResetupHostsRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+        )
+    self.RestartHosts = channel.unary_unary(
+        '/yandex.cloud.mdb.mongodb.v1.ClusterService/RestartHosts',
+        request_serializer=yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_cluster__service__pb2.RestartHostsRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+        )
 
 
 class ClusterServiceServicer(object):
@@ -290,6 +300,20 @@ class ClusterServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def ResetupHosts(self, request, context):
+    """Resetup hosts.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def RestartHosts(self, request, context):
+    """Restart hosts.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_ClusterServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -401,6 +425,16 @@ def add_ClusterServiceServicer_to_server(servicer, server):
       'DeleteShard': grpc.unary_unary_rpc_method_handler(
           servicer.DeleteShard,
           request_deserializer=yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_cluster__service__pb2.DeleteClusterShardRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+      ),
+      'ResetupHosts': grpc.unary_unary_rpc_method_handler(
+          servicer.ResetupHosts,
+          request_deserializer=yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_cluster__service__pb2.ResetupHostsRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+      ),
+      'RestartHosts': grpc.unary_unary_rpc_method_handler(
+          servicer.RestartHosts,
+          request_deserializer=yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_cluster__service__pb2.RestartHostsRequest.FromString,
           response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
       ),
   }

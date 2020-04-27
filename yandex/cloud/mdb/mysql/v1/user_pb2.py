@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.mdb.mysql.v1',
   syntax='proto3',
   serialized_options=b'\n\035yandex.cloud.api.mdb.mysql.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mysql/v1;mysql',
-  serialized_pb=b'\n$yandex/cloud/mdb/mysql/v1/user.proto\x12\x19yandex.cloud.mdb.mysql.v1\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"d\n\x04User\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12:\n\x0bpermissions\x18\x03 \x03(\x0b\x32%.yandex.cloud.mdb.mysql.v1.Permission\"\x9f\x03\n\nPermission\x12\x15\n\rdatabase_name\x18\x01 \x01(\t\x12G\n\x05roles\x18\x02 \x03(\x0e\x32/.yandex.cloud.mdb.mysql.v1.Permission.PrivilegeB\x07\x82\xc8\x31\x03>=1\"\xb0\x02\n\tPrivilege\x12\x19\n\x15PRIVILEGE_UNSPECIFIED\x10\x00\x12\x12\n\x0e\x41LL_PRIVILEGES\x10\x01\x12\t\n\x05\x41LTER\x10\x02\x12\x11\n\rALTER_ROUTINE\x10\x03\x12\n\n\x06\x43REATE\x10\x04\x12\x12\n\x0e\x43REATE_ROUTINE\x10\x05\x12\x1b\n\x17\x43REATE_TEMPORARY_TABLES\x10\x06\x12\x0f\n\x0b\x43REATE_VIEW\x10\x07\x12\n\n\x06\x44\x45LETE\x10\x08\x12\x08\n\x04\x44ROP\x10\t\x12\t\n\x05\x45VENT\x10\n\x12\x0b\n\x07\x45XECUTE\x10\x0b\x12\t\n\x05INDEX\x10\x0c\x12\n\n\x06INSERT\x10\r\x12\x0f\n\x0bLOCK_TABLES\x10\x0e\x12\n\n\x06SELECT\x10\x0f\x12\r\n\tSHOW_VIEW\x10\x10\x12\x0b\n\x07TRIGGER\x10\x11\x12\n\n\x06UPDATE\x10\x12\"\xa8\x02\n\x10\x43onnectionLimits\x12\x44\n\x16max_questions_per_hour\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12\x42\n\x14max_updates_per_hour\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12\x46\n\x18max_connections_per_hour\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12\x42\n\x14max_user_connections\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\"\xeb\x02\n\x08UserSpec\x12+\n\x04name\x18\x01 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=32\xf2\xc7\x31\r[a-zA-Z0-9_]*\x12\x1f\n\x08password\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x38-128\x12:\n\x0bpermissions\x18\x03 \x03(\x0b\x32%.yandex.cloud.mdb.mysql.v1.Permission\x12G\n\x12global_permissions\x18\x04 \x03(\x0e\x32+.yandex.cloud.mdb.mysql.v1.GlobalPermission\x12\x46\n\x11\x63onnection_limits\x18\x05 \x01(\x0b\x32+.yandex.cloud.mdb.mysql.v1.ConnectionLimits\x12\x44\n\x15\x61uthentication_plugin\x18\x06 \x01(\x0e\x32%.yandex.cloud.mdb.mysql.v1.AuthPlugin*d\n\x10GlobalPermission\x12!\n\x1dGLOBAL_PERMISSION_UNSPECIFIED\x10\x00\x12\x16\n\x12REPLICATION_CLIENT\x10\x01\x12\x15\n\x11REPLICATION_SLAVE\x10\x02*t\n\nAuthPlugin\x12\x1b\n\x17\x41UTH_PLUGIN_UNSPECIFIED\x10\x00\x12\x19\n\x15MYSQL_NATIVE_PASSWORD\x10\x01\x12\x19\n\x15\x43\x41\x43HING_SHA2_PASSWORD\x10\x02\x12\x13\n\x0fSHA256_PASSWORD\x10\x03\x42\x64\n\x1dyandex.cloud.api.mdb.mysql.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mysql/v1;mysqlb\x06proto3'
+  serialized_pb=b'\n$yandex/cloud/mdb/mysql/v1/user.proto\x12\x19yandex.cloud.mdb.mysql.v1\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\xbb\x02\n\x04User\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12:\n\x0bpermissions\x18\x03 \x03(\x0b\x32%.yandex.cloud.mdb.mysql.v1.Permission\x12G\n\x12global_permissions\x18\x04 \x03(\x0e\x32+.yandex.cloud.mdb.mysql.v1.GlobalPermission\x12\x46\n\x11\x63onnection_limits\x18\x05 \x01(\x0b\x32+.yandex.cloud.mdb.mysql.v1.ConnectionLimits\x12\x44\n\x15\x61uthentication_plugin\x18\x06 \x01(\x0e\x32%.yandex.cloud.mdb.mysql.v1.AuthPlugin\"\x9f\x03\n\nPermission\x12\x15\n\rdatabase_name\x18\x01 \x01(\t\x12G\n\x05roles\x18\x02 \x03(\x0e\x32/.yandex.cloud.mdb.mysql.v1.Permission.PrivilegeB\x07\x82\xc8\x31\x03>=1\"\xb0\x02\n\tPrivilege\x12\x19\n\x15PRIVILEGE_UNSPECIFIED\x10\x00\x12\x12\n\x0e\x41LL_PRIVILEGES\x10\x01\x12\t\n\x05\x41LTER\x10\x02\x12\x11\n\rALTER_ROUTINE\x10\x03\x12\n\n\x06\x43REATE\x10\x04\x12\x12\n\x0e\x43REATE_ROUTINE\x10\x05\x12\x1b\n\x17\x43REATE_TEMPORARY_TABLES\x10\x06\x12\x0f\n\x0b\x43REATE_VIEW\x10\x07\x12\n\n\x06\x44\x45LETE\x10\x08\x12\x08\n\x04\x44ROP\x10\t\x12\t\n\x05\x45VENT\x10\n\x12\x0b\n\x07\x45XECUTE\x10\x0b\x12\t\n\x05INDEX\x10\x0c\x12\n\n\x06INSERT\x10\r\x12\x0f\n\x0bLOCK_TABLES\x10\x0e\x12\n\n\x06SELECT\x10\x0f\x12\r\n\tSHOW_VIEW\x10\x10\x12\x0b\n\x07TRIGGER\x10\x11\x12\n\n\x06UPDATE\x10\x12\"\xa8\x02\n\x10\x43onnectionLimits\x12\x44\n\x16max_questions_per_hour\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12\x42\n\x14max_updates_per_hour\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12\x46\n\x18max_connections_per_hour\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12\x42\n\x14max_user_connections\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\"\xeb\x02\n\x08UserSpec\x12+\n\x04name\x18\x01 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=32\xf2\xc7\x31\r[a-zA-Z0-9_]*\x12\x1f\n\x08password\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x38-128\x12:\n\x0bpermissions\x18\x03 \x03(\x0b\x32%.yandex.cloud.mdb.mysql.v1.Permission\x12G\n\x12global_permissions\x18\x04 \x03(\x0e\x32+.yandex.cloud.mdb.mysql.v1.GlobalPermission\x12\x46\n\x11\x63onnection_limits\x18\x05 \x01(\x0b\x32+.yandex.cloud.mdb.mysql.v1.ConnectionLimits\x12\x44\n\x15\x61uthentication_plugin\x18\x06 \x01(\x0e\x32%.yandex.cloud.mdb.mysql.v1.AuthPlugin*d\n\x10GlobalPermission\x12!\n\x1dGLOBAL_PERMISSION_UNSPECIFIED\x10\x00\x12\x16\n\x12REPLICATION_CLIENT\x10\x01\x12\x15\n\x11REPLICATION_SLAVE\x10\x02*t\n\nAuthPlugin\x12\x1b\n\x17\x41UTH_PLUGIN_UNSPECIFIED\x10\x00\x12\x19\n\x15MYSQL_NATIVE_PASSWORD\x10\x01\x12\x19\n\x15\x43\x41\x43HING_SHA2_PASSWORD\x10\x02\x12\x13\n\x0fSHA256_PASSWORD\x10\x03\x42\x64\n\x1dyandex.cloud.api.mdb.mysql.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mysql/v1;mysqlb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -46,8 +46,8 @@ _GLOBALPERMISSION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1315,
-  serialized_end=1415,
+  serialized_start=1531,
+  serialized_end=1631,
 )
 _sym_db.RegisterEnumDescriptor(_GLOBALPERMISSION)
 
@@ -77,8 +77,8 @@ _AUTHPLUGIN = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1417,
-  serialized_end=1533,
+  serialized_start=1633,
+  serialized_end=1749,
 )
 _sym_db.RegisterEnumDescriptor(_AUTHPLUGIN)
 
@@ -177,8 +177,8 @@ _PERMISSION_PRIVILEGE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=344,
-  serialized_end=648,
+  serialized_start=560,
+  serialized_end=864,
 )
 _sym_db.RegisterEnumDescriptor(_PERMISSION_PRIVILEGE)
 
@@ -211,6 +211,27 @@ _USER = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='global_permissions', full_name='yandex.cloud.mdb.mysql.v1.User.global_permissions', index=3,
+      number=4, type=14, cpp_type=8, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='connection_limits', full_name='yandex.cloud.mdb.mysql.v1.User.connection_limits', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='authentication_plugin', full_name='yandex.cloud.mdb.mysql.v1.User.authentication_plugin', index=5,
+      number=6, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -223,8 +244,8 @@ _USER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=130,
-  serialized_end=230,
+  serialized_start=131,
+  serialized_end=446,
 )
 
 
@@ -262,8 +283,8 @@ _PERMISSION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=233,
-  serialized_end=648,
+  serialized_start=449,
+  serialized_end=864,
 )
 
 
@@ -314,8 +335,8 @@ _CONNECTIONLIMITS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=651,
-  serialized_end=947,
+  serialized_start=867,
+  serialized_end=1163,
 )
 
 
@@ -380,11 +401,14 @@ _USERSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=950,
-  serialized_end=1313,
+  serialized_start=1166,
+  serialized_end=1529,
 )
 
 _USER.fields_by_name['permissions'].message_type = _PERMISSION
+_USER.fields_by_name['global_permissions'].enum_type = _GLOBALPERMISSION
+_USER.fields_by_name['connection_limits'].message_type = _CONNECTIONLIMITS
+_USER.fields_by_name['authentication_plugin'].enum_type = _AUTHPLUGIN
 _PERMISSION.fields_by_name['roles'].enum_type = _PERMISSION_PRIVILEGE
 _PERMISSION_PRIVILEGE.containing_type = _PERMISSION
 _CONNECTIONLIMITS.fields_by_name['max_questions_per_hour'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
