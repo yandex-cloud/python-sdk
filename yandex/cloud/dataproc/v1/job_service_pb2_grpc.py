@@ -31,6 +31,11 @@ class JobServiceStub(object):
         request_serializer=yandex_dot_cloud_dot_dataproc_dot_v1_dot_job__service__pb2.GetJobRequest.SerializeToString,
         response_deserializer=yandex_dot_cloud_dot_dataproc_dot_v1_dot_job__pb2.Job.FromString,
         )
+    self.ListLog = channel.unary_unary(
+        '/yandex.cloud.dataproc.v1.JobService/ListLog',
+        request_serializer=yandex_dot_cloud_dot_dataproc_dot_v1_dot_job__service__pb2.ListJobLogRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_dataproc_dot_v1_dot_job__service__pb2.ListJobLogResponse.FromString,
+        )
 
 
 class JobServiceServicer(object):
@@ -58,6 +63,13 @@ class JobServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def ListLog(self, request, context):
+    """Returns a log for specified job.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_JobServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -75,6 +87,11 @@ def add_JobServiceServicer_to_server(servicer, server):
           servicer.Get,
           request_deserializer=yandex_dot_cloud_dot_dataproc_dot_v1_dot_job__service__pb2.GetJobRequest.FromString,
           response_serializer=yandex_dot_cloud_dot_dataproc_dot_v1_dot_job__pb2.Job.SerializeToString,
+      ),
+      'ListLog': grpc.unary_unary_rpc_method_handler(
+          servicer.ListLog,
+          request_deserializer=yandex_dot_cloud_dot_dataproc_dot_v1_dot_job__service__pb2.ListJobLogRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_dataproc_dot_v1_dot_job__service__pb2.ListJobLogResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(
