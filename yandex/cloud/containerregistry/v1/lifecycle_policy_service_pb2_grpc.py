@@ -46,6 +46,11 @@ class LifecyclePolicyServiceStub(object):
         request_serializer=yandex_dot_cloud_dot_containerregistry_dot_v1_dot_lifecycle__policy__service__pb2.DryRunLifecyclePolicyRequest.SerializeToString,
         response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
         )
+    self.GetDryRunResult = channel.unary_unary(
+        '/yandex.cloud.containerregistry.v1.LifecyclePolicyService/GetDryRunResult',
+        request_serializer=yandex_dot_cloud_dot_containerregistry_dot_v1_dot_lifecycle__policy__service__pb2.GetDryRunLifecyclePolicyResultRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_containerregistry_dot_v1_dot_lifecycle__policy__service__pb2.DryRunLifecyclePolicyResult.FromString,
+        )
     self.ListDryRunResults = channel.unary_unary(
         '/yandex.cloud.containerregistry.v1.LifecyclePolicyService/ListDryRunResults',
         request_serializer=yandex_dot_cloud_dot_containerregistry_dot_v1_dot_lifecycle__policy__service__pb2.ListDryRunLifecyclePolicyResultsRequest.SerializeToString,
@@ -104,6 +109,13 @@ class LifecyclePolicyServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def GetDryRunResult(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def ListDryRunResults(self, request, context):
     # missing associated documentation comment in .proto file
     pass
@@ -150,6 +162,11 @@ def add_LifecyclePolicyServiceServicer_to_server(servicer, server):
           servicer.DryRun,
           request_deserializer=yandex_dot_cloud_dot_containerregistry_dot_v1_dot_lifecycle__policy__service__pb2.DryRunLifecyclePolicyRequest.FromString,
           response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+      ),
+      'GetDryRunResult': grpc.unary_unary_rpc_method_handler(
+          servicer.GetDryRunResult,
+          request_deserializer=yandex_dot_cloud_dot_containerregistry_dot_v1_dot_lifecycle__policy__service__pb2.GetDryRunLifecyclePolicyResultRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_containerregistry_dot_v1_dot_lifecycle__policy__service__pb2.DryRunLifecyclePolicyResult.SerializeToString,
       ),
       'ListDryRunResults': grpc.unary_unary_rpc_method_handler(
           servicer.ListDryRunResults,
