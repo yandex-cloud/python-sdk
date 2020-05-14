@@ -88,7 +88,7 @@ class InstanceServiceStub(object):
         )
     self.UpdateNetworkInterface = channel.unary_unary(
         '/yandex.cloud.compute.v1.InstanceService/UpdateNetworkInterface',
-        request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.UpdateNetworkInterfaceRequest.SerializeToString,
+        request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.UpdateInstanceNetworkInterfaceRequest.SerializeToString,
         response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
         )
     self.ListOperations = channel.unary_unary(
@@ -295,7 +295,7 @@ def add_InstanceServiceServicer_to_server(servicer, server):
       ),
       'UpdateNetworkInterface': grpc.unary_unary_rpc_method_handler(
           servicer.UpdateNetworkInterface,
-          request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.UpdateNetworkInterfaceRequest.FromString,
+          request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.UpdateInstanceNetworkInterfaceRequest.FromString,
           response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
       ),
       'ListOperations': grpc.unary_unary_rpc_method_handler(
