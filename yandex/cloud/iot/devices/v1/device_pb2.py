@@ -20,11 +20,41 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.iot.devices.v1',
   syntax='proto3',
   serialized_options=b'\n\037yandex.cloud.api.iot.devices.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/iot/devices/v1;devices',
-  serialized_pb=b'\n(yandex/cloud/iot/devices/v1/device.proto\x12\x1byandex.cloud.iot.devices.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\xff\x01\n\x06\x44\x65vice\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x0bregistry_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12L\n\rtopic_aliases\x18\x06 \x03(\x0b\x32\x35.yandex.cloud.iot.devices.v1.Device.TopicAliasesEntry\x1a\x33\n\x11TopicAliasesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x85\x01\n\x11\x44\x65viceCertificate\x12\x11\n\tdevice_id\x18\x01 \x01(\t\x12\x13\n\x0b\x66ingerprint\x18\x02 \x01(\t\x12\x18\n\x10\x63\x65rtificate_data\x18\x03 \x01(\t\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"_\n\x0e\x44\x65vicePassword\x12\x11\n\tdevice_id\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampBj\n\x1fyandex.cloud.api.iot.devices.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/iot/devices/v1;devicesb\x06proto3'
+  serialized_pb=b'\n(yandex/cloud/iot/devices/v1/device.proto\x12\x1byandex.cloud.iot.devices.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\x85\x03\n\x06\x44\x65vice\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x0bregistry_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12L\n\rtopic_aliases\x18\x06 \x03(\x0b\x32\x35.yandex.cloud.iot.devices.v1.Device.TopicAliasesEntry\x12:\n\x06status\x18\x07 \x01(\x0e\x32*.yandex.cloud.iot.devices.v1.Device.Status\x1a\x33\n\x11TopicAliasesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"H\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08\x44\x45LETING\x10\x03\"\x85\x01\n\x11\x44\x65viceCertificate\x12\x11\n\tdevice_id\x18\x01 \x01(\t\x12\x13\n\x0b\x66ingerprint\x18\x02 \x01(\t\x12\x18\n\x10\x63\x65rtificate_data\x18\x03 \x01(\t\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"_\n\x0e\x44\x65vicePassword\x12\x11\n\tdevice_id\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampBj\n\x1fyandex.cloud.api.iot.devices.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/iot/devices/v1;devicesb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
 
+
+_DEVICE_STATUS = _descriptor.EnumDescriptor(
+  name='Status',
+  full_name='yandex.cloud.iot.devices.v1.Device.Status',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='STATUS_UNSPECIFIED', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='CREATING', index=1, number=1,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='ACTIVE', index=2, number=2,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='DELETING', index=3, number=3,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=455,
+  serialized_end=527,
+)
+_sym_db.RegisterEnumDescriptor(_DEVICE_STATUS)
 
 
 _DEVICE_TOPICALIASESENTRY = _descriptor.Descriptor(
@@ -60,8 +90,8 @@ _DEVICE_TOPICALIASESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=342,
-  serialized_end=393,
+  serialized_start=402,
+  serialized_end=453,
 )
 
 _DEVICE = _descriptor.Descriptor(
@@ -113,11 +143,19 @@ _DEVICE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='status', full_name='yandex.cloud.iot.devices.v1.Device.status', index=6,
+      number=7, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
   nested_types=[_DEVICE_TOPICALIASESENTRY, ],
   enum_types=[
+    _DEVICE_STATUS,
   ],
   serialized_options=None,
   is_extendable=False,
@@ -126,7 +164,7 @@ _DEVICE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=138,
-  serialized_end=393,
+  serialized_end=527,
 )
 
 
@@ -177,8 +215,8 @@ _DEVICECERTIFICATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=396,
-  serialized_end=529,
+  serialized_start=530,
+  serialized_end=663,
 )
 
 
@@ -222,13 +260,15 @@ _DEVICEPASSWORD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=531,
-  serialized_end=626,
+  serialized_start=665,
+  serialized_end=760,
 )
 
 _DEVICE_TOPICALIASESENTRY.containing_type = _DEVICE
 _DEVICE.fields_by_name['created_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _DEVICE.fields_by_name['topic_aliases'].message_type = _DEVICE_TOPICALIASESENTRY
+_DEVICE.fields_by_name['status'].enum_type = _DEVICE_STATUS
+_DEVICE_STATUS.containing_type = _DEVICE
 _DEVICECERTIFICATE.fields_by_name['created_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _DEVICEPASSWORD.fields_by_name['created_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 DESCRIPTOR.message_types_by_name['Device'] = _DEVICE
