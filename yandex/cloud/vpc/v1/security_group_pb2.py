@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.vpc.v1',
   syntax='proto3',
   serialized_options=b'\n\027yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpc',
-  serialized_pb=b'\n(yandex/cloud/vpc/v1/security_group.proto\x12\x13yandex.cloud.vpc.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\xce\x03\n\rSecurityGroup\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12>\n\x06labels\x18\x06 \x03(\x0b\x32..yandex.cloud.vpc.v1.SecurityGroup.LabelsEntry\x12\x12\n\nnetwork_id\x18\x07 \x01(\t\x12\x39\n\x06status\x18\x08 \x01(\x0e\x32).yandex.cloud.vpc.v1.SecurityGroup.Status\x12\x35\n\x05rules\x18\t \x03(\x0b\x32&.yandex.cloud.vpc.v1.SecurityGroupRule\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"V\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08UPDATING\x10\x03\x12\x0c\n\x08\x44\x45LETING\x10\x04\"\xf7\x03\n\x11SecurityGroupRule\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x42\n\x06labels\x18\x03 \x03(\x0b\x32\x32.yandex.cloud.vpc.v1.SecurityGroupRule.LabelsEntry\x12I\n\tdirection\x18\x04 \x01(\x0e\x32\x30.yandex.cloud.vpc.v1.SecurityGroupRule.DirectionB\x04\xe8\xc7\x31\x01\x12-\n\x05ports\x18\x05 \x01(\x0b\x32\x1e.yandex.cloud.vpc.v1.PortRange\x12\x15\n\rprotocol_name\x18\x06 \x01(\t\x12\x17\n\x0fprotocol_number\x18\x07 \x01(\x03\x12\x36\n\x0b\x63idr_blocks\x18\x08 \x01(\x0b\x32\x1f.yandex.cloud.vpc.v1.CidrBlocksH\x00\x12\x1b\n\x11security_group_id\x18\t \x01(\tH\x00\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"?\n\tDirection\x12\x19\n\x15\x44IRECTION_UNSPECIFIED\x10\x00\x12\x0b\n\x07INGRESS\x10\x01\x12\n\n\x06\x45GRESS\x10\x02\x42\x0e\n\x06target\x12\x04\xc0\xc1\x31\x01\"I\n\tPortRange\x12\x1e\n\tfrom_port\x18\x01 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-65535\x12\x1c\n\x07to_port\x18\x02 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-65535\"<\n\nCidrBlocks\x12\x16\n\x0ev4_cidr_blocks\x18\x01 \x03(\t\x12\x16\n\x0ev6_cidr_blocks\x18\x02 \x03(\tBV\n\x17yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpcb\x06proto3'
+  serialized_pb=b'\n(yandex/cloud/vpc/v1/security_group.proto\x12\x13yandex.cloud.vpc.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\xeb\x03\n\rSecurityGroup\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12>\n\x06labels\x18\x06 \x03(\x0b\x32..yandex.cloud.vpc.v1.SecurityGroup.LabelsEntry\x12\x12\n\nnetwork_id\x18\x07 \x01(\t\x12\x39\n\x06status\x18\x08 \x01(\x0e\x32).yandex.cloud.vpc.v1.SecurityGroup.Status\x12\x35\n\x05rules\x18\t \x03(\x0b\x32&.yandex.cloud.vpc.v1.SecurityGroupRule\x12\x1b\n\x13\x64\x65\x66\x61ult_for_network\x18\n \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"V\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08UPDATING\x10\x03\x12\x0c\n\x08\x44\x45LETING\x10\x04\"\xf7\x03\n\x11SecurityGroupRule\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x42\n\x06labels\x18\x03 \x03(\x0b\x32\x32.yandex.cloud.vpc.v1.SecurityGroupRule.LabelsEntry\x12I\n\tdirection\x18\x04 \x01(\x0e\x32\x30.yandex.cloud.vpc.v1.SecurityGroupRule.DirectionB\x04\xe8\xc7\x31\x01\x12-\n\x05ports\x18\x05 \x01(\x0b\x32\x1e.yandex.cloud.vpc.v1.PortRange\x12\x15\n\rprotocol_name\x18\x06 \x01(\t\x12\x17\n\x0fprotocol_number\x18\x07 \x01(\x03\x12\x36\n\x0b\x63idr_blocks\x18\x08 \x01(\x0b\x32\x1f.yandex.cloud.vpc.v1.CidrBlocksH\x00\x12\x1b\n\x11security_group_id\x18\t \x01(\tH\x00\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"?\n\tDirection\x12\x19\n\x15\x44IRECTION_UNSPECIFIED\x10\x00\x12\x0b\n\x07INGRESS\x10\x01\x12\n\n\x06\x45GRESS\x10\x02\x42\x0e\n\x06target\x12\x04\xc0\xc1\x31\x01\"I\n\tPortRange\x12\x1e\n\tfrom_port\x18\x01 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-65535\x12\x1c\n\x07to_port\x18\x02 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-65535\"<\n\nCidrBlocks\x12\x16\n\x0ev4_cidr_blocks\x18\x01 \x03(\t\x12\x16\n\x0ev6_cidr_blocks\x18\x02 \x03(\tBV\n\x17yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpcb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -55,8 +55,8 @@ _SECURITYGROUP_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=506,
-  serialized_end=592,
+  serialized_start=535,
+  serialized_end=621,
 )
 _sym_db.RegisterEnumDescriptor(_SECURITYGROUP_STATUS)
 
@@ -81,8 +81,8 @@ _SECURITYGROUPRULE_DIRECTION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1019,
-  serialized_end=1082,
+  serialized_start=1048,
+  serialized_end=1111,
 )
 _sym_db.RegisterEnumDescriptor(_SECURITYGROUPRULE_DIRECTION)
 
@@ -120,8 +120,8 @@ _SECURITYGROUP_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=459,
-  serialized_end=504,
+  serialized_start=488,
+  serialized_end=533,
 )
 
 _SECURITYGROUP = _descriptor.Descriptor(
@@ -194,6 +194,13 @@ _SECURITYGROUP = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='default_for_network', full_name='yandex.cloud.vpc.v1.SecurityGroup.default_for_network', index=9,
+      number=10, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -208,7 +215,7 @@ _SECURITYGROUP = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=130,
-  serialized_end=592,
+  serialized_end=621,
 )
 
 
@@ -245,8 +252,8 @@ _SECURITYGROUPRULE_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=459,
-  serialized_end=504,
+  serialized_start=488,
+  serialized_end=533,
 )
 
 _SECURITYGROUPRULE = _descriptor.Descriptor(
@@ -335,8 +342,8 @@ _SECURITYGROUPRULE = _descriptor.Descriptor(
       name='target', full_name='yandex.cloud.vpc.v1.SecurityGroupRule.target',
       index=0, containing_type=None, fields=[], serialized_options=b'\300\3011\001'),
   ],
-  serialized_start=595,
-  serialized_end=1098,
+  serialized_start=624,
+  serialized_end=1127,
 )
 
 
@@ -373,8 +380,8 @@ _PORTRANGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1100,
-  serialized_end=1173,
+  serialized_start=1129,
+  serialized_end=1202,
 )
 
 
@@ -411,8 +418,8 @@ _CIDRBLOCKS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1175,
-  serialized_end=1235,
+  serialized_start=1204,
+  serialized_end=1264,
 )
 
 _SECURITYGROUP_LABELSENTRY.containing_type = _SECURITYGROUP
