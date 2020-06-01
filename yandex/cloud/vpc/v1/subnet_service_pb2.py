@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.vpc.v1',
   syntax='proto3',
   serialized_options=b'\n\027yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpc',
-  serialized_pb=b'\n(yandex/cloud/vpc/v1/subnet_service.proto\x12\x13yandex.cloud.vpc.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a yandex/cloud/vpc/v1/subnet.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"3\n\x10GetSubnetRequest\x12\x1f\n\tsubnet_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x8f\x01\n\x12ListSubnetsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"\\\n\x13ListSubnetsResponse\x12,\n\x07subnets\x18\x01 \x03(\x0b\x32\x1b.yandex.cloud.vpc.v1.Subnet\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xed\x03\n\x13\x43reateSubnetRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x85\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x34.yandex.cloud.vpc.v1.CreateSubnetRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12 \n\nnetwork_id\x18\x05 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x19\n\x07zone_id\x18\x06 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x16\n\x0ev4_cidr_blocks\x18\x07 \x03(\t\x12 \n\x0eroute_table_id\x18\t \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x36\n\x0c\x64hcp_options\x18\n \x01(\x0b\x32 .yandex.cloud.vpc.v1.DhcpOptions\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\")\n\x14\x43reateSubnetMetadata\x12\x11\n\tsubnet_id\x18\x01 \x01(\t\"\xc9\x03\n\x13UpdateSubnetRequest\x12\x1f\n\tsubnet_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x85\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x34.yandex.cloud.vpc.v1.UpdateSubnetRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12 \n\x0eroute_table_id\x18\x06 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x36\n\x0c\x64hcp_options\x18\x07 \x01(\x0b\x32 .yandex.cloud.vpc.v1.DhcpOptions\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\")\n\x14UpdateSubnetMetadata\x12\x11\n\tsubnet_id\x18\x01 \x01(\t\"6\n\x13\x44\x65leteSubnetRequest\x12\x1f\n\tsubnet_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\")\n\x14\x44\x65leteSubnetMetadata\x12\x11\n\tsubnet_id\x18\x01 \x01(\t\"|\n\x1bListSubnetOperationsRequest\x12\x1f\n\tsubnet_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"n\n\x1cListSubnetOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"a\n\x11MoveSubnetRequest\x12\x1f\n\tsubnet_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12+\n\x15\x64\x65stination_folder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\'\n\x12MoveSubnetMetadata\x12\x11\n\tsubnet_id\x18\x01 \x01(\t2\xa2\x08\n\rSubnetService\x12n\n\x03Get\x12%.yandex.cloud.vpc.v1.GetSubnetRequest\x1a\x1b.yandex.cloud.vpc.v1.Subnet\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/vpc/v1/subnets/{subnet_id}\x12r\n\x04List\x12\'.yandex.cloud.vpc.v1.ListSubnetsRequest\x1a(.yandex.cloud.vpc.v1.ListSubnetsResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/vpc/v1/subnets\x12\x93\x01\n\x06\x43reate\x12(.yandex.cloud.vpc.v1.CreateSubnetRequest\x1a!.yandex.cloud.operation.Operation\"<\x82\xd3\xe4\x93\x02\x14\"\x0f/vpc/v1/subnets:\x01*\xb2\xd2*\x1e\n\x14\x43reateSubnetMetadata\x12\x06Subnet\x12\x9f\x01\n\x06Update\x12(.yandex.cloud.vpc.v1.UpdateSubnetRequest\x1a!.yandex.cloud.operation.Operation\"H\x82\xd3\xe4\x93\x02 2\x1b/vpc/v1/subnets/{subnet_id}:\x01*\xb2\xd2*\x1e\n\x14UpdateSubnetMetadata\x12\x06Subnet\x12\xab\x01\n\x06\x44\x65lete\x12(.yandex.cloud.vpc.v1.DeleteSubnetRequest\x1a!.yandex.cloud.operation.Operation\"T\x82\xd3\xe4\x93\x02\x1d*\x1b/vpc/v1/subnets/{subnet_id}\xb2\xd2*-\n\x14\x44\x65leteSubnetMetadata\x12\x15google.protobuf.Empty\x12\xa5\x01\n\x0eListOperations\x12\x30.yandex.cloud.vpc.v1.ListSubnetOperationsRequest\x1a\x31.yandex.cloud.vpc.v1.ListSubnetOperationsResponse\".\x82\xd3\xe4\x93\x02(\x12&/vpc/v1/subnets/{subnet_id}/operations\x12\x9e\x01\n\x04Move\x12&.yandex.cloud.vpc.v1.MoveSubnetRequest\x1a!.yandex.cloud.operation.Operation\"K\x82\xd3\xe4\x93\x02%\" /vpc/v1/subnets/{subnet_id}:move:\x01*\xb2\xd2*\x1c\n\x12MoveSubnetMetadata\x12\x06SubnetBV\n\x17yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpcb\x06proto3'
+  serialized_pb=b'\n(yandex/cloud/vpc/v1/subnet_service.proto\x12\x13yandex.cloud.vpc.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a yandex/cloud/vpc/v1/subnet.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"3\n\x10GetSubnetRequest\x12\x1f\n\tsubnet_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x8f\x01\n\x12ListSubnetsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"\\\n\x13ListSubnetsResponse\x12,\n\x07subnets\x18\x01 \x03(\x0b\x32\x1b.yandex.cloud.vpc.v1.Subnet\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xf7\x03\n\x13\x43reateSubnetRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x85\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x34.yandex.cloud.vpc.v1.CreateSubnetRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12 \n\nnetwork_id\x18\x05 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\x07zone_id\x18\x06 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1c\n\x0ev4_cidr_blocks\x18\x07 \x03(\tB\x04\xe8\xc7\x31\x01\x12 \n\x0eroute_table_id\x18\t \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x36\n\x0c\x64hcp_options\x18\n \x01(\x0b\x32 .yandex.cloud.vpc.v1.DhcpOptions\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\")\n\x14\x43reateSubnetMetadata\x12\x11\n\tsubnet_id\x18\x01 \x01(\t\"\xc9\x03\n\x13UpdateSubnetRequest\x12\x1f\n\tsubnet_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x85\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x34.yandex.cloud.vpc.v1.UpdateSubnetRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12 \n\x0eroute_table_id\x18\x06 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x36\n\x0c\x64hcp_options\x18\x07 \x01(\x0b\x32 .yandex.cloud.vpc.v1.DhcpOptions\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\")\n\x14UpdateSubnetMetadata\x12\x11\n\tsubnet_id\x18\x01 \x01(\t\"6\n\x13\x44\x65leteSubnetRequest\x12\x1f\n\tsubnet_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\")\n\x14\x44\x65leteSubnetMetadata\x12\x11\n\tsubnet_id\x18\x01 \x01(\t\"|\n\x1bListSubnetOperationsRequest\x12\x1f\n\tsubnet_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"n\n\x1cListSubnetOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"a\n\x11MoveSubnetRequest\x12\x1f\n\tsubnet_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12+\n\x15\x64\x65stination_folder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\'\n\x12MoveSubnetMetadata\x12\x11\n\tsubnet_id\x18\x01 \x01(\t2\xa2\x08\n\rSubnetService\x12n\n\x03Get\x12%.yandex.cloud.vpc.v1.GetSubnetRequest\x1a\x1b.yandex.cloud.vpc.v1.Subnet\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/vpc/v1/subnets/{subnet_id}\x12r\n\x04List\x12\'.yandex.cloud.vpc.v1.ListSubnetsRequest\x1a(.yandex.cloud.vpc.v1.ListSubnetsResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/vpc/v1/subnets\x12\x93\x01\n\x06\x43reate\x12(.yandex.cloud.vpc.v1.CreateSubnetRequest\x1a!.yandex.cloud.operation.Operation\"<\x82\xd3\xe4\x93\x02\x14\"\x0f/vpc/v1/subnets:\x01*\xb2\xd2*\x1e\n\x14\x43reateSubnetMetadata\x12\x06Subnet\x12\x9f\x01\n\x06Update\x12(.yandex.cloud.vpc.v1.UpdateSubnetRequest\x1a!.yandex.cloud.operation.Operation\"H\x82\xd3\xe4\x93\x02 2\x1b/vpc/v1/subnets/{subnet_id}:\x01*\xb2\xd2*\x1e\n\x14UpdateSubnetMetadata\x12\x06Subnet\x12\xab\x01\n\x06\x44\x65lete\x12(.yandex.cloud.vpc.v1.DeleteSubnetRequest\x1a!.yandex.cloud.operation.Operation\"T\x82\xd3\xe4\x93\x02\x1d*\x1b/vpc/v1/subnets/{subnet_id}\xb2\xd2*-\n\x14\x44\x65leteSubnetMetadata\x12\x15google.protobuf.Empty\x12\xa5\x01\n\x0eListOperations\x12\x30.yandex.cloud.vpc.v1.ListSubnetOperationsRequest\x1a\x31.yandex.cloud.vpc.v1.ListSubnetOperationsResponse\".\x82\xd3\xe4\x93\x02(\x12&/vpc/v1/subnets/{subnet_id}/operations\x12\x9e\x01\n\x04Move\x12&.yandex.cloud.vpc.v1.MoveSubnetRequest\x1a!.yandex.cloud.operation.Operation\"K\x82\xd3\xe4\x93\x02%\" /vpc/v1/subnets/{subnet_id}:move:\x01*\xb2\xd2*\x1c\n\x12MoveSubnetMetadata\x12\x06SubnetBV\n\x17yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpcb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_vpc_dot_v1_dot_subnet__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -185,8 +185,8 @@ _CREATESUBNETREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1010,
-  serialized_end=1055,
+  serialized_start=1020,
+  serialized_end=1065,
 )
 
 _CREATESUBNETREQUEST = _descriptor.Descriptor(
@@ -237,14 +237,14 @@ _CREATESUBNETREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='v4_cidr_blocks', full_name='yandex.cloud.vpc.v1.CreateSubnetRequest.v4_cidr_blocks', index=6,
       number=7, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='route_table_id', full_name='yandex.cloud.vpc.v1.CreateSubnetRequest.route_table_id', index=7,
       number=9, type=9, cpp_type=9, label=1,
@@ -272,7 +272,7 @@ _CREATESUBNETREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=562,
-  serialized_end=1055,
+  serialized_end=1065,
 )
 
 
@@ -302,8 +302,8 @@ _CREATESUBNETMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1057,
-  serialized_end=1098,
+  serialized_start=1067,
+  serialized_end=1108,
 )
 
 
@@ -340,8 +340,8 @@ _UPDATESUBNETREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1010,
-  serialized_end=1055,
+  serialized_start=1020,
+  serialized_end=1065,
 )
 
 _UPDATESUBNETREQUEST = _descriptor.Descriptor(
@@ -412,8 +412,8 @@ _UPDATESUBNETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1101,
-  serialized_end=1558,
+  serialized_start=1111,
+  serialized_end=1568,
 )
 
 
@@ -443,8 +443,8 @@ _UPDATESUBNETMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1560,
-  serialized_end=1601,
+  serialized_start=1570,
+  serialized_end=1611,
 )
 
 
@@ -474,8 +474,8 @@ _DELETESUBNETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1603,
-  serialized_end=1657,
+  serialized_start=1613,
+  serialized_end=1667,
 )
 
 
@@ -505,8 +505,8 @@ _DELETESUBNETMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1659,
-  serialized_end=1700,
+  serialized_start=1669,
+  serialized_end=1710,
 )
 
 
@@ -550,8 +550,8 @@ _LISTSUBNETOPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1702,
-  serialized_end=1826,
+  serialized_start=1712,
+  serialized_end=1836,
 )
 
 
@@ -588,8 +588,8 @@ _LISTSUBNETOPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1828,
-  serialized_end=1938,
+  serialized_start=1838,
+  serialized_end=1948,
 )
 
 
@@ -626,8 +626,8 @@ _MOVESUBNETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1940,
-  serialized_end=2037,
+  serialized_start=1950,
+  serialized_end=2047,
 )
 
 
@@ -657,8 +657,8 @@ _MOVESUBNETMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2039,
-  serialized_end=2078,
+  serialized_start=2049,
+  serialized_end=2088,
 )
 
 _LISTSUBNETSRESPONSE.fields_by_name['subnets'].message_type = yandex_dot_cloud_dot_vpc_dot_v1_dot_subnet__pb2._SUBNET
@@ -806,6 +806,7 @@ _CREATESUBNETREQUEST.fields_by_name['description']._options = None
 _CREATESUBNETREQUEST.fields_by_name['labels']._options = None
 _CREATESUBNETREQUEST.fields_by_name['network_id']._options = None
 _CREATESUBNETREQUEST.fields_by_name['zone_id']._options = None
+_CREATESUBNETREQUEST.fields_by_name['v4_cidr_blocks']._options = None
 _CREATESUBNETREQUEST.fields_by_name['route_table_id']._options = None
 _UPDATESUBNETREQUEST_LABELSENTRY._options = None
 _UPDATESUBNETREQUEST.fields_by_name['subnet_id']._options = None
@@ -826,8 +827,8 @@ _SUBNETSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=2081,
-  serialized_end=3139,
+  serialized_start=2091,
+  serialized_end=3149,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',

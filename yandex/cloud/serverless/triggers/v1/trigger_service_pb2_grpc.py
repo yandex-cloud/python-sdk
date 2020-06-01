@@ -41,6 +41,16 @@ class TriggerServiceStub(object):
         request_serializer=yandex_dot_cloud_dot_serverless_dot_triggers_dot_v1_dot_trigger__service__pb2.DeleteTriggerRequest.SerializeToString,
         response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
         )
+    self.Pause = channel.unary_unary(
+        '/yandex.cloud.serverless.triggers.v1.TriggerService/Pause',
+        request_serializer=yandex_dot_cloud_dot_serverless_dot_triggers_dot_v1_dot_trigger__service__pb2.PauseTriggerRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+        )
+    self.Resume = channel.unary_unary(
+        '/yandex.cloud.serverless.triggers.v1.TriggerService/Resume',
+        request_serializer=yandex_dot_cloud_dot_serverless_dot_triggers_dot_v1_dot_trigger__service__pb2.ResumeTriggerRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+        )
     self.ListOperations = channel.unary_unary(
         '/yandex.cloud.serverless.triggers.v1.TriggerService/ListOperations',
         request_serializer=yandex_dot_cloud_dot_serverless_dot_triggers_dot_v1_dot_trigger__service__pb2.ListTriggerOperationsRequest.SerializeToString,
@@ -89,6 +99,20 @@ class TriggerServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def Pause(self, request, context):
+    """Pauses the specified trigger.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def Resume(self, request, context):
+    """Restarts the specified trigger.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def ListOperations(self, request, context):
     """Lists operations for the specified trigger.
     """
@@ -122,6 +146,16 @@ def add_TriggerServiceServicer_to_server(servicer, server):
       'Delete': grpc.unary_unary_rpc_method_handler(
           servicer.Delete,
           request_deserializer=yandex_dot_cloud_dot_serverless_dot_triggers_dot_v1_dot_trigger__service__pb2.DeleteTriggerRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+      ),
+      'Pause': grpc.unary_unary_rpc_method_handler(
+          servicer.Pause,
+          request_deserializer=yandex_dot_cloud_dot_serverless_dot_triggers_dot_v1_dot_trigger__service__pb2.PauseTriggerRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+      ),
+      'Resume': grpc.unary_unary_rpc_method_handler(
+          servicer.Resume,
+          request_deserializer=yandex_dot_cloud_dot_serverless_dot_triggers_dot_v1_dot_trigger__service__pb2.ResumeTriggerRequest.FromString,
           response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
       ),
       'ListOperations': grpc.unary_unary_rpc_method_handler(

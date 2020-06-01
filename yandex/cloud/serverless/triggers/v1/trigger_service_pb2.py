@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.serverless.triggers.v1',
   syntax='proto3',
   serialized_options=b'\n\'yandex.cloud.api.serverless.triggers.v1ZPgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/triggers/v1;triggers',
-  serialized_pb=b'\n9yandex/cloud/serverless/triggers/v1/trigger_service.proto\x12#yandex.cloud.serverless.triggers.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a\x31yandex/cloud/serverless/triggers/v1/trigger.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"-\n\x11GetTriggerRequest\x12\x18\n\ntrigger_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"e\n\x13ListTriggersRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\"o\n\x14ListTriggersResponse\x12>\n\x08triggers\x18\x01 \x03(\x0b\x32,.yandex.cloud.serverless.triggers.v1.Trigger\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x8f\x03\n\x14\x43reateTriggerRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x96\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x45.yandex.cloud.serverless.triggers.v1.CreateTriggerRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12\x45\n\x04rule\x18\x05 \x01(\x0b\x32\x31.yandex.cloud.serverless.triggers.v1.Trigger.RuleB\x04\xe8\xc7\x31\x01\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15\x43reateTriggerMetadata\x12\x12\n\ntrigger_id\x18\x01 \x01(\t\"\xfa\x02\n\x14UpdateTriggerRequest\x12\x18\n\ntrigger_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x96\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x45.yandex.cloud.serverless.triggers.v1.UpdateTriggerRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"1\n\x15UpdateTriggerMetadata\x12\x18\n\ntrigger_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"0\n\x14\x44\x65leteTriggerRequest\x12\x18\n\ntrigger_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"1\n\x15\x44\x65leteTriggerMetadata\x12\x18\n\ntrigger_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\x92\x01\n\x1cListTriggerOperationsRequest\x12\x18\n\ntrigger_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"o\n\x1dListTriggerOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xca\x08\n\x0eTriggerService\x12\x97\x01\n\x03Get\x12\x36.yandex.cloud.serverless.triggers.v1.GetTriggerRequest\x1a,.yandex.cloud.serverless.triggers.v1.Trigger\"*\x82\xd3\xe4\x93\x02$\x12\"/triggers/v1/triggers/{trigger_id}\x12\x9a\x01\n\x04List\x12\x38.yandex.cloud.serverless.triggers.v1.ListTriggersRequest\x1a\x39.yandex.cloud.serverless.triggers.v1.ListTriggersResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/triggers/v1/triggers\x12\xac\x01\n\x06\x43reate\x12\x39.yandex.cloud.serverless.triggers.v1.CreateTriggerRequest\x1a!.yandex.cloud.operation.Operation\"D\x82\xd3\xe4\x93\x02\x1a\"\x15/triggers/v1/triggers:\x01*\xb2\xd2* \n\x15\x43reateTriggerMetadata\x12\x07Trigger\x12\xb9\x01\n\x06Update\x12\x39.yandex.cloud.serverless.triggers.v1.UpdateTriggerRequest\x1a!.yandex.cloud.operation.Operation\"Q\x82\xd3\xe4\x93\x02\'2\"/triggers/v1/triggers/{trigger_id}:\x01*\xb2\xd2* \n\x15UpdateTriggerMetadata\x12\x07Trigger\x12\xc4\x01\n\x06\x44\x65lete\x12\x39.yandex.cloud.serverless.triggers.v1.DeleteTriggerRequest\x1a!.yandex.cloud.operation.Operation\"\\\x82\xd3\xe4\x93\x02$*\"/triggers/v1/triggers/{trigger_id}\xb2\xd2*.\n\x15\x44\x65leteTriggerMetadata\x12\x15google.protobuf.Empty\x12\xce\x01\n\x0eListOperations\x12\x41.yandex.cloud.serverless.triggers.v1.ListTriggerOperationsRequest\x1a\x42.yandex.cloud.serverless.triggers.v1.ListTriggerOperationsResponse\"5\x82\xd3\xe4\x93\x02/\x12-/triggers/v1/triggers/{trigger_id}/operationsB{\n\'yandex.cloud.api.serverless.triggers.v1ZPgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/triggers/v1;triggersb\x06proto3'
+  serialized_pb=b'\n9yandex/cloud/serverless/triggers/v1/trigger_service.proto\x12#yandex.cloud.serverless.triggers.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a\x31yandex/cloud/serverless/triggers/v1/trigger.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"-\n\x11GetTriggerRequest\x12\x18\n\ntrigger_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"e\n\x13ListTriggersRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\"o\n\x14ListTriggersResponse\x12>\n\x08triggers\x18\x01 \x03(\x0b\x32,.yandex.cloud.serverless.triggers.v1.Trigger\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x8f\x03\n\x14\x43reateTriggerRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x96\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x45.yandex.cloud.serverless.triggers.v1.CreateTriggerRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12\x45\n\x04rule\x18\x05 \x01(\x0b\x32\x31.yandex.cloud.serverless.triggers.v1.Trigger.RuleB\x04\xe8\xc7\x31\x01\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15\x43reateTriggerMetadata\x12\x12\n\ntrigger_id\x18\x01 \x01(\t\"\xfa\x02\n\x14UpdateTriggerRequest\x12\x18\n\ntrigger_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x96\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x45.yandex.cloud.serverless.triggers.v1.UpdateTriggerRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"1\n\x15UpdateTriggerMetadata\x12\x18\n\ntrigger_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"0\n\x14\x44\x65leteTriggerRequest\x12\x18\n\ntrigger_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"1\n\x15\x44\x65leteTriggerMetadata\x12\x18\n\ntrigger_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"/\n\x13PauseTriggerRequest\x12\x18\n\ntrigger_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"0\n\x14PauseTriggerMetadata\x12\x18\n\ntrigger_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"0\n\x14ResumeTriggerRequest\x12\x18\n\ntrigger_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"1\n\x15ResumeTriggerMetadata\x12\x18\n\ntrigger_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\x92\x01\n\x1cListTriggerOperationsRequest\x12\x18\n\ntrigger_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"o\n\x1dListTriggerOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xcc\x0b\n\x0eTriggerService\x12\x97\x01\n\x03Get\x12\x36.yandex.cloud.serverless.triggers.v1.GetTriggerRequest\x1a,.yandex.cloud.serverless.triggers.v1.Trigger\"*\x82\xd3\xe4\x93\x02$\x12\"/triggers/v1/triggers/{trigger_id}\x12\x9a\x01\n\x04List\x12\x38.yandex.cloud.serverless.triggers.v1.ListTriggersRequest\x1a\x39.yandex.cloud.serverless.triggers.v1.ListTriggersResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/triggers/v1/triggers\x12\xac\x01\n\x06\x43reate\x12\x39.yandex.cloud.serverless.triggers.v1.CreateTriggerRequest\x1a!.yandex.cloud.operation.Operation\"D\x82\xd3\xe4\x93\x02\x1a\"\x15/triggers/v1/triggers:\x01*\xb2\xd2* \n\x15\x43reateTriggerMetadata\x12\x07Trigger\x12\xb9\x01\n\x06Update\x12\x39.yandex.cloud.serverless.triggers.v1.UpdateTriggerRequest\x1a!.yandex.cloud.operation.Operation\"Q\x82\xd3\xe4\x93\x02\'2\"/triggers/v1/triggers/{trigger_id}:\x01*\xb2\xd2* \n\x15UpdateTriggerMetadata\x12\x07Trigger\x12\xc4\x01\n\x06\x44\x65lete\x12\x39.yandex.cloud.serverless.triggers.v1.DeleteTriggerRequest\x1a!.yandex.cloud.operation.Operation\"\\\x82\xd3\xe4\x93\x02$*\"/triggers/v1/triggers/{trigger_id}\xb2\xd2*.\n\x15\x44\x65leteTriggerMetadata\x12\x15google.protobuf.Empty\x12\xbc\x01\n\x05Pause\x12\x38.yandex.cloud.serverless.triggers.v1.PauseTriggerRequest\x1a!.yandex.cloud.operation.Operation\"V\x82\xd3\xe4\x93\x02-\"(/triggers/v1/triggers/{trigger_id}:pause:\x01*\xb2\xd2*\x1f\n\x14PauseTriggerMetadata\x12\x07Trigger\x12\xc0\x01\n\x06Resume\x12\x39.yandex.cloud.serverless.triggers.v1.ResumeTriggerRequest\x1a!.yandex.cloud.operation.Operation\"X\x82\xd3\xe4\x93\x02.\")/triggers/v1/triggers/{trigger_id}:resume:\x01*\xb2\xd2* \n\x15ResumeTriggerMetadata\x12\x07Trigger\x12\xce\x01\n\x0eListOperations\x12\x41.yandex.cloud.serverless.triggers.v1.ListTriggerOperationsRequest\x1a\x42.yandex.cloud.serverless.triggers.v1.ListTriggerOperationsResponse\"5\x82\xd3\xe4\x93\x02/\x12-/triggers/v1/triggers/{trigger_id}/operationsB{\n\'yandex.cloud.api.serverless.triggers.v1ZPgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/triggers/v1;triggersb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_serverless_dot_triggers_dot_v1_dot_trigger__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -468,6 +468,130 @@ _DELETETRIGGERMETADATA = _descriptor.Descriptor(
 )
 
 
+_PAUSETRIGGERREQUEST = _descriptor.Descriptor(
+  name='PauseTriggerRequest',
+  full_name='yandex.cloud.serverless.triggers.v1.PauseTriggerRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='trigger_id', full_name='yandex.cloud.serverless.triggers.v1.PauseTriggerRequest.trigger_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1561,
+  serialized_end=1608,
+)
+
+
+_PAUSETRIGGERMETADATA = _descriptor.Descriptor(
+  name='PauseTriggerMetadata',
+  full_name='yandex.cloud.serverless.triggers.v1.PauseTriggerMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='trigger_id', full_name='yandex.cloud.serverless.triggers.v1.PauseTriggerMetadata.trigger_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1610,
+  serialized_end=1658,
+)
+
+
+_RESUMETRIGGERREQUEST = _descriptor.Descriptor(
+  name='ResumeTriggerRequest',
+  full_name='yandex.cloud.serverless.triggers.v1.ResumeTriggerRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='trigger_id', full_name='yandex.cloud.serverless.triggers.v1.ResumeTriggerRequest.trigger_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1660,
+  serialized_end=1708,
+)
+
+
+_RESUMETRIGGERMETADATA = _descriptor.Descriptor(
+  name='ResumeTriggerMetadata',
+  full_name='yandex.cloud.serverless.triggers.v1.ResumeTriggerMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='trigger_id', full_name='yandex.cloud.serverless.triggers.v1.ResumeTriggerMetadata.trigger_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1710,
+  serialized_end=1759,
+)
+
+
 _LISTTRIGGEROPERATIONSREQUEST = _descriptor.Descriptor(
   name='ListTriggerOperationsRequest',
   full_name='yandex.cloud.serverless.triggers.v1.ListTriggerOperationsRequest',
@@ -515,8 +639,8 @@ _LISTTRIGGEROPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1562,
-  serialized_end=1708,
+  serialized_start=1762,
+  serialized_end=1908,
 )
 
 
@@ -553,8 +677,8 @@ _LISTTRIGGEROPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1710,
-  serialized_end=1821,
+  serialized_start=1910,
+  serialized_end=2021,
 )
 
 _LISTTRIGGERSRESPONSE.fields_by_name['triggers'].message_type = yandex_dot_cloud_dot_serverless_dot_triggers_dot_v1_dot_trigger__pb2._TRIGGER
@@ -574,6 +698,10 @@ DESCRIPTOR.message_types_by_name['UpdateTriggerRequest'] = _UPDATETRIGGERREQUEST
 DESCRIPTOR.message_types_by_name['UpdateTriggerMetadata'] = _UPDATETRIGGERMETADATA
 DESCRIPTOR.message_types_by_name['DeleteTriggerRequest'] = _DELETETRIGGERREQUEST
 DESCRIPTOR.message_types_by_name['DeleteTriggerMetadata'] = _DELETETRIGGERMETADATA
+DESCRIPTOR.message_types_by_name['PauseTriggerRequest'] = _PAUSETRIGGERREQUEST
+DESCRIPTOR.message_types_by_name['PauseTriggerMetadata'] = _PAUSETRIGGERMETADATA
+DESCRIPTOR.message_types_by_name['ResumeTriggerRequest'] = _RESUMETRIGGERREQUEST
+DESCRIPTOR.message_types_by_name['ResumeTriggerMetadata'] = _RESUMETRIGGERMETADATA
 DESCRIPTOR.message_types_by_name['ListTriggerOperationsRequest'] = _LISTTRIGGEROPERATIONSREQUEST
 DESCRIPTOR.message_types_by_name['ListTriggerOperationsResponse'] = _LISTTRIGGEROPERATIONSRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -657,6 +785,34 @@ DeleteTriggerMetadata = _reflection.GeneratedProtocolMessageType('DeleteTriggerM
   })
 _sym_db.RegisterMessage(DeleteTriggerMetadata)
 
+PauseTriggerRequest = _reflection.GeneratedProtocolMessageType('PauseTriggerRequest', (_message.Message,), {
+  'DESCRIPTOR' : _PAUSETRIGGERREQUEST,
+  '__module__' : 'yandex.cloud.serverless.triggers.v1.trigger_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.serverless.triggers.v1.PauseTriggerRequest)
+  })
+_sym_db.RegisterMessage(PauseTriggerRequest)
+
+PauseTriggerMetadata = _reflection.GeneratedProtocolMessageType('PauseTriggerMetadata', (_message.Message,), {
+  'DESCRIPTOR' : _PAUSETRIGGERMETADATA,
+  '__module__' : 'yandex.cloud.serverless.triggers.v1.trigger_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.serverless.triggers.v1.PauseTriggerMetadata)
+  })
+_sym_db.RegisterMessage(PauseTriggerMetadata)
+
+ResumeTriggerRequest = _reflection.GeneratedProtocolMessageType('ResumeTriggerRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RESUMETRIGGERREQUEST,
+  '__module__' : 'yandex.cloud.serverless.triggers.v1.trigger_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.serverless.triggers.v1.ResumeTriggerRequest)
+  })
+_sym_db.RegisterMessage(ResumeTriggerRequest)
+
+ResumeTriggerMetadata = _reflection.GeneratedProtocolMessageType('ResumeTriggerMetadata', (_message.Message,), {
+  'DESCRIPTOR' : _RESUMETRIGGERMETADATA,
+  '__module__' : 'yandex.cloud.serverless.triggers.v1.trigger_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.serverless.triggers.v1.ResumeTriggerMetadata)
+  })
+_sym_db.RegisterMessage(ResumeTriggerMetadata)
+
 ListTriggerOperationsRequest = _reflection.GeneratedProtocolMessageType('ListTriggerOperationsRequest', (_message.Message,), {
   'DESCRIPTOR' : _LISTTRIGGEROPERATIONSREQUEST,
   '__module__' : 'yandex.cloud.serverless.triggers.v1.trigger_service_pb2'
@@ -689,6 +845,10 @@ _UPDATETRIGGERREQUEST.fields_by_name['labels']._options = None
 _UPDATETRIGGERMETADATA.fields_by_name['trigger_id']._options = None
 _DELETETRIGGERREQUEST.fields_by_name['trigger_id']._options = None
 _DELETETRIGGERMETADATA.fields_by_name['trigger_id']._options = None
+_PAUSETRIGGERREQUEST.fields_by_name['trigger_id']._options = None
+_PAUSETRIGGERMETADATA.fields_by_name['trigger_id']._options = None
+_RESUMETRIGGERREQUEST.fields_by_name['trigger_id']._options = None
+_RESUMETRIGGERMETADATA.fields_by_name['trigger_id']._options = None
 _LISTTRIGGEROPERATIONSREQUEST.fields_by_name['trigger_id']._options = None
 _LISTTRIGGEROPERATIONSREQUEST.fields_by_name['page_size']._options = None
 _LISTTRIGGEROPERATIONSREQUEST.fields_by_name['page_token']._options = None
@@ -700,8 +860,8 @@ _TRIGGERSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=1824,
-  serialized_end=2922,
+  serialized_start=2024,
+  serialized_end=3508,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
@@ -749,9 +909,27 @@ _TRIGGERSERVICE = _descriptor.ServiceDescriptor(
     serialized_options=b'\202\323\344\223\002$*\"/triggers/v1/triggers/{trigger_id}\262\322*.\n\025DeleteTriggerMetadata\022\025google.protobuf.Empty',
   ),
   _descriptor.MethodDescriptor(
+    name='Pause',
+    full_name='yandex.cloud.serverless.triggers.v1.TriggerService.Pause',
+    index=5,
+    containing_service=None,
+    input_type=_PAUSETRIGGERREQUEST,
+    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
+    serialized_options=b'\202\323\344\223\002-\"(/triggers/v1/triggers/{trigger_id}:pause:\001*\262\322*\037\n\024PauseTriggerMetadata\022\007Trigger',
+  ),
+  _descriptor.MethodDescriptor(
+    name='Resume',
+    full_name='yandex.cloud.serverless.triggers.v1.TriggerService.Resume',
+    index=6,
+    containing_service=None,
+    input_type=_RESUMETRIGGERREQUEST,
+    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
+    serialized_options=b'\202\323\344\223\002.\")/triggers/v1/triggers/{trigger_id}:resume:\001*\262\322* \n\025ResumeTriggerMetadata\022\007Trigger',
+  ),
+  _descriptor.MethodDescriptor(
     name='ListOperations',
     full_name='yandex.cloud.serverless.triggers.v1.TriggerService.ListOperations',
-    index=5,
+    index=7,
     containing_service=None,
     input_type=_LISTTRIGGEROPERATIONSREQUEST,
     output_type=_LISTTRIGGEROPERATIONSRESPONSE,
