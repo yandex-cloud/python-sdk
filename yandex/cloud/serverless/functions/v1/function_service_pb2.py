@@ -27,7 +27,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.serverless.functions.v1',
   syntax='proto3',
   serialized_options=b'\n(yandex.cloud.api.serverless.functions.v1ZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/functions/v1;functions',
-  serialized_pb=b'\n;yandex/cloud/serverless/functions/v1/function_service.proto\x12$yandex.cloud.serverless.functions.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a yandex/cloud/api/operation.proto\x1a yandex/cloud/access/access.proto\x1a\x33yandex/cloud/serverless/functions/v1/function.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"/\n\x12GetFunctionRequest\x12\x19\n\x0b\x66unction_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\">\n\x19GetFunctionVersionRequest\x12!\n\x13\x66unction_version_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"h\n\x1eGetFunctionVersionByTagRequest\x12\x19\n\x0b\x66unction_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12+\n\x03tag\x18\x02 \x01(\tB\x1e\xf2\xc7\x31\x1a[a-z][-_0-9a-z]*|[$]latest\"f\n\x14ListFunctionsRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\"s\n\x15ListFunctionsResponse\x12\x41\n\tfunctions\x18\x01 \x03(\x0b\x32..yandex.cloud.serverless.functions.v1.Function\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xcb\x02\n\x15\x43reateFunctionRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x98\x01\n\x06labels\x18\x04 \x03(\x0b\x32G.yandex.cloud.serverless.functions.v1.CreateFunctionRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"-\n\x16\x43reateFunctionMetadata\x12\x13\n\x0b\x66unction_id\x18\x01 \x01(\t\"\xfe\x02\n\x15UpdateFunctionRequest\x12\x19\n\x0b\x66unction_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x98\x01\n\x06labels\x18\x05 \x03(\x0b\x32G.yandex.cloud.serverless.functions.v1.UpdateFunctionRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"-\n\x16UpdateFunctionMetadata\x12\x13\n\x0b\x66unction_id\x18\x01 \x01(\t\"2\n\x15\x44\x65leteFunctionRequest\x12\x19\n\x0b\x66unction_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"-\n\x16\x44\x65leteFunctionMetadata\x12\x13\n\x0b\x66unction_id\x18\x01 \x01(\t\"\x15\n\x13ListRuntimesRequest\"(\n\x14ListRuntimesResponse\x12\x10\n\x08runtimes\x18\x01 \x03(\t\"\xb0\x01\n\x1cListFunctionsVersionsRequest\x12\x13\n\tfolder_id\x18\x01 \x01(\tH\x00\x12\x15\n\x0b\x66unction_id\x18\x02 \x01(\tH\x00\x12\x1d\n\tpage_size\x18\x03 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x05 \x01(\tB\n\x8a\xc8\x31\x06<=1000B\n\n\x02id\x12\x04\xc0\xc1\x31\x01\"y\n\x1dListFunctionsVersionsResponse\x12?\n\x08versions\x18\x01 \x03(\x0b\x32-.yandex.cloud.serverless.functions.v1.Version\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x94\x01\n\x1dListFunctionOperationsRequest\x12\x19\n\x0b\x66unction_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"p\n\x1eListFunctionOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x98\x05\n\x1c\x43reateFunctionVersionRequest\x12\x19\n\x0b\x66unction_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x15\n\x07runtime\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05\x30-256\x12\x18\n\nentrypoint\x18\x04 \x01(\tB\x04\xe8\xc7\x31\x01\x12H\n\tresources\x18\x05 \x01(\x0b\x32/.yandex.cloud.serverless.functions.v1.ResourcesB\x04\xe8\xc7\x31\x01\x12:\n\x11\x65xecution_timeout\x18\x06 \x01(\x0b\x32\x19.google.protobuf.DurationB\x04\xe8\xc7\x31\x01\x12\x1a\n\x12service_account_id\x18\x07 \x01(\t\x12@\n\x07package\x18\t \x01(\x0b\x32-.yandex.cloud.serverless.functions.v1.PackageH\x00\x12!\n\x07\x63ontent\x18\n \x01(\x0c\x42\x0e\x8a\xc8\x31\n<=52428800H\x00\x12\x8f\x01\n\x0b\x65nvironment\x18\x0c \x03(\x0b\x32S.yandex.cloud.serverless.functions.v1.CreateFunctionVersionRequest.EnvironmentEntryB%\x8a\xc8\x31\x06<=4096\xb2\xc8\x31\x17\x12\x15[a-zA-Z][a-zA-Z0-9_]*\x12!\n\x03tag\x18\r \x03(\tB\x14\xf2\xc7\x31\x10[a-z][-_0-9a-z]*\x1a\x32\n\x10\x45nvironmentEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x16\n\x0epackage_source\x12\x04\xc0\xc1\x31\x01J\x04\x08\x08\x10\t\"<\n\x1d\x43reateFunctionVersionMetadata\x12\x1b\n\x13\x66unction_version_id\x18\x01 \x01(\t\"]\n\x15SetFunctionTagRequest\x12!\n\x13\x66unction_version_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12!\n\x03tag\x18\x02 \x01(\tB\x14\xf2\xc7\x31\x10[a-z][-_0-9a-z]*\"`\n\x18RemoveFunctionTagRequest\x12!\n\x13\x66unction_version_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12!\n\x03tag\x18\x02 \x01(\tB\x14\xf2\xc7\x31\x10[a-z][-_0-9a-z]*\"5\n\x16SetFunctionTagMetadata\x12\x1b\n\x13\x66unction_version_id\x18\x01 \x01(\t\"8\n\x19RemoveFunctionTagMetadata\x12\x1b\n\x13\x66unction_version_id\x18\x01 \x01(\t\"\xc1\x01\n\x1dListFunctionTagHistoryRequest\x12\x19\n\x0b\x66unction_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12+\n\x03tag\x18\x02 \x01(\tB\x1e\xf2\xc7\x31\x1a[a-z][-_0-9a-z]*|[$]latest\x12\x1d\n\tpage_size\x18\x03 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x05 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"\x80\x03\n\x1eListFunctionTagHistoryResponse\x12\x82\x01\n\x1b\x66unction_tag_history_record\x18\x01 \x03(\x0b\x32].yandex.cloud.serverless.functions.v1.ListFunctionTagHistoryResponse.FunctionTagHistoryRecord\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\x1a\xbf\x01\n\x18\x46unctionTagHistoryRecord\x12\x13\n\x0b\x66unction_id\x18\x01 \x01(\t\x12\x1b\n\x13\x66unction_version_id\x18\x03 \x01(\t\x12\x0b\n\x03tag\x18\x02 \x01(\t\x12\x32\n\x0e\x65\x66\x66\x65\x63tive_from\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x0c\x65\x66\x66\x65\x63tive_to\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp2\x9d\x1a\n\x0f\x46unctionService\x12\x9e\x01\n\x03Get\x12\x38.yandex.cloud.serverless.functions.v1.GetFunctionRequest\x1a..yandex.cloud.serverless.functions.v1.Function\"-\x82\xd3\xe4\x93\x02\'\x12%/functions/v1/functions/{function_id}\x12\xa0\x01\n\x04List\x12:.yandex.cloud.serverless.functions.v1.ListFunctionsRequest\x1a;.yandex.cloud.serverless.functions.v1.ListFunctionsResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/functions/v1/functions\x12\xb2\x01\n\x06\x43reate\x12;.yandex.cloud.serverless.functions.v1.CreateFunctionRequest\x1a!.yandex.cloud.operation.Operation\"H\x82\xd3\xe4\x93\x02\x1c\"\x17/functions/v1/functions:\x01*\xb2\xd2*\"\n\x16\x43reateFunctionMetadata\x12\x08\x46unction\x12\xc0\x01\n\x06Update\x12;.yandex.cloud.serverless.functions.v1.UpdateFunctionRequest\x1a!.yandex.cloud.operation.Operation\"V\x82\xd3\xe4\x93\x02*2%/functions/v1/functions/{function_id}:\x01*\xb2\xd2*\"\n\x16UpdateFunctionMetadata\x12\x08\x46unction\x12\xca\x01\n\x06\x44\x65lete\x12;.yandex.cloud.serverless.functions.v1.DeleteFunctionRequest\x1a!.yandex.cloud.operation.Operation\"`\x82\xd3\xe4\x93\x02\'*%/functions/v1/functions/{function_id}\xb2\xd2*/\n\x16\x44\x65leteFunctionMetadata\x12\x15google.protobuf.Empty\x12\xb2\x01\n\nGetVersion\x12?.yandex.cloud.serverless.functions.v1.GetFunctionVersionRequest\x1a-.yandex.cloud.serverless.functions.v1.Version\"4\x82\xd3\xe4\x93\x02.\x12,/functions/v1/versions/{function_version_id}\x12\xac\x01\n\x0fGetVersionByTag\x12\x44.yandex.cloud.serverless.functions.v1.GetFunctionVersionByTagRequest\x1a-.yandex.cloud.serverless.functions.v1.Version\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/functions/v1/versions:byTag\x12\xb7\x01\n\x0cListVersions\x12\x42.yandex.cloud.serverless.functions.v1.ListFunctionsVersionsRequest\x1a\x43.yandex.cloud.serverless.functions.v1.ListFunctionsVersionsResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/functions/v1/versions\x12\xcd\x01\n\x06SetTag\x12;.yandex.cloud.serverless.functions.v1.SetFunctionTagRequest\x1a!.yandex.cloud.operation.Operation\"c\x82\xd3\xe4\x93\x02\x38\"3/functions/v1/versions/{function_version_id}:setTag:\x01*\xb2\xd2*!\n\x16SetFunctionTagMetadata\x12\x07Version\x12\xd9\x01\n\tRemoveTag\x12>.yandex.cloud.serverless.functions.v1.RemoveFunctionTagRequest\x1a!.yandex.cloud.operation.Operation\"i\x82\xd3\xe4\x93\x02;\"6/functions/v1/versions/{function_version_id}:removeTag:\x01*\xb2\xd2*$\n\x19RemoveFunctionTagMetadata\x12\x07Version\x12\xd5\x01\n\x0eListTagHistory\x12\x43.yandex.cloud.serverless.functions.v1.ListFunctionTagHistoryRequest\x1a\x44.yandex.cloud.serverless.functions.v1.ListFunctionTagHistoryResponse\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/functions/v1/functions/{function_id}:tagHistory\x12\xc5\x01\n\rCreateVersion\x12\x42.yandex.cloud.serverless.functions.v1.CreateFunctionVersionRequest\x1a!.yandex.cloud.operation.Operation\"M\x82\xd3\xe4\x93\x02\x1b\"\x16/functions/v1/versions:\x01*\xb2\xd2*(\n\x1d\x43reateFunctionVersionMetadata\x12\x07Version\x12\xa5\x01\n\x0cListRuntimes\x12\x39.yandex.cloud.serverless.functions.v1.ListRuntimesRequest\x1a:.yandex.cloud.serverless.functions.v1.ListRuntimesResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/functions/v1/runtimes\x12\xd5\x01\n\x0eListOperations\x12\x43.yandex.cloud.serverless.functions.v1.ListFunctionOperationsRequest\x1a\x44.yandex.cloud.serverless.functions.v1.ListFunctionOperationsResponse\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/functions/v1/functions/{function_id}/operations\x12\xb7\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"@\x82\xd3\xe4\x93\x02:\x12\x38/functions/v1/functions/{resource_id}:listAccessBindings\x12\xe6\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x7f\x82\xd3\xe4\x93\x02<\"7/functions/v1/functions/{resource_id}:setAccessBindings:\x01*\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\xf3\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x85\x01\x82\xd3\xe4\x93\x02?\":/functions/v1/functions/{resource_id}:updateAccessBindings:\x01*\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.EmptyB~\n(yandex.cloud.api.serverless.functions.v1ZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/functions/v1;functionsb\x06proto3'
+  serialized_pb=b'\n;yandex/cloud/serverless/functions/v1/function_service.proto\x12$yandex.cloud.serverless.functions.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a yandex/cloud/api/operation.proto\x1a yandex/cloud/access/access.proto\x1a\x33yandex/cloud/serverless/functions/v1/function.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"/\n\x12GetFunctionRequest\x12\x19\n\x0b\x66unction_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\">\n\x19GetFunctionVersionRequest\x12!\n\x13\x66unction_version_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"h\n\x1eGetFunctionVersionByTagRequest\x12\x19\n\x0b\x66unction_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12+\n\x03tag\x18\x02 \x01(\tB\x1e\xf2\xc7\x31\x1a[a-z][-_0-9a-z]*|[$]latest\"f\n\x14ListFunctionsRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\"s\n\x15ListFunctionsResponse\x12\x41\n\tfunctions\x18\x01 \x03(\x0b\x32..yandex.cloud.serverless.functions.v1.Function\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xcb\x02\n\x15\x43reateFunctionRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x98\x01\n\x06labels\x18\x04 \x03(\x0b\x32G.yandex.cloud.serverless.functions.v1.CreateFunctionRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"-\n\x16\x43reateFunctionMetadata\x12\x13\n\x0b\x66unction_id\x18\x01 \x01(\t\"\xfe\x02\n\x15UpdateFunctionRequest\x12\x19\n\x0b\x66unction_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x98\x01\n\x06labels\x18\x05 \x03(\x0b\x32G.yandex.cloud.serverless.functions.v1.UpdateFunctionRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"-\n\x16UpdateFunctionMetadata\x12\x13\n\x0b\x66unction_id\x18\x01 \x01(\t\"2\n\x15\x44\x65leteFunctionRequest\x12\x19\n\x0b\x66unction_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"-\n\x16\x44\x65leteFunctionMetadata\x12\x13\n\x0b\x66unction_id\x18\x01 \x01(\t\"\x15\n\x13ListRuntimesRequest\"(\n\x14ListRuntimesResponse\x12\x10\n\x08runtimes\x18\x01 \x03(\t\"\xb0\x01\n\x1cListFunctionsVersionsRequest\x12\x13\n\tfolder_id\x18\x01 \x01(\tH\x00\x12\x15\n\x0b\x66unction_id\x18\x02 \x01(\tH\x00\x12\x1d\n\tpage_size\x18\x03 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x05 \x01(\tB\n\x8a\xc8\x31\x06<=1000B\n\n\x02id\x12\x04\xc0\xc1\x31\x01\"y\n\x1dListFunctionsVersionsResponse\x12?\n\x08versions\x18\x01 \x03(\x0b\x32-.yandex.cloud.serverless.functions.v1.Version\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x94\x01\n\x1dListFunctionOperationsRequest\x12\x19\n\x0b\x66unction_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"p\n\x1eListFunctionOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xdc\x05\n\x1c\x43reateFunctionVersionRequest\x12\x19\n\x0b\x66unction_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x15\n\x07runtime\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05\x30-256\x12\x18\n\nentrypoint\x18\x04 \x01(\tB\x04\xe8\xc7\x31\x01\x12H\n\tresources\x18\x05 \x01(\x0b\x32/.yandex.cloud.serverless.functions.v1.ResourcesB\x04\xe8\xc7\x31\x01\x12:\n\x11\x65xecution_timeout\x18\x06 \x01(\x0b\x32\x19.google.protobuf.DurationB\x04\xe8\xc7\x31\x01\x12\x1a\n\x12service_account_id\x18\x07 \x01(\t\x12@\n\x07package\x18\t \x01(\x0b\x32-.yandex.cloud.serverless.functions.v1.PackageH\x00\x12!\n\x07\x63ontent\x18\n \x01(\x0c\x42\x0e\x8a\xc8\x31\n<=52428800H\x00\x12\x8f\x01\n\x0b\x65nvironment\x18\x0c \x03(\x0b\x32S.yandex.cloud.serverless.functions.v1.CreateFunctionVersionRequest.EnvironmentEntryB%\x8a\xc8\x31\x06<=4096\xb2\xc8\x31\x17\x12\x15[a-zA-Z][a-zA-Z0-9_]*\x12!\n\x03tag\x18\r \x03(\tB\x14\xf2\xc7\x31\x10[a-z][-_0-9a-z]*\x12H\n\x0c\x63onnectivity\x18\x11 \x01(\x0b\x32\x32.yandex.cloud.serverless.functions.v1.Connectivity\x1a\x32\n\x10\x45nvironmentEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x16\n\x0epackage_source\x12\x04\xc0\xc1\x31\x01\"<\n\x1d\x43reateFunctionVersionMetadata\x12\x1b\n\x13\x66unction_version_id\x18\x01 \x01(\t\"]\n\x15SetFunctionTagRequest\x12!\n\x13\x66unction_version_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12!\n\x03tag\x18\x02 \x01(\tB\x14\xf2\xc7\x31\x10[a-z][-_0-9a-z]*\"`\n\x18RemoveFunctionTagRequest\x12!\n\x13\x66unction_version_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12!\n\x03tag\x18\x02 \x01(\tB\x14\xf2\xc7\x31\x10[a-z][-_0-9a-z]*\"5\n\x16SetFunctionTagMetadata\x12\x1b\n\x13\x66unction_version_id\x18\x01 \x01(\t\"8\n\x19RemoveFunctionTagMetadata\x12\x1b\n\x13\x66unction_version_id\x18\x01 \x01(\t\"\xc1\x01\n\x1dListFunctionTagHistoryRequest\x12\x19\n\x0b\x66unction_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12+\n\x03tag\x18\x02 \x01(\tB\x1e\xf2\xc7\x31\x1a[a-z][-_0-9a-z]*|[$]latest\x12\x1d\n\tpage_size\x18\x03 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x05 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"\x80\x03\n\x1eListFunctionTagHistoryResponse\x12\x82\x01\n\x1b\x66unction_tag_history_record\x18\x01 \x03(\x0b\x32].yandex.cloud.serverless.functions.v1.ListFunctionTagHistoryResponse.FunctionTagHistoryRecord\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\x1a\xbf\x01\n\x18\x46unctionTagHistoryRecord\x12\x13\n\x0b\x66unction_id\x18\x01 \x01(\t\x12\x1b\n\x13\x66unction_version_id\x18\x03 \x01(\t\x12\x0b\n\x03tag\x18\x02 \x01(\t\x12\x32\n\x0e\x65\x66\x66\x65\x63tive_from\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x0c\x65\x66\x66\x65\x63tive_to\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp2\x9d\x1a\n\x0f\x46unctionService\x12\x9e\x01\n\x03Get\x12\x38.yandex.cloud.serverless.functions.v1.GetFunctionRequest\x1a..yandex.cloud.serverless.functions.v1.Function\"-\x82\xd3\xe4\x93\x02\'\x12%/functions/v1/functions/{function_id}\x12\xa0\x01\n\x04List\x12:.yandex.cloud.serverless.functions.v1.ListFunctionsRequest\x1a;.yandex.cloud.serverless.functions.v1.ListFunctionsResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/functions/v1/functions\x12\xb2\x01\n\x06\x43reate\x12;.yandex.cloud.serverless.functions.v1.CreateFunctionRequest\x1a!.yandex.cloud.operation.Operation\"H\x82\xd3\xe4\x93\x02\x1c\"\x17/functions/v1/functions:\x01*\xb2\xd2*\"\n\x16\x43reateFunctionMetadata\x12\x08\x46unction\x12\xc0\x01\n\x06Update\x12;.yandex.cloud.serverless.functions.v1.UpdateFunctionRequest\x1a!.yandex.cloud.operation.Operation\"V\x82\xd3\xe4\x93\x02*2%/functions/v1/functions/{function_id}:\x01*\xb2\xd2*\"\n\x16UpdateFunctionMetadata\x12\x08\x46unction\x12\xca\x01\n\x06\x44\x65lete\x12;.yandex.cloud.serverless.functions.v1.DeleteFunctionRequest\x1a!.yandex.cloud.operation.Operation\"`\x82\xd3\xe4\x93\x02\'*%/functions/v1/functions/{function_id}\xb2\xd2*/\n\x16\x44\x65leteFunctionMetadata\x12\x15google.protobuf.Empty\x12\xb2\x01\n\nGetVersion\x12?.yandex.cloud.serverless.functions.v1.GetFunctionVersionRequest\x1a-.yandex.cloud.serverless.functions.v1.Version\"4\x82\xd3\xe4\x93\x02.\x12,/functions/v1/versions/{function_version_id}\x12\xac\x01\n\x0fGetVersionByTag\x12\x44.yandex.cloud.serverless.functions.v1.GetFunctionVersionByTagRequest\x1a-.yandex.cloud.serverless.functions.v1.Version\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/functions/v1/versions:byTag\x12\xb7\x01\n\x0cListVersions\x12\x42.yandex.cloud.serverless.functions.v1.ListFunctionsVersionsRequest\x1a\x43.yandex.cloud.serverless.functions.v1.ListFunctionsVersionsResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/functions/v1/versions\x12\xcd\x01\n\x06SetTag\x12;.yandex.cloud.serverless.functions.v1.SetFunctionTagRequest\x1a!.yandex.cloud.operation.Operation\"c\x82\xd3\xe4\x93\x02\x38\"3/functions/v1/versions/{function_version_id}:setTag:\x01*\xb2\xd2*!\n\x16SetFunctionTagMetadata\x12\x07Version\x12\xd9\x01\n\tRemoveTag\x12>.yandex.cloud.serverless.functions.v1.RemoveFunctionTagRequest\x1a!.yandex.cloud.operation.Operation\"i\x82\xd3\xe4\x93\x02;\"6/functions/v1/versions/{function_version_id}:removeTag:\x01*\xb2\xd2*$\n\x19RemoveFunctionTagMetadata\x12\x07Version\x12\xd5\x01\n\x0eListTagHistory\x12\x43.yandex.cloud.serverless.functions.v1.ListFunctionTagHistoryRequest\x1a\x44.yandex.cloud.serverless.functions.v1.ListFunctionTagHistoryResponse\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/functions/v1/functions/{function_id}:tagHistory\x12\xc5\x01\n\rCreateVersion\x12\x42.yandex.cloud.serverless.functions.v1.CreateFunctionVersionRequest\x1a!.yandex.cloud.operation.Operation\"M\x82\xd3\xe4\x93\x02\x1b\"\x16/functions/v1/versions:\x01*\xb2\xd2*(\n\x1d\x43reateFunctionVersionMetadata\x12\x07Version\x12\xa5\x01\n\x0cListRuntimes\x12\x39.yandex.cloud.serverless.functions.v1.ListRuntimesRequest\x1a:.yandex.cloud.serverless.functions.v1.ListRuntimesResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/functions/v1/runtimes\x12\xd5\x01\n\x0eListOperations\x12\x43.yandex.cloud.serverless.functions.v1.ListFunctionOperationsRequest\x1a\x44.yandex.cloud.serverless.functions.v1.ListFunctionOperationsResponse\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/functions/v1/functions/{function_id}/operations\x12\xb7\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"@\x82\xd3\xe4\x93\x02:\x12\x38/functions/v1/functions/{resource_id}:listAccessBindings\x12\xe6\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x7f\x82\xd3\xe4\x93\x02<\"7/functions/v1/functions/{resource_id}:setAccessBindings:\x01*\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\xf3\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x85\x01\x82\xd3\xe4\x93\x02?\":/functions/v1/functions/{resource_id}:updateAccessBindings:\x01*\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.EmptyB~\n(yandex.cloud.api.serverless.functions.v1ZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/functions/v1;functionsb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_access_dot_access__pb2.DESCRIPTOR,yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -811,8 +811,8 @@ _CREATEFUNCTIONVERSIONREQUEST_ENVIRONMENTENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2991,
-  serialized_end=3041,
+  serialized_start=3065,
+  serialized_end=3115,
 )
 
 _CREATEFUNCTIONVERSIONREQUEST = _descriptor.Descriptor(
@@ -899,6 +899,13 @@ _CREATEFUNCTIONVERSIONREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\362\3071\020[a-z][-_0-9a-z]*', file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='connectivity', full_name='yandex.cloud.serverless.functions.v1.CreateFunctionVersionRequest.connectivity', index=11,
+      number=17, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -915,7 +922,7 @@ _CREATEFUNCTIONVERSIONREQUEST = _descriptor.Descriptor(
       index=0, containing_type=None, fields=[], serialized_options=b'\300\3011\001'),
   ],
   serialized_start=2407,
-  serialized_end=3071,
+  serialized_end=3139,
 )
 
 
@@ -945,8 +952,8 @@ _CREATEFUNCTIONVERSIONMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3073,
-  serialized_end=3133,
+  serialized_start=3141,
+  serialized_end=3201,
 )
 
 
@@ -983,8 +990,8 @@ _SETFUNCTIONTAGREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3135,
-  serialized_end=3228,
+  serialized_start=3203,
+  serialized_end=3296,
 )
 
 
@@ -1021,8 +1028,8 @@ _REMOVEFUNCTIONTAGREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3230,
-  serialized_end=3326,
+  serialized_start=3298,
+  serialized_end=3394,
 )
 
 
@@ -1052,8 +1059,8 @@ _SETFUNCTIONTAGMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3328,
-  serialized_end=3381,
+  serialized_start=3396,
+  serialized_end=3449,
 )
 
 
@@ -1083,8 +1090,8 @@ _REMOVEFUNCTIONTAGMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3383,
-  serialized_end=3439,
+  serialized_start=3451,
+  serialized_end=3507,
 )
 
 
@@ -1142,8 +1149,8 @@ _LISTFUNCTIONTAGHISTORYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3442,
-  serialized_end=3635,
+  serialized_start=3510,
+  serialized_end=3703,
 )
 
 
@@ -1201,8 +1208,8 @@ _LISTFUNCTIONTAGHISTORYRESPONSE_FUNCTIONTAGHISTORYRECORD = _descriptor.Descripto
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3831,
-  serialized_end=4022,
+  serialized_start=3899,
+  serialized_end=4090,
 )
 
 _LISTFUNCTIONTAGHISTORYRESPONSE = _descriptor.Descriptor(
@@ -1238,8 +1245,8 @@ _LISTFUNCTIONTAGHISTORYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3638,
-  serialized_end=4022,
+  serialized_start=3706,
+  serialized_end=4090,
 )
 
 _LISTFUNCTIONSRESPONSE.fields_by_name['functions'].message_type = yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__pb2._FUNCTION
@@ -1261,6 +1268,7 @@ _CREATEFUNCTIONVERSIONREQUEST.fields_by_name['resources'].message_type = yandex_
 _CREATEFUNCTIONVERSIONREQUEST.fields_by_name['execution_timeout'].message_type = google_dot_protobuf_dot_duration__pb2._DURATION
 _CREATEFUNCTIONVERSIONREQUEST.fields_by_name['package'].message_type = yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__pb2._PACKAGE
 _CREATEFUNCTIONVERSIONREQUEST.fields_by_name['environment'].message_type = _CREATEFUNCTIONVERSIONREQUEST_ENVIRONMENTENTRY
+_CREATEFUNCTIONVERSIONREQUEST.fields_by_name['connectivity'].message_type = yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__pb2._CONNECTIVITY
 _CREATEFUNCTIONVERSIONREQUEST.oneofs_by_name['package_source'].fields.append(
   _CREATEFUNCTIONVERSIONREQUEST.fields_by_name['package'])
 _CREATEFUNCTIONVERSIONREQUEST.fields_by_name['package'].containing_oneof = _CREATEFUNCTIONVERSIONREQUEST.oneofs_by_name['package_source']
@@ -1558,8 +1566,8 @@ _FUNCTIONSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=4025,
-  serialized_end=7382,
+  serialized_start=4093,
+  serialized_end=7450,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',

@@ -131,6 +131,31 @@ class ClusterServiceStub(object):
         request_serializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.DeleteClusterShardRequest.SerializeToString,
         response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
         )
+    self.GetShardGroup = channel.unary_unary(
+        '/yandex.cloud.mdb.clickhouse.v1.ClusterService/GetShardGroup',
+        request_serializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.GetClusterShardGroupRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__pb2.ShardGroup.FromString,
+        )
+    self.ListShardGroups = channel.unary_unary(
+        '/yandex.cloud.mdb.clickhouse.v1.ClusterService/ListShardGroups',
+        request_serializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.ListClusterShardGroupsRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.ListClusterShardGroupsResponse.FromString,
+        )
+    self.CreateShardGroup = channel.unary_unary(
+        '/yandex.cloud.mdb.clickhouse.v1.ClusterService/CreateShardGroup',
+        request_serializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.CreateClusterShardGroupRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+        )
+    self.UpdateShardGroup = channel.unary_unary(
+        '/yandex.cloud.mdb.clickhouse.v1.ClusterService/UpdateShardGroup',
+        request_serializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.UpdateClusterShardGroupRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+        )
+    self.DeleteShardGroup = channel.unary_unary(
+        '/yandex.cloud.mdb.clickhouse.v1.ClusterService/DeleteShardGroup',
+        request_serializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.DeleteClusterShardGroupRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+        )
     self.CreateExternalDictionary = channel.unary_unary(
         '/yandex.cloud.mdb.clickhouse.v1.ClusterService/CreateExternalDictionary',
         request_serializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.CreateClusterExternalDictionaryRequest.SerializeToString,
@@ -311,6 +336,41 @@ class ClusterServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def GetShardGroup(self, request, context):
+    """Returns the specified shard group.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def ListShardGroups(self, request, context):
+    """Retrieves a list of shard groups that belong to specified cluster.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def CreateShardGroup(self, request, context):
+    """Creates a new shard group in the specified cluster.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def UpdateShardGroup(self, request, context):
+    """Modifies the specified shard group.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
+  def DeleteShardGroup(self, request, context):
+    """Deletes the specified shard group.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def CreateExternalDictionary(self, request, context):
     """Creates an external dictionary for the specified ClickHouse cluster.
     """
@@ -441,6 +501,31 @@ def add_ClusterServiceServicer_to_server(servicer, server):
       'DeleteShard': grpc.unary_unary_rpc_method_handler(
           servicer.DeleteShard,
           request_deserializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.DeleteClusterShardRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+      ),
+      'GetShardGroup': grpc.unary_unary_rpc_method_handler(
+          servicer.GetShardGroup,
+          request_deserializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.GetClusterShardGroupRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__pb2.ShardGroup.SerializeToString,
+      ),
+      'ListShardGroups': grpc.unary_unary_rpc_method_handler(
+          servicer.ListShardGroups,
+          request_deserializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.ListClusterShardGroupsRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.ListClusterShardGroupsResponse.SerializeToString,
+      ),
+      'CreateShardGroup': grpc.unary_unary_rpc_method_handler(
+          servicer.CreateShardGroup,
+          request_deserializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.CreateClusterShardGroupRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+      ),
+      'UpdateShardGroup': grpc.unary_unary_rpc_method_handler(
+          servicer.UpdateShardGroup,
+          request_deserializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.UpdateClusterShardGroupRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+      ),
+      'DeleteShardGroup': grpc.unary_unary_rpc_method_handler(
+          servicer.DeleteShardGroup,
+          request_deserializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.DeleteClusterShardGroupRequest.FromString,
           response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
       ),
       'CreateExternalDictionary': grpc.unary_unary_rpc_method_handler(

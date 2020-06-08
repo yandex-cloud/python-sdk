@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.serverless.functions.v1',
   syntax='proto3',
   serialized_options=b'\n(yandex.cloud.api.serverless.functions.v1ZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/functions/v1;functions',
-  serialized_pb=b'\n3yandex/cloud/serverless/functions/v1/function.proto\x12$yandex.cloud.serverless.functions.v1\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\xe1\x03\n\x08\x46unction\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x16\n\x04name\x18\x04 \x01(\tB\x08\x8a\xc8\x31\x04\x33-63\x12\x1e\n\x0b\x64\x65scription\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05\x30-256\x12T\n\x06labels\x18\x06 \x03(\x0b\x32:.yandex.cloud.serverless.functions.v1.Function.LabelsEntryB\x08\x82\xc8\x31\x04<=64\x12\x14\n\x0clog_group_id\x18\x07 \x01(\t\x12\x17\n\x0fhttp_invoke_url\x18\x08 \x01(\t\x12\x45\n\x06status\x18\t \x01(\x0e\x32\x35.yandex.cloud.serverless.functions.v1.Function.Status\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"S\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08\x44\x45LETING\x10\x03\x12\t\n\x05\x45RROR\x10\x04\"\xfe\x04\n\x07Version\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x0b\x66unction_id\x18\x02 \x01(\t\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05\x30-256\x12.\n\ncreated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07runtime\x18\x06 \x01(\t\x12\x12\n\nentrypoint\x18\x07 \x01(\t\x12\x42\n\tresources\x18\x08 \x01(\x0b\x32/.yandex.cloud.serverless.functions.v1.Resources\x12\x34\n\x11\x65xecution_timeout\x18\t \x01(\x0b\x32\x19.google.protobuf.Duration\x12\x1a\n\x12service_account_id\x18\n \x01(\t\x12\x12\n\nimage_size\x18\x0c \x01(\x03\x12\x44\n\x06status\x18\r \x01(\x0e\x32\x34.yandex.cloud.serverless.functions.v1.Version.Status\x12\x0c\n\x04tags\x18\x0e \x03(\t\x12\x14\n\x0clog_group_id\x18\x0f \x01(\t\x12S\n\x0b\x65nvironment\x18\x10 \x03(\x0b\x32>.yandex.cloud.serverless.functions.v1.Version.EnvironmentEntry\x1a\x32\n\x10\x45nvironmentEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\":\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02J\x04\x08\x0b\x10\x0c\"5\n\tResources\x12(\n\x06memory\x18\x01 \x01(\x03\x42\x18\xfa\xc7\x31\x14\x31\x33\x34\x32\x31\x37\x37\x32\x38-1073741824\"O\n\x07Package\x12\x19\n\x0b\x62ucket_name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x19\n\x0bobject_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x0e\n\x06sha256\x18\x03 \x01(\tB~\n(yandex.cloud.api.serverless.functions.v1ZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/functions/v1;functionsb\x06proto3'
+  serialized_pb=b'\n3yandex/cloud/serverless/functions/v1/function.proto\x12$yandex.cloud.serverless.functions.v1\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\xe1\x03\n\x08\x46unction\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x16\n\x04name\x18\x04 \x01(\tB\x08\x8a\xc8\x31\x04\x33-63\x12\x1e\n\x0b\x64\x65scription\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05\x30-256\x12T\n\x06labels\x18\x06 \x03(\x0b\x32:.yandex.cloud.serverless.functions.v1.Function.LabelsEntryB\x08\x82\xc8\x31\x04<=64\x12\x14\n\x0clog_group_id\x18\x07 \x01(\t\x12\x17\n\x0fhttp_invoke_url\x18\x08 \x01(\t\x12\x45\n\x06status\x18\t \x01(\x0e\x32\x35.yandex.cloud.serverless.functions.v1.Function.Status\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"S\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08\x44\x45LETING\x10\x03\x12\t\n\x05\x45RROR\x10\x04\"\xc2\x05\n\x07Version\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x0b\x66unction_id\x18\x02 \x01(\t\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05\x30-256\x12.\n\ncreated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07runtime\x18\x06 \x01(\t\x12\x12\n\nentrypoint\x18\x07 \x01(\t\x12\x42\n\tresources\x18\x08 \x01(\x0b\x32/.yandex.cloud.serverless.functions.v1.Resources\x12\x34\n\x11\x65xecution_timeout\x18\t \x01(\x0b\x32\x19.google.protobuf.Duration\x12\x1a\n\x12service_account_id\x18\n \x01(\t\x12\x12\n\nimage_size\x18\x0c \x01(\x03\x12\x44\n\x06status\x18\r \x01(\x0e\x32\x34.yandex.cloud.serverless.functions.v1.Version.Status\x12\x0c\n\x04tags\x18\x0e \x03(\t\x12\x14\n\x0clog_group_id\x18\x0f \x01(\t\x12S\n\x0b\x65nvironment\x18\x10 \x03(\x0b\x32>.yandex.cloud.serverless.functions.v1.Version.EnvironmentEntry\x12H\n\x0c\x63onnectivity\x18\x11 \x01(\x0b\x32\x32.yandex.cloud.serverless.functions.v1.Connectivity\x1a\x32\n\x10\x45nvironmentEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\":\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\"5\n\tResources\x12(\n\x06memory\x18\x01 \x01(\x03\x42\x18\xfa\xc7\x31\x14\x31\x33\x34\x32\x31\x37\x37\x32\x38-1073741824\"O\n\x07Package\x12\x19\n\x0b\x62ucket_name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x19\n\x0bobject_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x0e\n\x06sha256\x18\x03 \x01(\t\"5\n\x0c\x43onnectivity\x12\x12\n\nnetwork_id\x18\x01 \x01(\t\x12\x11\n\tsubnet_id\x18\x02 \x03(\tB~\n(yandex.cloud.api.serverless.functions.v1ZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/functions/v1;functionsb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -246,8 +246,8 @@ _VERSION_ENVIRONMENTENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1196,
-  serialized_end=1246,
+  serialized_start=1270,
+  serialized_end=1320,
 )
 
 _VERSION = _descriptor.Descriptor(
@@ -355,6 +355,13 @@ _VERSION = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='connectivity', full_name='yandex.cloud.serverless.functions.v1.Version.connectivity', index=14,
+      number=17, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -369,7 +376,7 @@ _VERSION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=674,
-  serialized_end=1312,
+  serialized_end=1380,
 )
 
 
@@ -399,8 +406,8 @@ _RESOURCES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1314,
-  serialized_end=1367,
+  serialized_start=1382,
+  serialized_end=1435,
 )
 
 
@@ -444,8 +451,46 @@ _PACKAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1369,
-  serialized_end=1448,
+  serialized_start=1437,
+  serialized_end=1516,
+)
+
+
+_CONNECTIVITY = _descriptor.Descriptor(
+  name='Connectivity',
+  full_name='yandex.cloud.serverless.functions.v1.Connectivity',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='network_id', full_name='yandex.cloud.serverless.functions.v1.Connectivity.network_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='subnet_id', full_name='yandex.cloud.serverless.functions.v1.Connectivity.subnet_id', index=1,
+      number=2, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1518,
+  serialized_end=1571,
 )
 
 _FUNCTION_LABELSENTRY.containing_type = _FUNCTION
@@ -459,11 +504,13 @@ _VERSION.fields_by_name['resources'].message_type = _RESOURCES
 _VERSION.fields_by_name['execution_timeout'].message_type = google_dot_protobuf_dot_duration__pb2._DURATION
 _VERSION.fields_by_name['status'].enum_type = _VERSION_STATUS
 _VERSION.fields_by_name['environment'].message_type = _VERSION_ENVIRONMENTENTRY
+_VERSION.fields_by_name['connectivity'].message_type = _CONNECTIVITY
 _VERSION_STATUS.containing_type = _VERSION
 DESCRIPTOR.message_types_by_name['Function'] = _FUNCTION
 DESCRIPTOR.message_types_by_name['Version'] = _VERSION
 DESCRIPTOR.message_types_by_name['Resources'] = _RESOURCES
 DESCRIPTOR.message_types_by_name['Package'] = _PACKAGE
+DESCRIPTOR.message_types_by_name['Connectivity'] = _CONNECTIVITY
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Function = _reflection.GeneratedProtocolMessageType('Function', (_message.Message,), {
@@ -509,6 +556,13 @@ Package = _reflection.GeneratedProtocolMessageType('Package', (_message.Message,
   # @@protoc_insertion_point(class_scope:yandex.cloud.serverless.functions.v1.Package)
   })
 _sym_db.RegisterMessage(Package)
+
+Connectivity = _reflection.GeneratedProtocolMessageType('Connectivity', (_message.Message,), {
+  'DESCRIPTOR' : _CONNECTIVITY,
+  '__module__' : 'yandex.cloud.serverless.functions.v1.function_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.serverless.functions.v1.Connectivity)
+  })
+_sym_db.RegisterMessage(Connectivity)
 
 
 DESCRIPTOR._options = None
