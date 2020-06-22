@@ -18,7 +18,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.mdb.redis.v1',
   syntax='proto3',
   serialized_options=b'\n\035yandex.cloud.api.mdb.redis.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/redis/v1;redis',
-  serialized_pb=b'\n/yandex/cloud/mdb/redis/v1/resource_preset.proto\x12\x19yandex.cloud.mdb.redis.v1\">\n\x0eResourcePreset\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08zone_ids\x18\x02 \x03(\t\x12\x0e\n\x06memory\x18\x03 \x01(\x03\x42\x64\n\x1dyandex.cloud.api.mdb.redis.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/redis/v1;redisb\x06proto3'
+  serialized_pb=b'\n/yandex/cloud/mdb/redis/v1/resource_preset.proto\x12\x19yandex.cloud.mdb.redis.v1\"M\n\x0eResourcePreset\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08zone_ids\x18\x02 \x03(\t\x12\x0e\n\x06memory\x18\x03 \x01(\x03\x12\r\n\x05\x63ores\x18\x04 \x01(\x03\x42\x64\n\x1dyandex.cloud.api.mdb.redis.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/redis/v1;redisb\x06proto3'
 )
 
 
@@ -52,6 +52,13 @@ _RESOURCEPRESET = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='cores', full_name='yandex.cloud.mdb.redis.v1.ResourcePreset.cores', index=3,
+      number=4, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -65,7 +72,7 @@ _RESOURCEPRESET = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=78,
-  serialized_end=140,
+  serialized_end=155,
 )
 
 DESCRIPTOR.message_types_by_name['ResourcePreset'] = _RESOURCEPRESET

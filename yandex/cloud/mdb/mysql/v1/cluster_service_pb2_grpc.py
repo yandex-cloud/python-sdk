@@ -79,7 +79,7 @@ class ClusterServiceStub(object):
     self.StreamLogs = channel.unary_stream(
         '/yandex.cloud.mdb.mysql.v1.ClusterService/StreamLogs',
         request_serializer=yandex_dot_cloud_dot_mdb_dot_mysql_dot_v1_dot_cluster__service__pb2.StreamClusterLogsRequest.SerializeToString,
-        response_deserializer=yandex_dot_cloud_dot_mdb_dot_mysql_dot_v1_dot_cluster__service__pb2.LogRecord.FromString,
+        response_deserializer=yandex_dot_cloud_dot_mdb_dot_mysql_dot_v1_dot_cluster__service__pb2.StreamLogRecord.FromString,
         )
     self.ListOperations = channel.unary_unary(
         '/yandex.cloud.mdb.mysql.v1.ClusterService/ListOperations',
@@ -306,7 +306,7 @@ def add_ClusterServiceServicer_to_server(servicer, server):
       'StreamLogs': grpc.unary_stream_rpc_method_handler(
           servicer.StreamLogs,
           request_deserializer=yandex_dot_cloud_dot_mdb_dot_mysql_dot_v1_dot_cluster__service__pb2.StreamClusterLogsRequest.FromString,
-          response_serializer=yandex_dot_cloud_dot_mdb_dot_mysql_dot_v1_dot_cluster__service__pb2.LogRecord.SerializeToString,
+          response_serializer=yandex_dot_cloud_dot_mdb_dot_mysql_dot_v1_dot_cluster__service__pb2.StreamLogRecord.SerializeToString,
       ),
       'ListOperations': grpc.unary_unary_rpc_method_handler(
           servicer.ListOperations,
