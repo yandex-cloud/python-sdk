@@ -66,6 +66,11 @@ class ClusterServiceStub(object):
         request_serializer=yandex_dot_cloud_dot_mdb_dot_mysql_dot_v1_dot_cluster__service__pb2.RestoreClusterRequest.SerializeToString,
         response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
         )
+    self.RescheduleMaintenance = channel.unary_unary(
+        '/yandex.cloud.mdb.mysql.v1.ClusterService/RescheduleMaintenance',
+        request_serializer=yandex_dot_cloud_dot_mdb_dot_mysql_dot_v1_dot_cluster__service__pb2.RescheduleMaintenanceRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+        )
     self.StartFailover = channel.unary_unary(
         '/yandex.cloud.mdb.mysql.v1.ClusterService/StartFailover',
         request_serializer=yandex_dot_cloud_dot_mdb_dot_mysql_dot_v1_dot_cluster__service__pb2.StartClusterFailoverRequest.SerializeToString,
@@ -184,6 +189,13 @@ class ClusterServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def RescheduleMaintenance(self, request, context):
+    """Reschedule planned maintenance operation.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def StartFailover(self, request, context):
     """Start a manual failover on the specified MySQL cluster.
     """
@@ -291,6 +303,11 @@ def add_ClusterServiceServicer_to_server(servicer, server):
       'Restore': grpc.unary_unary_rpc_method_handler(
           servicer.Restore,
           request_deserializer=yandex_dot_cloud_dot_mdb_dot_mysql_dot_v1_dot_cluster__service__pb2.RestoreClusterRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+      ),
+      'RescheduleMaintenance': grpc.unary_unary_rpc_method_handler(
+          servicer.RescheduleMaintenance,
+          request_deserializer=yandex_dot_cloud_dot_mdb_dot_mysql_dot_v1_dot_cluster__service__pb2.RescheduleMaintenanceRequest.FromString,
           response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
       ),
       'StartFailover': grpc.unary_unary_rpc_method_handler(

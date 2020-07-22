@@ -61,6 +61,11 @@ class ClusterServiceStub(object):
         request_serializer=yandex_dot_cloud_dot_dataproc_dot_v1_dot_cluster__service__pb2.ListClusterHostsRequest.SerializeToString,
         response_deserializer=yandex_dot_cloud_dot_dataproc_dot_v1_dot_cluster__service__pb2.ListClusterHostsResponse.FromString,
         )
+    self.ListUILinks = channel.unary_unary(
+        '/yandex.cloud.dataproc.v1.ClusterService/ListUILinks',
+        request_serializer=yandex_dot_cloud_dot_dataproc_dot_v1_dot_cluster__service__pb2.ListUILinksRequest.SerializeToString,
+        response_deserializer=yandex_dot_cloud_dot_dataproc_dot_v1_dot_cluster__service__pb2.ListUILinksResponse.FromString,
+        )
 
 
 class ClusterServiceServicer(object):
@@ -132,6 +137,13 @@ class ClusterServiceServicer(object):
     context.set_details('Method not implemented!')
     raise NotImplementedError('Method not implemented!')
 
+  def ListUILinks(self, request, context):
+    """Retrieves a list of links to web interfaces being proxied by Data Proc UI Proxy.
+    """
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
 
 def add_ClusterServiceServicer_to_server(servicer, server):
   rpc_method_handlers = {
@@ -179,6 +191,11 @@ def add_ClusterServiceServicer_to_server(servicer, server):
           servicer.ListHosts,
           request_deserializer=yandex_dot_cloud_dot_dataproc_dot_v1_dot_cluster__service__pb2.ListClusterHostsRequest.FromString,
           response_serializer=yandex_dot_cloud_dot_dataproc_dot_v1_dot_cluster__service__pb2.ListClusterHostsResponse.SerializeToString,
+      ),
+      'ListUILinks': grpc.unary_unary_rpc_method_handler(
+          servicer.ListUILinks,
+          request_deserializer=yandex_dot_cloud_dot_dataproc_dot_v1_dot_cluster__service__pb2.ListUILinksRequest.FromString,
+          response_serializer=yandex_dot_cloud_dot_dataproc_dot_v1_dot_cluster__service__pb2.ListUILinksResponse.SerializeToString,
       ),
   }
   generic_handler = grpc.method_handlers_generic_handler(

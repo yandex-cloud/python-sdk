@@ -15,6 +15,7 @@ from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__
 from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
 from google.type import timeofday_pb2 as google_dot_type_dot_timeofday__pb2
 from yandex.cloud.mdb.clickhouse.v1.config import clickhouse_pb2 as yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_config_dot_clickhouse__pb2
+from yandex.cloud.mdb.clickhouse.v1 import maintenance_pb2 as yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_maintenance__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -22,9 +23,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.mdb.clickhouse.v1',
   syntax='proto3',
   serialized_options=b'\n\"yandex.cloud.api.mdb.clickhouse.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/clickhouse/v1;clickhouse',
-  serialized_pb=b'\n,yandex/cloud/mdb/clickhouse/v1/cluster.proto\x12\x1eyandex.cloud.mdb.clickhouse.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1bgoogle/type/timeofday.proto\x1a\x36yandex/cloud/mdb/clickhouse/v1/config/clickhouse.proto\"\xef\x06\n\x07\x43luster\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x43\n\x06labels\x18\x06 \x03(\x0b\x32\x33.yandex.cloud.mdb.clickhouse.v1.Cluster.LabelsEntry\x12H\n\x0b\x65nvironment\x18\x07 \x01(\x0e\x32\x33.yandex.cloud.mdb.clickhouse.v1.Cluster.Environment\x12>\n\nmonitoring\x18\x08 \x03(\x0b\x32*.yandex.cloud.mdb.clickhouse.v1.Monitoring\x12=\n\x06\x63onfig\x18\t \x01(\x0b\x32-.yandex.cloud.mdb.clickhouse.v1.ClusterConfig\x12\x12\n\nnetwork_id\x18\n \x01(\t\x12>\n\x06health\x18\x0b \x01(\x0e\x32..yandex.cloud.mdb.clickhouse.v1.Cluster.Health\x12>\n\x06status\x18\x0c \x01(\x0e\x32..yandex.cloud.mdb.clickhouse.v1.Cluster.Status\x12\x1a\n\x12service_account_id\x18\r \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"I\n\x0b\x45nvironment\x12\x1b\n\x17\x45NVIRONMENT_UNSPECIFIED\x10\x00\x12\x0e\n\nPRODUCTION\x10\x01\x12\r\n\tPRESTABLE\x10\x02\"?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\"y\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\t\n\x05\x45RROR\x10\x03\x12\x0c\n\x08UPDATING\x10\x04\x12\x0c\n\x08STOPPING\x10\x05\x12\x0b\n\x07STOPPED\x10\x06\x12\x0c\n\x08STARTING\x10\x07\"=\n\nMonitoring\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0c\n\x04link\x18\x03 \x01(\t\"\x8b\x04\n\rClusterConfig\x12\x0f\n\x07version\x18\x01 \x01(\t\x12L\n\nclickhouse\x18\x02 \x01(\x0b\x32\x38.yandex.cloud.mdb.clickhouse.v1.ClusterConfig.Clickhouse\x12J\n\tzookeeper\x18\x03 \x01(\x0b\x32\x37.yandex.cloud.mdb.clickhouse.v1.ClusterConfig.Zookeeper\x12\x33\n\x13\x62\x61\x63kup_window_start\x18\x04 \x01(\x0b\x32\x16.google.type.TimeOfDay\x12\x36\n\x06\x61\x63\x63\x65ss\x18\x05 \x01(\x0b\x32&.yandex.cloud.mdb.clickhouse.v1.Access\x1a\x96\x01\n\nClickhouse\x12J\n\x06\x63onfig\x18\x01 \x01(\x0b\x32:.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfigSet\x12<\n\tresources\x18\x02 \x01(\x0b\x32).yandex.cloud.mdb.clickhouse.v1.Resources\x1aI\n\tZookeeper\x12<\n\tresources\x18\x01 \x01(\x0b\x32).yandex.cloud.mdb.clickhouse.v1.Resources\"f\n\x05Shard\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12;\n\x06\x63onfig\x18\x03 \x01(\x0b\x32+.yandex.cloud.mdb.clickhouse.v1.ShardConfig\"X\n\nShardGroup\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x13\n\x0bshard_names\x18\x04 \x03(\t\"\x9f\x02\n\x0bShardConfig\x12J\n\nclickhouse\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.mdb.clickhouse.v1.ShardConfig.Clickhouse\x1a\xc3\x01\n\nClickhouse\x12J\n\x06\x63onfig\x18\x01 \x01(\x0b\x32:.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfigSet\x12<\n\tresources\x18\x02 \x01(\x0b\x32).yandex.cloud.mdb.clickhouse.v1.Resources\x12+\n\x06weight\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"\xe0\x03\n\x04Host\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12\x0f\n\x07zone_id\x18\x03 \x01(\t\x12\x37\n\x04type\x18\x04 \x01(\x0e\x32).yandex.cloud.mdb.clickhouse.v1.Host.Type\x12<\n\tresources\x18\x05 \x01(\x0b\x32).yandex.cloud.mdb.clickhouse.v1.Resources\x12;\n\x06health\x18\x06 \x01(\x0e\x32+.yandex.cloud.mdb.clickhouse.v1.Host.Health\x12\x39\n\x08services\x18\x07 \x03(\x0b\x32\'.yandex.cloud.mdb.clickhouse.v1.Service\x12\x11\n\tsubnet_id\x18\x08 \x01(\t\x12\x18\n\x10\x61ssign_public_ip\x18\t \x01(\x08\x12\x12\n\nshard_name\x18\n \x01(\t\";\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x0e\n\nCLICKHOUSE\x10\x01\x12\r\n\tZOOKEEPER\x10\x02\"8\n\x06Health\x12\x0b\n\x07UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\"\xee\x01\n\x07Service\x12:\n\x04type\x18\x01 \x01(\x0e\x32,.yandex.cloud.mdb.clickhouse.v1.Service.Type\x12>\n\x06health\x18\x02 \x01(\x0e\x32..yandex.cloud.mdb.clickhouse.v1.Service.Health\";\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x0e\n\nCLICKHOUSE\x10\x01\x12\r\n\tZOOKEEPER\x10\x02\"*\n\x06Health\x12\x0b\n\x07UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\"P\n\tResources\x12\x1a\n\x12resource_preset_id\x18\x01 \x01(\t\x12\x11\n\tdisk_size\x18\x02 \x01(\x03\x12\x14\n\x0c\x64isk_type_id\x18\x03 \x01(\t\"Q\n\x06\x41\x63\x63\x65ss\x12\x11\n\tdata_lens\x18\x01 \x01(\x08\x12\x0f\n\x07web_sql\x18\x02 \x01(\x08\x12\x0f\n\x07metrika\x18\x03 \x01(\x08\x12\x12\n\nserverless\x18\x04 \x01(\x08\x42s\n\"yandex.cloud.api.mdb.clickhouse.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/clickhouse/v1;clickhouseb\x06proto3'
+  serialized_pb=b'\n,yandex/cloud/mdb/clickhouse/v1/cluster.proto\x12\x1eyandex.cloud.mdb.clickhouse.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1bgoogle/type/timeofday.proto\x1a\x36yandex/cloud/mdb/clickhouse/v1/config/clickhouse.proto\x1a\x30yandex/cloud/mdb/clickhouse/v1/maintenance.proto\"\x8f\x08\n\x07\x43luster\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x43\n\x06labels\x18\x06 \x03(\x0b\x32\x33.yandex.cloud.mdb.clickhouse.v1.Cluster.LabelsEntry\x12H\n\x0b\x65nvironment\x18\x07 \x01(\x0e\x32\x33.yandex.cloud.mdb.clickhouse.v1.Cluster.Environment\x12>\n\nmonitoring\x18\x08 \x03(\x0b\x32*.yandex.cloud.mdb.clickhouse.v1.Monitoring\x12=\n\x06\x63onfig\x18\t \x01(\x0b\x32-.yandex.cloud.mdb.clickhouse.v1.ClusterConfig\x12\x12\n\nnetwork_id\x18\n \x01(\t\x12>\n\x06health\x18\x0b \x01(\x0e\x32..yandex.cloud.mdb.clickhouse.v1.Cluster.Health\x12>\n\x06status\x18\x0c \x01(\x0e\x32..yandex.cloud.mdb.clickhouse.v1.Cluster.Status\x12\x1a\n\x12service_account_id\x18\r \x01(\t\x12M\n\x12maintenance_window\x18\x0e \x01(\x0b\x32\x31.yandex.cloud.mdb.clickhouse.v1.MaintenanceWindow\x12O\n\x11planned_operation\x18\x0f \x01(\x0b\x32\x34.yandex.cloud.mdb.clickhouse.v1.MaintenanceOperation\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"I\n\x0b\x45nvironment\x12\x1b\n\x17\x45NVIRONMENT_UNSPECIFIED\x10\x00\x12\x0e\n\nPRODUCTION\x10\x01\x12\r\n\tPRESTABLE\x10\x02\"?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\"y\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\t\n\x05\x45RROR\x10\x03\x12\x0c\n\x08UPDATING\x10\x04\x12\x0c\n\x08STOPPING\x10\x05\x12\x0b\n\x07STOPPED\x10\x06\x12\x0c\n\x08STARTING\x10\x07\"=\n\nMonitoring\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0c\n\x04link\x18\x03 \x01(\t\"\x8b\x04\n\rClusterConfig\x12\x0f\n\x07version\x18\x01 \x01(\t\x12L\n\nclickhouse\x18\x02 \x01(\x0b\x32\x38.yandex.cloud.mdb.clickhouse.v1.ClusterConfig.Clickhouse\x12J\n\tzookeeper\x18\x03 \x01(\x0b\x32\x37.yandex.cloud.mdb.clickhouse.v1.ClusterConfig.Zookeeper\x12\x33\n\x13\x62\x61\x63kup_window_start\x18\x04 \x01(\x0b\x32\x16.google.type.TimeOfDay\x12\x36\n\x06\x61\x63\x63\x65ss\x18\x05 \x01(\x0b\x32&.yandex.cloud.mdb.clickhouse.v1.Access\x1a\x96\x01\n\nClickhouse\x12J\n\x06\x63onfig\x18\x01 \x01(\x0b\x32:.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfigSet\x12<\n\tresources\x18\x02 \x01(\x0b\x32).yandex.cloud.mdb.clickhouse.v1.Resources\x1aI\n\tZookeeper\x12<\n\tresources\x18\x01 \x01(\x0b\x32).yandex.cloud.mdb.clickhouse.v1.Resources\"f\n\x05Shard\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12;\n\x06\x63onfig\x18\x03 \x01(\x0b\x32+.yandex.cloud.mdb.clickhouse.v1.ShardConfig\"X\n\nShardGroup\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x13\n\x0bshard_names\x18\x04 \x03(\t\"\x9f\x02\n\x0bShardConfig\x12J\n\nclickhouse\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.mdb.clickhouse.v1.ShardConfig.Clickhouse\x1a\xc3\x01\n\nClickhouse\x12J\n\x06\x63onfig\x18\x01 \x01(\x0b\x32:.yandex.cloud.mdb.clickhouse.v1.config.ClickhouseConfigSet\x12<\n\tresources\x18\x02 \x01(\x0b\x32).yandex.cloud.mdb.clickhouse.v1.Resources\x12+\n\x06weight\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"\xe0\x03\n\x04Host\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12\x0f\n\x07zone_id\x18\x03 \x01(\t\x12\x37\n\x04type\x18\x04 \x01(\x0e\x32).yandex.cloud.mdb.clickhouse.v1.Host.Type\x12<\n\tresources\x18\x05 \x01(\x0b\x32).yandex.cloud.mdb.clickhouse.v1.Resources\x12;\n\x06health\x18\x06 \x01(\x0e\x32+.yandex.cloud.mdb.clickhouse.v1.Host.Health\x12\x39\n\x08services\x18\x07 \x03(\x0b\x32\'.yandex.cloud.mdb.clickhouse.v1.Service\x12\x11\n\tsubnet_id\x18\x08 \x01(\t\x12\x18\n\x10\x61ssign_public_ip\x18\t \x01(\x08\x12\x12\n\nshard_name\x18\n \x01(\t\";\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x0e\n\nCLICKHOUSE\x10\x01\x12\r\n\tZOOKEEPER\x10\x02\"8\n\x06Health\x12\x0b\n\x07UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\"\xee\x01\n\x07Service\x12:\n\x04type\x18\x01 \x01(\x0e\x32,.yandex.cloud.mdb.clickhouse.v1.Service.Type\x12>\n\x06health\x18\x02 \x01(\x0e\x32..yandex.cloud.mdb.clickhouse.v1.Service.Health\";\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x0e\n\nCLICKHOUSE\x10\x01\x12\r\n\tZOOKEEPER\x10\x02\"*\n\x06Health\x12\x0b\n\x07UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\"P\n\tResources\x12\x1a\n\x12resource_preset_id\x18\x01 \x01(\t\x12\x11\n\tdisk_size\x18\x02 \x01(\x03\x12\x14\n\x0c\x64isk_type_id\x18\x03 \x01(\t\"Q\n\x06\x41\x63\x63\x65ss\x12\x11\n\tdata_lens\x18\x01 \x01(\x08\x12\x0f\n\x07web_sql\x18\x02 \x01(\x08\x12\x0f\n\x07metrika\x18\x03 \x01(\x08\x12\x12\n\nserverless\x18\x04 \x01(\x08\x42s\n\"yandex.cloud.api.mdb.clickhouse.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/clickhouse/v1;clickhouseb\x06proto3'
   ,
-  dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,google_dot_type_dot_timeofday__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_config_dot_clickhouse__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,google_dot_type_dot_timeofday__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_config_dot_clickhouse__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_maintenance__pb2.DESCRIPTOR,])
 
 
 
@@ -49,8 +50,8 @@ _CLUSTER_ENVIRONMENT = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=849,
-  serialized_end=922,
+  serialized_start=1059,
+  serialized_end=1132,
 )
 _sym_db.RegisterEnumDescriptor(_CLUSTER_ENVIRONMENT)
 
@@ -79,8 +80,8 @@ _CLUSTER_HEALTH = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=924,
-  serialized_end=987,
+  serialized_start=1134,
+  serialized_end=1197,
 )
 _sym_db.RegisterEnumDescriptor(_CLUSTER_HEALTH)
 
@@ -125,8 +126,8 @@ _CLUSTER_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=989,
-  serialized_end=1110,
+  serialized_start=1199,
+  serialized_end=1320,
 )
 _sym_db.RegisterEnumDescriptor(_CLUSTER_STATUS)
 
@@ -151,8 +152,8 @@ _HOST_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2549,
-  serialized_end=2608,
+  serialized_start=2759,
+  serialized_end=2818,
 )
 _sym_db.RegisterEnumDescriptor(_HOST_TYPE)
 
@@ -181,8 +182,8 @@ _HOST_HEALTH = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2610,
-  serialized_end=2666,
+  serialized_start=2820,
+  serialized_end=2876,
 )
 _sym_db.RegisterEnumDescriptor(_HOST_HEALTH)
 
@@ -207,8 +208,8 @@ _SERVICE_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2549,
-  serialized_end=2608,
+  serialized_start=2759,
+  serialized_end=2818,
 )
 _sym_db.RegisterEnumDescriptor(_SERVICE_TYPE)
 
@@ -233,8 +234,8 @@ _SERVICE_HEALTH = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2610,
-  serialized_end=2652,
+  serialized_start=2820,
+  serialized_end=2862,
 )
 _sym_db.RegisterEnumDescriptor(_SERVICE_HEALTH)
 
@@ -272,8 +273,8 @@ _CLUSTER_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=802,
-  serialized_end=847,
+  serialized_start=1012,
+  serialized_end=1057,
 )
 
 _CLUSTER = _descriptor.Descriptor(
@@ -374,6 +375,20 @@ _CLUSTER = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='maintenance_window', full_name='yandex.cloud.mdb.clickhouse.v1.Cluster.maintenance_window', index=13,
+      number=14, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='planned_operation', full_name='yandex.cloud.mdb.clickhouse.v1.Cluster.planned_operation', index=14,
+      number=15, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -389,8 +404,8 @@ _CLUSTER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=231,
-  serialized_end=1110,
+  serialized_start=281,
+  serialized_end=1320,
 )
 
 
@@ -434,8 +449,8 @@ _MONITORING = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1112,
-  serialized_end=1173,
+  serialized_start=1322,
+  serialized_end=1383,
 )
 
 
@@ -472,8 +487,8 @@ _CLUSTERCONFIG_CLICKHOUSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1474,
-  serialized_end=1624,
+  serialized_start=1684,
+  serialized_end=1834,
 )
 
 _CLUSTERCONFIG_ZOOKEEPER = _descriptor.Descriptor(
@@ -502,8 +517,8 @@ _CLUSTERCONFIG_ZOOKEEPER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1626,
-  serialized_end=1699,
+  serialized_start=1836,
+  serialized_end=1909,
 )
 
 _CLUSTERCONFIG = _descriptor.Descriptor(
@@ -560,8 +575,8 @@ _CLUSTERCONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1176,
-  serialized_end=1699,
+  serialized_start=1386,
+  serialized_end=1909,
 )
 
 
@@ -605,8 +620,8 @@ _SHARD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1701,
-  serialized_end=1803,
+  serialized_start=1911,
+  serialized_end=2013,
 )
 
 
@@ -657,8 +672,8 @@ _SHARDGROUP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1805,
-  serialized_end=1893,
+  serialized_start=2015,
+  serialized_end=2103,
 )
 
 
@@ -702,8 +717,8 @@ _SHARDCONFIG_CLICKHOUSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1988,
-  serialized_end=2183,
+  serialized_start=2198,
+  serialized_end=2393,
 )
 
 _SHARDCONFIG = _descriptor.Descriptor(
@@ -732,8 +747,8 @@ _SHARDCONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1896,
-  serialized_end=2183,
+  serialized_start=2106,
+  serialized_end=2393,
 )
 
 
@@ -828,8 +843,8 @@ _HOST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2186,
-  serialized_end=2666,
+  serialized_start=2396,
+  serialized_end=2876,
 )
 
 
@@ -868,8 +883,8 @@ _SERVICE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2669,
-  serialized_end=2907,
+  serialized_start=2879,
+  serialized_end=3117,
 )
 
 
@@ -913,8 +928,8 @@ _RESOURCES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2909,
-  serialized_end=2989,
+  serialized_start=3119,
+  serialized_end=3199,
 )
 
 
@@ -965,8 +980,8 @@ _ACCESS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2991,
-  serialized_end=3072,
+  serialized_start=3201,
+  serialized_end=3282,
 )
 
 _CLUSTER_LABELSENTRY.containing_type = _CLUSTER
@@ -977,6 +992,8 @@ _CLUSTER.fields_by_name['monitoring'].message_type = _MONITORING
 _CLUSTER.fields_by_name['config'].message_type = _CLUSTERCONFIG
 _CLUSTER.fields_by_name['health'].enum_type = _CLUSTER_HEALTH
 _CLUSTER.fields_by_name['status'].enum_type = _CLUSTER_STATUS
+_CLUSTER.fields_by_name['maintenance_window'].message_type = yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_maintenance__pb2._MAINTENANCEWINDOW
+_CLUSTER.fields_by_name['planned_operation'].message_type = yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_maintenance__pb2._MAINTENANCEOPERATION
 _CLUSTER_ENVIRONMENT.containing_type = _CLUSTER
 _CLUSTER_HEALTH.containing_type = _CLUSTER
 _CLUSTER_STATUS.containing_type = _CLUSTER
