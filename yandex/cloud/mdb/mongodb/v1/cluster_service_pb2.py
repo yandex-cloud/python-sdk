@@ -33,7 +33,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.mdb.mongodb.v1',
   syntax='proto3',
   serialized_options=b'\n\037yandex.cloud.api.mdb.mongodb.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1;mongodb',
-  serialized_pb=b'\n1yandex/cloud/mdb/mongodb/v1/cluster_service.proto\x12\x1byandex.cloud.mdb.mongodb.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/type/timeofday.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a(yandex/cloud/mdb/mongodb/v1/backup.proto\x1a)yandex/cloud/mdb/mongodb/v1/cluster.proto\x1a*yandex/cloud/mdb/mongodb/v1/database.proto\x1a&yandex/cloud/mdb/mongodb/v1/user.proto\x1a\x33yandex/cloud/mdb/mongodb/v1/config/mongodb3_6.proto\x1a\x33yandex/cloud/mdb/mongodb/v1/config/mongodb4_0.proto\x1a\x33yandex/cloud/mdb/mongodb/v1/config/mongodb4_2.proto\x1a-yandex/cloud/mdb/mongodb/v1/maintenance.proto\"5\n\x11GetClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x90\x01\n\x13ListClustersRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"g\n\x14ListClustersResponse\x12\x36\n\x08\x63lusters\x18\x01 \x03(\x0b\x32$.yandex.cloud.mdb.mongodb.v1.Cluster\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xc8\x05\n\x14\x43reateClusterRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12+\n\x04name\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\r[a-zA-Z0-9_]*\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8e\x01\n\x06labels\x18\x04 \x03(\x0b\x32=.yandex.cloud.mdb.mongodb.v1.CreateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12K\n\x0b\x65nvironment\x18\x05 \x01(\x0e\x32\x30.yandex.cloud.mdb.mongodb.v1.Cluster.EnvironmentB\x04\xe8\xc7\x31\x01\x12\x42\n\x0b\x63onfig_spec\x18\x06 \x01(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.ConfigSpecB\x04\xe8\xc7\x31\x01\x12I\n\x0e\x64\x61tabase_specs\x18\x07 \x03(\x0b\x32).yandex.cloud.mdb.mongodb.v1.DatabaseSpecB\x06\x82\xc8\x31\x02>0\x12\x41\n\nuser_specs\x18\x08 \x03(\x0b\x32%.yandex.cloud.mdb.mongodb.v1.UserSpecB\x06\x82\xc8\x31\x02>0\x12\x41\n\nhost_specs\x18\t \x03(\x0b\x32%.yandex.cloud.mdb.mongodb.v1.HostSpecB\x06\x82\xc8\x31\x02>0\x12 \n\nnetwork_id\x18\n \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15\x43reateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\xfd\x03\n\x14UpdateClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8e\x01\n\x06labels\x18\x04 \x03(\x0b\x32=.yandex.cloud.mdb.mongodb.v1.UpdateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12<\n\x0b\x63onfig_spec\x18\x05 \x01(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.ConfigSpec\x12(\n\x04name\x18\x06 \x01(\tB\x1a\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12J\n\x12maintenance_window\x18\x07 \x01(\x0b\x32..yandex.cloud.mdb.mongodb.v1.MaintenanceWindow\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15UpdateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"8\n\x14\x44\x65leteClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x44\x65leteClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"7\n\x13StartClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"*\n\x14StartClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"6\n\x12StopClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\")\n\x13StopClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"c\n\x12MoveClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12+\n\x15\x64\x65stination_folder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"b\n\x13MoveClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x18\n\x10source_folder_id\x18\x02 \x01(\t\x12\x1d\n\x15\x64\x65stination_folder_id\x18\x03 \x01(\t\"8\n\x14\x42\x61\x63kupClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x42\x61\x63kupClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\xe8\x05\n\x15RestoreClusterRequest\x12\x17\n\tbackup_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12,\n\x04name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8f\x01\n\x06labels\x18\x04 \x03(\x0b\x32>.yandex.cloud.mdb.mongodb.v1.RestoreClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12K\n\x0b\x65nvironment\x18\x05 \x01(\x0e\x32\x30.yandex.cloud.mdb.mongodb.v1.Cluster.EnvironmentB\x04\xe8\xc7\x31\x01\x12\x42\n\x0b\x63onfig_spec\x18\x06 \x01(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.ConfigSpecB\x04\xe8\xc7\x31\x01\x12\x41\n\nhost_specs\x18\x07 \x03(\x0b\x32%.yandex.cloud.mdb.mongodb.v1.HostSpecB\x06\x82\xc8\x31\x02>0\x12 \n\nnetwork_id\x18\x08 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1b\n\tfolder_id\x18\t \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x63\n\x14recovery_target_spec\x18\n \x01(\x0b\x32\x45.yandex.cloud.mdb.mongodb.v1.RestoreClusterRequest.RecoveryTargetSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a/\n\x12RecoveryTargetSpec\x12\x19\n\ttimestamp\x18\x01 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\"?\n\x16RestoreClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tbackup_id\x18\x02 \x01(\t\"\xcc\x02\n\x1cRescheduleMaintenanceRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12g\n\x0freschedule_type\x18\x02 \x01(\x0e\x32H.yandex.cloud.mdb.mongodb.v1.RescheduleMaintenanceRequest.RescheduleTypeB\x04\xe8\xc7\x31\x01\x12\x31\n\rdelayed_until\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"n\n\x0eRescheduleType\x12\x1f\n\x1bRESCHEDULE_TYPE_UNSPECIFIED\x10\x00\x12\r\n\tIMMEDIATE\x10\x01\x12\x19\n\x15NEXT_AVAILABLE_WINDOW\x10\x02\x12\x11\n\rSPECIFIC_TIME\x10\x03\"f\n\x1dRescheduleMaintenanceMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x31\n\rdelayed_until\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xb0\x01\n\tLogRecord\x12-\n\ttimestamp\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x44\n\x07message\x18\x02 \x03(\x0b\x32\x33.yandex.cloud.mdb.mongodb.v1.LogRecord.MessageEntry\x1a.\n\x0cMessageEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xfb\x02\n\x16ListClusterLogsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x15\n\rcolumn_filter\x18\x02 \x03(\t\x12U\n\x0cservice_type\x18\x03 \x01(\x0e\x32?.yandex.cloud.mdb.mongodb.v1.ListClusterLogsRequest.ServiceType\x12-\n\tfrom_time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07to_time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1d\n\tpage_size\x18\x06 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x07 \x01(\tB\t\x8a\xc8\x31\x05<=100\"7\n\x0bServiceType\x12\x1c\n\x18SERVICE_TYPE_UNSPECIFIED\x10\x00\x12\n\n\x06MONGOD\x10\x01\"h\n\x17ListClusterLogsResponse\x12\x34\n\x04logs\x18\x01 \x03(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.LogRecord\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"d\n\x0fStreamLogRecord\x12\x36\n\x06record\x18\x01 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.LogRecord\x12\x19\n\x11next_record_token\x18\x02 \x01(\t\"\xe2\x02\n\x18StreamClusterLogsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x15\n\rcolumn_filter\x18\x02 \x03(\t\x12W\n\x0cservice_type\x18\x03 \x01(\x0e\x32\x41.yandex.cloud.mdb.mongodb.v1.StreamClusterLogsRequest.ServiceType\x12-\n\tfrom_time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07to_time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1f\n\x0crecord_token\x18\x06 \x01(\tB\t\x8a\xc8\x31\x05<=100\"7\n\x0bServiceType\x12\x1c\n\x18SERVICE_TYPE_UNSPECIFIED\x10\x00\x12\n\n\x06MONGOD\x10\x01\"~\n\x1cListClusterOperationsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"o\n\x1dListClusterOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"{\n\x19ListClusterBackupsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"k\n\x1aListClusterBackupsResponse\x12\x34\n\x07\x62\x61\x63kups\x18\x01 \x03(\x0b\x32#.yandex.cloud.mdb.mongodb.v1.Backup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"y\n\x17ListClusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"e\n\x18ListClusterHostsResponse\x12\x30\n\x05hosts\x18\x01 \x03(\x0b\x32!.yandex.cloud.mdb.mongodb.v1.Host\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"}\n\x16\x41\x64\x64\x43lusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x41\n\nhost_specs\x18\x02 \x03(\x0b\x32%.yandex.cloud.mdb.mongodb.v1.HostSpecB\x06\x82\xc8\x31\x02>0\"A\n\x17\x41\x64\x64\x43lusterHostsMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nhost_names\x18\x02 \x03(\t\"b\n\x19\x44\x65leteClusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12#\n\nhost_names\x18\x02 \x03(\tB\x0f\x82\xc8\x31\x02>0\x8a\xc8\x31\x05<=253\"D\n\x1a\x44\x65leteClusterHostsMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nhost_names\x18\x02 \x03(\t\"\xcf\x03\n\x1c\x45nableClusterShardingRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12Z\n\x08mongocfg\x18\x02 \x01(\x0b\x32\x42.yandex.cloud.mdb.mongodb.v1.EnableClusterShardingRequest.MongoCfgB\x04\xe8\xc7\x31\x01\x12V\n\x06mongos\x18\x03 \x01(\x0b\x32@.yandex.cloud.mdb.mongodb.v1.EnableClusterShardingRequest.MongosB\x04\xe8\xc7\x31\x01\x12\x41\n\nhost_specs\x18\x04 \x03(\x0b\x32%.yandex.cloud.mdb.mongodb.v1.HostSpecB\x06\x82\xc8\x31\x02>0\x1aK\n\x08MongoCfg\x12?\n\tresources\x18\x01 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.ResourcesB\x04\xe8\xc7\x31\x01\x1aI\n\x06Mongos\x12?\n\tresources\x18\x01 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.ResourcesB\x04\xe8\xc7\x31\x01\"3\n\x1d\x45nableClusterShardingMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"n\n\x16GetClusterShardRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\nshard_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"z\n\x18ListClusterShardsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"h\n\x19ListClusterShardsResponse\x12\x32\n\x06shards\x18\x01 \x03(\x0b\x32\".yandex.cloud.mdb.mongodb.v1.Shard\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xb1\x01\n\x16\x41\x64\x64\x43lusterShardRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\nshard_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x41\n\nhost_specs\x18\x03 \x03(\x0b\x32%.yandex.cloud.mdb.mongodb.v1.HostSpecB\x06\x82\xc8\x31\x02>0\"A\n\x17\x41\x64\x64\x43lusterShardMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nshard_name\x18\x02 \x01(\t\"q\n\x19\x44\x65leteClusterShardRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\nshard_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"D\n\x1a\x44\x65leteClusterShardMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nshard_name\x18\x02 \x01(\t\"\\\n\x13ResetupHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12#\n\nhost_names\x18\x02 \x03(\tB\x0f\x82\xc8\x31\x02>0\x8a\xc8\x31\x05<=253\">\n\x14ResetupHostsMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nhost_names\x18\x02 \x03(\t\"\\\n\x13RestartHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12#\n\nhost_names\x18\x02 \x03(\tB\x0f\x82\xc8\x31\x02>0\x8a\xc8\x31\x05<=253\">\n\x14RestartHostsMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nhost_names\x18\x02 \x03(\t\"\xc2\x01\n\x08HostSpec\x12\x19\n\x07zone_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1b\n\tsubnet_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x18\n\x10\x61ssign_public_ip\x18\x03 \x01(\x08\x12\x34\n\x04type\x18\x04 \x01(\x0e\x32&.yandex.cloud.mdb.mongodb.v1.Host.Type\x12.\n\nshard_name\x18\x05 \x01(\tB\x1a\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"\x85\x05\n\x0eMongodbSpec3_6\x12\x42\n\x06mongod\x18\x01 \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6.Mongod\x12\x46\n\x08mongocfg\x18\x02 \x01(\x0b\x32\x34.yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6.MongoCfg\x12\x42\n\x06mongos\x18\x03 \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6.Mongos\x1a\x88\x01\n\x06Mongod\x12\x43\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x33.yandex.cloud.mdb.mongodb.v1.config.MongodConfig3_6\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x8c\x01\n\x08MongoCfg\x12\x45\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x35.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig3_6\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x88\x01\n\x06Mongos\x12\x43\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x33.yandex.cloud.mdb.mongodb.v1.config.MongosConfig3_6\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\"\x85\x05\n\x0eMongodbSpec4_0\x12\x42\n\x06mongod\x18\x01 \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0.Mongod\x12\x46\n\x08mongocfg\x18\x02 \x01(\x0b\x32\x34.yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0.MongoCfg\x12\x42\n\x06mongos\x18\x03 \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0.Mongos\x1a\x88\x01\n\x06Mongod\x12\x43\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x33.yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_0\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x8c\x01\n\x08MongoCfg\x12\x45\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x35.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig4_0\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x88\x01\n\x06Mongos\x12\x43\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x33.yandex.cloud.mdb.mongodb.v1.config.MongosConfig4_0\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\"\x85\x05\n\x0eMongodbSpec4_2\x12\x42\n\x06mongod\x18\x01 \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.MongodbSpec4_2.Mongod\x12\x46\n\x08mongocfg\x18\x02 \x01(\x0b\x32\x34.yandex.cloud.mdb.mongodb.v1.MongodbSpec4_2.MongoCfg\x12\x42\n\x06mongos\x18\x03 \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.MongodbSpec4_2.Mongos\x1a\x88\x01\n\x06Mongod\x12\x43\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x33.yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_2\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x8c\x01\n\x08MongoCfg\x12\x45\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x35.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig4_2\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x88\x01\n\x06Mongos\x12\x43\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x33.yandex.cloud.mdb.mongodb.v1.config.MongosConfig4_2\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\"\xcc\x03\n\nConfigSpec\x12\x0f\n\x07version\x18\x01 \x01(\t\x12%\n\x1d\x66\x65\x61ture_compatibility_version\x18\x05 \x01(\t\x12X\n\x10mongodb_spec_3_6\x18\x02 \x01(\x0b\x32+.yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6H\x00R\x0fmongodbSpec_3_6\x12X\n\x10mongodb_spec_4_0\x18\x04 \x01(\x0b\x32+.yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0H\x00R\x0fmongodbSpec_4_0\x12X\n\x10mongodb_spec_4_2\x18\x07 \x01(\x0b\x32+.yandex.cloud.mdb.mongodb.v1.MongodbSpec4_2H\x00R\x0fmongodbSpec_4_2\x12\x33\n\x13\x62\x61\x63kup_window_start\x18\x03 \x01(\x0b\x32\x16.google.type.TimeOfDay\x12\x33\n\x06\x61\x63\x63\x65ss\x18\x06 \x01(\x0b\x32#.yandex.cloud.mdb.mongodb.v1.AccessB\x0e\n\x0cmongodb_spec2\x98&\n\x0e\x43lusterService\x12\x8e\x01\n\x03Get\x12..yandex.cloud.mdb.mongodb.v1.GetClusterRequest\x1a$.yandex.cloud.mdb.mongodb.v1.Cluster\"1\x82\xd3\xe4\x93\x02+\x12)/managed-mongodb/v1/clusters/{cluster_id}\x12\x91\x01\n\x04List\x12\x30.yandex.cloud.mdb.mongodb.v1.ListClustersRequest\x1a\x31.yandex.cloud.mdb.mongodb.v1.ListClustersResponse\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/managed-mongodb/v1/clusters\x12\xab\x01\n\x06\x43reate\x12\x31.yandex.cloud.mdb.mongodb.v1.CreateClusterRequest\x1a!.yandex.cloud.operation.Operation\"K\x82\xd3\xe4\x93\x02!\"\x1c/managed-mongodb/v1/clusters:\x01*\xb2\xd2* \n\x15\x43reateClusterMetadata\x12\x07\x43luster\x12\xb8\x01\n\x06Update\x12\x31.yandex.cloud.mdb.mongodb.v1.UpdateClusterRequest\x1a!.yandex.cloud.operation.Operation\"X\x82\xd3\xe4\x93\x02.2)/managed-mongodb/v1/clusters/{cluster_id}:\x01*\xb2\xd2* \n\x15UpdateClusterMetadata\x12\x07\x43luster\x12\xc3\x01\n\x06\x44\x65lete\x12\x31.yandex.cloud.mdb.mongodb.v1.DeleteClusterRequest\x1a!.yandex.cloud.operation.Operation\"c\x82\xd3\xe4\x93\x02+*)/managed-mongodb/v1/clusters/{cluster_id}\xb2\xd2*.\n\x15\x44\x65leteClusterMetadata\x12\x15google.protobuf.Empty\x12\xb8\x01\n\x05Start\x12\x30.yandex.cloud.mdb.mongodb.v1.StartClusterRequest\x1a!.yandex.cloud.operation.Operation\"Z\x82\xd3\xe4\x93\x02\x31\"//managed-mongodb/v1/clusters/{cluster_id}:start\xb2\xd2*\x1f\n\x14StartClusterMetadata\x12\x07\x43luster\x12\xb4\x01\n\x04Stop\x12/.yandex.cloud.mdb.mongodb.v1.StopClusterRequest\x1a!.yandex.cloud.operation.Operation\"X\x82\xd3\xe4\x93\x02\x30\"./managed-mongodb/v1/clusters/{cluster_id}:stop\xb2\xd2*\x1e\n\x13StopClusterMetadata\x12\x07\x43luster\x12\xb7\x01\n\x04Move\x12/.yandex.cloud.mdb.mongodb.v1.MoveClusterRequest\x1a!.yandex.cloud.operation.Operation\"[\x82\xd3\xe4\x93\x02\x33\"./managed-mongodb/v1/clusters/{cluster_id}:move:\x01*\xb2\xd2*\x1e\n\x13MoveClusterMetadata\x12\x07\x43luster\x12\xbc\x01\n\x06\x42\x61\x63kup\x12\x31.yandex.cloud.mdb.mongodb.v1.BackupClusterRequest\x1a!.yandex.cloud.operation.Operation\"\\\x82\xd3\xe4\x93\x02\x32\"0/managed-mongodb/v1/clusters/{cluster_id}:backup\xb2\xd2* \n\x15\x42\x61\x63kupClusterMetadata\x12\x07\x43luster\x12\xb6\x01\n\x07Restore\x12\x32.yandex.cloud.mdb.mongodb.v1.RestoreClusterRequest\x1a!.yandex.cloud.operation.Operation\"T\x82\xd3\xe4\x93\x02)\"$/managed-mongodb/v1/clusters:restore:\x01*\xb2\xd2*!\n\x16RestoreClusterMetadata\x12\x07\x43luster\x12\xed\x01\n\x15RescheduleMaintenance\x12\x39.yandex.cloud.mdb.mongodb.v1.RescheduleMaintenanceRequest\x1a!.yandex.cloud.operation.Operation\"v\x82\xd3\xe4\x93\x02\x44\"?/managed-mongodb/v1/clusters/{cluster_id}:rescheduleMaintenance:\x01*\xb2\xd2*(\n\x1dRescheduleMaintenanceMetadata\x12\x07\x43luster\x12\xad\x01\n\x08ListLogs\x12\x33.yandex.cloud.mdb.mongodb.v1.ListClusterLogsRequest\x1a\x34.yandex.cloud.mdb.mongodb.v1.ListClusterLogsResponse\"6\x82\xd3\xe4\x93\x02\x30\x12./managed-mongodb/v1/clusters/{cluster_id}:logs\x12\xb2\x01\n\nStreamLogs\x12\x35.yandex.cloud.mdb.mongodb.v1.StreamClusterLogsRequest\x1a,.yandex.cloud.mdb.mongodb.v1.StreamLogRecord\"=\x82\xd3\xe4\x93\x02\x37\x12\x35/managed-mongodb/v1/clusters/{cluster_id}:stream_logs0\x01\x12\xc5\x01\n\x0eListOperations\x12\x39.yandex.cloud.mdb.mongodb.v1.ListClusterOperationsRequest\x1a:.yandex.cloud.mdb.mongodb.v1.ListClusterOperationsResponse\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/managed-mongodb/v1/clusters/{cluster_id}/operations\x12\xb9\x01\n\x0bListBackups\x12\x36.yandex.cloud.mdb.mongodb.v1.ListClusterBackupsRequest\x1a\x37.yandex.cloud.mdb.mongodb.v1.ListClusterBackupsResponse\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/managed-mongodb/v1/clusters/{cluster_id}/backups\x12\xb1\x01\n\tListHosts\x12\x34.yandex.cloud.mdb.mongodb.v1.ListClusterHostsRequest\x1a\x35.yandex.cloud.mdb.mongodb.v1.ListClusterHostsResponse\"7\x82\xd3\xe4\x93\x02\x31\x12//managed-mongodb/v1/clusters/{cluster_id}/hosts\x12\xde\x01\n\x08\x41\x64\x64Hosts\x12\x33.yandex.cloud.mdb.mongodb.v1.AddClusterHostsRequest\x1a!.yandex.cloud.operation.Operation\"z\x82\xd3\xe4\x93\x02@\";/managed-mongodb/v1/clusters/{cluster_id}/hosts:batchCreate:\x01*\xb2\xd2*0\n\x17\x41\x64\x64\x43lusterHostsMetadata\x12\x15google.protobuf.Empty\x12\xe7\x01\n\x0b\x44\x65leteHosts\x12\x36.yandex.cloud.mdb.mongodb.v1.DeleteClusterHostsRequest\x1a!.yandex.cloud.operation.Operation\"}\x82\xd3\xe4\x93\x02@\";/managed-mongodb/v1/clusters/{cluster_id}/hosts:batchDelete:\x01*\xb2\xd2*3\n\x1a\x44\x65leteClusterHostsMetadata\x12\x15google.protobuf.Empty\x12\xed\x01\n\x0e\x45nableSharding\x12\x39.yandex.cloud.mdb.mongodb.v1.EnableClusterShardingRequest\x1a!.yandex.cloud.operation.Operation\"}\x82\xd3\xe4\x93\x02=\"8/managed-mongodb/v1/clusters/{cluster_id}:enableSharding:\x01*\xb2\xd2*6\n\x1d\x45nableClusterShardingMetadata\x12\x15google.protobuf.Empty\x12\xaa\x01\n\x08GetShard\x12\x33.yandex.cloud.mdb.mongodb.v1.GetClusterShardRequest\x1a\".yandex.cloud.mdb.mongodb.v1.Shard\"E\x82\xd3\xe4\x93\x02?\x12=/managed-mongodb/v1/clusters/{cluster_id}/shards/{shard_name}\x12\xb5\x01\n\nListShards\x12\x35.yandex.cloud.mdb.mongodb.v1.ListClusterShardsRequest\x1a\x36.yandex.cloud.mdb.mongodb.v1.ListClusterShardsResponse\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/managed-mongodb/v1/clusters/{cluster_id}/shards\x12\xc3\x01\n\x08\x41\x64\x64Shard\x12\x33.yandex.cloud.mdb.mongodb.v1.AddClusterShardRequest\x1a!.yandex.cloud.operation.Operation\"_\x82\xd3\xe4\x93\x02\x35\"0/managed-mongodb/v1/clusters/{cluster_id}/shards:\x01*\xb2\xd2* \n\x17\x41\x64\x64\x43lusterShardMetadata\x12\x05Shard\x12\xe6\x01\n\x0b\x44\x65leteShard\x12\x36.yandex.cloud.mdb.mongodb.v1.DeleteClusterShardRequest\x1a!.yandex.cloud.operation.Operation\"|\x82\xd3\xe4\x93\x02?*=/managed-mongodb/v1/clusters/{cluster_id}/shards/{shard_name}\xb2\xd2*3\n\x1a\x44\x65leteClusterShardMetadata\x12\x15google.protobuf.Empty\x12\xd7\x01\n\x0cResetupHosts\x12\x30.yandex.cloud.mdb.mongodb.v1.ResetupHostsRequest\x1a!.yandex.cloud.operation.Operation\"r\x82\xd3\xe4\x93\x02;\"6/managed-mongodb/v1/clusters/{cluster_id}:resetupHosts:\x01*\xb2\xd2*-\n\x14ResetupHostsMetadata\x12\x15google.protobuf.Empty\x12\xd7\x01\n\x0cRestartHosts\x12\x30.yandex.cloud.mdb.mongodb.v1.RestartHostsRequest\x1a!.yandex.cloud.operation.Operation\"r\x82\xd3\xe4\x93\x02;\"6/managed-mongodb/v1/clusters/{cluster_id}:restartHosts:\x01*\xb2\xd2*-\n\x14RestartHostsMetadata\x12\x15google.protobuf.EmptyBj\n\x1fyandex.cloud.api.mdb.mongodb.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1;mongodbb\x06proto3'
+  create_key=_descriptor._internal_create_key,
+  serialized_pb=b'\n1yandex/cloud/mdb/mongodb/v1/cluster_service.proto\x12\x1byandex.cloud.mdb.mongodb.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/type/timeofday.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a(yandex/cloud/mdb/mongodb/v1/backup.proto\x1a)yandex/cloud/mdb/mongodb/v1/cluster.proto\x1a*yandex/cloud/mdb/mongodb/v1/database.proto\x1a&yandex/cloud/mdb/mongodb/v1/user.proto\x1a\x33yandex/cloud/mdb/mongodb/v1/config/mongodb3_6.proto\x1a\x33yandex/cloud/mdb/mongodb/v1/config/mongodb4_0.proto\x1a\x33yandex/cloud/mdb/mongodb/v1/config/mongodb4_2.proto\x1a-yandex/cloud/mdb/mongodb/v1/maintenance.proto\"5\n\x11GetClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x90\x01\n\x13ListClustersRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"g\n\x14ListClustersResponse\x12\x36\n\x08\x63lusters\x18\x01 \x03(\x0b\x32$.yandex.cloud.mdb.mongodb.v1.Cluster\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xc8\x05\n\x14\x43reateClusterRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12+\n\x04name\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\r[a-zA-Z0-9_]*\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8e\x01\n\x06labels\x18\x04 \x03(\x0b\x32=.yandex.cloud.mdb.mongodb.v1.CreateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12K\n\x0b\x65nvironment\x18\x05 \x01(\x0e\x32\x30.yandex.cloud.mdb.mongodb.v1.Cluster.EnvironmentB\x04\xe8\xc7\x31\x01\x12\x42\n\x0b\x63onfig_spec\x18\x06 \x01(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.ConfigSpecB\x04\xe8\xc7\x31\x01\x12I\n\x0e\x64\x61tabase_specs\x18\x07 \x03(\x0b\x32).yandex.cloud.mdb.mongodb.v1.DatabaseSpecB\x06\x82\xc8\x31\x02>0\x12\x41\n\nuser_specs\x18\x08 \x03(\x0b\x32%.yandex.cloud.mdb.mongodb.v1.UserSpecB\x06\x82\xc8\x31\x02>0\x12\x41\n\nhost_specs\x18\t \x03(\x0b\x32%.yandex.cloud.mdb.mongodb.v1.HostSpecB\x06\x82\xc8\x31\x02>0\x12 \n\nnetwork_id\x18\n \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15\x43reateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\xfd\x03\n\x14UpdateClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8e\x01\n\x06labels\x18\x04 \x03(\x0b\x32=.yandex.cloud.mdb.mongodb.v1.UpdateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12<\n\x0b\x63onfig_spec\x18\x05 \x01(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.ConfigSpec\x12(\n\x04name\x18\x06 \x01(\tB\x1a\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12J\n\x12maintenance_window\x18\x07 \x01(\x0b\x32..yandex.cloud.mdb.mongodb.v1.MaintenanceWindow\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15UpdateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"8\n\x14\x44\x65leteClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x44\x65leteClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"7\n\x13StartClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"*\n\x14StartClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"6\n\x12StopClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\")\n\x13StopClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"c\n\x12MoveClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12+\n\x15\x64\x65stination_folder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"b\n\x13MoveClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x18\n\x10source_folder_id\x18\x02 \x01(\t\x12\x1d\n\x15\x64\x65stination_folder_id\x18\x03 \x01(\t\"8\n\x14\x42\x61\x63kupClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x42\x61\x63kupClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\xe8\x05\n\x15RestoreClusterRequest\x12\x17\n\tbackup_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12,\n\x04name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8f\x01\n\x06labels\x18\x04 \x03(\x0b\x32>.yandex.cloud.mdb.mongodb.v1.RestoreClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12K\n\x0b\x65nvironment\x18\x05 \x01(\x0e\x32\x30.yandex.cloud.mdb.mongodb.v1.Cluster.EnvironmentB\x04\xe8\xc7\x31\x01\x12\x42\n\x0b\x63onfig_spec\x18\x06 \x01(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.ConfigSpecB\x04\xe8\xc7\x31\x01\x12\x41\n\nhost_specs\x18\x07 \x03(\x0b\x32%.yandex.cloud.mdb.mongodb.v1.HostSpecB\x06\x82\xc8\x31\x02>0\x12 \n\nnetwork_id\x18\x08 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1b\n\tfolder_id\x18\t \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x63\n\x14recovery_target_spec\x18\n \x01(\x0b\x32\x45.yandex.cloud.mdb.mongodb.v1.RestoreClusterRequest.RecoveryTargetSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a/\n\x12RecoveryTargetSpec\x12\x19\n\ttimestamp\x18\x01 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\"?\n\x16RestoreClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tbackup_id\x18\x02 \x01(\t\"\xcc\x02\n\x1cRescheduleMaintenanceRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12g\n\x0freschedule_type\x18\x02 \x01(\x0e\x32H.yandex.cloud.mdb.mongodb.v1.RescheduleMaintenanceRequest.RescheduleTypeB\x04\xe8\xc7\x31\x01\x12\x31\n\rdelayed_until\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"n\n\x0eRescheduleType\x12\x1f\n\x1bRESCHEDULE_TYPE_UNSPECIFIED\x10\x00\x12\r\n\tIMMEDIATE\x10\x01\x12\x19\n\x15NEXT_AVAILABLE_WINDOW\x10\x02\x12\x11\n\rSPECIFIC_TIME\x10\x03\"f\n\x1dRescheduleMaintenanceMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x31\n\rdelayed_until\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xb0\x01\n\tLogRecord\x12-\n\ttimestamp\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x44\n\x07message\x18\x02 \x03(\x0b\x32\x33.yandex.cloud.mdb.mongodb.v1.LogRecord.MessageEntry\x1a.\n\x0cMessageEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x95\x03\n\x16ListClusterLogsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x15\n\rcolumn_filter\x18\x02 \x03(\t\x12U\n\x0cservice_type\x18\x03 \x01(\x0e\x32?.yandex.cloud.mdb.mongodb.v1.ListClusterLogsRequest.ServiceType\x12-\n\tfrom_time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07to_time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1d\n\tpage_size\x18\x06 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x07 \x01(\tB\t\x8a\xc8\x31\x05<=100\"Q\n\x0bServiceType\x12\x1c\n\x18SERVICE_TYPE_UNSPECIFIED\x10\x00\x12\n\n\x06MONGOD\x10\x01\x12\n\n\x06MONGOS\x10\x02\x12\x0c\n\x08MONGOCFG\x10\x03\"h\n\x17ListClusterLogsResponse\x12\x34\n\x04logs\x18\x01 \x03(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.LogRecord\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"d\n\x0fStreamLogRecord\x12\x36\n\x06record\x18\x01 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.LogRecord\x12\x19\n\x11next_record_token\x18\x02 \x01(\t\"\xfc\x02\n\x18StreamClusterLogsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x15\n\rcolumn_filter\x18\x02 \x03(\t\x12W\n\x0cservice_type\x18\x03 \x01(\x0e\x32\x41.yandex.cloud.mdb.mongodb.v1.StreamClusterLogsRequest.ServiceType\x12-\n\tfrom_time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07to_time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1f\n\x0crecord_token\x18\x06 \x01(\tB\t\x8a\xc8\x31\x05<=100\"Q\n\x0bServiceType\x12\x1c\n\x18SERVICE_TYPE_UNSPECIFIED\x10\x00\x12\n\n\x06MONGOD\x10\x01\x12\n\n\x06MONGOS\x10\x02\x12\x0c\n\x08MONGOCFG\x10\x03\"~\n\x1cListClusterOperationsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"o\n\x1dListClusterOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"{\n\x19ListClusterBackupsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"k\n\x1aListClusterBackupsResponse\x12\x34\n\x07\x62\x61\x63kups\x18\x01 \x03(\x0b\x32#.yandex.cloud.mdb.mongodb.v1.Backup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"y\n\x17ListClusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"e\n\x18ListClusterHostsResponse\x12\x30\n\x05hosts\x18\x01 \x03(\x0b\x32!.yandex.cloud.mdb.mongodb.v1.Host\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"}\n\x16\x41\x64\x64\x43lusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x41\n\nhost_specs\x18\x02 \x03(\x0b\x32%.yandex.cloud.mdb.mongodb.v1.HostSpecB\x06\x82\xc8\x31\x02>0\"A\n\x17\x41\x64\x64\x43lusterHostsMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nhost_names\x18\x02 \x03(\t\"b\n\x19\x44\x65leteClusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12#\n\nhost_names\x18\x02 \x03(\tB\x0f\x82\xc8\x31\x02>0\x8a\xc8\x31\x05<=253\"D\n\x1a\x44\x65leteClusterHostsMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nhost_names\x18\x02 \x03(\t\"\xec\x04\n\x1c\x45nableClusterShardingRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12T\n\x08mongocfg\x18\x02 \x01(\x0b\x32\x42.yandex.cloud.mdb.mongodb.v1.EnableClusterShardingRequest.MongoCfg\x12P\n\x06mongos\x18\x03 \x01(\x0b\x32@.yandex.cloud.mdb.mongodb.v1.EnableClusterShardingRequest.Mongos\x12\x41\n\nhost_specs\x18\x04 \x03(\x0b\x32%.yandex.cloud.mdb.mongodb.v1.HostSpecB\x06\x82\xc8\x31\x02>0\x12X\n\nmongoinfra\x18\x05 \x01(\x0b\x32\x44.yandex.cloud.mdb.mongodb.v1.EnableClusterShardingRequest.MongoInfra\x1aK\n\x08MongoCfg\x12?\n\tresources\x18\x01 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.ResourcesB\x04\xe8\xc7\x31\x01\x1aI\n\x06Mongos\x12?\n\tresources\x18\x01 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.ResourcesB\x04\xe8\xc7\x31\x01\x1aM\n\nMongoInfra\x12?\n\tresources\x18\x01 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.ResourcesB\x04\xe8\xc7\x31\x01\"3\n\x1d\x45nableClusterShardingMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"n\n\x16GetClusterShardRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\nshard_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"z\n\x18ListClusterShardsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"h\n\x19ListClusterShardsResponse\x12\x32\n\x06shards\x18\x01 \x03(\x0b\x32\".yandex.cloud.mdb.mongodb.v1.Shard\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xb1\x01\n\x16\x41\x64\x64\x43lusterShardRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\nshard_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x41\n\nhost_specs\x18\x03 \x03(\x0b\x32%.yandex.cloud.mdb.mongodb.v1.HostSpecB\x06\x82\xc8\x31\x02>0\"A\n\x17\x41\x64\x64\x43lusterShardMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nshard_name\x18\x02 \x01(\t\"q\n\x19\x44\x65leteClusterShardRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\nshard_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"D\n\x1a\x44\x65leteClusterShardMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nshard_name\x18\x02 \x01(\t\"\\\n\x13ResetupHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12#\n\nhost_names\x18\x02 \x03(\tB\x0f\x82\xc8\x31\x02>0\x8a\xc8\x31\x05<=253\">\n\x14ResetupHostsMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nhost_names\x18\x02 \x03(\t\"\\\n\x13RestartHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12#\n\nhost_names\x18\x02 \x03(\tB\x0f\x82\xc8\x31\x02>0\x8a\xc8\x31\x05<=253\">\n\x14RestartHostsMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nhost_names\x18\x02 \x03(\t\"\xc2\x01\n\x08HostSpec\x12\x19\n\x07zone_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1b\n\tsubnet_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x18\n\x10\x61ssign_public_ip\x18\x03 \x01(\x08\x12\x34\n\x04type\x18\x04 \x01(\x0e\x32&.yandex.cloud.mdb.mongodb.v1.Host.Type\x12.\n\nshard_name\x18\x05 \x01(\tB\x1a\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"\xb7\x07\n\x0eMongodbSpec3_6\x12\x42\n\x06mongod\x18\x01 \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6.Mongod\x12\x46\n\x08mongocfg\x18\x02 \x01(\x0b\x32\x34.yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6.MongoCfg\x12\x42\n\x06mongos\x18\x03 \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6.Mongos\x12J\n\nmongoinfra\x18\x04 \x01(\x0b\x32\x36.yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6.MongoInfra\x1a\x88\x01\n\x06Mongod\x12\x43\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x33.yandex.cloud.mdb.mongodb.v1.config.MongodConfig3_6\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x8c\x01\n\x08MongoCfg\x12\x45\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x35.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig3_6\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x88\x01\n\x06Mongos\x12\x43\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x33.yandex.cloud.mdb.mongodb.v1.config.MongosConfig3_6\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\xe3\x01\n\nMongoInfra\x12J\n\rconfig_mongos\x18\x01 \x01(\x0b\x32\x33.yandex.cloud.mdb.mongodb.v1.config.MongosConfig3_6\x12N\n\x0f\x63onfig_mongocfg\x18\x02 \x01(\x0b\x32\x35.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig3_6\x12\x39\n\tresources\x18\x03 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\"\xb7\x07\n\x0eMongodbSpec4_0\x12\x42\n\x06mongod\x18\x01 \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0.Mongod\x12\x46\n\x08mongocfg\x18\x02 \x01(\x0b\x32\x34.yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0.MongoCfg\x12\x42\n\x06mongos\x18\x03 \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0.Mongos\x12J\n\nmongoinfra\x18\x04 \x01(\x0b\x32\x36.yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0.MongoInfra\x1a\x88\x01\n\x06Mongod\x12\x43\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x33.yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_0\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x8c\x01\n\x08MongoCfg\x12\x45\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x35.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig4_0\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x88\x01\n\x06Mongos\x12\x43\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x33.yandex.cloud.mdb.mongodb.v1.config.MongosConfig4_0\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\xe3\x01\n\nMongoInfra\x12J\n\rconfig_mongos\x18\x01 \x01(\x0b\x32\x33.yandex.cloud.mdb.mongodb.v1.config.MongosConfig4_0\x12N\n\x0f\x63onfig_mongocfg\x18\x02 \x01(\x0b\x32\x35.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig4_0\x12\x39\n\tresources\x18\x03 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\"\xb7\x07\n\x0eMongodbSpec4_2\x12\x42\n\x06mongod\x18\x01 \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.MongodbSpec4_2.Mongod\x12\x46\n\x08mongocfg\x18\x02 \x01(\x0b\x32\x34.yandex.cloud.mdb.mongodb.v1.MongodbSpec4_2.MongoCfg\x12\x42\n\x06mongos\x18\x03 \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.MongodbSpec4_2.Mongos\x12J\n\nmongoinfra\x18\x04 \x01(\x0b\x32\x36.yandex.cloud.mdb.mongodb.v1.MongodbSpec4_2.MongoInfra\x1a\x88\x01\n\x06Mongod\x12\x43\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x33.yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_2\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x8c\x01\n\x08MongoCfg\x12\x45\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x35.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig4_2\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x88\x01\n\x06Mongos\x12\x43\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x33.yandex.cloud.mdb.mongodb.v1.config.MongosConfig4_2\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\xe3\x01\n\nMongoInfra\x12J\n\rconfig_mongos\x18\x01 \x01(\x0b\x32\x33.yandex.cloud.mdb.mongodb.v1.config.MongosConfig4_2\x12N\n\x0f\x63onfig_mongocfg\x18\x02 \x01(\x0b\x32\x35.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig4_2\x12\x39\n\tresources\x18\x03 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\"\xcc\x03\n\nConfigSpec\x12\x0f\n\x07version\x18\x01 \x01(\t\x12%\n\x1d\x66\x65\x61ture_compatibility_version\x18\x05 \x01(\t\x12X\n\x10mongodb_spec_3_6\x18\x02 \x01(\x0b\x32+.yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6H\x00R\x0fmongodbSpec_3_6\x12X\n\x10mongodb_spec_4_0\x18\x04 \x01(\x0b\x32+.yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0H\x00R\x0fmongodbSpec_4_0\x12X\n\x10mongodb_spec_4_2\x18\x07 \x01(\x0b\x32+.yandex.cloud.mdb.mongodb.v1.MongodbSpec4_2H\x00R\x0fmongodbSpec_4_2\x12\x33\n\x13\x62\x61\x63kup_window_start\x18\x03 \x01(\x0b\x32\x16.google.type.TimeOfDay\x12\x33\n\x06\x61\x63\x63\x65ss\x18\x06 \x01(\x0b\x32#.yandex.cloud.mdb.mongodb.v1.AccessB\x0e\n\x0cmongodb_spec2\x98&\n\x0e\x43lusterService\x12\x8e\x01\n\x03Get\x12..yandex.cloud.mdb.mongodb.v1.GetClusterRequest\x1a$.yandex.cloud.mdb.mongodb.v1.Cluster\"1\x82\xd3\xe4\x93\x02+\x12)/managed-mongodb/v1/clusters/{cluster_id}\x12\x91\x01\n\x04List\x12\x30.yandex.cloud.mdb.mongodb.v1.ListClustersRequest\x1a\x31.yandex.cloud.mdb.mongodb.v1.ListClustersResponse\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/managed-mongodb/v1/clusters\x12\xab\x01\n\x06\x43reate\x12\x31.yandex.cloud.mdb.mongodb.v1.CreateClusterRequest\x1a!.yandex.cloud.operation.Operation\"K\x82\xd3\xe4\x93\x02!\"\x1c/managed-mongodb/v1/clusters:\x01*\xb2\xd2* \n\x15\x43reateClusterMetadata\x12\x07\x43luster\x12\xb8\x01\n\x06Update\x12\x31.yandex.cloud.mdb.mongodb.v1.UpdateClusterRequest\x1a!.yandex.cloud.operation.Operation\"X\x82\xd3\xe4\x93\x02.2)/managed-mongodb/v1/clusters/{cluster_id}:\x01*\xb2\xd2* \n\x15UpdateClusterMetadata\x12\x07\x43luster\x12\xc3\x01\n\x06\x44\x65lete\x12\x31.yandex.cloud.mdb.mongodb.v1.DeleteClusterRequest\x1a!.yandex.cloud.operation.Operation\"c\x82\xd3\xe4\x93\x02+*)/managed-mongodb/v1/clusters/{cluster_id}\xb2\xd2*.\n\x15\x44\x65leteClusterMetadata\x12\x15google.protobuf.Empty\x12\xb8\x01\n\x05Start\x12\x30.yandex.cloud.mdb.mongodb.v1.StartClusterRequest\x1a!.yandex.cloud.operation.Operation\"Z\x82\xd3\xe4\x93\x02\x31\"//managed-mongodb/v1/clusters/{cluster_id}:start\xb2\xd2*\x1f\n\x14StartClusterMetadata\x12\x07\x43luster\x12\xb4\x01\n\x04Stop\x12/.yandex.cloud.mdb.mongodb.v1.StopClusterRequest\x1a!.yandex.cloud.operation.Operation\"X\x82\xd3\xe4\x93\x02\x30\"./managed-mongodb/v1/clusters/{cluster_id}:stop\xb2\xd2*\x1e\n\x13StopClusterMetadata\x12\x07\x43luster\x12\xb7\x01\n\x04Move\x12/.yandex.cloud.mdb.mongodb.v1.MoveClusterRequest\x1a!.yandex.cloud.operation.Operation\"[\x82\xd3\xe4\x93\x02\x33\"./managed-mongodb/v1/clusters/{cluster_id}:move:\x01*\xb2\xd2*\x1e\n\x13MoveClusterMetadata\x12\x07\x43luster\x12\xbc\x01\n\x06\x42\x61\x63kup\x12\x31.yandex.cloud.mdb.mongodb.v1.BackupClusterRequest\x1a!.yandex.cloud.operation.Operation\"\\\x82\xd3\xe4\x93\x02\x32\"0/managed-mongodb/v1/clusters/{cluster_id}:backup\xb2\xd2* \n\x15\x42\x61\x63kupClusterMetadata\x12\x07\x43luster\x12\xb6\x01\n\x07Restore\x12\x32.yandex.cloud.mdb.mongodb.v1.RestoreClusterRequest\x1a!.yandex.cloud.operation.Operation\"T\x82\xd3\xe4\x93\x02)\"$/managed-mongodb/v1/clusters:restore:\x01*\xb2\xd2*!\n\x16RestoreClusterMetadata\x12\x07\x43luster\x12\xed\x01\n\x15RescheduleMaintenance\x12\x39.yandex.cloud.mdb.mongodb.v1.RescheduleMaintenanceRequest\x1a!.yandex.cloud.operation.Operation\"v\x82\xd3\xe4\x93\x02\x44\"?/managed-mongodb/v1/clusters/{cluster_id}:rescheduleMaintenance:\x01*\xb2\xd2*(\n\x1dRescheduleMaintenanceMetadata\x12\x07\x43luster\x12\xad\x01\n\x08ListLogs\x12\x33.yandex.cloud.mdb.mongodb.v1.ListClusterLogsRequest\x1a\x34.yandex.cloud.mdb.mongodb.v1.ListClusterLogsResponse\"6\x82\xd3\xe4\x93\x02\x30\x12./managed-mongodb/v1/clusters/{cluster_id}:logs\x12\xb2\x01\n\nStreamLogs\x12\x35.yandex.cloud.mdb.mongodb.v1.StreamClusterLogsRequest\x1a,.yandex.cloud.mdb.mongodb.v1.StreamLogRecord\"=\x82\xd3\xe4\x93\x02\x37\x12\x35/managed-mongodb/v1/clusters/{cluster_id}:stream_logs0\x01\x12\xc5\x01\n\x0eListOperations\x12\x39.yandex.cloud.mdb.mongodb.v1.ListClusterOperationsRequest\x1a:.yandex.cloud.mdb.mongodb.v1.ListClusterOperationsResponse\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/managed-mongodb/v1/clusters/{cluster_id}/operations\x12\xb9\x01\n\x0bListBackups\x12\x36.yandex.cloud.mdb.mongodb.v1.ListClusterBackupsRequest\x1a\x37.yandex.cloud.mdb.mongodb.v1.ListClusterBackupsResponse\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/managed-mongodb/v1/clusters/{cluster_id}/backups\x12\xb1\x01\n\tListHosts\x12\x34.yandex.cloud.mdb.mongodb.v1.ListClusterHostsRequest\x1a\x35.yandex.cloud.mdb.mongodb.v1.ListClusterHostsResponse\"7\x82\xd3\xe4\x93\x02\x31\x12//managed-mongodb/v1/clusters/{cluster_id}/hosts\x12\xde\x01\n\x08\x41\x64\x64Hosts\x12\x33.yandex.cloud.mdb.mongodb.v1.AddClusterHostsRequest\x1a!.yandex.cloud.operation.Operation\"z\x82\xd3\xe4\x93\x02@\";/managed-mongodb/v1/clusters/{cluster_id}/hosts:batchCreate:\x01*\xb2\xd2*0\n\x17\x41\x64\x64\x43lusterHostsMetadata\x12\x15google.protobuf.Empty\x12\xe7\x01\n\x0b\x44\x65leteHosts\x12\x36.yandex.cloud.mdb.mongodb.v1.DeleteClusterHostsRequest\x1a!.yandex.cloud.operation.Operation\"}\x82\xd3\xe4\x93\x02@\";/managed-mongodb/v1/clusters/{cluster_id}/hosts:batchDelete:\x01*\xb2\xd2*3\n\x1a\x44\x65leteClusterHostsMetadata\x12\x15google.protobuf.Empty\x12\xed\x01\n\x0e\x45nableSharding\x12\x39.yandex.cloud.mdb.mongodb.v1.EnableClusterShardingRequest\x1a!.yandex.cloud.operation.Operation\"}\x82\xd3\xe4\x93\x02=\"8/managed-mongodb/v1/clusters/{cluster_id}:enableSharding:\x01*\xb2\xd2*6\n\x1d\x45nableClusterShardingMetadata\x12\x15google.protobuf.Empty\x12\xaa\x01\n\x08GetShard\x12\x33.yandex.cloud.mdb.mongodb.v1.GetClusterShardRequest\x1a\".yandex.cloud.mdb.mongodb.v1.Shard\"E\x82\xd3\xe4\x93\x02?\x12=/managed-mongodb/v1/clusters/{cluster_id}/shards/{shard_name}\x12\xb5\x01\n\nListShards\x12\x35.yandex.cloud.mdb.mongodb.v1.ListClusterShardsRequest\x1a\x36.yandex.cloud.mdb.mongodb.v1.ListClusterShardsResponse\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/managed-mongodb/v1/clusters/{cluster_id}/shards\x12\xc3\x01\n\x08\x41\x64\x64Shard\x12\x33.yandex.cloud.mdb.mongodb.v1.AddClusterShardRequest\x1a!.yandex.cloud.operation.Operation\"_\x82\xd3\xe4\x93\x02\x35\"0/managed-mongodb/v1/clusters/{cluster_id}/shards:\x01*\xb2\xd2* \n\x17\x41\x64\x64\x43lusterShardMetadata\x12\x05Shard\x12\xe6\x01\n\x0b\x44\x65leteShard\x12\x36.yandex.cloud.mdb.mongodb.v1.DeleteClusterShardRequest\x1a!.yandex.cloud.operation.Operation\"|\x82\xd3\xe4\x93\x02?*=/managed-mongodb/v1/clusters/{cluster_id}/shards/{shard_name}\xb2\xd2*3\n\x1a\x44\x65leteClusterShardMetadata\x12\x15google.protobuf.Empty\x12\xd7\x01\n\x0cResetupHosts\x12\x30.yandex.cloud.mdb.mongodb.v1.ResetupHostsRequest\x1a!.yandex.cloud.operation.Operation\"r\x82\xd3\xe4\x93\x02;\"6/managed-mongodb/v1/clusters/{cluster_id}:resetupHosts:\x01*\xb2\xd2*-\n\x14ResetupHostsMetadata\x12\x15google.protobuf.Empty\x12\xd7\x01\n\x0cRestartHosts\x12\x30.yandex.cloud.mdb.mongodb.v1.RestartHostsRequest\x1a!.yandex.cloud.operation.Operation\"r\x82\xd3\xe4\x93\x02;\"6/managed-mongodb/v1/clusters/{cluster_id}:restartHosts:\x01*\xb2\xd2*-\n\x14RestartHostsMetadata\x12\x15google.protobuf.EmptyBj\n\x1fyandex.cloud.api.mdb.mongodb.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1;mongodbb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_type_dot_timeofday__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_backup__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_cluster__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_database__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_user__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb3__6__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb4__0__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb4__2__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_maintenance__pb2.DESCRIPTOR,])
 
@@ -44,23 +45,28 @@ _RESCHEDULEMAINTENANCEREQUEST_RESCHEDULETYPE = _descriptor.EnumDescriptor(
   full_name='yandex.cloud.mdb.mongodb.v1.RescheduleMaintenanceRequest.RescheduleType',
   filename=None,
   file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='RESCHEDULE_TYPE_UNSPECIFIED', index=0, number=0,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='IMMEDIATE', index=1, number=1,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='NEXT_AVAILABLE_WINDOW', index=2, number=2,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='SPECIFIC_TIME', index=3, number=3,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
@@ -74,20 +80,33 @@ _LISTCLUSTERLOGSREQUEST_SERVICETYPE = _descriptor.EnumDescriptor(
   full_name='yandex.cloud.mdb.mongodb.v1.ListClusterLogsRequest.ServiceType',
   filename=None,
   file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='SERVICE_TYPE_UNSPECIFIED', index=0, number=0,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='MONGOD', index=1, number=1,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='MONGOS', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='MONGOCFG', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
   serialized_start=4674,
-  serialized_end=4729,
+  serialized_end=4755,
 )
 _sym_db.RegisterEnumDescriptor(_LISTCLUSTERLOGSREQUEST_SERVICETYPE)
 
@@ -96,20 +115,33 @@ _STREAMCLUSTERLOGSREQUEST_SERVICETYPE = _descriptor.EnumDescriptor(
   full_name='yandex.cloud.mdb.mongodb.v1.StreamClusterLogsRequest.ServiceType',
   filename=None,
   file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='SERVICE_TYPE_UNSPECIFIED', index=0, number=0,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='MONGOD', index=1, number=1,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='MONGOS', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='MONGOCFG', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
   serialized_start=4674,
-  serialized_end=4729,
+  serialized_end=4755,
 )
 _sym_db.RegisterEnumDescriptor(_STREAMCLUSTERLOGSREQUEST_SERVICETYPE)
 
@@ -120,6 +152,7 @@ _GETCLUSTERREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.GetClusterRequest.cluster_id', index=0,
@@ -127,7 +160,7 @@ _GETCLUSTERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -151,6 +184,7 @@ _LISTCLUSTERSREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='folder_id', full_name='yandex.cloud.mdb.mongodb.v1.ListClustersRequest.folder_id', index=0,
@@ -158,28 +192,28 @@ _LISTCLUSTERSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.mdb.mongodb.v1.ListClustersRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR),
+      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.mdb.mongodb.v1.ListClustersRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='filter', full_name='yandex.cloud.mdb.mongodb.v1.ListClustersRequest.filter', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=1000', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -203,6 +237,7 @@ _LISTCLUSTERSRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='clusters', full_name='yandex.cloud.mdb.mongodb.v1.ListClustersResponse.clusters', index=0,
@@ -210,14 +245,14 @@ _LISTCLUSTERSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.mdb.mongodb.v1.ListClustersResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -241,6 +276,7 @@ _CREATECLUSTERREQUEST_LABELSENTRY = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key', full_name='yandex.cloud.mdb.mongodb.v1.CreateClusterRequest.LabelsEntry.key', index=0,
@@ -248,14 +284,14 @@ _CREATECLUSTERREQUEST_LABELSENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='value', full_name='yandex.cloud.mdb.mongodb.v1.CreateClusterRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -278,6 +314,7 @@ _CREATECLUSTERREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='folder_id', full_name='yandex.cloud.mdb.mongodb.v1.CreateClusterRequest.folder_id', index=0,
@@ -285,70 +322,70 @@ _CREATECLUSTERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='name', full_name='yandex.cloud.mdb.mongodb.v1.CreateClusterRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=63\362\3071\r[a-zA-Z0-9_]*', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=63\362\3071\r[a-zA-Z0-9_]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='description', full_name='yandex.cloud.mdb.mongodb.v1.CreateClusterRequest.description', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='labels', full_name='yandex.cloud.mdb.mongodb.v1.CreateClusterRequest.labels', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\004<=63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR),
+      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\004<=63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='environment', full_name='yandex.cloud.mdb.mongodb.v1.CreateClusterRequest.environment', index=4,
       number=5, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='config_spec', full_name='yandex.cloud.mdb.mongodb.v1.CreateClusterRequest.config_spec', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='database_specs', full_name='yandex.cloud.mdb.mongodb.v1.CreateClusterRequest.database_specs', index=6,
       number=7, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\002>0', file=DESCRIPTOR),
+      serialized_options=b'\202\3101\002>0', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='user_specs', full_name='yandex.cloud.mdb.mongodb.v1.CreateClusterRequest.user_specs', index=7,
       number=8, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\002>0', file=DESCRIPTOR),
+      serialized_options=b'\202\3101\002>0', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='host_specs', full_name='yandex.cloud.mdb.mongodb.v1.CreateClusterRequest.host_specs', index=8,
       number=9, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\002>0', file=DESCRIPTOR),
+      serialized_options=b'\202\3101\002>0', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='network_id', full_name='yandex.cloud.mdb.mongodb.v1.CreateClusterRequest.network_id', index=9,
       number=10, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -372,6 +409,7 @@ _CREATECLUSTERMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.CreateClusterMetadata.cluster_id', index=0,
@@ -379,7 +417,7 @@ _CREATECLUSTERMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -403,6 +441,7 @@ _UPDATECLUSTERREQUEST_LABELSENTRY = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key', full_name='yandex.cloud.mdb.mongodb.v1.UpdateClusterRequest.LabelsEntry.key', index=0,
@@ -410,14 +449,14 @@ _UPDATECLUSTERREQUEST_LABELSENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='value', full_name='yandex.cloud.mdb.mongodb.v1.UpdateClusterRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -440,6 +479,7 @@ _UPDATECLUSTERREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.UpdateClusterRequest.cluster_id', index=0,
@@ -447,49 +487,49 @@ _UPDATECLUSTERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='update_mask', full_name='yandex.cloud.mdb.mongodb.v1.UpdateClusterRequest.update_mask', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='description', full_name='yandex.cloud.mdb.mongodb.v1.UpdateClusterRequest.description', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='labels', full_name='yandex.cloud.mdb.mongodb.v1.UpdateClusterRequest.labels', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\004<=63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR),
+      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\004<=63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='config_spec', full_name='yandex.cloud.mdb.mongodb.v1.UpdateClusterRequest.config_spec', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='name', full_name='yandex.cloud.mdb.mongodb.v1.UpdateClusterRequest.name', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\004<=63\362\3071\016[a-zA-Z0-9_-]*', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\004<=63\362\3071\016[a-zA-Z0-9_-]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='maintenance_window', full_name='yandex.cloud.mdb.mongodb.v1.UpdateClusterRequest.maintenance_window', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -513,6 +553,7 @@ _UPDATECLUSTERMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.UpdateClusterMetadata.cluster_id', index=0,
@@ -520,7 +561,7 @@ _UPDATECLUSTERMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -544,6 +585,7 @@ _DELETECLUSTERREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.DeleteClusterRequest.cluster_id', index=0,
@@ -551,7 +593,7 @@ _DELETECLUSTERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -575,6 +617,7 @@ _DELETECLUSTERMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.DeleteClusterMetadata.cluster_id', index=0,
@@ -582,7 +625,7 @@ _DELETECLUSTERMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -606,6 +649,7 @@ _STARTCLUSTERREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.StartClusterRequest.cluster_id', index=0,
@@ -613,7 +657,7 @@ _STARTCLUSTERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -637,6 +681,7 @@ _STARTCLUSTERMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.StartClusterMetadata.cluster_id', index=0,
@@ -644,7 +689,7 @@ _STARTCLUSTERMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -668,6 +713,7 @@ _STOPCLUSTERREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.StopClusterRequest.cluster_id', index=0,
@@ -675,7 +721,7 @@ _STOPCLUSTERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -699,6 +745,7 @@ _STOPCLUSTERMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.StopClusterMetadata.cluster_id', index=0,
@@ -706,7 +753,7 @@ _STOPCLUSTERMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -730,6 +777,7 @@ _MOVECLUSTERREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.MoveClusterRequest.cluster_id', index=0,
@@ -737,14 +785,14 @@ _MOVECLUSTERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='destination_folder_id', full_name='yandex.cloud.mdb.mongodb.v1.MoveClusterRequest.destination_folder_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -768,6 +816,7 @@ _MOVECLUSTERMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.MoveClusterMetadata.cluster_id', index=0,
@@ -775,21 +824,21 @@ _MOVECLUSTERMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='source_folder_id', full_name='yandex.cloud.mdb.mongodb.v1.MoveClusterMetadata.source_folder_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='destination_folder_id', full_name='yandex.cloud.mdb.mongodb.v1.MoveClusterMetadata.destination_folder_id', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -813,6 +862,7 @@ _BACKUPCLUSTERREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.BackupClusterRequest.cluster_id', index=0,
@@ -820,7 +870,7 @@ _BACKUPCLUSTERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -844,6 +894,7 @@ _BACKUPCLUSTERMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.BackupClusterMetadata.cluster_id', index=0,
@@ -851,7 +902,7 @@ _BACKUPCLUSTERMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -875,6 +926,7 @@ _RESTORECLUSTERREQUEST_LABELSENTRY = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key', full_name='yandex.cloud.mdb.mongodb.v1.RestoreClusterRequest.LabelsEntry.key', index=0,
@@ -882,14 +934,14 @@ _RESTORECLUSTERREQUEST_LABELSENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='value', full_name='yandex.cloud.mdb.mongodb.v1.RestoreClusterRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -912,6 +964,7 @@ _RESTORECLUSTERREQUEST_RECOVERYTARGETSPEC = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='timestamp', full_name='yandex.cloud.mdb.mongodb.v1.RestoreClusterRequest.RecoveryTargetSpec.timestamp', index=0,
@@ -919,7 +972,7 @@ _RESTORECLUSTERREQUEST_RECOVERYTARGETSPEC = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\002>0', file=DESCRIPTOR),
+      serialized_options=b'\372\3071\002>0', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -942,6 +995,7 @@ _RESTORECLUSTERREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='backup_id', full_name='yandex.cloud.mdb.mongodb.v1.RestoreClusterRequest.backup_id', index=0,
@@ -949,70 +1003,70 @@ _RESTORECLUSTERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='name', full_name='yandex.cloud.mdb.mongodb.v1.RestoreClusterRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=63\362\3071\016[a-zA-Z0-9_-]*', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=63\362\3071\016[a-zA-Z0-9_-]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='description', full_name='yandex.cloud.mdb.mongodb.v1.RestoreClusterRequest.description', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='labels', full_name='yandex.cloud.mdb.mongodb.v1.RestoreClusterRequest.labels', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\004<=63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR),
+      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\004<=63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='environment', full_name='yandex.cloud.mdb.mongodb.v1.RestoreClusterRequest.environment', index=4,
       number=5, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='config_spec', full_name='yandex.cloud.mdb.mongodb.v1.RestoreClusterRequest.config_spec', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='host_specs', full_name='yandex.cloud.mdb.mongodb.v1.RestoreClusterRequest.host_specs', index=6,
       number=7, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\002>0', file=DESCRIPTOR),
+      serialized_options=b'\202\3101\002>0', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='network_id', full_name='yandex.cloud.mdb.mongodb.v1.RestoreClusterRequest.network_id', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='folder_id', full_name='yandex.cloud.mdb.mongodb.v1.RestoreClusterRequest.folder_id', index=8,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='recovery_target_spec', full_name='yandex.cloud.mdb.mongodb.v1.RestoreClusterRequest.recovery_target_spec', index=9,
       number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1036,6 +1090,7 @@ _RESTORECLUSTERMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.RestoreClusterMetadata.cluster_id', index=0,
@@ -1043,14 +1098,14 @@ _RESTORECLUSTERMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='backup_id', full_name='yandex.cloud.mdb.mongodb.v1.RestoreClusterMetadata.backup_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1074,6 +1129,7 @@ _RESCHEDULEMAINTENANCEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.RescheduleMaintenanceRequest.cluster_id', index=0,
@@ -1081,21 +1137,21 @@ _RESCHEDULEMAINTENANCEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='reschedule_type', full_name='yandex.cloud.mdb.mongodb.v1.RescheduleMaintenanceRequest.reschedule_type', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='delayed_until', full_name='yandex.cloud.mdb.mongodb.v1.RescheduleMaintenanceRequest.delayed_until', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1120,6 +1176,7 @@ _RESCHEDULEMAINTENANCEMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.RescheduleMaintenanceMetadata.cluster_id', index=0,
@@ -1127,14 +1184,14 @@ _RESCHEDULEMAINTENANCEMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='delayed_until', full_name='yandex.cloud.mdb.mongodb.v1.RescheduleMaintenanceMetadata.delayed_until', index=1,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1158,6 +1215,7 @@ _LOGRECORD_MESSAGEENTRY = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key', full_name='yandex.cloud.mdb.mongodb.v1.LogRecord.MessageEntry.key', index=0,
@@ -1165,14 +1223,14 @@ _LOGRECORD_MESSAGEENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='value', full_name='yandex.cloud.mdb.mongodb.v1.LogRecord.MessageEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1195,6 +1253,7 @@ _LOGRECORD = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='timestamp', full_name='yandex.cloud.mdb.mongodb.v1.LogRecord.timestamp', index=0,
@@ -1202,14 +1261,14 @@ _LOGRECORD = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='message', full_name='yandex.cloud.mdb.mongodb.v1.LogRecord.message', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1233,6 +1292,7 @@ _LISTCLUSTERLOGSREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.ListClusterLogsRequest.cluster_id', index=0,
@@ -1240,49 +1300,49 @@ _LISTCLUSTERLOGSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='column_filter', full_name='yandex.cloud.mdb.mongodb.v1.ListClusterLogsRequest.column_filter', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='service_type', full_name='yandex.cloud.mdb.mongodb.v1.ListClusterLogsRequest.service_type', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='from_time', full_name='yandex.cloud.mdb.mongodb.v1.ListClusterLogsRequest.from_time', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='to_time', full_name='yandex.cloud.mdb.mongodb.v1.ListClusterLogsRequest.to_time', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.mdb.mongodb.v1.ListClusterLogsRequest.page_size', index=5,
       number=6, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR),
+      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.mdb.mongodb.v1.ListClusterLogsRequest.page_token', index=6,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1297,7 +1357,7 @@ _LISTCLUSTERLOGSREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=4350,
-  serialized_end=4729,
+  serialized_end=4755,
 )
 
 
@@ -1307,6 +1367,7 @@ _LISTCLUSTERLOGSRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='logs', full_name='yandex.cloud.mdb.mongodb.v1.ListClusterLogsResponse.logs', index=0,
@@ -1314,14 +1375,14 @@ _LISTCLUSTERLOGSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.mdb.mongodb.v1.ListClusterLogsResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1334,8 +1395,8 @@ _LISTCLUSTERLOGSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4731,
-  serialized_end=4835,
+  serialized_start=4757,
+  serialized_end=4861,
 )
 
 
@@ -1345,6 +1406,7 @@ _STREAMLOGRECORD = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='record', full_name='yandex.cloud.mdb.mongodb.v1.StreamLogRecord.record', index=0,
@@ -1352,14 +1414,14 @@ _STREAMLOGRECORD = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='next_record_token', full_name='yandex.cloud.mdb.mongodb.v1.StreamLogRecord.next_record_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1372,8 +1434,8 @@ _STREAMLOGRECORD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4837,
-  serialized_end=4937,
+  serialized_start=4863,
+  serialized_end=4963,
 )
 
 
@@ -1383,6 +1445,7 @@ _STREAMCLUSTERLOGSREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.StreamClusterLogsRequest.cluster_id', index=0,
@@ -1390,42 +1453,42 @@ _STREAMCLUSTERLOGSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='column_filter', full_name='yandex.cloud.mdb.mongodb.v1.StreamClusterLogsRequest.column_filter', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='service_type', full_name='yandex.cloud.mdb.mongodb.v1.StreamClusterLogsRequest.service_type', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='from_time', full_name='yandex.cloud.mdb.mongodb.v1.StreamClusterLogsRequest.from_time', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='to_time', full_name='yandex.cloud.mdb.mongodb.v1.StreamClusterLogsRequest.to_time', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='record_token', full_name='yandex.cloud.mdb.mongodb.v1.StreamClusterLogsRequest.record_token', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1439,8 +1502,8 @@ _STREAMCLUSTERLOGSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4940,
-  serialized_end=5294,
+  serialized_start=4966,
+  serialized_end=5346,
 )
 
 
@@ -1450,6 +1513,7 @@ _LISTCLUSTEROPERATIONSREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.ListClusterOperationsRequest.cluster_id', index=0,
@@ -1457,21 +1521,21 @@ _LISTCLUSTEROPERATIONSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.mdb.mongodb.v1.ListClusterOperationsRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR),
+      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.mdb.mongodb.v1.ListClusterOperationsRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1484,8 +1548,8 @@ _LISTCLUSTEROPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5296,
-  serialized_end=5422,
+  serialized_start=5348,
+  serialized_end=5474,
 )
 
 
@@ -1495,6 +1559,7 @@ _LISTCLUSTEROPERATIONSRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='operations', full_name='yandex.cloud.mdb.mongodb.v1.ListClusterOperationsResponse.operations', index=0,
@@ -1502,14 +1567,14 @@ _LISTCLUSTEROPERATIONSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.mdb.mongodb.v1.ListClusterOperationsResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1522,8 +1587,8 @@ _LISTCLUSTEROPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5424,
-  serialized_end=5535,
+  serialized_start=5476,
+  serialized_end=5587,
 )
 
 
@@ -1533,6 +1598,7 @@ _LISTCLUSTERBACKUPSREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.ListClusterBackupsRequest.cluster_id', index=0,
@@ -1540,21 +1606,21 @@ _LISTCLUSTERBACKUPSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.mdb.mongodb.v1.ListClusterBackupsRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR),
+      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.mdb.mongodb.v1.ListClusterBackupsRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1567,8 +1633,8 @@ _LISTCLUSTERBACKUPSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5537,
-  serialized_end=5660,
+  serialized_start=5589,
+  serialized_end=5712,
 )
 
 
@@ -1578,6 +1644,7 @@ _LISTCLUSTERBACKUPSRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='backups', full_name='yandex.cloud.mdb.mongodb.v1.ListClusterBackupsResponse.backups', index=0,
@@ -1585,14 +1652,14 @@ _LISTCLUSTERBACKUPSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.mdb.mongodb.v1.ListClusterBackupsResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1605,8 +1672,8 @@ _LISTCLUSTERBACKUPSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5662,
-  serialized_end=5769,
+  serialized_start=5714,
+  serialized_end=5821,
 )
 
 
@@ -1616,6 +1683,7 @@ _LISTCLUSTERHOSTSREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.ListClusterHostsRequest.cluster_id', index=0,
@@ -1623,21 +1691,21 @@ _LISTCLUSTERHOSTSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.mdb.mongodb.v1.ListClusterHostsRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR),
+      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.mdb.mongodb.v1.ListClusterHostsRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1650,8 +1718,8 @@ _LISTCLUSTERHOSTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5771,
-  serialized_end=5892,
+  serialized_start=5823,
+  serialized_end=5944,
 )
 
 
@@ -1661,6 +1729,7 @@ _LISTCLUSTERHOSTSRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='hosts', full_name='yandex.cloud.mdb.mongodb.v1.ListClusterHostsResponse.hosts', index=0,
@@ -1668,14 +1737,14 @@ _LISTCLUSTERHOSTSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.mdb.mongodb.v1.ListClusterHostsResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1688,8 +1757,8 @@ _LISTCLUSTERHOSTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5894,
-  serialized_end=5995,
+  serialized_start=5946,
+  serialized_end=6047,
 )
 
 
@@ -1699,6 +1768,7 @@ _ADDCLUSTERHOSTSREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.AddClusterHostsRequest.cluster_id', index=0,
@@ -1706,14 +1776,14 @@ _ADDCLUSTERHOSTSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='host_specs', full_name='yandex.cloud.mdb.mongodb.v1.AddClusterHostsRequest.host_specs', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\002>0', file=DESCRIPTOR),
+      serialized_options=b'\202\3101\002>0', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1726,8 +1796,8 @@ _ADDCLUSTERHOSTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5997,
-  serialized_end=6122,
+  serialized_start=6049,
+  serialized_end=6174,
 )
 
 
@@ -1737,6 +1807,7 @@ _ADDCLUSTERHOSTSMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.AddClusterHostsMetadata.cluster_id', index=0,
@@ -1744,14 +1815,14 @@ _ADDCLUSTERHOSTSMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='host_names', full_name='yandex.cloud.mdb.mongodb.v1.AddClusterHostsMetadata.host_names', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1764,8 +1835,8 @@ _ADDCLUSTERHOSTSMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6124,
-  serialized_end=6189,
+  serialized_start=6176,
+  serialized_end=6241,
 )
 
 
@@ -1775,6 +1846,7 @@ _DELETECLUSTERHOSTSREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.DeleteClusterHostsRequest.cluster_id', index=0,
@@ -1782,14 +1854,14 @@ _DELETECLUSTERHOSTSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='host_names', full_name='yandex.cloud.mdb.mongodb.v1.DeleteClusterHostsRequest.host_names', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\002>0\212\3101\005<=253', file=DESCRIPTOR),
+      serialized_options=b'\202\3101\002>0\212\3101\005<=253', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1802,8 +1874,8 @@ _DELETECLUSTERHOSTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6191,
-  serialized_end=6289,
+  serialized_start=6243,
+  serialized_end=6341,
 )
 
 
@@ -1813,6 +1885,7 @@ _DELETECLUSTERHOSTSMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.DeleteClusterHostsMetadata.cluster_id', index=0,
@@ -1820,14 +1893,14 @@ _DELETECLUSTERHOSTSMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='host_names', full_name='yandex.cloud.mdb.mongodb.v1.DeleteClusterHostsMetadata.host_names', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1840,8 +1913,8 @@ _DELETECLUSTERHOSTSMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6291,
-  serialized_end=6359,
+  serialized_start=6343,
+  serialized_end=6411,
 )
 
 
@@ -1851,6 +1924,7 @@ _ENABLECLUSTERSHARDINGREQUEST_MONGOCFG = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='resources', full_name='yandex.cloud.mdb.mongodb.v1.EnableClusterShardingRequest.MongoCfg.resources', index=0,
@@ -1858,7 +1932,7 @@ _ENABLECLUSTERSHARDINGREQUEST_MONGOCFG = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1871,8 +1945,8 @@ _ENABLECLUSTERSHARDINGREQUEST_MONGOCFG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6675,
-  serialized_end=6750,
+  serialized_start=6805,
+  serialized_end=6880,
 )
 
 _ENABLECLUSTERSHARDINGREQUEST_MONGOS = _descriptor.Descriptor(
@@ -1881,6 +1955,7 @@ _ENABLECLUSTERSHARDINGREQUEST_MONGOS = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='resources', full_name='yandex.cloud.mdb.mongodb.v1.EnableClusterShardingRequest.Mongos.resources', index=0,
@@ -1888,7 +1963,7 @@ _ENABLECLUSTERSHARDINGREQUEST_MONGOS = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1901,49 +1976,29 @@ _ENABLECLUSTERSHARDINGREQUEST_MONGOS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6752,
-  serialized_end=6825,
+  serialized_start=6882,
+  serialized_end=6955,
 )
 
-_ENABLECLUSTERSHARDINGREQUEST = _descriptor.Descriptor(
-  name='EnableClusterShardingRequest',
-  full_name='yandex.cloud.mdb.mongodb.v1.EnableClusterShardingRequest',
+_ENABLECLUSTERSHARDINGREQUEST_MONGOINFRA = _descriptor.Descriptor(
+  name='MongoInfra',
+  full_name='yandex.cloud.mdb.mongodb.v1.EnableClusterShardingRequest.MongoInfra',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.EnableClusterShardingRequest.cluster_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='mongocfg', full_name='yandex.cloud.mdb.mongodb.v1.EnableClusterShardingRequest.mongocfg', index=1,
-      number=2, type=11, cpp_type=10, label=1,
+      name='resources', full_name='yandex.cloud.mdb.mongodb.v1.EnableClusterShardingRequest.MongoInfra.resources', index=0,
+      number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='mongos', full_name='yandex.cloud.mdb.mongodb.v1.EnableClusterShardingRequest.mongos', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='host_specs', full_name='yandex.cloud.mdb.mongodb.v1.EnableClusterShardingRequest.host_specs', index=3,
-      number=4, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\002>0', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
-  nested_types=[_ENABLECLUSTERSHARDINGREQUEST_MONGOCFG, _ENABLECLUSTERSHARDINGREQUEST_MONGOS, ],
+  nested_types=[],
   enum_types=[
   ],
   serialized_options=None,
@@ -1952,8 +2007,67 @@ _ENABLECLUSTERSHARDINGREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6362,
-  serialized_end=6825,
+  serialized_start=6957,
+  serialized_end=7034,
+)
+
+_ENABLECLUSTERSHARDINGREQUEST = _descriptor.Descriptor(
+  name='EnableClusterShardingRequest',
+  full_name='yandex.cloud.mdb.mongodb.v1.EnableClusterShardingRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.EnableClusterShardingRequest.cluster_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='mongocfg', full_name='yandex.cloud.mdb.mongodb.v1.EnableClusterShardingRequest.mongocfg', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='mongos', full_name='yandex.cloud.mdb.mongodb.v1.EnableClusterShardingRequest.mongos', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='host_specs', full_name='yandex.cloud.mdb.mongodb.v1.EnableClusterShardingRequest.host_specs', index=3,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\202\3101\002>0', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='mongoinfra', full_name='yandex.cloud.mdb.mongodb.v1.EnableClusterShardingRequest.mongoinfra', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_ENABLECLUSTERSHARDINGREQUEST_MONGOCFG, _ENABLECLUSTERSHARDINGREQUEST_MONGOS, _ENABLECLUSTERSHARDINGREQUEST_MONGOINFRA, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=6414,
+  serialized_end=7034,
 )
 
 
@@ -1963,6 +2077,7 @@ _ENABLECLUSTERSHARDINGMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.EnableClusterShardingMetadata.cluster_id', index=0,
@@ -1970,7 +2085,7 @@ _ENABLECLUSTERSHARDINGMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1983,8 +2098,8 @@ _ENABLECLUSTERSHARDINGMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6827,
-  serialized_end=6878,
+  serialized_start=7036,
+  serialized_end=7087,
 )
 
 
@@ -1994,6 +2109,7 @@ _GETCLUSTERSHARDREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.GetClusterShardRequest.cluster_id', index=0,
@@ -2001,14 +2117,14 @@ _GETCLUSTERSHARDREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='shard_name', full_name='yandex.cloud.mdb.mongodb.v1.GetClusterShardRequest.shard_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=63\362\3071\016[a-zA-Z0-9_-]*', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=63\362\3071\016[a-zA-Z0-9_-]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2021,8 +2137,8 @@ _GETCLUSTERSHARDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6880,
-  serialized_end=6990,
+  serialized_start=7089,
+  serialized_end=7199,
 )
 
 
@@ -2032,6 +2148,7 @@ _LISTCLUSTERSHARDSREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.ListClusterShardsRequest.cluster_id', index=0,
@@ -2039,21 +2156,21 @@ _LISTCLUSTERSHARDSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.mdb.mongodb.v1.ListClusterShardsRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR),
+      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.mdb.mongodb.v1.ListClusterShardsRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2066,8 +2183,8 @@ _LISTCLUSTERSHARDSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6992,
-  serialized_end=7114,
+  serialized_start=7201,
+  serialized_end=7323,
 )
 
 
@@ -2077,6 +2194,7 @@ _LISTCLUSTERSHARDSRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='shards', full_name='yandex.cloud.mdb.mongodb.v1.ListClusterShardsResponse.shards', index=0,
@@ -2084,14 +2202,14 @@ _LISTCLUSTERSHARDSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.mdb.mongodb.v1.ListClusterShardsResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2104,8 +2222,8 @@ _LISTCLUSTERSHARDSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7116,
-  serialized_end=7220,
+  serialized_start=7325,
+  serialized_end=7429,
 )
 
 
@@ -2115,6 +2233,7 @@ _ADDCLUSTERSHARDREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.AddClusterShardRequest.cluster_id', index=0,
@@ -2122,21 +2241,21 @@ _ADDCLUSTERSHARDREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='shard_name', full_name='yandex.cloud.mdb.mongodb.v1.AddClusterShardRequest.shard_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=63\362\3071\016[a-zA-Z0-9_-]*', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=63\362\3071\016[a-zA-Z0-9_-]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='host_specs', full_name='yandex.cloud.mdb.mongodb.v1.AddClusterShardRequest.host_specs', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\002>0', file=DESCRIPTOR),
+      serialized_options=b'\202\3101\002>0', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2149,8 +2268,8 @@ _ADDCLUSTERSHARDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7223,
-  serialized_end=7400,
+  serialized_start=7432,
+  serialized_end=7609,
 )
 
 
@@ -2160,6 +2279,7 @@ _ADDCLUSTERSHARDMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.AddClusterShardMetadata.cluster_id', index=0,
@@ -2167,14 +2287,14 @@ _ADDCLUSTERSHARDMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='shard_name', full_name='yandex.cloud.mdb.mongodb.v1.AddClusterShardMetadata.shard_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2187,8 +2307,8 @@ _ADDCLUSTERSHARDMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7402,
-  serialized_end=7467,
+  serialized_start=7611,
+  serialized_end=7676,
 )
 
 
@@ -2198,6 +2318,7 @@ _DELETECLUSTERSHARDREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.DeleteClusterShardRequest.cluster_id', index=0,
@@ -2205,14 +2326,14 @@ _DELETECLUSTERSHARDREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='shard_name', full_name='yandex.cloud.mdb.mongodb.v1.DeleteClusterShardRequest.shard_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=63\362\3071\016[a-zA-Z0-9_-]*', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=63\362\3071\016[a-zA-Z0-9_-]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2225,8 +2346,8 @@ _DELETECLUSTERSHARDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7469,
-  serialized_end=7582,
+  serialized_start=7678,
+  serialized_end=7791,
 )
 
 
@@ -2236,6 +2357,7 @@ _DELETECLUSTERSHARDMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.DeleteClusterShardMetadata.cluster_id', index=0,
@@ -2243,14 +2365,14 @@ _DELETECLUSTERSHARDMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='shard_name', full_name='yandex.cloud.mdb.mongodb.v1.DeleteClusterShardMetadata.shard_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2263,8 +2385,8 @@ _DELETECLUSTERSHARDMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7584,
-  serialized_end=7652,
+  serialized_start=7793,
+  serialized_end=7861,
 )
 
 
@@ -2274,6 +2396,7 @@ _RESETUPHOSTSREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.ResetupHostsRequest.cluster_id', index=0,
@@ -2281,14 +2404,14 @@ _RESETUPHOSTSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='host_names', full_name='yandex.cloud.mdb.mongodb.v1.ResetupHostsRequest.host_names', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\002>0\212\3101\005<=253', file=DESCRIPTOR),
+      serialized_options=b'\202\3101\002>0\212\3101\005<=253', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2301,8 +2424,8 @@ _RESETUPHOSTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7654,
-  serialized_end=7746,
+  serialized_start=7863,
+  serialized_end=7955,
 )
 
 
@@ -2312,6 +2435,7 @@ _RESETUPHOSTSMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.ResetupHostsMetadata.cluster_id', index=0,
@@ -2319,14 +2443,14 @@ _RESETUPHOSTSMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='host_names', full_name='yandex.cloud.mdb.mongodb.v1.ResetupHostsMetadata.host_names', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2339,8 +2463,8 @@ _RESETUPHOSTSMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7748,
-  serialized_end=7810,
+  serialized_start=7957,
+  serialized_end=8019,
 )
 
 
@@ -2350,6 +2474,7 @@ _RESTARTHOSTSREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.RestartHostsRequest.cluster_id', index=0,
@@ -2357,14 +2482,14 @@ _RESTARTHOSTSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='host_names', full_name='yandex.cloud.mdb.mongodb.v1.RestartHostsRequest.host_names', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\002>0\212\3101\005<=253', file=DESCRIPTOR),
+      serialized_options=b'\202\3101\002>0\212\3101\005<=253', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2377,8 +2502,8 @@ _RESTARTHOSTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7812,
-  serialized_end=7904,
+  serialized_start=8021,
+  serialized_end=8113,
 )
 
 
@@ -2388,6 +2513,7 @@ _RESTARTHOSTSMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.mdb.mongodb.v1.RestartHostsMetadata.cluster_id', index=0,
@@ -2395,14 +2521,14 @@ _RESTARTHOSTSMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='host_names', full_name='yandex.cloud.mdb.mongodb.v1.RestartHostsMetadata.host_names', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2415,8 +2541,8 @@ _RESTARTHOSTSMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7906,
-  serialized_end=7968,
+  serialized_start=8115,
+  serialized_end=8177,
 )
 
 
@@ -2426,6 +2552,7 @@ _HOSTSPEC = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='zone_id', full_name='yandex.cloud.mdb.mongodb.v1.HostSpec.zone_id', index=0,
@@ -2433,35 +2560,35 @@ _HOSTSPEC = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='subnet_id', full_name='yandex.cloud.mdb.mongodb.v1.HostSpec.subnet_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='assign_public_ip', full_name='yandex.cloud.mdb.mongodb.v1.HostSpec.assign_public_ip', index=2,
       number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='type', full_name='yandex.cloud.mdb.mongodb.v1.HostSpec.type', index=3,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='shard_name', full_name='yandex.cloud.mdb.mongodb.v1.HostSpec.shard_name', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\004<=63\362\3071\016[a-zA-Z0-9_-]*', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\004<=63\362\3071\016[a-zA-Z0-9_-]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2474,8 +2601,8 @@ _HOSTSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7971,
-  serialized_end=8165,
+  serialized_start=8180,
+  serialized_end=8374,
 )
 
 
@@ -2485,6 +2612,7 @@ _MONGODBSPEC3_6_MONGOD = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='config', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6.Mongod.config', index=0,
@@ -2492,14 +2620,14 @@ _MONGODBSPEC3_6_MONGOD = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='resources', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6.Mongod.resources', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2512,8 +2640,8 @@ _MONGODBSPEC3_6_MONGOD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8395,
-  serialized_end=8531,
+  serialized_start=8680,
+  serialized_end=8816,
 )
 
 _MONGODBSPEC3_6_MONGOCFG = _descriptor.Descriptor(
@@ -2522,6 +2650,7 @@ _MONGODBSPEC3_6_MONGOCFG = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='config', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6.MongoCfg.config', index=0,
@@ -2529,14 +2658,14 @@ _MONGODBSPEC3_6_MONGOCFG = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='resources', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6.MongoCfg.resources', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2549,8 +2678,8 @@ _MONGODBSPEC3_6_MONGOCFG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8534,
-  serialized_end=8674,
+  serialized_start=8819,
+  serialized_end=8959,
 )
 
 _MONGODBSPEC3_6_MONGOS = _descriptor.Descriptor(
@@ -2559,6 +2688,7 @@ _MONGODBSPEC3_6_MONGOS = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='config', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6.Mongos.config', index=0,
@@ -2566,14 +2696,14 @@ _MONGODBSPEC3_6_MONGOS = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='resources', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6.Mongos.resources', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2586,42 +2716,43 @@ _MONGODBSPEC3_6_MONGOS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8677,
-  serialized_end=8813,
+  serialized_start=8962,
+  serialized_end=9098,
 )
 
-_MONGODBSPEC3_6 = _descriptor.Descriptor(
-  name='MongodbSpec3_6',
-  full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6',
+_MONGODBSPEC3_6_MONGOINFRA = _descriptor.Descriptor(
+  name='MongoInfra',
+  full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6.MongoInfra',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='mongod', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6.mongod', index=0,
+      name='config_mongos', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6.MongoInfra.config_mongos', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='mongocfg', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6.mongocfg', index=1,
+      name='config_mongocfg', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6.MongoInfra.config_mongocfg', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='mongos', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6.mongos', index=2,
+      name='resources', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6.MongoInfra.resources', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
-  nested_types=[_MONGODBSPEC3_6_MONGOD, _MONGODBSPEC3_6_MONGOCFG, _MONGODBSPEC3_6_MONGOS, ],
+  nested_types=[],
   enum_types=[
   ],
   serialized_options=None,
@@ -2630,8 +2761,60 @@ _MONGODBSPEC3_6 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8168,
-  serialized_end=8813,
+  serialized_start=9101,
+  serialized_end=9328,
+)
+
+_MONGODBSPEC3_6 = _descriptor.Descriptor(
+  name='MongodbSpec3_6',
+  full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='mongod', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6.mongod', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='mongocfg', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6.mongocfg', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='mongos', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6.mongos', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='mongoinfra', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6.mongoinfra', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_MONGODBSPEC3_6_MONGOD, _MONGODBSPEC3_6_MONGOCFG, _MONGODBSPEC3_6_MONGOS, _MONGODBSPEC3_6_MONGOINFRA, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=8377,
+  serialized_end=9328,
 )
 
 
@@ -2641,6 +2824,7 @@ _MONGODBSPEC4_0_MONGOD = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='config', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0.Mongod.config', index=0,
@@ -2648,14 +2832,14 @@ _MONGODBSPEC4_0_MONGOD = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='resources', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0.Mongod.resources', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2668,8 +2852,8 @@ _MONGODBSPEC4_0_MONGOD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9043,
-  serialized_end=9179,
+  serialized_start=9634,
+  serialized_end=9770,
 )
 
 _MONGODBSPEC4_0_MONGOCFG = _descriptor.Descriptor(
@@ -2678,6 +2862,7 @@ _MONGODBSPEC4_0_MONGOCFG = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='config', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0.MongoCfg.config', index=0,
@@ -2685,14 +2870,14 @@ _MONGODBSPEC4_0_MONGOCFG = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='resources', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0.MongoCfg.resources', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2705,8 +2890,8 @@ _MONGODBSPEC4_0_MONGOCFG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9182,
-  serialized_end=9322,
+  serialized_start=9773,
+  serialized_end=9913,
 )
 
 _MONGODBSPEC4_0_MONGOS = _descriptor.Descriptor(
@@ -2715,6 +2900,7 @@ _MONGODBSPEC4_0_MONGOS = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='config', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0.Mongos.config', index=0,
@@ -2722,14 +2908,14 @@ _MONGODBSPEC4_0_MONGOS = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='resources', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0.Mongos.resources', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2742,42 +2928,43 @@ _MONGODBSPEC4_0_MONGOS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9325,
-  serialized_end=9461,
+  serialized_start=9916,
+  serialized_end=10052,
 )
 
-_MONGODBSPEC4_0 = _descriptor.Descriptor(
-  name='MongodbSpec4_0',
-  full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0',
+_MONGODBSPEC4_0_MONGOINFRA = _descriptor.Descriptor(
+  name='MongoInfra',
+  full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0.MongoInfra',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='mongod', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0.mongod', index=0,
+      name='config_mongos', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0.MongoInfra.config_mongos', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='mongocfg', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0.mongocfg', index=1,
+      name='config_mongocfg', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0.MongoInfra.config_mongocfg', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='mongos', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0.mongos', index=2,
+      name='resources', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0.MongoInfra.resources', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
-  nested_types=[_MONGODBSPEC4_0_MONGOD, _MONGODBSPEC4_0_MONGOCFG, _MONGODBSPEC4_0_MONGOS, ],
+  nested_types=[],
   enum_types=[
   ],
   serialized_options=None,
@@ -2786,8 +2973,60 @@ _MONGODBSPEC4_0 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8816,
-  serialized_end=9461,
+  serialized_start=10055,
+  serialized_end=10282,
+)
+
+_MONGODBSPEC4_0 = _descriptor.Descriptor(
+  name='MongodbSpec4_0',
+  full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='mongod', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0.mongod', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='mongocfg', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0.mongocfg', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='mongos', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0.mongos', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='mongoinfra', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0.mongoinfra', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_MONGODBSPEC4_0_MONGOD, _MONGODBSPEC4_0_MONGOCFG, _MONGODBSPEC4_0_MONGOS, _MONGODBSPEC4_0_MONGOINFRA, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=9331,
+  serialized_end=10282,
 )
 
 
@@ -2797,6 +3036,7 @@ _MONGODBSPEC4_2_MONGOD = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='config', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec4_2.Mongod.config', index=0,
@@ -2804,14 +3044,14 @@ _MONGODBSPEC4_2_MONGOD = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='resources', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec4_2.Mongod.resources', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2824,8 +3064,8 @@ _MONGODBSPEC4_2_MONGOD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9691,
-  serialized_end=9827,
+  serialized_start=10588,
+  serialized_end=10724,
 )
 
 _MONGODBSPEC4_2_MONGOCFG = _descriptor.Descriptor(
@@ -2834,6 +3074,7 @@ _MONGODBSPEC4_2_MONGOCFG = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='config', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec4_2.MongoCfg.config', index=0,
@@ -2841,14 +3082,14 @@ _MONGODBSPEC4_2_MONGOCFG = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='resources', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec4_2.MongoCfg.resources', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2861,8 +3102,8 @@ _MONGODBSPEC4_2_MONGOCFG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9830,
-  serialized_end=9970,
+  serialized_start=10727,
+  serialized_end=10867,
 )
 
 _MONGODBSPEC4_2_MONGOS = _descriptor.Descriptor(
@@ -2871,6 +3112,7 @@ _MONGODBSPEC4_2_MONGOS = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='config', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec4_2.Mongos.config', index=0,
@@ -2878,14 +3120,14 @@ _MONGODBSPEC4_2_MONGOS = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='resources', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec4_2.Mongos.resources', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2898,42 +3140,43 @@ _MONGODBSPEC4_2_MONGOS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9973,
-  serialized_end=10109,
+  serialized_start=10870,
+  serialized_end=11006,
 )
 
-_MONGODBSPEC4_2 = _descriptor.Descriptor(
-  name='MongodbSpec4_2',
-  full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec4_2',
+_MONGODBSPEC4_2_MONGOINFRA = _descriptor.Descriptor(
+  name='MongoInfra',
+  full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec4_2.MongoInfra',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='mongod', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec4_2.mongod', index=0,
+      name='config_mongos', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec4_2.MongoInfra.config_mongos', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='mongocfg', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec4_2.mongocfg', index=1,
+      name='config_mongocfg', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec4_2.MongoInfra.config_mongocfg', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='mongos', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec4_2.mongos', index=2,
+      name='resources', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec4_2.MongoInfra.resources', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
-  nested_types=[_MONGODBSPEC4_2_MONGOD, _MONGODBSPEC4_2_MONGOCFG, _MONGODBSPEC4_2_MONGOS, ],
+  nested_types=[],
   enum_types=[
   ],
   serialized_options=None,
@@ -2942,8 +3185,60 @@ _MONGODBSPEC4_2 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9464,
-  serialized_end=10109,
+  serialized_start=11009,
+  serialized_end=11236,
+)
+
+_MONGODBSPEC4_2 = _descriptor.Descriptor(
+  name='MongodbSpec4_2',
+  full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec4_2',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='mongod', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec4_2.mongod', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='mongocfg', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec4_2.mongocfg', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='mongos', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec4_2.mongos', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='mongoinfra', full_name='yandex.cloud.mdb.mongodb.v1.MongodbSpec4_2.mongoinfra', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_MONGODBSPEC4_2_MONGOD, _MONGODBSPEC4_2_MONGOCFG, _MONGODBSPEC4_2_MONGOS, _MONGODBSPEC4_2_MONGOINFRA, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=10285,
+  serialized_end=11236,
 )
 
 
@@ -2953,6 +3248,7 @@ _CONFIGSPEC = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='version', full_name='yandex.cloud.mdb.mongodb.v1.ConfigSpec.version', index=0,
@@ -2960,49 +3256,49 @@ _CONFIGSPEC = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='feature_compatibility_version', full_name='yandex.cloud.mdb.mongodb.v1.ConfigSpec.feature_compatibility_version', index=1,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='mongodb_spec_3_6', full_name='yandex.cloud.mdb.mongodb.v1.ConfigSpec.mongodb_spec_3_6', index=2,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='mongodbSpec_3_6', file=DESCRIPTOR),
+      serialized_options=None, json_name='mongodbSpec_3_6', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='mongodb_spec_4_0', full_name='yandex.cloud.mdb.mongodb.v1.ConfigSpec.mongodb_spec_4_0', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='mongodbSpec_4_0', file=DESCRIPTOR),
+      serialized_options=None, json_name='mongodbSpec_4_0', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='mongodb_spec_4_2', full_name='yandex.cloud.mdb.mongodb.v1.ConfigSpec.mongodb_spec_4_2', index=4,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='mongodbSpec_4_2', file=DESCRIPTOR),
+      serialized_options=None, json_name='mongodbSpec_4_2', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='backup_window_start', full_name='yandex.cloud.mdb.mongodb.v1.ConfigSpec.backup_window_start', index=5,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='access', full_name='yandex.cloud.mdb.mongodb.v1.ConfigSpec.access', index=6,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -3016,10 +3312,12 @@ _CONFIGSPEC = _descriptor.Descriptor(
   oneofs=[
     _descriptor.OneofDescriptor(
       name='mongodb_spec', full_name='yandex.cloud.mdb.mongodb.v1.ConfigSpec.mongodb_spec',
-      index=0, containing_type=None, fields=[]),
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
   ],
-  serialized_start=10112,
-  serialized_end=10572,
+  serialized_start=11239,
+  serialized_end=11699,
 )
 
 _LISTCLUSTERSRESPONSE.fields_by_name['clusters'].message_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_cluster__pb2._CLUSTER
@@ -3067,9 +3365,12 @@ _ENABLECLUSTERSHARDINGREQUEST_MONGOCFG.fields_by_name['resources'].message_type 
 _ENABLECLUSTERSHARDINGREQUEST_MONGOCFG.containing_type = _ENABLECLUSTERSHARDINGREQUEST
 _ENABLECLUSTERSHARDINGREQUEST_MONGOS.fields_by_name['resources'].message_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_cluster__pb2._RESOURCES
 _ENABLECLUSTERSHARDINGREQUEST_MONGOS.containing_type = _ENABLECLUSTERSHARDINGREQUEST
+_ENABLECLUSTERSHARDINGREQUEST_MONGOINFRA.fields_by_name['resources'].message_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_cluster__pb2._RESOURCES
+_ENABLECLUSTERSHARDINGREQUEST_MONGOINFRA.containing_type = _ENABLECLUSTERSHARDINGREQUEST
 _ENABLECLUSTERSHARDINGREQUEST.fields_by_name['mongocfg'].message_type = _ENABLECLUSTERSHARDINGREQUEST_MONGOCFG
 _ENABLECLUSTERSHARDINGREQUEST.fields_by_name['mongos'].message_type = _ENABLECLUSTERSHARDINGREQUEST_MONGOS
 _ENABLECLUSTERSHARDINGREQUEST.fields_by_name['host_specs'].message_type = _HOSTSPEC
+_ENABLECLUSTERSHARDINGREQUEST.fields_by_name['mongoinfra'].message_type = _ENABLECLUSTERSHARDINGREQUEST_MONGOINFRA
 _LISTCLUSTERSHARDSRESPONSE.fields_by_name['shards'].message_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_cluster__pb2._SHARD
 _ADDCLUSTERSHARDREQUEST.fields_by_name['host_specs'].message_type = _HOSTSPEC
 _HOSTSPEC.fields_by_name['type'].enum_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_cluster__pb2._HOST_TYPE
@@ -3082,9 +3383,14 @@ _MONGODBSPEC3_6_MONGOCFG.containing_type = _MONGODBSPEC3_6
 _MONGODBSPEC3_6_MONGOS.fields_by_name['config'].message_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb3__6__pb2._MONGOSCONFIG3_6
 _MONGODBSPEC3_6_MONGOS.fields_by_name['resources'].message_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_cluster__pb2._RESOURCES
 _MONGODBSPEC3_6_MONGOS.containing_type = _MONGODBSPEC3_6
+_MONGODBSPEC3_6_MONGOINFRA.fields_by_name['config_mongos'].message_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb3__6__pb2._MONGOSCONFIG3_6
+_MONGODBSPEC3_6_MONGOINFRA.fields_by_name['config_mongocfg'].message_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb3__6__pb2._MONGOCFGCONFIG3_6
+_MONGODBSPEC3_6_MONGOINFRA.fields_by_name['resources'].message_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_cluster__pb2._RESOURCES
+_MONGODBSPEC3_6_MONGOINFRA.containing_type = _MONGODBSPEC3_6
 _MONGODBSPEC3_6.fields_by_name['mongod'].message_type = _MONGODBSPEC3_6_MONGOD
 _MONGODBSPEC3_6.fields_by_name['mongocfg'].message_type = _MONGODBSPEC3_6_MONGOCFG
 _MONGODBSPEC3_6.fields_by_name['mongos'].message_type = _MONGODBSPEC3_6_MONGOS
+_MONGODBSPEC3_6.fields_by_name['mongoinfra'].message_type = _MONGODBSPEC3_6_MONGOINFRA
 _MONGODBSPEC4_0_MONGOD.fields_by_name['config'].message_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb4__0__pb2._MONGODCONFIG4_0
 _MONGODBSPEC4_0_MONGOD.fields_by_name['resources'].message_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_cluster__pb2._RESOURCES
 _MONGODBSPEC4_0_MONGOD.containing_type = _MONGODBSPEC4_0
@@ -3094,9 +3400,14 @@ _MONGODBSPEC4_0_MONGOCFG.containing_type = _MONGODBSPEC4_0
 _MONGODBSPEC4_0_MONGOS.fields_by_name['config'].message_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb4__0__pb2._MONGOSCONFIG4_0
 _MONGODBSPEC4_0_MONGOS.fields_by_name['resources'].message_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_cluster__pb2._RESOURCES
 _MONGODBSPEC4_0_MONGOS.containing_type = _MONGODBSPEC4_0
+_MONGODBSPEC4_0_MONGOINFRA.fields_by_name['config_mongos'].message_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb4__0__pb2._MONGOSCONFIG4_0
+_MONGODBSPEC4_0_MONGOINFRA.fields_by_name['config_mongocfg'].message_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb4__0__pb2._MONGOCFGCONFIG4_0
+_MONGODBSPEC4_0_MONGOINFRA.fields_by_name['resources'].message_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_cluster__pb2._RESOURCES
+_MONGODBSPEC4_0_MONGOINFRA.containing_type = _MONGODBSPEC4_0
 _MONGODBSPEC4_0.fields_by_name['mongod'].message_type = _MONGODBSPEC4_0_MONGOD
 _MONGODBSPEC4_0.fields_by_name['mongocfg'].message_type = _MONGODBSPEC4_0_MONGOCFG
 _MONGODBSPEC4_0.fields_by_name['mongos'].message_type = _MONGODBSPEC4_0_MONGOS
+_MONGODBSPEC4_0.fields_by_name['mongoinfra'].message_type = _MONGODBSPEC4_0_MONGOINFRA
 _MONGODBSPEC4_2_MONGOD.fields_by_name['config'].message_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb4__2__pb2._MONGODCONFIG4_2
 _MONGODBSPEC4_2_MONGOD.fields_by_name['resources'].message_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_cluster__pb2._RESOURCES
 _MONGODBSPEC4_2_MONGOD.containing_type = _MONGODBSPEC4_2
@@ -3106,9 +3417,14 @@ _MONGODBSPEC4_2_MONGOCFG.containing_type = _MONGODBSPEC4_2
 _MONGODBSPEC4_2_MONGOS.fields_by_name['config'].message_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb4__2__pb2._MONGOSCONFIG4_2
 _MONGODBSPEC4_2_MONGOS.fields_by_name['resources'].message_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_cluster__pb2._RESOURCES
 _MONGODBSPEC4_2_MONGOS.containing_type = _MONGODBSPEC4_2
+_MONGODBSPEC4_2_MONGOINFRA.fields_by_name['config_mongos'].message_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb4__2__pb2._MONGOSCONFIG4_2
+_MONGODBSPEC4_2_MONGOINFRA.fields_by_name['config_mongocfg'].message_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb4__2__pb2._MONGOCFGCONFIG4_2
+_MONGODBSPEC4_2_MONGOINFRA.fields_by_name['resources'].message_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_cluster__pb2._RESOURCES
+_MONGODBSPEC4_2_MONGOINFRA.containing_type = _MONGODBSPEC4_2
 _MONGODBSPEC4_2.fields_by_name['mongod'].message_type = _MONGODBSPEC4_2_MONGOD
 _MONGODBSPEC4_2.fields_by_name['mongocfg'].message_type = _MONGODBSPEC4_2_MONGOCFG
 _MONGODBSPEC4_2.fields_by_name['mongos'].message_type = _MONGODBSPEC4_2_MONGOS
+_MONGODBSPEC4_2.fields_by_name['mongoinfra'].message_type = _MONGODBSPEC4_2_MONGOINFRA
 _CONFIGSPEC.fields_by_name['mongodb_spec_3_6'].message_type = _MONGODBSPEC3_6
 _CONFIGSPEC.fields_by_name['mongodb_spec_4_0'].message_type = _MONGODBSPEC4_0
 _CONFIGSPEC.fields_by_name['mongodb_spec_4_2'].message_type = _MONGODBSPEC4_2
@@ -3486,6 +3802,13 @@ EnableClusterShardingRequest = _reflection.GeneratedProtocolMessageType('EnableC
     # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.mongodb.v1.EnableClusterShardingRequest.Mongos)
     })
   ,
+
+  'MongoInfra' : _reflection.GeneratedProtocolMessageType('MongoInfra', (_message.Message,), {
+    'DESCRIPTOR' : _ENABLECLUSTERSHARDINGREQUEST_MONGOINFRA,
+    '__module__' : 'yandex.cloud.mdb.mongodb.v1.cluster_service_pb2'
+    # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.mongodb.v1.EnableClusterShardingRequest.MongoInfra)
+    })
+  ,
   'DESCRIPTOR' : _ENABLECLUSTERSHARDINGREQUEST,
   '__module__' : 'yandex.cloud.mdb.mongodb.v1.cluster_service_pb2'
   # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.mongodb.v1.EnableClusterShardingRequest)
@@ -3493,6 +3816,7 @@ EnableClusterShardingRequest = _reflection.GeneratedProtocolMessageType('EnableC
 _sym_db.RegisterMessage(EnableClusterShardingRequest)
 _sym_db.RegisterMessage(EnableClusterShardingRequest.MongoCfg)
 _sym_db.RegisterMessage(EnableClusterShardingRequest.Mongos)
+_sym_db.RegisterMessage(EnableClusterShardingRequest.MongoInfra)
 
 EnableClusterShardingMetadata = _reflection.GeneratedProtocolMessageType('EnableClusterShardingMetadata', (_message.Message,), {
   'DESCRIPTOR' : _ENABLECLUSTERSHARDINGMETADATA,
@@ -3607,6 +3931,13 @@ MongodbSpec3_6 = _reflection.GeneratedProtocolMessageType('MongodbSpec3_6', (_me
     # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6.Mongos)
     })
   ,
+
+  'MongoInfra' : _reflection.GeneratedProtocolMessageType('MongoInfra', (_message.Message,), {
+    'DESCRIPTOR' : _MONGODBSPEC3_6_MONGOINFRA,
+    '__module__' : 'yandex.cloud.mdb.mongodb.v1.cluster_service_pb2'
+    # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6.MongoInfra)
+    })
+  ,
   'DESCRIPTOR' : _MONGODBSPEC3_6,
   '__module__' : 'yandex.cloud.mdb.mongodb.v1.cluster_service_pb2'
   # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.mongodb.v1.MongodbSpec3_6)
@@ -3615,6 +3946,7 @@ _sym_db.RegisterMessage(MongodbSpec3_6)
 _sym_db.RegisterMessage(MongodbSpec3_6.Mongod)
 _sym_db.RegisterMessage(MongodbSpec3_6.MongoCfg)
 _sym_db.RegisterMessage(MongodbSpec3_6.Mongos)
+_sym_db.RegisterMessage(MongodbSpec3_6.MongoInfra)
 
 MongodbSpec4_0 = _reflection.GeneratedProtocolMessageType('MongodbSpec4_0', (_message.Message,), {
 
@@ -3638,6 +3970,13 @@ MongodbSpec4_0 = _reflection.GeneratedProtocolMessageType('MongodbSpec4_0', (_me
     # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0.Mongos)
     })
   ,
+
+  'MongoInfra' : _reflection.GeneratedProtocolMessageType('MongoInfra', (_message.Message,), {
+    'DESCRIPTOR' : _MONGODBSPEC4_0_MONGOINFRA,
+    '__module__' : 'yandex.cloud.mdb.mongodb.v1.cluster_service_pb2'
+    # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0.MongoInfra)
+    })
+  ,
   'DESCRIPTOR' : _MONGODBSPEC4_0,
   '__module__' : 'yandex.cloud.mdb.mongodb.v1.cluster_service_pb2'
   # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.mongodb.v1.MongodbSpec4_0)
@@ -3646,6 +3985,7 @@ _sym_db.RegisterMessage(MongodbSpec4_0)
 _sym_db.RegisterMessage(MongodbSpec4_0.Mongod)
 _sym_db.RegisterMessage(MongodbSpec4_0.MongoCfg)
 _sym_db.RegisterMessage(MongodbSpec4_0.Mongos)
+_sym_db.RegisterMessage(MongodbSpec4_0.MongoInfra)
 
 MongodbSpec4_2 = _reflection.GeneratedProtocolMessageType('MongodbSpec4_2', (_message.Message,), {
 
@@ -3669,6 +4009,13 @@ MongodbSpec4_2 = _reflection.GeneratedProtocolMessageType('MongodbSpec4_2', (_me
     # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.mongodb.v1.MongodbSpec4_2.Mongos)
     })
   ,
+
+  'MongoInfra' : _reflection.GeneratedProtocolMessageType('MongoInfra', (_message.Message,), {
+    'DESCRIPTOR' : _MONGODBSPEC4_2_MONGOINFRA,
+    '__module__' : 'yandex.cloud.mdb.mongodb.v1.cluster_service_pb2'
+    # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.mongodb.v1.MongodbSpec4_2.MongoInfra)
+    })
+  ,
   'DESCRIPTOR' : _MONGODBSPEC4_2,
   '__module__' : 'yandex.cloud.mdb.mongodb.v1.cluster_service_pb2'
   # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.mongodb.v1.MongodbSpec4_2)
@@ -3677,6 +4024,7 @@ _sym_db.RegisterMessage(MongodbSpec4_2)
 _sym_db.RegisterMessage(MongodbSpec4_2.Mongod)
 _sym_db.RegisterMessage(MongodbSpec4_2.MongoCfg)
 _sym_db.RegisterMessage(MongodbSpec4_2.Mongos)
+_sym_db.RegisterMessage(MongodbSpec4_2.MongoInfra)
 
 ConfigSpec = _reflection.GeneratedProtocolMessageType('ConfigSpec', (_message.Message,), {
   'DESCRIPTOR' : _CONFIGSPEC,
@@ -3748,9 +4096,8 @@ _DELETECLUSTERHOSTSREQUEST.fields_by_name['cluster_id']._options = None
 _DELETECLUSTERHOSTSREQUEST.fields_by_name['host_names']._options = None
 _ENABLECLUSTERSHARDINGREQUEST_MONGOCFG.fields_by_name['resources']._options = None
 _ENABLECLUSTERSHARDINGREQUEST_MONGOS.fields_by_name['resources']._options = None
+_ENABLECLUSTERSHARDINGREQUEST_MONGOINFRA.fields_by_name['resources']._options = None
 _ENABLECLUSTERSHARDINGREQUEST.fields_by_name['cluster_id']._options = None
-_ENABLECLUSTERSHARDINGREQUEST.fields_by_name['mongocfg']._options = None
-_ENABLECLUSTERSHARDINGREQUEST.fields_by_name['mongos']._options = None
 _ENABLECLUSTERSHARDINGREQUEST.fields_by_name['host_specs']._options = None
 _GETCLUSTERSHARDREQUEST.fields_by_name['cluster_id']._options = None
 _GETCLUSTERSHARDREQUEST.fields_by_name['shard_name']._options = None
@@ -3776,8 +4123,9 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=10575,
-  serialized_end=15463,
+  create_key=_descriptor._internal_create_key,
+  serialized_start=11702,
+  serialized_end=16590,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
@@ -3787,6 +4135,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_GETCLUSTERREQUEST,
     output_type=yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_cluster__pb2._CLUSTER,
     serialized_options=b'\202\323\344\223\002+\022)/managed-mongodb/v1/clusters/{cluster_id}',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='List',
@@ -3796,6 +4145,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_LISTCLUSTERSREQUEST,
     output_type=_LISTCLUSTERSRESPONSE,
     serialized_options=b'\202\323\344\223\002\036\022\034/managed-mongodb/v1/clusters',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Create',
@@ -3805,6 +4155,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_CREATECLUSTERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\002!\"\034/managed-mongodb/v1/clusters:\001*\262\322* \n\025CreateClusterMetadata\022\007Cluster',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Update',
@@ -3814,6 +4165,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_UPDATECLUSTERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\002.2)/managed-mongodb/v1/clusters/{cluster_id}:\001*\262\322* \n\025UpdateClusterMetadata\022\007Cluster',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Delete',
@@ -3823,6 +4175,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_DELETECLUSTERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\002+*)/managed-mongodb/v1/clusters/{cluster_id}\262\322*.\n\025DeleteClusterMetadata\022\025google.protobuf.Empty',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Start',
@@ -3832,6 +4185,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_STARTCLUSTERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\0021\"//managed-mongodb/v1/clusters/{cluster_id}:start\262\322*\037\n\024StartClusterMetadata\022\007Cluster',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Stop',
@@ -3841,6 +4195,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_STOPCLUSTERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\0020\"./managed-mongodb/v1/clusters/{cluster_id}:stop\262\322*\036\n\023StopClusterMetadata\022\007Cluster',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Move',
@@ -3850,6 +4205,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_MOVECLUSTERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\0023\"./managed-mongodb/v1/clusters/{cluster_id}:move:\001*\262\322*\036\n\023MoveClusterMetadata\022\007Cluster',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Backup',
@@ -3859,6 +4215,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_BACKUPCLUSTERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\0022\"0/managed-mongodb/v1/clusters/{cluster_id}:backup\262\322* \n\025BackupClusterMetadata\022\007Cluster',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Restore',
@@ -3868,6 +4225,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_RESTORECLUSTERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\002)\"$/managed-mongodb/v1/clusters:restore:\001*\262\322*!\n\026RestoreClusterMetadata\022\007Cluster',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='RescheduleMaintenance',
@@ -3877,6 +4235,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_RESCHEDULEMAINTENANCEREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\002D\"?/managed-mongodb/v1/clusters/{cluster_id}:rescheduleMaintenance:\001*\262\322*(\n\035RescheduleMaintenanceMetadata\022\007Cluster',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='ListLogs',
@@ -3886,6 +4245,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_LISTCLUSTERLOGSREQUEST,
     output_type=_LISTCLUSTERLOGSRESPONSE,
     serialized_options=b'\202\323\344\223\0020\022./managed-mongodb/v1/clusters/{cluster_id}:logs',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='StreamLogs',
@@ -3895,6 +4255,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_STREAMCLUSTERLOGSREQUEST,
     output_type=_STREAMLOGRECORD,
     serialized_options=b'\202\323\344\223\0027\0225/managed-mongodb/v1/clusters/{cluster_id}:stream_logs',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='ListOperations',
@@ -3904,6 +4265,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_LISTCLUSTEROPERATIONSREQUEST,
     output_type=_LISTCLUSTEROPERATIONSRESPONSE,
     serialized_options=b'\202\323\344\223\0026\0224/managed-mongodb/v1/clusters/{cluster_id}/operations',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='ListBackups',
@@ -3913,6 +4275,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_LISTCLUSTERBACKUPSREQUEST,
     output_type=_LISTCLUSTERBACKUPSRESPONSE,
     serialized_options=b'\202\323\344\223\0023\0221/managed-mongodb/v1/clusters/{cluster_id}/backups',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='ListHosts',
@@ -3922,6 +4285,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_LISTCLUSTERHOSTSREQUEST,
     output_type=_LISTCLUSTERHOSTSRESPONSE,
     serialized_options=b'\202\323\344\223\0021\022//managed-mongodb/v1/clusters/{cluster_id}/hosts',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='AddHosts',
@@ -3931,6 +4295,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_ADDCLUSTERHOSTSREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\002@\";/managed-mongodb/v1/clusters/{cluster_id}/hosts:batchCreate:\001*\262\322*0\n\027AddClusterHostsMetadata\022\025google.protobuf.Empty',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='DeleteHosts',
@@ -3940,6 +4305,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_DELETECLUSTERHOSTSREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\002@\";/managed-mongodb/v1/clusters/{cluster_id}/hosts:batchDelete:\001*\262\322*3\n\032DeleteClusterHostsMetadata\022\025google.protobuf.Empty',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='EnableSharding',
@@ -3949,6 +4315,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_ENABLECLUSTERSHARDINGREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\002=\"8/managed-mongodb/v1/clusters/{cluster_id}:enableSharding:\001*\262\322*6\n\035EnableClusterShardingMetadata\022\025google.protobuf.Empty',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='GetShard',
@@ -3958,6 +4325,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_GETCLUSTERSHARDREQUEST,
     output_type=yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_cluster__pb2._SHARD,
     serialized_options=b'\202\323\344\223\002?\022=/managed-mongodb/v1/clusters/{cluster_id}/shards/{shard_name}',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='ListShards',
@@ -3967,6 +4335,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_LISTCLUSTERSHARDSREQUEST,
     output_type=_LISTCLUSTERSHARDSRESPONSE,
     serialized_options=b'\202\323\344\223\0022\0220/managed-mongodb/v1/clusters/{cluster_id}/shards',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='AddShard',
@@ -3976,6 +4345,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_ADDCLUSTERSHARDREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\0025\"0/managed-mongodb/v1/clusters/{cluster_id}/shards:\001*\262\322* \n\027AddClusterShardMetadata\022\005Shard',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='DeleteShard',
@@ -3985,6 +4355,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_DELETECLUSTERSHARDREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\002?*=/managed-mongodb/v1/clusters/{cluster_id}/shards/{shard_name}\262\322*3\n\032DeleteClusterShardMetadata\022\025google.protobuf.Empty',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='ResetupHosts',
@@ -3994,6 +4365,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_RESETUPHOSTSREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\002;\"6/managed-mongodb/v1/clusters/{cluster_id}:resetupHosts:\001*\262\322*-\n\024ResetupHostsMetadata\022\025google.protobuf.Empty',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='RestartHosts',
@@ -4003,6 +4375,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_RESTARTHOSTSREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\002;\"6/managed-mongodb/v1/clusters/{cluster_id}:restartHosts:\001*\262\322*-\n\024RestartHostsMetadata\022\025google.protobuf.Empty',
+    create_key=_descriptor._internal_create_key,
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_CLUSTERSERVICE)

@@ -20,6 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.mdb.mysql.v1alpha.config',
   syntax='proto3',
   serialized_options=b'\n)yandex.cloud.api.mdb.mysql.v1alpha.configZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mysql/v1alpha/config;mysql',
+  create_key=_descriptor._internal_create_key,
   serialized_pb=b'\n4yandex/cloud/mdb/mysql/v1alpha/config/mysql5_7.proto\x12%yandex.cloud.mdb.mysql.v1alpha.config\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\xd8\x01\n\x0eMysqlConfig5_7\x12K\n\x17innodb_buffer_pool_size\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\r\xfa\xc7\x31\t>=5242880\x12\x42\n\x0fmax_connections\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0c\xfa\xc7\x31\x08\x31\x30-10000\x12\x35\n\x0flong_query_time\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\"\xff\x01\n\x11MysqlConfigSet5_7\x12O\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32\x35.yandex.cloud.mdb.mysql.v1alpha.config.MysqlConfig5_7\x12J\n\x0buser_config\x18\x02 \x01(\x0b\x32\x35.yandex.cloud.mdb.mysql.v1alpha.config.MysqlConfig5_7\x12M\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32\x35.yandex.cloud.mdb.mysql.v1alpha.config.MysqlConfig5_7B|\n)yandex.cloud.api.mdb.mysql.v1alpha.configZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mysql/v1alpha/config;mysqlb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
@@ -33,6 +34,7 @@ _MYSQLCONFIG5_7 = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='innodb_buffer_pool_size', full_name='yandex.cloud.mdb.mysql.v1alpha.config.MysqlConfig5_7.innodb_buffer_pool_size', index=0,
@@ -40,21 +42,21 @@ _MYSQLCONFIG5_7 = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\t>=5242880', file=DESCRIPTOR),
+      serialized_options=b'\372\3071\t>=5242880', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='max_connections', full_name='yandex.cloud.mdb.mysql.v1alpha.config.MysqlConfig5_7.max_connections', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\01010-10000', file=DESCRIPTOR),
+      serialized_options=b'\372\3071\01010-10000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='long_query_time', full_name='yandex.cloud.mdb.mysql.v1alpha.config.MysqlConfig5_7.long_query_time', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -78,6 +80,7 @@ _MYSQLCONFIGSET5_7 = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='effective_config', full_name='yandex.cloud.mdb.mysql.v1alpha.config.MysqlConfigSet5_7.effective_config', index=0,
@@ -85,21 +88,21 @@ _MYSQLCONFIGSET5_7 = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='user_config', full_name='yandex.cloud.mdb.mysql.v1alpha.config.MysqlConfigSet5_7.user_config', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='default_config', full_name='yandex.cloud.mdb.mysql.v1alpha.config.MysqlConfigSet5_7.default_config', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],

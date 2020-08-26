@@ -19,6 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.serverless.triggers.v1',
   syntax='proto3',
   serialized_options=b'\n\'yandex.cloud.api.serverless.triggers.v1ZPgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/triggers/v1;triggers',
+  create_key=_descriptor._internal_create_key,
   serialized_pb=b'\n3yandex/cloud/serverless/triggers/v1/predicate.proto\x12#yandex.cloud.serverless.triggers.v1\x1a\x1dyandex/cloud/validation.proto\"\xc5\x01\n\tPredicate\x12J\n\rand_predicate\x18\x02 \x01(\x0b\x32\x31.yandex.cloud.serverless.triggers.v1.AndPredicateH\x00\x12Y\n\x15\x66ield_value_predicate\x18\x04 \x01(\x0b\x32\x38.yandex.cloud.serverless.triggers.v1.FieldValuePredicateH\x00\x42\x11\n\tpredicate\x12\x04\xc0\xc1\x31\x01\"Q\n\x0c\x41ndPredicate\x12\x41\n\tpredicate\x18\x01 \x03(\x0b\x32..yandex.cloud.serverless.triggers.v1.Predicate\"s\n\x13\x46ieldValuePredicate\x12\x18\n\nfield_path\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x0f\n\x05\x65xact\x18\x03 \x01(\tH\x00\x12\x10\n\x06prefix\x18\x08 \x01(\tH\x00\x12\x10\n\x06suffix\x18\t \x01(\tH\x00\x42\r\n\x05value\x12\x04\xc0\xc1\x31\x01\x42{\n\'yandex.cloud.api.serverless.triggers.v1ZPgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/triggers/v1;triggersb\x06proto3'
   ,
   dependencies=[yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
@@ -32,6 +33,7 @@ _PREDICATE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='and_predicate', full_name='yandex.cloud.serverless.triggers.v1.Predicate.and_predicate', index=0,
@@ -39,14 +41,14 @@ _PREDICATE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='field_value_predicate', full_name='yandex.cloud.serverless.triggers.v1.Predicate.field_value_predicate', index=1,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -60,7 +62,9 @@ _PREDICATE = _descriptor.Descriptor(
   oneofs=[
     _descriptor.OneofDescriptor(
       name='predicate', full_name='yandex.cloud.serverless.triggers.v1.Predicate.predicate',
-      index=0, containing_type=None, fields=[], serialized_options=b'\300\3011\001'),
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[], serialized_options=b'\300\3011\001'),
   ],
   serialized_start=124,
   serialized_end=321,
@@ -73,6 +77,7 @@ _ANDPREDICATE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='predicate', full_name='yandex.cloud.serverless.triggers.v1.AndPredicate.predicate', index=0,
@@ -80,7 +85,7 @@ _ANDPREDICATE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -104,6 +109,7 @@ _FIELDVALUEPREDICATE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='field_path', full_name='yandex.cloud.serverless.triggers.v1.FieldValuePredicate.field_path', index=0,
@@ -111,28 +117,28 @@ _FIELDVALUEPREDICATE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='exact', full_name='yandex.cloud.serverless.triggers.v1.FieldValuePredicate.exact', index=1,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='prefix', full_name='yandex.cloud.serverless.triggers.v1.FieldValuePredicate.prefix', index=2,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='suffix', full_name='yandex.cloud.serverless.triggers.v1.FieldValuePredicate.suffix', index=3,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -146,7 +152,9 @@ _FIELDVALUEPREDICATE = _descriptor.Descriptor(
   oneofs=[
     _descriptor.OneofDescriptor(
       name='value', full_name='yandex.cloud.serverless.triggers.v1.FieldValuePredicate.value',
-      index=0, containing_type=None, fields=[], serialized_options=b'\300\3011\001'),
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[], serialized_options=b'\300\3011\001'),
   ],
   serialized_start=406,
   serialized_end=521,

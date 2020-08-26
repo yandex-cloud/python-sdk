@@ -19,6 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.api',
   syntax='proto3',
   serialized_options=b'Z8github.com/yandex-cloud/go-genproto/yandex/cloud/api;api',
+  create_key=_descriptor._internal_create_key,
   serialized_pb=b'\n yandex/cloud/api/operation.proto\x12\x10yandex.cloud.api\x1a google/protobuf/descriptor.proto\"/\n\tOperation\x12\x10\n\x08metadata\x18\x01 \x01(\t\x12\x10\n\x08response\x18\x02 \x01(\t:P\n\toperation\x12\x1e.google.protobuf.MethodOptions\x18\xa6\xaa\x05 \x01(\x0b\x32\x1b.yandex.cloud.api.OperationB:Z8github.com/yandex-cloud/go-genproto/yandex/cloud/api;apib\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_descriptor__pb2.DESCRIPTOR,])
@@ -31,7 +32,7 @@ operation = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=None,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  serialized_options=None, file=DESCRIPTOR)
+  serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key)
 
 
 _OPERATION = _descriptor.Descriptor(
@@ -40,6 +41,7 @@ _OPERATION = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='metadata', full_name='yandex.cloud.api.Operation.metadata', index=0,
@@ -47,14 +49,14 @@ _OPERATION = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='response', full_name='yandex.cloud.api.Operation.response', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],

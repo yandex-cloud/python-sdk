@@ -20,6 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.iot.devices.v1',
   syntax='proto3',
   serialized_options=b'\n\037yandex.cloud.api.iot.devices.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/iot/devices/v1;devices',
+  create_key=_descriptor._internal_create_key,
   serialized_pb=b'\n5yandex/cloud/iot/devices/v1/device_data_service.proto\x12\x1byandex.cloud.iot.devices.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1dyandex/cloud/validation.proto\"v\n\x18PublishDeviceDataRequest\x12\x1f\n\tdevice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\x05topic\x18\x02 \x01(\tB\x0e\xe8\xc7\x31\x01\x8a\xc8\x31\x06<=1024\x12\x1a\n\x04\x64\x61ta\x18\x03 \x01(\x0c\x42\x0c\x8a\xc8\x31\x08<=262144\"\x1b\n\x19PublishDeviceDataResponse2\xc6\x01\n\x11\x44\x65viceDataService\x12\xb0\x01\n\x07Publish\x12\x35.yandex.cloud.iot.devices.v1.PublishDeviceDataRequest\x1a\x36.yandex.cloud.iot.devices.v1.PublishDeviceDataResponse\"6\x82\xd3\xe4\x93\x02\x30\"+/iot-devices/v1/devices/{device_id}/publish:\x01*Bj\n\x1fyandex.cloud.api.iot.devices.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/iot/devices/v1;devicesb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
@@ -33,6 +34,7 @@ _PUBLISHDEVICEDATAREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='device_id', full_name='yandex.cloud.iot.devices.v1.PublishDeviceDataRequest.device_id', index=0,
@@ -40,21 +42,21 @@ _PUBLISHDEVICEDATAREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='topic', full_name='yandex.cloud.iot.devices.v1.PublishDeviceDataRequest.topic', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\006<=1024', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\006<=1024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='data', full_name='yandex.cloud.iot.devices.v1.PublishDeviceDataRequest.data', index=2,
       number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\010<=262144', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\010<=262144', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -78,6 +80,7 @@ _PUBLISHDEVICEDATARESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
   ],
   extensions=[
@@ -125,6 +128,7 @@ _DEVICEDATASERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
+  create_key=_descriptor._internal_create_key,
   serialized_start=297,
   serialized_end=495,
   methods=[
@@ -136,6 +140,7 @@ _DEVICEDATASERVICE = _descriptor.ServiceDescriptor(
     input_type=_PUBLISHDEVICEDATAREQUEST,
     output_type=_PUBLISHDEVICEDATARESPONSE,
     serialized_options=b'\202\323\344\223\0020\"+/iot-devices/v1/devices/{device_id}/publish:\001*',
+    create_key=_descriptor._internal_create_key,
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_DEVICEDATASERVICE)

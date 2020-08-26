@@ -18,6 +18,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.endpoint',
   syntax='proto3',
   serialized_options=b'\n\031yandex.cloud.api.endpointZBgithub.com/yandex-cloud/go-genproto/yandex/cloud/endpoint;endpoint',
+  create_key=_descriptor._internal_create_key,
   serialized_pb=b'\n(yandex/cloud/endpoint/api_endpoint.proto\x12\x15yandex.cloud.endpoint\"*\n\x0b\x41piEndpoint\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x02 \x01(\tB_\n\x19yandex.cloud.api.endpointZBgithub.com/yandex-cloud/go-genproto/yandex/cloud/endpoint;endpointb\x06proto3'
 )
 
@@ -30,6 +31,7 @@ _APIENDPOINT = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='yandex.cloud.endpoint.ApiEndpoint.id', index=0,
@@ -37,14 +39,14 @@ _APIENDPOINT = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='address', full_name='yandex.cloud.endpoint.ApiEndpoint.address', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],

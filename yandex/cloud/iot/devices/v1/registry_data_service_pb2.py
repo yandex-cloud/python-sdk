@@ -20,6 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.iot.devices.v1',
   syntax='proto3',
   serialized_options=b'\n\037yandex.cloud.api.iot.devices.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/iot/devices/v1;devices',
+  create_key=_descriptor._internal_create_key,
   serialized_pb=b'\n7yandex/cloud/iot/devices/v1/registry_data_service.proto\x12\x1byandex.cloud.iot.devices.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1dyandex/cloud/validation.proto\"z\n\x1aPublishRegistryDataRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\x05topic\x18\x02 \x01(\tB\x0e\xe8\xc7\x31\x01\x8a\xc8\x31\x06<=1024\x12\x1a\n\x04\x64\x61ta\x18\x03 \x01(\x0c\x42\x0c\x8a\xc8\x31\x08<=262144\"\x1d\n\x1bPublishRegistryDataResponse2\xd1\x01\n\x13RegistryDataService\x12\xb9\x01\n\x07Publish\x12\x37.yandex.cloud.iot.devices.v1.PublishRegistryDataRequest\x1a\x38.yandex.cloud.iot.devices.v1.PublishRegistryDataResponse\";\x82\xd3\xe4\x93\x02\x35\"0/iot-devices/v1/registries/{registry_id}/publish:\x01*Bj\n\x1fyandex.cloud.api.iot.devices.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/iot/devices/v1;devicesb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
@@ -33,6 +34,7 @@ _PUBLISHREGISTRYDATAREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='registry_id', full_name='yandex.cloud.iot.devices.v1.PublishRegistryDataRequest.registry_id', index=0,
@@ -40,21 +42,21 @@ _PUBLISHREGISTRYDATAREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='topic', full_name='yandex.cloud.iot.devices.v1.PublishRegistryDataRequest.topic', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\006<=1024', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\006<=1024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='data', full_name='yandex.cloud.iot.devices.v1.PublishRegistryDataRequest.data', index=2,
       number=3, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\010<=262144', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\010<=262144', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -78,6 +80,7 @@ _PUBLISHREGISTRYDATARESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
   ],
   extensions=[
@@ -125,6 +128,7 @@ _REGISTRYDATASERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
+  create_key=_descriptor._internal_create_key,
   serialized_start=305,
   serialized_end=514,
   methods=[
@@ -136,6 +140,7 @@ _REGISTRYDATASERVICE = _descriptor.ServiceDescriptor(
     input_type=_PUBLISHREGISTRYDATAREQUEST,
     output_type=_PUBLISHREGISTRYDATARESPONSE,
     serialized_options=b'\202\323\344\223\0025\"0/iot-devices/v1/registries/{registry_id}/publish:\001*',
+    create_key=_descriptor._internal_create_key,
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_REGISTRYDATASERVICE)

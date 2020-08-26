@@ -22,6 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.k8s.v1',
   syntax='proto3',
   serialized_options=b'\n\027yandex.cloud.api.k8s.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/k8s/v1;k8s',
+  create_key=_descriptor._internal_create_key,
   serialized_pb=b'\n%yandex/cloud/k8s/v1/maintenance.proto\x12\x13yandex.cloud.k8s.v1\x1a\x1bgoogle/type/dayofweek.proto\x1a\x1bgoogle/type/timeofday.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1dyandex/cloud/validation.proto\"\x89\x02\n\x11MaintenanceWindow\x12@\n\x07\x61nytime\x18\x01 \x01(\x0b\x32-.yandex.cloud.k8s.v1.AnytimeMaintenanceWindowH\x00\x12O\n\x18\x64\x61ily_maintenance_window\x18\x02 \x01(\x0b\x32+.yandex.cloud.k8s.v1.DailyMaintenanceWindowH\x00\x12Q\n\x19weekly_maintenance_window\x18\x03 \x01(\x0b\x32,.yandex.cloud.k8s.v1.WeeklyMaintenanceWindowH\x00\x42\x0e\n\x06policy\x12\x04\xc0\xc1\x31\x01\"\x1a\n\x18\x41nytimeMaintenanceWindow\"\x83\x01\n\x16\x44\x61ilyMaintenanceWindow\x12\x30\n\nstart_time\x18\x01 \x01(\x0b\x32\x16.google.type.TimeOfDayB\x04\xe8\xc7\x31\x01\x12\x37\n\x08\x64uration\x18\x02 \x01(\x0b\x32\x19.google.protobuf.DurationB\n\xfa\xc7\x31\x06\x31h-24h\"\xb7\x01\n\x1b\x44\x61ysOfWeekMaintenanceWindow\x12-\n\x04\x64\x61ys\x18\x01 \x03(\x0e\x32\x16.google.type.DayOfWeekB\x07\x82\xc8\x31\x03\x31-7\x12\x30\n\nstart_time\x18\x02 \x01(\x0b\x32\x16.google.type.TimeOfDayB\x04\xe8\xc7\x31\x01\x12\x37\n\x08\x64uration\x18\x03 \x01(\x0b\x32\x19.google.protobuf.DurationB\n\xfa\xc7\x31\x06\x31h-24h\"j\n\x17WeeklyMaintenanceWindow\x12O\n\x0c\x64\x61ys_of_week\x18\x01 \x03(\x0b\x32\x30.yandex.cloud.k8s.v1.DaysOfWeekMaintenanceWindowB\x07\x82\xc8\x31\x03\x31-7BV\n\x17yandex.cloud.api.k8s.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/k8s/v1;k8sb\x06proto3'
   ,
   dependencies=[google_dot_type_dot_dayofweek__pb2.DESCRIPTOR,google_dot_type_dot_timeofday__pb2.DESCRIPTOR,google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
@@ -35,6 +36,7 @@ _MAINTENANCEWINDOW = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='anytime', full_name='yandex.cloud.k8s.v1.MaintenanceWindow.anytime', index=0,
@@ -42,21 +44,21 @@ _MAINTENANCEWINDOW = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='daily_maintenance_window', full_name='yandex.cloud.k8s.v1.MaintenanceWindow.daily_maintenance_window', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='weekly_maintenance_window', full_name='yandex.cloud.k8s.v1.MaintenanceWindow.weekly_maintenance_window', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -70,7 +72,9 @@ _MAINTENANCEWINDOW = _descriptor.Descriptor(
   oneofs=[
     _descriptor.OneofDescriptor(
       name='policy', full_name='yandex.cloud.k8s.v1.MaintenanceWindow.policy',
-      index=0, containing_type=None, fields=[], serialized_options=b'\300\3011\001'),
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[], serialized_options=b'\300\3011\001'),
   ],
   serialized_start=184,
   serialized_end=449,
@@ -83,6 +87,7 @@ _ANYTIMEMAINTENANCEWINDOW = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
   ],
   extensions=[
@@ -107,6 +112,7 @@ _DAILYMAINTENANCEWINDOW = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='start_time', full_name='yandex.cloud.k8s.v1.DailyMaintenanceWindow.start_time', index=0,
@@ -114,14 +120,14 @@ _DAILYMAINTENANCEWINDOW = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='duration', full_name='yandex.cloud.k8s.v1.DailyMaintenanceWindow.duration', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\0061h-24h', file=DESCRIPTOR),
+      serialized_options=b'\372\3071\0061h-24h', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -145,6 +151,7 @@ _DAYSOFWEEKMAINTENANCEWINDOW = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='days', full_name='yandex.cloud.k8s.v1.DaysOfWeekMaintenanceWindow.days', index=0,
@@ -152,21 +159,21 @@ _DAYSOFWEEKMAINTENANCEWINDOW = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\0031-7', file=DESCRIPTOR),
+      serialized_options=b'\202\3101\0031-7', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='start_time', full_name='yandex.cloud.k8s.v1.DaysOfWeekMaintenanceWindow.start_time', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='duration', full_name='yandex.cloud.k8s.v1.DaysOfWeekMaintenanceWindow.duration', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\0061h-24h', file=DESCRIPTOR),
+      serialized_options=b'\372\3071\0061h-24h', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -190,6 +197,7 @@ _WEEKLYMAINTENANCEWINDOW = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='days_of_week', full_name='yandex.cloud.k8s.v1.WeeklyMaintenanceWindow.days_of_week', index=0,
@@ -197,7 +205,7 @@ _WEEKLYMAINTENANCEWINDOW = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\0031-7', file=DESCRIPTOR),
+      serialized_options=b'\202\3101\0031-7', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],

@@ -22,6 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.ai.stt.v2',
   syntax='proto3',
   serialized_options=b'\n\032yandex.cloud.api.ai.stt.v2Z>github.com/yandex-cloud/go-genproto/yandex/cloud/ai/stt/v2;stt',
+  create_key=_descriptor._internal_create_key,
   serialized_pb=b'\n(yandex/cloud/ai/stt/v2/stt_service.proto\x12\x16yandex.cloud.ai.stt.v2\x1a\x1cgoogle/api/annotations.proto\x1a\x1egoogle/protobuf/duration.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\"\x93\x01\n\x1dLongRunningRecognitionRequest\x12\x39\n\x06\x63onfig\x18\x01 \x01(\x0b\x32).yandex.cloud.ai.stt.v2.RecognitionConfig\x12\x37\n\x05\x61udio\x18\x02 \x01(\x0b\x32(.yandex.cloud.ai.stt.v2.RecognitionAudio\"a\n\x1eLongRunningRecognitionResponse\x12?\n\x06\x63hunks\x18\x01 \x03(\x0b\x32/.yandex.cloud.ai.stt.v2.SpeechRecognitionResult\"\x88\x01\n\x1bStreamingRecognitionRequest\x12;\n\x06\x63onfig\x18\x01 \x01(\x0b\x32).yandex.cloud.ai.stt.v2.RecognitionConfigH\x00\x12\x17\n\raudio_content\x18\x02 \x01(\x0cH\x00\x42\x13\n\x11streaming_request\"}\n\x1cStreamingRecognitionResponse\x12>\n\x06\x63hunks\x18\x01 \x03(\x0b\x32..yandex.cloud.ai.stt.v2.SpeechRecognitionChunkJ\x04\x08\x02\x10\x03R\x17\x65nd_of_single_utterance\"D\n\x10RecognitionAudio\x12\x11\n\x07\x63ontent\x18\x01 \x01(\x0cH\x00\x12\r\n\x03uri\x18\x02 \x01(\tH\x00\x42\x0e\n\x0c\x61udio_source\"f\n\x11RecognitionConfig\x12>\n\rspecification\x18\x01 \x01(\x0b\x32\'.yandex.cloud.ai.stt.v2.RecognitionSpec\x12\x11\n\tfolder_id\x18\x02 \x01(\t\"\xf1\x02\n\x0fRecognitionSpec\x12M\n\x0e\x61udio_encoding\x18\x01 \x01(\x0e\x32\x35.yandex.cloud.ai.stt.v2.RecognitionSpec.AudioEncoding\x12\x19\n\x11sample_rate_hertz\x18\x02 \x01(\x03\x12\x15\n\rlanguage_code\x18\x03 \x01(\t\x12\x18\n\x10profanity_filter\x18\x04 \x01(\x08\x12\r\n\x05model\x18\x05 \x01(\t\x12\x17\n\x0fpartial_results\x18\x07 \x01(\x08\x12\x18\n\x10single_utterance\x18\x08 \x01(\x08\x12\x1b\n\x13\x61udio_channel_count\x18\t \x01(\x03\x12\x13\n\x0braw_results\x18\n \x01(\x08\"O\n\rAudioEncoding\x12\x1e\n\x1a\x41UDIO_ENCODING_UNSPECIFIED\x10\x00\x12\x10\n\x0cLINEAR16_PCM\x10\x01\x12\x0c\n\x08OGG_OPUS\x10\x02\"\x8d\x01\n\x16SpeechRecognitionChunk\x12J\n\x0c\x61lternatives\x18\x01 \x03(\x0b\x32\x34.yandex.cloud.ai.stt.v2.SpeechRecognitionAlternative\x12\r\n\x05\x66inal\x18\x02 \x01(\x08\x12\x18\n\x10\x65nd_of_utterance\x18\x03 \x01(\x08\"z\n\x17SpeechRecognitionResult\x12J\n\x0c\x61lternatives\x18\x01 \x03(\x0b\x32\x34.yandex.cloud.ai.stt.v2.SpeechRecognitionAlternative\x12\x13\n\x0b\x63hannel_tag\x18\x02 \x01(\x03\"q\n\x1cSpeechRecognitionAlternative\x12\x0c\n\x04text\x18\x01 \x01(\t\x12\x12\n\nconfidence\x18\x02 \x01(\x02\x12/\n\x05words\x18\x03 \x03(\x0b\x32 .yandex.cloud.ai.stt.v2.WordInfo\"\x88\x01\n\x08WordInfo\x12-\n\nstart_time\x18\x01 \x01(\x0b\x32\x19.google.protobuf.Duration\x12+\n\x08\x65nd_time\x18\x02 \x01(\x0b\x32\x19.google.protobuf.Duration\x12\x0c\n\x04word\x18\x03 \x01(\t\x12\x12\n\nconfidence\x18\x04 \x01(\x02\x32\xdb\x02\n\nSttService\x12\xc4\x01\n\x14LongRunningRecognize\x12\x35.yandex.cloud.ai.stt.v2.LongRunningRecognitionRequest\x1a!.yandex.cloud.operation.Operation\"R\x82\xd3\xe4\x93\x02(\"#/speech/stt/v2/longRunningRecognize:\x01*\xb2\xd2* \x12\x1eLongRunningRecognitionResponse\x12\x85\x01\n\x12StreamingRecognize\x12\x33.yandex.cloud.ai.stt.v2.StreamingRecognitionRequest\x1a\x34.yandex.cloud.ai.stt.v2.StreamingRecognitionResponse\"\x00(\x01\x30\x01\x42\\\n\x1ayandex.cloud.api.ai.stt.v2Z>github.com/yandex-cloud/go-genproto/yandex/cloud/ai/stt/v2;sttb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,])
@@ -33,19 +34,23 @@ _RECOGNITIONSPEC_AUDIOENCODING = _descriptor.EnumDescriptor(
   full_name='yandex.cloud.ai.stt.v2.RecognitionSpec.AudioEncoding',
   filename=None,
   file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='AUDIO_ENCODING_UNSPECIFIED', index=0, number=0,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='LINEAR16_PCM', index=1, number=1,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='OGG_OPUS', index=2, number=2,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
@@ -61,6 +66,7 @@ _LONGRUNNINGRECOGNITIONREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='config', full_name='yandex.cloud.ai.stt.v2.LongRunningRecognitionRequest.config', index=0,
@@ -68,14 +74,14 @@ _LONGRUNNINGRECOGNITIONREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='audio', full_name='yandex.cloud.ai.stt.v2.LongRunningRecognitionRequest.audio', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -99,6 +105,7 @@ _LONGRUNNINGRECOGNITIONRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='chunks', full_name='yandex.cloud.ai.stt.v2.LongRunningRecognitionResponse.chunks', index=0,
@@ -106,7 +113,7 @@ _LONGRUNNINGRECOGNITIONRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -130,6 +137,7 @@ _STREAMINGRECOGNITIONREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='config', full_name='yandex.cloud.ai.stt.v2.StreamingRecognitionRequest.config', index=0,
@@ -137,14 +145,14 @@ _STREAMINGRECOGNITIONREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='audio_content', full_name='yandex.cloud.ai.stt.v2.StreamingRecognitionRequest.audio_content', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -158,7 +166,9 @@ _STREAMINGRECOGNITIONREQUEST = _descriptor.Descriptor(
   oneofs=[
     _descriptor.OneofDescriptor(
       name='streaming_request', full_name='yandex.cloud.ai.stt.v2.StreamingRecognitionRequest.streaming_request',
-      index=0, containing_type=None, fields=[]),
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
   ],
   serialized_start=454,
   serialized_end=590,
@@ -171,6 +181,7 @@ _STREAMINGRECOGNITIONRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='chunks', full_name='yandex.cloud.ai.stt.v2.StreamingRecognitionResponse.chunks', index=0,
@@ -178,7 +189,7 @@ _STREAMINGRECOGNITIONRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -202,6 +213,7 @@ _RECOGNITIONAUDIO = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='content', full_name='yandex.cloud.ai.stt.v2.RecognitionAudio.content', index=0,
@@ -209,14 +221,14 @@ _RECOGNITIONAUDIO = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='uri', full_name='yandex.cloud.ai.stt.v2.RecognitionAudio.uri', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -230,7 +242,9 @@ _RECOGNITIONAUDIO = _descriptor.Descriptor(
   oneofs=[
     _descriptor.OneofDescriptor(
       name='audio_source', full_name='yandex.cloud.ai.stt.v2.RecognitionAudio.audio_source',
-      index=0, containing_type=None, fields=[]),
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
   ],
   serialized_start=719,
   serialized_end=787,
@@ -243,6 +257,7 @@ _RECOGNITIONCONFIG = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='specification', full_name='yandex.cloud.ai.stt.v2.RecognitionConfig.specification', index=0,
@@ -250,14 +265,14 @@ _RECOGNITIONCONFIG = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='folder_id', full_name='yandex.cloud.ai.stt.v2.RecognitionConfig.folder_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -281,6 +296,7 @@ _RECOGNITIONSPEC = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='audio_encoding', full_name='yandex.cloud.ai.stt.v2.RecognitionSpec.audio_encoding', index=0,
@@ -288,63 +304,63 @@ _RECOGNITIONSPEC = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='sample_rate_hertz', full_name='yandex.cloud.ai.stt.v2.RecognitionSpec.sample_rate_hertz', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='language_code', full_name='yandex.cloud.ai.stt.v2.RecognitionSpec.language_code', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='profanity_filter', full_name='yandex.cloud.ai.stt.v2.RecognitionSpec.profanity_filter', index=3,
       number=4, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='model', full_name='yandex.cloud.ai.stt.v2.RecognitionSpec.model', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='partial_results', full_name='yandex.cloud.ai.stt.v2.RecognitionSpec.partial_results', index=5,
       number=7, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='single_utterance', full_name='yandex.cloud.ai.stt.v2.RecognitionSpec.single_utterance', index=6,
       number=8, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='audio_channel_count', full_name='yandex.cloud.ai.stt.v2.RecognitionSpec.audio_channel_count', index=7,
       number=9, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='raw_results', full_name='yandex.cloud.ai.stt.v2.RecognitionSpec.raw_results', index=8,
       number=10, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -369,6 +385,7 @@ _SPEECHRECOGNITIONCHUNK = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='alternatives', full_name='yandex.cloud.ai.stt.v2.SpeechRecognitionChunk.alternatives', index=0,
@@ -376,21 +393,21 @@ _SPEECHRECOGNITIONCHUNK = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='final', full_name='yandex.cloud.ai.stt.v2.SpeechRecognitionChunk.final', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='end_of_utterance', full_name='yandex.cloud.ai.stt.v2.SpeechRecognitionChunk.end_of_utterance', index=2,
       number=3, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -414,6 +431,7 @@ _SPEECHRECOGNITIONRESULT = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='alternatives', full_name='yandex.cloud.ai.stt.v2.SpeechRecognitionResult.alternatives', index=0,
@@ -421,14 +439,14 @@ _SPEECHRECOGNITIONRESULT = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='channel_tag', full_name='yandex.cloud.ai.stt.v2.SpeechRecognitionResult.channel_tag', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -452,6 +470,7 @@ _SPEECHRECOGNITIONALTERNATIVE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='text', full_name='yandex.cloud.ai.stt.v2.SpeechRecognitionAlternative.text', index=0,
@@ -459,21 +478,21 @@ _SPEECHRECOGNITIONALTERNATIVE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='confidence', full_name='yandex.cloud.ai.stt.v2.SpeechRecognitionAlternative.confidence', index=1,
       number=2, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='words', full_name='yandex.cloud.ai.stt.v2.SpeechRecognitionAlternative.words', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -497,6 +516,7 @@ _WORDINFO = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='start_time', full_name='yandex.cloud.ai.stt.v2.WordInfo.start_time', index=0,
@@ -504,28 +524,28 @@ _WORDINFO = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='end_time', full_name='yandex.cloud.ai.stt.v2.WordInfo.end_time', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='word', full_name='yandex.cloud.ai.stt.v2.WordInfo.word', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='confidence', full_name='yandex.cloud.ai.stt.v2.WordInfo.confidence', index=3,
       number=4, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -666,6 +686,7 @@ _STTSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
+  create_key=_descriptor._internal_create_key,
   serialized_start=1788,
   serialized_end=2135,
   methods=[
@@ -677,6 +698,7 @@ _STTSERVICE = _descriptor.ServiceDescriptor(
     input_type=_LONGRUNNINGRECOGNITIONREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\002(\"#/speech/stt/v2/longRunningRecognize:\001*\262\322* \022\036LongRunningRecognitionResponse',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='StreamingRecognize',
@@ -686,6 +708,7 @@ _STTSERVICE = _descriptor.ServiceDescriptor(
     input_type=_STREAMINGRECOGNITIONREQUEST,
     output_type=_STREAMINGRECOGNITIONRESPONSE,
     serialized_options=None,
+    create_key=_descriptor._internal_create_key,
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_STTSERVICE)

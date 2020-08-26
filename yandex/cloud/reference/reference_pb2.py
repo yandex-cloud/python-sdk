@@ -18,6 +18,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.reference',
   syntax='proto3',
   serialized_options=b'\n\032yandex.cloud.api.referenceZDgithub.com/yandex-cloud/go-genproto/yandex/cloud/reference;reference',
+  create_key=_descriptor._internal_create_key,
   serialized_pb=b'\n&yandex/cloud/reference/reference.proto\x12\x16yandex.cloud.reference\"\xb0\x01\n\tReference\x12\x32\n\x08referrer\x18\x01 \x01(\x0b\x32 .yandex.cloud.reference.Referrer\x12\x34\n\x04type\x18\x02 \x01(\x0e\x32&.yandex.cloud.reference.Reference.Type\"9\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x0e\n\nMANAGED_BY\x10\x01\x12\x0b\n\x07USED_BY\x10\x02\"$\n\x08Referrer\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\tBb\n\x1ayandex.cloud.api.referenceZDgithub.com/yandex-cloud/go-genproto/yandex/cloud/reference;referenceb\x06proto3'
 )
 
@@ -28,19 +29,23 @@ _REFERENCE_TYPE = _descriptor.EnumDescriptor(
   full_name='yandex.cloud.reference.Reference.Type',
   filename=None,
   file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='TYPE_UNSPECIFIED', index=0, number=0,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='MANAGED_BY', index=1, number=1,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='USED_BY', index=2, number=2,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
@@ -56,6 +61,7 @@ _REFERENCE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='referrer', full_name='yandex.cloud.reference.Reference.referrer', index=0,
@@ -63,14 +69,14 @@ _REFERENCE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='type', full_name='yandex.cloud.reference.Reference.type', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -95,6 +101,7 @@ _REFERRER = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='type', full_name='yandex.cloud.reference.Referrer.type', index=0,
@@ -102,14 +109,14 @@ _REFERRER = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='id', full_name='yandex.cloud.reference.Referrer.id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],

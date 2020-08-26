@@ -25,6 +25,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.ai.vision.v1',
   syntax='proto3',
   serialized_options=b'\n\035yandex.cloud.api.ai.vision.v1ZDgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/vision/v1;vision',
+  create_key=_descriptor._internal_create_key,
   serialized_pb=b'\n.yandex/cloud/ai/vision/v1/vision_service.proto\x12\x19yandex.cloud.ai.vision.v1\x1a.yandex/cloud/ai/vision/v1/text_detection.proto\x1a.yandex/cloud/ai/vision/v1/classification.proto\x1a.yandex/cloud/ai/vision/v1/face_detection.proto\x1a\x31yandex/cloud/ai/vision/v1/image_copy_search.proto\x1a\x1dyandex/cloud/validation.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/rpc/status.proto\"z\n\x13\x42\x61tchAnalyzeRequest\x12\x46\n\ranalyze_specs\x18\x01 \x03(\x0b\x32&.yandex.cloud.ai.vision.v1.AnalyzeSpecB\x07\x82\xc8\x31\x03\x31-8\x12\x1b\n\tfolder_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"\xbf\x01\n\x0b\x41nalyzeSpec\x12!\n\x07\x63ontent\x18\x01 \x01(\x0c\x42\x0e\x8a\xc8\x31\n<=10485760H\x00\x12 \n\tsignature\x18\x05 \x01(\tB\x0b\x8a\xc8\x31\x07<=16384H\x00\x12=\n\x08\x66\x65\x61tures\x18\x03 \x03(\x0b\x32\".yandex.cloud.ai.vision.v1.FeatureB\x07\x82\xc8\x31\x03\x31-8\x12\x1c\n\tmime_type\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=255B\x0e\n\x06source\x12\x04\xc0\xc1\x31\x01\"\xec\x02\n\x07\x46\x65\x61ture\x12\x35\n\x04type\x18\x01 \x01(\x0e\x32\'.yandex.cloud.ai.vision.v1.Feature.Type\x12W\n\x15\x63lassification_config\x18\x02 \x01(\x0b\x32\x36.yandex.cloud.ai.vision.v1.FeatureClassificationConfigH\x00\x12V\n\x15text_detection_config\x18\x03 \x01(\x0b\x32\x35.yandex.cloud.ai.vision.v1.FeatureTextDetectionConfigH\x00\"o\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x12\n\x0eTEXT_DETECTION\x10\x01\x12\x12\n\x0e\x43LASSIFICATION\x10\x02\x12\x12\n\x0e\x46\x41\x43\x45_DETECTION\x10\x03\x12\x15\n\x11IMAGE_COPY_SEARCH\x10\x04\x42\x08\n\x06\x63onfig\"7\n\x1b\x46\x65\x61tureClassificationConfig\x12\x18\n\x05model\x18\x01 \x01(\tB\t\x8a\xc8\x31\x05<=256\"]\n\x1a\x46\x65\x61tureTextDetectionConfig\x12&\n\x0elanguage_codes\x18\x01 \x03(\tB\x0e\x82\xc8\x31\x03\x31-8\x8a\xc8\x31\x03<=3\x12\x17\n\x05model\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"Q\n\x14\x42\x61tchAnalyzeResponse\x12\x39\n\x07results\x18\x01 \x03(\x0b\x32(.yandex.cloud.ai.vision.v1.AnalyzeResult\"m\n\rAnalyzeResult\x12\x39\n\x07results\x18\x02 \x03(\x0b\x32(.yandex.cloud.ai.vision.v1.FeatureResult\x12!\n\x05\x65rror\x18\x01 \x01(\x0b\x32\x12.google.rpc.Status\"\xe0\x02\n\rFeatureResult\x12\x43\n\x0etext_detection\x18\x02 \x01(\x0b\x32).yandex.cloud.ai.vision.v1.TextAnnotationH\x00\x12\x44\n\x0e\x63lassification\x18\x03 \x01(\x0b\x32*.yandex.cloud.ai.vision.v1.ClassAnnotationH\x00\x12\x43\n\x0e\x66\x61\x63\x65_detection\x18\x04 \x01(\x0b\x32).yandex.cloud.ai.vision.v1.FaceAnnotationH\x00\x12Q\n\x11image_copy_search\x18\x05 \x01(\x0b\x32\x34.yandex.cloud.ai.vision.v1.ImageCopySearchAnnotationH\x00\x12!\n\x05\x65rror\x18\x01 \x01(\x0b\x32\x12.google.rpc.StatusB\t\n\x07\x66\x65\x61ture2\xa5\x01\n\rVisionService\x12\x93\x01\n\x0c\x42\x61tchAnalyze\x12..yandex.cloud.ai.vision.v1.BatchAnalyzeRequest\x1a/.yandex.cloud.ai.vision.v1.BatchAnalyzeResponse\"\"\x82\xd3\xe4\x93\x02\x1c\"\x17/vision/v1/batchAnalyze:\x01*Be\n\x1dyandex.cloud.api.ai.vision.v1ZDgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/vision/v1;visionb\x06proto3'
   ,
   dependencies=[yandex_dot_cloud_dot_ai_dot_vision_dot_v1_dot_text__detection__pb2.DESCRIPTOR,yandex_dot_cloud_dot_ai_dot_vision_dot_v1_dot_classification__pb2.DESCRIPTOR,yandex_dot_cloud_dot_ai_dot_vision_dot_v1_dot_face__detection__pb2.DESCRIPTOR,yandex_dot_cloud_dot_ai_dot_vision_dot_v1_dot_image__copy__search__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_rpc_dot_status__pb2.DESCRIPTOR,])
@@ -36,27 +37,33 @@ _FEATURE_TYPE = _descriptor.EnumDescriptor(
   full_name='yandex.cloud.ai.vision.v1.Feature.Type',
   filename=None,
   file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='TYPE_UNSPECIFIED', index=0, number=0,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='TEXT_DETECTION', index=1, number=1,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='CLASSIFICATION', index=2, number=2,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='FACE_DETECTION', index=3, number=3,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='IMAGE_COPY_SEARCH', index=4, number=4,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
@@ -72,6 +79,7 @@ _BATCHANALYZEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='analyze_specs', full_name='yandex.cloud.ai.vision.v1.BatchAnalyzeRequest.analyze_specs', index=0,
@@ -79,14 +87,14 @@ _BATCHANALYZEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\0031-8', file=DESCRIPTOR),
+      serialized_options=b'\202\3101\0031-8', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='folder_id', full_name='yandex.cloud.ai.vision.v1.BatchAnalyzeRequest.folder_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -110,6 +118,7 @@ _ANALYZESPEC = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='content', full_name='yandex.cloud.ai.vision.v1.AnalyzeSpec.content', index=0,
@@ -117,28 +126,28 @@ _ANALYZESPEC = _descriptor.Descriptor(
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\n<=10485760', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\n<=10485760', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='signature', full_name='yandex.cloud.ai.vision.v1.AnalyzeSpec.signature', index=1,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\007<=16384', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\007<=16384', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='features', full_name='yandex.cloud.ai.vision.v1.AnalyzeSpec.features', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\0031-8', file=DESCRIPTOR),
+      serialized_options=b'\202\3101\0031-8', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='mime_type', full_name='yandex.cloud.ai.vision.v1.AnalyzeSpec.mime_type', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=255', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\005<=255', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -152,7 +161,9 @@ _ANALYZESPEC = _descriptor.Descriptor(
   oneofs=[
     _descriptor.OneofDescriptor(
       name='source', full_name='yandex.cloud.ai.vision.v1.AnalyzeSpec.source',
-      index=0, containing_type=None, fields=[], serialized_options=b'\300\3011\001'),
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[], serialized_options=b'\300\3011\001'),
   ],
   serialized_start=483,
   serialized_end=674,
@@ -165,6 +176,7 @@ _FEATURE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='type', full_name='yandex.cloud.ai.vision.v1.Feature.type', index=0,
@@ -172,21 +184,21 @@ _FEATURE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='classification_config', full_name='yandex.cloud.ai.vision.v1.Feature.classification_config', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='text_detection_config', full_name='yandex.cloud.ai.vision.v1.Feature.text_detection_config', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -201,7 +213,9 @@ _FEATURE = _descriptor.Descriptor(
   oneofs=[
     _descriptor.OneofDescriptor(
       name='config', full_name='yandex.cloud.ai.vision.v1.Feature.config',
-      index=0, containing_type=None, fields=[]),
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
   ],
   serialized_start=677,
   serialized_end=1041,
@@ -214,6 +228,7 @@ _FEATURECLASSIFICATIONCONFIG = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='model', full_name='yandex.cloud.ai.vision.v1.FeatureClassificationConfig.model', index=0,
@@ -221,7 +236,7 @@ _FEATURECLASSIFICATIONCONFIG = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -245,6 +260,7 @@ _FEATURETEXTDETECTIONCONFIG = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='language_codes', full_name='yandex.cloud.ai.vision.v1.FeatureTextDetectionConfig.language_codes', index=0,
@@ -252,14 +268,14 @@ _FEATURETEXTDETECTIONCONFIG = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\0031-8\212\3101\003<=3', file=DESCRIPTOR),
+      serialized_options=b'\202\3101\0031-8\212\3101\003<=3', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='model', full_name='yandex.cloud.ai.vision.v1.FeatureTextDetectionConfig.model', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -283,6 +299,7 @@ _BATCHANALYZERESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='results', full_name='yandex.cloud.ai.vision.v1.BatchAnalyzeResponse.results', index=0,
@@ -290,7 +307,7 @@ _BATCHANALYZERESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -314,6 +331,7 @@ _ANALYZERESULT = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='results', full_name='yandex.cloud.ai.vision.v1.AnalyzeResult.results', index=0,
@@ -321,14 +339,14 @@ _ANALYZERESULT = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='error', full_name='yandex.cloud.ai.vision.v1.AnalyzeResult.error', index=1,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -352,6 +370,7 @@ _FEATURERESULT = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='text_detection', full_name='yandex.cloud.ai.vision.v1.FeatureResult.text_detection', index=0,
@@ -359,35 +378,35 @@ _FEATURERESULT = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='classification', full_name='yandex.cloud.ai.vision.v1.FeatureResult.classification', index=1,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='face_detection', full_name='yandex.cloud.ai.vision.v1.FeatureResult.face_detection', index=2,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='image_copy_search', full_name='yandex.cloud.ai.vision.v1.FeatureResult.image_copy_search', index=3,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='error', full_name='yandex.cloud.ai.vision.v1.FeatureResult.error', index=4,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -401,7 +420,9 @@ _FEATURERESULT = _descriptor.Descriptor(
   oneofs=[
     _descriptor.OneofDescriptor(
       name='feature', full_name='yandex.cloud.ai.vision.v1.FeatureResult.feature',
-      index=0, containing_type=None, fields=[]),
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
   ],
   serialized_start=1390,
   serialized_end=1742,
@@ -530,6 +551,7 @@ _VISIONSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
+  create_key=_descriptor._internal_create_key,
   serialized_start=1745,
   serialized_end=1910,
   methods=[
@@ -541,6 +563,7 @@ _VISIONSERVICE = _descriptor.ServiceDescriptor(
     input_type=_BATCHANALYZEREQUEST,
     output_type=_BATCHANALYZERESPONSE,
     serialized_options=b'\202\323\344\223\002\034\"\027/vision/v1/batchAnalyze:\001*',
+    create_key=_descriptor._internal_create_key,
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_VISIONSERVICE)

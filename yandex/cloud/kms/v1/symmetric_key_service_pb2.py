@@ -27,6 +27,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.kms.v1',
   syntax='proto3',
   serialized_options=b'\n\027yandex.cloud.api.kms.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/kms/v1;kms',
+  create_key=_descriptor._internal_create_key,
   serialized_pb=b'\n/yandex/cloud/kms/v1/symmetric_key_service.proto\x12\x13yandex.cloud.kms.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/duration.proto\x1a yandex/cloud/access/access.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a\'yandex/cloud/kms/v1/symmetric_key.proto\"\xab\x03\n\x19\x43reateSymmetricKeyRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x17\n\x04name\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1f\n\x0b\x64\x65scription\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12\x8b\x01\n\x06labels\x18\x04 \x03(\x0b\x32:.yandex.cloud.kms.v1.CreateSymmetricKeyRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12\x42\n\x11\x64\x65\x66\x61ult_algorithm\x18\x05 \x01(\x0e\x32\'.yandex.cloud.kms.v1.SymmetricAlgorithm\x12\x32\n\x0frotation_period\x18\x06 \x01(\x0b\x32\x19.google.protobuf.Duration\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"H\n\x1a\x43reateSymmetricKeyMetadata\x12\x0e\n\x06key_id\x18\x01 \x01(\t\x12\x1a\n\x12primary_version_id\x18\x02 \x01(\t\"6\n\x16GetSymmetricKeyRequest\x12\x1c\n\x06key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"y\n\x18ListSymmetricKeysRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"e\n\x19ListSymmetricKeysResponse\x12/\n\x04keys\x18\x01 \x03(\x0b\x32!.yandex.cloud.kms.v1.SymmetricKey\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"}\n\x1fListSymmetricKeyVersionsRequest\x12\x1c\n\x06key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"{\n ListSymmetricKeyVersionsResponse\x12>\n\x0ckey_versions\x18\x01 \x03(\x0b\x32(.yandex.cloud.kms.v1.SymmetricKeyVersion\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x99\x04\n\x19UpdateSymmetricKeyRequest\x12\x1c\n\x06key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe8\xc7\x31\x01\x12\x17\n\x04name\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1f\n\x0b\x64\x65scription\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12\x38\n\x06status\x18\x05 \x01(\x0e\x32(.yandex.cloud.kms.v1.SymmetricKey.Status\x12\x8b\x01\n\x06labels\x18\x06 \x03(\x0b\x32:.yandex.cloud.kms.v1.UpdateSymmetricKeyRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12\x42\n\x11\x64\x65\x66\x61ult_algorithm\x18\x07 \x01(\x0e\x32\'.yandex.cloud.kms.v1.SymmetricAlgorithm\x12\x32\n\x0frotation_period\x18\x08 \x01(\x0b\x32\x19.google.protobuf.Duration\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\",\n\x1aUpdateSymmetricKeyMetadata\x12\x0e\n\x06key_id\x18\x01 \x01(\t\"9\n\x19\x44\x65leteSymmetricKeyRequest\x12\x1c\n\x06key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\",\n\x1a\x44\x65leteSymmetricKeyMetadata\x12\x0e\n\x06key_id\x18\x01 \x01(\t\"f\n$SetPrimarySymmetricKeyVersionRequest\x12\x1c\n\x06key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12 \n\nversion_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"K\n%SetPrimarySymmetricKeyVersionMetadata\x12\x0e\n\x06key_id\x18\x01 \x01(\t\x12\x12\n\nversion_id\x18\x02 \x01(\t\"9\n\x19RotateSymmetricKeyRequest\x12\x1c\n\x06key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"L\n\x1aRotateSymmetricKeyMetadata\x12\x0e\n\x06key_id\x18\x01 \x01(\t\x12\x1e\n\x16new_primary_version_id\x18\x02 \x01(\t\"\xa2\x01\n-ScheduleSymmetricKeyVersionDestructionRequest\x12\x1c\n\x06key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12 \n\nversion_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x31\n\x0epending_period\x18\x03 \x01(\x0b\x32\x19.google.protobuf.Duration\"\x84\x01\n.ScheduleSymmetricKeyVersionDestructionMetadata\x12\x0e\n\x06key_id\x18\x01 \x01(\t\x12\x12\n\nversion_id\x18\x02 \x01(\t\x12.\n\ndestroy_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"m\n+CancelSymmetricKeyVersionDestructionRequest\x12\x1c\n\x06key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12 \n\nversion_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"R\n,CancelSymmetricKeyVersionDestructionMetadata\x12\x0e\n\x06key_id\x18\x01 \x01(\t\x12\x12\n\nversion_id\x18\x02 \x01(\t\"\x7f\n!ListSymmetricKeyOperationsRequest\x12\x1c\n\x06key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"t\n\"ListSymmetricKeyOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xf6\x14\n\x13SymmetricKeyService\x12\xa2\x01\n\x06\x43reate\x12..yandex.cloud.kms.v1.CreateSymmetricKeyRequest\x1a!.yandex.cloud.operation.Operation\"E\x82\xd3\xe4\x93\x02\x11\"\x0c/kms/v1/keys:\x01*\xb2\xd2**\n\x1a\x43reateSymmetricKeyMetadata\x12\x0cSymmetricKey\x12t\n\x03Get\x12+.yandex.cloud.kms.v1.GetSymmetricKeyRequest\x1a!.yandex.cloud.kms.v1.SymmetricKey\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/kms/v1/keys/{key_id}\x12{\n\x04List\x12-.yandex.cloud.kms.v1.ListSymmetricKeysRequest\x1a..yandex.cloud.kms.v1.ListSymmetricKeysResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\x12\x0c/kms/v1/keys\x12\xa3\x01\n\x0cListVersions\x12\x34.yandex.cloud.kms.v1.ListSymmetricKeyVersionsRequest\x1a\x35.yandex.cloud.kms.v1.ListSymmetricKeyVersionsResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/kms/v1/keys/{key_id}/versions\x12\xab\x01\n\x06Update\x12..yandex.cloud.kms.v1.UpdateSymmetricKeyRequest\x1a!.yandex.cloud.operation.Operation\"N\x82\xd3\xe4\x93\x02\x1a\x32\x15/kms/v1/keys/{key_id}:\x01*\xb2\xd2**\n\x1aUpdateSymmetricKeyMetadata\x12\x0cSymmetricKey\x12\xa8\x01\n\x06\x44\x65lete\x12..yandex.cloud.kms.v1.DeleteSymmetricKeyRequest\x1a!.yandex.cloud.operation.Operation\"K\x82\xd3\xe4\x93\x02\x17*\x15/kms/v1/keys/{key_id}\xb2\xd2**\n\x1a\x44\x65leteSymmetricKeyMetadata\x12\x0cSymmetricKey\x12\xde\x01\n\x11SetPrimaryVersion\x12\x39.yandex.cloud.kms.v1.SetPrimarySymmetricKeyVersionRequest\x1a!.yandex.cloud.operation.Operation\"k\x82\xd3\xe4\x93\x02,\"\'/kms/v1/keys/{key_id}:setPrimaryVersion:\x01*\xb2\xd2*5\n%SetPrimarySymmetricKeyVersionMetadata\x12\x0cSymmetricKey\x12\x8a\x02\n\x1aScheduleVersionDestruction\x12\x42.yandex.cloud.kms.v1.ScheduleSymmetricKeyVersionDestructionRequest\x1a!.yandex.cloud.operation.Operation\"\x84\x01\x82\xd3\xe4\x93\x02\x35\"0/kms/v1/keys/{key_id}:scheduleVersionDestruction:\x01*\xb2\xd2*E\n.ScheduleSymmetricKeyVersionDestructionMetadata\x12\x13SymmetricKeyVersion\x12\x82\x02\n\x18\x43\x61ncelVersionDestruction\x12@.yandex.cloud.kms.v1.CancelSymmetricKeyVersionDestructionRequest\x1a!.yandex.cloud.operation.Operation\"\x80\x01\x82\xd3\xe4\x93\x02\x33\"./kms/v1/keys/{key_id}:cancelVersionDestruction:\x01*\xb2\xd2*C\n,CancelSymmetricKeyVersionDestructionMetadata\x12\x13SymmetricKeyVersion\x12\xaf\x01\n\x06Rotate\x12..yandex.cloud.kms.v1.RotateSymmetricKeyRequest\x1a!.yandex.cloud.operation.Operation\"R\x82\xd3\xe4\x93\x02\x1e\"\x1c/kms/v1/keys/{key_id}:rotate\xb2\xd2**\n\x1aRotateSymmetricKeyMetadata\x12\x0cSymmetricKey\x12\xab\x01\n\x0eListOperations\x12\x36.yandex.cloud.kms.v1.ListSymmetricKeyOperationsRequest\x1a\x37.yandex.cloud.kms.v1.ListSymmetricKeyOperationsResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /kms/v1/keys/{key_id}/operations\x12\xac\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"5\x82\xd3\xe4\x93\x02/\x12-/kms/v1/keys/{resource_id}:listAccessBindings\x12\xdb\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"t\x82\xd3\xe4\x93\x02\x31\",/kms/v1/keys/{resource_id}:setAccessBindings:\x01*\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\xe7\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"z\x82\xd3\xe4\x93\x02\x34\"//kms/v1/keys/{resource_id}:updateAccessBindings:\x01*\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.EmptyBV\n\x17yandex.cloud.api.kms.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/kms/v1;kmsb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,yandex_dot_cloud_dot_access_dot_access__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_kms_dot_v1_dot_symmetric__key__pb2.DESCRIPTOR,])
@@ -40,6 +41,7 @@ _CREATESYMMETRICKEYREQUEST_LABELSENTRY = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key', full_name='yandex.cloud.kms.v1.CreateSymmetricKeyRequest.LabelsEntry.key', index=0,
@@ -47,14 +49,14 @@ _CREATESYMMETRICKEYREQUEST_LABELSENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='value', full_name='yandex.cloud.kms.v1.CreateSymmetricKeyRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -77,6 +79,7 @@ _CREATESYMMETRICKEYREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='folder_id', full_name='yandex.cloud.kms.v1.CreateSymmetricKeyRequest.folder_id', index=0,
@@ -84,42 +87,42 @@ _CREATESYMMETRICKEYREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='name', full_name='yandex.cloud.kms.v1.CreateSymmetricKeyRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='description', full_name='yandex.cloud.kms.v1.CreateSymmetricKeyRequest.description', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=1024', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\006<=1024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='labels', full_name='yandex.cloud.kms.v1.CreateSymmetricKeyRequest.labels', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\004<=63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR),
+      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\004<=63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='default_algorithm', full_name='yandex.cloud.kms.v1.CreateSymmetricKeyRequest.default_algorithm', index=4,
       number=5, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='rotation_period', full_name='yandex.cloud.kms.v1.CreateSymmetricKeyRequest.rotation_period', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -143,6 +146,7 @@ _CREATESYMMETRICKEYMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key_id', full_name='yandex.cloud.kms.v1.CreateSymmetricKeyMetadata.key_id', index=0,
@@ -150,14 +154,14 @@ _CREATESYMMETRICKEYMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='primary_version_id', full_name='yandex.cloud.kms.v1.CreateSymmetricKeyMetadata.primary_version_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -181,6 +185,7 @@ _GETSYMMETRICKEYREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key_id', full_name='yandex.cloud.kms.v1.GetSymmetricKeyRequest.key_id', index=0,
@@ -188,7 +193,7 @@ _GETSYMMETRICKEYREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -212,6 +217,7 @@ _LISTSYMMETRICKEYSREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='folder_id', full_name='yandex.cloud.kms.v1.ListSymmetricKeysRequest.folder_id', index=0,
@@ -219,21 +225,21 @@ _LISTSYMMETRICKEYSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.kms.v1.ListSymmetricKeysRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR),
+      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.kms.v1.ListSymmetricKeysRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -257,6 +263,7 @@ _LISTSYMMETRICKEYSRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='keys', full_name='yandex.cloud.kms.v1.ListSymmetricKeysResponse.keys', index=0,
@@ -264,14 +271,14 @@ _LISTSYMMETRICKEYSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.kms.v1.ListSymmetricKeysResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -295,6 +302,7 @@ _LISTSYMMETRICKEYVERSIONSREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key_id', full_name='yandex.cloud.kms.v1.ListSymmetricKeyVersionsRequest.key_id', index=0,
@@ -302,21 +310,21 @@ _LISTSYMMETRICKEYVERSIONSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.kms.v1.ListSymmetricKeyVersionsRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR),
+      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.kms.v1.ListSymmetricKeyVersionsRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -340,6 +348,7 @@ _LISTSYMMETRICKEYVERSIONSRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key_versions', full_name='yandex.cloud.kms.v1.ListSymmetricKeyVersionsResponse.key_versions', index=0,
@@ -347,14 +356,14 @@ _LISTSYMMETRICKEYVERSIONSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.kms.v1.ListSymmetricKeyVersionsResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -378,6 +387,7 @@ _UPDATESYMMETRICKEYREQUEST_LABELSENTRY = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key', full_name='yandex.cloud.kms.v1.UpdateSymmetricKeyRequest.LabelsEntry.key', index=0,
@@ -385,14 +395,14 @@ _UPDATESYMMETRICKEYREQUEST_LABELSENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='value', full_name='yandex.cloud.kms.v1.UpdateSymmetricKeyRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -415,6 +425,7 @@ _UPDATESYMMETRICKEYREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key_id', full_name='yandex.cloud.kms.v1.UpdateSymmetricKeyRequest.key_id', index=0,
@@ -422,56 +433,56 @@ _UPDATESYMMETRICKEYREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='update_mask', full_name='yandex.cloud.kms.v1.UpdateSymmetricKeyRequest.update_mask', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='name', full_name='yandex.cloud.kms.v1.UpdateSymmetricKeyRequest.name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='description', full_name='yandex.cloud.kms.v1.UpdateSymmetricKeyRequest.description', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=1024', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\006<=1024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='status', full_name='yandex.cloud.kms.v1.UpdateSymmetricKeyRequest.status', index=4,
       number=5, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='labels', full_name='yandex.cloud.kms.v1.UpdateSymmetricKeyRequest.labels', index=5,
       number=6, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\004<=63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR),
+      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\004<=63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='default_algorithm', full_name='yandex.cloud.kms.v1.UpdateSymmetricKeyRequest.default_algorithm', index=6,
       number=7, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='rotation_period', full_name='yandex.cloud.kms.v1.UpdateSymmetricKeyRequest.rotation_period', index=7,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -495,6 +506,7 @@ _UPDATESYMMETRICKEYMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key_id', full_name='yandex.cloud.kms.v1.UpdateSymmetricKeyMetadata.key_id', index=0,
@@ -502,7 +514,7 @@ _UPDATESYMMETRICKEYMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -526,6 +538,7 @@ _DELETESYMMETRICKEYREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key_id', full_name='yandex.cloud.kms.v1.DeleteSymmetricKeyRequest.key_id', index=0,
@@ -533,7 +546,7 @@ _DELETESYMMETRICKEYREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -557,6 +570,7 @@ _DELETESYMMETRICKEYMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key_id', full_name='yandex.cloud.kms.v1.DeleteSymmetricKeyMetadata.key_id', index=0,
@@ -564,7 +578,7 @@ _DELETESYMMETRICKEYMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -588,6 +602,7 @@ _SETPRIMARYSYMMETRICKEYVERSIONREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key_id', full_name='yandex.cloud.kms.v1.SetPrimarySymmetricKeyVersionRequest.key_id', index=0,
@@ -595,14 +610,14 @@ _SETPRIMARYSYMMETRICKEYVERSIONREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='version_id', full_name='yandex.cloud.kms.v1.SetPrimarySymmetricKeyVersionRequest.version_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -626,6 +641,7 @@ _SETPRIMARYSYMMETRICKEYVERSIONMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key_id', full_name='yandex.cloud.kms.v1.SetPrimarySymmetricKeyVersionMetadata.key_id', index=0,
@@ -633,14 +649,14 @@ _SETPRIMARYSYMMETRICKEYVERSIONMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='version_id', full_name='yandex.cloud.kms.v1.SetPrimarySymmetricKeyVersionMetadata.version_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -664,6 +680,7 @@ _ROTATESYMMETRICKEYREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key_id', full_name='yandex.cloud.kms.v1.RotateSymmetricKeyRequest.key_id', index=0,
@@ -671,7 +688,7 @@ _ROTATESYMMETRICKEYREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -695,6 +712,7 @@ _ROTATESYMMETRICKEYMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key_id', full_name='yandex.cloud.kms.v1.RotateSymmetricKeyMetadata.key_id', index=0,
@@ -702,14 +720,14 @@ _ROTATESYMMETRICKEYMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='new_primary_version_id', full_name='yandex.cloud.kms.v1.RotateSymmetricKeyMetadata.new_primary_version_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -733,6 +751,7 @@ _SCHEDULESYMMETRICKEYVERSIONDESTRUCTIONREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key_id', full_name='yandex.cloud.kms.v1.ScheduleSymmetricKeyVersionDestructionRequest.key_id', index=0,
@@ -740,21 +759,21 @@ _SCHEDULESYMMETRICKEYVERSIONDESTRUCTIONREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='version_id', full_name='yandex.cloud.kms.v1.ScheduleSymmetricKeyVersionDestructionRequest.version_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='pending_period', full_name='yandex.cloud.kms.v1.ScheduleSymmetricKeyVersionDestructionRequest.pending_period', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -778,6 +797,7 @@ _SCHEDULESYMMETRICKEYVERSIONDESTRUCTIONMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key_id', full_name='yandex.cloud.kms.v1.ScheduleSymmetricKeyVersionDestructionMetadata.key_id', index=0,
@@ -785,21 +805,21 @@ _SCHEDULESYMMETRICKEYVERSIONDESTRUCTIONMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='version_id', full_name='yandex.cloud.kms.v1.ScheduleSymmetricKeyVersionDestructionMetadata.version_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='destroy_at', full_name='yandex.cloud.kms.v1.ScheduleSymmetricKeyVersionDestructionMetadata.destroy_at', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -823,6 +843,7 @@ _CANCELSYMMETRICKEYVERSIONDESTRUCTIONREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key_id', full_name='yandex.cloud.kms.v1.CancelSymmetricKeyVersionDestructionRequest.key_id', index=0,
@@ -830,14 +851,14 @@ _CANCELSYMMETRICKEYVERSIONDESTRUCTIONREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='version_id', full_name='yandex.cloud.kms.v1.CancelSymmetricKeyVersionDestructionRequest.version_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -861,6 +882,7 @@ _CANCELSYMMETRICKEYVERSIONDESTRUCTIONMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key_id', full_name='yandex.cloud.kms.v1.CancelSymmetricKeyVersionDestructionMetadata.key_id', index=0,
@@ -868,14 +890,14 @@ _CANCELSYMMETRICKEYVERSIONDESTRUCTIONMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='version_id', full_name='yandex.cloud.kms.v1.CancelSymmetricKeyVersionDestructionMetadata.version_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -899,6 +921,7 @@ _LISTSYMMETRICKEYOPERATIONSREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key_id', full_name='yandex.cloud.kms.v1.ListSymmetricKeyOperationsRequest.key_id', index=0,
@@ -906,21 +929,21 @@ _LISTSYMMETRICKEYOPERATIONSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.kms.v1.ListSymmetricKeyOperationsRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR),
+      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.kms.v1.ListSymmetricKeyOperationsRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -944,6 +967,7 @@ _LISTSYMMETRICKEYOPERATIONSRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='operations', full_name='yandex.cloud.kms.v1.ListSymmetricKeyOperationsResponse.operations', index=0,
@@ -951,14 +975,14 @@ _LISTSYMMETRICKEYOPERATIONSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.kms.v1.ListSymmetricKeyOperationsResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1214,6 +1238,7 @@ _SYMMETRICKEYSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
+  create_key=_descriptor._internal_create_key,
   serialized_start=3171,
   serialized_end=5849,
   methods=[
@@ -1225,6 +1250,7 @@ _SYMMETRICKEYSERVICE = _descriptor.ServiceDescriptor(
     input_type=_CREATESYMMETRICKEYREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\002\021\"\014/kms/v1/keys:\001*\262\322**\n\032CreateSymmetricKeyMetadata\022\014SymmetricKey',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Get',
@@ -1234,6 +1260,7 @@ _SYMMETRICKEYSERVICE = _descriptor.ServiceDescriptor(
     input_type=_GETSYMMETRICKEYREQUEST,
     output_type=yandex_dot_cloud_dot_kms_dot_v1_dot_symmetric__key__pb2._SYMMETRICKEY,
     serialized_options=b'\202\323\344\223\002\027\022\025/kms/v1/keys/{key_id}',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='List',
@@ -1243,6 +1270,7 @@ _SYMMETRICKEYSERVICE = _descriptor.ServiceDescriptor(
     input_type=_LISTSYMMETRICKEYSREQUEST,
     output_type=_LISTSYMMETRICKEYSRESPONSE,
     serialized_options=b'\202\323\344\223\002\016\022\014/kms/v1/keys',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='ListVersions',
@@ -1252,6 +1280,7 @@ _SYMMETRICKEYSERVICE = _descriptor.ServiceDescriptor(
     input_type=_LISTSYMMETRICKEYVERSIONSREQUEST,
     output_type=_LISTSYMMETRICKEYVERSIONSRESPONSE,
     serialized_options=b'\202\323\344\223\002 \022\036/kms/v1/keys/{key_id}/versions',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Update',
@@ -1261,6 +1290,7 @@ _SYMMETRICKEYSERVICE = _descriptor.ServiceDescriptor(
     input_type=_UPDATESYMMETRICKEYREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\002\0322\025/kms/v1/keys/{key_id}:\001*\262\322**\n\032UpdateSymmetricKeyMetadata\022\014SymmetricKey',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Delete',
@@ -1270,6 +1300,7 @@ _SYMMETRICKEYSERVICE = _descriptor.ServiceDescriptor(
     input_type=_DELETESYMMETRICKEYREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\002\027*\025/kms/v1/keys/{key_id}\262\322**\n\032DeleteSymmetricKeyMetadata\022\014SymmetricKey',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='SetPrimaryVersion',
@@ -1279,6 +1310,7 @@ _SYMMETRICKEYSERVICE = _descriptor.ServiceDescriptor(
     input_type=_SETPRIMARYSYMMETRICKEYVERSIONREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\002,\"\'/kms/v1/keys/{key_id}:setPrimaryVersion:\001*\262\322*5\n%SetPrimarySymmetricKeyVersionMetadata\022\014SymmetricKey',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='ScheduleVersionDestruction',
@@ -1288,6 +1320,7 @@ _SYMMETRICKEYSERVICE = _descriptor.ServiceDescriptor(
     input_type=_SCHEDULESYMMETRICKEYVERSIONDESTRUCTIONREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\0025\"0/kms/v1/keys/{key_id}:scheduleVersionDestruction:\001*\262\322*E\n.ScheduleSymmetricKeyVersionDestructionMetadata\022\023SymmetricKeyVersion',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='CancelVersionDestruction',
@@ -1297,6 +1330,7 @@ _SYMMETRICKEYSERVICE = _descriptor.ServiceDescriptor(
     input_type=_CANCELSYMMETRICKEYVERSIONDESTRUCTIONREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\0023\"./kms/v1/keys/{key_id}:cancelVersionDestruction:\001*\262\322*C\n,CancelSymmetricKeyVersionDestructionMetadata\022\023SymmetricKeyVersion',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Rotate',
@@ -1306,6 +1340,7 @@ _SYMMETRICKEYSERVICE = _descriptor.ServiceDescriptor(
     input_type=_ROTATESYMMETRICKEYREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\002\036\"\034/kms/v1/keys/{key_id}:rotate\262\322**\n\032RotateSymmetricKeyMetadata\022\014SymmetricKey',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='ListOperations',
@@ -1315,6 +1350,7 @@ _SYMMETRICKEYSERVICE = _descriptor.ServiceDescriptor(
     input_type=_LISTSYMMETRICKEYOPERATIONSREQUEST,
     output_type=_LISTSYMMETRICKEYOPERATIONSRESPONSE,
     serialized_options=b'\202\323\344\223\002\"\022 /kms/v1/keys/{key_id}/operations',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='ListAccessBindings',
@@ -1324,6 +1360,7 @@ _SYMMETRICKEYSERVICE = _descriptor.ServiceDescriptor(
     input_type=yandex_dot_cloud_dot_access_dot_access__pb2._LISTACCESSBINDINGSREQUEST,
     output_type=yandex_dot_cloud_dot_access_dot_access__pb2._LISTACCESSBINDINGSRESPONSE,
     serialized_options=b'\202\323\344\223\002/\022-/kms/v1/keys/{resource_id}:listAccessBindings',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='SetAccessBindings',
@@ -1333,6 +1370,7 @@ _SYMMETRICKEYSERVICE = _descriptor.ServiceDescriptor(
     input_type=yandex_dot_cloud_dot_access_dot_access__pb2._SETACCESSBINDINGSREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\0021\",/kms/v1/keys/{resource_id}:setAccessBindings:\001*\262\322*9\n access.SetAccessBindingsMetadata\022\025google.protobuf.Empty',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='UpdateAccessBindings',
@@ -1342,6 +1380,7 @@ _SYMMETRICKEYSERVICE = _descriptor.ServiceDescriptor(
     input_type=yandex_dot_cloud_dot_access_dot_access__pb2._UPDATEACCESSBINDINGSREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\0024\"//kms/v1/keys/{resource_id}:updateAccessBindings:\001*\262\322*<\n#access.UpdateAccessBindingsMetadata\022\025google.protobuf.Empty',
+    create_key=_descriptor._internal_create_key,
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_SYMMETRICKEYSERVICE)

@@ -24,6 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.serverless.triggers.v1',
   syntax='proto3',
   serialized_options=b'\n\'yandex.cloud.api.serverless.triggers.v1ZPgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/triggers/v1;triggers',
+  create_key=_descriptor._internal_create_key,
   serialized_pb=b'\n9yandex/cloud/serverless/triggers/v1/trigger_service.proto\x12#yandex.cloud.serverless.triggers.v1\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a\x31yandex/cloud/serverless/triggers/v1/trigger.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"-\n\x11GetTriggerRequest\x12\x18\n\ntrigger_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"e\n\x13ListTriggersRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\"o\n\x14ListTriggersResponse\x12>\n\x08triggers\x18\x01 \x03(\x0b\x32,.yandex.cloud.serverless.triggers.v1.Trigger\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x8f\x03\n\x14\x43reateTriggerRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x96\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x45.yandex.cloud.serverless.triggers.v1.CreateTriggerRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12\x45\n\x04rule\x18\x05 \x01(\x0b\x32\x31.yandex.cloud.serverless.triggers.v1.Trigger.RuleB\x04\xe8\xc7\x31\x01\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15\x43reateTriggerMetadata\x12\x12\n\ntrigger_id\x18\x01 \x01(\t\"\xfa\x02\n\x14UpdateTriggerRequest\x12\x18\n\ntrigger_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x96\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x45.yandex.cloud.serverless.triggers.v1.UpdateTriggerRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"1\n\x15UpdateTriggerMetadata\x12\x18\n\ntrigger_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"0\n\x14\x44\x65leteTriggerRequest\x12\x18\n\ntrigger_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"1\n\x15\x44\x65leteTriggerMetadata\x12\x18\n\ntrigger_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"/\n\x13PauseTriggerRequest\x12\x18\n\ntrigger_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"0\n\x14PauseTriggerMetadata\x12\x18\n\ntrigger_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"0\n\x14ResumeTriggerRequest\x12\x18\n\ntrigger_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"1\n\x15ResumeTriggerMetadata\x12\x18\n\ntrigger_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\x92\x01\n\x1cListTriggerOperationsRequest\x12\x18\n\ntrigger_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"o\n\x1dListTriggerOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xcc\x0b\n\x0eTriggerService\x12\x97\x01\n\x03Get\x12\x36.yandex.cloud.serverless.triggers.v1.GetTriggerRequest\x1a,.yandex.cloud.serverless.triggers.v1.Trigger\"*\x82\xd3\xe4\x93\x02$\x12\"/triggers/v1/triggers/{trigger_id}\x12\x9a\x01\n\x04List\x12\x38.yandex.cloud.serverless.triggers.v1.ListTriggersRequest\x1a\x39.yandex.cloud.serverless.triggers.v1.ListTriggersResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/triggers/v1/triggers\x12\xac\x01\n\x06\x43reate\x12\x39.yandex.cloud.serverless.triggers.v1.CreateTriggerRequest\x1a!.yandex.cloud.operation.Operation\"D\x82\xd3\xe4\x93\x02\x1a\"\x15/triggers/v1/triggers:\x01*\xb2\xd2* \n\x15\x43reateTriggerMetadata\x12\x07Trigger\x12\xb9\x01\n\x06Update\x12\x39.yandex.cloud.serverless.triggers.v1.UpdateTriggerRequest\x1a!.yandex.cloud.operation.Operation\"Q\x82\xd3\xe4\x93\x02\'2\"/triggers/v1/triggers/{trigger_id}:\x01*\xb2\xd2* \n\x15UpdateTriggerMetadata\x12\x07Trigger\x12\xc4\x01\n\x06\x44\x65lete\x12\x39.yandex.cloud.serverless.triggers.v1.DeleteTriggerRequest\x1a!.yandex.cloud.operation.Operation\"\\\x82\xd3\xe4\x93\x02$*\"/triggers/v1/triggers/{trigger_id}\xb2\xd2*.\n\x15\x44\x65leteTriggerMetadata\x12\x15google.protobuf.Empty\x12\xbc\x01\n\x05Pause\x12\x38.yandex.cloud.serverless.triggers.v1.PauseTriggerRequest\x1a!.yandex.cloud.operation.Operation\"V\x82\xd3\xe4\x93\x02-\"(/triggers/v1/triggers/{trigger_id}:pause:\x01*\xb2\xd2*\x1f\n\x14PauseTriggerMetadata\x12\x07Trigger\x12\xc0\x01\n\x06Resume\x12\x39.yandex.cloud.serverless.triggers.v1.ResumeTriggerRequest\x1a!.yandex.cloud.operation.Operation\"X\x82\xd3\xe4\x93\x02.\")/triggers/v1/triggers/{trigger_id}:resume:\x01*\xb2\xd2* \n\x15ResumeTriggerMetadata\x12\x07Trigger\x12\xce\x01\n\x0eListOperations\x12\x41.yandex.cloud.serverless.triggers.v1.ListTriggerOperationsRequest\x1a\x42.yandex.cloud.serverless.triggers.v1.ListTriggerOperationsResponse\"5\x82\xd3\xe4\x93\x02/\x12-/triggers/v1/triggers/{trigger_id}/operationsB{\n\'yandex.cloud.api.serverless.triggers.v1ZPgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/triggers/v1;triggersb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_serverless_dot_triggers_dot_v1_dot_trigger__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
@@ -37,6 +38,7 @@ _GETTRIGGERREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='trigger_id', full_name='yandex.cloud.serverless.triggers.v1.GetTriggerRequest.trigger_id', index=0,
@@ -44,7 +46,7 @@ _GETTRIGGERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -68,6 +70,7 @@ _LISTTRIGGERSREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='folder_id', full_name='yandex.cloud.serverless.triggers.v1.ListTriggersRequest.folder_id', index=0,
@@ -75,28 +78,28 @@ _LISTTRIGGERSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.serverless.triggers.v1.ListTriggersRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.serverless.triggers.v1.ListTriggersRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='filter', full_name='yandex.cloud.serverless.triggers.v1.ListTriggersRequest.filter', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -120,6 +123,7 @@ _LISTTRIGGERSRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='triggers', full_name='yandex.cloud.serverless.triggers.v1.ListTriggersResponse.triggers', index=0,
@@ -127,14 +131,14 @@ _LISTTRIGGERSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.serverless.triggers.v1.ListTriggersResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -158,6 +162,7 @@ _CREATETRIGGERREQUEST_LABELSENTRY = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key', full_name='yandex.cloud.serverless.triggers.v1.CreateTriggerRequest.LabelsEntry.key', index=0,
@@ -165,14 +170,14 @@ _CREATETRIGGERREQUEST_LABELSENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='value', full_name='yandex.cloud.serverless.triggers.v1.CreateTriggerRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -195,6 +200,7 @@ _CREATETRIGGERREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='folder_id', full_name='yandex.cloud.serverless.triggers.v1.CreateTriggerRequest.folder_id', index=0,
@@ -202,35 +208,35 @@ _CREATETRIGGERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='name', full_name='yandex.cloud.serverless.triggers.v1.CreateTriggerRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]', file=DESCRIPTOR),
+      serialized_options=b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='description', full_name='yandex.cloud.serverless.triggers.v1.CreateTriggerRequest.description', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='labels', full_name='yandex.cloud.serverless.triggers.v1.CreateTriggerRequest.labels', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR),
+      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='rule', full_name='yandex.cloud.serverless.triggers.v1.CreateTriggerRequest.rule', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -254,6 +260,7 @@ _CREATETRIGGERMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='trigger_id', full_name='yandex.cloud.serverless.triggers.v1.CreateTriggerMetadata.trigger_id', index=0,
@@ -261,7 +268,7 @@ _CREATETRIGGERMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -285,6 +292,7 @@ _UPDATETRIGGERREQUEST_LABELSENTRY = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key', full_name='yandex.cloud.serverless.triggers.v1.UpdateTriggerRequest.LabelsEntry.key', index=0,
@@ -292,14 +300,14 @@ _UPDATETRIGGERREQUEST_LABELSENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='value', full_name='yandex.cloud.serverless.triggers.v1.UpdateTriggerRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -322,6 +330,7 @@ _UPDATETRIGGERREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='trigger_id', full_name='yandex.cloud.serverless.triggers.v1.UpdateTriggerRequest.trigger_id', index=0,
@@ -329,35 +338,35 @@ _UPDATETRIGGERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='update_mask', full_name='yandex.cloud.serverless.triggers.v1.UpdateTriggerRequest.update_mask', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='name', full_name='yandex.cloud.serverless.triggers.v1.UpdateTriggerRequest.name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]', file=DESCRIPTOR),
+      serialized_options=b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='description', full_name='yandex.cloud.serverless.triggers.v1.UpdateTriggerRequest.description', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='labels', full_name='yandex.cloud.serverless.triggers.v1.UpdateTriggerRequest.labels', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR),
+      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -381,6 +390,7 @@ _UPDATETRIGGERMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='trigger_id', full_name='yandex.cloud.serverless.triggers.v1.UpdateTriggerMetadata.trigger_id', index=0,
@@ -388,7 +398,7 @@ _UPDATETRIGGERMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -412,6 +422,7 @@ _DELETETRIGGERREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='trigger_id', full_name='yandex.cloud.serverless.triggers.v1.DeleteTriggerRequest.trigger_id', index=0,
@@ -419,7 +430,7 @@ _DELETETRIGGERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -443,6 +454,7 @@ _DELETETRIGGERMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='trigger_id', full_name='yandex.cloud.serverless.triggers.v1.DeleteTriggerMetadata.trigger_id', index=0,
@@ -450,7 +462,7 @@ _DELETETRIGGERMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -474,6 +486,7 @@ _PAUSETRIGGERREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='trigger_id', full_name='yandex.cloud.serverless.triggers.v1.PauseTriggerRequest.trigger_id', index=0,
@@ -481,7 +494,7 @@ _PAUSETRIGGERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -505,6 +518,7 @@ _PAUSETRIGGERMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='trigger_id', full_name='yandex.cloud.serverless.triggers.v1.PauseTriggerMetadata.trigger_id', index=0,
@@ -512,7 +526,7 @@ _PAUSETRIGGERMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -536,6 +550,7 @@ _RESUMETRIGGERREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='trigger_id', full_name='yandex.cloud.serverless.triggers.v1.ResumeTriggerRequest.trigger_id', index=0,
@@ -543,7 +558,7 @@ _RESUMETRIGGERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -567,6 +582,7 @@ _RESUMETRIGGERMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='trigger_id', full_name='yandex.cloud.serverless.triggers.v1.ResumeTriggerMetadata.trigger_id', index=0,
@@ -574,7 +590,7 @@ _RESUMETRIGGERMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -598,6 +614,7 @@ _LISTTRIGGEROPERATIONSREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='trigger_id', full_name='yandex.cloud.serverless.triggers.v1.ListTriggerOperationsRequest.trigger_id', index=0,
@@ -605,28 +622,28 @@ _LISTTRIGGEROPERATIONSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.serverless.triggers.v1.ListTriggerOperationsRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\0060-1000', file=DESCRIPTOR),
+      serialized_options=b'\372\3071\0060-1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.serverless.triggers.v1.ListTriggerOperationsRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='filter', full_name='yandex.cloud.serverless.triggers.v1.ListTriggerOperationsRequest.filter', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=1000', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -650,6 +667,7 @@ _LISTTRIGGEROPERATIONSRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='operations', full_name='yandex.cloud.serverless.triggers.v1.ListTriggerOperationsResponse.operations', index=0,
@@ -657,14 +675,14 @@ _LISTTRIGGEROPERATIONSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.serverless.triggers.v1.ListTriggerOperationsResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -860,6 +878,7 @@ _TRIGGERSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
+  create_key=_descriptor._internal_create_key,
   serialized_start=2024,
   serialized_end=3508,
   methods=[
@@ -871,6 +890,7 @@ _TRIGGERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_GETTRIGGERREQUEST,
     output_type=yandex_dot_cloud_dot_serverless_dot_triggers_dot_v1_dot_trigger__pb2._TRIGGER,
     serialized_options=b'\202\323\344\223\002$\022\"/triggers/v1/triggers/{trigger_id}',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='List',
@@ -880,6 +900,7 @@ _TRIGGERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_LISTTRIGGERSREQUEST,
     output_type=_LISTTRIGGERSRESPONSE,
     serialized_options=b'\202\323\344\223\002\027\022\025/triggers/v1/triggers',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Create',
@@ -889,6 +910,7 @@ _TRIGGERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_CREATETRIGGERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\002\032\"\025/triggers/v1/triggers:\001*\262\322* \n\025CreateTriggerMetadata\022\007Trigger',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Update',
@@ -898,6 +920,7 @@ _TRIGGERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_UPDATETRIGGERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\002\'2\"/triggers/v1/triggers/{trigger_id}:\001*\262\322* \n\025UpdateTriggerMetadata\022\007Trigger',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Delete',
@@ -907,6 +930,7 @@ _TRIGGERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_DELETETRIGGERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\002$*\"/triggers/v1/triggers/{trigger_id}\262\322*.\n\025DeleteTriggerMetadata\022\025google.protobuf.Empty',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Pause',
@@ -916,6 +940,7 @@ _TRIGGERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_PAUSETRIGGERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\002-\"(/triggers/v1/triggers/{trigger_id}:pause:\001*\262\322*\037\n\024PauseTriggerMetadata\022\007Trigger',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Resume',
@@ -925,6 +950,7 @@ _TRIGGERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_RESUMETRIGGERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\002.\")/triggers/v1/triggers/{trigger_id}:resume:\001*\262\322* \n\025ResumeTriggerMetadata\022\007Trigger',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='ListOperations',
@@ -934,6 +960,7 @@ _TRIGGERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_LISTTRIGGEROPERATIONSREQUEST,
     output_type=_LISTTRIGGEROPERATIONSRESPONSE,
     serialized_options=b'\202\323\344\223\002/\022-/triggers/v1/triggers/{trigger_id}/operations',
+    create_key=_descriptor._internal_create_key,
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_TRIGGERSERVICE)

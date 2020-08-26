@@ -19,6 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.k8s.v1',
   syntax='proto3',
   serialized_options=b'\n\027yandex.cloud.api.k8s.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/k8s/v1;k8s',
+  create_key=_descriptor._internal_create_key,
   serialized_pb=b'\n!yandex/cloud/k8s/v1/version.proto\x12\x13yandex.cloud.k8s.v1\x1a\x1dyandex/cloud/validation.proto\"\x80\x01\n\x0bVersionInfo\x12\x17\n\x0f\x63urrent_version\x18\x01 \x01(\t\x12\x1e\n\x16new_revision_available\x18\x02 \x01(\x08\x12\x1c\n\x14new_revision_summary\x18\x03 \x01(\t\x12\x1a\n\x12version_deprecated\x18\x04 \x01(\x08\"T\n\x11UpdateVersionSpec\x12\x11\n\x07version\x18\x01 \x01(\tH\x00\x12\x19\n\x0flatest_revision\x18\x02 \x01(\x08H\x00\x42\x11\n\tspecifier\x12\x04\xc0\xc1\x31\x01\x42V\n\x17yandex.cloud.api.k8s.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/k8s/v1;k8sb\x06proto3'
   ,
   dependencies=[yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
@@ -32,6 +33,7 @@ _VERSIONINFO = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='current_version', full_name='yandex.cloud.k8s.v1.VersionInfo.current_version', index=0,
@@ -39,28 +41,28 @@ _VERSIONINFO = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='new_revision_available', full_name='yandex.cloud.k8s.v1.VersionInfo.new_revision_available', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='new_revision_summary', full_name='yandex.cloud.k8s.v1.VersionInfo.new_revision_summary', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='version_deprecated', full_name='yandex.cloud.k8s.v1.VersionInfo.version_deprecated', index=3,
       number=4, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -84,6 +86,7 @@ _UPDATEVERSIONSPEC = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='version', full_name='yandex.cloud.k8s.v1.UpdateVersionSpec.version', index=0,
@@ -91,14 +94,14 @@ _UPDATEVERSIONSPEC = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='latest_revision', full_name='yandex.cloud.k8s.v1.UpdateVersionSpec.latest_revision', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -112,7 +115,9 @@ _UPDATEVERSIONSPEC = _descriptor.Descriptor(
   oneofs=[
     _descriptor.OneofDescriptor(
       name='specifier', full_name='yandex.cloud.k8s.v1.UpdateVersionSpec.specifier',
-      index=0, containing_type=None, fields=[], serialized_options=b'\300\3011\001'),
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[], serialized_options=b'\300\3011\001'),
   ],
   serialized_start=220,
   serialized_end=304,

@@ -21,6 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.compute.v1',
   syntax='proto3',
   serialized_options=b'\n\033yandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;compute',
+  create_key=_descriptor._internal_create_key,
   serialized_pb=b'\n*yandex/cloud/compute/v1/zone_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a\"yandex/cloud/compute/v1/zone.proto\x1a\x1dyandex/cloud/validation.proto\"P\n\x10ListZonesRequest\x12\x1d\n\tpage_size\x18\x01 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=100\"Z\n\x11ListZonesResponse\x12,\n\x05zones\x18\x01 \x03(\x0b\x32\x1d.yandex.cloud.compute.v1.Zone\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"/\n\x0eGetZoneRequest\x12\x1d\n\x07zone_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=502\xfb\x01\n\x0bZoneService\x12r\n\x03Get\x12\'.yandex.cloud.compute.v1.GetZoneRequest\x1a\x1d.yandex.cloud.compute.v1.Zone\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/compute/v1/zones/{zone_id}\x12x\n\x04List\x12).yandex.cloud.compute.v1.ListZonesRequest\x1a*.yandex.cloud.compute.v1.ListZonesResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/compute/v1/zonesBb\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_compute_dot_v1_dot_zone__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
@@ -34,6 +35,7 @@ _LISTZONESREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.compute.v1.ListZonesRequest.page_size', index=0,
@@ -41,14 +43,14 @@ _LISTZONESREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR),
+      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.compute.v1.ListZonesRequest.page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -72,6 +74,7 @@ _LISTZONESRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='zones', full_name='yandex.cloud.compute.v1.ListZonesResponse.zones', index=0,
@@ -79,14 +82,14 @@ _LISTZONESRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.compute.v1.ListZonesResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -110,6 +113,7 @@ _GETZONEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='zone_id', full_name='yandex.cloud.compute.v1.GetZoneRequest.zone_id', index=0,
@@ -117,7 +121,7 @@ _GETZONEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -173,6 +177,7 @@ _ZONESERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
+  create_key=_descriptor._internal_create_key,
   serialized_start=392,
   serialized_end=643,
   methods=[
@@ -184,6 +189,7 @@ _ZONESERVICE = _descriptor.ServiceDescriptor(
     input_type=_GETZONEREQUEST,
     output_type=yandex_dot_cloud_dot_compute_dot_v1_dot_zone__pb2._ZONE,
     serialized_options=b'\202\323\344\223\002\035\022\033/compute/v1/zones/{zone_id}',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='List',
@@ -193,6 +199,7 @@ _ZONESERVICE = _descriptor.ServiceDescriptor(
     input_type=_LISTZONESREQUEST,
     output_type=_LISTZONESRESPONSE,
     serialized_options=b'\202\323\344\223\002\023\022\021/compute/v1/zones',
+    create_key=_descriptor._internal_create_key,
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_ZONESERVICE)

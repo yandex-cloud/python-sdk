@@ -21,6 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.mdb.mongodb.v1',
   syntax='proto3',
   serialized_options=b'\n\037yandex.cloud.api.mdb.mongodb.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1;mongodb',
+  create_key=_descriptor._internal_create_key,
   serialized_pb=b'\n9yandex/cloud/mdb/mongodb/v1/resource_preset_service.proto\x12\x1byandex.cloud.mdb.mongodb.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1dyandex/cloud/validation.proto\x1a\x31yandex/cloud/mdb/mongodb/v1/resource_preset.proto\"<\n\x18GetResourcePresetRequest\x12 \n\x12resource_preset_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"Z\n\x1aListResourcePresetsRequest\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"}\n\x1bListResourcePresetsResponse\x12\x45\n\x10resource_presets\x18\x01 \x03(\x0b\x32+.yandex.cloud.mdb.mongodb.v1.ResourcePreset\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xee\x02\n\x15ResourcePresetService\x12\xab\x01\n\x03Get\x12\x35.yandex.cloud.mdb.mongodb.v1.GetResourcePresetRequest\x1a+.yandex.cloud.mdb.mongodb.v1.ResourcePreset\"@\x82\xd3\xe4\x93\x02:\x12\x38/managed-mongodb/v1/resourcePresets/{resource_preset_id}\x12\xa6\x01\n\x04List\x12\x37.yandex.cloud.mdb.mongodb.v1.ListResourcePresetsRequest\x1a\x38.yandex.cloud.mdb.mongodb.v1.ListResourcePresetsResponse\"+\x82\xd3\xe4\x93\x02%\x12#/managed-mongodb/v1/resourcePresetsBj\n\x1fyandex.cloud.api.mdb.mongodb.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1;mongodbb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_resource__preset__pb2.DESCRIPTOR,])
@@ -34,6 +35,7 @@ _GETRESOURCEPRESETREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='resource_preset_id', full_name='yandex.cloud.mdb.mongodb.v1.GetResourcePresetRequest.resource_preset_id', index=0,
@@ -41,7 +43,7 @@ _GETRESOURCEPRESETREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -65,6 +67,7 @@ _LISTRESOURCEPRESETSREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.mdb.mongodb.v1.ListResourcePresetsRequest.page_size', index=0,
@@ -72,14 +75,14 @@ _LISTRESOURCEPRESETSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR),
+      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.mdb.mongodb.v1.ListResourcePresetsRequest.page_token', index=1,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -103,6 +106,7 @@ _LISTRESOURCEPRESETSRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='resource_presets', full_name='yandex.cloud.mdb.mongodb.v1.ListResourcePresetsResponse.resource_presets', index=0,
@@ -110,14 +114,14 @@ _LISTRESOURCEPRESETSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.mdb.mongodb.v1.ListResourcePresetsResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -173,6 +177,7 @@ _RESOURCEPRESETSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
+  create_key=_descriptor._internal_create_key,
   serialized_start=484,
   serialized_end=850,
   methods=[
@@ -184,6 +189,7 @@ _RESOURCEPRESETSERVICE = _descriptor.ServiceDescriptor(
     input_type=_GETRESOURCEPRESETREQUEST,
     output_type=yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_resource__preset__pb2._RESOURCEPRESET,
     serialized_options=b'\202\323\344\223\002:\0228/managed-mongodb/v1/resourcePresets/{resource_preset_id}',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='List',
@@ -193,6 +199,7 @@ _RESOURCEPRESETSERVICE = _descriptor.ServiceDescriptor(
     input_type=_LISTRESOURCEPRESETSREQUEST,
     output_type=_LISTRESOURCEPRESETSRESPONSE,
     serialized_options=b'\202\323\344\223\002%\022#/managed-mongodb/v1/resourcePresets',
+    create_key=_descriptor._internal_create_key,
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_RESOURCEPRESETSERVICE)

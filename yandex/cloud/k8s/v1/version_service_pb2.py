@@ -20,6 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.k8s.v1',
   syntax='proto3',
   serialized_options=b'\n\027yandex.cloud.api.k8s.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/k8s/v1;k8s',
+  create_key=_descriptor._internal_create_key,
   serialized_pb=b'\n)yandex/cloud/k8s/v1/version_service.proto\x12\x13yandex.cloud.k8s.v1\x1a\x1cgoogle/api/annotations.proto\x1a!yandex/cloud/k8s/v1/cluster.proto\"\x15\n\x13ListVersionsRequest\"Z\n\x14ListVersionsResponse\x12\x42\n\x12\x61vailable_versions\x18\x01 \x03(\x0b\x32&.yandex.cloud.k8s.v1.AvailableVersions\"c\n\x11\x41vailableVersions\x12<\n\x0frelease_channel\x18\x01 \x01(\x0e\x32#.yandex.cloud.k8s.v1.ReleaseChannel\x12\x10\n\x08versions\x18\x02 \x03(\t2\x97\x01\n\x0eVersionService\x12\x84\x01\n\x04List\x12(.yandex.cloud.k8s.v1.ListVersionsRequest\x1a).yandex.cloud.k8s.v1.ListVersionsResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/managed-kubernetes/v1/versionsBV\n\x17yandex.cloud.api.k8s.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/k8s/v1;k8sb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__pb2.DESCRIPTOR,])
@@ -33,6 +34,7 @@ _LISTVERSIONSREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
   ],
   extensions=[
@@ -57,6 +59,7 @@ _LISTVERSIONSRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='available_versions', full_name='yandex.cloud.k8s.v1.ListVersionsResponse.available_versions', index=0,
@@ -64,7 +67,7 @@ _LISTVERSIONSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -88,6 +91,7 @@ _AVAILABLEVERSIONS = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='release_channel', full_name='yandex.cloud.k8s.v1.AvailableVersions.release_channel', index=0,
@@ -95,14 +99,14 @@ _AVAILABLEVERSIONS = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='versions', full_name='yandex.cloud.k8s.v1.AvailableVersions.versions', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -156,6 +160,7 @@ _VERSIONSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
+  create_key=_descriptor._internal_create_key,
   serialized_start=348,
   serialized_end=499,
   methods=[
@@ -167,6 +172,7 @@ _VERSIONSERVICE = _descriptor.ServiceDescriptor(
     input_type=_LISTVERSIONSREQUEST,
     output_type=_LISTVERSIONSRESPONSE,
     serialized_options=b'\202\323\344\223\002!\022\037/managed-kubernetes/v1/versions',
+    create_key=_descriptor._internal_create_key,
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_VERSIONSERVICE)

@@ -21,6 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.ai.translate.v2',
   syntax='proto3',
   serialized_options=b'\n yandex.cloud.api.ai.translate.v2ZJgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/translate/v2;translate',
+  create_key=_descriptor._internal_create_key,
   serialized_pb=b'\n6yandex/cloud/ai/translate/v2/translation_service.proto\x12\x1cyandex.cloud.ai.translate.v2\x1a\x1cgoogle/api/annotations.proto\x1a\x1dyandex/cloud/validation.proto\x1a.yandex/cloud/ai/translate/v2/translation.proto\"\x84\x03\n\x10TranslateRequest\x12%\n\x14source_language_code\x18\x01 \x01(\tB\x07\x8a\xc8\x31\x03<=3\x12)\n\x14target_language_code\x18\x02 \x01(\tB\x0b\xe8\xc7\x31\x01\x8a\xc8\x31\x03<=3\x12\x45\n\x06\x66ormat\x18\x03 \x01(\x0e\x32\x35.yandex.cloud.ai.translate.v2.TranslateRequest.Format\x12\x15\n\x05texts\x18\x04 \x03(\tB\x06\x82\xc8\x31\x02>0\x12\x1b\n\tfolder_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x17\n\x05model\x18\x06 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12N\n\x0fglossary_config\x18\x07 \x01(\x0b\x32\x35.yandex.cloud.ai.translate.v2.TranslateGlossaryConfig\":\n\x06\x46ormat\x12\x16\n\x12\x46ORMAT_UNSPECIFIED\x10\x00\x12\x0e\n\nPLAIN_TEXT\x10\x01\x12\x08\n\x04HTML\x10\x02\"w\n\x17TranslateGlossaryConfig\x12\x43\n\rglossary_data\x18\x01 \x01(\x0b\x32*.yandex.cloud.ai.translate.v2.GlossaryDataH\x00\x42\x17\n\x0fglossary_source\x12\x04\xc0\xc1\x31\x01\"\\\n\x0cGlossaryData\x12L\n\x0eglossary_pairs\x18\x01 \x03(\x0b\x32*.yandex.cloud.ai.translate.v2.GlossaryPairB\x08\x82\xc8\x31\x04\x31-50\"H\n\x0cGlossaryPair\x12\x19\n\x0bsource_text\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\x0ftranslated_text\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"W\n\x11TranslateResponse\x12\x42\n\x0ctranslations\x18\x01 \x03(\x0b\x32,.yandex.cloud.ai.translate.v2.TranslatedText\"\x80\x01\n\x15\x44\x65tectLanguageRequest\x12\x1c\n\x04text\x18\x01 \x01(\tB\x0e\xe8\xc7\x31\x01\x8a\xc8\x31\x06<=1000\x12,\n\x13language_code_hints\x18\x02 \x03(\tB\x0f\x82\xc8\x31\x04<=10\x8a\xc8\x31\x03<=3\x12\x1b\n\tfolder_id\x18\x03 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"/\n\x16\x44\x65tectLanguageResponse\x12\x15\n\rlanguage_code\x18\x01 \x01(\t\"3\n\x14ListLanguagesRequest\x12\x1b\n\tfolder_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"R\n\x15ListLanguagesResponse\x12\x39\n\tlanguages\x18\x01 \x03(\x0b\x32&.yandex.cloud.ai.translate.v2.Language2\xe5\x03\n\x12TranslationService\x12\x90\x01\n\tTranslate\x12..yandex.cloud.ai.translate.v2.TranslateRequest\x1a/.yandex.cloud.ai.translate.v2.TranslateResponse\"\"\x82\xd3\xe4\x93\x02\x1c\"\x17/translate/v2/translate:\x01*\x12\x9c\x01\n\x0e\x44\x65tectLanguage\x12\x33.yandex.cloud.ai.translate.v2.DetectLanguageRequest\x1a\x34.yandex.cloud.ai.translate.v2.DetectLanguageResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/translate/v2/detect:\x01*\x12\x9c\x01\n\rListLanguages\x12\x32.yandex.cloud.ai.translate.v2.ListLanguagesRequest\x1a\x33.yandex.cloud.ai.translate.v2.ListLanguagesResponse\"\"\x82\xd3\xe4\x93\x02\x1c\"\x17/translate/v2/languages:\x01*Bn\n yandex.cloud.api.ai.translate.v2ZJgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/translate/v2;translateb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_ai_dot_translate_dot_v2_dot_translation__pb2.DESCRIPTOR,])
@@ -32,19 +33,23 @@ _TRANSLATEREQUEST_FORMAT = _descriptor.EnumDescriptor(
   full_name='yandex.cloud.ai.translate.v2.TranslateRequest.Format',
   filename=None,
   file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
   values=[
     _descriptor.EnumValueDescriptor(
       name='FORMAT_UNSPECIFIED', index=0, number=0,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='PLAIN_TEXT', index=1, number=1,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
       name='HTML', index=2, number=2,
       serialized_options=None,
-      type=None),
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
@@ -60,6 +65,7 @@ _TRANSLATEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='source_language_code', full_name='yandex.cloud.ai.translate.v2.TranslateRequest.source_language_code', index=0,
@@ -67,49 +73,49 @@ _TRANSLATEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\003<=3', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\003<=3', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='target_language_code', full_name='yandex.cloud.ai.translate.v2.TranslateRequest.target_language_code', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\003<=3', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\003<=3', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='format', full_name='yandex.cloud.ai.translate.v2.TranslateRequest.format', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='texts', full_name='yandex.cloud.ai.translate.v2.TranslateRequest.texts', index=3,
       number=4, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\002>0', file=DESCRIPTOR),
+      serialized_options=b'\202\3101\002>0', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='folder_id', full_name='yandex.cloud.ai.translate.v2.TranslateRequest.folder_id', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='model', full_name='yandex.cloud.ai.translate.v2.TranslateRequest.model', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='glossary_config', full_name='yandex.cloud.ai.translate.v2.TranslateRequest.glossary_config', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -134,6 +140,7 @@ _TRANSLATEGLOSSARYCONFIG = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='glossary_data', full_name='yandex.cloud.ai.translate.v2.TranslateGlossaryConfig.glossary_data', index=0,
@@ -141,7 +148,7 @@ _TRANSLATEGLOSSARYCONFIG = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -155,7 +162,9 @@ _TRANSLATEGLOSSARYCONFIG = _descriptor.Descriptor(
   oneofs=[
     _descriptor.OneofDescriptor(
       name='glossary_source', full_name='yandex.cloud.ai.translate.v2.TranslateGlossaryConfig.glossary_source',
-      index=0, containing_type=None, fields=[], serialized_options=b'\300\3011\001'),
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[], serialized_options=b'\300\3011\001'),
   ],
   serialized_start=588,
   serialized_end=707,
@@ -168,6 +177,7 @@ _GLOSSARYDATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='glossary_pairs', full_name='yandex.cloud.ai.translate.v2.GlossaryData.glossary_pairs', index=0,
@@ -175,7 +185,7 @@ _GLOSSARYDATA = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\0041-50', file=DESCRIPTOR),
+      serialized_options=b'\202\3101\0041-50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -199,6 +209,7 @@ _GLOSSARYPAIR = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='source_text', full_name='yandex.cloud.ai.translate.v2.GlossaryPair.source_text', index=0,
@@ -206,14 +217,14 @@ _GLOSSARYPAIR = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='translated_text', full_name='yandex.cloud.ai.translate.v2.GlossaryPair.translated_text', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -237,6 +248,7 @@ _TRANSLATERESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='translations', full_name='yandex.cloud.ai.translate.v2.TranslateResponse.translations', index=0,
@@ -244,7 +256,7 @@ _TRANSLATERESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -268,6 +280,7 @@ _DETECTLANGUAGEREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='text', full_name='yandex.cloud.ai.translate.v2.DetectLanguageRequest.text', index=0,
@@ -275,21 +288,21 @@ _DETECTLANGUAGEREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\006<=1000', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='language_code_hints', full_name='yandex.cloud.ai.translate.v2.DetectLanguageRequest.language_code_hints', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=10\212\3101\003<=3', file=DESCRIPTOR),
+      serialized_options=b'\202\3101\004<=10\212\3101\003<=3', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='folder_id', full_name='yandex.cloud.ai.translate.v2.DetectLanguageRequest.folder_id', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -313,6 +326,7 @@ _DETECTLANGUAGERESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='language_code', full_name='yandex.cloud.ai.translate.v2.DetectLanguageResponse.language_code', index=0,
@@ -320,7 +334,7 @@ _DETECTLANGUAGERESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -344,6 +358,7 @@ _LISTLANGUAGESREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='folder_id', full_name='yandex.cloud.ai.translate.v2.ListLanguagesRequest.folder_id', index=0,
@@ -351,7 +366,7 @@ _LISTLANGUAGESREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -375,6 +390,7 @@ _LISTLANGUAGESRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='languages', full_name='yandex.cloud.ai.translate.v2.ListLanguagesResponse.languages', index=0,
@@ -382,7 +398,7 @@ _LISTLANGUAGESRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -505,6 +521,7 @@ _TRANSLATIONSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
+  create_key=_descriptor._internal_create_key,
   serialized_start=1284,
   serialized_end=1769,
   methods=[
@@ -516,6 +533,7 @@ _TRANSLATIONSERVICE = _descriptor.ServiceDescriptor(
     input_type=_TRANSLATEREQUEST,
     output_type=_TRANSLATERESPONSE,
     serialized_options=b'\202\323\344\223\002\034\"\027/translate/v2/translate:\001*',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='DetectLanguage',
@@ -525,6 +543,7 @@ _TRANSLATIONSERVICE = _descriptor.ServiceDescriptor(
     input_type=_DETECTLANGUAGEREQUEST,
     output_type=_DETECTLANGUAGERESPONSE,
     serialized_options=b'\202\323\344\223\002\031\"\024/translate/v2/detect:\001*',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='ListLanguages',
@@ -534,6 +553,7 @@ _TRANSLATIONSERVICE = _descriptor.ServiceDescriptor(
     input_type=_LISTLANGUAGESREQUEST,
     output_type=_LISTLANGUAGESRESPONSE,
     serialized_options=b'\202\323\344\223\002\034\"\027/translate/v2/languages:\001*',
+    create_key=_descriptor._internal_create_key,
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_TRANSLATIONSERVICE)

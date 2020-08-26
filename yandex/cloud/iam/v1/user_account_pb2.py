@@ -19,6 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.iam.v1',
   syntax='proto3',
   serialized_options=b'\n\027yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iam',
+  create_key=_descriptor._internal_create_key,
   serialized_pb=b'\n&yandex/cloud/iam/v1/user_account.proto\x12\x13yandex.cloud.iam.v1\x1a\x1dyandex/cloud/validation.proto\"\xca\x01\n\x0bUserAccount\x12\n\n\x02id\x18\x01 \x01(\t\x12V\n\x1cyandex_passport_user_account\x18\x02 \x01(\x0b\x32..yandex.cloud.iam.v1.YandexPassportUserAccountH\x00\x12\x41\n\x11saml_user_account\x18\x03 \x01(\x0b\x32$.yandex.cloud.iam.v1.SamlUserAccountH\x00\x42\x14\n\x0cuser_account\x12\x04\xc0\xc1\x31\x01\"A\n\x19YandexPassportUserAccount\x12\r\n\x05login\x18\x01 \x01(\t\x12\x15\n\rdefault_email\x18\x02 \x01(\t\"\x9f\x02\n\x0fSamlUserAccount\x12#\n\rfederation_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1e\n\x07name_id\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x31-256\x12H\n\nattributes\x18\x03 \x03(\x0b\x32\x34.yandex.cloud.iam.v1.SamlUserAccount.AttributesEntry\x1a\x1a\n\tAttribute\x12\r\n\x05value\x18\x01 \x03(\t\x1a\x61\n\x0f\x41ttributesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12=\n\x05value\x18\x02 \x01(\x0b\x32..yandex.cloud.iam.v1.SamlUserAccount.Attribute:\x02\x38\x01\x42V\n\x17yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3'
   ,
   dependencies=[yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
@@ -32,6 +33,7 @@ _USERACCOUNT = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='yandex.cloud.iam.v1.UserAccount.id', index=0,
@@ -39,21 +41,21 @@ _USERACCOUNT = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='yandex_passport_user_account', full_name='yandex.cloud.iam.v1.UserAccount.yandex_passport_user_account', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='saml_user_account', full_name='yandex.cloud.iam.v1.UserAccount.saml_user_account', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -67,7 +69,9 @@ _USERACCOUNT = _descriptor.Descriptor(
   oneofs=[
     _descriptor.OneofDescriptor(
       name='user_account', full_name='yandex.cloud.iam.v1.UserAccount.user_account',
-      index=0, containing_type=None, fields=[], serialized_options=b'\300\3011\001'),
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[], serialized_options=b'\300\3011\001'),
   ],
   serialized_start=95,
   serialized_end=297,
@@ -80,6 +84,7 @@ _YANDEXPASSPORTUSERACCOUNT = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='login', full_name='yandex.cloud.iam.v1.YandexPassportUserAccount.login', index=0,
@@ -87,14 +92,14 @@ _YANDEXPASSPORTUSERACCOUNT = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='default_email', full_name='yandex.cloud.iam.v1.YandexPassportUserAccount.default_email', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -118,6 +123,7 @@ _SAMLUSERACCOUNT_ATTRIBUTE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='value', full_name='yandex.cloud.iam.v1.SamlUserAccount.Attribute.value', index=0,
@@ -125,7 +131,7 @@ _SAMLUSERACCOUNT_ATTRIBUTE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -148,6 +154,7 @@ _SAMLUSERACCOUNT_ATTRIBUTESENTRY = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key', full_name='yandex.cloud.iam.v1.SamlUserAccount.AttributesEntry.key', index=0,
@@ -155,14 +162,14 @@ _SAMLUSERACCOUNT_ATTRIBUTESENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='value', full_name='yandex.cloud.iam.v1.SamlUserAccount.AttributesEntry.value', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -185,6 +192,7 @@ _SAMLUSERACCOUNT = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='federation_id', full_name='yandex.cloud.iam.v1.SamlUserAccount.federation_id', index=0,
@@ -192,21 +200,21 @@ _SAMLUSERACCOUNT = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='name_id', full_name='yandex.cloud.iam.v1.SamlUserAccount.name_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\0051-256', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\0051-256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='attributes', full_name='yandex.cloud.iam.v1.SamlUserAccount.attributes', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],

@@ -26,7 +26,8 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.dataproc.v1',
   syntax='proto3',
   serialized_options=b'\n\034yandex.cloud.api.dataproc.v1ZEgithub.com/yandex-cloud/go-genproto/yandex/cloud/dataproc/v1;dataproc',
-  serialized_pb=b'\n.yandex/cloud/dataproc/v1/cluster_service.proto\x12\x18yandex.cloud.dataproc.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a%yandex/cloud/dataproc/v1/common.proto\x1a&yandex/cloud/dataproc/v1/cluster.proto\x1a)yandex/cloud/dataproc/v1/subcluster.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a yandex/cloud/api/operation.proto\"5\n\x11GetClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x90\x01\n\x13ListClustersRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"d\n\x14ListClustersResponse\x12\x33\n\x08\x63lusters\x18\x01 \x03(\x0b\x32!.yandex.cloud.dataproc.v1.Cluster\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x82\x02\n\x1a\x43reateSubclusterConfigSpec\x12/\n\x04name\x18\x01 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x32\n\x04role\x18\x02 \x01(\x0e\x32\x1e.yandex.cloud.dataproc.v1.RoleB\x04\xe8\xc7\x31\x01\x12<\n\tresources\x18\x03 \x01(\x0b\x32#.yandex.cloud.dataproc.v1.ResourcesB\x04\xe8\xc7\x31\x01\x12\x1f\n\tsubnet_id\x18\x04 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12 \n\x0bhosts_count\x18\x05 \x01(\x03\x42\x0b\xe8\xc7\x31\x01\xfa\xc7\x31\x03>=1\"\xaf\x01\n\x1aUpdateSubclusterConfigSpec\x12\n\n\x02id\x18\x01 \x01(\t\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x36\n\tresources\x18\x03 \x01(\x0b\x32#.yandex.cloud.dataproc.v1.Resources\x12\x1c\n\x0bhosts_count\x18\x04 \x01(\x03\x42\x07\xfa\xc7\x31\x03>=1\"\xb5\x01\n\x17\x43reateClusterConfigSpec\x12\x12\n\nversion_id\x18\x01 \x01(\t\x12\x36\n\x06hadoop\x18\x02 \x01(\x0b\x32&.yandex.cloud.dataproc.v1.HadoopConfig\x12N\n\x10subclusters_spec\x18\x03 \x03(\x0b\x32\x34.yandex.cloud.dataproc.v1.CreateSubclusterConfigSpec\"i\n\x17UpdateClusterConfigSpec\x12N\n\x10subclusters_spec\x18\x01 \x03(\x0b\x32\x34.yandex.cloud.dataproc.v1.UpdateSubclusterConfigSpec\"\xf6\x03\n\x14\x43reateClusterRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8b\x01\n\x06labels\x18\x04 \x03(\x0b\x32:.yandex.cloud.dataproc.v1.CreateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12L\n\x0b\x63onfig_spec\x18\x06 \x01(\x0b\x32\x31.yandex.cloud.dataproc.v1.CreateClusterConfigSpecB\x04\xe8\xc7\x31\x01\x12\x1d\n\x07zone_id\x18\x07 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12 \n\x12service_account_id\x18\x08 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x0e\n\x06\x62ucket\x18\t \x01(\t\x12\x10\n\x08ui_proxy\x18\n \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15\x43reateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\xa4\x04\n\x14UpdateClusterRequest\x12\x1c\n\ncluster_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8b\x01\n\x06labels\x18\x04 \x03(\x0b\x32:.yandex.cloud.dataproc.v1.UpdateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12\x46\n\x0b\x63onfig_spec\x18\x05 \x01(\x0b\x32\x31.yandex.cloud.dataproc.v1.UpdateClusterConfigSpec\x12/\n\x04name\x18\x06 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1a\n\x12service_account_id\x18\x07 \x01(\t\x12\x0e\n\x06\x62ucket\x18\x08 \x01(\t\x12)\n\x14\x64\x65\x63ommission_timeout\x18\t \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-86400\x12\x10\n\x08ui_proxy\x18\n \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15UpdateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"c\n\x14\x44\x65leteClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12)\n\x14\x64\x65\x63ommission_timeout\x18\x02 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-86400\"+\n\x15\x44\x65leteClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"7\n\x13StartClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"*\n\x14StartClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"a\n\x12StopClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12)\n\x14\x64\x65\x63ommission_timeout\x18\x02 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-86400\")\n\x13StopClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"~\n\x1cListClusterOperationsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"o\n\x1dListClusterOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x91\x01\n\x17ListClusterHostsRequest\x12\x1c\n\ncluster_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"b\n\x18ListClusterHostsResponse\x12-\n\x05hosts\x18\x01 \x03(\x0b\x32\x1e.yandex.cloud.dataproc.v1.Host\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"2\n\x12ListUILinksRequest\x12\x1c\n\ncluster_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"#\n\x06UILink\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x02 \x01(\t\"F\n\x13ListUILinksResponse\x12/\n\x05links\x18\x01 \x03(\x0b\x32 .yandex.cloud.dataproc.v1.UILink2\x91\r\n\x0e\x43lusterService\x12\x81\x01\n\x03Get\x12+.yandex.cloud.dataproc.v1.GetClusterRequest\x1a!.yandex.cloud.dataproc.v1.Cluster\"*\x82\xd3\xe4\x93\x02$\x12\"/dataproc/v1/clusters/{cluster_id}\x12\x84\x01\n\x04List\x12-.yandex.cloud.dataproc.v1.ListClustersRequest\x1a..yandex.cloud.dataproc.v1.ListClustersResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/dataproc/v1/clusters\x12\xa1\x01\n\x06\x43reate\x12..yandex.cloud.dataproc.v1.CreateClusterRequest\x1a!.yandex.cloud.operation.Operation\"D\x82\xd3\xe4\x93\x02\x1a\"\x15/dataproc/v1/clusters:\x01*\xb2\xd2* \n\x15\x43reateClusterMetadata\x12\x07\x43luster\x12\xae\x01\n\x06Update\x12..yandex.cloud.dataproc.v1.UpdateClusterRequest\x1a!.yandex.cloud.operation.Operation\"Q\x82\xd3\xe4\x93\x02\'2\"/dataproc/v1/clusters/{cluster_id}:\x01*\xb2\xd2* \n\x15UpdateClusterMetadata\x12\x07\x43luster\x12\xb9\x01\n\x06\x44\x65lete\x12..yandex.cloud.dataproc.v1.DeleteClusterRequest\x1a!.yandex.cloud.operation.Operation\"\\\x82\xd3\xe4\x93\x02$*\"/dataproc/v1/clusters/{cluster_id}\xb2\xd2*.\n\x15\x44\x65leteClusterMetadata\x12\x15google.protobuf.Empty\x12\xae\x01\n\x05Start\x12-.yandex.cloud.dataproc.v1.StartClusterRequest\x1a!.yandex.cloud.operation.Operation\"S\x82\xd3\xe4\x93\x02*\"(/dataproc/v1/clusters/{cluster_id}:start\xb2\xd2*\x1f\n\x14StartClusterMetadata\x12\x07\x43luster\x12\xad\x01\n\x04Stop\x12,.yandex.cloud.dataproc.v1.StopClusterRequest\x1a!.yandex.cloud.operation.Operation\"T\x82\xd3\xe4\x93\x02,\"\'/dataproc/v1/clusters/{cluster_id}:stop:\x01*\xb2\xd2*\x1e\n\x13StopClusterMetadata\x12\x07\x43luster\x12\xb8\x01\n\x0eListOperations\x12\x36.yandex.cloud.dataproc.v1.ListClusterOperationsRequest\x1a\x37.yandex.cloud.dataproc.v1.ListClusterOperationsResponse\"5\x82\xd3\xe4\x93\x02/\x12-/dataproc/v1/clusters/{cluster_id}/operations\x12\xa4\x01\n\tListHosts\x12\x31.yandex.cloud.dataproc.v1.ListClusterHostsRequest\x1a\x32.yandex.cloud.dataproc.v1.ListClusterHostsResponse\"0\x82\xd3\xe4\x93\x02*\x12(/dataproc/v1/clusters/{cluster_id}/hosts\x12\x9f\x01\n\x0bListUILinks\x12,.yandex.cloud.dataproc.v1.ListUILinksRequest\x1a-.yandex.cloud.dataproc.v1.ListUILinksResponse\"3\x82\xd3\xe4\x93\x02-\x12+/dataproc/v1/clusters/{cluster_id}/ui_linksBe\n\x1cyandex.cloud.api.dataproc.v1ZEgithub.com/yandex-cloud/go-genproto/yandex/cloud/dataproc/v1;dataprocb\x06proto3'
+  create_key=_descriptor._internal_create_key,
+  serialized_pb=b'\n.yandex/cloud/dataproc/v1/cluster_service.proto\x12\x18yandex.cloud.dataproc.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a%yandex/cloud/dataproc/v1/common.proto\x1a&yandex/cloud/dataproc/v1/cluster.proto\x1a)yandex/cloud/dataproc/v1/subcluster.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a yandex/cloud/api/operation.proto\"5\n\x11GetClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x90\x01\n\x13ListClustersRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"d\n\x14ListClustersResponse\x12\x33\n\x08\x63lusters\x18\x01 \x03(\x0b\x32!.yandex.cloud.dataproc.v1.Cluster\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xd1\x02\n\x1a\x43reateSubclusterConfigSpec\x12/\n\x04name\x18\x01 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x32\n\x04role\x18\x02 \x01(\x0e\x32\x1e.yandex.cloud.dataproc.v1.RoleB\x04\xe8\xc7\x31\x01\x12<\n\tresources\x18\x03 \x01(\x0b\x32#.yandex.cloud.dataproc.v1.ResourcesB\x04\xe8\xc7\x31\x01\x12\x1f\n\tsubnet_id\x18\x04 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12 \n\x0bhosts_count\x18\x05 \x01(\x03\x42\x0b\xe8\xc7\x31\x01\xfa\xc7\x31\x03>=1\x12G\n\x12\x61utoscaling_config\x18\x07 \x01(\x0b\x32+.yandex.cloud.dataproc.v1.AutoscalingConfigJ\x04\x08\x06\x10\x07\"\xf8\x01\n\x1aUpdateSubclusterConfigSpec\x12\n\n\x02id\x18\x01 \x01(\t\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x36\n\tresources\x18\x03 \x01(\x0b\x32#.yandex.cloud.dataproc.v1.Resources\x12\x1c\n\x0bhosts_count\x18\x04 \x01(\x03\x42\x07\xfa\xc7\x31\x03>=1\x12G\n\x12\x61utoscaling_config\x18\x05 \x01(\x0b\x32+.yandex.cloud.dataproc.v1.AutoscalingConfig\"\xb5\x01\n\x17\x43reateClusterConfigSpec\x12\x12\n\nversion_id\x18\x01 \x01(\t\x12\x36\n\x06hadoop\x18\x02 \x01(\x0b\x32&.yandex.cloud.dataproc.v1.HadoopConfig\x12N\n\x10subclusters_spec\x18\x03 \x03(\x0b\x32\x34.yandex.cloud.dataproc.v1.CreateSubclusterConfigSpec\"i\n\x17UpdateClusterConfigSpec\x12N\n\x10subclusters_spec\x18\x01 \x03(\x0b\x32\x34.yandex.cloud.dataproc.v1.UpdateSubclusterConfigSpec\"\xf6\x03\n\x14\x43reateClusterRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8b\x01\n\x06labels\x18\x04 \x03(\x0b\x32:.yandex.cloud.dataproc.v1.CreateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12L\n\x0b\x63onfig_spec\x18\x06 \x01(\x0b\x32\x31.yandex.cloud.dataproc.v1.CreateClusterConfigSpecB\x04\xe8\xc7\x31\x01\x12\x1d\n\x07zone_id\x18\x07 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12 \n\x12service_account_id\x18\x08 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x0e\n\x06\x62ucket\x18\t \x01(\t\x12\x10\n\x08ui_proxy\x18\n \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15\x43reateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\xa4\x04\n\x14UpdateClusterRequest\x12\x1c\n\ncluster_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8b\x01\n\x06labels\x18\x04 \x03(\x0b\x32:.yandex.cloud.dataproc.v1.UpdateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12\x46\n\x0b\x63onfig_spec\x18\x05 \x01(\x0b\x32\x31.yandex.cloud.dataproc.v1.UpdateClusterConfigSpec\x12/\n\x04name\x18\x06 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1a\n\x12service_account_id\x18\x07 \x01(\t\x12\x0e\n\x06\x62ucket\x18\x08 \x01(\t\x12)\n\x14\x64\x65\x63ommission_timeout\x18\t \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-86400\x12\x10\n\x08ui_proxy\x18\n \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15UpdateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"c\n\x14\x44\x65leteClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12)\n\x14\x64\x65\x63ommission_timeout\x18\x02 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-86400\"+\n\x15\x44\x65leteClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"7\n\x13StartClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"*\n\x14StartClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"a\n\x12StopClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12)\n\x14\x64\x65\x63ommission_timeout\x18\x02 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-86400\")\n\x13StopClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"~\n\x1cListClusterOperationsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"o\n\x1dListClusterOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x91\x01\n\x17ListClusterHostsRequest\x12\x1c\n\ncluster_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"b\n\x18ListClusterHostsResponse\x12-\n\x05hosts\x18\x01 \x03(\x0b\x32\x1e.yandex.cloud.dataproc.v1.Host\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"2\n\x12ListUILinksRequest\x12\x1c\n\ncluster_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"#\n\x06UILink\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0b\n\x03url\x18\x02 \x01(\t\"F\n\x13ListUILinksResponse\x12/\n\x05links\x18\x01 \x03(\x0b\x32 .yandex.cloud.dataproc.v1.UILink2\x91\r\n\x0e\x43lusterService\x12\x81\x01\n\x03Get\x12+.yandex.cloud.dataproc.v1.GetClusterRequest\x1a!.yandex.cloud.dataproc.v1.Cluster\"*\x82\xd3\xe4\x93\x02$\x12\"/dataproc/v1/clusters/{cluster_id}\x12\x84\x01\n\x04List\x12-.yandex.cloud.dataproc.v1.ListClustersRequest\x1a..yandex.cloud.dataproc.v1.ListClustersResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/dataproc/v1/clusters\x12\xa1\x01\n\x06\x43reate\x12..yandex.cloud.dataproc.v1.CreateClusterRequest\x1a!.yandex.cloud.operation.Operation\"D\x82\xd3\xe4\x93\x02\x1a\"\x15/dataproc/v1/clusters:\x01*\xb2\xd2* \n\x15\x43reateClusterMetadata\x12\x07\x43luster\x12\xae\x01\n\x06Update\x12..yandex.cloud.dataproc.v1.UpdateClusterRequest\x1a!.yandex.cloud.operation.Operation\"Q\x82\xd3\xe4\x93\x02\'2\"/dataproc/v1/clusters/{cluster_id}:\x01*\xb2\xd2* \n\x15UpdateClusterMetadata\x12\x07\x43luster\x12\xb9\x01\n\x06\x44\x65lete\x12..yandex.cloud.dataproc.v1.DeleteClusterRequest\x1a!.yandex.cloud.operation.Operation\"\\\x82\xd3\xe4\x93\x02$*\"/dataproc/v1/clusters/{cluster_id}\xb2\xd2*.\n\x15\x44\x65leteClusterMetadata\x12\x15google.protobuf.Empty\x12\xae\x01\n\x05Start\x12-.yandex.cloud.dataproc.v1.StartClusterRequest\x1a!.yandex.cloud.operation.Operation\"S\x82\xd3\xe4\x93\x02*\"(/dataproc/v1/clusters/{cluster_id}:start\xb2\xd2*\x1f\n\x14StartClusterMetadata\x12\x07\x43luster\x12\xad\x01\n\x04Stop\x12,.yandex.cloud.dataproc.v1.StopClusterRequest\x1a!.yandex.cloud.operation.Operation\"T\x82\xd3\xe4\x93\x02,\"\'/dataproc/v1/clusters/{cluster_id}:stop:\x01*\xb2\xd2*\x1e\n\x13StopClusterMetadata\x12\x07\x43luster\x12\xb8\x01\n\x0eListOperations\x12\x36.yandex.cloud.dataproc.v1.ListClusterOperationsRequest\x1a\x37.yandex.cloud.dataproc.v1.ListClusterOperationsResponse\"5\x82\xd3\xe4\x93\x02/\x12-/dataproc/v1/clusters/{cluster_id}/operations\x12\xa4\x01\n\tListHosts\x12\x31.yandex.cloud.dataproc.v1.ListClusterHostsRequest\x1a\x32.yandex.cloud.dataproc.v1.ListClusterHostsResponse\"0\x82\xd3\xe4\x93\x02*\x12(/dataproc/v1/clusters/{cluster_id}/hosts\x12\x9f\x01\n\x0bListUILinks\x12,.yandex.cloud.dataproc.v1.ListUILinksRequest\x1a-.yandex.cloud.dataproc.v1.ListUILinksResponse\"3\x82\xd3\xe4\x93\x02-\x12+/dataproc/v1/clusters/{cluster_id}/ui_linksBe\n\x1cyandex.cloud.api.dataproc.v1ZEgithub.com/yandex-cloud/go-genproto/yandex/cloud/dataproc/v1;dataprocb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_dataproc_dot_v1_dot_common__pb2.DESCRIPTOR,yandex_dot_cloud_dot_dataproc_dot_v1_dot_cluster__pb2.DESCRIPTOR,yandex_dot_cloud_dot_dataproc_dot_v1_dot_subcluster__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,])
 
@@ -39,6 +40,7 @@ _GETCLUSTERREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.dataproc.v1.GetClusterRequest.cluster_id', index=0,
@@ -46,7 +48,7 @@ _GETCLUSTERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -70,6 +72,7 @@ _LISTCLUSTERSREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='folder_id', full_name='yandex.cloud.dataproc.v1.ListClustersRequest.folder_id', index=0,
@@ -77,28 +80,28 @@ _LISTCLUSTERSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.dataproc.v1.ListClustersRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR),
+      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.dataproc.v1.ListClustersRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='filter', full_name='yandex.cloud.dataproc.v1.ListClustersRequest.filter', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=1000', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -122,6 +125,7 @@ _LISTCLUSTERSRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='clusters', full_name='yandex.cloud.dataproc.v1.ListClustersResponse.clusters', index=0,
@@ -129,14 +133,14 @@ _LISTCLUSTERSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.dataproc.v1.ListClustersResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -160,6 +164,7 @@ _CREATESUBCLUSTERCONFIGSPEC = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='name', full_name='yandex.cloud.dataproc.v1.CreateSubclusterConfigSpec.name', index=0,
@@ -167,35 +172,42 @@ _CREATESUBCLUSTERCONFIGSPEC = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]', file=DESCRIPTOR),
+      serialized_options=b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='role', full_name='yandex.cloud.dataproc.v1.CreateSubclusterConfigSpec.role', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='resources', full_name='yandex.cloud.dataproc.v1.CreateSubclusterConfigSpec.resources', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='subnet_id', full_name='yandex.cloud.dataproc.v1.CreateSubclusterConfigSpec.subnet_id', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='hosts_count', full_name='yandex.cloud.dataproc.v1.CreateSubclusterConfigSpec.hosts_count', index=4,
       number=5, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\372\3071\003>=1', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\372\3071\003>=1', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='autoscaling_config', full_name='yandex.cloud.dataproc.v1.CreateSubclusterConfigSpec.autoscaling_config', index=5,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -209,7 +221,7 @@ _CREATESUBCLUSTERCONFIGSPEC = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=672,
-  serialized_end=930,
+  serialized_end=1009,
 )
 
 
@@ -219,6 +231,7 @@ _UPDATESUBCLUSTERCONFIGSPEC = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='id', full_name='yandex.cloud.dataproc.v1.UpdateSubclusterConfigSpec.id', index=0,
@@ -226,28 +239,35 @@ _UPDATESUBCLUSTERCONFIGSPEC = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='name', full_name='yandex.cloud.dataproc.v1.UpdateSubclusterConfigSpec.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]', file=DESCRIPTOR),
+      serialized_options=b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='resources', full_name='yandex.cloud.dataproc.v1.UpdateSubclusterConfigSpec.resources', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='hosts_count', full_name='yandex.cloud.dataproc.v1.UpdateSubclusterConfigSpec.hosts_count', index=3,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\003>=1', file=DESCRIPTOR),
+      serialized_options=b'\372\3071\003>=1', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='autoscaling_config', full_name='yandex.cloud.dataproc.v1.UpdateSubclusterConfigSpec.autoscaling_config', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -260,8 +280,8 @@ _UPDATESUBCLUSTERCONFIGSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=933,
-  serialized_end=1108,
+  serialized_start=1012,
+  serialized_end=1260,
 )
 
 
@@ -271,6 +291,7 @@ _CREATECLUSTERCONFIGSPEC = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='version_id', full_name='yandex.cloud.dataproc.v1.CreateClusterConfigSpec.version_id', index=0,
@@ -278,21 +299,21 @@ _CREATECLUSTERCONFIGSPEC = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='hadoop', full_name='yandex.cloud.dataproc.v1.CreateClusterConfigSpec.hadoop', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='subclusters_spec', full_name='yandex.cloud.dataproc.v1.CreateClusterConfigSpec.subclusters_spec', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -305,8 +326,8 @@ _CREATECLUSTERCONFIGSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1111,
-  serialized_end=1292,
+  serialized_start=1263,
+  serialized_end=1444,
 )
 
 
@@ -316,6 +337,7 @@ _UPDATECLUSTERCONFIGSPEC = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='subclusters_spec', full_name='yandex.cloud.dataproc.v1.UpdateClusterConfigSpec.subclusters_spec', index=0,
@@ -323,7 +345,7 @@ _UPDATECLUSTERCONFIGSPEC = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -336,8 +358,8 @@ _UPDATECLUSTERCONFIGSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1294,
-  serialized_end=1399,
+  serialized_start=1446,
+  serialized_end=1551,
 )
 
 
@@ -347,6 +369,7 @@ _CREATECLUSTERREQUEST_LABELSENTRY = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key', full_name='yandex.cloud.dataproc.v1.CreateClusterRequest.LabelsEntry.key', index=0,
@@ -354,14 +377,14 @@ _CREATECLUSTERREQUEST_LABELSENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='value', full_name='yandex.cloud.dataproc.v1.CreateClusterRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -374,8 +397,8 @@ _CREATECLUSTERREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1859,
-  serialized_end=1904,
+  serialized_start=2011,
+  serialized_end=2056,
 )
 
 _CREATECLUSTERREQUEST = _descriptor.Descriptor(
@@ -384,6 +407,7 @@ _CREATECLUSTERREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='folder_id', full_name='yandex.cloud.dataproc.v1.CreateClusterRequest.folder_id', index=0,
@@ -391,63 +415,63 @@ _CREATECLUSTERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='name', full_name='yandex.cloud.dataproc.v1.CreateClusterRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]', file=DESCRIPTOR),
+      serialized_options=b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='description', full_name='yandex.cloud.dataproc.v1.CreateClusterRequest.description', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='labels', full_name='yandex.cloud.dataproc.v1.CreateClusterRequest.labels', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR),
+      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='config_spec', full_name='yandex.cloud.dataproc.v1.CreateClusterRequest.config_spec', index=4,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='zone_id', full_name='yandex.cloud.dataproc.v1.CreateClusterRequest.zone_id', index=5,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='service_account_id', full_name='yandex.cloud.dataproc.v1.CreateClusterRequest.service_account_id', index=6,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='bucket', full_name='yandex.cloud.dataproc.v1.CreateClusterRequest.bucket', index=7,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='ui_proxy', full_name='yandex.cloud.dataproc.v1.CreateClusterRequest.ui_proxy', index=8,
       number=10, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -460,8 +484,8 @@ _CREATECLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1402,
-  serialized_end=1904,
+  serialized_start=1554,
+  serialized_end=2056,
 )
 
 
@@ -471,6 +495,7 @@ _CREATECLUSTERMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.dataproc.v1.CreateClusterMetadata.cluster_id', index=0,
@@ -478,7 +503,7 @@ _CREATECLUSTERMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -491,8 +516,8 @@ _CREATECLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1906,
-  serialized_end=1949,
+  serialized_start=2058,
+  serialized_end=2101,
 )
 
 
@@ -502,6 +527,7 @@ _UPDATECLUSTERREQUEST_LABELSENTRY = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key', full_name='yandex.cloud.dataproc.v1.UpdateClusterRequest.LabelsEntry.key', index=0,
@@ -509,14 +535,14 @@ _UPDATECLUSTERREQUEST_LABELSENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='value', full_name='yandex.cloud.dataproc.v1.UpdateClusterRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -529,8 +555,8 @@ _UPDATECLUSTERREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1859,
-  serialized_end=1904,
+  serialized_start=2011,
+  serialized_end=2056,
 )
 
 _UPDATECLUSTERREQUEST = _descriptor.Descriptor(
@@ -539,6 +565,7 @@ _UPDATECLUSTERREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.dataproc.v1.UpdateClusterRequest.cluster_id', index=0,
@@ -546,70 +573,70 @@ _UPDATECLUSTERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='update_mask', full_name='yandex.cloud.dataproc.v1.UpdateClusterRequest.update_mask', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='description', full_name='yandex.cloud.dataproc.v1.UpdateClusterRequest.description', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='labels', full_name='yandex.cloud.dataproc.v1.UpdateClusterRequest.labels', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR),
+      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='config_spec', full_name='yandex.cloud.dataproc.v1.UpdateClusterRequest.config_spec', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='name', full_name='yandex.cloud.dataproc.v1.UpdateClusterRequest.name', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]', file=DESCRIPTOR),
+      serialized_options=b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='service_account_id', full_name='yandex.cloud.dataproc.v1.UpdateClusterRequest.service_account_id', index=6,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='bucket', full_name='yandex.cloud.dataproc.v1.UpdateClusterRequest.bucket', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='decommission_timeout', full_name='yandex.cloud.dataproc.v1.UpdateClusterRequest.decommission_timeout', index=8,
       number=9, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\0070-86400', file=DESCRIPTOR),
+      serialized_options=b'\372\3071\0070-86400', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='ui_proxy', full_name='yandex.cloud.dataproc.v1.UpdateClusterRequest.ui_proxy', index=9,
       number=10, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -622,8 +649,8 @@ _UPDATECLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1952,
-  serialized_end=2500,
+  serialized_start=2104,
+  serialized_end=2652,
 )
 
 
@@ -633,6 +660,7 @@ _UPDATECLUSTERMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.dataproc.v1.UpdateClusterMetadata.cluster_id', index=0,
@@ -640,7 +668,7 @@ _UPDATECLUSTERMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -653,8 +681,8 @@ _UPDATECLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2502,
-  serialized_end=2545,
+  serialized_start=2654,
+  serialized_end=2697,
 )
 
 
@@ -664,6 +692,7 @@ _DELETECLUSTERREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.dataproc.v1.DeleteClusterRequest.cluster_id', index=0,
@@ -671,14 +700,14 @@ _DELETECLUSTERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='decommission_timeout', full_name='yandex.cloud.dataproc.v1.DeleteClusterRequest.decommission_timeout', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\0070-86400', file=DESCRIPTOR),
+      serialized_options=b'\372\3071\0070-86400', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -691,8 +720,8 @@ _DELETECLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2547,
-  serialized_end=2646,
+  serialized_start=2699,
+  serialized_end=2798,
 )
 
 
@@ -702,6 +731,7 @@ _DELETECLUSTERMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.dataproc.v1.DeleteClusterMetadata.cluster_id', index=0,
@@ -709,7 +739,7 @@ _DELETECLUSTERMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -722,8 +752,8 @@ _DELETECLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2648,
-  serialized_end=2691,
+  serialized_start=2800,
+  serialized_end=2843,
 )
 
 
@@ -733,6 +763,7 @@ _STARTCLUSTERREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.dataproc.v1.StartClusterRequest.cluster_id', index=0,
@@ -740,7 +771,7 @@ _STARTCLUSTERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -753,8 +784,8 @@ _STARTCLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2693,
-  serialized_end=2748,
+  serialized_start=2845,
+  serialized_end=2900,
 )
 
 
@@ -764,6 +795,7 @@ _STARTCLUSTERMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.dataproc.v1.StartClusterMetadata.cluster_id', index=0,
@@ -771,7 +803,7 @@ _STARTCLUSTERMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -784,8 +816,8 @@ _STARTCLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2750,
-  serialized_end=2792,
+  serialized_start=2902,
+  serialized_end=2944,
 )
 
 
@@ -795,6 +827,7 @@ _STOPCLUSTERREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.dataproc.v1.StopClusterRequest.cluster_id', index=0,
@@ -802,14 +835,14 @@ _STOPCLUSTERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='decommission_timeout', full_name='yandex.cloud.dataproc.v1.StopClusterRequest.decommission_timeout', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\0070-86400', file=DESCRIPTOR),
+      serialized_options=b'\372\3071\0070-86400', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -822,8 +855,8 @@ _STOPCLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2794,
-  serialized_end=2891,
+  serialized_start=2946,
+  serialized_end=3043,
 )
 
 
@@ -833,6 +866,7 @@ _STOPCLUSTERMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.dataproc.v1.StopClusterMetadata.cluster_id', index=0,
@@ -840,7 +874,7 @@ _STOPCLUSTERMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -853,8 +887,8 @@ _STOPCLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2893,
-  serialized_end=2934,
+  serialized_start=3045,
+  serialized_end=3086,
 )
 
 
@@ -864,6 +898,7 @@ _LISTCLUSTEROPERATIONSREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.dataproc.v1.ListClusterOperationsRequest.cluster_id', index=0,
@@ -871,21 +906,21 @@ _LISTCLUSTEROPERATIONSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.dataproc.v1.ListClusterOperationsRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR),
+      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.dataproc.v1.ListClusterOperationsRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -898,8 +933,8 @@ _LISTCLUSTEROPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2936,
-  serialized_end=3062,
+  serialized_start=3088,
+  serialized_end=3214,
 )
 
 
@@ -909,6 +944,7 @@ _LISTCLUSTEROPERATIONSRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='operations', full_name='yandex.cloud.dataproc.v1.ListClusterOperationsResponse.operations', index=0,
@@ -916,14 +952,14 @@ _LISTCLUSTEROPERATIONSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.dataproc.v1.ListClusterOperationsResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -936,8 +972,8 @@ _LISTCLUSTEROPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3064,
-  serialized_end=3175,
+  serialized_start=3216,
+  serialized_end=3327,
 )
 
 
@@ -947,6 +983,7 @@ _LISTCLUSTERHOSTSREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='cluster_id', full_name='yandex.cloud.dataproc.v1.ListClusterHostsRequest.cluster_id', index=0,
@@ -954,28 +991,28 @@ _LISTCLUSTERHOSTSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.dataproc.v1.ListClusterHostsRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR),
+      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.dataproc.v1.ListClusterHostsRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='filter', full_name='yandex.cloud.dataproc.v1.ListClusterHostsRequest.filter', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=1000', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -988,8 +1025,8 @@ _LISTCLUSTERHOSTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3178,
-  serialized_end=3323,
+  serialized_start=3330,
+  serialized_end=3475,
 )
 
 
@@ -999,6 +1036,7 @@ _LISTCLUSTERHOSTSRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='hosts', full_name='yandex.cloud.dataproc.v1.ListClusterHostsResponse.hosts', index=0,
@@ -1006,83 +1044,14 @@ _LISTCLUSTERHOSTSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.dataproc.v1.ListClusterHostsResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=3325,
-  serialized_end=3423,
-)
-
-
-_LISTUILINKSREQUEST = _descriptor.Descriptor(
-  name='ListUILinksRequest',
-  full_name='yandex.cloud.dataproc.v1.ListUILinksRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='cluster_id', full_name='yandex.cloud.dataproc.v1.ListUILinksRequest.cluster_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=3425,
-  serialized_end=3475,
-)
-
-
-_UILINK = _descriptor.Descriptor(
-  name='UILink',
-  full_name='yandex.cloud.dataproc.v1.UILink',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.dataproc.v1.UILink.name', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
-    _descriptor.FieldDescriptor(
-      name='url', full_name='yandex.cloud.dataproc.v1.UILink.url', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1096,24 +1065,25 @@ _UILINK = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=3477,
-  serialized_end=3512,
+  serialized_end=3575,
 )
 
 
-_LISTUILINKSRESPONSE = _descriptor.Descriptor(
-  name='ListUILinksResponse',
-  full_name='yandex.cloud.dataproc.v1.ListUILinksResponse',
+_LISTUILINKSREQUEST = _descriptor.Descriptor(
+  name='ListUILinksRequest',
+  full_name='yandex.cloud.dataproc.v1.ListUILinksRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='links', full_name='yandex.cloud.dataproc.v1.ListUILinksResponse.links', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
+      name='cluster_id', full_name='yandex.cloud.dataproc.v1.ListUILinksRequest.cluster_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1126,14 +1096,87 @@ _LISTUILINKSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3514,
-  serialized_end=3584,
+  serialized_start=3577,
+  serialized_end=3627,
+)
+
+
+_UILINK = _descriptor.Descriptor(
+  name='UILink',
+  full_name='yandex.cloud.dataproc.v1.UILink',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='name', full_name='yandex.cloud.dataproc.v1.UILink.name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='url', full_name='yandex.cloud.dataproc.v1.UILink.url', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3629,
+  serialized_end=3664,
+)
+
+
+_LISTUILINKSRESPONSE = _descriptor.Descriptor(
+  name='ListUILinksResponse',
+  full_name='yandex.cloud.dataproc.v1.ListUILinksResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='links', full_name='yandex.cloud.dataproc.v1.ListUILinksResponse.links', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3666,
+  serialized_end=3736,
 )
 
 _LISTCLUSTERSRESPONSE.fields_by_name['clusters'].message_type = yandex_dot_cloud_dot_dataproc_dot_v1_dot_cluster__pb2._CLUSTER
 _CREATESUBCLUSTERCONFIGSPEC.fields_by_name['role'].enum_type = yandex_dot_cloud_dot_dataproc_dot_v1_dot_subcluster__pb2._ROLE
 _CREATESUBCLUSTERCONFIGSPEC.fields_by_name['resources'].message_type = yandex_dot_cloud_dot_dataproc_dot_v1_dot_common__pb2._RESOURCES
+_CREATESUBCLUSTERCONFIGSPEC.fields_by_name['autoscaling_config'].message_type = yandex_dot_cloud_dot_dataproc_dot_v1_dot_subcluster__pb2._AUTOSCALINGCONFIG
 _UPDATESUBCLUSTERCONFIGSPEC.fields_by_name['resources'].message_type = yandex_dot_cloud_dot_dataproc_dot_v1_dot_common__pb2._RESOURCES
+_UPDATESUBCLUSTERCONFIGSPEC.fields_by_name['autoscaling_config'].message_type = yandex_dot_cloud_dot_dataproc_dot_v1_dot_subcluster__pb2._AUTOSCALINGCONFIG
 _CREATECLUSTERCONFIGSPEC.fields_by_name['hadoop'].message_type = yandex_dot_cloud_dot_dataproc_dot_v1_dot_cluster__pb2._HADOOPCONFIG
 _CREATECLUSTERCONFIGSPEC.fields_by_name['subclusters_spec'].message_type = _CREATESUBCLUSTERCONFIGSPEC
 _UPDATECLUSTERCONFIGSPEC.fields_by_name['subclusters_spec'].message_type = _UPDATESUBCLUSTERCONFIGSPEC
@@ -1405,8 +1448,9 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=3587,
-  serialized_end=5268,
+  create_key=_descriptor._internal_create_key,
+  serialized_start=3739,
+  serialized_end=5420,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
@@ -1416,6 +1460,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_GETCLUSTERREQUEST,
     output_type=yandex_dot_cloud_dot_dataproc_dot_v1_dot_cluster__pb2._CLUSTER,
     serialized_options=b'\202\323\344\223\002$\022\"/dataproc/v1/clusters/{cluster_id}',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='List',
@@ -1425,6 +1470,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_LISTCLUSTERSREQUEST,
     output_type=_LISTCLUSTERSRESPONSE,
     serialized_options=b'\202\323\344\223\002\027\022\025/dataproc/v1/clusters',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Create',
@@ -1434,6 +1480,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_CREATECLUSTERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\002\032\"\025/dataproc/v1/clusters:\001*\262\322* \n\025CreateClusterMetadata\022\007Cluster',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Update',
@@ -1443,6 +1490,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_UPDATECLUSTERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\002\'2\"/dataproc/v1/clusters/{cluster_id}:\001*\262\322* \n\025UpdateClusterMetadata\022\007Cluster',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Delete',
@@ -1452,6 +1500,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_DELETECLUSTERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\002$*\"/dataproc/v1/clusters/{cluster_id}\262\322*.\n\025DeleteClusterMetadata\022\025google.protobuf.Empty',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Start',
@@ -1461,6 +1510,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_STARTCLUSTERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\002*\"(/dataproc/v1/clusters/{cluster_id}:start\262\322*\037\n\024StartClusterMetadata\022\007Cluster',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Stop',
@@ -1470,6 +1520,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_STOPCLUSTERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\002,\"\'/dataproc/v1/clusters/{cluster_id}:stop:\001*\262\322*\036\n\023StopClusterMetadata\022\007Cluster',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='ListOperations',
@@ -1479,6 +1530,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_LISTCLUSTEROPERATIONSREQUEST,
     output_type=_LISTCLUSTEROPERATIONSRESPONSE,
     serialized_options=b'\202\323\344\223\002/\022-/dataproc/v1/clusters/{cluster_id}/operations',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='ListHosts',
@@ -1488,6 +1540,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_LISTCLUSTERHOSTSREQUEST,
     output_type=_LISTCLUSTERHOSTSRESPONSE,
     serialized_options=b'\202\323\344\223\002*\022(/dataproc/v1/clusters/{cluster_id}/hosts',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='ListUILinks',
@@ -1497,6 +1550,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_LISTUILINKSREQUEST,
     output_type=_LISTUILINKSRESPONSE,
     serialized_options=b'\202\323\344\223\002-\022+/dataproc/v1/clusters/{cluster_id}/ui_links',
+    create_key=_descriptor._internal_create_key,
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_CLUSTERSERVICE)

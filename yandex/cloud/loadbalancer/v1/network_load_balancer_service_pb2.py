@@ -24,6 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='yandex.cloud.loadbalancer.v1',
   syntax='proto3',
   serialized_options=b'\n yandex.cloud.api.loadbalancer.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadbalancer/v1;loadbalancer',
+  create_key=_descriptor._internal_create_key,
   serialized_pb=b'\n@yandex/cloud/loadbalancer/v1/network_load_balancer_service.proto\x12\x1cyandex.cloud.loadbalancer.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x38yandex/cloud/loadbalancer/v1/network_load_balancer.proto\"K\n\x1dGetNetworkLoadBalancerRequest\x12*\n\x18network_load_balancer_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"\x9c\x01\n\x1fListNetworkLoadBalancersRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"\x8e\x01\n ListNetworkLoadBalancersResponse\x12Q\n\x16network_load_balancers\x18\x01 \x03(\x0b\x32\x31.yandex.cloud.loadbalancer.v1.NetworkLoadBalancer\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xfa\x04\n CreateNetworkLoadBalancerRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x9b\x01\n\x06labels\x18\x04 \x03(\x0b\x32J.yandex.cloud.loadbalancer.v1.CreateNetworkLoadBalancerRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12\x1f\n\tregion_id\x18\x05 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12J\n\x04type\x18\x06 \x01(\x0e\x32\x36.yandex.cloud.loadbalancer.v1.NetworkLoadBalancer.TypeB\x04\xe8\xc7\x31\x01\x12N\n\x0elistener_specs\x18\x07 \x03(\x0b\x32*.yandex.cloud.loadbalancer.v1.ListenerSpecB\n\x82\xc8\x31\x06<=1000\x12Z\n\x16\x61ttached_target_groups\x18\x08 \x03(\x0b\x32\x31.yandex.cloud.loadbalancer.v1.AttachedTargetGroupB\x07\x82\xc8\x31\x03<=5\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"E\n!CreateNetworkLoadBalancerMetadata\x12 \n\x18network_load_balancer_id\x18\x01 \x01(\t\"\xcd\x04\n UpdateNetworkLoadBalancerRequest\x12.\n\x18network_load_balancer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x9b\x01\n\x06labels\x18\x05 \x03(\x0b\x32J.yandex.cloud.loadbalancer.v1.UpdateNetworkLoadBalancerRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12N\n\x0elistener_specs\x18\x06 \x03(\x0b\x32*.yandex.cloud.loadbalancer.v1.ListenerSpecB\n\x82\xc8\x31\x06<=1000\x12Z\n\x16\x61ttached_target_groups\x18\x07 \x03(\x0b\x32\x31.yandex.cloud.loadbalancer.v1.AttachedTargetGroupB\x07\x82\xc8\x31\x03<=5\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"E\n!UpdateNetworkLoadBalancerMetadata\x12 \n\x18network_load_balancer_id\x18\x01 \x01(\t\"R\n DeleteNetworkLoadBalancerRequest\x12.\n\x18network_load_balancer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"E\n!DeleteNetworkLoadBalancerMetadata\x12 \n\x18network_load_balancer_id\x18\x01 \x01(\t\"Q\n\x1fStartNetworkLoadBalancerRequest\x12.\n\x18network_load_balancer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"D\n StartNetworkLoadBalancerMetadata\x12 \n\x18network_load_balancer_id\x18\x01 \x01(\t\"P\n\x1eStopNetworkLoadBalancerRequest\x12.\n\x18network_load_balancer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"C\n\x1fStopNetworkLoadBalancerMetadata\x12 \n\x18network_load_balancer_id\x18\x01 \x01(\t\"\xb5\x01\n+AttachNetworkLoadBalancerTargetGroupRequest\x12.\n\x18network_load_balancer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12V\n\x15\x61ttached_target_group\x18\x02 \x01(\x0b\x32\x31.yandex.cloud.loadbalancer.v1.AttachedTargetGroupB\x04\xe8\xc7\x31\x01\"i\n,AttachNetworkLoadBalancerTargetGroupMetadata\x12 \n\x18network_load_balancer_id\x18\x01 \x01(\t\x12\x17\n\x0ftarget_group_id\x18\x02 \x01(\t\"\x84\x01\n+DetachNetworkLoadBalancerTargetGroupRequest\x12.\n\x18network_load_balancer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12%\n\x0ftarget_group_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"i\n,DetachNetworkLoadBalancerTargetGroupMetadata\x12 \n\x18network_load_balancer_id\x18\x01 \x01(\t\x12\x17\n\x0ftarget_group_id\x18\x02 \x01(\t\"\xa0\x01\n%AddNetworkLoadBalancerListenerRequest\x12.\n\x18network_load_balancer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12G\n\rlistener_spec\x18\x02 \x01(\x0b\x32*.yandex.cloud.loadbalancer.v1.ListenerSpecB\x04\xe8\xc7\x31\x01\"J\n&AddNetworkLoadBalancerListenerMetadata\x12 \n\x18network_load_balancer_id\x18\x01 \x01(\t\"\x98\x01\n(RemoveNetworkLoadBalancerListenerRequest\x12.\n\x18network_load_balancer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12<\n\rlistener_name\x18\x02 \x01(\tB%\xe8\xc7\x31\x01\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\"M\n)RemoveNetworkLoadBalancerListenerMetadata\x12 \n\x18network_load_balancer_id\x18\x01 \x01(\t\"\x98\x01\n(ListNetworkLoadBalancerOperationsRequest\x12.\n\x18network_load_balancer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"{\n)ListNetworkLoadBalancerOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"g\n\x16GetTargetStatesRequest\x12*\n\x18network_load_balancer_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12!\n\x0ftarget_group_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"[\n\x17GetTargetStatesResponse\x12@\n\rtarget_states\x18\x01 \x03(\x0b\x32).yandex.cloud.loadbalancer.v1.TargetState\"c\n\x13\x45xternalAddressSpec\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12;\n\nip_version\x18\x02 \x01(\x0e\x32\'.yandex.cloud.loadbalancer.v1.IpVersion\"v\n\x13InternalAddressSpec\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x11\n\tsubnet_id\x18\x02 \x01(\t\x12;\n\nip_version\x18\x03 \x01(\x0e\x32\'.yandex.cloud.loadbalancer.v1.IpVersion\"\xef\x02\n\x0cListenerSpec\x12\x33\n\x04name\x18\x01 \x01(\tB%\xe8\xc7\x31\x01\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x19\n\x04port\x18\x02 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x31-65535\x12G\n\x08protocol\x18\x03 \x01(\x0e\x32/.yandex.cloud.loadbalancer.v1.Listener.ProtocolB\x04\xe8\xc7\x31\x01\x12R\n\x15\x65xternal_address_spec\x18\x04 \x01(\x0b\x32\x31.yandex.cloud.loadbalancer.v1.ExternalAddressSpecH\x00\x12R\n\x15internal_address_spec\x18\x06 \x01(\x0b\x32\x31.yandex.cloud.loadbalancer.v1.InternalAddressSpecH\x00\x12\x13\n\x0btarget_port\x18\x05 \x01(\x03\x42\t\n\x07\x61\x64\x64ress2\xb9\x19\n\x1aNetworkLoadBalancerService\x12\xc0\x01\n\x03Get\x12;.yandex.cloud.loadbalancer.v1.GetNetworkLoadBalancerRequest\x1a\x31.yandex.cloud.loadbalancer.v1.NetworkLoadBalancer\"I\x82\xd3\xe4\x93\x02\x43\x12\x41/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}\x12\xb5\x01\n\x04List\x12=.yandex.cloud.loadbalancer.v1.ListNetworkLoadBalancersRequest\x1a>.yandex.cloud.loadbalancer.v1.ListNetworkLoadBalancersResponse\".\x82\xd3\xe4\x93\x02(\x12&/load-balancer/v1/networkLoadBalancers\x12\xda\x01\n\x06\x43reate\x12>.yandex.cloud.loadbalancer.v1.CreateNetworkLoadBalancerRequest\x1a!.yandex.cloud.operation.Operation\"m\x82\xd3\xe4\x93\x02+\"&/load-balancer/v1/networkLoadBalancers:\x01*\xb2\xd2*8\n!CreateNetworkLoadBalancerMetadata\x12\x13NetworkLoadBalancer\x12\xf6\x01\n\x06Update\x12>.yandex.cloud.loadbalancer.v1.UpdateNetworkLoadBalancerRequest\x1a!.yandex.cloud.operation.Operation\"\x88\x01\x82\xd3\xe4\x93\x02\x46\x32\x41/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}:\x01*\xb2\xd2*8\n!UpdateNetworkLoadBalancerMetadata\x12\x13NetworkLoadBalancer\x12\xf5\x01\n\x06\x44\x65lete\x12>.yandex.cloud.loadbalancer.v1.DeleteNetworkLoadBalancerRequest\x1a!.yandex.cloud.operation.Operation\"\x87\x01\x82\xd3\xe4\x93\x02\x43*A/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}\xb2\xd2*:\n!DeleteNetworkLoadBalancerMetadata\x12\x15google.protobuf.Empty\x12\xf8\x01\n\x05Start\x12=.yandex.cloud.loadbalancer.v1.StartNetworkLoadBalancerRequest\x1a!.yandex.cloud.operation.Operation\"\x8c\x01\x82\xd3\xe4\x93\x02I\"G/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}:start\xb2\xd2*9\n StartNetworkLoadBalancerMetadata\x12\x15google.protobuf.Empty\x12\xf4\x01\n\x04Stop\x12<.yandex.cloud.loadbalancer.v1.StopNetworkLoadBalancerRequest\x1a!.yandex.cloud.operation.Operation\"\x8a\x01\x82\xd3\xe4\x93\x02H\"F/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}:stop\xb2\xd2*8\n\x1fStopNetworkLoadBalancerMetadata\x12\x15google.protobuf.Empty\x12\xa9\x02\n\x11\x41ttachTargetGroup\x12I.yandex.cloud.loadbalancer.v1.AttachNetworkLoadBalancerTargetGroupRequest\x1a!.yandex.cloud.operation.Operation\"\xa5\x01\x82\xd3\xe4\x93\x02X\"S/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}:attachTargetGroup:\x01*\xb2\xd2*C\n,AttachNetworkLoadBalancerTargetGroupMetadata\x12\x13NetworkLoadBalancer\x12\xa9\x02\n\x11\x44\x65tachTargetGroup\x12I.yandex.cloud.loadbalancer.v1.DetachNetworkLoadBalancerTargetGroupRequest\x1a!.yandex.cloud.operation.Operation\"\xa5\x01\x82\xd3\xe4\x93\x02X\"S/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}:detachTargetGroup:\x01*\xb2\xd2*C\n,DetachNetworkLoadBalancerTargetGroupMetadata\x12\x13NetworkLoadBalancer\x12\xd9\x01\n\x0fGetTargetStates\x12\x34.yandex.cloud.loadbalancer.v1.GetTargetStatesRequest\x1a\x35.yandex.cloud.loadbalancer.v1.GetTargetStatesResponse\"Y\x82\xd3\xe4\x93\x02S\x12Q/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}:getTargetStates\x12\x91\x02\n\x0b\x41\x64\x64Listener\x12\x43.yandex.cloud.loadbalancer.v1.AddNetworkLoadBalancerListenerRequest\x1a!.yandex.cloud.operation.Operation\"\x99\x01\x82\xd3\xe4\x93\x02R\"M/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}:addListener:\x01*\xb2\xd2*=\n&AddNetworkLoadBalancerListenerMetadata\x12\x13NetworkLoadBalancer\x12\x9d\x02\n\x0eRemoveListener\x12\x46.yandex.cloud.loadbalancer.v1.RemoveNetworkLoadBalancerListenerRequest\x1a!.yandex.cloud.operation.Operation\"\x9f\x01\x82\xd3\xe4\x93\x02U\"P/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}:removeListener:\x01*\xb2\xd2*@\n)RemoveNetworkLoadBalancerListenerMetadata\x12\x13NetworkLoadBalancer\x12\xf7\x01\n\x0eListOperations\x12\x46.yandex.cloud.loadbalancer.v1.ListNetworkLoadBalancerOperationsRequest\x1aG.yandex.cloud.loadbalancer.v1.ListNetworkLoadBalancerOperationsResponse\"T\x82\xd3\xe4\x93\x02N\x12L/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}/operationsBq\n yandex.cloud.api.loadbalancer.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadbalancer/v1;loadbalancerb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_loadbalancer_dot_v1_dot_network__load__balancer__pb2.DESCRIPTOR,])
@@ -37,6 +38,7 @@ _GETNETWORKLOADBALANCERREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='network_load_balancer_id', full_name='yandex.cloud.loadbalancer.v1.GetNetworkLoadBalancerRequest.network_load_balancer_id', index=0,
@@ -44,7 +46,7 @@ _GETNETWORKLOADBALANCERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -68,6 +70,7 @@ _LISTNETWORKLOADBALANCERSREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='folder_id', full_name='yandex.cloud.loadbalancer.v1.ListNetworkLoadBalancersRequest.folder_id', index=0,
@@ -75,28 +78,28 @@ _LISTNETWORKLOADBALANCERSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.loadbalancer.v1.ListNetworkLoadBalancersRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR),
+      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.loadbalancer.v1.ListNetworkLoadBalancersRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='filter', full_name='yandex.cloud.loadbalancer.v1.ListNetworkLoadBalancersRequest.filter', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=1000', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -120,6 +123,7 @@ _LISTNETWORKLOADBALANCERSRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='network_load_balancers', full_name='yandex.cloud.loadbalancer.v1.ListNetworkLoadBalancersResponse.network_load_balancers', index=0,
@@ -127,14 +131,14 @@ _LISTNETWORKLOADBALANCERSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.loadbalancer.v1.ListNetworkLoadBalancersResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -158,6 +162,7 @@ _CREATENETWORKLOADBALANCERREQUEST_LABELSENTRY = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key', full_name='yandex.cloud.loadbalancer.v1.CreateNetworkLoadBalancerRequest.LabelsEntry.key', index=0,
@@ -165,14 +170,14 @@ _CREATENETWORKLOADBALANCERREQUEST_LABELSENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='value', full_name='yandex.cloud.loadbalancer.v1.CreateNetworkLoadBalancerRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -195,6 +200,7 @@ _CREATENETWORKLOADBALANCERREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='folder_id', full_name='yandex.cloud.loadbalancer.v1.CreateNetworkLoadBalancerRequest.folder_id', index=0,
@@ -202,56 +208,56 @@ _CREATENETWORKLOADBALANCERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='name', full_name='yandex.cloud.loadbalancer.v1.CreateNetworkLoadBalancerRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]', file=DESCRIPTOR),
+      serialized_options=b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='description', full_name='yandex.cloud.loadbalancer.v1.CreateNetworkLoadBalancerRequest.description', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='labels', full_name='yandex.cloud.loadbalancer.v1.CreateNetworkLoadBalancerRequest.labels', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR),
+      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='region_id', full_name='yandex.cloud.loadbalancer.v1.CreateNetworkLoadBalancerRequest.region_id', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='type', full_name='yandex.cloud.loadbalancer.v1.CreateNetworkLoadBalancerRequest.type', index=5,
       number=6, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='listener_specs', full_name='yandex.cloud.loadbalancer.v1.CreateNetworkLoadBalancerRequest.listener_specs', index=6,
       number=7, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\006<=1000', file=DESCRIPTOR),
+      serialized_options=b'\202\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='attached_target_groups', full_name='yandex.cloud.loadbalancer.v1.CreateNetworkLoadBalancerRequest.attached_target_groups', index=7,
       number=8, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\003<=5', file=DESCRIPTOR),
+      serialized_options=b'\202\3101\003<=5', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -275,6 +281,7 @@ _CREATENETWORKLOADBALANCERMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='network_load_balancer_id', full_name='yandex.cloud.loadbalancer.v1.CreateNetworkLoadBalancerMetadata.network_load_balancer_id', index=0,
@@ -282,7 +289,7 @@ _CREATENETWORKLOADBALANCERMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -306,6 +313,7 @@ _UPDATENETWORKLOADBALANCERREQUEST_LABELSENTRY = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='key', full_name='yandex.cloud.loadbalancer.v1.UpdateNetworkLoadBalancerRequest.LabelsEntry.key', index=0,
@@ -313,14 +321,14 @@ _UPDATENETWORKLOADBALANCERREQUEST_LABELSENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='value', full_name='yandex.cloud.loadbalancer.v1.UpdateNetworkLoadBalancerRequest.LabelsEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -343,6 +351,7 @@ _UPDATENETWORKLOADBALANCERREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='network_load_balancer_id', full_name='yandex.cloud.loadbalancer.v1.UpdateNetworkLoadBalancerRequest.network_load_balancer_id', index=0,
@@ -350,49 +359,49 @@ _UPDATENETWORKLOADBALANCERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='update_mask', full_name='yandex.cloud.loadbalancer.v1.UpdateNetworkLoadBalancerRequest.update_mask', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='name', full_name='yandex.cloud.loadbalancer.v1.UpdateNetworkLoadBalancerRequest.name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]', file=DESCRIPTOR),
+      serialized_options=b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='description', full_name='yandex.cloud.loadbalancer.v1.UpdateNetworkLoadBalancerRequest.description', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='labels', full_name='yandex.cloud.loadbalancer.v1.UpdateNetworkLoadBalancerRequest.labels', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR),
+      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='listener_specs', full_name='yandex.cloud.loadbalancer.v1.UpdateNetworkLoadBalancerRequest.listener_specs', index=5,
       number=6, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\006<=1000', file=DESCRIPTOR),
+      serialized_options=b'\202\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='attached_target_groups', full_name='yandex.cloud.loadbalancer.v1.UpdateNetworkLoadBalancerRequest.attached_target_groups', index=6,
       number=7, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\003<=5', file=DESCRIPTOR),
+      serialized_options=b'\202\3101\003<=5', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -416,6 +425,7 @@ _UPDATENETWORKLOADBALANCERMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='network_load_balancer_id', full_name='yandex.cloud.loadbalancer.v1.UpdateNetworkLoadBalancerMetadata.network_load_balancer_id', index=0,
@@ -423,7 +433,7 @@ _UPDATENETWORKLOADBALANCERMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -447,6 +457,7 @@ _DELETENETWORKLOADBALANCERREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='network_load_balancer_id', full_name='yandex.cloud.loadbalancer.v1.DeleteNetworkLoadBalancerRequest.network_load_balancer_id', index=0,
@@ -454,7 +465,7 @@ _DELETENETWORKLOADBALANCERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -478,6 +489,7 @@ _DELETENETWORKLOADBALANCERMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='network_load_balancer_id', full_name='yandex.cloud.loadbalancer.v1.DeleteNetworkLoadBalancerMetadata.network_load_balancer_id', index=0,
@@ -485,7 +497,7 @@ _DELETENETWORKLOADBALANCERMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -509,6 +521,7 @@ _STARTNETWORKLOADBALANCERREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='network_load_balancer_id', full_name='yandex.cloud.loadbalancer.v1.StartNetworkLoadBalancerRequest.network_load_balancer_id', index=0,
@@ -516,7 +529,7 @@ _STARTNETWORKLOADBALANCERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -540,6 +553,7 @@ _STARTNETWORKLOADBALANCERMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='network_load_balancer_id', full_name='yandex.cloud.loadbalancer.v1.StartNetworkLoadBalancerMetadata.network_load_balancer_id', index=0,
@@ -547,7 +561,7 @@ _STARTNETWORKLOADBALANCERMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -571,6 +585,7 @@ _STOPNETWORKLOADBALANCERREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='network_load_balancer_id', full_name='yandex.cloud.loadbalancer.v1.StopNetworkLoadBalancerRequest.network_load_balancer_id', index=0,
@@ -578,7 +593,7 @@ _STOPNETWORKLOADBALANCERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -602,6 +617,7 @@ _STOPNETWORKLOADBALANCERMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='network_load_balancer_id', full_name='yandex.cloud.loadbalancer.v1.StopNetworkLoadBalancerMetadata.network_load_balancer_id', index=0,
@@ -609,7 +625,7 @@ _STOPNETWORKLOADBALANCERMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -633,6 +649,7 @@ _ATTACHNETWORKLOADBALANCERTARGETGROUPREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='network_load_balancer_id', full_name='yandex.cloud.loadbalancer.v1.AttachNetworkLoadBalancerTargetGroupRequest.network_load_balancer_id', index=0,
@@ -640,14 +657,14 @@ _ATTACHNETWORKLOADBALANCERTARGETGROUPREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='attached_target_group', full_name='yandex.cloud.loadbalancer.v1.AttachNetworkLoadBalancerTargetGroupRequest.attached_target_group', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -671,6 +688,7 @@ _ATTACHNETWORKLOADBALANCERTARGETGROUPMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='network_load_balancer_id', full_name='yandex.cloud.loadbalancer.v1.AttachNetworkLoadBalancerTargetGroupMetadata.network_load_balancer_id', index=0,
@@ -678,14 +696,14 @@ _ATTACHNETWORKLOADBALANCERTARGETGROUPMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='target_group_id', full_name='yandex.cloud.loadbalancer.v1.AttachNetworkLoadBalancerTargetGroupMetadata.target_group_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -709,6 +727,7 @@ _DETACHNETWORKLOADBALANCERTARGETGROUPREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='network_load_balancer_id', full_name='yandex.cloud.loadbalancer.v1.DetachNetworkLoadBalancerTargetGroupRequest.network_load_balancer_id', index=0,
@@ -716,14 +735,14 @@ _DETACHNETWORKLOADBALANCERTARGETGROUPREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='target_group_id', full_name='yandex.cloud.loadbalancer.v1.DetachNetworkLoadBalancerTargetGroupRequest.target_group_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -747,6 +766,7 @@ _DETACHNETWORKLOADBALANCERTARGETGROUPMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='network_load_balancer_id', full_name='yandex.cloud.loadbalancer.v1.DetachNetworkLoadBalancerTargetGroupMetadata.network_load_balancer_id', index=0,
@@ -754,14 +774,14 @@ _DETACHNETWORKLOADBALANCERTARGETGROUPMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='target_group_id', full_name='yandex.cloud.loadbalancer.v1.DetachNetworkLoadBalancerTargetGroupMetadata.target_group_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -785,6 +805,7 @@ _ADDNETWORKLOADBALANCERLISTENERREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='network_load_balancer_id', full_name='yandex.cloud.loadbalancer.v1.AddNetworkLoadBalancerListenerRequest.network_load_balancer_id', index=0,
@@ -792,14 +813,14 @@ _ADDNETWORKLOADBALANCERLISTENERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='listener_spec', full_name='yandex.cloud.loadbalancer.v1.AddNetworkLoadBalancerListenerRequest.listener_spec', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -823,6 +844,7 @@ _ADDNETWORKLOADBALANCERLISTENERMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='network_load_balancer_id', full_name='yandex.cloud.loadbalancer.v1.AddNetworkLoadBalancerListenerMetadata.network_load_balancer_id', index=0,
@@ -830,7 +852,7 @@ _ADDNETWORKLOADBALANCERLISTENERMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -854,6 +876,7 @@ _REMOVENETWORKLOADBALANCERLISTENERREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='network_load_balancer_id', full_name='yandex.cloud.loadbalancer.v1.RemoveNetworkLoadBalancerListenerRequest.network_load_balancer_id', index=0,
@@ -861,14 +884,14 @@ _REMOVENETWORKLOADBALANCERLISTENERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='listener_name', full_name='yandex.cloud.loadbalancer.v1.RemoveNetworkLoadBalancerListenerRequest.listener_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -892,6 +915,7 @@ _REMOVENETWORKLOADBALANCERLISTENERMETADATA = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='network_load_balancer_id', full_name='yandex.cloud.loadbalancer.v1.RemoveNetworkLoadBalancerListenerMetadata.network_load_balancer_id', index=0,
@@ -899,7 +923,7 @@ _REMOVENETWORKLOADBALANCERLISTENERMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -923,6 +947,7 @@ _LISTNETWORKLOADBALANCEROPERATIONSREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='network_load_balancer_id', full_name='yandex.cloud.loadbalancer.v1.ListNetworkLoadBalancerOperationsRequest.network_load_balancer_id', index=0,
@@ -930,21 +955,21 @@ _LISTNETWORKLOADBALANCEROPERATIONSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.loadbalancer.v1.ListNetworkLoadBalancerOperationsRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR),
+      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.loadbalancer.v1.ListNetworkLoadBalancerOperationsRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -968,6 +993,7 @@ _LISTNETWORKLOADBALANCEROPERATIONSRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='operations', full_name='yandex.cloud.loadbalancer.v1.ListNetworkLoadBalancerOperationsResponse.operations', index=0,
@@ -975,14 +1001,14 @@ _LISTNETWORKLOADBALANCEROPERATIONSRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='next_page_token', full_name='yandex.cloud.loadbalancer.v1.ListNetworkLoadBalancerOperationsResponse.next_page_token', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1006,6 +1032,7 @@ _GETTARGETSTATESREQUEST = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='network_load_balancer_id', full_name='yandex.cloud.loadbalancer.v1.GetTargetStatesRequest.network_load_balancer_id', index=0,
@@ -1013,14 +1040,14 @@ _GETTARGETSTATESREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='target_group_id', full_name='yandex.cloud.loadbalancer.v1.GetTargetStatesRequest.target_group_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR),
+      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1044,6 +1071,7 @@ _GETTARGETSTATESRESPONSE = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='target_states', full_name='yandex.cloud.loadbalancer.v1.GetTargetStatesResponse.target_states', index=0,
@@ -1051,7 +1079,7 @@ _GETTARGETSTATESRESPONSE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1075,6 +1103,7 @@ _EXTERNALADDRESSSPEC = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='address', full_name='yandex.cloud.loadbalancer.v1.ExternalAddressSpec.address', index=0,
@@ -1082,14 +1111,14 @@ _EXTERNALADDRESSSPEC = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='ip_version', full_name='yandex.cloud.loadbalancer.v1.ExternalAddressSpec.ip_version', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1113,6 +1142,7 @@ _INTERNALADDRESSSPEC = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='address', full_name='yandex.cloud.loadbalancer.v1.InternalAddressSpec.address', index=0,
@@ -1120,21 +1150,21 @@ _INTERNALADDRESSSPEC = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='subnet_id', full_name='yandex.cloud.loadbalancer.v1.InternalAddressSpec.subnet_id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='ip_version', full_name='yandex.cloud.loadbalancer.v1.InternalAddressSpec.ip_version', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1158,6 +1188,7 @@ _LISTENERSPEC = _descriptor.Descriptor(
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
+  create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
       name='name', full_name='yandex.cloud.loadbalancer.v1.ListenerSpec.name', index=0,
@@ -1165,42 +1196,42 @@ _LISTENERSPEC = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='port', full_name='yandex.cloud.loadbalancer.v1.ListenerSpec.port', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\0071-65535', file=DESCRIPTOR),
+      serialized_options=b'\372\3071\0071-65535', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='protocol', full_name='yandex.cloud.loadbalancer.v1.ListenerSpec.protocol', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='external_address_spec', full_name='yandex.cloud.loadbalancer.v1.ListenerSpec.external_address_spec', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='internal_address_spec', full_name='yandex.cloud.loadbalancer.v1.ListenerSpec.internal_address_spec', index=4,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='target_port', full_name='yandex.cloud.loadbalancer.v1.ListenerSpec.target_port', index=5,
       number=5, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR),
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1214,7 +1245,9 @@ _LISTENERSPEC = _descriptor.Descriptor(
   oneofs=[
     _descriptor.OneofDescriptor(
       name='address', full_name='yandex.cloud.loadbalancer.v1.ListenerSpec.address',
-      index=0, containing_type=None, fields=[]),
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
   ],
   serialized_start=4242,
   serialized_end=4609,
@@ -1537,6 +1570,7 @@ _NETWORKLOADBALANCERSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
+  create_key=_descriptor._internal_create_key,
   serialized_start=4612,
   serialized_end=7869,
   methods=[
@@ -1548,6 +1582,7 @@ _NETWORKLOADBALANCERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_GETNETWORKLOADBALANCERREQUEST,
     output_type=yandex_dot_cloud_dot_loadbalancer_dot_v1_dot_network__load__balancer__pb2._NETWORKLOADBALANCER,
     serialized_options=b'\202\323\344\223\002C\022A/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='List',
@@ -1557,6 +1592,7 @@ _NETWORKLOADBALANCERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_LISTNETWORKLOADBALANCERSREQUEST,
     output_type=_LISTNETWORKLOADBALANCERSRESPONSE,
     serialized_options=b'\202\323\344\223\002(\022&/load-balancer/v1/networkLoadBalancers',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Create',
@@ -1566,6 +1602,7 @@ _NETWORKLOADBALANCERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_CREATENETWORKLOADBALANCERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\002+\"&/load-balancer/v1/networkLoadBalancers:\001*\262\322*8\n!CreateNetworkLoadBalancerMetadata\022\023NetworkLoadBalancer',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Update',
@@ -1575,6 +1612,7 @@ _NETWORKLOADBALANCERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_UPDATENETWORKLOADBALANCERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\002F2A/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}:\001*\262\322*8\n!UpdateNetworkLoadBalancerMetadata\022\023NetworkLoadBalancer',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Delete',
@@ -1584,6 +1622,7 @@ _NETWORKLOADBALANCERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_DELETENETWORKLOADBALANCERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\002C*A/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}\262\322*:\n!DeleteNetworkLoadBalancerMetadata\022\025google.protobuf.Empty',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Start',
@@ -1593,6 +1632,7 @@ _NETWORKLOADBALANCERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_STARTNETWORKLOADBALANCERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\002I\"G/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}:start\262\322*9\n StartNetworkLoadBalancerMetadata\022\025google.protobuf.Empty',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='Stop',
@@ -1602,6 +1642,7 @@ _NETWORKLOADBALANCERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_STOPNETWORKLOADBALANCERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\002H\"F/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}:stop\262\322*8\n\037StopNetworkLoadBalancerMetadata\022\025google.protobuf.Empty',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='AttachTargetGroup',
@@ -1611,6 +1652,7 @@ _NETWORKLOADBALANCERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_ATTACHNETWORKLOADBALANCERTARGETGROUPREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\002X\"S/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}:attachTargetGroup:\001*\262\322*C\n,AttachNetworkLoadBalancerTargetGroupMetadata\022\023NetworkLoadBalancer',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='DetachTargetGroup',
@@ -1620,6 +1662,7 @@ _NETWORKLOADBALANCERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_DETACHNETWORKLOADBALANCERTARGETGROUPREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\002X\"S/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}:detachTargetGroup:\001*\262\322*C\n,DetachNetworkLoadBalancerTargetGroupMetadata\022\023NetworkLoadBalancer',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='GetTargetStates',
@@ -1629,6 +1672,7 @@ _NETWORKLOADBALANCERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_GETTARGETSTATESREQUEST,
     output_type=_GETTARGETSTATESRESPONSE,
     serialized_options=b'\202\323\344\223\002S\022Q/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}:getTargetStates',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='AddListener',
@@ -1638,6 +1682,7 @@ _NETWORKLOADBALANCERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_ADDNETWORKLOADBALANCERLISTENERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\002R\"M/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}:addListener:\001*\262\322*=\n&AddNetworkLoadBalancerListenerMetadata\022\023NetworkLoadBalancer',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='RemoveListener',
@@ -1647,6 +1692,7 @@ _NETWORKLOADBALANCERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_REMOVENETWORKLOADBALANCERLISTENERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\002U\"P/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}:removeListener:\001*\262\322*@\n)RemoveNetworkLoadBalancerListenerMetadata\022\023NetworkLoadBalancer',
+    create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
     name='ListOperations',
@@ -1656,6 +1702,7 @@ _NETWORKLOADBALANCERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_LISTNETWORKLOADBALANCEROPERATIONSREQUEST,
     output_type=_LISTNETWORKLOADBALANCEROPERATIONSRESPONSE,
     serialized_options=b'\202\323\344\223\002N\022L/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}/operations',
+    create_key=_descriptor._internal_create_key,
   ),
 ])
 _sym_db.RegisterServiceDescriptor(_NETWORKLOADBALANCERSERVICE)
