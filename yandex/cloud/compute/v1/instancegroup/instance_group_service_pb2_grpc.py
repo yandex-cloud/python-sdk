@@ -68,6 +68,16 @@ class InstanceGroupServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.ListInstanceGroupInstancesRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.ListInstanceGroupInstancesResponse.FromString,
                 )
+        self.DeleteInstances = channel.unary_unary(
+                '/yandex.cloud.compute.v1.instancegroup.InstanceGroupService/DeleteInstances',
+                request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.DeleteInstancesRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
+        self.StopInstances = channel.unary_unary(
+                '/yandex.cloud.compute.v1.instancegroup.InstanceGroupService/StopInstances',
+                request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.StopInstancesRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
         self.ListOperations = channel.unary_unary(
                 '/yandex.cloud.compute.v1.instancegroup.InstanceGroupService/ListOperations',
                 request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.ListInstanceGroupOperationsRequest.SerializeToString,
@@ -175,6 +185,20 @@ class InstanceGroupServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def DeleteInstances(self, request, context):
+        """Delete instances from instance group
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def StopInstances(self, request, context):
+        """Stop instances from instance group
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListOperations(self, request, context):
         """Lists operations for the specified instance group.
         """
@@ -262,6 +286,16 @@ def add_InstanceGroupServiceServicer_to_server(servicer, server):
                     servicer.ListInstances,
                     request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.ListInstanceGroupInstancesRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.ListInstanceGroupInstancesResponse.SerializeToString,
+            ),
+            'DeleteInstances': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteInstances,
+                    request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.DeleteInstancesRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'StopInstances': grpc.unary_unary_rpc_method_handler(
+                    servicer.StopInstances,
+                    request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.StopInstancesRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'ListOperations': grpc.unary_unary_rpc_method_handler(
                     servicer.ListOperations,
@@ -466,6 +500,40 @@ class InstanceGroupService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.compute.v1.instancegroup.InstanceGroupService/ListInstances',
             yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.ListInstanceGroupInstancesRequest.SerializeToString,
             yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.ListInstanceGroupInstancesResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteInstances(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.compute.v1.instancegroup.InstanceGroupService/DeleteInstances',
+            yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.DeleteInstancesRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def StopInstances(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.compute.v1.instancegroup.InstanceGroupService/StopInstances',
+            yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.StopInstancesRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
