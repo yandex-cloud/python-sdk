@@ -273,7 +273,7 @@ class ClusterServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def StreamLogs(self, request, context):
-        """Same as ListLogs but using server-side streaming. Also allows for 'tail -f' semantics.
+        """Same as ListLogs but using server-side streaming. Also allows for `tail -f` semantics.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
