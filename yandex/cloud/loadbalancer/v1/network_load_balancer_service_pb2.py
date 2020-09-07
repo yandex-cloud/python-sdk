@@ -25,7 +25,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n yandex.cloud.api.loadbalancer.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadbalancer/v1;loadbalancer',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n@yandex/cloud/loadbalancer/v1/network_load_balancer_service.proto\x12\x1cyandex.cloud.loadbalancer.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x38yandex/cloud/loadbalancer/v1/network_load_balancer.proto\"K\n\x1dGetNetworkLoadBalancerRequest\x12*\n\x18network_load_balancer_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"\x9c\x01\n\x1fListNetworkLoadBalancersRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"\x8e\x01\n ListNetworkLoadBalancersResponse\x12Q\n\x16network_load_balancers\x18\x01 \x03(\x0b\x32\x31.yandex.cloud.loadbalancer.v1.NetworkLoadBalancer\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xfa\x04\n CreateNetworkLoadBalancerRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x9b\x01\n\x06labels\x18\x04 \x03(\x0b\x32J.yandex.cloud.loadbalancer.v1.CreateNetworkLoadBalancerRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12\x1f\n\tregion_id\x18\x05 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12J\n\x04type\x18\x06 \x01(\x0e\x32\x36.yandex.cloud.loadbalancer.v1.NetworkLoadBalancer.TypeB\x04\xe8\xc7\x31\x01\x12N\n\x0elistener_specs\x18\x07 \x03(\x0b\x32*.yandex.cloud.loadbalancer.v1.ListenerSpecB\n\x82\xc8\x31\x06<=1000\x12Z\n\x16\x61ttached_target_groups\x18\x08 \x03(\x0b\x32\x31.yandex.cloud.loadbalancer.v1.AttachedTargetGroupB\x07\x82\xc8\x31\x03<=5\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"E\n!CreateNetworkLoadBalancerMetadata\x12 \n\x18network_load_balancer_id\x18\x01 \x01(\t\"\xcd\x04\n UpdateNetworkLoadBalancerRequest\x12.\n\x18network_load_balancer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x9b\x01\n\x06labels\x18\x05 \x03(\x0b\x32J.yandex.cloud.loadbalancer.v1.UpdateNetworkLoadBalancerRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12N\n\x0elistener_specs\x18\x06 \x03(\x0b\x32*.yandex.cloud.loadbalancer.v1.ListenerSpecB\n\x82\xc8\x31\x06<=1000\x12Z\n\x16\x61ttached_target_groups\x18\x07 \x03(\x0b\x32\x31.yandex.cloud.loadbalancer.v1.AttachedTargetGroupB\x07\x82\xc8\x31\x03<=5\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"E\n!UpdateNetworkLoadBalancerMetadata\x12 \n\x18network_load_balancer_id\x18\x01 \x01(\t\"R\n DeleteNetworkLoadBalancerRequest\x12.\n\x18network_load_balancer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"E\n!DeleteNetworkLoadBalancerMetadata\x12 \n\x18network_load_balancer_id\x18\x01 \x01(\t\"Q\n\x1fStartNetworkLoadBalancerRequest\x12.\n\x18network_load_balancer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"D\n StartNetworkLoadBalancerMetadata\x12 \n\x18network_load_balancer_id\x18\x01 \x01(\t\"P\n\x1eStopNetworkLoadBalancerRequest\x12.\n\x18network_load_balancer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"C\n\x1fStopNetworkLoadBalancerMetadata\x12 \n\x18network_load_balancer_id\x18\x01 \x01(\t\"\xb5\x01\n+AttachNetworkLoadBalancerTargetGroupRequest\x12.\n\x18network_load_balancer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12V\n\x15\x61ttached_target_group\x18\x02 \x01(\x0b\x32\x31.yandex.cloud.loadbalancer.v1.AttachedTargetGroupB\x04\xe8\xc7\x31\x01\"i\n,AttachNetworkLoadBalancerTargetGroupMetadata\x12 \n\x18network_load_balancer_id\x18\x01 \x01(\t\x12\x17\n\x0ftarget_group_id\x18\x02 \x01(\t\"\x84\x01\n+DetachNetworkLoadBalancerTargetGroupRequest\x12.\n\x18network_load_balancer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12%\n\x0ftarget_group_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"i\n,DetachNetworkLoadBalancerTargetGroupMetadata\x12 \n\x18network_load_balancer_id\x18\x01 \x01(\t\x12\x17\n\x0ftarget_group_id\x18\x02 \x01(\t\"\xa0\x01\n%AddNetworkLoadBalancerListenerRequest\x12.\n\x18network_load_balancer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12G\n\rlistener_spec\x18\x02 \x01(\x0b\x32*.yandex.cloud.loadbalancer.v1.ListenerSpecB\x04\xe8\xc7\x31\x01\"J\n&AddNetworkLoadBalancerListenerMetadata\x12 \n\x18network_load_balancer_id\x18\x01 \x01(\t\"\x98\x01\n(RemoveNetworkLoadBalancerListenerRequest\x12.\n\x18network_load_balancer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12<\n\rlistener_name\x18\x02 \x01(\tB%\xe8\xc7\x31\x01\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\"M\n)RemoveNetworkLoadBalancerListenerMetadata\x12 \n\x18network_load_balancer_id\x18\x01 \x01(\t\"\x98\x01\n(ListNetworkLoadBalancerOperationsRequest\x12.\n\x18network_load_balancer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"{\n)ListNetworkLoadBalancerOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"g\n\x16GetTargetStatesRequest\x12*\n\x18network_load_balancer_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12!\n\x0ftarget_group_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"[\n\x17GetTargetStatesResponse\x12@\n\rtarget_states\x18\x01 \x03(\x0b\x32).yandex.cloud.loadbalancer.v1.TargetState\"c\n\x13\x45xternalAddressSpec\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12;\n\nip_version\x18\x02 \x01(\x0e\x32\'.yandex.cloud.loadbalancer.v1.IpVersion\"v\n\x13InternalAddressSpec\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x11\n\tsubnet_id\x18\x02 \x01(\t\x12;\n\nip_version\x18\x03 \x01(\x0e\x32\'.yandex.cloud.loadbalancer.v1.IpVersion\"\xef\x02\n\x0cListenerSpec\x12\x33\n\x04name\x18\x01 \x01(\tB%\xe8\xc7\x31\x01\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x19\n\x04port\x18\x02 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x31-65535\x12G\n\x08protocol\x18\x03 \x01(\x0e\x32/.yandex.cloud.loadbalancer.v1.Listener.ProtocolB\x04\xe8\xc7\x31\x01\x12R\n\x15\x65xternal_address_spec\x18\x04 \x01(\x0b\x32\x31.yandex.cloud.loadbalancer.v1.ExternalAddressSpecH\x00\x12R\n\x15internal_address_spec\x18\x06 \x01(\x0b\x32\x31.yandex.cloud.loadbalancer.v1.InternalAddressSpecH\x00\x12\x13\n\x0btarget_port\x18\x05 \x01(\x03\x42\t\n\x07\x61\x64\x64ress2\xb9\x19\n\x1aNetworkLoadBalancerService\x12\xc0\x01\n\x03Get\x12;.yandex.cloud.loadbalancer.v1.GetNetworkLoadBalancerRequest\x1a\x31.yandex.cloud.loadbalancer.v1.NetworkLoadBalancer\"I\x82\xd3\xe4\x93\x02\x43\x12\x41/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}\x12\xb5\x01\n\x04List\x12=.yandex.cloud.loadbalancer.v1.ListNetworkLoadBalancersRequest\x1a>.yandex.cloud.loadbalancer.v1.ListNetworkLoadBalancersResponse\".\x82\xd3\xe4\x93\x02(\x12&/load-balancer/v1/networkLoadBalancers\x12\xda\x01\n\x06\x43reate\x12>.yandex.cloud.loadbalancer.v1.CreateNetworkLoadBalancerRequest\x1a!.yandex.cloud.operation.Operation\"m\x82\xd3\xe4\x93\x02+\"&/load-balancer/v1/networkLoadBalancers:\x01*\xb2\xd2*8\n!CreateNetworkLoadBalancerMetadata\x12\x13NetworkLoadBalancer\x12\xf6\x01\n\x06Update\x12>.yandex.cloud.loadbalancer.v1.UpdateNetworkLoadBalancerRequest\x1a!.yandex.cloud.operation.Operation\"\x88\x01\x82\xd3\xe4\x93\x02\x46\x32\x41/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}:\x01*\xb2\xd2*8\n!UpdateNetworkLoadBalancerMetadata\x12\x13NetworkLoadBalancer\x12\xf5\x01\n\x06\x44\x65lete\x12>.yandex.cloud.loadbalancer.v1.DeleteNetworkLoadBalancerRequest\x1a!.yandex.cloud.operation.Operation\"\x87\x01\x82\xd3\xe4\x93\x02\x43*A/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}\xb2\xd2*:\n!DeleteNetworkLoadBalancerMetadata\x12\x15google.protobuf.Empty\x12\xf8\x01\n\x05Start\x12=.yandex.cloud.loadbalancer.v1.StartNetworkLoadBalancerRequest\x1a!.yandex.cloud.operation.Operation\"\x8c\x01\x82\xd3\xe4\x93\x02I\"G/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}:start\xb2\xd2*9\n StartNetworkLoadBalancerMetadata\x12\x15google.protobuf.Empty\x12\xf4\x01\n\x04Stop\x12<.yandex.cloud.loadbalancer.v1.StopNetworkLoadBalancerRequest\x1a!.yandex.cloud.operation.Operation\"\x8a\x01\x82\xd3\xe4\x93\x02H\"F/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}:stop\xb2\xd2*8\n\x1fStopNetworkLoadBalancerMetadata\x12\x15google.protobuf.Empty\x12\xa9\x02\n\x11\x41ttachTargetGroup\x12I.yandex.cloud.loadbalancer.v1.AttachNetworkLoadBalancerTargetGroupRequest\x1a!.yandex.cloud.operation.Operation\"\xa5\x01\x82\xd3\xe4\x93\x02X\"S/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}:attachTargetGroup:\x01*\xb2\xd2*C\n,AttachNetworkLoadBalancerTargetGroupMetadata\x12\x13NetworkLoadBalancer\x12\xa9\x02\n\x11\x44\x65tachTargetGroup\x12I.yandex.cloud.loadbalancer.v1.DetachNetworkLoadBalancerTargetGroupRequest\x1a!.yandex.cloud.operation.Operation\"\xa5\x01\x82\xd3\xe4\x93\x02X\"S/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}:detachTargetGroup:\x01*\xb2\xd2*C\n,DetachNetworkLoadBalancerTargetGroupMetadata\x12\x13NetworkLoadBalancer\x12\xd9\x01\n\x0fGetTargetStates\x12\x34.yandex.cloud.loadbalancer.v1.GetTargetStatesRequest\x1a\x35.yandex.cloud.loadbalancer.v1.GetTargetStatesResponse\"Y\x82\xd3\xe4\x93\x02S\x12Q/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}:getTargetStates\x12\x91\x02\n\x0b\x41\x64\x64Listener\x12\x43.yandex.cloud.loadbalancer.v1.AddNetworkLoadBalancerListenerRequest\x1a!.yandex.cloud.operation.Operation\"\x99\x01\x82\xd3\xe4\x93\x02R\"M/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}:addListener:\x01*\xb2\xd2*=\n&AddNetworkLoadBalancerListenerMetadata\x12\x13NetworkLoadBalancer\x12\x9d\x02\n\x0eRemoveListener\x12\x46.yandex.cloud.loadbalancer.v1.RemoveNetworkLoadBalancerListenerRequest\x1a!.yandex.cloud.operation.Operation\"\x9f\x01\x82\xd3\xe4\x93\x02U\"P/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}:removeListener:\x01*\xb2\xd2*@\n)RemoveNetworkLoadBalancerListenerMetadata\x12\x13NetworkLoadBalancer\x12\xf7\x01\n\x0eListOperations\x12\x46.yandex.cloud.loadbalancer.v1.ListNetworkLoadBalancerOperationsRequest\x1aG.yandex.cloud.loadbalancer.v1.ListNetworkLoadBalancerOperationsResponse\"T\x82\xd3\xe4\x93\x02N\x12L/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}/operationsBq\n yandex.cloud.api.loadbalancer.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadbalancer/v1;loadbalancerb\x06proto3'
+  serialized_pb=b'\n@yandex/cloud/loadbalancer/v1/network_load_balancer_service.proto\x12\x1cyandex.cloud.loadbalancer.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x38yandex/cloud/loadbalancer/v1/network_load_balancer.proto\"K\n\x1dGetNetworkLoadBalancerRequest\x12*\n\x18network_load_balancer_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"\x9c\x01\n\x1fListNetworkLoadBalancersRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"\x8e\x01\n ListNetworkLoadBalancersResponse\x12Q\n\x16network_load_balancers\x18\x01 \x03(\x0b\x32\x31.yandex.cloud.loadbalancer.v1.NetworkLoadBalancer\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xf6\x04\n CreateNetworkLoadBalancerRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x9b\x01\n\x06labels\x18\x04 \x03(\x0b\x32J.yandex.cloud.loadbalancer.v1.CreateNetworkLoadBalancerRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12\x1b\n\tregion_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12J\n\x04type\x18\x06 \x01(\x0e\x32\x36.yandex.cloud.loadbalancer.v1.NetworkLoadBalancer.TypeB\x04\xe8\xc7\x31\x01\x12N\n\x0elistener_specs\x18\x07 \x03(\x0b\x32*.yandex.cloud.loadbalancer.v1.ListenerSpecB\n\x82\xc8\x31\x06<=1000\x12Z\n\x16\x61ttached_target_groups\x18\x08 \x03(\x0b\x32\x31.yandex.cloud.loadbalancer.v1.AttachedTargetGroupB\x07\x82\xc8\x31\x03<=5\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"E\n!CreateNetworkLoadBalancerMetadata\x12 \n\x18network_load_balancer_id\x18\x01 \x01(\t\"\xcd\x04\n UpdateNetworkLoadBalancerRequest\x12.\n\x18network_load_balancer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x9b\x01\n\x06labels\x18\x05 \x03(\x0b\x32J.yandex.cloud.loadbalancer.v1.UpdateNetworkLoadBalancerRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12N\n\x0elistener_specs\x18\x06 \x03(\x0b\x32*.yandex.cloud.loadbalancer.v1.ListenerSpecB\n\x82\xc8\x31\x06<=1000\x12Z\n\x16\x61ttached_target_groups\x18\x07 \x03(\x0b\x32\x31.yandex.cloud.loadbalancer.v1.AttachedTargetGroupB\x07\x82\xc8\x31\x03<=5\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"E\n!UpdateNetworkLoadBalancerMetadata\x12 \n\x18network_load_balancer_id\x18\x01 \x01(\t\"R\n DeleteNetworkLoadBalancerRequest\x12.\n\x18network_load_balancer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"E\n!DeleteNetworkLoadBalancerMetadata\x12 \n\x18network_load_balancer_id\x18\x01 \x01(\t\"Q\n\x1fStartNetworkLoadBalancerRequest\x12.\n\x18network_load_balancer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"D\n StartNetworkLoadBalancerMetadata\x12 \n\x18network_load_balancer_id\x18\x01 \x01(\t\"P\n\x1eStopNetworkLoadBalancerRequest\x12.\n\x18network_load_balancer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"C\n\x1fStopNetworkLoadBalancerMetadata\x12 \n\x18network_load_balancer_id\x18\x01 \x01(\t\"\xb5\x01\n+AttachNetworkLoadBalancerTargetGroupRequest\x12.\n\x18network_load_balancer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12V\n\x15\x61ttached_target_group\x18\x02 \x01(\x0b\x32\x31.yandex.cloud.loadbalancer.v1.AttachedTargetGroupB\x04\xe8\xc7\x31\x01\"i\n,AttachNetworkLoadBalancerTargetGroupMetadata\x12 \n\x18network_load_balancer_id\x18\x01 \x01(\t\x12\x17\n\x0ftarget_group_id\x18\x02 \x01(\t\"\x84\x01\n+DetachNetworkLoadBalancerTargetGroupRequest\x12.\n\x18network_load_balancer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12%\n\x0ftarget_group_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"i\n,DetachNetworkLoadBalancerTargetGroupMetadata\x12 \n\x18network_load_balancer_id\x18\x01 \x01(\t\x12\x17\n\x0ftarget_group_id\x18\x02 \x01(\t\"\xa0\x01\n%AddNetworkLoadBalancerListenerRequest\x12.\n\x18network_load_balancer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12G\n\rlistener_spec\x18\x02 \x01(\x0b\x32*.yandex.cloud.loadbalancer.v1.ListenerSpecB\x04\xe8\xc7\x31\x01\"J\n&AddNetworkLoadBalancerListenerMetadata\x12 \n\x18network_load_balancer_id\x18\x01 \x01(\t\"\x98\x01\n(RemoveNetworkLoadBalancerListenerRequest\x12.\n\x18network_load_balancer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12<\n\rlistener_name\x18\x02 \x01(\tB%\xe8\xc7\x31\x01\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\"M\n)RemoveNetworkLoadBalancerListenerMetadata\x12 \n\x18network_load_balancer_id\x18\x01 \x01(\t\"\x98\x01\n(ListNetworkLoadBalancerOperationsRequest\x12.\n\x18network_load_balancer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"{\n)ListNetworkLoadBalancerOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"g\n\x16GetTargetStatesRequest\x12*\n\x18network_load_balancer_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12!\n\x0ftarget_group_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"[\n\x17GetTargetStatesResponse\x12@\n\rtarget_states\x18\x01 \x03(\x0b\x32).yandex.cloud.loadbalancer.v1.TargetState\"c\n\x13\x45xternalAddressSpec\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12;\n\nip_version\x18\x02 \x01(\x0e\x32\'.yandex.cloud.loadbalancer.v1.IpVersion\"v\n\x13InternalAddressSpec\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x11\n\tsubnet_id\x18\x02 \x01(\t\x12;\n\nip_version\x18\x03 \x01(\x0e\x32\'.yandex.cloud.loadbalancer.v1.IpVersion\"\xef\x02\n\x0cListenerSpec\x12\x33\n\x04name\x18\x01 \x01(\tB%\xe8\xc7\x31\x01\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x19\n\x04port\x18\x02 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x31-65535\x12G\n\x08protocol\x18\x03 \x01(\x0e\x32/.yandex.cloud.loadbalancer.v1.Listener.ProtocolB\x04\xe8\xc7\x31\x01\x12R\n\x15\x65xternal_address_spec\x18\x04 \x01(\x0b\x32\x31.yandex.cloud.loadbalancer.v1.ExternalAddressSpecH\x00\x12R\n\x15internal_address_spec\x18\x06 \x01(\x0b\x32\x31.yandex.cloud.loadbalancer.v1.InternalAddressSpecH\x00\x12\x13\n\x0btarget_port\x18\x05 \x01(\x03\x42\t\n\x07\x61\x64\x64ress2\xb9\x19\n\x1aNetworkLoadBalancerService\x12\xc0\x01\n\x03Get\x12;.yandex.cloud.loadbalancer.v1.GetNetworkLoadBalancerRequest\x1a\x31.yandex.cloud.loadbalancer.v1.NetworkLoadBalancer\"I\x82\xd3\xe4\x93\x02\x43\x12\x41/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}\x12\xb5\x01\n\x04List\x12=.yandex.cloud.loadbalancer.v1.ListNetworkLoadBalancersRequest\x1a>.yandex.cloud.loadbalancer.v1.ListNetworkLoadBalancersResponse\".\x82\xd3\xe4\x93\x02(\x12&/load-balancer/v1/networkLoadBalancers\x12\xda\x01\n\x06\x43reate\x12>.yandex.cloud.loadbalancer.v1.CreateNetworkLoadBalancerRequest\x1a!.yandex.cloud.operation.Operation\"m\x82\xd3\xe4\x93\x02+\"&/load-balancer/v1/networkLoadBalancers:\x01*\xb2\xd2*8\n!CreateNetworkLoadBalancerMetadata\x12\x13NetworkLoadBalancer\x12\xf6\x01\n\x06Update\x12>.yandex.cloud.loadbalancer.v1.UpdateNetworkLoadBalancerRequest\x1a!.yandex.cloud.operation.Operation\"\x88\x01\x82\xd3\xe4\x93\x02\x46\x32\x41/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}:\x01*\xb2\xd2*8\n!UpdateNetworkLoadBalancerMetadata\x12\x13NetworkLoadBalancer\x12\xf5\x01\n\x06\x44\x65lete\x12>.yandex.cloud.loadbalancer.v1.DeleteNetworkLoadBalancerRequest\x1a!.yandex.cloud.operation.Operation\"\x87\x01\x82\xd3\xe4\x93\x02\x43*A/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}\xb2\xd2*:\n!DeleteNetworkLoadBalancerMetadata\x12\x15google.protobuf.Empty\x12\xf8\x01\n\x05Start\x12=.yandex.cloud.loadbalancer.v1.StartNetworkLoadBalancerRequest\x1a!.yandex.cloud.operation.Operation\"\x8c\x01\x82\xd3\xe4\x93\x02I\"G/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}:start\xb2\xd2*9\n StartNetworkLoadBalancerMetadata\x12\x15google.protobuf.Empty\x12\xf4\x01\n\x04Stop\x12<.yandex.cloud.loadbalancer.v1.StopNetworkLoadBalancerRequest\x1a!.yandex.cloud.operation.Operation\"\x8a\x01\x82\xd3\xe4\x93\x02H\"F/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}:stop\xb2\xd2*8\n\x1fStopNetworkLoadBalancerMetadata\x12\x15google.protobuf.Empty\x12\xa9\x02\n\x11\x41ttachTargetGroup\x12I.yandex.cloud.loadbalancer.v1.AttachNetworkLoadBalancerTargetGroupRequest\x1a!.yandex.cloud.operation.Operation\"\xa5\x01\x82\xd3\xe4\x93\x02X\"S/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}:attachTargetGroup:\x01*\xb2\xd2*C\n,AttachNetworkLoadBalancerTargetGroupMetadata\x12\x13NetworkLoadBalancer\x12\xa9\x02\n\x11\x44\x65tachTargetGroup\x12I.yandex.cloud.loadbalancer.v1.DetachNetworkLoadBalancerTargetGroupRequest\x1a!.yandex.cloud.operation.Operation\"\xa5\x01\x82\xd3\xe4\x93\x02X\"S/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}:detachTargetGroup:\x01*\xb2\xd2*C\n,DetachNetworkLoadBalancerTargetGroupMetadata\x12\x13NetworkLoadBalancer\x12\xd9\x01\n\x0fGetTargetStates\x12\x34.yandex.cloud.loadbalancer.v1.GetTargetStatesRequest\x1a\x35.yandex.cloud.loadbalancer.v1.GetTargetStatesResponse\"Y\x82\xd3\xe4\x93\x02S\x12Q/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}:getTargetStates\x12\x91\x02\n\x0b\x41\x64\x64Listener\x12\x43.yandex.cloud.loadbalancer.v1.AddNetworkLoadBalancerListenerRequest\x1a!.yandex.cloud.operation.Operation\"\x99\x01\x82\xd3\xe4\x93\x02R\"M/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}:addListener:\x01*\xb2\xd2*=\n&AddNetworkLoadBalancerListenerMetadata\x12\x13NetworkLoadBalancer\x12\x9d\x02\n\x0eRemoveListener\x12\x46.yandex.cloud.loadbalancer.v1.RemoveNetworkLoadBalancerListenerRequest\x1a!.yandex.cloud.operation.Operation\"\x9f\x01\x82\xd3\xe4\x93\x02U\"P/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}:removeListener:\x01*\xb2\xd2*@\n)RemoveNetworkLoadBalancerListenerMetadata\x12\x13NetworkLoadBalancer\x12\xf7\x01\n\x0eListOperations\x12\x46.yandex.cloud.loadbalancer.v1.ListNetworkLoadBalancerOperationsRequest\x1aG.yandex.cloud.loadbalancer.v1.ListNetworkLoadBalancerOperationsResponse\"T\x82\xd3\xe4\x93\x02N\x12L/load-balancer/v1/networkLoadBalancers/{network_load_balancer_id}/operationsBq\n yandex.cloud.api.loadbalancer.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadbalancer/v1;loadbalancerb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_loadbalancer_dot_v1_dot_network__load__balancer__pb2.DESCRIPTOR,])
 
@@ -190,8 +190,8 @@ _CREATENETWORKLOADBALANCERREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1296,
-  serialized_end=1341,
+  serialized_start=1292,
+  serialized_end=1337,
 )
 
 _CREATENETWORKLOADBALANCERREQUEST = _descriptor.Descriptor(
@@ -236,7 +236,7 @@ _CREATENETWORKLOADBALANCERREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='type', full_name='yandex.cloud.loadbalancer.v1.CreateNetworkLoadBalancerRequest.type', index=5,
       number=6, type=14, cpp_type=8, label=1,
@@ -271,7 +271,7 @@ _CREATENETWORKLOADBALANCERREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=707,
-  serialized_end=1341,
+  serialized_end=1337,
 )
 
 
@@ -302,8 +302,8 @@ _CREATENETWORKLOADBALANCERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1343,
-  serialized_end=1412,
+  serialized_start=1339,
+  serialized_end=1408,
 )
 
 
@@ -341,8 +341,8 @@ _UPDATENETWORKLOADBALANCERREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1296,
-  serialized_end=1341,
+  serialized_start=1292,
+  serialized_end=1337,
 )
 
 _UPDATENETWORKLOADBALANCERREQUEST = _descriptor.Descriptor(
@@ -414,8 +414,8 @@ _UPDATENETWORKLOADBALANCERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1415,
-  serialized_end=2004,
+  serialized_start=1411,
+  serialized_end=2000,
 )
 
 
@@ -446,8 +446,8 @@ _UPDATENETWORKLOADBALANCERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2006,
-  serialized_end=2075,
+  serialized_start=2002,
+  serialized_end=2071,
 )
 
 
@@ -478,8 +478,8 @@ _DELETENETWORKLOADBALANCERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2077,
-  serialized_end=2159,
+  serialized_start=2073,
+  serialized_end=2155,
 )
 
 
@@ -510,8 +510,8 @@ _DELETENETWORKLOADBALANCERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2161,
-  serialized_end=2230,
+  serialized_start=2157,
+  serialized_end=2226,
 )
 
 
@@ -542,8 +542,8 @@ _STARTNETWORKLOADBALANCERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2232,
-  serialized_end=2313,
+  serialized_start=2228,
+  serialized_end=2309,
 )
 
 
@@ -574,8 +574,8 @@ _STARTNETWORKLOADBALANCERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2315,
-  serialized_end=2383,
+  serialized_start=2311,
+  serialized_end=2379,
 )
 
 
@@ -606,8 +606,8 @@ _STOPNETWORKLOADBALANCERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2385,
-  serialized_end=2465,
+  serialized_start=2381,
+  serialized_end=2461,
 )
 
 
@@ -638,8 +638,8 @@ _STOPNETWORKLOADBALANCERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2467,
-  serialized_end=2534,
+  serialized_start=2463,
+  serialized_end=2530,
 )
 
 
@@ -677,8 +677,8 @@ _ATTACHNETWORKLOADBALANCERTARGETGROUPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2537,
-  serialized_end=2718,
+  serialized_start=2533,
+  serialized_end=2714,
 )
 
 
@@ -716,8 +716,8 @@ _ATTACHNETWORKLOADBALANCERTARGETGROUPMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2720,
-  serialized_end=2825,
+  serialized_start=2716,
+  serialized_end=2821,
 )
 
 
@@ -755,8 +755,8 @@ _DETACHNETWORKLOADBALANCERTARGETGROUPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2828,
-  serialized_end=2960,
+  serialized_start=2824,
+  serialized_end=2956,
 )
 
 
@@ -794,8 +794,8 @@ _DETACHNETWORKLOADBALANCERTARGETGROUPMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2962,
-  serialized_end=3067,
+  serialized_start=2958,
+  serialized_end=3063,
 )
 
 
@@ -833,8 +833,8 @@ _ADDNETWORKLOADBALANCERLISTENERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3070,
-  serialized_end=3230,
+  serialized_start=3066,
+  serialized_end=3226,
 )
 
 
@@ -865,8 +865,8 @@ _ADDNETWORKLOADBALANCERLISTENERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3232,
-  serialized_end=3306,
+  serialized_start=3228,
+  serialized_end=3302,
 )
 
 
@@ -904,8 +904,8 @@ _REMOVENETWORKLOADBALANCERLISTENERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3309,
-  serialized_end=3461,
+  serialized_start=3305,
+  serialized_end=3457,
 )
 
 
@@ -936,8 +936,8 @@ _REMOVENETWORKLOADBALANCERLISTENERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3463,
-  serialized_end=3540,
+  serialized_start=3459,
+  serialized_end=3536,
 )
 
 
@@ -982,8 +982,8 @@ _LISTNETWORKLOADBALANCEROPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3543,
-  serialized_end=3695,
+  serialized_start=3539,
+  serialized_end=3691,
 )
 
 
@@ -1021,8 +1021,8 @@ _LISTNETWORKLOADBALANCEROPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3697,
-  serialized_end=3820,
+  serialized_start=3693,
+  serialized_end=3816,
 )
 
 
@@ -1060,8 +1060,8 @@ _GETTARGETSTATESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3822,
-  serialized_end=3925,
+  serialized_start=3818,
+  serialized_end=3921,
 )
 
 
@@ -1092,8 +1092,8 @@ _GETTARGETSTATESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3927,
-  serialized_end=4018,
+  serialized_start=3923,
+  serialized_end=4014,
 )
 
 
@@ -1131,8 +1131,8 @@ _EXTERNALADDRESSSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4020,
-  serialized_end=4119,
+  serialized_start=4016,
+  serialized_end=4115,
 )
 
 
@@ -1177,8 +1177,8 @@ _INTERNALADDRESSSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4121,
-  serialized_end=4239,
+  serialized_start=4117,
+  serialized_end=4235,
 )
 
 
@@ -1249,8 +1249,8 @@ _LISTENERSPEC = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=4242,
-  serialized_end=4609,
+  serialized_start=4238,
+  serialized_end=4605,
 )
 
 _LISTNETWORKLOADBALANCERSRESPONSE.fields_by_name['network_load_balancers'].message_type = yandex_dot_cloud_dot_loadbalancer_dot_v1_dot_network__load__balancer__pb2._NETWORKLOADBALANCER
@@ -1571,8 +1571,8 @@ _NETWORKLOADBALANCERSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=4612,
-  serialized_end=7869,
+  serialized_start=4608,
+  serialized_end=7865,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',

@@ -186,14 +186,14 @@ class InstanceGroupServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def DeleteInstances(self, request, context):
-        """Delete instances from instance group
+        """Delete instances from the instance group.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def StopInstances(self, request, context):
-        """Stop instances from instance group
+        """Stop instances from the instance group.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
