@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\027yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpc',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n)yandex/cloud/vpc/v1/address_service.proto\x12\x13yandex.cloud.vpc.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a!yandex/cloud/vpc/v1/address.proto\"\'\n\x11GetAddressRequest\x12\x12\n\naddress_id\x18\x01 \x01(\t\"F\n\x18GetAddressByValueRequest\x12\x1f\n\x15\x65xternal_ipv4_address\x18\x01 \x01(\tH\x00\x42\t\n\x07\x61\x64\x64ress\"`\n\x14ListAddressesRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\"a\n\x15ListAddressesResponse\x12/\n\taddresses\x18\x01 \x03(\x0b\x32\x1c.yandex.cloud.vpc.v1.Address\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xa6\x02\n\x14\x43reateAddressRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x45\n\x06labels\x18\x04 \x03(\x0b\x32\x35.yandex.cloud.vpc.v1.CreateAddressRequest.LabelsEntry\x12R\n\x1a\x65xternal_ipv4_address_spec\x18\x05 \x01(\x0b\x32,.yandex.cloud.vpc.v1.ExternalIpv4AddressSpecH\x00\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0e\n\x0c\x61\x64\x64ress_spec\"{\n\x17\x45xternalIpv4AddressSpec\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x0f\n\x07zone_id\x18\x02 \x01(\t\x12>\n\x0crequirements\x18\x03 \x01(\x0b\x32(.yandex.cloud.vpc.v1.AddressRequirements\"+\n\x15\x43reateAddressMetadata\x12\x12\n\naddress_id\x18\x01 \x01(\t\"\x86\x02\n\x14UpdateAddressRequest\x12\x12\n\naddress_id\x18\x01 \x01(\t\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x45\n\x06labels\x18\x05 \x03(\x0b\x32\x35.yandex.cloud.vpc.v1.UpdateAddressRequest.LabelsEntry\x12\x10\n\x08reserved\x18\x06 \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15UpdateAddressMetadata\x12\x12\n\naddress_id\x18\x01 \x01(\t\"*\n\x14\x44\x65leteAddressRequest\x12\x12\n\naddress_id\x18\x01 \x01(\t\"+\n\x15\x44\x65leteAddressMetadata\x12\x12\n\naddress_id\x18\x01 \x01(\t\"Y\n\x1cListAddressOperationsRequest\x12\x12\n\naddress_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\"o\n\x1dListAddressOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\x99\x06\n\x0e\x41\x64\x64ressService\x12K\n\x03Get\x12&.yandex.cloud.vpc.v1.GetAddressRequest\x1a\x1c.yandex.cloud.vpc.v1.Address\x12Y\n\nGetByValue\x12-.yandex.cloud.vpc.v1.GetAddressByValueRequest\x1a\x1c.yandex.cloud.vpc.v1.Address\x12]\n\x04List\x12).yandex.cloud.vpc.v1.ListAddressesRequest\x1a*.yandex.cloud.vpc.v1.ListAddressesResponse\x12|\n\x06\x43reate\x12).yandex.cloud.vpc.v1.CreateAddressRequest\x1a!.yandex.cloud.operation.Operation\"$\xb2\xd2* \n\x15\x43reateAddressMetadata\x12\x07\x41\x64\x64ress\x12|\n\x06Update\x12).yandex.cloud.vpc.v1.UpdateAddressRequest\x1a!.yandex.cloud.operation.Operation\"$\xb2\xd2* \n\x15UpdateAddressMetadata\x12\x07\x41\x64\x64ress\x12\x8a\x01\n\x06\x44\x65lete\x12).yandex.cloud.vpc.v1.DeleteAddressRequest\x1a!.yandex.cloud.operation.Operation\"2\xb2\xd2*.\n\x15\x44\x65leteAddressMetadata\x12\x15google.protobuf.Empty\x12w\n\x0eListOperations\x12\x31.yandex.cloud.vpc.v1.ListAddressOperationsRequest\x1a\x32.yandex.cloud.vpc.v1.ListAddressOperationsResponseBV\n\x17yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpcb\x06proto3'
+  serialized_pb=b'\n)yandex/cloud/vpc/v1/address_service.proto\x12\x13yandex.cloud.vpc.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a!yandex/cloud/vpc/v1/address.proto\"\'\n\x11GetAddressRequest\x12\x12\n\naddress_id\x18\x01 \x01(\t\"F\n\x18GetAddressByValueRequest\x12\x1f\n\x15\x65xternal_ipv4_address\x18\x01 \x01(\tH\x00\x42\t\n\x07\x61\x64\x64ress\"`\n\x14ListAddressesRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\"a\n\x15ListAddressesResponse\x12/\n\taddresses\x18\x01 \x03(\x0b\x32\x1c.yandex.cloud.vpc.v1.Address\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xa6\x02\n\x14\x43reateAddressRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x45\n\x06labels\x18\x04 \x03(\x0b\x32\x35.yandex.cloud.vpc.v1.CreateAddressRequest.LabelsEntry\x12R\n\x1a\x65xternal_ipv4_address_spec\x18\x05 \x01(\x0b\x32,.yandex.cloud.vpc.v1.ExternalIpv4AddressSpecH\x00\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0e\n\x0c\x61\x64\x64ress_spec\"{\n\x17\x45xternalIpv4AddressSpec\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x0f\n\x07zone_id\x18\x02 \x01(\t\x12>\n\x0crequirements\x18\x03 \x01(\x0b\x32(.yandex.cloud.vpc.v1.AddressRequirements\"+\n\x15\x43reateAddressMetadata\x12\x12\n\naddress_id\x18\x01 \x01(\t\"\x86\x02\n\x14UpdateAddressRequest\x12\x12\n\naddress_id\x18\x01 \x01(\t\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x45\n\x06labels\x18\x05 \x03(\x0b\x32\x35.yandex.cloud.vpc.v1.UpdateAddressRequest.LabelsEntry\x12\x10\n\x08reserved\x18\x06 \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15UpdateAddressMetadata\x12\x12\n\naddress_id\x18\x01 \x01(\t\"*\n\x14\x44\x65leteAddressRequest\x12\x12\n\naddress_id\x18\x01 \x01(\t\"+\n\x15\x44\x65leteAddressMetadata\x12\x12\n\naddress_id\x18\x01 \x01(\t\"Y\n\x1cListAddressOperationsRequest\x12\x12\n\naddress_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\"o\n\x1dListAddressOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xa0\x08\n\x0e\x41\x64\x64ressService\x12s\n\x03Get\x12&.yandex.cloud.vpc.v1.GetAddressRequest\x1a\x1c.yandex.cloud.vpc.v1.Address\"&\x82\xd3\xe4\x93\x02 \x12\x1e/vpc/v1/addresses/{address_id}\x12|\n\nGetByValue\x12-.yandex.cloud.vpc.v1.GetAddressByValueRequest\x1a\x1c.yandex.cloud.vpc.v1.Address\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/vpc/v1/addresses:byValue\x12x\n\x04List\x12).yandex.cloud.vpc.v1.ListAddressesRequest\x1a*.yandex.cloud.vpc.v1.ListAddressesResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/vpc/v1/addresses\x12\x98\x01\n\x06\x43reate\x12).yandex.cloud.vpc.v1.CreateAddressRequest\x1a!.yandex.cloud.operation.Operation\"@\x82\xd3\xe4\x93\x02\x16\"\x11/vpc/v1/addresses:\x01*\xb2\xd2* \n\x15\x43reateAddressMetadata\x12\x07\x41\x64\x64ress\x12\xa5\x01\n\x06Update\x12).yandex.cloud.vpc.v1.UpdateAddressRequest\x1a!.yandex.cloud.operation.Operation\"M\x82\xd3\xe4\x93\x02#2\x1e/vpc/v1/addresses/{address_id}:\x01*\xb2\xd2* \n\x15UpdateAddressMetadata\x12\x07\x41\x64\x64ress\x12\xb0\x01\n\x06\x44\x65lete\x12).yandex.cloud.vpc.v1.DeleteAddressRequest\x1a!.yandex.cloud.operation.Operation\"X\x82\xd3\xe4\x93\x02 *\x1e/vpc/v1/addresses/{address_id}\xb2\xd2*.\n\x15\x44\x65leteAddressMetadata\x12\x15google.protobuf.Empty\x12\xaa\x01\n\x0eListOperations\x12\x31.yandex.cloud.vpc.v1.ListAddressOperationsRequest\x1a\x32.yandex.cloud.vpc.v1.ListAddressOperationsResponse\"1\x82\xd3\xe4\x93\x02+\x12)/vpc/v1/addresses/{address_id}/operationsBV\n\x17yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpcb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_vpc_dot_v1_dot_address__pb2.DESCRIPTOR,])
 
@@ -808,7 +808,7 @@ _ADDRESSSERVICE = _descriptor.ServiceDescriptor(
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
   serialized_start=1620,
-  serialized_end=2413,
+  serialized_end=2676,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
@@ -817,7 +817,7 @@ _ADDRESSSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETADDRESSREQUEST,
     output_type=yandex_dot_cloud_dot_vpc_dot_v1_dot_address__pb2._ADDRESS,
-    serialized_options=None,
+    serialized_options=b'\202\323\344\223\002 \022\036/vpc/v1/addresses/{address_id}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -827,7 +827,7 @@ _ADDRESSSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETADDRESSBYVALUEREQUEST,
     output_type=yandex_dot_cloud_dot_vpc_dot_v1_dot_address__pb2._ADDRESS,
-    serialized_options=None,
+    serialized_options=b'\202\323\344\223\002\033\022\031/vpc/v1/addresses:byValue',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -837,7 +837,7 @@ _ADDRESSSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTADDRESSESREQUEST,
     output_type=_LISTADDRESSESRESPONSE,
-    serialized_options=None,
+    serialized_options=b'\202\323\344\223\002\023\022\021/vpc/v1/addresses',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -847,7 +847,7 @@ _ADDRESSSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_CREATEADDRESSREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\262\322* \n\025CreateAddressMetadata\022\007Address',
+    serialized_options=b'\202\323\344\223\002\026\"\021/vpc/v1/addresses:\001*\262\322* \n\025CreateAddressMetadata\022\007Address',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -857,7 +857,7 @@ _ADDRESSSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATEADDRESSREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\262\322* \n\025UpdateAddressMetadata\022\007Address',
+    serialized_options=b'\202\323\344\223\002#2\036/vpc/v1/addresses/{address_id}:\001*\262\322* \n\025UpdateAddressMetadata\022\007Address',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -867,7 +867,7 @@ _ADDRESSSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DELETEADDRESSREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\262\322*.\n\025DeleteAddressMetadata\022\025google.protobuf.Empty',
+    serialized_options=b'\202\323\344\223\002 *\036/vpc/v1/addresses/{address_id}\262\322*.\n\025DeleteAddressMetadata\022\025google.protobuf.Empty',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -877,7 +877,7 @@ _ADDRESSSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTADDRESSOPERATIONSREQUEST,
     output_type=_LISTADDRESSOPERATIONSRESPONSE,
-    serialized_options=None,
+    serialized_options=b'\202\323\344\223\002+\022)/vpc/v1/addresses/{address_id}/operations',
     create_key=_descriptor._internal_create_key,
   ),
 ])
