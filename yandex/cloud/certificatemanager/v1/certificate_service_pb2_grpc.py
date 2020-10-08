@@ -9,7 +9,8 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class CertificateServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing certificates.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -70,12 +71,13 @@ class CertificateServiceStub(object):
 
 
 class CertificateServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing certificates.
+    """
 
     def Get(self, request, context):
         """Returns the specified certificate.
 
-        To get the list of available certificates, make a [CertificateService.List] request.
+        To get the list of available certificates, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -205,7 +207,8 @@ def add_CertificateServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class CertificateService(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing certificates.
+    """
 
     @staticmethod
     def Get(request,

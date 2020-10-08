@@ -9,6 +9,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 class DatabaseServiceStub(object):
     """A set of methods for managing ClickHouse Database resources.
+    NOTE: these methods are available only if database management through SQL is disabled.
     """
 
     def __init__(self, channel):
@@ -41,6 +42,7 @@ class DatabaseServiceStub(object):
 
 class DatabaseServiceServicer(object):
     """A set of methods for managing ClickHouse Database resources.
+    NOTE: these methods are available only if database management through SQL is disabled.
     """
 
     def Get(self, request, context):
@@ -105,6 +107,7 @@ def add_DatabaseServiceServicer_to_server(servicer, server):
  # This class is part of an EXPERIMENTAL API.
 class DatabaseService(object):
     """A set of methods for managing ClickHouse Database resources.
+    NOTE: these methods are available only if database management through SQL is disabled.
     """
 
     @staticmethod

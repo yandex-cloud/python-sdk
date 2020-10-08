@@ -9,6 +9,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 class UserServiceStub(object):
     """A set of methods for managing ClickHouse User resources.
+    NOTE: these methods are available only if user management through SQL is disabled.
     """
 
     def __init__(self, channel):
@@ -56,6 +57,7 @@ class UserServiceStub(object):
 
 class UserServiceServicer(object):
     """A set of methods for managing ClickHouse User resources.
+    NOTE: these methods are available only if user management through SQL is disabled.
     """
 
     def Get(self, request, context):
@@ -156,6 +158,7 @@ def add_UserServiceServicer_to_server(servicer, server):
  # This class is part of an EXPERIMENTAL API.
 class UserService(object):
     """A set of methods for managing ClickHouse User resources.
+    NOTE: these methods are available only if user management through SQL is disabled.
     """
 
     @staticmethod

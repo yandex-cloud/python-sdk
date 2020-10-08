@@ -8,7 +8,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class HostGroupServiceStub(object):
-    """A set of methods for managing groups of dedicated hosts
+    """A set of methods for managing groups of dedicated hosts.
     """
 
     def __init__(self, channel):
@@ -60,18 +60,18 @@ class HostGroupServiceStub(object):
 
 
 class HostGroupServiceServicer(object):
-    """A set of methods for managing groups of dedicated hosts
+    """A set of methods for managing groups of dedicated hosts.
     """
 
     def Get(self, request, context):
-        """Returns the specified host group
+        """Returns the specified host group.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Retrieves the list of host groups in the specified folder
+        """Retrieves the list of host groups in the specified folder.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -99,21 +99,21 @@ class HostGroupServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListOperations(self, request, context):
-        """Lists operations for the specified host group
+        """Lists operations for the specified host group.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListInstances(self, request, context):
-        """Lists instances that belongs to the specified host group
+        """Lists instances that belongs to the specified host group.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListHosts(self, request, context):
-        """Lists hosts that belongs to the specified host group
+        """Lists hosts that belongs to the specified host group.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -170,7 +170,7 @@ def add_HostGroupServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class HostGroupService(object):
-    """A set of methods for managing groups of dedicated hosts
+    """A set of methods for managing groups of dedicated hosts.
     """
 
     @staticmethod

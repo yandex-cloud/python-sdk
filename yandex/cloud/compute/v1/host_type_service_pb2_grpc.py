@@ -7,7 +7,7 @@ from yandex.cloud.compute.v1 import host_type_service_pb2 as yandex_dot_cloud_do
 
 
 class HostTypeServiceStub(object):
-    """Set of methods to view possible host configurations
+    """Set of methods to view possible host configurations.
     """
 
     def __init__(self, channel):
@@ -29,18 +29,18 @@ class HostTypeServiceStub(object):
 
 
 class HostTypeServiceServicer(object):
-    """Set of methods to view possible host configurations
+    """Set of methods to view possible host configurations.
     """
 
     def Get(self, request, context):
-        """Returns information about specified host type
+        """Returns information about specified host type.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """List avaliable host types
+        """List avaliable host types.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -67,7 +67,7 @@ def add_HostTypeServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class HostTypeService(object):
-    """Set of methods to view possible host configurations
+    """Set of methods to view possible host configurations.
     """
 
     @staticmethod

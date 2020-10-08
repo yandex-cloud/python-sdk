@@ -6,7 +6,8 @@ from yandex.cloud.certificatemanager.v1 import certificate_content_service_pb2 a
 
 
 class CertificateContentServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing certificate content.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -22,10 +23,11 @@ class CertificateContentServiceStub(object):
 
 
 class CertificateContentServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing certificate content.
+    """
 
     def Get(self, request, context):
-        """Returns chain and private key of the specified certificate
+        """Returns chain and private key of the specified certificate.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -47,7 +49,8 @@ def add_CertificateContentServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class CertificateContentService(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing certificate content.
+    """
 
     @staticmethod
     def Get(request,
