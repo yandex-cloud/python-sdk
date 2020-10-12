@@ -6,7 +6,8 @@ from yandex.cloud.mdb.clickhouse.v1 import versions_service_pb2 as yandex_dot_cl
 
 
 class VersionsServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing ClickHouse versions.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -22,7 +23,8 @@ class VersionsServiceStub(object):
 
 
 class VersionsServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing ClickHouse versions.
+    """
 
     def List(self, request, context):
         """Returns list of available ClickHouse versions.
@@ -47,7 +49,8 @@ def add_VersionsServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class VersionsService(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing ClickHouse versions.
+    """
 
     @staticmethod
     def List(request,
