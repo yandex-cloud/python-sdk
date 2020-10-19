@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$yandex.cloud.api.mdb.mysql.v1.configZJgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mysql/v1/config;mysql',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n/yandex/cloud/mdb/mysql/v1/config/mysql5_7.proto\x12 yandex.cloud.mdb.mysql.v1.config\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\x92\x11\n\x0eMysqlConfig5_7\x12K\n\x17innodb_buffer_pool_size\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\r\xfa\xc7\x31\t>=5242880\x12\x42\n\x0fmax_connections\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0c\xfa\xc7\x31\x08\x31\x30-10000\x12\x35\n\x0flong_query_time\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\x12/\n\x0bgeneral_log\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12-\n\taudit_log\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12J\n\x08sql_mode\x18\x06 \x03(\x0e\x32\x38.yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.SQLMode\x12K\n\x12max_allowed_packet\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x12\xfa\xc7\x31\x0e\x31\x30\x32\x34-134217728\x12\x62\n\x1d\x64\x65\x66\x61ult_authentication_plugin\x18\x08 \x01(\x0e\x32;.yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.AuthPlugin\x12L\n\x1einnodb_flush_log_at_trx_commit\x18\t \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03\x31-2\x12J\n\x18innodb_lock_wait_timeout\x18\n \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0b\xfa\xc7\x31\x07\x31-28800\x12\x64\n\x15transaction_isolation\x18\x0b \x01(\x0e\x32\x45.yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.TransactionIsolation\x12>\n\x1ainnodb_print_all_deadlocks\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x41\n\x10net_read_timeout\x18\r \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\n\xfa\xc7\x31\x06\x31-1200\x12\x42\n\x11net_write_timeout\x18\x0e \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\n\xfa\xc7\x31\x06\x31-1200\x12I\n\x14group_concat_max_len\x18\x0f \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0e\xfa\xc7\x31\n4-33554432\x12G\n\x0etmp_table_size\x18\x10 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x12\xfa\xc7\x31\x0e\x31\x30\x32\x34-134217728\x12L\n\x13max_heap_table_size\x18\x11 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x12\xfa\xc7\x31\x0e\x31\x30\x32\x34-134217728\x12\x19\n\x11\x64\x65\x66\x61ult_time_zone\x18\x12 \x01(\t\x12\x1c\n\x14\x63haracter_set_server\x18\x13 \x01(\t\x12\x18\n\x10\x63ollation_server\x18\x14 \x01(\t\"\xea\x04\n\x07SQLMode\x12\x17\n\x13SQLMODE_UNSPECIFIED\x10\x00\x12\x17\n\x13\x41LLOW_INVALID_DATES\x10\x01\x12\x0f\n\x0b\x41NSI_QUOTES\x10\x02\x12\x1e\n\x1a\x45RROR_FOR_DIVISION_BY_ZERO\x10\x03\x12\x17\n\x13HIGH_NOT_PRECEDENCE\x10\x04\x12\x10\n\x0cIGNORE_SPACE\x10\x05\x12\x19\n\x15NO_AUTO_VALUE_ON_ZERO\x10\x06\x12\x18\n\x14NO_BACKSLASH_ESCAPES\x10\x07\x12\x1a\n\x16NO_ENGINE_SUBSTITUTION\x10\x08\x12\x1b\n\x17NO_UNSIGNED_SUBTRACTION\x10\t\x12\x10\n\x0cNO_ZERO_DATE\x10\n\x12\x13\n\x0fNO_ZERO_IN_DATE\x10\x0b\x12\x14\n\x10NO_FIELD_OPTIONS\x10\x0c\x12\x12\n\x0eNO_KEY_OPTIONS\x10\r\x12\x14\n\x10NO_TABLE_OPTIONS\x10\x0e\x12\x16\n\x12ONLY_FULL_GROUP_BY\x10\x0f\x12\x1b\n\x17PAD_CHAR_TO_FULL_LENGTH\x10\x10\x12\x13\n\x0fPIPES_AS_CONCAT\x10\x11\x12\x11\n\rREAL_AS_FLOAT\x10\x12\x12\x15\n\x11STRICT_ALL_TABLES\x10\x13\x12\x17\n\x13STRICT_TRANS_TABLES\x10\x14\x12\x08\n\x04\x41NSI\x10\x15\x12\x0f\n\x0bTRADITIONAL\x10\x16\x12\x07\n\x03\x44\x42\x32\x10\x17\x12\t\n\x05MAXDB\x10\x18\x12\t\n\x05MSSQL\x10\x19\x12\x0c\n\x08MYSQL323\x10\x1a\x12\x0b\n\x07MYSQL40\x10\x1b\x12\n\n\x06ORACLE\x10\x1c\x12\x0e\n\nPOSTGRESQL\x10\x1d\"x\n\nAuthPlugin\x12\x1b\n\x17\x41UTH_PLUGIN_UNSPECIFIED\x10\x00\x12\x19\n\x15MYSQL_NATIVE_PASSWORD\x10\x01\x12\x1d\n\x15\x43\x41\x43HING_SHA2_PASSWORD\x10\x02\x1a\x02\x08\x01\x12\x13\n\x0fSHA256_PASSWORD\x10\x03\"x\n\x14TransactionIsolation\x12%\n!TRANSACTION_ISOLATION_UNSPECIFIED\x10\x00\x12\x12\n\x0eREAD_COMMITTED\x10\x01\x12\x13\n\x0fREPEATABLE_READ\x10\x02\x12\x10\n\x0cSERIALIZABLE\x10\x03\"\xf0\x01\n\x11MysqlConfigSet5_7\x12J\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32\x30.yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7\x12\x45\n\x0buser_config\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7\x12H\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32\x30.yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7Br\n$yandex.cloud.api.mdb.mysql.v1.configZJgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mysql/v1/config;mysqlb\x06proto3'
+  serialized_pb=b'\n/yandex/cloud/mdb/mysql/v1/config/mysql5_7.proto\x12 yandex.cloud.mdb.mysql.v1.config\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\xfd#\n\x0eMysqlConfig5_7\x12K\n\x17innodb_buffer_pool_size\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\r\xfa\xc7\x31\t>=5242880\x12\x42\n\x0fmax_connections\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0c\xfa\xc7\x31\x08\x31\x30-10000\x12\x35\n\x0flong_query_time\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\x12/\n\x0bgeneral_log\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12-\n\taudit_log\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12J\n\x08sql_mode\x18\x06 \x03(\x0e\x32\x38.yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.SQLMode\x12K\n\x12max_allowed_packet\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x12\xfa\xc7\x31\x0e\x31\x30\x32\x34-134217728\x12\x62\n\x1d\x64\x65\x66\x61ult_authentication_plugin\x18\x08 \x01(\x0e\x32;.yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.AuthPlugin\x12L\n\x1einnodb_flush_log_at_trx_commit\x18\t \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03\x31-2\x12J\n\x18innodb_lock_wait_timeout\x18\n \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0b\xfa\xc7\x31\x07\x31-28800\x12\x64\n\x15transaction_isolation\x18\x0b \x01(\x0e\x32\x45.yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.TransactionIsolation\x12>\n\x1ainnodb_print_all_deadlocks\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x41\n\x10net_read_timeout\x18\r \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\n\xfa\xc7\x31\x06\x31-1200\x12\x42\n\x11net_write_timeout\x18\x0e \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\n\xfa\xc7\x31\x06\x31-1200\x12I\n\x14group_concat_max_len\x18\x0f \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0e\xfa\xc7\x31\n4-33554432\x12G\n\x0etmp_table_size\x18\x10 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x12\xfa\xc7\x31\x0e\x31\x30\x32\x34-134217728\x12L\n\x13max_heap_table_size\x18\x11 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x12\xfa\xc7\x31\x0e\x31\x30\x32\x34-134217728\x12\x19\n\x11\x64\x65\x66\x61ult_time_zone\x18\x12 \x01(\t\x12\x1c\n\x14\x63haracter_set_server\x18\x13 \x01(\t\x12\x18\n\x10\x63ollation_server\x18\x14 \x01(\t\x12>\n\x1ainnodb_adaptive_hash_index\x18\x15 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12:\n\x16innodb_numa_interleave\x18\x16 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12R\n\x16innodb_log_buffer_size\x18\x17 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x15\xfa\xc7\x31\x11\x31\x30\x34\x38\x35\x37\x36-268435456\x12S\n\x14innodb_log_file_size\x18\x18 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x18\xfa\xc7\x31\x14\x32\x36\x38\x34\x33\x35\x34\x35\x36-4294967296\x12G\n\x12innodb_io_capacity\x18\x19 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0e\xfa\xc7\x31\n100-100000\x12K\n\x16innodb_io_capacity_max\x18\x1a \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0e\xfa\xc7\x31\n100-100000\x12\x45\n\x16innodb_read_io_threads\x18\x1b \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x08\xfa\xc7\x31\x04\x31-16\x12\x46\n\x17innodb_write_io_threads\x18\x1c \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x08\xfa\xc7\x31\x04\x31-16\x12\x43\n\x14innodb_purge_threads\x18\x1d \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x08\xfa\xc7\x31\x04\x31-16\x12J\n\x19innodb_thread_concurrency\x18\x1e \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\n\xfa\xc7\x31\x06\x30-1000\x12W\n\x1einnodb_temp_data_file_max_size\x18\x1f \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x12\xfa\xc7\x31\x0e\x30-107374182400\x12\x44\n\x11thread_cache_size\x18  \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0c\xfa\xc7\x31\x08\x31\x30-10000\x12\x46\n\x0cthread_stack\x18! \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x13\xfa\xc7\x31\x0f\x31\x33\x31\x30\x37\x32-16777216\x12H\n\x10join_buffer_size\x18\" \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x11\xfa\xc7\x31\r1024-16777216\x12H\n\x10sort_buffer_size\x18# \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x11\xfa\xc7\x31\r1024-16777216\x12K\n\x16table_definition_cache\x18$ \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0e\xfa\xc7\x31\n400-524288\x12\x45\n\x10table_open_cache\x18% \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0e\xfa\xc7\x31\n400-524288\x12I\n\x1atable_open_cache_instances\x18& \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x08\xfa\xc7\x31\x04\x31-32\x12\x43\n\x1f\x65xplicit_defaults_for_timestamp\x18\' \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12J\n\x18\x61uto_increment_increment\x18( \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0b\xfa\xc7\x31\x07\x31-65535\x12G\n\x15\x61uto_increment_offset\x18) \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0b\xfa\xc7\x31\x07\x31-65535\x12<\n\x0bsync_binlog\x18* \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\n\xfa\xc7\x31\x06\x30-4096\x12I\n\x11\x62inlog_cache_size\x18+ \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x11\xfa\xc7\x31\r4096-67108864\x12R\n\x1e\x62inlog_group_commit_sync_delay\x18, \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\r\xfa\xc7\x31\t0-1000000\x12Y\n\x10\x62inlog_row_image\x18- \x01(\x0e\x32?.yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.BinlogRowImage\x12@\n\x1c\x62inlog_rows_query_log_events\x18. \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12W\n)rpl_semi_sync_master_wait_for_slave_count\x18/ \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03\x31-2\x12_\n\x13slave_parallel_type\x18\x30 \x01(\x0e\x32\x42.yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.SlaveParallelType\x12\x45\n\x16slave_parallel_workers\x18\x31 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x08\xfa\xc7\x31\x04\x30-64\"\x99\x05\n\x07SQLMode\x12\x17\n\x13SQLMODE_UNSPECIFIED\x10\x00\x12\x17\n\x13\x41LLOW_INVALID_DATES\x10\x01\x12\x0f\n\x0b\x41NSI_QUOTES\x10\x02\x12\x1e\n\x1a\x45RROR_FOR_DIVISION_BY_ZERO\x10\x03\x12\x17\n\x13HIGH_NOT_PRECEDENCE\x10\x04\x12\x10\n\x0cIGNORE_SPACE\x10\x05\x12\x19\n\x15NO_AUTO_VALUE_ON_ZERO\x10\x06\x12\x18\n\x14NO_BACKSLASH_ESCAPES\x10\x07\x12\x1a\n\x16NO_ENGINE_SUBSTITUTION\x10\x08\x12\x1b\n\x17NO_UNSIGNED_SUBTRACTION\x10\t\x12\x10\n\x0cNO_ZERO_DATE\x10\n\x12\x13\n\x0fNO_ZERO_IN_DATE\x10\x0b\x12\x14\n\x10NO_FIELD_OPTIONS\x10\x0c\x12\x12\n\x0eNO_KEY_OPTIONS\x10\r\x12\x14\n\x10NO_TABLE_OPTIONS\x10\x0e\x12\x16\n\x12ONLY_FULL_GROUP_BY\x10\x0f\x12\x1b\n\x17PAD_CHAR_TO_FULL_LENGTH\x10\x10\x12\x13\n\x0fPIPES_AS_CONCAT\x10\x11\x12\x11\n\rREAL_AS_FLOAT\x10\x12\x12\x15\n\x11STRICT_ALL_TABLES\x10\x13\x12\x17\n\x13STRICT_TRANS_TABLES\x10\x14\x12\x08\n\x04\x41NSI\x10\x15\x12\x0f\n\x0bTRADITIONAL\x10\x16\x12\x07\n\x03\x44\x42\x32\x10\x17\x12\t\n\x05MAXDB\x10\x18\x12\t\n\x05MSSQL\x10\x19\x12\x0c\n\x08MYSQL323\x10\x1a\x12\x0b\n\x07MYSQL40\x10\x1b\x12\n\n\x06ORACLE\x10\x1c\x12\x0e\n\nPOSTGRESQL\x10\x1d\x12\x17\n\x13NO_AUTO_CREATE_USER\x10\x1e\x12\x14\n\x10NO_DIR_IN_CREATE\x10\x1f\"x\n\nAuthPlugin\x12\x1b\n\x17\x41UTH_PLUGIN_UNSPECIFIED\x10\x00\x12\x19\n\x15MYSQL_NATIVE_PASSWORD\x10\x01\x12\x1d\n\x15\x43\x41\x43HING_SHA2_PASSWORD\x10\x02\x1a\x02\x08\x01\x12\x13\n\x0fSHA256_PASSWORD\x10\x03\"x\n\x14TransactionIsolation\x12%\n!TRANSACTION_ISOLATION_UNSPECIFIED\x10\x00\x12\x12\n\x0eREAD_COMMITTED\x10\x01\x12\x13\n\x0fREPEATABLE_READ\x10\x02\x12\x10\n\x0cSERIALIZABLE\x10\x03\"U\n\x0e\x42inlogRowImage\x12 \n\x1c\x42INLOG_ROW_IMAGE_UNSPECIFIED\x10\x00\x12\x08\n\x04\x46ULL\x10\x01\x12\x0b\n\x07MINIMAL\x10\x02\x12\n\n\x06NOBLOB\x10\x03\"Y\n\x11SlaveParallelType\x12#\n\x1fSLAVE_PARALLEL_TYPE_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x44\x41TABASE\x10\x01\x12\x11\n\rLOGICAL_CLOCK\x10\x02\"\xf0\x01\n\x11MysqlConfigSet5_7\x12J\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32\x30.yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7\x12\x45\n\x0buser_config\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7\x12H\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32\x30.yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7Br\n$yandex.cloud.api.mdb.mysql.v1.configZJgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mysql/v1/config;mysqlb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -184,11 +184,21 @@ _MYSQLCONFIG5_7_SQLMODE = _descriptor.EnumDescriptor(
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='NO_AUTO_CREATE_USER', index=30, number=30,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='NO_DIR_IN_CREATE', index=31, number=31,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1481,
-  serialized_end=2099,
+  serialized_start=3667,
+  serialized_end=4332,
 )
 _sym_db.RegisterEnumDescriptor(_MYSQLCONFIG5_7_SQLMODE)
 
@@ -222,8 +232,8 @@ _MYSQLCONFIG5_7_AUTHPLUGIN = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2101,
-  serialized_end=2221,
+  serialized_start=4334,
+  serialized_end=4454,
 )
 _sym_db.RegisterEnumDescriptor(_MYSQLCONFIG5_7_AUTHPLUGIN)
 
@@ -257,10 +267,75 @@ _MYSQLCONFIG5_7_TRANSACTIONISOLATION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2223,
-  serialized_end=2343,
+  serialized_start=4456,
+  serialized_end=4576,
 )
 _sym_db.RegisterEnumDescriptor(_MYSQLCONFIG5_7_TRANSACTIONISOLATION)
+
+_MYSQLCONFIG5_7_BINLOGROWIMAGE = _descriptor.EnumDescriptor(
+  name='BinlogRowImage',
+  full_name='yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.BinlogRowImage',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='BINLOG_ROW_IMAGE_UNSPECIFIED', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='FULL', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='MINIMAL', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='NOBLOB', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=4578,
+  serialized_end=4663,
+)
+_sym_db.RegisterEnumDescriptor(_MYSQLCONFIG5_7_BINLOGROWIMAGE)
+
+_MYSQLCONFIG5_7_SLAVEPARALLELTYPE = _descriptor.EnumDescriptor(
+  name='SlaveParallelType',
+  full_name='yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.SlaveParallelType',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='SLAVE_PARALLEL_TYPE_UNSPECIFIED', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='DATABASE', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='LOGICAL_CLOCK', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=4665,
+  serialized_end=4754,
+)
+_sym_db.RegisterEnumDescriptor(_MYSQLCONFIG5_7_SLAVEPARALLELTYPE)
 
 
 _MYSQLCONFIG5_7 = _descriptor.Descriptor(
@@ -411,6 +486,209 @@ _MYSQLCONFIG5_7 = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='innodb_adaptive_hash_index', full_name='yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.innodb_adaptive_hash_index', index=20,
+      number=21, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='innodb_numa_interleave', full_name='yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.innodb_numa_interleave', index=21,
+      number=22, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='innodb_log_buffer_size', full_name='yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.innodb_log_buffer_size', index=22,
+      number=23, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\372\3071\0211048576-268435456', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='innodb_log_file_size', full_name='yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.innodb_log_file_size', index=23,
+      number=24, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\372\3071\024268435456-4294967296', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='innodb_io_capacity', full_name='yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.innodb_io_capacity', index=24,
+      number=25, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\372\3071\n100-100000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='innodb_io_capacity_max', full_name='yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.innodb_io_capacity_max', index=25,
+      number=26, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\372\3071\n100-100000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='innodb_read_io_threads', full_name='yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.innodb_read_io_threads', index=26,
+      number=27, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\372\3071\0041-16', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='innodb_write_io_threads', full_name='yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.innodb_write_io_threads', index=27,
+      number=28, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\372\3071\0041-16', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='innodb_purge_threads', full_name='yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.innodb_purge_threads', index=28,
+      number=29, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\372\3071\0041-16', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='innodb_thread_concurrency', full_name='yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.innodb_thread_concurrency', index=29,
+      number=30, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\372\3071\0060-1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='innodb_temp_data_file_max_size', full_name='yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.innodb_temp_data_file_max_size', index=30,
+      number=31, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\372\3071\0160-107374182400', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='thread_cache_size', full_name='yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.thread_cache_size', index=31,
+      number=32, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\372\3071\01010-10000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='thread_stack', full_name='yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.thread_stack', index=32,
+      number=33, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\372\3071\017131072-16777216', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='join_buffer_size', full_name='yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.join_buffer_size', index=33,
+      number=34, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\372\3071\r1024-16777216', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='sort_buffer_size', full_name='yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.sort_buffer_size', index=34,
+      number=35, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\372\3071\r1024-16777216', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='table_definition_cache', full_name='yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.table_definition_cache', index=35,
+      number=36, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\372\3071\n400-524288', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='table_open_cache', full_name='yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.table_open_cache', index=36,
+      number=37, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\372\3071\n400-524288', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='table_open_cache_instances', full_name='yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.table_open_cache_instances', index=37,
+      number=38, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\372\3071\0041-32', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='explicit_defaults_for_timestamp', full_name='yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.explicit_defaults_for_timestamp', index=38,
+      number=39, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='auto_increment_increment', full_name='yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.auto_increment_increment', index=39,
+      number=40, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\372\3071\0071-65535', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='auto_increment_offset', full_name='yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.auto_increment_offset', index=40,
+      number=41, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\372\3071\0071-65535', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='sync_binlog', full_name='yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.sync_binlog', index=41,
+      number=42, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\372\3071\0060-4096', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='binlog_cache_size', full_name='yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.binlog_cache_size', index=42,
+      number=43, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\372\3071\r4096-67108864', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='binlog_group_commit_sync_delay', full_name='yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.binlog_group_commit_sync_delay', index=43,
+      number=44, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\372\3071\t0-1000000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='binlog_row_image', full_name='yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.binlog_row_image', index=44,
+      number=45, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='binlog_rows_query_log_events', full_name='yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.binlog_rows_query_log_events', index=45,
+      number=46, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='rpl_semi_sync_master_wait_for_slave_count', full_name='yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.rpl_semi_sync_master_wait_for_slave_count', index=46,
+      number=47, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\372\3071\0031-2', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='slave_parallel_type', full_name='yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.slave_parallel_type', index=47,
+      number=48, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='slave_parallel_workers', full_name='yandex.cloud.mdb.mysql.v1.config.MysqlConfig5_7.slave_parallel_workers', index=48,
+      number=49, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\372\3071\0040-64', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -419,6 +697,8 @@ _MYSQLCONFIG5_7 = _descriptor.Descriptor(
     _MYSQLCONFIG5_7_SQLMODE,
     _MYSQLCONFIG5_7_AUTHPLUGIN,
     _MYSQLCONFIG5_7_TRANSACTIONISOLATION,
+    _MYSQLCONFIG5_7_BINLOGROWIMAGE,
+    _MYSQLCONFIG5_7_SLAVEPARALLELTYPE,
   ],
   serialized_options=None,
   is_extendable=False,
@@ -427,7 +707,7 @@ _MYSQLCONFIG5_7 = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=149,
-  serialized_end=2343,
+  serialized_end=4754,
 )
 
 
@@ -472,8 +752,8 @@ _MYSQLCONFIGSET5_7 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2346,
-  serialized_end=2586,
+  serialized_start=4757,
+  serialized_end=4997,
 )
 
 _MYSQLCONFIG5_7.fields_by_name['innodb_buffer_pool_size'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
@@ -493,9 +773,40 @@ _MYSQLCONFIG5_7.fields_by_name['net_write_timeout'].message_type = google_dot_pr
 _MYSQLCONFIG5_7.fields_by_name['group_concat_max_len'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
 _MYSQLCONFIG5_7.fields_by_name['tmp_table_size'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
 _MYSQLCONFIG5_7.fields_by_name['max_heap_table_size'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_MYSQLCONFIG5_7.fields_by_name['innodb_adaptive_hash_index'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
+_MYSQLCONFIG5_7.fields_by_name['innodb_numa_interleave'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
+_MYSQLCONFIG5_7.fields_by_name['innodb_log_buffer_size'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_MYSQLCONFIG5_7.fields_by_name['innodb_log_file_size'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_MYSQLCONFIG5_7.fields_by_name['innodb_io_capacity'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_MYSQLCONFIG5_7.fields_by_name['innodb_io_capacity_max'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_MYSQLCONFIG5_7.fields_by_name['innodb_read_io_threads'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_MYSQLCONFIG5_7.fields_by_name['innodb_write_io_threads'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_MYSQLCONFIG5_7.fields_by_name['innodb_purge_threads'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_MYSQLCONFIG5_7.fields_by_name['innodb_thread_concurrency'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_MYSQLCONFIG5_7.fields_by_name['innodb_temp_data_file_max_size'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_MYSQLCONFIG5_7.fields_by_name['thread_cache_size'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_MYSQLCONFIG5_7.fields_by_name['thread_stack'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_MYSQLCONFIG5_7.fields_by_name['join_buffer_size'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_MYSQLCONFIG5_7.fields_by_name['sort_buffer_size'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_MYSQLCONFIG5_7.fields_by_name['table_definition_cache'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_MYSQLCONFIG5_7.fields_by_name['table_open_cache'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_MYSQLCONFIG5_7.fields_by_name['table_open_cache_instances'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_MYSQLCONFIG5_7.fields_by_name['explicit_defaults_for_timestamp'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
+_MYSQLCONFIG5_7.fields_by_name['auto_increment_increment'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_MYSQLCONFIG5_7.fields_by_name['auto_increment_offset'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_MYSQLCONFIG5_7.fields_by_name['sync_binlog'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_MYSQLCONFIG5_7.fields_by_name['binlog_cache_size'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_MYSQLCONFIG5_7.fields_by_name['binlog_group_commit_sync_delay'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_MYSQLCONFIG5_7.fields_by_name['binlog_row_image'].enum_type = _MYSQLCONFIG5_7_BINLOGROWIMAGE
+_MYSQLCONFIG5_7.fields_by_name['binlog_rows_query_log_events'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
+_MYSQLCONFIG5_7.fields_by_name['rpl_semi_sync_master_wait_for_slave_count'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_MYSQLCONFIG5_7.fields_by_name['slave_parallel_type'].enum_type = _MYSQLCONFIG5_7_SLAVEPARALLELTYPE
+_MYSQLCONFIG5_7.fields_by_name['slave_parallel_workers'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
 _MYSQLCONFIG5_7_SQLMODE.containing_type = _MYSQLCONFIG5_7
 _MYSQLCONFIG5_7_AUTHPLUGIN.containing_type = _MYSQLCONFIG5_7
 _MYSQLCONFIG5_7_TRANSACTIONISOLATION.containing_type = _MYSQLCONFIG5_7
+_MYSQLCONFIG5_7_BINLOGROWIMAGE.containing_type = _MYSQLCONFIG5_7
+_MYSQLCONFIG5_7_SLAVEPARALLELTYPE.containing_type = _MYSQLCONFIG5_7
 _MYSQLCONFIGSET5_7.fields_by_name['effective_config'].message_type = _MYSQLCONFIG5_7
 _MYSQLCONFIGSET5_7.fields_by_name['user_config'].message_type = _MYSQLCONFIG5_7
 _MYSQLCONFIGSET5_7.fields_by_name['default_config'].message_type = _MYSQLCONFIG5_7
@@ -530,4 +841,27 @@ _MYSQLCONFIG5_7.fields_by_name['net_write_timeout']._options = None
 _MYSQLCONFIG5_7.fields_by_name['group_concat_max_len']._options = None
 _MYSQLCONFIG5_7.fields_by_name['tmp_table_size']._options = None
 _MYSQLCONFIG5_7.fields_by_name['max_heap_table_size']._options = None
+_MYSQLCONFIG5_7.fields_by_name['innodb_log_buffer_size']._options = None
+_MYSQLCONFIG5_7.fields_by_name['innodb_log_file_size']._options = None
+_MYSQLCONFIG5_7.fields_by_name['innodb_io_capacity']._options = None
+_MYSQLCONFIG5_7.fields_by_name['innodb_io_capacity_max']._options = None
+_MYSQLCONFIG5_7.fields_by_name['innodb_read_io_threads']._options = None
+_MYSQLCONFIG5_7.fields_by_name['innodb_write_io_threads']._options = None
+_MYSQLCONFIG5_7.fields_by_name['innodb_purge_threads']._options = None
+_MYSQLCONFIG5_7.fields_by_name['innodb_thread_concurrency']._options = None
+_MYSQLCONFIG5_7.fields_by_name['innodb_temp_data_file_max_size']._options = None
+_MYSQLCONFIG5_7.fields_by_name['thread_cache_size']._options = None
+_MYSQLCONFIG5_7.fields_by_name['thread_stack']._options = None
+_MYSQLCONFIG5_7.fields_by_name['join_buffer_size']._options = None
+_MYSQLCONFIG5_7.fields_by_name['sort_buffer_size']._options = None
+_MYSQLCONFIG5_7.fields_by_name['table_definition_cache']._options = None
+_MYSQLCONFIG5_7.fields_by_name['table_open_cache']._options = None
+_MYSQLCONFIG5_7.fields_by_name['table_open_cache_instances']._options = None
+_MYSQLCONFIG5_7.fields_by_name['auto_increment_increment']._options = None
+_MYSQLCONFIG5_7.fields_by_name['auto_increment_offset']._options = None
+_MYSQLCONFIG5_7.fields_by_name['sync_binlog']._options = None
+_MYSQLCONFIG5_7.fields_by_name['binlog_cache_size']._options = None
+_MYSQLCONFIG5_7.fields_by_name['binlog_group_commit_sync_delay']._options = None
+_MYSQLCONFIG5_7.fields_by_name['rpl_semi_sync_master_wait_for_slave_count']._options = None
+_MYSQLCONFIG5_7.fields_by_name['slave_parallel_workers']._options = None
 # @@protoc_insertion_point(module_scope)
