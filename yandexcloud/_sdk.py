@@ -82,6 +82,7 @@ _supported_modules = {
     'yandex.cloud.loadbalancer': 'load-balancer',
     'yandex.cloud.marketplace': 'marketplace',
     'yandex.cloud.mdb.clickhouse': 'managed-clickhouse',
+    'yandex.cloud.mdb.kafka': 'managed-kafka',
     'yandex.cloud.mdb.mongodb': 'managed-mongodb',
     'yandex.cloud.mdb.mysql': 'managed-mysql',
     'yandex.cloud.mdb.postgresql': 'managed-postgresql',
