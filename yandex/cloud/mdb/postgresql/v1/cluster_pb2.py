@@ -38,7 +38,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\"yandex.cloud.api.mdb.postgresql.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1;postgresql',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n,yandex/cloud/mdb/postgresql/v1/cluster.proto\x12\x1eyandex.cloud.mdb.postgresql.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1bgoogle/type/timeofday.proto\x1a\x1dyandex/cloud/validation.proto\x1a\x39yandex/cloud/mdb/postgresql/v1/config/postgresql9_6.proto\x1a\x38yandex/cloud/mdb/postgresql/v1/config/postgresql10.proto\x1a;yandex/cloud/mdb/postgresql/v1/config/postgresql10_1c.proto\x1a\x38yandex/cloud/mdb/postgresql/v1/config/postgresql11.proto\x1a;yandex/cloud/mdb/postgresql/v1/config/postgresql11_1c.proto\x1a\x38yandex/cloud/mdb/postgresql/v1/config/postgresql12.proto\x1a;yandex/cloud/mdb/postgresql/v1/config/postgresql12_1c.proto\x1a\x33yandex/cloud/mdb/postgresql/v1/config/host9_6.proto\x1a\x32yandex/cloud/mdb/postgresql/v1/config/host10.proto\x1a\x35yandex/cloud/mdb/postgresql/v1/config/host10_1c.proto\x1a\x32yandex/cloud/mdb/postgresql/v1/config/host11.proto\x1a\x35yandex/cloud/mdb/postgresql/v1/config/host11_1c.proto\x1a\x32yandex/cloud/mdb/postgresql/v1/config/host12.proto\x1a\x35yandex/cloud/mdb/postgresql/v1/config/host12_1c.proto\x1a\x30yandex/cloud/mdb/postgresql/v1/maintenance.proto\"\xf3\x07\n\x07\x43luster\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x43\n\x06labels\x18\x06 \x03(\x0b\x32\x33.yandex.cloud.mdb.postgresql.v1.Cluster.LabelsEntry\x12H\n\x0b\x65nvironment\x18\x07 \x01(\x0e\x32\x33.yandex.cloud.mdb.postgresql.v1.Cluster.Environment\x12>\n\nmonitoring\x18\x08 \x03(\x0b\x32*.yandex.cloud.mdb.postgresql.v1.Monitoring\x12=\n\x06\x63onfig\x18\t \x01(\x0b\x32-.yandex.cloud.mdb.postgresql.v1.ClusterConfig\x12\x12\n\nnetwork_id\x18\n \x01(\t\x12>\n\x06health\x18\x0b \x01(\x0e\x32..yandex.cloud.mdb.postgresql.v1.Cluster.Health\x12>\n\x06status\x18\x0c \x01(\x0e\x32..yandex.cloud.mdb.postgresql.v1.Cluster.Status\x12M\n\x12maintenance_window\x18\r \x01(\x0b\x32\x31.yandex.cloud.mdb.postgresql.v1.MaintenanceWindow\x12O\n\x11planned_operation\x18\x0e \x01(\x0b\x32\x34.yandex.cloud.mdb.postgresql.v1.MaintenanceOperation\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"I\n\x0b\x45nvironment\x12\x1b\n\x17\x45NVIRONMENT_UNSPECIFIED\x10\x00\x12\x0e\n\nPRODUCTION\x10\x01\x12\r\n\tPRESTABLE\x10\x02\"?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\"y\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\t\n\x05\x45RROR\x10\x03\x12\x0c\n\x08UPDATING\x10\x04\x12\x0c\n\x08STOPPING\x10\x05\x12\x0b\n\x07STOPPED\x10\x06\x12\x0c\n\x08STARTING\x10\x07\"=\n\nMonitoring\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0c\n\x04link\x18\x03 \x01(\t\"\xe0\x08\n\rClusterConfig\x12\x0f\n\x07version\x18\x01 \x01(\t\x12^\n\x15postgresql_config_9_6\x18\x02 \x01(\x0b\x32=.yandex.cloud.mdb.postgresql.v1.config.PostgresqlConfigSet9_6H\x00\x12\x62\n\x17postgresql_config_10_1c\x18\n \x01(\x0b\x32?.yandex.cloud.mdb.postgresql.v1.config.PostgresqlConfigSet10_1CH\x00\x12\\\n\x14postgresql_config_10\x18\x03 \x01(\x0b\x32<.yandex.cloud.mdb.postgresql.v1.config.PostgresqlConfigSet10H\x00\x12\\\n\x14postgresql_config_11\x18\x08 \x01(\x0b\x32<.yandex.cloud.mdb.postgresql.v1.config.PostgresqlConfigSet11H\x00\x12\x62\n\x17postgresql_config_11_1c\x18\r \x01(\x0b\x32?.yandex.cloud.mdb.postgresql.v1.config.PostgresqlConfigSet11_1CH\x00\x12\\\n\x14postgresql_config_12\x18\x0b \x01(\x0b\x32<.yandex.cloud.mdb.postgresql.v1.config.PostgresqlConfigSet12H\x00\x12\x62\n\x17postgresql_config_12_1c\x18\x0e \x01(\x0b\x32?.yandex.cloud.mdb.postgresql.v1.config.PostgresqlConfigSet12_1CH\x00\x12M\n\rpooler_config\x18\x04 \x01(\x0b\x32\x36.yandex.cloud.mdb.postgresql.v1.ConnectionPoolerConfig\x12<\n\tresources\x18\x05 \x01(\x0b\x32).yandex.cloud.mdb.postgresql.v1.Resources\x12\x30\n\x0c\x61utofailover\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x33\n\x13\x62\x61\x63kup_window_start\x18\x07 \x01(\x0b\x32\x16.google.type.TimeOfDay\x12\x36\n\x06\x61\x63\x63\x65ss\x18\t \x01(\x0b\x32&.yandex.cloud.mdb.postgresql.v1.Access\x12W\n\x17performance_diagnostics\x18\x0c \x01(\x0b\x32\x36.yandex.cloud.mdb.postgresql.v1.PerformanceDiagnosticsB\x13\n\x11postgresql_config\"\xfe\x01\n\x16\x43onnectionPoolerConfig\x12X\n\x0cpooling_mode\x18\x01 \x01(\x0e\x32\x42.yandex.cloud.mdb.postgresql.v1.ConnectionPoolerConfig.PoolingMode\x12\x30\n\x0cpool_discard\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"X\n\x0bPoolingMode\x12\x1c\n\x18POOLING_MODE_UNSPECIFIED\x10\x00\x12\x0b\n\x07SESSION\x10\x01\x12\x0f\n\x0bTRANSACTION\x10\x02\x12\r\n\tSTATEMENT\x10\x03\"\xe2\x05\n\x04Host\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12\x0f\n\x07zone_id\x18\x03 \x01(\t\x12<\n\tresources\x18\x04 \x01(\x0b\x32).yandex.cloud.mdb.postgresql.v1.Resources\x12\x37\n\x04role\x18\x05 \x01(\x0e\x32).yandex.cloud.mdb.postgresql.v1.Host.Role\x12;\n\x06health\x18\x06 \x01(\x0e\x32+.yandex.cloud.mdb.postgresql.v1.Host.Health\x12\x39\n\x08services\x18\x07 \x03(\x0b\x32\'.yandex.cloud.mdb.postgresql.v1.Service\x12\x11\n\tsubnet_id\x18\x08 \x01(\t\x12\x1a\n\x12replication_source\x18\t \x01(\t\x12-\n\x08priority\x18\n \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12:\n\x06\x63onfig\x18\x0b \x01(\x0b\x32*.yandex.cloud.mdb.postgresql.v1.HostConfig\x12\x18\n\x10\x61ssign_public_ip\x18\x0c \x01(\x08\x12\x46\n\x0creplica_type\x18\r \x01(\x0e\x32\x30.yandex.cloud.mdb.postgresql.v1.Host.ReplicaType\"1\n\x04Role\x12\x10\n\x0cROLE_UNKNOWN\x10\x00\x12\n\n\x06MASTER\x10\x01\x12\x0b\n\x07REPLICA\x10\x02\"H\n\x0bReplicaType\x12\x18\n\x14REPLICA_TYPE_UNKNOWN\x10\x00\x12\t\n\x05\x41SYNC\x10\x01\x12\x08\n\x04SYNC\x10\x02\x12\n\n\x06QUORUM\x10\x03\"?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\"\xce\x05\n\nHostConfig\x12_\n\x15postgresql_config_9_6\x18\x01 \x01(\x0b\x32>.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig9_6H\x00\x12\x63\n\x17postgresql_config_10_1c\x18\x04 \x01(\x0b\x32@.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10_1CH\x00\x12]\n\x14postgresql_config_10\x18\x02 \x01(\x0b\x32=.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10H\x00\x12]\n\x14postgresql_config_11\x18\x03 \x01(\x0b\x32=.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig11H\x00\x12\x63\n\x17postgresql_config_11_1c\x18\x06 \x01(\x0b\x32@.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig11_1CH\x00\x12]\n\x14postgresql_config_12\x18\x05 \x01(\x0b\x32=.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig12H\x00\x12\x63\n\x17postgresql_config_12_1c\x18\x07 \x01(\x0b\x32@.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig12_1CH\x00\x42\x13\n\x11postgresql_config\"\xf2\x01\n\x07Service\x12:\n\x04type\x18\x01 \x01(\x0e\x32,.yandex.cloud.mdb.postgresql.v1.Service.Type\x12>\n\x06health\x18\x02 \x01(\x0e\x32..yandex.cloud.mdb.postgresql.v1.Service.Health\"8\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x0e\n\nPOSTGRESQL\x10\x01\x12\n\n\x06POOLER\x10\x02\"1\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\"P\n\tResources\x12\x1a\n\x12resource_preset_id\x18\x01 \x01(\t\x12\x11\n\tdisk_size\x18\x02 \x01(\x03\x12\x14\n\x0c\x64isk_type_id\x18\x03 \x01(\t\"\x1b\n\x06\x41\x63\x63\x65ss\x12\x11\n\tdata_lens\x18\x01 \x01(\x08\"\x8d\x01\n\x16PerformanceDiagnostics\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12/\n\x1asessions_sampling_interval\x18\x02 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x31-86400\x12\x31\n\x1cstatements_sampling_interval\x18\x03 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x31-86400Bs\n\"yandex.cloud.api.mdb.postgresql.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1;postgresqlb\x06proto3'
+  serialized_pb=b'\n,yandex/cloud/mdb/postgresql/v1/cluster.proto\x12\x1eyandex.cloud.mdb.postgresql.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1bgoogle/type/timeofday.proto\x1a\x1dyandex/cloud/validation.proto\x1a\x39yandex/cloud/mdb/postgresql/v1/config/postgresql9_6.proto\x1a\x38yandex/cloud/mdb/postgresql/v1/config/postgresql10.proto\x1a;yandex/cloud/mdb/postgresql/v1/config/postgresql10_1c.proto\x1a\x38yandex/cloud/mdb/postgresql/v1/config/postgresql11.proto\x1a;yandex/cloud/mdb/postgresql/v1/config/postgresql11_1c.proto\x1a\x38yandex/cloud/mdb/postgresql/v1/config/postgresql12.proto\x1a;yandex/cloud/mdb/postgresql/v1/config/postgresql12_1c.proto\x1a\x33yandex/cloud/mdb/postgresql/v1/config/host9_6.proto\x1a\x32yandex/cloud/mdb/postgresql/v1/config/host10.proto\x1a\x35yandex/cloud/mdb/postgresql/v1/config/host10_1c.proto\x1a\x32yandex/cloud/mdb/postgresql/v1/config/host11.proto\x1a\x35yandex/cloud/mdb/postgresql/v1/config/host11_1c.proto\x1a\x32yandex/cloud/mdb/postgresql/v1/config/host12.proto\x1a\x35yandex/cloud/mdb/postgresql/v1/config/host12_1c.proto\x1a\x30yandex/cloud/mdb/postgresql/v1/maintenance.proto\"\xf3\x07\n\x07\x43luster\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x43\n\x06labels\x18\x06 \x03(\x0b\x32\x33.yandex.cloud.mdb.postgresql.v1.Cluster.LabelsEntry\x12H\n\x0b\x65nvironment\x18\x07 \x01(\x0e\x32\x33.yandex.cloud.mdb.postgresql.v1.Cluster.Environment\x12>\n\nmonitoring\x18\x08 \x03(\x0b\x32*.yandex.cloud.mdb.postgresql.v1.Monitoring\x12=\n\x06\x63onfig\x18\t \x01(\x0b\x32-.yandex.cloud.mdb.postgresql.v1.ClusterConfig\x12\x12\n\nnetwork_id\x18\n \x01(\t\x12>\n\x06health\x18\x0b \x01(\x0e\x32..yandex.cloud.mdb.postgresql.v1.Cluster.Health\x12>\n\x06status\x18\x0c \x01(\x0e\x32..yandex.cloud.mdb.postgresql.v1.Cluster.Status\x12M\n\x12maintenance_window\x18\r \x01(\x0b\x32\x31.yandex.cloud.mdb.postgresql.v1.MaintenanceWindow\x12O\n\x11planned_operation\x18\x0e \x01(\x0b\x32\x34.yandex.cloud.mdb.postgresql.v1.MaintenanceOperation\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"I\n\x0b\x45nvironment\x12\x1b\n\x17\x45NVIRONMENT_UNSPECIFIED\x10\x00\x12\x0e\n\nPRODUCTION\x10\x01\x12\r\n\tPRESTABLE\x10\x02\"?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\"y\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\t\n\x05\x45RROR\x10\x03\x12\x0c\n\x08UPDATING\x10\x04\x12\x0c\n\x08STOPPING\x10\x05\x12\x0b\n\x07STOPPED\x10\x06\x12\x0c\n\x08STARTING\x10\x07\"=\n\nMonitoring\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0c\n\x04link\x18\x03 \x01(\t\"\xfd\t\n\rClusterConfig\x12\x0f\n\x07version\x18\x01 \x01(\t\x12t\n\x15postgresql_config_9_6\x18\x02 \x01(\x0b\x32=.yandex.cloud.mdb.postgresql.v1.config.PostgresqlConfigSet9_6H\x00R\x14postgresqlConfig_9_6\x12z\n\x17postgresql_config_10_1c\x18\n \x01(\x0b\x32?.yandex.cloud.mdb.postgresql.v1.config.PostgresqlConfigSet10_1CH\x00R\x16postgresqlConfig_10_1c\x12q\n\x14postgresql_config_10\x18\x03 \x01(\x0b\x32<.yandex.cloud.mdb.postgresql.v1.config.PostgresqlConfigSet10H\x00R\x13postgresqlConfig_10\x12q\n\x14postgresql_config_11\x18\x08 \x01(\x0b\x32<.yandex.cloud.mdb.postgresql.v1.config.PostgresqlConfigSet11H\x00R\x13postgresqlConfig_11\x12z\n\x17postgresql_config_11_1c\x18\r \x01(\x0b\x32?.yandex.cloud.mdb.postgresql.v1.config.PostgresqlConfigSet11_1CH\x00R\x16postgresqlConfig_11_1c\x12q\n\x14postgresql_config_12\x18\x0b \x01(\x0b\x32<.yandex.cloud.mdb.postgresql.v1.config.PostgresqlConfigSet12H\x00R\x13postgresqlConfig_12\x12z\n\x17postgresql_config_12_1c\x18\x0e \x01(\x0b\x32?.yandex.cloud.mdb.postgresql.v1.config.PostgresqlConfigSet12_1CH\x00R\x16postgresqlConfig_12_1c\x12M\n\rpooler_config\x18\x04 \x01(\x0b\x32\x36.yandex.cloud.mdb.postgresql.v1.ConnectionPoolerConfig\x12<\n\tresources\x18\x05 \x01(\x0b\x32).yandex.cloud.mdb.postgresql.v1.Resources\x12\x30\n\x0c\x61utofailover\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x33\n\x13\x62\x61\x63kup_window_start\x18\x07 \x01(\x0b\x32\x16.google.type.TimeOfDay\x12\x36\n\x06\x61\x63\x63\x65ss\x18\t \x01(\x0b\x32&.yandex.cloud.mdb.postgresql.v1.Access\x12W\n\x17performance_diagnostics\x18\x0c \x01(\x0b\x32\x36.yandex.cloud.mdb.postgresql.v1.PerformanceDiagnosticsB\x13\n\x11postgresql_config\"\xfe\x01\n\x16\x43onnectionPoolerConfig\x12X\n\x0cpooling_mode\x18\x01 \x01(\x0e\x32\x42.yandex.cloud.mdb.postgresql.v1.ConnectionPoolerConfig.PoolingMode\x12\x30\n\x0cpool_discard\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"X\n\x0bPoolingMode\x12\x1c\n\x18POOLING_MODE_UNSPECIFIED\x10\x00\x12\x0b\n\x07SESSION\x10\x01\x12\x0f\n\x0bTRANSACTION\x10\x02\x12\r\n\tSTATEMENT\x10\x03\"\xe2\x05\n\x04Host\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12\x0f\n\x07zone_id\x18\x03 \x01(\t\x12<\n\tresources\x18\x04 \x01(\x0b\x32).yandex.cloud.mdb.postgresql.v1.Resources\x12\x37\n\x04role\x18\x05 \x01(\x0e\x32).yandex.cloud.mdb.postgresql.v1.Host.Role\x12;\n\x06health\x18\x06 \x01(\x0e\x32+.yandex.cloud.mdb.postgresql.v1.Host.Health\x12\x39\n\x08services\x18\x07 \x03(\x0b\x32\'.yandex.cloud.mdb.postgresql.v1.Service\x12\x11\n\tsubnet_id\x18\x08 \x01(\t\x12\x1a\n\x12replication_source\x18\t \x01(\t\x12-\n\x08priority\x18\n \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12:\n\x06\x63onfig\x18\x0b \x01(\x0b\x32*.yandex.cloud.mdb.postgresql.v1.HostConfig\x12\x18\n\x10\x61ssign_public_ip\x18\x0c \x01(\x08\x12\x46\n\x0creplica_type\x18\r \x01(\x0e\x32\x30.yandex.cloud.mdb.postgresql.v1.Host.ReplicaType\"1\n\x04Role\x12\x10\n\x0cROLE_UNKNOWN\x10\x00\x12\n\n\x06MASTER\x10\x01\x12\x0b\n\x07REPLICA\x10\x02\"H\n\x0bReplicaType\x12\x18\n\x14REPLICA_TYPE_UNKNOWN\x10\x00\x12\t\n\x05\x41SYNC\x10\x01\x12\x08\n\x04SYNC\x10\x02\x12\n\n\x06QUORUM\x10\x03\"?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\"\x87\x07\n\nHostConfig\x12y\n\x15postgresql_config_9_6\x18\x01 \x01(\x0b\x32>.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig9_6H\x00R\x18postgresqlHostConfig_9_6\x12\x7f\n\x17postgresql_config_10_1c\x18\x04 \x01(\x0b\x32@.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10_1CH\x00R\x1apostgresqlHostConfig_10_1c\x12v\n\x14postgresql_config_10\x18\x02 \x01(\x0b\x32=.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig10H\x00R\x17postgresqlHostConfig_10\x12v\n\x14postgresql_config_11\x18\x03 \x01(\x0b\x32=.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig11H\x00R\x17postgresqlHostConfig_11\x12\x7f\n\x17postgresql_config_11_1c\x18\x06 \x01(\x0b\x32@.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig11_1CH\x00R\x1apostgresqlHostConfig_11_1c\x12v\n\x14postgresql_config_12\x18\x05 \x01(\x0b\x32=.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig12H\x00R\x17postgresqlHostConfig_12\x12\x7f\n\x17postgresql_config_12_1c\x18\x07 \x01(\x0b\x32@.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig12_1CH\x00R\x1apostgresqlHostConfig_12_1cB\x13\n\x11postgresql_config\"\xf2\x01\n\x07Service\x12:\n\x04type\x18\x01 \x01(\x0e\x32,.yandex.cloud.mdb.postgresql.v1.Service.Type\x12>\n\x06health\x18\x02 \x01(\x0e\x32..yandex.cloud.mdb.postgresql.v1.Service.Health\"8\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x0e\n\nPOSTGRESQL\x10\x01\x12\n\n\x06POOLER\x10\x02\"1\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\"P\n\tResources\x12\x1a\n\x12resource_preset_id\x18\x01 \x01(\t\x12\x11\n\tdisk_size\x18\x02 \x01(\x03\x12\x14\n\x0c\x64isk_type_id\x18\x03 \x01(\t\",\n\x06\x41\x63\x63\x65ss\x12\x11\n\tdata_lens\x18\x01 \x01(\x08\x12\x0f\n\x07web_sql\x18\x02 \x01(\x08\"\x8d\x01\n\x16PerformanceDiagnostics\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12/\n\x1asessions_sampling_interval\x18\x02 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x31-86400\x12\x31\n\x1cstatements_sampling_interval\x18\x03 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x31-86400Bs\n\"yandex.cloud.api.mdb.postgresql.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1;postgresqlb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,google_dot_type_dot_timeofday__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_config_dot_postgresql9__6__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_config_dot_postgresql10__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_config_dot_postgresql10__1c__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_config_dot_postgresql11__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_config_dot_postgresql11__1c__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_config_dot_postgresql12__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_config_dot_postgresql12__1c__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_config_dot_host9__6__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_config_dot_host10__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_config_dot_host10__1c__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_config_dot_host11__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_config_dot_host11__1c__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_config_dot_host12__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_config_dot_host12__1c__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_maintenance__pb2.DESCRIPTOR,])
 
@@ -194,8 +194,8 @@ _CONNECTIONPOOLERCONFIG_POOLINGMODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3412,
-  serialized_end=3500,
+  serialized_start=3569,
+  serialized_end=3657,
 )
 _sym_db.RegisterEnumDescriptor(_CONNECTIONPOOLERCONFIG_POOLINGMODE)
 
@@ -224,8 +224,8 @@ _HOST_ROLE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4053,
-  serialized_end=4102,
+  serialized_start=4210,
+  serialized_end=4259,
 )
 _sym_db.RegisterEnumDescriptor(_HOST_ROLE)
 
@@ -259,8 +259,8 @@ _HOST_REPLICATYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4104,
-  serialized_end=4176,
+  serialized_start=4261,
+  serialized_end=4333,
 )
 _sym_db.RegisterEnumDescriptor(_HOST_REPLICATYPE)
 
@@ -324,8 +324,8 @@ _SERVICE_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5100,
-  serialized_end=5156,
+  serialized_start=5442,
+  serialized_end=5498,
 )
 _sym_db.RegisterEnumDescriptor(_SERVICE_TYPE)
 
@@ -591,49 +591,49 @@ _CLUSTERCONFIG = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='postgresqlConfig_9_6', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='postgresql_config_10_1c', full_name='yandex.cloud.mdb.postgresql.v1.ClusterConfig.postgresql_config_10_1c', index=2,
       number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='postgresqlConfig_10_1c', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='postgresql_config_10', full_name='yandex.cloud.mdb.postgresql.v1.ClusterConfig.postgresql_config_10', index=3,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='postgresqlConfig_10', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='postgresql_config_11', full_name='yandex.cloud.mdb.postgresql.v1.ClusterConfig.postgresql_config_11', index=4,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='postgresqlConfig_11', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='postgresql_config_11_1c', full_name='yandex.cloud.mdb.postgresql.v1.ClusterConfig.postgresql_config_11_1c', index=5,
       number=13, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='postgresqlConfig_11_1c', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='postgresql_config_12', full_name='yandex.cloud.mdb.postgresql.v1.ClusterConfig.postgresql_config_12', index=6,
       number=11, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='postgresqlConfig_12', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='postgresql_config_12_1c', full_name='yandex.cloud.mdb.postgresql.v1.ClusterConfig.postgresql_config_12_1c', index=7,
       number=14, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='postgresqlConfig_12_1c', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='pooler_config', full_name='yandex.cloud.mdb.postgresql.v1.ClusterConfig.pooler_config', index=8,
       number=4, type=11, cpp_type=10, label=1,
@@ -694,7 +694,7 @@ _CLUSTERCONFIG = _descriptor.Descriptor(
     fields=[]),
   ],
   serialized_start=2123,
-  serialized_end=3243,
+  serialized_end=3400,
 )
 
 
@@ -733,8 +733,8 @@ _CONNECTIONPOOLERCONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3246,
-  serialized_end=3500,
+  serialized_start=3403,
+  serialized_end=3657,
 )
 
 
@@ -852,8 +852,8 @@ _HOST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3503,
-  serialized_end=4241,
+  serialized_start=3660,
+  serialized_end=4398,
 )
 
 
@@ -871,49 +871,49 @@ _HOSTCONFIG = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='postgresqlHostConfig_9_6', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='postgresql_config_10_1c', full_name='yandex.cloud.mdb.postgresql.v1.HostConfig.postgresql_config_10_1c', index=1,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='postgresqlHostConfig_10_1c', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='postgresql_config_10', full_name='yandex.cloud.mdb.postgresql.v1.HostConfig.postgresql_config_10', index=2,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='postgresqlHostConfig_10', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='postgresql_config_11', full_name='yandex.cloud.mdb.postgresql.v1.HostConfig.postgresql_config_11', index=3,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='postgresqlHostConfig_11', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='postgresql_config_11_1c', full_name='yandex.cloud.mdb.postgresql.v1.HostConfig.postgresql_config_11_1c', index=4,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='postgresqlHostConfig_11_1c', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='postgresql_config_12', full_name='yandex.cloud.mdb.postgresql.v1.HostConfig.postgresql_config_12', index=5,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='postgresqlHostConfig_12', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='postgresql_config_12_1c', full_name='yandex.cloud.mdb.postgresql.v1.HostConfig.postgresql_config_12_1c', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=None, json_name='postgresqlHostConfig_12_1c', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -931,8 +931,8 @@ _HOSTCONFIG = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=4244,
-  serialized_end=4962,
+  serialized_start=4401,
+  serialized_end=5304,
 )
 
 
@@ -972,8 +972,8 @@ _SERVICE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4965,
-  serialized_end=5207,
+  serialized_start=5307,
+  serialized_end=5549,
 )
 
 
@@ -1018,8 +1018,8 @@ _RESOURCES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5209,
-  serialized_end=5289,
+  serialized_start=5551,
+  serialized_end=5631,
 )
 
 
@@ -1038,6 +1038,13 @@ _ACCESS = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='web_sql', full_name='yandex.cloud.mdb.postgresql.v1.Access.web_sql', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1050,8 +1057,8 @@ _ACCESS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5291,
-  serialized_end=5318,
+  serialized_start=5633,
+  serialized_end=5677,
 )
 
 
@@ -1096,8 +1103,8 @@ _PERFORMANCEDIAGNOSTICS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5321,
-  serialized_end=5462,
+  serialized_start=5680,
+  serialized_end=5821,
 )
 
 _CLUSTER_LABELSENTRY.containing_type = _CLUSTER
