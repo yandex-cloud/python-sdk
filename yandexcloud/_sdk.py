@@ -2,7 +2,8 @@ import inspect
 
 import grpc
 
-from yandexcloud import _channels, RetryInterceptor
+import yandexcloud
+from yandexcloud import _channels
 from yandexcloud import _operation_waiter
 from yandexcloud import _helpers
 from yandexcloud._wrappers import Wrappers
@@ -12,7 +13,7 @@ class SDK(object):
     def __init__(self, interceptor=None, **kwargs):
         self._channels = _channels.Channels(**kwargs)
         if not interceptor:
-            self._default_interceptor = RetryInterceptor(
+            self._default_interceptor = yandexcloud.RetryInterceptor(
                 max_retry_count=5,
                 retriable_codes=[grpc.StatusCode.UNAVAILABLE],
             )
