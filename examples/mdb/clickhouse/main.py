@@ -138,7 +138,7 @@ def create_cluster_request(params):
 
     host_specs = [host_ch_spec, host_zk_spec, host_zk_spec, host_zk_spec]
 
-    res = Resources(resource_preset_id='s1.nano', disk_size=10 * (1024 ** 3), disk_type_id='network-ssd')
+    res = Resources(resource_preset_id='s2.micro', disk_size=10 * (1024 ** 3), disk_type_id='network-ssd')
 
     config_spec = cluster_service.ConfigSpec(clickhouse=cluster_service.ConfigSpec.Clickhouse(resources=res),
                                              zookeeper=cluster_service.ConfigSpec.Zookeeper(resources=res))
