@@ -145,6 +145,9 @@ class Dataproc(object):
         elif isinstance(ssh_public_keys, string_types):
             ssh_public_keys = [ssh_public_keys]
 
+        if not s3_bucket:
+            raise RuntimeError('Object storage (S3) bucket must be specified.')
+
         subclusters = [
             cluster_service_pb.CreateSubclusterConfigSpec(
                 name='master',
