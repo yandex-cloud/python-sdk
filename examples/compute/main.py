@@ -39,7 +39,7 @@ def create_instance(sdk, folder_id, zone, name, subnet_id):
         name=name,
         resources_spec=ResourcesSpec(
             memory=2 * 2 ** 30,
-            cores=1,
+            cores=2,
             core_fraction=0,
         ),
         zone_id=zone,
