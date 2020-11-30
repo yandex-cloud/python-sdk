@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\035yandex.cloud.api.mdb.redis.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/redis/v1;redis',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\'yandex/cloud/mdb/redis/v1/cluster.proto\x12\x19yandex.cloud.mdb.redis.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/type/timeofday.proto\x1a/yandex/cloud/mdb/redis/v1/config/redis5_0.proto\x1a/yandex/cloud/mdb/redis/v1/config/redis6_0.proto\x1a+yandex/cloud/mdb/redis/v1/maintenance.proto\"\xdc\x07\n\x07\x43luster\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12>\n\x06labels\x18\x06 \x03(\x0b\x32..yandex.cloud.mdb.redis.v1.Cluster.LabelsEntry\x12\x43\n\x0b\x65nvironment\x18\x07 \x01(\x0e\x32..yandex.cloud.mdb.redis.v1.Cluster.Environment\x12\x39\n\nmonitoring\x18\x08 \x03(\x0b\x32%.yandex.cloud.mdb.redis.v1.Monitoring\x12\x38\n\x06\x63onfig\x18\t \x01(\x0b\x32(.yandex.cloud.mdb.redis.v1.ClusterConfig\x12\x12\n\nnetwork_id\x18\n \x01(\t\x12\x39\n\x06health\x18\x0b \x01(\x0e\x32).yandex.cloud.mdb.redis.v1.Cluster.Health\x12\x39\n\x06status\x18\x0c \x01(\x0e\x32).yandex.cloud.mdb.redis.v1.Cluster.Status\x12\x0f\n\x07sharded\x18\r \x01(\x08\x12H\n\x12maintenance_window\x18\x0e \x01(\x0b\x32,.yandex.cloud.mdb.redis.v1.MaintenanceWindow\x12J\n\x11planned_operation\x18\x0f \x01(\x0b\x32/.yandex.cloud.mdb.redis.v1.MaintenanceOperation\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"I\n\x0b\x45nvironment\x12\x1b\n\x17\x45NVIRONMENT_UNSPECIFIED\x10\x00\x12\x0e\n\nPRODUCTION\x10\x01\x12\r\n\tPRESTABLE\x10\x02\"?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\"y\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\t\n\x05\x45RROR\x10\x03\x12\x0c\n\x08UPDATING\x10\x04\x12\x0c\n\x08STOPPING\x10\x05\x12\x0b\n\x07STOPPED\x10\x06\x12\x0c\n\x08STARTING\x10\x07\"=\n\nMonitoring\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0c\n\x04link\x18\x03 \x01(\t\"\x95\x03\n\rClusterConfig\x12\x0f\n\x07version\x18\x01 \x01(\t\x12`\n\x10redis_config_5_0\x18\x02 \x01(\x0b\x32\x33.yandex.cloud.mdb.redis.v1.config.RedisConfigSet5_0H\x00R\x0fredisConfig_5_0\x12`\n\x10redis_config_6_0\x18\x06 \x01(\x0b\x32\x33.yandex.cloud.mdb.redis.v1.config.RedisConfigSet6_0H\x00R\x0fredisConfig_6_0\x12\x37\n\tresources\x18\x03 \x01(\x0b\x32$.yandex.cloud.mdb.redis.v1.Resources\x12\x33\n\x13\x62\x61\x63kup_window_start\x18\x04 \x01(\x0b\x32\x16.google.type.TimeOfDay\x12\x31\n\x06\x61\x63\x63\x65ss\x18\x05 \x01(\x0b\x32!.yandex.cloud.mdb.redis.v1.AccessB\x0e\n\x0credis_config\")\n\x05Shard\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\"\xaf\x03\n\x04Host\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12\x0f\n\x07zone_id\x18\x03 \x01(\t\x12\x11\n\tsubnet_id\x18\x04 \x01(\t\x12\x37\n\tresources\x18\x05 \x01(\x0b\x32$.yandex.cloud.mdb.redis.v1.Resources\x12\x32\n\x04role\x18\x06 \x01(\x0e\x32$.yandex.cloud.mdb.redis.v1.Host.Role\x12\x36\n\x06health\x18\x07 \x01(\x0e\x32&.yandex.cloud.mdb.redis.v1.Host.Health\x12\x34\n\x08services\x18\x08 \x03(\x0b\x32\".yandex.cloud.mdb.redis.v1.Service\x12\x12\n\nshard_name\x18\t \x01(\t\"1\n\x04Role\x12\x10\n\x0cROLE_UNKNOWN\x10\x00\x12\n\n\x06MASTER\x10\x01\x12\x0b\n\x07REPLICA\x10\x02\"?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\"\xf7\x01\n\x07Service\x12\x35\n\x04type\x18\x01 \x01(\x0e\x32\'.yandex.cloud.mdb.redis.v1.Service.Type\x12\x39\n\x06health\x18\x02 \x01(\x0e\x32).yandex.cloud.mdb.redis.v1.Service.Health\"G\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\t\n\x05REDIS\x10\x01\x12\x0b\n\x07\x41RBITER\x10\x02\x12\x11\n\rREDIS_CLUSTER\x10\x03\"1\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\":\n\tResources\x12\x1a\n\x12resource_preset_id\x18\x01 \x01(\t\x12\x11\n\tdisk_size\x18\x02 \x01(\x03\"\x1b\n\x06\x41\x63\x63\x65ss\x12\x11\n\tdata_lens\x18\x01 \x01(\x08\x42\x64\n\x1dyandex.cloud.api.mdb.redis.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/redis/v1;redisb\x06proto3'
+  serialized_pb=b'\n\'yandex/cloud/mdb/redis/v1/cluster.proto\x12\x19yandex.cloud.mdb.redis.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/type/timeofday.proto\x1a/yandex/cloud/mdb/redis/v1/config/redis5_0.proto\x1a/yandex/cloud/mdb/redis/v1/config/redis6_0.proto\x1a+yandex/cloud/mdb/redis/v1/maintenance.proto\"\xf8\x07\n\x07\x43luster\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12>\n\x06labels\x18\x06 \x03(\x0b\x32..yandex.cloud.mdb.redis.v1.Cluster.LabelsEntry\x12\x43\n\x0b\x65nvironment\x18\x07 \x01(\x0e\x32..yandex.cloud.mdb.redis.v1.Cluster.Environment\x12\x39\n\nmonitoring\x18\x08 \x03(\x0b\x32%.yandex.cloud.mdb.redis.v1.Monitoring\x12\x38\n\x06\x63onfig\x18\t \x01(\x0b\x32(.yandex.cloud.mdb.redis.v1.ClusterConfig\x12\x12\n\nnetwork_id\x18\n \x01(\t\x12\x39\n\x06health\x18\x0b \x01(\x0e\x32).yandex.cloud.mdb.redis.v1.Cluster.Health\x12\x39\n\x06status\x18\x0c \x01(\x0e\x32).yandex.cloud.mdb.redis.v1.Cluster.Status\x12\x0f\n\x07sharded\x18\r \x01(\x08\x12H\n\x12maintenance_window\x18\x0e \x01(\x0b\x32,.yandex.cloud.mdb.redis.v1.MaintenanceWindow\x12J\n\x11planned_operation\x18\x0f \x01(\x0b\x32/.yandex.cloud.mdb.redis.v1.MaintenanceOperation\x12\x1a\n\x12security_group_ids\x18\x10 \x03(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"I\n\x0b\x45nvironment\x12\x1b\n\x17\x45NVIRONMENT_UNSPECIFIED\x10\x00\x12\x0e\n\nPRODUCTION\x10\x01\x12\r\n\tPRESTABLE\x10\x02\"?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\"y\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\t\n\x05\x45RROR\x10\x03\x12\x0c\n\x08UPDATING\x10\x04\x12\x0c\n\x08STOPPING\x10\x05\x12\x0b\n\x07STOPPED\x10\x06\x12\x0c\n\x08STARTING\x10\x07\"=\n\nMonitoring\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0c\n\x04link\x18\x03 \x01(\t\"\x95\x03\n\rClusterConfig\x12\x0f\n\x07version\x18\x01 \x01(\t\x12`\n\x10redis_config_5_0\x18\x02 \x01(\x0b\x32\x33.yandex.cloud.mdb.redis.v1.config.RedisConfigSet5_0H\x00R\x0fredisConfig_5_0\x12`\n\x10redis_config_6_0\x18\x06 \x01(\x0b\x32\x33.yandex.cloud.mdb.redis.v1.config.RedisConfigSet6_0H\x00R\x0fredisConfig_6_0\x12\x37\n\tresources\x18\x03 \x01(\x0b\x32$.yandex.cloud.mdb.redis.v1.Resources\x12\x33\n\x13\x62\x61\x63kup_window_start\x18\x04 \x01(\x0b\x32\x16.google.type.TimeOfDay\x12\x31\n\x06\x61\x63\x63\x65ss\x18\x05 \x01(\x0b\x32!.yandex.cloud.mdb.redis.v1.AccessB\x0e\n\x0credis_config\")\n\x05Shard\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\"\xaf\x03\n\x04Host\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12\x0f\n\x07zone_id\x18\x03 \x01(\t\x12\x11\n\tsubnet_id\x18\x04 \x01(\t\x12\x37\n\tresources\x18\x05 \x01(\x0b\x32$.yandex.cloud.mdb.redis.v1.Resources\x12\x32\n\x04role\x18\x06 \x01(\x0e\x32$.yandex.cloud.mdb.redis.v1.Host.Role\x12\x36\n\x06health\x18\x07 \x01(\x0e\x32&.yandex.cloud.mdb.redis.v1.Host.Health\x12\x34\n\x08services\x18\x08 \x03(\x0b\x32\".yandex.cloud.mdb.redis.v1.Service\x12\x12\n\nshard_name\x18\t \x01(\t\"1\n\x04Role\x12\x10\n\x0cROLE_UNKNOWN\x10\x00\x12\n\n\x06MASTER\x10\x01\x12\x0b\n\x07REPLICA\x10\x02\"?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\"\xf7\x01\n\x07Service\x12\x35\n\x04type\x18\x01 \x01(\x0e\x32\'.yandex.cloud.mdb.redis.v1.Service.Type\x12\x39\n\x06health\x18\x02 \x01(\x0e\x32).yandex.cloud.mdb.redis.v1.Service.Health\"G\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\t\n\x05REDIS\x10\x01\x12\x0b\n\x07\x41RBITER\x10\x02\x12\x11\n\rREDIS_CLUSTER\x10\x03\"1\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\":\n\tResources\x12\x1a\n\x12resource_preset_id\x18\x01 \x01(\t\x12\x11\n\tdisk_size\x18\x02 \x01(\x03\"\x1b\n\x06\x41\x63\x63\x65ss\x12\x11\n\tdata_lens\x18\x01 \x01(\x08\x42\x64\n\x1dyandex.cloud.api.mdb.redis.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/redis/v1;redisb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_type_dot_timeofday__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_config_dot_redis5__0__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_config_dot_redis6__0__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_maintenance__pb2.DESCRIPTOR,])
 
@@ -55,8 +55,8 @@ _CLUSTER_ENVIRONMENT = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1003,
-  serialized_end=1076,
+  serialized_start=1031,
+  serialized_end=1104,
 )
 _sym_db.RegisterEnumDescriptor(_CLUSTER_ENVIRONMENT)
 
@@ -90,8 +90,8 @@ _CLUSTER_HEALTH = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1078,
-  serialized_end=1141,
+  serialized_start=1106,
+  serialized_end=1169,
 )
 _sym_db.RegisterEnumDescriptor(_CLUSTER_HEALTH)
 
@@ -145,8 +145,8 @@ _CLUSTER_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1143,
-  serialized_end=1264,
+  serialized_start=1171,
+  serialized_end=1292,
 )
 _sym_db.RegisterEnumDescriptor(_CLUSTER_STATUS)
 
@@ -175,8 +175,8 @@ _HOST_ROLE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2098,
-  serialized_end=2147,
+  serialized_start=2126,
+  serialized_end=2175,
 )
 _sym_db.RegisterEnumDescriptor(_HOST_ROLE)
 
@@ -210,8 +210,8 @@ _HOST_HEALTH = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1078,
-  serialized_end=1141,
+  serialized_start=1106,
+  serialized_end=1169,
 )
 _sym_db.RegisterEnumDescriptor(_HOST_HEALTH)
 
@@ -245,8 +245,8 @@ _SERVICE_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2340,
-  serialized_end=2411,
+  serialized_start=2368,
+  serialized_end=2439,
 )
 _sym_db.RegisterEnumDescriptor(_SERVICE_TYPE)
 
@@ -275,8 +275,8 @@ _SERVICE_HEALTH = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1078,
-  serialized_end=1127,
+  serialized_start=1106,
+  serialized_end=1155,
 )
 _sym_db.RegisterEnumDescriptor(_SERVICE_HEALTH)
 
@@ -315,8 +315,8 @@ _CLUSTER_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=956,
-  serialized_end=1001,
+  serialized_start=984,
+  serialized_end=1029,
 )
 
 _CLUSTER = _descriptor.Descriptor(
@@ -432,6 +432,13 @@ _CLUSTER = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='security_group_ids', full_name='yandex.cloud.mdb.redis.v1.Cluster.security_group_ids', index=15,
+      number=16, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -448,7 +455,7 @@ _CLUSTER = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=276,
-  serialized_end=1264,
+  serialized_end=1292,
 )
 
 
@@ -493,8 +500,8 @@ _MONITORING = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1266,
-  serialized_end=1327,
+  serialized_start=1294,
+  serialized_end=1355,
 )
 
 
@@ -565,8 +572,8 @@ _CLUSTERCONFIG = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1330,
-  serialized_end=1735,
+  serialized_start=1358,
+  serialized_end=1763,
 )
 
 
@@ -604,8 +611,8 @@ _SHARD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1737,
-  serialized_end=1778,
+  serialized_start=1765,
+  serialized_end=1806,
 )
 
 
@@ -694,8 +701,8 @@ _HOST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1781,
-  serialized_end=2212,
+  serialized_start=1809,
+  serialized_end=2240,
 )
 
 
@@ -735,8 +742,8 @@ _SERVICE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2215,
-  serialized_end=2462,
+  serialized_start=2243,
+  serialized_end=2490,
 )
 
 
@@ -774,8 +781,8 @@ _RESOURCES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2464,
-  serialized_end=2522,
+  serialized_start=2492,
+  serialized_end=2550,
 )
 
 
@@ -806,8 +813,8 @@ _ACCESS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2524,
-  serialized_end=2551,
+  serialized_start=2552,
+  serialized_end=2579,
 )
 
 _CLUSTER_LABELSENTRY.containing_type = _CLUSTER
