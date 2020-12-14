@@ -16,6 +16,7 @@ from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mas
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 from yandex.cloud.vpc.v1 import address_pb2 as yandex_dot_cloud_dot_vpc_dot_v1_dot_address__pb2
+from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -24,9 +25,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\027yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpc',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n)yandex/cloud/vpc/v1/address_service.proto\x12\x13yandex.cloud.vpc.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a!yandex/cloud/vpc/v1/address.proto\"\'\n\x11GetAddressRequest\x12\x12\n\naddress_id\x18\x01 \x01(\t\"F\n\x18GetAddressByValueRequest\x12\x1f\n\x15\x65xternal_ipv4_address\x18\x01 \x01(\tH\x00\x42\t\n\x07\x61\x64\x64ress\"`\n\x14ListAddressesRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\"a\n\x15ListAddressesResponse\x12/\n\taddresses\x18\x01 \x03(\x0b\x32\x1c.yandex.cloud.vpc.v1.Address\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xa6\x02\n\x14\x43reateAddressRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x45\n\x06labels\x18\x04 \x03(\x0b\x32\x35.yandex.cloud.vpc.v1.CreateAddressRequest.LabelsEntry\x12R\n\x1a\x65xternal_ipv4_address_spec\x18\x05 \x01(\x0b\x32,.yandex.cloud.vpc.v1.ExternalIpv4AddressSpecH\x00\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0e\n\x0c\x61\x64\x64ress_spec\"{\n\x17\x45xternalIpv4AddressSpec\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x0f\n\x07zone_id\x18\x02 \x01(\t\x12>\n\x0crequirements\x18\x03 \x01(\x0b\x32(.yandex.cloud.vpc.v1.AddressRequirements\"+\n\x15\x43reateAddressMetadata\x12\x12\n\naddress_id\x18\x01 \x01(\t\"\x86\x02\n\x14UpdateAddressRequest\x12\x12\n\naddress_id\x18\x01 \x01(\t\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x45\n\x06labels\x18\x05 \x03(\x0b\x32\x35.yandex.cloud.vpc.v1.UpdateAddressRequest.LabelsEntry\x12\x10\n\x08reserved\x18\x06 \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15UpdateAddressMetadata\x12\x12\n\naddress_id\x18\x01 \x01(\t\"*\n\x14\x44\x65leteAddressRequest\x12\x12\n\naddress_id\x18\x01 \x01(\t\"+\n\x15\x44\x65leteAddressMetadata\x12\x12\n\naddress_id\x18\x01 \x01(\t\"Y\n\x1cListAddressOperationsRequest\x12\x12\n\naddress_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\"o\n\x1dListAddressOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xa0\x08\n\x0e\x41\x64\x64ressService\x12s\n\x03Get\x12&.yandex.cloud.vpc.v1.GetAddressRequest\x1a\x1c.yandex.cloud.vpc.v1.Address\"&\x82\xd3\xe4\x93\x02 \x12\x1e/vpc/v1/addresses/{address_id}\x12|\n\nGetByValue\x12-.yandex.cloud.vpc.v1.GetAddressByValueRequest\x1a\x1c.yandex.cloud.vpc.v1.Address\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/vpc/v1/addresses:byValue\x12x\n\x04List\x12).yandex.cloud.vpc.v1.ListAddressesRequest\x1a*.yandex.cloud.vpc.v1.ListAddressesResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/vpc/v1/addresses\x12\x98\x01\n\x06\x43reate\x12).yandex.cloud.vpc.v1.CreateAddressRequest\x1a!.yandex.cloud.operation.Operation\"@\x82\xd3\xe4\x93\x02\x16\"\x11/vpc/v1/addresses:\x01*\xb2\xd2* \n\x15\x43reateAddressMetadata\x12\x07\x41\x64\x64ress\x12\xa5\x01\n\x06Update\x12).yandex.cloud.vpc.v1.UpdateAddressRequest\x1a!.yandex.cloud.operation.Operation\"M\x82\xd3\xe4\x93\x02#2\x1e/vpc/v1/addresses/{address_id}:\x01*\xb2\xd2* \n\x15UpdateAddressMetadata\x12\x07\x41\x64\x64ress\x12\xb0\x01\n\x06\x44\x65lete\x12).yandex.cloud.vpc.v1.DeleteAddressRequest\x1a!.yandex.cloud.operation.Operation\"X\x82\xd3\xe4\x93\x02 *\x1e/vpc/v1/addresses/{address_id}\xb2\xd2*.\n\x15\x44\x65leteAddressMetadata\x12\x15google.protobuf.Empty\x12\xaa\x01\n\x0eListOperations\x12\x31.yandex.cloud.vpc.v1.ListAddressOperationsRequest\x1a\x32.yandex.cloud.vpc.v1.ListAddressOperationsResponse\"1\x82\xd3\xe4\x93\x02+\x12)/vpc/v1/addresses/{address_id}/operationsBV\n\x17yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpcb\x06proto3'
+  serialized_pb=b'\n)yandex/cloud/vpc/v1/address_service.proto\x12\x13yandex.cloud.vpc.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a!yandex/cloud/vpc/v1/address.proto\x1a\x1dyandex/cloud/validation.proto\"5\n\x11GetAddressRequest\x12 \n\naddress_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"F\n\x18GetAddressByValueRequest\x12\x1f\n\x15\x65xternal_ipv4_address\x18\x01 \x01(\tH\x00\x42\t\n\x07\x61\x64\x64ress\"\x85\x01\n\x14ListAddressesRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\"a\n\x15ListAddressesResponse\x12/\n\taddresses\x18\x01 \x03(\x0b\x32\x1c.yandex.cloud.vpc.v1.Address\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xa4\x03\n\x14\x43reateAddressRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x86\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x35.yandex.cloud.vpc.v1.CreateAddressRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12R\n\x1a\x65xternal_ipv4_address_spec\x18\x05 \x01(\x0b\x32,.yandex.cloud.vpc.v1.ExternalIpv4AddressSpecH\x00\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0e\n\x0c\x61\x64\x64ress_spec\"{\n\x17\x45xternalIpv4AddressSpec\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x0f\n\x07zone_id\x18\x02 \x01(\t\x12>\n\x0crequirements\x18\x03 \x01(\x0b\x32(.yandex.cloud.vpc.v1.AddressRequirements\"+\n\x15\x43reateAddressMetadata\x12\x12\n\naddress_id\x18\x01 \x01(\t\"\x84\x03\n\x14UpdateAddressRequest\x12 \n\naddress_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x86\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x35.yandex.cloud.vpc.v1.UpdateAddressRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12\x10\n\x08reserved\x18\x06 \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15UpdateAddressMetadata\x12\x12\n\naddress_id\x18\x01 \x01(\t\"8\n\x14\x44\x65leteAddressRequest\x12 \n\naddress_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x44\x65leteAddressMetadata\x12\x12\n\naddress_id\x18\x01 \x01(\t\"~\n\x1cListAddressOperationsRequest\x12 \n\naddress_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"o\n\x1dListAddressOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xa0\x08\n\x0e\x41\x64\x64ressService\x12s\n\x03Get\x12&.yandex.cloud.vpc.v1.GetAddressRequest\x1a\x1c.yandex.cloud.vpc.v1.Address\"&\x82\xd3\xe4\x93\x02 \x12\x1e/vpc/v1/addresses/{address_id}\x12|\n\nGetByValue\x12-.yandex.cloud.vpc.v1.GetAddressByValueRequest\x1a\x1c.yandex.cloud.vpc.v1.Address\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/vpc/v1/addresses:byValue\x12x\n\x04List\x12).yandex.cloud.vpc.v1.ListAddressesRequest\x1a*.yandex.cloud.vpc.v1.ListAddressesResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/vpc/v1/addresses\x12\x98\x01\n\x06\x43reate\x12).yandex.cloud.vpc.v1.CreateAddressRequest\x1a!.yandex.cloud.operation.Operation\"@\x82\xd3\xe4\x93\x02\x16\"\x11/vpc/v1/addresses:\x01*\xb2\xd2* \n\x15\x43reateAddressMetadata\x12\x07\x41\x64\x64ress\x12\xa5\x01\n\x06Update\x12).yandex.cloud.vpc.v1.UpdateAddressRequest\x1a!.yandex.cloud.operation.Operation\"M\x82\xd3\xe4\x93\x02#2\x1e/vpc/v1/addresses/{address_id}:\x01*\xb2\xd2* \n\x15UpdateAddressMetadata\x12\x07\x41\x64\x64ress\x12\xb0\x01\n\x06\x44\x65lete\x12).yandex.cloud.vpc.v1.DeleteAddressRequest\x1a!.yandex.cloud.operation.Operation\"X\x82\xd3\xe4\x93\x02 *\x1e/vpc/v1/addresses/{address_id}\xb2\xd2*.\n\x15\x44\x65leteAddressMetadata\x12\x15google.protobuf.Empty\x12\xaa\x01\n\x0eListOperations\x12\x31.yandex.cloud.vpc.v1.ListAddressOperationsRequest\x1a\x32.yandex.cloud.vpc.v1.ListAddressOperationsResponse\"1\x82\xd3\xe4\x93\x02+\x12)/vpc/v1/addresses/{address_id}/operationsBV\n\x17yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpcb\x06proto3'
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_vpc_dot_v1_dot_address__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_vpc_dot_v1_dot_address__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
 
 
@@ -45,7 +46,7 @@ _GETADDRESSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -58,8 +59,8 @@ _GETADDRESSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=239,
-  serialized_end=278,
+  serialized_start=270,
+  serialized_end=323,
 )
 
 
@@ -95,8 +96,8 @@ _GETADDRESSBYVALUEREQUEST = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=280,
-  serialized_end=350,
+  serialized_start=325,
+  serialized_end=395,
 )
 
 
@@ -114,21 +115,21 @@ _LISTADDRESSESREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.vpc.v1.ListAddressesRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.vpc.v1.ListAddressesRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='filter', full_name='yandex.cloud.vpc.v1.ListAddressesRequest.filter', index=3,
       number=4, type=9, cpp_type=9, label=1,
@@ -148,8 +149,8 @@ _LISTADDRESSESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=352,
-  serialized_end=448,
+  serialized_start=398,
+  serialized_end=531,
 )
 
 
@@ -187,8 +188,8 @@ _LISTADDRESSESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=450,
-  serialized_end=547,
+  serialized_start=533,
+  serialized_end=630,
 )
 
 
@@ -226,8 +227,8 @@ _CREATEADDRESSREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=783,
-  serialized_end=828,
+  serialized_start=992,
+  serialized_end=1037,
 )
 
 _CREATEADDRESSREQUEST = _descriptor.Descriptor(
@@ -244,28 +245,28 @@ _CREATEADDRESSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='name', full_name='yandex.cloud.vpc.v1.CreateAddressRequest.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='description', full_name='yandex.cloud.vpc.v1.CreateAddressRequest.description', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='labels', full_name='yandex.cloud.vpc.v1.CreateAddressRequest.labels', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='external_ipv4_address_spec', full_name='yandex.cloud.vpc.v1.CreateAddressRequest.external_ipv4_address_spec', index=4,
       number=5, type=11, cpp_type=10, label=1,
@@ -290,8 +291,8 @@ _CREATEADDRESSREQUEST = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=550,
-  serialized_end=844,
+  serialized_start=633,
+  serialized_end=1053,
 )
 
 
@@ -336,8 +337,8 @@ _EXTERNALIPV4ADDRESSSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=846,
-  serialized_end=969,
+  serialized_start=1055,
+  serialized_end=1178,
 )
 
 
@@ -368,8 +369,8 @@ _CREATEADDRESSMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=971,
-  serialized_end=1014,
+  serialized_start=1180,
+  serialized_end=1223,
 )
 
 
@@ -407,8 +408,8 @@ _UPDATEADDRESSREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=783,
-  serialized_end=828,
+  serialized_start=992,
+  serialized_end=1037,
 )
 
 _UPDATEADDRESSREQUEST = _descriptor.Descriptor(
@@ -425,7 +426,7 @@ _UPDATEADDRESSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='update_mask', full_name='yandex.cloud.vpc.v1.UpdateAddressRequest.update_mask', index=1,
       number=2, type=11, cpp_type=10, label=1,
@@ -439,21 +440,21 @@ _UPDATEADDRESSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='description', full_name='yandex.cloud.vpc.v1.UpdateAddressRequest.description', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='labels', full_name='yandex.cloud.vpc.v1.UpdateAddressRequest.labels', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='reserved', full_name='yandex.cloud.vpc.v1.UpdateAddressRequest.reserved', index=5,
       number=6, type=8, cpp_type=7, label=1,
@@ -473,8 +474,8 @@ _UPDATEADDRESSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1017,
-  serialized_end=1279,
+  serialized_start=1226,
+  serialized_end=1614,
 )
 
 
@@ -505,8 +506,8 @@ _UPDATEADDRESSMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1281,
-  serialized_end=1324,
+  serialized_start=1616,
+  serialized_end=1659,
 )
 
 
@@ -524,7 +525,7 @@ _DELETEADDRESSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -537,8 +538,8 @@ _DELETEADDRESSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1326,
-  serialized_end=1368,
+  serialized_start=1661,
+  serialized_end=1717,
 )
 
 
@@ -569,8 +570,8 @@ _DELETEADDRESSMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1370,
-  serialized_end=1413,
+  serialized_start=1719,
+  serialized_end=1762,
 )
 
 
@@ -588,21 +589,21 @@ _LISTADDRESSOPERATIONSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.vpc.v1.ListAddressOperationsRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.vpc.v1.ListAddressOperationsRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -615,8 +616,8 @@ _LISTADDRESSOPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1415,
-  serialized_end=1504,
+  serialized_start=1764,
+  serialized_end=1890,
 )
 
 
@@ -654,8 +655,8 @@ _LISTADDRESSOPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1506,
-  serialized_end=1617,
+  serialized_start=1892,
+  serialized_end=2003,
 )
 
 _GETADDRESSBYVALUEREQUEST.oneofs_by_name['address'].fields.append(
@@ -797,8 +798,24 @@ _sym_db.RegisterMessage(ListAddressOperationsResponse)
 
 
 DESCRIPTOR._options = None
+_GETADDRESSREQUEST.fields_by_name['address_id']._options = None
+_LISTADDRESSESREQUEST.fields_by_name['folder_id']._options = None
+_LISTADDRESSESREQUEST.fields_by_name['page_size']._options = None
+_LISTADDRESSESREQUEST.fields_by_name['page_token']._options = None
 _CREATEADDRESSREQUEST_LABELSENTRY._options = None
+_CREATEADDRESSREQUEST.fields_by_name['folder_id']._options = None
+_CREATEADDRESSREQUEST.fields_by_name['name']._options = None
+_CREATEADDRESSREQUEST.fields_by_name['description']._options = None
+_CREATEADDRESSREQUEST.fields_by_name['labels']._options = None
 _UPDATEADDRESSREQUEST_LABELSENTRY._options = None
+_UPDATEADDRESSREQUEST.fields_by_name['address_id']._options = None
+_UPDATEADDRESSREQUEST.fields_by_name['name']._options = None
+_UPDATEADDRESSREQUEST.fields_by_name['description']._options = None
+_UPDATEADDRESSREQUEST.fields_by_name['labels']._options = None
+_DELETEADDRESSREQUEST.fields_by_name['address_id']._options = None
+_LISTADDRESSOPERATIONSREQUEST.fields_by_name['address_id']._options = None
+_LISTADDRESSOPERATIONSREQUEST.fields_by_name['page_size']._options = None
+_LISTADDRESSOPERATIONSREQUEST.fields_by_name['page_token']._options = None
 
 _ADDRESSSERVICE = _descriptor.ServiceDescriptor(
   name='AddressService',
@@ -807,8 +824,8 @@ _ADDRESSSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1620,
-  serialized_end=2676,
+  serialized_start=2006,
+  serialized_end=3062,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',

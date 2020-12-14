@@ -8,7 +8,8 @@ from yandex.cloud.vpc.v1 import address_service_pb2 as yandex_dot_cloud_dot_vpc_
 
 
 class AddressServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing Address resources.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -54,46 +55,58 @@ class AddressServiceStub(object):
 
 
 class AddressServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing Address resources.
+    """
 
     def Get(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Returns the specified Address resource.
+
+        To get the list of all available Address resources, make a [List] request.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetByValue(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Returns the specified Address resource by a given value.
+
+        To get the list of all available Address resources, make a [List] request.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Retrieves the list of Address resources in the specified folder.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Creates an address in the specified folder and network.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Updates the specified address.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Deletes the specified address.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListOperations(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """List operations for the specified address.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -144,7 +157,8 @@ def add_AddressServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class AddressService(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing Address resources.
+    """
 
     @staticmethod
     def Get(request,
