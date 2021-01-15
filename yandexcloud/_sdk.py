@@ -15,7 +15,8 @@ class SDK(object):
         if interceptor is None:
             interceptor = RetryInterceptor(
                 max_retry_count=5,
-                retriable_codes=[grpc.StatusCode.UNAVAILABLE])
+                per_call_timeout=1,
+            )
         self._default_interceptor = interceptor
         self.helpers = _helpers.Helpers(self)
         self.wrappers = Wrappers(self)
