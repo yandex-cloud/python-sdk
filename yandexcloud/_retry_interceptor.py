@@ -5,9 +5,9 @@ import uuid
 
 
 class _ClientCallDetails(
-        collections.namedtuple(
-            '_ClientCallDetails',
-            ('method', 'timeout', 'metadata', 'credentials', 'wait_for_ready')),
+        collections.namedtuple('_ClientCallDetails',
+                               ('method', 'timeout', 'metadata', 'credentials',
+                                'wait_for_ready', 'compression')),
         grpc.ClientCallDetails):
     pass
 
@@ -137,10 +137,14 @@ class RetryInterceptor(grpc.UnaryUnaryClientInterceptor):
     @staticmethod
     def __adjust_timeout(client_call_details, deadline):
         timeout = max(deadline - time.time(), 0.)
-
         return _ClientCallDetails(
-            client_call_details.method, timeout, client_call_details.metadata,
-            client_call_details.credentials, client_call_details.wait_for_ready)
+            client_call_details.method,
+            timeout,
+            client_call_details.metadata,
+            client_call_details.credentials,
+            getattr(client_call_details, 'wait_for_ready', None),
+            getattr(client_call_details, 'compression', None),
+        )
 
     def __add_idempotency_token(self, client_call_details):
         return self.__append_metadata(client_call_details, self._IDEMPOTENCY_TOKEN_METADATA_KEY, str(uuid.uuid4()))
@@ -164,7 +168,11 @@ class RetryInterceptor(grpc.UnaryUnaryClientInterceptor):
             header,
             value,
         ))
-
         return _ClientCallDetails(
-            client_call_details.method, client_call_details.timeout, metadata,
-            client_call_details.credentials, client_call_details.wait_for_ready)
+            client_call_details.method,
+            client_call_details.timeout,
+            metadata,
+            client_call_details.credentials,
+            getattr(client_call_details, 'wait_for_ready', None),
+            getattr(client_call_details, 'compression', None),
+        )
