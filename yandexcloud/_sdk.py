@@ -15,7 +15,8 @@ class SDK(object):
         if interceptor is None:
             interceptor = RetryInterceptor(
                 max_retry_count=5,
-                per_call_timeout=1,
+                per_call_timeout=30,
+                back_off_func=lambda attempt: attempt * 2,
             )
         self._default_interceptor = interceptor
         self.helpers = _helpers.Helpers(self)

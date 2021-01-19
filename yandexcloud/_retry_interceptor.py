@@ -111,7 +111,10 @@ class RetryInterceptor(grpc.UnaryUnaryClientInterceptor):
             raise _RetryCall()
 
         try:
-            return continuation(client_call_details, request)
+            result = continuation(client_call_details, request)
+            if isinstance(result, grpc.RpcError):
+                raise result
+            return result
         except grpc.RpcError as e:
             # no retries left
             if 0 <= self.__max_retry_count <= attempt:
