@@ -2,10 +2,11 @@ import inspect
 
 import grpc
 
-from yandexcloud._retry_interceptor import RetryInterceptor
-from yandexcloud import _channels, backoff_exponential_with_jitter
+from yandexcloud import _channels
 from yandexcloud import _operation_waiter
 from yandexcloud import _helpers
+from yandexcloud._backoff import backoff_exponential_with_jitter
+from yandexcloud._retry_interceptor import RetryInterceptor
 from yandexcloud._wrappers import Wrappers
 
 
