@@ -3,7 +3,7 @@ import inspect
 import grpc
 
 from yandexcloud._retry_interceptor import RetryInterceptor
-from yandexcloud import _channels
+from yandexcloud import _channels, backoff_exponential_with_jitter
 from yandexcloud import _operation_waiter
 from yandexcloud import _helpers
 from yandexcloud._wrappers import Wrappers
@@ -16,7 +16,7 @@ class SDK(object):
             interceptor = RetryInterceptor(
                 max_retry_count=5,
                 per_call_timeout=30,
-                back_off_func=lambda attempt: attempt * 2,
+                back_off_func=backoff_exponential_with_jitter(1, 30),
             )
         self._default_interceptor = interceptor
         self.helpers = _helpers.Helpers(self)
