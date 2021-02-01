@@ -25,7 +25,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n%yandex.cloud.api.containerregistry.v1ZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/containerregistry/v1;containerregistry',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n:yandex/cloud/containerregistry/v1/repository_service.proto\x12!yandex.cloud.containerregistry.v1\x1a yandex/cloud/api/operation.proto\x1a yandex/cloud/access/access.proto\x1a\x32yandex/cloud/containerregistry/v1/repository.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a\x1cgoogle/api/annotations.proto\";\n\x14GetRepositoryRequest\x12#\n\rrepository_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"}\n\x1aGetRepositoryByNameRequest\x12_\n\x0frepository_name\x18\x01 \x01(\tBF\xe8\xc7\x31\x01\xf2\xc7\x31>[a-z0-9]+(?:[._-][a-z0-9]+)*(/([a-z0-9]+(?:[._-][a-z0-9]+)*))*\"\xcc\x01\n\x17ListRepositoriesRequest\x12\x1d\n\x0bregistry_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1b\n\tfolder_id\x18\x06 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1b\n\x08order_by\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=100\"x\n\x18ListRepositoriesResponse\x12\x43\n\x0crepositories\x18\x01 \x03(\x0b\x32-.yandex.cloud.containerregistry.v1.Repository\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xa8\t\n\x11RepositoryService\x12\xaa\x01\n\x03Get\x12\x37.yandex.cloud.containerregistry.v1.GetRepositoryRequest\x1a-.yandex.cloud.containerregistry.v1.Repository\";\x82\xd3\xe4\x93\x02\x35\x12\x33/container-registry/v1/repositories/{repository_id}\x12y\n\tGetByName\x12=.yandex.cloud.containerregistry.v1.GetRepositoryByNameRequest\x1a-.yandex.cloud.containerregistry.v1.Repository\x12\xac\x01\n\x04List\x12:.yandex.cloud.containerregistry.v1.ListRepositoriesRequest\x1a;.yandex.cloud.containerregistry.v1.ListRepositoriesResponse\"+\x82\xd3\xe4\x93\x02%\x12#/container-registry/v1/repositories\x12\xc3\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"L\x82\xd3\xe4\x93\x02\x46\x12\x44/container-registry/v1/repositories/{resource_id}:listAccessBindings\x12\xf3\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x8b\x01\x82\xd3\xe4\x93\x02H\"C/container-registry/v1/repositories/{resource_id}:setAccessBindings:\x01*\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\xff\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x91\x01\x82\xd3\xe4\x93\x02K\"F/container-registry/v1/repositories/{resource_id}:updateAccessBindings:\x01*\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.EmptyB\x80\x01\n%yandex.cloud.api.containerregistry.v1ZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/containerregistry/v1;containerregistryb\x06proto3'
+  serialized_pb=b'\n:yandex/cloud/containerregistry/v1/repository_service.proto\x12!yandex.cloud.containerregistry.v1\x1a yandex/cloud/api/operation.proto\x1a yandex/cloud/access/access.proto\x1a\x32yandex/cloud/containerregistry/v1/repository.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a\x1cgoogle/api/annotations.proto\";\n\x14GetRepositoryRequest\x12#\n\rrepository_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"}\n\x1aGetRepositoryByNameRequest\x12_\n\x0frepository_name\x18\x01 \x01(\tBF\xe8\xc7\x31\x01\xf2\xc7\x31>[a-z0-9]+(?:[._-][a-z0-9]+)*(/([a-z0-9]+(?:[._-][a-z0-9]+)*))*\"\xcc\x01\n\x17ListRepositoriesRequest\x12\x1d\n\x0bregistry_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1b\n\tfolder_id\x18\x06 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1b\n\x08order_by\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=100\"x\n\x18ListRepositoriesResponse\x12\x43\n\x0crepositories\x18\x01 \x03(\x0b\x32-.yandex.cloud.containerregistry.v1.Repository\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"o\n\x17\x43reateRepositoryRequest\x12T\n\x04name\x18\x01 \x01(\tBF\xe8\xc7\x31\x01\xf2\xc7\x31>[a-z0-9]+(?:[._-][a-z0-9]+)*(/([a-z0-9]+(?:[._-][a-z0-9]+)*))*\"1\n\x18\x43reateRepositoryMetadata\x12\x15\n\rrepository_id\x18\x01 \x01(\t\">\n\x17\x44\x65leteRepositoryRequest\x12#\n\rrepository_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"1\n\x18\x44\x65leteRepositoryMetadata\x12\x15\n\rrepository_id\x18\x01 \x01(\t2\xc8\x0c\n\x11RepositoryService\x12\xaa\x01\n\x03Get\x12\x37.yandex.cloud.containerregistry.v1.GetRepositoryRequest\x1a-.yandex.cloud.containerregistry.v1.Repository\";\x82\xd3\xe4\x93\x02\x35\x12\x33/container-registry/v1/repositories/{repository_id}\x12y\n\tGetByName\x12=.yandex.cloud.containerregistry.v1.GetRepositoryByNameRequest\x1a-.yandex.cloud.containerregistry.v1.Repository\x12\xac\x01\n\x04List\x12:.yandex.cloud.containerregistry.v1.ListRepositoriesRequest\x1a;.yandex.cloud.containerregistry.v1.ListRepositoriesResponse\"+\x82\xd3\xe4\x93\x02%\x12#/container-registry/v1/repositories\x12\xc3\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"L\x82\xd3\xe4\x93\x02\x46\x12\x44/container-registry/v1/repositories/{resource_id}:listAccessBindings\x12\xc1\x01\n\x06\x43reate\x12:.yandex.cloud.containerregistry.v1.CreateRepositoryRequest\x1a!.yandex.cloud.operation.Operation\"X\x82\xd3\xe4\x93\x02(\"#/container-registry/v1/repositories:\x01*\xb2\xd2*&\n\x18\x43reateRepositoryMetadata\x12\nRepository\x12\xd9\x01\n\x06\x44\x65lete\x12:.yandex.cloud.containerregistry.v1.DeleteRepositoryRequest\x1a!.yandex.cloud.operation.Operation\"p\x82\xd3\xe4\x93\x02\x35*3/container-registry/v1/repositories/{repository_id}\xb2\xd2*1\n\x18\x44\x65leteRepositoryMetadata\x12\x15google.protobuf.Empty\x12\xf3\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x8b\x01\x82\xd3\xe4\x93\x02H\"C/container-registry/v1/repositories/{resource_id}:setAccessBindings:\x01*\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\xff\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x91\x01\x82\xd3\xe4\x93\x02K\"F/container-registry/v1/repositories/{resource_id}:updateAccessBindings:\x01*\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.EmptyB\x80\x01\n%yandex.cloud.api.containerregistry.v1ZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/containerregistry/v1;containerregistryb\x06proto3'
   ,
   dependencies=[yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_access_dot_access__pb2.DESCRIPTOR,yandex_dot_cloud_dot_containerregistry_dot_v1_dot_repository__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,])
 
@@ -201,11 +201,143 @@ _LISTREPOSITORIESRESPONSE = _descriptor.Descriptor(
   serialized_end=833,
 )
 
+
+_CREATEREPOSITORYREQUEST = _descriptor.Descriptor(
+  name='CreateRepositoryRequest',
+  full_name='yandex.cloud.containerregistry.v1.CreateRepositoryRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='name', full_name='yandex.cloud.containerregistry.v1.CreateRepositoryRequest.name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001\362\3071>[a-z0-9]+(?:[._-][a-z0-9]+)*(/([a-z0-9]+(?:[._-][a-z0-9]+)*))*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=835,
+  serialized_end=946,
+)
+
+
+_CREATEREPOSITORYMETADATA = _descriptor.Descriptor(
+  name='CreateRepositoryMetadata',
+  full_name='yandex.cloud.containerregistry.v1.CreateRepositoryMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='repository_id', full_name='yandex.cloud.containerregistry.v1.CreateRepositoryMetadata.repository_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=948,
+  serialized_end=997,
+)
+
+
+_DELETEREPOSITORYREQUEST = _descriptor.Descriptor(
+  name='DeleteRepositoryRequest',
+  full_name='yandex.cloud.containerregistry.v1.DeleteRepositoryRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='repository_id', full_name='yandex.cloud.containerregistry.v1.DeleteRepositoryRequest.repository_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=999,
+  serialized_end=1061,
+)
+
+
+_DELETEREPOSITORYMETADATA = _descriptor.Descriptor(
+  name='DeleteRepositoryMetadata',
+  full_name='yandex.cloud.containerregistry.v1.DeleteRepositoryMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='repository_id', full_name='yandex.cloud.containerregistry.v1.DeleteRepositoryMetadata.repository_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1063,
+  serialized_end=1112,
+)
+
 _LISTREPOSITORIESRESPONSE.fields_by_name['repositories'].message_type = yandex_dot_cloud_dot_containerregistry_dot_v1_dot_repository__pb2._REPOSITORY
 DESCRIPTOR.message_types_by_name['GetRepositoryRequest'] = _GETREPOSITORYREQUEST
 DESCRIPTOR.message_types_by_name['GetRepositoryByNameRequest'] = _GETREPOSITORYBYNAMEREQUEST
 DESCRIPTOR.message_types_by_name['ListRepositoriesRequest'] = _LISTREPOSITORIESREQUEST
 DESCRIPTOR.message_types_by_name['ListRepositoriesResponse'] = _LISTREPOSITORIESRESPONSE
+DESCRIPTOR.message_types_by_name['CreateRepositoryRequest'] = _CREATEREPOSITORYREQUEST
+DESCRIPTOR.message_types_by_name['CreateRepositoryMetadata'] = _CREATEREPOSITORYMETADATA
+DESCRIPTOR.message_types_by_name['DeleteRepositoryRequest'] = _DELETEREPOSITORYREQUEST
+DESCRIPTOR.message_types_by_name['DeleteRepositoryMetadata'] = _DELETEREPOSITORYMETADATA
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 GetRepositoryRequest = _reflection.GeneratedProtocolMessageType('GetRepositoryRequest', (_message.Message,), {
@@ -236,6 +368,34 @@ ListRepositoriesResponse = _reflection.GeneratedProtocolMessageType('ListReposit
   })
 _sym_db.RegisterMessage(ListRepositoriesResponse)
 
+CreateRepositoryRequest = _reflection.GeneratedProtocolMessageType('CreateRepositoryRequest', (_message.Message,), {
+  'DESCRIPTOR' : _CREATEREPOSITORYREQUEST,
+  '__module__' : 'yandex.cloud.containerregistry.v1.repository_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.CreateRepositoryRequest)
+  })
+_sym_db.RegisterMessage(CreateRepositoryRequest)
+
+CreateRepositoryMetadata = _reflection.GeneratedProtocolMessageType('CreateRepositoryMetadata', (_message.Message,), {
+  'DESCRIPTOR' : _CREATEREPOSITORYMETADATA,
+  '__module__' : 'yandex.cloud.containerregistry.v1.repository_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.CreateRepositoryMetadata)
+  })
+_sym_db.RegisterMessage(CreateRepositoryMetadata)
+
+DeleteRepositoryRequest = _reflection.GeneratedProtocolMessageType('DeleteRepositoryRequest', (_message.Message,), {
+  'DESCRIPTOR' : _DELETEREPOSITORYREQUEST,
+  '__module__' : 'yandex.cloud.containerregistry.v1.repository_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.DeleteRepositoryRequest)
+  })
+_sym_db.RegisterMessage(DeleteRepositoryRequest)
+
+DeleteRepositoryMetadata = _reflection.GeneratedProtocolMessageType('DeleteRepositoryMetadata', (_message.Message,), {
+  'DESCRIPTOR' : _DELETEREPOSITORYMETADATA,
+  '__module__' : 'yandex.cloud.containerregistry.v1.repository_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.DeleteRepositoryMetadata)
+  })
+_sym_db.RegisterMessage(DeleteRepositoryMetadata)
+
 
 DESCRIPTOR._options = None
 _GETREPOSITORYREQUEST.fields_by_name['repository_id']._options = None
@@ -246,6 +406,8 @@ _LISTREPOSITORIESREQUEST.fields_by_name['page_size']._options = None
 _LISTREPOSITORIESREQUEST.fields_by_name['page_token']._options = None
 _LISTREPOSITORIESREQUEST.fields_by_name['filter']._options = None
 _LISTREPOSITORIESREQUEST.fields_by_name['order_by']._options = None
+_CREATEREPOSITORYREQUEST.fields_by_name['name']._options = None
+_DELETEREPOSITORYREQUEST.fields_by_name['repository_id']._options = None
 
 _REPOSITORYSERVICE = _descriptor.ServiceDescriptor(
   name='RepositoryService',
@@ -254,8 +416,8 @@ _REPOSITORYSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=836,
-  serialized_end=2028,
+  serialized_start=1115,
+  serialized_end=2723,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
@@ -298,9 +460,29 @@ _REPOSITORYSERVICE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
+    name='Create',
+    full_name='yandex.cloud.containerregistry.v1.RepositoryService.Create',
+    index=4,
+    containing_service=None,
+    input_type=_CREATEREPOSITORYREQUEST,
+    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
+    serialized_options=b'\202\323\344\223\002(\"#/container-registry/v1/repositories:\001*\262\322*&\n\030CreateRepositoryMetadata\022\nRepository',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Delete',
+    full_name='yandex.cloud.containerregistry.v1.RepositoryService.Delete',
+    index=5,
+    containing_service=None,
+    input_type=_DELETEREPOSITORYREQUEST,
+    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
+    serialized_options=b'\202\323\344\223\0025*3/container-registry/v1/repositories/{repository_id}\262\322*1\n\030DeleteRepositoryMetadata\022\025google.protobuf.Empty',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
     name='SetAccessBindings',
     full_name='yandex.cloud.containerregistry.v1.RepositoryService.SetAccessBindings',
-    index=4,
+    index=6,
     containing_service=None,
     input_type=yandex_dot_cloud_dot_access_dot_access__pb2._SETACCESSBINDINGSREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
@@ -310,7 +492,7 @@ _REPOSITORYSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='UpdateAccessBindings',
     full_name='yandex.cloud.containerregistry.v1.RepositoryService.UpdateAccessBindings',
-    index=5,
+    index=7,
     containing_service=None,
     input_type=yandex_dot_cloud_dot_access_dot_access__pb2._UPDATEACCESSBINDINGSREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
