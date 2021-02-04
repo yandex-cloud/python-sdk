@@ -12,6 +12,8 @@ _sym_db = _symbol_database.Default()
 
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
+from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
+from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 from yandex.cloud.mdb.mongodb.v1 import backup_pb2 as yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_backup__pb2
 
@@ -22,9 +24,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\037yandex.cloud.api.mdb.mongodb.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1;mongodb',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n0yandex/cloud/mdb/mongodb/v1/backup_service.proto\x12\x1byandex.cloud.mdb.mongodb.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1dyandex/cloud/validation.proto\x1a(yandex/cloud/mdb/mongodb/v1/backup.proto\"+\n\x10GetBackupRequest\x12\x17\n\tbackup_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"s\n\x12ListBackupsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"d\n\x13ListBackupsResponse\x12\x34\n\x07\x62\x61\x63kups\x18\x01 \x03(\x0b\x32#.yandex.cloud.mdb.mongodb.v1.Backup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xad\x02\n\rBackupService\x12\x8a\x01\n\x03Get\x12-.yandex.cloud.mdb.mongodb.v1.GetBackupRequest\x1a#.yandex.cloud.mdb.mongodb.v1.Backup\"/\x82\xd3\xe4\x93\x02)\x12\'/managed-mongodb/v1/backups/{backup_id}\x12\x8e\x01\n\x04List\x12/.yandex.cloud.mdb.mongodb.v1.ListBackupsRequest\x1a\x30.yandex.cloud.mdb.mongodb.v1.ListBackupsResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/managed-mongodb/v1/backupsBj\n\x1fyandex.cloud.api.mdb.mongodb.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1;mongodbb\x06proto3'
+  serialized_pb=b'\n0yandex/cloud/mdb/mongodb/v1/backup_service.proto\x12\x1byandex.cloud.mdb.mongodb.v1\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a(yandex/cloud/mdb/mongodb/v1/backup.proto\"+\n\x10GetBackupRequest\x12\x17\n\tbackup_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"s\n\x12ListBackupsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"d\n\x13ListBackupsResponse\x12\x34\n\x07\x62\x61\x63kups\x18\x01 \x03(\x0b\x32#.yandex.cloud.mdb.mongodb.v1.Backup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\".\n\x13\x44\x65leteBackupRequest\x12\x17\n\tbackup_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\")\n\x14\x44\x65leteBackupMetadata\x12\x11\n\tbackup_id\x18\x01 \x01(\t2\xef\x03\n\rBackupService\x12\x8a\x01\n\x03Get\x12-.yandex.cloud.mdb.mongodb.v1.GetBackupRequest\x1a#.yandex.cloud.mdb.mongodb.v1.Backup\"/\x82\xd3\xe4\x93\x02)\x12\'/managed-mongodb/v1/backups/{backup_id}\x12\x8e\x01\n\x04List\x12/.yandex.cloud.mdb.mongodb.v1.ListBackupsRequest\x1a\x30.yandex.cloud.mdb.mongodb.v1.ListBackupsResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/managed-mongodb/v1/backups\x12\xbf\x01\n\x06\x44\x65lete\x12\x30.yandex.cloud.mdb.mongodb.v1.DeleteBackupRequest\x1a!.yandex.cloud.operation.Operation\"`\x82\xd3\xe4\x93\x02)*\'/managed-mongodb/v1/backups/{backup_id}\xb2\xd2*-\n\x14\x44\x65leteBackupMetadata\x12\x15google.protobuf.EmptyBj\n\x1fyandex.cloud.api.mdb.mongodb.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1;mongodbb\x06proto3'
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_backup__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_backup__pb2.DESCRIPTOR,])
 
 
 
@@ -56,8 +58,8 @@ _GETBACKUPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=184,
-  serialized_end=227,
+  serialized_start=258,
+  serialized_end=301,
 )
 
 
@@ -102,8 +104,8 @@ _LISTBACKUPSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=229,
-  serialized_end=344,
+  serialized_start=303,
+  serialized_end=418,
 )
 
 
@@ -141,14 +143,80 @@ _LISTBACKUPSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=346,
-  serialized_end=446,
+  serialized_start=420,
+  serialized_end=520,
+)
+
+
+_DELETEBACKUPREQUEST = _descriptor.Descriptor(
+  name='DeleteBackupRequest',
+  full_name='yandex.cloud.mdb.mongodb.v1.DeleteBackupRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='backup_id', full_name='yandex.cloud.mdb.mongodb.v1.DeleteBackupRequest.backup_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=522,
+  serialized_end=568,
+)
+
+
+_DELETEBACKUPMETADATA = _descriptor.Descriptor(
+  name='DeleteBackupMetadata',
+  full_name='yandex.cloud.mdb.mongodb.v1.DeleteBackupMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='backup_id', full_name='yandex.cloud.mdb.mongodb.v1.DeleteBackupMetadata.backup_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=570,
+  serialized_end=611,
 )
 
 _LISTBACKUPSRESPONSE.fields_by_name['backups'].message_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_backup__pb2._BACKUP
 DESCRIPTOR.message_types_by_name['GetBackupRequest'] = _GETBACKUPREQUEST
 DESCRIPTOR.message_types_by_name['ListBackupsRequest'] = _LISTBACKUPSREQUEST
 DESCRIPTOR.message_types_by_name['ListBackupsResponse'] = _LISTBACKUPSRESPONSE
+DESCRIPTOR.message_types_by_name['DeleteBackupRequest'] = _DELETEBACKUPREQUEST
+DESCRIPTOR.message_types_by_name['DeleteBackupMetadata'] = _DELETEBACKUPMETADATA
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 GetBackupRequest = _reflection.GeneratedProtocolMessageType('GetBackupRequest', (_message.Message,), {
@@ -172,12 +240,27 @@ ListBackupsResponse = _reflection.GeneratedProtocolMessageType('ListBackupsRespo
   })
 _sym_db.RegisterMessage(ListBackupsResponse)
 
+DeleteBackupRequest = _reflection.GeneratedProtocolMessageType('DeleteBackupRequest', (_message.Message,), {
+  'DESCRIPTOR' : _DELETEBACKUPREQUEST,
+  '__module__' : 'yandex.cloud.mdb.mongodb.v1.backup_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.mongodb.v1.DeleteBackupRequest)
+  })
+_sym_db.RegisterMessage(DeleteBackupRequest)
+
+DeleteBackupMetadata = _reflection.GeneratedProtocolMessageType('DeleteBackupMetadata', (_message.Message,), {
+  'DESCRIPTOR' : _DELETEBACKUPMETADATA,
+  '__module__' : 'yandex.cloud.mdb.mongodb.v1.backup_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.mongodb.v1.DeleteBackupMetadata)
+  })
+_sym_db.RegisterMessage(DeleteBackupMetadata)
+
 
 DESCRIPTOR._options = None
 _GETBACKUPREQUEST.fields_by_name['backup_id']._options = None
 _LISTBACKUPSREQUEST.fields_by_name['folder_id']._options = None
 _LISTBACKUPSREQUEST.fields_by_name['page_size']._options = None
 _LISTBACKUPSREQUEST.fields_by_name['page_token']._options = None
+_DELETEBACKUPREQUEST.fields_by_name['backup_id']._options = None
 
 _BACKUPSERVICE = _descriptor.ServiceDescriptor(
   name='BackupService',
@@ -186,8 +269,8 @@ _BACKUPSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=449,
-  serialized_end=750,
+  serialized_start=614,
+  serialized_end=1109,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
@@ -207,6 +290,16 @@ _BACKUPSERVICE = _descriptor.ServiceDescriptor(
     input_type=_LISTBACKUPSREQUEST,
     output_type=_LISTBACKUPSRESPONSE,
     serialized_options=b'\202\323\344\223\002\035\022\033/managed-mongodb/v1/backups',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Delete',
+    full_name='yandex.cloud.mdb.mongodb.v1.BackupService.Delete',
+    index=2,
+    containing_service=None,
+    input_type=_DELETEBACKUPREQUEST,
+    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
+    serialized_options=b'\202\323\344\223\002)*\'/managed-mongodb/v1/backups/{backup_id}\262\322*-\n\024DeleteBackupMetadata\022\025google.protobuf.Empty',
     create_key=_descriptor._internal_create_key,
   ),
 ])

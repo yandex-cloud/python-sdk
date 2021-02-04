@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$yandex.cloud.api.mdb.redis.v1.configZJgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/redis/v1/config;redis',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n/yandex/cloud/mdb/redis/v1/config/redis5_0.proto\x12 yandex.cloud.mdb.redis.v1.config\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\x9b\x03\n\x0eRedisConfig5_0\x12Z\n\x10maxmemory_policy\x18\x01 \x01(\x0e\x32@.yandex.cloud.mdb.redis.v1.config.RedisConfig5_0.MaxmemoryPolicy\x12,\n\x07timeout\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x38\n\x08password\x18\x03 \x01(\tB&\xf2\xc7\x31\"[a-zA-Z0-9@=+?*.,!&#$^<>_-]{8,128}\"\xc4\x01\n\x0fMaxmemoryPolicy\x12 \n\x1cMAXMEMORY_POLICY_UNSPECIFIED\x10\x00\x12\x10\n\x0cVOLATILE_LRU\x10\x01\x12\x0f\n\x0b\x41LLKEYS_LRU\x10\x02\x12\x10\n\x0cVOLATILE_LFU\x10\x03\x12\x0f\n\x0b\x41LLKEYS_LFU\x10\x04\x12\x13\n\x0fVOLATILE_RANDOM\x10\x05\x12\x12\n\x0e\x41LLKEYS_RANDOM\x10\x06\x12\x10\n\x0cVOLATILE_TTL\x10\x07\x12\x0e\n\nNOEVICTION\x10\x08\"\xf0\x01\n\x11RedisConfigSet5_0\x12J\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32\x30.yandex.cloud.mdb.redis.v1.config.RedisConfig5_0\x12\x45\n\x0buser_config\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.mdb.redis.v1.config.RedisConfig5_0\x12H\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32\x30.yandex.cloud.mdb.redis.v1.config.RedisConfig5_0Br\n$yandex.cloud.api.mdb.redis.v1.configZJgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/redis/v1/config;redisb\x06proto3'
+  serialized_pb=b'\n/yandex/cloud/mdb/redis/v1/config/redis5_0.proto\x12 yandex.cloud.mdb.redis.v1.config\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\x93\x05\n\x0eRedisConfig5_0\x12Z\n\x10maxmemory_policy\x18\x01 \x01(\x0e\x32@.yandex.cloud.mdb.redis.v1.config.RedisConfig5_0.MaxmemoryPolicy\x12,\n\x07timeout\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x38\n\x08password\x18\x03 \x01(\tB&\xf2\xc7\x31\"[a-zA-Z0-9@=+?*.,!&#$^<>_-]{8,128}\x12\x36\n\tdatabases\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x06\xfa\xc7\x31\x02>0\x12\x45\n\x17slowlog_log_slower_than\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12=\n\x0fslowlog_max_len\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12\x38\n\x16notify_keyspace_events\x18\x07 \x01(\tB\x18\xf2\xc7\x31\x14[KEg$lshzxeAt]{0,12}\"\xc4\x01\n\x0fMaxmemoryPolicy\x12 \n\x1cMAXMEMORY_POLICY_UNSPECIFIED\x10\x00\x12\x10\n\x0cVOLATILE_LRU\x10\x01\x12\x0f\n\x0b\x41LLKEYS_LRU\x10\x02\x12\x10\n\x0cVOLATILE_LFU\x10\x03\x12\x0f\n\x0b\x41LLKEYS_LFU\x10\x04\x12\x13\n\x0fVOLATILE_RANDOM\x10\x05\x12\x12\n\x0e\x41LLKEYS_RANDOM\x10\x06\x12\x10\n\x0cVOLATILE_TTL\x10\x07\x12\x0e\n\nNOEVICTION\x10\x08\"\xf0\x01\n\x11RedisConfigSet5_0\x12J\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32\x30.yandex.cloud.mdb.redis.v1.config.RedisConfig5_0\x12\x45\n\x0buser_config\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.mdb.redis.v1.config.RedisConfig5_0\x12H\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32\x30.yandex.cloud.mdb.redis.v1.config.RedisConfig5_0Br\n$yandex.cloud.api.mdb.redis.v1.configZJgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/redis/v1/config;redisb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -82,8 +82,8 @@ _REDISCONFIG5_0_MAXMEMORYPOLICY = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=364,
-  serialized_end=560,
+  serialized_start=612,
+  serialized_end=808,
 )
 _sym_db.RegisterEnumDescriptor(_REDISCONFIG5_0_MAXMEMORYPOLICY)
 
@@ -117,6 +117,34 @@ _REDISCONFIG5_0 = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\362\3071\"[a-zA-Z0-9@=+?*.,!&#$^<>_-]{8,128}', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='databases', full_name='yandex.cloud.mdb.redis.v1.config.RedisConfig5_0.databases', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\372\3071\002>0', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='slowlog_log_slower_than', full_name='yandex.cloud.mdb.redis.v1.config.RedisConfig5_0.slowlog_log_slower_than', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\372\3071\003>=0', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='slowlog_max_len', full_name='yandex.cloud.mdb.redis.v1.config.RedisConfig5_0.slowlog_max_len', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\372\3071\003>=0', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='notify_keyspace_events', full_name='yandex.cloud.mdb.redis.v1.config.RedisConfig5_0.notify_keyspace_events', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\362\3071\024[KEg$lshzxeAt]{0,12}', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -131,7 +159,7 @@ _REDISCONFIG5_0 = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=149,
-  serialized_end=560,
+  serialized_end=808,
 )
 
 
@@ -176,12 +204,15 @@ _REDISCONFIGSET5_0 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=563,
-  serialized_end=803,
+  serialized_start=811,
+  serialized_end=1051,
 )
 
 _REDISCONFIG5_0.fields_by_name['maxmemory_policy'].enum_type = _REDISCONFIG5_0_MAXMEMORYPOLICY
 _REDISCONFIG5_0.fields_by_name['timeout'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_REDISCONFIG5_0.fields_by_name['databases'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_REDISCONFIG5_0.fields_by_name['slowlog_log_slower_than'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_REDISCONFIG5_0.fields_by_name['slowlog_max_len'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
 _REDISCONFIG5_0_MAXMEMORYPOLICY.containing_type = _REDISCONFIG5_0
 _REDISCONFIGSET5_0.fields_by_name['effective_config'].message_type = _REDISCONFIG5_0
 _REDISCONFIGSET5_0.fields_by_name['user_config'].message_type = _REDISCONFIG5_0
@@ -207,4 +238,8 @@ _sym_db.RegisterMessage(RedisConfigSet5_0)
 
 DESCRIPTOR._options = None
 _REDISCONFIG5_0.fields_by_name['password']._options = None
+_REDISCONFIG5_0.fields_by_name['databases']._options = None
+_REDISCONFIG5_0.fields_by_name['slowlog_log_slower_than']._options = None
+_REDISCONFIG5_0.fields_by_name['slowlog_max_len']._options = None
+_REDISCONFIG5_0.fields_by_name['notify_keyspace_events']._options = None
 # @@protoc_insertion_point(module_scope)

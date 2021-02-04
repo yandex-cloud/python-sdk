@@ -58,6 +58,21 @@ class RegistryServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessBindingsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
+        self.ListIpPermission = channel.unary_unary(
+                '/yandex.cloud.containerregistry.v1.RegistryService/ListIpPermission',
+                request_serializer=yandex_dot_cloud_dot_containerregistry_dot_v1_dot_registry__service__pb2.ListIpPermissionRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_containerregistry_dot_v1_dot_registry__service__pb2.ListIpPermissionsResponse.FromString,
+                )
+        self.SetIpPermission = channel.unary_unary(
+                '/yandex.cloud.containerregistry.v1.RegistryService/SetIpPermission',
+                request_serializer=yandex_dot_cloud_dot_containerregistry_dot_v1_dot_registry__service__pb2.SetIpPermissionRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
+        self.UpdateIpPermission = channel.unary_unary(
+                '/yandex.cloud.containerregistry.v1.RegistryService/UpdateIpPermission',
+                request_serializer=yandex_dot_cloud_dot_containerregistry_dot_v1_dot_registry__service__pb2.UpdateIpPermissionRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
 
 
 class RegistryServiceServicer(object):
@@ -124,6 +139,29 @@ class RegistryServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListIpPermission(self, request, context):
+        """ip permissions
+
+        List ip permissions for the specified registry.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SetIpPermission(self, request, context):
+        """Set ip permissions for the specified registry.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateIpPermission(self, request, context):
+        """Update ip permissions for the specified registry.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_RegistryServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -165,6 +203,21 @@ def add_RegistryServiceServicer_to_server(servicer, server):
             'UpdateAccessBindings': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateAccessBindings,
                     request_deserializer=yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessBindingsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'ListIpPermission': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListIpPermission,
+                    request_deserializer=yandex_dot_cloud_dot_containerregistry_dot_v1_dot_registry__service__pb2.ListIpPermissionRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_containerregistry_dot_v1_dot_registry__service__pb2.ListIpPermissionsResponse.SerializeToString,
+            ),
+            'SetIpPermission': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetIpPermission,
+                    request_deserializer=yandex_dot_cloud_dot_containerregistry_dot_v1_dot_registry__service__pb2.SetIpPermissionRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'UpdateIpPermission': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateIpPermission,
+                    request_deserializer=yandex_dot_cloud_dot_containerregistry_dot_v1_dot_registry__service__pb2.UpdateIpPermissionRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
@@ -310,6 +363,57 @@ class RegistryService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.containerregistry.v1.RegistryService/UpdateAccessBindings',
             yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessBindingsRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListIpPermission(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.containerregistry.v1.RegistryService/ListIpPermission',
+            yandex_dot_cloud_dot_containerregistry_dot_v1_dot_registry__service__pb2.ListIpPermissionRequest.SerializeToString,
+            yandex_dot_cloud_dot_containerregistry_dot_v1_dot_registry__service__pb2.ListIpPermissionsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SetIpPermission(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.containerregistry.v1.RegistryService/SetIpPermission',
+            yandex_dot_cloud_dot_containerregistry_dot_v1_dot_registry__service__pb2.SetIpPermissionRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateIpPermission(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.containerregistry.v1.RegistryService/UpdateIpPermission',
+            yandex_dot_cloud_dot_containerregistry_dot_v1_dot_registry__service__pb2.UpdateIpPermissionRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

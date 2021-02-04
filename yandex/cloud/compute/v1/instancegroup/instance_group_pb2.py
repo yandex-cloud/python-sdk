@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n)yandex.cloud.api.compute.v1.instancegroupZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1/instancegroup;instancegroup',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n:yandex/cloud/compute/v1/instancegroup/instance_group.proto\x12%yandex.cloud.compute.v1.instancegroup\x1a\x1dyandex/cloud/validation.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/duration.proto\"\xcf\t\n\rInstanceGroup\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12P\n\x06labels\x18\x06 \x03(\x0b\x32@.yandex.cloud.compute.v1.instancegroup.InstanceGroup.LabelsEntry\x12R\n\x11instance_template\x18\x07 \x01(\x0b\x32\x37.yandex.cloud.compute.v1.instancegroup.InstanceTemplate\x12H\n\x0cscale_policy\x18\x08 \x01(\x0b\x32\x32.yandex.cloud.compute.v1.instancegroup.ScalePolicy\x12J\n\rdeploy_policy\x18\t \x01(\x0b\x32\x33.yandex.cloud.compute.v1.instancegroup.DeployPolicy\x12R\n\x11\x61llocation_policy\x18\n \x01(\x0b\x32\x37.yandex.cloud.compute.v1.instancegroup.AllocationPolicy\x12U\n\x13load_balancer_state\x18\x0b \x01(\x0b\x32\x38.yandex.cloud.compute.v1.instancegroup.LoadBalancerState\x12]\n\x17managed_instances_state\x18\x0c \x01(\x0b\x32<.yandex.cloud.compute.v1.instancegroup.ManagedInstancesState\x12S\n\x12load_balancer_spec\x18\x0e \x01(\x0b\x32\x37.yandex.cloud.compute.v1.instancegroup.LoadBalancerSpec\x12S\n\x12health_checks_spec\x18\x0f \x01(\x0b\x32\x37.yandex.cloud.compute.v1.instancegroup.HealthChecksSpec\x12\x1a\n\x12service_account_id\x18\x10 \x01(\t\x12K\n\x06status\x18\x11 \x01(\x0e\x32;.yandex.cloud.compute.v1.instancegroup.InstanceGroup.Status\x12\x42\n\tvariables\x18\x12 \x03(\x0b\x32/.yandex.cloud.compute.v1.instancegroup.Variable\x12\x1b\n\x13\x64\x65letion_protection\x18\x13 \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"c\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08STARTING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08STOPPING\x10\x03\x12\x0b\n\x07STOPPED\x10\x04\x12\x0c\n\x08\x44\x45LETING\x10\x05\"O\n\x08Variable\x12)\n\x03key\x18\x01 \x01(\tB\x1c\x8a\xc8\x31\x05\x31-128\xf2\xc7\x31\x0f[a-zA-Z0-9._-]*\x12\x18\n\x05value\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=128\"D\n\x11LoadBalancerState\x12\x17\n\x0ftarget_group_id\x18\x01 \x01(\t\x12\x16\n\x0estatus_message\x18\x02 \x01(\t\"\xbf\x02\n\x15ManagedInstancesState\x12\x13\n\x0btarget_size\x18\x01 \x01(\x03\x12\x1c\n\x14running_actual_count\x18\x04 \x01(\x03\x12\x1e\n\x16running_outdated_count\x18\x05 \x01(\x03\x12\x18\n\x10processing_count\x18\x06 \x01(\x03\x1a\xb8\x01\n\x08Statuses\x12\x10\n\x08\x63reating\x18\x01 \x01(\x03\x12\x10\n\x08starting\x18\x02 \x01(\x03\x12\x0f\n\x07opening\x18\x03 \x01(\x03\x12\x0f\n\x07warming\x18\x04 \x01(\x03\x12\x0f\n\x07running\x18\x05 \x01(\x03\x12\x0f\n\x07\x63losing\x18\x06 \x01(\x03\x12\x10\n\x08stopping\x18\x07 \x01(\x03\x12\x10\n\x08updating\x18\x08 \x01(\x03\x12\x10\n\x08\x64\x65leting\x18\t \x01(\x03\x12\x0e\n\x06\x66\x61iled\x18\n \x01(\x03\"\xea\x0c\n\x0bScalePolicy\x12T\n\x0b\x66ixed_scale\x18\x01 \x01(\x0b\x32=.yandex.cloud.compute.v1.instancegroup.ScalePolicy.FixedScaleH\x00\x12R\n\nauto_scale\x18\x02 \x01(\x0b\x32<.yandex.cloud.compute.v1.instancegroup.ScalePolicy.AutoScaleH\x00\x12U\n\x0ftest_auto_scale\x18\x03 \x01(\x0b\x32<.yandex.cloud.compute.v1.instancegroup.ScalePolicy.AutoScale\x1a\xfb\x03\n\tAutoScale\x12 \n\rmin_zone_size\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12\x1b\n\x08max_size\x18\x02 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12G\n\x14measurement_duration\x18\x03 \x01(\x0b\x32\x19.google.protobuf.DurationB\x0e\xe8\xc7\x31\x01\xfa\xc7\x31\x06\x31m-10m\x12=\n\x0fwarmup_duration\x18\x04 \x01(\x0b\x32\x19.google.protobuf.DurationB\t\xfa\xc7\x31\x05<=10m\x12\x45\n\x16stabilization_duration\x18\x05 \x01(\x0b\x32\x19.google.protobuf.DurationB\n\xfa\xc7\x31\x06\x31m-30m\x12\x1d\n\x0cinitial_size\x18\x06 \x01(\x03\x42\x07\xfa\xc7\x31\x03>=1\x12\x63\n\x14\x63pu_utilization_rule\x18\x07 \x01(\x0b\x32\x45.yandex.cloud.compute.v1.instancegroup.ScalePolicy.CpuUtilizationRule\x12\\\n\x0c\x63ustom_rules\x18\x08 \x03(\x0b\x32=.yandex.cloud.compute.v1.instancegroup.ScalePolicy.CustomRuleB\x07\x82\xc8\x31\x03<=1\x1a<\n\x12\x43puUtilizationRule\x12&\n\x12utilization_target\x18\x01 \x01(\x01\x42\n\xfa\xc7\x31\x06\x31\x30-100\x1a\xe2\x05\n\nCustomRule\x12_\n\trule_type\x18\x01 \x01(\x0e\x32\x46.yandex.cloud.compute.v1.instancegroup.ScalePolicy.CustomRule.RuleTypeB\x04\xe8\xc7\x31\x01\x12\x63\n\x0bmetric_type\x18\x02 \x01(\x0e\x32H.yandex.cloud.compute.v1.instancegroup.ScalePolicy.CustomRule.MetricTypeB\x04\xe8\xc7\x31\x01\x12O\n\x0bmetric_name\x18\x03 \x01(\tB:\xe8\xc7\x31\x01\xf2\xc7\x31\x32[a-zA-Z0-9./@_][ 0-9a-zA-Z./@_,:;()\\[\\]<>-]{0,198}\x12\xb3\x01\n\x06labels\x18\x05 \x03(\x0b\x32I.yandex.cloud.compute.v1.instancegroup.ScalePolicy.CustomRule.LabelsEntryBX\xf2\xc7\x31\x32[a-zA-Z0-9./@_][ 0-9a-zA-Z./@_,:;()\\[\\]<>-]{0,198}\xb2\xc8\x31\x1e\x12\x1c^[a-zA-Z][0-9a-zA-Z_]{0,31}$\x12\x16\n\x06target\x18\x04 \x01(\x01\x42\x06\xfa\xc7\x31\x02>0\x12\x1b\n\tfolder_id\x18\x06 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1a\n\x07service\x18\x07 \x01(\tB\t\x8a\xc8\x31\x05<=200\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"D\n\x08RuleType\x12\x19\n\x15RULE_TYPE_UNSPECIFIED\x10\x00\x12\x0f\n\x0bUTILIZATION\x10\x01\x12\x0c\n\x08WORKLOAD\x10\x02\"A\n\nMetricType\x12\x1b\n\x17METRIC_TYPE_UNSPECIFIED\x10\x00\x12\t\n\x05GAUGE\x10\x01\x12\x0b\n\x07\x43OUNTER\x10\x02\x1a%\n\nFixedScale\x12\x17\n\x04size\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x31-100B\x12\n\nscale_type\x12\x04\xc0\xc1\x31\x01\"\xee\x02\n\x0c\x44\x65ployPolicy\x12\"\n\x0fmax_unavailable\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12\x1f\n\x0cmax_deleting\x18\x02 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12\x1f\n\x0cmax_creating\x18\x03 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12 \n\rmax_expansion\x18\x06 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12>\n\x10startup_duration\x18\x07 \x01(\x0b\x32\x19.google.protobuf.DurationB\t\xfa\xc7\x31\x05\x30m-1h\x12N\n\x08strategy\x18\x08 \x01(\x0e\x32<.yandex.cloud.compute.v1.instancegroup.DeployPolicy.Strategy\"F\n\x08Strategy\x12\x18\n\x14STRATEGY_UNSPECIFIED\x10\x00\x12\r\n\tPROACTIVE\x10\x01\x12\x11\n\rOPPORTUNISTIC\x10\x02\"\x87\x01\n\x10\x41llocationPolicy\x12T\n\x05zones\x18\x01 \x03(\x0b\x32<.yandex.cloud.compute.v1.instancegroup.AllocationPolicy.ZoneB\x07\x82\xc8\x31\x03>=1\x1a\x1d\n\x04Zone\x12\x15\n\x07zone_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\x85\t\n\x10InstanceTemplate\x12\x1e\n\x0b\x64\x65scription\x18\x01 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8a\x01\n\x06labels\x18\x02 \x03(\x0b\x32\x43.yandex.cloud.compute.v1.instancegroup.InstanceTemplate.LabelsEntryB5\x82\xc8\x31\x04<=64\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x19\n\x0bplatform_id\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12R\n\x0eresources_spec\x18\x04 \x01(\x0b\x32\x34.yandex.cloud.compute.v1.instancegroup.ResourcesSpecB\x04\xe8\xc7\x31\x01\x12\x8e\x01\n\x08metadata\x18\x05 \x03(\x0b\x32\x45.yandex.cloud.compute.v1.instancegroup.InstanceTemplate.MetadataEntryB5\x82\xc8\x31\x05<=128\x8a\xc8\x31\x08<=262144\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12U\n\x0e\x62oot_disk_spec\x18\x06 \x01(\x0b\x32\x37.yandex.cloud.compute.v1.instancegroup.AttachedDiskSpecB\x04\xe8\xc7\x31\x01\x12^\n\x14secondary_disk_specs\x18\x07 \x03(\x0b\x32\x37.yandex.cloud.compute.v1.instancegroup.AttachedDiskSpecB\x07\x82\xc8\x31\x03<=3\x12\x63\n\x17network_interface_specs\x18\x08 \x03(\x0b\x32;.yandex.cloud.compute.v1.instancegroup.NetworkInterfaceSpecB\x05\x82\xc8\x31\x01\x31\x12R\n\x11scheduling_policy\x18\t \x01(\x0b\x32\x37.yandex.cloud.compute.v1.instancegroup.SchedulingPolicy\x12\x1a\n\x12service_account_id\x18\n \x01(\t\x12P\n\x10network_settings\x18\x0b \x01(\x0b\x32\x36.yandex.cloud.compute.v1.instancegroup.NetworkSettings\x12\x17\n\x04name\x18\x0c \x01(\tB\t\x8a\xc8\x31\x05<=128\x12\x1b\n\x08hostname\x18\r \x01(\tB\t\x8a\xc8\x31\x05<=128\x12P\n\x10placement_policy\x18\x0e \x01(\x0b\x32\x36.yandex.cloud.compute.v1.instancegroup.PlacementPolicy\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"-\n\x0fPlacementPolicy\x12\x1a\n\x12placement_group_id\x18\x01 \x01(\t\"\xdf\x01\n\rResourcesSpec\x12\"\n\x06memory\x18\x01 \x01(\x03\x42\x12\xfa\xc7\x31\x0e<=824633720832\x12\x65\n\x05\x63ores\x18\x02 \x01(\x03\x42V\xfa\xc7\x31R2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,40,44,48,52,56,60,64,68,72,76,80\x12(\n\rcore_fraction\x18\x03 \x01(\x03\x42\x11\xfa\xc7\x31\r0,5,20,50,100\x12\x19\n\x04gpus\x18\x04 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30,1,2,4\"\xc2\x04\n\x10\x41ttachedDiskSpec\x12P\n\x04mode\x18\x01 \x01(\x0e\x32<.yandex.cloud.compute.v1.instancegroup.AttachedDiskSpec.ModeB\x04\xe8\xc7\x31\x01\x12/\n\x0b\x64\x65vice_name\x18\x02 \x01(\tB\x1a\xf2\xc7\x31\x16|[a-z][-_0-9a-z]{0,19}\x12Y\n\tdisk_spec\x18\x03 \x01(\x0b\x32@.yandex.cloud.compute.v1.instancegroup.AttachedDiskSpec.DiskSpecB\x04\xe8\xc7\x31\x01\x12/\n\x07\x64isk_id\x18\x04 \x01(\tB\x1e\x8a\xc8\x31\x05<=128\xf2\xc7\x31\x11[-a-zA-Z0-9._{}]*\x1a\xe1\x01\n\x08\x44iskSpec\x12\x1e\n\x0b\x64\x65scription\x18\x01 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x15\n\x07type_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\'\n\x04size\x18\x03 \x01(\x03\x42\x19\xfa\xc7\x31\x15\x34\x31\x39\x34\x33\x30\x34-4398046511104\x12\x1c\n\x08image_id\x18\x04 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1f\n\x0bsnapshot_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12&\n\x1epreserve_after_instance_delete\x18\x06 \x01(\x08\x42\x0e\n\x0csource_oneof\";\n\x04Mode\x12\x14\n\x10MODE_UNSPECIFIED\x10\x00\x12\r\n\tREAD_ONLY\x10\x01\x12\x0e\n\nREAD_WRITE\x10\x02\"\x92\x02\n\x14NetworkInterfaceSpec\x12\x12\n\nnetwork_id\x18\x01 \x01(\t\x12\x12\n\nsubnet_ids\x18\x02 \x03(\t\x12Z\n\x17primary_v4_address_spec\x18\x03 \x01(\x0b\x32\x39.yandex.cloud.compute.v1.instancegroup.PrimaryAddressSpec\x12Z\n\x17primary_v6_address_spec\x18\x04 \x01(\x0b\x32\x39.yandex.cloud.compute.v1.instancegroup.PrimaryAddressSpec\x12\x1a\n\x12security_group_ids\x18\x05 \x03(\t\"i\n\x12PrimaryAddressSpec\x12S\n\x13one_to_one_nat_spec\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.compute.v1.instancegroup.OneToOneNatSpec\"h\n\x0fOneToOneNatSpec\x12\x44\n\nip_version\x18\x01 \x01(\x0e\x32\x30.yandex.cloud.compute.v1.instancegroup.IpVersion\x12\x0f\n\x07\x61\x64\x64ress\x18\x02 \x01(\t\"\'\n\x10SchedulingPolicy\x12\x13\n\x0bpreemptible\x18\x01 \x01(\x08\"\xbc\x01\n\x0fNetworkSettings\x12I\n\x04type\x18\x01 \x01(\x0e\x32;.yandex.cloud.compute.v1.instancegroup.NetworkSettings.Type\"^\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x0c\n\x08STANDARD\x10\x01\x12\x18\n\x14SOFTWARE_ACCELERATED\x10\x02\x12\x18\n\x14HARDWARE_ACCELERATED\x10\x03\"e\n\x10LoadBalancerSpec\x12Q\n\x11target_group_spec\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.compute.v1.instancegroup.TargetGroupSpec\"\xb2\x02\n\x0fTargetGroupSpec\x12\x32\n\x04name\x18\x01 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x9b\x01\n\x06labels\x18\x03 \x03(\x0b\x32\x42.yandex.cloud.compute.v1.instancegroup.TargetGroupSpec.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"o\n\x10HealthChecksSpec\x12[\n\x12health_check_specs\x18\x01 \x03(\x0b\x32\x36.yandex.cloud.compute.v1.instancegroup.HealthCheckSpecB\x07\x82\xc8\x31\x03>=1\"\xa4\x04\n\x0fHealthCheckSpec\x12\x38\n\x08interval\x18\x01 \x01(\x0b\x32\x19.google.protobuf.DurationB\x0b\xfa\xc7\x31\x07\x31s-300s\x12\x36\n\x07timeout\x18\x02 \x01(\x0b\x32\x19.google.protobuf.DurationB\n\xfa\xc7\x31\x06\x31s-60s\x12\x35\n\x13unhealthy_threshold\x18\x03 \x01(\x03\x42\x18\xfa\xc7\x31\x14\x30,2,3,4,5,6,7,8,9,10\x12\x33\n\x11healthy_threshold\x18\x04 \x01(\x03\x42\x18\xfa\xc7\x31\x14\x30,2,3,4,5,6,7,8,9,10\x12X\n\x0btcp_options\x18\x05 \x01(\x0b\x32\x41.yandex.cloud.compute.v1.instancegroup.HealthCheckSpec.TcpOptionsH\x00\x12Z\n\x0chttp_options\x18\x06 \x01(\x0b\x32\x42.yandex.cloud.compute.v1.instancegroup.HealthCheckSpec.HttpOptionsH\x00\x1a\'\n\nTcpOptions\x12\x19\n\x04port\x18\x01 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x31-65535\x1a\x36\n\x0bHttpOptions\x12\x19\n\x04port\x18\x01 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x31-65535\x12\x0c\n\x04path\x18\x02 \x01(\tB\x1c\n\x14health_check_options\x12\x04\xc0\xc1\x31\x01\"\xa8\x05\n\x0fManagedInstance\x12\n\n\x02id\x18\x01 \x01(\t\x12M\n\x06status\x18\x02 \x01(\x0e\x32=.yandex.cloud.compute.v1.instancegroup.ManagedInstance.Status\x12\x13\n\x0binstance_id\x18\x03 \x01(\t\x12\x0c\n\x04\x66qdn\x18\x04 \x01(\t\x12\x0c\n\x04name\x18\x05 \x01(\t\x12\x16\n\x0estatus_message\x18\x06 \x01(\t\x12\x0f\n\x07zone_id\x18\x07 \x01(\t\x12S\n\x12network_interfaces\x18\x08 \x03(\x0b\x32\x37.yandex.cloud.compute.v1.instancegroup.NetworkInterface\x12\x35\n\x11status_changed_at\x18\t \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xd3\x02\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x15\n\x11\x43REATING_INSTANCE\x10\x0b\x12\x15\n\x11UPDATING_INSTANCE\x10\x0c\x12\x15\n\x11\x44\x45LETING_INSTANCE\x10\r\x12\x15\n\x11STARTING_INSTANCE\x10\x0e\x12\x15\n\x11STOPPING_INSTANCE\x10\x0f\x12\x1d\n\x19\x41WAITING_STARTUP_DURATION\x10\x10\x12\x13\n\x0f\x43HECKING_HEALTH\x10\x11\x12\x13\n\x0fOPENING_TRAFFIC\x10\x12\x12\x1c\n\x18\x41WAITING_WARMUP_DURATION\x10\x13\x12\x13\n\x0f\x43LOSING_TRAFFIC\x10\x14\x12\x12\n\x0eRUNNING_ACTUAL\x10\x15\x12\x14\n\x10RUNNING_OUTDATED\x10\x16\x12\x0b\n\x07STOPPED\x10\x17\x12\x0b\n\x07\x44\x45LETED\x10\x18\"\xef\x01\n\x10NetworkInterface\x12\r\n\x05index\x18\x01 \x01(\t\x12\x13\n\x0bmac_address\x18\x02 \x01(\t\x12\x11\n\tsubnet_id\x18\x03 \x01(\t\x12Q\n\x12primary_v4_address\x18\x04 \x01(\x0b\x32\x35.yandex.cloud.compute.v1.instancegroup.PrimaryAddress\x12Q\n\x12primary_v6_address\x18\x05 \x01(\x0b\x32\x35.yandex.cloud.compute.v1.instancegroup.PrimaryAddress\"m\n\x0ePrimaryAddress\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12J\n\x0eone_to_one_nat\x18\x02 \x01(\x0b\x32\x32.yandex.cloud.compute.v1.instancegroup.OneToOneNat\"d\n\x0bOneToOneNat\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x44\n\nip_version\x18\x02 \x01(\x0e\x32\x30.yandex.cloud.compute.v1.instancegroup.IpVersion\"K\n\tLogRecord\x12-\n\ttimestamp\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07message\x18\x02 \x01(\t*;\n\tIpVersion\x12\x1a\n\x16IP_VERSION_UNSPECIFIED\x10\x00\x12\x08\n\x04IPV4\x10\x01\x12\x08\n\x04IPV6\x10\x02\x42\x84\x01\n)yandex.cloud.api.compute.v1.instancegroupZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1/instancegroup;instancegroupb\x06proto3'
+  serialized_pb=b'\n:yandex/cloud/compute/v1/instancegroup/instance_group.proto\x12%yandex.cloud.compute.v1.instancegroup\x1a\x1dyandex/cloud/validation.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/duration.proto\"\xcf\t\n\rInstanceGroup\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12P\n\x06labels\x18\x06 \x03(\x0b\x32@.yandex.cloud.compute.v1.instancegroup.InstanceGroup.LabelsEntry\x12R\n\x11instance_template\x18\x07 \x01(\x0b\x32\x37.yandex.cloud.compute.v1.instancegroup.InstanceTemplate\x12H\n\x0cscale_policy\x18\x08 \x01(\x0b\x32\x32.yandex.cloud.compute.v1.instancegroup.ScalePolicy\x12J\n\rdeploy_policy\x18\t \x01(\x0b\x32\x33.yandex.cloud.compute.v1.instancegroup.DeployPolicy\x12R\n\x11\x61llocation_policy\x18\n \x01(\x0b\x32\x37.yandex.cloud.compute.v1.instancegroup.AllocationPolicy\x12U\n\x13load_balancer_state\x18\x0b \x01(\x0b\x32\x38.yandex.cloud.compute.v1.instancegroup.LoadBalancerState\x12]\n\x17managed_instances_state\x18\x0c \x01(\x0b\x32<.yandex.cloud.compute.v1.instancegroup.ManagedInstancesState\x12S\n\x12load_balancer_spec\x18\x0e \x01(\x0b\x32\x37.yandex.cloud.compute.v1.instancegroup.LoadBalancerSpec\x12S\n\x12health_checks_spec\x18\x0f \x01(\x0b\x32\x37.yandex.cloud.compute.v1.instancegroup.HealthChecksSpec\x12\x1a\n\x12service_account_id\x18\x10 \x01(\t\x12K\n\x06status\x18\x11 \x01(\x0e\x32;.yandex.cloud.compute.v1.instancegroup.InstanceGroup.Status\x12\x42\n\tvariables\x18\x12 \x03(\x0b\x32/.yandex.cloud.compute.v1.instancegroup.Variable\x12\x1b\n\x13\x64\x65letion_protection\x18\x13 \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"c\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08STARTING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08STOPPING\x10\x03\x12\x0b\n\x07STOPPED\x10\x04\x12\x0c\n\x08\x44\x45LETING\x10\x05\"O\n\x08Variable\x12)\n\x03key\x18\x01 \x01(\tB\x1c\x8a\xc8\x31\x05\x31-128\xf2\xc7\x31\x0f[a-zA-Z0-9._-]*\x12\x18\n\x05value\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=128\"D\n\x11LoadBalancerState\x12\x17\n\x0ftarget_group_id\x18\x01 \x01(\t\x12\x16\n\x0estatus_message\x18\x02 \x01(\t\"\xbf\x02\n\x15ManagedInstancesState\x12\x13\n\x0btarget_size\x18\x01 \x01(\x03\x12\x1c\n\x14running_actual_count\x18\x04 \x01(\x03\x12\x1e\n\x16running_outdated_count\x18\x05 \x01(\x03\x12\x18\n\x10processing_count\x18\x06 \x01(\x03\x1a\xb8\x01\n\x08Statuses\x12\x10\n\x08\x63reating\x18\x01 \x01(\x03\x12\x10\n\x08starting\x18\x02 \x01(\x03\x12\x0f\n\x07opening\x18\x03 \x01(\x03\x12\x0f\n\x07warming\x18\x04 \x01(\x03\x12\x0f\n\x07running\x18\x05 \x01(\x03\x12\x0f\n\x07\x63losing\x18\x06 \x01(\x03\x12\x10\n\x08stopping\x18\x07 \x01(\x03\x12\x10\n\x08updating\x18\x08 \x01(\x03\x12\x10\n\x08\x64\x65leting\x18\t \x01(\x03\x12\x0e\n\x06\x66\x61iled\x18\n \x01(\x03\"\xea\x0c\n\x0bScalePolicy\x12T\n\x0b\x66ixed_scale\x18\x01 \x01(\x0b\x32=.yandex.cloud.compute.v1.instancegroup.ScalePolicy.FixedScaleH\x00\x12R\n\nauto_scale\x18\x02 \x01(\x0b\x32<.yandex.cloud.compute.v1.instancegroup.ScalePolicy.AutoScaleH\x00\x12U\n\x0ftest_auto_scale\x18\x03 \x01(\x0b\x32<.yandex.cloud.compute.v1.instancegroup.ScalePolicy.AutoScale\x1a\xfb\x03\n\tAutoScale\x12 \n\rmin_zone_size\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12\x1b\n\x08max_size\x18\x02 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12G\n\x14measurement_duration\x18\x03 \x01(\x0b\x32\x19.google.protobuf.DurationB\x0e\xe8\xc7\x31\x01\xfa\xc7\x31\x06\x31m-10m\x12=\n\x0fwarmup_duration\x18\x04 \x01(\x0b\x32\x19.google.protobuf.DurationB\t\xfa\xc7\x31\x05<=10m\x12\x45\n\x16stabilization_duration\x18\x05 \x01(\x0b\x32\x19.google.protobuf.DurationB\n\xfa\xc7\x31\x06\x31m-30m\x12\x1d\n\x0cinitial_size\x18\x06 \x01(\x03\x42\x07\xfa\xc7\x31\x03>=1\x12\x63\n\x14\x63pu_utilization_rule\x18\x07 \x01(\x0b\x32\x45.yandex.cloud.compute.v1.instancegroup.ScalePolicy.CpuUtilizationRule\x12\\\n\x0c\x63ustom_rules\x18\x08 \x03(\x0b\x32=.yandex.cloud.compute.v1.instancegroup.ScalePolicy.CustomRuleB\x07\x82\xc8\x31\x03<=1\x1a<\n\x12\x43puUtilizationRule\x12&\n\x12utilization_target\x18\x01 \x01(\x01\x42\n\xfa\xc7\x31\x06\x31\x30-100\x1a\xe2\x05\n\nCustomRule\x12_\n\trule_type\x18\x01 \x01(\x0e\x32\x46.yandex.cloud.compute.v1.instancegroup.ScalePolicy.CustomRule.RuleTypeB\x04\xe8\xc7\x31\x01\x12\x63\n\x0bmetric_type\x18\x02 \x01(\x0e\x32H.yandex.cloud.compute.v1.instancegroup.ScalePolicy.CustomRule.MetricTypeB\x04\xe8\xc7\x31\x01\x12O\n\x0bmetric_name\x18\x03 \x01(\tB:\xe8\xc7\x31\x01\xf2\xc7\x31\x32[a-zA-Z0-9./@_][ 0-9a-zA-Z./@_,:;()\\[\\]<>-]{0,198}\x12\xb3\x01\n\x06labels\x18\x05 \x03(\x0b\x32I.yandex.cloud.compute.v1.instancegroup.ScalePolicy.CustomRule.LabelsEntryBX\xf2\xc7\x31\x32[a-zA-Z0-9./@_][ 0-9a-zA-Z./@_,:;()\\[\\]<>-]{0,198}\xb2\xc8\x31\x1e\x12\x1c^[a-zA-Z][0-9a-zA-Z_]{0,31}$\x12\x16\n\x06target\x18\x04 \x01(\x01\x42\x06\xfa\xc7\x31\x02>0\x12\x1b\n\tfolder_id\x18\x06 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1a\n\x07service\x18\x07 \x01(\tB\t\x8a\xc8\x31\x05<=200\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"D\n\x08RuleType\x12\x19\n\x15RULE_TYPE_UNSPECIFIED\x10\x00\x12\x0f\n\x0bUTILIZATION\x10\x01\x12\x0c\n\x08WORKLOAD\x10\x02\"A\n\nMetricType\x12\x1b\n\x17METRIC_TYPE_UNSPECIFIED\x10\x00\x12\t\n\x05GAUGE\x10\x01\x12\x0b\n\x07\x43OUNTER\x10\x02\x1a%\n\nFixedScale\x12\x17\n\x04size\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x31-100B\x12\n\nscale_type\x12\x04\xc0\xc1\x31\x01\"\xee\x02\n\x0c\x44\x65ployPolicy\x12\"\n\x0fmax_unavailable\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12\x1f\n\x0cmax_deleting\x18\x02 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12\x1f\n\x0cmax_creating\x18\x03 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12 \n\rmax_expansion\x18\x06 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12>\n\x10startup_duration\x18\x07 \x01(\x0b\x32\x19.google.protobuf.DurationB\t\xfa\xc7\x31\x05\x30m-1h\x12N\n\x08strategy\x18\x08 \x01(\x0e\x32<.yandex.cloud.compute.v1.instancegroup.DeployPolicy.Strategy\"F\n\x08Strategy\x12\x18\n\x14STRATEGY_UNSPECIFIED\x10\x00\x12\r\n\tPROACTIVE\x10\x01\x12\x11\n\rOPPORTUNISTIC\x10\x02\"\x87\x01\n\x10\x41llocationPolicy\x12T\n\x05zones\x18\x01 \x03(\x0b\x32<.yandex.cloud.compute.v1.instancegroup.AllocationPolicy.ZoneB\x07\x82\xc8\x31\x03>=1\x1a\x1d\n\x04Zone\x12\x15\n\x07zone_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\x85\t\n\x10InstanceTemplate\x12\x1e\n\x0b\x64\x65scription\x18\x01 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8a\x01\n\x06labels\x18\x02 \x03(\x0b\x32\x43.yandex.cloud.compute.v1.instancegroup.InstanceTemplate.LabelsEntryB5\x82\xc8\x31\x04<=64\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x19\n\x0bplatform_id\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12R\n\x0eresources_spec\x18\x04 \x01(\x0b\x32\x34.yandex.cloud.compute.v1.instancegroup.ResourcesSpecB\x04\xe8\xc7\x31\x01\x12\x8e\x01\n\x08metadata\x18\x05 \x03(\x0b\x32\x45.yandex.cloud.compute.v1.instancegroup.InstanceTemplate.MetadataEntryB5\x82\xc8\x31\x05<=128\x8a\xc8\x31\x08<=262144\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12U\n\x0e\x62oot_disk_spec\x18\x06 \x01(\x0b\x32\x37.yandex.cloud.compute.v1.instancegroup.AttachedDiskSpecB\x04\xe8\xc7\x31\x01\x12^\n\x14secondary_disk_specs\x18\x07 \x03(\x0b\x32\x37.yandex.cloud.compute.v1.instancegroup.AttachedDiskSpecB\x07\x82\xc8\x31\x03<=3\x12\x63\n\x17network_interface_specs\x18\x08 \x03(\x0b\x32;.yandex.cloud.compute.v1.instancegroup.NetworkInterfaceSpecB\x05\x82\xc8\x31\x01\x31\x12R\n\x11scheduling_policy\x18\t \x01(\x0b\x32\x37.yandex.cloud.compute.v1.instancegroup.SchedulingPolicy\x12\x1a\n\x12service_account_id\x18\n \x01(\t\x12P\n\x10network_settings\x18\x0b \x01(\x0b\x32\x36.yandex.cloud.compute.v1.instancegroup.NetworkSettings\x12\x17\n\x04name\x18\x0c \x01(\tB\t\x8a\xc8\x31\x05<=128\x12\x1b\n\x08hostname\x18\r \x01(\tB\t\x8a\xc8\x31\x05<=128\x12P\n\x10placement_policy\x18\x0e \x01(\x0b\x32\x36.yandex.cloud.compute.v1.instancegroup.PlacementPolicy\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"-\n\x0fPlacementPolicy\x12\x1a\n\x12placement_group_id\x18\x01 \x01(\t\"\xdf\x01\n\rResourcesSpec\x12\"\n\x06memory\x18\x01 \x01(\x03\x42\x12\xfa\xc7\x31\x0e<=824633720832\x12\x65\n\x05\x63ores\x18\x02 \x01(\x03\x42V\xfa\xc7\x31R2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,40,44,48,52,56,60,64,68,72,76,80\x12(\n\rcore_fraction\x18\x03 \x01(\x03\x42\x11\xfa\xc7\x31\r0,5,20,50,100\x12\x19\n\x04gpus\x18\x04 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30,1,2,4\"\xc2\x04\n\x10\x41ttachedDiskSpec\x12P\n\x04mode\x18\x01 \x01(\x0e\x32<.yandex.cloud.compute.v1.instancegroup.AttachedDiskSpec.ModeB\x04\xe8\xc7\x31\x01\x12/\n\x0b\x64\x65vice_name\x18\x02 \x01(\tB\x1a\xf2\xc7\x31\x16|[a-z][-_0-9a-z]{0,19}\x12Y\n\tdisk_spec\x18\x03 \x01(\x0b\x32@.yandex.cloud.compute.v1.instancegroup.AttachedDiskSpec.DiskSpecB\x04\xe8\xc7\x31\x01\x12/\n\x07\x64isk_id\x18\x04 \x01(\tB\x1e\x8a\xc8\x31\x05<=128\xf2\xc7\x31\x11[-a-zA-Z0-9._{}]*\x1a\xe1\x01\n\x08\x44iskSpec\x12\x1e\n\x0b\x64\x65scription\x18\x01 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x15\n\x07type_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\'\n\x04size\x18\x03 \x01(\x03\x42\x19\xfa\xc7\x31\x15\x34\x31\x39\x34\x33\x30\x34-4398046511104\x12\x1c\n\x08image_id\x18\x04 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1f\n\x0bsnapshot_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12&\n\x1epreserve_after_instance_delete\x18\x06 \x01(\x08\x42\x0e\n\x0csource_oneof\";\n\x04Mode\x12\x14\n\x10MODE_UNSPECIFIED\x10\x00\x12\r\n\tREAD_ONLY\x10\x01\x12\x0e\n\nREAD_WRITE\x10\x02\"\x92\x02\n\x14NetworkInterfaceSpec\x12\x12\n\nnetwork_id\x18\x01 \x01(\t\x12\x12\n\nsubnet_ids\x18\x02 \x03(\t\x12Z\n\x17primary_v4_address_spec\x18\x03 \x01(\x0b\x32\x39.yandex.cloud.compute.v1.instancegroup.PrimaryAddressSpec\x12Z\n\x17primary_v6_address_spec\x18\x04 \x01(\x0b\x32\x39.yandex.cloud.compute.v1.instancegroup.PrimaryAddressSpec\x12\x1a\n\x12security_group_ids\x18\x05 \x03(\t\"\xb9\x01\n\x12PrimaryAddressSpec\x12S\n\x13one_to_one_nat_spec\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.compute.v1.instancegroup.OneToOneNatSpec\x12N\n\x10\x64ns_record_specs\x18\x02 \x03(\x0b\x32\x34.yandex.cloud.compute.v1.instancegroup.DnsRecordSpec\"\xb8\x01\n\x0fOneToOneNatSpec\x12\x44\n\nip_version\x18\x01 \x01(\x0e\x32\x30.yandex.cloud.compute.v1.instancegroup.IpVersion\x12\x0f\n\x07\x61\x64\x64ress\x18\x02 \x01(\t\x12N\n\x10\x64ns_record_specs\x18\x03 \x03(\x0b\x32\x34.yandex.cloud.compute.v1.instancegroup.DnsRecordSpec\"_\n\rDnsRecordSpec\x12\x12\n\x04\x66qdn\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x13\n\x0b\x64ns_zone_id\x18\x02 \x01(\t\x12\x18\n\x03ttl\x18\x03 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-86400\x12\x0b\n\x03ptr\x18\x04 \x01(\x08\"\'\n\x10SchedulingPolicy\x12\x13\n\x0bpreemptible\x18\x01 \x01(\x08\"\xbc\x01\n\x0fNetworkSettings\x12I\n\x04type\x18\x01 \x01(\x0e\x32;.yandex.cloud.compute.v1.instancegroup.NetworkSettings.Type\"^\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x0c\n\x08STANDARD\x10\x01\x12\x18\n\x14SOFTWARE_ACCELERATED\x10\x02\x12\x18\n\x14HARDWARE_ACCELERATED\x10\x03\"e\n\x10LoadBalancerSpec\x12Q\n\x11target_group_spec\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.compute.v1.instancegroup.TargetGroupSpec\"\xb2\x02\n\x0fTargetGroupSpec\x12\x32\n\x04name\x18\x01 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x9b\x01\n\x06labels\x18\x03 \x03(\x0b\x32\x42.yandex.cloud.compute.v1.instancegroup.TargetGroupSpec.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x81\x01\n\x1b\x41pplicationLoadBalancerSpec\x12\x62\n\x11target_group_spec\x18\x01 \x01(\x0b\x32\x41.yandex.cloud.compute.v1.instancegroup.ApplicationTargetGroupSpecB\x04\xe8\xc7\x31\x01\"\xcd\x01\n\x1a\x41pplicationTargetGroupSpec\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12]\n\x06labels\x18\x03 \x03(\x0b\x32M.yandex.cloud.compute.v1.instancegroup.ApplicationTargetGroupSpec.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"o\n\x10HealthChecksSpec\x12[\n\x12health_check_specs\x18\x01 \x03(\x0b\x32\x36.yandex.cloud.compute.v1.instancegroup.HealthCheckSpecB\x07\x82\xc8\x31\x03>=1\"\xa4\x04\n\x0fHealthCheckSpec\x12\x38\n\x08interval\x18\x01 \x01(\x0b\x32\x19.google.protobuf.DurationB\x0b\xfa\xc7\x31\x07\x31s-300s\x12\x36\n\x07timeout\x18\x02 \x01(\x0b\x32\x19.google.protobuf.DurationB\n\xfa\xc7\x31\x06\x31s-60s\x12\x35\n\x13unhealthy_threshold\x18\x03 \x01(\x03\x42\x18\xfa\xc7\x31\x14\x30,2,3,4,5,6,7,8,9,10\x12\x33\n\x11healthy_threshold\x18\x04 \x01(\x03\x42\x18\xfa\xc7\x31\x14\x30,2,3,4,5,6,7,8,9,10\x12X\n\x0btcp_options\x18\x05 \x01(\x0b\x32\x41.yandex.cloud.compute.v1.instancegroup.HealthCheckSpec.TcpOptionsH\x00\x12Z\n\x0chttp_options\x18\x06 \x01(\x0b\x32\x42.yandex.cloud.compute.v1.instancegroup.HealthCheckSpec.HttpOptionsH\x00\x1a\'\n\nTcpOptions\x12\x19\n\x04port\x18\x01 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x31-65535\x1a\x36\n\x0bHttpOptions\x12\x19\n\x04port\x18\x01 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x31-65535\x12\x0c\n\x04path\x18\x02 \x01(\tB\x1c\n\x14health_check_options\x12\x04\xc0\xc1\x31\x01\"\xa8\x05\n\x0fManagedInstance\x12\n\n\x02id\x18\x01 \x01(\t\x12M\n\x06status\x18\x02 \x01(\x0e\x32=.yandex.cloud.compute.v1.instancegroup.ManagedInstance.Status\x12\x13\n\x0binstance_id\x18\x03 \x01(\t\x12\x0c\n\x04\x66qdn\x18\x04 \x01(\t\x12\x0c\n\x04name\x18\x05 \x01(\t\x12\x16\n\x0estatus_message\x18\x06 \x01(\t\x12\x0f\n\x07zone_id\x18\x07 \x01(\t\x12S\n\x12network_interfaces\x18\x08 \x03(\x0b\x32\x37.yandex.cloud.compute.v1.instancegroup.NetworkInterface\x12\x35\n\x11status_changed_at\x18\t \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xd3\x02\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x15\n\x11\x43REATING_INSTANCE\x10\x0b\x12\x15\n\x11UPDATING_INSTANCE\x10\x0c\x12\x15\n\x11\x44\x45LETING_INSTANCE\x10\r\x12\x15\n\x11STARTING_INSTANCE\x10\x0e\x12\x15\n\x11STOPPING_INSTANCE\x10\x0f\x12\x1d\n\x19\x41WAITING_STARTUP_DURATION\x10\x10\x12\x13\n\x0f\x43HECKING_HEALTH\x10\x11\x12\x13\n\x0fOPENING_TRAFFIC\x10\x12\x12\x1c\n\x18\x41WAITING_WARMUP_DURATION\x10\x13\x12\x13\n\x0f\x43LOSING_TRAFFIC\x10\x14\x12\x12\n\x0eRUNNING_ACTUAL\x10\x15\x12\x14\n\x10RUNNING_OUTDATED\x10\x16\x12\x0b\n\x07STOPPED\x10\x17\x12\x0b\n\x07\x44\x45LETED\x10\x18\"\xef\x01\n\x10NetworkInterface\x12\r\n\x05index\x18\x01 \x01(\t\x12\x13\n\x0bmac_address\x18\x02 \x01(\t\x12\x11\n\tsubnet_id\x18\x03 \x01(\t\x12Q\n\x12primary_v4_address\x18\x04 \x01(\x0b\x32\x35.yandex.cloud.compute.v1.instancegroup.PrimaryAddress\x12Q\n\x12primary_v6_address\x18\x05 \x01(\x0b\x32\x35.yandex.cloud.compute.v1.instancegroup.PrimaryAddress\"m\n\x0ePrimaryAddress\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12J\n\x0eone_to_one_nat\x18\x02 \x01(\x0b\x32\x32.yandex.cloud.compute.v1.instancegroup.OneToOneNat\"d\n\x0bOneToOneNat\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x44\n\nip_version\x18\x02 \x01(\x0e\x32\x30.yandex.cloud.compute.v1.instancegroup.IpVersion\"K\n\tLogRecord\x12-\n\ttimestamp\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07message\x18\x02 \x01(\t*;\n\tIpVersion\x12\x1a\n\x16IP_VERSION_UNSPECIFIED\x10\x00\x12\x08\n\x04IPV4\x10\x01\x12\x08\n\x04IPV6\x10\x02\x42\x84\x01\n)yandex.cloud.api.compute.v1.instancegroupZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1/instancegroup;instancegroupb\x06proto3'
   ,
   dependencies=[yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,])
 
@@ -52,8 +52,8 @@ _IPVERSION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=9083,
-  serialized_end=9142,
+  serialized_start=9682,
+  serialized_end=9741,
 )
 _sym_db.RegisterEnumDescriptor(_IPVERSION)
 
@@ -258,8 +258,8 @@ _NETWORKSETTINGS_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=6696,
-  serialized_end=6790,
+  serialized_start=6955,
+  serialized_end=7049,
 )
 _sym_db.RegisterEnumDescriptor(_NETWORKSETTINGS_TYPE)
 
@@ -348,8 +348,8 @@ _MANAGEDINSTANCE_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=8210,
-  serialized_end=8549,
+  serialized_start=8809,
+  serialized_end=9148,
 )
 _sym_db.RegisterEnumDescriptor(_MANAGEDINSTANCE_STATUS)
 
@@ -1690,6 +1690,13 @@ _PRIMARYADDRESSSPEC = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='dns_record_specs', full_name='yandex.cloud.compute.v1.instancegroup.PrimaryAddressSpec.dns_record_specs', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1702,8 +1709,8 @@ _PRIMARYADDRESSSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6347,
-  serialized_end=6452,
+  serialized_start=6348,
+  serialized_end=6533,
 )
 
 
@@ -1729,6 +1736,13 @@ _ONETOONENATSPEC = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='dns_record_specs', full_name='yandex.cloud.compute.v1.instancegroup.OneToOneNatSpec.dns_record_specs', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1741,8 +1755,61 @@ _ONETOONENATSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6454,
-  serialized_end=6558,
+  serialized_start=6536,
+  serialized_end=6720,
+)
+
+
+_DNSRECORDSPEC = _descriptor.Descriptor(
+  name='DnsRecordSpec',
+  full_name='yandex.cloud.compute.v1.instancegroup.DnsRecordSpec',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='fqdn', full_name='yandex.cloud.compute.v1.instancegroup.DnsRecordSpec.fqdn', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='dns_zone_id', full_name='yandex.cloud.compute.v1.instancegroup.DnsRecordSpec.dns_zone_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='ttl', full_name='yandex.cloud.compute.v1.instancegroup.DnsRecordSpec.ttl', index=2,
+      number=3, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\372\3071\0070-86400', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='ptr', full_name='yandex.cloud.compute.v1.instancegroup.DnsRecordSpec.ptr', index=3,
+      number=4, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=6722,
+  serialized_end=6817,
 )
 
 
@@ -1773,8 +1840,8 @@ _SCHEDULINGPOLICY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6560,
-  serialized_end=6599,
+  serialized_start=6819,
+  serialized_end=6858,
 )
 
 
@@ -1806,8 +1873,8 @@ _NETWORKSETTINGS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6602,
-  serialized_end=6790,
+  serialized_start=6861,
+  serialized_end=7049,
 )
 
 
@@ -1838,8 +1905,8 @@ _LOADBALANCERSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6792,
-  serialized_end=6893,
+  serialized_start=7051,
+  serialized_end=7152,
 )
 
 
@@ -1922,8 +1989,124 @@ _TARGETGROUPSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6896,
-  serialized_end=7202,
+  serialized_start=7155,
+  serialized_end=7461,
+)
+
+
+_APPLICATIONLOADBALANCERSPEC = _descriptor.Descriptor(
+  name='ApplicationLoadBalancerSpec',
+  full_name='yandex.cloud.compute.v1.instancegroup.ApplicationLoadBalancerSpec',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='target_group_spec', full_name='yandex.cloud.compute.v1.instancegroup.ApplicationLoadBalancerSpec.target_group_spec', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=7464,
+  serialized_end=7593,
+)
+
+
+_APPLICATIONTARGETGROUPSPEC_LABELSENTRY = _descriptor.Descriptor(
+  name='LabelsEntry',
+  full_name='yandex.cloud.compute.v1.instancegroup.ApplicationTargetGroupSpec.LabelsEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='yandex.cloud.compute.v1.instancegroup.ApplicationTargetGroupSpec.LabelsEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='yandex.cloud.compute.v1.instancegroup.ApplicationTargetGroupSpec.LabelsEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1283,
+  serialized_end=1328,
+)
+
+_APPLICATIONTARGETGROUPSPEC = _descriptor.Descriptor(
+  name='ApplicationTargetGroupSpec',
+  full_name='yandex.cloud.compute.v1.instancegroup.ApplicationTargetGroupSpec',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='name', full_name='yandex.cloud.compute.v1.instancegroup.ApplicationTargetGroupSpec.name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='description', full_name='yandex.cloud.compute.v1.instancegroup.ApplicationTargetGroupSpec.description', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='labels', full_name='yandex.cloud.compute.v1.instancegroup.ApplicationTargetGroupSpec.labels', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_APPLICATIONTARGETGROUPSPEC_LABELSENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=7596,
+  serialized_end=7801,
 )
 
 
@@ -1954,8 +2137,8 @@ _HEALTHCHECKSSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7204,
-  serialized_end=7315,
+  serialized_start=7803,
+  serialized_end=7914,
 )
 
 
@@ -1986,8 +2169,8 @@ _HEALTHCHECKSPEC_TCPOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7741,
-  serialized_end=7780,
+  serialized_start=8340,
+  serialized_end=8379,
 )
 
 _HEALTHCHECKSPEC_HTTPOPTIONS = _descriptor.Descriptor(
@@ -2024,8 +2207,8 @@ _HEALTHCHECKSPEC_HTTPOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7782,
-  serialized_end=7836,
+  serialized_start=8381,
+  serialized_end=8435,
 )
 
 _HEALTHCHECKSPEC = _descriptor.Descriptor(
@@ -2095,8 +2278,8 @@ _HEALTHCHECKSPEC = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[], serialized_options=b'\300\3011\001'),
   ],
-  serialized_start=7318,
-  serialized_end=7866,
+  serialized_start=7917,
+  serialized_end=8465,
 )
 
 
@@ -2184,8 +2367,8 @@ _MANAGEDINSTANCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7869,
-  serialized_end=8549,
+  serialized_start=8468,
+  serialized_end=9148,
 )
 
 
@@ -2244,8 +2427,8 @@ _NETWORKINTERFACE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8552,
-  serialized_end=8791,
+  serialized_start=9151,
+  serialized_end=9390,
 )
 
 
@@ -2283,8 +2466,8 @@ _PRIMARYADDRESS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8793,
-  serialized_end=8902,
+  serialized_start=9392,
+  serialized_end=9501,
 )
 
 
@@ -2322,8 +2505,8 @@ _ONETOONENAT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8904,
-  serialized_end=9004,
+  serialized_start=9503,
+  serialized_end=9603,
 )
 
 
@@ -2361,8 +2544,8 @@ _LOGRECORD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9006,
-  serialized_end=9081,
+  serialized_start=9605,
+  serialized_end=9680,
 )
 
 _INSTANCEGROUP_LABELSENTRY.containing_type = _INSTANCEGROUP
@@ -2433,12 +2616,17 @@ _ATTACHEDDISKSPEC_MODE.containing_type = _ATTACHEDDISKSPEC
 _NETWORKINTERFACESPEC.fields_by_name['primary_v4_address_spec'].message_type = _PRIMARYADDRESSSPEC
 _NETWORKINTERFACESPEC.fields_by_name['primary_v6_address_spec'].message_type = _PRIMARYADDRESSSPEC
 _PRIMARYADDRESSSPEC.fields_by_name['one_to_one_nat_spec'].message_type = _ONETOONENATSPEC
+_PRIMARYADDRESSSPEC.fields_by_name['dns_record_specs'].message_type = _DNSRECORDSPEC
 _ONETOONENATSPEC.fields_by_name['ip_version'].enum_type = _IPVERSION
+_ONETOONENATSPEC.fields_by_name['dns_record_specs'].message_type = _DNSRECORDSPEC
 _NETWORKSETTINGS.fields_by_name['type'].enum_type = _NETWORKSETTINGS_TYPE
 _NETWORKSETTINGS_TYPE.containing_type = _NETWORKSETTINGS
 _LOADBALANCERSPEC.fields_by_name['target_group_spec'].message_type = _TARGETGROUPSPEC
 _TARGETGROUPSPEC_LABELSENTRY.containing_type = _TARGETGROUPSPEC
 _TARGETGROUPSPEC.fields_by_name['labels'].message_type = _TARGETGROUPSPEC_LABELSENTRY
+_APPLICATIONLOADBALANCERSPEC.fields_by_name['target_group_spec'].message_type = _APPLICATIONTARGETGROUPSPEC
+_APPLICATIONTARGETGROUPSPEC_LABELSENTRY.containing_type = _APPLICATIONTARGETGROUPSPEC
+_APPLICATIONTARGETGROUPSPEC.fields_by_name['labels'].message_type = _APPLICATIONTARGETGROUPSPEC_LABELSENTRY
 _HEALTHCHECKSSPEC.fields_by_name['health_check_specs'].message_type = _HEALTHCHECKSPEC
 _HEALTHCHECKSPEC_TCPOPTIONS.containing_type = _HEALTHCHECKSPEC
 _HEALTHCHECKSPEC_HTTPOPTIONS.containing_type = _HEALTHCHECKSPEC
@@ -2475,10 +2663,13 @@ DESCRIPTOR.message_types_by_name['AttachedDiskSpec'] = _ATTACHEDDISKSPEC
 DESCRIPTOR.message_types_by_name['NetworkInterfaceSpec'] = _NETWORKINTERFACESPEC
 DESCRIPTOR.message_types_by_name['PrimaryAddressSpec'] = _PRIMARYADDRESSSPEC
 DESCRIPTOR.message_types_by_name['OneToOneNatSpec'] = _ONETOONENATSPEC
+DESCRIPTOR.message_types_by_name['DnsRecordSpec'] = _DNSRECORDSPEC
 DESCRIPTOR.message_types_by_name['SchedulingPolicy'] = _SCHEDULINGPOLICY
 DESCRIPTOR.message_types_by_name['NetworkSettings'] = _NETWORKSETTINGS
 DESCRIPTOR.message_types_by_name['LoadBalancerSpec'] = _LOADBALANCERSPEC
 DESCRIPTOR.message_types_by_name['TargetGroupSpec'] = _TARGETGROUPSPEC
+DESCRIPTOR.message_types_by_name['ApplicationLoadBalancerSpec'] = _APPLICATIONLOADBALANCERSPEC
+DESCRIPTOR.message_types_by_name['ApplicationTargetGroupSpec'] = _APPLICATIONTARGETGROUPSPEC
 DESCRIPTOR.message_types_by_name['HealthChecksSpec'] = _HEALTHCHECKSSPEC
 DESCRIPTOR.message_types_by_name['HealthCheckSpec'] = _HEALTHCHECKSPEC
 DESCRIPTOR.message_types_by_name['ManagedInstance'] = _MANAGEDINSTANCE
@@ -2675,6 +2866,13 @@ OneToOneNatSpec = _reflection.GeneratedProtocolMessageType('OneToOneNatSpec', (_
   })
 _sym_db.RegisterMessage(OneToOneNatSpec)
 
+DnsRecordSpec = _reflection.GeneratedProtocolMessageType('DnsRecordSpec', (_message.Message,), {
+  'DESCRIPTOR' : _DNSRECORDSPEC,
+  '__module__' : 'yandex.cloud.compute.v1.instancegroup.instance_group_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.instancegroup.DnsRecordSpec)
+  })
+_sym_db.RegisterMessage(DnsRecordSpec)
+
 SchedulingPolicy = _reflection.GeneratedProtocolMessageType('SchedulingPolicy', (_message.Message,), {
   'DESCRIPTOR' : _SCHEDULINGPOLICY,
   '__module__' : 'yandex.cloud.compute.v1.instancegroup.instance_group_pb2'
@@ -2710,6 +2908,28 @@ TargetGroupSpec = _reflection.GeneratedProtocolMessageType('TargetGroupSpec', (_
   })
 _sym_db.RegisterMessage(TargetGroupSpec)
 _sym_db.RegisterMessage(TargetGroupSpec.LabelsEntry)
+
+ApplicationLoadBalancerSpec = _reflection.GeneratedProtocolMessageType('ApplicationLoadBalancerSpec', (_message.Message,), {
+  'DESCRIPTOR' : _APPLICATIONLOADBALANCERSPEC,
+  '__module__' : 'yandex.cloud.compute.v1.instancegroup.instance_group_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.instancegroup.ApplicationLoadBalancerSpec)
+  })
+_sym_db.RegisterMessage(ApplicationLoadBalancerSpec)
+
+ApplicationTargetGroupSpec = _reflection.GeneratedProtocolMessageType('ApplicationTargetGroupSpec', (_message.Message,), {
+
+  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
+    'DESCRIPTOR' : _APPLICATIONTARGETGROUPSPEC_LABELSENTRY,
+    '__module__' : 'yandex.cloud.compute.v1.instancegroup.instance_group_pb2'
+    # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.instancegroup.ApplicationTargetGroupSpec.LabelsEntry)
+    })
+  ,
+  'DESCRIPTOR' : _APPLICATIONTARGETGROUPSPEC,
+  '__module__' : 'yandex.cloud.compute.v1.instancegroup.instance_group_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.instancegroup.ApplicationTargetGroupSpec)
+  })
+_sym_db.RegisterMessage(ApplicationTargetGroupSpec)
+_sym_db.RegisterMessage(ApplicationTargetGroupSpec.LabelsEntry)
 
 HealthChecksSpec = _reflection.GeneratedProtocolMessageType('HealthChecksSpec', (_message.Message,), {
   'DESCRIPTOR' : _HEALTHCHECKSSPEC,
@@ -2831,10 +3051,14 @@ _ATTACHEDDISKSPEC.fields_by_name['mode']._options = None
 _ATTACHEDDISKSPEC.fields_by_name['device_name']._options = None
 _ATTACHEDDISKSPEC.fields_by_name['disk_spec']._options = None
 _ATTACHEDDISKSPEC.fields_by_name['disk_id']._options = None
+_DNSRECORDSPEC.fields_by_name['fqdn']._options = None
+_DNSRECORDSPEC.fields_by_name['ttl']._options = None
 _TARGETGROUPSPEC_LABELSENTRY._options = None
 _TARGETGROUPSPEC.fields_by_name['name']._options = None
 _TARGETGROUPSPEC.fields_by_name['description']._options = None
 _TARGETGROUPSPEC.fields_by_name['labels']._options = None
+_APPLICATIONLOADBALANCERSPEC.fields_by_name['target_group_spec']._options = None
+_APPLICATIONTARGETGROUPSPEC_LABELSENTRY._options = None
 _HEALTHCHECKSSPEC.fields_by_name['health_check_specs']._options = None
 _HEALTHCHECKSPEC_TCPOPTIONS.fields_by_name['port']._options = None
 _HEALTHCHECKSPEC_HTTPOPTIONS.fields_by_name['port']._options = None
