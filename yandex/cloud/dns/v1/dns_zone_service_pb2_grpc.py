@@ -130,18 +130,18 @@ class DnsZoneServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def UpdateRecordSets(self, request, context):
-        """Метод для строго консистентного изменения состояния зоны. Возвращает ошибку если удаляемая запись не найдена, если
-        у записи с таким ключом не совпадают остальные поля, или добавляемая запись с заданным ключом уже существует. Если
-        запись по одному и тому же ключу находится в обоих списках, то она заменяется на запись в списке добавленных.
+        """Method with strict control for changing zone state. Returns error when deleted record is not found, found record
+        with matched type and name but different ttl or value, or on attempt to add record with existing name and type.
+        Deletions come first so if record with same name and type is present in both lists then existing record will be
+        deleted and new one added.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpsertRecordSets(self, request, context):
-        """Метод без строго контроля для изменения состояния зоны. При удалении не проверяет наличие удаляемой записи.
-        Удаляет рекорды не по совпадению ключа, а по полному совпадению всех полей, что позволяет удалить часть рекордов из
-        рекордсета.
+        """Method without strict control for changing zone state. Do not returns error when deleted record is not found.
+        Delete records that match all specified fields which allows to delete only specified records from record set.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
