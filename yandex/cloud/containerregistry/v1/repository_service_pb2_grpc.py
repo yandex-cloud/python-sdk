@@ -38,9 +38,9 @@ class RepositoryServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessBindingsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessBindingsResponse.FromString,
                 )
-        self.Create = channel.unary_unary(
-                '/yandex.cloud.containerregistry.v1.RepositoryService/Create',
-                request_serializer=yandex_dot_cloud_dot_containerregistry_dot_v1_dot_repository__service__pb2.CreateRepositoryRequest.SerializeToString,
+        self.Upsert = channel.unary_unary(
+                '/yandex.cloud.containerregistry.v1.RepositoryService/Upsert',
+                request_serializer=yandex_dot_cloud_dot_containerregistry_dot_v1_dot_repository__service__pb2.UpsertRepositoryRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
         self.Delete = channel.unary_unary(
@@ -98,8 +98,8 @@ class RepositoryServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def Create(self, request, context):
-        """Creates a repository in the specified registry.
+    def Upsert(self, request, context):
+        """Upserts a repository in the specified registry.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -149,9 +149,9 @@ def add_RepositoryServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessBindingsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessBindingsResponse.SerializeToString,
             ),
-            'Create': grpc.unary_unary_rpc_method_handler(
-                    servicer.Create,
-                    request_deserializer=yandex_dot_cloud_dot_containerregistry_dot_v1_dot_repository__service__pb2.CreateRepositoryRequest.FromString,
+            'Upsert': grpc.unary_unary_rpc_method_handler(
+                    servicer.Upsert,
+                    request_deserializer=yandex_dot_cloud_dot_containerregistry_dot_v1_dot_repository__service__pb2.UpsertRepositoryRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'Delete': grpc.unary_unary_rpc_method_handler(
@@ -249,7 +249,7 @@ class RepositoryService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def Create(request,
+    def Upsert(request,
             target,
             options=(),
             channel_credentials=None,
@@ -259,8 +259,8 @@ class RepositoryService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.containerregistry.v1.RepositoryService/Create',
-            yandex_dot_cloud_dot_containerregistry_dot_v1_dot_repository__service__pb2.CreateRepositoryRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.containerregistry.v1.RepositoryService/Upsert',
+            yandex_dot_cloud_dot_containerregistry_dot_v1_dot_repository__service__pb2.UpsertRepositoryRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
