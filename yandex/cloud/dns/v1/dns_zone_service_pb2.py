@@ -26,7 +26,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\027yandex.cloud.api.dns.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/dns/v1;dns',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n*yandex/cloud/dns/v1/dns_zone_service.proto\x12\x13yandex.cloud.dns.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/access/access.proto\x1a yandex/cloud/api/operation.proto\x1a\"yandex/cloud/dns/v1/dns_zone.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\".\n\x11GetDnsZoneRequest\x12\x19\n\x0b\x64ns_zone_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\x89\x01\n\x13ListDnsZonesRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"`\n\x14ListDnsZonesResponse\x12/\n\tdns_zones\x18\x01 \x03(\x0b\x32\x1c.yandex.cloud.dns.v1.DnsZone\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x8b\x04\n\x14\x43reateDnsZoneRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\x8a\xc8\x31\x04<=50\xe8\xc7\x31\x01\x12\x32\n\x04name\x18\x02 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8e\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x35.yandex.cloud.dns.v1.CreateDnsZoneRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x38\n\x04zone\x18\x05 \x01(\tB*\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=255\xf2\xc7\x31\x19[.]|[a-z0-9][-a-z0-9.]*\\.\x12\x42\n\x12private_visibility\x18\x06 \x01(\x0b\x32&.yandex.cloud.dns.v1.PrivateVisibility\x12@\n\x11public_visibility\x18\x07 \x01(\x0b\x32%.yandex.cloud.dns.v1.PublicVisibility\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\",\n\x15\x43reateDnsZoneMetadata\x12\x13\n\x0b\x64ns_zone_id\x18\x01 \x01(\t\"\xfe\x03\n\x14UpdateDnsZoneRequest\x12\x1b\n\x0b\x64ns_zone_id\x18\x01 \x01(\tB\x06\x8a\xc8\x31\x02\x32\x30\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8e\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x35.yandex.cloud.dns.v1.UpdateDnsZoneRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x42\n\x12private_visibility\x18\x06 \x01(\x0b\x32&.yandex.cloud.dns.v1.PrivateVisibility\x12@\n\x11public_visibility\x18\x07 \x01(\x0b\x32%.yandex.cloud.dns.v1.PublicVisibility\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\",\n\x15UpdateDnsZoneMetadata\x12\x13\n\x0b\x64ns_zone_id\x18\x01 \x01(\t\"3\n\x14\x44\x65leteDnsZoneRequest\x12\x1b\n\x0b\x64ns_zone_id\x18\x01 \x01(\tB\x06\x8a\xc8\x31\x02\x32\x30\",\n\x15\x44\x65leteDnsZoneMetadata\x12\x13\n\x0b\x64ns_zone_id\x18\x01 \x01(\t\"r\n\x1aGetDnsZoneRecordSetRequest\x12\x1b\n\x0b\x64ns_zone_id\x18\x01 \x01(\tB\x06\x8a\xc8\x31\x02\x32\x30\x12\x1b\n\x04name\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=255\x12\x1a\n\x04type\x18\x03 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=10\"\xb1\x01\n\x1cListDnsZoneRecordSetsRequest\x12\x1b\n\x0b\x64ns_zone_id\x18\x01 \x01(\tB\x06\x8a\xc8\x31\x02\x32\x30\x12\x1d\n\nsub_domain\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=255\x12\x16\n\x04type\x18\x03 \x01(\tB\x08\x8a\xc8\x31\x04<=10\x12\x1d\n\tpage_size\x18\x04 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1e\n\npage_token\x18\x05 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"m\n\x1dListDnsZoneRecordSetsResponse\x12\x33\n\x0brecord_sets\x18\x01 \x03(\x0b\x32\x1e.yandex.cloud.dns.v1.RecordSet\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xb4\x01\n\x17UpdateRecordSetsRequest\x12\x1b\n\x0b\x64ns_zone_id\x18\x01 \x01(\tB\x06\x8a\xc8\x31\x02\x32\x30\x12=\n\tdeletions\x18\x02 \x03(\x0b\x32\x1e.yandex.cloud.dns.v1.RecordSetB\n\x82\xc8\x31\x06<=1000\x12=\n\tadditions\x18\x03 \x03(\x0b\x32\x1e.yandex.cloud.dns.v1.RecordSetB\n\x82\xc8\x31\x06<=1000\"\x1a\n\x18UpdateRecordSetsMetadata\"\xf3\x01\n\x17UpsertRecordSetsRequest\x12\x1b\n\x0b\x64ns_zone_id\x18\x01 \x01(\tB\x06\x8a\xc8\x31\x02\x32\x30\x12=\n\tdeletions\x18\x02 \x03(\x0b\x32\x1e.yandex.cloud.dns.v1.RecordSetB\n\x82\xc8\x31\x06<=1000\x12@\n\x0creplacements\x18\x03 \x03(\x0b\x32\x1e.yandex.cloud.dns.v1.RecordSetB\n\x82\xc8\x31\x06<=1000\x12:\n\x06merges\x18\x04 \x03(\x0b\x32\x1e.yandex.cloud.dns.v1.RecordSetB\n\x82\xc8\x31\x06<=1000\"\x1a\n\x18UpsertRecordSetsMetadata\"\x96\x01\n\x1cListDnsZoneOperationsRequest\x12\x1b\n\x0b\x64ns_zone_id\x18\x01 \x01(\tB\x06\x8a\xc8\x31\x02\x32\x30\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"o\n\x1dListDnsZoneOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xf0\x11\n\x0e\x44nsZoneService\x12p\n\x03Get\x12&.yandex.cloud.dns.v1.GetDnsZoneRequest\x1a\x1c.yandex.cloud.dns.v1.DnsZone\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/dns/v1/zones/{dns_zone_id}\x12r\n\x04List\x12(.yandex.cloud.dns.v1.ListDnsZonesRequest\x1a).yandex.cloud.dns.v1.ListDnsZonesResponse\"\x15\x82\xd3\xe4\x93\x02\x0f\x12\r/dns/v1/zones\x12\x94\x01\n\x06\x43reate\x12).yandex.cloud.dns.v1.CreateDnsZoneRequest\x1a!.yandex.cloud.operation.Operation\"<\x82\xd3\xe4\x93\x02\x12\"\r/dns/v1/zones:\x01*\xb2\xd2* \n\x15\x43reateDnsZoneMetadata\x12\x07\x44nsZone\x12\xa2\x01\n\x06Update\x12).yandex.cloud.dns.v1.UpdateDnsZoneRequest\x1a!.yandex.cloud.operation.Operation\"J\x82\xd3\xe4\x93\x02 2\x1b/dns/v1/zones/{dns_zone_id}:\x01*\xb2\xd2* \n\x15UpdateDnsZoneMetadata\x12\x07\x44nsZone\x12\xad\x01\n\x06\x44\x65lete\x12).yandex.cloud.dns.v1.DeleteDnsZoneRequest\x1a!.yandex.cloud.operation.Operation\"U\x82\xd3\xe4\x93\x02\x1d*\x1b/dns/v1/zones/{dns_zone_id}\xb2\xd2*.\n\x15\x44\x65leteDnsZoneMetadata\x12\x15google.protobuf.Empty\x12\x91\x01\n\x0cGetRecordSet\x12/.yandex.cloud.dns.v1.GetDnsZoneRecordSetRequest\x1a\x1e.yandex.cloud.dns.v1.RecordSet\"0\x82\xd3\xe4\x93\x02*\x12(/dns/v1/zones/{dns_zone_id}:getRecordSet\x12\xab\x01\n\x0eListRecordSets\x12\x31.yandex.cloud.dns.v1.ListDnsZoneRecordSetsRequest\x1a\x32.yandex.cloud.dns.v1.ListDnsZoneRecordSetsResponse\"2\x82\xd3\xe4\x93\x02,\x12*/dns/v1/zones/{dns_zone_id}:listRecordSets\x12\xd1\x01\n\x10UpdateRecordSets\x12,.yandex.cloud.dns.v1.UpdateRecordSetsRequest\x1a!.yandex.cloud.operation.Operation\"l\x82\xd3\xe4\x93\x02\x31\",/dns/v1/zones/{dns_zone_id}:updateRecordSets:\x01*\xb2\xd2*1\n\x18UpdateRecordSetsMetadata\x12\x15google.protobuf.Empty\x12\xd1\x01\n\x10UpsertRecordSets\x12,.yandex.cloud.dns.v1.UpsertRecordSetsRequest\x1a!.yandex.cloud.operation.Operation\"l\x82\xd3\xe4\x93\x02\x31\",/dns/v1/zones/{dns_zone_id}:upsertRecordSets:\x01*\xb2\xd2*1\n\x18UpsertRecordSetsMetadata\x12\x15google.protobuf.Empty\x12\xa7\x01\n\x0eListOperations\x12\x31.yandex.cloud.dns.v1.ListDnsZoneOperationsRequest\x1a\x32.yandex.cloud.dns.v1.ListDnsZoneOperationsResponse\".\x82\xd3\xe4\x93\x02(\x12&/dns/v1/zones/{dns_zone_id}/operations\x12\xad\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"6\x82\xd3\xe4\x93\x02\x30\x12./dns/v1/zones/{resource_id}:listAccessBindings\x12\xdc\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"u\x82\xd3\xe4\x93\x02\x32\"-/dns/v1/zones/{resource_id}:setAccessBindings:\x01*\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\xe8\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"{\x82\xd3\xe4\x93\x02\x35\"0/dns/v1/zones/{resource_id}:updateAccessBindings:\x01*\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.EmptyBV\n\x17yandex.cloud.api.dns.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/dns/v1;dnsb\x06proto3'
+  serialized_pb=b'\n*yandex/cloud/dns/v1/dns_zone_service.proto\x12\x13yandex.cloud.dns.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/access/access.proto\x1a yandex/cloud/api/operation.proto\x1a\"yandex/cloud/dns/v1/dns_zone.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\".\n\x11GetDnsZoneRequest\x12\x19\n\x0b\x64ns_zone_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\x89\x01\n\x13ListDnsZonesRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"`\n\x14ListDnsZonesResponse\x12/\n\tdns_zones\x18\x01 \x03(\x0b\x32\x1c.yandex.cloud.dns.v1.DnsZone\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x8b\x04\n\x14\x43reateDnsZoneRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\x8a\xc8\x31\x04<=50\xe8\xc7\x31\x01\x12\x32\n\x04name\x18\x02 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8e\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x35.yandex.cloud.dns.v1.CreateDnsZoneRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x38\n\x04zone\x18\x05 \x01(\tB*\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=255\xf2\xc7\x31\x19[.]|[a-z0-9][-a-z0-9.]*\\.\x12\x42\n\x12private_visibility\x18\x06 \x01(\x0b\x32&.yandex.cloud.dns.v1.PrivateVisibility\x12@\n\x11public_visibility\x18\x07 \x01(\x0b\x32%.yandex.cloud.dns.v1.PublicVisibility\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\",\n\x15\x43reateDnsZoneMetadata\x12\x13\n\x0b\x64ns_zone_id\x18\x01 \x01(\t\"\xfe\x03\n\x14UpdateDnsZoneRequest\x12\x1b\n\x0b\x64ns_zone_id\x18\x01 \x01(\tB\x06\x8a\xc8\x31\x02\x32\x30\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8e\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x35.yandex.cloud.dns.v1.UpdateDnsZoneRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x42\n\x12private_visibility\x18\x06 \x01(\x0b\x32&.yandex.cloud.dns.v1.PrivateVisibility\x12@\n\x11public_visibility\x18\x07 \x01(\x0b\x32%.yandex.cloud.dns.v1.PublicVisibility\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\",\n\x15UpdateDnsZoneMetadata\x12\x13\n\x0b\x64ns_zone_id\x18\x01 \x01(\t\"3\n\x14\x44\x65leteDnsZoneRequest\x12\x1b\n\x0b\x64ns_zone_id\x18\x01 \x01(\tB\x06\x8a\xc8\x31\x02\x32\x30\",\n\x15\x44\x65leteDnsZoneMetadata\x12\x13\n\x0b\x64ns_zone_id\x18\x01 \x01(\t\"r\n\x1aGetDnsZoneRecordSetRequest\x12\x1b\n\x0b\x64ns_zone_id\x18\x01 \x01(\tB\x06\x8a\xc8\x31\x02\x32\x30\x12\x1b\n\x04name\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=255\x12\x1a\n\x04type\x18\x03 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=10\"\x96\x01\n\x1cListDnsZoneRecordSetsRequest\x12\x1b\n\x0b\x64ns_zone_id\x18\x01 \x01(\tB\x06\x8a\xc8\x31\x02\x32\x30\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"m\n\x1dListDnsZoneRecordSetsResponse\x12\x33\n\x0brecord_sets\x18\x01 \x03(\x0b\x32\x1e.yandex.cloud.dns.v1.RecordSet\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xb4\x01\n\x17UpdateRecordSetsRequest\x12\x1b\n\x0b\x64ns_zone_id\x18\x01 \x01(\tB\x06\x8a\xc8\x31\x02\x32\x30\x12=\n\tdeletions\x18\x02 \x03(\x0b\x32\x1e.yandex.cloud.dns.v1.RecordSetB\n\x82\xc8\x31\x06<=1000\x12=\n\tadditions\x18\x03 \x03(\x0b\x32\x1e.yandex.cloud.dns.v1.RecordSetB\n\x82\xc8\x31\x06<=1000\"\x1a\n\x18UpdateRecordSetsMetadata\"\xf3\x01\n\x17UpsertRecordSetsRequest\x12\x1b\n\x0b\x64ns_zone_id\x18\x01 \x01(\tB\x06\x8a\xc8\x31\x02\x32\x30\x12=\n\tdeletions\x18\x02 \x03(\x0b\x32\x1e.yandex.cloud.dns.v1.RecordSetB\n\x82\xc8\x31\x06<=1000\x12@\n\x0creplacements\x18\x03 \x03(\x0b\x32\x1e.yandex.cloud.dns.v1.RecordSetB\n\x82\xc8\x31\x06<=1000\x12:\n\x06merges\x18\x04 \x03(\x0b\x32\x1e.yandex.cloud.dns.v1.RecordSetB\n\x82\xc8\x31\x06<=1000\"\x1a\n\x18UpsertRecordSetsMetadata\"\x96\x01\n\x1cListDnsZoneOperationsRequest\x12\x1b\n\x0b\x64ns_zone_id\x18\x01 \x01(\tB\x06\x8a\xc8\x31\x02\x32\x30\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"o\n\x1dListDnsZoneOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xf0\x11\n\x0e\x44nsZoneService\x12p\n\x03Get\x12&.yandex.cloud.dns.v1.GetDnsZoneRequest\x1a\x1c.yandex.cloud.dns.v1.DnsZone\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/dns/v1/zones/{dns_zone_id}\x12r\n\x04List\x12(.yandex.cloud.dns.v1.ListDnsZonesRequest\x1a).yandex.cloud.dns.v1.ListDnsZonesResponse\"\x15\x82\xd3\xe4\x93\x02\x0f\x12\r/dns/v1/zones\x12\x94\x01\n\x06\x43reate\x12).yandex.cloud.dns.v1.CreateDnsZoneRequest\x1a!.yandex.cloud.operation.Operation\"<\x82\xd3\xe4\x93\x02\x12\"\r/dns/v1/zones:\x01*\xb2\xd2* \n\x15\x43reateDnsZoneMetadata\x12\x07\x44nsZone\x12\xa2\x01\n\x06Update\x12).yandex.cloud.dns.v1.UpdateDnsZoneRequest\x1a!.yandex.cloud.operation.Operation\"J\x82\xd3\xe4\x93\x02 2\x1b/dns/v1/zones/{dns_zone_id}:\x01*\xb2\xd2* \n\x15UpdateDnsZoneMetadata\x12\x07\x44nsZone\x12\xad\x01\n\x06\x44\x65lete\x12).yandex.cloud.dns.v1.DeleteDnsZoneRequest\x1a!.yandex.cloud.operation.Operation\"U\x82\xd3\xe4\x93\x02\x1d*\x1b/dns/v1/zones/{dns_zone_id}\xb2\xd2*.\n\x15\x44\x65leteDnsZoneMetadata\x12\x15google.protobuf.Empty\x12\x91\x01\n\x0cGetRecordSet\x12/.yandex.cloud.dns.v1.GetDnsZoneRecordSetRequest\x1a\x1e.yandex.cloud.dns.v1.RecordSet\"0\x82\xd3\xe4\x93\x02*\x12(/dns/v1/zones/{dns_zone_id}:getRecordSet\x12\xab\x01\n\x0eListRecordSets\x12\x31.yandex.cloud.dns.v1.ListDnsZoneRecordSetsRequest\x1a\x32.yandex.cloud.dns.v1.ListDnsZoneRecordSetsResponse\"2\x82\xd3\xe4\x93\x02,\x12*/dns/v1/zones/{dns_zone_id}:listRecordSets\x12\xd1\x01\n\x10UpdateRecordSets\x12,.yandex.cloud.dns.v1.UpdateRecordSetsRequest\x1a!.yandex.cloud.operation.Operation\"l\x82\xd3\xe4\x93\x02\x31\",/dns/v1/zones/{dns_zone_id}:updateRecordSets:\x01*\xb2\xd2*1\n\x18UpdateRecordSetsMetadata\x12\x15google.protobuf.Empty\x12\xd1\x01\n\x10UpsertRecordSets\x12,.yandex.cloud.dns.v1.UpsertRecordSetsRequest\x1a!.yandex.cloud.operation.Operation\"l\x82\xd3\xe4\x93\x02\x31\",/dns/v1/zones/{dns_zone_id}:upsertRecordSets:\x01*\xb2\xd2*1\n\x18UpsertRecordSetsMetadata\x12\x15google.protobuf.Empty\x12\xa7\x01\n\x0eListOperations\x12\x31.yandex.cloud.dns.v1.ListDnsZoneOperationsRequest\x1a\x32.yandex.cloud.dns.v1.ListDnsZoneOperationsResponse\".\x82\xd3\xe4\x93\x02(\x12&/dns/v1/zones/{dns_zone_id}/operations\x12\xad\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"6\x82\xd3\xe4\x93\x02\x30\x12./dns/v1/zones/{resource_id}:listAccessBindings\x12\xdc\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"u\x82\xd3\xe4\x93\x02\x32\"-/dns/v1/zones/{resource_id}:setAccessBindings:\x01*\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\xe8\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"{\x82\xd3\xe4\x93\x02\x35\"0/dns/v1/zones/{resource_id}:updateAccessBindings:\x01*\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.EmptyBV\n\x17yandex.cloud.api.dns.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/dns/v1;dnsb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_access_dot_access__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_dns_dot_v1_dot_dns__zone__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -571,29 +571,22 @@ _LISTDNSZONERECORDSETSREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=b'\212\3101\00220', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='sub_domain', full_name='yandex.cloud.dns.v1.ListDnsZoneRecordSetsRequest.sub_domain', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=255', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='type', full_name='yandex.cloud.dns.v1.ListDnsZoneRecordSetsRequest.type', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\004<=10', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.dns.v1.ListDnsZoneRecordSetsRequest.page_size', index=3,
-      number=4, type=3, cpp_type=2, label=1,
+      name='page_size', full_name='yandex.cloud.dns.v1.ListDnsZoneRecordSetsRequest.page_size', index=1,
+      number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.dns.v1.ListDnsZoneRecordSetsRequest.page_token', index=4,
-      number=5, type=9, cpp_type=9, label=1,
+      name='page_token', full_name='yandex.cloud.dns.v1.ListDnsZoneRecordSetsRequest.page_token', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\212\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='filter', full_name='yandex.cloud.dns.v1.ListDnsZoneRecordSetsRequest.filter', index=3,
+      number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -611,7 +604,7 @@ _LISTDNSZONERECORDSETSREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1939,
-  serialized_end=2116,
+  serialized_end=2089,
 )
 
 
@@ -649,8 +642,8 @@ _LISTDNSZONERECORDSETSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2118,
-  serialized_end=2227,
+  serialized_start=2091,
+  serialized_end=2200,
 )
 
 
@@ -695,8 +688,8 @@ _UPDATERECORDSETSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2230,
-  serialized_end=2410,
+  serialized_start=2203,
+  serialized_end=2383,
 )
 
 
@@ -720,8 +713,8 @@ _UPDATERECORDSETSMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2412,
-  serialized_end=2438,
+  serialized_start=2385,
+  serialized_end=2411,
 )
 
 
@@ -773,8 +766,8 @@ _UPSERTRECORDSETSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2441,
-  serialized_end=2684,
+  serialized_start=2414,
+  serialized_end=2657,
 )
 
 
@@ -798,8 +791,8 @@ _UPSERTRECORDSETSMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2686,
-  serialized_end=2712,
+  serialized_start=2659,
+  serialized_end=2685,
 )
 
 
@@ -851,8 +844,8 @@ _LISTDNSZONEOPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2715,
-  serialized_end=2865,
+  serialized_start=2688,
+  serialized_end=2838,
 )
 
 
@@ -890,8 +883,8 @@ _LISTDNSZONEOPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2867,
-  serialized_end=2978,
+  serialized_start=2840,
+  serialized_end=2951,
 )
 
 _LISTDNSZONESRESPONSE.fields_by_name['dns_zones'].message_type = yandex_dot_cloud_dot_dns_dot_v1_dot_dns__zone__pb2._DNSZONE
@@ -1096,10 +1089,9 @@ _GETDNSZONERECORDSETREQUEST.fields_by_name['dns_zone_id']._options = None
 _GETDNSZONERECORDSETREQUEST.fields_by_name['name']._options = None
 _GETDNSZONERECORDSETREQUEST.fields_by_name['type']._options = None
 _LISTDNSZONERECORDSETSREQUEST.fields_by_name['dns_zone_id']._options = None
-_LISTDNSZONERECORDSETSREQUEST.fields_by_name['sub_domain']._options = None
-_LISTDNSZONERECORDSETSREQUEST.fields_by_name['type']._options = None
 _LISTDNSZONERECORDSETSREQUEST.fields_by_name['page_size']._options = None
 _LISTDNSZONERECORDSETSREQUEST.fields_by_name['page_token']._options = None
+_LISTDNSZONERECORDSETSREQUEST.fields_by_name['filter']._options = None
 _UPDATERECORDSETSREQUEST.fields_by_name['dns_zone_id']._options = None
 _UPDATERECORDSETSREQUEST.fields_by_name['deletions']._options = None
 _UPDATERECORDSETSREQUEST.fields_by_name['additions']._options = None
@@ -1119,8 +1111,8 @@ _DNSZONESERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=2981,
-  serialized_end=5269,
+  serialized_start=2954,
+  serialized_end=5242,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
