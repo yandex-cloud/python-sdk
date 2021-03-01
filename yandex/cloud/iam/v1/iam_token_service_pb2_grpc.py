@@ -20,6 +20,11 @@ class IamTokenServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_iam__token__service__pb2.CreateIamTokenRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_iam__token__service__pb2.CreateIamTokenResponse.FromString,
                 )
+        self.CreateForServiceAccount = channel.unary_unary(
+                '/yandex.cloud.iam.v1.IamTokenService/CreateForServiceAccount',
+                request_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_iam__token__service__pb2.CreateIamTokenForServiceAccountRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_iam__token__service__pb2.CreateIamTokenResponse.FromString,
+                )
 
 
 class IamTokenServiceServicer(object):
@@ -33,12 +38,24 @@ class IamTokenServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def CreateForServiceAccount(self, request, context):
+        """Create iam token for service account.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_IamTokenServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'Create': grpc.unary_unary_rpc_method_handler(
                     servicer.Create,
                     request_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_iam__token__service__pb2.CreateIamTokenRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_iam__token__service__pb2.CreateIamTokenResponse.SerializeToString,
+            ),
+            'CreateForServiceAccount': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateForServiceAccount,
+                    request_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_iam__token__service__pb2.CreateIamTokenForServiceAccountRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_iam__token__service__pb2.CreateIamTokenResponse.SerializeToString,
             ),
     }
@@ -65,6 +82,23 @@ class IamTokenService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.iam.v1.IamTokenService/Create',
             yandex_dot_cloud_dot_iam_dot_v1_dot_iam__token__service__pb2.CreateIamTokenRequest.SerializeToString,
+            yandex_dot_cloud_dot_iam_dot_v1_dot_iam__token__service__pb2.CreateIamTokenResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateForServiceAccount(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.iam.v1.IamTokenService/CreateForServiceAccount',
+            yandex_dot_cloud_dot_iam_dot_v1_dot_iam__token__service__pb2.CreateIamTokenForServiceAccountRequest.SerializeToString,
             yandex_dot_cloud_dot_iam_dot_v1_dot_iam__token__service__pb2.CreateIamTokenResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

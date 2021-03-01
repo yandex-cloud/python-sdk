@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\027yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iam',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n+yandex/cloud/iam/v1/iam_token_service.proto\x12\x13yandex.cloud.iam.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"_\n\x15\x43reateIamTokenRequest\x12%\n\x1byandex_passport_oauth_token\x18\x01 \x01(\tH\x00\x12\r\n\x03jwt\x18\x02 \x01(\tH\x00\x42\x10\n\x08identity\x12\x04\xc0\xc1\x31\x01\"[\n\x16\x43reateIamTokenResponse\x12\x11\n\tiam_token\x18\x01 \x01(\t\x12.\n\nexpires_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp2\x8f\x01\n\x0fIamTokenService\x12|\n\x06\x43reate\x12*.yandex.cloud.iam.v1.CreateIamTokenRequest\x1a+.yandex.cloud.iam.v1.CreateIamTokenResponse\"\x19\x82\xd3\xe4\x93\x02\x13\"\x0e/iam/v1/tokens:\x01*BV\n\x17yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3'
+  serialized_pb=b'\n+yandex/cloud/iam/v1/iam_token_service.proto\x12\x13yandex.cloud.iam.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"_\n\x15\x43reateIamTokenRequest\x12%\n\x1byandex_passport_oauth_token\x18\x01 \x01(\tH\x00\x12\r\n\x03jwt\x18\x02 \x01(\tH\x00\x42\x10\n\x08identity\x12\x04\xc0\xc1\x31\x01\"[\n\x16\x43reateIamTokenResponse\x12\x11\n\tiam_token\x18\x01 \x01(\t\x12.\n\nexpires_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"R\n&CreateIamTokenForServiceAccountRequest\x12(\n\x12service_account_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=502\xc8\x02\n\x0fIamTokenService\x12|\n\x06\x43reate\x12*.yandex.cloud.iam.v1.CreateIamTokenRequest\x1a+.yandex.cloud.iam.v1.CreateIamTokenResponse\"\x19\x82\xd3\xe4\x93\x02\x13\"\x0e/iam/v1/tokens:\x01*\x12\xb6\x01\n\x17\x43reateForServiceAccount\x12;.yandex.cloud.iam.v1.CreateIamTokenForServiceAccountRequest\x1a+.yandex.cloud.iam.v1.CreateIamTokenResponse\"1\x82\xd3\xe4\x93\x02+\"&/iam/v1/tokens:createForServiceAccount:\x01*BV\n\x17yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -111,6 +111,38 @@ _CREATEIAMTOKENRESPONSE = _descriptor.Descriptor(
   serialized_end=350,
 )
 
+
+_CREATEIAMTOKENFORSERVICEACCOUNTREQUEST = _descriptor.Descriptor(
+  name='CreateIamTokenForServiceAccountRequest',
+  full_name='yandex.cloud.iam.v1.CreateIamTokenForServiceAccountRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='service_account_id', full_name='yandex.cloud.iam.v1.CreateIamTokenForServiceAccountRequest.service_account_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=352,
+  serialized_end=434,
+)
+
 _CREATEIAMTOKENREQUEST.oneofs_by_name['identity'].fields.append(
   _CREATEIAMTOKENREQUEST.fields_by_name['yandex_passport_oauth_token'])
 _CREATEIAMTOKENREQUEST.fields_by_name['yandex_passport_oauth_token'].containing_oneof = _CREATEIAMTOKENREQUEST.oneofs_by_name['identity']
@@ -120,6 +152,7 @@ _CREATEIAMTOKENREQUEST.fields_by_name['jwt'].containing_oneof = _CREATEIAMTOKENR
 _CREATEIAMTOKENRESPONSE.fields_by_name['expires_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 DESCRIPTOR.message_types_by_name['CreateIamTokenRequest'] = _CREATEIAMTOKENREQUEST
 DESCRIPTOR.message_types_by_name['CreateIamTokenResponse'] = _CREATEIAMTOKENRESPONSE
+DESCRIPTOR.message_types_by_name['CreateIamTokenForServiceAccountRequest'] = _CREATEIAMTOKENFORSERVICEACCOUNTREQUEST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 CreateIamTokenRequest = _reflection.GeneratedProtocolMessageType('CreateIamTokenRequest', (_message.Message,), {
@@ -136,9 +169,17 @@ CreateIamTokenResponse = _reflection.GeneratedProtocolMessageType('CreateIamToke
   })
 _sym_db.RegisterMessage(CreateIamTokenResponse)
 
+CreateIamTokenForServiceAccountRequest = _reflection.GeneratedProtocolMessageType('CreateIamTokenForServiceAccountRequest', (_message.Message,), {
+  'DESCRIPTOR' : _CREATEIAMTOKENFORSERVICEACCOUNTREQUEST,
+  '__module__' : 'yandex.cloud.iam.v1.iam_token_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.iam.v1.CreateIamTokenForServiceAccountRequest)
+  })
+_sym_db.RegisterMessage(CreateIamTokenForServiceAccountRequest)
+
 
 DESCRIPTOR._options = None
 _CREATEIAMTOKENREQUEST.oneofs_by_name['identity']._options = None
+_CREATEIAMTOKENFORSERVICEACCOUNTREQUEST.fields_by_name['service_account_id']._options = None
 
 _IAMTOKENSERVICE = _descriptor.ServiceDescriptor(
   name='IamTokenService',
@@ -147,8 +188,8 @@ _IAMTOKENSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=353,
-  serialized_end=496,
+  serialized_start=437,
+  serialized_end=765,
   methods=[
   _descriptor.MethodDescriptor(
     name='Create',
@@ -158,6 +199,16 @@ _IAMTOKENSERVICE = _descriptor.ServiceDescriptor(
     input_type=_CREATEIAMTOKENREQUEST,
     output_type=_CREATEIAMTOKENRESPONSE,
     serialized_options=b'\202\323\344\223\002\023\"\016/iam/v1/tokens:\001*',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='CreateForServiceAccount',
+    full_name='yandex.cloud.iam.v1.IamTokenService.CreateForServiceAccount',
+    index=1,
+    containing_service=None,
+    input_type=_CREATEIAMTOKENFORSERVICEACCOUNTREQUEST,
+    output_type=_CREATEIAMTOKENRESPONSE,
+    serialized_options=b'\202\323\344\223\002+\"&/iam/v1/tokens:createForServiceAccount:\001*',
     create_key=_descriptor._internal_create_key,
   ),
 ])
