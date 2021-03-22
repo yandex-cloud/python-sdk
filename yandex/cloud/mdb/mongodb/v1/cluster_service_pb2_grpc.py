@@ -222,7 +222,7 @@ class ClusterServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def RescheduleMaintenance(self, request, context):
-        """Reschedule planned maintenance operation.
+        """Reschedules planned maintenance operation.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -314,14 +314,14 @@ class ClusterServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ResetupHosts(self, request, context):
-        """Resetup hosts.
+        """Resetups hosts.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def RestartHosts(self, request, context):
-        """Restart hosts.
+        """Restarts hosts.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

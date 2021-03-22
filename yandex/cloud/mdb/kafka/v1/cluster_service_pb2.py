@@ -28,7 +28,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\035yandex.cloud.api.mdb.kafka.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/kafka/v1;kafka',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n/yandex/cloud/mdb/kafka/v1/cluster_service.proto\x12\x19yandex.cloud.mdb.kafka.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a yandex/cloud/api/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\'yandex/cloud/mdb/kafka/v1/cluster.proto\x1a%yandex/cloud/mdb/kafka/v1/topic.proto\x1a$yandex/cloud/mdb/kafka/v1/user.proto\"5\n\x11GetClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x90\x01\n\x13ListClustersRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"e\n\x14ListClustersResponse\x12\x34\n\x08\x63lusters\x18\x01 \x03(\x0b\x32\".yandex.cloud.mdb.kafka.v1.Cluster\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x9e\x05\n\x14\x43reateClusterRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12=\n\x04name\x18\x02 \x01(\tB/\xe8\xc7\x31\x01\x8a\xc8\x31\x04\x31-63\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x94\x01\n\x06labels\x18\x04 \x03(\x0b\x32;.yandex.cloud.mdb.kafka.v1.CreateClusterRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x43\n\x0b\x65nvironment\x18\x05 \x01(\x0e\x32..yandex.cloud.mdb.kafka.v1.Cluster.Environment\x12:\n\x0b\x63onfig_spec\x18\x06 \x01(\x0b\x32%.yandex.cloud.mdb.kafka.v1.ConfigSpec\x12\x39\n\x0btopic_specs\x18\x07 \x03(\x0b\x32$.yandex.cloud.mdb.kafka.v1.TopicSpec\x12\x37\n\nuser_specs\x18\x08 \x03(\x0b\x32#.yandex.cloud.mdb.kafka.v1.UserSpec\x12\x1c\n\nnetwork_id\x18\n \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x11\n\tsubnet_id\x18\x0b \x03(\t\x12\x1a\n\x12security_group_ids\x18\x0c \x03(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15\x43reateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\xc9\x03\n\x14UpdateClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8c\x01\n\x06labels\x18\x04 \x03(\x0b\x32;.yandex.cloud.mdb.kafka.v1.UpdateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12:\n\x0b\x63onfig_spec\x18\x05 \x01(\x0b\x32%.yandex.cloud.mdb.kafka.v1.ConfigSpec\x12(\n\x04name\x18\x06 \x01(\tB\x1a\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x1a\n\x12security_group_ids\x18\x07 \x03(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15UpdateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"8\n\x14\x44\x65leteClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x44\x65leteClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\xa7\x02\n\x16ListClusterLogsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x15\n\rcolumn_filter\x18\x02 \x03(\t\x12-\n\tfrom_time\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07to_time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1d\n\tpage_size\x18\x05 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x06 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1e\n\x16\x61lways_next_page_token\x18\x07 \x01(\x08\x12\x1a\n\x06\x66ilter\x18\x08 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"\xae\x01\n\tLogRecord\x12-\n\ttimestamp\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x42\n\x07message\x18\x02 \x03(\x0b\x32\x31.yandex.cloud.mdb.kafka.v1.LogRecord.MessageEntry\x1a.\n\x0cMessageEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"f\n\x17ListClusterLogsResponse\x12\x32\n\x04logs\x18\x01 \x03(\x0b\x32$.yandex.cloud.mdb.kafka.v1.LogRecord\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"b\n\x0fStreamLogRecord\x12\x34\n\x06record\x18\x01 \x01(\x0b\x32$.yandex.cloud.mdb.kafka.v1.LogRecord\x12\x19\n\x11next_record_token\x18\x02 \x01(\t\"\xec\x01\n\x18StreamClusterLogsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x15\n\rcolumn_filter\x18\x02 \x03(\t\x12-\n\tfrom_time\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07to_time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1f\n\x0crecord_token\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x06 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"~\n\x1cListClusterOperationsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"o\n\x1dListClusterOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"y\n\x17ListClusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"c\n\x18ListClusterHostsResponse\x12.\n\x05hosts\x18\x01 \x03(\x0b\x32\x1f.yandex.cloud.mdb.kafka.v1.Host\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"c\n\x12MoveClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12+\n\x15\x64\x65stination_folder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"b\n\x13MoveClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x18\n\x10source_folder_id\x18\x02 \x01(\t\x12\x1d\n\x15\x64\x65stination_folder_id\x18\x03 \x01(\t\"7\n\x13StartClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"*\n\x14StartClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"6\n\x12StopClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\")\n\x13StopClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t2\xb5\x10\n\x0e\x43lusterService\x12\x88\x01\n\x03Get\x12,.yandex.cloud.mdb.kafka.v1.GetClusterRequest\x1a\".yandex.cloud.mdb.kafka.v1.Cluster\"/\x82\xd3\xe4\x93\x02)\x12\'/managed-kafka/v1/clusters/{cluster_id}\x12\x8b\x01\n\x04List\x12..yandex.cloud.mdb.kafka.v1.ListClustersRequest\x1a/.yandex.cloud.mdb.kafka.v1.ListClustersResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/managed-kafka/v1/clusters\x12\xa7\x01\n\x06\x43reate\x12/.yandex.cloud.mdb.kafka.v1.CreateClusterRequest\x1a!.yandex.cloud.operation.Operation\"I\x82\xd3\xe4\x93\x02\x1f\"\x1a/managed-kafka/v1/clusters:\x01*\xb2\xd2* \n\x15\x43reateClusterMetadata\x12\x07\x43luster\x12\xb4\x01\n\x06Update\x12/.yandex.cloud.mdb.kafka.v1.UpdateClusterRequest\x1a!.yandex.cloud.operation.Operation\"V\x82\xd3\xe4\x93\x02,2\'/managed-kafka/v1/clusters/{cluster_id}:\x01*\xb2\xd2* \n\x15UpdateClusterMetadata\x12\x07\x43luster\x12\xbf\x01\n\x06\x44\x65lete\x12/.yandex.cloud.mdb.kafka.v1.DeleteClusterRequest\x1a!.yandex.cloud.operation.Operation\"a\x82\xd3\xe4\x93\x02)*\'/managed-kafka/v1/clusters/{cluster_id}\xb2\xd2*.\n\x15\x44\x65leteClusterMetadata\x12\x15google.protobuf.Empty\x12\xb3\x01\n\x04Move\x12-.yandex.cloud.mdb.kafka.v1.MoveClusterRequest\x1a!.yandex.cloud.operation.Operation\"Y\x82\xd3\xe4\x93\x02\x31\",/managed-kafka/v1/clusters/{cluster_id}:move:\x01*\xb2\xd2*\x1e\n\x13MoveClusterMetadata\x12\x07\x43luster\x12\xb4\x01\n\x05Start\x12..yandex.cloud.mdb.kafka.v1.StartClusterRequest\x1a!.yandex.cloud.operation.Operation\"X\x82\xd3\xe4\x93\x02/\"-/managed-kafka/v1/clusters/{cluster_id}:start\xb2\xd2*\x1f\n\x14StartClusterMetadata\x12\x07\x43luster\x12\xb0\x01\n\x04Stop\x12-.yandex.cloud.mdb.kafka.v1.StopClusterRequest\x1a!.yandex.cloud.operation.Operation\"V\x82\xd3\xe4\x93\x02.\",/managed-kafka/v1/clusters/{cluster_id}:stop\xb2\xd2*\x1e\n\x13StopClusterMetadata\x12\x07\x43luster\x12\xa7\x01\n\x08ListLogs\x12\x31.yandex.cloud.mdb.kafka.v1.ListClusterLogsRequest\x1a\x32.yandex.cloud.mdb.kafka.v1.ListClusterLogsResponse\"4\x82\xd3\xe4\x93\x02.\x12,/managed-kafka/v1/clusters/{cluster_id}:logs\x12\xac\x01\n\nStreamLogs\x12\x33.yandex.cloud.mdb.kafka.v1.StreamClusterLogsRequest\x1a*.yandex.cloud.mdb.kafka.v1.StreamLogRecord\";\x82\xd3\xe4\x93\x02\x35\x12\x33/managed-kafka/v1/clusters/{cluster_id}:stream_logs0\x01\x12\xbf\x01\n\x0eListOperations\x12\x37.yandex.cloud.mdb.kafka.v1.ListClusterOperationsRequest\x1a\x38.yandex.cloud.mdb.kafka.v1.ListClusterOperationsResponse\":\x82\xd3\xe4\x93\x02\x34\x12\x32/managed-kafka/v1/clusters/{cluster_id}/operations\x12\xab\x01\n\tListHosts\x12\x32.yandex.cloud.mdb.kafka.v1.ListClusterHostsRequest\x1a\x33.yandex.cloud.mdb.kafka.v1.ListClusterHostsResponse\"5\x82\xd3\xe4\x93\x02/\x12-/managed-kafka/v1/clusters/{cluster_id}/hostsBd\n\x1dyandex.cloud.api.mdb.kafka.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/kafka/v1;kafkab\x06proto3'
+  serialized_pb=b'\n/yandex/cloud/mdb/kafka/v1/cluster_service.proto\x12\x19yandex.cloud.mdb.kafka.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a yandex/cloud/api/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\'yandex/cloud/mdb/kafka/v1/cluster.proto\x1a%yandex/cloud/mdb/kafka/v1/topic.proto\x1a$yandex/cloud/mdb/kafka/v1/user.proto\"5\n\x11GetClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x90\x01\n\x13ListClustersRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"e\n\x14ListClustersResponse\x12\x34\n\x08\x63lusters\x18\x01 \x03(\x0b\x32\".yandex.cloud.mdb.kafka.v1.Cluster\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xb6\x05\n\x14\x43reateClusterRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12=\n\x04name\x18\x02 \x01(\tB/\xe8\xc7\x31\x01\x8a\xc8\x31\x04\x31-63\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x94\x01\n\x06labels\x18\x04 \x03(\x0b\x32;.yandex.cloud.mdb.kafka.v1.CreateClusterRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x43\n\x0b\x65nvironment\x18\x05 \x01(\x0e\x32..yandex.cloud.mdb.kafka.v1.Cluster.Environment\x12:\n\x0b\x63onfig_spec\x18\x06 \x01(\x0b\x32%.yandex.cloud.mdb.kafka.v1.ConfigSpec\x12\x39\n\x0btopic_specs\x18\x07 \x03(\x0b\x32$.yandex.cloud.mdb.kafka.v1.TopicSpec\x12\x37\n\nuser_specs\x18\x08 \x03(\x0b\x32#.yandex.cloud.mdb.kafka.v1.UserSpec\x12\x1c\n\nnetwork_id\x18\n \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x11\n\tsubnet_id\x18\x0b \x03(\t\x12\x1a\n\x12security_group_ids\x18\x0c \x03(\t\x12\x16\n\x0ehost_group_ids\x18\r \x03(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15\x43reateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\xc9\x03\n\x14UpdateClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8c\x01\n\x06labels\x18\x04 \x03(\x0b\x32;.yandex.cloud.mdb.kafka.v1.UpdateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12:\n\x0b\x63onfig_spec\x18\x05 \x01(\x0b\x32%.yandex.cloud.mdb.kafka.v1.ConfigSpec\x12(\n\x04name\x18\x06 \x01(\tB\x1a\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x1a\n\x12security_group_ids\x18\x07 \x03(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15UpdateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"8\n\x14\x44\x65leteClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x44\x65leteClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\xa7\x02\n\x16ListClusterLogsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x15\n\rcolumn_filter\x18\x02 \x03(\t\x12-\n\tfrom_time\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07to_time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1d\n\tpage_size\x18\x05 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x06 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1e\n\x16\x61lways_next_page_token\x18\x07 \x01(\x08\x12\x1a\n\x06\x66ilter\x18\x08 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"\xae\x01\n\tLogRecord\x12-\n\ttimestamp\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x42\n\x07message\x18\x02 \x03(\x0b\x32\x31.yandex.cloud.mdb.kafka.v1.LogRecord.MessageEntry\x1a.\n\x0cMessageEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"f\n\x17ListClusterLogsResponse\x12\x32\n\x04logs\x18\x01 \x03(\x0b\x32$.yandex.cloud.mdb.kafka.v1.LogRecord\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"b\n\x0fStreamLogRecord\x12\x34\n\x06record\x18\x01 \x01(\x0b\x32$.yandex.cloud.mdb.kafka.v1.LogRecord\x12\x19\n\x11next_record_token\x18\x02 \x01(\t\"\xec\x01\n\x18StreamClusterLogsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x15\n\rcolumn_filter\x18\x02 \x03(\t\x12-\n\tfrom_time\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07to_time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1f\n\x0crecord_token\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x06 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"~\n\x1cListClusterOperationsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"o\n\x1dListClusterOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"y\n\x17ListClusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"c\n\x18ListClusterHostsResponse\x12.\n\x05hosts\x18\x01 \x03(\x0b\x32\x1f.yandex.cloud.mdb.kafka.v1.Host\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"c\n\x12MoveClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12+\n\x15\x64\x65stination_folder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"b\n\x13MoveClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x18\n\x10source_folder_id\x18\x02 \x01(\t\x12\x1d\n\x15\x64\x65stination_folder_id\x18\x03 \x01(\t\"7\n\x13StartClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"*\n\x14StartClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"6\n\x12StopClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\")\n\x13StopClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t2\xb5\x10\n\x0e\x43lusterService\x12\x88\x01\n\x03Get\x12,.yandex.cloud.mdb.kafka.v1.GetClusterRequest\x1a\".yandex.cloud.mdb.kafka.v1.Cluster\"/\x82\xd3\xe4\x93\x02)\x12\'/managed-kafka/v1/clusters/{cluster_id}\x12\x8b\x01\n\x04List\x12..yandex.cloud.mdb.kafka.v1.ListClustersRequest\x1a/.yandex.cloud.mdb.kafka.v1.ListClustersResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/managed-kafka/v1/clusters\x12\xa7\x01\n\x06\x43reate\x12/.yandex.cloud.mdb.kafka.v1.CreateClusterRequest\x1a!.yandex.cloud.operation.Operation\"I\x82\xd3\xe4\x93\x02\x1f\"\x1a/managed-kafka/v1/clusters:\x01*\xb2\xd2* \n\x15\x43reateClusterMetadata\x12\x07\x43luster\x12\xb4\x01\n\x06Update\x12/.yandex.cloud.mdb.kafka.v1.UpdateClusterRequest\x1a!.yandex.cloud.operation.Operation\"V\x82\xd3\xe4\x93\x02,2\'/managed-kafka/v1/clusters/{cluster_id}:\x01*\xb2\xd2* \n\x15UpdateClusterMetadata\x12\x07\x43luster\x12\xbf\x01\n\x06\x44\x65lete\x12/.yandex.cloud.mdb.kafka.v1.DeleteClusterRequest\x1a!.yandex.cloud.operation.Operation\"a\x82\xd3\xe4\x93\x02)*\'/managed-kafka/v1/clusters/{cluster_id}\xb2\xd2*.\n\x15\x44\x65leteClusterMetadata\x12\x15google.protobuf.Empty\x12\xb3\x01\n\x04Move\x12-.yandex.cloud.mdb.kafka.v1.MoveClusterRequest\x1a!.yandex.cloud.operation.Operation\"Y\x82\xd3\xe4\x93\x02\x31\",/managed-kafka/v1/clusters/{cluster_id}:move:\x01*\xb2\xd2*\x1e\n\x13MoveClusterMetadata\x12\x07\x43luster\x12\xb4\x01\n\x05Start\x12..yandex.cloud.mdb.kafka.v1.StartClusterRequest\x1a!.yandex.cloud.operation.Operation\"X\x82\xd3\xe4\x93\x02/\"-/managed-kafka/v1/clusters/{cluster_id}:start\xb2\xd2*\x1f\n\x14StartClusterMetadata\x12\x07\x43luster\x12\xb0\x01\n\x04Stop\x12-.yandex.cloud.mdb.kafka.v1.StopClusterRequest\x1a!.yandex.cloud.operation.Operation\"V\x82\xd3\xe4\x93\x02.\",/managed-kafka/v1/clusters/{cluster_id}:stop\xb2\xd2*\x1e\n\x13StopClusterMetadata\x12\x07\x43luster\x12\xa7\x01\n\x08ListLogs\x12\x31.yandex.cloud.mdb.kafka.v1.ListClusterLogsRequest\x1a\x32.yandex.cloud.mdb.kafka.v1.ListClusterLogsResponse\"4\x82\xd3\xe4\x93\x02.\x12,/managed-kafka/v1/clusters/{cluster_id}:logs\x12\xac\x01\n\nStreamLogs\x12\x33.yandex.cloud.mdb.kafka.v1.StreamClusterLogsRequest\x1a*.yandex.cloud.mdb.kafka.v1.StreamLogRecord\";\x82\xd3\xe4\x93\x02\x35\x12\x33/managed-kafka/v1/clusters/{cluster_id}:stream_logs0\x01\x12\xbf\x01\n\x0eListOperations\x12\x37.yandex.cloud.mdb.kafka.v1.ListClusterOperationsRequest\x1a\x38.yandex.cloud.mdb.kafka.v1.ListClusterOperationsResponse\":\x82\xd3\xe4\x93\x02\x34\x12\x32/managed-kafka/v1/clusters/{cluster_id}/operations\x12\xab\x01\n\tListHosts\x12\x32.yandex.cloud.mdb.kafka.v1.ListClusterHostsRequest\x1a\x33.yandex.cloud.mdb.kafka.v1.ListClusterHostsResponse\"5\x82\xd3\xe4\x93\x02/\x12-/managed-kafka/v1/clusters/{cluster_id}/hostsBd\n\x1dyandex.cloud.api.mdb.kafka.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/kafka/v1;kafkab\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_kafka_dot_v1_dot_cluster__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_kafka_dot_v1_dot_topic__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_kafka_dot_v1_dot_user__pb2.DESCRIPTOR,])
 
@@ -193,8 +193,8 @@ _CREATECLUSTERREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1329,
-  serialized_end=1374,
+  serialized_start=1353,
+  serialized_end=1398,
 )
 
 _CREATECLUSTERREQUEST = _descriptor.Descriptor(
@@ -282,6 +282,13 @@ _CREATECLUSTERREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='host_group_ids', full_name='yandex.cloud.mdb.kafka.v1.CreateClusterRequest.host_group_ids', index=11,
+      number=13, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -295,7 +302,7 @@ _CREATECLUSTERREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=704,
-  serialized_end=1374,
+  serialized_end=1398,
 )
 
 
@@ -326,8 +333,8 @@ _CREATECLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1376,
-  serialized_end=1419,
+  serialized_start=1400,
+  serialized_end=1443,
 )
 
 
@@ -365,8 +372,8 @@ _UPDATECLUSTERREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1329,
-  serialized_end=1374,
+  serialized_start=1353,
+  serialized_end=1398,
 )
 
 _UPDATECLUSTERREQUEST = _descriptor.Descriptor(
@@ -438,8 +445,8 @@ _UPDATECLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1422,
-  serialized_end=1879,
+  serialized_start=1446,
+  serialized_end=1903,
 )
 
 
@@ -470,8 +477,8 @@ _UPDATECLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1881,
-  serialized_end=1924,
+  serialized_start=1905,
+  serialized_end=1948,
 )
 
 
@@ -502,8 +509,8 @@ _DELETECLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1926,
-  serialized_end=1982,
+  serialized_start=1950,
+  serialized_end=2006,
 )
 
 
@@ -534,8 +541,8 @@ _DELETECLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1984,
-  serialized_end=2027,
+  serialized_start=2008,
+  serialized_end=2051,
 )
 
 
@@ -615,8 +622,8 @@ _LISTCLUSTERLOGSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2030,
-  serialized_end=2325,
+  serialized_start=2054,
+  serialized_end=2349,
 )
 
 
@@ -654,8 +661,8 @@ _LOGRECORD_MESSAGEENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2456,
-  serialized_end=2502,
+  serialized_start=2480,
+  serialized_end=2526,
 )
 
 _LOGRECORD = _descriptor.Descriptor(
@@ -692,8 +699,8 @@ _LOGRECORD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2328,
-  serialized_end=2502,
+  serialized_start=2352,
+  serialized_end=2526,
 )
 
 
@@ -731,8 +738,8 @@ _LISTCLUSTERLOGSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2504,
-  serialized_end=2606,
+  serialized_start=2528,
+  serialized_end=2630,
 )
 
 
@@ -770,8 +777,8 @@ _STREAMLOGRECORD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2608,
-  serialized_end=2706,
+  serialized_start=2632,
+  serialized_end=2730,
 )
 
 
@@ -837,8 +844,8 @@ _STREAMCLUSTERLOGSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2709,
-  serialized_end=2945,
+  serialized_start=2733,
+  serialized_end=2969,
 )
 
 
@@ -883,8 +890,8 @@ _LISTCLUSTEROPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2947,
-  serialized_end=3073,
+  serialized_start=2971,
+  serialized_end=3097,
 )
 
 
@@ -922,8 +929,8 @@ _LISTCLUSTEROPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3075,
-  serialized_end=3186,
+  serialized_start=3099,
+  serialized_end=3210,
 )
 
 
@@ -968,8 +975,8 @@ _LISTCLUSTERHOSTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3188,
-  serialized_end=3309,
+  serialized_start=3212,
+  serialized_end=3333,
 )
 
 
@@ -1007,8 +1014,8 @@ _LISTCLUSTERHOSTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3311,
-  serialized_end=3410,
+  serialized_start=3335,
+  serialized_end=3434,
 )
 
 
@@ -1046,8 +1053,8 @@ _MOVECLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3412,
-  serialized_end=3511,
+  serialized_start=3436,
+  serialized_end=3535,
 )
 
 
@@ -1092,8 +1099,8 @@ _MOVECLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3513,
-  serialized_end=3611,
+  serialized_start=3537,
+  serialized_end=3635,
 )
 
 
@@ -1124,8 +1131,8 @@ _STARTCLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3613,
-  serialized_end=3668,
+  serialized_start=3637,
+  serialized_end=3692,
 )
 
 
@@ -1156,8 +1163,8 @@ _STARTCLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3670,
-  serialized_end=3712,
+  serialized_start=3694,
+  serialized_end=3736,
 )
 
 
@@ -1188,8 +1195,8 @@ _STOPCLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3714,
-  serialized_end=3768,
+  serialized_start=3738,
+  serialized_end=3792,
 )
 
 
@@ -1220,8 +1227,8 @@ _STOPCLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3770,
-  serialized_end=3811,
+  serialized_start=3794,
+  serialized_end=3835,
 )
 
 _LISTCLUSTERSRESPONSE.fields_by_name['clusters'].message_type = yandex_dot_cloud_dot_mdb_dot_kafka_dot_v1_dot_cluster__pb2._CLUSTER
@@ -1509,8 +1516,8 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=3814,
-  serialized_end=5915,
+  serialized_start=3838,
+  serialized_end=5939,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',

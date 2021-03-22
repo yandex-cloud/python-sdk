@@ -191,7 +191,7 @@ class ClusterServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def RescheduleMaintenance(self, request, context):
-        """Reschedule planned maintenance operation.
+        """Reschedules planned maintenance operation.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
