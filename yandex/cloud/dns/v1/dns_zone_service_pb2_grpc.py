@@ -9,7 +9,8 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class DnsZoneServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing DNS zones.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -85,88 +86,104 @@ class DnsZoneServiceStub(object):
 
 
 class DnsZoneServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing DNS zones.
+    """
 
     def Get(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Returns the specified DNS zone.
+
+        To get the list of all available DNS zones, make a [List] request.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Retrieves the list of DNS zones in the specified folder.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Creates a DNS zone in the specified folder.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Updates the specified DNS zone.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Deletes the specified DNS zone. 
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetRecordSet(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Returns the specified record set.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListRecordSets(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Retrieves the list of record sets in the specified folder.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateRecordSets(self, request, context):
-        """Method with strict control for changing zone state. Returns error when deleted record is not found, found record
-        with matched type and name but different ttl or value, or on attempt to add record with existing name and type.
-        Deletions come first so if record with same name and type is present in both lists then existing record will be
-        deleted and new one added.
+        """Method with strict control for changing zone state. Returns error when:
+        1. Deleted record is not found.
+        2. Found record with matched type and name but different TTL or value.
+        3. Attempted to add record with existing name and type.
+        Deletions happen first. If a record with the same name and type exists in both lists,
+        then the existing record will be deleted, and a new one added.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpsertRecordSets(self, request, context):
-        """Method without strict control for changing zone state. Do not returns error when deleted record is not found.
-        Delete records that match all specified fields which allows to delete only specified records from record set.
+        """Method without strict control for changing zone state. Nothing happens if deleted record doesn't exist.
+        Deletes records that match all specified fields which allows to delete only specified records from a record set.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListOperations(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Lists operations for the specified DNS zone.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListAccessBindings(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Lists existing access bindings for the specified DNS zone.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def SetAccessBindings(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Sets access bindings for the specified DNS zone.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateAccessBindings(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Updates access bindings for the specified DNS zone.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -247,7 +264,8 @@ def add_DnsZoneServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class DnsZoneService(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing DNS zones.
+    """
 
     @staticmethod
     def Get(request,
