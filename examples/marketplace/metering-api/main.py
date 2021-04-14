@@ -45,9 +45,23 @@ def business_logic(product_id, sku_id):
     return 0
 
 
+def validate_write_response(response):
+
+    # NOTE: Some usage records can be accepted or rejected. Please pay attention to the following fields:
+
+    # response.rejected - list of rejected usage records
+    # response.accepted - list of accepted usage records
+
+    if len(response.rejected) > 0:
+        error_msg = 'Unable to provide the service to customer. Rejected: %s, Accepted: %s.'
+        raise ValueError(error_msg % (str(response.rejected), str(response.accepted)))
+    elif len(response.accepted) == 0:
+        error_msg = 'Unable to provide the service to customer. Got empty list of accepted metrics.'
+        raise ValueError(error_msg)
+
+
 def main(product_id, sku_id, quantity, timestamp=None, uuid=None):
     # NOTE: IAM token will be taken automatically from metadata agent of VM
-
     interceptor = yandexcloud.RetryInterceptor(max_retry_count=5, retriable_codes=[grpc.StatusCode.UNAVAILABLE])
     sdk = yandexcloud.SDK(interceptor=interceptor)
     service = sdk.client(ImageProductUsageServiceStub)
@@ -58,8 +72,7 @@ def main(product_id, sku_id, quantity, timestamp=None, uuid=None):
     request.validate_only = True
     response = service.Write(request)
 
-    if len(response.accepted) == 0:
-        raise ValueError('Unable to provide the service to customer. Reason: %s' % str(response.rejected))
+    validate_write_response(response)
 
     # Step 1. Provide your service to the customer
 
@@ -70,8 +83,7 @@ def main(product_id, sku_id, quantity, timestamp=None, uuid=None):
     request.validate_only = False
     response = service.Write(request)
 
-    if len(response.accepted) == 0:
-        raise ValueError('Unable to write the product usage. Reason: %s' % str(response.rejected))
+    validate_write_response(response)
 
     return response
 
