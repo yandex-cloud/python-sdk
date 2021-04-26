@@ -43,6 +43,16 @@ class ApiGatewayServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_serverless_dot_apigateway_dot_v1_dot_apigateway__service__pb2.DeleteApiGatewayRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
+        self.AddDomain = channel.unary_unary(
+                '/yandex.cloud.serverless.apigateway.v1.ApiGatewayService/AddDomain',
+                request_serializer=yandex_dot_cloud_dot_serverless_dot_apigateway_dot_v1_dot_apigateway__service__pb2.AddDomainRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
+        self.RemoveDomain = channel.unary_unary(
+                '/yandex.cloud.serverless.apigateway.v1.ApiGatewayService/RemoveDomain',
+                request_serializer=yandex_dot_cloud_dot_serverless_dot_apigateway_dot_v1_dot_apigateway__service__pb2.RemoveDomainRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
         self.GetOpenapiSpec = channel.unary_unary(
                 '/yandex.cloud.serverless.apigateway.v1.ApiGatewayService/GetOpenapiSpec',
                 request_serializer=yandex_dot_cloud_dot_serverless_dot_apigateway_dot_v1_dot_apigateway__service__pb2.GetOpenapiSpecRequest.SerializeToString,
@@ -112,6 +122,20 @@ class ApiGatewayServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def AddDomain(self, request, context):
+        """Attaches domain to the specified API gateway.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def RemoveDomain(self, request, context):
+        """Detaches domain from the specified API gateway.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def GetOpenapiSpec(self, request, context):
         """Returns the OpenAPI specification of specified API gateway.
         """
@@ -173,6 +197,16 @@ def add_ApiGatewayServiceServicer_to_server(servicer, server):
             'Delete': grpc.unary_unary_rpc_method_handler(
                     servicer.Delete,
                     request_deserializer=yandex_dot_cloud_dot_serverless_dot_apigateway_dot_v1_dot_apigateway__service__pb2.DeleteApiGatewayRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'AddDomain': grpc.unary_unary_rpc_method_handler(
+                    servicer.AddDomain,
+                    request_deserializer=yandex_dot_cloud_dot_serverless_dot_apigateway_dot_v1_dot_apigateway__service__pb2.AddDomainRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'RemoveDomain': grpc.unary_unary_rpc_method_handler(
+                    servicer.RemoveDomain,
+                    request_deserializer=yandex_dot_cloud_dot_serverless_dot_apigateway_dot_v1_dot_apigateway__service__pb2.RemoveDomainRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'GetOpenapiSpec': grpc.unary_unary_rpc_method_handler(
@@ -292,6 +326,40 @@ class ApiGatewayService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.serverless.apigateway.v1.ApiGatewayService/Delete',
             yandex_dot_cloud_dot_serverless_dot_apigateway_dot_v1_dot_apigateway__service__pb2.DeleteApiGatewayRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def AddDomain(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.serverless.apigateway.v1.ApiGatewayService/AddDomain',
+            yandex_dot_cloud_dot_serverless_dot_apigateway_dot_v1_dot_apigateway__service__pb2.AddDomainRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RemoveDomain(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.serverless.apigateway.v1.ApiGatewayService/RemoveDomain',
+            yandex_dot_cloud_dot_serverless_dot_apigateway_dot_v1_dot_apigateway__service__pb2.RemoveDomainRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

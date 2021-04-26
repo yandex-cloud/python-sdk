@@ -33,6 +33,11 @@ class CloudServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_resourcemanager_dot_v1_dot_cloud__service__pb2.UpdateCloudRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
+        self.Delete = channel.unary_unary(
+                '/yandex.cloud.resourcemanager.v1.CloudService/Delete',
+                request_serializer=yandex_dot_cloud_dot_resourcemanager_dot_v1_dot_cloud__service__pb2.DeleteCloudRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
         self.ListOperations = channel.unary_unary(
                 '/yandex.cloud.resourcemanager.v1.CloudService/ListOperations',
                 request_serializer=yandex_dot_cloud_dot_resourcemanager_dot_v1_dot_cloud__service__pb2.ListCloudOperationsRequest.SerializeToString,
@@ -77,6 +82,15 @@ class CloudServiceServicer(object):
 
     def Update(self, request, context):
         """Updates the specified cloud.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Delete(self, request, context):
+        """Deletes the specified cloud.
+
+        The method is temporarily unavailable.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -128,6 +142,11 @@ def add_CloudServiceServicer_to_server(servicer, server):
             'Update': grpc.unary_unary_rpc_method_handler(
                     servicer.Update,
                     request_deserializer=yandex_dot_cloud_dot_resourcemanager_dot_v1_dot_cloud__service__pb2.UpdateCloudRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'Delete': grpc.unary_unary_rpc_method_handler(
+                    servicer.Delete,
+                    request_deserializer=yandex_dot_cloud_dot_resourcemanager_dot_v1_dot_cloud__service__pb2.DeleteCloudRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'ListOperations': grpc.unary_unary_rpc_method_handler(
@@ -208,6 +227,23 @@ class CloudService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.resourcemanager.v1.CloudService/Update',
             yandex_dot_cloud_dot_resourcemanager_dot_v1_dot_cloud__service__pb2.UpdateCloudRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Delete(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.resourcemanager.v1.CloudService/Delete',
+            yandex_dot_cloud_dot_resourcemanager_dot_v1_dot_cloud__service__pb2.DeleteCloudRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

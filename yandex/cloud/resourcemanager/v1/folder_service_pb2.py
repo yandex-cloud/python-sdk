@@ -13,6 +13,7 @@ _sym_db = _symbol_database.Default()
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.resourcemanager.v1 import folder_pb2 as yandex_dot_cloud_dot_resourcemanager_dot_v1_dot_folder__pb2
 from yandex.cloud.access import access_pb2 as yandex_dot_cloud_dot_access_dot_access__pb2
@@ -26,9 +27,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n#yandex.cloud.api.resourcemanager.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/resourcemanager/v1;resourcemanager',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n4yandex/cloud/resourcemanager/v1/folder_service.proto\x12\x1fyandex.cloud.resourcemanager.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a,yandex/cloud/resourcemanager/v1/folder.proto\x1a yandex/cloud/access/access.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"3\n\x10GetFolderRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x8e\x01\n\x12ListFoldersRequest\x12\x1e\n\x08\x63loud_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"h\n\x13ListFoldersResponse\x12\x38\n\x07\x66olders\x18\x01 \x03(\x0b\x32\'.yandex.cloud.resourcemanager.v1.Folder\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xcd\x02\n\x13\x43reateFolderRequest\x12\x1e\n\x08\x63loud_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x33\n\x04name\x18\x02 \x01(\tB%\xe8\xc7\x31\x01\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x91\x01\n\x06labels\x18\x04 \x03(\x0b\x32@.yandex.cloud.resourcemanager.v1.CreateFolderRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\")\n\x14\x43reateFolderMetadata\x12\x11\n\tfolder_id\x18\x01 \x01(\t\"\xff\x02\n\x13UpdateFolderRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x33\n\x04name\x18\x03 \x01(\tB%\xe8\xc7\x31\x01\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x91\x01\n\x06labels\x18\x05 \x03(\x0b\x32@.yandex.cloud.resourcemanager.v1.UpdateFolderRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\")\n\x14UpdateFolderMetadata\x12\x11\n\tfolder_id\x18\x01 \x01(\t\"6\n\x13\x44\x65leteFolderRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\")\n\x14\x44\x65leteFolderMetadata\x12\x11\n\tfolder_id\x18\x01 \x01(\t\"|\n\x1bListFolderOperationsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"n\n\x1cListFolderOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xe6\r\n\rFolderService\x12\x93\x01\n\x03Get\x12\x31.yandex.cloud.resourcemanager.v1.GetFolderRequest\x1a\'.yandex.cloud.resourcemanager.v1.Folder\"0\x82\xd3\xe4\x93\x02*\x12(/resource-manager/v1/folders/{folder_id}\x12\x97\x01\n\x04List\x12\x33.yandex.cloud.resourcemanager.v1.ListFoldersRequest\x1a\x34.yandex.cloud.resourcemanager.v1.ListFoldersResponse\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/resource-manager/v1/folders\x12\xac\x01\n\x06\x43reate\x12\x34.yandex.cloud.resourcemanager.v1.CreateFolderRequest\x1a!.yandex.cloud.operation.Operation\"I\x82\xd3\xe4\x93\x02!\"\x1c/resource-manager/v1/folders:\x01*\xb2\xd2*\x1e\n\x14\x43reateFolderMetadata\x12\x06\x46older\x12\xb8\x01\n\x06Update\x12\x34.yandex.cloud.resourcemanager.v1.UpdateFolderRequest\x1a!.yandex.cloud.operation.Operation\"U\x82\xd3\xe4\x93\x02-2(/resource-manager/v1/folders/{folder_id}:\x01*\xb2\xd2*\x1e\n\x14UpdateFolderMetadata\x12\x06\x46older\x12\xc4\x01\n\x06\x44\x65lete\x12\x34.yandex.cloud.resourcemanager.v1.DeleteFolderRequest\x1a!.yandex.cloud.operation.Operation\"a\x82\xd3\xe4\x93\x02**(/resource-manager/v1/folders/{folder_id}\xb2\xd2*-\n\x14\x44\x65leteFolderMetadata\x12\x15google.protobuf.Empty\x12\xca\x01\n\x0eListOperations\x12<.yandex.cloud.resourcemanager.v1.ListFolderOperationsRequest\x1a=.yandex.cloud.resourcemanager.v1.ListFolderOperationsResponse\";\x82\xd3\xe4\x93\x02\x35\x12\x33/resource-manager/v1/folders/{folder_id}/operations\x12\xbc\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"E\x82\xd3\xe4\x93\x02?\x12=/resource-manager/v1/folders/{resource_id}:listAccessBindings\x12\xec\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x84\x01\x82\xd3\xe4\x93\x02\x41\"</resource-manager/v1/folders/{resource_id}:setAccessBindings:\x01*\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\xf8\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x8a\x01\x82\xd3\xe4\x93\x02\x44\"?/resource-manager/v1/folders/{resource_id}:updateAccessBindings:\x01*\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.EmptyBz\n#yandex.cloud.api.resourcemanager.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/resourcemanager/v1;resourcemanagerb\x06proto3'
+  serialized_pb=b'\n4yandex/cloud/resourcemanager/v1/folder_service.proto\x12\x1fyandex.cloud.resourcemanager.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a yandex/cloud/api/operation.proto\x1a,yandex/cloud/resourcemanager/v1/folder.proto\x1a yandex/cloud/access/access.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"3\n\x10GetFolderRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x8e\x01\n\x12ListFoldersRequest\x12\x1e\n\x08\x63loud_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"h\n\x13ListFoldersResponse\x12\x38\n\x07\x66olders\x18\x01 \x03(\x0b\x32\'.yandex.cloud.resourcemanager.v1.Folder\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xcd\x02\n\x13\x43reateFolderRequest\x12\x1e\n\x08\x63loud_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x33\n\x04name\x18\x02 \x01(\tB%\xe8\xc7\x31\x01\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x91\x01\n\x06labels\x18\x04 \x03(\x0b\x32@.yandex.cloud.resourcemanager.v1.CreateFolderRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\")\n\x14\x43reateFolderMetadata\x12\x11\n\tfolder_id\x18\x01 \x01(\t\"\xff\x02\n\x13UpdateFolderRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x33\n\x04name\x18\x03 \x01(\tB%\xe8\xc7\x31\x01\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x91\x01\n\x06labels\x18\x05 \x03(\x0b\x32@.yandex.cloud.resourcemanager.v1.UpdateFolderRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\")\n\x14UpdateFolderMetadata\x12\x11\n\tfolder_id\x18\x01 \x01(\t\"h\n\x13\x44\x65leteFolderRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x30\n\x0c\x64\x65lete_after\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"[\n\x14\x44\x65leteFolderMetadata\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x30\n\x0c\x64\x65lete_after\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"|\n\x1bListFolderOperationsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"n\n\x1cListFolderOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xe6\r\n\rFolderService\x12\x93\x01\n\x03Get\x12\x31.yandex.cloud.resourcemanager.v1.GetFolderRequest\x1a\'.yandex.cloud.resourcemanager.v1.Folder\"0\x82\xd3\xe4\x93\x02*\x12(/resource-manager/v1/folders/{folder_id}\x12\x97\x01\n\x04List\x12\x33.yandex.cloud.resourcemanager.v1.ListFoldersRequest\x1a\x34.yandex.cloud.resourcemanager.v1.ListFoldersResponse\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/resource-manager/v1/folders\x12\xac\x01\n\x06\x43reate\x12\x34.yandex.cloud.resourcemanager.v1.CreateFolderRequest\x1a!.yandex.cloud.operation.Operation\"I\x82\xd3\xe4\x93\x02!\"\x1c/resource-manager/v1/folders:\x01*\xb2\xd2*\x1e\n\x14\x43reateFolderMetadata\x12\x06\x46older\x12\xb8\x01\n\x06Update\x12\x34.yandex.cloud.resourcemanager.v1.UpdateFolderRequest\x1a!.yandex.cloud.operation.Operation\"U\x82\xd3\xe4\x93\x02-2(/resource-manager/v1/folders/{folder_id}:\x01*\xb2\xd2*\x1e\n\x14UpdateFolderMetadata\x12\x06\x46older\x12\xc4\x01\n\x06\x44\x65lete\x12\x34.yandex.cloud.resourcemanager.v1.DeleteFolderRequest\x1a!.yandex.cloud.operation.Operation\"a\x82\xd3\xe4\x93\x02**(/resource-manager/v1/folders/{folder_id}\xb2\xd2*-\n\x14\x44\x65leteFolderMetadata\x12\x15google.protobuf.Empty\x12\xca\x01\n\x0eListOperations\x12<.yandex.cloud.resourcemanager.v1.ListFolderOperationsRequest\x1a=.yandex.cloud.resourcemanager.v1.ListFolderOperationsResponse\";\x82\xd3\xe4\x93\x02\x35\x12\x33/resource-manager/v1/folders/{folder_id}/operations\x12\xbc\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"E\x82\xd3\xe4\x93\x02?\x12=/resource-manager/v1/folders/{resource_id}:listAccessBindings\x12\xec\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x84\x01\x82\xd3\xe4\x93\x02\x41\"</resource-manager/v1/folders/{resource_id}:setAccessBindings:\x01*\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\xf8\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x8a\x01\x82\xd3\xe4\x93\x02\x44\"?/resource-manager/v1/folders/{resource_id}:updateAccessBindings:\x01*\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.EmptyBz\n#yandex.cloud.api.resourcemanager.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/resourcemanager/v1;resourcemanagerb\x06proto3'
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_resourcemanager_dot_v1_dot_folder__pb2.DESCRIPTOR,yandex_dot_cloud_dot_access_dot_access__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_resourcemanager_dot_v1_dot_folder__pb2.DESCRIPTOR,yandex_dot_cloud_dot_access_dot_access__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
 
 
@@ -60,8 +61,8 @@ _GETFOLDERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=338,
-  serialized_end=389,
+  serialized_start=371,
+  serialized_end=422,
 )
 
 
@@ -113,8 +114,8 @@ _LISTFOLDERSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=392,
-  serialized_end=534,
+  serialized_start=425,
+  serialized_end=567,
 )
 
 
@@ -152,8 +153,8 @@ _LISTFOLDERSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=536,
-  serialized_end=640,
+  serialized_start=569,
+  serialized_end=673,
 )
 
 
@@ -191,8 +192,8 @@ _CREATEFOLDERREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=931,
-  serialized_end=976,
+  serialized_start=964,
+  serialized_end=1009,
 )
 
 _CREATEFOLDERREQUEST = _descriptor.Descriptor(
@@ -243,8 +244,8 @@ _CREATEFOLDERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=643,
-  serialized_end=976,
+  serialized_start=676,
+  serialized_end=1009,
 )
 
 
@@ -275,8 +276,8 @@ _CREATEFOLDERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=978,
-  serialized_end=1019,
+  serialized_start=1011,
+  serialized_end=1052,
 )
 
 
@@ -314,8 +315,8 @@ _UPDATEFOLDERREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=931,
-  serialized_end=976,
+  serialized_start=964,
+  serialized_end=1009,
 )
 
 _UPDATEFOLDERREQUEST = _descriptor.Descriptor(
@@ -373,8 +374,8 @@ _UPDATEFOLDERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1022,
-  serialized_end=1405,
+  serialized_start=1055,
+  serialized_end=1438,
 )
 
 
@@ -405,8 +406,8 @@ _UPDATEFOLDERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1407,
-  serialized_end=1448,
+  serialized_start=1440,
+  serialized_end=1481,
 )
 
 
@@ -425,6 +426,13 @@ _DELETEFOLDERREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delete_after', full_name='yandex.cloud.resourcemanager.v1.DeleteFolderRequest.delete_after', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -437,8 +445,8 @@ _DELETEFOLDERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1450,
-  serialized_end=1504,
+  serialized_start=1483,
+  serialized_end=1587,
 )
 
 
@@ -457,6 +465,13 @@ _DELETEFOLDERMETADATA = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delete_after', full_name='yandex.cloud.resourcemanager.v1.DeleteFolderMetadata.delete_after', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -469,8 +484,8 @@ _DELETEFOLDERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1506,
-  serialized_end=1547,
+  serialized_start=1589,
+  serialized_end=1680,
 )
 
 
@@ -515,8 +530,8 @@ _LISTFOLDEROPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1549,
-  serialized_end=1673,
+  serialized_start=1682,
+  serialized_end=1806,
 )
 
 
@@ -554,8 +569,8 @@ _LISTFOLDEROPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1675,
-  serialized_end=1785,
+  serialized_start=1808,
+  serialized_end=1918,
 )
 
 _LISTFOLDERSRESPONSE.fields_by_name['folders'].message_type = yandex_dot_cloud_dot_resourcemanager_dot_v1_dot_folder__pb2._FOLDER
@@ -564,6 +579,8 @@ _CREATEFOLDERREQUEST.fields_by_name['labels'].message_type = _CREATEFOLDERREQUES
 _UPDATEFOLDERREQUEST_LABELSENTRY.containing_type = _UPDATEFOLDERREQUEST
 _UPDATEFOLDERREQUEST.fields_by_name['update_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
 _UPDATEFOLDERREQUEST.fields_by_name['labels'].message_type = _UPDATEFOLDERREQUEST_LABELSENTRY
+_DELETEFOLDERREQUEST.fields_by_name['delete_after'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_DELETEFOLDERMETADATA.fields_by_name['delete_after'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _LISTFOLDEROPERATIONSRESPONSE.fields_by_name['operations'].message_type = yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION
 DESCRIPTOR.message_types_by_name['GetFolderRequest'] = _GETFOLDERREQUEST
 DESCRIPTOR.message_types_by_name['ListFoldersRequest'] = _LISTFOLDERSREQUEST
@@ -700,8 +717,8 @@ _FOLDERSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1788,
-  serialized_end=3554,
+  serialized_start=1921,
+  serialized_end=3687,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
