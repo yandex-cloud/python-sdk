@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\020yandex.cloud.apiZ6github.com/yandex-cloud/go-genproto/yandex/cloud;cloud',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1dyandex/cloud/validation.proto\x12\x0cyandex.cloud\x1a google/protobuf/descriptor.proto\"<\n\nMapKeySpec\x12\r\n\x05value\x18\x01 \x01(\t\x12\x0f\n\x07pattern\x18\x02 \x01(\t\x12\x0e\n\x06length\x18\x03 \x01(\t:4\n\x0b\x65xactly_one\x12\x1d.google.protobuf.OneofOptions\x18\x98\x98\x06 \x01(\x08:1\n\x08required\x12\x1d.google.protobuf.FieldOptions\x18\xfd\x98\x06 \x01(\x08:0\n\x07pattern\x12\x1d.google.protobuf.FieldOptions\x18\xfe\x98\x06 \x01(\t:.\n\x05value\x12\x1d.google.protobuf.FieldOptions\x18\xff\x98\x06 \x01(\t:-\n\x04size\x12\x1d.google.protobuf.FieldOptions\x18\x80\x99\x06 \x01(\t:/\n\x06length\x12\x1d.google.protobuf.FieldOptions\x18\x81\x99\x06 \x01(\t:/\n\x06unique\x12\x1d.google.protobuf.FieldOptions\x18\x82\x99\x06 \x01(\x08:J\n\x07map_key\x12\x1d.google.protobuf.FieldOptions\x18\x86\x99\x06 \x01(\x0b\x32\x18.yandex.cloud.MapKeySpecBJ\n\x10yandex.cloud.apiZ6github.com/yandex-cloud/go-genproto/yandex/cloud;cloudb\x06proto3'
+  serialized_pb=b'\n\x1dyandex/cloud/validation.proto\x12\x0cyandex.cloud\x1a google/protobuf/descriptor.proto\"<\n\nMapKeySpec\x12\r\n\x05value\x18\x01 \x01(\t\x12\x0f\n\x07pattern\x18\x02 \x01(\t\x12\x0e\n\x06length\x18\x03 \x01(\t:4\n\x0b\x65xactly_one\x12\x1d.google.protobuf.OneofOptions\x18\x98\x98\x06 \x01(\x08:1\n\x08required\x12\x1d.google.protobuf.FieldOptions\x18\xfd\x98\x06 \x01(\x08:0\n\x07pattern\x12\x1d.google.protobuf.FieldOptions\x18\xfe\x98\x06 \x01(\t:.\n\x05value\x12\x1d.google.protobuf.FieldOptions\x18\xff\x98\x06 \x01(\t:-\n\x04size\x12\x1d.google.protobuf.FieldOptions\x18\x80\x99\x06 \x01(\t:/\n\x06length\x12\x1d.google.protobuf.FieldOptions\x18\x81\x99\x06 \x01(\t:/\n\x06unique\x12\x1d.google.protobuf.FieldOptions\x18\x82\x99\x06 \x01(\x08:J\n\x07map_key\x12\x1d.google.protobuf.FieldOptions\x18\x86\x99\x06 \x01(\x0b\x32\x18.yandex.cloud.MapKeySpec:.\n\x05\x62ytes\x12\x1d.google.protobuf.FieldOptions\x18\x87\x99\x06 \x01(\tBJ\n\x10yandex.cloud.apiZ6github.com/yandex-cloud/go-genproto/yandex/cloud;cloudb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_descriptor__pb2.DESCRIPTOR,])
 
@@ -89,6 +89,14 @@ map_key = _descriptor.FieldDescriptor(
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
   serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key)
+BYTES_FIELD_NUMBER = 101511
+bytes = _descriptor.FieldDescriptor(
+  name='bytes', full_name='yandex.cloud.bytes', index=8,
+  number=101511, type=9, cpp_type=9, label=1,
+  has_default_value=False, default_value=b"".decode('utf-8'),
+  message_type=None, enum_type=None, containing_type=None,
+  is_extension=True, extension_scope=None,
+  serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key)
 
 
 _MAPKEYSPEC = _descriptor.Descriptor(
@@ -145,6 +153,7 @@ DESCRIPTOR.extensions_by_name['size'] = size
 DESCRIPTOR.extensions_by_name['length'] = length
 DESCRIPTOR.extensions_by_name['unique'] = unique
 DESCRIPTOR.extensions_by_name['map_key'] = map_key
+DESCRIPTOR.extensions_by_name['bytes'] = bytes
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 MapKeySpec = _reflection.GeneratedProtocolMessageType('MapKeySpec', (_message.Message,), {
@@ -163,6 +172,7 @@ google_dot_protobuf_dot_descriptor__pb2.FieldOptions.RegisterExtension(length)
 google_dot_protobuf_dot_descriptor__pb2.FieldOptions.RegisterExtension(unique)
 map_key.message_type = _MAPKEYSPEC
 google_dot_protobuf_dot_descriptor__pb2.FieldOptions.RegisterExtension(map_key)
+google_dot_protobuf_dot_descriptor__pb2.FieldOptions.RegisterExtension(bytes)
 
 DESCRIPTOR._options = None
 # @@protoc_insertion_point(module_scope)

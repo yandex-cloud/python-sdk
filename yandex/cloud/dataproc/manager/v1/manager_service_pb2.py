@@ -11,6 +11,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -19,8 +20,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$yandex.cloud.api.dataproc.manager.v1ZUgithub.com/yandex-cloud/go-genproto/yandex/cloud/dataproc/manager/v1;dataproc_manager',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n6yandex/cloud/dataproc/manager/v1/manager_service.proto\x12 yandex.cloud.dataproc.manager.v1\"_\n\rHbaseNodeInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x10\n\x08requests\x18\x02 \x01(\x03\x12\x14\n\x0cheap_size_mb\x18\x03 \x01(\x03\x12\x18\n\x10max_heap_size_mb\x18\x04 \x01(\x03\"\xe1\x01\n\tHbaseInfo\x12\x11\n\tavailable\x18\x01 \x01(\x08\x12\x0f\n\x07regions\x18\x02 \x01(\x03\x12\x10\n\x08requests\x18\x03 \x01(\x03\x12\x14\n\x0c\x61verage_load\x18\x04 \x01(\x01\x12\x43\n\nlive_nodes\x18\x05 \x03(\x0b\x32/.yandex.cloud.dataproc.manager.v1.HbaseNodeInfo\x12\x43\n\ndead_nodes\x18\x06 \x03(\x0b\x32/.yandex.cloud.dataproc.manager.v1.HbaseNodeInfo\"r\n\x0cHDFSNodeInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04used\x18\x02 \x01(\x03\x12\x11\n\tremaining\x18\x03 \x01(\x03\x12\x10\n\x08\x63\x61pacity\x18\x04 \x01(\x03\x12\x12\n\nnum_blocks\x18\x05 \x01(\x03\x12\r\n\x05state\x18\x06 \x01(\t\"\x89\x04\n\x08HDFSInfo\x12\x11\n\tavailable\x18\x01 \x01(\x08\x12\x19\n\x11percent_remaining\x18\x02 \x01(\x01\x12\x0c\n\x04used\x18\x03 \x01(\x03\x12\x0c\n\x04\x66ree\x18\x04 \x01(\x03\x12\x14\n\x0ctotal_blocks\x18\x05 \x01(\x03\x12\x16\n\x0emissing_blocks\x18\x06 \x01(\x03\x12\"\n\x1amissing_blocks_replica_one\x18\x07 \x01(\x03\x12\x42\n\nlive_nodes\x18\x08 \x03(\x0b\x32..yandex.cloud.dataproc.manager.v1.HDFSNodeInfo\x12\x42\n\ndead_nodes\x18\t \x03(\x0b\x32..yandex.cloud.dataproc.manager.v1.HDFSNodeInfo\x12\x10\n\x08safemode\x18\x0b \x01(\t\x12M\n\x15\x64\x65\x63ommissioning_nodes\x18\x0c \x03(\x0b\x32..yandex.cloud.dataproc.manager.v1.HDFSNodeInfo\x12L\n\x14\x64\x65\x63ommissioned_nodes\x18\r \x03(\x0b\x32..yandex.cloud.dataproc.manager.v1.HDFSNodeInfo\x12$\n\x1crequested_decommission_hosts\x18\x0e \x03(\tJ\x04\x08\n\x10\x0b\"\x9b\x01\n\x08HiveInfo\x12\x11\n\tavailable\x18\x01 \x01(\x08\x12\x19\n\x11queries_succeeded\x18\x02 \x01(\x03\x12\x16\n\x0equeries_failed\x18\x03 \x01(\x03\x12\x19\n\x11queries_executing\x18\x04 \x01(\x03\x12\x15\n\rsessions_open\x18\x05 \x01(\x03\x12\x17\n\x0fsessions_active\x18\x06 \x01(\x03\"\x8d\x01\n\x0cYarnNodeInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05state\x18\x02 \x01(\t\x12\x16\n\x0enum_containers\x18\x03 \x01(\x03\x12\x16\n\x0eused_memory_mb\x18\x04 \x01(\x03\x12\x1b\n\x13\x61vailable_memory_mb\x18\x05 \x01(\x03\x12\x13\n\x0bupdate_time\x18\x06 \x01(\x03\"\x87\x01\n\x08YarnInfo\x12\x11\n\tavailable\x18\x01 \x01(\x08\x12\x42\n\nlive_nodes\x18\x02 \x03(\x0b\x32..yandex.cloud.dataproc.manager.v1.YarnNodeInfo\x12$\n\x1crequested_decommission_hosts\x18\x03 \x03(\t\"\x1e\n\rZookeeperInfo\x12\r\n\x05\x61live\x18\x01 \x01(\x08\"\x1a\n\tOozieInfo\x12\r\n\x05\x61live\x18\x01 \x01(\x08\"\x19\n\x08LivyInfo\x12\r\n\x05\x61live\x18\x01 \x01(\x08\"\xc0\x03\n\x04Info\x12\x38\n\x04hdfs\x18\x01 \x01(\x0b\x32*.yandex.cloud.dataproc.manager.v1.HDFSInfo\x12\x38\n\x04yarn\x18\x02 \x01(\x0b\x32*.yandex.cloud.dataproc.manager.v1.YarnInfo\x12\x38\n\x04hive\x18\x03 \x01(\x0b\x32*.yandex.cloud.dataproc.manager.v1.HiveInfo\x12\x42\n\tzookeeper\x18\x04 \x01(\x0b\x32/.yandex.cloud.dataproc.manager.v1.ZookeeperInfo\x12:\n\x05hbase\x18\x05 \x01(\x0b\x32+.yandex.cloud.dataproc.manager.v1.HbaseInfo\x12:\n\x05oozie\x18\x06 \x01(\x0b\x32+.yandex.cloud.dataproc.manager.v1.OozieInfo\x12\x14\n\x0creport_count\x18\x07 \x01(\x03\x12\x38\n\x04livy\x18\x08 \x01(\x0b\x32*.yandex.cloud.dataproc.manager.v1.LivyInfo\"m\n\rReportRequest\x12\x0b\n\x03\x63id\x18\x01 \x01(\t\x12\x19\n\x11topology_revision\x18\x02 \x01(\x03\x12\x34\n\x04info\x18\x03 \x01(\x0b\x32&.yandex.cloud.dataproc.manager.v1.Info\"s\n\x0bReportReply\x12\x1c\n\x14\x64\x65\x63ommission_timeout\x18\x01 \x01(\x03\x12\"\n\x1ayarn_hosts_to_decommission\x18\x02 \x03(\t\x12\"\n\x1ahdfs_hosts_to_decommission\x18\x03 \x03(\t2\x84\x01\n\x16\x44\x61taprocManagerService\x12j\n\x06Report\x12/.yandex.cloud.dataproc.manager.v1.ReportRequest\x1a-.yandex.cloud.dataproc.manager.v1.ReportReply\"\x00\x42}\n$yandex.cloud.api.dataproc.manager.v1ZUgithub.com/yandex-cloud/go-genproto/yandex/cloud/dataproc/manager/v1;dataproc_managerb\x06proto3'
-)
+  serialized_pb=b'\n6yandex/cloud/dataproc/manager/v1/manager_service.proto\x12 yandex.cloud.dataproc.manager.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"_\n\rHbaseNodeInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x10\n\x08requests\x18\x02 \x01(\x03\x12\x14\n\x0cheap_size_mb\x18\x03 \x01(\x03\x12\x18\n\x10max_heap_size_mb\x18\x04 \x01(\x03\"\xe1\x01\n\tHbaseInfo\x12\x11\n\tavailable\x18\x01 \x01(\x08\x12\x0f\n\x07regions\x18\x02 \x01(\x03\x12\x10\n\x08requests\x18\x03 \x01(\x03\x12\x14\n\x0c\x61verage_load\x18\x04 \x01(\x01\x12\x43\n\nlive_nodes\x18\x05 \x03(\x0b\x32/.yandex.cloud.dataproc.manager.v1.HbaseNodeInfo\x12\x43\n\ndead_nodes\x18\x06 \x03(\x0b\x32/.yandex.cloud.dataproc.manager.v1.HbaseNodeInfo\"r\n\x0cHDFSNodeInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04used\x18\x02 \x01(\x03\x12\x11\n\tremaining\x18\x03 \x01(\x03\x12\x10\n\x08\x63\x61pacity\x18\x04 \x01(\x03\x12\x12\n\nnum_blocks\x18\x05 \x01(\x03\x12\r\n\x05state\x18\x06 \x01(\t\"\x89\x04\n\x08HDFSInfo\x12\x11\n\tavailable\x18\x01 \x01(\x08\x12\x19\n\x11percent_remaining\x18\x02 \x01(\x01\x12\x0c\n\x04used\x18\x03 \x01(\x03\x12\x0c\n\x04\x66ree\x18\x04 \x01(\x03\x12\x14\n\x0ctotal_blocks\x18\x05 \x01(\x03\x12\x16\n\x0emissing_blocks\x18\x06 \x01(\x03\x12\"\n\x1amissing_blocks_replica_one\x18\x07 \x01(\x03\x12\x42\n\nlive_nodes\x18\x08 \x03(\x0b\x32..yandex.cloud.dataproc.manager.v1.HDFSNodeInfo\x12\x42\n\ndead_nodes\x18\t \x03(\x0b\x32..yandex.cloud.dataproc.manager.v1.HDFSNodeInfo\x12\x10\n\x08safemode\x18\x0b \x01(\t\x12M\n\x15\x64\x65\x63ommissioning_nodes\x18\x0c \x03(\x0b\x32..yandex.cloud.dataproc.manager.v1.HDFSNodeInfo\x12L\n\x14\x64\x65\x63ommissioned_nodes\x18\r \x03(\x0b\x32..yandex.cloud.dataproc.manager.v1.HDFSNodeInfo\x12$\n\x1crequested_decommission_hosts\x18\x0e \x03(\tJ\x04\x08\n\x10\x0b\"\x9b\x01\n\x08HiveInfo\x12\x11\n\tavailable\x18\x01 \x01(\x08\x12\x19\n\x11queries_succeeded\x18\x02 \x01(\x03\x12\x16\n\x0equeries_failed\x18\x03 \x01(\x03\x12\x19\n\x11queries_executing\x18\x04 \x01(\x03\x12\x15\n\rsessions_open\x18\x05 \x01(\x03\x12\x17\n\x0fsessions_active\x18\x06 \x01(\x03\"\x8d\x01\n\x0cYarnNodeInfo\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05state\x18\x02 \x01(\t\x12\x16\n\x0enum_containers\x18\x03 \x01(\x03\x12\x16\n\x0eused_memory_mb\x18\x04 \x01(\x03\x12\x1b\n\x13\x61vailable_memory_mb\x18\x05 \x01(\x03\x12\x13\n\x0bupdate_time\x18\x06 \x01(\x03\"\x87\x01\n\x08YarnInfo\x12\x11\n\tavailable\x18\x01 \x01(\x08\x12\x42\n\nlive_nodes\x18\x02 \x03(\x0b\x32..yandex.cloud.dataproc.manager.v1.YarnNodeInfo\x12$\n\x1crequested_decommission_hosts\x18\x03 \x03(\t\"\x1e\n\rZookeeperInfo\x12\r\n\x05\x61live\x18\x01 \x01(\x08\"\x1a\n\tOozieInfo\x12\r\n\x05\x61live\x18\x01 \x01(\x08\"\x19\n\x08LivyInfo\x12\r\n\x05\x61live\x18\x01 \x01(\x08\"\xc0\x03\n\x04Info\x12\x38\n\x04hdfs\x18\x01 \x01(\x0b\x32*.yandex.cloud.dataproc.manager.v1.HDFSInfo\x12\x38\n\x04yarn\x18\x02 \x01(\x0b\x32*.yandex.cloud.dataproc.manager.v1.YarnInfo\x12\x38\n\x04hive\x18\x03 \x01(\x0b\x32*.yandex.cloud.dataproc.manager.v1.HiveInfo\x12\x42\n\tzookeeper\x18\x04 \x01(\x0b\x32/.yandex.cloud.dataproc.manager.v1.ZookeeperInfo\x12:\n\x05hbase\x18\x05 \x01(\x0b\x32+.yandex.cloud.dataproc.manager.v1.HbaseInfo\x12:\n\x05oozie\x18\x06 \x01(\x0b\x32+.yandex.cloud.dataproc.manager.v1.OozieInfo\x12\x14\n\x0creport_count\x18\x07 \x01(\x03\x12\x38\n\x04livy\x18\x08 \x01(\x0b\x32*.yandex.cloud.dataproc.manager.v1.LivyInfo\"\x9f\x01\n\rReportRequest\x12\x0b\n\x03\x63id\x18\x01 \x01(\t\x12\x19\n\x11topology_revision\x18\x02 \x01(\x03\x12\x34\n\x04info\x18\x03 \x01(\x0b\x32&.yandex.cloud.dataproc.manager.v1.Info\x12\x30\n\x0c\x63ollected_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"s\n\x0bReportReply\x12\x1c\n\x14\x64\x65\x63ommission_timeout\x18\x01 \x01(\x03\x12\"\n\x1ayarn_hosts_to_decommission\x18\x02 \x03(\t\x12\"\n\x1ahdfs_hosts_to_decommission\x18\x03 \x03(\t2\x84\x01\n\x16\x44\x61taprocManagerService\x12j\n\x06Report\x12/.yandex.cloud.dataproc.manager.v1.ReportRequest\x1a-.yandex.cloud.dataproc.manager.v1.ReportReply\"\x00\x42}\n$yandex.cloud.api.dataproc.manager.v1ZUgithub.com/yandex-cloud/go-genproto/yandex/cloud/dataproc/manager/v1;dataproc_managerb\x06proto3'
+  ,
+  dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
 
 
@@ -73,8 +75,8 @@ _HBASENODEINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=92,
-  serialized_end=187,
+  serialized_start=125,
+  serialized_end=220,
 )
 
 
@@ -140,8 +142,8 @@ _HBASEINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=190,
-  serialized_end=415,
+  serialized_start=223,
+  serialized_end=448,
 )
 
 
@@ -207,8 +209,8 @@ _HDFSNODEINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=417,
-  serialized_end=531,
+  serialized_start=450,
+  serialized_end=564,
 )
 
 
@@ -323,8 +325,8 @@ _HDFSINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=534,
-  serialized_end=1055,
+  serialized_start=567,
+  serialized_end=1088,
 )
 
 
@@ -390,8 +392,8 @@ _HIVEINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1058,
-  serialized_end=1213,
+  serialized_start=1091,
+  serialized_end=1246,
 )
 
 
@@ -457,8 +459,8 @@ _YARNNODEINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1216,
-  serialized_end=1357,
+  serialized_start=1249,
+  serialized_end=1390,
 )
 
 
@@ -503,8 +505,8 @@ _YARNINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1360,
-  serialized_end=1495,
+  serialized_start=1393,
+  serialized_end=1528,
 )
 
 
@@ -535,8 +537,8 @@ _ZOOKEEPERINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1497,
-  serialized_end=1527,
+  serialized_start=1530,
+  serialized_end=1560,
 )
 
 
@@ -567,8 +569,8 @@ _OOZIEINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1529,
-  serialized_end=1555,
+  serialized_start=1562,
+  serialized_end=1588,
 )
 
 
@@ -599,8 +601,8 @@ _LIVYINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1557,
-  serialized_end=1582,
+  serialized_start=1590,
+  serialized_end=1615,
 )
 
 
@@ -680,8 +682,8 @@ _INFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1585,
-  serialized_end=2033,
+  serialized_start=1618,
+  serialized_end=2066,
 )
 
 
@@ -714,6 +716,13 @@ _REPORTREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='collected_at', full_name='yandex.cloud.dataproc.manager.v1.ReportRequest.collected_at', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -726,8 +735,8 @@ _REPORTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2035,
-  serialized_end=2144,
+  serialized_start=2069,
+  serialized_end=2228,
 )
 
 
@@ -772,8 +781,8 @@ _REPORTREPLY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2146,
-  serialized_end=2261,
+  serialized_start=2230,
+  serialized_end=2345,
 )
 
 _HBASEINFO.fields_by_name['live_nodes'].message_type = _HBASENODEINFO
@@ -791,6 +800,7 @@ _INFO.fields_by_name['hbase'].message_type = _HBASEINFO
 _INFO.fields_by_name['oozie'].message_type = _OOZIEINFO
 _INFO.fields_by_name['livy'].message_type = _LIVYINFO
 _REPORTREQUEST.fields_by_name['info'].message_type = _INFO
+_REPORTREQUEST.fields_by_name['collected_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 DESCRIPTOR.message_types_by_name['HbaseNodeInfo'] = _HBASENODEINFO
 DESCRIPTOR.message_types_by_name['HbaseInfo'] = _HBASEINFO
 DESCRIPTOR.message_types_by_name['HDFSNodeInfo'] = _HDFSNODEINFO
@@ -907,8 +917,8 @@ _DATAPROCMANAGERSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=2264,
-  serialized_end=2396,
+  serialized_start=2348,
+  serialized_end=2480,
   methods=[
   _descriptor.MethodDescriptor(
     name='Report',

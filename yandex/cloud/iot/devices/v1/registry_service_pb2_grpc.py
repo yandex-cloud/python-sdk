@@ -22,6 +22,11 @@ class RegistryServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.GetRegistryRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__pb2.Registry.FromString,
                 )
+        self.GetByName = channel.unary_unary(
+                '/yandex.cloud.iot.devices.v1.RegistryService/GetByName',
+                request_serializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.GetByNameRegistryRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__pb2.Registry.FromString,
+                )
         self.List = channel.unary_unary(
                 '/yandex.cloud.iot.devices.v1.RegistryService/List',
                 request_serializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.ListRegistriesRequest.SerializeToString,
@@ -93,6 +98,12 @@ class RegistryServiceServicer(object):
 
         To get the list of available registries, make a [List] request.
         """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetByName(self, request, context):
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -189,6 +200,11 @@ def add_RegistryServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.GetRegistryRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__pb2.Registry.SerializeToString,
             ),
+            'GetByName': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetByName,
+                    request_deserializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.GetByNameRegistryRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__pb2.Registry.SerializeToString,
+            ),
             'List': grpc.unary_unary_rpc_method_handler(
                     servicer.List,
                     request_deserializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.ListRegistriesRequest.FromString,
@@ -273,6 +289,23 @@ class RegistryService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.iot.devices.v1.RegistryService/Get',
             yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.GetRegistryRequest.SerializeToString,
+            yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__pb2.Registry.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetByName(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.iot.devices.v1.RegistryService/GetByName',
+            yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.GetByNameRegistryRequest.SerializeToString,
             yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__pb2.Registry.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -22,6 +22,11 @@ class DeviceServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_device__service__pb2.GetDeviceRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_device__pb2.Device.FromString,
                 )
+        self.GetByName = channel.unary_unary(
+                '/yandex.cloud.iot.devices.v1.DeviceService/GetByName',
+                request_serializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_device__service__pb2.GetByNameDeviceRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_device__pb2.Device.FromString,
+                )
         self.List = channel.unary_unary(
                 '/yandex.cloud.iot.devices.v1.DeviceService/List',
                 request_serializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_device__service__pb2.ListDevicesRequest.SerializeToString,
@@ -88,6 +93,12 @@ class DeviceServiceServicer(object):
 
         To get the list of available devices, make a [List] request.
         """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetByName(self, request, context):
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -177,6 +188,11 @@ def add_DeviceServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_device__service__pb2.GetDeviceRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_device__pb2.Device.SerializeToString,
             ),
+            'GetByName': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetByName,
+                    request_deserializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_device__service__pb2.GetByNameDeviceRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_device__pb2.Device.SerializeToString,
+            ),
             'List': grpc.unary_unary_rpc_method_handler(
                     servicer.List,
                     request_deserializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_device__service__pb2.ListDevicesRequest.FromString,
@@ -256,6 +272,23 @@ class DeviceService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.iot.devices.v1.DeviceService/Get',
             yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_device__service__pb2.GetDeviceRequest.SerializeToString,
+            yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_device__pb2.Device.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetByName(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.iot.devices.v1.DeviceService/GetByName',
+            yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_device__service__pb2.GetByNameDeviceRequest.SerializeToString,
             yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_device__pb2.Device.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
