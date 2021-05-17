@@ -103,6 +103,21 @@ class FunctionServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessBindingsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
+        self.ListScalingPolicies = channel.unary_unary(
+                '/yandex.cloud.serverless.functions.v1.FunctionService/ListScalingPolicies',
+                request_serializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.ListScalingPoliciesRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.ListScalingPoliciesResponse.FromString,
+                )
+        self.SetScalingPolicy = channel.unary_unary(
+                '/yandex.cloud.serverless.functions.v1.FunctionService/SetScalingPolicy',
+                request_serializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.SetScalingPolicyRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
+        self.RemoveScalingPolicy = channel.unary_unary(
+                '/yandex.cloud.serverless.functions.v1.FunctionService/RemoveScalingPolicy',
+                request_serializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.RemoveScalingPolicyRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
 
 
 class FunctionServiceServicer(object):
@@ -235,6 +250,27 @@ class FunctionServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListScalingPolicies(self, request, context):
+        """Lists existing scaling policies for specified function
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SetScalingPolicy(self, request, context):
+        """Set scaling policy for specified function and tag
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def RemoveScalingPolicy(self, request, context):
+        """Remove scaling policy for specified function and tag
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_FunctionServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -321,6 +357,21 @@ def add_FunctionServiceServicer_to_server(servicer, server):
             'UpdateAccessBindings': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateAccessBindings,
                     request_deserializer=yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessBindingsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'ListScalingPolicies': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListScalingPolicies,
+                    request_deserializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.ListScalingPoliciesRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.ListScalingPoliciesResponse.SerializeToString,
+            ),
+            'SetScalingPolicy': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetScalingPolicy,
+                    request_deserializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.SetScalingPolicyRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'RemoveScalingPolicy': grpc.unary_unary_rpc_method_handler(
+                    servicer.RemoveScalingPolicy,
+                    request_deserializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.RemoveScalingPolicyRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
@@ -619,6 +670,57 @@ class FunctionService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.serverless.functions.v1.FunctionService/UpdateAccessBindings',
             yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessBindingsRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListScalingPolicies(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.serverless.functions.v1.FunctionService/ListScalingPolicies',
+            yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.ListScalingPoliciesRequest.SerializeToString,
+            yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.ListScalingPoliciesResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SetScalingPolicy(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.serverless.functions.v1.FunctionService/SetScalingPolicy',
+            yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.SetScalingPolicyRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RemoveScalingPolicy(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.serverless.functions.v1.FunctionService/RemoveScalingPolicy',
+            yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.RemoveScalingPolicyRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
