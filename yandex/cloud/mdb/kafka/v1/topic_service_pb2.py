@@ -25,7 +25,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\035yandex.cloud.api.mdb.kafka.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/kafka/v1;kafka',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n-yandex/cloud/mdb/kafka/v1/topic_service.proto\x12\x19yandex.cloud.mdb.kafka.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a%yandex/cloud/mdb/kafka/v1/topic.proto\"g\n\x0fGetTopicRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\ntopic_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04\x31-63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"s\n\x11ListTopicsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"_\n\x12ListTopicsResponse\x12\x30\n\x06topics\x18\x01 \x03(\x0b\x32 .yandex.cloud.mdb.kafka.v1.Topic\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"v\n\x12\x43reateTopicRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12>\n\ntopic_spec\x18\x02 \x01(\x0b\x32$.yandex.cloud.mdb.kafka.v1.TopicSpecB\x04\xe8\xc7\x31\x01\"]\n\x13\x43reateTopicMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x32\n\ntopic_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"\xd5\x01\n\x12UpdateTopicRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\ntopic_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04\x31-63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12/\n\x0bupdate_mask\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x38\n\ntopic_spec\x18\x04 \x01(\x0b\x32$.yandex.cloud.mdb.kafka.v1.TopicSpec\"=\n\x13UpdateTopicMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\ntopic_name\x18\x02 \x01(\t\"j\n\x12\x44\x65leteTopicRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\ntopic_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04\x31-63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"=\n\x13\x44\x65leteTopicMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\ntopic_name\x18\x02 \x01(\t2\x96\x07\n\x0cTopicService\x12\x98\x01\n\x03Get\x12*.yandex.cloud.mdb.kafka.v1.GetTopicRequest\x1a .yandex.cloud.mdb.kafka.v1.Topic\"C\x82\xd3\xe4\x93\x02=\x12;/managed-kafka/v1/clusters/{cluster_id}/topics/{topic_name}\x12\x9b\x01\n\x04List\x12,.yandex.cloud.mdb.kafka.v1.ListTopicsRequest\x1a-.yandex.cloud.mdb.kafka.v1.ListTopicsResponse\"6\x82\xd3\xe4\x93\x02\x30\x12./managed-kafka/v1/clusters/{cluster_id}/topics\x12\xb5\x01\n\x06\x43reate\x12-.yandex.cloud.mdb.kafka.v1.CreateTopicRequest\x1a!.yandex.cloud.operation.Operation\"Y\x82\xd3\xe4\x93\x02\x33\"./managed-kafka/v1/clusters/{cluster_id}/topics:\x01*\xb2\xd2*\x1c\n\x13\x43reateTopicMetadata\x12\x05Topic\x12\xc2\x01\n\x06Update\x12-.yandex.cloud.mdb.kafka.v1.UpdateTopicRequest\x1a!.yandex.cloud.operation.Operation\"f\x82\xd3\xe4\x93\x02@2;/managed-kafka/v1/clusters/{cluster_id}/topics/{topic_name}:\x01*\xb2\xd2*\x1c\n\x13UpdateTopicMetadata\x12\x05Topic\x12\xcf\x01\n\x06\x44\x65lete\x12-.yandex.cloud.mdb.kafka.v1.DeleteTopicRequest\x1a!.yandex.cloud.operation.Operation\"s\x82\xd3\xe4\x93\x02=*;/managed-kafka/v1/clusters/{cluster_id}/topics/{topic_name}\xb2\xd2*,\n\x13\x44\x65leteTopicMetadata\x12\x15google.protobuf.EmptyBd\n\x1dyandex.cloud.api.mdb.kafka.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/kafka/v1;kafkab\x06proto3'
+  serialized_pb=b'\n-yandex/cloud/mdb/kafka/v1/topic_service.proto\x12\x19yandex.cloud.mdb.kafka.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a%yandex/cloud/mdb/kafka/v1/topic.proto\"h\n\x0fGetTopicRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x33\n\ntopic_name\x18\x02 \x01(\tB\x1f\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x31-256\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"s\n\x11ListTopicsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"_\n\x12ListTopicsResponse\x12\x30\n\x06topics\x18\x01 \x03(\x0b\x32 .yandex.cloud.mdb.kafka.v1.Topic\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"v\n\x12\x43reateTopicRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12>\n\ntopic_spec\x18\x02 \x01(\x0b\x32$.yandex.cloud.mdb.kafka.v1.TopicSpecB\x04\xe8\xc7\x31\x01\"^\n\x13\x43reateTopicMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x33\n\ntopic_name\x18\x02 \x01(\tB\x1f\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=256\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"\xd6\x01\n\x12UpdateTopicRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x33\n\ntopic_name\x18\x02 \x01(\tB\x1f\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x31-256\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12/\n\x0bupdate_mask\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x38\n\ntopic_spec\x18\x04 \x01(\x0b\x32$.yandex.cloud.mdb.kafka.v1.TopicSpec\"=\n\x13UpdateTopicMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\ntopic_name\x18\x02 \x01(\t\"k\n\x12\x44\x65leteTopicRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x33\n\ntopic_name\x18\x02 \x01(\tB\x1f\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x31-256\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"=\n\x13\x44\x65leteTopicMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\ntopic_name\x18\x02 \x01(\t2\x96\x07\n\x0cTopicService\x12\x98\x01\n\x03Get\x12*.yandex.cloud.mdb.kafka.v1.GetTopicRequest\x1a .yandex.cloud.mdb.kafka.v1.Topic\"C\x82\xd3\xe4\x93\x02=\x12;/managed-kafka/v1/clusters/{cluster_id}/topics/{topic_name}\x12\x9b\x01\n\x04List\x12,.yandex.cloud.mdb.kafka.v1.ListTopicsRequest\x1a-.yandex.cloud.mdb.kafka.v1.ListTopicsResponse\"6\x82\xd3\xe4\x93\x02\x30\x12./managed-kafka/v1/clusters/{cluster_id}/topics\x12\xb5\x01\n\x06\x43reate\x12-.yandex.cloud.mdb.kafka.v1.CreateTopicRequest\x1a!.yandex.cloud.operation.Operation\"Y\x82\xd3\xe4\x93\x02\x33\"./managed-kafka/v1/clusters/{cluster_id}/topics:\x01*\xb2\xd2*\x1c\n\x13\x43reateTopicMetadata\x12\x05Topic\x12\xc2\x01\n\x06Update\x12-.yandex.cloud.mdb.kafka.v1.UpdateTopicRequest\x1a!.yandex.cloud.operation.Operation\"f\x82\xd3\xe4\x93\x02@2;/managed-kafka/v1/clusters/{cluster_id}/topics/{topic_name}:\x01*\xb2\xd2*\x1c\n\x13UpdateTopicMetadata\x12\x05Topic\x12\xcf\x01\n\x06\x44\x65lete\x12-.yandex.cloud.mdb.kafka.v1.DeleteTopicRequest\x1a!.yandex.cloud.operation.Operation\"s\x82\xd3\xe4\x93\x02=*;/managed-kafka/v1/clusters/{cluster_id}/topics/{topic_name}\xb2\xd2*,\n\x13\x44\x65leteTopicMetadata\x12\x15google.protobuf.EmptyBd\n\x1dyandex.cloud.api.mdb.kafka.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/kafka/v1;kafkab\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_kafka_dot_v1_dot_topic__pb2.DESCRIPTOR,])
 
@@ -53,7 +53,7 @@ _GETTOPICREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\0041-63\362\3071\016[a-zA-Z0-9_-]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\350\3071\001\212\3101\0051-256\362\3071\016[a-zA-Z0-9_-]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -67,7 +67,7 @@ _GETTOPICREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=284,
-  serialized_end=387,
+  serialized_end=388,
 )
 
 
@@ -112,8 +112,8 @@ _LISTTOPICSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=389,
-  serialized_end=504,
+  serialized_start=390,
+  serialized_end=505,
 )
 
 
@@ -151,8 +151,8 @@ _LISTTOPICSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=506,
-  serialized_end=601,
+  serialized_start=507,
+  serialized_end=602,
 )
 
 
@@ -190,8 +190,8 @@ _CREATETOPICREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=603,
-  serialized_end=721,
+  serialized_start=604,
+  serialized_end=722,
 )
 
 
@@ -216,7 +216,7 @@ _CREATETOPICMETADATA = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=63\362\3071\016[a-zA-Z0-9_-]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\350\3071\001\212\3101\005<=256\362\3071\016[a-zA-Z0-9_-]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -229,8 +229,8 @@ _CREATETOPICMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=723,
-  serialized_end=816,
+  serialized_start=724,
+  serialized_end=818,
 )
 
 
@@ -255,7 +255,7 @@ _UPDATETOPICREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\0041-63\362\3071\016[a-zA-Z0-9_-]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\350\3071\001\212\3101\0051-256\362\3071\016[a-zA-Z0-9_-]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='update_mask', full_name='yandex.cloud.mdb.kafka.v1.UpdateTopicRequest.update_mask', index=2,
       number=3, type=11, cpp_type=10, label=1,
@@ -282,8 +282,8 @@ _UPDATETOPICREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=819,
-  serialized_end=1032,
+  serialized_start=821,
+  serialized_end=1035,
 )
 
 
@@ -321,8 +321,8 @@ _UPDATETOPICMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1034,
-  serialized_end=1095,
+  serialized_start=1037,
+  serialized_end=1098,
 )
 
 
@@ -347,7 +347,7 @@ _DELETETOPICREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\0041-63\362\3071\016[a-zA-Z0-9_-]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\350\3071\001\212\3101\0051-256\362\3071\016[a-zA-Z0-9_-]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -360,8 +360,8 @@ _DELETETOPICREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1097,
-  serialized_end=1203,
+  serialized_start=1100,
+  serialized_end=1207,
 )
 
 
@@ -399,8 +399,8 @@ _DELETETOPICMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1205,
-  serialized_end=1266,
+  serialized_start=1209,
+  serialized_end=1270,
 )
 
 _LISTTOPICSRESPONSE.fields_by_name['topics'].message_type = yandex_dot_cloud_dot_mdb_dot_kafka_dot_v1_dot_topic__pb2._TOPIC
@@ -503,8 +503,8 @@ _TOPICSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1269,
-  serialized_end=2187,
+  serialized_start=1273,
+  serialized_end=2191,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',

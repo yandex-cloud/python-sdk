@@ -25,7 +25,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\027yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpc',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n0yandex/cloud/vpc/v1/security_group_service.proto\x12\x13yandex.cloud.vpc.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a(yandex/cloud/vpc/v1/security_group.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\":\n\x17GetSecurityGroupRequest\x12\x1f\n\x11security_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"k\n\x19ListSecurityGroupsRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\"r\n\x1aListSecurityGroupsResponse\x12;\n\x0fsecurity_groups\x18\x01 \x03(\x0b\x32\".yandex.cloud.vpc.v1.SecurityGroup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xae\x02\n\x1a\x43reateSecurityGroupRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12K\n\x06labels\x18\x04 \x03(\x0b\x32;.yandex.cloud.vpc.v1.CreateSecurityGroupRequest.LabelsEntry\x12\x18\n\nnetwork_id\x18\x05 \x01(\tB\x04\xe8\xc7\x31\x01\x12>\n\nrule_specs\x18\x06 \x03(\x0b\x32*.yandex.cloud.vpc.v1.SecurityGroupRuleSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xdf\x03\n\x15SecurityGroupRuleSpec\x12\x13\n\x0b\x64\x65scription\x18\x01 \x01(\t\x12\x46\n\x06labels\x18\x02 \x03(\x0b\x32\x36.yandex.cloud.vpc.v1.SecurityGroupRuleSpec.LabelsEntry\x12I\n\tdirection\x18\x03 \x01(\x0e\x32\x30.yandex.cloud.vpc.v1.SecurityGroupRule.DirectionB\x04\xe8\xc7\x31\x01\x12-\n\x05ports\x18\x04 \x01(\x0b\x32\x1e.yandex.cloud.vpc.v1.PortRange\x12\x17\n\rprotocol_name\x18\x05 \x01(\tH\x00\x12\x19\n\x0fprotocol_number\x18\x06 \x01(\x03H\x00\x12\x36\n\x0b\x63idr_blocks\x18\x07 \x01(\x0b\x32\x1f.yandex.cloud.vpc.v1.CidrBlocksH\x01\x12\x1b\n\x11security_group_id\x18\x08 \x01(\tH\x01\x12\x1b\n\x11predefined_target\x18\t \x01(\tH\x01\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\n\n\x08protocolB\x0e\n\x06target\x12\x04\xc0\xc1\x31\x01\"8\n\x1b\x43reateSecurityGroupMetadata\x12\x19\n\x11security_group_id\x18\x01 \x01(\t\"\xcd\x02\n\x1aUpdateSecurityGroupRequest\x12\x1f\n\x11security_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12K\n\x06labels\x18\x05 \x03(\x0b\x32;.yandex.cloud.vpc.v1.UpdateSecurityGroupRequest.LabelsEntry\x12>\n\nrule_specs\x18\x06 \x03(\x0b\x32*.yandex.cloud.vpc.v1.SecurityGroupRuleSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"8\n\x1bUpdateSecurityGroupMetadata\x12\x19\n\x11security_group_id\x18\x01 \x01(\t\"\xa6\x01\n\x1fUpdateSecurityGroupRulesRequest\x12\x1f\n\x11security_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x19\n\x11\x64\x65letion_rule_ids\x18\x02 \x03(\t\x12G\n\x13\x61\x64\x64ition_rule_specs\x18\x03 \x03(\x0b\x32*.yandex.cloud.vpc.v1.SecurityGroupRuleSpec\"\x9e\x02\n\x1eUpdateSecurityGroupRuleRequest\x12\x1f\n\x11security_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x15\n\x07rule_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12O\n\x06labels\x18\x05 \x03(\x0b\x32?.yandex.cloud.vpc.v1.UpdateSecurityGroupRuleRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"M\n\x1fUpdateSecurityGroupRuleMetadata\x12\x19\n\x11security_group_id\x18\x01 \x01(\t\x12\x0f\n\x07rule_id\x18\x02 \x01(\t\"=\n\x1a\x44\x65leteSecurityGroupRequest\x12\x1f\n\x11security_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"8\n\x1b\x44\x65leteSecurityGroupMetadata\x12\x19\n\x11security_group_id\x18\x01 \x01(\t\"l\n\"ListSecurityGroupOperationsRequest\x12\x1f\n\x11security_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\"u\n#ListSecurityGroupOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"`\n\x18MoveSecurityGroupRequest\x12\x1f\n\x11security_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12#\n\x15\x64\x65stination_folder_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"6\n\x19MoveSecurityGroupMetadata\x12\x19\n\x11security_group_id\x18\x01 \x01(\t2\xe0\t\n\x14SecurityGroupService\x12W\n\x03Get\x12,.yandex.cloud.vpc.v1.GetSecurityGroupRequest\x1a\".yandex.cloud.vpc.v1.SecurityGroup\x12g\n\x04List\x12..yandex.cloud.vpc.v1.ListSecurityGroupsRequest\x1a/.yandex.cloud.vpc.v1.ListSecurityGroupsResponse\x12\x8e\x01\n\x06\x43reate\x12/.yandex.cloud.vpc.v1.CreateSecurityGroupRequest\x1a!.yandex.cloud.operation.Operation\"0\xb2\xd2*,\n\x1b\x43reateSecurityGroupMetadata\x12\rSecurityGroup\x12\x8e\x01\n\x06Update\x12/.yandex.cloud.vpc.v1.UpdateSecurityGroupRequest\x1a!.yandex.cloud.operation.Operation\"0\xb2\xd2*,\n\x1bUpdateSecurityGroupMetadata\x12\rSecurityGroup\x12\x98\x01\n\x0bUpdateRules\x12\x34.yandex.cloud.vpc.v1.UpdateSecurityGroupRulesRequest\x1a!.yandex.cloud.operation.Operation\"0\xb2\xd2*,\n\x1bUpdateSecurityGroupMetadata\x12\rSecurityGroup\x12\x9e\x01\n\nUpdateRule\x12\x33.yandex.cloud.vpc.v1.UpdateSecurityGroupRuleRequest\x1a!.yandex.cloud.operation.Operation\"8\xb2\xd2*4\n\x1fUpdateSecurityGroupRuleMetadata\x12\x11SecurityGroupRule\x12\x96\x01\n\x06\x44\x65lete\x12/.yandex.cloud.vpc.v1.DeleteSecurityGroupRequest\x1a!.yandex.cloud.operation.Operation\"8\xb2\xd2*4\n\x1b\x44\x65leteSecurityGroupMetadata\x12\x15google.protobuf.Empty\x12\x88\x01\n\x04Move\x12-.yandex.cloud.vpc.v1.MoveSecurityGroupRequest\x1a!.yandex.cloud.operation.Operation\".\xb2\xd2**\n\x19MoveSecurityGroupMetadata\x12\rSecurityGroup\x12\x83\x01\n\x0eListOperations\x12\x37.yandex.cloud.vpc.v1.ListSecurityGroupOperationsRequest\x1a\x38.yandex.cloud.vpc.v1.ListSecurityGroupOperationsResponseBV\n\x17yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpcb\x06proto3'
+  serialized_pb=b'\n0yandex/cloud/vpc/v1/security_group_service.proto\x12\x13yandex.cloud.vpc.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a(yandex/cloud/vpc/v1/security_group.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\":\n\x17GetSecurityGroupRequest\x12\x1f\n\x11security_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"k\n\x19ListSecurityGroupsRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\"r\n\x1aListSecurityGroupsResponse\x12;\n\x0fsecurity_groups\x18\x01 \x03(\x0b\x32\".yandex.cloud.vpc.v1.SecurityGroup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xae\x02\n\x1a\x43reateSecurityGroupRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12K\n\x06labels\x18\x04 \x03(\x0b\x32;.yandex.cloud.vpc.v1.CreateSecurityGroupRequest.LabelsEntry\x12\x18\n\nnetwork_id\x18\x05 \x01(\tB\x04\xe8\xc7\x31\x01\x12>\n\nrule_specs\x18\x06 \x03(\x0b\x32*.yandex.cloud.vpc.v1.SecurityGroupRuleSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xdf\x03\n\x15SecurityGroupRuleSpec\x12\x13\n\x0b\x64\x65scription\x18\x01 \x01(\t\x12\x46\n\x06labels\x18\x02 \x03(\x0b\x32\x36.yandex.cloud.vpc.v1.SecurityGroupRuleSpec.LabelsEntry\x12I\n\tdirection\x18\x03 \x01(\x0e\x32\x30.yandex.cloud.vpc.v1.SecurityGroupRule.DirectionB\x04\xe8\xc7\x31\x01\x12-\n\x05ports\x18\x04 \x01(\x0b\x32\x1e.yandex.cloud.vpc.v1.PortRange\x12\x17\n\rprotocol_name\x18\x05 \x01(\tH\x00\x12\x19\n\x0fprotocol_number\x18\x06 \x01(\x03H\x00\x12\x36\n\x0b\x63idr_blocks\x18\x07 \x01(\x0b\x32\x1f.yandex.cloud.vpc.v1.CidrBlocksH\x01\x12\x1b\n\x11security_group_id\x18\x08 \x01(\tH\x01\x12\x1b\n\x11predefined_target\x18\t \x01(\tH\x01\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\n\n\x08protocolB\x0e\n\x06target\x12\x04\xc0\xc1\x31\x01\"8\n\x1b\x43reateSecurityGroupMetadata\x12\x19\n\x11security_group_id\x18\x01 \x01(\t\"\xcd\x02\n\x1aUpdateSecurityGroupRequest\x12\x1f\n\x11security_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12K\n\x06labels\x18\x05 \x03(\x0b\x32;.yandex.cloud.vpc.v1.UpdateSecurityGroupRequest.LabelsEntry\x12>\n\nrule_specs\x18\x06 \x03(\x0b\x32*.yandex.cloud.vpc.v1.SecurityGroupRuleSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"P\n\x1bUpdateSecurityGroupMetadata\x12\x19\n\x11security_group_id\x18\x01 \x01(\t\x12\x16\n\x0e\x61\x64\x64\x65\x64_rule_ids\x18\x02 \x03(\t\"\xa6\x01\n\x1fUpdateSecurityGroupRulesRequest\x12\x1f\n\x11security_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x19\n\x11\x64\x65letion_rule_ids\x18\x02 \x03(\t\x12G\n\x13\x61\x64\x64ition_rule_specs\x18\x03 \x03(\x0b\x32*.yandex.cloud.vpc.v1.SecurityGroupRuleSpec\"\x9e\x02\n\x1eUpdateSecurityGroupRuleRequest\x12\x1f\n\x11security_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x15\n\x07rule_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12O\n\x06labels\x18\x05 \x03(\x0b\x32?.yandex.cloud.vpc.v1.UpdateSecurityGroupRuleRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"M\n\x1fUpdateSecurityGroupRuleMetadata\x12\x19\n\x11security_group_id\x18\x01 \x01(\t\x12\x0f\n\x07rule_id\x18\x02 \x01(\t\"=\n\x1a\x44\x65leteSecurityGroupRequest\x12\x1f\n\x11security_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"8\n\x1b\x44\x65leteSecurityGroupMetadata\x12\x19\n\x11security_group_id\x18\x01 \x01(\t\"l\n\"ListSecurityGroupOperationsRequest\x12\x1f\n\x11security_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\"u\n#ListSecurityGroupOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"`\n\x18MoveSecurityGroupRequest\x12\x1f\n\x11security_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12#\n\x15\x64\x65stination_folder_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"6\n\x19MoveSecurityGroupMetadata\x12\x19\n\x11security_group_id\x18\x01 \x01(\t2\xb7\r\n\x14SecurityGroupService\x12\x8b\x01\n\x03Get\x12,.yandex.cloud.vpc.v1.GetSecurityGroupRequest\x1a\".yandex.cloud.vpc.v1.SecurityGroup\"2\x82\xd3\xe4\x93\x02,\x12*/vpc/v1/securityGroups/{security_group_id}\x12\x87\x01\n\x04List\x12..yandex.cloud.vpc.v1.ListSecurityGroupsRequest\x1a/.yandex.cloud.vpc.v1.ListSecurityGroupsResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/vpc/v1/securityGroups\x12\xaf\x01\n\x06\x43reate\x12/.yandex.cloud.vpc.v1.CreateSecurityGroupRequest\x1a!.yandex.cloud.operation.Operation\"Q\x82\xd3\xe4\x93\x02\x1b\"\x16/vpc/v1/securityGroups:\x01*\xb2\xd2*,\n\x1b\x43reateSecurityGroupMetadata\x12\rSecurityGroup\x12\xc3\x01\n\x06Update\x12/.yandex.cloud.vpc.v1.UpdateSecurityGroupRequest\x1a!.yandex.cloud.operation.Operation\"e\x82\xd3\xe4\x93\x02/2*/vpc/v1/securityGroups/{security_group_id}:\x01*\xb2\xd2*,\n\x1bUpdateSecurityGroupMetadata\x12\rSecurityGroup\x12\xd3\x01\n\x0bUpdateRules\x12\x34.yandex.cloud.vpc.v1.UpdateSecurityGroupRulesRequest\x1a!.yandex.cloud.operation.Operation\"k\x82\xd3\xe4\x93\x02\x35\x32\x30/vpc/v1/securityGroups/{security_group_id}/rules:\x01*\xb2\xd2*,\n\x1bUpdateSecurityGroupMetadata\x12\rSecurityGroup\x12\xe3\x01\n\nUpdateRule\x12\x33.yandex.cloud.vpc.v1.UpdateSecurityGroupRuleRequest\x1a!.yandex.cloud.operation.Operation\"}\x82\xd3\xe4\x93\x02?2:/vpc/v1/securityGroups/{security_group_id}/rules/{rule_id}:\x01*\xb2\xd2*4\n\x1fUpdateSecurityGroupRuleMetadata\x12\x11SecurityGroupRule\x12\xc8\x01\n\x06\x44\x65lete\x12/.yandex.cloud.vpc.v1.DeleteSecurityGroupRequest\x1a!.yandex.cloud.operation.Operation\"j\x82\xd3\xe4\x93\x02,**/vpc/v1/securityGroups/{security_group_id}\xb2\xd2*4\n\x1b\x44\x65leteSecurityGroupMetadata\x12\x15google.protobuf.Empty\x12\xc2\x01\n\x04Move\x12-.yandex.cloud.vpc.v1.MoveSecurityGroupRequest\x1a!.yandex.cloud.operation.Operation\"h\x82\xd3\xe4\x93\x02\x34\"//vpc/v1/securityGroups/{security_group_id}:move:\x01*\xb2\xd2**\n\x19MoveSecurityGroupMetadata\x12\rSecurityGroup\x12\xc2\x01\n\x0eListOperations\x12\x37.yandex.cloud.vpc.v1.ListSecurityGroupOperationsRequest\x1a\x38.yandex.cloud.vpc.v1.ListSecurityGroupOperationsResponse\"=\x82\xd3\xe4\x93\x02\x37\x12\x35/vpc/v1/securityGroups/{security_group_id}/operationsBV\n\x17yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpcb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_vpc_dot_v1_dot_security__group__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -549,6 +549,13 @@ _UPDATESECURITYGROUPMETADATA = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='added_rule_ids', full_name='yandex.cloud.vpc.v1.UpdateSecurityGroupMetadata.added_rule_ids', index=1,
+      number=2, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -562,7 +569,7 @@ _UPDATESECURITYGROUPMETADATA = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1750,
-  serialized_end=1806,
+  serialized_end=1830,
 )
 
 
@@ -607,8 +614,8 @@ _UPDATESECURITYGROUPRULESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1809,
-  serialized_end=1975,
+  serialized_start=1833,
+  serialized_end=1999,
 )
 
 
@@ -705,8 +712,8 @@ _UPDATESECURITYGROUPRULEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1978,
-  serialized_end=2264,
+  serialized_start=2002,
+  serialized_end=2288,
 )
 
 
@@ -744,8 +751,8 @@ _UPDATESECURITYGROUPRULEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2266,
-  serialized_end=2343,
+  serialized_start=2290,
+  serialized_end=2367,
 )
 
 
@@ -776,8 +783,8 @@ _DELETESECURITYGROUPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2345,
-  serialized_end=2406,
+  serialized_start=2369,
+  serialized_end=2430,
 )
 
 
@@ -808,8 +815,8 @@ _DELETESECURITYGROUPMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2408,
-  serialized_end=2464,
+  serialized_start=2432,
+  serialized_end=2488,
 )
 
 
@@ -854,8 +861,8 @@ _LISTSECURITYGROUPOPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2466,
-  serialized_end=2574,
+  serialized_start=2490,
+  serialized_end=2598,
 )
 
 
@@ -893,8 +900,8 @@ _LISTSECURITYGROUPOPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2576,
-  serialized_end=2693,
+  serialized_start=2600,
+  serialized_end=2717,
 )
 
 
@@ -932,8 +939,8 @@ _MOVESECURITYGROUPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2695,
-  serialized_end=2791,
+  serialized_start=2719,
+  serialized_end=2815,
 )
 
 
@@ -964,8 +971,8 @@ _MOVESECURITYGROUPMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2793,
-  serialized_end=2847,
+  serialized_start=2817,
+  serialized_end=2871,
 )
 
 _LISTSECURITYGROUPSRESPONSE.fields_by_name['security_groups'].message_type = yandex_dot_cloud_dot_vpc_dot_v1_dot_security__group__pb2._SECURITYGROUP
@@ -1199,8 +1206,8 @@ _SECURITYGROUPSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=2850,
-  serialized_end=4098,
+  serialized_start=2874,
+  serialized_end=4593,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
@@ -1209,7 +1216,7 @@ _SECURITYGROUPSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_GETSECURITYGROUPREQUEST,
     output_type=yandex_dot_cloud_dot_vpc_dot_v1_dot_security__group__pb2._SECURITYGROUP,
-    serialized_options=None,
+    serialized_options=b'\202\323\344\223\002,\022*/vpc/v1/securityGroups/{security_group_id}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -1219,7 +1226,7 @@ _SECURITYGROUPSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTSECURITYGROUPSREQUEST,
     output_type=_LISTSECURITYGROUPSRESPONSE,
-    serialized_options=None,
+    serialized_options=b'\202\323\344\223\002\030\022\026/vpc/v1/securityGroups',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -1229,7 +1236,7 @@ _SECURITYGROUPSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_CREATESECURITYGROUPREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\262\322*,\n\033CreateSecurityGroupMetadata\022\rSecurityGroup',
+    serialized_options=b'\202\323\344\223\002\033\"\026/vpc/v1/securityGroups:\001*\262\322*,\n\033CreateSecurityGroupMetadata\022\rSecurityGroup',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -1239,7 +1246,7 @@ _SECURITYGROUPSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATESECURITYGROUPREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\262\322*,\n\033UpdateSecurityGroupMetadata\022\rSecurityGroup',
+    serialized_options=b'\202\323\344\223\002/2*/vpc/v1/securityGroups/{security_group_id}:\001*\262\322*,\n\033UpdateSecurityGroupMetadata\022\rSecurityGroup',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -1249,7 +1256,7 @@ _SECURITYGROUPSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATESECURITYGROUPRULESREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\262\322*,\n\033UpdateSecurityGroupMetadata\022\rSecurityGroup',
+    serialized_options=b'\202\323\344\223\002520/vpc/v1/securityGroups/{security_group_id}/rules:\001*\262\322*,\n\033UpdateSecurityGroupMetadata\022\rSecurityGroup',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -1259,7 +1266,7 @@ _SECURITYGROUPSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_UPDATESECURITYGROUPRULEREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\262\322*4\n\037UpdateSecurityGroupRuleMetadata\022\021SecurityGroupRule',
+    serialized_options=b'\202\323\344\223\002?2:/vpc/v1/securityGroups/{security_group_id}/rules/{rule_id}:\001*\262\322*4\n\037UpdateSecurityGroupRuleMetadata\022\021SecurityGroupRule',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -1269,7 +1276,7 @@ _SECURITYGROUPSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_DELETESECURITYGROUPREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\262\322*4\n\033DeleteSecurityGroupMetadata\022\025google.protobuf.Empty',
+    serialized_options=b'\202\323\344\223\002,**/vpc/v1/securityGroups/{security_group_id}\262\322*4\n\033DeleteSecurityGroupMetadata\022\025google.protobuf.Empty',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -1279,7 +1286,7 @@ _SECURITYGROUPSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_MOVESECURITYGROUPREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\262\322**\n\031MoveSecurityGroupMetadata\022\rSecurityGroup',
+    serialized_options=b'\202\323\344\223\0024\"//vpc/v1/securityGroups/{security_group_id}:move:\001*\262\322**\n\031MoveSecurityGroupMetadata\022\rSecurityGroup',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
@@ -1289,7 +1296,7 @@ _SECURITYGROUPSERVICE = _descriptor.ServiceDescriptor(
     containing_service=None,
     input_type=_LISTSECURITYGROUPOPERATIONSREQUEST,
     output_type=_LISTSECURITYGROUPOPERATIONSRESPONSE,
-    serialized_options=None,
+    serialized_options=b'\202\323\344\223\0027\0225/vpc/v1/securityGroups/{security_group_id}/operations',
     create_key=_descriptor._internal_create_key,
   ),
 ])
