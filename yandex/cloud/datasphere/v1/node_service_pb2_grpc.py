@@ -27,7 +27,7 @@ class NodeServiceServicer(object):
     """
 
     def Execute(self, request, context):
-        """Executes deployed Node
+        """Executes deployed Node.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
