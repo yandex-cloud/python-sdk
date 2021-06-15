@@ -193,21 +193,22 @@ class InstanceServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def AddOneToOneNat(self, request, context):
-        """net
-
+        """Enables One-to-one NAT on the network interface.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def RemoveOneToOneNat(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Removes One-to-one NAT from the network interface.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateNetworkInterface(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Updates the specified instance network interface.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
