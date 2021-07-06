@@ -8,7 +8,8 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class HttpRouterServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing HTTP routers.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -49,40 +50,48 @@ class HttpRouterServiceStub(object):
 
 
 class HttpRouterServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing HTTP routers.
+    """
 
     def Get(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Returns the specified HTTP router.
+
+        To get the list of all available HTTP routers, make a [List] request.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Lists HTTP routers in the specified folder.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Creates an HTTP router in the specified folder.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Updates the specified HTTP router.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Deletes the specified HTTP router.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListOperations(self, request, context):
-        """Lists operations for the specified http router.
+        """Lists operations for the specified HTTP router.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -129,7 +138,8 @@ def add_HttpRouterServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class HttpRouterService(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing HTTP routers.
+    """
 
     @staticmethod
     def Get(request,

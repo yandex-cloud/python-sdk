@@ -8,7 +8,8 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class LoadBalancerServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing application load balancers.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -94,97 +95,119 @@ class LoadBalancerServiceStub(object):
 
 
 class LoadBalancerServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing application load balancers.
+    """
 
     def Get(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Returns the specified application load balancer.
+
+        To get the list of all available application load balancers, make a [List] request.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Lists application load balancers in the specified folder.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Creates an application load balancer in the specified folder.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Updates the specified application load balancer.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Deletes the specified application load balancer.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Start(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Starts the specified application load balancer.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Stop(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Stops the specified application load balancer.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def AddListener(self, request, context):
         """AddListener/UpdateListener technically do the same, but have different semantics.
+
+        Adds a listener to the specified application load balancer.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def RemoveListener(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Deletes the specified listener.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateListener(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Updates the specified listener of the specified application load balancer.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def AddSniMatch(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Adds a SNI handler to the specified listener.
+
+        This request does not allow to add [TlsListener.default_handler]. Make an [UpdateListener] request instead.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateSniMatch(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Updates the specified SNI handler of the specified listener.
+
+        This request does not allow to update [TlsListener.default_handler]. Make an [UpdateListener] request instead.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def RemoveSniMatch(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Deletes the specified SNI handler.
+
+        This request does not allow to delete [TlsListener.default_handler].
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetTargetStates(self, request, context):
-        """Returns zonal state of each target within target group
-        for a given backend group and load balancer.
+        """Returns the statuses of all targets of the specified backend group in all their availability zones.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListOperations(self, request, context):
-        """Lists operations for the specified load balancer.
+        """Lists operations for the specified application load balancer.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -276,7 +299,8 @@ def add_LoadBalancerServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class LoadBalancerService(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing application load balancers.
+    """
 
     @staticmethod
     def Get(request,

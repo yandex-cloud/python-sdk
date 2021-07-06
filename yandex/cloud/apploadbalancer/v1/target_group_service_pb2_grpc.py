@@ -8,7 +8,8 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class TargetGroupServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing target groups.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -59,46 +60,56 @@ class TargetGroupServiceStub(object):
 
 
 class TargetGroupServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing target groups.
+    """
 
     def Get(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Returns the specified target group.
+
+        To get the list of all available target groups, make a [List] request.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Lists target groups in the specified folder.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Creates a target group in the specified folder.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Updates the specified target group.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Deletes the specified target group.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def AddTargets(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Adds targets to the specified target group.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def RemoveTargets(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Removes targets from the specified target group.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -161,7 +172,8 @@ def add_TargetGroupServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class TargetGroupService(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing target groups.
+    """
 
     @staticmethod
     def Get(request,

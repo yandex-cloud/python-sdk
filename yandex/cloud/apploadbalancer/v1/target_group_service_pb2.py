@@ -25,7 +25,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancer',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n:yandex/cloud/apploadbalancer/v1/target_group_service.proto\x12\x1fyandex.cloud.apploadbalancer.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x32yandex/cloud/apploadbalancer/v1/target_group.proto\x1a\x1dyandex/cloud/validation.proto\"6\n\x15GetTargetGroupRequest\x12\x1d\n\x0ftarget_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\x8c\x01\n\x17ListTargetGroupsRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"x\n\x18ListTargetGroupsResponse\x12\x43\n\rtarget_groups\x18\x01 \x03(\x0b\x32,.yandex.cloud.apploadbalancer.v1.TargetGroup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"9\n\x18\x44\x65leteTargetGroupRequest\x12\x1d\n\x0ftarget_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"4\n\x19\x44\x65leteTargetGroupMetadata\x12\x17\n\x0ftarget_group_id\x18\x01 \x01(\t\"\xc8\x03\n\x18UpdateTargetGroupRequest\x12\x1d\n\x0ftarget_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x9e\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x45.yandex.cloud.apploadbalancer.v1.UpdateTargetGroupRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x38\n\x07targets\x18\x06 \x03(\x0b\x32\'.yandex.cloud.apploadbalancer.v1.Target\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"4\n\x19UpdateTargetGroupMetadata\x12\x17\n\x0ftarget_group_id\x18\x01 \x01(\t\"\x91\x03\n\x18\x43reateTargetGroupRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x32\n\x04name\x18\x02 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x9e\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x45.yandex.cloud.apploadbalancer.v1.CreateTargetGroupRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x38\n\x07targets\x18\x05 \x03(\x0b\x32\'.yandex.cloud.apploadbalancer.v1.Target\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"4\n\x19\x43reateTargetGroupMetadata\x12\x17\n\x0ftarget_group_id\x18\x01 \x01(\t\"t\n\x11\x41\x64\x64TargetsRequest\x12\x1d\n\x0ftarget_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12@\n\x07targets\x18\x02 \x03(\x0b\x32\'.yandex.cloud.apploadbalancer.v1.TargetB\x06\x82\xc8\x31\x02>0\"-\n\x12\x41\x64\x64TargetsMetadata\x12\x17\n\x0ftarget_group_id\x18\x01 \x01(\t\"w\n\x14RemoveTargetsRequest\x12\x1d\n\x0ftarget_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12@\n\x07targets\x18\x02 \x03(\x0b\x32\'.yandex.cloud.apploadbalancer.v1.TargetB\x06\x82\xc8\x31\x02>0\"0\n\x15RemoveTargetsMetadata\x12\x17\n\x0ftarget_group_id\x18\x01 \x01(\t\"\x87\x01\n ListTargetGroupOperationsRequest\x12%\n\x0ftarget_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"s\n!ListTargetGroupOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xee\x0c\n\x12TargetGroupService\x12\xa7\x01\n\x03Get\x12\x36.yandex.cloud.apploadbalancer.v1.GetTargetGroupRequest\x1a,.yandex.cloud.apploadbalancer.v1.TargetGroup\":\x82\xd3\xe4\x93\x02\x34\x12\x32/apploadbalancer/v1/targetGroups/{target_group_id}\x12\xa5\x01\n\x04List\x12\x38.yandex.cloud.apploadbalancer.v1.ListTargetGroupsRequest\x1a\x39.yandex.cloud.apploadbalancer.v1.ListTargetGroupsResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /apploadbalancer/v1/targetGroups\x12\xbf\x01\n\x06\x43reate\x12\x39.yandex.cloud.apploadbalancer.v1.CreateTargetGroupRequest\x1a!.yandex.cloud.operation.Operation\"W\x82\xd3\xe4\x93\x02%\" /apploadbalancer/v1/targetGroups:\x01*\xb2\xd2*(\n\x19\x43reateTargetGroupMetadata\x12\x0bTargetGroup\x12\xd1\x01\n\x06Update\x12\x39.yandex.cloud.apploadbalancer.v1.UpdateTargetGroupRequest\x1a!.yandex.cloud.operation.Operation\"i\x82\xd3\xe4\x93\x02\x37\x32\x32/apploadbalancer/v1/targetGroups/{target_group_id}:\x01*\xb2\xd2*(\n\x19UpdateTargetGroupMetadata\x12\x0bTargetGroup\x12\xd8\x01\n\x06\x44\x65lete\x12\x39.yandex.cloud.apploadbalancer.v1.DeleteTargetGroupRequest\x1a!.yandex.cloud.operation.Operation\"p\x82\xd3\xe4\x93\x02\x34*2/apploadbalancer/v1/targetGroups/{target_group_id}\xb2\xd2*2\n\x19\x44\x65leteTargetGroupMetadata\x12\x15google.protobuf.Empty\x12\xd2\x01\n\nAddTargets\x12\x32.yandex.cloud.apploadbalancer.v1.AddTargetsRequest\x1a!.yandex.cloud.operation.Operation\"m\x82\xd3\xe4\x93\x02\x42\"=/apploadbalancer/v1/targetGroups/{target_group_id}:addTargets:\x01*\xb2\xd2*!\n\x12\x41\x64\x64TargetsMetadata\x12\x0bTargetGroup\x12\xde\x01\n\rRemoveTargets\x12\x35.yandex.cloud.apploadbalancer.v1.RemoveTargetsRequest\x1a!.yandex.cloud.operation.Operation\"s\x82\xd3\xe4\x93\x02\x45\"@/apploadbalancer/v1/targetGroups/{target_group_id}:removeTargets:\x01*\xb2\xd2*$\n\x15RemoveTargetsMetadata\x12\x0bTargetGroup\x12\xde\x01\n\x0eListOperations\x12\x41.yandex.cloud.apploadbalancer.v1.ListTargetGroupOperationsRequest\x1a\x42.yandex.cloud.apploadbalancer.v1.ListTargetGroupOperationsResponse\"E\x82\xd3\xe4\x93\x02?\x12=/apploadbalancer/v1/targetGroups/{target_group_id}/operationsBz\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancerb\x06proto3'
+  serialized_pb=b'\n:yandex/cloud/apploadbalancer/v1/target_group_service.proto\x12\x1fyandex.cloud.apploadbalancer.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x32yandex/cloud/apploadbalancer/v1/target_group.proto\x1a\x1dyandex/cloud/validation.proto\"6\n\x15GetTargetGroupRequest\x12\x1d\n\x0ftarget_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\x8c\x01\n\x17ListTargetGroupsRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"x\n\x18ListTargetGroupsResponse\x12\x43\n\rtarget_groups\x18\x01 \x03(\x0b\x32,.yandex.cloud.apploadbalancer.v1.TargetGroup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"9\n\x18\x44\x65leteTargetGroupRequest\x12\x1d\n\x0ftarget_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"4\n\x19\x44\x65leteTargetGroupMetadata\x12\x17\n\x0ftarget_group_id\x18\x01 \x01(\t\"\xca\x03\n\x18UpdateTargetGroupRequest\x12\x1d\n\x0ftarget_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x34\n\x04name\x18\x03 \x01(\tB&\xf2\xc7\x31\"([a-z]([-a-z0-9]{0,61}[a-z0-9])?)?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x9e\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x45.yandex.cloud.apploadbalancer.v1.UpdateTargetGroupRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x38\n\x07targets\x18\x06 \x03(\x0b\x32\'.yandex.cloud.apploadbalancer.v1.Target\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"4\n\x19UpdateTargetGroupMetadata\x12\x17\n\x0ftarget_group_id\x18\x01 \x01(\t\"\x93\x03\n\x18\x43reateTargetGroupRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x34\n\x04name\x18\x02 \x01(\tB&\xf2\xc7\x31\"([a-z]([-a-z0-9]{0,61}[a-z0-9])?)?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x9e\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x45.yandex.cloud.apploadbalancer.v1.CreateTargetGroupRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x38\n\x07targets\x18\x05 \x03(\x0b\x32\'.yandex.cloud.apploadbalancer.v1.Target\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"4\n\x19\x43reateTargetGroupMetadata\x12\x17\n\x0ftarget_group_id\x18\x01 \x01(\t\"t\n\x11\x41\x64\x64TargetsRequest\x12\x1d\n\x0ftarget_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12@\n\x07targets\x18\x02 \x03(\x0b\x32\'.yandex.cloud.apploadbalancer.v1.TargetB\x06\x82\xc8\x31\x02>0\"-\n\x12\x41\x64\x64TargetsMetadata\x12\x17\n\x0ftarget_group_id\x18\x01 \x01(\t\"w\n\x14RemoveTargetsRequest\x12\x1d\n\x0ftarget_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12@\n\x07targets\x18\x02 \x03(\x0b\x32\'.yandex.cloud.apploadbalancer.v1.TargetB\x06\x82\xc8\x31\x02>0\"0\n\x15RemoveTargetsMetadata\x12\x17\n\x0ftarget_group_id\x18\x01 \x01(\t\"\x87\x01\n ListTargetGroupOperationsRequest\x12%\n\x0ftarget_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"s\n!ListTargetGroupOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xee\x0c\n\x12TargetGroupService\x12\xa7\x01\n\x03Get\x12\x36.yandex.cloud.apploadbalancer.v1.GetTargetGroupRequest\x1a,.yandex.cloud.apploadbalancer.v1.TargetGroup\":\x82\xd3\xe4\x93\x02\x34\x12\x32/apploadbalancer/v1/targetGroups/{target_group_id}\x12\xa5\x01\n\x04List\x12\x38.yandex.cloud.apploadbalancer.v1.ListTargetGroupsRequest\x1a\x39.yandex.cloud.apploadbalancer.v1.ListTargetGroupsResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /apploadbalancer/v1/targetGroups\x12\xbf\x01\n\x06\x43reate\x12\x39.yandex.cloud.apploadbalancer.v1.CreateTargetGroupRequest\x1a!.yandex.cloud.operation.Operation\"W\x82\xd3\xe4\x93\x02%\" /apploadbalancer/v1/targetGroups:\x01*\xb2\xd2*(\n\x19\x43reateTargetGroupMetadata\x12\x0bTargetGroup\x12\xd1\x01\n\x06Update\x12\x39.yandex.cloud.apploadbalancer.v1.UpdateTargetGroupRequest\x1a!.yandex.cloud.operation.Operation\"i\x82\xd3\xe4\x93\x02\x37\x32\x32/apploadbalancer/v1/targetGroups/{target_group_id}:\x01*\xb2\xd2*(\n\x19UpdateTargetGroupMetadata\x12\x0bTargetGroup\x12\xd8\x01\n\x06\x44\x65lete\x12\x39.yandex.cloud.apploadbalancer.v1.DeleteTargetGroupRequest\x1a!.yandex.cloud.operation.Operation\"p\x82\xd3\xe4\x93\x02\x34*2/apploadbalancer/v1/targetGroups/{target_group_id}\xb2\xd2*2\n\x19\x44\x65leteTargetGroupMetadata\x12\x15google.protobuf.Empty\x12\xd2\x01\n\nAddTargets\x12\x32.yandex.cloud.apploadbalancer.v1.AddTargetsRequest\x1a!.yandex.cloud.operation.Operation\"m\x82\xd3\xe4\x93\x02\x42\"=/apploadbalancer/v1/targetGroups/{target_group_id}:addTargets:\x01*\xb2\xd2*!\n\x12\x41\x64\x64TargetsMetadata\x12\x0bTargetGroup\x12\xde\x01\n\rRemoveTargets\x12\x35.yandex.cloud.apploadbalancer.v1.RemoveTargetsRequest\x1a!.yandex.cloud.operation.Operation\"s\x82\xd3\xe4\x93\x02\x45\"@/apploadbalancer/v1/targetGroups/{target_group_id}:removeTargets:\x01*\xb2\xd2*$\n\x15RemoveTargetsMetadata\x12\x0bTargetGroup\x12\xde\x01\n\x0eListOperations\x12\x41.yandex.cloud.apploadbalancer.v1.ListTargetGroupOperationsRequest\x1a\x42.yandex.cloud.apploadbalancer.v1.ListTargetGroupOperationsResponse\"E\x82\xd3\xe4\x93\x02?\x12=/apploadbalancer/v1/targetGroups/{target_group_id}/operationsBz\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancerb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_target__group__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -254,8 +254,8 @@ _UPDATETARGETGROUPREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1162,
-  serialized_end=1207,
+  serialized_start=1164,
+  serialized_end=1209,
 )
 
 _UPDATETARGETGROUPREQUEST = _descriptor.Descriptor(
@@ -286,7 +286,7 @@ _UPDATETARGETGROUPREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\3071\"([a-z]([-a-z0-9]{0,61}[a-z0-9])?)?', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='description', full_name='yandex.cloud.apploadbalancer.v1.UpdateTargetGroupRequest.description', index=3,
       number=4, type=9, cpp_type=9, label=1,
@@ -321,7 +321,7 @@ _UPDATETARGETGROUPREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=751,
-  serialized_end=1207,
+  serialized_end=1209,
 )
 
 
@@ -352,8 +352,8 @@ _UPDATETARGETGROUPMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1209,
-  serialized_end=1261,
+  serialized_start=1211,
+  serialized_end=1263,
 )
 
 
@@ -391,8 +391,8 @@ _CREATETARGETGROUPREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1162,
-  serialized_end=1207,
+  serialized_start=1164,
+  serialized_end=1209,
 )
 
 _CREATETARGETGROUPREQUEST = _descriptor.Descriptor(
@@ -416,7 +416,7 @@ _CREATETARGETGROUPREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\3071\"([a-z]([-a-z0-9]{0,61}[a-z0-9])?)?', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='description', full_name='yandex.cloud.apploadbalancer.v1.CreateTargetGroupRequest.description', index=2,
       number=3, type=9, cpp_type=9, label=1,
@@ -450,8 +450,8 @@ _CREATETARGETGROUPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1264,
-  serialized_end=1665,
+  serialized_start=1266,
+  serialized_end=1669,
 )
 
 
@@ -482,8 +482,8 @@ _CREATETARGETGROUPMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1667,
-  serialized_end=1719,
+  serialized_start=1671,
+  serialized_end=1723,
 )
 
 
@@ -521,8 +521,8 @@ _ADDTARGETSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1721,
-  serialized_end=1837,
+  serialized_start=1725,
+  serialized_end=1841,
 )
 
 
@@ -553,8 +553,8 @@ _ADDTARGETSMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1839,
-  serialized_end=1884,
+  serialized_start=1843,
+  serialized_end=1888,
 )
 
 
@@ -592,8 +592,8 @@ _REMOVETARGETSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1886,
-  serialized_end=2005,
+  serialized_start=1890,
+  serialized_end=2009,
 )
 
 
@@ -624,8 +624,8 @@ _REMOVETARGETSMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2007,
-  serialized_end=2055,
+  serialized_start=2011,
+  serialized_end=2059,
 )
 
 
@@ -670,8 +670,8 @@ _LISTTARGETGROUPOPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2058,
-  serialized_end=2193,
+  serialized_start=2062,
+  serialized_end=2197,
 )
 
 
@@ -709,8 +709,8 @@ _LISTTARGETGROUPOPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2195,
-  serialized_end=2310,
+  serialized_start=2199,
+  serialized_end=2314,
 )
 
 _LISTTARGETGROUPSRESPONSE.fields_by_name['target_groups'].message_type = yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_target__group__pb2._TARGETGROUP
@@ -895,8 +895,8 @@ _TARGETGROUPSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=2313,
-  serialized_end=3959,
+  serialized_start=2317,
+  serialized_end=3963,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',

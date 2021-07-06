@@ -8,7 +8,8 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class BackendGroupServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing backend groups.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -64,53 +65,63 @@ class BackendGroupServiceStub(object):
 
 
 class BackendGroupServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing backend groups.
+    """
 
     def Get(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Returns the specified backend group.
+
+        To get the list of all available backend groups, make a [List] request.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Lists backend groups in the specified folder.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Creates a backend group in the specified folder.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Updates the specified backend group.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Deletes the specified backend group.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def AddBackend(self, request, context):
-        """AddBackend/RemoveBackend technically do the same, but have different semantics.
+        """Adds backends to the specified backend group.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def RemoveBackend(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Removes backends from the specified backend group.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateBackend(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Updates the specified backend.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -178,7 +189,8 @@ def add_BackendGroupServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class BackendGroupService(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing backend groups.
+    """
 
     @staticmethod
     def Get(request,

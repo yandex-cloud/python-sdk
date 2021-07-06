@@ -8,7 +8,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class VirtualHostServiceStub(object):
-    """A set of methods for managing virtual hosts of HTTP Router resource.
+    """A set of methods for managing virtual hosts of HTTP routers.
     """
 
     def __init__(self, channel):
@@ -55,32 +55,34 @@ class VirtualHostServiceStub(object):
 
 
 class VirtualHostServiceServicer(object):
-    """A set of methods for managing virtual hosts of HTTP Router resource.
+    """A set of methods for managing virtual hosts of HTTP routers.
     """
 
     def Get(self, request, context):
-        """Returns the specified VirtualHost resource.
+        """Returns the specified virtual host.
+
+        To get the list of all virtual hosts of an HTTP router, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Retrieves the list of virtual hosts in the specified HTTP Router.
+        """Lists virtual hosts of the specified HTTP router.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Creates a new virtual host in the specified HTTP Router.
+        """Creates a virtual host in the specified HTTP router.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Updates an existing VirtualHost in the specified HTTP Router.
+        """Updates the specified virtual host of the specified HTTP router.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -94,13 +96,15 @@ class VirtualHostServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def RemoveRoute(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Deletes the specified route from the specified virtual host.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateRoute(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Updates the specified route of the specified virtual host.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -151,7 +155,7 @@ def add_VirtualHostServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class VirtualHostService(object):
-    """A set of methods for managing virtual hosts of HTTP Router resource.
+    """A set of methods for managing virtual hosts of HTTP routers.
     """
 
     @staticmethod

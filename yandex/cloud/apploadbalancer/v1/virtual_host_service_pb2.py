@@ -25,7 +25,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancer',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n:yandex/cloud/apploadbalancer/v1/virtual_host_service.proto\x12\x1fyandex.cloud.apploadbalancer.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x32yandex/cloud/apploadbalancer/v1/virtual_host.proto\x1a\x1dyandex/cloud/validation.proto\"z\n\x15GetVirtualHostRequest\x12\x1c\n\x0ehttp_router_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x43\n\x11virtual_host_name\x18\x02 \x01(\tB(\xe8\xc7\x31\x01\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\"u\n\x17ListVirtualHostsRequest\x12\x1c\n\x0ehttp_router_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"x\n\x18ListVirtualHostsResponse\x12\x43\n\rvirtual_hosts\x18\x01 \x03(\x0b\x32,.yandex.cloud.apploadbalancer.v1.VirtualHost\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xe2\x02\n\x18\x43reateVirtualHostRequest\x12\x1c\n\x0ehttp_router_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x32\n\x04name\x18\x02 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x11\n\tauthority\x18\x03 \x03(\t\x12\x36\n\x06routes\x18\x05 \x03(\x0b\x32&.yandex.cloud.apploadbalancer.v1.Route\x12S\n\x16modify_request_headers\x18\x06 \x03(\x0b\x32\x33.yandex.cloud.apploadbalancer.v1.HeaderModification\x12T\n\x17modify_response_headers\x18\x07 \x03(\x0b\x32\x33.yandex.cloud.apploadbalancer.v1.HeaderModification\"T\n\x19\x43reateVirtualHostMetadata\x12\x1c\n\x0ehttp_router_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x19\n\x11virtual_host_name\x18\x02 \x01(\t\"\x80\x03\n\x18UpdateVirtualHostRequest\x12\x1c\n\x0ehttp_router_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1f\n\x11virtual_host_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x11\n\tauthority\x18\x04 \x03(\t\x12\x36\n\x06routes\x18\x06 \x03(\x0b\x32&.yandex.cloud.apploadbalancer.v1.Route\x12S\n\x16modify_request_headers\x18\x07 \x03(\x0b\x32\x33.yandex.cloud.apploadbalancer.v1.HeaderModification\x12T\n\x17modify_response_headers\x18\x08 \x03(\x0b\x32\x33.yandex.cloud.apploadbalancer.v1.HeaderModification\"N\n\x19UpdateVirtualHostMetadata\x12\x16\n\x0ehttp_router_id\x18\x01 \x01(\t\x12\x19\n\x11virtual_host_name\x18\x02 \x01(\t\"}\n\x18\x44\x65leteVirtualHostRequest\x12\x1c\n\x0ehttp_router_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x43\n\x11virtual_host_name\x18\x02 \x01(\tB(\xe8\xc7\x31\x01\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\"N\n\x19\x44\x65leteVirtualHostMetadata\x12\x16\n\x0ehttp_router_id\x18\x01 \x01(\t\x12\x19\n\x11virtual_host_name\x18\x02 \x01(\t\"m\n\x12RemoveRouteRequest\x12\x1c\n\x0ehttp_router_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1f\n\x11virtual_host_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x18\n\nroute_name\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\"\\\n\x13RemoveRouteMetadata\x12\x16\n\x0ehttp_router_id\x18\x01 \x01(\t\x12\x19\n\x11virtual_host_name\x18\x02 \x01(\t\x12\x12\n\nroute_name\x18\x03 \x01(\t\"\xa5\x02\n\x12UpdateRouteRequest\x12\x1c\n\x0ehttp_router_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1f\n\x11virtual_host_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x18\n\nroute_name\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12:\n\x04http\x18\x05 \x01(\x0b\x32*.yandex.cloud.apploadbalancer.v1.HttpRouteH\x00\x12:\n\x04grpc\x18\x06 \x01(\x0b\x32*.yandex.cloud.apploadbalancer.v1.GrpcRouteH\x00\x42\r\n\x05route\x12\x04\xc0\xc1\x31\x01\"\\\n\x13UpdateRouteMetadata\x12\x16\n\x0ehttp_router_id\x18\x01 \x01(\t\x12\x19\n\x11virtual_host_name\x18\x02 \x01(\t\x12\x12\n\nroute_name\x18\x03 \x01(\t2\xe2\x0c\n\x12VirtualHostService\x12\xc6\x01\n\x03Get\x12\x36.yandex.cloud.apploadbalancer.v1.GetVirtualHostRequest\x1a,.yandex.cloud.apploadbalancer.v1.VirtualHost\"Y\x82\xd3\xe4\x93\x02S\x12Q/apploadbalancer/v1/httpRouters/{http_router_id}/virtualHosts/{virtual_host_name}\x12\xc2\x01\n\x04List\x12\x38.yandex.cloud.apploadbalancer.v1.ListVirtualHostsRequest\x1a\x39.yandex.cloud.apploadbalancer.v1.ListVirtualHostsResponse\"E\x82\xd3\xe4\x93\x02?\x12=/apploadbalancer/v1/httpRouters/{http_router_id}/virtualHosts\x12\xdc\x01\n\x06\x43reate\x12\x39.yandex.cloud.apploadbalancer.v1.CreateVirtualHostRequest\x1a!.yandex.cloud.operation.Operation\"t\x82\xd3\xe4\x93\x02\x42\"=/apploadbalancer/v1/httpRouters/{http_router_id}/virtualHosts:\x01*\xb2\xd2*(\n\x19\x43reateVirtualHostMetadata\x12\x0bVirtualHost\x12\xf1\x01\n\x06Update\x12\x39.yandex.cloud.apploadbalancer.v1.UpdateVirtualHostRequest\x1a!.yandex.cloud.operation.Operation\"\x88\x01\x82\xd3\xe4\x93\x02V2Q/apploadbalancer/v1/httpRouters/{http_router_id}/virtualHosts/{virtual_host_name}:\x01*\xb2\xd2*(\n\x19UpdateVirtualHostMetadata\x12\x0bVirtualHost\x12\xf8\x01\n\x06\x44\x65lete\x12\x39.yandex.cloud.apploadbalancer.v1.DeleteVirtualHostRequest\x1a!.yandex.cloud.operation.Operation\"\x8f\x01\x82\xd3\xe4\x93\x02S*Q/apploadbalancer/v1/httpRouters/{http_router_id}/virtualHosts/{virtual_host_name}\xb2\xd2*2\n\x19\x44\x65leteVirtualHostMetadata\x12\x15google.protobuf.Empty\x12\xf6\x01\n\x0bRemoveRoute\x12\x33.yandex.cloud.apploadbalancer.v1.RemoveRouteRequest\x1a!.yandex.cloud.operation.Operation\"\x8e\x01\x82\xd3\xe4\x93\x02\x62\"]/apploadbalancer/v1/httpRouters/{http_router_id}/virtualHosts/{virtual_host_name}:removeRoute:\x01*\xb2\xd2*\"\n\x13RemoveRouteMetadata\x12\x0bVirtualHost\x12\xf6\x01\n\x0bUpdateRoute\x12\x33.yandex.cloud.apploadbalancer.v1.UpdateRouteRequest\x1a!.yandex.cloud.operation.Operation\"\x8e\x01\x82\xd3\xe4\x93\x02\x62\"]/apploadbalancer/v1/httpRouters/{http_router_id}/virtualHosts/{virtual_host_name}:updateRoute:\x01*\xb2\xd2*\"\n\x13UpdateRouteMetadata\x12\x0bVirtualHostBz\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancerb\x06proto3'
+  serialized_pb=b'\n:yandex/cloud/apploadbalancer/v1/virtual_host_service.proto\x12\x1fyandex.cloud.apploadbalancer.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x32yandex/cloud/apploadbalancer/v1/virtual_host.proto\x1a\x1dyandex/cloud/validation.proto\"|\n\x15GetVirtualHostRequest\x12\x1c\n\x0ehttp_router_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x45\n\x11virtual_host_name\x18\x02 \x01(\tB*\xe8\xc7\x31\x01\xf2\xc7\x31\"([a-z]([-a-z0-9]{0,61}[a-z0-9])?)?\"u\n\x17ListVirtualHostsRequest\x12\x1c\n\x0ehttp_router_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"x\n\x18ListVirtualHostsResponse\x12\x43\n\rvirtual_hosts\x18\x01 \x03(\x0b\x32,.yandex.cloud.apploadbalancer.v1.VirtualHost\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xe4\x02\n\x18\x43reateVirtualHostRequest\x12\x1c\n\x0ehttp_router_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x34\n\x04name\x18\x02 \x01(\tB&\xf2\xc7\x31\"([a-z]([-a-z0-9]{0,61}[a-z0-9])?)?\x12\x11\n\tauthority\x18\x03 \x03(\t\x12\x36\n\x06routes\x18\x05 \x03(\x0b\x32&.yandex.cloud.apploadbalancer.v1.Route\x12S\n\x16modify_request_headers\x18\x06 \x03(\x0b\x32\x33.yandex.cloud.apploadbalancer.v1.HeaderModification\x12T\n\x17modify_response_headers\x18\x07 \x03(\x0b\x32\x33.yandex.cloud.apploadbalancer.v1.HeaderModification\"T\n\x19\x43reateVirtualHostMetadata\x12\x1c\n\x0ehttp_router_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x19\n\x11virtual_host_name\x18\x02 \x01(\t\"\x80\x03\n\x18UpdateVirtualHostRequest\x12\x1c\n\x0ehttp_router_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1f\n\x11virtual_host_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x11\n\tauthority\x18\x04 \x03(\t\x12\x36\n\x06routes\x18\x06 \x03(\x0b\x32&.yandex.cloud.apploadbalancer.v1.Route\x12S\n\x16modify_request_headers\x18\x07 \x03(\x0b\x32\x33.yandex.cloud.apploadbalancer.v1.HeaderModification\x12T\n\x17modify_response_headers\x18\x08 \x03(\x0b\x32\x33.yandex.cloud.apploadbalancer.v1.HeaderModification\"N\n\x19UpdateVirtualHostMetadata\x12\x16\n\x0ehttp_router_id\x18\x01 \x01(\t\x12\x19\n\x11virtual_host_name\x18\x02 \x01(\t\"\x7f\n\x18\x44\x65leteVirtualHostRequest\x12\x1c\n\x0ehttp_router_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x45\n\x11virtual_host_name\x18\x02 \x01(\tB*\xe8\xc7\x31\x01\xf2\xc7\x31\"([a-z]([-a-z0-9]{0,61}[a-z0-9])?)?\"N\n\x19\x44\x65leteVirtualHostMetadata\x12\x16\n\x0ehttp_router_id\x18\x01 \x01(\t\x12\x19\n\x11virtual_host_name\x18\x02 \x01(\t\"m\n\x12RemoveRouteRequest\x12\x1c\n\x0ehttp_router_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1f\n\x11virtual_host_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x18\n\nroute_name\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\"\\\n\x13RemoveRouteMetadata\x12\x16\n\x0ehttp_router_id\x18\x01 \x01(\t\x12\x19\n\x11virtual_host_name\x18\x02 \x01(\t\x12\x12\n\nroute_name\x18\x03 \x01(\t\"\xa5\x02\n\x12UpdateRouteRequest\x12\x1c\n\x0ehttp_router_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1f\n\x11virtual_host_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x18\n\nroute_name\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12:\n\x04http\x18\x05 \x01(\x0b\x32*.yandex.cloud.apploadbalancer.v1.HttpRouteH\x00\x12:\n\x04grpc\x18\x06 \x01(\x0b\x32*.yandex.cloud.apploadbalancer.v1.GrpcRouteH\x00\x42\r\n\x05route\x12\x04\xc0\xc1\x31\x01\"\\\n\x13UpdateRouteMetadata\x12\x16\n\x0ehttp_router_id\x18\x01 \x01(\t\x12\x19\n\x11virtual_host_name\x18\x02 \x01(\t\x12\x12\n\nroute_name\x18\x03 \x01(\t2\xe2\x0c\n\x12VirtualHostService\x12\xc6\x01\n\x03Get\x12\x36.yandex.cloud.apploadbalancer.v1.GetVirtualHostRequest\x1a,.yandex.cloud.apploadbalancer.v1.VirtualHost\"Y\x82\xd3\xe4\x93\x02S\x12Q/apploadbalancer/v1/httpRouters/{http_router_id}/virtualHosts/{virtual_host_name}\x12\xc2\x01\n\x04List\x12\x38.yandex.cloud.apploadbalancer.v1.ListVirtualHostsRequest\x1a\x39.yandex.cloud.apploadbalancer.v1.ListVirtualHostsResponse\"E\x82\xd3\xe4\x93\x02?\x12=/apploadbalancer/v1/httpRouters/{http_router_id}/virtualHosts\x12\xdc\x01\n\x06\x43reate\x12\x39.yandex.cloud.apploadbalancer.v1.CreateVirtualHostRequest\x1a!.yandex.cloud.operation.Operation\"t\x82\xd3\xe4\x93\x02\x42\"=/apploadbalancer/v1/httpRouters/{http_router_id}/virtualHosts:\x01*\xb2\xd2*(\n\x19\x43reateVirtualHostMetadata\x12\x0bVirtualHost\x12\xf1\x01\n\x06Update\x12\x39.yandex.cloud.apploadbalancer.v1.UpdateVirtualHostRequest\x1a!.yandex.cloud.operation.Operation\"\x88\x01\x82\xd3\xe4\x93\x02V2Q/apploadbalancer/v1/httpRouters/{http_router_id}/virtualHosts/{virtual_host_name}:\x01*\xb2\xd2*(\n\x19UpdateVirtualHostMetadata\x12\x0bVirtualHost\x12\xf8\x01\n\x06\x44\x65lete\x12\x39.yandex.cloud.apploadbalancer.v1.DeleteVirtualHostRequest\x1a!.yandex.cloud.operation.Operation\"\x8f\x01\x82\xd3\xe4\x93\x02S*Q/apploadbalancer/v1/httpRouters/{http_router_id}/virtualHosts/{virtual_host_name}\xb2\xd2*2\n\x19\x44\x65leteVirtualHostMetadata\x12\x15google.protobuf.Empty\x12\xf6\x01\n\x0bRemoveRoute\x12\x33.yandex.cloud.apploadbalancer.v1.RemoveRouteRequest\x1a!.yandex.cloud.operation.Operation\"\x8e\x01\x82\xd3\xe4\x93\x02\x62\"]/apploadbalancer/v1/httpRouters/{http_router_id}/virtualHosts/{virtual_host_name}:removeRoute:\x01*\xb2\xd2*\"\n\x13RemoveRouteMetadata\x12\x0bVirtualHost\x12\xf6\x01\n\x0bUpdateRoute\x12\x33.yandex.cloud.apploadbalancer.v1.UpdateRouteRequest\x1a!.yandex.cloud.operation.Operation\"\x8e\x01\x82\xd3\xe4\x93\x02\x62\"]/apploadbalancer/v1/httpRouters/{http_router_id}/virtualHosts/{virtual_host_name}:updateRoute:\x01*\xb2\xd2*\"\n\x13UpdateRouteMetadata\x12\x0bVirtualHostBz\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancerb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_virtual__host__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -53,7 +53,7 @@ _GETVIRTUALHOSTREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\350\3071\001\362\3071\"([a-z]([-a-z0-9]{0,61}[a-z0-9])?)?', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -67,7 +67,7 @@ _GETVIRTUALHOSTREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=316,
-  serialized_end=438,
+  serialized_end=440,
 )
 
 
@@ -112,8 +112,8 @@ _LISTVIRTUALHOSTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=440,
-  serialized_end=557,
+  serialized_start=442,
+  serialized_end=559,
 )
 
 
@@ -151,8 +151,8 @@ _LISTVIRTUALHOSTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=559,
-  serialized_end=679,
+  serialized_start=561,
+  serialized_end=681,
 )
 
 
@@ -177,7 +177,7 @@ _CREATEVIRTUALHOSTREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\3071\"([a-z]([-a-z0-9]{0,61}[a-z0-9])?)?', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='authority', full_name='yandex.cloud.apploadbalancer.v1.CreateVirtualHostRequest.authority', index=2,
       number=3, type=9, cpp_type=9, label=3,
@@ -218,8 +218,8 @@ _CREATEVIRTUALHOSTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=682,
-  serialized_end=1036,
+  serialized_start=684,
+  serialized_end=1040,
 )
 
 
@@ -257,8 +257,8 @@ _CREATEVIRTUALHOSTMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1038,
-  serialized_end=1122,
+  serialized_start=1042,
+  serialized_end=1126,
 )
 
 
@@ -331,8 +331,8 @@ _UPDATEVIRTUALHOSTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1125,
-  serialized_end=1509,
+  serialized_start=1129,
+  serialized_end=1513,
 )
 
 
@@ -370,8 +370,8 @@ _UPDATEVIRTUALHOSTMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1511,
-  serialized_end=1589,
+  serialized_start=1515,
+  serialized_end=1593,
 )
 
 
@@ -396,7 +396,7 @@ _DELETEVIRTUALHOSTREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\350\3071\001\362\3071\"([a-z]([-a-z0-9]{0,61}[a-z0-9])?)?', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -409,8 +409,8 @@ _DELETEVIRTUALHOSTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1591,
-  serialized_end=1716,
+  serialized_start=1595,
+  serialized_end=1722,
 )
 
 
@@ -448,8 +448,8 @@ _DELETEVIRTUALHOSTMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1718,
-  serialized_end=1796,
+  serialized_start=1724,
+  serialized_end=1802,
 )
 
 
@@ -494,8 +494,8 @@ _REMOVEROUTEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1798,
-  serialized_end=1907,
+  serialized_start=1804,
+  serialized_end=1913,
 )
 
 
@@ -540,8 +540,8 @@ _REMOVEROUTEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1909,
-  serialized_end=2001,
+  serialized_start=1915,
+  serialized_end=2007,
 )
 
 
@@ -612,8 +612,8 @@ _UPDATEROUTEREQUEST = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[], serialized_options=b'\300\3011\001'),
   ],
-  serialized_start=2004,
-  serialized_end=2297,
+  serialized_start=2010,
+  serialized_end=2303,
 )
 
 
@@ -658,8 +658,8 @@ _UPDATEROUTEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2299,
-  serialized_end=2391,
+  serialized_start=2305,
+  serialized_end=2397,
 )
 
 _LISTVIRTUALHOSTSRESPONSE.fields_by_name['virtual_hosts'].message_type = yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_virtual__host__pb2._VIRTUALHOST
@@ -814,8 +814,8 @@ _VIRTUALHOSTSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=2394,
-  serialized_end=4028,
+  serialized_start=2400,
+  serialized_end=4034,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
