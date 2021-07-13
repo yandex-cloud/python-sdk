@@ -2,15 +2,25 @@ import time
 from datetime import datetime
 import logging
 
+import grpc
 from google.protobuf.empty_pb2 import Empty
 
 from yandex.cloud.operation.operation_service_pb2_grpc import OperationServiceStub
 from yandex.cloud.operation.operation_service_pb2 import GetOperationRequest
+from yandexcloud._retry_interceptor import RetryInterceptor
 from yandexcloud.operations import OperationResult, OperationError
 
 
 def operation_waiter(sdk, operation_id, timeout):
-    operation_service = sdk.client(OperationServiceStub)
+    retriable_codes = (
+        grpc.StatusCode.UNAVAILABLE,
+        grpc.StatusCode.RESOURCE_EXHAUSTED,
+        grpc.StatusCode.INTERNAL,
+    )
+    operation_service = sdk.client(
+        OperationServiceStub,
+        interceptor=RetryInterceptor(retriable_codes=retriable_codes),
+    )
     return OperationWaiter(operation_id, operation_service, timeout)
 
 

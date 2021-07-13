@@ -32,6 +32,7 @@ class _FailFirstAttempts:
 def test_five_retries():
     service = _FailFirstAttempts(5)
     server = grpc_server(service.handler)
+    request = zone_service_pb2.GetZoneRequest(zone_id="id")
 
     with default_channel() as channel:
         for max_retry_count in range(4):
@@ -40,7 +41,7 @@ def test_five_retries():
             client = zone_service_pb2_grpc.ZoneServiceStub(ch)
 
             with pytest.raises(grpc.RpcError) as e:
-                client.Get(zone_service_pb2.GetZoneRequest(zone_id="id"))
+                client.Get(request)
 
             assert e.value.code() == grpc.StatusCode.UNAVAILABLE
             service.reset(5)
@@ -48,7 +49,7 @@ def test_five_retries():
         interceptor = RetryInterceptor(max_retry_count=5)
         ch = grpc.intercept_channel(channel, interceptor)
         client = zone_service_pb2_grpc.ZoneServiceStub(ch)
-        res = client.Get(zone_service_pb2.GetZoneRequest(zone_id="id"))
+        res = client.Get(request)
 
         assert res == DEFAULT_ZONE
         
@@ -58,23 +59,29 @@ def test_five_retries():
 def test_five_retries_internal():
     service = _FailFirstAttempts(5, code=grpc.StatusCode.INTERNAL)
     server = grpc_server(service.handler)
+    request = zone_service_pb2.GetZoneRequest(zone_id="id")
+    retriable_codes = (
+        grpc.StatusCode.UNAVAILABLE,
+        grpc.StatusCode.RESOURCE_EXHAUSTED,
+        grpc.StatusCode.INTERNAL,
+    )
 
     with default_channel() as channel:
         for max_retry_count in range(4):
-            interceptor = RetryInterceptor(max_retry_count=max_retry_count)
+            interceptor = RetryInterceptor(max_retry_count=max_retry_count, retriable_codes=retriable_codes)
             ch = grpc.intercept_channel(channel, interceptor)
             client = zone_service_pb2_grpc.ZoneServiceStub(ch)
 
             with pytest.raises(grpc.RpcError) as e:
-                client.Get(zone_service_pb2.GetZoneRequest(zone_id="id"))
+                client.Get(request)
 
             assert e.value.code() == grpc.StatusCode.INTERNAL
             service.reset(5)
 
-        interceptor = RetryInterceptor(max_retry_count=5)
+        interceptor = RetryInterceptor(max_retry_count=5, retriable_codes=retriable_codes)
         ch = grpc.intercept_channel(channel, interceptor)
         client = zone_service_pb2_grpc.ZoneServiceStub(ch)
-        res = client.Get(zone_service_pb2.GetZoneRequest(zone_id="id"))
+        res = client.Get(request)
 
         assert res == DEFAULT_ZONE
 
