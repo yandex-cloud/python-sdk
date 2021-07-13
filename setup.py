@@ -3,19 +3,19 @@ from setuptools import setup, find_packages
 packages = find_packages('.', include=['yandexcloud*', 'yandex*'])
 
 setup(name='yandexcloud',
-      version='0.96.0',
+      version='0.97.0',
       description='The Yandex.Cloud official SDK',
       url='https://github.com/yandex-cloud/python-sdk',
       author='Yandex LLC',
       author_email='cloud@support.yandex.ru',
       license='MIT',
       install_requires=[
-          'cryptography',
-          'grpcio>=0.17.0',
-          'googleapis-common-protos',
-          'pyjwt',
-          'requests',
-          'six',
+          'cryptography>=2.8',
+          'grpcio>=1.38.1',
+          'googleapis-common-protos>=1.53.0',
+          'pyjwt>=1.7.1',
+          'requests>=2.22.0',
+          'six>=1.14.0',
       ],
       classifiers=[
           'Programming Language :: Python',

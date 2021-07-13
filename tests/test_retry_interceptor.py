@@ -14,13 +14,14 @@ from tests.grpc_server_mock import DEFAULT_ZONE, grpc_server, default_channel
 
 
 class _FailFirstAttempts:
-    def __init__(self, fail_attempts):
+    def __init__(self, fail_attempts, code=grpc.StatusCode.UNAVAILABLE):
         self.__fail_attempts = fail_attempts
+        self.code = code
 
     def handler(self, context):
         if self.__fail_attempts > 0:
             self.__fail_attempts -= 1
-            context.set_code(grpc.StatusCode.UNAVAILABLE)
+            context.set_code(self.code)
 
         return DEFAULT_ZONE
 
@@ -51,6 +52,32 @@ def test_five_retries():
 
         assert res == DEFAULT_ZONE
         
+    server.stop(0)
+
+
+def test_five_retries_internal():
+    service = _FailFirstAttempts(5, code=grpc.StatusCode.INTERNAL)
+    server = grpc_server(service.handler)
+
+    with default_channel() as channel:
+        for max_retry_count in range(4):
+            interceptor = RetryInterceptor(max_retry_count=max_retry_count)
+            ch = grpc.intercept_channel(channel, interceptor)
+            client = zone_service_pb2_grpc.ZoneServiceStub(ch)
+
+            with pytest.raises(grpc.RpcError) as e:
+                client.Get(zone_service_pb2.GetZoneRequest(zone_id="id"))
+
+            assert e.value.code() == grpc.StatusCode.INTERNAL
+            service.reset(5)
+
+        interceptor = RetryInterceptor(max_retry_count=5)
+        ch = grpc.intercept_channel(channel, interceptor)
+        client = zone_service_pb2_grpc.ZoneServiceStub(ch)
+        res = client.Get(zone_service_pb2.GetZoneRequest(zone_id="id"))
+
+        assert res == DEFAULT_ZONE
+
     server.stop(0)
 
 
