@@ -19,7 +19,7 @@ def operation_waiter(sdk, operation_id, timeout):
     )
     operation_service = sdk.client(
         OperationServiceStub,
-        interceptor=RetryInterceptor(retriable_codes=retriable_codes),
+        interceptor=RetryInterceptor(max_retry_count=5, retriable_codes=retriable_codes),
     )
     return OperationWaiter(operation_id, operation_service, timeout)
 
