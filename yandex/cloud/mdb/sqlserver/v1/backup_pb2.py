@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n!yandex.cloud.api.mdb.sqlserver.v1B\003PSBZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/sqlserver/v1;sqlserver',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n*yandex/cloud/mdb/sqlserver/v1/backup.proto\x12\x1dyandex.cloud.mdb.sqlserver.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xa2\x01\n\x06\x42\x61\x63kup\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x19\n\x11source_cluster_id\x18\x04 \x01(\t\x12.\n\nstarted_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.TimestampBu\n!yandex.cloud.api.mdb.sqlserver.v1B\x03PSBZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/sqlserver/v1;sqlserverb\x06proto3'
+  serialized_pb=b'\n*yandex/cloud/mdb/sqlserver/v1/backup.proto\x12\x1dyandex.cloud.mdb.sqlserver.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xb5\x01\n\x06\x42\x61\x63kup\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x19\n\x11source_cluster_id\x18\x04 \x01(\t\x12.\n\nstarted_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x11\n\tdatabases\x18\x06 \x03(\tBu\n!yandex.cloud.api.mdb.sqlserver.v1B\x03PSBZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/sqlserver/v1;sqlserverb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
@@ -70,6 +70,13 @@ _BACKUP = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='databases', full_name='yandex.cloud.mdb.sqlserver.v1.Backup.databases', index=5,
+      number=6, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -83,7 +90,7 @@ _BACKUP = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=111,
-  serialized_end=273,
+  serialized_end=292,
 )
 
 _BACKUP.fields_by_name['created_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP

@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\035yandex.cloud.api.mdb.kafka.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/kafka/v1;kafka',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\'yandex/cloud/mdb/kafka/v1/cluster.proto\x12\x19yandex.cloud.mdb.kafka.v1\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a&yandex/cloud/mdb/kafka/v1/common.proto\"\x83\x07\n\x07\x43luster\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12>\n\x06labels\x18\x06 \x03(\x0b\x32..yandex.cloud.mdb.kafka.v1.Cluster.LabelsEntry\x12\x43\n\x0b\x65nvironment\x18\x07 \x01(\x0e\x32..yandex.cloud.mdb.kafka.v1.Cluster.Environment\x12\x39\n\nmonitoring\x18\x08 \x03(\x0b\x32%.yandex.cloud.mdb.kafka.v1.Monitoring\x12\x35\n\x06\x63onfig\x18\t \x01(\x0b\x32%.yandex.cloud.mdb.kafka.v1.ConfigSpec\x12\x12\n\nnetwork_id\x18\n \x01(\t\x12\x39\n\x06health\x18\x0b \x01(\x0e\x32).yandex.cloud.mdb.kafka.v1.Cluster.Health\x12\x39\n\x06status\x18\x0c \x01(\x0e\x32).yandex.cloud.mdb.kafka.v1.Cluster.Status\x12\x1a\n\x12security_group_ids\x18\r \x03(\t\x12\x16\n\x0ehost_group_ids\x18\x0e \x03(\t\x12\x1b\n\x13\x64\x65letion_protection\x18\x0f \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"I\n\x0b\x45nvironment\x12\x1b\n\x17\x45NVIRONMENT_UNSPECIFIED\x10\x00\x12\x0e\n\nPRODUCTION\x10\x01\x12\r\n\tPRESTABLE\x10\x02\"?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\"y\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\t\n\x05\x45RROR\x10\x03\x12\x0c\n\x08UPDATING\x10\x04\x12\x0c\n\x08STOPPING\x10\x05\x12\x0b\n\x07STOPPED\x10\x06\x12\x0c\n\x08STARTING\x10\x07\"=\n\nMonitoring\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0c\n\x04link\x18\x03 \x01(\t\"\xdf\x04\n\nConfigSpec\x12\x0f\n\x07version\x18\x01 \x01(\t\x12:\n\x05kafka\x18\x02 \x01(\x0b\x32+.yandex.cloud.mdb.kafka.v1.ConfigSpec.Kafka\x12\x42\n\tzookeeper\x18\x03 \x01(\x0b\x32/.yandex.cloud.mdb.kafka.v1.ConfigSpec.Zookeeper\x12\x0f\n\x07zone_id\x18\x04 \x03(\t\x12\x32\n\rbrokers_count\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x18\n\x10\x61ssign_public_ip\x18\x06 \x01(\x08\x12\x18\n\x10unmanaged_topics\x18\x07 \x01(\x08\x1a\x80\x02\n\x05Kafka\x12\x37\n\tresources\x18\x01 \x01(\x0b\x32$.yandex.cloud.mdb.kafka.v1.Resources\x12V\n\x10kafka_config_2_1\x18\x02 \x01(\x0b\x32).yandex.cloud.mdb.kafka.v1.KafkaConfig2_1H\x00R\x0fkafkaConfig_2_1\x12V\n\x10kafka_config_2_6\x18\x03 \x01(\x0b\x32).yandex.cloud.mdb.kafka.v1.KafkaConfig2_6H\x00R\x0fkafkaConfig_2_6B\x0e\n\x0ckafka_config\x1a\x44\n\tZookeeper\x12\x37\n\tresources\x18\x01 \x01(\x0b\x32$.yandex.cloud.mdb.kafka.v1.Resources\"P\n\tResources\x12\x1a\n\x12resource_preset_id\x18\x01 \x01(\t\x12\x11\n\tdisk_size\x18\x02 \x01(\x03\x12\x14\n\x0c\x64isk_type_id\x18\x03 \x01(\t\"\xa4\x07\n\x0eKafkaConfig2_1\x12\x44\n\x10\x63ompression_type\x18\x01 \x01(\x0e\x32*.yandex.cloud.mdb.kafka.v1.CompressionType\x12@\n\x1blog_flush_interval_messages\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12:\n\x15log_flush_interval_ms\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x44\n\x1flog_flush_scheduler_interval_ms\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x38\n\x13log_retention_bytes\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x38\n\x13log_retention_hours\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12:\n\x15log_retention_minutes\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x35\n\x10log_retention_ms\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x36\n\x11log_segment_bytes\x18\t \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x33\n\x0flog_preallocate\x18\n \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12=\n\x18socket_send_buffer_bytes\x18\x0b \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12@\n\x1bsocket_receive_buffer_bytes\x18\x0c \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12=\n\x19\x61uto_create_topics_enable\x18\r \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x33\n\x0enum_partitions\x18\x0e \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12?\n\x1a\x64\x65\x66\x61ult_replication_factor\x18\x0f \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"\xa4\x07\n\x0eKafkaConfig2_6\x12\x44\n\x10\x63ompression_type\x18\x01 \x01(\x0e\x32*.yandex.cloud.mdb.kafka.v1.CompressionType\x12@\n\x1blog_flush_interval_messages\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12:\n\x15log_flush_interval_ms\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x44\n\x1flog_flush_scheduler_interval_ms\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x38\n\x13log_retention_bytes\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x38\n\x13log_retention_hours\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12:\n\x15log_retention_minutes\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x35\n\x10log_retention_ms\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x36\n\x11log_segment_bytes\x18\t \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x33\n\x0flog_preallocate\x18\n \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12=\n\x18socket_send_buffer_bytes\x18\x0b \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12@\n\x1bsocket_receive_buffer_bytes\x18\x0c \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12=\n\x19\x61uto_create_topics_enable\x18\r \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x33\n\x0enum_partitions\x18\x0e \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12?\n\x1a\x64\x65\x66\x61ult_replication_factor\x18\x0f \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"\xfd\x02\n\x04Host\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12\x0f\n\x07zone_id\x18\x03 \x01(\t\x12\x32\n\x04role\x18\x04 \x01(\x0e\x32$.yandex.cloud.mdb.kafka.v1.Host.Role\x12\x37\n\tresources\x18\x05 \x01(\x0b\x32$.yandex.cloud.mdb.kafka.v1.Resources\x12\x36\n\x06health\x18\x06 \x01(\x0e\x32&.yandex.cloud.mdb.kafka.v1.Host.Health\x12\x11\n\tsubnet_id\x18\x08 \x01(\t\x12\x18\n\x10\x61ssign_public_ip\x18\t \x01(\x08\"6\n\x04Role\x12\x14\n\x10ROLE_UNSPECIFIED\x10\x00\x12\t\n\x05KAFKA\x10\x01\x12\r\n\tZOOKEEPER\x10\x02\"8\n\x06Health\x12\x0b\n\x07UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\x42\x64\n\x1dyandex.cloud.api.mdb.kafka.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/kafka/v1;kafkab\x06proto3'
+  serialized_pb=b'\n\'yandex/cloud/mdb/kafka/v1/cluster.proto\x12\x19yandex.cloud.mdb.kafka.v1\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a&yandex/cloud/mdb/kafka/v1/common.proto\"\x83\x07\n\x07\x43luster\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12>\n\x06labels\x18\x06 \x03(\x0b\x32..yandex.cloud.mdb.kafka.v1.Cluster.LabelsEntry\x12\x43\n\x0b\x65nvironment\x18\x07 \x01(\x0e\x32..yandex.cloud.mdb.kafka.v1.Cluster.Environment\x12\x39\n\nmonitoring\x18\x08 \x03(\x0b\x32%.yandex.cloud.mdb.kafka.v1.Monitoring\x12\x35\n\x06\x63onfig\x18\t \x01(\x0b\x32%.yandex.cloud.mdb.kafka.v1.ConfigSpec\x12\x12\n\nnetwork_id\x18\n \x01(\t\x12\x39\n\x06health\x18\x0b \x01(\x0e\x32).yandex.cloud.mdb.kafka.v1.Cluster.Health\x12\x39\n\x06status\x18\x0c \x01(\x0e\x32).yandex.cloud.mdb.kafka.v1.Cluster.Status\x12\x1a\n\x12security_group_ids\x18\r \x03(\t\x12\x16\n\x0ehost_group_ids\x18\x0e \x03(\t\x12\x1b\n\x13\x64\x65letion_protection\x18\x0f \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"I\n\x0b\x45nvironment\x12\x1b\n\x17\x45NVIRONMENT_UNSPECIFIED\x10\x00\x12\x0e\n\nPRODUCTION\x10\x01\x12\r\n\tPRESTABLE\x10\x02\"?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\"y\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\t\n\x05\x45RROR\x10\x03\x12\x0c\n\x08UPDATING\x10\x04\x12\x0c\n\x08STOPPING\x10\x05\x12\x0b\n\x07STOPPED\x10\x06\x12\x0c\n\x08STARTING\x10\x07\"=\n\nMonitoring\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0c\n\x04link\x18\x03 \x01(\t\"\xb7\x05\n\nConfigSpec\x12\x0f\n\x07version\x18\x01 \x01(\t\x12:\n\x05kafka\x18\x02 \x01(\x0b\x32+.yandex.cloud.mdb.kafka.v1.ConfigSpec.Kafka\x12\x42\n\tzookeeper\x18\x03 \x01(\x0b\x32/.yandex.cloud.mdb.kafka.v1.ConfigSpec.Zookeeper\x12\x0f\n\x07zone_id\x18\x04 \x03(\t\x12\x32\n\rbrokers_count\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x18\n\x10\x61ssign_public_ip\x18\x06 \x01(\x08\x12\x18\n\x10unmanaged_topics\x18\x07 \x01(\x08\x1a\xd8\x02\n\x05Kafka\x12\x37\n\tresources\x18\x01 \x01(\x0b\x32$.yandex.cloud.mdb.kafka.v1.Resources\x12V\n\x10kafka_config_2_1\x18\x02 \x01(\x0b\x32).yandex.cloud.mdb.kafka.v1.KafkaConfig2_1H\x00R\x0fkafkaConfig_2_1\x12V\n\x10kafka_config_2_6\x18\x03 \x01(\x0b\x32).yandex.cloud.mdb.kafka.v1.KafkaConfig2_6H\x00R\x0fkafkaConfig_2_6\x12V\n\x10kafka_config_2_8\x18\x04 \x01(\x0b\x32).yandex.cloud.mdb.kafka.v1.KafkaConfig2_8H\x00R\x0fkafkaConfig_2_8B\x0e\n\x0ckafka_config\x1a\x44\n\tZookeeper\x12\x37\n\tresources\x18\x01 \x01(\x0b\x32$.yandex.cloud.mdb.kafka.v1.Resources\"P\n\tResources\x12\x1a\n\x12resource_preset_id\x18\x01 \x01(\t\x12\x11\n\tdisk_size\x18\x02 \x01(\x03\x12\x14\n\x0c\x64isk_type_id\x18\x03 \x01(\t\"\xa4\x07\n\x0eKafkaConfig2_1\x12\x44\n\x10\x63ompression_type\x18\x01 \x01(\x0e\x32*.yandex.cloud.mdb.kafka.v1.CompressionType\x12@\n\x1blog_flush_interval_messages\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12:\n\x15log_flush_interval_ms\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x44\n\x1flog_flush_scheduler_interval_ms\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x38\n\x13log_retention_bytes\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x38\n\x13log_retention_hours\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12:\n\x15log_retention_minutes\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x35\n\x10log_retention_ms\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x36\n\x11log_segment_bytes\x18\t \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x33\n\x0flog_preallocate\x18\n \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12=\n\x18socket_send_buffer_bytes\x18\x0b \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12@\n\x1bsocket_receive_buffer_bytes\x18\x0c \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12=\n\x19\x61uto_create_topics_enable\x18\r \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x33\n\x0enum_partitions\x18\x0e \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12?\n\x1a\x64\x65\x66\x61ult_replication_factor\x18\x0f \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"\xa4\x07\n\x0eKafkaConfig2_6\x12\x44\n\x10\x63ompression_type\x18\x01 \x01(\x0e\x32*.yandex.cloud.mdb.kafka.v1.CompressionType\x12@\n\x1blog_flush_interval_messages\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12:\n\x15log_flush_interval_ms\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x44\n\x1flog_flush_scheduler_interval_ms\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x38\n\x13log_retention_bytes\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x38\n\x13log_retention_hours\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12:\n\x15log_retention_minutes\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x35\n\x10log_retention_ms\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x36\n\x11log_segment_bytes\x18\t \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x33\n\x0flog_preallocate\x18\n \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12=\n\x18socket_send_buffer_bytes\x18\x0b \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12@\n\x1bsocket_receive_buffer_bytes\x18\x0c \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12=\n\x19\x61uto_create_topics_enable\x18\r \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x33\n\x0enum_partitions\x18\x0e \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12?\n\x1a\x64\x65\x66\x61ult_replication_factor\x18\x0f \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"\xa4\x07\n\x0eKafkaConfig2_8\x12\x44\n\x10\x63ompression_type\x18\x01 \x01(\x0e\x32*.yandex.cloud.mdb.kafka.v1.CompressionType\x12@\n\x1blog_flush_interval_messages\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12:\n\x15log_flush_interval_ms\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x44\n\x1flog_flush_scheduler_interval_ms\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x38\n\x13log_retention_bytes\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x38\n\x13log_retention_hours\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12:\n\x15log_retention_minutes\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x35\n\x10log_retention_ms\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x36\n\x11log_segment_bytes\x18\t \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x33\n\x0flog_preallocate\x18\n \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12=\n\x18socket_send_buffer_bytes\x18\x0b \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12@\n\x1bsocket_receive_buffer_bytes\x18\x0c \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12=\n\x19\x61uto_create_topics_enable\x18\r \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x33\n\x0enum_partitions\x18\x0e \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12?\n\x1a\x64\x65\x66\x61ult_replication_factor\x18\x0f \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"\xfd\x02\n\x04Host\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12\x0f\n\x07zone_id\x18\x03 \x01(\t\x12\x32\n\x04role\x18\x04 \x01(\x0e\x32$.yandex.cloud.mdb.kafka.v1.Host.Role\x12\x37\n\tresources\x18\x05 \x01(\x0b\x32$.yandex.cloud.mdb.kafka.v1.Resources\x12\x36\n\x06health\x18\x06 \x01(\x0e\x32&.yandex.cloud.mdb.kafka.v1.Host.Health\x12\x11\n\tsubnet_id\x18\x08 \x01(\t\x12\x18\n\x10\x61ssign_public_ip\x18\t \x01(\x08\"6\n\x04Role\x12\x14\n\x10ROLE_UNSPECIFIED\x10\x00\x12\t\n\x05KAFKA\x10\x01\x12\r\n\tZOOKEEPER\x10\x02\"8\n\x06Health\x12\x0b\n\x07UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\x42\x64\n\x1dyandex.cloud.api.mdb.kafka.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/kafka/v1;kafkab\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_kafka_dot_v1_dot_common__pb2.DESCRIPTOR,])
 
@@ -173,8 +173,8 @@ _HOST_ROLE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3972,
-  serialized_end=4026,
+  serialized_start=4995,
+  serialized_end=5049,
 )
 _sym_db.RegisterEnumDescriptor(_HOST_ROLE)
 
@@ -208,8 +208,8 @@ _HOST_HEALTH = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4028,
-  serialized_end=4084,
+  serialized_start=5051,
+  serialized_end=5107,
 )
 _sym_db.RegisterEnumDescriptor(_HOST_HEALTH)
 
@@ -460,6 +460,13 @@ _CONFIGSPEC_KAFKA = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='kafkaConfig_2_6', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='kafka_config_2_8', full_name='yandex.cloud.mdb.kafka.v1.ConfigSpec.Kafka.kafka_config_2_8', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='kafkaConfig_2_8', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -478,7 +485,7 @@ _CONFIGSPEC_KAFKA = _descriptor.Descriptor(
     fields=[]),
   ],
   serialized_start=1422,
-  serialized_end=1678,
+  serialized_end=1766,
 )
 
 _CONFIGSPEC_ZOOKEEPER = _descriptor.Descriptor(
@@ -508,8 +515,8 @@ _CONFIGSPEC_ZOOKEEPER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1680,
-  serialized_end=1748,
+  serialized_start=1768,
+  serialized_end=1836,
 )
 
 _CONFIGSPEC = _descriptor.Descriptor(
@@ -582,7 +589,7 @@ _CONFIGSPEC = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1141,
-  serialized_end=1748,
+  serialized_end=1836,
 )
 
 
@@ -627,8 +634,8 @@ _RESOURCES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1750,
-  serialized_end=1830,
+  serialized_start=1838,
+  serialized_end=1918,
 )
 
 
@@ -757,8 +764,8 @@ _KAFKACONFIG2_1 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1833,
-  serialized_end=2765,
+  serialized_start=1921,
+  serialized_end=2853,
 )
 
 
@@ -887,8 +894,138 @@ _KAFKACONFIG2_6 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2768,
-  serialized_end=3700,
+  serialized_start=2856,
+  serialized_end=3788,
+)
+
+
+_KAFKACONFIG2_8 = _descriptor.Descriptor(
+  name='KafkaConfig2_8',
+  full_name='yandex.cloud.mdb.kafka.v1.KafkaConfig2_8',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='compression_type', full_name='yandex.cloud.mdb.kafka.v1.KafkaConfig2_8.compression_type', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='log_flush_interval_messages', full_name='yandex.cloud.mdb.kafka.v1.KafkaConfig2_8.log_flush_interval_messages', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='log_flush_interval_ms', full_name='yandex.cloud.mdb.kafka.v1.KafkaConfig2_8.log_flush_interval_ms', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='log_flush_scheduler_interval_ms', full_name='yandex.cloud.mdb.kafka.v1.KafkaConfig2_8.log_flush_scheduler_interval_ms', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='log_retention_bytes', full_name='yandex.cloud.mdb.kafka.v1.KafkaConfig2_8.log_retention_bytes', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='log_retention_hours', full_name='yandex.cloud.mdb.kafka.v1.KafkaConfig2_8.log_retention_hours', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='log_retention_minutes', full_name='yandex.cloud.mdb.kafka.v1.KafkaConfig2_8.log_retention_minutes', index=6,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='log_retention_ms', full_name='yandex.cloud.mdb.kafka.v1.KafkaConfig2_8.log_retention_ms', index=7,
+      number=8, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='log_segment_bytes', full_name='yandex.cloud.mdb.kafka.v1.KafkaConfig2_8.log_segment_bytes', index=8,
+      number=9, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='log_preallocate', full_name='yandex.cloud.mdb.kafka.v1.KafkaConfig2_8.log_preallocate', index=9,
+      number=10, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='socket_send_buffer_bytes', full_name='yandex.cloud.mdb.kafka.v1.KafkaConfig2_8.socket_send_buffer_bytes', index=10,
+      number=11, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='socket_receive_buffer_bytes', full_name='yandex.cloud.mdb.kafka.v1.KafkaConfig2_8.socket_receive_buffer_bytes', index=11,
+      number=12, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='auto_create_topics_enable', full_name='yandex.cloud.mdb.kafka.v1.KafkaConfig2_8.auto_create_topics_enable', index=12,
+      number=13, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='num_partitions', full_name='yandex.cloud.mdb.kafka.v1.KafkaConfig2_8.num_partitions', index=13,
+      number=14, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='default_replication_factor', full_name='yandex.cloud.mdb.kafka.v1.KafkaConfig2_8.default_replication_factor', index=14,
+      number=15, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3791,
+  serialized_end=4723,
 )
 
 
@@ -970,8 +1107,8 @@ _HOST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3703,
-  serialized_end=4084,
+  serialized_start=4726,
+  serialized_end=5107,
 )
 
 _CLUSTER_LABELSENTRY.containing_type = _CLUSTER
@@ -988,6 +1125,7 @@ _CLUSTER_STATUS.containing_type = _CLUSTER
 _CONFIGSPEC_KAFKA.fields_by_name['resources'].message_type = _RESOURCES
 _CONFIGSPEC_KAFKA.fields_by_name['kafka_config_2_1'].message_type = _KAFKACONFIG2_1
 _CONFIGSPEC_KAFKA.fields_by_name['kafka_config_2_6'].message_type = _KAFKACONFIG2_6
+_CONFIGSPEC_KAFKA.fields_by_name['kafka_config_2_8'].message_type = _KAFKACONFIG2_8
 _CONFIGSPEC_KAFKA.containing_type = _CONFIGSPEC
 _CONFIGSPEC_KAFKA.oneofs_by_name['kafka_config'].fields.append(
   _CONFIGSPEC_KAFKA.fields_by_name['kafka_config_2_1'])
@@ -995,6 +1133,9 @@ _CONFIGSPEC_KAFKA.fields_by_name['kafka_config_2_1'].containing_oneof = _CONFIGS
 _CONFIGSPEC_KAFKA.oneofs_by_name['kafka_config'].fields.append(
   _CONFIGSPEC_KAFKA.fields_by_name['kafka_config_2_6'])
 _CONFIGSPEC_KAFKA.fields_by_name['kafka_config_2_6'].containing_oneof = _CONFIGSPEC_KAFKA.oneofs_by_name['kafka_config']
+_CONFIGSPEC_KAFKA.oneofs_by_name['kafka_config'].fields.append(
+  _CONFIGSPEC_KAFKA.fields_by_name['kafka_config_2_8'])
+_CONFIGSPEC_KAFKA.fields_by_name['kafka_config_2_8'].containing_oneof = _CONFIGSPEC_KAFKA.oneofs_by_name['kafka_config']
 _CONFIGSPEC_ZOOKEEPER.fields_by_name['resources'].message_type = _RESOURCES
 _CONFIGSPEC_ZOOKEEPER.containing_type = _CONFIGSPEC
 _CONFIGSPEC.fields_by_name['kafka'].message_type = _CONFIGSPEC_KAFKA
@@ -1030,6 +1171,21 @@ _KAFKACONFIG2_6.fields_by_name['socket_receive_buffer_bytes'].message_type = goo
 _KAFKACONFIG2_6.fields_by_name['auto_create_topics_enable'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
 _KAFKACONFIG2_6.fields_by_name['num_partitions'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
 _KAFKACONFIG2_6.fields_by_name['default_replication_factor'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_KAFKACONFIG2_8.fields_by_name['compression_type'].enum_type = yandex_dot_cloud_dot_mdb_dot_kafka_dot_v1_dot_common__pb2._COMPRESSIONTYPE
+_KAFKACONFIG2_8.fields_by_name['log_flush_interval_messages'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_KAFKACONFIG2_8.fields_by_name['log_flush_interval_ms'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_KAFKACONFIG2_8.fields_by_name['log_flush_scheduler_interval_ms'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_KAFKACONFIG2_8.fields_by_name['log_retention_bytes'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_KAFKACONFIG2_8.fields_by_name['log_retention_hours'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_KAFKACONFIG2_8.fields_by_name['log_retention_minutes'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_KAFKACONFIG2_8.fields_by_name['log_retention_ms'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_KAFKACONFIG2_8.fields_by_name['log_segment_bytes'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_KAFKACONFIG2_8.fields_by_name['log_preallocate'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
+_KAFKACONFIG2_8.fields_by_name['socket_send_buffer_bytes'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_KAFKACONFIG2_8.fields_by_name['socket_receive_buffer_bytes'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_KAFKACONFIG2_8.fields_by_name['auto_create_topics_enable'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
+_KAFKACONFIG2_8.fields_by_name['num_partitions'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_KAFKACONFIG2_8.fields_by_name['default_replication_factor'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
 _HOST.fields_by_name['role'].enum_type = _HOST_ROLE
 _HOST.fields_by_name['resources'].message_type = _RESOURCES
 _HOST.fields_by_name['health'].enum_type = _HOST_HEALTH
@@ -1041,6 +1197,7 @@ DESCRIPTOR.message_types_by_name['ConfigSpec'] = _CONFIGSPEC
 DESCRIPTOR.message_types_by_name['Resources'] = _RESOURCES
 DESCRIPTOR.message_types_by_name['KafkaConfig2_1'] = _KAFKACONFIG2_1
 DESCRIPTOR.message_types_by_name['KafkaConfig2_6'] = _KAFKACONFIG2_6
+DESCRIPTOR.message_types_by_name['KafkaConfig2_8'] = _KAFKACONFIG2_8
 DESCRIPTOR.message_types_by_name['Host'] = _HOST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -1109,6 +1266,13 @@ KafkaConfig2_6 = _reflection.GeneratedProtocolMessageType('KafkaConfig2_6', (_me
   # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.kafka.v1.KafkaConfig2_6)
   })
 _sym_db.RegisterMessage(KafkaConfig2_6)
+
+KafkaConfig2_8 = _reflection.GeneratedProtocolMessageType('KafkaConfig2_8', (_message.Message,), {
+  'DESCRIPTOR' : _KAFKACONFIG2_8,
+  '__module__' : 'yandex.cloud.mdb.kafka.v1.cluster_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.kafka.v1.KafkaConfig2_8)
+  })
+_sym_db.RegisterMessage(KafkaConfig2_8)
 
 Host = _reflection.GeneratedProtocolMessageType('Host', (_message.Message,), {
   'DESCRIPTOR' : _HOST,

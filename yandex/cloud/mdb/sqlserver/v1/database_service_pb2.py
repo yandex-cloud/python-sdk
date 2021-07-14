@@ -12,6 +12,7 @@ _sym_db = _symbol_database.Default()
 
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
@@ -24,9 +25,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n!yandex.cloud.api.mdb.sqlserver.v1B\004PSDSZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/sqlserver/v1;sqlserver',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n4yandex/cloud/mdb/sqlserver/v1/database_service.proto\x12\x1dyandex.cloud.mdb.sqlserver.v1\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a,yandex/cloud/mdb/sqlserver/v1/database.proto\"m\n\x12GetDatabaseRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\rdatabase_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"v\n\x14ListDatabasesRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"l\n\x15ListDatabasesResponse\x12:\n\tdatabases\x18\x01 \x03(\x0b\x32\'.yandex.cloud.mdb.sqlserver.v1.Database\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x83\x01\n\x15\x43reateDatabaseRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12H\n\rdatabase_spec\x18\x02 \x01(\x0b\x32+.yandex.cloud.mdb.sqlserver.v1.DatabaseSpecB\x04\xe8\xc7\x31\x01\"C\n\x16\x43reateDatabaseMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x15\n\rdatabase_name\x18\x02 \x01(\t\"p\n\x15\x44\x65leteDatabaseRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\rdatabase_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"C\n\x16\x44\x65leteDatabaseMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x15\n\rdatabase_name\x18\x02 \x01(\t2\x99\x06\n\x0f\x44\x61tabaseService\x12\xac\x01\n\x03Get\x12\x31.yandex.cloud.mdb.sqlserver.v1.GetDatabaseRequest\x1a\'.yandex.cloud.mdb.sqlserver.v1.Database\"I\x82\xd3\xe4\x93\x02\x43\x12\x41/mdb/sqlserver/v1/clusters/{cluster_id}/databases/{database_name}\x12\xac\x01\n\x04List\x12\x33.yandex.cloud.mdb.sqlserver.v1.ListDatabasesRequest\x1a\x34.yandex.cloud.mdb.sqlserver.v1.ListDatabasesResponse\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/mdb/sqlserver/v1/clusters/{cluster_id}/databases\x12\xc5\x01\n\x06\x43reate\x12\x34.yandex.cloud.mdb.sqlserver.v1.CreateDatabaseRequest\x1a!.yandex.cloud.operation.Operation\"b\x82\xd3\xe4\x93\x02\x36\"1/mdb/sqlserver/v1/clusters/{cluster_id}/databases:\x01*\xb2\xd2*\"\n\x16\x43reateDatabaseMetadata\x12\x08\x44\x61tabase\x12\xdf\x01\n\x06\x44\x65lete\x12\x34.yandex.cloud.mdb.sqlserver.v1.DeleteDatabaseRequest\x1a!.yandex.cloud.operation.Operation\"|\x82\xd3\xe4\x93\x02\x43*A/mdb/sqlserver/v1/clusters/{cluster_id}/databases/{database_name}\xb2\xd2*/\n\x16\x44\x65leteDatabaseMetadata\x12\x15google.protobuf.EmptyBv\n!yandex.cloud.api.mdb.sqlserver.v1B\x04PSDSZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/sqlserver/v1;sqlserverb\x06proto3'
+  serialized_pb=b'\n4yandex/cloud/mdb/sqlserver/v1/database_service.proto\x12\x1dyandex.cloud.mdb.sqlserver.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a,yandex/cloud/mdb/sqlserver/v1/database.proto\"m\n\x12GetDatabaseRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\rdatabase_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"v\n\x14ListDatabasesRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"l\n\x15ListDatabasesResponse\x12:\n\tdatabases\x18\x01 \x03(\x0b\x32\'.yandex.cloud.mdb.sqlserver.v1.Database\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x83\x01\n\x15\x43reateDatabaseRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12H\n\rdatabase_spec\x18\x02 \x01(\x0b\x32+.yandex.cloud.mdb.sqlserver.v1.DatabaseSpecB\x04\xe8\xc7\x31\x01\"C\n\x16\x43reateDatabaseMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x15\n\rdatabase_name\x18\x02 \x01(\t\"\x86\x01\n\x17RestoreDatabaseMetadata\x12\x18\n\ncluster_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1b\n\rdatabase_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1b\n\rfrom_database\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tbackup_id\x18\x04 \x01(\tB\x04\xe8\xc7\x31\x01\"p\n\x15\x44\x65leteDatabaseRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\rdatabase_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"C\n\x16\x44\x65leteDatabaseMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x15\n\rdatabase_name\x18\x02 \x01(\t\"\xbd\x01\n\x16RestoreDatabaseRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1b\n\rdatabase_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1b\n\rfrom_database\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tbackup_id\x18\x04 \x01(\tB\x04\xe8\xc7\x31\x01\x12.\n\x04time\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x32\xe4\x07\n\x0f\x44\x61tabaseService\x12\xac\x01\n\x03Get\x12\x31.yandex.cloud.mdb.sqlserver.v1.GetDatabaseRequest\x1a\'.yandex.cloud.mdb.sqlserver.v1.Database\"I\x82\xd3\xe4\x93\x02\x43\x12\x41/mdb/sqlserver/v1/clusters/{cluster_id}/databases/{database_name}\x12\xac\x01\n\x04List\x12\x33.yandex.cloud.mdb.sqlserver.v1.ListDatabasesRequest\x1a\x34.yandex.cloud.mdb.sqlserver.v1.ListDatabasesResponse\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/mdb/sqlserver/v1/clusters/{cluster_id}/databases\x12\xc5\x01\n\x06\x43reate\x12\x34.yandex.cloud.mdb.sqlserver.v1.CreateDatabaseRequest\x1a!.yandex.cloud.operation.Operation\"b\x82\xd3\xe4\x93\x02\x36\"1/mdb/sqlserver/v1/clusters/{cluster_id}/databases:\x01*\xb2\xd2*\"\n\x16\x43reateDatabaseMetadata\x12\x08\x44\x61tabase\x12\xc8\x01\n\x07Restore\x12\x35.yandex.cloud.mdb.sqlserver.v1.RestoreDatabaseRequest\x1a!.yandex.cloud.operation.Operation\"c\x82\xd3\xe4\x93\x02\x36\"1/mdb/sqlserver/v1/clusters/{cluster_id}/databases:\x01*\xb2\xd2*#\n\x17RestoreDatabaseMetadata\x12\x08\x44\x61tabase\x12\xdf\x01\n\x06\x44\x65lete\x12\x34.yandex.cloud.mdb.sqlserver.v1.DeleteDatabaseRequest\x1a!.yandex.cloud.operation.Operation\"|\x82\xd3\xe4\x93\x02\x43*A/mdb/sqlserver/v1/clusters/{cluster_id}/databases/{database_name}\xb2\xd2*/\n\x16\x44\x65leteDatabaseMetadata\x12\x15google.protobuf.EmptyBv\n!yandex.cloud.api.mdb.sqlserver.v1B\x04PSDSZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/sqlserver/v1;sqlserverb\x06proto3'
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_database__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_database__pb2.DESCRIPTOR,])
 
 
 
@@ -65,8 +66,8 @@ _GETDATABASEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=268,
-  serialized_end=377,
+  serialized_start=301,
+  serialized_end=410,
 )
 
 
@@ -111,8 +112,8 @@ _LISTDATABASESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=379,
-  serialized_end=497,
+  serialized_start=412,
+  serialized_end=530,
 )
 
 
@@ -150,8 +151,8 @@ _LISTDATABASESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=499,
-  serialized_end=607,
+  serialized_start=532,
+  serialized_end=640,
 )
 
 
@@ -189,8 +190,8 @@ _CREATEDATABASEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=610,
-  serialized_end=741,
+  serialized_start=643,
+  serialized_end=774,
 )
 
 
@@ -228,8 +229,61 @@ _CREATEDATABASEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=743,
-  serialized_end=810,
+  serialized_start=776,
+  serialized_end=843,
+)
+
+
+_RESTOREDATABASEMETADATA = _descriptor.Descriptor(
+  name='RestoreDatabaseMetadata',
+  full_name='yandex.cloud.mdb.sqlserver.v1.RestoreDatabaseMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='yandex.cloud.mdb.sqlserver.v1.RestoreDatabaseMetadata.cluster_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='database_name', full_name='yandex.cloud.mdb.sqlserver.v1.RestoreDatabaseMetadata.database_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='from_database', full_name='yandex.cloud.mdb.sqlserver.v1.RestoreDatabaseMetadata.from_database', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='backup_id', full_name='yandex.cloud.mdb.sqlserver.v1.RestoreDatabaseMetadata.backup_id', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=846,
+  serialized_end=980,
 )
 
 
@@ -267,8 +321,8 @@ _DELETEDATABASEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=812,
-  serialized_end=924,
+  serialized_start=982,
+  serialized_end=1094,
 )
 
 
@@ -306,19 +360,82 @@ _DELETEDATABASEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=926,
-  serialized_end=993,
+  serialized_start=1096,
+  serialized_end=1163,
+)
+
+
+_RESTOREDATABASEREQUEST = _descriptor.Descriptor(
+  name='RestoreDatabaseRequest',
+  full_name='yandex.cloud.mdb.sqlserver.v1.RestoreDatabaseRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='yandex.cloud.mdb.sqlserver.v1.RestoreDatabaseRequest.cluster_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='database_name', full_name='yandex.cloud.mdb.sqlserver.v1.RestoreDatabaseRequest.database_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='from_database', full_name='yandex.cloud.mdb.sqlserver.v1.RestoreDatabaseRequest.from_database', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='backup_id', full_name='yandex.cloud.mdb.sqlserver.v1.RestoreDatabaseRequest.backup_id', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='time', full_name='yandex.cloud.mdb.sqlserver.v1.RestoreDatabaseRequest.time', index=4,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1166,
+  serialized_end=1355,
 )
 
 _LISTDATABASESRESPONSE.fields_by_name['databases'].message_type = yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_database__pb2._DATABASE
 _CREATEDATABASEREQUEST.fields_by_name['database_spec'].message_type = yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_database__pb2._DATABASESPEC
+_RESTOREDATABASEREQUEST.fields_by_name['time'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 DESCRIPTOR.message_types_by_name['GetDatabaseRequest'] = _GETDATABASEREQUEST
 DESCRIPTOR.message_types_by_name['ListDatabasesRequest'] = _LISTDATABASESREQUEST
 DESCRIPTOR.message_types_by_name['ListDatabasesResponse'] = _LISTDATABASESRESPONSE
 DESCRIPTOR.message_types_by_name['CreateDatabaseRequest'] = _CREATEDATABASEREQUEST
 DESCRIPTOR.message_types_by_name['CreateDatabaseMetadata'] = _CREATEDATABASEMETADATA
+DESCRIPTOR.message_types_by_name['RestoreDatabaseMetadata'] = _RESTOREDATABASEMETADATA
 DESCRIPTOR.message_types_by_name['DeleteDatabaseRequest'] = _DELETEDATABASEREQUEST
 DESCRIPTOR.message_types_by_name['DeleteDatabaseMetadata'] = _DELETEDATABASEMETADATA
+DESCRIPTOR.message_types_by_name['RestoreDatabaseRequest'] = _RESTOREDATABASEREQUEST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 GetDatabaseRequest = _reflection.GeneratedProtocolMessageType('GetDatabaseRequest', (_message.Message,), {
@@ -356,6 +473,13 @@ CreateDatabaseMetadata = _reflection.GeneratedProtocolMessageType('CreateDatabas
   })
 _sym_db.RegisterMessage(CreateDatabaseMetadata)
 
+RestoreDatabaseMetadata = _reflection.GeneratedProtocolMessageType('RestoreDatabaseMetadata', (_message.Message,), {
+  'DESCRIPTOR' : _RESTOREDATABASEMETADATA,
+  '__module__' : 'yandex.cloud.mdb.sqlserver.v1.database_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.sqlserver.v1.RestoreDatabaseMetadata)
+  })
+_sym_db.RegisterMessage(RestoreDatabaseMetadata)
+
 DeleteDatabaseRequest = _reflection.GeneratedProtocolMessageType('DeleteDatabaseRequest', (_message.Message,), {
   'DESCRIPTOR' : _DELETEDATABASEREQUEST,
   '__module__' : 'yandex.cloud.mdb.sqlserver.v1.database_service_pb2'
@@ -370,6 +494,13 @@ DeleteDatabaseMetadata = _reflection.GeneratedProtocolMessageType('DeleteDatabas
   })
 _sym_db.RegisterMessage(DeleteDatabaseMetadata)
 
+RestoreDatabaseRequest = _reflection.GeneratedProtocolMessageType('RestoreDatabaseRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RESTOREDATABASEREQUEST,
+  '__module__' : 'yandex.cloud.mdb.sqlserver.v1.database_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.sqlserver.v1.RestoreDatabaseRequest)
+  })
+_sym_db.RegisterMessage(RestoreDatabaseRequest)
+
 
 DESCRIPTOR._options = None
 _GETDATABASEREQUEST.fields_by_name['cluster_id']._options = None
@@ -379,8 +510,17 @@ _LISTDATABASESREQUEST.fields_by_name['page_size']._options = None
 _LISTDATABASESREQUEST.fields_by_name['page_token']._options = None
 _CREATEDATABASEREQUEST.fields_by_name['cluster_id']._options = None
 _CREATEDATABASEREQUEST.fields_by_name['database_spec']._options = None
+_RESTOREDATABASEMETADATA.fields_by_name['cluster_id']._options = None
+_RESTOREDATABASEMETADATA.fields_by_name['database_name']._options = None
+_RESTOREDATABASEMETADATA.fields_by_name['from_database']._options = None
+_RESTOREDATABASEMETADATA.fields_by_name['backup_id']._options = None
 _DELETEDATABASEREQUEST.fields_by_name['cluster_id']._options = None
 _DELETEDATABASEREQUEST.fields_by_name['database_name']._options = None
+_RESTOREDATABASEREQUEST.fields_by_name['cluster_id']._options = None
+_RESTOREDATABASEREQUEST.fields_by_name['database_name']._options = None
+_RESTOREDATABASEREQUEST.fields_by_name['from_database']._options = None
+_RESTOREDATABASEREQUEST.fields_by_name['backup_id']._options = None
+_RESTOREDATABASEREQUEST.fields_by_name['time']._options = None
 
 _DATABASESERVICE = _descriptor.ServiceDescriptor(
   name='DatabaseService',
@@ -389,8 +529,8 @@ _DATABASESERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=996,
-  serialized_end=1789,
+  serialized_start=1358,
+  serialized_end=2354,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
@@ -423,9 +563,19 @@ _DATABASESERVICE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
+    name='Restore',
+    full_name='yandex.cloud.mdb.sqlserver.v1.DatabaseService.Restore',
+    index=3,
+    containing_service=None,
+    input_type=_RESTOREDATABASEREQUEST,
+    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
+    serialized_options=b'\202\323\344\223\0026\"1/mdb/sqlserver/v1/clusters/{cluster_id}/databases:\001*\262\322*#\n\027RestoreDatabaseMetadata\022\010Database',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
     name='Delete',
     full_name='yandex.cloud.mdb.sqlserver.v1.DatabaseService.Delete',
-    index=3,
+    index=4,
     containing_service=None,
     input_type=_DELETEDATABASEREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,

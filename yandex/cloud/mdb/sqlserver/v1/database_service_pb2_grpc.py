@@ -32,6 +32,11 @@ class DatabaseServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_database__service__pb2.CreateDatabaseRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
+        self.Restore = channel.unary_unary(
+                '/yandex.cloud.mdb.sqlserver.v1.DatabaseService/Restore',
+                request_serializer=yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_database__service__pb2.RestoreDatabaseRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
         self.Delete = channel.unary_unary(
                 '/yandex.cloud.mdb.sqlserver.v1.DatabaseService/Delete',
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_database__service__pb2.DeleteDatabaseRequest.SerializeToString,
@@ -66,6 +71,13 @@ class DatabaseServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Restore(self, request, context):
+        """Creates a new SQL Server database in the specified cluster from a backup
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def Delete(self, request, context):
         """Deletes the specified SQL Server database.
         """
@@ -89,6 +101,11 @@ def add_DatabaseServiceServicer_to_server(servicer, server):
             'Create': grpc.unary_unary_rpc_method_handler(
                     servicer.Create,
                     request_deserializer=yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_database__service__pb2.CreateDatabaseRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'Restore': grpc.unary_unary_rpc_method_handler(
+                    servicer.Restore,
+                    request_deserializer=yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_database__service__pb2.RestoreDatabaseRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'Delete': grpc.unary_unary_rpc_method_handler(
@@ -154,6 +171,23 @@ class DatabaseService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.mdb.sqlserver.v1.DatabaseService/Create',
             yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_database__service__pb2.CreateDatabaseRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Restore(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.mdb.sqlserver.v1.DatabaseService/Restore',
+            yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_database__service__pb2.RestoreDatabaseRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
