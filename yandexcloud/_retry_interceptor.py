@@ -28,7 +28,10 @@ class RetryInterceptor(grpc.UnaryUnaryClientInterceptor):
     5. Default retriable codes are UNAVAILABLE and RESOURCE_EXHAUSTED.
     6. Backoff function is called with retry attempt counter and should return sleep time in seconds (float).
     """
-    _DEFAULT_RETRIABLE_CODES = [grpc.StatusCode.UNAVAILABLE, grpc.StatusCode.RESOURCE_EXHAUSTED]
+    _DEFAULT_RETRIABLE_CODES = (
+        grpc.StatusCode.UNAVAILABLE,
+        grpc.StatusCode.RESOURCE_EXHAUSTED,
+    )
     _NON_RETRIABLE_CODES = [grpc.StatusCode.CANCELLED, grpc.StatusCode.DEADLINE_EXCEEDED]
     _IDEMPOTENCY_TOKEN_METADATA_KEY = "idempotency-key"
     _ATTEMPT_METADATA_KEY = "x-retry-attempt"

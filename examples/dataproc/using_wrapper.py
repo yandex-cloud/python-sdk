@@ -23,6 +23,13 @@ def main():
         default_public_ssh_key=arguments.ssh_public_key,
     )
     bucket_for_logs_output = arguments.s3_bucket
+    services = (
+        'HDFS',
+        'YARN',
+        'MAPREDUCE',
+        'HIVE',
+        'SPARK',
+    )
     try:
         dataproc.create_cluster(
             masternode_resource_preset='s2.micro',
@@ -32,6 +39,7 @@ def main():
             s3_bucket=bucket_for_logs_output,
             service_account_id=arguments.service_account_id,
             zone=arguments.zone,
+            services=services,
         )
 
         dataproc.update_cluster_description('New cluster description')
@@ -41,6 +49,9 @@ def main():
             name='compute',
             hosts_count=1,
             resource_preset='s2.micro',
+            max_hosts_count=2,
+            cpu_utilization_target=66,
+            preemptible=True,
         )
 
         dataproc.create_mapreduce_job(

@@ -33,7 +33,6 @@ def main():
 
     resources = common_pb.Resources(
         resource_preset_id='s2.micro',
-        disk_size=15 * (1024 ** 3),
         disk_type_id='network-ssd',
     )
     cluster_id = None
@@ -109,6 +108,11 @@ def create_cluster(sdk, request):
 
 def add_subcluster(sdk, cluster_id, params, resources):
     logging.info('Adding subcluster to cluster {}'.format(cluster_id))
+    autoscaling_config = subcluster_pb.AutoscalingConfig(
+        max_hosts_count=2,
+        preemptible=True,
+        cpu_utilization_target=66,
+    )
     request = subcluster_service_pb.CreateSubclusterRequest(
         cluster_id=cluster_id,
         name='compute',
@@ -116,8 +120,8 @@ def add_subcluster(sdk, cluster_id, params, resources):
         resources=resources,
         subnet_id=params.subnet_id,
         hosts_count=1,
+        autoscaling_config=autoscaling_config,
     )
-
     operation = sdk.client(subcluster_service_grpc_pb.SubclusterServiceStub).Create(request)
     return sdk.wait_operation_and_get_result(
         operation,
@@ -284,20 +288,19 @@ def create_cluster_request(params, resources):
     #  SPARK (depends on HDFS, YARN)
     #  ZEPPELIN
     #  OOZIE
-    services = [
+    services = (
         'HDFS',
         'YARN',
         'MAPREDUCE',
         'HIVE',
         'SPARK',
-    ]
+    )
 
     return cluster_service_pb.CreateClusterRequest(
         folder_id=params.folder_id,
         name=params.cluster_name,
         description=params.cluster_desc,
         config_spec=cluster_service_pb.CreateClusterConfigSpec(
-            version_id='1.1',
             hadoop=cluster_pb.HadoopConfig(
                 services=services,
                 ssh_public_keys=[params.ssh_public_key],
@@ -315,7 +318,7 @@ def create_cluster_request(params, resources):
                     role=subcluster_pb.Role.DATANODE,
                     resources=resources,
                     subnet_id=params.subnet_id,
-                    hosts_count=2,
+                    hosts_count=1,
                 ),
             ],
         ),

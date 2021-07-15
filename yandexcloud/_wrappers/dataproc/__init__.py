@@ -43,28 +43,35 @@ class Dataproc(object):
         self.default_public_ssh_key = default_public_ssh_key
 
     def create_cluster(
-            self,
-            s3_bucket,
-            folder_id=None,
-            cluster_name=None,
-            cluster_description='',
-            cluster_image_version='1.1',
-            ssh_public_keys=None,
-            subnet_id=None,
-            services=('HDFS', 'YARN', 'MAPREDUCE', 'HIVE', 'SPARK'),
-            zone='ru-central1-b',
-            service_account_id=None,
-            masternode_resource_preset='s2.small',
-            masternode_disk_size=15,
-            masternode_disk_type='network-ssd',
-            datanode_resource_preset='s2.small',
-            datanode_disk_size=15,
-            datanode_disk_type='network-ssd',
-            datanode_count=2,
-            computenode_resource_preset='s2.small',
-            computenode_disk_size=15,
-            computenode_disk_type='network-ssd',
-            computenode_count=0,
+        self,
+        s3_bucket,
+        folder_id=None,
+        cluster_name=None,
+        cluster_description='',
+        cluster_image_version=None,
+        ssh_public_keys=None,
+        subnet_id=None,
+        services=None,
+        zone='ru-central1-b',
+        service_account_id=None,
+        masternode_resource_preset=None,
+        masternode_disk_size=None,
+        masternode_disk_type=None,
+        datanode_resource_preset=None,
+        datanode_disk_size=None,
+        datanode_disk_type=None,
+        datanode_count=None,
+        computenode_resource_preset=None,
+        computenode_disk_size=None,
+        computenode_disk_type=None,
+        computenode_count=None,
+        computenode_max_hosts_count=None,
+        computenode_measurement_duration=None,
+        computenode_warmup_duration=None,
+        computenode_stabilization_duration=None,
+        computenode_preemptible=None,
+        computenode_cpu_utilization_target=None,
+        computenode_decommission_timeout=None,
     ):
         """
         Create Yandex.Cloud Data Proc cluster.
@@ -109,11 +116,35 @@ class Dataproc(object):
         :type datanode_disk_type: str
         :param computenode_resource_preset: Resources preset (CPU+RAM configuration)
                                             for the compute nodes of the cluster.
+        :type datanode_count: int
+        :param datanode_count: Number of data nodes.
         :type computenode_resource_preset: str
         :param computenode_disk_size: Computenodes storage size in GiB.
         :type computenode_disk_size: int
         :param computenode_disk_type: Computenodes storage type. Possible options: network-ssd, network-hdd.
         :type computenode_disk_type: str
+        :type computenode_count: int
+        :param computenode_count: Number of compute nodes.
+        :type computenode_max_count: int
+        :param computenode_max_count: Maximum number of nodes of compute autoscaling subcluster.
+        :param computenode_warmup_duration: The warmup time of the instance in seconds. During this time,
+                                traffic is sent to the instance, but instance metrics are not collected. In seconds.
+        :type computenode_warmup_duration: int
+        :param computenode_stabilization_duration: Minimum amount of time in seconds allotted for monitoring before
+                                       Instance Groups can reduce the number of instances in the group.
+                                       During this time, the group size doesn't decrease, even if the new metric values
+                                       indicate that it should. In seconds.
+        :type computenode_stabilization_duration: int
+        :param computenode_preemptible: Preemptible instances are stopped at least once every 24 hours,
+                            and can be stopped at any time if their resources are needed by Compute.
+        :type computenode_preemptible: bool
+        :param computenode_cpu_utilization_target: Defines an autoscaling rule
+                                       based on the average CPU utilization of the instance group.
+                                       in percents. 10-100.
+        :type computenode_cpu_utilization_target: int
+        :param computenode_decommission_timeout: Timeout to gracefully decommission nodes during downscaling.
+                                                 In seconds.
+        :type computenode_decommission_timeout: int
 
         :return: Cluster ID
         :rtype: str
@@ -148,13 +179,20 @@ class Dataproc(object):
         if not s3_bucket:
             raise RuntimeError('Object storage (S3) bucket must be specified.')
 
+        gib = (1024 ** 3)
+        if masternode_disk_size:
+            masternode_disk_size *= gib
+        if datanode_disk_size:
+            datanode_disk_size *= gib
+        if computenode_disk_size:
+            computenode_disk_size *= gib
         subclusters = [
             cluster_service_pb.CreateSubclusterConfigSpec(
                 name='master',
                 role=subcluster_pb.Role.MASTERNODE,
                 resources=common_pb.Resources(
                     resource_preset_id=masternode_resource_preset,
-                    disk_size=masternode_disk_size * (1024 ** 3),
+                    disk_size=masternode_disk_size,
                     disk_type_id=masternode_disk_type,
                 ),
                 subnet_id=subnet_id,
@@ -165,7 +203,7 @@ class Dataproc(object):
                 role=subcluster_pb.Role.DATANODE,
                 resources=common_pb.Resources(
                     resource_preset_id=datanode_resource_preset,
-                    disk_size=datanode_disk_size * (1024 ** 3),
+                    disk_size=datanode_disk_size,
                     disk_type_id=datanode_disk_type,
                 ),
                 subnet_id=subnet_id,
@@ -174,17 +212,29 @@ class Dataproc(object):
         ]
 
         if computenode_count:
+            autoscaling_config = None
+            if computenode_max_hosts_count:
+                autoscaling_config = subcluster_pb.AutoscalingConfig(
+                    max_hosts_count=computenode_max_hosts_count,
+                    measurement_duration=computenode_measurement_duration,
+                    warmup_duration=computenode_warmup_duration,
+                    stabilization_duration=computenode_stabilization_duration,
+                    preemptible=computenode_preemptible,
+                    cpu_utilization_target=computenode_cpu_utilization_target,
+                    decommission_timeout=computenode_decommission_timeout,
+                )
             subclusters.append(
                 cluster_service_pb.CreateSubclusterConfigSpec(
                     name='compute',
-                    role=subcluster_pb.Role.DATANODE,
+                    role=subcluster_pb.Role.COMPUTENODE,
                     resources=common_pb.Resources(
                         resource_preset_id=computenode_resource_preset,
-                        disk_size=computenode_disk_size * (1024 ** 3),
+                        disk_size=computenode_disk_size,
                         disk_type_id=computenode_disk_type,
                     ),
                     subnet_id=subnet_id,
                     hosts_count=computenode_count,
+                    autoscaling_config=autoscaling_config,
                 )
             )
 
@@ -219,12 +269,19 @@ class Dataproc(object):
         self,
         subcluster_type,
         name,
-        resource_preset='s2.small',
-        disk_size=15,
-        disk_type='network-ssd',
-        hosts_count=5,
+        resource_preset=None,
+        disk_size=None,
+        disk_type=None,
+        hosts_count=None,
         subnet_id=None,
         cluster_id=None,
+        max_hosts_count=None,
+        measurement_duration=None,
+        warmup_duration=None,
+        stabilization_duration=None,
+        preemptible=None,
+        cpu_utilization_target=None,
+        decommission_timeout=None,
     ):
         """
         Create subcluster to Yandex.Cloud Data Proc cluster.
@@ -245,10 +302,34 @@ class Dataproc(object):
         :type subnet_id: str
         :param cluster_id: ID of the cluster.
         :type cluster_id: str
+        :param max_hosts_count: Upper limit for total instance autoscaling compute subcluster count.
+        :type max_hosts_count: int
+        :param measurement_duration: Time in seconds allotted for averaging metrics. In seconds.
+        :type measurement_duration: int
+        :param warmup_duration: The warmup time of the instance in seconds. During this time,
+                                traffic is sent to the instance, but instance metrics are not collected. In seconds.
+        :type warmup_duration: int
+        :param stabilization_duration: Minimum amount of time in seconds allotted for monitoring before
+                                       Instance Groups can reduce the number of instances in the group.
+                                       During this time, the group size doesn't decrease, even if the new metric values
+                                       indicate that it should. In seconds.
+        :type stabilization_duration: int
+        :param preemptible: Preemptible instances are stopped at least once every 24 hours,
+                            and can be stopped at any time if their resources are needed by Compute.
+        :type preemptible: bool
+        :param cpu_utilization_target: Defines an autoscaling rule
+                                       based on the average CPU utilization of the instance group.
+                                       in percents. 10-100.
+        :type cpu_utilization_target: int
+        :param decommission_timeout: Timeout to gracefully decommission nodes during downscaling. In seconds.
+        :type decommission_timeout: int
         """
         cluster_id = cluster_id or self.cluster_id
         if not cluster_id:
             raise RuntimeError('Cluster id must be specified.')
+        subnet_id = subnet_id or self.subnet_id
+        if not subnet_id:
+            raise RuntimeError('Subnet ID id must be specified.')
         subnet_id = subnet_id or self.subnet_id
         if not subnet_id:
             raise RuntimeError('Subnet ID id must be specified.')
@@ -257,13 +338,26 @@ class Dataproc(object):
             'compute': subcluster_pb.Role.COMPUTENODE,
             'data': subcluster_pb.Role.DATANODE,
         }
+        if disk_size:
+            disk_size *= 1024 ** 3
         resources = common_pb.Resources(
             resource_preset_id=resource_preset,
-            disk_size=disk_size * (1024 ** 3),
+            disk_size=disk_size,
             disk_type_id=disk_type,
         )
 
         self.log.info('Adding subcluster to cluster {cluster_id}'.format(cluster_id=cluster_id))
+        autoscaling_config = None
+        if max_hosts_count:
+            autoscaling_config = subcluster_pb.AutoscalingConfig(
+                max_hosts_count=max_hosts_count,
+                measurement_duration=measurement_duration,
+                warmup_duration=warmup_duration,
+                stabilization_duration=stabilization_duration,
+                preemptible=preemptible,
+                cpu_utilization_target=cpu_utilization_target,
+                decommission_timeout=decommission_timeout,
+            )
         request = subcluster_service_pb.CreateSubclusterRequest(
             cluster_id=cluster_id,
             name=name,
@@ -271,6 +365,7 @@ class Dataproc(object):
             resources=resources,
             subnet_id=subnet_id,
             hosts_count=hosts_count,
+            autoscaling_config=autoscaling_config,
         )
         return self.sdk.create_operation_and_get_result(
             request,
