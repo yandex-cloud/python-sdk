@@ -9,7 +9,8 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class LogGroupServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing log groups.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -80,76 +81,93 @@ class LogGroupServiceStub(object):
 
 
 class LogGroupServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing log groups.
+    """
 
     def Get(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Returns the specified log group.
+
+        To get the list of all available log groups, make a [List] request.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetDefault(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Returns default log group for the folder.
+
+        To get the list of all available log groups, make a [List] request.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Stats(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Returns stats for the specified log group.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Retrieves the list of log groups in the specified folder.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Creates a log group in the specified folder.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Updates the specified log group.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Deletes the specified log group.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListResources(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Retrieves the resources (type and IDs) in the specified log group.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListOperations(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Lists operations for the specified log group.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListAccessBindings(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Lists existing access bindings for the specified log group.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def SetAccessBindings(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Sets access bindings for the specified log group.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateAccessBindings(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Updates access bindings for the specified log group.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -225,7 +243,8 @@ def add_LogGroupServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class LogGroupService(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing log groups.
+    """
 
     @staticmethod
     def Get(request,

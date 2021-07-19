@@ -25,7 +25,8 @@ class LogIngestionServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def Write(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Write log entries to specified destination.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')

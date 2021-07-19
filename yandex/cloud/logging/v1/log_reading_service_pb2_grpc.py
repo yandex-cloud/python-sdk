@@ -25,7 +25,8 @@ class LogReadingServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def Read(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Read log entries from the specified log group.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
