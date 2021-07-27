@@ -2,6 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
+from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from yandex.cloud.datasphere.v1 import project_pb2 as yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__pb2
 from yandex.cloud.datasphere.v1 import project_service_pb2 as yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__service__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
@@ -46,6 +47,16 @@ class ProjectServiceStub(object):
                 '/yandex.cloud.datasphere.v1.ProjectService/List',
                 request_serializer=yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__service__pb2.ListProjectsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__service__pb2.ListProjectsResponse.FromString,
+                )
+        self.GetUnitBalance = channel.unary_unary(
+                '/yandex.cloud.datasphere.v1.ProjectService/GetUnitBalance',
+                request_serializer=yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__service__pb2.GetUnitBalanceRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__service__pb2.GetUnitBalanceResponse.FromString,
+                )
+        self.SetUnitBalance = channel.unary_unary(
+                '/yandex.cloud.datasphere.v1.ProjectService/SetUnitBalance',
+                request_serializer=yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__service__pb2.SetUnitBalanceRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
 
 
@@ -95,6 +106,20 @@ class ProjectServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetUnitBalance(self, request, context):
+        """Returns the unit balance of the specified project.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SetUnitBalance(self, request, context):
+        """Sets the unit balance of the specified project.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ProjectServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -127,6 +152,16 @@ def add_ProjectServiceServicer_to_server(servicer, server):
                     servicer.List,
                     request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__service__pb2.ListProjectsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__service__pb2.ListProjectsResponse.SerializeToString,
+            ),
+            'GetUnitBalance': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetUnitBalance,
+                    request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__service__pb2.GetUnitBalanceRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__service__pb2.GetUnitBalanceResponse.SerializeToString,
+            ),
+            'SetUnitBalance': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetUnitBalance,
+                    request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__service__pb2.SetUnitBalanceRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -238,5 +273,39 @@ class ProjectService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v1.ProjectService/List',
             yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__service__pb2.ListProjectsRequest.SerializeToString,
             yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__service__pb2.ListProjectsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetUnitBalance(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v1.ProjectService/GetUnitBalance',
+            yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__service__pb2.GetUnitBalanceRequest.SerializeToString,
+            yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__service__pb2.GetUnitBalanceResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SetUnitBalance(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v1.ProjectService/SetUnitBalance',
+            yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__service__pb2.SetUnitBalanceRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
