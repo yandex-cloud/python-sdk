@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\027yandex.cloud.api.ydb.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/ydb/v1;ydb',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\"yandex/cloud/ydb/v1/database.proto\x12\x13yandex.cloud.ydb.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\x1a yandex/cloud/ydb/v1/backup.proto\"\xb2\x08\n\x08\x44\x61tabase\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x34\n\x06status\x18\x06 \x01(\x0e\x32$.yandex.cloud.ydb.v1.Database.Status\x12\x10\n\x08\x65ndpoint\x18\x08 \x01(\t\x12\x1a\n\x12resource_preset_id\x18\t \x01(\t\x12:\n\x0estorage_config\x18\n \x01(\x0b\x32\".yandex.cloud.ydb.v1.StorageConfig\x12\x36\n\x0cscale_policy\x18\x0b \x01(\x0b\x32 .yandex.cloud.ydb.v1.ScalePolicy\x12\x12\n\nnetwork_id\x18\x0c \x01(\t\x12\x12\n\nsubnet_ids\x18\r \x03(\t\x12<\n\x0ezonal_database\x18\x0e \x01(\x0b\x32\".yandex.cloud.ydb.v1.ZonalDatabaseH\x00\x12\x42\n\x11regional_database\x18\x0f \x01(\x0b\x32%.yandex.cloud.ydb.v1.RegionalDatabaseH\x00\x12\x44\n\x12\x64\x65\x64icated_database\x18\x12 \x01(\x0b\x32&.yandex.cloud.ydb.v1.DedicatedDatabaseH\x00\x12\x46\n\x13serverless_database\x18\x13 \x01(\x0b\x32\'.yandex.cloud.ydb.v1.ServerlessDatabaseH\x00\x12\x19\n\x11\x61ssign_public_ips\x18\x10 \x01(\x08\x12\x13\n\x0blocation_id\x18\x11 \x01(\t\x12\x39\n\x06labels\x18\x14 \x03(\x0b\x32).yandex.cloud.ydb.v1.Database.LabelsEntry\x12\x38\n\rbackup_config\x18\x15 \x01(\x0b\x32!.yandex.cloud.ydb.v1.BackupConfig\x12\x1d\n\x15\x64ocument_api_endpoint\x18\x16 \x01(\t\x12\x1c\n\x14kinesis_api_endpoint\x18\x17 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x81\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x10\n\x0cPROVISIONING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\x0c\n\x08UPDATING\x10\x04\x12\t\n\x05\x45RROR\x10\x05\x12\x0c\n\x08\x44\x45LETING\x10\x06\x12\x0c\n\x08STARTING\x10\x07\x12\x0b\n\x07STOPPED\x10\x08\x42\x0f\n\rdatabase_type\"\xe6\x01\n\x11\x44\x65\x64icatedDatabase\x12\x1a\n\x12resource_preset_id\x18\x01 \x01(\t\x12:\n\x0estorage_config\x18\x02 \x01(\x0b\x32\".yandex.cloud.ydb.v1.StorageConfig\x12\x36\n\x0cscale_policy\x18\x03 \x01(\x0b\x32 .yandex.cloud.ydb.v1.ScalePolicy\x12\x12\n\nnetwork_id\x18\x04 \x01(\t\x12\x12\n\nsubnet_ids\x18\x05 \x03(\t\x12\x19\n\x11\x61ssign_public_ips\x18\x06 \x01(\x08\"\x14\n\x12ServerlessDatabase\"&\n\rZonalDatabase\x12\x15\n\x07zone_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"+\n\x10RegionalDatabase\x12\x17\n\tregion_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\x8a\x01\n\x0bScalePolicy\x12\x42\n\x0b\x66ixed_scale\x18\x01 \x01(\x0b\x32+.yandex.cloud.ydb.v1.ScalePolicy.FixedScaleH\x00\x1a#\n\nFixedScale\x12\x15\n\x04size\x18\x01 \x01(\x03\x42\x07\xfa\xc7\x31\x03>=1B\x12\n\nscale_type\x12\x04\xc0\xc1\x31\x01\"U\n\rStorageConfig\x12\x44\n\x0fstorage_options\x18\x01 \x03(\x0b\x32\".yandex.cloud.ydb.v1.StorageOptionB\x07\x82\xc8\x31\x03>=1\"=\n\rStorageOption\x12\x17\n\x0fstorage_type_id\x18\x01 \x01(\t\x12\x13\n\x0bgroup_count\x18\x02 \x01(\x03\x42V\n\x17yandex.cloud.api.ydb.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/ydb/v1;ydbb\x06proto3'
+  serialized_pb=b'\n\"yandex/cloud/ydb/v1/database.proto\x12\x13yandex.cloud.ydb.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\x1a yandex/cloud/ydb/v1/backup.proto\"\xb2\x08\n\x08\x44\x61tabase\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x34\n\x06status\x18\x06 \x01(\x0e\x32$.yandex.cloud.ydb.v1.Database.Status\x12\x10\n\x08\x65ndpoint\x18\x08 \x01(\t\x12\x1a\n\x12resource_preset_id\x18\t \x01(\t\x12:\n\x0estorage_config\x18\n \x01(\x0b\x32\".yandex.cloud.ydb.v1.StorageConfig\x12\x36\n\x0cscale_policy\x18\x0b \x01(\x0b\x32 .yandex.cloud.ydb.v1.ScalePolicy\x12\x12\n\nnetwork_id\x18\x0c \x01(\t\x12\x12\n\nsubnet_ids\x18\r \x03(\t\x12<\n\x0ezonal_database\x18\x0e \x01(\x0b\x32\".yandex.cloud.ydb.v1.ZonalDatabaseH\x00\x12\x42\n\x11regional_database\x18\x0f \x01(\x0b\x32%.yandex.cloud.ydb.v1.RegionalDatabaseH\x00\x12\x44\n\x12\x64\x65\x64icated_database\x18\x12 \x01(\x0b\x32&.yandex.cloud.ydb.v1.DedicatedDatabaseH\x00\x12\x46\n\x13serverless_database\x18\x13 \x01(\x0b\x32\'.yandex.cloud.ydb.v1.ServerlessDatabaseH\x00\x12\x19\n\x11\x61ssign_public_ips\x18\x10 \x01(\x08\x12\x13\n\x0blocation_id\x18\x11 \x01(\t\x12\x39\n\x06labels\x18\x14 \x03(\x0b\x32).yandex.cloud.ydb.v1.Database.LabelsEntry\x12\x38\n\rbackup_config\x18\x15 \x01(\x0b\x32!.yandex.cloud.ydb.v1.BackupConfig\x12\x1d\n\x15\x64ocument_api_endpoint\x18\x16 \x01(\t\x12\x1c\n\x14kinesis_api_endpoint\x18\x17 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x81\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x10\n\x0cPROVISIONING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\x0c\n\x08UPDATING\x10\x04\x12\t\n\x05\x45RROR\x10\x05\x12\x0c\n\x08\x44\x45LETING\x10\x06\x12\x0c\n\x08STARTING\x10\x07\x12\x0b\n\x07STOPPED\x10\x08\x42\x0f\n\rdatabase_type\"\xe6\x01\n\x11\x44\x65\x64icatedDatabase\x12\x1a\n\x12resource_preset_id\x18\x01 \x01(\t\x12:\n\x0estorage_config\x18\x02 \x01(\x0b\x32\".yandex.cloud.ydb.v1.StorageConfig\x12\x36\n\x0cscale_policy\x18\x03 \x01(\x0b\x32 .yandex.cloud.ydb.v1.ScalePolicy\x12\x12\n\nnetwork_id\x18\x04 \x01(\t\x12\x12\n\nsubnet_ids\x18\x05 \x03(\t\x12\x19\n\x11\x61ssign_public_ips\x18\x06 \x01(\x08\"X\n\x12ServerlessDatabase\x12&\n\x1erequest_units_per_second_limit\x18\x01 \x01(\x03\x12\x1a\n\x12storage_size_limit\x18\x02 \x01(\x03\"&\n\rZonalDatabase\x12\x15\n\x07zone_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"+\n\x10RegionalDatabase\x12\x17\n\tregion_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\x8a\x01\n\x0bScalePolicy\x12\x42\n\x0b\x66ixed_scale\x18\x01 \x01(\x0b\x32+.yandex.cloud.ydb.v1.ScalePolicy.FixedScaleH\x00\x1a#\n\nFixedScale\x12\x15\n\x04size\x18\x01 \x01(\x03\x42\x07\xfa\xc7\x31\x03>=1B\x12\n\nscale_type\x12\x04\xc0\xc1\x31\x01\"q\n\rStorageConfig\x12\x44\n\x0fstorage_options\x18\x01 \x03(\x0b\x32\".yandex.cloud.ydb.v1.StorageOptionB\x07\x82\xc8\x31\x03>=1\x12\x1a\n\x12storage_size_limit\x18\x02 \x01(\x03\"=\n\rStorageOption\x12\x17\n\x0fstorage_type_id\x18\x01 \x01(\t\x12\x13\n\x0bgroup_count\x18\x02 \x01(\x03\x42V\n\x17yandex.cloud.api.ydb.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/ydb/v1;ydbb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_ydb_dot_v1_dot_backup__pb2.DESCRIPTOR,])
 
@@ -382,6 +382,20 @@ _SERVERLESSDATABASE = _descriptor.Descriptor(
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
+    _descriptor.FieldDescriptor(
+      name='request_units_per_second_limit', full_name='yandex.cloud.ydb.v1.ServerlessDatabase.request_units_per_second_limit', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='storage_size_limit', full_name='yandex.cloud.ydb.v1.ServerlessDatabase.storage_size_limit', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -395,7 +409,7 @@ _SERVERLESSDATABASE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1467,
-  serialized_end=1487,
+  serialized_end=1555,
 )
 
 
@@ -426,8 +440,8 @@ _ZONALDATABASE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1489,
-  serialized_end=1527,
+  serialized_start=1557,
+  serialized_end=1595,
 )
 
 
@@ -458,8 +472,8 @@ _REGIONALDATABASE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1529,
-  serialized_end=1572,
+  serialized_start=1597,
+  serialized_end=1640,
 )
 
 
@@ -490,8 +504,8 @@ _SCALEPOLICY_FIXEDSCALE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1658,
-  serialized_end=1693,
+  serialized_start=1726,
+  serialized_end=1761,
 )
 
 _SCALEPOLICY = _descriptor.Descriptor(
@@ -526,8 +540,8 @@ _SCALEPOLICY = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[], serialized_options=b'\300\3011\001'),
   ],
-  serialized_start=1575,
-  serialized_end=1713,
+  serialized_start=1643,
+  serialized_end=1781,
 )
 
 
@@ -546,6 +560,13 @@ _STORAGECONFIG = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\202\3101\003>=1', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='storage_size_limit', full_name='yandex.cloud.ydb.v1.StorageConfig.storage_size_limit', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -558,8 +579,8 @@ _STORAGECONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1715,
-  serialized_end=1800,
+  serialized_start=1783,
+  serialized_end=1896,
 )
 
 
@@ -597,8 +618,8 @@ _STORAGEOPTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1802,
-  serialized_end=1863,
+  serialized_start=1898,
+  serialized_end=1959,
 )
 
 _DATABASE_LABELSENTRY.containing_type = _DATABASE

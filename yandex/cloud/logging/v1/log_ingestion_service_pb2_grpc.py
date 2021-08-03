@@ -6,7 +6,8 @@ from yandex.cloud.logging.v1 import log_ingestion_service_pb2 as yandex_dot_clou
 
 
 class LogIngestionServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for writing to log groups.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -22,7 +23,8 @@ class LogIngestionServiceStub(object):
 
 
 class LogIngestionServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for writing to log groups.
+    """
 
     def Write(self, request, context):
         """Write log entries to specified destination.
@@ -47,7 +49,8 @@ def add_LogIngestionServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class LogIngestionService(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for writing to log groups.
+    """
 
     @staticmethod
     def Write(request,

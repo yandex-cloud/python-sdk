@@ -28,7 +28,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\033yandex.cloud.api.logging.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/logging/v1;logging',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n/yandex/cloud/logging/v1/log_group_service.proto\x12\x17yandex.cloud.logging.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1egoogle/protobuf/duration.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a yandex/cloud/access/access.proto\x1a\'yandex/cloud/logging/v1/log_group.proto\x1a*yandex/cloud/logging/v1/log_resource.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"8\n\x12GetLogGroupRequest\x12\"\n\x0clog_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=64\"=\n\x17GetLogGroupStatsRequest\x12\"\n\x0clog_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=64\"<\n\x19GetDefaultLogGroupRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=64\"\x85\x01\n\x14ListLogGroupsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=64\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"c\n\x15ListLogGroupsResponse\x12\x31\n\x06groups\x18\x01 \x03(\x0b\x32!.yandex.cloud.logging.v1.LogGroup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x88\x03\n\x15\x43reateLogGroupRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=64\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8b\x01\n\x06labels\x18\x04 \x03(\x0b\x32:.yandex.cloud.logging.v1.CreateLogGroupRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12@\n\x10retention_period\x18\x05 \x01(\x0b\x32\x19.google.protobuf.DurationB\x0b\xfa\xc7\x31\x07\x31h-168h\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\".\n\x16\x43reateLogGroupMetadata\x12\x14\n\x0clog_group_id\x18\x01 \x01(\t\"\xbc\x03\n\x15UpdateLogGroupRequest\x12\"\n\x0clog_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=64\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8b\x01\n\x06labels\x18\x05 \x03(\x0b\x32:.yandex.cloud.logging.v1.UpdateLogGroupRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12@\n\x10retention_period\x18\x06 \x01(\x0b\x32\x19.google.protobuf.DurationB\x0b\xfa\xc7\x31\x07\x31h-168h\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\".\n\x16UpdateLogGroupMetadata\x12\x14\n\x0clog_group_id\x18\x01 \x01(\t\";\n\x15\x44\x65leteLogGroupRequest\x12\"\n\x0clog_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=64\".\n\x16\x44\x65leteLogGroupMetadata\x12\x14\n\x0clog_group_id\x18\x01 \x01(\t\"S\n\x14ListResourcesRequest\x12\"\n\x0clog_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=64\x12\x17\n\x04type\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=256\"U\n\x15ListResourcesResponse\x12<\n\tresources\x18\x01 \x03(\x0b\x32).yandex.cloud.logging.v1.LogGroupResource\"\x95\x01\n\x15ListOperationsRequest\x12\"\n\x0clog_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=64\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"h\n\x16ListOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"P\n\x18GetLogGroupStatsResponse\x12\x14\n\x0clog_group_id\x18\x01 \x01(\t\x12\r\n\x05\x62ytes\x18\x02 \x01(\x03\x12\x0f\n\x07records\x18\x03 \x01(\x03\x32\xd5\x10\n\x0fLogGroupService\x12\x83\x01\n\x03Get\x12+.yandex.cloud.logging.v1.GetLogGroupRequest\x1a!.yandex.cloud.logging.v1.LogGroup\",\x82\xd3\xe4\x93\x02&\x12$/logging/v1/logGroups/{log_group_id}\x12\x8a\x01\n\nGetDefault\x12\x32.yandex.cloud.logging.v1.GetDefaultLogGroupRequest\x1a!.yandex.cloud.logging.v1.LogGroup\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/logging/v1/logGroups/default\x12\xa0\x01\n\x05Stats\x12\x30.yandex.cloud.logging.v1.GetLogGroupStatsRequest\x1a\x31.yandex.cloud.logging.v1.GetLogGroupStatsResponse\"2\x82\xd3\xe4\x93\x02,\x12*/logging/v1/logGroups/{log_group_id}/stats\x12\x84\x01\n\x04List\x12-.yandex.cloud.logging.v1.ListLogGroupsRequest\x1a..yandex.cloud.logging.v1.ListLogGroupsResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/logging/v1/logGroups\x12\xa3\x01\n\x06\x43reate\x12..yandex.cloud.logging.v1.CreateLogGroupRequest\x1a!.yandex.cloud.operation.Operation\"F\x82\xd3\xe4\x93\x02\x1a\"\x15/logging/v1/logGroups:\x01*\xb2\xd2*\"\n\x16\x43reateLogGroupMetadata\x12\x08LogGroup\x12\xb2\x01\n\x06Update\x12..yandex.cloud.logging.v1.UpdateLogGroupRequest\x1a!.yandex.cloud.operation.Operation\"U\x82\xd3\xe4\x93\x02)2$/logging/v1/logGroups/{log_group_id}:\x01*\xb2\xd2*\"\n\x16UpdateLogGroupMetadata\x12\x08LogGroup\x12\xbc\x01\n\x06\x44\x65lete\x12..yandex.cloud.logging.v1.DeleteLogGroupRequest\x1a!.yandex.cloud.operation.Operation\"_\x82\xd3\xe4\x93\x02&*$/logging/v1/logGroups/{log_group_id}\xb2\xd2*/\n\x16\x44\x65leteLogGroupMetadata\x12\x15google.protobuf.Empty\x12\xaa\x01\n\rListResources\x12-.yandex.cloud.logging.v1.ListResourcesRequest\x1a..yandex.cloud.logging.v1.ListResourcesResponse\":\x82\xd3\xe4\x93\x02\x34\x12\x32/logging/v1/logGroups/{log_group_id}:listResources\x12\xaa\x01\n\x0eListOperations\x12..yandex.cloud.logging.v1.ListOperationsRequest\x1a/.yandex.cloud.logging.v1.ListOperationsResponse\"7\x82\xd3\xe4\x93\x02\x31\x12//logging/v1/logGroups/{log_group_id}/operations\x12\xb5\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\">\x82\xd3\xe4\x93\x02\x38\x12\x36/logging/v1/logGroups/{resource_id}:listAccessBindings\x12\xe4\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"}\x82\xd3\xe4\x93\x02:\"5/logging/v1/logGroups/{resource_id}:setAccessBindings:\x01*\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\xf1\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x83\x01\x82\xd3\xe4\x93\x02=28/logging/v1/logGroups/{resource_id}:updateAccessBindings:\x01*\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.EmptyBb\n\x1byandex.cloud.api.logging.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/logging/v1;loggingb\x06proto3'
+  serialized_pb=b'\n/yandex/cloud/logging/v1/log_group_service.proto\x12\x17yandex.cloud.logging.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1egoogle/protobuf/duration.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a yandex/cloud/access/access.proto\x1a\'yandex/cloud/logging/v1/log_group.proto\x1a*yandex/cloud/logging/v1/log_resource.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"8\n\x12GetLogGroupRequest\x12\"\n\x0clog_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=64\"=\n\x17GetLogGroupStatsRequest\x12\"\n\x0clog_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=64\"<\n\x19GetDefaultLogGroupRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=64\"\x85\x01\n\x14ListLogGroupsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=64\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"c\n\x15ListLogGroupsResponse\x12\x31\n\x06groups\x18\x01 \x03(\x0b\x32!.yandex.cloud.logging.v1.LogGroup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x8d\x03\n\x15\x43reateLogGroupRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=64\x12\x34\n\x04name\x18\x02 \x01(\tB&\xf2\xc7\x31\"([a-z]([-a-z0-9]{0,61}[a-z0-9])?)?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8b\x01\n\x06labels\x18\x04 \x03(\x0b\x32:.yandex.cloud.logging.v1.CreateLogGroupRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12@\n\x10retention_period\x18\x05 \x01(\x0b\x32\x19.google.protobuf.DurationB\x0b\xfa\xc7\x31\x07\x31h-168h\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\".\n\x16\x43reateLogGroupMetadata\x12\x14\n\x0clog_group_id\x18\x01 \x01(\t\"\xc1\x03\n\x15UpdateLogGroupRequest\x12\"\n\x0clog_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=64\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x34\n\x04name\x18\x03 \x01(\tB&\xf2\xc7\x31\"([a-z]([-a-z0-9]{0,61}[a-z0-9])?)?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8b\x01\n\x06labels\x18\x05 \x03(\x0b\x32:.yandex.cloud.logging.v1.UpdateLogGroupRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12@\n\x10retention_period\x18\x06 \x01(\x0b\x32\x19.google.protobuf.DurationB\x0b\xfa\xc7\x31\x07\x31h-168h\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\".\n\x16UpdateLogGroupMetadata\x12\x14\n\x0clog_group_id\x18\x01 \x01(\t\";\n\x15\x44\x65leteLogGroupRequest\x12\"\n\x0clog_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=64\".\n\x16\x44\x65leteLogGroupMetadata\x12\x14\n\x0clog_group_id\x18\x01 \x01(\t\"S\n\x14ListResourcesRequest\x12\"\n\x0clog_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=64\x12\x17\n\x04type\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=256\"U\n\x15ListResourcesResponse\x12<\n\tresources\x18\x01 \x03(\x0b\x32).yandex.cloud.logging.v1.LogGroupResource\"\x95\x01\n\x15ListOperationsRequest\x12\"\n\x0clog_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=64\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"h\n\x16ListOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"P\n\x18GetLogGroupStatsResponse\x12\x14\n\x0clog_group_id\x18\x01 \x01(\t\x12\r\n\x05\x62ytes\x18\x02 \x01(\x03\x12\x0f\n\x07records\x18\x03 \x01(\x03\x32\xd5\x10\n\x0fLogGroupService\x12\x83\x01\n\x03Get\x12+.yandex.cloud.logging.v1.GetLogGroupRequest\x1a!.yandex.cloud.logging.v1.LogGroup\",\x82\xd3\xe4\x93\x02&\x12$/logging/v1/logGroups/{log_group_id}\x12\x8a\x01\n\nGetDefault\x12\x32.yandex.cloud.logging.v1.GetDefaultLogGroupRequest\x1a!.yandex.cloud.logging.v1.LogGroup\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/logging/v1/logGroups/default\x12\xa0\x01\n\x05Stats\x12\x30.yandex.cloud.logging.v1.GetLogGroupStatsRequest\x1a\x31.yandex.cloud.logging.v1.GetLogGroupStatsResponse\"2\x82\xd3\xe4\x93\x02,\x12*/logging/v1/logGroups/{log_group_id}/stats\x12\x84\x01\n\x04List\x12-.yandex.cloud.logging.v1.ListLogGroupsRequest\x1a..yandex.cloud.logging.v1.ListLogGroupsResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/logging/v1/logGroups\x12\xa3\x01\n\x06\x43reate\x12..yandex.cloud.logging.v1.CreateLogGroupRequest\x1a!.yandex.cloud.operation.Operation\"F\x82\xd3\xe4\x93\x02\x1a\"\x15/logging/v1/logGroups:\x01*\xb2\xd2*\"\n\x16\x43reateLogGroupMetadata\x12\x08LogGroup\x12\xb2\x01\n\x06Update\x12..yandex.cloud.logging.v1.UpdateLogGroupRequest\x1a!.yandex.cloud.operation.Operation\"U\x82\xd3\xe4\x93\x02)2$/logging/v1/logGroups/{log_group_id}:\x01*\xb2\xd2*\"\n\x16UpdateLogGroupMetadata\x12\x08LogGroup\x12\xbc\x01\n\x06\x44\x65lete\x12..yandex.cloud.logging.v1.DeleteLogGroupRequest\x1a!.yandex.cloud.operation.Operation\"_\x82\xd3\xe4\x93\x02&*$/logging/v1/logGroups/{log_group_id}\xb2\xd2*/\n\x16\x44\x65leteLogGroupMetadata\x12\x15google.protobuf.Empty\x12\xaa\x01\n\rListResources\x12-.yandex.cloud.logging.v1.ListResourcesRequest\x1a..yandex.cloud.logging.v1.ListResourcesResponse\":\x82\xd3\xe4\x93\x02\x34\x12\x32/logging/v1/logGroups/{log_group_id}:listResources\x12\xaa\x01\n\x0eListOperations\x12..yandex.cloud.logging.v1.ListOperationsRequest\x1a/.yandex.cloud.logging.v1.ListOperationsResponse\"7\x82\xd3\xe4\x93\x02\x31\x12//logging/v1/logGroups/{log_group_id}/operations\x12\xb5\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\">\x82\xd3\xe4\x93\x02\x38\x12\x36/logging/v1/logGroups/{resource_id}:listAccessBindings\x12\xe4\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"}\x82\xd3\xe4\x93\x02:\"5/logging/v1/logGroups/{resource_id}:setAccessBindings:\x01*\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\xf1\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x83\x01\x82\xd3\xe4\x93\x02=28/logging/v1/logGroups/{resource_id}:updateAccessBindings:\x01*\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.EmptyBb\n\x1byandex.cloud.api.logging.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/logging/v1;loggingb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_access_dot_access__pb2.DESCRIPTOR,yandex_dot_cloud_dot_logging_dot_v1_dot_log__group__pb2.DESCRIPTOR,yandex_dot_cloud_dot_logging_dot_v1_dot_log__resource__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -257,8 +257,8 @@ _CREATELOGGROUPREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1164,
-  serialized_end=1209,
+  serialized_start=1169,
+  serialized_end=1214,
 )
 
 _CREATELOGGROUPREQUEST = _descriptor.Descriptor(
@@ -282,7 +282,7 @@ _CREATELOGGROUPREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\3071\"([a-z]([-a-z0-9]{0,61}[a-z0-9])?)?', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='description', full_name='yandex.cloud.logging.v1.CreateLogGroupRequest.description', index=2,
       number=3, type=9, cpp_type=9, label=1,
@@ -317,7 +317,7 @@ _CREATELOGGROUPREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=817,
-  serialized_end=1209,
+  serialized_end=1214,
 )
 
 
@@ -348,8 +348,8 @@ _CREATELOGGROUPMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1211,
-  serialized_end=1257,
+  serialized_start=1216,
+  serialized_end=1262,
 )
 
 
@@ -387,8 +387,8 @@ _UPDATELOGGROUPREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1164,
-  serialized_end=1209,
+  serialized_start=1169,
+  serialized_end=1214,
 )
 
 _UPDATELOGGROUPREQUEST = _descriptor.Descriptor(
@@ -419,7 +419,7 @@ _UPDATELOGGROUPREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\3071\"([a-z]([-a-z0-9]{0,61}[a-z0-9])?)?', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='description', full_name='yandex.cloud.logging.v1.UpdateLogGroupRequest.description', index=3,
       number=4, type=9, cpp_type=9, label=1,
@@ -453,8 +453,8 @@ _UPDATELOGGROUPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1260,
-  serialized_end=1704,
+  serialized_start=1265,
+  serialized_end=1714,
 )
 
 
@@ -485,8 +485,8 @@ _UPDATELOGGROUPMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1706,
-  serialized_end=1752,
+  serialized_start=1716,
+  serialized_end=1762,
 )
 
 
@@ -517,8 +517,8 @@ _DELETELOGGROUPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1754,
-  serialized_end=1813,
+  serialized_start=1764,
+  serialized_end=1823,
 )
 
 
@@ -549,8 +549,8 @@ _DELETELOGGROUPMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1815,
-  serialized_end=1861,
+  serialized_start=1825,
+  serialized_end=1871,
 )
 
 
@@ -588,8 +588,8 @@ _LISTRESOURCESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1863,
-  serialized_end=1946,
+  serialized_start=1873,
+  serialized_end=1956,
 )
 
 
@@ -620,8 +620,8 @@ _LISTRESOURCESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1948,
-  serialized_end=2033,
+  serialized_start=1958,
+  serialized_end=2043,
 )
 
 
@@ -673,8 +673,8 @@ _LISTOPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2036,
-  serialized_end=2185,
+  serialized_start=2046,
+  serialized_end=2195,
 )
 
 
@@ -712,8 +712,8 @@ _LISTOPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2187,
-  serialized_end=2291,
+  serialized_start=2197,
+  serialized_end=2301,
 )
 
 
@@ -758,8 +758,8 @@ _GETLOGGROUPSTATSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2293,
-  serialized_end=2373,
+  serialized_start=2303,
+  serialized_end=2383,
 )
 
 _LISTLOGGROUPSRESPONSE.fields_by_name['groups'].message_type = yandex_dot_cloud_dot_logging_dot_v1_dot_log__group__pb2._LOGGROUP
@@ -953,8 +953,8 @@ _LOGGROUPSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=2376,
-  serialized_end=4509,
+  serialized_start=2386,
+  serialized_end=4519,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
