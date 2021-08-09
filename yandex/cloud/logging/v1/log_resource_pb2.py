@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\033yandex.cloud.api.logging.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/logging/v1;logging',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n*yandex/cloud/logging/v1/log_resource.proto\x12\x17yandex.cloud.logging.v1\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"v\n\x10LogEntryResource\x12\x31\n\x04type\x18\x01 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{1,62})?\x12/\n\x02id\x18\x02 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{1,62})?\"-\n\x10LogGroupResource\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0b\n\x03ids\x18\x02 \x03(\tBb\n\x1byandex.cloud.api.logging.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/logging/v1;loggingb\x06proto3'
+  serialized_pb=b'\n*yandex/cloud/logging/v1/log_resource.proto\x12\x17yandex.cloud.logging.v1\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"v\n\x10LogEntryResource\x12\x31\n\x04type\x18\x01 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?\x12/\n\x02id\x18\x02 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?\"-\n\x10LogGroupResource\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0b\n\x03ids\x18\x02 \x03(\tBb\n\x1byandex.cloud.api.logging.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/logging/v1;loggingb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -43,14 +43,14 @@ _LOGENTRYRESOURCE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071\037([a-zA-Z][-a-zA-Z0-9_.]{1,62})?', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\3071\037([a-zA-Z][-a-zA-Z0-9_.]{0,63})?', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='id', full_name='yandex.cloud.logging.v1.LogEntryResource.id', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071\037([a-zA-Z][-a-zA-Z0-9_.]{1,62})?', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\3071\037([a-zA-Z][-a-zA-Z0-9_.]{0,63})?', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],

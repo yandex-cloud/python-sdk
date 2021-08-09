@@ -47,6 +47,16 @@ class NetworkServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_network__service__pb2.ListNetworkSubnetsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_network__service__pb2.ListNetworkSubnetsResponse.FromString,
                 )
+        self.ListSecurityGroups = channel.unary_unary(
+                '/yandex.cloud.vpc.v1.NetworkService/ListSecurityGroups',
+                request_serializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_network__service__pb2.ListNetworkSecurityGroupsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_network__service__pb2.ListNetworkSecurityGroupsResponse.FromString,
+                )
+        self.ListRouteTables = channel.unary_unary(
+                '/yandex.cloud.vpc.v1.NetworkService/ListRouteTables',
+                request_serializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_network__service__pb2.ListNetworkRouteTablesRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_network__service__pb2.ListNetworkRouteTablesResponse.FromString,
+                )
         self.ListOperations = channel.unary_unary(
                 '/yandex.cloud.vpc.v1.NetworkService/ListOperations',
                 request_serializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_network__service__pb2.ListNetworkOperationsRequest.SerializeToString,
@@ -109,6 +119,20 @@ class NetworkServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListSecurityGroups(self, request, context):
+        """Lists security groups from the specified network.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListRouteTables(self, request, context):
+        """Lists route tables from the specified network.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListOperations(self, request, context):
         """Lists operations for the specified network.
         """
@@ -155,6 +179,16 @@ def add_NetworkServiceServicer_to_server(servicer, server):
                     servicer.ListSubnets,
                     request_deserializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_network__service__pb2.ListNetworkSubnetsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_network__service__pb2.ListNetworkSubnetsResponse.SerializeToString,
+            ),
+            'ListSecurityGroups': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListSecurityGroups,
+                    request_deserializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_network__service__pb2.ListNetworkSecurityGroupsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_network__service__pb2.ListNetworkSecurityGroupsResponse.SerializeToString,
+            ),
+            'ListRouteTables': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListRouteTables,
+                    request_deserializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_network__service__pb2.ListNetworkRouteTablesRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_network__service__pb2.ListNetworkRouteTablesResponse.SerializeToString,
             ),
             'ListOperations': grpc.unary_unary_rpc_method_handler(
                     servicer.ListOperations,
@@ -276,6 +310,40 @@ class NetworkService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.vpc.v1.NetworkService/ListSubnets',
             yandex_dot_cloud_dot_vpc_dot_v1_dot_network__service__pb2.ListNetworkSubnetsRequest.SerializeToString,
             yandex_dot_cloud_dot_vpc_dot_v1_dot_network__service__pb2.ListNetworkSubnetsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListSecurityGroups(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.vpc.v1.NetworkService/ListSecurityGroups',
+            yandex_dot_cloud_dot_vpc_dot_v1_dot_network__service__pb2.ListNetworkSecurityGroupsRequest.SerializeToString,
+            yandex_dot_cloud_dot_vpc_dot_v1_dot_network__service__pb2.ListNetworkSecurityGroupsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListRouteTables(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.vpc.v1.NetworkService/ListRouteTables',
+            yandex_dot_cloud_dot_vpc_dot_v1_dot_network__service__pb2.ListNetworkRouteTablesRequest.SerializeToString,
+            yandex_dot_cloud_dot_vpc_dot_v1_dot_network__service__pb2.ListNetworkRouteTablesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

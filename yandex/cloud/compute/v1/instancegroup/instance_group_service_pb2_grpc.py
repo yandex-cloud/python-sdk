@@ -245,14 +245,16 @@ class InstanceGroupServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ResumeProcesses(self, request, context):
-        """Resume all process in instance group.
+        """Resumes all processes regarding management of the specified instance group,
+        i.e. scaling, checking instances' health, auto-healing and updating them.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def PauseProcesses(self, request, context):
-        """Pause all process in instance group.
+        """Pauses all processes regarding management of the specified instance group,
+        i.e. scaling, checking instances' health, auto-healing and updating them. Running instances are not stopped.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
