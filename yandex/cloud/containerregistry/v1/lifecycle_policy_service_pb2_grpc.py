@@ -8,7 +8,8 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class LifecyclePolicyServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing Lifecycle policy resources.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -64,58 +65,70 @@ class LifecyclePolicyServiceStub(object):
 
 
 class LifecyclePolicyServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing Lifecycle policy resources.
+    """
 
     def Get(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Returns the specified lifecycle policy.
+
+        To get the list of all available lifecycle policies, make a [List] request.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Retrieves the list of lifecycle policies in the specified repository.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Creates a lifecycle policy in the specified repository.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Updates the specified lifecycle policy.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Deletes the specified lifecycle policy.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DryRun(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Creates a request of a dry run of the lifecycle policy.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetDryRunResult(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Returns the dry run result of the specified lifecycle policy.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListDryRunResults(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Retrieves the list of the dry run results.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListDryRunResultAffectedImages(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Retrieves the list of the affected images.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -176,7 +189,8 @@ def add_LifecyclePolicyServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class LifecyclePolicyService(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing Lifecycle policy resources.
+    """
 
     @staticmethod
     def Get(request,
