@@ -67,37 +67,48 @@ def _service_for_ctor(stub_ctor):
     if not name.startswith('yandex.cloud'):
         raise RuntimeError('Not a yandex.cloud service {}'.format(stub_ctor))
 
-    for k, v in _supported_modules.items():
+    for k, v in _supported_modules:
         if name.startswith(k):
             return v
 
     raise RuntimeError('Unknown service {}'.format(stub_ctor))
 
 
-_supported_modules = {
-    'yandex.cloud.ai.stt': 'ai-stt',
-    'yandex.cloud.ai.translate': 'ai-translate',
-    'yandex.cloud.ai.vision': 'ai-vision',
-    'yandex.cloud.compute': 'compute',
-    'yandex.cloud.containerregistry': 'container-registry',
-    'yandex.cloud.dataproc.manager': 'dataproc-manager',
-    'yandex.cloud.dataproc': 'dataproc',
-    'yandex.cloud.endpoint': 'endpoint',
-    'yandex.cloud.iam': 'iam',
-    'yandex.cloud.iot.devices': 'iot-devices',
-    'yandex.cloud.k8s': 'managed-kubernetes',
-    'yandex.cloud.kms': 'kms',
-    'yandex.cloud.loadbalancer': 'load-balancer',
-    'yandex.cloud.marketplace': 'marketplace',
-    'yandex.cloud.mdb.clickhouse': 'managed-clickhouse',
-    'yandex.cloud.mdb.kafka': 'managed-kafka',
-    'yandex.cloud.mdb.mongodb': 'managed-mongodb',
-    'yandex.cloud.mdb.mysql': 'managed-mysql',
-    'yandex.cloud.mdb.postgresql': 'managed-postgresql',
-    'yandex.cloud.mdb.redis': 'managed-redis',
-    'yandex.cloud.operation': 'operation',
-    'yandex.cloud.resourcemanager': 'resource-manager',
-    'yandex.cloud.serverless.functions': 'serverless-functions',
-    'yandex.cloud.serverless.triggers': 'serverless-triggers',
-    'yandex.cloud.vpc': 'vpc',
-}
+_supported_modules = [
+    ('yandex.cloud.ai.stt', 'ai-stt'),
+    ('yandex.cloud.ai.translate', 'ai-translate'),
+    ('yandex.cloud.ai.vision', 'ai-vision'),
+    ('yandex.cloud.compute', 'compute'),
+    ('yandex.cloud.containerregistry', 'container-registry'),
+    ('yandex.cloud.dataproc.manager', 'dataproc-manager'),
+    ('yandex.cloud.dataproc', 'dataproc'),
+    ('yandex.cloud.dns', 'dns'),
+    ('yandex.cloud.endpoint', 'endpoint'),
+    ('yandex.cloud.iam', 'iam'),
+    ('yandex.cloud.iot.devices', 'iot-devices'),
+    ('yandex.cloud.k8s', 'managed-kubernetes'),
+    ('yandex.cloud.kms.v1.symmetric_crypto_service', 'kms-crypto'),
+    ('yandex.cloud.kms', 'kms'),
+    ('yandex.cloud.loadbalancer', 'load-balancer'),
+    ('yandex.cloud.lockbox.v1.payload_service', 'lockbox-payload'),
+    ('yandex.cloud.lockbox', 'lockbox'),
+    ('yandex.cloud.logging.v1.log_injestion_service', 'log-injestion'),
+    ('yandex.cloud.logging.v1.log_reading_service', 'log-reading'),
+    ('yandex.cloud.logging', 'logging'),
+    ('yandex.cloud.marketplace', 'marketplace'),
+    ('yandex.cloud.mdb.clickhouse', 'managed-clickhouse'),
+    ('yandex.cloud.mdb.kafka', 'managed-kafka'),
+    ('yandex.cloud.mdb.mongodb', 'managed-mongodb'),
+    ('yandex.cloud.mdb.mysql', 'managed-mysql'),
+    ('yandex.cloud.mdb.postgresql', 'managed-postgresql'),
+    ('yandex.cloud.mdb.redis', 'managed-redis'),
+    ('yandex.cloud.mdb.sqlserver', 'managed-sqlserver'),
+    ('yandex.cloud.operation', 'operation'),
+    ('yandex.cloud.organizationmanager', 'organization-manager'),
+    ('yandex.cloud.resourcemanager', 'resource-manager'),
+    ('yandex.cloud.serverless.apigateway', 'serverless-apigateway'),
+    ('yandex.cloud.serverless.functions', 'serverless-functions'),
+    ('yandex.cloud.serverless.triggers', 'serverless-triggers'),
+    ('yandex.cloud.vpc', 'vpc'),
+    ('yandex.cloud.ydb', 'ydb'),
+]
