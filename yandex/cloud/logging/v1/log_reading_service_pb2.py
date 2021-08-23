@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\033yandex.cloud.api.logging.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/logging/v1;logging',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n1yandex/cloud/logging/v1/log_reading_service.proto\x12\x17yandex.cloud.logging.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\x1a\'yandex/cloud/logging/v1/log_entry.proto\"f\n\x0bReadRequest\x12\x14\n\npage_token\x18\x01 \x01(\tH\x00\x12\x35\n\x08\x63riteria\x18\x02 \x01(\x0b\x32!.yandex.cloud.logging.v1.CriteriaH\x00\x42\n\n\x08selector\"\x8e\x01\n\x0cReadResponse\x12\x14\n\x0clog_group_id\x18\x01 \x01(\t\x12\x32\n\x07\x65ntries\x18\x02 \x03(\x0b\x32!.yandex.cloud.logging.v1.LogEntry\x12\x17\n\x0fnext_page_token\x18\x03 \x01(\t\x12\x1b\n\x13previous_page_token\x18\x04 \x01(\t\"\x86\x03\n\x08\x43riteria\x12\"\n\x0clog_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=64\x12\x41\n\x0eresource_types\x18\x02 \x03(\tB)\xf2\xc7\x31\x1c[a-zA-Z][-a-zA-Z0-9_.]{1,62}\x82\xc8\x31\x05<=100\x12?\n\x0cresource_ids\x18\x03 \x03(\tB)\xf2\xc7\x31\x1c[a-zA-Z][-a-zA-Z0-9_.]{1,62}\x82\xc8\x31\x05<=100\x12)\n\x05since\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12)\n\x05until\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x41\n\x06levels\x18\x06 \x03(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.LevelB\x08\x82\xc8\x31\x04<=10\x12\x1a\n\x06\x66ilter\x18\x07 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1d\n\tpage_size\x18\x08 \x01(\x03\x42\n\xfa\xc7\x31\x06\x31-10002h\n\x11LogReadingService\x12S\n\x04Read\x12$.yandex.cloud.logging.v1.ReadRequest\x1a%.yandex.cloud.logging.v1.ReadResponseBb\n\x1byandex.cloud.api.logging.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/logging/v1;loggingb\x06proto3'
+  serialized_pb=b'\n1yandex/cloud/logging/v1/log_reading_service.proto\x12\x17yandex.cloud.logging.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\x1a\'yandex/cloud/logging/v1/log_entry.proto\"f\n\x0bReadRequest\x12\x14\n\npage_token\x18\x01 \x01(\tH\x00\x12\x35\n\x08\x63riteria\x18\x02 \x01(\x0b\x32!.yandex.cloud.logging.v1.CriteriaH\x00\x42\n\n\x08selector\"\x8e\x01\n\x0cReadResponse\x12\x14\n\x0clog_group_id\x18\x01 \x01(\t\x12\x32\n\x07\x65ntries\x18\x02 \x03(\x0b\x32!.yandex.cloud.logging.v1.LogEntry\x12\x17\n\x0fnext_page_token\x18\x03 \x01(\t\x12\x1b\n\x13previous_page_token\x18\x04 \x01(\t\"\x8b\x03\n\x08\x43riteria\x12\"\n\x0clog_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=64\x12\x42\n\x0eresource_types\x18\x02 \x03(\tB*\xf2\xc7\x31\x1d|[a-zA-Z][-a-zA-Z0-9_.]{0,63}\x82\xc8\x31\x05<=100\x12\x43\n\x0cresource_ids\x18\x03 \x03(\tB-\xf2\xc7\x31 |[a-zA-Z0-9][-a-zA-Z0-9_.]{0,63}\x82\xc8\x31\x05<=100\x12)\n\x05since\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12)\n\x05until\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x41\n\x06levels\x18\x06 \x03(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.LevelB\x08\x82\xc8\x31\x04<=10\x12\x1a\n\x06\x66ilter\x18\x07 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1d\n\tpage_size\x18\x08 \x01(\x03\x42\n\xfa\xc7\x31\x06\x31-10002h\n\x11LogReadingService\x12S\n\x04Read\x12$.yandex.cloud.logging.v1.ReadRequest\x1a%.yandex.cloud.logging.v1.ReadResponseBb\n\x1byandex.cloud.api.logging.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/logging/v1;loggingb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_logging_dot_v1_dot_log__entry__pb2.DESCRIPTOR,])
 
@@ -148,14 +148,14 @@ _CRITERIA = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071\034[a-zA-Z][-a-zA-Z0-9_.]{1,62}\202\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\3071\035|[a-zA-Z][-a-zA-Z0-9_.]{0,63}\202\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='resource_ids', full_name='yandex.cloud.logging.v1.Criteria.resource_ids', index=2,
       number=3, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071\034[a-zA-Z][-a-zA-Z0-9_.]{1,62}\202\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\362\3071 |[a-zA-Z0-9][-a-zA-Z0-9_.]{0,63}\202\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='since', full_name='yandex.cloud.logging.v1.Criteria.since', index=3,
       number=4, type=11, cpp_type=10, label=1,
@@ -204,7 +204,7 @@ _CRITERIA = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=463,
-  serialized_end=853,
+  serialized_end=858,
 )
 
 _READREQUEST.fields_by_name['criteria'].message_type = _CRITERIA
@@ -260,8 +260,8 @@ _LOGREADINGSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=855,
-  serialized_end=959,
+  serialized_start=860,
+  serialized_end=964,
   methods=[
   _descriptor.MethodDescriptor(
     name='Read',
