@@ -77,6 +77,16 @@ class InstanceServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.DetachInstanceDiskRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
+        self.AttachFilesystem = channel.unary_unary(
+                '/yandex.cloud.compute.v1.InstanceService/AttachFilesystem',
+                request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.AttachInstanceFilesystemRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
+        self.DetachFilesystem = channel.unary_unary(
+                '/yandex.cloud.compute.v1.InstanceService/DetachFilesystem',
+                request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.DetachInstanceFilesystemRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
         self.AddOneToOneNat = channel.unary_unary(
                 '/yandex.cloud.compute.v1.InstanceService/AddOneToOneNat',
                 request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.AddInstanceOneToOneNatRequest.SerializeToString,
@@ -192,6 +202,20 @@ class InstanceServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def AttachFilesystem(self, request, context):
+        """Attaches the disk to the instance.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DetachFilesystem(self, request, context):
+        """Detaches the disk from the instance.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def AddOneToOneNat(self, request, context):
         """Enables One-to-one NAT on the network interface.
         """
@@ -281,6 +305,16 @@ def add_InstanceServiceServicer_to_server(servicer, server):
             'DetachDisk': grpc.unary_unary_rpc_method_handler(
                     servicer.DetachDisk,
                     request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.DetachInstanceDiskRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'AttachFilesystem': grpc.unary_unary_rpc_method_handler(
+                    servicer.AttachFilesystem,
+                    request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.AttachInstanceFilesystemRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'DetachFilesystem': grpc.unary_unary_rpc_method_handler(
+                    servicer.DetachFilesystem,
+                    request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.DetachInstanceFilesystemRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'AddOneToOneNat': grpc.unary_unary_rpc_method_handler(
@@ -514,6 +548,40 @@ class InstanceService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.compute.v1.InstanceService/DetachDisk',
             yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.DetachInstanceDiskRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def AttachFilesystem(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.compute.v1.InstanceService/AttachFilesystem',
+            yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.AttachInstanceFilesystemRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DetachFilesystem(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.compute.v1.InstanceService/DetachFilesystem',
+            yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.DetachInstanceFilesystemRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

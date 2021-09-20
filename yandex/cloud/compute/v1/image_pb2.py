@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\033yandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;compute',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n#yandex/cloud/compute/v1/image.proto\x12\x17yandex.cloud.compute.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xea\x03\n\x05Image\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12:\n\x06labels\x18\x06 \x03(\x0b\x32*.yandex.cloud.compute.v1.Image.LabelsEntry\x12\x0e\n\x06\x66\x61mily\x18\x07 \x01(\t\x12\x14\n\x0cstorage_size\x18\x08 \x01(\x03\x12\x15\n\rmin_disk_size\x18\t \x01(\x03\x12\x13\n\x0bproduct_ids\x18\n \x03(\t\x12\x35\n\x06status\x18\x0b \x01(\x0e\x32%.yandex.cloud.compute.v1.Image.Status\x12\'\n\x02os\x18\x0c \x01(\x0b\x32\x1b.yandex.cloud.compute.v1.Os\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"R\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\t\n\x05READY\x10\x02\x12\t\n\x05\x45RROR\x10\x03\x12\x0c\n\x08\x44\x45LETING\x10\x04\"j\n\x02Os\x12.\n\x04type\x18\x01 \x01(\x0e\x32 .yandex.cloud.compute.v1.Os.Type\"4\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\t\n\x05LINUX\x10\x01\x12\x0b\n\x07WINDOWS\x10\x02\x42\x62\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3'
+  serialized_pb=b'\n#yandex/cloud/compute/v1/image.proto\x12\x17yandex.cloud.compute.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xfa\x03\n\x05Image\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12:\n\x06labels\x18\x06 \x03(\x0b\x32*.yandex.cloud.compute.v1.Image.LabelsEntry\x12\x0e\n\x06\x66\x61mily\x18\x07 \x01(\t\x12\x14\n\x0cstorage_size\x18\x08 \x01(\x03\x12\x15\n\rmin_disk_size\x18\t \x01(\x03\x12\x13\n\x0bproduct_ids\x18\n \x03(\t\x12\x35\n\x06status\x18\x0b \x01(\x0e\x32%.yandex.cloud.compute.v1.Image.Status\x12\'\n\x02os\x18\x0c \x01(\x0b\x32\x1b.yandex.cloud.compute.v1.Os\x12\x0e\n\x06pooled\x18\r \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"R\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\t\n\x05READY\x10\x02\x12\t\n\x05\x45RROR\x10\x03\x12\x0c\n\x08\x44\x45LETING\x10\x04\"j\n\x02Os\x12.\n\x04type\x18\x01 \x01(\x0e\x32 .yandex.cloud.compute.v1.Os.Type\"4\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\t\n\x05LINUX\x10\x01\x12\x0b\n\x07WINDOWS\x10\x02\x42\x62\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
@@ -61,8 +61,8 @@ _IMAGE_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=506,
-  serialized_end=588,
+  serialized_start=522,
+  serialized_end=604,
 )
 _sym_db.RegisterEnumDescriptor(_IMAGE_STATUS)
 
@@ -91,8 +91,8 @@ _OS_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=644,
-  serialized_end=696,
+  serialized_start=660,
+  serialized_end=712,
 )
 _sym_db.RegisterEnumDescriptor(_OS_TYPE)
 
@@ -131,8 +131,8 @@ _IMAGE_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=459,
-  serialized_end=504,
+  serialized_start=475,
+  serialized_end=520,
 )
 
 _IMAGE = _descriptor.Descriptor(
@@ -227,6 +227,13 @@ _IMAGE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='pooled', full_name='yandex.cloud.compute.v1.Image.pooled', index=12,
+      number=13, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -241,7 +248,7 @@ _IMAGE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=98,
-  serialized_end=588,
+  serialized_end=604,
 )
 
 
@@ -273,8 +280,8 @@ _OS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=590,
-  serialized_end=696,
+  serialized_start=606,
+  serialized_end=712,
 )
 
 _IMAGE_LABELSENTRY.containing_type = _IMAGE

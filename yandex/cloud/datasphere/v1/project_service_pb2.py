@@ -15,6 +15,8 @@ from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+from google.protobuf import struct_pb2 as google_dot_protobuf_dot_struct__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
@@ -27,9 +29,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\036yandex.cloud.api.datasphere.v1ZIgithub.com/yandex-cloud/go-genproto/yandex/cloud/datasphere/v1;datasphere',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n0yandex/cloud/datasphere/v1/project_service.proto\x12\x1ayandex.cloud.datasphere.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a yandex/cloud/api/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a&yandex/cloud/operation/operation.proto\x1a(yandex/cloud/datasphere/v1/project.proto\"\x8e\x02\n\x14\x43reateProjectRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x39\n\x04name\x18\x02 \x01(\tB+\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12>\n\x08settings\x18\x04 \x01(\x0b\x32,.yandex.cloud.datasphere.v1.Project.Settings\x12:\n\x06limits\x18\x05 \x01(\x0b\x32*.yandex.cloud.datasphere.v1.Project.Limits\"+\n\x15\x43reateProjectMetadata\x12\x12\n\nproject_id\x18\x01 \x01(\t\"\xc1\x02\n\x14UpdateProjectRequest\x12!\n\nproject_id\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=200\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x39\n\x04name\x18\x03 \x01(\tB+\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12>\n\x08settings\x18\x05 \x01(\x0b\x32,.yandex.cloud.datasphere.v1.Project.Settings\x12:\n\x06limits\x18\x06 \x01(\x0b\x32*.yandex.cloud.datasphere.v1.Project.Limits\"+\n\x15UpdateProjectMetadata\x12\x12\n\nproject_id\x18\x01 \x01(\t\"9\n\x14\x44\x65leteProjectRequest\x12!\n\nproject_id\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=200\"+\n\x15\x44\x65leteProjectMetadata\x12\x12\n\nproject_id\x18\x01 \x01(\t\"7\n\x12OpenProjectRequest\x12!\n\nproject_id\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=200\")\n\x13OpenProjectMetadata\x12\x12\n\nproject_id\x18\x01 \x01(\t\"A\n\x13OpenProjectResponse\x12\x13\n\x0bproject_url\x18\x01 \x01(\t\x12\x15\n\rsession_token\x18\x02 \x01(\t\"6\n\x11GetProjectRequest\x12!\n\nproject_id\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=200\"t\n\x13ListProjectsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"f\n\x14ListProjectsResponse\x12\x35\n\x08projects\x18\x01 \x03(\x0b\x32#.yandex.cloud.datasphere.v1.Project\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\":\n\x15GetUnitBalanceRequest\x12!\n\nproject_id\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=200\"K\n\x16GetUnitBalanceResponse\x12\x31\n\x0cunit_balance\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"m\n\x15SetUnitBalanceRequest\x12!\n\nproject_id\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=200\x12\x31\n\x0cunit_balance\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value2\xd0\n\n\x0eProjectService\x12\xa5\x01\n\x06\x43reate\x12\x30.yandex.cloud.datasphere.v1.CreateProjectRequest\x1a!.yandex.cloud.operation.Operation\"F\x82\xd3\xe4\x93\x02\x1c\"\x17/datasphere/v1/projects:\x01*\xb2\xd2* \n\x15\x43reateProjectMetadata\x12\x07Project\x12\xb2\x01\n\x06Update\x12\x30.yandex.cloud.datasphere.v1.UpdateProjectRequest\x1a!.yandex.cloud.operation.Operation\"S\x82\xd3\xe4\x93\x02)2$/datasphere/v1/projects/{project_id}:\x01*\xb2\xd2* \n\x15UpdateProjectMetadata\x12\x07Project\x12\xbd\x01\n\x06\x44\x65lete\x12\x30.yandex.cloud.datasphere.v1.DeleteProjectRequest\x1a!.yandex.cloud.operation.Operation\"^\x82\xd3\xe4\x93\x02&*$/datasphere/v1/projects/{project_id}\xb2\xd2*.\n\x15\x44\x65leteProjectMetadata\x12\x15google.protobuf.Empty\x12\xba\x01\n\x04Open\x12..yandex.cloud.datasphere.v1.OpenProjectRequest\x1a!.yandex.cloud.operation.Operation\"_\x82\xd3\xe4\x93\x02+\")/datasphere/v1/projects/{project_id}:open\xb2\xd2**\n\x13OpenProjectMetadata\x12\x13OpenProjectResponse\x12\x87\x01\n\x03Get\x12-.yandex.cloud.datasphere.v1.GetProjectRequest\x1a#.yandex.cloud.datasphere.v1.Project\",\x82\xd3\xe4\x93\x02&\x12$/datasphere/v1/projects/{project_id}\x12\x8a\x01\n\x04List\x12/.yandex.cloud.datasphere.v1.ListProjectsRequest\x1a\x30.yandex.cloud.datasphere.v1.ListProjectsResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/datasphere/v1/projects\x12\xb1\x01\n\x0eGetUnitBalance\x12\x31.yandex.cloud.datasphere.v1.GetUnitBalanceRequest\x1a\x32.yandex.cloud.datasphere.v1.GetUnitBalanceResponse\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/datasphere/v1/projects/{project_id}:unitBalance\x12\x98\x01\n\x0eSetUnitBalance\x12\x31.yandex.cloud.datasphere.v1.SetUnitBalanceRequest\x1a\x16.google.protobuf.Empty\";\x82\xd3\xe4\x93\x02\x35\"0/datasphere/v1/projects/{project_id}:unitBalance:\x01*Bk\n\x1eyandex.cloud.api.datasphere.v1ZIgithub.com/yandex-cloud/go-genproto/yandex/cloud/datasphere/v1;datasphereb\x06proto3'
+  serialized_pb=b'\n0yandex/cloud/datasphere/v1/project_service.proto\x12\x1ayandex.cloud.datasphere.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a yandex/cloud/api/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a&yandex/cloud/operation/operation.proto\x1a(yandex/cloud/datasphere/v1/project.proto\"\x8e\x02\n\x14\x43reateProjectRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x39\n\x04name\x18\x02 \x01(\tB+\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12>\n\x08settings\x18\x04 \x01(\x0b\x32,.yandex.cloud.datasphere.v1.Project.Settings\x12:\n\x06limits\x18\x05 \x01(\x0b\x32*.yandex.cloud.datasphere.v1.Project.Limits\"+\n\x15\x43reateProjectMetadata\x12\x12\n\nproject_id\x18\x01 \x01(\t\"\xc1\x02\n\x14UpdateProjectRequest\x12!\n\nproject_id\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=200\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x39\n\x04name\x18\x03 \x01(\tB+\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12>\n\x08settings\x18\x05 \x01(\x0b\x32,.yandex.cloud.datasphere.v1.Project.Settings\x12:\n\x06limits\x18\x06 \x01(\x0b\x32*.yandex.cloud.datasphere.v1.Project.Limits\"+\n\x15UpdateProjectMetadata\x12\x12\n\nproject_id\x18\x01 \x01(\t\"9\n\x14\x44\x65leteProjectRequest\x12!\n\nproject_id\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=200\"+\n\x15\x44\x65leteProjectMetadata\x12\x12\n\nproject_id\x18\x01 \x01(\t\"7\n\x12OpenProjectRequest\x12!\n\nproject_id\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=200\")\n\x13OpenProjectMetadata\x12\x12\n\nproject_id\x18\x01 \x01(\t\"A\n\x13OpenProjectResponse\x12\x13\n\x0bproject_url\x18\x01 \x01(\t\x12\x15\n\rsession_token\x18\x02 \x01(\t\"6\n\x11GetProjectRequest\x12!\n\nproject_id\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=200\"t\n\x13ListProjectsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"f\n\x14ListProjectsResponse\x12\x35\n\x08projects\x18\x01 \x03(\x0b\x32#.yandex.cloud.datasphere.v1.Project\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\":\n\x15GetUnitBalanceRequest\x12!\n\nproject_id\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=200\"K\n\x16GetUnitBalanceResponse\x12\x31\n\x0cunit_balance\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"m\n\x15SetUnitBalanceRequest\x12!\n\nproject_id\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=200\x12\x31\n\x0cunit_balance\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"\xdd\x01\n\x17ProjectExecutionRequest\x12!\n\nproject_id\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=200\x12 \n\x0bnotebook_id\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=200H\x00\x12\x1c\n\x07\x63\x65ll_id\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=200H\x00\x12\x30\n\x0finput_variables\x18\x04 \x01(\x0b\x32\x17.google.protobuf.Struct\x12\x1d\n\x15output_variable_names\x18\x05 \x03(\tB\x0e\n\x06target\x12\x04\xc0\xc1\x31\x01\"~\n\x18ProjectExecutionMetadata\x12\x12\n\nproject_id\x18\x01 \x01(\t\x12 \n\x0bnotebook_id\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=200H\x00\x12\x1c\n\x07\x63\x65ll_id\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=200H\x00\x42\x0e\n\x06target\x12\x04\xc0\xc1\x31\x01\"d\n\x18ProjectExecutionResponse\x12\x15\n\rcheckpoint_id\x18\x01 \x01(\t\x12\x31\n\x10output_variables\x18\x02 \x01(\x0b\x32\x17.google.protobuf.Struct\"\x9c\x01\n\x12\x43\x65llOutputsRequest\x12!\n\nproject_id\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=200\x12\x1e\n\x07\x63\x65ll_id\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=200\x12\x15\n\rcheckpoint_id\x18\x03 \x01(\t\x12,\n\x08start_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"&\n\x13\x43\x65llOutputsResponse\x12\x0f\n\x07outputs\x18\x01 \x03(\t\"\x90\x01\n\x18GetStateVariablesRequest\x12!\n\nproject_id\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=200\x12\"\n\x0bnotebook_id\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=200\x12\x16\n\x0evariable_names\x18\x03 \x03(\t\x12\x15\n\rcheckpoint_id\x18\x04 \x01(\t\"G\n\x19GetStateVariablesResponse\x12*\n\tvariables\x18\x01 \x01(\x0b\x32\x17.google.protobuf.Struct2\x93\x0f\n\x0eProjectService\x12\xa5\x01\n\x06\x43reate\x12\x30.yandex.cloud.datasphere.v1.CreateProjectRequest\x1a!.yandex.cloud.operation.Operation\"F\x82\xd3\xe4\x93\x02\x1c\"\x17/datasphere/v1/projects:\x01*\xb2\xd2* \n\x15\x43reateProjectMetadata\x12\x07Project\x12\xb2\x01\n\x06Update\x12\x30.yandex.cloud.datasphere.v1.UpdateProjectRequest\x1a!.yandex.cloud.operation.Operation\"S\x82\xd3\xe4\x93\x02)2$/datasphere/v1/projects/{project_id}:\x01*\xb2\xd2* \n\x15UpdateProjectMetadata\x12\x07Project\x12\xbd\x01\n\x06\x44\x65lete\x12\x30.yandex.cloud.datasphere.v1.DeleteProjectRequest\x1a!.yandex.cloud.operation.Operation\"^\x82\xd3\xe4\x93\x02&*$/datasphere/v1/projects/{project_id}\xb2\xd2*.\n\x15\x44\x65leteProjectMetadata\x12\x15google.protobuf.Empty\x12\xba\x01\n\x04Open\x12..yandex.cloud.datasphere.v1.OpenProjectRequest\x1a!.yandex.cloud.operation.Operation\"_\x82\xd3\xe4\x93\x02+\")/datasphere/v1/projects/{project_id}:open\xb2\xd2**\n\x13OpenProjectMetadata\x12\x13OpenProjectResponse\x12\x87\x01\n\x03Get\x12-.yandex.cloud.datasphere.v1.GetProjectRequest\x1a#.yandex.cloud.datasphere.v1.Project\",\x82\xd3\xe4\x93\x02&\x12$/datasphere/v1/projects/{project_id}\x12\x8a\x01\n\x04List\x12/.yandex.cloud.datasphere.v1.ListProjectsRequest\x1a\x30.yandex.cloud.datasphere.v1.ListProjectsResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/datasphere/v1/projects\x12\xb1\x01\n\x0eGetUnitBalance\x12\x31.yandex.cloud.datasphere.v1.GetUnitBalanceRequest\x1a\x32.yandex.cloud.datasphere.v1.GetUnitBalanceResponse\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/datasphere/v1/projects/{project_id}:unitBalance\x12\x98\x01\n\x0eSetUnitBalance\x12\x31.yandex.cloud.datasphere.v1.SetUnitBalanceRequest\x1a\x16.google.protobuf.Empty\";\x82\xd3\xe4\x93\x02\x35\"0/datasphere/v1/projects/{project_id}:unitBalance:\x01*\x12\xd2\x01\n\x07\x45xecute\x12\x33.yandex.cloud.datasphere.v1.ProjectExecutionRequest\x1a!.yandex.cloud.operation.Operation\"o\x82\xd3\xe4\x93\x02\x31\",/datasphere/v1/projects/{project_id}:execute:\x01*\xb2\xd2*4\n\x18ProjectExecutionMetadata\x12\x18ProjectExecutionResponse\x12\xab\x01\n\x0eGetCellOutputs\x12..yandex.cloud.datasphere.v1.CellOutputsRequest\x1a/.yandex.cloud.datasphere.v1.CellOutputsResponse\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/datasphere/v1/projects/{project_id}:cellOutputs\x12\xbd\x01\n\x11GetStateVariables\x12\x34.yandex.cloud.datasphere.v1.GetStateVariablesRequest\x1a\x35.yandex.cloud.datasphere.v1.GetStateVariablesResponse\";\x82\xd3\xe4\x93\x02\x35\x12\x33/datasphere/v1/projects/{project_id}:stateVariablesBk\n\x1eyandex.cloud.api.datasphere.v1ZIgithub.com/yandex-cloud/go-genproto/yandex/cloud/datasphere/v1;datasphereb\x06proto3'
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_struct__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__pb2.DESCRIPTOR,])
 
 
 
@@ -89,8 +91,8 @@ _CREATEPROJECTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=353,
-  serialized_end=623,
+  serialized_start=416,
+  serialized_end=686,
 )
 
 
@@ -121,8 +123,8 @@ _CREATEPROJECTMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=625,
-  serialized_end=668,
+  serialized_start=688,
+  serialized_end=731,
 )
 
 
@@ -188,8 +190,8 @@ _UPDATEPROJECTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=671,
-  serialized_end=992,
+  serialized_start=734,
+  serialized_end=1055,
 )
 
 
@@ -220,8 +222,8 @@ _UPDATEPROJECTMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=994,
-  serialized_end=1037,
+  serialized_start=1057,
+  serialized_end=1100,
 )
 
 
@@ -252,8 +254,8 @@ _DELETEPROJECTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1039,
-  serialized_end=1096,
+  serialized_start=1102,
+  serialized_end=1159,
 )
 
 
@@ -284,8 +286,8 @@ _DELETEPROJECTMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1098,
-  serialized_end=1141,
+  serialized_start=1161,
+  serialized_end=1204,
 )
 
 
@@ -316,8 +318,8 @@ _OPENPROJECTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1143,
-  serialized_end=1198,
+  serialized_start=1206,
+  serialized_end=1261,
 )
 
 
@@ -348,8 +350,8 @@ _OPENPROJECTMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1200,
-  serialized_end=1241,
+  serialized_start=1263,
+  serialized_end=1304,
 )
 
 
@@ -387,8 +389,8 @@ _OPENPROJECTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1243,
-  serialized_end=1308,
+  serialized_start=1306,
+  serialized_end=1371,
 )
 
 
@@ -419,8 +421,8 @@ _GETPROJECTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1310,
-  serialized_end=1364,
+  serialized_start=1373,
+  serialized_end=1427,
 )
 
 
@@ -465,8 +467,8 @@ _LISTPROJECTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1366,
-  serialized_end=1482,
+  serialized_start=1429,
+  serialized_end=1545,
 )
 
 
@@ -504,8 +506,8 @@ _LISTPROJECTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1484,
-  serialized_end=1586,
+  serialized_start=1547,
+  serialized_end=1649,
 )
 
 
@@ -536,8 +538,8 @@ _GETUNITBALANCEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1588,
-  serialized_end=1646,
+  serialized_start=1651,
+  serialized_end=1709,
 )
 
 
@@ -568,8 +570,8 @@ _GETUNITBALANCERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1648,
-  serialized_end=1723,
+  serialized_start=1711,
+  serialized_end=1786,
 )
 
 
@@ -607,8 +609,333 @@ _SETUNITBALANCEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1725,
-  serialized_end=1834,
+  serialized_start=1788,
+  serialized_end=1897,
+)
+
+
+_PROJECTEXECUTIONREQUEST = _descriptor.Descriptor(
+  name='ProjectExecutionRequest',
+  full_name='yandex.cloud.datasphere.v1.ProjectExecutionRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='project_id', full_name='yandex.cloud.datasphere.v1.ProjectExecutionRequest.project_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001\212\3101\005<=200', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='notebook_id', full_name='yandex.cloud.datasphere.v1.ProjectExecutionRequest.notebook_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\212\3101\005<=200', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='cell_id', full_name='yandex.cloud.datasphere.v1.ProjectExecutionRequest.cell_id', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\212\3101\005<=200', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='input_variables', full_name='yandex.cloud.datasphere.v1.ProjectExecutionRequest.input_variables', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='output_variable_names', full_name='yandex.cloud.datasphere.v1.ProjectExecutionRequest.output_variable_names', index=4,
+      number=5, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='target', full_name='yandex.cloud.datasphere.v1.ProjectExecutionRequest.target',
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[], serialized_options=b'\300\3011\001'),
+  ],
+  serialized_start=1900,
+  serialized_end=2121,
+)
+
+
+_PROJECTEXECUTIONMETADATA = _descriptor.Descriptor(
+  name='ProjectExecutionMetadata',
+  full_name='yandex.cloud.datasphere.v1.ProjectExecutionMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='project_id', full_name='yandex.cloud.datasphere.v1.ProjectExecutionMetadata.project_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='notebook_id', full_name='yandex.cloud.datasphere.v1.ProjectExecutionMetadata.notebook_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\212\3101\005<=200', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='cell_id', full_name='yandex.cloud.datasphere.v1.ProjectExecutionMetadata.cell_id', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\212\3101\005<=200', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='target', full_name='yandex.cloud.datasphere.v1.ProjectExecutionMetadata.target',
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[], serialized_options=b'\300\3011\001'),
+  ],
+  serialized_start=2123,
+  serialized_end=2249,
+)
+
+
+_PROJECTEXECUTIONRESPONSE = _descriptor.Descriptor(
+  name='ProjectExecutionResponse',
+  full_name='yandex.cloud.datasphere.v1.ProjectExecutionResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='checkpoint_id', full_name='yandex.cloud.datasphere.v1.ProjectExecutionResponse.checkpoint_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='output_variables', full_name='yandex.cloud.datasphere.v1.ProjectExecutionResponse.output_variables', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2251,
+  serialized_end=2351,
+)
+
+
+_CELLOUTPUTSREQUEST = _descriptor.Descriptor(
+  name='CellOutputsRequest',
+  full_name='yandex.cloud.datasphere.v1.CellOutputsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='project_id', full_name='yandex.cloud.datasphere.v1.CellOutputsRequest.project_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001\212\3101\005<=200', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='cell_id', full_name='yandex.cloud.datasphere.v1.CellOutputsRequest.cell_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001\212\3101\005<=200', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='checkpoint_id', full_name='yandex.cloud.datasphere.v1.CellOutputsRequest.checkpoint_id', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='start_at', full_name='yandex.cloud.datasphere.v1.CellOutputsRequest.start_at', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2354,
+  serialized_end=2510,
+)
+
+
+_CELLOUTPUTSRESPONSE = _descriptor.Descriptor(
+  name='CellOutputsResponse',
+  full_name='yandex.cloud.datasphere.v1.CellOutputsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='outputs', full_name='yandex.cloud.datasphere.v1.CellOutputsResponse.outputs', index=0,
+      number=1, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2512,
+  serialized_end=2550,
+)
+
+
+_GETSTATEVARIABLESREQUEST = _descriptor.Descriptor(
+  name='GetStateVariablesRequest',
+  full_name='yandex.cloud.datasphere.v1.GetStateVariablesRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='project_id', full_name='yandex.cloud.datasphere.v1.GetStateVariablesRequest.project_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001\212\3101\005<=200', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='notebook_id', full_name='yandex.cloud.datasphere.v1.GetStateVariablesRequest.notebook_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001\212\3101\005<=200', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='variable_names', full_name='yandex.cloud.datasphere.v1.GetStateVariablesRequest.variable_names', index=2,
+      number=3, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='checkpoint_id', full_name='yandex.cloud.datasphere.v1.GetStateVariablesRequest.checkpoint_id', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2553,
+  serialized_end=2697,
+)
+
+
+_GETSTATEVARIABLESRESPONSE = _descriptor.Descriptor(
+  name='GetStateVariablesResponse',
+  full_name='yandex.cloud.datasphere.v1.GetStateVariablesResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='variables', full_name='yandex.cloud.datasphere.v1.GetStateVariablesResponse.variables', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2699,
+  serialized_end=2770,
 )
 
 _CREATEPROJECTREQUEST.fields_by_name['settings'].message_type = yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__pb2._PROJECT_SETTINGS
@@ -619,6 +946,22 @@ _UPDATEPROJECTREQUEST.fields_by_name['limits'].message_type = yandex_dot_cloud_d
 _LISTPROJECTSRESPONSE.fields_by_name['projects'].message_type = yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__pb2._PROJECT
 _GETUNITBALANCERESPONSE.fields_by_name['unit_balance'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
 _SETUNITBALANCEREQUEST.fields_by_name['unit_balance'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_PROJECTEXECUTIONREQUEST.fields_by_name['input_variables'].message_type = google_dot_protobuf_dot_struct__pb2._STRUCT
+_PROJECTEXECUTIONREQUEST.oneofs_by_name['target'].fields.append(
+  _PROJECTEXECUTIONREQUEST.fields_by_name['notebook_id'])
+_PROJECTEXECUTIONREQUEST.fields_by_name['notebook_id'].containing_oneof = _PROJECTEXECUTIONREQUEST.oneofs_by_name['target']
+_PROJECTEXECUTIONREQUEST.oneofs_by_name['target'].fields.append(
+  _PROJECTEXECUTIONREQUEST.fields_by_name['cell_id'])
+_PROJECTEXECUTIONREQUEST.fields_by_name['cell_id'].containing_oneof = _PROJECTEXECUTIONREQUEST.oneofs_by_name['target']
+_PROJECTEXECUTIONMETADATA.oneofs_by_name['target'].fields.append(
+  _PROJECTEXECUTIONMETADATA.fields_by_name['notebook_id'])
+_PROJECTEXECUTIONMETADATA.fields_by_name['notebook_id'].containing_oneof = _PROJECTEXECUTIONMETADATA.oneofs_by_name['target']
+_PROJECTEXECUTIONMETADATA.oneofs_by_name['target'].fields.append(
+  _PROJECTEXECUTIONMETADATA.fields_by_name['cell_id'])
+_PROJECTEXECUTIONMETADATA.fields_by_name['cell_id'].containing_oneof = _PROJECTEXECUTIONMETADATA.oneofs_by_name['target']
+_PROJECTEXECUTIONRESPONSE.fields_by_name['output_variables'].message_type = google_dot_protobuf_dot_struct__pb2._STRUCT
+_CELLOUTPUTSREQUEST.fields_by_name['start_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_GETSTATEVARIABLESRESPONSE.fields_by_name['variables'].message_type = google_dot_protobuf_dot_struct__pb2._STRUCT
 DESCRIPTOR.message_types_by_name['CreateProjectRequest'] = _CREATEPROJECTREQUEST
 DESCRIPTOR.message_types_by_name['CreateProjectMetadata'] = _CREATEPROJECTMETADATA
 DESCRIPTOR.message_types_by_name['UpdateProjectRequest'] = _UPDATEPROJECTREQUEST
@@ -634,6 +977,13 @@ DESCRIPTOR.message_types_by_name['ListProjectsResponse'] = _LISTPROJECTSRESPONSE
 DESCRIPTOR.message_types_by_name['GetUnitBalanceRequest'] = _GETUNITBALANCEREQUEST
 DESCRIPTOR.message_types_by_name['GetUnitBalanceResponse'] = _GETUNITBALANCERESPONSE
 DESCRIPTOR.message_types_by_name['SetUnitBalanceRequest'] = _SETUNITBALANCEREQUEST
+DESCRIPTOR.message_types_by_name['ProjectExecutionRequest'] = _PROJECTEXECUTIONREQUEST
+DESCRIPTOR.message_types_by_name['ProjectExecutionMetadata'] = _PROJECTEXECUTIONMETADATA
+DESCRIPTOR.message_types_by_name['ProjectExecutionResponse'] = _PROJECTEXECUTIONRESPONSE
+DESCRIPTOR.message_types_by_name['CellOutputsRequest'] = _CELLOUTPUTSREQUEST
+DESCRIPTOR.message_types_by_name['CellOutputsResponse'] = _CELLOUTPUTSRESPONSE
+DESCRIPTOR.message_types_by_name['GetStateVariablesRequest'] = _GETSTATEVARIABLESREQUEST
+DESCRIPTOR.message_types_by_name['GetStateVariablesResponse'] = _GETSTATEVARIABLESRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 CreateProjectRequest = _reflection.GeneratedProtocolMessageType('CreateProjectRequest', (_message.Message,), {
@@ -741,6 +1091,55 @@ SetUnitBalanceRequest = _reflection.GeneratedProtocolMessageType('SetUnitBalance
   })
 _sym_db.RegisterMessage(SetUnitBalanceRequest)
 
+ProjectExecutionRequest = _reflection.GeneratedProtocolMessageType('ProjectExecutionRequest', (_message.Message,), {
+  'DESCRIPTOR' : _PROJECTEXECUTIONREQUEST,
+  '__module__' : 'yandex.cloud.datasphere.v1.project_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.datasphere.v1.ProjectExecutionRequest)
+  })
+_sym_db.RegisterMessage(ProjectExecutionRequest)
+
+ProjectExecutionMetadata = _reflection.GeneratedProtocolMessageType('ProjectExecutionMetadata', (_message.Message,), {
+  'DESCRIPTOR' : _PROJECTEXECUTIONMETADATA,
+  '__module__' : 'yandex.cloud.datasphere.v1.project_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.datasphere.v1.ProjectExecutionMetadata)
+  })
+_sym_db.RegisterMessage(ProjectExecutionMetadata)
+
+ProjectExecutionResponse = _reflection.GeneratedProtocolMessageType('ProjectExecutionResponse', (_message.Message,), {
+  'DESCRIPTOR' : _PROJECTEXECUTIONRESPONSE,
+  '__module__' : 'yandex.cloud.datasphere.v1.project_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.datasphere.v1.ProjectExecutionResponse)
+  })
+_sym_db.RegisterMessage(ProjectExecutionResponse)
+
+CellOutputsRequest = _reflection.GeneratedProtocolMessageType('CellOutputsRequest', (_message.Message,), {
+  'DESCRIPTOR' : _CELLOUTPUTSREQUEST,
+  '__module__' : 'yandex.cloud.datasphere.v1.project_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.datasphere.v1.CellOutputsRequest)
+  })
+_sym_db.RegisterMessage(CellOutputsRequest)
+
+CellOutputsResponse = _reflection.GeneratedProtocolMessageType('CellOutputsResponse', (_message.Message,), {
+  'DESCRIPTOR' : _CELLOUTPUTSRESPONSE,
+  '__module__' : 'yandex.cloud.datasphere.v1.project_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.datasphere.v1.CellOutputsResponse)
+  })
+_sym_db.RegisterMessage(CellOutputsResponse)
+
+GetStateVariablesRequest = _reflection.GeneratedProtocolMessageType('GetStateVariablesRequest', (_message.Message,), {
+  'DESCRIPTOR' : _GETSTATEVARIABLESREQUEST,
+  '__module__' : 'yandex.cloud.datasphere.v1.project_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.datasphere.v1.GetStateVariablesRequest)
+  })
+_sym_db.RegisterMessage(GetStateVariablesRequest)
+
+GetStateVariablesResponse = _reflection.GeneratedProtocolMessageType('GetStateVariablesResponse', (_message.Message,), {
+  'DESCRIPTOR' : _GETSTATEVARIABLESRESPONSE,
+  '__module__' : 'yandex.cloud.datasphere.v1.project_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.datasphere.v1.GetStateVariablesResponse)
+  })
+_sym_db.RegisterMessage(GetStateVariablesResponse)
+
 
 DESCRIPTOR._options = None
 _CREATEPROJECTREQUEST.fields_by_name['folder_id']._options = None
@@ -757,6 +1156,17 @@ _LISTPROJECTSREQUEST.fields_by_name['page_size']._options = None
 _LISTPROJECTSREQUEST.fields_by_name['page_token']._options = None
 _GETUNITBALANCEREQUEST.fields_by_name['project_id']._options = None
 _SETUNITBALANCEREQUEST.fields_by_name['project_id']._options = None
+_PROJECTEXECUTIONREQUEST.oneofs_by_name['target']._options = None
+_PROJECTEXECUTIONREQUEST.fields_by_name['project_id']._options = None
+_PROJECTEXECUTIONREQUEST.fields_by_name['notebook_id']._options = None
+_PROJECTEXECUTIONREQUEST.fields_by_name['cell_id']._options = None
+_PROJECTEXECUTIONMETADATA.oneofs_by_name['target']._options = None
+_PROJECTEXECUTIONMETADATA.fields_by_name['notebook_id']._options = None
+_PROJECTEXECUTIONMETADATA.fields_by_name['cell_id']._options = None
+_CELLOUTPUTSREQUEST.fields_by_name['project_id']._options = None
+_CELLOUTPUTSREQUEST.fields_by_name['cell_id']._options = None
+_GETSTATEVARIABLESREQUEST.fields_by_name['project_id']._options = None
+_GETSTATEVARIABLESREQUEST.fields_by_name['notebook_id']._options = None
 
 _PROJECTSERVICE = _descriptor.ServiceDescriptor(
   name='ProjectService',
@@ -765,8 +1175,8 @@ _PROJECTSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1837,
-  serialized_end=3197,
+  serialized_start=2773,
+  serialized_end=4712,
   methods=[
   _descriptor.MethodDescriptor(
     name='Create',
@@ -846,6 +1256,36 @@ _PROJECTSERVICE = _descriptor.ServiceDescriptor(
     input_type=_SETUNITBALANCEREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\0025\"0/datasphere/v1/projects/{project_id}:unitBalance:\001*',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Execute',
+    full_name='yandex.cloud.datasphere.v1.ProjectService.Execute',
+    index=8,
+    containing_service=None,
+    input_type=_PROJECTEXECUTIONREQUEST,
+    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
+    serialized_options=b'\202\323\344\223\0021\",/datasphere/v1/projects/{project_id}:execute:\001*\262\322*4\n\030ProjectExecutionMetadata\022\030ProjectExecutionResponse',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='GetCellOutputs',
+    full_name='yandex.cloud.datasphere.v1.ProjectService.GetCellOutputs',
+    index=9,
+    containing_service=None,
+    input_type=_CELLOUTPUTSREQUEST,
+    output_type=_CELLOUTPUTSRESPONSE,
+    serialized_options=b'\202\323\344\223\0022\0220/datasphere/v1/projects/{project_id}:cellOutputs',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='GetStateVariables',
+    full_name='yandex.cloud.datasphere.v1.ProjectService.GetStateVariables',
+    index=10,
+    containing_service=None,
+    input_type=_GETSTATEVARIABLESREQUEST,
+    output_type=_GETSTATEVARIABLESRESPONSE,
+    serialized_options=b'\202\323\344\223\0025\0223/datasphere/v1/projects/{project_id}:stateVariables',
     create_key=_descriptor._internal_create_key,
   ),
 ])

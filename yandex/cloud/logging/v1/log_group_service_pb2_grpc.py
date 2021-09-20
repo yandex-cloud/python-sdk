@@ -23,11 +23,6 @@ class LogGroupServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_logging_dot_v1_dot_log__group__service__pb2.GetLogGroupRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_logging_dot_v1_dot_log__group__pb2.LogGroup.FromString,
                 )
-        self.GetDefault = channel.unary_unary(
-                '/yandex.cloud.logging.v1.LogGroupService/GetDefault',
-                request_serializer=yandex_dot_cloud_dot_logging_dot_v1_dot_log__group__service__pb2.GetDefaultLogGroupRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_logging_dot_v1_dot_log__group__pb2.LogGroup.FromString,
-                )
         self.Stats = channel.unary_unary(
                 '/yandex.cloud.logging.v1.LogGroupService/Stats',
                 request_serializer=yandex_dot_cloud_dot_logging_dot_v1_dot_log__group__service__pb2.GetLogGroupStatsRequest.SerializeToString,
@@ -86,15 +81,6 @@ class LogGroupServiceServicer(object):
 
     def Get(self, request, context):
         """Returns the specified log group.
-
-        To get the list of all available log groups, make a [List] request.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetDefault(self, request, context):
-        """Returns default log group for the folder.
 
         To get the list of all available log groups, make a [List] request.
         """
@@ -180,11 +166,6 @@ def add_LogGroupServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_logging_dot_v1_dot_log__group__service__pb2.GetLogGroupRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_logging_dot_v1_dot_log__group__pb2.LogGroup.SerializeToString,
             ),
-            'GetDefault': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetDefault,
-                    request_deserializer=yandex_dot_cloud_dot_logging_dot_v1_dot_log__group__service__pb2.GetDefaultLogGroupRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_logging_dot_v1_dot_log__group__pb2.LogGroup.SerializeToString,
-            ),
             'Stats': grpc.unary_unary_rpc_method_handler(
                     servicer.Stats,
                     request_deserializer=yandex_dot_cloud_dot_logging_dot_v1_dot_log__group__service__pb2.GetLogGroupStatsRequest.FromString,
@@ -259,23 +240,6 @@ class LogGroupService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.logging.v1.LogGroupService/Get',
             yandex_dot_cloud_dot_logging_dot_v1_dot_log__group__service__pb2.GetLogGroupRequest.SerializeToString,
-            yandex_dot_cloud_dot_logging_dot_v1_dot_log__group__pb2.LogGroup.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def GetDefault(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.logging.v1.LogGroupService/GetDefault',
-            yandex_dot_cloud_dot_logging_dot_v1_dot_log__group__service__pb2.GetDefaultLogGroupRequest.SerializeToString,
             yandex_dot_cloud_dot_logging_dot_v1_dot_log__group__pb2.LogGroup.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

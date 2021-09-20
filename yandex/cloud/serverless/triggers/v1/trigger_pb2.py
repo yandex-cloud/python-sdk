@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\'yandex.cloud.api.serverless.triggers.v1ZPgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/triggers/v1;triggers',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n1yandex/cloud/serverless/triggers/v1/trigger.proto\x12#yandex.cloud.serverless.triggers.v1\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\'yandex/cloud/logging/v1/log_entry.proto\x1a\x1dyandex/cloud/validation.proto\"\x9f!\n\x07Trigger\x12\n\n\x02id\x18\x01 \x01(\t\x12\x1f\n\tfolder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x16\n\x04name\x18\x04 \x01(\tB\x08\x8a\xc8\x31\x04\x33-63\x12\x1e\n\x0b\x64\x65scription\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05\x30-256\x12H\n\x06labels\x18\x06 \x03(\x0b\x32\x38.yandex.cloud.serverless.triggers.v1.Trigger.LabelsEntry\x12\x45\n\x04rule\x18\x08 \x01(\x0b\x32\x31.yandex.cloud.serverless.triggers.v1.Trigger.RuleB\x04\xe8\xc7\x31\x01\x12\x43\n\x06status\x18\t \x01(\x0e\x32\x33.yandex.cloud.serverless.triggers.v1.Trigger.Status\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x96\x05\n\x04Rule\x12\x43\n\x05timer\x18\x02 \x01(\x0b\x32\x32.yandex.cloud.serverless.triggers.v1.Trigger.TimerH\x00\x12R\n\rmessage_queue\x18\x03 \x01(\x0b\x32\x39.yandex.cloud.serverless.triggers.v1.Trigger.MessageQueueH\x00\x12N\n\x0biot_message\x18\x04 \x01(\x0b\x32\x37.yandex.cloud.serverless.triggers.v1.Trigger.IoTMessageH\x00\x12T\n\x0eobject_storage\x18\x05 \x01(\x0b\x32:.yandex.cloud.serverless.triggers.v1.Trigger.ObjectStorageH\x00\x12\\\n\x12\x63ontainer_registry\x18\x06 \x01(\x0b\x32>.yandex.cloud.serverless.triggers.v1.Trigger.ContainerRegistryH\x00\x12L\n\ncloud_logs\x18\t \x01(\x0b\x32\x36.yandex.cloud.serverless.triggers.v1.Trigger.CloudLogsH\x00\x12G\n\x07logging\x18\n \x01(\x0b\x32\x34.yandex.cloud.serverless.triggers.v1.Trigger.LoggingH\x00\x12L\n\x0e\x62illing_budget\x18\x0b \x01(\x0b\x32\x32.yandex.cloud.serverless.triggers.v1.BillingBudgetH\x00\x42\x0c\n\x04rule\x12\x04\xc0\xc1\x31\x01\x1a\xdd\x02\n\x05Timer\x12&\n\x0f\x63ron_expression\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=100\x12R\n\x0finvoke_function\x18\x65 \x01(\x0b\x32\x37.yandex.cloud.serverless.triggers.v1.InvokeFunctionOnceH\x00\x12\x62\n\x1ainvoke_function_with_retry\x18g \x01(\x0b\x32<.yandex.cloud.serverless.triggers.v1.InvokeFunctionWithRetryH\x00\x12\x64\n\x1binvoke_container_with_retry\x18h \x01(\x0b\x32=.yandex.cloud.serverless.triggers.v1.InvokeContainerWithRetryH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01\x1a\x9e\x03\n\x0cMessageQueue\x12\x16\n\x08queue_id\x18\x0b \x01(\tB\x04\xe8\xc7\x31\x01\x12(\n\x12service_account_id\x18\x03 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12P\n\x0e\x62\x61tch_settings\x18\x04 \x01(\x0b\x32\x32.yandex.cloud.serverless.triggers.v1.BatchSettingsB\x04\xe8\xc7\x31\x01\x12@\n\x12visibility_timeout\x18\x05 \x01(\x0b\x32\x19.google.protobuf.DurationB\t\xfa\xc7\x31\x05<=12h\x12R\n\x0finvoke_function\x18\x65 \x01(\x0b\x32\x37.yandex.cloud.serverless.triggers.v1.InvokeFunctionOnceH\x00\x12T\n\x10invoke_container\x18\x66 \x01(\x0b\x32\x38.yandex.cloud.serverless.triggers.v1.InvokeContainerOnceH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01\x1a\x92\x02\n\nIoTMessage\x12\x19\n\x0bregistry_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tdevice_id\x18\x02 \x01(\t\x12\x12\n\nmqtt_topic\x18\x03 \x01(\t\x12W\n\x0finvoke_function\x18\x65 \x01(\x0b\x32<.yandex.cloud.serverless.triggers.v1.InvokeFunctionWithRetryH\x00\x12Y\n\x10invoke_container\x18\x66 \x01(\x0b\x32=.yandex.cloud.serverless.triggers.v1.InvokeContainerWithRetryH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01\x1a\xe7\x02\n\rObjectStorage\x12_\n\nevent_type\x18\x03 \x03(\x0e\x32\x43.yandex.cloud.serverless.triggers.v1.Trigger.ObjectStorageEventTypeB\x06\x82\xc8\x31\x02>0\x12\x11\n\tbucket_id\x18\x04 \x01(\t\x12\x0e\n\x06prefix\x18\x06 \x01(\t\x12\x0e\n\x06suffix\x18\x07 \x01(\t\x12W\n\x0finvoke_function\x18\x65 \x01(\x0b\x32<.yandex.cloud.serverless.triggers.v1.InvokeFunctionWithRetryH\x00\x12Y\n\x10invoke_container\x18\x66 \x01(\x0b\x32=.yandex.cloud.serverless.triggers.v1.InvokeContainerWithRetryH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01\x1a\xf2\x02\n\x11\x43ontainerRegistry\x12\x63\n\nevent_type\x18\x03 \x03(\x0e\x32G.yandex.cloud.serverless.triggers.v1.Trigger.ContainerRegistryEventTypeB\x06\x82\xc8\x31\x02>0\x12\x13\n\x0bregistry_id\x18\x04 \x01(\t\x12\x12\n\nimage_name\x18\x05 \x01(\t\x12\x0b\n\x03tag\x18\x06 \x01(\t\x12W\n\x0finvoke_function\x18\x65 \x01(\x0b\x32<.yandex.cloud.serverless.triggers.v1.InvokeFunctionWithRetryH\x00\x12Y\n\x10invoke_container\x18\x66 \x01(\x0b\x32=.yandex.cloud.serverless.triggers.v1.InvokeContainerWithRetryH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01\x1a\xc0\x02\n\tCloudLogs\x12\x14\n\x0clog_group_id\x18\x01 \x03(\t\x12Y\n\x0e\x62\x61tch_settings\x18\x02 \x01(\x0b\x32;.yandex.cloud.serverless.triggers.v1.CloudLogsBatchSettingsB\x04\xe8\xc7\x31\x01\x12W\n\x0finvoke_function\x18\x65 \x01(\x0b\x32<.yandex.cloud.serverless.triggers.v1.InvokeFunctionWithRetryH\x00\x12Y\n\x10invoke_container\x18\x66 \x01(\x0b\x32=.yandex.cloud.serverless.triggers.v1.InvokeContainerWithRetryH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01\x1a\x8b\x04\n\x07Logging\x12\x1e\n\x0clog_group_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12@\n\rresource_type\x18\x03 \x03(\tB)\xf2\xc7\x31\x1c[a-zA-Z][-a-zA-Z0-9_.]{1,62}\x82\xc8\x31\x05<=100\x12>\n\x0bresource_id\x18\x04 \x03(\tB)\xf2\xc7\x31\x1c[a-zA-Z][-a-zA-Z0-9_.]{1,62}\x82\xc8\x31\x05<=100\x12\x41\n\x06levels\x18\x05 \x03(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.LevelB\x08\x82\xc8\x31\x04<=10\x12W\n\x0e\x62\x61tch_settings\x18\x06 \x01(\x0b\x32\x39.yandex.cloud.serverless.triggers.v1.LoggingBatchSettingsB\x04\xe8\xc7\x31\x01\x12W\n\x0finvoke_function\x18\x65 \x01(\x0b\x32<.yandex.cloud.serverless.triggers.v1.InvokeFunctionWithRetryH\x00\x12Y\n\x10invoke_container\x18g \x01(\x0b\x32=.yandex.cloud.serverless.triggers.v1.InvokeContainerWithRetryH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01\"\xca\x01\n\x16ObjectStorageEventType\x12)\n%OBJECT_STORAGE_EVENT_TYPE_UNSPECIFIED\x10\x00\x12+\n\'OBJECT_STORAGE_EVENT_TYPE_CREATE_OBJECT\x10\x01\x12+\n\'OBJECT_STORAGE_EVENT_TYPE_UPDATE_OBJECT\x10\x02\x12+\n\'OBJECT_STORAGE_EVENT_TYPE_DELETE_OBJECT\x10\x03\"\x93\x02\n\x1a\x43ontainerRegistryEventType\x12-\n)CONTAINER_REGISTRY_EVENT_TYPE_UNSPECIFIED\x10\x00\x12.\n*CONTAINER_REGISTRY_EVENT_TYPE_CREATE_IMAGE\x10\x01\x12.\n*CONTAINER_REGISTRY_EVENT_TYPE_DELETE_IMAGE\x10\x02\x12\x32\n.CONTAINER_REGISTRY_EVENT_TYPE_CREATE_IMAGE_TAG\x10\x03\x12\x32\n.CONTAINER_REGISTRY_EVENT_TYPE_DELETE_IMAGE_TAG\x10\x04\"8\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\n\n\x06\x41\x43TIVE\x10\x01\x12\n\n\x06PAUSED\x10\x02\"i\n\x12InvokeFunctionOnce\x12!\n\x0b\x66unction_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x14\n\x0c\x66unction_tag\x18\x02 \x01(\t\x12\x1a\n\x12service_account_id\x18\x03 \x01(\t\"\x8b\x02\n\x17InvokeFunctionWithRetry\x12!\n\x0b\x66unction_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x14\n\x0c\x66unction_tag\x18\x02 \x01(\t\x12\x1a\n\x12service_account_id\x18\x03 \x01(\t\x12J\n\x0eretry_settings\x18\x04 \x01(\x0b\x32\x32.yandex.cloud.serverless.triggers.v1.RetrySettings\x12O\n\x11\x64\x65\x61\x64_letter_queue\x18\x05 \x01(\x0b\x32\x34.yandex.cloud.serverless.triggers.v1.PutQueueMessage\"c\n\x13InvokeContainerOnce\x12\"\n\x0c\x63ontainer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x0c\n\x04path\x18\x03 \x01(\t\x12\x1a\n\x12service_account_id\x18\x04 \x01(\t\"\x85\x02\n\x18InvokeContainerWithRetry\x12\"\n\x0c\x63ontainer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x0c\n\x04path\x18\x03 \x01(\t\x12\x1a\n\x12service_account_id\x18\x04 \x01(\t\x12J\n\x0eretry_settings\x18\x05 \x01(\x0b\x32\x32.yandex.cloud.serverless.triggers.v1.RetrySettings\x12O\n\x11\x64\x65\x61\x64_letter_queue\x18\x06 \x01(\x0b\x32\x34.yandex.cloud.serverless.triggers.v1.PutQueueMessage\"M\n\x0fPutQueueMessage\x12\x10\n\x08queue_id\x18\x0b \x01(\t\x12(\n\x12service_account_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"X\n\rBatchSettings\x12\x16\n\x04size\x18\x01 \x01(\x03\x42\x08\xfa\xc7\x31\x04\x30-10\x12/\n\x06\x63utoff\x18\x02 \x01(\x0b\x32\x19.google.protobuf.DurationB\x04\xe8\xc7\x31\x01\"g\n\x16\x43loudLogsBatchSettings\x12\x17\n\x04size\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12\x34\n\x06\x63utoff\x18\x02 \x01(\x0b\x32\x19.google.protobuf.DurationB\t\xfa\xc7\x31\x05\x31s-1m\"e\n\x14LoggingBatchSettings\x12\x17\n\x04size\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x31-100\x12\x34\n\x06\x63utoff\x18\x02 \x01(\x0b\x32\x19.google.protobuf.DurationB\t\xfa\xc7\x31\x05\x31s-1m\"c\n\rRetrySettings\x12\x1f\n\x0eretry_attempts\x18\x01 \x01(\x03\x42\x07\xfa\xc7\x31\x03\x31-5\x12\x31\n\x08interval\x18\x02 \x01(\x0b\x32\x19.google.protobuf.DurationB\x04\xe8\xc7\x31\x01\"\x9a\x02\n\rBillingBudget\x12(\n\x12\x62illing_account_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1b\n\tbudget_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12W\n\x0finvoke_function\x18\x65 \x01(\x0b\x32<.yandex.cloud.serverless.triggers.v1.InvokeFunctionWithRetryH\x00\x12Y\n\x10invoke_container\x18g \x01(\x0b\x32=.yandex.cloud.serverless.triggers.v1.InvokeContainerWithRetryH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01*\xb7\x01\n\x0bTriggerType\x12\x1c\n\x18TRIGGER_TYPE_UNSPECIFIED\x10\x00\x12\t\n\x05TIMER\x10\x02\x12\x11\n\rMESSAGE_QUEUE\x10\x03\x12\x0f\n\x0bIOT_MESSAGE\x10\x04\x12\x12\n\x0eOBJECT_STORAGE\x10\x05\x12\x16\n\x12\x43ONTAINER_REGISTRY\x10\x06\x12\x0e\n\nCLOUD_LOGS\x10\x07\x12\x0b\n\x07LOGGING\x10\x08\x12\x12\n\x0e\x42ILLING_BUDGET\x10\tB{\n\'yandex.cloud.api.serverless.triggers.v1ZPgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/triggers/v1;triggersb\x06proto3'
+  serialized_pb=b'\n1yandex/cloud/serverless/triggers/v1/trigger.proto\x12#yandex.cloud.serverless.triggers.v1\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\'yandex/cloud/logging/v1/log_entry.proto\x1a\x1dyandex/cloud/validation.proto\"\xe7!\n\x07Trigger\x12\n\n\x02id\x18\x01 \x01(\t\x12\x1f\n\tfolder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x16\n\x04name\x18\x04 \x01(\tB\x08\x8a\xc8\x31\x04\x33-63\x12\x1e\n\x0b\x64\x65scription\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05\x30-256\x12H\n\x06labels\x18\x06 \x03(\x0b\x32\x38.yandex.cloud.serverless.triggers.v1.Trigger.LabelsEntry\x12\x45\n\x04rule\x18\x08 \x01(\x0b\x32\x31.yandex.cloud.serverless.triggers.v1.Trigger.RuleB\x04\xe8\xc7\x31\x01\x12\x43\n\x06status\x18\t \x01(\x0e\x32\x33.yandex.cloud.serverless.triggers.v1.Trigger.Status\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\xde\x05\n\x04Rule\x12\x43\n\x05timer\x18\x02 \x01(\x0b\x32\x32.yandex.cloud.serverless.triggers.v1.Trigger.TimerH\x00\x12R\n\rmessage_queue\x18\x03 \x01(\x0b\x32\x39.yandex.cloud.serverless.triggers.v1.Trigger.MessageQueueH\x00\x12N\n\x0biot_message\x18\x04 \x01(\x0b\x32\x37.yandex.cloud.serverless.triggers.v1.Trigger.IoTMessageH\x00\x12T\n\x0eobject_storage\x18\x05 \x01(\x0b\x32:.yandex.cloud.serverless.triggers.v1.Trigger.ObjectStorageH\x00\x12\\\n\x12\x63ontainer_registry\x18\x06 \x01(\x0b\x32>.yandex.cloud.serverless.triggers.v1.Trigger.ContainerRegistryH\x00\x12L\n\ncloud_logs\x18\t \x01(\x0b\x32\x36.yandex.cloud.serverless.triggers.v1.Trigger.CloudLogsH\x00\x12G\n\x07logging\x18\n \x01(\x0b\x32\x34.yandex.cloud.serverless.triggers.v1.Trigger.LoggingH\x00\x12L\n\x0e\x62illing_budget\x18\x0b \x01(\x0b\x32\x32.yandex.cloud.serverless.triggers.v1.BillingBudgetH\x00\x12\x46\n\x0b\x64\x61ta_stream\x18\x0c \x01(\x0b\x32/.yandex.cloud.serverless.triggers.v1.DataStreamH\x00\x42\x0c\n\x04rule\x12\x04\xc0\xc1\x31\x01\x1a\xdd\x02\n\x05Timer\x12&\n\x0f\x63ron_expression\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=100\x12R\n\x0finvoke_function\x18\x65 \x01(\x0b\x32\x37.yandex.cloud.serverless.triggers.v1.InvokeFunctionOnceH\x00\x12\x62\n\x1ainvoke_function_with_retry\x18g \x01(\x0b\x32<.yandex.cloud.serverless.triggers.v1.InvokeFunctionWithRetryH\x00\x12\x64\n\x1binvoke_container_with_retry\x18h \x01(\x0b\x32=.yandex.cloud.serverless.triggers.v1.InvokeContainerWithRetryH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01\x1a\x9e\x03\n\x0cMessageQueue\x12\x16\n\x08queue_id\x18\x0b \x01(\tB\x04\xe8\xc7\x31\x01\x12(\n\x12service_account_id\x18\x03 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12P\n\x0e\x62\x61tch_settings\x18\x04 \x01(\x0b\x32\x32.yandex.cloud.serverless.triggers.v1.BatchSettingsB\x04\xe8\xc7\x31\x01\x12@\n\x12visibility_timeout\x18\x05 \x01(\x0b\x32\x19.google.protobuf.DurationB\t\xfa\xc7\x31\x05<=12h\x12R\n\x0finvoke_function\x18\x65 \x01(\x0b\x32\x37.yandex.cloud.serverless.triggers.v1.InvokeFunctionOnceH\x00\x12T\n\x10invoke_container\x18\x66 \x01(\x0b\x32\x38.yandex.cloud.serverless.triggers.v1.InvokeContainerOnceH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01\x1a\x92\x02\n\nIoTMessage\x12\x19\n\x0bregistry_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tdevice_id\x18\x02 \x01(\t\x12\x12\n\nmqtt_topic\x18\x03 \x01(\t\x12W\n\x0finvoke_function\x18\x65 \x01(\x0b\x32<.yandex.cloud.serverless.triggers.v1.InvokeFunctionWithRetryH\x00\x12Y\n\x10invoke_container\x18\x66 \x01(\x0b\x32=.yandex.cloud.serverless.triggers.v1.InvokeContainerWithRetryH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01\x1a\xe7\x02\n\rObjectStorage\x12_\n\nevent_type\x18\x03 \x03(\x0e\x32\x43.yandex.cloud.serverless.triggers.v1.Trigger.ObjectStorageEventTypeB\x06\x82\xc8\x31\x02>0\x12\x11\n\tbucket_id\x18\x04 \x01(\t\x12\x0e\n\x06prefix\x18\x06 \x01(\t\x12\x0e\n\x06suffix\x18\x07 \x01(\t\x12W\n\x0finvoke_function\x18\x65 \x01(\x0b\x32<.yandex.cloud.serverless.triggers.v1.InvokeFunctionWithRetryH\x00\x12Y\n\x10invoke_container\x18\x66 \x01(\x0b\x32=.yandex.cloud.serverless.triggers.v1.InvokeContainerWithRetryH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01\x1a\xf2\x02\n\x11\x43ontainerRegistry\x12\x63\n\nevent_type\x18\x03 \x03(\x0e\x32G.yandex.cloud.serverless.triggers.v1.Trigger.ContainerRegistryEventTypeB\x06\x82\xc8\x31\x02>0\x12\x13\n\x0bregistry_id\x18\x04 \x01(\t\x12\x12\n\nimage_name\x18\x05 \x01(\t\x12\x0b\n\x03tag\x18\x06 \x01(\t\x12W\n\x0finvoke_function\x18\x65 \x01(\x0b\x32<.yandex.cloud.serverless.triggers.v1.InvokeFunctionWithRetryH\x00\x12Y\n\x10invoke_container\x18\x66 \x01(\x0b\x32=.yandex.cloud.serverless.triggers.v1.InvokeContainerWithRetryH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01\x1a\xc0\x02\n\tCloudLogs\x12\x14\n\x0clog_group_id\x18\x01 \x03(\t\x12Y\n\x0e\x62\x61tch_settings\x18\x02 \x01(\x0b\x32;.yandex.cloud.serverless.triggers.v1.CloudLogsBatchSettingsB\x04\xe8\xc7\x31\x01\x12W\n\x0finvoke_function\x18\x65 \x01(\x0b\x32<.yandex.cloud.serverless.triggers.v1.InvokeFunctionWithRetryH\x00\x12Y\n\x10invoke_container\x18\x66 \x01(\x0b\x32=.yandex.cloud.serverless.triggers.v1.InvokeContainerWithRetryH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01\x1a\x8b\x04\n\x07Logging\x12\x1e\n\x0clog_group_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12@\n\rresource_type\x18\x03 \x03(\tB)\xf2\xc7\x31\x1c[a-zA-Z][-a-zA-Z0-9_.]{1,62}\x82\xc8\x31\x05<=100\x12>\n\x0bresource_id\x18\x04 \x03(\tB)\xf2\xc7\x31\x1c[a-zA-Z][-a-zA-Z0-9_.]{1,62}\x82\xc8\x31\x05<=100\x12\x41\n\x06levels\x18\x05 \x03(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.LevelB\x08\x82\xc8\x31\x04<=10\x12W\n\x0e\x62\x61tch_settings\x18\x06 \x01(\x0b\x32\x39.yandex.cloud.serverless.triggers.v1.LoggingBatchSettingsB\x04\xe8\xc7\x31\x01\x12W\n\x0finvoke_function\x18\x65 \x01(\x0b\x32<.yandex.cloud.serverless.triggers.v1.InvokeFunctionWithRetryH\x00\x12Y\n\x10invoke_container\x18g \x01(\x0b\x32=.yandex.cloud.serverless.triggers.v1.InvokeContainerWithRetryH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01\"\xca\x01\n\x16ObjectStorageEventType\x12)\n%OBJECT_STORAGE_EVENT_TYPE_UNSPECIFIED\x10\x00\x12+\n\'OBJECT_STORAGE_EVENT_TYPE_CREATE_OBJECT\x10\x01\x12+\n\'OBJECT_STORAGE_EVENT_TYPE_UPDATE_OBJECT\x10\x02\x12+\n\'OBJECT_STORAGE_EVENT_TYPE_DELETE_OBJECT\x10\x03\"\x93\x02\n\x1a\x43ontainerRegistryEventType\x12-\n)CONTAINER_REGISTRY_EVENT_TYPE_UNSPECIFIED\x10\x00\x12.\n*CONTAINER_REGISTRY_EVENT_TYPE_CREATE_IMAGE\x10\x01\x12.\n*CONTAINER_REGISTRY_EVENT_TYPE_DELETE_IMAGE\x10\x02\x12\x32\n.CONTAINER_REGISTRY_EVENT_TYPE_CREATE_IMAGE_TAG\x10\x03\x12\x32\n.CONTAINER_REGISTRY_EVENT_TYPE_DELETE_IMAGE_TAG\x10\x04\"8\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\n\n\x06\x41\x43TIVE\x10\x01\x12\n\n\x06PAUSED\x10\x02\"i\n\x12InvokeFunctionOnce\x12!\n\x0b\x66unction_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x14\n\x0c\x66unction_tag\x18\x02 \x01(\t\x12\x1a\n\x12service_account_id\x18\x03 \x01(\t\"\x8b\x02\n\x17InvokeFunctionWithRetry\x12!\n\x0b\x66unction_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x14\n\x0c\x66unction_tag\x18\x02 \x01(\t\x12\x1a\n\x12service_account_id\x18\x03 \x01(\t\x12J\n\x0eretry_settings\x18\x04 \x01(\x0b\x32\x32.yandex.cloud.serverless.triggers.v1.RetrySettings\x12O\n\x11\x64\x65\x61\x64_letter_queue\x18\x05 \x01(\x0b\x32\x34.yandex.cloud.serverless.triggers.v1.PutQueueMessage\"c\n\x13InvokeContainerOnce\x12\"\n\x0c\x63ontainer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x0c\n\x04path\x18\x03 \x01(\t\x12\x1a\n\x12service_account_id\x18\x04 \x01(\t\"\x85\x02\n\x18InvokeContainerWithRetry\x12\"\n\x0c\x63ontainer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x0c\n\x04path\x18\x03 \x01(\t\x12\x1a\n\x12service_account_id\x18\x04 \x01(\t\x12J\n\x0eretry_settings\x18\x05 \x01(\x0b\x32\x32.yandex.cloud.serverless.triggers.v1.RetrySettings\x12O\n\x11\x64\x65\x61\x64_letter_queue\x18\x06 \x01(\x0b\x32\x34.yandex.cloud.serverless.triggers.v1.PutQueueMessage\"M\n\x0fPutQueueMessage\x12\x10\n\x08queue_id\x18\x0b \x01(\t\x12(\n\x12service_account_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"X\n\rBatchSettings\x12\x16\n\x04size\x18\x01 \x01(\x03\x42\x08\xfa\xc7\x31\x04\x30-10\x12/\n\x06\x63utoff\x18\x02 \x01(\x0b\x32\x19.google.protobuf.DurationB\x04\xe8\xc7\x31\x01\"g\n\x16\x43loudLogsBatchSettings\x12\x17\n\x04size\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12\x34\n\x06\x63utoff\x18\x02 \x01(\x0b\x32\x19.google.protobuf.DurationB\t\xfa\xc7\x31\x05\x31s-1m\"e\n\x14LoggingBatchSettings\x12\x17\n\x04size\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x31-100\x12\x34\n\x06\x63utoff\x18\x02 \x01(\x0b\x32\x19.google.protobuf.DurationB\t\xfa\xc7\x31\x05\x31s-1m\"c\n\rRetrySettings\x12\x1f\n\x0eretry_attempts\x18\x01 \x01(\x03\x42\x07\xfa\xc7\x31\x03\x31-5\x12\x31\n\x08interval\x18\x02 \x01(\x0b\x32\x19.google.protobuf.DurationB\x04\xe8\xc7\x31\x01\"\x9a\x02\n\rBillingBudget\x12(\n\x12\x62illing_account_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1b\n\tbudget_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12W\n\x0finvoke_function\x18\x65 \x01(\x0b\x32<.yandex.cloud.serverless.triggers.v1.InvokeFunctionWithRetryH\x00\x12Y\n\x10invoke_container\x18g \x01(\x0b\x32=.yandex.cloud.serverless.triggers.v1.InvokeContainerWithRetryH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01\"j\n\x17\x44\x61taStreamBatchSettings\x12\x19\n\x04size\x18\x01 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x31-65536\x12\x34\n\x06\x63utoff\x18\x02 \x01(\x0b\x32\x19.google.protobuf.DurationB\t\xfa\xc7\x31\x05\x31s-1m\"\xf6\x02\n\nDataStream\x12\x10\n\x08\x65ndpoint\x18\x01 \x01(\t\x12\x10\n\x08\x64\x61tabase\x18\x02 \x01(\t\x12\x0e\n\x06stream\x18\x03 \x01(\t\x12\x1a\n\x12service_account_id\x18\x04 \x01(\t\x12T\n\x0e\x62\x61tch_settings\x18\x05 \x01(\x0b\x32<.yandex.cloud.serverless.triggers.v1.DataStreamBatchSettings\x12W\n\x0finvoke_function\x18\r \x01(\x0b\x32<.yandex.cloud.serverless.triggers.v1.InvokeFunctionWithRetryH\x00\x12Y\n\x10invoke_container\x18\x0f \x01(\x0b\x32=.yandex.cloud.serverless.triggers.v1.InvokeContainerWithRetryH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01*\xc0\x01\n\x0bTriggerType\x12\x1c\n\x18TRIGGER_TYPE_UNSPECIFIED\x10\x00\x12\t\n\x05TIMER\x10\x02\x12\x11\n\rMESSAGE_QUEUE\x10\x03\x12\x0f\n\x0bIOT_MESSAGE\x10\x04\x12\x12\n\x0eOBJECT_STORAGE\x10\x05\x12\x16\n\x12\x43ONTAINER_REGISTRY\x10\x06\x12\x0e\n\nCLOUD_LOGS\x10\x07\x12\x0b\n\x07LOGGING\x10\x08\x12\x12\n\x0e\x42ILLING_BUDGET\x10\t\x12\x07\n\x03YDS\x10\nB{\n\'yandex.cloud.api.serverless.triggers.v1ZPgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/triggers/v1;triggersb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_logging_dot_v1_dot_log__entry__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -80,11 +80,16 @@ _TRIGGERTYPE = _descriptor.EnumDescriptor(
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='YDS', index=9, number=10,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5991,
-  serialized_end=6174,
+  serialized_start=6548,
+  serialized_end=6740,
 )
 _sym_db.RegisterEnumDescriptor(_TRIGGERTYPE)
 
@@ -98,6 +103,7 @@ CONTAINER_REGISTRY = 6
 CLOUD_LOGS = 7
 LOGGING = 8
 BILLING_BUDGET = 9
+YDS = 10
 
 
 _TRIGGER_OBJECTSTORAGEEVENTTYPE = _descriptor.EnumDescriptor(
@@ -130,8 +136,8 @@ _TRIGGER_OBJECTSTORAGEEVENTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3945,
-  serialized_end=4147,
+  serialized_start=4017,
+  serialized_end=4219,
 )
 _sym_db.RegisterEnumDescriptor(_TRIGGER_OBJECTSTORAGEEVENTTYPE)
 
@@ -170,8 +176,8 @@ _TRIGGER_CONTAINERREGISTRYEVENTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4150,
-  serialized_end=4425,
+  serialized_start=4222,
+  serialized_end=4497,
 )
 _sym_db.RegisterEnumDescriptor(_TRIGGER_CONTAINERREGISTRYEVENTTYPE)
 
@@ -200,8 +206,8 @@ _TRIGGER_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4427,
-  serialized_end=4483,
+  serialized_start=4499,
+  serialized_end=4555,
 )
 _sym_db.RegisterEnumDescriptor(_TRIGGER_STATUS)
 
@@ -308,6 +314,13 @@ _TRIGGER_RULE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='data_stream', full_name='yandex.cloud.serverless.triggers.v1.Trigger.Rule.data_stream', index=8,
+      number=12, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -326,7 +339,7 @@ _TRIGGER_RULE = _descriptor.Descriptor(
     fields=[], serialized_options=b'\300\3011\001'),
   ],
   serialized_start=650,
-  serialized_end=1312,
+  serialized_end=1384,
 )
 
 _TRIGGER_TIMER = _descriptor.Descriptor(
@@ -382,8 +395,8 @@ _TRIGGER_TIMER = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[], serialized_options=b'\300\3011\001'),
   ],
-  serialized_start=1315,
-  serialized_end=1664,
+  serialized_start=1387,
+  serialized_end=1736,
 )
 
 _TRIGGER_MESSAGEQUEUE = _descriptor.Descriptor(
@@ -453,8 +466,8 @@ _TRIGGER_MESSAGEQUEUE = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[], serialized_options=b'\300\3011\001'),
   ],
-  serialized_start=1667,
-  serialized_end=2081,
+  serialized_start=1739,
+  serialized_end=2153,
 )
 
 _TRIGGER_IOTMESSAGE = _descriptor.Descriptor(
@@ -517,8 +530,8 @@ _TRIGGER_IOTMESSAGE = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[], serialized_options=b'\300\3011\001'),
   ],
-  serialized_start=2084,
-  serialized_end=2358,
+  serialized_start=2156,
+  serialized_end=2430,
 )
 
 _TRIGGER_OBJECTSTORAGE = _descriptor.Descriptor(
@@ -588,8 +601,8 @@ _TRIGGER_OBJECTSTORAGE = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[], serialized_options=b'\300\3011\001'),
   ],
-  serialized_start=2361,
-  serialized_end=2720,
+  serialized_start=2433,
+  serialized_end=2792,
 )
 
 _TRIGGER_CONTAINERREGISTRY = _descriptor.Descriptor(
@@ -659,8 +672,8 @@ _TRIGGER_CONTAINERREGISTRY = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[], serialized_options=b'\300\3011\001'),
   ],
-  serialized_start=2723,
-  serialized_end=3093,
+  serialized_start=2795,
+  serialized_end=3165,
 )
 
 _TRIGGER_CLOUDLOGS = _descriptor.Descriptor(
@@ -716,8 +729,8 @@ _TRIGGER_CLOUDLOGS = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[], serialized_options=b'\300\3011\001'),
   ],
-  serialized_start=3096,
-  serialized_end=3416,
+  serialized_start=3168,
+  serialized_end=3488,
 )
 
 _TRIGGER_LOGGING = _descriptor.Descriptor(
@@ -794,8 +807,8 @@ _TRIGGER_LOGGING = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[], serialized_options=b'\300\3011\001'),
   ],
-  serialized_start=3419,
-  serialized_end=3942,
+  serialized_start=3491,
+  serialized_end=4014,
 )
 
 _TRIGGER = _descriptor.Descriptor(
@@ -878,7 +891,7 @@ _TRIGGER = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=228,
-  serialized_end=4483,
+  serialized_end=4555,
 )
 
 
@@ -923,8 +936,8 @@ _INVOKEFUNCTIONONCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4485,
-  serialized_end=4590,
+  serialized_start=4557,
+  serialized_end=4662,
 )
 
 
@@ -983,8 +996,8 @@ _INVOKEFUNCTIONWITHRETRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4593,
-  serialized_end=4860,
+  serialized_start=4665,
+  serialized_end=4932,
 )
 
 
@@ -1029,8 +1042,8 @@ _INVOKECONTAINERONCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4862,
-  serialized_end=4961,
+  serialized_start=4934,
+  serialized_end=5033,
 )
 
 
@@ -1089,8 +1102,8 @@ _INVOKECONTAINERWITHRETRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4964,
-  serialized_end=5225,
+  serialized_start=5036,
+  serialized_end=5297,
 )
 
 
@@ -1128,8 +1141,8 @@ _PUTQUEUEMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5227,
-  serialized_end=5304,
+  serialized_start=5299,
+  serialized_end=5376,
 )
 
 
@@ -1167,8 +1180,8 @@ _BATCHSETTINGS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5306,
-  serialized_end=5394,
+  serialized_start=5378,
+  serialized_end=5466,
 )
 
 
@@ -1206,8 +1219,8 @@ _CLOUDLOGSBATCHSETTINGS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5396,
-  serialized_end=5499,
+  serialized_start=5468,
+  serialized_end=5571,
 )
 
 
@@ -1245,8 +1258,8 @@ _LOGGINGBATCHSETTINGS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5501,
-  serialized_end=5602,
+  serialized_start=5573,
+  serialized_end=5674,
 )
 
 
@@ -1284,8 +1297,8 @@ _RETRYSETTINGS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5604,
-  serialized_end=5703,
+  serialized_start=5676,
+  serialized_end=5775,
 )
 
 
@@ -1342,8 +1355,126 @@ _BILLINGBUDGET = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[], serialized_options=b'\300\3011\001'),
   ],
-  serialized_start=5706,
-  serialized_end=5988,
+  serialized_start=5778,
+  serialized_end=6060,
+)
+
+
+_DATASTREAMBATCHSETTINGS = _descriptor.Descriptor(
+  name='DataStreamBatchSettings',
+  full_name='yandex.cloud.serverless.triggers.v1.DataStreamBatchSettings',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='size', full_name='yandex.cloud.serverless.triggers.v1.DataStreamBatchSettings.size', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\372\3071\0071-65536', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='cutoff', full_name='yandex.cloud.serverless.triggers.v1.DataStreamBatchSettings.cutoff', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\372\3071\0051s-1m', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=6062,
+  serialized_end=6168,
+)
+
+
+_DATASTREAM = _descriptor.Descriptor(
+  name='DataStream',
+  full_name='yandex.cloud.serverless.triggers.v1.DataStream',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='endpoint', full_name='yandex.cloud.serverless.triggers.v1.DataStream.endpoint', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='database', full_name='yandex.cloud.serverless.triggers.v1.DataStream.database', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='stream', full_name='yandex.cloud.serverless.triggers.v1.DataStream.stream', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='service_account_id', full_name='yandex.cloud.serverless.triggers.v1.DataStream.service_account_id', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='batch_settings', full_name='yandex.cloud.serverless.triggers.v1.DataStream.batch_settings', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='invoke_function', full_name='yandex.cloud.serverless.triggers.v1.DataStream.invoke_function', index=5,
+      number=13, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='invoke_container', full_name='yandex.cloud.serverless.triggers.v1.DataStream.invoke_container', index=6,
+      number=15, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='action', full_name='yandex.cloud.serverless.triggers.v1.DataStream.action',
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[], serialized_options=b'\300\3011\001'),
+  ],
+  serialized_start=6171,
+  serialized_end=6545,
 )
 
 _TRIGGER_LABELSENTRY.containing_type = _TRIGGER
@@ -1355,6 +1486,7 @@ _TRIGGER_RULE.fields_by_name['container_registry'].message_type = _TRIGGER_CONTA
 _TRIGGER_RULE.fields_by_name['cloud_logs'].message_type = _TRIGGER_CLOUDLOGS
 _TRIGGER_RULE.fields_by_name['logging'].message_type = _TRIGGER_LOGGING
 _TRIGGER_RULE.fields_by_name['billing_budget'].message_type = _BILLINGBUDGET
+_TRIGGER_RULE.fields_by_name['data_stream'].message_type = _DATASTREAM
 _TRIGGER_RULE.containing_type = _TRIGGER
 _TRIGGER_RULE.oneofs_by_name['rule'].fields.append(
   _TRIGGER_RULE.fields_by_name['timer'])
@@ -1380,6 +1512,9 @@ _TRIGGER_RULE.fields_by_name['logging'].containing_oneof = _TRIGGER_RULE.oneofs_
 _TRIGGER_RULE.oneofs_by_name['rule'].fields.append(
   _TRIGGER_RULE.fields_by_name['billing_budget'])
 _TRIGGER_RULE.fields_by_name['billing_budget'].containing_oneof = _TRIGGER_RULE.oneofs_by_name['rule']
+_TRIGGER_RULE.oneofs_by_name['rule'].fields.append(
+  _TRIGGER_RULE.fields_by_name['data_stream'])
+_TRIGGER_RULE.fields_by_name['data_stream'].containing_oneof = _TRIGGER_RULE.oneofs_by_name['rule']
 _TRIGGER_TIMER.fields_by_name['invoke_function'].message_type = _INVOKEFUNCTIONONCE
 _TRIGGER_TIMER.fields_by_name['invoke_function_with_retry'].message_type = _INVOKEFUNCTIONWITHRETRY
 _TRIGGER_TIMER.fields_by_name['invoke_container_with_retry'].message_type = _INVOKECONTAINERWITHRETRY
@@ -1477,6 +1612,16 @@ _BILLINGBUDGET.fields_by_name['invoke_function'].containing_oneof = _BILLINGBUDG
 _BILLINGBUDGET.oneofs_by_name['action'].fields.append(
   _BILLINGBUDGET.fields_by_name['invoke_container'])
 _BILLINGBUDGET.fields_by_name['invoke_container'].containing_oneof = _BILLINGBUDGET.oneofs_by_name['action']
+_DATASTREAMBATCHSETTINGS.fields_by_name['cutoff'].message_type = google_dot_protobuf_dot_duration__pb2._DURATION
+_DATASTREAM.fields_by_name['batch_settings'].message_type = _DATASTREAMBATCHSETTINGS
+_DATASTREAM.fields_by_name['invoke_function'].message_type = _INVOKEFUNCTIONWITHRETRY
+_DATASTREAM.fields_by_name['invoke_container'].message_type = _INVOKECONTAINERWITHRETRY
+_DATASTREAM.oneofs_by_name['action'].fields.append(
+  _DATASTREAM.fields_by_name['invoke_function'])
+_DATASTREAM.fields_by_name['invoke_function'].containing_oneof = _DATASTREAM.oneofs_by_name['action']
+_DATASTREAM.oneofs_by_name['action'].fields.append(
+  _DATASTREAM.fields_by_name['invoke_container'])
+_DATASTREAM.fields_by_name['invoke_container'].containing_oneof = _DATASTREAM.oneofs_by_name['action']
 DESCRIPTOR.message_types_by_name['Trigger'] = _TRIGGER
 DESCRIPTOR.message_types_by_name['InvokeFunctionOnce'] = _INVOKEFUNCTIONONCE
 DESCRIPTOR.message_types_by_name['InvokeFunctionWithRetry'] = _INVOKEFUNCTIONWITHRETRY
@@ -1488,6 +1633,8 @@ DESCRIPTOR.message_types_by_name['CloudLogsBatchSettings'] = _CLOUDLOGSBATCHSETT
 DESCRIPTOR.message_types_by_name['LoggingBatchSettings'] = _LOGGINGBATCHSETTINGS
 DESCRIPTOR.message_types_by_name['RetrySettings'] = _RETRYSETTINGS
 DESCRIPTOR.message_types_by_name['BillingBudget'] = _BILLINGBUDGET
+DESCRIPTOR.message_types_by_name['DataStreamBatchSettings'] = _DATASTREAMBATCHSETTINGS
+DESCRIPTOR.message_types_by_name['DataStream'] = _DATASTREAM
 DESCRIPTOR.enum_types_by_name['TriggerType'] = _TRIGGERTYPE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -1640,6 +1787,20 @@ BillingBudget = _reflection.GeneratedProtocolMessageType('BillingBudget', (_mess
   })
 _sym_db.RegisterMessage(BillingBudget)
 
+DataStreamBatchSettings = _reflection.GeneratedProtocolMessageType('DataStreamBatchSettings', (_message.Message,), {
+  'DESCRIPTOR' : _DATASTREAMBATCHSETTINGS,
+  '__module__' : 'yandex.cloud.serverless.triggers.v1.trigger_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.serverless.triggers.v1.DataStreamBatchSettings)
+  })
+_sym_db.RegisterMessage(DataStreamBatchSettings)
+
+DataStream = _reflection.GeneratedProtocolMessageType('DataStream', (_message.Message,), {
+  'DESCRIPTOR' : _DATASTREAM,
+  '__module__' : 'yandex.cloud.serverless.triggers.v1.trigger_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.serverless.triggers.v1.DataStream)
+  })
+_sym_db.RegisterMessage(DataStream)
+
 
 DESCRIPTOR._options = None
 _TRIGGER_LABELSENTRY._options = None
@@ -1685,4 +1846,7 @@ _RETRYSETTINGS.fields_by_name['interval']._options = None
 _BILLINGBUDGET.oneofs_by_name['action']._options = None
 _BILLINGBUDGET.fields_by_name['billing_account_id']._options = None
 _BILLINGBUDGET.fields_by_name['budget_id']._options = None
+_DATASTREAMBATCHSETTINGS.fields_by_name['size']._options = None
+_DATASTREAMBATCHSETTINGS.fields_by_name['cutoff']._options = None
+_DATASTREAM.oneofs_by_name['action']._options = None
 # @@protoc_insertion_point(module_scope)
