@@ -1,10 +1,9 @@
+import grpc
 import inspect
 
-import grpc
-
 from yandexcloud import _channels
-from yandexcloud import _operation_waiter
 from yandexcloud import _helpers
+from yandexcloud import _operation_waiter
 from yandexcloud._backoff import backoff_exponential_with_jitter
 from yandexcloud._retry_interceptor import RetryInterceptor
 from yandexcloud._wrappers import Wrappers
@@ -92,7 +91,7 @@ _supported_modules = [
     ('yandex.cloud.loadbalancer', 'load-balancer'),
     ('yandex.cloud.lockbox.v1.payload_service', 'lockbox-payload'),
     ('yandex.cloud.lockbox', 'lockbox'),
-    ('yandex.cloud.logging.v1.log_injestion_service', 'log-injestion'),
+    ('yandex.cloud.logging.v1.log_ingestion_service', 'log-ingestion'),
     ('yandex.cloud.logging.v1.log_reading_service', 'log-reading'),
     ('yandex.cloud.logging', 'logging'),
     ('yandex.cloud.marketplace', 'marketplace'),
