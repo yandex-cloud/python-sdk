@@ -26,7 +26,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\027yandex.cloud.api.ydb.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/ydb/v1;ydb',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n*yandex/cloud/ydb/v1/database_service.proto\x12\x13yandex.cloud.ydb.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a\"yandex/cloud/ydb/v1/database.proto\x1a yandex/cloud/ydb/v1/backup.proto\"\x89\x01\n\x14RestoreBackupRequest\x12\x1f\n\tbackup_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12!\n\x0b\x64\x61tabase_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x18\n\x10paths_to_restore\x18\x03 \x03(\t\x12\x13\n\x0btarget_path\x18\x04 \x01(\t\"?\n\x15RestoreBackupMetadata\x12\x11\n\tbackup_id\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x61tabase_id\x18\x02 \x01(\t\"j\n\x15\x42\x61\x63kupDatabaseRequest\x12\x13\n\x0b\x64\x61tabase_id\x18\x01 \x01(\t\x12<\n\x0f\x62\x61\x63kup_settings\x18\x02 \x01(\x0b\x32#.yandex.cloud.ydb.v1.BackupSettings\"@\n\x16\x42\x61\x63kupDatabaseMetadata\x12\x11\n\tbackup_id\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x61tabase_id\x18\x02 \x01(\t\"9\n\x14StartDatabaseRequest\x12!\n\x0b\x64\x61tabase_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"C\n\x15StartDatabaseMetadata\x12\x13\n\x0b\x64\x61tabase_id\x18\x01 \x01(\t\x12\x15\n\rdatabase_name\x18\x02 \x01(\t\"8\n\x13StopDatabaseRequest\x12!\n\x0b\x64\x61tabase_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"B\n\x14StopDatabaseMetadata\x12\x13\n\x0b\x64\x61tabase_id\x18\x01 \x01(\t\x12\x15\n\rdatabase_name\x18\x02 \x01(\t\"7\n\x12GetDatabaseRequest\x12!\n\x0b\x64\x61tabase_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"g\n\x14ListDatabasesRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"b\n\x15ListDatabasesResponse\x12\x30\n\tdatabases\x18\x01 \x03(\x0b\x32\x1d.yandex.cloud.ydb.v1.Database\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x87\x06\n\x15\x43reateDatabaseRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x1a\n\x12resource_preset_id\x18\x04 \x01(\t\x12:\n\x0estorage_config\x18\x05 \x01(\x0b\x32\".yandex.cloud.ydb.v1.StorageConfig\x12\x36\n\x0cscale_policy\x18\x06 \x01(\x0b\x32 .yandex.cloud.ydb.v1.ScalePolicy\x12\x12\n\nnetwork_id\x18\x07 \x01(\t\x12\x12\n\nsubnet_ids\x18\x08 \x03(\t\x12<\n\x0ezonal_database\x18\t \x01(\x0b\x32\".yandex.cloud.ydb.v1.ZonalDatabaseH\x00\x12\x42\n\x11regional_database\x18\n \x01(\x0b\x32%.yandex.cloud.ydb.v1.RegionalDatabaseH\x00\x12\x44\n\x12\x64\x65\x64icated_database\x18\r \x01(\x0b\x32&.yandex.cloud.ydb.v1.DedicatedDatabaseH\x00\x12\x46\n\x13serverless_database\x18\x0e \x01(\x0b\x32\'.yandex.cloud.ydb.v1.ServerlessDatabaseH\x00\x12\x19\n\x11\x61ssign_public_ips\x18\x0b \x01(\x08\x12\x13\n\x0blocation_id\x18\x0c \x01(\t\x12\x46\n\x06labels\x18\x0f \x03(\x0b\x32\x36.yandex.cloud.ydb.v1.CreateDatabaseRequest.LabelsEntry\x12\x38\n\rbackup_config\x18\x10 \x01(\x0b\x32!.yandex.cloud.ydb.v1.BackupConfig\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0f\n\rdatabase_type\"D\n\x16\x43reateDatabaseMetadata\x12\x13\n\x0b\x64\x61tabase_id\x18\x01 \x01(\t\x12\x15\n\rdatabase_name\x18\x02 \x01(\t\"\xcd\x06\n\x15UpdateDatabaseRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x13\n\x0b\x64\x61tabase_id\x18\x03 \x01(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x1a\n\x12resource_preset_id\x18\x06 \x01(\t\x12:\n\x0estorage_config\x18\x07 \x01(\x0b\x32\".yandex.cloud.ydb.v1.StorageConfig\x12\x36\n\x0cscale_policy\x18\x08 \x01(\x0b\x32 .yandex.cloud.ydb.v1.ScalePolicy\x12\x12\n\nnetwork_id\x18\t \x01(\t\x12\x12\n\nsubnet_ids\x18\n \x03(\t\x12<\n\x0ezonal_database\x18\x0b \x01(\x0b\x32\".yandex.cloud.ydb.v1.ZonalDatabaseH\x00\x12\x42\n\x11regional_database\x18\x0c \x01(\x0b\x32%.yandex.cloud.ydb.v1.RegionalDatabaseH\x00\x12\x44\n\x12\x64\x65\x64icated_database\x18\x0f \x01(\x0b\x32&.yandex.cloud.ydb.v1.DedicatedDatabaseH\x00\x12\x46\n\x13serverless_database\x18\x10 \x01(\x0b\x32\'.yandex.cloud.ydb.v1.ServerlessDatabaseH\x00\x12\x19\n\x11\x61ssign_public_ips\x18\r \x01(\x08\x12\x13\n\x0blocation_id\x18\x0e \x01(\t\x12\x46\n\x06labels\x18\x11 \x03(\x0b\x32\x36.yandex.cloud.ydb.v1.UpdateDatabaseRequest.LabelsEntry\x12\x38\n\rbackup_config\x18\x12 \x01(\x0b\x32!.yandex.cloud.ydb.v1.BackupConfig\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0f\n\rdatabase_type\"D\n\x16UpdateDatabaseMetadata\x12\x13\n\x0b\x64\x61tabase_id\x18\x01 \x01(\t\x12\x15\n\rdatabase_name\x18\x02 \x01(\t\",\n\x15\x44\x65leteDatabaseRequest\x12\x13\n\x0b\x64\x61tabase_id\x18\x01 \x01(\t\"D\n\x16\x44\x65leteDatabaseMetadata\x12\x13\n\x0b\x64\x61tabase_id\x18\x01 \x01(\t\x12\x15\n\rdatabase_name\x18\x02 \x01(\t2\xa1\x0b\n\x0f\x44\x61tabaseService\x12v\n\x03Get\x12\'.yandex.cloud.ydb.v1.GetDatabaseRequest\x1a\x1d.yandex.cloud.ydb.v1.Database\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/ydb/v1/databases/{database_id}\x12x\n\x04List\x12).yandex.cloud.ydb.v1.ListDatabasesRequest\x1a*.yandex.cloud.ydb.v1.ListDatabasesResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/ydb/v1/databases\x12\x9b\x01\n\x06\x43reate\x12*.yandex.cloud.ydb.v1.CreateDatabaseRequest\x1a!.yandex.cloud.operation.Operation\"B\x82\xd3\xe4\x93\x02\x16\"\x11/ydb/v1/databases:\x01*\xb2\xd2*\"\n\x16\x43reateDatabaseMetadata\x12\x08\x44\x61tabase\x12\xa9\x01\n\x06Update\x12*.yandex.cloud.ydb.v1.UpdateDatabaseRequest\x1a!.yandex.cloud.operation.Operation\"P\x82\xd3\xe4\x93\x02$2\x1f/ydb/v1/databases/{database_id}:\x01*\xb2\xd2*\"\n\x16UpdateDatabaseMetadata\x12\x08\x44\x61tabase\x12\xa9\x01\n\x05Start\x12).yandex.cloud.ydb.v1.StartDatabaseRequest\x1a!.yandex.cloud.operation.Operation\"R\x82\xd3\xe4\x93\x02\'\"%/ydb/v1/databases/{database_id}:start\xb2\xd2*!\n\x15StartDatabaseMetadata\x12\x08\x44\x61tabase\x12\xa5\x01\n\x04Stop\x12(.yandex.cloud.ydb.v1.StopDatabaseRequest\x1a!.yandex.cloud.operation.Operation\"P\x82\xd3\xe4\x93\x02&\"$/ydb/v1/databases/{database_id}:stop\xb2\xd2* \n\x14StopDatabaseMetadata\x12\x08\x44\x61tabase\x12\xb3\x01\n\x06\x44\x65lete\x12*.yandex.cloud.ydb.v1.DeleteDatabaseRequest\x1a!.yandex.cloud.operation.Operation\"Z\x82\xd3\xe4\x93\x02!*\x1f/ydb/v1/databases/{database_id}\xb2\xd2*/\n\x16\x44\x65leteDatabaseMetadata\x12\x15google.protobuf.Empty\x12\xa2\x01\n\x07Restore\x12).yandex.cloud.ydb.v1.RestoreBackupRequest\x1a!.yandex.cloud.operation.Operation\"I\x82\xd3\xe4\x93\x02\x1e\"\x19/ydb/v1/databases:restore:\x01*\xb2\xd2*!\n\x15RestoreBackupMetadata\x12\x08\x44\x61tabase\x12\xa2\x01\n\x06\x42\x61\x63kup\x12*.yandex.cloud.ydb.v1.BackupDatabaseRequest\x1a!.yandex.cloud.operation.Operation\"I\x82\xd3\xe4\x93\x02\x1d\"\x18/ydb/v1/databases:backup:\x01*\xb2\xd2*\"\n\x16\x42\x61\x63kupDatabaseMetadata\x12\x08\x44\x61tabaseBV\n\x17yandex.cloud.api.ydb.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/ydb/v1;ydbb\x06proto3'
+  serialized_pb=b'\n*yandex/cloud/ydb/v1/database_service.proto\x12\x13yandex.cloud.ydb.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a\"yandex/cloud/ydb/v1/database.proto\x1a yandex/cloud/ydb/v1/backup.proto\"\x89\x01\n\x14RestoreBackupRequest\x12\x1f\n\tbackup_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12!\n\x0b\x64\x61tabase_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x18\n\x10paths_to_restore\x18\x03 \x03(\t\x12\x13\n\x0btarget_path\x18\x04 \x01(\t\"?\n\x15RestoreBackupMetadata\x12\x11\n\tbackup_id\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x61tabase_id\x18\x02 \x01(\t\"j\n\x15\x42\x61\x63kupDatabaseRequest\x12\x13\n\x0b\x64\x61tabase_id\x18\x01 \x01(\t\x12<\n\x0f\x62\x61\x63kup_settings\x18\x02 \x01(\x0b\x32#.yandex.cloud.ydb.v1.BackupSettings\"@\n\x16\x42\x61\x63kupDatabaseMetadata\x12\x11\n\tbackup_id\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x61tabase_id\x18\x02 \x01(\t\"9\n\x14StartDatabaseRequest\x12!\n\x0b\x64\x61tabase_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"C\n\x15StartDatabaseMetadata\x12\x13\n\x0b\x64\x61tabase_id\x18\x01 \x01(\t\x12\x15\n\rdatabase_name\x18\x02 \x01(\t\"8\n\x13StopDatabaseRequest\x12!\n\x0b\x64\x61tabase_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"B\n\x14StopDatabaseMetadata\x12\x13\n\x0b\x64\x61tabase_id\x18\x01 \x01(\t\x12\x15\n\rdatabase_name\x18\x02 \x01(\t\"7\n\x12GetDatabaseRequest\x12!\n\x0b\x64\x61tabase_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"g\n\x14ListDatabasesRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"b\n\x15ListDatabasesResponse\x12\x30\n\tdatabases\x18\x01 \x03(\x0b\x32\x1d.yandex.cloud.ydb.v1.Database\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xc9\x06\n\x15\x43reateDatabaseRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x1a\n\x12resource_preset_id\x18\x04 \x01(\t\x12:\n\x0estorage_config\x18\x05 \x01(\x0b\x32\".yandex.cloud.ydb.v1.StorageConfig\x12\x36\n\x0cscale_policy\x18\x06 \x01(\x0b\x32 .yandex.cloud.ydb.v1.ScalePolicy\x12\x12\n\nnetwork_id\x18\x07 \x01(\t\x12\x12\n\nsubnet_ids\x18\x08 \x03(\t\x12<\n\x0ezonal_database\x18\t \x01(\x0b\x32\".yandex.cloud.ydb.v1.ZonalDatabaseH\x00\x12\x42\n\x11regional_database\x18\n \x01(\x0b\x32%.yandex.cloud.ydb.v1.RegionalDatabaseH\x00\x12\x44\n\x12\x64\x65\x64icated_database\x18\r \x01(\x0b\x32&.yandex.cloud.ydb.v1.DedicatedDatabaseH\x00\x12\x46\n\x13serverless_database\x18\x0e \x01(\x0b\x32\'.yandex.cloud.ydb.v1.ServerlessDatabaseH\x00\x12\x19\n\x11\x61ssign_public_ips\x18\x0b \x01(\x08\x12\x13\n\x0blocation_id\x18\x0c \x01(\t\x12\x46\n\x06labels\x18\x0f \x03(\x0b\x32\x36.yandex.cloud.ydb.v1.CreateDatabaseRequest.LabelsEntry\x12\x38\n\rbackup_config\x18\x10 \x01(\x0b\x32!.yandex.cloud.ydb.v1.BackupConfig\x12@\n\x11monitoring_config\x18\x11 \x01(\x0b\x32%.yandex.cloud.ydb.v1.MonitoringConfig\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0f\n\rdatabase_type\"D\n\x16\x43reateDatabaseMetadata\x12\x13\n\x0b\x64\x61tabase_id\x18\x01 \x01(\t\x12\x15\n\rdatabase_name\x18\x02 \x01(\t\"\x8f\x07\n\x15UpdateDatabaseRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x13\n\x0b\x64\x61tabase_id\x18\x03 \x01(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x1a\n\x12resource_preset_id\x18\x06 \x01(\t\x12:\n\x0estorage_config\x18\x07 \x01(\x0b\x32\".yandex.cloud.ydb.v1.StorageConfig\x12\x36\n\x0cscale_policy\x18\x08 \x01(\x0b\x32 .yandex.cloud.ydb.v1.ScalePolicy\x12\x12\n\nnetwork_id\x18\t \x01(\t\x12\x12\n\nsubnet_ids\x18\n \x03(\t\x12<\n\x0ezonal_database\x18\x0b \x01(\x0b\x32\".yandex.cloud.ydb.v1.ZonalDatabaseH\x00\x12\x42\n\x11regional_database\x18\x0c \x01(\x0b\x32%.yandex.cloud.ydb.v1.RegionalDatabaseH\x00\x12\x44\n\x12\x64\x65\x64icated_database\x18\x0f \x01(\x0b\x32&.yandex.cloud.ydb.v1.DedicatedDatabaseH\x00\x12\x46\n\x13serverless_database\x18\x10 \x01(\x0b\x32\'.yandex.cloud.ydb.v1.ServerlessDatabaseH\x00\x12\x19\n\x11\x61ssign_public_ips\x18\r \x01(\x08\x12\x13\n\x0blocation_id\x18\x0e \x01(\t\x12\x46\n\x06labels\x18\x11 \x03(\x0b\x32\x36.yandex.cloud.ydb.v1.UpdateDatabaseRequest.LabelsEntry\x12\x38\n\rbackup_config\x18\x12 \x01(\x0b\x32!.yandex.cloud.ydb.v1.BackupConfig\x12@\n\x11monitoring_config\x18\x13 \x01(\x0b\x32%.yandex.cloud.ydb.v1.MonitoringConfig\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0f\n\rdatabase_type\"D\n\x16UpdateDatabaseMetadata\x12\x13\n\x0b\x64\x61tabase_id\x18\x01 \x01(\t\x12\x15\n\rdatabase_name\x18\x02 \x01(\t\",\n\x15\x44\x65leteDatabaseRequest\x12\x13\n\x0b\x64\x61tabase_id\x18\x01 \x01(\t\"D\n\x16\x44\x65leteDatabaseMetadata\x12\x13\n\x0b\x64\x61tabase_id\x18\x01 \x01(\t\x12\x15\n\rdatabase_name\x18\x02 \x01(\t2\xa1\x0b\n\x0f\x44\x61tabaseService\x12v\n\x03Get\x12\'.yandex.cloud.ydb.v1.GetDatabaseRequest\x1a\x1d.yandex.cloud.ydb.v1.Database\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/ydb/v1/databases/{database_id}\x12x\n\x04List\x12).yandex.cloud.ydb.v1.ListDatabasesRequest\x1a*.yandex.cloud.ydb.v1.ListDatabasesResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/ydb/v1/databases\x12\x9b\x01\n\x06\x43reate\x12*.yandex.cloud.ydb.v1.CreateDatabaseRequest\x1a!.yandex.cloud.operation.Operation\"B\x82\xd3\xe4\x93\x02\x16\"\x11/ydb/v1/databases:\x01*\xb2\xd2*\"\n\x16\x43reateDatabaseMetadata\x12\x08\x44\x61tabase\x12\xa9\x01\n\x06Update\x12*.yandex.cloud.ydb.v1.UpdateDatabaseRequest\x1a!.yandex.cloud.operation.Operation\"P\x82\xd3\xe4\x93\x02$2\x1f/ydb/v1/databases/{database_id}:\x01*\xb2\xd2*\"\n\x16UpdateDatabaseMetadata\x12\x08\x44\x61tabase\x12\xa9\x01\n\x05Start\x12).yandex.cloud.ydb.v1.StartDatabaseRequest\x1a!.yandex.cloud.operation.Operation\"R\x82\xd3\xe4\x93\x02\'\"%/ydb/v1/databases/{database_id}:start\xb2\xd2*!\n\x15StartDatabaseMetadata\x12\x08\x44\x61tabase\x12\xa5\x01\n\x04Stop\x12(.yandex.cloud.ydb.v1.StopDatabaseRequest\x1a!.yandex.cloud.operation.Operation\"P\x82\xd3\xe4\x93\x02&\"$/ydb/v1/databases/{database_id}:stop\xb2\xd2* \n\x14StopDatabaseMetadata\x12\x08\x44\x61tabase\x12\xb3\x01\n\x06\x44\x65lete\x12*.yandex.cloud.ydb.v1.DeleteDatabaseRequest\x1a!.yandex.cloud.operation.Operation\"Z\x82\xd3\xe4\x93\x02!*\x1f/ydb/v1/databases/{database_id}\xb2\xd2*/\n\x16\x44\x65leteDatabaseMetadata\x12\x15google.protobuf.Empty\x12\xa2\x01\n\x07Restore\x12).yandex.cloud.ydb.v1.RestoreBackupRequest\x1a!.yandex.cloud.operation.Operation\"I\x82\xd3\xe4\x93\x02\x1e\"\x19/ydb/v1/databases:restore:\x01*\xb2\xd2*!\n\x15RestoreBackupMetadata\x12\x08\x44\x61tabase\x12\xa2\x01\n\x06\x42\x61\x63kup\x12*.yandex.cloud.ydb.v1.BackupDatabaseRequest\x1a!.yandex.cloud.operation.Operation\"I\x82\xd3\xe4\x93\x02\x1d\"\x18/ydb/v1/databases:backup:\x01*\xb2\xd2*\"\n\x16\x42\x61\x63kupDatabaseMetadata\x12\x08\x44\x61tabaseBV\n\x17yandex.cloud.api.ydb.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/ydb/v1;ydbb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_ydb_dot_v1_dot_database__pb2.DESCRIPTOR,yandex_dot_cloud_dot_ydb_dot_v1_dot_backup__pb2.DESCRIPTOR,])
 
@@ -496,8 +496,8 @@ _CREATEDATABASEREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1915,
-  serialized_end=1960,
+  serialized_start=1981,
+  serialized_end=2026,
 )
 
 _CREATEDATABASEREQUEST = _descriptor.Descriptor(
@@ -620,6 +620,13 @@ _CREATEDATABASEREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='monitoring_config', full_name='yandex.cloud.ydb.v1.CreateDatabaseRequest.monitoring_config', index=16,
+      number=17, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -638,7 +645,7 @@ _CREATEDATABASEREQUEST = _descriptor.Descriptor(
     fields=[]),
   ],
   serialized_start=1202,
-  serialized_end=1977,
+  serialized_end=2043,
 )
 
 
@@ -676,8 +683,8 @@ _CREATEDATABASEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1979,
-  serialized_end=2047,
+  serialized_start=2045,
+  serialized_end=2113,
 )
 
 
@@ -715,8 +722,8 @@ _UPDATEDATABASEREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1915,
-  serialized_end=1960,
+  serialized_start=1981,
+  serialized_end=2026,
 )
 
 _UPDATEDATABASEREQUEST = _descriptor.Descriptor(
@@ -853,6 +860,13 @@ _UPDATEDATABASEREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='monitoring_config', full_name='yandex.cloud.ydb.v1.UpdateDatabaseRequest.monitoring_config', index=18,
+      number=19, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -870,8 +884,8 @@ _UPDATEDATABASEREQUEST = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=2050,
-  serialized_end=2895,
+  serialized_start=2116,
+  serialized_end=3027,
 )
 
 
@@ -909,8 +923,8 @@ _UPDATEDATABASEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2897,
-  serialized_end=2965,
+  serialized_start=3029,
+  serialized_end=3097,
 )
 
 
@@ -941,8 +955,8 @@ _DELETEDATABASEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2967,
-  serialized_end=3011,
+  serialized_start=3099,
+  serialized_end=3143,
 )
 
 
@@ -980,8 +994,8 @@ _DELETEDATABASEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3013,
-  serialized_end=3081,
+  serialized_start=3145,
+  serialized_end=3213,
 )
 
 _BACKUPDATABASEREQUEST.fields_by_name['backup_settings'].message_type = yandex_dot_cloud_dot_ydb_dot_v1_dot_backup__pb2._BACKUPSETTINGS
@@ -995,6 +1009,7 @@ _CREATEDATABASEREQUEST.fields_by_name['dedicated_database'].message_type = yande
 _CREATEDATABASEREQUEST.fields_by_name['serverless_database'].message_type = yandex_dot_cloud_dot_ydb_dot_v1_dot_database__pb2._SERVERLESSDATABASE
 _CREATEDATABASEREQUEST.fields_by_name['labels'].message_type = _CREATEDATABASEREQUEST_LABELSENTRY
 _CREATEDATABASEREQUEST.fields_by_name['backup_config'].message_type = yandex_dot_cloud_dot_ydb_dot_v1_dot_backup__pb2._BACKUPCONFIG
+_CREATEDATABASEREQUEST.fields_by_name['monitoring_config'].message_type = yandex_dot_cloud_dot_ydb_dot_v1_dot_database__pb2._MONITORINGCONFIG
 _CREATEDATABASEREQUEST.oneofs_by_name['database_type'].fields.append(
   _CREATEDATABASEREQUEST.fields_by_name['zonal_database'])
 _CREATEDATABASEREQUEST.fields_by_name['zonal_database'].containing_oneof = _CREATEDATABASEREQUEST.oneofs_by_name['database_type']
@@ -1017,6 +1032,7 @@ _UPDATEDATABASEREQUEST.fields_by_name['dedicated_database'].message_type = yande
 _UPDATEDATABASEREQUEST.fields_by_name['serverless_database'].message_type = yandex_dot_cloud_dot_ydb_dot_v1_dot_database__pb2._SERVERLESSDATABASE
 _UPDATEDATABASEREQUEST.fields_by_name['labels'].message_type = _UPDATEDATABASEREQUEST_LABELSENTRY
 _UPDATEDATABASEREQUEST.fields_by_name['backup_config'].message_type = yandex_dot_cloud_dot_ydb_dot_v1_dot_backup__pb2._BACKUPCONFIG
+_UPDATEDATABASEREQUEST.fields_by_name['monitoring_config'].message_type = yandex_dot_cloud_dot_ydb_dot_v1_dot_database__pb2._MONITORINGCONFIG
 _UPDATEDATABASEREQUEST.oneofs_by_name['database_type'].fields.append(
   _UPDATEDATABASEREQUEST.fields_by_name['zonal_database'])
 _UPDATEDATABASEREQUEST.fields_by_name['zonal_database'].containing_oneof = _UPDATEDATABASEREQUEST.oneofs_by_name['database_type']
@@ -1202,8 +1218,8 @@ _DATABASESERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=3084,
-  serialized_end=4525,
+  serialized_start=3216,
+  serialized_end=4657,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',

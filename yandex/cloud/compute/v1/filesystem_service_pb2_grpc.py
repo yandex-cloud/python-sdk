@@ -8,7 +8,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class FilesystemServiceStub(object):
-    """A set of methods for managing Filesystem resources.
+    """A set of methods for managing filesystems.
     """
 
     def __init__(self, channel):
@@ -50,20 +50,20 @@ class FilesystemServiceStub(object):
 
 
 class FilesystemServiceServicer(object):
-    """A set of methods for managing Filesystem resources.
+    """A set of methods for managing filesystems.
     """
 
     def Get(self, request, context):
-        """Returns the specified Filesystem resource.
+        """Returns the specified filesystem.
 
-        To get the list of available Filesystem resources, make a [List] request.
+        To get the list of available filesystems, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Retrieves the list of Filesystem resources in the specified folder.
+        """Lists filesystems in the specified folder.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -71,9 +71,6 @@ class FilesystemServiceServicer(object):
 
     def Create(self, request, context):
         """Creates a filesystem in the specified folder.
-
-        You can create an empty filesystem or restore it from a snapshot or an image.
-        Method starts an asynchronous operation that can be cancelled while it is in progress.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -145,7 +142,7 @@ def add_FilesystemServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class FilesystemService(object):
-    """A set of methods for managing Filesystem resources.
+    """A set of methods for managing filesystems.
     """
 
     @staticmethod

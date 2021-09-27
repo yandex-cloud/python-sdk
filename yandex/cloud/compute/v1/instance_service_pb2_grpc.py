@@ -203,14 +203,27 @@ class InstanceServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def AttachFilesystem(self, request, context):
-        """Attaches the disk to the instance.
+        """Attaches the filesystem to the instance.
+
+        The instance and the filesystem must reside in the same availability zone.
+
+        To attach a filesystem, the instance must have a `STOPPED` status ([Instance.status]).
+        To check the instance status, make a [InstanceService.Get] request.
+        To stop the running instance, make a [InstanceService.Stop] request.
+
+        To use the instance with an attached filesystem, the latter must be mounted.
+        For details, see [documentation](/docs/compute/operations/filesystem/attach-to-vm).
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DetachFilesystem(self, request, context):
-        """Detaches the disk from the instance.
+        """Detaches the filesystem from the instance.
+
+        To detach a filesystem, the instance must have a `STOPPED` status ([Instance.status]).
+        To check the instance status, make a [InstanceService.Get] request.
+        To stop the running instance, make a [InstanceService.Stop] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
