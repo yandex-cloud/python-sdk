@@ -26,7 +26,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancer',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n9yandex/cloud/apploadbalancer/v1/http_router_service.proto\x12\x1fyandex.cloud.apploadbalancer.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x31yandex/cloud/apploadbalancer/v1/http_router.proto\x1a\x32yandex/cloud/apploadbalancer/v1/virtual_host.proto\x1a\x1dyandex/cloud/validation.proto\"4\n\x14GetHttpRouterRequest\x12\x1c\n\x0ehttp_router_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\x8b\x01\n\x16ListHttpRoutersRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"u\n\x17ListHttpRoutersResponse\x12\x41\n\x0chttp_routers\x18\x01 \x03(\x0b\x32+.yandex.cloud.apploadbalancer.v1.HttpRouter\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"7\n\x17\x44\x65leteHttpRouterRequest\x12\x1c\n\x0ehttp_router_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"2\n\x18\x44\x65leteHttpRouterMetadata\x12\x16\n\x0ehttp_router_id\x18\x01 \x01(\t\"\xea\x03\n\x17UpdateHttpRouterRequest\x12\x1c\n\x0ehttp_router_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x34\n\x04name\x18\x03 \x01(\tB&\xf2\xc7\x31\"([a-z]([-a-z0-9]{0,61}[a-z0-9])?)?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x9d\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x44.yandex.cloud.apploadbalancer.v1.UpdateHttpRouterRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x43\n\rvirtual_hosts\x18\x06 \x03(\x0b\x32,.yandex.cloud.apploadbalancer.v1.VirtualHost\x12\x16\n\x0ehttps_redirect\x18\x07 \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"2\n\x18UpdateHttpRouterMetadata\x12\x16\n\x0ehttp_router_id\x18\x01 \x01(\t\"\xb4\x03\n\x17\x43reateHttpRouterRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x34\n\x04name\x18\x02 \x01(\tB&\xf2\xc7\x31\"([a-z]([-a-z0-9]{0,61}[a-z0-9])?)?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x9d\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x44.yandex.cloud.apploadbalancer.v1.CreateHttpRouterRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x43\n\rvirtual_hosts\x18\x05 \x03(\x0b\x32,.yandex.cloud.apploadbalancer.v1.VirtualHost\x12\x16\n\x0ehttps_redirect\x18\x06 \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"2\n\x18\x43reateHttpRouterMetadata\x12\x16\n\x0ehttp_router_id\x18\x01 \x01(\t\"\x85\x01\n\x1fListHttpRouterOperationsRequest\x12$\n\x0ehttp_router_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"r\n ListHttpRouterOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\x9f\t\n\x11HttpRouterService\x12\xa3\x01\n\x03Get\x12\x35.yandex.cloud.apploadbalancer.v1.GetHttpRouterRequest\x1a+.yandex.cloud.apploadbalancer.v1.HttpRouter\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/apploadbalancer/v1/httpRouters/{http_router_id}\x12\xa2\x01\n\x04List\x12\x37.yandex.cloud.apploadbalancer.v1.ListHttpRoutersRequest\x1a\x38.yandex.cloud.apploadbalancer.v1.ListHttpRoutersResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/apploadbalancer/v1/httpRouters\x12\xbb\x01\n\x06\x43reate\x12\x38.yandex.cloud.apploadbalancer.v1.CreateHttpRouterRequest\x1a!.yandex.cloud.operation.Operation\"T\x82\xd3\xe4\x93\x02$\"\x1f/apploadbalancer/v1/httpRouters:\x01*\xb2\xd2*&\n\x18\x43reateHttpRouterMetadata\x12\nHttpRouter\x12\xcc\x01\n\x06Update\x12\x38.yandex.cloud.apploadbalancer.v1.UpdateHttpRouterRequest\x1a!.yandex.cloud.operation.Operation\"e\x82\xd3\xe4\x93\x02\x35\x32\x30/apploadbalancer/v1/httpRouters/{http_router_id}:\x01*\xb2\xd2*&\n\x18UpdateHttpRouterMetadata\x12\nHttpRouter\x12\xd4\x01\n\x06\x44\x65lete\x12\x38.yandex.cloud.apploadbalancer.v1.DeleteHttpRouterRequest\x1a!.yandex.cloud.operation.Operation\"m\x82\xd3\xe4\x93\x02\x32*0/apploadbalancer/v1/httpRouters/{http_router_id}\xb2\xd2*1\n\x18\x44\x65leteHttpRouterMetadata\x12\x15google.protobuf.Empty\x12\xda\x01\n\x0eListOperations\x12@.yandex.cloud.apploadbalancer.v1.ListHttpRouterOperationsRequest\x1a\x41.yandex.cloud.apploadbalancer.v1.ListHttpRouterOperationsResponse\"C\x82\xd3\xe4\x93\x02=\x12;/apploadbalancer/v1/httpRouters/{http_router_id}/operationsBz\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancerb\x06proto3'
+  serialized_pb=b'\n9yandex/cloud/apploadbalancer/v1/http_router_service.proto\x12\x1fyandex.cloud.apploadbalancer.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x31yandex/cloud/apploadbalancer/v1/http_router.proto\x1a\x32yandex/cloud/apploadbalancer/v1/virtual_host.proto\x1a\x1dyandex/cloud/validation.proto\"4\n\x14GetHttpRouterRequest\x12\x1c\n\x0ehttp_router_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\x8b\x01\n\x16ListHttpRoutersRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"u\n\x17ListHttpRoutersResponse\x12\x41\n\x0chttp_routers\x18\x01 \x03(\x0b\x32+.yandex.cloud.apploadbalancer.v1.HttpRouter\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"7\n\x17\x44\x65leteHttpRouterRequest\x12\x1c\n\x0ehttp_router_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"2\n\x18\x44\x65leteHttpRouterMetadata\x12\x16\n\x0ehttp_router_id\x18\x01 \x01(\t\"\xd8\x03\n\x17UpdateHttpRouterRequest\x12\x1c\n\x0ehttp_router_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x34\n\x04name\x18\x03 \x01(\tB&\xf2\xc7\x31\"([a-z]([-a-z0-9]{0,61}[a-z0-9])?)?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x9d\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x44.yandex.cloud.apploadbalancer.v1.UpdateHttpRouterRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x43\n\rvirtual_hosts\x18\x06 \x03(\x0b\x32,.yandex.cloud.apploadbalancer.v1.VirtualHost\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x07\x10\x08\"2\n\x18UpdateHttpRouterMetadata\x12\x16\n\x0ehttp_router_id\x18\x01 \x01(\t\"\xa2\x03\n\x17\x43reateHttpRouterRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x34\n\x04name\x18\x02 \x01(\tB&\xf2\xc7\x31\"([a-z]([-a-z0-9]{0,61}[a-z0-9])?)?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x9d\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x44.yandex.cloud.apploadbalancer.v1.CreateHttpRouterRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x43\n\rvirtual_hosts\x18\x05 \x03(\x0b\x32,.yandex.cloud.apploadbalancer.v1.VirtualHost\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x06\x10\x07\"2\n\x18\x43reateHttpRouterMetadata\x12\x16\n\x0ehttp_router_id\x18\x01 \x01(\t\"\x85\x01\n\x1fListHttpRouterOperationsRequest\x12$\n\x0ehttp_router_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"r\n ListHttpRouterOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\x9f\t\n\x11HttpRouterService\x12\xa3\x01\n\x03Get\x12\x35.yandex.cloud.apploadbalancer.v1.GetHttpRouterRequest\x1a+.yandex.cloud.apploadbalancer.v1.HttpRouter\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/apploadbalancer/v1/httpRouters/{http_router_id}\x12\xa2\x01\n\x04List\x12\x37.yandex.cloud.apploadbalancer.v1.ListHttpRoutersRequest\x1a\x38.yandex.cloud.apploadbalancer.v1.ListHttpRoutersResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/apploadbalancer/v1/httpRouters\x12\xbb\x01\n\x06\x43reate\x12\x38.yandex.cloud.apploadbalancer.v1.CreateHttpRouterRequest\x1a!.yandex.cloud.operation.Operation\"T\x82\xd3\xe4\x93\x02$\"\x1f/apploadbalancer/v1/httpRouters:\x01*\xb2\xd2*&\n\x18\x43reateHttpRouterMetadata\x12\nHttpRouter\x12\xcc\x01\n\x06Update\x12\x38.yandex.cloud.apploadbalancer.v1.UpdateHttpRouterRequest\x1a!.yandex.cloud.operation.Operation\"e\x82\xd3\xe4\x93\x02\x35\x32\x30/apploadbalancer/v1/httpRouters/{http_router_id}:\x01*\xb2\xd2*&\n\x18UpdateHttpRouterMetadata\x12\nHttpRouter\x12\xd4\x01\n\x06\x44\x65lete\x12\x38.yandex.cloud.apploadbalancer.v1.DeleteHttpRouterRequest\x1a!.yandex.cloud.operation.Operation\"m\x82\xd3\xe4\x93\x02\x32*0/apploadbalancer/v1/httpRouters/{http_router_id}\xb2\xd2*1\n\x18\x44\x65leteHttpRouterMetadata\x12\x15google.protobuf.Empty\x12\xda\x01\n\x0eListOperations\x12@.yandex.cloud.apploadbalancer.v1.ListHttpRouterOperationsRequest\x1a\x41.yandex.cloud.apploadbalancer.v1.ListHttpRouterOperationsResponse\"C\x82\xd3\xe4\x93\x02=\x12;/apploadbalancer/v1/httpRouters/{http_router_id}/operationsBz\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancerb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_http__router__pb2.DESCRIPTOR,yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_virtual__host__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -255,8 +255,8 @@ _UPDATEHTTPROUTERREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1236,
-  serialized_end=1281,
+  serialized_start=1212,
+  serialized_end=1257,
 )
 
 _UPDATEHTTPROUTERREQUEST = _descriptor.Descriptor(
@@ -309,13 +309,6 @@ _UPDATEHTTPROUTERREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='https_redirect', full_name='yandex.cloud.apploadbalancer.v1.UpdateHttpRouterRequest.https_redirect', index=6,
-      number=7, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -329,7 +322,7 @@ _UPDATEHTTPROUTERREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=791,
-  serialized_end=1281,
+  serialized_end=1263,
 )
 
 
@@ -360,8 +353,8 @@ _UPDATEHTTPROUTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1283,
-  serialized_end=1333,
+  serialized_start=1265,
+  serialized_end=1315,
 )
 
 
@@ -399,8 +392,8 @@ _CREATEHTTPROUTERREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1236,
-  serialized_end=1281,
+  serialized_start=1212,
+  serialized_end=1257,
 )
 
 _CREATEHTTPROUTERREQUEST = _descriptor.Descriptor(
@@ -446,13 +439,6 @@ _CREATEHTTPROUTERREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='https_redirect', full_name='yandex.cloud.apploadbalancer.v1.CreateHttpRouterRequest.https_redirect', index=5,
-      number=6, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -465,8 +451,8 @@ _CREATEHTTPROUTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1336,
-  serialized_end=1772,
+  serialized_start=1318,
+  serialized_end=1736,
 )
 
 
@@ -497,8 +483,8 @@ _CREATEHTTPROUTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1774,
-  serialized_end=1824,
+  serialized_start=1738,
+  serialized_end=1788,
 )
 
 
@@ -543,8 +529,8 @@ _LISTHTTPROUTEROPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1827,
-  serialized_end=1960,
+  serialized_start=1791,
+  serialized_end=1924,
 )
 
 
@@ -582,8 +568,8 @@ _LISTHTTPROUTEROPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1962,
-  serialized_end=2076,
+  serialized_start=1926,
+  serialized_end=2040,
 )
 
 _LISTHTTPROUTERSRESPONSE.fields_by_name['http_routers'].message_type = yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_http__router__pb2._HTTPROUTER
@@ -730,8 +716,8 @@ _HTTPROUTERSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=2079,
-  serialized_end=3262,
+  serialized_start=2043,
+  serialized_end=3226,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',

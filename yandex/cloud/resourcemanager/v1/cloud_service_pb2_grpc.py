@@ -28,6 +28,11 @@ class CloudServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_resourcemanager_dot_v1_dot_cloud__service__pb2.ListCloudsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_resourcemanager_dot_v1_dot_cloud__service__pb2.ListCloudsResponse.FromString,
                 )
+        self.Create = channel.unary_unary(
+                '/yandex.cloud.resourcemanager.v1.CloudService/Create',
+                request_serializer=yandex_dot_cloud_dot_resourcemanager_dot_v1_dot_cloud__service__pb2.CreateCloudRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
         self.Update = channel.unary_unary(
                 '/yandex.cloud.resourcemanager.v1.CloudService/Update',
                 request_serializer=yandex_dot_cloud_dot_resourcemanager_dot_v1_dot_cloud__service__pb2.UpdateCloudRequest.SerializeToString,
@@ -80,6 +85,13 @@ class CloudServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Create(self, request, context):
+        """Creates a cloud in the specified organization.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def Update(self, request, context):
         """Updates the specified cloud.
         """
@@ -89,8 +101,6 @@ class CloudServiceServicer(object):
 
     def Delete(self, request, context):
         """Deletes the specified cloud.
-
-        The method is temporarily unavailable.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -138,6 +148,11 @@ def add_CloudServiceServicer_to_server(servicer, server):
                     servicer.List,
                     request_deserializer=yandex_dot_cloud_dot_resourcemanager_dot_v1_dot_cloud__service__pb2.ListCloudsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_resourcemanager_dot_v1_dot_cloud__service__pb2.ListCloudsResponse.SerializeToString,
+            ),
+            'Create': grpc.unary_unary_rpc_method_handler(
+                    servicer.Create,
+                    request_deserializer=yandex_dot_cloud_dot_resourcemanager_dot_v1_dot_cloud__service__pb2.CreateCloudRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'Update': grpc.unary_unary_rpc_method_handler(
                     servicer.Update,
@@ -211,6 +226,23 @@ class CloudService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.resourcemanager.v1.CloudService/List',
             yandex_dot_cloud_dot_resourcemanager_dot_v1_dot_cloud__service__pb2.ListCloudsRequest.SerializeToString,
             yandex_dot_cloud_dot_resourcemanager_dot_v1_dot_cloud__service__pb2.ListCloudsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Create(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.resourcemanager.v1.CloudService/Create',
+            yandex_dot_cloud_dot_resourcemanager_dot_v1_dot_cloud__service__pb2.CreateCloudRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

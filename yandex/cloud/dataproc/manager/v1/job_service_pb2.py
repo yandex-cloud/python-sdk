@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$yandex.cloud.api.dataproc.manager.v1ZUgithub.com/yandex-cloud/go-genproto/yandex/cloud/dataproc/manager/v1;dataproc_manager',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n2yandex/cloud/dataproc/manager/v1/job_service.proto\x12 yandex.cloud.dataproc.manager.v1\x1a\x1dyandex/cloud/validation.proto\x1a*yandex/cloud/dataproc/manager/v1/job.proto\"\x89\x01\n\x0fListJobsRequest\x12\x1c\n\ncluster_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"`\n\x10ListJobsResponse\x12\x33\n\x04jobs\x18\x01 \x03(\x0b\x32%.yandex.cloud.dataproc.manager.v1.Job\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x8e\x01\n\x16UpdateJobStatusRequest\x12\x1c\n\ncluster_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x18\n\x06job_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12<\n\x06status\x18\x03 \x01(\x0e\x32,.yandex.cloud.dataproc.manager.v1.Job.Status\"\x19\n\x17UpdateJobStatusResponse2\x8b\x02\n\nJobService\x12u\n\nListActive\x12\x31.yandex.cloud.dataproc.manager.v1.ListJobsRequest\x1a\x32.yandex.cloud.dataproc.manager.v1.ListJobsResponse\"\x00\x12\x85\x01\n\x0cUpdateStatus\x12\x38.yandex.cloud.dataproc.manager.v1.UpdateJobStatusRequest\x1a\x39.yandex.cloud.dataproc.manager.v1.UpdateJobStatusResponse\"\x00\x42}\n$yandex.cloud.api.dataproc.manager.v1ZUgithub.com/yandex-cloud/go-genproto/yandex/cloud/dataproc/manager/v1;dataproc_managerb\x06proto3'
+  serialized_pb=b'\n2yandex/cloud/dataproc/manager/v1/job_service.proto\x12 yandex.cloud.dataproc.manager.v1\x1a\x1dyandex/cloud/validation.proto\x1a*yandex/cloud/dataproc/manager/v1/job.proto\"\x89\x01\n\x0fListJobsRequest\x12\x1c\n\ncluster_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"`\n\x10ListJobsResponse\x12\x33\n\x04jobs\x18\x01 \x03(\x0b\x32%.yandex.cloud.dataproc.manager.v1.Job\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xdb\x01\n\x16UpdateJobStatusRequest\x12\x1c\n\ncluster_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x18\n\x06job_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12<\n\x06status\x18\x03 \x01(\x0e\x32,.yandex.cloud.dataproc.manager.v1.Job.Status\x12K\n\x10\x61pplication_info\x18\x04 \x01(\x0b\x32\x31.yandex.cloud.dataproc.manager.v1.ApplicationInfo\"\x19\n\x17UpdateJobStatusResponse2\x8b\x02\n\nJobService\x12u\n\nListActive\x12\x31.yandex.cloud.dataproc.manager.v1.ListJobsRequest\x1a\x32.yandex.cloud.dataproc.manager.v1.ListJobsResponse\"\x00\x12\x85\x01\n\x0cUpdateStatus\x12\x38.yandex.cloud.dataproc.manager.v1.UpdateJobStatusRequest\x1a\x39.yandex.cloud.dataproc.manager.v1.UpdateJobStatusResponse\"\x00\x42}\n$yandex.cloud.api.dataproc.manager.v1ZUgithub.com/yandex-cloud/go-genproto/yandex/cloud/dataproc/manager/v1;dataproc_managerb\x06proto3'
   ,
   dependencies=[yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_dataproc_dot_manager_dot_v1_dot_job__pb2.DESCRIPTOR,])
 
@@ -149,6 +149,13 @@ _UPDATEJOBSTATUSREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='application_info', full_name='yandex.cloud.dataproc.manager.v1.UpdateJobStatusRequest.application_info', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -162,7 +169,7 @@ _UPDATEJOBSTATUSREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=402,
-  serialized_end=544,
+  serialized_end=621,
 )
 
 
@@ -186,12 +193,13 @@ _UPDATEJOBSTATUSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=546,
-  serialized_end=571,
+  serialized_start=623,
+  serialized_end=648,
 )
 
 _LISTJOBSRESPONSE.fields_by_name['jobs'].message_type = yandex_dot_cloud_dot_dataproc_dot_manager_dot_v1_dot_job__pb2._JOB
 _UPDATEJOBSTATUSREQUEST.fields_by_name['status'].enum_type = yandex_dot_cloud_dot_dataproc_dot_manager_dot_v1_dot_job__pb2._JOB_STATUS
+_UPDATEJOBSTATUSREQUEST.fields_by_name['application_info'].message_type = yandex_dot_cloud_dot_dataproc_dot_manager_dot_v1_dot_job__pb2._APPLICATIONINFO
 DESCRIPTOR.message_types_by_name['ListJobsRequest'] = _LISTJOBSREQUEST
 DESCRIPTOR.message_types_by_name['ListJobsResponse'] = _LISTJOBSRESPONSE
 DESCRIPTOR.message_types_by_name['UpdateJobStatusRequest'] = _UPDATEJOBSTATUSREQUEST
@@ -242,8 +250,8 @@ _JOBSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=574,
-  serialized_end=841,
+  serialized_start=651,
+  serialized_end=918,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListActive',

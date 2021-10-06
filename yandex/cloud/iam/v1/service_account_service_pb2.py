@@ -26,7 +26,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\027yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iam',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n1yandex/cloud/iam/v1/service_account_service.proto\x12\x13yandex.cloud.iam.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a)yandex/cloud/iam/v1/service_account.proto\x1a yandex/cloud/access/access.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"D\n\x18GetServiceAccountRequest\x12(\n\x12service_account_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x97\x01\n\x1aListServiceAccountsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"u\n\x1bListServiceAccountsResponse\x12=\n\x10service_accounts\x18\x01 \x03(\x0b\x32#.yandex.cloud.iam.v1.ServiceAccount\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x93\x01\n\x1b\x43reateServiceAccountRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x33\n\x04name\x18\x02 \x01(\tB%\xe8\xc7\x31\x01\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\":\n\x1c\x43reateServiceAccountMetadata\x12\x1a\n\x12service_account_id\x18\x01 \x01(\t\"\xcd\x01\n\x1bUpdateServiceAccountRequest\x12(\n\x12service_account_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x33\n\x04name\x18\x03 \x01(\tB%\xe8\xc7\x31\x01\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\":\n\x1cUpdateServiceAccountMetadata\x12\x1a\n\x12service_account_id\x18\x01 \x01(\t\"G\n\x1b\x44\x65leteServiceAccountRequest\x12(\n\x12service_account_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\":\n\x1c\x44\x65leteServiceAccountMetadata\x12\x1a\n\x12service_account_id\x18\x01 \x01(\t\"\x8d\x01\n#ListServiceAccountOperationsRequest\x12(\n\x12service_account_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"v\n$ListServiceAccountOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xe8\r\n\x15ServiceAccountService\x12\x8f\x01\n\x03Get\x12-.yandex.cloud.iam.v1.GetServiceAccountRequest\x1a#.yandex.cloud.iam.v1.ServiceAccount\"4\x82\xd3\xe4\x93\x02.\x12,/iam/v1/serviceAccounts/{service_account_id}\x12\x8a\x01\n\x04List\x12/.yandex.cloud.iam.v1.ListServiceAccountsRequest\x1a\x30.yandex.cloud.iam.v1.ListServiceAccountsResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/iam/v1/serviceAccounts\x12\xb3\x01\n\x06\x43reate\x12\x30.yandex.cloud.iam.v1.CreateServiceAccountRequest\x1a!.yandex.cloud.operation.Operation\"T\x82\xd3\xe4\x93\x02\x1c\"\x17/iam/v1/serviceAccounts:\x01*\xb2\xd2*.\n\x1c\x43reateServiceAccountMetadata\x12\x0eServiceAccount\x12\xc8\x01\n\x06Update\x12\x30.yandex.cloud.iam.v1.UpdateServiceAccountRequest\x1a!.yandex.cloud.operation.Operation\"i\x82\xd3\xe4\x93\x02\x31\x32,/iam/v1/serviceAccounts/{service_account_id}:\x01*\xb2\xd2*.\n\x1cUpdateServiceAccountMetadata\x12\x0eServiceAccount\x12\xcc\x01\n\x06\x44\x65lete\x12\x30.yandex.cloud.iam.v1.DeleteServiceAccountRequest\x1a!.yandex.cloud.operation.Operation\"m\x82\xd3\xe4\x93\x02.*,/iam/v1/serviceAccounts/{service_account_id}\xb2\xd2*5\n\x1c\x44\x65leteServiceAccountMetadata\x12\x15google.protobuf.Empty\x12\xb7\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"@\x82\xd3\xe4\x93\x02:\x12\x38/iam/v1/serviceAccounts/{resource_id}:listAccessBindings\x12\xe6\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x7f\x82\xd3\xe4\x93\x02<\"7/iam/v1/serviceAccounts/{resource_id}:setAccessBindings:\x01*\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\xf3\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x85\x01\x82\xd3\xe4\x93\x02?\":/iam/v1/serviceAccounts/{resource_id}:updateAccessBindings:\x01*\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\xc6\x01\n\x0eListOperations\x12\x38.yandex.cloud.iam.v1.ListServiceAccountOperationsRequest\x1a\x39.yandex.cloud.iam.v1.ListServiceAccountOperationsResponse\"?\x82\xd3\xe4\x93\x02\x39\x12\x37/iam/v1/serviceAccounts/{service_account_id}/operationsBV\n\x17yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3'
+  serialized_pb=b'\n1yandex/cloud/iam/v1/service_account_service.proto\x12\x13yandex.cloud.iam.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a)yandex/cloud/iam/v1/service_account.proto\x1a yandex/cloud/access/access.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"D\n\x18GetServiceAccountRequest\x12(\n\x12service_account_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x97\x01\n\x1aListServiceAccountsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"u\n\x1bListServiceAccountsResponse\x12=\n\x10service_accounts\x18\x01 \x03(\x0b\x32#.yandex.cloud.iam.v1.ServiceAccount\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xd2\x02\n\x1b\x43reateServiceAccountRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x33\n\x04name\x18\x02 \x01(\tB%\xe8\xc7\x31\x01\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8d\x01\n\x06labels\x18\x04 \x03(\x0b\x32<.yandex.cloud.iam.v1.CreateServiceAccountRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\":\n\x1c\x43reateServiceAccountMetadata\x12\x1a\n\x12service_account_id\x18\x01 \x01(\t\"\x8c\x03\n\x1bUpdateServiceAccountRequest\x12(\n\x12service_account_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x33\n\x04name\x18\x03 \x01(\tB%\xe8\xc7\x31\x01\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8d\x01\n\x06labels\x18\x05 \x03(\x0b\x32<.yandex.cloud.iam.v1.UpdateServiceAccountRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\":\n\x1cUpdateServiceAccountMetadata\x12\x1a\n\x12service_account_id\x18\x01 \x01(\t\"G\n\x1b\x44\x65leteServiceAccountRequest\x12(\n\x12service_account_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\":\n\x1c\x44\x65leteServiceAccountMetadata\x12\x1a\n\x12service_account_id\x18\x01 \x01(\t\"\x8d\x01\n#ListServiceAccountOperationsRequest\x12(\n\x12service_account_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"v\n$ListServiceAccountOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xe8\r\n\x15ServiceAccountService\x12\x8f\x01\n\x03Get\x12-.yandex.cloud.iam.v1.GetServiceAccountRequest\x1a#.yandex.cloud.iam.v1.ServiceAccount\"4\x82\xd3\xe4\x93\x02.\x12,/iam/v1/serviceAccounts/{service_account_id}\x12\x8a\x01\n\x04List\x12/.yandex.cloud.iam.v1.ListServiceAccountsRequest\x1a\x30.yandex.cloud.iam.v1.ListServiceAccountsResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/iam/v1/serviceAccounts\x12\xb3\x01\n\x06\x43reate\x12\x30.yandex.cloud.iam.v1.CreateServiceAccountRequest\x1a!.yandex.cloud.operation.Operation\"T\x82\xd3\xe4\x93\x02\x1c\"\x17/iam/v1/serviceAccounts:\x01*\xb2\xd2*.\n\x1c\x43reateServiceAccountMetadata\x12\x0eServiceAccount\x12\xc8\x01\n\x06Update\x12\x30.yandex.cloud.iam.v1.UpdateServiceAccountRequest\x1a!.yandex.cloud.operation.Operation\"i\x82\xd3\xe4\x93\x02\x31\x32,/iam/v1/serviceAccounts/{service_account_id}:\x01*\xb2\xd2*.\n\x1cUpdateServiceAccountMetadata\x12\x0eServiceAccount\x12\xcc\x01\n\x06\x44\x65lete\x12\x30.yandex.cloud.iam.v1.DeleteServiceAccountRequest\x1a!.yandex.cloud.operation.Operation\"m\x82\xd3\xe4\x93\x02.*,/iam/v1/serviceAccounts/{service_account_id}\xb2\xd2*5\n\x1c\x44\x65leteServiceAccountMetadata\x12\x15google.protobuf.Empty\x12\xb7\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"@\x82\xd3\xe4\x93\x02:\x12\x38/iam/v1/serviceAccounts/{resource_id}:listAccessBindings\x12\xe6\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x7f\x82\xd3\xe4\x93\x02<\"7/iam/v1/serviceAccounts/{resource_id}:setAccessBindings:\x01*\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\xf3\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x85\x01\x82\xd3\xe4\x93\x02?\":/iam/v1/serviceAccounts/{resource_id}:updateAccessBindings:\x01*\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\xc6\x01\n\x0eListOperations\x12\x38.yandex.cloud.iam.v1.ListServiceAccountOperationsRequest\x1a\x39.yandex.cloud.iam.v1.ListServiceAccountOperationsResponse\"?\x82\xd3\xe4\x93\x02\x39\x12\x37/iam/v1/serviceAccounts/{service_account_id}/operationsBV\n\x17yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_iam_dot_v1_dot_service__account__pb2.DESCRIPTOR,yandex_dot_cloud_dot_access_dot_access__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -157,6 +157,44 @@ _LISTSERVICEACCOUNTSRESPONSE = _descriptor.Descriptor(
 )
 
 
+_CREATESERVICEACCOUNTREQUEST_LABELSENTRY = _descriptor.Descriptor(
+  name='LabelsEntry',
+  full_name='yandex.cloud.iam.v1.CreateServiceAccountRequest.LabelsEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='yandex.cloud.iam.v1.CreateServiceAccountRequest.LabelsEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='yandex.cloud.iam.v1.CreateServiceAccountRequest.LabelsEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=957,
+  serialized_end=1002,
+)
+
 _CREATESERVICEACCOUNTREQUEST = _descriptor.Descriptor(
   name='CreateServiceAccountRequest',
   full_name='yandex.cloud.iam.v1.CreateServiceAccountRequest',
@@ -186,10 +224,17 @@ _CREATESERVICEACCOUNTREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='labels', full_name='yandex.cloud.iam.v1.CreateServiceAccountRequest.labels', index=3,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
-  nested_types=[],
+  nested_types=[_CREATESERVICEACCOUNTREQUEST_LABELSENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -199,7 +244,7 @@ _CREATESERVICEACCOUNTREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=664,
-  serialized_end=811,
+  serialized_end=1002,
 )
 
 
@@ -230,10 +275,48 @@ _CREATESERVICEACCOUNTMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=813,
-  serialized_end=871,
+  serialized_start=1004,
+  serialized_end=1062,
 )
 
+
+_UPDATESERVICEACCOUNTREQUEST_LABELSENTRY = _descriptor.Descriptor(
+  name='LabelsEntry',
+  full_name='yandex.cloud.iam.v1.UpdateServiceAccountRequest.LabelsEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='yandex.cloud.iam.v1.UpdateServiceAccountRequest.LabelsEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='yandex.cloud.iam.v1.UpdateServiceAccountRequest.LabelsEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=957,
+  serialized_end=1002,
+)
 
 _UPDATESERVICEACCOUNTREQUEST = _descriptor.Descriptor(
   name='UpdateServiceAccountRequest',
@@ -271,10 +354,17 @@ _UPDATESERVICEACCOUNTREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='labels', full_name='yandex.cloud.iam.v1.UpdateServiceAccountRequest.labels', index=4,
+      number=5, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
-  nested_types=[],
+  nested_types=[_UPDATESERVICEACCOUNTREQUEST_LABELSENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -283,8 +373,8 @@ _UPDATESERVICEACCOUNTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=874,
-  serialized_end=1079,
+  serialized_start=1065,
+  serialized_end=1461,
 )
 
 
@@ -315,8 +405,8 @@ _UPDATESERVICEACCOUNTMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1081,
-  serialized_end=1139,
+  serialized_start=1463,
+  serialized_end=1521,
 )
 
 
@@ -347,8 +437,8 @@ _DELETESERVICEACCOUNTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1141,
-  serialized_end=1212,
+  serialized_start=1523,
+  serialized_end=1594,
 )
 
 
@@ -379,8 +469,8 @@ _DELETESERVICEACCOUNTMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1214,
-  serialized_end=1272,
+  serialized_start=1596,
+  serialized_end=1654,
 )
 
 
@@ -425,8 +515,8 @@ _LISTSERVICEACCOUNTOPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1275,
-  serialized_end=1416,
+  serialized_start=1657,
+  serialized_end=1798,
 )
 
 
@@ -464,12 +554,16 @@ _LISTSERVICEACCOUNTOPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1418,
-  serialized_end=1536,
+  serialized_start=1800,
+  serialized_end=1918,
 )
 
 _LISTSERVICEACCOUNTSRESPONSE.fields_by_name['service_accounts'].message_type = yandex_dot_cloud_dot_iam_dot_v1_dot_service__account__pb2._SERVICEACCOUNT
+_CREATESERVICEACCOUNTREQUEST_LABELSENTRY.containing_type = _CREATESERVICEACCOUNTREQUEST
+_CREATESERVICEACCOUNTREQUEST.fields_by_name['labels'].message_type = _CREATESERVICEACCOUNTREQUEST_LABELSENTRY
+_UPDATESERVICEACCOUNTREQUEST_LABELSENTRY.containing_type = _UPDATESERVICEACCOUNTREQUEST
 _UPDATESERVICEACCOUNTREQUEST.fields_by_name['update_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
+_UPDATESERVICEACCOUNTREQUEST.fields_by_name['labels'].message_type = _UPDATESERVICEACCOUNTREQUEST_LABELSENTRY
 _LISTSERVICEACCOUNTOPERATIONSRESPONSE.fields_by_name['operations'].message_type = yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION
 DESCRIPTOR.message_types_by_name['GetServiceAccountRequest'] = _GETSERVICEACCOUNTREQUEST
 DESCRIPTOR.message_types_by_name['ListServiceAccountsRequest'] = _LISTSERVICEACCOUNTSREQUEST
@@ -506,11 +600,19 @@ ListServiceAccountsResponse = _reflection.GeneratedProtocolMessageType('ListServ
 _sym_db.RegisterMessage(ListServiceAccountsResponse)
 
 CreateServiceAccountRequest = _reflection.GeneratedProtocolMessageType('CreateServiceAccountRequest', (_message.Message,), {
+
+  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
+    'DESCRIPTOR' : _CREATESERVICEACCOUNTREQUEST_LABELSENTRY,
+    '__module__' : 'yandex.cloud.iam.v1.service_account_service_pb2'
+    # @@protoc_insertion_point(class_scope:yandex.cloud.iam.v1.CreateServiceAccountRequest.LabelsEntry)
+    })
+  ,
   'DESCRIPTOR' : _CREATESERVICEACCOUNTREQUEST,
   '__module__' : 'yandex.cloud.iam.v1.service_account_service_pb2'
   # @@protoc_insertion_point(class_scope:yandex.cloud.iam.v1.CreateServiceAccountRequest)
   })
 _sym_db.RegisterMessage(CreateServiceAccountRequest)
+_sym_db.RegisterMessage(CreateServiceAccountRequest.LabelsEntry)
 
 CreateServiceAccountMetadata = _reflection.GeneratedProtocolMessageType('CreateServiceAccountMetadata', (_message.Message,), {
   'DESCRIPTOR' : _CREATESERVICEACCOUNTMETADATA,
@@ -520,11 +622,19 @@ CreateServiceAccountMetadata = _reflection.GeneratedProtocolMessageType('CreateS
 _sym_db.RegisterMessage(CreateServiceAccountMetadata)
 
 UpdateServiceAccountRequest = _reflection.GeneratedProtocolMessageType('UpdateServiceAccountRequest', (_message.Message,), {
+
+  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
+    'DESCRIPTOR' : _UPDATESERVICEACCOUNTREQUEST_LABELSENTRY,
+    '__module__' : 'yandex.cloud.iam.v1.service_account_service_pb2'
+    # @@protoc_insertion_point(class_scope:yandex.cloud.iam.v1.UpdateServiceAccountRequest.LabelsEntry)
+    })
+  ,
   'DESCRIPTOR' : _UPDATESERVICEACCOUNTREQUEST,
   '__module__' : 'yandex.cloud.iam.v1.service_account_service_pb2'
   # @@protoc_insertion_point(class_scope:yandex.cloud.iam.v1.UpdateServiceAccountRequest)
   })
 _sym_db.RegisterMessage(UpdateServiceAccountRequest)
+_sym_db.RegisterMessage(UpdateServiceAccountRequest.LabelsEntry)
 
 UpdateServiceAccountMetadata = _reflection.GeneratedProtocolMessageType('UpdateServiceAccountMetadata', (_message.Message,), {
   'DESCRIPTOR' : _UPDATESERVICEACCOUNTMETADATA,
@@ -568,12 +678,16 @@ _LISTSERVICEACCOUNTSREQUEST.fields_by_name['folder_id']._options = None
 _LISTSERVICEACCOUNTSREQUEST.fields_by_name['page_size']._options = None
 _LISTSERVICEACCOUNTSREQUEST.fields_by_name['page_token']._options = None
 _LISTSERVICEACCOUNTSREQUEST.fields_by_name['filter']._options = None
+_CREATESERVICEACCOUNTREQUEST_LABELSENTRY._options = None
 _CREATESERVICEACCOUNTREQUEST.fields_by_name['folder_id']._options = None
 _CREATESERVICEACCOUNTREQUEST.fields_by_name['name']._options = None
 _CREATESERVICEACCOUNTREQUEST.fields_by_name['description']._options = None
+_CREATESERVICEACCOUNTREQUEST.fields_by_name['labels']._options = None
+_UPDATESERVICEACCOUNTREQUEST_LABELSENTRY._options = None
 _UPDATESERVICEACCOUNTREQUEST.fields_by_name['service_account_id']._options = None
 _UPDATESERVICEACCOUNTREQUEST.fields_by_name['name']._options = None
 _UPDATESERVICEACCOUNTREQUEST.fields_by_name['description']._options = None
+_UPDATESERVICEACCOUNTREQUEST.fields_by_name['labels']._options = None
 _DELETESERVICEACCOUNTREQUEST.fields_by_name['service_account_id']._options = None
 _LISTSERVICEACCOUNTOPERATIONSREQUEST.fields_by_name['service_account_id']._options = None
 _LISTSERVICEACCOUNTOPERATIONSREQUEST.fields_by_name['page_size']._options = None
@@ -586,8 +700,8 @@ _SERVICEACCOUNTSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1539,
-  serialized_end=3307,
+  serialized_start=1921,
+  serialized_end=3689,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
