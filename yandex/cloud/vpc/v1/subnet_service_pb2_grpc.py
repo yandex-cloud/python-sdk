@@ -37,6 +37,16 @@ class SubnetServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_subnet__service__pb2.UpdateSubnetRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
+        self.AddCidrBlocks = channel.unary_unary(
+                '/yandex.cloud.vpc.v1.SubnetService/AddCidrBlocks',
+                request_serializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_subnet__service__pb2.AddSubnetCidrBlocksRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
+        self.RemoveCidrBlocks = channel.unary_unary(
+                '/yandex.cloud.vpc.v1.SubnetService/RemoveCidrBlocks',
+                request_serializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_subnet__service__pb2.RemoveSubnetCidrBlocksRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
         self.Delete = channel.unary_unary(
                 '/yandex.cloud.vpc.v1.SubnetService/Delete',
                 request_serializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_subnet__service__pb2.DeleteSubnetRequest.SerializeToString,
@@ -95,6 +105,22 @@ class SubnetServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def AddCidrBlocks(self, request, context):
+        """Adds CIDR blocks to the specified subnet.
+        Method starts an asynchronous operation that can be cancelled while it is in progress.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def RemoveCidrBlocks(self, request, context):
+        """Removes CIDR blocks from the specified subnet.
+        Method starts an asynchronous operation that can be cancelled while it is in progress.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def Delete(self, request, context):
         """Deletes the specified subnet.
         """
@@ -144,6 +170,16 @@ def add_SubnetServiceServicer_to_server(servicer, server):
             'Update': grpc.unary_unary_rpc_method_handler(
                     servicer.Update,
                     request_deserializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_subnet__service__pb2.UpdateSubnetRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'AddCidrBlocks': grpc.unary_unary_rpc_method_handler(
+                    servicer.AddCidrBlocks,
+                    request_deserializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_subnet__service__pb2.AddSubnetCidrBlocksRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'RemoveCidrBlocks': grpc.unary_unary_rpc_method_handler(
+                    servicer.RemoveCidrBlocks,
+                    request_deserializer=yandex_dot_cloud_dot_vpc_dot_v1_dot_subnet__service__pb2.RemoveSubnetCidrBlocksRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'Delete': grpc.unary_unary_rpc_method_handler(
@@ -241,6 +277,40 @@ class SubnetService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.vpc.v1.SubnetService/Update',
             yandex_dot_cloud_dot_vpc_dot_v1_dot_subnet__service__pb2.UpdateSubnetRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def AddCidrBlocks(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.vpc.v1.SubnetService/AddCidrBlocks',
+            yandex_dot_cloud_dot_vpc_dot_v1_dot_subnet__service__pb2.AddSubnetCidrBlocksRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RemoveCidrBlocks(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.vpc.v1.SubnetService/RemoveCidrBlocks',
+            yandex_dot_cloud_dot_vpc_dot_v1_dot_subnet__service__pb2.RemoveSubnetCidrBlocksRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
