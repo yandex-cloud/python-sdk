@@ -72,6 +72,7 @@ class Dataproc(object):
         computenode_preemptible=None,
         computenode_cpu_utilization_target=None,
         computenode_decommission_timeout=None,
+        log_group_id=None,
     ):
         """
         Create Yandex.Cloud Data Proc cluster.
@@ -145,6 +146,9 @@ class Dataproc(object):
         :param computenode_decommission_timeout: Timeout to gracefully decommission nodes during downscaling.
                                                  In seconds.
         :type computenode_decommission_timeout: int
+        :param log_group_id: Id of log group to write logs. By default logs will be sent to default log group.
+                             To disable cloud log sending set cluster property dataproc:disable_cloud_logging = true
+        :type log_group_id: str
 
         :return: Cluster ID
         :rtype: str
@@ -253,6 +257,7 @@ class Dataproc(object):
             zone_id=zone,
             service_account_id=service_account_id,
             bucket=s3_bucket,
+            log_group_id=log_group_id,
         )
         result = self.sdk.create_operation_and_get_result(
             request,
