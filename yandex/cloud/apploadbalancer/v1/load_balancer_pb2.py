@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancer',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n3yandex/cloud/apploadbalancer/v1/load_balancer.proto\x12\x1fyandex.cloud.apploadbalancer.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\x1a\x32yandex/cloud/apploadbalancer/v1/target_group.proto\"\x98\x05\n\x0cLoadBalancer\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x11\n\tfolder_id\x18\x04 \x01(\t\x12I\n\x06labels\x18\x05 \x03(\x0b\x32\x39.yandex.cloud.apploadbalancer.v1.LoadBalancer.LabelsEntry\x12\x44\n\x06status\x18\x06 \x01(\x0e\x32\x34.yandex.cloud.apploadbalancer.v1.LoadBalancer.Status\x12\x11\n\tregion_id\x18\x07 \x01(\t\x12\x12\n\nnetwork_id\x18\x08 \x01(\t\x12<\n\tlisteners\x18\t \x03(\x0b\x32).yandex.cloud.apploadbalancer.v1.Listener\x12L\n\x11\x61llocation_policy\x18\n \x01(\x0b\x32\x31.yandex.cloud.apploadbalancer.v1.AllocationPolicy\x12\x14\n\x0clog_group_id\x18\x0b \x01(\t\x12\x1a\n\x12security_group_ids\x18\x0c \x03(\t\x12.\n\ncreated_at\x18\r \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"q\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0c\n\x08STARTING\x10\x02\x12\n\n\x06\x41\x43TIVE\x10\x03\x12\x0c\n\x08STOPPING\x10\x04\x12\x0b\n\x07STOPPED\x10\x05\x12\x0c\n\x08\x44\x45LETING\x10\x06\"\x9f\x02\n\x07\x41\x64\x64ress\x12U\n\x15\x65xternal_ipv4_address\x18\x01 \x01(\x0b\x32\x34.yandex.cloud.apploadbalancer.v1.ExternalIpv4AddressH\x00\x12U\n\x15internal_ipv4_address\x18\x02 \x01(\x0b\x32\x34.yandex.cloud.apploadbalancer.v1.InternalIpv4AddressH\x00\x12U\n\x15\x65xternal_ipv6_address\x18\x03 \x01(\x0b\x32\x34.yandex.cloud.apploadbalancer.v1.ExternalIpv6AddressH\x00\x42\x0f\n\x07\x61\x64\x64ress\x12\x04\xc0\xc1\x31\x01\"&\n\x13\x45xternalIpv4Address\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\"9\n\x13InternalIpv4Address\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x11\n\tsubnet_id\x18\x02 \x01(\t\"&\n\x13\x45xternalIpv6Address\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\"M\n\x08Location\x12\x15\n\x07zone_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tsubnet_id\x18\x02 \x01(\t\x12\x17\n\x0f\x64isable_traffic\x18\x03 \x01(\x08\"]\n\x10\x41llocationPolicy\x12I\n\tlocations\x18\x01 \x03(\x0b\x32).yandex.cloud.apploadbalancer.v1.LocationB\x0b\x82\xc8\x31\x03>=1\x90\xc8\x31\x01\"\xa7\x02\n\x08Listener\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12<\n\tendpoints\x18\x02 \x03(\x0b\x32).yandex.cloud.apploadbalancer.v1.Endpoint\x12=\n\x04http\x18\x03 \x01(\x0b\x32-.yandex.cloud.apploadbalancer.v1.HttpListenerH\x00\x12;\n\x03tls\x18\x04 \x01(\x0b\x32,.yandex.cloud.apploadbalancer.v1.TlsListenerH\x00\x12;\n\x03tcp\x18\x05 \x01(\x0b\x32,.yandex.cloud.apploadbalancer.v1.TcpListenerH\x00\x42\x10\n\x08listener\x12\x04\xc0\xc1\x31\x01\"q\n\x08\x45ndpoint\x12\x43\n\taddresses\x18\x01 \x03(\x0b\x32(.yandex.cloud.apploadbalancer.v1.AddressB\x06\x82\xc8\x31\x02>0\x12 \n\x05ports\x18\x02 \x03(\x03\x42\x11\x82\xc8\x31\x02>0\xfa\xc7\x31\x07\x31-65535\"\x8c\x01\n\x0cHttpListener\x12=\n\x07handler\x18\x01 \x01(\x0b\x32,.yandex.cloud.apploadbalancer.v1.HttpHandler\x12=\n\tredirects\x18\x02 \x01(\x0b\x32*.yandex.cloud.apploadbalancer.v1.Redirects\"\x9a\x01\n\x0bTlsListener\x12J\n\x0f\x64\x65\x66\x61ult_handler\x18\x01 \x01(\x0b\x32+.yandex.cloud.apploadbalancer.v1.TlsHandlerB\x04\xe8\xc7\x31\x01\x12?\n\x0csni_handlers\x18\x02 \x03(\x0b\x32).yandex.cloud.apploadbalancer.v1.SniMatch\"N\n\x0bTcpListener\x12?\n\x07handler\x18\x01 \x01(\x0b\x32..yandex.cloud.apploadbalancer.v1.StreamHandler\".\n\x0cHttp2Options\x12\x1e\n\x16max_concurrent_streams\x18\x01 \x01(\x03\")\n\rStreamHandler\x12\x18\n\x10\x62\x61\x63kend_group_id\x18\x01 \x01(\t\"\x9a\x01\n\x0bHttpHandler\x12\x16\n\x0ehttp_router_id\x18\x01 \x01(\t\x12\x46\n\rhttp2_options\x18\x02 \x01(\x0b\x32-.yandex.cloud.apploadbalancer.v1.Http2OptionsH\x00\x12\x16\n\x0c\x61llow_http10\x18\x03 \x01(\x08H\x00\x42\x13\n\x11protocol_settings\"\"\n\tRedirects\x12\x15\n\rhttp_to_https\x18\x01 \x01(\x08\"\x80\x01\n\x08SniMatch\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1c\n\x0cserver_names\x18\x02 \x03(\tB\x06\x82\xc8\x31\x02>0\x12\x42\n\x07handler\x18\x03 \x01(\x0b\x32+.yandex.cloud.apploadbalancer.v1.TlsHandlerB\x04\xe8\xc7\x31\x01\"\xce\x01\n\nTlsHandler\x12\x44\n\x0chttp_handler\x18\x02 \x01(\x0b\x32,.yandex.cloud.apploadbalancer.v1.HttpHandlerH\x00\x12H\n\x0estream_handler\x18\x04 \x01(\x0b\x32..yandex.cloud.apploadbalancer.v1.StreamHandlerH\x00\x12\x1f\n\x0f\x63\x65rtificate_ids\x18\x03 \x03(\tB\x06\x82\xc8\x31\x02>0B\x0f\n\x07handler\x12\x04\xc0\xc1\x31\x01\"\x8c\x04\n\x0bTargetState\x12N\n\x06status\x18\x01 \x01(\x0b\x32>.yandex.cloud.apploadbalancer.v1.TargetState.HealthcheckStatus\x12=\n\x06target\x18\x02 \x01(\x0b\x32\'.yandex.cloud.apploadbalancer.v1.TargetB\x04\xe8\xc7\x31\x01\x1an\n\x11HealthcheckStatus\x12Y\n\rzone_statuses\x18\x01 \x03(\x0b\x32\x42.yandex.cloud.apploadbalancer.v1.TargetState.ZoneHealthcheckStatus\x1a\x8d\x01\n\x15ZoneHealthcheckStatus\x12\x15\n\x07zone_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x43\n\x06status\x18\x02 \x01(\x0e\x32\x33.yandex.cloud.apploadbalancer.v1.TargetState.Status\x12\x18\n\x10\x66\x61iled_active_hc\x18\x03 \x01(\x08\"n\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0b\n\x07HEALTHY\x10\x01\x12\x15\n\x11PARTIALLY_HEALTHY\x10\x02\x12\r\n\tUNHEALTHY\x10\x03\x12\x0c\n\x08\x44RAINING\x10\x04\x12\x0b\n\x07TIMEOUT\x10\x05\x42z\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancerb\x06proto3'
+  serialized_pb=b'\n3yandex/cloud/apploadbalancer/v1/load_balancer.proto\x12\x1fyandex.cloud.apploadbalancer.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\x1a\x32yandex/cloud/apploadbalancer/v1/target_group.proto\"\x98\x05\n\x0cLoadBalancer\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x11\n\tfolder_id\x18\x04 \x01(\t\x12I\n\x06labels\x18\x05 \x03(\x0b\x32\x39.yandex.cloud.apploadbalancer.v1.LoadBalancer.LabelsEntry\x12\x44\n\x06status\x18\x06 \x01(\x0e\x32\x34.yandex.cloud.apploadbalancer.v1.LoadBalancer.Status\x12\x11\n\tregion_id\x18\x07 \x01(\t\x12\x12\n\nnetwork_id\x18\x08 \x01(\t\x12<\n\tlisteners\x18\t \x03(\x0b\x32).yandex.cloud.apploadbalancer.v1.Listener\x12L\n\x11\x61llocation_policy\x18\n \x01(\x0b\x32\x31.yandex.cloud.apploadbalancer.v1.AllocationPolicy\x12\x14\n\x0clog_group_id\x18\x0b \x01(\t\x12\x1a\n\x12security_group_ids\x18\x0c \x03(\t\x12.\n\ncreated_at\x18\r \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"q\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0c\n\x08STARTING\x10\x02\x12\n\n\x06\x41\x43TIVE\x10\x03\x12\x0c\n\x08STOPPING\x10\x04\x12\x0b\n\x07STOPPED\x10\x05\x12\x0c\n\x08\x44\x45LETING\x10\x06\"\x9f\x02\n\x07\x41\x64\x64ress\x12U\n\x15\x65xternal_ipv4_address\x18\x01 \x01(\x0b\x32\x34.yandex.cloud.apploadbalancer.v1.ExternalIpv4AddressH\x00\x12U\n\x15internal_ipv4_address\x18\x02 \x01(\x0b\x32\x34.yandex.cloud.apploadbalancer.v1.InternalIpv4AddressH\x00\x12U\n\x15\x65xternal_ipv6_address\x18\x03 \x01(\x0b\x32\x34.yandex.cloud.apploadbalancer.v1.ExternalIpv6AddressH\x00\x42\x0f\n\x07\x61\x64\x64ress\x12\x04\xc0\xc1\x31\x01\"&\n\x13\x45xternalIpv4Address\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\"9\n\x13InternalIpv4Address\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x11\n\tsubnet_id\x18\x02 \x01(\t\"&\n\x13\x45xternalIpv6Address\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\"M\n\x08Location\x12\x15\n\x07zone_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tsubnet_id\x18\x02 \x01(\t\x12\x17\n\x0f\x64isable_traffic\x18\x03 \x01(\x08\"]\n\x10\x41llocationPolicy\x12I\n\tlocations\x18\x01 \x03(\x0b\x32).yandex.cloud.apploadbalancer.v1.LocationB\x0b\x82\xc8\x31\x03>=1\x90\xc8\x31\x01\"\xa7\x02\n\x08Listener\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12<\n\tendpoints\x18\x02 \x03(\x0b\x32).yandex.cloud.apploadbalancer.v1.Endpoint\x12=\n\x04http\x18\x03 \x01(\x0b\x32-.yandex.cloud.apploadbalancer.v1.HttpListenerH\x00\x12;\n\x03tls\x18\x04 \x01(\x0b\x32,.yandex.cloud.apploadbalancer.v1.TlsListenerH\x00\x12;\n\x03tcp\x18\x05 \x01(\x0b\x32,.yandex.cloud.apploadbalancer.v1.TcpListenerH\x00\x42\x10\n\x08listener\x12\x04\xc0\xc1\x31\x01\"q\n\x08\x45ndpoint\x12\x43\n\taddresses\x18\x01 \x03(\x0b\x32(.yandex.cloud.apploadbalancer.v1.AddressB\x06\x82\xc8\x31\x02>0\x12 \n\x05ports\x18\x02 \x03(\x03\x42\x11\x82\xc8\x31\x02>0\xfa\xc7\x31\x07\x31-65535\"\x8c\x01\n\x0cHttpListener\x12=\n\x07handler\x18\x01 \x01(\x0b\x32,.yandex.cloud.apploadbalancer.v1.HttpHandler\x12=\n\tredirects\x18\x02 \x01(\x0b\x32*.yandex.cloud.apploadbalancer.v1.Redirects\"\x9a\x01\n\x0bTlsListener\x12J\n\x0f\x64\x65\x66\x61ult_handler\x18\x01 \x01(\x0b\x32+.yandex.cloud.apploadbalancer.v1.TlsHandlerB\x04\xe8\xc7\x31\x01\x12?\n\x0csni_handlers\x18\x02 \x03(\x0b\x32).yandex.cloud.apploadbalancer.v1.SniMatch\"N\n\x0bTcpListener\x12?\n\x07handler\x18\x01 \x01(\x0b\x32..yandex.cloud.apploadbalancer.v1.StreamHandler\".\n\x0cHttp2Options\x12\x1e\n\x16max_concurrent_streams\x18\x01 \x01(\x03\"/\n\rStreamHandler\x12\x1e\n\x10\x62\x61\x63kend_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\x9a\x01\n\x0bHttpHandler\x12\x16\n\x0ehttp_router_id\x18\x01 \x01(\t\x12\x46\n\rhttp2_options\x18\x02 \x01(\x0b\x32-.yandex.cloud.apploadbalancer.v1.Http2OptionsH\x00\x12\x16\n\x0c\x61llow_http10\x18\x03 \x01(\x08H\x00\x42\x13\n\x11protocol_settings\"\"\n\tRedirects\x12\x15\n\rhttp_to_https\x18\x01 \x01(\x08\"\x80\x01\n\x08SniMatch\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1c\n\x0cserver_names\x18\x02 \x03(\tB\x06\x82\xc8\x31\x02>0\x12\x42\n\x07handler\x18\x03 \x01(\x0b\x32+.yandex.cloud.apploadbalancer.v1.TlsHandlerB\x04\xe8\xc7\x31\x01\"\xce\x01\n\nTlsHandler\x12\x44\n\x0chttp_handler\x18\x02 \x01(\x0b\x32,.yandex.cloud.apploadbalancer.v1.HttpHandlerH\x00\x12H\n\x0estream_handler\x18\x04 \x01(\x0b\x32..yandex.cloud.apploadbalancer.v1.StreamHandlerH\x00\x12\x1f\n\x0f\x63\x65rtificate_ids\x18\x03 \x03(\tB\x06\x82\xc8\x31\x02>0B\x0f\n\x07handler\x12\x04\xc0\xc1\x31\x01\"\x8c\x04\n\x0bTargetState\x12N\n\x06status\x18\x01 \x01(\x0b\x32>.yandex.cloud.apploadbalancer.v1.TargetState.HealthcheckStatus\x12=\n\x06target\x18\x02 \x01(\x0b\x32\'.yandex.cloud.apploadbalancer.v1.TargetB\x04\xe8\xc7\x31\x01\x1an\n\x11HealthcheckStatus\x12Y\n\rzone_statuses\x18\x01 \x03(\x0b\x32\x42.yandex.cloud.apploadbalancer.v1.TargetState.ZoneHealthcheckStatus\x1a\x8d\x01\n\x15ZoneHealthcheckStatus\x12\x15\n\x07zone_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x43\n\x06status\x18\x02 \x01(\x0e\x32\x33.yandex.cloud.apploadbalancer.v1.TargetState.Status\x12\x18\n\x10\x66\x61iled_active_hc\x18\x03 \x01(\x08\"n\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0b\n\x07HEALTHY\x10\x01\x12\x15\n\x11PARTIALLY_HEALTHY\x10\x02\x12\r\n\tUNHEALTHY\x10\x03\x12\x0c\n\x08\x44RAINING\x10\x04\x12\x0b\n\x07TIMEOUT\x10\x05\x42z\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancerb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_target__group__pb2.DESCRIPTOR,])
 
@@ -118,8 +118,8 @@ _TARGETSTATE_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3306,
-  serialized_end=3416,
+  serialized_start=3312,
+  serialized_end=3422,
 )
 _sym_db.RegisterEnumDescriptor(_TARGETSTATE_STATUS)
 
@@ -771,7 +771,7 @@ _STREAMHANDLER = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -785,7 +785,7 @@ _STREAMHANDLER = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=2315,
-  serialized_end=2356,
+  serialized_end=2362,
 )
 
 
@@ -835,8 +835,8 @@ _HTTPHANDLER = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=2359,
-  serialized_end=2513,
+  serialized_start=2365,
+  serialized_end=2519,
 )
 
 
@@ -867,8 +867,8 @@ _REDIRECTS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2515,
-  serialized_end=2549,
+  serialized_start=2521,
+  serialized_end=2555,
 )
 
 
@@ -913,8 +913,8 @@ _SNIMATCH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2552,
-  serialized_end=2680,
+  serialized_start=2558,
+  serialized_end=2686,
 )
 
 
@@ -964,8 +964,8 @@ _TLSHANDLER = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[], serialized_options=b'\300\3011\001'),
   ],
-  serialized_start=2683,
-  serialized_end=2889,
+  serialized_start=2689,
+  serialized_end=2895,
 )
 
 
@@ -996,8 +996,8 @@ _TARGETSTATE_HEALTHCHECKSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3050,
-  serialized_end=3160,
+  serialized_start=3056,
+  serialized_end=3166,
 )
 
 _TARGETSTATE_ZONEHEALTHCHECKSTATUS = _descriptor.Descriptor(
@@ -1041,8 +1041,8 @@ _TARGETSTATE_ZONEHEALTHCHECKSTATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3163,
-  serialized_end=3304,
+  serialized_start=3169,
+  serialized_end=3310,
 )
 
 _TARGETSTATE = _descriptor.Descriptor(
@@ -1080,8 +1080,8 @@ _TARGETSTATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2892,
-  serialized_end=3416,
+  serialized_start=2898,
+  serialized_end=3422,
 )
 
 _LOADBALANCER_LABELSENTRY.containing_type = _LOADBALANCER
@@ -1335,6 +1335,7 @@ _LISTENER.fields_by_name['name']._options = None
 _ENDPOINT.fields_by_name['addresses']._options = None
 _ENDPOINT.fields_by_name['ports']._options = None
 _TLSLISTENER.fields_by_name['default_handler']._options = None
+_STREAMHANDLER.fields_by_name['backend_group_id']._options = None
 _SNIMATCH.fields_by_name['name']._options = None
 _SNIMATCH.fields_by_name['server_names']._options = None
 _SNIMATCH.fields_by_name['handler']._options = None
