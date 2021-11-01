@@ -74,6 +74,7 @@ def parse_cmd():
         default='ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII7JOBFU5LGCd/ET220neX7MiWIXHnZI9ZfFjjgnPMmh'
     )
     parser.add_argument('--service-account-id', default='')
+    parser.add_argument('--log-group-id', default=None)
     parser.add_argument('--s3-bucket', required=True)
     return parser.parse_args()
 
@@ -324,6 +325,7 @@ def create_cluster_request(params, resources):
         ),
         zone_id=params.zone,
         service_account_id=params.service_account_id,
+        log_group_id=params.log_group_id,
         bucket=params.s3_bucket,
     )
 

@@ -40,6 +40,7 @@ def main():
             service_account_id=arguments.service_account_id,
             zone=arguments.zone,
             services=services,
+            log_group_id=arguments.log_group_id,
         )
 
         dataproc.update_cluster_description('New cluster description')
@@ -163,6 +164,7 @@ def parse_cmd():
         default='ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII7JOBFU5LGCd/ET220neX7MiWIXHnZI9ZfFjjgnPMmh'
     )
     parser.add_argument('--service-account-id', default='')
+    parser.add_argument('--log-group-id', default=None)
     parser.add_argument('--s3-bucket', required=True)
     return parser.parse_args()
 
