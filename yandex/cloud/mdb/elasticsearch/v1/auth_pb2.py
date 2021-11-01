@@ -11,8 +11,6 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
-from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
@@ -22,9 +20,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n%yandex.cloud.api.mdb.elasticsearch.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/elasticsearch/v1;elasticsearch',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n,yandex/cloud/mdb/elasticsearch/v1/auth.proto\x12!yandex.cloud.mdb.elasticsearch.v1\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a\x1dyandex/cloud/validation.proto\"S\n\rAuthProviders\x12\x42\n\tproviders\x18\x01 \x03(\x0b\x32/.yandex.cloud.mdb.elasticsearch.v1.AuthProvider\"\x80\x03\n\x0c\x41uthProvider\x12\x42\n\x04type\x18\x01 \x01(\x0e\x32\x34.yandex.cloud.mdb.elasticsearch.v1.AuthProvider.Type\x12*\n\x04name\x18\x02 \x01(\tB\x1c\x8a\xc8\x31\x04<=50\xf2\xc7\x31\x10[a-z][a-z0-9_-]*\x12\r\n\x05order\x18\x03 \x01(\x03\x12\x0f\n\x07\x65nabled\x18\x04 \x01(\x08\x12\x0e\n\x06hidden\x18\x05 \x01(\x08\x12\x1d\n\x0b\x64\x65scription\x18\x06 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x17\n\x04hint\x18\x07 \x01(\tB\t\x8a\xc8\x31\x05<=250\x12\x17\n\x04icon\x18\x08 \x01(\tB\t\x8a\xc8\x31\x05<=250\x12?\n\x04saml\x18\t \x01(\x0b\x32/.yandex.cloud.mdb.elasticsearch.v1.SamlSettingsH\x00\"2\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\n\n\x06NATIVE\x10\x01\x12\x08\n\x04SAML\x10\x02\x42\n\n\x08settings\"\xc8\x02\n\x0cSamlSettings\x12 \n\ridp_entity_id\x18\x01 \x01(\tB\t\x8a\xc8\x31\x05<=250\x12&\n\x11idp_metadata_file\x18\x02 \x01(\x0c\x42\x0b\x8a\xc8\x31\x07<=10000\x12\x1f\n\x0csp_entity_id\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=250\x12\x1d\n\nkibana_url\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=250\x12%\n\x13\x61ttribute_principal\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\"\n\x10\x61ttribute_groups\x18\x06 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12 \n\x0e\x61ttribute_name\x18\x07 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12!\n\x0f\x61ttribute_email\x18\x08 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1e\n\x0c\x61ttribute_dn\x18\t \x01(\tB\x08\x8a\xc8\x31\x04<=50B|\n%yandex.cloud.api.mdb.elasticsearch.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/elasticsearch/v1;elasticsearchb\x06proto3'
+  serialized_pb=b'\n,yandex/cloud/mdb/elasticsearch/v1/auth.proto\x12!yandex.cloud.mdb.elasticsearch.v1\x1a\x1dyandex/cloud/validation.proto\"S\n\rAuthProviders\x12\x42\n\tproviders\x18\x01 \x03(\x0b\x32/.yandex.cloud.mdb.elasticsearch.v1.AuthProvider\"\x80\x03\n\x0c\x41uthProvider\x12\x42\n\x04type\x18\x01 \x01(\x0e\x32\x34.yandex.cloud.mdb.elasticsearch.v1.AuthProvider.Type\x12*\n\x04name\x18\x02 \x01(\tB\x1c\x8a\xc8\x31\x04<=50\xf2\xc7\x31\x10[a-z][a-z0-9_-]*\x12\r\n\x05order\x18\x03 \x01(\x03\x12\x0f\n\x07\x65nabled\x18\x04 \x01(\x08\x12\x0e\n\x06hidden\x18\x05 \x01(\x08\x12\x1d\n\x0b\x64\x65scription\x18\x06 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x17\n\x04hint\x18\x07 \x01(\tB\t\x8a\xc8\x31\x05<=250\x12\x17\n\x04icon\x18\x08 \x01(\tB\t\x8a\xc8\x31\x05<=250\x12?\n\x04saml\x18\t \x01(\x0b\x32/.yandex.cloud.mdb.elasticsearch.v1.SamlSettingsH\x00\"2\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\n\n\x06NATIVE\x10\x01\x12\x08\n\x04SAML\x10\x02\x42\n\n\x08settings\"\xc8\x02\n\x0cSamlSettings\x12 \n\ridp_entity_id\x18\x01 \x01(\tB\t\x8a\xc8\x31\x05<=250\x12&\n\x11idp_metadata_file\x18\x02 \x01(\x0c\x42\x0b\x8a\xc8\x31\x07<=10000\x12\x1f\n\x0csp_entity_id\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=250\x12\x1d\n\nkibana_url\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=250\x12%\n\x13\x61ttribute_principal\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\"\n\x10\x61ttribute_groups\x18\x06 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12 \n\x0e\x61ttribute_name\x18\x07 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12!\n\x0f\x61ttribute_email\x18\x08 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1e\n\x0c\x61ttribute_dn\x18\t \x01(\tB\x08\x8a\xc8\x31\x04<=50B|\n%yandex.cloud.api.mdb.elasticsearch.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/elasticsearch/v1;elasticsearchb\x06proto3'
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
+  dependencies=[yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
 
 
@@ -53,8 +51,8 @@ _AUTHPROVIDER_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=586,
-  serialized_end=636,
+  serialized_start=522,
+  serialized_end=572,
 )
 _sym_db.RegisterEnumDescriptor(_AUTHPROVIDER_TYPE)
 
@@ -86,8 +84,8 @@ _AUTHPROVIDERS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=178,
-  serialized_end=261,
+  serialized_start=114,
+  serialized_end=197,
 )
 
 
@@ -180,8 +178,8 @@ _AUTHPROVIDER = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=264,
-  serialized_end=648,
+  serialized_start=200,
+  serialized_end=584,
 )
 
 
@@ -268,8 +266,8 @@ _SAMLSETTINGS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=651,
-  serialized_end=979,
+  serialized_start=587,
+  serialized_end=915,
 )
 
 _AUTHPROVIDERS.fields_by_name['providers'].message_type = _AUTHPROVIDER

@@ -11,7 +11,6 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
@@ -21,9 +20,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\035yandex.cloud.api.mdb.kafka.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/kafka/v1;kafka',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n$yandex/cloud/mdb/kafka/v1/user.proto\x12\x19yandex.cloud.mdb.kafka.v1\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"d\n\x04User\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12:\n\x0bpermissions\x18\x03 \x03(\x0b\x32%.yandex.cloud.mdb.kafka.v1.Permission\"\x94\x01\n\x08UserSpec\x12+\n\x04name\x18\x01 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04\x31-63\xf2\xc7\x31\r[a-zA-Z0-9_]*\x12\x1f\n\x08password\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x38-128\x12:\n\x0bpermissions\x18\x03 \x03(\x0b\x32%.yandex.cloud.mdb.kafka.v1.Permission\"\xd6\x01\n\nPermission\x12\x12\n\ntopic_name\x18\x01 \x01(\t\x12>\n\x04role\x18\x02 \x01(\x0e\x32\x30.yandex.cloud.mdb.kafka.v1.Permission.AccessRole\"t\n\nAccessRole\x12\x1b\n\x17\x41\x43\x43\x45SS_ROLE_UNSPECIFIED\x10\x00\x12\x18\n\x14\x41\x43\x43\x45SS_ROLE_PRODUCER\x10\x01\x12\x18\n\x14\x41\x43\x43\x45SS_ROLE_CONSUMER\x10\x02\x12\x15\n\x11\x41\x43\x43\x45SS_ROLE_ADMIN\x10\x03\x42\x64\n\x1dyandex.cloud.api.mdb.kafka.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/kafka/v1;kafkab\x06proto3'
+  serialized_pb=b'\n$yandex/cloud/mdb/kafka/v1/user.proto\x12\x19yandex.cloud.mdb.kafka.v1\x1a\x1dyandex/cloud/validation.proto\"d\n\x04User\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12:\n\x0bpermissions\x18\x03 \x03(\x0b\x32%.yandex.cloud.mdb.kafka.v1.Permission\"\x94\x01\n\x08UserSpec\x12+\n\x04name\x18\x01 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04\x31-63\xf2\xc7\x31\r[a-zA-Z0-9_]*\x12\x1f\n\x08password\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x38-128\x12:\n\x0bpermissions\x18\x03 \x03(\x0b\x32%.yandex.cloud.mdb.kafka.v1.Permission\"\xd6\x01\n\nPermission\x12\x12\n\ntopic_name\x18\x01 \x01(\t\x12>\n\x04role\x18\x02 \x01(\x0e\x32\x30.yandex.cloud.mdb.kafka.v1.Permission.AccessRole\"t\n\nAccessRole\x12\x1b\n\x17\x41\x43\x43\x45SS_ROLE_UNSPECIFIED\x10\x00\x12\x18\n\x14\x41\x43\x43\x45SS_ROLE_PRODUCER\x10\x01\x12\x18\n\x14\x41\x43\x43\x45SS_ROLE_CONSUMER\x10\x02\x12\x15\n\x11\x41\x43\x43\x45SS_ROLE_ADMIN\x10\x03\x42\x64\n\x1dyandex.cloud.api.mdb.kafka.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/kafka/v1;kafkab\x06proto3'
   ,
-  dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
+  dependencies=[yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
 
 
@@ -57,8 +56,8 @@ _PERMISSION_ACCESSROLE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=482,
-  serialized_end=598,
+  serialized_start=450,
+  serialized_end=566,
 )
 _sym_db.RegisterEnumDescriptor(_PERMISSION_ACCESSROLE)
 
@@ -104,8 +103,8 @@ _USER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=130,
-  serialized_end=230,
+  serialized_start=98,
+  serialized_end=198,
 )
 
 
@@ -150,8 +149,8 @@ _USERSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=233,
-  serialized_end=381,
+  serialized_start=201,
+  serialized_end=349,
 )
 
 
@@ -190,8 +189,8 @@ _PERMISSION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=384,
-  serialized_end=598,
+  serialized_start=352,
+  serialized_end=566,
 )
 
 _USER.fields_by_name['permissions'].message_type = _PERMISSION

@@ -12,7 +12,6 @@ _sym_db = _symbol_database.Default()
 
 
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
-from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -21,9 +20,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n)yandex.cloud.api.serverless.apigateway.v1ZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/apigateway/v1;apigateway',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n6yandex/cloud/serverless/apigateway/v1/apigateway.proto\x12%yandex.cloud.serverless.apigateway.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\xa0\x04\n\nApiGateway\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12M\n\x06labels\x18\x07 \x03(\x0b\x32=.yandex.cloud.serverless.apigateway.v1.ApiGateway.LabelsEntry\x12H\n\x06status\x18\x08 \x01(\x0e\x32\x38.yandex.cloud.serverless.apigateway.v1.ApiGateway.Status\x12\x0e\n\x06\x64omain\x18\t \x01(\t\x12\x14\n\x0clog_group_id\x18\n \x01(\t\x12O\n\x10\x61ttached_domains\x18\x0b \x03(\x0b\x32\x35.yandex.cloud.serverless.apigateway.v1.AttachedDomain\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"a\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08\x44\x45LETING\x10\x03\x12\t\n\x05\x45RROR\x10\x04\x12\x0c\n\x08UPDATING\x10\x05\"\\\n\x0e\x41ttachedDomain\x12\x11\n\tdomain_id\x18\x01 \x01(\t\x12\x16\n\x0e\x63\x65rtificate_id\x18\x02 \x01(\t\x12\x0f\n\x07\x65nabled\x18\x03 \x01(\x08\x12\x0e\n\x06\x64omain\x18\x05 \x01(\tB\x81\x01\n)yandex.cloud.api.serverless.apigateway.v1ZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/apigateway/v1;apigatewayb\x06proto3'
+  serialized_pb=b'\n6yandex/cloud/serverless/apigateway/v1/apigateway.proto\x12%yandex.cloud.serverless.apigateway.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xa0\x04\n\nApiGateway\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12M\n\x06labels\x18\x07 \x03(\x0b\x32=.yandex.cloud.serverless.apigateway.v1.ApiGateway.LabelsEntry\x12H\n\x06status\x18\x08 \x01(\x0e\x32\x38.yandex.cloud.serverless.apigateway.v1.ApiGateway.Status\x12\x0e\n\x06\x64omain\x18\t \x01(\t\x12\x14\n\x0clog_group_id\x18\n \x01(\t\x12O\n\x10\x61ttached_domains\x18\x0b \x03(\x0b\x32\x35.yandex.cloud.serverless.apigateway.v1.AttachedDomain\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"a\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08\x44\x45LETING\x10\x03\x12\t\n\x05\x45RROR\x10\x04\x12\x0c\n\x08UPDATING\x10\x05\"\\\n\x0e\x41ttachedDomain\x12\x11\n\tdomain_id\x18\x01 \x01(\t\x12\x16\n\x0e\x63\x65rtificate_id\x18\x02 \x01(\t\x12\x0f\n\x07\x65nabled\x18\x03 \x01(\x08\x12\x0e\n\x06\x64omain\x18\x05 \x01(\tB\x81\x01\n)yandex.cloud.api.serverless.apigateway.v1ZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/apigateway/v1;apigatewayb\x06proto3'
   ,
-  dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
 
 
@@ -67,8 +66,8 @@ _APIGATEWAY_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=609,
-  serialized_end=706,
+  serialized_start=578,
+  serialized_end=675,
 )
 _sym_db.RegisterEnumDescriptor(_APIGATEWAY_STATUS)
 
@@ -107,8 +106,8 @@ _APIGATEWAY_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=562,
-  serialized_end=607,
+  serialized_start=531,
+  serialized_end=576,
 )
 
 _APIGATEWAY = _descriptor.Descriptor(
@@ -202,8 +201,8 @@ _APIGATEWAY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=162,
-  serialized_end=706,
+  serialized_start=131,
+  serialized_end=675,
 )
 
 
@@ -255,8 +254,8 @@ _ATTACHEDDOMAIN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=708,
-  serialized_end=800,
+  serialized_start=677,
+  serialized_end=769,
 )
 
 _APIGATEWAY_LABELSENTRY.containing_type = _APIGATEWAY

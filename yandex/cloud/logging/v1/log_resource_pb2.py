@@ -11,8 +11,6 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from google.protobuf import duration_pb2 as google_dot_protobuf_dot_duration__pb2
-from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
@@ -22,9 +20,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\033yandex.cloud.api.logging.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/logging/v1;logging',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n*yandex/cloud/logging/v1/log_resource.proto\x12\x17yandex.cloud.logging.v1\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"y\n\x10LogEntryResource\x12\x31\n\x04type\x18\x01 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?\x12\x32\n\x02id\x18\x02 \x01(\tB&\xf2\xc7\x31\"([a-zA-Z0-9][-a-zA-Z0-9_.]{0,63})?\"-\n\x10LogGroupResource\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0b\n\x03ids\x18\x02 \x03(\tBb\n\x1byandex.cloud.api.logging.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/logging/v1;loggingb\x06proto3'
+  serialized_pb=b'\n*yandex/cloud/logging/v1/log_resource.proto\x12\x17yandex.cloud.logging.v1\x1a\x1dyandex/cloud/validation.proto\"y\n\x10LogEntryResource\x12\x31\n\x04type\x18\x01 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?\x12\x32\n\x02id\x18\x02 \x01(\tB&\xf2\xc7\x31\"([a-zA-Z0-9][-a-zA-Z0-9_.]{0,63})?\"-\n\x10LogGroupResource\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0b\n\x03ids\x18\x02 \x03(\tBb\n\x1byandex.cloud.api.logging.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/logging/v1;loggingb\x06proto3'
   ,
-  dependencies=[google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
+  dependencies=[yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
 
 
@@ -63,8 +61,8 @@ _LOGENTRYRESOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=167,
-  serialized_end=288,
+  serialized_start=102,
+  serialized_end=223,
 )
 
 
@@ -102,8 +100,8 @@ _LOGGROUPRESOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=290,
-  serialized_end=335,
+  serialized_start=225,
+  serialized_end=270,
 )
 
 DESCRIPTOR.message_types_by_name['LogEntryResource'] = _LOGENTRYRESOURCE

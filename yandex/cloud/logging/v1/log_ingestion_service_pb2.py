@@ -11,7 +11,6 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.rpc import status_pb2 as google_dot_rpc_dot_status__pb2
 from yandex.cloud.logging.v1 import log_entry_pb2 as yandex_dot_cloud_dot_logging_dot_v1_dot_log__entry__pb2
 from yandex.cloud.logging.v1 import log_resource_pb2 as yandex_dot_cloud_dot_logging_dot_v1_dot_log__resource__pb2
@@ -24,9 +23,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\033yandex.cloud.api.logging.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/logging/v1;logging',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n3yandex/cloud/logging/v1/log_ingestion_service.proto\x12\x17yandex.cloud.logging.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/rpc/status.proto\x1a\'yandex/cloud/logging/v1/log_entry.proto\x1a*yandex/cloud/logging/v1/log_resource.proto\x1a\x1dyandex/cloud/validation.proto\"\x90\x02\n\x0cWriteRequest\x12?\n\x0b\x64\x65stination\x18\x01 \x01(\x0b\x32$.yandex.cloud.logging.v1.DestinationB\x04\xe8\xc7\x31\x01\x12;\n\x08resource\x18\x02 \x01(\x0b\x32).yandex.cloud.logging.v1.LogEntryResource\x12\x45\n\x07\x65ntries\x18\x03 \x03(\x0b\x32).yandex.cloud.logging.v1.IncomingLogEntryB\t\x82\xc8\x31\x05\x31-100\x12;\n\x08\x64\x65\x66\x61ults\x18\x04 \x01(\x0b\x32).yandex.cloud.logging.v1.LogEntryDefaults\"\x96\x01\n\rWriteResponse\x12\x42\n\x06\x65rrors\x18\x01 \x03(\x0b\x32\x32.yandex.cloud.logging.v1.WriteResponse.ErrorsEntry\x1a\x41\n\x0b\x45rrorsEntry\x12\x0b\n\x03key\x18\x01 \x01(\x03\x12!\n\x05value\x18\x02 \x01(\x0b\x32\x12.google.rpc.Status:\x02\x38\x01\x32m\n\x13LogIngestionService\x12V\n\x05Write\x12%.yandex.cloud.logging.v1.WriteRequest\x1a&.yandex.cloud.logging.v1.WriteResponseBb\n\x1byandex.cloud.api.logging.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/logging/v1;loggingb\x06proto3'
+  serialized_pb=b'\n3yandex/cloud/logging/v1/log_ingestion_service.proto\x12\x17yandex.cloud.logging.v1\x1a\x17google/rpc/status.proto\x1a\'yandex/cloud/logging/v1/log_entry.proto\x1a*yandex/cloud/logging/v1/log_resource.proto\x1a\x1dyandex/cloud/validation.proto\"\x90\x02\n\x0cWriteRequest\x12?\n\x0b\x64\x65stination\x18\x01 \x01(\x0b\x32$.yandex.cloud.logging.v1.DestinationB\x04\xe8\xc7\x31\x01\x12;\n\x08resource\x18\x02 \x01(\x0b\x32).yandex.cloud.logging.v1.LogEntryResource\x12\x45\n\x07\x65ntries\x18\x03 \x03(\x0b\x32).yandex.cloud.logging.v1.IncomingLogEntryB\t\x82\xc8\x31\x05\x31-100\x12;\n\x08\x64\x65\x66\x61ults\x18\x04 \x01(\x0b\x32).yandex.cloud.logging.v1.LogEntryDefaults\"\x96\x01\n\rWriteResponse\x12\x42\n\x06\x65rrors\x18\x01 \x03(\x0b\x32\x32.yandex.cloud.logging.v1.WriteResponse.ErrorsEntry\x1a\x41\n\x0b\x45rrorsEntry\x12\x0b\n\x03key\x18\x01 \x01(\x03\x12!\n\x05value\x18\x02 \x01(\x0b\x32\x12.google.rpc.Status:\x02\x38\x01\x32m\n\x13LogIngestionService\x12V\n\x05Write\x12%.yandex.cloud.logging.v1.WriteRequest\x1a&.yandex.cloud.logging.v1.WriteResponseBb\n\x1byandex.cloud.api.logging.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/logging/v1;loggingb\x06proto3'
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_rpc_dot_status__pb2.DESCRIPTOR,yandex_dot_cloud_dot_logging_dot_v1_dot_log__entry__pb2.DESCRIPTOR,yandex_dot_cloud_dot_logging_dot_v1_dot_log__resource__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_rpc_dot_status__pb2.DESCRIPTOR,yandex_dot_cloud_dot_logging_dot_v1_dot_log__entry__pb2.DESCRIPTOR,yandex_dot_cloud_dot_logging_dot_v1_dot_log__resource__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
 
 
@@ -79,8 +78,8 @@ _WRITEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=252,
-  serialized_end=524,
+  serialized_start=222,
+  serialized_end=494,
 )
 
 
@@ -118,8 +117,8 @@ _WRITERESPONSE_ERRORSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=612,
-  serialized_end=677,
+  serialized_start=582,
+  serialized_end=647,
 )
 
 _WRITERESPONSE = _descriptor.Descriptor(
@@ -149,8 +148,8 @@ _WRITERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=527,
-  serialized_end=677,
+  serialized_start=497,
+  serialized_end=647,
 )
 
 _WRITEREQUEST.fields_by_name['destination'].message_type = yandex_dot_cloud_dot_logging_dot_v1_dot_log__entry__pb2._DESTINATION
@@ -199,8 +198,8 @@ _LOGINGESTIONSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=679,
-  serialized_end=788,
+  serialized_start=649,
+  serialized_end=758,
   methods=[
   _descriptor.MethodDescriptor(
     name='Write',

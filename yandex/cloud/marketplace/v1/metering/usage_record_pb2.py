@@ -11,7 +11,6 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
@@ -22,9 +21,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n(yandex.cloud.api.marketplace.v1.meteringZQgithub.com/yandex-cloud/go-genproto/yandex/cloud/marketplace/v1/metering;metering',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n7yandex/cloud/marketplace/v1/metering/usage_record.proto\x12$yandex.cloud.marketplace.v1.metering\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\x96\x01\n\x0bUsageRecord\x12\x1a\n\x04uuid\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=36\x12\x1c\n\x06sku_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x18\n\x08quantity\x18\x03 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\x12\x33\n\ttimestamp\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\"#\n\x13\x41\x63\x63\x65ptedUsageRecord\x12\x0c\n\x04uuid\x18\x01 \x01(\t\"\x9d\x02\n\x13RejectedUsageRecord\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12P\n\x06reason\x18\x02 \x01(\x0e\x32@.yandex.cloud.marketplace.v1.metering.RejectedUsageRecord.Reason\"\xa5\x01\n\x06Reason\x12\x16\n\x12REASON_UNSPECIFIED\x10\x00\x12\r\n\tDUPLICATE\x10\x01\x12\x0b\n\x07\x45XPIRED\x10\x02\x12\x15\n\x11INVALID_TIMESTAMP\x10\x03\x12\x12\n\x0eINVALID_SKU_ID\x10\x04\x12\x16\n\x12INVALID_PRODUCT_ID\x10\x05\x12\x14\n\x10INVALID_QUANTITY\x10\x06\x12\x0e\n\nINVALID_ID\x10\x07\x42}\n(yandex.cloud.api.marketplace.v1.meteringZQgithub.com/yandex-cloud/go-genproto/yandex/cloud/marketplace/v1/metering;meteringb\x06proto3'
+  serialized_pb=b'\n7yandex/cloud/marketplace/v1/metering/usage_record.proto\x12$yandex.cloud.marketplace.v1.metering\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\x96\x01\n\x0bUsageRecord\x12\x1a\n\x04uuid\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=36\x12\x1c\n\x06sku_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x18\n\x08quantity\x18\x03 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\x12\x33\n\ttimestamp\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\"#\n\x13\x41\x63\x63\x65ptedUsageRecord\x12\x0c\n\x04uuid\x18\x01 \x01(\t\"\x9d\x02\n\x13RejectedUsageRecord\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12P\n\x06reason\x18\x02 \x01(\x0e\x32@.yandex.cloud.marketplace.v1.metering.RejectedUsageRecord.Reason\"\xa5\x01\n\x06Reason\x12\x16\n\x12REASON_UNSPECIFIED\x10\x00\x12\r\n\tDUPLICATE\x10\x01\x12\x0b\n\x07\x45XPIRED\x10\x02\x12\x15\n\x11INVALID_TIMESTAMP\x10\x03\x12\x12\n\x0eINVALID_SKU_ID\x10\x04\x12\x16\n\x12INVALID_PRODUCT_ID\x10\x05\x12\x14\n\x10INVALID_QUANTITY\x10\x06\x12\x0e\n\nINVALID_ID\x10\x07\x42}\n(yandex.cloud.api.marketplace.v1.meteringZQgithub.com/yandex-cloud/go-genproto/yandex/cloud/marketplace/v1/metering;meteringb\x06proto3'
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
 
 
@@ -78,8 +77,8 @@ _REJECTEDUSAGERECORD_REASON = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=502,
-  serialized_end=667,
+  serialized_start=472,
+  serialized_end=637,
 )
 _sym_db.RegisterEnumDescriptor(_REJECTEDUSAGERECORD_REASON)
 
@@ -132,8 +131,8 @@ _USAGERECORD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=192,
-  serialized_end=342,
+  serialized_start=162,
+  serialized_end=312,
 )
 
 
@@ -164,8 +163,8 @@ _ACCEPTEDUSAGERECORD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=344,
-  serialized_end=379,
+  serialized_start=314,
+  serialized_end=349,
 )
 
 
@@ -204,8 +203,8 @@ _REJECTEDUSAGERECORD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=382,
-  serialized_end=667,
+  serialized_start=352,
+  serialized_end=637,
 )
 
 _USAGERECORD.fields_by_name['timestamp'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP

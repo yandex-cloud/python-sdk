@@ -13,7 +13,6 @@ _sym_db = _symbol_database.Default()
 
 
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
-from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -22,9 +21,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\037yandex.cloud.api.iot.devices.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/iot/devices/v1;devices',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n(yandex/cloud/iot/devices/v1/device.proto\x12\x1byandex.cloud.iot.devices.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\xd1\x03\n\x06\x44\x65vice\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x0bregistry_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12L\n\rtopic_aliases\x18\x06 \x03(\x0b\x32\x35.yandex.cloud.iot.devices.v1.Device.TopicAliasesEntry\x12:\n\x06status\x18\x07 \x01(\x0e\x32*.yandex.cloud.iot.devices.v1.Device.Status\x12J\n\x0fmonitoring_data\x18\x08 \x01(\x0b\x32\x31.yandex.cloud.iot.devices.v1.DeviceMonitoringData\x1a\x33\n\x11TopicAliasesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"H\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08\x44\x45LETING\x10\x03\"\x85\x01\n\x11\x44\x65viceCertificate\x12\x11\n\tdevice_id\x18\x01 \x01(\t\x12\x13\n\x0b\x66ingerprint\x18\x02 \x01(\t\x12\x18\n\x10\x63\x65rtificate_data\x18\x03 \x01(\t\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"_\n\x0e\x44\x65vicePassword\x12\x11\n\tdevice_id\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\x8e\x02\n\x14\x44\x65viceMonitoringData\x12\x14\n\x0clast_auth_ip\x18\x01 \x01(\t\x12\x32\n\x0elast_auth_time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12:\n\x16last_pub_activity_time\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12:\n\x16last_sub_activity_time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x34\n\x10last_online_time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp*!\n\nDeviceView\x12\t\n\x05\x42\x41SIC\x10\x00\x12\x08\n\x04\x46ULL\x10\x01\x42j\n\x1fyandex.cloud.api.iot.devices.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/iot/devices/v1;devicesb\x06proto3'
+  serialized_pb=b'\n(yandex/cloud/iot/devices/v1/device.proto\x12\x1byandex.cloud.iot.devices.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xd1\x03\n\x06\x44\x65vice\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x0bregistry_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12L\n\rtopic_aliases\x18\x06 \x03(\x0b\x32\x35.yandex.cloud.iot.devices.v1.Device.TopicAliasesEntry\x12:\n\x06status\x18\x07 \x01(\x0e\x32*.yandex.cloud.iot.devices.v1.Device.Status\x12J\n\x0fmonitoring_data\x18\x08 \x01(\x0b\x32\x31.yandex.cloud.iot.devices.v1.DeviceMonitoringData\x1a\x33\n\x11TopicAliasesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"H\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08\x44\x45LETING\x10\x03\"\x85\x01\n\x11\x44\x65viceCertificate\x12\x11\n\tdevice_id\x18\x01 \x01(\t\x12\x13\n\x0b\x66ingerprint\x18\x02 \x01(\t\x12\x18\n\x10\x63\x65rtificate_data\x18\x03 \x01(\t\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"_\n\x0e\x44\x65vicePassword\x12\x11\n\tdevice_id\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\x8e\x02\n\x14\x44\x65viceMonitoringData\x12\x14\n\x0clast_auth_ip\x18\x01 \x01(\t\x12\x32\n\x0elast_auth_time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12:\n\x16last_pub_activity_time\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12:\n\x16last_sub_activity_time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x34\n\x10last_online_time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp*!\n\nDeviceView\x12\t\n\x05\x42\x41SIC\x10\x00\x12\x08\n\x04\x46ULL\x10\x01\x42j\n\x1fyandex.cloud.api.iot.devices.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/iot/devices/v1;devicesb\x06proto3'
   ,
-  dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
 _DEVICEVIEW = _descriptor.EnumDescriptor(
   name='DeviceView',
@@ -46,8 +45,8 @@ _DEVICEVIEW = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1111,
-  serialized_end=1144,
+  serialized_start=1080,
+  serialized_end=1113,
 )
 _sym_db.RegisterEnumDescriptor(_DEVICEVIEW)
 
@@ -86,8 +85,8 @@ _DEVICE_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=531,
-  serialized_end=603,
+  serialized_start=500,
+  serialized_end=572,
 )
 _sym_db.RegisterEnumDescriptor(_DEVICE_STATUS)
 
@@ -126,8 +125,8 @@ _DEVICE_TOPICALIASESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=478,
-  serialized_end=529,
+  serialized_start=447,
+  serialized_end=498,
 )
 
 _DEVICE = _descriptor.Descriptor(
@@ -207,8 +206,8 @@ _DEVICE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=138,
-  serialized_end=603,
+  serialized_start=107,
+  serialized_end=572,
 )
 
 
@@ -260,8 +259,8 @@ _DEVICECERTIFICATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=606,
-  serialized_end=739,
+  serialized_start=575,
+  serialized_end=708,
 )
 
 
@@ -306,8 +305,8 @@ _DEVICEPASSWORD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=741,
-  serialized_end=836,
+  serialized_start=710,
+  serialized_end=805,
 )
 
 
@@ -366,8 +365,8 @@ _DEVICEMONITORINGDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=839,
-  serialized_end=1109,
+  serialized_start=808,
+  serialized_end=1078,
 )
 
 _DEVICE_TOPICALIASESENTRY.containing_type = _DEVICE

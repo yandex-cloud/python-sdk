@@ -13,7 +13,6 @@ _sym_db = _symbol_database.Default()
 
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from yandex.cloud.apploadbalancer.v1 import virtual_host_pb2 as yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_virtual__host__pb2
-from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -22,9 +21,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancer',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n1yandex/cloud/apploadbalancer/v1/http_router.proto\x12\x1fyandex.cloud.apploadbalancer.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x32yandex/cloud/apploadbalancer/v1/virtual_host.proto\x1a\x1dyandex/cloud/validation.proto\"\x81\x03\n\nHttpRouter\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x11\n\tfolder_id\x18\x04 \x01(\t\x12G\n\x06labels\x18\x05 \x03(\x0b\x32\x37.yandex.cloud.apploadbalancer.v1.HttpRouter.LabelsEntry\x12\x43\n\rvirtual_hosts\x18\x06 \x03(\x0b\x32,.yandex.cloud.apploadbalancer.v1.VirtualHost\x12.\n\ncreated_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x44\n\rroute_options\x18\x08 \x01(\x0b\x32-.yandex.cloud.apploadbalancer.v1.RouteOptions\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42z\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancerb\x06proto3'
+  serialized_pb=b'\n1yandex/cloud/apploadbalancer/v1/http_router.proto\x12\x1fyandex.cloud.apploadbalancer.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x32yandex/cloud/apploadbalancer/v1/virtual_host.proto\"\x81\x03\n\nHttpRouter\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x11\n\tfolder_id\x18\x04 \x01(\t\x12G\n\x06labels\x18\x05 \x03(\x0b\x32\x37.yandex.cloud.apploadbalancer.v1.HttpRouter.LabelsEntry\x12\x43\n\rvirtual_hosts\x18\x06 \x03(\x0b\x32,.yandex.cloud.apploadbalancer.v1.VirtualHost\x12.\n\ncreated_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x44\n\rroute_options\x18\x08 \x01(\x0b\x32-.yandex.cloud.apploadbalancer.v1.RouteOptions\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42z\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancerb\x06proto3'
   ,
-  dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_virtual__host__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_virtual__host__pb2.DESCRIPTOR,])
 
 
 
@@ -63,8 +62,8 @@ _HTTPROUTER_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=543,
-  serialized_end=588,
+  serialized_start=512,
+  serialized_end=557,
 )
 
 _HTTPROUTER = _descriptor.Descriptor(
@@ -143,8 +142,8 @@ _HTTPROUTER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=203,
-  serialized_end=588,
+  serialized_start=172,
+  serialized_end=557,
 )
 
 _HTTPROUTER_LABELSENTRY.containing_type = _HTTPROUTER

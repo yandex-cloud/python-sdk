@@ -12,7 +12,6 @@ _sym_db = _symbol_database.Default()
 
 
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
-from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -21,9 +20,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\037yandex.cloud.api.iot.devices.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/iot/devices/v1;devices',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n*yandex/cloud/iot/devices/v1/registry.proto\x12\x1byandex.cloud.iot.devices.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\x8c\x03\n\x08Registry\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x41\n\x06labels\x18\x06 \x03(\x0b\x32\x31.yandex.cloud.iot.devices.v1.Registry.LabelsEntry\x12<\n\x06status\x18\x07 \x01(\x0e\x32,.yandex.cloud.iot.devices.v1.Registry.Status\x12\x14\n\x0clog_group_id\x18\x08 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"H\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08\x44\x45LETING\x10\x03\"\x89\x01\n\x13RegistryCertificate\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\x12\x13\n\x0b\x66ingerprint\x18\x02 \x01(\t\x12\x18\n\x10\x63\x65rtificate_data\x18\x03 \x01(\t\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"E\n\x0b\x44\x65viceAlias\x12\x11\n\tdevice_id\x18\x01 \x01(\t\x12\x14\n\x0ctopic_prefix\x18\x02 \x01(\t\x12\r\n\x05\x61lias\x18\x03 \x01(\t\"c\n\x10RegistryPassword\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampBj\n\x1fyandex.cloud.api.iot.devices.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/iot/devices/v1;devicesb\x06proto3'
+  serialized_pb=b'\n*yandex/cloud/iot/devices/v1/registry.proto\x12\x1byandex.cloud.iot.devices.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\x8c\x03\n\x08Registry\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x41\n\x06labels\x18\x06 \x03(\x0b\x32\x31.yandex.cloud.iot.devices.v1.Registry.LabelsEntry\x12<\n\x06status\x18\x07 \x01(\x0e\x32,.yandex.cloud.iot.devices.v1.Registry.Status\x12\x14\n\x0clog_group_id\x18\x08 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"H\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08\x44\x45LETING\x10\x03\"\x89\x01\n\x13RegistryCertificate\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\x12\x13\n\x0b\x66ingerprint\x18\x02 \x01(\t\x12\x18\n\x10\x63\x65rtificate_data\x18\x03 \x01(\t\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"E\n\x0b\x44\x65viceAlias\x12\x11\n\tdevice_id\x18\x01 \x01(\t\x12\x14\n\x0ctopic_prefix\x18\x02 \x01(\t\x12\r\n\x05\x61lias\x18\x03 \x01(\t\"c\n\x10RegistryPassword\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampBj\n\x1fyandex.cloud.api.iot.devices.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/iot/devices/v1;devicesb\x06proto3'
   ,
-  dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
 
 
@@ -57,8 +56,8 @@ _REGISTRY_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=464,
-  serialized_end=536,
+  serialized_start=433,
+  serialized_end=505,
 )
 _sym_db.RegisterEnumDescriptor(_REGISTRY_STATUS)
 
@@ -97,8 +96,8 @@ _REGISTRY_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=417,
-  serialized_end=462,
+  serialized_start=386,
+  serialized_end=431,
 )
 
 _REGISTRY = _descriptor.Descriptor(
@@ -178,8 +177,8 @@ _REGISTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=140,
-  serialized_end=536,
+  serialized_start=109,
+  serialized_end=505,
 )
 
 
@@ -231,8 +230,8 @@ _REGISTRYCERTIFICATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=539,
-  serialized_end=676,
+  serialized_start=508,
+  serialized_end=645,
 )
 
 
@@ -277,8 +276,8 @@ _DEVICEALIAS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=678,
-  serialized_end=747,
+  serialized_start=647,
+  serialized_end=716,
 )
 
 
@@ -323,8 +322,8 @@ _REGISTRYPASSWORD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=749,
-  serialized_end=848,
+  serialized_start=718,
+  serialized_end=817,
 )
 
 _REGISTRY_LABELSENTRY.containing_type = _REGISTRY
