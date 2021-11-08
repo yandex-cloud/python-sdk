@@ -6,7 +6,8 @@ from yandex.cloud.marketplace.v1.metering import image_product_usage_service_pb2
 
 
 class ImageProductUsageServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing image product's usage.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -22,10 +23,11 @@ class ImageProductUsageServiceStub(object):
 
 
 class ImageProductUsageServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing image product's usage.
+    """
 
     def Write(self, request, context):
-        """Writes image product's usage (authenticated by user's service account)
+        """Writes image product's usage. Authentication is by user's service account.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -47,7 +49,8 @@ def add_ImageProductUsageServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class ImageProductUsageService(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing image product's usage.
+    """
 
     @staticmethod
     def Write(request,
