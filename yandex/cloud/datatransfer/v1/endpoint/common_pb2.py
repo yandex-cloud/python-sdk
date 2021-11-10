@@ -19,9 +19,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='yandex/cloud/datatransfer/v1/endpoint/common.proto',
   package='yandex.cloud.datatransfer.v1.endpoint',
   syntax='proto3',
-  serialized_options=b'\n)yandex.cloud.api.datatransfer.v1.endpointZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1/endpoint;endpoint',
+  serialized_options=b'\n)yandex.cloud.api.datatransfer.v1.endpointZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1/endpoint;endpoint\252\002%Yandex.Cloud.Datatransfer.V1.EndPoint',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n2yandex/cloud/datatransfer/v1/endpoint/common.proto\x12%yandex.cloud.datatransfer.v1.endpoint\x1a\x1bgoogle/protobuf/empty.proto\" \n\x06Secret\x12\r\n\x03raw\x18\x01 \x01(\tH\x00\x42\x07\n\x05value\"\x86\x01\n\x07TLSMode\x12*\n\x08\x64isabled\x18\x01 \x01(\x0b\x32\x16.google.protobuf.EmptyH\x00\x12\x43\n\x07\x65nabled\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.datatransfer.v1.endpoint.TLSConfigH\x00\x42\n\n\x08tls_mode\"#\n\tTLSConfig\x12\x16\n\x0e\x63\x61_certificate\x18\x01 \x01(\t*h\n\x13ObjectTransferStage\x12%\n!OBJECT_TRANSFER_STAGE_UNSPECIFIED\x10\x00\x12\x0f\n\x0b\x42\x45\x46ORE_DATA\x10\x01\x12\x0e\n\nAFTER_DATA\x10\x02\x12\t\n\x05NEVER\x10\x03\x42\x7f\n)yandex.cloud.api.datatransfer.v1.endpointZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1/endpoint;endpointb\x06proto3'
+  serialized_pb=b'\n2yandex/cloud/datatransfer/v1/endpoint/common.proto\x12%yandex.cloud.datatransfer.v1.endpoint\x1a\x1bgoogle/protobuf/empty.proto\" \n\x06Secret\x12\r\n\x03raw\x18\x01 \x01(\tH\x00\x42\x07\n\x05value\"\x86\x01\n\x07TLSMode\x12*\n\x08\x64isabled\x18\x01 \x01(\x0b\x32\x16.google.protobuf.EmptyH\x00\x12\x43\n\x07\x65nabled\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.datatransfer.v1.endpoint.TLSConfigH\x00\x42\n\n\x08tls_mode\"#\n\tTLSConfig\x12\x16\n\x0e\x63\x61_certificate\x18\x01 \x01(\t*h\n\x13ObjectTransferStage\x12%\n!OBJECT_TRANSFER_STAGE_UNSPECIFIED\x10\x00\x12\x0f\n\x0b\x42\x45\x46ORE_DATA\x10\x01\x12\x0e\n\nAFTER_DATA\x10\x02\x12\t\n\x05NEVER\x10\x03\x42\xa7\x01\n)yandex.cloud.api.datatransfer.v1.endpointZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1/endpoint;endpoint\xaa\x02%Yandex.Cloud.Datatransfer.V1.EndPointb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,])
 
