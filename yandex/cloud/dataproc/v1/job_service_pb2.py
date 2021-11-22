@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\034yandex.cloud.api.dataproc.v1B\004PHJSZEgithub.com/yandex-cloud/go-genproto/yandex/cloud/dataproc/v1;dataproc',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n*yandex/cloud/dataproc/v1/job_service.proto\x12\x18yandex.cloud.dataproc.v1\x1a\x1cgoogle/api/annotations.proto\x1a\"yandex/cloud/dataproc/v1/job.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a yandex/cloud/api/operation.proto\"O\n\rGetJobRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1c\n\x06job_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x8d\x01\n\x0fListJobsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"X\n\x10ListJobsResponse\x12+\n\x04jobs\x18\x01 \x03(\x0b\x32\x1d.yandex.cloud.dataproc.v1.Job\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xdf\x02\n\x10\x43reateJobRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12?\n\rmapreduce_job\x18\x03 \x01(\x0b\x32&.yandex.cloud.dataproc.v1.MapreduceJobH\x00\x12\x37\n\tspark_job\x18\x04 \x01(\x0b\x32\".yandex.cloud.dataproc.v1.SparkJobH\x00\x12;\n\x0bpyspark_job\x18\x05 \x01(\x0b\x32$.yandex.cloud.dataproc.v1.PysparkJobH\x00\x12\x35\n\x08hive_job\x18\x06 \x01(\x0b\x32!.yandex.cloud.dataproc.v1.HiveJobH\x00\x42\n\n\x08job_spec\"O\n\x11\x43reateJobMetadata\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x18\n\x06job_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"\x90\x01\n\x11ListJobLogRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x18\n\x06job_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12 \n\tpage_size\x18\x03 \x01(\x03\x42\r\xfa\xc7\x31\t<=1048576\x12\x1d\n\npage_token\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=100\">\n\x12ListJobLogResponse\x12\x0f\n\x07\x63ontent\x18\x01 \x01(\t\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xf7\x04\n\nJobService\x12\x8e\x01\n\x04List\x12).yandex.cloud.dataproc.v1.ListJobsRequest\x1a*.yandex.cloud.dataproc.v1.ListJobsResponse\"/\x82\xd3\xe4\x93\x02)\x12\'/dataproc/v1/clusters/{cluster_id}/jobs\x12\xa7\x01\n\x06\x43reate\x12*.yandex.cloud.dataproc.v1.CreateJobRequest\x1a!.yandex.cloud.operation.Operation\"N\x82\xd3\xe4\x93\x02,\"\'/dataproc/v1/clusters/{cluster_id}/jobs:\x01*\xb2\xd2*\x18\n\x11\x43reateJobMetadata\x12\x03Job\x12\x87\x01\n\x03Get\x12\'.yandex.cloud.dataproc.v1.GetJobRequest\x1a\x1d.yandex.cloud.dataproc.v1.Job\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/dataproc/v1/clusters/{cluster_id}/jobs/{job_id}\x12\xa3\x01\n\x07ListLog\x12+.yandex.cloud.dataproc.v1.ListJobLogRequest\x1a,.yandex.cloud.dataproc.v1.ListJobLogResponse\"=\x82\xd3\xe4\x93\x02\x37\x12\x35/dataproc/v1/clusters/{cluster_id}/jobs/{job_id}:logsBk\n\x1cyandex.cloud.api.dataproc.v1B\x04PHJSZEgithub.com/yandex-cloud/go-genproto/yandex/cloud/dataproc/v1;dataprocb\x06proto3'
+  serialized_pb=b'\n*yandex/cloud/dataproc/v1/job_service.proto\x12\x18yandex.cloud.dataproc.v1\x1a\x1cgoogle/api/annotations.proto\x1a\"yandex/cloud/dataproc/v1/job.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a yandex/cloud/api/operation.proto\"O\n\rGetJobRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1c\n\x06job_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x8d\x01\n\x0fListJobsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"X\n\x10ListJobsResponse\x12+\n\x04jobs\x18\x01 \x03(\x0b\x32\x1d.yandex.cloud.dataproc.v1.Job\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xdf\x02\n\x10\x43reateJobRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12?\n\rmapreduce_job\x18\x03 \x01(\x0b\x32&.yandex.cloud.dataproc.v1.MapreduceJobH\x00\x12\x37\n\tspark_job\x18\x04 \x01(\x0b\x32\".yandex.cloud.dataproc.v1.SparkJobH\x00\x12;\n\x0bpyspark_job\x18\x05 \x01(\x0b\x32$.yandex.cloud.dataproc.v1.PysparkJobH\x00\x12\x35\n\x08hive_job\x18\x06 \x01(\x0b\x32!.yandex.cloud.dataproc.v1.HiveJobH\x00\x42\n\n\x08job_spec\"O\n\x11\x43reateJobMetadata\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x18\n\x06job_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"R\n\x10\x43\x61ncelJobRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1c\n\x06job_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x90\x01\n\x11ListJobLogRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x18\n\x06job_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12 \n\tpage_size\x18\x03 \x01(\x03\x42\r\xfa\xc7\x31\t<=1048576\x12\x1d\n\npage_token\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=100\">\n\x12ListJobLogResponse\x12\x0f\n\x07\x63ontent\x18\x01 \x01(\t\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xb1\x06\n\nJobService\x12\x8e\x01\n\x04List\x12).yandex.cloud.dataproc.v1.ListJobsRequest\x1a*.yandex.cloud.dataproc.v1.ListJobsResponse\"/\x82\xd3\xe4\x93\x02)\x12\'/dataproc/v1/clusters/{cluster_id}/jobs\x12\xa7\x01\n\x06\x43reate\x12*.yandex.cloud.dataproc.v1.CreateJobRequest\x1a!.yandex.cloud.operation.Operation\"N\x82\xd3\xe4\x93\x02,\"\'/dataproc/v1/clusters/{cluster_id}/jobs:\x01*\xb2\xd2*\x18\n\x11\x43reateJobMetadata\x12\x03Job\x12\x87\x01\n\x03Get\x12\'.yandex.cloud.dataproc.v1.GetJobRequest\x1a\x1d.yandex.cloud.dataproc.v1.Job\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/dataproc/v1/clusters/{cluster_id}/jobs/{job_id}\x12\xa3\x01\n\x07ListLog\x12+.yandex.cloud.dataproc.v1.ListJobLogRequest\x1a,.yandex.cloud.dataproc.v1.ListJobLogResponse\"=\x82\xd3\xe4\x93\x02\x37\x12\x35/dataproc/v1/clusters/{cluster_id}/jobs/{job_id}:logs\x12\xb7\x01\n\x06\x43\x61ncel\x12*.yandex.cloud.dataproc.v1.CancelJobRequest\x1a!.yandex.cloud.operation.Operation\"^\x82\xd3\xe4\x93\x02<\"7/dataproc/v1/clusters/{cluster_id}/jobs/{job_id}:cancel:\x01*\xb2\xd2*\x18\n\x11\x43reateJobMetadata\x12\x03JobBk\n\x1cyandex.cloud.api.dataproc.v1B\x04PHJSZEgithub.com/yandex-cloud/go-genproto/yandex/cloud/dataproc/v1;dataprocb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_dataproc_dot_v1_dot_job__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,])
 
@@ -273,6 +273,45 @@ _CREATEJOBMETADATA = _descriptor.Descriptor(
 )
 
 
+_CANCELJOBREQUEST = _descriptor.Descriptor(
+  name='CancelJobRequest',
+  full_name='yandex.cloud.dataproc.v1.CancelJobRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='yandex.cloud.dataproc.v1.CancelJobRequest.cluster_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='job_id', full_name='yandex.cloud.dataproc.v1.CancelJobRequest.job_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=993,
+  serialized_end=1075,
+)
+
+
 _LISTJOBLOGREQUEST = _descriptor.Descriptor(
   name='ListJobLogRequest',
   full_name='yandex.cloud.dataproc.v1.ListJobLogRequest',
@@ -321,8 +360,8 @@ _LISTJOBLOGREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=994,
-  serialized_end=1138,
+  serialized_start=1078,
+  serialized_end=1222,
 )
 
 
@@ -360,8 +399,8 @@ _LISTJOBLOGRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1140,
-  serialized_end=1202,
+  serialized_start=1224,
+  serialized_end=1286,
 )
 
 _LISTJOBSRESPONSE.fields_by_name['jobs'].message_type = yandex_dot_cloud_dot_dataproc_dot_v1_dot_job__pb2._JOB
@@ -386,6 +425,7 @@ DESCRIPTOR.message_types_by_name['ListJobsRequest'] = _LISTJOBSREQUEST
 DESCRIPTOR.message_types_by_name['ListJobsResponse'] = _LISTJOBSRESPONSE
 DESCRIPTOR.message_types_by_name['CreateJobRequest'] = _CREATEJOBREQUEST
 DESCRIPTOR.message_types_by_name['CreateJobMetadata'] = _CREATEJOBMETADATA
+DESCRIPTOR.message_types_by_name['CancelJobRequest'] = _CANCELJOBREQUEST
 DESCRIPTOR.message_types_by_name['ListJobLogRequest'] = _LISTJOBLOGREQUEST
 DESCRIPTOR.message_types_by_name['ListJobLogResponse'] = _LISTJOBLOGRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -425,6 +465,13 @@ CreateJobMetadata = _reflection.GeneratedProtocolMessageType('CreateJobMetadata'
   })
 _sym_db.RegisterMessage(CreateJobMetadata)
 
+CancelJobRequest = _reflection.GeneratedProtocolMessageType('CancelJobRequest', (_message.Message,), {
+  'DESCRIPTOR' : _CANCELJOBREQUEST,
+  '__module__' : 'yandex.cloud.dataproc.v1.job_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.dataproc.v1.CancelJobRequest)
+  })
+_sym_db.RegisterMessage(CancelJobRequest)
+
 ListJobLogRequest = _reflection.GeneratedProtocolMessageType('ListJobLogRequest', (_message.Message,), {
   'DESCRIPTOR' : _LISTJOBLOGREQUEST,
   '__module__' : 'yandex.cloud.dataproc.v1.job_service_pb2'
@@ -451,6 +498,8 @@ _CREATEJOBREQUEST.fields_by_name['cluster_id']._options = None
 _CREATEJOBREQUEST.fields_by_name['name']._options = None
 _CREATEJOBMETADATA.fields_by_name['cluster_id']._options = None
 _CREATEJOBMETADATA.fields_by_name['job_id']._options = None
+_CANCELJOBREQUEST.fields_by_name['cluster_id']._options = None
+_CANCELJOBREQUEST.fields_by_name['job_id']._options = None
 _LISTJOBLOGREQUEST.fields_by_name['cluster_id']._options = None
 _LISTJOBLOGREQUEST.fields_by_name['job_id']._options = None
 _LISTJOBLOGREQUEST.fields_by_name['page_size']._options = None
@@ -463,8 +512,8 @@ _JOBSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1205,
-  serialized_end=1836,
+  serialized_start=1289,
+  serialized_end=2106,
   methods=[
   _descriptor.MethodDescriptor(
     name='List',
@@ -504,6 +553,16 @@ _JOBSERVICE = _descriptor.ServiceDescriptor(
     input_type=_LISTJOBLOGREQUEST,
     output_type=_LISTJOBLOGRESPONSE,
     serialized_options=b'\202\323\344\223\0027\0225/dataproc/v1/clusters/{cluster_id}/jobs/{job_id}:logs',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='Cancel',
+    full_name='yandex.cloud.dataproc.v1.JobService.Cancel',
+    index=4,
+    containing_service=None,
+    input_type=_CANCELJOBREQUEST,
+    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
+    serialized_options=b'\202\323\344\223\002<\"7/dataproc/v1/clusters/{cluster_id}/jobs/{job_id}:cancel:\001*\262\322*\030\n\021CreateJobMetadata\022\003Job',
     create_key=_descriptor._internal_create_key,
   ),
 ])

@@ -37,6 +37,11 @@ class JobServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_dataproc_dot_v1_dot_job__service__pb2.ListJobLogRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_dataproc_dot_v1_dot_job__service__pb2.ListJobLogResponse.FromString,
                 )
+        self.Cancel = channel.unary_unary(
+                '/yandex.cloud.dataproc.v1.JobService/Cancel',
+                request_serializer=yandex_dot_cloud_dot_dataproc_dot_v1_dot_job__service__pb2.CancelJobRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
 
 
 class JobServiceServicer(object):
@@ -71,6 +76,13 @@ class JobServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Cancel(self, request, context):
+        """Cancels the specified Dataproc job.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_JobServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -93,6 +105,11 @@ def add_JobServiceServicer_to_server(servicer, server):
                     servicer.ListLog,
                     request_deserializer=yandex_dot_cloud_dot_dataproc_dot_v1_dot_job__service__pb2.ListJobLogRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_dataproc_dot_v1_dot_job__service__pb2.ListJobLogResponse.SerializeToString,
+            ),
+            'Cancel': grpc.unary_unary_rpc_method_handler(
+                    servicer.Cancel,
+                    request_deserializer=yandex_dot_cloud_dot_dataproc_dot_v1_dot_job__service__pb2.CancelJobRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -170,5 +187,22 @@ class JobService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.dataproc.v1.JobService/ListLog',
             yandex_dot_cloud_dot_dataproc_dot_v1_dot_job__service__pb2.ListJobLogRequest.SerializeToString,
             yandex_dot_cloud_dot_dataproc_dot_v1_dot_job__service__pb2.ListJobLogResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Cancel(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.dataproc.v1.JobService/Cancel',
+            yandex_dot_cloud_dot_dataproc_dot_v1_dot_job__service__pb2.CancelJobRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

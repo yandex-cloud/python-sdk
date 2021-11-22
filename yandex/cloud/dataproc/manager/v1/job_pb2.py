@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n$yandex.cloud.api.dataproc.manager.v1ZUgithub.com/yandex-cloud/go-genproto/yandex/cloud/dataproc/manager/v1;dataproc_manager',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n*yandex/cloud/dataproc/manager/v1/job.proto\x12 yandex.cloud.dataproc.manager.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xe0\x05\n\x03Job\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nstarted_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0b\x66inished_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x06 \x01(\t\x12\x12\n\ncreated_by\x18\x0c \x01(\t\x12<\n\x06status\x18\x07 \x01(\x0e\x32,.yandex.cloud.dataproc.manager.v1.Job.Status\x12G\n\rmapreduce_job\x18\x08 \x01(\x0b\x32..yandex.cloud.dataproc.manager.v1.MapreduceJobH\x00\x12?\n\tspark_job\x18\t \x01(\x0b\x32*.yandex.cloud.dataproc.manager.v1.SparkJobH\x00\x12\x43\n\x0bpyspark_job\x18\n \x01(\x0b\x32,.yandex.cloud.dataproc.manager.v1.PysparkJobH\x00\x12=\n\x08hive_job\x18\x0b \x01(\x0b\x32).yandex.cloud.dataproc.manager.v1.HiveJobH\x00\x12K\n\x10\x61pplication_info\x18\r \x01(\x0b\x32\x31.yandex.cloud.dataproc.manager.v1.ApplicationInfo\"a\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x10\n\x0cPROVISIONING\x10\x01\x12\x0b\n\x07PENDING\x10\x02\x12\x0b\n\x07RUNNING\x10\x03\x12\t\n\x05\x45RROR\x10\x04\x12\x08\n\x04\x44ONE\x10\x05\x42\n\n\x08job_spec\"9\n\x12\x41pplicationAttempt\x12\n\n\x02id\x18\x01 \x01(\t\x12\x17\n\x0f\x61m_container_id\x18\x02 \x01(\t\"q\n\x0f\x41pplicationInfo\x12\n\n\x02id\x18\x01 \x01(\t\x12R\n\x14\x61pplication_attempts\x18\x02 \x03(\x0b\x32\x34.yandex.cloud.dataproc.manager.v1.ApplicationAttempt\"\xa0\x02\n\x0cMapreduceJob\x12\x0c\n\x04\x61rgs\x18\x01 \x03(\t\x12\x15\n\rjar_file_uris\x18\x02 \x03(\t\x12\x11\n\tfile_uris\x18\x03 \x03(\t\x12\x14\n\x0c\x61rchive_uris\x18\x04 \x03(\t\x12R\n\nproperties\x18\x05 \x03(\x0b\x32>.yandex.cloud.dataproc.manager.v1.MapreduceJob.PropertiesEntry\x12\x1b\n\x11main_jar_file_uri\x18\x06 \x01(\tH\x00\x12\x14\n\nmain_class\x18\x07 \x01(\tH\x00\x1a\x31\n\x0fPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x08\n\x06\x64river\"\xcc\x02\n\x08SparkJob\x12\x0c\n\x04\x61rgs\x18\x01 \x03(\t\x12\x15\n\rjar_file_uris\x18\x02 \x03(\t\x12\x11\n\tfile_uris\x18\x03 \x03(\t\x12\x14\n\x0c\x61rchive_uris\x18\x04 \x03(\t\x12N\n\nproperties\x18\x05 \x03(\x0b\x32:.yandex.cloud.dataproc.manager.v1.SparkJob.PropertiesEntry\x12\x19\n\x11main_jar_file_uri\x18\x06 \x01(\t\x12\x12\n\nmain_class\x18\x07 \x01(\t\x12\x10\n\x08packages\x18\x08 \x03(\t\x12\x14\n\x0crepositories\x18\t \x03(\t\x12\x18\n\x10\x65xclude_packages\x18\n \x03(\t\x1a\x31\n\x0fPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xd9\x02\n\nPysparkJob\x12\x0c\n\x04\x61rgs\x18\x01 \x03(\t\x12\x15\n\rjar_file_uris\x18\x02 \x03(\t\x12\x11\n\tfile_uris\x18\x03 \x03(\t\x12\x14\n\x0c\x61rchive_uris\x18\x04 \x03(\t\x12P\n\nproperties\x18\x05 \x03(\x0b\x32<.yandex.cloud.dataproc.manager.v1.PysparkJob.PropertiesEntry\x12\x1c\n\x14main_python_file_uri\x18\x06 \x01(\t\x12\x18\n\x10python_file_uris\x18\x07 \x03(\t\x12\x10\n\x08packages\x18\x08 \x03(\t\x12\x14\n\x0crepositories\x18\t \x03(\t\x12\x18\n\x10\x65xclude_packages\x18\n \x03(\t\x1a\x31\n\x0fPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1c\n\tQueryList\x12\x0f\n\x07queries\x18\x01 \x03(\t\"\xbc\x03\n\x07HiveJob\x12M\n\nproperties\x18\x01 \x03(\x0b\x32\x39.yandex.cloud.dataproc.manager.v1.HiveJob.PropertiesEntry\x12\x1b\n\x13\x63ontinue_on_failure\x18\x02 \x01(\x08\x12X\n\x10script_variables\x18\x03 \x03(\x0b\x32>.yandex.cloud.dataproc.manager.v1.HiveJob.ScriptVariablesEntry\x12\x15\n\rjar_file_uris\x18\x04 \x03(\t\x12\x18\n\x0equery_file_uri\x18\x05 \x01(\tH\x00\x12\x41\n\nquery_list\x18\x06 \x01(\x0b\x32+.yandex.cloud.dataproc.manager.v1.QueryListH\x00\x1a\x31\n\x0fPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x36\n\x14ScriptVariablesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0c\n\nquery_typeB}\n$yandex.cloud.api.dataproc.manager.v1ZUgithub.com/yandex-cloud/go-genproto/yandex/cloud/dataproc/manager/v1;dataproc_managerb\x06proto3'
+  serialized_pb=b'\n*yandex/cloud/dataproc/manager/v1/job.proto\x12 yandex.cloud.dataproc.manager.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\x80\x06\n\x03Job\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nstarted_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0b\x66inished_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x06 \x01(\t\x12\x12\n\ncreated_by\x18\x0c \x01(\t\x12<\n\x06status\x18\x07 \x01(\x0e\x32,.yandex.cloud.dataproc.manager.v1.Job.Status\x12G\n\rmapreduce_job\x18\x08 \x01(\x0b\x32..yandex.cloud.dataproc.manager.v1.MapreduceJobH\x00\x12?\n\tspark_job\x18\t \x01(\x0b\x32*.yandex.cloud.dataproc.manager.v1.SparkJobH\x00\x12\x43\n\x0bpyspark_job\x18\n \x01(\x0b\x32,.yandex.cloud.dataproc.manager.v1.PysparkJobH\x00\x12=\n\x08hive_job\x18\x0b \x01(\x0b\x32).yandex.cloud.dataproc.manager.v1.HiveJobH\x00\x12K\n\x10\x61pplication_info\x18\r \x01(\x0b\x32\x31.yandex.cloud.dataproc.manager.v1.ApplicationInfo\"\x80\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x10\n\x0cPROVISIONING\x10\x01\x12\x0b\n\x07PENDING\x10\x02\x12\x0b\n\x07RUNNING\x10\x03\x12\t\n\x05\x45RROR\x10\x04\x12\x08\n\x04\x44ONE\x10\x05\x12\r\n\tCANCELLED\x10\x06\x12\x0e\n\nCANCELLING\x10\x07\x42\n\n\x08job_spec\"9\n\x12\x41pplicationAttempt\x12\n\n\x02id\x18\x01 \x01(\t\x12\x17\n\x0f\x61m_container_id\x18\x02 \x01(\t\"q\n\x0f\x41pplicationInfo\x12\n\n\x02id\x18\x01 \x01(\t\x12R\n\x14\x61pplication_attempts\x18\x02 \x03(\x0b\x32\x34.yandex.cloud.dataproc.manager.v1.ApplicationAttempt\"\xa0\x02\n\x0cMapreduceJob\x12\x0c\n\x04\x61rgs\x18\x01 \x03(\t\x12\x15\n\rjar_file_uris\x18\x02 \x03(\t\x12\x11\n\tfile_uris\x18\x03 \x03(\t\x12\x14\n\x0c\x61rchive_uris\x18\x04 \x03(\t\x12R\n\nproperties\x18\x05 \x03(\x0b\x32>.yandex.cloud.dataproc.manager.v1.MapreduceJob.PropertiesEntry\x12\x1b\n\x11main_jar_file_uri\x18\x06 \x01(\tH\x00\x12\x14\n\nmain_class\x18\x07 \x01(\tH\x00\x1a\x31\n\x0fPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x08\n\x06\x64river\"\xcc\x02\n\x08SparkJob\x12\x0c\n\x04\x61rgs\x18\x01 \x03(\t\x12\x15\n\rjar_file_uris\x18\x02 \x03(\t\x12\x11\n\tfile_uris\x18\x03 \x03(\t\x12\x14\n\x0c\x61rchive_uris\x18\x04 \x03(\t\x12N\n\nproperties\x18\x05 \x03(\x0b\x32:.yandex.cloud.dataproc.manager.v1.SparkJob.PropertiesEntry\x12\x19\n\x11main_jar_file_uri\x18\x06 \x01(\t\x12\x12\n\nmain_class\x18\x07 \x01(\t\x12\x10\n\x08packages\x18\x08 \x03(\t\x12\x14\n\x0crepositories\x18\t \x03(\t\x12\x18\n\x10\x65xclude_packages\x18\n \x03(\t\x1a\x31\n\x0fPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xd9\x02\n\nPysparkJob\x12\x0c\n\x04\x61rgs\x18\x01 \x03(\t\x12\x15\n\rjar_file_uris\x18\x02 \x03(\t\x12\x11\n\tfile_uris\x18\x03 \x03(\t\x12\x14\n\x0c\x61rchive_uris\x18\x04 \x03(\t\x12P\n\nproperties\x18\x05 \x03(\x0b\x32<.yandex.cloud.dataproc.manager.v1.PysparkJob.PropertiesEntry\x12\x1c\n\x14main_python_file_uri\x18\x06 \x01(\t\x12\x18\n\x10python_file_uris\x18\x07 \x03(\t\x12\x10\n\x08packages\x18\x08 \x03(\t\x12\x14\n\x0crepositories\x18\t \x03(\t\x12\x18\n\x10\x65xclude_packages\x18\n \x03(\t\x1a\x31\n\x0fPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1c\n\tQueryList\x12\x0f\n\x07queries\x18\x01 \x03(\t\"\xbc\x03\n\x07HiveJob\x12M\n\nproperties\x18\x01 \x03(\x0b\x32\x39.yandex.cloud.dataproc.manager.v1.HiveJob.PropertiesEntry\x12\x1b\n\x13\x63ontinue_on_failure\x18\x02 \x01(\x08\x12X\n\x10script_variables\x18\x03 \x03(\x0b\x32>.yandex.cloud.dataproc.manager.v1.HiveJob.ScriptVariablesEntry\x12\x15\n\rjar_file_uris\x18\x04 \x03(\t\x12\x18\n\x0equery_file_uri\x18\x05 \x01(\tH\x00\x12\x41\n\nquery_list\x18\x06 \x01(\x0b\x32+.yandex.cloud.dataproc.manager.v1.QueryListH\x00\x1a\x31\n\x0fPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x36\n\x14ScriptVariablesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0c\n\nquery_typeB}\n$yandex.cloud.api.dataproc.manager.v1ZUgithub.com/yandex-cloud/go-genproto/yandex/cloud/dataproc/manager/v1;dataproc_managerb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
@@ -63,11 +63,21 @@ _JOB_STATUS = _descriptor.EnumDescriptor(
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='CANCELLED', index=6, number=6,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='CANCELLING', index=7, number=7,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=741,
-  serialized_end=838,
+  serialized_start=742,
+  serialized_end=870,
 )
 _sym_db.RegisterEnumDescriptor(_JOB_STATUS)
 
@@ -190,7 +200,7 @@ _JOB = _descriptor.Descriptor(
     fields=[]),
   ],
   serialized_start=114,
-  serialized_end=850,
+  serialized_end=882,
 )
 
 
@@ -228,8 +238,8 @@ _APPLICATIONATTEMPT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=852,
-  serialized_end=909,
+  serialized_start=884,
+  serialized_end=941,
 )
 
 
@@ -267,8 +277,8 @@ _APPLICATIONINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=911,
-  serialized_end=1024,
+  serialized_start=943,
+  serialized_end=1056,
 )
 
 
@@ -306,8 +316,8 @@ _MAPREDUCEJOB_PROPERTIESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1256,
-  serialized_end=1305,
+  serialized_start=1288,
+  serialized_end=1337,
 )
 
 _MAPREDUCEJOB = _descriptor.Descriptor(
@@ -384,8 +394,8 @@ _MAPREDUCEJOB = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1027,
-  serialized_end=1315,
+  serialized_start=1059,
+  serialized_end=1347,
 )
 
 
@@ -423,8 +433,8 @@ _SPARKJOB_PROPERTIESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1256,
-  serialized_end=1305,
+  serialized_start=1288,
+  serialized_end=1337,
 )
 
 _SPARKJOB = _descriptor.Descriptor(
@@ -517,8 +527,8 @@ _SPARKJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1318,
-  serialized_end=1650,
+  serialized_start=1350,
+  serialized_end=1682,
 )
 
 
@@ -556,8 +566,8 @@ _PYSPARKJOB_PROPERTIESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1256,
-  serialized_end=1305,
+  serialized_start=1288,
+  serialized_end=1337,
 )
 
 _PYSPARKJOB = _descriptor.Descriptor(
@@ -650,8 +660,8 @@ _PYSPARKJOB = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1653,
-  serialized_end=1998,
+  serialized_start=1685,
+  serialized_end=2030,
 )
 
 
@@ -682,8 +692,8 @@ _QUERYLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2000,
-  serialized_end=2028,
+  serialized_start=2032,
+  serialized_end=2060,
 )
 
 
@@ -721,8 +731,8 @@ _HIVEJOB_PROPERTIESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1256,
-  serialized_end=1305,
+  serialized_start=1288,
+  serialized_end=1337,
 )
 
 _HIVEJOB_SCRIPTVARIABLESENTRY = _descriptor.Descriptor(
@@ -759,8 +769,8 @@ _HIVEJOB_SCRIPTVARIABLESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2407,
-  serialized_end=2461,
+  serialized_start=2439,
+  serialized_end=2493,
 )
 
 _HIVEJOB = _descriptor.Descriptor(
@@ -830,8 +840,8 @@ _HIVEJOB = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=2031,
-  serialized_end=2475,
+  serialized_start=2063,
+  serialized_end=2507,
 )
 
 _JOB.fields_by_name['created_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
