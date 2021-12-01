@@ -31,6 +31,11 @@ class TransferServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_datatransfer_dot_v1_dot_transfer__service__pb2.DeleteTransferRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
+        self.List = channel.unary_unary(
+                '/yandex.cloud.datatransfer.v1.TransferService/List',
+                request_serializer=yandex_dot_cloud_dot_datatransfer_dot_v1_dot_transfer__service__pb2.ListTransfersRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_datatransfer_dot_v1_dot_transfer__service__pb2.ListTransfersResponse.FromString,
+                )
         self.Get = channel.unary_unary(
                 '/yandex.cloud.datatransfer.v1.TransferService/Get',
                 request_serializer=yandex_dot_cloud_dot_datatransfer_dot_v1_dot_transfer__service__pb2.GetTransferRequest.SerializeToString,
@@ -64,6 +69,12 @@ class TransferServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def List(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -104,6 +115,11 @@ def add_TransferServiceServicer_to_server(servicer, server):
                     servicer.Delete,
                     request_deserializer=yandex_dot_cloud_dot_datatransfer_dot_v1_dot_transfer__service__pb2.DeleteTransferRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'List': grpc.unary_unary_rpc_method_handler(
+                    servicer.List,
+                    request_deserializer=yandex_dot_cloud_dot_datatransfer_dot_v1_dot_transfer__service__pb2.ListTransfersRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_datatransfer_dot_v1_dot_transfer__service__pb2.ListTransfersResponse.SerializeToString,
             ),
             'Get': grpc.unary_unary_rpc_method_handler(
                     servicer.Get,
@@ -178,6 +194,23 @@ class TransferService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datatransfer.v1.TransferService/Delete',
             yandex_dot_cloud_dot_datatransfer_dot_v1_dot_transfer__service__pb2.DeleteTransferRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def List(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datatransfer.v1.TransferService/List',
+            yandex_dot_cloud_dot_datatransfer_dot_v1_dot_transfer__service__pb2.ListTransfersRequest.SerializeToString,
+            yandex_dot_cloud_dot_datatransfer_dot_v1_dot_transfer__service__pb2.ListTransfersResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

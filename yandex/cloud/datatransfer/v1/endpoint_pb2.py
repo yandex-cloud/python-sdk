@@ -22,12 +22,50 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n yandex.cloud.api.datatransfer.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1;datatransfer',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n+yandex/cloud/datatransfer/v1/endpoint.proto\x12\x1cyandex.cloud.datatransfer.v1\x1a\x32yandex/cloud/datatransfer/v1/endpoint/common.proto\x1a\x31yandex/cloud/datatransfer/v1/endpoint/mysql.proto\x1a\x34yandex/cloud/datatransfer/v1/endpoint/postgres.proto\"\x8e\x01\n\x08\x45ndpoint\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12@\n\x08settings\x18\x34 \x01(\x0b\x32..yandex.cloud.datatransfer.v1.EndpointSettings\"\xda\x02\n\x10\x45ndpointSettings\x12J\n\x0cmysql_source\x18\x01 \x01(\x0b\x32\x32.yandex.cloud.datatransfer.v1.endpoint.MysqlSourceH\x00\x12P\n\x0fpostgres_source\x18\x02 \x01(\x0b\x32\x35.yandex.cloud.datatransfer.v1.endpoint.PostgresSourceH\x00\x12J\n\x0cmysql_target\x18\x65 \x01(\x0b\x32\x32.yandex.cloud.datatransfer.v1.endpoint.MysqlTargetH\x00\x12P\n\x0fpostgres_target\x18\x66 \x01(\x0b\x32\x35.yandex.cloud.datatransfer.v1.endpoint.PostgresTargetH\x00\x42\n\n\x08settingsBq\n yandex.cloud.api.datatransfer.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1;datatransferb\x06proto3'
+  serialized_pb=b'\n+yandex/cloud/datatransfer/v1/endpoint.proto\x12\x1cyandex.cloud.datatransfer.v1\x1a\x32yandex/cloud/datatransfer/v1/endpoint/common.proto\x1a\x31yandex/cloud/datatransfer/v1/endpoint/mysql.proto\x1a\x34yandex/cloud/datatransfer/v1/endpoint/postgres.proto\"\x81\x02\n\x08\x45ndpoint\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x42\n\x06labels\x18\x06 \x03(\x0b\x32\x32.yandex.cloud.datatransfer.v1.Endpoint.LabelsEntry\x12@\n\x08settings\x18\x34 \x01(\x0b\x32..yandex.cloud.datatransfer.v1.EndpointSettings\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xda\x02\n\x10\x45ndpointSettings\x12J\n\x0cmysql_source\x18\x01 \x01(\x0b\x32\x32.yandex.cloud.datatransfer.v1.endpoint.MysqlSourceH\x00\x12P\n\x0fpostgres_source\x18\x02 \x01(\x0b\x32\x35.yandex.cloud.datatransfer.v1.endpoint.PostgresSourceH\x00\x12J\n\x0cmysql_target\x18\x65 \x01(\x0b\x32\x32.yandex.cloud.datatransfer.v1.endpoint.MysqlTargetH\x00\x12P\n\x0fpostgres_target\x18\x66 \x01(\x0b\x32\x35.yandex.cloud.datatransfer.v1.endpoint.PostgresTargetH\x00\x42\n\n\x08settingsBq\n yandex.cloud.api.datatransfer.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1;datatransferb\x06proto3'
   ,
   dependencies=[yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_common__pb2.DESCRIPTOR,yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_mysql__pb2.DESCRIPTOR,yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_postgres__pb2.DESCRIPTOR,])
 
 
 
+
+_ENDPOINT_LABELSENTRY = _descriptor.Descriptor(
+  name='LabelsEntry',
+  full_name='yandex.cloud.datatransfer.v1.Endpoint.LabelsEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='yandex.cloud.datatransfer.v1.Endpoint.LabelsEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='yandex.cloud.datatransfer.v1.Endpoint.LabelsEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=447,
+  serialized_end=492,
+)
 
 _ENDPOINT = _descriptor.Descriptor(
   name='Endpoint',
@@ -66,7 +104,14 @@ _ENDPOINT = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='settings', full_name='yandex.cloud.datatransfer.v1.Endpoint.settings', index=4,
+      name='labels', full_name='yandex.cloud.datatransfer.v1.Endpoint.labels', index=4,
+      number=6, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='settings', full_name='yandex.cloud.datatransfer.v1.Endpoint.settings', index=5,
       number=52, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -75,7 +120,7 @@ _ENDPOINT = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[],
+  nested_types=[_ENDPOINT_LABELSENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -85,7 +130,7 @@ _ENDPOINT = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=235,
-  serialized_end=377,
+  serialized_end=492,
 )
 
 
@@ -142,10 +187,12 @@ _ENDPOINTSETTINGS = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=380,
-  serialized_end=726,
+  serialized_start=495,
+  serialized_end=841,
 )
 
+_ENDPOINT_LABELSENTRY.containing_type = _ENDPOINT
+_ENDPOINT.fields_by_name['labels'].message_type = _ENDPOINT_LABELSENTRY
 _ENDPOINT.fields_by_name['settings'].message_type = _ENDPOINTSETTINGS
 _ENDPOINTSETTINGS.fields_by_name['mysql_source'].message_type = yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_mysql__pb2._MYSQLSOURCE
 _ENDPOINTSETTINGS.fields_by_name['postgres_source'].message_type = yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_postgres__pb2._POSTGRESSOURCE
@@ -168,11 +215,19 @@ DESCRIPTOR.message_types_by_name['EndpointSettings'] = _ENDPOINTSETTINGS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Endpoint = _reflection.GeneratedProtocolMessageType('Endpoint', (_message.Message,), {
+
+  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
+    'DESCRIPTOR' : _ENDPOINT_LABELSENTRY,
+    '__module__' : 'yandex.cloud.datatransfer.v1.endpoint_pb2'
+    # @@protoc_insertion_point(class_scope:yandex.cloud.datatransfer.v1.Endpoint.LabelsEntry)
+    })
+  ,
   'DESCRIPTOR' : _ENDPOINT,
   '__module__' : 'yandex.cloud.datatransfer.v1.endpoint_pb2'
   # @@protoc_insertion_point(class_scope:yandex.cloud.datatransfer.v1.Endpoint)
   })
 _sym_db.RegisterMessage(Endpoint)
+_sym_db.RegisterMessage(Endpoint.LabelsEntry)
 
 EndpointSettings = _reflection.GeneratedProtocolMessageType('EndpointSettings', (_message.Message,), {
   'DESCRIPTOR' : _ENDPOINTSETTINGS,
@@ -183,4 +238,5 @@ _sym_db.RegisterMessage(EndpointSettings)
 
 
 DESCRIPTOR._options = None
+_ENDPOINT_LABELSENTRY._options = None
 # @@protoc_insertion_point(module_scope)

@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\035yandex.cloud.api.mdb.kafka.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/kafka/v1;kafka',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n)yandex/cloud/mdb/kafka/v1/connector.proto\x12\x19yandex.cloud.mdb.kafka.v1\x1a\x1egoogle/protobuf/wrappers.proto\"\xc5\x02\n\rConnectorSpec\x12\x0c\n\x04name\x18\x01 \x01(\t\x12.\n\ttasks_max\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12L\n\nproperties\x18\x03 \x03(\x0b\x32\x38.yandex.cloud.mdb.kafka.v1.ConnectorSpec.PropertiesEntry\x12\x61\n\x1c\x63onnector_config_mirrormaker\x18\n \x01(\x0b\x32\x39.yandex.cloud.mdb.kafka.v1.ConnectorConfigMirrorMakerSpecH\x00\x1a\x31\n\x0fPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x12\n\x10\x63onnector_config\"\xfd\x01\n\x1e\x43onnectorConfigMirrorMakerSpec\x12H\n\x0esource_cluster\x18\x01 \x01(\x0b\x32\x30.yandex.cloud.mdb.kafka.v1.ClusterConnectionSpec\x12H\n\x0etarget_cluster\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.mdb.kafka.v1.ClusterConnectionSpec\x12\x0e\n\x06topics\x18\x03 \x01(\t\x12\x37\n\x12replication_factor\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"\xd6\x01\n\x15\x43lusterConnectionSpec\x12\r\n\x05\x61lias\x18\x01 \x01(\t\x12\x42\n\x0cthis_cluster\x18\x02 \x01(\x0b\x32*.yandex.cloud.mdb.kafka.v1.ThisClusterSpecH\x00\x12T\n\x10\x65xternal_cluster\x18\x03 \x01(\x0b\x32\x38.yandex.cloud.mdb.kafka.v1.ExternalClusterConnectionSpecH\x00\x42\x14\n\x12\x63luster_connection\"\x11\n\x0fThisClusterSpec\"\x9b\x01\n\x1d\x45xternalClusterConnectionSpec\x12\x19\n\x11\x62ootstrap_servers\x18\x01 \x01(\t\x12\x15\n\rsasl_username\x18\x02 \x01(\t\x12\x15\n\rsasl_password\x18\x03 \x01(\t\x12\x16\n\x0esasl_mechanism\x18\x04 \x01(\t\x12\x19\n\x11security_protocol\x18\x05 \x01(\t\"\xbc\x04\n\tConnector\x12\x0c\n\x04name\x18\x01 \x01(\t\x12.\n\ttasks_max\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12H\n\nproperties\x18\x03 \x03(\x0b\x32\x34.yandex.cloud.mdb.kafka.v1.Connector.PropertiesEntry\x12;\n\x06health\x18\x04 \x01(\x0e\x32+.yandex.cloud.mdb.kafka.v1.Connector.Health\x12;\n\x06status\x18\x05 \x01(\x0e\x32+.yandex.cloud.mdb.kafka.v1.Connector.Status\x12\x12\n\ncluster_id\x18\x06 \x01(\t\x12]\n\x1c\x63onnector_config_mirrormaker\x18\n \x01(\x0b\x32\x35.yandex.cloud.mdb.kafka.v1.ConnectorConfigMirrorMakerH\x00\x1a\x31\n\x0fPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"1\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\"@\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x0b\n\x07RUNNING\x10\x01\x12\t\n\x05\x45RROR\x10\x02\x12\n\n\x06PAUSED\x10\x03\x42\x12\n\x10\x63onnector_config\"\xf1\x01\n\x1a\x43onnectorConfigMirrorMaker\x12\x44\n\x0esource_cluster\x18\x01 \x01(\x0b\x32,.yandex.cloud.mdb.kafka.v1.ClusterConnection\x12\x44\n\x0etarget_cluster\x18\x02 \x01(\x0b\x32,.yandex.cloud.mdb.kafka.v1.ClusterConnection\x12\x0e\n\x06topics\x18\x03 \x01(\t\x12\x37\n\x12replication_factor\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"\xca\x01\n\x11\x43lusterConnection\x12\r\n\x05\x61lias\x18\x01 \x01(\t\x12>\n\x0cthis_cluster\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.kafka.v1.ThisClusterH\x00\x12P\n\x10\x65xternal_cluster\x18\x03 \x01(\x0b\x32\x34.yandex.cloud.mdb.kafka.v1.ExternalClusterConnectionH\x00\x42\x14\n\x12\x63luster_connection\"\r\n\x0bThisCluster\"\x80\x01\n\x19\x45xternalClusterConnection\x12\x19\n\x11\x62ootstrap_servers\x18\x01 \x01(\t\x12\x15\n\rsasl_username\x18\x02 \x01(\t\x12\x16\n\x0esasl_mechanism\x18\x04 \x01(\t\x12\x19\n\x11security_protocol\x18\x05 \x01(\tBd\n\x1dyandex.cloud.api.mdb.kafka.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/kafka/v1;kafkab\x06proto3'
+  serialized_pb=b'\n)yandex/cloud/mdb/kafka/v1/connector.proto\x12\x19yandex.cloud.mdb.kafka.v1\x1a\x1egoogle/protobuf/wrappers.proto\"\xc5\x02\n\rConnectorSpec\x12\x0c\n\x04name\x18\x01 \x01(\t\x12.\n\ttasks_max\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12L\n\nproperties\x18\x03 \x03(\x0b\x32\x38.yandex.cloud.mdb.kafka.v1.ConnectorSpec.PropertiesEntry\x12\x61\n\x1c\x63onnector_config_mirrormaker\x18\n \x01(\x0b\x32\x39.yandex.cloud.mdb.kafka.v1.ConnectorConfigMirrorMakerSpecH\x00\x1a\x31\n\x0fPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x12\n\x10\x63onnector_config\"\xc3\x02\n\x13UpdateConnectorSpec\x12.\n\ttasks_max\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12R\n\nproperties\x18\x02 \x03(\x0b\x32>.yandex.cloud.mdb.kafka.v1.UpdateConnectorSpec.PropertiesEntry\x12\x61\n\x1c\x63onnector_config_mirrormaker\x18\n \x01(\x0b\x32\x39.yandex.cloud.mdb.kafka.v1.ConnectorConfigMirrorMakerSpecH\x00\x1a\x31\n\x0fPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x12\n\x10\x63onnector_config\"\xfd\x01\n\x1e\x43onnectorConfigMirrorMakerSpec\x12H\n\x0esource_cluster\x18\x01 \x01(\x0b\x32\x30.yandex.cloud.mdb.kafka.v1.ClusterConnectionSpec\x12H\n\x0etarget_cluster\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.mdb.kafka.v1.ClusterConnectionSpec\x12\x0e\n\x06topics\x18\x03 \x01(\t\x12\x37\n\x12replication_factor\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"\xd6\x01\n\x15\x43lusterConnectionSpec\x12\r\n\x05\x61lias\x18\x01 \x01(\t\x12\x42\n\x0cthis_cluster\x18\x02 \x01(\x0b\x32*.yandex.cloud.mdb.kafka.v1.ThisClusterSpecH\x00\x12T\n\x10\x65xternal_cluster\x18\x03 \x01(\x0b\x32\x38.yandex.cloud.mdb.kafka.v1.ExternalClusterConnectionSpecH\x00\x42\x14\n\x12\x63luster_connection\"\x11\n\x0fThisClusterSpec\"\x9b\x01\n\x1d\x45xternalClusterConnectionSpec\x12\x19\n\x11\x62ootstrap_servers\x18\x01 \x01(\t\x12\x15\n\rsasl_username\x18\x02 \x01(\t\x12\x15\n\rsasl_password\x18\x03 \x01(\t\x12\x16\n\x0esasl_mechanism\x18\x04 \x01(\t\x12\x19\n\x11security_protocol\x18\x05 \x01(\t\"\xbc\x04\n\tConnector\x12\x0c\n\x04name\x18\x01 \x01(\t\x12.\n\ttasks_max\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12H\n\nproperties\x18\x03 \x03(\x0b\x32\x34.yandex.cloud.mdb.kafka.v1.Connector.PropertiesEntry\x12;\n\x06health\x18\x04 \x01(\x0e\x32+.yandex.cloud.mdb.kafka.v1.Connector.Health\x12;\n\x06status\x18\x05 \x01(\x0e\x32+.yandex.cloud.mdb.kafka.v1.Connector.Status\x12\x12\n\ncluster_id\x18\x06 \x01(\t\x12]\n\x1c\x63onnector_config_mirrormaker\x18\n \x01(\x0b\x32\x35.yandex.cloud.mdb.kafka.v1.ConnectorConfigMirrorMakerH\x00\x1a\x31\n\x0fPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"1\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\"@\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x0b\n\x07RUNNING\x10\x01\x12\t\n\x05\x45RROR\x10\x02\x12\n\n\x06PAUSED\x10\x03\x42\x12\n\x10\x63onnector_config\"\xf1\x01\n\x1a\x43onnectorConfigMirrorMaker\x12\x44\n\x0esource_cluster\x18\x01 \x01(\x0b\x32,.yandex.cloud.mdb.kafka.v1.ClusterConnection\x12\x44\n\x0etarget_cluster\x18\x02 \x01(\x0b\x32,.yandex.cloud.mdb.kafka.v1.ClusterConnection\x12\x0e\n\x06topics\x18\x03 \x01(\t\x12\x37\n\x12replication_factor\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"\xca\x01\n\x11\x43lusterConnection\x12\r\n\x05\x61lias\x18\x01 \x01(\t\x12>\n\x0cthis_cluster\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.kafka.v1.ThisClusterH\x00\x12P\n\x10\x65xternal_cluster\x18\x03 \x01(\x0b\x32\x34.yandex.cloud.mdb.kafka.v1.ExternalClusterConnectionH\x00\x42\x14\n\x12\x63luster_connection\"\r\n\x0bThisCluster\"\x80\x01\n\x19\x45xternalClusterConnection\x12\x19\n\x11\x62ootstrap_servers\x18\x01 \x01(\t\x12\x15\n\rsasl_username\x18\x02 \x01(\t\x12\x16\n\x0esasl_mechanism\x18\x04 \x01(\t\x12\x19\n\x11security_protocol\x18\x05 \x01(\tBd\n\x1dyandex.cloud.api.mdb.kafka.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/kafka/v1;kafkab\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,])
 
@@ -51,8 +51,8 @@ _CONNECTOR_HEALTH = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1520,
-  serialized_end=1569,
+  serialized_start=1846,
+  serialized_end=1895,
 )
 _sym_db.RegisterEnumDescriptor(_CONNECTOR_HEALTH)
 
@@ -86,8 +86,8 @@ _CONNECTOR_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1571,
-  serialized_end=1635,
+  serialized_start=1897,
+  serialized_end=1961,
 )
 _sym_db.RegisterEnumDescriptor(_CONNECTOR_STATUS)
 
@@ -188,6 +188,95 @@ _CONNECTORSPEC = _descriptor.Descriptor(
 )
 
 
+_UPDATECONNECTORSPEC_PROPERTIESENTRY = _descriptor.Descriptor(
+  name='PropertiesEntry',
+  full_name='yandex.cloud.mdb.kafka.v1.UpdateConnectorSpec.PropertiesEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='yandex.cloud.mdb.kafka.v1.UpdateConnectorSpec.PropertiesEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='yandex.cloud.mdb.kafka.v1.UpdateConnectorSpec.PropertiesEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=361,
+  serialized_end=410,
+)
+
+_UPDATECONNECTORSPEC = _descriptor.Descriptor(
+  name='UpdateConnectorSpec',
+  full_name='yandex.cloud.mdb.kafka.v1.UpdateConnectorSpec',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='tasks_max', full_name='yandex.cloud.mdb.kafka.v1.UpdateConnectorSpec.tasks_max', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='properties', full_name='yandex.cloud.mdb.kafka.v1.UpdateConnectorSpec.properties', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='connector_config_mirrormaker', full_name='yandex.cloud.mdb.kafka.v1.UpdateConnectorSpec.connector_config_mirrormaker', index=2,
+      number=10, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_UPDATECONNECTORSPEC_PROPERTIESENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='connector_config', full_name='yandex.cloud.mdb.kafka.v1.UpdateConnectorSpec.connector_config',
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+  ],
+  serialized_start=433,
+  serialized_end=756,
+)
+
+
 _CONNECTORCONFIGMIRRORMAKERSPEC = _descriptor.Descriptor(
   name='ConnectorConfigMirrorMakerSpec',
   full_name='yandex.cloud.mdb.kafka.v1.ConnectorConfigMirrorMakerSpec',
@@ -236,8 +325,8 @@ _CONNECTORCONFIGMIRRORMAKERSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=433,
-  serialized_end=686,
+  serialized_start=759,
+  serialized_end=1012,
 )
 
 
@@ -287,8 +376,8 @@ _CLUSTERCONNECTIONSPEC = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=689,
-  serialized_end=903,
+  serialized_start=1015,
+  serialized_end=1229,
 )
 
 
@@ -312,8 +401,8 @@ _THISCLUSTERSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=905,
-  serialized_end=922,
+  serialized_start=1231,
+  serialized_end=1248,
 )
 
 
@@ -372,8 +461,8 @@ _EXTERNALCLUSTERCONNECTIONSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=925,
-  serialized_end=1080,
+  serialized_start=1251,
+  serialized_end=1406,
 )
 
 
@@ -491,8 +580,8 @@ _CONNECTOR = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1083,
-  serialized_end=1655,
+  serialized_start=1409,
+  serialized_end=1981,
 )
 
 
@@ -544,8 +633,8 @@ _CONNECTORCONFIGMIRRORMAKER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1658,
-  serialized_end=1899,
+  serialized_start=1984,
+  serialized_end=2225,
 )
 
 
@@ -595,8 +684,8 @@ _CLUSTERCONNECTION = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1902,
-  serialized_end=2104,
+  serialized_start=2228,
+  serialized_end=2430,
 )
 
 
@@ -620,8 +709,8 @@ _THISCLUSTER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2106,
-  serialized_end=2119,
+  serialized_start=2432,
+  serialized_end=2445,
 )
 
 
@@ -673,8 +762,8 @@ _EXTERNALCLUSTERCONNECTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2122,
-  serialized_end=2250,
+  serialized_start=2448,
+  serialized_end=2576,
 )
 
 _CONNECTORSPEC_PROPERTIESENTRY.containing_type = _CONNECTORSPEC
@@ -684,6 +773,13 @@ _CONNECTORSPEC.fields_by_name['connector_config_mirrormaker'].message_type = _CO
 _CONNECTORSPEC.oneofs_by_name['connector_config'].fields.append(
   _CONNECTORSPEC.fields_by_name['connector_config_mirrormaker'])
 _CONNECTORSPEC.fields_by_name['connector_config_mirrormaker'].containing_oneof = _CONNECTORSPEC.oneofs_by_name['connector_config']
+_UPDATECONNECTORSPEC_PROPERTIESENTRY.containing_type = _UPDATECONNECTORSPEC
+_UPDATECONNECTORSPEC.fields_by_name['tasks_max'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_UPDATECONNECTORSPEC.fields_by_name['properties'].message_type = _UPDATECONNECTORSPEC_PROPERTIESENTRY
+_UPDATECONNECTORSPEC.fields_by_name['connector_config_mirrormaker'].message_type = _CONNECTORCONFIGMIRRORMAKERSPEC
+_UPDATECONNECTORSPEC.oneofs_by_name['connector_config'].fields.append(
+  _UPDATECONNECTORSPEC.fields_by_name['connector_config_mirrormaker'])
+_UPDATECONNECTORSPEC.fields_by_name['connector_config_mirrormaker'].containing_oneof = _UPDATECONNECTORSPEC.oneofs_by_name['connector_config']
 _CONNECTORCONFIGMIRRORMAKERSPEC.fields_by_name['source_cluster'].message_type = _CLUSTERCONNECTIONSPEC
 _CONNECTORCONFIGMIRRORMAKERSPEC.fields_by_name['target_cluster'].message_type = _CLUSTERCONNECTIONSPEC
 _CONNECTORCONFIGMIRRORMAKERSPEC.fields_by_name['replication_factor'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
@@ -718,6 +814,7 @@ _CLUSTERCONNECTION.oneofs_by_name['cluster_connection'].fields.append(
   _CLUSTERCONNECTION.fields_by_name['external_cluster'])
 _CLUSTERCONNECTION.fields_by_name['external_cluster'].containing_oneof = _CLUSTERCONNECTION.oneofs_by_name['cluster_connection']
 DESCRIPTOR.message_types_by_name['ConnectorSpec'] = _CONNECTORSPEC
+DESCRIPTOR.message_types_by_name['UpdateConnectorSpec'] = _UPDATECONNECTORSPEC
 DESCRIPTOR.message_types_by_name['ConnectorConfigMirrorMakerSpec'] = _CONNECTORCONFIGMIRRORMAKERSPEC
 DESCRIPTOR.message_types_by_name['ClusterConnectionSpec'] = _CLUSTERCONNECTIONSPEC
 DESCRIPTOR.message_types_by_name['ThisClusterSpec'] = _THISCLUSTERSPEC
@@ -743,6 +840,21 @@ ConnectorSpec = _reflection.GeneratedProtocolMessageType('ConnectorSpec', (_mess
   })
 _sym_db.RegisterMessage(ConnectorSpec)
 _sym_db.RegisterMessage(ConnectorSpec.PropertiesEntry)
+
+UpdateConnectorSpec = _reflection.GeneratedProtocolMessageType('UpdateConnectorSpec', (_message.Message,), {
+
+  'PropertiesEntry' : _reflection.GeneratedProtocolMessageType('PropertiesEntry', (_message.Message,), {
+    'DESCRIPTOR' : _UPDATECONNECTORSPEC_PROPERTIESENTRY,
+    '__module__' : 'yandex.cloud.mdb.kafka.v1.connector_pb2'
+    # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.kafka.v1.UpdateConnectorSpec.PropertiesEntry)
+    })
+  ,
+  'DESCRIPTOR' : _UPDATECONNECTORSPEC,
+  '__module__' : 'yandex.cloud.mdb.kafka.v1.connector_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.kafka.v1.UpdateConnectorSpec)
+  })
+_sym_db.RegisterMessage(UpdateConnectorSpec)
+_sym_db.RegisterMessage(UpdateConnectorSpec.PropertiesEntry)
 
 ConnectorConfigMirrorMakerSpec = _reflection.GeneratedProtocolMessageType('ConnectorConfigMirrorMakerSpec', (_message.Message,), {
   'DESCRIPTOR' : _CONNECTORCONFIGMIRRORMAKERSPEC,
@@ -818,5 +930,6 @@ _sym_db.RegisterMessage(ExternalClusterConnection)
 
 DESCRIPTOR._options = None
 _CONNECTORSPEC_PROPERTIESENTRY._options = None
+_UPDATECONNECTORSPEC_PROPERTIESENTRY._options = None
 _CONNECTOR_PROPERTIESENTRY._options = None
 # @@protoc_insertion_point(module_scope)

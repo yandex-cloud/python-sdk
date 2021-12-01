@@ -12,6 +12,7 @@ _sym_db = _symbol_database.Default()
 
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
+from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from yandex.cloud.datatransfer.v1 import transfer_pb2 as yandex_dot_cloud_dot_datatransfer_dot_v1_dot_transfer__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
@@ -23,12 +24,50 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n yandex.cloud.api.datatransfer.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1;datatransfer',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n3yandex/cloud/datatransfer/v1/transfer_service.proto\x12\x1cyandex.cloud.datatransfer.v1\x1a\x1cgoogle/api/annotations.proto\x1a+yandex/cloud/datatransfer/v1/transfer.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\"\xad\x01\n\x15\x43reateTransferRequest\x12\x11\n\tsource_id\x18\x01 \x01(\t\x12\x11\n\ttarget_id\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x07 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x11\n\tfolder_id\x18\x04 \x01(\t\x12\x38\n\x04type\x18\x06 \x01(\x0e\x32*.yandex.cloud.datatransfer.v1.TransferType\"-\n\x16\x43reateTransferMetadata\x12\x13\n\x0btransfer_id\x18\x01 \x01(\t\"O\n\x15UpdateTransferRequest\x12\x13\n\x0btransfer_id\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\"-\n\x16UpdateTransferMetadata\x12\x13\n\x0btransfer_id\x18\x01 \x01(\t\",\n\x15\x44\x65leteTransferRequest\x12\x13\n\x0btransfer_id\x18\x01 \x01(\t\"-\n\x16\x44\x65leteTransferMetadata\x12\x13\n\x0btransfer_id\x18\x01 \x01(\t\")\n\x12GetTransferRequest\x12\x13\n\x0btransfer_id\x18\x01 \x01(\t\"0\n\x19\x44\x65\x61\x63tivateTransferRequest\x12\x13\n\x0btransfer_id\x18\x01 \x01(\t\"1\n\x1a\x44\x65\x61\x63tivateTransferMetadata\x12\x13\n\x0btransfer_id\x18\x01 \x01(\t\".\n\x17\x41\x63tivateTransferRequest\x12\x13\n\x0btransfer_id\x18\x01 \x01(\t\"/\n\x18\x41\x63tivateTransferMetadata\x12\x13\n\x0btransfer_id\x18\x01 \x01(\t2\xc3\x08\n\x0fTransferService\x12\x9f\x01\n\x06\x43reate\x12\x33.yandex.cloud.datatransfer.v1.CreateTransferRequest\x1a!.yandex.cloud.operation.Operation\"=\x82\xd3\xe4\x93\x02\x11\"\x0c/v1/transfer:\x01*\xb2\xd2*\"\n\x16\x43reateTransferMetadata\x12\x08Transfer\x12\xad\x01\n\x06Update\x12\x33.yandex.cloud.datatransfer.v1.UpdateTransferRequest\x1a!.yandex.cloud.operation.Operation\"K\x82\xd3\xe4\x93\x02\x1f\x32\x1a/v1/transfer/{transfer_id}:\x01*\xb2\xd2*\"\n\x16UpdateTransferMetadata\x12\x08Transfer\x12\xb7\x01\n\x06\x44\x65lete\x12\x33.yandex.cloud.datatransfer.v1.DeleteTransferRequest\x1a!.yandex.cloud.operation.Operation\"U\x82\xd3\xe4\x93\x02\x1c*\x1a/v1/transfer/{transfer_id}\xb2\xd2*/\n\x16\x44\x65leteTransferMetadata\x12\x15google.protobuf.Empty\x12\x83\x01\n\x03Get\x12\x30.yandex.cloud.datatransfer.v1.GetTransferRequest\x1a&.yandex.cloud.datatransfer.v1.Transfer\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/v1/transfer/{transfer_id}\x12\xd1\x01\n\nDeactivate\x12\x37.yandex.cloud.datatransfer.v1.DeactivateTransferRequest\x1a!.yandex.cloud.operation.Operation\"g\x82\xd3\xe4\x93\x02*\"%/v1/transfer/{transfer_id}:deactivate:\x01*\xb2\xd2*3\n\x1a\x44\x65\x61\x63tivateTransferMetadata\x12\x15google.protobuf.Empty\x12\xc9\x01\n\x08\x41\x63tivate\x12\x35.yandex.cloud.datatransfer.v1.ActivateTransferRequest\x1a!.yandex.cloud.operation.Operation\"c\x82\xd3\xe4\x93\x02(\"#/v1/transfer/{transfer_id}:activate:\x01*\xb2\xd2*1\n\x18\x41\x63tivateTransferMetadata\x12\x15google.protobuf.EmptyBq\n yandex.cloud.api.datatransfer.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1;datatransferb\x06proto3'
+  serialized_pb=b'\n3yandex/cloud/datatransfer/v1/transfer_service.proto\x12\x1cyandex.cloud.datatransfer.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a+yandex/cloud/datatransfer/v1/transfer.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\"\xad\x02\n\x15\x43reateTransferRequest\x12\x11\n\tsource_id\x18\x01 \x01(\t\x12\x11\n\ttarget_id\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x07 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12O\n\x06labels\x18\x08 \x03(\x0b\x32?.yandex.cloud.datatransfer.v1.CreateTransferRequest.LabelsEntry\x12\x11\n\tfolder_id\x18\x04 \x01(\t\x12\x38\n\x04type\x18\x06 \x01(\x0e\x32*.yandex.cloud.datatransfer.v1.TransferType\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"-\n\x16\x43reateTransferMetadata\x12\x13\n\x0btransfer_id\x18\x01 \x01(\t\"\x80\x02\n\x15UpdateTransferRequest\x12\x13\n\x0btransfer_id\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12O\n\x06labels\x18\x06 \x03(\x0b\x32?.yandex.cloud.datatransfer.v1.UpdateTransferRequest.LabelsEntry\x12\x0c\n\x04name\x18\x04 \x01(\t\x12/\n\x0bupdate_mask\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"-\n\x16UpdateTransferMetadata\x12\x13\n\x0btransfer_id\x18\x01 \x01(\t\",\n\x15\x44\x65leteTransferRequest\x12\x13\n\x0btransfer_id\x18\x01 \x01(\t\"-\n\x16\x44\x65leteTransferMetadata\x12\x13\n\x0btransfer_id\x18\x01 \x01(\t\"P\n\x14ListTransfersRequest\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12\x11\n\tpage_size\x18\x03 \x01(\x03\x12\x12\n\npage_token\x18\x04 \x01(\t\"k\n\x15ListTransfersResponse\x12\x39\n\ttransfers\x18\x01 \x03(\x0b\x32&.yandex.cloud.datatransfer.v1.Transfer\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\")\n\x12GetTransferRequest\x12\x13\n\x0btransfer_id\x18\x01 \x01(\t\"0\n\x19\x44\x65\x61\x63tivateTransferRequest\x12\x13\n\x0btransfer_id\x18\x01 \x01(\t\"1\n\x1a\x44\x65\x61\x63tivateTransferMetadata\x12\x13\n\x0btransfer_id\x18\x01 \x01(\t\".\n\x17\x41\x63tivateTransferRequest\x12\x13\n\x0btransfer_id\x18\x01 \x01(\t\"/\n\x18\x41\x63tivateTransferMetadata\x12\x13\n\x0btransfer_id\x18\x01 \x01(\t2\xdd\t\n\x0fTransferService\x12\x9f\x01\n\x06\x43reate\x12\x33.yandex.cloud.datatransfer.v1.CreateTransferRequest\x1a!.yandex.cloud.operation.Operation\"=\x82\xd3\xe4\x93\x02\x11\"\x0c/v1/transfer:\x01*\xb2\xd2*\"\n\x16\x43reateTransferMetadata\x12\x08Transfer\x12\xad\x01\n\x06Update\x12\x33.yandex.cloud.datatransfer.v1.UpdateTransferRequest\x1a!.yandex.cloud.operation.Operation\"K\x82\xd3\xe4\x93\x02\x1f\x32\x1a/v1/transfer/{transfer_id}:\x01*\xb2\xd2*\"\n\x16UpdateTransferMetadata\x12\x08Transfer\x12\xb7\x01\n\x06\x44\x65lete\x12\x33.yandex.cloud.datatransfer.v1.DeleteTransferRequest\x1a!.yandex.cloud.operation.Operation\"U\x82\xd3\xe4\x93\x02\x1c*\x1a/v1/transfer/{transfer_id}\xb2\xd2*/\n\x16\x44\x65leteTransferMetadata\x12\x15google.protobuf.Empty\x12\x97\x01\n\x04List\x12\x32.yandex.cloud.datatransfer.v1.ListTransfersRequest\x1a\x33.yandex.cloud.datatransfer.v1.ListTransfersResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/v1/transfers/list/{folder_id}\x12\x83\x01\n\x03Get\x12\x30.yandex.cloud.datatransfer.v1.GetTransferRequest\x1a&.yandex.cloud.datatransfer.v1.Transfer\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/v1/transfer/{transfer_id}\x12\xd1\x01\n\nDeactivate\x12\x37.yandex.cloud.datatransfer.v1.DeactivateTransferRequest\x1a!.yandex.cloud.operation.Operation\"g\x82\xd3\xe4\x93\x02*\"%/v1/transfer/{transfer_id}:deactivate:\x01*\xb2\xd2*3\n\x1a\x44\x65\x61\x63tivateTransferMetadata\x12\x15google.protobuf.Empty\x12\xc9\x01\n\x08\x41\x63tivate\x12\x35.yandex.cloud.datatransfer.v1.ActivateTransferRequest\x1a!.yandex.cloud.operation.Operation\"c\x82\xd3\xe4\x93\x02(\"#/v1/transfer/{transfer_id}:activate:\x01*\xb2\xd2*1\n\x18\x41\x63tivateTransferMetadata\x12\x15google.protobuf.EmptyBq\n yandex.cloud.api.datatransfer.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1;datatransferb\x06proto3'
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_datatransfer_dot_v1_dot_transfer__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_datatransfer_dot_v1_dot_transfer__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,])
 
 
 
+
+_CREATETRANSFERREQUEST_LABELSENTRY = _descriptor.Descriptor(
+  name='LabelsEntry',
+  full_name='yandex.cloud.datatransfer.v1.CreateTransferRequest.LabelsEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='yandex.cloud.datatransfer.v1.CreateTransferRequest.LabelsEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='yandex.cloud.datatransfer.v1.CreateTransferRequest.LabelsEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=525,
+  serialized_end=570,
+)
 
 _CREATETRANSFERREQUEST = _descriptor.Descriptor(
   name='CreateTransferRequest',
@@ -67,14 +106,21 @@ _CREATETRANSFERREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.datatransfer.v1.CreateTransferRequest.folder_id', index=4,
+      name='labels', full_name='yandex.cloud.datatransfer.v1.CreateTransferRequest.labels', index=4,
+      number=8, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='folder_id', full_name='yandex.cloud.datatransfer.v1.CreateTransferRequest.folder_id', index=5,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='type', full_name='yandex.cloud.datatransfer.v1.CreateTransferRequest.type', index=5,
+      name='type', full_name='yandex.cloud.datatransfer.v1.CreateTransferRequest.type', index=6,
       number=6, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -83,7 +129,7 @@ _CREATETRANSFERREQUEST = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[],
+  nested_types=[_CREATETRANSFERREQUEST_LABELSENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -92,8 +138,8 @@ _CREATETRANSFERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=235,
-  serialized_end=408,
+  serialized_start=269,
+  serialized_end=570,
 )
 
 
@@ -124,10 +170,48 @@ _CREATETRANSFERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=410,
-  serialized_end=455,
+  serialized_start=572,
+  serialized_end=617,
 )
 
+
+_UPDATETRANSFERREQUEST_LABELSENTRY = _descriptor.Descriptor(
+  name='LabelsEntry',
+  full_name='yandex.cloud.datatransfer.v1.UpdateTransferRequest.LabelsEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='yandex.cloud.datatransfer.v1.UpdateTransferRequest.LabelsEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='yandex.cloud.datatransfer.v1.UpdateTransferRequest.LabelsEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=525,
+  serialized_end=570,
+)
 
 _UPDATETRANSFERREQUEST = _descriptor.Descriptor(
   name='UpdateTransferRequest',
@@ -152,16 +236,30 @@ _UPDATETRANSFERREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.datatransfer.v1.UpdateTransferRequest.name', index=2,
+      name='labels', full_name='yandex.cloud.datatransfer.v1.UpdateTransferRequest.labels', index=2,
+      number=6, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='yandex.cloud.datatransfer.v1.UpdateTransferRequest.name', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='update_mask', full_name='yandex.cloud.datatransfer.v1.UpdateTransferRequest.update_mask', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
-  nested_types=[],
+  nested_types=[_UPDATETRANSFERREQUEST_LABELSENTRY, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -170,8 +268,8 @@ _UPDATETRANSFERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=457,
-  serialized_end=536,
+  serialized_start=620,
+  serialized_end=876,
 )
 
 
@@ -202,8 +300,8 @@ _UPDATETRANSFERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=538,
-  serialized_end=583,
+  serialized_start=878,
+  serialized_end=923,
 )
 
 
@@ -234,8 +332,8 @@ _DELETETRANSFERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=585,
-  serialized_end=629,
+  serialized_start=925,
+  serialized_end=969,
 )
 
 
@@ -266,8 +364,93 @@ _DELETETRANSFERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=631,
-  serialized_end=676,
+  serialized_start=971,
+  serialized_end=1016,
+)
+
+
+_LISTTRANSFERSREQUEST = _descriptor.Descriptor(
+  name='ListTransfersRequest',
+  full_name='yandex.cloud.datatransfer.v1.ListTransfersRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='folder_id', full_name='yandex.cloud.datatransfer.v1.ListTransfersRequest.folder_id', index=0,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='page_size', full_name='yandex.cloud.datatransfer.v1.ListTransfersRequest.page_size', index=1,
+      number=3, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='page_token', full_name='yandex.cloud.datatransfer.v1.ListTransfersRequest.page_token', index=2,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1018,
+  serialized_end=1098,
+)
+
+
+_LISTTRANSFERSRESPONSE = _descriptor.Descriptor(
+  name='ListTransfersResponse',
+  full_name='yandex.cloud.datatransfer.v1.ListTransfersResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='transfers', full_name='yandex.cloud.datatransfer.v1.ListTransfersResponse.transfers', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='next_page_token', full_name='yandex.cloud.datatransfer.v1.ListTransfersResponse.next_page_token', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1100,
+  serialized_end=1207,
 )
 
 
@@ -298,8 +481,8 @@ _GETTRANSFERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=678,
-  serialized_end=719,
+  serialized_start=1209,
+  serialized_end=1250,
 )
 
 
@@ -330,8 +513,8 @@ _DEACTIVATETRANSFERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=721,
-  serialized_end=769,
+  serialized_start=1252,
+  serialized_end=1300,
 )
 
 
@@ -362,8 +545,8 @@ _DEACTIVATETRANSFERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=771,
-  serialized_end=820,
+  serialized_start=1302,
+  serialized_end=1351,
 )
 
 
@@ -394,8 +577,8 @@ _ACTIVATETRANSFERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=822,
-  serialized_end=868,
+  serialized_start=1353,
+  serialized_end=1399,
 )
 
 
@@ -426,17 +609,25 @@ _ACTIVATETRANSFERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=870,
-  serialized_end=917,
+  serialized_start=1401,
+  serialized_end=1448,
 )
 
+_CREATETRANSFERREQUEST_LABELSENTRY.containing_type = _CREATETRANSFERREQUEST
+_CREATETRANSFERREQUEST.fields_by_name['labels'].message_type = _CREATETRANSFERREQUEST_LABELSENTRY
 _CREATETRANSFERREQUEST.fields_by_name['type'].enum_type = yandex_dot_cloud_dot_datatransfer_dot_v1_dot_transfer__pb2._TRANSFERTYPE
+_UPDATETRANSFERREQUEST_LABELSENTRY.containing_type = _UPDATETRANSFERREQUEST
+_UPDATETRANSFERREQUEST.fields_by_name['labels'].message_type = _UPDATETRANSFERREQUEST_LABELSENTRY
+_UPDATETRANSFERREQUEST.fields_by_name['update_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
+_LISTTRANSFERSRESPONSE.fields_by_name['transfers'].message_type = yandex_dot_cloud_dot_datatransfer_dot_v1_dot_transfer__pb2._TRANSFER
 DESCRIPTOR.message_types_by_name['CreateTransferRequest'] = _CREATETRANSFERREQUEST
 DESCRIPTOR.message_types_by_name['CreateTransferMetadata'] = _CREATETRANSFERMETADATA
 DESCRIPTOR.message_types_by_name['UpdateTransferRequest'] = _UPDATETRANSFERREQUEST
 DESCRIPTOR.message_types_by_name['UpdateTransferMetadata'] = _UPDATETRANSFERMETADATA
 DESCRIPTOR.message_types_by_name['DeleteTransferRequest'] = _DELETETRANSFERREQUEST
 DESCRIPTOR.message_types_by_name['DeleteTransferMetadata'] = _DELETETRANSFERMETADATA
+DESCRIPTOR.message_types_by_name['ListTransfersRequest'] = _LISTTRANSFERSREQUEST
+DESCRIPTOR.message_types_by_name['ListTransfersResponse'] = _LISTTRANSFERSRESPONSE
 DESCRIPTOR.message_types_by_name['GetTransferRequest'] = _GETTRANSFERREQUEST
 DESCRIPTOR.message_types_by_name['DeactivateTransferRequest'] = _DEACTIVATETRANSFERREQUEST
 DESCRIPTOR.message_types_by_name['DeactivateTransferMetadata'] = _DEACTIVATETRANSFERMETADATA
@@ -445,11 +636,19 @@ DESCRIPTOR.message_types_by_name['ActivateTransferMetadata'] = _ACTIVATETRANSFER
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 CreateTransferRequest = _reflection.GeneratedProtocolMessageType('CreateTransferRequest', (_message.Message,), {
+
+  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
+    'DESCRIPTOR' : _CREATETRANSFERREQUEST_LABELSENTRY,
+    '__module__' : 'yandex.cloud.datatransfer.v1.transfer_service_pb2'
+    # @@protoc_insertion_point(class_scope:yandex.cloud.datatransfer.v1.CreateTransferRequest.LabelsEntry)
+    })
+  ,
   'DESCRIPTOR' : _CREATETRANSFERREQUEST,
   '__module__' : 'yandex.cloud.datatransfer.v1.transfer_service_pb2'
   # @@protoc_insertion_point(class_scope:yandex.cloud.datatransfer.v1.CreateTransferRequest)
   })
 _sym_db.RegisterMessage(CreateTransferRequest)
+_sym_db.RegisterMessage(CreateTransferRequest.LabelsEntry)
 
 CreateTransferMetadata = _reflection.GeneratedProtocolMessageType('CreateTransferMetadata', (_message.Message,), {
   'DESCRIPTOR' : _CREATETRANSFERMETADATA,
@@ -459,11 +658,19 @@ CreateTransferMetadata = _reflection.GeneratedProtocolMessageType('CreateTransfe
 _sym_db.RegisterMessage(CreateTransferMetadata)
 
 UpdateTransferRequest = _reflection.GeneratedProtocolMessageType('UpdateTransferRequest', (_message.Message,), {
+
+  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
+    'DESCRIPTOR' : _UPDATETRANSFERREQUEST_LABELSENTRY,
+    '__module__' : 'yandex.cloud.datatransfer.v1.transfer_service_pb2'
+    # @@protoc_insertion_point(class_scope:yandex.cloud.datatransfer.v1.UpdateTransferRequest.LabelsEntry)
+    })
+  ,
   'DESCRIPTOR' : _UPDATETRANSFERREQUEST,
   '__module__' : 'yandex.cloud.datatransfer.v1.transfer_service_pb2'
   # @@protoc_insertion_point(class_scope:yandex.cloud.datatransfer.v1.UpdateTransferRequest)
   })
 _sym_db.RegisterMessage(UpdateTransferRequest)
+_sym_db.RegisterMessage(UpdateTransferRequest.LabelsEntry)
 
 UpdateTransferMetadata = _reflection.GeneratedProtocolMessageType('UpdateTransferMetadata', (_message.Message,), {
   'DESCRIPTOR' : _UPDATETRANSFERMETADATA,
@@ -485,6 +692,20 @@ DeleteTransferMetadata = _reflection.GeneratedProtocolMessageType('DeleteTransfe
   # @@protoc_insertion_point(class_scope:yandex.cloud.datatransfer.v1.DeleteTransferMetadata)
   })
 _sym_db.RegisterMessage(DeleteTransferMetadata)
+
+ListTransfersRequest = _reflection.GeneratedProtocolMessageType('ListTransfersRequest', (_message.Message,), {
+  'DESCRIPTOR' : _LISTTRANSFERSREQUEST,
+  '__module__' : 'yandex.cloud.datatransfer.v1.transfer_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.datatransfer.v1.ListTransfersRequest)
+  })
+_sym_db.RegisterMessage(ListTransfersRequest)
+
+ListTransfersResponse = _reflection.GeneratedProtocolMessageType('ListTransfersResponse', (_message.Message,), {
+  'DESCRIPTOR' : _LISTTRANSFERSRESPONSE,
+  '__module__' : 'yandex.cloud.datatransfer.v1.transfer_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.datatransfer.v1.ListTransfersResponse)
+  })
+_sym_db.RegisterMessage(ListTransfersResponse)
 
 GetTransferRequest = _reflection.GeneratedProtocolMessageType('GetTransferRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETTRANSFERREQUEST,
@@ -523,6 +744,8 @@ _sym_db.RegisterMessage(ActivateTransferMetadata)
 
 
 DESCRIPTOR._options = None
+_CREATETRANSFERREQUEST_LABELSENTRY._options = None
+_UPDATETRANSFERREQUEST_LABELSENTRY._options = None
 
 _TRANSFERSERVICE = _descriptor.ServiceDescriptor(
   name='TransferService',
@@ -531,8 +754,8 @@ _TRANSFERSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=920,
-  serialized_end=2011,
+  serialized_start=1451,
+  serialized_end=2696,
   methods=[
   _descriptor.MethodDescriptor(
     name='Create',
@@ -565,9 +788,19 @@ _TRANSFERSERVICE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
+    name='List',
+    full_name='yandex.cloud.datatransfer.v1.TransferService.List',
+    index=3,
+    containing_service=None,
+    input_type=_LISTTRANSFERSREQUEST,
+    output_type=_LISTTRANSFERSRESPONSE,
+    serialized_options=b'\202\323\344\223\002 \022\036/v1/transfers/list/{folder_id}',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
     name='Get',
     full_name='yandex.cloud.datatransfer.v1.TransferService.Get',
-    index=3,
+    index=4,
     containing_service=None,
     input_type=_GETTRANSFERREQUEST,
     output_type=yandex_dot_cloud_dot_datatransfer_dot_v1_dot_transfer__pb2._TRANSFER,
@@ -577,7 +810,7 @@ _TRANSFERSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='Deactivate',
     full_name='yandex.cloud.datatransfer.v1.TransferService.Deactivate',
-    index=4,
+    index=5,
     containing_service=None,
     input_type=_DEACTIVATETRANSFERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
@@ -587,7 +820,7 @@ _TRANSFERSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='Activate',
     full_name='yandex.cloud.datatransfer.v1.TransferService.Activate',
-    index=5,
+    index=6,
     containing_service=None,
     input_type=_ACTIVATETRANSFERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,

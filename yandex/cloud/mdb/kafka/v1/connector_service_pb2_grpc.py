@@ -32,6 +32,11 @@ class ConnectorServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_kafka_dot_v1_dot_connector__service__pb2.CreateConnectorRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
+        self.Update = channel.unary_unary(
+                '/yandex.cloud.mdb.kafka.v1.ConnectorService/Update',
+                request_serializer=yandex_dot_cloud_dot_mdb_dot_kafka_dot_v1_dot_connector__service__pb2.UpdateConnectorRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
         self.Delete = channel.unary_unary(
                 '/yandex.cloud.mdb.kafka.v1.ConnectorService/Delete',
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_kafka_dot_v1_dot_connector__service__pb2.DeleteConnectorRequest.SerializeToString,
@@ -76,6 +81,13 @@ class ConnectorServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Update(self, request, context):
+        """Updates an Apache Kafka connector in the specified cluster.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def Delete(self, request, context):
         """Deletes the specified Apache Kafka connector.
         """
@@ -113,6 +125,11 @@ def add_ConnectorServiceServicer_to_server(servicer, server):
             'Create': grpc.unary_unary_rpc_method_handler(
                     servicer.Create,
                     request_deserializer=yandex_dot_cloud_dot_mdb_dot_kafka_dot_v1_dot_connector__service__pb2.CreateConnectorRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'Update': grpc.unary_unary_rpc_method_handler(
+                    servicer.Update,
+                    request_deserializer=yandex_dot_cloud_dot_mdb_dot_kafka_dot_v1_dot_connector__service__pb2.UpdateConnectorRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'Delete': grpc.unary_unary_rpc_method_handler(
@@ -188,6 +205,23 @@ class ConnectorService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.mdb.kafka.v1.ConnectorService/Create',
             yandex_dot_cloud_dot_mdb_dot_kafka_dot_v1_dot_connector__service__pb2.CreateConnectorRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Update(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.mdb.kafka.v1.ConnectorService/Update',
+            yandex_dot_cloud_dot_mdb_dot_kafka_dot_v1_dot_connector__service__pb2.UpdateConnectorRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

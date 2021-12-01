@@ -21,6 +21,11 @@ class EndpointServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint__service__pb2.GetEndpointRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint__pb2.Endpoint.FromString,
                 )
+        self.List = channel.unary_unary(
+                '/yandex.cloud.datatransfer.v1.EndpointService/List',
+                request_serializer=yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint__service__pb2.ListEndpointsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint__service__pb2.ListEndpointsResponse.FromString,
+                )
         self.Create = channel.unary_unary(
                 '/yandex.cloud.datatransfer.v1.EndpointService/Create',
                 request_serializer=yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint__service__pb2.CreateEndpointRequest.SerializeToString,
@@ -42,6 +47,12 @@ class EndpointServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def Get(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def List(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -72,6 +83,11 @@ def add_EndpointServiceServicer_to_server(servicer, server):
                     servicer.Get,
                     request_deserializer=yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint__service__pb2.GetEndpointRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint__pb2.Endpoint.SerializeToString,
+            ),
+            'List': grpc.unary_unary_rpc_method_handler(
+                    servicer.List,
+                    request_deserializer=yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint__service__pb2.ListEndpointsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint__service__pb2.ListEndpointsResponse.SerializeToString,
             ),
             'Create': grpc.unary_unary_rpc_method_handler(
                     servicer.Create,
@@ -112,6 +128,23 @@ class EndpointService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datatransfer.v1.EndpointService/Get',
             yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint__service__pb2.GetEndpointRequest.SerializeToString,
             yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint__pb2.Endpoint.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def List(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datatransfer.v1.EndpointService/List',
+            yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint__service__pb2.ListEndpointsRequest.SerializeToString,
+            yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint__service__pb2.ListEndpointsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

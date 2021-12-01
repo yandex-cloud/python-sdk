@@ -25,7 +25,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancer',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n;yandex/cloud/apploadbalancer/v1/load_balancer_service.proto\x12\x1fyandex.cloud.apploadbalancer.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x33yandex/cloud/apploadbalancer/v1/load_balancer.proto\x1a\x1dyandex/cloud/validation.proto\"8\n\x16GetLoadBalancerRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\x8d\x01\n\x18ListLoadBalancersRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"{\n\x19ListLoadBalancersResponse\x12\x45\n\x0eload_balancers\x18\x01 \x03(\x0b\x32-.yandex.cloud.apploadbalancer.v1.LoadBalancer\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\";\n\x19\x44\x65leteLoadBalancerRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"6\n\x1a\x44\x65leteLoadBalancerMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\"\xc4\x04\n\x19UpdateLoadBalancerRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x34\n\x04name\x18\x03 \x01(\tB&\xf2\xc7\x31\"([a-z]([-a-z0-9]{0,61}[a-z0-9])?)?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x9f\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x46.yandex.cloud.apploadbalancer.v1.UpdateLoadBalancerRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x45\n\x0elistener_specs\x18\x06 \x03(\x0b\x32-.yandex.cloud.apploadbalancer.v1.ListenerSpec\x12L\n\x11\x61llocation_policy\x18\x07 \x01(\x0b\x32\x31.yandex.cloud.apploadbalancer.v1.AllocationPolicy\x12\x1a\n\x12security_group_ids\x18\x08 \x03(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"6\n\x1aUpdateLoadBalancerMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\"\xbf\x04\n\x19\x43reateLoadBalancerRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x34\n\x04name\x18\x02 \x01(\tB&\xf2\xc7\x31\"([a-z]([-a-z0-9]{0,61}[a-z0-9])?)?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x9f\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x46.yandex.cloud.apploadbalancer.v1.CreateLoadBalancerRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x17\n\tregion_id\x18\x05 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x18\n\nnetwork_id\x18\x06 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x45\n\x0elistener_specs\x18\x07 \x03(\x0b\x32-.yandex.cloud.apploadbalancer.v1.ListenerSpec\x12L\n\x11\x61llocation_policy\x18\x08 \x01(\x0b\x32\x31.yandex.cloud.apploadbalancer.v1.AllocationPolicy\x12\x1a\n\x12security_group_ids\x18\t \x03(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"6\n\x1a\x43reateLoadBalancerMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\":\n\x18StartLoadBalancerRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"5\n\x19StartLoadBalancerMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\"9\n\x17StopLoadBalancerRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"4\n\x18StopLoadBalancerMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\"\x80\x01\n\x12\x41\x64\x64ListenerRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12J\n\rlistener_spec\x18\x02 \x01(\x0b\x32-.yandex.cloud.apploadbalancer.v1.ListenerSpecB\x04\xe8\xc7\x31\x01\"F\n\x13\x41\x64\x64ListenerMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\x12\x15\n\rlistener_name\x18\x02 \x01(\t\"K\n\x15RemoveListenerRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x12\n\x04name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"I\n\x16RemoveListenerMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\x12\x15\n\rlistener_name\x18\x02 \x01(\t\"\xb4\x01\n\x15UpdateListenerRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12J\n\rlistener_spec\x18\x03 \x01(\x0b\x32-.yandex.cloud.apploadbalancer.v1.ListenerSpecB\x04\xe8\xc7\x31\x01\"I\n\x16UpdateListenerMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\x12\x15\n\rlistener_name\x18\x02 \x01(\t\"\xc3\x02\n\x0b\x41\x64\x64ressSpec\x12^\n\x1a\x65xternal_ipv4_address_spec\x18\x01 \x01(\x0b\x32\x38.yandex.cloud.apploadbalancer.v1.ExternalIpv4AddressSpecH\x00\x12^\n\x1ainternal_ipv4_address_spec\x18\x02 \x01(\x0b\x32\x38.yandex.cloud.apploadbalancer.v1.InternalIpv4AddressSpecH\x00\x12^\n\x1a\x65xternal_ipv6_address_spec\x18\x03 \x01(\x0b\x32\x38.yandex.cloud.apploadbalancer.v1.ExternalIpv6AddressSpecH\x00\x42\x14\n\x0c\x61\x64\x64ress_spec\x12\x04\xc0\xc1\x31\x01\"*\n\x17\x45xternalIpv4AddressSpec\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\"=\n\x17InternalIpv4AddressSpec\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x11\n\tsubnet_id\x18\x02 \x01(\t\"*\n\x17\x45xternalIpv6AddressSpec\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\"}\n\x0c\x45ndpointSpec\x12K\n\raddress_specs\x18\x01 \x03(\x0b\x32,.yandex.cloud.apploadbalancer.v1.AddressSpecB\x06\x82\xc8\x31\x02>0\x12 \n\x05ports\x18\x02 \x03(\x03\x42\x11\x82\xc8\x31\x02>0\xfa\xc7\x31\x07\x31-65535\"\xa2\x02\n\x0cListenerSpec\x12\x35\n\x04name\x18\x01 \x01(\tB\'\xe8\xc7\x31\x01\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12M\n\x0e\x65ndpoint_specs\x18\x02 \x03(\x0b\x32-.yandex.cloud.apploadbalancer.v1.EndpointSpecB\x06\x82\xc8\x31\x02>0\x12=\n\x04http\x18\x03 \x01(\x0b\x32-.yandex.cloud.apploadbalancer.v1.HttpListenerH\x00\x12;\n\x03tls\x18\x04 \x01(\x0b\x32,.yandex.cloud.apploadbalancer.v1.TlsListenerH\x00\x42\x10\n\x08listener\x12\x04\xc0\xc1\x31\x01\"w\n\x16GetTargetStatesRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1e\n\x10\x62\x61\x63kend_group_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\x0ftarget_group_id\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\"^\n\x17GetTargetStatesResponse\x12\x43\n\rtarget_states\x18\x01 \x03(\x0b\x32,.yandex.cloud.apploadbalancer.v1.TargetState\"\xc7\x01\n\x12\x41\x64\x64SniMatchRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1b\n\rlistener_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x12\n\x04name\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1c\n\x0cserver_names\x18\x04 \x03(\tB\x06\x82\xc8\x31\x02>0\x12\x42\n\x07handler\x18\x05 \x01(\x0b\x32+.yandex.cloud.apploadbalancer.v1.TlsHandlerB\x04\xe8\xc7\x31\x01\"^\n\x13\x41\x64\x64SniMatchMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\x12\x15\n\rlistener_name\x18\x02 \x01(\t\x12\x16\n\x0esni_match_name\x18\x03 \x01(\t\"r\n\x15RemoveSniMatchRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1b\n\rlistener_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1c\n\x0esni_match_name\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\"a\n\x16RemoveSniMatchMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\x12\x15\n\rlistener_name\x18\x02 \x01(\t\x12\x16\n\x0esni_match_name\x18\x03 \x01(\t\"\xfb\x01\n\x15UpdateSniMatchRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1b\n\rlistener_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x12\n\x04name\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1c\n\x0cserver_names\x18\x05 \x03(\tB\x06\x82\xc8\x31\x02>0\x12\x42\n\x07handler\x18\x06 \x01(\x0b\x32+.yandex.cloud.apploadbalancer.v1.TlsHandlerB\x04\xe8\xc7\x31\x01\"a\n\x16UpdateSniMatchMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\x12\x15\n\rlistener_name\x18\x02 \x01(\t\x12\x16\n\x0esni_match_name\x18\x03 \x01(\t\"\x89\x01\n!ListLoadBalancerOperationsRequest\x12&\n\x10load_balancer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"t\n\"ListLoadBalancerOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xeb\x19\n\x13LoadBalancerService\x12\xab\x01\n\x03Get\x12\x37.yandex.cloud.apploadbalancer.v1.GetLoadBalancerRequest\x1a-.yandex.cloud.apploadbalancer.v1.LoadBalancer\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/apploadbalancer/v1/loadBalancers/{load_balancer_id}\x12\xa8\x01\n\x04List\x12\x39.yandex.cloud.apploadbalancer.v1.ListLoadBalancersRequest\x1a:.yandex.cloud.apploadbalancer.v1.ListLoadBalancersResponse\")\x82\xd3\xe4\x93\x02#\x12!/apploadbalancer/v1/loadBalancers\x12\xc3\x01\n\x06\x43reate\x12:.yandex.cloud.apploadbalancer.v1.CreateLoadBalancerRequest\x1a!.yandex.cloud.operation.Operation\"Z\x82\xd3\xe4\x93\x02&\"!/apploadbalancer/v1/loadBalancers:\x01*\xb2\xd2**\n\x1a\x43reateLoadBalancerMetadata\x12\x0cLoadBalancer\x12\xd6\x01\n\x06Update\x12:.yandex.cloud.apploadbalancer.v1.UpdateLoadBalancerRequest\x1a!.yandex.cloud.operation.Operation\"m\x82\xd3\xe4\x93\x02\x39\x32\x34/apploadbalancer/v1/loadBalancers/{load_balancer_id}:\x01*\xb2\xd2**\n\x1aUpdateLoadBalancerMetadata\x12\x0cLoadBalancer\x12\xdc\x01\n\x06\x44\x65lete\x12:.yandex.cloud.apploadbalancer.v1.DeleteLoadBalancerRequest\x1a!.yandex.cloud.operation.Operation\"s\x82\xd3\xe4\x93\x02\x36*4/apploadbalancer/v1/loadBalancers/{load_balancer_id}\xb2\xd2*3\n\x1a\x44\x65leteLoadBalancerMetadata\x12\x15google.protobuf.Empty\x12\xd6\x01\n\x05Start\x12\x39.yandex.cloud.apploadbalancer.v1.StartLoadBalancerRequest\x1a!.yandex.cloud.operation.Operation\"o\x82\xd3\xe4\x93\x02<\":/apploadbalancer/v1/loadBalancers/{load_balancer_id}:start\xb2\xd2*)\n\x19StartLoadBalancerMetadata\x12\x0cLoadBalancer\x12\xd2\x01\n\x04Stop\x12\x38.yandex.cloud.apploadbalancer.v1.StopLoadBalancerRequest\x1a!.yandex.cloud.operation.Operation\"m\x82\xd3\xe4\x93\x02;\"9/apploadbalancer/v1/loadBalancers/{load_balancer_id}:stop\xb2\xd2*(\n\x18StopLoadBalancerMetadata\x12\x0cLoadBalancer\x12\xd9\x01\n\x0b\x41\x64\x64Listener\x12\x33.yandex.cloud.apploadbalancer.v1.AddListenerRequest\x1a!.yandex.cloud.operation.Operation\"r\x82\xd3\xe4\x93\x02\x45\"@/apploadbalancer/v1/loadBalancers/{load_balancer_id}:addListener:\x01*\xb2\xd2*#\n\x13\x41\x64\x64ListenerMetadata\x12\x0cLoadBalancer\x12\xe5\x01\n\x0eRemoveListener\x12\x36.yandex.cloud.apploadbalancer.v1.RemoveListenerRequest\x1a!.yandex.cloud.operation.Operation\"x\x82\xd3\xe4\x93\x02H\"C/apploadbalancer/v1/loadBalancers/{load_balancer_id}:removeListener:\x01*\xb2\xd2*&\n\x16RemoveListenerMetadata\x12\x0cLoadBalancer\x12\xe5\x01\n\x0eUpdateListener\x12\x36.yandex.cloud.apploadbalancer.v1.UpdateListenerRequest\x1a!.yandex.cloud.operation.Operation\"x\x82\xd3\xe4\x93\x02H\"C/apploadbalancer/v1/loadBalancers/{load_balancer_id}:updateListener:\x01*\xb2\xd2*&\n\x16UpdateListenerMetadata\x12\x0cLoadBalancer\x12\xe2\x01\n\x0b\x41\x64\x64SniMatch\x12\x33.yandex.cloud.apploadbalancer.v1.AddSniMatchRequest\x1a!.yandex.cloud.operation.Operation\"{\x82\xd3\xe4\x93\x02\x45\"@/apploadbalancer/v1/loadBalancers/{load_balancer_id}:addSniMatch:\x01*\xb2\xd2*,\n\x13\x41\x64\x64SniMatchMetadata\x12\x15google.protobuf.Empty\x12\xef\x01\n\x0eUpdateSniMatch\x12\x36.yandex.cloud.apploadbalancer.v1.UpdateSniMatchRequest\x1a!.yandex.cloud.operation.Operation\"\x81\x01\x82\xd3\xe4\x93\x02H\"C/apploadbalancer/v1/loadBalancers/{load_balancer_id}:updateSniMatch:\x01*\xb2\xd2*/\n\x16UpdateSniMatchMetadata\x12\x15google.protobuf.Empty\x12\xef\x01\n\x0eRemoveSniMatch\x12\x36.yandex.cloud.apploadbalancer.v1.RemoveSniMatchRequest\x1a!.yandex.cloud.operation.Operation\"\x81\x01\x82\xd3\xe4\x93\x02H\"C/apploadbalancer/v1/loadBalancers/{load_balancer_id}:removeSniMatch:\x01*\xb2\xd2*/\n\x16RemoveSniMatchMetadata\x12\x15google.protobuf.Empty\x12\xf4\x01\n\x0fGetTargetStates\x12\x37.yandex.cloud.apploadbalancer.v1.GetTargetStatesRequest\x1a\x38.yandex.cloud.apploadbalancer.v1.GetTargetStatesResponse\"n\x82\xd3\xe4\x93\x02h\x12\x66/apploadbalancer/v1/loadBalancers/{load_balancer_id}/targetStates/{backend_group_id}/{target_group_id}\x12\xe2\x01\n\x0eListOperations\x12\x42.yandex.cloud.apploadbalancer.v1.ListLoadBalancerOperationsRequest\x1a\x43.yandex.cloud.apploadbalancer.v1.ListLoadBalancerOperationsResponse\"G\x82\xd3\xe4\x93\x02\x41\x12?/apploadbalancer/v1/loadBalancers/{load_balancer_id}/operationsBz\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancerb\x06proto3'
+  serialized_pb=b'\n;yandex/cloud/apploadbalancer/v1/load_balancer_service.proto\x12\x1fyandex.cloud.apploadbalancer.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x33yandex/cloud/apploadbalancer/v1/load_balancer.proto\x1a\x1dyandex/cloud/validation.proto\"8\n\x16GetLoadBalancerRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\x8d\x01\n\x18ListLoadBalancersRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"{\n\x19ListLoadBalancersResponse\x12\x45\n\x0eload_balancers\x18\x01 \x03(\x0b\x32-.yandex.cloud.apploadbalancer.v1.LoadBalancer\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\";\n\x19\x44\x65leteLoadBalancerRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"6\n\x1a\x44\x65leteLoadBalancerMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\"\xc4\x04\n\x19UpdateLoadBalancerRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x34\n\x04name\x18\x03 \x01(\tB&\xf2\xc7\x31\"([a-z]([-a-z0-9]{0,61}[a-z0-9])?)?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x9f\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x46.yandex.cloud.apploadbalancer.v1.UpdateLoadBalancerRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x45\n\x0elistener_specs\x18\x06 \x03(\x0b\x32-.yandex.cloud.apploadbalancer.v1.ListenerSpec\x12L\n\x11\x61llocation_policy\x18\x07 \x01(\x0b\x32\x31.yandex.cloud.apploadbalancer.v1.AllocationPolicy\x12\x1a\n\x12security_group_ids\x18\x08 \x03(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"6\n\x1aUpdateLoadBalancerMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\"\xbf\x04\n\x19\x43reateLoadBalancerRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x34\n\x04name\x18\x02 \x01(\tB&\xf2\xc7\x31\"([a-z]([-a-z0-9]{0,61}[a-z0-9])?)?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x9f\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x46.yandex.cloud.apploadbalancer.v1.CreateLoadBalancerRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x17\n\tregion_id\x18\x05 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x18\n\nnetwork_id\x18\x06 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x45\n\x0elistener_specs\x18\x07 \x03(\x0b\x32-.yandex.cloud.apploadbalancer.v1.ListenerSpec\x12L\n\x11\x61llocation_policy\x18\x08 \x01(\x0b\x32\x31.yandex.cloud.apploadbalancer.v1.AllocationPolicy\x12\x1a\n\x12security_group_ids\x18\t \x03(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"6\n\x1a\x43reateLoadBalancerMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\":\n\x18StartLoadBalancerRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"5\n\x19StartLoadBalancerMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\"9\n\x17StopLoadBalancerRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"4\n\x18StopLoadBalancerMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\"\x80\x01\n\x12\x41\x64\x64ListenerRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12J\n\rlistener_spec\x18\x02 \x01(\x0b\x32-.yandex.cloud.apploadbalancer.v1.ListenerSpecB\x04\xe8\xc7\x31\x01\"F\n\x13\x41\x64\x64ListenerMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\x12\x15\n\rlistener_name\x18\x02 \x01(\t\"K\n\x15RemoveListenerRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x12\n\x04name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"I\n\x16RemoveListenerMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\x12\x15\n\rlistener_name\x18\x02 \x01(\t\"\xb4\x01\n\x15UpdateListenerRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12J\n\rlistener_spec\x18\x03 \x01(\x0b\x32-.yandex.cloud.apploadbalancer.v1.ListenerSpecB\x04\xe8\xc7\x31\x01\"I\n\x16UpdateListenerMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\x12\x15\n\rlistener_name\x18\x02 \x01(\t\"\xc3\x02\n\x0b\x41\x64\x64ressSpec\x12^\n\x1a\x65xternal_ipv4_address_spec\x18\x01 \x01(\x0b\x32\x38.yandex.cloud.apploadbalancer.v1.ExternalIpv4AddressSpecH\x00\x12^\n\x1ainternal_ipv4_address_spec\x18\x02 \x01(\x0b\x32\x38.yandex.cloud.apploadbalancer.v1.InternalIpv4AddressSpecH\x00\x12^\n\x1a\x65xternal_ipv6_address_spec\x18\x03 \x01(\x0b\x32\x38.yandex.cloud.apploadbalancer.v1.ExternalIpv6AddressSpecH\x00\x42\x14\n\x0c\x61\x64\x64ress_spec\x12\x04\xc0\xc1\x31\x01\"*\n\x17\x45xternalIpv4AddressSpec\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\"=\n\x17InternalIpv4AddressSpec\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x11\n\tsubnet_id\x18\x02 \x01(\t\"*\n\x17\x45xternalIpv6AddressSpec\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\"}\n\x0c\x45ndpointSpec\x12K\n\raddress_specs\x18\x01 \x03(\x0b\x32,.yandex.cloud.apploadbalancer.v1.AddressSpecB\x06\x82\xc8\x31\x02>0\x12 \n\x05ports\x18\x02 \x03(\x03\x42\x11\x82\xc8\x31\x02>0\xfa\xc7\x31\x07\x31-65535\"\xe5\x02\n\x0cListenerSpec\x12\x35\n\x04name\x18\x01 \x01(\tB\'\xe8\xc7\x31\x01\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12M\n\x0e\x65ndpoint_specs\x18\x02 \x03(\x0b\x32-.yandex.cloud.apploadbalancer.v1.EndpointSpecB\x06\x82\xc8\x31\x02>0\x12=\n\x04http\x18\x03 \x01(\x0b\x32-.yandex.cloud.apploadbalancer.v1.HttpListenerH\x00\x12;\n\x03tls\x18\x04 \x01(\x0b\x32,.yandex.cloud.apploadbalancer.v1.TlsListenerH\x00\x12\x41\n\x06stream\x18\x05 \x01(\x0b\x32/.yandex.cloud.apploadbalancer.v1.StreamListenerH\x00\x42\x10\n\x08listener\x12\x04\xc0\xc1\x31\x01\"w\n\x16GetTargetStatesRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1e\n\x10\x62\x61\x63kend_group_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\x0ftarget_group_id\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\"^\n\x17GetTargetStatesResponse\x12\x43\n\rtarget_states\x18\x01 \x03(\x0b\x32,.yandex.cloud.apploadbalancer.v1.TargetState\"\xc7\x01\n\x12\x41\x64\x64SniMatchRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1b\n\rlistener_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x12\n\x04name\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1c\n\x0cserver_names\x18\x04 \x03(\tB\x06\x82\xc8\x31\x02>0\x12\x42\n\x07handler\x18\x05 \x01(\x0b\x32+.yandex.cloud.apploadbalancer.v1.TlsHandlerB\x04\xe8\xc7\x31\x01\"^\n\x13\x41\x64\x64SniMatchMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\x12\x15\n\rlistener_name\x18\x02 \x01(\t\x12\x16\n\x0esni_match_name\x18\x03 \x01(\t\"r\n\x15RemoveSniMatchRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1b\n\rlistener_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1c\n\x0esni_match_name\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\"a\n\x16RemoveSniMatchMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\x12\x15\n\rlistener_name\x18\x02 \x01(\t\x12\x16\n\x0esni_match_name\x18\x03 \x01(\t\"\xfb\x01\n\x15UpdateSniMatchRequest\x12\x1e\n\x10load_balancer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1b\n\rlistener_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x12\n\x04name\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1c\n\x0cserver_names\x18\x05 \x03(\tB\x06\x82\xc8\x31\x02>0\x12\x42\n\x07handler\x18\x06 \x01(\x0b\x32+.yandex.cloud.apploadbalancer.v1.TlsHandlerB\x04\xe8\xc7\x31\x01\"a\n\x16UpdateSniMatchMetadata\x12\x18\n\x10load_balancer_id\x18\x01 \x01(\t\x12\x15\n\rlistener_name\x18\x02 \x01(\t\x12\x16\n\x0esni_match_name\x18\x03 \x01(\t\"\x89\x01\n!ListLoadBalancerOperationsRequest\x12&\n\x10load_balancer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"t\n\"ListLoadBalancerOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xeb\x19\n\x13LoadBalancerService\x12\xab\x01\n\x03Get\x12\x37.yandex.cloud.apploadbalancer.v1.GetLoadBalancerRequest\x1a-.yandex.cloud.apploadbalancer.v1.LoadBalancer\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/apploadbalancer/v1/loadBalancers/{load_balancer_id}\x12\xa8\x01\n\x04List\x12\x39.yandex.cloud.apploadbalancer.v1.ListLoadBalancersRequest\x1a:.yandex.cloud.apploadbalancer.v1.ListLoadBalancersResponse\")\x82\xd3\xe4\x93\x02#\x12!/apploadbalancer/v1/loadBalancers\x12\xc3\x01\n\x06\x43reate\x12:.yandex.cloud.apploadbalancer.v1.CreateLoadBalancerRequest\x1a!.yandex.cloud.operation.Operation\"Z\x82\xd3\xe4\x93\x02&\"!/apploadbalancer/v1/loadBalancers:\x01*\xb2\xd2**\n\x1a\x43reateLoadBalancerMetadata\x12\x0cLoadBalancer\x12\xd6\x01\n\x06Update\x12:.yandex.cloud.apploadbalancer.v1.UpdateLoadBalancerRequest\x1a!.yandex.cloud.operation.Operation\"m\x82\xd3\xe4\x93\x02\x39\x32\x34/apploadbalancer/v1/loadBalancers/{load_balancer_id}:\x01*\xb2\xd2**\n\x1aUpdateLoadBalancerMetadata\x12\x0cLoadBalancer\x12\xdc\x01\n\x06\x44\x65lete\x12:.yandex.cloud.apploadbalancer.v1.DeleteLoadBalancerRequest\x1a!.yandex.cloud.operation.Operation\"s\x82\xd3\xe4\x93\x02\x36*4/apploadbalancer/v1/loadBalancers/{load_balancer_id}\xb2\xd2*3\n\x1a\x44\x65leteLoadBalancerMetadata\x12\x15google.protobuf.Empty\x12\xd6\x01\n\x05Start\x12\x39.yandex.cloud.apploadbalancer.v1.StartLoadBalancerRequest\x1a!.yandex.cloud.operation.Operation\"o\x82\xd3\xe4\x93\x02<\":/apploadbalancer/v1/loadBalancers/{load_balancer_id}:start\xb2\xd2*)\n\x19StartLoadBalancerMetadata\x12\x0cLoadBalancer\x12\xd2\x01\n\x04Stop\x12\x38.yandex.cloud.apploadbalancer.v1.StopLoadBalancerRequest\x1a!.yandex.cloud.operation.Operation\"m\x82\xd3\xe4\x93\x02;\"9/apploadbalancer/v1/loadBalancers/{load_balancer_id}:stop\xb2\xd2*(\n\x18StopLoadBalancerMetadata\x12\x0cLoadBalancer\x12\xd9\x01\n\x0b\x41\x64\x64Listener\x12\x33.yandex.cloud.apploadbalancer.v1.AddListenerRequest\x1a!.yandex.cloud.operation.Operation\"r\x82\xd3\xe4\x93\x02\x45\"@/apploadbalancer/v1/loadBalancers/{load_balancer_id}:addListener:\x01*\xb2\xd2*#\n\x13\x41\x64\x64ListenerMetadata\x12\x0cLoadBalancer\x12\xe5\x01\n\x0eRemoveListener\x12\x36.yandex.cloud.apploadbalancer.v1.RemoveListenerRequest\x1a!.yandex.cloud.operation.Operation\"x\x82\xd3\xe4\x93\x02H\"C/apploadbalancer/v1/loadBalancers/{load_balancer_id}:removeListener:\x01*\xb2\xd2*&\n\x16RemoveListenerMetadata\x12\x0cLoadBalancer\x12\xe5\x01\n\x0eUpdateListener\x12\x36.yandex.cloud.apploadbalancer.v1.UpdateListenerRequest\x1a!.yandex.cloud.operation.Operation\"x\x82\xd3\xe4\x93\x02H\"C/apploadbalancer/v1/loadBalancers/{load_balancer_id}:updateListener:\x01*\xb2\xd2*&\n\x16UpdateListenerMetadata\x12\x0cLoadBalancer\x12\xe2\x01\n\x0b\x41\x64\x64SniMatch\x12\x33.yandex.cloud.apploadbalancer.v1.AddSniMatchRequest\x1a!.yandex.cloud.operation.Operation\"{\x82\xd3\xe4\x93\x02\x45\"@/apploadbalancer/v1/loadBalancers/{load_balancer_id}:addSniMatch:\x01*\xb2\xd2*,\n\x13\x41\x64\x64SniMatchMetadata\x12\x15google.protobuf.Empty\x12\xef\x01\n\x0eUpdateSniMatch\x12\x36.yandex.cloud.apploadbalancer.v1.UpdateSniMatchRequest\x1a!.yandex.cloud.operation.Operation\"\x81\x01\x82\xd3\xe4\x93\x02H\"C/apploadbalancer/v1/loadBalancers/{load_balancer_id}:updateSniMatch:\x01*\xb2\xd2*/\n\x16UpdateSniMatchMetadata\x12\x15google.protobuf.Empty\x12\xef\x01\n\x0eRemoveSniMatch\x12\x36.yandex.cloud.apploadbalancer.v1.RemoveSniMatchRequest\x1a!.yandex.cloud.operation.Operation\"\x81\x01\x82\xd3\xe4\x93\x02H\"C/apploadbalancer/v1/loadBalancers/{load_balancer_id}:removeSniMatch:\x01*\xb2\xd2*/\n\x16RemoveSniMatchMetadata\x12\x15google.protobuf.Empty\x12\xf4\x01\n\x0fGetTargetStates\x12\x37.yandex.cloud.apploadbalancer.v1.GetTargetStatesRequest\x1a\x38.yandex.cloud.apploadbalancer.v1.GetTargetStatesResponse\"n\x82\xd3\xe4\x93\x02h\x12\x66/apploadbalancer/v1/loadBalancers/{load_balancer_id}/targetStates/{backend_group_id}/{target_group_id}\x12\xe2\x01\n\x0eListOperations\x12\x42.yandex.cloud.apploadbalancer.v1.ListLoadBalancerOperationsRequest\x1a\x43.yandex.cloud.apploadbalancer.v1.ListLoadBalancerOperationsResponse\"G\x82\xd3\xe4\x93\x02\x41\x12?/apploadbalancer/v1/loadBalancers/{load_balancer_id}/operationsBz\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancerb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_load__balancer__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -1127,6 +1127,13 @@ _LISTENERSPEC = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='stream', full_name='yandex.cloud.apploadbalancer.v1.ListenerSpec.stream', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1145,7 +1152,7 @@ _LISTENERSPEC = _descriptor.Descriptor(
     fields=[], serialized_options=b'\300\3011\001'),
   ],
   serialized_start=3481,
-  serialized_end=3771,
+  serialized_end=3838,
 )
 
 
@@ -1190,8 +1197,8 @@ _GETTARGETSTATESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3773,
-  serialized_end=3892,
+  serialized_start=3840,
+  serialized_end=3959,
 )
 
 
@@ -1222,8 +1229,8 @@ _GETTARGETSTATESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3894,
-  serialized_end=3988,
+  serialized_start=3961,
+  serialized_end=4055,
 )
 
 
@@ -1282,8 +1289,8 @@ _ADDSNIMATCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3991,
-  serialized_end=4190,
+  serialized_start=4058,
+  serialized_end=4257,
 )
 
 
@@ -1328,8 +1335,8 @@ _ADDSNIMATCHMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4192,
-  serialized_end=4286,
+  serialized_start=4259,
+  serialized_end=4353,
 )
 
 
@@ -1374,8 +1381,8 @@ _REMOVESNIMATCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4288,
-  serialized_end=4402,
+  serialized_start=4355,
+  serialized_end=4469,
 )
 
 
@@ -1420,8 +1427,8 @@ _REMOVESNIMATCHMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4404,
-  serialized_end=4501,
+  serialized_start=4471,
+  serialized_end=4568,
 )
 
 
@@ -1487,8 +1494,8 @@ _UPDATESNIMATCHREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4504,
-  serialized_end=4755,
+  serialized_start=4571,
+  serialized_end=4822,
 )
 
 
@@ -1533,8 +1540,8 @@ _UPDATESNIMATCHMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4757,
-  serialized_end=4854,
+  serialized_start=4824,
+  serialized_end=4921,
 )
 
 
@@ -1579,8 +1586,8 @@ _LISTLOADBALANCEROPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4857,
-  serialized_end=4994,
+  serialized_start=4924,
+  serialized_end=5061,
 )
 
 
@@ -1618,8 +1625,8 @@ _LISTLOADBALANCEROPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4996,
-  serialized_end=5112,
+  serialized_start=5063,
+  serialized_end=5179,
 )
 
 _LISTLOADBALANCERSRESPONSE.fields_by_name['load_balancers'].message_type = yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_load__balancer__pb2._LOADBALANCER
@@ -1651,12 +1658,16 @@ _ENDPOINTSPEC.fields_by_name['address_specs'].message_type = _ADDRESSSPEC
 _LISTENERSPEC.fields_by_name['endpoint_specs'].message_type = _ENDPOINTSPEC
 _LISTENERSPEC.fields_by_name['http'].message_type = yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_load__balancer__pb2._HTTPLISTENER
 _LISTENERSPEC.fields_by_name['tls'].message_type = yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_load__balancer__pb2._TLSLISTENER
+_LISTENERSPEC.fields_by_name['stream'].message_type = yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_load__balancer__pb2._STREAMLISTENER
 _LISTENERSPEC.oneofs_by_name['listener'].fields.append(
   _LISTENERSPEC.fields_by_name['http'])
 _LISTENERSPEC.fields_by_name['http'].containing_oneof = _LISTENERSPEC.oneofs_by_name['listener']
 _LISTENERSPEC.oneofs_by_name['listener'].fields.append(
   _LISTENERSPEC.fields_by_name['tls'])
 _LISTENERSPEC.fields_by_name['tls'].containing_oneof = _LISTENERSPEC.oneofs_by_name['listener']
+_LISTENERSPEC.oneofs_by_name['listener'].fields.append(
+  _LISTENERSPEC.fields_by_name['stream'])
+_LISTENERSPEC.fields_by_name['stream'].containing_oneof = _LISTENERSPEC.oneofs_by_name['listener']
 _GETTARGETSTATESRESPONSE.fields_by_name['target_states'].message_type = yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_load__balancer__pb2._TARGETSTATE
 _ADDSNIMATCHREQUEST.fields_by_name['handler'].message_type = yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_load__balancer__pb2._TLSHANDLER
 _UPDATESNIMATCHREQUEST.fields_by_name['update_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
@@ -2021,8 +2032,8 @@ _LOADBALANCERSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=5115,
-  serialized_end=8422,
+  serialized_start=5182,
+  serialized_end=8489,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
