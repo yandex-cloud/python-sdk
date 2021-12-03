@@ -103,6 +103,7 @@ _supported_modules = [
     ('yandex.cloud.mdb.postgresql', 'managed-postgresql'),
     ('yandex.cloud.mdb.redis', 'managed-redis'),
     ('yandex.cloud.mdb.sqlserver', 'managed-sqlserver'),
+    ('yandex.cloud.mdb.elasticsearch', 'managed-elasticsearch'),
     ('yandex.cloud.operation', 'operation'),
     ('yandex.cloud.organizationmanager', 'organization-manager'),
     ('yandex.cloud.resourcemanager', 'resource-manager'),
