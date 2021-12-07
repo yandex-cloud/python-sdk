@@ -87,6 +87,11 @@ class ClusterServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.DeleteClusterHostsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
+        self.RescheduleMaintenance = channel.unary_unary(
+                '/yandex.cloud.mdb.elasticsearch.v1.ClusterService/RescheduleMaintenance',
+                request_serializer=yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.RescheduleMaintenanceRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
 
 
 class ClusterServiceServicer(object):
@@ -195,6 +200,13 @@ class ClusterServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def RescheduleMaintenance(self, request, context):
+        """Reschedule planned maintenance operation.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ClusterServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -266,6 +278,11 @@ def add_ClusterServiceServicer_to_server(servicer, server):
             'DeleteHosts': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteHosts,
                     request_deserializer=yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.DeleteClusterHostsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'RescheduleMaintenance': grpc.unary_unary_rpc_method_handler(
+                    servicer.RescheduleMaintenance,
+                    request_deserializer=yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.RescheduleMaintenanceRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
@@ -513,6 +530,23 @@ class ClusterService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.mdb.elasticsearch.v1.ClusterService/DeleteHosts',
             yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.DeleteClusterHostsRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RescheduleMaintenance(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.mdb.elasticsearch.v1.ClusterService/RescheduleMaintenance',
+            yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__service__pb2.RescheduleMaintenanceRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

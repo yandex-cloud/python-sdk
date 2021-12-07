@@ -20,6 +20,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud.mdb.elasticsearch.v1 import cluster_pb2 as yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__pb2
 from yandex.cloud.mdb.elasticsearch.v1 import user_pb2 as yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_user__pb2
 from yandex.cloud.mdb.elasticsearch.v1.config import elasticsearch_pb2 as yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_config_dot_elasticsearch__pb2
+from yandex.cloud.mdb.elasticsearch.v1 import maintenance_pb2 as yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_maintenance__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -28,9 +29,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n%yandex.cloud.api.mdb.elasticsearch.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/elasticsearch/v1;elasticsearch',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n7yandex/cloud/mdb/elasticsearch/v1/cluster_service.proto\x12!yandex.cloud.mdb.elasticsearch.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a yandex/cloud/api/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a&yandex/cloud/operation/operation.proto\x1a/yandex/cloud/mdb/elasticsearch/v1/cluster.proto\x1a,yandex/cloud/mdb/elasticsearch/v1/user.proto\x1a<yandex/cloud/mdb/elasticsearch/v1/config/elasticsearch.proto\"5\n\x11GetClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x90\x01\n\x13ListClustersRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"m\n\x14ListClustersResponse\x12<\n\x08\x63lusters\x18\x01 \x03(\x0b\x32*.yandex.cloud.mdb.elasticsearch.v1.Cluster\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xe3\x05\n\x14\x43reateClusterRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12,\n\x04name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x94\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x43.yandex.cloud.mdb.elasticsearch.v1.CreateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12K\n\x0b\x65nvironment\x18\x05 \x01(\x0e\x32\x36.yandex.cloud.mdb.elasticsearch.v1.Cluster.Environment\x12H\n\x0b\x63onfig_spec\x18\x06 \x01(\x0b\x32-.yandex.cloud.mdb.elasticsearch.v1.ConfigSpecB\x04\xe8\xc7\x31\x01\x12?\n\nuser_specs\x18\x08 \x03(\x0b\x32+.yandex.cloud.mdb.elasticsearch.v1.UserSpec\x12G\n\nhost_specs\x18\t \x03(\x0b\x32+.yandex.cloud.mdb.elasticsearch.v1.HostSpecB\x06\x82\xc8\x31\x02>0\x12 \n\nnetwork_id\x18\n \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1a\n\x12security_group_ids\x18\x0b \x03(\t\x12\x1a\n\x12service_account_id\x18\x0c \x01(\t\x12\x1b\n\x13\x64\x65letion_protection\x18\r \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15\x43reateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\x98\x04\n\x14UpdateClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x94\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x43.yandex.cloud.mdb.elasticsearch.v1.UpdateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12H\n\x0b\x63onfig_spec\x18\x05 \x01(\x0b\x32\x33.yandex.cloud.mdb.elasticsearch.v1.ConfigSpecUpdate\x12(\n\x04name\x18\x06 \x01(\tB\x1a\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x1a\n\x12security_group_ids\x18\x07 \x03(\t\x12\x1a\n\x12service_account_id\x18\x08 \x01(\t\x12\x1b\n\x13\x64\x65letion_protection\x18\t \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15UpdateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"8\n\x14\x44\x65leteClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x44\x65leteClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\xd0\x03\n\x16ListClusterLogsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x15\n\rcolumn_filter\x18\x02 \x03(\t\x12-\n\tfrom_time\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07to_time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1d\n\tpage_size\x18\x05 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x06 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1e\n\x16\x61lways_next_page_token\x18\x07 \x01(\x08\x12\x1a\n\x06\x66ilter\x18\x08 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12[\n\x0cservice_type\x18\t \x01(\x0e\x32\x45.yandex.cloud.mdb.elasticsearch.v1.ListClusterLogsRequest.ServiceType\"J\n\x0bServiceType\x12\x1c\n\x18SERVICE_TYPE_UNSPECIFIED\x10\x00\x12\x11\n\rELASTICSEARCH\x10\x01\x12\n\n\x06KIBANA\x10\x02\"\xb6\x01\n\tLogRecord\x12-\n\ttimestamp\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12J\n\x07message\x18\x02 \x03(\x0b\x32\x39.yandex.cloud.mdb.elasticsearch.v1.LogRecord.MessageEntry\x1a.\n\x0cMessageEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"n\n\x17ListClusterLogsResponse\x12:\n\x04logs\x18\x01 \x03(\x0b\x32,.yandex.cloud.mdb.elasticsearch.v1.LogRecord\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"j\n\x0fStreamLogRecord\x12<\n\x06record\x18\x01 \x01(\x0b\x32,.yandex.cloud.mdb.elasticsearch.v1.LogRecord\x12\x19\n\x11next_record_token\x18\x02 \x01(\t\"\x97\x03\n\x18StreamClusterLogsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x15\n\rcolumn_filter\x18\x02 \x03(\t\x12-\n\tfrom_time\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07to_time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1f\n\x0crecord_token\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x06 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12]\n\x0cservice_type\x18\x07 \x01(\x0e\x32G.yandex.cloud.mdb.elasticsearch.v1.StreamClusterLogsRequest.ServiceType\"J\n\x0bServiceType\x12\x1c\n\x18SERVICE_TYPE_UNSPECIFIED\x10\x00\x12\x11\n\rELASTICSEARCH\x10\x01\x12\n\n\x06KIBANA\x10\x02\"~\n\x1cListClusterOperationsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"o\n\x1dListClusterOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"y\n\x17ListClusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"k\n\x18ListClusterHostsResponse\x12\x36\n\x05hosts\x18\x01 \x03(\x0b\x32\'.yandex.cloud.mdb.elasticsearch.v1.Host\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"c\n\x12MoveClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12+\n\x15\x64\x65stination_folder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"b\n\x13MoveClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x18\n\x10source_folder_id\x18\x02 \x01(\t\x12\x1d\n\x15\x64\x65stination_folder_id\x18\x03 \x01(\t\"7\n\x13StartClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"*\n\x14StartClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"6\n\x12StopClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\")\n\x13StopClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\xce\x01\n\x08HostSpec\x12\x19\n\x07zone_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1b\n\tsubnet_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x18\n\x10\x61ssign_public_ip\x18\x03 \x01(\x08\x12@\n\x04type\x18\x04 \x01(\x0e\x32,.yandex.cloud.mdb.elasticsearch.v1.Host.TypeB\x04\xe8\xc7\x31\x01\x12.\n\nshard_name\x18\x05 \x01(\tB\x1a\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"\xf6\x03\n\x11\x45lasticsearchSpec\x12P\n\tdata_node\x18\x01 \x01(\x0b\x32=.yandex.cloud.mdb.elasticsearch.v1.ElasticsearchSpec.DataNode\x12T\n\x0bmaster_node\x18\x02 \x01(\x0b\x32?.yandex.cloud.mdb.elasticsearch.v1.ElasticsearchSpec.MasterNode\x12\x19\n\x07plugins\x18\x03 \x03(\tB\x08\x8a\xc8\x31\x04<=50\x1a\xce\x01\n\x08\x44\x61taNode\x12w\n\x16\x65lasticsearch_config_7\x18\x01 \x01(\x0b\x32>.yandex.cloud.mdb.elasticsearch.v1.config.ElasticsearchConfig7H\x00R\x15\x65lasticsearchConfig_7\x12?\n\tresources\x18\x02 \x01(\x0b\x32,.yandex.cloud.mdb.elasticsearch.v1.ResourcesB\x08\n\x06\x63onfig\x1aM\n\nMasterNode\x12?\n\tresources\x18\x01 \x01(\x0b\x32,.yandex.cloud.mdb.elasticsearch.v1.Resources\"\x9e\x01\n\nConfigSpec\x12\x0f\n\x07version\x18\x01 \x01(\t\x12P\n\x12\x65lasticsearch_spec\x18\x02 \x01(\x0b\x32\x34.yandex.cloud.mdb.elasticsearch.v1.ElasticsearchSpec\x12\x0f\n\x07\x65\x64ition\x18\x03 \x01(\t\x12\x1c\n\x0e\x61\x64min_password\x18\x04 \x01(\tB\x04\xe8\xc7\x31\x01\"\x9e\x01\n\x10\x43onfigSpecUpdate\x12\x0f\n\x07version\x18\x01 \x01(\t\x12P\n\x12\x65lasticsearch_spec\x18\x02 \x01(\x0b\x32\x34.yandex.cloud.mdb.elasticsearch.v1.ElasticsearchSpec\x12\x0f\n\x07\x65\x64ition\x18\x03 \x01(\t\x12\x16\n\x0e\x61\x64min_password\x18\x04 \x01(\t\"\x83\x01\n\x16\x41\x64\x64\x43lusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12G\n\nhost_specs\x18\x02 \x03(\x0b\x32+.yandex.cloud.mdb.elasticsearch.v1.HostSpecB\x06\x82\xc8\x31\x02>0\"A\n\x17\x41\x64\x64\x43lusterHostsMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nhost_names\x18\x02 \x03(\t\"b\n\x19\x44\x65leteClusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12#\n\nhost_names\x18\x02 \x03(\tB\x0f\x82\xc8\x31\x02>0\x8a\xc8\x31\x05<=253\"D\n\x1a\x44\x65leteClusterHostsMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nhost_names\x18\x02 \x03(\t2\x8a\x16\n\x0e\x43lusterService\x12\xa0\x01\n\x03Get\x12\x34.yandex.cloud.mdb.elasticsearch.v1.GetClusterRequest\x1a*.yandex.cloud.mdb.elasticsearch.v1.Cluster\"7\x82\xd3\xe4\x93\x02\x31\x12//managed-elasticsearch/v1/clusters/{cluster_id}\x12\xa3\x01\n\x04List\x12\x36.yandex.cloud.mdb.elasticsearch.v1.ListClustersRequest\x1a\x37.yandex.cloud.mdb.elasticsearch.v1.ListClustersResponse\"*\x82\xd3\xe4\x93\x02$\x12\"/managed-elasticsearch/v1/clusters\x12\xb7\x01\n\x06\x43reate\x12\x37.yandex.cloud.mdb.elasticsearch.v1.CreateClusterRequest\x1a!.yandex.cloud.operation.Operation\"Q\x82\xd3\xe4\x93\x02\'\"\"/managed-elasticsearch/v1/clusters:\x01*\xb2\xd2* \n\x15\x43reateClusterMetadata\x12\x07\x43luster\x12\xc4\x01\n\x06Update\x12\x37.yandex.cloud.mdb.elasticsearch.v1.UpdateClusterRequest\x1a!.yandex.cloud.operation.Operation\"^\x82\xd3\xe4\x93\x02\x34\x32//managed-elasticsearch/v1/clusters/{cluster_id}:\x01*\xb2\xd2* \n\x15UpdateClusterMetadata\x12\x07\x43luster\x12\xcf\x01\n\x06\x44\x65lete\x12\x37.yandex.cloud.mdb.elasticsearch.v1.DeleteClusterRequest\x1a!.yandex.cloud.operation.Operation\"i\x82\xd3\xe4\x93\x02\x31*//managed-elasticsearch/v1/clusters/{cluster_id}\xb2\xd2*.\n\x15\x44\x65leteClusterMetadata\x12\x15google.protobuf.Empty\x12\xc3\x01\n\x04Move\x12\x35.yandex.cloud.mdb.elasticsearch.v1.MoveClusterRequest\x1a!.yandex.cloud.operation.Operation\"a\x82\xd3\xe4\x93\x02\x39\"4/managed-elasticsearch/v1/clusters/{cluster_id}:move:\x01*\xb2\xd2*\x1e\n\x13MoveClusterMetadata\x12\x07\x43luster\x12\xc4\x01\n\x05Start\x12\x36.yandex.cloud.mdb.elasticsearch.v1.StartClusterRequest\x1a!.yandex.cloud.operation.Operation\"`\x82\xd3\xe4\x93\x02\x37\"5/managed-elasticsearch/v1/clusters/{cluster_id}:start\xb2\xd2*\x1f\n\x14StartClusterMetadata\x12\x07\x43luster\x12\xc0\x01\n\x04Stop\x12\x35.yandex.cloud.mdb.elasticsearch.v1.StopClusterRequest\x1a!.yandex.cloud.operation.Operation\"^\x82\xd3\xe4\x93\x02\x36\"4/managed-elasticsearch/v1/clusters/{cluster_id}:stop\xb2\xd2*\x1e\n\x13StopClusterMetadata\x12\x07\x43luster\x12\xbf\x01\n\x08ListLogs\x12\x39.yandex.cloud.mdb.elasticsearch.v1.ListClusterLogsRequest\x1a:.yandex.cloud.mdb.elasticsearch.v1.ListClusterLogsResponse\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/managed-elasticsearch/v1/clusters/{cluster_id}:logs\x12\xc4\x01\n\nStreamLogs\x12;.yandex.cloud.mdb.elasticsearch.v1.StreamClusterLogsRequest\x1a\x32.yandex.cloud.mdb.elasticsearch.v1.StreamLogRecord\"C\x82\xd3\xe4\x93\x02=\x12;/managed-elasticsearch/v1/clusters/{cluster_id}:stream_logs0\x01\x12\xd7\x01\n\x0eListOperations\x12?.yandex.cloud.mdb.elasticsearch.v1.ListClusterOperationsRequest\x1a@.yandex.cloud.mdb.elasticsearch.v1.ListClusterOperationsResponse\"B\x82\xd3\xe4\x93\x02<\x12:/managed-elasticsearch/v1/clusters/{cluster_id}/operations\x12\xc3\x01\n\tListHosts\x12:.yandex.cloud.mdb.elasticsearch.v1.ListClusterHostsRequest\x1a;.yandex.cloud.mdb.elasticsearch.v1.ListClusterHostsResponse\"=\x82\xd3\xe4\x93\x02\x37\x12\x35/managed-elasticsearch/v1/clusters/{cluster_id}/hosts\x12\xeb\x01\n\x08\x41\x64\x64Hosts\x12\x39.yandex.cloud.mdb.elasticsearch.v1.AddClusterHostsRequest\x1a!.yandex.cloud.operation.Operation\"\x80\x01\x82\xd3\xe4\x93\x02\x46\"A/managed-elasticsearch/v1/clusters/{cluster_id}/hosts:batchCreate:\x01*\xb2\xd2*0\n\x17\x41\x64\x64\x43lusterHostsMetadata\x12\x15google.protobuf.Empty\x12\xf4\x01\n\x0b\x44\x65leteHosts\x12<.yandex.cloud.mdb.elasticsearch.v1.DeleteClusterHostsRequest\x1a!.yandex.cloud.operation.Operation\"\x83\x01\x82\xd3\xe4\x93\x02\x46\"A/managed-elasticsearch/v1/clusters/{cluster_id}/hosts:batchDelete:\x01*\xb2\xd2*3\n\x1a\x44\x65leteClusterHostsMetadata\x12\x15google.protobuf.EmptyB|\n%yandex.cloud.api.mdb.elasticsearch.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/elasticsearch/v1;elasticsearchb\x06proto3'
+  serialized_pb=b'\n7yandex/cloud/mdb/elasticsearch/v1/cluster_service.proto\x12!yandex.cloud.mdb.elasticsearch.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a yandex/cloud/api/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a&yandex/cloud/operation/operation.proto\x1a/yandex/cloud/mdb/elasticsearch/v1/cluster.proto\x1a,yandex/cloud/mdb/elasticsearch/v1/user.proto\x1a<yandex/cloud/mdb/elasticsearch/v1/config/elasticsearch.proto\x1a\x33yandex/cloud/mdb/elasticsearch/v1/maintenance.proto\"5\n\x11GetClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x90\x01\n\x13ListClustersRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"m\n\x14ListClustersResponse\x12<\n\x08\x63lusters\x18\x01 \x03(\x0b\x32*.yandex.cloud.mdb.elasticsearch.v1.Cluster\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xb5\x06\n\x14\x43reateClusterRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12,\n\x04name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x94\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x43.yandex.cloud.mdb.elasticsearch.v1.CreateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12K\n\x0b\x65nvironment\x18\x05 \x01(\x0e\x32\x36.yandex.cloud.mdb.elasticsearch.v1.Cluster.Environment\x12H\n\x0b\x63onfig_spec\x18\x06 \x01(\x0b\x32-.yandex.cloud.mdb.elasticsearch.v1.ConfigSpecB\x04\xe8\xc7\x31\x01\x12?\n\nuser_specs\x18\x08 \x03(\x0b\x32+.yandex.cloud.mdb.elasticsearch.v1.UserSpec\x12G\n\nhost_specs\x18\t \x03(\x0b\x32+.yandex.cloud.mdb.elasticsearch.v1.HostSpecB\x06\x82\xc8\x31\x02>0\x12 \n\nnetwork_id\x18\n \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1a\n\x12security_group_ids\x18\x0b \x03(\t\x12\x1a\n\x12service_account_id\x18\x0c \x01(\t\x12\x1b\n\x13\x64\x65letion_protection\x18\r \x01(\x08\x12P\n\x12maintenance_window\x18\x0e \x01(\x0b\x32\x34.yandex.cloud.mdb.elasticsearch.v1.MaintenanceWindow\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15\x43reateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\xea\x04\n\x14UpdateClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x94\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x43.yandex.cloud.mdb.elasticsearch.v1.UpdateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12H\n\x0b\x63onfig_spec\x18\x05 \x01(\x0b\x32\x33.yandex.cloud.mdb.elasticsearch.v1.ConfigSpecUpdate\x12(\n\x04name\x18\x06 \x01(\tB\x1a\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x1a\n\x12security_group_ids\x18\x07 \x03(\t\x12\x1a\n\x12service_account_id\x18\x08 \x01(\t\x12\x1b\n\x13\x64\x65letion_protection\x18\t \x01(\x08\x12P\n\x12maintenance_window\x18\n \x01(\x0b\x32\x34.yandex.cloud.mdb.elasticsearch.v1.MaintenanceWindow\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15UpdateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"8\n\x14\x44\x65leteClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x44\x65leteClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\xd0\x03\n\x16ListClusterLogsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x15\n\rcolumn_filter\x18\x02 \x03(\t\x12-\n\tfrom_time\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07to_time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1d\n\tpage_size\x18\x05 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x06 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1e\n\x16\x61lways_next_page_token\x18\x07 \x01(\x08\x12\x1a\n\x06\x66ilter\x18\x08 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12[\n\x0cservice_type\x18\t \x01(\x0e\x32\x45.yandex.cloud.mdb.elasticsearch.v1.ListClusterLogsRequest.ServiceType\"J\n\x0bServiceType\x12\x1c\n\x18SERVICE_TYPE_UNSPECIFIED\x10\x00\x12\x11\n\rELASTICSEARCH\x10\x01\x12\n\n\x06KIBANA\x10\x02\"\xb6\x01\n\tLogRecord\x12-\n\ttimestamp\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12J\n\x07message\x18\x02 \x03(\x0b\x32\x39.yandex.cloud.mdb.elasticsearch.v1.LogRecord.MessageEntry\x1a.\n\x0cMessageEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"n\n\x17ListClusterLogsResponse\x12:\n\x04logs\x18\x01 \x03(\x0b\x32,.yandex.cloud.mdb.elasticsearch.v1.LogRecord\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"j\n\x0fStreamLogRecord\x12<\n\x06record\x18\x01 \x01(\x0b\x32,.yandex.cloud.mdb.elasticsearch.v1.LogRecord\x12\x19\n\x11next_record_token\x18\x02 \x01(\t\"\x97\x03\n\x18StreamClusterLogsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x15\n\rcolumn_filter\x18\x02 \x03(\t\x12-\n\tfrom_time\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07to_time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1f\n\x0crecord_token\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x06 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12]\n\x0cservice_type\x18\x07 \x01(\x0e\x32G.yandex.cloud.mdb.elasticsearch.v1.StreamClusterLogsRequest.ServiceType\"J\n\x0bServiceType\x12\x1c\n\x18SERVICE_TYPE_UNSPECIFIED\x10\x00\x12\x11\n\rELASTICSEARCH\x10\x01\x12\n\n\x06KIBANA\x10\x02\"~\n\x1cListClusterOperationsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"o\n\x1dListClusterOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"y\n\x17ListClusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"k\n\x18ListClusterHostsResponse\x12\x36\n\x05hosts\x18\x01 \x03(\x0b\x32\'.yandex.cloud.mdb.elasticsearch.v1.Host\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"c\n\x12MoveClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12+\n\x15\x64\x65stination_folder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"b\n\x13MoveClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x18\n\x10source_folder_id\x18\x02 \x01(\t\x12\x1d\n\x15\x64\x65stination_folder_id\x18\x03 \x01(\t\"7\n\x13StartClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"*\n\x14StartClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"6\n\x12StopClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\")\n\x13StopClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\xce\x01\n\x08HostSpec\x12\x19\n\x07zone_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1b\n\tsubnet_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x18\n\x10\x61ssign_public_ip\x18\x03 \x01(\x08\x12@\n\x04type\x18\x04 \x01(\x0e\x32,.yandex.cloud.mdb.elasticsearch.v1.Host.TypeB\x04\xe8\xc7\x31\x01\x12.\n\nshard_name\x18\x05 \x01(\tB\x1a\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"\xf6\x03\n\x11\x45lasticsearchSpec\x12P\n\tdata_node\x18\x01 \x01(\x0b\x32=.yandex.cloud.mdb.elasticsearch.v1.ElasticsearchSpec.DataNode\x12T\n\x0bmaster_node\x18\x02 \x01(\x0b\x32?.yandex.cloud.mdb.elasticsearch.v1.ElasticsearchSpec.MasterNode\x12\x19\n\x07plugins\x18\x03 \x03(\tB\x08\x8a\xc8\x31\x04<=50\x1a\xce\x01\n\x08\x44\x61taNode\x12w\n\x16\x65lasticsearch_config_7\x18\x01 \x01(\x0b\x32>.yandex.cloud.mdb.elasticsearch.v1.config.ElasticsearchConfig7H\x00R\x15\x65lasticsearchConfig_7\x12?\n\tresources\x18\x02 \x01(\x0b\x32,.yandex.cloud.mdb.elasticsearch.v1.ResourcesB\x08\n\x06\x63onfig\x1aM\n\nMasterNode\x12?\n\tresources\x18\x01 \x01(\x0b\x32,.yandex.cloud.mdb.elasticsearch.v1.Resources\"\x9e\x01\n\nConfigSpec\x12\x0f\n\x07version\x18\x01 \x01(\t\x12P\n\x12\x65lasticsearch_spec\x18\x02 \x01(\x0b\x32\x34.yandex.cloud.mdb.elasticsearch.v1.ElasticsearchSpec\x12\x0f\n\x07\x65\x64ition\x18\x03 \x01(\t\x12\x1c\n\x0e\x61\x64min_password\x18\x04 \x01(\tB\x04\xe8\xc7\x31\x01\"\x9e\x01\n\x10\x43onfigSpecUpdate\x12\x0f\n\x07version\x18\x01 \x01(\t\x12P\n\x12\x65lasticsearch_spec\x18\x02 \x01(\x0b\x32\x34.yandex.cloud.mdb.elasticsearch.v1.ElasticsearchSpec\x12\x0f\n\x07\x65\x64ition\x18\x03 \x01(\t\x12\x16\n\x0e\x61\x64min_password\x18\x04 \x01(\t\"\x83\x01\n\x16\x41\x64\x64\x43lusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12G\n\nhost_specs\x18\x02 \x03(\x0b\x32+.yandex.cloud.mdb.elasticsearch.v1.HostSpecB\x06\x82\xc8\x31\x02>0\"A\n\x17\x41\x64\x64\x43lusterHostsMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nhost_names\x18\x02 \x03(\t\"b\n\x19\x44\x65leteClusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12#\n\nhost_names\x18\x02 \x03(\tB\x0f\x82\xc8\x31\x02>0\x8a\xc8\x31\x05<=253\"D\n\x1a\x44\x65leteClusterHostsMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nhost_names\x18\x02 \x03(\t\"\xd2\x02\n\x1cRescheduleMaintenanceRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12m\n\x0freschedule_type\x18\x02 \x01(\x0e\x32N.yandex.cloud.mdb.elasticsearch.v1.RescheduleMaintenanceRequest.RescheduleTypeB\x04\xe8\xc7\x31\x01\x12\x31\n\rdelayed_until\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"n\n\x0eRescheduleType\x12\x1f\n\x1bRESCHEDULE_TYPE_UNSPECIFIED\x10\x00\x12\r\n\tIMMEDIATE\x10\x01\x12\x19\n\x15NEXT_AVAILABLE_WINDOW\x10\x02\x12\x11\n\rSPECIFIC_TIME\x10\x03\"f\n\x1dRescheduleMaintenanceMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x31\n\rdelayed_until\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp2\x86\x18\n\x0e\x43lusterService\x12\xa0\x01\n\x03Get\x12\x34.yandex.cloud.mdb.elasticsearch.v1.GetClusterRequest\x1a*.yandex.cloud.mdb.elasticsearch.v1.Cluster\"7\x82\xd3\xe4\x93\x02\x31\x12//managed-elasticsearch/v1/clusters/{cluster_id}\x12\xa3\x01\n\x04List\x12\x36.yandex.cloud.mdb.elasticsearch.v1.ListClustersRequest\x1a\x37.yandex.cloud.mdb.elasticsearch.v1.ListClustersResponse\"*\x82\xd3\xe4\x93\x02$\x12\"/managed-elasticsearch/v1/clusters\x12\xb7\x01\n\x06\x43reate\x12\x37.yandex.cloud.mdb.elasticsearch.v1.CreateClusterRequest\x1a!.yandex.cloud.operation.Operation\"Q\x82\xd3\xe4\x93\x02\'\"\"/managed-elasticsearch/v1/clusters:\x01*\xb2\xd2* \n\x15\x43reateClusterMetadata\x12\x07\x43luster\x12\xc4\x01\n\x06Update\x12\x37.yandex.cloud.mdb.elasticsearch.v1.UpdateClusterRequest\x1a!.yandex.cloud.operation.Operation\"^\x82\xd3\xe4\x93\x02\x34\x32//managed-elasticsearch/v1/clusters/{cluster_id}:\x01*\xb2\xd2* \n\x15UpdateClusterMetadata\x12\x07\x43luster\x12\xcf\x01\n\x06\x44\x65lete\x12\x37.yandex.cloud.mdb.elasticsearch.v1.DeleteClusterRequest\x1a!.yandex.cloud.operation.Operation\"i\x82\xd3\xe4\x93\x02\x31*//managed-elasticsearch/v1/clusters/{cluster_id}\xb2\xd2*.\n\x15\x44\x65leteClusterMetadata\x12\x15google.protobuf.Empty\x12\xc3\x01\n\x04Move\x12\x35.yandex.cloud.mdb.elasticsearch.v1.MoveClusterRequest\x1a!.yandex.cloud.operation.Operation\"a\x82\xd3\xe4\x93\x02\x39\"4/managed-elasticsearch/v1/clusters/{cluster_id}:move:\x01*\xb2\xd2*\x1e\n\x13MoveClusterMetadata\x12\x07\x43luster\x12\xc4\x01\n\x05Start\x12\x36.yandex.cloud.mdb.elasticsearch.v1.StartClusterRequest\x1a!.yandex.cloud.operation.Operation\"`\x82\xd3\xe4\x93\x02\x37\"5/managed-elasticsearch/v1/clusters/{cluster_id}:start\xb2\xd2*\x1f\n\x14StartClusterMetadata\x12\x07\x43luster\x12\xc0\x01\n\x04Stop\x12\x35.yandex.cloud.mdb.elasticsearch.v1.StopClusterRequest\x1a!.yandex.cloud.operation.Operation\"^\x82\xd3\xe4\x93\x02\x36\"4/managed-elasticsearch/v1/clusters/{cluster_id}:stop\xb2\xd2*\x1e\n\x13StopClusterMetadata\x12\x07\x43luster\x12\xbf\x01\n\x08ListLogs\x12\x39.yandex.cloud.mdb.elasticsearch.v1.ListClusterLogsRequest\x1a:.yandex.cloud.mdb.elasticsearch.v1.ListClusterLogsResponse\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/managed-elasticsearch/v1/clusters/{cluster_id}:logs\x12\xc4\x01\n\nStreamLogs\x12;.yandex.cloud.mdb.elasticsearch.v1.StreamClusterLogsRequest\x1a\x32.yandex.cloud.mdb.elasticsearch.v1.StreamLogRecord\"C\x82\xd3\xe4\x93\x02=\x12;/managed-elasticsearch/v1/clusters/{cluster_id}:stream_logs0\x01\x12\xd7\x01\n\x0eListOperations\x12?.yandex.cloud.mdb.elasticsearch.v1.ListClusterOperationsRequest\x1a@.yandex.cloud.mdb.elasticsearch.v1.ListClusterOperationsResponse\"B\x82\xd3\xe4\x93\x02<\x12:/managed-elasticsearch/v1/clusters/{cluster_id}/operations\x12\xc3\x01\n\tListHosts\x12:.yandex.cloud.mdb.elasticsearch.v1.ListClusterHostsRequest\x1a;.yandex.cloud.mdb.elasticsearch.v1.ListClusterHostsResponse\"=\x82\xd3\xe4\x93\x02\x37\x12\x35/managed-elasticsearch/v1/clusters/{cluster_id}/hosts\x12\xeb\x01\n\x08\x41\x64\x64Hosts\x12\x39.yandex.cloud.mdb.elasticsearch.v1.AddClusterHostsRequest\x1a!.yandex.cloud.operation.Operation\"\x80\x01\x82\xd3\xe4\x93\x02\x46\"A/managed-elasticsearch/v1/clusters/{cluster_id}/hosts:batchCreate:\x01*\xb2\xd2*0\n\x17\x41\x64\x64\x43lusterHostsMetadata\x12\x15google.protobuf.Empty\x12\xf4\x01\n\x0b\x44\x65leteHosts\x12<.yandex.cloud.mdb.elasticsearch.v1.DeleteClusterHostsRequest\x1a!.yandex.cloud.operation.Operation\"\x83\x01\x82\xd3\xe4\x93\x02\x46\"A/managed-elasticsearch/v1/clusters/{cluster_id}/hosts:batchDelete:\x01*\xb2\xd2*3\n\x1a\x44\x65leteClusterHostsMetadata\x12\x15google.protobuf.Empty\x12\xf9\x01\n\x15RescheduleMaintenance\x12?.yandex.cloud.mdb.elasticsearch.v1.RescheduleMaintenanceRequest\x1a!.yandex.cloud.operation.Operation\"|\x82\xd3\xe4\x93\x02J\"E/managed-elasticsearch/v1/clusters/{cluster_id}:rescheduleMaintenance:\x01*\xb2\xd2*(\n\x1dRescheduleMaintenanceMetadata\x12\x07\x43lusterB|\n%yandex.cloud.api.mdb.elasticsearch.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/elasticsearch/v1;elasticsearchb\x06proto3'
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_user__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_config_dot_elasticsearch__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_user__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_config_dot_elasticsearch__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_maintenance__pb2.DESCRIPTOR,])
 
 
 
@@ -59,8 +60,8 @@ _LISTCLUSTERLOGSREQUEST_SERVICETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2631,
-  serialized_end=2705,
+  serialized_start=2848,
+  serialized_end=2922,
 )
 _sym_db.RegisterEnumDescriptor(_LISTCLUSTERLOGSREQUEST_SERVICETYPE)
 
@@ -89,10 +90,45 @@ _STREAMCLUSTERLOGSREQUEST_SERVICETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2631,
-  serialized_end=2705,
+  serialized_start=2848,
+  serialized_end=2922,
 )
 _sym_db.RegisterEnumDescriptor(_STREAMCLUSTERLOGSREQUEST_SERVICETYPE)
+
+_RESCHEDULEMAINTENANCEREQUEST_RESCHEDULETYPE = _descriptor.EnumDescriptor(
+  name='RescheduleType',
+  full_name='yandex.cloud.mdb.elasticsearch.v1.RescheduleMaintenanceRequest.RescheduleType',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='RESCHEDULE_TYPE_UNSPECIFIED', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='IMMEDIATE', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='NEXT_AVAILABLE_WINDOW', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='SPECIFIC_TIME', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=6249,
+  serialized_end=6359,
+)
+_sym_db.RegisterEnumDescriptor(_RESCHEDULEMAINTENANCEREQUEST_RESCHEDULETYPE)
 
 
 _GETCLUSTERREQUEST = _descriptor.Descriptor(
@@ -122,8 +158,8 @@ _GETCLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=453,
-  serialized_end=506,
+  serialized_start=506,
+  serialized_end=559,
 )
 
 
@@ -175,8 +211,8 @@ _LISTCLUSTERSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=509,
-  serialized_end=653,
+  serialized_start=562,
+  serialized_end=706,
 )
 
 
@@ -214,8 +250,8 @@ _LISTCLUSTERSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=655,
-  serialized_end=764,
+  serialized_start=708,
+  serialized_end=817,
 )
 
 
@@ -253,8 +289,8 @@ _CREATECLUSTERREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1461,
-  serialized_end=1506,
+  serialized_start=1596,
+  serialized_end=1641,
 )
 
 _CREATECLUSTERREQUEST = _descriptor.Descriptor(
@@ -349,6 +385,13 @@ _CREATECLUSTERREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='maintenance_window', full_name='yandex.cloud.mdb.elasticsearch.v1.CreateClusterRequest.maintenance_window', index=12,
+      number=14, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -361,8 +404,8 @@ _CREATECLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=767,
-  serialized_end=1506,
+  serialized_start=820,
+  serialized_end=1641,
 )
 
 
@@ -393,8 +436,8 @@ _CREATECLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1508,
-  serialized_end=1551,
+  serialized_start=1643,
+  serialized_end=1686,
 )
 
 
@@ -432,8 +475,8 @@ _UPDATECLUSTERREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1461,
-  serialized_end=1506,
+  serialized_start=1596,
+  serialized_end=1641,
 )
 
 _UPDATECLUSTERREQUEST = _descriptor.Descriptor(
@@ -507,6 +550,13 @@ _UPDATECLUSTERREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='maintenance_window', full_name='yandex.cloud.mdb.elasticsearch.v1.UpdateClusterRequest.maintenance_window', index=9,
+      number=10, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -519,8 +569,8 @@ _UPDATECLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1554,
-  serialized_end=2090,
+  serialized_start=1689,
+  serialized_end=2307,
 )
 
 
@@ -551,8 +601,8 @@ _UPDATECLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2092,
-  serialized_end=2135,
+  serialized_start=2309,
+  serialized_end=2352,
 )
 
 
@@ -583,8 +633,8 @@ _DELETECLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2137,
-  serialized_end=2193,
+  serialized_start=2354,
+  serialized_end=2410,
 )
 
 
@@ -615,8 +665,8 @@ _DELETECLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2195,
-  serialized_end=2238,
+  serialized_start=2412,
+  serialized_end=2455,
 )
 
 
@@ -704,8 +754,8 @@ _LISTCLUSTERLOGSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2241,
-  serialized_end=2705,
+  serialized_start=2458,
+  serialized_end=2922,
 )
 
 
@@ -743,8 +793,8 @@ _LOGRECORD_MESSAGEENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2844,
-  serialized_end=2890,
+  serialized_start=3061,
+  serialized_end=3107,
 )
 
 _LOGRECORD = _descriptor.Descriptor(
@@ -781,8 +831,8 @@ _LOGRECORD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2708,
-  serialized_end=2890,
+  serialized_start=2925,
+  serialized_end=3107,
 )
 
 
@@ -820,8 +870,8 @@ _LISTCLUSTERLOGSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2892,
-  serialized_end=3002,
+  serialized_start=3109,
+  serialized_end=3219,
 )
 
 
@@ -859,8 +909,8 @@ _STREAMLOGRECORD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3004,
-  serialized_end=3110,
+  serialized_start=3221,
+  serialized_end=3327,
 )
 
 
@@ -934,8 +984,8 @@ _STREAMCLUSTERLOGSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3113,
-  serialized_end=3520,
+  serialized_start=3330,
+  serialized_end=3737,
 )
 
 
@@ -980,8 +1030,8 @@ _LISTCLUSTEROPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3522,
-  serialized_end=3648,
+  serialized_start=3739,
+  serialized_end=3865,
 )
 
 
@@ -1019,8 +1069,8 @@ _LISTCLUSTEROPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3650,
-  serialized_end=3761,
+  serialized_start=3867,
+  serialized_end=3978,
 )
 
 
@@ -1065,8 +1115,8 @@ _LISTCLUSTERHOSTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3763,
-  serialized_end=3884,
+  serialized_start=3980,
+  serialized_end=4101,
 )
 
 
@@ -1104,8 +1154,8 @@ _LISTCLUSTERHOSTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3886,
-  serialized_end=3993,
+  serialized_start=4103,
+  serialized_end=4210,
 )
 
 
@@ -1143,8 +1193,8 @@ _MOVECLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3995,
-  serialized_end=4094,
+  serialized_start=4212,
+  serialized_end=4311,
 )
 
 
@@ -1189,8 +1239,8 @@ _MOVECLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4096,
-  serialized_end=4194,
+  serialized_start=4313,
+  serialized_end=4411,
 )
 
 
@@ -1221,8 +1271,8 @@ _STARTCLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4196,
-  serialized_end=4251,
+  serialized_start=4413,
+  serialized_end=4468,
 )
 
 
@@ -1253,8 +1303,8 @@ _STARTCLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4253,
-  serialized_end=4295,
+  serialized_start=4470,
+  serialized_end=4512,
 )
 
 
@@ -1285,8 +1335,8 @@ _STOPCLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4297,
-  serialized_end=4351,
+  serialized_start=4514,
+  serialized_end=4568,
 )
 
 
@@ -1317,8 +1367,8 @@ _STOPCLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4353,
-  serialized_end=4394,
+  serialized_start=4570,
+  serialized_end=4611,
 )
 
 
@@ -1377,8 +1427,8 @@ _HOSTSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4397,
-  serialized_end=4603,
+  serialized_start=4614,
+  serialized_end=4820,
 )
 
 
@@ -1421,8 +1471,8 @@ _ELASTICSEARCHSPEC_DATANODE = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=4823,
-  serialized_end=5029,
+  serialized_start=5040,
+  serialized_end=5246,
 )
 
 _ELASTICSEARCHSPEC_MASTERNODE = _descriptor.Descriptor(
@@ -1452,8 +1502,8 @@ _ELASTICSEARCHSPEC_MASTERNODE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5031,
-  serialized_end=5108,
+  serialized_start=5248,
+  serialized_end=5325,
 )
 
 _ELASTICSEARCHSPEC = _descriptor.Descriptor(
@@ -1497,8 +1547,8 @@ _ELASTICSEARCHSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4606,
-  serialized_end=5108,
+  serialized_start=4823,
+  serialized_end=5325,
 )
 
 
@@ -1550,8 +1600,8 @@ _CONFIGSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5111,
-  serialized_end=5269,
+  serialized_start=5328,
+  serialized_end=5486,
 )
 
 
@@ -1603,8 +1653,8 @@ _CONFIGSPECUPDATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5272,
-  serialized_end=5430,
+  serialized_start=5489,
+  serialized_end=5647,
 )
 
 
@@ -1642,8 +1692,8 @@ _ADDCLUSTERHOSTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5433,
-  serialized_end=5564,
+  serialized_start=5650,
+  serialized_end=5781,
 )
 
 
@@ -1681,8 +1731,8 @@ _ADDCLUSTERHOSTSMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5566,
-  serialized_end=5631,
+  serialized_start=5783,
+  serialized_end=5848,
 )
 
 
@@ -1720,8 +1770,8 @@ _DELETECLUSTERHOSTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5633,
-  serialized_end=5731,
+  serialized_start=5850,
+  serialized_end=5948,
 )
 
 
@@ -1759,8 +1809,94 @@ _DELETECLUSTERHOSTSMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5733,
-  serialized_end=5801,
+  serialized_start=5950,
+  serialized_end=6018,
+)
+
+
+_RESCHEDULEMAINTENANCEREQUEST = _descriptor.Descriptor(
+  name='RescheduleMaintenanceRequest',
+  full_name='yandex.cloud.mdb.elasticsearch.v1.RescheduleMaintenanceRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='yandex.cloud.mdb.elasticsearch.v1.RescheduleMaintenanceRequest.cluster_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='reschedule_type', full_name='yandex.cloud.mdb.elasticsearch.v1.RescheduleMaintenanceRequest.reschedule_type', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delayed_until', full_name='yandex.cloud.mdb.elasticsearch.v1.RescheduleMaintenanceRequest.delayed_until', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+    _RESCHEDULEMAINTENANCEREQUEST_RESCHEDULETYPE,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=6021,
+  serialized_end=6359,
+)
+
+
+_RESCHEDULEMAINTENANCEMETADATA = _descriptor.Descriptor(
+  name='RescheduleMaintenanceMetadata',
+  full_name='yandex.cloud.mdb.elasticsearch.v1.RescheduleMaintenanceMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='yandex.cloud.mdb.elasticsearch.v1.RescheduleMaintenanceMetadata.cluster_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='delayed_until', full_name='yandex.cloud.mdb.elasticsearch.v1.RescheduleMaintenanceMetadata.delayed_until', index=1,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=6361,
+  serialized_end=6463,
 )
 
 _LISTCLUSTERSRESPONSE.fields_by_name['clusters'].message_type = yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_cluster__pb2._CLUSTER
@@ -1770,10 +1906,12 @@ _CREATECLUSTERREQUEST.fields_by_name['environment'].enum_type = yandex_dot_cloud
 _CREATECLUSTERREQUEST.fields_by_name['config_spec'].message_type = _CONFIGSPEC
 _CREATECLUSTERREQUEST.fields_by_name['user_specs'].message_type = yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_user__pb2._USERSPEC
 _CREATECLUSTERREQUEST.fields_by_name['host_specs'].message_type = _HOSTSPEC
+_CREATECLUSTERREQUEST.fields_by_name['maintenance_window'].message_type = yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_maintenance__pb2._MAINTENANCEWINDOW
 _UPDATECLUSTERREQUEST_LABELSENTRY.containing_type = _UPDATECLUSTERREQUEST
 _UPDATECLUSTERREQUEST.fields_by_name['update_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
 _UPDATECLUSTERREQUEST.fields_by_name['labels'].message_type = _UPDATECLUSTERREQUEST_LABELSENTRY
 _UPDATECLUSTERREQUEST.fields_by_name['config_spec'].message_type = _CONFIGSPECUPDATE
+_UPDATECLUSTERREQUEST.fields_by_name['maintenance_window'].message_type = yandex_dot_cloud_dot_mdb_dot_elasticsearch_dot_v1_dot_maintenance__pb2._MAINTENANCEWINDOW
 _LISTCLUSTERLOGSREQUEST.fields_by_name['from_time'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _LISTCLUSTERLOGSREQUEST.fields_by_name['to_time'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _LISTCLUSTERLOGSREQUEST.fields_by_name['service_type'].enum_type = _LISTCLUSTERLOGSREQUEST_SERVICETYPE
@@ -1803,6 +1941,10 @@ _ELASTICSEARCHSPEC.fields_by_name['master_node'].message_type = _ELASTICSEARCHSP
 _CONFIGSPEC.fields_by_name['elasticsearch_spec'].message_type = _ELASTICSEARCHSPEC
 _CONFIGSPECUPDATE.fields_by_name['elasticsearch_spec'].message_type = _ELASTICSEARCHSPEC
 _ADDCLUSTERHOSTSREQUEST.fields_by_name['host_specs'].message_type = _HOSTSPEC
+_RESCHEDULEMAINTENANCEREQUEST.fields_by_name['reschedule_type'].enum_type = _RESCHEDULEMAINTENANCEREQUEST_RESCHEDULETYPE
+_RESCHEDULEMAINTENANCEREQUEST.fields_by_name['delayed_until'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_RESCHEDULEMAINTENANCEREQUEST_RESCHEDULETYPE.containing_type = _RESCHEDULEMAINTENANCEREQUEST
+_RESCHEDULEMAINTENANCEMETADATA.fields_by_name['delayed_until'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 DESCRIPTOR.message_types_by_name['GetClusterRequest'] = _GETCLUSTERREQUEST
 DESCRIPTOR.message_types_by_name['ListClustersRequest'] = _LISTCLUSTERSREQUEST
 DESCRIPTOR.message_types_by_name['ListClustersResponse'] = _LISTCLUSTERSRESPONSE
@@ -1835,6 +1977,8 @@ DESCRIPTOR.message_types_by_name['AddClusterHostsRequest'] = _ADDCLUSTERHOSTSREQ
 DESCRIPTOR.message_types_by_name['AddClusterHostsMetadata'] = _ADDCLUSTERHOSTSMETADATA
 DESCRIPTOR.message_types_by_name['DeleteClusterHostsRequest'] = _DELETECLUSTERHOSTSREQUEST
 DESCRIPTOR.message_types_by_name['DeleteClusterHostsMetadata'] = _DELETECLUSTERHOSTSMETADATA
+DESCRIPTOR.message_types_by_name['RescheduleMaintenanceRequest'] = _RESCHEDULEMAINTENANCEREQUEST
+DESCRIPTOR.message_types_by_name['RescheduleMaintenanceMetadata'] = _RESCHEDULEMAINTENANCEMETADATA
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 GetClusterRequest = _reflection.GeneratedProtocolMessageType('GetClusterRequest', (_message.Message,), {
@@ -2101,6 +2245,20 @@ DeleteClusterHostsMetadata = _reflection.GeneratedProtocolMessageType('DeleteClu
   })
 _sym_db.RegisterMessage(DeleteClusterHostsMetadata)
 
+RescheduleMaintenanceRequest = _reflection.GeneratedProtocolMessageType('RescheduleMaintenanceRequest', (_message.Message,), {
+  'DESCRIPTOR' : _RESCHEDULEMAINTENANCEREQUEST,
+  '__module__' : 'yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.elasticsearch.v1.RescheduleMaintenanceRequest)
+  })
+_sym_db.RegisterMessage(RescheduleMaintenanceRequest)
+
+RescheduleMaintenanceMetadata = _reflection.GeneratedProtocolMessageType('RescheduleMaintenanceMetadata', (_message.Message,), {
+  'DESCRIPTOR' : _RESCHEDULEMAINTENANCEMETADATA,
+  '__module__' : 'yandex.cloud.mdb.elasticsearch.v1.cluster_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.elasticsearch.v1.RescheduleMaintenanceMetadata)
+  })
+_sym_db.RegisterMessage(RescheduleMaintenanceMetadata)
+
 
 DESCRIPTOR._options = None
 _GETCLUSTERREQUEST.fields_by_name['cluster_id']._options = None
@@ -2150,6 +2308,8 @@ _ADDCLUSTERHOSTSREQUEST.fields_by_name['cluster_id']._options = None
 _ADDCLUSTERHOSTSREQUEST.fields_by_name['host_specs']._options = None
 _DELETECLUSTERHOSTSREQUEST.fields_by_name['cluster_id']._options = None
 _DELETECLUSTERHOSTSREQUEST.fields_by_name['host_names']._options = None
+_RESCHEDULEMAINTENANCEREQUEST.fields_by_name['cluster_id']._options = None
+_RESCHEDULEMAINTENANCEREQUEST.fields_by_name['reschedule_type']._options = None
 
 _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
   name='ClusterService',
@@ -2158,8 +2318,8 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=5804,
-  serialized_end=8630,
+  serialized_start=6466,
+  serialized_end=9544,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
@@ -2299,6 +2459,16 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_DELETECLUSTERHOSTSREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\002F\"A/managed-elasticsearch/v1/clusters/{cluster_id}/hosts:batchDelete:\001*\262\322*3\n\032DeleteClusterHostsMetadata\022\025google.protobuf.Empty',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='RescheduleMaintenance',
+    full_name='yandex.cloud.mdb.elasticsearch.v1.ClusterService.RescheduleMaintenance',
+    index=14,
+    containing_service=None,
+    input_type=_RESCHEDULEMAINTENANCEREQUEST,
+    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
+    serialized_options=b'\202\323\344\223\002J\"E/managed-elasticsearch/v1/clusters/{cluster_id}:rescheduleMaintenance:\001*\262\322*(\n\035RescheduleMaintenanceMetadata\022\007Cluster',
     create_key=_descriptor._internal_create_key,
   ),
 ])
