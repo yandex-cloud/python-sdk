@@ -8,15 +8,17 @@ import uuid
 import yandexcloud
 from yandexcloud.operations import OperationError
 
+USER_AGENT = 'ycloud-python-sdk:dataproc.example.using_wrapper'
+
 
 def main():
     logging.basicConfig(level=logging.INFO)
     arguments = parse_cmd()
     if arguments.token:
-        sdk = yandexcloud.SDK(token=arguments.token)
+        sdk = yandexcloud.SDK(token=arguments.token, user_agent=USER_AGENT)
     else:
         with open(arguments.sa_json_path) as infile:
-            sdk = yandexcloud.SDK(service_account_key=json.load(infile))
+            sdk = yandexcloud.SDK(service_account_key=json.load(infile), user_agent=USER_AGENT)
     fill_missing_arguments(sdk, arguments)
 
     dataproc = sdk.wrappers.Dataproc(

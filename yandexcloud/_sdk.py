@@ -10,8 +10,21 @@ from yandexcloud._wrappers import Wrappers
 
 
 class SDK(object):
-    def __init__(self, interceptor=None, **kwargs):
-        self._channels = _channels.Channels(**kwargs)
+    def __init__(self, interceptor=None, user_agent=None, **kwargs):
+        """
+        API entry-point object.
+
+        :param interceptor: GRPC interceptor to be used instead of default RetryInterceptor
+        :type interceptor: Union[
+            UnaryUnaryClientInterceptor,
+            UnaryStreamClientInterceptor,
+            StreamUnaryClientInterceptor,
+            StreamStreamClientInterceptor
+        ]
+        :param user_agent: String to prepend User-Agent metadata header for all GRPC requests made via SDK object
+        :type user_agent: Optional[str]
+        """
+        self._channels = _channels.Channels(client_user_agent=user_agent, **kwargs)
         if interceptor is None:
             interceptor = RetryInterceptor(
                 max_retry_count=5,
