@@ -237,6 +237,9 @@ def run_spark_job(sdk, cluster_id, bucket):
                 properties={
                     'spark.submit.deployMode': 'cluster',
                 },
+                packages=['org.slf4j:slf4j-simple:1.7.30'],
+                repositories=['https://repo1.maven.org/maven2'],
+                exclude_packages=['com.amazonaws:amazon-kinesis-client'],
             )
         )
     )
@@ -262,7 +265,7 @@ def run_pyspark_job(sdk, cluster_id, bucket):
                 ],
                 args=[
                     's3a://data-proc-public/jobs/sources/data/cities500.txt.bz2',
-                    's3a://{bucket}/jobs/results/${{JOB_ID}}'.format(bucket=bucket),
+                    's3a://{bucket}/dataproc/job/results/${{JOB_ID}}'.format(bucket=bucket),
                 ],
                 jar_file_uris=[
                     's3a://data-proc-public/jobs/sources/java/dataproc-examples-1.0.jar',
@@ -272,6 +275,9 @@ def run_pyspark_job(sdk, cluster_id, bucket):
                 properties={
                     'spark.submit.deployMode': 'cluster',
                 },
+                packages=['org.slf4j:slf4j-simple:1.7.30'],
+                repositories=['https://repo1.maven.org/maven2'],
+                exclude_packages=['com.amazonaws:amazon-kinesis-client'],
             )
         )
     )
