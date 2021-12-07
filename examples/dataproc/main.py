@@ -3,6 +3,7 @@ import argparse
 import json
 import os
 import logging
+import uuid
 
 from google.protobuf.field_mask_pb2 import FieldMask
 
@@ -193,7 +194,7 @@ def run_mapreduce_job(sdk, cluster_id, bucket):
                     '-reducer', 'reducer.py',
                     '-numReduceTasks', '1',
                     '-input', 's3a://data-proc-public/jobs/sources/data/cities500.txt.bz2',
-                    '-output', 's3a://{bucket}/dataproc/job/results'.format(bucket=bucket)
+                    '-output', 's3a://{bucket}/dataproc/job/results/{uuid}'.format(bucket=bucket, uuid=uuid.uuid4())
                 ],
                 properties={
                     'yarn.app.mapreduce.am.resource.mb': '2048',

@@ -3,6 +3,7 @@ import argparse
 import json
 import os
 import logging
+import uuid
 
 import yandexcloud
 from yandexcloud.operations import OperationError
@@ -66,7 +67,7 @@ def main():
                 '-reducer', 'reducer.py',
                 '-numReduceTasks', '1',
                 '-input', 's3a://data-proc-public/jobs/sources/data/cities500.txt.bz2',
-                '-output', 's3a://{bucket}/dataproc/job/results'.format(bucket=bucket_for_logs_output)
+                '-output', 's3a://{bucket}/dataproc/job/results/{uuid}'.format(bucket=bucket_for_logs_output, uuid=uuid.uuid4())
             ],
             properties={
                 'yarn.app.mapreduce.am.resource.mb': '2048',
