@@ -3,6 +3,7 @@ import argparse
 import json
 import os
 import logging
+import uuid
 
 from google.protobuf.field_mask_pb2 import FieldMask
 
@@ -19,15 +20,17 @@ import yandex.cloud.dataproc.v1.subcluster_service_pb2_grpc as subcluster_servic
 
 import yandexcloud
 
+USER_AGENT = 'ycloud-python-sdk:dataproc.example.main'
+
 
 def main():
     logging.basicConfig(level=logging.INFO)
     arguments = parse_cmd()
     if arguments.token:
-        sdk = yandexcloud.SDK(token=arguments.token)
+        sdk = yandexcloud.SDK(token=arguments.token, user_agent=USER_AGENT)
     else:
         with open(arguments.sa_json_path) as infile:
-            sdk = yandexcloud.SDK(service_account_key=json.load(infile))
+            sdk = yandexcloud.SDK(service_account_key=json.load(infile), user_agent=USER_AGENT)
 
     fill_missing_arguments(sdk, arguments)
 
@@ -193,7 +196,7 @@ def run_mapreduce_job(sdk, cluster_id, bucket):
                     '-reducer', 'reducer.py',
                     '-numReduceTasks', '1',
                     '-input', 's3a://data-proc-public/jobs/sources/data/cities500.txt.bz2',
-                    '-output', 's3a://{bucket}/dataproc/job/results'.format(bucket=bucket)
+                    '-output', 's3a://{bucket}/dataproc/job/results/{uuid}'.format(bucket=bucket, uuid=uuid.uuid4())
                 ],
                 properties={
                     'yarn.app.mapreduce.am.resource.mb': '2048',
@@ -234,6 +237,9 @@ def run_spark_job(sdk, cluster_id, bucket):
                 properties={
                     'spark.submit.deployMode': 'cluster',
                 },
+                packages=['org.slf4j:slf4j-simple:1.7.30'],
+                repositories=['https://repo1.maven.org/maven2'],
+                exclude_packages=['com.amazonaws:amazon-kinesis-client'],
             )
         )
     )
@@ -259,7 +265,7 @@ def run_pyspark_job(sdk, cluster_id, bucket):
                 ],
                 args=[
                     's3a://data-proc-public/jobs/sources/data/cities500.txt.bz2',
-                    's3a://{bucket}/jobs/results/${{JOB_ID}}'.format(bucket=bucket),
+                    's3a://{bucket}/dataproc/job/results/${{JOB_ID}}'.format(bucket=bucket),
                 ],
                 jar_file_uris=[
                     's3a://data-proc-public/jobs/sources/java/dataproc-examples-1.0.jar',
@@ -269,6 +275,9 @@ def run_pyspark_job(sdk, cluster_id, bucket):
                 properties={
                     'spark.submit.deployMode': 'cluster',
                 },
+                packages=['org.slf4j:slf4j-simple:1.7.30'],
+                repositories=['https://repo1.maven.org/maven2'],
+                exclude_packages=['com.amazonaws:amazon-kinesis-client'],
             )
         )
     )

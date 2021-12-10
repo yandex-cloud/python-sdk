@@ -3,19 +3,22 @@ import argparse
 import json
 import os
 import logging
+import uuid
 
 import yandexcloud
 from yandexcloud.operations import OperationError
+
+USER_AGENT = 'ycloud-python-sdk:dataproc.example.using_wrapper'
 
 
 def main():
     logging.basicConfig(level=logging.INFO)
     arguments = parse_cmd()
     if arguments.token:
-        sdk = yandexcloud.SDK(token=arguments.token)
+        sdk = yandexcloud.SDK(token=arguments.token, user_agent=USER_AGENT)
     else:
         with open(arguments.sa_json_path) as infile:
-            sdk = yandexcloud.SDK(service_account_key=json.load(infile))
+            sdk = yandexcloud.SDK(service_account_key=json.load(infile), user_agent=USER_AGENT)
     fill_missing_arguments(sdk, arguments)
 
     dataproc = sdk.wrappers.Dataproc(
@@ -66,7 +69,7 @@ def main():
                 '-reducer', 'reducer.py',
                 '-numReduceTasks', '1',
                 '-input', 's3a://data-proc-public/jobs/sources/data/cities500.txt.bz2',
-                '-output', 's3a://{bucket}/dataproc/job/results'.format(bucket=bucket_for_logs_output)
+                '-output', 's3a://{bucket}/dataproc/job/results/{uuid}'.format(bucket=bucket_for_logs_output, uuid=uuid.uuid4())
             ],
             properties={
                 'yarn.app.mapreduce.am.resource.mb': '2048',
@@ -106,6 +109,9 @@ def main():
             properties={
                 'spark.submit.deployMode': 'cluster',
             },
+            packages=['org.slf4j:slf4j-simple:1.7.30'],
+            repositories=['https://repo1.maven.org/maven2'],
+            exclude_packages=['com.amazonaws:amazon-kinesis-client'],
         )
 
         dataproc.create_pyspark_job(
@@ -130,7 +136,10 @@ def main():
             ],
             properties={
                 'spark.submit.deployMode': 'cluster',
-            }
+            },
+            packages=['org.slf4j:slf4j-simple:1.7.30'],
+            repositories=['https://repo1.maven.org/maven2'],
+            exclude_packages=['com.amazonaws:amazon-kinesis-client'],
         )
 
     except OperationError:

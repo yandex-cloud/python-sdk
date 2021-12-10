@@ -562,6 +562,9 @@ class Dataproc(object):
         properties=None,
         cluster_id=None,
         name='Spark job',
+        packages=None,
+        repositories=None,
+        exclude_packages=None,
     ):
         """
         Run Spark job in Yandex.Cloud Data Proc cluster.
@@ -585,6 +588,12 @@ class Dataproc(object):
         :type cluster_id: str
         :param name: Name of the job. Used for labeling.
         :type name: str
+        :param packages: List of maven coordinates of jars to include on the driver and executor classpaths.
+        :type packages: List[str]
+        :param repositories: List of additional remote repositories to search for the maven coordinates given with --packages.
+        :type repositories: List[str]
+        :param exclude_packages: List of groupId:artifactId, to exclude while resolving the dependencies provided in --packages to avoid dependency conflicts.
+        :type exclude_packages: List[str]
         """
         cluster_id = cluster_id or self.cluster_id
         if not cluster_id:
@@ -602,6 +611,9 @@ class Dataproc(object):
                 jar_file_uris=jar_file_uris,
                 args=args,
                 properties=properties,
+                packages=packages,
+                repositories=repositories,
+                exclude_packages=exclude_packages,
             )
         )
         return self.sdk.create_operation_and_get_result(
@@ -623,6 +635,9 @@ class Dataproc(object):
         properties=None,
         cluster_id=None,
         name='Pyspark job',
+        packages=None,
+        repositories=None,
+        exclude_packages=None,
     ):
         """
         Run Pyspark job in Yandex.Cloud Data Proc cluster.
@@ -646,6 +661,12 @@ class Dataproc(object):
         :type cluster_id: str        
         :param name: Name of the job. Used for labeling.
         :type name: str
+        :param packages: List of maven coordinates of jars to include on the driver and executor classpaths.
+        :type packages: List[str]
+        :param repositories: List of additional remote repositories to search for the maven coordinates given with --packages.
+        :type repositories: List[str]
+        :param exclude_packages: List of groupId:artifactId, to exclude while resolving the dependencies provided in --packages to avoid dependency conflicts.
+        :type exclude_packages: List[str]
         """
         cluster_id = cluster_id or self.cluster_id
         if not cluster_id:
@@ -662,6 +683,9 @@ class Dataproc(object):
                 jar_file_uris=jar_file_uris,
                 args=args,
                 properties=properties,
+                packages=packages,
+                repositories=repositories,
+                exclude_packages=exclude_packages,
             )
         )
         return self.sdk.create_operation_and_get_result(
