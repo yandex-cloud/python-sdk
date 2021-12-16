@@ -25,7 +25,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancer',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n;yandex/cloud/apploadbalancer/v1/backend_group_service.proto\x12\x1fyandex.cloud.apploadbalancer.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x33yandex/cloud/apploadbalancer/v1/backend_group.proto\x1a\x1dyandex/cloud/validation.proto\"8\n\x16GetBackendGroupRequest\x12\x1e\n\x10\x62\x61\x63kend_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\x8d\x01\n\x18ListBackendGroupsRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"{\n\x19ListBackendGroupsResponse\x12\x45\n\x0e\x62\x61\x63kend_groups\x18\x01 \x03(\x0b\x32-.yandex.cloud.apploadbalancer.v1.BackendGroup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\";\n\x19\x44\x65leteBackendGroupRequest\x12\x1e\n\x10\x62\x61\x63kend_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"6\n\x1a\x44\x65leteBackendGroupMetadata\x12\x18\n\x10\x62\x61\x63kend_group_id\x18\x01 \x01(\t\"\xaa\x04\n\x19UpdateBackendGroupRequest\x12\x1e\n\x10\x62\x61\x63kend_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x34\n\x04name\x18\x03 \x01(\tB&\xf2\xc7\x31\"([a-z]([-a-z0-9]{0,61}[a-z0-9])?)?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x9f\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x46.yandex.cloud.apploadbalancer.v1.UpdateBackendGroupRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x41\n\x04http\x18\x06 \x01(\x0b\x32\x31.yandex.cloud.apploadbalancer.v1.HttpBackendGroupH\x00\x12\x41\n\x04grpc\x18\x07 \x01(\x0b\x32\x31.yandex.cloud.apploadbalancer.v1.GrpcBackendGroupH\x00\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0f\n\x07\x62\x61\x63kend\x12\x04\xc0\xc1\x31\x01\"6\n\x1aUpdateBackendGroupMetadata\x12\x18\n\x10\x62\x61\x63kend_group_id\x18\x01 \x01(\t\"\xec\x03\n\x19\x43reateBackendGroupRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x34\n\x04name\x18\x02 \x01(\tB&\xf2\xc7\x31\"([a-z]([-a-z0-9]{0,61}[a-z0-9])?)?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x9f\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x46.yandex.cloud.apploadbalancer.v1.CreateBackendGroupRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x41\n\x04http\x18\x05 \x01(\x0b\x32\x31.yandex.cloud.apploadbalancer.v1.HttpBackendGroupH\x00\x12\x41\n\x04grpc\x18\x06 \x01(\x0b\x32\x31.yandex.cloud.apploadbalancer.v1.GrpcBackendGroupH\x00\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\t\n\x07\x62\x61\x63kend\"6\n\x1a\x43reateBackendGroupMetadata\x12\x18\n\x10\x62\x61\x63kend_group_id\x18\x01 \x01(\t\"\x82\x02\n\x11\x41\x64\x64\x42\x61\x63kendRequest\x12\x1e\n\x10\x62\x61\x63kend_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12<\n\x04http\x18\x02 \x01(\x0b\x32,.yandex.cloud.apploadbalancer.v1.HttpBackendH\x00\x12<\n\x04grpc\x18\x03 \x01(\x0b\x32,.yandex.cloud.apploadbalancer.v1.GrpcBackendH\x00\x12@\n\x06stream\x18\x05 \x01(\x0b\x32..yandex.cloud.apploadbalancer.v1.StreamBackendH\x00\x42\x0f\n\x07\x62\x61\x63kend\x12\x04\xc0\xc1\x31\x01\"D\n\x12\x41\x64\x64\x42\x61\x63kendMetadata\x12\x18\n\x10\x62\x61\x63kend_group_id\x18\x01 \x01(\t\x12\x14\n\x0c\x62\x61\x63kend_name\x18\x02 \x01(\t\"\xb6\x02\n\x14UpdateBackendRequest\x12\x1e\n\x10\x62\x61\x63kend_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12<\n\x04http\x18\x03 \x01(\x0b\x32,.yandex.cloud.apploadbalancer.v1.HttpBackendH\x00\x12<\n\x04grpc\x18\x04 \x01(\x0b\x32,.yandex.cloud.apploadbalancer.v1.GrpcBackendH\x00\x12@\n\x06stream\x18\x05 \x01(\x0b\x32..yandex.cloud.apploadbalancer.v1.StreamBackendH\x00\x42\x0f\n\x07\x62\x61\x63kend\x12\x04\xc0\xc1\x31\x01\"G\n\x15UpdateBackendMetadata\x12\x18\n\x10\x62\x61\x63kend_group_id\x18\x01 \x01(\t\x12\x14\n\x0c\x62\x61\x63kend_name\x18\x02 \x01(\t\"R\n\x14RemoveBackendRequest\x12\x1e\n\x10\x62\x61\x63kend_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1a\n\x0c\x62\x61\x63kend_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"G\n\x15RemoveBackendMetadata\x12\x18\n\x10\x62\x61\x63kend_group_id\x18\x01 \x01(\t\x12\x14\n\x0c\x62\x61\x63kend_name\x18\x02 \x01(\t\"\x89\x01\n!ListBackendGroupOperationsRequest\x12&\n\x10\x62\x61\x63kend_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"t\n\"ListBackendGroupOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xf1\x0e\n\x13\x42\x61\x63kendGroupService\x12\xab\x01\n\x03Get\x12\x37.yandex.cloud.apploadbalancer.v1.GetBackendGroupRequest\x1a-.yandex.cloud.apploadbalancer.v1.BackendGroup\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/apploadbalancer/v1/backendGroups/{backend_group_id}\x12\xa8\x01\n\x04List\x12\x39.yandex.cloud.apploadbalancer.v1.ListBackendGroupsRequest\x1a:.yandex.cloud.apploadbalancer.v1.ListBackendGroupsResponse\")\x82\xd3\xe4\x93\x02#\x12!/apploadbalancer/v1/backendGroups\x12\xc3\x01\n\x06\x43reate\x12:.yandex.cloud.apploadbalancer.v1.CreateBackendGroupRequest\x1a!.yandex.cloud.operation.Operation\"Z\x82\xd3\xe4\x93\x02&\"!/apploadbalancer/v1/backendGroups:\x01*\xb2\xd2**\n\x1a\x43reateBackendGroupMetadata\x12\x0c\x42\x61\x63kendGroup\x12\xd6\x01\n\x06Update\x12:.yandex.cloud.apploadbalancer.v1.UpdateBackendGroupRequest\x1a!.yandex.cloud.operation.Operation\"m\x82\xd3\xe4\x93\x02\x39\x32\x34/apploadbalancer/v1/backendGroups/{backend_group_id}:\x01*\xb2\xd2**\n\x1aUpdateBackendGroupMetadata\x12\x0c\x42\x61\x63kendGroup\x12\xdc\x01\n\x06\x44\x65lete\x12:.yandex.cloud.apploadbalancer.v1.DeleteBackendGroupRequest\x1a!.yandex.cloud.operation.Operation\"s\x82\xd3\xe4\x93\x02\x36*4/apploadbalancer/v1/backendGroups/{backend_group_id}\xb2\xd2*3\n\x1a\x44\x65leteBackendGroupMetadata\x12\x15google.protobuf.Empty\x12\xd5\x01\n\nAddBackend\x12\x32.yandex.cloud.apploadbalancer.v1.AddBackendRequest\x1a!.yandex.cloud.operation.Operation\"p\x82\xd3\xe4\x93\x02\x44\"?/apploadbalancer/v1/backendGroups/{backend_group_id}:addBackend:\x01*\xb2\xd2*\"\n\x12\x41\x64\x64\x42\x61\x63kendMetadata\x12\x0c\x42\x61\x63kendGroup\x12\xe1\x01\n\rRemoveBackend\x12\x35.yandex.cloud.apploadbalancer.v1.RemoveBackendRequest\x1a!.yandex.cloud.operation.Operation\"v\x82\xd3\xe4\x93\x02G\"B/apploadbalancer/v1/backendGroups/{backend_group_id}:removeBackend:\x01*\xb2\xd2*%\n\x15RemoveBackendMetadata\x12\x0c\x42\x61\x63kendGroup\x12\xe1\x01\n\rUpdateBackend\x12\x35.yandex.cloud.apploadbalancer.v1.UpdateBackendRequest\x1a!.yandex.cloud.operation.Operation\"v\x82\xd3\xe4\x93\x02G\"B/apploadbalancer/v1/backendGroups/{backend_group_id}:updateBackend:\x01*\xb2\xd2*%\n\x15UpdateBackendMetadata\x12\x0c\x42\x61\x63kendGroup\x12\xe2\x01\n\x0eListOperations\x12\x42.yandex.cloud.apploadbalancer.v1.ListBackendGroupOperationsRequest\x1a\x43.yandex.cloud.apploadbalancer.v1.ListBackendGroupOperationsResponse\"G\x82\xd3\xe4\x93\x02\x41\x12?/apploadbalancer/v1/backendGroups/{backend_group_id}/operationsBz\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancerb\x06proto3'
+  serialized_pb=b'\n;yandex/cloud/apploadbalancer/v1/backend_group_service.proto\x12\x1fyandex.cloud.apploadbalancer.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x33yandex/cloud/apploadbalancer/v1/backend_group.proto\x1a\x1dyandex/cloud/validation.proto\"8\n\x16GetBackendGroupRequest\x12\x1e\n\x10\x62\x61\x63kend_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\x8d\x01\n\x18ListBackendGroupsRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"{\n\x19ListBackendGroupsResponse\x12\x45\n\x0e\x62\x61\x63kend_groups\x18\x01 \x03(\x0b\x32-.yandex.cloud.apploadbalancer.v1.BackendGroup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\";\n\x19\x44\x65leteBackendGroupRequest\x12\x1e\n\x10\x62\x61\x63kend_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"6\n\x1a\x44\x65leteBackendGroupMetadata\x12\x18\n\x10\x62\x61\x63kend_group_id\x18\x01 \x01(\t\"\xf1\x04\n\x19UpdateBackendGroupRequest\x12\x1e\n\x10\x62\x61\x63kend_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x34\n\x04name\x18\x03 \x01(\tB&\xf2\xc7\x31\"([a-z]([-a-z0-9]{0,61}[a-z0-9])?)?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x9f\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x46.yandex.cloud.apploadbalancer.v1.UpdateBackendGroupRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x41\n\x04http\x18\x06 \x01(\x0b\x32\x31.yandex.cloud.apploadbalancer.v1.HttpBackendGroupH\x00\x12\x41\n\x04grpc\x18\x07 \x01(\x0b\x32\x31.yandex.cloud.apploadbalancer.v1.GrpcBackendGroupH\x00\x12\x45\n\x06stream\x18\x08 \x01(\x0b\x32\x33.yandex.cloud.apploadbalancer.v1.StreamBackendGroupH\x00\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0f\n\x07\x62\x61\x63kend\x12\x04\xc0\xc1\x31\x01\"6\n\x1aUpdateBackendGroupMetadata\x12\x18\n\x10\x62\x61\x63kend_group_id\x18\x01 \x01(\t\"\xb3\x04\n\x19\x43reateBackendGroupRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x34\n\x04name\x18\x02 \x01(\tB&\xf2\xc7\x31\"([a-z]([-a-z0-9]{0,61}[a-z0-9])?)?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x9f\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x46.yandex.cloud.apploadbalancer.v1.CreateBackendGroupRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x41\n\x04http\x18\x05 \x01(\x0b\x32\x31.yandex.cloud.apploadbalancer.v1.HttpBackendGroupH\x00\x12\x41\n\x04grpc\x18\x06 \x01(\x0b\x32\x31.yandex.cloud.apploadbalancer.v1.GrpcBackendGroupH\x00\x12\x45\n\x06stream\x18\x07 \x01(\x0b\x32\x33.yandex.cloud.apploadbalancer.v1.StreamBackendGroupH\x00\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\t\n\x07\x62\x61\x63kend\"6\n\x1a\x43reateBackendGroupMetadata\x12\x18\n\x10\x62\x61\x63kend_group_id\x18\x01 \x01(\t\"\x82\x02\n\x11\x41\x64\x64\x42\x61\x63kendRequest\x12\x1e\n\x10\x62\x61\x63kend_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12<\n\x04http\x18\x02 \x01(\x0b\x32,.yandex.cloud.apploadbalancer.v1.HttpBackendH\x00\x12<\n\x04grpc\x18\x03 \x01(\x0b\x32,.yandex.cloud.apploadbalancer.v1.GrpcBackendH\x00\x12@\n\x06stream\x18\x05 \x01(\x0b\x32..yandex.cloud.apploadbalancer.v1.StreamBackendH\x00\x42\x0f\n\x07\x62\x61\x63kend\x12\x04\xc0\xc1\x31\x01\"D\n\x12\x41\x64\x64\x42\x61\x63kendMetadata\x12\x18\n\x10\x62\x61\x63kend_group_id\x18\x01 \x01(\t\x12\x14\n\x0c\x62\x61\x63kend_name\x18\x02 \x01(\t\"\xb6\x02\n\x14UpdateBackendRequest\x12\x1e\n\x10\x62\x61\x63kend_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12<\n\x04http\x18\x03 \x01(\x0b\x32,.yandex.cloud.apploadbalancer.v1.HttpBackendH\x00\x12<\n\x04grpc\x18\x04 \x01(\x0b\x32,.yandex.cloud.apploadbalancer.v1.GrpcBackendH\x00\x12@\n\x06stream\x18\x05 \x01(\x0b\x32..yandex.cloud.apploadbalancer.v1.StreamBackendH\x00\x42\x0f\n\x07\x62\x61\x63kend\x12\x04\xc0\xc1\x31\x01\"G\n\x15UpdateBackendMetadata\x12\x18\n\x10\x62\x61\x63kend_group_id\x18\x01 \x01(\t\x12\x14\n\x0c\x62\x61\x63kend_name\x18\x02 \x01(\t\"R\n\x14RemoveBackendRequest\x12\x1e\n\x10\x62\x61\x63kend_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1a\n\x0c\x62\x61\x63kend_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"G\n\x15RemoveBackendMetadata\x12\x18\n\x10\x62\x61\x63kend_group_id\x18\x01 \x01(\t\x12\x14\n\x0c\x62\x61\x63kend_name\x18\x02 \x01(\t\"\x89\x01\n!ListBackendGroupOperationsRequest\x12&\n\x10\x62\x61\x63kend_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"t\n\"ListBackendGroupOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xf1\x0e\n\x13\x42\x61\x63kendGroupService\x12\xab\x01\n\x03Get\x12\x37.yandex.cloud.apploadbalancer.v1.GetBackendGroupRequest\x1a-.yandex.cloud.apploadbalancer.v1.BackendGroup\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/apploadbalancer/v1/backendGroups/{backend_group_id}\x12\xa8\x01\n\x04List\x12\x39.yandex.cloud.apploadbalancer.v1.ListBackendGroupsRequest\x1a:.yandex.cloud.apploadbalancer.v1.ListBackendGroupsResponse\")\x82\xd3\xe4\x93\x02#\x12!/apploadbalancer/v1/backendGroups\x12\xc3\x01\n\x06\x43reate\x12:.yandex.cloud.apploadbalancer.v1.CreateBackendGroupRequest\x1a!.yandex.cloud.operation.Operation\"Z\x82\xd3\xe4\x93\x02&\"!/apploadbalancer/v1/backendGroups:\x01*\xb2\xd2**\n\x1a\x43reateBackendGroupMetadata\x12\x0c\x42\x61\x63kendGroup\x12\xd6\x01\n\x06Update\x12:.yandex.cloud.apploadbalancer.v1.UpdateBackendGroupRequest\x1a!.yandex.cloud.operation.Operation\"m\x82\xd3\xe4\x93\x02\x39\x32\x34/apploadbalancer/v1/backendGroups/{backend_group_id}:\x01*\xb2\xd2**\n\x1aUpdateBackendGroupMetadata\x12\x0c\x42\x61\x63kendGroup\x12\xdc\x01\n\x06\x44\x65lete\x12:.yandex.cloud.apploadbalancer.v1.DeleteBackendGroupRequest\x1a!.yandex.cloud.operation.Operation\"s\x82\xd3\xe4\x93\x02\x36*4/apploadbalancer/v1/backendGroups/{backend_group_id}\xb2\xd2*3\n\x1a\x44\x65leteBackendGroupMetadata\x12\x15google.protobuf.Empty\x12\xd5\x01\n\nAddBackend\x12\x32.yandex.cloud.apploadbalancer.v1.AddBackendRequest\x1a!.yandex.cloud.operation.Operation\"p\x82\xd3\xe4\x93\x02\x44\"?/apploadbalancer/v1/backendGroups/{backend_group_id}:addBackend:\x01*\xb2\xd2*\"\n\x12\x41\x64\x64\x42\x61\x63kendMetadata\x12\x0c\x42\x61\x63kendGroup\x12\xe1\x01\n\rRemoveBackend\x12\x35.yandex.cloud.apploadbalancer.v1.RemoveBackendRequest\x1a!.yandex.cloud.operation.Operation\"v\x82\xd3\xe4\x93\x02G\"B/apploadbalancer/v1/backendGroups/{backend_group_id}:removeBackend:\x01*\xb2\xd2*%\n\x15RemoveBackendMetadata\x12\x0c\x42\x61\x63kendGroup\x12\xe1\x01\n\rUpdateBackend\x12\x35.yandex.cloud.apploadbalancer.v1.UpdateBackendRequest\x1a!.yandex.cloud.operation.Operation\"v\x82\xd3\xe4\x93\x02G\"B/apploadbalancer/v1/backendGroups/{backend_group_id}:updateBackend:\x01*\xb2\xd2*%\n\x15UpdateBackendMetadata\x12\x0c\x42\x61\x63kendGroup\x12\xe2\x01\n\x0eListOperations\x12\x42.yandex.cloud.apploadbalancer.v1.ListBackendGroupOperationsRequest\x1a\x43.yandex.cloud.apploadbalancer.v1.ListBackendGroupOperationsResponse\"G\x82\xd3\xe4\x93\x02\x41\x12?/apploadbalancer/v1/backendGroups/{backend_group_id}/operationsBz\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancerb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_backend__group__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -254,8 +254,8 @@ _UPDATEBACKENDGROUPREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1255,
-  serialized_end=1300,
+  serialized_start=1326,
+  serialized_end=1371,
 )
 
 _UPDATEBACKENDGROUPREQUEST = _descriptor.Descriptor(
@@ -315,6 +315,13 @@ _UPDATEBACKENDGROUPREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='stream', full_name='yandex.cloud.apploadbalancer.v1.UpdateBackendGroupRequest.stream', index=7,
+      number=8, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -333,7 +340,7 @@ _UPDATEBACKENDGROUPREQUEST = _descriptor.Descriptor(
     fields=[], serialized_options=b'\300\3011\001'),
   ],
   serialized_start=763,
-  serialized_end=1317,
+  serialized_end=1388,
 )
 
 
@@ -364,8 +371,8 @@ _UPDATEBACKENDGROUPMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1319,
-  serialized_end=1373,
+  serialized_start=1390,
+  serialized_end=1444,
 )
 
 
@@ -403,8 +410,8 @@ _CREATEBACKENDGROUPREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1255,
-  serialized_end=1300,
+  serialized_start=1326,
+  serialized_end=1371,
 )
 
 _CREATEBACKENDGROUPREQUEST = _descriptor.Descriptor(
@@ -457,6 +464,13 @@ _CREATEBACKENDGROUPREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='stream', full_name='yandex.cloud.apploadbalancer.v1.CreateBackendGroupRequest.stream', index=6,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -474,8 +488,8 @@ _CREATEBACKENDGROUPREQUEST = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1376,
-  serialized_end=1868,
+  serialized_start=1447,
+  serialized_end=2010,
 )
 
 
@@ -506,8 +520,8 @@ _CREATEBACKENDGROUPMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1870,
-  serialized_end=1924,
+  serialized_start=2012,
+  serialized_end=2066,
 )
 
 
@@ -564,8 +578,8 @@ _ADDBACKENDREQUEST = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[], serialized_options=b'\300\3011\001'),
   ],
-  serialized_start=1927,
-  serialized_end=2185,
+  serialized_start=2069,
+  serialized_end=2327,
 )
 
 
@@ -603,8 +617,8 @@ _ADDBACKENDMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2187,
-  serialized_end=2255,
+  serialized_start=2329,
+  serialized_end=2397,
 )
 
 
@@ -668,8 +682,8 @@ _UPDATEBACKENDREQUEST = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[], serialized_options=b'\300\3011\001'),
   ],
-  serialized_start=2258,
-  serialized_end=2568,
+  serialized_start=2400,
+  serialized_end=2710,
 )
 
 
@@ -707,8 +721,8 @@ _UPDATEBACKENDMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2570,
-  serialized_end=2641,
+  serialized_start=2712,
+  serialized_end=2783,
 )
 
 
@@ -746,8 +760,8 @@ _REMOVEBACKENDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2643,
-  serialized_end=2725,
+  serialized_start=2785,
+  serialized_end=2867,
 )
 
 
@@ -785,8 +799,8 @@ _REMOVEBACKENDMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2727,
-  serialized_end=2798,
+  serialized_start=2869,
+  serialized_end=2940,
 )
 
 
@@ -831,8 +845,8 @@ _LISTBACKENDGROUPOPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2801,
-  serialized_end=2938,
+  serialized_start=2943,
+  serialized_end=3080,
 )
 
 
@@ -870,8 +884,8 @@ _LISTBACKENDGROUPOPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2940,
-  serialized_end=3056,
+  serialized_start=3082,
+  serialized_end=3198,
 )
 
 _LISTBACKENDGROUPSRESPONSE.fields_by_name['backend_groups'].message_type = yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_backend__group__pb2._BACKENDGROUP
@@ -880,22 +894,30 @@ _UPDATEBACKENDGROUPREQUEST.fields_by_name['update_mask'].message_type = google_d
 _UPDATEBACKENDGROUPREQUEST.fields_by_name['labels'].message_type = _UPDATEBACKENDGROUPREQUEST_LABELSENTRY
 _UPDATEBACKENDGROUPREQUEST.fields_by_name['http'].message_type = yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_backend__group__pb2._HTTPBACKENDGROUP
 _UPDATEBACKENDGROUPREQUEST.fields_by_name['grpc'].message_type = yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_backend__group__pb2._GRPCBACKENDGROUP
+_UPDATEBACKENDGROUPREQUEST.fields_by_name['stream'].message_type = yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_backend__group__pb2._STREAMBACKENDGROUP
 _UPDATEBACKENDGROUPREQUEST.oneofs_by_name['backend'].fields.append(
   _UPDATEBACKENDGROUPREQUEST.fields_by_name['http'])
 _UPDATEBACKENDGROUPREQUEST.fields_by_name['http'].containing_oneof = _UPDATEBACKENDGROUPREQUEST.oneofs_by_name['backend']
 _UPDATEBACKENDGROUPREQUEST.oneofs_by_name['backend'].fields.append(
   _UPDATEBACKENDGROUPREQUEST.fields_by_name['grpc'])
 _UPDATEBACKENDGROUPREQUEST.fields_by_name['grpc'].containing_oneof = _UPDATEBACKENDGROUPREQUEST.oneofs_by_name['backend']
+_UPDATEBACKENDGROUPREQUEST.oneofs_by_name['backend'].fields.append(
+  _UPDATEBACKENDGROUPREQUEST.fields_by_name['stream'])
+_UPDATEBACKENDGROUPREQUEST.fields_by_name['stream'].containing_oneof = _UPDATEBACKENDGROUPREQUEST.oneofs_by_name['backend']
 _CREATEBACKENDGROUPREQUEST_LABELSENTRY.containing_type = _CREATEBACKENDGROUPREQUEST
 _CREATEBACKENDGROUPREQUEST.fields_by_name['labels'].message_type = _CREATEBACKENDGROUPREQUEST_LABELSENTRY
 _CREATEBACKENDGROUPREQUEST.fields_by_name['http'].message_type = yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_backend__group__pb2._HTTPBACKENDGROUP
 _CREATEBACKENDGROUPREQUEST.fields_by_name['grpc'].message_type = yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_backend__group__pb2._GRPCBACKENDGROUP
+_CREATEBACKENDGROUPREQUEST.fields_by_name['stream'].message_type = yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_backend__group__pb2._STREAMBACKENDGROUP
 _CREATEBACKENDGROUPREQUEST.oneofs_by_name['backend'].fields.append(
   _CREATEBACKENDGROUPREQUEST.fields_by_name['http'])
 _CREATEBACKENDGROUPREQUEST.fields_by_name['http'].containing_oneof = _CREATEBACKENDGROUPREQUEST.oneofs_by_name['backend']
 _CREATEBACKENDGROUPREQUEST.oneofs_by_name['backend'].fields.append(
   _CREATEBACKENDGROUPREQUEST.fields_by_name['grpc'])
 _CREATEBACKENDGROUPREQUEST.fields_by_name['grpc'].containing_oneof = _CREATEBACKENDGROUPREQUEST.oneofs_by_name['backend']
+_CREATEBACKENDGROUPREQUEST.oneofs_by_name['backend'].fields.append(
+  _CREATEBACKENDGROUPREQUEST.fields_by_name['stream'])
+_CREATEBACKENDGROUPREQUEST.fields_by_name['stream'].containing_oneof = _CREATEBACKENDGROUPREQUEST.oneofs_by_name['backend']
 _ADDBACKENDREQUEST.fields_by_name['http'].message_type = yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_backend__group__pb2._HTTPBACKEND
 _ADDBACKENDREQUEST.fields_by_name['grpc'].message_type = yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_backend__group__pb2._GRPCBACKEND
 _ADDBACKENDREQUEST.fields_by_name['stream'].message_type = yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_backend__group__pb2._STREAMBACKEND
@@ -1112,8 +1134,8 @@ _BACKENDGROUPSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=3059,
-  serialized_end=4964,
+  serialized_start=3201,
+  serialized_end=5106,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
