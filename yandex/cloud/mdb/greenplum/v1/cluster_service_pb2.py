@@ -13,6 +13,7 @@ _sym_db = _symbol_database.Default()
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
@@ -28,11 +29,41 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n!yandex.cloud.api.mdb.greenplum.v1B\004GPCSZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/greenplum/v1;greenplum',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n3yandex/cloud/mdb/greenplum/v1/cluster_service.proto\x12\x1dyandex.cloud.mdb.greenplum.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a+yandex/cloud/mdb/greenplum/v1/cluster.proto\x1a/yandex/cloud/mdb/greenplum/v1/maintenance.proto\x1a*yandex/cloud/mdb/greenplum/v1/config.proto\x1a(yandex/cloud/mdb/greenplum/v1/host.proto\"5\n\x11GetClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x90\x01\n\x13ListClustersRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"i\n\x14ListClustersResponse\x12\x38\n\x08\x63lusters\x18\x01 \x03(\x0b\x32&.yandex.cloud.mdb.greenplum.v1.Cluster\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xc6\x07\n\x14\x43reateClusterRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12,\n\x04name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x90\x01\n\x06labels\x18\x04 \x03(\x0b\x32?.yandex.cloud.mdb.greenplum.v1.CreateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12M\n\x0b\x65nvironment\x18\x05 \x01(\x0e\x32\x32.yandex.cloud.mdb.greenplum.v1.Cluster.EnvironmentB\x04\xe8\xc7\x31\x01\x12>\n\x06\x63onfig\x18\x06 \x01(\x0b\x32..yandex.cloud.mdb.greenplum.v1.GreenplumConfig\x12P\n\rmaster_config\x18\x07 \x01(\x0b\x32\x39.yandex.cloud.mdb.greenplum.v1.MasterSubclusterConfigSpec\x12R\n\x0esegment_config\x18\x08 \x01(\x0b\x32:.yandex.cloud.mdb.greenplum.v1.SegmentSubclusterConfigSpec\x12\x19\n\x11master_host_count\x18\t \x01(\x03\x12\x17\n\x0fsegment_in_host\x18\n \x01(\x03\x12\x1a\n\x12segment_host_count\x18\x0b \x01(\x03\x12\x11\n\tuser_name\x18\x0c \x01(\t\x12$\n\ruser_password\x18\r \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x38-128\x12 \n\nnetwork_id\x18\x0e \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1a\n\x12security_group_ids\x18\x0f \x03(\t\x12\x1b\n\x13\x64\x65letion_protection\x18\x10 \x01(\x08\x12\x16\n\x0ehost_group_ids\x18\x11 \x03(\t\x12L\n\x12maintenance_window\x18\x13 \x01(\x0b\x32\x30.yandex.cloud.mdb.greenplum.v1.MaintenanceWindow\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15\x43reateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\xe2\x05\n\x14UpdateClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x90\x01\n\x06labels\x18\x04 \x03(\x0b\x32?.yandex.cloud.mdb.greenplum.v1.UpdateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12(\n\x04name\x18\x05 \x01(\tB\x1a\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12>\n\x06\x63onfig\x18\x06 \x01(\x0b\x32..yandex.cloud.mdb.greenplum.v1.GreenplumConfig\x12P\n\rmaster_config\x18\x07 \x01(\x0b\x32\x39.yandex.cloud.mdb.greenplum.v1.MasterSubclusterConfigSpec\x12R\n\x0esegment_config\x18\x08 \x01(\x0b\x32:.yandex.cloud.mdb.greenplum.v1.SegmentSubclusterConfigSpec\x12L\n\x12maintenance_window\x18\x0f \x01(\x0b\x32\x30.yandex.cloud.mdb.greenplum.v1.MaintenanceWindow\x12\x1a\n\x12security_group_ids\x18\x11 \x03(\t\x12\x1b\n\x13\x64\x65letion_protection\x18\x12 \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15UpdateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"8\n\x14\x44\x65leteClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x44\x65leteClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"7\n\x13StartClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"*\n\x14StartClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"6\n\x12StopClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\")\n\x13StopClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"~\n\x1cListClusterOperationsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"o\n\x1dListClusterOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"y\n\x17ListClusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"g\n\x18ListClusterHostsResponse\x12\x32\n\x05hosts\x18\x01 \x03(\x0b\x32#.yandex.cloud.mdb.greenplum.v1.Host\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x9f\x01\n\x1aMasterSubclusterConfigSpec\x12;\n\tresources\x18\x01 \x01(\x0b\x32(.yandex.cloud.mdb.greenplum.v1.Resources\x12\x44\n\x06\x63onfig\x18\x02 \x01(\x0b\x32\x34.yandex.cloud.mdb.greenplum.v1.GreenplumMasterConfig\"\xa1\x01\n\x1bSegmentSubclusterConfigSpec\x12;\n\tresources\x18\x01 \x01(\x0b\x32(.yandex.cloud.mdb.greenplum.v1.Resources\x12\x45\n\x06\x63onfig\x18\x02 \x01(\x0b\x32\x35.yandex.cloud.mdb.greenplum.v1.GreenplumSegmentConfig2\xfc\x0e\n\x0e\x43lusterService\x12\x98\x01\n\x03Get\x12\x30.yandex.cloud.mdb.greenplum.v1.GetClusterRequest\x1a&.yandex.cloud.mdb.greenplum.v1.Cluster\"7\x82\xd3\xe4\x93\x02\x31\x12//mdb/managed-greenplum/v1/clusters/{cluster_id}\x12\x9b\x01\n\x04List\x12\x32.yandex.cloud.mdb.greenplum.v1.ListClustersRequest\x1a\x33.yandex.cloud.mdb.greenplum.v1.ListClustersResponse\"*\x82\xd3\xe4\x93\x02$\x12\"/mdb/managed-greenplum/v1/clusters\x12\xb3\x01\n\x06\x43reate\x12\x33.yandex.cloud.mdb.greenplum.v1.CreateClusterRequest\x1a!.yandex.cloud.operation.Operation\"Q\x82\xd3\xe4\x93\x02\'\"\"/mdb/managed-greenplum/v1/clusters:\x01*\xb2\xd2* \n\x15\x43reateClusterMetadata\x12\x07\x43luster\x12\xc0\x01\n\x06Update\x12\x33.yandex.cloud.mdb.greenplum.v1.UpdateClusterRequest\x1a!.yandex.cloud.operation.Operation\"^\x82\xd3\xe4\x93\x02\x34\x32//mdb/managed-greenplum/v1/clusters/{cluster_id}:\x01*\xb2\xd2* \n\x15UpdateClusterMetadata\x12\x07\x43luster\x12\xcb\x01\n\x06\x44\x65lete\x12\x33.yandex.cloud.mdb.greenplum.v1.DeleteClusterRequest\x1a!.yandex.cloud.operation.Operation\"i\x82\xd3\xe4\x93\x02\x31*//mdb/managed-greenplum/v1/clusters/{cluster_id}\xb2\xd2*.\n\x15\x44\x65leteClusterMetadata\x12\x15google.protobuf.Empty\x12\xc0\x01\n\x05Start\x12\x32.yandex.cloud.mdb.greenplum.v1.StartClusterRequest\x1a!.yandex.cloud.operation.Operation\"`\x82\xd3\xe4\x93\x02\x37\"5/mdb/managed-greenplum/v1/clusters/{cluster_id}:start\xb2\xd2*\x1f\n\x14StartClusterMetadata\x12\x07\x43luster\x12\xbc\x01\n\x04Stop\x12\x31.yandex.cloud.mdb.greenplum.v1.StopClusterRequest\x1a!.yandex.cloud.operation.Operation\"^\x82\xd3\xe4\x93\x02\x36\"4/mdb/managed-greenplum/v1/clusters/{cluster_id}:stop\xb2\xd2*\x1e\n\x13StopClusterMetadata\x12\x07\x43luster\x12\xcf\x01\n\x0eListOperations\x12;.yandex.cloud.mdb.greenplum.v1.ListClusterOperationsRequest\x1a<.yandex.cloud.mdb.greenplum.v1.ListClusterOperationsResponse\"B\x82\xd3\xe4\x93\x02<\x12:/mdb/managed-greenplum/v1/clusters/{cluster_id}/operations\x12\xc8\x01\n\x0fListMasterHosts\x12\x36.yandex.cloud.mdb.greenplum.v1.ListClusterHostsRequest\x1a\x37.yandex.cloud.mdb.greenplum.v1.ListClusterHostsResponse\"D\x82\xd3\xe4\x93\x02>\x12</mdb/managed-greenplum/v1/clusters/{cluster_id}/master-hosts\x12\xca\x01\n\x10ListSegmentHosts\x12\x36.yandex.cloud.mdb.greenplum.v1.ListClusterHostsRequest\x1a\x37.yandex.cloud.mdb.greenplum.v1.ListClusterHostsResponse\"E\x82\xd3\xe4\x93\x02?\x12=/mdb/managed-greenplum/v1/clusters/{cluster_id}/segment-hostsBv\n!yandex.cloud.api.mdb.greenplum.v1B\x04GPCSZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/greenplum/v1;greenplumb\x06proto3'
+  serialized_pb=b'\n3yandex/cloud/mdb/greenplum/v1/cluster_service.proto\x12\x1dyandex.cloud.mdb.greenplum.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a+yandex/cloud/mdb/greenplum/v1/cluster.proto\x1a/yandex/cloud/mdb/greenplum/v1/maintenance.proto\x1a*yandex/cloud/mdb/greenplum/v1/config.proto\x1a(yandex/cloud/mdb/greenplum/v1/host.proto\"5\n\x11GetClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x90\x01\n\x13ListClustersRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"i\n\x14ListClustersResponse\x12\x38\n\x08\x63lusters\x18\x01 \x03(\x0b\x32&.yandex.cloud.mdb.greenplum.v1.Cluster\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xc6\x07\n\x14\x43reateClusterRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12,\n\x04name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x90\x01\n\x06labels\x18\x04 \x03(\x0b\x32?.yandex.cloud.mdb.greenplum.v1.CreateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12M\n\x0b\x65nvironment\x18\x05 \x01(\x0e\x32\x32.yandex.cloud.mdb.greenplum.v1.Cluster.EnvironmentB\x04\xe8\xc7\x31\x01\x12>\n\x06\x63onfig\x18\x06 \x01(\x0b\x32..yandex.cloud.mdb.greenplum.v1.GreenplumConfig\x12P\n\rmaster_config\x18\x07 \x01(\x0b\x32\x39.yandex.cloud.mdb.greenplum.v1.MasterSubclusterConfigSpec\x12R\n\x0esegment_config\x18\x08 \x01(\x0b\x32:.yandex.cloud.mdb.greenplum.v1.SegmentSubclusterConfigSpec\x12\x19\n\x11master_host_count\x18\t \x01(\x03\x12\x17\n\x0fsegment_in_host\x18\n \x01(\x03\x12\x1a\n\x12segment_host_count\x18\x0b \x01(\x03\x12\x11\n\tuser_name\x18\x0c \x01(\t\x12$\n\ruser_password\x18\r \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x38-128\x12 \n\nnetwork_id\x18\x0e \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1a\n\x12security_group_ids\x18\x0f \x03(\t\x12\x1b\n\x13\x64\x65letion_protection\x18\x10 \x01(\x08\x12\x16\n\x0ehost_group_ids\x18\x11 \x03(\t\x12L\n\x12maintenance_window\x18\x13 \x01(\x0b\x32\x30.yandex.cloud.mdb.greenplum.v1.MaintenanceWindow\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15\x43reateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\xe2\x05\n\x14UpdateClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x90\x01\n\x06labels\x18\x04 \x03(\x0b\x32?.yandex.cloud.mdb.greenplum.v1.UpdateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12(\n\x04name\x18\x05 \x01(\tB\x1a\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12>\n\x06\x63onfig\x18\x06 \x01(\x0b\x32..yandex.cloud.mdb.greenplum.v1.GreenplumConfig\x12P\n\rmaster_config\x18\x07 \x01(\x0b\x32\x39.yandex.cloud.mdb.greenplum.v1.MasterSubclusterConfigSpec\x12R\n\x0esegment_config\x18\x08 \x01(\x0b\x32:.yandex.cloud.mdb.greenplum.v1.SegmentSubclusterConfigSpec\x12L\n\x12maintenance_window\x18\x0f \x01(\x0b\x32\x30.yandex.cloud.mdb.greenplum.v1.MaintenanceWindow\x12\x1a\n\x12security_group_ids\x18\x11 \x03(\t\x12\x1b\n\x13\x64\x65letion_protection\x18\x12 \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15UpdateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"8\n\x14\x44\x65leteClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x44\x65leteClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"7\n\x13StartClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"*\n\x14StartClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"6\n\x12StopClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\")\n\x13StopClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"~\n\x1cListClusterOperationsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"o\n\x1dListClusterOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"y\n\x17ListClusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"g\n\x18ListClusterHostsResponse\x12\x32\n\x05hosts\x18\x01 \x03(\x0b\x32#.yandex.cloud.mdb.greenplum.v1.Host\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x9f\x01\n\x1aMasterSubclusterConfigSpec\x12;\n\tresources\x18\x01 \x01(\x0b\x32(.yandex.cloud.mdb.greenplum.v1.Resources\x12\x44\n\x06\x63onfig\x18\x02 \x01(\x0b\x32\x34.yandex.cloud.mdb.greenplum.v1.GreenplumMasterConfig\"\xa1\x01\n\x1bSegmentSubclusterConfigSpec\x12;\n\tresources\x18\x01 \x01(\x0b\x32(.yandex.cloud.mdb.greenplum.v1.Resources\x12\x45\n\x06\x63onfig\x18\x02 \x01(\x0b\x32\x35.yandex.cloud.mdb.greenplum.v1.GreenplumSegmentConfig\"j\n\x17ListClusterLogsResponse\x12\x36\n\x04logs\x18\x01 \x03(\x0b\x32(.yandex.cloud.mdb.greenplum.v1.LogRecord\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xb2\x01\n\tLogRecord\x12-\n\ttimestamp\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x46\n\x07message\x18\x02 \x03(\x0b\x32\x35.yandex.cloud.mdb.greenplum.v1.LogRecord.MessageEntry\x1a.\n\x0cMessageEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xd2\x03\n\x16ListClusterLogsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x15\n\rcolumn_filter\x18\x02 \x03(\t\x12W\n\x0cservice_type\x18\x03 \x01(\x0e\x32\x41.yandex.cloud.mdb.greenplum.v1.ListClusterLogsRequest.ServiceType\x12-\n\tfrom_time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07to_time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1d\n\tpage_size\x18\x06 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x07 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1e\n\x16\x61lways_next_page_token\x18\x08 \x01(\x08\x12\x1a\n\x06\x66ilter\x18\t \x01(\tB\n\x8a\xc8\x31\x06<=1000\"P\n\x0bServiceType\x12\x1c\n\x18SERVICE_TYPE_UNSPECIFIED\x10\x00\x12\r\n\tGREENPLUM\x10\x01\x12\x14\n\x10GREENPLUM_POOLER\x10\x02\x32\xb6\x10\n\x0e\x43lusterService\x12\x98\x01\n\x03Get\x12\x30.yandex.cloud.mdb.greenplum.v1.GetClusterRequest\x1a&.yandex.cloud.mdb.greenplum.v1.Cluster\"7\x82\xd3\xe4\x93\x02\x31\x12//mdb/managed-greenplum/v1/clusters/{cluster_id}\x12\x9b\x01\n\x04List\x12\x32.yandex.cloud.mdb.greenplum.v1.ListClustersRequest\x1a\x33.yandex.cloud.mdb.greenplum.v1.ListClustersResponse\"*\x82\xd3\xe4\x93\x02$\x12\"/mdb/managed-greenplum/v1/clusters\x12\xb3\x01\n\x06\x43reate\x12\x33.yandex.cloud.mdb.greenplum.v1.CreateClusterRequest\x1a!.yandex.cloud.operation.Operation\"Q\x82\xd3\xe4\x93\x02\'\"\"/mdb/managed-greenplum/v1/clusters:\x01*\xb2\xd2* \n\x15\x43reateClusterMetadata\x12\x07\x43luster\x12\xc0\x01\n\x06Update\x12\x33.yandex.cloud.mdb.greenplum.v1.UpdateClusterRequest\x1a!.yandex.cloud.operation.Operation\"^\x82\xd3\xe4\x93\x02\x34\x32//mdb/managed-greenplum/v1/clusters/{cluster_id}:\x01*\xb2\xd2* \n\x15UpdateClusterMetadata\x12\x07\x43luster\x12\xcb\x01\n\x06\x44\x65lete\x12\x33.yandex.cloud.mdb.greenplum.v1.DeleteClusterRequest\x1a!.yandex.cloud.operation.Operation\"i\x82\xd3\xe4\x93\x02\x31*//mdb/managed-greenplum/v1/clusters/{cluster_id}\xb2\xd2*.\n\x15\x44\x65leteClusterMetadata\x12\x15google.protobuf.Empty\x12\xc0\x01\n\x05Start\x12\x32.yandex.cloud.mdb.greenplum.v1.StartClusterRequest\x1a!.yandex.cloud.operation.Operation\"`\x82\xd3\xe4\x93\x02\x37\"5/mdb/managed-greenplum/v1/clusters/{cluster_id}:start\xb2\xd2*\x1f\n\x14StartClusterMetadata\x12\x07\x43luster\x12\xbc\x01\n\x04Stop\x12\x31.yandex.cloud.mdb.greenplum.v1.StopClusterRequest\x1a!.yandex.cloud.operation.Operation\"^\x82\xd3\xe4\x93\x02\x36\"4/mdb/managed-greenplum/v1/clusters/{cluster_id}:stop\xb2\xd2*\x1e\n\x13StopClusterMetadata\x12\x07\x43luster\x12\xcf\x01\n\x0eListOperations\x12;.yandex.cloud.mdb.greenplum.v1.ListClusterOperationsRequest\x1a<.yandex.cloud.mdb.greenplum.v1.ListClusterOperationsResponse\"B\x82\xd3\xe4\x93\x02<\x12:/mdb/managed-greenplum/v1/clusters/{cluster_id}/operations\x12\xc8\x01\n\x0fListMasterHosts\x12\x36.yandex.cloud.mdb.greenplum.v1.ListClusterHostsRequest\x1a\x37.yandex.cloud.mdb.greenplum.v1.ListClusterHostsResponse\"D\x82\xd3\xe4\x93\x02>\x12</mdb/managed-greenplum/v1/clusters/{cluster_id}/master-hosts\x12\xca\x01\n\x10ListSegmentHosts\x12\x36.yandex.cloud.mdb.greenplum.v1.ListClusterHostsRequest\x1a\x37.yandex.cloud.mdb.greenplum.v1.ListClusterHostsResponse\"E\x82\xd3\xe4\x93\x02?\x12=/mdb/managed-greenplum/v1/clusters/{cluster_id}/segment-hosts\x12\xb7\x01\n\x08ListLogs\x12\x35.yandex.cloud.mdb.greenplum.v1.ListClusterLogsRequest\x1a\x36.yandex.cloud.mdb.greenplum.v1.ListClusterLogsResponse\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/mdb/managed-greenplum/v1/clusters/{cluster_id}:logsBv\n!yandex.cloud.api.mdb.greenplum.v1B\x04GPCSZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/greenplum/v1;greenplumb\x06proto3'
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_cluster__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_maintenance__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_config__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_host__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_cluster__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_maintenance__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_config__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_host__pb2.DESCRIPTOR,])
 
 
+
+_LISTCLUSTERLOGSREQUEST_SERVICETYPE = _descriptor.EnumDescriptor(
+  name='ServiceType',
+  full_name='yandex.cloud.mdb.greenplum.v1.ListClusterLogsRequest.ServiceType',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='SERVICE_TYPE_UNSPECIFIED', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='GREENPLUM', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='GREENPLUM_POOLER', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=4351,
+  serialized_end=4431,
+)
+_sym_db.RegisterEnumDescriptor(_LISTCLUSTERLOGSREQUEST_SERVICETYPE)
 
 
 _GETCLUSTERREQUEST = _descriptor.Descriptor(
@@ -62,8 +93,8 @@ _GETCLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=435,
-  serialized_end=488,
+  serialized_start=468,
+  serialized_end=521,
 )
 
 
@@ -115,8 +146,8 @@ _LISTCLUSTERSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=491,
-  serialized_end=635,
+  serialized_start=524,
+  serialized_end=668,
 )
 
 
@@ -154,8 +185,8 @@ _LISTCLUSTERSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=637,
-  serialized_end=742,
+  serialized_start=670,
+  serialized_end=775,
 )
 
 
@@ -193,8 +224,8 @@ _CREATECLUSTERREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1666,
-  serialized_end=1711,
+  serialized_start=1699,
+  serialized_end=1744,
 )
 
 _CREATECLUSTERREQUEST = _descriptor.Descriptor(
@@ -343,8 +374,8 @@ _CREATECLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=745,
-  serialized_end=1711,
+  serialized_start=778,
+  serialized_end=1744,
 )
 
 
@@ -375,8 +406,8 @@ _CREATECLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1713,
-  serialized_end=1756,
+  serialized_start=1746,
+  serialized_end=1789,
 )
 
 
@@ -414,8 +445,8 @@ _UPDATECLUSTERREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1666,
-  serialized_end=1711,
+  serialized_start=1699,
+  serialized_end=1744,
 )
 
 _UPDATECLUSTERREQUEST = _descriptor.Descriptor(
@@ -515,8 +546,8 @@ _UPDATECLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1759,
-  serialized_end=2497,
+  serialized_start=1792,
+  serialized_end=2530,
 )
 
 
@@ -547,8 +578,8 @@ _UPDATECLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2499,
-  serialized_end=2542,
+  serialized_start=2532,
+  serialized_end=2575,
 )
 
 
@@ -579,8 +610,8 @@ _DELETECLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2544,
-  serialized_end=2600,
+  serialized_start=2577,
+  serialized_end=2633,
 )
 
 
@@ -611,8 +642,8 @@ _DELETECLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2602,
-  serialized_end=2645,
+  serialized_start=2635,
+  serialized_end=2678,
 )
 
 
@@ -643,8 +674,8 @@ _STARTCLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2647,
-  serialized_end=2702,
+  serialized_start=2680,
+  serialized_end=2735,
 )
 
 
@@ -675,8 +706,8 @@ _STARTCLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2704,
-  serialized_end=2746,
+  serialized_start=2737,
+  serialized_end=2779,
 )
 
 
@@ -707,8 +738,8 @@ _STOPCLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2748,
-  serialized_end=2802,
+  serialized_start=2781,
+  serialized_end=2835,
 )
 
 
@@ -739,8 +770,8 @@ _STOPCLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2804,
-  serialized_end=2845,
+  serialized_start=2837,
+  serialized_end=2878,
 )
 
 
@@ -785,8 +816,8 @@ _LISTCLUSTEROPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2847,
-  serialized_end=2973,
+  serialized_start=2880,
+  serialized_end=3006,
 )
 
 
@@ -824,8 +855,8 @@ _LISTCLUSTEROPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2975,
-  serialized_end=3086,
+  serialized_start=3008,
+  serialized_end=3119,
 )
 
 
@@ -870,8 +901,8 @@ _LISTCLUSTERHOSTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3088,
-  serialized_end=3209,
+  serialized_start=3121,
+  serialized_end=3242,
 )
 
 
@@ -909,8 +940,8 @@ _LISTCLUSTERHOSTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3211,
-  serialized_end=3314,
+  serialized_start=3244,
+  serialized_end=3347,
 )
 
 
@@ -948,8 +979,8 @@ _MASTERSUBCLUSTERCONFIGSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3317,
-  serialized_end=3476,
+  serialized_start=3350,
+  serialized_end=3509,
 )
 
 
@@ -987,8 +1018,213 @@ _SEGMENTSUBCLUSTERCONFIGSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3479,
-  serialized_end=3640,
+  serialized_start=3512,
+  serialized_end=3673,
+)
+
+
+_LISTCLUSTERLOGSRESPONSE = _descriptor.Descriptor(
+  name='ListClusterLogsResponse',
+  full_name='yandex.cloud.mdb.greenplum.v1.ListClusterLogsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='logs', full_name='yandex.cloud.mdb.greenplum.v1.ListClusterLogsResponse.logs', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='next_page_token', full_name='yandex.cloud.mdb.greenplum.v1.ListClusterLogsResponse.next_page_token', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3675,
+  serialized_end=3781,
+)
+
+
+_LOGRECORD_MESSAGEENTRY = _descriptor.Descriptor(
+  name='MessageEntry',
+  full_name='yandex.cloud.mdb.greenplum.v1.LogRecord.MessageEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='yandex.cloud.mdb.greenplum.v1.LogRecord.MessageEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='yandex.cloud.mdb.greenplum.v1.LogRecord.MessageEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3916,
+  serialized_end=3962,
+)
+
+_LOGRECORD = _descriptor.Descriptor(
+  name='LogRecord',
+  full_name='yandex.cloud.mdb.greenplum.v1.LogRecord',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='timestamp', full_name='yandex.cloud.mdb.greenplum.v1.LogRecord.timestamp', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='message', full_name='yandex.cloud.mdb.greenplum.v1.LogRecord.message', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_LOGRECORD_MESSAGEENTRY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3784,
+  serialized_end=3962,
+)
+
+
+_LISTCLUSTERLOGSREQUEST = _descriptor.Descriptor(
+  name='ListClusterLogsRequest',
+  full_name='yandex.cloud.mdb.greenplum.v1.ListClusterLogsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='yandex.cloud.mdb.greenplum.v1.ListClusterLogsRequest.cluster_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='column_filter', full_name='yandex.cloud.mdb.greenplum.v1.ListClusterLogsRequest.column_filter', index=1,
+      number=2, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='service_type', full_name='yandex.cloud.mdb.greenplum.v1.ListClusterLogsRequest.service_type', index=2,
+      number=3, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='from_time', full_name='yandex.cloud.mdb.greenplum.v1.ListClusterLogsRequest.from_time', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='to_time', full_name='yandex.cloud.mdb.greenplum.v1.ListClusterLogsRequest.to_time', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='page_size', full_name='yandex.cloud.mdb.greenplum.v1.ListClusterLogsRequest.page_size', index=5,
+      number=6, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='page_token', full_name='yandex.cloud.mdb.greenplum.v1.ListClusterLogsRequest.page_token', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='always_next_page_token', full_name='yandex.cloud.mdb.greenplum.v1.ListClusterLogsRequest.always_next_page_token', index=7,
+      number=8, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='filter', full_name='yandex.cloud.mdb.greenplum.v1.ListClusterLogsRequest.filter', index=8,
+      number=9, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\212\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+    _LISTCLUSTERLOGSREQUEST_SERVICETYPE,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3965,
+  serialized_end=4431,
 )
 
 _LISTCLUSTERSRESPONSE.fields_by_name['clusters'].message_type = yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_cluster__pb2._CLUSTER
@@ -1012,6 +1248,14 @@ _MASTERSUBCLUSTERCONFIGSPEC.fields_by_name['resources'].message_type = yandex_do
 _MASTERSUBCLUSTERCONFIGSPEC.fields_by_name['config'].message_type = yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_config__pb2._GREENPLUMMASTERCONFIG
 _SEGMENTSUBCLUSTERCONFIGSPEC.fields_by_name['resources'].message_type = yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_config__pb2._RESOURCES
 _SEGMENTSUBCLUSTERCONFIGSPEC.fields_by_name['config'].message_type = yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_config__pb2._GREENPLUMSEGMENTCONFIG
+_LISTCLUSTERLOGSRESPONSE.fields_by_name['logs'].message_type = _LOGRECORD
+_LOGRECORD_MESSAGEENTRY.containing_type = _LOGRECORD
+_LOGRECORD.fields_by_name['timestamp'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_LOGRECORD.fields_by_name['message'].message_type = _LOGRECORD_MESSAGEENTRY
+_LISTCLUSTERLOGSREQUEST.fields_by_name['service_type'].enum_type = _LISTCLUSTERLOGSREQUEST_SERVICETYPE
+_LISTCLUSTERLOGSREQUEST.fields_by_name['from_time'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_LISTCLUSTERLOGSREQUEST.fields_by_name['to_time'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_LISTCLUSTERLOGSREQUEST_SERVICETYPE.containing_type = _LISTCLUSTERLOGSREQUEST
 DESCRIPTOR.message_types_by_name['GetClusterRequest'] = _GETCLUSTERREQUEST
 DESCRIPTOR.message_types_by_name['ListClustersRequest'] = _LISTCLUSTERSREQUEST
 DESCRIPTOR.message_types_by_name['ListClustersResponse'] = _LISTCLUSTERSRESPONSE
@@ -1031,6 +1275,9 @@ DESCRIPTOR.message_types_by_name['ListClusterHostsRequest'] = _LISTCLUSTERHOSTSR
 DESCRIPTOR.message_types_by_name['ListClusterHostsResponse'] = _LISTCLUSTERHOSTSRESPONSE
 DESCRIPTOR.message_types_by_name['MasterSubclusterConfigSpec'] = _MASTERSUBCLUSTERCONFIGSPEC
 DESCRIPTOR.message_types_by_name['SegmentSubclusterConfigSpec'] = _SEGMENTSUBCLUSTERCONFIGSPEC
+DESCRIPTOR.message_types_by_name['ListClusterLogsResponse'] = _LISTCLUSTERLOGSRESPONSE
+DESCRIPTOR.message_types_by_name['LogRecord'] = _LOGRECORD
+DESCRIPTOR.message_types_by_name['ListClusterLogsRequest'] = _LISTCLUSTERLOGSREQUEST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 GetClusterRequest = _reflection.GeneratedProtocolMessageType('GetClusterRequest', (_message.Message,), {
@@ -1182,6 +1429,35 @@ SegmentSubclusterConfigSpec = _reflection.GeneratedProtocolMessageType('SegmentS
   })
 _sym_db.RegisterMessage(SegmentSubclusterConfigSpec)
 
+ListClusterLogsResponse = _reflection.GeneratedProtocolMessageType('ListClusterLogsResponse', (_message.Message,), {
+  'DESCRIPTOR' : _LISTCLUSTERLOGSRESPONSE,
+  '__module__' : 'yandex.cloud.mdb.greenplum.v1.cluster_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.greenplum.v1.ListClusterLogsResponse)
+  })
+_sym_db.RegisterMessage(ListClusterLogsResponse)
+
+LogRecord = _reflection.GeneratedProtocolMessageType('LogRecord', (_message.Message,), {
+
+  'MessageEntry' : _reflection.GeneratedProtocolMessageType('MessageEntry', (_message.Message,), {
+    'DESCRIPTOR' : _LOGRECORD_MESSAGEENTRY,
+    '__module__' : 'yandex.cloud.mdb.greenplum.v1.cluster_service_pb2'
+    # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.greenplum.v1.LogRecord.MessageEntry)
+    })
+  ,
+  'DESCRIPTOR' : _LOGRECORD,
+  '__module__' : 'yandex.cloud.mdb.greenplum.v1.cluster_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.greenplum.v1.LogRecord)
+  })
+_sym_db.RegisterMessage(LogRecord)
+_sym_db.RegisterMessage(LogRecord.MessageEntry)
+
+ListClusterLogsRequest = _reflection.GeneratedProtocolMessageType('ListClusterLogsRequest', (_message.Message,), {
+  'DESCRIPTOR' : _LISTCLUSTERLOGSREQUEST,
+  '__module__' : 'yandex.cloud.mdb.greenplum.v1.cluster_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.greenplum.v1.ListClusterLogsRequest)
+  })
+_sym_db.RegisterMessage(ListClusterLogsRequest)
+
 
 DESCRIPTOR._options = None
 _GETCLUSTERREQUEST.fields_by_name['cluster_id']._options = None
@@ -1211,6 +1487,11 @@ _LISTCLUSTEROPERATIONSREQUEST.fields_by_name['page_token']._options = None
 _LISTCLUSTERHOSTSREQUEST.fields_by_name['cluster_id']._options = None
 _LISTCLUSTERHOSTSREQUEST.fields_by_name['page_size']._options = None
 _LISTCLUSTERHOSTSREQUEST.fields_by_name['page_token']._options = None
+_LOGRECORD_MESSAGEENTRY._options = None
+_LISTCLUSTERLOGSREQUEST.fields_by_name['cluster_id']._options = None
+_LISTCLUSTERLOGSREQUEST.fields_by_name['page_size']._options = None
+_LISTCLUSTERLOGSREQUEST.fields_by_name['page_token']._options = None
+_LISTCLUSTERLOGSREQUEST.fields_by_name['filter']._options = None
 
 _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
   name='ClusterService',
@@ -1219,8 +1500,8 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=3643,
-  serialized_end=5559,
+  serialized_start=4434,
+  serialized_end=6536,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
@@ -1320,6 +1601,16 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     input_type=_LISTCLUSTERHOSTSREQUEST,
     output_type=_LISTCLUSTERHOSTSRESPONSE,
     serialized_options=b'\202\323\344\223\002?\022=/mdb/managed-greenplum/v1/clusters/{cluster_id}/segment-hosts',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ListLogs',
+    full_name='yandex.cloud.mdb.greenplum.v1.ClusterService.ListLogs',
+    index=10,
+    containing_service=None,
+    input_type=_LISTCLUSTERLOGSREQUEST,
+    output_type=_LISTCLUSTERLOGSRESPONSE,
+    serialized_options=b'\202\323\344\223\0026\0224/mdb/managed-greenplum/v1/clusters/{cluster_id}:logs',
     create_key=_descriptor._internal_create_key,
   ),
 ])

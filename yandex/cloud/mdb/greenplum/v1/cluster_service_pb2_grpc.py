@@ -67,6 +67,11 @@ class ClusterServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_cluster__service__pb2.ListClusterHostsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_cluster__service__pb2.ListClusterHostsResponse.FromString,
                 )
+        self.ListLogs = channel.unary_unary(
+                '/yandex.cloud.mdb.greenplum.v1.ClusterService/ListLogs',
+                request_serializer=yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_cluster__service__pb2.ListClusterLogsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_cluster__service__pb2.ListClusterLogsResponse.FromString,
+                )
 
 
 class ClusterServiceServicer(object):
@@ -146,6 +151,13 @@ class ClusterServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListLogs(self, request, context):
+        """Retrieves logs for the specified Greenplum cluster.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ClusterServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -198,6 +210,11 @@ def add_ClusterServiceServicer_to_server(servicer, server):
                     servicer.ListSegmentHosts,
                     request_deserializer=yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_cluster__service__pb2.ListClusterHostsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_cluster__service__pb2.ListClusterHostsResponse.SerializeToString,
+            ),
+            'ListLogs': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListLogs,
+                    request_deserializer=yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_cluster__service__pb2.ListClusterLogsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_cluster__service__pb2.ListClusterLogsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -377,5 +394,22 @@ class ClusterService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.mdb.greenplum.v1.ClusterService/ListSegmentHosts',
             yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_cluster__service__pb2.ListClusterHostsRequest.SerializeToString,
             yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_cluster__service__pb2.ListClusterHostsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListLogs(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.mdb.greenplum.v1.ClusterService/ListLogs',
+            yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_cluster__service__pb2.ListClusterLogsRequest.SerializeToString,
+            yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_cluster__service__pb2.ListClusterLogsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
