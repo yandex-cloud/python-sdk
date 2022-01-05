@@ -91,6 +91,7 @@ _supported_modules = [
     ('yandex.cloud.ai.translate', 'ai-translate'),
     ('yandex.cloud.ai.vision', 'ai-vision'),
     ('yandex.cloud.billing', 'billing'),
+    ('yandex.cloud.cdn', 'cdn'),
     ('yandex.cloud.compute', 'compute'),
     ('yandex.cloud.containerregistry', 'container-registry'),
     ('yandex.cloud.dataproc.manager', 'dataproc-manager'),
