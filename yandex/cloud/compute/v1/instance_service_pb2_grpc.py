@@ -107,6 +107,11 @@ class InstanceServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.ListInstanceOperationsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.ListInstanceOperationsResponse.FromString,
                 )
+        self.Move = channel.unary_unary(
+                '/yandex.cloud.compute.v1.InstanceService/Move',
+                request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.MoveInstanceRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
 
 
 class InstanceServiceServicer(object):
@@ -257,6 +262,13 @@ class InstanceServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Move(self, request, context):
+        """Moves the specified instance between folders
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_InstanceServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -349,6 +361,11 @@ def add_InstanceServiceServicer_to_server(servicer, server):
                     servicer.ListOperations,
                     request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.ListInstanceOperationsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.ListInstanceOperationsResponse.SerializeToString,
+            ),
+            'Move': grpc.unary_unary_rpc_method_handler(
+                    servicer.Move,
+                    request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.MoveInstanceRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -664,5 +681,22 @@ class InstanceService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.compute.v1.InstanceService/ListOperations',
             yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.ListInstanceOperationsRequest.SerializeToString,
             yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.ListInstanceOperationsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Move(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.compute.v1.InstanceService/Move',
+            yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.MoveInstanceRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

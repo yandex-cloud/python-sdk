@@ -47,6 +47,11 @@ class DiskServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_disk__service__pb2.ListDiskOperationsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_disk__service__pb2.ListDiskOperationsResponse.FromString,
                 )
+        self.Move = channel.unary_unary(
+                '/yandex.cloud.compute.v1.DiskService/Move',
+                request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_disk__service__pb2.MoveDiskRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
 
 
 class DiskServiceServicer(object):
@@ -105,6 +110,13 @@ class DiskServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Move(self, request, context):
+        """Moves disk between folders.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_DiskServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -137,6 +149,11 @@ def add_DiskServiceServicer_to_server(servicer, server):
                     servicer.ListOperations,
                     request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_disk__service__pb2.ListDiskOperationsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_disk__service__pb2.ListDiskOperationsResponse.SerializeToString,
+            ),
+            'Move': grpc.unary_unary_rpc_method_handler(
+                    servicer.Move,
+                    request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_disk__service__pb2.MoveDiskRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -248,5 +265,22 @@ class DiskService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.compute.v1.DiskService/ListOperations',
             yandex_dot_cloud_dot_compute_dot_v1_dot_disk__service__pb2.ListDiskOperationsRequest.SerializeToString,
             yandex_dot_cloud_dot_compute_dot_v1_dot_disk__service__pb2.ListDiskOperationsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Move(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.compute.v1.DiskService/Move',
+            yandex_dot_cloud_dot_compute_dot_v1_dot_disk__service__pb2.MoveDiskRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
