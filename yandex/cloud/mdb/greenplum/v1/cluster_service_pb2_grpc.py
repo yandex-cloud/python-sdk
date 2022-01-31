@@ -8,7 +8,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class ClusterServiceStub(object):
-    """A set of methods for managing Greenplum clusters.
+    """A set of methods for managing Greenplum® clusters.
     """
 
     def __init__(self, channel):
@@ -75,56 +75,55 @@ class ClusterServiceStub(object):
 
 
 class ClusterServiceServicer(object):
-    """A set of methods for managing Greenplum clusters.
+    """A set of methods for managing Greenplum® clusters.
     """
 
     def Get(self, request, context):
-        """Returns the specified Greenplum cluster.
+        """Returns the specified Greenplum® cluster.
 
-        To get the list of available Greenplum clusters, make a [List] request.
+        To get the list of available Greenplum® clusters, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Retrieves a list of Greenplum clusters that belong
-        to the specified folder.
+        """Retrieves a list of Greenplum® clusters that belong to the specified folder.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Creates a Greenplum cluster in the specified folder.
+        """Creates a Greenplum® cluster in the specified folder.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Updates the specified Greenplum cluster.
+        """Updates the specified Greenplum® cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Deletes the specified Greenplum cluster.
+        """Deletes the specified Greenplum® cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Start(self, request, context):
-        """Starts the specified Greenplum cluster.
+        """Starts the specified Greenplum® cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Stop(self, request, context):
-        """Stops the specified Greenplum cluster.
+        """Stops the specified Greenplum® cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -152,7 +151,7 @@ class ClusterServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListLogs(self, request, context):
-        """Retrieves logs for the specified Greenplum cluster.
+        """Retrieves logs for the specified Greenplum® cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -224,7 +223,7 @@ def add_ClusterServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class ClusterService(object):
-    """A set of methods for managing Greenplum clusters.
+    """A set of methods for managing Greenplum® clusters.
     """
 
     @staticmethod
