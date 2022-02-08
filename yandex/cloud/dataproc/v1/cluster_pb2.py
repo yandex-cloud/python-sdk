@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\034yandex.cloud.api.dataproc.v1ZEgithub.com/yandex-cloud/go-genproto/yandex/cloud/dataproc/v1;dataproc',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n&yandex/cloud/dataproc/v1/cluster.proto\x12\x18yandex.cloud.dataproc.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a%yandex/cloud/dataproc/v1/common.proto\x1a\x1dyandex/cloud/validation.proto\"\x8a\x06\n\x07\x43luster\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x16\n\x04name\x18\x04 \x01(\tB\x08\x8a\xc8\x31\x04\x31-63\x12\x1e\n\x0b\x64\x65scription\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05\x30-256\x12G\n\x06labels\x18\x06 \x03(\x0b\x32-.yandex.cloud.dataproc.v1.Cluster.LabelsEntryB\x08\x82\xc8\x31\x04<=64\x12\x38\n\nmonitoring\x18\x07 \x03(\x0b\x32$.yandex.cloud.dataproc.v1.Monitoring\x12\x37\n\x06\x63onfig\x18\x08 \x01(\x0b\x32\'.yandex.cloud.dataproc.v1.ClusterConfig\x12\x30\n\x06health\x18\t \x01(\x0e\x32 .yandex.cloud.dataproc.v1.Health\x12\x38\n\x06status\x18\n \x01(\x0e\x32(.yandex.cloud.dataproc.v1.Cluster.Status\x12\x0f\n\x07zone_id\x18\x0b \x01(\t\x12\x1a\n\x12service_account_id\x18\x0c \x01(\t\x12\x0e\n\x06\x62ucket\x18\r \x01(\t\x12\x10\n\x08ui_proxy\x18\x0e \x01(\x08\x12\x1a\n\x12security_group_ids\x18\x0f \x03(\t\x12\x16\n\x0ehost_group_ids\x18\x10 \x03(\t\x12\x1b\n\x13\x64\x65letion_protection\x18\x11 \x01(\x08\x12\x14\n\x0clog_group_id\x18\x12 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"k\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\t\n\x05\x45RROR\x10\x03\x12\x0c\n\x08STOPPING\x10\x04\x12\x0b\n\x07STOPPED\x10\x05\x12\x0c\n\x08STARTING\x10\x06\"=\n\nMonitoring\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0c\n\x04link\x18\x03 \x01(\t\"\xa1\x03\n\x0cHadoopConfig\x12@\n\x08services\x18\x01 \x03(\x0e\x32..yandex.cloud.dataproc.v1.HadoopConfig.Service\x12J\n\nproperties\x18\x02 \x03(\x0b\x32\x36.yandex.cloud.dataproc.v1.HadoopConfig.PropertiesEntry\x12\x17\n\x0fssh_public_keys\x18\x03 \x03(\t\x1a\x31\n\x0fPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xb6\x01\n\x07Service\x12\x17\n\x13SERVICE_UNSPECIFIED\x10\x00\x12\x08\n\x04HDFS\x10\x01\x12\x08\n\x04YARN\x10\x02\x12\r\n\tMAPREDUCE\x10\x03\x12\x08\n\x04HIVE\x10\x04\x12\x07\n\x03TEZ\x10\x05\x12\r\n\tZOOKEEPER\x10\x06\x12\t\n\x05HBASE\x10\x07\x12\t\n\x05SQOOP\x10\x08\x12\t\n\x05\x46LUME\x10\t\x12\t\n\x05SPARK\x10\n\x12\x0c\n\x08ZEPPELIN\x10\x0b\x12\t\n\x05OOZIE\x10\x0c\x12\x08\n\x04LIVY\x10\r\"[\n\rClusterConfig\x12\x12\n\nversion_id\x18\x01 \x01(\t\x12\x36\n\x06hadoop\x18\x02 \x01(\x0b\x32&.yandex.cloud.dataproc.v1.HadoopConfigBe\n\x1cyandex.cloud.api.dataproc.v1ZEgithub.com/yandex-cloud/go-genproto/yandex/cloud/dataproc/v1;dataprocb\x06proto3'
+  serialized_pb=b'\n&yandex/cloud/dataproc/v1/cluster.proto\x12\x18yandex.cloud.dataproc.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a%yandex/cloud/dataproc/v1/common.proto\x1a\x1dyandex/cloud/validation.proto\"\x8a\x06\n\x07\x43luster\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x16\n\x04name\x18\x04 \x01(\tB\x08\x8a\xc8\x31\x04\x31-63\x12\x1e\n\x0b\x64\x65scription\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05\x30-256\x12G\n\x06labels\x18\x06 \x03(\x0b\x32-.yandex.cloud.dataproc.v1.Cluster.LabelsEntryB\x08\x82\xc8\x31\x04<=64\x12\x38\n\nmonitoring\x18\x07 \x03(\x0b\x32$.yandex.cloud.dataproc.v1.Monitoring\x12\x37\n\x06\x63onfig\x18\x08 \x01(\x0b\x32\'.yandex.cloud.dataproc.v1.ClusterConfig\x12\x30\n\x06health\x18\t \x01(\x0e\x32 .yandex.cloud.dataproc.v1.Health\x12\x38\n\x06status\x18\n \x01(\x0e\x32(.yandex.cloud.dataproc.v1.Cluster.Status\x12\x0f\n\x07zone_id\x18\x0b \x01(\t\x12\x1a\n\x12service_account_id\x18\x0c \x01(\t\x12\x0e\n\x06\x62ucket\x18\r \x01(\t\x12\x10\n\x08ui_proxy\x18\x0e \x01(\x08\x12\x1a\n\x12security_group_ids\x18\x0f \x03(\t\x12\x16\n\x0ehost_group_ids\x18\x10 \x03(\t\x12\x1b\n\x13\x64\x65letion_protection\x18\x11 \x01(\x08\x12\x14\n\x0clog_group_id\x18\x12 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"k\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\t\n\x05\x45RROR\x10\x03\x12\x0c\n\x08STOPPING\x10\x04\x12\x0b\n\x07STOPPED\x10\x05\x12\x0c\n\x08STARTING\x10\x06\"=\n\nMonitoring\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0c\n\x04link\x18\x03 \x01(\t\"\xf1\x03\n\x0cHadoopConfig\x12@\n\x08services\x18\x01 \x03(\x0e\x32..yandex.cloud.dataproc.v1.HadoopConfig.Service\x12J\n\nproperties\x18\x02 \x03(\x0b\x32\x36.yandex.cloud.dataproc.v1.HadoopConfig.PropertiesEntry\x12\x17\n\x0fssh_public_keys\x18\x03 \x03(\t\x12N\n\x16initialization_actions\x18\x04 \x03(\x0b\x32..yandex.cloud.dataproc.v1.InitializationAction\x1a\x31\n\x0fPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xb6\x01\n\x07Service\x12\x17\n\x13SERVICE_UNSPECIFIED\x10\x00\x12\x08\n\x04HDFS\x10\x01\x12\x08\n\x04YARN\x10\x02\x12\r\n\tMAPREDUCE\x10\x03\x12\x08\n\x04HIVE\x10\x04\x12\x07\n\x03TEZ\x10\x05\x12\r\n\tZOOKEEPER\x10\x06\x12\t\n\x05HBASE\x10\x07\x12\t\n\x05SQOOP\x10\x08\x12\t\n\x05\x46LUME\x10\t\x12\t\n\x05SPARK\x10\n\x12\x0c\n\x08ZEPPELIN\x10\x0b\x12\t\n\x05OOZIE\x10\x0c\x12\x08\n\x04LIVY\x10\r\"[\n\rClusterConfig\x12\x12\n\nversion_id\x18\x01 \x01(\t\x12\x36\n\x06hadoop\x18\x02 \x01(\x0b\x32&.yandex.cloud.dataproc.v1.HadoopConfig\"B\n\x14InitializationAction\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0c\n\x04\x61rgs\x18\x02 \x03(\t\x12\x0f\n\x07timeout\x18\x03 \x01(\x03\x42\x65\n\x1cyandex.cloud.api.dataproc.v1ZEgithub.com/yandex-cloud/go-genproto/yandex/cloud/dataproc/v1;dataprocb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_dataproc_dot_v1_dot_common__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -158,8 +158,8 @@ _HADOOPCONFIG_SERVICE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1251,
-  serialized_end=1433,
+  serialized_start=1331,
+  serialized_end=1513,
 )
 _sym_db.RegisterEnumDescriptor(_HADOOPCONFIG_SERVICE)
 
@@ -434,8 +434,8 @@ _HADOOPCONFIG_PROPERTIESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1199,
-  serialized_end=1248,
+  serialized_start=1279,
+  serialized_end=1328,
 )
 
 _HADOOPCONFIG = _descriptor.Descriptor(
@@ -467,6 +467,13 @@ _HADOOPCONFIG = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='initialization_actions', full_name='yandex.cloud.dataproc.v1.HadoopConfig.initialization_actions', index=3,
+      number=4, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -481,7 +488,7 @@ _HADOOPCONFIG = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1016,
-  serialized_end=1433,
+  serialized_end=1513,
 )
 
 
@@ -519,8 +526,54 @@ _CLUSTERCONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1435,
-  serialized_end=1526,
+  serialized_start=1515,
+  serialized_end=1606,
+)
+
+
+_INITIALIZATIONACTION = _descriptor.Descriptor(
+  name='InitializationAction',
+  full_name='yandex.cloud.dataproc.v1.InitializationAction',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='uri', full_name='yandex.cloud.dataproc.v1.InitializationAction.uri', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='args', full_name='yandex.cloud.dataproc.v1.InitializationAction.args', index=1,
+      number=2, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='timeout', full_name='yandex.cloud.dataproc.v1.InitializationAction.timeout', index=2,
+      number=3, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1608,
+  serialized_end=1674,
 )
 
 _CLUSTER_LABELSENTRY.containing_type = _CLUSTER
@@ -534,12 +587,14 @@ _CLUSTER_STATUS.containing_type = _CLUSTER
 _HADOOPCONFIG_PROPERTIESENTRY.containing_type = _HADOOPCONFIG
 _HADOOPCONFIG.fields_by_name['services'].enum_type = _HADOOPCONFIG_SERVICE
 _HADOOPCONFIG.fields_by_name['properties'].message_type = _HADOOPCONFIG_PROPERTIESENTRY
+_HADOOPCONFIG.fields_by_name['initialization_actions'].message_type = _INITIALIZATIONACTION
 _HADOOPCONFIG_SERVICE.containing_type = _HADOOPCONFIG
 _CLUSTERCONFIG.fields_by_name['hadoop'].message_type = _HADOOPCONFIG
 DESCRIPTOR.message_types_by_name['Cluster'] = _CLUSTER
 DESCRIPTOR.message_types_by_name['Monitoring'] = _MONITORING
 DESCRIPTOR.message_types_by_name['HadoopConfig'] = _HADOOPCONFIG
 DESCRIPTOR.message_types_by_name['ClusterConfig'] = _CLUSTERCONFIG
+DESCRIPTOR.message_types_by_name['InitializationAction'] = _INITIALIZATIONACTION
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Cluster = _reflection.GeneratedProtocolMessageType('Cluster', (_message.Message,), {
@@ -585,6 +640,13 @@ ClusterConfig = _reflection.GeneratedProtocolMessageType('ClusterConfig', (_mess
   # @@protoc_insertion_point(class_scope:yandex.cloud.dataproc.v1.ClusterConfig)
   })
 _sym_db.RegisterMessage(ClusterConfig)
+
+InitializationAction = _reflection.GeneratedProtocolMessageType('InitializationAction', (_message.Message,), {
+  'DESCRIPTOR' : _INITIALIZATIONACTION,
+  '__module__' : 'yandex.cloud.dataproc.v1.cluster_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.dataproc.v1.InitializationAction)
+  })
+_sym_db.RegisterMessage(InitializationAction)
 
 
 DESCRIPTOR._options = None

@@ -26,7 +26,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancer',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n3yandex/cloud/apploadbalancer/v1/backend_group.proto\x12\x1fyandex.cloud.apploadbalancer.v1\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a-yandex/cloud/apploadbalancer/v1/payload.proto\x1a)yandex/cloud/apploadbalancer/v1/tls.proto\x1a\x1dyandex/cloud/validation.proto\"\xd2\x03\n\x0c\x42\x61\x63kendGroup\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x11\n\tfolder_id\x18\x04 \x01(\t\x12I\n\x06labels\x18\x05 \x03(\x0b\x32\x39.yandex.cloud.apploadbalancer.v1.BackendGroup.LabelsEntry\x12\x41\n\x04http\x18\x06 \x01(\x0b\x32\x31.yandex.cloud.apploadbalancer.v1.HttpBackendGroupH\x00\x12\x41\n\x04grpc\x18\x07 \x01(\x0b\x32\x31.yandex.cloud.apploadbalancer.v1.GrpcBackendGroupH\x00\x12\x45\n\x06stream\x18\n \x01(\x0b\x32\x33.yandex.cloud.apploadbalancer.v1.StreamBackendGroupH\x00\x12.\n\ncreated_at\x18\t \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\t\n\x07\x62\x61\x63kend\"\xbc\x01\n\x12StreamBackendGroup\x12@\n\x08\x62\x61\x63kends\x18\x01 \x03(\x0b\x32..yandex.cloud.apploadbalancer.v1.StreamBackend\x12P\n\nconnection\x18\x02 \x01(\x0b\x32:.yandex.cloud.apploadbalancer.v1.ConnectionSessionAffinityH\x00\x42\x12\n\x10session_affinity\"\xcc\x02\n\x10HttpBackendGroup\x12>\n\x08\x62\x61\x63kends\x18\x01 \x03(\x0b\x32,.yandex.cloud.apploadbalancer.v1.HttpBackend\x12P\n\nconnection\x18\x02 \x01(\x0b\x32:.yandex.cloud.apploadbalancer.v1.ConnectionSessionAffinityH\x00\x12H\n\x06header\x18\x03 \x01(\x0b\x32\x36.yandex.cloud.apploadbalancer.v1.HeaderSessionAffinityH\x00\x12H\n\x06\x63ookie\x18\x04 \x01(\x0b\x32\x36.yandex.cloud.apploadbalancer.v1.CookieSessionAffinityH\x00\x42\x12\n\x10session_affinity\"\xcc\x02\n\x10GrpcBackendGroup\x12>\n\x08\x62\x61\x63kends\x18\x01 \x03(\x0b\x32,.yandex.cloud.apploadbalancer.v1.GrpcBackend\x12P\n\nconnection\x18\x02 \x01(\x0b\x32:.yandex.cloud.apploadbalancer.v1.ConnectionSessionAffinityH\x00\x12H\n\x06header\x18\x03 \x01(\x0b\x32\x36.yandex.cloud.apploadbalancer.v1.HeaderSessionAffinityH\x00\x12H\n\x06\x63ookie\x18\x04 \x01(\x0b\x32\x36.yandex.cloud.apploadbalancer.v1.CookieSessionAffinityH\x00\x42\x12\n\x10session_affinity\"7\n\x15HeaderSessionAffinity\x12\x1e\n\x0bheader_name\x18\x01 \x01(\tB\t\x8a\xc8\x31\x05\x31-256\"X\n\x15\x43ookieSessionAffinity\x12\x17\n\x04name\x18\x01 \x01(\tB\t\x8a\xc8\x31\x05\x31-256\x12&\n\x03ttl\x18\x02 \x01(\x0b\x32\x19.google.protobuf.Duration\".\n\x19\x43onnectionSessionAffinity\x12\x11\n\tsource_ip\x18\x01 \x01(\x08\"\xc7\x01\n\x13LoadBalancingConfig\x12\"\n\x0fpanic_threshold\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12\x31\n\x1elocality_aware_routing_percent\x18\x02 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12\x17\n\x0fstrict_locality\x18\x03 \x01(\x08\x12@\n\x04mode\x18\x04 \x01(\x0e\x32\x32.yandex.cloud.apploadbalancer.v1.LoadBalancingMode\"\xc7\x03\n\rStreamBackend\x12.\n\x04name\x18\x01 \x01(\tB \xf2\xc7\x31\x1c[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x33\n\x0e\x62\x61\x63kend_weight\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12S\n\x15load_balancing_config\x18\x03 \x01(\x0b\x32\x34.yandex.cloud.apploadbalancer.v1.LoadBalancingConfig\x12\x19\n\x04port\x18\x04 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-65535\x12M\n\rtarget_groups\x18\x05 \x01(\x0b\x32\x34.yandex.cloud.apploadbalancer.v1.TargetGroupsBackendH\x00\x12\x42\n\x0chealthchecks\x18\x06 \x03(\x0b\x32,.yandex.cloud.apploadbalancer.v1.HealthCheck\x12\x38\n\x03tls\x18\x07 \x01(\x0b\x32+.yandex.cloud.apploadbalancer.v1.BackendTlsB\x14\n\x0c\x62\x61\x63kend_type\x12\x04\xc0\xc1\x31\x01\"\xad\x04\n\x0bHttpBackend\x12\x32\n\x04name\x18\x01 \x01(\tB$\xe8\xc7\x31\x01\xf2\xc7\x31\x1c[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x33\n\x0e\x62\x61\x63kend_weight\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12S\n\x15load_balancing_config\x18\x03 \x01(\x0b\x32\x34.yandex.cloud.apploadbalancer.v1.LoadBalancingConfig\x12\x19\n\x04port\x18\x04 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-65535\x12M\n\rtarget_groups\x18\x05 \x01(\x0b\x32\x34.yandex.cloud.apploadbalancer.v1.TargetGroupsBackendH\x00\x12O\n\x0estorage_bucket\x18\t \x01(\x0b\x32\x35.yandex.cloud.apploadbalancer.v1.StorageBucketBackendH\x00\x12\x42\n\x0chealthchecks\x18\x06 \x03(\x0b\x32,.yandex.cloud.apploadbalancer.v1.HealthCheck\x12\x38\n\x03tls\x18\x07 \x01(\x0b\x32+.yandex.cloud.apploadbalancer.v1.BackendTls\x12\x11\n\tuse_http2\x18\x08 \x01(\x08\x42\x14\n\x0c\x62\x61\x63kend_type\x12\x04\xc0\xc1\x31\x01\"\xc9\x03\n\x0bGrpcBackend\x12\x32\n\x04name\x18\x01 \x01(\tB$\xe8\xc7\x31\x01\xf2\xc7\x31\x1c[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x33\n\x0e\x62\x61\x63kend_weight\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12S\n\x15load_balancing_config\x18\x03 \x01(\x0b\x32\x34.yandex.cloud.apploadbalancer.v1.LoadBalancingConfig\x12\x19\n\x04port\x18\x04 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-65535\x12M\n\rtarget_groups\x18\x05 \x01(\x0b\x32\x34.yandex.cloud.apploadbalancer.v1.TargetGroupsBackendH\x00\x12\x42\n\x0chealthchecks\x18\x07 \x03(\x0b\x32,.yandex.cloud.apploadbalancer.v1.HealthCheck\x12\x38\n\x03tls\x18\x08 \x01(\x0b\x32+.yandex.cloud.apploadbalancer.v1.BackendTlsB\x14\n\x0c\x62\x61\x63kend_type\x12\x04\xc0\xc1\x31\x01\"7\n\x13TargetGroupsBackend\x12 \n\x10target_group_ids\x18\x01 \x03(\tB\x06\x82\xc8\x31\x02>0\"i\n\nBackendTls\x12\x0b\n\x03sni\x18\x01 \x01(\t\x12N\n\x12validation_context\x18\x03 \x01(\x0b\x32\x32.yandex.cloud.apploadbalancer.v1.ValidationContext\",\n\x14StorageBucketBackend\x12\x14\n\x06\x62ucket\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\xef\x05\n\x0bHealthCheck\x12\x30\n\x07timeout\x18\x01 \x01(\x0b\x32\x19.google.protobuf.DurationB\x04\xe8\xc7\x31\x01\x12\x31\n\x08interval\x18\x02 \x01(\x0b\x32\x19.google.protobuf.DurationB\x04\xe8\xc7\x31\x01\x12\x1f\n\x17interval_jitter_percent\x18\x03 \x01(\x01\x12\x19\n\x11healthy_threshold\x18\x04 \x01(\x03\x12\x1b\n\x13unhealthy_threshold\x18\x05 \x01(\x03\x12%\n\x10healthcheck_port\x18\x06 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-65535\x12P\n\x06stream\x18\x07 \x01(\x0b\x32>.yandex.cloud.apploadbalancer.v1.HealthCheck.StreamHealthCheckH\x00\x12L\n\x04http\x18\x08 \x01(\x0b\x32<.yandex.cloud.apploadbalancer.v1.HealthCheck.HttpHealthCheckH\x00\x12L\n\x04grpc\x18\t \x01(\x0b\x32<.yandex.cloud.apploadbalancer.v1.HealthCheck.GrpcHealthCheckH\x00\x1a\x86\x01\n\x11StreamHealthCheck\x12\x36\n\x04send\x18\x01 \x01(\x0b\x32(.yandex.cloud.apploadbalancer.v1.Payload\x12\x39\n\x07receive\x18\x02 \x01(\x0b\x32(.yandex.cloud.apploadbalancer.v1.Payload\x1a\x46\n\x0fHttpHealthCheck\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x12\n\x04path\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tuse_http2\x18\x03 \x01(\x08\x1a\'\n\x0fGrpcHealthCheck\x12\x14\n\x0cservice_name\x18\x01 \x01(\tB\x13\n\x0bhealthcheck\x12\x04\xc0\xc1\x31\x01*T\n\x11LoadBalancingMode\x12\x0f\n\x0bROUND_ROBIN\x10\x00\x12\n\n\x06RANDOM\x10\x01\x12\x11\n\rLEAST_REQUEST\x10\x02\x12\x0f\n\x0bMAGLEV_HASH\x10\x03\x42z\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancerb\x06proto3'
+  serialized_pb=b'\n3yandex/cloud/apploadbalancer/v1/backend_group.proto\x12\x1fyandex.cloud.apploadbalancer.v1\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a-yandex/cloud/apploadbalancer/v1/payload.proto\x1a)yandex/cloud/apploadbalancer/v1/tls.proto\x1a\x1dyandex/cloud/validation.proto\"\xd2\x03\n\x0c\x42\x61\x63kendGroup\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x11\n\tfolder_id\x18\x04 \x01(\t\x12I\n\x06labels\x18\x05 \x03(\x0b\x32\x39.yandex.cloud.apploadbalancer.v1.BackendGroup.LabelsEntry\x12\x41\n\x04http\x18\x06 \x01(\x0b\x32\x31.yandex.cloud.apploadbalancer.v1.HttpBackendGroupH\x00\x12\x41\n\x04grpc\x18\x07 \x01(\x0b\x32\x31.yandex.cloud.apploadbalancer.v1.GrpcBackendGroupH\x00\x12\x45\n\x06stream\x18\n \x01(\x0b\x32\x33.yandex.cloud.apploadbalancer.v1.StreamBackendGroupH\x00\x12.\n\ncreated_at\x18\t \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\t\n\x07\x62\x61\x63kend\"\xbc\x01\n\x12StreamBackendGroup\x12@\n\x08\x62\x61\x63kends\x18\x01 \x03(\x0b\x32..yandex.cloud.apploadbalancer.v1.StreamBackend\x12P\n\nconnection\x18\x02 \x01(\x0b\x32:.yandex.cloud.apploadbalancer.v1.ConnectionSessionAffinityH\x00\x42\x12\n\x10session_affinity\"\xcc\x02\n\x10HttpBackendGroup\x12>\n\x08\x62\x61\x63kends\x18\x01 \x03(\x0b\x32,.yandex.cloud.apploadbalancer.v1.HttpBackend\x12P\n\nconnection\x18\x02 \x01(\x0b\x32:.yandex.cloud.apploadbalancer.v1.ConnectionSessionAffinityH\x00\x12H\n\x06header\x18\x03 \x01(\x0b\x32\x36.yandex.cloud.apploadbalancer.v1.HeaderSessionAffinityH\x00\x12H\n\x06\x63ookie\x18\x04 \x01(\x0b\x32\x36.yandex.cloud.apploadbalancer.v1.CookieSessionAffinityH\x00\x42\x12\n\x10session_affinity\"\xcc\x02\n\x10GrpcBackendGroup\x12>\n\x08\x62\x61\x63kends\x18\x01 \x03(\x0b\x32,.yandex.cloud.apploadbalancer.v1.GrpcBackend\x12P\n\nconnection\x18\x02 \x01(\x0b\x32:.yandex.cloud.apploadbalancer.v1.ConnectionSessionAffinityH\x00\x12H\n\x06header\x18\x03 \x01(\x0b\x32\x36.yandex.cloud.apploadbalancer.v1.HeaderSessionAffinityH\x00\x12H\n\x06\x63ookie\x18\x04 \x01(\x0b\x32\x36.yandex.cloud.apploadbalancer.v1.CookieSessionAffinityH\x00\x42\x12\n\x10session_affinity\"7\n\x15HeaderSessionAffinity\x12\x1e\n\x0bheader_name\x18\x01 \x01(\tB\t\x8a\xc8\x31\x05\x31-256\"X\n\x15\x43ookieSessionAffinity\x12\x17\n\x04name\x18\x01 \x01(\tB\t\x8a\xc8\x31\x05\x31-256\x12&\n\x03ttl\x18\x02 \x01(\x0b\x32\x19.google.protobuf.Duration\".\n\x19\x43onnectionSessionAffinity\x12\x11\n\tsource_ip\x18\x01 \x01(\x08\"\xc7\x01\n\x13LoadBalancingConfig\x12\"\n\x0fpanic_threshold\x18\x01 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12\x31\n\x1elocality_aware_routing_percent\x18\x02 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12\x17\n\x0fstrict_locality\x18\x03 \x01(\x08\x12@\n\x04mode\x18\x04 \x01(\x0e\x32\x32.yandex.cloud.apploadbalancer.v1.LoadBalancingMode\"\xc7\x03\n\rStreamBackend\x12.\n\x04name\x18\x01 \x01(\tB \xf2\xc7\x31\x1c[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x33\n\x0e\x62\x61\x63kend_weight\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12S\n\x15load_balancing_config\x18\x03 \x01(\x0b\x32\x34.yandex.cloud.apploadbalancer.v1.LoadBalancingConfig\x12\x19\n\x04port\x18\x04 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-65535\x12M\n\rtarget_groups\x18\x05 \x01(\x0b\x32\x34.yandex.cloud.apploadbalancer.v1.TargetGroupsBackendH\x00\x12\x42\n\x0chealthchecks\x18\x06 \x03(\x0b\x32,.yandex.cloud.apploadbalancer.v1.HealthCheck\x12\x38\n\x03tls\x18\x07 \x01(\x0b\x32+.yandex.cloud.apploadbalancer.v1.BackendTlsB\x14\n\x0c\x62\x61\x63kend_type\x12\x04\xc0\xc1\x31\x01\"\xad\x04\n\x0bHttpBackend\x12\x32\n\x04name\x18\x01 \x01(\tB$\xe8\xc7\x31\x01\xf2\xc7\x31\x1c[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x33\n\x0e\x62\x61\x63kend_weight\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12S\n\x15load_balancing_config\x18\x03 \x01(\x0b\x32\x34.yandex.cloud.apploadbalancer.v1.LoadBalancingConfig\x12\x19\n\x04port\x18\x04 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-65535\x12M\n\rtarget_groups\x18\x05 \x01(\x0b\x32\x34.yandex.cloud.apploadbalancer.v1.TargetGroupsBackendH\x00\x12O\n\x0estorage_bucket\x18\t \x01(\x0b\x32\x35.yandex.cloud.apploadbalancer.v1.StorageBucketBackendH\x00\x12\x42\n\x0chealthchecks\x18\x06 \x03(\x0b\x32,.yandex.cloud.apploadbalancer.v1.HealthCheck\x12\x38\n\x03tls\x18\x07 \x01(\x0b\x32+.yandex.cloud.apploadbalancer.v1.BackendTls\x12\x11\n\tuse_http2\x18\x08 \x01(\x08\x42\x14\n\x0c\x62\x61\x63kend_type\x12\x04\xc0\xc1\x31\x01\"\xc9\x03\n\x0bGrpcBackend\x12\x32\n\x04name\x18\x01 \x01(\tB$\xe8\xc7\x31\x01\xf2\xc7\x31\x1c[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x33\n\x0e\x62\x61\x63kend_weight\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12S\n\x15load_balancing_config\x18\x03 \x01(\x0b\x32\x34.yandex.cloud.apploadbalancer.v1.LoadBalancingConfig\x12\x19\n\x04port\x18\x04 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-65535\x12M\n\rtarget_groups\x18\x05 \x01(\x0b\x32\x34.yandex.cloud.apploadbalancer.v1.TargetGroupsBackendH\x00\x12\x42\n\x0chealthchecks\x18\x07 \x03(\x0b\x32,.yandex.cloud.apploadbalancer.v1.HealthCheck\x12\x38\n\x03tls\x18\x08 \x01(\x0b\x32+.yandex.cloud.apploadbalancer.v1.BackendTlsB\x14\n\x0c\x62\x61\x63kend_type\x12\x04\xc0\xc1\x31\x01\"7\n\x13TargetGroupsBackend\x12 \n\x10target_group_ids\x18\x01 \x03(\tB\x06\x82\xc8\x31\x02>0\"\x1c\n\x1aPlaintextTransportSettings\"v\n\x17SecureTransportSettings\x12\x0b\n\x03sni\x18\x01 \x01(\t\x12N\n\x12validation_context\x18\x03 \x01(\x0b\x32\x32.yandex.cloud.apploadbalancer.v1.ValidationContext\"i\n\nBackendTls\x12\x0b\n\x03sni\x18\x01 \x01(\t\x12N\n\x12validation_context\x18\x03 \x01(\x0b\x32\x32.yandex.cloud.apploadbalancer.v1.ValidationContext\",\n\x14StorageBucketBackend\x12\x14\n\x06\x62ucket\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\xa0\x07\n\x0bHealthCheck\x12\x30\n\x07timeout\x18\x01 \x01(\x0b\x32\x19.google.protobuf.DurationB\x04\xe8\xc7\x31\x01\x12\x31\n\x08interval\x18\x02 \x01(\x0b\x32\x19.google.protobuf.DurationB\x04\xe8\xc7\x31\x01\x12\x1f\n\x17interval_jitter_percent\x18\x03 \x01(\x01\x12\x19\n\x11healthy_threshold\x18\x04 \x01(\x03\x12\x1b\n\x13unhealthy_threshold\x18\x05 \x01(\x03\x12%\n\x10healthcheck_port\x18\x06 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-65535\x12P\n\x06stream\x18\x07 \x01(\x0b\x32>.yandex.cloud.apploadbalancer.v1.HealthCheck.StreamHealthCheckH\x00\x12L\n\x04http\x18\x08 \x01(\x0b\x32<.yandex.cloud.apploadbalancer.v1.HealthCheck.HttpHealthCheckH\x00\x12L\n\x04grpc\x18\t \x01(\x0b\x32<.yandex.cloud.apploadbalancer.v1.HealthCheck.GrpcHealthCheckH\x00\x12P\n\tplaintext\x18\n \x01(\x0b\x32;.yandex.cloud.apploadbalancer.v1.PlaintextTransportSettingsH\x01\x12G\n\x03tls\x18\x0b \x01(\x0b\x32\x38.yandex.cloud.apploadbalancer.v1.SecureTransportSettingsH\x01\x1a\x86\x01\n\x11StreamHealthCheck\x12\x36\n\x04send\x18\x01 \x01(\x0b\x32(.yandex.cloud.apploadbalancer.v1.Payload\x12\x39\n\x07receive\x18\x02 \x01(\x0b\x32(.yandex.cloud.apploadbalancer.v1.Payload\x1a\x46\n\x0fHttpHealthCheck\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x12\n\x04path\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tuse_http2\x18\x03 \x01(\x08\x1a\'\n\x0fGrpcHealthCheck\x12\x14\n\x0cservice_name\x18\x01 \x01(\tB\x13\n\x0bhealthcheck\x12\x04\xc0\xc1\x31\x01\x42\x14\n\x12transport_settings*T\n\x11LoadBalancingMode\x12\x0f\n\x0bROUND_ROBIN\x10\x00\x12\n\n\x06RANDOM\x10\x01\x12\x11\n\rLEAST_REQUEST\x10\x02\x12\x0f\n\x0bMAGLEV_HASH\x10\x03\x42z\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancerb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_payload__pb2.DESCRIPTOR,yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_tls__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -60,8 +60,8 @@ _LOADBALANCINGMODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4475,
-  serialized_end=4559,
+  serialized_start=4802,
+  serialized_end=4886,
 )
 _sym_db.RegisterEnumDescriptor(_LOADBALANCINGMODE)
 
@@ -803,6 +803,70 @@ _TARGETGROUPSBACKEND = _descriptor.Descriptor(
 )
 
 
+_PLAINTEXTTRANSPORTSETTINGS = _descriptor.Descriptor(
+  name='PlaintextTransportSettings',
+  full_name='yandex.cloud.apploadbalancer.v1.PlaintextTransportSettings',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3568,
+  serialized_end=3596,
+)
+
+
+_SECURETRANSPORTSETTINGS = _descriptor.Descriptor(
+  name='SecureTransportSettings',
+  full_name='yandex.cloud.apploadbalancer.v1.SecureTransportSettings',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='sni', full_name='yandex.cloud.apploadbalancer.v1.SecureTransportSettings.sni', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='validation_context', full_name='yandex.cloud.apploadbalancer.v1.SecureTransportSettings.validation_context', index=1,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3598,
+  serialized_end=3716,
+)
+
+
 _BACKENDTLS = _descriptor.Descriptor(
   name='BackendTls',
   full_name='yandex.cloud.apploadbalancer.v1.BackendTls',
@@ -837,8 +901,8 @@ _BACKENDTLS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3568,
-  serialized_end=3673,
+  serialized_start=3718,
+  serialized_end=3823,
 )
 
 
@@ -869,8 +933,8 @@ _STORAGEBUCKETBACKEND = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3675,
-  serialized_end=3719,
+  serialized_start=3825,
+  serialized_end=3869,
 )
 
 
@@ -908,8 +972,8 @@ _HEALTHCHECK_STREAMHEALTHCHECK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4205,
-  serialized_end=4339,
+  serialized_start=4510,
+  serialized_end=4644,
 )
 
 _HEALTHCHECK_HTTPHEALTHCHECK = _descriptor.Descriptor(
@@ -953,8 +1017,8 @@ _HEALTHCHECK_HTTPHEALTHCHECK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4341,
-  serialized_end=4411,
+  serialized_start=4646,
+  serialized_end=4716,
 )
 
 _HEALTHCHECK_GRPCHEALTHCHECK = _descriptor.Descriptor(
@@ -984,8 +1048,8 @@ _HEALTHCHECK_GRPCHEALTHCHECK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4413,
-  serialized_end=4452,
+  serialized_start=4718,
+  serialized_end=4757,
 )
 
 _HEALTHCHECK = _descriptor.Descriptor(
@@ -1059,6 +1123,20 @@ _HEALTHCHECK = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='plaintext', full_name='yandex.cloud.apploadbalancer.v1.HealthCheck.plaintext', index=9,
+      number=10, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='tls', full_name='yandex.cloud.apploadbalancer.v1.HealthCheck.tls', index=10,
+      number=11, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1075,9 +1153,14 @@ _HEALTHCHECK = _descriptor.Descriptor(
       index=0, containing_type=None,
       create_key=_descriptor._internal_create_key,
     fields=[], serialized_options=b'\300\3011\001'),
+    _descriptor.OneofDescriptor(
+      name='transport_settings', full_name='yandex.cloud.apploadbalancer.v1.HealthCheck.transport_settings',
+      index=1, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
   ],
-  serialized_start=3722,
-  serialized_end=4473,
+  serialized_start=3872,
+  serialized_end=4800,
 )
 
 _BACKENDGROUP_LABELSENTRY.containing_type = _BACKENDGROUP
@@ -1156,6 +1239,7 @@ _GRPCBACKEND.fields_by_name['tls'].message_type = _BACKENDTLS
 _GRPCBACKEND.oneofs_by_name['backend_type'].fields.append(
   _GRPCBACKEND.fields_by_name['target_groups'])
 _GRPCBACKEND.fields_by_name['target_groups'].containing_oneof = _GRPCBACKEND.oneofs_by_name['backend_type']
+_SECURETRANSPORTSETTINGS.fields_by_name['validation_context'].message_type = yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_tls__pb2._VALIDATIONCONTEXT
 _BACKENDTLS.fields_by_name['validation_context'].message_type = yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_tls__pb2._VALIDATIONCONTEXT
 _HEALTHCHECK_STREAMHEALTHCHECK.fields_by_name['send'].message_type = yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_payload__pb2._PAYLOAD
 _HEALTHCHECK_STREAMHEALTHCHECK.fields_by_name['receive'].message_type = yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_payload__pb2._PAYLOAD
@@ -1167,6 +1251,8 @@ _HEALTHCHECK.fields_by_name['interval'].message_type = google_dot_protobuf_dot_d
 _HEALTHCHECK.fields_by_name['stream'].message_type = _HEALTHCHECK_STREAMHEALTHCHECK
 _HEALTHCHECK.fields_by_name['http'].message_type = _HEALTHCHECK_HTTPHEALTHCHECK
 _HEALTHCHECK.fields_by_name['grpc'].message_type = _HEALTHCHECK_GRPCHEALTHCHECK
+_HEALTHCHECK.fields_by_name['plaintext'].message_type = _PLAINTEXTTRANSPORTSETTINGS
+_HEALTHCHECK.fields_by_name['tls'].message_type = _SECURETRANSPORTSETTINGS
 _HEALTHCHECK.oneofs_by_name['healthcheck'].fields.append(
   _HEALTHCHECK.fields_by_name['stream'])
 _HEALTHCHECK.fields_by_name['stream'].containing_oneof = _HEALTHCHECK.oneofs_by_name['healthcheck']
@@ -1176,6 +1262,12 @@ _HEALTHCHECK.fields_by_name['http'].containing_oneof = _HEALTHCHECK.oneofs_by_na
 _HEALTHCHECK.oneofs_by_name['healthcheck'].fields.append(
   _HEALTHCHECK.fields_by_name['grpc'])
 _HEALTHCHECK.fields_by_name['grpc'].containing_oneof = _HEALTHCHECK.oneofs_by_name['healthcheck']
+_HEALTHCHECK.oneofs_by_name['transport_settings'].fields.append(
+  _HEALTHCHECK.fields_by_name['plaintext'])
+_HEALTHCHECK.fields_by_name['plaintext'].containing_oneof = _HEALTHCHECK.oneofs_by_name['transport_settings']
+_HEALTHCHECK.oneofs_by_name['transport_settings'].fields.append(
+  _HEALTHCHECK.fields_by_name['tls'])
+_HEALTHCHECK.fields_by_name['tls'].containing_oneof = _HEALTHCHECK.oneofs_by_name['transport_settings']
 DESCRIPTOR.message_types_by_name['BackendGroup'] = _BACKENDGROUP
 DESCRIPTOR.message_types_by_name['StreamBackendGroup'] = _STREAMBACKENDGROUP
 DESCRIPTOR.message_types_by_name['HttpBackendGroup'] = _HTTPBACKENDGROUP
@@ -1188,6 +1280,8 @@ DESCRIPTOR.message_types_by_name['StreamBackend'] = _STREAMBACKEND
 DESCRIPTOR.message_types_by_name['HttpBackend'] = _HTTPBACKEND
 DESCRIPTOR.message_types_by_name['GrpcBackend'] = _GRPCBACKEND
 DESCRIPTOR.message_types_by_name['TargetGroupsBackend'] = _TARGETGROUPSBACKEND
+DESCRIPTOR.message_types_by_name['PlaintextTransportSettings'] = _PLAINTEXTTRANSPORTSETTINGS
+DESCRIPTOR.message_types_by_name['SecureTransportSettings'] = _SECURETRANSPORTSETTINGS
 DESCRIPTOR.message_types_by_name['BackendTls'] = _BACKENDTLS
 DESCRIPTOR.message_types_by_name['StorageBucketBackend'] = _STORAGEBUCKETBACKEND
 DESCRIPTOR.message_types_by_name['HealthCheck'] = _HEALTHCHECK
@@ -1285,6 +1379,20 @@ TargetGroupsBackend = _reflection.GeneratedProtocolMessageType('TargetGroupsBack
   # @@protoc_insertion_point(class_scope:yandex.cloud.apploadbalancer.v1.TargetGroupsBackend)
   })
 _sym_db.RegisterMessage(TargetGroupsBackend)
+
+PlaintextTransportSettings = _reflection.GeneratedProtocolMessageType('PlaintextTransportSettings', (_message.Message,), {
+  'DESCRIPTOR' : _PLAINTEXTTRANSPORTSETTINGS,
+  '__module__' : 'yandex.cloud.apploadbalancer.v1.backend_group_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.apploadbalancer.v1.PlaintextTransportSettings)
+  })
+_sym_db.RegisterMessage(PlaintextTransportSettings)
+
+SecureTransportSettings = _reflection.GeneratedProtocolMessageType('SecureTransportSettings', (_message.Message,), {
+  'DESCRIPTOR' : _SECURETRANSPORTSETTINGS,
+  '__module__' : 'yandex.cloud.apploadbalancer.v1.backend_group_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.apploadbalancer.v1.SecureTransportSettings)
+  })
+_sym_db.RegisterMessage(SecureTransportSettings)
 
 BackendTls = _reflection.GeneratedProtocolMessageType('BackendTls', (_message.Message,), {
   'DESCRIPTOR' : _BACKENDTLS,

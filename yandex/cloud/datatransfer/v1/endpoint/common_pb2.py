@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n)yandex.cloud.api.datatransfer.v1.endpointZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1/endpoint;endpoint\252\002%Yandex.Cloud.Datatransfer.V1.EndPoint',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n2yandex/cloud/datatransfer/v1/endpoint/common.proto\x12%yandex.cloud.datatransfer.v1.endpoint\x1a\x1bgoogle/protobuf/empty.proto\" \n\x06Secret\x12\r\n\x03raw\x18\x01 \x01(\tH\x00\x42\x07\n\x05value\"\x86\x01\n\x07TLSMode\x12*\n\x08\x64isabled\x18\x01 \x01(\x0b\x32\x16.google.protobuf.EmptyH\x00\x12\x43\n\x07\x65nabled\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.datatransfer.v1.endpoint.TLSConfigH\x00\x42\n\n\x08tls_mode\"#\n\tTLSConfig\x12\x16\n\x0e\x63\x61_certificate\x18\x01 \x01(\t*h\n\x13ObjectTransferStage\x12%\n!OBJECT_TRANSFER_STAGE_UNSPECIFIED\x10\x00\x12\x0f\n\x0b\x42\x45\x46ORE_DATA\x10\x01\x12\x0e\n\nAFTER_DATA\x10\x02\x12\t\n\x05NEVER\x10\x03\x42\xa7\x01\n)yandex.cloud.api.datatransfer.v1.endpointZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1/endpoint;endpoint\xaa\x02%Yandex.Cloud.Datatransfer.V1.EndPointb\x06proto3'
+  serialized_pb=b'\n2yandex/cloud/datatransfer/v1/endpoint/common.proto\x12%yandex.cloud.datatransfer.v1.endpoint\x1a\x1bgoogle/protobuf/empty.proto\" \n\x06Secret\x12\r\n\x03raw\x18\x01 \x01(\tH\x00\x42\x07\n\x05value\"\x86\x01\n\x07TLSMode\x12*\n\x08\x64isabled\x18\x01 \x01(\x0b\x32\x16.google.protobuf.EmptyH\x00\x12\x43\n\x07\x65nabled\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.datatransfer.v1.endpoint.TLSConfigH\x00\x42\n\n\x08tls_mode\"#\n\tTLSConfig\x12\x16\n\x0e\x63\x61_certificate\x18\x01 \x01(\t*h\n\x13ObjectTransferStage\x12%\n!OBJECT_TRANSFER_STAGE_UNSPECIFIED\x10\x00\x12\x0f\n\x0b\x42\x45\x46ORE_DATA\x10\x01\x12\x0e\n\nAFTER_DATA\x10\x02\x12\t\n\x05NEVER\x10\x03*U\n\rCleanupPolicy\x12\x1e\n\x1a\x43LEANUP_POLICY_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x44ISABLED\x10\x01\x12\x08\n\x04\x44ROP\x10\x02\x12\x0c\n\x08TRUNCATE\x10\x03\x42\xa7\x01\n)yandex.cloud.api.datatransfer.v1.endpointZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1/endpoint;endpoint\xaa\x02%Yandex.Cloud.Datatransfer.V1.EndPointb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,])
 
@@ -61,10 +61,50 @@ _OBJECTTRANSFERSTAGE = _descriptor.EnumDescriptor(
 _sym_db.RegisterEnumDescriptor(_OBJECTTRANSFERSTAGE)
 
 ObjectTransferStage = enum_type_wrapper.EnumTypeWrapper(_OBJECTTRANSFERSTAGE)
+_CLEANUPPOLICY = _descriptor.EnumDescriptor(
+  name='CleanupPolicy',
+  full_name='yandex.cloud.datatransfer.v1.endpoint.CleanupPolicy',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='CLEANUP_POLICY_UNSPECIFIED', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='DISABLED', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='DROP', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='TRUNCATE', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=436,
+  serialized_end=521,
+)
+_sym_db.RegisterEnumDescriptor(_CLEANUPPOLICY)
+
+CleanupPolicy = enum_type_wrapper.EnumTypeWrapper(_CLEANUPPOLICY)
 OBJECT_TRANSFER_STAGE_UNSPECIFIED = 0
 BEFORE_DATA = 1
 AFTER_DATA = 2
 NEVER = 3
+CLEANUP_POLICY_UNSPECIFIED = 0
+DISABLED = 1
+DROP = 2
+TRUNCATE = 3
 
 
 
@@ -195,6 +235,7 @@ DESCRIPTOR.message_types_by_name['Secret'] = _SECRET
 DESCRIPTOR.message_types_by_name['TLSMode'] = _TLSMODE
 DESCRIPTOR.message_types_by_name['TLSConfig'] = _TLSCONFIG
 DESCRIPTOR.enum_types_by_name['ObjectTransferStage'] = _OBJECTTRANSFERSTAGE
+DESCRIPTOR.enum_types_by_name['CleanupPolicy'] = _CLEANUPPOLICY
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Secret = _reflection.GeneratedProtocolMessageType('Secret', (_message.Message,), {
