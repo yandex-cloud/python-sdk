@@ -73,14 +73,14 @@ def get_operation_result(sdk, operation, response_type=None, meta_type=None, tim
         )
         logger.error(error_message)
         raise OperationError(message=error_message, operation_result=result)
-    else:
-        log_message = 'Done Yandex.Cloud operation. ID: {id}.'.format(id=operation.id)
-        if response_type and response_type is not Empty:
-            unpacked_response = response_type()
-            result.response.Unpack(unpacked_response)
-            operation_result.response = unpacked_response
-            log_message += ' Response: {unpacked_response}.'.format(unpacked_response=unpacked_response)
-        logger.info(log_message)
+
+    log_message = 'Done Yandex.Cloud operation. ID: {id}.'.format(id=operation.id)
+    if response_type and response_type is not Empty:
+        unpacked_response = response_type()
+        result.response.Unpack(unpacked_response)
+        operation_result.response = unpacked_response
+        log_message += ' Response: {unpacked_response}.'.format(unpacked_response=unpacked_response)
+    logger.info(log_message)
     return operation_result
 
 
