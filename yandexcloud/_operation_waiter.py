@@ -18,7 +18,7 @@ def operation_waiter(sdk, operation_id, timeout):
         grpc.StatusCode.RESOURCE_EXHAUSTED,
         grpc.StatusCode.INTERNAL,
     )
-    # withstand server downtime for ~4.25 minutes with an exponential backoff
+    # withstand server downtime for ~6.3 minutes with an exponential backoff
     retry_interceptor = RetryInterceptor(
         max_retry_count=8,
         per_call_timeout=30,
