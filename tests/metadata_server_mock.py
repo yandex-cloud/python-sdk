@@ -1,6 +1,6 @@
 import json
 import threading
-from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
+from http.server import HTTPServer, BaseHTTPRequestHandler
 
 _MDS_ADDRESS = ("localhost", 50052)
 
@@ -19,7 +19,7 @@ def metadata_server(token):
             self.end_headers()
             self.wfile.write(data)
 
-    srv = ThreadingHTTPServer(_MDS_ADDRESS, MetadataHandler)
+    srv = HTTPServer(_MDS_ADDRESS, MetadataHandler)
     thread = threading.Thread(target=srv.serve_forever)
     thread.daemon = True
     thread.start()
