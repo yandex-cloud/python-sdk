@@ -1,4 +1,4 @@
-import grpc
+import grpc   # type: ignore
 import inspect
 
 from yandexcloud import _channels

@@ -2,7 +2,7 @@ import time
 from datetime import datetime
 import logging
 
-import grpc
+import grpc  # type: ignore
 from google.protobuf.empty_pb2 import Empty
 
 from yandex.cloud.operation.operation_service_pb2_grpc import OperationServiceStub

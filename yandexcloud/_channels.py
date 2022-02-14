@@ -1,4 +1,4 @@
-import grpc
+import grpc  # type: ignore
 
 from yandex.cloud.endpoint.api_endpoint_service_pb2_grpc import ApiEndpointServiceStub
 from yandex.cloud.endpoint.api_endpoint_service_pb2 import ListApiEndpointsRequest

@@ -13,6 +13,9 @@ tox: ## run ALL checks for ALL available python versions
 test: ## run tests ONLY for current python version
 	python -m pytest
 
+lint: ## run linters, formatters for current python versions
+	mypy yandexcloud
+
 test-all-versions: ## run test for multiple python versions using docker
 	# python 3.10 not provided in image so we skip it
 	docker run --rm -v $(REPO_ROOT):/src fkrull/multi-python tox -c /src -e py36,py37,py38,py39

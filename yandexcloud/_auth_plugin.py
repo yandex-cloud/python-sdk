@@ -1,4 +1,4 @@
-import grpc
+import grpc  # type: ignore
 
 from datetime import datetime
 from six.moves.urllib.parse import urlparse

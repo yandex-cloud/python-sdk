@@ -1,5 +1,5 @@
 import collections
-import grpc
+import grpc  # type: ignore
 import time
 import uuid
 
