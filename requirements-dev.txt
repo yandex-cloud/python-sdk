@@ -1,7 +1,8 @@
 -e .
 flake8
-mccabe
 grpcio-tools==1.42.0
+mccabe
+pylint
 pytest
 python-semantic-release
 tox
