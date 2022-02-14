@@ -24,9 +24,9 @@ def backoff_exponential_with_jitter(base, cap):
     return func
 
 
-def backoff_exponential(base=2):
+def backoff_exponential_with_jitter_addition(base=2, jitter_multiplier=1):
     def func(attempt):
-        return base ** attempt
+        return base ** attempt + random.random() * jitter_multiplier
 
     return func
 

@@ -9,7 +9,7 @@ from yandex.cloud.operation.operation_service_pb2_grpc import OperationServiceSt
 from yandex.cloud.operation.operation_service_pb2 import GetOperationRequest
 from yandexcloud._retry_interceptor import RetryInterceptor
 from yandexcloud.operations import OperationResult, OperationError
-from yandexcloud._backoff import backoff_exponential
+from yandexcloud._backoff import backoff_exponential_with_jitter_addition
 
 
 def operation_waiter(sdk, operation_id, timeout):
@@ -22,7 +22,7 @@ def operation_waiter(sdk, operation_id, timeout):
     retry_interceptor = RetryInterceptor(
         max_retry_count=8,
         per_call_timeout=30,
-        back_off_func=backoff_exponential(),
+        back_off_func=backoff_exponential_with_jitter_addition(),
         retriable_codes=retriable_codes,
     )
     operation_service = sdk.client(
