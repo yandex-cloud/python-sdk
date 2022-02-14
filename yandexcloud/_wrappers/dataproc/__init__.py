@@ -156,6 +156,7 @@ class Dataproc(object):
 
         # pylint: disable=too-many-arguments
         # pylint: disable=too-many-locals
+        # pylint: disable=too-many-branches
 
         folder_id = folder_id or self.default_folder_id
         if not folder_id:
@@ -267,7 +268,7 @@ class Dataproc(object):
             meta_type=cluster_service_pb.CreateClusterMetadata,
         )
         self.cluster_id = result.response.id
-        self.subnet_id = subnet_id
+        self.subnet_id = subnet_id  # pylint: disable=attribute-defined-outside-init
         return result
 
     def create_subcluster(
@@ -329,6 +330,7 @@ class Dataproc(object):
         :param decommission_timeout: Timeout to gracefully decommission nodes during downscaling. In seconds.
         :type decommission_timeout: int
         """
+        # pylint: disable=too-many-locals
         cluster_id = cluster_id or self.cluster_id
         if not cluster_id:
             raise RuntimeError('Cluster id must be specified.')

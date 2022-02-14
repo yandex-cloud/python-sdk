@@ -42,6 +42,7 @@ class RetryInterceptor(grpc.UnaryUnaryClientInterceptor):
                  add_retry_count_to_header=False,
                  back_off_func=None,
                  per_call_timeout=None):
+        # pylint: disable=super-init-not-called
         self.__max_retry_count = max_retry_count
         self.__retriable_codes = retriable_codes
         self.__add_retry_count_to_header = add_retry_count_to_header
@@ -69,7 +70,7 @@ class RetryInterceptor(grpc.UnaryUnaryClientInterceptor):
         if deadline is not None:
             deadline_timeout = deadline - time.time()
 
-            if backoff_timeout > deadline_timeout:
+            if backoff_timeout > deadline_timeout:  # pylint: disable=consider-using-min-builtin
                 backoff_timeout = deadline_timeout
 
         if backoff_timeout > 0.:
@@ -123,7 +124,8 @@ class RetryInterceptor(grpc.UnaryUnaryClientInterceptor):
             if 0 <= self.__max_retry_count <= attempt:
                 raise
 
-            err_code = e.code()
+            # Looks like a bug: Instance of 'RpcError' has no 'code' member;
+            err_code = e.code()  # pylint: disable=no-member
 
             if err_code == grpc.StatusCode.DEADLINE_EXCEEDED:
                 # if there is no per_call_timeout, or it is original deadline -> abort, otherwise, retry call.

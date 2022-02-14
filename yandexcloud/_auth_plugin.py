@@ -10,6 +10,7 @@ TIMEOUT_SECONDS = 20
 
 class Credentials(grpc.AuthMetadataPlugin):
     def __init__(self, token_requester, lazy_channel):
+        # pylint: disable=super-init-not-called
         self.__token_requester = token_requester
         self._lazy_channel = lazy_channel
         self._channel = None

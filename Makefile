@@ -18,6 +18,7 @@ test: ## run tests ONLY for current python version
 
 lint: ## run linters, formatters for current python versions
 	flake8 yandexcloud
+	pylint yandexcloud
 
 test-all-versions: ## run test for multiple python versions using docker
 	# python 3.10 not provided in image so we skip it

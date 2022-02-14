@@ -1,0 +1,15 @@
+[FORMAT]
+max-line-length=120
+
+[MASTER]
+disable=
+    C0114, # Missing module docstring (missing-module-docstring)
+    C0115, # Missing class docstring (missing-class-docstring)
+    C0116, # Missing function or method docstring (missing-function-docstring)
+    C0103, # Variable name "r" doesn't conform to snake_case naming style (invalid-name)
+    C0209, # Formatting a regular string which could be a f-string (consider-using-f-string)
+    C0411, # FIXME with black and remove standard import "from datetime import datetime" should be placed before "import grpc" (wrong-import-order)
+    R0205, # Class 'OperationResult' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)
+    R0903, # Too few public methods (1/2) (too-few-public-methods)
+    R0913, # Too many arguments (6/5) (too-many-arguments)
+    R1710, # Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
