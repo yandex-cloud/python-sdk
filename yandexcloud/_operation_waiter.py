@@ -107,6 +107,4 @@ class OperationWaiter:
         if self.done or self.__deadline is not None and time.time() >= self.__deadline:
             raise StopIteration()
 
-        return None
-
     next = __next__  # for Python 2
