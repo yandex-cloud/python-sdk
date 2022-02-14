@@ -9,6 +9,7 @@ from yandex.cloud.operation.operation_service_pb2_grpc import OperationServiceSt
 from yandex.cloud.operation.operation_service_pb2 import GetOperationRequest
 from yandexcloud._retry_interceptor import RetryInterceptor
 from yandexcloud.operations import OperationResult, OperationError
+from yandexcloud._backoff import backoff_exponential
 
 
 def operation_waiter(sdk, operation_id, timeout):
@@ -17,9 +18,16 @@ def operation_waiter(sdk, operation_id, timeout):
         grpc.StatusCode.RESOURCE_EXHAUSTED,
         grpc.StatusCode.INTERNAL,
     )
+    # withstand server downtime for ~4.25 minutes with an exponential backoff
+    retry_interceptor = RetryInterceptor(
+        max_retry_count=8,
+        per_call_timeout=30,
+        back_off_func=backoff_exponential(),
+        retriable_codes=retriable_codes,
+    )
     operation_service = sdk.client(
         OperationServiceStub,
-        interceptor=RetryInterceptor(max_retry_count=5, retriable_codes=retriable_codes),
+        interceptor=retry_interceptor,
     )
     return OperationWaiter(operation_id, operation_service, timeout)
 

@@ -24,5 +24,12 @@ def backoff_exponential_with_jitter(base, cap):
     return func
 
 
+def backoff_exponential(base=2):
+    def func(attempt):
+        return base ** attempt
+
+    return func
+
+
 def default_backoff():
     return backoff_exponential_with_jitter(0.05, 60)
