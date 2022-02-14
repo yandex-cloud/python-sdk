@@ -44,7 +44,12 @@ def test_service_account_key(service_account_key):
     request = request_func()
     now = int(time.time())
     headers = jwt.get_unverified_header(request.jwt)
-    parsed = jwt.decode(request.jwt, secret=service_account_key["public_key"], algorithms=['PS256'], verify=False)
+    parsed = jwt.decode(
+        request.jwt,
+        key=service_account_key["public_key"],
+        algorithms=['PS256'],
+        audience="https://iam.api.cloud.yandex.net/iam/v1/tokens",
+    )
     assert headers["typ"] == "JWT"
     assert headers["alg"] == "PS256"
     assert headers["kid"] == service_account_key["id"]
