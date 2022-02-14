@@ -1,5 +1,5 @@
 .DEFAULT_GOAL := help
-.PHONY: deps tox tox-current test lint test-all-versions help
+.PHONY: deps tox tox-current test lint format test-all-versions help
 
 REPO_ROOT:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
@@ -19,6 +19,9 @@ test: ## run tests ONLY for current python version
 lint: ## run linters, formatters for current python versions
 	python -m flake8 yandexcloud
 	python -m pylint yandexcloud
+
+format:
+	python -m black yandexcloud setup.py
 
 test-all-versions: ## run test for multiple python versions using docker
 	# python 3.10 not provided in image so we skip it

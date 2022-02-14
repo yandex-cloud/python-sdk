@@ -3,3 +3,6 @@ version_variable = "setup.py:__version__"
 # https://python-semantic-release.readthedocs.io/en/latest/configuration.html#major-on-zero
 major_on_zero = false
 commit_parser="changelog.parse_commit"
+
+[tool.black]
+line-length = 120
