@@ -1,4 +1,5 @@
 -e .
+flake8
 pytest
 tox
 tox-gh-actions
