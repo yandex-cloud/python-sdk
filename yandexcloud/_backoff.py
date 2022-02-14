@@ -26,7 +26,10 @@ def backoff_exponential_with_jitter(base, cap):
 
 def backoff_exponential_with_jitter_addition(base=2):
     def func(attempt):
-        base_sleep_time = base ** attempt
+        if attempt > 0:
+            base_sleep_time = base ** attempt
+        else:
+            base_sleep_time = 0.05
         return base_sleep_time + random.random() * base_sleep_time
 
     return func
