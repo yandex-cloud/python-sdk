@@ -25,7 +25,10 @@ class Credentials(grpc.AuthMetadataPlugin):
 
     def _call(self, context, callback):
         u = urlparse(context.service_url)
-        if u.path == '/yandex.cloud.iam.v1.IamTokenService' or u.path == '/yandex.cloud.endpoint.ApiEndpointService':
+        if u.path in (
+                '/yandex.cloud.iam.v1.IamTokenService',
+                '/yandex.cloud.endpoint.ApiEndpointService',
+        ):
             callback(None, None)
             return
 
