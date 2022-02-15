@@ -1,12 +1,12 @@
 import time
 from datetime import datetime
-import six
 
 # noinspection PyUnresolvedReferences
 # jwt package depends on cryptography
 import cryptography  # noqa: F401; pylint: disable=unused-import
 import jwt
 import requests
+import six
 
 from yandex.cloud.iam.v1.iam_token_service_pb2 import CreateIamTokenRequest
 
@@ -33,11 +33,13 @@ def __validate_service_account_key(sa_key):
     if not private_key:
         raise RuntimeError("Invalid Service Account Key: missing private key.")
 
-    private_key_prefix = '-----BEGIN PRIVATE KEY-----'
+    private_key_prefix = "-----BEGIN PRIVATE KEY-----"
     if not isinstance(private_key, six.string_types) or not private_key.startswith(private_key_prefix):
-        error_message = "Invalid Service Account Key: private key is in incorrect format." +  \
-            "Should start with {prefix}.\n".format(prefix=private_key_prefix) + \
-            "To obtain one you can use YC CLI: yc iam key create --output sa.json --service-account-id <id>"
+        error_message = (
+            "Invalid Service Account Key: private key is in incorrect format."
+            + "Should start with {prefix}.\n".format(prefix=private_key_prefix)
+            + "To obtain one you can use YC CLI: yc iam key create --output sa.json --service-account-id <id>"
+        )
         raise RuntimeError(error_message)
 
 
@@ -66,7 +68,7 @@ class MetadataAuth:
         r = requests.get(self.url(), headers=_MDS_HEADERS, timeout=_MDS_TIMEOUT)
         r.raise_for_status()
         response = r.json()
-        return response['access_token']
+        return response["access_token"]
 
 
 class TokenAuth:
@@ -78,7 +80,7 @@ class TokenAuth:
 
 
 class ServiceAccountAuth:
-    __SECONDS_IN_HOUR = 60. * 60.
+    __SECONDS_IN_HOUR = 60.0 * 60.0
 
     def __init__(self, sa_key):
         self.__sa_key = sa_key

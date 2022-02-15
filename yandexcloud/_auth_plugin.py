@@ -1,6 +1,6 @@
-import grpc
-
 from datetime import datetime
+
+import grpc
 from six.moves.urllib.parse import urlparse
 
 from yandex.cloud.iam.v1.iam_token_service_pb2_grpc import IamTokenServiceStub
@@ -26,8 +26,8 @@ class Credentials(grpc.AuthMetadataPlugin):
     def _call(self, context, callback):
         u = urlparse(context.service_url)
         if u.path in (
-                '/yandex.cloud.iam.v1.IamTokenService',
-                '/yandex.cloud.endpoint.ApiEndpointService',
+            "/yandex.cloud.iam.v1.IamTokenService",
+            "/yandex.cloud.endpoint.ApiEndpointService",
         ):
             callback(None, None)
             return
@@ -64,7 +64,7 @@ class Credentials(grpc.AuthMetadataPlugin):
         return done_callback
 
     def _metadata(self):
-        metadata = (('authorization', 'Bearer ' + self._cached_iam_token),)
+        metadata = (("authorization", "Bearer " + self._cached_iam_token),)
         return metadata
 
     def _save_token(self, resp):
