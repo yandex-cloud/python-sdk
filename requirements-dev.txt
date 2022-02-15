@@ -1,5 +1,6 @@
 -e .
 flake8
+mccabe
 pytest
 tox
 tox-gh-actions
