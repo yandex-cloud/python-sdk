@@ -1,10 +1,10 @@
 -e .
+mypy
 pytest
 tox
 tox-gh-actions
-mypy
-types-urllib3
-types-six
-types-setuptools
 types-protobuf
 types-requests
+types-setuptools
+types-six
+types-urllib3
