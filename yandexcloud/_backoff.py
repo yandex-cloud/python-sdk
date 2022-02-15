@@ -24,5 +24,21 @@ def backoff_exponential_with_jitter(base, cap):
     return func
 
 
+def backoff_exponential_jittered_min_interval(base=0.05, cap=60):
+    def func(attempt):
+        try:
+            base_interval = (2 ** attempt) * base
+            res = base_interval / 2 + base_interval * random.random()
+        except OverflowError:
+            return cap
+
+        if res > cap:
+            return cap
+
+        return res
+
+    return func
+
+
 def default_backoff():
     return backoff_exponential_with_jitter(0.05, 60)
