@@ -1,6 +1,15 @@
-[![PyPI](https://img.shields.io/pypi/v/yandexcloud)](https://pypi.org/project/yandexcloud/)
-![PyPI - Python Version](https://img.shields.io/pypi/pyversions/yandexcloud)
-[![License](https://img.shields.io/github/license/yandex-cloud/python-sdk.svg)](https://github.com/yandex-cloud/python-sdk/blob/master/LICENSE)
+[![PyPI Version][pypi-image]][pypi-url]
+[![Build Status][build-image]][build-url]
+[![License][license-image]][license-url]
+
+<!-- Badges -->
+
+[pypi-image]: https://img.shields.io/pypi/v/yandexcloud
+[pypi-url]: https://pypi.org/project/yandexcloud/
+[build-image]: https://github.com/yandex-cloud/python-sdk/actions/workflows/run-tests.yml/badge.svg
+[build-url]: https://github.com/yandex-cloud/python-sdk/actions/workflows/run-tests.yml
+[license-image]: https://img.shields.io/github/license/yandex-cloud/python-sdk.svg
+[license-url]: https://github.com/yandex-cloud/python-sdk/blob/master/LICENSE
 
 # Yandex.Cloud SDK (Python) 
 
@@ -44,6 +53,21 @@ sdk = yandexcloud.SDK(service_account_key=sa_key)
 ```
 
 Check `examples` directory for more examples.
+
+
+## Contributing
+### Dependencies
+Use `make deps` command to install library, its production and development dependencies.
+
+###Formatting
+Use `make format` to autoformat code with black tool. 
+
+### Tests
+- `make test` to run tests for current python version
+- `make lint` to run only linters for current python version
+- `make tox-current` to run all checks (tests + code style checks + linters + format check) for current python version
+- `make tox` to run all checks for all supported (installed in your system) python versions
+- `make test-all-versions` to run all checks for all supported python versions in docker container
 
 
 ### Maintaining
