@@ -17,6 +17,11 @@ test-all-versions: ## run test for multiple python versions using docker
 	# python 3.10 not provided in image so we skip it
 	docker run --rm -v $(REPO_ROOT):/src fkrull/multi-python tox -c /src -e py36,py37,py38,py39
 
+coverage:  ## Run tests with coverage
+	coverage erase
+	coverage run --include=yandexcloud/* -m pytest tests
+	coverage report -m
+
 help: ## Show help message
 	@IFS=$$'\n' ; \
 	help_lines=(`fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##/:/'`); \
