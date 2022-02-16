@@ -90,7 +90,7 @@ _supported_modules = [
     ('yandex.cloud.ai.stt', 'ai-stt'),
     ('yandex.cloud.ai.translate', 'ai-translate'),
     ('yandex.cloud.ai.vision', 'ai-vision'),
-    ('yandex.cloud.apploadbalancer', 'alb'),
+    ('yandex.cloud.apploadbalancer.v1', 'alb'),
     ('yandex.cloud.billing', 'billing'),
     ('yandex.cloud.cdn', 'cdn'),
     ('yandex.cloud.compute', 'compute'),
