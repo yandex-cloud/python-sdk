@@ -37,8 +37,9 @@ class Channels(object):
             if user_agent is not None
         )
 
-    def channel(self, endpoint):
-        if not self._channels:
+    @property
+    def channels(self):
+        if self._channels is None:
             self._unauthenticated_channel = grpc.secure_channel(
                 self._endpoint, self._channel_creds, options=self.channel_options())
             endpoint_service = ApiEndpointServiceStub(
@@ -56,8 +57,12 @@ class Channels(object):
                 ep.id: grpc.secure_channel(ep.address, creds, options=self.channel_options())
                 for ep in endpoints
             }
+        return self._channels
 
-        if endpoint not in self._channels:
-            raise RuntimeError('Unknown endpoint: {}'.format(endpoint))
+    class UnknownEndpointException(Exception):
+        pass
 
-        return self._channels[endpoint]
+    def channel(self, endpoint):
+        if endpoint not in self.channels:
+            raise self.UnknownEndpointException('Unknown endpoint: {}'.format(endpoint))
+        return self.channels[endpoint]

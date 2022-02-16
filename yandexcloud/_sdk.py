@@ -1,5 +1,6 @@
 import grpc
 import inspect
+import re
 
 from yandexcloud import _channels
 from yandexcloud import _helpers
@@ -40,7 +41,11 @@ class SDK(object):
 
     def client(self, stub_ctor, interceptor=None):
         service = _service_for_ctor(stub_ctor)
-        channel = self._channels.channel(service)
+        try:
+            channel = self._channels.channel(service)
+        except self._channels.UnknownEndpointException:
+            raise RuntimeError('Unknown service {}'.format(stub_ctor))
+
         if interceptor is not None:
             channel = grpc.intercept_channel(channel, interceptor)
         elif self._default_interceptor is not None:
@@ -74,39 +79,46 @@ class SDK(object):
 
 
 def _service_for_ctor(stub_ctor):
-    m = inspect.getmodule(stub_ctor)
-    name = m.__name__
-    if not name.startswith('yandex.cloud'):
+    package = _get_stub_package(stub_ctor)
+    if not package.startswith('yandex.cloud'):
         raise RuntimeError('Not a yandex.cloud service {}'.format(stub_ctor))
 
-    for k, v in _supported_modules:
-        if name.startswith(k):
+    for k, v in _NON_STANDARD_ENDPOINT_IDS:
+        if package.startswith(k):
             return v
 
-    raise RuntimeError('Unknown service {}'.format(stub_ctor))
+    return _get_default_endpoint_id(package)
 
 
-_supported_modules = [
-    ('yandex.cloud.ai.stt', 'ai-stt'),
-    ('yandex.cloud.ai.translate', 'ai-translate'),
-    ('yandex.cloud.ai.vision', 'ai-vision'),
+def _get_stub_package(stub_ctor):
+    module = inspect.getmodule(stub_ctor)
+    package, module_name = module.__name__.rsplit('.', 1)
+    return package
+
+
+def _get_default_endpoint_id(module_path):
+    """
+    Something like:
+    "yandex.cloud.ai.stt" -> "ai-stt"
+    "yandex.cloud.serverless.triggers.v1" -> "serverless-triggers"
+    "yandex.cloud.ai.translate.v2" -> "ai-translate"
+    "yandex.cloud.compute.v1.instancegroup" -> "compute-instancegroup"
+    """
+    without_yc = module_path[len("yandex.cloud."):]
+    pieces = [
+        piece for piece in without_yc.split(".")
+        if re.match(r"v\d+", piece) is None
+    ]
+    return "-".join(pieces)
+
+
+_NON_STANDARD_ENDPOINT_IDS = [
     ('yandex.cloud.apploadbalancer.v1', 'alb'),
-    ('yandex.cloud.billing', 'billing'),
-    ('yandex.cloud.cdn', 'cdn'),
-    ('yandex.cloud.compute', 'compute'),
     ('yandex.cloud.containerregistry', 'container-registry'),
-    ('yandex.cloud.dataproc.manager', 'dataproc-manager'),
-    ('yandex.cloud.dataproc', 'dataproc'),
-    ('yandex.cloud.dns', 'dns'),
-    ('yandex.cloud.endpoint', 'endpoint'),
-    ('yandex.cloud.iam', 'iam'),
-    ('yandex.cloud.iot.devices', 'iot-devices'),
     ('yandex.cloud.k8s', 'managed-kubernetes'),
     ('yandex.cloud.kms.v1.symmetric_crypto_service', 'kms-crypto'),
-    ('yandex.cloud.kms', 'kms'),
     ('yandex.cloud.loadbalancer', 'load-balancer'),
     ('yandex.cloud.lockbox.v1.payload_service', 'lockbox-payload'),
-    ('yandex.cloud.lockbox', 'lockbox'),
     ('yandex.cloud.logging.v1.log_ingestion_service', 'log-ingestion'),
     ('yandex.cloud.logging.v1.log_reading_service', 'log-reading'),
     ('yandex.cloud.logging', 'logging'),
@@ -119,12 +131,6 @@ _supported_modules = [
     ('yandex.cloud.mdb.redis', 'managed-redis'),
     ('yandex.cloud.mdb.sqlserver', 'managed-sqlserver'),
     ('yandex.cloud.mdb.elasticsearch', 'managed-elasticsearch'),
-    ('yandex.cloud.operation', 'operation'),
     ('yandex.cloud.organizationmanager', 'organization-manager'),
     ('yandex.cloud.resourcemanager', 'resource-manager'),
-    ('yandex.cloud.serverless.apigateway', 'serverless-apigateway'),
-    ('yandex.cloud.serverless.functions', 'serverless-functions'),
-    ('yandex.cloud.serverless.triggers', 'serverless-triggers'),
-    ('yandex.cloud.vpc', 'vpc'),
-    ('yandex.cloud.ydb', 'ydb'),
 ]
