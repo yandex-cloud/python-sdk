@@ -1,0 +1,30 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    # disallows two or more release jobs to run in parallel
+    concurrency: release
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+
+    - name: Bump version and release to PyPi
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install python-semantic-release
+
+        git config --global user.name 'github-actions'
+        git config --global user.email 'actions@users.noreply.github.com'
+
+        make release
+      env:
+        REPOSITORY_USERNAME: __token__
+        REPOSITORY_PASSWORD: ${{ secrets.PYPI_TOKEN }}
