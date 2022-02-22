@@ -1,4 +1,5 @@
 -e .
+grpcio-tools==1.42.0
 pytest
 tox
 tox-gh-actions
