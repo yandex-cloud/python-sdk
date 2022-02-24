@@ -1,4 +1,5 @@
 -e .
 pytest
+python-semantic-release
 tox
 tox-gh-actions

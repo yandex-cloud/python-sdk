@@ -44,3 +44,11 @@ sdk = yandexcloud.SDK(service_account_key=sa_key)
 ```
 
 Check `examples` directory for more examples.
+
+
+### Maintaining
+If pull request consists of several meaningful commits, that should be preserved, 
+then use "Rebase and merge" option. Otherwise use "Squash and merge". 
+
+New release (changelog, tag and pypi upload) will be automatically created 
+on each push to master via Github Actions workflow.
