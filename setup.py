@@ -2,8 +2,11 @@ from setuptools import setup, find_packages
 
 packages = find_packages('.', include=['yandexcloud*', 'yandex*'])
 
+__version__ = "0.135.0"
+
+
 setup(name='yandexcloud',
-      version='0.131.0',
+      version=__version__,
       description='The Yandex.Cloud official SDK',
       url='https://github.com/yandex-cloud/python-sdk',
       author='Yandex LLC',
@@ -20,7 +23,6 @@ setup(name='yandexcloud',
       classifiers=[
           'Programming Language :: Python',
           'Programming Language :: Python :: 2',
-          'Programming Language :: Python :: 2.7',
           'Programming Language :: Python :: 3',
           'Programming Language :: Python :: 3.7',
       ],

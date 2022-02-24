@@ -30,6 +30,9 @@ proto:  ## regenerate code from protobuf
         `find cloudapi/yandex -name '*.proto'`
 	find yandex -type d -exec touch {}/__init__.py \;
 
+release:  ## update changelog, bump version, build and publish package to pypi
+	python -m semantic_release publish --minor
+
 help: ## Show help message
 	@IFS=$$'\n' ; \
 	help_lines=(`fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##/:/'`); \

@@ -124,72 +124,74 @@ class ClusterServiceServicer(object):
     """
 
     def Get(self, request, context):
-        """Returns the specified MySQL cluster.
-
-        To get the list of available MySQL clusters, make a [List] request.
+        """Retrieves information about a cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Retrieves the list of MySQL clusters that belong to the specified folder.
+        """Retrieves the list of clusters in a folder.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Creates a MySQL cluster in the specified folder.
+        """Creates a cluster in a folder.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Modifies the specified MySQL cluster.
+        """Updates a cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Deletes the specified MySQL cluster.
+        """Deletes a cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Start(self, request, context):
-        """Starts the specified MySQL cluster.
+        """Starts a cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Stop(self, request, context):
-        """Stops the specified MySQL cluster.
+        """Stops a cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Move(self, request, context):
-        """Moves the specified MySQL cluster to the specified folder.
+        """Moves a cluster to a folder.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Backup(self, request, context):
-        """Creates a backup for the specified MySQL cluster.
+        """Creates a backup for a cluster.
+
+        To get information about a backup, make a [BackupService.Get] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Restore(self, request, context):
-        """Creates a new MySQL cluster using the specified backup.
+        """Restores a backup to a new cluster.
+
+        See [the documentation](/docs/managed-mysql/concepts/backup) for details.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -203,49 +205,55 @@ class ClusterServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def StartFailover(self, request, context):
-        """Start a manual failover on the specified MySQL cluster.
+        """Starts a manual failover for a cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListLogs(self, request, context):
-        """Retrieves logs for the specified MySQL cluster.
+        """Retrieves logs for a cluster.
+
+        Alternatively, logs can be streamed using [StreamLogs].
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def StreamLogs(self, request, context):
-        """Same as ListLogs but using server-side streaming. Also allows for 'tail -f' semantics.
+        """Retrieves a log stream for a cluster.
+
+        This method is similar to [ListLogs], but uses server-side streaming, which allows for the `tail -f` command semantics.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListOperations(self, request, context):
-        """Retrieves the list of operations for the specified MySQL cluster.
+        """Retrieves a list of operations for a cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListBackups(self, request, context):
-        """Retrieves the list of available backups for the specified MySQL cluster.
+        """Retrieves a list of backups for a cluster.
+
+        To list all backups in a folder, make a [BackupService.List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListHosts(self, request, context):
-        """Retrieves a list of hosts for the specified MySQL cluster.
+        """Retrieves a list of hosts for a cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def AddHosts(self, request, context):
-        """Creates new hosts for a cluster.
+        """Adds new hosts in a cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
