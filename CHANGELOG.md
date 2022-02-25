@@ -2,6 +2,14 @@
 
 <!--next-version-placeholder-->
 
+## v0.138.0 (2022-02-25)
+### Feature
+* Merge pull request #42 from yandex-cloud/genproto_fix
+
+Fix deps installation ([`4de7ce3`](https://github.com/yandex-cloud/python-sdk/commit/4de7ce37cd54c634fb19d6dae886d5ab45dd0482))
+* Fix deps installation
+ ([`6fad07f`](https://github.com/yandex-cloud/python-sdk/commit/6fad07fd9025ce6731082b4ec3f53d3b3a313b07))
+
 ## v0.137.0 (2022-02-25)
 ### Feature
 * Merge pull request #29 from yandex-cloud/linters
