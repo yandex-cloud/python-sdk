@@ -1,5 +1,5 @@
 .DEFAULT_GOAL := help
-.PHONY: deps tox test test-all-versions help
+.PHONY: deps tox tox-current test lint test-all-versions help
 
 REPO_ROOT:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
@@ -10,8 +10,14 @@ deps: ## install deps (library & development)
 tox: ## run ALL checks for ALL available python versions
 	python -m tox
 
+tox-current: ## run ALL checks ONLY for current python version
+	python -m tox -e `python -c 'import platform; print("py" + "".join(platform.python_version_tuple()[:2]))'`
+
 test: ## run tests ONLY for current python version
 	python -m pytest
+
+lint: ## run linters, formatters for current python versions
+	flake8 yandexcloud
 
 test-all-versions: ## run test for multiple python versions using docker
 	# python 3.10 not provided in image so we skip it

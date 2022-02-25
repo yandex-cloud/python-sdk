@@ -4,7 +4,7 @@ import six
 
 # noinspection PyUnresolvedReferences
 # jwt package depends on cryptography
-import cryptography
+import cryptography  # noqa: F401
 import jwt
 import requests
 

@@ -1,4 +1,6 @@
 -e .
+flake8
+mccabe
 grpcio-tools==1.42.0
 pytest
 python-semantic-release
