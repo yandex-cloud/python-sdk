@@ -4,7 +4,7 @@ import six
 
 # noinspection PyUnresolvedReferences
 # jwt package depends on cryptography
-import cryptography  # pylint: disable=unused-import; noqa: F401
+import cryptography  # noqa: F401; pylint: disable=unused-import
 import jwt
 import requests
 
