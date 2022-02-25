@@ -7,7 +7,9 @@ from yandex.cloud.mdb.mysql.v1 import resource_preset_service_pb2 as yandex_dot_
 
 
 class ResourcePresetServiceStub(object):
-    """A set of methods for managing resource presets.
+    """A set of methods for managing MySQL resource presets.
+
+    See [the documentation](/docs/managed-mysql/concepts/instance-types) for details.
     """
 
     def __init__(self, channel):
@@ -29,13 +31,13 @@ class ResourcePresetServiceStub(object):
 
 
 class ResourcePresetServiceServicer(object):
-    """A set of methods for managing resource presets.
+    """A set of methods for managing MySQL resource presets.
+
+    See [the documentation](/docs/managed-mysql/concepts/instance-types) for details.
     """
 
     def Get(self, request, context):
-        """Returns the specified resource preset.
-
-        To get the list of available resource presets, make a [List] request.
+        """Retrieves information about a resource preset.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -69,7 +71,9 @@ def add_ResourcePresetServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class ResourcePresetService(object):
-    """A set of methods for managing resource presets.
+    """A set of methods for managing MySQL resource presets.
+
+    See [the documentation](/docs/managed-mysql/concepts/instance-types) for details.
     """
 
     @staticmethod

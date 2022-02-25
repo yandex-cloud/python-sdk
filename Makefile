@@ -23,6 +23,22 @@ test-all-versions: ## run test for multiple python versions using docker
 	# python 3.10 not provided in image so we skip it
 	docker run --rm -v $(REPO_ROOT):/src fkrull/multi-python tox -c /src -e py36,py37,py38,py39
 
+submodule:  ## update submodules
+	git submodule update --init --recursive --remote
+
+proto:  ## regenerate code from protobuf
+	rm -rf yandex
+	python3 -m grpc_tools.protoc \
+        --proto_path=cloudapi \
+        --proto_path=cloudapi/third_party/googleapis \
+        --python_out=. \
+        --grpc_python_out=. \
+        `find cloudapi/yandex -name '*.proto'`
+	find yandex -type d -exec touch {}/__init__.py \;
+
+release:  ## update changelog, bump version, build and publish package to pypi
+	python -m semantic_release publish --minor
+
 help: ## Show help message
 	@IFS=$$'\n' ; \
 	help_lines=(`fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##/:/'`); \

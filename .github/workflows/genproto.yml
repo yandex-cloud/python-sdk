@@ -1,0 +1,28 @@
+name: Generate code from cloudapi proto files
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Runs "At 04:00" (see https://crontab.guru)
+    - cron: '0 4 * * *'
+
+jobs:
+  genproto:
+    runs-on: ubuntu-latest
+    # disallows two or more release jobs to run in parallel
+    concurrency: genproto
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Generate code from proto
+      run: |
+        make submodule
+        make deps
+        make proto
+        
+        git config --global user.name 'Yandex.Cloud Bot'
+        git config --global user.email 'ycloud-bot@yandex.ru'
+        git add yandex cloudapi
+        git commit -m 'regenerate proto'
+        git push
