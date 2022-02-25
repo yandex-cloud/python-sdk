@@ -2,6 +2,13 @@
 
 <!--next-version-placeholder-->
 
+## v0.139.0 (2022-02-25)
+### Feature
+* Improve changelog generation
+ ([`5761abd`](https://github.com/yandex-cloud/python-sdk/commit/5761abd71a65abcc9b1383bfbb8a5021fdd0323c))
+* Regenerate proto
+ ([`bee7793`](https://github.com/yandex-cloud/python-sdk/commit/bee7793a76617a41ca8433e40422be69dba1247e))
+
 ## v0.138.0 (2022-02-25)
 ### Feature
 * Fix deps installation
