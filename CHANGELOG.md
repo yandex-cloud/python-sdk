@@ -2,6 +2,11 @@
 
 <!--next-version-placeholder-->
 
+## v0.140.0 (2022-02-25)
+### Feature
+* Use personal access token to trigger release workflow
+ ([`5f535c7`](https://github.com/yandex-cloud/python-sdk/commit/5f535c74d9d564e0d08f161ba7b51ef55adbb970))
+
 ## v0.139.0 (2022-02-25)
 ### Feature
 * Improve changelog generation
