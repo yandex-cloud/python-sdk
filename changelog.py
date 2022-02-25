@@ -1,8 +1,7 @@
 # coding: utf-8
 
 import semantic_release
-from semantic_release.history import parser_angular
-from semantic_release.history import parser_helpers
+from semantic_release.history import parser_angular, parser_helpers
 
 
 def parse_commit(message):
