@@ -9,8 +9,6 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 class UserServiceStub(object):
     """A set of methods for managing MySQL users.
-
-    See [the documentation](/docs/managed-mysql/operations/cluster-users) for details.
     """
 
     def __init__(self, channel):
@@ -58,54 +56,54 @@ class UserServiceStub(object):
 
 class UserServiceServicer(object):
     """A set of methods for managing MySQL users.
-
-    See [the documentation](/docs/managed-mysql/operations/cluster-users) for details.
     """
 
     def Get(self, request, context):
-        """Retrieves information about the specified user.
+        """Returns the specified MySQL user.
+
+        To get the list of available MySQL users, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Retrieves the list of users in a cluster.
+        """Retrieves a list of MySQL users in the specified cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Creates a user in a cluster.
+        """Creates a MySQL user in the specified cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Updates a user in a cluster.
+        """Modifies the specified MySQL user.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Deletes a user in a cluster.
+        """Deletes the specified MySQL user.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GrantPermission(self, request, context):
-        """Grants permission to access a database to a user in a cluster.
+        """Grants a permission to the specified MySQL user.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def RevokePermission(self, request, context):
-        """Revokes permission to access a database from a user in a cluster.
+        """Revokes a permission from the specified MySQL user.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -158,8 +156,6 @@ def add_UserServiceServicer_to_server(servicer, server):
  # This class is part of an EXPERIMENTAL API.
 class UserService(object):
     """A set of methods for managing MySQL users.
-
-    See [the documentation](/docs/managed-mysql/operations/cluster-users) for details.
     """
 
     @staticmethod

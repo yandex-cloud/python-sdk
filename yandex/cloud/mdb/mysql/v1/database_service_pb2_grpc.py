@@ -8,9 +8,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class DatabaseServiceStub(object):
-    """A set of methods for managing MySQL databases in a cluster.
-
-    See [the documentation](/docs/managed-mysql/operations/databases) for details.
+    """A set of methods for managing MySQL databases.
     """
 
     def __init__(self, channel):
@@ -42,34 +40,34 @@ class DatabaseServiceStub(object):
 
 
 class DatabaseServiceServicer(object):
-    """A set of methods for managing MySQL databases in a cluster.
-
-    See [the documentation](/docs/managed-mysql/operations/databases) for details.
+    """A set of methods for managing MySQL databases.
     """
 
     def Get(self, request, context):
-        """Retrieves information about the specified database.
+        """Returns the specified MySQL database.
+
+        To get the list of available MySQL databases, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Retrieves the list of databases in a cluster.
+        """Retrieves the list of MySQL databases in the specified cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Creates a new database in a cluster.
+        """Creates a new MySQL database in the specified cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Deletes a database from a cluster.
+        """Deletes the specified MySQL database.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -106,9 +104,7 @@ def add_DatabaseServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class DatabaseService(object):
-    """A set of methods for managing MySQL databases in a cluster.
-
-    See [the documentation](/docs/managed-mysql/operations/databases) for details.
+    """A set of methods for managing MySQL databases.
     """
 
     @staticmethod

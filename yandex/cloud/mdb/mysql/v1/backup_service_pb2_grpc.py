@@ -8,8 +8,6 @@ from yandex.cloud.mdb.mysql.v1 import backup_service_pb2 as yandex_dot_cloud_dot
 
 class BackupServiceStub(object):
     """A set of methods for managing MySQL backups.
-
-    See [the documentation](/docs/managed-mysql/operations/cluster-backups) for details.
     """
 
     def __init__(self, channel):
@@ -32,21 +30,19 @@ class BackupServiceStub(object):
 
 class BackupServiceServicer(object):
     """A set of methods for managing MySQL backups.
-
-    See [the documentation](/docs/managed-mysql/operations/cluster-backups) for details.
     """
 
     def Get(self, request, context):
-        """Retrieves information about the specified backup.
+        """Returns the specified MySQL backup.
+
+        To get the list of available MySQL backups, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Retrieves the list of backups in a folder.
-
-        To list backups for an existing cluster, make a [ClusterService.ListBackups] request.
+        """Retrieves the list of MySQL backups available for the specified folder.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -74,8 +70,6 @@ def add_BackupServiceServicer_to_server(servicer, server):
  # This class is part of an EXPERIMENTAL API.
 class BackupService(object):
     """A set of methods for managing MySQL backups.
-
-    See [the documentation](/docs/managed-mysql/operations/cluster-backups) for details.
     """
 
     @staticmethod
