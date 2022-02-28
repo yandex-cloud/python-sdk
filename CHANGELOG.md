@@ -2,6 +2,11 @@
 
 <!--next-version-placeholder-->
 
+## v0.141.0 (2022-02-28)
+### Feature
+* Zero exit code when no proto code changes
+ ([`b87099d`](https://github.com/yandex-cloud/python-sdk/commit/b87099d87e15bd65cee2e361dcc5271e2e2e8456))
+
 ## v0.140.0 (2022-02-25)
 ### Feature
 * Use personal access token to trigger release workflow
