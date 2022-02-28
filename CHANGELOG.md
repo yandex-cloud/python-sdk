@@ -2,6 +2,11 @@
 
 <!--next-version-placeholder-->
 
+## v0.144.0 (2022-02-28)
+### Feature
+* Set actual python versions & update README.md
+ ([`a1a6cf5`](https://github.com/yandex-cloud/python-sdk/commit/a1a6cf561b7e715845ab3edd3467f40d85c2481a))
+
 ## v0.143.0 (2022-02-28)
 ### Feature
 * Add code formatter check and command (#33)
