@@ -124,8 +124,9 @@ class RetryInterceptor(grpc.UnaryUnaryClientInterceptor):
             if 0 <= self.__max_retry_count <= attempt:
                 raise
 
-            # Looks like a bug: Instance of 'RpcError' has no 'code' member;
-            err_code = e.code()  # pylint: disable=no-member
+            err_code = None
+            if isinstance(e, grpc.Call):
+                err_code = e.code()
 
             if err_code == grpc.StatusCode.DEADLINE_EXCEEDED:
                 # if there is no per_call_timeout, or it is original deadline -> abort, otherwise, retry call.
