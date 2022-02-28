@@ -31,5 +31,5 @@ jobs:
         git config --global user.name 'Yandex.Cloud Bot'
         git config --global user.email 'ycloud-bot@yandex.ru'
         git add yandex cloudapi
-        git commit -m 'regenerate proto'
+        git commit -m 'regenerate proto' || echo "No changes in .proto files found"
         git push
