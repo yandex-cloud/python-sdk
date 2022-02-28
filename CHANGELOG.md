@@ -2,6 +2,25 @@
 
 <!--next-version-placeholder-->
 
+## v0.142.0 (2022-02-28)
+### Feature
+* Fix e.code() liniter warning
+ ([`ab96017`](https://github.com/yandex-cloud/python-sdk/commit/ab960177f6fdb4fa640f681bf2869057b986d149))
+* Fix ignore after merge
+ ([`d717d34`](https://github.com/yandex-cloud/python-sdk/commit/d717d347e532eb240704620f8c92b6eba5209879))
+* Ignore line length & fix trailing whitespaces
+ ([`4be4916`](https://github.com/yandex-cloud/python-sdk/commit/4be491662366fa23491107df1baa55ff9a37d5b0))
+* Fix W1202: Use lazy % formatting in logging functions (logging-format-interpolation)
+ ([`57f6aca`](https://github.com/yandex-cloud/python-sdk/commit/57f6aca88c91c29fc43a24d8bb0f61dcae492ce3))
+* Fix R1714: Consider merging these comparisons with "in" to "u.path in ('/yandex.cloud.iam.v1.IamTokenService', '/yandex.cloud.endpoint.ApiEndpointService')" (consider-using-in)
+ ([`7952ecf`](https://github.com/yandex-cloud/python-sdk/commit/7952ecfea80b03fa9793106e4b752a3fa674e732))
+* Fix R1711: Useless return at end of function or method (useless-return)
+ ([`aaa2ddd`](https://github.com/yandex-cloud/python-sdk/commit/aaa2ddd3ee6e42298c135fd7045e0a51f7f7a8b6))
+* Fix R1720: Unnecessary "else" after "raise" (no-else-raise)
+ ([`65bc6c6`](https://github.com/yandex-cloud/python-sdk/commit/65bc6c69df7e1099f7226b500bf2b477dd862e13))
+* Add pylint configurations
+ ([`bd10901`](https://github.com/yandex-cloud/python-sdk/commit/bd10901ede375a7259ac31538e7518e6dfd7b2a6))
+
 ## v0.141.0 (2022-02-28)
 ### Feature
 * Zero exit code when no proto code changes
