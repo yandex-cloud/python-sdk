@@ -1,6 +1,8 @@
 -e .
+black
 flake8
 grpcio-tools==1.42.0
+isort
 mccabe
 pylint
 pytest

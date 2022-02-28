@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
 from yandex.cloud.iam.v1.service_account_service_pb2 import ListServiceAccountsRequest
-from yandex.cloud.iam.v1.service_account_service_pb2_grpc import ServiceAccountServiceStub
+from yandex.cloud.iam.v1.service_account_service_pb2_grpc import (
+    ServiceAccountServiceStub,
+)
 from yandex.cloud.vpc.v1.network_service_pb2 import ListNetworksRequest
 from yandex.cloud.vpc.v1.network_service_pb2_grpc import NetworkServiceStub
 from yandex.cloud.vpc.v1.subnet_service_pb2 import ListSubnetsRequest
@@ -27,10 +29,10 @@ class Helpers(object):
             return service_accounts[0].id
         if len(service_accounts) == 0:
             raise RuntimeError(
-                'There are no service accounts in folder {folder_id}, please create it.'.format(folder_id=folder_id)
+                "There are no service accounts in folder {folder_id}, please create it.".format(folder_id=folder_id)
             )
         raise RuntimeError(
-            'There are more than one service account in folder {folder_id}, please specify it'.format(
+            "There are more than one service account in folder {folder_id}, please specify it".format(
                 folder_id=folder_id
             )
         )
@@ -46,10 +48,10 @@ class Helpers(object):
         """
         networks = self.sdk.client(NetworkServiceStub).List(ListNetworksRequest(folder_id=folder_id)).networks
         if not networks:
-            raise RuntimeError('No networks in folder: {folder_id}'.format(folder_id=folder_id))
+            raise RuntimeError("No networks in folder: {folder_id}".format(folder_id=folder_id))
         if len(networks) > 1:
             raise RuntimeError(
-                'There are more than one network in folder {folder_id}, please specify it'.format(folder_id=folder_id)
+                "There are more than one network in folder {folder_id}, please specify it".format(folder_id=folder_id)
             )
         return networks[0].id
 
@@ -67,8 +69,7 @@ class Helpers(object):
         :rtype str
         """
         subnet_service = self.sdk.client(SubnetServiceStub)
-        subnets = subnet_service.List(ListSubnetsRequest(
-            folder_id=folder_id)).subnets
+        subnets = subnet_service.List(ListSubnetsRequest(folder_id=folder_id)).subnets
         if network_id:
             applicable = [s for s in subnets if s.zone_id == zone_id and s.network_id == network_id]
         else:
@@ -76,7 +77,7 @@ class Helpers(object):
         if len(applicable) == 1:
             return applicable[0].id
         if len(applicable) == 0:
-            raise RuntimeError('There are no subnets in {zone_id} zone, please create it.'.format(zone_id=zone_id))
+            raise RuntimeError("There are no subnets in {zone_id} zone, please create it.".format(zone_id=zone_id))
         raise RuntimeError(
-            'There are more than one subnet in {zone_id} zone, please specify it'.format(zone_id=zone_id)
+            "There are more than one subnet in {zone_id} zone, please specify it".format(zone_id=zone_id)
         )

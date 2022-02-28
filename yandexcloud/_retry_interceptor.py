@@ -1,14 +1,16 @@
 import collections
-import grpc
 import time
 import uuid
 
+import grpc
+
 
 class _ClientCallDetails(
-        collections.namedtuple('_ClientCallDetails',
-                               ('method', 'timeout', 'metadata', 'credentials',
-                                'wait_for_ready', 'compression')),
-        grpc.ClientCallDetails):
+    collections.namedtuple(
+        "_ClientCallDetails", ("method", "timeout", "metadata", "credentials", "wait_for_ready", "compression")
+    ),
+    grpc.ClientCallDetails,
+):
     pass
 
 
@@ -28,6 +30,7 @@ class RetryInterceptor(grpc.UnaryUnaryClientInterceptor):
     5. Default retriable codes are UNAVAILABLE and RESOURCE_EXHAUSTED.
     6. Backoff function is called with retry attempt counter and should return sleep time in seconds (float).
     """
+
     _DEFAULT_RETRIABLE_CODES = (
         grpc.StatusCode.UNAVAILABLE,
         grpc.StatusCode.RESOURCE_EXHAUSTED,
@@ -36,12 +39,14 @@ class RetryInterceptor(grpc.UnaryUnaryClientInterceptor):
     _IDEMPOTENCY_TOKEN_METADATA_KEY = "idempotency-key"
     _ATTEMPT_METADATA_KEY = "x-retry-attempt"
 
-    def __init__(self,
-                 max_retry_count=0,
-                 retriable_codes=_DEFAULT_RETRIABLE_CODES,
-                 add_retry_count_to_header=False,
-                 back_off_func=None,
-                 per_call_timeout=None):
+    def __init__(
+        self,
+        max_retry_count=0,
+        retriable_codes=_DEFAULT_RETRIABLE_CODES,
+        add_retry_count_to_header=False,
+        back_off_func=None,
+        per_call_timeout=None,
+    ):
         # pylint: disable=super-init-not-called
         self.__max_retry_count = max_retry_count
         self.__retriable_codes = retriable_codes
@@ -73,7 +78,7 @@ class RetryInterceptor(grpc.UnaryUnaryClientInterceptor):
             if backoff_timeout > deadline_timeout:  # pylint: disable=consider-using-min-builtin
                 backoff_timeout = deadline_timeout
 
-        if backoff_timeout > 0.:
+        if backoff_timeout > 0.0:
             time.sleep(backoff_timeout)
 
     @staticmethod
@@ -142,14 +147,14 @@ class RetryInterceptor(grpc.UnaryUnaryClientInterceptor):
 
     @staticmethod
     def __adjust_timeout(client_call_details, deadline):
-        timeout = max(deadline - time.time(), 0.)
+        timeout = max(deadline - time.time(), 0.0)
         return _ClientCallDetails(
             client_call_details.method,
             timeout,
             client_call_details.metadata,
             client_call_details.credentials,
-            getattr(client_call_details, 'wait_for_ready', None),
-            getattr(client_call_details, 'compression', None),
+            getattr(client_call_details, "wait_for_ready", None),
+            getattr(client_call_details, "compression", None),
         )
 
     def __add_idempotency_token(self, client_call_details):
@@ -170,15 +175,17 @@ class RetryInterceptor(grpc.UnaryUnaryClientInterceptor):
                 if item[0] == header:
                     return client_call_details
 
-        metadata.append((
-            header,
-            value,
-        ))
+        metadata.append(
+            (
+                header,
+                value,
+            )
+        )
         return _ClientCallDetails(
             client_call_details.method,
             client_call_details.timeout,
             metadata,
             client_call_details.credentials,
-            getattr(client_call_details, 'wait_for_ready', None),
-            getattr(client_call_details, 'compression', None),
+            getattr(client_call_details, "wait_for_ready", None),
+            getattr(client_call_details, "compression", None),
         )

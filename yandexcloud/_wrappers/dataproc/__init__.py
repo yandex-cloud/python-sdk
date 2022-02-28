@@ -2,9 +2,9 @@
 
 import logging
 import random
-from six import string_types
 
 from google.protobuf.field_mask_pb2 import FieldMask
+from six import string_types
 
 import yandex.cloud.dataproc.v1.cluster_pb2 as cluster_pb
 import yandex.cloud.dataproc.v1.cluster_service_pb2 as cluster_service_pb
@@ -47,12 +47,12 @@ class Dataproc(object):
         s3_bucket,
         folder_id=None,
         cluster_name=None,
-        cluster_description='',
+        cluster_description="",
         cluster_image_version=None,
         ssh_public_keys=None,
         subnet_id=None,
         services=None,
-        zone='ru-central1-b',
+        zone="ru-central1-b",
         service_account_id=None,
         masternode_resource_preset=None,
         masternode_disk_size=None,
@@ -160,11 +160,11 @@ class Dataproc(object):
 
         folder_id = folder_id or self.default_folder_id
         if not folder_id:
-            raise RuntimeError('Folder ID must be specified to create cluster.')
+            raise RuntimeError("Folder ID must be specified to create cluster.")
 
         if not cluster_name:
             random_int = random.randint(0, 999)
-            cluster_name = 'dataproc-{random_int}'.format(random_int=random_int)
+            cluster_name = "dataproc-{random_int}".format(random_int=random_int)
 
         if not subnet_id:
             network_id = self.sdk.helpers.find_network_id(folder_id)
@@ -177,14 +177,14 @@ class Dataproc(object):
             if self.default_public_ssh_key:
                 ssh_public_keys = (self.default_public_ssh_key,)
             else:
-                raise RuntimeError('Public ssh keys must be specified.')
+                raise RuntimeError("Public ssh keys must be specified.")
         elif isinstance(ssh_public_keys, string_types):
             ssh_public_keys = [ssh_public_keys]
 
         if not s3_bucket:
-            raise RuntimeError('Object storage (S3) bucket must be specified.')
+            raise RuntimeError("Object storage (S3) bucket must be specified.")
 
-        gib = (1024 ** 3)
+        gib = 1024**3
         if masternode_disk_size:
             masternode_disk_size *= gib
         if datanode_disk_size:
@@ -193,7 +193,7 @@ class Dataproc(object):
             computenode_disk_size *= gib
         subclusters = [
             cluster_service_pb.CreateSubclusterConfigSpec(
-                name='master',
+                name="master",
                 role=subcluster_pb.Role.MASTERNODE,
                 resources=common_pb.Resources(
                     resource_preset_id=masternode_resource_preset,
@@ -204,7 +204,7 @@ class Dataproc(object):
                 hosts_count=1,
             ),
             cluster_service_pb.CreateSubclusterConfigSpec(
-                name='data',
+                name="data",
                 role=subcluster_pb.Role.DATANODE,
                 resources=common_pb.Resources(
                     resource_preset_id=datanode_resource_preset,
@@ -230,7 +230,7 @@ class Dataproc(object):
                 )
             subclusters.append(
                 cluster_service_pb.CreateSubclusterConfigSpec(
-                    name='compute',
+                    name="compute",
                     role=subcluster_pb.Role.COMPUTENODE,
                     resources=common_pb.Resources(
                         resource_preset_id=computenode_resource_preset,
@@ -263,7 +263,7 @@ class Dataproc(object):
         result = self.sdk.create_operation_and_get_result(
             request,
             service=cluster_service_grpc_pb.ClusterServiceStub,
-            method_name='Create',
+            method_name="Create",
             response_type=cluster_pb.Cluster,
             meta_type=cluster_service_pb.CreateClusterMetadata,
         )
@@ -333,27 +333,27 @@ class Dataproc(object):
         # pylint: disable=too-many-locals
         cluster_id = cluster_id or self.cluster_id
         if not cluster_id:
-            raise RuntimeError('Cluster id must be specified.')
+            raise RuntimeError("Cluster id must be specified.")
         subnet_id = subnet_id or self.subnet_id
         if not subnet_id:
-            raise RuntimeError('Subnet ID id must be specified.')
+            raise RuntimeError("Subnet ID id must be specified.")
         subnet_id = subnet_id or self.subnet_id
         if not subnet_id:
-            raise RuntimeError('Subnet ID id must be specified.')
+            raise RuntimeError("Subnet ID id must be specified.")
 
         types = {
-            'compute': subcluster_pb.Role.COMPUTENODE,
-            'data': subcluster_pb.Role.DATANODE,
+            "compute": subcluster_pb.Role.COMPUTENODE,
+            "data": subcluster_pb.Role.DATANODE,
         }
         if disk_size:
-            disk_size *= 1024 ** 3
+            disk_size *= 1024**3
         resources = common_pb.Resources(
             resource_preset_id=resource_preset,
             disk_size=disk_size,
             disk_type_id=disk_type,
         )
 
-        self.log.info('Adding subcluster to cluster {cluster_id}', cluster_id=cluster_id)
+        self.log.info("Adding subcluster to cluster {cluster_id}", cluster_id=cluster_id)
         autoscaling_config = None
         if max_hosts_count:
             autoscaling_config = subcluster_pb.AutoscalingConfig(
@@ -377,7 +377,7 @@ class Dataproc(object):
         return self.sdk.create_operation_and_get_result(
             request,
             service=subcluster_service_grpc_pb.SubclusterServiceStub,
-            method_name='Create',
+            method_name="Create",
             response_type=subcluster_pb.Subcluster,
             meta_type=subcluster_service_pb.CreateSubclusterMetadata,
         )
@@ -393,10 +393,10 @@ class Dataproc(object):
         """
         cluster_id = cluster_id or self.cluster_id
         if not cluster_id:
-            raise RuntimeError('Cluster id must be specified.')
+            raise RuntimeError("Cluster id must be specified.")
 
-        self.log.info('Updating cluster {cluster_id}', cluster_id=cluster_id)
-        mask = FieldMask(paths=['description'])
+        self.log.info("Updating cluster {cluster_id}", cluster_id=cluster_id)
+        mask = FieldMask(paths=["description"])
         request = cluster_service_pb.UpdateClusterRequest(
             cluster_id=cluster_id,
             update_mask=mask,
@@ -405,7 +405,7 @@ class Dataproc(object):
         return self.sdk.create_operation_and_get_result(
             request,
             service=cluster_service_grpc_pb.ClusterServiceStub,
-            method_name='Update',
+            method_name="Update",
             response_type=cluster_pb.Cluster,
             meta_type=cluster_service_pb.UpdateClusterMetadata,
         )
@@ -418,14 +418,14 @@ class Dataproc(object):
         """
         cluster_id = cluster_id or self.cluster_id
         if not cluster_id:
-            raise RuntimeError('Cluster id must be specified.')
+            raise RuntimeError("Cluster id must be specified.")
 
-        self.log.info('Deleting cluster {cluster_id}', cluster_id=cluster_id)
+        self.log.info("Deleting cluster {cluster_id}", cluster_id=cluster_id)
         request = cluster_service_pb.DeleteClusterRequest(cluster_id=cluster_id)
         return self.sdk.create_operation_and_get_result(
             request,
             service=cluster_service_grpc_pb.ClusterServiceStub,
-            method_name='Delete',
+            method_name="Delete",
             meta_type=cluster_service_pb.DeleteClusterMetadata,
         )
 
@@ -437,7 +437,7 @@ class Dataproc(object):
         continue_on_failure=False,
         properties=None,
         cluster_id=None,
-        name='Hive job',
+        name="Hive job",
     ):
         """
         Run Hive job in Yandex.Cloud Data Proc cluster.
@@ -460,10 +460,10 @@ class Dataproc(object):
         """
         cluster_id = cluster_id or self.cluster_id
         if not cluster_id:
-            raise RuntimeError('Cluster id must be specified.')
+            raise RuntimeError("Cluster id must be specified.")
         if (query and query_file_uri) or not (query or query_file_uri):
-            raise RuntimeError('Either query or query_file_uri must be specified.')
-        self.log.info('Running Hive job. Cluster ID: {cluster_id}', cluster_id=cluster_id)
+            raise RuntimeError("Either query or query_file_uri must be specified.")
+        self.log.info("Running Hive job. Cluster ID: {cluster_id}", cluster_id=cluster_id)
 
         hive_job = job_pb.HiveJob(
             query_file_uri=query_file_uri,
@@ -473,7 +473,7 @@ class Dataproc(object):
         )
         if query:
             hive_job = job_pb.HiveJob(
-                query_list=job_pb.QueryList(queries=query.split('\n')),
+                query_list=job_pb.QueryList(queries=query.split("\n")),
                 script_variables=script_variables,
                 continue_on_failure=continue_on_failure,
                 properties=properties,
@@ -486,7 +486,7 @@ class Dataproc(object):
         return self.sdk.create_operation_and_get_result(
             request,
             service=job_service_grpc_pb.JobServiceStub,
-            method_name='Create',
+            method_name="Create",
             response_type=job_pb.Job,
             meta_type=job_service_pb.CreateJobMetadata,
         )
@@ -501,7 +501,7 @@ class Dataproc(object):
         args=None,
         properties=None,
         cluster_id=None,
-        name='Mapreduce job'
+        name="Mapreduce job",
     ):
         """
         Run Mapreduce job in Yandex.Cloud Data Proc cluster.
@@ -529,8 +529,8 @@ class Dataproc(object):
         """
         cluster_id = cluster_id or self.cluster_id
         if not cluster_id:
-            raise RuntimeError('Cluster id must be specified.')
-        self.log.info('Running Mapreduce job. Cluster ID: {cluster_id}', cluster_id=cluster_id)
+            raise RuntimeError("Cluster id must be specified.")
+        self.log.info("Running Mapreduce job. Cluster ID: {cluster_id}", cluster_id=cluster_id)
 
         request = job_service_pb.CreateJobRequest(
             cluster_id=cluster_id,
@@ -543,12 +543,12 @@ class Dataproc(object):
                 file_uris=file_uris,
                 args=args,
                 properties=properties,
-            )
+            ),
         )
         return self.sdk.create_operation_and_get_result(
             request,
             service=job_service_grpc_pb.JobServiceStub,
-            method_name='Create',
+            method_name="Create",
             response_type=job_pb.Job,
             meta_type=job_service_pb.CreateJobMetadata,
         )
@@ -563,7 +563,7 @@ class Dataproc(object):
         args=None,
         properties=None,
         cluster_id=None,
-        name='Spark job',
+        name="Spark job",
         packages=None,
         repositories=None,
         exclude_packages=None,
@@ -601,8 +601,8 @@ class Dataproc(object):
         """
         cluster_id = cluster_id or self.cluster_id
         if not cluster_id:
-            raise RuntimeError('Cluster id must be specified.')
-        self.log.info('Running Spark job. Cluster ID: {cluster_id}', cluster_id=cluster_id)
+            raise RuntimeError("Cluster id must be specified.")
+        self.log.info("Running Spark job. Cluster ID: {cluster_id}", cluster_id=cluster_id)
 
         request = job_service_pb.CreateJobRequest(
             cluster_id=cluster_id,
@@ -618,12 +618,12 @@ class Dataproc(object):
                 packages=packages,
                 repositories=repositories,
                 exclude_packages=exclude_packages,
-            )
+            ),
         )
         return self.sdk.create_operation_and_get_result(
             request,
             service=job_service_grpc_pb.JobServiceStub,
-            method_name='Create',
+            method_name="Create",
             response_type=job_pb.Job,
             meta_type=job_service_pb.CreateJobMetadata,
         )
@@ -638,7 +638,7 @@ class Dataproc(object):
         args=None,
         properties=None,
         cluster_id=None,
-        name='Pyspark job',
+        name="Pyspark job",
         packages=None,
         repositories=None,
         exclude_packages=None,
@@ -676,8 +676,8 @@ class Dataproc(object):
         """
         cluster_id = cluster_id or self.cluster_id
         if not cluster_id:
-            raise RuntimeError('Cluster id must be specified.')
-        self.log.info('Running Pyspark job. Cluster ID: {cluster_id}', cluster_id=cluster_id)
+            raise RuntimeError("Cluster id must be specified.")
+        self.log.info("Running Pyspark job. Cluster ID: {cluster_id}", cluster_id=cluster_id)
         request = job_service_pb.CreateJobRequest(
             cluster_id=cluster_id,
             name=name,
@@ -692,12 +692,12 @@ class Dataproc(object):
                 packages=packages,
                 repositories=repositories,
                 exclude_packages=exclude_packages,
-            )
+            ),
         )
         return self.sdk.create_operation_and_get_result(
             request,
             service=job_service_grpc_pb.JobServiceStub,
-            method_name='Create',
+            method_name="Create",
             response_type=job_pb.Job,
             meta_type=job_service_pb.CreateJobMetadata,
         )
