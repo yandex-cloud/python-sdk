@@ -76,7 +76,10 @@ class OriginServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Updates origin from origin group.
+        """Updates the specified origin from the origin group.
+
+        Changes may take up to 15 minutes to apply. Afterwards, it is recommended to purge cache of the resources that
+        use the origin via a [CacheService.Purge] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

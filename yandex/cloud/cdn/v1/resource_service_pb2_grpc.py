@@ -8,9 +8,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class ResourceServiceStub(object):
-    """
-    Provider's resources management service.
-
+    """Provider's resources management service.
     """
 
     def __init__(self, channel):
@@ -52,9 +50,7 @@ class ResourceServiceStub(object):
 
 
 class ResourceServiceServicer(object):
-    """
-    Provider's resources management service.
-
+    """Provider's resources management service.
     """
 
     def Get(self, request, context):
@@ -72,14 +68,21 @@ class ResourceServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Creates client's CDN resource.
+        """Creates a CDN resource in the specified folder.
+
+        Creation may take up to 15 minutes.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Updates of client's CDN resource. (PATCH behavior)
+        """Updates the specified CDN resource.
+
+        The method implements patch behaviour, i.e. only the fields specified in the request are updated in the resource.
+
+        Changes may take up to 15 minutes to apply. Afterwards, it is recommended to purge the resource's cache via a
+        [CacheService.Purge] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -141,9 +144,7 @@ def add_ResourceServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class ResourceService(object):
-    """
-    Provider's resources management service.
-
+    """Provider's resources management service.
     """
 
     @staticmethod
