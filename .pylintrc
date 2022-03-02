@@ -14,3 +14,4 @@ disable=
     R0903, # Too few public methods (1/2) (too-few-public-methods)
     R0913, # Too many arguments (6/5) (too-many-arguments)
     R1710, # Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
+    W1202, # Use lazy % formatting in logging functions (logging-format-interpolation)
