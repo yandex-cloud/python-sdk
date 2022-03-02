@@ -353,7 +353,7 @@ class Dataproc(object):
             disk_type_id=disk_type,
         )
 
-        self.log.info("Adding subcluster to cluster {cluster_id}", cluster_id=cluster_id)
+        self.log.info("Adding subcluster to cluster {cluster_id}".format(cluster_id=cluster_id))
         autoscaling_config = None
         if max_hosts_count:
             autoscaling_config = subcluster_pb.AutoscalingConfig(
@@ -395,7 +395,7 @@ class Dataproc(object):
         if not cluster_id:
             raise RuntimeError("Cluster id must be specified.")
 
-        self.log.info("Updating cluster {cluster_id}", cluster_id=cluster_id)
+        self.log.info("Updating cluster {cluster_id}".format(cluster_id=cluster_id))
         mask = FieldMask(paths=["description"])
         request = cluster_service_pb.UpdateClusterRequest(
             cluster_id=cluster_id,
@@ -420,7 +420,7 @@ class Dataproc(object):
         if not cluster_id:
             raise RuntimeError("Cluster id must be specified.")
 
-        self.log.info("Deleting cluster {cluster_id}", cluster_id=cluster_id)
+        self.log.info("Deleting cluster {cluster_id}".format(cluster_id=cluster_id))
         request = cluster_service_pb.DeleteClusterRequest(cluster_id=cluster_id)
         return self.sdk.create_operation_and_get_result(
             request,
@@ -463,7 +463,7 @@ class Dataproc(object):
             raise RuntimeError("Cluster id must be specified.")
         if (query and query_file_uri) or not (query or query_file_uri):
             raise RuntimeError("Either query or query_file_uri must be specified.")
-        self.log.info("Running Hive job. Cluster ID: {cluster_id}", cluster_id=cluster_id)
+        self.log.info("Running Hive job. Cluster ID: {cluster_id}".format(cluster_id=cluster_id))
 
         hive_job = job_pb.HiveJob(
             query_file_uri=query_file_uri,
@@ -530,7 +530,7 @@ class Dataproc(object):
         cluster_id = cluster_id or self.cluster_id
         if not cluster_id:
             raise RuntimeError("Cluster id must be specified.")
-        self.log.info("Running Mapreduce job. Cluster ID: {cluster_id}", cluster_id=cluster_id)
+        self.log.info("Running Mapreduce job. Cluster ID: {cluster_id}".format(cluster_id=cluster_id))
 
         request = job_service_pb.CreateJobRequest(
             cluster_id=cluster_id,
@@ -602,7 +602,7 @@ class Dataproc(object):
         cluster_id = cluster_id or self.cluster_id
         if not cluster_id:
             raise RuntimeError("Cluster id must be specified.")
-        self.log.info("Running Spark job. Cluster ID: {cluster_id}", cluster_id=cluster_id)
+        self.log.info("Running Spark job. Cluster ID: {cluster_id}".format(cluster_id=cluster_id))
 
         request = job_service_pb.CreateJobRequest(
             cluster_id=cluster_id,
@@ -677,7 +677,7 @@ class Dataproc(object):
         cluster_id = cluster_id or self.cluster_id
         if not cluster_id:
             raise RuntimeError("Cluster id must be specified.")
-        self.log.info("Running Pyspark job. Cluster ID: {cluster_id}", cluster_id=cluster_id)
+        self.log.info("Running Pyspark job. Cluster ID: {cluster_id}".format(cluster_id=cluster_id))
         request = job_service_pb.CreateJobRequest(
             cluster_id=cluster_id,
             name=name,
