@@ -111,7 +111,7 @@ class DiskServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Move(self, request, context):
-        """Moves disk between folders.
+        """Moves the specified disk to another folder of the same cloud.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
