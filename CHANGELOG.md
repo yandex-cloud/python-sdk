@@ -2,6 +2,11 @@
 
 <!--next-version-placeholder-->
 
+## v0.147.0 (2022-03-08)
+### Feature
+* Regenerate proto
+ ([`313bc79`](https://github.com/yandex-cloud/python-sdk/commit/313bc79d21999d2c7f5c79432bbea59840a0e66c))
+
 ## v0.146.0 (2022-03-02)
 ### Feature
 * Revert "Fix W1202: Use lazy % formatting in logging functions (logging-format-interpolation)"
