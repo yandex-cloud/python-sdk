@@ -33,7 +33,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\035yandex.cloud.api.mdb.redis.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/redis/v1;redis',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n/yandex/cloud/mdb/redis/v1/cluster_service.proto\x12\x19yandex.cloud.mdb.redis.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1bgoogle/type/timeofday.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a&yandex/cloud/mdb/redis/v1/backup.proto\x1a\'yandex/cloud/mdb/redis/v1/cluster.proto\x1a/yandex/cloud/mdb/redis/v1/config/redis5_0.proto\x1a/yandex/cloud/mdb/redis/v1/config/redis6_0.proto\x1a/yandex/cloud/mdb/redis/v1/config/redis6_2.proto\x1a+yandex/cloud/mdb/redis/v1/maintenance.proto\"5\n\x11GetClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x90\x01\n\x13ListClustersRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"e\n\x14ListClustersResponse\x12\x34\n\x08\x63lusters\x18\x01 \x03(\x0b\x32\".yandex.cloud.mdb.redis.v1.Cluster\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xfc\x05\n\x14\x43reateClusterRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12,\n\x04name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8c\x01\n\x06labels\x18\x04 \x03(\x0b\x32;.yandex.cloud.mdb.redis.v1.CreateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12I\n\x0b\x65nvironment\x18\x05 \x01(\x0e\x32..yandex.cloud.mdb.redis.v1.Cluster.EnvironmentB\x04\xe8\xc7\x31\x01\x12@\n\x0b\x63onfig_spec\x18\x06 \x01(\x0b\x32%.yandex.cloud.mdb.redis.v1.ConfigSpecB\x04\xe8\xc7\x31\x01\x12?\n\nhost_specs\x18\x07 \x03(\x0b\x32#.yandex.cloud.mdb.redis.v1.HostSpecB\x06\x82\xc8\x31\x02>0\x12 \n\nnetwork_id\x18\n \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x0f\n\x07sharded\x18\x0b \x01(\x08\x12\x1a\n\x12security_group_ids\x18\x0c \x03(\t\x12/\n\x0btls_enabled\x18\r \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x1b\n\x13\x64\x65letion_protection\x18\x0e \x01(\x08\x12L\n\x10persistence_mode\x18\x0f \x01(\x0e\x32\x32.yandex.cloud.mdb.redis.v1.Cluster.PersistenceMode\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15\x43reateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\xfe\x04\n\x14UpdateClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8c\x01\n\x06labels\x18\x04 \x03(\x0b\x32;.yandex.cloud.mdb.redis.v1.UpdateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12:\n\x0b\x63onfig_spec\x18\x05 \x01(\x0b\x32%.yandex.cloud.mdb.redis.v1.ConfigSpec\x12(\n\x04name\x18\x06 \x01(\tB\x1a\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12H\n\x12maintenance_window\x18\x07 \x01(\x0b\x32,.yandex.cloud.mdb.redis.v1.MaintenanceWindow\x12\x1a\n\x12security_group_ids\x18\x08 \x03(\t\x12\x1b\n\x13\x64\x65letion_protection\x18\t \x01(\x08\x12L\n\x10persistence_mode\x18\n \x01(\x0e\x32\x32.yandex.cloud.mdb.redis.v1.Cluster.PersistenceMode\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15UpdateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"8\n\x14\x44\x65leteClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x44\x65leteClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"7\n\x13StartClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"*\n\x14StartClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"6\n\x12StopClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\")\n\x13StopClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"c\n\x12MoveClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12+\n\x15\x64\x65stination_folder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"b\n\x13MoveClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x18\n\x10source_folder_id\x18\x02 \x01(\t\x12\x1d\n\x15\x64\x65stination_folder_id\x18\x03 \x01(\t\"8\n\x14\x42\x61\x63kupClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x42\x61\x63kupClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\xe5\x05\n\x15RestoreClusterRequest\x12\x17\n\tbackup_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12,\n\x04name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8d\x01\n\x06labels\x18\x04 \x03(\x0b\x32<.yandex.cloud.mdb.redis.v1.RestoreClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12I\n\x0b\x65nvironment\x18\x05 \x01(\x0e\x32..yandex.cloud.mdb.redis.v1.Cluster.EnvironmentB\x04\xe8\xc7\x31\x01\x12@\n\x0b\x63onfig_spec\x18\x06 \x01(\x0b\x32%.yandex.cloud.mdb.redis.v1.ConfigSpecB\x04\xe8\xc7\x31\x01\x12?\n\nhost_specs\x18\x07 \x03(\x0b\x32#.yandex.cloud.mdb.redis.v1.HostSpecB\x06\x82\xc8\x31\x02>0\x12 \n\nnetwork_id\x18\x08 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1b\n\tfolder_id\x18\t \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1a\n\x12security_group_ids\x18\n \x03(\t\x12/\n\x0btls_enabled\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12L\n\x10persistence_mode\x18\x0c \x01(\x0e\x32\x32.yandex.cloud.mdb.redis.v1.Cluster.PersistenceMode\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"?\n\x16RestoreClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tbackup_id\x18\x02 \x01(\t\"^\n\x1bStartClusterFailoverRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\nhost_names\x18\x02 \x03(\tB\t\x8a\xc8\x31\x05<=253\"F\n\x1cStartClusterFailoverMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nhost_names\x18\x02 \x03(\t\"\xca\x02\n\x1cRescheduleMaintenanceRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x65\n\x0freschedule_type\x18\x02 \x01(\x0e\x32\x46.yandex.cloud.mdb.redis.v1.RescheduleMaintenanceRequest.RescheduleTypeB\x04\xe8\xc7\x31\x01\x12\x31\n\rdelayed_until\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"n\n\x0eRescheduleType\x12\x1f\n\x1bRESCHEDULE_TYPE_UNSPECIFIED\x10\x00\x12\r\n\tIMMEDIATE\x10\x01\x12\x19\n\x15NEXT_AVAILABLE_WINDOW\x10\x02\x12\x11\n\rSPECIFIC_TIME\x10\x03\"f\n\x1dRescheduleMaintenanceMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x31\n\rdelayed_until\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xae\x01\n\tLogRecord\x12-\n\ttimestamp\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x42\n\x07message\x18\x02 \x03(\x0b\x32\x31.yandex.cloud.mdb.redis.v1.LogRecord.MessageEntry\x1a.\n\x0cMessageEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xf8\x02\n\x16ListClusterLogsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x15\n\rcolumn_filter\x18\x02 \x03(\t\x12S\n\x0cservice_type\x18\x03 \x01(\x0e\x32=.yandex.cloud.mdb.redis.v1.ListClusterLogsRequest.ServiceType\x12-\n\tfrom_time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07to_time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1d\n\tpage_size\x18\x06 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x07 \x01(\tB\t\x8a\xc8\x31\x05<=100\"6\n\x0bServiceType\x12\x1c\n\x18SERVICE_TYPE_UNSPECIFIED\x10\x00\x12\t\n\x05REDIS\x10\x01\"f\n\x17ListClusterLogsResponse\x12\x32\n\x04logs\x18\x01 \x03(\x0b\x32$.yandex.cloud.mdb.redis.v1.LogRecord\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"b\n\x0fStreamLogRecord\x12\x34\n\x06record\x18\x01 \x01(\x0b\x32$.yandex.cloud.mdb.redis.v1.LogRecord\x12\x19\n\x11next_record_token\x18\x02 \x01(\t\"\xfb\x02\n\x18StreamClusterLogsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x15\n\rcolumn_filter\x18\x02 \x03(\t\x12U\n\x0cservice_type\x18\x03 \x01(\x0e\x32?.yandex.cloud.mdb.redis.v1.StreamClusterLogsRequest.ServiceType\x12-\n\tfrom_time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07to_time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1f\n\x0crecord_token\x18\x06 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x07 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"6\n\x0bServiceType\x12\x1c\n\x18SERVICE_TYPE_UNSPECIFIED\x10\x00\x12\t\n\x05REDIS\x10\x01\"~\n\x1cListClusterOperationsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"o\n\x1dListClusterOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"{\n\x19ListClusterBackupsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"i\n\x1aListClusterBackupsResponse\x12\x32\n\x07\x62\x61\x63kups\x18\x01 \x03(\x0b\x32!.yandex.cloud.mdb.redis.v1.Backup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"y\n\x17ListClusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"c\n\x18ListClusterHostsResponse\x12.\n\x05hosts\x18\x01 \x03(\x0b\x32\x1f.yandex.cloud.mdb.redis.v1.Host\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"{\n\x16\x41\x64\x64\x43lusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12?\n\nhost_specs\x18\x02 \x03(\x0b\x32#.yandex.cloud.mdb.redis.v1.HostSpecB\x06\x82\xc8\x31\x02>0\"A\n\x17\x41\x64\x64\x43lusterHostsMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nhost_names\x18\x02 \x03(\t\"b\n\x19\x44\x65leteClusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12#\n\nhost_names\x18\x02 \x03(\tB\x0f\x82\xc8\x31\x02>0\x8a\xc8\x31\x05<=253\"D\n\x1a\x44\x65leteClusterHostsMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nhost_names\x18\x02 \x03(\t\"n\n\x16GetClusterShardRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\nshard_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"z\n\x18ListClusterShardsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"f\n\x19ListClusterShardsResponse\x12\x30\n\x06shards\x18\x01 \x03(\x0b\x32 .yandex.cloud.mdb.redis.v1.Shard\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xaf\x01\n\x16\x41\x64\x64\x43lusterShardRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\nshard_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12?\n\nhost_specs\x18\x04 \x03(\x0b\x32#.yandex.cloud.mdb.redis.v1.HostSpecB\x06\x82\xc8\x31\x02>0\"A\n\x17\x41\x64\x64\x43lusterShardMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nshard_name\x18\x02 \x01(\t\"q\n\x19\x44\x65leteClusterShardRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\nshard_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"D\n\x1a\x44\x65leteClusterShardMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nshard_name\x18\x02 \x01(\t\";\n\x17RebalanceClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\".\n\x18RebalanceClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"^\n\x08HostSpec\x12\x0f\n\x07zone_id\x18\x01 \x01(\t\x12\x11\n\tsubnet_id\x18\x02 \x01(\t\x12.\n\nshard_name\x18\x03 \x01(\tB\x1a\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"\xe9\x03\n\nConfigSpec\x12\x0f\n\x07version\x18\x01 \x01(\t\x12]\n\x10redis_config_5_0\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.mdb.redis.v1.config.RedisConfig5_0H\x00R\x0fredisConfig_5_0\x12]\n\x10redis_config_6_0\x18\x06 \x01(\x0b\x32\x30.yandex.cloud.mdb.redis.v1.config.RedisConfig6_0H\x00R\x0fredisConfig_6_0\x12]\n\x10redis_config_6_2\x18\x07 \x01(\x0b\x32\x30.yandex.cloud.mdb.redis.v1.config.RedisConfig6_2H\x00R\x0fredisConfig_6_2\x12\x37\n\tresources\x18\x03 \x01(\x0b\x32$.yandex.cloud.mdb.redis.v1.Resources\x12\x33\n\x13\x62\x61\x63kup_window_start\x18\x04 \x01(\x0b\x32\x16.google.type.TimeOfDay\x12\x31\n\x06\x61\x63\x63\x65ss\x18\x05 \x01(\x0b\x32!.yandex.cloud.mdb.redis.v1.AccessB\x0c\n\nredis_spec2\xab#\n\x0e\x43lusterService\x12\x88\x01\n\x03Get\x12,.yandex.cloud.mdb.redis.v1.GetClusterRequest\x1a\".yandex.cloud.mdb.redis.v1.Cluster\"/\x82\xd3\xe4\x93\x02)\x12\'/managed-redis/v1/clusters/{cluster_id}\x12\x8b\x01\n\x04List\x12..yandex.cloud.mdb.redis.v1.ListClustersRequest\x1a/.yandex.cloud.mdb.redis.v1.ListClustersResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/managed-redis/v1/clusters\x12\xa7\x01\n\x06\x43reate\x12/.yandex.cloud.mdb.redis.v1.CreateClusterRequest\x1a!.yandex.cloud.operation.Operation\"I\x82\xd3\xe4\x93\x02\x1f\"\x1a/managed-redis/v1/clusters:\x01*\xb2\xd2* \n\x15\x43reateClusterMetadata\x12\x07\x43luster\x12\xb4\x01\n\x06Update\x12/.yandex.cloud.mdb.redis.v1.UpdateClusterRequest\x1a!.yandex.cloud.operation.Operation\"V\x82\xd3\xe4\x93\x02,2\'/managed-redis/v1/clusters/{cluster_id}:\x01*\xb2\xd2* \n\x15UpdateClusterMetadata\x12\x07\x43luster\x12\xbf\x01\n\x06\x44\x65lete\x12/.yandex.cloud.mdb.redis.v1.DeleteClusterRequest\x1a!.yandex.cloud.operation.Operation\"a\x82\xd3\xe4\x93\x02)*\'/managed-redis/v1/clusters/{cluster_id}\xb2\xd2*.\n\x15\x44\x65leteClusterMetadata\x12\x15google.protobuf.Empty\x12\xb4\x01\n\x05Start\x12..yandex.cloud.mdb.redis.v1.StartClusterRequest\x1a!.yandex.cloud.operation.Operation\"X\x82\xd3\xe4\x93\x02/\"-/managed-redis/v1/clusters/{cluster_id}:start\xb2\xd2*\x1f\n\x14StartClusterMetadata\x12\x07\x43luster\x12\xb0\x01\n\x04Stop\x12-.yandex.cloud.mdb.redis.v1.StopClusterRequest\x1a!.yandex.cloud.operation.Operation\"V\x82\xd3\xe4\x93\x02.\",/managed-redis/v1/clusters/{cluster_id}:stop\xb2\xd2*\x1e\n\x13StopClusterMetadata\x12\x07\x43luster\x12\xb3\x01\n\x04Move\x12-.yandex.cloud.mdb.redis.v1.MoveClusterRequest\x1a!.yandex.cloud.operation.Operation\"Y\x82\xd3\xe4\x93\x02\x31\",/managed-redis/v1/clusters/{cluster_id}:move:\x01*\xb2\xd2*\x1e\n\x13MoveClusterMetadata\x12\x07\x43luster\x12\xb8\x01\n\x06\x42\x61\x63kup\x12/.yandex.cloud.mdb.redis.v1.BackupClusterRequest\x1a!.yandex.cloud.operation.Operation\"Z\x82\xd3\xe4\x93\x02\x30\"./managed-redis/v1/clusters/{cluster_id}:backup\xb2\xd2* \n\x15\x42\x61\x63kupClusterMetadata\x12\x07\x43luster\x12\xb2\x01\n\x07Restore\x12\x30.yandex.cloud.mdb.redis.v1.RestoreClusterRequest\x1a!.yandex.cloud.operation.Operation\"R\x82\xd3\xe4\x93\x02\'\"\"/managed-redis/v1/clusters:restore:\x01*\xb2\xd2*!\n\x16RestoreClusterMetadata\x12\x07\x43luster\x12\xe9\x01\n\x15RescheduleMaintenance\x12\x37.yandex.cloud.mdb.redis.v1.RescheduleMaintenanceRequest\x1a!.yandex.cloud.operation.Operation\"t\x82\xd3\xe4\x93\x02\x42\"=/managed-redis/v1/clusters/{cluster_id}:rescheduleMaintenance:\x01*\xb2\xd2*(\n\x1dRescheduleMaintenanceMetadata\x12\x07\x43luster\x12\xd7\x01\n\rStartFailover\x12\x36.yandex.cloud.mdb.redis.v1.StartClusterFailoverRequest\x1a!.yandex.cloud.operation.Operation\"k\x82\xd3\xe4\x93\x02:\"5/managed-redis/v1/clusters/{cluster_id}:startFailover:\x01*\xb2\xd2*\'\n\x1cStartClusterFailoverMetadata\x12\x07\x43luster\x12\xa7\x01\n\x08ListLogs\x12\x31.yandex.cloud.mdb.redis.v1.ListClusterLogsRequest\x1a\x32.yandex.cloud.mdb.redis.v1.ListClusterLogsResponse\"4\x82\xd3\xe4\x93\x02.\x12,/managed-redis/v1/clusters/{cluster_id}:logs\x12\xac\x01\n\nStreamLogs\x12\x33.yandex.cloud.mdb.redis.v1.StreamClusterLogsRequest\x1a*.yandex.cloud.mdb.redis.v1.StreamLogRecord\";\x82\xd3\xe4\x93\x02\x35\x12\x33/managed-redis/v1/clusters/{cluster_id}:stream_logs0\x01\x12\xbf\x01\n\x0eListOperations\x12\x37.yandex.cloud.mdb.redis.v1.ListClusterOperationsRequest\x1a\x38.yandex.cloud.mdb.redis.v1.ListClusterOperationsResponse\":\x82\xd3\xe4\x93\x02\x34\x12\x32/managed-redis/v1/clusters/{cluster_id}/operations\x12\xb3\x01\n\x0bListBackups\x12\x34.yandex.cloud.mdb.redis.v1.ListClusterBackupsRequest\x1a\x35.yandex.cloud.mdb.redis.v1.ListClusterBackupsResponse\"7\x82\xd3\xe4\x93\x02\x31\x12//managed-redis/v1/clusters/{cluster_id}/backups\x12\xab\x01\n\tListHosts\x12\x32.yandex.cloud.mdb.redis.v1.ListClusterHostsRequest\x1a\x33.yandex.cloud.mdb.redis.v1.ListClusterHostsResponse\"5\x82\xd3\xe4\x93\x02/\x12-/managed-redis/v1/clusters/{cluster_id}/hosts\x12\xda\x01\n\x08\x41\x64\x64Hosts\x12\x31.yandex.cloud.mdb.redis.v1.AddClusterHostsRequest\x1a!.yandex.cloud.operation.Operation\"x\x82\xd3\xe4\x93\x02>\"9/managed-redis/v1/clusters/{cluster_id}/hosts:batchCreate:\x01*\xb2\xd2*0\n\x17\x41\x64\x64\x43lusterHostsMetadata\x12\x15google.protobuf.Empty\x12\xe3\x01\n\x0b\x44\x65leteHosts\x12\x34.yandex.cloud.mdb.redis.v1.DeleteClusterHostsRequest\x1a!.yandex.cloud.operation.Operation\"{\x82\xd3\xe4\x93\x02>\"9/managed-redis/v1/clusters/{cluster_id}/hosts:batchDelete:\x01*\xb2\xd2*3\n\x1a\x44\x65leteClusterHostsMetadata\x12\x15google.protobuf.Empty\x12\xa4\x01\n\x08GetShard\x12\x31.yandex.cloud.mdb.redis.v1.GetClusterShardRequest\x1a .yandex.cloud.mdb.redis.v1.Shard\"C\x82\xd3\xe4\x93\x02=\x12;/managed-redis/v1/clusters/{cluster_id}/shards/{shard_name}\x12\xaf\x01\n\nListShards\x12\x33.yandex.cloud.mdb.redis.v1.ListClusterShardsRequest\x1a\x34.yandex.cloud.mdb.redis.v1.ListClusterShardsResponse\"6\x82\xd3\xe4\x93\x02\x30\x12./managed-redis/v1/clusters/{cluster_id}/shards\x12\xbf\x01\n\x08\x41\x64\x64Shard\x12\x31.yandex.cloud.mdb.redis.v1.AddClusterShardRequest\x1a!.yandex.cloud.operation.Operation\"]\x82\xd3\xe4\x93\x02\x33\"./managed-redis/v1/clusters/{cluster_id}/shards:\x01*\xb2\xd2* \n\x17\x41\x64\x64\x43lusterShardMetadata\x12\x05Shard\x12\xe2\x01\n\x0b\x44\x65leteShard\x12\x34.yandex.cloud.mdb.redis.v1.DeleteClusterShardRequest\x1a!.yandex.cloud.operation.Operation\"z\x82\xd3\xe4\x93\x02=*;/managed-redis/v1/clusters/{cluster_id}/shards/{shard_name}\xb2\xd2*3\n\x1a\x44\x65leteClusterShardMetadata\x12\x15google.protobuf.Empty\x12\xc4\x01\n\tRebalance\x12\x32.yandex.cloud.mdb.redis.v1.RebalanceClusterRequest\x1a!.yandex.cloud.operation.Operation\"`\x82\xd3\xe4\x93\x02\x33\"1/managed-redis/v1/clusters/{cluster_id}:rebalance\xb2\xd2*#\n\x18RebalanceClusterMetadata\x12\x07\x43lusterBd\n\x1dyandex.cloud.api.mdb.redis.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/redis/v1;redisb\x06proto3'
+  serialized_pb=b'\n/yandex/cloud/mdb/redis/v1/cluster_service.proto\x12\x19yandex.cloud.mdb.redis.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1bgoogle/type/timeofday.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a&yandex/cloud/mdb/redis/v1/backup.proto\x1a\'yandex/cloud/mdb/redis/v1/cluster.proto\x1a/yandex/cloud/mdb/redis/v1/config/redis5_0.proto\x1a/yandex/cloud/mdb/redis/v1/config/redis6_0.proto\x1a/yandex/cloud/mdb/redis/v1/config/redis6_2.proto\x1a+yandex/cloud/mdb/redis/v1/maintenance.proto\"5\n\x11GetClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x90\x01\n\x13ListClustersRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"e\n\x14ListClustersResponse\x12\x34\n\x08\x63lusters\x18\x01 \x03(\x0b\x32\".yandex.cloud.mdb.redis.v1.Cluster\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xfc\x05\n\x14\x43reateClusterRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12,\n\x04name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8c\x01\n\x06labels\x18\x04 \x03(\x0b\x32;.yandex.cloud.mdb.redis.v1.CreateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12I\n\x0b\x65nvironment\x18\x05 \x01(\x0e\x32..yandex.cloud.mdb.redis.v1.Cluster.EnvironmentB\x04\xe8\xc7\x31\x01\x12@\n\x0b\x63onfig_spec\x18\x06 \x01(\x0b\x32%.yandex.cloud.mdb.redis.v1.ConfigSpecB\x04\xe8\xc7\x31\x01\x12?\n\nhost_specs\x18\x07 \x03(\x0b\x32#.yandex.cloud.mdb.redis.v1.HostSpecB\x06\x82\xc8\x31\x02>0\x12 \n\nnetwork_id\x18\n \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x0f\n\x07sharded\x18\x0b \x01(\x08\x12\x1a\n\x12security_group_ids\x18\x0c \x03(\t\x12/\n\x0btls_enabled\x18\r \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x1b\n\x13\x64\x65letion_protection\x18\x0e \x01(\x08\x12L\n\x10persistence_mode\x18\x0f \x01(\x0e\x32\x32.yandex.cloud.mdb.redis.v1.Cluster.PersistenceMode\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15\x43reateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\xfe\x04\n\x14UpdateClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8c\x01\n\x06labels\x18\x04 \x03(\x0b\x32;.yandex.cloud.mdb.redis.v1.UpdateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12:\n\x0b\x63onfig_spec\x18\x05 \x01(\x0b\x32%.yandex.cloud.mdb.redis.v1.ConfigSpec\x12(\n\x04name\x18\x06 \x01(\tB\x1a\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12H\n\x12maintenance_window\x18\x07 \x01(\x0b\x32,.yandex.cloud.mdb.redis.v1.MaintenanceWindow\x12\x1a\n\x12security_group_ids\x18\x08 \x03(\t\x12\x1b\n\x13\x64\x65letion_protection\x18\t \x01(\x08\x12L\n\x10persistence_mode\x18\n \x01(\x0e\x32\x32.yandex.cloud.mdb.redis.v1.Cluster.PersistenceMode\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15UpdateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"8\n\x14\x44\x65leteClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x44\x65leteClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"7\n\x13StartClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"*\n\x14StartClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"6\n\x12StopClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\")\n\x13StopClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"c\n\x12MoveClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12+\n\x15\x64\x65stination_folder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"b\n\x13MoveClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x18\n\x10source_folder_id\x18\x02 \x01(\t\x12\x1d\n\x15\x64\x65stination_folder_id\x18\x03 \x01(\t\"\x8b\x01\n\x19UpdateClusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12L\n\x11update_host_specs\x18\x02 \x03(\x0b\x32).yandex.cloud.mdb.redis.v1.UpdateHostSpecB\x06\x82\xc8\x31\x02>0\"D\n\x1aUpdateClusterHostsMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nhost_names\x18\x02 \x03(\t\"8\n\x14\x42\x61\x63kupClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x42\x61\x63kupClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\xe5\x05\n\x15RestoreClusterRequest\x12\x17\n\tbackup_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12,\n\x04name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8d\x01\n\x06labels\x18\x04 \x03(\x0b\x32<.yandex.cloud.mdb.redis.v1.RestoreClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12I\n\x0b\x65nvironment\x18\x05 \x01(\x0e\x32..yandex.cloud.mdb.redis.v1.Cluster.EnvironmentB\x04\xe8\xc7\x31\x01\x12@\n\x0b\x63onfig_spec\x18\x06 \x01(\x0b\x32%.yandex.cloud.mdb.redis.v1.ConfigSpecB\x04\xe8\xc7\x31\x01\x12?\n\nhost_specs\x18\x07 \x03(\x0b\x32#.yandex.cloud.mdb.redis.v1.HostSpecB\x06\x82\xc8\x31\x02>0\x12 \n\nnetwork_id\x18\x08 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1b\n\tfolder_id\x18\t \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1a\n\x12security_group_ids\x18\n \x03(\t\x12/\n\x0btls_enabled\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12L\n\x10persistence_mode\x18\x0c \x01(\x0e\x32\x32.yandex.cloud.mdb.redis.v1.Cluster.PersistenceMode\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"?\n\x16RestoreClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tbackup_id\x18\x02 \x01(\t\"^\n\x1bStartClusterFailoverRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\nhost_names\x18\x02 \x03(\tB\t\x8a\xc8\x31\x05<=253\"F\n\x1cStartClusterFailoverMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nhost_names\x18\x02 \x03(\t\"\xca\x02\n\x1cRescheduleMaintenanceRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x65\n\x0freschedule_type\x18\x02 \x01(\x0e\x32\x46.yandex.cloud.mdb.redis.v1.RescheduleMaintenanceRequest.RescheduleTypeB\x04\xe8\xc7\x31\x01\x12\x31\n\rdelayed_until\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"n\n\x0eRescheduleType\x12\x1f\n\x1bRESCHEDULE_TYPE_UNSPECIFIED\x10\x00\x12\r\n\tIMMEDIATE\x10\x01\x12\x19\n\x15NEXT_AVAILABLE_WINDOW\x10\x02\x12\x11\n\rSPECIFIC_TIME\x10\x03\"f\n\x1dRescheduleMaintenanceMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x31\n\rdelayed_until\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xae\x01\n\tLogRecord\x12-\n\ttimestamp\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x42\n\x07message\x18\x02 \x03(\x0b\x32\x31.yandex.cloud.mdb.redis.v1.LogRecord.MessageEntry\x1a.\n\x0cMessageEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xf8\x02\n\x16ListClusterLogsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x15\n\rcolumn_filter\x18\x02 \x03(\t\x12S\n\x0cservice_type\x18\x03 \x01(\x0e\x32=.yandex.cloud.mdb.redis.v1.ListClusterLogsRequest.ServiceType\x12-\n\tfrom_time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07to_time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1d\n\tpage_size\x18\x06 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x07 \x01(\tB\t\x8a\xc8\x31\x05<=100\"6\n\x0bServiceType\x12\x1c\n\x18SERVICE_TYPE_UNSPECIFIED\x10\x00\x12\t\n\x05REDIS\x10\x01\"f\n\x17ListClusterLogsResponse\x12\x32\n\x04logs\x18\x01 \x03(\x0b\x32$.yandex.cloud.mdb.redis.v1.LogRecord\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"b\n\x0fStreamLogRecord\x12\x34\n\x06record\x18\x01 \x01(\x0b\x32$.yandex.cloud.mdb.redis.v1.LogRecord\x12\x19\n\x11next_record_token\x18\x02 \x01(\t\"\xfb\x02\n\x18StreamClusterLogsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x15\n\rcolumn_filter\x18\x02 \x03(\t\x12U\n\x0cservice_type\x18\x03 \x01(\x0e\x32?.yandex.cloud.mdb.redis.v1.StreamClusterLogsRequest.ServiceType\x12-\n\tfrom_time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07to_time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1f\n\x0crecord_token\x18\x06 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x07 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"6\n\x0bServiceType\x12\x1c\n\x18SERVICE_TYPE_UNSPECIFIED\x10\x00\x12\t\n\x05REDIS\x10\x01\"~\n\x1cListClusterOperationsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"o\n\x1dListClusterOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"{\n\x19ListClusterBackupsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"i\n\x1aListClusterBackupsResponse\x12\x32\n\x07\x62\x61\x63kups\x18\x01 \x03(\x0b\x32!.yandex.cloud.mdb.redis.v1.Backup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"y\n\x17ListClusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"c\n\x18ListClusterHostsResponse\x12.\n\x05hosts\x18\x01 \x03(\x0b\x32\x1f.yandex.cloud.mdb.redis.v1.Host\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"{\n\x16\x41\x64\x64\x43lusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12?\n\nhost_specs\x18\x02 \x03(\x0b\x32#.yandex.cloud.mdb.redis.v1.HostSpecB\x06\x82\xc8\x31\x02>0\"A\n\x17\x41\x64\x64\x43lusterHostsMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nhost_names\x18\x02 \x03(\t\"b\n\x19\x44\x65leteClusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12#\n\nhost_names\x18\x02 \x03(\tB\x0f\x82\xc8\x31\x02>0\x8a\xc8\x31\x05<=253\"D\n\x1a\x44\x65leteClusterHostsMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nhost_names\x18\x02 \x03(\t\"n\n\x16GetClusterShardRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\nshard_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"z\n\x18ListClusterShardsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"f\n\x19ListClusterShardsResponse\x12\x30\n\x06shards\x18\x01 \x03(\x0b\x32 .yandex.cloud.mdb.redis.v1.Shard\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xaf\x01\n\x16\x41\x64\x64\x43lusterShardRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\nshard_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12?\n\nhost_specs\x18\x04 \x03(\x0b\x32#.yandex.cloud.mdb.redis.v1.HostSpecB\x06\x82\xc8\x31\x02>0\"A\n\x17\x41\x64\x64\x43lusterShardMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nshard_name\x18\x02 \x01(\t\"q\n\x19\x44\x65leteClusterShardRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\nshard_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"D\n\x1a\x44\x65leteClusterShardMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nshard_name\x18\x02 \x01(\t\";\n\x17RebalanceClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\".\n\x18RebalanceClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\xab\x01\n\x0eUpdateHostSpec\x12\x17\n\thost_name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x35\n\x10replica_priority\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x18\n\x10\x61ssign_public_ip\x18\x03 \x01(\x08\x12/\n\x0bupdate_mask\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\"\xaf\x01\n\x08HostSpec\x12\x0f\n\x07zone_id\x18\x01 \x01(\t\x12\x11\n\tsubnet_id\x18\x02 \x01(\t\x12.\n\nshard_name\x18\x03 \x01(\tB\x1a\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x35\n\x10replica_priority\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x18\n\x10\x61ssign_public_ip\x18\x05 \x01(\x08\"\xe9\x03\n\nConfigSpec\x12\x0f\n\x07version\x18\x01 \x01(\t\x12]\n\x10redis_config_5_0\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.mdb.redis.v1.config.RedisConfig5_0H\x00R\x0fredisConfig_5_0\x12]\n\x10redis_config_6_0\x18\x06 \x01(\x0b\x32\x30.yandex.cloud.mdb.redis.v1.config.RedisConfig6_0H\x00R\x0fredisConfig_6_0\x12]\n\x10redis_config_6_2\x18\x07 \x01(\x0b\x32\x30.yandex.cloud.mdb.redis.v1.config.RedisConfig6_2H\x00R\x0fredisConfig_6_2\x12\x37\n\tresources\x18\x03 \x01(\x0b\x32$.yandex.cloud.mdb.redis.v1.Resources\x12\x33\n\x13\x62\x61\x63kup_window_start\x18\x04 \x01(\x0b\x32\x16.google.type.TimeOfDay\x12\x31\n\x06\x61\x63\x63\x65ss\x18\x05 \x01(\x0b\x32!.yandex.cloud.mdb.redis.v1.AccessB\x0c\n\nredis_spec2\x91%\n\x0e\x43lusterService\x12\x88\x01\n\x03Get\x12,.yandex.cloud.mdb.redis.v1.GetClusterRequest\x1a\".yandex.cloud.mdb.redis.v1.Cluster\"/\x82\xd3\xe4\x93\x02)\x12\'/managed-redis/v1/clusters/{cluster_id}\x12\x8b\x01\n\x04List\x12..yandex.cloud.mdb.redis.v1.ListClustersRequest\x1a/.yandex.cloud.mdb.redis.v1.ListClustersResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/managed-redis/v1/clusters\x12\xa7\x01\n\x06\x43reate\x12/.yandex.cloud.mdb.redis.v1.CreateClusterRequest\x1a!.yandex.cloud.operation.Operation\"I\x82\xd3\xe4\x93\x02\x1f\"\x1a/managed-redis/v1/clusters:\x01*\xb2\xd2* \n\x15\x43reateClusterMetadata\x12\x07\x43luster\x12\xb4\x01\n\x06Update\x12/.yandex.cloud.mdb.redis.v1.UpdateClusterRequest\x1a!.yandex.cloud.operation.Operation\"V\x82\xd3\xe4\x93\x02,2\'/managed-redis/v1/clusters/{cluster_id}:\x01*\xb2\xd2* \n\x15UpdateClusterMetadata\x12\x07\x43luster\x12\xbf\x01\n\x06\x44\x65lete\x12/.yandex.cloud.mdb.redis.v1.DeleteClusterRequest\x1a!.yandex.cloud.operation.Operation\"a\x82\xd3\xe4\x93\x02)*\'/managed-redis/v1/clusters/{cluster_id}\xb2\xd2*.\n\x15\x44\x65leteClusterMetadata\x12\x15google.protobuf.Empty\x12\xb4\x01\n\x05Start\x12..yandex.cloud.mdb.redis.v1.StartClusterRequest\x1a!.yandex.cloud.operation.Operation\"X\x82\xd3\xe4\x93\x02/\"-/managed-redis/v1/clusters/{cluster_id}:start\xb2\xd2*\x1f\n\x14StartClusterMetadata\x12\x07\x43luster\x12\xb0\x01\n\x04Stop\x12-.yandex.cloud.mdb.redis.v1.StopClusterRequest\x1a!.yandex.cloud.operation.Operation\"V\x82\xd3\xe4\x93\x02.\",/managed-redis/v1/clusters/{cluster_id}:stop\xb2\xd2*\x1e\n\x13StopClusterMetadata\x12\x07\x43luster\x12\xb3\x01\n\x04Move\x12-.yandex.cloud.mdb.redis.v1.MoveClusterRequest\x1a!.yandex.cloud.operation.Operation\"Y\x82\xd3\xe4\x93\x02\x31\",/managed-redis/v1/clusters/{cluster_id}:move:\x01*\xb2\xd2*\x1e\n\x13MoveClusterMetadata\x12\x07\x43luster\x12\xb8\x01\n\x06\x42\x61\x63kup\x12/.yandex.cloud.mdb.redis.v1.BackupClusterRequest\x1a!.yandex.cloud.operation.Operation\"Z\x82\xd3\xe4\x93\x02\x30\"./managed-redis/v1/clusters/{cluster_id}:backup\xb2\xd2* \n\x15\x42\x61\x63kupClusterMetadata\x12\x07\x43luster\x12\xb2\x01\n\x07Restore\x12\x30.yandex.cloud.mdb.redis.v1.RestoreClusterRequest\x1a!.yandex.cloud.operation.Operation\"R\x82\xd3\xe4\x93\x02\'\"\"/managed-redis/v1/clusters:restore:\x01*\xb2\xd2*!\n\x16RestoreClusterMetadata\x12\x07\x43luster\x12\xe9\x01\n\x15RescheduleMaintenance\x12\x37.yandex.cloud.mdb.redis.v1.RescheduleMaintenanceRequest\x1a!.yandex.cloud.operation.Operation\"t\x82\xd3\xe4\x93\x02\x42\"=/managed-redis/v1/clusters/{cluster_id}:rescheduleMaintenance:\x01*\xb2\xd2*(\n\x1dRescheduleMaintenanceMetadata\x12\x07\x43luster\x12\xd7\x01\n\rStartFailover\x12\x36.yandex.cloud.mdb.redis.v1.StartClusterFailoverRequest\x1a!.yandex.cloud.operation.Operation\"k\x82\xd3\xe4\x93\x02:\"5/managed-redis/v1/clusters/{cluster_id}:startFailover:\x01*\xb2\xd2*\'\n\x1cStartClusterFailoverMetadata\x12\x07\x43luster\x12\xa7\x01\n\x08ListLogs\x12\x31.yandex.cloud.mdb.redis.v1.ListClusterLogsRequest\x1a\x32.yandex.cloud.mdb.redis.v1.ListClusterLogsResponse\"4\x82\xd3\xe4\x93\x02.\x12,/managed-redis/v1/clusters/{cluster_id}:logs\x12\xac\x01\n\nStreamLogs\x12\x33.yandex.cloud.mdb.redis.v1.StreamClusterLogsRequest\x1a*.yandex.cloud.mdb.redis.v1.StreamLogRecord\";\x82\xd3\xe4\x93\x02\x35\x12\x33/managed-redis/v1/clusters/{cluster_id}:stream_logs0\x01\x12\xbf\x01\n\x0eListOperations\x12\x37.yandex.cloud.mdb.redis.v1.ListClusterOperationsRequest\x1a\x38.yandex.cloud.mdb.redis.v1.ListClusterOperationsResponse\":\x82\xd3\xe4\x93\x02\x34\x12\x32/managed-redis/v1/clusters/{cluster_id}/operations\x12\xb3\x01\n\x0bListBackups\x12\x34.yandex.cloud.mdb.redis.v1.ListClusterBackupsRequest\x1a\x35.yandex.cloud.mdb.redis.v1.ListClusterBackupsResponse\"7\x82\xd3\xe4\x93\x02\x31\x12//managed-redis/v1/clusters/{cluster_id}/backups\x12\xab\x01\n\tListHosts\x12\x32.yandex.cloud.mdb.redis.v1.ListClusterHostsRequest\x1a\x33.yandex.cloud.mdb.redis.v1.ListClusterHostsResponse\"5\x82\xd3\xe4\x93\x02/\x12-/managed-redis/v1/clusters/{cluster_id}/hosts\x12\xda\x01\n\x08\x41\x64\x64Hosts\x12\x31.yandex.cloud.mdb.redis.v1.AddClusterHostsRequest\x1a!.yandex.cloud.operation.Operation\"x\x82\xd3\xe4\x93\x02>\"9/managed-redis/v1/clusters/{cluster_id}/hosts:batchCreate:\x01*\xb2\xd2*0\n\x17\x41\x64\x64\x43lusterHostsMetadata\x12\x15google.protobuf.Empty\x12\xe3\x01\n\x0b\x44\x65leteHosts\x12\x34.yandex.cloud.mdb.redis.v1.DeleteClusterHostsRequest\x1a!.yandex.cloud.operation.Operation\"{\x82\xd3\xe4\x93\x02>\"9/managed-redis/v1/clusters/{cluster_id}/hosts:batchDelete:\x01*\xb2\xd2*3\n\x1a\x44\x65leteClusterHostsMetadata\x12\x15google.protobuf.Empty\x12\xe3\x01\n\x0bUpdateHosts\x12\x34.yandex.cloud.mdb.redis.v1.UpdateClusterHostsRequest\x1a!.yandex.cloud.operation.Operation\"{\x82\xd3\xe4\x93\x02>\"9/managed-redis/v1/clusters/{cluster_id}/hosts:batchUpdate:\x01*\xb2\xd2*3\n\x1aUpdateClusterHostsMetadata\x12\x15google.protobuf.Empty\x12\xa4\x01\n\x08GetShard\x12\x31.yandex.cloud.mdb.redis.v1.GetClusterShardRequest\x1a .yandex.cloud.mdb.redis.v1.Shard\"C\x82\xd3\xe4\x93\x02=\x12;/managed-redis/v1/clusters/{cluster_id}/shards/{shard_name}\x12\xaf\x01\n\nListShards\x12\x33.yandex.cloud.mdb.redis.v1.ListClusterShardsRequest\x1a\x34.yandex.cloud.mdb.redis.v1.ListClusterShardsResponse\"6\x82\xd3\xe4\x93\x02\x30\x12./managed-redis/v1/clusters/{cluster_id}/shards\x12\xbf\x01\n\x08\x41\x64\x64Shard\x12\x31.yandex.cloud.mdb.redis.v1.AddClusterShardRequest\x1a!.yandex.cloud.operation.Operation\"]\x82\xd3\xe4\x93\x02\x33\"./managed-redis/v1/clusters/{cluster_id}/shards:\x01*\xb2\xd2* \n\x17\x41\x64\x64\x43lusterShardMetadata\x12\x05Shard\x12\xe2\x01\n\x0b\x44\x65leteShard\x12\x34.yandex.cloud.mdb.redis.v1.DeleteClusterShardRequest\x1a!.yandex.cloud.operation.Operation\"z\x82\xd3\xe4\x93\x02=*;/managed-redis/v1/clusters/{cluster_id}/shards/{shard_name}\xb2\xd2*3\n\x1a\x44\x65leteClusterShardMetadata\x12\x15google.protobuf.Empty\x12\xc4\x01\n\tRebalance\x12\x32.yandex.cloud.mdb.redis.v1.RebalanceClusterRequest\x1a!.yandex.cloud.operation.Operation\"`\x82\xd3\xe4\x93\x02\x33\"1/managed-redis/v1/clusters/{cluster_id}:rebalance\xb2\xd2*#\n\x18RebalanceClusterMetadata\x12\x07\x43lusterBd\n\x1dyandex.cloud.api.mdb.redis.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/redis/v1;redisb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,google_dot_type_dot_timeofday__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_backup__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_config_dot_redis5__0__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_config_dot_redis6__0__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_config_dot_redis6__2__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_maintenance__pb2.DESCRIPTOR,])
 
@@ -69,8 +69,8 @@ _RESCHEDULEMAINTENANCEREQUEST_RESCHEDULETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4222,
-  serialized_end=4332,
+  serialized_start=4434,
+  serialized_end=4544,
 )
 _sym_db.RegisterEnumDescriptor(_RESCHEDULEMAINTENANCEREQUEST_RESCHEDULETYPE)
 
@@ -94,8 +94,8 @@ _LISTCLUSTERLOGSREQUEST_SERVICETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4938,
-  serialized_end=4992,
+  serialized_start=5150,
+  serialized_end=5204,
 )
 _sym_db.RegisterEnumDescriptor(_LISTCLUSTERLOGSREQUEST_SERVICETYPE)
 
@@ -119,8 +119,8 @@ _STREAMCLUSTERLOGSREQUEST_SERVICETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4938,
-  serialized_end=4992,
+  serialized_start=5150,
+  serialized_end=5204,
 )
 _sym_db.RegisterEnumDescriptor(_STREAMCLUSTERLOGSREQUEST_SERVICETYPE)
 
@@ -877,6 +877,84 @@ _MOVECLUSTERMETADATA = _descriptor.Descriptor(
 )
 
 
+_UPDATECLUSTERHOSTSREQUEST = _descriptor.Descriptor(
+  name='UpdateClusterHostsRequest',
+  full_name='yandex.cloud.mdb.redis.v1.UpdateClusterHostsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='yandex.cloud.mdb.redis.v1.UpdateClusterHostsRequest.cluster_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='update_host_specs', full_name='yandex.cloud.mdb.redis.v1.UpdateClusterHostsRequest.update_host_specs', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\202\3101\002>0', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2922,
+  serialized_end=3061,
+)
+
+
+_UPDATECLUSTERHOSTSMETADATA = _descriptor.Descriptor(
+  name='UpdateClusterHostsMetadata',
+  full_name='yandex.cloud.mdb.redis.v1.UpdateClusterHostsMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='yandex.cloud.mdb.redis.v1.UpdateClusterHostsMetadata.cluster_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='host_names', full_name='yandex.cloud.mdb.redis.v1.UpdateClusterHostsMetadata.host_names', index=1,
+      number=2, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3063,
+  serialized_end=3131,
+)
+
+
 _BACKUPCLUSTERREQUEST = _descriptor.Descriptor(
   name='BackupClusterRequest',
   full_name='yandex.cloud.mdb.redis.v1.BackupClusterRequest',
@@ -904,8 +982,8 @@ _BACKUPCLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2921,
-  serialized_end=2977,
+  serialized_start=3133,
+  serialized_end=3189,
 )
 
 
@@ -936,8 +1014,8 @@ _BACKUPCLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2979,
-  serialized_end=3022,
+  serialized_start=3191,
+  serialized_end=3234,
 )
 
 
@@ -1083,8 +1161,8 @@ _RESTORECLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3025,
-  serialized_end=3766,
+  serialized_start=3237,
+  serialized_end=3978,
 )
 
 
@@ -1122,8 +1200,8 @@ _RESTORECLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3768,
-  serialized_end=3831,
+  serialized_start=3980,
+  serialized_end=4043,
 )
 
 
@@ -1161,8 +1239,8 @@ _STARTCLUSTERFAILOVERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3833,
-  serialized_end=3927,
+  serialized_start=4045,
+  serialized_end=4139,
 )
 
 
@@ -1200,8 +1278,8 @@ _STARTCLUSTERFAILOVERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3929,
-  serialized_end=3999,
+  serialized_start=4141,
+  serialized_end=4211,
 )
 
 
@@ -1247,8 +1325,8 @@ _RESCHEDULEMAINTENANCEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4002,
-  serialized_end=4332,
+  serialized_start=4214,
+  serialized_end=4544,
 )
 
 
@@ -1286,8 +1364,8 @@ _RESCHEDULEMAINTENANCEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4334,
-  serialized_end=4436,
+  serialized_start=4546,
+  serialized_end=4648,
 )
 
 
@@ -1325,8 +1403,8 @@ _LOGRECORD_MESSAGEENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4567,
-  serialized_end=4613,
+  serialized_start=4779,
+  serialized_end=4825,
 )
 
 _LOGRECORD = _descriptor.Descriptor(
@@ -1363,8 +1441,8 @@ _LOGRECORD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4439,
-  serialized_end=4613,
+  serialized_start=4651,
+  serialized_end=4825,
 )
 
 
@@ -1438,8 +1516,8 @@ _LISTCLUSTERLOGSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4616,
-  serialized_end=4992,
+  serialized_start=4828,
+  serialized_end=5204,
 )
 
 
@@ -1477,8 +1555,8 @@ _LISTCLUSTERLOGSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4994,
-  serialized_end=5096,
+  serialized_start=5206,
+  serialized_end=5308,
 )
 
 
@@ -1516,8 +1594,8 @@ _STREAMLOGRECORD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5098,
-  serialized_end=5196,
+  serialized_start=5310,
+  serialized_end=5408,
 )
 
 
@@ -1591,8 +1669,8 @@ _STREAMCLUSTERLOGSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5199,
-  serialized_end=5578,
+  serialized_start=5411,
+  serialized_end=5790,
 )
 
 
@@ -1637,8 +1715,8 @@ _LISTCLUSTEROPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5580,
-  serialized_end=5706,
+  serialized_start=5792,
+  serialized_end=5918,
 )
 
 
@@ -1676,8 +1754,8 @@ _LISTCLUSTEROPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5708,
-  serialized_end=5819,
+  serialized_start=5920,
+  serialized_end=6031,
 )
 
 
@@ -1722,8 +1800,8 @@ _LISTCLUSTERBACKUPSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5821,
-  serialized_end=5944,
+  serialized_start=6033,
+  serialized_end=6156,
 )
 
 
@@ -1761,8 +1839,8 @@ _LISTCLUSTERBACKUPSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5946,
-  serialized_end=6051,
+  serialized_start=6158,
+  serialized_end=6263,
 )
 
 
@@ -1807,8 +1885,8 @@ _LISTCLUSTERHOSTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6053,
-  serialized_end=6174,
+  serialized_start=6265,
+  serialized_end=6386,
 )
 
 
@@ -1846,8 +1924,8 @@ _LISTCLUSTERHOSTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6176,
-  serialized_end=6275,
+  serialized_start=6388,
+  serialized_end=6487,
 )
 
 
@@ -1885,8 +1963,8 @@ _ADDCLUSTERHOSTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6277,
-  serialized_end=6400,
+  serialized_start=6489,
+  serialized_end=6612,
 )
 
 
@@ -1924,8 +2002,8 @@ _ADDCLUSTERHOSTSMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6402,
-  serialized_end=6467,
+  serialized_start=6614,
+  serialized_end=6679,
 )
 
 
@@ -1963,8 +2041,8 @@ _DELETECLUSTERHOSTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6469,
-  serialized_end=6567,
+  serialized_start=6681,
+  serialized_end=6779,
 )
 
 
@@ -2002,8 +2080,8 @@ _DELETECLUSTERHOSTSMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6569,
-  serialized_end=6637,
+  serialized_start=6781,
+  serialized_end=6849,
 )
 
 
@@ -2041,8 +2119,8 @@ _GETCLUSTERSHARDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6639,
-  serialized_end=6749,
+  serialized_start=6851,
+  serialized_end=6961,
 )
 
 
@@ -2087,8 +2165,8 @@ _LISTCLUSTERSHARDSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6751,
-  serialized_end=6873,
+  serialized_start=6963,
+  serialized_end=7085,
 )
 
 
@@ -2126,8 +2204,8 @@ _LISTCLUSTERSHARDSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6875,
-  serialized_end=6977,
+  serialized_start=7087,
+  serialized_end=7189,
 )
 
 
@@ -2172,8 +2250,8 @@ _ADDCLUSTERSHARDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6980,
-  serialized_end=7155,
+  serialized_start=7192,
+  serialized_end=7367,
 )
 
 
@@ -2211,8 +2289,8 @@ _ADDCLUSTERSHARDMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7157,
-  serialized_end=7222,
+  serialized_start=7369,
+  serialized_end=7434,
 )
 
 
@@ -2250,8 +2328,8 @@ _DELETECLUSTERSHARDREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7224,
-  serialized_end=7337,
+  serialized_start=7436,
+  serialized_end=7549,
 )
 
 
@@ -2289,8 +2367,8 @@ _DELETECLUSTERSHARDMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7339,
-  serialized_end=7407,
+  serialized_start=7551,
+  serialized_end=7619,
 )
 
 
@@ -2321,8 +2399,8 @@ _REBALANCECLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7409,
-  serialized_end=7468,
+  serialized_start=7621,
+  serialized_end=7680,
 )
 
 
@@ -2353,8 +2431,61 @@ _REBALANCECLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7470,
-  serialized_end=7516,
+  serialized_start=7682,
+  serialized_end=7728,
+)
+
+
+_UPDATEHOSTSPEC = _descriptor.Descriptor(
+  name='UpdateHostSpec',
+  full_name='yandex.cloud.mdb.redis.v1.UpdateHostSpec',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='host_name', full_name='yandex.cloud.mdb.redis.v1.UpdateHostSpec.host_name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='replica_priority', full_name='yandex.cloud.mdb.redis.v1.UpdateHostSpec.replica_priority', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='assign_public_ip', full_name='yandex.cloud.mdb.redis.v1.UpdateHostSpec.assign_public_ip', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='update_mask', full_name='yandex.cloud.mdb.redis.v1.UpdateHostSpec.update_mask', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=7731,
+  serialized_end=7902,
 )
 
 
@@ -2387,6 +2518,20 @@ _HOSTSPEC = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\212\3101\004<=63\362\3071\016[a-zA-Z0-9_-]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='replica_priority', full_name='yandex.cloud.mdb.redis.v1.HostSpec.replica_priority', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='assign_public_ip', full_name='yandex.cloud.mdb.redis.v1.HostSpec.assign_public_ip', index=4,
+      number=5, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -2399,8 +2544,8 @@ _HOSTSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7518,
-  serialized_end=7612,
+  serialized_start=7905,
+  serialized_end=8080,
 )
 
 
@@ -2478,8 +2623,8 @@ _CONFIGSPEC = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=7615,
-  serialized_end=8104,
+  serialized_start=8083,
+  serialized_end=8572,
 )
 
 _LISTCLUSTERSRESPONSE.fields_by_name['clusters'].message_type = yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__pb2._CLUSTER
@@ -2496,6 +2641,7 @@ _UPDATECLUSTERREQUEST.fields_by_name['labels'].message_type = _UPDATECLUSTERREQU
 _UPDATECLUSTERREQUEST.fields_by_name['config_spec'].message_type = _CONFIGSPEC
 _UPDATECLUSTERREQUEST.fields_by_name['maintenance_window'].message_type = yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_maintenance__pb2._MAINTENANCEWINDOW
 _UPDATECLUSTERREQUEST.fields_by_name['persistence_mode'].enum_type = yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__pb2._CLUSTER_PERSISTENCEMODE
+_UPDATECLUSTERHOSTSREQUEST.fields_by_name['update_host_specs'].message_type = _UPDATEHOSTSPEC
 _RESTORECLUSTERREQUEST_LABELSENTRY.containing_type = _RESTORECLUSTERREQUEST
 _RESTORECLUSTERREQUEST.fields_by_name['labels'].message_type = _RESTORECLUSTERREQUEST_LABELSENTRY
 _RESTORECLUSTERREQUEST.fields_by_name['environment'].enum_type = yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__pb2._CLUSTER_ENVIRONMENT
@@ -2526,6 +2672,9 @@ _LISTCLUSTERHOSTSRESPONSE.fields_by_name['hosts'].message_type = yandex_dot_clou
 _ADDCLUSTERHOSTSREQUEST.fields_by_name['host_specs'].message_type = _HOSTSPEC
 _LISTCLUSTERSHARDSRESPONSE.fields_by_name['shards'].message_type = yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__pb2._SHARD
 _ADDCLUSTERSHARDREQUEST.fields_by_name['host_specs'].message_type = _HOSTSPEC
+_UPDATEHOSTSPEC.fields_by_name['replica_priority'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_UPDATEHOSTSPEC.fields_by_name['update_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
+_HOSTSPEC.fields_by_name['replica_priority'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
 _CONFIGSPEC.fields_by_name['redis_config_5_0'].message_type = yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_config_dot_redis5__0__pb2._REDISCONFIG5_0
 _CONFIGSPEC.fields_by_name['redis_config_6_0'].message_type = yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_config_dot_redis6__0__pb2._REDISCONFIG6_0
 _CONFIGSPEC.fields_by_name['redis_config_6_2'].message_type = yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_config_dot_redis6__2__pb2._REDISCONFIG6_2
@@ -2556,6 +2705,8 @@ DESCRIPTOR.message_types_by_name['StopClusterRequest'] = _STOPCLUSTERREQUEST
 DESCRIPTOR.message_types_by_name['StopClusterMetadata'] = _STOPCLUSTERMETADATA
 DESCRIPTOR.message_types_by_name['MoveClusterRequest'] = _MOVECLUSTERREQUEST
 DESCRIPTOR.message_types_by_name['MoveClusterMetadata'] = _MOVECLUSTERMETADATA
+DESCRIPTOR.message_types_by_name['UpdateClusterHostsRequest'] = _UPDATECLUSTERHOSTSREQUEST
+DESCRIPTOR.message_types_by_name['UpdateClusterHostsMetadata'] = _UPDATECLUSTERHOSTSMETADATA
 DESCRIPTOR.message_types_by_name['BackupClusterRequest'] = _BACKUPCLUSTERREQUEST
 DESCRIPTOR.message_types_by_name['BackupClusterMetadata'] = _BACKUPCLUSTERMETADATA
 DESCRIPTOR.message_types_by_name['RestoreClusterRequest'] = _RESTORECLUSTERREQUEST
@@ -2588,6 +2739,7 @@ DESCRIPTOR.message_types_by_name['DeleteClusterShardRequest'] = _DELETECLUSTERSH
 DESCRIPTOR.message_types_by_name['DeleteClusterShardMetadata'] = _DELETECLUSTERSHARDMETADATA
 DESCRIPTOR.message_types_by_name['RebalanceClusterRequest'] = _REBALANCECLUSTERREQUEST
 DESCRIPTOR.message_types_by_name['RebalanceClusterMetadata'] = _REBALANCECLUSTERMETADATA
+DESCRIPTOR.message_types_by_name['UpdateHostSpec'] = _UPDATEHOSTSPEC
 DESCRIPTOR.message_types_by_name['HostSpec'] = _HOSTSPEC
 DESCRIPTOR.message_types_by_name['ConfigSpec'] = _CONFIGSPEC
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -2712,6 +2864,20 @@ MoveClusterMetadata = _reflection.GeneratedProtocolMessageType('MoveClusterMetad
   # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.redis.v1.MoveClusterMetadata)
   })
 _sym_db.RegisterMessage(MoveClusterMetadata)
+
+UpdateClusterHostsRequest = _reflection.GeneratedProtocolMessageType('UpdateClusterHostsRequest', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATECLUSTERHOSTSREQUEST,
+  '__module__' : 'yandex.cloud.mdb.redis.v1.cluster_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.redis.v1.UpdateClusterHostsRequest)
+  })
+_sym_db.RegisterMessage(UpdateClusterHostsRequest)
+
+UpdateClusterHostsMetadata = _reflection.GeneratedProtocolMessageType('UpdateClusterHostsMetadata', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATECLUSTERHOSTSMETADATA,
+  '__module__' : 'yandex.cloud.mdb.redis.v1.cluster_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.redis.v1.UpdateClusterHostsMetadata)
+  })
+_sym_db.RegisterMessage(UpdateClusterHostsMetadata)
 
 BackupClusterRequest = _reflection.GeneratedProtocolMessageType('BackupClusterRequest', (_message.Message,), {
   'DESCRIPTOR' : _BACKUPCLUSTERREQUEST,
@@ -2953,6 +3119,13 @@ RebalanceClusterMetadata = _reflection.GeneratedProtocolMessageType('RebalanceCl
   })
 _sym_db.RegisterMessage(RebalanceClusterMetadata)
 
+UpdateHostSpec = _reflection.GeneratedProtocolMessageType('UpdateHostSpec', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATEHOSTSPEC,
+  '__module__' : 'yandex.cloud.mdb.redis.v1.cluster_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.redis.v1.UpdateHostSpec)
+  })
+_sym_db.RegisterMessage(UpdateHostSpec)
+
 HostSpec = _reflection.GeneratedProtocolMessageType('HostSpec', (_message.Message,), {
   'DESCRIPTOR' : _HOSTSPEC,
   '__module__' : 'yandex.cloud.mdb.redis.v1.cluster_service_pb2'
@@ -2993,6 +3166,8 @@ _STARTCLUSTERREQUEST.fields_by_name['cluster_id']._options = None
 _STOPCLUSTERREQUEST.fields_by_name['cluster_id']._options = None
 _MOVECLUSTERREQUEST.fields_by_name['cluster_id']._options = None
 _MOVECLUSTERREQUEST.fields_by_name['destination_folder_id']._options = None
+_UPDATECLUSTERHOSTSREQUEST.fields_by_name['cluster_id']._options = None
+_UPDATECLUSTERHOSTSREQUEST.fields_by_name['update_host_specs']._options = None
 _BACKUPCLUSTERREQUEST.fields_by_name['cluster_id']._options = None
 _RESTORECLUSTERREQUEST_LABELSENTRY._options = None
 _RESTORECLUSTERREQUEST.fields_by_name['backup_id']._options = None
@@ -3039,6 +3214,7 @@ _ADDCLUSTERSHARDREQUEST.fields_by_name['host_specs']._options = None
 _DELETECLUSTERSHARDREQUEST.fields_by_name['cluster_id']._options = None
 _DELETECLUSTERSHARDREQUEST.fields_by_name['shard_name']._options = None
 _REBALANCECLUSTERREQUEST.fields_by_name['cluster_id']._options = None
+_UPDATEHOSTSPEC.fields_by_name['host_name']._options = None
 _HOSTSPEC.fields_by_name['shard_name']._options = None
 
 _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
@@ -3048,8 +3224,8 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=8107,
-  serialized_end=12630,
+  serialized_start=8575,
+  serialized_end=13328,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
@@ -3242,9 +3418,19 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
+    name='UpdateHosts',
+    full_name='yandex.cloud.mdb.redis.v1.ClusterService.UpdateHosts',
+    index=19,
+    containing_service=None,
+    input_type=_UPDATECLUSTERHOSTSREQUEST,
+    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
+    serialized_options=b'\202\323\344\223\002>\"9/managed-redis/v1/clusters/{cluster_id}/hosts:batchUpdate:\001*\262\322*3\n\032UpdateClusterHostsMetadata\022\025google.protobuf.Empty',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
     name='GetShard',
     full_name='yandex.cloud.mdb.redis.v1.ClusterService.GetShard',
-    index=19,
+    index=20,
     containing_service=None,
     input_type=_GETCLUSTERSHARDREQUEST,
     output_type=yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__pb2._SHARD,
@@ -3254,7 +3440,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ListShards',
     full_name='yandex.cloud.mdb.redis.v1.ClusterService.ListShards',
-    index=20,
+    index=21,
     containing_service=None,
     input_type=_LISTCLUSTERSHARDSREQUEST,
     output_type=_LISTCLUSTERSHARDSRESPONSE,
@@ -3264,7 +3450,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='AddShard',
     full_name='yandex.cloud.mdb.redis.v1.ClusterService.AddShard',
-    index=21,
+    index=22,
     containing_service=None,
     input_type=_ADDCLUSTERSHARDREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
@@ -3274,7 +3460,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DeleteShard',
     full_name='yandex.cloud.mdb.redis.v1.ClusterService.DeleteShard',
-    index=22,
+    index=23,
     containing_service=None,
     input_type=_DELETECLUSTERSHARDREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
@@ -3284,7 +3470,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='Rebalance',
     full_name='yandex.cloud.mdb.redis.v1.ClusterService.Rebalance',
-    index=23,
+    index=24,
     containing_service=None,
     input_type=_REBALANCECLUSTERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,

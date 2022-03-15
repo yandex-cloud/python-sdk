@@ -7,7 +7,7 @@ from yandex.cloud.iam.v1 import user_account_service_pb2 as yandex_dot_cloud_dot
 
 
 class UserAccountServiceStub(object):
-    """A set of methods for managing user accounts. Currently applicable only for [Yandex.Passport accounts](/docs/iam/concepts/#passport).
+    """A set of methods for managing user accounts. Currently applicable only for [Yandex accounts](/docs/iam/concepts/#passport).
     """
 
     def __init__(self, channel):
@@ -24,7 +24,7 @@ class UserAccountServiceStub(object):
 
 
 class UserAccountServiceServicer(object):
-    """A set of methods for managing user accounts. Currently applicable only for [Yandex.Passport accounts](/docs/iam/concepts/#passport).
+    """A set of methods for managing user accounts. Currently applicable only for [Yandex accounts](/docs/iam/concepts/#passport).
     """
 
     def Get(self, request, context):
@@ -50,7 +50,7 @@ def add_UserAccountServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class UserAccountService(object):
-    """A set of methods for managing user accounts. Currently applicable only for [Yandex.Passport accounts](/docs/iam/concepts/#passport).
+    """A set of methods for managing user accounts. Currently applicable only for [Yandex accounts](/docs/iam/concepts/#passport).
     """
 
     @staticmethod

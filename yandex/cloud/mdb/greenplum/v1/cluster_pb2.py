@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n!yandex.cloud.api.mdb.greenplum.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/greenplum/v1;greenplum',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n+yandex/cloud/mdb/greenplum/v1/cluster.proto\x12\x1dyandex.cloud.mdb.greenplum.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/type/timeofday.proto\x1a\x1dyandex/cloud/validation.proto\x1a*yandex/cloud/mdb/greenplum/v1/config.proto\x1a/yandex/cloud/mdb/greenplum/v1/maintenance.proto\"\xa6\x0b\n\x07\x43luster\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1a\n\x04name\x18\x04 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\x12>\n\x06\x63onfig\x18\x05 \x01(\x0b\x32..yandex.cloud.mdb.greenplum.v1.GreenplumConfig\x12\x13\n\x0b\x64\x65scription\x18\x06 \x01(\t\x12\x42\n\x06labels\x18\x07 \x03(\x0b\x32\x32.yandex.cloud.mdb.greenplum.v1.Cluster.LabelsEntry\x12G\n\x0b\x65nvironment\x18\x08 \x01(\x0e\x32\x32.yandex.cloud.mdb.greenplum.v1.Cluster.Environment\x12=\n\nmonitoring\x18\t \x03(\x0b\x32).yandex.cloud.mdb.greenplum.v1.Monitoring\x12L\n\rmaster_config\x18\n \x01(\x0b\x32\x35.yandex.cloud.mdb.greenplum.v1.MasterSubclusterConfig\x12N\n\x0esegment_config\x18\x0b \x01(\x0b\x32\x36.yandex.cloud.mdb.greenplum.v1.SegmentSubclusterConfig\x12\x19\n\x11master_host_count\x18\x0c \x01(\x03\x12\x1a\n\x12segment_host_count\x18\r \x01(\x03\x12\x17\n\x0fsegment_in_host\x18\x0e \x01(\x03\x12\x12\n\nnetwork_id\x18\x0f \x01(\t\x12=\n\x06health\x18\x10 \x01(\x0e\x32-.yandex.cloud.mdb.greenplum.v1.Cluster.Health\x12=\n\x06status\x18\x11 \x01(\x0e\x32-.yandex.cloud.mdb.greenplum.v1.Cluster.Status\x12L\n\x12maintenance_window\x18\x12 \x01(\x0b\x32\x30.yandex.cloud.mdb.greenplum.v1.MaintenanceWindow\x12N\n\x11planned_operation\x18\x13 \x01(\x0b\x32\x33.yandex.cloud.mdb.greenplum.v1.MaintenanceOperation\x12\x1a\n\x12security_group_ids\x18\x14 \x03(\t\x12\x11\n\tuser_name\x18\x15 \x01(\t\x12\x1b\n\x13\x64\x65letion_protection\x18\x16 \x01(\x08\x12\x16\n\x0ehost_group_ids\x18\x17 \x03(\t\x12G\n\x0e\x63luster_config\x18\x18 \x01(\x0b\x32/.yandex.cloud.mdb.greenplum.v1.ClusterConfigSet\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"I\n\x0b\x45nvironment\x12\x1b\n\x17\x45NVIRONMENT_UNSPECIFIED\x10\x00\x12\x0e\n\nPRODUCTION\x10\x01\x12\r\n\tPRESTABLE\x10\x02\"O\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\x12\x0e\n\nUNBALANCED\x10\x04\"y\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\t\n\x05\x45RROR\x10\x03\x12\x0c\n\x08UPDATING\x10\x04\x12\x0c\n\x08STOPPING\x10\x05\x12\x0b\n\x07STOPPED\x10\x06\x12\x0c\n\x08STARTING\x10\x07\"\xd8\x02\n\x10\x43lusterConfigSet\x12s\n\x19greenplum_config_set_6_17\x18\x01 \x01(\x0b\x32\x35.yandex.cloud.mdb.greenplum.v1.GreenplumConfigSet6_17H\x00R\x17greenplumConfigSet_6_17\x12s\n\x19greenplum_config_set_6_19\x18\x02 \x01(\x0b\x32\x35.yandex.cloud.mdb.greenplum.v1.GreenplumConfigSet6_19H\x00R\x17greenplumConfigSet_6_19\x12\x46\n\x04pool\x18\x04 \x01(\x0b\x32\x38.yandex.cloud.mdb.greenplum.v1.ConnectionPoolerConfigSetB\x12\n\x10greenplum_config\"=\n\nMonitoring\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0c\n\x04link\x18\x03 \x01(\t\"\xe0\x01\n\x0fGreenplumConfig\x12\x0f\n\x07version\x18\x01 \x01(\t\x12\x33\n\x13\x62\x61\x63kup_window_start\x18\x02 \x01(\x0b\x32\x16.google.type.TimeOfDay\x12\x35\n\x06\x61\x63\x63\x65ss\x18\x03 \x01(\x0b\x32%.yandex.cloud.mdb.greenplum.v1.Access\x12\x19\n\x07zone_id\x18\x04 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1b\n\tsubnet_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x18\n\x10\x61ssign_public_ip\x18\x06 \x01(\x08\",\n\x06\x41\x63\x63\x65ss\x12\x11\n\tdata_lens\x18\x01 \x01(\x08\x12\x0f\n\x07web_sql\x18\x02 \x01(\x08\x42p\n!yandex.cloud.api.mdb.greenplum.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/greenplum/v1;greenplumb\x06proto3'
+  serialized_pb=b'\n+yandex/cloud/mdb/greenplum/v1/cluster.proto\x12\x1dyandex.cloud.mdb.greenplum.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/type/timeofday.proto\x1a\x1dyandex/cloud/validation.proto\x1a*yandex/cloud/mdb/greenplum/v1/config.proto\x1a/yandex/cloud/mdb/greenplum/v1/maintenance.proto\"\xa6\x0b\n\x07\x43luster\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1a\n\x04name\x18\x04 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\x12>\n\x06\x63onfig\x18\x05 \x01(\x0b\x32..yandex.cloud.mdb.greenplum.v1.GreenplumConfig\x12\x13\n\x0b\x64\x65scription\x18\x06 \x01(\t\x12\x42\n\x06labels\x18\x07 \x03(\x0b\x32\x32.yandex.cloud.mdb.greenplum.v1.Cluster.LabelsEntry\x12G\n\x0b\x65nvironment\x18\x08 \x01(\x0e\x32\x32.yandex.cloud.mdb.greenplum.v1.Cluster.Environment\x12=\n\nmonitoring\x18\t \x03(\x0b\x32).yandex.cloud.mdb.greenplum.v1.Monitoring\x12L\n\rmaster_config\x18\n \x01(\x0b\x32\x35.yandex.cloud.mdb.greenplum.v1.MasterSubclusterConfig\x12N\n\x0esegment_config\x18\x0b \x01(\x0b\x32\x36.yandex.cloud.mdb.greenplum.v1.SegmentSubclusterConfig\x12\x19\n\x11master_host_count\x18\x0c \x01(\x03\x12\x1a\n\x12segment_host_count\x18\r \x01(\x03\x12\x17\n\x0fsegment_in_host\x18\x0e \x01(\x03\x12\x12\n\nnetwork_id\x18\x0f \x01(\t\x12=\n\x06health\x18\x10 \x01(\x0e\x32-.yandex.cloud.mdb.greenplum.v1.Cluster.Health\x12=\n\x06status\x18\x11 \x01(\x0e\x32-.yandex.cloud.mdb.greenplum.v1.Cluster.Status\x12L\n\x12maintenance_window\x18\x12 \x01(\x0b\x32\x30.yandex.cloud.mdb.greenplum.v1.MaintenanceWindow\x12N\n\x11planned_operation\x18\x13 \x01(\x0b\x32\x33.yandex.cloud.mdb.greenplum.v1.MaintenanceOperation\x12\x1a\n\x12security_group_ids\x18\x14 \x03(\t\x12\x11\n\tuser_name\x18\x15 \x01(\t\x12\x1b\n\x13\x64\x65letion_protection\x18\x16 \x01(\x08\x12\x16\n\x0ehost_group_ids\x18\x17 \x03(\t\x12G\n\x0e\x63luster_config\x18\x18 \x01(\x0b\x32/.yandex.cloud.mdb.greenplum.v1.ClusterConfigSet\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"I\n\x0b\x45nvironment\x12\x1b\n\x17\x45NVIRONMENT_UNSPECIFIED\x10\x00\x12\x0e\n\nPRODUCTION\x10\x01\x12\r\n\tPRESTABLE\x10\x02\"O\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\x12\x0e\n\nUNBALANCED\x10\x04\"y\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\t\n\x05\x45RROR\x10\x03\x12\x0c\n\x08UPDATING\x10\x04\x12\x0c\n\x08STOPPING\x10\x05\x12\x0b\n\x07STOPPED\x10\x06\x12\x0c\n\x08STARTING\x10\x07\"\xd8\x02\n\x10\x43lusterConfigSet\x12s\n\x19greenplum_config_set_6_17\x18\x01 \x01(\x0b\x32\x35.yandex.cloud.mdb.greenplum.v1.GreenplumConfigSet6_17H\x00R\x17greenplumConfigSet_6_17\x12s\n\x19greenplum_config_set_6_19\x18\x02 \x01(\x0b\x32\x35.yandex.cloud.mdb.greenplum.v1.GreenplumConfigSet6_19H\x00R\x17greenplumConfigSet_6_19\x12\x46\n\x04pool\x18\x04 \x01(\x0b\x32\x38.yandex.cloud.mdb.greenplum.v1.ConnectionPoolerConfigSetB\x12\n\x10greenplum_config\"=\n\nMonitoring\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0c\n\x04link\x18\x03 \x01(\t\"\xe0\x01\n\x0fGreenplumConfig\x12\x0f\n\x07version\x18\x01 \x01(\t\x12\x33\n\x13\x62\x61\x63kup_window_start\x18\x02 \x01(\x0b\x32\x16.google.type.TimeOfDay\x12\x35\n\x06\x61\x63\x63\x65ss\x18\x03 \x01(\x0b\x32%.yandex.cloud.mdb.greenplum.v1.Access\x12\x19\n\x07zone_id\x18\x04 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1b\n\tsubnet_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x18\n\x10\x61ssign_public_ip\x18\x06 \x01(\x08\",\n\x06\x41\x63\x63\x65ss\x12\x11\n\tdata_lens\x18\x01 \x01(\x08\x12\x0f\n\x07web_sql\x18\x02 \x01(\x08\"\xd6\x01\n\x16GreenplumRestoreConfig\x12\x33\n\x13\x62\x61\x63kup_window_start\x18\x01 \x01(\x0b\x32\x16.google.type.TimeOfDay\x12\x35\n\x06\x61\x63\x63\x65ss\x18\x02 \x01(\x0b\x32%.yandex.cloud.mdb.greenplum.v1.Access\x12\x19\n\x07zone_id\x18\x03 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1b\n\tsubnet_id\x18\x04 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x18\n\x10\x61ssign_public_ip\x18\x05 \x01(\x08\"A\n\x10RestoreResources\x12\x1a\n\x12resource_preset_id\x18\x01 \x01(\t\x12\x11\n\tdisk_size\x18\x02 \x01(\x03\x42p\n!yandex.cloud.api.mdb.greenplum.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/greenplum/v1;greenplumb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_type_dot_timeofday__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_config__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_maintenance__pb2.DESCRIPTOR,])
 
@@ -592,6 +592,105 @@ _ACCESS = _descriptor.Descriptor(
   serialized_end=2394,
 )
 
+
+_GREENPLUMRESTORECONFIG = _descriptor.Descriptor(
+  name='GreenplumRestoreConfig',
+  full_name='yandex.cloud.mdb.greenplum.v1.GreenplumRestoreConfig',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='backup_window_start', full_name='yandex.cloud.mdb.greenplum.v1.GreenplumRestoreConfig.backup_window_start', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='access', full_name='yandex.cloud.mdb.greenplum.v1.GreenplumRestoreConfig.access', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='zone_id', full_name='yandex.cloud.mdb.greenplum.v1.GreenplumRestoreConfig.zone_id', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='subnet_id', full_name='yandex.cloud.mdb.greenplum.v1.GreenplumRestoreConfig.subnet_id', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='assign_public_ip', full_name='yandex.cloud.mdb.greenplum.v1.GreenplumRestoreConfig.assign_public_ip', index=4,
+      number=5, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2397,
+  serialized_end=2611,
+)
+
+
+_RESTORERESOURCES = _descriptor.Descriptor(
+  name='RestoreResources',
+  full_name='yandex.cloud.mdb.greenplum.v1.RestoreResources',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='resource_preset_id', full_name='yandex.cloud.mdb.greenplum.v1.RestoreResources.resource_preset_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='disk_size', full_name='yandex.cloud.mdb.greenplum.v1.RestoreResources.disk_size', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2613,
+  serialized_end=2678,
+)
+
 _CLUSTER_LABELSENTRY.containing_type = _CLUSTER
 _CLUSTER.fields_by_name['created_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _CLUSTER.fields_by_name['config'].message_type = _GREENPLUMCONFIG
@@ -619,11 +718,15 @@ _CLUSTERCONFIGSET.oneofs_by_name['greenplum_config'].fields.append(
 _CLUSTERCONFIGSET.fields_by_name['greenplum_config_set_6_19'].containing_oneof = _CLUSTERCONFIGSET.oneofs_by_name['greenplum_config']
 _GREENPLUMCONFIG.fields_by_name['backup_window_start'].message_type = google_dot_type_dot_timeofday__pb2._TIMEOFDAY
 _GREENPLUMCONFIG.fields_by_name['access'].message_type = _ACCESS
+_GREENPLUMRESTORECONFIG.fields_by_name['backup_window_start'].message_type = google_dot_type_dot_timeofday__pb2._TIMEOFDAY
+_GREENPLUMRESTORECONFIG.fields_by_name['access'].message_type = _ACCESS
 DESCRIPTOR.message_types_by_name['Cluster'] = _CLUSTER
 DESCRIPTOR.message_types_by_name['ClusterConfigSet'] = _CLUSTERCONFIGSET
 DESCRIPTOR.message_types_by_name['Monitoring'] = _MONITORING
 DESCRIPTOR.message_types_by_name['GreenplumConfig'] = _GREENPLUMCONFIG
 DESCRIPTOR.message_types_by_name['Access'] = _ACCESS
+DESCRIPTOR.message_types_by_name['GreenplumRestoreConfig'] = _GREENPLUMRESTORECONFIG
+DESCRIPTOR.message_types_by_name['RestoreResources'] = _RESTORERESOURCES
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Cluster = _reflection.GeneratedProtocolMessageType('Cluster', (_message.Message,), {
@@ -669,10 +772,26 @@ Access = _reflection.GeneratedProtocolMessageType('Access', (_message.Message,),
   })
 _sym_db.RegisterMessage(Access)
 
+GreenplumRestoreConfig = _reflection.GeneratedProtocolMessageType('GreenplumRestoreConfig', (_message.Message,), {
+  'DESCRIPTOR' : _GREENPLUMRESTORECONFIG,
+  '__module__' : 'yandex.cloud.mdb.greenplum.v1.cluster_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.greenplum.v1.GreenplumRestoreConfig)
+  })
+_sym_db.RegisterMessage(GreenplumRestoreConfig)
+
+RestoreResources = _reflection.GeneratedProtocolMessageType('RestoreResources', (_message.Message,), {
+  'DESCRIPTOR' : _RESTORERESOURCES,
+  '__module__' : 'yandex.cloud.mdb.greenplum.v1.cluster_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.greenplum.v1.RestoreResources)
+  })
+_sym_db.RegisterMessage(RestoreResources)
+
 
 DESCRIPTOR._options = None
 _CLUSTER_LABELSENTRY._options = None
 _CLUSTER.fields_by_name['name']._options = None
 _GREENPLUMCONFIG.fields_by_name['zone_id']._options = None
 _GREENPLUMCONFIG.fields_by_name['subnet_id']._options = None
+_GREENPLUMRESTORECONFIG.fields_by_name['zone_id']._options = None
+_GREENPLUMRESTORECONFIG.fields_by_name['subnet_id']._options = None
 # @@protoc_insertion_point(module_scope)
