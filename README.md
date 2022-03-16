@@ -59,7 +59,7 @@ Check `examples` directory for more examples.
 ### Dependencies
 Use `make deps` command to install library, its production and development dependencies.
 
-###Formatting
+### Formatting
 Use `make format` to autoformat code with black tool. 
 
 ### Tests
