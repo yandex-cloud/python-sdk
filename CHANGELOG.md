@@ -2,6 +2,11 @@
 
 <!--next-version-placeholder-->
 
+## v0.150.0 (2022-03-22)
+### Feature
+* Regenerate proto
+ ([`35f5031`](https://github.com/yandex-cloud/python-sdk/commit/35f503138cfdcac2972329d2fd2aece5b111daa1))
+
 ## v0.149.0 (2022-03-16)
 ### Feature
 * Fix markdown formatting in README ([`ab0167b`](https://github.com/yandex-cloud/python-sdk/commit/ab0167b1958bf2397c196ce442b8da5349661142))
