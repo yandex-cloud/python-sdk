@@ -27,7 +27,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n)yandex.cloud.api.compute.v1.instancegroupZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1/instancegroup;instancegroup',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nByandex/cloud/compute/v1/instancegroup/instance_group_service.proto\x12%yandex.cloud.compute.v1.instancegroup\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/access/access.proto\x1a yandex/cloud/api/operation.proto\x1a:yandex/cloud/compute/v1/instancegroup/instance_group.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"J\n#ResumeInstanceGroupProcessesRequest\x12#\n\x11instance_group_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"?\n\"ResumeInstanceGroupProcessMetadata\x12\x19\n\x11instance_group_id\x18\x01 \x01(\t\"I\n\"PauseInstanceGroupProcessesRequest\x12#\n\x11instance_group_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\">\n!PauseInstanceGroupProcessMetadata\x12\x19\n\x11instance_group_id\x18\x01 \x01(\t\"\x8a\x01\n\x17GetInstanceGroupRequest\x12\'\n\x11instance_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x46\n\x04view\x18\x02 \x01(\x0e\x32\x38.yandex.cloud.compute.v1.instancegroup.InstanceGroupView\"\xca\x08\n\x1a\x43reateInstanceGroupRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\xa6\x01\n\x06labels\x18\x05 \x03(\x0b\x32M.yandex.cloud.compute.v1.instancegroup.CreateInstanceGroupRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12X\n\x11instance_template\x18\x06 \x01(\x0b\x32\x37.yandex.cloud.compute.v1.instancegroup.InstanceTemplateB\x04\xe8\xc7\x31\x01\x12N\n\x0cscale_policy\x18\x07 \x01(\x0b\x32\x32.yandex.cloud.compute.v1.instancegroup.ScalePolicyB\x04\xe8\xc7\x31\x01\x12P\n\rdeploy_policy\x18\x08 \x01(\x0b\x32\x33.yandex.cloud.compute.v1.instancegroup.DeployPolicyB\x04\xe8\xc7\x31\x01\x12X\n\x11\x61llocation_policy\x18\t \x01(\x0b\x32\x37.yandex.cloud.compute.v1.instancegroup.AllocationPolicyB\x04\xe8\xc7\x31\x01\x12S\n\x12load_balancer_spec\x18\n \x01(\x0b\x32\x37.yandex.cloud.compute.v1.instancegroup.LoadBalancerSpec\x12S\n\x12health_checks_spec\x18\x0b \x01(\x0b\x32\x37.yandex.cloud.compute.v1.instancegroup.HealthChecksSpec\x12\x1a\n\x12service_account_id\x18\x0c \x01(\t\x12\x42\n\tvariables\x18\r \x03(\x0b\x32/.yandex.cloud.compute.v1.instancegroup.Variable\x12\x1b\n\x13\x64\x65letion_protection\x18\x0e \x01(\x08\x12j\n\x1e\x61pplication_load_balancer_spec\x18\x0f \x01(\x0b\x32\x42.yandex.cloud.compute.v1.instancegroup.ApplicationLoadBalancerSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"m\n\"CreateInstanceGroupFromYamlRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12.\n\x13instance_group_yaml\x18\x02 \x01(\tB\x11\xe8\xc7\x31\x01\x8a\xc8\x31\t<=1048576\"B\n\x1b\x43reateInstanceGroupMetadata\x12#\n\x11instance_group_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"\x9f\x08\n\x1aUpdateInstanceGroupRequest\x12\'\n\x11instance_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\xa6\x01\n\x06labels\x18\x05 \x03(\x0b\x32M.yandex.cloud.compute.v1.instancegroup.UpdateInstanceGroupRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12X\n\x11instance_template\x18\x06 \x01(\x0b\x32\x37.yandex.cloud.compute.v1.instancegroup.InstanceTemplateB\x04\xe8\xc7\x31\x01\x12N\n\x0cscale_policy\x18\x07 \x01(\x0b\x32\x32.yandex.cloud.compute.v1.instancegroup.ScalePolicyB\x04\xe8\xc7\x31\x01\x12P\n\rdeploy_policy\x18\x08 \x01(\x0b\x32\x33.yandex.cloud.compute.v1.instancegroup.DeployPolicyB\x04\xe8\xc7\x31\x01\x12X\n\x11\x61llocation_policy\x18\t \x01(\x0b\x32\x37.yandex.cloud.compute.v1.instancegroup.AllocationPolicyB\x04\xe8\xc7\x31\x01\x12S\n\x12health_checks_spec\x18\x0b \x01(\x0b\x32\x37.yandex.cloud.compute.v1.instancegroup.HealthChecksSpec\x12\x1a\n\x12service_account_id\x18\x0c \x01(\t\x12S\n\x12load_balancer_spec\x18\x0e \x01(\x0b\x32\x37.yandex.cloud.compute.v1.instancegroup.LoadBalancerSpec\x12\x42\n\tvariables\x18\x0f \x03(\x0b\x32/.yandex.cloud.compute.v1.instancegroup.Variable\x12\x1b\n\x13\x64\x65letion_protection\x18\x10 \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"}\n\"UpdateInstanceGroupFromYamlRequest\x12\'\n\x11instance_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12.\n\x13instance_group_yaml\x18\x02 \x01(\tB\x11\xe8\xc7\x31\x01\x8a\xc8\x31\t<=1048576\"8\n\x1bUpdateInstanceGroupMetadata\x12\x19\n\x11instance_group_id\x18\x01 \x01(\t\"D\n\x19StartInstanceGroupRequest\x12\'\n\x11instance_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"7\n\x1aStartInstanceGroupMetadata\x12\x19\n\x11instance_group_id\x18\x01 \x01(\t\"C\n\x18StopInstanceGroupRequest\x12\'\n\x11instance_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"6\n\x19StopInstanceGroupMetadata\x12\x19\n\x11instance_group_id\x18\x01 \x01(\t\"E\n\x1a\x44\x65leteInstanceGroupRequest\x12\'\n\x11instance_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"8\n\x1b\x44\x65leteInstanceGroupMetadata\x12\x19\n\x11instance_group_id\x18\x01 \x01(\t\"4\n\x17\x44\x65leteInstancesMetadata\x12\x19\n\x11instance_group_id\x18\x01 \x01(\t\"2\n\x15StopInstancesMetadata\x12\x19\n\x11instance_group_id\x18\x01 \x01(\t\"\xd6\x01\n\x19ListInstanceGroupsRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x46\n\x04view\x18\x05 \x01(\x0e\x32\x38.yandex.cloud.compute.v1.instancegroup.InstanceGroupView\"\x84\x01\n\x1aListInstanceGroupsResponse\x12M\n\x0finstance_groups\x18\x01 \x03(\x0b\x32\x34.yandex.cloud.compute.v1.instancegroup.InstanceGroup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xa6\x01\n!ListInstanceGroupInstancesRequest\x12\'\n\x11instance_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"\x88\x01\n\"ListInstanceGroupInstancesResponse\x12I\n\tinstances\x18\x01 \x03(\x0b\x32\x36.yandex.cloud.compute.v1.instancegroup.ManagedInstance\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x88\x01\n\x16\x44\x65leteInstancesRequest\x12\'\n\x11instance_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12-\n\x14managed_instance_ids\x18\x02 \x03(\tB\x0f\x82\xc8\x31\x03>=1\x8a\xc8\x31\x04<=50\x12\x16\n\x0e\x63reate_another\x18\x03 \x01(\x08\"n\n\x14StopInstancesRequest\x12\'\n\x11instance_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12-\n\x14managed_instance_ids\x18\x02 \x03(\tB\x0f\x82\xc8\x31\x03>=1\x8a\xc8\x31\x04<=50\"\xa7\x01\n\"ListInstanceGroupOperationsRequest\x12\'\n\x11instance_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"u\n#ListInstanceGroupOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x9f\x01\n\"ListInstanceGroupLogRecordsRequest\x12\x1f\n\x11instance_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"\x85\x01\n#ListInstanceGroupLogRecordsResponse\x12\x45\n\x0blog_records\x18\x01 \x03(\x0b\x32\x30.yandex.cloud.compute.v1.instancegroup.LogRecord\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t*(\n\x11InstanceGroupView\x12\t\n\x05\x42\x41SIC\x10\x00\x12\x08\n\x04\x46ULL\x10\x01\x32\xae \n\x14InstanceGroupService\x12\xb3\x01\n\x03Get\x12>.yandex.cloud.compute.v1.instancegroup.GetInstanceGroupRequest\x1a\x34.yandex.cloud.compute.v1.instancegroup.InstanceGroup\"6\x82\xd3\xe4\x93\x02\x30\x12./compute/v1/instanceGroups/{instance_group_id}\x12\xaf\x01\n\x04List\x12@.yandex.cloud.compute.v1.instancegroup.ListInstanceGroupsRequest\x1a\x41.yandex.cloud.compute.v1.instancegroup.ListInstanceGroupsResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/compute/v1/instanceGroups\x12\xc5\x01\n\x06\x43reate\x12\x41.yandex.cloud.compute.v1.instancegroup.CreateInstanceGroupRequest\x1a!.yandex.cloud.operation.Operation\"U\x82\xd3\xe4\x93\x02\x1f\"\x1a/compute/v1/instanceGroups:\x01*\xb2\xd2*,\n\x1b\x43reateInstanceGroupMetadata\x12\rInstanceGroup\x12\xda\x01\n\x0e\x43reateFromYaml\x12I.yandex.cloud.compute.v1.instancegroup.CreateInstanceGroupFromYamlRequest\x1a!.yandex.cloud.operation.Operation\"Z\x82\xd3\xe4\x93\x02$\"\x1f/compute/v1/instanceGroups:yaml:\x01*\xb2\xd2*,\n\x1b\x43reateInstanceGroupMetadata\x12\rInstanceGroup\x12\xd9\x01\n\x06Update\x12\x41.yandex.cloud.compute.v1.instancegroup.UpdateInstanceGroupRequest\x1a!.yandex.cloud.operation.Operation\"i\x82\xd3\xe4\x93\x02\x33\x32./compute/v1/instanceGroups/{instance_group_id}:\x01*\xb2\xd2*,\n\x1bUpdateInstanceGroupMetadata\x12\rInstanceGroup\x12\xee\x01\n\x0eUpdateFromYaml\x12I.yandex.cloud.compute.v1.instancegroup.UpdateInstanceGroupFromYamlRequest\x1a!.yandex.cloud.operation.Operation\"n\x82\xd3\xe4\x93\x02\x38\x32\x33/compute/v1/instanceGroups/{instance_group_id}:yaml:\x01*\xb2\xd2*,\n\x1bUpdateInstanceGroupMetadata\x12\rInstanceGroup\x12\xd5\x01\n\x04Stop\x12?.yandex.cloud.compute.v1.instancegroup.StopInstanceGroupRequest\x1a!.yandex.cloud.operation.Operation\"i\x82\xd3\xe4\x93\x02\x35\"3/compute/v1/instanceGroups/{instance_group_id}:stop\xb2\xd2**\n\x19StopInstanceGroupMetadata\x12\rInstanceGroup\x12\xd9\x01\n\x05Start\x12@.yandex.cloud.compute.v1.instancegroup.StartInstanceGroupRequest\x1a!.yandex.cloud.operation.Operation\"k\x82\xd3\xe4\x93\x02\x36\"4/compute/v1/instanceGroups/{instance_group_id}:start\xb2\xd2*+\n\x1aStartInstanceGroupMetadata\x12\rInstanceGroup\x12\xde\x01\n\x06\x44\x65lete\x12\x41.yandex.cloud.compute.v1.instancegroup.DeleteInstanceGroupRequest\x1a!.yandex.cloud.operation.Operation\"n\x82\xd3\xe4\x93\x02\x30*./compute/v1/instanceGroups/{instance_group_id}\xb2\xd2*4\n\x1b\x44\x65leteInstanceGroupMetadata\x12\x15google.protobuf.Empty\x12\xe6\x01\n\rListInstances\x12H.yandex.cloud.compute.v1.instancegroup.ListInstanceGroupInstancesRequest\x1aI.yandex.cloud.compute.v1.instancegroup.ListInstanceGroupInstancesResponse\"@\x82\xd3\xe4\x93\x02:\x12\x38/compute/v1/instanceGroups/{instance_group_id}/instances\x12\xa1\x01\n\x0f\x44\x65leteInstances\x12=.yandex.cloud.compute.v1.instancegroup.DeleteInstancesRequest\x1a!.yandex.cloud.operation.Operation\",\xb2\xd2*(\n\x17\x44\x65leteInstancesMetadata\x12\rInstanceGroup\x12\x9b\x01\n\rStopInstances\x12;.yandex.cloud.compute.v1.instancegroup.StopInstancesRequest\x1a!.yandex.cloud.operation.Operation\"*\xb2\xd2*&\n\x15StopInstancesMetadata\x12\rInstanceGroup\x12\xea\x01\n\x0eListOperations\x12I.yandex.cloud.compute.v1.instancegroup.ListInstanceGroupOperationsRequest\x1aJ.yandex.cloud.compute.v1.instancegroup.ListInstanceGroupOperationsResponse\"A\x82\xd3\xe4\x93\x02;\x12\x39/compute/v1/instanceGroups/{instance_group_id}/operations\x12\xe4\x01\n\x0eListLogRecords\x12I.yandex.cloud.compute.v1.instancegroup.ListInstanceGroupLogRecordsRequest\x1aJ.yandex.cloud.compute.v1.instancegroup.ListInstanceGroupLogRecordsResponse\";\x82\xd3\xe4\x93\x02\x35\x12\x33/compute/v1/instanceGroups/{instance_group_id}:logs\x12\xba\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"C\x82\xd3\xe4\x93\x02=\x12;/compute/v1/instanceGroups/{resource_id}:listAccessBindings\x12\xea\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x82\x01\x82\xd3\xe4\x93\x02?\":/compute/v1/instanceGroups/{resource_id}:setAccessBindings:\x01*\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\xf6\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x88\x01\x82\xd3\xe4\x93\x02\x42\"=/compute/v1/instanceGroups/{resource_id}:updateAccessBindings:\x01*\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\x83\x02\n\x0fResumeProcesses\x12J.yandex.cloud.compute.v1.instancegroup.ResumeInstanceGroupProcessesRequest\x1a!.yandex.cloud.operation.Operation\"\x80\x01\x82\xd3\xe4\x93\x02\x43\">/compute/v1/instanceGroups/{instance_group_id}:resumeProcesses:\x01*\xb2\xd2*3\n\"ResumeInstanceGroupProcessMetadata\x12\rInstanceGroup\x12\xfe\x01\n\x0ePauseProcesses\x12I.yandex.cloud.compute.v1.instancegroup.PauseInstanceGroupProcessesRequest\x1a!.yandex.cloud.operation.Operation\"~\x82\xd3\xe4\x93\x02\x42\"=/compute/v1/instanceGroups/{instance_group_id}:pauseProcesses:\x01*\xb2\xd2*2\n!PauseInstanceGroupProcessMetadata\x12\rInstanceGroupB\x84\x01\n)yandex.cloud.api.compute.v1.instancegroupZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1/instancegroup;instancegroupb\x06proto3'
+  serialized_pb=b'\nByandex/cloud/compute/v1/instancegroup/instance_group_service.proto\x12%yandex.cloud.compute.v1.instancegroup\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/access/access.proto\x1a yandex/cloud/api/operation.proto\x1a:yandex/cloud/compute/v1/instancegroup/instance_group.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"J\n#ResumeInstanceGroupProcessesRequest\x12#\n\x11instance_group_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"?\n\"ResumeInstanceGroupProcessMetadata\x12\x19\n\x11instance_group_id\x18\x01 \x01(\t\"I\n\"PauseInstanceGroupProcessesRequest\x12#\n\x11instance_group_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\">\n!PauseInstanceGroupProcessMetadata\x12\x19\n\x11instance_group_id\x18\x01 \x01(\t\"\x8a\x01\n\x17GetInstanceGroupRequest\x12\'\n\x11instance_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x46\n\x04view\x18\x02 \x01(\x0e\x32\x38.yandex.cloud.compute.v1.instancegroup.InstanceGroupView\"\xca\x08\n\x1a\x43reateInstanceGroupRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\xa6\x01\n\x06labels\x18\x05 \x03(\x0b\x32M.yandex.cloud.compute.v1.instancegroup.CreateInstanceGroupRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12X\n\x11instance_template\x18\x06 \x01(\x0b\x32\x37.yandex.cloud.compute.v1.instancegroup.InstanceTemplateB\x04\xe8\xc7\x31\x01\x12N\n\x0cscale_policy\x18\x07 \x01(\x0b\x32\x32.yandex.cloud.compute.v1.instancegroup.ScalePolicyB\x04\xe8\xc7\x31\x01\x12P\n\rdeploy_policy\x18\x08 \x01(\x0b\x32\x33.yandex.cloud.compute.v1.instancegroup.DeployPolicyB\x04\xe8\xc7\x31\x01\x12X\n\x11\x61llocation_policy\x18\t \x01(\x0b\x32\x37.yandex.cloud.compute.v1.instancegroup.AllocationPolicyB\x04\xe8\xc7\x31\x01\x12S\n\x12load_balancer_spec\x18\n \x01(\x0b\x32\x37.yandex.cloud.compute.v1.instancegroup.LoadBalancerSpec\x12S\n\x12health_checks_spec\x18\x0b \x01(\x0b\x32\x37.yandex.cloud.compute.v1.instancegroup.HealthChecksSpec\x12\x1a\n\x12service_account_id\x18\x0c \x01(\t\x12\x42\n\tvariables\x18\r \x03(\x0b\x32/.yandex.cloud.compute.v1.instancegroup.Variable\x12\x1b\n\x13\x64\x65letion_protection\x18\x0e \x01(\x08\x12j\n\x1e\x61pplication_load_balancer_spec\x18\x0f \x01(\x0b\x32\x42.yandex.cloud.compute.v1.instancegroup.ApplicationLoadBalancerSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"m\n\"CreateInstanceGroupFromYamlRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12.\n\x13instance_group_yaml\x18\x02 \x01(\tB\x11\xe8\xc7\x31\x01\x8a\xc8\x31\t<=1048576\"B\n\x1b\x43reateInstanceGroupMetadata\x12#\n\x11instance_group_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"\x8b\t\n\x1aUpdateInstanceGroupRequest\x12\'\n\x11instance_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\xa6\x01\n\x06labels\x18\x05 \x03(\x0b\x32M.yandex.cloud.compute.v1.instancegroup.UpdateInstanceGroupRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12X\n\x11instance_template\x18\x06 \x01(\x0b\x32\x37.yandex.cloud.compute.v1.instancegroup.InstanceTemplateB\x04\xe8\xc7\x31\x01\x12N\n\x0cscale_policy\x18\x07 \x01(\x0b\x32\x32.yandex.cloud.compute.v1.instancegroup.ScalePolicyB\x04\xe8\xc7\x31\x01\x12P\n\rdeploy_policy\x18\x08 \x01(\x0b\x32\x33.yandex.cloud.compute.v1.instancegroup.DeployPolicyB\x04\xe8\xc7\x31\x01\x12X\n\x11\x61llocation_policy\x18\t \x01(\x0b\x32\x37.yandex.cloud.compute.v1.instancegroup.AllocationPolicyB\x04\xe8\xc7\x31\x01\x12S\n\x12health_checks_spec\x18\x0b \x01(\x0b\x32\x37.yandex.cloud.compute.v1.instancegroup.HealthChecksSpec\x12\x1a\n\x12service_account_id\x18\x0c \x01(\t\x12S\n\x12load_balancer_spec\x18\x0e \x01(\x0b\x32\x37.yandex.cloud.compute.v1.instancegroup.LoadBalancerSpec\x12\x42\n\tvariables\x18\x0f \x03(\x0b\x32/.yandex.cloud.compute.v1.instancegroup.Variable\x12\x1b\n\x13\x64\x65letion_protection\x18\x10 \x01(\x08\x12j\n\x1e\x61pplication_load_balancer_spec\x18\x11 \x01(\x0b\x32\x42.yandex.cloud.compute.v1.instancegroup.ApplicationLoadBalancerSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"}\n\"UpdateInstanceGroupFromYamlRequest\x12\'\n\x11instance_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12.\n\x13instance_group_yaml\x18\x02 \x01(\tB\x11\xe8\xc7\x31\x01\x8a\xc8\x31\t<=1048576\"8\n\x1bUpdateInstanceGroupMetadata\x12\x19\n\x11instance_group_id\x18\x01 \x01(\t\"D\n\x19StartInstanceGroupRequest\x12\'\n\x11instance_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"7\n\x1aStartInstanceGroupMetadata\x12\x19\n\x11instance_group_id\x18\x01 \x01(\t\"C\n\x18StopInstanceGroupRequest\x12\'\n\x11instance_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"6\n\x19StopInstanceGroupMetadata\x12\x19\n\x11instance_group_id\x18\x01 \x01(\t\"E\n\x1a\x44\x65leteInstanceGroupRequest\x12\'\n\x11instance_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"8\n\x1b\x44\x65leteInstanceGroupMetadata\x12\x19\n\x11instance_group_id\x18\x01 \x01(\t\"4\n\x17\x44\x65leteInstancesMetadata\x12\x19\n\x11instance_group_id\x18\x01 \x01(\t\"2\n\x15StopInstancesMetadata\x12\x19\n\x11instance_group_id\x18\x01 \x01(\t\"\xd6\x01\n\x19ListInstanceGroupsRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x46\n\x04view\x18\x05 \x01(\x0e\x32\x38.yandex.cloud.compute.v1.instancegroup.InstanceGroupView\"\x84\x01\n\x1aListInstanceGroupsResponse\x12M\n\x0finstance_groups\x18\x01 \x03(\x0b\x32\x34.yandex.cloud.compute.v1.instancegroup.InstanceGroup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xa6\x01\n!ListInstanceGroupInstancesRequest\x12\'\n\x11instance_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"\x88\x01\n\"ListInstanceGroupInstancesResponse\x12I\n\tinstances\x18\x01 \x03(\x0b\x32\x36.yandex.cloud.compute.v1.instancegroup.ManagedInstance\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x88\x01\n\x16\x44\x65leteInstancesRequest\x12\'\n\x11instance_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12-\n\x14managed_instance_ids\x18\x02 \x03(\tB\x0f\x82\xc8\x31\x03>=1\x8a\xc8\x31\x04<=50\x12\x16\n\x0e\x63reate_another\x18\x03 \x01(\x08\"n\n\x14StopInstancesRequest\x12\'\n\x11instance_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12-\n\x14managed_instance_ids\x18\x02 \x03(\tB\x0f\x82\xc8\x31\x03>=1\x8a\xc8\x31\x04<=50\"\xa7\x01\n\"ListInstanceGroupOperationsRequest\x12\'\n\x11instance_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"u\n#ListInstanceGroupOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x9f\x01\n\"ListInstanceGroupLogRecordsRequest\x12\x1f\n\x11instance_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"\x85\x01\n#ListInstanceGroupLogRecordsResponse\x12\x45\n\x0blog_records\x18\x01 \x03(\x0b\x32\x30.yandex.cloud.compute.v1.instancegroup.LogRecord\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t*(\n\x11InstanceGroupView\x12\t\n\x05\x42\x41SIC\x10\x00\x12\x08\n\x04\x46ULL\x10\x01\x32\xae \n\x14InstanceGroupService\x12\xb3\x01\n\x03Get\x12>.yandex.cloud.compute.v1.instancegroup.GetInstanceGroupRequest\x1a\x34.yandex.cloud.compute.v1.instancegroup.InstanceGroup\"6\x82\xd3\xe4\x93\x02\x30\x12./compute/v1/instanceGroups/{instance_group_id}\x12\xaf\x01\n\x04List\x12@.yandex.cloud.compute.v1.instancegroup.ListInstanceGroupsRequest\x1a\x41.yandex.cloud.compute.v1.instancegroup.ListInstanceGroupsResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/compute/v1/instanceGroups\x12\xc5\x01\n\x06\x43reate\x12\x41.yandex.cloud.compute.v1.instancegroup.CreateInstanceGroupRequest\x1a!.yandex.cloud.operation.Operation\"U\x82\xd3\xe4\x93\x02\x1f\"\x1a/compute/v1/instanceGroups:\x01*\xb2\xd2*,\n\x1b\x43reateInstanceGroupMetadata\x12\rInstanceGroup\x12\xda\x01\n\x0e\x43reateFromYaml\x12I.yandex.cloud.compute.v1.instancegroup.CreateInstanceGroupFromYamlRequest\x1a!.yandex.cloud.operation.Operation\"Z\x82\xd3\xe4\x93\x02$\"\x1f/compute/v1/instanceGroups:yaml:\x01*\xb2\xd2*,\n\x1b\x43reateInstanceGroupMetadata\x12\rInstanceGroup\x12\xd9\x01\n\x06Update\x12\x41.yandex.cloud.compute.v1.instancegroup.UpdateInstanceGroupRequest\x1a!.yandex.cloud.operation.Operation\"i\x82\xd3\xe4\x93\x02\x33\x32./compute/v1/instanceGroups/{instance_group_id}:\x01*\xb2\xd2*,\n\x1bUpdateInstanceGroupMetadata\x12\rInstanceGroup\x12\xee\x01\n\x0eUpdateFromYaml\x12I.yandex.cloud.compute.v1.instancegroup.UpdateInstanceGroupFromYamlRequest\x1a!.yandex.cloud.operation.Operation\"n\x82\xd3\xe4\x93\x02\x38\x32\x33/compute/v1/instanceGroups/{instance_group_id}:yaml:\x01*\xb2\xd2*,\n\x1bUpdateInstanceGroupMetadata\x12\rInstanceGroup\x12\xd5\x01\n\x04Stop\x12?.yandex.cloud.compute.v1.instancegroup.StopInstanceGroupRequest\x1a!.yandex.cloud.operation.Operation\"i\x82\xd3\xe4\x93\x02\x35\"3/compute/v1/instanceGroups/{instance_group_id}:stop\xb2\xd2**\n\x19StopInstanceGroupMetadata\x12\rInstanceGroup\x12\xd9\x01\n\x05Start\x12@.yandex.cloud.compute.v1.instancegroup.StartInstanceGroupRequest\x1a!.yandex.cloud.operation.Operation\"k\x82\xd3\xe4\x93\x02\x36\"4/compute/v1/instanceGroups/{instance_group_id}:start\xb2\xd2*+\n\x1aStartInstanceGroupMetadata\x12\rInstanceGroup\x12\xde\x01\n\x06\x44\x65lete\x12\x41.yandex.cloud.compute.v1.instancegroup.DeleteInstanceGroupRequest\x1a!.yandex.cloud.operation.Operation\"n\x82\xd3\xe4\x93\x02\x30*./compute/v1/instanceGroups/{instance_group_id}\xb2\xd2*4\n\x1b\x44\x65leteInstanceGroupMetadata\x12\x15google.protobuf.Empty\x12\xe6\x01\n\rListInstances\x12H.yandex.cloud.compute.v1.instancegroup.ListInstanceGroupInstancesRequest\x1aI.yandex.cloud.compute.v1.instancegroup.ListInstanceGroupInstancesResponse\"@\x82\xd3\xe4\x93\x02:\x12\x38/compute/v1/instanceGroups/{instance_group_id}/instances\x12\xa1\x01\n\x0f\x44\x65leteInstances\x12=.yandex.cloud.compute.v1.instancegroup.DeleteInstancesRequest\x1a!.yandex.cloud.operation.Operation\",\xb2\xd2*(\n\x17\x44\x65leteInstancesMetadata\x12\rInstanceGroup\x12\x9b\x01\n\rStopInstances\x12;.yandex.cloud.compute.v1.instancegroup.StopInstancesRequest\x1a!.yandex.cloud.operation.Operation\"*\xb2\xd2*&\n\x15StopInstancesMetadata\x12\rInstanceGroup\x12\xea\x01\n\x0eListOperations\x12I.yandex.cloud.compute.v1.instancegroup.ListInstanceGroupOperationsRequest\x1aJ.yandex.cloud.compute.v1.instancegroup.ListInstanceGroupOperationsResponse\"A\x82\xd3\xe4\x93\x02;\x12\x39/compute/v1/instanceGroups/{instance_group_id}/operations\x12\xe4\x01\n\x0eListLogRecords\x12I.yandex.cloud.compute.v1.instancegroup.ListInstanceGroupLogRecordsRequest\x1aJ.yandex.cloud.compute.v1.instancegroup.ListInstanceGroupLogRecordsResponse\";\x82\xd3\xe4\x93\x02\x35\x12\x33/compute/v1/instanceGroups/{instance_group_id}:logs\x12\xba\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"C\x82\xd3\xe4\x93\x02=\x12;/compute/v1/instanceGroups/{resource_id}:listAccessBindings\x12\xea\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x82\x01\x82\xd3\xe4\x93\x02?\":/compute/v1/instanceGroups/{resource_id}:setAccessBindings:\x01*\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\xf6\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x88\x01\x82\xd3\xe4\x93\x02\x42\"=/compute/v1/instanceGroups/{resource_id}:updateAccessBindings:\x01*\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\x83\x02\n\x0fResumeProcesses\x12J.yandex.cloud.compute.v1.instancegroup.ResumeInstanceGroupProcessesRequest\x1a!.yandex.cloud.operation.Operation\"\x80\x01\x82\xd3\xe4\x93\x02\x43\">/compute/v1/instanceGroups/{instance_group_id}:resumeProcesses:\x01*\xb2\xd2*3\n\"ResumeInstanceGroupProcessMetadata\x12\rInstanceGroup\x12\xfe\x01\n\x0ePauseProcesses\x12I.yandex.cloud.compute.v1.instancegroup.PauseInstanceGroupProcessesRequest\x1a!.yandex.cloud.operation.Operation\"~\x82\xd3\xe4\x93\x02\x42\"=/compute/v1/instanceGroups/{instance_group_id}:pauseProcesses:\x01*\xb2\xd2*2\n!PauseInstanceGroupProcessMetadata\x12\rInstanceGroupB\x84\x01\n)yandex.cloud.api.compute.v1.instancegroupZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1/instancegroup;instancegroupb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_access_dot_access__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -51,8 +51,8 @@ _INSTANCEGROUPVIEW = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5301,
-  serialized_end=5341,
+  serialized_start=5409,
+  serialized_end=5449,
 )
 _sym_db.RegisterEnumDescriptor(_INSTANCEGROUPVIEW)
 
@@ -605,6 +605,13 @@ _UPDATEINSTANCEGROUPREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='application_load_balancer_spec', full_name='yandex.cloud.compute.v1.instancegroup.UpdateInstanceGroupRequest.application_load_balancer_spec', index=14,
+      number=17, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -618,7 +625,7 @@ _UPDATEINSTANCEGROUPREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=2074,
-  serialized_end=3129,
+  serialized_end=3237,
 )
 
 
@@ -656,8 +663,8 @@ _UPDATEINSTANCEGROUPFROMYAMLREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3131,
-  serialized_end=3256,
+  serialized_start=3239,
+  serialized_end=3364,
 )
 
 
@@ -688,8 +695,8 @@ _UPDATEINSTANCEGROUPMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3258,
-  serialized_end=3314,
+  serialized_start=3366,
+  serialized_end=3422,
 )
 
 
@@ -720,8 +727,8 @@ _STARTINSTANCEGROUPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3316,
-  serialized_end=3384,
+  serialized_start=3424,
+  serialized_end=3492,
 )
 
 
@@ -752,8 +759,8 @@ _STARTINSTANCEGROUPMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3386,
-  serialized_end=3441,
+  serialized_start=3494,
+  serialized_end=3549,
 )
 
 
@@ -784,8 +791,8 @@ _STOPINSTANCEGROUPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3443,
-  serialized_end=3510,
+  serialized_start=3551,
+  serialized_end=3618,
 )
 
 
@@ -816,8 +823,8 @@ _STOPINSTANCEGROUPMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3512,
-  serialized_end=3566,
+  serialized_start=3620,
+  serialized_end=3674,
 )
 
 
@@ -848,8 +855,8 @@ _DELETEINSTANCEGROUPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3568,
-  serialized_end=3637,
+  serialized_start=3676,
+  serialized_end=3745,
 )
 
 
@@ -880,8 +887,8 @@ _DELETEINSTANCEGROUPMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3639,
-  serialized_end=3695,
+  serialized_start=3747,
+  serialized_end=3803,
 )
 
 
@@ -912,8 +919,8 @@ _DELETEINSTANCESMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3697,
-  serialized_end=3749,
+  serialized_start=3805,
+  serialized_end=3857,
 )
 
 
@@ -944,8 +951,8 @@ _STOPINSTANCESMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3751,
-  serialized_end=3801,
+  serialized_start=3859,
+  serialized_end=3909,
 )
 
 
@@ -1004,8 +1011,8 @@ _LISTINSTANCEGROUPSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3804,
-  serialized_end=4018,
+  serialized_start=3912,
+  serialized_end=4126,
 )
 
 
@@ -1043,8 +1050,8 @@ _LISTINSTANCEGROUPSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4021,
-  serialized_end=4153,
+  serialized_start=4129,
+  serialized_end=4261,
 )
 
 
@@ -1096,8 +1103,8 @@ _LISTINSTANCEGROUPINSTANCESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4156,
-  serialized_end=4322,
+  serialized_start=4264,
+  serialized_end=4430,
 )
 
 
@@ -1135,8 +1142,8 @@ _LISTINSTANCEGROUPINSTANCESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4325,
-  serialized_end=4461,
+  serialized_start=4433,
+  serialized_end=4569,
 )
 
 
@@ -1181,8 +1188,8 @@ _DELETEINSTANCESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4464,
-  serialized_end=4600,
+  serialized_start=4572,
+  serialized_end=4708,
 )
 
 
@@ -1220,8 +1227,8 @@ _STOPINSTANCESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4602,
-  serialized_end=4712,
+  serialized_start=4710,
+  serialized_end=4820,
 )
 
 
@@ -1273,8 +1280,8 @@ _LISTINSTANCEGROUPOPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4715,
-  serialized_end=4882,
+  serialized_start=4823,
+  serialized_end=4990,
 )
 
 
@@ -1312,8 +1319,8 @@ _LISTINSTANCEGROUPOPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4884,
-  serialized_end=5001,
+  serialized_start=4992,
+  serialized_end=5109,
 )
 
 
@@ -1365,8 +1372,8 @@ _LISTINSTANCEGROUPLOGRECORDSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5004,
-  serialized_end=5163,
+  serialized_start=5112,
+  serialized_end=5271,
 )
 
 
@@ -1404,8 +1411,8 @@ _LISTINSTANCEGROUPLOGRECORDSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5166,
-  serialized_end=5299,
+  serialized_start=5274,
+  serialized_end=5407,
 )
 
 _GETINSTANCEGROUPREQUEST.fields_by_name['view'].enum_type = _INSTANCEGROUPVIEW
@@ -1429,6 +1436,7 @@ _UPDATEINSTANCEGROUPREQUEST.fields_by_name['allocation_policy'].message_type = y
 _UPDATEINSTANCEGROUPREQUEST.fields_by_name['health_checks_spec'].message_type = yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__pb2._HEALTHCHECKSSPEC
 _UPDATEINSTANCEGROUPREQUEST.fields_by_name['load_balancer_spec'].message_type = yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__pb2._LOADBALANCERSPEC
 _UPDATEINSTANCEGROUPREQUEST.fields_by_name['variables'].message_type = yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__pb2._VARIABLE
+_UPDATEINSTANCEGROUPREQUEST.fields_by_name['application_load_balancer_spec'].message_type = yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__pb2._APPLICATIONLOADBALANCERSPEC
 _LISTINSTANCEGROUPSREQUEST.fields_by_name['view'].enum_type = _INSTANCEGROUPVIEW
 _LISTINSTANCEGROUPSRESPONSE.fields_by_name['instance_groups'].message_type = yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__pb2._INSTANCEGROUP
 _LISTINSTANCEGROUPINSTANCESRESPONSE.fields_by_name['instances'].message_type = yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__pb2._MANAGEDINSTANCE
@@ -1744,8 +1752,8 @@ _INSTANCEGROUPSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=5344,
-  serialized_end=9486,
+  serialized_start=5452,
+  serialized_end=9594,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',

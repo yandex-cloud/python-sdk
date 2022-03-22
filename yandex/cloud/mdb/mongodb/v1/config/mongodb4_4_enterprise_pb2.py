@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n&yandex.cloud.api.mdb.mongodb.v1.configZNgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1/config;mongodb',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n>yandex/cloud/mdb/mongodb/v1/config/mongodb4_4_enterprise.proto\x12\"yandex.cloud.mdb.mongodb.v1.config\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\xe0\x0b\n\x1aMongodConfig4_4_enterprise\x12W\n\x07storage\x18\x01 \x01(\x0b\x32\x46.yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.Storage\x12n\n\x13operation_profiling\x18\x02 \x01(\x0b\x32Q.yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.OperationProfiling\x12S\n\x03net\x18\x03 \x01(\x0b\x32\x46.yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.Network\x1a\xd1\x06\n\x07Storage\x12\x66\n\x0bwired_tiger\x18\x01 \x01(\x0b\x32Q.yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.Storage.WiredTiger\x12_\n\x07journal\x18\x02 \x01(\x0b\x32N.yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.Storage.Journal\x1a\xb0\x04\n\nWiredTiger\x12u\n\rengine_config\x18\x01 \x01(\x0b\x32^.yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.Storage.WiredTiger.EngineConfig\x12}\n\x11\x63ollection_config\x18\x02 \x01(\x0b\x32\x62.yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.Storage.WiredTiger.CollectionConfig\x1a\x43\n\x0c\x45ngineConfig\x12\x33\n\rcache_size_gb\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\x1a\xe6\x01\n\x10\x43ollectionConfig\x12\x87\x01\n\x10\x62lock_compressor\x18\x01 \x01(\x0e\x32m.yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.Storage.WiredTiger.CollectionConfig.Compressor\"H\n\nCompressor\x12\x1a\n\x16\x43OMPRESSOR_UNSPECIFIED\x10\x00\x12\x08\n\x04NONE\x10\x01\x12\n\n\x06SNAPPY\x10\x02\x12\x08\n\x04ZLIB\x10\x03\x1aJ\n\x07Journal\x12?\n\x0f\x63ommit_interval\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\t\xfa\xc7\x31\x05\x31-500\x1a\xf7\x01\n\x12OperationProfiling\x12\x64\n\x04mode\x18\x01 \x01(\x0e\x32V.yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.OperationProfiling.Mode\x12>\n\x11slow_op_threshold\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x06\xfa\xc7\x31\x02>0\";\n\x04Mode\x12\x14\n\x10MODE_UNSPECIFIED\x10\x00\x12\x07\n\x03OFF\x10\x01\x12\x0b\n\x07SLOW_OP\x10\x02\x12\x07\n\x03\x41LL\x10\x03\x1aV\n\x07Network\x12K\n\x18max_incoming_connections\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0c\xfa\xc7\x31\x08\x31\x30-16384\"\xd9\x07\n\x1cMongoCfgConfig4_4_enterprise\x12Y\n\x07storage\x18\x01 \x01(\x0b\x32H.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig4_4_enterprise.Storage\x12p\n\x13operation_profiling\x18\x02 \x01(\x0b\x32S.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig4_4_enterprise.OperationProfiling\x12U\n\x03net\x18\x03 \x01(\x0b\x32H.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig4_4_enterprise.Network\x1a\xc0\x02\n\x07Storage\x12h\n\x0bwired_tiger\x18\x01 \x01(\x0b\x32S.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig4_4_enterprise.Storage.WiredTiger\x1a\xca\x01\n\nWiredTiger\x12w\n\rengine_config\x18\x01 \x01(\x0b\x32`.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig4_4_enterprise.Storage.WiredTiger.EngineConfig\x1a\x43\n\x0c\x45ngineConfig\x12\x33\n\rcache_size_gb\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\x1a\xf9\x01\n\x12OperationProfiling\x12\x66\n\x04mode\x18\x01 \x01(\x0e\x32X.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig4_4_enterprise.OperationProfiling.Mode\x12>\n\x11slow_op_threshold\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x06\xfa\xc7\x31\x02>0\";\n\x04Mode\x12\x14\n\x10MODE_UNSPECIFIED\x10\x00\x12\x07\n\x03OFF\x10\x01\x12\x0b\n\x07SLOW_OP\x10\x02\x12\x07\n\x03\x41LL\x10\x03\x1aV\n\x07Network\x12K\n\x18max_incoming_connections\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0c\xfa\xc7\x31\x08\x31\x30-16384\"\xc9\x01\n\x1aMongosConfig4_4_enterprise\x12S\n\x03net\x18\x01 \x01(\x0b\x32\x46.yandex.cloud.mdb.mongodb.v1.config.MongosConfig4_4_enterprise.Network\x1aV\n\x07Network\x12K\n\x18max_incoming_connections\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0c\xfa\xc7\x31\x08\x31\x30-16384\"\xa6\x02\n\x1dMongodConfigSet4_4_enterprise\x12X\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32>.yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise\x12S\n\x0buser_config\x18\x02 \x01(\x0b\x32>.yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise\x12V\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32>.yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise\"\xae\x02\n\x1fMongoCfgConfigSet4_4_enterprise\x12Z\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32@.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig4_4_enterprise\x12U\n\x0buser_config\x18\x02 \x01(\x0b\x32@.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig4_4_enterprise\x12X\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32@.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig4_4_enterprise\"\xa6\x02\n\x1dMongosConfigSet4_4_enterprise\x12X\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32>.yandex.cloud.mdb.mongodb.v1.config.MongosConfig4_4_enterprise\x12S\n\x0buser_config\x18\x02 \x01(\x0b\x32>.yandex.cloud.mdb.mongodb.v1.config.MongosConfig4_4_enterprise\x12V\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32>.yandex.cloud.mdb.mongodb.v1.config.MongosConfig4_4_enterpriseBx\n&yandex.cloud.api.mdb.mongodb.v1.configZNgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1/config;mongodbb\x06proto3'
+  serialized_pb=b'\n>yandex/cloud/mdb/mongodb/v1/config/mongodb4_4_enterprise.proto\x12\"yandex.cloud.mdb.mongodb.v1.config\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\x98\x11\n\x1aMongodConfig4_4_enterprise\x12W\n\x07storage\x18\x01 \x01(\x0b\x32\x46.yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.Storage\x12n\n\x13operation_profiling\x18\x02 \x01(\x0b\x32Q.yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.OperationProfiling\x12S\n\x03net\x18\x03 \x01(\x0b\x32\x46.yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.Network\x12Y\n\x08security\x18\x04 \x01(\x0b\x32G.yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.Security\x12Z\n\taudit_log\x18\x05 \x01(\x0b\x32G.yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.AuditLog\x12\x62\n\rset_parameter\x18\x06 \x01(\x0b\x32K.yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.SetParameter\x1a\xd1\x06\n\x07Storage\x12\x66\n\x0bwired_tiger\x18\x01 \x01(\x0b\x32Q.yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.Storage.WiredTiger\x12_\n\x07journal\x18\x02 \x01(\x0b\x32N.yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.Storage.Journal\x1a\xb0\x04\n\nWiredTiger\x12u\n\rengine_config\x18\x01 \x01(\x0b\x32^.yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.Storage.WiredTiger.EngineConfig\x12}\n\x11\x63ollection_config\x18\x02 \x01(\x0b\x32\x62.yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.Storage.WiredTiger.CollectionConfig\x1a\x43\n\x0c\x45ngineConfig\x12\x33\n\rcache_size_gb\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\x1a\xe6\x01\n\x10\x43ollectionConfig\x12\x87\x01\n\x10\x62lock_compressor\x18\x01 \x01(\x0e\x32m.yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.Storage.WiredTiger.CollectionConfig.Compressor\"H\n\nCompressor\x12\x1a\n\x16\x43OMPRESSOR_UNSPECIFIED\x10\x00\x12\x08\n\x04NONE\x10\x01\x12\n\n\x06SNAPPY\x10\x02\x12\x08\n\x04ZLIB\x10\x03\x1aJ\n\x07Journal\x12?\n\x0f\x63ommit_interval\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\t\xfa\xc7\x31\x05\x31-500\x1a\xf7\x01\n\x12OperationProfiling\x12\x64\n\x04mode\x18\x01 \x01(\x0e\x32V.yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.OperationProfiling.Mode\x12>\n\x11slow_op_threshold\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x06\xfa\xc7\x31\x02>0\";\n\x04Mode\x12\x14\n\x10MODE_UNSPECIFIED\x10\x00\x12\x07\n\x03OFF\x10\x01\x12\x0b\n\x07SLOW_OP\x10\x02\x12\x07\n\x03\x41LL\x10\x03\x1aV\n\x07Network\x12K\n\x18max_incoming_connections\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0c\xfa\xc7\x31\x08\x31\x30-16384\x1a\xad\x02\n\x08Security\x12\x35\n\x11\x65nable_encryption\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12Z\n\x04kmip\x18\x02 \x01(\x0b\x32L.yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.Security.KMIP\x1a\x8d\x01\n\x04KMIP\x12\x13\n\x0bserver_name\x18\x01 \x01(\t\x12)\n\x04port\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x11\n\tserver_ca\x18\x03 \x01(\t\x12\x1a\n\x12\x63lient_certificate\x18\x04 \x01(\t\x12\x16\n\x0ekey_identifier\x18\x05 \x01(\t\x1a\x1a\n\x08\x41uditLog\x12\x0e\n\x06\x66ilter\x18\x01 \x01(\t\x1aO\n\x0cSetParameter\x12?\n\x1b\x61udit_authorization_success\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"\xd9\x07\n\x1cMongoCfgConfig4_4_enterprise\x12Y\n\x07storage\x18\x01 \x01(\x0b\x32H.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig4_4_enterprise.Storage\x12p\n\x13operation_profiling\x18\x02 \x01(\x0b\x32S.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig4_4_enterprise.OperationProfiling\x12U\n\x03net\x18\x03 \x01(\x0b\x32H.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig4_4_enterprise.Network\x1a\xc0\x02\n\x07Storage\x12h\n\x0bwired_tiger\x18\x01 \x01(\x0b\x32S.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig4_4_enterprise.Storage.WiredTiger\x1a\xca\x01\n\nWiredTiger\x12w\n\rengine_config\x18\x01 \x01(\x0b\x32`.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig4_4_enterprise.Storage.WiredTiger.EngineConfig\x1a\x43\n\x0c\x45ngineConfig\x12\x33\n\rcache_size_gb\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\x1a\xf9\x01\n\x12OperationProfiling\x12\x66\n\x04mode\x18\x01 \x01(\x0e\x32X.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig4_4_enterprise.OperationProfiling.Mode\x12>\n\x11slow_op_threshold\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x06\xfa\xc7\x31\x02>0\";\n\x04Mode\x12\x14\n\x10MODE_UNSPECIFIED\x10\x00\x12\x07\n\x03OFF\x10\x01\x12\x0b\n\x07SLOW_OP\x10\x02\x12\x07\n\x03\x41LL\x10\x03\x1aV\n\x07Network\x12K\n\x18max_incoming_connections\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0c\xfa\xc7\x31\x08\x31\x30-16384\"\xc9\x01\n\x1aMongosConfig4_4_enterprise\x12S\n\x03net\x18\x01 \x01(\x0b\x32\x46.yandex.cloud.mdb.mongodb.v1.config.MongosConfig4_4_enterprise.Network\x1aV\n\x07Network\x12K\n\x18max_incoming_connections\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0c\xfa\xc7\x31\x08\x31\x30-16384\"\xa6\x02\n\x1dMongodConfigSet4_4_enterprise\x12X\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32>.yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise\x12S\n\x0buser_config\x18\x02 \x01(\x0b\x32>.yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise\x12V\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32>.yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise\"\xae\x02\n\x1fMongoCfgConfigSet4_4_enterprise\x12Z\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32@.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig4_4_enterprise\x12U\n\x0buser_config\x18\x02 \x01(\x0b\x32@.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig4_4_enterprise\x12X\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32@.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfig4_4_enterprise\"\xa6\x02\n\x1dMongosConfigSet4_4_enterprise\x12X\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32>.yandex.cloud.mdb.mongodb.v1.config.MongosConfig4_4_enterprise\x12S\n\x0buser_config\x18\x02 \x01(\x0b\x32>.yandex.cloud.mdb.mongodb.v1.config.MongosConfig4_4_enterprise\x12V\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32>.yandex.cloud.mdb.mongodb.v1.config.MongosConfig4_4_enterpriseBx\n&yandex.cloud.api.mdb.mongodb.v1.configZNgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1/config;mongodbb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -57,8 +57,8 @@ _MONGODCONFIG4_4_ENTERPRISE_STORAGE_WIREDTIGER_COLLECTIONCONFIG_COMPRESSOR = _de
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1184,
-  serialized_end=1256,
+  serialized_start=1467,
+  serialized_end=1539,
 )
 _sym_db.RegisterEnumDescriptor(_MONGODCONFIG4_4_ENTERPRISE_STORAGE_WIREDTIGER_COLLECTIONCONFIG_COMPRESSOR)
 
@@ -92,8 +92,8 @@ _MONGODCONFIG4_4_ENTERPRISE_OPERATIONPROFILING_MODE = _descriptor.EnumDescriptor
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1523,
-  serialized_end=1582,
+  serialized_start=1806,
+  serialized_end=1865,
 )
 _sym_db.RegisterEnumDescriptor(_MONGODCONFIG4_4_ENTERPRISE_OPERATIONPROFILING_MODE)
 
@@ -127,8 +127,8 @@ _MONGOCFGCONFIG4_4_ENTERPRISE_OPERATIONPROFILING_MODE = _descriptor.EnumDescript
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1523,
-  serialized_end=1582,
+  serialized_start=1806,
+  serialized_end=1865,
 )
 _sym_db.RegisterEnumDescriptor(_MONGOCFGCONFIG4_4_ENTERPRISE_OPERATIONPROFILING_MODE)
 
@@ -160,8 +160,8 @@ _MONGODCONFIG4_4_ENTERPRISE_STORAGE_WIREDTIGER_ENGINECONFIG = _descriptor.Descri
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=956,
-  serialized_end=1023,
+  serialized_start=1239,
+  serialized_end=1306,
 )
 
 _MONGODCONFIG4_4_ENTERPRISE_STORAGE_WIREDTIGER_COLLECTIONCONFIG = _descriptor.Descriptor(
@@ -192,8 +192,8 @@ _MONGODCONFIG4_4_ENTERPRISE_STORAGE_WIREDTIGER_COLLECTIONCONFIG = _descriptor.De
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1026,
-  serialized_end=1256,
+  serialized_start=1309,
+  serialized_end=1539,
 )
 
 _MONGODCONFIG4_4_ENTERPRISE_STORAGE_WIREDTIGER = _descriptor.Descriptor(
@@ -230,8 +230,8 @@ _MONGODCONFIG4_4_ENTERPRISE_STORAGE_WIREDTIGER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=696,
-  serialized_end=1256,
+  serialized_start=979,
+  serialized_end=1539,
 )
 
 _MONGODCONFIG4_4_ENTERPRISE_STORAGE_JOURNAL = _descriptor.Descriptor(
@@ -261,8 +261,8 @@ _MONGODCONFIG4_4_ENTERPRISE_STORAGE_JOURNAL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1258,
-  serialized_end=1332,
+  serialized_start=1541,
+  serialized_end=1615,
 )
 
 _MONGODCONFIG4_4_ENTERPRISE_STORAGE = _descriptor.Descriptor(
@@ -299,8 +299,8 @@ _MONGODCONFIG4_4_ENTERPRISE_STORAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=483,
-  serialized_end=1332,
+  serialized_start=766,
+  serialized_end=1615,
 )
 
 _MONGODCONFIG4_4_ENTERPRISE_OPERATIONPROFILING = _descriptor.Descriptor(
@@ -338,8 +338,8 @@ _MONGODCONFIG4_4_ENTERPRISE_OPERATIONPROFILING = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1335,
-  serialized_end=1582,
+  serialized_start=1618,
+  serialized_end=1865,
 )
 
 _MONGODCONFIG4_4_ENTERPRISE_NETWORK = _descriptor.Descriptor(
@@ -369,8 +369,167 @@ _MONGODCONFIG4_4_ENTERPRISE_NETWORK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1584,
-  serialized_end=1670,
+  serialized_start=1867,
+  serialized_end=1953,
+)
+
+_MONGODCONFIG4_4_ENTERPRISE_SECURITY_KMIP = _descriptor.Descriptor(
+  name='KMIP',
+  full_name='yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.Security.KMIP',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='server_name', full_name='yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.Security.KMIP.server_name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='port', full_name='yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.Security.KMIP.port', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='server_ca', full_name='yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.Security.KMIP.server_ca', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='client_certificate', full_name='yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.Security.KMIP.client_certificate', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='key_identifier', full_name='yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.Security.KMIP.key_identifier', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2116,
+  serialized_end=2257,
+)
+
+_MONGODCONFIG4_4_ENTERPRISE_SECURITY = _descriptor.Descriptor(
+  name='Security',
+  full_name='yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.Security',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='enable_encryption', full_name='yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.Security.enable_encryption', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='kmip', full_name='yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.Security.kmip', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_MONGODCONFIG4_4_ENTERPRISE_SECURITY_KMIP, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1956,
+  serialized_end=2257,
+)
+
+_MONGODCONFIG4_4_ENTERPRISE_AUDITLOG = _descriptor.Descriptor(
+  name='AuditLog',
+  full_name='yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.AuditLog',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='filter', full_name='yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.AuditLog.filter', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2259,
+  serialized_end=2285,
+)
+
+_MONGODCONFIG4_4_ENTERPRISE_SETPARAMETER = _descriptor.Descriptor(
+  name='SetParameter',
+  full_name='yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.SetParameter',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='audit_authorization_success', full_name='yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.SetParameter.audit_authorization_success', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2287,
+  serialized_end=2366,
 )
 
 _MONGODCONFIG4_4_ENTERPRISE = _descriptor.Descriptor(
@@ -402,10 +561,31 @@ _MONGODCONFIG4_4_ENTERPRISE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='security', full_name='yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.security', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='audit_log', full_name='yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.audit_log', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='set_parameter', full_name='yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.set_parameter', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
-  nested_types=[_MONGODCONFIG4_4_ENTERPRISE_STORAGE, _MONGODCONFIG4_4_ENTERPRISE_OPERATIONPROFILING, _MONGODCONFIG4_4_ENTERPRISE_NETWORK, ],
+  nested_types=[_MONGODCONFIG4_4_ENTERPRISE_STORAGE, _MONGODCONFIG4_4_ENTERPRISE_OPERATIONPROFILING, _MONGODCONFIG4_4_ENTERPRISE_NETWORK, _MONGODCONFIG4_4_ENTERPRISE_SECURITY, _MONGODCONFIG4_4_ENTERPRISE_AUDITLOG, _MONGODCONFIG4_4_ENTERPRISE_SETPARAMETER, ],
   enum_types=[
   ],
   serialized_options=None,
@@ -415,7 +595,7 @@ _MONGODCONFIG4_4_ENTERPRISE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=166,
-  serialized_end=1670,
+  serialized_end=2366,
 )
 
 
@@ -446,8 +626,8 @@ _MONGOCFGCONFIG4_4_ENTERPRISE_STORAGE_WIREDTIGER_ENGINECONFIG = _descriptor.Desc
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=956,
-  serialized_end=1023,
+  serialized_start=1239,
+  serialized_end=1306,
 )
 
 _MONGOCFGCONFIG4_4_ENTERPRISE_STORAGE_WIREDTIGER = _descriptor.Descriptor(
@@ -477,8 +657,8 @@ _MONGOCFGCONFIG4_4_ENTERPRISE_STORAGE_WIREDTIGER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2116,
-  serialized_end=2318,
+  serialized_start=2812,
+  serialized_end=3014,
 )
 
 _MONGOCFGCONFIG4_4_ENTERPRISE_STORAGE = _descriptor.Descriptor(
@@ -508,8 +688,8 @@ _MONGOCFGCONFIG4_4_ENTERPRISE_STORAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1998,
-  serialized_end=2318,
+  serialized_start=2694,
+  serialized_end=3014,
 )
 
 _MONGOCFGCONFIG4_4_ENTERPRISE_OPERATIONPROFILING = _descriptor.Descriptor(
@@ -547,8 +727,8 @@ _MONGOCFGCONFIG4_4_ENTERPRISE_OPERATIONPROFILING = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2321,
-  serialized_end=2570,
+  serialized_start=3017,
+  serialized_end=3266,
 )
 
 _MONGOCFGCONFIG4_4_ENTERPRISE_NETWORK = _descriptor.Descriptor(
@@ -578,8 +758,8 @@ _MONGOCFGCONFIG4_4_ENTERPRISE_NETWORK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1584,
-  serialized_end=1670,
+  serialized_start=1867,
+  serialized_end=1953,
 )
 
 _MONGOCFGCONFIG4_4_ENTERPRISE = _descriptor.Descriptor(
@@ -623,8 +803,8 @@ _MONGOCFGCONFIG4_4_ENTERPRISE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1673,
-  serialized_end=2658,
+  serialized_start=2369,
+  serialized_end=3354,
 )
 
 
@@ -655,8 +835,8 @@ _MONGOSCONFIG4_4_ENTERPRISE_NETWORK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1584,
-  serialized_end=1670,
+  serialized_start=1867,
+  serialized_end=1953,
 )
 
 _MONGOSCONFIG4_4_ENTERPRISE = _descriptor.Descriptor(
@@ -686,8 +866,8 @@ _MONGOSCONFIG4_4_ENTERPRISE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2661,
-  serialized_end=2862,
+  serialized_start=3357,
+  serialized_end=3558,
 )
 
 
@@ -732,8 +912,8 @@ _MONGODCONFIGSET4_4_ENTERPRISE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2865,
-  serialized_end=3159,
+  serialized_start=3561,
+  serialized_end=3855,
 )
 
 
@@ -778,8 +958,8 @@ _MONGOCFGCONFIGSET4_4_ENTERPRISE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3162,
-  serialized_end=3464,
+  serialized_start=3858,
+  serialized_end=4160,
 )
 
 
@@ -824,8 +1004,8 @@ _MONGOSCONFIGSET4_4_ENTERPRISE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3467,
-  serialized_end=3761,
+  serialized_start=4163,
+  serialized_end=4457,
 )
 
 _MONGODCONFIG4_4_ENTERPRISE_STORAGE_WIREDTIGER_ENGINECONFIG.fields_by_name['cache_size_gb'].message_type = google_dot_protobuf_dot_wrappers__pb2._DOUBLEVALUE
@@ -847,9 +1027,20 @@ _MONGODCONFIG4_4_ENTERPRISE_OPERATIONPROFILING.containing_type = _MONGODCONFIG4_
 _MONGODCONFIG4_4_ENTERPRISE_OPERATIONPROFILING_MODE.containing_type = _MONGODCONFIG4_4_ENTERPRISE_OPERATIONPROFILING
 _MONGODCONFIG4_4_ENTERPRISE_NETWORK.fields_by_name['max_incoming_connections'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
 _MONGODCONFIG4_4_ENTERPRISE_NETWORK.containing_type = _MONGODCONFIG4_4_ENTERPRISE
+_MONGODCONFIG4_4_ENTERPRISE_SECURITY_KMIP.fields_by_name['port'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_MONGODCONFIG4_4_ENTERPRISE_SECURITY_KMIP.containing_type = _MONGODCONFIG4_4_ENTERPRISE_SECURITY
+_MONGODCONFIG4_4_ENTERPRISE_SECURITY.fields_by_name['enable_encryption'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
+_MONGODCONFIG4_4_ENTERPRISE_SECURITY.fields_by_name['kmip'].message_type = _MONGODCONFIG4_4_ENTERPRISE_SECURITY_KMIP
+_MONGODCONFIG4_4_ENTERPRISE_SECURITY.containing_type = _MONGODCONFIG4_4_ENTERPRISE
+_MONGODCONFIG4_4_ENTERPRISE_AUDITLOG.containing_type = _MONGODCONFIG4_4_ENTERPRISE
+_MONGODCONFIG4_4_ENTERPRISE_SETPARAMETER.fields_by_name['audit_authorization_success'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
+_MONGODCONFIG4_4_ENTERPRISE_SETPARAMETER.containing_type = _MONGODCONFIG4_4_ENTERPRISE
 _MONGODCONFIG4_4_ENTERPRISE.fields_by_name['storage'].message_type = _MONGODCONFIG4_4_ENTERPRISE_STORAGE
 _MONGODCONFIG4_4_ENTERPRISE.fields_by_name['operation_profiling'].message_type = _MONGODCONFIG4_4_ENTERPRISE_OPERATIONPROFILING
 _MONGODCONFIG4_4_ENTERPRISE.fields_by_name['net'].message_type = _MONGODCONFIG4_4_ENTERPRISE_NETWORK
+_MONGODCONFIG4_4_ENTERPRISE.fields_by_name['security'].message_type = _MONGODCONFIG4_4_ENTERPRISE_SECURITY
+_MONGODCONFIG4_4_ENTERPRISE.fields_by_name['audit_log'].message_type = _MONGODCONFIG4_4_ENTERPRISE_AUDITLOG
+_MONGODCONFIG4_4_ENTERPRISE.fields_by_name['set_parameter'].message_type = _MONGODCONFIG4_4_ENTERPRISE_SETPARAMETER
 _MONGOCFGCONFIG4_4_ENTERPRISE_STORAGE_WIREDTIGER_ENGINECONFIG.fields_by_name['cache_size_gb'].message_type = google_dot_protobuf_dot_wrappers__pb2._DOUBLEVALUE
 _MONGOCFGCONFIG4_4_ENTERPRISE_STORAGE_WIREDTIGER_ENGINECONFIG.containing_type = _MONGOCFGCONFIG4_4_ENTERPRISE_STORAGE_WIREDTIGER
 _MONGOCFGCONFIG4_4_ENTERPRISE_STORAGE_WIREDTIGER.fields_by_name['engine_config'].message_type = _MONGOCFGCONFIG4_4_ENTERPRISE_STORAGE_WIREDTIGER_ENGINECONFIG
@@ -935,6 +1126,34 @@ MongodConfig4_4_enterprise = _reflection.GeneratedProtocolMessageType('MongodCon
     # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.Network)
     })
   ,
+
+  'Security' : _reflection.GeneratedProtocolMessageType('Security', (_message.Message,), {
+
+    'KMIP' : _reflection.GeneratedProtocolMessageType('KMIP', (_message.Message,), {
+      'DESCRIPTOR' : _MONGODCONFIG4_4_ENTERPRISE_SECURITY_KMIP,
+      '__module__' : 'yandex.cloud.mdb.mongodb.v1.config.mongodb4_4_enterprise_pb2'
+      # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.Security.KMIP)
+      })
+    ,
+    'DESCRIPTOR' : _MONGODCONFIG4_4_ENTERPRISE_SECURITY,
+    '__module__' : 'yandex.cloud.mdb.mongodb.v1.config.mongodb4_4_enterprise_pb2'
+    # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.Security)
+    })
+  ,
+
+  'AuditLog' : _reflection.GeneratedProtocolMessageType('AuditLog', (_message.Message,), {
+    'DESCRIPTOR' : _MONGODCONFIG4_4_ENTERPRISE_AUDITLOG,
+    '__module__' : 'yandex.cloud.mdb.mongodb.v1.config.mongodb4_4_enterprise_pb2'
+    # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.AuditLog)
+    })
+  ,
+
+  'SetParameter' : _reflection.GeneratedProtocolMessageType('SetParameter', (_message.Message,), {
+    'DESCRIPTOR' : _MONGODCONFIG4_4_ENTERPRISE_SETPARAMETER,
+    '__module__' : 'yandex.cloud.mdb.mongodb.v1.config.mongodb4_4_enterprise_pb2'
+    # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise.SetParameter)
+    })
+  ,
   'DESCRIPTOR' : _MONGODCONFIG4_4_ENTERPRISE,
   '__module__' : 'yandex.cloud.mdb.mongodb.v1.config.mongodb4_4_enterprise_pb2'
   # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.mongodb.v1.config.MongodConfig4_4_enterprise)
@@ -947,6 +1166,10 @@ _sym_db.RegisterMessage(MongodConfig4_4_enterprise.Storage.WiredTiger.Collection
 _sym_db.RegisterMessage(MongodConfig4_4_enterprise.Storage.Journal)
 _sym_db.RegisterMessage(MongodConfig4_4_enterprise.OperationProfiling)
 _sym_db.RegisterMessage(MongodConfig4_4_enterprise.Network)
+_sym_db.RegisterMessage(MongodConfig4_4_enterprise.Security)
+_sym_db.RegisterMessage(MongodConfig4_4_enterprise.Security.KMIP)
+_sym_db.RegisterMessage(MongodConfig4_4_enterprise.AuditLog)
+_sym_db.RegisterMessage(MongodConfig4_4_enterprise.SetParameter)
 
 MongoCfgConfig4_4_enterprise = _reflection.GeneratedProtocolMessageType('MongoCfgConfig4_4_enterprise', (_message.Message,), {
 

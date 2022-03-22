@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\032yandex.cloud.api.ai.tts.v3Z>github.com/yandex-cloud/go-genproto/yandex/cloud/ai/tts/v3;tts',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n yandex/cloud/ai/tts/v3/tts.proto\x12\x10speechkit.tts.v3\"j\n\x0c\x41udioContent\x12\x11\n\x07\x63ontent\x18\x01 \x01(\x0cH\x00\x12\x38\n\naudio_spec\x18\x02 \x01(\x0b\x32$.speechkit.tts.v3.AudioFormatOptionsB\r\n\x0b\x41udioSource\"\x91\x01\n\x12\x41udioFormatOptions\x12/\n\traw_audio\x18\x01 \x01(\x0b\x32\x1a.speechkit.tts.v3.RawAudioH\x00\x12;\n\x0f\x63ontainer_audio\x18\x02 \x01(\x0b\x32 .speechkit.tts.v3.ContainerAudioH\x00\x42\r\n\x0b\x41udioFormat\"\xaa\x01\n\x08RawAudio\x12@\n\x0e\x61udio_encoding\x18\x01 \x01(\x0e\x32(.speechkit.tts.v3.RawAudio.AudioEncoding\x12\x19\n\x11sample_rate_hertz\x18\x02 \x01(\x03\"A\n\rAudioEncoding\x12\x1e\n\x1a\x41UDIO_ENCODING_UNSPECIFIED\x10\x00\x12\x10\n\x0cLINEAR16_PCM\x10\x01\"\xb6\x01\n\x0e\x43ontainerAudio\x12Q\n\x14\x63ontainer_audio_type\x18\x01 \x01(\x0e\x32\x33.speechkit.tts.v3.ContainerAudio.ContainerAudioType\"Q\n\x12\x43ontainerAudioType\x12$\n CONTAINER_AUDIO_TYPE_UNSPECIFIED\x10\x00\x12\x07\n\x03WAV\x10\x01\x12\x0c\n\x08OGG_OPUS\x10\x02\"=\n\x0cTextVariable\x12\x15\n\rvariable_name\x18\x01 \x01(\t\x12\x16\n\x0evariable_value\x18\x02 \x01(\t\"]\n\rAudioVariable\x12\x15\n\rvariable_name\x18\x01 \x01(\t\x12\x19\n\x11variable_start_ms\x18\x02 \x01(\x03\x12\x1a\n\x12variable_length_ms\x18\x03 \x01(\x03\"O\n\x1aUtteranceSynthesisResponse\x12\x31\n\x0b\x61udio_chunk\x18\x01 \x01(\x0b\x32\x1c.speechkit.tts.v3.AudioChunk\"\xa9\x01\n\rAudioTemplate\x12-\n\x05\x61udio\x18\x01 \x01(\x0b\x32\x1e.speechkit.tts.v3.AudioContent\x12\x35\n\rtext_template\x18\x02 \x01(\x0b\x32\x1e.speechkit.tts.v3.TextTemplate\x12\x32\n\tvariables\x18\x03 \x03(\x0b\x32\x1f.speechkit.tts.v3.AudioVariable\"\x1a\n\nAudioChunk\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\"X\n\x0cTextTemplate\x12\x15\n\rtext_template\x18\x01 \x01(\t\x12\x31\n\tvariables\x18\x02 \x03(\x0b\x32\x1e.speechkit.tts.v3.TextVariable\"~\n\x05Hints\x12\x0f\n\x05voice\x18\x01 \x01(\tH\x00\x12\x39\n\x0e\x61udio_template\x18\x02 \x01(\x0b\x32\x1f.speechkit.tts.v3.AudioTemplateH\x00\x12\x0f\n\x05speed\x18\x03 \x01(\x01H\x00\x12\x10\n\x06volume\x18\x04 \x01(\x01H\x00\x42\x06\n\x04Hint\"\xcc\x03\n\x19UtteranceSynthesisRequest\x12\r\n\x05model\x18\x01 \x01(\t\x12\x0e\n\x04text\x18\x02 \x01(\tH\x00\x12\x37\n\rtext_template\x18\x03 \x01(\x0b\x32\x1e.speechkit.tts.v3.TextTemplateH\x00\x12&\n\x05hints\x18\x04 \x03(\x0b\x32\x17.speechkit.tts.v3.Hints\x12?\n\x11output_audio_spec\x18\x05 \x01(\x0b\x32$.speechkit.tts.v3.AudioFormatOptions\x12j\n\x1bloudness_normalization_type\x18\x06 \x01(\x0e\x32\x45.speechkit.tts.v3.UtteranceSynthesisRequest.LoudnessNormalizationType\x12\x13\n\x0bunsafe_mode\x18\x07 \x01(\x08\"`\n\x19LoudnessNormalizationType\x12+\n\'LOUDNESS_NORMALIZATION_TYPE_UNSPECIFIED\x10\x00\x12\x0c\n\x08MAX_PEAK\x10\x01\x12\x08\n\x04LUFS\x10\x02\x42\x0b\n\tUtteranceB\\\n\x1ayandex.cloud.api.ai.tts.v3Z>github.com/yandex-cloud/go-genproto/yandex/cloud/ai/tts/v3;ttsb\x06proto3'
+  serialized_pb=b'\n yandex/cloud/ai/tts/v3/tts.proto\x12\x10speechkit.tts.v3\"j\n\x0c\x41udioContent\x12\x11\n\x07\x63ontent\x18\x01 \x01(\x0cH\x00\x12\x38\n\naudio_spec\x18\x02 \x01(\x0b\x32$.speechkit.tts.v3.AudioFormatOptionsB\r\n\x0b\x41udioSource\"\x91\x01\n\x12\x41udioFormatOptions\x12/\n\traw_audio\x18\x01 \x01(\x0b\x32\x1a.speechkit.tts.v3.RawAudioH\x00\x12;\n\x0f\x63ontainer_audio\x18\x02 \x01(\x0b\x32 .speechkit.tts.v3.ContainerAudioH\x00\x42\r\n\x0b\x41udioFormat\"\xaa\x01\n\x08RawAudio\x12@\n\x0e\x61udio_encoding\x18\x01 \x01(\x0e\x32(.speechkit.tts.v3.RawAudio.AudioEncoding\x12\x19\n\x11sample_rate_hertz\x18\x02 \x01(\x03\"A\n\rAudioEncoding\x12\x1e\n\x1a\x41UDIO_ENCODING_UNSPECIFIED\x10\x00\x12\x10\n\x0cLINEAR16_PCM\x10\x01\"\xbf\x01\n\x0e\x43ontainerAudio\x12Q\n\x14\x63ontainer_audio_type\x18\x01 \x01(\x0e\x32\x33.speechkit.tts.v3.ContainerAudio.ContainerAudioType\"Z\n\x12\x43ontainerAudioType\x12$\n CONTAINER_AUDIO_TYPE_UNSPECIFIED\x10\x00\x12\x07\n\x03WAV\x10\x01\x12\x0c\n\x08OGG_OPUS\x10\x02\x12\x07\n\x03MP3\x10\x03\"=\n\x0cTextVariable\x12\x15\n\rvariable_name\x18\x01 \x01(\t\x12\x16\n\x0evariable_value\x18\x02 \x01(\t\"]\n\rAudioVariable\x12\x15\n\rvariable_name\x18\x01 \x01(\t\x12\x19\n\x11variable_start_ms\x18\x02 \x01(\x03\x12\x1a\n\x12variable_length_ms\x18\x03 \x01(\x03\"O\n\x1aUtteranceSynthesisResponse\x12\x31\n\x0b\x61udio_chunk\x18\x01 \x01(\x0b\x32\x1c.speechkit.tts.v3.AudioChunk\"\xa9\x01\n\rAudioTemplate\x12-\n\x05\x61udio\x18\x01 \x01(\x0b\x32\x1e.speechkit.tts.v3.AudioContent\x12\x35\n\rtext_template\x18\x02 \x01(\x0b\x32\x1e.speechkit.tts.v3.TextTemplate\x12\x32\n\tvariables\x18\x03 \x03(\x0b\x32\x1f.speechkit.tts.v3.AudioVariable\"\x1a\n\nAudioChunk\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\"X\n\x0cTextTemplate\x12\x15\n\rtext_template\x18\x01 \x01(\t\x12\x31\n\tvariables\x18\x02 \x03(\x0b\x32\x1e.speechkit.tts.v3.TextVariable\"\x8e\x01\n\x05Hints\x12\x0f\n\x05voice\x18\x01 \x01(\tH\x00\x12\x39\n\x0e\x61udio_template\x18\x02 \x01(\x0b\x32\x1f.speechkit.tts.v3.AudioTemplateH\x00\x12\x0f\n\x05speed\x18\x03 \x01(\x01H\x00\x12\x10\n\x06volume\x18\x04 \x01(\x01H\x00\x12\x0e\n\x04role\x18\x05 \x01(\tH\x00\x42\x06\n\x04Hint\"\xc3\x03\n\x19UtteranceSynthesisRequest\x12\x0e\n\x04text\x18\x02 \x01(\tH\x00\x12\x37\n\rtext_template\x18\x03 \x01(\x0b\x32\x1e.speechkit.tts.v3.TextTemplateH\x00\x12&\n\x05hints\x18\x04 \x03(\x0b\x32\x17.speechkit.tts.v3.Hints\x12?\n\x11output_audio_spec\x18\x05 \x01(\x0b\x32$.speechkit.tts.v3.AudioFormatOptions\x12j\n\x1bloudness_normalization_type\x18\x06 \x01(\x0e\x32\x45.speechkit.tts.v3.UtteranceSynthesisRequest.LoudnessNormalizationType\x12\x13\n\x0bunsafe_mode\x18\x07 \x01(\x08\"`\n\x19LoudnessNormalizationType\x12+\n\'LOUDNESS_NORMALIZATION_TYPE_UNSPECIFIED\x10\x00\x12\x0c\n\x08MAX_PEAK\x10\x01\x12\x08\n\x04LUFS\x10\x02\x42\x0b\n\tUtteranceJ\x04\x08\x01\x10\x02\x42\\\n\x1ayandex.cloud.api.ai.tts.v3Z>github.com/yandex-cloud/go-genproto/yandex/cloud/ai/tts/v3;ttsb\x06proto3'
 )
 
 
@@ -71,11 +71,16 @@ _CONTAINERAUDIO_CONTAINERAUDIOTYPE = _descriptor.EnumDescriptor(
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='MP3', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
   serialized_start=585,
-  serialized_end=666,
+  serialized_end=675,
 )
 _sym_db.RegisterEnumDescriptor(_CONTAINERAUDIO_CONTAINERAUDIOTYPE)
 
@@ -104,8 +109,8 @@ _UTTERANCESYNTHESISREQUEST_LOUDNESSNORMALIZATIONTYPE = _descriptor.EnumDescripto
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1677,
-  serialized_end=1773,
+  serialized_start=1688,
+  serialized_end=1784,
 )
 _sym_db.RegisterEnumDescriptor(_UTTERANCESYNTHESISREQUEST_LOUDNESSNORMALIZATIONTYPE)
 
@@ -267,7 +272,7 @@ _CONTAINERAUDIO = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=484,
-  serialized_end=666,
+  serialized_end=675,
 )
 
 
@@ -305,8 +310,8 @@ _TEXTVARIABLE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=668,
-  serialized_end=729,
+  serialized_start=677,
+  serialized_end=738,
 )
 
 
@@ -351,8 +356,8 @@ _AUDIOVARIABLE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=731,
-  serialized_end=824,
+  serialized_start=740,
+  serialized_end=833,
 )
 
 
@@ -383,8 +388,8 @@ _UTTERANCESYNTHESISRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=826,
-  serialized_end=905,
+  serialized_start=835,
+  serialized_end=914,
 )
 
 
@@ -429,8 +434,8 @@ _AUDIOTEMPLATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=908,
-  serialized_end=1077,
+  serialized_start=917,
+  serialized_end=1086,
 )
 
 
@@ -461,8 +466,8 @@ _AUDIOCHUNK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1079,
-  serialized_end=1105,
+  serialized_start=1088,
+  serialized_end=1114,
 )
 
 
@@ -500,8 +505,8 @@ _TEXTTEMPLATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1107,
-  serialized_end=1195,
+  serialized_start=1116,
+  serialized_end=1204,
 )
 
 
@@ -541,6 +546,13 @@ _HINTS = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='role', full_name='speechkit.tts.v3.Hints.role', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -558,8 +570,8 @@ _HINTS = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1197,
-  serialized_end=1323,
+  serialized_start=1207,
+  serialized_end=1349,
 )
 
 
@@ -572,49 +584,42 @@ _UTTERANCESYNTHESISREQUEST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='model', full_name='speechkit.tts.v3.UtteranceSynthesisRequest.model', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='text', full_name='speechkit.tts.v3.UtteranceSynthesisRequest.text', index=1,
+      name='text', full_name='speechkit.tts.v3.UtteranceSynthesisRequest.text', index=0,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='text_template', full_name='speechkit.tts.v3.UtteranceSynthesisRequest.text_template', index=2,
+      name='text_template', full_name='speechkit.tts.v3.UtteranceSynthesisRequest.text_template', index=1,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='hints', full_name='speechkit.tts.v3.UtteranceSynthesisRequest.hints', index=3,
+      name='hints', full_name='speechkit.tts.v3.UtteranceSynthesisRequest.hints', index=2,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='output_audio_spec', full_name='speechkit.tts.v3.UtteranceSynthesisRequest.output_audio_spec', index=4,
+      name='output_audio_spec', full_name='speechkit.tts.v3.UtteranceSynthesisRequest.output_audio_spec', index=3,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='loudness_normalization_type', full_name='speechkit.tts.v3.UtteranceSynthesisRequest.loudness_normalization_type', index=5,
+      name='loudness_normalization_type', full_name='speechkit.tts.v3.UtteranceSynthesisRequest.loudness_normalization_type', index=4,
       number=6, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='unsafe_mode', full_name='speechkit.tts.v3.UtteranceSynthesisRequest.unsafe_mode', index=6,
+      name='unsafe_mode', full_name='speechkit.tts.v3.UtteranceSynthesisRequest.unsafe_mode', index=5,
       number=7, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -638,8 +643,8 @@ _UTTERANCESYNTHESISREQUEST = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1326,
-  serialized_end=1786,
+  serialized_start=1352,
+  serialized_end=1803,
 )
 
 _AUDIOCONTENT.fields_by_name['audio_spec'].message_type = _AUDIOFORMATOPTIONS
@@ -676,6 +681,9 @@ _HINTS.fields_by_name['speed'].containing_oneof = _HINTS.oneofs_by_name['Hint']
 _HINTS.oneofs_by_name['Hint'].fields.append(
   _HINTS.fields_by_name['volume'])
 _HINTS.fields_by_name['volume'].containing_oneof = _HINTS.oneofs_by_name['Hint']
+_HINTS.oneofs_by_name['Hint'].fields.append(
+  _HINTS.fields_by_name['role'])
+_HINTS.fields_by_name['role'].containing_oneof = _HINTS.oneofs_by_name['Hint']
 _UTTERANCESYNTHESISREQUEST.fields_by_name['text_template'].message_type = _TEXTTEMPLATE
 _UTTERANCESYNTHESISREQUEST.fields_by_name['hints'].message_type = _HINTS
 _UTTERANCESYNTHESISREQUEST.fields_by_name['output_audio_spec'].message_type = _AUDIOFORMATOPTIONS
