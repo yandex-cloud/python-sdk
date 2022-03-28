@@ -96,6 +96,7 @@ _supported_modules = [
     ("yandex.cloud.containerregistry", "container-registry"),
     ("yandex.cloud.dataproc.manager", "dataproc-manager"),
     ("yandex.cloud.dataproc", "dataproc"),
+    ("yandex.cloud.datatransfer", "datatransfer"),
     ("yandex.cloud.dns", "dns"),
     ("yandex.cloud.endpoint", "endpoint"),
     ("yandex.cloud.iam", "iam"),
