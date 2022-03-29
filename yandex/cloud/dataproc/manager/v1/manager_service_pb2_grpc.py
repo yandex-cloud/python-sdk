@@ -6,7 +6,7 @@ from yandex.cloud.dataproc.manager.v1 import manager_service_pb2 as yandex_dot_c
 
 
 class DataprocManagerServiceStub(object):
-    """Data Proc manager service defifnition
+    """Data Proc manager service definition.
     """
 
     def __init__(self, channel):
@@ -23,11 +23,11 @@ class DataprocManagerServiceStub(object):
 
 
 class DataprocManagerServiceServicer(object):
-    """Data Proc manager service defifnition
+    """Data Proc manager service definition.
     """
 
     def Report(self, request, context):
-        """Sends a status report from a host
+        """Sends a status report from a host.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -49,7 +49,7 @@ def add_DataprocManagerServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class DataprocManagerService(object):
-    """Data Proc manager service defifnition
+    """Data Proc manager service definition.
     """
 
     @staticmethod
