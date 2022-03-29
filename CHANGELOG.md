@@ -2,6 +2,11 @@
 
 <!--next-version-placeholder-->
 
+## v0.152.0 (2022-03-29)
+### Feature
+* Regenerate proto
+ ([`ae23f49`](https://github.com/yandex-cloud/python-sdk/commit/ae23f4957a355e647e4e49577f9d735695c7944b))
+
 ## v0.151.0 (2022-03-28)
 ### Feature
 * Add datatransfer module
