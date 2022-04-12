@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n)yandex.cloud.api.datatransfer.v1.endpointZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1/endpoint;endpoint\252\002%Yandex.Cloud.Datatransfer.V1.EndPoint',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n1yandex/cloud/datatransfer/v1/endpoint/mysql.proto\x12%yandex.cloud.datatransfer.v1.endpoint\x1a\x32yandex/cloud/datatransfer/v1/endpoint/common.proto\"\x82\x01\n\x0eOnPremiseMysql\x12\r\n\x05hosts\x18\x05 \x03(\t\x12\x0c\n\x04port\x18\x02 \x01(\x03\x12@\n\x08tls_mode\x18\x06 \x01(\x0b\x32..yandex.cloud.datatransfer.v1.endpoint.TLSMode\x12\x11\n\tsubnet_id\x18\x04 \x01(\t\"\x86\x01\n\x0fMysqlConnection\x12\x18\n\x0emdb_cluster_id\x18\x01 \x01(\tH\x00\x12K\n\non_premise\x18\x02 \x01(\x0b\x32\x35.yandex.cloud.datatransfer.v1.endpoint.OnPremiseMysqlH\x00\x42\x0c\n\nconnection\"\x81\x02\n\x1bMysqlObjectTransferSettings\x12H\n\x04view\x18\x01 \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\x12K\n\x07routine\x18\x02 \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\x12K\n\x07trigger\x18\x03 \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\"\xee\x02\n\x0bMysqlSource\x12J\n\nconnection\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.datatransfer.v1.endpoint.MysqlConnection\x12\x10\n\x08\x64\x61tabase\x18\x02 \x01(\t\x12\x0c\n\x04user\x18\x03 \x01(\t\x12?\n\x08password\x18\x04 \x01(\x0b\x32-.yandex.cloud.datatransfer.v1.endpoint.Secret\x12\x1c\n\x14include_tables_regex\x18\x0c \x03(\t\x12\x1c\n\x14\x65xclude_tables_regex\x18\r \x03(\t\x12\x10\n\x08timezone\x18\x08 \x01(\t\x12\x64\n\x18object_transfer_settings\x18\x0b \x01(\x0b\x32\x42.yandex.cloud.datatransfer.v1.endpoint.MysqlObjectTransferSettings\"\xe6\x02\n\x0bMysqlTarget\x12J\n\nconnection\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.datatransfer.v1.endpoint.MysqlConnection\x12\x10\n\x08\x64\x61tabase\x18\x02 \x01(\t\x12\x0c\n\x04user\x18\x03 \x01(\t\x12?\n\x08password\x18\x04 \x01(\x0b\x32-.yandex.cloud.datatransfer.v1.endpoint.Secret\x12\x10\n\x08sql_mode\x18\x05 \x01(\t\x12\x1e\n\x16skip_constraint_checks\x18\x06 \x01(\x08\x12\x10\n\x08timezone\x18\x07 \x01(\t\x12L\n\x0e\x63leanup_policy\x18\x08 \x01(\x0e\x32\x34.yandex.cloud.datatransfer.v1.endpoint.CleanupPolicy\x12\x18\n\x10service_database\x18\x0f \x01(\tB\xa7\x01\n)yandex.cloud.api.datatransfer.v1.endpointZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1/endpoint;endpoint\xaa\x02%Yandex.Cloud.Datatransfer.V1.EndPointb\x06proto3'
+  serialized_pb=b'\n1yandex/cloud/datatransfer/v1/endpoint/mysql.proto\x12%yandex.cloud.datatransfer.v1.endpoint\x1a\x32yandex/cloud/datatransfer/v1/endpoint/common.proto\"\x82\x01\n\x0eOnPremiseMysql\x12\r\n\x05hosts\x18\x05 \x03(\t\x12\x0c\n\x04port\x18\x02 \x01(\x03\x12@\n\x08tls_mode\x18\x06 \x01(\x0b\x32..yandex.cloud.datatransfer.v1.endpoint.TLSMode\x12\x11\n\tsubnet_id\x18\x04 \x01(\t\"\x86\x01\n\x0fMysqlConnection\x12\x18\n\x0emdb_cluster_id\x18\x01 \x01(\tH\x00\x12K\n\non_premise\x18\x02 \x01(\x0b\x32\x35.yandex.cloud.datatransfer.v1.endpoint.OnPremiseMysqlH\x00\x42\x0c\n\nconnection\"\x81\x02\n\x1bMysqlObjectTransferSettings\x12H\n\x04view\x18\x01 \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\x12K\n\x07routine\x18\x02 \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\x12K\n\x07trigger\x18\x03 \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\"\xa1\x03\n\x0bMysqlSource\x12J\n\nconnection\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.datatransfer.v1.endpoint.MysqlConnection\x12\x17\n\x0fsecurity_groups\x18\x0e \x03(\t\x12\x10\n\x08\x64\x61tabase\x18\x02 \x01(\t\x12\x18\n\x10service_database\x18\x0f \x01(\t\x12\x0c\n\x04user\x18\x03 \x01(\t\x12?\n\x08password\x18\x04 \x01(\x0b\x32-.yandex.cloud.datatransfer.v1.endpoint.Secret\x12\x1c\n\x14include_tables_regex\x18\x0c \x03(\t\x12\x1c\n\x14\x65xclude_tables_regex\x18\r \x03(\t\x12\x10\n\x08timezone\x18\x08 \x01(\t\x12\x64\n\x18object_transfer_settings\x18\x0b \x01(\x0b\x32\x42.yandex.cloud.datatransfer.v1.endpoint.MysqlObjectTransferSettings\"\xff\x02\n\x0bMysqlTarget\x12J\n\nconnection\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.datatransfer.v1.endpoint.MysqlConnection\x12\x17\n\x0fsecurity_groups\x18\x10 \x03(\t\x12\x10\n\x08\x64\x61tabase\x18\x02 \x01(\t\x12\x0c\n\x04user\x18\x03 \x01(\t\x12?\n\x08password\x18\x04 \x01(\x0b\x32-.yandex.cloud.datatransfer.v1.endpoint.Secret\x12\x10\n\x08sql_mode\x18\x05 \x01(\t\x12\x1e\n\x16skip_constraint_checks\x18\x06 \x01(\x08\x12\x10\n\x08timezone\x18\x07 \x01(\t\x12L\n\x0e\x63leanup_policy\x18\x08 \x01(\x0e\x32\x34.yandex.cloud.datatransfer.v1.endpoint.CleanupPolicy\x12\x18\n\x10service_database\x18\x0f \x01(\tB\xa7\x01\n)yandex.cloud.api.datatransfer.v1.endpointZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1/endpoint;endpoint\xaa\x02%Yandex.Cloud.Datatransfer.V1.EndPointb\x06proto3'
   ,
   dependencies=[yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_common__pb2.DESCRIPTOR,])
 
@@ -186,49 +186,63 @@ _MYSQLSOURCE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='database', full_name='yandex.cloud.datatransfer.v1.endpoint.MysqlSource.database', index=1,
+      name='security_groups', full_name='yandex.cloud.datatransfer.v1.endpoint.MysqlSource.security_groups', index=1,
+      number=14, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='database', full_name='yandex.cloud.datatransfer.v1.endpoint.MysqlSource.database', index=2,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='user', full_name='yandex.cloud.datatransfer.v1.endpoint.MysqlSource.user', index=2,
+      name='service_database', full_name='yandex.cloud.datatransfer.v1.endpoint.MysqlSource.service_database', index=3,
+      number=15, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='user', full_name='yandex.cloud.datatransfer.v1.endpoint.MysqlSource.user', index=4,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='password', full_name='yandex.cloud.datatransfer.v1.endpoint.MysqlSource.password', index=3,
+      name='password', full_name='yandex.cloud.datatransfer.v1.endpoint.MysqlSource.password', index=5,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='include_tables_regex', full_name='yandex.cloud.datatransfer.v1.endpoint.MysqlSource.include_tables_regex', index=4,
+      name='include_tables_regex', full_name='yandex.cloud.datatransfer.v1.endpoint.MysqlSource.include_tables_regex', index=6,
       number=12, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='exclude_tables_regex', full_name='yandex.cloud.datatransfer.v1.endpoint.MysqlSource.exclude_tables_regex', index=5,
+      name='exclude_tables_regex', full_name='yandex.cloud.datatransfer.v1.endpoint.MysqlSource.exclude_tables_regex', index=7,
       number=13, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='timezone', full_name='yandex.cloud.datatransfer.v1.endpoint.MysqlSource.timezone', index=6,
+      name='timezone', full_name='yandex.cloud.datatransfer.v1.endpoint.MysqlSource.timezone', index=8,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='object_transfer_settings', full_name='yandex.cloud.datatransfer.v1.endpoint.MysqlSource.object_transfer_settings', index=7,
+      name='object_transfer_settings', full_name='yandex.cloud.datatransfer.v1.endpoint.MysqlSource.object_transfer_settings', index=9,
       number=11, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -247,7 +261,7 @@ _MYSQLSOURCE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=675,
-  serialized_end=1041,
+  serialized_end=1092,
 )
 
 
@@ -267,56 +281,63 @@ _MYSQLTARGET = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='database', full_name='yandex.cloud.datatransfer.v1.endpoint.MysqlTarget.database', index=1,
+      name='security_groups', full_name='yandex.cloud.datatransfer.v1.endpoint.MysqlTarget.security_groups', index=1,
+      number=16, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='database', full_name='yandex.cloud.datatransfer.v1.endpoint.MysqlTarget.database', index=2,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='user', full_name='yandex.cloud.datatransfer.v1.endpoint.MysqlTarget.user', index=2,
+      name='user', full_name='yandex.cloud.datatransfer.v1.endpoint.MysqlTarget.user', index=3,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='password', full_name='yandex.cloud.datatransfer.v1.endpoint.MysqlTarget.password', index=3,
+      name='password', full_name='yandex.cloud.datatransfer.v1.endpoint.MysqlTarget.password', index=4,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='sql_mode', full_name='yandex.cloud.datatransfer.v1.endpoint.MysqlTarget.sql_mode', index=4,
+      name='sql_mode', full_name='yandex.cloud.datatransfer.v1.endpoint.MysqlTarget.sql_mode', index=5,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='skip_constraint_checks', full_name='yandex.cloud.datatransfer.v1.endpoint.MysqlTarget.skip_constraint_checks', index=5,
+      name='skip_constraint_checks', full_name='yandex.cloud.datatransfer.v1.endpoint.MysqlTarget.skip_constraint_checks', index=6,
       number=6, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='timezone', full_name='yandex.cloud.datatransfer.v1.endpoint.MysqlTarget.timezone', index=6,
+      name='timezone', full_name='yandex.cloud.datatransfer.v1.endpoint.MysqlTarget.timezone', index=7,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='cleanup_policy', full_name='yandex.cloud.datatransfer.v1.endpoint.MysqlTarget.cleanup_policy', index=7,
+      name='cleanup_policy', full_name='yandex.cloud.datatransfer.v1.endpoint.MysqlTarget.cleanup_policy', index=8,
       number=8, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='service_database', full_name='yandex.cloud.datatransfer.v1.endpoint.MysqlTarget.service_database', index=8,
+      name='service_database', full_name='yandex.cloud.datatransfer.v1.endpoint.MysqlTarget.service_database', index=9,
       number=15, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -334,8 +355,8 @@ _MYSQLTARGET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1044,
-  serialized_end=1402,
+  serialized_start=1095,
+  serialized_end=1478,
 )
 
 _ONPREMISEMYSQL.fields_by_name['tls_mode'].message_type = yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_common__pb2._TLSMODE

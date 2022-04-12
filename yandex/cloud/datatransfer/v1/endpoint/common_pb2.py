@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n)yandex.cloud.api.datatransfer.v1.endpointZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1/endpoint;endpoint\252\002%Yandex.Cloud.Datatransfer.V1.EndPoint',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n2yandex/cloud/datatransfer/v1/endpoint/common.proto\x12%yandex.cloud.datatransfer.v1.endpoint\x1a\x1bgoogle/protobuf/empty.proto\" \n\x06Secret\x12\r\n\x03raw\x18\x01 \x01(\tH\x00\x42\x07\n\x05value\"\x86\x01\n\x07TLSMode\x12*\n\x08\x64isabled\x18\x01 \x01(\x0b\x32\x16.google.protobuf.EmptyH\x00\x12\x43\n\x07\x65nabled\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.datatransfer.v1.endpoint.TLSConfigH\x00\x42\n\n\x08tls_mode\"#\n\tTLSConfig\x12\x16\n\x0e\x63\x61_certificate\x18\x01 \x01(\t*h\n\x13ObjectTransferStage\x12%\n!OBJECT_TRANSFER_STAGE_UNSPECIFIED\x10\x00\x12\x0f\n\x0b\x42\x45\x46ORE_DATA\x10\x01\x12\x0e\n\nAFTER_DATA\x10\x02\x12\t\n\x05NEVER\x10\x03*U\n\rCleanupPolicy\x12\x1e\n\x1a\x43LEANUP_POLICY_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x44ISABLED\x10\x01\x12\x08\n\x04\x44ROP\x10\x02\x12\x0c\n\x08TRUNCATE\x10\x03\x42\xa7\x01\n)yandex.cloud.api.datatransfer.v1.endpointZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1/endpoint;endpoint\xaa\x02%Yandex.Cloud.Datatransfer.V1.EndPointb\x06proto3'
+  serialized_pb=b'\n2yandex/cloud/datatransfer/v1/endpoint/common.proto\x12%yandex.cloud.datatransfer.v1.endpoint\x1a\x1bgoogle/protobuf/empty.proto\"-\n\x07\x41ltName\x12\x11\n\tfrom_name\x18\x01 \x01(\t\x12\x0f\n\x07to_name\x18\x02 \x01(\t\" \n\x06Secret\x12\r\n\x03raw\x18\x01 \x01(\tH\x00\x42\x07\n\x05value\"\x86\x01\n\x07TLSMode\x12*\n\x08\x64isabled\x18\x01 \x01(\x0b\x32\x16.google.protobuf.EmptyH\x00\x12\x43\n\x07\x65nabled\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.datatransfer.v1.endpoint.TLSConfigH\x00\x42\n\n\x08tls_mode\"#\n\tTLSConfig\x12\x16\n\x0e\x63\x61_certificate\x18\x01 \x01(\t\"\r\n\x0b\x43olumnValue*h\n\x13ObjectTransferStage\x12%\n!OBJECT_TRANSFER_STAGE_UNSPECIFIED\x10\x00\x12\x0f\n\x0b\x42\x45\x46ORE_DATA\x10\x01\x12\x0e\n\nAFTER_DATA\x10\x02\x12\t\n\x05NEVER\x10\x03*U\n\rCleanupPolicy\x12\x1e\n\x1a\x43LEANUP_POLICY_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x44ISABLED\x10\x01\x12\x08\n\x04\x44ROP\x10\x02\x12\x0c\n\x08TRUNCATE\x10\x03\x42\xa7\x01\n)yandex.cloud.api.datatransfer.v1.endpointZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1/endpoint;endpoint\xaa\x02%Yandex.Cloud.Datatransfer.V1.EndPointb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,])
 
@@ -55,8 +55,8 @@ _OBJECTTRANSFERSTAGE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=330,
-  serialized_end=434,
+  serialized_start=392,
+  serialized_end=496,
 )
 _sym_db.RegisterEnumDescriptor(_OBJECTTRANSFERSTAGE)
 
@@ -91,8 +91,8 @@ _CLEANUPPOLICY = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=436,
-  serialized_end=521,
+  serialized_start=498,
+  serialized_end=583,
 )
 _sym_db.RegisterEnumDescriptor(_CLEANUPPOLICY)
 
@@ -106,6 +106,45 @@ DISABLED = 1
 DROP = 2
 TRUNCATE = 3
 
+
+
+_ALTNAME = _descriptor.Descriptor(
+  name='AltName',
+  full_name='yandex.cloud.datatransfer.v1.endpoint.AltName',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='from_name', full_name='yandex.cloud.datatransfer.v1.endpoint.AltName.from_name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='to_name', full_name='yandex.cloud.datatransfer.v1.endpoint.AltName.to_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=122,
+  serialized_end=167,
+)
 
 
 _SECRET = _descriptor.Descriptor(
@@ -140,8 +179,8 @@ _SECRET = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=122,
-  serialized_end=154,
+  serialized_start=169,
+  serialized_end=201,
 )
 
 
@@ -184,8 +223,8 @@ _TLSMODE = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=157,
-  serialized_end=291,
+  serialized_start=204,
+  serialized_end=338,
 )
 
 
@@ -216,8 +255,33 @@ _TLSCONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=293,
-  serialized_end=328,
+  serialized_start=340,
+  serialized_end=375,
+)
+
+
+_COLUMNVALUE = _descriptor.Descriptor(
+  name='ColumnValue',
+  full_name='yandex.cloud.datatransfer.v1.endpoint.ColumnValue',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=377,
+  serialized_end=390,
 )
 
 _SECRET.oneofs_by_name['value'].fields.append(
@@ -231,12 +295,21 @@ _TLSMODE.fields_by_name['disabled'].containing_oneof = _TLSMODE.oneofs_by_name['
 _TLSMODE.oneofs_by_name['tls_mode'].fields.append(
   _TLSMODE.fields_by_name['enabled'])
 _TLSMODE.fields_by_name['enabled'].containing_oneof = _TLSMODE.oneofs_by_name['tls_mode']
+DESCRIPTOR.message_types_by_name['AltName'] = _ALTNAME
 DESCRIPTOR.message_types_by_name['Secret'] = _SECRET
 DESCRIPTOR.message_types_by_name['TLSMode'] = _TLSMODE
 DESCRIPTOR.message_types_by_name['TLSConfig'] = _TLSCONFIG
+DESCRIPTOR.message_types_by_name['ColumnValue'] = _COLUMNVALUE
 DESCRIPTOR.enum_types_by_name['ObjectTransferStage'] = _OBJECTTRANSFERSTAGE
 DESCRIPTOR.enum_types_by_name['CleanupPolicy'] = _CLEANUPPOLICY
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+AltName = _reflection.GeneratedProtocolMessageType('AltName', (_message.Message,), {
+  'DESCRIPTOR' : _ALTNAME,
+  '__module__' : 'yandex.cloud.datatransfer.v1.endpoint.common_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.datatransfer.v1.endpoint.AltName)
+  })
+_sym_db.RegisterMessage(AltName)
 
 Secret = _reflection.GeneratedProtocolMessageType('Secret', (_message.Message,), {
   'DESCRIPTOR' : _SECRET,
@@ -258,6 +331,13 @@ TLSConfig = _reflection.GeneratedProtocolMessageType('TLSConfig', (_message.Mess
   # @@protoc_insertion_point(class_scope:yandex.cloud.datatransfer.v1.endpoint.TLSConfig)
   })
 _sym_db.RegisterMessage(TLSConfig)
+
+ColumnValue = _reflection.GeneratedProtocolMessageType('ColumnValue', (_message.Message,), {
+  'DESCRIPTOR' : _COLUMNVALUE,
+  '__module__' : 'yandex.cloud.datatransfer.v1.endpoint.common_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.datatransfer.v1.endpoint.ColumnValue)
+  })
+_sym_db.RegisterMessage(ColumnValue)
 
 
 DESCRIPTOR._options = None

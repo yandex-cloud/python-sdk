@@ -47,6 +47,11 @@ class ContainerServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_serverless_dot_containers_dot_v1_dot_container__service__pb2.DeployContainerRevisionRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
+        self.Rollback = channel.unary_unary(
+                '/yandex.cloud.serverless.containers.v1.ContainerService/Rollback',
+                request_serializer=yandex_dot_cloud_dot_serverless_dot_containers_dot_v1_dot_container__service__pb2.RollbackContainerRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
         self.GetRevision = channel.unary_unary(
                 '/yandex.cloud.serverless.containers.v1.ContainerService/GetRevision',
                 request_serializer=yandex_dot_cloud_dot_serverless_dot_containers_dot_v1_dot_container__service__pb2.GetContainerRevisionRequest.SerializeToString,
@@ -113,6 +118,12 @@ class ContainerServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def DeployRevision(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Rollback(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -185,6 +196,11 @@ def add_ContainerServiceServicer_to_server(servicer, server):
             'DeployRevision': grpc.unary_unary_rpc_method_handler(
                     servicer.DeployRevision,
                     request_deserializer=yandex_dot_cloud_dot_serverless_dot_containers_dot_v1_dot_container__service__pb2.DeployContainerRevisionRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'Rollback': grpc.unary_unary_rpc_method_handler(
+                    servicer.Rollback,
+                    request_deserializer=yandex_dot_cloud_dot_serverless_dot_containers_dot_v1_dot_container__service__pb2.RollbackContainerRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'GetRevision': grpc.unary_unary_rpc_method_handler(
@@ -325,6 +341,23 @@ class ContainerService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.serverless.containers.v1.ContainerService/DeployRevision',
             yandex_dot_cloud_dot_serverless_dot_containers_dot_v1_dot_container__service__pb2.DeployContainerRevisionRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Rollback(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.serverless.containers.v1.ContainerService/Rollback',
+            yandex_dot_cloud_dot_serverless_dot_containers_dot_v1_dot_container__service__pb2.RollbackContainerRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
