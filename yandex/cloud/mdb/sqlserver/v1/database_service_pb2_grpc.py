@@ -37,6 +37,16 @@ class DatabaseServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_database__service__pb2.RestoreDatabaseRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
+        self.ImportBackup = channel.unary_unary(
+                '/yandex.cloud.mdb.sqlserver.v1.DatabaseService/ImportBackup',
+                request_serializer=yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_database__service__pb2.ImportDatabaseBackupRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
+        self.ExportBackup = channel.unary_unary(
+                '/yandex.cloud.mdb.sqlserver.v1.DatabaseService/ExportBackup',
+                request_serializer=yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_database__service__pb2.ExportDatabaseBackupRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
         self.Delete = channel.unary_unary(
                 '/yandex.cloud.mdb.sqlserver.v1.DatabaseService/Delete',
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_database__service__pb2.DeleteDatabaseRequest.SerializeToString,
@@ -78,6 +88,20 @@ class DatabaseServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ImportBackup(self, request, context):
+        """Imports a new SQL Server database from external backup
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ExportBackup(self, request, context):
+        """Exports database backup to external backup
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def Delete(self, request, context):
         """Deletes the specified SQL Server database.
         """
@@ -106,6 +130,16 @@ def add_DatabaseServiceServicer_to_server(servicer, server):
             'Restore': grpc.unary_unary_rpc_method_handler(
                     servicer.Restore,
                     request_deserializer=yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_database__service__pb2.RestoreDatabaseRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'ImportBackup': grpc.unary_unary_rpc_method_handler(
+                    servicer.ImportBackup,
+                    request_deserializer=yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_database__service__pb2.ImportDatabaseBackupRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'ExportBackup': grpc.unary_unary_rpc_method_handler(
+                    servicer.ExportBackup,
+                    request_deserializer=yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_database__service__pb2.ExportDatabaseBackupRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'Delete': grpc.unary_unary_rpc_method_handler(
@@ -188,6 +222,40 @@ class DatabaseService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.mdb.sqlserver.v1.DatabaseService/Restore',
             yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_database__service__pb2.RestoreDatabaseRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ImportBackup(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.mdb.sqlserver.v1.DatabaseService/ImportBackup',
+            yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_database__service__pb2.ImportDatabaseBackupRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ExportBackup(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.mdb.sqlserver.v1.DatabaseService/ExportBackup',
+            yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_database__service__pb2.ExportDatabaseBackupRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

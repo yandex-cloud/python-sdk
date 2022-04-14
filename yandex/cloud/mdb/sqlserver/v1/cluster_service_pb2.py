@@ -31,7 +31,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n!yandex.cloud.api.mdb.sqlserver.v1B\004PSCSZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/sqlserver/v1;sqlserver',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n3yandex/cloud/mdb/sqlserver/v1/cluster_service.proto\x12\x1dyandex.cloud.mdb.sqlserver.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/type/timeofday.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a*yandex/cloud/mdb/sqlserver/v1/backup.proto\x1a+yandex/cloud/mdb/sqlserver/v1/cluster.proto\x1a,yandex/cloud/mdb/sqlserver/v1/database.proto\x1a(yandex/cloud/mdb/sqlserver/v1/user.proto\x1a;yandex/cloud/mdb/sqlserver/v1/config/sqlserver2016sp2.proto\"5\n\x11GetClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x90\x01\n\x13ListClustersRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"i\n\x14ListClustersResponse\x12\x38\n\x08\x63lusters\x18\x01 \x03(\x0b\x32&.yandex.cloud.mdb.sqlserver.v1.Cluster\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x9f\x06\n\x14\x43reateClusterRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12,\n\x04name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x90\x01\n\x06labels\x18\x04 \x03(\x0b\x32?.yandex.cloud.mdb.sqlserver.v1.CreateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12G\n\x0b\x65nvironment\x18\x05 \x01(\x0e\x32\x32.yandex.cloud.mdb.sqlserver.v1.Cluster.Environment\x12>\n\x0b\x63onfig_spec\x18\x06 \x01(\x0b\x32).yandex.cloud.mdb.sqlserver.v1.ConfigSpec\x12\x43\n\x0e\x64\x61tabase_specs\x18\x07 \x03(\x0b\x32+.yandex.cloud.mdb.sqlserver.v1.DatabaseSpec\x12;\n\nuser_specs\x18\x08 \x03(\x0b\x32\'.yandex.cloud.mdb.sqlserver.v1.UserSpec\x12;\n\nhost_specs\x18\t \x03(\x0b\x32\'.yandex.cloud.mdb.sqlserver.v1.HostSpec\x12\x1c\n\nnetwork_id\x18\n \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1a\n\x12security_group_ids\x18\x0b \x03(\t\x12\x1b\n\x13\x64\x65letion_protection\x18\x0c \x01(\x08\x12\x1f\n\x0csqlcollation\x18\r \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x16\n\x0ehost_group_ids\x18\x0e \x03(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15\x43reateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\xee\x03\n\x14UpdateClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x90\x01\n\x06labels\x18\x04 \x03(\x0b\x32?.yandex.cloud.mdb.sqlserver.v1.UpdateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12>\n\x0b\x63onfig_spec\x18\x05 \x01(\x0b\x32).yandex.cloud.mdb.sqlserver.v1.ConfigSpec\x12(\n\x04name\x18\x06 \x01(\tB\x1a\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x1a\n\x12security_group_ids\x18\x07 \x03(\t\x12\x1b\n\x13\x64\x65letion_protection\x18\x08 \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15UpdateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"8\n\x14\x44\x65leteClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x44\x65leteClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"8\n\x14\x42\x61\x63kupClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x42\x61\x63kupClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\xbb\x05\n\x15RestoreClusterRequest\x12\x17\n\tbackup_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12.\n\x04time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12$\n\x04name\x18\x04 \x01(\tB\x16\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x1e\n\x0b\x64\x65scription\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x91\x01\n\x06labels\x18\x06 \x03(\x0b\x32@.yandex.cloud.mdb.sqlserver.v1.RestoreClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12G\n\x0b\x65nvironment\x18\x07 \x01(\x0e\x32\x32.yandex.cloud.mdb.sqlserver.v1.Cluster.Environment\x12>\n\x0b\x63onfig_spec\x18\x08 \x01(\x0b\x32).yandex.cloud.mdb.sqlserver.v1.ConfigSpec\x12;\n\nhost_specs\x18\t \x03(\x0b\x32\'.yandex.cloud.mdb.sqlserver.v1.HostSpec\x12\x1c\n\nnetwork_id\x18\n \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1b\n\tfolder_id\x18\x0b \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1a\n\x12security_group_ids\x18\x0c \x03(\t\x12\x1b\n\x13\x64\x65letion_protection\x18\r \x01(\x08\x12\x16\n\x0ehost_group_ids\x18\x0e \x03(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"?\n\x16RestoreClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tbackup_id\x18\x02 \x01(\t\"\xb2\x01\n\tLogRecord\x12-\n\ttimestamp\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x46\n\x07message\x18\x02 \x03(\x0b\x32\x35.yandex.cloud.mdb.sqlserver.v1.LogRecord.MessageEntry\x1a.\n\x0cMessageEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xdd\x03\n\x16ListClusterLogsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x15\n\rcolumn_filter\x18\x02 \x03(\t\x12W\n\x0cservice_type\x18\x03 \x01(\x0e\x32\x41.yandex.cloud.mdb.sqlserver.v1.ListClusterLogsRequest.ServiceType\x12-\n\tfrom_time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07to_time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1d\n\tpage_size\x18\x06 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x07 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1e\n\x16\x61lways_next_page_token\x18\x08 \x01(\x08\x12\x1a\n\x06\x66ilter\x18\t \x01(\tB\n\x8a\xc8\x31\x06<=1000\"[\n\x0bServiceType\x12\x1c\n\x18SERVICE_TYPE_UNSPECIFIED\x10\x00\x12\x13\n\x0fSQLSERVER_ERROR\x10\x01\x12\x19\n\x15SQLSERVER_APPLICATION\x10\x02\"j\n\x17ListClusterLogsResponse\x12\x36\n\x04logs\x18\x01 \x03(\x0b\x32(.yandex.cloud.mdb.sqlserver.v1.LogRecord\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"~\n\x1cListClusterOperationsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"o\n\x1dListClusterOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"{\n\x19ListClusterBackupsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"m\n\x1aListClusterBackupsResponse\x12\x36\n\x07\x62\x61\x63kups\x18\x01 \x03(\x0b\x32%.yandex.cloud.mdb.sqlserver.v1.Backup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"y\n\x17ListClusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"g\n\x18ListClusterHostsResponse\x12\x32\n\x05hosts\x18\x01 \x03(\x0b\x32#.yandex.cloud.mdb.sqlserver.v1.Host\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"7\n\x13StartClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"*\n\x14StartClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"6\n\x12StopClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\")\n\x13StopClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"c\n\x12MoveClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12+\n\x15\x64\x65stination_folder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"b\n\x13MoveClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x18\n\x10source_folder_id\x18\x02 \x01(\t\x12\x1d\n\x15\x64\x65stination_folder_id\x18\x03 \x01(\t\"D\n\x1aUpdateClusterHostsMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nhost_names\x18\x02 \x03(\t\"\\\n\x08HostSpec\x12\x19\n\x07zone_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1b\n\tsubnet_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x18\n\x10\x61ssign_public_ip\x18\x03 \x01(\x08\"\xe4\x03\n\nConfigSpec\x12\x0f\n\x07version\x18\x01 \x01(\t\x12\x82\x01\n\x1bsqlserver_config_2016sp2std\x18\x02 \x01(\x0b\x32?.yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfig2016sp2stdH\x00R\x1asqlserverConfig_2016sp2std\x12\x82\x01\n\x1bsqlserver_config_2016sp2ent\x18\x05 \x01(\x0b\x32?.yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfig2016sp2entH\x00R\x1asqlserverConfig_2016sp2ent\x12;\n\tresources\x18\x03 \x01(\x0b\x32(.yandex.cloud.mdb.sqlserver.v1.Resources\x12\x33\n\x13\x62\x61\x63kup_window_start\x18\x04 \x01(\x0b\x32\x16.google.type.TimeOfDay\x12\x35\n\x06\x61\x63\x63\x65ss\x18\x06 \x01(\x0b\x32%.yandex.cloud.mdb.sqlserver.v1.AccessB\x12\n\x10sqlserver_config2\xfc\x13\n\x0e\x43lusterService\x12\x90\x01\n\x03Get\x12\x30.yandex.cloud.mdb.sqlserver.v1.GetClusterRequest\x1a&.yandex.cloud.mdb.sqlserver.v1.Cluster\"/\x82\xd3\xe4\x93\x02)\x12\'/mdb/sqlserver/v1/clusters/{cluster_id}\x12\x93\x01\n\x04List\x12\x32.yandex.cloud.mdb.sqlserver.v1.ListClustersRequest\x1a\x33.yandex.cloud.mdb.sqlserver.v1.ListClustersResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/mdb/sqlserver/v1/clusters\x12\xab\x01\n\x06\x43reate\x12\x33.yandex.cloud.mdb.sqlserver.v1.CreateClusterRequest\x1a!.yandex.cloud.operation.Operation\"I\x82\xd3\xe4\x93\x02\x1f\"\x1a/mdb/sqlserver/v1/clusters:\x01*\xb2\xd2* \n\x15\x43reateClusterMetadata\x12\x07\x43luster\x12\xb8\x01\n\x06Update\x12\x33.yandex.cloud.mdb.sqlserver.v1.UpdateClusterRequest\x1a!.yandex.cloud.operation.Operation\"V\x82\xd3\xe4\x93\x02,2\'/mdb/sqlserver/v1/clusters/{cluster_id}:\x01*\xb2\xd2* \n\x15UpdateClusterMetadata\x12\x07\x43luster\x12\xc3\x01\n\x06\x44\x65lete\x12\x33.yandex.cloud.mdb.sqlserver.v1.DeleteClusterRequest\x1a!.yandex.cloud.operation.Operation\"a\x82\xd3\xe4\x93\x02)*\'/mdb/sqlserver/v1/clusters/{cluster_id}\xb2\xd2*.\n\x15\x44\x65leteClusterMetadata\x12\x15google.protobuf.Empty\x12\xb8\x01\n\x05Start\x12\x32.yandex.cloud.mdb.sqlserver.v1.StartClusterRequest\x1a!.yandex.cloud.operation.Operation\"X\x82\xd3\xe4\x93\x02/\"-/mdb/sqlserver/v1/clusters/{cluster_id}:start\xb2\xd2*\x1f\n\x14StartClusterMetadata\x12\x07\x43luster\x12\xb4\x01\n\x04Stop\x12\x31.yandex.cloud.mdb.sqlserver.v1.StopClusterRequest\x1a!.yandex.cloud.operation.Operation\"V\x82\xd3\xe4\x93\x02.\",/mdb/sqlserver/v1/clusters/{cluster_id}:stop\xb2\xd2*\x1e\n\x13StopClusterMetadata\x12\x07\x43luster\x12\xb7\x01\n\x04Move\x12\x31.yandex.cloud.mdb.sqlserver.v1.MoveClusterRequest\x1a!.yandex.cloud.operation.Operation\"Y\x82\xd3\xe4\x93\x02\x31\",/mdb/sqlserver/v1/clusters/{cluster_id}:move:\x01*\xb2\xd2*\x1e\n\x13MoveClusterMetadata\x12\x07\x43luster\x12\xbc\x01\n\x06\x42\x61\x63kup\x12\x33.yandex.cloud.mdb.sqlserver.v1.BackupClusterRequest\x1a!.yandex.cloud.operation.Operation\"Z\x82\xd3\xe4\x93\x02\x30\"./mdb/sqlserver/v1/clusters/{cluster_id}:backup\xb2\xd2* \n\x15\x42\x61\x63kupClusterMetadata\x12\x07\x43luster\x12\xb6\x01\n\x07Restore\x12\x34.yandex.cloud.mdb.sqlserver.v1.RestoreClusterRequest\x1a!.yandex.cloud.operation.Operation\"R\x82\xd3\xe4\x93\x02\'\"\"/mdb/sqlserver/v1/clusters:restore:\x01*\xb2\xd2*!\n\x16RestoreClusterMetadata\x12\x07\x43luster\x12\xaf\x01\n\x08ListLogs\x12\x35.yandex.cloud.mdb.sqlserver.v1.ListClusterLogsRequest\x1a\x36.yandex.cloud.mdb.sqlserver.v1.ListClusterLogsResponse\"4\x82\xd3\xe4\x93\x02.\x12,/mdb/sqlserver/v1/clusters/{cluster_id}:logs\x12\xc7\x01\n\x0eListOperations\x12;.yandex.cloud.mdb.sqlserver.v1.ListClusterOperationsRequest\x1a<.yandex.cloud.mdb.sqlserver.v1.ListClusterOperationsResponse\":\x82\xd3\xe4\x93\x02\x34\x12\x32/mdb/sqlserver/v1/clusters/{cluster_id}/operations\x12\xbb\x01\n\x0bListBackups\x12\x38.yandex.cloud.mdb.sqlserver.v1.ListClusterBackupsRequest\x1a\x39.yandex.cloud.mdb.sqlserver.v1.ListClusterBackupsResponse\"7\x82\xd3\xe4\x93\x02\x31\x12//mdb/sqlserver/v1/clusters/{cluster_id}/backups\x12\xb3\x01\n\tListHosts\x12\x36.yandex.cloud.mdb.sqlserver.v1.ListClusterHostsRequest\x1a\x37.yandex.cloud.mdb.sqlserver.v1.ListClusterHostsResponse\"5\x82\xd3\xe4\x93\x02/\x12-/mdb/sqlserver/v1/clusters/{cluster_id}/hostsBv\n!yandex.cloud.api.mdb.sqlserver.v1B\x04PSCSZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/sqlserver/v1;sqlserverb\x06proto3'
+  serialized_pb=b'\n3yandex/cloud/mdb/sqlserver/v1/cluster_service.proto\x12\x1dyandex.cloud.mdb.sqlserver.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bgoogle/type/timeofday.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a*yandex/cloud/mdb/sqlserver/v1/backup.proto\x1a+yandex/cloud/mdb/sqlserver/v1/cluster.proto\x1a,yandex/cloud/mdb/sqlserver/v1/database.proto\x1a(yandex/cloud/mdb/sqlserver/v1/user.proto\x1a;yandex/cloud/mdb/sqlserver/v1/config/sqlserver2016sp2.proto\"5\n\x11GetClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x90\x01\n\x13ListClustersRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"i\n\x14ListClustersResponse\x12\x38\n\x08\x63lusters\x18\x01 \x03(\x0b\x32&.yandex.cloud.mdb.sqlserver.v1.Cluster\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xbb\x06\n\x14\x43reateClusterRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12,\n\x04name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x90\x01\n\x06labels\x18\x04 \x03(\x0b\x32?.yandex.cloud.mdb.sqlserver.v1.CreateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12G\n\x0b\x65nvironment\x18\x05 \x01(\x0e\x32\x32.yandex.cloud.mdb.sqlserver.v1.Cluster.Environment\x12>\n\x0b\x63onfig_spec\x18\x06 \x01(\x0b\x32).yandex.cloud.mdb.sqlserver.v1.ConfigSpec\x12\x43\n\x0e\x64\x61tabase_specs\x18\x07 \x03(\x0b\x32+.yandex.cloud.mdb.sqlserver.v1.DatabaseSpec\x12;\n\nuser_specs\x18\x08 \x03(\x0b\x32\'.yandex.cloud.mdb.sqlserver.v1.UserSpec\x12;\n\nhost_specs\x18\t \x03(\x0b\x32\'.yandex.cloud.mdb.sqlserver.v1.HostSpec\x12\x1c\n\nnetwork_id\x18\n \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1a\n\x12security_group_ids\x18\x0b \x03(\t\x12\x1b\n\x13\x64\x65letion_protection\x18\x0c \x01(\x08\x12\x1f\n\x0csqlcollation\x18\r \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x16\n\x0ehost_group_ids\x18\x0e \x03(\t\x12\x1a\n\x12service_account_id\x18\x0f \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15\x43reateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\x8a\x04\n\x14UpdateClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x90\x01\n\x06labels\x18\x04 \x03(\x0b\x32?.yandex.cloud.mdb.sqlserver.v1.UpdateClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12>\n\x0b\x63onfig_spec\x18\x05 \x01(\x0b\x32).yandex.cloud.mdb.sqlserver.v1.ConfigSpec\x12(\n\x04name\x18\x06 \x01(\tB\x1a\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x1a\n\x12security_group_ids\x18\x07 \x03(\t\x12\x1b\n\x13\x64\x65letion_protection\x18\x08 \x01(\x08\x12\x1a\n\x12service_account_id\x18\t \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15UpdateClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"8\n\x14\x44\x65leteClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x44\x65leteClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"8\n\x14\x42\x61\x63kupClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x42\x61\x63kupClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\xd7\x05\n\x15RestoreClusterRequest\x12\x17\n\tbackup_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12.\n\x04time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12$\n\x04name\x18\x04 \x01(\tB\x16\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x1e\n\x0b\x64\x65scription\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x91\x01\n\x06labels\x18\x06 \x03(\x0b\x32@.yandex.cloud.mdb.sqlserver.v1.RestoreClusterRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12G\n\x0b\x65nvironment\x18\x07 \x01(\x0e\x32\x32.yandex.cloud.mdb.sqlserver.v1.Cluster.Environment\x12>\n\x0b\x63onfig_spec\x18\x08 \x01(\x0b\x32).yandex.cloud.mdb.sqlserver.v1.ConfigSpec\x12;\n\nhost_specs\x18\t \x03(\x0b\x32\'.yandex.cloud.mdb.sqlserver.v1.HostSpec\x12\x1c\n\nnetwork_id\x18\n \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1b\n\tfolder_id\x18\x0b \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1a\n\x12security_group_ids\x18\x0c \x03(\t\x12\x1b\n\x13\x64\x65letion_protection\x18\r \x01(\x08\x12\x16\n\x0ehost_group_ids\x18\x0e \x03(\t\x12\x1a\n\x12service_account_id\x18\x0f \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"?\n\x16RestoreClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x11\n\tbackup_id\x18\x02 \x01(\t\"]\n\x1bStartClusterFailoverRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1c\n\thost_name\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=253\"2\n\x1cStartClusterFailoverMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"\xb2\x01\n\tLogRecord\x12-\n\ttimestamp\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x46\n\x07message\x18\x02 \x03(\x0b\x32\x35.yandex.cloud.mdb.sqlserver.v1.LogRecord.MessageEntry\x1a.\n\x0cMessageEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xdd\x03\n\x16ListClusterLogsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x15\n\rcolumn_filter\x18\x02 \x03(\t\x12W\n\x0cservice_type\x18\x03 \x01(\x0e\x32\x41.yandex.cloud.mdb.sqlserver.v1.ListClusterLogsRequest.ServiceType\x12-\n\tfrom_time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07to_time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1d\n\tpage_size\x18\x06 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x07 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1e\n\x16\x61lways_next_page_token\x18\x08 \x01(\x08\x12\x1a\n\x06\x66ilter\x18\t \x01(\tB\n\x8a\xc8\x31\x06<=1000\"[\n\x0bServiceType\x12\x1c\n\x18SERVICE_TYPE_UNSPECIFIED\x10\x00\x12\x13\n\x0fSQLSERVER_ERROR\x10\x01\x12\x19\n\x15SQLSERVER_APPLICATION\x10\x02\"j\n\x17ListClusterLogsResponse\x12\x36\n\x04logs\x18\x01 \x03(\x0b\x32(.yandex.cloud.mdb.sqlserver.v1.LogRecord\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"~\n\x1cListClusterOperationsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"o\n\x1dListClusterOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"{\n\x19ListClusterBackupsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"m\n\x1aListClusterBackupsResponse\x12\x36\n\x07\x62\x61\x63kups\x18\x01 \x03(\x0b\x32%.yandex.cloud.mdb.sqlserver.v1.Backup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"y\n\x17ListClusterHostsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"g\n\x18ListClusterHostsResponse\x12\x32\n\x05hosts\x18\x01 \x03(\x0b\x32#.yandex.cloud.mdb.sqlserver.v1.Host\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"7\n\x13StartClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"*\n\x14StartClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"6\n\x12StopClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\")\n\x13StopClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\"c\n\x12MoveClusterRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12+\n\x15\x64\x65stination_folder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"b\n\x13MoveClusterMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x18\n\x10source_folder_id\x18\x02 \x01(\t\x12\x1d\n\x15\x64\x65stination_folder_id\x18\x03 \x01(\t\"D\n\x1aUpdateClusterHostsMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\nhost_names\x18\x02 \x03(\t\"\\\n\x08HostSpec\x12\x19\n\x07zone_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1b\n\tsubnet_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x18\n\x10\x61ssign_public_ip\x18\x03 \x01(\x08\"\xe4\x03\n\nConfigSpec\x12\x0f\n\x07version\x18\x01 \x01(\t\x12\x82\x01\n\x1bsqlserver_config_2016sp2std\x18\x02 \x01(\x0b\x32?.yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfig2016sp2stdH\x00R\x1asqlserverConfig_2016sp2std\x12\x82\x01\n\x1bsqlserver_config_2016sp2ent\x18\x05 \x01(\x0b\x32?.yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfig2016sp2entH\x00R\x1asqlserverConfig_2016sp2ent\x12;\n\tresources\x18\x03 \x01(\x0b\x32(.yandex.cloud.mdb.sqlserver.v1.Resources\x12\x33\n\x13\x62\x61\x63kup_window_start\x18\x04 \x01(\x0b\x32\x16.google.type.TimeOfDay\x12\x35\n\x06\x61\x63\x63\x65ss\x18\x06 \x01(\x0b\x32%.yandex.cloud.mdb.sqlserver.v1.AccessB\x12\n\x10sqlserver_config2\xda\x15\n\x0e\x43lusterService\x12\x90\x01\n\x03Get\x12\x30.yandex.cloud.mdb.sqlserver.v1.GetClusterRequest\x1a&.yandex.cloud.mdb.sqlserver.v1.Cluster\"/\x82\xd3\xe4\x93\x02)\x12\'/mdb/sqlserver/v1/clusters/{cluster_id}\x12\x93\x01\n\x04List\x12\x32.yandex.cloud.mdb.sqlserver.v1.ListClustersRequest\x1a\x33.yandex.cloud.mdb.sqlserver.v1.ListClustersResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/mdb/sqlserver/v1/clusters\x12\xab\x01\n\x06\x43reate\x12\x33.yandex.cloud.mdb.sqlserver.v1.CreateClusterRequest\x1a!.yandex.cloud.operation.Operation\"I\x82\xd3\xe4\x93\x02\x1f\"\x1a/mdb/sqlserver/v1/clusters:\x01*\xb2\xd2* \n\x15\x43reateClusterMetadata\x12\x07\x43luster\x12\xb8\x01\n\x06Update\x12\x33.yandex.cloud.mdb.sqlserver.v1.UpdateClusterRequest\x1a!.yandex.cloud.operation.Operation\"V\x82\xd3\xe4\x93\x02,2\'/mdb/sqlserver/v1/clusters/{cluster_id}:\x01*\xb2\xd2* \n\x15UpdateClusterMetadata\x12\x07\x43luster\x12\xc3\x01\n\x06\x44\x65lete\x12\x33.yandex.cloud.mdb.sqlserver.v1.DeleteClusterRequest\x1a!.yandex.cloud.operation.Operation\"a\x82\xd3\xe4\x93\x02)*\'/mdb/sqlserver/v1/clusters/{cluster_id}\xb2\xd2*.\n\x15\x44\x65leteClusterMetadata\x12\x15google.protobuf.Empty\x12\xb8\x01\n\x05Start\x12\x32.yandex.cloud.mdb.sqlserver.v1.StartClusterRequest\x1a!.yandex.cloud.operation.Operation\"X\x82\xd3\xe4\x93\x02/\"-/mdb/sqlserver/v1/clusters/{cluster_id}:start\xb2\xd2*\x1f\n\x14StartClusterMetadata\x12\x07\x43luster\x12\xb4\x01\n\x04Stop\x12\x31.yandex.cloud.mdb.sqlserver.v1.StopClusterRequest\x1a!.yandex.cloud.operation.Operation\"V\x82\xd3\xe4\x93\x02.\",/mdb/sqlserver/v1/clusters/{cluster_id}:stop\xb2\xd2*\x1e\n\x13StopClusterMetadata\x12\x07\x43luster\x12\xb7\x01\n\x04Move\x12\x31.yandex.cloud.mdb.sqlserver.v1.MoveClusterRequest\x1a!.yandex.cloud.operation.Operation\"Y\x82\xd3\xe4\x93\x02\x31\",/mdb/sqlserver/v1/clusters/{cluster_id}:move:\x01*\xb2\xd2*\x1e\n\x13MoveClusterMetadata\x12\x07\x43luster\x12\xbc\x01\n\x06\x42\x61\x63kup\x12\x33.yandex.cloud.mdb.sqlserver.v1.BackupClusterRequest\x1a!.yandex.cloud.operation.Operation\"Z\x82\xd3\xe4\x93\x02\x30\"./mdb/sqlserver/v1/clusters/{cluster_id}:backup\xb2\xd2* \n\x15\x42\x61\x63kupClusterMetadata\x12\x07\x43luster\x12\xb6\x01\n\x07Restore\x12\x34.yandex.cloud.mdb.sqlserver.v1.RestoreClusterRequest\x1a!.yandex.cloud.operation.Operation\"R\x82\xd3\xe4\x93\x02\'\"\"/mdb/sqlserver/v1/clusters:restore:\x01*\xb2\xd2*!\n\x16RestoreClusterMetadata\x12\x07\x43luster\x12\xdb\x01\n\rStartFailover\x12:.yandex.cloud.mdb.sqlserver.v1.StartClusterFailoverRequest\x1a!.yandex.cloud.operation.Operation\"k\x82\xd3\xe4\x93\x02:\"5/mdb/sqlserver/v1/clusters/{cluster_id}:startFailover:\x01*\xb2\xd2*\'\n\x1cStartClusterFailoverMetadata\x12\x07\x43luster\x12\xaf\x01\n\x08ListLogs\x12\x35.yandex.cloud.mdb.sqlserver.v1.ListClusterLogsRequest\x1a\x36.yandex.cloud.mdb.sqlserver.v1.ListClusterLogsResponse\"4\x82\xd3\xe4\x93\x02.\x12,/mdb/sqlserver/v1/clusters/{cluster_id}:logs\x12\xc7\x01\n\x0eListOperations\x12;.yandex.cloud.mdb.sqlserver.v1.ListClusterOperationsRequest\x1a<.yandex.cloud.mdb.sqlserver.v1.ListClusterOperationsResponse\":\x82\xd3\xe4\x93\x02\x34\x12\x32/mdb/sqlserver/v1/clusters/{cluster_id}/operations\x12\xbb\x01\n\x0bListBackups\x12\x38.yandex.cloud.mdb.sqlserver.v1.ListClusterBackupsRequest\x1a\x39.yandex.cloud.mdb.sqlserver.v1.ListClusterBackupsResponse\"7\x82\xd3\xe4\x93\x02\x31\x12//mdb/sqlserver/v1/clusters/{cluster_id}/backups\x12\xb3\x01\n\tListHosts\x12\x36.yandex.cloud.mdb.sqlserver.v1.ListClusterHostsRequest\x1a\x37.yandex.cloud.mdb.sqlserver.v1.ListClusterHostsResponse\"5\x82\xd3\xe4\x93\x02/\x12-/mdb/sqlserver/v1/clusters/{cluster_id}/hostsBv\n!yandex.cloud.api.mdb.sqlserver.v1B\x04PSCSZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/sqlserver/v1;sqlserverb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_type_dot_timeofday__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_backup__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_cluster__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_database__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_user__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_config_dot_sqlserver2016sp2__pb2.DESCRIPTOR,])
 
@@ -62,8 +62,8 @@ _LISTCLUSTERLOGSREQUEST_SERVICETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3794,
-  serialized_end=3885,
+  serialized_start=4025,
+  serialized_end=4116,
 )
 _sym_db.RegisterEnumDescriptor(_LISTCLUSTERLOGSREQUEST_SERVICETYPE)
 
@@ -226,8 +226,8 @@ _CREATECLUSTERREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1619,
-  serialized_end=1664,
+  serialized_start=1647,
+  serialized_end=1692,
 )
 
 _CREATECLUSTERREQUEST = _descriptor.Descriptor(
@@ -336,6 +336,13 @@ _CREATECLUSTERREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='service_account_id', full_name='yandex.cloud.mdb.sqlserver.v1.CreateClusterRequest.service_account_id', index=14,
+      number=15, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -349,7 +356,7 @@ _CREATECLUSTERREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=865,
-  serialized_end=1664,
+  serialized_end=1692,
 )
 
 
@@ -380,8 +387,8 @@ _CREATECLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1666,
-  serialized_end=1709,
+  serialized_start=1694,
+  serialized_end=1737,
 )
 
 
@@ -419,8 +426,8 @@ _UPDATECLUSTERREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1619,
-  serialized_end=1664,
+  serialized_start=1647,
+  serialized_end=1692,
 )
 
 _UPDATECLUSTERREQUEST = _descriptor.Descriptor(
@@ -487,6 +494,13 @@ _UPDATECLUSTERREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='service_account_id', full_name='yandex.cloud.mdb.sqlserver.v1.UpdateClusterRequest.service_account_id', index=8,
+      number=9, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -499,8 +513,8 @@ _UPDATECLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1712,
-  serialized_end=2206,
+  serialized_start=1740,
+  serialized_end=2262,
 )
 
 
@@ -531,8 +545,8 @@ _UPDATECLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2208,
-  serialized_end=2251,
+  serialized_start=2264,
+  serialized_end=2307,
 )
 
 
@@ -563,8 +577,8 @@ _DELETECLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2253,
-  serialized_end=2309,
+  serialized_start=2309,
+  serialized_end=2365,
 )
 
 
@@ -595,8 +609,8 @@ _DELETECLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2311,
-  serialized_end=2354,
+  serialized_start=2367,
+  serialized_end=2410,
 )
 
 
@@ -627,8 +641,8 @@ _BACKUPCLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2356,
-  serialized_end=2412,
+  serialized_start=2412,
+  serialized_end=2468,
 )
 
 
@@ -659,8 +673,8 @@ _BACKUPCLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2414,
-  serialized_end=2457,
+  serialized_start=2470,
+  serialized_end=2513,
 )
 
 
@@ -698,8 +712,8 @@ _RESTORECLUSTERREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1619,
-  serialized_end=1664,
+  serialized_start=1647,
+  serialized_end=1692,
 )
 
 _RESTORECLUSTERREQUEST = _descriptor.Descriptor(
@@ -801,6 +815,13 @@ _RESTORECLUSTERREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='service_account_id', full_name='yandex.cloud.mdb.sqlserver.v1.RestoreClusterRequest.service_account_id', index=13,
+      number=15, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -813,8 +834,8 @@ _RESTORECLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2460,
-  serialized_end=3159,
+  serialized_start=2516,
+  serialized_end=3243,
 )
 
 
@@ -852,8 +873,79 @@ _RESTORECLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3161,
-  serialized_end=3224,
+  serialized_start=3245,
+  serialized_end=3308,
+)
+
+
+_STARTCLUSTERFAILOVERREQUEST = _descriptor.Descriptor(
+  name='StartClusterFailoverRequest',
+  full_name='yandex.cloud.mdb.sqlserver.v1.StartClusterFailoverRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='yandex.cloud.mdb.sqlserver.v1.StartClusterFailoverRequest.cluster_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='host_name', full_name='yandex.cloud.mdb.sqlserver.v1.StartClusterFailoverRequest.host_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\212\3101\005<=253', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3310,
+  serialized_end=3403,
+)
+
+
+_STARTCLUSTERFAILOVERMETADATA = _descriptor.Descriptor(
+  name='StartClusterFailoverMetadata',
+  full_name='yandex.cloud.mdb.sqlserver.v1.StartClusterFailoverMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='yandex.cloud.mdb.sqlserver.v1.StartClusterFailoverMetadata.cluster_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3405,
+  serialized_end=3455,
 )
 
 
@@ -891,8 +983,8 @@ _LOGRECORD_MESSAGEENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3359,
-  serialized_end=3405,
+  serialized_start=3590,
+  serialized_end=3636,
 )
 
 _LOGRECORD = _descriptor.Descriptor(
@@ -929,8 +1021,8 @@ _LOGRECORD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3227,
-  serialized_end=3405,
+  serialized_start=3458,
+  serialized_end=3636,
 )
 
 
@@ -1018,8 +1110,8 @@ _LISTCLUSTERLOGSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3408,
-  serialized_end=3885,
+  serialized_start=3639,
+  serialized_end=4116,
 )
 
 
@@ -1057,8 +1149,8 @@ _LISTCLUSTERLOGSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3887,
-  serialized_end=3993,
+  serialized_start=4118,
+  serialized_end=4224,
 )
 
 
@@ -1103,8 +1195,8 @@ _LISTCLUSTEROPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3995,
-  serialized_end=4121,
+  serialized_start=4226,
+  serialized_end=4352,
 )
 
 
@@ -1142,8 +1234,8 @@ _LISTCLUSTEROPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4123,
-  serialized_end=4234,
+  serialized_start=4354,
+  serialized_end=4465,
 )
 
 
@@ -1188,8 +1280,8 @@ _LISTCLUSTERBACKUPSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4236,
-  serialized_end=4359,
+  serialized_start=4467,
+  serialized_end=4590,
 )
 
 
@@ -1227,8 +1319,8 @@ _LISTCLUSTERBACKUPSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4361,
-  serialized_end=4470,
+  serialized_start=4592,
+  serialized_end=4701,
 )
 
 
@@ -1273,8 +1365,8 @@ _LISTCLUSTERHOSTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4472,
-  serialized_end=4593,
+  serialized_start=4703,
+  serialized_end=4824,
 )
 
 
@@ -1312,8 +1404,8 @@ _LISTCLUSTERHOSTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4595,
-  serialized_end=4698,
+  serialized_start=4826,
+  serialized_end=4929,
 )
 
 
@@ -1344,8 +1436,8 @@ _STARTCLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4700,
-  serialized_end=4755,
+  serialized_start=4931,
+  serialized_end=4986,
 )
 
 
@@ -1376,8 +1468,8 @@ _STARTCLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4757,
-  serialized_end=4799,
+  serialized_start=4988,
+  serialized_end=5030,
 )
 
 
@@ -1408,8 +1500,8 @@ _STOPCLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4801,
-  serialized_end=4855,
+  serialized_start=5032,
+  serialized_end=5086,
 )
 
 
@@ -1440,8 +1532,8 @@ _STOPCLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4857,
-  serialized_end=4898,
+  serialized_start=5088,
+  serialized_end=5129,
 )
 
 
@@ -1479,8 +1571,8 @@ _MOVECLUSTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4900,
-  serialized_end=4999,
+  serialized_start=5131,
+  serialized_end=5230,
 )
 
 
@@ -1525,8 +1617,8 @@ _MOVECLUSTERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5001,
-  serialized_end=5099,
+  serialized_start=5232,
+  serialized_end=5330,
 )
 
 
@@ -1564,8 +1656,8 @@ _UPDATECLUSTERHOSTSMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5101,
-  serialized_end=5169,
+  serialized_start=5332,
+  serialized_end=5400,
 )
 
 
@@ -1610,8 +1702,8 @@ _HOSTSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5171,
-  serialized_end=5263,
+  serialized_start=5402,
+  serialized_end=5494,
 )
 
 
@@ -1682,8 +1774,8 @@ _CONFIGSPEC = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=5266,
-  serialized_end=5750,
+  serialized_start=5497,
+  serialized_end=5981,
 )
 
 _LISTCLUSTERSRESPONSE.fields_by_name['clusters'].message_type = yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_cluster__pb2._CLUSTER
@@ -1739,6 +1831,8 @@ DESCRIPTOR.message_types_by_name['BackupClusterRequest'] = _BACKUPCLUSTERREQUEST
 DESCRIPTOR.message_types_by_name['BackupClusterMetadata'] = _BACKUPCLUSTERMETADATA
 DESCRIPTOR.message_types_by_name['RestoreClusterRequest'] = _RESTORECLUSTERREQUEST
 DESCRIPTOR.message_types_by_name['RestoreClusterMetadata'] = _RESTORECLUSTERMETADATA
+DESCRIPTOR.message_types_by_name['StartClusterFailoverRequest'] = _STARTCLUSTERFAILOVERREQUEST
+DESCRIPTOR.message_types_by_name['StartClusterFailoverMetadata'] = _STARTCLUSTERFAILOVERMETADATA
 DESCRIPTOR.message_types_by_name['LogRecord'] = _LOGRECORD
 DESCRIPTOR.message_types_by_name['ListClusterLogsRequest'] = _LISTCLUSTERLOGSREQUEST
 DESCRIPTOR.message_types_by_name['ListClusterLogsResponse'] = _LISTCLUSTERLOGSRESPONSE
@@ -1873,6 +1967,20 @@ RestoreClusterMetadata = _reflection.GeneratedProtocolMessageType('RestoreCluste
   # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.sqlserver.v1.RestoreClusterMetadata)
   })
 _sym_db.RegisterMessage(RestoreClusterMetadata)
+
+StartClusterFailoverRequest = _reflection.GeneratedProtocolMessageType('StartClusterFailoverRequest', (_message.Message,), {
+  'DESCRIPTOR' : _STARTCLUSTERFAILOVERREQUEST,
+  '__module__' : 'yandex.cloud.mdb.sqlserver.v1.cluster_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.sqlserver.v1.StartClusterFailoverRequest)
+  })
+_sym_db.RegisterMessage(StartClusterFailoverRequest)
+
+StartClusterFailoverMetadata = _reflection.GeneratedProtocolMessageType('StartClusterFailoverMetadata', (_message.Message,), {
+  'DESCRIPTOR' : _STARTCLUSTERFAILOVERMETADATA,
+  '__module__' : 'yandex.cloud.mdb.sqlserver.v1.cluster_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.sqlserver.v1.StartClusterFailoverMetadata)
+  })
+_sym_db.RegisterMessage(StartClusterFailoverMetadata)
 
 LogRecord = _reflection.GeneratedProtocolMessageType('LogRecord', (_message.Message,), {
 
@@ -2037,6 +2145,8 @@ _RESTORECLUSTERREQUEST.fields_by_name['description']._options = None
 _RESTORECLUSTERREQUEST.fields_by_name['labels']._options = None
 _RESTORECLUSTERREQUEST.fields_by_name['network_id']._options = None
 _RESTORECLUSTERREQUEST.fields_by_name['folder_id']._options = None
+_STARTCLUSTERFAILOVERREQUEST.fields_by_name['cluster_id']._options = None
+_STARTCLUSTERFAILOVERREQUEST.fields_by_name['host_name']._options = None
 _LOGRECORD_MESSAGEENTRY._options = None
 _LISTCLUSTERLOGSREQUEST.fields_by_name['cluster_id']._options = None
 _LISTCLUSTERLOGSREQUEST.fields_by_name['page_size']._options = None
@@ -2065,8 +2175,8 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=5753,
-  serialized_end=8309,
+  serialized_start=5984,
+  serialized_end=8762,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
@@ -2169,9 +2279,19 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
+    name='StartFailover',
+    full_name='yandex.cloud.mdb.sqlserver.v1.ClusterService.StartFailover',
+    index=10,
+    containing_service=None,
+    input_type=_STARTCLUSTERFAILOVERREQUEST,
+    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
+    serialized_options=b'\202\323\344\223\002:\"5/mdb/sqlserver/v1/clusters/{cluster_id}:startFailover:\001*\262\322*\'\n\034StartClusterFailoverMetadata\022\007Cluster',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
     name='ListLogs',
     full_name='yandex.cloud.mdb.sqlserver.v1.ClusterService.ListLogs',
-    index=10,
+    index=11,
     containing_service=None,
     input_type=_LISTCLUSTERLOGSREQUEST,
     output_type=_LISTCLUSTERLOGSRESPONSE,
@@ -2181,7 +2301,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ListOperations',
     full_name='yandex.cloud.mdb.sqlserver.v1.ClusterService.ListOperations',
-    index=11,
+    index=12,
     containing_service=None,
     input_type=_LISTCLUSTEROPERATIONSREQUEST,
     output_type=_LISTCLUSTEROPERATIONSRESPONSE,
@@ -2191,7 +2311,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ListBackups',
     full_name='yandex.cloud.mdb.sqlserver.v1.ClusterService.ListBackups',
-    index=12,
+    index=13,
     containing_service=None,
     input_type=_LISTCLUSTERBACKUPSREQUEST,
     output_type=_LISTCLUSTERBACKUPSRESPONSE,
@@ -2201,7 +2321,7 @@ _CLUSTERSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ListHosts',
     full_name='yandex.cloud.mdb.sqlserver.v1.ClusterService.ListHosts',
-    index=13,
+    index=14,
     containing_service=None,
     input_type=_LISTCLUSTERHOSTSREQUEST,
     output_type=_LISTCLUSTERHOSTSRESPONSE,

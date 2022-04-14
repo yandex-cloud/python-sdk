@@ -67,6 +67,11 @@ class ClusterServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_cluster__service__pb2.RestoreClusterRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
+        self.StartFailover = channel.unary_unary(
+                '/yandex.cloud.mdb.sqlserver.v1.ClusterService/StartFailover',
+                request_serializer=yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_cluster__service__pb2.StartClusterFailoverRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
         self.ListLogs = channel.unary_unary(
                 '/yandex.cloud.mdb.sqlserver.v1.ClusterService/ListLogs',
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_cluster__service__pb2.ListClusterLogsRequest.SerializeToString,
@@ -165,6 +170,13 @@ class ClusterServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def StartFailover(self, request, context):
+        """Starts a manual failover for a cluster.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListLogs(self, request, context):
         """Retrieves logs for the specified SQL Server cluster.
 
@@ -246,6 +258,11 @@ def add_ClusterServiceServicer_to_server(servicer, server):
             'Restore': grpc.unary_unary_rpc_method_handler(
                     servicer.Restore,
                     request_deserializer=yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_cluster__service__pb2.RestoreClusterRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'StartFailover': grpc.unary_unary_rpc_method_handler(
+                    servicer.StartFailover,
+                    request_deserializer=yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_cluster__service__pb2.StartClusterFailoverRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'ListLogs': grpc.unary_unary_rpc_method_handler(
@@ -445,6 +462,23 @@ class ClusterService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.mdb.sqlserver.v1.ClusterService/Restore',
             yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_cluster__service__pb2.RestoreClusterRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def StartFailover(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.mdb.sqlserver.v1.ClusterService/StartFailover',
+            yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_cluster__service__pb2.StartClusterFailoverRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

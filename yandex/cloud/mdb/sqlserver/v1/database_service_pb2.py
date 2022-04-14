@@ -25,7 +25,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n!yandex.cloud.api.mdb.sqlserver.v1B\004PSDSZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/sqlserver/v1;sqlserver',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n4yandex/cloud/mdb/sqlserver/v1/database_service.proto\x12\x1dyandex.cloud.mdb.sqlserver.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a,yandex/cloud/mdb/sqlserver/v1/database.proto\"m\n\x12GetDatabaseRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\rdatabase_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"v\n\x14ListDatabasesRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"l\n\x15ListDatabasesResponse\x12:\n\tdatabases\x18\x01 \x03(\x0b\x32\'.yandex.cloud.mdb.sqlserver.v1.Database\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x83\x01\n\x15\x43reateDatabaseRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12H\n\rdatabase_spec\x18\x02 \x01(\x0b\x32+.yandex.cloud.mdb.sqlserver.v1.DatabaseSpecB\x04\xe8\xc7\x31\x01\"C\n\x16\x43reateDatabaseMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x15\n\rdatabase_name\x18\x02 \x01(\t\"\x86\x01\n\x17RestoreDatabaseMetadata\x12\x18\n\ncluster_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1b\n\rdatabase_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1b\n\rfrom_database\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tbackup_id\x18\x04 \x01(\tB\x04\xe8\xc7\x31\x01\"p\n\x15\x44\x65leteDatabaseRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\rdatabase_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"C\n\x16\x44\x65leteDatabaseMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x15\n\rdatabase_name\x18\x02 \x01(\t\"\xbd\x01\n\x16RestoreDatabaseRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1b\n\rdatabase_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1b\n\rfrom_database\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tbackup_id\x18\x04 \x01(\tB\x04\xe8\xc7\x31\x01\x12.\n\x04time\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x32\xec\x07\n\x0f\x44\x61tabaseService\x12\xac\x01\n\x03Get\x12\x31.yandex.cloud.mdb.sqlserver.v1.GetDatabaseRequest\x1a\'.yandex.cloud.mdb.sqlserver.v1.Database\"I\x82\xd3\xe4\x93\x02\x43\x12\x41/mdb/sqlserver/v1/clusters/{cluster_id}/databases/{database_name}\x12\xac\x01\n\x04List\x12\x33.yandex.cloud.mdb.sqlserver.v1.ListDatabasesRequest\x1a\x34.yandex.cloud.mdb.sqlserver.v1.ListDatabasesResponse\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/mdb/sqlserver/v1/clusters/{cluster_id}/databases\x12\xc5\x01\n\x06\x43reate\x12\x34.yandex.cloud.mdb.sqlserver.v1.CreateDatabaseRequest\x1a!.yandex.cloud.operation.Operation\"b\x82\xd3\xe4\x93\x02\x36\"1/mdb/sqlserver/v1/clusters/{cluster_id}/databases:\x01*\xb2\xd2*\"\n\x16\x43reateDatabaseMetadata\x12\x08\x44\x61tabase\x12\xd0\x01\n\x07Restore\x12\x35.yandex.cloud.mdb.sqlserver.v1.RestoreDatabaseRequest\x1a!.yandex.cloud.operation.Operation\"k\x82\xd3\xe4\x93\x02>\"9/mdb/sqlserver/v1/clusters/{cluster_id}/databases:restore:\x01*\xb2\xd2*#\n\x17RestoreDatabaseMetadata\x12\x08\x44\x61tabase\x12\xdf\x01\n\x06\x44\x65lete\x12\x34.yandex.cloud.mdb.sqlserver.v1.DeleteDatabaseRequest\x1a!.yandex.cloud.operation.Operation\"|\x82\xd3\xe4\x93\x02\x43*A/mdb/sqlserver/v1/clusters/{cluster_id}/databases/{database_name}\xb2\xd2*/\n\x16\x44\x65leteDatabaseMetadata\x12\x15google.protobuf.EmptyBv\n!yandex.cloud.api.mdb.sqlserver.v1B\x04PSDSZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/sqlserver/v1;sqlserverb\x06proto3'
+  serialized_pb=b'\n4yandex/cloud/mdb/sqlserver/v1/database_service.proto\x12\x1dyandex.cloud.mdb.sqlserver.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a,yandex/cloud/mdb/sqlserver/v1/database.proto\"m\n\x12GetDatabaseRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\rdatabase_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"v\n\x14ListDatabasesRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"l\n\x15ListDatabasesResponse\x12:\n\tdatabases\x18\x01 \x03(\x0b\x32\'.yandex.cloud.mdb.sqlserver.v1.Database\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x83\x01\n\x15\x43reateDatabaseRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12H\n\rdatabase_spec\x18\x02 \x01(\x0b\x32+.yandex.cloud.mdb.sqlserver.v1.DatabaseSpecB\x04\xe8\xc7\x31\x01\"C\n\x16\x43reateDatabaseMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x15\n\rdatabase_name\x18\x02 \x01(\t\"p\n\x15\x44\x65leteDatabaseRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\rdatabase_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"C\n\x16\x44\x65leteDatabaseMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x15\n\rdatabase_name\x18\x02 \x01(\t\"\xbd\x01\n\x16RestoreDatabaseRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1b\n\rdatabase_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1b\n\rfrom_database\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tbackup_id\x18\x04 \x01(\tB\x04\xe8\xc7\x31\x01\x12.\n\x04time\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\"\x86\x01\n\x17RestoreDatabaseMetadata\x12\x18\n\ncluster_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1b\n\rdatabase_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1b\n\rfrom_database\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tbackup_id\x18\x04 \x01(\tB\x04\xe8\xc7\x31\x01\"\x9b\x01\n\x1bImportDatabaseBackupRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1b\n\rdatabase_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\ts3_bucket\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x0f\n\x07s3_path\x18\x04 \x01(\t\x12\x13\n\x05\x66iles\x18\x05 \x03(\tB\x04\xe8\xc7\x31\x01\"\x7f\n\x1cImportDatabaseBackupMetadata\x12\x18\n\ncluster_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1b\n\rdatabase_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\ts3_bucket\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x0f\n\x07s3_path\x18\x04 \x01(\t\"\x96\x01\n\x1b\x45xportDatabaseBackupRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1b\n\rdatabase_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\ts3_bucket\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x0f\n\x07s3_path\x18\x04 \x01(\t\x12\x0e\n\x06prefix\x18\x05 \x01(\t\"\x7f\n\x1c\x45xportDatabaseBackupMetadata\x12\x18\n\ncluster_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1b\n\rdatabase_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\ts3_bucket\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x0f\n\x07s3_path\x18\x04 \x01(\t2\xbe\x0b\n\x0f\x44\x61tabaseService\x12\xac\x01\n\x03Get\x12\x31.yandex.cloud.mdb.sqlserver.v1.GetDatabaseRequest\x1a\'.yandex.cloud.mdb.sqlserver.v1.Database\"I\x82\xd3\xe4\x93\x02\x43\x12\x41/mdb/sqlserver/v1/clusters/{cluster_id}/databases/{database_name}\x12\xac\x01\n\x04List\x12\x33.yandex.cloud.mdb.sqlserver.v1.ListDatabasesRequest\x1a\x34.yandex.cloud.mdb.sqlserver.v1.ListDatabasesResponse\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/mdb/sqlserver/v1/clusters/{cluster_id}/databases\x12\xc5\x01\n\x06\x43reate\x12\x34.yandex.cloud.mdb.sqlserver.v1.CreateDatabaseRequest\x1a!.yandex.cloud.operation.Operation\"b\x82\xd3\xe4\x93\x02\x36\"1/mdb/sqlserver/v1/clusters/{cluster_id}/databases:\x01*\xb2\xd2*\"\n\x16\x43reateDatabaseMetadata\x12\x08\x44\x61tabase\x12\xd0\x01\n\x07Restore\x12\x35.yandex.cloud.mdb.sqlserver.v1.RestoreDatabaseRequest\x1a!.yandex.cloud.operation.Operation\"k\x82\xd3\xe4\x93\x02>\"9/mdb/sqlserver/v1/clusters/{cluster_id}/databases:restore:\x01*\xb2\xd2*#\n\x17RestoreDatabaseMetadata\x12\x08\x44\x61tabase\x12\xde\x01\n\x0cImportBackup\x12:.yandex.cloud.mdb.sqlserver.v1.ImportDatabaseBackupRequest\x1a!.yandex.cloud.operation.Operation\"o\x82\xd3\xe4\x93\x02=\"8/mdb/sqlserver/v1/clusters/{cluster_id}/databases:import:\x01*\xb2\xd2*(\n\x1cImportDatabaseBackupMetadata\x12\x08\x44\x61tabase\x12\xee\x01\n\x0c\x45xportBackup\x12:.yandex.cloud.mdb.sqlserver.v1.ExportDatabaseBackupRequest\x1a!.yandex.cloud.operation.Operation\"\x7f\x82\xd3\xe4\x93\x02M\"H/mdb/sqlserver/v1/clusters/{cluster_id}/databases/{database_name}:export:\x01*\xb2\xd2*(\n\x1c\x45xportDatabaseBackupMetadata\x12\x08\x44\x61tabase\x12\xdf\x01\n\x06\x44\x65lete\x12\x34.yandex.cloud.mdb.sqlserver.v1.DeleteDatabaseRequest\x1a!.yandex.cloud.operation.Operation\"|\x82\xd3\xe4\x93\x02\x43*A/mdb/sqlserver/v1/clusters/{cluster_id}/databases/{database_name}\xb2\xd2*/\n\x16\x44\x65leteDatabaseMetadata\x12\x15google.protobuf.EmptyBv\n!yandex.cloud.api.mdb.sqlserver.v1B\x04PSDSZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/sqlserver/v1;sqlserverb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_database__pb2.DESCRIPTOR,])
 
@@ -234,59 +234,6 @@ _CREATEDATABASEMETADATA = _descriptor.Descriptor(
 )
 
 
-_RESTOREDATABASEMETADATA = _descriptor.Descriptor(
-  name='RestoreDatabaseMetadata',
-  full_name='yandex.cloud.mdb.sqlserver.v1.RestoreDatabaseMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='cluster_id', full_name='yandex.cloud.mdb.sqlserver.v1.RestoreDatabaseMetadata.cluster_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='database_name', full_name='yandex.cloud.mdb.sqlserver.v1.RestoreDatabaseMetadata.database_name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='from_database', full_name='yandex.cloud.mdb.sqlserver.v1.RestoreDatabaseMetadata.from_database', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='backup_id', full_name='yandex.cloud.mdb.sqlserver.v1.RestoreDatabaseMetadata.backup_id', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=846,
-  serialized_end=980,
-)
-
-
 _DELETEDATABASEREQUEST = _descriptor.Descriptor(
   name='DeleteDatabaseRequest',
   full_name='yandex.cloud.mdb.sqlserver.v1.DeleteDatabaseRequest',
@@ -321,8 +268,8 @@ _DELETEDATABASEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=982,
-  serialized_end=1094,
+  serialized_start=845,
+  serialized_end=957,
 )
 
 
@@ -360,8 +307,8 @@ _DELETEDATABASEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1096,
-  serialized_end=1163,
+  serialized_start=959,
+  serialized_end=1026,
 )
 
 
@@ -420,8 +367,287 @@ _RESTOREDATABASEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1166,
+  serialized_start=1029,
+  serialized_end=1218,
+)
+
+
+_RESTOREDATABASEMETADATA = _descriptor.Descriptor(
+  name='RestoreDatabaseMetadata',
+  full_name='yandex.cloud.mdb.sqlserver.v1.RestoreDatabaseMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='yandex.cloud.mdb.sqlserver.v1.RestoreDatabaseMetadata.cluster_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='database_name', full_name='yandex.cloud.mdb.sqlserver.v1.RestoreDatabaseMetadata.database_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='from_database', full_name='yandex.cloud.mdb.sqlserver.v1.RestoreDatabaseMetadata.from_database', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='backup_id', full_name='yandex.cloud.mdb.sqlserver.v1.RestoreDatabaseMetadata.backup_id', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1221,
   serialized_end=1355,
+)
+
+
+_IMPORTDATABASEBACKUPREQUEST = _descriptor.Descriptor(
+  name='ImportDatabaseBackupRequest',
+  full_name='yandex.cloud.mdb.sqlserver.v1.ImportDatabaseBackupRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='yandex.cloud.mdb.sqlserver.v1.ImportDatabaseBackupRequest.cluster_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='database_name', full_name='yandex.cloud.mdb.sqlserver.v1.ImportDatabaseBackupRequest.database_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='s3_bucket', full_name='yandex.cloud.mdb.sqlserver.v1.ImportDatabaseBackupRequest.s3_bucket', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='s3_path', full_name='yandex.cloud.mdb.sqlserver.v1.ImportDatabaseBackupRequest.s3_path', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='files', full_name='yandex.cloud.mdb.sqlserver.v1.ImportDatabaseBackupRequest.files', index=4,
+      number=5, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1358,
+  serialized_end=1513,
+)
+
+
+_IMPORTDATABASEBACKUPMETADATA = _descriptor.Descriptor(
+  name='ImportDatabaseBackupMetadata',
+  full_name='yandex.cloud.mdb.sqlserver.v1.ImportDatabaseBackupMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='yandex.cloud.mdb.sqlserver.v1.ImportDatabaseBackupMetadata.cluster_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='database_name', full_name='yandex.cloud.mdb.sqlserver.v1.ImportDatabaseBackupMetadata.database_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='s3_bucket', full_name='yandex.cloud.mdb.sqlserver.v1.ImportDatabaseBackupMetadata.s3_bucket', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='s3_path', full_name='yandex.cloud.mdb.sqlserver.v1.ImportDatabaseBackupMetadata.s3_path', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1515,
+  serialized_end=1642,
+)
+
+
+_EXPORTDATABASEBACKUPREQUEST = _descriptor.Descriptor(
+  name='ExportDatabaseBackupRequest',
+  full_name='yandex.cloud.mdb.sqlserver.v1.ExportDatabaseBackupRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='yandex.cloud.mdb.sqlserver.v1.ExportDatabaseBackupRequest.cluster_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='database_name', full_name='yandex.cloud.mdb.sqlserver.v1.ExportDatabaseBackupRequest.database_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='s3_bucket', full_name='yandex.cloud.mdb.sqlserver.v1.ExportDatabaseBackupRequest.s3_bucket', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='s3_path', full_name='yandex.cloud.mdb.sqlserver.v1.ExportDatabaseBackupRequest.s3_path', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='prefix', full_name='yandex.cloud.mdb.sqlserver.v1.ExportDatabaseBackupRequest.prefix', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1645,
+  serialized_end=1795,
+)
+
+
+_EXPORTDATABASEBACKUPMETADATA = _descriptor.Descriptor(
+  name='ExportDatabaseBackupMetadata',
+  full_name='yandex.cloud.mdb.sqlserver.v1.ExportDatabaseBackupMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='yandex.cloud.mdb.sqlserver.v1.ExportDatabaseBackupMetadata.cluster_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='database_name', full_name='yandex.cloud.mdb.sqlserver.v1.ExportDatabaseBackupMetadata.database_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='s3_bucket', full_name='yandex.cloud.mdb.sqlserver.v1.ExportDatabaseBackupMetadata.s3_bucket', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='s3_path', full_name='yandex.cloud.mdb.sqlserver.v1.ExportDatabaseBackupMetadata.s3_path', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1797,
+  serialized_end=1924,
 )
 
 _LISTDATABASESRESPONSE.fields_by_name['databases'].message_type = yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_database__pb2._DATABASE
@@ -432,10 +658,14 @@ DESCRIPTOR.message_types_by_name['ListDatabasesRequest'] = _LISTDATABASESREQUEST
 DESCRIPTOR.message_types_by_name['ListDatabasesResponse'] = _LISTDATABASESRESPONSE
 DESCRIPTOR.message_types_by_name['CreateDatabaseRequest'] = _CREATEDATABASEREQUEST
 DESCRIPTOR.message_types_by_name['CreateDatabaseMetadata'] = _CREATEDATABASEMETADATA
-DESCRIPTOR.message_types_by_name['RestoreDatabaseMetadata'] = _RESTOREDATABASEMETADATA
 DESCRIPTOR.message_types_by_name['DeleteDatabaseRequest'] = _DELETEDATABASEREQUEST
 DESCRIPTOR.message_types_by_name['DeleteDatabaseMetadata'] = _DELETEDATABASEMETADATA
 DESCRIPTOR.message_types_by_name['RestoreDatabaseRequest'] = _RESTOREDATABASEREQUEST
+DESCRIPTOR.message_types_by_name['RestoreDatabaseMetadata'] = _RESTOREDATABASEMETADATA
+DESCRIPTOR.message_types_by_name['ImportDatabaseBackupRequest'] = _IMPORTDATABASEBACKUPREQUEST
+DESCRIPTOR.message_types_by_name['ImportDatabaseBackupMetadata'] = _IMPORTDATABASEBACKUPMETADATA
+DESCRIPTOR.message_types_by_name['ExportDatabaseBackupRequest'] = _EXPORTDATABASEBACKUPREQUEST
+DESCRIPTOR.message_types_by_name['ExportDatabaseBackupMetadata'] = _EXPORTDATABASEBACKUPMETADATA
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 GetDatabaseRequest = _reflection.GeneratedProtocolMessageType('GetDatabaseRequest', (_message.Message,), {
@@ -473,13 +703,6 @@ CreateDatabaseMetadata = _reflection.GeneratedProtocolMessageType('CreateDatabas
   })
 _sym_db.RegisterMessage(CreateDatabaseMetadata)
 
-RestoreDatabaseMetadata = _reflection.GeneratedProtocolMessageType('RestoreDatabaseMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _RESTOREDATABASEMETADATA,
-  '__module__' : 'yandex.cloud.mdb.sqlserver.v1.database_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.sqlserver.v1.RestoreDatabaseMetadata)
-  })
-_sym_db.RegisterMessage(RestoreDatabaseMetadata)
-
 DeleteDatabaseRequest = _reflection.GeneratedProtocolMessageType('DeleteDatabaseRequest', (_message.Message,), {
   'DESCRIPTOR' : _DELETEDATABASEREQUEST,
   '__module__' : 'yandex.cloud.mdb.sqlserver.v1.database_service_pb2'
@@ -501,6 +724,41 @@ RestoreDatabaseRequest = _reflection.GeneratedProtocolMessageType('RestoreDataba
   })
 _sym_db.RegisterMessage(RestoreDatabaseRequest)
 
+RestoreDatabaseMetadata = _reflection.GeneratedProtocolMessageType('RestoreDatabaseMetadata', (_message.Message,), {
+  'DESCRIPTOR' : _RESTOREDATABASEMETADATA,
+  '__module__' : 'yandex.cloud.mdb.sqlserver.v1.database_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.sqlserver.v1.RestoreDatabaseMetadata)
+  })
+_sym_db.RegisterMessage(RestoreDatabaseMetadata)
+
+ImportDatabaseBackupRequest = _reflection.GeneratedProtocolMessageType('ImportDatabaseBackupRequest', (_message.Message,), {
+  'DESCRIPTOR' : _IMPORTDATABASEBACKUPREQUEST,
+  '__module__' : 'yandex.cloud.mdb.sqlserver.v1.database_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.sqlserver.v1.ImportDatabaseBackupRequest)
+  })
+_sym_db.RegisterMessage(ImportDatabaseBackupRequest)
+
+ImportDatabaseBackupMetadata = _reflection.GeneratedProtocolMessageType('ImportDatabaseBackupMetadata', (_message.Message,), {
+  'DESCRIPTOR' : _IMPORTDATABASEBACKUPMETADATA,
+  '__module__' : 'yandex.cloud.mdb.sqlserver.v1.database_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.sqlserver.v1.ImportDatabaseBackupMetadata)
+  })
+_sym_db.RegisterMessage(ImportDatabaseBackupMetadata)
+
+ExportDatabaseBackupRequest = _reflection.GeneratedProtocolMessageType('ExportDatabaseBackupRequest', (_message.Message,), {
+  'DESCRIPTOR' : _EXPORTDATABASEBACKUPREQUEST,
+  '__module__' : 'yandex.cloud.mdb.sqlserver.v1.database_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.sqlserver.v1.ExportDatabaseBackupRequest)
+  })
+_sym_db.RegisterMessage(ExportDatabaseBackupRequest)
+
+ExportDatabaseBackupMetadata = _reflection.GeneratedProtocolMessageType('ExportDatabaseBackupMetadata', (_message.Message,), {
+  'DESCRIPTOR' : _EXPORTDATABASEBACKUPMETADATA,
+  '__module__' : 'yandex.cloud.mdb.sqlserver.v1.database_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.sqlserver.v1.ExportDatabaseBackupMetadata)
+  })
+_sym_db.RegisterMessage(ExportDatabaseBackupMetadata)
+
 
 DESCRIPTOR._options = None
 _GETDATABASEREQUEST.fields_by_name['cluster_id']._options = None
@@ -510,10 +768,6 @@ _LISTDATABASESREQUEST.fields_by_name['page_size']._options = None
 _LISTDATABASESREQUEST.fields_by_name['page_token']._options = None
 _CREATEDATABASEREQUEST.fields_by_name['cluster_id']._options = None
 _CREATEDATABASEREQUEST.fields_by_name['database_spec']._options = None
-_RESTOREDATABASEMETADATA.fields_by_name['cluster_id']._options = None
-_RESTOREDATABASEMETADATA.fields_by_name['database_name']._options = None
-_RESTOREDATABASEMETADATA.fields_by_name['from_database']._options = None
-_RESTOREDATABASEMETADATA.fields_by_name['backup_id']._options = None
 _DELETEDATABASEREQUEST.fields_by_name['cluster_id']._options = None
 _DELETEDATABASEREQUEST.fields_by_name['database_name']._options = None
 _RESTOREDATABASEREQUEST.fields_by_name['cluster_id']._options = None
@@ -521,6 +775,23 @@ _RESTOREDATABASEREQUEST.fields_by_name['database_name']._options = None
 _RESTOREDATABASEREQUEST.fields_by_name['from_database']._options = None
 _RESTOREDATABASEREQUEST.fields_by_name['backup_id']._options = None
 _RESTOREDATABASEREQUEST.fields_by_name['time']._options = None
+_RESTOREDATABASEMETADATA.fields_by_name['cluster_id']._options = None
+_RESTOREDATABASEMETADATA.fields_by_name['database_name']._options = None
+_RESTOREDATABASEMETADATA.fields_by_name['from_database']._options = None
+_RESTOREDATABASEMETADATA.fields_by_name['backup_id']._options = None
+_IMPORTDATABASEBACKUPREQUEST.fields_by_name['cluster_id']._options = None
+_IMPORTDATABASEBACKUPREQUEST.fields_by_name['database_name']._options = None
+_IMPORTDATABASEBACKUPREQUEST.fields_by_name['s3_bucket']._options = None
+_IMPORTDATABASEBACKUPREQUEST.fields_by_name['files']._options = None
+_IMPORTDATABASEBACKUPMETADATA.fields_by_name['cluster_id']._options = None
+_IMPORTDATABASEBACKUPMETADATA.fields_by_name['database_name']._options = None
+_IMPORTDATABASEBACKUPMETADATA.fields_by_name['s3_bucket']._options = None
+_EXPORTDATABASEBACKUPREQUEST.fields_by_name['cluster_id']._options = None
+_EXPORTDATABASEBACKUPREQUEST.fields_by_name['database_name']._options = None
+_EXPORTDATABASEBACKUPREQUEST.fields_by_name['s3_bucket']._options = None
+_EXPORTDATABASEBACKUPMETADATA.fields_by_name['cluster_id']._options = None
+_EXPORTDATABASEBACKUPMETADATA.fields_by_name['database_name']._options = None
+_EXPORTDATABASEBACKUPMETADATA.fields_by_name['s3_bucket']._options = None
 
 _DATABASESERVICE = _descriptor.ServiceDescriptor(
   name='DatabaseService',
@@ -529,8 +800,8 @@ _DATABASESERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1358,
-  serialized_end=2362,
+  serialized_start=1927,
+  serialized_end=3397,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
@@ -573,9 +844,29 @@ _DATABASESERVICE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
+    name='ImportBackup',
+    full_name='yandex.cloud.mdb.sqlserver.v1.DatabaseService.ImportBackup',
+    index=4,
+    containing_service=None,
+    input_type=_IMPORTDATABASEBACKUPREQUEST,
+    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
+    serialized_options=b'\202\323\344\223\002=\"8/mdb/sqlserver/v1/clusters/{cluster_id}/databases:import:\001*\262\322*(\n\034ImportDatabaseBackupMetadata\022\010Database',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ExportBackup',
+    full_name='yandex.cloud.mdb.sqlserver.v1.DatabaseService.ExportBackup',
+    index=5,
+    containing_service=None,
+    input_type=_EXPORTDATABASEBACKUPREQUEST,
+    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
+    serialized_options=b'\202\323\344\223\002M\"H/mdb/sqlserver/v1/clusters/{cluster_id}/databases/{database_name}:export:\001*\262\322*(\n\034ExportDatabaseBackupMetadata\022\010Database',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
     name='Delete',
     full_name='yandex.cloud.mdb.sqlserver.v1.DatabaseService.Delete',
-    index=4,
+    index=6,
     containing_service=None,
     input_type=_DELETEDATABASEREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
