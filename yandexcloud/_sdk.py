@@ -123,6 +123,7 @@ _supported_modules = [
     ("yandex.cloud.organizationmanager", "organization-manager"),
     ("yandex.cloud.resourcemanager", "resource-manager"),
     ("yandex.cloud.serverless.apigateway", "serverless-apigateway"),
+    ("yandex.cloud.serverless.containers", "serverless-containers"),
     ("yandex.cloud.serverless.functions", "serverless-functions"),
     ("yandex.cloud.serverless.triggers", "serverless-triggers"),
     ("yandex.cloud.vpc", "vpc"),
