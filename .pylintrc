@@ -10,6 +10,7 @@ disable=
     C0209, # Formatting a regular string which could be a f-string (consider-using-f-string)
     C0301, # Line too long (126/120) (line-too-long) — checked with flake8 anyway
     C0411, # FIXME with black and remove standard import "from datetime import datetime" should be placed before "import grpc" (wrong-import-order)
+    E0611, # No name 'Empty' in module 'google.protobuf.empty_pb2' (no-name-in-module) — proto code creates attributes in runtime and linter goes crazy
     R0205, # Class 'OperationResult' inherits from object, can be safely removed from bases in python3 (useless-object-inheritance)
     R0903, # Too few public methods (1/2) (too-few-public-methods)
     R0913, # Too many arguments (6/5) (too-many-arguments)

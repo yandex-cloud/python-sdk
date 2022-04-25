@@ -27,6 +27,7 @@ jobs:
         make submodule
         make deps
         make proto
+        make tox
         
         git config --global user.name 'Yandex.Cloud Bot'
         git config --global user.email 'ycloud-bot@yandex.ru'
