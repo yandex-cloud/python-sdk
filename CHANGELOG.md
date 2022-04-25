@@ -2,6 +2,13 @@
 
 <!--next-version-placeholder-->
 
+## v0.156.0 (2022-04-25)
+### Feature
+* Suppress some pylint confusion about dynamically generated code
+ ([`dd5dccd`](https://github.com/yandex-cloud/python-sdk/commit/dd5dccdf56be02562a521e9d2d6acfeebf90e55f))
+* Add test/lint in protogenerate workflow
+ ([`6f8c19d`](https://github.com/yandex-cloud/python-sdk/commit/6f8c19de937d6c59e194e3f8a4ab7e144f345e78))
+
 ## v0.155.0 (2022-04-20)
 ### Feature
 * Regenerate proto
