@@ -2,6 +2,11 @@
 
 <!--next-version-placeholder-->
 
+## v0.157.0 (2022-04-25)
+### Feature
+* Support Serverless Containers in sdk
+ ([`cc976dd`](https://github.com/yandex-cloud/python-sdk/commit/cc976ddaf202443c224f3a3ef1c02ad427de7213))
+
 ## v0.156.0 (2022-04-25)
 ### Feature
 * Suppress some pylint confusion about dynamically generated code
