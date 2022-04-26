@@ -2,6 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
+from yandex.cloud.access import access_pb2 as yandex_dot_cloud_dot_access_dot_access__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 from yandex.cloud.ydb.v1 import database_pb2 as yandex_dot_cloud_dot_ydb_dot_v1_dot_database__pb2
 from yandex.cloud.ydb.v1 import database_service_pb2 as yandex_dot_cloud_dot_ydb_dot_v1_dot_database__service__pb2
@@ -45,6 +46,21 @@ class DatabaseServiceStub(object):
         self.Stop = channel.unary_unary(
                 '/yandex.cloud.ydb.v1.DatabaseService/Stop',
                 request_serializer=yandex_dot_cloud_dot_ydb_dot_v1_dot_database__service__pb2.StopDatabaseRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
+        self.ListAccessBindings = channel.unary_unary(
+                '/yandex.cloud.ydb.v1.DatabaseService/ListAccessBindings',
+                request_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessBindingsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessBindingsResponse.FromString,
+                )
+        self.SetAccessBindings = channel.unary_unary(
+                '/yandex.cloud.ydb.v1.DatabaseService/SetAccessBindings',
+                request_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.SetAccessBindingsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
+        self.UpdateAccessBindings = channel.unary_unary(
+                '/yandex.cloud.ydb.v1.DatabaseService/UpdateAccessBindings',
+                request_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessBindingsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
         self.Delete = channel.unary_unary(
@@ -110,6 +126,24 @@ class DatabaseServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListAccessBindings(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SetAccessBindings(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateAccessBindings(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def Delete(self, request, context):
         """Deletes the specified database.
         """
@@ -161,6 +195,21 @@ def add_DatabaseServiceServicer_to_server(servicer, server):
             'Stop': grpc.unary_unary_rpc_method_handler(
                     servicer.Stop,
                     request_deserializer=yandex_dot_cloud_dot_ydb_dot_v1_dot_database__service__pb2.StopDatabaseRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'ListAccessBindings': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListAccessBindings,
+                    request_deserializer=yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessBindingsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessBindingsResponse.SerializeToString,
+            ),
+            'SetAccessBindings': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetAccessBindings,
+                    request_deserializer=yandex_dot_cloud_dot_access_dot_access__pb2.SetAccessBindingsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'UpdateAccessBindings': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateAccessBindings,
+                    request_deserializer=yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessBindingsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'Delete': grpc.unary_unary_rpc_method_handler(
@@ -287,6 +336,57 @@ class DatabaseService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.ydb.v1.DatabaseService/Stop',
             yandex_dot_cloud_dot_ydb_dot_v1_dot_database__service__pb2.StopDatabaseRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListAccessBindings(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.ydb.v1.DatabaseService/ListAccessBindings',
+            yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessBindingsRequest.SerializeToString,
+            yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessBindingsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SetAccessBindings(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.ydb.v1.DatabaseService/SetAccessBindings',
+            yandex_dot_cloud_dot_access_dot_access__pb2.SetAccessBindingsRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateAccessBindings(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.ydb.v1.DatabaseService/UpdateAccessBindings',
+            yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessBindingsRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

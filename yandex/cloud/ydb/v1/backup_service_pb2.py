@@ -14,6 +14,7 @@ _sym_db = _symbol_database.Default()
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
+from yandex.cloud.access import access_pb2 as yandex_dot_cloud_dot_access_dot_access__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 from yandex.cloud.ydb.v1 import backup_pb2 as yandex_dot_cloud_dot_ydb_dot_v1_dot_backup__pb2
 
@@ -24,9 +25,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\027yandex.cloud.api.ydb.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/ydb/v1;ydb',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n(yandex/cloud/ydb/v1/backup_service.proto\x12\x13yandex.cloud.ydb.v1\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a yandex/cloud/ydb/v1/backup.proto\"q\n\x10ListPathsRequest\x12\x1f\n\tbackup_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\";\n\x11ListPathsResponse\x12\r\n\x05paths\x18\x01 \x03(\t\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"3\n\x10GetBackupRequest\x12\x1f\n\tbackup_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"e\n\x12ListBackupsRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"\\\n\x13ListBackupsResponse\x12,\n\x07\x62\x61\x63kups\x18\x01 \x03(\x0b\x32\x1b.yandex.cloud.ydb.v1.Backup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"(\n\x13\x44\x65leteBackupRequest\x12\x11\n\tbackup_id\x18\x01 \x01(\t\">\n\x14\x44\x65leteBackupMetadata\x12\x11\n\tbackup_id\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x61tabase_id\x18\x02 \x01(\t2\xa9\x04\n\rBackupService\x12n\n\x03Get\x12%.yandex.cloud.ydb.v1.GetBackupRequest\x1a\x1b.yandex.cloud.ydb.v1.Backup\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/ydb/v1/backups/{backup_id}\x12\x85\x01\n\tListPaths\x12%.yandex.cloud.ydb.v1.ListPathsRequest\x1a&.yandex.cloud.ydb.v1.ListPathsResponse\")\x82\xd3\xe4\x93\x02#\x12!/ydb/v1/backups/{backup_id}/paths\x12r\n\x04List\x12\'.yandex.cloud.ydb.v1.ListBackupsRequest\x1a(.yandex.cloud.ydb.v1.ListBackupsResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/ydb/v1/backups\x12\xab\x01\n\x06\x44\x65lete\x12(.yandex.cloud.ydb.v1.DeleteBackupRequest\x1a!.yandex.cloud.operation.Operation\"T\x82\xd3\xe4\x93\x02\x1d*\x1b/ydb/v1/backups/{backup_id}\xb2\xd2*-\n\x14\x44\x65leteBackupMetadata\x12\x15google.protobuf.EmptyBV\n\x17yandex.cloud.api.ydb.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/ydb/v1;ydbb\x06proto3'
+  serialized_pb=b'\n(yandex/cloud/ydb/v1/backup_service.proto\x12\x13yandex.cloud.ydb.v1\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a yandex/cloud/access/access.proto\x1a\x1dyandex/cloud/validation.proto\x1a yandex/cloud/ydb/v1/backup.proto\"q\n\x10ListPathsRequest\x12\x1f\n\tbackup_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\";\n\x11ListPathsResponse\x12\r\n\x05paths\x18\x01 \x03(\t\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"3\n\x10GetBackupRequest\x12\x1f\n\tbackup_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"e\n\x12ListBackupsRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"\\\n\x13ListBackupsResponse\x12,\n\x07\x62\x61\x63kups\x18\x01 \x03(\x0b\x32\x1b.yandex.cloud.ydb.v1.Backup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"(\n\x13\x44\x65leteBackupRequest\x12\x11\n\tbackup_id\x18\x01 \x01(\t\">\n\x14\x44\x65leteBackupMetadata\x12\x11\n\tbackup_id\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x61tabase_id\x18\x02 \x01(\t2\xf7\x07\n\rBackupService\x12n\n\x03Get\x12%.yandex.cloud.ydb.v1.GetBackupRequest\x1a\x1b.yandex.cloud.ydb.v1.Backup\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/ydb/v1/backups/{backup_id}\x12\x85\x01\n\tListPaths\x12%.yandex.cloud.ydb.v1.ListPathsRequest\x1a&.yandex.cloud.ydb.v1.ListPathsResponse\")\x82\xd3\xe4\x93\x02#\x12!/ydb/v1/backups/{backup_id}/paths\x12r\n\x04List\x12\'.yandex.cloud.ydb.v1.ListBackupsRequest\x1a(.yandex.cloud.ydb.v1.ListBackupsResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/ydb/v1/backups\x12u\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\x12\xa4\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"=\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\xad\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"@\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\xab\x01\n\x06\x44\x65lete\x12(.yandex.cloud.ydb.v1.DeleteBackupRequest\x1a!.yandex.cloud.operation.Operation\"T\x82\xd3\xe4\x93\x02\x1d*\x1b/ydb/v1/backups/{backup_id}\xb2\xd2*-\n\x14\x44\x65leteBackupMetadata\x12\x15google.protobuf.EmptyBV\n\x17yandex.cloud.api.ydb.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/ydb/v1;ydbb\x06proto3'
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_ydb_dot_v1_dot_backup__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_access_dot_access__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_ydb_dot_v1_dot_backup__pb2.DESCRIPTOR,])
 
 
 
@@ -72,8 +73,8 @@ _LISTPATHSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=234,
-  serialized_end=347,
+  serialized_start=268,
+  serialized_end=381,
 )
 
 
@@ -111,8 +112,8 @@ _LISTPATHSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=349,
-  serialized_end=408,
+  serialized_start=383,
+  serialized_end=442,
 )
 
 
@@ -143,8 +144,8 @@ _GETBACKUPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=410,
-  serialized_end=461,
+  serialized_start=444,
+  serialized_end=495,
 )
 
 
@@ -189,8 +190,8 @@ _LISTBACKUPSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=463,
-  serialized_end=564,
+  serialized_start=497,
+  serialized_end=598,
 )
 
 
@@ -228,8 +229,8 @@ _LISTBACKUPSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=566,
-  serialized_end=658,
+  serialized_start=600,
+  serialized_end=692,
 )
 
 
@@ -260,8 +261,8 @@ _DELETEBACKUPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=660,
-  serialized_end=700,
+  serialized_start=694,
+  serialized_end=734,
 )
 
 
@@ -299,8 +300,8 @@ _DELETEBACKUPMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=702,
-  serialized_end=764,
+  serialized_start=736,
+  serialized_end=798,
 )
 
 _LISTBACKUPSRESPONSE.fields_by_name['backups'].message_type = yandex_dot_cloud_dot_ydb_dot_v1_dot_backup__pb2._BACKUP
@@ -378,8 +379,8 @@ _BACKUPSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=767,
-  serialized_end=1320,
+  serialized_start=801,
+  serialized_end=1816,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
@@ -412,9 +413,39 @@ _BACKUPSERVICE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
+    name='ListAccessBindings',
+    full_name='yandex.cloud.ydb.v1.BackupService.ListAccessBindings',
+    index=3,
+    containing_service=None,
+    input_type=yandex_dot_cloud_dot_access_dot_access__pb2._LISTACCESSBINDINGSREQUEST,
+    output_type=yandex_dot_cloud_dot_access_dot_access__pb2._LISTACCESSBINDINGSRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='SetAccessBindings',
+    full_name='yandex.cloud.ydb.v1.BackupService.SetAccessBindings',
+    index=4,
+    containing_service=None,
+    input_type=yandex_dot_cloud_dot_access_dot_access__pb2._SETACCESSBINDINGSREQUEST,
+    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
+    serialized_options=b'\262\322*9\n access.SetAccessBindingsMetadata\022\025google.protobuf.Empty',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='UpdateAccessBindings',
+    full_name='yandex.cloud.ydb.v1.BackupService.UpdateAccessBindings',
+    index=5,
+    containing_service=None,
+    input_type=yandex_dot_cloud_dot_access_dot_access__pb2._UPDATEACCESSBINDINGSREQUEST,
+    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
+    serialized_options=b'\262\322*<\n#access.UpdateAccessBindingsMetadata\022\025google.protobuf.Empty',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
     name='Delete',
     full_name='yandex.cloud.ydb.v1.BackupService.Delete',
-    index=3,
+    index=6,
     containing_service=None,
     input_type=_DELETEBACKUPREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
