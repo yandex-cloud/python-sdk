@@ -2,6 +2,11 @@
 
 <!--next-version-placeholder-->
 
+## v0.158.0 (2022-04-26)
+### Feature
+* Regenerate proto
+ ([`356d7eb`](https://github.com/yandex-cloud/python-sdk/commit/356d7eb78a49a1c8a66e6b118f4b687a6c1f6961))
+
 ## v0.157.0 (2022-04-25)
 ### Feature
 * Support Serverless Containers in sdk
