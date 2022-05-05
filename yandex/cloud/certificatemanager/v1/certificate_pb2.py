@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n&yandex.cloud.api.certificatemanager.v1ZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/certificatemanager/v1;certificatemanager',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n4yandex/cloud/certificatemanager/v1/certificate.proto\x12\"yandex.cloud.certificatemanager.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xc3\x06\n\x0b\x43\x65rtificate\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12K\n\x06labels\x18\x06 \x03(\x0b\x32;.yandex.cloud.certificatemanager.v1.Certificate.LabelsEntry\x12\x41\n\x04type\x18\x07 \x01(\x0e\x32\x33.yandex.cloud.certificatemanager.v1.CertificateType\x12\x0f\n\x07\x64omains\x18\x08 \x03(\t\x12\x46\n\x06status\x18\t \x01(\x0e\x32\x36.yandex.cloud.certificatemanager.v1.Certificate.Status\x12\x0e\n\x06issuer\x18\n \x01(\t\x12\x0f\n\x07subject\x18\x0b \x01(\t\x12\x0e\n\x06serial\x18\x0c \x01(\t\x12.\n\nupdated_at\x18\r \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12-\n\tissued_at\x18\x0e \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12-\n\tnot_after\x18\x0f \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nnot_before\x18\x10 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x41\n\nchallenges\x18\x11 \x03(\x0b\x32-.yandex.cloud.certificatemanager.v1.Challenge\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"x\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0e\n\nVALIDATING\x10\x01\x12\x0b\n\x07INVALID\x10\x02\x12\n\n\x06ISSUED\x10\x03\x12\x0b\n\x07REVOKED\x10\x04\x12\x0c\n\x08RENEWING\x10\x05\x12\x12\n\x0eRENEWAL_FAILED\x10\x06\"\x8c\x05\n\tChallenge\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12?\n\x04type\x18\x02 \x01(\x0e\x32\x31.yandex.cloud.certificatemanager.v1.ChallengeType\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x44\n\x06status\x18\x05 \x01(\x0e\x32\x34.yandex.cloud.certificatemanager.v1.Challenge.Status\x12\x0f\n\x07message\x18\x06 \x01(\t\x12\r\n\x05\x65rror\x18\x07 \x01(\t\x12P\n\rdns_challenge\x18\x08 \x01(\x0b\x32\x37.yandex.cloud.certificatemanager.v1.Challenge.DnsRecordH\x00\x12P\n\x0ehttp_challenge\x18\t \x01(\x0b\x32\x36.yandex.cloud.certificatemanager.v1.Challenge.HttpFileH\x00\x1a\x36\n\tDnsRecord\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\r\n\x05value\x18\x03 \x01(\t\x1a(\n\x08HttpFile\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\t\"U\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\x0e\n\nPROCESSING\x10\x02\x12\t\n\x05VALID\x10\x03\x12\x0b\n\x07INVALID\x10\x04\x42\x0b\n\tchallenge*N\n\x0f\x43\x65rtificateType\x12 \n\x1c\x43\x45RTIFICATE_TYPE_UNSPECIFIED\x10\x00\x12\x0c\n\x08IMPORTED\x10\x01\x12\x0b\n\x07MANAGED\x10\x02*B\n\rChallengeType\x12\x1e\n\x1a\x43HALLENGE_TYPE_UNSPECIFIED\x10\x00\x12\x07\n\x03\x44NS\x10\x01\x12\x08\n\x04HTTP\x10\x02\x42\x83\x01\n&yandex.cloud.api.certificatemanager.v1ZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/certificatemanager/v1;certificatemanagerb\x06proto3'
+  serialized_pb=b'\n4yandex/cloud/certificatemanager/v1/certificate.proto\x12\"yandex.cloud.certificatemanager.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xc3\x06\n\x0b\x43\x65rtificate\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12K\n\x06labels\x18\x06 \x03(\x0b\x32;.yandex.cloud.certificatemanager.v1.Certificate.LabelsEntry\x12\x41\n\x04type\x18\x07 \x01(\x0e\x32\x33.yandex.cloud.certificatemanager.v1.CertificateType\x12\x0f\n\x07\x64omains\x18\x08 \x03(\t\x12\x46\n\x06status\x18\t \x01(\x0e\x32\x36.yandex.cloud.certificatemanager.v1.Certificate.Status\x12\x0e\n\x06issuer\x18\n \x01(\t\x12\x0f\n\x07subject\x18\x0b \x01(\t\x12\x0e\n\x06serial\x18\x0c \x01(\t\x12.\n\nupdated_at\x18\r \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12-\n\tissued_at\x18\x0e \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12-\n\tnot_after\x18\x0f \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nnot_before\x18\x10 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x41\n\nchallenges\x18\x11 \x03(\x0b\x32-.yandex.cloud.certificatemanager.v1.Challenge\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"x\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0e\n\nVALIDATING\x10\x01\x12\x0b\n\x07INVALID\x10\x02\x12\n\n\x06ISSUED\x10\x03\x12\x0b\n\x07REVOKED\x10\x04\x12\x0c\n\x08RENEWING\x10\x05\x12\x12\n\x0eRENEWAL_FAILED\x10\x06\"\x8c\x05\n\tChallenge\x12\x0e\n\x06\x64omain\x18\x01 \x01(\t\x12?\n\x04type\x18\x02 \x01(\x0e\x32\x31.yandex.cloud.certificatemanager.v1.ChallengeType\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x44\n\x06status\x18\x05 \x01(\x0e\x32\x34.yandex.cloud.certificatemanager.v1.Challenge.Status\x12\x0f\n\x07message\x18\x06 \x01(\t\x12\r\n\x05\x65rror\x18\x07 \x01(\t\x12P\n\rdns_challenge\x18\x08 \x01(\x0b\x32\x37.yandex.cloud.certificatemanager.v1.Challenge.DnsRecordH\x00\x12P\n\x0ehttp_challenge\x18\t \x01(\x0b\x32\x36.yandex.cloud.certificatemanager.v1.Challenge.HttpFileH\x00\x1a\x36\n\tDnsRecord\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\r\n\x05value\x18\x03 \x01(\t\x1a(\n\x08HttpFile\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\t\"U\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\x0e\n\nPROCESSING\x10\x02\x12\t\n\x05VALID\x10\x03\x12\x0b\n\x07INVALID\x10\x04\x42\x0b\n\tchallenge\"]\n\x07Version\x12\n\n\x02id\x18\x01 \x01(\t\x12\x16\n\x0e\x63\x65rtificate_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp*N\n\x0f\x43\x65rtificateType\x12 \n\x1c\x43\x45RTIFICATE_TYPE_UNSPECIFIED\x10\x00\x12\x0c\n\x08IMPORTED\x10\x01\x12\x0b\n\x07MANAGED\x10\x02*B\n\rChallengeType\x12\x1e\n\x1a\x43HALLENGE_TYPE_UNSPECIFIED\x10\x00\x12\x07\n\x03\x44NS\x10\x01\x12\x08\n\x04HTTP\x10\x02\x42\x83\x01\n&yandex.cloud.api.certificatemanager.v1ZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/certificatemanager/v1;certificatemanagerb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
@@ -50,8 +50,8 @@ _CERTIFICATETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1618,
-  serialized_end=1696,
+  serialized_start=1713,
+  serialized_end=1791,
 )
 _sym_db.RegisterEnumDescriptor(_CERTIFICATETYPE)
 
@@ -81,8 +81,8 @@ _CHALLENGETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1698,
-  serialized_end=1764,
+  serialized_start=1793,
+  serialized_end=1859,
 )
 _sym_db.RegisterEnumDescriptor(_CHALLENGETYPE)
 
@@ -545,6 +545,52 @@ _CHALLENGE = _descriptor.Descriptor(
   serialized_end=1616,
 )
 
+
+_VERSION = _descriptor.Descriptor(
+  name='Version',
+  full_name='yandex.cloud.certificatemanager.v1.Version',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='yandex.cloud.certificatemanager.v1.Version.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='certificate_id', full_name='yandex.cloud.certificatemanager.v1.Version.certificate_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='created_at', full_name='yandex.cloud.certificatemanager.v1.Version.created_at', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1618,
+  serialized_end=1711,
+)
+
 _CERTIFICATE_LABELSENTRY.containing_type = _CERTIFICATE
 _CERTIFICATE.fields_by_name['created_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _CERTIFICATE.fields_by_name['labels'].message_type = _CERTIFICATE_LABELSENTRY
@@ -571,8 +617,10 @@ _CHALLENGE.fields_by_name['dns_challenge'].containing_oneof = _CHALLENGE.oneofs_
 _CHALLENGE.oneofs_by_name['challenge'].fields.append(
   _CHALLENGE.fields_by_name['http_challenge'])
 _CHALLENGE.fields_by_name['http_challenge'].containing_oneof = _CHALLENGE.oneofs_by_name['challenge']
+_VERSION.fields_by_name['created_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 DESCRIPTOR.message_types_by_name['Certificate'] = _CERTIFICATE
 DESCRIPTOR.message_types_by_name['Challenge'] = _CHALLENGE
+DESCRIPTOR.message_types_by_name['Version'] = _VERSION
 DESCRIPTOR.enum_types_by_name['CertificateType'] = _CERTIFICATETYPE
 DESCRIPTOR.enum_types_by_name['ChallengeType'] = _CHALLENGETYPE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -614,6 +662,13 @@ Challenge = _reflection.GeneratedProtocolMessageType('Challenge', (_message.Mess
 _sym_db.RegisterMessage(Challenge)
 _sym_db.RegisterMessage(Challenge.DnsRecord)
 _sym_db.RegisterMessage(Challenge.HttpFile)
+
+Version = _reflection.GeneratedProtocolMessageType('Version', (_message.Message,), {
+  'DESCRIPTOR' : _VERSION,
+  '__module__' : 'yandex.cloud.certificatemanager.v1.certificate_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.certificatemanager.v1.Version)
+  })
+_sym_db.RegisterMessage(Version)
 
 
 DESCRIPTOR._options = None

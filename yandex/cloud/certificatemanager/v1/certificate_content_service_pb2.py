@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n&yandex.cloud.api.certificatemanager.v1ZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/certificatemanager/v1;certificatemanager',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nDyandex/cloud/certificatemanager/v1/certificate_content_service.proto\x12\"yandex.cloud.certificatemanager.v1\x1a\x1cgoogle/api/annotations.proto\"g\n\x1dGetCertificateContentResponse\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\x12\x19\n\x11\x63\x65rtificate_chain\x18\x03 \x03(\t\x12\x13\n\x0bprivate_key\x18\x04 \x01(\t\"6\n\x1cGetCertificateContentRequest\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t2\xf2\x01\n\x19\x43\x65rtificateContentService\x12\xd4\x01\n\x03Get\x12@.yandex.cloud.certificatemanager.v1.GetCertificateContentRequest\x1a\x41.yandex.cloud.certificatemanager.v1.GetCertificateContentResponse\"H\x82\xd3\xe4\x93\x02\x42\x12@/certificate-manager/v1/certificates/{certificate_id}:getContentB\x83\x01\n&yandex.cloud.api.certificatemanager.v1ZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/certificatemanager/v1;certificatemanagerb\x06proto3'
+  serialized_pb=b'\nDyandex/cloud/certificatemanager/v1/certificate_content_service.proto\x12\"yandex.cloud.certificatemanager.v1\x1a\x1cgoogle/api/annotations.proto\"g\n\x1dGetCertificateContentResponse\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\x12\x19\n\x11\x63\x65rtificate_chain\x18\x03 \x03(\t\x12\x13\n\x0bprivate_key\x18\x04 \x01(\t\"J\n\x1cGetCertificateContentRequest\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\x12\x12\n\nversion_id\x18\x02 \x01(\t2\xf2\x01\n\x19\x43\x65rtificateContentService\x12\xd4\x01\n\x03Get\x12@.yandex.cloud.certificatemanager.v1.GetCertificateContentRequest\x1a\x41.yandex.cloud.certificatemanager.v1.GetCertificateContentResponse\"H\x82\xd3\xe4\x93\x02\x42\x12@/certificate-manager/v1/certificates/{certificate_id}:getContentB\x83\x01\n&yandex.cloud.api.certificatemanager.v1ZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/certificatemanager/v1;certificatemanagerb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,])
 
@@ -88,6 +88,13 @@ _GETCERTIFICATECONTENTREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='version_id', full_name='yandex.cloud.certificatemanager.v1.GetCertificateContentRequest.version_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -101,7 +108,7 @@ _GETCERTIFICATECONTENTREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=243,
-  serialized_end=297,
+  serialized_end=317,
 )
 
 DESCRIPTOR.message_types_by_name['GetCertificateContentResponse'] = _GETCERTIFICATECONTENTRESPONSE
@@ -132,8 +139,8 @@ _CERTIFICATECONTENTSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=300,
-  serialized_end=542,
+  serialized_start=320,
+  serialized_end=562,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',

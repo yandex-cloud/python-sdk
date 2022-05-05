@@ -28,6 +28,11 @@ class CertificateServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_certificatemanager_dot_v1_dot_certificate__service__pb2.ListCertificatesRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_certificatemanager_dot_v1_dot_certificate__service__pb2.ListCertificatesResponse.FromString,
                 )
+        self.ListVersions = channel.unary_unary(
+                '/yandex.cloud.certificatemanager.v1.CertificateService/ListVersions',
+                request_serializer=yandex_dot_cloud_dot_certificatemanager_dot_v1_dot_certificate__service__pb2.ListVersionsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_certificatemanager_dot_v1_dot_certificate__service__pb2.ListVersionsResponse.FromString,
+                )
         self.Create = channel.unary_unary(
                 '/yandex.cloud.certificatemanager.v1.CertificateService/Create',
                 request_serializer=yandex_dot_cloud_dot_certificatemanager_dot_v1_dot_certificate__service__pb2.CreateCertificateRequest.SerializeToString,
@@ -86,6 +91,12 @@ class CertificateServiceServicer(object):
     def List(self, request, context):
         """Returns the list of certificates in the specified folder.
         """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListVersions(self, request, context):
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -158,6 +169,11 @@ def add_CertificateServiceServicer_to_server(servicer, server):
                     servicer.List,
                     request_deserializer=yandex_dot_cloud_dot_certificatemanager_dot_v1_dot_certificate__service__pb2.ListCertificatesRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_certificatemanager_dot_v1_dot_certificate__service__pb2.ListCertificatesResponse.SerializeToString,
+            ),
+            'ListVersions': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListVersions,
+                    request_deserializer=yandex_dot_cloud_dot_certificatemanager_dot_v1_dot_certificate__service__pb2.ListVersionsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_certificatemanager_dot_v1_dot_certificate__service__pb2.ListVersionsResponse.SerializeToString,
             ),
             'Create': grpc.unary_unary_rpc_method_handler(
                     servicer.Create,
@@ -241,6 +257,23 @@ class CertificateService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.certificatemanager.v1.CertificateService/List',
             yandex_dot_cloud_dot_certificatemanager_dot_v1_dot_certificate__service__pb2.ListCertificatesRequest.SerializeToString,
             yandex_dot_cloud_dot_certificatemanager_dot_v1_dot_certificate__service__pb2.ListCertificatesResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListVersions(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.certificatemanager.v1.CertificateService/ListVersions',
+            yandex_dot_cloud_dot_certificatemanager_dot_v1_dot_certificate__service__pb2.ListVersionsRequest.SerializeToString,
+            yandex_dot_cloud_dot_certificatemanager_dot_v1_dot_certificate__service__pb2.ListVersionsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
