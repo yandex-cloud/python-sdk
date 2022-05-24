@@ -92,6 +92,11 @@ class ClusterServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_cluster__service__pb2.ListClusterHostsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_cluster__service__pb2.ListClusterHostsResponse.FromString,
                 )
+        self.UpdateHosts = channel.unary_unary(
+                '/yandex.cloud.mdb.sqlserver.v1.ClusterService/UpdateHosts',
+                request_serializer=yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_cluster__service__pb2.UpdateClusterHostsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
 
 
 class ClusterServiceServicer(object):
@@ -207,6 +212,13 @@ class ClusterServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def UpdateHosts(self, request, context):
+        """Updates the specified hosts.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ClusterServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -284,6 +296,11 @@ def add_ClusterServiceServicer_to_server(servicer, server):
                     servicer.ListHosts,
                     request_deserializer=yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_cluster__service__pb2.ListClusterHostsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_cluster__service__pb2.ListClusterHostsResponse.SerializeToString,
+            ),
+            'UpdateHosts': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateHosts,
+                    request_deserializer=yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_cluster__service__pb2.UpdateClusterHostsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -548,5 +565,22 @@ class ClusterService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.mdb.sqlserver.v1.ClusterService/ListHosts',
             yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_cluster__service__pb2.ListClusterHostsRequest.SerializeToString,
             yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_cluster__service__pb2.ListClusterHostsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateHosts(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.mdb.sqlserver.v1.ClusterService/UpdateHosts',
+            yandex_dot_cloud_dot_mdb_dot_sqlserver_dot_v1_dot_cluster__service__pb2.UpdateClusterHostsRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
