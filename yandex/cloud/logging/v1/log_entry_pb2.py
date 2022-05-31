@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\033yandex.cloud.api.logging.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/logging/v1;logging',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\'yandex/cloud/logging/v1/log_entry.proto\x12\x17yandex.cloud.logging.v1\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a*yandex/cloud/logging/v1/log_resource.proto\x1a\x1dyandex/cloud/validation.proto\"\xda\x02\n\x08LogEntry\x12\x0b\n\x03uid\x18\x01 \x01(\t\x12;\n\x08resource\x18\x02 \x01(\x0b\x32).yandex.cloud.logging.v1.LogEntryResource\x12-\n\ttimestamp\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0bingested_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12,\n\x08saved_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x36\n\x05level\x18\x06 \x01(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.Level\x12\x0f\n\x07message\x18\x07 \x01(\t\x12-\n\x0cjson_payload\x18\x08 \x01(\x0b\x32\x17.google.protobuf.Struct\"\xd9\x01\n\x10IncomingLogEntry\x12\x33\n\ttimestamp\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12\x36\n\x05level\x18\x02 \x01(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.Level\x12\x1c\n\x07message\x18\x03 \x01(\tB\x0b\xba\xc8\x31\x07<=65536\x12:\n\x0cjson_payload\x18\x04 \x01(\x0b\x32\x17.google.protobuf.StructB\x0b\xba\xc8\x31\x07<=65536\"\x86\x01\n\x10LogEntryDefaults\x12\x36\n\x05level\x18\x02 \x01(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.Level\x12:\n\x0cjson_payload\x18\x04 \x01(\x0b\x32\x17.google.protobuf.StructB\x0b\xba\xc8\x31\x07<=65536\"\x99\x01\n\x0b\x44\x65stination\x12;\n\x0clog_group_id\x18\x01 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?H\x00\x12\x38\n\tfolder_id\x18\x02 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?H\x00\x42\x13\n\x0b\x64\x65stination\x12\x04\xc0\xc1\x31\x01\"\xa2\x01\n\x08LogLevel\x12\x36\n\x05level\x18\x01 \x01(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.Level\"^\n\x05Level\x12\x15\n\x11LEVEL_UNSPECIFIED\x10\x00\x12\t\n\x05TRACE\x10\x01\x12\t\n\x05\x44\x45\x42UG\x10\x02\x12\x08\n\x04INFO\x10\x03\x12\x08\n\x04WARN\x10\x04\x12\t\n\x05\x45RROR\x10\x05\x12\t\n\x05\x46\x41TAL\x10\x06\x42\x62\n\x1byandex.cloud.api.logging.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/logging/v1;loggingb\x06proto3'
+  serialized_pb=b'\n\'yandex/cloud/logging/v1/log_entry.proto\x12\x17yandex.cloud.logging.v1\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a*yandex/cloud/logging/v1/log_resource.proto\x1a\x1dyandex/cloud/validation.proto\"\x92\x03\n\x08LogEntry\x12\x0b\n\x03uid\x18\x01 \x01(\t\x12;\n\x08resource\x18\x02 \x01(\x0b\x32).yandex.cloud.logging.v1.LogEntryResource\x12-\n\ttimestamp\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0bingested_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12,\n\x08saved_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x36\n\x05level\x18\x06 \x01(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.Level\x12\x0f\n\x07message\x18\x07 \x01(\t\x12-\n\x0cjson_payload\x18\x08 \x01(\x0b\x32\x17.google.protobuf.Struct\x12\x36\n\x0bstream_name\x18\t \x01(\tB!\xf2\xc7\x31\x1d|[a-zA-Z][-a-zA-Z0-9_.]{0,63}\"\x91\x02\n\x10IncomingLogEntry\x12\x33\n\ttimestamp\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12\x36\n\x05level\x18\x02 \x01(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.Level\x12\x1c\n\x07message\x18\x03 \x01(\tB\x0b\xba\xc8\x31\x07<=65536\x12:\n\x0cjson_payload\x18\x04 \x01(\x0b\x32\x17.google.protobuf.StructB\x0b\xba\xc8\x31\x07<=65536\x12\x36\n\x0bstream_name\x18\x05 \x01(\tB!\xf2\xc7\x31\x1d|[a-zA-Z][-a-zA-Z0-9_.]{0,63}\"\xbe\x01\n\x10LogEntryDefaults\x12\x36\n\x05level\x18\x02 \x01(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.Level\x12:\n\x0cjson_payload\x18\x04 \x01(\x0b\x32\x17.google.protobuf.StructB\x0b\xba\xc8\x31\x07<=65536\x12\x36\n\x0bstream_name\x18\x05 \x01(\tB!\xf2\xc7\x31\x1d|[a-zA-Z][-a-zA-Z0-9_.]{0,63}\"\x99\x01\n\x0b\x44\x65stination\x12;\n\x0clog_group_id\x18\x01 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?H\x00\x12\x38\n\tfolder_id\x18\x02 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?H\x00\x42\x13\n\x0b\x64\x65stination\x12\x04\xc0\xc1\x31\x01\"\xa2\x01\n\x08LogLevel\x12\x36\n\x05level\x18\x01 \x01(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.Level\"^\n\x05Level\x12\x15\n\x11LEVEL_UNSPECIFIED\x10\x00\x12\t\n\x05TRACE\x10\x01\x12\t\n\x05\x44\x45\x42UG\x10\x02\x12\x08\n\x04INFO\x10\x03\x12\x08\n\x04WARN\x10\x04\x12\t\n\x05\x45RROR\x10\x05\x12\t\n\x05\x46\x41TAL\x10\x06\x42\x62\n\x1byandex.cloud.api.logging.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/logging/v1;loggingb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_struct__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_logging_dot_v1_dot_log__resource__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -74,8 +74,8 @@ _LOGLEVEL_LEVEL = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1137,
-  serialized_end=1231,
+  serialized_start=1305,
+  serialized_end=1399,
 )
 _sym_db.RegisterEnumDescriptor(_LOGLEVEL_LEVEL)
 
@@ -144,6 +144,13 @@ _LOGENTRY = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='stream_name', full_name='yandex.cloud.logging.v1.LogEntry.stream_name', index=8,
+      number=9, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\362\3071\035|[a-zA-Z][-a-zA-Z0-9_.]{0,63}', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -157,7 +164,7 @@ _LOGENTRY = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=207,
-  serialized_end=553,
+  serialized_end=609,
 )
 
 
@@ -197,6 +204,13 @@ _INCOMINGLOGENTRY = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\272\3101\007<=65536', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='stream_name', full_name='yandex.cloud.logging.v1.IncomingLogEntry.stream_name', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\362\3071\035|[a-zA-Z][-a-zA-Z0-9_.]{0,63}', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -209,8 +223,8 @@ _INCOMINGLOGENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=556,
-  serialized_end=773,
+  serialized_start=612,
+  serialized_end=885,
 )
 
 
@@ -236,6 +250,13 @@ _LOGENTRYDEFAULTS = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\272\3101\007<=65536', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='stream_name', full_name='yandex.cloud.logging.v1.LogEntryDefaults.stream_name', index=2,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\362\3071\035|[a-zA-Z][-a-zA-Z0-9_.]{0,63}', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -248,8 +269,8 @@ _LOGENTRYDEFAULTS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=776,
-  serialized_end=910,
+  serialized_start=888,
+  serialized_end=1078,
 )
 
 
@@ -292,8 +313,8 @@ _DESTINATION = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[], serialized_options=b'\300\3011\001'),
   ],
-  serialized_start=913,
-  serialized_end=1066,
+  serialized_start=1081,
+  serialized_end=1234,
 )
 
 
@@ -325,8 +346,8 @@ _LOGLEVEL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1069,
-  serialized_end=1231,
+  serialized_start=1237,
+  serialized_end=1399,
 )
 
 _LOGENTRY.fields_by_name['resource'].message_type = yandex_dot_cloud_dot_logging_dot_v1_dot_log__resource__pb2._LOGENTRYRESOURCE
@@ -392,10 +413,13 @@ _sym_db.RegisterMessage(LogLevel)
 
 
 DESCRIPTOR._options = None
+_LOGENTRY.fields_by_name['stream_name']._options = None
 _INCOMINGLOGENTRY.fields_by_name['timestamp']._options = None
 _INCOMINGLOGENTRY.fields_by_name['message']._options = None
 _INCOMINGLOGENTRY.fields_by_name['json_payload']._options = None
+_INCOMINGLOGENTRY.fields_by_name['stream_name']._options = None
 _LOGENTRYDEFAULTS.fields_by_name['json_payload']._options = None
+_LOGENTRYDEFAULTS.fields_by_name['stream_name']._options = None
 _DESTINATION.oneofs_by_name['destination']._options = None
 _DESTINATION.fields_by_name['log_group_id']._options = None
 _DESTINATION.fields_by_name['folder_id']._options = None

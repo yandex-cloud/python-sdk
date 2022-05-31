@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n!yandex.cloud.api.mdb.greenplum.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/greenplum/v1;greenplum',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n3yandex/cloud/mdb/greenplum/v1/resource_preset.proto\x12\x1dyandex.cloud.mdb.greenplum.v1\"\x85\x02\n\x0eResourcePreset\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08zone_ids\x18\x02 \x03(\t\x12\r\n\x05\x63ores\x18\x03 \x01(\x03\x12\x0e\n\x06memory\x18\x04 \x01(\x03\x12@\n\x04type\x18\x05 \x01(\x0e\x32\x32.yandex.cloud.mdb.greenplum.v1.ResourcePreset.Type\x12\x1a\n\x12host_count_divider\x18\x08 \x01(\x03\x12!\n\x19max_segment_in_host_count\x18\t \x01(\x03\"5\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\n\n\x06MASTER\x10\x01\x12\x0b\n\x07SEGMENT\x10\x02\x42p\n!yandex.cloud.api.mdb.greenplum.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/greenplum/v1;greenplumb\x06proto3'
+  serialized_pb=b'\n3yandex/cloud/mdb/greenplum/v1/resource_preset.proto\x12\x1dyandex.cloud.mdb.greenplum.v1\"\x9c\x02\n\x0eResourcePreset\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08zone_ids\x18\x02 \x03(\t\x12\x15\n\rdisk_type_ids\x18\n \x03(\t\x12\r\n\x05\x63ores\x18\x03 \x01(\x03\x12\x0e\n\x06memory\x18\x04 \x01(\x03\x12@\n\x04type\x18\x05 \x01(\x0e\x32\x32.yandex.cloud.mdb.greenplum.v1.ResourcePreset.Type\x12\x1a\n\x12host_count_divider\x18\x08 \x01(\x03\x12!\n\x19max_segment_in_host_count\x18\t \x01(\x03\"5\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\n\n\x06MASTER\x10\x01\x12\x0b\n\x07SEGMENT\x10\x02\x42p\n!yandex.cloud.api.mdb.greenplum.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/greenplum/v1;greenplumb\x06proto3'
 )
 
 
@@ -49,8 +49,8 @@ _RESOURCEPRESET_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=295,
-  serialized_end=348,
+  serialized_start=318,
+  serialized_end=371,
 )
 _sym_db.RegisterEnumDescriptor(_RESOURCEPRESET_TYPE)
 
@@ -78,35 +78,42 @@ _RESOURCEPRESET = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='cores', full_name='yandex.cloud.mdb.greenplum.v1.ResourcePreset.cores', index=2,
+      name='disk_type_ids', full_name='yandex.cloud.mdb.greenplum.v1.ResourcePreset.disk_type_ids', index=2,
+      number=10, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='cores', full_name='yandex.cloud.mdb.greenplum.v1.ResourcePreset.cores', index=3,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='memory', full_name='yandex.cloud.mdb.greenplum.v1.ResourcePreset.memory', index=3,
+      name='memory', full_name='yandex.cloud.mdb.greenplum.v1.ResourcePreset.memory', index=4,
       number=4, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='type', full_name='yandex.cloud.mdb.greenplum.v1.ResourcePreset.type', index=4,
+      name='type', full_name='yandex.cloud.mdb.greenplum.v1.ResourcePreset.type', index=5,
       number=5, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='host_count_divider', full_name='yandex.cloud.mdb.greenplum.v1.ResourcePreset.host_count_divider', index=5,
+      name='host_count_divider', full_name='yandex.cloud.mdb.greenplum.v1.ResourcePreset.host_count_divider', index=6,
       number=8, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='max_segment_in_host_count', full_name='yandex.cloud.mdb.greenplum.v1.ResourcePreset.max_segment_in_host_count', index=6,
+      name='max_segment_in_host_count', full_name='yandex.cloud.mdb.greenplum.v1.ResourcePreset.max_segment_in_host_count', index=7,
       number=9, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -126,7 +133,7 @@ _RESOURCEPRESET = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=87,
-  serialized_end=348,
+  serialized_end=371,
 )
 
 _RESOURCEPRESET.fields_by_name['type'].enum_type = _RESOURCEPRESET_TYPE
