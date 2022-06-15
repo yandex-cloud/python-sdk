@@ -82,21 +82,21 @@ class DatabaseServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Restore(self, request, context):
-        """Creates a new SQL Server database in the specified cluster from a backup
+        """Creates a new SQL Server database in the specified cluster from a backup.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ImportBackup(self, request, context):
-        """Imports a new SQL Server database from external backup
+        """Imports a new SQL Server database from an external backup.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ExportBackup(self, request, context):
-        """Exports database backup to external backup
+        """Exports the last database backup to an external backup.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

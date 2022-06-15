@@ -206,7 +206,7 @@ class ClusterServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListHosts(self, request, context):
-        """Retrieves a list of hosts for the specified SQL Server cluster.
+        """Retrieves the list of hosts for the specified SQL Server cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

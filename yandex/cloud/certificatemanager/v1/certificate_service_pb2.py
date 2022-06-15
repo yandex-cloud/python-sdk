@@ -27,7 +27,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n&yandex.cloud.api.certificatemanager.v1ZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/certificatemanager/v1;certificatemanager',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n<yandex/cloud/certificatemanager/v1/certificate_service.proto\x12\"yandex.cloud.certificatemanager.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a\x34yandex/cloud/certificatemanager/v1/certificate.proto\x1a yandex/cloud/access/access.proto\"\x80\x01\n\x15GetCertificateRequest\x12$\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x41\n\x04view\x18\x02 \x01(\x0e\x32\x33.yandex.cloud.certificatemanager.v1.CertificateView\"\xbb\x01\n\x17ListCertificatesRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x41\n\x04view\x18\x06 \x01(\x0e\x32\x33.yandex.cloud.certificatemanager.v1.CertificateView\"z\n\x18ListCertificatesResponse\x12\x45\n\x0c\x63\x65rtificates\x18\x01 \x03(\x0b\x32/.yandex.cloud.certificatemanager.v1.Certificate\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"y\n\x13ListVersionsRequest\x12$\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"n\n\x14ListVersionsResponse\x12=\n\x08versions\x18\x01 \x03(\x0b\x32+.yandex.cloud.certificatemanager.v1.Version\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xc2\x03\n\x18\x43reateCertificateRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\x04name\x18\x02 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1f\n\x0b\x64\x65scription\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12\x99\x01\n\x06labels\x18\x04 \x03(\x0b\x32H.yandex.cloud.certificatemanager.v1.CreateCertificateRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12 \n\x0b\x63\x65rtificate\x18\x05 \x01(\tB\x0b\x8a\xc8\x31\x07<=32768\x12\x1c\n\x05\x63hain\x18\x06 \x01(\tB\r\x8a\xc8\x31\t<=2097152\x12%\n\x0bprivate_key\x18\x07 \x01(\tB\x10\xe8\xc7\x31\x01\x8a\xc8\x31\x08\x31-524288\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"3\n\x19\x43reateCertificateMetadata\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\"\xf4\x03\n\x18UpdateCertificateRequest\x12$\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1f\n\x0b\x64\x65scription\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12\x99\x01\n\x06labels\x18\x05 \x03(\x0b\x32H.yandex.cloud.certificatemanager.v1.UpdateCertificateRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12 \n\x0b\x63\x65rtificate\x18\x06 \x01(\tB\x0b\x8a\xc8\x31\x07<=32768\x12\x1c\n\x05\x63hain\x18\x07 \x01(\tB\r\x8a\xc8\x31\t<=2097152\x12!\n\x0bprivate_key\x18\x08 \x01(\tB\x0c\x8a\xc8\x31\x08<=524288\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"3\n\x19UpdateCertificateMetadata\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\"@\n\x18\x44\x65leteCertificateRequest\x12$\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"3\n\x19\x44\x65leteCertificateMetadata\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\"\xbf\x03\n\x1cRequestNewCertificateRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\x04name\x18\x02 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1f\n\x0b\x64\x65scription\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12\x9d\x01\n\x06labels\x18\x04 \x03(\x0b\x32L.yandex.cloud.certificatemanager.v1.RequestNewCertificateRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12\x0f\n\x07\x64omains\x18\x05 \x03(\t\x12I\n\x0e\x63hallenge_type\x18\x06 \x01(\x0e\x32\x31.yandex.cloud.certificatemanager.v1.ChallengeType\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"7\n\x1dRequestNewCertificateMetadata\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\"\x86\x01\n ListCertificateOperationsRequest\x12$\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"s\n!ListCertificateOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t*&\n\x0f\x43\x65rtificateView\x12\t\n\x05\x42\x41SIC\x10\x00\x12\x08\n\x04\x46ULL\x10\x01\x32\xca\x12\n\x12\x43\x65rtificateService\x12\xb0\x01\n\x03Get\x12\x39.yandex.cloud.certificatemanager.v1.GetCertificateRequest\x1a/.yandex.cloud.certificatemanager.v1.Certificate\"=\x82\xd3\xe4\x93\x02\x37\x12\x35/certificate-manager/v1/certificates/{certificate_id}\x12\xaf\x01\n\x04List\x12;.yandex.cloud.certificatemanager.v1.ListCertificatesRequest\x1a<.yandex.cloud.certificatemanager.v1.ListCertificatesResponse\",\x82\xd3\xe4\x93\x02&\x12$/certificate-manager/v1/certificates\x12\xc9\x01\n\x0cListVersions\x12\x37.yandex.cloud.certificatemanager.v1.ListVersionsRequest\x1a\x38.yandex.cloud.certificatemanager.v1.ListVersionsResponse\"F\x82\xd3\xe4\x93\x02@\x12>/certificate-manager/v1/certificates/{certificate_id}/versions\x12\xc6\x01\n\x06\x43reate\x12<.yandex.cloud.certificatemanager.v1.CreateCertificateRequest\x1a!.yandex.cloud.operation.Operation\"[\x82\xd3\xe4\x93\x02)\"$/certificate-manager/v1/certificates:\x01*\xb2\xd2*(\n\x19\x43reateCertificateMetadata\x12\x0b\x43\x65rtificate\x12\xd7\x01\n\x06Update\x12<.yandex.cloud.certificatemanager.v1.UpdateCertificateRequest\x1a!.yandex.cloud.operation.Operation\"l\x82\xd3\xe4\x93\x02:25/certificate-manager/v1/certificates/{certificate_id}:\x01*\xb2\xd2*(\n\x19UpdateCertificateMetadata\x12\x0b\x43\x65rtificate\x12\xd4\x01\n\x06\x44\x65lete\x12<.yandex.cloud.certificatemanager.v1.DeleteCertificateRequest\x1a!.yandex.cloud.operation.Operation\"i\x82\xd3\xe4\x93\x02\x37*5/certificate-manager/v1/certificates/{certificate_id}\xb2\xd2*(\n\x19\x44\x65leteCertificateMetadata\x12\x0b\x43\x65rtificate\x12\xdd\x01\n\nRequestNew\x12@.yandex.cloud.certificatemanager.v1.RequestNewCertificateRequest\x1a!.yandex.cloud.operation.Operation\"j\x82\xd3\xe4\x93\x02\x34\"//certificate-manager/v1/certificates/requestNew:\x01*\xb2\xd2*,\n\x1dRequestNewCertificateMetadata\x12\x0b\x43\x65rtificate\x12\xe7\x01\n\x0eListOperations\x12\x44.yandex.cloud.certificatemanager.v1.ListCertificateOperationsRequest\x1a\x45.yandex.cloud.certificatemanager.v1.ListCertificateOperationsResponse\"H\x82\xd3\xe4\x93\x02\x42\x12@/certificate-manager/v1/certificates/{certificate_id}/operations\x12\xc4\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"M\x82\xd3\xe4\x93\x02G\x12\x45/certificate-manager/v1/certificates/{resource_id}:listAccessBindings\x12\xf4\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x8c\x01\x82\xd3\xe4\x93\x02I\"D/certificate-manager/v1/certificates/{resource_id}:setAccessBindings:\x01*\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\x80\x02\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x92\x01\x82\xd3\xe4\x93\x02L\"G/certificate-manager/v1/certificates/{resource_id}:updateAccessBindings:\x01*\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.EmptyB\x83\x01\n&yandex.cloud.api.certificatemanager.v1ZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/certificatemanager/v1;certificatemanagerb\x06proto3'
+  serialized_pb=b'\n<yandex/cloud/certificatemanager/v1/certificate_service.proto\x12\"yandex.cloud.certificatemanager.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a\x34yandex/cloud/certificatemanager/v1/certificate.proto\x1a yandex/cloud/access/access.proto\"\x80\x01\n\x15GetCertificateRequest\x12$\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x41\n\x04view\x18\x02 \x01(\x0e\x32\x33.yandex.cloud.certificatemanager.v1.CertificateView\"\xbb\x01\n\x17ListCertificatesRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x41\n\x04view\x18\x06 \x01(\x0e\x32\x33.yandex.cloud.certificatemanager.v1.CertificateView\"z\n\x18ListCertificatesResponse\x12\x45\n\x0c\x63\x65rtificates\x18\x01 \x03(\x0b\x32/.yandex.cloud.certificatemanager.v1.Certificate\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"y\n\x13ListVersionsRequest\x12$\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"n\n\x14ListVersionsResponse\x12=\n\x08versions\x18\x01 \x03(\x0b\x32+.yandex.cloud.certificatemanager.v1.Version\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xdf\x03\n\x18\x43reateCertificateRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\x04name\x18\x02 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1f\n\x0b\x64\x65scription\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12\x99\x01\n\x06labels\x18\x04 \x03(\x0b\x32H.yandex.cloud.certificatemanager.v1.CreateCertificateRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12 \n\x0b\x63\x65rtificate\x18\x05 \x01(\tB\x0b\x8a\xc8\x31\x07<=32768\x12\x1c\n\x05\x63hain\x18\x06 \x01(\tB\r\x8a\xc8\x31\t<=2097152\x12%\n\x0bprivate_key\x18\x07 \x01(\tB\x10\xe8\xc7\x31\x01\x8a\xc8\x31\x08\x31-524288\x12\x1b\n\x13\x64\x65letion_protection\x18\x08 \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"3\n\x19\x43reateCertificateMetadata\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\"\x91\x04\n\x18UpdateCertificateRequest\x12$\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1f\n\x0b\x64\x65scription\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12\x99\x01\n\x06labels\x18\x05 \x03(\x0b\x32H.yandex.cloud.certificatemanager.v1.UpdateCertificateRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12 \n\x0b\x63\x65rtificate\x18\x06 \x01(\tB\x0b\x8a\xc8\x31\x07<=32768\x12\x1c\n\x05\x63hain\x18\x07 \x01(\tB\r\x8a\xc8\x31\t<=2097152\x12!\n\x0bprivate_key\x18\x08 \x01(\tB\x0c\x8a\xc8\x31\x08<=524288\x12\x1b\n\x13\x64\x65letion_protection\x18\t \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"3\n\x19UpdateCertificateMetadata\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\"@\n\x18\x44\x65leteCertificateRequest\x12$\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"3\n\x19\x44\x65leteCertificateMetadata\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\"\xdc\x03\n\x1cRequestNewCertificateRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\x04name\x18\x02 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1f\n\x0b\x64\x65scription\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12\x9d\x01\n\x06labels\x18\x04 \x03(\x0b\x32L.yandex.cloud.certificatemanager.v1.RequestNewCertificateRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12\x0f\n\x07\x64omains\x18\x05 \x03(\t\x12I\n\x0e\x63hallenge_type\x18\x06 \x01(\x0e\x32\x31.yandex.cloud.certificatemanager.v1.ChallengeType\x12\x1b\n\x13\x64\x65letion_protection\x18\x07 \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"7\n\x1dRequestNewCertificateMetadata\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\"\x86\x01\n ListCertificateOperationsRequest\x12$\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"s\n!ListCertificateOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t*&\n\x0f\x43\x65rtificateView\x12\t\n\x05\x42\x41SIC\x10\x00\x12\x08\n\x04\x46ULL\x10\x01\x32\xca\x12\n\x12\x43\x65rtificateService\x12\xb0\x01\n\x03Get\x12\x39.yandex.cloud.certificatemanager.v1.GetCertificateRequest\x1a/.yandex.cloud.certificatemanager.v1.Certificate\"=\x82\xd3\xe4\x93\x02\x37\x12\x35/certificate-manager/v1/certificates/{certificate_id}\x12\xaf\x01\n\x04List\x12;.yandex.cloud.certificatemanager.v1.ListCertificatesRequest\x1a<.yandex.cloud.certificatemanager.v1.ListCertificatesResponse\",\x82\xd3\xe4\x93\x02&\x12$/certificate-manager/v1/certificates\x12\xc9\x01\n\x0cListVersions\x12\x37.yandex.cloud.certificatemanager.v1.ListVersionsRequest\x1a\x38.yandex.cloud.certificatemanager.v1.ListVersionsResponse\"F\x82\xd3\xe4\x93\x02@\x12>/certificate-manager/v1/certificates/{certificate_id}/versions\x12\xc6\x01\n\x06\x43reate\x12<.yandex.cloud.certificatemanager.v1.CreateCertificateRequest\x1a!.yandex.cloud.operation.Operation\"[\x82\xd3\xe4\x93\x02)\"$/certificate-manager/v1/certificates:\x01*\xb2\xd2*(\n\x19\x43reateCertificateMetadata\x12\x0b\x43\x65rtificate\x12\xd7\x01\n\x06Update\x12<.yandex.cloud.certificatemanager.v1.UpdateCertificateRequest\x1a!.yandex.cloud.operation.Operation\"l\x82\xd3\xe4\x93\x02:25/certificate-manager/v1/certificates/{certificate_id}:\x01*\xb2\xd2*(\n\x19UpdateCertificateMetadata\x12\x0b\x43\x65rtificate\x12\xd4\x01\n\x06\x44\x65lete\x12<.yandex.cloud.certificatemanager.v1.DeleteCertificateRequest\x1a!.yandex.cloud.operation.Operation\"i\x82\xd3\xe4\x93\x02\x37*5/certificate-manager/v1/certificates/{certificate_id}\xb2\xd2*(\n\x19\x44\x65leteCertificateMetadata\x12\x0b\x43\x65rtificate\x12\xdd\x01\n\nRequestNew\x12@.yandex.cloud.certificatemanager.v1.RequestNewCertificateRequest\x1a!.yandex.cloud.operation.Operation\"j\x82\xd3\xe4\x93\x02\x34\"//certificate-manager/v1/certificates/requestNew:\x01*\xb2\xd2*,\n\x1dRequestNewCertificateMetadata\x12\x0b\x43\x65rtificate\x12\xe7\x01\n\x0eListOperations\x12\x44.yandex.cloud.certificatemanager.v1.ListCertificateOperationsRequest\x1a\x45.yandex.cloud.certificatemanager.v1.ListCertificateOperationsResponse\"H\x82\xd3\xe4\x93\x02\x42\x12@/certificate-manager/v1/certificates/{certificate_id}/operations\x12\xc4\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"M\x82\xd3\xe4\x93\x02G\x12\x45/certificate-manager/v1/certificates/{resource_id}:listAccessBindings\x12\xf4\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x8c\x01\x82\xd3\xe4\x93\x02I\"D/certificate-manager/v1/certificates/{resource_id}:setAccessBindings:\x01*\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\x80\x02\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x92\x01\x82\xd3\xe4\x93\x02L\"G/certificate-manager/v1/certificates/{resource_id}:updateAccessBindings:\x01*\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.EmptyB\x83\x01\n&yandex.cloud.api.certificatemanager.v1ZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/certificatemanager/v1;certificatemanagerb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_certificatemanager_dot_v1_dot_certificate__pb2.DESCRIPTOR,yandex_dot_cloud_dot_access_dot_access__pb2.DESCRIPTOR,])
 
@@ -51,8 +51,8 @@ _CERTIFICATEVIEW = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2979,
-  serialized_end=3017,
+  serialized_start=3066,
+  serialized_end=3104,
 )
 _sym_db.RegisterEnumDescriptor(_CERTIFICATEVIEW)
 
@@ -312,8 +312,8 @@ _CREATECERTIFICATEREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1443,
-  serialized_end=1488,
+  serialized_start=1472,
+  serialized_end=1517,
 )
 
 _CREATECERTIFICATEREQUEST = _descriptor.Descriptor(
@@ -373,6 +373,13 @@ _CREATECERTIFICATEREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\350\3071\001\212\3101\0101-524288', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='deletion_protection', full_name='yandex.cloud.certificatemanager.v1.CreateCertificateRequest.deletion_protection', index=7,
+      number=8, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -386,7 +393,7 @@ _CREATECERTIFICATEREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1038,
-  serialized_end=1488,
+  serialized_end=1517,
 )
 
 
@@ -417,8 +424,8 @@ _CREATECERTIFICATEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1490,
-  serialized_end=1541,
+  serialized_start=1519,
+  serialized_end=1570,
 )
 
 
@@ -456,8 +463,8 @@ _UPDATECERTIFICATEREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1443,
-  serialized_end=1488,
+  serialized_start=1472,
+  serialized_end=1517,
 )
 
 _UPDATECERTIFICATEREQUEST = _descriptor.Descriptor(
@@ -524,6 +531,13 @@ _UPDATECERTIFICATEREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\212\3101\010<=524288', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='deletion_protection', full_name='yandex.cloud.certificatemanager.v1.UpdateCertificateRequest.deletion_protection', index=8,
+      number=9, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -536,8 +550,8 @@ _UPDATECERTIFICATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1544,
-  serialized_end=2044,
+  serialized_start=1573,
+  serialized_end=2102,
 )
 
 
@@ -568,8 +582,8 @@ _UPDATECERTIFICATEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2046,
-  serialized_end=2097,
+  serialized_start=2104,
+  serialized_end=2155,
 )
 
 
@@ -600,8 +614,8 @@ _DELETECERTIFICATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2099,
-  serialized_end=2163,
+  serialized_start=2157,
+  serialized_end=2221,
 )
 
 
@@ -632,8 +646,8 @@ _DELETECERTIFICATEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2165,
-  serialized_end=2216,
+  serialized_start=2223,
+  serialized_end=2274,
 )
 
 
@@ -671,8 +685,8 @@ _REQUESTNEWCERTIFICATEREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1443,
-  serialized_end=1488,
+  serialized_start=1472,
+  serialized_end=1517,
 )
 
 _REQUESTNEWCERTIFICATEREQUEST = _descriptor.Descriptor(
@@ -725,6 +739,13 @@ _REQUESTNEWCERTIFICATEREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='deletion_protection', full_name='yandex.cloud.certificatemanager.v1.RequestNewCertificateRequest.deletion_protection', index=6,
+      number=7, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -737,8 +758,8 @@ _REQUESTNEWCERTIFICATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2219,
-  serialized_end=2666,
+  serialized_start=2277,
+  serialized_end=2753,
 )
 
 
@@ -769,8 +790,8 @@ _REQUESTNEWCERTIFICATEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2668,
-  serialized_end=2723,
+  serialized_start=2755,
+  serialized_end=2810,
 )
 
 
@@ -815,8 +836,8 @@ _LISTCERTIFICATEOPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2726,
-  serialized_end=2860,
+  serialized_start=2813,
+  serialized_end=2947,
 )
 
 
@@ -854,8 +875,8 @@ _LISTCERTIFICATEOPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2862,
-  serialized_end=2977,
+  serialized_start=2949,
+  serialized_end=3064,
 )
 
 _GETCERTIFICATEREQUEST.fields_by_name['view'].enum_type = _CERTIFICATEVIEW
@@ -1060,8 +1081,8 @@ _CERTIFICATESERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=3020,
-  serialized_end=5398,
+  serialized_start=3107,
+  serialized_end=5485,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
