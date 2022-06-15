@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 packages = find_packages(".", include=["yandexcloud*", "yandex*"])
 
-__version__ = "0.164.0"
+__version__ = "0.165.0"
 
 setup(
     name="yandexcloud",
