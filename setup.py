@@ -15,6 +15,7 @@ setup(
     install_requires=[
         "cryptography>=2.8",
         "grpcio>=1.38.1",
+        "protobuf<3.21",
         "googleapis-common-protos>=1.53.0",
         "pyjwt>=1.7.1",
         "requests>=2.22.0",
