@@ -2,6 +2,11 @@
 
 <!--next-version-placeholder-->
 
+## v0.167.0 (2022-06-27)
+### Feature
+* Freeze protobuf lib in dependencies
+ ([`5dd6e8d`](https://github.com/yandex-cloud/python-sdk/commit/5dd6e8deba732688798f8096f87b203ede009076))
+
 ## v0.166.0 (2022-06-21)
 ### Feature
 * Regenerate proto
