@@ -7,6 +7,10 @@ deps: ## install deps (library & development)
 	python -m pip install --upgrade pip
 	python -m pip install -r requirements-dev.txt
 
+deps-genproto: ## install deps (library & development)
+	python -m pip install --upgrade pip
+	python -m pip install -r requirements-genproto.txt
+
 tox: ## run ALL checks for ALL available python versions
 	python -m tox
 
