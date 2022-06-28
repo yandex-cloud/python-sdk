@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\"yandex.cloud.api.mdb.postgresql.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1;postgresql',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n-yandex/cloud/mdb/postgresql/v1/database.proto\x12\x1eyandex.cloud.mdb.postgresql.v1\x1a\x1dyandex/cloud/validation.proto\"\xa0\x01\n\x08\x44\x61tabase\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12\r\n\x05owner\x18\x03 \x01(\t\x12\x12\n\nlc_collate\x18\x04 \x01(\t\x12\x10\n\x08lc_ctype\x18\x05 \x01(\t\x12=\n\nextensions\x18\x06 \x03(\x0b\x32).yandex.cloud.mdb.postgresql.v1.Extension\"*\n\tExtension\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\"\x81\x02\n\x0c\x44\x61tabaseSpec\x12,\n\x04name\x18\x01 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12,\n\x05owner\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\r[a-zA-Z0-9_]*\x12+\n\nlc_collate\x18\x03 \x01(\tB\x17\xf2\xc7\x31\x13|[a-zA-Z_]+.UTF-8|C\x12)\n\x08lc_ctype\x18\x04 \x01(\tB\x17\xf2\xc7\x31\x13|[a-zA-Z_]+.UTF-8|C\x12=\n\nextensions\x18\x05 \x03(\x0b\x32).yandex.cloud.mdb.postgresql.v1.ExtensionBs\n\"yandex.cloud.api.mdb.postgresql.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1;postgresqlb\x06proto3'
+  serialized_pb=b'\n-yandex/cloud/mdb/postgresql/v1/database.proto\x12\x1eyandex.cloud.mdb.postgresql.v1\x1a\x1dyandex/cloud/validation.proto\"\xb5\x01\n\x08\x44\x61tabase\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12\r\n\x05owner\x18\x03 \x01(\t\x12\x12\n\nlc_collate\x18\x04 \x01(\t\x12\x10\n\x08lc_ctype\x18\x05 \x01(\t\x12=\n\nextensions\x18\x06 \x03(\x0b\x32).yandex.cloud.mdb.postgresql.v1.Extension\x12\x13\n\x0btemplate_db\x18\x07 \x01(\t\"*\n\tExtension\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\"\xb2\x02\n\x0c\x44\x61tabaseSpec\x12,\n\x04name\x18\x01 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12,\n\x05owner\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\r[a-zA-Z0-9_]*\x12+\n\nlc_collate\x18\x03 \x01(\tB\x17\xf2\xc7\x31\x13|[a-zA-Z_]+.UTF-8|C\x12)\n\x08lc_ctype\x18\x04 \x01(\tB\x17\xf2\xc7\x31\x13|[a-zA-Z_]+.UTF-8|C\x12=\n\nextensions\x18\x05 \x03(\x0b\x32).yandex.cloud.mdb.postgresql.v1.Extension\x12/\n\x0btemplate_db\x18\x06 \x01(\tB\x1a\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*Bs\n\"yandex.cloud.api.mdb.postgresql.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1;postgresqlb\x06proto3'
   ,
   dependencies=[yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -77,6 +77,13 @@ _DATABASE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='template_db', full_name='yandex.cloud.mdb.postgresql.v1.Database.template_db', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -90,7 +97,7 @@ _DATABASE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=113,
-  serialized_end=273,
+  serialized_end=294,
 )
 
 
@@ -128,8 +135,8 @@ _EXTENSION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=275,
-  serialized_end=317,
+  serialized_start=296,
+  serialized_end=338,
 )
 
 
@@ -176,6 +183,13 @@ _DATABASESPEC = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='template_db', full_name='yandex.cloud.mdb.postgresql.v1.DatabaseSpec.template_db', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\212\3101\004<=63\362\3071\016[a-zA-Z0-9_-]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -188,8 +202,8 @@ _DATABASESPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=320,
-  serialized_end=577,
+  serialized_start=341,
+  serialized_end=647,
 )
 
 _DATABASE.fields_by_name['extensions'].message_type = _EXTENSION
@@ -226,4 +240,5 @@ _DATABASESPEC.fields_by_name['name']._options = None
 _DATABASESPEC.fields_by_name['owner']._options = None
 _DATABASESPEC.fields_by_name['lc_collate']._options = None
 _DATABASESPEC.fields_by_name['lc_ctype']._options = None
+_DATABASESPEC.fields_by_name['template_db']._options = None
 # @@protoc_insertion_point(module_scope)

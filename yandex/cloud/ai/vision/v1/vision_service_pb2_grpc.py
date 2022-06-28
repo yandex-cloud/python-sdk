@@ -6,7 +6,7 @@ from yandex.cloud.ai.vision.v1 import vision_service_pb2 as yandex_dot_cloud_dot
 
 
 class VisionServiceStub(object):
-    """A set of methods for the Yandex Vision service.
+    """A set of methods for the Vision service.
     """
 
     def __init__(self, channel):
@@ -23,7 +23,7 @@ class VisionServiceStub(object):
 
 
 class VisionServiceServicer(object):
-    """A set of methods for the Yandex Vision service.
+    """A set of methods for the Vision service.
     """
 
     def BatchAnalyze(self, request, context):
@@ -49,7 +49,7 @@ def add_VisionServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class VisionService(object):
-    """A set of methods for the Yandex Vision service.
+    """A set of methods for the Vision service.
     """
 
     @staticmethod

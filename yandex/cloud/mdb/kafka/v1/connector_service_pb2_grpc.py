@@ -8,7 +8,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class ConnectorServiceStub(object):
-    """A set of methods for managing Apache Kafka Connectors resources.
+    """A set of methods for managing Apache Kafka® connectors.
     """
 
     def __init__(self, channel):
@@ -55,55 +55,53 @@ class ConnectorServiceStub(object):
 
 
 class ConnectorServiceServicer(object):
-    """A set of methods for managing Apache Kafka Connectors resources.
+    """A set of methods for managing Apache Kafka® connectors.
     """
 
     def Get(self, request, context):
-        """Returns the specified Apache Kafka Connector resource.
-
-        To get the list of available Apache Kafka Connector resources, make a [List] request.
+        """Returns information about an Apache Kafka® connector.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Retrieves the list of Apache Kafka Connector resources in the specified cluster.
+        """Retrieves the list of Apache Kafka® connectors in a cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Creates a new Apache Kafka connector in the specified cluster.
+        """Creates a new Apache Kafka® connector in a cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Updates an Apache Kafka connector in the specified cluster.
+        """Updates an Apache Kafka® connector.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Deletes the specified Apache Kafka connector.
+        """Deletes an Apache Kafka® connector.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Resume(self, request, context):
-        """Resume the specified Apache Kafka connector.
+        """Resumes an Apache Kafka® connector.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Pause(self, request, context):
-        """Pause the specified Apache Kafka connector.
+        """Pauses an Apache Kafka® connector.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -155,7 +153,7 @@ def add_ConnectorServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class ConnectorService(object):
-    """A set of methods for managing Apache Kafka Connectors resources.
+    """A set of methods for managing Apache Kafka® connectors.
     """
 
     @staticmethod

@@ -6,7 +6,7 @@ from yandex.cloud.ai.translate.v2 import translation_service_pb2 as yandex_dot_c
 
 
 class TranslationServiceStub(object):
-    """A set of methods for the Yandex Translate service.
+    """A set of methods for the Translate service.
     """
 
     def __init__(self, channel):
@@ -33,7 +33,7 @@ class TranslationServiceStub(object):
 
 
 class TranslationServiceServicer(object):
-    """A set of methods for the Yandex Translate service.
+    """A set of methods for the Translate service.
     """
 
     def Translate(self, request, context):
@@ -83,7 +83,7 @@ def add_TranslationServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class TranslationService(object):
-    """A set of methods for the Yandex Translate service.
+    """A set of methods for the Translate service.
     """
 
     @staticmethod

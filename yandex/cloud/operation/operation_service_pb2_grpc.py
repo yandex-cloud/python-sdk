@@ -42,7 +42,7 @@ class OperationServiceServicer(object):
     def Cancel(self, request, context):
         """Cancels the specified operation.
 
-        Note that currently Yandex Object Storage API does not support cancelling operations.
+        Note that currently Object Storage API does not support cancelling operations.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
