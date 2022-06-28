@@ -25,7 +25,7 @@ jobs:
     - name: Generate code from proto
       run: |
         make submodule
-        make deps
+        make deps-genproto
         make proto
         make tox
         
