@@ -2,6 +2,11 @@
 
 <!--next-version-placeholder-->
 
+## v0.169.0 (2022-06-28)
+### Feature
+* Separate genproto deps from test deps
+ ([`45c68a3`](https://github.com/yandex-cloud/python-sdk/commit/45c68a35005008841ed8d962b5043c08ee4a5af5))
+
 ## v0.168.0 (2022-06-28)
 ### Feature
 * Regenerate proto
