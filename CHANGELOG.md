@@ -2,6 +2,11 @@
 
 <!--next-version-placeholder-->
 
+## v0.170.0 (2022-06-28)
+### Feature
+* Add tox requirement for genproto workflow
+ ([`e16d65f`](https://github.com/yandex-cloud/python-sdk/commit/e16d65fe9900ea80e4425ea0fc6bf652f5ad77ef))
+
 ## v0.169.0 (2022-06-28)
 ### Feature
 * Separate genproto deps from test deps
