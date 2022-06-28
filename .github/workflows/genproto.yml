@@ -27,6 +27,7 @@ jobs:
         make submodule
         make deps-genproto
         make proto
+        make deps
         make tox
         
         git config --global user.name 'Yandex.Cloud Bot'
