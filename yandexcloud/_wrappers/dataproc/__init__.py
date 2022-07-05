@@ -39,6 +39,7 @@ class Dataproc(object):
             self.log = logging.getLogger()
             self.log.addHandler(logging.NullHandler())
         self.cluster_id = None
+        self.subnet_id = None
         self.default_folder_id = default_folder_id
         self.default_public_ssh_key = default_public_ssh_key
 

@@ -35,6 +35,8 @@ def main():
     )
     try:
         dataproc.create_cluster(
+            cluster_name=arguments.cluster_name,
+            cluster_description=arguments.cluster_desc,
             masternode_resource_preset='s2.micro',
             datanode_count=2,
             datanode_resource_preset='s2.micro',
