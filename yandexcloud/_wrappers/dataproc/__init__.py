@@ -44,7 +44,7 @@ class Dataproc(object):
 
     def create_cluster(
         self,
-        s3_bucket,
+        s3_bucket=None,
         folder_id=None,
         cluster_name=None,
         cluster_description="",
@@ -180,9 +180,6 @@ class Dataproc(object):
                 raise RuntimeError("Public ssh keys must be specified.")
         elif isinstance(ssh_public_keys, string_types):
             ssh_public_keys = [ssh_public_keys]
-
-        if not s3_bucket:
-            raise RuntimeError("Object storage (S3) bucket must be specified.")
 
         gib = 1024**3
         if masternode_disk_size:

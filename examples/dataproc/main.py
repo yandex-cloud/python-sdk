@@ -335,7 +335,6 @@ def create_cluster_request(params, resources):
         zone_id=params.zone,
         service_account_id=params.service_account_id,
         log_group_id=params.log_group_id,
-        bucket=params.s3_bucket,
     )
 
 

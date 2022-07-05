@@ -39,7 +39,6 @@ def main():
             datanode_count=2,
             datanode_resource_preset='s2.micro',
             subnet_id=arguments.subnet_id,
-            s3_bucket=bucket_for_logs_output,
             service_account_id=arguments.service_account_id,
             zone=arguments.zone,
             services=services,
