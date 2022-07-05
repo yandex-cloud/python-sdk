@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n!yandex.cloud.api.mdb.greenplum.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/greenplum/v1;greenplum',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n;yandex/cloud/mdb/greenplum/v1/resource_preset_service.proto\x12\x1dyandex.cloud.mdb.greenplum.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1dyandex/cloud/validation.proto\x1a\x33yandex/cloud/mdb/greenplum/v1/resource_preset.proto\"<\n\x18GetResourcePresetRequest\x12 \n\x12resource_preset_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"Z\n\x1aListResourcePresetsRequest\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"\x8a\x01\n\x1bListResourcePresetsResponse\x12G\n\x10resource_presets\x18\x01 \x03(\x0b\x32-.yandex.cloud.mdb.greenplum.v1.ResourcePreset\x12\"\n\x0fnext_page_token\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=1002\xfa\x02\n\x15ResourcePresetService\x12\xb1\x01\n\x03Get\x12\x37.yandex.cloud.mdb.greenplum.v1.GetResourcePresetRequest\x1a-.yandex.cloud.mdb.greenplum.v1.ResourcePreset\"B\x82\xd3\xe4\x93\x02<\x12:/managed-greenplum/v1/resourcePresets/{resource_preset_id}\x12\xac\x01\n\x04List\x12\x39.yandex.cloud.mdb.greenplum.v1.ListResourcePresetsRequest\x1a:.yandex.cloud.mdb.greenplum.v1.ListResourcePresetsResponse\"-\x82\xd3\xe4\x93\x02\'\x12%/managed-greenplum/v1/resourcePresetsBp\n!yandex.cloud.api.mdb.greenplum.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/greenplum/v1;greenplumb\x06proto3'
+  serialized_pb=b'\n;yandex/cloud/mdb/greenplum/v1/resource_preset_service.proto\x12\x1dyandex.cloud.mdb.greenplum.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1dyandex/cloud/validation.proto\x1a\x33yandex/cloud/mdb/greenplum/v1/resource_preset.proto\"\x84\x01\n\x18GetResourcePresetRequest\x12 \n\x12resource_preset_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x46\n\x04type\x18\x02 \x01(\x0e\x32\x32.yandex.cloud.mdb.greenplum.v1.ResourcePreset.TypeB\x04\xe8\xc7\x31\x01\"\xa2\x01\n\x1aListResourcePresetsRequest\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x46\n\x04type\x18\x04 \x01(\x0e\x32\x32.yandex.cloud.mdb.greenplum.v1.ResourcePreset.TypeB\x04\xe8\xc7\x31\x01\"\x8a\x01\n\x1bListResourcePresetsResponse\x12G\n\x10resource_presets\x18\x01 \x03(\x0b\x32-.yandex.cloud.mdb.greenplum.v1.ResourcePreset\x12\"\n\x0fnext_page_token\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=1002\xfa\x02\n\x15ResourcePresetService\x12\xb1\x01\n\x03Get\x12\x37.yandex.cloud.mdb.greenplum.v1.GetResourcePresetRequest\x1a-.yandex.cloud.mdb.greenplum.v1.ResourcePreset\"B\x82\xd3\xe4\x93\x02<\x12:/managed-greenplum/v1/resourcePresets/{resource_preset_id}\x12\xac\x01\n\x04List\x12\x39.yandex.cloud.mdb.greenplum.v1.ListResourcePresetsRequest\x1a:.yandex.cloud.mdb.greenplum.v1.ListResourcePresetsResponse\"-\x82\xd3\xe4\x93\x02\'\x12%/managed-greenplum/v1/resourcePresetsBp\n!yandex.cloud.api.mdb.greenplum.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/greenplum/v1;greenplumb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_resource__preset__pb2.DESCRIPTOR,])
 
@@ -44,6 +44,13 @@ _GETRESOURCEPRESETREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='type', full_name='yandex.cloud.mdb.greenplum.v1.GetResourcePresetRequest.type', index=1,
+      number=2, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -56,8 +63,8 @@ _GETRESOURCEPRESETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=208,
-  serialized_end=268,
+  serialized_start=209,
+  serialized_end=341,
 )
 
 
@@ -83,6 +90,13 @@ _LISTRESOURCEPRESETSREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='type', full_name='yandex.cloud.mdb.greenplum.v1.ListResourcePresetsRequest.type', index=2,
+      number=4, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -95,8 +109,8 @@ _LISTRESOURCEPRESETSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=270,
-  serialized_end=360,
+  serialized_start=344,
+  serialized_end=506,
 )
 
 
@@ -134,10 +148,12 @@ _LISTRESOURCEPRESETSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=363,
-  serialized_end=501,
+  serialized_start=509,
+  serialized_end=647,
 )
 
+_GETRESOURCEPRESETREQUEST.fields_by_name['type'].enum_type = yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_resource__preset__pb2._RESOURCEPRESET_TYPE
+_LISTRESOURCEPRESETSREQUEST.fields_by_name['type'].enum_type = yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_resource__preset__pb2._RESOURCEPRESET_TYPE
 _LISTRESOURCEPRESETSRESPONSE.fields_by_name['resource_presets'].message_type = yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_resource__preset__pb2._RESOURCEPRESET
 DESCRIPTOR.message_types_by_name['GetResourcePresetRequest'] = _GETRESOURCEPRESETREQUEST
 DESCRIPTOR.message_types_by_name['ListResourcePresetsRequest'] = _LISTRESOURCEPRESETSREQUEST
@@ -168,8 +184,10 @@ _sym_db.RegisterMessage(ListResourcePresetsResponse)
 
 DESCRIPTOR._options = None
 _GETRESOURCEPRESETREQUEST.fields_by_name['resource_preset_id']._options = None
+_GETRESOURCEPRESETREQUEST.fields_by_name['type']._options = None
 _LISTRESOURCEPRESETSREQUEST.fields_by_name['page_size']._options = None
 _LISTRESOURCEPRESETSREQUEST.fields_by_name['page_token']._options = None
+_LISTRESOURCEPRESETSREQUEST.fields_by_name['type']._options = None
 _LISTRESOURCEPRESETSRESPONSE.fields_by_name['next_page_token']._options = None
 
 _RESOURCEPRESETSERVICE = _descriptor.ServiceDescriptor(
@@ -179,8 +197,8 @@ _RESOURCEPRESETSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=504,
-  serialized_end=882,
+  serialized_start=650,
+  serialized_end=1028,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
