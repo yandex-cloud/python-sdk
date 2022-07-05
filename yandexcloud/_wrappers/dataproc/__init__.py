@@ -2,9 +2,10 @@
 
 import logging
 import random
+from six import string_types
+from typing import NamedTuple, List
 
 from google.protobuf.field_mask_pb2 import FieldMask
-from six import string_types
 
 import yandex.cloud.dataproc.v1.cluster_pb2 as cluster_pb
 import yandex.cloud.dataproc.v1.cluster_service_pb2 as cluster_service_pb
@@ -16,6 +17,19 @@ import yandex.cloud.dataproc.v1.job_service_pb2_grpc as job_service_grpc_pb
 import yandex.cloud.dataproc.v1.subcluster_pb2 as subcluster_pb
 import yandex.cloud.dataproc.v1.subcluster_service_pb2 as subcluster_service_pb
 import yandex.cloud.dataproc.v1.subcluster_service_pb2_grpc as subcluster_service_grpc_pb
+
+
+class InitializationAction(NamedTuple):
+    uri: str            # Uri of the executable file
+    args: List[str]     # Arguments to the initialization action
+    timeout: int        # Execution timeout
+
+    def to_grpc(self):
+        return cluster_pb.InitializationAction(
+            uri=self.uri,
+            args=self.args,
+            timeout=self.timeout,
+        )
 
 
 class Dataproc(object):
@@ -74,6 +88,8 @@ class Dataproc(object):
         computenode_cpu_utilization_target=None,
         computenode_decommission_timeout=None,
         log_group_id=None,
+        properties=None,
+        initialization_actions=None,
     ):
         """
         Create Yandex.Cloud Data Proc cluster.
@@ -150,6 +166,10 @@ class Dataproc(object):
         :param log_group_id: Id of log group to write logs. By default logs will be sent to default log group.
                              To disable cloud log sending set cluster property dataproc:disable_cloud_logging = true
         :type log_group_id: str
+        :param properties: Properties passed to main node software, in key you need to use prefix: 'hdfs:dfs.hosts'
+        :type properties: Dict[str, str]
+        :param initialization_actions: Set of init-actions to run when cluster starts
+        :type initialization_actions: List[InitializationAction]
 
         :return: Cluster ID
         :rtype: str
@@ -250,6 +270,11 @@ class Dataproc(object):
                 hadoop=cluster_pb.HadoopConfig(
                     services=services,
                     ssh_public_keys=ssh_public_keys,
+                    properties=properties,
+                    initialization_actions=(
+                        initialization_actions
+                        and [action.to_grpc() for action in initialization_actions]
+                    ),
                 ),
                 subclusters_spec=subclusters,
             ),

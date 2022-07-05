@@ -33,6 +33,13 @@ def main():
         'HIVE',
         'SPARK',
     )
+    init_actions = None
+    if arguments.init_action_url:
+        init_actions = [sdk.wrappers.InitializationAction(
+            uri=arguments.init_action_url,
+            args=['arg1', 'arg2', 'arg3'],
+            timeout=60,
+        )]
     try:
         dataproc.create_cluster(
             cluster_name=arguments.cluster_name,
@@ -45,6 +52,7 @@ def main():
             zone=arguments.zone,
             services=services,
             log_group_id=arguments.log_group_id,
+            initialization_actions=init_actions,
         )
 
         dataproc.update_cluster_description('New cluster description')
@@ -176,6 +184,7 @@ def parse_cmd():
     parser.add_argument('--service-account-id', default='')
     parser.add_argument('--log-group-id', default=None)
     parser.add_argument('--s3-bucket', required=True)
+    parser.add_argument('--init-action-url', default=None)
     return parser.parse_args()
 
 
