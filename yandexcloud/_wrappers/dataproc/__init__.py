@@ -2,10 +2,10 @@
 
 import logging
 import random
-from six import string_types
-from typing import NamedTuple, List
+from typing import List, NamedTuple
 
 from google.protobuf.field_mask_pb2 import FieldMask
+from six import string_types
 
 import yandex.cloud.dataproc.v1.cluster_pb2 as cluster_pb
 import yandex.cloud.dataproc.v1.cluster_service_pb2 as cluster_service_pb
@@ -20,9 +20,9 @@ import yandex.cloud.dataproc.v1.subcluster_service_pb2_grpc as subcluster_servic
 
 
 class InitializationAction(NamedTuple):
-    uri: str            # Uri of the executable file
-    args: List[str]     # Arguments to the initialization action
-    timeout: int        # Execution timeout
+    uri: str  # Uri of the executable file
+    args: List[str]  # Arguments to the initialization action
+    timeout: int  # Execution timeout
 
     def to_grpc(self):
         return cluster_pb.InitializationAction(
@@ -275,8 +275,7 @@ class Dataproc(object):
                     ssh_public_keys=ssh_public_keys,
                     properties=properties,
                     initialization_actions=(
-                        initialization_actions
-                        and [action.to_grpc() for action in initialization_actions]
+                        initialization_actions and [action.to_grpc() for action in initialization_actions]
                     ),
                 ),
                 subclusters_spec=subclusters,
