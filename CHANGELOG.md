@@ -2,6 +2,11 @@
 
 <!--next-version-placeholder-->
 
+## v0.171.0 (2022-07-05)
+### Feature
+* Regenerate proto
+ ([`ad99716`](https://github.com/yandex-cloud/python-sdk/commit/ad997162b008b183789d9d609e1674041c26be89))
+
 ## v0.170.0 (2022-06-28)
 ### Feature
 * Add tox requirement for genproto workflow
