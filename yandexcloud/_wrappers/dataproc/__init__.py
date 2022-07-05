@@ -220,19 +220,22 @@ class Dataproc(object):
                 ),
                 subnet_id=subnet_id,
                 hosts_count=1,
-            ),
-            cluster_service_pb.CreateSubclusterConfigSpec(
-                name="data",
-                role=subcluster_pb.Role.DATANODE,
-                resources=common_pb.Resources(
-                    resource_preset_id=datanode_resource_preset,
-                    disk_size=datanode_disk_size,
-                    disk_type_id=datanode_disk_type,
-                ),
-                subnet_id=subnet_id,
-                hosts_count=datanode_count,
-            ),
+            )
         ]
+        if datanode_count:
+            subclusters.append(
+                cluster_service_pb.CreateSubclusterConfigSpec(
+                    name="data",
+                    role=subcluster_pb.Role.DATANODE,
+                    resources=common_pb.Resources(
+                        resource_preset_id=datanode_resource_preset,
+                        disk_size=datanode_disk_size,
+                        disk_type_id=datanode_disk_type,
+                    ),
+                    subnet_id=subnet_id,
+                    hosts_count=datanode_count,
+                )
+            )
 
         if computenode_count:
             autoscaling_config = None
