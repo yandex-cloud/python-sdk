@@ -2,6 +2,23 @@
 
 <!--next-version-placeholder-->
 
+## v0.173.0 (2022-07-12)
+### Feature
+* Dataproc wrapper: Support `ui_proxy`, `security_group_ids`, `host_group_ids` in ClusterCreate
+ ([`8cf8cf9`](https://github.com/yandex-cloud/python-sdk/commit/8cf8cf913cb68122ea68ba019d2fddc66037a649))
+* Dataproc wrapper: fix imports order
+ ([`27bac83`](https://github.com/yandex-cloud/python-sdk/commit/27bac831651a2ef727a76f4905231591cac8dcad))
+* Dataproc wrapper: Minimal example with lightweight cluster
+ ([`8214afe`](https://github.com/yandex-cloud/python-sdk/commit/8214afe9bdcfbb8c28efd465aebdb8c1a62a1d15))
+* Dataproc wrapper: Support lightweight (no-datanode) cluster creation
+ ([`8a515b6`](https://github.com/yandex-cloud/python-sdk/commit/8a515b6143fc62466487c04090eb74a1d17beab2))
+* Dataproc wrapper: Support `init-actions` and `properties` parameters in cluster-create
+ ([`d648a32`](https://github.com/yandex-cloud/python-sdk/commit/d648a326c8b3a3ea764341847f1a824f52e0e215))
+* Dataproc wrapper: pass cluster-name and cluster-desc parameters in example
+ ([`9173c1c`](https://github.com/yandex-cloud/python-sdk/commit/9173c1ceae828063a8b15574e6a21aa57f2ad998))
+* Dataproc wrapper: make s3_bucket parameter optional for cluster creation
+ ([`892369a`](https://github.com/yandex-cloud/python-sdk/commit/892369a306332db6b1bf9d80ca6285625952bbcf))
+
 ## v0.172.0 (2022-07-12)
 ### Feature
 * Regenerate proto
