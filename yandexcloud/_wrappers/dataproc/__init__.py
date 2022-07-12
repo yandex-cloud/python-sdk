@@ -2,6 +2,7 @@
 
 import logging
 import random
+from typing import List, NamedTuple
 
 from google.protobuf.field_mask_pb2 import FieldMask
 from six import string_types
@@ -16,6 +17,19 @@ import yandex.cloud.dataproc.v1.job_service_pb2_grpc as job_service_grpc_pb
 import yandex.cloud.dataproc.v1.subcluster_pb2 as subcluster_pb
 import yandex.cloud.dataproc.v1.subcluster_service_pb2 as subcluster_service_pb
 import yandex.cloud.dataproc.v1.subcluster_service_pb2_grpc as subcluster_service_grpc_pb
+
+
+class InitializationAction(NamedTuple):
+    uri: str  # Uri of the executable file
+    args: List[str]  # Arguments to the initialization action
+    timeout: int  # Execution timeout
+
+    def to_grpc(self):
+        return cluster_pb.InitializationAction(
+            uri=self.uri,
+            args=self.args,
+            timeout=self.timeout,
+        )
 
 
 class Dataproc(object):
@@ -39,12 +53,13 @@ class Dataproc(object):
             self.log = logging.getLogger()
             self.log.addHandler(logging.NullHandler())
         self.cluster_id = None
+        self.subnet_id = None
         self.default_folder_id = default_folder_id
         self.default_public_ssh_key = default_public_ssh_key
 
     def create_cluster(
         self,
-        s3_bucket,
+        s3_bucket=None,
         folder_id=None,
         cluster_name=None,
         cluster_description="",
@@ -73,6 +88,11 @@ class Dataproc(object):
         computenode_cpu_utilization_target=None,
         computenode_decommission_timeout=None,
         log_group_id=None,
+        properties=None,
+        enable_ui_proxy=False,
+        host_group_ids=None,
+        security_group_ids=None,
+        initialization_actions=None,
     ):
         """
         Create Yandex.Cloud Data Proc cluster.
@@ -149,6 +169,19 @@ class Dataproc(object):
         :param log_group_id: Id of log group to write logs. By default logs will be sent to default log group.
                              To disable cloud log sending set cluster property dataproc:disable_cloud_logging = true
         :type log_group_id: str
+        :param properties: Properties passed to main node software, in key you need to use prefix: 'hdfs:dfs.hosts'
+        :type properties: Dict[str, str]
+        :param enable_ui_proxy: Enable UI Proxy feature for forwarding Hadoop components web interfaces
+                                Docs: https://cloud.yandex.com/en-ru/docs/data-proc/concepts/ui-proxy
+        :type enable_ui_proxy: Bool
+        :param host_group_ids: Dedicated host groups to place VMs of cluster on.
+                               Docs: https://cloud.yandex.com/en-ru/docs/compute/concepts/dedicated-host
+        :type host_group_ids: List[str]
+        :param security_group_ids: User security groups
+                                   Docs: https://cloud.yandex.com/en-ru/docs/data-proc/concepts/network#security-groups
+        :type security_group_ids: List[str]
+        :param initialization_actions: Set of init-actions to run when cluster starts
+        :type initialization_actions: List[InitializationAction]
 
         :return: Cluster ID
         :rtype: str
@@ -181,9 +214,6 @@ class Dataproc(object):
         elif isinstance(ssh_public_keys, string_types):
             ssh_public_keys = [ssh_public_keys]
 
-        if not s3_bucket:
-            raise RuntimeError("Object storage (S3) bucket must be specified.")
-
         gib = 1024**3
         if masternode_disk_size:
             masternode_disk_size *= gib
@@ -202,19 +232,22 @@ class Dataproc(object):
                 ),
                 subnet_id=subnet_id,
                 hosts_count=1,
-            ),
-            cluster_service_pb.CreateSubclusterConfigSpec(
-                name="data",
-                role=subcluster_pb.Role.DATANODE,
-                resources=common_pb.Resources(
-                    resource_preset_id=datanode_resource_preset,
-                    disk_size=datanode_disk_size,
-                    disk_type_id=datanode_disk_type,
-                ),
-                subnet_id=subnet_id,
-                hosts_count=datanode_count,
-            ),
+            )
         ]
+        if datanode_count:
+            subclusters.append(
+                cluster_service_pb.CreateSubclusterConfigSpec(
+                    name="data",
+                    role=subcluster_pb.Role.DATANODE,
+                    resources=common_pb.Resources(
+                        resource_preset_id=datanode_resource_preset,
+                        disk_size=datanode_disk_size,
+                        disk_type_id=datanode_disk_type,
+                    ),
+                    subnet_id=subnet_id,
+                    hosts_count=datanode_count,
+                )
+            )
 
         if computenode_count:
             autoscaling_config = None
@@ -252,12 +285,19 @@ class Dataproc(object):
                 hadoop=cluster_pb.HadoopConfig(
                     services=services,
                     ssh_public_keys=ssh_public_keys,
+                    properties=properties,
+                    initialization_actions=(
+                        initialization_actions and [action.to_grpc() for action in initialization_actions]
+                    ),
                 ),
                 subclusters_spec=subclusters,
             ),
             zone_id=zone,
             service_account_id=service_account_id,
             bucket=s3_bucket,
+            ui_proxy=enable_ui_proxy,
+            host_group_ids=host_group_ids,
+            security_group_ids=security_group_ids,
             log_group_id=log_group_id,
         )
         result = self.sdk.create_operation_and_get_result(
