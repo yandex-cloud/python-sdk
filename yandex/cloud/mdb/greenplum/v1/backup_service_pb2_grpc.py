@@ -7,7 +7,8 @@ from yandex.cloud.mdb.greenplum.v1 import backup_service_pb2 as yandex_dot_cloud
 
 
 class BackupServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing backups.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -28,7 +29,8 @@ class BackupServiceStub(object):
 
 
 class BackupServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing backups.
+    """
 
     def Get(self, request, context):
         """Returns the specified backup of Greenplum® cluster.
@@ -65,7 +67,8 @@ def add_BackupServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class BackupService(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing backups.
+    """
 
     @staticmethod
     def Get(request,
