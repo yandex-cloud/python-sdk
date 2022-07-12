@@ -89,6 +89,9 @@ class Dataproc(object):
         computenode_decommission_timeout=None,
         log_group_id=None,
         properties=None,
+        enable_ui_proxy=False,
+        host_group_ids=None,
+        security_group_ids=None,
         initialization_actions=None,
     ):
         """
@@ -168,6 +171,15 @@ class Dataproc(object):
         :type log_group_id: str
         :param properties: Properties passed to main node software, in key you need to use prefix: 'hdfs:dfs.hosts'
         :type properties: Dict[str, str]
+        :param enable_ui_proxy: Enable UI Proxy feature for forwarding Hadoop components web interfaces
+                                Docs: https://cloud.yandex.com/en-ru/docs/data-proc/concepts/ui-proxy
+        :type enable_ui_proxy: Bool
+        :param host_group_ids: Dedicated host groups to place VMs of cluster on.
+                               Docs: https://cloud.yandex.com/en-ru/docs/compute/concepts/dedicated-host
+        :type host_group_ids: List[str]
+        :param security_group_ids: User security groups
+                                   Docs: https://cloud.yandex.com/en-ru/docs/data-proc/concepts/network#security-groups
+        :type security_group_ids: List[str]
         :param initialization_actions: Set of init-actions to run when cluster starts
         :type initialization_actions: List[InitializationAction]
 
@@ -283,6 +295,9 @@ class Dataproc(object):
             zone_id=zone,
             service_account_id=service_account_id,
             bucket=s3_bucket,
+            ui_proxy=enable_ui_proxy,
+            host_group_ids=host_group_ids,
+            security_group_ids=security_group_ids,
             log_group_id=log_group_id,
         )
         result = self.sdk.create_operation_and_get_result(
