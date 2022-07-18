@@ -23,7 +23,9 @@ class Channels(object):
         )
         self._endpoint = kwargs.get("endpoint", "api.cloud.yandex.net")
         self._token_requester = get_auth_token_requester(
-            token=kwargs.get("token"), service_account_key=kwargs.get("service_account_key")
+            token=kwargs.get("token"),
+            service_account_key=kwargs.get("service_account_key"),
+            iam_token=kwargs.get("iam_token"),
         )
 
         self._unauthenticated_channel = None

@@ -43,18 +43,28 @@ def __validate_service_account_key(sa_key):
         raise RuntimeError(error_message)
 
 
-def get_auth_token_requester(token=None, service_account_key=None, metadata_addr=_MDS_ADDR):
-    if token is not None and service_account_key is not None:
-        raise RuntimeError("Conflicting API credentials properties 'token' and 'service-account-key' are set.")
+def get_auth_token_requester(token=None, service_account_key=None, iam_token=None, metadata_addr=_MDS_ADDR):
+    auth_methods = [("token", token), ("service_account_key", service_account_key), ("iam_token", iam_token)]
+    auth_methods = [(auth_type, value) for auth_type, value in auth_methods if value is not None]
 
-    if token is not None:
+    if len(auth_methods) == 0:
+        return MetadataAuth(metadata_addr=metadata_addr)
+
+    if len(auth_methods) > 1:
+        raise RuntimeError(
+            "Conflicting API credentials properties are set: {}.".format([auth[0] for auth in auth_methods])
+        )
+
+    auth_name, _ = auth_methods[0]
+    if auth_name == "token":
         return TokenAuth(token=token)
-
-    if service_account_key is not None:
+    if auth_name == "service_account_key":
         __validate_service_account_key(service_account_key)
         return ServiceAccountAuth(service_account_key)
+    if auth_name == "iam_token":
+        return IamTokenAuth(iam_token)
 
-    return MetadataAuth(metadata_addr=metadata_addr)
+    raise RuntimeError("Unknown auth method: {}".format(auth_name))
 
 
 class MetadataAuth:
@@ -106,3 +116,11 @@ class ServiceAccountAuth:
         }
 
         return jwt.encode(payload, self.__sa_key["private_key"], algorithm="PS256", headers=headers)
+
+
+class IamTokenAuth:
+    def __init__(self, iam_token):
+        self.__iam_token = iam_token
+
+    def get_token(self):
+        return self.__iam_token
