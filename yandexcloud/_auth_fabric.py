@@ -45,7 +45,7 @@ def __validate_service_account_key(sa_key):
 
 def get_auth_token_requester(token=None, service_account_key=None, iam_token=None, metadata_addr=_MDS_ADDR):
     auth_methods = [("token", token), ("service_account_key", service_account_key), ("iam_token", iam_token)]
-    auth_methods = [auth for auth in auth_methods if auth[1] is not None]
+    auth_methods = [(auth_type, value) for auth_type, value in auth_methods if value is not None]
 
     if len(auth_methods) == 0:
         return MetadataAuth(metadata_addr=metadata_addr)
@@ -55,7 +55,7 @@ def get_auth_token_requester(token=None, service_account_key=None, iam_token=Non
             "Conflicting API credentials properties are set: {}.".format([auth[0] for auth in auth_methods])
         )
 
-    (auth_name, _) = auth_methods[0]
+    auth_name, _ = auth_methods[0]
     if auth_name == "token":
         return TokenAuth(token=token)
     if auth_name == "service_account_key":
