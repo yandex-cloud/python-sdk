@@ -22,8 +22,8 @@ Installation:
 ## Getting started
 
 There are several options for authorization your requests - OAuth Token,
-Metadata Service (if you're executing code inside VMs or Functions
-running in Yandex.Cloud) and Service Account Keys
+Metadata Service (if you're executing your code inside VMs or Cloud Functions
+running in Yandex.Cloud), Service Account Keys, and externally created IAM tokens.
 
 ### OAuth Token
 
@@ -50,6 +50,12 @@ sa_key = {
 }
 
 sdk = yandexcloud.SDK(service_account_key=sa_key)
+```
+
+### IAM tokens
+
+```python
+sdk = yandexcloud.SDK(iam_token="t1.9eu...")
 ```
 
 Check `examples` directory for more examples.

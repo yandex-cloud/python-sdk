@@ -9,7 +9,7 @@ def test_both_params_error(token, service_account_key):
     with pytest.raises(RuntimeError) as e:
         get_auth_token_requester(token=token, service_account_key=service_account_key).get_token_request()
 
-    assert str(e.value) == "Conflicting API credentials properties 'token' and 'service-account-key' are set."
+    assert str(e.value) == "Conflicting API credentials properties are set: ['token', 'service_account_key']."
 
 
 def test_invalid_service_account_type():
@@ -57,3 +57,8 @@ def test_service_account_key(service_account_key):
     assert parsed["iss"] == service_account_key["service_account_id"]
     assert parsed["aud"] == "https://iam.api.cloud.yandex.net/iam/v1/tokens"
     assert now - 60 <= int(parsed["iat"]) <= now
+
+def test_iam_token(iam_token):
+    token_func = get_auth_token_requester(iam_token=iam_token).get_token
+    token = token_func()
+    assert token == iam_token 

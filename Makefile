@@ -4,29 +4,29 @@
 REPO_ROOT:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
 deps: ## install deps (library & development)
-	python -m pip install --upgrade pip
-	python -m pip install -r requirements-dev.txt
+	python3 -m pip install --upgrade pip
+	python3 -m pip install -r requirements-dev.txt
 
 deps-genproto: ## install deps (library & development)
-	python -m pip install --upgrade pip
-	python -m pip install -r requirements-genproto.txt
+	python3 -m pip install --upgrade pip
+	python3 -m pip install -r requirements-genproto.txt
 
 tox: ## run ALL checks for ALL available python versions
-	python -m tox
+	python3 -m tox
 
 tox-current: ## run ALL checks ONLY for current python version
-	python -m tox -e `python -c 'import platform; print("py" + "".join(platform.python_version_tuple()[:2]))'`
+	python3 -m tox -e `python3 -c 'import platform; print("py" + "".join(platform.python_version_tuple()[:2]))'`
 
 test: ## run tests ONLY for current python version
-	python -m pytest
+	python3 -m pytest
 
 lint: ## run linters, formatters for current python versions
-	python -m flake8 yandexcloud
-	python -m pylint yandexcloud
+	python3 -m flake8 yandexcloud
+	python3 -m pylint yandexcloud
 
 format:
-	python -m isort yandexcloud setup.py changelog.py
-	python -m black yandexcloud setup.py changelog.py
+	python3 -m isort yandexcloud setup.py changelog.py
+	python3 -m black yandexcloud setup.py changelog.py
 
 test-all-versions: ## run test for multiple python versions using docker
 	# python 3.10 not provided in image so we skip it
