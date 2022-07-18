@@ -58,10 +58,10 @@ def get_auth_token_requester(token=None, service_account_key=None, iam_token=Non
     (auth_name, _) = auth_methods[0]
     if auth_name == "token":
         return TokenAuth(token=token)
-    elif auth_name == "service_account_key":
+    if auth_name == "service_account_key":
         __validate_service_account_key(service_account_key)
         return ServiceAccountAuth(service_account_key)
-    elif auth_name == "iam_token":
+    if auth_name == "iam_token":
         return IamTokenAuth(iam_token)
 
     raise RuntimeError("Unknown auth method: {}".format(auth_name))
