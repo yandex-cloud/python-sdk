@@ -2,6 +2,15 @@
 
 <!--next-version-placeholder-->
 
+## v0.174.0 (2022-07-18)
+### Feature
+* Address review comments
+ ([`76ebf92`](https://github.com/yandex-cloud/python-sdk/commit/76ebf92004bd15534edb682d34067522d5c01adb))
+* Remove elif after return
+ ([`5ec6fe9`](https://github.com/yandex-cloud/python-sdk/commit/5ec6fe9beb8fe6b4854e3f84ff2fc75d451d4e07))
+* Support IAM tokens as authorisation method
+ ([`ae9c87e`](https://github.com/yandex-cloud/python-sdk/commit/ae9c87eff3239abad916f1de688483e950b5b091))
+
 ## v0.173.0 (2022-07-12)
 ### Feature
 * Dataproc wrapper: Support `ui_proxy`, `security_group_ids`, `host_group_ids` in ClusterCreate
