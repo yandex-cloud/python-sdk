@@ -26,7 +26,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n)yandex.cloud.api.serverless.apigateway.v1ZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/apigateway/v1;apigateway',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n>yandex/cloud/serverless/apigateway/v1/apigateway_service.proto\x12%yandex.cloud.serverless.apigateway.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a yandex/cloud/access/access.proto\x1a\x36yandex/cloud/serverless/apigateway/v1/apigateway.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"4\n\x14GetApiGatewayRequest\x12\x1c\n\x0e\x61pi_gateway_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"g\n\x15ListApiGatewayRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\"z\n\x16ListApiGatewayResponse\x12G\n\x0c\x61pi_gateways\x18\x01 \x03(\x0b\x32\x31.yandex.cloud.serverless.apigateway.v1.ApiGateway\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xcc\x03\n\x17\x43reateApiGatewayRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x32\n\x04name\x18\x02 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\xa3\x01\n\x06labels\x18\x04 \x03(\x0b\x32J.yandex.cloud.serverless.apigateway.v1.CreateApiGatewayRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x16\n\x0copenapi_spec\x18\x05 \x01(\tH\x00\x12I\n\x0c\x63onnectivity\x18\x06 \x01(\x0b\x32\x33.yandex.cloud.serverless.apigateway.v1.Connectivity\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0c\n\x04spec\x12\x04\xc0\xc1\x31\x01\"\x82\x04\n\x17UpdateApiGatewayRequest\x12\x1c\n\x0e\x61pi_gateway_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\xa3\x01\n\x06labels\x18\x05 \x03(\x0b\x32J.yandex.cloud.serverless.apigateway.v1.UpdateApiGatewayRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x16\n\x0copenapi_spec\x18\x06 \x01(\tH\x00\x12I\n\x0c\x63onnectivity\x18\x07 \x01(\x0b\x32\x33.yandex.cloud.serverless.apigateway.v1.Connectivity\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0c\n\x04spec\x12\x04\xc0\xc1\x31\x01\"7\n\x17\x44\x65leteApiGatewayRequest\x12\x1c\n\x0e\x61pi_gateway_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"I\n\x10\x41\x64\x64\x44omainRequest\x12\x1c\n\x0e\x61pi_gateway_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tdomain_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"L\n\x13RemoveDomainRequest\x12\x1c\n\x0e\x61pi_gateway_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tdomain_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"2\n\x18\x43reateApiGatewayMetadata\x12\x16\n\x0e\x61pi_gateway_id\x18\x01 \x01(\t\"2\n\x18UpdateApiGatewayMetadata\x12\x16\n\x0e\x61pi_gateway_id\x18\x01 \x01(\t\"2\n\x18\x44\x65leteApiGatewayMetadata\x12\x16\n\x0e\x61pi_gateway_id\x18\x01 \x01(\t\">\n\x11\x41\x64\x64\x44omainMetadata\x12\x16\n\x0e\x61pi_gateway_id\x18\x01 \x01(\t\x12\x11\n\tdomain_id\x18\x02 \x01(\t\"A\n\x14RemoveDomainMetadata\x12\x16\n\x0e\x61pi_gateway_id\x18\x01 \x01(\t\x12\x11\n\tdomain_id\x18\x02 \x01(\t\"\x8f\x01\n\x15ListOperationsRequest\x12\x1c\n\x0e\x61pi_gateway_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"h\n\x16ListOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xc0\x01\n\x15GetOpenapiSpecRequest\x12\x1c\n\x0e\x61pi_gateway_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12S\n\x06\x66ormat\x18\x02 \x01(\x0e\x32\x43.yandex.cloud.serverless.apigateway.v1.GetOpenapiSpecRequest.Format\"4\n\x06\x46ormat\x12\x16\n\x12\x46ORMAT_UNSPECIFIED\x10\x00\x12\x08\n\x04JSON\x10\x01\x12\x08\n\x04YAML\x10\x02\"F\n\x16GetOpenapiSpecResponse\x12\x16\n\x0e\x61pi_gateway_id\x18\x01 \x01(\t\x12\x14\n\x0copenapi_spec\x18\x02 \x01(\t2\xda\x13\n\x11\x41piGatewayService\x12\xab\x01\n\x03Get\x12;.yandex.cloud.serverless.apigateway.v1.GetApiGatewayRequest\x1a\x31.yandex.cloud.serverless.apigateway.v1.ApiGateway\"4\x82\xd3\xe4\x93\x02.\x12,/apigateways/v1/apigateways/{api_gateway_id}\x12\xa8\x01\n\x04List\x12<.yandex.cloud.serverless.apigateway.v1.ListApiGatewayRequest\x1a=.yandex.cloud.serverless.apigateway.v1.ListApiGatewayResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/apigateways/v1/apigateways\x12\xbd\x01\n\x06\x43reate\x12>.yandex.cloud.serverless.apigateway.v1.CreateApiGatewayRequest\x1a!.yandex.cloud.operation.Operation\"P\x82\xd3\xe4\x93\x02 \"\x1b/apigateways/v1/apigateways:\x01*\xb2\xd2*&\n\x18\x43reateApiGatewayMetadata\x12\nApiGateway\x12\xce\x01\n\x06Update\x12>.yandex.cloud.serverless.apigateway.v1.UpdateApiGatewayRequest\x1a!.yandex.cloud.operation.Operation\"a\x82\xd3\xe4\x93\x02\x31\x32,/apigateways/v1/apigateways/{api_gateway_id}:\x01*\xb2\xd2*&\n\x18UpdateApiGatewayMetadata\x12\nApiGateway\x12\xd6\x01\n\x06\x44\x65lete\x12>.yandex.cloud.serverless.apigateway.v1.DeleteApiGatewayRequest\x1a!.yandex.cloud.operation.Operation\"i\x82\xd3\xe4\x93\x02.*,/apigateways/v1/apigateways/{api_gateway_id}\xb2\xd2*1\n\x18\x44\x65leteApiGatewayMetadata\x12\x15google.protobuf.Empty\x12\xd8\x01\n\tAddDomain\x12\x37.yandex.cloud.serverless.apigateway.v1.AddDomainRequest\x1a!.yandex.cloud.operation.Operation\"o\x82\xd3\xe4\x93\x02;\"6/apigateways/v1/apigateways/{api_gateway_id}:addDomain:\x01*\xb2\xd2**\n\x11\x41\x64\x64\x44omainMetadata\x12\x15google.protobuf.Empty\x12\xe4\x01\n\x0cRemoveDomain\x12:.yandex.cloud.serverless.apigateway.v1.RemoveDomainRequest\x1a!.yandex.cloud.operation.Operation\"u\x82\xd3\xe4\x93\x02>\"9/apigateways/v1/apigateways/{api_gateway_id}:removeDomain:\x01*\xb2\xd2*-\n\x14RemoveDomainMetadata\x12\x15google.protobuf.Empty\x12\xc8\x01\n\x0eGetOpenapiSpec\x12<.yandex.cloud.serverless.apigateway.v1.GetOpenapiSpecRequest\x1a=.yandex.cloud.serverless.apigateway.v1.GetOpenapiSpecResponse\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/apigateways/v1/apigateways/{api_gateway_id}:spec\x12\xce\x01\n\x0eListOperations\x12<.yandex.cloud.serverless.apigateway.v1.ListOperationsRequest\x1a=.yandex.cloud.serverless.apigateway.v1.ListOperationsResponse\"?\x82\xd3\xe4\x93\x02\x39\x12\x37/apigateways/v1/apigateways/{api_gateway_id}/operations\x12\xbb\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"D\x82\xd3\xe4\x93\x02>\x12</apigateways/v1/apigateways/{resource_id}:listAccessBindings\x12\xeb\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x83\x01\x82\xd3\xe4\x93\x02@\";/apigateways/v1/apigateways/{resource_id}:setAccessBindings:\x01*\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\xf7\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x89\x01\x82\xd3\xe4\x93\x02\x43\x32>/apigateways/v1/apigateways/{resource_id}:updateAccessBindings:\x01*\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.EmptyB\x81\x01\n)yandex.cloud.api.serverless.apigateway.v1ZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/apigateway/v1;apigatewayb\x06proto3'
+  serialized_pb=b'\n>yandex/cloud/serverless/apigateway/v1/apigateway_service.proto\x12%yandex.cloud.serverless.apigateway.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a yandex/cloud/access/access.proto\x1a\x36yandex/cloud/serverless/apigateway/v1/apigateway.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"4\n\x14GetApiGatewayRequest\x12\x1c\n\x0e\x61pi_gateway_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"g\n\x15ListApiGatewayRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\"z\n\x16ListApiGatewayResponse\x12G\n\x0c\x61pi_gateways\x18\x01 \x03(\x0b\x32\x31.yandex.cloud.serverless.apigateway.v1.ApiGateway\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xcc\x03\n\x17\x43reateApiGatewayRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x32\n\x04name\x18\x02 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\xa3\x01\n\x06labels\x18\x04 \x03(\x0b\x32J.yandex.cloud.serverless.apigateway.v1.CreateApiGatewayRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x16\n\x0copenapi_spec\x18\x05 \x01(\tH\x00\x12I\n\x0c\x63onnectivity\x18\x06 \x01(\x0b\x32\x33.yandex.cloud.serverless.apigateway.v1.Connectivity\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0c\n\x04spec\x12\x04\xc0\xc1\x31\x01\"\x82\x04\n\x17UpdateApiGatewayRequest\x12\x1c\n\x0e\x61pi_gateway_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\xa3\x01\n\x06labels\x18\x05 \x03(\x0b\x32J.yandex.cloud.serverless.apigateway.v1.UpdateApiGatewayRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x16\n\x0copenapi_spec\x18\x06 \x01(\tH\x00\x12I\n\x0c\x63onnectivity\x18\x07 \x01(\x0b\x32\x33.yandex.cloud.serverless.apigateway.v1.Connectivity\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0c\n\x04spec\x12\x04\xc0\xc1\x31\x01\"7\n\x17\x44\x65leteApiGatewayRequest\x12\x1c\n\x0e\x61pi_gateway_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"t\n\x10\x41\x64\x64\x44omainRequest\x12\x1c\n\x0e\x61pi_gateway_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x15\n\tdomain_id\x18\x02 \x01(\tB\x02\x18\x01\x12\x13\n\x0b\x64omain_name\x18\x03 \x01(\t\x12\x16\n\x0e\x63\x65rtificate_id\x18\x04 \x01(\t\"L\n\x13RemoveDomainRequest\x12\x1c\n\x0e\x61pi_gateway_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tdomain_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"2\n\x18\x43reateApiGatewayMetadata\x12\x16\n\x0e\x61pi_gateway_id\x18\x01 \x01(\t\"2\n\x18UpdateApiGatewayMetadata\x12\x16\n\x0e\x61pi_gateway_id\x18\x01 \x01(\t\"2\n\x18\x44\x65leteApiGatewayMetadata\x12\x16\n\x0e\x61pi_gateway_id\x18\x01 \x01(\t\"S\n\x11\x41\x64\x64\x44omainMetadata\x12\x16\n\x0e\x61pi_gateway_id\x18\x01 \x01(\t\x12\x11\n\tdomain_id\x18\x02 \x01(\t\x12\x13\n\x0b\x64omain_name\x18\x03 \x01(\t\"A\n\x14RemoveDomainMetadata\x12\x16\n\x0e\x61pi_gateway_id\x18\x01 \x01(\t\x12\x11\n\tdomain_id\x18\x02 \x01(\t\"\x8f\x01\n\x15ListOperationsRequest\x12\x1c\n\x0e\x61pi_gateway_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"h\n\x16ListOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xc0\x01\n\x15GetOpenapiSpecRequest\x12\x1c\n\x0e\x61pi_gateway_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12S\n\x06\x66ormat\x18\x02 \x01(\x0e\x32\x43.yandex.cloud.serverless.apigateway.v1.GetOpenapiSpecRequest.Format\"4\n\x06\x46ormat\x12\x16\n\x12\x46ORMAT_UNSPECIFIED\x10\x00\x12\x08\n\x04JSON\x10\x01\x12\x08\n\x04YAML\x10\x02\"F\n\x16GetOpenapiSpecResponse\x12\x16\n\x0e\x61pi_gateway_id\x18\x01 \x01(\t\x12\x14\n\x0copenapi_spec\x18\x02 \x01(\t2\xda\x13\n\x11\x41piGatewayService\x12\xab\x01\n\x03Get\x12;.yandex.cloud.serverless.apigateway.v1.GetApiGatewayRequest\x1a\x31.yandex.cloud.serverless.apigateway.v1.ApiGateway\"4\x82\xd3\xe4\x93\x02.\x12,/apigateways/v1/apigateways/{api_gateway_id}\x12\xa8\x01\n\x04List\x12<.yandex.cloud.serverless.apigateway.v1.ListApiGatewayRequest\x1a=.yandex.cloud.serverless.apigateway.v1.ListApiGatewayResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/apigateways/v1/apigateways\x12\xbd\x01\n\x06\x43reate\x12>.yandex.cloud.serverless.apigateway.v1.CreateApiGatewayRequest\x1a!.yandex.cloud.operation.Operation\"P\x82\xd3\xe4\x93\x02 \"\x1b/apigateways/v1/apigateways:\x01*\xb2\xd2*&\n\x18\x43reateApiGatewayMetadata\x12\nApiGateway\x12\xce\x01\n\x06Update\x12>.yandex.cloud.serverless.apigateway.v1.UpdateApiGatewayRequest\x1a!.yandex.cloud.operation.Operation\"a\x82\xd3\xe4\x93\x02\x31\x32,/apigateways/v1/apigateways/{api_gateway_id}:\x01*\xb2\xd2*&\n\x18UpdateApiGatewayMetadata\x12\nApiGateway\x12\xd6\x01\n\x06\x44\x65lete\x12>.yandex.cloud.serverless.apigateway.v1.DeleteApiGatewayRequest\x1a!.yandex.cloud.operation.Operation\"i\x82\xd3\xe4\x93\x02.*,/apigateways/v1/apigateways/{api_gateway_id}\xb2\xd2*1\n\x18\x44\x65leteApiGatewayMetadata\x12\x15google.protobuf.Empty\x12\xd8\x01\n\tAddDomain\x12\x37.yandex.cloud.serverless.apigateway.v1.AddDomainRequest\x1a!.yandex.cloud.operation.Operation\"o\x82\xd3\xe4\x93\x02;\"6/apigateways/v1/apigateways/{api_gateway_id}:addDomain:\x01*\xb2\xd2**\n\x11\x41\x64\x64\x44omainMetadata\x12\x15google.protobuf.Empty\x12\xe4\x01\n\x0cRemoveDomain\x12:.yandex.cloud.serverless.apigateway.v1.RemoveDomainRequest\x1a!.yandex.cloud.operation.Operation\"u\x82\xd3\xe4\x93\x02>\"9/apigateways/v1/apigateways/{api_gateway_id}:removeDomain:\x01*\xb2\xd2*-\n\x14RemoveDomainMetadata\x12\x15google.protobuf.Empty\x12\xc8\x01\n\x0eGetOpenapiSpec\x12<.yandex.cloud.serverless.apigateway.v1.GetOpenapiSpecRequest\x1a=.yandex.cloud.serverless.apigateway.v1.GetOpenapiSpecResponse\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/apigateways/v1/apigateways/{api_gateway_id}:spec\x12\xce\x01\n\x0eListOperations\x12<.yandex.cloud.serverless.apigateway.v1.ListOperationsRequest\x1a=.yandex.cloud.serverless.apigateway.v1.ListOperationsResponse\"?\x82\xd3\xe4\x93\x02\x39\x12\x37/apigateways/v1/apigateways/{api_gateway_id}/operations\x12\xbb\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"D\x82\xd3\xe4\x93\x02>\x12</apigateways/v1/apigateways/{resource_id}:listAccessBindings\x12\xeb\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x83\x01\x82\xd3\xe4\x93\x02@\";/apigateways/v1/apigateways/{resource_id}:setAccessBindings:\x01*\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\xf7\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x89\x01\x82\xd3\xe4\x93\x02\x43\x32>/apigateways/v1/apigateways/{resource_id}:updateAccessBindings:\x01*\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.EmptyB\x81\x01\n)yandex.cloud.api.serverless.apigateway.v1ZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/apigateway/v1;apigatewayb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_access_dot_access__pb2.DESCRIPTOR,yandex_dot_cloud_dot_serverless_dot_apigateway_dot_v1_dot_apigateway__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -57,8 +57,8 @@ _GETOPENAPISPECREQUEST_FORMAT = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2517,
-  serialized_end=2569,
+  serialized_start=2581,
+  serialized_end=2633,
 )
 _sym_db.RegisterEnumDescriptor(_GETOPENAPISPECREQUEST_FORMAT)
 
@@ -467,7 +467,21 @@ _ADDDOMAINREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\030\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='domain_name', full_name='yandex.cloud.serverless.apigateway.v1.AddDomainRequest.domain_name', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='certificate_id', full_name='yandex.cloud.serverless.apigateway.v1.AddDomainRequest.certificate_id', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -481,7 +495,7 @@ _ADDDOMAINREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1684,
-  serialized_end=1757,
+  serialized_end=1800,
 )
 
 
@@ -519,8 +533,8 @@ _REMOVEDOMAINREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1759,
-  serialized_end=1835,
+  serialized_start=1802,
+  serialized_end=1878,
 )
 
 
@@ -551,8 +565,8 @@ _CREATEAPIGATEWAYMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1837,
-  serialized_end=1887,
+  serialized_start=1880,
+  serialized_end=1930,
 )
 
 
@@ -583,8 +597,8 @@ _UPDATEAPIGATEWAYMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1889,
-  serialized_end=1939,
+  serialized_start=1932,
+  serialized_end=1982,
 )
 
 
@@ -615,8 +629,8 @@ _DELETEAPIGATEWAYMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1941,
-  serialized_end=1991,
+  serialized_start=1984,
+  serialized_end=2034,
 )
 
 
@@ -642,6 +656,13 @@ _ADDDOMAINMETADATA = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='domain_name', full_name='yandex.cloud.serverless.apigateway.v1.AddDomainMetadata.domain_name', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -654,8 +675,8 @@ _ADDDOMAINMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1993,
-  serialized_end=2055,
+  serialized_start=2036,
+  serialized_end=2119,
 )
 
 
@@ -693,8 +714,8 @@ _REMOVEDOMAINMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2057,
-  serialized_end=2122,
+  serialized_start=2121,
+  serialized_end=2186,
 )
 
 
@@ -746,8 +767,8 @@ _LISTOPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2125,
-  serialized_end=2268,
+  serialized_start=2189,
+  serialized_end=2332,
 )
 
 
@@ -785,8 +806,8 @@ _LISTOPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2270,
-  serialized_end=2374,
+  serialized_start=2334,
+  serialized_end=2438,
 )
 
 
@@ -825,8 +846,8 @@ _GETOPENAPISPECREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2377,
-  serialized_end=2569,
+  serialized_start=2441,
+  serialized_end=2633,
 )
 
 
@@ -864,8 +885,8 @@ _GETOPENAPISPECRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2571,
-  serialized_end=2641,
+  serialized_start=2635,
+  serialized_end=2705,
 )
 
 _LISTAPIGATEWAYRESPONSE.fields_by_name['api_gateways'].message_type = yandex_dot_cloud_dot_serverless_dot_apigateway_dot_v1_dot_apigateway__pb2._APIGATEWAY
@@ -1073,8 +1094,8 @@ _APIGATEWAYSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=2644,
-  serialized_end=5166,
+  serialized_start=2708,
+  serialized_end=5230,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
