@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\027yandex.cloud.api.ydb.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/ydb/v1;ydb',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\"yandex/cloud/ydb/v1/database.proto\x12\x13yandex.cloud.ydb.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\x1a yandex/cloud/ydb/v1/backup.proto\"\xf4\x08\n\x08\x44\x61tabase\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x34\n\x06status\x18\x06 \x01(\x0e\x32$.yandex.cloud.ydb.v1.Database.Status\x12\x10\n\x08\x65ndpoint\x18\x08 \x01(\t\x12\x1a\n\x12resource_preset_id\x18\t \x01(\t\x12:\n\x0estorage_config\x18\n \x01(\x0b\x32\".yandex.cloud.ydb.v1.StorageConfig\x12\x36\n\x0cscale_policy\x18\x0b \x01(\x0b\x32 .yandex.cloud.ydb.v1.ScalePolicy\x12\x12\n\nnetwork_id\x18\x0c \x01(\t\x12\x12\n\nsubnet_ids\x18\r \x03(\t\x12<\n\x0ezonal_database\x18\x0e \x01(\x0b\x32\".yandex.cloud.ydb.v1.ZonalDatabaseH\x00\x12\x42\n\x11regional_database\x18\x0f \x01(\x0b\x32%.yandex.cloud.ydb.v1.RegionalDatabaseH\x00\x12\x44\n\x12\x64\x65\x64icated_database\x18\x12 \x01(\x0b\x32&.yandex.cloud.ydb.v1.DedicatedDatabaseH\x00\x12\x46\n\x13serverless_database\x18\x13 \x01(\x0b\x32\'.yandex.cloud.ydb.v1.ServerlessDatabaseH\x00\x12\x19\n\x11\x61ssign_public_ips\x18\x10 \x01(\x08\x12\x13\n\x0blocation_id\x18\x11 \x01(\t\x12\x39\n\x06labels\x18\x14 \x03(\x0b\x32).yandex.cloud.ydb.v1.Database.LabelsEntry\x12\x38\n\rbackup_config\x18\x15 \x01(\x0b\x32!.yandex.cloud.ydb.v1.BackupConfig\x12\x1d\n\x15\x64ocument_api_endpoint\x18\x16 \x01(\t\x12\x1c\n\x14kinesis_api_endpoint\x18\x17 \x01(\t\x12@\n\x11monitoring_config\x18\x18 \x01(\x0b\x32%.yandex.cloud.ydb.v1.MonitoringConfig\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x81\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x10\n\x0cPROVISIONING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\x0c\n\x08UPDATING\x10\x04\x12\t\n\x05\x45RROR\x10\x05\x12\x0c\n\x08\x44\x45LETING\x10\x06\x12\x0c\n\x08STARTING\x10\x07\x12\x0b\n\x07STOPPED\x10\x08\x42\x0f\n\rdatabase_type\"\x82\x06\n\x0e\x41lertParameter\x12Z\n\x16\x64ouble_parameter_value\x18\x01 \x01(\x0b\x32\x38.yandex.cloud.ydb.v1.AlertParameter.DoubleParameterValueH\x00\x12\\\n\x17integer_parameter_value\x18\x02 \x01(\x0b\x32\x39.yandex.cloud.ydb.v1.AlertParameter.IntegerParameterValueH\x00\x12V\n\x14text_parameter_value\x18\x03 \x01(\x0b\x32\x36.yandex.cloud.ydb.v1.AlertParameter.TextParameterValueH\x00\x12_\n\x19text_list_parameter_value\x18\x04 \x01(\x0b\x32:.yandex.cloud.ydb.v1.AlertParameter.TextListParameterValueH\x00\x12\x61\n\x1alabel_list_parameter_value\x18\x05 \x01(\x0b\x32;.yandex.cloud.ydb.v1.AlertParameter.LabelListParameterValueH\x00\x1a\x33\n\x14\x44oubleParameterValue\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x01\x1a\x34\n\x15IntegerParameterValue\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x03\x1a\x31\n\x12TextParameterValue\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\x1a\x36\n\x16TextListParameterValue\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0e\n\x06values\x18\x02 \x03(\t\x1a\x37\n\x17LabelListParameterValue\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0e\n\x06values\x18\x02 \x03(\tB\x0b\n\tparameter\"\xa2\x01\n\x13NotificationChannel\x12\x1f\n\x17notification_channel_id\x18\x01 \x01(\t\x12I\n\x15notify_about_statuses\x18\x02 \x03(\x0e\x32*.yandex.cloud.ydb.v1.AlertEvaluationStatus\x12\x1f\n\x17repeate_notify_delay_ms\x18\x03 \x01(\x03\"\x9e\x02\n\x05\x41lert\x12\x10\n\x08\x61lert_id\x18\x01 \x01(\t\x12\x19\n\x11\x61lert_template_id\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12G\n\x15notification_channels\x18\x05 \x03(\x0b\x32(.yandex.cloud.ydb.v1.NotificationChannel\x12=\n\x10\x61lert_parameters\x18\x06 \x03(\x0b\x32#.yandex.cloud.ydb.v1.AlertParameter\x12=\n\x10\x61lert_thresholds\x18\x07 \x03(\x0b\x32#.yandex.cloud.ydb.v1.AlertParameter\">\n\x10MonitoringConfig\x12*\n\x06\x61lerts\x18\x01 \x03(\x0b\x32\x1a.yandex.cloud.ydb.v1.Alert\"\xe6\x01\n\x11\x44\x65\x64icatedDatabase\x12\x1a\n\x12resource_preset_id\x18\x01 \x01(\t\x12:\n\x0estorage_config\x18\x02 \x01(\x0b\x32\".yandex.cloud.ydb.v1.StorageConfig\x12\x36\n\x0cscale_policy\x18\x03 \x01(\x0b\x32 .yandex.cloud.ydb.v1.ScalePolicy\x12\x12\n\nnetwork_id\x18\x04 \x01(\t\x12\x12\n\nsubnet_ids\x18\x05 \x03(\t\x12\x19\n\x11\x61ssign_public_ips\x18\x06 \x01(\x08\"\x92\x01\n\x12ServerlessDatabase\x12\x1c\n\x14throttling_rcu_limit\x18\x01 \x01(\x03\x12\x1a\n\x12storage_size_limit\x18\x02 \x01(\x03\x12#\n\x1b\x65nable_throttling_rcu_limit\x18\x03 \x01(\x08\x12\x1d\n\x15provisioned_rcu_limit\x18\x04 \x01(\x03\"&\n\rZonalDatabase\x12\x15\n\x07zone_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"+\n\x10RegionalDatabase\x12\x17\n\tregion_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\x8a\x01\n\x0bScalePolicy\x12\x42\n\x0b\x66ixed_scale\x18\x01 \x01(\x0b\x32+.yandex.cloud.ydb.v1.ScalePolicy.FixedScaleH\x00\x1a#\n\nFixedScale\x12\x15\n\x04size\x18\x01 \x01(\x03\x42\x07\xfa\xc7\x31\x03>=1B\x12\n\nscale_type\x12\x04\xc0\xc1\x31\x01\"q\n\rStorageConfig\x12\x44\n\x0fstorage_options\x18\x01 \x03(\x0b\x32\".yandex.cloud.ydb.v1.StorageOptionB\x07\x82\xc8\x31\x03>=1\x12\x1a\n\x12storage_size_limit\x18\x02 \x01(\x03\"=\n\rStorageOption\x12\x17\n\x0fstorage_type_id\x18\x01 \x01(\t\x12\x13\n\x0bgroup_count\x18\x02 \x01(\x03*\xed\x01\n\x15\x41lertEvaluationStatus\x12\'\n#ALERT_EVALUATION_STATUS_UNSPECIFIED\x10\x00\x12\x1e\n\x1a\x41LERT_EVALUATION_STATUS_OK\x10\x01\x12#\n\x1f\x41LERT_EVALUATION_STATUS_NO_DATA\x10\x02\x12!\n\x1d\x41LERT_EVALUATION_STATUS_ERROR\x10\x03\x12!\n\x1d\x41LERT_EVALUATION_STATUS_ALARM\x10\x04\x12 \n\x1c\x41LERT_EVALUATION_STATUS_WARN\x10\x05\x42V\n\x17yandex.cloud.api.ydb.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/ydb/v1;ydbb\x06proto3'
+  serialized_pb=b'\n\"yandex/cloud/ydb/v1/database.proto\x12\x13yandex.cloud.ydb.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\x1a yandex/cloud/ydb/v1/backup.proto\"\x91\t\n\x08\x44\x61tabase\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x34\n\x06status\x18\x06 \x01(\x0e\x32$.yandex.cloud.ydb.v1.Database.Status\x12\x10\n\x08\x65ndpoint\x18\x08 \x01(\t\x12\x1a\n\x12resource_preset_id\x18\t \x01(\t\x12:\n\x0estorage_config\x18\n \x01(\x0b\x32\".yandex.cloud.ydb.v1.StorageConfig\x12\x36\n\x0cscale_policy\x18\x0b \x01(\x0b\x32 .yandex.cloud.ydb.v1.ScalePolicy\x12\x12\n\nnetwork_id\x18\x0c \x01(\t\x12\x12\n\nsubnet_ids\x18\r \x03(\t\x12<\n\x0ezonal_database\x18\x0e \x01(\x0b\x32\".yandex.cloud.ydb.v1.ZonalDatabaseH\x00\x12\x42\n\x11regional_database\x18\x0f \x01(\x0b\x32%.yandex.cloud.ydb.v1.RegionalDatabaseH\x00\x12\x44\n\x12\x64\x65\x64icated_database\x18\x12 \x01(\x0b\x32&.yandex.cloud.ydb.v1.DedicatedDatabaseH\x00\x12\x46\n\x13serverless_database\x18\x13 \x01(\x0b\x32\'.yandex.cloud.ydb.v1.ServerlessDatabaseH\x00\x12\x19\n\x11\x61ssign_public_ips\x18\x10 \x01(\x08\x12\x13\n\x0blocation_id\x18\x11 \x01(\t\x12\x39\n\x06labels\x18\x14 \x03(\x0b\x32).yandex.cloud.ydb.v1.Database.LabelsEntry\x12\x38\n\rbackup_config\x18\x15 \x01(\x0b\x32!.yandex.cloud.ydb.v1.BackupConfig\x12\x1d\n\x15\x64ocument_api_endpoint\x18\x16 \x01(\t\x12\x1c\n\x14kinesis_api_endpoint\x18\x17 \x01(\t\x12@\n\x11monitoring_config\x18\x18 \x01(\x0b\x32%.yandex.cloud.ydb.v1.MonitoringConfig\x12\x1b\n\x13\x64\x65letion_protection\x18\x19 \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x81\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x10\n\x0cPROVISIONING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\x0c\n\x08UPDATING\x10\x04\x12\t\n\x05\x45RROR\x10\x05\x12\x0c\n\x08\x44\x45LETING\x10\x06\x12\x0c\n\x08STARTING\x10\x07\x12\x0b\n\x07STOPPED\x10\x08\x42\x0f\n\rdatabase_type\"\x82\x06\n\x0e\x41lertParameter\x12Z\n\x16\x64ouble_parameter_value\x18\x01 \x01(\x0b\x32\x38.yandex.cloud.ydb.v1.AlertParameter.DoubleParameterValueH\x00\x12\\\n\x17integer_parameter_value\x18\x02 \x01(\x0b\x32\x39.yandex.cloud.ydb.v1.AlertParameter.IntegerParameterValueH\x00\x12V\n\x14text_parameter_value\x18\x03 \x01(\x0b\x32\x36.yandex.cloud.ydb.v1.AlertParameter.TextParameterValueH\x00\x12_\n\x19text_list_parameter_value\x18\x04 \x01(\x0b\x32:.yandex.cloud.ydb.v1.AlertParameter.TextListParameterValueH\x00\x12\x61\n\x1alabel_list_parameter_value\x18\x05 \x01(\x0b\x32;.yandex.cloud.ydb.v1.AlertParameter.LabelListParameterValueH\x00\x1a\x33\n\x14\x44oubleParameterValue\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x01\x1a\x34\n\x15IntegerParameterValue\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x03\x1a\x31\n\x12TextParameterValue\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\x1a\x36\n\x16TextListParameterValue\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0e\n\x06values\x18\x02 \x03(\t\x1a\x37\n\x17LabelListParameterValue\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0e\n\x06values\x18\x02 \x03(\tB\x0b\n\tparameter\"\xa2\x01\n\x13NotificationChannel\x12\x1f\n\x17notification_channel_id\x18\x01 \x01(\t\x12I\n\x15notify_about_statuses\x18\x02 \x03(\x0e\x32*.yandex.cloud.ydb.v1.AlertEvaluationStatus\x12\x1f\n\x17repeate_notify_delay_ms\x18\x03 \x01(\x03\"\x9e\x02\n\x05\x41lert\x12\x10\n\x08\x61lert_id\x18\x01 \x01(\t\x12\x19\n\x11\x61lert_template_id\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12G\n\x15notification_channels\x18\x05 \x03(\x0b\x32(.yandex.cloud.ydb.v1.NotificationChannel\x12=\n\x10\x61lert_parameters\x18\x06 \x03(\x0b\x32#.yandex.cloud.ydb.v1.AlertParameter\x12=\n\x10\x61lert_thresholds\x18\x07 \x03(\x0b\x32#.yandex.cloud.ydb.v1.AlertParameter\">\n\x10MonitoringConfig\x12*\n\x06\x61lerts\x18\x01 \x03(\x0b\x32\x1a.yandex.cloud.ydb.v1.Alert\"\xe6\x01\n\x11\x44\x65\x64icatedDatabase\x12\x1a\n\x12resource_preset_id\x18\x01 \x01(\t\x12:\n\x0estorage_config\x18\x02 \x01(\x0b\x32\".yandex.cloud.ydb.v1.StorageConfig\x12\x36\n\x0cscale_policy\x18\x03 \x01(\x0b\x32 .yandex.cloud.ydb.v1.ScalePolicy\x12\x12\n\nnetwork_id\x18\x04 \x01(\t\x12\x12\n\nsubnet_ids\x18\x05 \x03(\t\x12\x19\n\x11\x61ssign_public_ips\x18\x06 \x01(\x08\"\x92\x01\n\x12ServerlessDatabase\x12\x1c\n\x14throttling_rcu_limit\x18\x01 \x01(\x03\x12\x1a\n\x12storage_size_limit\x18\x02 \x01(\x03\x12#\n\x1b\x65nable_throttling_rcu_limit\x18\x03 \x01(\x08\x12\x1d\n\x15provisioned_rcu_limit\x18\x04 \x01(\x03\"&\n\rZonalDatabase\x12\x15\n\x07zone_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"+\n\x10RegionalDatabase\x12\x17\n\tregion_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\x8a\x01\n\x0bScalePolicy\x12\x42\n\x0b\x66ixed_scale\x18\x01 \x01(\x0b\x32+.yandex.cloud.ydb.v1.ScalePolicy.FixedScaleH\x00\x1a#\n\nFixedScale\x12\x15\n\x04size\x18\x01 \x01(\x03\x42\x07\xfa\xc7\x31\x03>=1B\x12\n\nscale_type\x12\x04\xc0\xc1\x31\x01\"q\n\rStorageConfig\x12\x44\n\x0fstorage_options\x18\x01 \x03(\x0b\x32\".yandex.cloud.ydb.v1.StorageOptionB\x07\x82\xc8\x31\x03>=1\x12\x1a\n\x12storage_size_limit\x18\x02 \x01(\x03\"=\n\rStorageOption\x12\x17\n\x0fstorage_type_id\x18\x01 \x01(\t\x12\x13\n\x0bgroup_count\x18\x02 \x01(\x03*\xed\x01\n\x15\x41lertEvaluationStatus\x12\'\n#ALERT_EVALUATION_STATUS_UNSPECIFIED\x10\x00\x12\x1e\n\x1a\x41LERT_EVALUATION_STATUS_OK\x10\x01\x12#\n\x1f\x41LERT_EVALUATION_STATUS_NO_DATA\x10\x02\x12!\n\x1d\x41LERT_EVALUATION_STATUS_ERROR\x10\x03\x12!\n\x1d\x41LERT_EVALUATION_STATUS_ALARM\x10\x04\x12 \n\x1c\x41LERT_EVALUATION_STATUS_WARN\x10\x05\x42V\n\x17yandex.cloud.api.ydb.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/ydb/v1;ydbb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_ydb_dot_v1_dot_backup__pb2.DESCRIPTOR,])
 
@@ -67,8 +67,8 @@ _ALERTEVALUATIONSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3378,
-  serialized_end=3615,
+  serialized_start=3407,
+  serialized_end=3644,
 )
 _sym_db.RegisterEnumDescriptor(_ALERTEVALUATIONSTATUS)
 
@@ -131,8 +131,8 @@ _DATABASE_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1152,
-  serialized_end=1281,
+  serialized_start=1181,
+  serialized_end=1310,
 )
 _sym_db.RegisterEnumDescriptor(_DATABASE_STATUS)
 
@@ -171,8 +171,8 @@ _DATABASE_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1104,
-  serialized_end=1149,
+  serialized_start=1133,
+  serialized_end=1178,
 )
 
 _DATABASE = _descriptor.Descriptor(
@@ -344,6 +344,13 @@ _DATABASE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='deletion_protection', full_name='yandex.cloud.ydb.v1.Database.deletion_protection', index=23,
+      number=25, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -363,7 +370,7 @@ _DATABASE = _descriptor.Descriptor(
     fields=[]),
   ],
   serialized_start=158,
-  serialized_end=1298,
+  serialized_end=1327,
 )
 
 
@@ -401,8 +408,8 @@ _ALERTPARAMETER_DOUBLEPARAMETERVALUE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1789,
-  serialized_end=1840,
+  serialized_start=1818,
+  serialized_end=1869,
 )
 
 _ALERTPARAMETER_INTEGERPARAMETERVALUE = _descriptor.Descriptor(
@@ -439,8 +446,8 @@ _ALERTPARAMETER_INTEGERPARAMETERVALUE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1842,
-  serialized_end=1894,
+  serialized_start=1871,
+  serialized_end=1923,
 )
 
 _ALERTPARAMETER_TEXTPARAMETERVALUE = _descriptor.Descriptor(
@@ -477,8 +484,8 @@ _ALERTPARAMETER_TEXTPARAMETERVALUE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1896,
-  serialized_end=1945,
+  serialized_start=1925,
+  serialized_end=1974,
 )
 
 _ALERTPARAMETER_TEXTLISTPARAMETERVALUE = _descriptor.Descriptor(
@@ -515,8 +522,8 @@ _ALERTPARAMETER_TEXTLISTPARAMETERVALUE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1947,
-  serialized_end=2001,
+  serialized_start=1976,
+  serialized_end=2030,
 )
 
 _ALERTPARAMETER_LABELLISTPARAMETERVALUE = _descriptor.Descriptor(
@@ -553,8 +560,8 @@ _ALERTPARAMETER_LABELLISTPARAMETERVALUE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2003,
-  serialized_end=2058,
+  serialized_start=2032,
+  serialized_end=2087,
 )
 
 _ALERTPARAMETER = _descriptor.Descriptor(
@@ -617,8 +624,8 @@ _ALERTPARAMETER = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1301,
-  serialized_end=2071,
+  serialized_start=1330,
+  serialized_end=2100,
 )
 
 
@@ -663,8 +670,8 @@ _NOTIFICATIONCHANNEL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2074,
-  serialized_end=2236,
+  serialized_start=2103,
+  serialized_end=2265,
 )
 
 
@@ -737,8 +744,8 @@ _ALERT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2239,
-  serialized_end=2525,
+  serialized_start=2268,
+  serialized_end=2554,
 )
 
 
@@ -769,8 +776,8 @@ _MONITORINGCONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2527,
-  serialized_end=2589,
+  serialized_start=2556,
+  serialized_end=2618,
 )
 
 
@@ -836,8 +843,8 @@ _DEDICATEDDATABASE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2592,
-  serialized_end=2822,
+  serialized_start=2621,
+  serialized_end=2851,
 )
 
 
@@ -889,8 +896,8 @@ _SERVERLESSDATABASE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2825,
-  serialized_end=2971,
+  serialized_start=2854,
+  serialized_end=3000,
 )
 
 
@@ -921,8 +928,8 @@ _ZONALDATABASE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2973,
-  serialized_end=3011,
+  serialized_start=3002,
+  serialized_end=3040,
 )
 
 
@@ -953,8 +960,8 @@ _REGIONALDATABASE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3013,
-  serialized_end=3056,
+  serialized_start=3042,
+  serialized_end=3085,
 )
 
 
@@ -985,8 +992,8 @@ _SCALEPOLICY_FIXEDSCALE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3142,
-  serialized_end=3177,
+  serialized_start=3171,
+  serialized_end=3206,
 )
 
 _SCALEPOLICY = _descriptor.Descriptor(
@@ -1021,8 +1028,8 @@ _SCALEPOLICY = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[], serialized_options=b'\300\3011\001'),
   ],
-  serialized_start=3059,
-  serialized_end=3197,
+  serialized_start=3088,
+  serialized_end=3226,
 )
 
 
@@ -1060,8 +1067,8 @@ _STORAGECONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3199,
-  serialized_end=3312,
+  serialized_start=3228,
+  serialized_end=3341,
 )
 
 
@@ -1099,8 +1106,8 @@ _STORAGEOPTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3314,
-  serialized_end=3375,
+  serialized_start=3343,
+  serialized_end=3404,
 )
 
 _DATABASE_LABELSENTRY.containing_type = _DATABASE

@@ -48,6 +48,11 @@ class DatabaseServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_ydb_dot_v1_dot_database__service__pb2.StopDatabaseRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
+        self.Move = channel.unary_unary(
+                '/yandex.cloud.ydb.v1.DatabaseService/Move',
+                request_serializer=yandex_dot_cloud_dot_ydb_dot_v1_dot_database__service__pb2.MoveDatabaseRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
         self.ListAccessBindings = channel.unary_unary(
                 '/yandex.cloud.ydb.v1.DatabaseService/ListAccessBindings',
                 request_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessBindingsRequest.SerializeToString,
@@ -126,6 +131,12 @@ class DatabaseServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Move(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListAccessBindings(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -195,6 +206,11 @@ def add_DatabaseServiceServicer_to_server(servicer, server):
             'Stop': grpc.unary_unary_rpc_method_handler(
                     servicer.Stop,
                     request_deserializer=yandex_dot_cloud_dot_ydb_dot_v1_dot_database__service__pb2.StopDatabaseRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'Move': grpc.unary_unary_rpc_method_handler(
+                    servicer.Move,
+                    request_deserializer=yandex_dot_cloud_dot_ydb_dot_v1_dot_database__service__pb2.MoveDatabaseRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'ListAccessBindings': grpc.unary_unary_rpc_method_handler(
@@ -336,6 +352,23 @@ class DatabaseService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.ydb.v1.DatabaseService/Stop',
             yandex_dot_cloud_dot_ydb_dot_v1_dot_database__service__pb2.StopDatabaseRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Move(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.ydb.v1.DatabaseService/Move',
+            yandex_dot_cloud_dot_ydb_dot_v1_dot_database__service__pb2.MoveDatabaseRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
