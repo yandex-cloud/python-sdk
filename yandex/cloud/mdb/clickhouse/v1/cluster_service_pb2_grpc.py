@@ -172,6 +172,11 @@ class ClusterServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.CreateClusterExternalDictionaryRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
+        self.UpdateExternalDictionary = channel.unary_unary(
+                '/yandex.cloud.mdb.clickhouse.v1.ClusterService/UpdateExternalDictionary',
+                request_serializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.UpdateClusterExternalDictionaryRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
         self.DeleteExternalDictionary = channel.unary_unary(
                 '/yandex.cloud.mdb.clickhouse.v1.ClusterService/DeleteExternalDictionary',
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.DeleteClusterExternalDictionaryRequest.SerializeToString,
@@ -403,6 +408,13 @@ class ClusterServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def UpdateExternalDictionary(self, request, context):
+        """Updates an external dictionary for the specified ClickHouse cluster.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def DeleteExternalDictionary(self, request, context):
         """Deletes the specified external dictionary.
         """
@@ -566,6 +578,11 @@ def add_ClusterServiceServicer_to_server(servicer, server):
             'CreateExternalDictionary': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateExternalDictionary,
                     request_deserializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.CreateClusterExternalDictionaryRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'UpdateExternalDictionary': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateExternalDictionary,
+                    request_deserializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.UpdateClusterExternalDictionaryRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'DeleteExternalDictionary': grpc.unary_unary_rpc_method_handler(
@@ -1107,6 +1124,23 @@ class ClusterService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.mdb.clickhouse.v1.ClusterService/CreateExternalDictionary',
             yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.CreateClusterExternalDictionaryRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateExternalDictionary(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.mdb.clickhouse.v1.ClusterService/UpdateExternalDictionary',
+            yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.UpdateClusterExternalDictionaryRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

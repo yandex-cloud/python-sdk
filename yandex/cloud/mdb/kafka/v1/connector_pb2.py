@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\035yandex.cloud.api.mdb.kafka.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/kafka/v1;kafka',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n)yandex/cloud/mdb/kafka/v1/connector.proto\x12\x19yandex.cloud.mdb.kafka.v1\x1a\x1egoogle/protobuf/wrappers.proto\"\x9f\x03\n\rConnectorSpec\x12\x0c\n\x04name\x18\x01 \x01(\t\x12.\n\ttasks_max\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12L\n\nproperties\x18\x03 \x03(\x0b\x32\x38.yandex.cloud.mdb.kafka.v1.ConnectorSpec.PropertiesEntry\x12\x61\n\x1c\x63onnector_config_mirrormaker\x18\n \x01(\x0b\x32\x39.yandex.cloud.mdb.kafka.v1.ConnectorConfigMirrorMakerSpecH\x00\x12X\n\x18\x63onnector_config_s3_sink\x18\x0b \x01(\x0b\x32\x34.yandex.cloud.mdb.kafka.v1.ConnectorConfigS3SinkSpecH\x00\x1a\x31\n\x0fPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x12\n\x10\x63onnector_config\"\xa3\x03\n\x13UpdateConnectorSpec\x12.\n\ttasks_max\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12R\n\nproperties\x18\x02 \x03(\x0b\x32>.yandex.cloud.mdb.kafka.v1.UpdateConnectorSpec.PropertiesEntry\x12\x61\n\x1c\x63onnector_config_mirrormaker\x18\n \x01(\x0b\x32\x39.yandex.cloud.mdb.kafka.v1.ConnectorConfigMirrorMakerSpecH\x00\x12^\n\x18\x63onnector_config_s3_sink\x18\x0b \x01(\x0b\x32:.yandex.cloud.mdb.kafka.v1.UpdateConnectorConfigS3SinkSpecH\x00\x1a\x31\n\x0fPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x12\n\x10\x63onnector_config\"\xfd\x01\n\x1e\x43onnectorConfigMirrorMakerSpec\x12H\n\x0esource_cluster\x18\x01 \x01(\x0b\x32\x30.yandex.cloud.mdb.kafka.v1.ClusterConnectionSpec\x12H\n\x0etarget_cluster\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.mdb.kafka.v1.ClusterConnectionSpec\x12\x0e\n\x06topics\x18\x03 \x01(\t\x12\x37\n\x12replication_factor\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"\xd6\x01\n\x15\x43lusterConnectionSpec\x12\r\n\x05\x61lias\x18\x01 \x01(\t\x12\x42\n\x0cthis_cluster\x18\x02 \x01(\x0b\x32*.yandex.cloud.mdb.kafka.v1.ThisClusterSpecH\x00\x12T\n\x10\x65xternal_cluster\x18\x03 \x01(\x0b\x32\x38.yandex.cloud.mdb.kafka.v1.ExternalClusterConnectionSpecH\x00\x42\x14\n\x12\x63luster_connection\"\x11\n\x0fThisClusterSpec\"\xc0\x01\n\x1d\x45xternalClusterConnectionSpec\x12\x19\n\x11\x62ootstrap_servers\x18\x01 \x01(\t\x12\x15\n\rsasl_username\x18\x02 \x01(\t\x12\x15\n\rsasl_password\x18\x03 \x01(\t\x12\x16\n\x0esasl_mechanism\x18\x04 \x01(\t\x12\x19\n\x11security_protocol\x18\x05 \x01(\t\x12#\n\x1bssl_truststore_certificates\x18\x06 \x01(\t\"\x92\x05\n\tConnector\x12\x0c\n\x04name\x18\x01 \x01(\t\x12.\n\ttasks_max\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12H\n\nproperties\x18\x03 \x03(\x0b\x32\x34.yandex.cloud.mdb.kafka.v1.Connector.PropertiesEntry\x12;\n\x06health\x18\x04 \x01(\x0e\x32+.yandex.cloud.mdb.kafka.v1.Connector.Health\x12;\n\x06status\x18\x05 \x01(\x0e\x32+.yandex.cloud.mdb.kafka.v1.Connector.Status\x12\x12\n\ncluster_id\x18\x06 \x01(\t\x12]\n\x1c\x63onnector_config_mirrormaker\x18\n \x01(\x0b\x32\x35.yandex.cloud.mdb.kafka.v1.ConnectorConfigMirrorMakerH\x00\x12T\n\x18\x63onnector_config_s3_sink\x18\x0b \x01(\x0b\x32\x30.yandex.cloud.mdb.kafka.v1.ConnectorConfigS3SinkH\x00\x1a\x31\n\x0fPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"1\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\"@\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x0b\n\x07RUNNING\x10\x01\x12\t\n\x05\x45RROR\x10\x02\x12\n\n\x06PAUSED\x10\x03\x42\x12\n\x10\x63onnector_config\"\xf1\x01\n\x1a\x43onnectorConfigMirrorMaker\x12\x44\n\x0esource_cluster\x18\x01 \x01(\x0b\x32,.yandex.cloud.mdb.kafka.v1.ClusterConnection\x12\x44\n\x0etarget_cluster\x18\x02 \x01(\x0b\x32,.yandex.cloud.mdb.kafka.v1.ClusterConnection\x12\x0e\n\x06topics\x18\x03 \x01(\t\x12\x37\n\x12replication_factor\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"\xca\x01\n\x11\x43lusterConnection\x12\r\n\x05\x61lias\x18\x01 \x01(\t\x12>\n\x0cthis_cluster\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.kafka.v1.ThisClusterH\x00\x12P\n\x10\x65xternal_cluster\x18\x03 \x01(\x0b\x32\x34.yandex.cloud.mdb.kafka.v1.ExternalClusterConnectionH\x00\x42\x14\n\x12\x63luster_connection\"\r\n\x0bThisCluster\"\x80\x01\n\x19\x45xternalClusterConnection\x12\x19\n\x11\x62ootstrap_servers\x18\x01 \x01(\t\x12\x15\n\rsasl_username\x18\x02 \x01(\t\x12\x16\n\x0esasl_mechanism\x18\x04 \x01(\t\x12\x19\n\x11security_protocol\x18\x05 \x01(\t\"{\n\x10S3ConnectionSpec\x12\x13\n\x0b\x62ucket_name\x18\x01 \x01(\t\x12G\n\x0b\x65xternal_s3\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.mdb.kafka.v1.ExternalS3StorageSpecH\x00\x42\t\n\x07storage\"k\n\x15\x45xternalS3StorageSpec\x12\x15\n\raccess_key_id\x18\x01 \x01(\t\x12\x19\n\x11secret_access_key\x18\x02 \x01(\t\x12\x10\n\x08\x65ndpoint\x18\x03 \x01(\t\x12\x0e\n\x06region\x18\x04 \x01(\t\"s\n\x0cS3Connection\x12\x13\n\x0b\x62ucket_name\x18\x01 \x01(\t\x12\x43\n\x0b\x65xternal_s3\x18\x02 \x01(\x0b\x32,.yandex.cloud.mdb.kafka.v1.ExternalS3StorageH\x00\x42\t\n\x07storage\"L\n\x11\x45xternalS3Storage\x12\x15\n\raccess_key_id\x18\x01 \x01(\t\x12\x10\n\x08\x65ndpoint\x18\x02 \x01(\t\x12\x0e\n\x06region\x18\x03 \x01(\t\"\xbd\x01\n\x15\x43onnectorConfigS3Sink\x12\x0e\n\x06topics\x18\x01 \x01(\t\x12\x1d\n\x15\x66ile_compression_type\x18\x02 \x01(\t\x12\x35\n\x10\x66ile_max_records\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12>\n\rs3_connection\x18\x04 \x01(\x0b\x32\'.yandex.cloud.mdb.kafka.v1.S3Connection\"\xc5\x01\n\x19\x43onnectorConfigS3SinkSpec\x12\x0e\n\x06topics\x18\x01 \x01(\t\x12\x1d\n\x15\x66ile_compression_type\x18\x02 \x01(\t\x12\x35\n\x10\x66ile_max_records\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x42\n\rs3_connection\x18\x04 \x01(\x0b\x32+.yandex.cloud.mdb.kafka.v1.S3ConnectionSpec\"\xac\x01\n\x1fUpdateConnectorConfigS3SinkSpec\x12\x0e\n\x06topics\x18\x01 \x01(\t\x12\x35\n\x10\x66ile_max_records\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x42\n\rs3_connection\x18\x03 \x01(\x0b\x32+.yandex.cloud.mdb.kafka.v1.S3ConnectionSpecBd\n\x1dyandex.cloud.api.mdb.kafka.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/kafka/v1;kafkab\x06proto3'
+  serialized_pb=b'\n)yandex/cloud/mdb/kafka/v1/connector.proto\x12\x19yandex.cloud.mdb.kafka.v1\x1a\x1egoogle/protobuf/wrappers.proto\"\x9f\x03\n\rConnectorSpec\x12\x0c\n\x04name\x18\x01 \x01(\t\x12.\n\ttasks_max\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12L\n\nproperties\x18\x03 \x03(\x0b\x32\x38.yandex.cloud.mdb.kafka.v1.ConnectorSpec.PropertiesEntry\x12\x61\n\x1c\x63onnector_config_mirrormaker\x18\n \x01(\x0b\x32\x39.yandex.cloud.mdb.kafka.v1.ConnectorConfigMirrorMakerSpecH\x00\x12X\n\x18\x63onnector_config_s3_sink\x18\x0b \x01(\x0b\x32\x34.yandex.cloud.mdb.kafka.v1.ConnectorConfigS3SinkSpecH\x00\x1a\x31\n\x0fPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x12\n\x10\x63onnector_config\"\xa3\x03\n\x13UpdateConnectorSpec\x12.\n\ttasks_max\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12R\n\nproperties\x18\x02 \x03(\x0b\x32>.yandex.cloud.mdb.kafka.v1.UpdateConnectorSpec.PropertiesEntry\x12\x61\n\x1c\x63onnector_config_mirrormaker\x18\n \x01(\x0b\x32\x39.yandex.cloud.mdb.kafka.v1.ConnectorConfigMirrorMakerSpecH\x00\x12^\n\x18\x63onnector_config_s3_sink\x18\x0b \x01(\x0b\x32:.yandex.cloud.mdb.kafka.v1.UpdateConnectorConfigS3SinkSpecH\x00\x1a\x31\n\x0fPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x12\n\x10\x63onnector_config\"\xfd\x01\n\x1e\x43onnectorConfigMirrorMakerSpec\x12H\n\x0esource_cluster\x18\x01 \x01(\x0b\x32\x30.yandex.cloud.mdb.kafka.v1.ClusterConnectionSpec\x12H\n\x0etarget_cluster\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.mdb.kafka.v1.ClusterConnectionSpec\x12\x0e\n\x06topics\x18\x03 \x01(\t\x12\x37\n\x12replication_factor\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"\xd6\x01\n\x15\x43lusterConnectionSpec\x12\r\n\x05\x61lias\x18\x01 \x01(\t\x12\x42\n\x0cthis_cluster\x18\x02 \x01(\x0b\x32*.yandex.cloud.mdb.kafka.v1.ThisClusterSpecH\x00\x12T\n\x10\x65xternal_cluster\x18\x03 \x01(\x0b\x32\x38.yandex.cloud.mdb.kafka.v1.ExternalClusterConnectionSpecH\x00\x42\x14\n\x12\x63luster_connection\"\x11\n\x0fThisClusterSpec\"\xc0\x01\n\x1d\x45xternalClusterConnectionSpec\x12\x19\n\x11\x62ootstrap_servers\x18\x01 \x01(\t\x12\x15\n\rsasl_username\x18\x02 \x01(\t\x12\x15\n\rsasl_password\x18\x03 \x01(\t\x12\x16\n\x0esasl_mechanism\x18\x04 \x01(\t\x12\x19\n\x11security_protocol\x18\x05 \x01(\t\x12#\n\x1bssl_truststore_certificates\x18\x06 \x01(\t\"\xc5\x01\n\x19\x43onnectorConfigS3SinkSpec\x12\x0e\n\x06topics\x18\x01 \x01(\t\x12\x1d\n\x15\x66ile_compression_type\x18\x02 \x01(\t\x12\x35\n\x10\x66ile_max_records\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x42\n\rs3_connection\x18\x04 \x01(\x0b\x32+.yandex.cloud.mdb.kafka.v1.S3ConnectionSpec\"\xac\x01\n\x1fUpdateConnectorConfigS3SinkSpec\x12\x0e\n\x06topics\x18\x01 \x01(\t\x12\x35\n\x10\x66ile_max_records\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x42\n\rs3_connection\x18\x03 \x01(\x0b\x32+.yandex.cloud.mdb.kafka.v1.S3ConnectionSpec\"{\n\x10S3ConnectionSpec\x12\x13\n\x0b\x62ucket_name\x18\x01 \x01(\t\x12G\n\x0b\x65xternal_s3\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.mdb.kafka.v1.ExternalS3StorageSpecH\x00\x42\t\n\x07storage\"k\n\x15\x45xternalS3StorageSpec\x12\x15\n\raccess_key_id\x18\x01 \x01(\t\x12\x19\n\x11secret_access_key\x18\x02 \x01(\t\x12\x10\n\x08\x65ndpoint\x18\x03 \x01(\t\x12\x0e\n\x06region\x18\x04 \x01(\t\"\x92\x05\n\tConnector\x12\x0c\n\x04name\x18\x01 \x01(\t\x12.\n\ttasks_max\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12H\n\nproperties\x18\x03 \x03(\x0b\x32\x34.yandex.cloud.mdb.kafka.v1.Connector.PropertiesEntry\x12;\n\x06health\x18\x04 \x01(\x0e\x32+.yandex.cloud.mdb.kafka.v1.Connector.Health\x12;\n\x06status\x18\x05 \x01(\x0e\x32+.yandex.cloud.mdb.kafka.v1.Connector.Status\x12\x12\n\ncluster_id\x18\x06 \x01(\t\x12]\n\x1c\x63onnector_config_mirrormaker\x18\n \x01(\x0b\x32\x35.yandex.cloud.mdb.kafka.v1.ConnectorConfigMirrorMakerH\x00\x12T\n\x18\x63onnector_config_s3_sink\x18\x0b \x01(\x0b\x32\x30.yandex.cloud.mdb.kafka.v1.ConnectorConfigS3SinkH\x00\x1a\x31\n\x0fPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"1\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\"@\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x0b\n\x07RUNNING\x10\x01\x12\t\n\x05\x45RROR\x10\x02\x12\n\n\x06PAUSED\x10\x03\x42\x12\n\x10\x63onnector_config\"\xf1\x01\n\x1a\x43onnectorConfigMirrorMaker\x12\x44\n\x0esource_cluster\x18\x01 \x01(\x0b\x32,.yandex.cloud.mdb.kafka.v1.ClusterConnection\x12\x44\n\x0etarget_cluster\x18\x02 \x01(\x0b\x32,.yandex.cloud.mdb.kafka.v1.ClusterConnection\x12\x0e\n\x06topics\x18\x03 \x01(\t\x12\x37\n\x12replication_factor\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"\xca\x01\n\x11\x43lusterConnection\x12\r\n\x05\x61lias\x18\x01 \x01(\t\x12>\n\x0cthis_cluster\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.kafka.v1.ThisClusterH\x00\x12P\n\x10\x65xternal_cluster\x18\x03 \x01(\x0b\x32\x34.yandex.cloud.mdb.kafka.v1.ExternalClusterConnectionH\x00\x42\x14\n\x12\x63luster_connection\"\r\n\x0bThisCluster\"\x80\x01\n\x19\x45xternalClusterConnection\x12\x19\n\x11\x62ootstrap_servers\x18\x01 \x01(\t\x12\x15\n\rsasl_username\x18\x02 \x01(\t\x12\x16\n\x0esasl_mechanism\x18\x04 \x01(\t\x12\x19\n\x11security_protocol\x18\x05 \x01(\t\"\xbd\x01\n\x15\x43onnectorConfigS3Sink\x12\x0e\n\x06topics\x18\x01 \x01(\t\x12\x1d\n\x15\x66ile_compression_type\x18\x02 \x01(\t\x12\x35\n\x10\x66ile_max_records\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12>\n\rs3_connection\x18\x04 \x01(\x0b\x32\'.yandex.cloud.mdb.kafka.v1.S3Connection\"s\n\x0cS3Connection\x12\x13\n\x0b\x62ucket_name\x18\x01 \x01(\t\x12\x43\n\x0b\x65xternal_s3\x18\x02 \x01(\x0b\x32,.yandex.cloud.mdb.kafka.v1.ExternalS3StorageH\x00\x42\t\n\x07storage\"L\n\x11\x45xternalS3Storage\x12\x15\n\raccess_key_id\x18\x01 \x01(\t\x12\x10\n\x08\x65ndpoint\x18\x02 \x01(\t\x12\x0e\n\x06region\x18\x03 \x01(\tBd\n\x1dyandex.cloud.api.mdb.kafka.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/kafka/v1;kafkab\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,])
 
@@ -51,8 +51,8 @@ _CONNECTOR_HEALTH = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2155,
-  serialized_end=2204,
+  serialized_start=2764,
+  serialized_end=2813,
 )
 _sym_db.RegisterEnumDescriptor(_CONNECTOR_HEALTH)
 
@@ -86,8 +86,8 @@ _CONNECTOR_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2206,
-  serialized_end=2270,
+  serialized_start=2815,
+  serialized_end=2879,
 )
 _sym_db.RegisterEnumDescriptor(_CONNECTOR_STATUS)
 
@@ -487,6 +487,202 @@ _EXTERNALCLUSTERCONNECTIONSPEC = _descriptor.Descriptor(
 )
 
 
+_CONNECTORCONFIGS3SINKSPEC = _descriptor.Descriptor(
+  name='ConnectorConfigS3SinkSpec',
+  full_name='yandex.cloud.mdb.kafka.v1.ConnectorConfigS3SinkSpec',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='topics', full_name='yandex.cloud.mdb.kafka.v1.ConnectorConfigS3SinkSpec.topics', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='file_compression_type', full_name='yandex.cloud.mdb.kafka.v1.ConnectorConfigS3SinkSpec.file_compression_type', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='file_max_records', full_name='yandex.cloud.mdb.kafka.v1.ConnectorConfigS3SinkSpec.file_max_records', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='s3_connection', full_name='yandex.cloud.mdb.kafka.v1.ConnectorConfigS3SinkSpec.s3_connection', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1632,
+  serialized_end=1829,
+)
+
+
+_UPDATECONNECTORCONFIGS3SINKSPEC = _descriptor.Descriptor(
+  name='UpdateConnectorConfigS3SinkSpec',
+  full_name='yandex.cloud.mdb.kafka.v1.UpdateConnectorConfigS3SinkSpec',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='topics', full_name='yandex.cloud.mdb.kafka.v1.UpdateConnectorConfigS3SinkSpec.topics', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='file_max_records', full_name='yandex.cloud.mdb.kafka.v1.UpdateConnectorConfigS3SinkSpec.file_max_records', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='s3_connection', full_name='yandex.cloud.mdb.kafka.v1.UpdateConnectorConfigS3SinkSpec.s3_connection', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1832,
+  serialized_end=2004,
+)
+
+
+_S3CONNECTIONSPEC = _descriptor.Descriptor(
+  name='S3ConnectionSpec',
+  full_name='yandex.cloud.mdb.kafka.v1.S3ConnectionSpec',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='bucket_name', full_name='yandex.cloud.mdb.kafka.v1.S3ConnectionSpec.bucket_name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='external_s3', full_name='yandex.cloud.mdb.kafka.v1.S3ConnectionSpec.external_s3', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='storage', full_name='yandex.cloud.mdb.kafka.v1.S3ConnectionSpec.storage',
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+  ],
+  serialized_start=2006,
+  serialized_end=2129,
+)
+
+
+_EXTERNALS3STORAGESPEC = _descriptor.Descriptor(
+  name='ExternalS3StorageSpec',
+  full_name='yandex.cloud.mdb.kafka.v1.ExternalS3StorageSpec',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='access_key_id', full_name='yandex.cloud.mdb.kafka.v1.ExternalS3StorageSpec.access_key_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='secret_access_key', full_name='yandex.cloud.mdb.kafka.v1.ExternalS3StorageSpec.secret_access_key', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='endpoint', full_name='yandex.cloud.mdb.kafka.v1.ExternalS3StorageSpec.endpoint', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='region', full_name='yandex.cloud.mdb.kafka.v1.ExternalS3StorageSpec.region', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2131,
+  serialized_end=2238,
+)
+
+
 _CONNECTOR_PROPERTIESENTRY = _descriptor.Descriptor(
   name='PropertiesEntry',
   full_name='yandex.cloud.mdb.kafka.v1.Connector.PropertiesEntry',
@@ -608,8 +804,8 @@ _CONNECTOR = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1632,
-  serialized_end=2290,
+  serialized_start=2241,
+  serialized_end=2899,
 )
 
 
@@ -661,8 +857,8 @@ _CONNECTORCONFIGMIRRORMAKER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2293,
-  serialized_end=2534,
+  serialized_start=2902,
+  serialized_end=3143,
 )
 
 
@@ -712,8 +908,8 @@ _CLUSTERCONNECTION = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=2537,
-  serialized_end=2739,
+  serialized_start=3146,
+  serialized_end=3348,
 )
 
 
@@ -737,8 +933,8 @@ _THISCLUSTER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2741,
-  serialized_end=2754,
+  serialized_start=3350,
+  serialized_end=3363,
 )
 
 
@@ -790,195 +986,8 @@ _EXTERNALCLUSTERCONNECTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2757,
-  serialized_end=2885,
-)
-
-
-_S3CONNECTIONSPEC = _descriptor.Descriptor(
-  name='S3ConnectionSpec',
-  full_name='yandex.cloud.mdb.kafka.v1.S3ConnectionSpec',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='bucket_name', full_name='yandex.cloud.mdb.kafka.v1.S3ConnectionSpec.bucket_name', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='external_s3', full_name='yandex.cloud.mdb.kafka.v1.S3ConnectionSpec.external_s3', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-    _descriptor.OneofDescriptor(
-      name='storage', full_name='yandex.cloud.mdb.kafka.v1.S3ConnectionSpec.storage',
-      index=0, containing_type=None,
-      create_key=_descriptor._internal_create_key,
-    fields=[]),
-  ],
-  serialized_start=2887,
-  serialized_end=3010,
-)
-
-
-_EXTERNALS3STORAGESPEC = _descriptor.Descriptor(
-  name='ExternalS3StorageSpec',
-  full_name='yandex.cloud.mdb.kafka.v1.ExternalS3StorageSpec',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='access_key_id', full_name='yandex.cloud.mdb.kafka.v1.ExternalS3StorageSpec.access_key_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='secret_access_key', full_name='yandex.cloud.mdb.kafka.v1.ExternalS3StorageSpec.secret_access_key', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='endpoint', full_name='yandex.cloud.mdb.kafka.v1.ExternalS3StorageSpec.endpoint', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='region', full_name='yandex.cloud.mdb.kafka.v1.ExternalS3StorageSpec.region', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=3012,
-  serialized_end=3119,
-)
-
-
-_S3CONNECTION = _descriptor.Descriptor(
-  name='S3Connection',
-  full_name='yandex.cloud.mdb.kafka.v1.S3Connection',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='bucket_name', full_name='yandex.cloud.mdb.kafka.v1.S3Connection.bucket_name', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='external_s3', full_name='yandex.cloud.mdb.kafka.v1.S3Connection.external_s3', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-    _descriptor.OneofDescriptor(
-      name='storage', full_name='yandex.cloud.mdb.kafka.v1.S3Connection.storage',
-      index=0, containing_type=None,
-      create_key=_descriptor._internal_create_key,
-    fields=[]),
-  ],
-  serialized_start=3121,
-  serialized_end=3236,
-)
-
-
-_EXTERNALS3STORAGE = _descriptor.Descriptor(
-  name='ExternalS3Storage',
-  full_name='yandex.cloud.mdb.kafka.v1.ExternalS3Storage',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='access_key_id', full_name='yandex.cloud.mdb.kafka.v1.ExternalS3Storage.access_key_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='endpoint', full_name='yandex.cloud.mdb.kafka.v1.ExternalS3Storage.endpoint', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='region', full_name='yandex.cloud.mdb.kafka.v1.ExternalS3Storage.region', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=3238,
-  serialized_end=3314,
+  serialized_start=3366,
+  serialized_end=3494,
 )
 
 
@@ -1030,93 +1039,84 @@ _CONNECTORCONFIGS3SINK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3317,
-  serialized_end=3506,
+  serialized_start=3497,
+  serialized_end=3686,
 )
 
 
-_CONNECTORCONFIGS3SINKSPEC = _descriptor.Descriptor(
-  name='ConnectorConfigS3SinkSpec',
-  full_name='yandex.cloud.mdb.kafka.v1.ConnectorConfigS3SinkSpec',
+_S3CONNECTION = _descriptor.Descriptor(
+  name='S3Connection',
+  full_name='yandex.cloud.mdb.kafka.v1.S3Connection',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='topics', full_name='yandex.cloud.mdb.kafka.v1.ConnectorConfigS3SinkSpec.topics', index=0,
+      name='bucket_name', full_name='yandex.cloud.mdb.kafka.v1.S3Connection.bucket_name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='file_compression_type', full_name='yandex.cloud.mdb.kafka.v1.ConnectorConfigS3SinkSpec.file_compression_type', index=1,
+      name='external_s3', full_name='yandex.cloud.mdb.kafka.v1.S3Connection.external_s3', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='storage', full_name='yandex.cloud.mdb.kafka.v1.S3Connection.storage',
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+  ],
+  serialized_start=3688,
+  serialized_end=3803,
+)
+
+
+_EXTERNALS3STORAGE = _descriptor.Descriptor(
+  name='ExternalS3Storage',
+  full_name='yandex.cloud.mdb.kafka.v1.ExternalS3Storage',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='access_key_id', full_name='yandex.cloud.mdb.kafka.v1.ExternalS3Storage.access_key_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='endpoint', full_name='yandex.cloud.mdb.kafka.v1.ExternalS3Storage.endpoint', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='file_max_records', full_name='yandex.cloud.mdb.kafka.v1.ConnectorConfigS3SinkSpec.file_max_records', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='s3_connection', full_name='yandex.cloud.mdb.kafka.v1.ConnectorConfigS3SinkSpec.s3_connection', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=3509,
-  serialized_end=3706,
-)
-
-
-_UPDATECONNECTORCONFIGS3SINKSPEC = _descriptor.Descriptor(
-  name='UpdateConnectorConfigS3SinkSpec',
-  full_name='yandex.cloud.mdb.kafka.v1.UpdateConnectorConfigS3SinkSpec',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='topics', full_name='yandex.cloud.mdb.kafka.v1.UpdateConnectorConfigS3SinkSpec.topics', index=0,
-      number=1, type=9, cpp_type=9, label=1,
+      name='region', full_name='yandex.cloud.mdb.kafka.v1.ExternalS3Storage.region', index=2,
+      number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='file_max_records', full_name='yandex.cloud.mdb.kafka.v1.UpdateConnectorConfigS3SinkSpec.file_max_records', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='s3_connection', full_name='yandex.cloud.mdb.kafka.v1.UpdateConnectorConfigS3SinkSpec.s3_connection', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1129,7 +1129,7 @@ _UPDATECONNECTORCONFIGS3SINKSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3709,
+  serialized_start=3805,
   serialized_end=3881,
 )
 
@@ -1166,6 +1166,14 @@ _CLUSTERCONNECTIONSPEC.fields_by_name['this_cluster'].containing_oneof = _CLUSTE
 _CLUSTERCONNECTIONSPEC.oneofs_by_name['cluster_connection'].fields.append(
   _CLUSTERCONNECTIONSPEC.fields_by_name['external_cluster'])
 _CLUSTERCONNECTIONSPEC.fields_by_name['external_cluster'].containing_oneof = _CLUSTERCONNECTIONSPEC.oneofs_by_name['cluster_connection']
+_CONNECTORCONFIGS3SINKSPEC.fields_by_name['file_max_records'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_CONNECTORCONFIGS3SINKSPEC.fields_by_name['s3_connection'].message_type = _S3CONNECTIONSPEC
+_UPDATECONNECTORCONFIGS3SINKSPEC.fields_by_name['file_max_records'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_UPDATECONNECTORCONFIGS3SINKSPEC.fields_by_name['s3_connection'].message_type = _S3CONNECTIONSPEC
+_S3CONNECTIONSPEC.fields_by_name['external_s3'].message_type = _EXTERNALS3STORAGESPEC
+_S3CONNECTIONSPEC.oneofs_by_name['storage'].fields.append(
+  _S3CONNECTIONSPEC.fields_by_name['external_s3'])
+_S3CONNECTIONSPEC.fields_by_name['external_s3'].containing_oneof = _S3CONNECTIONSPEC.oneofs_by_name['storage']
 _CONNECTOR_PROPERTIESENTRY.containing_type = _CONNECTOR
 _CONNECTOR.fields_by_name['tasks_max'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
 _CONNECTOR.fields_by_name['properties'].message_type = _CONNECTOR_PROPERTIESENTRY
@@ -1192,38 +1200,30 @@ _CLUSTERCONNECTION.fields_by_name['this_cluster'].containing_oneof = _CLUSTERCON
 _CLUSTERCONNECTION.oneofs_by_name['cluster_connection'].fields.append(
   _CLUSTERCONNECTION.fields_by_name['external_cluster'])
 _CLUSTERCONNECTION.fields_by_name['external_cluster'].containing_oneof = _CLUSTERCONNECTION.oneofs_by_name['cluster_connection']
-_S3CONNECTIONSPEC.fields_by_name['external_s3'].message_type = _EXTERNALS3STORAGESPEC
-_S3CONNECTIONSPEC.oneofs_by_name['storage'].fields.append(
-  _S3CONNECTIONSPEC.fields_by_name['external_s3'])
-_S3CONNECTIONSPEC.fields_by_name['external_s3'].containing_oneof = _S3CONNECTIONSPEC.oneofs_by_name['storage']
+_CONNECTORCONFIGS3SINK.fields_by_name['file_max_records'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_CONNECTORCONFIGS3SINK.fields_by_name['s3_connection'].message_type = _S3CONNECTION
 _S3CONNECTION.fields_by_name['external_s3'].message_type = _EXTERNALS3STORAGE
 _S3CONNECTION.oneofs_by_name['storage'].fields.append(
   _S3CONNECTION.fields_by_name['external_s3'])
 _S3CONNECTION.fields_by_name['external_s3'].containing_oneof = _S3CONNECTION.oneofs_by_name['storage']
-_CONNECTORCONFIGS3SINK.fields_by_name['file_max_records'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
-_CONNECTORCONFIGS3SINK.fields_by_name['s3_connection'].message_type = _S3CONNECTION
-_CONNECTORCONFIGS3SINKSPEC.fields_by_name['file_max_records'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
-_CONNECTORCONFIGS3SINKSPEC.fields_by_name['s3_connection'].message_type = _S3CONNECTIONSPEC
-_UPDATECONNECTORCONFIGS3SINKSPEC.fields_by_name['file_max_records'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
-_UPDATECONNECTORCONFIGS3SINKSPEC.fields_by_name['s3_connection'].message_type = _S3CONNECTIONSPEC
 DESCRIPTOR.message_types_by_name['ConnectorSpec'] = _CONNECTORSPEC
 DESCRIPTOR.message_types_by_name['UpdateConnectorSpec'] = _UPDATECONNECTORSPEC
 DESCRIPTOR.message_types_by_name['ConnectorConfigMirrorMakerSpec'] = _CONNECTORCONFIGMIRRORMAKERSPEC
 DESCRIPTOR.message_types_by_name['ClusterConnectionSpec'] = _CLUSTERCONNECTIONSPEC
 DESCRIPTOR.message_types_by_name['ThisClusterSpec'] = _THISCLUSTERSPEC
 DESCRIPTOR.message_types_by_name['ExternalClusterConnectionSpec'] = _EXTERNALCLUSTERCONNECTIONSPEC
+DESCRIPTOR.message_types_by_name['ConnectorConfigS3SinkSpec'] = _CONNECTORCONFIGS3SINKSPEC
+DESCRIPTOR.message_types_by_name['UpdateConnectorConfigS3SinkSpec'] = _UPDATECONNECTORCONFIGS3SINKSPEC
+DESCRIPTOR.message_types_by_name['S3ConnectionSpec'] = _S3CONNECTIONSPEC
+DESCRIPTOR.message_types_by_name['ExternalS3StorageSpec'] = _EXTERNALS3STORAGESPEC
 DESCRIPTOR.message_types_by_name['Connector'] = _CONNECTOR
 DESCRIPTOR.message_types_by_name['ConnectorConfigMirrorMaker'] = _CONNECTORCONFIGMIRRORMAKER
 DESCRIPTOR.message_types_by_name['ClusterConnection'] = _CLUSTERCONNECTION
 DESCRIPTOR.message_types_by_name['ThisCluster'] = _THISCLUSTER
 DESCRIPTOR.message_types_by_name['ExternalClusterConnection'] = _EXTERNALCLUSTERCONNECTION
-DESCRIPTOR.message_types_by_name['S3ConnectionSpec'] = _S3CONNECTIONSPEC
-DESCRIPTOR.message_types_by_name['ExternalS3StorageSpec'] = _EXTERNALS3STORAGESPEC
+DESCRIPTOR.message_types_by_name['ConnectorConfigS3Sink'] = _CONNECTORCONFIGS3SINK
 DESCRIPTOR.message_types_by_name['S3Connection'] = _S3CONNECTION
 DESCRIPTOR.message_types_by_name['ExternalS3Storage'] = _EXTERNALS3STORAGE
-DESCRIPTOR.message_types_by_name['ConnectorConfigS3Sink'] = _CONNECTORCONFIGS3SINK
-DESCRIPTOR.message_types_by_name['ConnectorConfigS3SinkSpec'] = _CONNECTORCONFIGS3SINKSPEC
-DESCRIPTOR.message_types_by_name['UpdateConnectorConfigS3SinkSpec'] = _UPDATECONNECTORCONFIGS3SINKSPEC
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 ConnectorSpec = _reflection.GeneratedProtocolMessageType('ConnectorSpec', (_message.Message,), {
@@ -1284,6 +1284,34 @@ ExternalClusterConnectionSpec = _reflection.GeneratedProtocolMessageType('Extern
   })
 _sym_db.RegisterMessage(ExternalClusterConnectionSpec)
 
+ConnectorConfigS3SinkSpec = _reflection.GeneratedProtocolMessageType('ConnectorConfigS3SinkSpec', (_message.Message,), {
+  'DESCRIPTOR' : _CONNECTORCONFIGS3SINKSPEC,
+  '__module__' : 'yandex.cloud.mdb.kafka.v1.connector_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.kafka.v1.ConnectorConfigS3SinkSpec)
+  })
+_sym_db.RegisterMessage(ConnectorConfigS3SinkSpec)
+
+UpdateConnectorConfigS3SinkSpec = _reflection.GeneratedProtocolMessageType('UpdateConnectorConfigS3SinkSpec', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATECONNECTORCONFIGS3SINKSPEC,
+  '__module__' : 'yandex.cloud.mdb.kafka.v1.connector_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.kafka.v1.UpdateConnectorConfigS3SinkSpec)
+  })
+_sym_db.RegisterMessage(UpdateConnectorConfigS3SinkSpec)
+
+S3ConnectionSpec = _reflection.GeneratedProtocolMessageType('S3ConnectionSpec', (_message.Message,), {
+  'DESCRIPTOR' : _S3CONNECTIONSPEC,
+  '__module__' : 'yandex.cloud.mdb.kafka.v1.connector_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.kafka.v1.S3ConnectionSpec)
+  })
+_sym_db.RegisterMessage(S3ConnectionSpec)
+
+ExternalS3StorageSpec = _reflection.GeneratedProtocolMessageType('ExternalS3StorageSpec', (_message.Message,), {
+  'DESCRIPTOR' : _EXTERNALS3STORAGESPEC,
+  '__module__' : 'yandex.cloud.mdb.kafka.v1.connector_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.kafka.v1.ExternalS3StorageSpec)
+  })
+_sym_db.RegisterMessage(ExternalS3StorageSpec)
+
 Connector = _reflection.GeneratedProtocolMessageType('Connector', (_message.Message,), {
 
   'PropertiesEntry' : _reflection.GeneratedProtocolMessageType('PropertiesEntry', (_message.Message,), {
@@ -1327,19 +1355,12 @@ ExternalClusterConnection = _reflection.GeneratedProtocolMessageType('ExternalCl
   })
 _sym_db.RegisterMessage(ExternalClusterConnection)
 
-S3ConnectionSpec = _reflection.GeneratedProtocolMessageType('S3ConnectionSpec', (_message.Message,), {
-  'DESCRIPTOR' : _S3CONNECTIONSPEC,
+ConnectorConfigS3Sink = _reflection.GeneratedProtocolMessageType('ConnectorConfigS3Sink', (_message.Message,), {
+  'DESCRIPTOR' : _CONNECTORCONFIGS3SINK,
   '__module__' : 'yandex.cloud.mdb.kafka.v1.connector_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.kafka.v1.S3ConnectionSpec)
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.kafka.v1.ConnectorConfigS3Sink)
   })
-_sym_db.RegisterMessage(S3ConnectionSpec)
-
-ExternalS3StorageSpec = _reflection.GeneratedProtocolMessageType('ExternalS3StorageSpec', (_message.Message,), {
-  'DESCRIPTOR' : _EXTERNALS3STORAGESPEC,
-  '__module__' : 'yandex.cloud.mdb.kafka.v1.connector_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.kafka.v1.ExternalS3StorageSpec)
-  })
-_sym_db.RegisterMessage(ExternalS3StorageSpec)
+_sym_db.RegisterMessage(ConnectorConfigS3Sink)
 
 S3Connection = _reflection.GeneratedProtocolMessageType('S3Connection', (_message.Message,), {
   'DESCRIPTOR' : _S3CONNECTION,
@@ -1354,27 +1375,6 @@ ExternalS3Storage = _reflection.GeneratedProtocolMessageType('ExternalS3Storage'
   # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.kafka.v1.ExternalS3Storage)
   })
 _sym_db.RegisterMessage(ExternalS3Storage)
-
-ConnectorConfigS3Sink = _reflection.GeneratedProtocolMessageType('ConnectorConfigS3Sink', (_message.Message,), {
-  'DESCRIPTOR' : _CONNECTORCONFIGS3SINK,
-  '__module__' : 'yandex.cloud.mdb.kafka.v1.connector_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.kafka.v1.ConnectorConfigS3Sink)
-  })
-_sym_db.RegisterMessage(ConnectorConfigS3Sink)
-
-ConnectorConfigS3SinkSpec = _reflection.GeneratedProtocolMessageType('ConnectorConfigS3SinkSpec', (_message.Message,), {
-  'DESCRIPTOR' : _CONNECTORCONFIGS3SINKSPEC,
-  '__module__' : 'yandex.cloud.mdb.kafka.v1.connector_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.kafka.v1.ConnectorConfigS3SinkSpec)
-  })
-_sym_db.RegisterMessage(ConnectorConfigS3SinkSpec)
-
-UpdateConnectorConfigS3SinkSpec = _reflection.GeneratedProtocolMessageType('UpdateConnectorConfigS3SinkSpec', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATECONNECTORCONFIGS3SINKSPEC,
-  '__module__' : 'yandex.cloud.mdb.kafka.v1.connector_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.kafka.v1.UpdateConnectorConfigS3SinkSpec)
-  })
-_sym_db.RegisterMessage(UpdateConnectorConfigS3SinkSpec)
 
 
 DESCRIPTOR._options = None

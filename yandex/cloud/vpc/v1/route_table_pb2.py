@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\027yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpc',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n%yandex/cloud/vpc/v1/route_table.proto\x12\x13yandex.cloud.vpc.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xb7\x02\n\nRouteTable\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12;\n\x06labels\x18\x06 \x03(\x0b\x32+.yandex.cloud.vpc.v1.RouteTable.LabelsEntry\x12\x12\n\nnetwork_id\x18\x07 \x01(\t\x12\x37\n\rstatic_routes\x18\x08 \x03(\x0b\x32 .yandex.cloud.vpc.v1.StaticRoute\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xcf\x01\n\x0bStaticRoute\x12\x1c\n\x12\x64\x65stination_prefix\x18\x01 \x01(\tH\x00\x12\x1a\n\x10next_hop_address\x18\x02 \x01(\tH\x01\x12<\n\x06labels\x18\x03 \x03(\x0b\x32,.yandex.cloud.vpc.v1.StaticRoute.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\r\n\x0b\x64\x65stinationB\n\n\x08next_hopBV\n\x17yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpcb\x06proto3'
+  serialized_pb=b'\n%yandex/cloud/vpc/v1/route_table.proto\x12\x13yandex.cloud.vpc.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xb7\x02\n\nRouteTable\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12;\n\x06labels\x18\x06 \x03(\x0b\x32+.yandex.cloud.vpc.v1.RouteTable.LabelsEntry\x12\x12\n\nnetwork_id\x18\x07 \x01(\t\x12\x37\n\rstatic_routes\x18\x08 \x03(\x0b\x32 .yandex.cloud.vpc.v1.StaticRoute\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xe5\x01\n\x0bStaticRoute\x12\x1c\n\x12\x64\x65stination_prefix\x18\x01 \x01(\tH\x00\x12\x1a\n\x10next_hop_address\x18\x02 \x01(\tH\x01\x12\x14\n\ngateway_id\x18\x04 \x01(\tH\x01\x12<\n\x06labels\x18\x03 \x03(\x0b\x32,.yandex.cloud.vpc.v1.StaticRoute.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\r\n\x0b\x64\x65stinationB\n\n\x08next_hopBV\n\x17yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpcb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
@@ -207,7 +207,14 @@ _STATICROUTE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='yandex.cloud.vpc.v1.StaticRoute.labels', index=2,
+      name='gateway_id', full_name='yandex.cloud.vpc.v1.StaticRoute.gateway_id', index=2,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='labels', full_name='yandex.cloud.vpc.v1.StaticRoute.labels', index=3,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -236,7 +243,7 @@ _STATICROUTE = _descriptor.Descriptor(
     fields=[]),
   ],
   serialized_start=410,
-  serialized_end=617,
+  serialized_end=639,
 )
 
 _ROUTETABLE_LABELSENTRY.containing_type = _ROUTETABLE
@@ -251,6 +258,9 @@ _STATICROUTE.fields_by_name['destination_prefix'].containing_oneof = _STATICROUT
 _STATICROUTE.oneofs_by_name['next_hop'].fields.append(
   _STATICROUTE.fields_by_name['next_hop_address'])
 _STATICROUTE.fields_by_name['next_hop_address'].containing_oneof = _STATICROUTE.oneofs_by_name['next_hop']
+_STATICROUTE.oneofs_by_name['next_hop'].fields.append(
+  _STATICROUTE.fields_by_name['gateway_id'])
+_STATICROUTE.fields_by_name['gateway_id'].containing_oneof = _STATICROUTE.oneofs_by_name['next_hop']
 DESCRIPTOR.message_types_by_name['RouteTable'] = _ROUTETABLE
 DESCRIPTOR.message_types_by_name['StaticRoute'] = _STATICROUTE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)

@@ -15,6 +15,7 @@ from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.compute.v1 import disk_pb2 as yandex_dot_cloud_dot_compute_dot_v1_dot_disk__pb2
+from yandex.cloud.compute.v1 import snapshot_schedule_pb2 as yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__schedule__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
@@ -25,9 +26,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\033yandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;compute',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n*yandex/cloud/compute/v1/disk_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a\"yandex/cloud/compute/v1/disk.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"/\n\x0eGetDiskRequest\x12\x1d\n\x07\x64isk_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x8d\x01\n\x10ListDisksRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"Z\n\x11ListDisksResponse\x12,\n\x05\x64isks\x18\x01 \x03(\x0b\x32\x1d.yandex.cloud.compute.v1.Disk\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xdb\x04\n\x11\x43reateDiskRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\x04name\x18\x02 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8f\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x36.yandex.cloud.compute.v1.CreateDiskRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x19\n\x07type_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\x07zone_id\x18\x06 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12,\n\x04size\x18\x07 \x01(\x03\x42\x1e\xe8\xc7\x31\x01\xfa\xc7\x31\x16\x34\x31\x39\x34\x33\x30\x34-28587302322176\x12\x1c\n\x08image_id\x18\x08 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1f\n\x0bsnapshot_id\x18\t \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x12\n\nblock_size\x18\n \x01(\x03\x12K\n\x15\x64isk_placement_policy\x18\x0b \x01(\x0b\x32,.yandex.cloud.compute.v1.DiskPlacementPolicy\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x08\n\x06source\"%\n\x12\x43reateDiskMetadata\x12\x0f\n\x07\x64isk_id\x18\x01 \x01(\t\"\xee\x03\n\x11UpdateDiskRequest\x12\x1d\n\x07\x64isk_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8f\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x36.yandex.cloud.compute.v1.UpdateDiskRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\'\n\x04size\x18\x06 \x01(\x03\x42\x19\xfa\xc7\x31\x15\x34\x31\x39\x34\x33\x30\x34-4398046511104\x12K\n\x15\x64isk_placement_policy\x18\x07 \x01(\x0b\x32,.yandex.cloud.compute.v1.DiskPlacementPolicy\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"%\n\x12UpdateDiskMetadata\x12\x0f\n\x07\x64isk_id\x18\x01 \x01(\t\"2\n\x11\x44\x65leteDiskRequest\x12\x1d\n\x07\x64isk_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"%\n\x12\x44\x65leteDiskMetadata\x12\x0f\n\x07\x64isk_id\x18\x01 \x01(\t\"x\n\x19ListDiskOperationsRequest\x12\x1d\n\x07\x64isk_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"l\n\x1aListDiskOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"]\n\x0fMoveDiskRequest\x12\x1d\n\x07\x64isk_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12+\n\x15\x64\x65stination_folder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\\\n\x10MoveDiskMetadata\x12\x0f\n\x07\x64isk_id\x18\x01 \x01(\t\x12\x18\n\x10source_folder_id\x18\x02 \x01(\t\x12\x1d\n\x15\x64\x65stination_folder_id\x18\x03 \x01(\t2\xaa\x08\n\x0b\x44iskService\x12r\n\x03Get\x12\'.yandex.cloud.compute.v1.GetDiskRequest\x1a\x1d.yandex.cloud.compute.v1.Disk\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/compute/v1/disks/{disk_id}\x12x\n\x04List\x12).yandex.cloud.compute.v1.ListDisksRequest\x1a*.yandex.cloud.compute.v1.ListDisksResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/compute/v1/disks\x12\x93\x01\n\x06\x43reate\x12*.yandex.cloud.compute.v1.CreateDiskRequest\x1a!.yandex.cloud.operation.Operation\":\x82\xd3\xe4\x93\x02\x16\"\x11/compute/v1/disks:\x01*\xb2\xd2*\x1a\n\x12\x43reateDiskMetadata\x12\x04\x44isk\x12\x9d\x01\n\x06Update\x12*.yandex.cloud.compute.v1.UpdateDiskRequest\x1a!.yandex.cloud.operation.Operation\"D\x82\xd3\xe4\x93\x02 2\x1b/compute/v1/disks/{disk_id}:\x01*\xb2\xd2*\x1a\n\x12UpdateDiskMetadata\x12\x04\x44isk\x12\xab\x01\n\x06\x44\x65lete\x12*.yandex.cloud.compute.v1.DeleteDiskRequest\x1a!.yandex.cloud.operation.Operation\"R\x82\xd3\xe4\x93\x02\x1d*\x1b/compute/v1/disks/{disk_id}\xb2\xd2*+\n\x12\x44\x65leteDiskMetadata\x12\x15google.protobuf.Empty\x12\xa9\x01\n\x0eListOperations\x12\x32.yandex.cloud.compute.v1.ListDiskOperationsRequest\x1a\x33.yandex.cloud.compute.v1.ListDiskOperationsResponse\".\x82\xd3\xe4\x93\x02(\x12&/compute/v1/disks/{disk_id}/operations\x12\x9c\x01\n\x04Move\x12(.yandex.cloud.compute.v1.MoveDiskRequest\x1a!.yandex.cloud.operation.Operation\"G\x82\xd3\xe4\x93\x02%\" /compute/v1/disks/{disk_id}:move:\x01*\xb2\xd2*\x18\n\x10MoveDiskMetadata\x12\x04\x44iskBb\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3'
+  serialized_pb=b'\n*yandex/cloud/compute/v1/disk_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a\"yandex/cloud/compute/v1/disk.proto\x1a/yandex/cloud/compute/v1/snapshot_schedule.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"/\n\x0eGetDiskRequest\x12\x1d\n\x07\x64isk_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x8d\x01\n\x10ListDisksRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"Z\n\x11ListDisksResponse\x12,\n\x05\x64isks\x18\x01 \x03(\x0b\x32\x1d.yandex.cloud.compute.v1.Disk\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xfa\x04\n\x11\x43reateDiskRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\x04name\x18\x02 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8f\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x36.yandex.cloud.compute.v1.CreateDiskRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x19\n\x07type_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\x07zone_id\x18\x06 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12,\n\x04size\x18\x07 \x01(\x03\x42\x1e\xe8\xc7\x31\x01\xfa\xc7\x31\x16\x34\x31\x39\x34\x33\x30\x34-28587302322176\x12\x1c\n\x08image_id\x18\x08 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1f\n\x0bsnapshot_id\x18\t \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x12\n\nblock_size\x18\n \x01(\x03\x12K\n\x15\x64isk_placement_policy\x18\x0b \x01(\x0b\x32,.yandex.cloud.compute.v1.DiskPlacementPolicy\x12\x1d\n\x15snapshot_schedule_ids\x18\x0c \x03(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x08\n\x06source\"%\n\x12\x43reateDiskMetadata\x12\x0f\n\x07\x64isk_id\x18\x01 \x01(\t\"\xee\x03\n\x11UpdateDiskRequest\x12\x1d\n\x07\x64isk_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8f\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x36.yandex.cloud.compute.v1.UpdateDiskRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\'\n\x04size\x18\x06 \x01(\x03\x42\x19\xfa\xc7\x31\x15\x34\x31\x39\x34\x33\x30\x34-4398046511104\x12K\n\x15\x64isk_placement_policy\x18\x07 \x01(\x0b\x32,.yandex.cloud.compute.v1.DiskPlacementPolicy\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"%\n\x12UpdateDiskMetadata\x12\x0f\n\x07\x64isk_id\x18\x01 \x01(\t\"2\n\x11\x44\x65leteDiskRequest\x12\x1d\n\x07\x64isk_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"%\n\x12\x44\x65leteDiskMetadata\x12\x0f\n\x07\x64isk_id\x18\x01 \x01(\t\"x\n\x19ListDiskOperationsRequest\x12\x1d\n\x07\x64isk_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"l\n\x1aListDiskOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"]\n\x0fMoveDiskRequest\x12\x1d\n\x07\x64isk_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12+\n\x15\x64\x65stination_folder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\\\n\x10MoveDiskMetadata\x12\x0f\n\x07\x64isk_id\x18\x01 \x01(\t\x12\x18\n\x10source_folder_id\x18\x02 \x01(\t\x12\x1d\n\x15\x64\x65stination_folder_id\x18\x03 \x01(\t\"Z\n ListDiskSnapshotSchedulesRequest\x12\x0f\n\x07\x64isk_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x83\x01\n!ListDiskSnapshotSchedulesResponse\x12\x45\n\x12snapshot_schedules\x18\x01 \x03(\x0b\x32).yandex.cloud.compute.v1.SnapshotSchedule\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xbb\t\n\x0b\x44iskService\x12r\n\x03Get\x12\'.yandex.cloud.compute.v1.GetDiskRequest\x1a\x1d.yandex.cloud.compute.v1.Disk\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/compute/v1/disks/{disk_id}\x12x\n\x04List\x12).yandex.cloud.compute.v1.ListDisksRequest\x1a*.yandex.cloud.compute.v1.ListDisksResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/compute/v1/disks\x12\x93\x01\n\x06\x43reate\x12*.yandex.cloud.compute.v1.CreateDiskRequest\x1a!.yandex.cloud.operation.Operation\":\x82\xd3\xe4\x93\x02\x16\"\x11/compute/v1/disks:\x01*\xb2\xd2*\x1a\n\x12\x43reateDiskMetadata\x12\x04\x44isk\x12\x9d\x01\n\x06Update\x12*.yandex.cloud.compute.v1.UpdateDiskRequest\x1a!.yandex.cloud.operation.Operation\"D\x82\xd3\xe4\x93\x02 2\x1b/compute/v1/disks/{disk_id}:\x01*\xb2\xd2*\x1a\n\x12UpdateDiskMetadata\x12\x04\x44isk\x12\xab\x01\n\x06\x44\x65lete\x12*.yandex.cloud.compute.v1.DeleteDiskRequest\x1a!.yandex.cloud.operation.Operation\"R\x82\xd3\xe4\x93\x02\x1d*\x1b/compute/v1/disks/{disk_id}\xb2\xd2*+\n\x12\x44\x65leteDiskMetadata\x12\x15google.protobuf.Empty\x12\xa9\x01\n\x0eListOperations\x12\x32.yandex.cloud.compute.v1.ListDiskOperationsRequest\x1a\x33.yandex.cloud.compute.v1.ListDiskOperationsResponse\".\x82\xd3\xe4\x93\x02(\x12&/compute/v1/disks/{disk_id}/operations\x12\x9c\x01\n\x04Move\x12(.yandex.cloud.compute.v1.MoveDiskRequest\x1a!.yandex.cloud.operation.Operation\"G\x82\xd3\xe4\x93\x02%\" /compute/v1/disks/{disk_id}:move:\x01*\xb2\xd2*\x18\n\x10MoveDiskMetadata\x12\x04\x44isk\x12\x8e\x01\n\x15ListSnapshotSchedules\x12\x39.yandex.cloud.compute.v1.ListDiskSnapshotSchedulesRequest\x1a:.yandex.cloud.compute.v1.ListDiskSnapshotSchedulesResponseBb\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3'
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_compute_dot_v1_dot_disk__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_compute_dot_v1_dot_disk__pb2.DESCRIPTOR,yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__schedule__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
 
 
@@ -59,8 +60,8 @@ _GETDISKREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=276,
-  serialized_end=323,
+  serialized_start=325,
+  serialized_end=372,
 )
 
 
@@ -112,8 +113,8 @@ _LISTDISKSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=326,
-  serialized_end=467,
+  serialized_start=375,
+  serialized_end=516,
 )
 
 
@@ -151,8 +152,8 @@ _LISTDISKSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=469,
-  serialized_end=559,
+  serialized_start=518,
+  serialized_end=608,
 )
 
 
@@ -190,8 +191,8 @@ _CREATEDISKREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1110,
-  serialized_end=1155,
+  serialized_start=1190,
+  serialized_end=1235,
 )
 
 _CREATEDISKREQUEST = _descriptor.Descriptor(
@@ -279,6 +280,13 @@ _CREATEDISKREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='snapshot_schedule_ids', full_name='yandex.cloud.compute.v1.CreateDiskRequest.snapshot_schedule_ids', index=11,
+      number=12, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -296,8 +304,8 @@ _CREATEDISKREQUEST = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=562,
-  serialized_end=1165,
+  serialized_start=611,
+  serialized_end=1245,
 )
 
 
@@ -328,8 +336,8 @@ _CREATEDISKMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1167,
-  serialized_end=1204,
+  serialized_start=1247,
+  serialized_end=1284,
 )
 
 
@@ -367,8 +375,8 @@ _UPDATEDISKREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1110,
-  serialized_end=1155,
+  serialized_start=1190,
+  serialized_end=1235,
 )
 
 _UPDATEDISKREQUEST = _descriptor.Descriptor(
@@ -440,8 +448,8 @@ _UPDATEDISKREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1207,
-  serialized_end=1701,
+  serialized_start=1287,
+  serialized_end=1781,
 )
 
 
@@ -472,8 +480,8 @@ _UPDATEDISKMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1703,
-  serialized_end=1740,
+  serialized_start=1783,
+  serialized_end=1820,
 )
 
 
@@ -504,8 +512,8 @@ _DELETEDISKREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1742,
-  serialized_end=1792,
+  serialized_start=1822,
+  serialized_end=1872,
 )
 
 
@@ -536,8 +544,8 @@ _DELETEDISKMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1794,
-  serialized_end=1831,
+  serialized_start=1874,
+  serialized_end=1911,
 )
 
 
@@ -582,8 +590,8 @@ _LISTDISKOPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1833,
-  serialized_end=1953,
+  serialized_start=1913,
+  serialized_end=2033,
 )
 
 
@@ -621,8 +629,8 @@ _LISTDISKOPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1955,
-  serialized_end=2063,
+  serialized_start=2035,
+  serialized_end=2143,
 )
 
 
@@ -660,8 +668,8 @@ _MOVEDISKREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2065,
-  serialized_end=2158,
+  serialized_start=2145,
+  serialized_end=2238,
 )
 
 
@@ -706,8 +714,93 @@ _MOVEDISKMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2160,
-  serialized_end=2252,
+  serialized_start=2240,
+  serialized_end=2332,
+)
+
+
+_LISTDISKSNAPSHOTSCHEDULESREQUEST = _descriptor.Descriptor(
+  name='ListDiskSnapshotSchedulesRequest',
+  full_name='yandex.cloud.compute.v1.ListDiskSnapshotSchedulesRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='disk_id', full_name='yandex.cloud.compute.v1.ListDiskSnapshotSchedulesRequest.disk_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='page_size', full_name='yandex.cloud.compute.v1.ListDiskSnapshotSchedulesRequest.page_size', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='page_token', full_name='yandex.cloud.compute.v1.ListDiskSnapshotSchedulesRequest.page_token', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2334,
+  serialized_end=2424,
+)
+
+
+_LISTDISKSNAPSHOTSCHEDULESRESPONSE = _descriptor.Descriptor(
+  name='ListDiskSnapshotSchedulesResponse',
+  full_name='yandex.cloud.compute.v1.ListDiskSnapshotSchedulesResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='snapshot_schedules', full_name='yandex.cloud.compute.v1.ListDiskSnapshotSchedulesResponse.snapshot_schedules', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='next_page_token', full_name='yandex.cloud.compute.v1.ListDiskSnapshotSchedulesResponse.next_page_token', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2427,
+  serialized_end=2558,
 )
 
 _LISTDISKSRESPONSE.fields_by_name['disks'].message_type = yandex_dot_cloud_dot_compute_dot_v1_dot_disk__pb2._DISK
@@ -725,6 +818,7 @@ _UPDATEDISKREQUEST.fields_by_name['update_mask'].message_type = google_dot_proto
 _UPDATEDISKREQUEST.fields_by_name['labels'].message_type = _UPDATEDISKREQUEST_LABELSENTRY
 _UPDATEDISKREQUEST.fields_by_name['disk_placement_policy'].message_type = yandex_dot_cloud_dot_compute_dot_v1_dot_disk__pb2._DISKPLACEMENTPOLICY
 _LISTDISKOPERATIONSRESPONSE.fields_by_name['operations'].message_type = yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION
+_LISTDISKSNAPSHOTSCHEDULESRESPONSE.fields_by_name['snapshot_schedules'].message_type = yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__schedule__pb2._SNAPSHOTSCHEDULE
 DESCRIPTOR.message_types_by_name['GetDiskRequest'] = _GETDISKREQUEST
 DESCRIPTOR.message_types_by_name['ListDisksRequest'] = _LISTDISKSREQUEST
 DESCRIPTOR.message_types_by_name['ListDisksResponse'] = _LISTDISKSRESPONSE
@@ -738,6 +832,8 @@ DESCRIPTOR.message_types_by_name['ListDiskOperationsRequest'] = _LISTDISKOPERATI
 DESCRIPTOR.message_types_by_name['ListDiskOperationsResponse'] = _LISTDISKOPERATIONSRESPONSE
 DESCRIPTOR.message_types_by_name['MoveDiskRequest'] = _MOVEDISKREQUEST
 DESCRIPTOR.message_types_by_name['MoveDiskMetadata'] = _MOVEDISKMETADATA
+DESCRIPTOR.message_types_by_name['ListDiskSnapshotSchedulesRequest'] = _LISTDISKSNAPSHOTSCHEDULESREQUEST
+DESCRIPTOR.message_types_by_name['ListDiskSnapshotSchedulesResponse'] = _LISTDISKSNAPSHOTSCHEDULESRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 GetDiskRequest = _reflection.GeneratedProtocolMessageType('GetDiskRequest', (_message.Message,), {
@@ -847,6 +943,20 @@ MoveDiskMetadata = _reflection.GeneratedProtocolMessageType('MoveDiskMetadata', 
   })
 _sym_db.RegisterMessage(MoveDiskMetadata)
 
+ListDiskSnapshotSchedulesRequest = _reflection.GeneratedProtocolMessageType('ListDiskSnapshotSchedulesRequest', (_message.Message,), {
+  'DESCRIPTOR' : _LISTDISKSNAPSHOTSCHEDULESREQUEST,
+  '__module__' : 'yandex.cloud.compute.v1.disk_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.ListDiskSnapshotSchedulesRequest)
+  })
+_sym_db.RegisterMessage(ListDiskSnapshotSchedulesRequest)
+
+ListDiskSnapshotSchedulesResponse = _reflection.GeneratedProtocolMessageType('ListDiskSnapshotSchedulesResponse', (_message.Message,), {
+  'DESCRIPTOR' : _LISTDISKSNAPSHOTSCHEDULESRESPONSE,
+  '__module__' : 'yandex.cloud.compute.v1.disk_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.ListDiskSnapshotSchedulesResponse)
+  })
+_sym_db.RegisterMessage(ListDiskSnapshotSchedulesResponse)
+
 
 DESCRIPTOR._options = None
 _GETDISKREQUEST.fields_by_name['disk_id']._options = None
@@ -884,8 +994,8 @@ _DISKSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=2255,
-  serialized_end=3321,
+  serialized_start=2561,
+  serialized_end=3772,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
@@ -955,6 +1065,16 @@ _DISKSERVICE = _descriptor.ServiceDescriptor(
     input_type=_MOVEDISKREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
     serialized_options=b'\202\323\344\223\002%\" /compute/v1/disks/{disk_id}:move:\001*\262\322*\030\n\020MoveDiskMetadata\022\004Disk',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ListSnapshotSchedules',
+    full_name='yandex.cloud.compute.v1.DiskService.ListSnapshotSchedules',
+    index=7,
+    containing_service=None,
+    input_type=_LISTDISKSNAPSHOTSCHEDULESREQUEST,
+    output_type=_LISTDISKSNAPSHOTSCHEDULESRESPONSE,
+    serialized_options=None,
     create_key=_descriptor._internal_create_key,
   ),
 ])
