@@ -21,11 +21,81 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n)yandex.cloud.api.mdb.postgresql.v1.configZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1/config;postgresql',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n5yandex/cloud/mdb/postgresql/v1/config/host12_1c.proto\x12%yandex.cloud.mdb.postgresql.v1.config\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\xff.\n\x19PostgresqlHostConfig12_1C\x12=\n\x18recovery_min_apply_delay\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x33\n\x0eshared_buffers\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x31\n\x0ctemp_buffers\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12-\n\x08work_mem\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x34\n\x0ftemp_file_limit\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x44\n\x13\x62\x61\x63kend_flush_after\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\n\xfa\xc7\x31\x06\x30-2048\x12I\n\x16old_snapshot_threshold\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0c\xfa\xc7\x31\x08-1-86400\x12@\n\x1bmax_standby_streaming_delay\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12r\n\x14\x63onstraint_exclusion\x18\t \x01(\x0e\x32T.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig12_1C.ConstraintExclusion\x12;\n\x15\x63ursor_tuple_fraction\x18\n \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\x12J\n\x13\x66rom_collapse_limit\x18\x0b \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x10\xfa\xc7\x31\x0c\x31-2147483647\x12J\n\x13join_collapse_limit\x18\x0c \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x10\xfa\xc7\x31\x0c\x31-2147483647\x12o\n\x13\x66orce_parallel_mode\x18\r \x01(\x0e\x32R.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig12_1C.ForceParallelMode\x12\x66\n\x13\x63lient_min_messages\x18\x0e \x01(\x0e\x32I.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig12_1C.LogLevel\x12\x63\n\x10log_min_messages\x18\x0f \x01(\x0e\x32I.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig12_1C.LogLevel\x12j\n\x17log_min_error_statement\x18\x10 \x01(\x0e\x32I.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig12_1C.LogLevel\x12?\n\x1alog_min_duration_statement\x18\x11 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x33\n\x0flog_checkpoints\x18\x12 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x33\n\x0flog_connections\x18\x13 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x36\n\x12log_disconnections\x18\x14 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x30\n\x0clog_duration\x18\x15 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12o\n\x13log_error_verbosity\x18\x16 \x01(\x0e\x32R.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig12_1C.LogErrorVerbosity\x12\x32\n\x0elog_lock_waits\x18\x17 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x64\n\rlog_statement\x18\x18 \x01(\x0e\x32M.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig12_1C.LogStatement\x12\x33\n\x0elog_temp_files\x18\x19 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x13\n\x0bsearch_path\x18\x1a \x01(\t\x12\x30\n\x0crow_security\x18\x1b \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12|\n\x1d\x64\x65\x66\x61ult_transaction_isolation\x18\x1c \x01(\x0e\x32U.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig12_1C.TransactionIsolation\x12\x36\n\x11statement_timeout\x18\x1d \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x31\n\x0clock_timeout\x18\x1e \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12H\n#idle_in_transaction_session_timeout\x18\x1f \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x62\n\x0c\x62ytea_output\x18  \x01(\x0e\x32L.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig12_1C.ByteaOutput\x12]\n\txmlbinary\x18! \x01(\x0e\x32J.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig12_1C.XmlBinary\x12]\n\txmloption\x18\" \x01(\x0e\x32J.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig12_1C.XmlOption\x12;\n\x16gin_pending_list_limit\x18# \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x35\n\x10\x64\x65\x61\x64lock_timeout\x18$ \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12>\n\x19max_locks_per_transaction\x18% \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x43\n\x1emax_pred_locks_per_transaction\x18& \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12/\n\x0b\x61rray_nulls\x18\' \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12h\n\x0f\x62\x61\x63kslash_quote\x18( \x01(\x0e\x32O.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig12_1C.BackslashQuote\x12\x35\n\x11\x64\x65\x66\x61ult_with_oids\x18) \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x39\n\x15\x65scape_string_warning\x18* \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x38\n\x14lo_compat_privileges\x18+ \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12?\n\x1boperator_precedence_warning\x18, \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x39\n\x15quote_all_identifiers\x18- \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12?\n\x1bstandard_conforming_strings\x18. \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x38\n\x14synchronize_seqscans\x18/ \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x39\n\x15transform_null_equals\x18\x30 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x31\n\rexit_on_error\x18\x31 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x33\n\rseq_page_cost\x18\x32 \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\x12\x36\n\x10random_page_cost\x18\x33 \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\x12\x35\n\x11\x65nable_bitmapscan\x18\x36 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x32\n\x0e\x65nable_hashagg\x18\x37 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x33\n\x0f\x65nable_hashjoin\x18\x38 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x34\n\x10\x65nable_indexscan\x18\x39 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x38\n\x14\x65nable_indexonlyscan\x18: \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x33\n\x0f\x65nable_material\x18; \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x34\n\x10\x65nable_mergejoin\x18< \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x33\n\x0f\x65nable_nestloop\x18= \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x32\n\x0e\x65nable_seqscan\x18> \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12/\n\x0b\x65nable_sort\x18? \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x32\n\x0e\x65nable_tidscan\x18@ \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x45\n\x14max_parallel_workers\x18\x41 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\n\xfa\xc7\x31\x06\x30-1024\x12P\n\x1fmax_parallel_workers_per_gather\x18\x42 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\n\xfa\xc7\x31\x06\x30-1024\x12\x10\n\x08timezone\x18\x43 \x01(\t\x12I\n\x18\x65\x66\x66\x65\x63tive_io_concurrency\x18\x44 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\n\xfa\xc7\x31\x06\x30-1000\x12M\n\x14\x65\x66\x66\x65\x63tive_cache_size\x18\x45 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x12\xfa\xc7\x31\x0e\x30-549755813888\"\x9a\x01\n\x13\x43onstraintExclusion\x12$\n CONSTRAINT_EXCLUSION_UNSPECIFIED\x10\x00\x12\x1b\n\x17\x43ONSTRAINT_EXCLUSION_ON\x10\x01\x12\x1c\n\x18\x43ONSTRAINT_EXCLUSION_OFF\x10\x02\x12\"\n\x1e\x43ONSTRAINT_EXCLUSION_PARTITION\x10\x03\"\x92\x01\n\x11\x46orceParallelMode\x12#\n\x1f\x46ORCE_PARALLEL_MODE_UNSPECIFIED\x10\x00\x12\x1a\n\x16\x46ORCE_PARALLEL_MODE_ON\x10\x01\x12\x1b\n\x17\x46ORCE_PARALLEL_MODE_OFF\x10\x02\x12\x1f\n\x1b\x46ORCE_PARALLEL_MODE_REGRESS\x10\x03\"\x92\x02\n\x08LogLevel\x12\x19\n\x15LOG_LEVEL_UNSPECIFIED\x10\x00\x12\x14\n\x10LOG_LEVEL_DEBUG5\x10\x01\x12\x14\n\x10LOG_LEVEL_DEBUG4\x10\x02\x12\x14\n\x10LOG_LEVEL_DEBUG3\x10\x03\x12\x14\n\x10LOG_LEVEL_DEBUG2\x10\x04\x12\x14\n\x10LOG_LEVEL_DEBUG1\x10\x05\x12\x11\n\rLOG_LEVEL_LOG\x10\x06\x12\x14\n\x10LOG_LEVEL_NOTICE\x10\x07\x12\x15\n\x11LOG_LEVEL_WARNING\x10\x08\x12\x13\n\x0fLOG_LEVEL_ERROR\x10\t\x12\x13\n\x0fLOG_LEVEL_FATAL\x10\n\x12\x13\n\x0fLOG_LEVEL_PANIC\x10\x0b\"\x99\x01\n\x11LogErrorVerbosity\x12#\n\x1fLOG_ERROR_VERBOSITY_UNSPECIFIED\x10\x00\x12\x1d\n\x19LOG_ERROR_VERBOSITY_TERSE\x10\x01\x12\x1f\n\x1bLOG_ERROR_VERBOSITY_DEFAULT\x10\x02\x12\x1f\n\x1bLOG_ERROR_VERBOSITY_VERBOSE\x10\x03\"\x8a\x01\n\x0cLogStatement\x12\x1d\n\x19LOG_STATEMENT_UNSPECIFIED\x10\x00\x12\x16\n\x12LOG_STATEMENT_NONE\x10\x01\x12\x15\n\x11LOG_STATEMENT_DDL\x10\x02\x12\x15\n\x11LOG_STATEMENT_MOD\x10\x03\x12\x15\n\x11LOG_STATEMENT_ALL\x10\x04\"\xe6\x01\n\x14TransactionIsolation\x12%\n!TRANSACTION_ISOLATION_UNSPECIFIED\x10\x00\x12*\n&TRANSACTION_ISOLATION_READ_UNCOMMITTED\x10\x01\x12(\n$TRANSACTION_ISOLATION_READ_COMMITTED\x10\x02\x12)\n%TRANSACTION_ISOLATION_REPEATABLE_READ\x10\x03\x12&\n\"TRANSACTION_ISOLATION_SERIALIZABLE\x10\x04\"[\n\x0b\x42yteaOutput\x12\x1c\n\x18\x42YTEA_OUTPUT_UNSPECIFIED\x10\x00\x12\x14\n\x10\x42YTEA_OUTPUT_HEX\x10\x01\x12\x18\n\x14\x42YTEA_OUTPUT_ESCAPED\x10\x02\"R\n\tXmlBinary\x12\x1a\n\x16XML_BINARY_UNSPECIFIED\x10\x00\x12\x15\n\x11XML_BINARY_BASE64\x10\x01\x12\x12\n\x0eXML_BINARY_HEX\x10\x02\"X\n\tXmlOption\x12\x1a\n\x16XML_OPTION_UNSPECIFIED\x10\x00\x12\x17\n\x13XML_OPTION_DOCUMENT\x10\x01\x12\x16\n\x12XML_OPTION_CONTENT\x10\x02\"\x9a\x01\n\x0e\x42\x61\x63kslashQuote\x12\x1f\n\x1b\x42\x41\x43KSLASH_QUOTE_UNSPECIFIED\x10\x00\x12\x13\n\x0f\x42\x41\x43KSLASH_QUOTE\x10\x01\x12\x16\n\x12\x42\x41\x43KSLASH_QUOTE_ON\x10\x02\x12\x17\n\x13\x42\x41\x43KSLASH_QUOTE_OFF\x10\x03\x12!\n\x1d\x42\x41\x43KSLASH_QUOTE_SAFE_ENCODING\x10\x04\x42\x81\x01\n)yandex.cloud.api.mdb.postgresql.v1.configZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1/config;postgresqlb\x06proto3'
+  serialized_pb=b'\n5yandex/cloud/mdb/postgresql/v1/config/host12_1c.proto\x12%yandex.cloud.mdb.postgresql.v1.config\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\xff.\n\x19PostgresqlHostConfig12_1C\x12=\n\x18recovery_min_apply_delay\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x33\n\x0eshared_buffers\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x31\n\x0ctemp_buffers\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12-\n\x08work_mem\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x34\n\x0ftemp_file_limit\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x44\n\x13\x62\x61\x63kend_flush_after\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\n\xfa\xc7\x31\x06\x30-2048\x12I\n\x16old_snapshot_threshold\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0c\xfa\xc7\x31\x08-1-86400\x12@\n\x1bmax_standby_streaming_delay\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12r\n\x14\x63onstraint_exclusion\x18\t \x01(\x0e\x32T.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig12_1C.ConstraintExclusion\x12;\n\x15\x63ursor_tuple_fraction\x18\n \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\x12J\n\x13\x66rom_collapse_limit\x18\x0b \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x10\xfa\xc7\x31\x0c\x31-2147483647\x12J\n\x13join_collapse_limit\x18\x0c \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x10\xfa\xc7\x31\x0c\x31-2147483647\x12o\n\x13\x66orce_parallel_mode\x18\r \x01(\x0e\x32R.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig12_1C.ForceParallelMode\x12\x66\n\x13\x63lient_min_messages\x18\x0e \x01(\x0e\x32I.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig12_1C.LogLevel\x12\x63\n\x10log_min_messages\x18\x0f \x01(\x0e\x32I.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig12_1C.LogLevel\x12j\n\x17log_min_error_statement\x18\x10 \x01(\x0e\x32I.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig12_1C.LogLevel\x12?\n\x1alog_min_duration_statement\x18\x11 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x33\n\x0flog_checkpoints\x18\x12 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x33\n\x0flog_connections\x18\x13 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x36\n\x12log_disconnections\x18\x14 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x30\n\x0clog_duration\x18\x15 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12o\n\x13log_error_verbosity\x18\x16 \x01(\x0e\x32R.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig12_1C.LogErrorVerbosity\x12\x32\n\x0elog_lock_waits\x18\x17 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x64\n\rlog_statement\x18\x18 \x01(\x0e\x32M.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig12_1C.LogStatement\x12\x33\n\x0elog_temp_files\x18\x19 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x13\n\x0bsearch_path\x18\x1a \x01(\t\x12\x30\n\x0crow_security\x18\x1b \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12|\n\x1d\x64\x65\x66\x61ult_transaction_isolation\x18\x1c \x01(\x0e\x32U.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig12_1C.TransactionIsolation\x12\x36\n\x11statement_timeout\x18\x1d \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x31\n\x0clock_timeout\x18\x1e \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12H\n#idle_in_transaction_session_timeout\x18\x1f \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x62\n\x0c\x62ytea_output\x18  \x01(\x0e\x32L.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig12_1C.ByteaOutput\x12]\n\txmlbinary\x18! \x01(\x0e\x32J.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig12_1C.XmlBinary\x12]\n\txmloption\x18\" \x01(\x0e\x32J.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig12_1C.XmlOption\x12;\n\x16gin_pending_list_limit\x18# \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x35\n\x10\x64\x65\x61\x64lock_timeout\x18$ \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12>\n\x19max_locks_per_transaction\x18% \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x43\n\x1emax_pred_locks_per_transaction\x18& \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12/\n\x0b\x61rray_nulls\x18\' \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12h\n\x0f\x62\x61\x63kslash_quote\x18( \x01(\x0e\x32O.yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig12_1C.BackslashQuote\x12\x35\n\x11\x64\x65\x66\x61ult_with_oids\x18) \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x39\n\x15\x65scape_string_warning\x18* \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x38\n\x14lo_compat_privileges\x18+ \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12?\n\x1boperator_precedence_warning\x18, \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x39\n\x15quote_all_identifiers\x18- \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12?\n\x1bstandard_conforming_strings\x18. \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x38\n\x14synchronize_seqscans\x18/ \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x39\n\x15transform_null_equals\x18\x30 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x31\n\rexit_on_error\x18\x31 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x33\n\rseq_page_cost\x18\x32 \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\x12\x36\n\x10random_page_cost\x18\x33 \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\x12\x35\n\x11\x65nable_bitmapscan\x18\x36 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x32\n\x0e\x65nable_hashagg\x18\x37 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x33\n\x0f\x65nable_hashjoin\x18\x38 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x34\n\x10\x65nable_indexscan\x18\x39 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x38\n\x14\x65nable_indexonlyscan\x18: \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x33\n\x0f\x65nable_material\x18; \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x34\n\x10\x65nable_mergejoin\x18< \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x33\n\x0f\x65nable_nestloop\x18= \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x32\n\x0e\x65nable_seqscan\x18> \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12/\n\x0b\x65nable_sort\x18? \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x32\n\x0e\x65nable_tidscan\x18@ \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x45\n\x14max_parallel_workers\x18\x41 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\n\xfa\xc7\x31\x06\x30-1024\x12P\n\x1fmax_parallel_workers_per_gather\x18\x42 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\n\xfa\xc7\x31\x06\x30-1024\x12\x10\n\x08timezone\x18\x43 \x01(\t\x12I\n\x18\x65\x66\x66\x65\x63tive_io_concurrency\x18\x44 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\n\xfa\xc7\x31\x06\x30-1000\x12M\n\x14\x65\x66\x66\x65\x63tive_cache_size\x18\x45 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x12\xfa\xc7\x31\x0e\x30-549755813888\"\x9a\x01\n\x0e\x42\x61\x63kslashQuote\x12\x1f\n\x1b\x42\x41\x43KSLASH_QUOTE_UNSPECIFIED\x10\x00\x12\x13\n\x0f\x42\x41\x43KSLASH_QUOTE\x10\x01\x12\x16\n\x12\x42\x41\x43KSLASH_QUOTE_ON\x10\x02\x12\x17\n\x13\x42\x41\x43KSLASH_QUOTE_OFF\x10\x03\x12!\n\x1d\x42\x41\x43KSLASH_QUOTE_SAFE_ENCODING\x10\x04\"[\n\x0b\x42yteaOutput\x12\x1c\n\x18\x42YTEA_OUTPUT_UNSPECIFIED\x10\x00\x12\x14\n\x10\x42YTEA_OUTPUT_HEX\x10\x01\x12\x18\n\x14\x42YTEA_OUTPUT_ESCAPED\x10\x02\"\x9a\x01\n\x13\x43onstraintExclusion\x12$\n CONSTRAINT_EXCLUSION_UNSPECIFIED\x10\x00\x12\x1b\n\x17\x43ONSTRAINT_EXCLUSION_ON\x10\x01\x12\x1c\n\x18\x43ONSTRAINT_EXCLUSION_OFF\x10\x02\x12\"\n\x1e\x43ONSTRAINT_EXCLUSION_PARTITION\x10\x03\"\x92\x01\n\x11\x46orceParallelMode\x12#\n\x1f\x46ORCE_PARALLEL_MODE_UNSPECIFIED\x10\x00\x12\x1a\n\x16\x46ORCE_PARALLEL_MODE_ON\x10\x01\x12\x1b\n\x17\x46ORCE_PARALLEL_MODE_OFF\x10\x02\x12\x1f\n\x1b\x46ORCE_PARALLEL_MODE_REGRESS\x10\x03\"\x99\x01\n\x11LogErrorVerbosity\x12#\n\x1fLOG_ERROR_VERBOSITY_UNSPECIFIED\x10\x00\x12\x1d\n\x19LOG_ERROR_VERBOSITY_TERSE\x10\x01\x12\x1f\n\x1bLOG_ERROR_VERBOSITY_DEFAULT\x10\x02\x12\x1f\n\x1bLOG_ERROR_VERBOSITY_VERBOSE\x10\x03\"\x92\x02\n\x08LogLevel\x12\x19\n\x15LOG_LEVEL_UNSPECIFIED\x10\x00\x12\x14\n\x10LOG_LEVEL_DEBUG5\x10\x01\x12\x14\n\x10LOG_LEVEL_DEBUG4\x10\x02\x12\x14\n\x10LOG_LEVEL_DEBUG3\x10\x03\x12\x14\n\x10LOG_LEVEL_DEBUG2\x10\x04\x12\x14\n\x10LOG_LEVEL_DEBUG1\x10\x05\x12\x11\n\rLOG_LEVEL_LOG\x10\x06\x12\x14\n\x10LOG_LEVEL_NOTICE\x10\x07\x12\x15\n\x11LOG_LEVEL_WARNING\x10\x08\x12\x13\n\x0fLOG_LEVEL_ERROR\x10\t\x12\x13\n\x0fLOG_LEVEL_FATAL\x10\n\x12\x13\n\x0fLOG_LEVEL_PANIC\x10\x0b\"\x8a\x01\n\x0cLogStatement\x12\x1d\n\x19LOG_STATEMENT_UNSPECIFIED\x10\x00\x12\x16\n\x12LOG_STATEMENT_NONE\x10\x01\x12\x15\n\x11LOG_STATEMENT_DDL\x10\x02\x12\x15\n\x11LOG_STATEMENT_MOD\x10\x03\x12\x15\n\x11LOG_STATEMENT_ALL\x10\x04\"\xe6\x01\n\x14TransactionIsolation\x12%\n!TRANSACTION_ISOLATION_UNSPECIFIED\x10\x00\x12*\n&TRANSACTION_ISOLATION_READ_UNCOMMITTED\x10\x01\x12(\n$TRANSACTION_ISOLATION_READ_COMMITTED\x10\x02\x12)\n%TRANSACTION_ISOLATION_REPEATABLE_READ\x10\x03\x12&\n\"TRANSACTION_ISOLATION_SERIALIZABLE\x10\x04\"R\n\tXmlBinary\x12\x1a\n\x16XML_BINARY_UNSPECIFIED\x10\x00\x12\x15\n\x11XML_BINARY_BASE64\x10\x01\x12\x12\n\x0eXML_BINARY_HEX\x10\x02\"X\n\tXmlOption\x12\x1a\n\x16XML_OPTION_UNSPECIFIED\x10\x00\x12\x17\n\x13XML_OPTION_DOCUMENT\x10\x01\x12\x16\n\x12XML_OPTION_CONTENT\x10\x02\x42\x81\x01\n)yandex.cloud.api.mdb.postgresql.v1.configZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1/config;postgresqlb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
 
+
+_POSTGRESQLHOSTCONFIG12_1C_BACKSLASHQUOTE = _descriptor.EnumDescriptor(
+  name='BackslashQuote',
+  full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig12_1C.BackslashQuote',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='BACKSLASH_QUOTE_UNSPECIFIED', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='BACKSLASH_QUOTE', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='BACKSLASH_QUOTE_ON', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='BACKSLASH_QUOTE_OFF', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='BACKSLASH_QUOTE_SAFE_ENCODING', index=4, number=4,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=4641,
+  serialized_end=4795,
+)
+_sym_db.RegisterEnumDescriptor(_POSTGRESQLHOSTCONFIG12_1C_BACKSLASHQUOTE)
+
+_POSTGRESQLHOSTCONFIG12_1C_BYTEAOUTPUT = _descriptor.EnumDescriptor(
+  name='ByteaOutput',
+  full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig12_1C.ByteaOutput',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='BYTEA_OUTPUT_UNSPECIFIED', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='BYTEA_OUTPUT_HEX', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='BYTEA_OUTPUT_ESCAPED', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=4797,
+  serialized_end=4888,
+)
+_sym_db.RegisterEnumDescriptor(_POSTGRESQLHOSTCONFIG12_1C_BYTEAOUTPUT)
 
 _POSTGRESQLHOSTCONFIG12_1C_CONSTRAINTEXCLUSION = _descriptor.EnumDescriptor(
   name='ConstraintExclusion',
@@ -57,8 +127,8 @@ _POSTGRESQLHOSTCONFIG12_1C_CONSTRAINTEXCLUSION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4641,
-  serialized_end=4795,
+  serialized_start=4891,
+  serialized_end=5045,
 )
 _sym_db.RegisterEnumDescriptor(_POSTGRESQLHOSTCONFIG12_1C_CONSTRAINTEXCLUSION)
 
@@ -92,10 +162,45 @@ _POSTGRESQLHOSTCONFIG12_1C_FORCEPARALLELMODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4798,
-  serialized_end=4944,
+  serialized_start=5048,
+  serialized_end=5194,
 )
 _sym_db.RegisterEnumDescriptor(_POSTGRESQLHOSTCONFIG12_1C_FORCEPARALLELMODE)
+
+_POSTGRESQLHOSTCONFIG12_1C_LOGERRORVERBOSITY = _descriptor.EnumDescriptor(
+  name='LogErrorVerbosity',
+  full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig12_1C.LogErrorVerbosity',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='LOG_ERROR_VERBOSITY_UNSPECIFIED', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='LOG_ERROR_VERBOSITY_TERSE', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='LOG_ERROR_VERBOSITY_DEFAULT', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='LOG_ERROR_VERBOSITY_VERBOSE', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=5197,
+  serialized_end=5350,
+)
+_sym_db.RegisterEnumDescriptor(_POSTGRESQLHOSTCONFIG12_1C_LOGERRORVERBOSITY)
 
 _POSTGRESQLHOSTCONFIG12_1C_LOGLEVEL = _descriptor.EnumDescriptor(
   name='LogLevel',
@@ -167,45 +272,10 @@ _POSTGRESQLHOSTCONFIG12_1C_LOGLEVEL = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4947,
-  serialized_end=5221,
+  serialized_start=5353,
+  serialized_end=5627,
 )
 _sym_db.RegisterEnumDescriptor(_POSTGRESQLHOSTCONFIG12_1C_LOGLEVEL)
-
-_POSTGRESQLHOSTCONFIG12_1C_LOGERRORVERBOSITY = _descriptor.EnumDescriptor(
-  name='LogErrorVerbosity',
-  full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig12_1C.LogErrorVerbosity',
-  filename=None,
-  file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='LOG_ERROR_VERBOSITY_UNSPECIFIED', index=0, number=0,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='LOG_ERROR_VERBOSITY_TERSE', index=1, number=1,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='LOG_ERROR_VERBOSITY_DEFAULT', index=2, number=2,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='LOG_ERROR_VERBOSITY_VERBOSE', index=3, number=3,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-  ],
-  containing_type=None,
-  serialized_options=None,
-  serialized_start=5224,
-  serialized_end=5377,
-)
-_sym_db.RegisterEnumDescriptor(_POSTGRESQLHOSTCONFIG12_1C_LOGERRORVERBOSITY)
 
 _POSTGRESQLHOSTCONFIG12_1C_LOGSTATEMENT = _descriptor.EnumDescriptor(
   name='LogStatement',
@@ -242,8 +312,8 @@ _POSTGRESQLHOSTCONFIG12_1C_LOGSTATEMENT = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5380,
-  serialized_end=5518,
+  serialized_start=5630,
+  serialized_end=5768,
 )
 _sym_db.RegisterEnumDescriptor(_POSTGRESQLHOSTCONFIG12_1C_LOGSTATEMENT)
 
@@ -282,40 +352,10 @@ _POSTGRESQLHOSTCONFIG12_1C_TRANSACTIONISOLATION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5521,
-  serialized_end=5751,
+  serialized_start=5771,
+  serialized_end=6001,
 )
 _sym_db.RegisterEnumDescriptor(_POSTGRESQLHOSTCONFIG12_1C_TRANSACTIONISOLATION)
-
-_POSTGRESQLHOSTCONFIG12_1C_BYTEAOUTPUT = _descriptor.EnumDescriptor(
-  name='ByteaOutput',
-  full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig12_1C.ByteaOutput',
-  filename=None,
-  file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='BYTEA_OUTPUT_UNSPECIFIED', index=0, number=0,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='BYTEA_OUTPUT_HEX', index=1, number=1,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='BYTEA_OUTPUT_ESCAPED', index=2, number=2,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-  ],
-  containing_type=None,
-  serialized_options=None,
-  serialized_start=5753,
-  serialized_end=5844,
-)
-_sym_db.RegisterEnumDescriptor(_POSTGRESQLHOSTCONFIG12_1C_BYTEAOUTPUT)
 
 _POSTGRESQLHOSTCONFIG12_1C_XMLBINARY = _descriptor.EnumDescriptor(
   name='XmlBinary',
@@ -342,8 +382,8 @@ _POSTGRESQLHOSTCONFIG12_1C_XMLBINARY = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5846,
-  serialized_end=5928,
+  serialized_start=6003,
+  serialized_end=6085,
 )
 _sym_db.RegisterEnumDescriptor(_POSTGRESQLHOSTCONFIG12_1C_XMLBINARY)
 
@@ -372,50 +412,10 @@ _POSTGRESQLHOSTCONFIG12_1C_XMLOPTION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5930,
-  serialized_end=6018,
-)
-_sym_db.RegisterEnumDescriptor(_POSTGRESQLHOSTCONFIG12_1C_XMLOPTION)
-
-_POSTGRESQLHOSTCONFIG12_1C_BACKSLASHQUOTE = _descriptor.EnumDescriptor(
-  name='BackslashQuote',
-  full_name='yandex.cloud.mdb.postgresql.v1.config.PostgresqlHostConfig12_1C.BackslashQuote',
-  filename=None,
-  file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='BACKSLASH_QUOTE_UNSPECIFIED', index=0, number=0,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='BACKSLASH_QUOTE', index=1, number=1,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='BACKSLASH_QUOTE_ON', index=2, number=2,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='BACKSLASH_QUOTE_OFF', index=3, number=3,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='BACKSLASH_QUOTE_SAFE_ENCODING', index=4, number=4,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-  ],
-  containing_type=None,
-  serialized_options=None,
-  serialized_start=6021,
+  serialized_start=6087,
   serialized_end=6175,
 )
-_sym_db.RegisterEnumDescriptor(_POSTGRESQLHOSTCONFIG12_1C_BACKSLASHQUOTE)
+_sym_db.RegisterEnumDescriptor(_POSTGRESQLHOSTCONFIG12_1C_XMLOPTION)
 
 
 _POSTGRESQLHOSTCONFIG12_1C = _descriptor.Descriptor(
@@ -900,16 +900,16 @@ _POSTGRESQLHOSTCONFIG12_1C = _descriptor.Descriptor(
   ],
   nested_types=[],
   enum_types=[
+    _POSTGRESQLHOSTCONFIG12_1C_BACKSLASHQUOTE,
+    _POSTGRESQLHOSTCONFIG12_1C_BYTEAOUTPUT,
     _POSTGRESQLHOSTCONFIG12_1C_CONSTRAINTEXCLUSION,
     _POSTGRESQLHOSTCONFIG12_1C_FORCEPARALLELMODE,
-    _POSTGRESQLHOSTCONFIG12_1C_LOGLEVEL,
     _POSTGRESQLHOSTCONFIG12_1C_LOGERRORVERBOSITY,
+    _POSTGRESQLHOSTCONFIG12_1C_LOGLEVEL,
     _POSTGRESQLHOSTCONFIG12_1C_LOGSTATEMENT,
     _POSTGRESQLHOSTCONFIG12_1C_TRANSACTIONISOLATION,
-    _POSTGRESQLHOSTCONFIG12_1C_BYTEAOUTPUT,
     _POSTGRESQLHOSTCONFIG12_1C_XMLBINARY,
     _POSTGRESQLHOSTCONFIG12_1C_XMLOPTION,
-    _POSTGRESQLHOSTCONFIG12_1C_BACKSLASHQUOTE,
   ],
   serialized_options=None,
   is_extendable=False,
@@ -986,16 +986,16 @@ _POSTGRESQLHOSTCONFIG12_1C.fields_by_name['max_parallel_workers'].message_type =
 _POSTGRESQLHOSTCONFIG12_1C.fields_by_name['max_parallel_workers_per_gather'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
 _POSTGRESQLHOSTCONFIG12_1C.fields_by_name['effective_io_concurrency'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
 _POSTGRESQLHOSTCONFIG12_1C.fields_by_name['effective_cache_size'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_POSTGRESQLHOSTCONFIG12_1C_BACKSLASHQUOTE.containing_type = _POSTGRESQLHOSTCONFIG12_1C
+_POSTGRESQLHOSTCONFIG12_1C_BYTEAOUTPUT.containing_type = _POSTGRESQLHOSTCONFIG12_1C
 _POSTGRESQLHOSTCONFIG12_1C_CONSTRAINTEXCLUSION.containing_type = _POSTGRESQLHOSTCONFIG12_1C
 _POSTGRESQLHOSTCONFIG12_1C_FORCEPARALLELMODE.containing_type = _POSTGRESQLHOSTCONFIG12_1C
-_POSTGRESQLHOSTCONFIG12_1C_LOGLEVEL.containing_type = _POSTGRESQLHOSTCONFIG12_1C
 _POSTGRESQLHOSTCONFIG12_1C_LOGERRORVERBOSITY.containing_type = _POSTGRESQLHOSTCONFIG12_1C
+_POSTGRESQLHOSTCONFIG12_1C_LOGLEVEL.containing_type = _POSTGRESQLHOSTCONFIG12_1C
 _POSTGRESQLHOSTCONFIG12_1C_LOGSTATEMENT.containing_type = _POSTGRESQLHOSTCONFIG12_1C
 _POSTGRESQLHOSTCONFIG12_1C_TRANSACTIONISOLATION.containing_type = _POSTGRESQLHOSTCONFIG12_1C
-_POSTGRESQLHOSTCONFIG12_1C_BYTEAOUTPUT.containing_type = _POSTGRESQLHOSTCONFIG12_1C
 _POSTGRESQLHOSTCONFIG12_1C_XMLBINARY.containing_type = _POSTGRESQLHOSTCONFIG12_1C
 _POSTGRESQLHOSTCONFIG12_1C_XMLOPTION.containing_type = _POSTGRESQLHOSTCONFIG12_1C
-_POSTGRESQLHOSTCONFIG12_1C_BACKSLASHQUOTE.containing_type = _POSTGRESQLHOSTCONFIG12_1C
 DESCRIPTOR.message_types_by_name['PostgresqlHostConfig12_1C'] = _POSTGRESQLHOSTCONFIG12_1C
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 

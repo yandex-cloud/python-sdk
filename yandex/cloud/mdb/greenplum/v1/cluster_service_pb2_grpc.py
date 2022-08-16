@@ -37,6 +37,11 @@ class ClusterServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_cluster__service__pb2.UpdateClusterRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
+        self.Expand = channel.unary_unary(
+                '/yandex.cloud.mdb.greenplum.v1.ClusterService/Expand',
+                request_serializer=yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_cluster__service__pb2.ExpandRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
         self.Delete = channel.unary_unary(
                 '/yandex.cloud.mdb.greenplum.v1.ClusterService/Delete',
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_cluster__service__pb2.DeleteClusterRequest.SerializeToString,
@@ -118,6 +123,13 @@ class ClusterServiceServicer(object):
 
     def Update(self, request, context):
         """Updates the specified Greenplum® cluster.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Expand(self, request, context):
+        """Expands the specified Greenplum® cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -214,6 +226,11 @@ def add_ClusterServiceServicer_to_server(servicer, server):
             'Update': grpc.unary_unary_rpc_method_handler(
                     servicer.Update,
                     request_deserializer=yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_cluster__service__pb2.UpdateClusterRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'Expand': grpc.unary_unary_rpc_method_handler(
+                    servicer.Expand,
+                    request_deserializer=yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_cluster__service__pb2.ExpandRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'Delete': grpc.unary_unary_rpc_method_handler(
@@ -341,6 +358,23 @@ class ClusterService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.mdb.greenplum.v1.ClusterService/Update',
             yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_cluster__service__pb2.UpdateClusterRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Expand(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.mdb.greenplum.v1.ClusterService/Expand',
+            yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_cluster__service__pb2.ExpandRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
