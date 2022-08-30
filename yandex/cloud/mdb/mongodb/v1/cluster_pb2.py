@@ -21,6 +21,8 @@ from yandex.cloud.mdb.mongodb.v1.config import mongodb4_4_pb2 as yandex_dot_clou
 from yandex.cloud.mdb.mongodb.v1.config import mongodb4_4_enterprise_pb2 as yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb4__4__enterprise__pb2
 from yandex.cloud.mdb.mongodb.v1.config import mongodb5_0_pb2 as yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb5__0__pb2
 from yandex.cloud.mdb.mongodb.v1.config import mongodb5_0_enterprise_pb2 as yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb5__0__enterprise__pb2
+from yandex.cloud.mdb.mongodb.v1.config import mongodb6_0_pb2 as yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb6__0__pb2
+from yandex.cloud.mdb.mongodb.v1.config import mongodb6_0_enterprise_pb2 as yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb6__0__enterprise__pb2
 from yandex.cloud.mdb.mongodb.v1 import maintenance_pb2 as yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_maintenance__pb2
 
 
@@ -30,9 +32,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\037yandex.cloud.api.mdb.mongodb.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1;mongodb',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n)yandex/cloud/mdb/mongodb/v1/cluster.proto\x12\x1byandex.cloud.mdb.mongodb.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1bgoogle/type/timeofday.proto\x1a\x33yandex/cloud/mdb/mongodb/v1/config/mongodb3_6.proto\x1a\x33yandex/cloud/mdb/mongodb/v1/config/mongodb4_0.proto\x1a\x33yandex/cloud/mdb/mongodb/v1/config/mongodb4_2.proto\x1a\x33yandex/cloud/mdb/mongodb/v1/config/mongodb4_4.proto\x1a>yandex/cloud/mdb/mongodb/v1/config/mongodb4_4_enterprise.proto\x1a\x33yandex/cloud/mdb/mongodb/v1/config/mongodb5_0.proto\x1a>yandex/cloud/mdb/mongodb/v1/config/mongodb5_0_enterprise.proto\x1a-yandex/cloud/mdb/mongodb/v1/maintenance.proto\"\xa5\x08\n\x07\x43luster\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12@\n\x06labels\x18\x06 \x03(\x0b\x32\x30.yandex.cloud.mdb.mongodb.v1.Cluster.LabelsEntry\x12\x45\n\x0b\x65nvironment\x18\x07 \x01(\x0e\x32\x30.yandex.cloud.mdb.mongodb.v1.Cluster.Environment\x12;\n\nmonitoring\x18\x08 \x03(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.Monitoring\x12:\n\x06\x63onfig\x18\t \x01(\x0b\x32*.yandex.cloud.mdb.mongodb.v1.ClusterConfig\x12\x12\n\nnetwork_id\x18\n \x01(\t\x12;\n\x06health\x18\x0b \x01(\x0e\x32+.yandex.cloud.mdb.mongodb.v1.Cluster.Health\x12;\n\x06status\x18\x0c \x01(\x0e\x32+.yandex.cloud.mdb.mongodb.v1.Cluster.Status\x12\x0f\n\x07sharded\x18\r \x01(\x08\x12J\n\x12maintenance_window\x18\x0e \x01(\x0b\x32..yandex.cloud.mdb.mongodb.v1.MaintenanceWindow\x12L\n\x11planned_operation\x18\x0f \x01(\x0b\x32\x31.yandex.cloud.mdb.mongodb.v1.MaintenanceOperation\x12\x1a\n\x12security_group_ids\x18\x10 \x03(\t\x12\x1b\n\x13\x64\x65letion_protection\x18\x11 \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"I\n\x0b\x45nvironment\x12\x1b\n\x17\x45NVIRONMENT_UNSPECIFIED\x10\x00\x12\x0e\n\nPRODUCTION\x10\x01\x12\r\n\tPRESTABLE\x10\x02\"?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\"y\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\t\n\x05\x45RROR\x10\x03\x12\x0c\n\x08UPDATING\x10\x04\x12\x0c\n\x08STOPPING\x10\x05\x12\x0b\n\x07STOPPED\x10\x06\x12\x0c\n\x08STARTING\x10\x07\"=\n\nMonitoring\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0c\n\x04link\x18\x03 \x01(\t\"\xd9\x06\n\rClusterConfig\x12\x0f\n\x07version\x18\x01 \x01(\t\x12%\n\x1d\x66\x65\x61ture_compatibility_version\x18\x05 \x01(\t\x12K\n\x0bmongodb_3_6\x18\x02 \x01(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.Mongodb3_6H\x00R\x0bmongodb_3_6\x12K\n\x0bmongodb_4_0\x18\x04 \x01(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.Mongodb4_0H\x00R\x0bmongodb_4_0\x12K\n\x0bmongodb_4_2\x18\x07 \x01(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.Mongodb4_2H\x00R\x0bmongodb_4_2\x12K\n\x0bmongodb_4_4\x18\x08 \x01(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.Mongodb4_4H\x00R\x0bmongodb_4_4\x12K\n\x0bmongodb_5_0\x18\n \x01(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.Mongodb5_0H\x00R\x0bmongodb_5_0\x12l\n\x16mongodb_4_4_enterprise\x18\x0b \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.Mongodb4_4_enterpriseH\x00R\x16mongodb_4_4_enterprise\x12l\n\x16mongodb_5_0_enterprise\x18\x0c \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.Mongodb5_0_enterpriseH\x00R\x16mongodb_5_0_enterprise\x12\x33\n\x13\x62\x61\x63kup_window_start\x18\x03 \x01(\x0b\x32\x16.google.type.TimeOfDay\x12>\n\x19\x62\x61\x63kup_retain_period_days\x18\t \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x33\n\x06\x61\x63\x63\x65ss\x18\x06 \x01(\x0b\x32#.yandex.cloud.mdb.mongodb.v1.AccessB\t\n\x07mongodb\"\xb2\x07\n\nMongodb3_6\x12>\n\x06mongod\x18\x01 \x01(\x0b\x32..yandex.cloud.mdb.mongodb.v1.Mongodb3_6.Mongod\x12\x42\n\x08mongocfg\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.mdb.mongodb.v1.Mongodb3_6.MongoCfg\x12>\n\x06mongos\x18\x03 \x01(\x0b\x32..yandex.cloud.mdb.mongodb.v1.Mongodb3_6.Mongos\x12\x46\n\nmongoinfra\x18\x04 \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.Mongodb3_6.MongoInfra\x1a\x8b\x01\n\x06Mongod\x12\x46\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.mdb.mongodb.v1.config.MongodConfigSet3_6\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x8f\x01\n\x08MongoCfg\x12H\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x38.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfigSet3_6\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x8b\x01\n\x06Mongos\x12\x46\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.mdb.mongodb.v1.config.MongosConfigSet3_6\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\xe9\x01\n\nMongoInfra\x12M\n\rconfig_mongos\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.mdb.mongodb.v1.config.MongosConfigSet3_6\x12Q\n\x0f\x63onfig_mongocfg\x18\x02 \x01(\x0b\x32\x38.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfigSet3_6\x12\x39\n\tresources\x18\x03 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\"\xb2\x07\n\nMongodb4_0\x12>\n\x06mongod\x18\x01 \x01(\x0b\x32..yandex.cloud.mdb.mongodb.v1.Mongodb4_0.Mongod\x12\x42\n\x08mongocfg\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.mdb.mongodb.v1.Mongodb4_0.MongoCfg\x12>\n\x06mongos\x18\x03 \x01(\x0b\x32..yandex.cloud.mdb.mongodb.v1.Mongodb4_0.Mongos\x12\x46\n\nmongoinfra\x18\x04 \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.Mongodb4_0.MongoInfra\x1a\x8b\x01\n\x06Mongod\x12\x46\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.mdb.mongodb.v1.config.MongodConfigSet4_0\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x8f\x01\n\x08MongoCfg\x12H\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x38.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfigSet4_0\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x8b\x01\n\x06Mongos\x12\x46\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.mdb.mongodb.v1.config.MongosConfigSet4_0\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\xe9\x01\n\nMongoInfra\x12M\n\rconfig_mongos\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.mdb.mongodb.v1.config.MongosConfigSet4_0\x12Q\n\x0f\x63onfig_mongocfg\x18\x02 \x01(\x0b\x32\x38.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfigSet4_0\x12\x39\n\tresources\x18\x03 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\"\xb2\x07\n\nMongodb4_2\x12>\n\x06mongod\x18\x01 \x01(\x0b\x32..yandex.cloud.mdb.mongodb.v1.Mongodb4_2.Mongod\x12\x42\n\x08mongocfg\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.mdb.mongodb.v1.Mongodb4_2.MongoCfg\x12>\n\x06mongos\x18\x03 \x01(\x0b\x32..yandex.cloud.mdb.mongodb.v1.Mongodb4_2.Mongos\x12\x46\n\nmongoinfra\x18\x04 \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.Mongodb4_2.MongoInfra\x1a\x8b\x01\n\x06Mongod\x12\x46\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.mdb.mongodb.v1.config.MongodConfigSet4_2\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x8f\x01\n\x08MongoCfg\x12H\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x38.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfigSet4_2\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x8b\x01\n\x06Mongos\x12\x46\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.mdb.mongodb.v1.config.MongosConfigSet4_2\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\xe9\x01\n\nMongoInfra\x12M\n\rconfig_mongos\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.mdb.mongodb.v1.config.MongosConfigSet4_2\x12Q\n\x0f\x63onfig_mongocfg\x18\x02 \x01(\x0b\x32\x38.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfigSet4_2\x12\x39\n\tresources\x18\x03 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\"\xb2\x07\n\nMongodb4_4\x12>\n\x06mongod\x18\x01 \x01(\x0b\x32..yandex.cloud.mdb.mongodb.v1.Mongodb4_4.Mongod\x12\x42\n\x08mongocfg\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.mdb.mongodb.v1.Mongodb4_4.MongoCfg\x12>\n\x06mongos\x18\x03 \x01(\x0b\x32..yandex.cloud.mdb.mongodb.v1.Mongodb4_4.Mongos\x12\x46\n\nmongoinfra\x18\x04 \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.Mongodb4_4.MongoInfra\x1a\x8b\x01\n\x06Mongod\x12\x46\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.mdb.mongodb.v1.config.MongodConfigSet4_4\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x8f\x01\n\x08MongoCfg\x12H\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x38.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfigSet4_4\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x8b\x01\n\x06Mongos\x12\x46\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.mdb.mongodb.v1.config.MongosConfigSet4_4\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\xe9\x01\n\nMongoInfra\x12M\n\rconfig_mongos\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.mdb.mongodb.v1.config.MongosConfigSet4_4\x12Q\n\x0f\x63onfig_mongocfg\x18\x02 \x01(\x0b\x32\x38.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfigSet4_4\x12\x39\n\tresources\x18\x03 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\"\xa0\x08\n\x15Mongodb4_4_enterprise\x12I\n\x06mongod\x18\x01 \x01(\x0b\x32\x39.yandex.cloud.mdb.mongodb.v1.Mongodb4_4_enterprise.Mongod\x12M\n\x08mongocfg\x18\x02 \x01(\x0b\x32;.yandex.cloud.mdb.mongodb.v1.Mongodb4_4_enterprise.MongoCfg\x12I\n\x06mongos\x18\x03 \x01(\x0b\x32\x39.yandex.cloud.mdb.mongodb.v1.Mongodb4_4_enterprise.Mongos\x12Q\n\nmongoinfra\x18\x04 \x01(\x0b\x32=.yandex.cloud.mdb.mongodb.v1.Mongodb4_4_enterprise.MongoInfra\x1a\x96\x01\n\x06Mongod\x12Q\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x41.yandex.cloud.mdb.mongodb.v1.config.MongodConfigSet4_4_enterprise\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x9a\x01\n\x08MongoCfg\x12S\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x43.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfigSet4_4_enterprise\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x96\x01\n\x06Mongos\x12Q\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x41.yandex.cloud.mdb.mongodb.v1.config.MongosConfigSet4_4_enterprise\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\xff\x01\n\nMongoInfra\x12X\n\rconfig_mongos\x18\x01 \x01(\x0b\x32\x41.yandex.cloud.mdb.mongodb.v1.config.MongosConfigSet4_4_enterprise\x12\\\n\x0f\x63onfig_mongocfg\x18\x02 \x01(\x0b\x32\x43.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfigSet4_4_enterprise\x12\x39\n\tresources\x18\x03 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\"\xb2\x07\n\nMongodb5_0\x12>\n\x06mongod\x18\x01 \x01(\x0b\x32..yandex.cloud.mdb.mongodb.v1.Mongodb5_0.Mongod\x12\x42\n\x08mongocfg\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.mdb.mongodb.v1.Mongodb5_0.MongoCfg\x12>\n\x06mongos\x18\x03 \x01(\x0b\x32..yandex.cloud.mdb.mongodb.v1.Mongodb5_0.Mongos\x12\x46\n\nmongoinfra\x18\x04 \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.Mongodb5_0.MongoInfra\x1a\x8b\x01\n\x06Mongod\x12\x46\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.mdb.mongodb.v1.config.MongodConfigSet5_0\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x8f\x01\n\x08MongoCfg\x12H\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x38.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfigSet5_0\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x8b\x01\n\x06Mongos\x12\x46\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.mdb.mongodb.v1.config.MongosConfigSet5_0\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\xe9\x01\n\nMongoInfra\x12M\n\rconfig_mongos\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.mdb.mongodb.v1.config.MongosConfigSet5_0\x12Q\n\x0f\x63onfig_mongocfg\x18\x02 \x01(\x0b\x32\x38.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfigSet5_0\x12\x39\n\tresources\x18\x03 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\"\xa0\x08\n\x15Mongodb5_0_enterprise\x12I\n\x06mongod\x18\x01 \x01(\x0b\x32\x39.yandex.cloud.mdb.mongodb.v1.Mongodb5_0_enterprise.Mongod\x12M\n\x08mongocfg\x18\x02 \x01(\x0b\x32;.yandex.cloud.mdb.mongodb.v1.Mongodb5_0_enterprise.MongoCfg\x12I\n\x06mongos\x18\x03 \x01(\x0b\x32\x39.yandex.cloud.mdb.mongodb.v1.Mongodb5_0_enterprise.Mongos\x12Q\n\nmongoinfra\x18\x04 \x01(\x0b\x32=.yandex.cloud.mdb.mongodb.v1.Mongodb5_0_enterprise.MongoInfra\x1a\x96\x01\n\x06Mongod\x12Q\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x41.yandex.cloud.mdb.mongodb.v1.config.MongodConfigSet5_0_enterprise\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x9a\x01\n\x08MongoCfg\x12S\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x43.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfigSet5_0_enterprise\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x96\x01\n\x06Mongos\x12Q\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x41.yandex.cloud.mdb.mongodb.v1.config.MongosConfigSet5_0_enterprise\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\xff\x01\n\nMongoInfra\x12X\n\rconfig_mongos\x18\x01 \x01(\x0b\x32\x41.yandex.cloud.mdb.mongodb.v1.config.MongosConfigSet5_0_enterprise\x12\\\n\x0f\x63onfig_mongocfg\x18\x02 \x01(\x0b\x32\x43.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfigSet5_0_enterprise\x12\x39\n\tresources\x18\x03 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\")\n\x05Shard\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\"\xde\x04\n\x04Host\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12\x0f\n\x07zone_id\x18\x03 \x01(\t\x12\x39\n\tresources\x18\x04 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x12\x34\n\x04role\x18\x05 \x01(\x0e\x32&.yandex.cloud.mdb.mongodb.v1.Host.Role\x12\x38\n\x06health\x18\x06 \x01(\x0e\x32(.yandex.cloud.mdb.mongodb.v1.Host.Health\x12\x36\n\x08services\x18\x07 \x03(\x0b\x32$.yandex.cloud.mdb.mongodb.v1.Service\x12\x11\n\tsubnet_id\x18\x08 \x01(\t\x12\x18\n\x10\x61ssign_public_ip\x18\t \x01(\x08\x12\x12\n\nshard_name\x18\n \x01(\t\x12\x34\n\x04type\x18\x0b \x01(\x0e\x32&.yandex.cloud.mdb.mongodb.v1.Host.Type\"R\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\n\n\x06MONGOD\x10\x01\x12\n\n\x06MONGOS\x10\x02\x12\x0c\n\x08MONGOCFG\x10\x03\x12\x0e\n\nMONGOINFRA\x10\x04\"4\n\x04Role\x12\x10\n\x0cROLE_UNKNOWN\x10\x00\x12\x0b\n\x07PRIMARY\x10\x01\x12\r\n\tSECONDARY\x10\x02\"?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\"\xf6\x01\n\x07Service\x12\x37\n\x04type\x18\x01 \x01(\x0e\x32).yandex.cloud.mdb.mongodb.v1.Service.Type\x12;\n\x06health\x18\x02 \x01(\x0e\x32+.yandex.cloud.mdb.mongodb.v1.Service.Health\"B\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\n\n\x06MONGOD\x10\x01\x12\n\n\x06MONGOS\x10\x02\x12\x0c\n\x08MONGOCFG\x10\x03\"1\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\"P\n\tResources\x12\x1a\n\x12resource_preset_id\x18\x01 \x01(\t\x12\x11\n\tdisk_size\x18\x02 \x01(\x03\x12\x14\n\x0c\x64isk_type_id\x18\x03 \x01(\t\"2\n\x06\x41\x63\x63\x65ss\x12\x11\n\tdata_lens\x18\x01 \x01(\x08\x12\x15\n\rdata_transfer\x18\x03 \x01(\x08\x42j\n\x1fyandex.cloud.api.mdb.mongodb.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1;mongodbb\x06proto3'
+  serialized_pb=b'\n)yandex/cloud/mdb/mongodb/v1/cluster.proto\x12\x1byandex.cloud.mdb.mongodb.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1bgoogle/type/timeofday.proto\x1a\x33yandex/cloud/mdb/mongodb/v1/config/mongodb3_6.proto\x1a\x33yandex/cloud/mdb/mongodb/v1/config/mongodb4_0.proto\x1a\x33yandex/cloud/mdb/mongodb/v1/config/mongodb4_2.proto\x1a\x33yandex/cloud/mdb/mongodb/v1/config/mongodb4_4.proto\x1a>yandex/cloud/mdb/mongodb/v1/config/mongodb4_4_enterprise.proto\x1a\x33yandex/cloud/mdb/mongodb/v1/config/mongodb5_0.proto\x1a>yandex/cloud/mdb/mongodb/v1/config/mongodb5_0_enterprise.proto\x1a\x33yandex/cloud/mdb/mongodb/v1/config/mongodb6_0.proto\x1a>yandex/cloud/mdb/mongodb/v1/config/mongodb6_0_enterprise.proto\x1a-yandex/cloud/mdb/mongodb/v1/maintenance.proto\"\xa5\x08\n\x07\x43luster\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12@\n\x06labels\x18\x06 \x03(\x0b\x32\x30.yandex.cloud.mdb.mongodb.v1.Cluster.LabelsEntry\x12\x45\n\x0b\x65nvironment\x18\x07 \x01(\x0e\x32\x30.yandex.cloud.mdb.mongodb.v1.Cluster.Environment\x12;\n\nmonitoring\x18\x08 \x03(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.Monitoring\x12:\n\x06\x63onfig\x18\t \x01(\x0b\x32*.yandex.cloud.mdb.mongodb.v1.ClusterConfig\x12\x12\n\nnetwork_id\x18\n \x01(\t\x12;\n\x06health\x18\x0b \x01(\x0e\x32+.yandex.cloud.mdb.mongodb.v1.Cluster.Health\x12;\n\x06status\x18\x0c \x01(\x0e\x32+.yandex.cloud.mdb.mongodb.v1.Cluster.Status\x12\x0f\n\x07sharded\x18\r \x01(\x08\x12J\n\x12maintenance_window\x18\x0e \x01(\x0b\x32..yandex.cloud.mdb.mongodb.v1.MaintenanceWindow\x12L\n\x11planned_operation\x18\x0f \x01(\x0b\x32\x31.yandex.cloud.mdb.mongodb.v1.MaintenanceOperation\x12\x1a\n\x12security_group_ids\x18\x10 \x03(\t\x12\x1b\n\x13\x64\x65letion_protection\x18\x11 \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"I\n\x0b\x45nvironment\x12\x1b\n\x17\x45NVIRONMENT_UNSPECIFIED\x10\x00\x12\x0e\n\nPRODUCTION\x10\x01\x12\r\n\tPRESTABLE\x10\x02\"?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\"y\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\t\n\x05\x45RROR\x10\x03\x12\x0c\n\x08UPDATING\x10\x04\x12\x0c\n\x08STOPPING\x10\x05\x12\x0b\n\x07STOPPED\x10\x06\x12\x0c\n\x08STARTING\x10\x07\"=\n\nMonitoring\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0c\n\x04link\x18\x03 \x01(\t\"\xf0\x08\n\rClusterConfig\x12\x0f\n\x07version\x18\x01 \x01(\t\x12%\n\x1d\x66\x65\x61ture_compatibility_version\x18\x05 \x01(\t\x12K\n\x0bmongodb_3_6\x18\x02 \x01(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.Mongodb3_6H\x00R\x0bmongodb_3_6\x12K\n\x0bmongodb_4_0\x18\x04 \x01(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.Mongodb4_0H\x00R\x0bmongodb_4_0\x12K\n\x0bmongodb_4_2\x18\x07 \x01(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.Mongodb4_2H\x00R\x0bmongodb_4_2\x12K\n\x0bmongodb_4_4\x18\x08 \x01(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.Mongodb4_4H\x00R\x0bmongodb_4_4\x12K\n\x0bmongodb_5_0\x18\n \x01(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.Mongodb5_0H\x00R\x0bmongodb_5_0\x12K\n\x0bmongodb_6_0\x18\x0e \x01(\x0b\x32\'.yandex.cloud.mdb.mongodb.v1.Mongodb6_0H\x00R\x0bmongodb_6_0\x12l\n\x16mongodb_4_4_enterprise\x18\x0b \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.Mongodb4_4_enterpriseH\x00R\x16mongodb_4_4_enterprise\x12l\n\x16mongodb_5_0_enterprise\x18\x0c \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.Mongodb5_0_enterpriseH\x00R\x16mongodb_5_0_enterprise\x12l\n\x16mongodb_6_0_enterprise\x18\x0f \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.Mongodb6_0_enterpriseH\x00R\x16mongodb_6_0_enterprise\x12\x33\n\x13\x62\x61\x63kup_window_start\x18\x03 \x01(\x0b\x32\x16.google.type.TimeOfDay\x12>\n\x19\x62\x61\x63kup_retain_period_days\x18\t \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12Z\n\x17performance_diagnostics\x18\r \x01(\x0b\x32\x39.yandex.cloud.mdb.mongodb.v1.PerformanceDiagnosticsConfig\x12\x33\n\x06\x61\x63\x63\x65ss\x18\x06 \x01(\x0b\x32#.yandex.cloud.mdb.mongodb.v1.AccessB\t\n\x07mongodb\"\xb2\x07\n\nMongodb3_6\x12>\n\x06mongod\x18\x01 \x01(\x0b\x32..yandex.cloud.mdb.mongodb.v1.Mongodb3_6.Mongod\x12\x42\n\x08mongocfg\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.mdb.mongodb.v1.Mongodb3_6.MongoCfg\x12>\n\x06mongos\x18\x03 \x01(\x0b\x32..yandex.cloud.mdb.mongodb.v1.Mongodb3_6.Mongos\x12\x46\n\nmongoinfra\x18\x04 \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.Mongodb3_6.MongoInfra\x1a\x8b\x01\n\x06Mongod\x12\x46\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.mdb.mongodb.v1.config.MongodConfigSet3_6\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x8f\x01\n\x08MongoCfg\x12H\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x38.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfigSet3_6\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x8b\x01\n\x06Mongos\x12\x46\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.mdb.mongodb.v1.config.MongosConfigSet3_6\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\xe9\x01\n\nMongoInfra\x12M\n\rconfig_mongos\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.mdb.mongodb.v1.config.MongosConfigSet3_6\x12Q\n\x0f\x63onfig_mongocfg\x18\x02 \x01(\x0b\x32\x38.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfigSet3_6\x12\x39\n\tresources\x18\x03 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\"\xb2\x07\n\nMongodb4_0\x12>\n\x06mongod\x18\x01 \x01(\x0b\x32..yandex.cloud.mdb.mongodb.v1.Mongodb4_0.Mongod\x12\x42\n\x08mongocfg\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.mdb.mongodb.v1.Mongodb4_0.MongoCfg\x12>\n\x06mongos\x18\x03 \x01(\x0b\x32..yandex.cloud.mdb.mongodb.v1.Mongodb4_0.Mongos\x12\x46\n\nmongoinfra\x18\x04 \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.Mongodb4_0.MongoInfra\x1a\x8b\x01\n\x06Mongod\x12\x46\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.mdb.mongodb.v1.config.MongodConfigSet4_0\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x8f\x01\n\x08MongoCfg\x12H\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x38.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfigSet4_0\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x8b\x01\n\x06Mongos\x12\x46\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.mdb.mongodb.v1.config.MongosConfigSet4_0\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\xe9\x01\n\nMongoInfra\x12M\n\rconfig_mongos\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.mdb.mongodb.v1.config.MongosConfigSet4_0\x12Q\n\x0f\x63onfig_mongocfg\x18\x02 \x01(\x0b\x32\x38.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfigSet4_0\x12\x39\n\tresources\x18\x03 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\"\xb2\x07\n\nMongodb4_2\x12>\n\x06mongod\x18\x01 \x01(\x0b\x32..yandex.cloud.mdb.mongodb.v1.Mongodb4_2.Mongod\x12\x42\n\x08mongocfg\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.mdb.mongodb.v1.Mongodb4_2.MongoCfg\x12>\n\x06mongos\x18\x03 \x01(\x0b\x32..yandex.cloud.mdb.mongodb.v1.Mongodb4_2.Mongos\x12\x46\n\nmongoinfra\x18\x04 \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.Mongodb4_2.MongoInfra\x1a\x8b\x01\n\x06Mongod\x12\x46\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.mdb.mongodb.v1.config.MongodConfigSet4_2\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x8f\x01\n\x08MongoCfg\x12H\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x38.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfigSet4_2\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x8b\x01\n\x06Mongos\x12\x46\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.mdb.mongodb.v1.config.MongosConfigSet4_2\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\xe9\x01\n\nMongoInfra\x12M\n\rconfig_mongos\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.mdb.mongodb.v1.config.MongosConfigSet4_2\x12Q\n\x0f\x63onfig_mongocfg\x18\x02 \x01(\x0b\x32\x38.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfigSet4_2\x12\x39\n\tresources\x18\x03 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\"\xb2\x07\n\nMongodb4_4\x12>\n\x06mongod\x18\x01 \x01(\x0b\x32..yandex.cloud.mdb.mongodb.v1.Mongodb4_4.Mongod\x12\x42\n\x08mongocfg\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.mdb.mongodb.v1.Mongodb4_4.MongoCfg\x12>\n\x06mongos\x18\x03 \x01(\x0b\x32..yandex.cloud.mdb.mongodb.v1.Mongodb4_4.Mongos\x12\x46\n\nmongoinfra\x18\x04 \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.Mongodb4_4.MongoInfra\x1a\x8b\x01\n\x06Mongod\x12\x46\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.mdb.mongodb.v1.config.MongodConfigSet4_4\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x8f\x01\n\x08MongoCfg\x12H\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x38.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfigSet4_4\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x8b\x01\n\x06Mongos\x12\x46\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.mdb.mongodb.v1.config.MongosConfigSet4_4\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\xe9\x01\n\nMongoInfra\x12M\n\rconfig_mongos\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.mdb.mongodb.v1.config.MongosConfigSet4_4\x12Q\n\x0f\x63onfig_mongocfg\x18\x02 \x01(\x0b\x32\x38.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfigSet4_4\x12\x39\n\tresources\x18\x03 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\"\xa0\x08\n\x15Mongodb4_4_enterprise\x12I\n\x06mongod\x18\x01 \x01(\x0b\x32\x39.yandex.cloud.mdb.mongodb.v1.Mongodb4_4_enterprise.Mongod\x12M\n\x08mongocfg\x18\x02 \x01(\x0b\x32;.yandex.cloud.mdb.mongodb.v1.Mongodb4_4_enterprise.MongoCfg\x12I\n\x06mongos\x18\x03 \x01(\x0b\x32\x39.yandex.cloud.mdb.mongodb.v1.Mongodb4_4_enterprise.Mongos\x12Q\n\nmongoinfra\x18\x04 \x01(\x0b\x32=.yandex.cloud.mdb.mongodb.v1.Mongodb4_4_enterprise.MongoInfra\x1a\x96\x01\n\x06Mongod\x12Q\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x41.yandex.cloud.mdb.mongodb.v1.config.MongodConfigSet4_4_enterprise\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x9a\x01\n\x08MongoCfg\x12S\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x43.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfigSet4_4_enterprise\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x96\x01\n\x06Mongos\x12Q\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x41.yandex.cloud.mdb.mongodb.v1.config.MongosConfigSet4_4_enterprise\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\xff\x01\n\nMongoInfra\x12X\n\rconfig_mongos\x18\x01 \x01(\x0b\x32\x41.yandex.cloud.mdb.mongodb.v1.config.MongosConfigSet4_4_enterprise\x12\\\n\x0f\x63onfig_mongocfg\x18\x02 \x01(\x0b\x32\x43.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfigSet4_4_enterprise\x12\x39\n\tresources\x18\x03 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\"\xb2\x07\n\nMongodb5_0\x12>\n\x06mongod\x18\x01 \x01(\x0b\x32..yandex.cloud.mdb.mongodb.v1.Mongodb5_0.Mongod\x12\x42\n\x08mongocfg\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.mdb.mongodb.v1.Mongodb5_0.MongoCfg\x12>\n\x06mongos\x18\x03 \x01(\x0b\x32..yandex.cloud.mdb.mongodb.v1.Mongodb5_0.Mongos\x12\x46\n\nmongoinfra\x18\x04 \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.Mongodb5_0.MongoInfra\x1a\x8b\x01\n\x06Mongod\x12\x46\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.mdb.mongodb.v1.config.MongodConfigSet5_0\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x8f\x01\n\x08MongoCfg\x12H\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x38.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfigSet5_0\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x8b\x01\n\x06Mongos\x12\x46\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.mdb.mongodb.v1.config.MongosConfigSet5_0\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\xe9\x01\n\nMongoInfra\x12M\n\rconfig_mongos\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.mdb.mongodb.v1.config.MongosConfigSet5_0\x12Q\n\x0f\x63onfig_mongocfg\x18\x02 \x01(\x0b\x32\x38.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfigSet5_0\x12\x39\n\tresources\x18\x03 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\"\xa0\x08\n\x15Mongodb5_0_enterprise\x12I\n\x06mongod\x18\x01 \x01(\x0b\x32\x39.yandex.cloud.mdb.mongodb.v1.Mongodb5_0_enterprise.Mongod\x12M\n\x08mongocfg\x18\x02 \x01(\x0b\x32;.yandex.cloud.mdb.mongodb.v1.Mongodb5_0_enterprise.MongoCfg\x12I\n\x06mongos\x18\x03 \x01(\x0b\x32\x39.yandex.cloud.mdb.mongodb.v1.Mongodb5_0_enterprise.Mongos\x12Q\n\nmongoinfra\x18\x04 \x01(\x0b\x32=.yandex.cloud.mdb.mongodb.v1.Mongodb5_0_enterprise.MongoInfra\x1a\x96\x01\n\x06Mongod\x12Q\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x41.yandex.cloud.mdb.mongodb.v1.config.MongodConfigSet5_0_enterprise\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x9a\x01\n\x08MongoCfg\x12S\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x43.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfigSet5_0_enterprise\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x96\x01\n\x06Mongos\x12Q\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x41.yandex.cloud.mdb.mongodb.v1.config.MongosConfigSet5_0_enterprise\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\xff\x01\n\nMongoInfra\x12X\n\rconfig_mongos\x18\x01 \x01(\x0b\x32\x41.yandex.cloud.mdb.mongodb.v1.config.MongosConfigSet5_0_enterprise\x12\\\n\x0f\x63onfig_mongocfg\x18\x02 \x01(\x0b\x32\x43.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfigSet5_0_enterprise\x12\x39\n\tresources\x18\x03 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\"\xb2\x07\n\nMongodb6_0\x12>\n\x06mongod\x18\x01 \x01(\x0b\x32..yandex.cloud.mdb.mongodb.v1.Mongodb6_0.Mongod\x12\x42\n\x08mongocfg\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.mdb.mongodb.v1.Mongodb6_0.MongoCfg\x12>\n\x06mongos\x18\x03 \x01(\x0b\x32..yandex.cloud.mdb.mongodb.v1.Mongodb6_0.Mongos\x12\x46\n\nmongoinfra\x18\x04 \x01(\x0b\x32\x32.yandex.cloud.mdb.mongodb.v1.Mongodb6_0.MongoInfra\x1a\x8b\x01\n\x06Mongod\x12\x46\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.mdb.mongodb.v1.config.MongodConfigSet6_0\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x8f\x01\n\x08MongoCfg\x12H\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x38.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfigSet6_0\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x8b\x01\n\x06Mongos\x12\x46\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.mdb.mongodb.v1.config.MongosConfigSet6_0\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\xe9\x01\n\nMongoInfra\x12M\n\rconfig_mongos\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.mdb.mongodb.v1.config.MongosConfigSet6_0\x12Q\n\x0f\x63onfig_mongocfg\x18\x02 \x01(\x0b\x32\x38.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfigSet6_0\x12\x39\n\tresources\x18\x03 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\"\xa0\x08\n\x15Mongodb6_0_enterprise\x12I\n\x06mongod\x18\x01 \x01(\x0b\x32\x39.yandex.cloud.mdb.mongodb.v1.Mongodb6_0_enterprise.Mongod\x12M\n\x08mongocfg\x18\x02 \x01(\x0b\x32;.yandex.cloud.mdb.mongodb.v1.Mongodb6_0_enterprise.MongoCfg\x12I\n\x06mongos\x18\x03 \x01(\x0b\x32\x39.yandex.cloud.mdb.mongodb.v1.Mongodb6_0_enterprise.Mongos\x12Q\n\nmongoinfra\x18\x04 \x01(\x0b\x32=.yandex.cloud.mdb.mongodb.v1.Mongodb6_0_enterprise.MongoInfra\x1a\x96\x01\n\x06Mongod\x12Q\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x41.yandex.cloud.mdb.mongodb.v1.config.MongodConfigSet6_0_enterprise\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x9a\x01\n\x08MongoCfg\x12S\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x43.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfigSet6_0_enterprise\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\x96\x01\n\x06Mongos\x12Q\n\x06\x63onfig\x18\x01 \x01(\x0b\x32\x41.yandex.cloud.mdb.mongodb.v1.config.MongosConfigSet6_0_enterprise\x12\x39\n\tresources\x18\x02 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x1a\xff\x01\n\nMongoInfra\x12X\n\rconfig_mongos\x18\x01 \x01(\x0b\x32\x41.yandex.cloud.mdb.mongodb.v1.config.MongosConfigSet6_0_enterprise\x12\\\n\x0f\x63onfig_mongocfg\x18\x02 \x01(\x0b\x32\x43.yandex.cloud.mdb.mongodb.v1.config.MongoCfgConfigSet6_0_enterprise\x12\x39\n\tresources\x18\x03 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\")\n\x05Shard\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\"\xde\x04\n\x04Host\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12\x0f\n\x07zone_id\x18\x03 \x01(\t\x12\x39\n\tresources\x18\x04 \x01(\x0b\x32&.yandex.cloud.mdb.mongodb.v1.Resources\x12\x34\n\x04role\x18\x05 \x01(\x0e\x32&.yandex.cloud.mdb.mongodb.v1.Host.Role\x12\x38\n\x06health\x18\x06 \x01(\x0e\x32(.yandex.cloud.mdb.mongodb.v1.Host.Health\x12\x36\n\x08services\x18\x07 \x03(\x0b\x32$.yandex.cloud.mdb.mongodb.v1.Service\x12\x11\n\tsubnet_id\x18\x08 \x01(\t\x12\x18\n\x10\x61ssign_public_ip\x18\t \x01(\x08\x12\x12\n\nshard_name\x18\n \x01(\t\x12\x34\n\x04type\x18\x0b \x01(\x0e\x32&.yandex.cloud.mdb.mongodb.v1.Host.Type\"R\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\n\n\x06MONGOD\x10\x01\x12\n\n\x06MONGOS\x10\x02\x12\x0c\n\x08MONGOCFG\x10\x03\x12\x0e\n\nMONGOINFRA\x10\x04\"4\n\x04Role\x12\x10\n\x0cROLE_UNKNOWN\x10\x00\x12\x0b\n\x07PRIMARY\x10\x01\x12\r\n\tSECONDARY\x10\x02\"?\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\x12\x0c\n\x08\x44\x45GRADED\x10\x03\"\xf6\x01\n\x07Service\x12\x37\n\x04type\x18\x01 \x01(\x0e\x32).yandex.cloud.mdb.mongodb.v1.Service.Type\x12;\n\x06health\x18\x02 \x01(\x0e\x32+.yandex.cloud.mdb.mongodb.v1.Service.Health\"B\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\n\n\x06MONGOD\x10\x01\x12\n\n\x06MONGOS\x10\x02\x12\x0c\n\x08MONGOCFG\x10\x03\"1\n\x06Health\x12\x12\n\x0eHEALTH_UNKNOWN\x10\x00\x12\t\n\x05\x41LIVE\x10\x01\x12\x08\n\x04\x44\x45\x41\x44\x10\x02\"P\n\tResources\x12\x1a\n\x12resource_preset_id\x18\x01 \x01(\t\x12\x11\n\tdisk_size\x18\x02 \x01(\x03\x12\x14\n\x0c\x64isk_type_id\x18\x03 \x01(\t\"2\n\x06\x41\x63\x63\x65ss\x12\x11\n\tdata_lens\x18\x01 \x01(\x08\x12\x15\n\rdata_transfer\x18\x03 \x01(\x08\"9\n\x1cPerformanceDiagnosticsConfig\x12\x19\n\x11profiling_enabled\x18\x01 \x01(\x08\x42j\n\x1fyandex.cloud.api.mdb.mongodb.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mongodb/v1;mongodbb\x06proto3'
   ,
-  dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,google_dot_type_dot_timeofday__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb3__6__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb4__0__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb4__2__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb4__4__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb4__4__enterprise__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb5__0__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb5__0__enterprise__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_maintenance__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,google_dot_type_dot_timeofday__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb3__6__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb4__0__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb4__2__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb4__4__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb4__4__enterprise__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb5__0__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb5__0__enterprise__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb6__0__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb6__0__enterprise__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_maintenance__pb2.DESCRIPTOR,])
 
 
 
@@ -61,8 +63,8 @@ _CLUSTER_ENVIRONMENT = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1409,
-  serialized_end=1482,
+  serialized_start=1526,
+  serialized_end=1599,
 )
 _sym_db.RegisterEnumDescriptor(_CLUSTER_ENVIRONMENT)
 
@@ -96,8 +98,8 @@ _CLUSTER_HEALTH = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1484,
-  serialized_end=1547,
+  serialized_start=1601,
+  serialized_end=1664,
 )
 _sym_db.RegisterEnumDescriptor(_CLUSTER_HEALTH)
 
@@ -151,8 +153,8 @@ _CLUSTER_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1549,
-  serialized_end=1670,
+  serialized_start=1666,
+  serialized_end=1787,
 )
 _sym_db.RegisterEnumDescriptor(_CLUSTER_STATUS)
 
@@ -191,8 +193,8 @@ _HOST_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=9907,
-  serialized_end=9989,
+  serialized_start=12311,
+  serialized_end=12393,
 )
 _sym_db.RegisterEnumDescriptor(_HOST_TYPE)
 
@@ -221,8 +223,8 @@ _HOST_ROLE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=9991,
-  serialized_end=10043,
+  serialized_start=12395,
+  serialized_end=12447,
 )
 _sym_db.RegisterEnumDescriptor(_HOST_ROLE)
 
@@ -256,8 +258,8 @@ _HOST_HEALTH = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1484,
-  serialized_end=1547,
+  serialized_start=1601,
+  serialized_end=1664,
 )
 _sym_db.RegisterEnumDescriptor(_HOST_HEALTH)
 
@@ -291,8 +293,8 @@ _SERVICE_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=9907,
-  serialized_end=9973,
+  serialized_start=12311,
+  serialized_end=12377,
 )
 _sym_db.RegisterEnumDescriptor(_SERVICE_TYPE)
 
@@ -321,8 +323,8 @@ _SERVICE_HEALTH = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1484,
-  serialized_end=1533,
+  serialized_start=1601,
+  serialized_end=1650,
 )
 _sym_db.RegisterEnumDescriptor(_SERVICE_HEALTH)
 
@@ -361,8 +363,8 @@ _CLUSTER_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1362,
-  serialized_end=1407,
+  serialized_start=1479,
+  serialized_end=1524,
 )
 
 _CLUSTER = _descriptor.Descriptor(
@@ -507,8 +509,8 @@ _CLUSTER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=609,
-  serialized_end=1670,
+  serialized_start=726,
+  serialized_end=1787,
 )
 
 
@@ -553,8 +555,8 @@ _MONITORING = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1672,
-  serialized_end=1733,
+  serialized_start=1789,
+  serialized_end=1850,
 )
 
 
@@ -616,35 +618,56 @@ _CLUSTERCONFIG = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='mongodb_5_0', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='mongodb_4_4_enterprise', full_name='yandex.cloud.mdb.mongodb.v1.ClusterConfig.mongodb_4_4_enterprise', index=7,
+      name='mongodb_6_0', full_name='yandex.cloud.mdb.mongodb.v1.ClusterConfig.mongodb_6_0', index=7,
+      number=14, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='mongodb_6_0', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='mongodb_4_4_enterprise', full_name='yandex.cloud.mdb.mongodb.v1.ClusterConfig.mongodb_4_4_enterprise', index=8,
       number=11, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='mongodb_4_4_enterprise', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='mongodb_5_0_enterprise', full_name='yandex.cloud.mdb.mongodb.v1.ClusterConfig.mongodb_5_0_enterprise', index=8,
+      name='mongodb_5_0_enterprise', full_name='yandex.cloud.mdb.mongodb.v1.ClusterConfig.mongodb_5_0_enterprise', index=9,
       number=12, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, json_name='mongodb_5_0_enterprise', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='backup_window_start', full_name='yandex.cloud.mdb.mongodb.v1.ClusterConfig.backup_window_start', index=9,
+      name='mongodb_6_0_enterprise', full_name='yandex.cloud.mdb.mongodb.v1.ClusterConfig.mongodb_6_0_enterprise', index=10,
+      number=15, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, json_name='mongodb_6_0_enterprise', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='backup_window_start', full_name='yandex.cloud.mdb.mongodb.v1.ClusterConfig.backup_window_start', index=11,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='backup_retain_period_days', full_name='yandex.cloud.mdb.mongodb.v1.ClusterConfig.backup_retain_period_days', index=10,
+      name='backup_retain_period_days', full_name='yandex.cloud.mdb.mongodb.v1.ClusterConfig.backup_retain_period_days', index=12,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='access', full_name='yandex.cloud.mdb.mongodb.v1.ClusterConfig.access', index=11,
+      name='performance_diagnostics', full_name='yandex.cloud.mdb.mongodb.v1.ClusterConfig.performance_diagnostics', index=13,
+      number=13, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='access', full_name='yandex.cloud.mdb.mongodb.v1.ClusterConfig.access', index=14,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -667,8 +690,8 @@ _CLUSTERCONFIG = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1736,
-  serialized_end=2593,
+  serialized_start=1853,
+  serialized_end=2989,
 )
 
 
@@ -706,8 +729,8 @@ _MONGODB3_6_MONGOD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2879,
-  serialized_end=3018,
+  serialized_start=3275,
+  serialized_end=3414,
 )
 
 _MONGODB3_6_MONGOCFG = _descriptor.Descriptor(
@@ -744,8 +767,8 @@ _MONGODB3_6_MONGOCFG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3021,
-  serialized_end=3164,
+  serialized_start=3417,
+  serialized_end=3560,
 )
 
 _MONGODB3_6_MONGOS = _descriptor.Descriptor(
@@ -782,8 +805,8 @@ _MONGODB3_6_MONGOS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3167,
-  serialized_end=3306,
+  serialized_start=3563,
+  serialized_end=3702,
 )
 
 _MONGODB3_6_MONGOINFRA = _descriptor.Descriptor(
@@ -827,8 +850,8 @@ _MONGODB3_6_MONGOINFRA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3309,
-  serialized_end=3542,
+  serialized_start=3705,
+  serialized_end=3938,
 )
 
 _MONGODB3_6 = _descriptor.Descriptor(
@@ -879,8 +902,8 @@ _MONGODB3_6 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2596,
-  serialized_end=3542,
+  serialized_start=2992,
+  serialized_end=3938,
 )
 
 
@@ -918,8 +941,8 @@ _MONGODB4_0_MONGOD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3828,
-  serialized_end=3967,
+  serialized_start=4224,
+  serialized_end=4363,
 )
 
 _MONGODB4_0_MONGOCFG = _descriptor.Descriptor(
@@ -956,8 +979,8 @@ _MONGODB4_0_MONGOCFG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3970,
-  serialized_end=4113,
+  serialized_start=4366,
+  serialized_end=4509,
 )
 
 _MONGODB4_0_MONGOS = _descriptor.Descriptor(
@@ -994,8 +1017,8 @@ _MONGODB4_0_MONGOS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4116,
-  serialized_end=4255,
+  serialized_start=4512,
+  serialized_end=4651,
 )
 
 _MONGODB4_0_MONGOINFRA = _descriptor.Descriptor(
@@ -1039,8 +1062,8 @@ _MONGODB4_0_MONGOINFRA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4258,
-  serialized_end=4491,
+  serialized_start=4654,
+  serialized_end=4887,
 )
 
 _MONGODB4_0 = _descriptor.Descriptor(
@@ -1091,8 +1114,8 @@ _MONGODB4_0 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3545,
-  serialized_end=4491,
+  serialized_start=3941,
+  serialized_end=4887,
 )
 
 
@@ -1130,8 +1153,8 @@ _MONGODB4_2_MONGOD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4777,
-  serialized_end=4916,
+  serialized_start=5173,
+  serialized_end=5312,
 )
 
 _MONGODB4_2_MONGOCFG = _descriptor.Descriptor(
@@ -1168,8 +1191,8 @@ _MONGODB4_2_MONGOCFG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4919,
-  serialized_end=5062,
+  serialized_start=5315,
+  serialized_end=5458,
 )
 
 _MONGODB4_2_MONGOS = _descriptor.Descriptor(
@@ -1206,8 +1229,8 @@ _MONGODB4_2_MONGOS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5065,
-  serialized_end=5204,
+  serialized_start=5461,
+  serialized_end=5600,
 )
 
 _MONGODB4_2_MONGOINFRA = _descriptor.Descriptor(
@@ -1251,8 +1274,8 @@ _MONGODB4_2_MONGOINFRA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5207,
-  serialized_end=5440,
+  serialized_start=5603,
+  serialized_end=5836,
 )
 
 _MONGODB4_2 = _descriptor.Descriptor(
@@ -1303,8 +1326,8 @@ _MONGODB4_2 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4494,
-  serialized_end=5440,
+  serialized_start=4890,
+  serialized_end=5836,
 )
 
 
@@ -1342,8 +1365,8 @@ _MONGODB4_4_MONGOD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5726,
-  serialized_end=5865,
+  serialized_start=6122,
+  serialized_end=6261,
 )
 
 _MONGODB4_4_MONGOCFG = _descriptor.Descriptor(
@@ -1380,8 +1403,8 @@ _MONGODB4_4_MONGOCFG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5868,
-  serialized_end=6011,
+  serialized_start=6264,
+  serialized_end=6407,
 )
 
 _MONGODB4_4_MONGOS = _descriptor.Descriptor(
@@ -1418,8 +1441,8 @@ _MONGODB4_4_MONGOS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6014,
-  serialized_end=6153,
+  serialized_start=6410,
+  serialized_end=6549,
 )
 
 _MONGODB4_4_MONGOINFRA = _descriptor.Descriptor(
@@ -1463,8 +1486,8 @@ _MONGODB4_4_MONGOINFRA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6156,
-  serialized_end=6389,
+  serialized_start=6552,
+  serialized_end=6785,
 )
 
 _MONGODB4_4 = _descriptor.Descriptor(
@@ -1515,8 +1538,8 @@ _MONGODB4_4 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5443,
-  serialized_end=6389,
+  serialized_start=5839,
+  serialized_end=6785,
 )
 
 
@@ -1554,8 +1577,8 @@ _MONGODB4_4_ENTERPRISE_MONGOD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6730,
-  serialized_end=6880,
+  serialized_start=7126,
+  serialized_end=7276,
 )
 
 _MONGODB4_4_ENTERPRISE_MONGOCFG = _descriptor.Descriptor(
@@ -1592,8 +1615,8 @@ _MONGODB4_4_ENTERPRISE_MONGOCFG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6883,
-  serialized_end=7037,
+  serialized_start=7279,
+  serialized_end=7433,
 )
 
 _MONGODB4_4_ENTERPRISE_MONGOS = _descriptor.Descriptor(
@@ -1630,8 +1653,8 @@ _MONGODB4_4_ENTERPRISE_MONGOS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7040,
-  serialized_end=7190,
+  serialized_start=7436,
+  serialized_end=7586,
 )
 
 _MONGODB4_4_ENTERPRISE_MONGOINFRA = _descriptor.Descriptor(
@@ -1675,8 +1698,8 @@ _MONGODB4_4_ENTERPRISE_MONGOINFRA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7193,
-  serialized_end=7448,
+  serialized_start=7589,
+  serialized_end=7844,
 )
 
 _MONGODB4_4_ENTERPRISE = _descriptor.Descriptor(
@@ -1727,8 +1750,8 @@ _MONGODB4_4_ENTERPRISE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6392,
-  serialized_end=7448,
+  serialized_start=6788,
+  serialized_end=7844,
 )
 
 
@@ -1766,8 +1789,8 @@ _MONGODB5_0_MONGOD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7734,
-  serialized_end=7873,
+  serialized_start=8130,
+  serialized_end=8269,
 )
 
 _MONGODB5_0_MONGOCFG = _descriptor.Descriptor(
@@ -1804,8 +1827,8 @@ _MONGODB5_0_MONGOCFG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7876,
-  serialized_end=8019,
+  serialized_start=8272,
+  serialized_end=8415,
 )
 
 _MONGODB5_0_MONGOS = _descriptor.Descriptor(
@@ -1842,8 +1865,8 @@ _MONGODB5_0_MONGOS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8022,
-  serialized_end=8161,
+  serialized_start=8418,
+  serialized_end=8557,
 )
 
 _MONGODB5_0_MONGOINFRA = _descriptor.Descriptor(
@@ -1887,8 +1910,8 @@ _MONGODB5_0_MONGOINFRA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8164,
-  serialized_end=8397,
+  serialized_start=8560,
+  serialized_end=8793,
 )
 
 _MONGODB5_0 = _descriptor.Descriptor(
@@ -1939,8 +1962,8 @@ _MONGODB5_0 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7451,
-  serialized_end=8397,
+  serialized_start=7847,
+  serialized_end=8793,
 )
 
 
@@ -1978,8 +2001,8 @@ _MONGODB5_0_ENTERPRISE_MONGOD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8738,
-  serialized_end=8888,
+  serialized_start=9134,
+  serialized_end=9284,
 )
 
 _MONGODB5_0_ENTERPRISE_MONGOCFG = _descriptor.Descriptor(
@@ -2016,8 +2039,8 @@ _MONGODB5_0_ENTERPRISE_MONGOCFG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8891,
-  serialized_end=9045,
+  serialized_start=9287,
+  serialized_end=9441,
 )
 
 _MONGODB5_0_ENTERPRISE_MONGOS = _descriptor.Descriptor(
@@ -2054,8 +2077,8 @@ _MONGODB5_0_ENTERPRISE_MONGOS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9048,
-  serialized_end=9198,
+  serialized_start=9444,
+  serialized_end=9594,
 )
 
 _MONGODB5_0_ENTERPRISE_MONGOINFRA = _descriptor.Descriptor(
@@ -2099,8 +2122,8 @@ _MONGODB5_0_ENTERPRISE_MONGOINFRA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9201,
-  serialized_end=9456,
+  serialized_start=9597,
+  serialized_end=9852,
 )
 
 _MONGODB5_0_ENTERPRISE = _descriptor.Descriptor(
@@ -2151,8 +2174,432 @@ _MONGODB5_0_ENTERPRISE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8400,
-  serialized_end=9456,
+  serialized_start=8796,
+  serialized_end=9852,
+)
+
+
+_MONGODB6_0_MONGOD = _descriptor.Descriptor(
+  name='Mongod',
+  full_name='yandex.cloud.mdb.mongodb.v1.Mongodb6_0.Mongod',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='config', full_name='yandex.cloud.mdb.mongodb.v1.Mongodb6_0.Mongod.config', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='resources', full_name='yandex.cloud.mdb.mongodb.v1.Mongodb6_0.Mongod.resources', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=10138,
+  serialized_end=10277,
+)
+
+_MONGODB6_0_MONGOCFG = _descriptor.Descriptor(
+  name='MongoCfg',
+  full_name='yandex.cloud.mdb.mongodb.v1.Mongodb6_0.MongoCfg',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='config', full_name='yandex.cloud.mdb.mongodb.v1.Mongodb6_0.MongoCfg.config', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='resources', full_name='yandex.cloud.mdb.mongodb.v1.Mongodb6_0.MongoCfg.resources', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=10280,
+  serialized_end=10423,
+)
+
+_MONGODB6_0_MONGOS = _descriptor.Descriptor(
+  name='Mongos',
+  full_name='yandex.cloud.mdb.mongodb.v1.Mongodb6_0.Mongos',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='config', full_name='yandex.cloud.mdb.mongodb.v1.Mongodb6_0.Mongos.config', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='resources', full_name='yandex.cloud.mdb.mongodb.v1.Mongodb6_0.Mongos.resources', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=10426,
+  serialized_end=10565,
+)
+
+_MONGODB6_0_MONGOINFRA = _descriptor.Descriptor(
+  name='MongoInfra',
+  full_name='yandex.cloud.mdb.mongodb.v1.Mongodb6_0.MongoInfra',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='config_mongos', full_name='yandex.cloud.mdb.mongodb.v1.Mongodb6_0.MongoInfra.config_mongos', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='config_mongocfg', full_name='yandex.cloud.mdb.mongodb.v1.Mongodb6_0.MongoInfra.config_mongocfg', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='resources', full_name='yandex.cloud.mdb.mongodb.v1.Mongodb6_0.MongoInfra.resources', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=10568,
+  serialized_end=10801,
+)
+
+_MONGODB6_0 = _descriptor.Descriptor(
+  name='Mongodb6_0',
+  full_name='yandex.cloud.mdb.mongodb.v1.Mongodb6_0',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='mongod', full_name='yandex.cloud.mdb.mongodb.v1.Mongodb6_0.mongod', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='mongocfg', full_name='yandex.cloud.mdb.mongodb.v1.Mongodb6_0.mongocfg', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='mongos', full_name='yandex.cloud.mdb.mongodb.v1.Mongodb6_0.mongos', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='mongoinfra', full_name='yandex.cloud.mdb.mongodb.v1.Mongodb6_0.mongoinfra', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_MONGODB6_0_MONGOD, _MONGODB6_0_MONGOCFG, _MONGODB6_0_MONGOS, _MONGODB6_0_MONGOINFRA, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=9855,
+  serialized_end=10801,
+)
+
+
+_MONGODB6_0_ENTERPRISE_MONGOD = _descriptor.Descriptor(
+  name='Mongod',
+  full_name='yandex.cloud.mdb.mongodb.v1.Mongodb6_0_enterprise.Mongod',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='config', full_name='yandex.cloud.mdb.mongodb.v1.Mongodb6_0_enterprise.Mongod.config', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='resources', full_name='yandex.cloud.mdb.mongodb.v1.Mongodb6_0_enterprise.Mongod.resources', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=11142,
+  serialized_end=11292,
+)
+
+_MONGODB6_0_ENTERPRISE_MONGOCFG = _descriptor.Descriptor(
+  name='MongoCfg',
+  full_name='yandex.cloud.mdb.mongodb.v1.Mongodb6_0_enterprise.MongoCfg',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='config', full_name='yandex.cloud.mdb.mongodb.v1.Mongodb6_0_enterprise.MongoCfg.config', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='resources', full_name='yandex.cloud.mdb.mongodb.v1.Mongodb6_0_enterprise.MongoCfg.resources', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=11295,
+  serialized_end=11449,
+)
+
+_MONGODB6_0_ENTERPRISE_MONGOS = _descriptor.Descriptor(
+  name='Mongos',
+  full_name='yandex.cloud.mdb.mongodb.v1.Mongodb6_0_enterprise.Mongos',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='config', full_name='yandex.cloud.mdb.mongodb.v1.Mongodb6_0_enterprise.Mongos.config', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='resources', full_name='yandex.cloud.mdb.mongodb.v1.Mongodb6_0_enterprise.Mongos.resources', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=11452,
+  serialized_end=11602,
+)
+
+_MONGODB6_0_ENTERPRISE_MONGOINFRA = _descriptor.Descriptor(
+  name='MongoInfra',
+  full_name='yandex.cloud.mdb.mongodb.v1.Mongodb6_0_enterprise.MongoInfra',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='config_mongos', full_name='yandex.cloud.mdb.mongodb.v1.Mongodb6_0_enterprise.MongoInfra.config_mongos', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='config_mongocfg', full_name='yandex.cloud.mdb.mongodb.v1.Mongodb6_0_enterprise.MongoInfra.config_mongocfg', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='resources', full_name='yandex.cloud.mdb.mongodb.v1.Mongodb6_0_enterprise.MongoInfra.resources', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=11605,
+  serialized_end=11860,
+)
+
+_MONGODB6_0_ENTERPRISE = _descriptor.Descriptor(
+  name='Mongodb6_0_enterprise',
+  full_name='yandex.cloud.mdb.mongodb.v1.Mongodb6_0_enterprise',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='mongod', full_name='yandex.cloud.mdb.mongodb.v1.Mongodb6_0_enterprise.mongod', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='mongocfg', full_name='yandex.cloud.mdb.mongodb.v1.Mongodb6_0_enterprise.mongocfg', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='mongos', full_name='yandex.cloud.mdb.mongodb.v1.Mongodb6_0_enterprise.mongos', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='mongoinfra', full_name='yandex.cloud.mdb.mongodb.v1.Mongodb6_0_enterprise.mongoinfra', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_MONGODB6_0_ENTERPRISE_MONGOD, _MONGODB6_0_ENTERPRISE_MONGOCFG, _MONGODB6_0_ENTERPRISE_MONGOS, _MONGODB6_0_ENTERPRISE_MONGOINFRA, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=10804,
+  serialized_end=11860,
 )
 
 
@@ -2190,8 +2637,8 @@ _SHARD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9458,
-  serialized_end=9499,
+  serialized_start=11862,
+  serialized_end=11903,
 )
 
 
@@ -2295,8 +2742,8 @@ _HOST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9502,
-  serialized_end=10108,
+  serialized_start=11906,
+  serialized_end=12512,
 )
 
 
@@ -2336,8 +2783,8 @@ _SERVICE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10111,
-  serialized_end=10357,
+  serialized_start=12515,
+  serialized_end=12761,
 )
 
 
@@ -2382,8 +2829,8 @@ _RESOURCES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10359,
-  serialized_end=10439,
+  serialized_start=12763,
+  serialized_end=12843,
 )
 
 
@@ -2421,8 +2868,40 @@ _ACCESS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10441,
-  serialized_end=10491,
+  serialized_start=12845,
+  serialized_end=12895,
+)
+
+
+_PERFORMANCEDIAGNOSTICSCONFIG = _descriptor.Descriptor(
+  name='PerformanceDiagnosticsConfig',
+  full_name='yandex.cloud.mdb.mongodb.v1.PerformanceDiagnosticsConfig',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='profiling_enabled', full_name='yandex.cloud.mdb.mongodb.v1.PerformanceDiagnosticsConfig.profiling_enabled', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=12897,
+  serialized_end=12954,
 )
 
 _CLUSTER_LABELSENTRY.containing_type = _CLUSTER
@@ -2443,10 +2922,13 @@ _CLUSTERCONFIG.fields_by_name['mongodb_4_0'].message_type = _MONGODB4_0
 _CLUSTERCONFIG.fields_by_name['mongodb_4_2'].message_type = _MONGODB4_2
 _CLUSTERCONFIG.fields_by_name['mongodb_4_4'].message_type = _MONGODB4_4
 _CLUSTERCONFIG.fields_by_name['mongodb_5_0'].message_type = _MONGODB5_0
+_CLUSTERCONFIG.fields_by_name['mongodb_6_0'].message_type = _MONGODB6_0
 _CLUSTERCONFIG.fields_by_name['mongodb_4_4_enterprise'].message_type = _MONGODB4_4_ENTERPRISE
 _CLUSTERCONFIG.fields_by_name['mongodb_5_0_enterprise'].message_type = _MONGODB5_0_ENTERPRISE
+_CLUSTERCONFIG.fields_by_name['mongodb_6_0_enterprise'].message_type = _MONGODB6_0_ENTERPRISE
 _CLUSTERCONFIG.fields_by_name['backup_window_start'].message_type = google_dot_type_dot_timeofday__pb2._TIMEOFDAY
 _CLUSTERCONFIG.fields_by_name['backup_retain_period_days'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_CLUSTERCONFIG.fields_by_name['performance_diagnostics'].message_type = _PERFORMANCEDIAGNOSTICSCONFIG
 _CLUSTERCONFIG.fields_by_name['access'].message_type = _ACCESS
 _CLUSTERCONFIG.oneofs_by_name['mongodb'].fields.append(
   _CLUSTERCONFIG.fields_by_name['mongodb_3_6'])
@@ -2464,11 +2946,17 @@ _CLUSTERCONFIG.oneofs_by_name['mongodb'].fields.append(
   _CLUSTERCONFIG.fields_by_name['mongodb_5_0'])
 _CLUSTERCONFIG.fields_by_name['mongodb_5_0'].containing_oneof = _CLUSTERCONFIG.oneofs_by_name['mongodb']
 _CLUSTERCONFIG.oneofs_by_name['mongodb'].fields.append(
+  _CLUSTERCONFIG.fields_by_name['mongodb_6_0'])
+_CLUSTERCONFIG.fields_by_name['mongodb_6_0'].containing_oneof = _CLUSTERCONFIG.oneofs_by_name['mongodb']
+_CLUSTERCONFIG.oneofs_by_name['mongodb'].fields.append(
   _CLUSTERCONFIG.fields_by_name['mongodb_4_4_enterprise'])
 _CLUSTERCONFIG.fields_by_name['mongodb_4_4_enterprise'].containing_oneof = _CLUSTERCONFIG.oneofs_by_name['mongodb']
 _CLUSTERCONFIG.oneofs_by_name['mongodb'].fields.append(
   _CLUSTERCONFIG.fields_by_name['mongodb_5_0_enterprise'])
 _CLUSTERCONFIG.fields_by_name['mongodb_5_0_enterprise'].containing_oneof = _CLUSTERCONFIG.oneofs_by_name['mongodb']
+_CLUSTERCONFIG.oneofs_by_name['mongodb'].fields.append(
+  _CLUSTERCONFIG.fields_by_name['mongodb_6_0_enterprise'])
+_CLUSTERCONFIG.fields_by_name['mongodb_6_0_enterprise'].containing_oneof = _CLUSTERCONFIG.oneofs_by_name['mongodb']
 _MONGODB3_6_MONGOD.fields_by_name['config'].message_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb3__6__pb2._MONGODCONFIGSET3_6
 _MONGODB3_6_MONGOD.fields_by_name['resources'].message_type = _RESOURCES
 _MONGODB3_6_MONGOD.containing_type = _MONGODB3_6
@@ -2588,6 +3076,40 @@ _MONGODB5_0_ENTERPRISE.fields_by_name['mongod'].message_type = _MONGODB5_0_ENTER
 _MONGODB5_0_ENTERPRISE.fields_by_name['mongocfg'].message_type = _MONGODB5_0_ENTERPRISE_MONGOCFG
 _MONGODB5_0_ENTERPRISE.fields_by_name['mongos'].message_type = _MONGODB5_0_ENTERPRISE_MONGOS
 _MONGODB5_0_ENTERPRISE.fields_by_name['mongoinfra'].message_type = _MONGODB5_0_ENTERPRISE_MONGOINFRA
+_MONGODB6_0_MONGOD.fields_by_name['config'].message_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb6__0__pb2._MONGODCONFIGSET6_0
+_MONGODB6_0_MONGOD.fields_by_name['resources'].message_type = _RESOURCES
+_MONGODB6_0_MONGOD.containing_type = _MONGODB6_0
+_MONGODB6_0_MONGOCFG.fields_by_name['config'].message_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb6__0__pb2._MONGOCFGCONFIGSET6_0
+_MONGODB6_0_MONGOCFG.fields_by_name['resources'].message_type = _RESOURCES
+_MONGODB6_0_MONGOCFG.containing_type = _MONGODB6_0
+_MONGODB6_0_MONGOS.fields_by_name['config'].message_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb6__0__pb2._MONGOSCONFIGSET6_0
+_MONGODB6_0_MONGOS.fields_by_name['resources'].message_type = _RESOURCES
+_MONGODB6_0_MONGOS.containing_type = _MONGODB6_0
+_MONGODB6_0_MONGOINFRA.fields_by_name['config_mongos'].message_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb6__0__pb2._MONGOSCONFIGSET6_0
+_MONGODB6_0_MONGOINFRA.fields_by_name['config_mongocfg'].message_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb6__0__pb2._MONGOCFGCONFIGSET6_0
+_MONGODB6_0_MONGOINFRA.fields_by_name['resources'].message_type = _RESOURCES
+_MONGODB6_0_MONGOINFRA.containing_type = _MONGODB6_0
+_MONGODB6_0.fields_by_name['mongod'].message_type = _MONGODB6_0_MONGOD
+_MONGODB6_0.fields_by_name['mongocfg'].message_type = _MONGODB6_0_MONGOCFG
+_MONGODB6_0.fields_by_name['mongos'].message_type = _MONGODB6_0_MONGOS
+_MONGODB6_0.fields_by_name['mongoinfra'].message_type = _MONGODB6_0_MONGOINFRA
+_MONGODB6_0_ENTERPRISE_MONGOD.fields_by_name['config'].message_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb6__0__enterprise__pb2._MONGODCONFIGSET6_0_ENTERPRISE
+_MONGODB6_0_ENTERPRISE_MONGOD.fields_by_name['resources'].message_type = _RESOURCES
+_MONGODB6_0_ENTERPRISE_MONGOD.containing_type = _MONGODB6_0_ENTERPRISE
+_MONGODB6_0_ENTERPRISE_MONGOCFG.fields_by_name['config'].message_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb6__0__enterprise__pb2._MONGOCFGCONFIGSET6_0_ENTERPRISE
+_MONGODB6_0_ENTERPRISE_MONGOCFG.fields_by_name['resources'].message_type = _RESOURCES
+_MONGODB6_0_ENTERPRISE_MONGOCFG.containing_type = _MONGODB6_0_ENTERPRISE
+_MONGODB6_0_ENTERPRISE_MONGOS.fields_by_name['config'].message_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb6__0__enterprise__pb2._MONGOSCONFIGSET6_0_ENTERPRISE
+_MONGODB6_0_ENTERPRISE_MONGOS.fields_by_name['resources'].message_type = _RESOURCES
+_MONGODB6_0_ENTERPRISE_MONGOS.containing_type = _MONGODB6_0_ENTERPRISE
+_MONGODB6_0_ENTERPRISE_MONGOINFRA.fields_by_name['config_mongos'].message_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb6__0__enterprise__pb2._MONGOSCONFIGSET6_0_ENTERPRISE
+_MONGODB6_0_ENTERPRISE_MONGOINFRA.fields_by_name['config_mongocfg'].message_type = yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_config_dot_mongodb6__0__enterprise__pb2._MONGOCFGCONFIGSET6_0_ENTERPRISE
+_MONGODB6_0_ENTERPRISE_MONGOINFRA.fields_by_name['resources'].message_type = _RESOURCES
+_MONGODB6_0_ENTERPRISE_MONGOINFRA.containing_type = _MONGODB6_0_ENTERPRISE
+_MONGODB6_0_ENTERPRISE.fields_by_name['mongod'].message_type = _MONGODB6_0_ENTERPRISE_MONGOD
+_MONGODB6_0_ENTERPRISE.fields_by_name['mongocfg'].message_type = _MONGODB6_0_ENTERPRISE_MONGOCFG
+_MONGODB6_0_ENTERPRISE.fields_by_name['mongos'].message_type = _MONGODB6_0_ENTERPRISE_MONGOS
+_MONGODB6_0_ENTERPRISE.fields_by_name['mongoinfra'].message_type = _MONGODB6_0_ENTERPRISE_MONGOINFRA
 _HOST.fields_by_name['resources'].message_type = _RESOURCES
 _HOST.fields_by_name['role'].enum_type = _HOST_ROLE
 _HOST.fields_by_name['health'].enum_type = _HOST_HEALTH
@@ -2610,11 +3132,14 @@ DESCRIPTOR.message_types_by_name['Mongodb4_4'] = _MONGODB4_4
 DESCRIPTOR.message_types_by_name['Mongodb4_4_enterprise'] = _MONGODB4_4_ENTERPRISE
 DESCRIPTOR.message_types_by_name['Mongodb5_0'] = _MONGODB5_0
 DESCRIPTOR.message_types_by_name['Mongodb5_0_enterprise'] = _MONGODB5_0_ENTERPRISE
+DESCRIPTOR.message_types_by_name['Mongodb6_0'] = _MONGODB6_0
+DESCRIPTOR.message_types_by_name['Mongodb6_0_enterprise'] = _MONGODB6_0_ENTERPRISE
 DESCRIPTOR.message_types_by_name['Shard'] = _SHARD
 DESCRIPTOR.message_types_by_name['Host'] = _HOST
 DESCRIPTOR.message_types_by_name['Service'] = _SERVICE
 DESCRIPTOR.message_types_by_name['Resources'] = _RESOURCES
 DESCRIPTOR.message_types_by_name['Access'] = _ACCESS
+DESCRIPTOR.message_types_by_name['PerformanceDiagnosticsConfig'] = _PERFORMANCEDIAGNOSTICSCONFIG
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Cluster = _reflection.GeneratedProtocolMessageType('Cluster', (_message.Message,), {
@@ -2919,6 +3444,84 @@ _sym_db.RegisterMessage(Mongodb5_0_enterprise.MongoCfg)
 _sym_db.RegisterMessage(Mongodb5_0_enterprise.Mongos)
 _sym_db.RegisterMessage(Mongodb5_0_enterprise.MongoInfra)
 
+Mongodb6_0 = _reflection.GeneratedProtocolMessageType('Mongodb6_0', (_message.Message,), {
+
+  'Mongod' : _reflection.GeneratedProtocolMessageType('Mongod', (_message.Message,), {
+    'DESCRIPTOR' : _MONGODB6_0_MONGOD,
+    '__module__' : 'yandex.cloud.mdb.mongodb.v1.cluster_pb2'
+    # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.mongodb.v1.Mongodb6_0.Mongod)
+    })
+  ,
+
+  'MongoCfg' : _reflection.GeneratedProtocolMessageType('MongoCfg', (_message.Message,), {
+    'DESCRIPTOR' : _MONGODB6_0_MONGOCFG,
+    '__module__' : 'yandex.cloud.mdb.mongodb.v1.cluster_pb2'
+    # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.mongodb.v1.Mongodb6_0.MongoCfg)
+    })
+  ,
+
+  'Mongos' : _reflection.GeneratedProtocolMessageType('Mongos', (_message.Message,), {
+    'DESCRIPTOR' : _MONGODB6_0_MONGOS,
+    '__module__' : 'yandex.cloud.mdb.mongodb.v1.cluster_pb2'
+    # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.mongodb.v1.Mongodb6_0.Mongos)
+    })
+  ,
+
+  'MongoInfra' : _reflection.GeneratedProtocolMessageType('MongoInfra', (_message.Message,), {
+    'DESCRIPTOR' : _MONGODB6_0_MONGOINFRA,
+    '__module__' : 'yandex.cloud.mdb.mongodb.v1.cluster_pb2'
+    # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.mongodb.v1.Mongodb6_0.MongoInfra)
+    })
+  ,
+  'DESCRIPTOR' : _MONGODB6_0,
+  '__module__' : 'yandex.cloud.mdb.mongodb.v1.cluster_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.mongodb.v1.Mongodb6_0)
+  })
+_sym_db.RegisterMessage(Mongodb6_0)
+_sym_db.RegisterMessage(Mongodb6_0.Mongod)
+_sym_db.RegisterMessage(Mongodb6_0.MongoCfg)
+_sym_db.RegisterMessage(Mongodb6_0.Mongos)
+_sym_db.RegisterMessage(Mongodb6_0.MongoInfra)
+
+Mongodb6_0_enterprise = _reflection.GeneratedProtocolMessageType('Mongodb6_0_enterprise', (_message.Message,), {
+
+  'Mongod' : _reflection.GeneratedProtocolMessageType('Mongod', (_message.Message,), {
+    'DESCRIPTOR' : _MONGODB6_0_ENTERPRISE_MONGOD,
+    '__module__' : 'yandex.cloud.mdb.mongodb.v1.cluster_pb2'
+    # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.mongodb.v1.Mongodb6_0_enterprise.Mongod)
+    })
+  ,
+
+  'MongoCfg' : _reflection.GeneratedProtocolMessageType('MongoCfg', (_message.Message,), {
+    'DESCRIPTOR' : _MONGODB6_0_ENTERPRISE_MONGOCFG,
+    '__module__' : 'yandex.cloud.mdb.mongodb.v1.cluster_pb2'
+    # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.mongodb.v1.Mongodb6_0_enterprise.MongoCfg)
+    })
+  ,
+
+  'Mongos' : _reflection.GeneratedProtocolMessageType('Mongos', (_message.Message,), {
+    'DESCRIPTOR' : _MONGODB6_0_ENTERPRISE_MONGOS,
+    '__module__' : 'yandex.cloud.mdb.mongodb.v1.cluster_pb2'
+    # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.mongodb.v1.Mongodb6_0_enterprise.Mongos)
+    })
+  ,
+
+  'MongoInfra' : _reflection.GeneratedProtocolMessageType('MongoInfra', (_message.Message,), {
+    'DESCRIPTOR' : _MONGODB6_0_ENTERPRISE_MONGOINFRA,
+    '__module__' : 'yandex.cloud.mdb.mongodb.v1.cluster_pb2'
+    # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.mongodb.v1.Mongodb6_0_enterprise.MongoInfra)
+    })
+  ,
+  'DESCRIPTOR' : _MONGODB6_0_ENTERPRISE,
+  '__module__' : 'yandex.cloud.mdb.mongodb.v1.cluster_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.mongodb.v1.Mongodb6_0_enterprise)
+  })
+_sym_db.RegisterMessage(Mongodb6_0_enterprise)
+_sym_db.RegisterMessage(Mongodb6_0_enterprise.Mongod)
+_sym_db.RegisterMessage(Mongodb6_0_enterprise.MongoCfg)
+_sym_db.RegisterMessage(Mongodb6_0_enterprise.Mongos)
+_sym_db.RegisterMessage(Mongodb6_0_enterprise.MongoInfra)
+
 Shard = _reflection.GeneratedProtocolMessageType('Shard', (_message.Message,), {
   'DESCRIPTOR' : _SHARD,
   '__module__' : 'yandex.cloud.mdb.mongodb.v1.cluster_pb2'
@@ -2953,6 +3556,13 @@ Access = _reflection.GeneratedProtocolMessageType('Access', (_message.Message,),
   # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.mongodb.v1.Access)
   })
 _sym_db.RegisterMessage(Access)
+
+PerformanceDiagnosticsConfig = _reflection.GeneratedProtocolMessageType('PerformanceDiagnosticsConfig', (_message.Message,), {
+  'DESCRIPTOR' : _PERFORMANCEDIAGNOSTICSCONFIG,
+  '__module__' : 'yandex.cloud.mdb.mongodb.v1.cluster_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.mongodb.v1.PerformanceDiagnosticsConfig)
+  })
+_sym_db.RegisterMessage(PerformanceDiagnosticsConfig)
 
 
 DESCRIPTOR._options = None

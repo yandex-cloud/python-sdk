@@ -235,6 +235,7 @@ class ClusterServiceServicer(object):
 
     def ListLogs(self, request, context):
         """Retrieves logs for the specified MongoDB cluster.
+        See the [Logs](/yandex-mdb-guide/concepts/logs.html) section in the developers guide for detailed logs description.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -283,7 +284,8 @@ class ClusterServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def EnableSharding(self, request, context):
-        """Enables sharding for the cluster: creates 3 mongoinfra (or 3 mongocfg and 2 mongos) hosts
+        """Enables sharding for the cluster:
+        creates 3 mongoinfra (or 3 mongocfg and 2 mongos) hosts
         that would support adding and using shards in the cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
