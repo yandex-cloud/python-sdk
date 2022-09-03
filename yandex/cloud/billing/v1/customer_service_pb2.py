@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\033yandex.cloud.api.billing.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/billing/v1;billing',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n.yandex/cloud/billing/v1/customer_service.proto\x12\x17yandex.cloud.billing.v1\x1a\x1cgoogle/api/annotations.proto\x1a&yandex/cloud/billing/v1/customer.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"w\n\x14ListCustomersRequest\x12!\n\x0breseller_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x03 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=100\"f\n\x15ListCustomersResponse\x12\x34\n\tcustomers\x18\x01 \x03(\x0b\x32!.yandex.cloud.billing.v1.Customer\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xad\x01\n\x15InviteCustomerRequest\x12!\n\x0breseller_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x12\n\x04name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1e\n\x10invitation_email\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12=\n\x06person\x18\x04 \x01(\x0b\x32\'.yandex.cloud.billing.v1.CustomerPersonB\x04\xe8\xc7\x31\x01\"<\n\x17\x41\x63tivateCustomerRequest\x12!\n\x0b\x63ustomer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\";\n\x16SuspendCustomerRequest\x12!\n\x0b\x63ustomer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"<\n\x10\x43ustomerMetadata\x12\x13\n\x0breseller_id\x18\x01 \x01(\t\x12\x13\n\x0b\x63ustomer_id\x18\x02 \x01(\t2\xac\x05\n\x0f\x43ustomerService\x12\x84\x01\n\x04List\x12-.yandex.cloud.billing.v1.ListCustomersRequest\x1a..yandex.cloud.billing.v1.ListCustomersResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/billing/v1/customers\x12\xa4\x01\n\x06Invite\x12..yandex.cloud.billing.v1.InviteCustomerRequest\x1a!.yandex.cloud.operation.Operation\"G\x82\xd3\xe4\x93\x02!\"\x1c/billing/v1/customers:invite:\x01*\xb2\xd2*\x1c\n\x10\x43ustomerMetadata\x12\x08\x43ustomer\x12\xb5\x01\n\x08\x41\x63tivate\x12\x30.yandex.cloud.billing.v1.ActivateCustomerRequest\x1a!.yandex.cloud.operation.Operation\"T\x82\xd3\xe4\x93\x02.\",/billing/v1/customers/{customer_id}:activate\xb2\xd2*\x1c\n\x10\x43ustomerMetadata\x12\x08\x43ustomer\x12\xb2\x01\n\x07Suspend\x12/.yandex.cloud.billing.v1.SuspendCustomerRequest\x1a!.yandex.cloud.operation.Operation\"S\x82\xd3\xe4\x93\x02-\"+/billing/v1/customers/{customer_id}:suspend\xb2\xd2*\x1c\n\x10\x43ustomerMetadata\x12\x08\x43ustomerBb\n\x1byandex.cloud.api.billing.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/billing/v1;billingb\x06proto3'
+  serialized_pb=b'\n.yandex/cloud/billing/v1/customer_service.proto\x12\x17yandex.cloud.billing.v1\x1a\x1cgoogle/api/annotations.proto\x1a&yandex/cloud/billing/v1/customer.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"w\n\x14ListCustomersRequest\x12!\n\x0breseller_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x03 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=100\"f\n\x15ListCustomersResponse\x12\x34\n\tcustomers\x18\x01 \x03(\x0b\x32!.yandex.cloud.billing.v1.Customer\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xad\x01\n\x15InviteCustomerRequest\x12!\n\x0breseller_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x12\n\x04name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1e\n\x10invitation_email\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12=\n\x06person\x18\x04 \x01(\x0b\x32\'.yandex.cloud.billing.v1.CustomerPersonB\x04\xe8\xc7\x31\x01\"\x9b\x01\n#CreateResellerServedCustomerRequest\x12!\n\x0breseller_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x12\n\x04name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12=\n\x06person\x18\x03 \x01(\x0b\x32\'.yandex.cloud.billing.v1.CustomerPersonB\x04\xe8\xc7\x31\x01\"<\n\x17\x41\x63tivateCustomerRequest\x12!\n\x0b\x63ustomer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\";\n\x16SuspendCustomerRequest\x12!\n\x0b\x63ustomer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"<\n\x10\x43ustomerMetadata\x12\x13\n\x0breseller_id\x18\x01 \x01(\t\x12\x13\n\x0b\x63ustomer_id\x18\x02 \x01(\t2\x85\x07\n\x0f\x43ustomerService\x12\x84\x01\n\x04List\x12-.yandex.cloud.billing.v1.ListCustomersRequest\x1a..yandex.cloud.billing.v1.ListCustomersResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/billing/v1/customers\x12\xa4\x01\n\x06Invite\x12..yandex.cloud.billing.v1.InviteCustomerRequest\x1a!.yandex.cloud.operation.Operation\"G\x82\xd3\xe4\x93\x02!\"\x1c/billing/v1/customers:invite:\x01*\xb2\xd2*\x1c\n\x10\x43ustomerMetadata\x12\x08\x43ustomer\x12\xd6\x01\n\x14\x43reateResellerServed\x12<.yandex.cloud.billing.v1.CreateResellerServedCustomerRequest\x1a!.yandex.cloud.operation.Operation\"]\x82\xd3\xe4\x93\x02\x37\"2/billing/v1/customers:createResellerServedCustomer:\x01*\xb2\xd2*\x1c\n\x10\x43ustomerMetadata\x12\x08\x43ustomer\x12\xb5\x01\n\x08\x41\x63tivate\x12\x30.yandex.cloud.billing.v1.ActivateCustomerRequest\x1a!.yandex.cloud.operation.Operation\"T\x82\xd3\xe4\x93\x02.\",/billing/v1/customers/{customer_id}:activate\xb2\xd2*\x1c\n\x10\x43ustomerMetadata\x12\x08\x43ustomer\x12\xb2\x01\n\x07Suspend\x12/.yandex.cloud.billing.v1.SuspendCustomerRequest\x1a!.yandex.cloud.operation.Operation\"S\x82\xd3\xe4\x93\x02-\"+/billing/v1/customers/{customer_id}:suspend\xb2\xd2*\x1c\n\x10\x43ustomerMetadata\x12\x08\x43ustomerBb\n\x1byandex.cloud.api.billing.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/billing/v1;billingb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_billing_dot_v1_dot_customer__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -169,6 +169,52 @@ _INVITECUSTOMERREQUEST = _descriptor.Descriptor(
 )
 
 
+_CREATERESELLERSERVEDCUSTOMERREQUEST = _descriptor.Descriptor(
+  name='CreateResellerServedCustomerRequest',
+  full_name='yandex.cloud.billing.v1.CreateResellerServedCustomerRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='reseller_id', full_name='yandex.cloud.billing.v1.CreateResellerServedCustomerRequest.reseller_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='yandex.cloud.billing.v1.CreateResellerServedCustomerRequest.name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='person', full_name='yandex.cloud.billing.v1.CreateResellerServedCustomerRequest.person', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=652,
+  serialized_end=807,
+)
+
+
 _ACTIVATECUSTOMERREQUEST = _descriptor.Descriptor(
   name='ActivateCustomerRequest',
   full_name='yandex.cloud.billing.v1.ActivateCustomerRequest',
@@ -196,8 +242,8 @@ _ACTIVATECUSTOMERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=651,
-  serialized_end=711,
+  serialized_start=809,
+  serialized_end=869,
 )
 
 
@@ -228,8 +274,8 @@ _SUSPENDCUSTOMERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=713,
-  serialized_end=772,
+  serialized_start=871,
+  serialized_end=930,
 )
 
 
@@ -267,15 +313,17 @@ _CUSTOMERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=774,
-  serialized_end=834,
+  serialized_start=932,
+  serialized_end=992,
 )
 
 _LISTCUSTOMERSRESPONSE.fields_by_name['customers'].message_type = yandex_dot_cloud_dot_billing_dot_v1_dot_customer__pb2._CUSTOMER
 _INVITECUSTOMERREQUEST.fields_by_name['person'].message_type = yandex_dot_cloud_dot_billing_dot_v1_dot_customer__pb2._CUSTOMERPERSON
+_CREATERESELLERSERVEDCUSTOMERREQUEST.fields_by_name['person'].message_type = yandex_dot_cloud_dot_billing_dot_v1_dot_customer__pb2._CUSTOMERPERSON
 DESCRIPTOR.message_types_by_name['ListCustomersRequest'] = _LISTCUSTOMERSREQUEST
 DESCRIPTOR.message_types_by_name['ListCustomersResponse'] = _LISTCUSTOMERSRESPONSE
 DESCRIPTOR.message_types_by_name['InviteCustomerRequest'] = _INVITECUSTOMERREQUEST
+DESCRIPTOR.message_types_by_name['CreateResellerServedCustomerRequest'] = _CREATERESELLERSERVEDCUSTOMERREQUEST
 DESCRIPTOR.message_types_by_name['ActivateCustomerRequest'] = _ACTIVATECUSTOMERREQUEST
 DESCRIPTOR.message_types_by_name['SuspendCustomerRequest'] = _SUSPENDCUSTOMERREQUEST
 DESCRIPTOR.message_types_by_name['CustomerMetadata'] = _CUSTOMERMETADATA
@@ -301,6 +349,13 @@ InviteCustomerRequest = _reflection.GeneratedProtocolMessageType('InviteCustomer
   # @@protoc_insertion_point(class_scope:yandex.cloud.billing.v1.InviteCustomerRequest)
   })
 _sym_db.RegisterMessage(InviteCustomerRequest)
+
+CreateResellerServedCustomerRequest = _reflection.GeneratedProtocolMessageType('CreateResellerServedCustomerRequest', (_message.Message,), {
+  'DESCRIPTOR' : _CREATERESELLERSERVEDCUSTOMERREQUEST,
+  '__module__' : 'yandex.cloud.billing.v1.customer_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.billing.v1.CreateResellerServedCustomerRequest)
+  })
+_sym_db.RegisterMessage(CreateResellerServedCustomerRequest)
 
 ActivateCustomerRequest = _reflection.GeneratedProtocolMessageType('ActivateCustomerRequest', (_message.Message,), {
   'DESCRIPTOR' : _ACTIVATECUSTOMERREQUEST,
@@ -332,6 +387,9 @@ _INVITECUSTOMERREQUEST.fields_by_name['reseller_id']._options = None
 _INVITECUSTOMERREQUEST.fields_by_name['name']._options = None
 _INVITECUSTOMERREQUEST.fields_by_name['invitation_email']._options = None
 _INVITECUSTOMERREQUEST.fields_by_name['person']._options = None
+_CREATERESELLERSERVEDCUSTOMERREQUEST.fields_by_name['reseller_id']._options = None
+_CREATERESELLERSERVEDCUSTOMERREQUEST.fields_by_name['name']._options = None
+_CREATERESELLERSERVEDCUSTOMERREQUEST.fields_by_name['person']._options = None
 _ACTIVATECUSTOMERREQUEST.fields_by_name['customer_id']._options = None
 _SUSPENDCUSTOMERREQUEST.fields_by_name['customer_id']._options = None
 
@@ -342,8 +400,8 @@ _CUSTOMERSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=837,
-  serialized_end=1521,
+  serialized_start=995,
+  serialized_end=1896,
   methods=[
   _descriptor.MethodDescriptor(
     name='List',
@@ -366,9 +424,19 @@ _CUSTOMERSERVICE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
+    name='CreateResellerServed',
+    full_name='yandex.cloud.billing.v1.CustomerService.CreateResellerServed',
+    index=2,
+    containing_service=None,
+    input_type=_CREATERESELLERSERVEDCUSTOMERREQUEST,
+    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
+    serialized_options=b'\202\323\344\223\0027\"2/billing/v1/customers:createResellerServedCustomer:\001*\262\322*\034\n\020CustomerMetadata\022\010Customer',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
     name='Activate',
     full_name='yandex.cloud.billing.v1.CustomerService.Activate',
-    index=2,
+    index=3,
     containing_service=None,
     input_type=_ACTIVATECUSTOMERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
@@ -378,7 +446,7 @@ _CUSTOMERSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='Suspend',
     full_name='yandex.cloud.billing.v1.CustomerService.Suspend',
-    index=3,
+    index=4,
     containing_service=None,
     input_type=_SUSPENDCUSTOMERREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,

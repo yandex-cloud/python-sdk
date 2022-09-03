@@ -26,6 +26,11 @@ class CustomerServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_billing_dot_v1_dot_customer__service__pb2.InviteCustomerRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
+        self.CreateResellerServed = channel.unary_unary(
+                '/yandex.cloud.billing.v1.CustomerService/CreateResellerServed',
+                request_serializer=yandex_dot_cloud_dot_billing_dot_v1_dot_customer__service__pb2.CreateResellerServedCustomerRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
         self.Activate = channel.unary_unary(
                 '/yandex.cloud.billing.v1.CustomerService/Activate',
                 request_serializer=yandex_dot_cloud_dot_billing_dot_v1_dot_customer__service__pb2.ActivateCustomerRequest.SerializeToString,
@@ -56,6 +61,13 @@ class CustomerServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def CreateResellerServed(self, request, context):
+        """Creates new reseller-served customer.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def Activate(self, request, context):
         """Activates specified customer. After customer is activated, he can use resources associated with his billing account.
         """
@@ -81,6 +93,11 @@ def add_CustomerServiceServicer_to_server(servicer, server):
             'Invite': grpc.unary_unary_rpc_method_handler(
                     servicer.Invite,
                     request_deserializer=yandex_dot_cloud_dot_billing_dot_v1_dot_customer__service__pb2.InviteCustomerRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'CreateResellerServed': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateResellerServed,
+                    request_deserializer=yandex_dot_cloud_dot_billing_dot_v1_dot_customer__service__pb2.CreateResellerServedCustomerRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'Activate': grpc.unary_unary_rpc_method_handler(
@@ -134,6 +151,23 @@ class CustomerService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.billing.v1.CustomerService/Invite',
             yandex_dot_cloud_dot_billing_dot_v1_dot_customer__service__pb2.InviteCustomerRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateResellerServed(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.billing.v1.CustomerService/CreateResellerServed',
+            yandex_dot_cloud_dot_billing_dot_v1_dot_customer__service__pb2.CreateResellerServedCustomerRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
