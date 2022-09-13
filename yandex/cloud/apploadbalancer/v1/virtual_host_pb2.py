@@ -22,11 +22,41 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancer',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n2yandex/cloud/apploadbalancer/v1/virtual_host.proto\x12\x1fyandex.cloud.apploadbalancer.v1\x1a\x1egoogle/protobuf/duration.proto\x1a-yandex/cloud/apploadbalancer/v1/payload.proto\x1a\x1dyandex/cloud/validation.proto\"\xdd\x02\n\x0bVirtualHost\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tauthority\x18\x02 \x03(\t\x12\x36\n\x06routes\x18\x03 \x03(\x0b\x32&.yandex.cloud.apploadbalancer.v1.Route\x12S\n\x16modify_request_headers\x18\x04 \x03(\x0b\x32\x33.yandex.cloud.apploadbalancer.v1.HeaderModification\x12T\n\x17modify_response_headers\x18\x05 \x03(\x0b\x32\x33.yandex.cloud.apploadbalancer.v1.HeaderModification\x12\x44\n\rroute_options\x18\x06 \x01(\x0b\x32-.yandex.cloud.apploadbalancer.v1.RouteOptions\"\xb9\x01\n\x0cRouteOptions\x12S\n\x16modify_request_headers\x18\x01 \x03(\x0b\x32\x33.yandex.cloud.apploadbalancer.v1.HeaderModification\x12T\n\x17modify_response_headers\x18\x02 \x03(\x0b\x32\x33.yandex.cloud.apploadbalancer.v1.HeaderModification\"x\n\x12HeaderModification\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x10\n\x06\x61ppend\x18\x02 \x01(\tH\x00\x12\x11\n\x07replace\x18\x03 \x01(\tH\x00\x12\x10\n\x06remove\x18\x04 \x01(\x08H\x00\x12\x10\n\x06rename\x18\x05 \x01(\tH\x00\x42\x0b\n\toperation\"\xe8\x01\n\x05Route\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12:\n\x04http\x18\x02 \x01(\x0b\x32*.yandex.cloud.apploadbalancer.v1.HttpRouteH\x00\x12:\n\x04grpc\x18\x03 \x01(\x0b\x32*.yandex.cloud.apploadbalancer.v1.GrpcRouteH\x00\x12\x44\n\rroute_options\x18\x04 \x01(\x0b\x32-.yandex.cloud.apploadbalancer.v1.RouteOptionsB\r\n\x05route\x12\x04\xc0\xc1\x31\x01\"\xb5\x02\n\tHttpRoute\x12>\n\x05match\x18\x01 \x01(\x0b\x32/.yandex.cloud.apploadbalancer.v1.HttpRouteMatch\x12\x41\n\x05route\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.apploadbalancer.v1.HttpRouteActionH\x00\x12\x43\n\x08redirect\x18\x03 \x01(\x0b\x32/.yandex.cloud.apploadbalancer.v1.RedirectActionH\x00\x12P\n\x0f\x64irect_response\x18\x04 \x01(\x0b\x32\x35.yandex.cloud.apploadbalancer.v1.DirectResponseActionH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01\"\xf4\x01\n\tGrpcRoute\x12>\n\x05match\x18\x01 \x01(\x0b\x32/.yandex.cloud.apploadbalancer.v1.GrpcRouteMatch\x12\x41\n\x05route\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.apploadbalancer.v1.GrpcRouteActionH\x00\x12T\n\x0fstatus_response\x18\x03 \x01(\x0b\x32\x39.yandex.cloud.apploadbalancer.v1.GrpcStatusResponseActionH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01\"a\n\x0eHttpRouteMatch\x12\x13\n\x0bhttp_method\x18\x01 \x03(\t\x12:\n\x04path\x18\x02 \x01(\x0b\x32,.yandex.cloud.apploadbalancer.v1.StringMatch\"L\n\x0eGrpcRouteMatch\x12:\n\x04\x66qmn\x18\x01 \x01(\x0b\x32,.yandex.cloud.apploadbalancer.v1.StringMatch\"b\n\x0bStringMatch\x12\x15\n\x0b\x65xact_match\x18\x01 \x01(\tH\x00\x12\x16\n\x0cprefix_match\x18\x02 \x01(\tH\x00\x12\x15\n\x0bregex_match\x18\x03 \x01(\tH\x00\x42\r\n\x05match\x12\x04\xc0\xc1\x31\x01\"\xfa\x02\n\x0eRedirectAction\x12\x16\n\x0ereplace_scheme\x18\x01 \x01(\t\x12\x14\n\x0creplace_host\x18\x02 \x01(\t\x12\x14\n\x0creplace_port\x18\x03 \x01(\x03\x12\x16\n\x0creplace_path\x18\x04 \x01(\tH\x00\x12\x18\n\x0ereplace_prefix\x18\x05 \x01(\tH\x00\x12\x14\n\x0cremove_query\x18\x06 \x01(\x08\x12[\n\rresponse_code\x18\x07 \x01(\x0e\x32\x44.yandex.cloud.apploadbalancer.v1.RedirectAction.RedirectResponseCode\"w\n\x14RedirectResponseCode\x12\x15\n\x11MOVED_PERMANENTLY\x10\x00\x12\t\n\x05\x46OUND\x10\x01\x12\r\n\tSEE_OTHER\x10\x02\x12\x16\n\x12TEMPORARY_REDIRECT\x10\x03\x12\x16\n\x12PERMANENT_REDIRECT\x10\x04\x42\x06\n\x04path\"k\n\x14\x44irectResponseAction\x12\x1b\n\x06status\x18\x01 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x31\x30\x30-599\x12\x36\n\x04\x62ody\x18\x02 \x01(\x0b\x32(.yandex.cloud.apploadbalancer.v1.Payload\"\x82\x02\n\x18GrpcStatusResponseAction\x12P\n\x06status\x18\x01 \x01(\x0e\x32@.yandex.cloud.apploadbalancer.v1.GrpcStatusResponseAction.Status\"\x93\x01\n\x06Status\x12\x06\n\x02OK\x10\x00\x12\x14\n\x10INVALID_ARGUMENT\x10\x01\x12\r\n\tNOT_FOUND\x10\x02\x12\x15\n\x11PERMISSION_DENIED\x10\x03\x12\x13\n\x0fUNAUTHENTICATED\x10\x04\x12\x11\n\rUNIMPLEMENTED\x10\x05\x12\x0c\n\x08INTERNAL\x10\x06\x12\x0f\n\x0bUNAVAILABLE\x10\x07\"\x8c\x02\n\x0fHttpRouteAction\x12\x1e\n\x10\x62\x61\x63kend_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12*\n\x07timeout\x18\x02 \x01(\x0b\x32\x19.google.protobuf.Duration\x12/\n\x0cidle_timeout\x18\x03 \x01(\x0b\x32\x19.google.protobuf.Duration\x12\x16\n\x0chost_rewrite\x18\x04 \x01(\tH\x00\x12\x1b\n\x11\x61uto_host_rewrite\x18\x05 \x01(\x08H\x00\x12\x16\n\x0eprefix_rewrite\x18\x06 \x01(\t\x12\x15\n\rupgrade_types\x18\x07 \x03(\tB\x18\n\x16host_rewrite_specifier\"\xe1\x01\n\x0fGrpcRouteAction\x12\x1e\n\x10\x62\x61\x63kend_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12.\n\x0bmax_timeout\x18\x02 \x01(\x0b\x32\x19.google.protobuf.Duration\x12/\n\x0cidle_timeout\x18\x03 \x01(\x0b\x32\x19.google.protobuf.Duration\x12\x16\n\x0chost_rewrite\x18\x04 \x01(\tH\x00\x12\x1b\n\x11\x61uto_host_rewrite\x18\x05 \x01(\x08H\x00\x42\x18\n\x16host_rewrite_specifierBz\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancerb\x06proto3'
+  serialized_pb=b'\n2yandex/cloud/apploadbalancer/v1/virtual_host.proto\x12\x1fyandex.cloud.apploadbalancer.v1\x1a\x1egoogle/protobuf/duration.proto\x1a-yandex/cloud/apploadbalancer/v1/payload.proto\x1a\x1dyandex/cloud/validation.proto\"\xdd\x02\n\x0bVirtualHost\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tauthority\x18\x02 \x03(\t\x12\x36\n\x06routes\x18\x03 \x03(\x0b\x32&.yandex.cloud.apploadbalancer.v1.Route\x12S\n\x16modify_request_headers\x18\x04 \x03(\x0b\x32\x33.yandex.cloud.apploadbalancer.v1.HeaderModification\x12T\n\x17modify_response_headers\x18\x05 \x03(\x0b\x32\x33.yandex.cloud.apploadbalancer.v1.HeaderModification\x12\x44\n\rroute_options\x18\x06 \x01(\x0b\x32-.yandex.cloud.apploadbalancer.v1.RouteOptions\"\xee\x01\n\x0cRouteOptions\x12S\n\x16modify_request_headers\x18\x01 \x03(\x0b\x32\x33.yandex.cloud.apploadbalancer.v1.HeaderModification\x12T\n\x17modify_response_headers\x18\x02 \x03(\x0b\x32\x33.yandex.cloud.apploadbalancer.v1.HeaderModification\x12\x33\n\x04rbac\x18\x05 \x01(\x0b\x32%.yandex.cloud.apploadbalancer.v1.RBAC\"\xcb\x01\n\x04RBAC\x12\x42\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32,.yandex.cloud.apploadbalancer.v1.RBAC.ActionB\x04\xe8\xc7\x31\x01\x12H\n\nprincipals\x18\x02 \x03(\x0b\x32+.yandex.cloud.apploadbalancer.v1.PrincipalsB\x07\x82\xc8\x31\x03>=1\"5\n\x06\x41\x63tion\x12\x16\n\x12\x41\x43TION_UNSPECIFIED\x10\x00\x12\t\n\x05\x41LLOW\x10\x01\x12\x08\n\x04\x44\x45NY\x10\x02\"P\n\nPrincipals\x12\x42\n\x0e\x61nd_principals\x18\x01 \x03(\x0b\x32*.yandex.cloud.apploadbalancer.v1.Principal\"\xf1\x01\n\tPrincipal\x12J\n\x06header\x18\x01 \x01(\x0b\x32\x38.yandex.cloud.apploadbalancer.v1.Principal.HeaderMatcherH\x00\x12\x13\n\tremote_ip\x18\x02 \x01(\tH\x00\x12\r\n\x03\x61ny\x18\x03 \x01(\x08H\x00\x1a`\n\rHeaderMatcher\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12;\n\x05value\x18\x02 \x01(\x0b\x32,.yandex.cloud.apploadbalancer.v1.StringMatchB\x12\n\nidentifier\x12\x04\xc0\xc1\x31\x01\"x\n\x12HeaderModification\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x10\n\x06\x61ppend\x18\x02 \x01(\tH\x00\x12\x11\n\x07replace\x18\x03 \x01(\tH\x00\x12\x10\n\x06remove\x18\x04 \x01(\x08H\x00\x12\x10\n\x06rename\x18\x05 \x01(\tH\x00\x42\x0b\n\toperation\"\xe8\x01\n\x05Route\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12:\n\x04http\x18\x02 \x01(\x0b\x32*.yandex.cloud.apploadbalancer.v1.HttpRouteH\x00\x12:\n\x04grpc\x18\x03 \x01(\x0b\x32*.yandex.cloud.apploadbalancer.v1.GrpcRouteH\x00\x12\x44\n\rroute_options\x18\x04 \x01(\x0b\x32-.yandex.cloud.apploadbalancer.v1.RouteOptionsB\r\n\x05route\x12\x04\xc0\xc1\x31\x01\"\xb5\x02\n\tHttpRoute\x12>\n\x05match\x18\x01 \x01(\x0b\x32/.yandex.cloud.apploadbalancer.v1.HttpRouteMatch\x12\x41\n\x05route\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.apploadbalancer.v1.HttpRouteActionH\x00\x12\x43\n\x08redirect\x18\x03 \x01(\x0b\x32/.yandex.cloud.apploadbalancer.v1.RedirectActionH\x00\x12P\n\x0f\x64irect_response\x18\x04 \x01(\x0b\x32\x35.yandex.cloud.apploadbalancer.v1.DirectResponseActionH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01\"\xf4\x01\n\tGrpcRoute\x12>\n\x05match\x18\x01 \x01(\x0b\x32/.yandex.cloud.apploadbalancer.v1.GrpcRouteMatch\x12\x41\n\x05route\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.apploadbalancer.v1.GrpcRouteActionH\x00\x12T\n\x0fstatus_response\x18\x03 \x01(\x0b\x32\x39.yandex.cloud.apploadbalancer.v1.GrpcStatusResponseActionH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01\"a\n\x0eHttpRouteMatch\x12\x13\n\x0bhttp_method\x18\x01 \x03(\t\x12:\n\x04path\x18\x02 \x01(\x0b\x32,.yandex.cloud.apploadbalancer.v1.StringMatch\"L\n\x0eGrpcRouteMatch\x12:\n\x04\x66qmn\x18\x01 \x01(\x0b\x32,.yandex.cloud.apploadbalancer.v1.StringMatch\"b\n\x0bStringMatch\x12\x15\n\x0b\x65xact_match\x18\x01 \x01(\tH\x00\x12\x16\n\x0cprefix_match\x18\x02 \x01(\tH\x00\x12\x15\n\x0bregex_match\x18\x03 \x01(\tH\x00\x42\r\n\x05match\x12\x04\xc0\xc1\x31\x01\"\xfa\x02\n\x0eRedirectAction\x12\x16\n\x0ereplace_scheme\x18\x01 \x01(\t\x12\x14\n\x0creplace_host\x18\x02 \x01(\t\x12\x14\n\x0creplace_port\x18\x03 \x01(\x03\x12\x16\n\x0creplace_path\x18\x04 \x01(\tH\x00\x12\x18\n\x0ereplace_prefix\x18\x05 \x01(\tH\x00\x12\x14\n\x0cremove_query\x18\x06 \x01(\x08\x12[\n\rresponse_code\x18\x07 \x01(\x0e\x32\x44.yandex.cloud.apploadbalancer.v1.RedirectAction.RedirectResponseCode\"w\n\x14RedirectResponseCode\x12\x15\n\x11MOVED_PERMANENTLY\x10\x00\x12\t\n\x05\x46OUND\x10\x01\x12\r\n\tSEE_OTHER\x10\x02\x12\x16\n\x12TEMPORARY_REDIRECT\x10\x03\x12\x16\n\x12PERMANENT_REDIRECT\x10\x04\x42\x06\n\x04path\"k\n\x14\x44irectResponseAction\x12\x1b\n\x06status\x18\x01 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x31\x30\x30-599\x12\x36\n\x04\x62ody\x18\x02 \x01(\x0b\x32(.yandex.cloud.apploadbalancer.v1.Payload\"\x82\x02\n\x18GrpcStatusResponseAction\x12P\n\x06status\x18\x01 \x01(\x0e\x32@.yandex.cloud.apploadbalancer.v1.GrpcStatusResponseAction.Status\"\x93\x01\n\x06Status\x12\x06\n\x02OK\x10\x00\x12\x14\n\x10INVALID_ARGUMENT\x10\x01\x12\r\n\tNOT_FOUND\x10\x02\x12\x15\n\x11PERMISSION_DENIED\x10\x03\x12\x13\n\x0fUNAUTHENTICATED\x10\x04\x12\x11\n\rUNIMPLEMENTED\x10\x05\x12\x0c\n\x08INTERNAL\x10\x06\x12\x0f\n\x0bUNAVAILABLE\x10\x07\"\x8c\x02\n\x0fHttpRouteAction\x12\x1e\n\x10\x62\x61\x63kend_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12*\n\x07timeout\x18\x02 \x01(\x0b\x32\x19.google.protobuf.Duration\x12/\n\x0cidle_timeout\x18\x03 \x01(\x0b\x32\x19.google.protobuf.Duration\x12\x16\n\x0chost_rewrite\x18\x04 \x01(\tH\x00\x12\x1b\n\x11\x61uto_host_rewrite\x18\x05 \x01(\x08H\x00\x12\x16\n\x0eprefix_rewrite\x18\x06 \x01(\t\x12\x15\n\rupgrade_types\x18\x07 \x03(\tB\x18\n\x16host_rewrite_specifier\"\xe1\x01\n\x0fGrpcRouteAction\x12\x1e\n\x10\x62\x61\x63kend_group_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12.\n\x0bmax_timeout\x18\x02 \x01(\x0b\x32\x19.google.protobuf.Duration\x12/\n\x0cidle_timeout\x18\x03 \x01(\x0b\x32\x19.google.protobuf.Duration\x12\x16\n\x0chost_rewrite\x18\x04 \x01(\tH\x00\x12\x1b\n\x11\x61uto_host_rewrite\x18\x05 \x01(\x08H\x00\x42\x18\n\x16host_rewrite_specifierBz\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancerb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_payload__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
 
+
+_RBAC_ACTION = _descriptor.EnumDescriptor(
+  name='Action',
+  full_name='yandex.cloud.apploadbalancer.v1.RBAC.Action',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='ACTION_UNSPECIFIED', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='ALLOW', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='DENY', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=941,
+  serialized_end=994,
+)
+_sym_db.RegisterEnumDescriptor(_RBAC_ACTION)
 
 _REDIRECTACTION_REDIRECTRESPONSECODE = _descriptor.EnumDescriptor(
   name='RedirectResponseCode',
@@ -63,8 +93,8 @@ _REDIRECTACTION_REDIRECTRESPONSECODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2182,
-  serialized_end=2301,
+  serialized_start=2767,
+  serialized_end=2886,
 )
 _sym_db.RegisterEnumDescriptor(_REDIRECTACTION_REDIRECTRESPONSECODE)
 
@@ -118,8 +148,8 @@ _GRPCSTATUSRESPONSEACTION_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2532,
-  serialized_end=2679,
+  serialized_start=3117,
+  serialized_end=3264,
 )
 _sym_db.RegisterEnumDescriptor(_GRPCSTATUSRESPONSEACTION_STATUS)
 
@@ -213,6 +243,13 @@ _ROUTEOPTIONS = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='rbac', full_name='yandex.cloud.apploadbalancer.v1.RouteOptions.rbac', index=2,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -226,7 +263,168 @@ _ROUTEOPTIONS = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=550,
-  serialized_end=735,
+  serialized_end=788,
+)
+
+
+_RBAC = _descriptor.Descriptor(
+  name='RBAC',
+  full_name='yandex.cloud.apploadbalancer.v1.RBAC',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='action', full_name='yandex.cloud.apploadbalancer.v1.RBAC.action', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='principals', full_name='yandex.cloud.apploadbalancer.v1.RBAC.principals', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\202\3101\003>=1', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+    _RBAC_ACTION,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=791,
+  serialized_end=994,
+)
+
+
+_PRINCIPALS = _descriptor.Descriptor(
+  name='Principals',
+  full_name='yandex.cloud.apploadbalancer.v1.Principals',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='and_principals', full_name='yandex.cloud.apploadbalancer.v1.Principals.and_principals', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=996,
+  serialized_end=1076,
+)
+
+
+_PRINCIPAL_HEADERMATCHER = _descriptor.Descriptor(
+  name='HeaderMatcher',
+  full_name='yandex.cloud.apploadbalancer.v1.Principal.HeaderMatcher',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='name', full_name='yandex.cloud.apploadbalancer.v1.Principal.HeaderMatcher.name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='yandex.cloud.apploadbalancer.v1.Principal.HeaderMatcher.value', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1204,
+  serialized_end=1300,
+)
+
+_PRINCIPAL = _descriptor.Descriptor(
+  name='Principal',
+  full_name='yandex.cloud.apploadbalancer.v1.Principal',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='header', full_name='yandex.cloud.apploadbalancer.v1.Principal.header', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='remote_ip', full_name='yandex.cloud.apploadbalancer.v1.Principal.remote_ip', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='any', full_name='yandex.cloud.apploadbalancer.v1.Principal.any', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_PRINCIPAL_HEADERMATCHER, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='identifier', full_name='yandex.cloud.apploadbalancer.v1.Principal.identifier',
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[], serialized_options=b'\300\3011\001'),
+  ],
+  serialized_start=1079,
+  serialized_end=1320,
 )
 
 
@@ -290,8 +488,8 @@ _HEADERMODIFICATION = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=737,
-  serialized_end=857,
+  serialized_start=1322,
+  serialized_end=1442,
 )
 
 
@@ -348,8 +546,8 @@ _ROUTE = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[], serialized_options=b'\300\3011\001'),
   ],
-  serialized_start=860,
-  serialized_end=1092,
+  serialized_start=1445,
+  serialized_end=1677,
 )
 
 
@@ -406,8 +604,8 @@ _HTTPROUTE = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[], serialized_options=b'\300\3011\001'),
   ],
-  serialized_start=1095,
-  serialized_end=1404,
+  serialized_start=1680,
+  serialized_end=1989,
 )
 
 
@@ -457,8 +655,8 @@ _GRPCROUTE = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[], serialized_options=b'\300\3011\001'),
   ],
-  serialized_start=1407,
-  serialized_end=1651,
+  serialized_start=1992,
+  serialized_end=2236,
 )
 
 
@@ -496,8 +694,8 @@ _HTTPROUTEMATCH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1653,
-  serialized_end=1750,
+  serialized_start=2238,
+  serialized_end=2335,
 )
 
 
@@ -528,8 +726,8 @@ _GRPCROUTEMATCH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1752,
-  serialized_end=1828,
+  serialized_start=2337,
+  serialized_end=2413,
 )
 
 
@@ -579,8 +777,8 @@ _STRINGMATCH = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[], serialized_options=b'\300\3011\001'),
   ],
-  serialized_start=1830,
-  serialized_end=1928,
+  serialized_start=2415,
+  serialized_end=2513,
 )
 
 
@@ -659,8 +857,8 @@ _REDIRECTACTION = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1931,
-  serialized_end=2309,
+  serialized_start=2516,
+  serialized_end=2894,
 )
 
 
@@ -698,8 +896,8 @@ _DIRECTRESPONSEACTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2311,
-  serialized_end=2418,
+  serialized_start=2896,
+  serialized_end=3003,
 )
 
 
@@ -731,8 +929,8 @@ _GRPCSTATUSRESPONSEACTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2421,
-  serialized_end=2679,
+  serialized_start=3006,
+  serialized_end=3264,
 )
 
 
@@ -810,8 +1008,8 @@ _HTTPROUTEACTION = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=2682,
-  serialized_end=2950,
+  serialized_start=3267,
+  serialized_end=3535,
 )
 
 
@@ -875,8 +1073,8 @@ _GRPCROUTEACTION = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=2953,
-  serialized_end=3178,
+  serialized_start=3538,
+  serialized_end=3763,
 )
 
 _VIRTUALHOST.fields_by_name['routes'].message_type = _ROUTE
@@ -885,6 +1083,23 @@ _VIRTUALHOST.fields_by_name['modify_response_headers'].message_type = _HEADERMOD
 _VIRTUALHOST.fields_by_name['route_options'].message_type = _ROUTEOPTIONS
 _ROUTEOPTIONS.fields_by_name['modify_request_headers'].message_type = _HEADERMODIFICATION
 _ROUTEOPTIONS.fields_by_name['modify_response_headers'].message_type = _HEADERMODIFICATION
+_ROUTEOPTIONS.fields_by_name['rbac'].message_type = _RBAC
+_RBAC.fields_by_name['action'].enum_type = _RBAC_ACTION
+_RBAC.fields_by_name['principals'].message_type = _PRINCIPALS
+_RBAC_ACTION.containing_type = _RBAC
+_PRINCIPALS.fields_by_name['and_principals'].message_type = _PRINCIPAL
+_PRINCIPAL_HEADERMATCHER.fields_by_name['value'].message_type = _STRINGMATCH
+_PRINCIPAL_HEADERMATCHER.containing_type = _PRINCIPAL
+_PRINCIPAL.fields_by_name['header'].message_type = _PRINCIPAL_HEADERMATCHER
+_PRINCIPAL.oneofs_by_name['identifier'].fields.append(
+  _PRINCIPAL.fields_by_name['header'])
+_PRINCIPAL.fields_by_name['header'].containing_oneof = _PRINCIPAL.oneofs_by_name['identifier']
+_PRINCIPAL.oneofs_by_name['identifier'].fields.append(
+  _PRINCIPAL.fields_by_name['remote_ip'])
+_PRINCIPAL.fields_by_name['remote_ip'].containing_oneof = _PRINCIPAL.oneofs_by_name['identifier']
+_PRINCIPAL.oneofs_by_name['identifier'].fields.append(
+  _PRINCIPAL.fields_by_name['any'])
+_PRINCIPAL.fields_by_name['any'].containing_oneof = _PRINCIPAL.oneofs_by_name['identifier']
 _HEADERMODIFICATION.oneofs_by_name['operation'].fields.append(
   _HEADERMODIFICATION.fields_by_name['append'])
 _HEADERMODIFICATION.fields_by_name['append'].containing_oneof = _HEADERMODIFICATION.oneofs_by_name['operation']
@@ -968,6 +1183,9 @@ _GRPCROUTEACTION.oneofs_by_name['host_rewrite_specifier'].fields.append(
 _GRPCROUTEACTION.fields_by_name['auto_host_rewrite'].containing_oneof = _GRPCROUTEACTION.oneofs_by_name['host_rewrite_specifier']
 DESCRIPTOR.message_types_by_name['VirtualHost'] = _VIRTUALHOST
 DESCRIPTOR.message_types_by_name['RouteOptions'] = _ROUTEOPTIONS
+DESCRIPTOR.message_types_by_name['RBAC'] = _RBAC
+DESCRIPTOR.message_types_by_name['Principals'] = _PRINCIPALS
+DESCRIPTOR.message_types_by_name['Principal'] = _PRINCIPAL
 DESCRIPTOR.message_types_by_name['HeaderModification'] = _HEADERMODIFICATION
 DESCRIPTOR.message_types_by_name['Route'] = _ROUTE
 DESCRIPTOR.message_types_by_name['HttpRoute'] = _HTTPROUTE
@@ -995,6 +1213,35 @@ RouteOptions = _reflection.GeneratedProtocolMessageType('RouteOptions', (_messag
   # @@protoc_insertion_point(class_scope:yandex.cloud.apploadbalancer.v1.RouteOptions)
   })
 _sym_db.RegisterMessage(RouteOptions)
+
+RBAC = _reflection.GeneratedProtocolMessageType('RBAC', (_message.Message,), {
+  'DESCRIPTOR' : _RBAC,
+  '__module__' : 'yandex.cloud.apploadbalancer.v1.virtual_host_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.apploadbalancer.v1.RBAC)
+  })
+_sym_db.RegisterMessage(RBAC)
+
+Principals = _reflection.GeneratedProtocolMessageType('Principals', (_message.Message,), {
+  'DESCRIPTOR' : _PRINCIPALS,
+  '__module__' : 'yandex.cloud.apploadbalancer.v1.virtual_host_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.apploadbalancer.v1.Principals)
+  })
+_sym_db.RegisterMessage(Principals)
+
+Principal = _reflection.GeneratedProtocolMessageType('Principal', (_message.Message,), {
+
+  'HeaderMatcher' : _reflection.GeneratedProtocolMessageType('HeaderMatcher', (_message.Message,), {
+    'DESCRIPTOR' : _PRINCIPAL_HEADERMATCHER,
+    '__module__' : 'yandex.cloud.apploadbalancer.v1.virtual_host_pb2'
+    # @@protoc_insertion_point(class_scope:yandex.cloud.apploadbalancer.v1.Principal.HeaderMatcher)
+    })
+  ,
+  'DESCRIPTOR' : _PRINCIPAL,
+  '__module__' : 'yandex.cloud.apploadbalancer.v1.virtual_host_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.apploadbalancer.v1.Principal)
+  })
+_sym_db.RegisterMessage(Principal)
+_sym_db.RegisterMessage(Principal.HeaderMatcher)
 
 HeaderModification = _reflection.GeneratedProtocolMessageType('HeaderModification', (_message.Message,), {
   'DESCRIPTOR' : _HEADERMODIFICATION,
@@ -1083,6 +1330,10 @@ _sym_db.RegisterMessage(GrpcRouteAction)
 
 DESCRIPTOR._options = None
 _VIRTUALHOST.fields_by_name['name']._options = None
+_RBAC.fields_by_name['action']._options = None
+_RBAC.fields_by_name['principals']._options = None
+_PRINCIPAL_HEADERMATCHER.fields_by_name['name']._options = None
+_PRINCIPAL.oneofs_by_name['identifier']._options = None
 _ROUTE.oneofs_by_name['route']._options = None
 _ROUTE.fields_by_name['name']._options = None
 _HTTPROUTE.oneofs_by_name['action']._options = None
