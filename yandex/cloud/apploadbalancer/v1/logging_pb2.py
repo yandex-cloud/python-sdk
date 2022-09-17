@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancer',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n-yandex/cloud/apploadbalancer/v1/logging.proto\x12\x1fyandex.cloud.apploadbalancer.v1\x1a\x1dyandex/cloud/validation.proto\"\x8e\x01\n\x0eLogDiscardRule\x12\x1a\n\x05\x63odes\x18\x01 \x03(\x03\x42\x0b\xfa\xc7\x31\x07\x31\x30\x30-599\x12\x44\n\tintervals\x18\x02 \x03(\x0e\x32\x31.yandex.cloud.apploadbalancer.v1.HttpCodeInterval\x12\x1a\n\x07percent\x18\x03 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\"j\n\nLogOptions\x12\x14\n\x0clog_group_id\x18\x01 \x01(\t\x12\x46\n\rdiscard_rules\x18\x02 \x03(\x0b\x32/.yandex.cloud.apploadbalancer.v1.LogDiscardRule*\xc2\x01\n\x10HttpCodeInterval\x12\"\n\x1eHTTP_CODE_INTERVAL_UNSPECIFIED\x10\x00\x12\x1a\n\x16HTTP_CODE_INTERVAL_1XX\x10\x01\x12\x1a\n\x16HTTP_CODE_INTERVAL_2XX\x10\x02\x12\x1a\n\x16HTTP_CODE_INTERVAL_3XX\x10\x03\x12\x1a\n\x16HTTP_CODE_INTERVAL_4XX\x10\x04\x12\x1a\n\x16HTTP_CODE_INTERVAL_5XX\x10\x05\x42z\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancerb\x06proto3'
+  serialized_pb=b'\n-yandex/cloud/apploadbalancer/v1/logging.proto\x12\x1fyandex.cloud.apploadbalancer.v1\x1a\x1dyandex/cloud/validation.proto\"\x8e\x01\n\x0eLogDiscardRule\x12\x1a\n\x05\x63odes\x18\x01 \x03(\x03\x42\x0b\xfa\xc7\x31\x07\x31\x30\x30-599\x12\x44\n\tintervals\x18\x02 \x03(\x0e\x32\x31.yandex.cloud.apploadbalancer.v1.HttpCodeInterval\x12\x1a\n\x07percent\x18\x03 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\"{\n\nLogOptions\x12\x14\n\x0clog_group_id\x18\x01 \x01(\t\x12\x46\n\rdiscard_rules\x18\x02 \x03(\x0b\x32/.yandex.cloud.apploadbalancer.v1.LogDiscardRule\x12\x0f\n\x07\x64isable\x18\x03 \x01(\x08*\xc2\x01\n\x10HttpCodeInterval\x12\"\n\x1eHTTP_CODE_INTERVAL_UNSPECIFIED\x10\x00\x12\x1a\n\x16HTTP_CODE_INTERVAL_1XX\x10\x01\x12\x1a\n\x16HTTP_CODE_INTERVAL_2XX\x10\x02\x12\x1a\n\x16HTTP_CODE_INTERVAL_3XX\x10\x03\x12\x1a\n\x16HTTP_CODE_INTERVAL_4XX\x10\x04\x12\x1a\n\x16HTTP_CODE_INTERVAL_5XX\x10\x05\x42z\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancerb\x06proto3'
   ,
   dependencies=[yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -65,8 +65,8 @@ _HTTPCODEINTERVAL = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=367,
-  serialized_end=561,
+  serialized_start=384,
+  serialized_end=578,
 )
 _sym_db.RegisterEnumDescriptor(_HTTPCODEINTERVAL)
 
@@ -148,6 +148,13 @@ _LOGOPTIONS = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='disable', full_name='yandex.cloud.apploadbalancer.v1.LogOptions.disable', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -161,7 +168,7 @@ _LOGOPTIONS = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=258,
-  serialized_end=364,
+  serialized_end=381,
 )
 
 _LOGDISCARDRULE.fields_by_name['intervals'].enum_type = _HTTPCODEINTERVAL
