@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\027yandex.cloud.api.dns.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/dns/v1;dns',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\"yandex/cloud/dns/v1/dns_zone.proto\x12\x13yandex.cloud.dns.v1\x1a\x1dyandex/cloud/validation.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xf8\x02\n\x07\x44nsZone\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x38\n\x06labels\x18\x06 \x03(\x0b\x32(.yandex.cloud.dns.v1.DnsZone.LabelsEntry\x12\x0c\n\x04zone\x18\x07 \x01(\t\x12\x42\n\x12private_visibility\x18\x08 \x01(\x0b\x32&.yandex.cloud.dns.v1.PrivateVisibility\x12@\n\x11public_visibility\x18\t \x01(\x0b\x32%.yandex.cloud.dns.v1.PublicVisibility\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x81\x01\n\tRecordSet\x12\x17\n\x04name\x18\x01 \x01(\tB\t\x8a\xc8\x31\x05\x31-254\x12\x16\n\x04type\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04\x31-20\x12\x1d\n\x03ttl\x18\x03 \x01(\x03\x42\x10\xfa\xc7\x31\x0c\x30-2147483647\x12$\n\x04\x64\x61ta\x18\x04 \x03(\tB\x16\x82\xc8\x31\x05\x31-100\x8a\xc8\x31\x05\x31-255\x90\xc8\x31\x01\"<\n\x11PrivateVisibility\x12\'\n\x0bnetwork_ids\x18\x01 \x03(\tB\x12\x82\xc8\x31\x04\x30-10\x8a\xc8\x31\x02\x32\x30\x90\xc8\x31\x01\"\x12\n\x10PublicVisibilityBV\n\x17yandex.cloud.api.dns.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/dns/v1;dnsb\x06proto3'
+  serialized_pb=b'\n\"yandex/cloud/dns/v1/dns_zone.proto\x12\x13yandex.cloud.dns.v1\x1a\x1dyandex/cloud/validation.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xf8\x02\n\x07\x44nsZone\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x38\n\x06labels\x18\x06 \x03(\x0b\x32(.yandex.cloud.dns.v1.DnsZone.LabelsEntry\x12\x0c\n\x04zone\x18\x07 \x01(\t\x12\x42\n\x12private_visibility\x18\x08 \x01(\x0b\x32&.yandex.cloud.dns.v1.PrivateVisibility\x12@\n\x11public_visibility\x18\t \x01(\x0b\x32%.yandex.cloud.dns.v1.PublicVisibility\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x81\x01\n\tRecordSet\x12\x17\n\x04name\x18\x01 \x01(\tB\t\x8a\xc8\x31\x05\x31-254\x12\x16\n\x04type\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04\x31-20\x12\x1d\n\x03ttl\x18\x03 \x01(\x03\x42\x10\xfa\xc7\x31\x0c\x30-2147483647\x12$\n\x04\x64\x61ta\x18\x04 \x03(\tB\x16\x82\xc8\x31\x05\x31-100\x8a\xc8\x31\x05\x31-255\x90\xc8\x31\x01\"=\n\x11PrivateVisibility\x12(\n\x0bnetwork_ids\x18\x01 \x03(\tB\x13\x82\xc8\x31\x05\x30-100\x8a\xc8\x31\x02\x32\x30\x90\xc8\x31\x01\"\x12\n\x10PublicVisibilityBV\n\x17yandex.cloud.api.dns.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/dns/v1;dnsb\x06proto3'
   ,
   dependencies=[yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
@@ -221,7 +221,7 @@ _PRIVATEVISIBILITY = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\0040-10\212\3101\00220\220\3101\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\202\3101\0050-100\212\3101\00220\220\3101\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -235,7 +235,7 @@ _PRIVATEVISIBILITY = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=634,
-  serialized_end=694,
+  serialized_end=695,
 )
 
 
@@ -259,8 +259,8 @@ _PUBLICVISIBILITY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=696,
-  serialized_end=714,
+  serialized_start=697,
+  serialized_end=715,
 )
 
 _DNSZONE_LABELSENTRY.containing_type = _DNSZONE
