@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\036yandex.cloud.api.datasphere.v1ZIgithub.com/yandex-cloud/go-genproto/yandex/cloud/datasphere/v1;datasphere',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n-yandex/cloud/datasphere/v1/node_service.proto\x12\x1ayandex.cloud.datasphere.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1cgoogle/protobuf/struct.proto\"b\n\x14NodeExecutionRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x0f\n\x07node_id\x18\x02 \x01(\t\x12&\n\x05input\x18\x03 \x01(\x0b\x32\x17.google.protobuf.Struct\"@\n\x15NodeExecutionResponse\x12\'\n\x06output\x18\x01 \x01(\x0b\x32\x17.google.protobuf.Struct2\xb1\x01\n\x0bNodeService\x12\xa1\x01\n\x07\x45xecute\x12\x30.yandex.cloud.datasphere.v1.NodeExecutionRequest\x1a\x31.yandex.cloud.datasphere.v1.NodeExecutionResponse\"1\x82\xd3\xe4\x93\x02+\"&/datasphere/v1/nodes/{node_id}:execute:\x01*Bk\n\x1eyandex.cloud.api.datasphere.v1ZIgithub.com/yandex-cloud/go-genproto/yandex/cloud/datasphere/v1;datasphereb\x06proto3'
+  serialized_pb=b'\n-yandex/cloud/datasphere/v1/node_service.proto\x12\x1ayandex.cloud.datasphere.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1cgoogle/protobuf/struct.proto\"b\n\x14NodeExecutionRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x0f\n\x07node_id\x18\x02 \x01(\t\x12&\n\x05input\x18\x03 \x01(\x0b\x32\x17.google.protobuf.Struct\"@\n\x15NodeExecutionResponse\x12\'\n\x06output\x18\x01 \x01(\x0b\x32\x17.google.protobuf.Struct\"f\n\x15\x41liasExecutionRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x12\n\nalias_name\x18\x02 \x01(\t\x12&\n\x05input\x18\x03 \x01(\x0b\x32\x17.google.protobuf.Struct\"A\n\x16\x41liasExecutionResponse\x12\'\n\x06output\x18\x01 \x01(\x0b\x32\x17.google.protobuf.Struct2\xe1\x02\n\x0bNodeService\x12\xa1\x01\n\x07\x45xecute\x12\x30.yandex.cloud.datasphere.v1.NodeExecutionRequest\x1a\x31.yandex.cloud.datasphere.v1.NodeExecutionResponse\"1\x82\xd3\xe4\x93\x02+\"&/datasphere/v1/nodes/{node_id}:execute:\x01*\x12\xad\x01\n\x0c\x45xecuteAlias\x12\x31.yandex.cloud.datasphere.v1.AliasExecutionRequest\x1a\x32.yandex.cloud.datasphere.v1.AliasExecutionResponse\"6\x82\xd3\xe4\x93\x02\x30\"+/datasphere/v1/aliases/{alias_name}:execute:\x01*Bk\n\x1eyandex.cloud.api.datasphere.v1ZIgithub.com/yandex-cloud/go-genproto/yandex/cloud/datasphere/v1;datasphereb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_struct__pb2.DESCRIPTOR,])
 
@@ -105,10 +105,92 @@ _NODEEXECUTIONRESPONSE = _descriptor.Descriptor(
   serialized_end=301,
 )
 
+
+_ALIASEXECUTIONREQUEST = _descriptor.Descriptor(
+  name='AliasExecutionRequest',
+  full_name='yandex.cloud.datasphere.v1.AliasExecutionRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='folder_id', full_name='yandex.cloud.datasphere.v1.AliasExecutionRequest.folder_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='alias_name', full_name='yandex.cloud.datasphere.v1.AliasExecutionRequest.alias_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='input', full_name='yandex.cloud.datasphere.v1.AliasExecutionRequest.input', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=303,
+  serialized_end=405,
+)
+
+
+_ALIASEXECUTIONRESPONSE = _descriptor.Descriptor(
+  name='AliasExecutionResponse',
+  full_name='yandex.cloud.datasphere.v1.AliasExecutionResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='output', full_name='yandex.cloud.datasphere.v1.AliasExecutionResponse.output', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=407,
+  serialized_end=472,
+)
+
 _NODEEXECUTIONREQUEST.fields_by_name['input'].message_type = google_dot_protobuf_dot_struct__pb2._STRUCT
 _NODEEXECUTIONRESPONSE.fields_by_name['output'].message_type = google_dot_protobuf_dot_struct__pb2._STRUCT
+_ALIASEXECUTIONREQUEST.fields_by_name['input'].message_type = google_dot_protobuf_dot_struct__pb2._STRUCT
+_ALIASEXECUTIONRESPONSE.fields_by_name['output'].message_type = google_dot_protobuf_dot_struct__pb2._STRUCT
 DESCRIPTOR.message_types_by_name['NodeExecutionRequest'] = _NODEEXECUTIONREQUEST
 DESCRIPTOR.message_types_by_name['NodeExecutionResponse'] = _NODEEXECUTIONRESPONSE
+DESCRIPTOR.message_types_by_name['AliasExecutionRequest'] = _ALIASEXECUTIONREQUEST
+DESCRIPTOR.message_types_by_name['AliasExecutionResponse'] = _ALIASEXECUTIONRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 NodeExecutionRequest = _reflection.GeneratedProtocolMessageType('NodeExecutionRequest', (_message.Message,), {
@@ -125,6 +207,20 @@ NodeExecutionResponse = _reflection.GeneratedProtocolMessageType('NodeExecutionR
   })
 _sym_db.RegisterMessage(NodeExecutionResponse)
 
+AliasExecutionRequest = _reflection.GeneratedProtocolMessageType('AliasExecutionRequest', (_message.Message,), {
+  'DESCRIPTOR' : _ALIASEXECUTIONREQUEST,
+  '__module__' : 'yandex.cloud.datasphere.v1.node_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.datasphere.v1.AliasExecutionRequest)
+  })
+_sym_db.RegisterMessage(AliasExecutionRequest)
+
+AliasExecutionResponse = _reflection.GeneratedProtocolMessageType('AliasExecutionResponse', (_message.Message,), {
+  'DESCRIPTOR' : _ALIASEXECUTIONRESPONSE,
+  '__module__' : 'yandex.cloud.datasphere.v1.node_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.datasphere.v1.AliasExecutionResponse)
+  })
+_sym_db.RegisterMessage(AliasExecutionResponse)
+
 
 DESCRIPTOR._options = None
 
@@ -135,8 +231,8 @@ _NODESERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=304,
-  serialized_end=481,
+  serialized_start=475,
+  serialized_end=828,
   methods=[
   _descriptor.MethodDescriptor(
     name='Execute',
@@ -146,6 +242,16 @@ _NODESERVICE = _descriptor.ServiceDescriptor(
     input_type=_NODEEXECUTIONREQUEST,
     output_type=_NODEEXECUTIONRESPONSE,
     serialized_options=b'\202\323\344\223\002+\"&/datasphere/v1/nodes/{node_id}:execute:\001*',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ExecuteAlias',
+    full_name='yandex.cloud.datasphere.v1.NodeService.ExecuteAlias',
+    index=1,
+    containing_service=None,
+    input_type=_ALIASEXECUTIONREQUEST,
+    output_type=_ALIASEXECUTIONRESPONSE,
+    serialized_options=b'\202\323\344\223\0020\"+/datasphere/v1/aliases/{alias_name}:execute:\001*',
     create_key=_descriptor._internal_create_key,
   ),
 ])

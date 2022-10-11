@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\035yandex.cloud.api.mdb.kafka.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/kafka/v1;kafka',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n&yandex/cloud/mdb/kafka/v1/common.proto\x12\x19yandex.cloud.mdb.kafka.v1*\xe2\x01\n\x0f\x43ompressionType\x12 \n\x1c\x43OMPRESSION_TYPE_UNSPECIFIED\x10\x00\x12!\n\x1d\x43OMPRESSION_TYPE_UNCOMPRESSED\x10\x01\x12\x19\n\x15\x43OMPRESSION_TYPE_ZSTD\x10\x02\x12\x18\n\x14\x43OMPRESSION_TYPE_LZ4\x10\x03\x12\x1b\n\x17\x43OMPRESSION_TYPE_SNAPPY\x10\x04\x12\x19\n\x15\x43OMPRESSION_TYPE_GZIP\x10\x05\x12\x1d\n\x19\x43OMPRESSION_TYPE_PRODUCER\x10\x06\x42\x64\n\x1dyandex.cloud.api.mdb.kafka.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/kafka/v1;kafkab\x06proto3'
+  serialized_pb=b'\n&yandex/cloud/mdb/kafka/v1/common.proto\x12\x19yandex.cloud.mdb.kafka.v1*\xe2\x01\n\x0f\x43ompressionType\x12 \n\x1c\x43OMPRESSION_TYPE_UNSPECIFIED\x10\x00\x12!\n\x1d\x43OMPRESSION_TYPE_UNCOMPRESSED\x10\x01\x12\x19\n\x15\x43OMPRESSION_TYPE_ZSTD\x10\x02\x12\x18\n\x14\x43OMPRESSION_TYPE_LZ4\x10\x03\x12\x1b\n\x17\x43OMPRESSION_TYPE_SNAPPY\x10\x04\x12\x19\n\x15\x43OMPRESSION_TYPE_GZIP\x10\x05\x12\x1d\n\x19\x43OMPRESSION_TYPE_PRODUCER\x10\x06*s\n\rSaslMechanism\x12\x1e\n\x1aSASL_MECHANISM_UNSPECIFIED\x10\x00\x12 \n\x1cSASL_MECHANISM_SCRAM_SHA_256\x10\x01\x12 \n\x1cSASL_MECHANISM_SCRAM_SHA_512\x10\x02\x42\x64\n\x1dyandex.cloud.api.mdb.kafka.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/kafka/v1;kafkab\x06proto3'
 )
 
 _COMPRESSIONTYPE = _descriptor.EnumDescriptor(
@@ -74,6 +74,37 @@ _COMPRESSIONTYPE = _descriptor.EnumDescriptor(
 _sym_db.RegisterEnumDescriptor(_COMPRESSIONTYPE)
 
 CompressionType = enum_type_wrapper.EnumTypeWrapper(_COMPRESSIONTYPE)
+_SASLMECHANISM = _descriptor.EnumDescriptor(
+  name='SaslMechanism',
+  full_name='yandex.cloud.mdb.kafka.v1.SaslMechanism',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='SASL_MECHANISM_UNSPECIFIED', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='SASL_MECHANISM_SCRAM_SHA_256', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='SASL_MECHANISM_SCRAM_SHA_512', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=298,
+  serialized_end=413,
+)
+_sym_db.RegisterEnumDescriptor(_SASLMECHANISM)
+
+SaslMechanism = enum_type_wrapper.EnumTypeWrapper(_SASLMECHANISM)
 COMPRESSION_TYPE_UNSPECIFIED = 0
 COMPRESSION_TYPE_UNCOMPRESSED = 1
 COMPRESSION_TYPE_ZSTD = 2
@@ -81,9 +112,13 @@ COMPRESSION_TYPE_LZ4 = 3
 COMPRESSION_TYPE_SNAPPY = 4
 COMPRESSION_TYPE_GZIP = 5
 COMPRESSION_TYPE_PRODUCER = 6
+SASL_MECHANISM_UNSPECIFIED = 0
+SASL_MECHANISM_SCRAM_SHA_256 = 1
+SASL_MECHANISM_SCRAM_SHA_512 = 2
 
 
 DESCRIPTOR.enum_types_by_name['CompressionType'] = _COMPRESSIONTYPE
+DESCRIPTOR.enum_types_by_name['SaslMechanism'] = _SASLMECHANISM
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 

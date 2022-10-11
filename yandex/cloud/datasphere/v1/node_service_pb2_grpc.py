@@ -20,6 +20,11 @@ class NodeServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_datasphere_dot_v1_dot_node__service__pb2.NodeExecutionRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_datasphere_dot_v1_dot_node__service__pb2.NodeExecutionResponse.FromString,
                 )
+        self.ExecuteAlias = channel.unary_unary(
+                '/yandex.cloud.datasphere.v1.NodeService/ExecuteAlias',
+                request_serializer=yandex_dot_cloud_dot_datasphere_dot_v1_dot_node__service__pb2.AliasExecutionRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_datasphere_dot_v1_dot_node__service__pb2.AliasExecutionResponse.FromString,
+                )
 
 
 class NodeServiceServicer(object):
@@ -33,6 +38,13 @@ class NodeServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ExecuteAlias(self, request, context):
+        """Executes NodeAlias requests.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_NodeServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -40,6 +52,11 @@ def add_NodeServiceServicer_to_server(servicer, server):
                     servicer.Execute,
                     request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v1_dot_node__service__pb2.NodeExecutionRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_datasphere_dot_v1_dot_node__service__pb2.NodeExecutionResponse.SerializeToString,
+            ),
+            'ExecuteAlias': grpc.unary_unary_rpc_method_handler(
+                    servicer.ExecuteAlias,
+                    request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v1_dot_node__service__pb2.AliasExecutionRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_datasphere_dot_v1_dot_node__service__pb2.AliasExecutionResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -66,5 +83,22 @@ class NodeService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v1.NodeService/Execute',
             yandex_dot_cloud_dot_datasphere_dot_v1_dot_node__service__pb2.NodeExecutionRequest.SerializeToString,
             yandex_dot_cloud_dot_datasphere_dot_v1_dot_node__service__pb2.NodeExecutionResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ExecuteAlias(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v1.NodeService/ExecuteAlias',
+            yandex_dot_cloud_dot_datasphere_dot_v1_dot_node__service__pb2.AliasExecutionRequest.SerializeToString,
+            yandex_dot_cloud_dot_datasphere_dot_v1_dot_node__service__pb2.AliasExecutionResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

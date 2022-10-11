@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\"yandex.cloud.api.mdb.postgresql.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1;postgresql',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n+yandex/cloud/mdb/postgresql/v1/backup.proto\x12\x1eyandex.cloud.mdb.postgresql.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xdf\x03\n\x06\x42\x61\x63kup\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x19\n\x11source_cluster_id\x18\x04 \x01(\t\x12.\n\nstarted_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04size\x18\x06 \x01(\x03\x12G\n\x04type\x18\x07 \x01(\x0e\x32\x39.yandex.cloud.mdb.postgresql.v1.Backup.BackupCreationType\x12\x43\n\x06method\x18\x08 \x01(\x0e\x32\x33.yandex.cloud.mdb.postgresql.v1.Backup.BackupMethod\"H\n\x0c\x42\x61\x63kupMethod\x12\x1d\n\x19\x42\x41\x43KUP_METHOD_UNSPECIFIED\x10\x00\x12\x08\n\x04\x42\x41SE\x10\x01\x12\x0f\n\x0bINCREMENTAL\x10\x02\"U\n\x12\x42\x61\x63kupCreationType\x12$\n BACKUP_CREATION_TYPE_UNSPECIFIED\x10\x00\x12\r\n\tAUTOMATED\x10\x01\x12\n\n\x06MANUAL\x10\x02\x42s\n\"yandex.cloud.api.mdb.postgresql.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1;postgresqlb\x06proto3'
+  serialized_pb=b'\n+yandex/cloud/mdb/postgresql/v1/backup.proto\x12\x1eyandex.cloud.mdb.postgresql.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xf5\x03\n\x06\x42\x61\x63kup\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x19\n\x11source_cluster_id\x18\x04 \x01(\t\x12.\n\nstarted_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04size\x18\x06 \x01(\x03\x12G\n\x04type\x18\x07 \x01(\x0e\x32\x39.yandex.cloud.mdb.postgresql.v1.Backup.BackupCreationType\x12\x43\n\x06method\x18\x08 \x01(\x0e\x32\x33.yandex.cloud.mdb.postgresql.v1.Backup.BackupMethod\x12\x14\n\x0cjournal_size\x18\t \x01(\x03\"H\n\x0c\x42\x61\x63kupMethod\x12\x1d\n\x19\x42\x41\x43KUP_METHOD_UNSPECIFIED\x10\x00\x12\x08\n\x04\x42\x41SE\x10\x01\x12\x0f\n\x0bINCREMENTAL\x10\x02\"U\n\x12\x42\x61\x63kupCreationType\x12$\n BACKUP_CREATION_TYPE_UNSPECIFIED\x10\x00\x12\r\n\tAUTOMATED\x10\x01\x12\n\n\x06MANUAL\x10\x02\x42s\n\"yandex.cloud.api.mdb.postgresql.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1;postgresqlb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
@@ -51,8 +51,8 @@ _BACKUP_BACKUPMETHOD = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=433,
-  serialized_end=505,
+  serialized_start=455,
+  serialized_end=527,
 )
 _sym_db.RegisterEnumDescriptor(_BACKUP_BACKUPMETHOD)
 
@@ -81,8 +81,8 @@ _BACKUP_BACKUPCREATIONTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=507,
-  serialized_end=592,
+  serialized_start=529,
+  serialized_end=614,
 )
 _sym_db.RegisterEnumDescriptor(_BACKUP_BACKUPCREATIONTYPE)
 
@@ -151,6 +151,13 @@ _BACKUP = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='journal_size', full_name='yandex.cloud.mdb.postgresql.v1.Backup.journal_size', index=8,
+      number=9, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -166,7 +173,7 @@ _BACKUP = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=113,
-  serialized_end=592,
+  serialized_end=614,
 )
 
 _BACKUP.fields_by_name['created_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
