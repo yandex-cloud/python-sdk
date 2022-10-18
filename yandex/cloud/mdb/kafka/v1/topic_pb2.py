@@ -11,6 +11,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import descriptor_pb2 as google_dot_protobuf_dot_descriptor__pb2
 from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
 from yandex.cloud.mdb.kafka.v1 import common_pb2 as yandex_dot_cloud_dot_mdb_dot_kafka_dot_v1_dot_common__pb2
 
@@ -21,9 +22,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\035yandex.cloud.api.mdb.kafka.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/kafka/v1;kafka',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n%yandex/cloud/mdb/kafka/v1/topic.proto\x12\x19yandex.cloud.mdb.kafka.v1\x1a\x1egoogle/protobuf/wrappers.proto\x1a&yandex/cloud/mdb/kafka/v1/common.proto\"\xfd\x03\n\x05Topic\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12/\n\npartitions\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x37\n\x12replication_factor\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12V\n\x10topic_config_2_1\x18\x05 \x01(\x0b\x32).yandex.cloud.mdb.kafka.v1.TopicConfig2_1H\x00R\x0ftopicConfig_2_1\x12V\n\x10topic_config_2_6\x18\x06 \x01(\x0b\x32).yandex.cloud.mdb.kafka.v1.TopicConfig2_6H\x00R\x0ftopicConfig_2_6\x12V\n\x10topic_config_2_8\x18\x07 \x01(\x0b\x32).yandex.cloud.mdb.kafka.v1.TopicConfig2_8H\x00R\x0ftopicConfig_2_8\x12P\n\x0etopic_config_3\x18\x08 \x01(\x0b\x32\'.yandex.cloud.mdb.kafka.v1.TopicConfig3H\x00R\rtopicConfig_3B\x0e\n\x0ctopic_config\"\xed\x03\n\tTopicSpec\x12\x0c\n\x04name\x18\x01 \x01(\t\x12/\n\npartitions\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x37\n\x12replication_factor\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12V\n\x10topic_config_2_1\x18\x04 \x01(\x0b\x32).yandex.cloud.mdb.kafka.v1.TopicConfig2_1H\x00R\x0ftopicConfig_2_1\x12V\n\x10topic_config_2_6\x18\x05 \x01(\x0b\x32).yandex.cloud.mdb.kafka.v1.TopicConfig2_6H\x00R\x0ftopicConfig_2_6\x12V\n\x10topic_config_2_8\x18\x06 \x01(\x0b\x32).yandex.cloud.mdb.kafka.v1.TopicConfig2_8H\x00R\x0ftopicConfig_2_8\x12P\n\x0etopic_config_3\x18\x07 \x01(\x0b\x32\'.yandex.cloud.mdb.kafka.v1.TopicConfig3H\x00R\rtopicConfig_3B\x0e\n\x0ctopic_config\"\x8c\x07\n\x0eTopicConfig2_1\x12O\n\x0e\x63leanup_policy\x18\x01 \x01(\x0e\x32\x37.yandex.cloud.mdb.kafka.v1.TopicConfig2_1.CleanupPolicy\x12\x44\n\x10\x63ompression_type\x18\x02 \x01(\x0e\x32*.yandex.cloud.mdb.kafka.v1.CompressionType\x12\x38\n\x13\x64\x65lete_retention_ms\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x39\n\x14\x66ile_delete_delay_ms\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x33\n\x0e\x66lush_messages\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12-\n\x08\x66lush_ms\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12:\n\x15min_compaction_lag_ms\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x34\n\x0fretention_bytes\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x31\n\x0cretention_ms\x18\t \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x36\n\x11max_message_bytes\x18\n \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x38\n\x13min_insync_replicas\x18\x0b \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x32\n\rsegment_bytes\x18\x0c \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12/\n\x0bpreallocate\x18\r \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"\x8d\x01\n\rCleanupPolicy\x12\x1e\n\x1a\x43LEANUP_POLICY_UNSPECIFIED\x10\x00\x12\x19\n\x15\x43LEANUP_POLICY_DELETE\x10\x01\x12\x1a\n\x16\x43LEANUP_POLICY_COMPACT\x10\x02\x12%\n!CLEANUP_POLICY_COMPACT_AND_DELETE\x10\x03\"\x8c\x07\n\x0eTopicConfig2_6\x12O\n\x0e\x63leanup_policy\x18\x01 \x01(\x0e\x32\x37.yandex.cloud.mdb.kafka.v1.TopicConfig2_6.CleanupPolicy\x12\x44\n\x10\x63ompression_type\x18\x02 \x01(\x0e\x32*.yandex.cloud.mdb.kafka.v1.CompressionType\x12\x38\n\x13\x64\x65lete_retention_ms\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x39\n\x14\x66ile_delete_delay_ms\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x33\n\x0e\x66lush_messages\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12-\n\x08\x66lush_ms\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12:\n\x15min_compaction_lag_ms\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x34\n\x0fretention_bytes\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x31\n\x0cretention_ms\x18\t \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x36\n\x11max_message_bytes\x18\n \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x38\n\x13min_insync_replicas\x18\x0b \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x32\n\rsegment_bytes\x18\x0c \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12/\n\x0bpreallocate\x18\r \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"\x8d\x01\n\rCleanupPolicy\x12\x1e\n\x1a\x43LEANUP_POLICY_UNSPECIFIED\x10\x00\x12\x19\n\x15\x43LEANUP_POLICY_DELETE\x10\x01\x12\x1a\n\x16\x43LEANUP_POLICY_COMPACT\x10\x02\x12%\n!CLEANUP_POLICY_COMPACT_AND_DELETE\x10\x03\"\x8c\x07\n\x0eTopicConfig2_8\x12O\n\x0e\x63leanup_policy\x18\x01 \x01(\x0e\x32\x37.yandex.cloud.mdb.kafka.v1.TopicConfig2_8.CleanupPolicy\x12\x44\n\x10\x63ompression_type\x18\x02 \x01(\x0e\x32*.yandex.cloud.mdb.kafka.v1.CompressionType\x12\x38\n\x13\x64\x65lete_retention_ms\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x39\n\x14\x66ile_delete_delay_ms\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x33\n\x0e\x66lush_messages\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12-\n\x08\x66lush_ms\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12:\n\x15min_compaction_lag_ms\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x34\n\x0fretention_bytes\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x31\n\x0cretention_ms\x18\t \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x36\n\x11max_message_bytes\x18\n \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x38\n\x13min_insync_replicas\x18\x0b \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x32\n\rsegment_bytes\x18\x0c \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12/\n\x0bpreallocate\x18\r \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"\x8d\x01\n\rCleanupPolicy\x12\x1e\n\x1a\x43LEANUP_POLICY_UNSPECIFIED\x10\x00\x12\x19\n\x15\x43LEANUP_POLICY_DELETE\x10\x01\x12\x1a\n\x16\x43LEANUP_POLICY_COMPACT\x10\x02\x12%\n!CLEANUP_POLICY_COMPACT_AND_DELETE\x10\x03\"\x88\x07\n\x0cTopicConfig3\x12M\n\x0e\x63leanup_policy\x18\x01 \x01(\x0e\x32\x35.yandex.cloud.mdb.kafka.v1.TopicConfig3.CleanupPolicy\x12\x44\n\x10\x63ompression_type\x18\x02 \x01(\x0e\x32*.yandex.cloud.mdb.kafka.v1.CompressionType\x12\x38\n\x13\x64\x65lete_retention_ms\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x39\n\x14\x66ile_delete_delay_ms\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x33\n\x0e\x66lush_messages\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12-\n\x08\x66lush_ms\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12:\n\x15min_compaction_lag_ms\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x34\n\x0fretention_bytes\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x31\n\x0cretention_ms\x18\t \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x36\n\x11max_message_bytes\x18\n \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x38\n\x13min_insync_replicas\x18\x0b \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x32\n\rsegment_bytes\x18\x0c \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12/\n\x0bpreallocate\x18\r \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"\x8d\x01\n\rCleanupPolicy\x12\x1e\n\x1a\x43LEANUP_POLICY_UNSPECIFIED\x10\x00\x12\x19\n\x15\x43LEANUP_POLICY_DELETE\x10\x01\x12\x1a\n\x16\x43LEANUP_POLICY_COMPACT\x10\x02\x12%\n!CLEANUP_POLICY_COMPACT_AND_DELETE\x10\x03\x42\x64\n\x1dyandex.cloud.api.mdb.kafka.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/kafka/v1;kafkab\x06proto3'
+  serialized_pb=b'\n%yandex/cloud/mdb/kafka/v1/topic.proto\x12\x19yandex.cloud.mdb.kafka.v1\x1a google/protobuf/descriptor.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a&yandex/cloud/mdb/kafka/v1/common.proto\"\x85\x04\n\x05Topic\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12/\n\npartitions\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x37\n\x12replication_factor\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12Z\n\x10topic_config_2_1\x18\x05 \x01(\x0b\x32).yandex.cloud.mdb.kafka.v1.TopicConfig2_1B\x02\x18\x01H\x00R\x0ftopicConfig_2_1\x12Z\n\x10topic_config_2_6\x18\x06 \x01(\x0b\x32).yandex.cloud.mdb.kafka.v1.TopicConfig2_6B\x02\x18\x01H\x00R\x0ftopicConfig_2_6\x12V\n\x10topic_config_2_8\x18\x07 \x01(\x0b\x32).yandex.cloud.mdb.kafka.v1.TopicConfig2_8H\x00R\x0ftopicConfig_2_8\x12P\n\x0etopic_config_3\x18\x08 \x01(\x0b\x32\'.yandex.cloud.mdb.kafka.v1.TopicConfig3H\x00R\rtopicConfig_3B\x0e\n\x0ctopic_config\"\xf5\x03\n\tTopicSpec\x12\x0c\n\x04name\x18\x01 \x01(\t\x12/\n\npartitions\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x37\n\x12replication_factor\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12Z\n\x10topic_config_2_1\x18\x04 \x01(\x0b\x32).yandex.cloud.mdb.kafka.v1.TopicConfig2_1B\x02\x18\x01H\x00R\x0ftopicConfig_2_1\x12Z\n\x10topic_config_2_6\x18\x05 \x01(\x0b\x32).yandex.cloud.mdb.kafka.v1.TopicConfig2_6B\x02\x18\x01H\x00R\x0ftopicConfig_2_6\x12V\n\x10topic_config_2_8\x18\x06 \x01(\x0b\x32).yandex.cloud.mdb.kafka.v1.TopicConfig2_8H\x00R\x0ftopicConfig_2_8\x12P\n\x0etopic_config_3\x18\x07 \x01(\x0b\x32\'.yandex.cloud.mdb.kafka.v1.TopicConfig3H\x00R\rtopicConfig_3B\x0e\n\x0ctopic_config\"\x90\x07\n\x0eTopicConfig2_1\x12O\n\x0e\x63leanup_policy\x18\x01 \x01(\x0e\x32\x37.yandex.cloud.mdb.kafka.v1.TopicConfig2_1.CleanupPolicy\x12\x44\n\x10\x63ompression_type\x18\x02 \x01(\x0e\x32*.yandex.cloud.mdb.kafka.v1.CompressionType\x12\x38\n\x13\x64\x65lete_retention_ms\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x39\n\x14\x66ile_delete_delay_ms\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x33\n\x0e\x66lush_messages\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12-\n\x08\x66lush_ms\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12:\n\x15min_compaction_lag_ms\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x34\n\x0fretention_bytes\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x31\n\x0cretention_ms\x18\t \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x36\n\x11max_message_bytes\x18\n \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x38\n\x13min_insync_replicas\x18\x0b \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x32\n\rsegment_bytes\x18\x0c \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12/\n\x0bpreallocate\x18\r \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"\x8d\x01\n\rCleanupPolicy\x12\x1e\n\x1a\x43LEANUP_POLICY_UNSPECIFIED\x10\x00\x12\x19\n\x15\x43LEANUP_POLICY_DELETE\x10\x01\x12\x1a\n\x16\x43LEANUP_POLICY_COMPACT\x10\x02\x12%\n!CLEANUP_POLICY_COMPACT_AND_DELETE\x10\x03:\x02\x18\x01\"\x90\x07\n\x0eTopicConfig2_6\x12O\n\x0e\x63leanup_policy\x18\x01 \x01(\x0e\x32\x37.yandex.cloud.mdb.kafka.v1.TopicConfig2_6.CleanupPolicy\x12\x44\n\x10\x63ompression_type\x18\x02 \x01(\x0e\x32*.yandex.cloud.mdb.kafka.v1.CompressionType\x12\x38\n\x13\x64\x65lete_retention_ms\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x39\n\x14\x66ile_delete_delay_ms\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x33\n\x0e\x66lush_messages\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12-\n\x08\x66lush_ms\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12:\n\x15min_compaction_lag_ms\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x34\n\x0fretention_bytes\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x31\n\x0cretention_ms\x18\t \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x36\n\x11max_message_bytes\x18\n \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x38\n\x13min_insync_replicas\x18\x0b \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x32\n\rsegment_bytes\x18\x0c \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12/\n\x0bpreallocate\x18\r \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"\x8d\x01\n\rCleanupPolicy\x12\x1e\n\x1a\x43LEANUP_POLICY_UNSPECIFIED\x10\x00\x12\x19\n\x15\x43LEANUP_POLICY_DELETE\x10\x01\x12\x1a\n\x16\x43LEANUP_POLICY_COMPACT\x10\x02\x12%\n!CLEANUP_POLICY_COMPACT_AND_DELETE\x10\x03:\x02\x18\x01\"\x8c\x07\n\x0eTopicConfig2_8\x12O\n\x0e\x63leanup_policy\x18\x01 \x01(\x0e\x32\x37.yandex.cloud.mdb.kafka.v1.TopicConfig2_8.CleanupPolicy\x12\x44\n\x10\x63ompression_type\x18\x02 \x01(\x0e\x32*.yandex.cloud.mdb.kafka.v1.CompressionType\x12\x38\n\x13\x64\x65lete_retention_ms\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x39\n\x14\x66ile_delete_delay_ms\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x33\n\x0e\x66lush_messages\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12-\n\x08\x66lush_ms\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12:\n\x15min_compaction_lag_ms\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x34\n\x0fretention_bytes\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x31\n\x0cretention_ms\x18\t \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x36\n\x11max_message_bytes\x18\n \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x38\n\x13min_insync_replicas\x18\x0b \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x32\n\rsegment_bytes\x18\x0c \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12/\n\x0bpreallocate\x18\r \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"\x8d\x01\n\rCleanupPolicy\x12\x1e\n\x1a\x43LEANUP_POLICY_UNSPECIFIED\x10\x00\x12\x19\n\x15\x43LEANUP_POLICY_DELETE\x10\x01\x12\x1a\n\x16\x43LEANUP_POLICY_COMPACT\x10\x02\x12%\n!CLEANUP_POLICY_COMPACT_AND_DELETE\x10\x03\"\x88\x07\n\x0cTopicConfig3\x12M\n\x0e\x63leanup_policy\x18\x01 \x01(\x0e\x32\x35.yandex.cloud.mdb.kafka.v1.TopicConfig3.CleanupPolicy\x12\x44\n\x10\x63ompression_type\x18\x02 \x01(\x0e\x32*.yandex.cloud.mdb.kafka.v1.CompressionType\x12\x38\n\x13\x64\x65lete_retention_ms\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x39\n\x14\x66ile_delete_delay_ms\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x33\n\x0e\x66lush_messages\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12-\n\x08\x66lush_ms\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12:\n\x15min_compaction_lag_ms\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x34\n\x0fretention_bytes\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x31\n\x0cretention_ms\x18\t \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x36\n\x11max_message_bytes\x18\n \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x38\n\x13min_insync_replicas\x18\x0b \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x32\n\rsegment_bytes\x18\x0c \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12/\n\x0bpreallocate\x18\r \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"\x8d\x01\n\rCleanupPolicy\x12\x1e\n\x1a\x43LEANUP_POLICY_UNSPECIFIED\x10\x00\x12\x19\n\x15\x43LEANUP_POLICY_DELETE\x10\x01\x12\x1a\n\x16\x43LEANUP_POLICY_COMPACT\x10\x02\x12%\n!CLEANUP_POLICY_COMPACT_AND_DELETE\x10\x03\x42\x64\n\x1dyandex.cloud.api.mdb.kafka.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/kafka/v1;kafkab\x06proto3'
   ,
-  dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_kafka_dot_v1_dot_common__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_protobuf_dot_descriptor__pb2.DESCRIPTOR,google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_kafka_dot_v1_dot_common__pb2.DESCRIPTOR,])
 
 
 
@@ -57,8 +58,8 @@ _TOPICCONFIG2_1_CLEANUPPOLICY = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1916,
-  serialized_end=2057,
+  serialized_start=1966,
+  serialized_end=2107,
 )
 _sym_db.RegisterEnumDescriptor(_TOPICCONFIG2_1_CLEANUPPOLICY)
 
@@ -92,8 +93,8 @@ _TOPICCONFIG2_6_CLEANUPPOLICY = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1916,
-  serialized_end=2057,
+  serialized_start=1966,
+  serialized_end=2107,
 )
 _sym_db.RegisterEnumDescriptor(_TOPICCONFIG2_6_CLEANUPPOLICY)
 
@@ -127,8 +128,8 @@ _TOPICCONFIG2_8_CLEANUPPOLICY = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1916,
-  serialized_end=2057,
+  serialized_start=1966,
+  serialized_end=2107,
 )
 _sym_db.RegisterEnumDescriptor(_TOPICCONFIG2_8_CLEANUPPOLICY)
 
@@ -162,8 +163,8 @@ _TOPICCONFIG3_CLEANUPPOLICY = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1916,
-  serialized_end=2057,
+  serialized_start=1966,
+  serialized_end=2107,
 )
 _sym_db.RegisterEnumDescriptor(_TOPICCONFIG3_CLEANUPPOLICY)
 
@@ -210,14 +211,14 @@ _TOPIC = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='topicConfig_2_1', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\030\001', json_name='topicConfig_2_1', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='topic_config_2_6', full_name='yandex.cloud.mdb.kafka.v1.Topic.topic_config_2_6', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='topicConfig_2_6', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\030\001', json_name='topicConfig_2_6', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='topic_config_2_8', full_name='yandex.cloud.mdb.kafka.v1.Topic.topic_config_2_8', index=6,
       number=7, type=11, cpp_type=10, label=1,
@@ -249,8 +250,8 @@ _TOPIC = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=141,
-  serialized_end=650,
+  serialized_start=175,
+  serialized_end=692,
 )
 
 
@@ -289,14 +290,14 @@ _TOPICSPEC = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='topicConfig_2_1', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\030\001', json_name='topicConfig_2_1', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='topic_config_2_6', full_name='yandex.cloud.mdb.kafka.v1.TopicSpec.topic_config_2_6', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, json_name='topicConfig_2_6', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\030\001', json_name='topicConfig_2_6', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='topic_config_2_8', full_name='yandex.cloud.mdb.kafka.v1.TopicSpec.topic_config_2_8', index=5,
       number=6, type=11, cpp_type=10, label=1,
@@ -328,8 +329,8 @@ _TOPICSPEC = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=653,
-  serialized_end=1146,
+  serialized_start=695,
+  serialized_end=1196,
 )
 
 
@@ -439,14 +440,14 @@ _TOPICCONFIG2_1 = _descriptor.Descriptor(
   enum_types=[
     _TOPICCONFIG2_1_CLEANUPPOLICY,
   ],
-  serialized_options=None,
+  serialized_options=b'\030\001',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1149,
-  serialized_end=2057,
+  serialized_start=1199,
+  serialized_end=2111,
 )
 
 
@@ -556,14 +557,14 @@ _TOPICCONFIG2_6 = _descriptor.Descriptor(
   enum_types=[
     _TOPICCONFIG2_6_CLEANUPPOLICY,
   ],
-  serialized_options=None,
+  serialized_options=b'\030\001',
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2060,
-  serialized_end=2968,
+  serialized_start=2114,
+  serialized_end=3026,
 )
 
 
@@ -679,8 +680,8 @@ _TOPICCONFIG2_8 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2971,
-  serialized_end=3879,
+  serialized_start=3029,
+  serialized_end=3937,
 )
 
 
@@ -796,8 +797,8 @@ _TOPICCONFIG3 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3882,
-  serialized_end=4786,
+  serialized_start=3940,
+  serialized_end=4844,
 )
 
 _TOPIC.fields_by_name['partitions'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
@@ -944,4 +945,10 @@ _sym_db.RegisterMessage(TopicConfig3)
 
 
 DESCRIPTOR._options = None
+_TOPIC.fields_by_name['topic_config_2_1']._options = None
+_TOPIC.fields_by_name['topic_config_2_6']._options = None
+_TOPICSPEC.fields_by_name['topic_config_2_1']._options = None
+_TOPICSPEC.fields_by_name['topic_config_2_6']._options = None
+_TOPICCONFIG2_1._options = None
+_TOPICCONFIG2_6._options = None
 # @@protoc_insertion_point(module_scope)
