@@ -27,7 +27,7 @@ class BrokerDataServiceServicer(object):
     """
 
     def Publish(self, request, context):
-        """Publishes message on behalf of specified registry
+        """Publishes message on behalf of specified broker
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

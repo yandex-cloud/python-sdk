@@ -12,7 +12,9 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
+from google.rpc import code_pb2 as google_dot_rpc_dot_code__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -21,9 +23,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancer',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n-yandex/cloud/apploadbalancer/v1/logging.proto\x12\x1fyandex.cloud.apploadbalancer.v1\x1a\x1dyandex/cloud/validation.proto\"\x8e\x01\n\x0eLogDiscardRule\x12\x1a\n\x05\x63odes\x18\x01 \x03(\x03\x42\x0b\xfa\xc7\x31\x07\x31\x30\x30-599\x12\x44\n\tintervals\x18\x02 \x03(\x0e\x32\x31.yandex.cloud.apploadbalancer.v1.HttpCodeInterval\x12\x1a\n\x07percent\x18\x03 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\"{\n\nLogOptions\x12\x14\n\x0clog_group_id\x18\x01 \x01(\t\x12\x46\n\rdiscard_rules\x18\x02 \x03(\x0b\x32/.yandex.cloud.apploadbalancer.v1.LogDiscardRule\x12\x0f\n\x07\x64isable\x18\x03 \x01(\x08*\xc2\x01\n\x10HttpCodeInterval\x12\"\n\x1eHTTP_CODE_INTERVAL_UNSPECIFIED\x10\x00\x12\x1a\n\x16HTTP_CODE_INTERVAL_1XX\x10\x01\x12\x1a\n\x16HTTP_CODE_INTERVAL_2XX\x10\x02\x12\x1a\n\x16HTTP_CODE_INTERVAL_3XX\x10\x03\x12\x1a\n\x16HTTP_CODE_INTERVAL_4XX\x10\x04\x12\x1a\n\x16HTTP_CODE_INTERVAL_5XX\x10\x05\x42z\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancerb\x06proto3'
+  serialized_pb=b'\n-yandex/cloud/apploadbalancer/v1/logging.proto\x12\x1fyandex.cloud.apploadbalancer.v1\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\x1a\x15google/rpc/code.proto\"\xe8\x01\n\x0eLogDiscardRule\x12\x1f\n\nhttp_codes\x18\x01 \x03(\x03\x42\x0b\xfa\xc7\x31\x07\x31\x30\x30-599\x12N\n\x13http_code_intervals\x18\x02 \x03(\x0e\x32\x31.yandex.cloud.apploadbalancer.v1.HttpCodeInterval\x12$\n\ngrpc_codes\x18\x03 \x03(\x0e\x32\x10.google.rpc.Code\x12?\n\x0f\x64iscard_percent\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\t\xfa\xc7\x31\x05\x30-100\"{\n\nLogOptions\x12\x14\n\x0clog_group_id\x18\x01 \x01(\t\x12\x46\n\rdiscard_rules\x18\x02 \x03(\x0b\x32/.yandex.cloud.apploadbalancer.v1.LogDiscardRule\x12\x0f\n\x07\x64isable\x18\x03 \x01(\x08*\x8a\x01\n\x10HttpCodeInterval\x12\"\n\x1eHTTP_CODE_INTERVAL_UNSPECIFIED\x10\x00\x12\x0c\n\x08HTTP_1XX\x10\x01\x12\x0c\n\x08HTTP_2XX\x10\x02\x12\x0c\n\x08HTTP_3XX\x10\x03\x12\x0c\n\x08HTTP_4XX\x10\x04\x12\x0c\n\x08HTTP_5XX\x10\x05\x12\x0c\n\x08HTTP_ALL\x10\x06\x42z\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancerb\x06proto3'
   ,
-  dependencies=[yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,google_dot_rpc_dot_code__pb2.DESCRIPTOR,])
 
 _HTTPCODEINTERVAL = _descriptor.EnumDescriptor(
   name='HttpCodeInterval',
@@ -38,45 +40,51 @@ _HTTPCODEINTERVAL = _descriptor.EnumDescriptor(
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='HTTP_CODE_INTERVAL_1XX', index=1, number=1,
+      name='HTTP_1XX', index=1, number=1,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='HTTP_CODE_INTERVAL_2XX', index=2, number=2,
+      name='HTTP_2XX', index=2, number=2,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='HTTP_CODE_INTERVAL_3XX', index=3, number=3,
+      name='HTTP_3XX', index=3, number=3,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='HTTP_CODE_INTERVAL_4XX', index=4, number=4,
+      name='HTTP_4XX', index=4, number=4,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
     _descriptor.EnumValueDescriptor(
-      name='HTTP_CODE_INTERVAL_5XX', index=5, number=5,
+      name='HTTP_5XX', index=5, number=5,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='HTTP_ALL', index=6, number=6,
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=384,
-  serialized_end=578,
+  serialized_start=529,
+  serialized_end=667,
 )
 _sym_db.RegisterEnumDescriptor(_HTTPCODEINTERVAL)
 
 HttpCodeInterval = enum_type_wrapper.EnumTypeWrapper(_HTTPCODEINTERVAL)
 HTTP_CODE_INTERVAL_UNSPECIFIED = 0
-HTTP_CODE_INTERVAL_1XX = 1
-HTTP_CODE_INTERVAL_2XX = 2
-HTTP_CODE_INTERVAL_3XX = 3
-HTTP_CODE_INTERVAL_4XX = 4
-HTTP_CODE_INTERVAL_5XX = 5
+HTTP_1XX = 1
+HTTP_2XX = 2
+HTTP_3XX = 3
+HTTP_4XX = 4
+HTTP_5XX = 5
+HTTP_ALL = 6
 
 
 
@@ -89,23 +97,30 @@ _LOGDISCARDRULE = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='codes', full_name='yandex.cloud.apploadbalancer.v1.LogDiscardRule.codes', index=0,
+      name='http_codes', full_name='yandex.cloud.apploadbalancer.v1.LogDiscardRule.http_codes', index=0,
       number=1, type=3, cpp_type=2, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\372\3071\007100-599', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='intervals', full_name='yandex.cloud.apploadbalancer.v1.LogDiscardRule.intervals', index=1,
+      name='http_code_intervals', full_name='yandex.cloud.apploadbalancer.v1.LogDiscardRule.http_code_intervals', index=1,
       number=2, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='percent', full_name='yandex.cloud.apploadbalancer.v1.LogDiscardRule.percent', index=2,
-      number=3, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
+      name='grpc_codes', full_name='yandex.cloud.apploadbalancer.v1.LogDiscardRule.grpc_codes', index=2,
+      number=3, type=14, cpp_type=8, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='discard_percent', full_name='yandex.cloud.apploadbalancer.v1.LogDiscardRule.discard_percent', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\372\3071\0050-100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
@@ -121,8 +136,8 @@ _LOGDISCARDRULE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=114,
-  serialized_end=256,
+  serialized_start=169,
+  serialized_end=401,
 )
 
 
@@ -167,11 +182,13 @@ _LOGOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=258,
-  serialized_end=381,
+  serialized_start=403,
+  serialized_end=526,
 )
 
-_LOGDISCARDRULE.fields_by_name['intervals'].enum_type = _HTTPCODEINTERVAL
+_LOGDISCARDRULE.fields_by_name['http_code_intervals'].enum_type = _HTTPCODEINTERVAL
+_LOGDISCARDRULE.fields_by_name['grpc_codes'].enum_type = google_dot_rpc_dot_code__pb2._CODE
+_LOGDISCARDRULE.fields_by_name['discard_percent'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
 _LOGOPTIONS.fields_by_name['discard_rules'].message_type = _LOGDISCARDRULE
 DESCRIPTOR.message_types_by_name['LogDiscardRule'] = _LOGDISCARDRULE
 DESCRIPTOR.message_types_by_name['LogOptions'] = _LOGOPTIONS
@@ -194,6 +211,6 @@ _sym_db.RegisterMessage(LogOptions)
 
 
 DESCRIPTOR._options = None
-_LOGDISCARDRULE.fields_by_name['codes']._options = None
-_LOGDISCARDRULE.fields_by_name['percent']._options = None
+_LOGDISCARDRULE.fields_by_name['http_codes']._options = None
+_LOGDISCARDRULE.fields_by_name['discard_percent']._options = None
 # @@protoc_insertion_point(module_scope)

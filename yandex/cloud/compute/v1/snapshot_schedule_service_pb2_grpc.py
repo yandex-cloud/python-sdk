@@ -8,7 +8,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class SnapshotScheduleServiceStub(object):
-    """A set of methods for managing SnapshotSchedule resources.
+    """A set of methods for managing snapshot schedules.
     """
 
     def __init__(self, channel):
@@ -75,20 +75,20 @@ class SnapshotScheduleServiceStub(object):
 
 
 class SnapshotScheduleServiceServicer(object):
-    """A set of methods for managing SnapshotSchedule resources.
+    """A set of methods for managing snapshot schedules.
     """
 
     def Get(self, request, context):
-        """Returns the specified SnapshotSchedule resource.
+        """Returns the specified snapshot schedule.
 
-        To get the list of available SnapshotSchedule resources, make a [List] request.
+        To get the list of available snapshot schedules, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Retrieves the list of SnapshotSchedule resources in the specified folder.
+        """Retrieves the list of snapshot schedules in the specified folder.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -103,6 +103,8 @@ class SnapshotScheduleServiceServicer(object):
 
     def Update(self, request, context):
         """Updates the specified snapshot schedule.
+
+        The schedule is updated only after all snapshot creations and deletions triggered by the schedule are completed.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -111,31 +113,41 @@ class SnapshotScheduleServiceServicer(object):
     def Delete(self, request, context):
         """Deletes the specified snapshot schedule.
 
-        Deleting a snapshot schedule removes its data permanently and is irreversible. However, deleting a schedule does not delete
-        any snapshots previously made by the schedule. You must delete snapshots separately.
+        Deleting a snapshot schedule removes its data permanently and is irreversible. However, deleting a schedule
+        does not delete any snapshots created by the schedule. You must delete snapshots separately.
+
+        The schedule is deleted only after all snapshot creations and deletions triggered by the schedule are completed.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateDisks(self, request, context):
-        """UpdateDisks of schedule
+        """Updates the list of disks attached to the specified schedule.
+
+        The schedule is updated only after all snapshot creations and deletions triggered by the schedule are completed.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Disable(self, request, context):
-        """Disable schedule sets status InActive.
+        """Disables the specified snapshot schedule.
 
-        When schedule os disabled snapshots will not be created or deleted according to retention policy.
+        The [SnapshotSchedule.status] is changed to `INACTIVE`: the schedule is interrupted, snapshots won't be created
+        or deleted.
+
+        The schedule is disabled only after all snapshot creations and deletions triggered by the schedule are completed.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Enable(self, request, context):
-        """Enable schedule sets status Active.
+        """Enables the specified snapshot schedule.
+
+        The [SnapshotSchedule.status] is changed to `ACTIVE`: new disk snapshots will be created, old ones deleted
+        (if [SnapshotSchedule.retention_policy] is specified).
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -149,14 +161,14 @@ class SnapshotScheduleServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListSnapshots(self, request, context):
-        """List snapshot created by schedule.
+        """Retrieves the list of snapshots created by the specified snapshot schedule.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListDisks(self, request, context):
-        """List disks that belong to schedule.
+        """Retrieves the list of disks attached to the specified snapshot schedule.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -228,7 +240,7 @@ def add_SnapshotScheduleServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class SnapshotScheduleService(object):
-    """A set of methods for managing SnapshotSchedule resources.
+    """A set of methods for managing snapshot schedules.
     """
 
     @staticmethod

@@ -123,7 +123,7 @@ class DiskServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListSnapshotSchedules(self, request, context):
-        """List snapshot schedules containing the disk
+        """Retrieves the list of snapshot schedules the specified disk is attached to.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

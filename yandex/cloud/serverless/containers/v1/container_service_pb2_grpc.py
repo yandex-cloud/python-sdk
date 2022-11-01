@@ -9,7 +9,8 @@ from yandex.cloud.serverless.containers.v1 import container_service_pb2 as yande
 
 
 class ContainerServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing serverless containers.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -85,82 +86,101 @@ class ContainerServiceStub(object):
 
 
 class ContainerServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing serverless containers.
+    """
 
     def Get(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Returns the specified container.
+
+        To get the list of all available containers, make a [List] request.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Retrieves the list of containers in the specified folder.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Creates a container in the specified folder.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Updates the specified container.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Deletes the specified container.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeployRevision(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Deploys a revision for the specified container.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Rollback(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Rollback the specified container to an old revision.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetRevision(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Returns the specified revision of a container.
+
+        To get the list of available revision, make a [ListRevisions] request.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListRevisions(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Retrieves the list of revisions for the specified container, or of all container revisions
+        in the specified folder.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListOperations(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Lists operations for the specified container.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListAccessBindings(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Lists existing access bindings for the specified container.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def SetAccessBindings(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Sets access bindings for the container.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateAccessBindings(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Updates access bindings for the specified container.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -241,7 +261,8 @@ def add_ContainerServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class ContainerService(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing serverless containers.
+    """
 
     @staticmethod
     def Get(request,
