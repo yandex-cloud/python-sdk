@@ -88,6 +88,7 @@ def _service_for_ctor(stub_ctor):
 _supported_modules = [
     ("yandex.cloud.ai.stt", "ai-stt"),
     ("yandex.cloud.ai.translate", "ai-translate"),
+    ("yandex.cloud.ai.tts", "ai-speechkit"),
     ("yandex.cloud.ai.vision", "ai-vision"),
     ("yandex.cloud.apploadbalancer", "alb"),
     ("yandex.cloud.billing", "billing"),
