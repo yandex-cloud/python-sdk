@@ -2,6 +2,11 @@
 
 <!--next-version-placeholder-->
 
+## v0.190.0 (2022-11-15)
+### Feature
+* Regenerate proto
+ ([`bd05a34`](https://github.com/yandex-cloud/python-sdk/commit/bd05a346f3fc913bfea5d01bb7bec2d7343fe8c0))
+
 ## v0.189.0 (2022-11-14)
 ### Feature
 * Support speechkit
