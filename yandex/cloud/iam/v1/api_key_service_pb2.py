@@ -25,7 +25,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\027yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iam',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n)yandex/cloud/iam/v1/api_key_service.proto\x12\x13yandex.cloud.iam.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a!yandex/cloud/iam/v1/api_key.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"4\n\x10GetApiKeyRequest\x12 \n\napi_key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"x\n\x12ListApiKeysRequest\x12$\n\x12service_account_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"]\n\x13ListApiKeysResponse\x12-\n\x08\x61pi_keys\x18\x01 \x03(\x0b\x32\x1b.yandex.cloud.iam.v1.ApiKey\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"[\n\x13\x43reateApiKeyRequest\x12$\n\x12service_account_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1e\n\x0b\x64\x65scription\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=256\"T\n\x14\x43reateApiKeyResponse\x12,\n\x07\x61pi_key\x18\x01 \x01(\x0b\x32\x1b.yandex.cloud.iam.v1.ApiKey\x12\x0e\n\x06secret\x18\x02 \x01(\t\"\x88\x01\n\x13UpdateApiKeyRequest\x12 \n\napi_key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\"*\n\x14UpdateApiKeyMetadata\x12\x12\n\napi_key_id\x18\x01 \x01(\t\"7\n\x13\x44\x65leteApiKeyRequest\x12 \n\napi_key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"*\n\x14\x44\x65leteApiKeyMetadata\x12\x12\n\napi_key_id\x18\x01 \x01(\t\"}\n\x1bListApiKeyOperationsRequest\x12 \n\napi_key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"n\n\x1cListApiKeyOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xea\x06\n\rApiKeyService\x12r\n\x04List\x12\'.yandex.cloud.iam.v1.ListApiKeysRequest\x1a(.yandex.cloud.iam.v1.ListApiKeysResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/iam/v1/apiKeys\x12o\n\x03Get\x12%.yandex.cloud.iam.v1.GetApiKeyRequest\x1a\x1b.yandex.cloud.iam.v1.ApiKey\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/iam/v1/apiKeys/{api_key_id}\x12y\n\x06\x43reate\x12(.yandex.cloud.iam.v1.CreateApiKeyRequest\x1a).yandex.cloud.iam.v1.CreateApiKeyResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/iam/v1/apiKeys:\x01*\x12\xa0\x01\n\x06Update\x12(.yandex.cloud.iam.v1.UpdateApiKeyRequest\x1a!.yandex.cloud.operation.Operation\"I\x82\xd3\xe4\x93\x02!2\x1c/iam/v1/apiKeys/{api_key_id}:\x01*\xb2\xd2*\x1e\n\x14UpdateApiKeyMetadata\x12\x06\x41piKey\x12\xac\x01\n\x06\x44\x65lete\x12(.yandex.cloud.iam.v1.DeleteApiKeyRequest\x1a!.yandex.cloud.operation.Operation\"U\x82\xd3\xe4\x93\x02\x1e*\x1c/iam/v1/apiKeys/{api_key_id}\xb2\xd2*-\n\x14\x44\x65leteApiKeyMetadata\x12\x15google.protobuf.Empty\x12\xa6\x01\n\x0eListOperations\x12\x30.yandex.cloud.iam.v1.ListApiKeyOperationsRequest\x1a\x31.yandex.cloud.iam.v1.ListApiKeyOperationsResponse\"/\x82\xd3\xe4\x93\x02)\x12\'/iam/v1/apiKeys/{api_key_id}/operationsBV\n\x17yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3'
+  serialized_pb=b'\n)yandex/cloud/iam/v1/api_key_service.proto\x12\x13yandex.cloud.iam.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a!yandex/cloud/iam/v1/api_key.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"4\n\x10GetApiKeyRequest\x12 \n\napi_key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"y\n\x12ListApiKeysRequest\x12$\n\x12service_account_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\"]\n\x13ListApiKeysResponse\x12-\n\x08\x61pi_keys\x18\x01 \x03(\x0b\x32\x1b.yandex.cloud.iam.v1.ApiKey\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"[\n\x13\x43reateApiKeyRequest\x12$\n\x12service_account_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1e\n\x0b\x64\x65scription\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=256\"T\n\x14\x43reateApiKeyResponse\x12,\n\x07\x61pi_key\x18\x01 \x01(\x0b\x32\x1b.yandex.cloud.iam.v1.ApiKey\x12\x0e\n\x06secret\x18\x02 \x01(\t\"\x88\x01\n\x13UpdateApiKeyRequest\x12 \n\napi_key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\"*\n\x14UpdateApiKeyMetadata\x12\x12\n\napi_key_id\x18\x01 \x01(\t\"7\n\x13\x44\x65leteApiKeyRequest\x12 \n\napi_key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"*\n\x14\x44\x65leteApiKeyMetadata\x12\x12\n\napi_key_id\x18\x01 \x01(\t\"~\n\x1bListApiKeyOperationsRequest\x12 \n\napi_key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\"n\n\x1cListApiKeyOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xea\x06\n\rApiKeyService\x12r\n\x04List\x12\'.yandex.cloud.iam.v1.ListApiKeysRequest\x1a(.yandex.cloud.iam.v1.ListApiKeysResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/iam/v1/apiKeys\x12o\n\x03Get\x12%.yandex.cloud.iam.v1.GetApiKeyRequest\x1a\x1b.yandex.cloud.iam.v1.ApiKey\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/iam/v1/apiKeys/{api_key_id}\x12y\n\x06\x43reate\x12(.yandex.cloud.iam.v1.CreateApiKeyRequest\x1a).yandex.cloud.iam.v1.CreateApiKeyResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/iam/v1/apiKeys:\x01*\x12\xa0\x01\n\x06Update\x12(.yandex.cloud.iam.v1.UpdateApiKeyRequest\x1a!.yandex.cloud.operation.Operation\"I\x82\xd3\xe4\x93\x02!2\x1c/iam/v1/apiKeys/{api_key_id}:\x01*\xb2\xd2*\x1e\n\x14UpdateApiKeyMetadata\x12\x06\x41piKey\x12\xac\x01\n\x06\x44\x65lete\x12(.yandex.cloud.iam.v1.DeleteApiKeyRequest\x1a!.yandex.cloud.operation.Operation\"U\x82\xd3\xe4\x93\x02\x1e*\x1c/iam/v1/apiKeys/{api_key_id}\xb2\xd2*-\n\x14\x44\x65leteApiKeyMetadata\x12\x15google.protobuf.Empty\x12\xa6\x01\n\x0eListOperations\x12\x30.yandex.cloud.iam.v1.ListApiKeyOperationsRequest\x1a\x31.yandex.cloud.iam.v1.ListApiKeyOperationsResponse\"/\x82\xd3\xe4\x93\x02)\x12\'/iam/v1/apiKeys/{api_key_id}/operationsBV\n\x17yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_iam_dot_v1_dot_api__key__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -92,7 +92,7 @@ _LISTAPIKEYSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\212\3101\006<=2000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -106,7 +106,7 @@ _LISTAPIKEYSREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=324,
-  serialized_end=444,
+  serialized_end=445,
 )
 
 
@@ -144,8 +144,8 @@ _LISTAPIKEYSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=446,
-  serialized_end=539,
+  serialized_start=447,
+  serialized_end=540,
 )
 
 
@@ -183,8 +183,8 @@ _CREATEAPIKEYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=541,
-  serialized_end=632,
+  serialized_start=542,
+  serialized_end=633,
 )
 
 
@@ -222,8 +222,8 @@ _CREATEAPIKEYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=634,
-  serialized_end=718,
+  serialized_start=635,
+  serialized_end=719,
 )
 
 
@@ -268,8 +268,8 @@ _UPDATEAPIKEYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=721,
-  serialized_end=857,
+  serialized_start=722,
+  serialized_end=858,
 )
 
 
@@ -300,8 +300,8 @@ _UPDATEAPIKEYMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=859,
-  serialized_end=901,
+  serialized_start=860,
+  serialized_end=902,
 )
 
 
@@ -332,8 +332,8 @@ _DELETEAPIKEYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=903,
-  serialized_end=958,
+  serialized_start=904,
+  serialized_end=959,
 )
 
 
@@ -364,8 +364,8 @@ _DELETEAPIKEYMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=960,
-  serialized_end=1002,
+  serialized_start=961,
+  serialized_end=1003,
 )
 
 
@@ -397,7 +397,7 @@ _LISTAPIKEYOPERATIONSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\212\3101\006<=2000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -410,8 +410,8 @@ _LISTAPIKEYOPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1004,
-  serialized_end=1129,
+  serialized_start=1005,
+  serialized_end=1131,
 )
 
 
@@ -449,8 +449,8 @@ _LISTAPIKEYOPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1131,
-  serialized_end=1241,
+  serialized_start=1133,
+  serialized_end=1243,
 )
 
 _LISTAPIKEYSRESPONSE.fields_by_name['api_keys'].message_type = yandex_dot_cloud_dot_iam_dot_v1_dot_api__key__pb2._APIKEY
@@ -569,8 +569,8 @@ _APIKEYSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1244,
-  serialized_end=2118,
+  serialized_start=1246,
+  serialized_end=2120,
   methods=[
   _descriptor.MethodDescriptor(
     name='List',

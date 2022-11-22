@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\027yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iam',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n&yandex/cloud/iam/v1/role_service.proto\x12\x13yandex.cloud.iam.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1dyandex/cloud/validation.proto\x1a\x1eyandex/cloud/iam/v1/role.proto\"/\n\x0eGetRoleRequest\x12\x1d\n\x07role_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"l\n\x10ListRolesRequest\x12\x1d\n\tpage_size\x18\x01 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"V\n\x11ListRolesResponse\x12(\n\x05roles\x18\x01 \x03(\x0b\x32\x19.yandex.cloud.iam.v1.Role\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xe3\x01\n\x0bRoleService\x12\x66\n\x03Get\x12#.yandex.cloud.iam.v1.GetRoleRequest\x1a\x19.yandex.cloud.iam.v1.Role\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/iam/v1/roles/{role_id}\x12l\n\x04List\x12%.yandex.cloud.iam.v1.ListRolesRequest\x1a&.yandex.cloud.iam.v1.ListRolesResponse\"\x15\x82\xd3\xe4\x93\x02\x0f\x12\r/iam/v1/rolesBV\n\x17yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3'
+  serialized_pb=b'\n&yandex/cloud/iam/v1/role_service.proto\x12\x13yandex.cloud.iam.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1dyandex/cloud/validation.proto\x1a\x1eyandex/cloud/iam/v1/role.proto\"/\n\x0eGetRoleRequest\x12\x1d\n\x07role_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"m\n\x10ListRolesRequest\x12\x1d\n\tpage_size\x18\x01 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1e\n\npage_token\x18\x02 \x01(\tB\n\x8a\xc8\x31\x06<=2000\x12\x1a\n\x06\x66ilter\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"V\n\x11ListRolesResponse\x12(\n\x05roles\x18\x01 \x03(\x0b\x32\x19.yandex.cloud.iam.v1.Role\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xe3\x01\n\x0bRoleService\x12\x66\n\x03Get\x12#.yandex.cloud.iam.v1.GetRoleRequest\x1a\x19.yandex.cloud.iam.v1.Role\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/iam/v1/roles/{role_id}\x12l\n\x04List\x12%.yandex.cloud.iam.v1.ListRolesRequest\x1a&.yandex.cloud.iam.v1.ListRolesResponse\"\x15\x82\xd3\xe4\x93\x02\x0f\x12\r/iam/v1/rolesBV\n\x17yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_iam_dot_v1_dot_role__pb2.DESCRIPTOR,])
 
@@ -82,7 +82,7 @@ _LISTROLESREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\212\3101\006<=2000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='filter', full_name='yandex.cloud.iam.v1.ListRolesRequest.filter', index=2,
       number=3, type=9, cpp_type=9, label=1,
@@ -103,7 +103,7 @@ _LISTROLESREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=205,
-  serialized_end=313,
+  serialized_end=314,
 )
 
 
@@ -141,8 +141,8 @@ _LISTROLESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=315,
-  serialized_end=401,
+  serialized_start=316,
+  serialized_end=402,
 )
 
 _LISTROLESRESPONSE.fields_by_name['roles'].message_type = yandex_dot_cloud_dot_iam_dot_v1_dot_role__pb2._ROLE
@@ -186,8 +186,8 @@ _ROLESERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=404,
-  serialized_end=631,
+  serialized_start=405,
+  serialized_end=632,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',

@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\033yandex.cloud.api.storage.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/storage/v1;storage',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n$yandex/cloud/storage/v1/bucket.proto\x12\x17yandex.cloud.storage.v1\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\xa8\x04\n\x06\x42ucket\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x11\n\tfolder_id\x18\x03 \x01(\t\x12M\n\x16\x61nonymous_access_flags\x18\x04 \x01(\x0b\x32-.yandex.cloud.storage.v1.AnonymousAccessFlags\x12\x1d\n\x15\x64\x65\x66\x61ult_storage_class\x18\x05 \x01(\t\x12\x37\n\nversioning\x18\x06 \x01(\x0e\x32#.yandex.cloud.storage.v1.Versioning\x12\x10\n\x08max_size\x18\x07 \x01(\x03\x12\'\n\x06policy\x18\x08 \x01(\x0b\x32\x17.google.protobuf.Struct\x12)\n\x03\x61\x63l\x18\t \x01(\x0b\x32\x1c.yandex.cloud.storage.v1.ACL\x12.\n\ncreated_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x04\x63ors\x18\x0b \x03(\x0b\x32!.yandex.cloud.storage.v1.CorsRule\x12\x42\n\x10website_settings\x18\x0c \x01(\x0b\x32(.yandex.cloud.storage.v1.WebsiteSettings\x12?\n\x0flifecycle_rules\x18\r \x03(\x0b\x32&.yandex.cloud.storage.v1.LifecycleRule\"\x92\x04\n\x03\x41\x43L\x12\x32\n\x06grants\x18\x01 \x03(\x0b\x32\".yandex.cloud.storage.v1.ACL.Grant\x1a\xd6\x03\n\x05Grant\x12G\n\npermission\x18\x01 \x01(\x0e\x32-.yandex.cloud.storage.v1.ACL.Grant.PermissionB\x04\xe8\xc7\x31\x01\x12\x46\n\ngrant_type\x18\x02 \x01(\x0e\x32,.yandex.cloud.storage.v1.ACL.Grant.GrantTypeB\x04\xe8\xc7\x31\x01\x12\x12\n\ngrantee_id\x18\x03 \x01(\t\"\xa3\x01\n\nPermission\x12\x1a\n\x16PERMISSION_UNSPECIFIED\x10\x00\x12\x1b\n\x17PERMISSION_FULL_CONTROL\x10\x01\x12\x14\n\x10PERMISSION_WRITE\x10\x02\x12\x18\n\x14PERMISSION_WRITE_ACP\x10\x03\x12\x13\n\x0fPERMISSION_READ\x10\x04\x12\x17\n\x13PERMISSION_READ_ACP\x10\x05\"\x81\x01\n\tGrantType\x12\x1a\n\x16GRANT_TYPE_UNSPECIFIED\x10\x00\x12\x16\n\x12GRANT_TYPE_ACCOUNT\x10\x01\x12&\n\"GRANT_TYPE_ALL_AUTHENTICATED_USERS\x10\x02\x12\x18\n\x14GRANT_TYPE_ALL_USERS\x10\x03\"\x9b\x01\n\x14\x41nonymousAccessFlags\x12(\n\x04read\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12(\n\x04list\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12/\n\x0b\x63onfig_read\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"\xe4\x02\n\x08\x43orsRule\x12\n\n\x02id\x18\x01 \x01(\t\x12M\n\x0f\x61llowed_methods\x18\x02 \x03(\x0e\x32(.yandex.cloud.storage.v1.CorsRule.MethodB\n\x82\xc8\x31\x02>0\x90\xc8\x31\x01\x12\x17\n\x0f\x61llowed_headers\x18\x03 \x03(\t\x12\x1f\n\x0f\x61llowed_origins\x18\x04 \x03(\tB\x06\x82\xc8\x31\x02>0\x12\x16\n\x0e\x65xpose_headers\x18\x05 \x03(\t\x12\x34\n\x0fmax_age_seconds\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"u\n\x06Method\x12\x16\n\x12METHOD_UNSPECIFIED\x10\x00\x12\x0e\n\nMETHOD_GET\x10\x01\x12\x0f\n\x0bMETHOD_HEAD\x10\x02\x12\x0f\n\x0bMETHOD_POST\x10\x03\x12\x0e\n\nMETHOD_PUT\x10\x04\x12\x11\n\rMETHOD_DELETE\x10\x05\"\xbc\x06\n\x0fWebsiteSettings\x12\r\n\x05index\x18\x01 \x01(\t\x12\r\n\x05\x65rror\x18\x02 \x01(\t\x12N\n\x15redirect_all_requests\x18\x03 \x01(\x0b\x32/.yandex.cloud.storage.v1.WebsiteSettings.Scheme\x12K\n\rrouting_rules\x18\x04 \x03(\x0b\x32\x34.yandex.cloud.storage.v1.WebsiteSettings.RoutingRule\x1a_\n\x06Scheme\x12\x43\n\x08protocol\x18\x01 \x01(\x0e\x32\x31.yandex.cloud.storage.v1.WebsiteSettings.Protocol\x12\x10\n\x08hostname\x18\x02 \x01(\t\x1aO\n\tCondition\x12\'\n\x1fhttp_error_code_returned_equals\x18\x01 \x01(\t\x12\x19\n\x11key_prefix_equals\x18\x02 \x01(\t\x1a\xd2\x01\n\x08Redirect\x12\x10\n\x08hostname\x18\x01 \x01(\t\x12\x34\n\x12http_redirect_code\x18\x02 \x01(\tB\x18\xf2\xc7\x31\x14\x33(0[1-9]|[1-9][0-9])\x12\x43\n\x08protocol\x18\x03 \x01(\x0e\x32\x31.yandex.cloud.storage.v1.WebsiteSettings.Protocol\x12\x1f\n\x17replace_key_prefix_with\x18\x04 \x01(\t\x12\x18\n\x10replace_key_with\x18\x05 \x01(\t\x1a\x99\x01\n\x0bRoutingRule\x12\x45\n\tcondition\x18\x01 \x01(\x0b\x32\x32.yandex.cloud.storage.v1.WebsiteSettings.Condition\x12\x43\n\x08redirect\x18\x02 \x01(\x0b\x32\x31.yandex.cloud.storage.v1.WebsiteSettings.Redirect\"K\n\x08Protocol\x12\x18\n\x14PROTOCOL_UNSPECIFIED\x10\x00\x12\x11\n\rPROTOCOL_HTTP\x10\x01\x12\x12\n\x0ePROTOCOL_HTTPS\x10\x02\"\xf8\x08\n\rLifecycleRule\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x0f\n\x07\x65nabled\x18\x02 \x01(\x08\x12\x41\n\x06\x66ilter\x18\x03 \x01(\x0b\x32\x31.yandex.cloud.storage.v1.LifecycleRule.RuleFilter\x12\x45\n\nexpiration\x18\x04 \x01(\x0b\x32\x31.yandex.cloud.storage.v1.LifecycleRule.Expiration\x12\x46\n\x0btransitions\x18\x05 \x03(\x0b\x32\x31.yandex.cloud.storage.v1.LifecycleRule.Transition\x12[\n!abort_incomplete_multipart_upload\x18\x06 \x01(\x0b\x32\x30.yandex.cloud.storage.v1.LifecycleRule.AfterDays\x12Z\n\x15noncurrent_expiration\x18\x07 \x01(\x0b\x32;.yandex.cloud.storage.v1.LifecycleRule.NoncurrentExpiration\x12[\n\x16noncurrent_transitions\x18\x08 \x03(\x0b\x32;.yandex.cloud.storage.v1.LifecycleRule.NoncurrentTransition\x1aG\n\tAfterDays\x12:\n\x15\x64\x61ys_after_expiration\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x1aL\n\x14NoncurrentExpiration\x12\x34\n\x0fnoncurrent_days\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x1ai\n\x14NoncurrentTransition\x12\x34\n\x0fnoncurrent_days\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x1b\n\rstorage_class\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x1a~\n\nTransition\x12(\n\x04\x64\x61te\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12)\n\x04\x64\x61ys\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x1b\n\rstorage_class\x18\x04 \x01(\tB\x04\xe8\xc7\x31\x01\x1a\xa3\x01\n\nExpiration\x12(\n\x04\x64\x61te\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12)\n\x04\x64\x61ys\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12@\n\x1c\x65xpired_object_delete_marker\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x1a\x1c\n\nRuleFilter\x12\x0e\n\x06prefix\x18\x01 \x01(\t\"\xdd\x01\n\x08\x43ounters\x12\x1a\n\x12simple_object_size\x18\x01 \x01(\x03\x12\x1b\n\x13simple_object_count\x18\x02 \x01(\x03\x12\x1a\n\x12objects_parts_size\x18\x03 \x01(\x03\x12\x1b\n\x13objects_parts_count\x18\x04 \x01(\x03\x12\x1e\n\x16multipart_objects_size\x18\x05 \x01(\x03\x12\x1f\n\x17multipart_objects_count\x18\x06 \x01(\x03\x12\x1e\n\x16\x61\x63tive_multipart_count\x18\x07 \x01(\x03\"]\n\x13OptionalSizeByClass\x12\x15\n\rstorage_class\x18\x01 \x01(\t\x12/\n\nclass_size\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"8\n\x0bSizeByClass\x12\x15\n\rstorage_class\x18\x01 \x01(\t\x12\x12\n\nclass_size\x18\x02 \x01(\x03\"]\n\x0f\x43ountersByClass\x12\x15\n\rstorage_class\x18\x01 \x01(\t\x12\x33\n\x08\x63ounters\x18\x02 \x01(\x0b\x32!.yandex.cloud.storage.v1.Counters\"\xaa\x04\n\x0b\x42ucketStats\x12\x0c\n\x04name\x18\x01 \x01(\t\x12-\n\x08max_size\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x11\n\tused_size\x18\x03 \x01(\x03\x12M\n\x17storage_class_max_sizes\x18\x04 \x03(\x0b\x32,.yandex.cloud.storage.v1.OptionalSizeByClass\x12\x46\n\x18storage_class_used_sizes\x18\x05 \x03(\x0b\x32$.yandex.cloud.storage.v1.SizeByClass\x12H\n\x16storage_class_counters\x18\x06 \x03(\x0b\x32(.yandex.cloud.storage.v1.CountersByClass\x12;\n\x15\x64\x65\x66\x61ult_storage_class\x18\x07 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12M\n\x16\x61nonymous_access_flags\x18\x08 \x01(\x0b\x32-.yandex.cloud.storage.v1.AnonymousAccessFlags\x12.\n\ncreated_at\x18\t \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xc1\x03\n\x0bHTTPSConfig\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x44\n\x0bsource_type\x18\x02 \x01(\x0e\x32/.yandex.cloud.storage.v1.HTTPSConfig.SourceType\x12,\n\x06issuer\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12-\n\x07subject\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x11\n\tdns_names\x18\x05 \x03(\t\x12.\n\nnot_before\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12-\n\tnot_after\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x16\n\x0e\x63\x65rtificate_id\x18\x08 \x01(\t\"w\n\nSourceType\x12\x1b\n\x17SOURCE_TYPE_UNSPECIFIED\x10\x00\x12\x1c\n\x18SOURCE_TYPE_SELF_MANAGED\x10\x01\x12.\n*SOURCE_TYPE_MANAGED_BY_CERTIFICATE_MANAGER\x10\x02*s\n\nVersioning\x12\x1a\n\x16VERSIONING_UNSPECIFIED\x10\x00\x12\x17\n\x13VERSIONING_DISABLED\x10\x01\x12\x16\n\x12VERSIONING_ENABLED\x10\x02\x12\x18\n\x14VERSIONING_SUSPENDED\x10\x03\x42\x62\n\x1byandex.cloud.api.storage.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/storage/v1;storageb\x06proto3'
+  serialized_pb=b'\n$yandex/cloud/storage/v1/bucket.proto\x12\x17yandex.cloud.storage.v1\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\xd4\x04\n\x06\x42ucket\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x11\n\tfolder_id\x18\x03 \x01(\t\x12M\n\x16\x61nonymous_access_flags\x18\x04 \x01(\x0b\x32-.yandex.cloud.storage.v1.AnonymousAccessFlags\x12\x1d\n\x15\x64\x65\x66\x61ult_storage_class\x18\x05 \x01(\t\x12\x37\n\nversioning\x18\x06 \x01(\x0e\x32#.yandex.cloud.storage.v1.Versioning\x12\x10\n\x08max_size\x18\x07 \x01(\x03\x12\'\n\x06policy\x18\x08 \x01(\x0b\x32\x17.google.protobuf.Struct\x12)\n\x03\x61\x63l\x18\t \x01(\x0b\x32\x1c.yandex.cloud.storage.v1.ACL\x12.\n\ncreated_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x04\x63ors\x18\x0b \x03(\x0b\x32!.yandex.cloud.storage.v1.CorsRule\x12\x42\n\x10website_settings\x18\x0c \x01(\x0b\x32(.yandex.cloud.storage.v1.WebsiteSettings\x12?\n\x0flifecycle_rules\x18\r \x03(\x0b\x32&.yandex.cloud.storage.v1.LifecycleRule\x12*\n\x04tags\x18\x0e \x03(\x0b\x32\x1c.yandex.cloud.storage.v1.Tag\"!\n\x03Tag\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"\x92\x04\n\x03\x41\x43L\x12\x32\n\x06grants\x18\x01 \x03(\x0b\x32\".yandex.cloud.storage.v1.ACL.Grant\x1a\xd6\x03\n\x05Grant\x12G\n\npermission\x18\x01 \x01(\x0e\x32-.yandex.cloud.storage.v1.ACL.Grant.PermissionB\x04\xe8\xc7\x31\x01\x12\x46\n\ngrant_type\x18\x02 \x01(\x0e\x32,.yandex.cloud.storage.v1.ACL.Grant.GrantTypeB\x04\xe8\xc7\x31\x01\x12\x12\n\ngrantee_id\x18\x03 \x01(\t\"\xa3\x01\n\nPermission\x12\x1a\n\x16PERMISSION_UNSPECIFIED\x10\x00\x12\x1b\n\x17PERMISSION_FULL_CONTROL\x10\x01\x12\x14\n\x10PERMISSION_WRITE\x10\x02\x12\x18\n\x14PERMISSION_WRITE_ACP\x10\x03\x12\x13\n\x0fPERMISSION_READ\x10\x04\x12\x17\n\x13PERMISSION_READ_ACP\x10\x05\"\x81\x01\n\tGrantType\x12\x1a\n\x16GRANT_TYPE_UNSPECIFIED\x10\x00\x12\x16\n\x12GRANT_TYPE_ACCOUNT\x10\x01\x12&\n\"GRANT_TYPE_ALL_AUTHENTICATED_USERS\x10\x02\x12\x18\n\x14GRANT_TYPE_ALL_USERS\x10\x03\"\x9b\x01\n\x14\x41nonymousAccessFlags\x12(\n\x04read\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12(\n\x04list\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12/\n\x0b\x63onfig_read\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"\xe4\x02\n\x08\x43orsRule\x12\n\n\x02id\x18\x01 \x01(\t\x12M\n\x0f\x61llowed_methods\x18\x02 \x03(\x0e\x32(.yandex.cloud.storage.v1.CorsRule.MethodB\n\x82\xc8\x31\x02>0\x90\xc8\x31\x01\x12\x17\n\x0f\x61llowed_headers\x18\x03 \x03(\t\x12\x1f\n\x0f\x61llowed_origins\x18\x04 \x03(\tB\x06\x82\xc8\x31\x02>0\x12\x16\n\x0e\x65xpose_headers\x18\x05 \x03(\t\x12\x34\n\x0fmax_age_seconds\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"u\n\x06Method\x12\x16\n\x12METHOD_UNSPECIFIED\x10\x00\x12\x0e\n\nMETHOD_GET\x10\x01\x12\x0f\n\x0bMETHOD_HEAD\x10\x02\x12\x0f\n\x0bMETHOD_POST\x10\x03\x12\x0e\n\nMETHOD_PUT\x10\x04\x12\x11\n\rMETHOD_DELETE\x10\x05\"\xbc\x06\n\x0fWebsiteSettings\x12\r\n\x05index\x18\x01 \x01(\t\x12\r\n\x05\x65rror\x18\x02 \x01(\t\x12N\n\x15redirect_all_requests\x18\x03 \x01(\x0b\x32/.yandex.cloud.storage.v1.WebsiteSettings.Scheme\x12K\n\rrouting_rules\x18\x04 \x03(\x0b\x32\x34.yandex.cloud.storage.v1.WebsiteSettings.RoutingRule\x1a_\n\x06Scheme\x12\x43\n\x08protocol\x18\x01 \x01(\x0e\x32\x31.yandex.cloud.storage.v1.WebsiteSettings.Protocol\x12\x10\n\x08hostname\x18\x02 \x01(\t\x1aO\n\tCondition\x12\'\n\x1fhttp_error_code_returned_equals\x18\x01 \x01(\t\x12\x19\n\x11key_prefix_equals\x18\x02 \x01(\t\x1a\xd2\x01\n\x08Redirect\x12\x10\n\x08hostname\x18\x01 \x01(\t\x12\x34\n\x12http_redirect_code\x18\x02 \x01(\tB\x18\xf2\xc7\x31\x14\x33(0[1-9]|[1-9][0-9])\x12\x43\n\x08protocol\x18\x03 \x01(\x0e\x32\x31.yandex.cloud.storage.v1.WebsiteSettings.Protocol\x12\x1f\n\x17replace_key_prefix_with\x18\x04 \x01(\t\x12\x18\n\x10replace_key_with\x18\x05 \x01(\t\x1a\x99\x01\n\x0bRoutingRule\x12\x45\n\tcondition\x18\x01 \x01(\x0b\x32\x32.yandex.cloud.storage.v1.WebsiteSettings.Condition\x12\x43\n\x08redirect\x18\x02 \x01(\x0b\x32\x31.yandex.cloud.storage.v1.WebsiteSettings.Redirect\"K\n\x08Protocol\x12\x18\n\x14PROTOCOL_UNSPECIFIED\x10\x00\x12\x11\n\rPROTOCOL_HTTP\x10\x01\x12\x12\n\x0ePROTOCOL_HTTPS\x10\x02\"\xf8\x08\n\rLifecycleRule\x12(\n\x02id\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x0f\n\x07\x65nabled\x18\x02 \x01(\x08\x12\x41\n\x06\x66ilter\x18\x03 \x01(\x0b\x32\x31.yandex.cloud.storage.v1.LifecycleRule.RuleFilter\x12\x45\n\nexpiration\x18\x04 \x01(\x0b\x32\x31.yandex.cloud.storage.v1.LifecycleRule.Expiration\x12\x46\n\x0btransitions\x18\x05 \x03(\x0b\x32\x31.yandex.cloud.storage.v1.LifecycleRule.Transition\x12[\n!abort_incomplete_multipart_upload\x18\x06 \x01(\x0b\x32\x30.yandex.cloud.storage.v1.LifecycleRule.AfterDays\x12Z\n\x15noncurrent_expiration\x18\x07 \x01(\x0b\x32;.yandex.cloud.storage.v1.LifecycleRule.NoncurrentExpiration\x12[\n\x16noncurrent_transitions\x18\x08 \x03(\x0b\x32;.yandex.cloud.storage.v1.LifecycleRule.NoncurrentTransition\x1aG\n\tAfterDays\x12:\n\x15\x64\x61ys_after_expiration\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x1aL\n\x14NoncurrentExpiration\x12\x34\n\x0fnoncurrent_days\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x1ai\n\x14NoncurrentTransition\x12\x34\n\x0fnoncurrent_days\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x1b\n\rstorage_class\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x1a~\n\nTransition\x12(\n\x04\x64\x61te\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12)\n\x04\x64\x61ys\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x1b\n\rstorage_class\x18\x04 \x01(\tB\x04\xe8\xc7\x31\x01\x1a\xa3\x01\n\nExpiration\x12(\n\x04\x64\x61te\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12)\n\x04\x64\x61ys\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12@\n\x1c\x65xpired_object_delete_marker\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x1a\x1c\n\nRuleFilter\x12\x0e\n\x06prefix\x18\x01 \x01(\t\"\xdd\x01\n\x08\x43ounters\x12\x1a\n\x12simple_object_size\x18\x01 \x01(\x03\x12\x1b\n\x13simple_object_count\x18\x02 \x01(\x03\x12\x1a\n\x12objects_parts_size\x18\x03 \x01(\x03\x12\x1b\n\x13objects_parts_count\x18\x04 \x01(\x03\x12\x1e\n\x16multipart_objects_size\x18\x05 \x01(\x03\x12\x1f\n\x17multipart_objects_count\x18\x06 \x01(\x03\x12\x1e\n\x16\x61\x63tive_multipart_count\x18\x07 \x01(\x03\"]\n\x13OptionalSizeByClass\x12\x15\n\rstorage_class\x18\x01 \x01(\t\x12/\n\nclass_size\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"8\n\x0bSizeByClass\x12\x15\n\rstorage_class\x18\x01 \x01(\t\x12\x12\n\nclass_size\x18\x02 \x01(\x03\"]\n\x0f\x43ountersByClass\x12\x15\n\rstorage_class\x18\x01 \x01(\t\x12\x33\n\x08\x63ounters\x18\x02 \x01(\x0b\x32!.yandex.cloud.storage.v1.Counters\"\xaa\x04\n\x0b\x42ucketStats\x12\x0c\n\x04name\x18\x01 \x01(\t\x12-\n\x08max_size\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x11\n\tused_size\x18\x03 \x01(\x03\x12M\n\x17storage_class_max_sizes\x18\x04 \x03(\x0b\x32,.yandex.cloud.storage.v1.OptionalSizeByClass\x12\x46\n\x18storage_class_used_sizes\x18\x05 \x03(\x0b\x32$.yandex.cloud.storage.v1.SizeByClass\x12H\n\x16storage_class_counters\x18\x06 \x03(\x0b\x32(.yandex.cloud.storage.v1.CountersByClass\x12;\n\x15\x64\x65\x66\x61ult_storage_class\x18\x07 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12M\n\x16\x61nonymous_access_flags\x18\x08 \x01(\x0b\x32-.yandex.cloud.storage.v1.AnonymousAccessFlags\x12.\n\ncreated_at\x18\t \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xc1\x03\n\x0bHTTPSConfig\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x44\n\x0bsource_type\x18\x02 \x01(\x0e\x32/.yandex.cloud.storage.v1.HTTPSConfig.SourceType\x12,\n\x06issuer\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12-\n\x07subject\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x11\n\tdns_names\x18\x05 \x03(\t\x12.\n\nnot_before\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12-\n\tnot_after\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x16\n\x0e\x63\x65rtificate_id\x18\x08 \x01(\t\"w\n\nSourceType\x12\x1b\n\x17SOURCE_TYPE_UNSPECIFIED\x10\x00\x12\x1c\n\x18SOURCE_TYPE_SELF_MANAGED\x10\x01\x12.\n*SOURCE_TYPE_MANAGED_BY_CERTIFICATE_MANAGER\x10\x02*s\n\nVersioning\x12\x1a\n\x16VERSIONING_UNSPECIFIED\x10\x00\x12\x17\n\x13VERSIONING_DISABLED\x10\x01\x12\x16\n\x12VERSIONING_ENABLED\x10\x02\x12\x18\n\x14VERSIONING_SUSPENDED\x10\x03\x42\x62\n\x1byandex.cloud.api.storage.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/storage/v1;storageb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_struct__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -58,8 +58,8 @@ _VERSIONING = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5255,
-  serialized_end=5370,
+  serialized_start=5334,
+  serialized_end=5449,
 )
 _sym_db.RegisterEnumDescriptor(_VERSIONING)
 
@@ -110,8 +110,8 @@ _ACL_GRANT_PERMISSION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=982,
-  serialized_end=1145,
+  serialized_start=1061,
+  serialized_end=1224,
 )
 _sym_db.RegisterEnumDescriptor(_ACL_GRANT_PERMISSION)
 
@@ -145,8 +145,8 @@ _ACL_GRANT_GRANTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1148,
-  serialized_end=1277,
+  serialized_start=1227,
+  serialized_end=1356,
 )
 _sym_db.RegisterEnumDescriptor(_ACL_GRANT_GRANTTYPE)
 
@@ -190,8 +190,8 @@ _CORSRULE_METHOD = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1677,
-  serialized_end=1794,
+  serialized_start=1756,
+  serialized_end=1873,
 )
 _sym_db.RegisterEnumDescriptor(_CORSRULE_METHOD)
 
@@ -220,8 +220,8 @@ _WEBSITESETTINGS_PROTOCOL = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2550,
-  serialized_end=2625,
+  serialized_start=2629,
+  serialized_end=2704,
 )
 _sym_db.RegisterEnumDescriptor(_WEBSITESETTINGS_PROTOCOL)
 
@@ -250,8 +250,8 @@ _HTTPSCONFIG_SOURCETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5134,
-  serialized_end=5253,
+  serialized_start=5213,
+  serialized_end=5332,
 )
 _sym_db.RegisterEnumDescriptor(_HTTPSCONFIG_SOURCETYPE)
 
@@ -355,6 +355,13 @@ _BUCKET = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='tags', full_name='yandex.cloud.storage.v1.Bucket.tags', index=13,
+      number=14, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -368,7 +375,46 @@ _BUCKET = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=192,
-  serialized_end=744,
+  serialized_end=788,
+)
+
+
+_TAG = _descriptor.Descriptor(
+  name='Tag',
+  full_name='yandex.cloud.storage.v1.Tag',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='yandex.cloud.storage.v1.Tag.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='yandex.cloud.storage.v1.Tag.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=790,
+  serialized_end=823,
 )
 
 
@@ -415,8 +461,8 @@ _ACL_GRANT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=807,
-  serialized_end=1277,
+  serialized_start=886,
+  serialized_end=1356,
 )
 
 _ACL = _descriptor.Descriptor(
@@ -446,8 +492,8 @@ _ACL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=747,
-  serialized_end=1277,
+  serialized_start=826,
+  serialized_end=1356,
 )
 
 
@@ -492,8 +538,8 @@ _ANONYMOUSACCESSFLAGS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1280,
-  serialized_end=1435,
+  serialized_start=1359,
+  serialized_end=1514,
 )
 
 
@@ -560,8 +606,8 @@ _CORSRULE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1438,
-  serialized_end=1794,
+  serialized_start=1517,
+  serialized_end=1873,
 )
 
 
@@ -599,8 +645,8 @@ _WEBSITESETTINGS_SCHEME = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2003,
-  serialized_end=2098,
+  serialized_start=2082,
+  serialized_end=2177,
 )
 
 _WEBSITESETTINGS_CONDITION = _descriptor.Descriptor(
@@ -637,8 +683,8 @@ _WEBSITESETTINGS_CONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2100,
-  serialized_end=2179,
+  serialized_start=2179,
+  serialized_end=2258,
 )
 
 _WEBSITESETTINGS_REDIRECT = _descriptor.Descriptor(
@@ -696,8 +742,8 @@ _WEBSITESETTINGS_REDIRECT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2182,
-  serialized_end=2392,
+  serialized_start=2261,
+  serialized_end=2471,
 )
 
 _WEBSITESETTINGS_ROUTINGRULE = _descriptor.Descriptor(
@@ -734,8 +780,8 @@ _WEBSITESETTINGS_ROUTINGRULE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2395,
-  serialized_end=2548,
+  serialized_start=2474,
+  serialized_end=2627,
 )
 
 _WEBSITESETTINGS = _descriptor.Descriptor(
@@ -787,8 +833,8 @@ _WEBSITESETTINGS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1797,
-  serialized_end=2625,
+  serialized_start=1876,
+  serialized_end=2704,
 )
 
 
@@ -819,8 +865,8 @@ _LIFECYCLERULE_AFTERDAYS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3192,
-  serialized_end=3263,
+  serialized_start=3271,
+  serialized_end=3342,
 )
 
 _LIFECYCLERULE_NONCURRENTEXPIRATION = _descriptor.Descriptor(
@@ -850,8 +896,8 @@ _LIFECYCLERULE_NONCURRENTEXPIRATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3265,
-  serialized_end=3341,
+  serialized_start=3344,
+  serialized_end=3420,
 )
 
 _LIFECYCLERULE_NONCURRENTTRANSITION = _descriptor.Descriptor(
@@ -888,8 +934,8 @@ _LIFECYCLERULE_NONCURRENTTRANSITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3343,
-  serialized_end=3448,
+  serialized_start=3422,
+  serialized_end=3527,
 )
 
 _LIFECYCLERULE_TRANSITION = _descriptor.Descriptor(
@@ -933,8 +979,8 @@ _LIFECYCLERULE_TRANSITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3450,
-  serialized_end=3576,
+  serialized_start=3529,
+  serialized_end=3655,
 )
 
 _LIFECYCLERULE_EXPIRATION = _descriptor.Descriptor(
@@ -978,8 +1024,8 @@ _LIFECYCLERULE_EXPIRATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3579,
-  serialized_end=3742,
+  serialized_start=3658,
+  serialized_end=3821,
 )
 
 _LIFECYCLERULE_RULEFILTER = _descriptor.Descriptor(
@@ -1009,8 +1055,8 @@ _LIFECYCLERULE_RULEFILTER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3744,
-  serialized_end=3772,
+  serialized_start=3823,
+  serialized_end=3851,
 )
 
 _LIFECYCLERULE = _descriptor.Descriptor(
@@ -1089,8 +1135,8 @@ _LIFECYCLERULE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2628,
-  serialized_end=3772,
+  serialized_start=2707,
+  serialized_end=3851,
 )
 
 
@@ -1163,8 +1209,8 @@ _COUNTERS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3775,
-  serialized_end=3996,
+  serialized_start=3854,
+  serialized_end=4075,
 )
 
 
@@ -1202,8 +1248,8 @@ _OPTIONALSIZEBYCLASS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3998,
-  serialized_end=4091,
+  serialized_start=4077,
+  serialized_end=4170,
 )
 
 
@@ -1241,8 +1287,8 @@ _SIZEBYCLASS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4093,
-  serialized_end=4149,
+  serialized_start=4172,
+  serialized_end=4228,
 )
 
 
@@ -1280,8 +1326,8 @@ _COUNTERSBYCLASS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4151,
-  serialized_end=4244,
+  serialized_start=4230,
+  serialized_end=4323,
 )
 
 
@@ -1375,8 +1421,8 @@ _BUCKETSTATS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4247,
-  serialized_end=4801,
+  serialized_start=4326,
+  serialized_end=4880,
 )
 
 
@@ -1457,8 +1503,8 @@ _HTTPSCONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4804,
-  serialized_end=5253,
+  serialized_start=4883,
+  serialized_end=5332,
 )
 
 _BUCKET.fields_by_name['anonymous_access_flags'].message_type = _ANONYMOUSACCESSFLAGS
@@ -1469,6 +1515,7 @@ _BUCKET.fields_by_name['created_at'].message_type = google_dot_protobuf_dot_time
 _BUCKET.fields_by_name['cors'].message_type = _CORSRULE
 _BUCKET.fields_by_name['website_settings'].message_type = _WEBSITESETTINGS
 _BUCKET.fields_by_name['lifecycle_rules'].message_type = _LIFECYCLERULE
+_BUCKET.fields_by_name['tags'].message_type = _TAG
 _ACL_GRANT.fields_by_name['permission'].enum_type = _ACL_GRANT_PERMISSION
 _ACL_GRANT.fields_by_name['grant_type'].enum_type = _ACL_GRANT_GRANTTYPE
 _ACL_GRANT.containing_type = _ACL
@@ -1530,6 +1577,7 @@ _HTTPSCONFIG.fields_by_name['not_before'].message_type = google_dot_protobuf_dot
 _HTTPSCONFIG.fields_by_name['not_after'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _HTTPSCONFIG_SOURCETYPE.containing_type = _HTTPSCONFIG
 DESCRIPTOR.message_types_by_name['Bucket'] = _BUCKET
+DESCRIPTOR.message_types_by_name['Tag'] = _TAG
 DESCRIPTOR.message_types_by_name['ACL'] = _ACL
 DESCRIPTOR.message_types_by_name['AnonymousAccessFlags'] = _ANONYMOUSACCESSFLAGS
 DESCRIPTOR.message_types_by_name['CorsRule'] = _CORSRULE
@@ -1550,6 +1598,13 @@ Bucket = _reflection.GeneratedProtocolMessageType('Bucket', (_message.Message,),
   # @@protoc_insertion_point(class_scope:yandex.cloud.storage.v1.Bucket)
   })
 _sym_db.RegisterMessage(Bucket)
+
+Tag = _reflection.GeneratedProtocolMessageType('Tag', (_message.Message,), {
+  'DESCRIPTOR' : _TAG,
+  '__module__' : 'yandex.cloud.storage.v1.bucket_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.storage.v1.Tag)
+  })
+_sym_db.RegisterMessage(Tag)
 
 ACL = _reflection.GeneratedProtocolMessageType('ACL', (_message.Message,), {
 

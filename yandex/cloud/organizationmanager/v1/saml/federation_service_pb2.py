@@ -27,7 +27,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n,yandex.cloud.api.organizationmanager.v1.samlZQgithub.com/yandex-cloud/go-genproto/yandex/cloud/organizationmanager/v1/saml;saml',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nAyandex/cloud/organizationmanager/v1/saml/federation_service.proto\x12(yandex.cloud.organizationmanager.v1.saml\x1a\x1cgoogle/api/annotations.proto\x1a\x1egoogle/protobuf/duration.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a\x36yandex/cloud/organizationmanager/v1/user_account.proto\x1a\x39yandex/cloud/organizationmanager/v1/saml/federation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"7\n\x14GetFederationRequest\x12\x1f\n\rfederation_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"\x98\x01\n\x16ListFederationsRequest\x12%\n\x0forganization_id\x18\x06 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x03 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1c\n\npage_token\x18\x04 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1a\n\x06\x66ilter\x18\x05 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"}\n\x17ListFederationsResponse\x12I\n\x0b\x66\x65\x64\x65rations\x18\x01 \x03(\x0b\x32\x34.yandex.cloud.organizationmanager.v1.saml.Federation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xd6\x05\n\x17\x43reateFederationRequest\x12!\n\x0forganization_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x31\n\x04name\x18\x02 \x01(\tB#\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12>\n\x0e\x63ookie_max_age\x18\x04 \x01(\x0b\x32\x19.google.protobuf.DurationB\x0b\xfa\xc7\x31\x07\x31\x30m-12h\x12$\n\x1c\x61uto_create_account_on_login\x18\x05 \x01(\x08\x12\x1e\n\x06issuer\x18\x06 \x01(\tB\x0e\xe8\xc7\x31\x01\x8a\xc8\x31\x06<=8000\x12J\n\x0bsso_binding\x18\x07 \x01(\x0e\x32\x35.yandex.cloud.organizationmanager.v1.saml.BindingType\x12\x1f\n\x07sso_url\x18\x08 \x01(\tB\x0e\xe8\xc7\x31\x01\x8a\xc8\x31\x06<=8000\x12_\n\x11security_settings\x18\t \x01(\x0b\x32\x44.yandex.cloud.organizationmanager.v1.saml.FederationSecuritySettings\x12!\n\x19\x63\x61se_insensitive_name_ids\x18\n \x01(\x08\x12\x9e\x01\n\x06labels\x18\x0b \x03(\x0b\x32M.yandex.cloud.organizationmanager.v1.saml.CreateFederationRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"1\n\x18\x43reateFederationMetadata\x12\x15\n\rfederation_id\x18\x01 \x01(\t\"\x86\x06\n\x17UpdateFederationRequest\x12\x1f\n\rfederation_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12>\n\x0e\x63ookie_max_age\x18\x05 \x01(\x0b\x32\x19.google.protobuf.DurationB\x0b\xfa\xc7\x31\x07\x31\x30m-12h\x12$\n\x1c\x61uto_create_account_on_login\x18\x06 \x01(\x08\x12\x1e\n\x06issuer\x18\x07 \x01(\tB\x0e\xe8\xc7\x31\x01\x8a\xc8\x31\x06<=8000\x12J\n\x0bsso_binding\x18\x08 \x01(\x0e\x32\x35.yandex.cloud.organizationmanager.v1.saml.BindingType\x12\x1f\n\x07sso_url\x18\t \x01(\tB\x0e\xe8\xc7\x31\x01\x8a\xc8\x31\x06<=8000\x12_\n\x11security_settings\x18\n \x01(\x0b\x32\x44.yandex.cloud.organizationmanager.v1.saml.FederationSecuritySettings\x12!\n\x19\x63\x61se_insensitive_name_ids\x18\x0c \x01(\x08\x12\x9e\x01\n\x06labels\x18\r \x03(\x0b\x32M.yandex.cloud.organizationmanager.v1.saml.UpdateFederationRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"1\n\x18UpdateFederationMetadata\x12\x15\n\rfederation_id\x18\x01 \x01(\t\":\n\x17\x44\x65leteFederationRequest\x12\x1f\n\rfederation_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"1\n\x18\x44\x65leteFederationMetadata\x12\x15\n\rfederation_id\x18\x01 \x01(\t\"`\n\x1f\x41\x64\x64\x46\x65\x64\x65ratedUserAccountsRequest\x12\x1f\n\rfederation_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1c\n\x08name_ids\x18\x02 \x03(\tB\n\x8a\xc8\x31\x06<=1000\"9\n AddFederatedUserAccountsMetadata\x12\x15\n\rfederation_id\x18\x01 \x01(\t\"k\n AddFederatedUserAccountsResponse\x12G\n\ruser_accounts\x18\x01 \x03(\x0b\x32\x30.yandex.cloud.organizationmanager.v1.UserAccount\"\x85\x01\n ListFederatedUserAccountsRequest\x12#\n\rfederation_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"\x85\x01\n!ListFederatedUserAccountsResponse\x12G\n\ruser_accounts\x18\x01 \x03(\x0b\x32\x30.yandex.cloud.organizationmanager.v1.UserAccount\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x80\x01\n\x1fListFederationOperationsRequest\x12\x1f\n\rfederation_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"r\n ListFederationOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xcb\x0e\n\x11\x46\x65\x64\x65rationService\x12\xbe\x01\n\x03Get\x12>.yandex.cloud.organizationmanager.v1.saml.GetFederationRequest\x1a\x34.yandex.cloud.organizationmanager.v1.saml.Federation\"A\x82\xd3\xe4\x93\x02;\x12\x39/organization-manager/v1/saml/federations/{federation_id}\x12\xbe\x01\n\x04List\x12@.yandex.cloud.organizationmanager.v1.saml.ListFederationsRequest\x1a\x41.yandex.cloud.organizationmanager.v1.saml.ListFederationsResponse\"1\x82\xd3\xe4\x93\x02+\x12)/organization-manager/v1/saml/federations\x12\xce\x01\n\x06\x43reate\x12\x41.yandex.cloud.organizationmanager.v1.saml.CreateFederationRequest\x1a!.yandex.cloud.operation.Operation\"^\x82\xd3\xe4\x93\x02.\")/organization-manager/v1/saml/federations:\x01*\xb2\xd2*&\n\x18\x43reateFederationMetadata\x12\nFederation\x12\xde\x01\n\x06Update\x12\x41.yandex.cloud.organizationmanager.v1.saml.UpdateFederationRequest\x1a!.yandex.cloud.operation.Operation\"n\x82\xd3\xe4\x93\x02>29/organization-manager/v1/saml/federations/{federation_id}:\x01*\xb2\xd2*&\n\x18UpdateFederationMetadata\x12\nFederation\x12\xe6\x01\n\x06\x44\x65lete\x12\x41.yandex.cloud.organizationmanager.v1.saml.DeleteFederationRequest\x1a!.yandex.cloud.operation.Operation\"v\x82\xd3\xe4\x93\x02;*9/organization-manager/v1/saml/federations/{federation_id}\xb2\xd2*1\n\x18\x44\x65leteFederationMetadata\x12\x15google.protobuf.Empty\x12\x9e\x02\n\x0f\x41\x64\x64UserAccounts\x12I.yandex.cloud.organizationmanager.v1.saml.AddFederatedUserAccountsRequest\x1a!.yandex.cloud.operation.Operation\"\x9c\x01\x82\xd3\xe4\x93\x02N\"I/organization-manager/v1/saml/federations/{federation_id}:addUserAccounts:\x01*\xb2\xd2*D\n AddFederatedUserAccountsMetadata\x12 AddFederatedUserAccountsResponse\x12\xff\x01\n\x10ListUserAccounts\x12J.yandex.cloud.organizationmanager.v1.saml.ListFederatedUserAccountsRequest\x1aK.yandex.cloud.organizationmanager.v1.saml.ListFederatedUserAccountsResponse\"R\x82\xd3\xe4\x93\x02L\x12J/organization-manager/v1/saml/federations/{federation_id}:listUserAccounts\x12\xf5\x01\n\x0eListOperations\x12I.yandex.cloud.organizationmanager.v1.saml.ListFederationOperationsRequest\x1aJ.yandex.cloud.organizationmanager.v1.saml.ListFederationOperationsResponse\"L\x82\xd3\xe4\x93\x02\x46\x12\x44/organization-manager/v1/saml/federations/{federation_id}/operationsB\x81\x01\n,yandex.cloud.api.organizationmanager.v1.samlZQgithub.com/yandex-cloud/go-genproto/yandex/cloud/organizationmanager/v1/saml;samlb\x06proto3'
+  serialized_pb=b'\nAyandex/cloud/organizationmanager/v1/saml/federation_service.proto\x12(yandex.cloud.organizationmanager.v1.saml\x1a\x1cgoogle/api/annotations.proto\x1a\x1egoogle/protobuf/duration.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a\x36yandex/cloud/organizationmanager/v1/user_account.proto\x1a\x39yandex/cloud/organizationmanager/v1/saml/federation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"7\n\x14GetFederationRequest\x12\x1f\n\rfederation_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"\x9a\x01\n\x16ListFederationsRequest\x12%\n\x0forganization_id\x18\x06 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x03 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=2000\x12\x1a\n\x06\x66ilter\x18\x05 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"}\n\x17ListFederationsResponse\x12I\n\x0b\x66\x65\x64\x65rations\x18\x01 \x03(\x0b\x32\x34.yandex.cloud.organizationmanager.v1.saml.Federation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xd6\x05\n\x17\x43reateFederationRequest\x12!\n\x0forganization_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x31\n\x04name\x18\x02 \x01(\tB#\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12>\n\x0e\x63ookie_max_age\x18\x04 \x01(\x0b\x32\x19.google.protobuf.DurationB\x0b\xfa\xc7\x31\x07\x31\x30m-12h\x12$\n\x1c\x61uto_create_account_on_login\x18\x05 \x01(\x08\x12\x1e\n\x06issuer\x18\x06 \x01(\tB\x0e\xe8\xc7\x31\x01\x8a\xc8\x31\x06<=8000\x12J\n\x0bsso_binding\x18\x07 \x01(\x0e\x32\x35.yandex.cloud.organizationmanager.v1.saml.BindingType\x12\x1f\n\x07sso_url\x18\x08 \x01(\tB\x0e\xe8\xc7\x31\x01\x8a\xc8\x31\x06<=8000\x12_\n\x11security_settings\x18\t \x01(\x0b\x32\x44.yandex.cloud.organizationmanager.v1.saml.FederationSecuritySettings\x12!\n\x19\x63\x61se_insensitive_name_ids\x18\n \x01(\x08\x12\x9e\x01\n\x06labels\x18\x0b \x03(\x0b\x32M.yandex.cloud.organizationmanager.v1.saml.CreateFederationRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"1\n\x18\x43reateFederationMetadata\x12\x15\n\rfederation_id\x18\x01 \x01(\t\"\x86\x06\n\x17UpdateFederationRequest\x12\x1f\n\rfederation_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12>\n\x0e\x63ookie_max_age\x18\x05 \x01(\x0b\x32\x19.google.protobuf.DurationB\x0b\xfa\xc7\x31\x07\x31\x30m-12h\x12$\n\x1c\x61uto_create_account_on_login\x18\x06 \x01(\x08\x12\x1e\n\x06issuer\x18\x07 \x01(\tB\x0e\xe8\xc7\x31\x01\x8a\xc8\x31\x06<=8000\x12J\n\x0bsso_binding\x18\x08 \x01(\x0e\x32\x35.yandex.cloud.organizationmanager.v1.saml.BindingType\x12\x1f\n\x07sso_url\x18\t \x01(\tB\x0e\xe8\xc7\x31\x01\x8a\xc8\x31\x06<=8000\x12_\n\x11security_settings\x18\n \x01(\x0b\x32\x44.yandex.cloud.organizationmanager.v1.saml.FederationSecuritySettings\x12!\n\x19\x63\x61se_insensitive_name_ids\x18\x0c \x01(\x08\x12\x9e\x01\n\x06labels\x18\r \x03(\x0b\x32M.yandex.cloud.organizationmanager.v1.saml.UpdateFederationRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"1\n\x18UpdateFederationMetadata\x12\x15\n\rfederation_id\x18\x01 \x01(\t\":\n\x17\x44\x65leteFederationRequest\x12\x1f\n\rfederation_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"1\n\x18\x44\x65leteFederationMetadata\x12\x15\n\rfederation_id\x18\x01 \x01(\t\"`\n\x1f\x41\x64\x64\x46\x65\x64\x65ratedUserAccountsRequest\x12\x1f\n\rfederation_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1c\n\x08name_ids\x18\x02 \x03(\tB\n\x8a\xc8\x31\x06<=1000\"9\n AddFederatedUserAccountsMetadata\x12\x15\n\rfederation_id\x18\x01 \x01(\t\"k\n AddFederatedUserAccountsResponse\x12G\n\ruser_accounts\x18\x01 \x03(\x0b\x32\x30.yandex.cloud.organizationmanager.v1.UserAccount\"\xa2\x01\n ListFederatedUserAccountsRequest\x12#\n\rfederation_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1010\"\x85\x01\n!ListFederatedUserAccountsResponse\x12G\n\ruser_accounts\x18\x01 \x03(\x0b\x32\x30.yandex.cloud.organizationmanager.v1.UserAccount\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x81\x01\n\x1fListFederationOperationsRequest\x12\x1f\n\rfederation_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\"r\n ListFederationOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xcb\x0e\n\x11\x46\x65\x64\x65rationService\x12\xbe\x01\n\x03Get\x12>.yandex.cloud.organizationmanager.v1.saml.GetFederationRequest\x1a\x34.yandex.cloud.organizationmanager.v1.saml.Federation\"A\x82\xd3\xe4\x93\x02;\x12\x39/organization-manager/v1/saml/federations/{federation_id}\x12\xbe\x01\n\x04List\x12@.yandex.cloud.organizationmanager.v1.saml.ListFederationsRequest\x1a\x41.yandex.cloud.organizationmanager.v1.saml.ListFederationsResponse\"1\x82\xd3\xe4\x93\x02+\x12)/organization-manager/v1/saml/federations\x12\xce\x01\n\x06\x43reate\x12\x41.yandex.cloud.organizationmanager.v1.saml.CreateFederationRequest\x1a!.yandex.cloud.operation.Operation\"^\x82\xd3\xe4\x93\x02.\")/organization-manager/v1/saml/federations:\x01*\xb2\xd2*&\n\x18\x43reateFederationMetadata\x12\nFederation\x12\xde\x01\n\x06Update\x12\x41.yandex.cloud.organizationmanager.v1.saml.UpdateFederationRequest\x1a!.yandex.cloud.operation.Operation\"n\x82\xd3\xe4\x93\x02>29/organization-manager/v1/saml/federations/{federation_id}:\x01*\xb2\xd2*&\n\x18UpdateFederationMetadata\x12\nFederation\x12\xe6\x01\n\x06\x44\x65lete\x12\x41.yandex.cloud.organizationmanager.v1.saml.DeleteFederationRequest\x1a!.yandex.cloud.operation.Operation\"v\x82\xd3\xe4\x93\x02;*9/organization-manager/v1/saml/federations/{federation_id}\xb2\xd2*1\n\x18\x44\x65leteFederationMetadata\x12\x15google.protobuf.Empty\x12\x9e\x02\n\x0f\x41\x64\x64UserAccounts\x12I.yandex.cloud.organizationmanager.v1.saml.AddFederatedUserAccountsRequest\x1a!.yandex.cloud.operation.Operation\"\x9c\x01\x82\xd3\xe4\x93\x02N\"I/organization-manager/v1/saml/federations/{federation_id}:addUserAccounts:\x01*\xb2\xd2*D\n AddFederatedUserAccountsMetadata\x12 AddFederatedUserAccountsResponse\x12\xff\x01\n\x10ListUserAccounts\x12J.yandex.cloud.organizationmanager.v1.saml.ListFederatedUserAccountsRequest\x1aK.yandex.cloud.organizationmanager.v1.saml.ListFederatedUserAccountsResponse\"R\x82\xd3\xe4\x93\x02L\x12J/organization-manager/v1/saml/federations/{federation_id}:listUserAccounts\x12\xf5\x01\n\x0eListOperations\x12I.yandex.cloud.organizationmanager.v1.saml.ListFederationOperationsRequest\x1aJ.yandex.cloud.organizationmanager.v1.saml.ListFederationOperationsResponse\"L\x82\xd3\xe4\x93\x02\x46\x12\x44/organization-manager/v1/saml/federations/{federation_id}/operationsB\x81\x01\n,yandex.cloud.api.organizationmanager.v1.samlZQgithub.com/yandex-cloud/go-genproto/yandex/cloud/organizationmanager/v1/saml;samlb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_user__account__pb2.DESCRIPTOR,yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -94,7 +94,7 @@ _LISTFEDERATIONSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\212\3101\006<=2000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='filter', full_name='yandex.cloud.organizationmanager.v1.saml.ListFederationsRequest.filter', index=3,
       number=5, type=9, cpp_type=9, label=1,
@@ -115,7 +115,7 @@ _LISTFEDERATIONSREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=485,
-  serialized_end=637,
+  serialized_end=639,
 )
 
 
@@ -153,8 +153,8 @@ _LISTFEDERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=639,
-  serialized_end=764,
+  serialized_start=641,
+  serialized_end=766,
 )
 
 
@@ -192,8 +192,8 @@ _CREATEFEDERATIONREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1448,
-  serialized_end=1493,
+  serialized_start=1450,
+  serialized_end=1495,
 )
 
 _CREATEFEDERATIONREQUEST = _descriptor.Descriptor(
@@ -293,8 +293,8 @@ _CREATEFEDERATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=767,
-  serialized_end=1493,
+  serialized_start=769,
+  serialized_end=1495,
 )
 
 
@@ -325,8 +325,8 @@ _CREATEFEDERATIONMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1495,
-  serialized_end=1544,
+  serialized_start=1497,
+  serialized_end=1546,
 )
 
 
@@ -364,8 +364,8 @@ _UPDATEFEDERATIONREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1448,
-  serialized_end=1493,
+  serialized_start=1450,
+  serialized_end=1495,
 )
 
 _UPDATEFEDERATIONREQUEST = _descriptor.Descriptor(
@@ -472,8 +472,8 @@ _UPDATEFEDERATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1547,
-  serialized_end=2321,
+  serialized_start=1549,
+  serialized_end=2323,
 )
 
 
@@ -504,8 +504,8 @@ _UPDATEFEDERATIONMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2323,
-  serialized_end=2372,
+  serialized_start=2325,
+  serialized_end=2374,
 )
 
 
@@ -536,8 +536,8 @@ _DELETEFEDERATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2374,
-  serialized_end=2432,
+  serialized_start=2376,
+  serialized_end=2434,
 )
 
 
@@ -568,8 +568,8 @@ _DELETEFEDERATIONMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2434,
-  serialized_end=2483,
+  serialized_start=2436,
+  serialized_end=2485,
 )
 
 
@@ -607,8 +607,8 @@ _ADDFEDERATEDUSERACCOUNTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2485,
-  serialized_end=2581,
+  serialized_start=2487,
+  serialized_end=2583,
 )
 
 
@@ -639,8 +639,8 @@ _ADDFEDERATEDUSERACCOUNTSMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2583,
-  serialized_end=2640,
+  serialized_start=2585,
+  serialized_end=2642,
 )
 
 
@@ -671,8 +671,8 @@ _ADDFEDERATEDUSERACCOUNTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2642,
-  serialized_end=2749,
+  serialized_start=2644,
+  serialized_end=2751,
 )
 
 
@@ -704,7 +704,14 @@ _LISTFEDERATEDUSERACCOUNTSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\212\3101\006<=2000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='filter', full_name='yandex.cloud.organizationmanager.v1.saml.ListFederatedUserAccountsRequest.filter', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\212\3101\006<=1010', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -717,8 +724,8 @@ _LISTFEDERATEDUSERACCOUNTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2752,
-  serialized_end=2885,
+  serialized_start=2754,
+  serialized_end=2916,
 )
 
 
@@ -756,8 +763,8 @@ _LISTFEDERATEDUSERACCOUNTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2888,
-  serialized_end=3021,
+  serialized_start=2919,
+  serialized_end=3052,
 )
 
 
@@ -789,7 +796,7 @@ _LISTFEDERATIONOPERATIONSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\212\3101\006<=2000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -802,8 +809,8 @@ _LISTFEDERATIONOPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3024,
-  serialized_end=3152,
+  serialized_start=3055,
+  serialized_end=3184,
 )
 
 
@@ -841,8 +848,8 @@ _LISTFEDERATIONOPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3154,
-  serialized_end=3268,
+  serialized_start=3186,
+  serialized_end=3300,
 )
 
 _LISTFEDERATIONSRESPONSE.fields_by_name['federations'].message_type = yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__pb2._FEDERATION
@@ -1035,6 +1042,7 @@ _ADDFEDERATEDUSERACCOUNTSREQUEST.fields_by_name['name_ids']._options = None
 _LISTFEDERATEDUSERACCOUNTSREQUEST.fields_by_name['federation_id']._options = None
 _LISTFEDERATEDUSERACCOUNTSREQUEST.fields_by_name['page_size']._options = None
 _LISTFEDERATEDUSERACCOUNTSREQUEST.fields_by_name['page_token']._options = None
+_LISTFEDERATEDUSERACCOUNTSREQUEST.fields_by_name['filter']._options = None
 _LISTFEDERATIONOPERATIONSREQUEST.fields_by_name['federation_id']._options = None
 _LISTFEDERATIONOPERATIONSREQUEST.fields_by_name['page_size']._options = None
 _LISTFEDERATIONOPERATIONSREQUEST.fields_by_name['page_token']._options = None
@@ -1046,8 +1054,8 @@ _FEDERATIONSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=3271,
-  serialized_end=5138,
+  serialized_start=3303,
+  serialized_end=5170,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',

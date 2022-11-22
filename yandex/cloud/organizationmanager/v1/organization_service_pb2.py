@@ -26,7 +26,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\'yandex.cloud.api.organizationmanager.v1Z[github.com/yandex-cloud/go-genproto/yandex/cloud/organizationmanager/v1;organizationmanager',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n>yandex/cloud/organizationmanager/v1/organization_service.proto\x12#yandex.cloud.organizationmanager.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a\x36yandex/cloud/organizationmanager/v1/organization.proto\x1a yandex/cloud/access/access.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"?\n\x16GetOrganizationRequest\x12%\n\x0forganization_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"t\n\x18ListOrganizationsRequest\x12\x1d\n\tpage_size\x18\x01 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"~\n\x19ListOrganizationsResponse\x12H\n\rorganizations\x18\x01 \x03(\x0b\x32\x31.yandex.cloud.organizationmanager.v1.Organization\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xae\x03\n\x19UpdateOrganizationRequest\x12%\n\x0forganization_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x18\n\x05title\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x9b\x01\n\x06labels\x18\x06 \x03(\x0b\x32J.yandex.cloud.organizationmanager.v1.UpdateOrganizationRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"5\n\x1aUpdateOrganizationMetadata\x12\x17\n\x0forganization_id\x18\x01 \x01(\t\"\x88\x01\n!ListOrganizationOperationsRequest\x12%\n\x0forganization_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"t\n\"ListOrganizationOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xa0\x0c\n\x13OrganizationService\x12\xb7\x01\n\x03Get\x12;.yandex.cloud.organizationmanager.v1.GetOrganizationRequest\x1a\x31.yandex.cloud.organizationmanager.v1.Organization\"@\x82\xd3\xe4\x93\x02:\x12\x38/organization-manager/v1/organizations/{organization_id}\x12\xb5\x01\n\x04List\x12=.yandex.cloud.organizationmanager.v1.ListOrganizationsRequest\x1a>.yandex.cloud.organizationmanager.v1.ListOrganizationsResponse\".\x82\xd3\xe4\x93\x02(\x12&/organization-manager/v1/organizations\x12\xde\x01\n\x06Update\x12>.yandex.cloud.organizationmanager.v1.UpdateOrganizationRequest\x1a!.yandex.cloud.operation.Operation\"q\x82\xd3\xe4\x93\x02=28/organization-manager/v1/organizations/{organization_id}:\x01*\xb2\xd2**\n\x1aUpdateOrganizationMetadata\x12\x0cOrganization\x12\xee\x01\n\x0eListOperations\x12\x46.yandex.cloud.organizationmanager.v1.ListOrganizationOperationsRequest\x1aG.yandex.cloud.organizationmanager.v1.ListOrganizationOperationsResponse\"K\x82\xd3\xe4\x93\x02\x45\x12\x43/organization-manager/v1/organizations/{organization_id}/operations\x12\xc6\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"O\x82\xd3\xe4\x93\x02I\x12G/organization-manager/v1/organizations/{resource_id}:listAccessBindings\x12\xf6\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x8e\x01\x82\xd3\xe4\x93\x02K\"F/organization-manager/v1/organizations/{resource_id}:setAccessBindings:\x01*\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\x82\x02\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x94\x01\x82\xd3\xe4\x93\x02N\"I/organization-manager/v1/organizations/{resource_id}:updateAccessBindings:\x01*\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.EmptyB\x86\x01\n\'yandex.cloud.api.organizationmanager.v1Z[github.com/yandex-cloud/go-genproto/yandex/cloud/organizationmanager/v1;organizationmanagerb\x06proto3'
+  serialized_pb=b'\n>yandex/cloud/organizationmanager/v1/organization_service.proto\x12#yandex.cloud.organizationmanager.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a\x36yandex/cloud/organizationmanager/v1/organization.proto\x1a yandex/cloud/access/access.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"?\n\x16GetOrganizationRequest\x12%\n\x0forganization_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"u\n\x18ListOrganizationsRequest\x12\x1d\n\tpage_size\x18\x01 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x02 \x01(\tB\n\x8a\xc8\x31\x06<=2000\x12\x1a\n\x06\x66ilter\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"~\n\x19ListOrganizationsResponse\x12H\n\rorganizations\x18\x01 \x03(\x0b\x32\x31.yandex.cloud.organizationmanager.v1.Organization\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xae\x03\n\x19UpdateOrganizationRequest\x12%\n\x0forganization_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x18\n\x05title\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x9b\x01\n\x06labels\x18\x06 \x03(\x0b\x32J.yandex.cloud.organizationmanager.v1.UpdateOrganizationRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"5\n\x1aUpdateOrganizationMetadata\x12\x17\n\x0forganization_id\x18\x01 \x01(\t\"\x89\x01\n!ListOrganizationOperationsRequest\x12%\n\x0forganization_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\"t\n\"ListOrganizationOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xa0\x0c\n\x13OrganizationService\x12\xb7\x01\n\x03Get\x12;.yandex.cloud.organizationmanager.v1.GetOrganizationRequest\x1a\x31.yandex.cloud.organizationmanager.v1.Organization\"@\x82\xd3\xe4\x93\x02:\x12\x38/organization-manager/v1/organizations/{organization_id}\x12\xb5\x01\n\x04List\x12=.yandex.cloud.organizationmanager.v1.ListOrganizationsRequest\x1a>.yandex.cloud.organizationmanager.v1.ListOrganizationsResponse\".\x82\xd3\xe4\x93\x02(\x12&/organization-manager/v1/organizations\x12\xde\x01\n\x06Update\x12>.yandex.cloud.organizationmanager.v1.UpdateOrganizationRequest\x1a!.yandex.cloud.operation.Operation\"q\x82\xd3\xe4\x93\x02=28/organization-manager/v1/organizations/{organization_id}:\x01*\xb2\xd2**\n\x1aUpdateOrganizationMetadata\x12\x0cOrganization\x12\xee\x01\n\x0eListOperations\x12\x46.yandex.cloud.organizationmanager.v1.ListOrganizationOperationsRequest\x1aG.yandex.cloud.organizationmanager.v1.ListOrganizationOperationsResponse\"K\x82\xd3\xe4\x93\x02\x45\x12\x43/organization-manager/v1/organizations/{organization_id}/operations\x12\xc6\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"O\x82\xd3\xe4\x93\x02I\x12G/organization-manager/v1/organizations/{resource_id}:listAccessBindings\x12\xf6\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x8e\x01\x82\xd3\xe4\x93\x02K\"F/organization-manager/v1/organizations/{resource_id}:setAccessBindings:\x01*\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\x82\x02\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x94\x01\x82\xd3\xe4\x93\x02N\"I/organization-manager/v1/organizations/{resource_id}:updateAccessBindings:\x01*\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.EmptyB\x86\x01\n\'yandex.cloud.api.organizationmanager.v1Z[github.com/yandex-cloud/go-genproto/yandex/cloud/organizationmanager/v1;organizationmanagerb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_organization__pb2.DESCRIPTOR,yandex_dot_cloud_dot_access_dot_access__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -86,7 +86,7 @@ _LISTORGANIZATIONSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\212\3101\006<=2000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='filter', full_name='yandex.cloud.organizationmanager.v1.ListOrganizationsRequest.filter', index=2,
       number=3, type=9, cpp_type=9, label=1,
@@ -107,7 +107,7 @@ _LISTORGANIZATIONSREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=427,
-  serialized_end=543,
+  serialized_end=544,
 )
 
 
@@ -145,8 +145,8 @@ _LISTORGANIZATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=545,
-  serialized_end=671,
+  serialized_start=546,
+  serialized_end=672,
 )
 
 
@@ -184,8 +184,8 @@ _UPDATEORGANIZATIONREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1059,
-  serialized_end=1104,
+  serialized_start=1060,
+  serialized_end=1105,
 )
 
 _UPDATEORGANIZATIONREQUEST = _descriptor.Descriptor(
@@ -250,8 +250,8 @@ _UPDATEORGANIZATIONREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=674,
-  serialized_end=1104,
+  serialized_start=675,
+  serialized_end=1105,
 )
 
 
@@ -282,8 +282,8 @@ _UPDATEORGANIZATIONMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1106,
-  serialized_end=1159,
+  serialized_start=1107,
+  serialized_end=1160,
 )
 
 
@@ -315,7 +315,7 @@ _LISTORGANIZATIONOPERATIONSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\212\3101\006<=2000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -328,8 +328,8 @@ _LISTORGANIZATIONOPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1162,
-  serialized_end=1298,
+  serialized_start=1163,
+  serialized_end=1300,
 )
 
 
@@ -367,8 +367,8 @@ _LISTORGANIZATIONOPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1300,
-  serialized_end=1416,
+  serialized_start=1302,
+  serialized_end=1418,
 )
 
 _LISTORGANIZATIONSRESPONSE.fields_by_name['organizations'].message_type = yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_organization__pb2._ORGANIZATION
@@ -465,8 +465,8 @@ _ORGANIZATIONSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1419,
-  serialized_end=2987,
+  serialized_start=1421,
+  serialized_end=2989,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',

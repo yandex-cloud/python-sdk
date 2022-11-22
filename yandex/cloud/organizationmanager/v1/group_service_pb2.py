@@ -26,7 +26,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\'yandex.cloud.api.organizationmanager.v1Z[github.com/yandex-cloud/go-genproto/yandex/cloud/organizationmanager/v1;organizationmanager',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n7yandex/cloud/organizationmanager/v1/group_service.proto\x12#yandex.cloud.organizationmanager.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a/yandex/cloud/organizationmanager/v1/group.proto\x1a yandex/cloud/access/access.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"1\n\x0fGetGroupRequest\x12\x1e\n\x08group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x94\x01\n\x11ListGroupsRequest\x12%\n\x0forganization_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"i\n\x12ListGroupsResponse\x12:\n\x06groups\x18\x01 \x03(\x0b\x32*.yandex.cloud.organizationmanager.v1.Group\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x92\x01\n\x12\x43reateGroupRequest\x12%\n\x0forganization_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\x04name\x18\x02 \x01(\tB\'\xe8\xc7\x31\x01\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\"\'\n\x13\x43reateGroupMetadata\x12\x10\n\x08group_id\x18\x01 \x01(\t\"\xb9\x01\n\x12UpdateGroupRequest\x12\x1e\n\x08group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\"\'\n\x13UpdateGroupMetadata\x12\x10\n\x08group_id\x18\x01 \x01(\t\"4\n\x12\x44\x65leteGroupRequest\x12\x1e\n\x08group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\'\n\x13\x44\x65leteGroupMetadata\x12\x10\n\x08group_id\x18\x01 \x01(\t\"z\n\x1aListGroupOperationsRequest\x12\x1e\n\x08group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"m\n\x1bListGroupOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"w\n\x17ListGroupMembersRequest\x12\x1e\n\x08group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"v\n\x18ListGroupMembersResponse\x12\x41\n\x07members\x18\x01 \x03(\x0b\x32\x30.yandex.cloud.organizationmanager.v1.GroupMember\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"7\n\x0bGroupMember\x12\x12\n\nsubject_id\x18\x01 \x01(\t\x12\x14\n\x0csubject_type\x18\x02 \x01(\t\"\x90\x01\n\x19UpdateGroupMembersRequest\x12\x1e\n\x08group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12S\n\rmember_deltas\x18\x02 \x03(\x0b\x32\x30.yandex.cloud.organizationmanager.v1.MemberDeltaB\n\x82\xc8\x31\x06\x31-1000\".\n\x1aUpdateGroupMembersMetadata\x12\x10\n\x08group_id\x18\x01 \x01(\t\"\xc8\x01\n\x0bMemberDelta\x12S\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32=.yandex.cloud.organizationmanager.v1.MemberDelta.MemberActionB\x04\xe8\xc7\x31\x01\x12 \n\nsubject_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"B\n\x0cMemberAction\x12\x1d\n\x19MEMBER_ACTION_UNSPECIFIED\x10\x00\x12\x07\n\x03\x41\x44\x44\x10\x01\x12\n\n\x06REMOVE\x10\x02\x32\xee\x11\n\x0cGroupService\x12\x9b\x01\n\x03Get\x12\x34.yandex.cloud.organizationmanager.v1.GetGroupRequest\x1a*.yandex.cloud.organizationmanager.v1.Group\"2\x82\xd3\xe4\x93\x02,\x12*/organization-manager/v1/groups/{group_id}\x12\xa0\x01\n\x04List\x12\x36.yandex.cloud.organizationmanager.v1.ListGroupsRequest\x1a\x37.yandex.cloud.organizationmanager.v1.ListGroupsResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/organization-manager/v1/groups\x12\xb0\x01\n\x06\x43reate\x12\x37.yandex.cloud.organizationmanager.v1.CreateGroupRequest\x1a!.yandex.cloud.operation.Operation\"J\x82\xd3\xe4\x93\x02$\"\x1f/organization-manager/v1/groups:\x01*\xb2\xd2*\x1c\n\x13\x43reateGroupMetadata\x12\x05Group\x12\xbb\x01\n\x06Update\x12\x37.yandex.cloud.organizationmanager.v1.UpdateGroupRequest\x1a!.yandex.cloud.operation.Operation\"U\x82\xd3\xe4\x93\x02/2*/organization-manager/v1/groups/{group_id}:\x01*\xb2\xd2*\x1c\n\x13UpdateGroupMetadata\x12\x05Group\x12\xc8\x01\n\x06\x44\x65lete\x12\x37.yandex.cloud.organizationmanager.v1.DeleteGroupRequest\x1a!.yandex.cloud.operation.Operation\"b\x82\xd3\xe4\x93\x02,**/organization-manager/v1/groups/{group_id}\xb2\xd2*,\n\x13\x44\x65leteGroupMetadata\x12\x15google.protobuf.Empty\x12\xd2\x01\n\x0eListOperations\x12?.yandex.cloud.organizationmanager.v1.ListGroupOperationsRequest\x1a@.yandex.cloud.organizationmanager.v1.ListGroupOperationsResponse\"=\x82\xd3\xe4\x93\x02\x37\x12\x35/organization-manager/v1/groups/{group_id}/operations\x12\xca\x01\n\x0bListMembers\x12<.yandex.cloud.organizationmanager.v1.ListGroupMembersRequest\x1a=.yandex.cloud.organizationmanager.v1.ListGroupMembersResponse\">\x82\xd3\xe4\x93\x02\x38\x12\x36/organization-manager/v1/groups/{group_id}:listMembers\x12\xee\x01\n\rUpdateMembers\x12>.yandex.cloud.organizationmanager.v1.UpdateGroupMembersRequest\x1a!.yandex.cloud.operation.Operation\"z\x82\xd3\xe4\x93\x02=\"8/organization-manager/v1/groups/{group_id}:updateMembers:\x01*\xb2\xd2*3\n\x1aUpdateGroupMembersMetadata\x12\x15google.protobuf.Empty\x12\xbf\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"H\x82\xd3\xe4\x93\x02\x42\x12@/organization-manager/v1/groups/{resource_id}:listAccessBindings\x12\xfe\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x96\x01\x82\xd3\xe4\x93\x02\x44\"?/organization-manager/v1/groups/{resource_id}:setAccessBindings:\x01*\xb2\xd2*H\n access.SetAccessBindingsMetadata\x12$access.AccessBindingsOperationResult\x12\x8a\x02\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x9c\x01\x82\xd3\xe4\x93\x02G\"B/organization-manager/v1/groups/{resource_id}:updateAccessBindings:\x01*\xb2\xd2*K\n#access.UpdateAccessBindingsMetadata\x12$access.AccessBindingsOperationResultB\x86\x01\n\'yandex.cloud.api.organizationmanager.v1Z[github.com/yandex-cloud/go-genproto/yandex/cloud/organizationmanager/v1;organizationmanagerb\x06proto3'
+  serialized_pb=b'\n7yandex/cloud/organizationmanager/v1/group_service.proto\x12#yandex.cloud.organizationmanager.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a/yandex/cloud/organizationmanager/v1/group.proto\x1a yandex/cloud/access/access.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"1\n\x0fGetGroupRequest\x12\x1e\n\x08group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x95\x01\n\x11ListGroupsRequest\x12%\n\x0forganization_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"i\n\x12ListGroupsResponse\x12:\n\x06groups\x18\x01 \x03(\x0b\x32*.yandex.cloud.organizationmanager.v1.Group\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x92\x01\n\x12\x43reateGroupRequest\x12%\n\x0forganization_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\x04name\x18\x02 \x01(\tB\'\xe8\xc7\x31\x01\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\"\'\n\x13\x43reateGroupMetadata\x12\x10\n\x08group_id\x18\x01 \x01(\t\"\xb9\x01\n\x12UpdateGroupRequest\x12\x1e\n\x08group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\"\'\n\x13UpdateGroupMetadata\x12\x10\n\x08group_id\x18\x01 \x01(\t\"4\n\x12\x44\x65leteGroupRequest\x12\x1e\n\x08group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\'\n\x13\x44\x65leteGroupMetadata\x12\x10\n\x08group_id\x18\x01 \x01(\t\"{\n\x1aListGroupOperationsRequest\x12\x1e\n\x08group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\"m\n\x1bListGroupOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"x\n\x17ListGroupMembersRequest\x12\x1e\n\x08group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\"v\n\x18ListGroupMembersResponse\x12\x41\n\x07members\x18\x01 \x03(\x0b\x32\x30.yandex.cloud.organizationmanager.v1.GroupMember\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"7\n\x0bGroupMember\x12\x12\n\nsubject_id\x18\x01 \x01(\t\x12\x14\n\x0csubject_type\x18\x02 \x01(\t\"\x90\x01\n\x19UpdateGroupMembersRequest\x12\x1e\n\x08group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12S\n\rmember_deltas\x18\x02 \x03(\x0b\x32\x30.yandex.cloud.organizationmanager.v1.MemberDeltaB\n\x82\xc8\x31\x06\x31-1000\".\n\x1aUpdateGroupMembersMetadata\x12\x10\n\x08group_id\x18\x01 \x01(\t\"\xc8\x01\n\x0bMemberDelta\x12S\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32=.yandex.cloud.organizationmanager.v1.MemberDelta.MemberActionB\x04\xe8\xc7\x31\x01\x12 \n\nsubject_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"B\n\x0cMemberAction\x12\x1d\n\x19MEMBER_ACTION_UNSPECIFIED\x10\x00\x12\x07\n\x03\x41\x44\x44\x10\x01\x12\n\n\x06REMOVE\x10\x02\x32\xee\x11\n\x0cGroupService\x12\x9b\x01\n\x03Get\x12\x34.yandex.cloud.organizationmanager.v1.GetGroupRequest\x1a*.yandex.cloud.organizationmanager.v1.Group\"2\x82\xd3\xe4\x93\x02,\x12*/organization-manager/v1/groups/{group_id}\x12\xa0\x01\n\x04List\x12\x36.yandex.cloud.organizationmanager.v1.ListGroupsRequest\x1a\x37.yandex.cloud.organizationmanager.v1.ListGroupsResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/organization-manager/v1/groups\x12\xb0\x01\n\x06\x43reate\x12\x37.yandex.cloud.organizationmanager.v1.CreateGroupRequest\x1a!.yandex.cloud.operation.Operation\"J\x82\xd3\xe4\x93\x02$\"\x1f/organization-manager/v1/groups:\x01*\xb2\xd2*\x1c\n\x13\x43reateGroupMetadata\x12\x05Group\x12\xbb\x01\n\x06Update\x12\x37.yandex.cloud.organizationmanager.v1.UpdateGroupRequest\x1a!.yandex.cloud.operation.Operation\"U\x82\xd3\xe4\x93\x02/2*/organization-manager/v1/groups/{group_id}:\x01*\xb2\xd2*\x1c\n\x13UpdateGroupMetadata\x12\x05Group\x12\xc8\x01\n\x06\x44\x65lete\x12\x37.yandex.cloud.organizationmanager.v1.DeleteGroupRequest\x1a!.yandex.cloud.operation.Operation\"b\x82\xd3\xe4\x93\x02,**/organization-manager/v1/groups/{group_id}\xb2\xd2*,\n\x13\x44\x65leteGroupMetadata\x12\x15google.protobuf.Empty\x12\xd2\x01\n\x0eListOperations\x12?.yandex.cloud.organizationmanager.v1.ListGroupOperationsRequest\x1a@.yandex.cloud.organizationmanager.v1.ListGroupOperationsResponse\"=\x82\xd3\xe4\x93\x02\x37\x12\x35/organization-manager/v1/groups/{group_id}/operations\x12\xca\x01\n\x0bListMembers\x12<.yandex.cloud.organizationmanager.v1.ListGroupMembersRequest\x1a=.yandex.cloud.organizationmanager.v1.ListGroupMembersResponse\">\x82\xd3\xe4\x93\x02\x38\x12\x36/organization-manager/v1/groups/{group_id}:listMembers\x12\xee\x01\n\rUpdateMembers\x12>.yandex.cloud.organizationmanager.v1.UpdateGroupMembersRequest\x1a!.yandex.cloud.operation.Operation\"z\x82\xd3\xe4\x93\x02=\"8/organization-manager/v1/groups/{group_id}:updateMembers:\x01*\xb2\xd2*3\n\x1aUpdateGroupMembersMetadata\x12\x15google.protobuf.Empty\x12\xbf\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"H\x82\xd3\xe4\x93\x02\x42\x12@/organization-manager/v1/groups/{resource_id}:listAccessBindings\x12\xfe\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x96\x01\x82\xd3\xe4\x93\x02\x44\"?/organization-manager/v1/groups/{resource_id}:setAccessBindings:\x01*\xb2\xd2*H\n access.SetAccessBindingsMetadata\x12$access.AccessBindingsOperationResult\x12\x8a\x02\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x9c\x01\x82\xd3\xe4\x93\x02G\"B/organization-manager/v1/groups/{resource_id}:updateAccessBindings:\x01*\xb2\xd2*K\n#access.UpdateAccessBindingsMetadata\x12$access.AccessBindingsOperationResultB\x86\x01\n\'yandex.cloud.api.organizationmanager.v1Z[github.com/yandex-cloud/go-genproto/yandex/cloud/organizationmanager/v1;organizationmanagerb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__pb2.DESCRIPTOR,yandex_dot_cloud_dot_access_dot_access__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -57,8 +57,8 @@ _MEMBERDELTA_MEMBERACTION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2034,
-  serialized_end=2100,
+  serialized_start=2037,
+  serialized_end=2103,
 )
 _sym_db.RegisterEnumDescriptor(_MEMBERDELTA_MEMBERACTION)
 
@@ -123,7 +123,7 @@ _LISTGROUPSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\212\3101\006<=2000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='filter', full_name='yandex.cloud.organizationmanager.v1.ListGroupsRequest.filter', index=3,
       number=4, type=9, cpp_type=9, label=1,
@@ -144,7 +144,7 @@ _LISTGROUPSREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=400,
-  serialized_end=548,
+  serialized_end=549,
 )
 
 
@@ -182,8 +182,8 @@ _LISTGROUPSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=550,
-  serialized_end=655,
+  serialized_start=551,
+  serialized_end=656,
 )
 
 
@@ -228,8 +228,8 @@ _CREATEGROUPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=658,
-  serialized_end=804,
+  serialized_start=659,
+  serialized_end=805,
 )
 
 
@@ -260,8 +260,8 @@ _CREATEGROUPMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=806,
-  serialized_end=845,
+  serialized_start=807,
+  serialized_end=846,
 )
 
 
@@ -313,8 +313,8 @@ _UPDATEGROUPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=848,
-  serialized_end=1033,
+  serialized_start=849,
+  serialized_end=1034,
 )
 
 
@@ -345,8 +345,8 @@ _UPDATEGROUPMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1035,
-  serialized_end=1074,
+  serialized_start=1036,
+  serialized_end=1075,
 )
 
 
@@ -377,8 +377,8 @@ _DELETEGROUPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1076,
-  serialized_end=1128,
+  serialized_start=1077,
+  serialized_end=1129,
 )
 
 
@@ -409,8 +409,8 @@ _DELETEGROUPMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1130,
-  serialized_end=1169,
+  serialized_start=1131,
+  serialized_end=1170,
 )
 
 
@@ -442,7 +442,7 @@ _LISTGROUPOPERATIONSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\212\3101\006<=2000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -455,8 +455,8 @@ _LISTGROUPOPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1171,
-  serialized_end=1293,
+  serialized_start=1172,
+  serialized_end=1295,
 )
 
 
@@ -494,8 +494,8 @@ _LISTGROUPOPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1295,
-  serialized_end=1404,
+  serialized_start=1297,
+  serialized_end=1406,
 )
 
 
@@ -527,7 +527,7 @@ _LISTGROUPMEMBERSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\212\3101\006<=2000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -540,8 +540,8 @@ _LISTGROUPMEMBERSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1406,
-  serialized_end=1525,
+  serialized_start=1408,
+  serialized_end=1528,
 )
 
 
@@ -579,8 +579,8 @@ _LISTGROUPMEMBERSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1527,
-  serialized_end=1645,
+  serialized_start=1530,
+  serialized_end=1648,
 )
 
 
@@ -618,8 +618,8 @@ _GROUPMEMBER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1647,
-  serialized_end=1702,
+  serialized_start=1650,
+  serialized_end=1705,
 )
 
 
@@ -657,8 +657,8 @@ _UPDATEGROUPMEMBERSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1705,
-  serialized_end=1849,
+  serialized_start=1708,
+  serialized_end=1852,
 )
 
 
@@ -689,8 +689,8 @@ _UPDATEGROUPMEMBERSMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1851,
-  serialized_end=1897,
+  serialized_start=1854,
+  serialized_end=1900,
 )
 
 
@@ -729,8 +729,8 @@ _MEMBERDELTA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1900,
-  serialized_end=2100,
+  serialized_start=1903,
+  serialized_end=2103,
 )
 
 _LISTGROUPSRESPONSE.fields_by_name['groups'].message_type = yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__pb2._GROUP
@@ -910,8 +910,8 @@ _GROUPSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=2103,
-  serialized_end=4389,
+  serialized_start=2106,
+  serialized_end=4392,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',

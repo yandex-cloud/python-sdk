@@ -25,7 +25,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n,yandex.cloud.api.organizationmanager.v1.samlZQgithub.com/yandex-cloud/go-genproto/yandex/cloud/organizationmanager/v1/saml;saml',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nByandex/cloud/organizationmanager/v1/saml/certificate_service.proto\x12(yandex.cloud.organizationmanager.v1.saml\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a:yandex/cloud/organizationmanager/v1/saml/certificate.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"9\n\x15GetCertificateRequest\x12 \n\x0e\x63\x65rtificate_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"\x98\x01\n\x17ListCertificatesRequest\x12#\n\rfederation_id\x18\x01 \x01(\tB\x0c\x8a\xc8\x31\x04<=50\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"\x80\x01\n\x18ListCertificatesResponse\x12K\n\x0c\x63\x65rtificates\x18\x01 \x03(\x0b\x32\x35.yandex.cloud.organizationmanager.v1.saml.Certificate\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xa9\x01\n\x18\x43reateCertificateRequest\x12\x1f\n\rfederation_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x31\n\x04name\x18\x02 \x01(\tB#\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x19\n\x04\x64\x61ta\x18\x04 \x01(\tB\x0b\x8a\xc8\x31\x07<=32000\"3\n\x19\x43reateCertificateMetadata\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\"\xdc\x01\n\x18UpdateCertificateRequest\x12 \n\x0e\x63\x65rtificate_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x19\n\x04\x64\x61ta\x18\x05 \x01(\tB\x0b\x8a\xc8\x31\x07<=32000\"3\n\x19UpdateCertificateMetadata\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\"<\n\x18\x44\x65leteCertificateRequest\x12 \n\x0e\x63\x65rtificate_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"3\n\x19\x44\x65leteCertificateMetadata\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\"\x82\x01\n ListCertificateOperationsRequest\x12 \n\x0e\x63\x65rtificate_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"s\n!ListCertificateOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xc1\n\n\x12\x43\x65rtificateService\x12\xc2\x01\n\x03Get\x12?.yandex.cloud.organizationmanager.v1.saml.GetCertificateRequest\x1a\x35.yandex.cloud.organizationmanager.v1.saml.Certificate\"C\x82\xd3\xe4\x93\x02=\x12;/organization-manager/v1/saml/certificates/{certificate_id}\x12\xc1\x01\n\x04List\x12\x41.yandex.cloud.organizationmanager.v1.saml.ListCertificatesRequest\x1a\x42.yandex.cloud.organizationmanager.v1.saml.ListCertificatesResponse\"2\x82\xd3\xe4\x93\x02,\x12*/organization-manager/v1/saml/certificates\x12\xd2\x01\n\x06\x43reate\x12\x42.yandex.cloud.organizationmanager.v1.saml.CreateCertificateRequest\x1a!.yandex.cloud.operation.Operation\"a\x82\xd3\xe4\x93\x02/\"*/organization-manager/v1/saml/certificates:\x01*\xb2\xd2*(\n\x19\x43reateCertificateMetadata\x12\x0b\x43\x65rtificate\x12\xe3\x01\n\x06Update\x12\x42.yandex.cloud.organizationmanager.v1.saml.UpdateCertificateRequest\x1a!.yandex.cloud.operation.Operation\"r\x82\xd3\xe4\x93\x02@2;/organization-manager/v1/saml/certificates/{certificate_id}:\x01*\xb2\xd2*(\n\x19UpdateCertificateMetadata\x12\x0b\x43\x65rtificate\x12\xea\x01\n\x06\x44\x65lete\x12\x42.yandex.cloud.organizationmanager.v1.saml.DeleteCertificateRequest\x1a!.yandex.cloud.operation.Operation\"y\x82\xd3\xe4\x93\x02=*;/organization-manager/v1/saml/certificates/{certificate_id}\xb2\xd2*2\n\x19\x44\x65leteCertificateMetadata\x12\x15google.protobuf.Empty\x12\xf9\x01\n\x0eListOperations\x12J.yandex.cloud.organizationmanager.v1.saml.ListCertificateOperationsRequest\x1aK.yandex.cloud.organizationmanager.v1.saml.ListCertificateOperationsResponse\"N\x82\xd3\xe4\x93\x02H\x12\x46/organization-manager/v1/saml/certificates/{certificate_id}/operationsB\x81\x01\n,yandex.cloud.api.organizationmanager.v1.samlZQgithub.com/yandex-cloud/go-genproto/yandex/cloud/organizationmanager/v1/saml;samlb\x06proto3'
+  serialized_pb=b'\nByandex/cloud/organizationmanager/v1/saml/certificate_service.proto\x12(yandex.cloud.organizationmanager.v1.saml\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a:yandex/cloud/organizationmanager/v1/saml/certificate.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"9\n\x15GetCertificateRequest\x12 \n\x0e\x63\x65rtificate_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"\x99\x01\n\x17ListCertificatesRequest\x12#\n\rfederation_id\x18\x01 \x01(\tB\x0c\x8a\xc8\x31\x04<=50\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"\x80\x01\n\x18ListCertificatesResponse\x12K\n\x0c\x63\x65rtificates\x18\x01 \x03(\x0b\x32\x35.yandex.cloud.organizationmanager.v1.saml.Certificate\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xa9\x01\n\x18\x43reateCertificateRequest\x12\x1f\n\rfederation_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x31\n\x04name\x18\x02 \x01(\tB#\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x19\n\x04\x64\x61ta\x18\x04 \x01(\tB\x0b\x8a\xc8\x31\x07<=32000\"3\n\x19\x43reateCertificateMetadata\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\"\xdc\x01\n\x18UpdateCertificateRequest\x12 \n\x0e\x63\x65rtificate_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x19\n\x04\x64\x61ta\x18\x05 \x01(\tB\x0b\x8a\xc8\x31\x07<=32000\"3\n\x19UpdateCertificateMetadata\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\"<\n\x18\x44\x65leteCertificateRequest\x12 \n\x0e\x63\x65rtificate_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"3\n\x19\x44\x65leteCertificateMetadata\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\"\x83\x01\n ListCertificateOperationsRequest\x12 \n\x0e\x63\x65rtificate_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\"s\n!ListCertificateOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xc1\n\n\x12\x43\x65rtificateService\x12\xc2\x01\n\x03Get\x12?.yandex.cloud.organizationmanager.v1.saml.GetCertificateRequest\x1a\x35.yandex.cloud.organizationmanager.v1.saml.Certificate\"C\x82\xd3\xe4\x93\x02=\x12;/organization-manager/v1/saml/certificates/{certificate_id}\x12\xc1\x01\n\x04List\x12\x41.yandex.cloud.organizationmanager.v1.saml.ListCertificatesRequest\x1a\x42.yandex.cloud.organizationmanager.v1.saml.ListCertificatesResponse\"2\x82\xd3\xe4\x93\x02,\x12*/organization-manager/v1/saml/certificates\x12\xd2\x01\n\x06\x43reate\x12\x42.yandex.cloud.organizationmanager.v1.saml.CreateCertificateRequest\x1a!.yandex.cloud.operation.Operation\"a\x82\xd3\xe4\x93\x02/\"*/organization-manager/v1/saml/certificates:\x01*\xb2\xd2*(\n\x19\x43reateCertificateMetadata\x12\x0b\x43\x65rtificate\x12\xe3\x01\n\x06Update\x12\x42.yandex.cloud.organizationmanager.v1.saml.UpdateCertificateRequest\x1a!.yandex.cloud.operation.Operation\"r\x82\xd3\xe4\x93\x02@2;/organization-manager/v1/saml/certificates/{certificate_id}:\x01*\xb2\xd2*(\n\x19UpdateCertificateMetadata\x12\x0b\x43\x65rtificate\x12\xea\x01\n\x06\x44\x65lete\x12\x42.yandex.cloud.organizationmanager.v1.saml.DeleteCertificateRequest\x1a!.yandex.cloud.operation.Operation\"y\x82\xd3\xe4\x93\x02=*;/organization-manager/v1/saml/certificates/{certificate_id}\xb2\xd2*2\n\x19\x44\x65leteCertificateMetadata\x12\x15google.protobuf.Empty\x12\xf9\x01\n\x0eListOperations\x12J.yandex.cloud.organizationmanager.v1.saml.ListCertificateOperationsRequest\x1aK.yandex.cloud.organizationmanager.v1.saml.ListCertificateOperationsResponse\"N\x82\xd3\xe4\x93\x02H\x12\x46/organization-manager/v1/saml/certificates/{certificate_id}/operationsB\x81\x01\n,yandex.cloud.api.organizationmanager.v1.samlZQgithub.com/yandex-cloud/go-genproto/yandex/cloud/organizationmanager/v1/saml;samlb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_certificate__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -92,7 +92,7 @@ _LISTCERTIFICATESREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\212\3101\006<=2000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='filter', full_name='yandex.cloud.organizationmanager.v1.saml.ListCertificatesRequest.filter', index=3,
       number=4, type=9, cpp_type=9, label=1,
@@ -113,7 +113,7 @@ _LISTCERTIFICATESREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=401,
-  serialized_end=553,
+  serialized_end=554,
 )
 
 
@@ -151,8 +151,8 @@ _LISTCERTIFICATESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=556,
-  serialized_end=684,
+  serialized_start=557,
+  serialized_end=685,
 )
 
 
@@ -204,8 +204,8 @@ _CREATECERTIFICATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=687,
-  serialized_end=856,
+  serialized_start=688,
+  serialized_end=857,
 )
 
 
@@ -236,8 +236,8 @@ _CREATECERTIFICATEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=858,
-  serialized_end=909,
+  serialized_start=859,
+  serialized_end=910,
 )
 
 
@@ -296,8 +296,8 @@ _UPDATECERTIFICATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=912,
-  serialized_end=1132,
+  serialized_start=913,
+  serialized_end=1133,
 )
 
 
@@ -328,8 +328,8 @@ _UPDATECERTIFICATEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1134,
-  serialized_end=1185,
+  serialized_start=1135,
+  serialized_end=1186,
 )
 
 
@@ -360,8 +360,8 @@ _DELETECERTIFICATEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1187,
-  serialized_end=1247,
+  serialized_start=1188,
+  serialized_end=1248,
 )
 
 
@@ -392,8 +392,8 @@ _DELETECERTIFICATEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1249,
-  serialized_end=1300,
+  serialized_start=1250,
+  serialized_end=1301,
 )
 
 
@@ -425,7 +425,7 @@ _LISTCERTIFICATEOPERATIONSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\212\3101\006<=2000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -438,8 +438,8 @@ _LISTCERTIFICATEOPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1303,
-  serialized_end=1433,
+  serialized_start=1304,
+  serialized_end=1435,
 )
 
 
@@ -477,8 +477,8 @@ _LISTCERTIFICATEOPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1435,
-  serialized_end=1550,
+  serialized_start=1437,
+  serialized_end=1552,
 )
 
 _LISTCERTIFICATESRESPONSE.fields_by_name['certificates'].message_type = yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_certificate__pb2._CERTIFICATE
@@ -601,8 +601,8 @@ _CERTIFICATESERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1553,
-  serialized_end=2898,
+  serialized_start=1555,
+  serialized_end=2900,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',

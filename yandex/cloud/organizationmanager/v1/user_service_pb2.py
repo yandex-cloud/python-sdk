@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\'yandex.cloud.api.organizationmanager.v1Z[github.com/yandex-cloud/go-genproto/yandex/cloud/organizationmanager/v1;organizationmanager',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n6yandex/cloud/organizationmanager/v1/user_service.proto\x12#yandex.cloud.organizationmanager.v1\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a\x1fyandex/cloud/oauth/claims.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"y\n\x12ListMembersRequest\x12%\n\x0forganization_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"\xd7\x01\n\x13ListMembersResponse\x12X\n\x05users\x18\x01 \x03(\x0b\x32I.yandex.cloud.organizationmanager.v1.ListMembersResponse.OrganizationUser\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\x1aM\n\x10OrganizationUser\x12\x39\n\x0esubject_claims\x18\x01 \x01(\x0b\x32!.yandex.cloud.oauth.SubjectClaims\"^\n\x17\x44\x65leteMembershipRequest\x12%\n\x0forganization_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1c\n\nsubject_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"c\n\x18\x44\x65leteMembershipMetadata\x12%\n\x0forganization_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12 \n\nsubject_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"c\n\x18\x44\x65leteMembershipResponse\x12%\n\x0forganization_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12 \n\nsubject_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=502\xdc\x03\n\x0bUserService\x12\xc8\x01\n\x0bListMembers\x12\x37.yandex.cloud.organizationmanager.v1.ListMembersRequest\x1a\x38.yandex.cloud.organizationmanager.v1.ListMembersResponse\"F\x82\xd3\xe4\x93\x02@\x12>/organization-manager/v1/organizations/{organization_id}/users\x12\x81\x02\n\x10\x44\x65leteMembership\x12<.yandex.cloud.organizationmanager.v1.DeleteMembershipRequest\x1a!.yandex.cloud.operation.Operation\"\x8b\x01\x82\xd3\xe4\x93\x02M*K/organization-manager/v1/organizations/{organization_id}/users/{subject_id}\xb2\xd2*4\n\x18\x44\x65leteMembershipMetadata\x12\x18\x44\x65leteMembershipResponseB\x86\x01\n\'yandex.cloud.api.organizationmanager.v1Z[github.com/yandex-cloud/go-genproto/yandex/cloud/organizationmanager/v1;organizationmanagerb\x06proto3'
+  serialized_pb=b'\n6yandex/cloud/organizationmanager/v1/user_service.proto\x12#yandex.cloud.organizationmanager.v1\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a\x1fyandex/cloud/oauth/claims.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"z\n\x12ListMembersRequest\x12%\n\x0forganization_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\"\xd7\x01\n\x13ListMembersResponse\x12X\n\x05users\x18\x01 \x03(\x0b\x32I.yandex.cloud.organizationmanager.v1.ListMembersResponse.OrganizationUser\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\x1aM\n\x10OrganizationUser\x12\x39\n\x0esubject_claims\x18\x01 \x01(\x0b\x32!.yandex.cloud.oauth.SubjectClaims\"^\n\x17\x44\x65leteMembershipRequest\x12%\n\x0forganization_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1c\n\nsubject_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"c\n\x18\x44\x65leteMembershipMetadata\x12%\n\x0forganization_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12 \n\nsubject_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"c\n\x18\x44\x65leteMembershipResponse\x12%\n\x0forganization_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12 \n\nsubject_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=502\xdc\x03\n\x0bUserService\x12\xc8\x01\n\x0bListMembers\x12\x37.yandex.cloud.organizationmanager.v1.ListMembersRequest\x1a\x38.yandex.cloud.organizationmanager.v1.ListMembersResponse\"F\x82\xd3\xe4\x93\x02@\x12>/organization-manager/v1/organizations/{organization_id}/users\x12\x81\x02\n\x10\x44\x65leteMembership\x12<.yandex.cloud.organizationmanager.v1.DeleteMembershipRequest\x1a!.yandex.cloud.operation.Operation\"\x8b\x01\x82\xd3\xe4\x93\x02M*K/organization-manager/v1/organizations/{organization_id}/users/{subject_id}\xb2\xd2*4\n\x18\x44\x65leteMembershipMetadata\x12\x18\x44\x65leteMembershipResponseB\x86\x01\n\'yandex.cloud.api.organizationmanager.v1Z[github.com/yandex-cloud/go-genproto/yandex/cloud/organizationmanager/v1;organizationmanagerb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_oauth_dot_claims__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -59,7 +59,7 @@ _LISTMEMBERSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\212\3101\006<=2000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -73,7 +73,7 @@ _LISTMEMBERSREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=263,
-  serialized_end=384,
+  serialized_end=385,
 )
 
 
@@ -104,8 +104,8 @@ _LISTMEMBERSRESPONSE_ORGANIZATIONUSER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=525,
-  serialized_end=602,
+  serialized_start=526,
+  serialized_end=603,
 )
 
 _LISTMEMBERSRESPONSE = _descriptor.Descriptor(
@@ -142,8 +142,8 @@ _LISTMEMBERSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=387,
-  serialized_end=602,
+  serialized_start=388,
+  serialized_end=603,
 )
 
 
@@ -181,8 +181,8 @@ _DELETEMEMBERSHIPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=604,
-  serialized_end=698,
+  serialized_start=605,
+  serialized_end=699,
 )
 
 
@@ -220,8 +220,8 @@ _DELETEMEMBERSHIPMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=700,
-  serialized_end=799,
+  serialized_start=701,
+  serialized_end=800,
 )
 
 
@@ -259,8 +259,8 @@ _DELETEMEMBERSHIPRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=801,
-  serialized_end=900,
+  serialized_start=802,
+  serialized_end=901,
 )
 
 _LISTMEMBERSRESPONSE_ORGANIZATIONUSER.fields_by_name['subject_claims'].message_type = yandex_dot_cloud_dot_oauth_dot_claims__pb2._SUBJECTCLAIMS
@@ -335,8 +335,8 @@ _USERSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=903,
-  serialized_end=1379,
+  serialized_start=904,
+  serialized_end=1380,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListMembers',

@@ -25,7 +25,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n(yandex.cloud.api.iam.v1.awscompatibilityZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1/awscompatibility;awscompatibility',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n=yandex/cloud/iam/v1/awscompatibility/access_key_service.proto\x12$yandex.cloud.iam.v1.awscompatibility\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a\x35yandex/cloud/iam/v1/awscompatibility/access_key.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\":\n\x13GetAccessKeyRequest\x12#\n\raccess_key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"{\n\x15ListAccessKeysRequest\x12$\n\x12service_account_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"w\n\x16ListAccessKeysResponse\x12\x44\n\x0b\x61\x63\x63\x65ss_keys\x18\x01 \x03(\x0b\x32/.yandex.cloud.iam.v1.awscompatibility.AccessKey\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"^\n\x16\x43reateAccessKeyRequest\x12$\n\x12service_account_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1e\n\x0b\x64\x65scription\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=256\"n\n\x17\x43reateAccessKeyResponse\x12\x43\n\naccess_key\x18\x01 \x01(\x0b\x32/.yandex.cloud.iam.v1.awscompatibility.AccessKey\x12\x0e\n\x06secret\x18\x02 \x01(\t\"\x8e\x01\n\x16UpdateAccessKeyRequest\x12#\n\raccess_key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\"0\n\x17UpdateAccessKeyMetadata\x12\x15\n\raccess_key_id\x18\x01 \x01(\t\"=\n\x16\x44\x65leteAccessKeyRequest\x12#\n\raccess_key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"0\n\x17\x44\x65leteAccessKeyMetadata\x12\x15\n\raccess_key_id\x18\x01 \x01(\t\"\x83\x01\n\x1eListAccessKeyOperationsRequest\x12#\n\raccess_key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"q\n\x1fListAccessKeyOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xcb\t\n\x10\x41\x63\x63\x65ssKeyService\x12\xaf\x01\n\x04List\x12;.yandex.cloud.iam.v1.awscompatibility.ListAccessKeysRequest\x1a<.yandex.cloud.iam.v1.awscompatibility.ListAccessKeysResponse\",\x82\xd3\xe4\x93\x02&\x12$/iam/aws-compatibility/v1/accessKeys\x12\xaf\x01\n\x03Get\x12\x39.yandex.cloud.iam.v1.awscompatibility.GetAccessKeyRequest\x1a/.yandex.cloud.iam.v1.awscompatibility.AccessKey\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/iam/aws-compatibility/v1/accessKeys/{access_key_id}\x12\xb6\x01\n\x06\x43reate\x12<.yandex.cloud.iam.v1.awscompatibility.CreateAccessKeyRequest\x1a=.yandex.cloud.iam.v1.awscompatibility.CreateAccessKeyResponse\"/\x82\xd3\xe4\x93\x02)\"$/iam/aws-compatibility/v1/accessKeys:\x01*\x12\xd2\x01\n\x06Update\x12<.yandex.cloud.iam.v1.awscompatibility.UpdateAccessKeyRequest\x1a!.yandex.cloud.operation.Operation\"g\x82\xd3\xe4\x93\x02\x39\x32\x34/iam/aws-compatibility/v1/accessKeys/{access_key_id}:\x01*\xb2\xd2*$\n\x17UpdateAccessKeyMetadata\x12\tAccessKey\x12\xdb\x01\n\x06\x44\x65lete\x12<.yandex.cloud.iam.v1.awscompatibility.DeleteAccessKeyRequest\x1a!.yandex.cloud.operation.Operation\"p\x82\xd3\xe4\x93\x02\x36*4/iam/aws-compatibility/v1/accessKeys/{access_key_id}\xb2\xd2*0\n\x17\x44\x65leteAccessKeyMetadata\x12\x15google.protobuf.Empty\x12\xe6\x01\n\x0eListOperations\x12\x44.yandex.cloud.iam.v1.awscompatibility.ListAccessKeyOperationsRequest\x1a\x45.yandex.cloud.iam.v1.awscompatibility.ListAccessKeyOperationsResponse\"G\x82\xd3\xe4\x93\x02\x41\x12?/iam/aws-compatibility/v1/accessKeys/{access_key_id}/operationsB\x85\x01\n(yandex.cloud.api.iam.v1.awscompatibilityZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1/awscompatibility;awscompatibilityb\x06proto3'
+  serialized_pb=b'\n=yandex/cloud/iam/v1/awscompatibility/access_key_service.proto\x12$yandex.cloud.iam.v1.awscompatibility\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a\x35yandex/cloud/iam/v1/awscompatibility/access_key.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\":\n\x13GetAccessKeyRequest\x12#\n\raccess_key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"|\n\x15ListAccessKeysRequest\x12$\n\x12service_account_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\"w\n\x16ListAccessKeysResponse\x12\x44\n\x0b\x61\x63\x63\x65ss_keys\x18\x01 \x03(\x0b\x32/.yandex.cloud.iam.v1.awscompatibility.AccessKey\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"^\n\x16\x43reateAccessKeyRequest\x12$\n\x12service_account_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1e\n\x0b\x64\x65scription\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=256\"n\n\x17\x43reateAccessKeyResponse\x12\x43\n\naccess_key\x18\x01 \x01(\x0b\x32/.yandex.cloud.iam.v1.awscompatibility.AccessKey\x12\x0e\n\x06secret\x18\x02 \x01(\t\"\x8e\x01\n\x16UpdateAccessKeyRequest\x12#\n\raccess_key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\"0\n\x17UpdateAccessKeyMetadata\x12\x15\n\raccess_key_id\x18\x01 \x01(\t\"=\n\x16\x44\x65leteAccessKeyRequest\x12#\n\raccess_key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"0\n\x17\x44\x65leteAccessKeyMetadata\x12\x15\n\raccess_key_id\x18\x01 \x01(\t\"\x84\x01\n\x1eListAccessKeyOperationsRequest\x12#\n\raccess_key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\"q\n\x1fListAccessKeyOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xcb\t\n\x10\x41\x63\x63\x65ssKeyService\x12\xaf\x01\n\x04List\x12;.yandex.cloud.iam.v1.awscompatibility.ListAccessKeysRequest\x1a<.yandex.cloud.iam.v1.awscompatibility.ListAccessKeysResponse\",\x82\xd3\xe4\x93\x02&\x12$/iam/aws-compatibility/v1/accessKeys\x12\xaf\x01\n\x03Get\x12\x39.yandex.cloud.iam.v1.awscompatibility.GetAccessKeyRequest\x1a/.yandex.cloud.iam.v1.awscompatibility.AccessKey\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/iam/aws-compatibility/v1/accessKeys/{access_key_id}\x12\xb6\x01\n\x06\x43reate\x12<.yandex.cloud.iam.v1.awscompatibility.CreateAccessKeyRequest\x1a=.yandex.cloud.iam.v1.awscompatibility.CreateAccessKeyResponse\"/\x82\xd3\xe4\x93\x02)\"$/iam/aws-compatibility/v1/accessKeys:\x01*\x12\xd2\x01\n\x06Update\x12<.yandex.cloud.iam.v1.awscompatibility.UpdateAccessKeyRequest\x1a!.yandex.cloud.operation.Operation\"g\x82\xd3\xe4\x93\x02\x39\x32\x34/iam/aws-compatibility/v1/accessKeys/{access_key_id}:\x01*\xb2\xd2*$\n\x17UpdateAccessKeyMetadata\x12\tAccessKey\x12\xdb\x01\n\x06\x44\x65lete\x12<.yandex.cloud.iam.v1.awscompatibility.DeleteAccessKeyRequest\x1a!.yandex.cloud.operation.Operation\"p\x82\xd3\xe4\x93\x02\x36*4/iam/aws-compatibility/v1/accessKeys/{access_key_id}\xb2\xd2*0\n\x17\x44\x65leteAccessKeyMetadata\x12\x15google.protobuf.Empty\x12\xe6\x01\n\x0eListOperations\x12\x44.yandex.cloud.iam.v1.awscompatibility.ListAccessKeyOperationsRequest\x1a\x45.yandex.cloud.iam.v1.awscompatibility.ListAccessKeyOperationsResponse\"G\x82\xd3\xe4\x93\x02\x41\x12?/iam/aws-compatibility/v1/accessKeys/{access_key_id}/operationsB\x85\x01\n(yandex.cloud.api.iam.v1.awscompatibilityZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1/awscompatibility;awscompatibilityb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_iam_dot_v1_dot_awscompatibility_dot_access__key__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -92,7 +92,7 @@ _LISTACCESSKEYSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\212\3101\006<=2000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -106,7 +106,7 @@ _LISTACCESSKEYSREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=387,
-  serialized_end=510,
+  serialized_end=511,
 )
 
 
@@ -144,8 +144,8 @@ _LISTACCESSKEYSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=512,
-  serialized_end=631,
+  serialized_start=513,
+  serialized_end=632,
 )
 
 
@@ -183,8 +183,8 @@ _CREATEACCESSKEYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=633,
-  serialized_end=727,
+  serialized_start=634,
+  serialized_end=728,
 )
 
 
@@ -222,8 +222,8 @@ _CREATEACCESSKEYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=729,
-  serialized_end=839,
+  serialized_start=730,
+  serialized_end=840,
 )
 
 
@@ -268,8 +268,8 @@ _UPDATEACCESSKEYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=842,
-  serialized_end=984,
+  serialized_start=843,
+  serialized_end=985,
 )
 
 
@@ -300,8 +300,8 @@ _UPDATEACCESSKEYMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=986,
-  serialized_end=1034,
+  serialized_start=987,
+  serialized_end=1035,
 )
 
 
@@ -332,8 +332,8 @@ _DELETEACCESSKEYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1036,
-  serialized_end=1097,
+  serialized_start=1037,
+  serialized_end=1098,
 )
 
 
@@ -364,8 +364,8 @@ _DELETEACCESSKEYMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1099,
-  serialized_end=1147,
+  serialized_start=1100,
+  serialized_end=1148,
 )
 
 
@@ -397,7 +397,7 @@ _LISTACCESSKEYOPERATIONSREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\212\3101\006<=2000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -410,8 +410,8 @@ _LISTACCESSKEYOPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1150,
-  serialized_end=1281,
+  serialized_start=1151,
+  serialized_end=1283,
 )
 
 
@@ -449,8 +449,8 @@ _LISTACCESSKEYOPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1283,
-  serialized_end=1396,
+  serialized_start=1285,
+  serialized_end=1398,
 )
 
 _LISTACCESSKEYSRESPONSE.fields_by_name['access_keys'].message_type = yandex_dot_cloud_dot_iam_dot_v1_dot_awscompatibility_dot_access__key__pb2._ACCESSKEY
@@ -569,8 +569,8 @@ _ACCESSKEYSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1399,
-  serialized_end=2626,
+  serialized_start=1401,
+  serialized_end=2628,
   methods=[
   _descriptor.MethodDescriptor(
     name='List',
