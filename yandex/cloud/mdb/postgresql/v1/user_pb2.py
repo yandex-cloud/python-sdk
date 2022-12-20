@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\"yandex.cloud.api.mdb.postgresql.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1;postgresql',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n)yandex/cloud/mdb/postgresql/v1/user.proto\x12\x1eyandex.cloud.mdb.postgresql.v1\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\x93\x02\n\x04User\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12?\n\x0bpermissions\x18\x03 \x03(\x0b\x32*.yandex.cloud.mdb.postgresql.v1.Permission\x12\x12\n\nconn_limit\x18\x04 \x01(\x03\x12>\n\x08settings\x18\x05 \x01(\x0b\x32,.yandex.cloud.mdb.postgresql.v1.UserSettings\x12)\n\x05login\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12)\n\x06grants\x18\x07 \x03(\tB\x19\x8a\xc8\x31\x04<=63\xf2\xc7\x31\r[a-zA-Z0-9_]*\"#\n\nPermission\x12\x15\n\rdatabase_name\x18\x01 \x01(\t\"\xea\x02\n\x08UserSpec\x12+\n\x04name\x18\x01 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\r[a-zA-Z0-9_]*\x12\x1f\n\x08password\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x38-128\x12?\n\x0bpermissions\x18\x03 \x03(\x0b\x32*.yandex.cloud.mdb.postgresql.v1.Permission\x12\x39\n\nconn_limit\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x08\xfa\xc7\x31\x04>=10\x12>\n\x08settings\x18\x05 \x01(\x0b\x32,.yandex.cloud.mdb.postgresql.v1.UserSettings\x12)\n\x05login\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12)\n\x06grants\x18\x07 \x03(\tB\x19\x8a\xc8\x31\x04<=63\xf2\xc7\x31\r[a-zA-Z0-9_]*\"\x9f\x08\n\x0cUserSettings\x12h\n\x1d\x64\x65\x66\x61ult_transaction_isolation\x18\x01 \x01(\x0e\x32\x41.yandex.cloud.mdb.postgresql.v1.UserSettings.TransactionIsolation\x12\x31\n\x0clock_timeout\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12?\n\x1alog_min_duration_statement\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12Z\n\x12synchronous_commit\x18\x04 \x01(\x0e\x32>.yandex.cloud.mdb.postgresql.v1.UserSettings.SynchronousCommit\x12\x34\n\x0ftemp_file_limit\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12P\n\rlog_statement\x18\x06 \x01(\x0e\x32\x39.yandex.cloud.mdb.postgresql.v1.UserSettings.LogStatement\"\xd6\x01\n\x11SynchronousCommit\x12\"\n\x1eSYNCHRONOUS_COMMIT_UNSPECIFIED\x10\x00\x12\x19\n\x15SYNCHRONOUS_COMMIT_ON\x10\x01\x12\x1a\n\x16SYNCHRONOUS_COMMIT_OFF\x10\x02\x12\x1c\n\x18SYNCHRONOUS_COMMIT_LOCAL\x10\x03\x12#\n\x1fSYNCHRONOUS_COMMIT_REMOTE_WRITE\x10\x04\x12#\n\x1fSYNCHRONOUS_COMMIT_REMOTE_APPLY\x10\x05\"\x8a\x01\n\x0cLogStatement\x12\x1d\n\x19LOG_STATEMENT_UNSPECIFIED\x10\x00\x12\x16\n\x12LOG_STATEMENT_NONE\x10\x01\x12\x15\n\x11LOG_STATEMENT_DDL\x10\x02\x12\x15\n\x11LOG_STATEMENT_MOD\x10\x03\x12\x15\n\x11LOG_STATEMENT_ALL\x10\x04\"\xe6\x01\n\x14TransactionIsolation\x12%\n!TRANSACTION_ISOLATION_UNSPECIFIED\x10\x00\x12*\n&TRANSACTION_ISOLATION_READ_UNCOMMITTED\x10\x01\x12(\n$TRANSACTION_ISOLATION_READ_COMMITTED\x10\x02\x12)\n%TRANSACTION_ISOLATION_REPEATABLE_READ\x10\x03\x12&\n\"TRANSACTION_ISOLATION_SERIALIZABLE\x10\x04\x42s\n\"yandex.cloud.api.mdb.postgresql.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1;postgresqlb\x06proto3'
+  serialized_pb=b'\n)yandex/cloud/mdb/postgresql/v1/user.proto\x12\x1eyandex.cloud.mdb.postgresql.v1\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\x93\x02\n\x04User\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12?\n\x0bpermissions\x18\x03 \x03(\x0b\x32*.yandex.cloud.mdb.postgresql.v1.Permission\x12\x12\n\nconn_limit\x18\x04 \x01(\x03\x12>\n\x08settings\x18\x05 \x01(\x0b\x32,.yandex.cloud.mdb.postgresql.v1.UserSettings\x12)\n\x05login\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12)\n\x06grants\x18\x07 \x03(\tB\x19\x8a\xc8\x31\x04<=63\xf2\xc7\x31\r[a-zA-Z0-9_]*\"#\n\nPermission\x12\x15\n\rdatabase_name\x18\x01 \x01(\t\"\xea\x02\n\x08UserSpec\x12+\n\x04name\x18\x01 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\r[a-zA-Z0-9_]*\x12\x1f\n\x08password\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x38-128\x12?\n\x0bpermissions\x18\x03 \x03(\x0b\x32*.yandex.cloud.mdb.postgresql.v1.Permission\x12\x39\n\nconn_limit\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x08\xfa\xc7\x31\x04>=10\x12>\n\x08settings\x18\x05 \x01(\x0b\x32,.yandex.cloud.mdb.postgresql.v1.UserSettings\x12)\n\x05login\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12)\n\x06grants\x18\x07 \x03(\tB\x19\x8a\xc8\x31\x04<=63\xf2\xc7\x31\r[a-zA-Z0-9_]*\"\xf8\x0b\n\x0cUserSettings\x12h\n\x1d\x64\x65\x66\x61ult_transaction_isolation\x18\x01 \x01(\x0e\x32\x41.yandex.cloud.mdb.postgresql.v1.UserSettings.TransactionIsolation\x12\x31\n\x0clock_timeout\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12?\n\x1alog_min_duration_statement\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12Z\n\x12synchronous_commit\x18\x04 \x01(\x0e\x32>.yandex.cloud.mdb.postgresql.v1.UserSettings.SynchronousCommit\x12\x34\n\x0ftemp_file_limit\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12P\n\rlog_statement\x18\x06 \x01(\x0e\x32\x39.yandex.cloud.mdb.postgresql.v1.UserSettings.LogStatement\x12K\n\tpool_mode\x18\x07 \x01(\x0e\x32\x38.yandex.cloud.mdb.postgresql.v1.UserSettings.PoolingMode\x12?\n\x1bprepared_statements_pooling\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x34\n\x0f\x63\x61tchup_timeout\x18\t \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x37\n\x12wal_sender_timeout\x18\n \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12H\n#idle_in_transaction_session_timeout\x18\x0b \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x36\n\x11statement_timeout\x18\x0c \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"\xd6\x01\n\x11SynchronousCommit\x12\"\n\x1eSYNCHRONOUS_COMMIT_UNSPECIFIED\x10\x00\x12\x19\n\x15SYNCHRONOUS_COMMIT_ON\x10\x01\x12\x1a\n\x16SYNCHRONOUS_COMMIT_OFF\x10\x02\x12\x1c\n\x18SYNCHRONOUS_COMMIT_LOCAL\x10\x03\x12#\n\x1fSYNCHRONOUS_COMMIT_REMOTE_WRITE\x10\x04\x12#\n\x1fSYNCHRONOUS_COMMIT_REMOTE_APPLY\x10\x05\"\x8a\x01\n\x0cLogStatement\x12\x1d\n\x19LOG_STATEMENT_UNSPECIFIED\x10\x00\x12\x16\n\x12LOG_STATEMENT_NONE\x10\x01\x12\x15\n\x11LOG_STATEMENT_DDL\x10\x02\x12\x15\n\x11LOG_STATEMENT_MOD\x10\x03\x12\x15\n\x11LOG_STATEMENT_ALL\x10\x04\"\xe6\x01\n\x14TransactionIsolation\x12%\n!TRANSACTION_ISOLATION_UNSPECIFIED\x10\x00\x12*\n&TRANSACTION_ISOLATION_READ_UNCOMMITTED\x10\x01\x12(\n$TRANSACTION_ISOLATION_READ_COMMITTED\x10\x02\x12)\n%TRANSACTION_ISOLATION_REPEATABLE_READ\x10\x03\x12&\n\"TRANSACTION_ISOLATION_SERIALIZABLE\x10\x04\"X\n\x0bPoolingMode\x12\x1c\n\x18POOLING_MODE_UNSPECIFIED\x10\x00\x12\x0b\n\x07SESSION\x10\x01\x12\x0f\n\x0bTRANSACTION\x10\x02\x12\r\n\tSTATEMENT\x10\x03\x42s\n\"yandex.cloud.api.mdb.postgresql.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1;postgresqlb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -67,8 +67,8 @@ _USERSETTINGS_SYNCHRONOUSCOMMIT = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1288,
-  serialized_end=1502,
+  serialized_start=1671,
+  serialized_end=1885,
 )
 _sym_db.RegisterEnumDescriptor(_USERSETTINGS_SYNCHRONOUSCOMMIT)
 
@@ -107,8 +107,8 @@ _USERSETTINGS_LOGSTATEMENT = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1505,
-  serialized_end=1643,
+  serialized_start=1888,
+  serialized_end=2026,
 )
 _sym_db.RegisterEnumDescriptor(_USERSETTINGS_LOGSTATEMENT)
 
@@ -147,10 +147,45 @@ _USERSETTINGS_TRANSACTIONISOLATION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1646,
-  serialized_end=1876,
+  serialized_start=2029,
+  serialized_end=2259,
 )
 _sym_db.RegisterEnumDescriptor(_USERSETTINGS_TRANSACTIONISOLATION)
+
+_USERSETTINGS_POOLINGMODE = _descriptor.EnumDescriptor(
+  name='PoolingMode',
+  full_name='yandex.cloud.mdb.postgresql.v1.UserSettings.PoolingMode',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='POOLING_MODE_UNSPECIFIED', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='SESSION', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='TRANSACTION', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='STATEMENT', index=3, number=3,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=2261,
+  serialized_end=2349,
+)
+_sym_db.RegisterEnumDescriptor(_USERSETTINGS_POOLINGMODE)
 
 
 _USER = _descriptor.Descriptor(
@@ -383,6 +418,48 @@ _USERSETTINGS = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='pool_mode', full_name='yandex.cloud.mdb.postgresql.v1.UserSettings.pool_mode', index=6,
+      number=7, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='prepared_statements_pooling', full_name='yandex.cloud.mdb.postgresql.v1.UserSettings.prepared_statements_pooling', index=7,
+      number=8, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='catchup_timeout', full_name='yandex.cloud.mdb.postgresql.v1.UserSettings.catchup_timeout', index=8,
+      number=9, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='wal_sender_timeout', full_name='yandex.cloud.mdb.postgresql.v1.UserSettings.wal_sender_timeout', index=9,
+      number=10, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='idle_in_transaction_session_timeout', full_name='yandex.cloud.mdb.postgresql.v1.UserSettings.idle_in_transaction_session_timeout', index=10,
+      number=11, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='statement_timeout', full_name='yandex.cloud.mdb.postgresql.v1.UserSettings.statement_timeout', index=11,
+      number=12, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -391,6 +468,7 @@ _USERSETTINGS = _descriptor.Descriptor(
     _USERSETTINGS_SYNCHRONOUSCOMMIT,
     _USERSETTINGS_LOGSTATEMENT,
     _USERSETTINGS_TRANSACTIONISOLATION,
+    _USERSETTINGS_POOLINGMODE,
   ],
   serialized_options=None,
   is_extendable=False,
@@ -399,7 +477,7 @@ _USERSETTINGS = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=821,
-  serialized_end=1876,
+  serialized_end=2349,
 )
 
 _USER.fields_by_name['permissions'].message_type = _PERMISSION
@@ -415,9 +493,16 @@ _USERSETTINGS.fields_by_name['log_min_duration_statement'].message_type = google
 _USERSETTINGS.fields_by_name['synchronous_commit'].enum_type = _USERSETTINGS_SYNCHRONOUSCOMMIT
 _USERSETTINGS.fields_by_name['temp_file_limit'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
 _USERSETTINGS.fields_by_name['log_statement'].enum_type = _USERSETTINGS_LOGSTATEMENT
+_USERSETTINGS.fields_by_name['pool_mode'].enum_type = _USERSETTINGS_POOLINGMODE
+_USERSETTINGS.fields_by_name['prepared_statements_pooling'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
+_USERSETTINGS.fields_by_name['catchup_timeout'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_USERSETTINGS.fields_by_name['wal_sender_timeout'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_USERSETTINGS.fields_by_name['idle_in_transaction_session_timeout'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_USERSETTINGS.fields_by_name['statement_timeout'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
 _USERSETTINGS_SYNCHRONOUSCOMMIT.containing_type = _USERSETTINGS
 _USERSETTINGS_LOGSTATEMENT.containing_type = _USERSETTINGS
 _USERSETTINGS_TRANSACTIONISOLATION.containing_type = _USERSETTINGS
+_USERSETTINGS_POOLINGMODE.containing_type = _USERSETTINGS
 DESCRIPTOR.message_types_by_name['User'] = _USER
 DESCRIPTOR.message_types_by_name['Permission'] = _PERMISSION
 DESCRIPTOR.message_types_by_name['UserSpec'] = _USERSPEC

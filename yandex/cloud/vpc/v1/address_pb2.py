@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\027yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpc',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n!yandex/cloud/vpc/v1/address.proto\x12\x13yandex.cloud.vpc.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\xc4\x04\n\x07\x41\x64\x64ress\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x38\n\x06labels\x18\x06 \x03(\x0b\x32(.yandex.cloud.vpc.v1.Address.LabelsEntry\x12I\n\x15\x65xternal_ipv4_address\x18\x07 \x01(\x0b\x32(.yandex.cloud.vpc.v1.ExternalIpv4AddressH\x00\x12\x10\n\x08reserved\x18\x0f \x01(\x08\x12\x0c\n\x04used\x18\x10 \x01(\x08\x12/\n\x04type\x18\x11 \x01(\x0e\x32!.yandex.cloud.vpc.v1.Address.Type\x12:\n\nip_version\x18\x12 \x01(\x0e\x32&.yandex.cloud.vpc.v1.Address.IpVersion\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"8\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x0c\n\x08INTERNAL\x10\x01\x12\x0c\n\x08\x45XTERNAL\x10\x02\";\n\tIpVersion\x12\x1a\n\x16IP_VERSION_UNSPECIFIED\x10\x00\x12\x08\n\x04IPV4\x10\x01\x12\x08\n\x04IPV6\x10\x02\x42\x0f\n\x07\x61\x64\x64ress\x12\x04\xc0\xc1\x31\x01\"w\n\x13\x45xternalIpv4Address\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x0f\n\x07zone_id\x18\x02 \x01(\t\x12>\n\x0crequirements\x18\x03 \x01(\x0b\x32(.yandex.cloud.vpc.v1.AddressRequirements\"Y\n\x13\x41\x64\x64ressRequirements\x12 \n\x18\x64\x64os_protection_provider\x18\x01 \x01(\t\x12 \n\x18outgoing_smtp_capability\x18\x02 \x01(\tBV\n\x17yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpcb\x06proto3'
+  serialized_pb=b'\n!yandex/cloud/vpc/v1/address.proto\x12\x13yandex.cloud.vpc.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\xe1\x04\n\x07\x41\x64\x64ress\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x38\n\x06labels\x18\x06 \x03(\x0b\x32(.yandex.cloud.vpc.v1.Address.LabelsEntry\x12I\n\x15\x65xternal_ipv4_address\x18\x07 \x01(\x0b\x32(.yandex.cloud.vpc.v1.ExternalIpv4AddressH\x00\x12\x10\n\x08reserved\x18\x0f \x01(\x08\x12\x0c\n\x04used\x18\x10 \x01(\x08\x12/\n\x04type\x18\x11 \x01(\x0e\x32!.yandex.cloud.vpc.v1.Address.Type\x12:\n\nip_version\x18\x12 \x01(\x0e\x32&.yandex.cloud.vpc.v1.Address.IpVersion\x12\x1b\n\x13\x64\x65letion_protection\x18\x13 \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"8\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x0c\n\x08INTERNAL\x10\x01\x12\x0c\n\x08\x45XTERNAL\x10\x02\";\n\tIpVersion\x12\x1a\n\x16IP_VERSION_UNSPECIFIED\x10\x00\x12\x08\n\x04IPV4\x10\x01\x12\x08\n\x04IPV6\x10\x02\x42\x0f\n\x07\x61\x64\x64ress\x12\x04\xc0\xc1\x31\x01\"w\n\x13\x45xternalIpv4Address\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x0f\n\x07zone_id\x18\x02 \x01(\t\x12>\n\x0crequirements\x18\x03 \x01(\x0b\x32(.yandex.cloud.vpc.v1.AddressRequirements\"Y\n\x13\x41\x64\x64ressRequirements\x12 \n\x18\x64\x64os_protection_provider\x18\x01 \x01(\t\x12 \n\x18outgoing_smtp_capability\x18\x02 \x01(\tBV\n\x17yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpcb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -52,8 +52,8 @@ _ADDRESS_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=569,
-  serialized_end=625,
+  serialized_start=598,
+  serialized_end=654,
 )
 _sym_db.RegisterEnumDescriptor(_ADDRESS_TYPE)
 
@@ -82,8 +82,8 @@ _ADDRESS_IPVERSION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=627,
-  serialized_end=686,
+  serialized_start=656,
+  serialized_end=715,
 )
 _sym_db.RegisterEnumDescriptor(_ADDRESS_IPVERSION)
 
@@ -122,8 +122,8 @@ _ADDRESS_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=522,
-  serialized_end=567,
+  serialized_start=551,
+  serialized_end=596,
 )
 
 _ADDRESS = _descriptor.Descriptor(
@@ -211,6 +211,13 @@ _ADDRESS = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='deletion_protection', full_name='yandex.cloud.vpc.v1.Address.deletion_protection', index=11,
+      number=19, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -231,7 +238,7 @@ _ADDRESS = _descriptor.Descriptor(
     fields=[], serialized_options=b'\300\3011\001'),
   ],
   serialized_start=123,
-  serialized_end=703,
+  serialized_end=732,
 )
 
 
@@ -276,8 +283,8 @@ _EXTERNALIPV4ADDRESS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=705,
-  serialized_end=824,
+  serialized_start=734,
+  serialized_end=853,
 )
 
 
@@ -315,8 +322,8 @@ _ADDRESSREQUIREMENTS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=826,
-  serialized_end=915,
+  serialized_start=855,
+  serialized_end=944,
 )
 
 _ADDRESS_LABELSENTRY.containing_type = _ADDRESS
