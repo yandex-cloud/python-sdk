@@ -13,6 +13,7 @@ _sym_db = _symbol_database.Default()
 
 from google.protobuf import duration_pb2 as google_dot_protobuf_dot_duration__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+from yandex.cloud.logging.v1 import log_entry_pb2 as yandex_dot_cloud_dot_logging_dot_v1_dot_log__entry__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
@@ -22,9 +23,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n)yandex.cloud.api.serverless.containers.v1ZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/containers/v1;containers',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n5yandex/cloud/serverless/containers/v1/container.proto\x12%yandex.cloud.serverless.containers.v1\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\xa5\x03\n\tContainer\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12L\n\x06labels\x18\x06 \x03(\x0b\x32<.yandex.cloud.serverless.containers.v1.Container.LabelsEntry\x12\x0b\n\x03url\x18\x08 \x01(\t\x12G\n\x06status\x18\t \x01(\x0e\x32\x37.yandex.cloud.serverless.containers.v1.Container.Status\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"S\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08\x44\x45LETING\x10\x03\x12\t\n\x05\x45RROR\x10\x04\"\x97\x06\n\x08Revision\x12\n\n\x02id\x18\x01 \x01(\t\x12\x14\n\x0c\x63ontainer_id\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12;\n\x05image\x18\x05 \x01(\x0b\x32,.yandex.cloud.serverless.containers.v1.Image\x12\x43\n\tresources\x18\x06 \x01(\x0b\x32\x30.yandex.cloud.serverless.containers.v1.Resources\x12\x34\n\x11\x65xecution_timeout\x18\x07 \x01(\x0b\x32\x19.google.protobuf.Duration\x12\x13\n\x0b\x63oncurrency\x18\x08 \x01(\x03\x12\x1a\n\x12service_account_id\x18\t \x01(\t\x12\x46\n\x06status\x18\n \x01(\x0e\x32\x36.yandex.cloud.serverless.containers.v1.Revision.Status\x12>\n\x07secrets\x18\x0b \x03(\x0b\x32-.yandex.cloud.serverless.containers.v1.Secret\x12I\n\x0c\x63onnectivity\x18\x0c \x01(\x0b\x32\x33.yandex.cloud.serverless.containers.v1.Connectivity\x12P\n\x10provision_policy\x18\r \x01(\x0b\x32\x36.yandex.cloud.serverless.containers.v1.ProvisionPolicy\x12L\n\x0escaling_policy\x18\x0e \x01(\x0b\x32\x34.yandex.cloud.serverless.containers.v1.ScalingPolicy\"H\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08OBSOLETE\x10\x03\"\xf0\x02\n\x05Image\x12\x11\n\timage_url\x18\x01 \x01(\t\x12\x14\n\x0cimage_digest\x18\x02 \x01(\t\x12?\n\x07\x63ommand\x18\x03 \x01(\x0b\x32..yandex.cloud.serverless.containers.v1.Command\x12\x39\n\x04\x61rgs\x18\x04 \x01(\x0b\x32+.yandex.cloud.serverless.containers.v1.Args\x12y\n\x0b\x65nvironment\x18\x05 \x03(\x0b\x32=.yandex.cloud.serverless.containers.v1.Image.EnvironmentEntryB%\x8a\xc8\x31\x06<=4096\xb2\xc8\x31\x17\x12\x15[a-zA-Z][a-zA-Z0-9_]*\x12\x13\n\x0bworking_dir\x18\x06 \x01(\t\x1a\x32\n\x10\x45nvironmentEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1a\n\x07\x43ommand\x12\x0f\n\x07\x63ommand\x18\x01 \x03(\t\"\x14\n\x04\x41rgs\x12\x0c\n\x04\x61rgs\x18\x01 \x03(\t\"o\n\tResources\x12(\n\x06memory\x18\x01 \x01(\x03\x42\x18\xfa\xc7\x31\x14\x31\x33\x34\x32\x31\x37\x37\x32\x38-8589934592\x12\x16\n\x05\x63ores\x18\x02 \x01(\x03\x42\x07\xfa\xc7\x31\x03\x30-1\x12 \n\rcore_fraction\x18\x03 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\"(\n\x0fProvisionPolicy\x12\x15\n\rmin_instances\x18\x01 \x01(\x03\"b\n\x06Secret\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\nversion_id\x18\x02 \x01(\t\x12\x0b\n\x03key\x18\x03 \x01(\t\x12\x1e\n\x14\x65nvironment_variable\x18\x04 \x01(\tH\x00\x42\x0b\n\treference\"6\n\x0c\x43onnectivity\x12\x12\n\nnetwork_id\x18\x01 \x01(\t\x12\x12\n\nsubnet_ids\x18\x02 \x03(\t\"J\n\rScalingPolicy\x12\x1c\n\x14zone_instances_limit\x18\x01 \x01(\x03\x12\x1b\n\x13zone_requests_limit\x18\x02 \x01(\x03\x42\x81\x01\n)yandex.cloud.api.serverless.containers.v1ZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/containers/v1;containersb\x06proto3'
+  serialized_pb=b'\n5yandex/cloud/serverless/containers/v1/container.proto\x12%yandex.cloud.serverless.containers.v1\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\'yandex/cloud/logging/v1/log_entry.proto\x1a\x1dyandex/cloud/validation.proto\"\xa5\x03\n\tContainer\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12L\n\x06labels\x18\x06 \x03(\x0b\x32<.yandex.cloud.serverless.containers.v1.Container.LabelsEntry\x12\x0b\n\x03url\x18\x08 \x01(\t\x12G\n\x06status\x18\t \x01(\x0e\x32\x37.yandex.cloud.serverless.containers.v1.Container.Status\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"S\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08\x44\x45LETING\x10\x03\x12\t\n\x05\x45RROR\x10\x04\"\xdf\x06\n\x08Revision\x12\n\n\x02id\x18\x01 \x01(\t\x12\x14\n\x0c\x63ontainer_id\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12;\n\x05image\x18\x05 \x01(\x0b\x32,.yandex.cloud.serverless.containers.v1.Image\x12\x43\n\tresources\x18\x06 \x01(\x0b\x32\x30.yandex.cloud.serverless.containers.v1.Resources\x12\x34\n\x11\x65xecution_timeout\x18\x07 \x01(\x0b\x32\x19.google.protobuf.Duration\x12\x13\n\x0b\x63oncurrency\x18\x08 \x01(\x03\x12\x1a\n\x12service_account_id\x18\t \x01(\t\x12\x46\n\x06status\x18\n \x01(\x0e\x32\x36.yandex.cloud.serverless.containers.v1.Revision.Status\x12>\n\x07secrets\x18\x0b \x03(\x0b\x32-.yandex.cloud.serverless.containers.v1.Secret\x12I\n\x0c\x63onnectivity\x18\x0c \x01(\x0b\x32\x33.yandex.cloud.serverless.containers.v1.Connectivity\x12P\n\x10provision_policy\x18\r \x01(\x0b\x32\x36.yandex.cloud.serverless.containers.v1.ProvisionPolicy\x12L\n\x0escaling_policy\x18\x0e \x01(\x0b\x32\x34.yandex.cloud.serverless.containers.v1.ScalingPolicy\x12\x46\n\x0blog_options\x18\x0f \x01(\x0b\x32\x31.yandex.cloud.serverless.containers.v1.LogOptions\"H\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08OBSOLETE\x10\x03\"\xf0\x02\n\x05Image\x12\x11\n\timage_url\x18\x01 \x01(\t\x12\x14\n\x0cimage_digest\x18\x02 \x01(\t\x12?\n\x07\x63ommand\x18\x03 \x01(\x0b\x32..yandex.cloud.serverless.containers.v1.Command\x12\x39\n\x04\x61rgs\x18\x04 \x01(\x0b\x32+.yandex.cloud.serverless.containers.v1.Args\x12y\n\x0b\x65nvironment\x18\x05 \x03(\x0b\x32=.yandex.cloud.serverless.containers.v1.Image.EnvironmentEntryB%\x8a\xc8\x31\x06<=4096\xb2\xc8\x31\x17\x12\x15[a-zA-Z][a-zA-Z0-9_]*\x12\x13\n\x0bworking_dir\x18\x06 \x01(\t\x1a\x32\n\x10\x45nvironmentEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x1a\n\x07\x43ommand\x12\x0f\n\x07\x63ommand\x18\x01 \x03(\t\"\x14\n\x04\x41rgs\x12\x0c\n\x04\x61rgs\x18\x01 \x03(\t\"o\n\tResources\x12(\n\x06memory\x18\x01 \x01(\x03\x42\x18\xfa\xc7\x31\x14\x31\x33\x34\x32\x31\x37\x37\x32\x38-8589934592\x12\x16\n\x05\x63ores\x18\x02 \x01(\x03\x42\x07\xfa\xc7\x31\x03\x30-1\x12 \n\rcore_fraction\x18\x03 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\"(\n\x0fProvisionPolicy\x12\x15\n\rmin_instances\x18\x01 \x01(\x03\"b\n\x06Secret\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\nversion_id\x18\x02 \x01(\t\x12\x0b\n\x03key\x18\x03 \x01(\t\x12\x1e\n\x14\x65nvironment_variable\x18\x04 \x01(\tH\x00\x42\x0b\n\treference\"6\n\x0c\x43onnectivity\x12\x12\n\nnetwork_id\x18\x01 \x01(\t\x12\x12\n\nsubnet_ids\x18\x02 \x03(\t\"\xe0\x01\n\nLogOptions\x12\x10\n\x08\x64isabled\x18\x01 \x01(\x08\x12;\n\x0clog_group_id\x18\x02 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?H\x00\x12\x38\n\tfolder_id\x18\x03 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?H\x00\x12:\n\tmin_level\x18\x04 \x01(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.LevelB\r\n\x0b\x64\x65stination\"J\n\rScalingPolicy\x12\x1c\n\x14zone_instances_limit\x18\x01 \x01(\x03\x12\x1b\n\x13zone_requests_limit\x18\x02 \x01(\x03\x42\x81\x01\n)yandex.cloud.api.serverless.containers.v1ZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/containers/v1;containersb\x06proto3'
   ,
-  dependencies=[google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_logging_dot_v1_dot_log__entry__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
 
 
@@ -63,8 +64,8 @@ _CONTAINER_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=531,
-  serialized_end=614,
+  serialized_start=572,
+  serialized_end=655,
 )
 _sym_db.RegisterEnumDescriptor(_CONTAINER_STATUS)
 
@@ -98,8 +99,8 @@ _REVISION_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1336,
-  serialized_end=1408,
+  serialized_start=1449,
+  serialized_end=1521,
 )
 _sym_db.RegisterEnumDescriptor(_REVISION_STATUS)
 
@@ -138,8 +139,8 @@ _CONTAINER_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=484,
-  serialized_end=529,
+  serialized_start=525,
+  serialized_end=570,
 )
 
 _CONTAINER = _descriptor.Descriptor(
@@ -219,8 +220,8 @@ _CONTAINER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=193,
-  serialized_end=614,
+  serialized_start=234,
+  serialized_end=655,
 )
 
 
@@ -330,6 +331,13 @@ _REVISION = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='log_options', full_name='yandex.cloud.serverless.containers.v1.Revision.log_options', index=14,
+      number=15, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -343,8 +351,8 @@ _REVISION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=617,
-  serialized_end=1408,
+  serialized_start=658,
+  serialized_end=1521,
 )
 
 
@@ -382,8 +390,8 @@ _IMAGE_ENVIRONMENTENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1729,
-  serialized_end=1779,
+  serialized_start=1842,
+  serialized_end=1892,
 )
 
 _IMAGE = _descriptor.Descriptor(
@@ -448,8 +456,8 @@ _IMAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1411,
-  serialized_end=1779,
+  serialized_start=1524,
+  serialized_end=1892,
 )
 
 
@@ -480,8 +488,8 @@ _COMMAND = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1781,
-  serialized_end=1807,
+  serialized_start=1894,
+  serialized_end=1920,
 )
 
 
@@ -512,8 +520,8 @@ _ARGS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1809,
-  serialized_end=1829,
+  serialized_start=1922,
+  serialized_end=1942,
 )
 
 
@@ -558,8 +566,8 @@ _RESOURCES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1831,
-  serialized_end=1942,
+  serialized_start=1944,
+  serialized_end=2055,
 )
 
 
@@ -590,8 +598,8 @@ _PROVISIONPOLICY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1944,
-  serialized_end=1984,
+  serialized_start=2057,
+  serialized_end=2097,
 )
 
 
@@ -648,8 +656,8 @@ _SECRET = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1986,
-  serialized_end=2084,
+  serialized_start=2099,
+  serialized_end=2197,
 )
 
 
@@ -687,8 +695,66 @@ _CONNECTIVITY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2086,
-  serialized_end=2140,
+  serialized_start=2199,
+  serialized_end=2253,
+)
+
+
+_LOGOPTIONS = _descriptor.Descriptor(
+  name='LogOptions',
+  full_name='yandex.cloud.serverless.containers.v1.LogOptions',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='disabled', full_name='yandex.cloud.serverless.containers.v1.LogOptions.disabled', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='log_group_id', full_name='yandex.cloud.serverless.containers.v1.LogOptions.log_group_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\362\3071\037([a-zA-Z][-a-zA-Z0-9_.]{0,63})?', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='folder_id', full_name='yandex.cloud.serverless.containers.v1.LogOptions.folder_id', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\362\3071\037([a-zA-Z][-a-zA-Z0-9_.]{0,63})?', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='min_level', full_name='yandex.cloud.serverless.containers.v1.LogOptions.min_level', index=3,
+      number=4, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='destination', full_name='yandex.cloud.serverless.containers.v1.LogOptions.destination',
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+  ],
+  serialized_start=2256,
+  serialized_end=2480,
 )
 
 
@@ -726,8 +792,8 @@ _SCALINGPOLICY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2142,
-  serialized_end=2216,
+  serialized_start=2482,
+  serialized_end=2556,
 )
 
 _CONTAINER_LABELSENTRY.containing_type = _CONTAINER
@@ -744,6 +810,7 @@ _REVISION.fields_by_name['secrets'].message_type = _SECRET
 _REVISION.fields_by_name['connectivity'].message_type = _CONNECTIVITY
 _REVISION.fields_by_name['provision_policy'].message_type = _PROVISIONPOLICY
 _REVISION.fields_by_name['scaling_policy'].message_type = _SCALINGPOLICY
+_REVISION.fields_by_name['log_options'].message_type = _LOGOPTIONS
 _REVISION_STATUS.containing_type = _REVISION
 _IMAGE_ENVIRONMENTENTRY.containing_type = _IMAGE
 _IMAGE.fields_by_name['command'].message_type = _COMMAND
@@ -752,6 +819,13 @@ _IMAGE.fields_by_name['environment'].message_type = _IMAGE_ENVIRONMENTENTRY
 _SECRET.oneofs_by_name['reference'].fields.append(
   _SECRET.fields_by_name['environment_variable'])
 _SECRET.fields_by_name['environment_variable'].containing_oneof = _SECRET.oneofs_by_name['reference']
+_LOGOPTIONS.fields_by_name['min_level'].enum_type = yandex_dot_cloud_dot_logging_dot_v1_dot_log__entry__pb2._LOGLEVEL_LEVEL
+_LOGOPTIONS.oneofs_by_name['destination'].fields.append(
+  _LOGOPTIONS.fields_by_name['log_group_id'])
+_LOGOPTIONS.fields_by_name['log_group_id'].containing_oneof = _LOGOPTIONS.oneofs_by_name['destination']
+_LOGOPTIONS.oneofs_by_name['destination'].fields.append(
+  _LOGOPTIONS.fields_by_name['folder_id'])
+_LOGOPTIONS.fields_by_name['folder_id'].containing_oneof = _LOGOPTIONS.oneofs_by_name['destination']
 DESCRIPTOR.message_types_by_name['Container'] = _CONTAINER
 DESCRIPTOR.message_types_by_name['Revision'] = _REVISION
 DESCRIPTOR.message_types_by_name['Image'] = _IMAGE
@@ -761,6 +835,7 @@ DESCRIPTOR.message_types_by_name['Resources'] = _RESOURCES
 DESCRIPTOR.message_types_by_name['ProvisionPolicy'] = _PROVISIONPOLICY
 DESCRIPTOR.message_types_by_name['Secret'] = _SECRET
 DESCRIPTOR.message_types_by_name['Connectivity'] = _CONNECTIVITY
+DESCRIPTOR.message_types_by_name['LogOptions'] = _LOGOPTIONS
 DESCRIPTOR.message_types_by_name['ScalingPolicy'] = _SCALINGPOLICY
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -843,6 +918,13 @@ Connectivity = _reflection.GeneratedProtocolMessageType('Connectivity', (_messag
   })
 _sym_db.RegisterMessage(Connectivity)
 
+LogOptions = _reflection.GeneratedProtocolMessageType('LogOptions', (_message.Message,), {
+  'DESCRIPTOR' : _LOGOPTIONS,
+  '__module__' : 'yandex.cloud.serverless.containers.v1.container_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.serverless.containers.v1.LogOptions)
+  })
+_sym_db.RegisterMessage(LogOptions)
+
 ScalingPolicy = _reflection.GeneratedProtocolMessageType('ScalingPolicy', (_message.Message,), {
   'DESCRIPTOR' : _SCALINGPOLICY,
   '__module__' : 'yandex.cloud.serverless.containers.v1.container_pb2'
@@ -858,4 +940,6 @@ _IMAGE.fields_by_name['environment']._options = None
 _RESOURCES.fields_by_name['memory']._options = None
 _RESOURCES.fields_by_name['cores']._options = None
 _RESOURCES.fields_by_name['core_fraction']._options = None
+_LOGOPTIONS.fields_by_name['log_group_id']._options = None
+_LOGOPTIONS.fields_by_name['folder_id']._options = None
 # @@protoc_insertion_point(module_scope)

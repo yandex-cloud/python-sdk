@@ -12,6 +12,7 @@ _sym_db = _symbol_database.Default()
 
 
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+from yandex.cloud.logging.v1 import log_entry_pb2 as yandex_dot_cloud_dot_logging_dot_v1_dot_log__entry__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -20,9 +21,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n)yandex.cloud.api.serverless.apigateway.v1ZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/apigateway/v1;apigateway',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n6yandex/cloud/serverless/apigateway/v1/apigateway.proto\x12%yandex.cloud.serverless.apigateway.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xeb\x04\n\nApiGateway\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12M\n\x06labels\x18\x07 \x03(\x0b\x32=.yandex.cloud.serverless.apigateway.v1.ApiGateway.LabelsEntry\x12H\n\x06status\x18\x08 \x01(\x0e\x32\x38.yandex.cloud.serverless.apigateway.v1.ApiGateway.Status\x12\x0e\n\x06\x64omain\x18\t \x01(\t\x12\x14\n\x0clog_group_id\x18\n \x01(\t\x12O\n\x10\x61ttached_domains\x18\x0b \x03(\x0b\x32\x35.yandex.cloud.serverless.apigateway.v1.AttachedDomain\x12I\n\x0c\x63onnectivity\x18\x0c \x01(\x0b\x32\x33.yandex.cloud.serverless.apigateway.v1.Connectivity\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"a\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08\x44\x45LETING\x10\x03\x12\t\n\x05\x45RROR\x10\x04\x12\x0c\n\x08UPDATING\x10\x05\"\\\n\x0e\x41ttachedDomain\x12\x11\n\tdomain_id\x18\x01 \x01(\t\x12\x16\n\x0e\x63\x65rtificate_id\x18\x02 \x01(\t\x12\x0f\n\x07\x65nabled\x18\x03 \x01(\x08\x12\x0e\n\x06\x64omain\x18\x05 \x01(\t\"5\n\x0c\x43onnectivity\x12\x12\n\nnetwork_id\x18\x01 \x01(\t\x12\x11\n\tsubnet_id\x18\x02 \x03(\tB\x81\x01\n)yandex.cloud.api.serverless.apigateway.v1ZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/apigateway/v1;apigatewayb\x06proto3'
+  serialized_pb=b'\n6yandex/cloud/serverless/apigateway/v1/apigateway.proto\x12%yandex.cloud.serverless.apigateway.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\'yandex/cloud/logging/v1/log_entry.proto\"\xb3\x05\n\nApiGateway\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12M\n\x06labels\x18\x07 \x03(\x0b\x32=.yandex.cloud.serverless.apigateway.v1.ApiGateway.LabelsEntry\x12H\n\x06status\x18\x08 \x01(\x0e\x32\x38.yandex.cloud.serverless.apigateway.v1.ApiGateway.Status\x12\x0e\n\x06\x64omain\x18\t \x01(\t\x12\x14\n\x0clog_group_id\x18\n \x01(\t\x12O\n\x10\x61ttached_domains\x18\x0b \x03(\x0b\x32\x35.yandex.cloud.serverless.apigateway.v1.AttachedDomain\x12I\n\x0c\x63onnectivity\x18\x0c \x01(\x0b\x32\x33.yandex.cloud.serverless.apigateway.v1.Connectivity\x12\x46\n\x0blog_options\x18\r \x01(\x0b\x32\x31.yandex.cloud.serverless.apigateway.v1.LogOptions\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"a\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08\x44\x45LETING\x10\x03\x12\t\n\x05\x45RROR\x10\x04\x12\x0c\n\x08UPDATING\x10\x05\"\\\n\x0e\x41ttachedDomain\x12\x11\n\tdomain_id\x18\x01 \x01(\t\x12\x16\n\x0e\x63\x65rtificate_id\x18\x02 \x01(\t\x12\x0f\n\x07\x65nabled\x18\x03 \x01(\x08\x12\x0e\n\x06\x64omain\x18\x05 \x01(\t\"5\n\x0c\x43onnectivity\x12\x12\n\nnetwork_id\x18\x01 \x01(\t\x12\x11\n\tsubnet_id\x18\x02 \x03(\t\"\x96\x01\n\nLogOptions\x12\x10\n\x08\x64isabled\x18\x01 \x01(\x08\x12\x16\n\x0clog_group_id\x18\x02 \x01(\tH\x00\x12\x13\n\tfolder_id\x18\x03 \x01(\tH\x00\x12:\n\tmin_level\x18\x04 \x01(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.LevelB\r\n\x0b\x64\x65stinationB\x81\x01\n)yandex.cloud.api.serverless.apigateway.v1ZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/apigateway/v1;apigatewayb\x06proto3'
   ,
-  dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_logging_dot_v1_dot_log__entry__pb2.DESCRIPTOR,])
 
 
 
@@ -66,8 +67,8 @@ _APIGATEWAY_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=653,
-  serialized_end=750,
+  serialized_start=766,
+  serialized_end=863,
 )
 _sym_db.RegisterEnumDescriptor(_APIGATEWAY_STATUS)
 
@@ -106,8 +107,8 @@ _APIGATEWAY_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=606,
-  serialized_end=651,
+  serialized_start=719,
+  serialized_end=764,
 )
 
 _APIGATEWAY = _descriptor.Descriptor(
@@ -195,6 +196,13 @@ _APIGATEWAY = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='log_options', full_name='yandex.cloud.serverless.apigateway.v1.ApiGateway.log_options', index=11,
+      number=13, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -208,8 +216,8 @@ _APIGATEWAY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=131,
-  serialized_end=750,
+  serialized_start=172,
+  serialized_end=863,
 )
 
 
@@ -261,8 +269,8 @@ _ATTACHEDDOMAIN = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=752,
-  serialized_end=844,
+  serialized_start=865,
+  serialized_end=957,
 )
 
 
@@ -300,8 +308,66 @@ _CONNECTIVITY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=846,
-  serialized_end=899,
+  serialized_start=959,
+  serialized_end=1012,
+)
+
+
+_LOGOPTIONS = _descriptor.Descriptor(
+  name='LogOptions',
+  full_name='yandex.cloud.serverless.apigateway.v1.LogOptions',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='disabled', full_name='yandex.cloud.serverless.apigateway.v1.LogOptions.disabled', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='log_group_id', full_name='yandex.cloud.serverless.apigateway.v1.LogOptions.log_group_id', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='folder_id', full_name='yandex.cloud.serverless.apigateway.v1.LogOptions.folder_id', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='min_level', full_name='yandex.cloud.serverless.apigateway.v1.LogOptions.min_level', index=3,
+      number=4, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='destination', full_name='yandex.cloud.serverless.apigateway.v1.LogOptions.destination',
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+  ],
+  serialized_start=1015,
+  serialized_end=1165,
 )
 
 _APIGATEWAY_LABELSENTRY.containing_type = _APIGATEWAY
@@ -310,10 +376,19 @@ _APIGATEWAY.fields_by_name['labels'].message_type = _APIGATEWAY_LABELSENTRY
 _APIGATEWAY.fields_by_name['status'].enum_type = _APIGATEWAY_STATUS
 _APIGATEWAY.fields_by_name['attached_domains'].message_type = _ATTACHEDDOMAIN
 _APIGATEWAY.fields_by_name['connectivity'].message_type = _CONNECTIVITY
+_APIGATEWAY.fields_by_name['log_options'].message_type = _LOGOPTIONS
 _APIGATEWAY_STATUS.containing_type = _APIGATEWAY
+_LOGOPTIONS.fields_by_name['min_level'].enum_type = yandex_dot_cloud_dot_logging_dot_v1_dot_log__entry__pb2._LOGLEVEL_LEVEL
+_LOGOPTIONS.oneofs_by_name['destination'].fields.append(
+  _LOGOPTIONS.fields_by_name['log_group_id'])
+_LOGOPTIONS.fields_by_name['log_group_id'].containing_oneof = _LOGOPTIONS.oneofs_by_name['destination']
+_LOGOPTIONS.oneofs_by_name['destination'].fields.append(
+  _LOGOPTIONS.fields_by_name['folder_id'])
+_LOGOPTIONS.fields_by_name['folder_id'].containing_oneof = _LOGOPTIONS.oneofs_by_name['destination']
 DESCRIPTOR.message_types_by_name['ApiGateway'] = _APIGATEWAY
 DESCRIPTOR.message_types_by_name['AttachedDomain'] = _ATTACHEDDOMAIN
 DESCRIPTOR.message_types_by_name['Connectivity'] = _CONNECTIVITY
+DESCRIPTOR.message_types_by_name['LogOptions'] = _LOGOPTIONS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 ApiGateway = _reflection.GeneratedProtocolMessageType('ApiGateway', (_message.Message,), {
@@ -344,6 +419,13 @@ Connectivity = _reflection.GeneratedProtocolMessageType('Connectivity', (_messag
   # @@protoc_insertion_point(class_scope:yandex.cloud.serverless.apigateway.v1.Connectivity)
   })
 _sym_db.RegisterMessage(Connectivity)
+
+LogOptions = _reflection.GeneratedProtocolMessageType('LogOptions', (_message.Message,), {
+  'DESCRIPTOR' : _LOGOPTIONS,
+  '__module__' : 'yandex.cloud.serverless.apigateway.v1.apigateway_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.serverless.apigateway.v1.LogOptions)
+  })
+_sym_db.RegisterMessage(LogOptions)
 
 
 DESCRIPTOR._options = None

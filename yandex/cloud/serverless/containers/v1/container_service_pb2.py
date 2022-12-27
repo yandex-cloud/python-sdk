@@ -27,7 +27,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n)yandex.cloud.api.serverless.containers.v1ZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/containers/v1;containers',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n=yandex/cloud/serverless/containers/v1/container_service.proto\x12%yandex.cloud.serverless.containers.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1egoogle/protobuf/duration.proto\x1a yandex/cloud/api/operation.proto\x1a yandex/cloud/access/access.proto\x1a\x35yandex/cloud/serverless/containers/v1/container.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"1\n\x13GetContainerRequest\x12\x1a\n\x0c\x63ontainer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"g\n\x15ListContainersRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\"w\n\x16ListContainersResponse\x12\x44\n\ncontainers\x18\x01 \x03(\x0b\x32\x30.yandex.cloud.serverless.containers.v1.Container\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xce\x02\n\x16\x43reateContainerRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x9a\x01\n\x06labels\x18\x04 \x03(\x0b\x32I.yandex.cloud.serverless.containers.v1.CreateContainerRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"/\n\x17\x43reateContainerMetadata\x12\x14\n\x0c\x63ontainer_id\x18\x01 \x01(\t\"\x82\x03\n\x16UpdateContainerRequest\x12\x1a\n\x0c\x63ontainer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x9a\x01\n\x06labels\x18\x05 \x03(\x0b\x32I.yandex.cloud.serverless.containers.v1.UpdateContainerRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"/\n\x17UpdateContainerMetadata\x12\x14\n\x0c\x63ontainer_id\x18\x01 \x01(\t\"4\n\x16\x44\x65leteContainerRequest\x12\x1a\n\x0c\x63ontainer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"/\n\x17\x44\x65leteContainerMetadata\x12\x14\n\x0c\x63ontainer_id\x18\x01 \x01(\t\"B\n\x1bGetContainerRevisionRequest\x12#\n\x15\x63ontainer_revision_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\xb3\x01\n\x1eListContainersRevisionsRequest\x12\x13\n\tfolder_id\x18\x01 \x01(\tH\x00\x12\x16\n\x0c\x63ontainer_id\x18\x02 \x01(\tH\x00\x12\x1d\n\tpage_size\x18\x03 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x05 \x01(\tB\n\x8a\xc8\x31\x06<=1000B\n\n\x02id\x12\x04\xc0\xc1\x31\x01\"~\n\x1fListContainersRevisionsResponse\x12\x42\n\trevisions\x18\x01 \x03(\x0b\x32/.yandex.cloud.serverless.containers.v1.Revision\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x86\x05\n\x1e\x44\x65ployContainerRevisionRequest\x12\x1a\n\x0c\x63ontainer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12I\n\tresources\x18\x05 \x01(\x0b\x32\x30.yandex.cloud.serverless.containers.v1.ResourcesB\x04\xe8\xc7\x31\x01\x12@\n\x11\x65xecution_timeout\x18\x06 \x01(\x0b\x32\x19.google.protobuf.DurationB\n\xfa\xc7\x31\x06<=600s\x12\x1a\n\x12service_account_id\x18\x07 \x01(\t\x12J\n\nimage_spec\x18\x08 \x01(\x0b\x32\x30.yandex.cloud.serverless.containers.v1.ImageSpecB\x04\xe8\xc7\x31\x01\x12\x13\n\x0b\x63oncurrency\x18\t \x01(\x03\x12>\n\x07secrets\x18\n \x03(\x0b\x32-.yandex.cloud.serverless.containers.v1.Secret\x12I\n\x0c\x63onnectivity\x18\x0b \x01(\x0b\x32\x33.yandex.cloud.serverless.containers.v1.Connectivity\x12P\n\x10provision_policy\x18\x0c \x01(\x0b\x32\x36.yandex.cloud.serverless.containers.v1.ProvisionPolicy\x12L\n\x0escaling_policy\x18\r \x01(\x0b\x32\x34.yandex.cloud.serverless.containers.v1.ScalingPolicy\"\xe8\x02\n\tImageSpec\x12\x17\n\timage_url\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12?\n\x07\x63ommand\x18\x02 \x01(\x0b\x32..yandex.cloud.serverless.containers.v1.Command\x12\x39\n\x04\x61rgs\x18\x03 \x01(\x0b\x32+.yandex.cloud.serverless.containers.v1.Args\x12}\n\x0b\x65nvironment\x18\x04 \x03(\x0b\x32\x41.yandex.cloud.serverless.containers.v1.ImageSpec.EnvironmentEntryB%\x8a\xc8\x31\x06<=4096\xb2\xc8\x31\x17\x12\x15[a-zA-Z][a-zA-Z0-9_]*\x12\x13\n\x0bworking_dir\x18\x05 \x01(\t\x1a\x32\n\x10\x45nvironmentEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"@\n\x1f\x44\x65ployContainerRevisionMetadata\x12\x1d\n\x15\x63ontainer_revision_id\x18\x01 \x01(\t\"Q\n\x18RollbackContainerRequest\x12\x1a\n\x0c\x63ontainer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x19\n\x0brevision_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"F\n\x19RollbackContainerMetadata\x12\x14\n\x0c\x63ontainer_id\x18\x01 \x01(\t\x12\x13\n\x0brevision_id\x18\x02 \x01(\t\"\x96\x01\n\x1eListContainerOperationsRequest\x12\x1a\n\x0c\x63ontainer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"q\n\x1fListContainerOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xed\x14\n\x10\x43ontainerService\x12\xa5\x01\n\x03Get\x12:.yandex.cloud.serverless.containers.v1.GetContainerRequest\x1a\x30.yandex.cloud.serverless.containers.v1.Container\"0\x82\xd3\xe4\x93\x02*\x12(/containers/v1/containers/{container_id}\x12\xa6\x01\n\x04List\x12<.yandex.cloud.serverless.containers.v1.ListContainersRequest\x1a=.yandex.cloud.serverless.containers.v1.ListContainersResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/containers/v1/containers\x12\xb8\x01\n\x06\x43reate\x12=.yandex.cloud.serverless.containers.v1.CreateContainerRequest\x1a!.yandex.cloud.operation.Operation\"L\x82\xd3\xe4\x93\x02\x1e\"\x19/containers/v1/containers:\x01*\xb2\xd2*$\n\x17\x43reateContainerMetadata\x12\tContainer\x12\xc7\x01\n\x06Update\x12=.yandex.cloud.serverless.containers.v1.UpdateContainerRequest\x1a!.yandex.cloud.operation.Operation\"[\x82\xd3\xe4\x93\x02-2(/containers/v1/containers/{container_id}:\x01*\xb2\xd2*$\n\x17UpdateContainerMetadata\x12\tContainer\x12\xd0\x01\n\x06\x44\x65lete\x12=.yandex.cloud.serverless.containers.v1.DeleteContainerRequest\x1a!.yandex.cloud.operation.Operation\"d\x82\xd3\xe4\x93\x02**(/containers/v1/containers/{container_id}\xb2\xd2*0\n\x17\x44\x65leteContainerMetadata\x12\x15google.protobuf.Empty\x12\xd5\x01\n\x0e\x44\x65ployRevision\x12\x45.yandex.cloud.serverless.containers.v1.DeployContainerRevisionRequest\x1a!.yandex.cloud.operation.Operation\"Y\x82\xd3\xe4\x93\x02$\"\x1f/containers/v1/revisions:deploy:\x01*\xb2\xd2*+\n\x1f\x44\x65ployContainerRevisionMetadata\x12\x08Revision\x12\xd6\x01\n\x08Rollback\x12?.yandex.cloud.serverless.containers.v1.RollbackContainerRequest\x1a!.yandex.cloud.operation.Operation\"f\x82\xd3\xe4\x93\x02\x36\"1/containers/v1/containers/{container_id}:rollback:\x01*\xb2\xd2*&\n\x19RollbackContainerMetadata\x12\tContainer\x12\xbc\x01\n\x0bGetRevision\x12\x42.yandex.cloud.serverless.containers.v1.GetContainerRevisionRequest\x1a/.yandex.cloud.serverless.containers.v1.Revision\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/containers/v1/revisions/{container_revision_id}\x12\xc0\x01\n\rListRevisions\x12\x45.yandex.cloud.serverless.containers.v1.ListContainersRevisionsRequest\x1a\x46.yandex.cloud.serverless.containers.v1.ListContainersRevisionsResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/containers/v1/revisions\x12\xdc\x01\n\x0eListOperations\x12\x45.yandex.cloud.serverless.containers.v1.ListContainerOperationsRequest\x1a\x46.yandex.cloud.serverless.containers.v1.ListContainerOperationsResponse\";\x82\xd3\xe4\x93\x02\x35\x12\x33/containers/v1/containers/{container_id}/operations\x12\xb9\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"B\x82\xd3\xe4\x93\x02<\x12:/containers/v1/containers/{resource_id}:listAccessBindings\x12\xe9\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x81\x01\x82\xd3\xe4\x93\x02>\"9/containers/v1/containers/{resource_id}:setAccessBindings:\x01*\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\xf5\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x87\x01\x82\xd3\xe4\x93\x02\x41\"</containers/v1/containers/{resource_id}:updateAccessBindings:\x01*\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.EmptyB\x81\x01\n)yandex.cloud.api.serverless.containers.v1ZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/containers/v1;containersb\x06proto3'
+  serialized_pb=b'\n=yandex/cloud/serverless/containers/v1/container_service.proto\x12%yandex.cloud.serverless.containers.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1egoogle/protobuf/duration.proto\x1a yandex/cloud/api/operation.proto\x1a yandex/cloud/access/access.proto\x1a\x35yandex/cloud/serverless/containers/v1/container.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"1\n\x13GetContainerRequest\x12\x1a\n\x0c\x63ontainer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"g\n\x15ListContainersRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\"w\n\x16ListContainersResponse\x12\x44\n\ncontainers\x18\x01 \x03(\x0b\x32\x30.yandex.cloud.serverless.containers.v1.Container\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xce\x02\n\x16\x43reateContainerRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x9a\x01\n\x06labels\x18\x04 \x03(\x0b\x32I.yandex.cloud.serverless.containers.v1.CreateContainerRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"/\n\x17\x43reateContainerMetadata\x12\x14\n\x0c\x63ontainer_id\x18\x01 \x01(\t\"\x82\x03\n\x16UpdateContainerRequest\x12\x1a\n\x0c\x63ontainer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x9a\x01\n\x06labels\x18\x05 \x03(\x0b\x32I.yandex.cloud.serverless.containers.v1.UpdateContainerRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"/\n\x17UpdateContainerMetadata\x12\x14\n\x0c\x63ontainer_id\x18\x01 \x01(\t\"4\n\x16\x44\x65leteContainerRequest\x12\x1a\n\x0c\x63ontainer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"/\n\x17\x44\x65leteContainerMetadata\x12\x14\n\x0c\x63ontainer_id\x18\x01 \x01(\t\"B\n\x1bGetContainerRevisionRequest\x12#\n\x15\x63ontainer_revision_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\xb3\x01\n\x1eListContainersRevisionsRequest\x12\x13\n\tfolder_id\x18\x01 \x01(\tH\x00\x12\x16\n\x0c\x63ontainer_id\x18\x02 \x01(\tH\x00\x12\x1d\n\tpage_size\x18\x03 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x05 \x01(\tB\n\x8a\xc8\x31\x06<=1000B\n\n\x02id\x12\x04\xc0\xc1\x31\x01\"~\n\x1fListContainersRevisionsResponse\x12\x42\n\trevisions\x18\x01 \x03(\x0b\x32/.yandex.cloud.serverless.containers.v1.Revision\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xce\x05\n\x1e\x44\x65ployContainerRevisionRequest\x12\x1a\n\x0c\x63ontainer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12I\n\tresources\x18\x05 \x01(\x0b\x32\x30.yandex.cloud.serverless.containers.v1.ResourcesB\x04\xe8\xc7\x31\x01\x12@\n\x11\x65xecution_timeout\x18\x06 \x01(\x0b\x32\x19.google.protobuf.DurationB\n\xfa\xc7\x31\x06<=600s\x12\x1a\n\x12service_account_id\x18\x07 \x01(\t\x12J\n\nimage_spec\x18\x08 \x01(\x0b\x32\x30.yandex.cloud.serverless.containers.v1.ImageSpecB\x04\xe8\xc7\x31\x01\x12\x13\n\x0b\x63oncurrency\x18\t \x01(\x03\x12>\n\x07secrets\x18\n \x03(\x0b\x32-.yandex.cloud.serverless.containers.v1.Secret\x12I\n\x0c\x63onnectivity\x18\x0b \x01(\x0b\x32\x33.yandex.cloud.serverless.containers.v1.Connectivity\x12P\n\x10provision_policy\x18\x0c \x01(\x0b\x32\x36.yandex.cloud.serverless.containers.v1.ProvisionPolicy\x12L\n\x0escaling_policy\x18\r \x01(\x0b\x32\x34.yandex.cloud.serverless.containers.v1.ScalingPolicy\x12\x46\n\x0blog_options\x18\x0e \x01(\x0b\x32\x31.yandex.cloud.serverless.containers.v1.LogOptions\"\xe8\x02\n\tImageSpec\x12\x17\n\timage_url\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12?\n\x07\x63ommand\x18\x02 \x01(\x0b\x32..yandex.cloud.serverless.containers.v1.Command\x12\x39\n\x04\x61rgs\x18\x03 \x01(\x0b\x32+.yandex.cloud.serverless.containers.v1.Args\x12}\n\x0b\x65nvironment\x18\x04 \x03(\x0b\x32\x41.yandex.cloud.serverless.containers.v1.ImageSpec.EnvironmentEntryB%\x8a\xc8\x31\x06<=4096\xb2\xc8\x31\x17\x12\x15[a-zA-Z][a-zA-Z0-9_]*\x12\x13\n\x0bworking_dir\x18\x05 \x01(\t\x1a\x32\n\x10\x45nvironmentEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"@\n\x1f\x44\x65ployContainerRevisionMetadata\x12\x1d\n\x15\x63ontainer_revision_id\x18\x01 \x01(\t\"Q\n\x18RollbackContainerRequest\x12\x1a\n\x0c\x63ontainer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x19\n\x0brevision_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"F\n\x19RollbackContainerMetadata\x12\x14\n\x0c\x63ontainer_id\x18\x01 \x01(\t\x12\x13\n\x0brevision_id\x18\x02 \x01(\t\"\x96\x01\n\x1eListContainerOperationsRequest\x12\x1a\n\x0c\x63ontainer_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"q\n\x1fListContainerOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xed\x14\n\x10\x43ontainerService\x12\xa5\x01\n\x03Get\x12:.yandex.cloud.serverless.containers.v1.GetContainerRequest\x1a\x30.yandex.cloud.serverless.containers.v1.Container\"0\x82\xd3\xe4\x93\x02*\x12(/containers/v1/containers/{container_id}\x12\xa6\x01\n\x04List\x12<.yandex.cloud.serverless.containers.v1.ListContainersRequest\x1a=.yandex.cloud.serverless.containers.v1.ListContainersResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/containers/v1/containers\x12\xb8\x01\n\x06\x43reate\x12=.yandex.cloud.serverless.containers.v1.CreateContainerRequest\x1a!.yandex.cloud.operation.Operation\"L\x82\xd3\xe4\x93\x02\x1e\"\x19/containers/v1/containers:\x01*\xb2\xd2*$\n\x17\x43reateContainerMetadata\x12\tContainer\x12\xc7\x01\n\x06Update\x12=.yandex.cloud.serverless.containers.v1.UpdateContainerRequest\x1a!.yandex.cloud.operation.Operation\"[\x82\xd3\xe4\x93\x02-2(/containers/v1/containers/{container_id}:\x01*\xb2\xd2*$\n\x17UpdateContainerMetadata\x12\tContainer\x12\xd0\x01\n\x06\x44\x65lete\x12=.yandex.cloud.serverless.containers.v1.DeleteContainerRequest\x1a!.yandex.cloud.operation.Operation\"d\x82\xd3\xe4\x93\x02**(/containers/v1/containers/{container_id}\xb2\xd2*0\n\x17\x44\x65leteContainerMetadata\x12\x15google.protobuf.Empty\x12\xd5\x01\n\x0e\x44\x65ployRevision\x12\x45.yandex.cloud.serverless.containers.v1.DeployContainerRevisionRequest\x1a!.yandex.cloud.operation.Operation\"Y\x82\xd3\xe4\x93\x02$\"\x1f/containers/v1/revisions:deploy:\x01*\xb2\xd2*+\n\x1f\x44\x65ployContainerRevisionMetadata\x12\x08Revision\x12\xd6\x01\n\x08Rollback\x12?.yandex.cloud.serverless.containers.v1.RollbackContainerRequest\x1a!.yandex.cloud.operation.Operation\"f\x82\xd3\xe4\x93\x02\x36\"1/containers/v1/containers/{container_id}:rollback:\x01*\xb2\xd2*&\n\x19RollbackContainerMetadata\x12\tContainer\x12\xbc\x01\n\x0bGetRevision\x12\x42.yandex.cloud.serverless.containers.v1.GetContainerRevisionRequest\x1a/.yandex.cloud.serverless.containers.v1.Revision\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/containers/v1/revisions/{container_revision_id}\x12\xc0\x01\n\rListRevisions\x12\x45.yandex.cloud.serverless.containers.v1.ListContainersRevisionsRequest\x1a\x46.yandex.cloud.serverless.containers.v1.ListContainersRevisionsResponse\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/containers/v1/revisions\x12\xdc\x01\n\x0eListOperations\x12\x45.yandex.cloud.serverless.containers.v1.ListContainerOperationsRequest\x1a\x46.yandex.cloud.serverless.containers.v1.ListContainerOperationsResponse\";\x82\xd3\xe4\x93\x02\x35\x12\x33/containers/v1/containers/{container_id}/operations\x12\xb9\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"B\x82\xd3\xe4\x93\x02<\x12:/containers/v1/containers/{resource_id}:listAccessBindings\x12\xe9\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x81\x01\x82\xd3\xe4\x93\x02>\"9/containers/v1/containers/{resource_id}:setAccessBindings:\x01*\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\xf5\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x87\x01\x82\xd3\xe4\x93\x02\x41\"</containers/v1/containers/{resource_id}:updateAccessBindings:\x01*\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.EmptyB\x81\x01\n)yandex.cloud.api.serverless.containers.v1ZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/containers/v1;containersb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_access_dot_access__pb2.DESCRIPTOR,yandex_dot_cloud_dot_serverless_dot_containers_dot_v1_dot_container__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -696,6 +696,13 @@ _DEPLOYCONTAINERREVISIONREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='log_options', full_name='yandex.cloud.serverless.containers.v1.DeployContainerRevisionRequest.log_options', index=11,
+      number=14, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -709,7 +716,7 @@ _DEPLOYCONTAINERREVISIONREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1977,
-  serialized_end=2623,
+  serialized_end=2695,
 )
 
 
@@ -747,8 +754,8 @@ _IMAGESPEC_ENVIRONMENTENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2936,
-  serialized_end=2986,
+  serialized_start=3008,
+  serialized_end=3058,
 )
 
 _IMAGESPEC = _descriptor.Descriptor(
@@ -806,8 +813,8 @@ _IMAGESPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2626,
-  serialized_end=2986,
+  serialized_start=2698,
+  serialized_end=3058,
 )
 
 
@@ -838,8 +845,8 @@ _DEPLOYCONTAINERREVISIONMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2988,
-  serialized_end=3052,
+  serialized_start=3060,
+  serialized_end=3124,
 )
 
 
@@ -877,8 +884,8 @@ _ROLLBACKCONTAINERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3054,
-  serialized_end=3135,
+  serialized_start=3126,
+  serialized_end=3207,
 )
 
 
@@ -916,8 +923,8 @@ _ROLLBACKCONTAINERMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3137,
-  serialized_end=3207,
+  serialized_start=3209,
+  serialized_end=3279,
 )
 
 
@@ -969,8 +976,8 @@ _LISTCONTAINEROPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3210,
-  serialized_end=3360,
+  serialized_start=3282,
+  serialized_end=3432,
 )
 
 
@@ -1008,8 +1015,8 @@ _LISTCONTAINEROPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3362,
-  serialized_end=3475,
+  serialized_start=3434,
+  serialized_end=3547,
 )
 
 _LISTCONTAINERSRESPONSE.fields_by_name['containers'].message_type = yandex_dot_cloud_dot_serverless_dot_containers_dot_v1_dot_container__pb2._CONTAINER
@@ -1032,6 +1039,7 @@ _DEPLOYCONTAINERREVISIONREQUEST.fields_by_name['secrets'].message_type = yandex_
 _DEPLOYCONTAINERREVISIONREQUEST.fields_by_name['connectivity'].message_type = yandex_dot_cloud_dot_serverless_dot_containers_dot_v1_dot_container__pb2._CONNECTIVITY
 _DEPLOYCONTAINERREVISIONREQUEST.fields_by_name['provision_policy'].message_type = yandex_dot_cloud_dot_serverless_dot_containers_dot_v1_dot_container__pb2._PROVISIONPOLICY
 _DEPLOYCONTAINERREVISIONREQUEST.fields_by_name['scaling_policy'].message_type = yandex_dot_cloud_dot_serverless_dot_containers_dot_v1_dot_container__pb2._SCALINGPOLICY
+_DEPLOYCONTAINERREVISIONREQUEST.fields_by_name['log_options'].message_type = yandex_dot_cloud_dot_serverless_dot_containers_dot_v1_dot_container__pb2._LOGOPTIONS
 _IMAGESPEC_ENVIRONMENTENTRY.containing_type = _IMAGESPEC
 _IMAGESPEC.fields_by_name['command'].message_type = yandex_dot_cloud_dot_serverless_dot_containers_dot_v1_dot_container__pb2._COMMAND
 _IMAGESPEC.fields_by_name['args'].message_type = yandex_dot_cloud_dot_serverless_dot_containers_dot_v1_dot_container__pb2._ARGS
@@ -1256,8 +1264,8 @@ _CONTAINERSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=3478,
-  serialized_end=6147,
+  serialized_start=3550,
+  serialized_end=6219,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
