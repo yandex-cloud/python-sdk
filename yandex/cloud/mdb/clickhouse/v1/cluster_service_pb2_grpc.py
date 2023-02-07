@@ -167,6 +167,11 @@ class ClusterServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.DeleteClusterShardGroupRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
+        self.ListExternalDictionaries = channel.unary_unary(
+                '/yandex.cloud.mdb.clickhouse.v1.ClusterService/ListExternalDictionaries',
+                request_serializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.ListClusterExternalDictionariesRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.ListClusterExternalDictionariesResponse.FromString,
+                )
         self.CreateExternalDictionary = channel.unary_unary(
                 '/yandex.cloud.mdb.clickhouse.v1.ClusterService/CreateExternalDictionary',
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.CreateClusterExternalDictionaryRequest.SerializeToString,
@@ -401,6 +406,13 @@ class ClusterServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListExternalDictionaries(self, request, context):
+        """Retrieves a list of external dictionaries that belong to specified cluster.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def CreateExternalDictionary(self, request, context):
         """Creates an external dictionary for the specified ClickHouse cluster.
         """
@@ -574,6 +586,11 @@ def add_ClusterServiceServicer_to_server(servicer, server):
                     servicer.DeleteShardGroup,
                     request_deserializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.DeleteClusterShardGroupRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'ListExternalDictionaries': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListExternalDictionaries,
+                    request_deserializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.ListClusterExternalDictionariesRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.ListClusterExternalDictionariesResponse.SerializeToString,
             ),
             'CreateExternalDictionary': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateExternalDictionary,
@@ -1108,6 +1125,23 @@ class ClusterService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.mdb.clickhouse.v1.ClusterService/DeleteShardGroup',
             yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.DeleteClusterShardGroupRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListExternalDictionaries(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.mdb.clickhouse.v1.ClusterService/ListExternalDictionaries',
+            yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.ListClusterExternalDictionariesRequest.SerializeToString,
+            yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_cluster__service__pb2.ListClusterExternalDictionariesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

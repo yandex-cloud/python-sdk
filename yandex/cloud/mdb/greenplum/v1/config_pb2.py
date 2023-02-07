@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n!yandex.cloud.api.mdb.greenplum.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/greenplum/v1;greenplum',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n*yandex/cloud/mdb/greenplum/v1/config.proto\x12\x1dyandex.cloud.mdb.greenplum.v1\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"P\n\tResources\x12\x1a\n\x12resource_preset_id\x18\x01 \x01(\t\x12\x11\n\tdisk_size\x18\x02 \x01(\x03\x12\x14\n\x0c\x64isk_type_id\x18\x03 \x01(\t\"\x90\x02\n\x16\x43onnectionPoolerConfig\x12L\n\x04mode\x18\x01 \x01(\x0e\x32>.yandex.cloud.mdb.greenplum.v1.ConnectionPoolerConfig.PoolMode\x12)\n\x04size\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x38\n\x13\x63lient_idle_timeout\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"C\n\x08PoolMode\x12\x19\n\x15POOL_MODE_UNSPECIFIED\x10\x00\x12\x0b\n\x07SESSION\x10\x01\x12\x0f\n\x0bTRANSACTION\x10\x02\"U\n\x16MasterSubclusterConfig\x12;\n\tresources\x18\x01 \x01(\x0b\x32(.yandex.cloud.mdb.greenplum.v1.Resources\"V\n\x17SegmentSubclusterConfig\x12;\n\tresources\x18\x01 \x01(\x0b\x32(.yandex.cloud.mdb.greenplum.v1.Resources\"\xd3\x03\n\x13GreenplumConfig6_17\x12\x34\n\x0fmax_connections\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12;\n\x16max_slot_wal_keep_size\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x42\n\x1dgp_workfile_limit_per_segment\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12@\n\x1bgp_workfile_limit_per_query\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x46\n!gp_workfile_limit_files_per_query\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12>\n\x19max_prepared_transactions\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12;\n\x17gp_workfile_compression\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"\xcf\x04\n\x13GreenplumConfig6_19\x12\x34\n\x0fmax_connections\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12;\n\x16max_slot_wal_keep_size\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x42\n\x1dgp_workfile_limit_per_segment\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12@\n\x1bgp_workfile_limit_per_query\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x46\n!gp_workfile_limit_files_per_query\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12>\n\x19max_prepared_transactions\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12;\n\x17gp_workfile_compression\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x36\n\x11max_statement_mem\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x42\n\rlog_statement\x18\t \x01(\x0e\x32+.yandex.cloud.mdb.greenplum.v1.LogStatement\"\x81\x02\n\x16GreenplumConfigSet6_17\x12R\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32\x32.yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_17B\x04\xe8\xc7\x31\x01\x12G\n\x0buser_config\x18\x02 \x01(\x0b\x32\x32.yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_17\x12J\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32\x32.yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_17\"\x81\x02\n\x16GreenplumConfigSet6_19\x12R\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32\x32.yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_19B\x04\xe8\xc7\x31\x01\x12G\n\x0buser_config\x18\x02 \x01(\x0b\x32\x32.yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_19\x12J\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32\x32.yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_19\"\x8d\x02\n\x19\x43onnectionPoolerConfigSet\x12U\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32\x35.yandex.cloud.mdb.greenplum.v1.ConnectionPoolerConfigB\x04\xe8\xc7\x31\x01\x12J\n\x0buser_config\x18\x02 \x01(\x0b\x32\x35.yandex.cloud.mdb.greenplum.v1.ConnectionPoolerConfig\x12M\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32\x35.yandex.cloud.mdb.greenplum.v1.ConnectionPoolerConfig*R\n\x0cLogStatement\x12\x1d\n\x19LOG_STATEMENT_UNSPECIFIED\x10\x00\x12\x08\n\x04NONE\x10\x01\x12\x07\n\x03\x44\x44L\x10\x02\x12\x07\n\x03MOD\x10\x03\x12\x07\n\x03\x41LL\x10\x04\x42p\n!yandex.cloud.api.mdb.greenplum.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/greenplum/v1;greenplumb\x06proto3'
+  serialized_pb=b'\n*yandex/cloud/mdb/greenplum/v1/config.proto\x12\x1dyandex.cloud.mdb.greenplum.v1\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"P\n\tResources\x12\x1a\n\x12resource_preset_id\x18\x01 \x01(\t\x12\x11\n\tdisk_size\x18\x02 \x01(\x03\x12\x14\n\x0c\x64isk_type_id\x18\x03 \x01(\t\"\x90\x02\n\x16\x43onnectionPoolerConfig\x12L\n\x04mode\x18\x01 \x01(\x0e\x32>.yandex.cloud.mdb.greenplum.v1.ConnectionPoolerConfig.PoolMode\x12)\n\x04size\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x38\n\x13\x63lient_idle_timeout\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"C\n\x08PoolMode\x12\x19\n\x15POOL_MODE_UNSPECIFIED\x10\x00\x12\x0b\n\x07SESSION\x10\x01\x12\x0f\n\x0bTRANSACTION\x10\x02\"U\n\x16MasterSubclusterConfig\x12;\n\tresources\x18\x01 \x01(\x0b\x32(.yandex.cloud.mdb.greenplum.v1.Resources\"V\n\x17SegmentSubclusterConfig\x12;\n\tresources\x18\x01 \x01(\x0b\x32(.yandex.cloud.mdb.greenplum.v1.Resources\"\xd3\x03\n\x13GreenplumConfig6_17\x12\x34\n\x0fmax_connections\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12;\n\x16max_slot_wal_keep_size\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x42\n\x1dgp_workfile_limit_per_segment\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12@\n\x1bgp_workfile_limit_per_query\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x46\n!gp_workfile_limit_files_per_query\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12>\n\x19max_prepared_transactions\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12;\n\x17gp_workfile_compression\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"\xcf\x04\n\x13GreenplumConfig6_19\x12\x34\n\x0fmax_connections\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12;\n\x16max_slot_wal_keep_size\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x42\n\x1dgp_workfile_limit_per_segment\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12@\n\x1bgp_workfile_limit_per_query\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x46\n!gp_workfile_limit_files_per_query\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12>\n\x19max_prepared_transactions\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12;\n\x17gp_workfile_compression\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x36\n\x11max_statement_mem\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x42\n\rlog_statement\x18\t \x01(\x0e\x32+.yandex.cloud.mdb.greenplum.v1.LogStatement\"\x99\x05\n\x13GreenplumConfig6_21\x12\x34\n\x0fmax_connections\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12;\n\x16max_slot_wal_keep_size\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x42\n\x1dgp_workfile_limit_per_segment\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12@\n\x1bgp_workfile_limit_per_query\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x46\n!gp_workfile_limit_files_per_query\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12>\n\x19max_prepared_transactions\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12;\n\x17gp_workfile_compression\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x36\n\x11max_statement_mem\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x42\n\rlog_statement\x18\t \x01(\x0e\x32+.yandex.cloud.mdb.greenplum.v1.LogStatement\x12H\n$gp_add_column_inherits_table_setting\x18\n \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"\x99\x05\n\x13GreenplumConfig6_22\x12\x34\n\x0fmax_connections\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12;\n\x16max_slot_wal_keep_size\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x42\n\x1dgp_workfile_limit_per_segment\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12@\n\x1bgp_workfile_limit_per_query\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x46\n!gp_workfile_limit_files_per_query\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12>\n\x19max_prepared_transactions\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12;\n\x17gp_workfile_compression\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x36\n\x11max_statement_mem\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x42\n\rlog_statement\x18\t \x01(\x0e\x32+.yandex.cloud.mdb.greenplum.v1.LogStatement\x12H\n$gp_add_column_inherits_table_setting\x18\n \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"\x81\x02\n\x16GreenplumConfigSet6_17\x12R\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32\x32.yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_17B\x04\xe8\xc7\x31\x01\x12G\n\x0buser_config\x18\x02 \x01(\x0b\x32\x32.yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_17\x12J\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32\x32.yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_17\"\x81\x02\n\x16GreenplumConfigSet6_19\x12R\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32\x32.yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_19B\x04\xe8\xc7\x31\x01\x12G\n\x0buser_config\x18\x02 \x01(\x0b\x32\x32.yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_19\x12J\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32\x32.yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_19\"\x81\x02\n\x16GreenplumConfigSet6_21\x12R\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32\x32.yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_21B\x04\xe8\xc7\x31\x01\x12G\n\x0buser_config\x18\x02 \x01(\x0b\x32\x32.yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_21\x12J\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32\x32.yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_21\"\x81\x02\n\x16GreenplumConfigSet6_22\x12R\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32\x32.yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_22B\x04\xe8\xc7\x31\x01\x12G\n\x0buser_config\x18\x02 \x01(\x0b\x32\x32.yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_22\x12J\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32\x32.yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_22\"\x8d\x02\n\x19\x43onnectionPoolerConfigSet\x12U\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32\x35.yandex.cloud.mdb.greenplum.v1.ConnectionPoolerConfigB\x04\xe8\xc7\x31\x01\x12J\n\x0buser_config\x18\x02 \x01(\x0b\x32\x35.yandex.cloud.mdb.greenplum.v1.ConnectionPoolerConfig\x12M\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32\x35.yandex.cloud.mdb.greenplum.v1.ConnectionPoolerConfig*R\n\x0cLogStatement\x12\x1d\n\x19LOG_STATEMENT_UNSPECIFIED\x10\x00\x12\x08\n\x04NONE\x10\x01\x12\x07\n\x03\x44\x44L\x10\x02\x12\x07\n\x03MOD\x10\x03\x12\x07\n\x03\x41LL\x10\x04\x42p\n!yandex.cloud.api.mdb.greenplum.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/greenplum/v1;greenplumb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -61,8 +61,8 @@ _LOGSTATEMENT = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2528,
-  serialized_end=2610,
+  serialized_start=4384,
+  serialized_end=4466,
 )
 _sym_db.RegisterEnumDescriptor(_LOGSTATEMENT)
 
@@ -424,6 +424,196 @@ _GREENPLUMCONFIG6_19 = _descriptor.Descriptor(
 )
 
 
+_GREENPLUMCONFIG6_21 = _descriptor.Descriptor(
+  name='GreenplumConfig6_21',
+  full_name='yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_21',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='max_connections', full_name='yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_21.max_connections', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='max_slot_wal_keep_size', full_name='yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_21.max_slot_wal_keep_size', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='gp_workfile_limit_per_segment', full_name='yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_21.gp_workfile_limit_per_segment', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='gp_workfile_limit_per_query', full_name='yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_21.gp_workfile_limit_per_query', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='gp_workfile_limit_files_per_query', full_name='yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_21.gp_workfile_limit_files_per_query', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='max_prepared_transactions', full_name='yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_21.max_prepared_transactions', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='gp_workfile_compression', full_name='yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_21.gp_workfile_compression', index=6,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='max_statement_mem', full_name='yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_21.max_statement_mem', index=7,
+      number=8, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='log_statement', full_name='yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_21.log_statement', index=8,
+      number=9, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='gp_add_column_inherits_table_setting', full_name='yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_21.gp_add_column_inherits_table_setting', index=9,
+      number=10, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1737,
+  serialized_end=2402,
+)
+
+
+_GREENPLUMCONFIG6_22 = _descriptor.Descriptor(
+  name='GreenplumConfig6_22',
+  full_name='yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_22',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='max_connections', full_name='yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_22.max_connections', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='max_slot_wal_keep_size', full_name='yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_22.max_slot_wal_keep_size', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='gp_workfile_limit_per_segment', full_name='yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_22.gp_workfile_limit_per_segment', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='gp_workfile_limit_per_query', full_name='yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_22.gp_workfile_limit_per_query', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='gp_workfile_limit_files_per_query', full_name='yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_22.gp_workfile_limit_files_per_query', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='max_prepared_transactions', full_name='yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_22.max_prepared_transactions', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='gp_workfile_compression', full_name='yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_22.gp_workfile_compression', index=6,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='max_statement_mem', full_name='yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_22.max_statement_mem', index=7,
+      number=8, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='log_statement', full_name='yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_22.log_statement', index=8,
+      number=9, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='gp_add_column_inherits_table_setting', full_name='yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_22.gp_add_column_inherits_table_setting', index=9,
+      number=10, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2405,
+  serialized_end=3070,
+)
+
+
 _GREENPLUMCONFIGSET6_17 = _descriptor.Descriptor(
   name='GreenplumConfigSet6_17',
   full_name='yandex.cloud.mdb.greenplum.v1.GreenplumConfigSet6_17',
@@ -465,8 +655,8 @@ _GREENPLUMCONFIGSET6_17 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1737,
-  serialized_end=1994,
+  serialized_start=3073,
+  serialized_end=3330,
 )
 
 
@@ -511,8 +701,100 @@ _GREENPLUMCONFIGSET6_19 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1997,
-  serialized_end=2254,
+  serialized_start=3333,
+  serialized_end=3590,
+)
+
+
+_GREENPLUMCONFIGSET6_21 = _descriptor.Descriptor(
+  name='GreenplumConfigSet6_21',
+  full_name='yandex.cloud.mdb.greenplum.v1.GreenplumConfigSet6_21',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='effective_config', full_name='yandex.cloud.mdb.greenplum.v1.GreenplumConfigSet6_21.effective_config', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='user_config', full_name='yandex.cloud.mdb.greenplum.v1.GreenplumConfigSet6_21.user_config', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='default_config', full_name='yandex.cloud.mdb.greenplum.v1.GreenplumConfigSet6_21.default_config', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3593,
+  serialized_end=3850,
+)
+
+
+_GREENPLUMCONFIGSET6_22 = _descriptor.Descriptor(
+  name='GreenplumConfigSet6_22',
+  full_name='yandex.cloud.mdb.greenplum.v1.GreenplumConfigSet6_22',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='effective_config', full_name='yandex.cloud.mdb.greenplum.v1.GreenplumConfigSet6_22.effective_config', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='user_config', full_name='yandex.cloud.mdb.greenplum.v1.GreenplumConfigSet6_22.user_config', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='default_config', full_name='yandex.cloud.mdb.greenplum.v1.GreenplumConfigSet6_22.default_config', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3853,
+  serialized_end=4110,
 )
 
 
@@ -557,8 +839,8 @@ _CONNECTIONPOOLERCONFIGSET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2257,
-  serialized_end=2526,
+  serialized_start=4113,
+  serialized_end=4382,
 )
 
 _CONNECTIONPOOLERCONFIG.fields_by_name['mode'].enum_type = _CONNECTIONPOOLERCONFIG_POOLMODE
@@ -583,12 +865,38 @@ _GREENPLUMCONFIG6_19.fields_by_name['max_prepared_transactions'].message_type = 
 _GREENPLUMCONFIG6_19.fields_by_name['gp_workfile_compression'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
 _GREENPLUMCONFIG6_19.fields_by_name['max_statement_mem'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
 _GREENPLUMCONFIG6_19.fields_by_name['log_statement'].enum_type = _LOGSTATEMENT
+_GREENPLUMCONFIG6_21.fields_by_name['max_connections'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_GREENPLUMCONFIG6_21.fields_by_name['max_slot_wal_keep_size'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_GREENPLUMCONFIG6_21.fields_by_name['gp_workfile_limit_per_segment'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_GREENPLUMCONFIG6_21.fields_by_name['gp_workfile_limit_per_query'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_GREENPLUMCONFIG6_21.fields_by_name['gp_workfile_limit_files_per_query'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_GREENPLUMCONFIG6_21.fields_by_name['max_prepared_transactions'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_GREENPLUMCONFIG6_21.fields_by_name['gp_workfile_compression'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
+_GREENPLUMCONFIG6_21.fields_by_name['max_statement_mem'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_GREENPLUMCONFIG6_21.fields_by_name['log_statement'].enum_type = _LOGSTATEMENT
+_GREENPLUMCONFIG6_21.fields_by_name['gp_add_column_inherits_table_setting'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
+_GREENPLUMCONFIG6_22.fields_by_name['max_connections'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_GREENPLUMCONFIG6_22.fields_by_name['max_slot_wal_keep_size'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_GREENPLUMCONFIG6_22.fields_by_name['gp_workfile_limit_per_segment'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_GREENPLUMCONFIG6_22.fields_by_name['gp_workfile_limit_per_query'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_GREENPLUMCONFIG6_22.fields_by_name['gp_workfile_limit_files_per_query'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_GREENPLUMCONFIG6_22.fields_by_name['max_prepared_transactions'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_GREENPLUMCONFIG6_22.fields_by_name['gp_workfile_compression'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
+_GREENPLUMCONFIG6_22.fields_by_name['max_statement_mem'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
+_GREENPLUMCONFIG6_22.fields_by_name['log_statement'].enum_type = _LOGSTATEMENT
+_GREENPLUMCONFIG6_22.fields_by_name['gp_add_column_inherits_table_setting'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
 _GREENPLUMCONFIGSET6_17.fields_by_name['effective_config'].message_type = _GREENPLUMCONFIG6_17
 _GREENPLUMCONFIGSET6_17.fields_by_name['user_config'].message_type = _GREENPLUMCONFIG6_17
 _GREENPLUMCONFIGSET6_17.fields_by_name['default_config'].message_type = _GREENPLUMCONFIG6_17
 _GREENPLUMCONFIGSET6_19.fields_by_name['effective_config'].message_type = _GREENPLUMCONFIG6_19
 _GREENPLUMCONFIGSET6_19.fields_by_name['user_config'].message_type = _GREENPLUMCONFIG6_19
 _GREENPLUMCONFIGSET6_19.fields_by_name['default_config'].message_type = _GREENPLUMCONFIG6_19
+_GREENPLUMCONFIGSET6_21.fields_by_name['effective_config'].message_type = _GREENPLUMCONFIG6_21
+_GREENPLUMCONFIGSET6_21.fields_by_name['user_config'].message_type = _GREENPLUMCONFIG6_21
+_GREENPLUMCONFIGSET6_21.fields_by_name['default_config'].message_type = _GREENPLUMCONFIG6_21
+_GREENPLUMCONFIGSET6_22.fields_by_name['effective_config'].message_type = _GREENPLUMCONFIG6_22
+_GREENPLUMCONFIGSET6_22.fields_by_name['user_config'].message_type = _GREENPLUMCONFIG6_22
+_GREENPLUMCONFIGSET6_22.fields_by_name['default_config'].message_type = _GREENPLUMCONFIG6_22
 _CONNECTIONPOOLERCONFIGSET.fields_by_name['effective_config'].message_type = _CONNECTIONPOOLERCONFIG
 _CONNECTIONPOOLERCONFIGSET.fields_by_name['user_config'].message_type = _CONNECTIONPOOLERCONFIG
 _CONNECTIONPOOLERCONFIGSET.fields_by_name['default_config'].message_type = _CONNECTIONPOOLERCONFIG
@@ -598,8 +906,12 @@ DESCRIPTOR.message_types_by_name['MasterSubclusterConfig'] = _MASTERSUBCLUSTERCO
 DESCRIPTOR.message_types_by_name['SegmentSubclusterConfig'] = _SEGMENTSUBCLUSTERCONFIG
 DESCRIPTOR.message_types_by_name['GreenplumConfig6_17'] = _GREENPLUMCONFIG6_17
 DESCRIPTOR.message_types_by_name['GreenplumConfig6_19'] = _GREENPLUMCONFIG6_19
+DESCRIPTOR.message_types_by_name['GreenplumConfig6_21'] = _GREENPLUMCONFIG6_21
+DESCRIPTOR.message_types_by_name['GreenplumConfig6_22'] = _GREENPLUMCONFIG6_22
 DESCRIPTOR.message_types_by_name['GreenplumConfigSet6_17'] = _GREENPLUMCONFIGSET6_17
 DESCRIPTOR.message_types_by_name['GreenplumConfigSet6_19'] = _GREENPLUMCONFIGSET6_19
+DESCRIPTOR.message_types_by_name['GreenplumConfigSet6_21'] = _GREENPLUMCONFIGSET6_21
+DESCRIPTOR.message_types_by_name['GreenplumConfigSet6_22'] = _GREENPLUMCONFIGSET6_22
 DESCRIPTOR.message_types_by_name['ConnectionPoolerConfigSet'] = _CONNECTIONPOOLERCONFIGSET
 DESCRIPTOR.enum_types_by_name['LogStatement'] = _LOGSTATEMENT
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -646,6 +958,20 @@ GreenplumConfig6_19 = _reflection.GeneratedProtocolMessageType('GreenplumConfig6
   })
 _sym_db.RegisterMessage(GreenplumConfig6_19)
 
+GreenplumConfig6_21 = _reflection.GeneratedProtocolMessageType('GreenplumConfig6_21', (_message.Message,), {
+  'DESCRIPTOR' : _GREENPLUMCONFIG6_21,
+  '__module__' : 'yandex.cloud.mdb.greenplum.v1.config_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_21)
+  })
+_sym_db.RegisterMessage(GreenplumConfig6_21)
+
+GreenplumConfig6_22 = _reflection.GeneratedProtocolMessageType('GreenplumConfig6_22', (_message.Message,), {
+  'DESCRIPTOR' : _GREENPLUMCONFIG6_22,
+  '__module__' : 'yandex.cloud.mdb.greenplum.v1.config_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.greenplum.v1.GreenplumConfig6_22)
+  })
+_sym_db.RegisterMessage(GreenplumConfig6_22)
+
 GreenplumConfigSet6_17 = _reflection.GeneratedProtocolMessageType('GreenplumConfigSet6_17', (_message.Message,), {
   'DESCRIPTOR' : _GREENPLUMCONFIGSET6_17,
   '__module__' : 'yandex.cloud.mdb.greenplum.v1.config_pb2'
@@ -660,6 +986,20 @@ GreenplumConfigSet6_19 = _reflection.GeneratedProtocolMessageType('GreenplumConf
   })
 _sym_db.RegisterMessage(GreenplumConfigSet6_19)
 
+GreenplumConfigSet6_21 = _reflection.GeneratedProtocolMessageType('GreenplumConfigSet6_21', (_message.Message,), {
+  'DESCRIPTOR' : _GREENPLUMCONFIGSET6_21,
+  '__module__' : 'yandex.cloud.mdb.greenplum.v1.config_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.greenplum.v1.GreenplumConfigSet6_21)
+  })
+_sym_db.RegisterMessage(GreenplumConfigSet6_21)
+
+GreenplumConfigSet6_22 = _reflection.GeneratedProtocolMessageType('GreenplumConfigSet6_22', (_message.Message,), {
+  'DESCRIPTOR' : _GREENPLUMCONFIGSET6_22,
+  '__module__' : 'yandex.cloud.mdb.greenplum.v1.config_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.greenplum.v1.GreenplumConfigSet6_22)
+  })
+_sym_db.RegisterMessage(GreenplumConfigSet6_22)
+
 ConnectionPoolerConfigSet = _reflection.GeneratedProtocolMessageType('ConnectionPoolerConfigSet', (_message.Message,), {
   'DESCRIPTOR' : _CONNECTIONPOOLERCONFIGSET,
   '__module__' : 'yandex.cloud.mdb.greenplum.v1.config_pb2'
@@ -671,5 +1011,7 @@ _sym_db.RegisterMessage(ConnectionPoolerConfigSet)
 DESCRIPTOR._options = None
 _GREENPLUMCONFIGSET6_17.fields_by_name['effective_config']._options = None
 _GREENPLUMCONFIGSET6_19.fields_by_name['effective_config']._options = None
+_GREENPLUMCONFIGSET6_21.fields_by_name['effective_config']._options = None
+_GREENPLUMCONFIGSET6_22.fields_by_name['effective_config']._options = None
 _CONNECTIONPOOLERCONFIGSET.fields_by_name['effective_config']._options = None
 # @@protoc_insertion_point(module_scope)
