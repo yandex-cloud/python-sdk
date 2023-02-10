@@ -11,9 +11,12 @@ import six
 from yandex.cloud.iam.v1.iam_token_service_pb2 import CreateIamTokenRequest
 
 _MDS_ADDR = "169.254.169.254"
-_MDS_URL = "http://{}/computeMetadata/v1/instance/service-accounts/default/token"
+_MDS_URL = "http://{}/computeMetadata/v1/instance/{}"
 _MDS_HEADERS = {"Metadata-Flavor": "Google"}
 _MDS_TIMEOUT = (1.0, 1.0)  # 1sec connect, 1sec read
+
+_YC_API_ENDPOINT = "api.cloud.yandex.net"
+_IL_API_ENDPOINT = "api.cloudil.com"
 
 
 def __validate_service_account_key(sa_key):
@@ -43,7 +46,29 @@ def __validate_service_account_key(sa_key):
         raise RuntimeError(error_message)
 
 
-def get_auth_token_requester(token=None, service_account_key=None, iam_token=None, metadata_addr=_MDS_ADDR):
+def get_endpoint_from_metadata():
+    """Returns API endpoint based on region"""
+    endpoint = _YC_API_ENDPOINT
+    url = _MDS_URL.format(_MDS_ADDR, "?recursive=true")
+    try:
+        r = requests.get(url, headers=_MDS_HEADERS, timeout=_MDS_TIMEOUT)
+        r.raise_for_status()
+        response = r.json()
+    except requests.exceptions.RequestException:
+        return endpoint
+    zone = response.get("zone", "ru-")
+    if not zone.split("/")[-1].startswith("ru-"):
+        endpoint = _IL_API_ENDPOINT
+    return endpoint
+
+
+def get_auth_token_requester(
+    token=None,
+    service_account_key=None,
+    iam_token=None,
+    metadata_addr=_MDS_ADDR,
+    endpoint=_YC_API_ENDPOINT,
+):
     auth_methods = [("token", token), ("service_account_key", service_account_key), ("iam_token", iam_token)]
     auth_methods = [(auth_type, value) for auth_type, value in auth_methods if value is not None]
 
@@ -60,7 +85,7 @@ def get_auth_token_requester(token=None, service_account_key=None, iam_token=Non
         return TokenAuth(token=token)
     if auth_name == "service_account_key":
         __validate_service_account_key(service_account_key)
-        return ServiceAccountAuth(service_account_key)
+        return ServiceAccountAuth(service_account_key, endpoint)
     if auth_name == "iam_token":
         return IamTokenAuth(iam_token)
 
@@ -72,7 +97,7 @@ class MetadataAuth:
         self.__metadata_addr = metadata_addr
 
     def url(self):
-        return _MDS_URL.format(self.__metadata_addr)
+        return _MDS_URL.format(self.__metadata_addr, "service-accounts/default/token")
 
     def get_token(self):
         r = requests.get(self.url(), headers=_MDS_HEADERS, timeout=_MDS_TIMEOUT)
@@ -92,19 +117,21 @@ class TokenAuth:
 class ServiceAccountAuth:
     __SECONDS_IN_HOUR = 60.0 * 60.0
 
-    def __init__(self, sa_key):
+    def __init__(self, sa_key, endpoint=_YC_API_ENDPOINT):
         self.__sa_key = sa_key
+        self.endpoint = endpoint
 
     def get_token_request(self):
-        return CreateIamTokenRequest(jwt=self.__prepare_request())
+        return CreateIamTokenRequest(jwt=self.__prepare_request(self.endpoint))
 
-    def __prepare_request(self):
+    def __prepare_request(self, endpoint):
         now = time.time()
         now_utc = datetime.utcfromtimestamp(now)
         exp_utc = datetime.utcfromtimestamp(now + self.__SECONDS_IN_HOUR)
+        url = "https://iam.{}/iam/v1/tokens".format(endpoint)
         payload = {
             "iss": self.__sa_key["service_account_id"],
-            "aud": "https://iam.api.cloud.yandex.net/iam/v1/tokens",
+            "aud": url,
             "iat": now_utc,
             "exp": exp_utc,
         }
