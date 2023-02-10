@@ -24,7 +24,7 @@ class Channels(object):
             private_key=kwargs.get("private_key"),
             certificate_chain=kwargs.get("certificate_chain"),
         )
-        self._endpoint = get_endpoint_from_metadata()
+        self._endpoint = get_endpoint_from_metadata(kwargs.get("endpoint"))
         self._token_requester = get_auth_token_requester(
             token=kwargs.get("token"),
             service_account_key=kwargs.get("service_account_key"),

@@ -46,8 +46,10 @@ def __validate_service_account_key(sa_key):
         raise RuntimeError(error_message)
 
 
-def get_endpoint_from_metadata():
+def get_endpoint_from_metadata(endpoint):
     """Returns API endpoint based on region"""
+    if endpoint:
+        return endpoint
     endpoint = _YC_API_ENDPOINT
     url = _MDS_URL.format(_MDS_ADDR, "?recursive=true")
     try:
