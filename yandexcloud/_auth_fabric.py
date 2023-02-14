@@ -46,19 +46,19 @@ def __validate_service_account_key(sa_key):
         raise RuntimeError(error_message)
 
 
-def get_endpoint_from_metadata(endpoint):
+def get_endpoint_from_metadata():
     """Returns API endpoint based on region"""
-    if endpoint:
-        return endpoint
     endpoint = _YC_API_ENDPOINT
     url = _MDS_URL.format(_MDS_ADDR, "?recursive=true")
     try:
         r = requests.get(url, headers=_MDS_HEADERS, timeout=_MDS_TIMEOUT)
         r.raise_for_status()
         response = r.json()
-    except requests.exceptions.RequestException:
-        return endpoint
-    zone = response.get("zone", "ru-")
+    except requests.exceptions.RequestException as exc:
+        raise RuntimeError("Couldn't get instance zone from Metadata Service") from exc
+    zone = response.get("zone")
+    if not zone:
+        raise RuntimeError("No instance zone in Metadata Service response")
     if not zone.split("/")[-1].startswith("ru-"):
         endpoint = _IL_API_ENDPOINT
     return endpoint
@@ -121,10 +121,10 @@ class ServiceAccountAuth:
 
     def __init__(self, sa_key, endpoint=_YC_API_ENDPOINT):
         self.__sa_key = sa_key
-        self.endpoint = endpoint
+        self._endpoint = endpoint
 
     def get_token_request(self):
-        return CreateIamTokenRequest(jwt=self.__prepare_request(self.endpoint))
+        return CreateIamTokenRequest(jwt=self.__prepare_request(self._endpoint))
 
     def __prepare_request(self, endpoint):
         now = time.time()
@@ -153,3 +153,16 @@ class IamTokenAuth:
 
     def get_token(self):
         return self.__iam_token
+
+
+class DefaultApiProvider:
+    def __init__(self, endpoint=_YC_API_ENDPOINT):
+        self._endpoint = endpoint
+
+    def get_endpoint(self):
+        return self._endpoint
+
+
+class MetadataApiProvider(DefaultApiProvider):
+    def __init__(self):
+        super().__init__(get_endpoint_from_metadata())

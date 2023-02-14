@@ -5,8 +5,9 @@ from yandex.cloud.endpoint.api_endpoint_service_pb2 import ListApiEndpointsReque
 from yandex.cloud.endpoint.api_endpoint_service_pb2_grpc import ApiEndpointServiceStub
 from yandexcloud import _auth_plugin
 from yandexcloud._auth_fabric import (
+    DefaultApiProvider,
+    MetadataApiProvider,
     get_auth_token_requester,
-    get_endpoint_from_metadata,
 )
 
 try:
@@ -18,13 +19,19 @@ SDK_USER_AGENT = "yandex-cloud-python-sdk/{version}".format(version=VERSION)
 
 
 class Channels(object):
-    def __init__(self, client_user_agent=None, **kwargs):
+    def __init__(
+        self, client_user_agent=None, metadata_api_provider=False, **kwargs
+    ):
         self._channel_creds = grpc.ssl_channel_credentials(
             root_certificates=kwargs.get("root_certificates"),
             private_key=kwargs.get("private_key"),
             certificate_chain=kwargs.get("certificate_chain"),
         )
-        self._endpoint = get_endpoint_from_metadata(kwargs.get("endpoint"))
+        self._endpoint = kwargs.get("endpoint")
+        if metadata_api_provider:
+            self._endpoint = MetadataApiProvider().get_endpoint()
+        elif not self._endpoint:
+            self._endpoint = DefaultApiProvider().get_endpoint()
         self._token_requester = get_auth_token_requester(
             token=kwargs.get("token"),
             service_account_key=kwargs.get("service_account_key"),
