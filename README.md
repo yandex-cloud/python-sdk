@@ -39,6 +39,12 @@ Don't forget to assign Service Account for your Instance or Function and grant r
 sdk = yandexcloud.SDK()
 ```
 
+If you run SDK inside VM in Compute Cloud, API endpoint can be determined based on VM zone.
+
+```python
+sdk = yandexcloud.SDK(metadata_api_provider=True)
+```
+
 ### Service Account Keys
 
 ```python
