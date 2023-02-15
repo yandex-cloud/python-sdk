@@ -19,9 +19,7 @@ SDK_USER_AGENT = "yandex-cloud-python-sdk/{version}".format(version=VERSION)
 
 
 class Channels(object):
-    def __init__(
-        self, client_user_agent=None, metadata_api_provider=False, **kwargs
-    ):
+    def __init__(self, client_user_agent=None, metadata_api_provider=False, **kwargs):
         self._channel_creds = grpc.ssl_channel_credentials(
             root_certificates=kwargs.get("root_certificates"),
             private_key=kwargs.get("private_key"),
