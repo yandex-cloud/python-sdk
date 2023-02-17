@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.198.0 (2023-02-17)
+### Feature
+* Add certificatemanager to list of supported modules ([#65](https://github.com/yandex-cloud/python-sdk/issues/65)) ([`5713061`](https://github.com/yandex-cloud/python-sdk/commit/57130613b52276f767afe158a9ae517387f26276))
+
 ## v0.197.0 (2023-02-17)
 ### Feature
 * Drop python 3.6 support ([`022b8e9`](https://github.com/yandex-cloud/python-sdk/commit/022b8e9a33e3be1386da8afcf83e0b971607eabc))
