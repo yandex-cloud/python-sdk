@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 packages = find_packages(".", include=["yandexcloud*", "yandex*"])
 
-__version__ = "0.196.0"
+__version__ = "0.197.0"
 
 setup(
     name="yandexcloud",
@@ -24,7 +24,6 @@ setup(
     classifiers=[
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
-        "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
