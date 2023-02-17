@@ -93,6 +93,8 @@ _supported_modules = [
     ("yandex.cloud.apploadbalancer", "alb"),
     ("yandex.cloud.billing", "billing"),
     ("yandex.cloud.cdn", "cdn"),
+    ("yandex.cloud.certificatemanager.v1.certificate_content_service", "certificate-manager-data"),
+    ("yandex.cloud.certificatemanager", "certificate-manager"),
     ("yandex.cloud.compute", "compute"),
     ("yandex.cloud.containerregistry", "container-registry"),
     ("yandex.cloud.dataproc.manager", "dataproc-manager"),
