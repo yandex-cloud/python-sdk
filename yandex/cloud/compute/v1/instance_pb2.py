@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\033yandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;compute',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n&yandex/cloud/compute/v1/instance.proto\x12\x17yandex.cloud.compute.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xa4\n\n\x08Instance\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12=\n\x06labels\x18\x06 \x03(\x0b\x32-.yandex.cloud.compute.v1.Instance.LabelsEntry\x12\x0f\n\x07zone_id\x18\x07 \x01(\t\x12\x13\n\x0bplatform_id\x18\x08 \x01(\t\x12\x35\n\tresources\x18\t \x01(\x0b\x32\".yandex.cloud.compute.v1.Resources\x12\x38\n\x06status\x18\n \x01(\x0e\x32(.yandex.cloud.compute.v1.Instance.Status\x12\x41\n\x08metadata\x18\x0b \x03(\x0b\x32/.yandex.cloud.compute.v1.Instance.MetadataEntry\x12\x42\n\x10metadata_options\x18\x17 \x01(\x0b\x32(.yandex.cloud.compute.v1.MetadataOptions\x12\x38\n\tboot_disk\x18\x0c \x01(\x0b\x32%.yandex.cloud.compute.v1.AttachedDisk\x12>\n\x0fsecondary_disks\x18\r \x03(\x0b\x32%.yandex.cloud.compute.v1.AttachedDisk\x12?\n\x0blocal_disks\x18\x16 \x03(\x0b\x32*.yandex.cloud.compute.v1.AttachedLocalDisk\x12@\n\x0b\x66ilesystems\x18\x15 \x03(\x0b\x32+.yandex.cloud.compute.v1.AttachedFilesystem\x12\x45\n\x12network_interfaces\x18\x0e \x03(\x0b\x32).yandex.cloud.compute.v1.NetworkInterface\x12\x0c\n\x04\x66qdn\x18\x10 \x01(\t\x12\x44\n\x11scheduling_policy\x18\x11 \x01(\x0b\x32).yandex.cloud.compute.v1.SchedulingPolicy\x12\x1a\n\x12service_account_id\x18\x12 \x01(\t\x12\x42\n\x10network_settings\x18\x13 \x01(\x0b\x32(.yandex.cloud.compute.v1.NetworkSettings\x12\x42\n\x10placement_policy\x18\x14 \x01(\x0b\x32(.yandex.cloud.compute.v1.PlacementPolicy\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xac\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x10\n\x0cPROVISIONING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\x0c\n\x08STOPPING\x10\x03\x12\x0b\n\x07STOPPED\x10\x04\x12\x0c\n\x08STARTING\x10\x05\x12\x0e\n\nRESTARTING\x10\x06\x12\x0c\n\x08UPDATING\x10\x07\x12\t\n\x05\x45RROR\x10\x08\x12\x0b\n\x07\x43RASHED\x10\t\x12\x0c\n\x08\x44\x45LETING\x10\n\"O\n\tResources\x12\x0e\n\x06memory\x18\x01 \x01(\x03\x12\r\n\x05\x63ores\x18\x02 \x01(\x03\x12\x15\n\rcore_fraction\x18\x03 \x01(\x03\x12\x0c\n\x04gpus\x18\x04 \x01(\x03\"\xc0\x01\n\x0c\x41ttachedDisk\x12\x38\n\x04mode\x18\x01 \x01(\x0e\x32*.yandex.cloud.compute.v1.AttachedDisk.Mode\x12\x13\n\x0b\x64\x65vice_name\x18\x02 \x01(\t\x12\x13\n\x0b\x61uto_delete\x18\x03 \x01(\x08\x12\x0f\n\x07\x64isk_id\x18\x04 \x01(\t\";\n\x04Mode\x12\x14\n\x10MODE_UNSPECIFIED\x10\x00\x12\r\n\tREAD_ONLY\x10\x01\x12\x0e\n\nREAD_WRITE\x10\x02\"6\n\x11\x41ttachedLocalDisk\x12\x0c\n\x04size\x18\x01 \x01(\x03\x12\x13\n\x0b\x64\x65vice_name\x18\x02 \x01(\t\"\xbd\x01\n\x12\x41ttachedFilesystem\x12>\n\x04mode\x18\x01 \x01(\x0e\x32\x30.yandex.cloud.compute.v1.AttachedFilesystem.Mode\x12\x13\n\x0b\x64\x65vice_name\x18\x02 \x01(\t\x12\x15\n\rfilesystem_id\x18\x03 \x01(\t\";\n\x04Mode\x12\x14\n\x10MODE_UNSPECIFIED\x10\x00\x12\r\n\tREAD_ONLY\x10\x01\x12\x0e\n\nREAD_WRITE\x10\x02\"\xef\x01\n\x10NetworkInterface\x12\r\n\x05index\x18\x01 \x01(\t\x12\x13\n\x0bmac_address\x18\x02 \x01(\t\x12\x11\n\tsubnet_id\x18\x03 \x01(\t\x12\x43\n\x12primary_v4_address\x18\x04 \x01(\x0b\x32\'.yandex.cloud.compute.v1.PrimaryAddress\x12\x43\n\x12primary_v6_address\x18\x05 \x01(\x0b\x32\'.yandex.cloud.compute.v1.PrimaryAddress\x12\x1a\n\x12security_group_ids\x18\x06 \x03(\t\"\x98\x01\n\x0ePrimaryAddress\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12<\n\x0eone_to_one_nat\x18\x02 \x01(\x0b\x32$.yandex.cloud.compute.v1.OneToOneNat\x12\x37\n\x0b\x64ns_records\x18\x03 \x03(\x0b\x32\".yandex.cloud.compute.v1.DnsRecord\"\x8f\x01\n\x0bOneToOneNat\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x36\n\nip_version\x18\x02 \x01(\x0e\x32\".yandex.cloud.compute.v1.IpVersion\x12\x37\n\x0b\x64ns_records\x18\x03 \x03(\x0b\x32\".yandex.cloud.compute.v1.DnsRecord\"H\n\tDnsRecord\x12\x0c\n\x04\x66qdn\x18\x01 \x01(\t\x12\x13\n\x0b\x64ns_zone_id\x18\x02 \x01(\t\x12\x0b\n\x03ttl\x18\x03 \x01(\x03\x12\x0b\n\x03ptr\x18\x04 \x01(\x08\"\'\n\x10SchedulingPolicy\x12\x13\n\x0bpreemptible\x18\x01 \x01(\x08\"\xae\x01\n\x0fNetworkSettings\x12;\n\x04type\x18\x01 \x01(\x0e\x32-.yandex.cloud.compute.v1.NetworkSettings.Type\"^\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x0c\n\x08STANDARD\x10\x01\x12\x18\n\x14SOFTWARE_ACCELERATED\x10\x02\x12\x18\n\x14HARDWARE_ACCELERATED\x10\x03\"\xc1\x02\n\x0fPlacementPolicy\x12\x1a\n\x12placement_group_id\x18\x01 \x01(\t\x12V\n\x13host_affinity_rules\x18\x02 \x03(\x0b\x32\x39.yandex.cloud.compute.v1.PlacementPolicy.HostAffinityRule\x1a\xb9\x01\n\x10HostAffinityRule\x12\x0b\n\x03key\x18\x01 \x01(\t\x12N\n\x02op\x18\x02 \x01(\x0e\x32\x42.yandex.cloud.compute.v1.PlacementPolicy.HostAffinityRule.Operator\x12\x0e\n\x06values\x18\x03 \x03(\t\"8\n\x08Operator\x12\x18\n\x14OPERATOR_UNSPECIFIED\x10\x00\x12\x06\n\x02IN\x10\x01\x12\n\n\x06NOT_IN\x10\x02\"\xa1\x02\n\x0fMetadataOptions\x12\x42\n\x11gce_http_endpoint\x18\x01 \x01(\x0e\x32\'.yandex.cloud.compute.v1.MetadataOption\x12\x45\n\x14\x61ws_v1_http_endpoint\x18\x02 \x01(\x0e\x32\'.yandex.cloud.compute.v1.MetadataOption\x12?\n\x0egce_http_token\x18\x03 \x01(\x0e\x32\'.yandex.cloud.compute.v1.MetadataOption\x12\x42\n\x11\x61ws_v1_http_token\x18\x04 \x01(\x0e\x32\'.yandex.cloud.compute.v1.MetadataOption*;\n\tIpVersion\x12\x1a\n\x16IP_VERSION_UNSPECIFIED\x10\x00\x12\x08\n\x04IPV4\x10\x01\x12\x08\n\x04IPV6\x10\x02*L\n\x0eMetadataOption\x12\x1f\n\x1bMETADATA_OPTION_UNSPECIFIED\x10\x00\x12\x0b\n\x07\x45NABLED\x10\x01\x12\x0c\n\x08\x44ISABLED\x10\x02\x42\x62\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3'
+  serialized_pb=b'\n&yandex/cloud/compute/v1/instance.proto\x12\x17yandex.cloud.compute.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xe0\n\n\x08Instance\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12=\n\x06labels\x18\x06 \x03(\x0b\x32-.yandex.cloud.compute.v1.Instance.LabelsEntry\x12\x0f\n\x07zone_id\x18\x07 \x01(\t\x12\x13\n\x0bplatform_id\x18\x08 \x01(\t\x12\x35\n\tresources\x18\t \x01(\x0b\x32\".yandex.cloud.compute.v1.Resources\x12\x38\n\x06status\x18\n \x01(\x0e\x32(.yandex.cloud.compute.v1.Instance.Status\x12\x41\n\x08metadata\x18\x0b \x03(\x0b\x32/.yandex.cloud.compute.v1.Instance.MetadataEntry\x12\x42\n\x10metadata_options\x18\x17 \x01(\x0b\x32(.yandex.cloud.compute.v1.MetadataOptions\x12\x38\n\tboot_disk\x18\x0c \x01(\x0b\x32%.yandex.cloud.compute.v1.AttachedDisk\x12>\n\x0fsecondary_disks\x18\r \x03(\x0b\x32%.yandex.cloud.compute.v1.AttachedDisk\x12?\n\x0blocal_disks\x18\x16 \x03(\x0b\x32*.yandex.cloud.compute.v1.AttachedLocalDisk\x12@\n\x0b\x66ilesystems\x18\x15 \x03(\x0b\x32+.yandex.cloud.compute.v1.AttachedFilesystem\x12\x45\n\x12network_interfaces\x18\x0e \x03(\x0b\x32).yandex.cloud.compute.v1.NetworkInterface\x12:\n\x0cgpu_settings\x18\x1a \x01(\x0b\x32$.yandex.cloud.compute.v1.GpuSettings\x12\x0c\n\x04\x66qdn\x18\x10 \x01(\t\x12\x44\n\x11scheduling_policy\x18\x11 \x01(\x0b\x32).yandex.cloud.compute.v1.SchedulingPolicy\x12\x1a\n\x12service_account_id\x18\x12 \x01(\t\x12\x42\n\x10network_settings\x18\x13 \x01(\x0b\x32(.yandex.cloud.compute.v1.NetworkSettings\x12\x42\n\x10placement_policy\x18\x14 \x01(\x0b\x32(.yandex.cloud.compute.v1.PlacementPolicy\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xac\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x10\n\x0cPROVISIONING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\x0c\n\x08STOPPING\x10\x03\x12\x0b\n\x07STOPPED\x10\x04\x12\x0c\n\x08STARTING\x10\x05\x12\x0e\n\nRESTARTING\x10\x06\x12\x0c\n\x08UPDATING\x10\x07\x12\t\n\x05\x45RROR\x10\x08\x12\x0b\n\x07\x43RASHED\x10\t\x12\x0c\n\x08\x44\x45LETING\x10\n\"O\n\tResources\x12\x0e\n\x06memory\x18\x01 \x01(\x03\x12\r\n\x05\x63ores\x18\x02 \x01(\x03\x12\x15\n\rcore_fraction\x18\x03 \x01(\x03\x12\x0c\n\x04gpus\x18\x04 \x01(\x03\"\xc0\x01\n\x0c\x41ttachedDisk\x12\x38\n\x04mode\x18\x01 \x01(\x0e\x32*.yandex.cloud.compute.v1.AttachedDisk.Mode\x12\x13\n\x0b\x64\x65vice_name\x18\x02 \x01(\t\x12\x13\n\x0b\x61uto_delete\x18\x03 \x01(\x08\x12\x0f\n\x07\x64isk_id\x18\x04 \x01(\t\";\n\x04Mode\x12\x14\n\x10MODE_UNSPECIFIED\x10\x00\x12\r\n\tREAD_ONLY\x10\x01\x12\x0e\n\nREAD_WRITE\x10\x02\"6\n\x11\x41ttachedLocalDisk\x12\x0c\n\x04size\x18\x01 \x01(\x03\x12\x13\n\x0b\x64\x65vice_name\x18\x02 \x01(\t\"\xbd\x01\n\x12\x41ttachedFilesystem\x12>\n\x04mode\x18\x01 \x01(\x0e\x32\x30.yandex.cloud.compute.v1.AttachedFilesystem.Mode\x12\x13\n\x0b\x64\x65vice_name\x18\x02 \x01(\t\x12\x15\n\rfilesystem_id\x18\x03 \x01(\t\";\n\x04Mode\x12\x14\n\x10MODE_UNSPECIFIED\x10\x00\x12\r\n\tREAD_ONLY\x10\x01\x12\x0e\n\nREAD_WRITE\x10\x02\"\xef\x01\n\x10NetworkInterface\x12\r\n\x05index\x18\x01 \x01(\t\x12\x13\n\x0bmac_address\x18\x02 \x01(\t\x12\x11\n\tsubnet_id\x18\x03 \x01(\t\x12\x43\n\x12primary_v4_address\x18\x04 \x01(\x0b\x32\'.yandex.cloud.compute.v1.PrimaryAddress\x12\x43\n\x12primary_v6_address\x18\x05 \x01(\x0b\x32\'.yandex.cloud.compute.v1.PrimaryAddress\x12\x1a\n\x12security_group_ids\x18\x06 \x03(\t\"\x98\x01\n\x0ePrimaryAddress\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12<\n\x0eone_to_one_nat\x18\x02 \x01(\x0b\x32$.yandex.cloud.compute.v1.OneToOneNat\x12\x37\n\x0b\x64ns_records\x18\x03 \x03(\x0b\x32\".yandex.cloud.compute.v1.DnsRecord\"\x8f\x01\n\x0bOneToOneNat\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x36\n\nip_version\x18\x02 \x01(\x0e\x32\".yandex.cloud.compute.v1.IpVersion\x12\x37\n\x0b\x64ns_records\x18\x03 \x03(\x0b\x32\".yandex.cloud.compute.v1.DnsRecord\"H\n\tDnsRecord\x12\x0c\n\x04\x66qdn\x18\x01 \x01(\t\x12\x13\n\x0b\x64ns_zone_id\x18\x02 \x01(\t\x12\x0b\n\x03ttl\x18\x03 \x01(\x03\x12\x0b\n\x03ptr\x18\x04 \x01(\x08\"\'\n\x10SchedulingPolicy\x12\x13\n\x0bpreemptible\x18\x01 \x01(\x08\"\xae\x01\n\x0fNetworkSettings\x12;\n\x04type\x18\x01 \x01(\x0e\x32-.yandex.cloud.compute.v1.NetworkSettings.Type\"^\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x0c\n\x08STANDARD\x10\x01\x12\x18\n\x14SOFTWARE_ACCELERATED\x10\x02\x12\x18\n\x14HARDWARE_ACCELERATED\x10\x03\"%\n\x0bGpuSettings\x12\x16\n\x0egpu_cluster_id\x18\x01 \x01(\t\"\xc1\x02\n\x0fPlacementPolicy\x12\x1a\n\x12placement_group_id\x18\x01 \x01(\t\x12V\n\x13host_affinity_rules\x18\x02 \x03(\x0b\x32\x39.yandex.cloud.compute.v1.PlacementPolicy.HostAffinityRule\x1a\xb9\x01\n\x10HostAffinityRule\x12\x0b\n\x03key\x18\x01 \x01(\t\x12N\n\x02op\x18\x02 \x01(\x0e\x32\x42.yandex.cloud.compute.v1.PlacementPolicy.HostAffinityRule.Operator\x12\x0e\n\x06values\x18\x03 \x03(\t\"8\n\x08Operator\x12\x18\n\x14OPERATOR_UNSPECIFIED\x10\x00\x12\x06\n\x02IN\x10\x01\x12\n\n\x06NOT_IN\x10\x02\"\xa1\x02\n\x0fMetadataOptions\x12\x42\n\x11gce_http_endpoint\x18\x01 \x01(\x0e\x32\'.yandex.cloud.compute.v1.MetadataOption\x12\x45\n\x14\x61ws_v1_http_endpoint\x18\x02 \x01(\x0e\x32\'.yandex.cloud.compute.v1.MetadataOption\x12?\n\x0egce_http_token\x18\x03 \x01(\x0e\x32\'.yandex.cloud.compute.v1.MetadataOption\x12\x42\n\x11\x61ws_v1_http_token\x18\x04 \x01(\x0e\x32\'.yandex.cloud.compute.v1.MetadataOption*;\n\tIpVersion\x12\x1a\n\x16IP_VERSION_UNSPECIFIED\x10\x00\x12\x08\n\x04IPV4\x10\x01\x12\x08\n\x04IPV6\x10\x02*L\n\x0eMetadataOption\x12\x1f\n\x1bMETADATA_OPTION_UNSPECIFIED\x10\x00\x12\x0b\n\x07\x45NABLED\x10\x01\x12\x0c\n\x08\x44ISABLED\x10\x02\x42\x62\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
@@ -50,8 +50,8 @@ _IPVERSION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3394,
-  serialized_end=3453,
+  serialized_start=3493,
+  serialized_end=3552,
 )
 _sym_db.RegisterEnumDescriptor(_IPVERSION)
 
@@ -81,8 +81,8 @@ _METADATAOPTION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3455,
-  serialized_end=3531,
+  serialized_start=3554,
+  serialized_end=3630,
 )
 _sym_db.RegisterEnumDescriptor(_METADATAOPTION)
 
@@ -160,8 +160,8 @@ _INSTANCE_STATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1245,
-  serialized_end=1417,
+  serialized_start=1305,
+  serialized_end=1477,
 )
 _sym_db.RegisterEnumDescriptor(_INSTANCE_STATUS)
 
@@ -190,8 +190,8 @@ _ATTACHEDDISK_MODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1634,
-  serialized_end=1693,
+  serialized_start=1694,
+  serialized_end=1753,
 )
 _sym_db.RegisterEnumDescriptor(_ATTACHEDDISK_MODE)
 
@@ -220,8 +220,8 @@ _ATTACHEDFILESYSTEM_MODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1634,
-  serialized_end=1693,
+  serialized_start=1694,
+  serialized_end=1753,
 )
 _sym_db.RegisterEnumDescriptor(_ATTACHEDFILESYSTEM_MODE)
 
@@ -255,8 +255,8 @@ _NETWORKSETTINGS_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2682,
-  serialized_end=2776,
+  serialized_start=2742,
+  serialized_end=2836,
 )
 _sym_db.RegisterEnumDescriptor(_NETWORKSETTINGS_TYPE)
 
@@ -285,8 +285,8 @@ _PLACEMENTPOLICY_HOSTAFFINITYRULE_OPERATOR = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3044,
-  serialized_end=3100,
+  serialized_start=3143,
+  serialized_end=3199,
 )
 _sym_db.RegisterEnumDescriptor(_PLACEMENTPOLICY_HOSTAFFINITYRULE_OPERATOR)
 
@@ -325,8 +325,8 @@ _INSTANCE_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1148,
-  serialized_end=1193,
+  serialized_start=1208,
+  serialized_end=1253,
 )
 
 _INSTANCE_METADATAENTRY = _descriptor.Descriptor(
@@ -363,8 +363,8 @@ _INSTANCE_METADATAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1195,
-  serialized_end=1242,
+  serialized_start=1255,
+  serialized_end=1302,
 )
 
 _INSTANCE = _descriptor.Descriptor(
@@ -495,35 +495,42 @@ _INSTANCE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='fqdn', full_name='yandex.cloud.compute.v1.Instance.fqdn', index=17,
+      name='gpu_settings', full_name='yandex.cloud.compute.v1.Instance.gpu_settings', index=17,
+      number=26, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='fqdn', full_name='yandex.cloud.compute.v1.Instance.fqdn', index=18,
       number=16, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='scheduling_policy', full_name='yandex.cloud.compute.v1.Instance.scheduling_policy', index=18,
+      name='scheduling_policy', full_name='yandex.cloud.compute.v1.Instance.scheduling_policy', index=19,
       number=17, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='service_account_id', full_name='yandex.cloud.compute.v1.Instance.service_account_id', index=19,
+      name='service_account_id', full_name='yandex.cloud.compute.v1.Instance.service_account_id', index=20,
       number=18, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='network_settings', full_name='yandex.cloud.compute.v1.Instance.network_settings', index=20,
+      name='network_settings', full_name='yandex.cloud.compute.v1.Instance.network_settings', index=21,
       number=19, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='placement_policy', full_name='yandex.cloud.compute.v1.Instance.placement_policy', index=21,
+      name='placement_policy', full_name='yandex.cloud.compute.v1.Instance.placement_policy', index=22,
       number=20, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -543,7 +550,7 @@ _INSTANCE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=101,
-  serialized_end=1417,
+  serialized_end=1477,
 )
 
 
@@ -595,8 +602,8 @@ _RESOURCES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1419,
-  serialized_end=1498,
+  serialized_start=1479,
+  serialized_end=1558,
 )
 
 
@@ -649,8 +656,8 @@ _ATTACHEDDISK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1501,
-  serialized_end=1693,
+  serialized_start=1561,
+  serialized_end=1753,
 )
 
 
@@ -688,8 +695,8 @@ _ATTACHEDLOCALDISK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1695,
-  serialized_end=1749,
+  serialized_start=1755,
+  serialized_end=1809,
 )
 
 
@@ -735,8 +742,8 @@ _ATTACHEDFILESYSTEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1752,
-  serialized_end=1941,
+  serialized_start=1812,
+  serialized_end=2001,
 )
 
 
@@ -802,8 +809,8 @@ _NETWORKINTERFACE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1944,
-  serialized_end=2183,
+  serialized_start=2004,
+  serialized_end=2243,
 )
 
 
@@ -848,8 +855,8 @@ _PRIMARYADDRESS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2186,
-  serialized_end=2338,
+  serialized_start=2246,
+  serialized_end=2398,
 )
 
 
@@ -894,8 +901,8 @@ _ONETOONENAT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2341,
-  serialized_end=2484,
+  serialized_start=2401,
+  serialized_end=2544,
 )
 
 
@@ -947,8 +954,8 @@ _DNSRECORD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2486,
-  serialized_end=2558,
+  serialized_start=2546,
+  serialized_end=2618,
 )
 
 
@@ -979,8 +986,8 @@ _SCHEDULINGPOLICY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2560,
-  serialized_end=2599,
+  serialized_start=2620,
+  serialized_end=2659,
 )
 
 
@@ -1012,8 +1019,40 @@ _NETWORKSETTINGS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2602,
-  serialized_end=2776,
+  serialized_start=2662,
+  serialized_end=2836,
+)
+
+
+_GPUSETTINGS = _descriptor.Descriptor(
+  name='GpuSettings',
+  full_name='yandex.cloud.compute.v1.GpuSettings',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='gpu_cluster_id', full_name='yandex.cloud.compute.v1.GpuSettings.gpu_cluster_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2838,
+  serialized_end=2875,
 )
 
 
@@ -1059,8 +1098,8 @@ _PLACEMENTPOLICY_HOSTAFFINITYRULE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2915,
-  serialized_end=3100,
+  serialized_start=3014,
+  serialized_end=3199,
 )
 
 _PLACEMENTPOLICY = _descriptor.Descriptor(
@@ -1097,8 +1136,8 @@ _PLACEMENTPOLICY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2779,
-  serialized_end=3100,
+  serialized_start=2878,
+  serialized_end=3199,
 )
 
 
@@ -1150,8 +1189,8 @@ _METADATAOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3103,
-  serialized_end=3392,
+  serialized_start=3202,
+  serialized_end=3491,
 )
 
 _INSTANCE_LABELSENTRY.containing_type = _INSTANCE
@@ -1167,6 +1206,7 @@ _INSTANCE.fields_by_name['secondary_disks'].message_type = _ATTACHEDDISK
 _INSTANCE.fields_by_name['local_disks'].message_type = _ATTACHEDLOCALDISK
 _INSTANCE.fields_by_name['filesystems'].message_type = _ATTACHEDFILESYSTEM
 _INSTANCE.fields_by_name['network_interfaces'].message_type = _NETWORKINTERFACE
+_INSTANCE.fields_by_name['gpu_settings'].message_type = _GPUSETTINGS
 _INSTANCE.fields_by_name['scheduling_policy'].message_type = _SCHEDULINGPOLICY
 _INSTANCE.fields_by_name['network_settings'].message_type = _NETWORKSETTINGS
 _INSTANCE.fields_by_name['placement_policy'].message_type = _PLACEMENTPOLICY
@@ -1202,6 +1242,7 @@ DESCRIPTOR.message_types_by_name['OneToOneNat'] = _ONETOONENAT
 DESCRIPTOR.message_types_by_name['DnsRecord'] = _DNSRECORD
 DESCRIPTOR.message_types_by_name['SchedulingPolicy'] = _SCHEDULINGPOLICY
 DESCRIPTOR.message_types_by_name['NetworkSettings'] = _NETWORKSETTINGS
+DESCRIPTOR.message_types_by_name['GpuSettings'] = _GPUSETTINGS
 DESCRIPTOR.message_types_by_name['PlacementPolicy'] = _PLACEMENTPOLICY
 DESCRIPTOR.message_types_by_name['MetadataOptions'] = _METADATAOPTIONS
 DESCRIPTOR.enum_types_by_name['IpVersion'] = _IPVERSION
@@ -1300,6 +1341,13 @@ NetworkSettings = _reflection.GeneratedProtocolMessageType('NetworkSettings', (_
   # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.NetworkSettings)
   })
 _sym_db.RegisterMessage(NetworkSettings)
+
+GpuSettings = _reflection.GeneratedProtocolMessageType('GpuSettings', (_message.Message,), {
+  'DESCRIPTOR' : _GPUSETTINGS,
+  '__module__' : 'yandex.cloud.compute.v1.instance_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.GpuSettings)
+  })
+_sym_db.RegisterMessage(GpuSettings)
 
 PlacementPolicy = _reflection.GeneratedProtocolMessageType('PlacementPolicy', (_message.Message,), {
 

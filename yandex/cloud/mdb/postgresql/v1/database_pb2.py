@@ -11,6 +11,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
@@ -20,9 +21,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\"yandex.cloud.api.mdb.postgresql.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1;postgresql',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n-yandex/cloud/mdb/postgresql/v1/database.proto\x12\x1eyandex.cloud.mdb.postgresql.v1\x1a\x1dyandex/cloud/validation.proto\"\xb5\x01\n\x08\x44\x61tabase\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12\r\n\x05owner\x18\x03 \x01(\t\x12\x12\n\nlc_collate\x18\x04 \x01(\t\x12\x10\n\x08lc_ctype\x18\x05 \x01(\t\x12=\n\nextensions\x18\x06 \x03(\x0b\x32).yandex.cloud.mdb.postgresql.v1.Extension\x12\x13\n\x0btemplate_db\x18\x07 \x01(\t\"*\n\tExtension\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\"\xb2\x02\n\x0c\x44\x61tabaseSpec\x12,\n\x04name\x18\x01 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12,\n\x05owner\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\r[a-zA-Z0-9_]*\x12+\n\nlc_collate\x18\x03 \x01(\tB\x17\xf2\xc7\x31\x13|[a-zA-Z_]+.UTF-8|C\x12)\n\x08lc_ctype\x18\x04 \x01(\tB\x17\xf2\xc7\x31\x13|[a-zA-Z_]+.UTF-8|C\x12=\n\nextensions\x18\x05 \x03(\x0b\x32).yandex.cloud.mdb.postgresql.v1.Extension\x12/\n\x0btemplate_db\x18\x06 \x01(\tB\x1a\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*Bs\n\"yandex.cloud.api.mdb.postgresql.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1;postgresqlb\x06proto3'
+  serialized_pb=b'\n-yandex/cloud/mdb/postgresql/v1/database.proto\x12\x1eyandex.cloud.mdb.postgresql.v1\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\xee\x01\n\x08\x44\x61tabase\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12\r\n\x05owner\x18\x03 \x01(\t\x12\x12\n\nlc_collate\x18\x04 \x01(\t\x12\x10\n\x08lc_ctype\x18\x05 \x01(\t\x12=\n\nextensions\x18\x06 \x03(\x0b\x32).yandex.cloud.mdb.postgresql.v1.Extension\x12\x13\n\x0btemplate_db\x18\x07 \x01(\t\x12\x37\n\x13\x64\x65letion_protection\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"*\n\tExtension\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07version\x18\x02 \x01(\t\"\xeb\x02\n\x0c\x44\x61tabaseSpec\x12,\n\x04name\x18\x01 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12,\n\x05owner\x18\x02 \x01(\tB\x1d\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\r[a-zA-Z0-9_]*\x12+\n\nlc_collate\x18\x03 \x01(\tB\x17\xf2\xc7\x31\x13|[a-zA-Z_]+.UTF-8|C\x12)\n\x08lc_ctype\x18\x04 \x01(\tB\x17\xf2\xc7\x31\x13|[a-zA-Z_]+.UTF-8|C\x12=\n\nextensions\x18\x05 \x03(\x0b\x32).yandex.cloud.mdb.postgresql.v1.Extension\x12/\n\x0btemplate_db\x18\x06 \x01(\tB\x1a\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x37\n\x13\x64\x65letion_protection\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.BoolValueBs\n\"yandex.cloud.api.mdb.postgresql.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1;postgresqlb\x06proto3'
   ,
-  dependencies=[yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
 
 
@@ -84,6 +85,13 @@ _DATABASE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='deletion_protection', full_name='yandex.cloud.mdb.postgresql.v1.Database.deletion_protection', index=7,
+      number=8, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -96,8 +104,8 @@ _DATABASE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=113,
-  serialized_end=294,
+  serialized_start=145,
+  serialized_end=383,
 )
 
 
@@ -135,8 +143,8 @@ _EXTENSION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=296,
-  serialized_end=338,
+  serialized_start=385,
+  serialized_end=427,
 )
 
 
@@ -190,6 +198,13 @@ _DATABASESPEC = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\212\3101\004<=63\362\3071\016[a-zA-Z0-9_-]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='deletion_protection', full_name='yandex.cloud.mdb.postgresql.v1.DatabaseSpec.deletion_protection', index=6,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -202,12 +217,14 @@ _DATABASESPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=341,
-  serialized_end=647,
+  serialized_start=430,
+  serialized_end=793,
 )
 
 _DATABASE.fields_by_name['extensions'].message_type = _EXTENSION
+_DATABASE.fields_by_name['deletion_protection'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
 _DATABASESPEC.fields_by_name['extensions'].message_type = _EXTENSION
+_DATABASESPEC.fields_by_name['deletion_protection'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
 DESCRIPTOR.message_types_by_name['Database'] = _DATABASE
 DESCRIPTOR.message_types_by_name['Extension'] = _EXTENSION
 DESCRIPTOR.message_types_by_name['DatabaseSpec'] = _DATABASESPEC
