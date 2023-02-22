@@ -4,7 +4,7 @@ import pkg_resources
 from yandex.cloud.endpoint.api_endpoint_service_pb2 import ListApiEndpointsRequest
 from yandex.cloud.endpoint.api_endpoint_service_pb2_grpc import ApiEndpointServiceStub
 from yandexcloud import _auth_plugin
-from yandexcloud._auth_fabric import get_auth_token_requester
+from yandexcloud._auth_fabric import get_auth_token_requester, YC_API_ENDPOINT
 
 try:
     VERSION = pkg_resources.get_distribution("yandexcloud").version
@@ -21,11 +21,12 @@ class Channels(object):
             private_key=kwargs.get("private_key"),
             certificate_chain=kwargs.get("certificate_chain"),
         )
-        self._endpoint = kwargs.get("endpoint", "api.cloud.yandex.net")
+        self._endpoint = kwargs.get("endpoint", YC_API_ENDPOINT)
         self._token_requester = get_auth_token_requester(
             token=kwargs.get("token"),
             service_account_key=kwargs.get("service_account_key"),
             iam_token=kwargs.get("iam_token"),
+            endpoint=self._endpoint,
         )
 
         self._unauthenticated_channel = None

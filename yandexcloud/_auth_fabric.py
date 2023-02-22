@@ -15,6 +15,8 @@ _MDS_URL = "http://{}/computeMetadata/v1/instance/service-accounts/default/token
 _MDS_HEADERS = {"Metadata-Flavor": "Google"}
 _MDS_TIMEOUT = (1.0, 1.0)  # 1sec connect, 1sec read
 
+YC_API_ENDPOINT = "api.cloud.yandex.net"
+
 
 def __validate_service_account_key(sa_key):
     if not isinstance(sa_key, dict):
@@ -43,7 +45,9 @@ def __validate_service_account_key(sa_key):
         raise RuntimeError(error_message)
 
 
-def get_auth_token_requester(token=None, service_account_key=None, iam_token=None, metadata_addr=_MDS_ADDR):
+def get_auth_token_requester(
+    token=None, service_account_key=None, iam_token=None, metadata_addr=_MDS_ADDR, endpoint=YC_API_ENDPOINT
+):
     auth_methods = [("token", token), ("service_account_key", service_account_key), ("iam_token", iam_token)]
     auth_methods = [(auth_type, value) for auth_type, value in auth_methods if value is not None]
 
@@ -60,7 +64,7 @@ def get_auth_token_requester(token=None, service_account_key=None, iam_token=Non
         return TokenAuth(token=token)
     if auth_name == "service_account_key":
         __validate_service_account_key(service_account_key)
-        return ServiceAccountAuth(service_account_key)
+        return ServiceAccountAuth(service_account_key, endpoint)
     if auth_name == "iam_token":
         return IamTokenAuth(iam_token)
 
@@ -92,19 +96,21 @@ class TokenAuth:
 class ServiceAccountAuth:
     __SECONDS_IN_HOUR = 60.0 * 60.0
 
-    def __init__(self, sa_key):
+    def __init__(self, sa_key, endpoint=YC_API_ENDPOINT):
         self.__sa_key = sa_key
+        self._endpoint = endpoint
 
     def get_token_request(self):
-        return CreateIamTokenRequest(jwt=self.__prepare_request())
+        return CreateIamTokenRequest(jwt=self.__prepare_request(self._endpoint))
 
-    def __prepare_request(self):
+    def __prepare_request(self, endpoint):
         now = time.time()
         now_utc = datetime.utcfromtimestamp(now)
         exp_utc = datetime.utcfromtimestamp(now + self.__SECONDS_IN_HOUR)
+        url = "https://iam.{}/iam/v1/tokens".format(endpoint)
         payload = {
             "iss": self.__sa_key["service_account_id"],
-            "aud": "https://iam.api.cloud.yandex.net/iam/v1/tokens",
+            "aud": url,
             "iat": now_utc,
             "exp": exp_utc,
         }
