@@ -2,6 +2,18 @@
 
 <!--next-version-placeholder-->
 
+## v0.200.0 (2023-02-22)
+### Feature
+* Make requests to IAM using specified endpoint instead of default (#67)
+
+* make requests to IAM in specified endpoint
+
+* imports
+
+---------
+
+Co-authored-by: sofya generalova <sageneralova@yandex-team.ru> ([`823b756`](https://github.com/yandex-cloud/python-sdk/commit/823b756889ec6dfe4f999d5123017e92e9b2db1f))
+
 ## v0.199.0 (2023-02-21)
 ### Feature
 * Regenerate proto ([`4c47930`](https://github.com/yandex-cloud/python-sdk/commit/4c4793096c63b148b1ba9be9d524ab21d1e0d3b3))
