@@ -93,6 +93,7 @@ class Dataproc(object):
         host_group_ids=None,
         security_group_ids=None,
         initialization_actions=None,
+        labels=None,
     ):
         """
         Create Yandex.Cloud Data Proc cluster.
@@ -182,6 +183,8 @@ class Dataproc(object):
         :type security_group_ids: List[str]
         :param initialization_actions: Set of init-actions to run when cluster starts
         :type initialization_actions: List[InitializationAction]
+        :param labels: Cluster labels as key:value pairs. No more than 64 per resource.
+        :type labels: Dict[str, str]
 
         :return: Cluster ID
         :rtype: str
@@ -299,6 +302,7 @@ class Dataproc(object):
             host_group_ids=host_group_ids,
             security_group_ids=security_group_ids,
             log_group_id=log_group_id,
+            labels=labels,
         )
         result = self.sdk.create_operation_and_get_result(
             request,
