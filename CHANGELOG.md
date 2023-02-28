@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.201.0 (2023-02-28)
+### Feature
+* Regenerate proto ([`9647882`](https://github.com/yandex-cloud/python-sdk/commit/96478821758ca189b5be08daa33f90bd285e61b0))
+
 ## v0.200.0 (2023-02-22)
 ### Feature
 * Make requests to IAM using specified endpoint instead of default (#67)
