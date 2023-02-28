@@ -82,6 +82,21 @@ class RegistryServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.ListDeviceTopicAliasesRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.ListDeviceTopicAliasesResponse.FromString,
                 )
+        self.ListDataStreamExports = channel.unary_unary(
+                '/yandex.cloud.iot.devices.v1.RegistryService/ListDataStreamExports',
+                request_serializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.ListDataStreamExportsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.ListDataStreamExportsResponse.FromString,
+                )
+        self.AddDataStreamExport = channel.unary_unary(
+                '/yandex.cloud.iot.devices.v1.RegistryService/AddDataStreamExport',
+                request_serializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.AddDataStreamExportRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
+        self.DeleteDataStreamExport = channel.unary_unary(
+                '/yandex.cloud.iot.devices.v1.RegistryService/DeleteDataStreamExport',
+                request_serializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.DeleteDataStreamExportRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
         self.ListOperations = channel.unary_unary(
                 '/yandex.cloud.iot.devices.v1.RegistryService/ListOperations',
                 request_serializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.ListRegistryOperationsRequest.SerializeToString,
@@ -185,6 +200,27 @@ class RegistryServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListDataStreamExports(self, request, context):
+        """Retrieves the list of YDS exports for the specified registry.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def AddDataStreamExport(self, request, context):
+        """Adds YDS export for the specified registry.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteDataStreamExport(self, request, context):
+        """Deletes the specified YDS export.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListOperations(self, request, context):
         """Lists operations for the specified registry.
         """
@@ -259,6 +295,21 @@ def add_RegistryServiceServicer_to_server(servicer, server):
                     servicer.ListDeviceTopicAliases,
                     request_deserializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.ListDeviceTopicAliasesRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.ListDeviceTopicAliasesResponse.SerializeToString,
+            ),
+            'ListDataStreamExports': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListDataStreamExports,
+                    request_deserializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.ListDataStreamExportsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.ListDataStreamExportsResponse.SerializeToString,
+            ),
+            'AddDataStreamExport': grpc.unary_unary_rpc_method_handler(
+                    servicer.AddDataStreamExport,
+                    request_deserializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.AddDataStreamExportRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'DeleteDataStreamExport': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteDataStreamExport,
+                    request_deserializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.DeleteDataStreamExportRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'ListOperations': grpc.unary_unary_rpc_method_handler(
                     servicer.ListOperations,
@@ -494,6 +545,57 @@ class RegistryService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.iot.devices.v1.RegistryService/ListDeviceTopicAliases',
             yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.ListDeviceTopicAliasesRequest.SerializeToString,
             yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.ListDeviceTopicAliasesResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListDataStreamExports(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.iot.devices.v1.RegistryService/ListDataStreamExports',
+            yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.ListDataStreamExportsRequest.SerializeToString,
+            yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.ListDataStreamExportsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def AddDataStreamExport(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.iot.devices.v1.RegistryService/AddDataStreamExport',
+            yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.AddDataStreamExportRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteDataStreamExport(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.iot.devices.v1.RegistryService/DeleteDataStreamExport',
+            yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.DeleteDataStreamExportRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
