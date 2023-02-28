@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v0.202.0 (2023-02-28)
+### Feature
+* #68 Add labels specifications to Dataproc wrapper (#69)
+
+Co-authored-by: Maksim Zinal <mzinal@ru.ibm.com> ([`a46e299`](https://github.com/yandex-cloud/python-sdk/commit/a46e299f3c3757a137987d0917804a0c85a155fe))
+
 ## v0.201.0 (2023-02-28)
 ### Feature
 * Regenerate proto ([`9647882`](https://github.com/yandex-cloud/python-sdk/commit/96478821758ca189b5be08daa33f90bd285e61b0))
