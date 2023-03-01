@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v0.203.0 (2023-03-01)
+### Feature
+* Added api-gateway websockets to list of supported modules (#70)
+
+Co-authored-by: Victor Kuzennyy <vvkuz@yandex-team.ru> ([`6bb77b8`](https://github.com/yandex-cloud/python-sdk/commit/6bb77b817f85859b8901e76252d9eb5256278226))
+
 ## v0.202.0 (2023-02-28)
 ### Feature
 * #68 Add labels specifications to Dataproc wrapper (#69)
