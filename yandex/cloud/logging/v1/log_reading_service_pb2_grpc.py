@@ -6,7 +6,7 @@ from yandex.cloud.logging.v1 import log_reading_service_pb2 as yandex_dot_cloud_
 
 
 class LogReadingServiceStub(object):
-    """A set of methods for reading from log groups. To make a request use `reader.logging.yandexcloud.net`.
+    """A set of methods for reading from log groups.
     """
 
     def __init__(self, channel):
@@ -23,7 +23,7 @@ class LogReadingServiceStub(object):
 
 
 class LogReadingServiceServicer(object):
-    """A set of methods for reading from log groups. To make a request use `reader.logging.yandexcloud.net`.
+    """A set of methods for reading from log groups.
     """
 
     def Read(self, request, context):
@@ -49,7 +49,7 @@ def add_LogReadingServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class LogReadingService(object):
-    """A set of methods for reading from log groups. To make a request use `reader.logging.yandexcloud.net`.
+    """A set of methods for reading from log groups.
     """
 
     @staticmethod

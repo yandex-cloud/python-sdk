@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\033yandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;compute',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n-yandex/cloud/compute/v1/placement_group.proto\x12\x17yandex.cloud.compute.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\xe9\x02\n\x0ePlacementGroup\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x43\n\x06labels\x18\x06 \x03(\x0b\x32\x33.yandex.cloud.compute.v1.PlacementGroup.LabelsEntry\x12U\n\x19spread_placement_strategy\x18\x07 \x01(\x0b\x32\x30.yandex.cloud.compute.v1.SpreadPlacementStrategyH\x00\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x1a\n\x12placement_strategy\x12\x04\xc0\xc1\x31\x01\"\x19\n\x17SpreadPlacementStrategyBb\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3'
+  serialized_pb=b'\n-yandex/cloud/compute/v1/placement_group.proto\x12\x17yandex.cloud.compute.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\xc6\x03\n\x0ePlacementGroup\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x43\n\x06labels\x18\x06 \x03(\x0b\x32\x33.yandex.cloud.compute.v1.PlacementGroup.LabelsEntry\x12U\n\x19spread_placement_strategy\x18\x07 \x01(\x0b\x32\x30.yandex.cloud.compute.v1.SpreadPlacementStrategyH\x00\x12[\n\x1cpartition_placement_strategy\x18\x08 \x01(\x0b\x32\x33.yandex.cloud.compute.v1.PartitionPlacementStrategyH\x00\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x1a\n\x12placement_strategy\x12\x04\xc0\xc1\x31\x01\"\x19\n\x17SpreadPlacementStrategy\"9\n\x1aPartitionPlacementStrategy\x12\x1b\n\npartitions\x18\x01 \x01(\x03\x42\x07\xfa\xc7\x31\x03\x32-5Bb\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -62,8 +62,8 @@ _PLACEMENTGROUP_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=427,
-  serialized_end=472,
+  serialized_start=520,
+  serialized_end=565,
 )
 
 _PLACEMENTGROUP = _descriptor.Descriptor(
@@ -123,6 +123,13 @@ _PLACEMENTGROUP = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='partition_placement_strategy', full_name='yandex.cloud.compute.v1.PlacementGroup.partition_placement_strategy', index=7,
+      number=8, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -141,7 +148,7 @@ _PLACEMENTGROUP = _descriptor.Descriptor(
     fields=[], serialized_options=b'\300\3011\001'),
   ],
   serialized_start=139,
-  serialized_end=500,
+  serialized_end=593,
 )
 
 
@@ -165,19 +172,56 @@ _SPREADPLACEMENTSTRATEGY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=502,
-  serialized_end=527,
+  serialized_start=595,
+  serialized_end=620,
+)
+
+
+_PARTITIONPLACEMENTSTRATEGY = _descriptor.Descriptor(
+  name='PartitionPlacementStrategy',
+  full_name='yandex.cloud.compute.v1.PartitionPlacementStrategy',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='partitions', full_name='yandex.cloud.compute.v1.PartitionPlacementStrategy.partitions', index=0,
+      number=1, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\372\3071\0032-5', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=622,
+  serialized_end=679,
 )
 
 _PLACEMENTGROUP_LABELSENTRY.containing_type = _PLACEMENTGROUP
 _PLACEMENTGROUP.fields_by_name['created_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _PLACEMENTGROUP.fields_by_name['labels'].message_type = _PLACEMENTGROUP_LABELSENTRY
 _PLACEMENTGROUP.fields_by_name['spread_placement_strategy'].message_type = _SPREADPLACEMENTSTRATEGY
+_PLACEMENTGROUP.fields_by_name['partition_placement_strategy'].message_type = _PARTITIONPLACEMENTSTRATEGY
 _PLACEMENTGROUP.oneofs_by_name['placement_strategy'].fields.append(
   _PLACEMENTGROUP.fields_by_name['spread_placement_strategy'])
 _PLACEMENTGROUP.fields_by_name['spread_placement_strategy'].containing_oneof = _PLACEMENTGROUP.oneofs_by_name['placement_strategy']
+_PLACEMENTGROUP.oneofs_by_name['placement_strategy'].fields.append(
+  _PLACEMENTGROUP.fields_by_name['partition_placement_strategy'])
+_PLACEMENTGROUP.fields_by_name['partition_placement_strategy'].containing_oneof = _PLACEMENTGROUP.oneofs_by_name['placement_strategy']
 DESCRIPTOR.message_types_by_name['PlacementGroup'] = _PLACEMENTGROUP
 DESCRIPTOR.message_types_by_name['SpreadPlacementStrategy'] = _SPREADPLACEMENTSTRATEGY
+DESCRIPTOR.message_types_by_name['PartitionPlacementStrategy'] = _PARTITIONPLACEMENTSTRATEGY
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 PlacementGroup = _reflection.GeneratedProtocolMessageType('PlacementGroup', (_message.Message,), {
@@ -202,8 +246,16 @@ SpreadPlacementStrategy = _reflection.GeneratedProtocolMessageType('SpreadPlacem
   })
 _sym_db.RegisterMessage(SpreadPlacementStrategy)
 
+PartitionPlacementStrategy = _reflection.GeneratedProtocolMessageType('PartitionPlacementStrategy', (_message.Message,), {
+  'DESCRIPTOR' : _PARTITIONPLACEMENTSTRATEGY,
+  '__module__' : 'yandex.cloud.compute.v1.placement_group_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.PartitionPlacementStrategy)
+  })
+_sym_db.RegisterMessage(PartitionPlacementStrategy)
+
 
 DESCRIPTOR._options = None
 _PLACEMENTGROUP_LABELSENTRY._options = None
 _PLACEMENTGROUP.oneofs_by_name['placement_strategy']._options = None
+_PARTITIONPLACEMENTSTRATEGY.fields_by_name['partitions']._options = None
 # @@protoc_insertion_point(module_scope)

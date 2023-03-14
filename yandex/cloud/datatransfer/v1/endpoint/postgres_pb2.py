@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n)yandex.cloud.api.datatransfer.v1.endpointZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1/endpoint;endpoint\252\002%Yandex.Cloud.Datatransfer.V1.EndPoint',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n4yandex/cloud/datatransfer/v1/endpoint/postgres.proto\x12%yandex.cloud.datatransfer.v1.endpoint\x1a\x32yandex/cloud/datatransfer/v1/endpoint/common.proto\"\xd8\n\n\x1ePostgresObjectTransferSettings\x12L\n\x08sequence\x18\x01 \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\x12U\n\x11sequence_owned_by\x18\x02 \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\x12I\n\x05table\x18\x03 \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\x12O\n\x0bprimary_key\x18\x04 \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\x12Q\n\rfk_constraint\x18\x05 \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\x12R\n\x0e\x64\x65\x66\x61ult_values\x18\x06 \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\x12N\n\nconstraint\x18\x07 \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\x12I\n\x05index\x18\x08 \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\x12H\n\x04view\x18\t \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\x12L\n\x08\x66unction\x18\n \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\x12K\n\x07trigger\x18\x0b \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\x12H\n\x04type\x18\x0c \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\x12H\n\x04rule\x18\r \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\x12M\n\tcollation\x18\x0e \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\x12J\n\x06policy\x18\x0f \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\x12H\n\x04\x63\x61st\x18\x10 \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\x12U\n\x11materialized_view\x18\x11 \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\"\x85\x01\n\x11OnPremisePostgres\x12\r\n\x05hosts\x18\x05 \x03(\t\x12\x0c\n\x04port\x18\x02 \x01(\x03\x12@\n\x08tls_mode\x18\x06 \x01(\x0b\x32..yandex.cloud.datatransfer.v1.endpoint.TLSMode\x12\x11\n\tsubnet_id\x18\x04 \x01(\t\"\x8c\x01\n\x12PostgresConnection\x12\x18\n\x0emdb_cluster_id\x18\x01 \x01(\tH\x00\x12N\n\non_premise\x18\x02 \x01(\x0b\x32\x38.yandex.cloud.datatransfer.v1.endpoint.OnPremisePostgresH\x00\x42\x0c\n\nconnection\"\xa7\x03\n\x0ePostgresSource\x12M\n\nconnection\x18\x01 \x01(\x0b\x32\x39.yandex.cloud.datatransfer.v1.endpoint.PostgresConnection\x12\x17\n\x0fsecurity_groups\x18\x0e \x03(\t\x12\x10\n\x08\x64\x61tabase\x18\x02 \x01(\t\x12\x0c\n\x04user\x18\x03 \x01(\t\x12?\n\x08password\x18\x04 \x01(\x0b\x32-.yandex.cloud.datatransfer.v1.endpoint.Secret\x12\x16\n\x0einclude_tables\x18\x05 \x03(\t\x12\x16\n\x0e\x65xclude_tables\x18\x06 \x03(\t\x12\x1b\n\x13slot_byte_lag_limit\x18\x08 \x01(\x03\x12\x16\n\x0eservice_schema\x18\t \x01(\t\x12g\n\x18object_transfer_settings\x18\r \x01(\x0b\x32\x45.yandex.cloud.datatransfer.v1.endpoint.PostgresObjectTransferSettings\"\xa7\x02\n\x0ePostgresTarget\x12M\n\nconnection\x18\x01 \x01(\x0b\x32\x39.yandex.cloud.datatransfer.v1.endpoint.PostgresConnection\x12\x17\n\x0fsecurity_groups\x18\x07 \x03(\t\x12\x10\n\x08\x64\x61tabase\x18\x02 \x01(\t\x12\x0c\n\x04user\x18\x03 \x01(\t\x12?\n\x08password\x18\x04 \x01(\x0b\x32-.yandex.cloud.datatransfer.v1.endpoint.Secret\x12L\n\x0e\x63leanup_policy\x18\x05 \x01(\x0e\x32\x34.yandex.cloud.datatransfer.v1.endpoint.CleanupPolicyB\xa7\x01\n)yandex.cloud.api.datatransfer.v1.endpointZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1/endpoint;endpoint\xaa\x02%Yandex.Cloud.Datatransfer.V1.EndPointb\x06proto3'
+  serialized_pb=b'\n4yandex/cloud/datatransfer/v1/endpoint/postgres.proto\x12%yandex.cloud.datatransfer.v1.endpoint\x1a\x32yandex/cloud/datatransfer/v1/endpoint/common.proto\"\xaa\x0b\n\x1ePostgresObjectTransferSettings\x12L\n\x08sequence\x18\x01 \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\x12U\n\x11sequence_owned_by\x18\x02 \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\x12P\n\x0csequence_set\x18\x12 \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\x12I\n\x05table\x18\x03 \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\x12O\n\x0bprimary_key\x18\x04 \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\x12Q\n\rfk_constraint\x18\x05 \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\x12R\n\x0e\x64\x65\x66\x61ult_values\x18\x06 \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\x12N\n\nconstraint\x18\x07 \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\x12I\n\x05index\x18\x08 \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\x12H\n\x04view\x18\t \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\x12U\n\x11materialized_view\x18\x11 \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\x12L\n\x08\x66unction\x18\n \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\x12K\n\x07trigger\x18\x0b \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\x12H\n\x04type\x18\x0c \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\x12H\n\x04rule\x18\r \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\x12M\n\tcollation\x18\x0e \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\x12J\n\x06policy\x18\x0f \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\x12H\n\x04\x63\x61st\x18\x10 \x01(\x0e\x32:.yandex.cloud.datatransfer.v1.endpoint.ObjectTransferStage\"\x85\x01\n\x11OnPremisePostgres\x12\r\n\x05hosts\x18\x05 \x03(\t\x12\x0c\n\x04port\x18\x02 \x01(\x03\x12@\n\x08tls_mode\x18\x06 \x01(\x0b\x32..yandex.cloud.datatransfer.v1.endpoint.TLSMode\x12\x11\n\tsubnet_id\x18\x04 \x01(\t\"\x8c\x01\n\x12PostgresConnection\x12\x18\n\x0emdb_cluster_id\x18\x01 \x01(\tH\x00\x12N\n\non_premise\x18\x02 \x01(\x0b\x32\x38.yandex.cloud.datatransfer.v1.endpoint.OnPremisePostgresH\x00\x42\x0c\n\nconnection\"\xa7\x03\n\x0ePostgresSource\x12M\n\nconnection\x18\x01 \x01(\x0b\x32\x39.yandex.cloud.datatransfer.v1.endpoint.PostgresConnection\x12\x17\n\x0fsecurity_groups\x18\x0e \x03(\t\x12\x10\n\x08\x64\x61tabase\x18\x02 \x01(\t\x12\x0c\n\x04user\x18\x03 \x01(\t\x12?\n\x08password\x18\x04 \x01(\x0b\x32-.yandex.cloud.datatransfer.v1.endpoint.Secret\x12\x16\n\x0einclude_tables\x18\x05 \x03(\t\x12\x16\n\x0e\x65xclude_tables\x18\x06 \x03(\t\x12\x1b\n\x13slot_byte_lag_limit\x18\x08 \x01(\x03\x12\x16\n\x0eservice_schema\x18\t \x01(\t\x12g\n\x18object_transfer_settings\x18\r \x01(\x0b\x32\x45.yandex.cloud.datatransfer.v1.endpoint.PostgresObjectTransferSettings\"\xa7\x02\n\x0ePostgresTarget\x12M\n\nconnection\x18\x01 \x01(\x0b\x32\x39.yandex.cloud.datatransfer.v1.endpoint.PostgresConnection\x12\x17\n\x0fsecurity_groups\x18\x07 \x03(\t\x12\x10\n\x08\x64\x61tabase\x18\x02 \x01(\t\x12\x0c\n\x04user\x18\x03 \x01(\t\x12?\n\x08password\x18\x04 \x01(\x0b\x32-.yandex.cloud.datatransfer.v1.endpoint.Secret\x12L\n\x0e\x63leanup_policy\x18\x05 \x01(\x0e\x32\x34.yandex.cloud.datatransfer.v1.endpoint.CleanupPolicyB\xa7\x01\n)yandex.cloud.api.datatransfer.v1.endpointZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1/endpoint;endpoint\xaa\x02%Yandex.Cloud.Datatransfer.V1.EndPointb\x06proto3'
   ,
   dependencies=[yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_common__pb2.DESCRIPTOR,])
 
@@ -50,106 +50,113 @@ _POSTGRESOBJECTTRANSFERSETTINGS = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='table', full_name='yandex.cloud.datatransfer.v1.endpoint.PostgresObjectTransferSettings.table', index=2,
+      name='sequence_set', full_name='yandex.cloud.datatransfer.v1.endpoint.PostgresObjectTransferSettings.sequence_set', index=2,
+      number=18, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='table', full_name='yandex.cloud.datatransfer.v1.endpoint.PostgresObjectTransferSettings.table', index=3,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='primary_key', full_name='yandex.cloud.datatransfer.v1.endpoint.PostgresObjectTransferSettings.primary_key', index=3,
+      name='primary_key', full_name='yandex.cloud.datatransfer.v1.endpoint.PostgresObjectTransferSettings.primary_key', index=4,
       number=4, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='fk_constraint', full_name='yandex.cloud.datatransfer.v1.endpoint.PostgresObjectTransferSettings.fk_constraint', index=4,
+      name='fk_constraint', full_name='yandex.cloud.datatransfer.v1.endpoint.PostgresObjectTransferSettings.fk_constraint', index=5,
       number=5, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='default_values', full_name='yandex.cloud.datatransfer.v1.endpoint.PostgresObjectTransferSettings.default_values', index=5,
+      name='default_values', full_name='yandex.cloud.datatransfer.v1.endpoint.PostgresObjectTransferSettings.default_values', index=6,
       number=6, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='constraint', full_name='yandex.cloud.datatransfer.v1.endpoint.PostgresObjectTransferSettings.constraint', index=6,
+      name='constraint', full_name='yandex.cloud.datatransfer.v1.endpoint.PostgresObjectTransferSettings.constraint', index=7,
       number=7, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='index', full_name='yandex.cloud.datatransfer.v1.endpoint.PostgresObjectTransferSettings.index', index=7,
+      name='index', full_name='yandex.cloud.datatransfer.v1.endpoint.PostgresObjectTransferSettings.index', index=8,
       number=8, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='view', full_name='yandex.cloud.datatransfer.v1.endpoint.PostgresObjectTransferSettings.view', index=8,
+      name='view', full_name='yandex.cloud.datatransfer.v1.endpoint.PostgresObjectTransferSettings.view', index=9,
       number=9, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='function', full_name='yandex.cloud.datatransfer.v1.endpoint.PostgresObjectTransferSettings.function', index=9,
+      name='materialized_view', full_name='yandex.cloud.datatransfer.v1.endpoint.PostgresObjectTransferSettings.materialized_view', index=10,
+      number=17, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='function', full_name='yandex.cloud.datatransfer.v1.endpoint.PostgresObjectTransferSettings.function', index=11,
       number=10, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='trigger', full_name='yandex.cloud.datatransfer.v1.endpoint.PostgresObjectTransferSettings.trigger', index=10,
+      name='trigger', full_name='yandex.cloud.datatransfer.v1.endpoint.PostgresObjectTransferSettings.trigger', index=12,
       number=11, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='type', full_name='yandex.cloud.datatransfer.v1.endpoint.PostgresObjectTransferSettings.type', index=11,
+      name='type', full_name='yandex.cloud.datatransfer.v1.endpoint.PostgresObjectTransferSettings.type', index=13,
       number=12, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='rule', full_name='yandex.cloud.datatransfer.v1.endpoint.PostgresObjectTransferSettings.rule', index=12,
+      name='rule', full_name='yandex.cloud.datatransfer.v1.endpoint.PostgresObjectTransferSettings.rule', index=14,
       number=13, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='collation', full_name='yandex.cloud.datatransfer.v1.endpoint.PostgresObjectTransferSettings.collation', index=13,
+      name='collation', full_name='yandex.cloud.datatransfer.v1.endpoint.PostgresObjectTransferSettings.collation', index=15,
       number=14, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='policy', full_name='yandex.cloud.datatransfer.v1.endpoint.PostgresObjectTransferSettings.policy', index=14,
+      name='policy', full_name='yandex.cloud.datatransfer.v1.endpoint.PostgresObjectTransferSettings.policy', index=16,
       number=15, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='cast', full_name='yandex.cloud.datatransfer.v1.endpoint.PostgresObjectTransferSettings.cast', index=15,
+      name='cast', full_name='yandex.cloud.datatransfer.v1.endpoint.PostgresObjectTransferSettings.cast', index=17,
       number=16, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='materialized_view', full_name='yandex.cloud.datatransfer.v1.endpoint.PostgresObjectTransferSettings.materialized_view', index=16,
-      number=17, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -167,7 +174,7 @@ _POSTGRESOBJECTTRANSFERSETTINGS = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=148,
-  serialized_end=1516,
+  serialized_end=1598,
 )
 
 
@@ -219,8 +226,8 @@ _ONPREMISEPOSTGRES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1519,
-  serialized_end=1652,
+  serialized_start=1601,
+  serialized_end=1734,
 )
 
 
@@ -263,8 +270,8 @@ _POSTGRESCONNECTION = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1655,
-  serialized_end=1795,
+  serialized_start=1737,
+  serialized_end=1877,
 )
 
 
@@ -358,8 +365,8 @@ _POSTGRESSOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1798,
-  serialized_end=2221,
+  serialized_start=1880,
+  serialized_end=2303,
 )
 
 
@@ -425,12 +432,13 @@ _POSTGRESTARGET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2224,
-  serialized_end=2519,
+  serialized_start=2306,
+  serialized_end=2601,
 )
 
 _POSTGRESOBJECTTRANSFERSETTINGS.fields_by_name['sequence'].enum_type = yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_common__pb2._OBJECTTRANSFERSTAGE
 _POSTGRESOBJECTTRANSFERSETTINGS.fields_by_name['sequence_owned_by'].enum_type = yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_common__pb2._OBJECTTRANSFERSTAGE
+_POSTGRESOBJECTTRANSFERSETTINGS.fields_by_name['sequence_set'].enum_type = yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_common__pb2._OBJECTTRANSFERSTAGE
 _POSTGRESOBJECTTRANSFERSETTINGS.fields_by_name['table'].enum_type = yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_common__pb2._OBJECTTRANSFERSTAGE
 _POSTGRESOBJECTTRANSFERSETTINGS.fields_by_name['primary_key'].enum_type = yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_common__pb2._OBJECTTRANSFERSTAGE
 _POSTGRESOBJECTTRANSFERSETTINGS.fields_by_name['fk_constraint'].enum_type = yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_common__pb2._OBJECTTRANSFERSTAGE
@@ -438,6 +446,7 @@ _POSTGRESOBJECTTRANSFERSETTINGS.fields_by_name['default_values'].enum_type = yan
 _POSTGRESOBJECTTRANSFERSETTINGS.fields_by_name['constraint'].enum_type = yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_common__pb2._OBJECTTRANSFERSTAGE
 _POSTGRESOBJECTTRANSFERSETTINGS.fields_by_name['index'].enum_type = yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_common__pb2._OBJECTTRANSFERSTAGE
 _POSTGRESOBJECTTRANSFERSETTINGS.fields_by_name['view'].enum_type = yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_common__pb2._OBJECTTRANSFERSTAGE
+_POSTGRESOBJECTTRANSFERSETTINGS.fields_by_name['materialized_view'].enum_type = yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_common__pb2._OBJECTTRANSFERSTAGE
 _POSTGRESOBJECTTRANSFERSETTINGS.fields_by_name['function'].enum_type = yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_common__pb2._OBJECTTRANSFERSTAGE
 _POSTGRESOBJECTTRANSFERSETTINGS.fields_by_name['trigger'].enum_type = yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_common__pb2._OBJECTTRANSFERSTAGE
 _POSTGRESOBJECTTRANSFERSETTINGS.fields_by_name['type'].enum_type = yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_common__pb2._OBJECTTRANSFERSTAGE
@@ -445,7 +454,6 @@ _POSTGRESOBJECTTRANSFERSETTINGS.fields_by_name['rule'].enum_type = yandex_dot_cl
 _POSTGRESOBJECTTRANSFERSETTINGS.fields_by_name['collation'].enum_type = yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_common__pb2._OBJECTTRANSFERSTAGE
 _POSTGRESOBJECTTRANSFERSETTINGS.fields_by_name['policy'].enum_type = yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_common__pb2._OBJECTTRANSFERSTAGE
 _POSTGRESOBJECTTRANSFERSETTINGS.fields_by_name['cast'].enum_type = yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_common__pb2._OBJECTTRANSFERSTAGE
-_POSTGRESOBJECTTRANSFERSETTINGS.fields_by_name['materialized_view'].enum_type = yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_common__pb2._OBJECTTRANSFERSTAGE
 _ONPREMISEPOSTGRES.fields_by_name['tls_mode'].message_type = yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_common__pb2._TLSMODE
 _POSTGRESCONNECTION.fields_by_name['on_premise'].message_type = _ONPREMISEPOSTGRES
 _POSTGRESCONNECTION.oneofs_by_name['connection'].fields.append(

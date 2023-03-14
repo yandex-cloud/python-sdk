@@ -6,7 +6,7 @@ from yandex.cloud.logging.v1 import log_ingestion_service_pb2 as yandex_dot_clou
 
 
 class LogIngestionServiceStub(object):
-    """A set of methods for writing to log groups. To make a request use `ingester.logging.yandexcloud.net`.
+    """A set of methods for writing to log groups.
     """
 
     def __init__(self, channel):
@@ -23,7 +23,7 @@ class LogIngestionServiceStub(object):
 
 
 class LogIngestionServiceServicer(object):
-    """A set of methods for writing to log groups. To make a request use `ingester.logging.yandexcloud.net`.
+    """A set of methods for writing to log groups.
     """
 
     def Write(self, request, context):
@@ -49,7 +49,7 @@ def add_LogIngestionServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class LogIngestionService(object):
-    """A set of methods for writing to log groups. To make a request use `ingester.logging.yandexcloud.net`.
+    """A set of methods for writing to log groups.
     """
 
     @staticmethod

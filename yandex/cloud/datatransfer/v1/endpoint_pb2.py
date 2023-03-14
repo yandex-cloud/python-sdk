@@ -13,6 +13,7 @@ _sym_db = _symbol_database.Default()
 
 from yandex.cloud.datatransfer.v1.endpoint import clickhouse_pb2 as yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_clickhouse__pb2
 from yandex.cloud.datatransfer.v1.endpoint import common_pb2 as yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_common__pb2
+from yandex.cloud.datatransfer.v1.endpoint import kafka_pb2 as yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_kafka__pb2
 from yandex.cloud.datatransfer.v1.endpoint import mongo_pb2 as yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_mongo__pb2
 from yandex.cloud.datatransfer.v1.endpoint import mysql_pb2 as yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_mysql__pb2
 from yandex.cloud.datatransfer.v1.endpoint import postgres_pb2 as yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_postgres__pb2
@@ -24,9 +25,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n yandex.cloud.api.datatransfer.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1;datatransfer',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n+yandex/cloud/datatransfer/v1/endpoint.proto\x12\x1cyandex.cloud.datatransfer.v1\x1a\x36yandex/cloud/datatransfer/v1/endpoint/clickhouse.proto\x1a\x32yandex/cloud/datatransfer/v1/endpoint/common.proto\x1a\x31yandex/cloud/datatransfer/v1/endpoint/mongo.proto\x1a\x31yandex/cloud/datatransfer/v1/endpoint/mysql.proto\x1a\x34yandex/cloud/datatransfer/v1/endpoint/postgres.proto\"\x81\x02\n\x08\x45ndpoint\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x42\n\x06labels\x18\x06 \x03(\x0b\x32\x32.yandex.cloud.datatransfer.v1.Endpoint.LabelsEntry\x12@\n\x08settings\x18\x34 \x01(\x0b\x32..yandex.cloud.datatransfer.v1.EndpointSettings\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x9e\x05\n\x10\x45ndpointSettings\x12J\n\x0cmysql_source\x18\x01 \x01(\x0b\x32\x32.yandex.cloud.datatransfer.v1.endpoint.MysqlSourceH\x00\x12P\n\x0fpostgres_source\x18\x02 \x01(\x0b\x32\x35.yandex.cloud.datatransfer.v1.endpoint.PostgresSourceH\x00\x12J\n\x0cmongo_source\x18\t \x01(\x0b\x32\x32.yandex.cloud.datatransfer.v1.endpoint.MongoSourceH\x00\x12T\n\x11\x63lickhouse_source\x18\x10 \x01(\x0b\x32\x37.yandex.cloud.datatransfer.v1.endpoint.ClickhouseSourceH\x00\x12J\n\x0cmysql_target\x18\x65 \x01(\x0b\x32\x32.yandex.cloud.datatransfer.v1.endpoint.MysqlTargetH\x00\x12P\n\x0fpostgres_target\x18\x66 \x01(\x0b\x32\x35.yandex.cloud.datatransfer.v1.endpoint.PostgresTargetH\x00\x12T\n\x11\x63lickhouse_target\x18h \x01(\x0b\x32\x37.yandex.cloud.datatransfer.v1.endpoint.ClickhouseTargetH\x00\x12J\n\x0cmongo_target\x18o \x01(\x0b\x32\x32.yandex.cloud.datatransfer.v1.endpoint.MongoTargetH\x00\x42\n\n\x08settingsBq\n yandex.cloud.api.datatransfer.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1;datatransferb\x06proto3'
+  serialized_pb=b'\n+yandex/cloud/datatransfer/v1/endpoint.proto\x12\x1cyandex.cloud.datatransfer.v1\x1a\x36yandex/cloud/datatransfer/v1/endpoint/clickhouse.proto\x1a\x32yandex/cloud/datatransfer/v1/endpoint/common.proto\x1a\x31yandex/cloud/datatransfer/v1/endpoint/kafka.proto\x1a\x31yandex/cloud/datatransfer/v1/endpoint/mongo.proto\x1a\x31yandex/cloud/datatransfer/v1/endpoint/mysql.proto\x1a\x34yandex/cloud/datatransfer/v1/endpoint/postgres.proto\"\x81\x02\n\x08\x45ndpoint\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x42\n\x06labels\x18\x06 \x03(\x0b\x32\x32.yandex.cloud.datatransfer.v1.Endpoint.LabelsEntry\x12@\n\x08settings\x18\x34 \x01(\x0b\x32..yandex.cloud.datatransfer.v1.EndpointSettings\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xb6\x06\n\x10\x45ndpointSettings\x12J\n\x0cmysql_source\x18\x01 \x01(\x0b\x32\x32.yandex.cloud.datatransfer.v1.endpoint.MysqlSourceH\x00\x12P\n\x0fpostgres_source\x18\x02 \x01(\x0b\x32\x35.yandex.cloud.datatransfer.v1.endpoint.PostgresSourceH\x00\x12J\n\x0ckafka_source\x18\x08 \x01(\x0b\x32\x32.yandex.cloud.datatransfer.v1.endpoint.KafkaSourceH\x00\x12J\n\x0cmongo_source\x18\t \x01(\x0b\x32\x32.yandex.cloud.datatransfer.v1.endpoint.MongoSourceH\x00\x12T\n\x11\x63lickhouse_source\x18\x10 \x01(\x0b\x32\x37.yandex.cloud.datatransfer.v1.endpoint.ClickhouseSourceH\x00\x12J\n\x0cmysql_target\x18\x65 \x01(\x0b\x32\x32.yandex.cloud.datatransfer.v1.endpoint.MysqlTargetH\x00\x12P\n\x0fpostgres_target\x18\x66 \x01(\x0b\x32\x35.yandex.cloud.datatransfer.v1.endpoint.PostgresTargetH\x00\x12T\n\x11\x63lickhouse_target\x18h \x01(\x0b\x32\x37.yandex.cloud.datatransfer.v1.endpoint.ClickhouseTargetH\x00\x12J\n\x0ckafka_target\x18n \x01(\x0b\x32\x32.yandex.cloud.datatransfer.v1.endpoint.KafkaTargetH\x00\x12J\n\x0cmongo_target\x18o \x01(\x0b\x32\x32.yandex.cloud.datatransfer.v1.endpoint.MongoTargetH\x00\x42\n\n\x08settingsBq\n yandex.cloud.api.datatransfer.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1;datatransferb\x06proto3'
   ,
-  dependencies=[yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_clickhouse__pb2.DESCRIPTOR,yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_common__pb2.DESCRIPTOR,yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_mongo__pb2.DESCRIPTOR,yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_mysql__pb2.DESCRIPTOR,yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_postgres__pb2.DESCRIPTOR,])
+  dependencies=[yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_clickhouse__pb2.DESCRIPTOR,yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_common__pb2.DESCRIPTOR,yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_kafka__pb2.DESCRIPTOR,yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_mongo__pb2.DESCRIPTOR,yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_mysql__pb2.DESCRIPTOR,yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_postgres__pb2.DESCRIPTOR,])
 
 
 
@@ -65,8 +66,8 @@ _ENDPOINT_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=554,
-  serialized_end=599,
+  serialized_start=605,
+  serialized_end=650,
 )
 
 _ENDPOINT = _descriptor.Descriptor(
@@ -131,8 +132,8 @@ _ENDPOINT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=342,
-  serialized_end=599,
+  serialized_start=393,
+  serialized_end=650,
 )
 
 
@@ -159,42 +160,56 @@ _ENDPOINTSETTINGS = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='mongo_source', full_name='yandex.cloud.datatransfer.v1.EndpointSettings.mongo_source', index=2,
+      name='kafka_source', full_name='yandex.cloud.datatransfer.v1.EndpointSettings.kafka_source', index=2,
+      number=8, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='mongo_source', full_name='yandex.cloud.datatransfer.v1.EndpointSettings.mongo_source', index=3,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='clickhouse_source', full_name='yandex.cloud.datatransfer.v1.EndpointSettings.clickhouse_source', index=3,
+      name='clickhouse_source', full_name='yandex.cloud.datatransfer.v1.EndpointSettings.clickhouse_source', index=4,
       number=16, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='mysql_target', full_name='yandex.cloud.datatransfer.v1.EndpointSettings.mysql_target', index=4,
+      name='mysql_target', full_name='yandex.cloud.datatransfer.v1.EndpointSettings.mysql_target', index=5,
       number=101, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='postgres_target', full_name='yandex.cloud.datatransfer.v1.EndpointSettings.postgres_target', index=5,
+      name='postgres_target', full_name='yandex.cloud.datatransfer.v1.EndpointSettings.postgres_target', index=6,
       number=102, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='clickhouse_target', full_name='yandex.cloud.datatransfer.v1.EndpointSettings.clickhouse_target', index=6,
+      name='clickhouse_target', full_name='yandex.cloud.datatransfer.v1.EndpointSettings.clickhouse_target', index=7,
       number=104, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='mongo_target', full_name='yandex.cloud.datatransfer.v1.EndpointSettings.mongo_target', index=7,
+      name='kafka_target', full_name='yandex.cloud.datatransfer.v1.EndpointSettings.kafka_target', index=8,
+      number=110, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='mongo_target', full_name='yandex.cloud.datatransfer.v1.EndpointSettings.mongo_target', index=9,
       number=111, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -217,8 +232,8 @@ _ENDPOINTSETTINGS = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=602,
-  serialized_end=1272,
+  serialized_start=653,
+  serialized_end=1475,
 )
 
 _ENDPOINT_LABELSENTRY.containing_type = _ENDPOINT
@@ -226,11 +241,13 @@ _ENDPOINT.fields_by_name['labels'].message_type = _ENDPOINT_LABELSENTRY
 _ENDPOINT.fields_by_name['settings'].message_type = _ENDPOINTSETTINGS
 _ENDPOINTSETTINGS.fields_by_name['mysql_source'].message_type = yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_mysql__pb2._MYSQLSOURCE
 _ENDPOINTSETTINGS.fields_by_name['postgres_source'].message_type = yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_postgres__pb2._POSTGRESSOURCE
+_ENDPOINTSETTINGS.fields_by_name['kafka_source'].message_type = yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_kafka__pb2._KAFKASOURCE
 _ENDPOINTSETTINGS.fields_by_name['mongo_source'].message_type = yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_mongo__pb2._MONGOSOURCE
 _ENDPOINTSETTINGS.fields_by_name['clickhouse_source'].message_type = yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_clickhouse__pb2._CLICKHOUSESOURCE
 _ENDPOINTSETTINGS.fields_by_name['mysql_target'].message_type = yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_mysql__pb2._MYSQLTARGET
 _ENDPOINTSETTINGS.fields_by_name['postgres_target'].message_type = yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_postgres__pb2._POSTGRESTARGET
 _ENDPOINTSETTINGS.fields_by_name['clickhouse_target'].message_type = yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_clickhouse__pb2._CLICKHOUSETARGET
+_ENDPOINTSETTINGS.fields_by_name['kafka_target'].message_type = yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_kafka__pb2._KAFKATARGET
 _ENDPOINTSETTINGS.fields_by_name['mongo_target'].message_type = yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_mongo__pb2._MONGOTARGET
 _ENDPOINTSETTINGS.oneofs_by_name['settings'].fields.append(
   _ENDPOINTSETTINGS.fields_by_name['mysql_source'])
@@ -238,6 +255,9 @@ _ENDPOINTSETTINGS.fields_by_name['mysql_source'].containing_oneof = _ENDPOINTSET
 _ENDPOINTSETTINGS.oneofs_by_name['settings'].fields.append(
   _ENDPOINTSETTINGS.fields_by_name['postgres_source'])
 _ENDPOINTSETTINGS.fields_by_name['postgres_source'].containing_oneof = _ENDPOINTSETTINGS.oneofs_by_name['settings']
+_ENDPOINTSETTINGS.oneofs_by_name['settings'].fields.append(
+  _ENDPOINTSETTINGS.fields_by_name['kafka_source'])
+_ENDPOINTSETTINGS.fields_by_name['kafka_source'].containing_oneof = _ENDPOINTSETTINGS.oneofs_by_name['settings']
 _ENDPOINTSETTINGS.oneofs_by_name['settings'].fields.append(
   _ENDPOINTSETTINGS.fields_by_name['mongo_source'])
 _ENDPOINTSETTINGS.fields_by_name['mongo_source'].containing_oneof = _ENDPOINTSETTINGS.oneofs_by_name['settings']
@@ -253,6 +273,9 @@ _ENDPOINTSETTINGS.fields_by_name['postgres_target'].containing_oneof = _ENDPOINT
 _ENDPOINTSETTINGS.oneofs_by_name['settings'].fields.append(
   _ENDPOINTSETTINGS.fields_by_name['clickhouse_target'])
 _ENDPOINTSETTINGS.fields_by_name['clickhouse_target'].containing_oneof = _ENDPOINTSETTINGS.oneofs_by_name['settings']
+_ENDPOINTSETTINGS.oneofs_by_name['settings'].fields.append(
+  _ENDPOINTSETTINGS.fields_by_name['kafka_target'])
+_ENDPOINTSETTINGS.fields_by_name['kafka_target'].containing_oneof = _ENDPOINTSETTINGS.oneofs_by_name['settings']
 _ENDPOINTSETTINGS.oneofs_by_name['settings'].fields.append(
   _ENDPOINTSETTINGS.fields_by_name['mongo_target'])
 _ENDPOINTSETTINGS.fields_by_name['mongo_target'].containing_oneof = _ENDPOINTSETTINGS.oneofs_by_name['settings']
