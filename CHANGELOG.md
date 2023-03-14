@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.204.0 (2023-03-14)
+### Feature
+* Regenerate proto ([`b92b683`](https://github.com/yandex-cloud/python-sdk/commit/b92b683e30b867ce1aa9383c4d78b2abccfd01f8))
+
 ## v0.203.0 (2023-03-01)
 ### Feature
 * Added api-gateway websockets to list of supported modules (#70)
