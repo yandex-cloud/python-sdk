@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\033yandex.cloud.api.billing.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/billing/v1;billing',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n$yandex/cloud/billing/v1/budget.proto\x12\x17yandex.cloud.billing.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\x86\x03\n\x06\x42udget\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1a\n\x12\x62illing_account_id\x18\x04 \x01(\t\x12\x35\n\x06status\x18\x05 \x01(\x0e\x32%.yandex.cloud.billing.v1.BudgetStatus\x12>\n\x0b\x63ost_budget\x18\x06 \x01(\x0b\x32\'.yandex.cloud.billing.v1.CostBudgetSpecH\x00\x12\x44\n\x0e\x65xpense_budget\x18\x07 \x01(\x0b\x32*.yandex.cloud.billing.v1.ExpenseBudgetSpecH\x00\x12\x44\n\x0e\x62\x61lance_budget\x18\x08 \x01(\x0b\x32*.yandex.cloud.billing.v1.BalanceBudgetSpecH\x00\x42\x13\n\x0b\x62udget_spec\x12\x04\xc0\xc1\x31\x01\"\xc2\x02\n\x0e\x43ostBudgetSpec\x12\x0e\n\x06\x61mount\x18\x01 \x01(\t\x12%\n\x1dnotification_user_account_ids\x18\x02 \x03(\t\x12?\n\x0fthreshold_rules\x18\x03 \x03(\x0b\x32&.yandex.cloud.billing.v1.ThresholdRule\x12:\n\x06\x66ilter\x18\x04 \x01(\x0b\x32*.yandex.cloud.billing.v1.ConsumptionFilter\x12@\n\x0creset_period\x18\x05 \x01(\x0e\x32(.yandex.cloud.billing.v1.ResetPeriodTypeH\x00\x12\x14\n\nstart_date\x18\x06 \x01(\tH\x00\x12\x10\n\x08\x65nd_date\x18\x07 \x01(\tB\x12\n\nstart_type\x12\x04\xc0\xc1\x31\x01\"\xc5\x02\n\x11\x45xpenseBudgetSpec\x12\x0e\n\x06\x61mount\x18\x01 \x01(\t\x12%\n\x1dnotification_user_account_ids\x18\x02 \x03(\t\x12?\n\x0fthreshold_rules\x18\x03 \x03(\x0b\x32&.yandex.cloud.billing.v1.ThresholdRule\x12:\n\x06\x66ilter\x18\x04 \x01(\x0b\x32*.yandex.cloud.billing.v1.ConsumptionFilter\x12@\n\x0creset_period\x18\x05 \x01(\x0e\x32(.yandex.cloud.billing.v1.ResetPeriodTypeH\x00\x12\x14\n\nstart_date\x18\x06 \x01(\tH\x00\x12\x10\n\x08\x65nd_date\x18\x07 \x01(\tB\x12\n\nstart_type\x12\x04\xc0\xc1\x31\x01\"\xb1\x01\n\x11\x42\x61lanceBudgetSpec\x12\x0e\n\x06\x61mount\x18\x01 \x01(\t\x12%\n\x1dnotification_user_account_ids\x18\x02 \x03(\t\x12?\n\x0fthreshold_rules\x18\x03 \x03(\x0b\x32&.yandex.cloud.billing.v1.ThresholdRule\x12\x12\n\nstart_date\x18\x04 \x01(\t\x12\x10\n\x08\x65nd_date\x18\x05 \x01(\t\"\x7f\n\x11\x43onsumptionFilter\x12\x13\n\x0bservice_ids\x18\x01 \x03(\t\x12U\n\x15\x63loud_folders_filters\x18\x02 \x03(\x0b\x32\x36.yandex.cloud.billing.v1.CloudFoldersConsumptionFilter\"E\n\x1d\x43loudFoldersConsumptionFilter\x12\x10\n\x08\x63loud_id\x18\x01 \x01(\t\x12\x12\n\nfolder_ids\x18\x02 \x03(\t\"|\n\rThresholdRule\x12\x34\n\x04type\x18\x01 \x01(\x0e\x32&.yandex.cloud.billing.v1.ThresholdType\x12\x0e\n\x06\x61mount\x18\x02 \x01(\t\x12%\n\x1dnotification_user_account_ids\x18\x03 \x03(\t*U\n\x0c\x42udgetStatus\x12\x1d\n\x19\x42UDGET_STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08\x46INISHED\x10\x03*\\\n\x0fResetPeriodType\x12!\n\x1dRESET_PERIOD_TYPE_UNSPECIFIED\x10\x00\x12\x0b\n\x07MONTHLY\x10\x01\x12\x0b\n\x07QUARTER\x10\x02\x12\x0c\n\x08\x41NNUALLY\x10\x03*H\n\rThresholdType\x12\x1e\n\x1aTHRESHOLD_TYPE_UNSPECIFIED\x10\x00\x12\x0b\n\x07PERCENT\x10\x01\x12\n\n\x06\x41MOUNT\x10\x02\x42\x62\n\x1byandex.cloud.api.billing.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/billing/v1;billingb\x06proto3'
+  serialized_pb=b'\n$yandex/cloud/billing/v1/budget.proto\x12\x17yandex.cloud.billing.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\x86\x03\n\x06\x42udget\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1a\n\x12\x62illing_account_id\x18\x04 \x01(\t\x12\x35\n\x06status\x18\x05 \x01(\x0e\x32%.yandex.cloud.billing.v1.BudgetStatus\x12>\n\x0b\x63ost_budget\x18\x06 \x01(\x0b\x32\'.yandex.cloud.billing.v1.CostBudgetSpecH\x00\x12\x44\n\x0e\x65xpense_budget\x18\x07 \x01(\x0b\x32*.yandex.cloud.billing.v1.ExpenseBudgetSpecH\x00\x12\x44\n\x0e\x62\x61lance_budget\x18\x08 \x01(\x0b\x32*.yandex.cloud.billing.v1.BalanceBudgetSpecH\x00\x42\x13\n\x0b\x62udget_spec\x12\x04\xc0\xc1\x31\x01\"\xd7\x02\n\x0e\x43ostBudgetSpec\x12\x14\n\x06\x61mount\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12.\n\x1dnotification_user_account_ids\x18\x02 \x03(\tB\x07\x82\xc8\x31\x03>=1\x12?\n\x0fthreshold_rules\x18\x03 \x03(\x0b\x32&.yandex.cloud.billing.v1.ThresholdRule\x12:\n\x06\x66ilter\x18\x04 \x01(\x0b\x32*.yandex.cloud.billing.v1.ConsumptionFilter\x12@\n\x0creset_period\x18\x05 \x01(\x0e\x32(.yandex.cloud.billing.v1.ResetPeriodTypeH\x00\x12\x14\n\nstart_date\x18\x06 \x01(\tH\x00\x12\x16\n\x08\x65nd_date\x18\x07 \x01(\tB\x04\xe8\xc7\x31\x01\x42\x12\n\nstart_type\x12\x04\xc0\xc1\x31\x01\"\xda\x02\n\x11\x45xpenseBudgetSpec\x12\x14\n\x06\x61mount\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12.\n\x1dnotification_user_account_ids\x18\x02 \x03(\tB\x07\x82\xc8\x31\x03>=1\x12?\n\x0fthreshold_rules\x18\x03 \x03(\x0b\x32&.yandex.cloud.billing.v1.ThresholdRule\x12:\n\x06\x66ilter\x18\x04 \x01(\x0b\x32*.yandex.cloud.billing.v1.ConsumptionFilter\x12@\n\x0creset_period\x18\x05 \x01(\x0e\x32(.yandex.cloud.billing.v1.ResetPeriodTypeH\x00\x12\x14\n\nstart_date\x18\x06 \x01(\tH\x00\x12\x16\n\x08\x65nd_date\x18\x07 \x01(\tB\x04\xe8\xc7\x31\x01\x42\x12\n\nstart_type\x12\x04\xc0\xc1\x31\x01\"\xc6\x01\n\x11\x42\x61lanceBudgetSpec\x12\x14\n\x06\x61mount\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12.\n\x1dnotification_user_account_ids\x18\x02 \x03(\tB\x07\x82\xc8\x31\x03>=1\x12?\n\x0fthreshold_rules\x18\x03 \x03(\x0b\x32&.yandex.cloud.billing.v1.ThresholdRule\x12\x12\n\nstart_date\x18\x04 \x01(\t\x12\x16\n\x08\x65nd_date\x18\x05 \x01(\tB\x04\xe8\xc7\x31\x01\"\x7f\n\x11\x43onsumptionFilter\x12\x13\n\x0bservice_ids\x18\x01 \x03(\t\x12U\n\x15\x63loud_folders_filters\x18\x02 \x03(\x0b\x32\x36.yandex.cloud.billing.v1.CloudFoldersConsumptionFilter\"E\n\x1d\x43loudFoldersConsumptionFilter\x12\x10\n\x08\x63loud_id\x18\x01 \x01(\t\x12\x12\n\nfolder_ids\x18\x02 \x03(\t\"\x88\x01\n\rThresholdRule\x12:\n\x04type\x18\x01 \x01(\x0e\x32&.yandex.cloud.billing.v1.ThresholdTypeB\x04\xe8\xc7\x31\x01\x12\x14\n\x06\x61mount\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12%\n\x1dnotification_user_account_ids\x18\x03 \x03(\t*U\n\x0c\x42udgetStatus\x12\x1d\n\x19\x42UDGET_STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08\x46INISHED\x10\x03*\\\n\x0fResetPeriodType\x12!\n\x1dRESET_PERIOD_TYPE_UNSPECIFIED\x10\x00\x12\x0b\n\x07MONTHLY\x10\x01\x12\x0b\n\x07QUARTER\x10\x02\x12\x0c\n\x08\x41NNUALLY\x10\x03*H\n\rThresholdType\x12\x1e\n\x1aTHRESHOLD_TYPE_UNSPECIFIED\x10\x00\x12\x0b\n\x07PERCENT\x10\x01\x12\n\n\x06\x41MOUNT\x10\x02\x42\x62\n\x1byandex.cloud.api.billing.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/billing/v1;billingb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -56,8 +56,8 @@ _BUDGETSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1681,
-  serialized_end=1766,
+  serialized_start=1757,
+  serialized_end=1842,
 )
 _sym_db.RegisterEnumDescriptor(_BUDGETSTATUS)
 
@@ -92,8 +92,8 @@ _RESETPERIODTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1768,
-  serialized_end=1860,
+  serialized_start=1844,
+  serialized_end=1936,
 )
 _sym_db.RegisterEnumDescriptor(_RESETPERIODTYPE)
 
@@ -123,8 +123,8 @@ _THRESHOLDTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1862,
-  serialized_end=1934,
+  serialized_start=1938,
+  serialized_end=2010,
 )
 _sym_db.RegisterEnumDescriptor(_THRESHOLDTYPE)
 
@@ -243,14 +243,14 @@ _COSTBUDGETSPEC = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='notification_user_account_ids', full_name='yandex.cloud.billing.v1.CostBudgetSpec.notification_user_account_ids', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\202\3101\003>=1', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='threshold_rules', full_name='yandex.cloud.billing.v1.CostBudgetSpec.threshold_rules', index=2,
       number=3, type=11, cpp_type=10, label=3,
@@ -285,7 +285,7 @@ _COSTBUDGETSPEC = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -304,7 +304,7 @@ _COSTBUDGETSPEC = _descriptor.Descriptor(
     fields=[], serialized_options=b'\300\3011\001'),
   ],
   serialized_start=523,
-  serialized_end=845,
+  serialized_end=866,
 )
 
 
@@ -322,14 +322,14 @@ _EXPENSEBUDGETSPEC = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='notification_user_account_ids', full_name='yandex.cloud.billing.v1.ExpenseBudgetSpec.notification_user_account_ids', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\202\3101\003>=1', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='threshold_rules', full_name='yandex.cloud.billing.v1.ExpenseBudgetSpec.threshold_rules', index=2,
       number=3, type=11, cpp_type=10, label=3,
@@ -364,7 +364,7 @@ _EXPENSEBUDGETSPEC = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -382,8 +382,8 @@ _EXPENSEBUDGETSPEC = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[], serialized_options=b'\300\3011\001'),
   ],
-  serialized_start=848,
-  serialized_end=1173,
+  serialized_start=869,
+  serialized_end=1215,
 )
 
 
@@ -401,14 +401,14 @@ _BALANCEBUDGETSPEC = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='notification_user_account_ids', full_name='yandex.cloud.billing.v1.BalanceBudgetSpec.notification_user_account_ids', index=1,
       number=2, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\202\3101\003>=1', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='threshold_rules', full_name='yandex.cloud.billing.v1.BalanceBudgetSpec.threshold_rules', index=2,
       number=3, type=11, cpp_type=10, label=3,
@@ -429,7 +429,7 @@ _BALANCEBUDGETSPEC = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -442,8 +442,8 @@ _BALANCEBUDGETSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1176,
-  serialized_end=1353,
+  serialized_start=1218,
+  serialized_end=1416,
 )
 
 
@@ -481,8 +481,8 @@ _CONSUMPTIONFILTER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1355,
-  serialized_end=1482,
+  serialized_start=1418,
+  serialized_end=1545,
 )
 
 
@@ -520,8 +520,8 @@ _CLOUDFOLDERSCONSUMPTIONFILTER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1484,
-  serialized_end=1553,
+  serialized_start=1547,
+  serialized_end=1616,
 )
 
 
@@ -539,14 +539,14 @@ _THRESHOLDRULE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='amount', full_name='yandex.cloud.billing.v1.ThresholdRule.amount', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='notification_user_account_ids', full_name='yandex.cloud.billing.v1.ThresholdRule.notification_user_account_ids', index=2,
       number=3, type=9, cpp_type=9, label=3,
@@ -566,8 +566,8 @@ _THRESHOLDRULE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1555,
-  serialized_end=1679,
+  serialized_start=1619,
+  serialized_end=1755,
 )
 
 _BUDGET.fields_by_name['created_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
@@ -670,5 +670,16 @@ _sym_db.RegisterMessage(ThresholdRule)
 DESCRIPTOR._options = None
 _BUDGET.oneofs_by_name['budget_spec']._options = None
 _COSTBUDGETSPEC.oneofs_by_name['start_type']._options = None
+_COSTBUDGETSPEC.fields_by_name['amount']._options = None
+_COSTBUDGETSPEC.fields_by_name['notification_user_account_ids']._options = None
+_COSTBUDGETSPEC.fields_by_name['end_date']._options = None
 _EXPENSEBUDGETSPEC.oneofs_by_name['start_type']._options = None
+_EXPENSEBUDGETSPEC.fields_by_name['amount']._options = None
+_EXPENSEBUDGETSPEC.fields_by_name['notification_user_account_ids']._options = None
+_EXPENSEBUDGETSPEC.fields_by_name['end_date']._options = None
+_BALANCEBUDGETSPEC.fields_by_name['amount']._options = None
+_BALANCEBUDGETSPEC.fields_by_name['notification_user_account_ids']._options = None
+_BALANCEBUDGETSPEC.fields_by_name['end_date']._options = None
+_THRESHOLDRULE.fields_by_name['type']._options = None
+_THRESHOLDRULE.fields_by_name['amount']._options = None
 # @@protoc_insertion_point(module_scope)
