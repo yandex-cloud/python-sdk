@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\027yandex.cloud.api.cdn.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/cdn/v1;cdn',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\"yandex/cloud/cdn/v1/raw_logs.proto\x12\x13yandex.cloud.cdn.v1\x1a\x1dyandex/cloud/validation.proto\"v\n\x0fRawLogsSettings\x12#\n\x0b\x62ucket_name\x18\x01 \x01(\tB\x0e\xe8\xc7\x31\x01\x8a\xc8\x31\x06<=1024\x12\x1f\n\rbucket_region\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\x0b\x66ile_prefix\x18\x03 \x01(\tB\x08\x8a\xc8\x31\x04<=50*\x87\x01\n\rRawLogsStatus\x12\x1f\n\x1bRAW_LOGS_STATUS_UNSPECIFIED\x10\x00\x12!\n\x1dRAW_LOGS_STATUS_NOT_ACTIVATED\x10\x01\x12\x16\n\x12RAW_LOGS_STATUS_OK\x10\x02\x12\x1a\n\x16RAW_LOGS_STATUS_FAILED\x10\x03\x42V\n\x17yandex.cloud.api.cdn.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/cdn/v1;cdnb\x06proto3'
+  serialized_pb=b'\n\"yandex/cloud/cdn/v1/raw_logs.proto\x12\x13yandex.cloud.cdn.v1\x1a\x1dyandex/cloud/validation.proto\"v\n\x0fRawLogsSettings\x12#\n\x0b\x62ucket_name\x18\x01 \x01(\tB\x0e\xe8\xc7\x31\x01\x8a\xc8\x31\x06<=1024\x12\x1f\n\rbucket_region\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\x0b\x66ile_prefix\x18\x03 \x01(\tB\x08\x8a\xc8\x31\x04<=50*\xa4\x01\n\rRawLogsStatus\x12\x1f\n\x1bRAW_LOGS_STATUS_UNSPECIFIED\x10\x00\x12!\n\x1dRAW_LOGS_STATUS_NOT_ACTIVATED\x10\x01\x12\x16\n\x12RAW_LOGS_STATUS_OK\x10\x02\x12\x1a\n\x16RAW_LOGS_STATUS_FAILED\x10\x03\x12\x1b\n\x17RAW_LOGS_STATUS_PENDING\x10\x04\x42V\n\x17yandex.cloud.api.cdn.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/cdn/v1;cdnb\x06proto3'
   ,
   dependencies=[yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -52,11 +52,16 @@ _RAWLOGSSTATUS = _descriptor.EnumDescriptor(
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='RAW_LOGS_STATUS_PENDING', index=4, number=4,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
   serialized_start=211,
-  serialized_end=346,
+  serialized_end=375,
 )
 _sym_db.RegisterEnumDescriptor(_RAWLOGSSTATUS)
 
@@ -65,6 +70,7 @@ RAW_LOGS_STATUS_UNSPECIFIED = 0
 RAW_LOGS_STATUS_NOT_ACTIVATED = 1
 RAW_LOGS_STATUS_OK = 2
 RAW_LOGS_STATUS_FAILED = 3
+RAW_LOGS_STATUS_PENDING = 4
 
 
 
