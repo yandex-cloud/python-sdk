@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\"yandex.cloud.api.mdb.postgresql.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1;postgresql',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n6yandex/cloud/mdb/postgresql/v1/perf_diag_service.proto\x12\x1eyandex.cloud.mdb.postgresql.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\x1a.yandex/cloud/mdb/postgresql/v1/perf_diag.proto\"\xd7\x01\n\x18ListRawStatementsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12-\n\tfrom_time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07to_time\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1e\n\tpage_size\x18\x04 \x01(\x03\x42\x0b\xfa\xc7\x31\x07<=10000\x12\x1d\n\npage_token\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=100\"x\n\x19ListRawStatementsResponse\x12\x42\n\nstatements\x18\x01 \x03(\x0b\x32..yandex.cloud.mdb.postgresql.v1.QueryStatement\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xaa\x01\n\x1dPerformanceDiagnosticsService\x12\x88\x01\n\x11ListRawStatements\x12\x38.yandex.cloud.mdb.postgresql.v1.ListRawStatementsRequest\x1a\x39.yandex.cloud.mdb.postgresql.v1.ListRawStatementsResponseBs\n\"yandex.cloud.api.mdb.postgresql.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1;postgresqlb\x06proto3'
+  serialized_pb=b'\n6yandex/cloud/mdb/postgresql/v1/perf_diag_service.proto\x12\x1eyandex.cloud.mdb.postgresql.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\x1a.yandex/cloud/mdb/postgresql/v1/perf_diag.proto\"\xd7\x01\n\x18ListRawStatementsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12-\n\tfrom_time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07to_time\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1e\n\tpage_size\x18\x04 \x01(\x03\x42\x0b\xfa\xc7\x31\x07<=10000\x12\x1d\n\npage_token\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=100\"\xda\x01\n\x1bListRawSessionStatesRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12-\n\tfrom_time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12+\n\x07to_time\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1e\n\tpage_size\x18\x04 \x01(\x03\x42\x0b\xfa\xc7\x31\x07<=10000\x12\x1d\n\npage_token\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=100\"}\n\x1cListRawSessionStatesResponse\x12\x44\n\x0esession_states\x18\x01 \x03(\x0b\x32,.yandex.cloud.mdb.postgresql.v1.SessionState\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"x\n\x19ListRawStatementsResponse\x12\x42\n\nstatements\x18\x01 \x03(\x0b\x32..yandex.cloud.mdb.postgresql.v1.QueryStatement\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xbe\x02\n\x1dPerformanceDiagnosticsService\x12\x91\x01\n\x14ListRawSessionStates\x12;.yandex.cloud.mdb.postgresql.v1.ListRawSessionStatesRequest\x1a<.yandex.cloud.mdb.postgresql.v1.ListRawSessionStatesResponse\x12\x88\x01\n\x11ListRawStatements\x12\x38.yandex.cloud.mdb.postgresql.v1.ListRawStatementsRequest\x1a\x39.yandex.cloud.mdb.postgresql.v1.ListRawStatementsResponseBs\n\"yandex.cloud.api.mdb.postgresql.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1;postgresqlb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_perf__diag__pb2.DESCRIPTOR,])
 
@@ -89,6 +89,105 @@ _LISTRAWSTATEMENTSREQUEST = _descriptor.Descriptor(
 )
 
 
+_LISTRAWSESSIONSTATESREQUEST = _descriptor.Descriptor(
+  name='ListRawSessionStatesRequest',
+  full_name='yandex.cloud.mdb.postgresql.v1.ListRawSessionStatesRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='cluster_id', full_name='yandex.cloud.mdb.postgresql.v1.ListRawSessionStatesRequest.cluster_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='from_time', full_name='yandex.cloud.mdb.postgresql.v1.ListRawSessionStatesRequest.from_time', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='to_time', full_name='yandex.cloud.mdb.postgresql.v1.ListRawSessionStatesRequest.to_time', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='page_size', full_name='yandex.cloud.mdb.postgresql.v1.ListRawSessionStatesRequest.page_size', index=3,
+      number=4, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\372\3071\007<=10000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='page_token', full_name='yandex.cloud.mdb.postgresql.v1.ListRawSessionStatesRequest.page_token', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=421,
+  serialized_end=639,
+)
+
+
+_LISTRAWSESSIONSTATESRESPONSE = _descriptor.Descriptor(
+  name='ListRawSessionStatesResponse',
+  full_name='yandex.cloud.mdb.postgresql.v1.ListRawSessionStatesResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='session_states', full_name='yandex.cloud.mdb.postgresql.v1.ListRawSessionStatesResponse.session_states', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='next_page_token', full_name='yandex.cloud.mdb.postgresql.v1.ListRawSessionStatesResponse.next_page_token', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=641,
+  serialized_end=766,
+)
+
+
 _LISTRAWSTATEMENTSRESPONSE = _descriptor.Descriptor(
   name='ListRawStatementsResponse',
   full_name='yandex.cloud.mdb.postgresql.v1.ListRawStatementsResponse',
@@ -123,14 +222,19 @@ _LISTRAWSTATEMENTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=420,
-  serialized_end=540,
+  serialized_start=768,
+  serialized_end=888,
 )
 
 _LISTRAWSTATEMENTSREQUEST.fields_by_name['from_time'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _LISTRAWSTATEMENTSREQUEST.fields_by_name['to_time'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_LISTRAWSESSIONSTATESREQUEST.fields_by_name['from_time'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_LISTRAWSESSIONSTATESREQUEST.fields_by_name['to_time'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_LISTRAWSESSIONSTATESRESPONSE.fields_by_name['session_states'].message_type = yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_perf__diag__pb2._SESSIONSTATE
 _LISTRAWSTATEMENTSRESPONSE.fields_by_name['statements'].message_type = yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_perf__diag__pb2._QUERYSTATEMENT
 DESCRIPTOR.message_types_by_name['ListRawStatementsRequest'] = _LISTRAWSTATEMENTSREQUEST
+DESCRIPTOR.message_types_by_name['ListRawSessionStatesRequest'] = _LISTRAWSESSIONSTATESREQUEST
+DESCRIPTOR.message_types_by_name['ListRawSessionStatesResponse'] = _LISTRAWSESSIONSTATESRESPONSE
 DESCRIPTOR.message_types_by_name['ListRawStatementsResponse'] = _LISTRAWSTATEMENTSRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -140,6 +244,20 @@ ListRawStatementsRequest = _reflection.GeneratedProtocolMessageType('ListRawStat
   # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.postgresql.v1.ListRawStatementsRequest)
   })
 _sym_db.RegisterMessage(ListRawStatementsRequest)
+
+ListRawSessionStatesRequest = _reflection.GeneratedProtocolMessageType('ListRawSessionStatesRequest', (_message.Message,), {
+  'DESCRIPTOR' : _LISTRAWSESSIONSTATESREQUEST,
+  '__module__' : 'yandex.cloud.mdb.postgresql.v1.perf_diag_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.postgresql.v1.ListRawSessionStatesRequest)
+  })
+_sym_db.RegisterMessage(ListRawSessionStatesRequest)
+
+ListRawSessionStatesResponse = _reflection.GeneratedProtocolMessageType('ListRawSessionStatesResponse', (_message.Message,), {
+  'DESCRIPTOR' : _LISTRAWSESSIONSTATESRESPONSE,
+  '__module__' : 'yandex.cloud.mdb.postgresql.v1.perf_diag_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.postgresql.v1.ListRawSessionStatesResponse)
+  })
+_sym_db.RegisterMessage(ListRawSessionStatesResponse)
 
 ListRawStatementsResponse = _reflection.GeneratedProtocolMessageType('ListRawStatementsResponse', (_message.Message,), {
   'DESCRIPTOR' : _LISTRAWSTATEMENTSRESPONSE,
@@ -153,6 +271,9 @@ DESCRIPTOR._options = None
 _LISTRAWSTATEMENTSREQUEST.fields_by_name['cluster_id']._options = None
 _LISTRAWSTATEMENTSREQUEST.fields_by_name['page_size']._options = None
 _LISTRAWSTATEMENTSREQUEST.fields_by_name['page_token']._options = None
+_LISTRAWSESSIONSTATESREQUEST.fields_by_name['cluster_id']._options = None
+_LISTRAWSESSIONSTATESREQUEST.fields_by_name['page_size']._options = None
+_LISTRAWSESSIONSTATESREQUEST.fields_by_name['page_token']._options = None
 
 _PERFORMANCEDIAGNOSTICSSERVICE = _descriptor.ServiceDescriptor(
   name='PerformanceDiagnosticsService',
@@ -161,13 +282,23 @@ _PERFORMANCEDIAGNOSTICSSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=543,
-  serialized_end=713,
+  serialized_start=891,
+  serialized_end=1209,
   methods=[
+  _descriptor.MethodDescriptor(
+    name='ListRawSessionStates',
+    full_name='yandex.cloud.mdb.postgresql.v1.PerformanceDiagnosticsService.ListRawSessionStates',
+    index=0,
+    containing_service=None,
+    input_type=_LISTRAWSESSIONSTATESREQUEST,
+    output_type=_LISTRAWSESSIONSTATESRESPONSE,
+    serialized_options=None,
+    create_key=_descriptor._internal_create_key,
+  ),
   _descriptor.MethodDescriptor(
     name='ListRawStatements',
     full_name='yandex.cloud.mdb.postgresql.v1.PerformanceDiagnosticsService.ListRawStatements',
-    index=0,
+    index=1,
     containing_service=None,
     input_type=_LISTRAWSTATEMENTSREQUEST,
     output_type=_LISTRAWSTATEMENTSRESPONSE,

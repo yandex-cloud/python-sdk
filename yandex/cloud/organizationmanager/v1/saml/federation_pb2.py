@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n,yandex.cloud.api.organizationmanager.v1.samlZQgithub.com/yandex-cloud/go-genproto/yandex/cloud/organizationmanager/v1/saml;saml',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n9yandex/cloud/organizationmanager/v1/saml/federation.proto\x12(yandex.cloud.organizationmanager.v1.saml\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\xbc\x05\n\nFederation\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x17\n\x0forganization_id\x18\x02 \x01(\t\x12\x33\n\x04name\x18\x03 \x01(\tB%\xe8\xc7\x31\x01\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12.\n\ncreated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12>\n\x0e\x63ookie_max_age\x18\x06 \x01(\x0b\x32\x19.google.protobuf.DurationB\x0b\xfa\xc7\x31\x07\x31\x30m-12h\x12$\n\x1c\x61uto_create_account_on_login\x18\x07 \x01(\x08\x12\x1e\n\x06issuer\x18\x08 \x01(\tB\x0e\xe8\xc7\x31\x01\x8a\xc8\x31\x06<=8000\x12J\n\x0bsso_binding\x18\t \x01(\x0e\x32\x35.yandex.cloud.organizationmanager.v1.saml.BindingType\x12\x1f\n\x07sso_url\x18\n \x01(\tB\x0e\xe8\xc7\x31\x01\x8a\xc8\x31\x06<=8000\x12_\n\x11security_settings\x18\x0b \x01(\x0b\x32\x44.yandex.cloud.organizationmanager.v1.saml.FederationSecuritySettings\x12!\n\x19\x63\x61se_insensitive_name_ids\x18\x0c \x01(\x08\x12P\n\x06labels\x18\r \x03(\x0b\x32@.yandex.cloud.organizationmanager.v1.saml.Federation.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\":\n\x1a\x46\x65\x64\x65rationSecuritySettings\x12\x1c\n\x14\x65ncrypted_assertions\x18\x01 \x01(\x08*Q\n\x0b\x42indingType\x12\x1c\n\x18\x42INDING_TYPE_UNSPECIFIED\x10\x00\x12\x08\n\x04POST\x10\x01\x12\x0c\n\x08REDIRECT\x10\x02\x12\x0c\n\x08\x41RTIFACT\x10\x03\x42\x81\x01\n,yandex.cloud.api.organizationmanager.v1.samlZQgithub.com/yandex-cloud/go-genproto/yandex/cloud/organizationmanager/v1/saml;samlb\x06proto3'
+  serialized_pb=b'\n9yandex/cloud/organizationmanager/v1/saml/federation.proto\x12(yandex.cloud.organizationmanager.v1.saml\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\xbc\x05\n\nFederation\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x17\n\x0forganization_id\x18\x02 \x01(\t\x12\x33\n\x04name\x18\x03 \x01(\tB%\xe8\xc7\x31\x01\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12.\n\ncreated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12>\n\x0e\x63ookie_max_age\x18\x06 \x01(\x0b\x32\x19.google.protobuf.DurationB\x0b\xfa\xc7\x31\x07\x31\x30m-12h\x12$\n\x1c\x61uto_create_account_on_login\x18\x07 \x01(\x08\x12\x1e\n\x06issuer\x18\x08 \x01(\tB\x0e\xe8\xc7\x31\x01\x8a\xc8\x31\x06<=8000\x12J\n\x0bsso_binding\x18\t \x01(\x0e\x32\x35.yandex.cloud.organizationmanager.v1.saml.BindingType\x12\x1f\n\x07sso_url\x18\n \x01(\tB\x0e\xe8\xc7\x31\x01\x8a\xc8\x31\x06<=8000\x12_\n\x11security_settings\x18\x0b \x01(\x0b\x32\x44.yandex.cloud.organizationmanager.v1.saml.FederationSecuritySettings\x12!\n\x19\x63\x61se_insensitive_name_ids\x18\x0c \x01(\x08\x12P\n\x06labels\x18\r \x03(\x0b\x32@.yandex.cloud.organizationmanager.v1.saml.Federation.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"O\n\x1a\x46\x65\x64\x65rationSecuritySettings\x12\x1c\n\x14\x65ncrypted_assertions\x18\x01 \x01(\x08\x12\x13\n\x0b\x66orce_authn\x18\x02 \x01(\x08*Q\n\x0b\x42indingType\x12\x1c\n\x18\x42INDING_TYPE_UNSPECIFIED\x10\x00\x12\x08\n\x04POST\x10\x01\x12\x0c\n\x08REDIRECT\x10\x02\x12\x0c\n\x08\x41RTIFACT\x10\x03\x42\x81\x01\n,yandex.cloud.api.organizationmanager.v1.samlZQgithub.com/yandex-cloud/go-genproto/yandex/cloud/organizationmanager/v1/saml;samlb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -57,8 +57,8 @@ _BINDINGTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=962,
-  serialized_end=1043,
+  serialized_start=983,
+  serialized_end=1064,
 )
 _sym_db.RegisterEnumDescriptor(_BINDINGTYPE)
 
@@ -239,6 +239,13 @@ _FEDERATIONSECURITYSETTINGS = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='force_authn', full_name='yandex.cloud.organizationmanager.v1.saml.FederationSecuritySettings.force_authn', index=1,
+      number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -252,7 +259,7 @@ _FEDERATIONSECURITYSETTINGS = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=902,
-  serialized_end=960,
+  serialized_end=981,
 )
 
 _FEDERATION_LABELSENTRY.containing_type = _FEDERATION

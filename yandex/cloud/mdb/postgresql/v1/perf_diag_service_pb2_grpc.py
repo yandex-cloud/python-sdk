@@ -15,6 +15,11 @@ class PerformanceDiagnosticsServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
+        self.ListRawSessionStates = channel.unary_unary(
+                '/yandex.cloud.mdb.postgresql.v1.PerformanceDiagnosticsService/ListRawSessionStates',
+                request_serializer=yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_perf__diag__service__pb2.ListRawSessionStatesRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_perf__diag__service__pb2.ListRawSessionStatesResponse.FromString,
+                )
         self.ListRawStatements = channel.unary_unary(
                 '/yandex.cloud.mdb.postgresql.v1.PerformanceDiagnosticsService/ListRawStatements',
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_perf__diag__service__pb2.ListRawStatementsRequest.SerializeToString,
@@ -26,9 +31,15 @@ class PerformanceDiagnosticsServiceServicer(object):
     """A set of methods for getting PostgreSQL performance diagnostics.
     """
 
-    def ListRawStatements(self, request, context):
+    def ListRawSessionStates(self, request, context):
         """Handlers for raw data export
         """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListRawStatements(self, request, context):
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -36,6 +47,11 @@ class PerformanceDiagnosticsServiceServicer(object):
 
 def add_PerformanceDiagnosticsServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
+            'ListRawSessionStates': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListRawSessionStates,
+                    request_deserializer=yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_perf__diag__service__pb2.ListRawSessionStatesRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_perf__diag__service__pb2.ListRawSessionStatesResponse.SerializeToString,
+            ),
             'ListRawStatements': grpc.unary_unary_rpc_method_handler(
                     servicer.ListRawStatements,
                     request_deserializer=yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_perf__diag__service__pb2.ListRawStatementsRequest.FromString,
@@ -51,6 +67,23 @@ def add_PerformanceDiagnosticsServiceServicer_to_server(servicer, server):
 class PerformanceDiagnosticsService(object):
     """A set of methods for getting PostgreSQL performance diagnostics.
     """
+
+    @staticmethod
+    def ListRawSessionStates(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.mdb.postgresql.v1.PerformanceDiagnosticsService/ListRawSessionStates',
+            yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_perf__diag__service__pb2.ListRawSessionStatesRequest.SerializeToString,
+            yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_perf__diag__service__pb2.ListRawSessionStatesResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def ListRawStatements(request,

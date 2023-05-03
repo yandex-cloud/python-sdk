@@ -26,7 +26,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\033yandex.cloud.api.storage.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/storage/v1;storage',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n,yandex/cloud/storage/v1/bucket_service.proto\x12\x17yandex.cloud.storage.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a$yandex/cloud/storage/v1/bucket.proto\x1a\x1dyandex/cloud/validation.proto\"\xaf\x01\n\x10GetBucketRequest\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12<\n\x04view\x18\x02 \x01(\x0e\x32..yandex.cloud.storage.v1.GetBucketRequest.View\"I\n\x04View\x12\x14\n\x10VIEW_UNSPECIFIED\x10\x00\x12\x0e\n\nVIEW_BASIC\x10\x01\x12\x0c\n\x08VIEW_ACL\x10\x02\x12\r\n\tVIEW_FULL\x10\x03\"5\n\x12ListBucketsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"G\n\x13ListBucketsResponse\x12\x30\n\x07\x62uckets\x18\x01 \x03(\x0b\x32\x1f.yandex.cloud.storage.v1.Bucket\"\xa1\x02\n\x13\x43reateBucketRequest\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1f\n\tfolder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\x15\x64\x65\x66\x61ult_storage_class\x18\x04 \x01(\t\x12\x10\n\x08max_size\x18\x05 \x01(\x03\x12M\n\x16\x61nonymous_access_flags\x18\x06 \x01(\x0b\x32-.yandex.cloud.storage.v1.AnonymousAccessFlags\x12)\n\x03\x61\x63l\x18\x07 \x01(\x0b\x32\x1c.yandex.cloud.storage.v1.ACL\x12*\n\x04tags\x18\x08 \x03(\x0b\x32\x1c.yandex.cloud.storage.v1.Tag\"$\n\x14\x43reateBucketMetadata\x12\x0c\n\x04name\x18\x01 \x01(\t\"\x89\x05\n\x13UpdateBucketRequest\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x35\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe8\xc7\x31\x01\x12M\n\x16\x61nonymous_access_flags\x18\x03 \x01(\x0b\x32-.yandex.cloud.storage.v1.AnonymousAccessFlags\x12\x1d\n\x15\x64\x65\x66\x61ult_storage_class\x18\x04 \x01(\t\x12\x10\n\x08max_size\x18\x05 \x01(\x03\x12/\n\x04\x63ors\x18\x06 \x03(\x0b\x32!.yandex.cloud.storage.v1.CorsRule\x12\x42\n\x10website_settings\x18\x07 \x01(\x0b\x32(.yandex.cloud.storage.v1.WebsiteSettings\x12\x37\n\nversioning\x18\x08 \x01(\x0e\x32#.yandex.cloud.storage.v1.Versioning\x12?\n\x0flifecycle_rules\x18\t \x03(\x0b\x32&.yandex.cloud.storage.v1.LifecycleRule\x12\'\n\x06policy\x18\n \x01(\x0b\x32\x17.google.protobuf.Struct\x12)\n\x03\x61\x63l\x18\x0b \x01(\x0b\x32\x1c.yandex.cloud.storage.v1.ACL\x12*\n\x04tags\x18\x0c \x03(\x0b\x32\x1c.yandex.cloud.storage.v1.Tag\x12\x38\n\x0bobject_lock\x18\r \x01(\x0b\x32#.yandex.cloud.storage.v1.ObjectLock\"$\n\x14UpdateBucketMetadata\x12\x0c\n\x04name\x18\x01 \x01(\t\")\n\x13\x44\x65leteBucketRequest\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"$\n\x14\x44\x65leteBucketMetadata\x12\x0c\n\x04name\x18\x01 \x01(\t\"+\n\x15GetBucketStatsRequest\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"1\n\x1bGetBucketHTTPSConfigRequest\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"n\n\x1cSelfManagedHTTPSConfigParams\x12&\n\x0f\x63\x65rtificate_pem\x18\x01 \x01(\tB\r\x8a\xc8\x31\t<=3145728\x12&\n\x0fprivate_key_pem\x18\x02 \x01(\tB\r\x8a\xc8\x31\t<=3145728\"=\n#CertificateManagerHTTPSConfigParams\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\"\xed\x01\n\x1bSetBucketHTTPSConfigRequest\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12M\n\x0cself_managed\x18\x02 \x01(\x0b\x32\x35.yandex.cloud.storage.v1.SelfManagedHTTPSConfigParamsH\x00\x12[\n\x13\x63\x65rtificate_manager\x18\x03 \x01(\x0b\x32<.yandex.cloud.storage.v1.CertificateManagerHTTPSConfigParamsH\x00\x42\x0e\n\x06params\x12\x04\xc0\xc1\x31\x01\",\n\x1cSetBucketHTTPSConfigMetadata\x12\x0c\n\x04name\x18\x01 \x01(\t\"4\n\x1e\x44\x65leteBucketHTTPSConfigRequest\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"/\n\x1f\x44\x65leteBucketHTTPSConfigMetadata\x12\x0c\n\x04name\x18\x01 \x01(\t2\xe1\x0b\n\rBucketService\x12~\n\x04List\x12+.yandex.cloud.storage.v1.ListBucketsRequest\x1a,.yandex.cloud.storage.v1.ListBucketsResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/storage/v1/buckets\x12u\n\x03Get\x12).yandex.cloud.storage.v1.GetBucketRequest\x1a\x1f.yandex.cloud.storage.v1.Bucket\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/storage/v1/buckets/{name}\x12\x9b\x01\n\x06\x43reate\x12,.yandex.cloud.storage.v1.CreateBucketRequest\x1a!.yandex.cloud.operation.Operation\"@\x82\xd3\xe4\x93\x02\x18\"\x13/storage/v1/buckets:\x01*\xb2\xd2*\x1e\n\x14\x43reateBucketMetadata\x12\x06\x42ucket\x12\xa2\x01\n\x06Update\x12,.yandex.cloud.storage.v1.UpdateBucketRequest\x1a!.yandex.cloud.operation.Operation\"G\x82\xd3\xe4\x93\x02\x1f\x32\x1a/storage/v1/buckets/{name}:\x01*\xb2\xd2*\x1e\n\x14UpdateBucketMetadata\x12\x06\x42ucket\x12\xae\x01\n\x06\x44\x65lete\x12,.yandex.cloud.storage.v1.DeleteBucketRequest\x1a!.yandex.cloud.operation.Operation\"S\x82\xd3\xe4\x93\x02\x1c*\x1a/storage/v1/buckets/{name}\xb2\xd2*-\n\x14\x44\x65leteBucketMetadata\x12\x15google.protobuf.Empty\x12\x8d\x01\n\x08GetStats\x12..yandex.cloud.storage.v1.GetBucketStatsRequest\x1a$.yandex.cloud.storage.v1.BucketStats\"+\x82\xd3\xe4\x93\x02%\x12#/storage/v1/buckets/{name}:getStats\x12\x9f\x01\n\x0eGetHTTPSConfig\x12\x34.yandex.cloud.storage.v1.GetBucketHTTPSConfigRequest\x1a$.yandex.cloud.storage.v1.HTTPSConfig\"1\x82\xd3\xe4\x93\x02+\x12)/storage/v1/buckets/{name}:getHttpsConfig\x12\xce\x01\n\x0eSetHTTPSConfig\x12\x34.yandex.cloud.storage.v1.SetBucketHTTPSConfigRequest\x1a!.yandex.cloud.operation.Operation\"c\x82\xd3\xe4\x93\x02.\")/storage/v1/buckets/{name}:setHttpsConfig:\x01*\xb2\xd2*+\n\x1cSetBucketHTTPSConfigMetadata\x12\x0bHTTPSConfig\x12\xe1\x01\n\x11\x44\x65leteHTTPSConfig\x12\x37.yandex.cloud.storage.v1.DeleteBucketHTTPSConfigRequest\x1a!.yandex.cloud.operation.Operation\"p\x82\xd3\xe4\x93\x02.\",/storage/v1/buckets/{name}:deleteHttpsConfig\xb2\xd2*8\n\x1f\x44\x65leteBucketHTTPSConfigMetadata\x12\x15google.protobuf.EmptyBb\n\x1byandex.cloud.api.storage.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/storage/v1;storageb\x06proto3'
+  serialized_pb=b'\n,yandex/cloud/storage/v1/bucket_service.proto\x12\x17yandex.cloud.storage.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a$yandex/cloud/storage/v1/bucket.proto\x1a\x1dyandex/cloud/validation.proto\"\xaf\x01\n\x10GetBucketRequest\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12<\n\x04view\x18\x02 \x01(\x0e\x32..yandex.cloud.storage.v1.GetBucketRequest.View\"I\n\x04View\x12\x14\n\x10VIEW_UNSPECIFIED\x10\x00\x12\x0e\n\nVIEW_BASIC\x10\x01\x12\x0c\n\x08VIEW_ACL\x10\x02\x12\r\n\tVIEW_FULL\x10\x03\"5\n\x12ListBucketsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"G\n\x13ListBucketsResponse\x12\x30\n\x07\x62uckets\x18\x01 \x03(\x0b\x32\x1f.yandex.cloud.storage.v1.Bucket\"\xa1\x02\n\x13\x43reateBucketRequest\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1f\n\tfolder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\x15\x64\x65\x66\x61ult_storage_class\x18\x04 \x01(\t\x12\x10\n\x08max_size\x18\x05 \x01(\x03\x12M\n\x16\x61nonymous_access_flags\x18\x06 \x01(\x0b\x32-.yandex.cloud.storage.v1.AnonymousAccessFlags\x12)\n\x03\x61\x63l\x18\x07 \x01(\x0b\x32\x1c.yandex.cloud.storage.v1.ACL\x12*\n\x04tags\x18\x08 \x03(\x0b\x32\x1c.yandex.cloud.storage.v1.Tag\"$\n\x14\x43reateBucketMetadata\x12\x0c\n\x04name\x18\x01 \x01(\t\"\xc2\x05\n\x13UpdateBucketRequest\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x35\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe8\xc7\x31\x01\x12M\n\x16\x61nonymous_access_flags\x18\x03 \x01(\x0b\x32-.yandex.cloud.storage.v1.AnonymousAccessFlags\x12\x1d\n\x15\x64\x65\x66\x61ult_storage_class\x18\x04 \x01(\t\x12\x10\n\x08max_size\x18\x05 \x01(\x03\x12/\n\x04\x63ors\x18\x06 \x03(\x0b\x32!.yandex.cloud.storage.v1.CorsRule\x12\x42\n\x10website_settings\x18\x07 \x01(\x0b\x32(.yandex.cloud.storage.v1.WebsiteSettings\x12\x37\n\nversioning\x18\x08 \x01(\x0e\x32#.yandex.cloud.storage.v1.Versioning\x12?\n\x0flifecycle_rules\x18\t \x03(\x0b\x32&.yandex.cloud.storage.v1.LifecycleRule\x12\'\n\x06policy\x18\n \x01(\x0b\x32\x17.google.protobuf.Struct\x12)\n\x03\x61\x63l\x18\x0b \x01(\x0b\x32\x1c.yandex.cloud.storage.v1.ACL\x12*\n\x04tags\x18\x0c \x03(\x0b\x32\x1c.yandex.cloud.storage.v1.Tag\x12\x38\n\x0bobject_lock\x18\r \x01(\x0b\x32#.yandex.cloud.storage.v1.ObjectLock\x12\x37\n\nencryption\x18\x0e \x01(\x0b\x32#.yandex.cloud.storage.v1.Encryption\"$\n\x14UpdateBucketMetadata\x12\x0c\n\x04name\x18\x01 \x01(\t\")\n\x13\x44\x65leteBucketRequest\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"$\n\x14\x44\x65leteBucketMetadata\x12\x0c\n\x04name\x18\x01 \x01(\t\"+\n\x15GetBucketStatsRequest\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"1\n\x1bGetBucketHTTPSConfigRequest\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"n\n\x1cSelfManagedHTTPSConfigParams\x12&\n\x0f\x63\x65rtificate_pem\x18\x01 \x01(\tB\r\x8a\xc8\x31\t<=3145728\x12&\n\x0fprivate_key_pem\x18\x02 \x01(\tB\r\x8a\xc8\x31\t<=3145728\"=\n#CertificateManagerHTTPSConfigParams\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\"\xed\x01\n\x1bSetBucketHTTPSConfigRequest\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12M\n\x0cself_managed\x18\x02 \x01(\x0b\x32\x35.yandex.cloud.storage.v1.SelfManagedHTTPSConfigParamsH\x00\x12[\n\x13\x63\x65rtificate_manager\x18\x03 \x01(\x0b\x32<.yandex.cloud.storage.v1.CertificateManagerHTTPSConfigParamsH\x00\x42\x0e\n\x06params\x12\x04\xc0\xc1\x31\x01\",\n\x1cSetBucketHTTPSConfigMetadata\x12\x0c\n\x04name\x18\x01 \x01(\t\"4\n\x1e\x44\x65leteBucketHTTPSConfigRequest\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"/\n\x1f\x44\x65leteBucketHTTPSConfigMetadata\x12\x0c\n\x04name\x18\x01 \x01(\t2\xe1\x0b\n\rBucketService\x12~\n\x04List\x12+.yandex.cloud.storage.v1.ListBucketsRequest\x1a,.yandex.cloud.storage.v1.ListBucketsResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/storage/v1/buckets\x12u\n\x03Get\x12).yandex.cloud.storage.v1.GetBucketRequest\x1a\x1f.yandex.cloud.storage.v1.Bucket\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/storage/v1/buckets/{name}\x12\x9b\x01\n\x06\x43reate\x12,.yandex.cloud.storage.v1.CreateBucketRequest\x1a!.yandex.cloud.operation.Operation\"@\x82\xd3\xe4\x93\x02\x18\"\x13/storage/v1/buckets:\x01*\xb2\xd2*\x1e\n\x14\x43reateBucketMetadata\x12\x06\x42ucket\x12\xa2\x01\n\x06Update\x12,.yandex.cloud.storage.v1.UpdateBucketRequest\x1a!.yandex.cloud.operation.Operation\"G\x82\xd3\xe4\x93\x02\x1f\x32\x1a/storage/v1/buckets/{name}:\x01*\xb2\xd2*\x1e\n\x14UpdateBucketMetadata\x12\x06\x42ucket\x12\xae\x01\n\x06\x44\x65lete\x12,.yandex.cloud.storage.v1.DeleteBucketRequest\x1a!.yandex.cloud.operation.Operation\"S\x82\xd3\xe4\x93\x02\x1c*\x1a/storage/v1/buckets/{name}\xb2\xd2*-\n\x14\x44\x65leteBucketMetadata\x12\x15google.protobuf.Empty\x12\x8d\x01\n\x08GetStats\x12..yandex.cloud.storage.v1.GetBucketStatsRequest\x1a$.yandex.cloud.storage.v1.BucketStats\"+\x82\xd3\xe4\x93\x02%\x12#/storage/v1/buckets/{name}:getStats\x12\x9f\x01\n\x0eGetHTTPSConfig\x12\x34.yandex.cloud.storage.v1.GetBucketHTTPSConfigRequest\x1a$.yandex.cloud.storage.v1.HTTPSConfig\"1\x82\xd3\xe4\x93\x02+\x12)/storage/v1/buckets/{name}:getHttpsConfig\x12\xce\x01\n\x0eSetHTTPSConfig\x12\x34.yandex.cloud.storage.v1.SetBucketHTTPSConfigRequest\x1a!.yandex.cloud.operation.Operation\"c\x82\xd3\xe4\x93\x02.\")/storage/v1/buckets/{name}:setHttpsConfig:\x01*\xb2\xd2*+\n\x1cSetBucketHTTPSConfigMetadata\x12\x0bHTTPSConfig\x12\xe1\x01\n\x11\x44\x65leteHTTPSConfig\x12\x37.yandex.cloud.storage.v1.DeleteBucketHTTPSConfigRequest\x1a!.yandex.cloud.operation.Operation\"p\x82\xd3\xe4\x93\x02.\",/storage/v1/buckets/{name}:deleteHttpsConfig\xb2\xd2*8\n\x1f\x44\x65leteBucketHTTPSConfigMetadata\x12\x15google.protobuf.EmptyBb\n\x1byandex.cloud.api.storage.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/storage/v1;storageb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_protobuf_dot_struct__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_storage_dot_v1_dot_bucket__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -377,6 +377,13 @@ _UPDATEBUCKETREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='encryption', full_name='yandex.cloud.storage.v1.UpdateBucketRequest.encryption', index=13,
+      number=14, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -390,7 +397,7 @@ _UPDATEBUCKETREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=947,
-  serialized_end=1596,
+  serialized_end=1653,
 )
 
 
@@ -421,8 +428,8 @@ _UPDATEBUCKETMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1598,
-  serialized_end=1634,
+  serialized_start=1655,
+  serialized_end=1691,
 )
 
 
@@ -453,8 +460,8 @@ _DELETEBUCKETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1636,
-  serialized_end=1677,
+  serialized_start=1693,
+  serialized_end=1734,
 )
 
 
@@ -485,8 +492,8 @@ _DELETEBUCKETMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1679,
-  serialized_end=1715,
+  serialized_start=1736,
+  serialized_end=1772,
 )
 
 
@@ -517,8 +524,8 @@ _GETBUCKETSTATSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1717,
-  serialized_end=1760,
+  serialized_start=1774,
+  serialized_end=1817,
 )
 
 
@@ -549,8 +556,8 @@ _GETBUCKETHTTPSCONFIGREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1762,
-  serialized_end=1811,
+  serialized_start=1819,
+  serialized_end=1868,
 )
 
 
@@ -588,8 +595,8 @@ _SELFMANAGEDHTTPSCONFIGPARAMS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1813,
-  serialized_end=1923,
+  serialized_start=1870,
+  serialized_end=1980,
 )
 
 
@@ -620,8 +627,8 @@ _CERTIFICATEMANAGERHTTPSCONFIGPARAMS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1925,
-  serialized_end=1986,
+  serialized_start=1982,
+  serialized_end=2043,
 )
 
 
@@ -671,8 +678,8 @@ _SETBUCKETHTTPSCONFIGREQUEST = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[], serialized_options=b'\300\3011\001'),
   ],
-  serialized_start=1989,
-  serialized_end=2226,
+  serialized_start=2046,
+  serialized_end=2283,
 )
 
 
@@ -703,8 +710,8 @@ _SETBUCKETHTTPSCONFIGMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2228,
-  serialized_end=2272,
+  serialized_start=2285,
+  serialized_end=2329,
 )
 
 
@@ -735,8 +742,8 @@ _DELETEBUCKETHTTPSCONFIGREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2274,
-  serialized_end=2326,
+  serialized_start=2331,
+  serialized_end=2383,
 )
 
 
@@ -767,8 +774,8 @@ _DELETEBUCKETHTTPSCONFIGMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2328,
-  serialized_end=2375,
+  serialized_start=2385,
+  serialized_end=2432,
 )
 
 _GETBUCKETREQUEST.fields_by_name['view'].enum_type = _GETBUCKETREQUEST_VIEW
@@ -787,6 +794,7 @@ _UPDATEBUCKETREQUEST.fields_by_name['policy'].message_type = google_dot_protobuf
 _UPDATEBUCKETREQUEST.fields_by_name['acl'].message_type = yandex_dot_cloud_dot_storage_dot_v1_dot_bucket__pb2._ACL
 _UPDATEBUCKETREQUEST.fields_by_name['tags'].message_type = yandex_dot_cloud_dot_storage_dot_v1_dot_bucket__pb2._TAG
 _UPDATEBUCKETREQUEST.fields_by_name['object_lock'].message_type = yandex_dot_cloud_dot_storage_dot_v1_dot_bucket__pb2._OBJECTLOCK
+_UPDATEBUCKETREQUEST.fields_by_name['encryption'].message_type = yandex_dot_cloud_dot_storage_dot_v1_dot_bucket__pb2._ENCRYPTION
 _SETBUCKETHTTPSCONFIGREQUEST.fields_by_name['self_managed'].message_type = _SELFMANAGEDHTTPSCONFIGPARAMS
 _SETBUCKETHTTPSCONFIGREQUEST.fields_by_name['certificate_manager'].message_type = _CERTIFICATEMANAGERHTTPSCONFIGPARAMS
 _SETBUCKETHTTPSCONFIGREQUEST.oneofs_by_name['params'].fields.append(
@@ -957,8 +965,8 @@ _BUCKETSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=2378,
-  serialized_end=3883,
+  serialized_start=2435,
+  serialized_end=3940,
   methods=[
   _descriptor.MethodDescriptor(
     name='List',

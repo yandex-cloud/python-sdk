@@ -20,11 +20,190 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\"yandex.cloud.api.mdb.postgresql.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1;postgresql',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n.yandex/cloud/mdb/postgresql/v1/perf_diag.proto\x12\x1eyandex.cloud.mdb.postgresql.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"o\n\nPrimaryKey\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04user\x18\x02 \x01(\t\x12\x10\n\x08\x64\x61tabase\x18\x04 \x01(\t\x12\x10\n\x08toplevel\x18\x05 \x01(\x08\x12\x10\n\x08query_id\x18\x06 \x01(\t\x12\x0f\n\x07plan_id\x18\x07 \x01(\t\"\x9c\t\n\nQueryStats\x12(\n\x04time\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\r\n\x05query\x18\x02 \x01(\t\x12\x17\n\x0fnormalized_plan\x18\x03 \x01(\t\x12\x14\n\x0c\x65xample_plan\x18\x04 \x01(\t\x12\r\n\x05plans\x18\x05 \x01(\x03\x12\x17\n\x0ftotal_plan_time\x18\x06 \x01(\x01\x12\x15\n\rmin_plan_time\x18\x07 \x01(\x01\x12\x15\n\rmax_plan_time\x18\x08 \x01(\x01\x12\x16\n\x0emean_plan_time\x18\t \x01(\x01\x12\x18\n\x10stddev_plan_time\x18\n \x01(\x01\x12\r\n\x05\x63\x61lls\x18\x0b \x01(\x03\x12\x12\n\ntotal_time\x18\x0c \x01(\x01\x12\x10\n\x08min_time\x18\r \x01(\x01\x12\x10\n\x08max_time\x18\x0e \x01(\x01\x12\x11\n\tmean_time\x18\x0f \x01(\x01\x12\x13\n\x0bstddev_time\x18\x10 \x01(\x01\x12\x0c\n\x04rows\x18\x11 \x01(\x03\x12\x17\n\x0fshared_blks_hit\x18\x12 \x01(\x03\x12\x18\n\x10shared_blks_read\x18\x13 \x01(\x03\x12\x1b\n\x13shared_blks_dirtied\x18\x14 \x01(\x03\x12\x1b\n\x13shared_blks_written\x18\x15 \x01(\x03\x12\x16\n\x0elocal_blks_hit\x18\x16 \x01(\x03\x12\x17\n\x0flocal_blks_read\x18\x17 \x01(\x03\x12\x1a\n\x12local_blks_dirtied\x18\x18 \x01(\x03\x12\x1a\n\x12local_blks_written\x18\x19 \x01(\x03\x12\x16\n\x0etemp_blks_read\x18\x1a \x01(\x03\x12\x19\n\x11temp_blks_written\x18\x1b \x01(\x03\x12\x15\n\rblk_read_time\x18\x1c \x01(\x01\x12\x16\n\x0e\x62lk_write_time\x18\x1d \x01(\x01\x12\x1a\n\x12temp_blk_read_time\x18\x1e \x01(\x01\x12\x1b\n\x13temp_blk_write_time\x18\x1f \x01(\x01\x12\x13\n\x0bwal_records\x18  \x01(\x03\x12\x0f\n\x07wal_fpi\x18! \x01(\x03\x12\x11\n\twal_bytes\x18\" \x01(\x03\x12\x15\n\rjit_functions\x18# \x01(\x03\x12\x1b\n\x13jit_generation_time\x18$ \x01(\x01\x12\x1a\n\x12jit_inlining_count\x18% \x01(\x03\x12\x19\n\x11jit_inlining_time\x18& \x01(\x01\x12\x1e\n\x16jit_optimization_count\x18\' \x01(\x03\x12\x1d\n\x15jit_optimization_time\x18( \x01(\x01\x12\x1a\n\x12jit_emission_count\x18) \x01(\x03\x12\x19\n\x11jit_emission_time\x18* \x01(\x01\x12\x14\n\x0cstartup_cost\x18+ \x01(\x03\x12\x12\n\ntotal_cost\x18, \x01(\x03\x12\x11\n\tplan_rows\x18- \x01(\x03\x12\x12\n\nplan_width\x18. \x01(\x03\x12\r\n\x05reads\x18/ \x01(\x03\x12\x0e\n\x06writes\x18\x30 \x01(\x03\x12\x11\n\tuser_time\x18\x31 \x01(\x01\x12\x13\n\x0bsystem_time\x18\x32 \x01(\x01\"\x84\x01\n\x0eQueryStatement\x12\x37\n\x03key\x18\x01 \x01(\x0b\x32*.yandex.cloud.mdb.postgresql.v1.PrimaryKey\x12\x39\n\x05stats\x18\x02 \x01(\x0b\x32*.yandex.cloud.mdb.postgresql.v1.QueryStatsBs\n\"yandex.cloud.api.mdb.postgresql.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1;postgresqlb\x06proto3'
+  serialized_pb=b'\n.yandex/cloud/mdb/postgresql/v1/perf_diag.proto\x12\x1eyandex.cloud.mdb.postgresql.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xd1\x04\n\x0cSessionState\x12(\n\x04time\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04host\x18\x02 \x01(\t\x12\x0b\n\x03pid\x18\x03 \x01(\x03\x12\x10\n\x08\x64\x61tabase\x18\x04 \x01(\t\x12\x0c\n\x04user\x18\x05 \x01(\t\x12\x18\n\x10\x61pplication_name\x18\x06 \x01(\t\x12\x31\n\rbackend_start\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nxact_start\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0bquery_start\x18\t \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x0cstate_change\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x17\n\x0fwait_event_type\x18\x0b \x01(\t\x12\x12\n\nwait_event\x18\x0c \x01(\t\x12\r\n\x05state\x18\r \x01(\t\x12\r\n\x05query\x18\x0e \x01(\t\x12\x14\n\x0c\x62\x61\x63kend_type\x18\x0f \x01(\t\x12\x13\n\x0b\x63lient_addr\x18\x10 \x01(\t\x12\x17\n\x0f\x63lient_hostname\x18\x11 \x01(\t\x12\x13\n\x0b\x63lient_port\x18\x12 \x01(\x03\x12\x13\n\x0b\x62\x61\x63kend_xid\x18\x13 \x01(\x03\x12\x14\n\x0c\x62\x61\x63kend_xmin\x18\x14 \x01(\x03\x12\x15\n\rblocking_pids\x18\x16 \x01(\t\x12\x10\n\x08query_id\x18\x17 \x01(\tJ\x04\x08\x15\x10\x16\"o\n\nPrimaryKey\x12\x0c\n\x04host\x18\x01 \x01(\t\x12\x0c\n\x04user\x18\x02 \x01(\t\x12\x10\n\x08\x64\x61tabase\x18\x04 \x01(\t\x12\x10\n\x08toplevel\x18\x05 \x01(\x08\x12\x10\n\x08query_id\x18\x06 \x01(\t\x12\x0f\n\x07plan_id\x18\x07 \x01(\t\"\x9c\t\n\nQueryStats\x12(\n\x04time\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\r\n\x05query\x18\x02 \x01(\t\x12\x17\n\x0fnormalized_plan\x18\x03 \x01(\t\x12\x14\n\x0c\x65xample_plan\x18\x04 \x01(\t\x12\r\n\x05plans\x18\x05 \x01(\x03\x12\x17\n\x0ftotal_plan_time\x18\x06 \x01(\x01\x12\x15\n\rmin_plan_time\x18\x07 \x01(\x01\x12\x15\n\rmax_plan_time\x18\x08 \x01(\x01\x12\x16\n\x0emean_plan_time\x18\t \x01(\x01\x12\x18\n\x10stddev_plan_time\x18\n \x01(\x01\x12\r\n\x05\x63\x61lls\x18\x0b \x01(\x03\x12\x12\n\ntotal_time\x18\x0c \x01(\x01\x12\x10\n\x08min_time\x18\r \x01(\x01\x12\x10\n\x08max_time\x18\x0e \x01(\x01\x12\x11\n\tmean_time\x18\x0f \x01(\x01\x12\x13\n\x0bstddev_time\x18\x10 \x01(\x01\x12\x0c\n\x04rows\x18\x11 \x01(\x03\x12\x17\n\x0fshared_blks_hit\x18\x12 \x01(\x03\x12\x18\n\x10shared_blks_read\x18\x13 \x01(\x03\x12\x1b\n\x13shared_blks_dirtied\x18\x14 \x01(\x03\x12\x1b\n\x13shared_blks_written\x18\x15 \x01(\x03\x12\x16\n\x0elocal_blks_hit\x18\x16 \x01(\x03\x12\x17\n\x0flocal_blks_read\x18\x17 \x01(\x03\x12\x1a\n\x12local_blks_dirtied\x18\x18 \x01(\x03\x12\x1a\n\x12local_blks_written\x18\x19 \x01(\x03\x12\x16\n\x0etemp_blks_read\x18\x1a \x01(\x03\x12\x19\n\x11temp_blks_written\x18\x1b \x01(\x03\x12\x15\n\rblk_read_time\x18\x1c \x01(\x01\x12\x16\n\x0e\x62lk_write_time\x18\x1d \x01(\x01\x12\x1a\n\x12temp_blk_read_time\x18\x1e \x01(\x01\x12\x1b\n\x13temp_blk_write_time\x18\x1f \x01(\x01\x12\x13\n\x0bwal_records\x18  \x01(\x03\x12\x0f\n\x07wal_fpi\x18! \x01(\x03\x12\x11\n\twal_bytes\x18\" \x01(\x03\x12\x15\n\rjit_functions\x18# \x01(\x03\x12\x1b\n\x13jit_generation_time\x18$ \x01(\x01\x12\x1a\n\x12jit_inlining_count\x18% \x01(\x03\x12\x19\n\x11jit_inlining_time\x18& \x01(\x01\x12\x1e\n\x16jit_optimization_count\x18\' \x01(\x03\x12\x1d\n\x15jit_optimization_time\x18( \x01(\x01\x12\x1a\n\x12jit_emission_count\x18) \x01(\x03\x12\x19\n\x11jit_emission_time\x18* \x01(\x01\x12\x14\n\x0cstartup_cost\x18+ \x01(\x03\x12\x12\n\ntotal_cost\x18, \x01(\x03\x12\x11\n\tplan_rows\x18- \x01(\x03\x12\x12\n\nplan_width\x18. \x01(\x03\x12\r\n\x05reads\x18/ \x01(\x03\x12\x0e\n\x06writes\x18\x30 \x01(\x03\x12\x11\n\tuser_time\x18\x31 \x01(\x01\x12\x13\n\x0bsystem_time\x18\x32 \x01(\x01\"\x84\x01\n\x0eQueryStatement\x12\x37\n\x03key\x18\x01 \x01(\x0b\x32*.yandex.cloud.mdb.postgresql.v1.PrimaryKey\x12\x39\n\x05stats\x18\x02 \x01(\x0b\x32*.yandex.cloud.mdb.postgresql.v1.QueryStatsBs\n\"yandex.cloud.api.mdb.postgresql.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1;postgresqlb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
 
 
+
+
+_SESSIONSTATE = _descriptor.Descriptor(
+  name='SessionState',
+  full_name='yandex.cloud.mdb.postgresql.v1.SessionState',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='time', full_name='yandex.cloud.mdb.postgresql.v1.SessionState.time', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='host', full_name='yandex.cloud.mdb.postgresql.v1.SessionState.host', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='pid', full_name='yandex.cloud.mdb.postgresql.v1.SessionState.pid', index=2,
+      number=3, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='database', full_name='yandex.cloud.mdb.postgresql.v1.SessionState.database', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='user', full_name='yandex.cloud.mdb.postgresql.v1.SessionState.user', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='application_name', full_name='yandex.cloud.mdb.postgresql.v1.SessionState.application_name', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='backend_start', full_name='yandex.cloud.mdb.postgresql.v1.SessionState.backend_start', index=6,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='xact_start', full_name='yandex.cloud.mdb.postgresql.v1.SessionState.xact_start', index=7,
+      number=8, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='query_start', full_name='yandex.cloud.mdb.postgresql.v1.SessionState.query_start', index=8,
+      number=9, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='state_change', full_name='yandex.cloud.mdb.postgresql.v1.SessionState.state_change', index=9,
+      number=10, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='wait_event_type', full_name='yandex.cloud.mdb.postgresql.v1.SessionState.wait_event_type', index=10,
+      number=11, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='wait_event', full_name='yandex.cloud.mdb.postgresql.v1.SessionState.wait_event', index=11,
+      number=12, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='state', full_name='yandex.cloud.mdb.postgresql.v1.SessionState.state', index=12,
+      number=13, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='query', full_name='yandex.cloud.mdb.postgresql.v1.SessionState.query', index=13,
+      number=14, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='backend_type', full_name='yandex.cloud.mdb.postgresql.v1.SessionState.backend_type', index=14,
+      number=15, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='client_addr', full_name='yandex.cloud.mdb.postgresql.v1.SessionState.client_addr', index=15,
+      number=16, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='client_hostname', full_name='yandex.cloud.mdb.postgresql.v1.SessionState.client_hostname', index=16,
+      number=17, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='client_port', full_name='yandex.cloud.mdb.postgresql.v1.SessionState.client_port', index=17,
+      number=18, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='backend_xid', full_name='yandex.cloud.mdb.postgresql.v1.SessionState.backend_xid', index=18,
+      number=19, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='backend_xmin', full_name='yandex.cloud.mdb.postgresql.v1.SessionState.backend_xmin', index=19,
+      number=20, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='blocking_pids', full_name='yandex.cloud.mdb.postgresql.v1.SessionState.blocking_pids', index=20,
+      number=22, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='query_id', full_name='yandex.cloud.mdb.postgresql.v1.SessionState.query_id', index=21,
+      number=23, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=116,
+  serialized_end=709,
+)
 
 
 _PRIMARYKEY = _descriptor.Descriptor(
@@ -89,8 +268,8 @@ _PRIMARYKEY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=115,
-  serialized_end=226,
+  serialized_start=711,
+  serialized_end=822,
 )
 
 
@@ -464,8 +643,8 @@ _QUERYSTATS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=229,
-  serialized_end=1409,
+  serialized_start=825,
+  serialized_end=2005,
 )
 
 
@@ -503,17 +682,30 @@ _QUERYSTATEMENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1412,
-  serialized_end=1544,
+  serialized_start=2008,
+  serialized_end=2140,
 )
 
+_SESSIONSTATE.fields_by_name['time'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_SESSIONSTATE.fields_by_name['backend_start'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_SESSIONSTATE.fields_by_name['xact_start'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_SESSIONSTATE.fields_by_name['query_start'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
+_SESSIONSTATE.fields_by_name['state_change'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _QUERYSTATS.fields_by_name['time'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _QUERYSTATEMENT.fields_by_name['key'].message_type = _PRIMARYKEY
 _QUERYSTATEMENT.fields_by_name['stats'].message_type = _QUERYSTATS
+DESCRIPTOR.message_types_by_name['SessionState'] = _SESSIONSTATE
 DESCRIPTOR.message_types_by_name['PrimaryKey'] = _PRIMARYKEY
 DESCRIPTOR.message_types_by_name['QueryStats'] = _QUERYSTATS
 DESCRIPTOR.message_types_by_name['QueryStatement'] = _QUERYSTATEMENT
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+SessionState = _reflection.GeneratedProtocolMessageType('SessionState', (_message.Message,), {
+  'DESCRIPTOR' : _SESSIONSTATE,
+  '__module__' : 'yandex.cloud.mdb.postgresql.v1.perf_diag_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.postgresql.v1.SessionState)
+  })
+_sym_db.RegisterMessage(SessionState)
 
 PrimaryKey = _reflection.GeneratedProtocolMessageType('PrimaryKey', (_message.Message,), {
   'DESCRIPTOR' : _PRIMARYKEY,

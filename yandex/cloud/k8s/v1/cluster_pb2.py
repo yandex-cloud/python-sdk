@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\027yandex.cloud.api.k8s.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/k8s/v1;k8s',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n!yandex/cloud/k8s/v1/cluster.proto\x12\x13yandex.cloud.k8s.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a%yandex/cloud/k8s/v1/maintenance.proto\x1a!yandex/cloud/k8s/v1/version.proto\x1a\x1dyandex/cloud/validation.proto\"\xaa\x08\n\x07\x43luster\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x38\n\x06labels\x18\x06 \x03(\x0b\x32(.yandex.cloud.k8s.v1.Cluster.LabelsEntry\x12\x33\n\x06status\x18\x07 \x01(\x0e\x32#.yandex.cloud.k8s.v1.Cluster.Status\x12\x33\n\x06health\x18\x08 \x01(\x0e\x32#.yandex.cloud.k8s.v1.Cluster.Health\x12\x12\n\nnetwork_id\x18\t \x01(\t\x12+\n\x06master\x18\n \x01(\x0b\x32\x1b.yandex.cloud.k8s.v1.Master\x12\x45\n\x14ip_allocation_policy\x18\x0b \x01(\x0b\x32\'.yandex.cloud.k8s.v1.IPAllocationPolicy\x12(\n\x14gateway_ipv4_address\x18\x0c \x01(\tB\x08\x8a\xc8\x31\x04<=15H\x00\x12\x1a\n\x12service_account_id\x18\r \x01(\t\x12\x1f\n\x17node_service_account_id\x18\x0e \x01(\t\x12<\n\x0frelease_channel\x18\x0f \x01(\x0e\x32#.yandex.cloud.k8s.v1.ReleaseChannel\x12:\n\x0enetwork_policy\x18\x10 \x01(\x0b\x32\".yandex.cloud.k8s.v1.NetworkPolicy\x12\x36\n\x0ckms_provider\x18\x11 \x01(\x0b\x32 .yandex.cloud.k8s.v1.KMSProvider\x12\x14\n\x0clog_group_id\x18\x12 \x01(\t\x12-\n\x06\x63ilium\x18\x13 \x01(\x0b\x32\x1b.yandex.cloud.k8s.v1.CiliumH\x01\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x87\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x10\n\x0cPROVISIONING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\x0f\n\x0bRECONCILING\x10\x03\x12\x0c\n\x08STOPPING\x10\x04\x12\x0b\n\x07STOPPED\x10\x05\x12\x0c\n\x08\x44\x45LETING\x10\x06\x12\x0c\n\x08STARTING\x10\x07\"<\n\x06Health\x12\x16\n\x12HEALTH_UNSPECIFIED\x10\x00\x12\x0b\n\x07HEALTHY\x10\x01\x12\r\n\tUNHEALTHY\x10\x02\x42\x12\n\x10internet_gatewayB\x18\n\x16network_implementation\"\xeb\x03\n\x06Master\x12\x38\n\x0czonal_master\x18\x01 \x01(\x0b\x32 .yandex.cloud.k8s.v1.ZonalMasterH\x00\x12>\n\x0fregional_master\x18\x07 \x01(\x0b\x32#.yandex.cloud.k8s.v1.RegionalMasterH\x00\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x37\n\tendpoints\x18\x03 \x01(\x0b\x32$.yandex.cloud.k8s.v1.MasterEndpoints\x12\x34\n\x0bmaster_auth\x18\x04 \x01(\x0b\x32\x1f.yandex.cloud.k8s.v1.MasterAuth\x12\x36\n\x0cversion_info\x18\x05 \x01(\x0b\x32 .yandex.cloud.k8s.v1.VersionInfo\x12H\n\x12maintenance_policy\x18\x06 \x01(\x0b\x32,.yandex.cloud.k8s.v1.MasterMaintenancePolicy\x12\x1a\n\x12security_group_ids\x18\x08 \x03(\t\x12:\n\x0emaster_logging\x18\t \x01(\x0b\x32\".yandex.cloud.k8s.v1.MasterLoggingB\r\n\x0bmaster_type\",\n\nMasterAuth\x12\x1e\n\x16\x63luster_ca_certificate\x18\x01 \x01(\t\"X\n\x0bZonalMaster\x12\x0f\n\x07zone_id\x18\x01 \x01(\t\x12\x1b\n\x13internal_v4_address\x18\x02 \x01(\t\x12\x1b\n\x13\x65xternal_v4_address\x18\x03 \x01(\t\"z\n\x0eRegionalMaster\x12\x11\n\tregion_id\x18\x01 \x01(\t\x12\x1b\n\x13internal_v4_address\x18\x02 \x01(\t\x12\x1b\n\x13\x65xternal_v4_address\x18\x03 \x01(\t\x12\x1b\n\x13\x65xternal_v6_address\x18\x04 \x01(\t\"k\n\x0fMasterEndpoints\x12\x1c\n\x14internal_v4_endpoint\x18\x01 \x01(\t\x12\x1c\n\x14\x65xternal_v4_endpoint\x18\x02 \x01(\t\x12\x1c\n\x14\x65xternal_v6_endpoint\x18\x03 \x01(\t\"\xd0\x01\n\x12IPAllocationPolicy\x12\x1f\n\x17\x63luster_ipv4_cidr_block\x18\x01 \x01(\t\x12\x36\n\x18node_ipv4_cidr_mask_size\x18\x05 \x01(\x03\x42\x14\xfa\xc7\x31\x10\x30,24,25,26,27,28\x12\x1f\n\x17service_ipv4_cidr_block\x18\x02 \x01(\t\x12\x1f\n\x17\x63luster_ipv6_cidr_block\x18\x06 \x01(\t\x12\x1f\n\x17service_ipv6_cidr_block\x18\x07 \x01(\t\"s\n\x17MasterMaintenancePolicy\x12\x14\n\x0c\x61uto_upgrade\x18\x01 \x01(\x08\x12\x42\n\x12maintenance_window\x18\x02 \x01(\x0b\x32&.yandex.cloud.k8s.v1.MaintenanceWindow\"\x88\x02\n\rMasterLogging\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12;\n\x0clog_group_id\x18\x02 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?H\x00\x12\x38\n\tfolder_id\x18\x03 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?H\x00\x12\"\n\x1a\x63luster_autoscaler_enabled\x18\x05 \x01(\x08\x12\x1e\n\x16kube_apiserver_enabled\x18\x06 \x01(\x08\x12\x16\n\x0e\x65vents_enabled\x18\x07 \x01(\x08\x42\r\n\x0b\x64\x65stinationJ\x04\x08\x04\x10\x05\"\x80\x01\n\rNetworkPolicy\x12=\n\x08provider\x18\x01 \x01(\x0e\x32+.yandex.cloud.k8s.v1.NetworkPolicy.Provider\"0\n\x08Provider\x12\x18\n\x14PROVIDER_UNSPECIFIED\x10\x00\x12\n\n\x06\x43\x41LICO\x10\x01\"\x1d\n\x0bKMSProvider\x12\x0e\n\x06key_id\x18\x01 \x01(\t\"\x80\x01\n\x06\x43ilium\x12=\n\x0crouting_mode\x18\x01 \x01(\x0e\x32\'.yandex.cloud.k8s.v1.Cilium.RoutingMode\"7\n\x0bRoutingMode\x12\x1c\n\x18ROUTING_MODE_UNSPECIFIED\x10\x00\x12\n\n\x06TUNNEL\x10\x01*U\n\x0eReleaseChannel\x12\x1f\n\x1bRELEASE_CHANNEL_UNSPECIFIED\x10\x00\x12\t\n\x05RAPID\x10\x01\x12\x0b\n\x07REGULAR\x10\x02\x12\n\n\x06STABLE\x10\x03\x42V\n\x17yandex.cloud.api.k8s.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/k8s/v1;k8sb\x06proto3'
+  serialized_pb=b'\n!yandex/cloud/k8s/v1/cluster.proto\x12\x13yandex.cloud.k8s.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a%yandex/cloud/k8s/v1/maintenance.proto\x1a!yandex/cloud/k8s/v1/version.proto\x1a\x1dyandex/cloud/validation.proto\"\xaa\x08\n\x07\x43luster\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x38\n\x06labels\x18\x06 \x03(\x0b\x32(.yandex.cloud.k8s.v1.Cluster.LabelsEntry\x12\x33\n\x06status\x18\x07 \x01(\x0e\x32#.yandex.cloud.k8s.v1.Cluster.Status\x12\x33\n\x06health\x18\x08 \x01(\x0e\x32#.yandex.cloud.k8s.v1.Cluster.Health\x12\x12\n\nnetwork_id\x18\t \x01(\t\x12+\n\x06master\x18\n \x01(\x0b\x32\x1b.yandex.cloud.k8s.v1.Master\x12\x45\n\x14ip_allocation_policy\x18\x0b \x01(\x0b\x32\'.yandex.cloud.k8s.v1.IPAllocationPolicy\x12(\n\x14gateway_ipv4_address\x18\x0c \x01(\tB\x08\x8a\xc8\x31\x04<=15H\x00\x12\x1a\n\x12service_account_id\x18\r \x01(\t\x12\x1f\n\x17node_service_account_id\x18\x0e \x01(\t\x12<\n\x0frelease_channel\x18\x0f \x01(\x0e\x32#.yandex.cloud.k8s.v1.ReleaseChannel\x12:\n\x0enetwork_policy\x18\x10 \x01(\x0b\x32\".yandex.cloud.k8s.v1.NetworkPolicy\x12\x36\n\x0ckms_provider\x18\x11 \x01(\x0b\x32 .yandex.cloud.k8s.v1.KMSProvider\x12\x14\n\x0clog_group_id\x18\x12 \x01(\t\x12-\n\x06\x63ilium\x18\x13 \x01(\x0b\x32\x1b.yandex.cloud.k8s.v1.CiliumH\x01\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x87\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x10\n\x0cPROVISIONING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\x0f\n\x0bRECONCILING\x10\x03\x12\x0c\n\x08STOPPING\x10\x04\x12\x0b\n\x07STOPPED\x10\x05\x12\x0c\n\x08\x44\x45LETING\x10\x06\x12\x0c\n\x08STARTING\x10\x07\"<\n\x06Health\x12\x16\n\x12HEALTH_UNSPECIFIED\x10\x00\x12\x0b\n\x07HEALTHY\x10\x01\x12\r\n\tUNHEALTHY\x10\x02\x42\x12\n\x10internet_gatewayB\x18\n\x16network_implementation\"\xeb\x03\n\x06Master\x12\x38\n\x0czonal_master\x18\x01 \x01(\x0b\x32 .yandex.cloud.k8s.v1.ZonalMasterH\x00\x12>\n\x0fregional_master\x18\x07 \x01(\x0b\x32#.yandex.cloud.k8s.v1.RegionalMasterH\x00\x12\x0f\n\x07version\x18\x02 \x01(\t\x12\x37\n\tendpoints\x18\x03 \x01(\x0b\x32$.yandex.cloud.k8s.v1.MasterEndpoints\x12\x34\n\x0bmaster_auth\x18\x04 \x01(\x0b\x32\x1f.yandex.cloud.k8s.v1.MasterAuth\x12\x36\n\x0cversion_info\x18\x05 \x01(\x0b\x32 .yandex.cloud.k8s.v1.VersionInfo\x12H\n\x12maintenance_policy\x18\x06 \x01(\x0b\x32,.yandex.cloud.k8s.v1.MasterMaintenancePolicy\x12\x1a\n\x12security_group_ids\x18\x08 \x03(\t\x12:\n\x0emaster_logging\x18\t \x01(\x0b\x32\".yandex.cloud.k8s.v1.MasterLoggingB\r\n\x0bmaster_type\",\n\nMasterAuth\x12\x1e\n\x16\x63luster_ca_certificate\x18\x01 \x01(\t\"X\n\x0bZonalMaster\x12\x0f\n\x07zone_id\x18\x01 \x01(\t\x12\x1b\n\x13internal_v4_address\x18\x02 \x01(\t\x12\x1b\n\x13\x65xternal_v4_address\x18\x03 \x01(\t\"z\n\x0eRegionalMaster\x12\x11\n\tregion_id\x18\x01 \x01(\t\x12\x1b\n\x13internal_v4_address\x18\x02 \x01(\t\x12\x1b\n\x13\x65xternal_v4_address\x18\x03 \x01(\t\x12\x1b\n\x13\x65xternal_v6_address\x18\x04 \x01(\t\"k\n\x0fMasterEndpoints\x12\x1c\n\x14internal_v4_endpoint\x18\x01 \x01(\t\x12\x1c\n\x14\x65xternal_v4_endpoint\x18\x02 \x01(\t\x12\x1c\n\x14\x65xternal_v6_endpoint\x18\x03 \x01(\t\"\xd0\x01\n\x12IPAllocationPolicy\x12\x1f\n\x17\x63luster_ipv4_cidr_block\x18\x01 \x01(\t\x12\x36\n\x18node_ipv4_cidr_mask_size\x18\x05 \x01(\x03\x42\x14\xfa\xc7\x31\x10\x30,24,25,26,27,28\x12\x1f\n\x17service_ipv4_cidr_block\x18\x02 \x01(\t\x12\x1f\n\x17\x63luster_ipv6_cidr_block\x18\x06 \x01(\t\x12\x1f\n\x17service_ipv6_cidr_block\x18\x07 \x01(\t\"s\n\x17MasterMaintenancePolicy\x12\x14\n\x0c\x61uto_upgrade\x18\x01 \x01(\x08\x12\x42\n\x12maintenance_window\x18\x02 \x01(\x0b\x32&.yandex.cloud.k8s.v1.MaintenanceWindow\"\x99\x02\n\rMasterLogging\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12;\n\x0clog_group_id\x18\x02 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?H\x00\x12\x38\n\tfolder_id\x18\x03 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?H\x00\x12\x15\n\raudit_enabled\x18\x04 \x01(\x08\x12\"\n\x1a\x63luster_autoscaler_enabled\x18\x05 \x01(\x08\x12\x1e\n\x16kube_apiserver_enabled\x18\x06 \x01(\x08\x12\x16\n\x0e\x65vents_enabled\x18\x07 \x01(\x08\x42\r\n\x0b\x64\x65stination\"\x80\x01\n\rNetworkPolicy\x12=\n\x08provider\x18\x01 \x01(\x0e\x32+.yandex.cloud.k8s.v1.NetworkPolicy.Provider\"0\n\x08Provider\x12\x18\n\x14PROVIDER_UNSPECIFIED\x10\x00\x12\n\n\x06\x43\x41LICO\x10\x01\"\x1d\n\x0bKMSProvider\x12\x0e\n\x06key_id\x18\x01 \x01(\t\"\x80\x01\n\x06\x43ilium\x12=\n\x0crouting_mode\x18\x01 \x01(\x0e\x32\'.yandex.cloud.k8s.v1.Cilium.RoutingMode\"7\n\x0bRoutingMode\x12\x1c\n\x18ROUTING_MODE_UNSPECIFIED\x10\x00\x12\n\n\x06TUNNEL\x10\x01*U\n\x0eReleaseChannel\x12\x1f\n\x1bRELEASE_CHANNEL_UNSPECIFIED\x10\x00\x12\t\n\x05RAPID\x10\x01\x12\x0b\n\x07REGULAR\x10\x02\x12\n\n\x06STABLE\x10\x03\x42V\n\x17yandex.cloud.api.k8s.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/k8s/v1;k8sb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_k8s_dot_v1_dot_maintenance__pb2.DESCRIPTOR,yandex_dot_cloud_dot_k8s_dot_v1_dot_version__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -58,8 +58,8 @@ _RELEASECHANNEL = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3016,
-  serialized_end=3101,
+  serialized_start=3033,
+  serialized_end=3118,
 )
 _sym_db.RegisterEnumDescriptor(_RELEASECHANNEL)
 
@@ -175,8 +175,8 @@ _NETWORKPOLICY_PROVIDER = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2804,
-  serialized_end=2852,
+  serialized_start=2821,
+  serialized_end=2869,
 )
 _sym_db.RegisterEnumDescriptor(_NETWORKPOLICY_PROVIDER)
 
@@ -200,8 +200,8 @@ _CILIUM_ROUTINGMODE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2959,
-  serialized_end=3014,
+  serialized_start=2976,
+  serialized_end=3031,
 )
 _sym_db.RegisterEnumDescriptor(_CILIUM_ROUTINGMODE)
 
@@ -813,21 +813,28 @@ _MASTERLOGGING = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=b'\362\3071\037([a-zA-Z][-a-zA-Z0-9_.]{0,63})?', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='cluster_autoscaler_enabled', full_name='yandex.cloud.k8s.v1.MasterLogging.cluster_autoscaler_enabled', index=3,
+      name='audit_enabled', full_name='yandex.cloud.k8s.v1.MasterLogging.audit_enabled', index=3,
+      number=4, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='cluster_autoscaler_enabled', full_name='yandex.cloud.k8s.v1.MasterLogging.cluster_autoscaler_enabled', index=4,
       number=5, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='kube_apiserver_enabled', full_name='yandex.cloud.k8s.v1.MasterLogging.kube_apiserver_enabled', index=4,
+      name='kube_apiserver_enabled', full_name='yandex.cloud.k8s.v1.MasterLogging.kube_apiserver_enabled', index=5,
       number=6, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='events_enabled', full_name='yandex.cloud.k8s.v1.MasterLogging.events_enabled', index=5,
+      name='events_enabled', full_name='yandex.cloud.k8s.v1.MasterLogging.events_enabled', index=6,
       number=7, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -851,7 +858,7 @@ _MASTERLOGGING = _descriptor.Descriptor(
     fields=[]),
   ],
   serialized_start=2457,
-  serialized_end=2721,
+  serialized_end=2738,
 )
 
 
@@ -883,8 +890,8 @@ _NETWORKPOLICY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2724,
-  serialized_end=2852,
+  serialized_start=2741,
+  serialized_end=2869,
 )
 
 
@@ -915,8 +922,8 @@ _KMSPROVIDER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2854,
-  serialized_end=2883,
+  serialized_start=2871,
+  serialized_end=2900,
 )
 
 
@@ -948,8 +955,8 @@ _CILIUM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2886,
-  serialized_end=3014,
+  serialized_start=2903,
+  serialized_end=3031,
 )
 
 _CLUSTER_LABELSENTRY.containing_type = _CLUSTER
