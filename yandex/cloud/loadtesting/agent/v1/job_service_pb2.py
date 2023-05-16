@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n%yandex.cloud.api.loadtesting.agent.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadtesting/agent/v1;agent',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n3yandex/cloud/loadtesting/agent/v1/job_service.proto\x12!yandex.cloud.loadtesting.agent.v1\x1a\x1cgoogle/api/annotations.proto\"\x83\x02\n\x03Job\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06\x63onfig\x18\x02 \x01(\t\x12\x35\n\x04\x61mmo\x18\x03 \x01(\x0b\x32\'.yandex.cloud.loadtesting.agent.v1.File\x12\x1c\n\x14logging_log_group_id\x18\x04 \x01(\t\x12\x43\n\ttest_data\x18\x05 \x01(\x0b\x32\x30.yandex.cloud.loadtesting.agent.v1.StorageObject\x12\x46\n\x0c\x64\x61ta_payload\x18\x06 \x03(\x0b\x32\x30.yandex.cloud.loadtesting.agent.v1.TestDataEntry\"%\n\x04\x46ile\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\x0c\"O\n\rStorageObject\x12\x1d\n\x15object_storage_bucket\x18\x01 \x01(\t\x12\x1f\n\x17object_storage_filename\x18\x02 \x01(\t\"}\n\rTestDataEntry\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x14\n\x0cis_transient\x18\x02 \x01(\x08\x12H\n\x0estorage_object\x18\x03 \x01(\x0b\x32\x30.yandex.cloud.loadtesting.agent.v1.StorageObject\"3\n\x13GetJobTransientFile\x12\x0e\n\x06job_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"W\n\rGetJobRequest\x12\x1b\n\x13\x63ompute_instance_id\x18\x01 \x01(\t\x12\x19\n\x11\x61gent_instance_id\x18\x02 \x01(\t\x12\x0e\n\x06job_id\x18\x03 \x01(\t\"\xe9\x02\n\x15\x43laimJobStatusRequest\x12\x0e\n\x06job_id\x18\x01 \x01(\t\x12R\n\x06status\x18\x02 \x01(\x0e\x32\x42.yandex.cloud.loadtesting.agent.v1.ClaimJobStatusRequest.JobStatus\x12\r\n\x05\x65rror\x18\x03 \x01(\t\"\xdc\x01\n\tJobStatus\x12\x1a\n\x16JOB_STATUS_UNSPECIFIED\x10\x00\x12\x10\n\x0cPOST_PROCESS\x10\x01\x12\r\n\tINITIATED\x10\x02\x12\r\n\tPREPARING\x10\x03\x12\r\n\tNOT_FOUND\x10\x04\x12\x0b\n\x07RUNNING\x10\x05\x12\r\n\tFINISHING\x10\x06\x12\x0c\n\x08\x46INISHED\x10\x07\x12\x0b\n\x07STOPPED\x10\x08\x12\n\n\x06\x46\x41ILED\x10\t\x12\x0f\n\x0b\x41UTOSTOPPED\x10\n\x12 \n\x1cWAITING_FOR_A_COMMAND_TO_RUN\x10\x0b\"&\n\x16\x43laimJobStatusResponse\x12\x0c\n\x04\x63ode\x18\x01 \x01(\x03\"\"\n\x10JobSignalRequest\x12\x0e\n\x06job_id\x18\x01 \x01(\t\"\xc9\x01\n\x11JobSignalResponse\x12K\n\x06signal\x18\x01 \x01(\x0e\x32;.yandex.cloud.loadtesting.agent.v1.JobSignalResponse.Signal\x12\x15\n\rwait_duration\x18\x02 \x01(\x01\x12\x0e\n\x06run_in\x18\x03 \x01(\x01\"@\n\x06Signal\x12\x16\n\x12SIGNAL_UNSPECIFIED\x10\x00\x12\x08\n\x04STOP\x10\x01\x12\x08\n\x04WAIT\x10\x02\x12\n\n\x06RUN_IN\x10\x03\x32\xfb\x05\n\nJobService\x12\xbe\x01\n\x0b\x43laimStatus\x12\x38.yandex.cloud.loadtesting.agent.v1.ClaimJobStatusRequest\x1a\x39.yandex.cloud.loadtesting.agent.v1.ClaimJobStatusResponse\":\x82\xd3\xe4\x93\x02\x34\"//loadtesting/agent/v1/jobs/{job_id}/claimStatus:\x01*\x12\xc7\x01\n\x03Get\x12\x30.yandex.cloud.loadtesting.agent.v1.GetJobRequest\x1a&.yandex.cloud.loadtesting.agent.v1.Job\"f\x82\xd3\xe4\x93\x02`\x12\x37/loadtesting/agent/v1/agents/{agent_instance_id}/getJobZ%\x12#/loadtesting/agent/v1/jobs/{job_id}\x12\xad\x01\n\tGetSignal\x12\x33.yandex.cloud.loadtesting.agent.v1.JobSignalRequest\x1a\x34.yandex.cloud.loadtesting.agent.v1.JobSignalResponse\"5\x82\xd3\xe4\x93\x02/\x12-/loadtesting/agent/v1/jobs/{job_id}/getSignal\x12\xb1\x01\n\x10GetTransientFile\x12\x36.yandex.cloud.loadtesting.agent.v1.GetJobTransientFile\x1a\'.yandex.cloud.loadtesting.agent.v1.File\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/loadtesting/agent/v1/jobs/{job_id}/getTransientFileBt\n%yandex.cloud.api.loadtesting.agent.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadtesting/agent/v1;agentb\x06proto3'
+  serialized_pb=b'\n3yandex/cloud/loadtesting/agent/v1/job_service.proto\x12!yandex.cloud.loadtesting.agent.v1\x1a\x1cgoogle/api/annotations.proto\"\xe4\x02\n\x03Job\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06\x63onfig\x18\x02 \x01(\t\x12\x35\n\x04\x61mmo\x18\x03 \x01(\x0b\x32\'.yandex.cloud.loadtesting.agent.v1.File\x12\x1c\n\x14logging_log_group_id\x18\x04 \x01(\t\x12\x43\n\ttest_data\x18\x05 \x01(\x0b\x32\x30.yandex.cloud.loadtesting.agent.v1.StorageObject\x12\x46\n\x0c\x64\x61ta_payload\x18\x06 \x03(\x0b\x32\x30.yandex.cloud.loadtesting.agent.v1.TestDataEntry\x12_\n\x18\x61rtifact_upload_settings\x18\x07 \x01(\x0b\x32=.yandex.cloud.loadtesting.agent.v1.TestArtifactUploadSettings\"%\n\x04\x46ile\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\x0c\"O\n\rStorageObject\x12\x1d\n\x15object_storage_bucket\x18\x01 \x01(\t\x12\x1f\n\x17object_storage_filename\x18\x02 \x01(\t\"}\n\rTestDataEntry\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x14\n\x0cis_transient\x18\x02 \x01(\x08\x12H\n\x0estorage_object\x18\x03 \x01(\x0b\x32\x30.yandex.cloud.loadtesting.agent.v1.StorageObject\"\x8c\x01\n\x1aTestArtifactUploadSettings\x12\x15\n\routput_bucket\x18\x01 \x01(\t\x12\x13\n\x0boutput_name\x18\x02 \x01(\t\x12\x12\n\nis_archive\x18\x03 \x01(\x08\x12\x16\n\x0e\x66ilter_include\x18\x04 \x03(\t\x12\x16\n\x0e\x66ilter_exclude\x18\x05 \x03(\t\"3\n\x13GetJobTransientFile\x12\x0e\n\x06job_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"W\n\rGetJobRequest\x12\x1b\n\x13\x63ompute_instance_id\x18\x01 \x01(\t\x12\x19\n\x11\x61gent_instance_id\x18\x02 \x01(\t\x12\x0e\n\x06job_id\x18\x03 \x01(\t\"\xe9\x02\n\x15\x43laimJobStatusRequest\x12\x0e\n\x06job_id\x18\x01 \x01(\t\x12R\n\x06status\x18\x02 \x01(\x0e\x32\x42.yandex.cloud.loadtesting.agent.v1.ClaimJobStatusRequest.JobStatus\x12\r\n\x05\x65rror\x18\x03 \x01(\t\"\xdc\x01\n\tJobStatus\x12\x1a\n\x16JOB_STATUS_UNSPECIFIED\x10\x00\x12\x10\n\x0cPOST_PROCESS\x10\x01\x12\r\n\tINITIATED\x10\x02\x12\r\n\tPREPARING\x10\x03\x12\r\n\tNOT_FOUND\x10\x04\x12\x0b\n\x07RUNNING\x10\x05\x12\r\n\tFINISHING\x10\x06\x12\x0c\n\x08\x46INISHED\x10\x07\x12\x0b\n\x07STOPPED\x10\x08\x12\n\n\x06\x46\x41ILED\x10\t\x12\x0f\n\x0b\x41UTOSTOPPED\x10\n\x12 \n\x1cWAITING_FOR_A_COMMAND_TO_RUN\x10\x0b\"&\n\x16\x43laimJobStatusResponse\x12\x0c\n\x04\x63ode\x18\x01 \x01(\x03\"\"\n\x10JobSignalRequest\x12\x0e\n\x06job_id\x18\x01 \x01(\t\"\xc9\x01\n\x11JobSignalResponse\x12K\n\x06signal\x18\x01 \x01(\x0e\x32;.yandex.cloud.loadtesting.agent.v1.JobSignalResponse.Signal\x12\x15\n\rwait_duration\x18\x02 \x01(\x01\x12\x0e\n\x06run_in\x18\x03 \x01(\x01\"@\n\x06Signal\x12\x16\n\x12SIGNAL_UNSPECIFIED\x10\x00\x12\x08\n\x04STOP\x10\x01\x12\x08\n\x04WAIT\x10\x02\x12\n\n\x06RUN_IN\x10\x03\x32\xfb\x05\n\nJobService\x12\xbe\x01\n\x0b\x43laimStatus\x12\x38.yandex.cloud.loadtesting.agent.v1.ClaimJobStatusRequest\x1a\x39.yandex.cloud.loadtesting.agent.v1.ClaimJobStatusResponse\":\x82\xd3\xe4\x93\x02\x34\"//loadtesting/agent/v1/jobs/{job_id}/claimStatus:\x01*\x12\xc7\x01\n\x03Get\x12\x30.yandex.cloud.loadtesting.agent.v1.GetJobRequest\x1a&.yandex.cloud.loadtesting.agent.v1.Job\"f\x82\xd3\xe4\x93\x02`\x12\x37/loadtesting/agent/v1/agents/{agent_instance_id}/getJobZ%\x12#/loadtesting/agent/v1/jobs/{job_id}\x12\xad\x01\n\tGetSignal\x12\x33.yandex.cloud.loadtesting.agent.v1.JobSignalRequest\x1a\x34.yandex.cloud.loadtesting.agent.v1.JobSignalResponse\"5\x82\xd3\xe4\x93\x02/\x12-/loadtesting/agent/v1/jobs/{job_id}/getSignal\x12\xb1\x01\n\x10GetTransientFile\x12\x36.yandex.cloud.loadtesting.agent.v1.GetJobTransientFile\x1a\'.yandex.cloud.loadtesting.agent.v1.File\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/loadtesting/agent/v1/jobs/{job_id}/getTransientFileBt\n%yandex.cloud.api.loadtesting.agent.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadtesting/agent/v1;agentb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,])
 
@@ -96,8 +96,8 @@ _CLAIMJOBSTATUSREQUEST_JOBSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=913,
-  serialized_end=1133,
+  serialized_start=1153,
+  serialized_end=1373,
 )
 _sym_db.RegisterEnumDescriptor(_CLAIMJOBSTATUSREQUEST_JOBSTATUS)
 
@@ -131,8 +131,8 @@ _JOBSIGNALRESPONSE_SIGNAL = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1349,
-  serialized_end=1413,
+  serialized_start=1589,
+  serialized_end=1653,
 )
 _sym_db.RegisterEnumDescriptor(_JOBSIGNALRESPONSE_SIGNAL)
 
@@ -187,6 +187,13 @@ _JOB = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='artifact_upload_settings', full_name='yandex.cloud.loadtesting.agent.v1.Job.artifact_upload_settings', index=6,
+      number=7, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -200,7 +207,7 @@ _JOB = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=121,
-  serialized_end=380,
+  serialized_end=477,
 )
 
 
@@ -238,8 +245,8 @@ _FILE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=382,
-  serialized_end=419,
+  serialized_start=479,
+  serialized_end=516,
 )
 
 
@@ -277,8 +284,8 @@ _STORAGEOBJECT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=421,
-  serialized_end=500,
+  serialized_start=518,
+  serialized_end=597,
 )
 
 
@@ -323,8 +330,68 @@ _TESTDATAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=502,
-  serialized_end=627,
+  serialized_start=599,
+  serialized_end=724,
+)
+
+
+_TESTARTIFACTUPLOADSETTINGS = _descriptor.Descriptor(
+  name='TestArtifactUploadSettings',
+  full_name='yandex.cloud.loadtesting.agent.v1.TestArtifactUploadSettings',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='output_bucket', full_name='yandex.cloud.loadtesting.agent.v1.TestArtifactUploadSettings.output_bucket', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='output_name', full_name='yandex.cloud.loadtesting.agent.v1.TestArtifactUploadSettings.output_name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='is_archive', full_name='yandex.cloud.loadtesting.agent.v1.TestArtifactUploadSettings.is_archive', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='filter_include', full_name='yandex.cloud.loadtesting.agent.v1.TestArtifactUploadSettings.filter_include', index=3,
+      number=4, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='filter_exclude', full_name='yandex.cloud.loadtesting.agent.v1.TestArtifactUploadSettings.filter_exclude', index=4,
+      number=5, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=727,
+  serialized_end=867,
 )
 
 
@@ -362,8 +429,8 @@ _GETJOBTRANSIENTFILE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=629,
-  serialized_end=680,
+  serialized_start=869,
+  serialized_end=920,
 )
 
 
@@ -408,8 +475,8 @@ _GETJOBREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=682,
-  serialized_end=769,
+  serialized_start=922,
+  serialized_end=1009,
 )
 
 
@@ -455,8 +522,8 @@ _CLAIMJOBSTATUSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=772,
-  serialized_end=1133,
+  serialized_start=1012,
+  serialized_end=1373,
 )
 
 
@@ -487,8 +554,8 @@ _CLAIMJOBSTATUSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1135,
-  serialized_end=1173,
+  serialized_start=1375,
+  serialized_end=1413,
 )
 
 
@@ -519,8 +586,8 @@ _JOBSIGNALREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1175,
-  serialized_end=1209,
+  serialized_start=1415,
+  serialized_end=1449,
 )
 
 
@@ -566,13 +633,14 @@ _JOBSIGNALRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1212,
-  serialized_end=1413,
+  serialized_start=1452,
+  serialized_end=1653,
 )
 
 _JOB.fields_by_name['ammo'].message_type = _FILE
 _JOB.fields_by_name['test_data'].message_type = _STORAGEOBJECT
 _JOB.fields_by_name['data_payload'].message_type = _TESTDATAENTRY
+_JOB.fields_by_name['artifact_upload_settings'].message_type = _TESTARTIFACTUPLOADSETTINGS
 _TESTDATAENTRY.fields_by_name['storage_object'].message_type = _STORAGEOBJECT
 _CLAIMJOBSTATUSREQUEST.fields_by_name['status'].enum_type = _CLAIMJOBSTATUSREQUEST_JOBSTATUS
 _CLAIMJOBSTATUSREQUEST_JOBSTATUS.containing_type = _CLAIMJOBSTATUSREQUEST
@@ -582,6 +650,7 @@ DESCRIPTOR.message_types_by_name['Job'] = _JOB
 DESCRIPTOR.message_types_by_name['File'] = _FILE
 DESCRIPTOR.message_types_by_name['StorageObject'] = _STORAGEOBJECT
 DESCRIPTOR.message_types_by_name['TestDataEntry'] = _TESTDATAENTRY
+DESCRIPTOR.message_types_by_name['TestArtifactUploadSettings'] = _TESTARTIFACTUPLOADSETTINGS
 DESCRIPTOR.message_types_by_name['GetJobTransientFile'] = _GETJOBTRANSIENTFILE
 DESCRIPTOR.message_types_by_name['GetJobRequest'] = _GETJOBREQUEST
 DESCRIPTOR.message_types_by_name['ClaimJobStatusRequest'] = _CLAIMJOBSTATUSREQUEST
@@ -617,6 +686,13 @@ TestDataEntry = _reflection.GeneratedProtocolMessageType('TestDataEntry', (_mess
   # @@protoc_insertion_point(class_scope:yandex.cloud.loadtesting.agent.v1.TestDataEntry)
   })
 _sym_db.RegisterMessage(TestDataEntry)
+
+TestArtifactUploadSettings = _reflection.GeneratedProtocolMessageType('TestArtifactUploadSettings', (_message.Message,), {
+  'DESCRIPTOR' : _TESTARTIFACTUPLOADSETTINGS,
+  '__module__' : 'yandex.cloud.loadtesting.agent.v1.job_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.loadtesting.agent.v1.TestArtifactUploadSettings)
+  })
+_sym_db.RegisterMessage(TestArtifactUploadSettings)
 
 GetJobTransientFile = _reflection.GeneratedProtocolMessageType('GetJobTransientFile', (_message.Message,), {
   'DESCRIPTOR' : _GETJOBTRANSIENTFILE,
@@ -670,8 +746,8 @@ _JOBSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1416,
-  serialized_end=2179,
+  serialized_start=1656,
+  serialized_end=2419,
   methods=[
   _descriptor.MethodDescriptor(
     name='ClaimStatus',
