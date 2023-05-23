@@ -122,6 +122,7 @@ _supported_modules = [
     ("yandex.cloud.mdb.redis", "managed-redis"),
     ("yandex.cloud.mdb.sqlserver", "managed-sqlserver"),
     ("yandex.cloud.mdb.elasticsearch", "managed-elasticsearch"),
+    ("yandex.cloud.mdb.greenplum", "managed-greenplum"),
     ("yandex.cloud.operation", "operation"),
     ("yandex.cloud.organizationmanager", "organization-manager"),
     ("yandex.cloud.resourcemanager", "resource-manager"),
@@ -130,6 +131,7 @@ _supported_modules = [
     ("yandex.cloud.serverless.containers", "serverless-containers"),
     ("yandex.cloud.serverless.functions", "serverless-functions"),
     ("yandex.cloud.serverless.triggers", "serverless-triggers"),
+    ("yandex.cloud.storage", "storage"),
     ("yandex.cloud.vpc", "vpc"),
     ("yandex.cloud.ydb", "ydb"),
 ]
