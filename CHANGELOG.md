@@ -2,6 +2,11 @@
 
 <!--next-version-placeholder-->
 
+## v0.215.0 (2023-05-23)
+### Feature
+* Add S3 service support to sdk.client() call ([`685dcfa`](https://github.com/yandex-cloud/python-sdk/commit/685dcfa0e342e52ca13c95d312e92922d6f42638))
+* Support managed greenplum in sdk.client() calls ([`22412f7`](https://github.com/yandex-cloud/python-sdk/commit/22412f7a775884a19b005038528b8ecfdcd65a58))
+
 ## v0.214.0 (2023-05-23)
 ### Feature
 * Regenerate proto ([`ca1de41`](https://github.com/yandex-cloud/python-sdk/commit/ca1de41b762c9b48354ff02cdf8fca879a606a96))
