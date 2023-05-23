@@ -2,6 +2,10 @@
 
 <!--next-version-placeholder-->
 
+## v0.214.0 (2023-05-23)
+### Feature
+* Regenerate proto ([`ca1de41`](https://github.com/yandex-cloud/python-sdk/commit/ca1de41b762c9b48354ff02cdf8fca879a606a96))
+
 ## v0.213.0 (2023-05-16)
 ### Feature
 * Regenerate proto ([`aa243a4`](https://github.com/yandex-cloud/python-sdk/commit/aa243a49cdbb2439452f3bd301d36bb7396b7a1d))
