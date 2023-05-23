@@ -26,7 +26,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\033yandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;compute',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n5yandex/cloud/compute/v1/placement_group_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/compute/v1/instance.proto\x1a-yandex/cloud/compute/v1/placement_group.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"6\n\x18GetPlacementGroupRequest\x12\x1a\n\x12placement_group_id\x18\x01 \x01(\t\"f\n\x1aListPlacementGroupsRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\"y\n\x1bListPlacementGroupsResponse\x12\x41\n\x10placement_groups\x18\x01 \x03(\x0b\x32\'.yandex.cloud.compute.v1.PlacementGroup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xc7\x02\n\x1b\x43reatePlacementGroupRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12P\n\x06labels\x18\x04 \x03(\x0b\x32@.yandex.cloud.compute.v1.CreatePlacementGroupRequest.LabelsEntry\x12U\n\x19spread_placement_strategy\x18\x05 \x01(\x0b\x32\x30.yandex.cloud.compute.v1.SpreadPlacementStrategyH\x00\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x1a\n\x12placement_strategy\x12\x04\xc0\xc1\x31\x01\":\n\x1c\x43reatePlacementGroupMetadata\x12\x1a\n\x12placement_group_id\x18\x01 \x01(\t\"\x8e\x02\n\x1bUpdatePlacementGroupRequest\x12\x1a\n\x12placement_group_id\x18\x01 \x01(\t\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12P\n\x06labels\x18\x05 \x03(\x0b\x32@.yandex.cloud.compute.v1.UpdatePlacementGroupRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\":\n\x1cUpdatePlacementGroupMetadata\x12\x1a\n\x12placement_group_id\x18\x01 \x01(\t\"9\n\x1b\x44\x65letePlacementGroupRequest\x12\x1a\n\x12placement_group_id\x18\x01 \x01(\t\":\n\x1c\x44\x65letePlacementGroupMetadata\x12\x1a\n\x12placement_group_id\x18\x01 \x01(\t\"g\n\"ListPlacementGroupInstancesRequest\x12\x1a\n\x12placement_group_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\"t\n#ListPlacementGroupInstancesResponse\x12\x34\n\tinstances\x18\x01 \x03(\x0b\x32!.yandex.cloud.compute.v1.Instance\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"h\n#ListPlacementGroupOperationsRequest\x12\x1a\n\x12placement_group_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\"v\n$ListPlacementGroupOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xdc\n\n\x15PlacementGroupService\x12\x9b\x01\n\x03Get\x12\x31.yandex.cloud.compute.v1.GetPlacementGroupRequest\x1a\'.yandex.cloud.compute.v1.PlacementGroup\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/compute/v1/placementGroups/{placement_group_id}\x12\x96\x01\n\x04List\x12\x33.yandex.cloud.compute.v1.ListPlacementGroupsRequest\x1a\x34.yandex.cloud.compute.v1.ListPlacementGroupsResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/compute/v1/placementGroups\x12\xbb\x01\n\x06\x43reate\x12\x34.yandex.cloud.compute.v1.CreatePlacementGroupRequest\x1a!.yandex.cloud.operation.Operation\"X\x82\xd3\xe4\x93\x02 \"\x1b/compute/v1/placementGroups:\x01*\xb2\xd2*.\n\x1c\x43reatePlacementGroupMetadata\x12\x0ePlacementGroup\x12\xd0\x01\n\x06Update\x12\x34.yandex.cloud.compute.v1.UpdatePlacementGroupRequest\x1a!.yandex.cloud.operation.Operation\"m\x82\xd3\xe4\x93\x02\x35\x32\x30/compute/v1/placementGroups/{placement_group_id}:\x01*\xb2\xd2*.\n\x1cUpdatePlacementGroupMetadata\x12\x0ePlacementGroup\x12\xd4\x01\n\x06\x44\x65lete\x12\x34.yandex.cloud.compute.v1.DeletePlacementGroupRequest\x1a!.yandex.cloud.operation.Operation\"q\x82\xd3\xe4\x93\x02\x32*0/compute/v1/placementGroups/{placement_group_id}\xb2\xd2*5\n\x1c\x44\x65letePlacementGroupMetadata\x12\x15google.protobuf.Empty\x12\xce\x01\n\rListInstances\x12;.yandex.cloud.compute.v1.ListPlacementGroupInstancesRequest\x1a<.yandex.cloud.compute.v1.ListPlacementGroupInstancesResponse\"B\x82\xd3\xe4\x93\x02<\x12:/compute/v1/placementGroups/{placement_group_id}/instances\x12\xd2\x01\n\x0eListOperations\x12<.yandex.cloud.compute.v1.ListPlacementGroupOperationsRequest\x1a=.yandex.cloud.compute.v1.ListPlacementGroupOperationsResponse\"C\x82\xd3\xe4\x93\x02=\x12;/compute/v1/placementGroups/{placement_group_id}/operationsBb\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3'
+  serialized_pb=b'\n5yandex/cloud/compute/v1/placement_group_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/compute/v1/instance.proto\x1a-yandex/cloud/compute/v1/placement_group.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"6\n\x18GetPlacementGroupRequest\x12\x1a\n\x12placement_group_id\x18\x01 \x01(\t\"f\n\x1aListPlacementGroupsRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\"y\n\x1bListPlacementGroupsResponse\x12\x41\n\x10placement_groups\x18\x01 \x03(\x0b\x32\'.yandex.cloud.compute.v1.PlacementGroup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xa4\x03\n\x1b\x43reatePlacementGroupRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12P\n\x06labels\x18\x04 \x03(\x0b\x32@.yandex.cloud.compute.v1.CreatePlacementGroupRequest.LabelsEntry\x12U\n\x19spread_placement_strategy\x18\x05 \x01(\x0b\x32\x30.yandex.cloud.compute.v1.SpreadPlacementStrategyH\x00\x12[\n\x1cpartition_placement_strategy\x18\x06 \x01(\x0b\x32\x33.yandex.cloud.compute.v1.PartitionPlacementStrategyH\x00\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x1a\n\x12placement_strategy\x12\x04\xc0\xc1\x31\x01\":\n\x1c\x43reatePlacementGroupMetadata\x12\x1a\n\x12placement_group_id\x18\x01 \x01(\t\"\x8e\x02\n\x1bUpdatePlacementGroupRequest\x12\x1a\n\x12placement_group_id\x18\x01 \x01(\t\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12P\n\x06labels\x18\x05 \x03(\x0b\x32@.yandex.cloud.compute.v1.UpdatePlacementGroupRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\":\n\x1cUpdatePlacementGroupMetadata\x12\x1a\n\x12placement_group_id\x18\x01 \x01(\t\"9\n\x1b\x44\x65letePlacementGroupRequest\x12\x1a\n\x12placement_group_id\x18\x01 \x01(\t\":\n\x1c\x44\x65letePlacementGroupMetadata\x12\x1a\n\x12placement_group_id\x18\x01 \x01(\t\"g\n\"ListPlacementGroupInstancesRequest\x12\x1a\n\x12placement_group_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\"t\n#ListPlacementGroupInstancesResponse\x12\x34\n\tinstances\x18\x01 \x03(\x0b\x32!.yandex.cloud.compute.v1.Instance\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"h\n#ListPlacementGroupOperationsRequest\x12\x1a\n\x12placement_group_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\"v\n$ListPlacementGroupOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xdc\n\n\x15PlacementGroupService\x12\x9b\x01\n\x03Get\x12\x31.yandex.cloud.compute.v1.GetPlacementGroupRequest\x1a\'.yandex.cloud.compute.v1.PlacementGroup\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/compute/v1/placementGroups/{placement_group_id}\x12\x96\x01\n\x04List\x12\x33.yandex.cloud.compute.v1.ListPlacementGroupsRequest\x1a\x34.yandex.cloud.compute.v1.ListPlacementGroupsResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/compute/v1/placementGroups\x12\xbb\x01\n\x06\x43reate\x12\x34.yandex.cloud.compute.v1.CreatePlacementGroupRequest\x1a!.yandex.cloud.operation.Operation\"X\x82\xd3\xe4\x93\x02 \"\x1b/compute/v1/placementGroups:\x01*\xb2\xd2*.\n\x1c\x43reatePlacementGroupMetadata\x12\x0ePlacementGroup\x12\xd0\x01\n\x06Update\x12\x34.yandex.cloud.compute.v1.UpdatePlacementGroupRequest\x1a!.yandex.cloud.operation.Operation\"m\x82\xd3\xe4\x93\x02\x35\x32\x30/compute/v1/placementGroups/{placement_group_id}:\x01*\xb2\xd2*.\n\x1cUpdatePlacementGroupMetadata\x12\x0ePlacementGroup\x12\xd4\x01\n\x06\x44\x65lete\x12\x34.yandex.cloud.compute.v1.DeletePlacementGroupRequest\x1a!.yandex.cloud.operation.Operation\"q\x82\xd3\xe4\x93\x02\x32*0/compute/v1/placementGroups/{placement_group_id}\xb2\xd2*5\n\x1c\x44\x65letePlacementGroupMetadata\x12\x15google.protobuf.Empty\x12\xce\x01\n\rListInstances\x12;.yandex.cloud.compute.v1.ListPlacementGroupInstancesRequest\x1a<.yandex.cloud.compute.v1.ListPlacementGroupInstancesResponse\"B\x82\xd3\xe4\x93\x02<\x12:/compute/v1/placementGroups/{placement_group_id}/instances\x12\xd2\x01\n\x0eListOperations\x12<.yandex.cloud.compute.v1.ListPlacementGroupOperationsRequest\x1a=.yandex.cloud.compute.v1.ListPlacementGroupOperationsResponse\"C\x82\xd3\xe4\x93\x02=\x12;/compute/v1/placementGroups/{placement_group_id}/operationsBb\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_compute_dot_v1_dot_instance__pb2.DESCRIPTOR,yandex_dot_cloud_dot_compute_dot_v1_dot_placement__group__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -191,8 +191,8 @@ _CREATEPLACEMENTGROUPREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=876,
-  serialized_end=921,
+  serialized_start=969,
+  serialized_end=1014,
 )
 
 _CREATEPLACEMENTGROUPREQUEST = _descriptor.Descriptor(
@@ -238,6 +238,13 @@ _CREATEPLACEMENTGROUPREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='partition_placement_strategy', full_name='yandex.cloud.compute.v1.CreatePlacementGroupRequest.partition_placement_strategy', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -256,7 +263,7 @@ _CREATEPLACEMENTGROUPREQUEST = _descriptor.Descriptor(
     fields=[], serialized_options=b'\300\3011\001'),
   ],
   serialized_start=622,
-  serialized_end=949,
+  serialized_end=1042,
 )
 
 
@@ -287,8 +294,8 @@ _CREATEPLACEMENTGROUPMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=951,
-  serialized_end=1009,
+  serialized_start=1044,
+  serialized_end=1102,
 )
 
 
@@ -326,8 +333,8 @@ _UPDATEPLACEMENTGROUPREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=876,
-  serialized_end=921,
+  serialized_start=969,
+  serialized_end=1014,
 )
 
 _UPDATEPLACEMENTGROUPREQUEST = _descriptor.Descriptor(
@@ -385,8 +392,8 @@ _UPDATEPLACEMENTGROUPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1012,
-  serialized_end=1282,
+  serialized_start=1105,
+  serialized_end=1375,
 )
 
 
@@ -417,8 +424,8 @@ _UPDATEPLACEMENTGROUPMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1284,
-  serialized_end=1342,
+  serialized_start=1377,
+  serialized_end=1435,
 )
 
 
@@ -449,8 +456,8 @@ _DELETEPLACEMENTGROUPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1344,
-  serialized_end=1401,
+  serialized_start=1437,
+  serialized_end=1494,
 )
 
 
@@ -481,8 +488,8 @@ _DELETEPLACEMENTGROUPMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1403,
-  serialized_end=1461,
+  serialized_start=1496,
+  serialized_end=1554,
 )
 
 
@@ -527,8 +534,8 @@ _LISTPLACEMENTGROUPINSTANCESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1463,
-  serialized_end=1566,
+  serialized_start=1556,
+  serialized_end=1659,
 )
 
 
@@ -566,8 +573,8 @@ _LISTPLACEMENTGROUPINSTANCESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1568,
-  serialized_end=1684,
+  serialized_start=1661,
+  serialized_end=1777,
 )
 
 
@@ -612,8 +619,8 @@ _LISTPLACEMENTGROUPOPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1686,
-  serialized_end=1790,
+  serialized_start=1779,
+  serialized_end=1883,
 )
 
 
@@ -651,17 +658,21 @@ _LISTPLACEMENTGROUPOPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1792,
-  serialized_end=1910,
+  serialized_start=1885,
+  serialized_end=2003,
 )
 
 _LISTPLACEMENTGROUPSRESPONSE.fields_by_name['placement_groups'].message_type = yandex_dot_cloud_dot_compute_dot_v1_dot_placement__group__pb2._PLACEMENTGROUP
 _CREATEPLACEMENTGROUPREQUEST_LABELSENTRY.containing_type = _CREATEPLACEMENTGROUPREQUEST
 _CREATEPLACEMENTGROUPREQUEST.fields_by_name['labels'].message_type = _CREATEPLACEMENTGROUPREQUEST_LABELSENTRY
 _CREATEPLACEMENTGROUPREQUEST.fields_by_name['spread_placement_strategy'].message_type = yandex_dot_cloud_dot_compute_dot_v1_dot_placement__group__pb2._SPREADPLACEMENTSTRATEGY
+_CREATEPLACEMENTGROUPREQUEST.fields_by_name['partition_placement_strategy'].message_type = yandex_dot_cloud_dot_compute_dot_v1_dot_placement__group__pb2._PARTITIONPLACEMENTSTRATEGY
 _CREATEPLACEMENTGROUPREQUEST.oneofs_by_name['placement_strategy'].fields.append(
   _CREATEPLACEMENTGROUPREQUEST.fields_by_name['spread_placement_strategy'])
 _CREATEPLACEMENTGROUPREQUEST.fields_by_name['spread_placement_strategy'].containing_oneof = _CREATEPLACEMENTGROUPREQUEST.oneofs_by_name['placement_strategy']
+_CREATEPLACEMENTGROUPREQUEST.oneofs_by_name['placement_strategy'].fields.append(
+  _CREATEPLACEMENTGROUPREQUEST.fields_by_name['partition_placement_strategy'])
+_CREATEPLACEMENTGROUPREQUEST.fields_by_name['partition_placement_strategy'].containing_oneof = _CREATEPLACEMENTGROUPREQUEST.oneofs_by_name['placement_strategy']
 _UPDATEPLACEMENTGROUPREQUEST_LABELSENTRY.containing_type = _UPDATEPLACEMENTGROUPREQUEST
 _UPDATEPLACEMENTGROUPREQUEST.fields_by_name['update_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
 _UPDATEPLACEMENTGROUPREQUEST.fields_by_name['labels'].message_type = _UPDATEPLACEMENTGROUPREQUEST_LABELSENTRY
@@ -802,8 +813,8 @@ _PLACEMENTGROUPSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=1913,
-  serialized_end=3285,
+  serialized_start=2006,
+  serialized_end=3378,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',

@@ -23,7 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n(yandex.cloud.api.serverless.functions.v1ZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/functions/v1;functions',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n3yandex/cloud/serverless/functions/v1/function.proto\x12$yandex.cloud.serverless.functions.v1\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\'yandex/cloud/logging/v1/log_entry.proto\x1a\x1dyandex/cloud/validation.proto\"\xe1\x03\n\x08\x46unction\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x16\n\x04name\x18\x04 \x01(\tB\x08\x8a\xc8\x31\x04\x33-63\x12\x1e\n\x0b\x64\x65scription\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05\x30-256\x12T\n\x06labels\x18\x06 \x03(\x0b\x32:.yandex.cloud.serverless.functions.v1.Function.LabelsEntryB\x08\x82\xc8\x31\x04<=64\x12\x14\n\x0clog_group_id\x18\x07 \x01(\t\x12\x17\n\x0fhttp_invoke_url\x18\x08 \x01(\t\x12\x45\n\x06status\x18\t \x01(\x0e\x32\x35.yandex.cloud.serverless.functions.v1.Function.Status\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"S\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08\x44\x45LETING\x10\x03\x12\t\n\x05\x45RROR\x10\x04\"\xb0\x08\n\x07Version\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x0b\x66unction_id\x18\x02 \x01(\t\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05\x30-256\x12.\n\ncreated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07runtime\x18\x06 \x01(\t\x12\x12\n\nentrypoint\x18\x07 \x01(\t\x12\x42\n\tresources\x18\x08 \x01(\x0b\x32/.yandex.cloud.serverless.functions.v1.Resources\x12\x34\n\x11\x65xecution_timeout\x18\t \x01(\x0b\x32\x19.google.protobuf.Duration\x12\x1a\n\x12service_account_id\x18\n \x01(\t\x12\x12\n\nimage_size\x18\x0c \x01(\x03\x12\x44\n\x06status\x18\r \x01(\x0e\x32\x34.yandex.cloud.serverless.functions.v1.Version.Status\x12\x0c\n\x04tags\x18\x0e \x03(\t\x12\x14\n\x0clog_group_id\x18\x0f \x01(\t\x12S\n\x0b\x65nvironment\x18\x10 \x03(\x0b\x32>.yandex.cloud.serverless.functions.v1.Version.EnvironmentEntry\x12H\n\x0c\x63onnectivity\x18\x11 \x01(\x0b\x32\x32.yandex.cloud.serverless.functions.v1.Connectivity\x12g\n\x16named_service_accounts\x18\x12 \x03(\x0b\x32G.yandex.cloud.serverless.functions.v1.Version.NamedServiceAccountsEntry\x12=\n\x07secrets\x18\x13 \x03(\x0b\x32,.yandex.cloud.serverless.functions.v1.Secret\x12\x45\n\x0blog_options\x18\x14 \x01(\x0b\x32\x30.yandex.cloud.serverless.functions.v1.LogOptions\x12@\n\ts3_mounts\x18\x15 \x03(\x0b\x32-.yandex.cloud.serverless.functions.v1.S3Mount\x1a\x32\n\x10\x45nvironmentEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a;\n\x19NamedServiceAccountsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\":\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\"5\n\tResources\x12(\n\x06memory\x18\x01 \x01(\x03\x42\x18\xfa\xc7\x31\x14\x31\x33\x34\x32\x31\x37\x37\x32\x38-4294967296\"O\n\x07Package\x12\x19\n\x0b\x62ucket_name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x19\n\x0bobject_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x0e\n\x06sha256\x18\x03 \x01(\t\"A\n\x0c\x43onnectivity\x12\x12\n\nnetwork_id\x18\x01 \x01(\t\x12\x1d\n\tsubnet_id\x18\x02 \x03(\tB\n\x8a\xc8\x31\x02>0\x90\xc8\x31\x01\"\xf2\x01\n\rScalingPolicy\x12\x13\n\x0b\x66unction_id\x18\x01 \x01(\t\x12\x0b\n\x03tag\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0bmodified_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12#\n\x1bprovisioned_instances_count\x18\x06 \x01(\x03\x12\x1c\n\x14zone_instances_limit\x18\x07 \x01(\x03\x12\x1b\n\x13zone_requests_limit\x18\x08 \x01(\x03\"b\n\x06Secret\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\nversion_id\x18\x02 \x01(\t\x12\x0b\n\x03key\x18\x03 \x01(\t\x12\x1e\n\x14\x65nvironment_variable\x18\x04 \x01(\tH\x00\x42\x0b\n\treference\"\xe0\x01\n\nLogOptions\x12\x10\n\x08\x64isabled\x18\x01 \x01(\x08\x12;\n\x0clog_group_id\x18\x02 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?H\x00\x12\x38\n\tfolder_id\x18\x03 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?H\x00\x12:\n\tmin_level\x18\x04 \x01(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.LevelB\r\n\x0b\x64\x65stination\"\x9a\x01\n\x07S3Mount\x12\x31\n\tbucket_id\x18\x01 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04\x33-63\xf2\xc7\x31\x0e[-.0-9a-zA-Z]*\x12\x0e\n\x06prefix\x18\x02 \x01(\t\x12\x39\n\x10mount_point_name\x18\x03 \x01(\tB\x1f\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x31-100\xf2\xc7\x31\x0e[-_0-9a-zA-Z]*\x12\x11\n\tread_only\x18\x04 \x01(\x08\x42~\n(yandex.cloud.api.serverless.functions.v1ZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/functions/v1;functionsb\x06proto3'
+  serialized_pb=b'\n3yandex/cloud/serverless/functions/v1/function.proto\x12$yandex.cloud.serverless.functions.v1\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\'yandex/cloud/logging/v1/log_entry.proto\x1a\x1dyandex/cloud/validation.proto\"\xe1\x03\n\x08\x46unction\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x16\n\x04name\x18\x04 \x01(\tB\x08\x8a\xc8\x31\x04\x33-63\x12\x1e\n\x0b\x64\x65scription\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05\x30-256\x12T\n\x06labels\x18\x06 \x03(\x0b\x32:.yandex.cloud.serverless.functions.v1.Function.LabelsEntryB\x08\x82\xc8\x31\x04<=64\x12\x14\n\x0clog_group_id\x18\x07 \x01(\t\x12\x17\n\x0fhttp_invoke_url\x18\x08 \x01(\t\x12\x45\n\x06status\x18\t \x01(\x0e\x32\x35.yandex.cloud.serverless.functions.v1.Function.Status\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"S\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08\x44\x45LETING\x10\x03\x12\t\n\x05\x45RROR\x10\x04\"\xba\x08\n\x07Version\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x0b\x66unction_id\x18\x02 \x01(\t\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05\x30-256\x12.\n\ncreated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0f\n\x07runtime\x18\x06 \x01(\t\x12\x12\n\nentrypoint\x18\x07 \x01(\t\x12\x42\n\tresources\x18\x08 \x01(\x0b\x32/.yandex.cloud.serverless.functions.v1.Resources\x12\x34\n\x11\x65xecution_timeout\x18\t \x01(\x0b\x32\x19.google.protobuf.Duration\x12\x1a\n\x12service_account_id\x18\n \x01(\t\x12\x12\n\nimage_size\x18\x0c \x01(\x03\x12\x44\n\x06status\x18\r \x01(\x0e\x32\x34.yandex.cloud.serverless.functions.v1.Version.Status\x12\x0c\n\x04tags\x18\x0e \x03(\t\x12\x14\n\x0clog_group_id\x18\x0f \x01(\t\x12S\n\x0b\x65nvironment\x18\x10 \x03(\x0b\x32>.yandex.cloud.serverless.functions.v1.Version.EnvironmentEntry\x12H\n\x0c\x63onnectivity\x18\x11 \x01(\x0b\x32\x32.yandex.cloud.serverless.functions.v1.Connectivity\x12g\n\x16named_service_accounts\x18\x12 \x03(\x0b\x32G.yandex.cloud.serverless.functions.v1.Version.NamedServiceAccountsEntry\x12=\n\x07secrets\x18\x13 \x03(\x0b\x32,.yandex.cloud.serverless.functions.v1.Secret\x12\x45\n\x0blog_options\x18\x14 \x01(\x0b\x32\x30.yandex.cloud.serverless.functions.v1.LogOptions\x12J\n\x0estorage_mounts\x18\x15 \x03(\x0b\x32\x32.yandex.cloud.serverless.functions.v1.StorageMount\x1a\x32\n\x10\x45nvironmentEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a;\n\x19NamedServiceAccountsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\":\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\"5\n\tResources\x12(\n\x06memory\x18\x01 \x01(\x03\x42\x18\xfa\xc7\x31\x14\x31\x33\x34\x32\x31\x37\x37\x32\x38-4294967296\"O\n\x07Package\x12\x19\n\x0b\x62ucket_name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x19\n\x0bobject_name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x0e\n\x06sha256\x18\x03 \x01(\t\"A\n\x0c\x43onnectivity\x12\x12\n\nnetwork_id\x18\x01 \x01(\t\x12\x1d\n\tsubnet_id\x18\x02 \x03(\tB\n\x8a\xc8\x31\x02>0\x90\xc8\x31\x01\"\xf2\x01\n\rScalingPolicy\x12\x13\n\x0b\x66unction_id\x18\x01 \x01(\t\x12\x0b\n\x03tag\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0bmodified_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12#\n\x1bprovisioned_instances_count\x18\x06 \x01(\x03\x12\x1c\n\x14zone_instances_limit\x18\x07 \x01(\x03\x12\x1b\n\x13zone_requests_limit\x18\x08 \x01(\x03\"b\n\x06Secret\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\nversion_id\x18\x02 \x01(\t\x12\x0b\n\x03key\x18\x03 \x01(\t\x12\x1e\n\x14\x65nvironment_variable\x18\x04 \x01(\tH\x00\x42\x0b\n\treference\"\xe0\x01\n\nLogOptions\x12\x10\n\x08\x64isabled\x18\x01 \x01(\x08\x12;\n\x0clog_group_id\x18\x02 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?H\x00\x12\x38\n\tfolder_id\x18\x03 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?H\x00\x12:\n\tmin_level\x18\x04 \x01(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.LevelB\r\n\x0b\x64\x65stination\"\x9f\x01\n\x0cStorageMount\x12\x31\n\tbucket_id\x18\x01 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04\x33-63\xf2\xc7\x31\x0e[-.0-9a-zA-Z]*\x12\x0e\n\x06prefix\x18\x02 \x01(\t\x12\x39\n\x10mount_point_name\x18\x03 \x01(\tB\x1f\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x31-100\xf2\xc7\x31\x0e[-_0-9a-zA-Z]*\x12\x11\n\tread_only\x18\x04 \x01(\x08\x42~\n(yandex.cloud.api.serverless.functions.v1ZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/functions/v1;functionsb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_logging_dot_v1_dot_log__entry__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -261,8 +261,8 @@ _VERSION_ENVIRONMENTENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1616,
-  serialized_end=1666,
+  serialized_start=1626,
+  serialized_end=1676,
 )
 
 _VERSION_NAMEDSERVICEACCOUNTSENTRY = _descriptor.Descriptor(
@@ -299,8 +299,8 @@ _VERSION_NAMEDSERVICEACCOUNTSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1668,
-  serialized_end=1727,
+  serialized_start=1678,
+  serialized_end=1737,
 )
 
 _VERSION = _descriptor.Descriptor(
@@ -438,7 +438,7 @@ _VERSION = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='s3_mounts', full_name='yandex.cloud.serverless.functions.v1.Version.s3_mounts', index=18,
+      name='storage_mounts', full_name='yandex.cloud.serverless.functions.v1.Version.storage_mounts', index=18,
       number=21, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -458,7 +458,7 @@ _VERSION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=715,
-  serialized_end=1787,
+  serialized_end=1797,
 )
 
 
@@ -489,8 +489,8 @@ _RESOURCES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1789,
-  serialized_end=1842,
+  serialized_start=1799,
+  serialized_end=1852,
 )
 
 
@@ -535,8 +535,8 @@ _PACKAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1844,
-  serialized_end=1923,
+  serialized_start=1854,
+  serialized_end=1933,
 )
 
 
@@ -574,8 +574,8 @@ _CONNECTIVITY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1925,
-  serialized_end=1990,
+  serialized_start=1935,
+  serialized_end=2000,
 )
 
 
@@ -648,8 +648,8 @@ _SCALINGPOLICY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1993,
-  serialized_end=2235,
+  serialized_start=2003,
+  serialized_end=2245,
 )
 
 
@@ -706,8 +706,8 @@ _SECRET = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=2237,
-  serialized_end=2335,
+  serialized_start=2247,
+  serialized_end=2345,
 )
 
 
@@ -764,42 +764,42 @@ _LOGOPTIONS = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=2338,
-  serialized_end=2562,
+  serialized_start=2348,
+  serialized_end=2572,
 )
 
 
-_S3MOUNT = _descriptor.Descriptor(
-  name='S3Mount',
-  full_name='yandex.cloud.serverless.functions.v1.S3Mount',
+_STORAGEMOUNT = _descriptor.Descriptor(
+  name='StorageMount',
+  full_name='yandex.cloud.serverless.functions.v1.StorageMount',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='bucket_id', full_name='yandex.cloud.serverless.functions.v1.S3Mount.bucket_id', index=0,
+      name='bucket_id', full_name='yandex.cloud.serverless.functions.v1.StorageMount.bucket_id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\350\3071\001\212\3101\0043-63\362\3071\016[-.0-9a-zA-Z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='prefix', full_name='yandex.cloud.serverless.functions.v1.S3Mount.prefix', index=1,
+      name='prefix', full_name='yandex.cloud.serverless.functions.v1.StorageMount.prefix', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='mount_point_name', full_name='yandex.cloud.serverless.functions.v1.S3Mount.mount_point_name', index=2,
+      name='mount_point_name', full_name='yandex.cloud.serverless.functions.v1.StorageMount.mount_point_name', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\350\3071\001\212\3101\0051-100\362\3071\016[-_0-9a-zA-Z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='read_only', full_name='yandex.cloud.serverless.functions.v1.S3Mount.read_only', index=3,
+      name='read_only', full_name='yandex.cloud.serverless.functions.v1.StorageMount.read_only', index=3,
       number=4, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
@@ -817,8 +817,8 @@ _S3MOUNT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2565,
-  serialized_end=2719,
+  serialized_start=2575,
+  serialized_end=2734,
 )
 
 _FUNCTION_LABELSENTRY.containing_type = _FUNCTION
@@ -837,7 +837,7 @@ _VERSION.fields_by_name['connectivity'].message_type = _CONNECTIVITY
 _VERSION.fields_by_name['named_service_accounts'].message_type = _VERSION_NAMEDSERVICEACCOUNTSENTRY
 _VERSION.fields_by_name['secrets'].message_type = _SECRET
 _VERSION.fields_by_name['log_options'].message_type = _LOGOPTIONS
-_VERSION.fields_by_name['s3_mounts'].message_type = _S3MOUNT
+_VERSION.fields_by_name['storage_mounts'].message_type = _STORAGEMOUNT
 _VERSION_STATUS.containing_type = _VERSION
 _SCALINGPOLICY.fields_by_name['created_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
 _SCALINGPOLICY.fields_by_name['modified_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
@@ -859,7 +859,7 @@ DESCRIPTOR.message_types_by_name['Connectivity'] = _CONNECTIVITY
 DESCRIPTOR.message_types_by_name['ScalingPolicy'] = _SCALINGPOLICY
 DESCRIPTOR.message_types_by_name['Secret'] = _SECRET
 DESCRIPTOR.message_types_by_name['LogOptions'] = _LOGOPTIONS
-DESCRIPTOR.message_types_by_name['S3Mount'] = _S3MOUNT
+DESCRIPTOR.message_types_by_name['StorageMount'] = _STORAGEMOUNT
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Function = _reflection.GeneratedProtocolMessageType('Function', (_message.Message,), {
@@ -942,12 +942,12 @@ LogOptions = _reflection.GeneratedProtocolMessageType('LogOptions', (_message.Me
   })
 _sym_db.RegisterMessage(LogOptions)
 
-S3Mount = _reflection.GeneratedProtocolMessageType('S3Mount', (_message.Message,), {
-  'DESCRIPTOR' : _S3MOUNT,
+StorageMount = _reflection.GeneratedProtocolMessageType('StorageMount', (_message.Message,), {
+  'DESCRIPTOR' : _STORAGEMOUNT,
   '__module__' : 'yandex.cloud.serverless.functions.v1.function_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.serverless.functions.v1.S3Mount)
+  # @@protoc_insertion_point(class_scope:yandex.cloud.serverless.functions.v1.StorageMount)
   })
-_sym_db.RegisterMessage(S3Mount)
+_sym_db.RegisterMessage(StorageMount)
 
 
 DESCRIPTOR._options = None
@@ -964,6 +964,6 @@ _PACKAGE.fields_by_name['object_name']._options = None
 _CONNECTIVITY.fields_by_name['subnet_id']._options = None
 _LOGOPTIONS.fields_by_name['log_group_id']._options = None
 _LOGOPTIONS.fields_by_name['folder_id']._options = None
-_S3MOUNT.fields_by_name['bucket_id']._options = None
-_S3MOUNT.fields_by_name['mount_point_name']._options = None
+_STORAGEMOUNT.fields_by_name['bucket_id']._options = None
+_STORAGEMOUNT.fields_by_name['mount_point_name']._options = None
 # @@protoc_insertion_point(module_scope)
