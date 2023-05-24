@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v0.216.0 (2023-05-24)
+### Feature
+* Update _sdk.py for storage-api
+
+The proper lookup key for the endpoint of storage API is "storage-api", so I'm fixing that ([`05ae439`](https://github.com/yandex-cloud/python-sdk/commit/05ae4392a834b9d1ffdf796fed7e5477da510511))
+
 ## v0.215.0 (2023-05-23)
 ### Feature
 * Add S3 service support to sdk.client() call ([`685dcfa`](https://github.com/yandex-cloud/python-sdk/commit/685dcfa0e342e52ca13c95d312e92922d6f42638))
