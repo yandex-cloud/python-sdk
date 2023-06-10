@@ -14,6 +14,7 @@ _sym_db = _symbol_database.Default()
 
 from yandex.cloud.datatransfer.v1.endpoint import common_pb2 as yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_common__pb2
 from yandex.cloud.datatransfer.v1.endpoint import parsers_pb2 as yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_parsers__pb2
+from yandex.cloud.datatransfer.v1.endpoint import serializers_pb2 as yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_serializers__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -22,9 +23,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n)yandex.cloud.api.datatransfer.v1.endpointZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1/endpoint;endpoint\252\002%Yandex.Cloud.Datatransfer.V1.EndPoint',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n1yandex/cloud/datatransfer/v1/endpoint/kafka.proto\x12%yandex.cloud.datatransfer.v1.endpoint\x1a\x32yandex/cloud/datatransfer/v1/endpoint/common.proto\x1a\x33yandex/cloud/datatransfer/v1/endpoint/parsers.proto\"\x89\x01\n\x16KafkaConnectionOptions\x12\x14\n\ncluster_id\x18\x01 \x01(\tH\x00\x12K\n\non_premise\x18\x02 \x01(\x0b\x32\x35.yandex.cloud.datatransfer.v1.endpoint.OnPremiseKafkaH\x00\x42\x0c\n\nconnection\"z\n\x0eOnPremiseKafka\x12\x13\n\x0b\x62roker_urls\x18\x01 \x03(\t\x12@\n\x08tls_mode\x18\x05 \x01(\x0b\x32..yandex.cloud.datatransfer.v1.endpoint.TLSMode\x12\x11\n\tsubnet_id\x18\x04 \x01(\t\"\xa3\x01\n\tKafkaAuth\x12H\n\x04sasl\x18\x01 \x01(\x0b\x32\x38.yandex.cloud.datatransfer.v1.endpoint.KafkaSaslSecurityH\x00\x12@\n\x07no_auth\x18\x02 \x01(\x0b\x32-.yandex.cloud.datatransfer.v1.endpoint.NoAuthH\x00\x42\n\n\x08security\"\xac\x01\n\x11KafkaSaslSecurity\x12\x0c\n\x04user\x18\x01 \x01(\t\x12?\n\x08password\x18\x04 \x01(\x0b\x32-.yandex.cloud.datatransfer.v1.endpoint.Secret\x12H\n\tmechanism\x18\x03 \x01(\x0e\x32\x35.yandex.cloud.datatransfer.v1.endpoint.KafkaMechanism\"\xe3\x02\n\x0bKafkaSource\x12Q\n\nconnection\x18\x01 \x01(\x0b\x32=.yandex.cloud.datatransfer.v1.endpoint.KafkaConnectionOptions\x12>\n\x04\x61uth\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.datatransfer.v1.endpoint.KafkaAuth\x12\x17\n\x0fsecurity_groups\x18\x03 \x03(\t\x12\x12\n\ntopic_name\x18\x04 \x01(\t\x12U\n\x0btransformer\x18\x05 \x01(\x0b\x32@.yandex.cloud.datatransfer.v1.endpoint.DataTransformationOptions\x12=\n\x06parser\x18\x07 \x01(\x0b\x32-.yandex.cloud.datatransfer.v1.endpoint.Parser\"\x92\x02\n\x0bKafkaTarget\x12Q\n\nconnection\x18\x01 \x01(\x0b\x32=.yandex.cloud.datatransfer.v1.endpoint.KafkaConnectionOptions\x12>\n\x04\x61uth\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.datatransfer.v1.endpoint.KafkaAuth\x12\x17\n\x0fsecurity_groups\x18\x03 \x03(\t\x12W\n\x0etopic_settings\x18\x07 \x01(\x0b\x32?.yandex.cloud.datatransfer.v1.endpoint.KafkaTargetTopicSettings\"\x8e\x01\n\x18KafkaTargetTopicSettings\x12H\n\x05topic\x18\x01 \x01(\x0b\x32\x37.yandex.cloud.datatransfer.v1.endpoint.KafkaTargetTopicH\x00\x12\x16\n\x0ctopic_prefix\x18\x02 \x01(\tH\x00\x42\x10\n\x0etopic_settings\"=\n\x10KafkaTargetTopic\x12\x12\n\ntopic_name\x18\x01 \x01(\t\x12\x15\n\rsave_tx_order\x18\x02 \x01(\x08*i\n\x0eKafkaMechanism\x12\x1f\n\x1bKAFKA_MECHANISM_UNSPECIFIED\x10\x00\x12\x1a\n\x16KAFKA_MECHANISM_SHA256\x10\x01\x12\x1a\n\x16KAFKA_MECHANISM_SHA512\x10\x02\x42\xa7\x01\n)yandex.cloud.api.datatransfer.v1.endpointZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1/endpoint;endpoint\xaa\x02%Yandex.Cloud.Datatransfer.V1.EndPointb\x06proto3'
+  serialized_pb=b'\n1yandex/cloud/datatransfer/v1/endpoint/kafka.proto\x12%yandex.cloud.datatransfer.v1.endpoint\x1a\x32yandex/cloud/datatransfer/v1/endpoint/common.proto\x1a\x33yandex/cloud/datatransfer/v1/endpoint/parsers.proto\x1a\x37yandex/cloud/datatransfer/v1/endpoint/serializers.proto\"\x89\x01\n\x16KafkaConnectionOptions\x12\x14\n\ncluster_id\x18\x01 \x01(\tH\x00\x12K\n\non_premise\x18\x02 \x01(\x0b\x32\x35.yandex.cloud.datatransfer.v1.endpoint.OnPremiseKafkaH\x00\x42\x0c\n\nconnection\"z\n\x0eOnPremiseKafka\x12\x13\n\x0b\x62roker_urls\x18\x01 \x03(\t\x12@\n\x08tls_mode\x18\x05 \x01(\x0b\x32..yandex.cloud.datatransfer.v1.endpoint.TLSMode\x12\x11\n\tsubnet_id\x18\x04 \x01(\t\"\xa3\x01\n\tKafkaAuth\x12H\n\x04sasl\x18\x01 \x01(\x0b\x32\x38.yandex.cloud.datatransfer.v1.endpoint.KafkaSaslSecurityH\x00\x12@\n\x07no_auth\x18\x02 \x01(\x0b\x32-.yandex.cloud.datatransfer.v1.endpoint.NoAuthH\x00\x42\n\n\x08security\"\xac\x01\n\x11KafkaSaslSecurity\x12\x0c\n\x04user\x18\x01 \x01(\t\x12?\n\x08password\x18\x04 \x01(\x0b\x32-.yandex.cloud.datatransfer.v1.endpoint.Secret\x12H\n\tmechanism\x18\x03 \x01(\x0e\x32\x35.yandex.cloud.datatransfer.v1.endpoint.KafkaMechanism\"\xe3\x02\n\x0bKafkaSource\x12Q\n\nconnection\x18\x01 \x01(\x0b\x32=.yandex.cloud.datatransfer.v1.endpoint.KafkaConnectionOptions\x12>\n\x04\x61uth\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.datatransfer.v1.endpoint.KafkaAuth\x12\x17\n\x0fsecurity_groups\x18\x03 \x03(\t\x12\x12\n\ntopic_name\x18\x04 \x01(\t\x12U\n\x0btransformer\x18\x05 \x01(\x0b\x32@.yandex.cloud.datatransfer.v1.endpoint.DataTransformationOptions\x12=\n\x06parser\x18\x07 \x01(\x0b\x32-.yandex.cloud.datatransfer.v1.endpoint.Parser\"\xd9\x02\n\x0bKafkaTarget\x12Q\n\nconnection\x18\x01 \x01(\x0b\x32=.yandex.cloud.datatransfer.v1.endpoint.KafkaConnectionOptions\x12>\n\x04\x61uth\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.datatransfer.v1.endpoint.KafkaAuth\x12\x17\n\x0fsecurity_groups\x18\x03 \x03(\t\x12W\n\x0etopic_settings\x18\x07 \x01(\x0b\x32?.yandex.cloud.datatransfer.v1.endpoint.KafkaTargetTopicSettings\x12\x45\n\nserializer\x18\x08 \x01(\x0b\x32\x31.yandex.cloud.datatransfer.v1.endpoint.Serializer\"\x8e\x01\n\x18KafkaTargetTopicSettings\x12H\n\x05topic\x18\x01 \x01(\x0b\x32\x37.yandex.cloud.datatransfer.v1.endpoint.KafkaTargetTopicH\x00\x12\x16\n\x0ctopic_prefix\x18\x02 \x01(\tH\x00\x42\x10\n\x0etopic_settings\"=\n\x10KafkaTargetTopic\x12\x12\n\ntopic_name\x18\x01 \x01(\t\x12\x15\n\rsave_tx_order\x18\x02 \x01(\x08*i\n\x0eKafkaMechanism\x12\x1f\n\x1bKAFKA_MECHANISM_UNSPECIFIED\x10\x00\x12\x1a\n\x16KAFKA_MECHANISM_SHA256\x10\x01\x12\x1a\n\x16KAFKA_MECHANISM_SHA512\x10\x02\x42\xa7\x01\n)yandex.cloud.api.datatransfer.v1.endpointZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1/endpoint;endpoint\xaa\x02%Yandex.Cloud.Datatransfer.V1.EndPointb\x06proto3'
   ,
-  dependencies=[yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_common__pb2.DESCRIPTOR,yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_parsers__pb2.DESCRIPTOR,])
+  dependencies=[yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_common__pb2.DESCRIPTOR,yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_parsers__pb2.DESCRIPTOR,yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_serializers__pb2.DESCRIPTOR,])
 
 _KAFKAMECHANISM = _descriptor.EnumDescriptor(
   name='KafkaMechanism',
@@ -51,8 +52,8 @@ _KAFKAMECHANISM = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1645,
-  serialized_end=1750,
+  serialized_start=1773,
+  serialized_end=1878,
 )
 _sym_db.RegisterEnumDescriptor(_KAFKAMECHANISM)
 
@@ -102,8 +103,8 @@ _KAFKACONNECTIONOPTIONS = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=198,
-  serialized_end=335,
+  serialized_start=255,
+  serialized_end=392,
 )
 
 
@@ -148,8 +149,8 @@ _ONPREMISEKAFKA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=337,
-  serialized_end=459,
+  serialized_start=394,
+  serialized_end=516,
 )
 
 
@@ -192,8 +193,8 @@ _KAFKAAUTH = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=462,
-  serialized_end=625,
+  serialized_start=519,
+  serialized_end=682,
 )
 
 
@@ -238,8 +239,8 @@ _KAFKASASLSECURITY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=628,
-  serialized_end=800,
+  serialized_start=685,
+  serialized_end=857,
 )
 
 
@@ -305,8 +306,8 @@ _KAFKASOURCE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=803,
-  serialized_end=1158,
+  serialized_start=860,
+  serialized_end=1215,
 )
 
 
@@ -346,6 +347,13 @@ _KAFKATARGET = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='serializer', full_name='yandex.cloud.datatransfer.v1.endpoint.KafkaTarget.serializer', index=4,
+      number=8, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -358,8 +366,8 @@ _KAFKATARGET = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1161,
-  serialized_end=1435,
+  serialized_start=1218,
+  serialized_end=1563,
 )
 
 
@@ -402,8 +410,8 @@ _KAFKATARGETTOPICSETTINGS = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1438,
-  serialized_end=1580,
+  serialized_start=1566,
+  serialized_end=1708,
 )
 
 
@@ -441,8 +449,8 @@ _KAFKATARGETTOPIC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1582,
-  serialized_end=1643,
+  serialized_start=1710,
+  serialized_end=1771,
 )
 
 _KAFKACONNECTIONOPTIONS.fields_by_name['on_premise'].message_type = _ONPREMISEKAFKA
@@ -470,6 +478,7 @@ _KAFKASOURCE.fields_by_name['parser'].message_type = yandex_dot_cloud_dot_datatr
 _KAFKATARGET.fields_by_name['connection'].message_type = _KAFKACONNECTIONOPTIONS
 _KAFKATARGET.fields_by_name['auth'].message_type = _KAFKAAUTH
 _KAFKATARGET.fields_by_name['topic_settings'].message_type = _KAFKATARGETTOPICSETTINGS
+_KAFKATARGET.fields_by_name['serializer'].message_type = yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_serializers__pb2._SERIALIZER
 _KAFKATARGETTOPICSETTINGS.fields_by_name['topic'].message_type = _KAFKATARGETTOPIC
 _KAFKATARGETTOPICSETTINGS.oneofs_by_name['topic_settings'].fields.append(
   _KAFKATARGETTOPICSETTINGS.fields_by_name['topic'])

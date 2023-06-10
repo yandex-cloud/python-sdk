@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\032yandex.cloud.api.ai.stt.v3Z>github.com/yandex-cloud/go-genproto/yandex/cloud/ai/stt/v3;stt',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n yandex/cloud/ai/stt/v3/stt.proto\x12\x10speechkit.stt.v3\"\xe2\x03\n\x18TextNormalizationOptions\x12X\n\x12text_normalization\x18\x01 \x01(\x0e\x32<.speechkit.stt.v3.TextNormalizationOptions.TextNormalization\x12\x18\n\x10profanity_filter\x18\x02 \x01(\x08\x12\x17\n\x0fliterature_text\x18\x03 \x01(\x08\x12]\n\x15phone_formatting_mode\x18\x04 \x01(\x0e\x32>.speechkit.stt.v3.TextNormalizationOptions.PhoneFormattingMode\"x\n\x11TextNormalization\x12\"\n\x1eTEXT_NORMALIZATION_UNSPECIFIED\x10\x00\x12\x1e\n\x1aTEXT_NORMALIZATION_ENABLED\x10\x01\x12\x1f\n\x1bTEXT_NORMALIZATION_DISABLED\x10\x02\"`\n\x13PhoneFormattingMode\x12%\n!PHONE_FORMATTING_MODE_UNSPECIFIED\x10\x00\x12\"\n\x1ePHONE_FORMATTING_MODE_DISABLED\x10\x01\"\xce\x01\n\x14\x44\x65\x66\x61ultEouClassifier\x12\x43\n\x04type\x18\x01 \x01(\x0e\x32\x35.speechkit.stt.v3.DefaultEouClassifier.EouSensitivity\x12\'\n\x1fmax_pause_between_words_hint_ms\x18\x02 \x01(\x03\"H\n\x0e\x45ouSensitivity\x12\x1f\n\x1b\x45OU_SENSITIVITY_UNSPECIFIED\x10\x00\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x01\x12\x08\n\x04HIGH\x10\x02\"\x17\n\x15\x45xternalEouClassifier\"\xb2\x01\n\x14\x45ouClassifierOptions\x12\x44\n\x12\x64\x65\x66\x61ult_classifier\x18\x01 \x01(\x0b\x32&.speechkit.stt.v3.DefaultEouClassifierH\x00\x12\x46\n\x13\x65xternal_classifier\x18\x02 \x01(\x0b\x32\'.speechkit.stt.v3.ExternalEouClassifierH\x00\x42\x0c\n\nClassifier\"\xc7\x01\n\x08RawAudio\x12@\n\x0e\x61udio_encoding\x18\x01 \x01(\x0e\x32(.speechkit.stt.v3.RawAudio.AudioEncoding\x12\x19\n\x11sample_rate_hertz\x18\x02 \x01(\x03\x12\x1b\n\x13\x61udio_channel_count\x18\x03 \x01(\x03\"A\n\rAudioEncoding\x12\x1e\n\x1a\x41UDIO_ENCODING_UNSPECIFIED\x10\x00\x12\x10\n\x0cLINEAR16_PCM\x10\x01\"\xbf\x01\n\x0e\x43ontainerAudio\x12Q\n\x14\x63ontainer_audio_type\x18\x01 \x01(\x0e\x32\x33.speechkit.stt.v3.ContainerAudio.ContainerAudioType\"Z\n\x12\x43ontainerAudioType\x12$\n CONTAINER_AUDIO_TYPE_UNSPECIFIED\x10\x00\x12\x07\n\x03WAV\x10\x01\x12\x0c\n\x08OGG_OPUS\x10\x02\x12\x07\n\x03MP3\x10\x03\"\x91\x01\n\x12\x41udioFormatOptions\x12/\n\traw_audio\x18\x01 \x01(\x0b\x32\x1a.speechkit.stt.v3.RawAudioH\x00\x12;\n\x0f\x63ontainer_audio\x18\x02 \x01(\x0b\x32 .speechkit.stt.v3.ContainerAudioH\x00\x42\r\n\x0b\x41udioFormat\"\xf7\x01\n\x1aLanguageRestrictionOptions\x12^\n\x10restriction_type\x18\x01 \x01(\x0e\x32\x44.speechkit.stt.v3.LanguageRestrictionOptions.LanguageRestrictionType\x12\x15\n\rlanguage_code\x18\x02 \x03(\t\"b\n\x17LanguageRestrictionType\x12)\n%LANGUAGE_RESTRICTION_TYPE_UNSPECIFIED\x10\x00\x12\r\n\tWHITELIST\x10\x01\x12\r\n\tBLACKLIST\x10\x02\"\xb2\x03\n\x17RecognitionModelOptions\x12\r\n\x05model\x18\x01 \x01(\t\x12:\n\x0c\x61udio_format\x18\x02 \x01(\x0b\x32$.speechkit.stt.v3.AudioFormatOptions\x12\x46\n\x12text_normalization\x18\x03 \x01(\x0b\x32*.speechkit.stt.v3.TextNormalizationOptions\x12J\n\x14language_restriction\x18\x04 \x01(\x0b\x32,.speechkit.stt.v3.LanguageRestrictionOptions\x12\\\n\x15\x61udio_processing_type\x18\x05 \x01(\x0e\x32=.speechkit.stt.v3.RecognitionModelOptions.AudioProcessingType\"Z\n\x13\x41udioProcessingType\x12%\n!AUDIO_PROCESSING_TYPE_UNSPECIFIED\x10\x00\x12\r\n\tREAL_TIME\x10\x01\x12\r\n\tFULL_DATA\x10\x02\"\x98\x01\n\x10StreamingOptions\x12\x44\n\x11recognition_model\x18\x01 \x01(\x0b\x32).speechkit.stt.v3.RecognitionModelOptions\x12>\n\x0e\x65ou_classifier\x18\x02 \x01(\x0b\x32&.speechkit.stt.v3.EouClassifierOptions\"\x1a\n\nAudioChunk\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\"#\n\x0cSilenceChunk\x12\x13\n\x0b\x64uration_ms\x18\x01 \x01(\x03\"\x05\n\x03\x45ou\"\xe8\x01\n\x10StreamingRequest\x12=\n\x0fsession_options\x18\x01 \x01(\x0b\x32\".speechkit.stt.v3.StreamingOptionsH\x00\x12-\n\x05\x63hunk\x18\x02 \x01(\x0b\x32\x1c.speechkit.stt.v3.AudioChunkH\x00\x12\x37\n\rsilence_chunk\x18\x03 \x01(\x0b\x32\x1e.speechkit.stt.v3.SilenceChunkH\x00\x12$\n\x03\x65ou\x18\x04 \x01(\x0b\x32\x15.speechkit.stt.v3.EouH\x00\x42\x07\n\x05\x45vent\"@\n\x04Word\x12\x0c\n\x04text\x18\x01 \x01(\t\x12\x15\n\rstart_time_ms\x18\x02 \x01(\x03\x12\x13\n\x0b\x65nd_time_ms\x18\x03 \x01(\x03\"@\n\x12LanguageEstimation\x12\x15\n\rlanguage_code\x18\x01 \x01(\t\x12\x13\n\x0bprobability\x18\x02 \x01(\x01\"\xbb\x01\n\x0b\x41lternative\x12%\n\x05words\x18\x01 \x03(\x0b\x32\x16.speechkit.stt.v3.Word\x12\x0c\n\x04text\x18\x02 \x01(\t\x12\x15\n\rstart_time_ms\x18\x03 \x01(\x03\x12\x13\n\x0b\x65nd_time_ms\x18\x04 \x01(\x03\x12\x12\n\nconfidence\x18\x05 \x01(\x01\x12\x37\n\tlanguages\x18\x06 \x03(\x0b\x32$.speechkit.stt.v3.LanguageEstimation\"\x1c\n\tEouUpdate\x12\x0f\n\x07time_ms\x18\x02 \x01(\x03\"]\n\x11\x41lternativeUpdate\x12\x33\n\x0c\x61lternatives\x18\x01 \x03(\x0b\x32\x1d.speechkit.stt.v3.Alternative\x12\x13\n\x0b\x63hannel_tag\x18\x02 \x01(\t\"\x99\x01\n\x0c\x41udioCursors\x12\x18\n\x10received_data_ms\x18\x01 \x01(\x03\x12\x15\n\rreset_time_ms\x18\x02 \x01(\x03\x12\x17\n\x0fpartial_time_ms\x18\x03 \x01(\x03\x12\x15\n\rfinal_time_ms\x18\x04 \x01(\x03\x12\x13\n\x0b\x66inal_index\x18\x05 \x01(\x03\x12\x13\n\x0b\x65ou_time_ms\x18\x06 \x01(\x03\"n\n\x0f\x46inalRefinement\x12\x13\n\x0b\x66inal_index\x18\x01 \x01(\x03\x12>\n\x0fnormalized_text\x18\x02 \x01(\x0b\x32#.speechkit.stt.v3.AlternativeUpdateH\x00\x42\x06\n\x04Type\"L\n\nStatusCode\x12-\n\tcode_type\x18\x01 \x01(\x0e\x32\x1a.speechkit.stt.v3.CodeType\x12\x0f\n\x07message\x18\x02 \x01(\t\"4\n\x0bSessionUuid\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12\x17\n\x0fuser_request_id\x18\x02 \x01(\t\"\xbc\x03\n\x11StreamingResponse\x12\x33\n\x0csession_uuid\x18\x01 \x01(\x0b\x32\x1d.speechkit.stt.v3.SessionUuid\x12\x35\n\raudio_cursors\x18\x02 \x01(\x0b\x32\x1e.speechkit.stt.v3.AudioCursors\x12\x1d\n\x15response_wall_time_ms\x18\x03 \x01(\x03\x12\x36\n\x07partial\x18\x04 \x01(\x0b\x32#.speechkit.stt.v3.AlternativeUpdateH\x00\x12\x34\n\x05\x66inal\x18\x05 \x01(\x0b\x32#.speechkit.stt.v3.AlternativeUpdateH\x00\x12\x31\n\neou_update\x18\x06 \x01(\x0b\x32\x1b.speechkit.stt.v3.EouUpdateH\x00\x12=\n\x10\x66inal_refinement\x18\x07 \x01(\x0b\x32!.speechkit.stt.v3.FinalRefinementH\x00\x12\x33\n\x0bstatus_code\x18\x08 \x01(\x0b\x32\x1c.speechkit.stt.v3.StatusCodeH\x00\x42\x07\n\x05\x45vent*K\n\x08\x43odeType\x12\x19\n\x15\x43ODE_TYPE_UNSPECIFIED\x10\x00\x12\x0b\n\x07WORKING\x10\x01\x12\x0b\n\x07WARNING\x10\x02\x12\n\n\x06\x43LOSED\x10\x03\x42\\\n\x1ayandex.cloud.api.ai.stt.v3Z>github.com/yandex-cloud/go-genproto/yandex/cloud/ai/stt/v3;sttb\x06proto3'
+  serialized_pb=b'\n yandex/cloud/ai/stt/v3/stt.proto\x12\x10speechkit.stt.v3\"\xe2\x03\n\x18TextNormalizationOptions\x12X\n\x12text_normalization\x18\x01 \x01(\x0e\x32<.speechkit.stt.v3.TextNormalizationOptions.TextNormalization\x12\x18\n\x10profanity_filter\x18\x02 \x01(\x08\x12\x17\n\x0fliterature_text\x18\x03 \x01(\x08\x12]\n\x15phone_formatting_mode\x18\x04 \x01(\x0e\x32>.speechkit.stt.v3.TextNormalizationOptions.PhoneFormattingMode\"x\n\x11TextNormalization\x12\"\n\x1eTEXT_NORMALIZATION_UNSPECIFIED\x10\x00\x12\x1e\n\x1aTEXT_NORMALIZATION_ENABLED\x10\x01\x12\x1f\n\x1bTEXT_NORMALIZATION_DISABLED\x10\x02\"`\n\x13PhoneFormattingMode\x12%\n!PHONE_FORMATTING_MODE_UNSPECIFIED\x10\x00\x12\"\n\x1ePHONE_FORMATTING_MODE_DISABLED\x10\x01\"\xce\x01\n\x14\x44\x65\x66\x61ultEouClassifier\x12\x43\n\x04type\x18\x01 \x01(\x0e\x32\x35.speechkit.stt.v3.DefaultEouClassifier.EouSensitivity\x12\'\n\x1fmax_pause_between_words_hint_ms\x18\x02 \x01(\x03\"H\n\x0e\x45ouSensitivity\x12\x1f\n\x1b\x45OU_SENSITIVITY_UNSPECIFIED\x10\x00\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x01\x12\x08\n\x04HIGH\x10\x02\"\x17\n\x15\x45xternalEouClassifier\"\xb2\x01\n\x14\x45ouClassifierOptions\x12\x44\n\x12\x64\x65\x66\x61ult_classifier\x18\x01 \x01(\x0b\x32&.speechkit.stt.v3.DefaultEouClassifierH\x00\x12\x46\n\x13\x65xternal_classifier\x18\x02 \x01(\x0b\x32\'.speechkit.stt.v3.ExternalEouClassifierH\x00\x42\x0c\n\nClassifier\"\xc7\x01\n\x08RawAudio\x12@\n\x0e\x61udio_encoding\x18\x01 \x01(\x0e\x32(.speechkit.stt.v3.RawAudio.AudioEncoding\x12\x19\n\x11sample_rate_hertz\x18\x02 \x01(\x03\x12\x1b\n\x13\x61udio_channel_count\x18\x03 \x01(\x03\"A\n\rAudioEncoding\x12\x1e\n\x1a\x41UDIO_ENCODING_UNSPECIFIED\x10\x00\x12\x10\n\x0cLINEAR16_PCM\x10\x01\"\xbf\x01\n\x0e\x43ontainerAudio\x12Q\n\x14\x63ontainer_audio_type\x18\x01 \x01(\x0e\x32\x33.speechkit.stt.v3.ContainerAudio.ContainerAudioType\"Z\n\x12\x43ontainerAudioType\x12$\n CONTAINER_AUDIO_TYPE_UNSPECIFIED\x10\x00\x12\x07\n\x03WAV\x10\x01\x12\x0c\n\x08OGG_OPUS\x10\x02\x12\x07\n\x03MP3\x10\x03\"\x91\x01\n\x12\x41udioFormatOptions\x12/\n\traw_audio\x18\x01 \x01(\x0b\x32\x1a.speechkit.stt.v3.RawAudioH\x00\x12;\n\x0f\x63ontainer_audio\x18\x02 \x01(\x0b\x32 .speechkit.stt.v3.ContainerAudioH\x00\x42\r\n\x0b\x41udioFormat\"\xf7\x01\n\x1aLanguageRestrictionOptions\x12^\n\x10restriction_type\x18\x01 \x01(\x0e\x32\x44.speechkit.stt.v3.LanguageRestrictionOptions.LanguageRestrictionType\x12\x15\n\rlanguage_code\x18\x02 \x03(\t\"b\n\x17LanguageRestrictionType\x12)\n%LANGUAGE_RESTRICTION_TYPE_UNSPECIFIED\x10\x00\x12\r\n\tWHITELIST\x10\x01\x12\r\n\tBLACKLIST\x10\x02\"\xb2\x03\n\x17RecognitionModelOptions\x12\r\n\x05model\x18\x01 \x01(\t\x12:\n\x0c\x61udio_format\x18\x02 \x01(\x0b\x32$.speechkit.stt.v3.AudioFormatOptions\x12\x46\n\x12text_normalization\x18\x03 \x01(\x0b\x32*.speechkit.stt.v3.TextNormalizationOptions\x12J\n\x14language_restriction\x18\x04 \x01(\x0b\x32,.speechkit.stt.v3.LanguageRestrictionOptions\x12\\\n\x15\x61udio_processing_type\x18\x05 \x01(\x0e\x32=.speechkit.stt.v3.RecognitionModelOptions.AudioProcessingType\"Z\n\x13\x41udioProcessingType\x12%\n!AUDIO_PROCESSING_TYPE_UNSPECIFIED\x10\x00\x12\r\n\tREAL_TIME\x10\x01\x12\r\n\tFULL_DATA\x10\x02\"\x98\x01\n\x10StreamingOptions\x12\x44\n\x11recognition_model\x18\x01 \x01(\x0b\x32).speechkit.stt.v3.RecognitionModelOptions\x12>\n\x0e\x65ou_classifier\x18\x02 \x01(\x0b\x32&.speechkit.stt.v3.EouClassifierOptions\"\x1a\n\nAudioChunk\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\"#\n\x0cSilenceChunk\x12\x13\n\x0b\x64uration_ms\x18\x01 \x01(\x03\"\x05\n\x03\x45ou\"\xe8\x01\n\x10StreamingRequest\x12=\n\x0fsession_options\x18\x01 \x01(\x0b\x32\".speechkit.stt.v3.StreamingOptionsH\x00\x12-\n\x05\x63hunk\x18\x02 \x01(\x0b\x32\x1c.speechkit.stt.v3.AudioChunkH\x00\x12\x37\n\rsilence_chunk\x18\x03 \x01(\x0b\x32\x1e.speechkit.stt.v3.SilenceChunkH\x00\x12$\n\x03\x65ou\x18\x04 \x01(\x0b\x32\x15.speechkit.stt.v3.EouH\x00\x42\x07\n\x05\x45vent\"@\n\x04Word\x12\x0c\n\x04text\x18\x01 \x01(\t\x12\x15\n\rstart_time_ms\x18\x02 \x01(\x03\x12\x13\n\x0b\x65nd_time_ms\x18\x03 \x01(\x03\"@\n\x12LanguageEstimation\x12\x15\n\rlanguage_code\x18\x01 \x01(\t\x12\x13\n\x0bprobability\x18\x02 \x01(\x01\"\xbb\x01\n\x0b\x41lternative\x12%\n\x05words\x18\x01 \x03(\x0b\x32\x16.speechkit.stt.v3.Word\x12\x0c\n\x04text\x18\x02 \x01(\t\x12\x15\n\rstart_time_ms\x18\x03 \x01(\x03\x12\x13\n\x0b\x65nd_time_ms\x18\x04 \x01(\x03\x12\x12\n\nconfidence\x18\x05 \x01(\x01\x12\x37\n\tlanguages\x18\x06 \x03(\x0b\x32$.speechkit.stt.v3.LanguageEstimation\"\x1c\n\tEouUpdate\x12\x0f\n\x07time_ms\x18\x02 \x01(\x03\"a\n\x11\x41lternativeUpdate\x12\x33\n\x0c\x61lternatives\x18\x01 \x03(\x0b\x32\x1d.speechkit.stt.v3.Alternative\x12\x17\n\x0b\x63hannel_tag\x18\x02 \x01(\tB\x02\x18\x01\"\x99\x01\n\x0c\x41udioCursors\x12\x18\n\x10received_data_ms\x18\x01 \x01(\x03\x12\x15\n\rreset_time_ms\x18\x02 \x01(\x03\x12\x17\n\x0fpartial_time_ms\x18\x03 \x01(\x03\x12\x15\n\rfinal_time_ms\x18\x04 \x01(\x03\x12\x13\n\x0b\x66inal_index\x18\x05 \x01(\x03\x12\x13\n\x0b\x65ou_time_ms\x18\x06 \x01(\x03\"n\n\x0f\x46inalRefinement\x12\x13\n\x0b\x66inal_index\x18\x01 \x01(\x03\x12>\n\x0fnormalized_text\x18\x02 \x01(\x0b\x32#.speechkit.stt.v3.AlternativeUpdateH\x00\x42\x06\n\x04Type\"L\n\nStatusCode\x12-\n\tcode_type\x18\x01 \x01(\x0e\x32\x1a.speechkit.stt.v3.CodeType\x12\x0f\n\x07message\x18\x02 \x01(\t\"4\n\x0bSessionUuid\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12\x17\n\x0fuser_request_id\x18\x02 \x01(\t\"\xd1\x03\n\x11StreamingResponse\x12\x33\n\x0csession_uuid\x18\x01 \x01(\x0b\x32\x1d.speechkit.stt.v3.SessionUuid\x12\x35\n\raudio_cursors\x18\x02 \x01(\x0b\x32\x1e.speechkit.stt.v3.AudioCursors\x12\x1d\n\x15response_wall_time_ms\x18\x03 \x01(\x03\x12\x36\n\x07partial\x18\x04 \x01(\x0b\x32#.speechkit.stt.v3.AlternativeUpdateH\x00\x12\x34\n\x05\x66inal\x18\x05 \x01(\x0b\x32#.speechkit.stt.v3.AlternativeUpdateH\x00\x12\x31\n\neou_update\x18\x06 \x01(\x0b\x32\x1b.speechkit.stt.v3.EouUpdateH\x00\x12=\n\x10\x66inal_refinement\x18\x07 \x01(\x0b\x32!.speechkit.stt.v3.FinalRefinementH\x00\x12\x33\n\x0bstatus_code\x18\x08 \x01(\x0b\x32\x1c.speechkit.stt.v3.StatusCodeH\x00\x12\x13\n\x0b\x63hannel_tag\x18\t \x01(\tB\x07\n\x05\x45vent*K\n\x08\x43odeType\x12\x19\n\x15\x43ODE_TYPE_UNSPECIFIED\x10\x00\x12\x0b\n\x07WORKING\x10\x01\x12\x0b\n\x07WARNING\x10\x02\x12\n\n\x06\x43LOSED\x10\x03\x42\\\n\x1ayandex.cloud.api.ai.stt.v3Z>github.com/yandex-cloud/go-genproto/yandex/cloud/ai/stt/v3;sttb\x06proto3'
 )
 
 _CODETYPE = _descriptor.EnumDescriptor(
@@ -53,8 +53,8 @@ _CODETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3941,
-  serialized_end=4016,
+  serialized_start=3966,
+  serialized_end=4041,
 )
 _sym_db.RegisterEnumDescriptor(_CODETYPE)
 
@@ -1051,7 +1051,7 @@ _ALTERNATIVEUPDATE = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\030\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1065,7 +1065,7 @@ _ALTERNATIVEUPDATE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=2999,
-  serialized_end=3092,
+  serialized_end=3096,
 )
 
 
@@ -1131,8 +1131,8 @@ _AUDIOCURSORS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3095,
-  serialized_end=3248,
+  serialized_start=3099,
+  serialized_end=3252,
 )
 
 
@@ -1175,8 +1175,8 @@ _FINALREFINEMENT = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=3250,
-  serialized_end=3360,
+  serialized_start=3254,
+  serialized_end=3364,
 )
 
 
@@ -1214,8 +1214,8 @@ _STATUSCODE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3362,
-  serialized_end=3438,
+  serialized_start=3366,
+  serialized_end=3442,
 )
 
 
@@ -1253,8 +1253,8 @@ _SESSIONUUID = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3440,
-  serialized_end=3492,
+  serialized_start=3444,
+  serialized_end=3496,
 )
 
 
@@ -1322,6 +1322,13 @@ _STREAMINGRESPONSE = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='channel_tag', full_name='speechkit.stt.v3.StreamingResponse.channel_tag', index=8,
+      number=9, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -1339,8 +1346,8 @@ _STREAMINGRESPONSE = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=3495,
-  serialized_end=3939,
+  serialized_start=3499,
+  serialized_end=3964,
 )
 
 _TEXTNORMALIZATIONOPTIONS.fields_by_name['text_normalization'].enum_type = _TEXTNORMALIZATIONOPTIONS_TEXTNORMALIZATION
@@ -1621,4 +1628,5 @@ _sym_db.RegisterMessage(StreamingResponse)
 
 
 DESCRIPTOR._options = None
+_ALTERNATIVEUPDATE.fields_by_name['channel_tag']._options = None
 # @@protoc_insertion_point(module_scope)

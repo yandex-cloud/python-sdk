@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n%yandex.cloud.api.loadtesting.agent.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadtesting/agent/v1;agent',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n5yandex/cloud/loadtesting/agent/v1/agent_service.proto\x12!yandex.cloud.loadtesting.agent.v1\x1a\x1cgoogle/api/annotations.proto\"\xef\x01\n\x17\x43laimAgentStatusRequest\x12\x19\n\x11\x61gent_instance_id\x18\x01 \x01(\t\x12Q\n\x06status\x18\x02 \x01(\x0e\x32\x41.yandex.cloud.loadtesting.agent.v1.ClaimAgentStatusRequest.Status\"f\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eREADY_FOR_TEST\x10\x01\x12\x12\n\x0ePREPARING_TEST\x10\x02\x12\x0b\n\x07TESTING\x10\x03\x12\x0f\n\x0bTANK_FAILED\x10\x04\"(\n\x18\x43laimAgentStatusResponse\x12\x0c\n\x04\x63ode\x18\x01 \x01(\x03\x32\xe0\x01\n\x0c\x41gentService\x12\xcf\x01\n\x0b\x43laimStatus\x12:.yandex.cloud.loadtesting.agent.v1.ClaimAgentStatusRequest\x1a;.yandex.cloud.loadtesting.agent.v1.ClaimAgentStatusResponse\"G\x82\xd3\xe4\x93\x02\x41\"</loadtesting/agent/v1/agents/{agent_instance_id}/claimStatus:\x01*Bt\n%yandex.cloud.api.loadtesting.agent.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadtesting/agent/v1;agentb\x06proto3'
+  serialized_pb=b'\n5yandex/cloud/loadtesting/agent/v1/agent_service.proto\x12!yandex.cloud.loadtesting.agent.v1\x1a\x1cgoogle/api/annotations.proto\"\x96\x02\n\x17\x43laimAgentStatusRequest\x12\x19\n\x11\x61gent_instance_id\x18\x01 \x01(\t\x12Q\n\x06status\x18\x02 \x01(\x0e\x32\x41.yandex.cloud.loadtesting.agent.v1.ClaimAgentStatusRequest.Status\"\x8c\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eREADY_FOR_TEST\x10\x01\x12\x12\n\x0ePREPARING_TEST\x10\x02\x12\x0b\n\x07TESTING\x10\x03\x12\x0f\n\x0bTANK_FAILED\x10\x04\x12\x0b\n\x07STOPPED\x10\x05\x12\x17\n\x13UPLOADING_ARTIFACTS\x10\x06\"(\n\x18\x43laimAgentStatusResponse\x12\x0c\n\x04\x63ode\x18\x01 \x01(\x03\x32\xe0\x01\n\x0c\x41gentService\x12\xcf\x01\n\x0b\x43laimStatus\x12:.yandex.cloud.loadtesting.agent.v1.ClaimAgentStatusRequest\x1a;.yandex.cloud.loadtesting.agent.v1.ClaimAgentStatusResponse\"G\x82\xd3\xe4\x93\x02\x41\"</loadtesting/agent/v1/agents/{agent_instance_id}/claimStatus:\x01*Bt\n%yandex.cloud.api.loadtesting.agent.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadtesting/agent/v1;agentb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,])
 
@@ -58,11 +58,21 @@ _CLAIMAGENTSTATUSREQUEST_STATUS = _descriptor.EnumDescriptor(
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='STOPPED', index=5, number=5,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='UPLOADING_ARTIFACTS', index=6, number=6,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=260,
-  serialized_end=362,
+  serialized_start=261,
+  serialized_end=401,
 )
 _sym_db.RegisterEnumDescriptor(_CLAIMAGENTSTATUSREQUEST_STATUS)
 
@@ -103,7 +113,7 @@ _CLAIMAGENTSTATUSREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=123,
-  serialized_end=362,
+  serialized_end=401,
 )
 
 
@@ -134,8 +144,8 @@ _CLAIMAGENTSTATUSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=364,
-  serialized_end=404,
+  serialized_start=403,
+  serialized_end=443,
 )
 
 _CLAIMAGENTSTATUSREQUEST.fields_by_name['status'].enum_type = _CLAIMAGENTSTATUSREQUEST_STATUS
@@ -168,8 +178,8 @@ _AGENTSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=407,
-  serialized_end=631,
+  serialized_start=446,
+  serialized_end=670,
   methods=[
   _descriptor.MethodDescriptor(
     name='ClaimStatus',
