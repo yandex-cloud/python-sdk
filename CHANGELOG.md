@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v0.217.0 (2023-06-10)
+
+### Feature
+
+* Regenerate proto ([`4245253`](https://github.com/yandex-cloud/python-sdk/commit/4245253ba9fc2f5e393c8de96c2bae7bfe826a88))
+
 ## v0.216.0 (2023-05-24)
 ### Feature
 * Update _sdk.py for storage-api
