@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\027yandex.cloud.api.k8s.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/k8s/v1;k8s',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1eyandex/cloud/k8s/v1/node.proto\x12\x13yandex.cloud.k8s.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\xc7\x05\n\x04Node\x12\x30\n\x06status\x18\x01 \x01(\x0e\x32 .yandex.cloud.k8s.v1.Node.Status\x12,\n\x04spec\x18\x02 \x01(\x0b\x32\x1e.yandex.cloud.k8s.v1.Node.Spec\x12;\n\x0c\x63loud_status\x18\x03 \x01(\x0b\x32%.yandex.cloud.k8s.v1.Node.CloudStatus\x12\x45\n\x11kubernetes_status\x18\x04 \x01(\x0b\x32*.yandex.cloud.k8s.v1.Node.KubernetesStatus\x1a\xbd\x01\n\x10KubernetesStatus\x12\n\n\x02id\x18\x01 \x01(\t\x12\x32\n\nconditions\x18\x02 \x03(\x0b\x32\x1e.yandex.cloud.k8s.v1.Condition\x12*\n\x06taints\x18\x03 \x03(\x0b\x32\x1a.yandex.cloud.k8s.v1.Taint\x12=\n\x10\x61ttached_volumes\x18\x04 \x03(\x0b\x32#.yandex.cloud.k8s.v1.AttachedVolume\x1a\x41\n\x0b\x43loudStatus\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x16\n\x0estatus_message\x18\x03 \x01(\t\x1aj\n\x04Spec\x12\x35\n\tresources\x18\x01 \x01(\x0b\x32\".yandex.cloud.k8s.v1.ResourcesSpec\x12+\n\x04\x64isk\x18\x02 \x01(\x0b\x32\x1d.yandex.cloud.k8s.v1.DiskSpec\"l\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x10\n\x0cPROVISIONING\x10\x01\x12\x11\n\rNOT_CONNECTED\x10\x02\x12\r\n\tNOT_READY\x10\x03\x12\t\n\x05READY\x10\x04\x12\x0b\n\x07MISSING\x10\x05\"\xad\x01\n\tCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x0f\n\x07message\x18\x03 \x01(\t\x12\x37\n\x13last_heartbeat_time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x38\n\x14last_transition_time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xb1\x01\n\x05Taint\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\x12\x31\n\x06\x65\x66\x66\x65\x63t\x18\x03 \x01(\x0e\x32!.yandex.cloud.k8s.v1.Taint.Effect\"Y\n\x06\x45\x66\x66\x65\x63t\x12\x16\n\x12\x45\x46\x46\x45\x43T_UNSPECIFIED\x10\x00\x12\x0f\n\x0bNO_SCHEDULE\x10\x01\x12\x16\n\x12PREFER_NO_SCHEDULE\x10\x02\x12\x0e\n\nNO_EXECUTE\x10\x03\"<\n\x0e\x41ttachedVolume\x12\x13\n\x0b\x64river_name\x18\x01 \x01(\t\x12\x15\n\rvolume_handle\x18\x02 \x01(\t\"\x9b\x0b\n\x0cNodeTemplate\x12\x17\n\x04name\x18\r \x01(\tB\t\x8a\xc8\x31\x05<=128\x12t\n\x06labels\x18\x0f \x03(\x0b\x32-.yandex.cloud.k8s.v1.NodeTemplate.LabelsEntryB5\x82\xc8\x31\x04<=32\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x13\n\x0bplatform_id\x18\x01 \x01(\t\x12:\n\x0eresources_spec\x18\x02 \x01(\x0b\x32\".yandex.cloud.k8s.v1.ResourcesSpec\x12\x35\n\x0e\x62oot_disk_spec\x18\x03 \x01(\x0b\x32\x1d.yandex.cloud.k8s.v1.DiskSpec\x12w\n\x08metadata\x18\x04 \x03(\x0b\x32/.yandex.cloud.k8s.v1.NodeTemplate.MetadataEntryB4\x82\xc8\x31\x04<=64\x8a\xc8\x31\x08<=131072\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12\x41\n\x0fv4_address_spec\x18\x05 \x01(\x0b\x32$.yandex.cloud.k8s.v1.NodeAddressSpecB\x02\x18\x01\x12@\n\x11scheduling_policy\x18\x06 \x01(\x0b\x32%.yandex.cloud.k8s.v1.SchedulingPolicy\x12J\n\x17network_interface_specs\x18\x07 \x03(\x0b\x32).yandex.cloud.k8s.v1.NetworkInterfaceSpec\x12>\n\x10placement_policy\x18\n \x01(\x0b\x32$.yandex.cloud.k8s.v1.PlacementPolicy\x12K\n\x10network_settings\x18\x0b \x01(\x0b\x32\x31.yandex.cloud.k8s.v1.NodeTemplate.NetworkSettings\x12^\n\x1a\x63ontainer_runtime_settings\x18\x0c \x01(\x0b\x32:.yandex.cloud.k8s.v1.NodeTemplate.ContainerRuntimeSettings\x12^\n\x1a\x63ontainer_network_settings\x18\x10 \x01(\x0b\x32:.yandex.cloud.k8s.v1.NodeTemplate.ContainerNetworkSettings\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\xa3\x01\n\x0fNetworkSettings\x12J\n\x04type\x18\x01 \x01(\x0e\x32\x36.yandex.cloud.k8s.v1.NodeTemplate.NetworkSettings.TypeB\x04\xe8\xc7\x31\x01\"D\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x0c\n\x08STANDARD\x10\x01\x12\x18\n\x14SOFTWARE_ACCELERATED\x10\x02\x1a\xa9\x01\n\x18\x43ontainerRuntimeSettings\x12S\n\x04type\x18\x01 \x01(\x0e\x32?.yandex.cloud.k8s.v1.NodeTemplate.ContainerRuntimeSettings.TypeB\x04\xe8\xc7\x31\x01\"8\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\n\n\x06\x44OCKER\x10\x01\x12\x0e\n\nCONTAINERD\x10\x02\x1a+\n\x18\x43ontainerNetworkSettings\x12\x0f\n\x07pod_mtu\x18\x01 \x01(\x03\"\xd4\x01\n\x14NetworkInterfaceSpec\x12\x12\n\nsubnet_ids\x18\x02 \x03(\t\x12\x45\n\x17primary_v4_address_spec\x18\x03 \x01(\x0b\x32$.yandex.cloud.k8s.v1.NodeAddressSpec\x12\x45\n\x17primary_v6_address_spec\x18\x04 \x01(\x0b\x32$.yandex.cloud.k8s.v1.NodeAddressSpec\x12\x1a\n\x12security_group_ids\x18\x05 \x03(\t\"\x92\x01\n\x0fNodeAddressSpec\x12\x41\n\x13one_to_one_nat_spec\x18\x01 \x01(\x0b\x32$.yandex.cloud.k8s.v1.OneToOneNatSpec\x12<\n\x10\x64ns_record_specs\x18\x02 \x03(\x0b\x32\".yandex.cloud.k8s.v1.DnsRecordSpec\"_\n\rDnsRecordSpec\x12\x12\n\x04\x66qdn\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x13\n\x0b\x64ns_zone_id\x18\x02 \x01(\t\x12\x18\n\x03ttl\x18\x03 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-86400\x12\x0b\n\x03ptr\x18\x04 \x01(\x08\"E\n\x0fOneToOneNatSpec\x12\x32\n\nip_version\x18\x01 \x01(\x0e\x32\x1e.yandex.cloud.k8s.v1.IpVersion\"y\n\rResourcesSpec\x12\x17\n\x06memory\x18\x01 \x01(\x03\x42\x07\xfa\xc7\x31\x03>=0\x12\x16\n\x05\x63ores\x18\x02 \x01(\x03\x42\x07\xfa\xc7\x31\x03>=0\x12 \n\rcore_fraction\x18\x03 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12\x15\n\x04gpus\x18\x04 \x01(\x03\x42\x07\xfa\xc7\x31\x03>=0\"\x80\x01\n\x08\x44iskSpec\x12L\n\x0c\x64isk_type_id\x18\x01 \x01(\tB6\xf2\xc7\x31\x32|network-ssd|network-hdd|network-ssd-nonreplicated\x12&\n\tdisk_size\x18\x02 \x01(\x03\x42\x13\xfa\xc7\x31\x0f\x30-4398046511104\"\'\n\x10SchedulingPolicy\x12\x13\n\x0bpreemptible\x18\x01 \x01(\x08\"-\n\x0fPlacementPolicy\x12\x1a\n\x12placement_group_id\x18\x01 \x01(\t*;\n\tIpVersion\x12\x1a\n\x16IP_VERSION_UNSPECIFIED\x10\x00\x12\x08\n\x04IPV4\x10\x01\x12\x08\n\x04IPV6\x10\x02\x42V\n\x17yandex.cloud.api.k8s.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/k8s/v1;k8sb\x06proto3'
+  serialized_pb=b'\n\x1eyandex/cloud/k8s/v1/node.proto\x12\x13yandex.cloud.k8s.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\xe2\x05\n\x04Node\x12\x30\n\x06status\x18\x01 \x01(\x0e\x32 .yandex.cloud.k8s.v1.Node.Status\x12,\n\x04spec\x18\x02 \x01(\x0b\x32\x1e.yandex.cloud.k8s.v1.Node.Spec\x12;\n\x0c\x63loud_status\x18\x03 \x01(\x0b\x32%.yandex.cloud.k8s.v1.Node.CloudStatus\x12\x45\n\x11kubernetes_status\x18\x04 \x01(\x0b\x32*.yandex.cloud.k8s.v1.Node.KubernetesStatus\x1a\xbd\x01\n\x10KubernetesStatus\x12\n\n\x02id\x18\x01 \x01(\t\x12\x32\n\nconditions\x18\x02 \x03(\x0b\x32\x1e.yandex.cloud.k8s.v1.Condition\x12*\n\x06taints\x18\x03 \x03(\x0b\x32\x1a.yandex.cloud.k8s.v1.Taint\x12=\n\x10\x61ttached_volumes\x18\x04 \x03(\x0b\x32#.yandex.cloud.k8s.v1.AttachedVolume\x1a\x41\n\x0b\x43loudStatus\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x16\n\x0estatus_message\x18\x03 \x01(\t\x1aj\n\x04Spec\x12\x35\n\tresources\x18\x01 \x01(\x0b\x32\".yandex.cloud.k8s.v1.ResourcesSpec\x12+\n\x04\x64isk\x18\x02 \x01(\x0b\x32\x1d.yandex.cloud.k8s.v1.DiskSpec\"\x86\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x10\n\x0cPROVISIONING\x10\x01\x12\x11\n\rNOT_CONNECTED\x10\x02\x12\r\n\tNOT_READY\x10\x03\x12\t\n\x05READY\x10\x04\x12\x0b\n\x07MISSING\x10\x05\x12\x0b\n\x07STOPPED\x10\x06\x12\x0b\n\x07UNKNOWN\x10\x07\"\xad\x01\n\tCondition\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06status\x18\x02 \x01(\t\x12\x0f\n\x07message\x18\x03 \x01(\t\x12\x37\n\x13last_heartbeat_time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x38\n\x14last_transition_time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xb1\x01\n\x05Taint\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\x12\x31\n\x06\x65\x66\x66\x65\x63t\x18\x03 \x01(\x0e\x32!.yandex.cloud.k8s.v1.Taint.Effect\"Y\n\x06\x45\x66\x66\x65\x63t\x12\x16\n\x12\x45\x46\x46\x45\x43T_UNSPECIFIED\x10\x00\x12\x0f\n\x0bNO_SCHEDULE\x10\x01\x12\x16\n\x12PREFER_NO_SCHEDULE\x10\x02\x12\x0e\n\nNO_EXECUTE\x10\x03\"<\n\x0e\x41ttachedVolume\x12\x13\n\x0b\x64river_name\x18\x01 \x01(\t\x12\x15\n\rvolume_handle\x18\x02 \x01(\t\"\x9b\x0b\n\x0cNodeTemplate\x12\x17\n\x04name\x18\r \x01(\tB\t\x8a\xc8\x31\x05<=128\x12t\n\x06labels\x18\x0f \x03(\x0b\x32-.yandex.cloud.k8s.v1.NodeTemplate.LabelsEntryB5\x82\xc8\x31\x04<=32\x8a\xc8\x31\x05<=128\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x13\n\x0bplatform_id\x18\x01 \x01(\t\x12:\n\x0eresources_spec\x18\x02 \x01(\x0b\x32\".yandex.cloud.k8s.v1.ResourcesSpec\x12\x35\n\x0e\x62oot_disk_spec\x18\x03 \x01(\x0b\x32\x1d.yandex.cloud.k8s.v1.DiskSpec\x12w\n\x08metadata\x18\x04 \x03(\x0b\x32/.yandex.cloud.k8s.v1.NodeTemplate.MetadataEntryB4\x82\xc8\x31\x04<=64\x8a\xc8\x31\x08<=131072\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12\x41\n\x0fv4_address_spec\x18\x05 \x01(\x0b\x32$.yandex.cloud.k8s.v1.NodeAddressSpecB\x02\x18\x01\x12@\n\x11scheduling_policy\x18\x06 \x01(\x0b\x32%.yandex.cloud.k8s.v1.SchedulingPolicy\x12J\n\x17network_interface_specs\x18\x07 \x03(\x0b\x32).yandex.cloud.k8s.v1.NetworkInterfaceSpec\x12>\n\x10placement_policy\x18\n \x01(\x0b\x32$.yandex.cloud.k8s.v1.PlacementPolicy\x12K\n\x10network_settings\x18\x0b \x01(\x0b\x32\x31.yandex.cloud.k8s.v1.NodeTemplate.NetworkSettings\x12^\n\x1a\x63ontainer_runtime_settings\x18\x0c \x01(\x0b\x32:.yandex.cloud.k8s.v1.NodeTemplate.ContainerRuntimeSettings\x12^\n\x1a\x63ontainer_network_settings\x18\x10 \x01(\x0b\x32:.yandex.cloud.k8s.v1.NodeTemplate.ContainerNetworkSettings\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\xa3\x01\n\x0fNetworkSettings\x12J\n\x04type\x18\x01 \x01(\x0e\x32\x36.yandex.cloud.k8s.v1.NodeTemplate.NetworkSettings.TypeB\x04\xe8\xc7\x31\x01\"D\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x0c\n\x08STANDARD\x10\x01\x12\x18\n\x14SOFTWARE_ACCELERATED\x10\x02\x1a\xa9\x01\n\x18\x43ontainerRuntimeSettings\x12S\n\x04type\x18\x01 \x01(\x0e\x32?.yandex.cloud.k8s.v1.NodeTemplate.ContainerRuntimeSettings.TypeB\x04\xe8\xc7\x31\x01\"8\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\n\n\x06\x44OCKER\x10\x01\x12\x0e\n\nCONTAINERD\x10\x02\x1a+\n\x18\x43ontainerNetworkSettings\x12\x0f\n\x07pod_mtu\x18\x01 \x01(\x03\"\xd4\x01\n\x14NetworkInterfaceSpec\x12\x12\n\nsubnet_ids\x18\x02 \x03(\t\x12\x45\n\x17primary_v4_address_spec\x18\x03 \x01(\x0b\x32$.yandex.cloud.k8s.v1.NodeAddressSpec\x12\x45\n\x17primary_v6_address_spec\x18\x04 \x01(\x0b\x32$.yandex.cloud.k8s.v1.NodeAddressSpec\x12\x1a\n\x12security_group_ids\x18\x05 \x03(\t\"\x92\x01\n\x0fNodeAddressSpec\x12\x41\n\x13one_to_one_nat_spec\x18\x01 \x01(\x0b\x32$.yandex.cloud.k8s.v1.OneToOneNatSpec\x12<\n\x10\x64ns_record_specs\x18\x02 \x03(\x0b\x32\".yandex.cloud.k8s.v1.DnsRecordSpec\"_\n\rDnsRecordSpec\x12\x12\n\x04\x66qdn\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x13\n\x0b\x64ns_zone_id\x18\x02 \x01(\t\x12\x18\n\x03ttl\x18\x03 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x30-86400\x12\x0b\n\x03ptr\x18\x04 \x01(\x08\"E\n\x0fOneToOneNatSpec\x12\x32\n\nip_version\x18\x01 \x01(\x0e\x32\x1e.yandex.cloud.k8s.v1.IpVersion\"y\n\rResourcesSpec\x12\x17\n\x06memory\x18\x01 \x01(\x03\x42\x07\xfa\xc7\x31\x03>=0\x12\x16\n\x05\x63ores\x18\x02 \x01(\x03\x42\x07\xfa\xc7\x31\x03>=0\x12 \n\rcore_fraction\x18\x03 \x01(\x03\x42\t\xfa\xc7\x31\x05\x30-100\x12\x15\n\x04gpus\x18\x04 \x01(\x03\x42\x07\xfa\xc7\x31\x03>=0\"\x80\x01\n\x08\x44iskSpec\x12L\n\x0c\x64isk_type_id\x18\x01 \x01(\tB6\xf2\xc7\x31\x32|network-ssd|network-hdd|network-ssd-nonreplicated\x12&\n\tdisk_size\x18\x02 \x01(\x03\x42\x13\xfa\xc7\x31\x0f\x30-4398046511104\"\'\n\x10SchedulingPolicy\x12\x13\n\x0bpreemptible\x18\x01 \x01(\x08\"-\n\x0fPlacementPolicy\x12\x1a\n\x12placement_group_id\x18\x01 \x01(\t*;\n\tIpVersion\x12\x1a\n\x16IP_VERSION_UNSPECIFIED\x10\x00\x12\x08\n\x04IPV4\x10\x01\x12\x08\n\x04IPV6\x10\x02\x42V\n\x17yandex.cloud.api.k8s.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/k8s/v1;k8sb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -51,8 +51,8 @@ _IPVERSION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3563,
-  serialized_end=3622,
+  serialized_start=3590,
+  serialized_end=3649,
 )
 _sym_db.RegisterEnumDescriptor(_IPVERSION)
 
@@ -99,11 +99,21 @@ _NODE_STATUS = _descriptor.EnumDescriptor(
       serialized_options=None,
       type=None,
       create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='STOPPED', index=6, number=6,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='UNKNOWN', index=7, number=7,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=723,
-  serialized_end=831,
+  serialized_start=724,
+  serialized_end=858,
 )
 _sym_db.RegisterEnumDescriptor(_NODE_STATUS)
 
@@ -137,8 +147,8 @@ _TAINT_EFFECT = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1098,
-  serialized_end=1187,
+  serialized_start=1125,
+  serialized_end=1214,
 )
 _sym_db.RegisterEnumDescriptor(_TAINT_EFFECT)
 
@@ -167,8 +177,8 @@ _NODETEMPLATE_NETWORKSETTINGS_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2402,
-  serialized_end=2470,
+  serialized_start=2429,
+  serialized_end=2497,
 )
 _sym_db.RegisterEnumDescriptor(_NODETEMPLATE_NETWORKSETTINGS_TYPE)
 
@@ -197,8 +207,8 @@ _NODETEMPLATE_CONTAINERRUNTIMESETTINGS_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2586,
-  serialized_end=2642,
+  serialized_start=2613,
+  serialized_end=2669,
 )
 _sym_db.RegisterEnumDescriptor(_NODETEMPLATE_CONTAINERRUNTIMESETTINGS_TYPE)
 
@@ -388,7 +398,7 @@ _NODE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=120,
-  serialized_end=831,
+  serialized_end=858,
 )
 
 
@@ -447,8 +457,8 @@ _CONDITION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=834,
-  serialized_end=1007,
+  serialized_start=861,
+  serialized_end=1034,
 )
 
 
@@ -494,8 +504,8 @@ _TAINT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1010,
-  serialized_end=1187,
+  serialized_start=1037,
+  serialized_end=1214,
 )
 
 
@@ -533,8 +543,8 @@ _ATTACHEDVOLUME = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1189,
-  serialized_end=1249,
+  serialized_start=1216,
+  serialized_end=1276,
 )
 
 
@@ -572,8 +582,8 @@ _NODETEMPLATE_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2210,
-  serialized_end=2255,
+  serialized_start=2237,
+  serialized_end=2282,
 )
 
 _NODETEMPLATE_METADATAENTRY = _descriptor.Descriptor(
@@ -610,8 +620,8 @@ _NODETEMPLATE_METADATAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2257,
-  serialized_end=2304,
+  serialized_start=2284,
+  serialized_end=2331,
 )
 
 _NODETEMPLATE_NETWORKSETTINGS = _descriptor.Descriptor(
@@ -642,8 +652,8 @@ _NODETEMPLATE_NETWORKSETTINGS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2307,
-  serialized_end=2470,
+  serialized_start=2334,
+  serialized_end=2497,
 )
 
 _NODETEMPLATE_CONTAINERRUNTIMESETTINGS = _descriptor.Descriptor(
@@ -674,8 +684,8 @@ _NODETEMPLATE_CONTAINERRUNTIMESETTINGS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2473,
-  serialized_end=2642,
+  serialized_start=2500,
+  serialized_end=2669,
 )
 
 _NODETEMPLATE_CONTAINERNETWORKSETTINGS = _descriptor.Descriptor(
@@ -705,8 +715,8 @@ _NODETEMPLATE_CONTAINERNETWORKSETTINGS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2644,
-  serialized_end=2687,
+  serialized_start=2671,
+  serialized_end=2714,
 )
 
 _NODETEMPLATE = _descriptor.Descriptor(
@@ -820,8 +830,8 @@ _NODETEMPLATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1252,
-  serialized_end=2687,
+  serialized_start=1279,
+  serialized_end=2714,
 )
 
 
@@ -873,8 +883,8 @@ _NETWORKINTERFACESPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2690,
-  serialized_end=2902,
+  serialized_start=2717,
+  serialized_end=2929,
 )
 
 
@@ -912,8 +922,8 @@ _NODEADDRESSSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2905,
-  serialized_end=3051,
+  serialized_start=2932,
+  serialized_end=3078,
 )
 
 
@@ -965,8 +975,8 @@ _DNSRECORDSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3053,
-  serialized_end=3148,
+  serialized_start=3080,
+  serialized_end=3175,
 )
 
 
@@ -997,8 +1007,8 @@ _ONETOONENATSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3150,
-  serialized_end=3219,
+  serialized_start=3177,
+  serialized_end=3246,
 )
 
 
@@ -1050,8 +1060,8 @@ _RESOURCESSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3221,
-  serialized_end=3342,
+  serialized_start=3248,
+  serialized_end=3369,
 )
 
 
@@ -1089,8 +1099,8 @@ _DISKSPEC = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3345,
-  serialized_end=3473,
+  serialized_start=3372,
+  serialized_end=3500,
 )
 
 
@@ -1121,8 +1131,8 @@ _SCHEDULINGPOLICY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3475,
-  serialized_end=3514,
+  serialized_start=3502,
+  serialized_end=3541,
 )
 
 
@@ -1153,8 +1163,8 @@ _PLACEMENTPOLICY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3516,
-  serialized_end=3561,
+  serialized_start=3543,
+  serialized_end=3588,
 )
 
 _NODE_KUBERNETESSTATUS.fields_by_name['conditions'].message_type = _CONDITION
