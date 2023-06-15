@@ -112,6 +112,11 @@ class InstanceServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.MoveInstanceRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
+        self.Relocate = channel.unary_unary(
+                '/yandex.cloud.compute.v1.InstanceService/Relocate',
+                request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.RelocateInstanceRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
 
 
 class InstanceServiceServicer(object):
@@ -274,6 +279,15 @@ class InstanceServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Relocate(self, request, context):
+        """Moves the specified instance to another availability zone
+
+        Running instance will be restarted during this operation.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_InstanceServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -370,6 +384,11 @@ def add_InstanceServiceServicer_to_server(servicer, server):
             'Move': grpc.unary_unary_rpc_method_handler(
                     servicer.Move,
                     request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.MoveInstanceRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'Relocate': grpc.unary_unary_rpc_method_handler(
+                    servicer.Relocate,
+                    request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.RelocateInstanceRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
@@ -702,6 +721,23 @@ class InstanceService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.compute.v1.InstanceService/Move',
             yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.MoveInstanceRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Relocate(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.compute.v1.InstanceService/Relocate',
+            yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.RelocateInstanceRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

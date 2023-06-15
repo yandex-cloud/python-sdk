@@ -52,6 +52,11 @@ class DiskServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_disk__service__pb2.MoveDiskRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
+        self.Relocate = channel.unary_unary(
+                '/yandex.cloud.compute.v1.DiskService/Relocate',
+                request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_disk__service__pb2.RelocateDiskRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
         self.ListSnapshotSchedules = channel.unary_unary(
                 '/yandex.cloud.compute.v1.DiskService/ListSnapshotSchedules',
                 request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_disk__service__pb2.ListDiskSnapshotSchedulesRequest.SerializeToString,
@@ -122,6 +127,16 @@ class DiskServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Relocate(self, request, context):
+        """Moves the specified disk to another availability zone
+
+        Disk must be detached from instances. To move attached
+        disk use [InstanceService.Relocate] request.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListSnapshotSchedules(self, request, context):
         """Retrieves the list of snapshot schedules the specified disk is attached to.
         """
@@ -165,6 +180,11 @@ def add_DiskServiceServicer_to_server(servicer, server):
             'Move': grpc.unary_unary_rpc_method_handler(
                     servicer.Move,
                     request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_disk__service__pb2.MoveDiskRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'Relocate': grpc.unary_unary_rpc_method_handler(
+                    servicer.Relocate,
+                    request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_disk__service__pb2.RelocateDiskRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'ListSnapshotSchedules': grpc.unary_unary_rpc_method_handler(
@@ -298,6 +318,23 @@ class DiskService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.compute.v1.DiskService/Move',
             yandex_dot_cloud_dot_compute_dot_v1_dot_disk__service__pb2.MoveDiskRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Relocate(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.compute.v1.DiskService/Relocate',
+            yandex_dot_cloud_dot_compute_dot_v1_dot_disk__service__pb2.RelocateDiskRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
