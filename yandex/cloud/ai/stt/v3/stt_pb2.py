@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\032yandex.cloud.api.ai.stt.v3Z>github.com/yandex-cloud/go-genproto/yandex/cloud/ai/stt/v3;stt',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n yandex/cloud/ai/stt/v3/stt.proto\x12\x10speechkit.stt.v3\"\xe2\x03\n\x18TextNormalizationOptions\x12X\n\x12text_normalization\x18\x01 \x01(\x0e\x32<.speechkit.stt.v3.TextNormalizationOptions.TextNormalization\x12\x18\n\x10profanity_filter\x18\x02 \x01(\x08\x12\x17\n\x0fliterature_text\x18\x03 \x01(\x08\x12]\n\x15phone_formatting_mode\x18\x04 \x01(\x0e\x32>.speechkit.stt.v3.TextNormalizationOptions.PhoneFormattingMode\"x\n\x11TextNormalization\x12\"\n\x1eTEXT_NORMALIZATION_UNSPECIFIED\x10\x00\x12\x1e\n\x1aTEXT_NORMALIZATION_ENABLED\x10\x01\x12\x1f\n\x1bTEXT_NORMALIZATION_DISABLED\x10\x02\"`\n\x13PhoneFormattingMode\x12%\n!PHONE_FORMATTING_MODE_UNSPECIFIED\x10\x00\x12\"\n\x1ePHONE_FORMATTING_MODE_DISABLED\x10\x01\"\xce\x01\n\x14\x44\x65\x66\x61ultEouClassifier\x12\x43\n\x04type\x18\x01 \x01(\x0e\x32\x35.speechkit.stt.v3.DefaultEouClassifier.EouSensitivity\x12\'\n\x1fmax_pause_between_words_hint_ms\x18\x02 \x01(\x03\"H\n\x0e\x45ouSensitivity\x12\x1f\n\x1b\x45OU_SENSITIVITY_UNSPECIFIED\x10\x00\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x01\x12\x08\n\x04HIGH\x10\x02\"\x17\n\x15\x45xternalEouClassifier\"\xb2\x01\n\x14\x45ouClassifierOptions\x12\x44\n\x12\x64\x65\x66\x61ult_classifier\x18\x01 \x01(\x0b\x32&.speechkit.stt.v3.DefaultEouClassifierH\x00\x12\x46\n\x13\x65xternal_classifier\x18\x02 \x01(\x0b\x32\'.speechkit.stt.v3.ExternalEouClassifierH\x00\x42\x0c\n\nClassifier\"\xc7\x01\n\x08RawAudio\x12@\n\x0e\x61udio_encoding\x18\x01 \x01(\x0e\x32(.speechkit.stt.v3.RawAudio.AudioEncoding\x12\x19\n\x11sample_rate_hertz\x18\x02 \x01(\x03\x12\x1b\n\x13\x61udio_channel_count\x18\x03 \x01(\x03\"A\n\rAudioEncoding\x12\x1e\n\x1a\x41UDIO_ENCODING_UNSPECIFIED\x10\x00\x12\x10\n\x0cLINEAR16_PCM\x10\x01\"\xbf\x01\n\x0e\x43ontainerAudio\x12Q\n\x14\x63ontainer_audio_type\x18\x01 \x01(\x0e\x32\x33.speechkit.stt.v3.ContainerAudio.ContainerAudioType\"Z\n\x12\x43ontainerAudioType\x12$\n CONTAINER_AUDIO_TYPE_UNSPECIFIED\x10\x00\x12\x07\n\x03WAV\x10\x01\x12\x0c\n\x08OGG_OPUS\x10\x02\x12\x07\n\x03MP3\x10\x03\"\x91\x01\n\x12\x41udioFormatOptions\x12/\n\traw_audio\x18\x01 \x01(\x0b\x32\x1a.speechkit.stt.v3.RawAudioH\x00\x12;\n\x0f\x63ontainer_audio\x18\x02 \x01(\x0b\x32 .speechkit.stt.v3.ContainerAudioH\x00\x42\r\n\x0b\x41udioFormat\"\xf7\x01\n\x1aLanguageRestrictionOptions\x12^\n\x10restriction_type\x18\x01 \x01(\x0e\x32\x44.speechkit.stt.v3.LanguageRestrictionOptions.LanguageRestrictionType\x12\x15\n\rlanguage_code\x18\x02 \x03(\t\"b\n\x17LanguageRestrictionType\x12)\n%LANGUAGE_RESTRICTION_TYPE_UNSPECIFIED\x10\x00\x12\r\n\tWHITELIST\x10\x01\x12\r\n\tBLACKLIST\x10\x02\"\xb2\x03\n\x17RecognitionModelOptions\x12\r\n\x05model\x18\x01 \x01(\t\x12:\n\x0c\x61udio_format\x18\x02 \x01(\x0b\x32$.speechkit.stt.v3.AudioFormatOptions\x12\x46\n\x12text_normalization\x18\x03 \x01(\x0b\x32*.speechkit.stt.v3.TextNormalizationOptions\x12J\n\x14language_restriction\x18\x04 \x01(\x0b\x32,.speechkit.stt.v3.LanguageRestrictionOptions\x12\\\n\x15\x61udio_processing_type\x18\x05 \x01(\x0e\x32=.speechkit.stt.v3.RecognitionModelOptions.AudioProcessingType\"Z\n\x13\x41udioProcessingType\x12%\n!AUDIO_PROCESSING_TYPE_UNSPECIFIED\x10\x00\x12\r\n\tREAL_TIME\x10\x01\x12\r\n\tFULL_DATA\x10\x02\"\x98\x01\n\x10StreamingOptions\x12\x44\n\x11recognition_model\x18\x01 \x01(\x0b\x32).speechkit.stt.v3.RecognitionModelOptions\x12>\n\x0e\x65ou_classifier\x18\x02 \x01(\x0b\x32&.speechkit.stt.v3.EouClassifierOptions\"\x1a\n\nAudioChunk\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\"#\n\x0cSilenceChunk\x12\x13\n\x0b\x64uration_ms\x18\x01 \x01(\x03\"\x05\n\x03\x45ou\"\xe8\x01\n\x10StreamingRequest\x12=\n\x0fsession_options\x18\x01 \x01(\x0b\x32\".speechkit.stt.v3.StreamingOptionsH\x00\x12-\n\x05\x63hunk\x18\x02 \x01(\x0b\x32\x1c.speechkit.stt.v3.AudioChunkH\x00\x12\x37\n\rsilence_chunk\x18\x03 \x01(\x0b\x32\x1e.speechkit.stt.v3.SilenceChunkH\x00\x12$\n\x03\x65ou\x18\x04 \x01(\x0b\x32\x15.speechkit.stt.v3.EouH\x00\x42\x07\n\x05\x45vent\"@\n\x04Word\x12\x0c\n\x04text\x18\x01 \x01(\t\x12\x15\n\rstart_time_ms\x18\x02 \x01(\x03\x12\x13\n\x0b\x65nd_time_ms\x18\x03 \x01(\x03\"@\n\x12LanguageEstimation\x12\x15\n\rlanguage_code\x18\x01 \x01(\t\x12\x13\n\x0bprobability\x18\x02 \x01(\x01\"\xbb\x01\n\x0b\x41lternative\x12%\n\x05words\x18\x01 \x03(\x0b\x32\x16.speechkit.stt.v3.Word\x12\x0c\n\x04text\x18\x02 \x01(\t\x12\x15\n\rstart_time_ms\x18\x03 \x01(\x03\x12\x13\n\x0b\x65nd_time_ms\x18\x04 \x01(\x03\x12\x12\n\nconfidence\x18\x05 \x01(\x01\x12\x37\n\tlanguages\x18\x06 \x03(\x0b\x32$.speechkit.stt.v3.LanguageEstimation\"\x1c\n\tEouUpdate\x12\x0f\n\x07time_ms\x18\x02 \x01(\x03\"a\n\x11\x41lternativeUpdate\x12\x33\n\x0c\x61lternatives\x18\x01 \x03(\x0b\x32\x1d.speechkit.stt.v3.Alternative\x12\x17\n\x0b\x63hannel_tag\x18\x02 \x01(\tB\x02\x18\x01\"\x99\x01\n\x0c\x41udioCursors\x12\x18\n\x10received_data_ms\x18\x01 \x01(\x03\x12\x15\n\rreset_time_ms\x18\x02 \x01(\x03\x12\x17\n\x0fpartial_time_ms\x18\x03 \x01(\x03\x12\x15\n\rfinal_time_ms\x18\x04 \x01(\x03\x12\x13\n\x0b\x66inal_index\x18\x05 \x01(\x03\x12\x13\n\x0b\x65ou_time_ms\x18\x06 \x01(\x03\"n\n\x0f\x46inalRefinement\x12\x13\n\x0b\x66inal_index\x18\x01 \x01(\x03\x12>\n\x0fnormalized_text\x18\x02 \x01(\x0b\x32#.speechkit.stt.v3.AlternativeUpdateH\x00\x42\x06\n\x04Type\"L\n\nStatusCode\x12-\n\tcode_type\x18\x01 \x01(\x0e\x32\x1a.speechkit.stt.v3.CodeType\x12\x0f\n\x07message\x18\x02 \x01(\t\"4\n\x0bSessionUuid\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12\x17\n\x0fuser_request_id\x18\x02 \x01(\t\"\xd1\x03\n\x11StreamingResponse\x12\x33\n\x0csession_uuid\x18\x01 \x01(\x0b\x32\x1d.speechkit.stt.v3.SessionUuid\x12\x35\n\raudio_cursors\x18\x02 \x01(\x0b\x32\x1e.speechkit.stt.v3.AudioCursors\x12\x1d\n\x15response_wall_time_ms\x18\x03 \x01(\x03\x12\x36\n\x07partial\x18\x04 \x01(\x0b\x32#.speechkit.stt.v3.AlternativeUpdateH\x00\x12\x34\n\x05\x66inal\x18\x05 \x01(\x0b\x32#.speechkit.stt.v3.AlternativeUpdateH\x00\x12\x31\n\neou_update\x18\x06 \x01(\x0b\x32\x1b.speechkit.stt.v3.EouUpdateH\x00\x12=\n\x10\x66inal_refinement\x18\x07 \x01(\x0b\x32!.speechkit.stt.v3.FinalRefinementH\x00\x12\x33\n\x0bstatus_code\x18\x08 \x01(\x0b\x32\x1c.speechkit.stt.v3.StatusCodeH\x00\x12\x13\n\x0b\x63hannel_tag\x18\t \x01(\tB\x07\n\x05\x45vent*K\n\x08\x43odeType\x12\x19\n\x15\x43ODE_TYPE_UNSPECIFIED\x10\x00\x12\x0b\n\x07WORKING\x10\x01\x12\x0b\n\x07WARNING\x10\x02\x12\n\n\x06\x43LOSED\x10\x03\x42\\\n\x1ayandex.cloud.api.ai.stt.v3Z>github.com/yandex-cloud/go-genproto/yandex/cloud/ai/stt/v3;sttb\x06proto3'
+  serialized_pb=b'\n yandex/cloud/ai/stt/v3/stt.proto\x12\x10speechkit.stt.v3\"\xe2\x03\n\x18TextNormalizationOptions\x12X\n\x12text_normalization\x18\x01 \x01(\x0e\x32<.speechkit.stt.v3.TextNormalizationOptions.TextNormalization\x12\x18\n\x10profanity_filter\x18\x02 \x01(\x08\x12\x17\n\x0fliterature_text\x18\x03 \x01(\x08\x12]\n\x15phone_formatting_mode\x18\x04 \x01(\x0e\x32>.speechkit.stt.v3.TextNormalizationOptions.PhoneFormattingMode\"x\n\x11TextNormalization\x12\"\n\x1eTEXT_NORMALIZATION_UNSPECIFIED\x10\x00\x12\x1e\n\x1aTEXT_NORMALIZATION_ENABLED\x10\x01\x12\x1f\n\x1bTEXT_NORMALIZATION_DISABLED\x10\x02\"`\n\x13PhoneFormattingMode\x12%\n!PHONE_FORMATTING_MODE_UNSPECIFIED\x10\x00\x12\"\n\x1ePHONE_FORMATTING_MODE_DISABLED\x10\x01\"\xce\x01\n\x14\x44\x65\x66\x61ultEouClassifier\x12\x43\n\x04type\x18\x01 \x01(\x0e\x32\x35.speechkit.stt.v3.DefaultEouClassifier.EouSensitivity\x12\'\n\x1fmax_pause_between_words_hint_ms\x18\x02 \x01(\x03\"H\n\x0e\x45ouSensitivity\x12\x1f\n\x1b\x45OU_SENSITIVITY_UNSPECIFIED\x10\x00\x12\x0b\n\x07\x44\x45\x46\x41ULT\x10\x01\x12\x08\n\x04HIGH\x10\x02\"\x17\n\x15\x45xternalEouClassifier\"\xb2\x01\n\x14\x45ouClassifierOptions\x12\x44\n\x12\x64\x65\x66\x61ult_classifier\x18\x01 \x01(\x0b\x32&.speechkit.stt.v3.DefaultEouClassifierH\x00\x12\x46\n\x13\x65xternal_classifier\x18\x02 \x01(\x0b\x32\'.speechkit.stt.v3.ExternalEouClassifierH\x00\x42\x0c\n\nClassifier\"\xbf\x01\n\x15RecognitionClassifier\x12\x12\n\nclassifier\x18\x01 \x01(\t\x12\x45\n\x08triggers\x18\x02 \x03(\x0e\x32\x33.speechkit.stt.v3.RecognitionClassifier.TriggerType\"K\n\x0bTriggerType\x12\x1c\n\x18TRIGGER_TYPE_UNSPECIFIED\x10\x00\x12\x10\n\x0cON_UTTERANCE\x10\x01\x12\x0c\n\x08ON_FINAL\x10\x02\"\\\n\x1cRecognitionClassifierOptions\x12<\n\x0b\x63lassifiers\x18\x01 \x03(\x0b\x32\'.speechkit.stt.v3.RecognitionClassifier\"\xc7\x01\n\x08RawAudio\x12@\n\x0e\x61udio_encoding\x18\x01 \x01(\x0e\x32(.speechkit.stt.v3.RawAudio.AudioEncoding\x12\x19\n\x11sample_rate_hertz\x18\x02 \x01(\x03\x12\x1b\n\x13\x61udio_channel_count\x18\x03 \x01(\x03\"A\n\rAudioEncoding\x12\x1e\n\x1a\x41UDIO_ENCODING_UNSPECIFIED\x10\x00\x12\x10\n\x0cLINEAR16_PCM\x10\x01\"\xbf\x01\n\x0e\x43ontainerAudio\x12Q\n\x14\x63ontainer_audio_type\x18\x01 \x01(\x0e\x32\x33.speechkit.stt.v3.ContainerAudio.ContainerAudioType\"Z\n\x12\x43ontainerAudioType\x12$\n CONTAINER_AUDIO_TYPE_UNSPECIFIED\x10\x00\x12\x07\n\x03WAV\x10\x01\x12\x0c\n\x08OGG_OPUS\x10\x02\x12\x07\n\x03MP3\x10\x03\"\x91\x01\n\x12\x41udioFormatOptions\x12/\n\traw_audio\x18\x01 \x01(\x0b\x32\x1a.speechkit.stt.v3.RawAudioH\x00\x12;\n\x0f\x63ontainer_audio\x18\x02 \x01(\x0b\x32 .speechkit.stt.v3.ContainerAudioH\x00\x42\r\n\x0b\x41udioFormat\"\xf7\x01\n\x1aLanguageRestrictionOptions\x12^\n\x10restriction_type\x18\x01 \x01(\x0e\x32\x44.speechkit.stt.v3.LanguageRestrictionOptions.LanguageRestrictionType\x12\x15\n\rlanguage_code\x18\x02 \x03(\t\"b\n\x17LanguageRestrictionType\x12)\n%LANGUAGE_RESTRICTION_TYPE_UNSPECIFIED\x10\x00\x12\r\n\tWHITELIST\x10\x01\x12\r\n\tBLACKLIST\x10\x02\"\xb2\x03\n\x17RecognitionModelOptions\x12\r\n\x05model\x18\x01 \x01(\t\x12:\n\x0c\x61udio_format\x18\x02 \x01(\x0b\x32$.speechkit.stt.v3.AudioFormatOptions\x12\x46\n\x12text_normalization\x18\x03 \x01(\x0b\x32*.speechkit.stt.v3.TextNormalizationOptions\x12J\n\x14language_restriction\x18\x04 \x01(\x0b\x32,.speechkit.stt.v3.LanguageRestrictionOptions\x12\\\n\x15\x61udio_processing_type\x18\x05 \x01(\x0e\x32=.speechkit.stt.v3.RecognitionModelOptions.AudioProcessingType\"Z\n\x13\x41udioProcessingType\x12%\n!AUDIO_PROCESSING_TYPE_UNSPECIFIED\x10\x00\x12\r\n\tREAL_TIME\x10\x01\x12\r\n\tFULL_DATA\x10\x02\"\xe8\x01\n\x10StreamingOptions\x12\x44\n\x11recognition_model\x18\x01 \x01(\x0b\x32).speechkit.stt.v3.RecognitionModelOptions\x12>\n\x0e\x65ou_classifier\x18\x02 \x01(\x0b\x32&.speechkit.stt.v3.EouClassifierOptions\x12N\n\x16recognition_classifier\x18\x03 \x01(\x0b\x32..speechkit.stt.v3.RecognitionClassifierOptions\"\x1a\n\nAudioChunk\x12\x0c\n\x04\x64\x61ta\x18\x01 \x01(\x0c\"#\n\x0cSilenceChunk\x12\x13\n\x0b\x64uration_ms\x18\x01 \x01(\x03\"\x05\n\x03\x45ou\"\xe8\x01\n\x10StreamingRequest\x12=\n\x0fsession_options\x18\x01 \x01(\x0b\x32\".speechkit.stt.v3.StreamingOptionsH\x00\x12-\n\x05\x63hunk\x18\x02 \x01(\x0b\x32\x1c.speechkit.stt.v3.AudioChunkH\x00\x12\x37\n\rsilence_chunk\x18\x03 \x01(\x0b\x32\x1e.speechkit.stt.v3.SilenceChunkH\x00\x12$\n\x03\x65ou\x18\x04 \x01(\x0b\x32\x15.speechkit.stt.v3.EouH\x00\x42\x07\n\x05\x45vent\"@\n\x04Word\x12\x0c\n\x04text\x18\x01 \x01(\t\x12\x15\n\rstart_time_ms\x18\x02 \x01(\x03\x12\x13\n\x0b\x65nd_time_ms\x18\x03 \x01(\x03\"@\n\x12LanguageEstimation\x12\x15\n\rlanguage_code\x18\x01 \x01(\t\x12\x13\n\x0bprobability\x18\x02 \x01(\x01\"\xbb\x01\n\x0b\x41lternative\x12%\n\x05words\x18\x01 \x03(\x0b\x32\x16.speechkit.stt.v3.Word\x12\x0c\n\x04text\x18\x02 \x01(\t\x12\x15\n\rstart_time_ms\x18\x03 \x01(\x03\x12\x13\n\x0b\x65nd_time_ms\x18\x04 \x01(\x03\x12\x12\n\nconfidence\x18\x05 \x01(\x01\x12\x37\n\tlanguages\x18\x06 \x03(\x0b\x32$.speechkit.stt.v3.LanguageEstimation\"\x1c\n\tEouUpdate\x12\x0f\n\x07time_ms\x18\x02 \x01(\x03\"a\n\x11\x41lternativeUpdate\x12\x33\n\x0c\x61lternatives\x18\x01 \x03(\x0b\x32\x1d.speechkit.stt.v3.Alternative\x12\x17\n\x0b\x63hannel_tag\x18\x02 \x01(\tB\x02\x18\x01\"\x99\x01\n\x0c\x41udioCursors\x12\x18\n\x10received_data_ms\x18\x01 \x01(\x03\x12\x15\n\rreset_time_ms\x18\x02 \x01(\x03\x12\x17\n\x0fpartial_time_ms\x18\x03 \x01(\x03\x12\x15\n\rfinal_time_ms\x18\x04 \x01(\x03\x12\x13\n\x0b\x66inal_index\x18\x05 \x01(\x03\x12\x13\n\x0b\x65ou_time_ms\x18\x06 \x01(\x03\"n\n\x0f\x46inalRefinement\x12\x13\n\x0b\x66inal_index\x18\x01 \x01(\x03\x12>\n\x0fnormalized_text\x18\x02 \x01(\x0b\x32#.speechkit.stt.v3.AlternativeUpdateH\x00\x42\x06\n\x04Type\"L\n\nStatusCode\x12-\n\tcode_type\x18\x01 \x01(\x0e\x32\x1a.speechkit.stt.v3.CodeType\x12\x0f\n\x07message\x18\x02 \x01(\t\"4\n\x0bSessionUuid\x12\x0c\n\x04uuid\x18\x01 \x01(\t\x12\x17\n\x0fuser_request_id\x18\x02 \x01(\t\"K\n\x0fPhraseHighlight\x12\x0c\n\x04text\x18\x01 \x01(\t\x12\x15\n\rstart_time_ms\x18\x02 \x01(\x03\x12\x13\n\x0b\x65nd_time_ms\x18\x03 \x01(\x03\"?\n\x1aRecognitionClassifierLabel\x12\r\n\x05label\x18\x01 \x01(\t\x12\x12\n\nconfidence\x18\x02 \x01(\x01\"\xa6\x01\n\x1bRecognitionClassifierResult\x12\x12\n\nclassifier\x18\x01 \x01(\t\x12\x35\n\nhighlights\x18\x02 \x03(\x0b\x32!.speechkit.stt.v3.PhraseHighlight\x12<\n\x06labels\x18\x03 \x03(\x0b\x32,.speechkit.stt.v3.RecognitionClassifierLabel\"\xb1\x02\n\x1bRecognitionClassifierUpdate\x12M\n\x0bwindow_type\x18\x01 \x01(\x0e\x32\x38.speechkit.stt.v3.RecognitionClassifierUpdate.WindowType\x12\x15\n\rstart_time_ms\x18\x02 \x01(\x03\x12\x13\n\x0b\x65nd_time_ms\x18\x03 \x01(\x03\x12H\n\x11\x63lassifier_result\x18\x04 \x01(\x0b\x32-.speechkit.stt.v3.RecognitionClassifierResult\"M\n\nWindowType\x12\x1b\n\x17WINDOW_TYPE_UNSPECIFIED\x10\x00\x12\x12\n\x0eLAST_UTTERANCE\x10\x01\x12\x0e\n\nLAST_FINAL\x10\x02\"\x9d\x04\n\x11StreamingResponse\x12\x33\n\x0csession_uuid\x18\x01 \x01(\x0b\x32\x1d.speechkit.stt.v3.SessionUuid\x12\x35\n\raudio_cursors\x18\x02 \x01(\x0b\x32\x1e.speechkit.stt.v3.AudioCursors\x12\x1d\n\x15response_wall_time_ms\x18\x03 \x01(\x03\x12\x36\n\x07partial\x18\x04 \x01(\x0b\x32#.speechkit.stt.v3.AlternativeUpdateH\x00\x12\x34\n\x05\x66inal\x18\x05 \x01(\x0b\x32#.speechkit.stt.v3.AlternativeUpdateH\x00\x12\x31\n\neou_update\x18\x06 \x01(\x0b\x32\x1b.speechkit.stt.v3.EouUpdateH\x00\x12=\n\x10\x66inal_refinement\x18\x07 \x01(\x0b\x32!.speechkit.stt.v3.FinalRefinementH\x00\x12\x33\n\x0bstatus_code\x18\x08 \x01(\x0b\x32\x1c.speechkit.stt.v3.StatusCodeH\x00\x12J\n\x11\x63lassifier_update\x18\n \x01(\x0b\x32-.speechkit.stt.v3.RecognitionClassifierUpdateH\x00\x12\x13\n\x0b\x63hannel_tag\x18\t \x01(\tB\x07\n\x05\x45vent*K\n\x08\x43odeType\x12\x19\n\x15\x43ODE_TYPE_UNSPECIFIED\x10\x00\x12\x0b\n\x07WORKING\x10\x01\x12\x0b\n\x07WARNING\x10\x02\x12\n\n\x06\x43LOSED\x10\x03\x42\\\n\x1ayandex.cloud.api.ai.stt.v3Z>github.com/yandex-cloud/go-genproto/yandex/cloud/ai/stt/v3;sttb\x06proto3'
 )
 
 _CODETYPE = _descriptor.EnumDescriptor(
@@ -53,8 +53,8 @@ _CODETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3966,
-  serialized_end=4041,
+  serialized_start=5029,
+  serialized_end=5104,
 )
 _sym_db.RegisterEnumDescriptor(_CODETYPE)
 
@@ -150,6 +150,36 @@ _DEFAULTEOUCLASSIFIER_EOUSENSITIVITY = _descriptor.EnumDescriptor(
 )
 _sym_db.RegisterEnumDescriptor(_DEFAULTEOUCLASSIFIER_EOUSENSITIVITY)
 
+_RECOGNITIONCLASSIFIER_TRIGGERTYPE = _descriptor.EnumDescriptor(
+  name='TriggerType',
+  full_name='speechkit.stt.v3.RecognitionClassifier.TriggerType',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='TRIGGER_TYPE_UNSPECIFIED', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='ON_UTTERANCE', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='ON_FINAL', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=1071,
+  serialized_end=1146,
+)
+_sym_db.RegisterEnumDescriptor(_RECOGNITIONCLASSIFIER_TRIGGERTYPE)
+
 _RAWAUDIO_AUDIOENCODING = _descriptor.EnumDescriptor(
   name='AudioEncoding',
   full_name='speechkit.stt.v3.RawAudio.AudioEncoding',
@@ -170,8 +200,8 @@ _RAWAUDIO_AUDIOENCODING = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1089,
-  serialized_end=1154,
+  serialized_start=1377,
+  serialized_end=1442,
 )
 _sym_db.RegisterEnumDescriptor(_RAWAUDIO_AUDIOENCODING)
 
@@ -205,8 +235,8 @@ _CONTAINERAUDIO_CONTAINERAUDIOTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1258,
-  serialized_end=1348,
+  serialized_start=1546,
+  serialized_end=1636,
 )
 _sym_db.RegisterEnumDescriptor(_CONTAINERAUDIO_CONTAINERAUDIOTYPE)
 
@@ -235,8 +265,8 @@ _LANGUAGERESTRICTIONOPTIONS_LANGUAGERESTRICTIONTYPE = _descriptor.EnumDescriptor
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1648,
-  serialized_end=1746,
+  serialized_start=1936,
+  serialized_end=2034,
 )
 _sym_db.RegisterEnumDescriptor(_LANGUAGERESTRICTIONOPTIONS_LANGUAGERESTRICTIONTYPE)
 
@@ -265,10 +295,40 @@ _RECOGNITIONMODELOPTIONS_AUDIOPROCESSINGTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2093,
-  serialized_end=2183,
+  serialized_start=2381,
+  serialized_end=2471,
 )
 _sym_db.RegisterEnumDescriptor(_RECOGNITIONMODELOPTIONS_AUDIOPROCESSINGTYPE)
+
+_RECOGNITIONCLASSIFIERUPDATE_WINDOWTYPE = _descriptor.EnumDescriptor(
+  name='WindowType',
+  full_name='speechkit.stt.v3.RecognitionClassifierUpdate.WindowType',
+  filename=None,
+  file=DESCRIPTOR,
+  create_key=_descriptor._internal_create_key,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='WINDOW_TYPE_UNSPECIFIED', index=0, number=0,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='LAST_UTTERANCE', index=1, number=1,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+    _descriptor.EnumValueDescriptor(
+      name='LAST_FINAL', index=2, number=2,
+      serialized_options=None,
+      type=None,
+      create_key=_descriptor._internal_create_key),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=4406,
+  serialized_end=4483,
+)
+_sym_db.RegisterEnumDescriptor(_RECOGNITIONCLASSIFIERUPDATE_WINDOWTYPE)
 
 
 _TEXTNORMALIZATIONOPTIONS = _descriptor.Descriptor(
@@ -435,6 +495,78 @@ _EOUCLASSIFIEROPTIONS = _descriptor.Descriptor(
 )
 
 
+_RECOGNITIONCLASSIFIER = _descriptor.Descriptor(
+  name='RecognitionClassifier',
+  full_name='speechkit.stt.v3.RecognitionClassifier',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='classifier', full_name='speechkit.stt.v3.RecognitionClassifier.classifier', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='triggers', full_name='speechkit.stt.v3.RecognitionClassifier.triggers', index=1,
+      number=2, type=14, cpp_type=8, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+    _RECOGNITIONCLASSIFIER_TRIGGERTYPE,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=955,
+  serialized_end=1146,
+)
+
+
+_RECOGNITIONCLASSIFIEROPTIONS = _descriptor.Descriptor(
+  name='RecognitionClassifierOptions',
+  full_name='speechkit.stt.v3.RecognitionClassifierOptions',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='classifiers', full_name='speechkit.stt.v3.RecognitionClassifierOptions.classifiers', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1148,
+  serialized_end=1240,
+)
+
+
 _RAWAUDIO = _descriptor.Descriptor(
   name='RawAudio',
   full_name='speechkit.stt.v3.RawAudio',
@@ -477,8 +609,8 @@ _RAWAUDIO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=955,
-  serialized_end=1154,
+  serialized_start=1243,
+  serialized_end=1442,
 )
 
 
@@ -510,8 +642,8 @@ _CONTAINERAUDIO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1157,
-  serialized_end=1348,
+  serialized_start=1445,
+  serialized_end=1636,
 )
 
 
@@ -554,8 +686,8 @@ _AUDIOFORMATOPTIONS = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1351,
-  serialized_end=1496,
+  serialized_start=1639,
+  serialized_end=1784,
 )
 
 
@@ -594,8 +726,8 @@ _LANGUAGERESTRICTIONOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1499,
-  serialized_end=1746,
+  serialized_start=1787,
+  serialized_end=2034,
 )
 
 
@@ -655,8 +787,8 @@ _RECOGNITIONMODELOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1749,
-  serialized_end=2183,
+  serialized_start=2037,
+  serialized_end=2471,
 )
 
 
@@ -682,6 +814,13 @@ _STREAMINGOPTIONS = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='recognition_classifier', full_name='speechkit.stt.v3.StreamingOptions.recognition_classifier', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -694,8 +833,8 @@ _STREAMINGOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2186,
-  serialized_end=2338,
+  serialized_start=2474,
+  serialized_end=2706,
 )
 
 
@@ -726,8 +865,8 @@ _AUDIOCHUNK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2340,
-  serialized_end=2366,
+  serialized_start=2708,
+  serialized_end=2734,
 )
 
 
@@ -758,8 +897,8 @@ _SILENCECHUNK = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2368,
-  serialized_end=2403,
+  serialized_start=2736,
+  serialized_end=2771,
 )
 
 
@@ -783,8 +922,8 @@ _EOU = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2405,
-  serialized_end=2410,
+  serialized_start=2773,
+  serialized_end=2778,
 )
 
 
@@ -841,8 +980,8 @@ _STREAMINGREQUEST = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=2413,
-  serialized_end=2645,
+  serialized_start=2781,
+  serialized_end=3013,
 )
 
 
@@ -887,8 +1026,8 @@ _WORD = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2647,
-  serialized_end=2711,
+  serialized_start=3015,
+  serialized_end=3079,
 )
 
 
@@ -926,8 +1065,8 @@ _LANGUAGEESTIMATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2713,
-  serialized_end=2777,
+  serialized_start=3081,
+  serialized_end=3145,
 )
 
 
@@ -993,8 +1132,8 @@ _ALTERNATIVE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2780,
-  serialized_end=2967,
+  serialized_start=3148,
+  serialized_end=3335,
 )
 
 
@@ -1025,8 +1164,8 @@ _EOUUPDATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2969,
-  serialized_end=2997,
+  serialized_start=3337,
+  serialized_end=3365,
 )
 
 
@@ -1064,8 +1203,8 @@ _ALTERNATIVEUPDATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2999,
-  serialized_end=3096,
+  serialized_start=3367,
+  serialized_end=3464,
 )
 
 
@@ -1131,8 +1270,8 @@ _AUDIOCURSORS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3099,
-  serialized_end=3252,
+  serialized_start=3467,
+  serialized_end=3620,
 )
 
 
@@ -1175,8 +1314,8 @@ _FINALREFINEMENT = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=3254,
-  serialized_end=3364,
+  serialized_start=3622,
+  serialized_end=3732,
 )
 
 
@@ -1214,8 +1353,8 @@ _STATUSCODE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3366,
-  serialized_end=3442,
+  serialized_start=3734,
+  serialized_end=3810,
 )
 
 
@@ -1253,8 +1392,193 @@ _SESSIONUUID = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3444,
-  serialized_end=3496,
+  serialized_start=3812,
+  serialized_end=3864,
+)
+
+
+_PHRASEHIGHLIGHT = _descriptor.Descriptor(
+  name='PhraseHighlight',
+  full_name='speechkit.stt.v3.PhraseHighlight',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='text', full_name='speechkit.stt.v3.PhraseHighlight.text', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='start_time_ms', full_name='speechkit.stt.v3.PhraseHighlight.start_time_ms', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='end_time_ms', full_name='speechkit.stt.v3.PhraseHighlight.end_time_ms', index=2,
+      number=3, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3866,
+  serialized_end=3941,
+)
+
+
+_RECOGNITIONCLASSIFIERLABEL = _descriptor.Descriptor(
+  name='RecognitionClassifierLabel',
+  full_name='speechkit.stt.v3.RecognitionClassifierLabel',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='label', full_name='speechkit.stt.v3.RecognitionClassifierLabel.label', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='confidence', full_name='speechkit.stt.v3.RecognitionClassifierLabel.confidence', index=1,
+      number=2, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3943,
+  serialized_end=4006,
+)
+
+
+_RECOGNITIONCLASSIFIERRESULT = _descriptor.Descriptor(
+  name='RecognitionClassifierResult',
+  full_name='speechkit.stt.v3.RecognitionClassifierResult',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='classifier', full_name='speechkit.stt.v3.RecognitionClassifierResult.classifier', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='highlights', full_name='speechkit.stt.v3.RecognitionClassifierResult.highlights', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='labels', full_name='speechkit.stt.v3.RecognitionClassifierResult.labels', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4009,
+  serialized_end=4175,
+)
+
+
+_RECOGNITIONCLASSIFIERUPDATE = _descriptor.Descriptor(
+  name='RecognitionClassifierUpdate',
+  full_name='speechkit.stt.v3.RecognitionClassifierUpdate',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='window_type', full_name='speechkit.stt.v3.RecognitionClassifierUpdate.window_type', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='start_time_ms', full_name='speechkit.stt.v3.RecognitionClassifierUpdate.start_time_ms', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='end_time_ms', full_name='speechkit.stt.v3.RecognitionClassifierUpdate.end_time_ms', index=2,
+      number=3, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='classifier_result', full_name='speechkit.stt.v3.RecognitionClassifierUpdate.classifier_result', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+    _RECOGNITIONCLASSIFIERUPDATE_WINDOWTYPE,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4178,
+  serialized_end=4483,
 )
 
 
@@ -1323,7 +1647,14 @@ _STREAMINGRESPONSE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='channel_tag', full_name='speechkit.stt.v3.StreamingResponse.channel_tag', index=8,
+      name='classifier_update', full_name='speechkit.stt.v3.StreamingResponse.classifier_update', index=8,
+      number=10, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='channel_tag', full_name='speechkit.stt.v3.StreamingResponse.channel_tag', index=9,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -1346,8 +1677,8 @@ _STREAMINGRESPONSE = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=3499,
-  serialized_end=3964,
+  serialized_start=4486,
+  serialized_end=5027,
 )
 
 _TEXTNORMALIZATIONOPTIONS.fields_by_name['text_normalization'].enum_type = _TEXTNORMALIZATIONOPTIONS_TEXTNORMALIZATION
@@ -1364,6 +1695,9 @@ _EOUCLASSIFIEROPTIONS.fields_by_name['default_classifier'].containing_oneof = _E
 _EOUCLASSIFIEROPTIONS.oneofs_by_name['Classifier'].fields.append(
   _EOUCLASSIFIEROPTIONS.fields_by_name['external_classifier'])
 _EOUCLASSIFIEROPTIONS.fields_by_name['external_classifier'].containing_oneof = _EOUCLASSIFIEROPTIONS.oneofs_by_name['Classifier']
+_RECOGNITIONCLASSIFIER.fields_by_name['triggers'].enum_type = _RECOGNITIONCLASSIFIER_TRIGGERTYPE
+_RECOGNITIONCLASSIFIER_TRIGGERTYPE.containing_type = _RECOGNITIONCLASSIFIER
+_RECOGNITIONCLASSIFIEROPTIONS.fields_by_name['classifiers'].message_type = _RECOGNITIONCLASSIFIER
 _RAWAUDIO.fields_by_name['audio_encoding'].enum_type = _RAWAUDIO_AUDIOENCODING
 _RAWAUDIO_AUDIOENCODING.containing_type = _RAWAUDIO
 _CONTAINERAUDIO.fields_by_name['container_audio_type'].enum_type = _CONTAINERAUDIO_CONTAINERAUDIOTYPE
@@ -1385,6 +1719,7 @@ _RECOGNITIONMODELOPTIONS.fields_by_name['audio_processing_type'].enum_type = _RE
 _RECOGNITIONMODELOPTIONS_AUDIOPROCESSINGTYPE.containing_type = _RECOGNITIONMODELOPTIONS
 _STREAMINGOPTIONS.fields_by_name['recognition_model'].message_type = _RECOGNITIONMODELOPTIONS
 _STREAMINGOPTIONS.fields_by_name['eou_classifier'].message_type = _EOUCLASSIFIEROPTIONS
+_STREAMINGOPTIONS.fields_by_name['recognition_classifier'].message_type = _RECOGNITIONCLASSIFIEROPTIONS
 _STREAMINGREQUEST.fields_by_name['session_options'].message_type = _STREAMINGOPTIONS
 _STREAMINGREQUEST.fields_by_name['chunk'].message_type = _AUDIOCHUNK
 _STREAMINGREQUEST.fields_by_name['silence_chunk'].message_type = _SILENCECHUNK
@@ -1409,6 +1744,11 @@ _FINALREFINEMENT.oneofs_by_name['Type'].fields.append(
   _FINALREFINEMENT.fields_by_name['normalized_text'])
 _FINALREFINEMENT.fields_by_name['normalized_text'].containing_oneof = _FINALREFINEMENT.oneofs_by_name['Type']
 _STATUSCODE.fields_by_name['code_type'].enum_type = _CODETYPE
+_RECOGNITIONCLASSIFIERRESULT.fields_by_name['highlights'].message_type = _PHRASEHIGHLIGHT
+_RECOGNITIONCLASSIFIERRESULT.fields_by_name['labels'].message_type = _RECOGNITIONCLASSIFIERLABEL
+_RECOGNITIONCLASSIFIERUPDATE.fields_by_name['window_type'].enum_type = _RECOGNITIONCLASSIFIERUPDATE_WINDOWTYPE
+_RECOGNITIONCLASSIFIERUPDATE.fields_by_name['classifier_result'].message_type = _RECOGNITIONCLASSIFIERRESULT
+_RECOGNITIONCLASSIFIERUPDATE_WINDOWTYPE.containing_type = _RECOGNITIONCLASSIFIERUPDATE
 _STREAMINGRESPONSE.fields_by_name['session_uuid'].message_type = _SESSIONUUID
 _STREAMINGRESPONSE.fields_by_name['audio_cursors'].message_type = _AUDIOCURSORS
 _STREAMINGRESPONSE.fields_by_name['partial'].message_type = _ALTERNATIVEUPDATE
@@ -1416,6 +1756,7 @@ _STREAMINGRESPONSE.fields_by_name['final'].message_type = _ALTERNATIVEUPDATE
 _STREAMINGRESPONSE.fields_by_name['eou_update'].message_type = _EOUUPDATE
 _STREAMINGRESPONSE.fields_by_name['final_refinement'].message_type = _FINALREFINEMENT
 _STREAMINGRESPONSE.fields_by_name['status_code'].message_type = _STATUSCODE
+_STREAMINGRESPONSE.fields_by_name['classifier_update'].message_type = _RECOGNITIONCLASSIFIERUPDATE
 _STREAMINGRESPONSE.oneofs_by_name['Event'].fields.append(
   _STREAMINGRESPONSE.fields_by_name['partial'])
 _STREAMINGRESPONSE.fields_by_name['partial'].containing_oneof = _STREAMINGRESPONSE.oneofs_by_name['Event']
@@ -1431,10 +1772,15 @@ _STREAMINGRESPONSE.fields_by_name['final_refinement'].containing_oneof = _STREAM
 _STREAMINGRESPONSE.oneofs_by_name['Event'].fields.append(
   _STREAMINGRESPONSE.fields_by_name['status_code'])
 _STREAMINGRESPONSE.fields_by_name['status_code'].containing_oneof = _STREAMINGRESPONSE.oneofs_by_name['Event']
+_STREAMINGRESPONSE.oneofs_by_name['Event'].fields.append(
+  _STREAMINGRESPONSE.fields_by_name['classifier_update'])
+_STREAMINGRESPONSE.fields_by_name['classifier_update'].containing_oneof = _STREAMINGRESPONSE.oneofs_by_name['Event']
 DESCRIPTOR.message_types_by_name['TextNormalizationOptions'] = _TEXTNORMALIZATIONOPTIONS
 DESCRIPTOR.message_types_by_name['DefaultEouClassifier'] = _DEFAULTEOUCLASSIFIER
 DESCRIPTOR.message_types_by_name['ExternalEouClassifier'] = _EXTERNALEOUCLASSIFIER
 DESCRIPTOR.message_types_by_name['EouClassifierOptions'] = _EOUCLASSIFIEROPTIONS
+DESCRIPTOR.message_types_by_name['RecognitionClassifier'] = _RECOGNITIONCLASSIFIER
+DESCRIPTOR.message_types_by_name['RecognitionClassifierOptions'] = _RECOGNITIONCLASSIFIEROPTIONS
 DESCRIPTOR.message_types_by_name['RawAudio'] = _RAWAUDIO
 DESCRIPTOR.message_types_by_name['ContainerAudio'] = _CONTAINERAUDIO
 DESCRIPTOR.message_types_by_name['AudioFormatOptions'] = _AUDIOFORMATOPTIONS
@@ -1454,6 +1800,10 @@ DESCRIPTOR.message_types_by_name['AudioCursors'] = _AUDIOCURSORS
 DESCRIPTOR.message_types_by_name['FinalRefinement'] = _FINALREFINEMENT
 DESCRIPTOR.message_types_by_name['StatusCode'] = _STATUSCODE
 DESCRIPTOR.message_types_by_name['SessionUuid'] = _SESSIONUUID
+DESCRIPTOR.message_types_by_name['PhraseHighlight'] = _PHRASEHIGHLIGHT
+DESCRIPTOR.message_types_by_name['RecognitionClassifierLabel'] = _RECOGNITIONCLASSIFIERLABEL
+DESCRIPTOR.message_types_by_name['RecognitionClassifierResult'] = _RECOGNITIONCLASSIFIERRESULT
+DESCRIPTOR.message_types_by_name['RecognitionClassifierUpdate'] = _RECOGNITIONCLASSIFIERUPDATE
 DESCRIPTOR.message_types_by_name['StreamingResponse'] = _STREAMINGRESPONSE
 DESCRIPTOR.enum_types_by_name['CodeType'] = _CODETYPE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -1485,6 +1835,20 @@ EouClassifierOptions = _reflection.GeneratedProtocolMessageType('EouClassifierOp
   # @@protoc_insertion_point(class_scope:speechkit.stt.v3.EouClassifierOptions)
   })
 _sym_db.RegisterMessage(EouClassifierOptions)
+
+RecognitionClassifier = _reflection.GeneratedProtocolMessageType('RecognitionClassifier', (_message.Message,), {
+  'DESCRIPTOR' : _RECOGNITIONCLASSIFIER,
+  '__module__' : 'yandex.cloud.ai.stt.v3.stt_pb2'
+  # @@protoc_insertion_point(class_scope:speechkit.stt.v3.RecognitionClassifier)
+  })
+_sym_db.RegisterMessage(RecognitionClassifier)
+
+RecognitionClassifierOptions = _reflection.GeneratedProtocolMessageType('RecognitionClassifierOptions', (_message.Message,), {
+  'DESCRIPTOR' : _RECOGNITIONCLASSIFIEROPTIONS,
+  '__module__' : 'yandex.cloud.ai.stt.v3.stt_pb2'
+  # @@protoc_insertion_point(class_scope:speechkit.stt.v3.RecognitionClassifierOptions)
+  })
+_sym_db.RegisterMessage(RecognitionClassifierOptions)
 
 RawAudio = _reflection.GeneratedProtocolMessageType('RawAudio', (_message.Message,), {
   'DESCRIPTOR' : _RAWAUDIO,
@@ -1618,6 +1982,34 @@ SessionUuid = _reflection.GeneratedProtocolMessageType('SessionUuid', (_message.
   # @@protoc_insertion_point(class_scope:speechkit.stt.v3.SessionUuid)
   })
 _sym_db.RegisterMessage(SessionUuid)
+
+PhraseHighlight = _reflection.GeneratedProtocolMessageType('PhraseHighlight', (_message.Message,), {
+  'DESCRIPTOR' : _PHRASEHIGHLIGHT,
+  '__module__' : 'yandex.cloud.ai.stt.v3.stt_pb2'
+  # @@protoc_insertion_point(class_scope:speechkit.stt.v3.PhraseHighlight)
+  })
+_sym_db.RegisterMessage(PhraseHighlight)
+
+RecognitionClassifierLabel = _reflection.GeneratedProtocolMessageType('RecognitionClassifierLabel', (_message.Message,), {
+  'DESCRIPTOR' : _RECOGNITIONCLASSIFIERLABEL,
+  '__module__' : 'yandex.cloud.ai.stt.v3.stt_pb2'
+  # @@protoc_insertion_point(class_scope:speechkit.stt.v3.RecognitionClassifierLabel)
+  })
+_sym_db.RegisterMessage(RecognitionClassifierLabel)
+
+RecognitionClassifierResult = _reflection.GeneratedProtocolMessageType('RecognitionClassifierResult', (_message.Message,), {
+  'DESCRIPTOR' : _RECOGNITIONCLASSIFIERRESULT,
+  '__module__' : 'yandex.cloud.ai.stt.v3.stt_pb2'
+  # @@protoc_insertion_point(class_scope:speechkit.stt.v3.RecognitionClassifierResult)
+  })
+_sym_db.RegisterMessage(RecognitionClassifierResult)
+
+RecognitionClassifierUpdate = _reflection.GeneratedProtocolMessageType('RecognitionClassifierUpdate', (_message.Message,), {
+  'DESCRIPTOR' : _RECOGNITIONCLASSIFIERUPDATE,
+  '__module__' : 'yandex.cloud.ai.stt.v3.stt_pb2'
+  # @@protoc_insertion_point(class_scope:speechkit.stt.v3.RecognitionClassifierUpdate)
+  })
+_sym_db.RegisterMessage(RecognitionClassifierUpdate)
 
 StreamingResponse = _reflection.GeneratedProtocolMessageType('StreamingResponse', (_message.Message,), {
   'DESCRIPTOR' : _STREAMINGRESPONSE,

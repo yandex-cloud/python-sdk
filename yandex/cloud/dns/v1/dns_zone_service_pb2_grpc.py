@@ -83,6 +83,11 @@ class DnsZoneServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessBindingsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
+        self.UpdatePrivateNetworks = channel.unary_unary(
+                '/yandex.cloud.dns.v1.DnsZoneService/UpdatePrivateNetworks',
+                request_serializer=yandex_dot_cloud_dot_dns_dot_v1_dot_dns__zone__service__pb2.UpdateDnsZonePrivateNetworksRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
 
 
 class DnsZoneServiceServicer(object):
@@ -188,6 +193,13 @@ class DnsZoneServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def UpdatePrivateNetworks(self, request, context):
+        """Atomically updates zone private networks
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_DnsZoneServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -254,6 +266,11 @@ def add_DnsZoneServiceServicer_to_server(servicer, server):
             'UpdateAccessBindings': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateAccessBindings,
                     request_deserializer=yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessBindingsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'UpdatePrivateNetworks': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdatePrivateNetworks,
+                    request_deserializer=yandex_dot_cloud_dot_dns_dot_v1_dot_dns__zone__service__pb2.UpdateDnsZonePrivateNetworksRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
@@ -484,6 +501,23 @@ class DnsZoneService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.dns.v1.DnsZoneService/UpdateAccessBindings',
             yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessBindingsRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdatePrivateNetworks(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.dns.v1.DnsZoneService/UpdatePrivateNetworks',
+            yandex_dot_cloud_dot_dns_dot_v1_dot_dns__zone__service__pb2.UpdateDnsZonePrivateNetworksRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
