@@ -19,6 +19,7 @@ from yandex.cloud.compute.v1 import disk_pb2 as yandex_dot_cloud_dot_compute_dot
 from yandex.cloud.compute.v1 import snapshot_pb2 as yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__pb2
 from yandex.cloud.compute.v1 import snapshot_schedule_pb2 as yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__schedule__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
+from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -27,9 +28,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\033yandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;compute',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n7yandex/cloud/compute/v1/snapshot_schedule_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1egoogle/protobuf/duration.proto\x1a yandex/cloud/api/operation.proto\x1a\"yandex/cloud/compute/v1/disk.proto\x1a&yandex/cloud/compute/v1/snapshot.proto\x1a/yandex/cloud/compute/v1/snapshot_schedule.proto\x1a&yandex/cloud/operation/operation.proto\":\n\x1aGetSnapshotScheduleRequest\x12\x1c\n\x14snapshot_schedule_id\x18\x01 \x01(\t\"z\n\x1cListSnapshotSchedulesRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\x12\x10\n\x08order_by\x18\x05 \x01(\t\"\x7f\n\x1dListSnapshotSchedulesResponse\x12\x45\n\x12snapshot_schedules\x18\x01 \x03(\x0b\x32).yandex.cloud.compute.v1.SnapshotSchedule\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xcf\x03\n\x1d\x43reateSnapshotScheduleRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12R\n\x06labels\x18\x04 \x03(\x0b\x32\x42.yandex.cloud.compute.v1.CreateSnapshotScheduleRequest.LabelsEntry\x12@\n\x0fschedule_policy\x18\x05 \x01(\x0b\x32\'.yandex.cloud.compute.v1.SchedulePolicy\x12\x35\n\x10retention_period\x18\x06 \x01(\x0b\x32\x19.google.protobuf.DurationH\x00\x12\x18\n\x0esnapshot_count\x18\x07 \x01(\x03H\x00\x12<\n\rsnapshot_spec\x18\x08 \x01(\x0b\x32%.yandex.cloud.compute.v1.SnapshotSpec\x12\x10\n\x08\x64isk_ids\x18\t \x03(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x12\n\x10retention_policy\">\n\x1e\x43reateSnapshotScheduleMetadata\x12\x1c\n\x14snapshot_schedule_id\x18\x01 \x01(\t\"\xf9\x03\n\x1dUpdateSnapshotScheduleRequest\x12\x1c\n\x14snapshot_schedule_id\x18\x01 \x01(\t\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12R\n\x06labels\x18\x05 \x03(\x0b\x32\x42.yandex.cloud.compute.v1.UpdateSnapshotScheduleRequest.LabelsEntry\x12@\n\x0fschedule_policy\x18\x06 \x01(\x0b\x32\'.yandex.cloud.compute.v1.SchedulePolicy\x12\x35\n\x10retention_period\x18\x07 \x01(\x0b\x32\x19.google.protobuf.DurationH\x00\x12\x18\n\x0esnapshot_count\x18\x08 \x01(\x03H\x00\x12<\n\rsnapshot_spec\x18\t \x01(\x0b\x32%.yandex.cloud.compute.v1.SnapshotSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x12\n\x10retention_policy\">\n\x1eUpdateSnapshotScheduleMetadata\x12\x1c\n\x14snapshot_schedule_id\x18\x01 \x01(\t\"=\n\x1d\x44\x65leteSnapshotScheduleRequest\x12\x1c\n\x14snapshot_schedule_id\x18\x01 \x01(\t\">\n\x1e\x44\x65leteSnapshotScheduleMetadata\x12\x1c\n\x14snapshot_schedule_id\x18\x01 \x01(\t\">\n\x1e\x44isableSnapshotScheduleRequest\x12\x1c\n\x14snapshot_schedule_id\x18\x01 \x01(\t\"?\n\x1f\x44isableSnapshotScheduleMetadata\x12\x1c\n\x14snapshot_schedule_id\x18\x01 \x01(\t\"=\n\x1d\x45nableSnapshotScheduleRequest\x12\x1c\n\x14snapshot_schedule_id\x18\x01 \x01(\t\">\n\x1e\x45nableSnapshotScheduleMetadata\x12\x1c\n\x14snapshot_schedule_id\x18\x01 \x01(\t\"l\n%ListSnapshotScheduleOperationsRequest\x12\x1c\n\x14snapshot_schedule_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\"x\n&ListSnapshotScheduleOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"k\n$ListSnapshotScheduleSnapshotsRequest\x12\x1c\n\x14snapshot_schedule_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\"v\n%ListSnapshotScheduleSnapshotsResponse\x12\x34\n\tsnapshots\x18\x01 \x03(\x0b\x32!.yandex.cloud.compute.v1.Snapshot\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"g\n ListSnapshotScheduleDisksRequest\x12\x1c\n\x14snapshot_schedule_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\"j\n!ListSnapshotScheduleDisksResponse\x12,\n\x05\x64isks\x18\x01 \x03(\x0b\x32\x1d.yandex.cloud.compute.v1.Disk\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"_\n\"UpdateSnapshotScheduleDisksRequest\x12\x1c\n\x14snapshot_schedule_id\x18\x01 \x01(\t\x12\x0e\n\x06remove\x18\x02 \x03(\t\x12\x0b\n\x03\x61\x64\x64\x18\x03 \x03(\t\"C\n#UpdateSnapshotScheduleDisksMetadata\x12\x1c\n\x14snapshot_schedule_id\x18\x01 \x01(\t2\xa4\x12\n\x17SnapshotScheduleService\x12\xa3\x01\n\x03Get\x12\x33.yandex.cloud.compute.v1.GetSnapshotScheduleRequest\x1a).yandex.cloud.compute.v1.SnapshotSchedule\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/compute/v1/snapshotSchedules/{snapshot_schedule_id}\x12\x9c\x01\n\x04List\x12\x35.yandex.cloud.compute.v1.ListSnapshotSchedulesRequest\x1a\x36.yandex.cloud.compute.v1.ListSnapshotSchedulesResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/compute/v1/snapshotSchedules\x12\xc3\x01\n\x06\x43reate\x12\x36.yandex.cloud.compute.v1.CreateSnapshotScheduleRequest\x1a!.yandex.cloud.operation.Operation\"^\x82\xd3\xe4\x93\x02\"\"\x1d/compute/v1/snapshotSchedules:\x01*\xb2\xd2*2\n\x1e\x43reateSnapshotScheduleMetadata\x12\x10SnapshotSchedule\x12\xda\x01\n\x06Update\x12\x36.yandex.cloud.compute.v1.UpdateSnapshotScheduleRequest\x1a!.yandex.cloud.operation.Operation\"u\x82\xd3\xe4\x93\x02\x39\x32\x34/compute/v1/snapshotSchedules/{snapshot_schedule_id}:\x01*\xb2\xd2*2\n\x1eUpdateSnapshotScheduleMetadata\x12\x10SnapshotSchedule\x12\xdc\x01\n\x06\x44\x65lete\x12\x36.yandex.cloud.compute.v1.DeleteSnapshotScheduleRequest\x1a!.yandex.cloud.operation.Operation\"w\x82\xd3\xe4\x93\x02\x36*4/compute/v1/snapshotSchedules/{snapshot_schedule_id}\xb2\xd2*7\n\x1e\x44\x65leteSnapshotScheduleMetadata\x12\x15google.protobuf.Empty\x12\xf6\x01\n\x0bUpdateDisks\x12;.yandex.cloud.compute.v1.UpdateSnapshotScheduleDisksRequest\x1a!.yandex.cloud.operation.Operation\"\x86\x01\x82\xd3\xe4\x93\x02\x45\x32@/compute/v1/snapshotSchedules/{snapshot_schedule_id}:updateDisks:\x01*\xb2\xd2*7\n#UpdateSnapshotScheduleDisksMetadata\x12\x10SnapshotSchedule\x12\xe5\x01\n\x07\x44isable\x12\x37.yandex.cloud.compute.v1.DisableSnapshotScheduleRequest\x1a!.yandex.cloud.operation.Operation\"~\x82\xd3\xe4\x93\x02\x41\"</compute/v1/snapshotSchedules/{snapshot_schedule_id}:disable:\x01*\xb2\xd2*3\n\x1f\x44isableSnapshotScheduleMetadata\x12\x10SnapshotSchedule\x12\xe1\x01\n\x06\x45nable\x12\x36.yandex.cloud.compute.v1.EnableSnapshotScheduleRequest\x1a!.yandex.cloud.operation.Operation\"|\x82\xd3\xe4\x93\x02@\";/compute/v1/snapshotSchedules/{snapshot_schedule_id}:enable:\x01*\xb2\xd2*2\n\x1e\x45nableSnapshotScheduleMetadata\x12\x10SnapshotSchedule\x12\xda\x01\n\x0eListOperations\x12>.yandex.cloud.compute.v1.ListSnapshotScheduleOperationsRequest\x1a?.yandex.cloud.compute.v1.ListSnapshotScheduleOperationsResponse\"G\x82\xd3\xe4\x93\x02\x41\x12?/compute/v1/snapshotSchedules/{snapshot_schedule_id}/operations\x12\xd6\x01\n\rListSnapshots\x12=.yandex.cloud.compute.v1.ListSnapshotScheduleSnapshotsRequest\x1a>.yandex.cloud.compute.v1.ListSnapshotScheduleSnapshotsResponse\"F\x82\xd3\xe4\x93\x02@\x12>/compute/v1/snapshotSchedules/{snapshot_schedule_id}/snapshots\x12\xc6\x01\n\tListDisks\x12\x39.yandex.cloud.compute.v1.ListSnapshotScheduleDisksRequest\x1a:.yandex.cloud.compute.v1.ListSnapshotScheduleDisksResponse\"B\x82\xd3\xe4\x93\x02<\x12:/compute/v1/snapshotSchedules/{snapshot_schedule_id}/disksBb\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3'
+  serialized_pb=b'\n7yandex/cloud/compute/v1/snapshot_schedule_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1egoogle/protobuf/duration.proto\x1a yandex/cloud/api/operation.proto\x1a\"yandex/cloud/compute/v1/disk.proto\x1a&yandex/cloud/compute/v1/snapshot.proto\x1a/yandex/cloud/compute/v1/snapshot_schedule.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\":\n\x1aGetSnapshotScheduleRequest\x12\x1c\n\x14snapshot_schedule_id\x18\x01 \x01(\t\"\xb6\x01\n\x1cListSnapshotSchedulesRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1b\n\x08order_by\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=100\"\x7f\n\x1dListSnapshotSchedulesResponse\x12\x45\n\x12snapshot_schedules\x18\x01 \x03(\x0b\x32).yandex.cloud.compute.v1.SnapshotSchedule\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xcf\x03\n\x1d\x43reateSnapshotScheduleRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12R\n\x06labels\x18\x04 \x03(\x0b\x32\x42.yandex.cloud.compute.v1.CreateSnapshotScheduleRequest.LabelsEntry\x12@\n\x0fschedule_policy\x18\x05 \x01(\x0b\x32\'.yandex.cloud.compute.v1.SchedulePolicy\x12\x35\n\x10retention_period\x18\x06 \x01(\x0b\x32\x19.google.protobuf.DurationH\x00\x12\x18\n\x0esnapshot_count\x18\x07 \x01(\x03H\x00\x12<\n\rsnapshot_spec\x18\x08 \x01(\x0b\x32%.yandex.cloud.compute.v1.SnapshotSpec\x12\x10\n\x08\x64isk_ids\x18\t \x03(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x12\n\x10retention_policy\">\n\x1e\x43reateSnapshotScheduleMetadata\x12\x1c\n\x14snapshot_schedule_id\x18\x01 \x01(\t\"\xf9\x03\n\x1dUpdateSnapshotScheduleRequest\x12\x1c\n\x14snapshot_schedule_id\x18\x01 \x01(\t\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12R\n\x06labels\x18\x05 \x03(\x0b\x32\x42.yandex.cloud.compute.v1.UpdateSnapshotScheduleRequest.LabelsEntry\x12@\n\x0fschedule_policy\x18\x06 \x01(\x0b\x32\'.yandex.cloud.compute.v1.SchedulePolicy\x12\x35\n\x10retention_period\x18\x07 \x01(\x0b\x32\x19.google.protobuf.DurationH\x00\x12\x18\n\x0esnapshot_count\x18\x08 \x01(\x03H\x00\x12<\n\rsnapshot_spec\x18\t \x01(\x0b\x32%.yandex.cloud.compute.v1.SnapshotSpec\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x12\n\x10retention_policy\">\n\x1eUpdateSnapshotScheduleMetadata\x12\x1c\n\x14snapshot_schedule_id\x18\x01 \x01(\t\"=\n\x1d\x44\x65leteSnapshotScheduleRequest\x12\x1c\n\x14snapshot_schedule_id\x18\x01 \x01(\t\">\n\x1e\x44\x65leteSnapshotScheduleMetadata\x12\x1c\n\x14snapshot_schedule_id\x18\x01 \x01(\t\">\n\x1e\x44isableSnapshotScheduleRequest\x12\x1c\n\x14snapshot_schedule_id\x18\x01 \x01(\t\"?\n\x1f\x44isableSnapshotScheduleMetadata\x12\x1c\n\x14snapshot_schedule_id\x18\x01 \x01(\t\"=\n\x1d\x45nableSnapshotScheduleRequest\x12\x1c\n\x14snapshot_schedule_id\x18\x01 \x01(\t\">\n\x1e\x45nableSnapshotScheduleMetadata\x12\x1c\n\x14snapshot_schedule_id\x18\x01 \x01(\t\"l\n%ListSnapshotScheduleOperationsRequest\x12\x1c\n\x14snapshot_schedule_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\"x\n&ListSnapshotScheduleOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"k\n$ListSnapshotScheduleSnapshotsRequest\x12\x1c\n\x14snapshot_schedule_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\"v\n%ListSnapshotScheduleSnapshotsResponse\x12\x34\n\tsnapshots\x18\x01 \x03(\x0b\x32!.yandex.cloud.compute.v1.Snapshot\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"g\n ListSnapshotScheduleDisksRequest\x12\x1c\n\x14snapshot_schedule_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\"j\n!ListSnapshotScheduleDisksResponse\x12,\n\x05\x64isks\x18\x01 \x03(\x0b\x32\x1d.yandex.cloud.compute.v1.Disk\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"_\n\"UpdateSnapshotScheduleDisksRequest\x12\x1c\n\x14snapshot_schedule_id\x18\x01 \x01(\t\x12\x0e\n\x06remove\x18\x02 \x03(\t\x12\x0b\n\x03\x61\x64\x64\x18\x03 \x03(\t\"C\n#UpdateSnapshotScheduleDisksMetadata\x12\x1c\n\x14snapshot_schedule_id\x18\x01 \x01(\t2\xa4\x12\n\x17SnapshotScheduleService\x12\xa3\x01\n\x03Get\x12\x33.yandex.cloud.compute.v1.GetSnapshotScheduleRequest\x1a).yandex.cloud.compute.v1.SnapshotSchedule\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/compute/v1/snapshotSchedules/{snapshot_schedule_id}\x12\x9c\x01\n\x04List\x12\x35.yandex.cloud.compute.v1.ListSnapshotSchedulesRequest\x1a\x36.yandex.cloud.compute.v1.ListSnapshotSchedulesResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/compute/v1/snapshotSchedules\x12\xc3\x01\n\x06\x43reate\x12\x36.yandex.cloud.compute.v1.CreateSnapshotScheduleRequest\x1a!.yandex.cloud.operation.Operation\"^\x82\xd3\xe4\x93\x02\"\"\x1d/compute/v1/snapshotSchedules:\x01*\xb2\xd2*2\n\x1e\x43reateSnapshotScheduleMetadata\x12\x10SnapshotSchedule\x12\xda\x01\n\x06Update\x12\x36.yandex.cloud.compute.v1.UpdateSnapshotScheduleRequest\x1a!.yandex.cloud.operation.Operation\"u\x82\xd3\xe4\x93\x02\x39\x32\x34/compute/v1/snapshotSchedules/{snapshot_schedule_id}:\x01*\xb2\xd2*2\n\x1eUpdateSnapshotScheduleMetadata\x12\x10SnapshotSchedule\x12\xdc\x01\n\x06\x44\x65lete\x12\x36.yandex.cloud.compute.v1.DeleteSnapshotScheduleRequest\x1a!.yandex.cloud.operation.Operation\"w\x82\xd3\xe4\x93\x02\x36*4/compute/v1/snapshotSchedules/{snapshot_schedule_id}\xb2\xd2*7\n\x1e\x44\x65leteSnapshotScheduleMetadata\x12\x15google.protobuf.Empty\x12\xf6\x01\n\x0bUpdateDisks\x12;.yandex.cloud.compute.v1.UpdateSnapshotScheduleDisksRequest\x1a!.yandex.cloud.operation.Operation\"\x86\x01\x82\xd3\xe4\x93\x02\x45\x32@/compute/v1/snapshotSchedules/{snapshot_schedule_id}:updateDisks:\x01*\xb2\xd2*7\n#UpdateSnapshotScheduleDisksMetadata\x12\x10SnapshotSchedule\x12\xe5\x01\n\x07\x44isable\x12\x37.yandex.cloud.compute.v1.DisableSnapshotScheduleRequest\x1a!.yandex.cloud.operation.Operation\"~\x82\xd3\xe4\x93\x02\x41\"</compute/v1/snapshotSchedules/{snapshot_schedule_id}:disable:\x01*\xb2\xd2*3\n\x1f\x44isableSnapshotScheduleMetadata\x12\x10SnapshotSchedule\x12\xe1\x01\n\x06\x45nable\x12\x36.yandex.cloud.compute.v1.EnableSnapshotScheduleRequest\x1a!.yandex.cloud.operation.Operation\"|\x82\xd3\xe4\x93\x02@\";/compute/v1/snapshotSchedules/{snapshot_schedule_id}:enable:\x01*\xb2\xd2*2\n\x1e\x45nableSnapshotScheduleMetadata\x12\x10SnapshotSchedule\x12\xda\x01\n\x0eListOperations\x12>.yandex.cloud.compute.v1.ListSnapshotScheduleOperationsRequest\x1a?.yandex.cloud.compute.v1.ListSnapshotScheduleOperationsResponse\"G\x82\xd3\xe4\x93\x02\x41\x12?/compute/v1/snapshotSchedules/{snapshot_schedule_id}/operations\x12\xd6\x01\n\rListSnapshots\x12=.yandex.cloud.compute.v1.ListSnapshotScheduleSnapshotsRequest\x1a>.yandex.cloud.compute.v1.ListSnapshotScheduleSnapshotsResponse\"F\x82\xd3\xe4\x93\x02@\x12>/compute/v1/snapshotSchedules/{snapshot_schedule_id}/snapshots\x12\xc6\x01\n\tListDisks\x12\x39.yandex.cloud.compute.v1.ListSnapshotScheduleDisksRequest\x1a:.yandex.cloud.compute.v1.ListSnapshotScheduleDisksResponse\"B\x82\xd3\xe4\x93\x02<\x12:/compute/v1/snapshotSchedules/{snapshot_schedule_id}/disksBb\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3'
   ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_compute_dot_v1_dot_disk__pb2.DESCRIPTOR,yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__pb2.DESCRIPTOR,yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__schedule__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,])
+  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_compute_dot_v1_dot_disk__pb2.DESCRIPTOR,yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__pb2.DESCRIPTOR,yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__schedule__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
 
 
@@ -61,8 +62,8 @@ _GETSNAPSHOTSCHEDULEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=379,
-  serialized_end=437,
+  serialized_start=410,
+  serialized_end=468,
 )
 
 
@@ -80,35 +81,35 @@ _LISTSNAPSHOTSCHEDULESREQUEST = _descriptor.Descriptor(
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_size', full_name='yandex.cloud.compute.v1.ListSnapshotSchedulesRequest.page_size', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='page_token', full_name='yandex.cloud.compute.v1.ListSnapshotSchedulesRequest.page_token', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='filter', full_name='yandex.cloud.compute.v1.ListSnapshotSchedulesRequest.filter', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\212\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='order_by', full_name='yandex.cloud.compute.v1.ListSnapshotSchedulesRequest.order_by', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -121,8 +122,8 @@ _LISTSNAPSHOTSCHEDULESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=439,
-  serialized_end=561,
+  serialized_start=471,
+  serialized_end=653,
 )
 
 
@@ -160,8 +161,8 @@ _LISTSNAPSHOTSCHEDULESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=563,
-  serialized_end=690,
+  serialized_start=655,
+  serialized_end=782,
 )
 
 
@@ -199,8 +200,8 @@ _CREATESNAPSHOTSCHEDULEREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1091,
-  serialized_end=1136,
+  serialized_start=1183,
+  serialized_end=1228,
 )
 
 _CREATESNAPSHOTSCHEDULEREQUEST = _descriptor.Descriptor(
@@ -291,8 +292,8 @@ _CREATESNAPSHOTSCHEDULEREQUEST = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=693,
-  serialized_end=1156,
+  serialized_start=785,
+  serialized_end=1248,
 )
 
 
@@ -323,8 +324,8 @@ _CREATESNAPSHOTSCHEDULEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1158,
-  serialized_end=1220,
+  serialized_start=1250,
+  serialized_end=1312,
 )
 
 
@@ -362,8 +363,8 @@ _UPDATESNAPSHOTSCHEDULEREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1091,
-  serialized_end=1136,
+  serialized_start=1183,
+  serialized_end=1228,
 )
 
 _UPDATESNAPSHOTSCHEDULEREQUEST = _descriptor.Descriptor(
@@ -454,8 +455,8 @@ _UPDATESNAPSHOTSCHEDULEREQUEST = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[]),
   ],
-  serialized_start=1223,
-  serialized_end=1728,
+  serialized_start=1315,
+  serialized_end=1820,
 )
 
 
@@ -486,8 +487,8 @@ _UPDATESNAPSHOTSCHEDULEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1730,
-  serialized_end=1792,
+  serialized_start=1822,
+  serialized_end=1884,
 )
 
 
@@ -518,8 +519,8 @@ _DELETESNAPSHOTSCHEDULEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1794,
-  serialized_end=1855,
+  serialized_start=1886,
+  serialized_end=1947,
 )
 
 
@@ -550,8 +551,8 @@ _DELETESNAPSHOTSCHEDULEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1857,
-  serialized_end=1919,
+  serialized_start=1949,
+  serialized_end=2011,
 )
 
 
@@ -582,8 +583,8 @@ _DISABLESNAPSHOTSCHEDULEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1921,
-  serialized_end=1983,
+  serialized_start=2013,
+  serialized_end=2075,
 )
 
 
@@ -614,8 +615,8 @@ _DISABLESNAPSHOTSCHEDULEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1985,
-  serialized_end=2048,
+  serialized_start=2077,
+  serialized_end=2140,
 )
 
 
@@ -646,8 +647,8 @@ _ENABLESNAPSHOTSCHEDULEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2050,
-  serialized_end=2111,
+  serialized_start=2142,
+  serialized_end=2203,
 )
 
 
@@ -678,8 +679,8 @@ _ENABLESNAPSHOTSCHEDULEMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2113,
-  serialized_end=2175,
+  serialized_start=2205,
+  serialized_end=2267,
 )
 
 
@@ -724,8 +725,8 @@ _LISTSNAPSHOTSCHEDULEOPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2177,
-  serialized_end=2285,
+  serialized_start=2269,
+  serialized_end=2377,
 )
 
 
@@ -763,8 +764,8 @@ _LISTSNAPSHOTSCHEDULEOPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2287,
-  serialized_end=2407,
+  serialized_start=2379,
+  serialized_end=2499,
 )
 
 
@@ -809,8 +810,8 @@ _LISTSNAPSHOTSCHEDULESNAPSHOTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2409,
-  serialized_end=2516,
+  serialized_start=2501,
+  serialized_end=2608,
 )
 
 
@@ -848,8 +849,8 @@ _LISTSNAPSHOTSCHEDULESNAPSHOTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2518,
-  serialized_end=2636,
+  serialized_start=2610,
+  serialized_end=2728,
 )
 
 
@@ -894,8 +895,8 @@ _LISTSNAPSHOTSCHEDULEDISKSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2638,
-  serialized_end=2741,
+  serialized_start=2730,
+  serialized_end=2833,
 )
 
 
@@ -933,8 +934,8 @@ _LISTSNAPSHOTSCHEDULEDISKSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2743,
-  serialized_end=2849,
+  serialized_start=2835,
+  serialized_end=2941,
 )
 
 
@@ -979,8 +980,8 @@ _UPDATESNAPSHOTSCHEDULEDISKSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2851,
-  serialized_end=2946,
+  serialized_start=2943,
+  serialized_end=3038,
 )
 
 
@@ -1011,8 +1012,8 @@ _UPDATESNAPSHOTSCHEDULEDISKSMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2948,
-  serialized_end=3015,
+  serialized_start=3040,
+  serialized_end=3107,
 )
 
 _LISTSNAPSHOTSCHEDULESRESPONSE.fields_by_name['snapshot_schedules'].message_type = yandex_dot_cloud_dot_compute_dot_v1_dot_snapshot__schedule__pb2._SNAPSHOTSCHEDULE
@@ -1230,6 +1231,11 @@ _sym_db.RegisterMessage(UpdateSnapshotScheduleDisksMetadata)
 
 
 DESCRIPTOR._options = None
+_LISTSNAPSHOTSCHEDULESREQUEST.fields_by_name['folder_id']._options = None
+_LISTSNAPSHOTSCHEDULESREQUEST.fields_by_name['page_size']._options = None
+_LISTSNAPSHOTSCHEDULESREQUEST.fields_by_name['page_token']._options = None
+_LISTSNAPSHOTSCHEDULESREQUEST.fields_by_name['filter']._options = None
+_LISTSNAPSHOTSCHEDULESREQUEST.fields_by_name['order_by']._options = None
 _CREATESNAPSHOTSCHEDULEREQUEST_LABELSENTRY._options = None
 _UPDATESNAPSHOTSCHEDULEREQUEST_LABELSENTRY._options = None
 
@@ -1240,8 +1246,8 @@ _SNAPSHOTSCHEDULESERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=3018,
-  serialized_end=5358,
+  serialized_start=3110,
+  serialized_end=5450,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',

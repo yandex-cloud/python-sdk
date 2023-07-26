@@ -12,6 +12,10 @@ _sym_db = _symbol_database.Default()
 
 
 from yandex.cloud.ai.stt.v3 import stt_pb2 as yandex_dot_cloud_dot_ai_dot_stt_dot_v3_dot_stt__pb2
+from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
+from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
+from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
+from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(
@@ -20,16 +24,57 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\032yandex.cloud.api.ai.stt.v3Z>github.com/yandex-cloud/go-genproto/yandex/cloud/ai/stt/v3;stt',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n(yandex/cloud/ai/stt/v3/stt_service.proto\x12\x10speechkit.stt.v3\x1a yandex/cloud/ai/stt/v3/stt.proto2q\n\nRecognizer\x12\x63\n\x12RecognizeStreaming\x12\".speechkit.stt.v3.StreamingRequest\x1a#.speechkit.stt.v3.StreamingResponse\"\x00(\x01\x30\x01\x42\\\n\x1ayandex.cloud.api.ai.stt.v3Z>github.com/yandex-cloud/go-genproto/yandex/cloud/ai/stt/v3;sttb\x06proto3'
+  serialized_pb=b'\n(yandex/cloud/ai/stt/v3/stt_service.proto\x12\x10speechkit.stt.v3\x1a yandex/cloud/ai/stt/v3/stt.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1dyandex/cloud/validation.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\";\n\x15GetRecognitionRequest\x12\"\n\x0coperation_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=502q\n\nRecognizer\x12\x63\n\x12RecognizeStreaming\x12\".speechkit.stt.v3.StreamingRequest\x1a#.speechkit.stt.v3.StreamingResponse\"\x00(\x01\x30\x01\x32\xb3\x02\n\x0f\x41syncRecognizer\x12\x9c\x01\n\rRecognizeFile\x12&.speechkit.stt.v3.RecognizeFileRequest\x1a!.yandex.cloud.operation.Operation\"@\xb2\xd2*\x17\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x1f\"\x1a/stt/v3/recognizeFileAsync:\x01*\x12\x80\x01\n\x0eGetRecognition\x12\'.speechkit.stt.v3.GetRecognitionRequest\x1a#.speechkit.stt.v3.StreamingResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/stt/v3/getRecognition0\x01\x42\\\n\x1ayandex.cloud.api.ai.stt.v3Z>github.com/yandex-cloud/go-genproto/yandex/cloud/ai/stt/v3;sttb\x06proto3'
   ,
-  dependencies=[yandex_dot_cloud_dot_ai_dot_stt_dot_v3_dot_stt__pb2.DESCRIPTOR,])
+  dependencies=[yandex_dot_cloud_dot_ai_dot_stt_dot_v3_dot_stt__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,])
 
 
 
+
+_GETRECOGNITIONREQUEST = _descriptor.Descriptor(
+  name='GetRecognitionRequest',
+  full_name='speechkit.stt.v3.GetRecognitionRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='operation_id', full_name='speechkit.stt.v3.GetRecognitionRequest.operation_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=231,
+  serialized_end=290,
+)
+
+DESCRIPTOR.message_types_by_name['GetRecognitionRequest'] = _GETRECOGNITIONREQUEST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
+GetRecognitionRequest = _reflection.GeneratedProtocolMessageType('GetRecognitionRequest', (_message.Message,), {
+  'DESCRIPTOR' : _GETRECOGNITIONREQUEST,
+  '__module__' : 'yandex.cloud.ai.stt.v3.stt_service_pb2'
+  # @@protoc_insertion_point(class_scope:speechkit.stt.v3.GetRecognitionRequest)
+  })
+_sym_db.RegisterMessage(GetRecognitionRequest)
 
 
 DESCRIPTOR._options = None
+_GETRECOGNITIONREQUEST.fields_by_name['operation_id']._options = None
 
 _RECOGNIZER = _descriptor.ServiceDescriptor(
   name='Recognizer',
@@ -38,8 +83,8 @@ _RECOGNIZER = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=96,
-  serialized_end=209,
+  serialized_start=292,
+  serialized_end=405,
   methods=[
   _descriptor.MethodDescriptor(
     name='RecognizeStreaming',
@@ -55,5 +100,41 @@ _RECOGNIZER = _descriptor.ServiceDescriptor(
 _sym_db.RegisterServiceDescriptor(_RECOGNIZER)
 
 DESCRIPTOR.services_by_name['Recognizer'] = _RECOGNIZER
+
+
+_ASYNCRECOGNIZER = _descriptor.ServiceDescriptor(
+  name='AsyncRecognizer',
+  full_name='speechkit.stt.v3.AsyncRecognizer',
+  file=DESCRIPTOR,
+  index=1,
+  serialized_options=None,
+  create_key=_descriptor._internal_create_key,
+  serialized_start=408,
+  serialized_end=715,
+  methods=[
+  _descriptor.MethodDescriptor(
+    name='RecognizeFile',
+    full_name='speechkit.stt.v3.AsyncRecognizer.RecognizeFile',
+    index=0,
+    containing_service=None,
+    input_type=yandex_dot_cloud_dot_ai_dot_stt_dot_v3_dot_stt__pb2._RECOGNIZEFILEREQUEST,
+    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
+    serialized_options=b'\262\322*\027\022\025google.protobuf.Empty\202\323\344\223\002\037\"\032/stt/v3/recognizeFileAsync:\001*',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='GetRecognition',
+    full_name='speechkit.stt.v3.AsyncRecognizer.GetRecognition',
+    index=1,
+    containing_service=None,
+    input_type=_GETRECOGNITIONREQUEST,
+    output_type=yandex_dot_cloud_dot_ai_dot_stt_dot_v3_dot_stt__pb2._STREAMINGRESPONSE,
+    serialized_options=b'\202\323\344\223\002\030\022\026/stt/v3/getRecognition',
+    create_key=_descriptor._internal_create_key,
+  ),
+])
+_sym_db.RegisterServiceDescriptor(_ASYNCRECOGNIZER)
+
+DESCRIPTOR.services_by_name['AsyncRecognizer'] = _ASYNCRECOGNIZER
 
 # @@protoc_insertion_point(module_scope)

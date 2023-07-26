@@ -53,6 +53,16 @@ class InstanceGroupServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.StopInstanceGroupRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
+        self.RollingRestart = channel.unary_unary(
+                '/yandex.cloud.compute.v1.instancegroup.InstanceGroupService/RollingRestart',
+                request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.RollingRestartRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
+        self.RollingRecreate = channel.unary_unary(
+                '/yandex.cloud.compute.v1.instancegroup.InstanceGroupService/RollingRecreate',
+                request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.RollingRecreateRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
         self.Start = channel.unary_unary(
                 '/yandex.cloud.compute.v1.instancegroup.InstanceGroupService/Start',
                 request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.StartInstanceGroupRequest.SerializeToString,
@@ -169,6 +179,22 @@ class InstanceGroupServiceServicer(object):
 
     def Stop(self, request, context):
         """Stops the specified instance group.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def RollingRestart(self, request, context):
+        """Performs rolling restart of specified instances for the specified instance group.
+        Rolling restart does restart of instances respecting all group policies.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def RollingRecreate(self, request, context):
+        """Performs rolling recreate of specified instances for the specified instance group.
+        Rolling recreate does recreate of instance VMs respecting all group policies.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -296,6 +322,16 @@ def add_InstanceGroupServiceServicer_to_server(servicer, server):
             'Stop': grpc.unary_unary_rpc_method_handler(
                     servicer.Stop,
                     request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.StopInstanceGroupRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'RollingRestart': grpc.unary_unary_rpc_method_handler(
+                    servicer.RollingRestart,
+                    request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.RollingRestartRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'RollingRecreate': grpc.unary_unary_rpc_method_handler(
+                    servicer.RollingRecreate,
+                    request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.RollingRecreateRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'Start': grpc.unary_unary_rpc_method_handler(
@@ -484,6 +520,40 @@ class InstanceGroupService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.compute.v1.instancegroup.InstanceGroupService/Stop',
             yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.StopInstanceGroupRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RollingRestart(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.compute.v1.instancegroup.InstanceGroupService/RollingRestart',
+            yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.RollingRestartRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RollingRecreate(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.compute.v1.instancegroup.InstanceGroupService/RollingRecreate',
+            yandex_dot_cloud_dot_compute_dot_v1_dot_instancegroup_dot_instance__group__service__pb2.RollingRecreateRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

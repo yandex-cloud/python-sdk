@@ -26,7 +26,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\033yandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;compute',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n0yandex/cloud/compute/v1/host_group_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/compute/v1/instance.proto\x1a(yandex/cloud/compute/v1/host_group.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\":\n\x13GetHostGroupRequest\x12#\n\rhost_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x92\x01\n\x15ListHostGroupsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"j\n\x16ListHostGroupsResponse\x12\x37\n\x0bhost_groups\x18\x01 \x03(\x0b\x32\".yandex.cloud.compute.v1.HostGroup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x95\x04\n\x16\x43reateHostGroupRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\x04name\x18\x02 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x94\x01\n\x06labels\x18\x04 \x03(\x0b\x32;.yandex.cloud.compute.v1.CreateHostGroupRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x1d\n\x07zone_id\x18\x05 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\x07type_id\x18\x06 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x46\n\x12maintenance_policy\x18\x07 \x01(\x0e\x32*.yandex.cloud.compute.v1.MaintenancePolicy\x12:\n\x0cscale_policy\x18\x08 \x01(\x0b\x32$.yandex.cloud.compute.v1.ScalePolicy\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"0\n\x17\x43reateHostGroupMetadata\x12\x15\n\rhost_group_id\x18\x01 \x01(\t\"\x8c\x04\n\x16UpdateHostGroupRequest\x12#\n\rhost_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x94\x01\n\x06labels\x18\x05 \x03(\x0b\x32;.yandex.cloud.compute.v1.UpdateHostGroupRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x46\n\x12maintenance_policy\x18\x06 \x01(\x0e\x32*.yandex.cloud.compute.v1.MaintenancePolicy\x12:\n\x0cscale_policy\x18\x07 \x01(\x0b\x32$.yandex.cloud.compute.v1.ScalePolicy\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"0\n\x17UpdateHostGroupMetadata\x12\x15\n\rhost_group_id\x18\x01 \x01(\t\"=\n\x16\x44\x65leteHostGroupRequest\x12#\n\rhost_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"0\n\x17\x44\x65leteHostGroupMetadata\x12\x15\n\rhost_group_id\x18\x01 \x01(\t\"\x9e\x01\n\x1dListHostGroupInstancesRequest\x12#\n\rhost_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"o\n\x1eListHostGroupInstancesResponse\x12\x34\n\tinstances\x18\x01 \x03(\x0b\x32!.yandex.cloud.compute.v1.Instance\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"~\n\x19ListHostGroupHostsRequest\x12#\n\rhost_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"c\n\x1aListHostGroupHostsResponse\x12,\n\x05hosts\x18\x01 \x03(\x0b\x32\x1d.yandex.cloud.compute.v1.Host\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x83\x01\n\x1eListHostGroupOperationsRequest\x12#\n\rhost_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"q\n\x1fListHostGroupOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xf8\n\n\x10HostGroupService\x12\x87\x01\n\x03Get\x12,.yandex.cloud.compute.v1.GetHostGroupRequest\x1a\".yandex.cloud.compute.v1.HostGroup\".\x82\xd3\xe4\x93\x02(\x12&/compute/v1/hostGroups/{host_group_id}\x12\x87\x01\n\x04List\x12..yandex.cloud.compute.v1.ListHostGroupsRequest\x1a/.yandex.cloud.compute.v1.ListHostGroupsResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/compute/v1/hostGroups\x12\xa7\x01\n\x06\x43reate\x12/.yandex.cloud.compute.v1.CreateHostGroupRequest\x1a!.yandex.cloud.operation.Operation\"I\x82\xd3\xe4\x93\x02\x1b\"\x16/compute/v1/hostGroups:\x01*\xb2\xd2*$\n\x17\x43reateHostGroupMetadata\x12\tHostGroup\x12\xb7\x01\n\x06Update\x12/.yandex.cloud.compute.v1.UpdateHostGroupRequest\x1a!.yandex.cloud.operation.Operation\"Y\x82\xd3\xe4\x93\x02+2&/compute/v1/hostGroups/{host_group_id}:\x01*\xb2\xd2*$\n\x17UpdateHostGroupMetadata\x12\tHostGroup\x12\xc0\x01\n\x06\x44\x65lete\x12/.yandex.cloud.compute.v1.DeleteHostGroupRequest\x1a!.yandex.cloud.operation.Operation\"b\x82\xd3\xe4\x93\x02(*&/compute/v1/hostGroups/{host_group_id}\xb2\xd2*0\n\x17\x44\x65leteHostGroupMetadata\x12\x15google.protobuf.Empty\x12\xbe\x01\n\x0eListOperations\x12\x37.yandex.cloud.compute.v1.ListHostGroupOperationsRequest\x1a\x38.yandex.cloud.compute.v1.ListHostGroupOperationsResponse\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/compute/v1/hostGroups/{host_group_id}/operations\x12\xba\x01\n\rListInstances\x12\x36.yandex.cloud.compute.v1.ListHostGroupInstancesRequest\x1a\x37.yandex.cloud.compute.v1.ListHostGroupInstancesResponse\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/compute/v1/hostGroups/{host_group_id}/instances\x12\xaa\x01\n\tListHosts\x12\x32.yandex.cloud.compute.v1.ListHostGroupHostsRequest\x1a\x33.yandex.cloud.compute.v1.ListHostGroupHostsResponse\"4\x82\xd3\xe4\x93\x02.\x12,/compute/v1/hostGroups/{host_group_id}/hostsBb\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3'
+  serialized_pb=b'\n0yandex/cloud/compute/v1/host_group_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/compute/v1/instance.proto\x1a(yandex/cloud/compute/v1/host_group.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\":\n\x13GetHostGroupRequest\x12#\n\rhost_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xaf\x01\n\x15ListHostGroupsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1b\n\x08order_by\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=100\"j\n\x16ListHostGroupsResponse\x12\x37\n\x0bhost_groups\x18\x01 \x03(\x0b\x32\".yandex.cloud.compute.v1.HostGroup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x95\x04\n\x16\x43reateHostGroupRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\x04name\x18\x02 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x94\x01\n\x06labels\x18\x04 \x03(\x0b\x32;.yandex.cloud.compute.v1.CreateHostGroupRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x1d\n\x07zone_id\x18\x05 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\x07type_id\x18\x06 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x46\n\x12maintenance_policy\x18\x07 \x01(\x0e\x32*.yandex.cloud.compute.v1.MaintenancePolicy\x12:\n\x0cscale_policy\x18\x08 \x01(\x0b\x32$.yandex.cloud.compute.v1.ScalePolicy\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"0\n\x17\x43reateHostGroupMetadata\x12\x15\n\rhost_group_id\x18\x01 \x01(\t\"\x8c\x04\n\x16UpdateHostGroupRequest\x12#\n\rhost_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x94\x01\n\x06labels\x18\x05 \x03(\x0b\x32;.yandex.cloud.compute.v1.UpdateHostGroupRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x46\n\x12maintenance_policy\x18\x06 \x01(\x0e\x32*.yandex.cloud.compute.v1.MaintenancePolicy\x12:\n\x0cscale_policy\x18\x07 \x01(\x0b\x32$.yandex.cloud.compute.v1.ScalePolicy\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"0\n\x17UpdateHostGroupMetadata\x12\x15\n\rhost_group_id\x18\x01 \x01(\t\"=\n\x16\x44\x65leteHostGroupRequest\x12#\n\rhost_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"0\n\x17\x44\x65leteHostGroupMetadata\x12\x15\n\rhost_group_id\x18\x01 \x01(\t\"\x9e\x01\n\x1dListHostGroupInstancesRequest\x12#\n\rhost_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"o\n\x1eListHostGroupInstancesResponse\x12\x34\n\tinstances\x18\x01 \x03(\x0b\x32!.yandex.cloud.compute.v1.Instance\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"~\n\x19ListHostGroupHostsRequest\x12#\n\rhost_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"c\n\x1aListHostGroupHostsResponse\x12,\n\x05hosts\x18\x01 \x03(\x0b\x32\x1d.yandex.cloud.compute.v1.Host\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x83\x01\n\x1eListHostGroupOperationsRequest\x12#\n\rhost_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"q\n\x1fListHostGroupOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xf8\n\n\x10HostGroupService\x12\x87\x01\n\x03Get\x12,.yandex.cloud.compute.v1.GetHostGroupRequest\x1a\".yandex.cloud.compute.v1.HostGroup\".\x82\xd3\xe4\x93\x02(\x12&/compute/v1/hostGroups/{host_group_id}\x12\x87\x01\n\x04List\x12..yandex.cloud.compute.v1.ListHostGroupsRequest\x1a/.yandex.cloud.compute.v1.ListHostGroupsResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/compute/v1/hostGroups\x12\xa7\x01\n\x06\x43reate\x12/.yandex.cloud.compute.v1.CreateHostGroupRequest\x1a!.yandex.cloud.operation.Operation\"I\x82\xd3\xe4\x93\x02\x1b\"\x16/compute/v1/hostGroups:\x01*\xb2\xd2*$\n\x17\x43reateHostGroupMetadata\x12\tHostGroup\x12\xb7\x01\n\x06Update\x12/.yandex.cloud.compute.v1.UpdateHostGroupRequest\x1a!.yandex.cloud.operation.Operation\"Y\x82\xd3\xe4\x93\x02+2&/compute/v1/hostGroups/{host_group_id}:\x01*\xb2\xd2*$\n\x17UpdateHostGroupMetadata\x12\tHostGroup\x12\xc0\x01\n\x06\x44\x65lete\x12/.yandex.cloud.compute.v1.DeleteHostGroupRequest\x1a!.yandex.cloud.operation.Operation\"b\x82\xd3\xe4\x93\x02(*&/compute/v1/hostGroups/{host_group_id}\xb2\xd2*0\n\x17\x44\x65leteHostGroupMetadata\x12\x15google.protobuf.Empty\x12\xbe\x01\n\x0eListOperations\x12\x37.yandex.cloud.compute.v1.ListHostGroupOperationsRequest\x1a\x38.yandex.cloud.compute.v1.ListHostGroupOperationsResponse\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/compute/v1/hostGroups/{host_group_id}/operations\x12\xba\x01\n\rListInstances\x12\x36.yandex.cloud.compute.v1.ListHostGroupInstancesRequest\x1a\x37.yandex.cloud.compute.v1.ListHostGroupInstancesResponse\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/compute/v1/hostGroups/{host_group_id}/instances\x12\xaa\x01\n\tListHosts\x12\x32.yandex.cloud.compute.v1.ListHostGroupHostsRequest\x1a\x33.yandex.cloud.compute.v1.ListHostGroupHostsResponse\"4\x82\xd3\xe4\x93\x02.\x12,/compute/v1/hostGroups/{host_group_id}/hostsBb\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_compute_dot_v1_dot_instance__pb2.DESCRIPTOR,yandex_dot_cloud_dot_compute_dot_v1_dot_host__group__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -101,6 +101,13 @@ _LISTHOSTGROUPSREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\212\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='order_by', full_name='yandex.cloud.compute.v1.ListHostGroupsRequest.order_by', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -114,7 +121,7 @@ _LISTHOSTGROUPSREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=389,
-  serialized_end=535,
+  serialized_end=564,
 )
 
 
@@ -152,8 +159,8 @@ _LISTHOSTGROUPSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=537,
-  serialized_end=643,
+  serialized_start=566,
+  serialized_end=672,
 )
 
 
@@ -191,8 +198,8 @@ _CREATEHOSTGROUPREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1134,
-  serialized_end=1179,
+  serialized_start=1163,
+  serialized_end=1208,
 )
 
 _CREATEHOSTGROUPREQUEST = _descriptor.Descriptor(
@@ -271,8 +278,8 @@ _CREATEHOSTGROUPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=646,
-  serialized_end=1179,
+  serialized_start=675,
+  serialized_end=1208,
 )
 
 
@@ -303,8 +310,8 @@ _CREATEHOSTGROUPMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1181,
-  serialized_end=1229,
+  serialized_start=1210,
+  serialized_end=1258,
 )
 
 
@@ -342,8 +349,8 @@ _UPDATEHOSTGROUPREQUEST_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1134,
-  serialized_end=1179,
+  serialized_start=1163,
+  serialized_end=1208,
 )
 
 _UPDATEHOSTGROUPREQUEST = _descriptor.Descriptor(
@@ -415,8 +422,8 @@ _UPDATEHOSTGROUPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1232,
-  serialized_end=1756,
+  serialized_start=1261,
+  serialized_end=1785,
 )
 
 
@@ -447,8 +454,8 @@ _UPDATEHOSTGROUPMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1758,
-  serialized_end=1806,
+  serialized_start=1787,
+  serialized_end=1835,
 )
 
 
@@ -479,8 +486,8 @@ _DELETEHOSTGROUPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1808,
-  serialized_end=1869,
+  serialized_start=1837,
+  serialized_end=1898,
 )
 
 
@@ -511,8 +518,8 @@ _DELETEHOSTGROUPMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1871,
-  serialized_end=1919,
+  serialized_start=1900,
+  serialized_end=1948,
 )
 
 
@@ -564,8 +571,8 @@ _LISTHOSTGROUPINSTANCESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1922,
-  serialized_end=2080,
+  serialized_start=1951,
+  serialized_end=2109,
 )
 
 
@@ -603,8 +610,8 @@ _LISTHOSTGROUPINSTANCESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2082,
-  serialized_end=2193,
+  serialized_start=2111,
+  serialized_end=2222,
 )
 
 
@@ -649,8 +656,8 @@ _LISTHOSTGROUPHOSTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2195,
-  serialized_end=2321,
+  serialized_start=2224,
+  serialized_end=2350,
 )
 
 
@@ -688,8 +695,8 @@ _LISTHOSTGROUPHOSTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2323,
-  serialized_end=2422,
+  serialized_start=2352,
+  serialized_end=2451,
 )
 
 
@@ -734,8 +741,8 @@ _LISTHOSTGROUPOPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2425,
-  serialized_end=2556,
+  serialized_start=2454,
+  serialized_end=2585,
 )
 
 
@@ -773,8 +780,8 @@ _LISTHOSTGROUPOPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2558,
-  serialized_end=2671,
+  serialized_start=2587,
+  serialized_end=2700,
 )
 
 _LISTHOSTGROUPSRESPONSE.fields_by_name['host_groups'].message_type = yandex_dot_cloud_dot_compute_dot_v1_dot_host__group__pb2._HOSTGROUP
@@ -935,6 +942,7 @@ _LISTHOSTGROUPSREQUEST.fields_by_name['folder_id']._options = None
 _LISTHOSTGROUPSREQUEST.fields_by_name['page_size']._options = None
 _LISTHOSTGROUPSREQUEST.fields_by_name['page_token']._options = None
 _LISTHOSTGROUPSREQUEST.fields_by_name['filter']._options = None
+_LISTHOSTGROUPSREQUEST.fields_by_name['order_by']._options = None
 _CREATEHOSTGROUPREQUEST_LABELSENTRY._options = None
 _CREATEHOSTGROUPREQUEST.fields_by_name['folder_id']._options = None
 _CREATEHOSTGROUPREQUEST.fields_by_name['name']._options = None
@@ -966,8 +974,8 @@ _HOSTGROUPSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=2674,
-  serialized_end=4074,
+  serialized_start=2703,
+  serialized_end=4103,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
