@@ -1,5 +1,5 @@
 [tool.semantic_release]
-version_variable = "setup.py:__version__"
+version_variables = ["setup.py:__version__"]
 # https://python-semantic-release.readthedocs.io/en/latest/configuration.html#major-on-zero
 major_on_zero = false
 commit_parser="changelog.parse_commit"
