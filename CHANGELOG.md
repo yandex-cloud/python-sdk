@@ -2,6 +2,14 @@
 
 <!--next-version-placeholder-->
 
+## v0.223.0 (2023-07-27)
+
+### Feature
+
+* Back to semantic-release v7 ([`64a1438`](https://github.com/yandex-cloud/python-sdk/commit/64a14383f09f3845e92d2ef4ee4803c43c31b5ae))
+* Use verstion_variables for semantic_release v8 ([`e0d1dc8`](https://github.com/yandex-cloud/python-sdk/commit/e0d1dc8377e785344dfc9fedf717ad58e2c5a01c))
+* Regenerate proto ([`8cd93fc`](https://github.com/yandex-cloud/python-sdk/commit/8cd93fc25b690f104ae7e383362298c532d73aea))
+
 ## v0.222.0 (2023-06-29)
 
 ### Feature
