@@ -5,6 +5,6 @@ isort
 mccabe
 pylint
 pytest
-python-semantic-release
+python-semantic-release<8.0.0
 tox
 tox-gh-actions
