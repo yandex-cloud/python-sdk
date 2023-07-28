@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+# pylint: disable=no-member
 import logging
 import random
 from typing import List, NamedTuple
