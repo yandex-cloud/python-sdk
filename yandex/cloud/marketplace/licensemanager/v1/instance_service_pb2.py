@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n.yandex.cloud.api.marketplace.licensemanager.v1Z]github.com/yandex-cloud/go-genproto/yandex/cloud/marketplace/licensemanager/v1;licensemanager',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nAyandex/cloud/marketplace/licensemanager/v1/instance_service.proto\x12*yandex.cloud.marketplace.licensemanager.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x39yandex/cloud/marketplace/licensemanager/v1/instance.proto\x1a\x1dyandex/cloud/validation.proto\"/\n\x12GetInstanceRequest\x12\x19\n\x0binstance_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\x89\x01\n\x14ListInstancesRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"y\n\x15ListInstancesResponse\x12G\n\tinstances\x18\x01 \x03(\x0b\x32\x34.yandex.cloud.marketplace.licensemanager.v1.Instance\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\x91\x03\n\x0fInstanceService\x12\xbc\x01\n\x03Get\x12>.yandex.cloud.marketplace.licensemanager.v1.GetInstanceRequest\x1a\x34.yandex.cloud.marketplace.licensemanager.v1.Instance\"?\x82\xd3\xe4\x93\x02\x39\x12\x37/marketplace/license-manager/v1/instances/{instance_id}\x12\xbe\x01\n\x04List\x12@.yandex.cloud.marketplace.licensemanager.v1.ListInstancesRequest\x1a\x41.yandex.cloud.marketplace.licensemanager.v1.ListInstancesResponse\"1\x82\xd3\xe4\x93\x02+\x12)/marketplace/license-manager/v1/instancesB\x8f\x01\n.yandex.cloud.api.marketplace.licensemanager.v1Z]github.com/yandex-cloud/go-genproto/yandex/cloud/marketplace/licensemanager/v1;licensemanagerb\x06proto3'
+  serialized_pb=b'\nAyandex/cloud/marketplace/licensemanager/v1/instance_service.proto\x12*yandex.cloud.marketplace.licensemanager.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x39yandex/cloud/marketplace/licensemanager/v1/instance.proto\x1a\x1dyandex/cloud/validation.proto\"/\n\x12GetInstanceRequest\x12\x19\n\x0binstance_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\xa6\x01\n\x14ListInstancesRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1b\n\x08order_by\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=100\"y\n\x15ListInstancesResponse\x12G\n\tinstances\x18\x01 \x03(\x0b\x32\x34.yandex.cloud.marketplace.licensemanager.v1.Instance\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\x91\x03\n\x0fInstanceService\x12\xbc\x01\n\x03Get\x12>.yandex.cloud.marketplace.licensemanager.v1.GetInstanceRequest\x1a\x34.yandex.cloud.marketplace.licensemanager.v1.Instance\"?\x82\xd3\xe4\x93\x02\x39\x12\x37/marketplace/license-manager/v1/instances/{instance_id}\x12\xbe\x01\n\x04List\x12@.yandex.cloud.marketplace.licensemanager.v1.ListInstancesRequest\x1a\x41.yandex.cloud.marketplace.licensemanager.v1.ListInstancesResponse\"1\x82\xd3\xe4\x93\x02+\x12)/marketplace/license-manager/v1/instancesB\x8f\x01\n.yandex.cloud.api.marketplace.licensemanager.v1Z]github.com/yandex-cloud/go-genproto/yandex/cloud/marketplace/licensemanager/v1;licensemanagerb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_instance__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -97,6 +97,13 @@ _LISTINSTANCESREQUEST = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\212\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='order_by', full_name='yandex.cloud.marketplace.licensemanager.v1.ListInstancesRequest.order_by', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -110,7 +117,7 @@ _LISTINSTANCESREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=283,
-  serialized_end=420,
+  serialized_end=449,
 )
 
 
@@ -148,8 +155,8 @@ _LISTINSTANCESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=422,
-  serialized_end=543,
+  serialized_start=451,
+  serialized_end=572,
 )
 
 _LISTINSTANCESRESPONSE.fields_by_name['instances'].message_type = yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_instance__pb2._INSTANCE
@@ -186,6 +193,7 @@ _LISTINSTANCESREQUEST.fields_by_name['folder_id']._options = None
 _LISTINSTANCESREQUEST.fields_by_name['page_size']._options = None
 _LISTINSTANCESREQUEST.fields_by_name['page_token']._options = None
 _LISTINSTANCESREQUEST.fields_by_name['filter']._options = None
+_LISTINSTANCESREQUEST.fields_by_name['order_by']._options = None
 
 _INSTANCESERVICE = _descriptor.ServiceDescriptor(
   name='InstanceService',
@@ -194,8 +202,8 @@ _INSTANCESERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=546,
-  serialized_end=947,
+  serialized_start=575,
+  serialized_end=976,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
