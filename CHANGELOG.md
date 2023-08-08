@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v0.225.0 (2023-08-08)
+
+### Feature
+
+* Add loadtesting module to sdk ([#77](https://github.com/yandex-cloud/python-sdk/issues/77)) ([`5de8e04`](https://github.com/yandex-cloud/python-sdk/commit/5de8e04f102cde8e6f04c17b3c97f4e4b664eff4))
+
 ## v0.224.0 (2023-08-03)
 
 ### Feature
