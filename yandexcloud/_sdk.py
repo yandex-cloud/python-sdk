@@ -108,6 +108,7 @@ _supported_modules = [
     ("yandex.cloud.kms.v1.symmetric_crypto_service", "kms-crypto"),
     ("yandex.cloud.kms", "kms"),
     ("yandex.cloud.loadbalancer", "load-balancer"),
+    ("yandex.cloud.loadtesting", "loadtesting"),
     ("yandex.cloud.lockbox.v1.payload_service", "lockbox-payload"),
     ("yandex.cloud.lockbox", "lockbox"),
     ("yandex.cloud.logging.v1.log_ingestion_service", "log-ingestion"),
