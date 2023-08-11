@@ -28,7 +28,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n(yandex.cloud.api.serverless.functions.v1ZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/functions/v1;functions',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n;yandex/cloud/serverless/functions/v1/function_service.proto\x12$yandex.cloud.serverless.functions.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a yandex/cloud/api/operation.proto\x1a yandex/cloud/access/access.proto\x1a\x33yandex/cloud/serverless/functions/v1/function.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"/\n\x12GetFunctionRequest\x12\x19\n\x0b\x66unction_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\">\n\x19GetFunctionVersionRequest\x12!\n\x13\x66unction_version_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"h\n\x1eGetFunctionVersionByTagRequest\x12\x19\n\x0b\x66unction_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12+\n\x03tag\x18\x02 \x01(\tB\x1e\xf2\xc7\x31\x1a[a-z][-_0-9a-z]*|[$]latest\"f\n\x14ListFunctionsRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\"s\n\x15ListFunctionsResponse\x12\x41\n\tfunctions\x18\x01 \x03(\x0b\x32..yandex.cloud.serverless.functions.v1.Function\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xcb\x02\n\x15\x43reateFunctionRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x98\x01\n\x06labels\x18\x04 \x03(\x0b\x32G.yandex.cloud.serverless.functions.v1.CreateFunctionRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"-\n\x16\x43reateFunctionMetadata\x12\x13\n\x0b\x66unction_id\x18\x01 \x01(\t\"\xfe\x02\n\x15UpdateFunctionRequest\x12\x19\n\x0b\x66unction_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x98\x01\n\x06labels\x18\x05 \x03(\x0b\x32G.yandex.cloud.serverless.functions.v1.UpdateFunctionRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"-\n\x16UpdateFunctionMetadata\x12\x13\n\x0b\x66unction_id\x18\x01 \x01(\t\"2\n\x15\x44\x65leteFunctionRequest\x12\x19\n\x0b\x66unction_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"-\n\x16\x44\x65leteFunctionMetadata\x12\x13\n\x0b\x66unction_id\x18\x01 \x01(\t\"\x15\n\x13ListRuntimesRequest\"(\n\x14ListRuntimesResponse\x12\x10\n\x08runtimes\x18\x01 \x03(\t\"\xb0\x01\n\x1cListFunctionsVersionsRequest\x12\x13\n\tfolder_id\x18\x01 \x01(\tH\x00\x12\x15\n\x0b\x66unction_id\x18\x02 \x01(\tH\x00\x12\x1d\n\tpage_size\x18\x03 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x05 \x01(\tB\n\x8a\xc8\x31\x06<=1000B\n\n\x02id\x12\x04\xc0\xc1\x31\x01\"y\n\x1dListFunctionsVersionsResponse\x12?\n\x08versions\x18\x01 \x03(\x0b\x32-.yandex.cloud.serverless.functions.v1.Version\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x94\x01\n\x1dListFunctionOperationsRequest\x12\x19\n\x0b\x66unction_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"p\n\x1eListFunctionOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xff\x08\n\x1c\x43reateFunctionVersionRequest\x12\x19\n\x0b\x66unction_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x15\n\x07runtime\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05\x30-256\x12\x18\n\nentrypoint\x18\x04 \x01(\tB\x04\xe8\xc7\x31\x01\x12H\n\tresources\x18\x05 \x01(\x0b\x32/.yandex.cloud.serverless.functions.v1.ResourcesB\x04\xe8\xc7\x31\x01\x12:\n\x11\x65xecution_timeout\x18\x06 \x01(\x0b\x32\x19.google.protobuf.DurationB\x04\xe8\xc7\x31\x01\x12\x1a\n\x12service_account_id\x18\x07 \x01(\t\x12@\n\x07package\x18\t \x01(\x0b\x32-.yandex.cloud.serverless.functions.v1.PackageH\x00\x12!\n\x07\x63ontent\x18\n \x01(\x0c\x42\x0e\x8a\xc8\x31\n<=52428800H\x00\x12\x14\n\nversion_id\x18\x0b \x01(\tH\x00\x12\x8f\x01\n\x0b\x65nvironment\x18\x0c \x03(\x0b\x32S.yandex.cloud.serverless.functions.v1.CreateFunctionVersionRequest.EnvironmentEntryB%\x8a\xc8\x31\x06<=4096\xb2\xc8\x31\x17\x12\x15[a-zA-Z][a-zA-Z0-9_]*\x12!\n\x03tag\x18\r \x03(\tB\x14\xf2\xc7\x31\x10[a-z][-_0-9a-z]*\x12H\n\x0c\x63onnectivity\x18\x11 \x01(\x0b\x32\x32.yandex.cloud.serverless.functions.v1.Connectivity\x12|\n\x16named_service_accounts\x18\x0f \x03(\x0b\x32\\.yandex.cloud.serverless.functions.v1.CreateFunctionVersionRequest.NamedServiceAccountsEntry\x12=\n\x07secrets\x18\x12 \x03(\x0b\x32,.yandex.cloud.serverless.functions.v1.Secret\x12\x45\n\x0blog_options\x18\x13 \x01(\x0b\x32\x30.yandex.cloud.serverless.functions.v1.LogOptions\x12J\n\x0estorage_mounts\x18\x14 \x03(\x0b\x32\x32.yandex.cloud.serverless.functions.v1.StorageMount\x1a\x32\n\x10\x45nvironmentEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a;\n\x19NamedServiceAccountsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x16\n\x0epackage_source\x12\x04\xc0\xc1\x31\x01\"<\n\x1d\x43reateFunctionVersionMetadata\x12\x1b\n\x13\x66unction_version_id\x18\x01 \x01(\t\"]\n\x15SetFunctionTagRequest\x12!\n\x13\x66unction_version_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12!\n\x03tag\x18\x02 \x01(\tB\x14\xf2\xc7\x31\x10[a-z][-_0-9a-z]*\"`\n\x18RemoveFunctionTagRequest\x12!\n\x13\x66unction_version_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12!\n\x03tag\x18\x02 \x01(\tB\x14\xf2\xc7\x31\x10[a-z][-_0-9a-z]*\"5\n\x16SetFunctionTagMetadata\x12\x1b\n\x13\x66unction_version_id\x18\x01 \x01(\t\"8\n\x19RemoveFunctionTagMetadata\x12\x1b\n\x13\x66unction_version_id\x18\x01 \x01(\t\"\xc1\x01\n\x1dListFunctionTagHistoryRequest\x12\x19\n\x0b\x66unction_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12+\n\x03tag\x18\x02 \x01(\tB\x1e\xf2\xc7\x31\x1a[a-z][-_0-9a-z]*|[$]latest\x12\x1d\n\tpage_size\x18\x03 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x05 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"\x80\x03\n\x1eListFunctionTagHistoryResponse\x12\x82\x01\n\x1b\x66unction_tag_history_record\x18\x01 \x03(\x0b\x32].yandex.cloud.serverless.functions.v1.ListFunctionTagHistoryResponse.FunctionTagHistoryRecord\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\x1a\xbf\x01\n\x18\x46unctionTagHistoryRecord\x12\x13\n\x0b\x66unction_id\x18\x01 \x01(\t\x12\x1b\n\x13\x66unction_version_id\x18\x03 \x01(\t\x12\x0b\n\x03tag\x18\x02 \x01(\t\x12\x32\n\x0e\x65\x66\x66\x65\x63tive_from\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x0c\x65\x66\x66\x65\x63tive_to\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"u\n\x1aListScalingPoliciesRequest\x12\x19\n\x0b\x66unction_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"\x85\x01\n\x1bListScalingPoliciesResponse\x12M\n\x10scaling_policies\x18\x01 \x03(\x0b\x32\x33.yandex.cloud.serverless.functions.v1.ScalingPolicy\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xe9\x01\n\x17SetScalingPolicyRequest\x12\x19\n\x0b\x66unction_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x03tag\x18\x02 \x01(\tB\"\xe8\xc7\x31\x01\xf2\xc7\x31\x1a[a-z][-_0-9a-z]*|[$]latest\x12/\n\x1bprovisioned_instances_count\x18\x04 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12(\n\x14zone_instances_limit\x18\x05 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\'\n\x13zone_requests_limit\x18\x06 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\"/\n\x18SetScalingPolicyMetadata\x12\x13\n\x0b\x66unction_id\x18\x01 \x01(\t\"h\n\x1aRemoveScalingPolicyRequest\x12\x19\n\x0b\x66unction_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x03tag\x18\x02 \x01(\tB\"\xe8\xc7\x31\x01\xf2\xc7\x31\x1a[a-z][-_0-9a-z]*|[$]latest\"2\n\x1bRemoveScalingPolicyMetadata\x12\x13\n\x0b\x66unction_id\x18\x01 \x01(\t2\xdb\x1f\n\x0f\x46unctionService\x12\x9e\x01\n\x03Get\x12\x38.yandex.cloud.serverless.functions.v1.GetFunctionRequest\x1a..yandex.cloud.serverless.functions.v1.Function\"-\x82\xd3\xe4\x93\x02\'\x12%/functions/v1/functions/{function_id}\x12\xa0\x01\n\x04List\x12:.yandex.cloud.serverless.functions.v1.ListFunctionsRequest\x1a;.yandex.cloud.serverless.functions.v1.ListFunctionsResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/functions/v1/functions\x12\xb2\x01\n\x06\x43reate\x12;.yandex.cloud.serverless.functions.v1.CreateFunctionRequest\x1a!.yandex.cloud.operation.Operation\"H\x82\xd3\xe4\x93\x02\x1c\"\x17/functions/v1/functions:\x01*\xb2\xd2*\"\n\x16\x43reateFunctionMetadata\x12\x08\x46unction\x12\xc0\x01\n\x06Update\x12;.yandex.cloud.serverless.functions.v1.UpdateFunctionRequest\x1a!.yandex.cloud.operation.Operation\"V\x82\xd3\xe4\x93\x02*2%/functions/v1/functions/{function_id}:\x01*\xb2\xd2*\"\n\x16UpdateFunctionMetadata\x12\x08\x46unction\x12\xca\x01\n\x06\x44\x65lete\x12;.yandex.cloud.serverless.functions.v1.DeleteFunctionRequest\x1a!.yandex.cloud.operation.Operation\"`\x82\xd3\xe4\x93\x02\'*%/functions/v1/functions/{function_id}\xb2\xd2*/\n\x16\x44\x65leteFunctionMetadata\x12\x15google.protobuf.Empty\x12\xb2\x01\n\nGetVersion\x12?.yandex.cloud.serverless.functions.v1.GetFunctionVersionRequest\x1a-.yandex.cloud.serverless.functions.v1.Version\"4\x82\xd3\xe4\x93\x02.\x12,/functions/v1/versions/{function_version_id}\x12\xac\x01\n\x0fGetVersionByTag\x12\x44.yandex.cloud.serverless.functions.v1.GetFunctionVersionByTagRequest\x1a-.yandex.cloud.serverless.functions.v1.Version\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/functions/v1/versions:byTag\x12\xb7\x01\n\x0cListVersions\x12\x42.yandex.cloud.serverless.functions.v1.ListFunctionsVersionsRequest\x1a\x43.yandex.cloud.serverless.functions.v1.ListFunctionsVersionsResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/functions/v1/versions\x12\xcd\x01\n\x06SetTag\x12;.yandex.cloud.serverless.functions.v1.SetFunctionTagRequest\x1a!.yandex.cloud.operation.Operation\"c\x82\xd3\xe4\x93\x02\x38\"3/functions/v1/versions/{function_version_id}:setTag:\x01*\xb2\xd2*!\n\x16SetFunctionTagMetadata\x12\x07Version\x12\xd9\x01\n\tRemoveTag\x12>.yandex.cloud.serverless.functions.v1.RemoveFunctionTagRequest\x1a!.yandex.cloud.operation.Operation\"i\x82\xd3\xe4\x93\x02;\"6/functions/v1/versions/{function_version_id}:removeTag:\x01*\xb2\xd2*$\n\x19RemoveFunctionTagMetadata\x12\x07Version\x12\xd5\x01\n\x0eListTagHistory\x12\x43.yandex.cloud.serverless.functions.v1.ListFunctionTagHistoryRequest\x1a\x44.yandex.cloud.serverless.functions.v1.ListFunctionTagHistoryResponse\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/functions/v1/functions/{function_id}:tagHistory\x12\xc5\x01\n\rCreateVersion\x12\x42.yandex.cloud.serverless.functions.v1.CreateFunctionVersionRequest\x1a!.yandex.cloud.operation.Operation\"M\x82\xd3\xe4\x93\x02\x1b\"\x16/functions/v1/versions:\x01*\xb2\xd2*(\n\x1d\x43reateFunctionVersionMetadata\x12\x07Version\x12\xa5\x01\n\x0cListRuntimes\x12\x39.yandex.cloud.serverless.functions.v1.ListRuntimesRequest\x1a:.yandex.cloud.serverless.functions.v1.ListRuntimesResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/functions/v1/runtimes\x12\xd5\x01\n\x0eListOperations\x12\x43.yandex.cloud.serverless.functions.v1.ListFunctionOperationsRequest\x1a\x44.yandex.cloud.serverless.functions.v1.ListFunctionOperationsResponse\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/functions/v1/functions/{function_id}/operations\x12\xb7\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"@\x82\xd3\xe4\x93\x02:\x12\x38/functions/v1/functions/{resource_id}:listAccessBindings\x12\xe6\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x7f\x82\xd3\xe4\x93\x02<\"7/functions/v1/functions/{resource_id}:setAccessBindings:\x01*\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\xf3\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x85\x01\x82\xd3\xe4\x93\x02?\":/functions/v1/functions/{resource_id}:updateAccessBindings:\x01*\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\xd9\x01\n\x13ListScalingPolicies\x12@.yandex.cloud.serverless.functions.v1.ListScalingPoliciesRequest\x1a\x41.yandex.cloud.serverless.functions.v1.ListScalingPoliciesResponse\"=\x82\xd3\xe4\x93\x02\x37\x12\x35/functions/v1/functions/{function_id}/scalingPolicies\x12\xe4\x01\n\x10SetScalingPolicy\x12=.yandex.cloud.serverless.functions.v1.SetScalingPolicyRequest\x1a!.yandex.cloud.operation.Operation\"n\x82\xd3\xe4\x93\x02;\"6/functions/v1/functions/{function_id}:setScalingPolicy:\x01*\xb2\xd2*)\n\x18SetScalingPolicyMetadata\x12\rScalingPolicy\x12\xf8\x01\n\x13RemoveScalingPolicy\x12@.yandex.cloud.serverless.functions.v1.RemoveScalingPolicyRequest\x1a!.yandex.cloud.operation.Operation\"|\x82\xd3\xe4\x93\x02>\"9/functions/v1/functions/{function_id}:removeScalingPolicy:\x01*\xb2\xd2*4\n\x1bRemoveScalingPolicyMetadata\x12\x15google.protobuf.EmptyB~\n(yandex.cloud.api.serverless.functions.v1ZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/functions/v1;functionsb\x06proto3'
+  serialized_pb=b'\n;yandex/cloud/serverless/functions/v1/function_service.proto\x12$yandex.cloud.serverless.functions.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a yandex/cloud/api/operation.proto\x1a yandex/cloud/access/access.proto\x1a\x33yandex/cloud/serverless/functions/v1/function.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"/\n\x12GetFunctionRequest\x12\x19\n\x0b\x66unction_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\">\n\x19GetFunctionVersionRequest\x12!\n\x13\x66unction_version_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"h\n\x1eGetFunctionVersionByTagRequest\x12\x19\n\x0b\x66unction_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12+\n\x03tag\x18\x02 \x01(\tB\x1e\xf2\xc7\x31\x1a[a-z][-_0-9a-z]*|[$]latest\"f\n\x14ListFunctionsRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\"s\n\x15ListFunctionsResponse\x12\x41\n\tfunctions\x18\x01 \x03(\x0b\x32..yandex.cloud.serverless.functions.v1.Function\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xcb\x02\n\x15\x43reateFunctionRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x98\x01\n\x06labels\x18\x04 \x03(\x0b\x32G.yandex.cloud.serverless.functions.v1.CreateFunctionRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"-\n\x16\x43reateFunctionMetadata\x12\x13\n\x0b\x66unction_id\x18\x01 \x01(\t\"\xfe\x02\n\x15UpdateFunctionRequest\x12\x19\n\x0b\x66unction_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x98\x01\n\x06labels\x18\x05 \x03(\x0b\x32G.yandex.cloud.serverless.functions.v1.UpdateFunctionRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"-\n\x16UpdateFunctionMetadata\x12\x13\n\x0b\x66unction_id\x18\x01 \x01(\t\"2\n\x15\x44\x65leteFunctionRequest\x12\x19\n\x0b\x66unction_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"-\n\x16\x44\x65leteFunctionMetadata\x12\x13\n\x0b\x66unction_id\x18\x01 \x01(\t\"V\n\x1c\x44\x65leteFunctionVersionRequest\x12!\n\x13\x66unction_version_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\r\n\x05\x66orce\x18\x03 \x01(\x08J\x04\x08\x01\x10\x02\"B\n\x1d\x44\x65leteFunctionVersionMetadata\x12\x1b\n\x13\x66unction_version_id\x18\x02 \x01(\tJ\x04\x08\x01\x10\x02\"\x15\n\x13ListRuntimesRequest\"(\n\x14ListRuntimesResponse\x12\x10\n\x08runtimes\x18\x01 \x03(\t\"\xb0\x01\n\x1cListFunctionsVersionsRequest\x12\x13\n\tfolder_id\x18\x01 \x01(\tH\x00\x12\x15\n\x0b\x66unction_id\x18\x02 \x01(\tH\x00\x12\x1d\n\tpage_size\x18\x03 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x05 \x01(\tB\n\x8a\xc8\x31\x06<=1000B\n\n\x02id\x12\x04\xc0\xc1\x31\x01\"y\n\x1dListFunctionsVersionsResponse\x12?\n\x08versions\x18\x01 \x03(\x0b\x32-.yandex.cloud.serverless.functions.v1.Version\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x94\x01\n\x1dListFunctionOperationsRequest\x12\x19\n\x0b\x66unction_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"p\n\x1eListFunctionOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xff\x08\n\x1c\x43reateFunctionVersionRequest\x12\x19\n\x0b\x66unction_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x15\n\x07runtime\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05\x30-256\x12\x18\n\nentrypoint\x18\x04 \x01(\tB\x04\xe8\xc7\x31\x01\x12H\n\tresources\x18\x05 \x01(\x0b\x32/.yandex.cloud.serverless.functions.v1.ResourcesB\x04\xe8\xc7\x31\x01\x12:\n\x11\x65xecution_timeout\x18\x06 \x01(\x0b\x32\x19.google.protobuf.DurationB\x04\xe8\xc7\x31\x01\x12\x1a\n\x12service_account_id\x18\x07 \x01(\t\x12@\n\x07package\x18\t \x01(\x0b\x32-.yandex.cloud.serverless.functions.v1.PackageH\x00\x12!\n\x07\x63ontent\x18\n \x01(\x0c\x42\x0e\x8a\xc8\x31\n<=52428800H\x00\x12\x14\n\nversion_id\x18\x0b \x01(\tH\x00\x12\x8f\x01\n\x0b\x65nvironment\x18\x0c \x03(\x0b\x32S.yandex.cloud.serverless.functions.v1.CreateFunctionVersionRequest.EnvironmentEntryB%\x8a\xc8\x31\x06<=4096\xb2\xc8\x31\x17\x12\x15[a-zA-Z][a-zA-Z0-9_]*\x12!\n\x03tag\x18\r \x03(\tB\x14\xf2\xc7\x31\x10[a-z][-_0-9a-z]*\x12H\n\x0c\x63onnectivity\x18\x11 \x01(\x0b\x32\x32.yandex.cloud.serverless.functions.v1.Connectivity\x12|\n\x16named_service_accounts\x18\x0f \x03(\x0b\x32\\.yandex.cloud.serverless.functions.v1.CreateFunctionVersionRequest.NamedServiceAccountsEntry\x12=\n\x07secrets\x18\x12 \x03(\x0b\x32,.yandex.cloud.serverless.functions.v1.Secret\x12\x45\n\x0blog_options\x18\x13 \x01(\x0b\x32\x30.yandex.cloud.serverless.functions.v1.LogOptions\x12J\n\x0estorage_mounts\x18\x14 \x03(\x0b\x32\x32.yandex.cloud.serverless.functions.v1.StorageMount\x1a\x32\n\x10\x45nvironmentEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a;\n\x19NamedServiceAccountsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x16\n\x0epackage_source\x12\x04\xc0\xc1\x31\x01\"<\n\x1d\x43reateFunctionVersionMetadata\x12\x1b\n\x13\x66unction_version_id\x18\x01 \x01(\t\"]\n\x15SetFunctionTagRequest\x12!\n\x13\x66unction_version_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12!\n\x03tag\x18\x02 \x01(\tB\x14\xf2\xc7\x31\x10[a-z][-_0-9a-z]*\"`\n\x18RemoveFunctionTagRequest\x12!\n\x13\x66unction_version_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12!\n\x03tag\x18\x02 \x01(\tB\x14\xf2\xc7\x31\x10[a-z][-_0-9a-z]*\"5\n\x16SetFunctionTagMetadata\x12\x1b\n\x13\x66unction_version_id\x18\x01 \x01(\t\"8\n\x19RemoveFunctionTagMetadata\x12\x1b\n\x13\x66unction_version_id\x18\x01 \x01(\t\"\xc1\x01\n\x1dListFunctionTagHistoryRequest\x12\x19\n\x0b\x66unction_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12+\n\x03tag\x18\x02 \x01(\tB\x1e\xf2\xc7\x31\x1a[a-z][-_0-9a-z]*|[$]latest\x12\x1d\n\tpage_size\x18\x03 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x05 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"\x80\x03\n\x1eListFunctionTagHistoryResponse\x12\x82\x01\n\x1b\x66unction_tag_history_record\x18\x01 \x03(\x0b\x32].yandex.cloud.serverless.functions.v1.ListFunctionTagHistoryResponse.FunctionTagHistoryRecord\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\x1a\xbf\x01\n\x18\x46unctionTagHistoryRecord\x12\x13\n\x0b\x66unction_id\x18\x01 \x01(\t\x12\x1b\n\x13\x66unction_version_id\x18\x03 \x01(\t\x12\x0b\n\x03tag\x18\x02 \x01(\t\x12\x32\n\x0e\x65\x66\x66\x65\x63tive_from\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x30\n\x0c\x65\x66\x66\x65\x63tive_to\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"u\n\x1aListScalingPoliciesRequest\x12\x19\n\x0b\x66unction_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"\x85\x01\n\x1bListScalingPoliciesResponse\x12M\n\x10scaling_policies\x18\x01 \x03(\x0b\x32\x33.yandex.cloud.serverless.functions.v1.ScalingPolicy\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xe9\x01\n\x17SetScalingPolicyRequest\x12\x19\n\x0b\x66unction_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x03tag\x18\x02 \x01(\tB\"\xe8\xc7\x31\x01\xf2\xc7\x31\x1a[a-z][-_0-9a-z]*|[$]latest\x12/\n\x1bprovisioned_instances_count\x18\x04 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12(\n\x14zone_instances_limit\x18\x05 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\'\n\x13zone_requests_limit\x18\x06 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\"/\n\x18SetScalingPolicyMetadata\x12\x13\n\x0b\x66unction_id\x18\x01 \x01(\t\"h\n\x1aRemoveScalingPolicyRequest\x12\x19\n\x0b\x66unction_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x03tag\x18\x02 \x01(\tB\"\xe8\xc7\x31\x01\xf2\xc7\x31\x1a[a-z][-_0-9a-z]*|[$]latest\"2\n\x1bRemoveScalingPolicyMetadata\x12\x13\n\x0b\x66unction_id\x18\x01 \x01(\t2\xc4!\n\x0f\x46unctionService\x12\x9e\x01\n\x03Get\x12\x38.yandex.cloud.serverless.functions.v1.GetFunctionRequest\x1a..yandex.cloud.serverless.functions.v1.Function\"-\x82\xd3\xe4\x93\x02\'\x12%/functions/v1/functions/{function_id}\x12\xa0\x01\n\x04List\x12:.yandex.cloud.serverless.functions.v1.ListFunctionsRequest\x1a;.yandex.cloud.serverless.functions.v1.ListFunctionsResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/functions/v1/functions\x12\xb2\x01\n\x06\x43reate\x12;.yandex.cloud.serverless.functions.v1.CreateFunctionRequest\x1a!.yandex.cloud.operation.Operation\"H\x82\xd3\xe4\x93\x02\x1c\"\x17/functions/v1/functions:\x01*\xb2\xd2*\"\n\x16\x43reateFunctionMetadata\x12\x08\x46unction\x12\xc0\x01\n\x06Update\x12;.yandex.cloud.serverless.functions.v1.UpdateFunctionRequest\x1a!.yandex.cloud.operation.Operation\"V\x82\xd3\xe4\x93\x02*2%/functions/v1/functions/{function_id}:\x01*\xb2\xd2*\"\n\x16UpdateFunctionMetadata\x12\x08\x46unction\x12\xca\x01\n\x06\x44\x65lete\x12;.yandex.cloud.serverless.functions.v1.DeleteFunctionRequest\x1a!.yandex.cloud.operation.Operation\"`\x82\xd3\xe4\x93\x02\'*%/functions/v1/functions/{function_id}\xb2\xd2*/\n\x16\x44\x65leteFunctionMetadata\x12\x15google.protobuf.Empty\x12\xb2\x01\n\nGetVersion\x12?.yandex.cloud.serverless.functions.v1.GetFunctionVersionRequest\x1a-.yandex.cloud.serverless.functions.v1.Version\"4\x82\xd3\xe4\x93\x02.\x12,/functions/v1/versions/{function_version_id}\x12\xac\x01\n\x0fGetVersionByTag\x12\x44.yandex.cloud.serverless.functions.v1.GetFunctionVersionByTagRequest\x1a-.yandex.cloud.serverless.functions.v1.Version\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/functions/v1/versions:byTag\x12\xb7\x01\n\x0cListVersions\x12\x42.yandex.cloud.serverless.functions.v1.ListFunctionsVersionsRequest\x1a\x43.yandex.cloud.serverless.functions.v1.ListFunctionsVersionsResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/functions/v1/versions\x12\xe6\x01\n\rDeleteVersion\x12\x42.yandex.cloud.serverless.functions.v1.DeleteFunctionVersionRequest\x1a!.yandex.cloud.operation.Operation\"n\x82\xd3\xe4\x93\x02.*,/functions/v1/versions/{function_version_id}\xb2\xd2*6\n\x1d\x44\x65leteFunctionVersionMetadata\x12\x15google.protobuf.Empty\x12\xcd\x01\n\x06SetTag\x12;.yandex.cloud.serverless.functions.v1.SetFunctionTagRequest\x1a!.yandex.cloud.operation.Operation\"c\x82\xd3\xe4\x93\x02\x38\"3/functions/v1/versions/{function_version_id}:setTag:\x01*\xb2\xd2*!\n\x16SetFunctionTagMetadata\x12\x07Version\x12\xd9\x01\n\tRemoveTag\x12>.yandex.cloud.serverless.functions.v1.RemoveFunctionTagRequest\x1a!.yandex.cloud.operation.Operation\"i\x82\xd3\xe4\x93\x02;\"6/functions/v1/versions/{function_version_id}:removeTag:\x01*\xb2\xd2*$\n\x19RemoveFunctionTagMetadata\x12\x07Version\x12\xd5\x01\n\x0eListTagHistory\x12\x43.yandex.cloud.serverless.functions.v1.ListFunctionTagHistoryRequest\x1a\x44.yandex.cloud.serverless.functions.v1.ListFunctionTagHistoryResponse\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/functions/v1/functions/{function_id}:tagHistory\x12\xc5\x01\n\rCreateVersion\x12\x42.yandex.cloud.serverless.functions.v1.CreateFunctionVersionRequest\x1a!.yandex.cloud.operation.Operation\"M\x82\xd3\xe4\x93\x02\x1b\"\x16/functions/v1/versions:\x01*\xb2\xd2*(\n\x1d\x43reateFunctionVersionMetadata\x12\x07Version\x12\xa5\x01\n\x0cListRuntimes\x12\x39.yandex.cloud.serverless.functions.v1.ListRuntimesRequest\x1a:.yandex.cloud.serverless.functions.v1.ListRuntimesResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/functions/v1/runtimes\x12\xd5\x01\n\x0eListOperations\x12\x43.yandex.cloud.serverless.functions.v1.ListFunctionOperationsRequest\x1a\x44.yandex.cloud.serverless.functions.v1.ListFunctionOperationsResponse\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/functions/v1/functions/{function_id}/operations\x12\xb7\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"@\x82\xd3\xe4\x93\x02:\x12\x38/functions/v1/functions/{resource_id}:listAccessBindings\x12\xe6\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x7f\x82\xd3\xe4\x93\x02<\"7/functions/v1/functions/{resource_id}:setAccessBindings:\x01*\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\xf3\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x85\x01\x82\xd3\xe4\x93\x02?\":/functions/v1/functions/{resource_id}:updateAccessBindings:\x01*\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\xd9\x01\n\x13ListScalingPolicies\x12@.yandex.cloud.serverless.functions.v1.ListScalingPoliciesRequest\x1a\x41.yandex.cloud.serverless.functions.v1.ListScalingPoliciesResponse\"=\x82\xd3\xe4\x93\x02\x37\x12\x35/functions/v1/functions/{function_id}/scalingPolicies\x12\xe4\x01\n\x10SetScalingPolicy\x12=.yandex.cloud.serverless.functions.v1.SetScalingPolicyRequest\x1a!.yandex.cloud.operation.Operation\"n\x82\xd3\xe4\x93\x02;\"6/functions/v1/functions/{function_id}:setScalingPolicy:\x01*\xb2\xd2*)\n\x18SetScalingPolicyMetadata\x12\rScalingPolicy\x12\xf8\x01\n\x13RemoveScalingPolicy\x12@.yandex.cloud.serverless.functions.v1.RemoveScalingPolicyRequest\x1a!.yandex.cloud.operation.Operation\"|\x82\xd3\xe4\x93\x02>\"9/functions/v1/functions/{function_id}:removeScalingPolicy:\x01*\xb2\xd2*4\n\x1bRemoveScalingPolicyMetadata\x12\x15google.protobuf.EmptyB~\n(yandex.cloud.api.serverless.functions.v1ZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/functions/v1;functionsb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_access_dot_access__pb2.DESCRIPTOR,yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -547,6 +547,77 @@ _DELETEFUNCTIONMETADATA = _descriptor.Descriptor(
 )
 
 
+_DELETEFUNCTIONVERSIONREQUEST = _descriptor.Descriptor(
+  name='DeleteFunctionVersionRequest',
+  full_name='yandex.cloud.serverless.functions.v1.DeleteFunctionVersionRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='function_version_id', full_name='yandex.cloud.serverless.functions.v1.DeleteFunctionVersionRequest.function_version_id', index=0,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='force', full_name='yandex.cloud.serverless.functions.v1.DeleteFunctionVersionRequest.force', index=1,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1774,
+  serialized_end=1860,
+)
+
+
+_DELETEFUNCTIONVERSIONMETADATA = _descriptor.Descriptor(
+  name='DeleteFunctionVersionMetadata',
+  full_name='yandex.cloud.serverless.functions.v1.DeleteFunctionVersionMetadata',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='function_version_id', full_name='yandex.cloud.serverless.functions.v1.DeleteFunctionVersionMetadata.function_version_id', index=0,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1862,
+  serialized_end=1928,
+)
+
+
 _LISTRUNTIMESREQUEST = _descriptor.Descriptor(
   name='ListRuntimesRequest',
   full_name='yandex.cloud.serverless.functions.v1.ListRuntimesRequest',
@@ -567,8 +638,8 @@ _LISTRUNTIMESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1774,
-  serialized_end=1795,
+  serialized_start=1930,
+  serialized_end=1951,
 )
 
 
@@ -599,8 +670,8 @@ _LISTRUNTIMESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1797,
-  serialized_end=1837,
+  serialized_start=1953,
+  serialized_end=1993,
 )
 
 
@@ -664,8 +735,8 @@ _LISTFUNCTIONSVERSIONSREQUEST = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[], serialized_options=b'\300\3011\001'),
   ],
-  serialized_start=1840,
-  serialized_end=2016,
+  serialized_start=1996,
+  serialized_end=2172,
 )
 
 
@@ -703,8 +774,8 @@ _LISTFUNCTIONSVERSIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2018,
-  serialized_end=2139,
+  serialized_start=2174,
+  serialized_end=2295,
 )
 
 
@@ -756,8 +827,8 @@ _LISTFUNCTIONOPERATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2142,
-  serialized_end=2290,
+  serialized_start=2298,
+  serialized_end=2446,
 )
 
 
@@ -795,8 +866,8 @@ _LISTFUNCTIONOPERATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2292,
-  serialized_end=2404,
+  serialized_start=2448,
+  serialized_end=2560,
 )
 
 
@@ -834,8 +905,8 @@ _CREATEFUNCTIONVERSIONREQUEST_ENVIRONMENTENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3423,
-  serialized_end=3473,
+  serialized_start=3579,
+  serialized_end=3629,
 )
 
 _CREATEFUNCTIONVERSIONREQUEST_NAMEDSERVICEACCOUNTSENTRY = _descriptor.Descriptor(
@@ -872,8 +943,8 @@ _CREATEFUNCTIONVERSIONREQUEST_NAMEDSERVICEACCOUNTSENTRY = _descriptor.Descriptor
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3475,
-  serialized_end=3534,
+  serialized_start=3631,
+  serialized_end=3690,
 )
 
 _CREATEFUNCTIONVERSIONREQUEST = _descriptor.Descriptor(
@@ -1020,8 +1091,8 @@ _CREATEFUNCTIONVERSIONREQUEST = _descriptor.Descriptor(
       create_key=_descriptor._internal_create_key,
     fields=[], serialized_options=b'\300\3011\001'),
   ],
-  serialized_start=2407,
-  serialized_end=3558,
+  serialized_start=2563,
+  serialized_end=3714,
 )
 
 
@@ -1052,8 +1123,8 @@ _CREATEFUNCTIONVERSIONMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3560,
-  serialized_end=3620,
+  serialized_start=3716,
+  serialized_end=3776,
 )
 
 
@@ -1091,8 +1162,8 @@ _SETFUNCTIONTAGREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3622,
-  serialized_end=3715,
+  serialized_start=3778,
+  serialized_end=3871,
 )
 
 
@@ -1130,8 +1201,8 @@ _REMOVEFUNCTIONTAGREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3717,
-  serialized_end=3813,
+  serialized_start=3873,
+  serialized_end=3969,
 )
 
 
@@ -1162,8 +1233,8 @@ _SETFUNCTIONTAGMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3815,
-  serialized_end=3868,
+  serialized_start=3971,
+  serialized_end=4024,
 )
 
 
@@ -1194,8 +1265,8 @@ _REMOVEFUNCTIONTAGMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3870,
-  serialized_end=3926,
+  serialized_start=4026,
+  serialized_end=4082,
 )
 
 
@@ -1254,8 +1325,8 @@ _LISTFUNCTIONTAGHISTORYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3929,
-  serialized_end=4122,
+  serialized_start=4085,
+  serialized_end=4278,
 )
 
 
@@ -1314,8 +1385,8 @@ _LISTFUNCTIONTAGHISTORYRESPONSE_FUNCTIONTAGHISTORYRECORD = _descriptor.Descripto
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4318,
-  serialized_end=4509,
+  serialized_start=4474,
+  serialized_end=4665,
 )
 
 _LISTFUNCTIONTAGHISTORYRESPONSE = _descriptor.Descriptor(
@@ -1352,8 +1423,8 @@ _LISTFUNCTIONTAGHISTORYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4125,
-  serialized_end=4509,
+  serialized_start=4281,
+  serialized_end=4665,
 )
 
 
@@ -1398,8 +1469,8 @@ _LISTSCALINGPOLICIESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4511,
-  serialized_end=4628,
+  serialized_start=4667,
+  serialized_end=4784,
 )
 
 
@@ -1437,8 +1508,8 @@ _LISTSCALINGPOLICIESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4631,
-  serialized_end=4764,
+  serialized_start=4787,
+  serialized_end=4920,
 )
 
 
@@ -1497,8 +1568,8 @@ _SETSCALINGPOLICYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4767,
-  serialized_end=5000,
+  serialized_start=4923,
+  serialized_end=5156,
 )
 
 
@@ -1529,8 +1600,8 @@ _SETSCALINGPOLICYMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5002,
-  serialized_end=5049,
+  serialized_start=5158,
+  serialized_end=5205,
 )
 
 
@@ -1568,8 +1639,8 @@ _REMOVESCALINGPOLICYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5051,
-  serialized_end=5155,
+  serialized_start=5207,
+  serialized_end=5311,
 )
 
 
@@ -1600,8 +1671,8 @@ _REMOVESCALINGPOLICYMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5157,
-  serialized_end=5207,
+  serialized_start=5313,
+  serialized_end=5363,
 )
 
 _LISTFUNCTIONSRESPONSE.fields_by_name['functions'].message_type = yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__pb2._FUNCTION
@@ -1654,6 +1725,8 @@ DESCRIPTOR.message_types_by_name['UpdateFunctionRequest'] = _UPDATEFUNCTIONREQUE
 DESCRIPTOR.message_types_by_name['UpdateFunctionMetadata'] = _UPDATEFUNCTIONMETADATA
 DESCRIPTOR.message_types_by_name['DeleteFunctionRequest'] = _DELETEFUNCTIONREQUEST
 DESCRIPTOR.message_types_by_name['DeleteFunctionMetadata'] = _DELETEFUNCTIONMETADATA
+DESCRIPTOR.message_types_by_name['DeleteFunctionVersionRequest'] = _DELETEFUNCTIONVERSIONREQUEST
+DESCRIPTOR.message_types_by_name['DeleteFunctionVersionMetadata'] = _DELETEFUNCTIONVERSIONMETADATA
 DESCRIPTOR.message_types_by_name['ListRuntimesRequest'] = _LISTRUNTIMESREQUEST
 DESCRIPTOR.message_types_by_name['ListRuntimesResponse'] = _LISTRUNTIMESRESPONSE
 DESCRIPTOR.message_types_by_name['ListFunctionsVersionsRequest'] = _LISTFUNCTIONSVERSIONSREQUEST
@@ -1768,6 +1841,20 @@ DeleteFunctionMetadata = _reflection.GeneratedProtocolMessageType('DeleteFunctio
   # @@protoc_insertion_point(class_scope:yandex.cloud.serverless.functions.v1.DeleteFunctionMetadata)
   })
 _sym_db.RegisterMessage(DeleteFunctionMetadata)
+
+DeleteFunctionVersionRequest = _reflection.GeneratedProtocolMessageType('DeleteFunctionVersionRequest', (_message.Message,), {
+  'DESCRIPTOR' : _DELETEFUNCTIONVERSIONREQUEST,
+  '__module__' : 'yandex.cloud.serverless.functions.v1.function_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.serverless.functions.v1.DeleteFunctionVersionRequest)
+  })
+_sym_db.RegisterMessage(DeleteFunctionVersionRequest)
+
+DeleteFunctionVersionMetadata = _reflection.GeneratedProtocolMessageType('DeleteFunctionVersionMetadata', (_message.Message,), {
+  'DESCRIPTOR' : _DELETEFUNCTIONVERSIONMETADATA,
+  '__module__' : 'yandex.cloud.serverless.functions.v1.function_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.serverless.functions.v1.DeleteFunctionVersionMetadata)
+  })
+_sym_db.RegisterMessage(DeleteFunctionVersionMetadata)
 
 ListRuntimesRequest = _reflection.GeneratedProtocolMessageType('ListRuntimesRequest', (_message.Message,), {
   'DESCRIPTOR' : _LISTRUNTIMESREQUEST,
@@ -1951,6 +2038,7 @@ _UPDATEFUNCTIONREQUEST.fields_by_name['name']._options = None
 _UPDATEFUNCTIONREQUEST.fields_by_name['description']._options = None
 _UPDATEFUNCTIONREQUEST.fields_by_name['labels']._options = None
 _DELETEFUNCTIONREQUEST.fields_by_name['function_id']._options = None
+_DELETEFUNCTIONVERSIONREQUEST.fields_by_name['function_version_id']._options = None
 _LISTFUNCTIONSVERSIONSREQUEST.oneofs_by_name['id']._options = None
 _LISTFUNCTIONSVERSIONSREQUEST.fields_by_name['page_size']._options = None
 _LISTFUNCTIONSVERSIONSREQUEST.fields_by_name['page_token']._options = None
@@ -1998,8 +2086,8 @@ _FUNCTIONSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=5210,
-  serialized_end=9269,
+  serialized_start=5366,
+  serialized_end=9658,
   methods=[
   _descriptor.MethodDescriptor(
     name='Get',
@@ -2082,9 +2170,19 @@ _FUNCTIONSERVICE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
+    name='DeleteVersion',
+    full_name='yandex.cloud.serverless.functions.v1.FunctionService.DeleteVersion',
+    index=8,
+    containing_service=None,
+    input_type=_DELETEFUNCTIONVERSIONREQUEST,
+    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
+    serialized_options=b'\202\323\344\223\002.*,/functions/v1/versions/{function_version_id}\262\322*6\n\035DeleteFunctionVersionMetadata\022\025google.protobuf.Empty',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
     name='SetTag',
     full_name='yandex.cloud.serverless.functions.v1.FunctionService.SetTag',
-    index=8,
+    index=9,
     containing_service=None,
     input_type=_SETFUNCTIONTAGREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
@@ -2094,7 +2192,7 @@ _FUNCTIONSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='RemoveTag',
     full_name='yandex.cloud.serverless.functions.v1.FunctionService.RemoveTag',
-    index=9,
+    index=10,
     containing_service=None,
     input_type=_REMOVEFUNCTIONTAGREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
@@ -2104,7 +2202,7 @@ _FUNCTIONSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ListTagHistory',
     full_name='yandex.cloud.serverless.functions.v1.FunctionService.ListTagHistory',
-    index=10,
+    index=11,
     containing_service=None,
     input_type=_LISTFUNCTIONTAGHISTORYREQUEST,
     output_type=_LISTFUNCTIONTAGHISTORYRESPONSE,
@@ -2114,7 +2212,7 @@ _FUNCTIONSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='CreateVersion',
     full_name='yandex.cloud.serverless.functions.v1.FunctionService.CreateVersion',
-    index=11,
+    index=12,
     containing_service=None,
     input_type=_CREATEFUNCTIONVERSIONREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
@@ -2124,7 +2222,7 @@ _FUNCTIONSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ListRuntimes',
     full_name='yandex.cloud.serverless.functions.v1.FunctionService.ListRuntimes',
-    index=12,
+    index=13,
     containing_service=None,
     input_type=_LISTRUNTIMESREQUEST,
     output_type=_LISTRUNTIMESRESPONSE,
@@ -2134,7 +2232,7 @@ _FUNCTIONSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ListOperations',
     full_name='yandex.cloud.serverless.functions.v1.FunctionService.ListOperations',
-    index=13,
+    index=14,
     containing_service=None,
     input_type=_LISTFUNCTIONOPERATIONSREQUEST,
     output_type=_LISTFUNCTIONOPERATIONSRESPONSE,
@@ -2144,7 +2242,7 @@ _FUNCTIONSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ListAccessBindings',
     full_name='yandex.cloud.serverless.functions.v1.FunctionService.ListAccessBindings',
-    index=14,
+    index=15,
     containing_service=None,
     input_type=yandex_dot_cloud_dot_access_dot_access__pb2._LISTACCESSBINDINGSREQUEST,
     output_type=yandex_dot_cloud_dot_access_dot_access__pb2._LISTACCESSBINDINGSRESPONSE,
@@ -2154,7 +2252,7 @@ _FUNCTIONSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='SetAccessBindings',
     full_name='yandex.cloud.serverless.functions.v1.FunctionService.SetAccessBindings',
-    index=15,
+    index=16,
     containing_service=None,
     input_type=yandex_dot_cloud_dot_access_dot_access__pb2._SETACCESSBINDINGSREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
@@ -2164,7 +2262,7 @@ _FUNCTIONSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='UpdateAccessBindings',
     full_name='yandex.cloud.serverless.functions.v1.FunctionService.UpdateAccessBindings',
-    index=16,
+    index=17,
     containing_service=None,
     input_type=yandex_dot_cloud_dot_access_dot_access__pb2._UPDATEACCESSBINDINGSREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
@@ -2174,7 +2272,7 @@ _FUNCTIONSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='ListScalingPolicies',
     full_name='yandex.cloud.serverless.functions.v1.FunctionService.ListScalingPolicies',
-    index=17,
+    index=18,
     containing_service=None,
     input_type=_LISTSCALINGPOLICIESREQUEST,
     output_type=_LISTSCALINGPOLICIESRESPONSE,
@@ -2184,7 +2282,7 @@ _FUNCTIONSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='SetScalingPolicy',
     full_name='yandex.cloud.serverless.functions.v1.FunctionService.SetScalingPolicy',
-    index=18,
+    index=19,
     containing_service=None,
     input_type=_SETSCALINGPOLICYREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
@@ -2194,7 +2292,7 @@ _FUNCTIONSERVICE = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='RemoveScalingPolicy',
     full_name='yandex.cloud.serverless.functions.v1.FunctionService.RemoveScalingPolicy',
-    index=19,
+    index=20,
     containing_service=None,
     input_type=_REMOVESCALINGPOLICYREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,

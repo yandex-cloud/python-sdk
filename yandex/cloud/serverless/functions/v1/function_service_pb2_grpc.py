@@ -58,6 +58,11 @@ class FunctionServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.ListFunctionsVersionsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.ListFunctionsVersionsResponse.FromString,
                 )
+        self.DeleteVersion = channel.unary_unary(
+                '/yandex.cloud.serverless.functions.v1.FunctionService/DeleteVersion',
+                request_serializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.DeleteFunctionVersionRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
         self.SetTag = channel.unary_unary(
                 '/yandex.cloud.serverless.functions.v1.FunctionService/SetTag',
                 request_serializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.SetFunctionTagRequest.SerializeToString,
@@ -182,6 +187,15 @@ class FunctionServiceServicer(object):
     def ListVersions(self, request, context):
         """Retrieves the list of versions for the specified function, or of all function versions
         in the specified folder.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteVersion(self, request, context):
+        """Deletes the specified version of a function.
+
+        NOTE: old untagged function versions are deleted automatically.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -313,6 +327,11 @@ def add_FunctionServiceServicer_to_server(servicer, server):
                     servicer.ListVersions,
                     request_deserializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.ListFunctionsVersionsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.ListFunctionsVersionsResponse.SerializeToString,
+            ),
+            'DeleteVersion': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteVersion,
+                    request_deserializer=yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.DeleteFunctionVersionRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'SetTag': grpc.unary_unary_rpc_method_handler(
                     servicer.SetTag,
@@ -518,6 +537,23 @@ class FunctionService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.serverless.functions.v1.FunctionService/ListVersions',
             yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.ListFunctionsVersionsRequest.SerializeToString,
             yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.ListFunctionsVersionsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteVersion(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.serverless.functions.v1.FunctionService/DeleteVersion',
+            yandex_dot_cloud_dot_serverless_dot_functions_dot_v1_dot_function__service__pb2.DeleteFunctionVersionRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
