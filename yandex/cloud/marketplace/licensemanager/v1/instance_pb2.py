@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n.yandex.cloud.api.marketplace.licensemanager.v1Z]github.com/yandex-cloud/go-genproto/yandex/cloud/marketplace/licensemanager/v1;licensemanager',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n9yandex/cloud/marketplace/licensemanager/v1/instance.proto\x12*yandex.cloud.marketplace.licensemanager.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x35yandex/cloud/marketplace/licensemanager/v1/lock.proto\x1a\x39yandex/cloud/marketplace/licensemanager/v1/template.proto\"\x87\x05\n\x08Instance\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08\x63loud_id\x18\x02 \x01(\t\x12\x11\n\tfolder_id\x18\x03 \x01(\t\x12\x13\n\x0btemplate_id\x18\x04 \x01(\t\x12\x1b\n\x13template_version_id\x18\x05 \x01(\t\x12\x0c\n\x04name\x18\x06 \x01(\t\x12.\n\nstart_time\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12,\n\x08\x65nd_time\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\ncreated_at\x18\t \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12I\n\x05state\x18\x0b \x01(\x0e\x32:.yandex.cloud.marketplace.licensemanager.v1.Instance.State\x12?\n\x05locks\x18\x0c \x03(\x0b\x32\x30.yandex.cloud.marketplace.licensemanager.v1.Lock\x12N\n\x10license_template\x18\r \x01(\x0b\x32\x34.yandex.cloud.marketplace.licensemanager.v1.Template\"p\n\x05State\x12\x15\n\x11STATE_UNSPECIFIED\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\r\n\tCANCELLED\x10\x03\x12\x0b\n\x07\x45XPIRED\x10\x04\x12\x0e\n\nDEPRECATED\x10\x05\x12\x0b\n\x07\x44\x45LETED\x10\x06\x42\x8f\x01\n.yandex.cloud.api.marketplace.licensemanager.v1Z]github.com/yandex-cloud/go-genproto/yandex/cloud/marketplace/licensemanager/v1;licensemanagerb\x06proto3'
+  serialized_pb=b'\n9yandex/cloud/marketplace/licensemanager/v1/instance.proto\x12*yandex.cloud.marketplace.licensemanager.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x35yandex/cloud/marketplace/licensemanager/v1/lock.proto\x1a\x39yandex/cloud/marketplace/licensemanager/v1/template.proto\"\x9c\x05\n\x08Instance\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08\x63loud_id\x18\x02 \x01(\t\x12\x11\n\tfolder_id\x18\x03 \x01(\t\x12\x13\n\x0btemplate_id\x18\x04 \x01(\t\x12\x1b\n\x13template_version_id\x18\x05 \x01(\t\x12\x0c\n\x04name\x18\x06 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x0e \x01(\t\x12.\n\nstart_time\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12,\n\x08\x65nd_time\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\ncreated_at\x18\t \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\n \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12I\n\x05state\x18\x0b \x01(\x0e\x32:.yandex.cloud.marketplace.licensemanager.v1.Instance.State\x12?\n\x05locks\x18\x0c \x03(\x0b\x32\x30.yandex.cloud.marketplace.licensemanager.v1.Lock\x12N\n\x10license_template\x18\r \x01(\x0b\x32\x34.yandex.cloud.marketplace.licensemanager.v1.Template\"p\n\x05State\x12\x15\n\x11STATE_UNSPECIFIED\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\r\n\tCANCELLED\x10\x03\x12\x0b\n\x07\x45XPIRED\x10\x04\x12\x0e\n\nDEPRECATED\x10\x05\x12\x0b\n\x07\x44\x45LETED\x10\x06\x42\x8f\x01\n.yandex.cloud.api.marketplace.licensemanager.v1Z]github.com/yandex-cloud/go-genproto/yandex/cloud/marketplace/licensemanager/v1;licensemanagerb\x06proto3'
   ,
   dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_lock__pb2.DESCRIPTOR,yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_template__pb2.DESCRIPTOR,])
 
@@ -73,8 +73,8 @@ _INSTANCE_STATE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=788,
-  serialized_end=900,
+  serialized_start=809,
+  serialized_end=921,
 )
 _sym_db.RegisterEnumDescriptor(_INSTANCE_STATE)
 
@@ -130,49 +130,56 @@ _INSTANCE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='start_time', full_name='yandex.cloud.marketplace.licensemanager.v1.Instance.start_time', index=6,
+      name='description', full_name='yandex.cloud.marketplace.licensemanager.v1.Instance.description', index=6,
+      number=14, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='start_time', full_name='yandex.cloud.marketplace.licensemanager.v1.Instance.start_time', index=7,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='end_time', full_name='yandex.cloud.marketplace.licensemanager.v1.Instance.end_time', index=7,
+      name='end_time', full_name='yandex.cloud.marketplace.licensemanager.v1.Instance.end_time', index=8,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='created_at', full_name='yandex.cloud.marketplace.licensemanager.v1.Instance.created_at', index=8,
+      name='created_at', full_name='yandex.cloud.marketplace.licensemanager.v1.Instance.created_at', index=9,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='updated_at', full_name='yandex.cloud.marketplace.licensemanager.v1.Instance.updated_at', index=9,
+      name='updated_at', full_name='yandex.cloud.marketplace.licensemanager.v1.Instance.updated_at', index=10,
       number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='state', full_name='yandex.cloud.marketplace.licensemanager.v1.Instance.state', index=10,
+      name='state', full_name='yandex.cloud.marketplace.licensemanager.v1.Instance.state', index=11,
       number=11, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='locks', full_name='yandex.cloud.marketplace.licensemanager.v1.Instance.locks', index=11,
+      name='locks', full_name='yandex.cloud.marketplace.licensemanager.v1.Instance.locks', index=12,
       number=12, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='license_template', full_name='yandex.cloud.marketplace.licensemanager.v1.Instance.license_template', index=12,
+      name='license_template', full_name='yandex.cloud.marketplace.licensemanager.v1.Instance.license_template', index=13,
       number=13, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -192,7 +199,7 @@ _INSTANCE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=253,
-  serialized_end=900,
+  serialized_end=921,
 )
 
 _INSTANCE.fields_by_name['start_time'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP

@@ -26,6 +26,11 @@ class AgentServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_agent__service__pb2.GetAgentRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_agent_dot_agent__pb2.Agent.FromString,
                 )
+        self.List = channel.unary_unary(
+                '/yandex.cloud.loadtesting.api.v1.AgentService/List',
+                request_serializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_agent__service__pb2.ListAgentsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_agent__service__pb2.ListAgentsResponse.FromString,
+                )
         self.Delete = channel.unary_unary(
                 '/yandex.cloud.loadtesting.api.v1.AgentService/Delete',
                 request_serializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_agent__service__pb2.DeleteAgentRequest.SerializeToString,
@@ -43,6 +48,12 @@ class AgentServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Get(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def List(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -66,6 +77,11 @@ def add_AgentServiceServicer_to_server(servicer, server):
                     servicer.Get,
                     request_deserializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_agent__service__pb2.GetAgentRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_agent_dot_agent__pb2.Agent.SerializeToString,
+            ),
+            'List': grpc.unary_unary_rpc_method_handler(
+                    servicer.List,
+                    request_deserializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_agent__service__pb2.ListAgentsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_agent__service__pb2.ListAgentsResponse.SerializeToString,
             ),
             'Delete': grpc.unary_unary_rpc_method_handler(
                     servicer.Delete,
@@ -113,6 +129,23 @@ class AgentService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.loadtesting.api.v1.AgentService/Get',
             yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_agent__service__pb2.GetAgentRequest.SerializeToString,
             yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_agent_dot_agent__pb2.Agent.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def List(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.loadtesting.api.v1.AgentService/List',
+            yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_agent__service__pb2.ListAgentsRequest.SerializeToString,
+            yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_agent__service__pb2.ListAgentsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

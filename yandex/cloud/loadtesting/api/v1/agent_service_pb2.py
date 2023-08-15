@@ -25,7 +25,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n#yandex.cloud.api.loadtesting.api.v1ZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadtesting/api/v1;loadtesting',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n3yandex/cloud/loadtesting/api/v1/agent_service.proto\x12\x1fyandex.cloud.loadtesting.api.v1\x1a\x1cgoogle/api/annotations.proto\x1a&yandex/cloud/operation/operation.proto\x1a yandex/cloud/api/operation.proto\x1a\x43yandex/cloud/loadtesting/api/v1/agent/create_compute_instance.proto\x1a\x31yandex/cloud/loadtesting/api/v1/agent/agent.proto\x1a\x1dyandex/cloud/validation.proto\"\xfc\x01\n\x12\x43reateAgentRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12]\n\x17\x63ompute_instance_params\x18\x04 \x01(\x0b\x32<.yandex.cloud.loadtesting.api.v1.agent.CreateComputeInstance\x12\x15\n\ragent_version\x18\x05 \x01(\t\"\'\n\x13\x43reateAgentMetadata\x12\x10\n\x08\x61gent_id\x18\x01 \x01(\t\"#\n\x0fGetAgentRequest\x12\x10\n\x08\x61gent_id\x18\x02 \x01(\t\"&\n\x12\x44\x65leteAgentRequest\x12\x10\n\x08\x61gent_id\x18\x01 \x01(\t\"\'\n\x13\x44\x65leteAgentMetadata\x12\x10\n\x08\x61gent_id\x18\x01 \x01(\t2\x94\x04\n\x0c\x41gentService\x12\xac\x01\n\x06\x43reate\x12\x33.yandex.cloud.loadtesting.api.v1.CreateAgentRequest\x1a!.yandex.cloud.operation.Operation\"J\x82\xd3\xe4\x93\x02\x1e\"\x19/loadtesting/api/v1/agent:\x01*\xb2\xd2*\"\n\x13\x43reateAgentMetadata\x12\x0b\x61gent.Agent\x12\x93\x01\n\x03Get\x12\x30.yandex.cloud.loadtesting.api.v1.GetAgentRequest\x1a,.yandex.cloud.loadtesting.api.v1.agent.Agent\",\x82\xd3\xe4\x93\x02&\x12$/loadtesting/api/v1/agent/{agent_id}\x12\xbe\x01\n\x06\x44\x65lete\x12\x33.yandex.cloud.loadtesting.api.v1.DeleteAgentRequest\x1a!.yandex.cloud.operation.Operation\"\\\x82\xd3\xe4\x93\x02&*$/loadtesting/api/v1/agent/{agent_id}\xb2\xd2*,\n\x13\x44\x65leteAgentMetadata\x12\x15google.protobuf.EmptyBv\n#yandex.cloud.api.loadtesting.api.v1ZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadtesting/api/v1;loadtestingb\x06proto3'
+  serialized_pb=b'\n3yandex/cloud/loadtesting/api/v1/agent_service.proto\x12\x1fyandex.cloud.loadtesting.api.v1\x1a\x1cgoogle/api/annotations.proto\x1a&yandex/cloud/operation/operation.proto\x1a yandex/cloud/api/operation.proto\x1a\x43yandex/cloud/loadtesting/api/v1/agent/create_compute_instance.proto\x1a\x31yandex/cloud/loadtesting/api/v1/agent/agent.proto\x1a\x1dyandex/cloud/validation.proto\"\xfc\x01\n\x12\x43reateAgentRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12]\n\x17\x63ompute_instance_params\x18\x04 \x01(\x0b\x32<.yandex.cloud.loadtesting.api.v1.agent.CreateComputeInstance\x12\x15\n\ragent_version\x18\x05 \x01(\t\"\'\n\x13\x43reateAgentMetadata\x12\x10\n\x08\x61gent_id\x18\x01 \x01(\t\"#\n\x0fGetAgentRequest\x12\x10\n\x08\x61gent_id\x18\x02 \x01(\t\"&\n\x12\x44\x65leteAgentRequest\x12\x10\n\x08\x61gent_id\x18\x01 \x01(\t\"\'\n\x13\x44\x65leteAgentMetadata\x12\x10\n\x08\x61gent_id\x18\x01 \x01(\t\"\x8e\x01\n\x11ListAgentsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"v\n\x12ListAgentsResponse\x12<\n\x06\x61gents\x18\x01 \x03(\x0b\x32,.yandex.cloud.loadtesting.api.v1.agent.Agent\x12\"\n\x0fnext_page_token\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=1002\xa9\x05\n\x0c\x41gentService\x12\xac\x01\n\x06\x43reate\x12\x33.yandex.cloud.loadtesting.api.v1.CreateAgentRequest\x1a!.yandex.cloud.operation.Operation\"J\x82\xd3\xe4\x93\x02\x1e\"\x19/loadtesting/api/v1/agent:\x01*\xb2\xd2*\"\n\x13\x43reateAgentMetadata\x12\x0b\x61gent.Agent\x12\x93\x01\n\x03Get\x12\x30.yandex.cloud.loadtesting.api.v1.GetAgentRequest\x1a,.yandex.cloud.loadtesting.api.v1.agent.Agent\",\x82\xd3\xe4\x93\x02&\x12$/loadtesting/api/v1/agent/{agent_id}\x12\x92\x01\n\x04List\x12\x32.yandex.cloud.loadtesting.api.v1.ListAgentsRequest\x1a\x33.yandex.cloud.loadtesting.api.v1.ListAgentsResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/loadtesting/api/v1/agent\x12\xbe\x01\n\x06\x44\x65lete\x12\x33.yandex.cloud.loadtesting.api.v1.DeleteAgentRequest\x1a!.yandex.cloud.operation.Operation\"\\\x82\xd3\xe4\x93\x02&*$/loadtesting/api/v1/agent/{agent_id}\xb2\xd2*,\n\x13\x44\x65leteAgentMetadata\x12\x15google.protobuf.EmptyBv\n#yandex.cloud.api.loadtesting.api.v1ZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadtesting/api/v1;loadtestingb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_agent_dot_create__compute__instance__pb2.DESCRIPTOR,yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_agent_dot_agent__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
 
@@ -219,12 +219,107 @@ _DELETEAGENTMETADATA = _descriptor.Descriptor(
   serialized_end=755,
 )
 
+
+_LISTAGENTSREQUEST = _descriptor.Descriptor(
+  name='ListAgentsRequest',
+  full_name='yandex.cloud.loadtesting.api.v1.ListAgentsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='folder_id', full_name='yandex.cloud.loadtesting.api.v1.ListAgentsRequest.folder_id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='page_size', full_name='yandex.cloud.loadtesting.api.v1.ListAgentsRequest.page_size', index=1,
+      number=2, type=3, cpp_type=2, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='page_token', full_name='yandex.cloud.loadtesting.api.v1.ListAgentsRequest.page_token', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='filter', full_name='yandex.cloud.loadtesting.api.v1.ListAgentsRequest.filter', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\212\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=758,
+  serialized_end=900,
+)
+
+
+_LISTAGENTSRESPONSE = _descriptor.Descriptor(
+  name='ListAgentsResponse',
+  full_name='yandex.cloud.loadtesting.api.v1.ListAgentsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='agents', full_name='yandex.cloud.loadtesting.api.v1.ListAgentsResponse.agents', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='next_page_token', full_name='yandex.cloud.loadtesting.api.v1.ListAgentsResponse.next_page_token', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=902,
+  serialized_end=1020,
+)
+
 _CREATEAGENTREQUEST.fields_by_name['compute_instance_params'].message_type = yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_agent_dot_create__compute__instance__pb2._CREATECOMPUTEINSTANCE
+_LISTAGENTSRESPONSE.fields_by_name['agents'].message_type = yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_agent_dot_agent__pb2._AGENT
 DESCRIPTOR.message_types_by_name['CreateAgentRequest'] = _CREATEAGENTREQUEST
 DESCRIPTOR.message_types_by_name['CreateAgentMetadata'] = _CREATEAGENTMETADATA
 DESCRIPTOR.message_types_by_name['GetAgentRequest'] = _GETAGENTREQUEST
 DESCRIPTOR.message_types_by_name['DeleteAgentRequest'] = _DELETEAGENTREQUEST
 DESCRIPTOR.message_types_by_name['DeleteAgentMetadata'] = _DELETEAGENTMETADATA
+DESCRIPTOR.message_types_by_name['ListAgentsRequest'] = _LISTAGENTSREQUEST
+DESCRIPTOR.message_types_by_name['ListAgentsResponse'] = _LISTAGENTSRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 CreateAgentRequest = _reflection.GeneratedProtocolMessageType('CreateAgentRequest', (_message.Message,), {
@@ -262,11 +357,30 @@ DeleteAgentMetadata = _reflection.GeneratedProtocolMessageType('DeleteAgentMetad
   })
 _sym_db.RegisterMessage(DeleteAgentMetadata)
 
+ListAgentsRequest = _reflection.GeneratedProtocolMessageType('ListAgentsRequest', (_message.Message,), {
+  'DESCRIPTOR' : _LISTAGENTSREQUEST,
+  '__module__' : 'yandex.cloud.loadtesting.api.v1.agent_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.loadtesting.api.v1.ListAgentsRequest)
+  })
+_sym_db.RegisterMessage(ListAgentsRequest)
+
+ListAgentsResponse = _reflection.GeneratedProtocolMessageType('ListAgentsResponse', (_message.Message,), {
+  'DESCRIPTOR' : _LISTAGENTSRESPONSE,
+  '__module__' : 'yandex.cloud.loadtesting.api.v1.agent_service_pb2'
+  # @@protoc_insertion_point(class_scope:yandex.cloud.loadtesting.api.v1.ListAgentsResponse)
+  })
+_sym_db.RegisterMessage(ListAgentsResponse)
+
 
 DESCRIPTOR._options = None
 _CREATEAGENTREQUEST.fields_by_name['folder_id']._options = None
 _CREATEAGENTREQUEST.fields_by_name['name']._options = None
 _CREATEAGENTREQUEST.fields_by_name['description']._options = None
+_LISTAGENTSREQUEST.fields_by_name['folder_id']._options = None
+_LISTAGENTSREQUEST.fields_by_name['page_size']._options = None
+_LISTAGENTSREQUEST.fields_by_name['page_token']._options = None
+_LISTAGENTSREQUEST.fields_by_name['filter']._options = None
+_LISTAGENTSRESPONSE.fields_by_name['next_page_token']._options = None
 
 _AGENTSERVICE = _descriptor.ServiceDescriptor(
   name='AgentService',
@@ -275,8 +389,8 @@ _AGENTSERVICE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=None,
   create_key=_descriptor._internal_create_key,
-  serialized_start=758,
-  serialized_end=1290,
+  serialized_start=1023,
+  serialized_end=1704,
   methods=[
   _descriptor.MethodDescriptor(
     name='Create',
@@ -299,9 +413,19 @@ _AGENTSERVICE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
+    name='List',
+    full_name='yandex.cloud.loadtesting.api.v1.AgentService.List',
+    index=2,
+    containing_service=None,
+    input_type=_LISTAGENTSREQUEST,
+    output_type=_LISTAGENTSRESPONSE,
+    serialized_options=b'\202\323\344\223\002\033\022\031/loadtesting/api/v1/agent',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
     name='Delete',
     full_name='yandex.cloud.loadtesting.api.v1.AgentService.Delete',
-    index=2,
+    index=3,
     containing_service=None,
     input_type=_DELETEAGENTREQUEST,
     output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
