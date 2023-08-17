@@ -3,9 +3,9 @@
 # source: yandex/cloud/ai/vision/v2/image_classifier.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -14,293 +14,25 @@ _sym_db = _symbol_database.Default()
 from yandex.cloud.ai.vision.v2 import image_pb2 as yandex_dot_cloud_dot_ai_dot_vision_dot_v2_dot_image__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/ai/vision/v2/image_classifier.proto',
-  package='yandex.cloud.ai.vision.v2',
-  syntax='proto3',
-  serialized_options=b'\n\035yandex.cloud.api.ai.vision.v2ZDgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/vision/v2;vision',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n0yandex/cloud/ai/vision/v2/image_classifier.proto\x12\x19yandex.cloud.ai.vision.v2\x1a%yandex/cloud/ai/vision/v2/image.proto\"*\n\x05Label\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\"V\n\x0f\x43lassAnnotation\x12/\n\x05label\x18\x01 \x01(\x0b\x32 .yandex.cloud.ai.vision.v2.Label\x12\x12\n\nconfidence\x18\x02 \x01(\x01\"\x8c\x02\n\x17\x43lassifierSpecification\x12\x30\n\x06labels\x18\x01 \x03(\x0b\x32 .yandex.cloud.ai.vision.v2.Label\x12\x62\n\x13\x63lassification_type\x18\x02 \x01(\x0e\x32\x45.yandex.cloud.ai.vision.v2.ClassifierSpecification.ClassificationType\"[\n\x12\x43lassificationType\x12#\n\x1f\x43LASSIFICATION_TYPE_UNSPECIFIED\x10\x00\x12\x0f\n\x0bMULTI_LABEL\x10\x01\x12\x0f\n\x0bMULTI_CLASS\x10\x02\"\xbf\x01\n\x12\x41nnotationResponse\x12\x12\n\nrequest_id\x18\x01 \x01(\t\x12T\n\x18\x63lassifier_specification\x18\x02 \x01(\x0b\x32\x32.yandex.cloud.ai.vision.v2.ClassifierSpecification\x12?\n\x0b\x61nnotations\x18\x03 \x03(\x0b\x32*.yandex.cloud.ai.vision.v2.ClassAnnotation\"D\n\x11\x41nnotationRequest\x12/\n\x05image\x18\x01 \x01(\x0b\x32 .yandex.cloud.ai.vision.v2.ImageBe\n\x1dyandex.cloud.api.ai.vision.v2ZDgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/vision/v2;visionb\x06proto3'
-  ,
-  dependencies=[yandex_dot_cloud_dot_ai_dot_vision_dot_v2_dot_image__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n0yandex/cloud/ai/vision/v2/image_classifier.proto\x12\x19yandex.cloud.ai.vision.v2\x1a%yandex/cloud/ai/vision/v2/image.proto\"*\n\x05Label\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\"V\n\x0f\x43lassAnnotation\x12/\n\x05label\x18\x01 \x01(\x0b\x32 .yandex.cloud.ai.vision.v2.Label\x12\x12\n\nconfidence\x18\x02 \x01(\x01\"\x8c\x02\n\x17\x43lassifierSpecification\x12\x30\n\x06labels\x18\x01 \x03(\x0b\x32 .yandex.cloud.ai.vision.v2.Label\x12\x62\n\x13\x63lassification_type\x18\x02 \x01(\x0e\x32\x45.yandex.cloud.ai.vision.v2.ClassifierSpecification.ClassificationType\"[\n\x12\x43lassificationType\x12#\n\x1f\x43LASSIFICATION_TYPE_UNSPECIFIED\x10\x00\x12\x0f\n\x0bMULTI_LABEL\x10\x01\x12\x0f\n\x0bMULTI_CLASS\x10\x02\"\xbf\x01\n\x12\x41nnotationResponse\x12\x12\n\nrequest_id\x18\x01 \x01(\t\x12T\n\x18\x63lassifier_specification\x18\x02 \x01(\x0b\x32\x32.yandex.cloud.ai.vision.v2.ClassifierSpecification\x12?\n\x0b\x61nnotations\x18\x03 \x03(\x0b\x32*.yandex.cloud.ai.vision.v2.ClassAnnotation\"D\n\x11\x41nnotationRequest\x12/\n\x05image\x18\x01 \x01(\x0b\x32 .yandex.cloud.ai.vision.v2.ImageBe\n\x1dyandex.cloud.api.ai.vision.v2ZDgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/vision/v2;visionb\x06proto3')
 
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.ai.vision.v2.image_classifier_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-_CLASSIFIERSPECIFICATION_CLASSIFICATIONTYPE = _descriptor.EnumDescriptor(
-  name='ClassificationType',
-  full_name='yandex.cloud.ai.vision.v2.ClassifierSpecification.ClassificationType',
-  filename=None,
-  file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='CLASSIFICATION_TYPE_UNSPECIFIED', index=0, number=0,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='MULTI_LABEL', index=1, number=1,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='MULTI_CLASS', index=2, number=2,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-  ],
-  containing_type=None,
-  serialized_options=None,
-  serialized_start=428,
-  serialized_end=519,
-)
-_sym_db.RegisterEnumDescriptor(_CLASSIFIERSPECIFICATION_CLASSIFICATIONTYPE)
-
-
-_LABEL = _descriptor.Descriptor(
-  name='Label',
-  full_name='yandex.cloud.ai.vision.v2.Label',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.ai.vision.v2.Label.name', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='yandex.cloud.ai.vision.v2.Label.description', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=118,
-  serialized_end=160,
-)
-
-
-_CLASSANNOTATION = _descriptor.Descriptor(
-  name='ClassAnnotation',
-  full_name='yandex.cloud.ai.vision.v2.ClassAnnotation',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='label', full_name='yandex.cloud.ai.vision.v2.ClassAnnotation.label', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='confidence', full_name='yandex.cloud.ai.vision.v2.ClassAnnotation.confidence', index=1,
-      number=2, type=1, cpp_type=5, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=162,
-  serialized_end=248,
-)
-
-
-_CLASSIFIERSPECIFICATION = _descriptor.Descriptor(
-  name='ClassifierSpecification',
-  full_name='yandex.cloud.ai.vision.v2.ClassifierSpecification',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='yandex.cloud.ai.vision.v2.ClassifierSpecification.labels', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='classification_type', full_name='yandex.cloud.ai.vision.v2.ClassifierSpecification.classification_type', index=1,
-      number=2, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-    _CLASSIFIERSPECIFICATION_CLASSIFICATIONTYPE,
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=251,
-  serialized_end=519,
-)
-
-
-_ANNOTATIONRESPONSE = _descriptor.Descriptor(
-  name='AnnotationResponse',
-  full_name='yandex.cloud.ai.vision.v2.AnnotationResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='request_id', full_name='yandex.cloud.ai.vision.v2.AnnotationResponse.request_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='classifier_specification', full_name='yandex.cloud.ai.vision.v2.AnnotationResponse.classifier_specification', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='annotations', full_name='yandex.cloud.ai.vision.v2.AnnotationResponse.annotations', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=522,
-  serialized_end=713,
-)
-
-
-_ANNOTATIONREQUEST = _descriptor.Descriptor(
-  name='AnnotationRequest',
-  full_name='yandex.cloud.ai.vision.v2.AnnotationRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='image', full_name='yandex.cloud.ai.vision.v2.AnnotationRequest.image', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=715,
-  serialized_end=783,
-)
-
-_CLASSANNOTATION.fields_by_name['label'].message_type = _LABEL
-_CLASSIFIERSPECIFICATION.fields_by_name['labels'].message_type = _LABEL
-_CLASSIFIERSPECIFICATION.fields_by_name['classification_type'].enum_type = _CLASSIFIERSPECIFICATION_CLASSIFICATIONTYPE
-_CLASSIFIERSPECIFICATION_CLASSIFICATIONTYPE.containing_type = _CLASSIFIERSPECIFICATION
-_ANNOTATIONRESPONSE.fields_by_name['classifier_specification'].message_type = _CLASSIFIERSPECIFICATION
-_ANNOTATIONRESPONSE.fields_by_name['annotations'].message_type = _CLASSANNOTATION
-_ANNOTATIONREQUEST.fields_by_name['image'].message_type = yandex_dot_cloud_dot_ai_dot_vision_dot_v2_dot_image__pb2._IMAGE
-DESCRIPTOR.message_types_by_name['Label'] = _LABEL
-DESCRIPTOR.message_types_by_name['ClassAnnotation'] = _CLASSANNOTATION
-DESCRIPTOR.message_types_by_name['ClassifierSpecification'] = _CLASSIFIERSPECIFICATION
-DESCRIPTOR.message_types_by_name['AnnotationResponse'] = _ANNOTATIONRESPONSE
-DESCRIPTOR.message_types_by_name['AnnotationRequest'] = _ANNOTATIONREQUEST
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-Label = _reflection.GeneratedProtocolMessageType('Label', (_message.Message,), {
-  'DESCRIPTOR' : _LABEL,
-  '__module__' : 'yandex.cloud.ai.vision.v2.image_classifier_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.ai.vision.v2.Label)
-  })
-_sym_db.RegisterMessage(Label)
-
-ClassAnnotation = _reflection.GeneratedProtocolMessageType('ClassAnnotation', (_message.Message,), {
-  'DESCRIPTOR' : _CLASSANNOTATION,
-  '__module__' : 'yandex.cloud.ai.vision.v2.image_classifier_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.ai.vision.v2.ClassAnnotation)
-  })
-_sym_db.RegisterMessage(ClassAnnotation)
-
-ClassifierSpecification = _reflection.GeneratedProtocolMessageType('ClassifierSpecification', (_message.Message,), {
-  'DESCRIPTOR' : _CLASSIFIERSPECIFICATION,
-  '__module__' : 'yandex.cloud.ai.vision.v2.image_classifier_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.ai.vision.v2.ClassifierSpecification)
-  })
-_sym_db.RegisterMessage(ClassifierSpecification)
-
-AnnotationResponse = _reflection.GeneratedProtocolMessageType('AnnotationResponse', (_message.Message,), {
-  'DESCRIPTOR' : _ANNOTATIONRESPONSE,
-  '__module__' : 'yandex.cloud.ai.vision.v2.image_classifier_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.ai.vision.v2.AnnotationResponse)
-  })
-_sym_db.RegisterMessage(AnnotationResponse)
-
-AnnotationRequest = _reflection.GeneratedProtocolMessageType('AnnotationRequest', (_message.Message,), {
-  'DESCRIPTOR' : _ANNOTATIONREQUEST,
-  '__module__' : 'yandex.cloud.ai.vision.v2.image_classifier_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.ai.vision.v2.AnnotationRequest)
-  })
-_sym_db.RegisterMessage(AnnotationRequest)
-
-
-DESCRIPTOR._options = None
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n\035yandex.cloud.api.ai.vision.v2ZDgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/vision/v2;vision'
+  _globals['_LABEL']._serialized_start=118
+  _globals['_LABEL']._serialized_end=160
+  _globals['_CLASSANNOTATION']._serialized_start=162
+  _globals['_CLASSANNOTATION']._serialized_end=248
+  _globals['_CLASSIFIERSPECIFICATION']._serialized_start=251
+  _globals['_CLASSIFIERSPECIFICATION']._serialized_end=519
+  _globals['_CLASSIFIERSPECIFICATION_CLASSIFICATIONTYPE']._serialized_start=428
+  _globals['_CLASSIFIERSPECIFICATION_CLASSIFICATIONTYPE']._serialized_end=519
+  _globals['_ANNOTATIONRESPONSE']._serialized_start=522
+  _globals['_ANNOTATIONRESPONSE']._serialized_end=713
+  _globals['_ANNOTATIONREQUEST']._serialized_start=715
+  _globals['_ANNOTATIONREQUEST']._serialized_end=783
 # @@protoc_insertion_point(module_scope)

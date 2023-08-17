@@ -3,9 +3,9 @@
 # source: yandex/cloud/vpc/v1/address_service.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -19,1000 +19,105 @@ from yandex.cloud.vpc.v1 import address_pb2 as yandex_dot_cloud_dot_vpc_dot_v1_d
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/vpc/v1/address_service.proto',
-  package='yandex.cloud.vpc.v1',
-  syntax='proto3',
-  serialized_options=b'\n\027yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpc',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n)yandex/cloud/vpc/v1/address_service.proto\x12\x13yandex.cloud.vpc.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a!yandex/cloud/vpc/v1/address.proto\x1a\x1dyandex/cloud/validation.proto\"5\n\x11GetAddressRequest\x12 \n\naddress_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"F\n\x18GetAddressByValueRequest\x12\x1f\n\x15\x65xternal_ipv4_address\x18\x01 \x01(\tH\x00\x42\t\n\x07\x61\x64\x64ress\"\x85\x01\n\x14ListAddressesRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\"a\n\x15ListAddressesResponse\x12/\n\taddresses\x18\x01 \x03(\x0b\x32\x1c.yandex.cloud.vpc.v1.Address\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xc1\x03\n\x14\x43reateAddressRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x86\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x35.yandex.cloud.vpc.v1.CreateAddressRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12R\n\x1a\x65xternal_ipv4_address_spec\x18\x05 \x01(\x0b\x32,.yandex.cloud.vpc.v1.ExternalIpv4AddressSpecH\x00\x12\x1b\n\x13\x64\x65letion_protection\x18\n \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0e\n\x0c\x61\x64\x64ress_spec\"{\n\x17\x45xternalIpv4AddressSpec\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x0f\n\x07zone_id\x18\x02 \x01(\t\x12>\n\x0crequirements\x18\x03 \x01(\x0b\x32(.yandex.cloud.vpc.v1.AddressRequirements\"+\n\x15\x43reateAddressMetadata\x12\x12\n\naddress_id\x18\x01 \x01(\t\"\xa1\x03\n\x14UpdateAddressRequest\x12 \n\naddress_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x86\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x35.yandex.cloud.vpc.v1.UpdateAddressRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12\x10\n\x08reserved\x18\x06 \x01(\x08\x12\x1b\n\x13\x64\x65letion_protection\x18\x07 \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15UpdateAddressMetadata\x12\x12\n\naddress_id\x18\x01 \x01(\t\"8\n\x14\x44\x65leteAddressRequest\x12 \n\naddress_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x44\x65leteAddressMetadata\x12\x12\n\naddress_id\x18\x01 \x01(\t\"~\n\x1cListAddressOperationsRequest\x12 \n\naddress_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"o\n\x1dListAddressOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"c\n\x12MoveAddressRequest\x12 \n\naddress_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12+\n\x15\x64\x65stination_folder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\")\n\x13MoveAddressMetadata\x12\x12\n\naddress_id\x18\x01 \x01(\t2\xc7\t\n\x0e\x41\x64\x64ressService\x12s\n\x03Get\x12&.yandex.cloud.vpc.v1.GetAddressRequest\x1a\x1c.yandex.cloud.vpc.v1.Address\"&\x82\xd3\xe4\x93\x02 \x12\x1e/vpc/v1/addresses/{address_id}\x12|\n\nGetByValue\x12-.yandex.cloud.vpc.v1.GetAddressByValueRequest\x1a\x1c.yandex.cloud.vpc.v1.Address\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/vpc/v1/addresses:byValue\x12x\n\x04List\x12).yandex.cloud.vpc.v1.ListAddressesRequest\x1a*.yandex.cloud.vpc.v1.ListAddressesResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/vpc/v1/addresses\x12\x98\x01\n\x06\x43reate\x12).yandex.cloud.vpc.v1.CreateAddressRequest\x1a!.yandex.cloud.operation.Operation\"@\x82\xd3\xe4\x93\x02\x16\"\x11/vpc/v1/addresses:\x01*\xb2\xd2* \n\x15\x43reateAddressMetadata\x12\x07\x41\x64\x64ress\x12\xa5\x01\n\x06Update\x12).yandex.cloud.vpc.v1.UpdateAddressRequest\x1a!.yandex.cloud.operation.Operation\"M\x82\xd3\xe4\x93\x02#2\x1e/vpc/v1/addresses/{address_id}:\x01*\xb2\xd2* \n\x15UpdateAddressMetadata\x12\x07\x41\x64\x64ress\x12\xb0\x01\n\x06\x44\x65lete\x12).yandex.cloud.vpc.v1.DeleteAddressRequest\x1a!.yandex.cloud.operation.Operation\"X\x82\xd3\xe4\x93\x02 *\x1e/vpc/v1/addresses/{address_id}\xb2\xd2*.\n\x15\x44\x65leteAddressMetadata\x12\x15google.protobuf.Empty\x12\xaa\x01\n\x0eListOperations\x12\x31.yandex.cloud.vpc.v1.ListAddressOperationsRequest\x1a\x32.yandex.cloud.vpc.v1.ListAddressOperationsResponse\"1\x82\xd3\xe4\x93\x02+\x12)/vpc/v1/addresses/{address_id}/operations\x12\xa4\x01\n\x04Move\x12\'.yandex.cloud.vpc.v1.MoveAddressRequest\x1a!.yandex.cloud.operation.Operation\"P\x82\xd3\xe4\x93\x02(\"#/vpc/v1/addresses/{address_id}:move:\x01*\xb2\xd2*\x1e\n\x13MoveAddressMetadata\x12\x07\x41\x64\x64ressBV\n\x17yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpcb\x06proto3'
-  ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_vpc_dot_v1_dot_address__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)yandex/cloud/vpc/v1/address_service.proto\x12\x13yandex.cloud.vpc.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a!yandex/cloud/vpc/v1/address.proto\x1a\x1dyandex/cloud/validation.proto\"5\n\x11GetAddressRequest\x12 \n\naddress_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"F\n\x18GetAddressByValueRequest\x12\x1f\n\x15\x65xternal_ipv4_address\x18\x01 \x01(\tH\x00\x42\t\n\x07\x61\x64\x64ress\"\x85\x01\n\x14ListAddressesRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\"a\n\x15ListAddressesResponse\x12/\n\taddresses\x18\x01 \x03(\x0b\x32\x1c.yandex.cloud.vpc.v1.Address\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xbd\x03\n\x14\x43reateAddressRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x82\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x35.yandex.cloud.vpc.v1.CreateAddressRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12R\n\x1a\x65xternal_ipv4_address_spec\x18\x05 \x01(\x0b\x32,.yandex.cloud.vpc.v1.ExternalIpv4AddressSpecH\x00\x12\x1b\n\x13\x64\x65letion_protection\x18\n \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0e\n\x0c\x61\x64\x64ress_spec\"{\n\x17\x45xternalIpv4AddressSpec\x12\x0f\n\x07\x61\x64\x64ress\x18\x01 \x01(\t\x12\x0f\n\x07zone_id\x18\x02 \x01(\t\x12>\n\x0crequirements\x18\x03 \x01(\x0b\x32(.yandex.cloud.vpc.v1.AddressRequirements\"+\n\x15\x43reateAddressMetadata\x12\x12\n\naddress_id\x18\x01 \x01(\t\"\x9d\x03\n\x14UpdateAddressRequest\x12 \n\naddress_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x82\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x35.yandex.cloud.vpc.v1.UpdateAddressRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12\x10\n\x08reserved\x18\x06 \x01(\x08\x12\x1b\n\x13\x64\x65letion_protection\x18\x07 \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15UpdateAddressMetadata\x12\x12\n\naddress_id\x18\x01 \x01(\t\"8\n\x14\x44\x65leteAddressRequest\x12 \n\naddress_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x44\x65leteAddressMetadata\x12\x12\n\naddress_id\x18\x01 \x01(\t\"~\n\x1cListAddressOperationsRequest\x12 \n\naddress_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"o\n\x1dListAddressOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"c\n\x12MoveAddressRequest\x12 \n\naddress_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12+\n\x15\x64\x65stination_folder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\")\n\x13MoveAddressMetadata\x12\x12\n\naddress_id\x18\x01 \x01(\t2\xc7\t\n\x0e\x41\x64\x64ressService\x12s\n\x03Get\x12&.yandex.cloud.vpc.v1.GetAddressRequest\x1a\x1c.yandex.cloud.vpc.v1.Address\"&\x82\xd3\xe4\x93\x02 \x12\x1e/vpc/v1/addresses/{address_id}\x12|\n\nGetByValue\x12-.yandex.cloud.vpc.v1.GetAddressByValueRequest\x1a\x1c.yandex.cloud.vpc.v1.Address\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/vpc/v1/addresses:byValue\x12x\n\x04List\x12).yandex.cloud.vpc.v1.ListAddressesRequest\x1a*.yandex.cloud.vpc.v1.ListAddressesResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/vpc/v1/addresses\x12\x98\x01\n\x06\x43reate\x12).yandex.cloud.vpc.v1.CreateAddressRequest\x1a!.yandex.cloud.operation.Operation\"@\xb2\xd2* \n\x15\x43reateAddressMetadata\x12\x07\x41\x64\x64ress\x82\xd3\xe4\x93\x02\x16\"\x11/vpc/v1/addresses:\x01*\x12\xa5\x01\n\x06Update\x12).yandex.cloud.vpc.v1.UpdateAddressRequest\x1a!.yandex.cloud.operation.Operation\"M\xb2\xd2* \n\x15UpdateAddressMetadata\x12\x07\x41\x64\x64ress\x82\xd3\xe4\x93\x02#2\x1e/vpc/v1/addresses/{address_id}:\x01*\x12\xb0\x01\n\x06\x44\x65lete\x12).yandex.cloud.vpc.v1.DeleteAddressRequest\x1a!.yandex.cloud.operation.Operation\"X\xb2\xd2*.\n\x15\x44\x65leteAddressMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02 *\x1e/vpc/v1/addresses/{address_id}\x12\xaa\x01\n\x0eListOperations\x12\x31.yandex.cloud.vpc.v1.ListAddressOperationsRequest\x1a\x32.yandex.cloud.vpc.v1.ListAddressOperationsResponse\"1\x82\xd3\xe4\x93\x02+\x12)/vpc/v1/addresses/{address_id}/operations\x12\xa4\x01\n\x04Move\x12\'.yandex.cloud.vpc.v1.MoveAddressRequest\x1a!.yandex.cloud.operation.Operation\"P\xb2\xd2*\x1e\n\x13MoveAddressMetadata\x12\x07\x41\x64\x64ress\x82\xd3\xe4\x93\x02(\"#/vpc/v1/addresses/{address_id}:move:\x01*BV\n\x17yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpcb\x06proto3')
 
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.vpc.v1.address_service_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-
-_GETADDRESSREQUEST = _descriptor.Descriptor(
-  name='GetAddressRequest',
-  full_name='yandex.cloud.vpc.v1.GetAddressRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='address_id', full_name='yandex.cloud.vpc.v1.GetAddressRequest.address_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=270,
-  serialized_end=323,
-)
-
-
-_GETADDRESSBYVALUEREQUEST = _descriptor.Descriptor(
-  name='GetAddressByValueRequest',
-  full_name='yandex.cloud.vpc.v1.GetAddressByValueRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='external_ipv4_address', full_name='yandex.cloud.vpc.v1.GetAddressByValueRequest.external_ipv4_address', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-    _descriptor.OneofDescriptor(
-      name='address', full_name='yandex.cloud.vpc.v1.GetAddressByValueRequest.address',
-      index=0, containing_type=None,
-      create_key=_descriptor._internal_create_key,
-    fields=[]),
-  ],
-  serialized_start=325,
-  serialized_end=395,
-)
-
-
-_LISTADDRESSESREQUEST = _descriptor.Descriptor(
-  name='ListAddressesRequest',
-  full_name='yandex.cloud.vpc.v1.ListAddressesRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.vpc.v1.ListAddressesRequest.folder_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.vpc.v1.ListAddressesRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.vpc.v1.ListAddressesRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='filter', full_name='yandex.cloud.vpc.v1.ListAddressesRequest.filter', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=398,
-  serialized_end=531,
-)
-
-
-_LISTADDRESSESRESPONSE = _descriptor.Descriptor(
-  name='ListAddressesResponse',
-  full_name='yandex.cloud.vpc.v1.ListAddressesResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='addresses', full_name='yandex.cloud.vpc.v1.ListAddressesResponse.addresses', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.vpc.v1.ListAddressesResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=533,
-  serialized_end=630,
-)
-
-
-_CREATEADDRESSREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='yandex.cloud.vpc.v1.CreateAddressRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='yandex.cloud.vpc.v1.CreateAddressRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='yandex.cloud.vpc.v1.CreateAddressRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1021,
-  serialized_end=1066,
-)
-
-_CREATEADDRESSREQUEST = _descriptor.Descriptor(
-  name='CreateAddressRequest',
-  full_name='yandex.cloud.vpc.v1.CreateAddressRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.vpc.v1.CreateAddressRequest.folder_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.vpc.v1.CreateAddressRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='yandex.cloud.vpc.v1.CreateAddressRequest.description', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='yandex.cloud.vpc.v1.CreateAddressRequest.labels', index=3,
-      number=4, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='external_ipv4_address_spec', full_name='yandex.cloud.vpc.v1.CreateAddressRequest.external_ipv4_address_spec', index=4,
-      number=5, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='deletion_protection', full_name='yandex.cloud.vpc.v1.CreateAddressRequest.deletion_protection', index=5,
-      number=10, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_CREATEADDRESSREQUEST_LABELSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-    _descriptor.OneofDescriptor(
-      name='address_spec', full_name='yandex.cloud.vpc.v1.CreateAddressRequest.address_spec',
-      index=0, containing_type=None,
-      create_key=_descriptor._internal_create_key,
-    fields=[]),
-  ],
-  serialized_start=633,
-  serialized_end=1082,
-)
-
-
-_EXTERNALIPV4ADDRESSSPEC = _descriptor.Descriptor(
-  name='ExternalIpv4AddressSpec',
-  full_name='yandex.cloud.vpc.v1.ExternalIpv4AddressSpec',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='address', full_name='yandex.cloud.vpc.v1.ExternalIpv4AddressSpec.address', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='zone_id', full_name='yandex.cloud.vpc.v1.ExternalIpv4AddressSpec.zone_id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='requirements', full_name='yandex.cloud.vpc.v1.ExternalIpv4AddressSpec.requirements', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1084,
-  serialized_end=1207,
-)
-
-
-_CREATEADDRESSMETADATA = _descriptor.Descriptor(
-  name='CreateAddressMetadata',
-  full_name='yandex.cloud.vpc.v1.CreateAddressMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='address_id', full_name='yandex.cloud.vpc.v1.CreateAddressMetadata.address_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1209,
-  serialized_end=1252,
-)
-
-
-_UPDATEADDRESSREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='yandex.cloud.vpc.v1.UpdateAddressRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='yandex.cloud.vpc.v1.UpdateAddressRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='yandex.cloud.vpc.v1.UpdateAddressRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1021,
-  serialized_end=1066,
-)
-
-_UPDATEADDRESSREQUEST = _descriptor.Descriptor(
-  name='UpdateAddressRequest',
-  full_name='yandex.cloud.vpc.v1.UpdateAddressRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='address_id', full_name='yandex.cloud.vpc.v1.UpdateAddressRequest.address_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='update_mask', full_name='yandex.cloud.vpc.v1.UpdateAddressRequest.update_mask', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.vpc.v1.UpdateAddressRequest.name', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='yandex.cloud.vpc.v1.UpdateAddressRequest.description', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='yandex.cloud.vpc.v1.UpdateAddressRequest.labels', index=4,
-      number=5, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='reserved', full_name='yandex.cloud.vpc.v1.UpdateAddressRequest.reserved', index=5,
-      number=6, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='deletion_protection', full_name='yandex.cloud.vpc.v1.UpdateAddressRequest.deletion_protection', index=6,
-      number=7, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_UPDATEADDRESSREQUEST_LABELSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1255,
-  serialized_end=1672,
-)
-
-
-_UPDATEADDRESSMETADATA = _descriptor.Descriptor(
-  name='UpdateAddressMetadata',
-  full_name='yandex.cloud.vpc.v1.UpdateAddressMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='address_id', full_name='yandex.cloud.vpc.v1.UpdateAddressMetadata.address_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1674,
-  serialized_end=1717,
-)
-
-
-_DELETEADDRESSREQUEST = _descriptor.Descriptor(
-  name='DeleteAddressRequest',
-  full_name='yandex.cloud.vpc.v1.DeleteAddressRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='address_id', full_name='yandex.cloud.vpc.v1.DeleteAddressRequest.address_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1719,
-  serialized_end=1775,
-)
-
-
-_DELETEADDRESSMETADATA = _descriptor.Descriptor(
-  name='DeleteAddressMetadata',
-  full_name='yandex.cloud.vpc.v1.DeleteAddressMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='address_id', full_name='yandex.cloud.vpc.v1.DeleteAddressMetadata.address_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1777,
-  serialized_end=1820,
-)
-
-
-_LISTADDRESSOPERATIONSREQUEST = _descriptor.Descriptor(
-  name='ListAddressOperationsRequest',
-  full_name='yandex.cloud.vpc.v1.ListAddressOperationsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='address_id', full_name='yandex.cloud.vpc.v1.ListAddressOperationsRequest.address_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.vpc.v1.ListAddressOperationsRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.vpc.v1.ListAddressOperationsRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1822,
-  serialized_end=1948,
-)
-
-
-_LISTADDRESSOPERATIONSRESPONSE = _descriptor.Descriptor(
-  name='ListAddressOperationsResponse',
-  full_name='yandex.cloud.vpc.v1.ListAddressOperationsResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='operations', full_name='yandex.cloud.vpc.v1.ListAddressOperationsResponse.operations', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.vpc.v1.ListAddressOperationsResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1950,
-  serialized_end=2061,
-)
-
-
-_MOVEADDRESSREQUEST = _descriptor.Descriptor(
-  name='MoveAddressRequest',
-  full_name='yandex.cloud.vpc.v1.MoveAddressRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='address_id', full_name='yandex.cloud.vpc.v1.MoveAddressRequest.address_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='destination_folder_id', full_name='yandex.cloud.vpc.v1.MoveAddressRequest.destination_folder_id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2063,
-  serialized_end=2162,
-)
-
-
-_MOVEADDRESSMETADATA = _descriptor.Descriptor(
-  name='MoveAddressMetadata',
-  full_name='yandex.cloud.vpc.v1.MoveAddressMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='address_id', full_name='yandex.cloud.vpc.v1.MoveAddressMetadata.address_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2164,
-  serialized_end=2205,
-)
-
-_GETADDRESSBYVALUEREQUEST.oneofs_by_name['address'].fields.append(
-  _GETADDRESSBYVALUEREQUEST.fields_by_name['external_ipv4_address'])
-_GETADDRESSBYVALUEREQUEST.fields_by_name['external_ipv4_address'].containing_oneof = _GETADDRESSBYVALUEREQUEST.oneofs_by_name['address']
-_LISTADDRESSESRESPONSE.fields_by_name['addresses'].message_type = yandex_dot_cloud_dot_vpc_dot_v1_dot_address__pb2._ADDRESS
-_CREATEADDRESSREQUEST_LABELSENTRY.containing_type = _CREATEADDRESSREQUEST
-_CREATEADDRESSREQUEST.fields_by_name['labels'].message_type = _CREATEADDRESSREQUEST_LABELSENTRY
-_CREATEADDRESSREQUEST.fields_by_name['external_ipv4_address_spec'].message_type = _EXTERNALIPV4ADDRESSSPEC
-_CREATEADDRESSREQUEST.oneofs_by_name['address_spec'].fields.append(
-  _CREATEADDRESSREQUEST.fields_by_name['external_ipv4_address_spec'])
-_CREATEADDRESSREQUEST.fields_by_name['external_ipv4_address_spec'].containing_oneof = _CREATEADDRESSREQUEST.oneofs_by_name['address_spec']
-_EXTERNALIPV4ADDRESSSPEC.fields_by_name['requirements'].message_type = yandex_dot_cloud_dot_vpc_dot_v1_dot_address__pb2._ADDRESSREQUIREMENTS
-_UPDATEADDRESSREQUEST_LABELSENTRY.containing_type = _UPDATEADDRESSREQUEST
-_UPDATEADDRESSREQUEST.fields_by_name['update_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
-_UPDATEADDRESSREQUEST.fields_by_name['labels'].message_type = _UPDATEADDRESSREQUEST_LABELSENTRY
-_LISTADDRESSOPERATIONSRESPONSE.fields_by_name['operations'].message_type = yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION
-DESCRIPTOR.message_types_by_name['GetAddressRequest'] = _GETADDRESSREQUEST
-DESCRIPTOR.message_types_by_name['GetAddressByValueRequest'] = _GETADDRESSBYVALUEREQUEST
-DESCRIPTOR.message_types_by_name['ListAddressesRequest'] = _LISTADDRESSESREQUEST
-DESCRIPTOR.message_types_by_name['ListAddressesResponse'] = _LISTADDRESSESRESPONSE
-DESCRIPTOR.message_types_by_name['CreateAddressRequest'] = _CREATEADDRESSREQUEST
-DESCRIPTOR.message_types_by_name['ExternalIpv4AddressSpec'] = _EXTERNALIPV4ADDRESSSPEC
-DESCRIPTOR.message_types_by_name['CreateAddressMetadata'] = _CREATEADDRESSMETADATA
-DESCRIPTOR.message_types_by_name['UpdateAddressRequest'] = _UPDATEADDRESSREQUEST
-DESCRIPTOR.message_types_by_name['UpdateAddressMetadata'] = _UPDATEADDRESSMETADATA
-DESCRIPTOR.message_types_by_name['DeleteAddressRequest'] = _DELETEADDRESSREQUEST
-DESCRIPTOR.message_types_by_name['DeleteAddressMetadata'] = _DELETEADDRESSMETADATA
-DESCRIPTOR.message_types_by_name['ListAddressOperationsRequest'] = _LISTADDRESSOPERATIONSREQUEST
-DESCRIPTOR.message_types_by_name['ListAddressOperationsResponse'] = _LISTADDRESSOPERATIONSRESPONSE
-DESCRIPTOR.message_types_by_name['MoveAddressRequest'] = _MOVEADDRESSREQUEST
-DESCRIPTOR.message_types_by_name['MoveAddressMetadata'] = _MOVEADDRESSMETADATA
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-GetAddressRequest = _reflection.GeneratedProtocolMessageType('GetAddressRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETADDRESSREQUEST,
-  '__module__' : 'yandex.cloud.vpc.v1.address_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.GetAddressRequest)
-  })
-_sym_db.RegisterMessage(GetAddressRequest)
-
-GetAddressByValueRequest = _reflection.GeneratedProtocolMessageType('GetAddressByValueRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETADDRESSBYVALUEREQUEST,
-  '__module__' : 'yandex.cloud.vpc.v1.address_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.GetAddressByValueRequest)
-  })
-_sym_db.RegisterMessage(GetAddressByValueRequest)
-
-ListAddressesRequest = _reflection.GeneratedProtocolMessageType('ListAddressesRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTADDRESSESREQUEST,
-  '__module__' : 'yandex.cloud.vpc.v1.address_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.ListAddressesRequest)
-  })
-_sym_db.RegisterMessage(ListAddressesRequest)
-
-ListAddressesResponse = _reflection.GeneratedProtocolMessageType('ListAddressesResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTADDRESSESRESPONSE,
-  '__module__' : 'yandex.cloud.vpc.v1.address_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.ListAddressesResponse)
-  })
-_sym_db.RegisterMessage(ListAddressesResponse)
-
-CreateAddressRequest = _reflection.GeneratedProtocolMessageType('CreateAddressRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _CREATEADDRESSREQUEST_LABELSENTRY,
-    '__module__' : 'yandex.cloud.vpc.v1.address_service_pb2'
-    # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.CreateAddressRequest.LabelsEntry)
-    })
-  ,
-  'DESCRIPTOR' : _CREATEADDRESSREQUEST,
-  '__module__' : 'yandex.cloud.vpc.v1.address_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.CreateAddressRequest)
-  })
-_sym_db.RegisterMessage(CreateAddressRequest)
-_sym_db.RegisterMessage(CreateAddressRequest.LabelsEntry)
-
-ExternalIpv4AddressSpec = _reflection.GeneratedProtocolMessageType('ExternalIpv4AddressSpec', (_message.Message,), {
-  'DESCRIPTOR' : _EXTERNALIPV4ADDRESSSPEC,
-  '__module__' : 'yandex.cloud.vpc.v1.address_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.ExternalIpv4AddressSpec)
-  })
-_sym_db.RegisterMessage(ExternalIpv4AddressSpec)
-
-CreateAddressMetadata = _reflection.GeneratedProtocolMessageType('CreateAddressMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _CREATEADDRESSMETADATA,
-  '__module__' : 'yandex.cloud.vpc.v1.address_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.CreateAddressMetadata)
-  })
-_sym_db.RegisterMessage(CreateAddressMetadata)
-
-UpdateAddressRequest = _reflection.GeneratedProtocolMessageType('UpdateAddressRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _UPDATEADDRESSREQUEST_LABELSENTRY,
-    '__module__' : 'yandex.cloud.vpc.v1.address_service_pb2'
-    # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.UpdateAddressRequest.LabelsEntry)
-    })
-  ,
-  'DESCRIPTOR' : _UPDATEADDRESSREQUEST,
-  '__module__' : 'yandex.cloud.vpc.v1.address_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.UpdateAddressRequest)
-  })
-_sym_db.RegisterMessage(UpdateAddressRequest)
-_sym_db.RegisterMessage(UpdateAddressRequest.LabelsEntry)
-
-UpdateAddressMetadata = _reflection.GeneratedProtocolMessageType('UpdateAddressMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATEADDRESSMETADATA,
-  '__module__' : 'yandex.cloud.vpc.v1.address_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.UpdateAddressMetadata)
-  })
-_sym_db.RegisterMessage(UpdateAddressMetadata)
-
-DeleteAddressRequest = _reflection.GeneratedProtocolMessageType('DeleteAddressRequest', (_message.Message,), {
-  'DESCRIPTOR' : _DELETEADDRESSREQUEST,
-  '__module__' : 'yandex.cloud.vpc.v1.address_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.DeleteAddressRequest)
-  })
-_sym_db.RegisterMessage(DeleteAddressRequest)
-
-DeleteAddressMetadata = _reflection.GeneratedProtocolMessageType('DeleteAddressMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _DELETEADDRESSMETADATA,
-  '__module__' : 'yandex.cloud.vpc.v1.address_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.DeleteAddressMetadata)
-  })
-_sym_db.RegisterMessage(DeleteAddressMetadata)
-
-ListAddressOperationsRequest = _reflection.GeneratedProtocolMessageType('ListAddressOperationsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTADDRESSOPERATIONSREQUEST,
-  '__module__' : 'yandex.cloud.vpc.v1.address_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.ListAddressOperationsRequest)
-  })
-_sym_db.RegisterMessage(ListAddressOperationsRequest)
-
-ListAddressOperationsResponse = _reflection.GeneratedProtocolMessageType('ListAddressOperationsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTADDRESSOPERATIONSRESPONSE,
-  '__module__' : 'yandex.cloud.vpc.v1.address_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.ListAddressOperationsResponse)
-  })
-_sym_db.RegisterMessage(ListAddressOperationsResponse)
-
-MoveAddressRequest = _reflection.GeneratedProtocolMessageType('MoveAddressRequest', (_message.Message,), {
-  'DESCRIPTOR' : _MOVEADDRESSREQUEST,
-  '__module__' : 'yandex.cloud.vpc.v1.address_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.MoveAddressRequest)
-  })
-_sym_db.RegisterMessage(MoveAddressRequest)
-
-MoveAddressMetadata = _reflection.GeneratedProtocolMessageType('MoveAddressMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _MOVEADDRESSMETADATA,
-  '__module__' : 'yandex.cloud.vpc.v1.address_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.MoveAddressMetadata)
-  })
-_sym_db.RegisterMessage(MoveAddressMetadata)
-
-
-DESCRIPTOR._options = None
-_GETADDRESSREQUEST.fields_by_name['address_id']._options = None
-_LISTADDRESSESREQUEST.fields_by_name['folder_id']._options = None
-_LISTADDRESSESREQUEST.fields_by_name['page_size']._options = None
-_LISTADDRESSESREQUEST.fields_by_name['page_token']._options = None
-_CREATEADDRESSREQUEST_LABELSENTRY._options = None
-_CREATEADDRESSREQUEST.fields_by_name['folder_id']._options = None
-_CREATEADDRESSREQUEST.fields_by_name['name']._options = None
-_CREATEADDRESSREQUEST.fields_by_name['description']._options = None
-_CREATEADDRESSREQUEST.fields_by_name['labels']._options = None
-_UPDATEADDRESSREQUEST_LABELSENTRY._options = None
-_UPDATEADDRESSREQUEST.fields_by_name['address_id']._options = None
-_UPDATEADDRESSREQUEST.fields_by_name['name']._options = None
-_UPDATEADDRESSREQUEST.fields_by_name['description']._options = None
-_UPDATEADDRESSREQUEST.fields_by_name['labels']._options = None
-_DELETEADDRESSREQUEST.fields_by_name['address_id']._options = None
-_LISTADDRESSOPERATIONSREQUEST.fields_by_name['address_id']._options = None
-_LISTADDRESSOPERATIONSREQUEST.fields_by_name['page_size']._options = None
-_LISTADDRESSOPERATIONSREQUEST.fields_by_name['page_token']._options = None
-_MOVEADDRESSREQUEST.fields_by_name['address_id']._options = None
-_MOVEADDRESSREQUEST.fields_by_name['destination_folder_id']._options = None
-
-_ADDRESSSERVICE = _descriptor.ServiceDescriptor(
-  name='AddressService',
-  full_name='yandex.cloud.vpc.v1.AddressService',
-  file=DESCRIPTOR,
-  index=0,
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_start=2208,
-  serialized_end=3431,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='Get',
-    full_name='yandex.cloud.vpc.v1.AddressService.Get',
-    index=0,
-    containing_service=None,
-    input_type=_GETADDRESSREQUEST,
-    output_type=yandex_dot_cloud_dot_vpc_dot_v1_dot_address__pb2._ADDRESS,
-    serialized_options=b'\202\323\344\223\002 \022\036/vpc/v1/addresses/{address_id}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='GetByValue',
-    full_name='yandex.cloud.vpc.v1.AddressService.GetByValue',
-    index=1,
-    containing_service=None,
-    input_type=_GETADDRESSBYVALUEREQUEST,
-    output_type=yandex_dot_cloud_dot_vpc_dot_v1_dot_address__pb2._ADDRESS,
-    serialized_options=b'\202\323\344\223\002\033\022\031/vpc/v1/addresses:byValue',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='List',
-    full_name='yandex.cloud.vpc.v1.AddressService.List',
-    index=2,
-    containing_service=None,
-    input_type=_LISTADDRESSESREQUEST,
-    output_type=_LISTADDRESSESRESPONSE,
-    serialized_options=b'\202\323\344\223\002\023\022\021/vpc/v1/addresses',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Create',
-    full_name='yandex.cloud.vpc.v1.AddressService.Create',
-    index=3,
-    containing_service=None,
-    input_type=_CREATEADDRESSREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002\026\"\021/vpc/v1/addresses:\001*\262\322* \n\025CreateAddressMetadata\022\007Address',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Update',
-    full_name='yandex.cloud.vpc.v1.AddressService.Update',
-    index=4,
-    containing_service=None,
-    input_type=_UPDATEADDRESSREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002#2\036/vpc/v1/addresses/{address_id}:\001*\262\322* \n\025UpdateAddressMetadata\022\007Address',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Delete',
-    full_name='yandex.cloud.vpc.v1.AddressService.Delete',
-    index=5,
-    containing_service=None,
-    input_type=_DELETEADDRESSREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002 *\036/vpc/v1/addresses/{address_id}\262\322*.\n\025DeleteAddressMetadata\022\025google.protobuf.Empty',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListOperations',
-    full_name='yandex.cloud.vpc.v1.AddressService.ListOperations',
-    index=6,
-    containing_service=None,
-    input_type=_LISTADDRESSOPERATIONSREQUEST,
-    output_type=_LISTADDRESSOPERATIONSRESPONSE,
-    serialized_options=b'\202\323\344\223\002+\022)/vpc/v1/addresses/{address_id}/operations',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Move',
-    full_name='yandex.cloud.vpc.v1.AddressService.Move',
-    index=7,
-    containing_service=None,
-    input_type=_MOVEADDRESSREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002(\"#/vpc/v1/addresses/{address_id}:move:\001*\262\322*\036\n\023MoveAddressMetadata\022\007Address',
-    create_key=_descriptor._internal_create_key,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_ADDRESSSERVICE)
-
-DESCRIPTOR.services_by_name['AddressService'] = _ADDRESSSERVICE
-
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n\027yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpc'
+  _GETADDRESSREQUEST.fields_by_name['address_id']._options = None
+  _GETADDRESSREQUEST.fields_by_name['address_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTADDRESSESREQUEST.fields_by_name['folder_id']._options = None
+  _LISTADDRESSESREQUEST.fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTADDRESSESREQUEST.fields_by_name['page_size']._options = None
+  _LISTADDRESSESREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
+  _LISTADDRESSESREQUEST.fields_by_name['page_token']._options = None
+  _LISTADDRESSESREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
+  _CREATEADDRESSREQUEST_LABELSENTRY._options = None
+  _CREATEADDRESSREQUEST_LABELSENTRY._serialized_options = b'8\001'
+  _CREATEADDRESSREQUEST.fields_by_name['folder_id']._options = None
+  _CREATEADDRESSREQUEST.fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _CREATEADDRESSREQUEST.fields_by_name['name']._options = None
+  _CREATEADDRESSREQUEST.fields_by_name['name']._serialized_options = b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'
+  _CREATEADDRESSREQUEST.fields_by_name['description']._options = None
+  _CREATEADDRESSREQUEST.fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
+  _CREATEADDRESSREQUEST.fields_by_name['labels']._options = None
+  _CREATEADDRESSREQUEST.fields_by_name['labels']._serialized_options = b'\362\3071\013[-_0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\0041-63'
+  _UPDATEADDRESSREQUEST_LABELSENTRY._options = None
+  _UPDATEADDRESSREQUEST_LABELSENTRY._serialized_options = b'8\001'
+  _UPDATEADDRESSREQUEST.fields_by_name['address_id']._options = None
+  _UPDATEADDRESSREQUEST.fields_by_name['address_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _UPDATEADDRESSREQUEST.fields_by_name['name']._options = None
+  _UPDATEADDRESSREQUEST.fields_by_name['name']._serialized_options = b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'
+  _UPDATEADDRESSREQUEST.fields_by_name['description']._options = None
+  _UPDATEADDRESSREQUEST.fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
+  _UPDATEADDRESSREQUEST.fields_by_name['labels']._options = None
+  _UPDATEADDRESSREQUEST.fields_by_name['labels']._serialized_options = b'\362\3071\013[-_0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\0041-63'
+  _DELETEADDRESSREQUEST.fields_by_name['address_id']._options = None
+  _DELETEADDRESSREQUEST.fields_by_name['address_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTADDRESSOPERATIONSREQUEST.fields_by_name['address_id']._options = None
+  _LISTADDRESSOPERATIONSREQUEST.fields_by_name['address_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTADDRESSOPERATIONSREQUEST.fields_by_name['page_size']._options = None
+  _LISTADDRESSOPERATIONSREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
+  _LISTADDRESSOPERATIONSREQUEST.fields_by_name['page_token']._options = None
+  _LISTADDRESSOPERATIONSREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
+  _MOVEADDRESSREQUEST.fields_by_name['address_id']._options = None
+  _MOVEADDRESSREQUEST.fields_by_name['address_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _MOVEADDRESSREQUEST.fields_by_name['destination_folder_id']._options = None
+  _MOVEADDRESSREQUEST.fields_by_name['destination_folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _ADDRESSSERVICE.methods_by_name['Get']._options = None
+  _ADDRESSSERVICE.methods_by_name['Get']._serialized_options = b'\202\323\344\223\002 \022\036/vpc/v1/addresses/{address_id}'
+  _ADDRESSSERVICE.methods_by_name['GetByValue']._options = None
+  _ADDRESSSERVICE.methods_by_name['GetByValue']._serialized_options = b'\202\323\344\223\002\033\022\031/vpc/v1/addresses:byValue'
+  _ADDRESSSERVICE.methods_by_name['List']._options = None
+  _ADDRESSSERVICE.methods_by_name['List']._serialized_options = b'\202\323\344\223\002\023\022\021/vpc/v1/addresses'
+  _ADDRESSSERVICE.methods_by_name['Create']._options = None
+  _ADDRESSSERVICE.methods_by_name['Create']._serialized_options = b'\262\322* \n\025CreateAddressMetadata\022\007Address\202\323\344\223\002\026\"\021/vpc/v1/addresses:\001*'
+  _ADDRESSSERVICE.methods_by_name['Update']._options = None
+  _ADDRESSSERVICE.methods_by_name['Update']._serialized_options = b'\262\322* \n\025UpdateAddressMetadata\022\007Address\202\323\344\223\002#2\036/vpc/v1/addresses/{address_id}:\001*'
+  _ADDRESSSERVICE.methods_by_name['Delete']._options = None
+  _ADDRESSSERVICE.methods_by_name['Delete']._serialized_options = b'\262\322*.\n\025DeleteAddressMetadata\022\025google.protobuf.Empty\202\323\344\223\002 *\036/vpc/v1/addresses/{address_id}'
+  _ADDRESSSERVICE.methods_by_name['ListOperations']._options = None
+  _ADDRESSSERVICE.methods_by_name['ListOperations']._serialized_options = b'\202\323\344\223\002+\022)/vpc/v1/addresses/{address_id}/operations'
+  _ADDRESSSERVICE.methods_by_name['Move']._options = None
+  _ADDRESSSERVICE.methods_by_name['Move']._serialized_options = b'\262\322*\036\n\023MoveAddressMetadata\022\007Address\202\323\344\223\002(\"#/vpc/v1/addresses/{address_id}:move:\001*'
+  _globals['_GETADDRESSREQUEST']._serialized_start=270
+  _globals['_GETADDRESSREQUEST']._serialized_end=323
+  _globals['_GETADDRESSBYVALUEREQUEST']._serialized_start=325
+  _globals['_GETADDRESSBYVALUEREQUEST']._serialized_end=395
+  _globals['_LISTADDRESSESREQUEST']._serialized_start=398
+  _globals['_LISTADDRESSESREQUEST']._serialized_end=531
+  _globals['_LISTADDRESSESRESPONSE']._serialized_start=533
+  _globals['_LISTADDRESSESRESPONSE']._serialized_end=630
+  _globals['_CREATEADDRESSREQUEST']._serialized_start=633
+  _globals['_CREATEADDRESSREQUEST']._serialized_end=1078
+  _globals['_CREATEADDRESSREQUEST_LABELSENTRY']._serialized_start=1017
+  _globals['_CREATEADDRESSREQUEST_LABELSENTRY']._serialized_end=1062
+  _globals['_EXTERNALIPV4ADDRESSSPEC']._serialized_start=1080
+  _globals['_EXTERNALIPV4ADDRESSSPEC']._serialized_end=1203
+  _globals['_CREATEADDRESSMETADATA']._serialized_start=1205
+  _globals['_CREATEADDRESSMETADATA']._serialized_end=1248
+  _globals['_UPDATEADDRESSREQUEST']._serialized_start=1251
+  _globals['_UPDATEADDRESSREQUEST']._serialized_end=1664
+  _globals['_UPDATEADDRESSREQUEST_LABELSENTRY']._serialized_start=1017
+  _globals['_UPDATEADDRESSREQUEST_LABELSENTRY']._serialized_end=1062
+  _globals['_UPDATEADDRESSMETADATA']._serialized_start=1666
+  _globals['_UPDATEADDRESSMETADATA']._serialized_end=1709
+  _globals['_DELETEADDRESSREQUEST']._serialized_start=1711
+  _globals['_DELETEADDRESSREQUEST']._serialized_end=1767
+  _globals['_DELETEADDRESSMETADATA']._serialized_start=1769
+  _globals['_DELETEADDRESSMETADATA']._serialized_end=1812
+  _globals['_LISTADDRESSOPERATIONSREQUEST']._serialized_start=1814
+  _globals['_LISTADDRESSOPERATIONSREQUEST']._serialized_end=1940
+  _globals['_LISTADDRESSOPERATIONSRESPONSE']._serialized_start=1942
+  _globals['_LISTADDRESSOPERATIONSRESPONSE']._serialized_end=2053
+  _globals['_MOVEADDRESSREQUEST']._serialized_start=2055
+  _globals['_MOVEADDRESSREQUEST']._serialized_end=2154
+  _globals['_MOVEADDRESSMETADATA']._serialized_start=2156
+  _globals['_MOVEADDRESSMETADATA']._serialized_end=2197
+  _globals['_ADDRESSSERVICE']._serialized_start=2200
+  _globals['_ADDRESSSERVICE']._serialized_end=3423
 # @@protoc_insertion_point(module_scope)

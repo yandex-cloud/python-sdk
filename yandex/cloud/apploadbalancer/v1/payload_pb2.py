@@ -3,9 +3,9 @@
 # source: yandex/cloud/apploadbalancer/v1/payload.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -14,70 +14,19 @@ _sym_db = _symbol_database.Default()
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/apploadbalancer/v1/payload.proto',
-  package='yandex.cloud.apploadbalancer.v1',
-  syntax='proto3',
-  serialized_options=b'\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancer',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n-yandex/cloud/apploadbalancer/v1/payload.proto\x12\x1fyandex.cloud.apploadbalancer.v1\x1a\x1dyandex/cloud/validation.proto\"2\n\x07Payload\x12\x16\n\x04text\x18\x01 \x01(\tB\x06\x8a\xc8\x31\x02>0H\x00\x42\x0f\n\x07payload\x12\x04\xc0\xc1\x31\x01\x42z\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancerb\x06proto3'
-  ,
-  dependencies=[yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n-yandex/cloud/apploadbalancer/v1/payload.proto\x12\x1fyandex.cloud.apploadbalancer.v1\x1a\x1dyandex/cloud/validation.proto\"2\n\x07Payload\x12\x16\n\x04text\x18\x01 \x01(\tB\x06\x8a\xc8\x31\x02>0H\x00\x42\x0f\n\x07payload\x12\x04\xc0\xc1\x31\x01\x42z\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancerb\x06proto3')
 
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.apploadbalancer.v1.payload_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-
-_PAYLOAD = _descriptor.Descriptor(
-  name='Payload',
-  full_name='yandex.cloud.apploadbalancer.v1.Payload',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='text', full_name='yandex.cloud.apploadbalancer.v1.Payload.text', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\002>0', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-    _descriptor.OneofDescriptor(
-      name='payload', full_name='yandex.cloud.apploadbalancer.v1.Payload.payload',
-      index=0, containing_type=None,
-      create_key=_descriptor._internal_create_key,
-    fields=[], serialized_options=b'\300\3011\001'),
-  ],
-  serialized_start=113,
-  serialized_end=163,
-)
-
-_PAYLOAD.oneofs_by_name['payload'].fields.append(
-  _PAYLOAD.fields_by_name['text'])
-_PAYLOAD.fields_by_name['text'].containing_oneof = _PAYLOAD.oneofs_by_name['payload']
-DESCRIPTOR.message_types_by_name['Payload'] = _PAYLOAD
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-Payload = _reflection.GeneratedProtocolMessageType('Payload', (_message.Message,), {
-  'DESCRIPTOR' : _PAYLOAD,
-  '__module__' : 'yandex.cloud.apploadbalancer.v1.payload_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.apploadbalancer.v1.Payload)
-  })
-_sym_db.RegisterMessage(Payload)
-
-
-DESCRIPTOR._options = None
-_PAYLOAD.oneofs_by_name['payload']._options = None
-_PAYLOAD.fields_by_name['text']._options = None
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancer'
+  _PAYLOAD.oneofs_by_name['payload']._options = None
+  _PAYLOAD.oneofs_by_name['payload']._serialized_options = b'\300\3011\001'
+  _PAYLOAD.fields_by_name['text']._options = None
+  _PAYLOAD.fields_by_name['text']._serialized_options = b'\212\3101\002>0'
+  _globals['_PAYLOAD']._serialized_start=113
+  _globals['_PAYLOAD']._serialized_end=163
 # @@protoc_insertion_point(module_scope)

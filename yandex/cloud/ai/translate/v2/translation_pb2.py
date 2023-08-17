@@ -3,9 +3,9 @@
 # source: yandex/cloud/ai/translate/v2/translation.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -13,113 +13,17 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/ai/translate/v2/translation.proto',
-  package='yandex.cloud.ai.translate.v2',
-  syntax='proto3',
-  serialized_options=b'\n yandex.cloud.api.ai.translate.v2ZJgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/translate/v2;translate',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n.yandex/cloud/ai/translate/v2/translation.proto\x12\x1cyandex.cloud.ai.translate.v2\">\n\x0eTranslatedText\x12\x0c\n\x04text\x18\x01 \x01(\t\x12\x1e\n\x16\x64\x65tected_language_code\x18\x02 \x01(\t\"&\n\x08Language\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\tBn\n yandex.cloud.api.ai.translate.v2ZJgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/translate/v2;translateb\x06proto3'
-)
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n.yandex/cloud/ai/translate/v2/translation.proto\x12\x1cyandex.cloud.ai.translate.v2\">\n\x0eTranslatedText\x12\x0c\n\x04text\x18\x01 \x01(\t\x12\x1e\n\x16\x64\x65tected_language_code\x18\x02 \x01(\t\"&\n\x08Language\x12\x0c\n\x04\x63ode\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\tBn\n yandex.cloud.api.ai.translate.v2ZJgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/translate/v2;translateb\x06proto3')
 
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.ai.translate.v2.translation_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-
-_TRANSLATEDTEXT = _descriptor.Descriptor(
-  name='TranslatedText',
-  full_name='yandex.cloud.ai.translate.v2.TranslatedText',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='text', full_name='yandex.cloud.ai.translate.v2.TranslatedText.text', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='detected_language_code', full_name='yandex.cloud.ai.translate.v2.TranslatedText.detected_language_code', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=80,
-  serialized_end=142,
-)
-
-
-_LANGUAGE = _descriptor.Descriptor(
-  name='Language',
-  full_name='yandex.cloud.ai.translate.v2.Language',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='code', full_name='yandex.cloud.ai.translate.v2.Language.code', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.ai.translate.v2.Language.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=144,
-  serialized_end=182,
-)
-
-DESCRIPTOR.message_types_by_name['TranslatedText'] = _TRANSLATEDTEXT
-DESCRIPTOR.message_types_by_name['Language'] = _LANGUAGE
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-TranslatedText = _reflection.GeneratedProtocolMessageType('TranslatedText', (_message.Message,), {
-  'DESCRIPTOR' : _TRANSLATEDTEXT,
-  '__module__' : 'yandex.cloud.ai.translate.v2.translation_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.ai.translate.v2.TranslatedText)
-  })
-_sym_db.RegisterMessage(TranslatedText)
-
-Language = _reflection.GeneratedProtocolMessageType('Language', (_message.Message,), {
-  'DESCRIPTOR' : _LANGUAGE,
-  '__module__' : 'yandex.cloud.ai.translate.v2.translation_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.ai.translate.v2.Language)
-  })
-_sym_db.RegisterMessage(Language)
-
-
-DESCRIPTOR._options = None
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n yandex.cloud.api.ai.translate.v2ZJgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/translate/v2;translate'
+  _globals['_TRANSLATEDTEXT']._serialized_start=80
+  _globals['_TRANSLATEDTEXT']._serialized_end=142
+  _globals['_LANGUAGE']._serialized_start=144
+  _globals['_LANGUAGE']._serialized_end=182
 # @@protoc_insertion_point(module_scope)

@@ -3,9 +3,9 @@
 # source: yandex/cloud/logging/v1/log_resource.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -14,116 +14,21 @@ _sym_db = _symbol_database.Default()
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/logging/v1/log_resource.proto',
-  package='yandex.cloud.logging.v1',
-  syntax='proto3',
-  serialized_options=b'\n\033yandex.cloud.api.logging.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/logging/v1;logging',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n*yandex/cloud/logging/v1/log_resource.proto\x12\x17yandex.cloud.logging.v1\x1a\x1dyandex/cloud/validation.proto\"y\n\x10LogEntryResource\x12\x31\n\x04type\x18\x01 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?\x12\x32\n\x02id\x18\x02 \x01(\tB&\xf2\xc7\x31\"([a-zA-Z0-9][-a-zA-Z0-9_.]{0,63})?\"-\n\x10LogGroupResource\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0b\n\x03ids\x18\x02 \x03(\tBb\n\x1byandex.cloud.api.logging.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/logging/v1;loggingb\x06proto3'
-  ,
-  dependencies=[yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*yandex/cloud/logging/v1/log_resource.proto\x12\x17yandex.cloud.logging.v1\x1a\x1dyandex/cloud/validation.proto\"y\n\x10LogEntryResource\x12\x31\n\x04type\x18\x01 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?\x12\x32\n\x02id\x18\x02 \x01(\tB&\xf2\xc7\x31\"([a-zA-Z0-9][-a-zA-Z0-9_.]{0,63})?\"-\n\x10LogGroupResource\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0b\n\x03ids\x18\x02 \x03(\tBb\n\x1byandex.cloud.api.logging.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/logging/v1;loggingb\x06proto3')
 
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.logging.v1.log_resource_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-
-_LOGENTRYRESOURCE = _descriptor.Descriptor(
-  name='LogEntryResource',
-  full_name='yandex.cloud.logging.v1.LogEntryResource',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='type', full_name='yandex.cloud.logging.v1.LogEntryResource.type', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071\037([a-zA-Z][-a-zA-Z0-9_.]{0,63})?', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='id', full_name='yandex.cloud.logging.v1.LogEntryResource.id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071\"([a-zA-Z0-9][-a-zA-Z0-9_.]{0,63})?', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=102,
-  serialized_end=223,
-)
-
-
-_LOGGROUPRESOURCE = _descriptor.Descriptor(
-  name='LogGroupResource',
-  full_name='yandex.cloud.logging.v1.LogGroupResource',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='type', full_name='yandex.cloud.logging.v1.LogGroupResource.type', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='ids', full_name='yandex.cloud.logging.v1.LogGroupResource.ids', index=1,
-      number=2, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=225,
-  serialized_end=270,
-)
-
-DESCRIPTOR.message_types_by_name['LogEntryResource'] = _LOGENTRYRESOURCE
-DESCRIPTOR.message_types_by_name['LogGroupResource'] = _LOGGROUPRESOURCE
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-LogEntryResource = _reflection.GeneratedProtocolMessageType('LogEntryResource', (_message.Message,), {
-  'DESCRIPTOR' : _LOGENTRYRESOURCE,
-  '__module__' : 'yandex.cloud.logging.v1.log_resource_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.logging.v1.LogEntryResource)
-  })
-_sym_db.RegisterMessage(LogEntryResource)
-
-LogGroupResource = _reflection.GeneratedProtocolMessageType('LogGroupResource', (_message.Message,), {
-  'DESCRIPTOR' : _LOGGROUPRESOURCE,
-  '__module__' : 'yandex.cloud.logging.v1.log_resource_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.logging.v1.LogGroupResource)
-  })
-_sym_db.RegisterMessage(LogGroupResource)
-
-
-DESCRIPTOR._options = None
-_LOGENTRYRESOURCE.fields_by_name['type']._options = None
-_LOGENTRYRESOURCE.fields_by_name['id']._options = None
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n\033yandex.cloud.api.logging.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/logging/v1;logging'
+  _LOGENTRYRESOURCE.fields_by_name['type']._options = None
+  _LOGENTRYRESOURCE.fields_by_name['type']._serialized_options = b'\362\3071\037([a-zA-Z][-a-zA-Z0-9_.]{0,63})?'
+  _LOGENTRYRESOURCE.fields_by_name['id']._options = None
+  _LOGENTRYRESOURCE.fields_by_name['id']._serialized_options = b'\362\3071\"([a-zA-Z0-9][-a-zA-Z0-9_.]{0,63})?'
+  _globals['_LOGENTRYRESOURCE']._serialized_start=102
+  _globals['_LOGENTRYRESOURCE']._serialized_end=223
+  _globals['_LOGGROUPRESOURCE']._serialized_start=225
+  _globals['_LOGGROUPRESOURCE']._serialized_end=270
 # @@protoc_insertion_point(module_scope)

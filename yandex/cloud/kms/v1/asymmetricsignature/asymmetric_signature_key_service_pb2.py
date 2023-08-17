@@ -3,9 +3,9 @@
 # source: yandex/cloud/kms/v1/asymmetricsignature/asymmetric_signature_key_service.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -20,805 +20,97 @@ from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 from yandex.cloud.kms.v1.asymmetricsignature import asymmetric_signature_key_pb2 as yandex_dot_cloud_dot_kms_dot_v1_dot_asymmetricsignature_dot_asymmetric__signature__key__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/kms/v1/asymmetricsignature/asymmetric_signature_key_service.proto',
-  package='yandex.cloud.kms.v1.asymmetricsignature',
-  syntax='proto3',
-  serialized_options=b'\n\027yandex.cloud.api.kms.v1ZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/kms/v1/asymmetricsignature;kms',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\nNyandex/cloud/kms/v1/asymmetricsignature/asymmetric_signature_key_service.proto\x12\'yandex.cloud.kms.v1.asymmetricsignature\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/access/access.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a\x46yandex/cloud/kms/v1/asymmetricsignature/asymmetric_signature_key.proto\"\xdc\x03\n#CreateAsymmetricSignatureKeyRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x17\n\x04name\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1f\n\x0b\x64\x65scription\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12\xa9\x01\n\x06labels\x18\x04 \x03(\x0b\x32X.yandex.cloud.kms.v1.asymmetricsignature.CreateAsymmetricSignatureKeyRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12\x62\n\x13signature_algorithm\x18\x05 \x01(\x0e\x32\x45.yandex.cloud.kms.v1.asymmetricsignature.AsymmetricSignatureAlgorithm\x12\x1b\n\x13\x64\x65letion_protection\x18\x06 \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"6\n$CreateAsymmetricSignatureKeyMetadata\x12\x0e\n\x06key_id\x18\x01 \x01(\t\"@\n GetAsymmetricSignatureKeyRequest\x12\x1c\n\x06key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x83\x01\n\"ListAsymmetricSignatureKeysRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"\x8d\x01\n#ListAsymmetricSignatureKeysResponse\x12M\n\x04keys\x18\x01 \x03(\x0b\x32?.yandex.cloud.kms.v1.asymmetricsignature.AsymmetricSignatureKey\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x84\x04\n#UpdateAsymmetricSignatureKeyRequest\x12\x1c\n\x06key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe8\xc7\x31\x01\x12\x17\n\x04name\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1f\n\x0b\x64\x65scription\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12V\n\x06status\x18\x05 \x01(\x0e\x32\x46.yandex.cloud.kms.v1.asymmetricsignature.AsymmetricSignatureKey.Status\x12\xa9\x01\n\x06labels\x18\x06 \x03(\x0b\x32X.yandex.cloud.kms.v1.asymmetricsignature.UpdateAsymmetricSignatureKeyRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12\x1b\n\x13\x64\x65letion_protection\x18\x07 \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"6\n$UpdateAsymmetricSignatureKeyMetadata\x12\x0e\n\x06key_id\x18\x01 \x01(\t\"C\n#DeleteAsymmetricSignatureKeyRequest\x12\x1c\n\x06key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"6\n$DeleteAsymmetricSignatureKeyMetadata\x12\x0e\n\x06key_id\x18\x01 \x01(\t\"\x89\x01\n+ListAsymmetricSignatureKeyOperationsRequest\x12\x1c\n\x06key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"~\n,ListAsymmetricSignatureKeyOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xae\x10\n\x1d\x41symmetricSignatureKeyService\x12\xe7\x01\n\x06\x43reate\x12L.yandex.cloud.kms.v1.asymmetricsignature.CreateAsymmetricSignatureKeyRequest\x1a!.yandex.cloud.operation.Operation\"l\x82\xd3\xe4\x93\x02$\"\x1f/kms/v1/asymmetricSignatureKeys:\x01*\xb2\xd2*>\n$CreateAsymmetricSignatureKeyMetadata\x12\x16\x41symmetricSignatureKey\x12\xc3\x01\n\x03Get\x12I.yandex.cloud.kms.v1.asymmetricsignature.GetAsymmetricSignatureKeyRequest\x1a?.yandex.cloud.kms.v1.asymmetricsignature.AsymmetricSignatureKey\"0\x82\xd3\xe4\x93\x02*\x12(/kms/v1/asymmetricSignatureKeys/{key_id}\x12\xca\x01\n\x04List\x12K.yandex.cloud.kms.v1.asymmetricsignature.ListAsymmetricSignatureKeysRequest\x1aL.yandex.cloud.kms.v1.asymmetricsignature.ListAsymmetricSignatureKeysResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/kms/v1/asymmetricSignatureKeys\x12\xf0\x01\n\x06Update\x12L.yandex.cloud.kms.v1.asymmetricsignature.UpdateAsymmetricSignatureKeyRequest\x1a!.yandex.cloud.operation.Operation\"u\x82\xd3\xe4\x93\x02-2(/kms/v1/asymmetricSignatureKeys/{key_id}:\x01*\xb2\xd2*>\n$UpdateAsymmetricSignatureKeyMetadata\x12\x16\x41symmetricSignatureKey\x12\xed\x01\n\x06\x44\x65lete\x12L.yandex.cloud.kms.v1.asymmetricsignature.DeleteAsymmetricSignatureKeyRequest\x1a!.yandex.cloud.operation.Operation\"r\x82\xd3\xe4\x93\x02**(/kms/v1/asymmetricSignatureKeys/{key_id}\xb2\xd2*>\n$DeleteAsymmetricSignatureKeyMetadata\x12\x16\x41symmetricSignatureKey\x12\xfa\x01\n\x0eListOperations\x12T.yandex.cloud.kms.v1.asymmetricsignature.ListAsymmetricSignatureKeyOperationsRequest\x1aU.yandex.cloud.kms.v1.asymmetricsignature.ListAsymmetricSignatureKeyOperationsResponse\";\x82\xd3\xe4\x93\x02\x35\x12\x33/kms/v1/asymmetricSignatureKeys/{key_id}/operations\x12\xbf\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"H\x82\xd3\xe4\x93\x02\x42\x12@/kms/v1/asymmetricSignatureKeys/{resource_id}:listAccessBindings\x12\xef\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x87\x01\x82\xd3\xe4\x93\x02\x44\"?/kms/v1/asymmetricSignatureKeys/{resource_id}:setAccessBindings:\x01*\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\xfb\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x8d\x01\x82\xd3\xe4\x93\x02G\"B/kms/v1/asymmetricSignatureKeys/{resource_id}:updateAccessBindings:\x01*\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.EmptyBj\n\x17yandex.cloud.api.kms.v1ZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/kms/v1/asymmetricsignature;kmsb\x06proto3'
-  ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_access_dot_access__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_kms_dot_v1_dot_asymmetricsignature_dot_asymmetric__signature__key__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nNyandex/cloud/kms/v1/asymmetricsignature/asymmetric_signature_key_service.proto\x12\'yandex.cloud.kms.v1.asymmetricsignature\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/access/access.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a\x46yandex/cloud/kms/v1/asymmetricsignature/asymmetric_signature_key.proto\"\xd8\x03\n#CreateAsymmetricSignatureKeyRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x17\n\x04name\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1f\n\x0b\x64\x65scription\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12\xa5\x01\n\x06labels\x18\x04 \x03(\x0b\x32X.yandex.cloud.kms.v1.asymmetricsignature.CreateAsymmetricSignatureKeyRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04<=63\x12\x62\n\x13signature_algorithm\x18\x05 \x01(\x0e\x32\x45.yandex.cloud.kms.v1.asymmetricsignature.AsymmetricSignatureAlgorithm\x12\x1b\n\x13\x64\x65letion_protection\x18\x06 \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"6\n$CreateAsymmetricSignatureKeyMetadata\x12\x0e\n\x06key_id\x18\x01 \x01(\t\"@\n GetAsymmetricSignatureKeyRequest\x12\x1c\n\x06key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x83\x01\n\"ListAsymmetricSignatureKeysRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"\x8d\x01\n#ListAsymmetricSignatureKeysResponse\x12M\n\x04keys\x18\x01 \x03(\x0b\x32?.yandex.cloud.kms.v1.asymmetricsignature.AsymmetricSignatureKey\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x80\x04\n#UpdateAsymmetricSignatureKeyRequest\x12\x1c\n\x06key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe8\xc7\x31\x01\x12\x17\n\x04name\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1f\n\x0b\x64\x65scription\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12V\n\x06status\x18\x05 \x01(\x0e\x32\x46.yandex.cloud.kms.v1.asymmetricsignature.AsymmetricSignatureKey.Status\x12\xa5\x01\n\x06labels\x18\x06 \x03(\x0b\x32X.yandex.cloud.kms.v1.asymmetricsignature.UpdateAsymmetricSignatureKeyRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04<=63\x12\x1b\n\x13\x64\x65letion_protection\x18\x07 \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"6\n$UpdateAsymmetricSignatureKeyMetadata\x12\x0e\n\x06key_id\x18\x01 \x01(\t\"C\n#DeleteAsymmetricSignatureKeyRequest\x12\x1c\n\x06key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"6\n$DeleteAsymmetricSignatureKeyMetadata\x12\x0e\n\x06key_id\x18\x01 \x01(\t\"\x89\x01\n+ListAsymmetricSignatureKeyOperationsRequest\x12\x1c\n\x06key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"~\n,ListAsymmetricSignatureKeyOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xae\x10\n\x1d\x41symmetricSignatureKeyService\x12\xe7\x01\n\x06\x43reate\x12L.yandex.cloud.kms.v1.asymmetricsignature.CreateAsymmetricSignatureKeyRequest\x1a!.yandex.cloud.operation.Operation\"l\xb2\xd2*>\n$CreateAsymmetricSignatureKeyMetadata\x12\x16\x41symmetricSignatureKey\x82\xd3\xe4\x93\x02$\"\x1f/kms/v1/asymmetricSignatureKeys:\x01*\x12\xc3\x01\n\x03Get\x12I.yandex.cloud.kms.v1.asymmetricsignature.GetAsymmetricSignatureKeyRequest\x1a?.yandex.cloud.kms.v1.asymmetricsignature.AsymmetricSignatureKey\"0\x82\xd3\xe4\x93\x02*\x12(/kms/v1/asymmetricSignatureKeys/{key_id}\x12\xca\x01\n\x04List\x12K.yandex.cloud.kms.v1.asymmetricsignature.ListAsymmetricSignatureKeysRequest\x1aL.yandex.cloud.kms.v1.asymmetricsignature.ListAsymmetricSignatureKeysResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/kms/v1/asymmetricSignatureKeys\x12\xf0\x01\n\x06Update\x12L.yandex.cloud.kms.v1.asymmetricsignature.UpdateAsymmetricSignatureKeyRequest\x1a!.yandex.cloud.operation.Operation\"u\xb2\xd2*>\n$UpdateAsymmetricSignatureKeyMetadata\x12\x16\x41symmetricSignatureKey\x82\xd3\xe4\x93\x02-2(/kms/v1/asymmetricSignatureKeys/{key_id}:\x01*\x12\xed\x01\n\x06\x44\x65lete\x12L.yandex.cloud.kms.v1.asymmetricsignature.DeleteAsymmetricSignatureKeyRequest\x1a!.yandex.cloud.operation.Operation\"r\xb2\xd2*>\n$DeleteAsymmetricSignatureKeyMetadata\x12\x16\x41symmetricSignatureKey\x82\xd3\xe4\x93\x02**(/kms/v1/asymmetricSignatureKeys/{key_id}\x12\xfa\x01\n\x0eListOperations\x12T.yandex.cloud.kms.v1.asymmetricsignature.ListAsymmetricSignatureKeyOperationsRequest\x1aU.yandex.cloud.kms.v1.asymmetricsignature.ListAsymmetricSignatureKeyOperationsResponse\";\x82\xd3\xe4\x93\x02\x35\x12\x33/kms/v1/asymmetricSignatureKeys/{key_id}/operations\x12\xbf\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"H\x82\xd3\xe4\x93\x02\x42\x12@/kms/v1/asymmetricSignatureKeys/{resource_id}:listAccessBindings\x12\xef\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x87\x01\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x44\"?/kms/v1/asymmetricSignatureKeys/{resource_id}:setAccessBindings:\x01*\x12\xfb\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x8d\x01\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02G\"B/kms/v1/asymmetricSignatureKeys/{resource_id}:updateAccessBindings:\x01*Bj\n\x17yandex.cloud.api.kms.v1ZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/kms/v1/asymmetricsignature;kmsb\x06proto3')
 
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.kms.v1.asymmetricsignature.asymmetric_signature_key_service_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-
-_CREATEASYMMETRICSIGNATUREKEYREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='yandex.cloud.kms.v1.asymmetricsignature.CreateAsymmetricSignatureKeyRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='yandex.cloud.kms.v1.asymmetricsignature.CreateAsymmetricSignatureKeyRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='yandex.cloud.kms.v1.asymmetricsignature.CreateAsymmetricSignatureKeyRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=830,
-  serialized_end=875,
-)
-
-_CREATEASYMMETRICSIGNATUREKEYREQUEST = _descriptor.Descriptor(
-  name='CreateAsymmetricSignatureKeyRequest',
-  full_name='yandex.cloud.kms.v1.asymmetricsignature.CreateAsymmetricSignatureKeyRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.kms.v1.asymmetricsignature.CreateAsymmetricSignatureKeyRequest.folder_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.kms.v1.asymmetricsignature.CreateAsymmetricSignatureKeyRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='yandex.cloud.kms.v1.asymmetricsignature.CreateAsymmetricSignatureKeyRequest.description', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=1024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='yandex.cloud.kms.v1.asymmetricsignature.CreateAsymmetricSignatureKeyRequest.labels', index=3,
-      number=4, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\004<=63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='signature_algorithm', full_name='yandex.cloud.kms.v1.asymmetricsignature.CreateAsymmetricSignatureKeyRequest.signature_algorithm', index=4,
-      number=5, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='deletion_protection', full_name='yandex.cloud.kms.v1.asymmetricsignature.CreateAsymmetricSignatureKeyRequest.deletion_protection', index=5,
-      number=6, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_CREATEASYMMETRICSIGNATUREKEYREQUEST_LABELSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=399,
-  serialized_end=875,
-)
-
-
-_CREATEASYMMETRICSIGNATUREKEYMETADATA = _descriptor.Descriptor(
-  name='CreateAsymmetricSignatureKeyMetadata',
-  full_name='yandex.cloud.kms.v1.asymmetricsignature.CreateAsymmetricSignatureKeyMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key_id', full_name='yandex.cloud.kms.v1.asymmetricsignature.CreateAsymmetricSignatureKeyMetadata.key_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=877,
-  serialized_end=931,
-)
-
-
-_GETASYMMETRICSIGNATUREKEYREQUEST = _descriptor.Descriptor(
-  name='GetAsymmetricSignatureKeyRequest',
-  full_name='yandex.cloud.kms.v1.asymmetricsignature.GetAsymmetricSignatureKeyRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key_id', full_name='yandex.cloud.kms.v1.asymmetricsignature.GetAsymmetricSignatureKeyRequest.key_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=933,
-  serialized_end=997,
-)
-
-
-_LISTASYMMETRICSIGNATUREKEYSREQUEST = _descriptor.Descriptor(
-  name='ListAsymmetricSignatureKeysRequest',
-  full_name='yandex.cloud.kms.v1.asymmetricsignature.ListAsymmetricSignatureKeysRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.kms.v1.asymmetricsignature.ListAsymmetricSignatureKeysRequest.folder_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.kms.v1.asymmetricsignature.ListAsymmetricSignatureKeysRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.kms.v1.asymmetricsignature.ListAsymmetricSignatureKeysRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1000,
-  serialized_end=1131,
-)
-
-
-_LISTASYMMETRICSIGNATUREKEYSRESPONSE = _descriptor.Descriptor(
-  name='ListAsymmetricSignatureKeysResponse',
-  full_name='yandex.cloud.kms.v1.asymmetricsignature.ListAsymmetricSignatureKeysResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='keys', full_name='yandex.cloud.kms.v1.asymmetricsignature.ListAsymmetricSignatureKeysResponse.keys', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.kms.v1.asymmetricsignature.ListAsymmetricSignatureKeysResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1134,
-  serialized_end=1275,
-)
-
-
-_UPDATEASYMMETRICSIGNATUREKEYREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='yandex.cloud.kms.v1.asymmetricsignature.UpdateAsymmetricSignatureKeyRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='yandex.cloud.kms.v1.asymmetricsignature.UpdateAsymmetricSignatureKeyRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='yandex.cloud.kms.v1.asymmetricsignature.UpdateAsymmetricSignatureKeyRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=830,
-  serialized_end=875,
-)
-
-_UPDATEASYMMETRICSIGNATUREKEYREQUEST = _descriptor.Descriptor(
-  name='UpdateAsymmetricSignatureKeyRequest',
-  full_name='yandex.cloud.kms.v1.asymmetricsignature.UpdateAsymmetricSignatureKeyRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key_id', full_name='yandex.cloud.kms.v1.asymmetricsignature.UpdateAsymmetricSignatureKeyRequest.key_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='update_mask', full_name='yandex.cloud.kms.v1.asymmetricsignature.UpdateAsymmetricSignatureKeyRequest.update_mask', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.kms.v1.asymmetricsignature.UpdateAsymmetricSignatureKeyRequest.name', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='yandex.cloud.kms.v1.asymmetricsignature.UpdateAsymmetricSignatureKeyRequest.description', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=1024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='status', full_name='yandex.cloud.kms.v1.asymmetricsignature.UpdateAsymmetricSignatureKeyRequest.status', index=4,
-      number=5, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='yandex.cloud.kms.v1.asymmetricsignature.UpdateAsymmetricSignatureKeyRequest.labels', index=5,
-      number=6, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\004<=63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='deletion_protection', full_name='yandex.cloud.kms.v1.asymmetricsignature.UpdateAsymmetricSignatureKeyRequest.deletion_protection', index=6,
-      number=7, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_UPDATEASYMMETRICSIGNATUREKEYREQUEST_LABELSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1278,
-  serialized_end=1794,
-)
-
-
-_UPDATEASYMMETRICSIGNATUREKEYMETADATA = _descriptor.Descriptor(
-  name='UpdateAsymmetricSignatureKeyMetadata',
-  full_name='yandex.cloud.kms.v1.asymmetricsignature.UpdateAsymmetricSignatureKeyMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key_id', full_name='yandex.cloud.kms.v1.asymmetricsignature.UpdateAsymmetricSignatureKeyMetadata.key_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1796,
-  serialized_end=1850,
-)
-
-
-_DELETEASYMMETRICSIGNATUREKEYREQUEST = _descriptor.Descriptor(
-  name='DeleteAsymmetricSignatureKeyRequest',
-  full_name='yandex.cloud.kms.v1.asymmetricsignature.DeleteAsymmetricSignatureKeyRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key_id', full_name='yandex.cloud.kms.v1.asymmetricsignature.DeleteAsymmetricSignatureKeyRequest.key_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1852,
-  serialized_end=1919,
-)
-
-
-_DELETEASYMMETRICSIGNATUREKEYMETADATA = _descriptor.Descriptor(
-  name='DeleteAsymmetricSignatureKeyMetadata',
-  full_name='yandex.cloud.kms.v1.asymmetricsignature.DeleteAsymmetricSignatureKeyMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key_id', full_name='yandex.cloud.kms.v1.asymmetricsignature.DeleteAsymmetricSignatureKeyMetadata.key_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1921,
-  serialized_end=1975,
-)
-
-
-_LISTASYMMETRICSIGNATUREKEYOPERATIONSREQUEST = _descriptor.Descriptor(
-  name='ListAsymmetricSignatureKeyOperationsRequest',
-  full_name='yandex.cloud.kms.v1.asymmetricsignature.ListAsymmetricSignatureKeyOperationsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key_id', full_name='yandex.cloud.kms.v1.asymmetricsignature.ListAsymmetricSignatureKeyOperationsRequest.key_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.kms.v1.asymmetricsignature.ListAsymmetricSignatureKeyOperationsRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.kms.v1.asymmetricsignature.ListAsymmetricSignatureKeyOperationsRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1978,
-  serialized_end=2115,
-)
-
-
-_LISTASYMMETRICSIGNATUREKEYOPERATIONSRESPONSE = _descriptor.Descriptor(
-  name='ListAsymmetricSignatureKeyOperationsResponse',
-  full_name='yandex.cloud.kms.v1.asymmetricsignature.ListAsymmetricSignatureKeyOperationsResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='operations', full_name='yandex.cloud.kms.v1.asymmetricsignature.ListAsymmetricSignatureKeyOperationsResponse.operations', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.kms.v1.asymmetricsignature.ListAsymmetricSignatureKeyOperationsResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2117,
-  serialized_end=2243,
-)
-
-_CREATEASYMMETRICSIGNATUREKEYREQUEST_LABELSENTRY.containing_type = _CREATEASYMMETRICSIGNATUREKEYREQUEST
-_CREATEASYMMETRICSIGNATUREKEYREQUEST.fields_by_name['labels'].message_type = _CREATEASYMMETRICSIGNATUREKEYREQUEST_LABELSENTRY
-_CREATEASYMMETRICSIGNATUREKEYREQUEST.fields_by_name['signature_algorithm'].enum_type = yandex_dot_cloud_dot_kms_dot_v1_dot_asymmetricsignature_dot_asymmetric__signature__key__pb2._ASYMMETRICSIGNATUREALGORITHM
-_LISTASYMMETRICSIGNATUREKEYSRESPONSE.fields_by_name['keys'].message_type = yandex_dot_cloud_dot_kms_dot_v1_dot_asymmetricsignature_dot_asymmetric__signature__key__pb2._ASYMMETRICSIGNATUREKEY
-_UPDATEASYMMETRICSIGNATUREKEYREQUEST_LABELSENTRY.containing_type = _UPDATEASYMMETRICSIGNATUREKEYREQUEST
-_UPDATEASYMMETRICSIGNATUREKEYREQUEST.fields_by_name['update_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
-_UPDATEASYMMETRICSIGNATUREKEYREQUEST.fields_by_name['status'].enum_type = yandex_dot_cloud_dot_kms_dot_v1_dot_asymmetricsignature_dot_asymmetric__signature__key__pb2._ASYMMETRICSIGNATUREKEY_STATUS
-_UPDATEASYMMETRICSIGNATUREKEYREQUEST.fields_by_name['labels'].message_type = _UPDATEASYMMETRICSIGNATUREKEYREQUEST_LABELSENTRY
-_LISTASYMMETRICSIGNATUREKEYOPERATIONSRESPONSE.fields_by_name['operations'].message_type = yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION
-DESCRIPTOR.message_types_by_name['CreateAsymmetricSignatureKeyRequest'] = _CREATEASYMMETRICSIGNATUREKEYREQUEST
-DESCRIPTOR.message_types_by_name['CreateAsymmetricSignatureKeyMetadata'] = _CREATEASYMMETRICSIGNATUREKEYMETADATA
-DESCRIPTOR.message_types_by_name['GetAsymmetricSignatureKeyRequest'] = _GETASYMMETRICSIGNATUREKEYREQUEST
-DESCRIPTOR.message_types_by_name['ListAsymmetricSignatureKeysRequest'] = _LISTASYMMETRICSIGNATUREKEYSREQUEST
-DESCRIPTOR.message_types_by_name['ListAsymmetricSignatureKeysResponse'] = _LISTASYMMETRICSIGNATUREKEYSRESPONSE
-DESCRIPTOR.message_types_by_name['UpdateAsymmetricSignatureKeyRequest'] = _UPDATEASYMMETRICSIGNATUREKEYREQUEST
-DESCRIPTOR.message_types_by_name['UpdateAsymmetricSignatureKeyMetadata'] = _UPDATEASYMMETRICSIGNATUREKEYMETADATA
-DESCRIPTOR.message_types_by_name['DeleteAsymmetricSignatureKeyRequest'] = _DELETEASYMMETRICSIGNATUREKEYREQUEST
-DESCRIPTOR.message_types_by_name['DeleteAsymmetricSignatureKeyMetadata'] = _DELETEASYMMETRICSIGNATUREKEYMETADATA
-DESCRIPTOR.message_types_by_name['ListAsymmetricSignatureKeyOperationsRequest'] = _LISTASYMMETRICSIGNATUREKEYOPERATIONSREQUEST
-DESCRIPTOR.message_types_by_name['ListAsymmetricSignatureKeyOperationsResponse'] = _LISTASYMMETRICSIGNATUREKEYOPERATIONSRESPONSE
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-CreateAsymmetricSignatureKeyRequest = _reflection.GeneratedProtocolMessageType('CreateAsymmetricSignatureKeyRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _CREATEASYMMETRICSIGNATUREKEYREQUEST_LABELSENTRY,
-    '__module__' : 'yandex.cloud.kms.v1.asymmetricsignature.asymmetric_signature_key_service_pb2'
-    # @@protoc_insertion_point(class_scope:yandex.cloud.kms.v1.asymmetricsignature.CreateAsymmetricSignatureKeyRequest.LabelsEntry)
-    })
-  ,
-  'DESCRIPTOR' : _CREATEASYMMETRICSIGNATUREKEYREQUEST,
-  '__module__' : 'yandex.cloud.kms.v1.asymmetricsignature.asymmetric_signature_key_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.kms.v1.asymmetricsignature.CreateAsymmetricSignatureKeyRequest)
-  })
-_sym_db.RegisterMessage(CreateAsymmetricSignatureKeyRequest)
-_sym_db.RegisterMessage(CreateAsymmetricSignatureKeyRequest.LabelsEntry)
-
-CreateAsymmetricSignatureKeyMetadata = _reflection.GeneratedProtocolMessageType('CreateAsymmetricSignatureKeyMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _CREATEASYMMETRICSIGNATUREKEYMETADATA,
-  '__module__' : 'yandex.cloud.kms.v1.asymmetricsignature.asymmetric_signature_key_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.kms.v1.asymmetricsignature.CreateAsymmetricSignatureKeyMetadata)
-  })
-_sym_db.RegisterMessage(CreateAsymmetricSignatureKeyMetadata)
-
-GetAsymmetricSignatureKeyRequest = _reflection.GeneratedProtocolMessageType('GetAsymmetricSignatureKeyRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETASYMMETRICSIGNATUREKEYREQUEST,
-  '__module__' : 'yandex.cloud.kms.v1.asymmetricsignature.asymmetric_signature_key_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.kms.v1.asymmetricsignature.GetAsymmetricSignatureKeyRequest)
-  })
-_sym_db.RegisterMessage(GetAsymmetricSignatureKeyRequest)
-
-ListAsymmetricSignatureKeysRequest = _reflection.GeneratedProtocolMessageType('ListAsymmetricSignatureKeysRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTASYMMETRICSIGNATUREKEYSREQUEST,
-  '__module__' : 'yandex.cloud.kms.v1.asymmetricsignature.asymmetric_signature_key_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.kms.v1.asymmetricsignature.ListAsymmetricSignatureKeysRequest)
-  })
-_sym_db.RegisterMessage(ListAsymmetricSignatureKeysRequest)
-
-ListAsymmetricSignatureKeysResponse = _reflection.GeneratedProtocolMessageType('ListAsymmetricSignatureKeysResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTASYMMETRICSIGNATUREKEYSRESPONSE,
-  '__module__' : 'yandex.cloud.kms.v1.asymmetricsignature.asymmetric_signature_key_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.kms.v1.asymmetricsignature.ListAsymmetricSignatureKeysResponse)
-  })
-_sym_db.RegisterMessage(ListAsymmetricSignatureKeysResponse)
-
-UpdateAsymmetricSignatureKeyRequest = _reflection.GeneratedProtocolMessageType('UpdateAsymmetricSignatureKeyRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _UPDATEASYMMETRICSIGNATUREKEYREQUEST_LABELSENTRY,
-    '__module__' : 'yandex.cloud.kms.v1.asymmetricsignature.asymmetric_signature_key_service_pb2'
-    # @@protoc_insertion_point(class_scope:yandex.cloud.kms.v1.asymmetricsignature.UpdateAsymmetricSignatureKeyRequest.LabelsEntry)
-    })
-  ,
-  'DESCRIPTOR' : _UPDATEASYMMETRICSIGNATUREKEYREQUEST,
-  '__module__' : 'yandex.cloud.kms.v1.asymmetricsignature.asymmetric_signature_key_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.kms.v1.asymmetricsignature.UpdateAsymmetricSignatureKeyRequest)
-  })
-_sym_db.RegisterMessage(UpdateAsymmetricSignatureKeyRequest)
-_sym_db.RegisterMessage(UpdateAsymmetricSignatureKeyRequest.LabelsEntry)
-
-UpdateAsymmetricSignatureKeyMetadata = _reflection.GeneratedProtocolMessageType('UpdateAsymmetricSignatureKeyMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATEASYMMETRICSIGNATUREKEYMETADATA,
-  '__module__' : 'yandex.cloud.kms.v1.asymmetricsignature.asymmetric_signature_key_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.kms.v1.asymmetricsignature.UpdateAsymmetricSignatureKeyMetadata)
-  })
-_sym_db.RegisterMessage(UpdateAsymmetricSignatureKeyMetadata)
-
-DeleteAsymmetricSignatureKeyRequest = _reflection.GeneratedProtocolMessageType('DeleteAsymmetricSignatureKeyRequest', (_message.Message,), {
-  'DESCRIPTOR' : _DELETEASYMMETRICSIGNATUREKEYREQUEST,
-  '__module__' : 'yandex.cloud.kms.v1.asymmetricsignature.asymmetric_signature_key_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.kms.v1.asymmetricsignature.DeleteAsymmetricSignatureKeyRequest)
-  })
-_sym_db.RegisterMessage(DeleteAsymmetricSignatureKeyRequest)
-
-DeleteAsymmetricSignatureKeyMetadata = _reflection.GeneratedProtocolMessageType('DeleteAsymmetricSignatureKeyMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _DELETEASYMMETRICSIGNATUREKEYMETADATA,
-  '__module__' : 'yandex.cloud.kms.v1.asymmetricsignature.asymmetric_signature_key_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.kms.v1.asymmetricsignature.DeleteAsymmetricSignatureKeyMetadata)
-  })
-_sym_db.RegisterMessage(DeleteAsymmetricSignatureKeyMetadata)
-
-ListAsymmetricSignatureKeyOperationsRequest = _reflection.GeneratedProtocolMessageType('ListAsymmetricSignatureKeyOperationsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTASYMMETRICSIGNATUREKEYOPERATIONSREQUEST,
-  '__module__' : 'yandex.cloud.kms.v1.asymmetricsignature.asymmetric_signature_key_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.kms.v1.asymmetricsignature.ListAsymmetricSignatureKeyOperationsRequest)
-  })
-_sym_db.RegisterMessage(ListAsymmetricSignatureKeyOperationsRequest)
-
-ListAsymmetricSignatureKeyOperationsResponse = _reflection.GeneratedProtocolMessageType('ListAsymmetricSignatureKeyOperationsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTASYMMETRICSIGNATUREKEYOPERATIONSRESPONSE,
-  '__module__' : 'yandex.cloud.kms.v1.asymmetricsignature.asymmetric_signature_key_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.kms.v1.asymmetricsignature.ListAsymmetricSignatureKeyOperationsResponse)
-  })
-_sym_db.RegisterMessage(ListAsymmetricSignatureKeyOperationsResponse)
-
-
-DESCRIPTOR._options = None
-_CREATEASYMMETRICSIGNATUREKEYREQUEST_LABELSENTRY._options = None
-_CREATEASYMMETRICSIGNATUREKEYREQUEST.fields_by_name['folder_id']._options = None
-_CREATEASYMMETRICSIGNATUREKEYREQUEST.fields_by_name['name']._options = None
-_CREATEASYMMETRICSIGNATUREKEYREQUEST.fields_by_name['description']._options = None
-_CREATEASYMMETRICSIGNATUREKEYREQUEST.fields_by_name['labels']._options = None
-_GETASYMMETRICSIGNATUREKEYREQUEST.fields_by_name['key_id']._options = None
-_LISTASYMMETRICSIGNATUREKEYSREQUEST.fields_by_name['folder_id']._options = None
-_LISTASYMMETRICSIGNATUREKEYSREQUEST.fields_by_name['page_size']._options = None
-_LISTASYMMETRICSIGNATUREKEYSREQUEST.fields_by_name['page_token']._options = None
-_UPDATEASYMMETRICSIGNATUREKEYREQUEST_LABELSENTRY._options = None
-_UPDATEASYMMETRICSIGNATUREKEYREQUEST.fields_by_name['key_id']._options = None
-_UPDATEASYMMETRICSIGNATUREKEYREQUEST.fields_by_name['update_mask']._options = None
-_UPDATEASYMMETRICSIGNATUREKEYREQUEST.fields_by_name['name']._options = None
-_UPDATEASYMMETRICSIGNATUREKEYREQUEST.fields_by_name['description']._options = None
-_UPDATEASYMMETRICSIGNATUREKEYREQUEST.fields_by_name['labels']._options = None
-_DELETEASYMMETRICSIGNATUREKEYREQUEST.fields_by_name['key_id']._options = None
-_LISTASYMMETRICSIGNATUREKEYOPERATIONSREQUEST.fields_by_name['key_id']._options = None
-_LISTASYMMETRICSIGNATUREKEYOPERATIONSREQUEST.fields_by_name['page_size']._options = None
-_LISTASYMMETRICSIGNATUREKEYOPERATIONSREQUEST.fields_by_name['page_token']._options = None
-
-_ASYMMETRICSIGNATUREKEYSERVICE = _descriptor.ServiceDescriptor(
-  name='AsymmetricSignatureKeyService',
-  full_name='yandex.cloud.kms.v1.asymmetricsignature.AsymmetricSignatureKeyService',
-  file=DESCRIPTOR,
-  index=0,
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_start=2246,
-  serialized_end=4340,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='Create',
-    full_name='yandex.cloud.kms.v1.asymmetricsignature.AsymmetricSignatureKeyService.Create',
-    index=0,
-    containing_service=None,
-    input_type=_CREATEASYMMETRICSIGNATUREKEYREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002$\"\037/kms/v1/asymmetricSignatureKeys:\001*\262\322*>\n$CreateAsymmetricSignatureKeyMetadata\022\026AsymmetricSignatureKey',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Get',
-    full_name='yandex.cloud.kms.v1.asymmetricsignature.AsymmetricSignatureKeyService.Get',
-    index=1,
-    containing_service=None,
-    input_type=_GETASYMMETRICSIGNATUREKEYREQUEST,
-    output_type=yandex_dot_cloud_dot_kms_dot_v1_dot_asymmetricsignature_dot_asymmetric__signature__key__pb2._ASYMMETRICSIGNATUREKEY,
-    serialized_options=b'\202\323\344\223\002*\022(/kms/v1/asymmetricSignatureKeys/{key_id}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='List',
-    full_name='yandex.cloud.kms.v1.asymmetricsignature.AsymmetricSignatureKeyService.List',
-    index=2,
-    containing_service=None,
-    input_type=_LISTASYMMETRICSIGNATUREKEYSREQUEST,
-    output_type=_LISTASYMMETRICSIGNATUREKEYSRESPONSE,
-    serialized_options=b'\202\323\344\223\002!\022\037/kms/v1/asymmetricSignatureKeys',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Update',
-    full_name='yandex.cloud.kms.v1.asymmetricsignature.AsymmetricSignatureKeyService.Update',
-    index=3,
-    containing_service=None,
-    input_type=_UPDATEASYMMETRICSIGNATUREKEYREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002-2(/kms/v1/asymmetricSignatureKeys/{key_id}:\001*\262\322*>\n$UpdateAsymmetricSignatureKeyMetadata\022\026AsymmetricSignatureKey',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Delete',
-    full_name='yandex.cloud.kms.v1.asymmetricsignature.AsymmetricSignatureKeyService.Delete',
-    index=4,
-    containing_service=None,
-    input_type=_DELETEASYMMETRICSIGNATUREKEYREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002**(/kms/v1/asymmetricSignatureKeys/{key_id}\262\322*>\n$DeleteAsymmetricSignatureKeyMetadata\022\026AsymmetricSignatureKey',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListOperations',
-    full_name='yandex.cloud.kms.v1.asymmetricsignature.AsymmetricSignatureKeyService.ListOperations',
-    index=5,
-    containing_service=None,
-    input_type=_LISTASYMMETRICSIGNATUREKEYOPERATIONSREQUEST,
-    output_type=_LISTASYMMETRICSIGNATUREKEYOPERATIONSRESPONSE,
-    serialized_options=b'\202\323\344\223\0025\0223/kms/v1/asymmetricSignatureKeys/{key_id}/operations',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListAccessBindings',
-    full_name='yandex.cloud.kms.v1.asymmetricsignature.AsymmetricSignatureKeyService.ListAccessBindings',
-    index=6,
-    containing_service=None,
-    input_type=yandex_dot_cloud_dot_access_dot_access__pb2._LISTACCESSBINDINGSREQUEST,
-    output_type=yandex_dot_cloud_dot_access_dot_access__pb2._LISTACCESSBINDINGSRESPONSE,
-    serialized_options=b'\202\323\344\223\002B\022@/kms/v1/asymmetricSignatureKeys/{resource_id}:listAccessBindings',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='SetAccessBindings',
-    full_name='yandex.cloud.kms.v1.asymmetricsignature.AsymmetricSignatureKeyService.SetAccessBindings',
-    index=7,
-    containing_service=None,
-    input_type=yandex_dot_cloud_dot_access_dot_access__pb2._SETACCESSBINDINGSREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002D\"?/kms/v1/asymmetricSignatureKeys/{resource_id}:setAccessBindings:\001*\262\322*9\n access.SetAccessBindingsMetadata\022\025google.protobuf.Empty',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='UpdateAccessBindings',
-    full_name='yandex.cloud.kms.v1.asymmetricsignature.AsymmetricSignatureKeyService.UpdateAccessBindings',
-    index=8,
-    containing_service=None,
-    input_type=yandex_dot_cloud_dot_access_dot_access__pb2._UPDATEACCESSBINDINGSREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002G\"B/kms/v1/asymmetricSignatureKeys/{resource_id}:updateAccessBindings:\001*\262\322*<\n#access.UpdateAccessBindingsMetadata\022\025google.protobuf.Empty',
-    create_key=_descriptor._internal_create_key,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_ASYMMETRICSIGNATUREKEYSERVICE)
-
-DESCRIPTOR.services_by_name['AsymmetricSignatureKeyService'] = _ASYMMETRICSIGNATUREKEYSERVICE
-
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n\027yandex.cloud.api.kms.v1ZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/kms/v1/asymmetricsignature;kms'
+  _CREATEASYMMETRICSIGNATUREKEYREQUEST_LABELSENTRY._options = None
+  _CREATEASYMMETRICSIGNATUREKEYREQUEST_LABELSENTRY._serialized_options = b'8\001'
+  _CREATEASYMMETRICSIGNATUREKEYREQUEST.fields_by_name['folder_id']._options = None
+  _CREATEASYMMETRICSIGNATUREKEYREQUEST.fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _CREATEASYMMETRICSIGNATUREKEYREQUEST.fields_by_name['name']._options = None
+  _CREATEASYMMETRICSIGNATUREKEYREQUEST.fields_by_name['name']._serialized_options = b'\212\3101\005<=100'
+  _CREATEASYMMETRICSIGNATUREKEYREQUEST.fields_by_name['description']._options = None
+  _CREATEASYMMETRICSIGNATUREKEYREQUEST.fields_by_name['description']._serialized_options = b'\212\3101\006<=1024'
+  _CREATEASYMMETRICSIGNATUREKEYREQUEST.fields_by_name['labels']._options = None
+  _CREATEASYMMETRICSIGNATUREKEYREQUEST.fields_by_name['labels']._serialized_options = b'\362\3071\013[-_0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\004<=63'
+  _GETASYMMETRICSIGNATUREKEYREQUEST.fields_by_name['key_id']._options = None
+  _GETASYMMETRICSIGNATUREKEYREQUEST.fields_by_name['key_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTASYMMETRICSIGNATUREKEYSREQUEST.fields_by_name['folder_id']._options = None
+  _LISTASYMMETRICSIGNATUREKEYSREQUEST.fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTASYMMETRICSIGNATUREKEYSREQUEST.fields_by_name['page_size']._options = None
+  _LISTASYMMETRICSIGNATUREKEYSREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
+  _LISTASYMMETRICSIGNATUREKEYSREQUEST.fields_by_name['page_token']._options = None
+  _LISTASYMMETRICSIGNATUREKEYSREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
+  _UPDATEASYMMETRICSIGNATUREKEYREQUEST_LABELSENTRY._options = None
+  _UPDATEASYMMETRICSIGNATUREKEYREQUEST_LABELSENTRY._serialized_options = b'8\001'
+  _UPDATEASYMMETRICSIGNATUREKEYREQUEST.fields_by_name['key_id']._options = None
+  _UPDATEASYMMETRICSIGNATUREKEYREQUEST.fields_by_name['key_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _UPDATEASYMMETRICSIGNATUREKEYREQUEST.fields_by_name['update_mask']._options = None
+  _UPDATEASYMMETRICSIGNATUREKEYREQUEST.fields_by_name['update_mask']._serialized_options = b'\350\3071\001'
+  _UPDATEASYMMETRICSIGNATUREKEYREQUEST.fields_by_name['name']._options = None
+  _UPDATEASYMMETRICSIGNATUREKEYREQUEST.fields_by_name['name']._serialized_options = b'\212\3101\005<=100'
+  _UPDATEASYMMETRICSIGNATUREKEYREQUEST.fields_by_name['description']._options = None
+  _UPDATEASYMMETRICSIGNATUREKEYREQUEST.fields_by_name['description']._serialized_options = b'\212\3101\006<=1024'
+  _UPDATEASYMMETRICSIGNATUREKEYREQUEST.fields_by_name['labels']._options = None
+  _UPDATEASYMMETRICSIGNATUREKEYREQUEST.fields_by_name['labels']._serialized_options = b'\362\3071\013[-_0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\004<=63'
+  _DELETEASYMMETRICSIGNATUREKEYREQUEST.fields_by_name['key_id']._options = None
+  _DELETEASYMMETRICSIGNATUREKEYREQUEST.fields_by_name['key_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTASYMMETRICSIGNATUREKEYOPERATIONSREQUEST.fields_by_name['key_id']._options = None
+  _LISTASYMMETRICSIGNATUREKEYOPERATIONSREQUEST.fields_by_name['key_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTASYMMETRICSIGNATUREKEYOPERATIONSREQUEST.fields_by_name['page_size']._options = None
+  _LISTASYMMETRICSIGNATUREKEYOPERATIONSREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
+  _LISTASYMMETRICSIGNATUREKEYOPERATIONSREQUEST.fields_by_name['page_token']._options = None
+  _LISTASYMMETRICSIGNATUREKEYOPERATIONSREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
+  _ASYMMETRICSIGNATUREKEYSERVICE.methods_by_name['Create']._options = None
+  _ASYMMETRICSIGNATUREKEYSERVICE.methods_by_name['Create']._serialized_options = b'\262\322*>\n$CreateAsymmetricSignatureKeyMetadata\022\026AsymmetricSignatureKey\202\323\344\223\002$\"\037/kms/v1/asymmetricSignatureKeys:\001*'
+  _ASYMMETRICSIGNATUREKEYSERVICE.methods_by_name['Get']._options = None
+  _ASYMMETRICSIGNATUREKEYSERVICE.methods_by_name['Get']._serialized_options = b'\202\323\344\223\002*\022(/kms/v1/asymmetricSignatureKeys/{key_id}'
+  _ASYMMETRICSIGNATUREKEYSERVICE.methods_by_name['List']._options = None
+  _ASYMMETRICSIGNATUREKEYSERVICE.methods_by_name['List']._serialized_options = b'\202\323\344\223\002!\022\037/kms/v1/asymmetricSignatureKeys'
+  _ASYMMETRICSIGNATUREKEYSERVICE.methods_by_name['Update']._options = None
+  _ASYMMETRICSIGNATUREKEYSERVICE.methods_by_name['Update']._serialized_options = b'\262\322*>\n$UpdateAsymmetricSignatureKeyMetadata\022\026AsymmetricSignatureKey\202\323\344\223\002-2(/kms/v1/asymmetricSignatureKeys/{key_id}:\001*'
+  _ASYMMETRICSIGNATUREKEYSERVICE.methods_by_name['Delete']._options = None
+  _ASYMMETRICSIGNATUREKEYSERVICE.methods_by_name['Delete']._serialized_options = b'\262\322*>\n$DeleteAsymmetricSignatureKeyMetadata\022\026AsymmetricSignatureKey\202\323\344\223\002**(/kms/v1/asymmetricSignatureKeys/{key_id}'
+  _ASYMMETRICSIGNATUREKEYSERVICE.methods_by_name['ListOperations']._options = None
+  _ASYMMETRICSIGNATUREKEYSERVICE.methods_by_name['ListOperations']._serialized_options = b'\202\323\344\223\0025\0223/kms/v1/asymmetricSignatureKeys/{key_id}/operations'
+  _ASYMMETRICSIGNATUREKEYSERVICE.methods_by_name['ListAccessBindings']._options = None
+  _ASYMMETRICSIGNATUREKEYSERVICE.methods_by_name['ListAccessBindings']._serialized_options = b'\202\323\344\223\002B\022@/kms/v1/asymmetricSignatureKeys/{resource_id}:listAccessBindings'
+  _ASYMMETRICSIGNATUREKEYSERVICE.methods_by_name['SetAccessBindings']._options = None
+  _ASYMMETRICSIGNATUREKEYSERVICE.methods_by_name['SetAccessBindings']._serialized_options = b'\262\322*9\n access.SetAccessBindingsMetadata\022\025google.protobuf.Empty\202\323\344\223\002D\"?/kms/v1/asymmetricSignatureKeys/{resource_id}:setAccessBindings:\001*'
+  _ASYMMETRICSIGNATUREKEYSERVICE.methods_by_name['UpdateAccessBindings']._options = None
+  _ASYMMETRICSIGNATUREKEYSERVICE.methods_by_name['UpdateAccessBindings']._serialized_options = b'\262\322*<\n#access.UpdateAccessBindingsMetadata\022\025google.protobuf.Empty\202\323\344\223\002G\"B/kms/v1/asymmetricSignatureKeys/{resource_id}:updateAccessBindings:\001*'
+  _globals['_CREATEASYMMETRICSIGNATUREKEYREQUEST']._serialized_start=399
+  _globals['_CREATEASYMMETRICSIGNATUREKEYREQUEST']._serialized_end=871
+  _globals['_CREATEASYMMETRICSIGNATUREKEYREQUEST_LABELSENTRY']._serialized_start=826
+  _globals['_CREATEASYMMETRICSIGNATUREKEYREQUEST_LABELSENTRY']._serialized_end=871
+  _globals['_CREATEASYMMETRICSIGNATUREKEYMETADATA']._serialized_start=873
+  _globals['_CREATEASYMMETRICSIGNATUREKEYMETADATA']._serialized_end=927
+  _globals['_GETASYMMETRICSIGNATUREKEYREQUEST']._serialized_start=929
+  _globals['_GETASYMMETRICSIGNATUREKEYREQUEST']._serialized_end=993
+  _globals['_LISTASYMMETRICSIGNATUREKEYSREQUEST']._serialized_start=996
+  _globals['_LISTASYMMETRICSIGNATUREKEYSREQUEST']._serialized_end=1127
+  _globals['_LISTASYMMETRICSIGNATUREKEYSRESPONSE']._serialized_start=1130
+  _globals['_LISTASYMMETRICSIGNATUREKEYSRESPONSE']._serialized_end=1271
+  _globals['_UPDATEASYMMETRICSIGNATUREKEYREQUEST']._serialized_start=1274
+  _globals['_UPDATEASYMMETRICSIGNATUREKEYREQUEST']._serialized_end=1786
+  _globals['_UPDATEASYMMETRICSIGNATUREKEYREQUEST_LABELSENTRY']._serialized_start=826
+  _globals['_UPDATEASYMMETRICSIGNATUREKEYREQUEST_LABELSENTRY']._serialized_end=871
+  _globals['_UPDATEASYMMETRICSIGNATUREKEYMETADATA']._serialized_start=1788
+  _globals['_UPDATEASYMMETRICSIGNATUREKEYMETADATA']._serialized_end=1842
+  _globals['_DELETEASYMMETRICSIGNATUREKEYREQUEST']._serialized_start=1844
+  _globals['_DELETEASYMMETRICSIGNATUREKEYREQUEST']._serialized_end=1911
+  _globals['_DELETEASYMMETRICSIGNATUREKEYMETADATA']._serialized_start=1913
+  _globals['_DELETEASYMMETRICSIGNATUREKEYMETADATA']._serialized_end=1967
+  _globals['_LISTASYMMETRICSIGNATUREKEYOPERATIONSREQUEST']._serialized_start=1970
+  _globals['_LISTASYMMETRICSIGNATUREKEYOPERATIONSREQUEST']._serialized_end=2107
+  _globals['_LISTASYMMETRICSIGNATUREKEYOPERATIONSRESPONSE']._serialized_start=2109
+  _globals['_LISTASYMMETRICSIGNATUREKEYOPERATIONSRESPONSE']._serialized_end=2235
+  _globals['_ASYMMETRICSIGNATUREKEYSERVICE']._serialized_start=2238
+  _globals['_ASYMMETRICSIGNATUREKEYSERVICE']._serialized_end=4332
 # @@protoc_insertion_point(module_scope)

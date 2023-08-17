@@ -3,9 +3,9 @@
 # source: yandex/cloud/containerregistry/v1/registry_service.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -21,941 +21,105 @@ from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mas
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/containerregistry/v1/registry_service.proto',
-  package='yandex.cloud.containerregistry.v1',
-  syntax='proto3',
-  serialized_options=b'\n%yandex.cloud.api.containerregistry.v1ZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/containerregistry/v1;containerregistry',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n8yandex/cloud/containerregistry/v1/registry_service.proto\x12!yandex.cloud.containerregistry.v1\x1a yandex/cloud/api/operation.proto\x1a yandex/cloud/access/access.proto\x1a\x30yandex/cloud/containerregistry/v1/registry.proto\x1a\x35yandex/cloud/containerregistry/v1/ip_permission.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\"7\n\x12GetRegistryRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x92\x01\n\x15ListRegistriesRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"r\n\x16ListRegistriesResponse\x12?\n\nregistries\x18\x01 \x03(\x0b\x32+.yandex.cloud.containerregistry.v1.Registry\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xb0\x02\n\x15\x43reateRegistryRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x95\x01\n\x06labels\x18\x03 \x03(\x0b\x32\x44.yandex.cloud.containerregistry.v1.CreateRegistryRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"-\n\x16\x43reateRegistryMetadata\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\"\xe3\x02\n\x15UpdateRegistryRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x95\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x44.yandex.cloud.containerregistry.v1.UpdateRegistryRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"-\n\x16UpdateRegistryMetadata\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\":\n\x15\x44\x65leteRegistryRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"-\n\x16\x44\x65leteRegistryMetadata\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\"\x83\x01\n\x16SetIpPermissionRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x46\n\rip_permission\x18\x02 \x03(\x0b\x32/.yandex.cloud.containerregistry.v1.IpPermission\"\x92\x01\n\x19UpdateIpPermissionRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12R\n\x14ip_permission_deltas\x18\x02 \x03(\x0b\x32\x34.yandex.cloud.containerregistry.v1.IpPermissionDelta\"<\n\x17ListIpPermissionRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"a\n\x19ListIpPermissionsResponse\x12\x44\n\x0bpermissions\x18\x01 \x03(\x0b\x32/.yandex.cloud.containerregistry.v1.IpPermission\".\n\x17SetIpPermissionMetadata\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\"1\n\x1aUpdateIpPermissionMetadata\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t2\xbb\x12\n\x0fRegistryService\x12\xa2\x01\n\x03Get\x12\x35.yandex.cloud.containerregistry.v1.GetRegistryRequest\x1a+.yandex.cloud.containerregistry.v1.Registry\"7\x82\xd3\xe4\x93\x02\x31\x12//container-registry/v1/registries/{registry_id}\x12\xa6\x01\n\x04List\x12\x38.yandex.cloud.containerregistry.v1.ListRegistriesRequest\x1a\x39.yandex.cloud.containerregistry.v1.ListRegistriesResponse\")\x82\xd3\xe4\x93\x02#\x12!/container-registry/v1/registries\x12\xb9\x01\n\x06\x43reate\x12\x38.yandex.cloud.containerregistry.v1.CreateRegistryRequest\x1a!.yandex.cloud.operation.Operation\"R\x82\xd3\xe4\x93\x02&\"!/container-registry/v1/registries:\x01*\xb2\xd2*\"\n\x16\x43reateRegistryMetadata\x12\x08Registry\x12\xc7\x01\n\x06Update\x12\x38.yandex.cloud.containerregistry.v1.UpdateRegistryRequest\x1a!.yandex.cloud.operation.Operation\"`\x82\xd3\xe4\x93\x02\x34\x32//container-registry/v1/registries/{registry_id}:\x01*\xb2\xd2*\"\n\x16UpdateRegistryMetadata\x12\x08Registry\x12\xd1\x01\n\x06\x44\x65lete\x12\x38.yandex.cloud.containerregistry.v1.DeleteRegistryRequest\x1a!.yandex.cloud.operation.Operation\"j\x82\xd3\xe4\x93\x02\x31*//container-registry/v1/registries/{registry_id}\xb2\xd2*/\n\x16\x44\x65leteRegistryMetadata\x12\x15google.protobuf.Empty\x12\xc1\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"J\x82\xd3\xe4\x93\x02\x44\x12\x42/container-registry/v1/registries/{resource_id}:listAccessBindings\x12\xf1\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x89\x01\x82\xd3\xe4\x93\x02\x46\"A/container-registry/v1/registries/{resource_id}:setAccessBindings:\x01*\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\xfd\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x8f\x01\x82\xd3\xe4\x93\x02I\"D/container-registry/v1/registries/{resource_id}:updateAccessBindings:\x01*\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\xd6\x01\n\x10ListIpPermission\x12:.yandex.cloud.containerregistry.v1.ListIpPermissionRequest\x1a<.yandex.cloud.containerregistry.v1.ListIpPermissionsResponse\"H\x82\xd3\xe4\x93\x02\x42\x12@/container-registry/v1/registries/{registry_id}:listIpPermission\x12\xef\x01\n\x0fSetIpPermission\x12\x39.yandex.cloud.containerregistry.v1.SetIpPermissionRequest\x1a!.yandex.cloud.operation.Operation\"~\x82\xd3\xe4\x93\x02\x44\"?/container-registry/v1/registries/{registry_id}:setIpPermission:\x01*\xb2\xd2*0\n\x17SetIpPermissionMetadata\x12\x15google.protobuf.Empty\x12\xfc\x01\n\x12UpdateIpPermission\x12<.yandex.cloud.containerregistry.v1.UpdateIpPermissionRequest\x1a!.yandex.cloud.operation.Operation\"\x84\x01\x82\xd3\xe4\x93\x02G\"B/container-registry/v1/registries/{registry_id}:updateIpPermission:\x01*\xb2\xd2*3\n\x1aUpdateIpPermissionMetadata\x12\x15google.protobuf.EmptyB\x80\x01\n%yandex.cloud.api.containerregistry.v1ZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/containerregistry/v1;containerregistryb\x06proto3'
-  ,
-  dependencies=[yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_access_dot_access__pb2.DESCRIPTOR,yandex_dot_cloud_dot_containerregistry_dot_v1_dot_registry__pb2.DESCRIPTOR,yandex_dot_cloud_dot_containerregistry_dot_v1_dot_ip__permission__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n8yandex/cloud/containerregistry/v1/registry_service.proto\x12!yandex.cloud.containerregistry.v1\x1a yandex/cloud/api/operation.proto\x1a yandex/cloud/access/access.proto\x1a\x30yandex/cloud/containerregistry/v1/registry.proto\x1a\x35yandex/cloud/containerregistry/v1/ip_permission.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/api/annotations.proto\"7\n\x12GetRegistryRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x92\x01\n\x15ListRegistriesRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"r\n\x16ListRegistriesResponse\x12?\n\nregistries\x18\x01 \x03(\x0b\x32+.yandex.cloud.containerregistry.v1.Registry\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xac\x02\n\x15\x43reateRegistryRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x91\x01\n\x06labels\x18\x03 \x03(\x0b\x32\x44.yandex.cloud.containerregistry.v1.CreateRegistryRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"-\n\x16\x43reateRegistryMetadata\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\"\xdf\x02\n\x15UpdateRegistryRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x91\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x44.yandex.cloud.containerregistry.v1.UpdateRegistryRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"-\n\x16UpdateRegistryMetadata\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\":\n\x15\x44\x65leteRegistryRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"-\n\x16\x44\x65leteRegistryMetadata\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\"\x83\x01\n\x16SetIpPermissionRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x46\n\rip_permission\x18\x02 \x03(\x0b\x32/.yandex.cloud.containerregistry.v1.IpPermission\"\x92\x01\n\x19UpdateIpPermissionRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12R\n\x14ip_permission_deltas\x18\x02 \x03(\x0b\x32\x34.yandex.cloud.containerregistry.v1.IpPermissionDelta\"<\n\x17ListIpPermissionRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"a\n\x19ListIpPermissionsResponse\x12\x44\n\x0bpermissions\x18\x01 \x03(\x0b\x32/.yandex.cloud.containerregistry.v1.IpPermission\".\n\x17SetIpPermissionMetadata\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\"1\n\x1aUpdateIpPermissionMetadata\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t2\xbb\x12\n\x0fRegistryService\x12\xa2\x01\n\x03Get\x12\x35.yandex.cloud.containerregistry.v1.GetRegistryRequest\x1a+.yandex.cloud.containerregistry.v1.Registry\"7\x82\xd3\xe4\x93\x02\x31\x12//container-registry/v1/registries/{registry_id}\x12\xa6\x01\n\x04List\x12\x38.yandex.cloud.containerregistry.v1.ListRegistriesRequest\x1a\x39.yandex.cloud.containerregistry.v1.ListRegistriesResponse\")\x82\xd3\xe4\x93\x02#\x12!/container-registry/v1/registries\x12\xb9\x01\n\x06\x43reate\x12\x38.yandex.cloud.containerregistry.v1.CreateRegistryRequest\x1a!.yandex.cloud.operation.Operation\"R\xb2\xd2*\"\n\x16\x43reateRegistryMetadata\x12\x08Registry\x82\xd3\xe4\x93\x02&\"!/container-registry/v1/registries:\x01*\x12\xc7\x01\n\x06Update\x12\x38.yandex.cloud.containerregistry.v1.UpdateRegistryRequest\x1a!.yandex.cloud.operation.Operation\"`\xb2\xd2*\"\n\x16UpdateRegistryMetadata\x12\x08Registry\x82\xd3\xe4\x93\x02\x34\x32//container-registry/v1/registries/{registry_id}:\x01*\x12\xd1\x01\n\x06\x44\x65lete\x12\x38.yandex.cloud.containerregistry.v1.DeleteRegistryRequest\x1a!.yandex.cloud.operation.Operation\"j\xb2\xd2*/\n\x16\x44\x65leteRegistryMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x31*//container-registry/v1/registries/{registry_id}\x12\xc1\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"J\x82\xd3\xe4\x93\x02\x44\x12\x42/container-registry/v1/registries/{resource_id}:listAccessBindings\x12\xf1\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x89\x01\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x46\"A/container-registry/v1/registries/{resource_id}:setAccessBindings:\x01*\x12\xfd\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x8f\x01\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02I\"D/container-registry/v1/registries/{resource_id}:updateAccessBindings:\x01*\x12\xd6\x01\n\x10ListIpPermission\x12:.yandex.cloud.containerregistry.v1.ListIpPermissionRequest\x1a<.yandex.cloud.containerregistry.v1.ListIpPermissionsResponse\"H\x82\xd3\xe4\x93\x02\x42\x12@/container-registry/v1/registries/{registry_id}:listIpPermission\x12\xef\x01\n\x0fSetIpPermission\x12\x39.yandex.cloud.containerregistry.v1.SetIpPermissionRequest\x1a!.yandex.cloud.operation.Operation\"~\xb2\xd2*0\n\x17SetIpPermissionMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x44\"?/container-registry/v1/registries/{registry_id}:setIpPermission:\x01*\x12\xfc\x01\n\x12UpdateIpPermission\x12<.yandex.cloud.containerregistry.v1.UpdateIpPermissionRequest\x1a!.yandex.cloud.operation.Operation\"\x84\x01\xb2\xd2*3\n\x1aUpdateIpPermissionMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02G\"B/container-registry/v1/registries/{registry_id}:updateIpPermission:\x01*B\x80\x01\n%yandex.cloud.api.containerregistry.v1ZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/containerregistry/v1;containerregistryb\x06proto3')
 
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.containerregistry.v1.registry_service_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-
-_GETREGISTRYREQUEST = _descriptor.Descriptor(
-  name='GetRegistryRequest',
-  full_name='yandex.cloud.containerregistry.v1.GetRegistryRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='registry_id', full_name='yandex.cloud.containerregistry.v1.GetRegistryRequest.registry_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=403,
-  serialized_end=458,
-)
-
-
-_LISTREGISTRIESREQUEST = _descriptor.Descriptor(
-  name='ListRegistriesRequest',
-  full_name='yandex.cloud.containerregistry.v1.ListRegistriesRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.containerregistry.v1.ListRegistriesRequest.folder_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.containerregistry.v1.ListRegistriesRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.containerregistry.v1.ListRegistriesRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='filter', full_name='yandex.cloud.containerregistry.v1.ListRegistriesRequest.filter', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=461,
-  serialized_end=607,
-)
-
-
-_LISTREGISTRIESRESPONSE = _descriptor.Descriptor(
-  name='ListRegistriesResponse',
-  full_name='yandex.cloud.containerregistry.v1.ListRegistriesResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='registries', full_name='yandex.cloud.containerregistry.v1.ListRegistriesResponse.registries', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.containerregistry.v1.ListRegistriesResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=609,
-  serialized_end=723,
-)
-
-
-_CREATEREGISTRYREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='yandex.cloud.containerregistry.v1.CreateRegistryRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='yandex.cloud.containerregistry.v1.CreateRegistryRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='yandex.cloud.containerregistry.v1.CreateRegistryRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=985,
-  serialized_end=1030,
-)
-
-_CREATEREGISTRYREQUEST = _descriptor.Descriptor(
-  name='CreateRegistryRequest',
-  full_name='yandex.cloud.containerregistry.v1.CreateRegistryRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.containerregistry.v1.CreateRegistryRequest.folder_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.containerregistry.v1.CreateRegistryRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='yandex.cloud.containerregistry.v1.CreateRegistryRequest.labels', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_CREATEREGISTRYREQUEST_LABELSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=726,
-  serialized_end=1030,
-)
-
-
-_CREATEREGISTRYMETADATA = _descriptor.Descriptor(
-  name='CreateRegistryMetadata',
-  full_name='yandex.cloud.containerregistry.v1.CreateRegistryMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='registry_id', full_name='yandex.cloud.containerregistry.v1.CreateRegistryMetadata.registry_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1032,
-  serialized_end=1077,
-)
-
-
-_UPDATEREGISTRYREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='yandex.cloud.containerregistry.v1.UpdateRegistryRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='yandex.cloud.containerregistry.v1.UpdateRegistryRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='yandex.cloud.containerregistry.v1.UpdateRegistryRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=985,
-  serialized_end=1030,
-)
-
-_UPDATEREGISTRYREQUEST = _descriptor.Descriptor(
-  name='UpdateRegistryRequest',
-  full_name='yandex.cloud.containerregistry.v1.UpdateRegistryRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='registry_id', full_name='yandex.cloud.containerregistry.v1.UpdateRegistryRequest.registry_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='update_mask', full_name='yandex.cloud.containerregistry.v1.UpdateRegistryRequest.update_mask', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.containerregistry.v1.UpdateRegistryRequest.name', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='yandex.cloud.containerregistry.v1.UpdateRegistryRequest.labels', index=3,
-      number=4, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_UPDATEREGISTRYREQUEST_LABELSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1080,
-  serialized_end=1435,
-)
-
-
-_UPDATEREGISTRYMETADATA = _descriptor.Descriptor(
-  name='UpdateRegistryMetadata',
-  full_name='yandex.cloud.containerregistry.v1.UpdateRegistryMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='registry_id', full_name='yandex.cloud.containerregistry.v1.UpdateRegistryMetadata.registry_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1437,
-  serialized_end=1482,
-)
-
-
-_DELETEREGISTRYREQUEST = _descriptor.Descriptor(
-  name='DeleteRegistryRequest',
-  full_name='yandex.cloud.containerregistry.v1.DeleteRegistryRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='registry_id', full_name='yandex.cloud.containerregistry.v1.DeleteRegistryRequest.registry_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1484,
-  serialized_end=1542,
-)
-
-
-_DELETEREGISTRYMETADATA = _descriptor.Descriptor(
-  name='DeleteRegistryMetadata',
-  full_name='yandex.cloud.containerregistry.v1.DeleteRegistryMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='registry_id', full_name='yandex.cloud.containerregistry.v1.DeleteRegistryMetadata.registry_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1544,
-  serialized_end=1589,
-)
-
-
-_SETIPPERMISSIONREQUEST = _descriptor.Descriptor(
-  name='SetIpPermissionRequest',
-  full_name='yandex.cloud.containerregistry.v1.SetIpPermissionRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='registry_id', full_name='yandex.cloud.containerregistry.v1.SetIpPermissionRequest.registry_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='ip_permission', full_name='yandex.cloud.containerregistry.v1.SetIpPermissionRequest.ip_permission', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1592,
-  serialized_end=1723,
-)
-
-
-_UPDATEIPPERMISSIONREQUEST = _descriptor.Descriptor(
-  name='UpdateIpPermissionRequest',
-  full_name='yandex.cloud.containerregistry.v1.UpdateIpPermissionRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='registry_id', full_name='yandex.cloud.containerregistry.v1.UpdateIpPermissionRequest.registry_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='ip_permission_deltas', full_name='yandex.cloud.containerregistry.v1.UpdateIpPermissionRequest.ip_permission_deltas', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1726,
-  serialized_end=1872,
-)
-
-
-_LISTIPPERMISSIONREQUEST = _descriptor.Descriptor(
-  name='ListIpPermissionRequest',
-  full_name='yandex.cloud.containerregistry.v1.ListIpPermissionRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='registry_id', full_name='yandex.cloud.containerregistry.v1.ListIpPermissionRequest.registry_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1874,
-  serialized_end=1934,
-)
-
-
-_LISTIPPERMISSIONSRESPONSE = _descriptor.Descriptor(
-  name='ListIpPermissionsResponse',
-  full_name='yandex.cloud.containerregistry.v1.ListIpPermissionsResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='permissions', full_name='yandex.cloud.containerregistry.v1.ListIpPermissionsResponse.permissions', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1936,
-  serialized_end=2033,
-)
-
-
-_SETIPPERMISSIONMETADATA = _descriptor.Descriptor(
-  name='SetIpPermissionMetadata',
-  full_name='yandex.cloud.containerregistry.v1.SetIpPermissionMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='registry_id', full_name='yandex.cloud.containerregistry.v1.SetIpPermissionMetadata.registry_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2035,
-  serialized_end=2081,
-)
-
-
-_UPDATEIPPERMISSIONMETADATA = _descriptor.Descriptor(
-  name='UpdateIpPermissionMetadata',
-  full_name='yandex.cloud.containerregistry.v1.UpdateIpPermissionMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='registry_id', full_name='yandex.cloud.containerregistry.v1.UpdateIpPermissionMetadata.registry_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2083,
-  serialized_end=2132,
-)
-
-_LISTREGISTRIESRESPONSE.fields_by_name['registries'].message_type = yandex_dot_cloud_dot_containerregistry_dot_v1_dot_registry__pb2._REGISTRY
-_CREATEREGISTRYREQUEST_LABELSENTRY.containing_type = _CREATEREGISTRYREQUEST
-_CREATEREGISTRYREQUEST.fields_by_name['labels'].message_type = _CREATEREGISTRYREQUEST_LABELSENTRY
-_UPDATEREGISTRYREQUEST_LABELSENTRY.containing_type = _UPDATEREGISTRYREQUEST
-_UPDATEREGISTRYREQUEST.fields_by_name['update_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
-_UPDATEREGISTRYREQUEST.fields_by_name['labels'].message_type = _UPDATEREGISTRYREQUEST_LABELSENTRY
-_SETIPPERMISSIONREQUEST.fields_by_name['ip_permission'].message_type = yandex_dot_cloud_dot_containerregistry_dot_v1_dot_ip__permission__pb2._IPPERMISSION
-_UPDATEIPPERMISSIONREQUEST.fields_by_name['ip_permission_deltas'].message_type = yandex_dot_cloud_dot_containerregistry_dot_v1_dot_ip__permission__pb2._IPPERMISSIONDELTA
-_LISTIPPERMISSIONSRESPONSE.fields_by_name['permissions'].message_type = yandex_dot_cloud_dot_containerregistry_dot_v1_dot_ip__permission__pb2._IPPERMISSION
-DESCRIPTOR.message_types_by_name['GetRegistryRequest'] = _GETREGISTRYREQUEST
-DESCRIPTOR.message_types_by_name['ListRegistriesRequest'] = _LISTREGISTRIESREQUEST
-DESCRIPTOR.message_types_by_name['ListRegistriesResponse'] = _LISTREGISTRIESRESPONSE
-DESCRIPTOR.message_types_by_name['CreateRegistryRequest'] = _CREATEREGISTRYREQUEST
-DESCRIPTOR.message_types_by_name['CreateRegistryMetadata'] = _CREATEREGISTRYMETADATA
-DESCRIPTOR.message_types_by_name['UpdateRegistryRequest'] = _UPDATEREGISTRYREQUEST
-DESCRIPTOR.message_types_by_name['UpdateRegistryMetadata'] = _UPDATEREGISTRYMETADATA
-DESCRIPTOR.message_types_by_name['DeleteRegistryRequest'] = _DELETEREGISTRYREQUEST
-DESCRIPTOR.message_types_by_name['DeleteRegistryMetadata'] = _DELETEREGISTRYMETADATA
-DESCRIPTOR.message_types_by_name['SetIpPermissionRequest'] = _SETIPPERMISSIONREQUEST
-DESCRIPTOR.message_types_by_name['UpdateIpPermissionRequest'] = _UPDATEIPPERMISSIONREQUEST
-DESCRIPTOR.message_types_by_name['ListIpPermissionRequest'] = _LISTIPPERMISSIONREQUEST
-DESCRIPTOR.message_types_by_name['ListIpPermissionsResponse'] = _LISTIPPERMISSIONSRESPONSE
-DESCRIPTOR.message_types_by_name['SetIpPermissionMetadata'] = _SETIPPERMISSIONMETADATA
-DESCRIPTOR.message_types_by_name['UpdateIpPermissionMetadata'] = _UPDATEIPPERMISSIONMETADATA
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-GetRegistryRequest = _reflection.GeneratedProtocolMessageType('GetRegistryRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETREGISTRYREQUEST,
-  '__module__' : 'yandex.cloud.containerregistry.v1.registry_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.GetRegistryRequest)
-  })
-_sym_db.RegisterMessage(GetRegistryRequest)
-
-ListRegistriesRequest = _reflection.GeneratedProtocolMessageType('ListRegistriesRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTREGISTRIESREQUEST,
-  '__module__' : 'yandex.cloud.containerregistry.v1.registry_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.ListRegistriesRequest)
-  })
-_sym_db.RegisterMessage(ListRegistriesRequest)
-
-ListRegistriesResponse = _reflection.GeneratedProtocolMessageType('ListRegistriesResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTREGISTRIESRESPONSE,
-  '__module__' : 'yandex.cloud.containerregistry.v1.registry_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.ListRegistriesResponse)
-  })
-_sym_db.RegisterMessage(ListRegistriesResponse)
-
-CreateRegistryRequest = _reflection.GeneratedProtocolMessageType('CreateRegistryRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _CREATEREGISTRYREQUEST_LABELSENTRY,
-    '__module__' : 'yandex.cloud.containerregistry.v1.registry_service_pb2'
-    # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.CreateRegistryRequest.LabelsEntry)
-    })
-  ,
-  'DESCRIPTOR' : _CREATEREGISTRYREQUEST,
-  '__module__' : 'yandex.cloud.containerregistry.v1.registry_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.CreateRegistryRequest)
-  })
-_sym_db.RegisterMessage(CreateRegistryRequest)
-_sym_db.RegisterMessage(CreateRegistryRequest.LabelsEntry)
-
-CreateRegistryMetadata = _reflection.GeneratedProtocolMessageType('CreateRegistryMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _CREATEREGISTRYMETADATA,
-  '__module__' : 'yandex.cloud.containerregistry.v1.registry_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.CreateRegistryMetadata)
-  })
-_sym_db.RegisterMessage(CreateRegistryMetadata)
-
-UpdateRegistryRequest = _reflection.GeneratedProtocolMessageType('UpdateRegistryRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _UPDATEREGISTRYREQUEST_LABELSENTRY,
-    '__module__' : 'yandex.cloud.containerregistry.v1.registry_service_pb2'
-    # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.UpdateRegistryRequest.LabelsEntry)
-    })
-  ,
-  'DESCRIPTOR' : _UPDATEREGISTRYREQUEST,
-  '__module__' : 'yandex.cloud.containerregistry.v1.registry_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.UpdateRegistryRequest)
-  })
-_sym_db.RegisterMessage(UpdateRegistryRequest)
-_sym_db.RegisterMessage(UpdateRegistryRequest.LabelsEntry)
-
-UpdateRegistryMetadata = _reflection.GeneratedProtocolMessageType('UpdateRegistryMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATEREGISTRYMETADATA,
-  '__module__' : 'yandex.cloud.containerregistry.v1.registry_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.UpdateRegistryMetadata)
-  })
-_sym_db.RegisterMessage(UpdateRegistryMetadata)
-
-DeleteRegistryRequest = _reflection.GeneratedProtocolMessageType('DeleteRegistryRequest', (_message.Message,), {
-  'DESCRIPTOR' : _DELETEREGISTRYREQUEST,
-  '__module__' : 'yandex.cloud.containerregistry.v1.registry_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.DeleteRegistryRequest)
-  })
-_sym_db.RegisterMessage(DeleteRegistryRequest)
-
-DeleteRegistryMetadata = _reflection.GeneratedProtocolMessageType('DeleteRegistryMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _DELETEREGISTRYMETADATA,
-  '__module__' : 'yandex.cloud.containerregistry.v1.registry_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.DeleteRegistryMetadata)
-  })
-_sym_db.RegisterMessage(DeleteRegistryMetadata)
-
-SetIpPermissionRequest = _reflection.GeneratedProtocolMessageType('SetIpPermissionRequest', (_message.Message,), {
-  'DESCRIPTOR' : _SETIPPERMISSIONREQUEST,
-  '__module__' : 'yandex.cloud.containerregistry.v1.registry_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.SetIpPermissionRequest)
-  })
-_sym_db.RegisterMessage(SetIpPermissionRequest)
-
-UpdateIpPermissionRequest = _reflection.GeneratedProtocolMessageType('UpdateIpPermissionRequest', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATEIPPERMISSIONREQUEST,
-  '__module__' : 'yandex.cloud.containerregistry.v1.registry_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.UpdateIpPermissionRequest)
-  })
-_sym_db.RegisterMessage(UpdateIpPermissionRequest)
-
-ListIpPermissionRequest = _reflection.GeneratedProtocolMessageType('ListIpPermissionRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTIPPERMISSIONREQUEST,
-  '__module__' : 'yandex.cloud.containerregistry.v1.registry_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.ListIpPermissionRequest)
-  })
-_sym_db.RegisterMessage(ListIpPermissionRequest)
-
-ListIpPermissionsResponse = _reflection.GeneratedProtocolMessageType('ListIpPermissionsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTIPPERMISSIONSRESPONSE,
-  '__module__' : 'yandex.cloud.containerregistry.v1.registry_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.ListIpPermissionsResponse)
-  })
-_sym_db.RegisterMessage(ListIpPermissionsResponse)
-
-SetIpPermissionMetadata = _reflection.GeneratedProtocolMessageType('SetIpPermissionMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _SETIPPERMISSIONMETADATA,
-  '__module__' : 'yandex.cloud.containerregistry.v1.registry_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.SetIpPermissionMetadata)
-  })
-_sym_db.RegisterMessage(SetIpPermissionMetadata)
-
-UpdateIpPermissionMetadata = _reflection.GeneratedProtocolMessageType('UpdateIpPermissionMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATEIPPERMISSIONMETADATA,
-  '__module__' : 'yandex.cloud.containerregistry.v1.registry_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.UpdateIpPermissionMetadata)
-  })
-_sym_db.RegisterMessage(UpdateIpPermissionMetadata)
-
-
-DESCRIPTOR._options = None
-_GETREGISTRYREQUEST.fields_by_name['registry_id']._options = None
-_LISTREGISTRIESREQUEST.fields_by_name['folder_id']._options = None
-_LISTREGISTRIESREQUEST.fields_by_name['page_size']._options = None
-_LISTREGISTRIESREQUEST.fields_by_name['page_token']._options = None
-_LISTREGISTRIESREQUEST.fields_by_name['filter']._options = None
-_CREATEREGISTRYREQUEST_LABELSENTRY._options = None
-_CREATEREGISTRYREQUEST.fields_by_name['folder_id']._options = None
-_CREATEREGISTRYREQUEST.fields_by_name['name']._options = None
-_CREATEREGISTRYREQUEST.fields_by_name['labels']._options = None
-_UPDATEREGISTRYREQUEST_LABELSENTRY._options = None
-_UPDATEREGISTRYREQUEST.fields_by_name['registry_id']._options = None
-_UPDATEREGISTRYREQUEST.fields_by_name['name']._options = None
-_UPDATEREGISTRYREQUEST.fields_by_name['labels']._options = None
-_DELETEREGISTRYREQUEST.fields_by_name['registry_id']._options = None
-_SETIPPERMISSIONREQUEST.fields_by_name['registry_id']._options = None
-_UPDATEIPPERMISSIONREQUEST.fields_by_name['registry_id']._options = None
-_LISTIPPERMISSIONREQUEST.fields_by_name['registry_id']._options = None
-
-_REGISTRYSERVICE = _descriptor.ServiceDescriptor(
-  name='RegistryService',
-  full_name='yandex.cloud.containerregistry.v1.RegistryService',
-  file=DESCRIPTOR,
-  index=0,
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_start=2135,
-  serialized_end=4498,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='Get',
-    full_name='yandex.cloud.containerregistry.v1.RegistryService.Get',
-    index=0,
-    containing_service=None,
-    input_type=_GETREGISTRYREQUEST,
-    output_type=yandex_dot_cloud_dot_containerregistry_dot_v1_dot_registry__pb2._REGISTRY,
-    serialized_options=b'\202\323\344\223\0021\022//container-registry/v1/registries/{registry_id}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='List',
-    full_name='yandex.cloud.containerregistry.v1.RegistryService.List',
-    index=1,
-    containing_service=None,
-    input_type=_LISTREGISTRIESREQUEST,
-    output_type=_LISTREGISTRIESRESPONSE,
-    serialized_options=b'\202\323\344\223\002#\022!/container-registry/v1/registries',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Create',
-    full_name='yandex.cloud.containerregistry.v1.RegistryService.Create',
-    index=2,
-    containing_service=None,
-    input_type=_CREATEREGISTRYREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002&\"!/container-registry/v1/registries:\001*\262\322*\"\n\026CreateRegistryMetadata\022\010Registry',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Update',
-    full_name='yandex.cloud.containerregistry.v1.RegistryService.Update',
-    index=3,
-    containing_service=None,
-    input_type=_UPDATEREGISTRYREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\00242//container-registry/v1/registries/{registry_id}:\001*\262\322*\"\n\026UpdateRegistryMetadata\022\010Registry',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Delete',
-    full_name='yandex.cloud.containerregistry.v1.RegistryService.Delete',
-    index=4,
-    containing_service=None,
-    input_type=_DELETEREGISTRYREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\0021*//container-registry/v1/registries/{registry_id}\262\322*/\n\026DeleteRegistryMetadata\022\025google.protobuf.Empty',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListAccessBindings',
-    full_name='yandex.cloud.containerregistry.v1.RegistryService.ListAccessBindings',
-    index=5,
-    containing_service=None,
-    input_type=yandex_dot_cloud_dot_access_dot_access__pb2._LISTACCESSBINDINGSREQUEST,
-    output_type=yandex_dot_cloud_dot_access_dot_access__pb2._LISTACCESSBINDINGSRESPONSE,
-    serialized_options=b'\202\323\344\223\002D\022B/container-registry/v1/registries/{resource_id}:listAccessBindings',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='SetAccessBindings',
-    full_name='yandex.cloud.containerregistry.v1.RegistryService.SetAccessBindings',
-    index=6,
-    containing_service=None,
-    input_type=yandex_dot_cloud_dot_access_dot_access__pb2._SETACCESSBINDINGSREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002F\"A/container-registry/v1/registries/{resource_id}:setAccessBindings:\001*\262\322*9\n access.SetAccessBindingsMetadata\022\025google.protobuf.Empty',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='UpdateAccessBindings',
-    full_name='yandex.cloud.containerregistry.v1.RegistryService.UpdateAccessBindings',
-    index=7,
-    containing_service=None,
-    input_type=yandex_dot_cloud_dot_access_dot_access__pb2._UPDATEACCESSBINDINGSREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002I\"D/container-registry/v1/registries/{resource_id}:updateAccessBindings:\001*\262\322*<\n#access.UpdateAccessBindingsMetadata\022\025google.protobuf.Empty',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListIpPermission',
-    full_name='yandex.cloud.containerregistry.v1.RegistryService.ListIpPermission',
-    index=8,
-    containing_service=None,
-    input_type=_LISTIPPERMISSIONREQUEST,
-    output_type=_LISTIPPERMISSIONSRESPONSE,
-    serialized_options=b'\202\323\344\223\002B\022@/container-registry/v1/registries/{registry_id}:listIpPermission',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='SetIpPermission',
-    full_name='yandex.cloud.containerregistry.v1.RegistryService.SetIpPermission',
-    index=9,
-    containing_service=None,
-    input_type=_SETIPPERMISSIONREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002D\"?/container-registry/v1/registries/{registry_id}:setIpPermission:\001*\262\322*0\n\027SetIpPermissionMetadata\022\025google.protobuf.Empty',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='UpdateIpPermission',
-    full_name='yandex.cloud.containerregistry.v1.RegistryService.UpdateIpPermission',
-    index=10,
-    containing_service=None,
-    input_type=_UPDATEIPPERMISSIONREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002G\"B/container-registry/v1/registries/{registry_id}:updateIpPermission:\001*\262\322*3\n\032UpdateIpPermissionMetadata\022\025google.protobuf.Empty',
-    create_key=_descriptor._internal_create_key,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_REGISTRYSERVICE)
-
-DESCRIPTOR.services_by_name['RegistryService'] = _REGISTRYSERVICE
-
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n%yandex.cloud.api.containerregistry.v1ZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/containerregistry/v1;containerregistry'
+  _GETREGISTRYREQUEST.fields_by_name['registry_id']._options = None
+  _GETREGISTRYREQUEST.fields_by_name['registry_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTREGISTRIESREQUEST.fields_by_name['folder_id']._options = None
+  _LISTREGISTRIESREQUEST.fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTREGISTRIESREQUEST.fields_by_name['page_size']._options = None
+  _LISTREGISTRIESREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
+  _LISTREGISTRIESREQUEST.fields_by_name['page_token']._options = None
+  _LISTREGISTRIESREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
+  _LISTREGISTRIESREQUEST.fields_by_name['filter']._options = None
+  _LISTREGISTRIESREQUEST.fields_by_name['filter']._serialized_options = b'\212\3101\006<=1000'
+  _CREATEREGISTRYREQUEST_LABELSENTRY._options = None
+  _CREATEREGISTRYREQUEST_LABELSENTRY._serialized_options = b'8\001'
+  _CREATEREGISTRYREQUEST.fields_by_name['folder_id']._options = None
+  _CREATEREGISTRYREQUEST.fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _CREATEREGISTRYREQUEST.fields_by_name['name']._options = None
+  _CREATEREGISTRYREQUEST.fields_by_name['name']._serialized_options = b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'
+  _CREATEREGISTRYREQUEST.fields_by_name['labels']._options = None
+  _CREATEREGISTRYREQUEST.fields_by_name['labels']._serialized_options = b'\362\3071\013[-_0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\0041-63'
+  _UPDATEREGISTRYREQUEST_LABELSENTRY._options = None
+  _UPDATEREGISTRYREQUEST_LABELSENTRY._serialized_options = b'8\001'
+  _UPDATEREGISTRYREQUEST.fields_by_name['registry_id']._options = None
+  _UPDATEREGISTRYREQUEST.fields_by_name['registry_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _UPDATEREGISTRYREQUEST.fields_by_name['name']._options = None
+  _UPDATEREGISTRYREQUEST.fields_by_name['name']._serialized_options = b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'
+  _UPDATEREGISTRYREQUEST.fields_by_name['labels']._options = None
+  _UPDATEREGISTRYREQUEST.fields_by_name['labels']._serialized_options = b'\362\3071\013[-_0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\0041-63'
+  _DELETEREGISTRYREQUEST.fields_by_name['registry_id']._options = None
+  _DELETEREGISTRYREQUEST.fields_by_name['registry_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _SETIPPERMISSIONREQUEST.fields_by_name['registry_id']._options = None
+  _SETIPPERMISSIONREQUEST.fields_by_name['registry_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _UPDATEIPPERMISSIONREQUEST.fields_by_name['registry_id']._options = None
+  _UPDATEIPPERMISSIONREQUEST.fields_by_name['registry_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTIPPERMISSIONREQUEST.fields_by_name['registry_id']._options = None
+  _LISTIPPERMISSIONREQUEST.fields_by_name['registry_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _REGISTRYSERVICE.methods_by_name['Get']._options = None
+  _REGISTRYSERVICE.methods_by_name['Get']._serialized_options = b'\202\323\344\223\0021\022//container-registry/v1/registries/{registry_id}'
+  _REGISTRYSERVICE.methods_by_name['List']._options = None
+  _REGISTRYSERVICE.methods_by_name['List']._serialized_options = b'\202\323\344\223\002#\022!/container-registry/v1/registries'
+  _REGISTRYSERVICE.methods_by_name['Create']._options = None
+  _REGISTRYSERVICE.methods_by_name['Create']._serialized_options = b'\262\322*\"\n\026CreateRegistryMetadata\022\010Registry\202\323\344\223\002&\"!/container-registry/v1/registries:\001*'
+  _REGISTRYSERVICE.methods_by_name['Update']._options = None
+  _REGISTRYSERVICE.methods_by_name['Update']._serialized_options = b'\262\322*\"\n\026UpdateRegistryMetadata\022\010Registry\202\323\344\223\00242//container-registry/v1/registries/{registry_id}:\001*'
+  _REGISTRYSERVICE.methods_by_name['Delete']._options = None
+  _REGISTRYSERVICE.methods_by_name['Delete']._serialized_options = b'\262\322*/\n\026DeleteRegistryMetadata\022\025google.protobuf.Empty\202\323\344\223\0021*//container-registry/v1/registries/{registry_id}'
+  _REGISTRYSERVICE.methods_by_name['ListAccessBindings']._options = None
+  _REGISTRYSERVICE.methods_by_name['ListAccessBindings']._serialized_options = b'\202\323\344\223\002D\022B/container-registry/v1/registries/{resource_id}:listAccessBindings'
+  _REGISTRYSERVICE.methods_by_name['SetAccessBindings']._options = None
+  _REGISTRYSERVICE.methods_by_name['SetAccessBindings']._serialized_options = b'\262\322*9\n access.SetAccessBindingsMetadata\022\025google.protobuf.Empty\202\323\344\223\002F\"A/container-registry/v1/registries/{resource_id}:setAccessBindings:\001*'
+  _REGISTRYSERVICE.methods_by_name['UpdateAccessBindings']._options = None
+  _REGISTRYSERVICE.methods_by_name['UpdateAccessBindings']._serialized_options = b'\262\322*<\n#access.UpdateAccessBindingsMetadata\022\025google.protobuf.Empty\202\323\344\223\002I\"D/container-registry/v1/registries/{resource_id}:updateAccessBindings:\001*'
+  _REGISTRYSERVICE.methods_by_name['ListIpPermission']._options = None
+  _REGISTRYSERVICE.methods_by_name['ListIpPermission']._serialized_options = b'\202\323\344\223\002B\022@/container-registry/v1/registries/{registry_id}:listIpPermission'
+  _REGISTRYSERVICE.methods_by_name['SetIpPermission']._options = None
+  _REGISTRYSERVICE.methods_by_name['SetIpPermission']._serialized_options = b'\262\322*0\n\027SetIpPermissionMetadata\022\025google.protobuf.Empty\202\323\344\223\002D\"?/container-registry/v1/registries/{registry_id}:setIpPermission:\001*'
+  _REGISTRYSERVICE.methods_by_name['UpdateIpPermission']._options = None
+  _REGISTRYSERVICE.methods_by_name['UpdateIpPermission']._serialized_options = b'\262\322*3\n\032UpdateIpPermissionMetadata\022\025google.protobuf.Empty\202\323\344\223\002G\"B/container-registry/v1/registries/{registry_id}:updateIpPermission:\001*'
+  _globals['_GETREGISTRYREQUEST']._serialized_start=403
+  _globals['_GETREGISTRYREQUEST']._serialized_end=458
+  _globals['_LISTREGISTRIESREQUEST']._serialized_start=461
+  _globals['_LISTREGISTRIESREQUEST']._serialized_end=607
+  _globals['_LISTREGISTRIESRESPONSE']._serialized_start=609
+  _globals['_LISTREGISTRIESRESPONSE']._serialized_end=723
+  _globals['_CREATEREGISTRYREQUEST']._serialized_start=726
+  _globals['_CREATEREGISTRYREQUEST']._serialized_end=1026
+  _globals['_CREATEREGISTRYREQUEST_LABELSENTRY']._serialized_start=981
+  _globals['_CREATEREGISTRYREQUEST_LABELSENTRY']._serialized_end=1026
+  _globals['_CREATEREGISTRYMETADATA']._serialized_start=1028
+  _globals['_CREATEREGISTRYMETADATA']._serialized_end=1073
+  _globals['_UPDATEREGISTRYREQUEST']._serialized_start=1076
+  _globals['_UPDATEREGISTRYREQUEST']._serialized_end=1427
+  _globals['_UPDATEREGISTRYREQUEST_LABELSENTRY']._serialized_start=981
+  _globals['_UPDATEREGISTRYREQUEST_LABELSENTRY']._serialized_end=1026
+  _globals['_UPDATEREGISTRYMETADATA']._serialized_start=1429
+  _globals['_UPDATEREGISTRYMETADATA']._serialized_end=1474
+  _globals['_DELETEREGISTRYREQUEST']._serialized_start=1476
+  _globals['_DELETEREGISTRYREQUEST']._serialized_end=1534
+  _globals['_DELETEREGISTRYMETADATA']._serialized_start=1536
+  _globals['_DELETEREGISTRYMETADATA']._serialized_end=1581
+  _globals['_SETIPPERMISSIONREQUEST']._serialized_start=1584
+  _globals['_SETIPPERMISSIONREQUEST']._serialized_end=1715
+  _globals['_UPDATEIPPERMISSIONREQUEST']._serialized_start=1718
+  _globals['_UPDATEIPPERMISSIONREQUEST']._serialized_end=1864
+  _globals['_LISTIPPERMISSIONREQUEST']._serialized_start=1866
+  _globals['_LISTIPPERMISSIONREQUEST']._serialized_end=1926
+  _globals['_LISTIPPERMISSIONSRESPONSE']._serialized_start=1928
+  _globals['_LISTIPPERMISSIONSRESPONSE']._serialized_end=2025
+  _globals['_SETIPPERMISSIONMETADATA']._serialized_start=2027
+  _globals['_SETIPPERMISSIONMETADATA']._serialized_end=2073
+  _globals['_UPDATEIPPERMISSIONMETADATA']._serialized_start=2075
+  _globals['_UPDATEIPPERMISSIONMETADATA']._serialized_end=2124
+  _globals['_REGISTRYSERVICE']._serialized_start=2127
+  _globals['_REGISTRYSERVICE']._serialized_end=4490
 # @@protoc_insertion_point(module_scope)

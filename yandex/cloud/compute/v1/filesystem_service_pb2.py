@@ -3,9 +3,9 @@
 # source: yandex/cloud/compute/v1/filesystem_service.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -19,798 +19,99 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/compute/v1/filesystem_service.proto',
-  package='yandex.cloud.compute.v1',
-  syntax='proto3',
-  serialized_options=b'\n\033yandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;compute',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n0yandex/cloud/compute/v1/filesystem_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a(yandex/cloud/compute/v1/filesystem.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\";\n\x14GetFilesystemRequest\x12#\n\rfilesystem_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xb0\x01\n\x16ListFilesystemsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1b\n\x08order_by\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=100\"l\n\x17ListFilesystemsResponse\x12\x38\n\x0b\x66ilesystems\x18\x01 \x03(\x0b\x32#.yandex.cloud.compute.v1.Filesystem\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xb7\x03\n\x17\x43reateFilesystemRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\x04name\x18\x02 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x95\x01\n\x06labels\x18\x04 \x03(\x0b\x32<.yandex.cloud.compute.v1.CreateFilesystemRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x19\n\x07type_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\x07zone_id\x18\x06 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x12\n\x04size\x18\x07 \x01(\x03\x42\x04\xe8\xc7\x31\x01\x12\x12\n\nblock_size\x18\x08 \x01(\x03\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"1\n\x18\x43reateFilesystemMetadata\x12\x15\n\rfilesystem_id\x18\x01 \x01(\t\"\x98\x03\n\x17UpdateFilesystemRequest\x12#\n\rfilesystem_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x95\x01\n\x06labels\x18\x05 \x03(\x0b\x32<.yandex.cloud.compute.v1.UpdateFilesystemRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x0c\n\x04size\x18\x06 \x01(\x03\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"1\n\x18UpdateFilesystemMetadata\x12\x15\n\rfilesystem_id\x18\x01 \x01(\t\">\n\x17\x44\x65leteFilesystemRequest\x12#\n\rfilesystem_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"1\n\x18\x44\x65leteFilesystemMetadata\x12\x15\n\rfilesystem_id\x18\x01 \x01(\t\"\x84\x01\n\x1fListFilesystemOperationsRequest\x12#\n\rfilesystem_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"r\n ListFilesystemOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xa3\x08\n\x11\x46ilesystemService\x12\x8a\x01\n\x03Get\x12-.yandex.cloud.compute.v1.GetFilesystemRequest\x1a#.yandex.cloud.compute.v1.Filesystem\"/\x82\xd3\xe4\x93\x02)\x12\'/compute/v1/filesystems/{filesystem_id}\x12\x8a\x01\n\x04List\x12/.yandex.cloud.compute.v1.ListFilesystemsRequest\x1a\x30.yandex.cloud.compute.v1.ListFilesystemsResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/compute/v1/filesystems\x12\xab\x01\n\x06\x43reate\x12\x30.yandex.cloud.compute.v1.CreateFilesystemRequest\x1a!.yandex.cloud.operation.Operation\"L\x82\xd3\xe4\x93\x02\x1c\"\x17/compute/v1/filesystems:\x01*\xb2\xd2*&\n\x18\x43reateFilesystemMetadata\x12\nFilesystem\x12\xbb\x01\n\x06Update\x12\x30.yandex.cloud.compute.v1.UpdateFilesystemRequest\x1a!.yandex.cloud.operation.Operation\"\\\x82\xd3\xe4\x93\x02,2\'/compute/v1/filesystems/{filesystem_id}:\x01*\xb2\xd2*&\n\x18UpdateFilesystemMetadata\x12\nFilesystem\x12\xc3\x01\n\x06\x44\x65lete\x12\x30.yandex.cloud.compute.v1.DeleteFilesystemRequest\x1a!.yandex.cloud.operation.Operation\"d\x82\xd3\xe4\x93\x02)*\'/compute/v1/filesystems/{filesystem_id}\xb2\xd2*1\n\x18\x44\x65leteFilesystemMetadata\x12\x15google.protobuf.Empty\x12\xc1\x01\n\x0eListOperations\x12\x38.yandex.cloud.compute.v1.ListFilesystemOperationsRequest\x1a\x39.yandex.cloud.compute.v1.ListFilesystemOperationsResponse\":\x82\xd3\xe4\x93\x02\x34\x12\x32/compute/v1/filesystems/{filesystem_id}/operationsBb\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3'
-  ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_compute_dot_v1_dot_filesystem__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n0yandex/cloud/compute/v1/filesystem_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a(yandex/cloud/compute/v1/filesystem.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\";\n\x14GetFilesystemRequest\x12#\n\rfilesystem_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xb0\x01\n\x16ListFilesystemsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1b\n\x08order_by\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=100\"l\n\x17ListFilesystemsResponse\x12\x38\n\x0b\x66ilesystems\x18\x01 \x03(\x0b\x32#.yandex.cloud.compute.v1.Filesystem\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xb3\x03\n\x17\x43reateFilesystemRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\x04name\x18\x02 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x91\x01\n\x06labels\x18\x04 \x03(\x0b\x32<.yandex.cloud.compute.v1.CreateFilesystemRequest.LabelsEntryBC\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x1c\x12\x14[a-z][-_./\\@0-9a-z]*\x1a\x04\x31-63\x12\x19\n\x07type_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\x07zone_id\x18\x06 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x12\n\x04size\x18\x07 \x01(\x03\x42\x04\xe8\xc7\x31\x01\x12\x12\n\nblock_size\x18\x08 \x01(\x03\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"1\n\x18\x43reateFilesystemMetadata\x12\x15\n\rfilesystem_id\x18\x01 \x01(\t\"\x94\x03\n\x17UpdateFilesystemRequest\x12#\n\rfilesystem_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x91\x01\n\x06labels\x18\x05 \x03(\x0b\x32<.yandex.cloud.compute.v1.UpdateFilesystemRequest.LabelsEntryBC\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x1c\x12\x14[a-z][-_./\\@0-9a-z]*\x1a\x04\x31-63\x12\x0c\n\x04size\x18\x06 \x01(\x03\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"1\n\x18UpdateFilesystemMetadata\x12\x15\n\rfilesystem_id\x18\x01 \x01(\t\">\n\x17\x44\x65leteFilesystemRequest\x12#\n\rfilesystem_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"1\n\x18\x44\x65leteFilesystemMetadata\x12\x15\n\rfilesystem_id\x18\x01 \x01(\t\"\x84\x01\n\x1fListFilesystemOperationsRequest\x12#\n\rfilesystem_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"r\n ListFilesystemOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xa3\x08\n\x11\x46ilesystemService\x12\x8a\x01\n\x03Get\x12-.yandex.cloud.compute.v1.GetFilesystemRequest\x1a#.yandex.cloud.compute.v1.Filesystem\"/\x82\xd3\xe4\x93\x02)\x12\'/compute/v1/filesystems/{filesystem_id}\x12\x8a\x01\n\x04List\x12/.yandex.cloud.compute.v1.ListFilesystemsRequest\x1a\x30.yandex.cloud.compute.v1.ListFilesystemsResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/compute/v1/filesystems\x12\xab\x01\n\x06\x43reate\x12\x30.yandex.cloud.compute.v1.CreateFilesystemRequest\x1a!.yandex.cloud.operation.Operation\"L\xb2\xd2*&\n\x18\x43reateFilesystemMetadata\x12\nFilesystem\x82\xd3\xe4\x93\x02\x1c\"\x17/compute/v1/filesystems:\x01*\x12\xbb\x01\n\x06Update\x12\x30.yandex.cloud.compute.v1.UpdateFilesystemRequest\x1a!.yandex.cloud.operation.Operation\"\\\xb2\xd2*&\n\x18UpdateFilesystemMetadata\x12\nFilesystem\x82\xd3\xe4\x93\x02,2\'/compute/v1/filesystems/{filesystem_id}:\x01*\x12\xc3\x01\n\x06\x44\x65lete\x12\x30.yandex.cloud.compute.v1.DeleteFilesystemRequest\x1a!.yandex.cloud.operation.Operation\"d\xb2\xd2*1\n\x18\x44\x65leteFilesystemMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02)*\'/compute/v1/filesystems/{filesystem_id}\x12\xc1\x01\n\x0eListOperations\x12\x38.yandex.cloud.compute.v1.ListFilesystemOperationsRequest\x1a\x39.yandex.cloud.compute.v1.ListFilesystemOperationsResponse\":\x82\xd3\xe4\x93\x02\x34\x12\x32/compute/v1/filesystems/{filesystem_id}/operationsBb\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3')
 
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.compute.v1.filesystem_service_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-
-_GETFILESYSTEMREQUEST = _descriptor.Descriptor(
-  name='GetFilesystemRequest',
-  full_name='yandex.cloud.compute.v1.GetFilesystemRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='filesystem_id', full_name='yandex.cloud.compute.v1.GetFilesystemRequest.filesystem_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=288,
-  serialized_end=347,
-)
-
-
-_LISTFILESYSTEMSREQUEST = _descriptor.Descriptor(
-  name='ListFilesystemsRequest',
-  full_name='yandex.cloud.compute.v1.ListFilesystemsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.compute.v1.ListFilesystemsRequest.folder_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.compute.v1.ListFilesystemsRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.compute.v1.ListFilesystemsRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='filter', full_name='yandex.cloud.compute.v1.ListFilesystemsRequest.filter', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='order_by', full_name='yandex.cloud.compute.v1.ListFilesystemsRequest.order_by', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=350,
-  serialized_end=526,
-)
-
-
-_LISTFILESYSTEMSRESPONSE = _descriptor.Descriptor(
-  name='ListFilesystemsResponse',
-  full_name='yandex.cloud.compute.v1.ListFilesystemsResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='filesystems', full_name='yandex.cloud.compute.v1.ListFilesystemsResponse.filesystems', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.compute.v1.ListFilesystemsResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=528,
-  serialized_end=636,
-)
-
-
-_CREATEFILESYSTEMREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='yandex.cloud.compute.v1.CreateFilesystemRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='yandex.cloud.compute.v1.CreateFilesystemRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='yandex.cloud.compute.v1.CreateFilesystemRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1033,
-  serialized_end=1078,
-)
-
-_CREATEFILESYSTEMREQUEST = _descriptor.Descriptor(
-  name='CreateFilesystemRequest',
-  full_name='yandex.cloud.compute.v1.CreateFilesystemRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.compute.v1.CreateFilesystemRequest.folder_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.compute.v1.CreateFilesystemRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='yandex.cloud.compute.v1.CreateFilesystemRequest.description', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='yandex.cloud.compute.v1.CreateFilesystemRequest.labels', index=3,
-      number=4, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\017[-_./\\@0-9a-z]*\262\3101\006\032\0041-63\262\3101\026\022\024[a-z][-_./\\@0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='type_id', full_name='yandex.cloud.compute.v1.CreateFilesystemRequest.type_id', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='zone_id', full_name='yandex.cloud.compute.v1.CreateFilesystemRequest.zone_id', index=5,
-      number=6, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='size', full_name='yandex.cloud.compute.v1.CreateFilesystemRequest.size', index=6,
-      number=7, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='block_size', full_name='yandex.cloud.compute.v1.CreateFilesystemRequest.block_size', index=7,
-      number=8, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_CREATEFILESYSTEMREQUEST_LABELSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=639,
-  serialized_end=1078,
-)
-
-
-_CREATEFILESYSTEMMETADATA = _descriptor.Descriptor(
-  name='CreateFilesystemMetadata',
-  full_name='yandex.cloud.compute.v1.CreateFilesystemMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='filesystem_id', full_name='yandex.cloud.compute.v1.CreateFilesystemMetadata.filesystem_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1080,
-  serialized_end=1129,
-)
-
-
-_UPDATEFILESYSTEMREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='yandex.cloud.compute.v1.UpdateFilesystemRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='yandex.cloud.compute.v1.UpdateFilesystemRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='yandex.cloud.compute.v1.UpdateFilesystemRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1033,
-  serialized_end=1078,
-)
-
-_UPDATEFILESYSTEMREQUEST = _descriptor.Descriptor(
-  name='UpdateFilesystemRequest',
-  full_name='yandex.cloud.compute.v1.UpdateFilesystemRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='filesystem_id', full_name='yandex.cloud.compute.v1.UpdateFilesystemRequest.filesystem_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='update_mask', full_name='yandex.cloud.compute.v1.UpdateFilesystemRequest.update_mask', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.compute.v1.UpdateFilesystemRequest.name', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='yandex.cloud.compute.v1.UpdateFilesystemRequest.description', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='yandex.cloud.compute.v1.UpdateFilesystemRequest.labels', index=4,
-      number=5, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\017[-_./\\@0-9a-z]*\262\3101\006\032\0041-63\262\3101\026\022\024[a-z][-_./\\@0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='size', full_name='yandex.cloud.compute.v1.UpdateFilesystemRequest.size', index=5,
-      number=6, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_UPDATEFILESYSTEMREQUEST_LABELSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1132,
-  serialized_end=1540,
-)
-
-
-_UPDATEFILESYSTEMMETADATA = _descriptor.Descriptor(
-  name='UpdateFilesystemMetadata',
-  full_name='yandex.cloud.compute.v1.UpdateFilesystemMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='filesystem_id', full_name='yandex.cloud.compute.v1.UpdateFilesystemMetadata.filesystem_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1542,
-  serialized_end=1591,
-)
-
-
-_DELETEFILESYSTEMREQUEST = _descriptor.Descriptor(
-  name='DeleteFilesystemRequest',
-  full_name='yandex.cloud.compute.v1.DeleteFilesystemRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='filesystem_id', full_name='yandex.cloud.compute.v1.DeleteFilesystemRequest.filesystem_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1593,
-  serialized_end=1655,
-)
-
-
-_DELETEFILESYSTEMMETADATA = _descriptor.Descriptor(
-  name='DeleteFilesystemMetadata',
-  full_name='yandex.cloud.compute.v1.DeleteFilesystemMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='filesystem_id', full_name='yandex.cloud.compute.v1.DeleteFilesystemMetadata.filesystem_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1657,
-  serialized_end=1706,
-)
-
-
-_LISTFILESYSTEMOPERATIONSREQUEST = _descriptor.Descriptor(
-  name='ListFilesystemOperationsRequest',
-  full_name='yandex.cloud.compute.v1.ListFilesystemOperationsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='filesystem_id', full_name='yandex.cloud.compute.v1.ListFilesystemOperationsRequest.filesystem_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.compute.v1.ListFilesystemOperationsRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.compute.v1.ListFilesystemOperationsRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1709,
-  serialized_end=1841,
-)
-
-
-_LISTFILESYSTEMOPERATIONSRESPONSE = _descriptor.Descriptor(
-  name='ListFilesystemOperationsResponse',
-  full_name='yandex.cloud.compute.v1.ListFilesystemOperationsResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='operations', full_name='yandex.cloud.compute.v1.ListFilesystemOperationsResponse.operations', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.compute.v1.ListFilesystemOperationsResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1843,
-  serialized_end=1957,
-)
-
-_LISTFILESYSTEMSRESPONSE.fields_by_name['filesystems'].message_type = yandex_dot_cloud_dot_compute_dot_v1_dot_filesystem__pb2._FILESYSTEM
-_CREATEFILESYSTEMREQUEST_LABELSENTRY.containing_type = _CREATEFILESYSTEMREQUEST
-_CREATEFILESYSTEMREQUEST.fields_by_name['labels'].message_type = _CREATEFILESYSTEMREQUEST_LABELSENTRY
-_UPDATEFILESYSTEMREQUEST_LABELSENTRY.containing_type = _UPDATEFILESYSTEMREQUEST
-_UPDATEFILESYSTEMREQUEST.fields_by_name['update_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
-_UPDATEFILESYSTEMREQUEST.fields_by_name['labels'].message_type = _UPDATEFILESYSTEMREQUEST_LABELSENTRY
-_LISTFILESYSTEMOPERATIONSRESPONSE.fields_by_name['operations'].message_type = yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION
-DESCRIPTOR.message_types_by_name['GetFilesystemRequest'] = _GETFILESYSTEMREQUEST
-DESCRIPTOR.message_types_by_name['ListFilesystemsRequest'] = _LISTFILESYSTEMSREQUEST
-DESCRIPTOR.message_types_by_name['ListFilesystemsResponse'] = _LISTFILESYSTEMSRESPONSE
-DESCRIPTOR.message_types_by_name['CreateFilesystemRequest'] = _CREATEFILESYSTEMREQUEST
-DESCRIPTOR.message_types_by_name['CreateFilesystemMetadata'] = _CREATEFILESYSTEMMETADATA
-DESCRIPTOR.message_types_by_name['UpdateFilesystemRequest'] = _UPDATEFILESYSTEMREQUEST
-DESCRIPTOR.message_types_by_name['UpdateFilesystemMetadata'] = _UPDATEFILESYSTEMMETADATA
-DESCRIPTOR.message_types_by_name['DeleteFilesystemRequest'] = _DELETEFILESYSTEMREQUEST
-DESCRIPTOR.message_types_by_name['DeleteFilesystemMetadata'] = _DELETEFILESYSTEMMETADATA
-DESCRIPTOR.message_types_by_name['ListFilesystemOperationsRequest'] = _LISTFILESYSTEMOPERATIONSREQUEST
-DESCRIPTOR.message_types_by_name['ListFilesystemOperationsResponse'] = _LISTFILESYSTEMOPERATIONSRESPONSE
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-GetFilesystemRequest = _reflection.GeneratedProtocolMessageType('GetFilesystemRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETFILESYSTEMREQUEST,
-  '__module__' : 'yandex.cloud.compute.v1.filesystem_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.GetFilesystemRequest)
-  })
-_sym_db.RegisterMessage(GetFilesystemRequest)
-
-ListFilesystemsRequest = _reflection.GeneratedProtocolMessageType('ListFilesystemsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTFILESYSTEMSREQUEST,
-  '__module__' : 'yandex.cloud.compute.v1.filesystem_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.ListFilesystemsRequest)
-  })
-_sym_db.RegisterMessage(ListFilesystemsRequest)
-
-ListFilesystemsResponse = _reflection.GeneratedProtocolMessageType('ListFilesystemsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTFILESYSTEMSRESPONSE,
-  '__module__' : 'yandex.cloud.compute.v1.filesystem_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.ListFilesystemsResponse)
-  })
-_sym_db.RegisterMessage(ListFilesystemsResponse)
-
-CreateFilesystemRequest = _reflection.GeneratedProtocolMessageType('CreateFilesystemRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _CREATEFILESYSTEMREQUEST_LABELSENTRY,
-    '__module__' : 'yandex.cloud.compute.v1.filesystem_service_pb2'
-    # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.CreateFilesystemRequest.LabelsEntry)
-    })
-  ,
-  'DESCRIPTOR' : _CREATEFILESYSTEMREQUEST,
-  '__module__' : 'yandex.cloud.compute.v1.filesystem_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.CreateFilesystemRequest)
-  })
-_sym_db.RegisterMessage(CreateFilesystemRequest)
-_sym_db.RegisterMessage(CreateFilesystemRequest.LabelsEntry)
-
-CreateFilesystemMetadata = _reflection.GeneratedProtocolMessageType('CreateFilesystemMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _CREATEFILESYSTEMMETADATA,
-  '__module__' : 'yandex.cloud.compute.v1.filesystem_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.CreateFilesystemMetadata)
-  })
-_sym_db.RegisterMessage(CreateFilesystemMetadata)
-
-UpdateFilesystemRequest = _reflection.GeneratedProtocolMessageType('UpdateFilesystemRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _UPDATEFILESYSTEMREQUEST_LABELSENTRY,
-    '__module__' : 'yandex.cloud.compute.v1.filesystem_service_pb2'
-    # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.UpdateFilesystemRequest.LabelsEntry)
-    })
-  ,
-  'DESCRIPTOR' : _UPDATEFILESYSTEMREQUEST,
-  '__module__' : 'yandex.cloud.compute.v1.filesystem_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.UpdateFilesystemRequest)
-  })
-_sym_db.RegisterMessage(UpdateFilesystemRequest)
-_sym_db.RegisterMessage(UpdateFilesystemRequest.LabelsEntry)
-
-UpdateFilesystemMetadata = _reflection.GeneratedProtocolMessageType('UpdateFilesystemMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATEFILESYSTEMMETADATA,
-  '__module__' : 'yandex.cloud.compute.v1.filesystem_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.UpdateFilesystemMetadata)
-  })
-_sym_db.RegisterMessage(UpdateFilesystemMetadata)
-
-DeleteFilesystemRequest = _reflection.GeneratedProtocolMessageType('DeleteFilesystemRequest', (_message.Message,), {
-  'DESCRIPTOR' : _DELETEFILESYSTEMREQUEST,
-  '__module__' : 'yandex.cloud.compute.v1.filesystem_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.DeleteFilesystemRequest)
-  })
-_sym_db.RegisterMessage(DeleteFilesystemRequest)
-
-DeleteFilesystemMetadata = _reflection.GeneratedProtocolMessageType('DeleteFilesystemMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _DELETEFILESYSTEMMETADATA,
-  '__module__' : 'yandex.cloud.compute.v1.filesystem_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.DeleteFilesystemMetadata)
-  })
-_sym_db.RegisterMessage(DeleteFilesystemMetadata)
-
-ListFilesystemOperationsRequest = _reflection.GeneratedProtocolMessageType('ListFilesystemOperationsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTFILESYSTEMOPERATIONSREQUEST,
-  '__module__' : 'yandex.cloud.compute.v1.filesystem_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.ListFilesystemOperationsRequest)
-  })
-_sym_db.RegisterMessage(ListFilesystemOperationsRequest)
-
-ListFilesystemOperationsResponse = _reflection.GeneratedProtocolMessageType('ListFilesystemOperationsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTFILESYSTEMOPERATIONSRESPONSE,
-  '__module__' : 'yandex.cloud.compute.v1.filesystem_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.ListFilesystemOperationsResponse)
-  })
-_sym_db.RegisterMessage(ListFilesystemOperationsResponse)
-
-
-DESCRIPTOR._options = None
-_GETFILESYSTEMREQUEST.fields_by_name['filesystem_id']._options = None
-_LISTFILESYSTEMSREQUEST.fields_by_name['folder_id']._options = None
-_LISTFILESYSTEMSREQUEST.fields_by_name['page_size']._options = None
-_LISTFILESYSTEMSREQUEST.fields_by_name['page_token']._options = None
-_LISTFILESYSTEMSREQUEST.fields_by_name['filter']._options = None
-_LISTFILESYSTEMSREQUEST.fields_by_name['order_by']._options = None
-_CREATEFILESYSTEMREQUEST_LABELSENTRY._options = None
-_CREATEFILESYSTEMREQUEST.fields_by_name['folder_id']._options = None
-_CREATEFILESYSTEMREQUEST.fields_by_name['name']._options = None
-_CREATEFILESYSTEMREQUEST.fields_by_name['description']._options = None
-_CREATEFILESYSTEMREQUEST.fields_by_name['labels']._options = None
-_CREATEFILESYSTEMREQUEST.fields_by_name['type_id']._options = None
-_CREATEFILESYSTEMREQUEST.fields_by_name['zone_id']._options = None
-_CREATEFILESYSTEMREQUEST.fields_by_name['size']._options = None
-_UPDATEFILESYSTEMREQUEST_LABELSENTRY._options = None
-_UPDATEFILESYSTEMREQUEST.fields_by_name['filesystem_id']._options = None
-_UPDATEFILESYSTEMREQUEST.fields_by_name['name']._options = None
-_UPDATEFILESYSTEMREQUEST.fields_by_name['description']._options = None
-_UPDATEFILESYSTEMREQUEST.fields_by_name['labels']._options = None
-_DELETEFILESYSTEMREQUEST.fields_by_name['filesystem_id']._options = None
-_LISTFILESYSTEMOPERATIONSREQUEST.fields_by_name['filesystem_id']._options = None
-_LISTFILESYSTEMOPERATIONSREQUEST.fields_by_name['page_size']._options = None
-_LISTFILESYSTEMOPERATIONSREQUEST.fields_by_name['page_token']._options = None
-
-_FILESYSTEMSERVICE = _descriptor.ServiceDescriptor(
-  name='FilesystemService',
-  full_name='yandex.cloud.compute.v1.FilesystemService',
-  file=DESCRIPTOR,
-  index=0,
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_start=1960,
-  serialized_end=3019,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='Get',
-    full_name='yandex.cloud.compute.v1.FilesystemService.Get',
-    index=0,
-    containing_service=None,
-    input_type=_GETFILESYSTEMREQUEST,
-    output_type=yandex_dot_cloud_dot_compute_dot_v1_dot_filesystem__pb2._FILESYSTEM,
-    serialized_options=b'\202\323\344\223\002)\022\'/compute/v1/filesystems/{filesystem_id}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='List',
-    full_name='yandex.cloud.compute.v1.FilesystemService.List',
-    index=1,
-    containing_service=None,
-    input_type=_LISTFILESYSTEMSREQUEST,
-    output_type=_LISTFILESYSTEMSRESPONSE,
-    serialized_options=b'\202\323\344\223\002\031\022\027/compute/v1/filesystems',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Create',
-    full_name='yandex.cloud.compute.v1.FilesystemService.Create',
-    index=2,
-    containing_service=None,
-    input_type=_CREATEFILESYSTEMREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002\034\"\027/compute/v1/filesystems:\001*\262\322*&\n\030CreateFilesystemMetadata\022\nFilesystem',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Update',
-    full_name='yandex.cloud.compute.v1.FilesystemService.Update',
-    index=3,
-    containing_service=None,
-    input_type=_UPDATEFILESYSTEMREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002,2\'/compute/v1/filesystems/{filesystem_id}:\001*\262\322*&\n\030UpdateFilesystemMetadata\022\nFilesystem',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Delete',
-    full_name='yandex.cloud.compute.v1.FilesystemService.Delete',
-    index=4,
-    containing_service=None,
-    input_type=_DELETEFILESYSTEMREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002)*\'/compute/v1/filesystems/{filesystem_id}\262\322*1\n\030DeleteFilesystemMetadata\022\025google.protobuf.Empty',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListOperations',
-    full_name='yandex.cloud.compute.v1.FilesystemService.ListOperations',
-    index=5,
-    containing_service=None,
-    input_type=_LISTFILESYSTEMOPERATIONSREQUEST,
-    output_type=_LISTFILESYSTEMOPERATIONSRESPONSE,
-    serialized_options=b'\202\323\344\223\0024\0222/compute/v1/filesystems/{filesystem_id}/operations',
-    create_key=_descriptor._internal_create_key,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_FILESYSTEMSERVICE)
-
-DESCRIPTOR.services_by_name['FilesystemService'] = _FILESYSTEMSERVICE
-
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n\033yandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;compute'
+  _GETFILESYSTEMREQUEST.fields_by_name['filesystem_id']._options = None
+  _GETFILESYSTEMREQUEST.fields_by_name['filesystem_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTFILESYSTEMSREQUEST.fields_by_name['folder_id']._options = None
+  _LISTFILESYSTEMSREQUEST.fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTFILESYSTEMSREQUEST.fields_by_name['page_size']._options = None
+  _LISTFILESYSTEMSREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
+  _LISTFILESYSTEMSREQUEST.fields_by_name['page_token']._options = None
+  _LISTFILESYSTEMSREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
+  _LISTFILESYSTEMSREQUEST.fields_by_name['filter']._options = None
+  _LISTFILESYSTEMSREQUEST.fields_by_name['filter']._serialized_options = b'\212\3101\006<=1000'
+  _LISTFILESYSTEMSREQUEST.fields_by_name['order_by']._options = None
+  _LISTFILESYSTEMSREQUEST.fields_by_name['order_by']._serialized_options = b'\212\3101\005<=100'
+  _CREATEFILESYSTEMREQUEST_LABELSENTRY._options = None
+  _CREATEFILESYSTEMREQUEST_LABELSENTRY._serialized_options = b'8\001'
+  _CREATEFILESYSTEMREQUEST.fields_by_name['folder_id']._options = None
+  _CREATEFILESYSTEMREQUEST.fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _CREATEFILESYSTEMREQUEST.fields_by_name['name']._options = None
+  _CREATEFILESYSTEMREQUEST.fields_by_name['name']._serialized_options = b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?'
+  _CREATEFILESYSTEMREQUEST.fields_by_name['description']._options = None
+  _CREATEFILESYSTEMREQUEST.fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
+  _CREATEFILESYSTEMREQUEST.fields_by_name['labels']._options = None
+  _CREATEFILESYSTEMREQUEST.fields_by_name['labels']._serialized_options = b'\362\3071\017[-_./\\@0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\034\022\024[a-z][-_./\\@0-9a-z]*\032\0041-63'
+  _CREATEFILESYSTEMREQUEST.fields_by_name['type_id']._options = None
+  _CREATEFILESYSTEMREQUEST.fields_by_name['type_id']._serialized_options = b'\212\3101\004<=50'
+  _CREATEFILESYSTEMREQUEST.fields_by_name['zone_id']._options = None
+  _CREATEFILESYSTEMREQUEST.fields_by_name['zone_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _CREATEFILESYSTEMREQUEST.fields_by_name['size']._options = None
+  _CREATEFILESYSTEMREQUEST.fields_by_name['size']._serialized_options = b'\350\3071\001'
+  _UPDATEFILESYSTEMREQUEST_LABELSENTRY._options = None
+  _UPDATEFILESYSTEMREQUEST_LABELSENTRY._serialized_options = b'8\001'
+  _UPDATEFILESYSTEMREQUEST.fields_by_name['filesystem_id']._options = None
+  _UPDATEFILESYSTEMREQUEST.fields_by_name['filesystem_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _UPDATEFILESYSTEMREQUEST.fields_by_name['name']._options = None
+  _UPDATEFILESYSTEMREQUEST.fields_by_name['name']._serialized_options = b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?'
+  _UPDATEFILESYSTEMREQUEST.fields_by_name['description']._options = None
+  _UPDATEFILESYSTEMREQUEST.fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
+  _UPDATEFILESYSTEMREQUEST.fields_by_name['labels']._options = None
+  _UPDATEFILESYSTEMREQUEST.fields_by_name['labels']._serialized_options = b'\362\3071\017[-_./\\@0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\034\022\024[a-z][-_./\\@0-9a-z]*\032\0041-63'
+  _DELETEFILESYSTEMREQUEST.fields_by_name['filesystem_id']._options = None
+  _DELETEFILESYSTEMREQUEST.fields_by_name['filesystem_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTFILESYSTEMOPERATIONSREQUEST.fields_by_name['filesystem_id']._options = None
+  _LISTFILESYSTEMOPERATIONSREQUEST.fields_by_name['filesystem_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTFILESYSTEMOPERATIONSREQUEST.fields_by_name['page_size']._options = None
+  _LISTFILESYSTEMOPERATIONSREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
+  _LISTFILESYSTEMOPERATIONSREQUEST.fields_by_name['page_token']._options = None
+  _LISTFILESYSTEMOPERATIONSREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
+  _FILESYSTEMSERVICE.methods_by_name['Get']._options = None
+  _FILESYSTEMSERVICE.methods_by_name['Get']._serialized_options = b'\202\323\344\223\002)\022\'/compute/v1/filesystems/{filesystem_id}'
+  _FILESYSTEMSERVICE.methods_by_name['List']._options = None
+  _FILESYSTEMSERVICE.methods_by_name['List']._serialized_options = b'\202\323\344\223\002\031\022\027/compute/v1/filesystems'
+  _FILESYSTEMSERVICE.methods_by_name['Create']._options = None
+  _FILESYSTEMSERVICE.methods_by_name['Create']._serialized_options = b'\262\322*&\n\030CreateFilesystemMetadata\022\nFilesystem\202\323\344\223\002\034\"\027/compute/v1/filesystems:\001*'
+  _FILESYSTEMSERVICE.methods_by_name['Update']._options = None
+  _FILESYSTEMSERVICE.methods_by_name['Update']._serialized_options = b'\262\322*&\n\030UpdateFilesystemMetadata\022\nFilesystem\202\323\344\223\002,2\'/compute/v1/filesystems/{filesystem_id}:\001*'
+  _FILESYSTEMSERVICE.methods_by_name['Delete']._options = None
+  _FILESYSTEMSERVICE.methods_by_name['Delete']._serialized_options = b'\262\322*1\n\030DeleteFilesystemMetadata\022\025google.protobuf.Empty\202\323\344\223\002)*\'/compute/v1/filesystems/{filesystem_id}'
+  _FILESYSTEMSERVICE.methods_by_name['ListOperations']._options = None
+  _FILESYSTEMSERVICE.methods_by_name['ListOperations']._serialized_options = b'\202\323\344\223\0024\0222/compute/v1/filesystems/{filesystem_id}/operations'
+  _globals['_GETFILESYSTEMREQUEST']._serialized_start=288
+  _globals['_GETFILESYSTEMREQUEST']._serialized_end=347
+  _globals['_LISTFILESYSTEMSREQUEST']._serialized_start=350
+  _globals['_LISTFILESYSTEMSREQUEST']._serialized_end=526
+  _globals['_LISTFILESYSTEMSRESPONSE']._serialized_start=528
+  _globals['_LISTFILESYSTEMSRESPONSE']._serialized_end=636
+  _globals['_CREATEFILESYSTEMREQUEST']._serialized_start=639
+  _globals['_CREATEFILESYSTEMREQUEST']._serialized_end=1074
+  _globals['_CREATEFILESYSTEMREQUEST_LABELSENTRY']._serialized_start=1029
+  _globals['_CREATEFILESYSTEMREQUEST_LABELSENTRY']._serialized_end=1074
+  _globals['_CREATEFILESYSTEMMETADATA']._serialized_start=1076
+  _globals['_CREATEFILESYSTEMMETADATA']._serialized_end=1125
+  _globals['_UPDATEFILESYSTEMREQUEST']._serialized_start=1128
+  _globals['_UPDATEFILESYSTEMREQUEST']._serialized_end=1532
+  _globals['_UPDATEFILESYSTEMREQUEST_LABELSENTRY']._serialized_start=1029
+  _globals['_UPDATEFILESYSTEMREQUEST_LABELSENTRY']._serialized_end=1074
+  _globals['_UPDATEFILESYSTEMMETADATA']._serialized_start=1534
+  _globals['_UPDATEFILESYSTEMMETADATA']._serialized_end=1583
+  _globals['_DELETEFILESYSTEMREQUEST']._serialized_start=1585
+  _globals['_DELETEFILESYSTEMREQUEST']._serialized_end=1647
+  _globals['_DELETEFILESYSTEMMETADATA']._serialized_start=1649
+  _globals['_DELETEFILESYSTEMMETADATA']._serialized_end=1698
+  _globals['_LISTFILESYSTEMOPERATIONSREQUEST']._serialized_start=1701
+  _globals['_LISTFILESYSTEMOPERATIONSREQUEST']._serialized_end=1833
+  _globals['_LISTFILESYSTEMOPERATIONSRESPONSE']._serialized_start=1835
+  _globals['_LISTFILESYSTEMOPERATIONSRESPONSE']._serialized_end=1949
+  _globals['_FILESYSTEMSERVICE']._serialized_start=1952
+  _globals['_FILESYSTEMSERVICE']._serialized_end=3011
 # @@protoc_insertion_point(module_scope)

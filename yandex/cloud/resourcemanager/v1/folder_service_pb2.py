@@ -3,9 +3,9 @@
 # source: yandex/cloud/resourcemanager/v1/folder_service.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -21,798 +21,97 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/resourcemanager/v1/folder_service.proto',
-  package='yandex.cloud.resourcemanager.v1',
-  syntax='proto3',
-  serialized_options=b'\n#yandex.cloud.api.resourcemanager.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/resourcemanager/v1;resourcemanager',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n4yandex/cloud/resourcemanager/v1/folder_service.proto\x12\x1fyandex.cloud.resourcemanager.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a yandex/cloud/api/operation.proto\x1a,yandex/cloud/resourcemanager/v1/folder.proto\x1a yandex/cloud/access/access.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"3\n\x10GetFolderRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x8f\x01\n\x12ListFoldersRequest\x12\x1e\n\x08\x63loud_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"h\n\x13ListFoldersResponse\x12\x38\n\x07\x66olders\x18\x01 \x03(\x0b\x32\'.yandex.cloud.resourcemanager.v1.Folder\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xcd\x02\n\x13\x43reateFolderRequest\x12\x1e\n\x08\x63loud_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x33\n\x04name\x18\x02 \x01(\tB%\xe8\xc7\x31\x01\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x91\x01\n\x06labels\x18\x04 \x03(\x0b\x32@.yandex.cloud.resourcemanager.v1.CreateFolderRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\")\n\x14\x43reateFolderMetadata\x12\x11\n\tfolder_id\x18\x01 \x01(\t\"\xff\x02\n\x13UpdateFolderRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x33\n\x04name\x18\x03 \x01(\tB%\xe8\xc7\x31\x01\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x91\x01\n\x06labels\x18\x05 \x03(\x0b\x32@.yandex.cloud.resourcemanager.v1.UpdateFolderRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\")\n\x14UpdateFolderMetadata\x12\x11\n\tfolder_id\x18\x01 \x01(\t\"h\n\x13\x44\x65leteFolderRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x30\n\x0c\x64\x65lete_after\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"[\n\x14\x44\x65leteFolderMetadata\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x30\n\x0c\x64\x65lete_after\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"}\n\x1bListFolderOperationsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\"n\n\x1cListFolderOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\x84\x0e\n\rFolderService\x12\x93\x01\n\x03Get\x12\x31.yandex.cloud.resourcemanager.v1.GetFolderRequest\x1a\'.yandex.cloud.resourcemanager.v1.Folder\"0\x82\xd3\xe4\x93\x02*\x12(/resource-manager/v1/folders/{folder_id}\x12\x97\x01\n\x04List\x12\x33.yandex.cloud.resourcemanager.v1.ListFoldersRequest\x1a\x34.yandex.cloud.resourcemanager.v1.ListFoldersResponse\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/resource-manager/v1/folders\x12\xac\x01\n\x06\x43reate\x12\x34.yandex.cloud.resourcemanager.v1.CreateFolderRequest\x1a!.yandex.cloud.operation.Operation\"I\x82\xd3\xe4\x93\x02!\"\x1c/resource-manager/v1/folders:\x01*\xb2\xd2*\x1e\n\x14\x43reateFolderMetadata\x12\x06\x46older\x12\xb8\x01\n\x06Update\x12\x34.yandex.cloud.resourcemanager.v1.UpdateFolderRequest\x1a!.yandex.cloud.operation.Operation\"U\x82\xd3\xe4\x93\x02-2(/resource-manager/v1/folders/{folder_id}:\x01*\xb2\xd2*\x1e\n\x14UpdateFolderMetadata\x12\x06\x46older\x12\xc4\x01\n\x06\x44\x65lete\x12\x34.yandex.cloud.resourcemanager.v1.DeleteFolderRequest\x1a!.yandex.cloud.operation.Operation\"a\x82\xd3\xe4\x93\x02**(/resource-manager/v1/folders/{folder_id}\xb2\xd2*-\n\x14\x44\x65leteFolderMetadata\x12\x15google.protobuf.Empty\x12\xca\x01\n\x0eListOperations\x12<.yandex.cloud.resourcemanager.v1.ListFolderOperationsRequest\x1a=.yandex.cloud.resourcemanager.v1.ListFolderOperationsResponse\";\x82\xd3\xe4\x93\x02\x35\x12\x33/resource-manager/v1/folders/{folder_id}/operations\x12\xbc\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"E\x82\xd3\xe4\x93\x02?\x12=/resource-manager/v1/folders/{resource_id}:listAccessBindings\x12\xfb\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x93\x01\x82\xd3\xe4\x93\x02\x41\"</resource-manager/v1/folders/{resource_id}:setAccessBindings:\x01*\xb2\xd2*H\n access.SetAccessBindingsMetadata\x12$access.AccessBindingsOperationResult\x12\x87\x02\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x99\x01\x82\xd3\xe4\x93\x02\x44\"?/resource-manager/v1/folders/{resource_id}:updateAccessBindings:\x01*\xb2\xd2*K\n#access.UpdateAccessBindingsMetadata\x12$access.AccessBindingsOperationResultBz\n#yandex.cloud.api.resourcemanager.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/resourcemanager/v1;resourcemanagerb\x06proto3'
-  ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_resourcemanager_dot_v1_dot_folder__pb2.DESCRIPTOR,yandex_dot_cloud_dot_access_dot_access__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n4yandex/cloud/resourcemanager/v1/folder_service.proto\x12\x1fyandex.cloud.resourcemanager.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a yandex/cloud/api/operation.proto\x1a,yandex/cloud/resourcemanager/v1/folder.proto\x1a yandex/cloud/access/access.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"3\n\x10GetFolderRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x8f\x01\n\x12ListFoldersRequest\x12\x1e\n\x08\x63loud_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"h\n\x13ListFoldersResponse\x12\x38\n\x07\x66olders\x18\x01 \x03(\x0b\x32\'.yandex.cloud.resourcemanager.v1.Folder\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xc9\x02\n\x13\x43reateFolderRequest\x12\x1e\n\x08\x63loud_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x33\n\x04name\x18\x02 \x01(\tB%\xe8\xc7\x31\x01\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8d\x01\n\x06labels\x18\x04 \x03(\x0b\x32@.yandex.cloud.resourcemanager.v1.CreateFolderRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\")\n\x14\x43reateFolderMetadata\x12\x11\n\tfolder_id\x18\x01 \x01(\t\"\xfb\x02\n\x13UpdateFolderRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x33\n\x04name\x18\x03 \x01(\tB%\xe8\xc7\x31\x01\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8d\x01\n\x06labels\x18\x05 \x03(\x0b\x32@.yandex.cloud.resourcemanager.v1.UpdateFolderRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\")\n\x14UpdateFolderMetadata\x12\x11\n\tfolder_id\x18\x01 \x01(\t\"h\n\x13\x44\x65leteFolderRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x30\n\x0c\x64\x65lete_after\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"[\n\x14\x44\x65leteFolderMetadata\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x30\n\x0c\x64\x65lete_after\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"}\n\x1bListFolderOperationsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\"n\n\x1cListFolderOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\x84\x0e\n\rFolderService\x12\x93\x01\n\x03Get\x12\x31.yandex.cloud.resourcemanager.v1.GetFolderRequest\x1a\'.yandex.cloud.resourcemanager.v1.Folder\"0\x82\xd3\xe4\x93\x02*\x12(/resource-manager/v1/folders/{folder_id}\x12\x97\x01\n\x04List\x12\x33.yandex.cloud.resourcemanager.v1.ListFoldersRequest\x1a\x34.yandex.cloud.resourcemanager.v1.ListFoldersResponse\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/resource-manager/v1/folders\x12\xac\x01\n\x06\x43reate\x12\x34.yandex.cloud.resourcemanager.v1.CreateFolderRequest\x1a!.yandex.cloud.operation.Operation\"I\xb2\xd2*\x1e\n\x14\x43reateFolderMetadata\x12\x06\x46older\x82\xd3\xe4\x93\x02!\"\x1c/resource-manager/v1/folders:\x01*\x12\xb8\x01\n\x06Update\x12\x34.yandex.cloud.resourcemanager.v1.UpdateFolderRequest\x1a!.yandex.cloud.operation.Operation\"U\xb2\xd2*\x1e\n\x14UpdateFolderMetadata\x12\x06\x46older\x82\xd3\xe4\x93\x02-2(/resource-manager/v1/folders/{folder_id}:\x01*\x12\xc4\x01\n\x06\x44\x65lete\x12\x34.yandex.cloud.resourcemanager.v1.DeleteFolderRequest\x1a!.yandex.cloud.operation.Operation\"a\xb2\xd2*-\n\x14\x44\x65leteFolderMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02**(/resource-manager/v1/folders/{folder_id}\x12\xca\x01\n\x0eListOperations\x12<.yandex.cloud.resourcemanager.v1.ListFolderOperationsRequest\x1a=.yandex.cloud.resourcemanager.v1.ListFolderOperationsResponse\";\x82\xd3\xe4\x93\x02\x35\x12\x33/resource-manager/v1/folders/{folder_id}/operations\x12\xbc\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"E\x82\xd3\xe4\x93\x02?\x12=/resource-manager/v1/folders/{resource_id}:listAccessBindings\x12\xfb\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x93\x01\xb2\xd2*H\n access.SetAccessBindingsMetadata\x12$access.AccessBindingsOperationResult\x82\xd3\xe4\x93\x02\x41\"</resource-manager/v1/folders/{resource_id}:setAccessBindings:\x01*\x12\x87\x02\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x99\x01\xb2\xd2*K\n#access.UpdateAccessBindingsMetadata\x12$access.AccessBindingsOperationResult\x82\xd3\xe4\x93\x02\x44\"?/resource-manager/v1/folders/{resource_id}:updateAccessBindings:\x01*Bz\n#yandex.cloud.api.resourcemanager.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/resourcemanager/v1;resourcemanagerb\x06proto3')
 
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.resourcemanager.v1.folder_service_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-
-_GETFOLDERREQUEST = _descriptor.Descriptor(
-  name='GetFolderRequest',
-  full_name='yandex.cloud.resourcemanager.v1.GetFolderRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.resourcemanager.v1.GetFolderRequest.folder_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=371,
-  serialized_end=422,
-)
-
-
-_LISTFOLDERSREQUEST = _descriptor.Descriptor(
-  name='ListFoldersRequest',
-  full_name='yandex.cloud.resourcemanager.v1.ListFoldersRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='cloud_id', full_name='yandex.cloud.resourcemanager.v1.ListFoldersRequest.cloud_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.resourcemanager.v1.ListFoldersRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.resourcemanager.v1.ListFoldersRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=2000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='filter', full_name='yandex.cloud.resourcemanager.v1.ListFoldersRequest.filter', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=425,
-  serialized_end=568,
-)
-
-
-_LISTFOLDERSRESPONSE = _descriptor.Descriptor(
-  name='ListFoldersResponse',
-  full_name='yandex.cloud.resourcemanager.v1.ListFoldersResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folders', full_name='yandex.cloud.resourcemanager.v1.ListFoldersResponse.folders', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.resourcemanager.v1.ListFoldersResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=570,
-  serialized_end=674,
-)
-
-
-_CREATEFOLDERREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='yandex.cloud.resourcemanager.v1.CreateFolderRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='yandex.cloud.resourcemanager.v1.CreateFolderRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='yandex.cloud.resourcemanager.v1.CreateFolderRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=965,
-  serialized_end=1010,
-)
-
-_CREATEFOLDERREQUEST = _descriptor.Descriptor(
-  name='CreateFolderRequest',
-  full_name='yandex.cloud.resourcemanager.v1.CreateFolderRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='cloud_id', full_name='yandex.cloud.resourcemanager.v1.CreateFolderRequest.cloud_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.resourcemanager.v1.CreateFolderRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='yandex.cloud.resourcemanager.v1.CreateFolderRequest.description', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='yandex.cloud.resourcemanager.v1.CreateFolderRequest.labels', index=3,
-      number=4, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_CREATEFOLDERREQUEST_LABELSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=677,
-  serialized_end=1010,
-)
-
-
-_CREATEFOLDERMETADATA = _descriptor.Descriptor(
-  name='CreateFolderMetadata',
-  full_name='yandex.cloud.resourcemanager.v1.CreateFolderMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.resourcemanager.v1.CreateFolderMetadata.folder_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1012,
-  serialized_end=1053,
-)
-
-
-_UPDATEFOLDERREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='yandex.cloud.resourcemanager.v1.UpdateFolderRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='yandex.cloud.resourcemanager.v1.UpdateFolderRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='yandex.cloud.resourcemanager.v1.UpdateFolderRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=965,
-  serialized_end=1010,
-)
-
-_UPDATEFOLDERREQUEST = _descriptor.Descriptor(
-  name='UpdateFolderRequest',
-  full_name='yandex.cloud.resourcemanager.v1.UpdateFolderRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.resourcemanager.v1.UpdateFolderRequest.folder_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='update_mask', full_name='yandex.cloud.resourcemanager.v1.UpdateFolderRequest.update_mask', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.resourcemanager.v1.UpdateFolderRequest.name', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='yandex.cloud.resourcemanager.v1.UpdateFolderRequest.description', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='yandex.cloud.resourcemanager.v1.UpdateFolderRequest.labels', index=4,
-      number=5, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_UPDATEFOLDERREQUEST_LABELSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1056,
-  serialized_end=1439,
-)
-
-
-_UPDATEFOLDERMETADATA = _descriptor.Descriptor(
-  name='UpdateFolderMetadata',
-  full_name='yandex.cloud.resourcemanager.v1.UpdateFolderMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.resourcemanager.v1.UpdateFolderMetadata.folder_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1441,
-  serialized_end=1482,
-)
-
-
-_DELETEFOLDERREQUEST = _descriptor.Descriptor(
-  name='DeleteFolderRequest',
-  full_name='yandex.cloud.resourcemanager.v1.DeleteFolderRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.resourcemanager.v1.DeleteFolderRequest.folder_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='delete_after', full_name='yandex.cloud.resourcemanager.v1.DeleteFolderRequest.delete_after', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1484,
-  serialized_end=1588,
-)
-
-
-_DELETEFOLDERMETADATA = _descriptor.Descriptor(
-  name='DeleteFolderMetadata',
-  full_name='yandex.cloud.resourcemanager.v1.DeleteFolderMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.resourcemanager.v1.DeleteFolderMetadata.folder_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='delete_after', full_name='yandex.cloud.resourcemanager.v1.DeleteFolderMetadata.delete_after', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1590,
-  serialized_end=1681,
-)
-
-
-_LISTFOLDEROPERATIONSREQUEST = _descriptor.Descriptor(
-  name='ListFolderOperationsRequest',
-  full_name='yandex.cloud.resourcemanager.v1.ListFolderOperationsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.resourcemanager.v1.ListFolderOperationsRequest.folder_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.resourcemanager.v1.ListFolderOperationsRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.resourcemanager.v1.ListFolderOperationsRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=2000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1683,
-  serialized_end=1808,
-)
-
-
-_LISTFOLDEROPERATIONSRESPONSE = _descriptor.Descriptor(
-  name='ListFolderOperationsResponse',
-  full_name='yandex.cloud.resourcemanager.v1.ListFolderOperationsResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='operations', full_name='yandex.cloud.resourcemanager.v1.ListFolderOperationsResponse.operations', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.resourcemanager.v1.ListFolderOperationsResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1810,
-  serialized_end=1920,
-)
-
-_LISTFOLDERSRESPONSE.fields_by_name['folders'].message_type = yandex_dot_cloud_dot_resourcemanager_dot_v1_dot_folder__pb2._FOLDER
-_CREATEFOLDERREQUEST_LABELSENTRY.containing_type = _CREATEFOLDERREQUEST
-_CREATEFOLDERREQUEST.fields_by_name['labels'].message_type = _CREATEFOLDERREQUEST_LABELSENTRY
-_UPDATEFOLDERREQUEST_LABELSENTRY.containing_type = _UPDATEFOLDERREQUEST
-_UPDATEFOLDERREQUEST.fields_by_name['update_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
-_UPDATEFOLDERREQUEST.fields_by_name['labels'].message_type = _UPDATEFOLDERREQUEST_LABELSENTRY
-_DELETEFOLDERREQUEST.fields_by_name['delete_after'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
-_DELETEFOLDERMETADATA.fields_by_name['delete_after'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
-_LISTFOLDEROPERATIONSRESPONSE.fields_by_name['operations'].message_type = yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION
-DESCRIPTOR.message_types_by_name['GetFolderRequest'] = _GETFOLDERREQUEST
-DESCRIPTOR.message_types_by_name['ListFoldersRequest'] = _LISTFOLDERSREQUEST
-DESCRIPTOR.message_types_by_name['ListFoldersResponse'] = _LISTFOLDERSRESPONSE
-DESCRIPTOR.message_types_by_name['CreateFolderRequest'] = _CREATEFOLDERREQUEST
-DESCRIPTOR.message_types_by_name['CreateFolderMetadata'] = _CREATEFOLDERMETADATA
-DESCRIPTOR.message_types_by_name['UpdateFolderRequest'] = _UPDATEFOLDERREQUEST
-DESCRIPTOR.message_types_by_name['UpdateFolderMetadata'] = _UPDATEFOLDERMETADATA
-DESCRIPTOR.message_types_by_name['DeleteFolderRequest'] = _DELETEFOLDERREQUEST
-DESCRIPTOR.message_types_by_name['DeleteFolderMetadata'] = _DELETEFOLDERMETADATA
-DESCRIPTOR.message_types_by_name['ListFolderOperationsRequest'] = _LISTFOLDEROPERATIONSREQUEST
-DESCRIPTOR.message_types_by_name['ListFolderOperationsResponse'] = _LISTFOLDEROPERATIONSRESPONSE
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-GetFolderRequest = _reflection.GeneratedProtocolMessageType('GetFolderRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETFOLDERREQUEST,
-  '__module__' : 'yandex.cloud.resourcemanager.v1.folder_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.resourcemanager.v1.GetFolderRequest)
-  })
-_sym_db.RegisterMessage(GetFolderRequest)
-
-ListFoldersRequest = _reflection.GeneratedProtocolMessageType('ListFoldersRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTFOLDERSREQUEST,
-  '__module__' : 'yandex.cloud.resourcemanager.v1.folder_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.resourcemanager.v1.ListFoldersRequest)
-  })
-_sym_db.RegisterMessage(ListFoldersRequest)
-
-ListFoldersResponse = _reflection.GeneratedProtocolMessageType('ListFoldersResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTFOLDERSRESPONSE,
-  '__module__' : 'yandex.cloud.resourcemanager.v1.folder_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.resourcemanager.v1.ListFoldersResponse)
-  })
-_sym_db.RegisterMessage(ListFoldersResponse)
-
-CreateFolderRequest = _reflection.GeneratedProtocolMessageType('CreateFolderRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _CREATEFOLDERREQUEST_LABELSENTRY,
-    '__module__' : 'yandex.cloud.resourcemanager.v1.folder_service_pb2'
-    # @@protoc_insertion_point(class_scope:yandex.cloud.resourcemanager.v1.CreateFolderRequest.LabelsEntry)
-    })
-  ,
-  'DESCRIPTOR' : _CREATEFOLDERREQUEST,
-  '__module__' : 'yandex.cloud.resourcemanager.v1.folder_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.resourcemanager.v1.CreateFolderRequest)
-  })
-_sym_db.RegisterMessage(CreateFolderRequest)
-_sym_db.RegisterMessage(CreateFolderRequest.LabelsEntry)
-
-CreateFolderMetadata = _reflection.GeneratedProtocolMessageType('CreateFolderMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _CREATEFOLDERMETADATA,
-  '__module__' : 'yandex.cloud.resourcemanager.v1.folder_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.resourcemanager.v1.CreateFolderMetadata)
-  })
-_sym_db.RegisterMessage(CreateFolderMetadata)
-
-UpdateFolderRequest = _reflection.GeneratedProtocolMessageType('UpdateFolderRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _UPDATEFOLDERREQUEST_LABELSENTRY,
-    '__module__' : 'yandex.cloud.resourcemanager.v1.folder_service_pb2'
-    # @@protoc_insertion_point(class_scope:yandex.cloud.resourcemanager.v1.UpdateFolderRequest.LabelsEntry)
-    })
-  ,
-  'DESCRIPTOR' : _UPDATEFOLDERREQUEST,
-  '__module__' : 'yandex.cloud.resourcemanager.v1.folder_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.resourcemanager.v1.UpdateFolderRequest)
-  })
-_sym_db.RegisterMessage(UpdateFolderRequest)
-_sym_db.RegisterMessage(UpdateFolderRequest.LabelsEntry)
-
-UpdateFolderMetadata = _reflection.GeneratedProtocolMessageType('UpdateFolderMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATEFOLDERMETADATA,
-  '__module__' : 'yandex.cloud.resourcemanager.v1.folder_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.resourcemanager.v1.UpdateFolderMetadata)
-  })
-_sym_db.RegisterMessage(UpdateFolderMetadata)
-
-DeleteFolderRequest = _reflection.GeneratedProtocolMessageType('DeleteFolderRequest', (_message.Message,), {
-  'DESCRIPTOR' : _DELETEFOLDERREQUEST,
-  '__module__' : 'yandex.cloud.resourcemanager.v1.folder_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.resourcemanager.v1.DeleteFolderRequest)
-  })
-_sym_db.RegisterMessage(DeleteFolderRequest)
-
-DeleteFolderMetadata = _reflection.GeneratedProtocolMessageType('DeleteFolderMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _DELETEFOLDERMETADATA,
-  '__module__' : 'yandex.cloud.resourcemanager.v1.folder_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.resourcemanager.v1.DeleteFolderMetadata)
-  })
-_sym_db.RegisterMessage(DeleteFolderMetadata)
-
-ListFolderOperationsRequest = _reflection.GeneratedProtocolMessageType('ListFolderOperationsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTFOLDEROPERATIONSREQUEST,
-  '__module__' : 'yandex.cloud.resourcemanager.v1.folder_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.resourcemanager.v1.ListFolderOperationsRequest)
-  })
-_sym_db.RegisterMessage(ListFolderOperationsRequest)
-
-ListFolderOperationsResponse = _reflection.GeneratedProtocolMessageType('ListFolderOperationsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTFOLDEROPERATIONSRESPONSE,
-  '__module__' : 'yandex.cloud.resourcemanager.v1.folder_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.resourcemanager.v1.ListFolderOperationsResponse)
-  })
-_sym_db.RegisterMessage(ListFolderOperationsResponse)
-
-
-DESCRIPTOR._options = None
-_GETFOLDERREQUEST.fields_by_name['folder_id']._options = None
-_LISTFOLDERSREQUEST.fields_by_name['cloud_id']._options = None
-_LISTFOLDERSREQUEST.fields_by_name['page_size']._options = None
-_LISTFOLDERSREQUEST.fields_by_name['page_token']._options = None
-_LISTFOLDERSREQUEST.fields_by_name['filter']._options = None
-_CREATEFOLDERREQUEST_LABELSENTRY._options = None
-_CREATEFOLDERREQUEST.fields_by_name['cloud_id']._options = None
-_CREATEFOLDERREQUEST.fields_by_name['name']._options = None
-_CREATEFOLDERREQUEST.fields_by_name['description']._options = None
-_CREATEFOLDERREQUEST.fields_by_name['labels']._options = None
-_UPDATEFOLDERREQUEST_LABELSENTRY._options = None
-_UPDATEFOLDERREQUEST.fields_by_name['folder_id']._options = None
-_UPDATEFOLDERREQUEST.fields_by_name['name']._options = None
-_UPDATEFOLDERREQUEST.fields_by_name['description']._options = None
-_UPDATEFOLDERREQUEST.fields_by_name['labels']._options = None
-_DELETEFOLDERREQUEST.fields_by_name['folder_id']._options = None
-_LISTFOLDEROPERATIONSREQUEST.fields_by_name['folder_id']._options = None
-_LISTFOLDEROPERATIONSREQUEST.fields_by_name['page_size']._options = None
-_LISTFOLDEROPERATIONSREQUEST.fields_by_name['page_token']._options = None
-
-_FOLDERSERVICE = _descriptor.ServiceDescriptor(
-  name='FolderService',
-  full_name='yandex.cloud.resourcemanager.v1.FolderService',
-  file=DESCRIPTOR,
-  index=0,
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_start=1923,
-  serialized_end=3719,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='Get',
-    full_name='yandex.cloud.resourcemanager.v1.FolderService.Get',
-    index=0,
-    containing_service=None,
-    input_type=_GETFOLDERREQUEST,
-    output_type=yandex_dot_cloud_dot_resourcemanager_dot_v1_dot_folder__pb2._FOLDER,
-    serialized_options=b'\202\323\344\223\002*\022(/resource-manager/v1/folders/{folder_id}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='List',
-    full_name='yandex.cloud.resourcemanager.v1.FolderService.List',
-    index=1,
-    containing_service=None,
-    input_type=_LISTFOLDERSREQUEST,
-    output_type=_LISTFOLDERSRESPONSE,
-    serialized_options=b'\202\323\344\223\002\036\022\034/resource-manager/v1/folders',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Create',
-    full_name='yandex.cloud.resourcemanager.v1.FolderService.Create',
-    index=2,
-    containing_service=None,
-    input_type=_CREATEFOLDERREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002!\"\034/resource-manager/v1/folders:\001*\262\322*\036\n\024CreateFolderMetadata\022\006Folder',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Update',
-    full_name='yandex.cloud.resourcemanager.v1.FolderService.Update',
-    index=3,
-    containing_service=None,
-    input_type=_UPDATEFOLDERREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002-2(/resource-manager/v1/folders/{folder_id}:\001*\262\322*\036\n\024UpdateFolderMetadata\022\006Folder',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Delete',
-    full_name='yandex.cloud.resourcemanager.v1.FolderService.Delete',
-    index=4,
-    containing_service=None,
-    input_type=_DELETEFOLDERREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002**(/resource-manager/v1/folders/{folder_id}\262\322*-\n\024DeleteFolderMetadata\022\025google.protobuf.Empty',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListOperations',
-    full_name='yandex.cloud.resourcemanager.v1.FolderService.ListOperations',
-    index=5,
-    containing_service=None,
-    input_type=_LISTFOLDEROPERATIONSREQUEST,
-    output_type=_LISTFOLDEROPERATIONSRESPONSE,
-    serialized_options=b'\202\323\344\223\0025\0223/resource-manager/v1/folders/{folder_id}/operations',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListAccessBindings',
-    full_name='yandex.cloud.resourcemanager.v1.FolderService.ListAccessBindings',
-    index=6,
-    containing_service=None,
-    input_type=yandex_dot_cloud_dot_access_dot_access__pb2._LISTACCESSBINDINGSREQUEST,
-    output_type=yandex_dot_cloud_dot_access_dot_access__pb2._LISTACCESSBINDINGSRESPONSE,
-    serialized_options=b'\202\323\344\223\002?\022=/resource-manager/v1/folders/{resource_id}:listAccessBindings',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='SetAccessBindings',
-    full_name='yandex.cloud.resourcemanager.v1.FolderService.SetAccessBindings',
-    index=7,
-    containing_service=None,
-    input_type=yandex_dot_cloud_dot_access_dot_access__pb2._SETACCESSBINDINGSREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002A\"</resource-manager/v1/folders/{resource_id}:setAccessBindings:\001*\262\322*H\n access.SetAccessBindingsMetadata\022$access.AccessBindingsOperationResult',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='UpdateAccessBindings',
-    full_name='yandex.cloud.resourcemanager.v1.FolderService.UpdateAccessBindings',
-    index=8,
-    containing_service=None,
-    input_type=yandex_dot_cloud_dot_access_dot_access__pb2._UPDATEACCESSBINDINGSREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002D\"?/resource-manager/v1/folders/{resource_id}:updateAccessBindings:\001*\262\322*K\n#access.UpdateAccessBindingsMetadata\022$access.AccessBindingsOperationResult',
-    create_key=_descriptor._internal_create_key,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_FOLDERSERVICE)
-
-DESCRIPTOR.services_by_name['FolderService'] = _FOLDERSERVICE
-
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n#yandex.cloud.api.resourcemanager.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/resourcemanager/v1;resourcemanager'
+  _GETFOLDERREQUEST.fields_by_name['folder_id']._options = None
+  _GETFOLDERREQUEST.fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTFOLDERSREQUEST.fields_by_name['cloud_id']._options = None
+  _LISTFOLDERSREQUEST.fields_by_name['cloud_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTFOLDERSREQUEST.fields_by_name['page_size']._options = None
+  _LISTFOLDERSREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
+  _LISTFOLDERSREQUEST.fields_by_name['page_token']._options = None
+  _LISTFOLDERSREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\006<=2000'
+  _LISTFOLDERSREQUEST.fields_by_name['filter']._options = None
+  _LISTFOLDERSREQUEST.fields_by_name['filter']._serialized_options = b'\212\3101\006<=1000'
+  _CREATEFOLDERREQUEST_LABELSENTRY._options = None
+  _CREATEFOLDERREQUEST_LABELSENTRY._serialized_options = b'8\001'
+  _CREATEFOLDERREQUEST.fields_by_name['cloud_id']._options = None
+  _CREATEFOLDERREQUEST.fields_by_name['cloud_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _CREATEFOLDERREQUEST.fields_by_name['name']._options = None
+  _CREATEFOLDERREQUEST.fields_by_name['name']._serialized_options = b'\350\3071\001\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'
+  _CREATEFOLDERREQUEST.fields_by_name['description']._options = None
+  _CREATEFOLDERREQUEST.fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
+  _CREATEFOLDERREQUEST.fields_by_name['labels']._options = None
+  _CREATEFOLDERREQUEST.fields_by_name['labels']._serialized_options = b'\362\3071\013[-_0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\0041-63'
+  _UPDATEFOLDERREQUEST_LABELSENTRY._options = None
+  _UPDATEFOLDERREQUEST_LABELSENTRY._serialized_options = b'8\001'
+  _UPDATEFOLDERREQUEST.fields_by_name['folder_id']._options = None
+  _UPDATEFOLDERREQUEST.fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _UPDATEFOLDERREQUEST.fields_by_name['name']._options = None
+  _UPDATEFOLDERREQUEST.fields_by_name['name']._serialized_options = b'\350\3071\001\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'
+  _UPDATEFOLDERREQUEST.fields_by_name['description']._options = None
+  _UPDATEFOLDERREQUEST.fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
+  _UPDATEFOLDERREQUEST.fields_by_name['labels']._options = None
+  _UPDATEFOLDERREQUEST.fields_by_name['labels']._serialized_options = b'\362\3071\013[-_0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\0041-63'
+  _DELETEFOLDERREQUEST.fields_by_name['folder_id']._options = None
+  _DELETEFOLDERREQUEST.fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTFOLDEROPERATIONSREQUEST.fields_by_name['folder_id']._options = None
+  _LISTFOLDEROPERATIONSREQUEST.fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTFOLDEROPERATIONSREQUEST.fields_by_name['page_size']._options = None
+  _LISTFOLDEROPERATIONSREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
+  _LISTFOLDEROPERATIONSREQUEST.fields_by_name['page_token']._options = None
+  _LISTFOLDEROPERATIONSREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\006<=2000'
+  _FOLDERSERVICE.methods_by_name['Get']._options = None
+  _FOLDERSERVICE.methods_by_name['Get']._serialized_options = b'\202\323\344\223\002*\022(/resource-manager/v1/folders/{folder_id}'
+  _FOLDERSERVICE.methods_by_name['List']._options = None
+  _FOLDERSERVICE.methods_by_name['List']._serialized_options = b'\202\323\344\223\002\036\022\034/resource-manager/v1/folders'
+  _FOLDERSERVICE.methods_by_name['Create']._options = None
+  _FOLDERSERVICE.methods_by_name['Create']._serialized_options = b'\262\322*\036\n\024CreateFolderMetadata\022\006Folder\202\323\344\223\002!\"\034/resource-manager/v1/folders:\001*'
+  _FOLDERSERVICE.methods_by_name['Update']._options = None
+  _FOLDERSERVICE.methods_by_name['Update']._serialized_options = b'\262\322*\036\n\024UpdateFolderMetadata\022\006Folder\202\323\344\223\002-2(/resource-manager/v1/folders/{folder_id}:\001*'
+  _FOLDERSERVICE.methods_by_name['Delete']._options = None
+  _FOLDERSERVICE.methods_by_name['Delete']._serialized_options = b'\262\322*-\n\024DeleteFolderMetadata\022\025google.protobuf.Empty\202\323\344\223\002**(/resource-manager/v1/folders/{folder_id}'
+  _FOLDERSERVICE.methods_by_name['ListOperations']._options = None
+  _FOLDERSERVICE.methods_by_name['ListOperations']._serialized_options = b'\202\323\344\223\0025\0223/resource-manager/v1/folders/{folder_id}/operations'
+  _FOLDERSERVICE.methods_by_name['ListAccessBindings']._options = None
+  _FOLDERSERVICE.methods_by_name['ListAccessBindings']._serialized_options = b'\202\323\344\223\002?\022=/resource-manager/v1/folders/{resource_id}:listAccessBindings'
+  _FOLDERSERVICE.methods_by_name['SetAccessBindings']._options = None
+  _FOLDERSERVICE.methods_by_name['SetAccessBindings']._serialized_options = b'\262\322*H\n access.SetAccessBindingsMetadata\022$access.AccessBindingsOperationResult\202\323\344\223\002A\"</resource-manager/v1/folders/{resource_id}:setAccessBindings:\001*'
+  _FOLDERSERVICE.methods_by_name['UpdateAccessBindings']._options = None
+  _FOLDERSERVICE.methods_by_name['UpdateAccessBindings']._serialized_options = b'\262\322*K\n#access.UpdateAccessBindingsMetadata\022$access.AccessBindingsOperationResult\202\323\344\223\002D\"?/resource-manager/v1/folders/{resource_id}:updateAccessBindings:\001*'
+  _globals['_GETFOLDERREQUEST']._serialized_start=371
+  _globals['_GETFOLDERREQUEST']._serialized_end=422
+  _globals['_LISTFOLDERSREQUEST']._serialized_start=425
+  _globals['_LISTFOLDERSREQUEST']._serialized_end=568
+  _globals['_LISTFOLDERSRESPONSE']._serialized_start=570
+  _globals['_LISTFOLDERSRESPONSE']._serialized_end=674
+  _globals['_CREATEFOLDERREQUEST']._serialized_start=677
+  _globals['_CREATEFOLDERREQUEST']._serialized_end=1006
+  _globals['_CREATEFOLDERREQUEST_LABELSENTRY']._serialized_start=961
+  _globals['_CREATEFOLDERREQUEST_LABELSENTRY']._serialized_end=1006
+  _globals['_CREATEFOLDERMETADATA']._serialized_start=1008
+  _globals['_CREATEFOLDERMETADATA']._serialized_end=1049
+  _globals['_UPDATEFOLDERREQUEST']._serialized_start=1052
+  _globals['_UPDATEFOLDERREQUEST']._serialized_end=1431
+  _globals['_UPDATEFOLDERREQUEST_LABELSENTRY']._serialized_start=961
+  _globals['_UPDATEFOLDERREQUEST_LABELSENTRY']._serialized_end=1006
+  _globals['_UPDATEFOLDERMETADATA']._serialized_start=1433
+  _globals['_UPDATEFOLDERMETADATA']._serialized_end=1474
+  _globals['_DELETEFOLDERREQUEST']._serialized_start=1476
+  _globals['_DELETEFOLDERREQUEST']._serialized_end=1580
+  _globals['_DELETEFOLDERMETADATA']._serialized_start=1582
+  _globals['_DELETEFOLDERMETADATA']._serialized_end=1673
+  _globals['_LISTFOLDEROPERATIONSREQUEST']._serialized_start=1675
+  _globals['_LISTFOLDEROPERATIONSREQUEST']._serialized_end=1800
+  _globals['_LISTFOLDEROPERATIONSRESPONSE']._serialized_start=1802
+  _globals['_LISTFOLDEROPERATIONSRESPONSE']._serialized_end=1912
+  _globals['_FOLDERSERVICE']._serialized_start=1915
+  _globals['_FOLDERSERVICE']._serialized_end=3711
 # @@protoc_insertion_point(module_scope)

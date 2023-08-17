@@ -3,9 +3,9 @@
 # source: yandex/cloud/mdb/postgresql/v1/database_service.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -20,561 +20,67 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud.mdb.postgresql.v1 import database_pb2 as yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_database__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/mdb/postgresql/v1/database_service.proto',
-  package='yandex.cloud.mdb.postgresql.v1',
-  syntax='proto3',
-  serialized_options=b'\n\"yandex.cloud.api.mdb.postgresql.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1;postgresql',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n5yandex/cloud/mdb/postgresql/v1/database_service.proto\x12\x1eyandex.cloud.mdb.postgresql.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a yandex/cloud/api/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a&yandex/cloud/operation/operation.proto\x1a-yandex/cloud/mdb/postgresql/v1/database.proto\"m\n\x12GetDatabaseRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\rdatabase_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"v\n\x14ListDatabasesRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"m\n\x15ListDatabasesResponse\x12;\n\tdatabases\x18\x01 \x03(\x0b\x32(.yandex.cloud.mdb.postgresql.v1.Database\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x84\x01\n\x15\x43reateDatabaseRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12I\n\rdatabase_spec\x18\x02 \x01(\x0b\x32,.yandex.cloud.mdb.postgresql.v1.DatabaseSpecB\x04\xe8\xc7\x31\x01\"C\n\x16\x43reateDatabaseMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x15\n\rdatabase_name\x18\x02 \x01(\t\"\xd4\x02\n\x15UpdateDatabaseRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\rdatabase_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12\x39\n\x11new_database_name\x18\x05 \x01(\tB\x1e\xe8\xc7\x31\x00\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x12/\n\x0bupdate_mask\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12=\n\nextensions\x18\x04 \x03(\x0b\x32).yandex.cloud.mdb.postgresql.v1.Extension\x12\x37\n\x13\x64\x65letion_protection\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"C\n\x16UpdateDatabaseMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x15\n\rdatabase_name\x18\x02 \x01(\t\"p\n\x15\x44\x65leteDatabaseRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\rdatabase_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\"C\n\x16\x44\x65leteDatabaseMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x15\n\rdatabase_name\x18\x02 \x01(\t2\x92\x08\n\x0f\x44\x61tabaseService\x12\xb3\x01\n\x03Get\x12\x32.yandex.cloud.mdb.postgresql.v1.GetDatabaseRequest\x1a(.yandex.cloud.mdb.postgresql.v1.Database\"N\x82\xd3\xe4\x93\x02H\x12\x46/managed-postgresql/v1/clusters/{cluster_id}/databases/{database_name}\x12\xb3\x01\n\x04List\x12\x34.yandex.cloud.mdb.postgresql.v1.ListDatabasesRequest\x1a\x35.yandex.cloud.mdb.postgresql.v1.ListDatabasesResponse\">\x82\xd3\xe4\x93\x02\x38\x12\x36/managed-postgresql/v1/clusters/{cluster_id}/databases\x12\xcb\x01\n\x06\x43reate\x12\x35.yandex.cloud.mdb.postgresql.v1.CreateDatabaseRequest\x1a!.yandex.cloud.operation.Operation\"g\x82\xd3\xe4\x93\x02;\"6/managed-postgresql/v1/clusters/{cluster_id}/databases:\x01*\xb2\xd2*\"\n\x16\x43reateDatabaseMetadata\x12\x08\x44\x61tabase\x12\xdb\x01\n\x06Update\x12\x35.yandex.cloud.mdb.postgresql.v1.UpdateDatabaseRequest\x1a!.yandex.cloud.operation.Operation\"w\x82\xd3\xe4\x93\x02K2F/managed-postgresql/v1/clusters/{cluster_id}/databases/{database_name}:\x01*\xb2\xd2*\"\n\x16UpdateDatabaseMetadata\x12\x08\x44\x61tabase\x12\xe6\x01\n\x06\x44\x65lete\x12\x35.yandex.cloud.mdb.postgresql.v1.DeleteDatabaseRequest\x1a!.yandex.cloud.operation.Operation\"\x81\x01\x82\xd3\xe4\x93\x02H*F/managed-postgresql/v1/clusters/{cluster_id}/databases/{database_name}\xb2\xd2*/\n\x16\x44\x65leteDatabaseMetadata\x12\x15google.protobuf.EmptyBs\n\"yandex.cloud.api.mdb.postgresql.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1;postgresqlb\x06proto3'
-  ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_database__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n5yandex/cloud/mdb/postgresql/v1/database_service.proto\x12\x1eyandex.cloud.mdb.postgresql.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a yandex/cloud/api/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a&yandex/cloud/operation/operation.proto\x1a-yandex/cloud/mdb/postgresql/v1/database.proto\"m\n\x12GetDatabaseRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\rdatabase_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\"v\n\x14ListDatabasesRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"m\n\x15ListDatabasesResponse\x12;\n\tdatabases\x18\x01 \x03(\x0b\x32(.yandex.cloud.mdb.postgresql.v1.Database\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x84\x01\n\x15\x43reateDatabaseRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12I\n\rdatabase_spec\x18\x02 \x01(\x0b\x32,.yandex.cloud.mdb.postgresql.v1.DatabaseSpecB\x04\xe8\xc7\x31\x01\"C\n\x16\x43reateDatabaseMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x15\n\rdatabase_name\x18\x02 \x01(\t\"\xd4\x02\n\x15UpdateDatabaseRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\rdatabase_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\x12\x39\n\x11new_database_name\x18\x05 \x01(\tB\x1e\xe8\xc7\x31\x00\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\x12/\n\x0bupdate_mask\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12=\n\nextensions\x18\x04 \x03(\x0b\x32).yandex.cloud.mdb.postgresql.v1.Extension\x12\x37\n\x13\x64\x65letion_protection\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"C\n\x16UpdateDatabaseMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x15\n\rdatabase_name\x18\x02 \x01(\t\"p\n\x15\x44\x65leteDatabaseRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\rdatabase_name\x18\x02 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x04<=63\"C\n\x16\x44\x65leteDatabaseMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x15\n\rdatabase_name\x18\x02 \x01(\t2\x92\x08\n\x0f\x44\x61tabaseService\x12\xb3\x01\n\x03Get\x12\x32.yandex.cloud.mdb.postgresql.v1.GetDatabaseRequest\x1a(.yandex.cloud.mdb.postgresql.v1.Database\"N\x82\xd3\xe4\x93\x02H\x12\x46/managed-postgresql/v1/clusters/{cluster_id}/databases/{database_name}\x12\xb3\x01\n\x04List\x12\x34.yandex.cloud.mdb.postgresql.v1.ListDatabasesRequest\x1a\x35.yandex.cloud.mdb.postgresql.v1.ListDatabasesResponse\">\x82\xd3\xe4\x93\x02\x38\x12\x36/managed-postgresql/v1/clusters/{cluster_id}/databases\x12\xcb\x01\n\x06\x43reate\x12\x35.yandex.cloud.mdb.postgresql.v1.CreateDatabaseRequest\x1a!.yandex.cloud.operation.Operation\"g\xb2\xd2*\"\n\x16\x43reateDatabaseMetadata\x12\x08\x44\x61tabase\x82\xd3\xe4\x93\x02;\"6/managed-postgresql/v1/clusters/{cluster_id}/databases:\x01*\x12\xdb\x01\n\x06Update\x12\x35.yandex.cloud.mdb.postgresql.v1.UpdateDatabaseRequest\x1a!.yandex.cloud.operation.Operation\"w\xb2\xd2*\"\n\x16UpdateDatabaseMetadata\x12\x08\x44\x61tabase\x82\xd3\xe4\x93\x02K2F/managed-postgresql/v1/clusters/{cluster_id}/databases/{database_name}:\x01*\x12\xe6\x01\n\x06\x44\x65lete\x12\x35.yandex.cloud.mdb.postgresql.v1.DeleteDatabaseRequest\x1a!.yandex.cloud.operation.Operation\"\x81\x01\xb2\xd2*/\n\x16\x44\x65leteDatabaseMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02H*F/managed-postgresql/v1/clusters/{cluster_id}/databases/{database_name}Bs\n\"yandex.cloud.api.mdb.postgresql.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1;postgresqlb\x06proto3')
 
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.mdb.postgresql.v1.database_service_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-
-_GETDATABASEREQUEST = _descriptor.Descriptor(
-  name='GetDatabaseRequest',
-  full_name='yandex.cloud.mdb.postgresql.v1.GetDatabaseRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='cluster_id', full_name='yandex.cloud.mdb.postgresql.v1.GetDatabaseRequest.cluster_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='database_name', full_name='yandex.cloud.mdb.postgresql.v1.GetDatabaseRequest.database_name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=63\362\3071\016[a-zA-Z0-9_-]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=337,
-  serialized_end=446,
-)
-
-
-_LISTDATABASESREQUEST = _descriptor.Descriptor(
-  name='ListDatabasesRequest',
-  full_name='yandex.cloud.mdb.postgresql.v1.ListDatabasesRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='cluster_id', full_name='yandex.cloud.mdb.postgresql.v1.ListDatabasesRequest.cluster_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.mdb.postgresql.v1.ListDatabasesRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.mdb.postgresql.v1.ListDatabasesRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=448,
-  serialized_end=566,
-)
-
-
-_LISTDATABASESRESPONSE = _descriptor.Descriptor(
-  name='ListDatabasesResponse',
-  full_name='yandex.cloud.mdb.postgresql.v1.ListDatabasesResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='databases', full_name='yandex.cloud.mdb.postgresql.v1.ListDatabasesResponse.databases', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.mdb.postgresql.v1.ListDatabasesResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=568,
-  serialized_end=677,
-)
-
-
-_CREATEDATABASEREQUEST = _descriptor.Descriptor(
-  name='CreateDatabaseRequest',
-  full_name='yandex.cloud.mdb.postgresql.v1.CreateDatabaseRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='cluster_id', full_name='yandex.cloud.mdb.postgresql.v1.CreateDatabaseRequest.cluster_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='database_spec', full_name='yandex.cloud.mdb.postgresql.v1.CreateDatabaseRequest.database_spec', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=680,
-  serialized_end=812,
-)
-
-
-_CREATEDATABASEMETADATA = _descriptor.Descriptor(
-  name='CreateDatabaseMetadata',
-  full_name='yandex.cloud.mdb.postgresql.v1.CreateDatabaseMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='cluster_id', full_name='yandex.cloud.mdb.postgresql.v1.CreateDatabaseMetadata.cluster_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='database_name', full_name='yandex.cloud.mdb.postgresql.v1.CreateDatabaseMetadata.database_name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=814,
-  serialized_end=881,
-)
-
-
-_UPDATEDATABASEREQUEST = _descriptor.Descriptor(
-  name='UpdateDatabaseRequest',
-  full_name='yandex.cloud.mdb.postgresql.v1.UpdateDatabaseRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='cluster_id', full_name='yandex.cloud.mdb.postgresql.v1.UpdateDatabaseRequest.cluster_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='database_name', full_name='yandex.cloud.mdb.postgresql.v1.UpdateDatabaseRequest.database_name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=63\362\3071\016[a-zA-Z0-9_-]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='new_database_name', full_name='yandex.cloud.mdb.postgresql.v1.UpdateDatabaseRequest.new_database_name', index=2,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\000\212\3101\004<=63\362\3071\016[a-zA-Z0-9_-]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='update_mask', full_name='yandex.cloud.mdb.postgresql.v1.UpdateDatabaseRequest.update_mask', index=3,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='extensions', full_name='yandex.cloud.mdb.postgresql.v1.UpdateDatabaseRequest.extensions', index=4,
-      number=4, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='deletion_protection', full_name='yandex.cloud.mdb.postgresql.v1.UpdateDatabaseRequest.deletion_protection', index=5,
-      number=6, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=884,
-  serialized_end=1224,
-)
-
-
-_UPDATEDATABASEMETADATA = _descriptor.Descriptor(
-  name='UpdateDatabaseMetadata',
-  full_name='yandex.cloud.mdb.postgresql.v1.UpdateDatabaseMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='cluster_id', full_name='yandex.cloud.mdb.postgresql.v1.UpdateDatabaseMetadata.cluster_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='database_name', full_name='yandex.cloud.mdb.postgresql.v1.UpdateDatabaseMetadata.database_name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1226,
-  serialized_end=1293,
-)
-
-
-_DELETEDATABASEREQUEST = _descriptor.Descriptor(
-  name='DeleteDatabaseRequest',
-  full_name='yandex.cloud.mdb.postgresql.v1.DeleteDatabaseRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='cluster_id', full_name='yandex.cloud.mdb.postgresql.v1.DeleteDatabaseRequest.cluster_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='database_name', full_name='yandex.cloud.mdb.postgresql.v1.DeleteDatabaseRequest.database_name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=63\362\3071\016[a-zA-Z0-9_-]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1295,
-  serialized_end=1407,
-)
-
-
-_DELETEDATABASEMETADATA = _descriptor.Descriptor(
-  name='DeleteDatabaseMetadata',
-  full_name='yandex.cloud.mdb.postgresql.v1.DeleteDatabaseMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='cluster_id', full_name='yandex.cloud.mdb.postgresql.v1.DeleteDatabaseMetadata.cluster_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='database_name', full_name='yandex.cloud.mdb.postgresql.v1.DeleteDatabaseMetadata.database_name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1409,
-  serialized_end=1476,
-)
-
-_LISTDATABASESRESPONSE.fields_by_name['databases'].message_type = yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_database__pb2._DATABASE
-_CREATEDATABASEREQUEST.fields_by_name['database_spec'].message_type = yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_database__pb2._DATABASESPEC
-_UPDATEDATABASEREQUEST.fields_by_name['update_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
-_UPDATEDATABASEREQUEST.fields_by_name['extensions'].message_type = yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_database__pb2._EXTENSION
-_UPDATEDATABASEREQUEST.fields_by_name['deletion_protection'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
-DESCRIPTOR.message_types_by_name['GetDatabaseRequest'] = _GETDATABASEREQUEST
-DESCRIPTOR.message_types_by_name['ListDatabasesRequest'] = _LISTDATABASESREQUEST
-DESCRIPTOR.message_types_by_name['ListDatabasesResponse'] = _LISTDATABASESRESPONSE
-DESCRIPTOR.message_types_by_name['CreateDatabaseRequest'] = _CREATEDATABASEREQUEST
-DESCRIPTOR.message_types_by_name['CreateDatabaseMetadata'] = _CREATEDATABASEMETADATA
-DESCRIPTOR.message_types_by_name['UpdateDatabaseRequest'] = _UPDATEDATABASEREQUEST
-DESCRIPTOR.message_types_by_name['UpdateDatabaseMetadata'] = _UPDATEDATABASEMETADATA
-DESCRIPTOR.message_types_by_name['DeleteDatabaseRequest'] = _DELETEDATABASEREQUEST
-DESCRIPTOR.message_types_by_name['DeleteDatabaseMetadata'] = _DELETEDATABASEMETADATA
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-GetDatabaseRequest = _reflection.GeneratedProtocolMessageType('GetDatabaseRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETDATABASEREQUEST,
-  '__module__' : 'yandex.cloud.mdb.postgresql.v1.database_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.postgresql.v1.GetDatabaseRequest)
-  })
-_sym_db.RegisterMessage(GetDatabaseRequest)
-
-ListDatabasesRequest = _reflection.GeneratedProtocolMessageType('ListDatabasesRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTDATABASESREQUEST,
-  '__module__' : 'yandex.cloud.mdb.postgresql.v1.database_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.postgresql.v1.ListDatabasesRequest)
-  })
-_sym_db.RegisterMessage(ListDatabasesRequest)
-
-ListDatabasesResponse = _reflection.GeneratedProtocolMessageType('ListDatabasesResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTDATABASESRESPONSE,
-  '__module__' : 'yandex.cloud.mdb.postgresql.v1.database_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.postgresql.v1.ListDatabasesResponse)
-  })
-_sym_db.RegisterMessage(ListDatabasesResponse)
-
-CreateDatabaseRequest = _reflection.GeneratedProtocolMessageType('CreateDatabaseRequest', (_message.Message,), {
-  'DESCRIPTOR' : _CREATEDATABASEREQUEST,
-  '__module__' : 'yandex.cloud.mdb.postgresql.v1.database_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.postgresql.v1.CreateDatabaseRequest)
-  })
-_sym_db.RegisterMessage(CreateDatabaseRequest)
-
-CreateDatabaseMetadata = _reflection.GeneratedProtocolMessageType('CreateDatabaseMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _CREATEDATABASEMETADATA,
-  '__module__' : 'yandex.cloud.mdb.postgresql.v1.database_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.postgresql.v1.CreateDatabaseMetadata)
-  })
-_sym_db.RegisterMessage(CreateDatabaseMetadata)
-
-UpdateDatabaseRequest = _reflection.GeneratedProtocolMessageType('UpdateDatabaseRequest', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATEDATABASEREQUEST,
-  '__module__' : 'yandex.cloud.mdb.postgresql.v1.database_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.postgresql.v1.UpdateDatabaseRequest)
-  })
-_sym_db.RegisterMessage(UpdateDatabaseRequest)
-
-UpdateDatabaseMetadata = _reflection.GeneratedProtocolMessageType('UpdateDatabaseMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATEDATABASEMETADATA,
-  '__module__' : 'yandex.cloud.mdb.postgresql.v1.database_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.postgresql.v1.UpdateDatabaseMetadata)
-  })
-_sym_db.RegisterMessage(UpdateDatabaseMetadata)
-
-DeleteDatabaseRequest = _reflection.GeneratedProtocolMessageType('DeleteDatabaseRequest', (_message.Message,), {
-  'DESCRIPTOR' : _DELETEDATABASEREQUEST,
-  '__module__' : 'yandex.cloud.mdb.postgresql.v1.database_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.postgresql.v1.DeleteDatabaseRequest)
-  })
-_sym_db.RegisterMessage(DeleteDatabaseRequest)
-
-DeleteDatabaseMetadata = _reflection.GeneratedProtocolMessageType('DeleteDatabaseMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _DELETEDATABASEMETADATA,
-  '__module__' : 'yandex.cloud.mdb.postgresql.v1.database_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.postgresql.v1.DeleteDatabaseMetadata)
-  })
-_sym_db.RegisterMessage(DeleteDatabaseMetadata)
-
-
-DESCRIPTOR._options = None
-_GETDATABASEREQUEST.fields_by_name['cluster_id']._options = None
-_GETDATABASEREQUEST.fields_by_name['database_name']._options = None
-_LISTDATABASESREQUEST.fields_by_name['cluster_id']._options = None
-_LISTDATABASESREQUEST.fields_by_name['page_size']._options = None
-_LISTDATABASESREQUEST.fields_by_name['page_token']._options = None
-_CREATEDATABASEREQUEST.fields_by_name['cluster_id']._options = None
-_CREATEDATABASEREQUEST.fields_by_name['database_spec']._options = None
-_UPDATEDATABASEREQUEST.fields_by_name['cluster_id']._options = None
-_UPDATEDATABASEREQUEST.fields_by_name['database_name']._options = None
-_UPDATEDATABASEREQUEST.fields_by_name['new_database_name']._options = None
-_DELETEDATABASEREQUEST.fields_by_name['cluster_id']._options = None
-_DELETEDATABASEREQUEST.fields_by_name['database_name']._options = None
-
-_DATABASESERVICE = _descriptor.ServiceDescriptor(
-  name='DatabaseService',
-  full_name='yandex.cloud.mdb.postgresql.v1.DatabaseService',
-  file=DESCRIPTOR,
-  index=0,
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_start=1479,
-  serialized_end=2521,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='Get',
-    full_name='yandex.cloud.mdb.postgresql.v1.DatabaseService.Get',
-    index=0,
-    containing_service=None,
-    input_type=_GETDATABASEREQUEST,
-    output_type=yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_database__pb2._DATABASE,
-    serialized_options=b'\202\323\344\223\002H\022F/managed-postgresql/v1/clusters/{cluster_id}/databases/{database_name}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='List',
-    full_name='yandex.cloud.mdb.postgresql.v1.DatabaseService.List',
-    index=1,
-    containing_service=None,
-    input_type=_LISTDATABASESREQUEST,
-    output_type=_LISTDATABASESRESPONSE,
-    serialized_options=b'\202\323\344\223\0028\0226/managed-postgresql/v1/clusters/{cluster_id}/databases',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Create',
-    full_name='yandex.cloud.mdb.postgresql.v1.DatabaseService.Create',
-    index=2,
-    containing_service=None,
-    input_type=_CREATEDATABASEREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002;\"6/managed-postgresql/v1/clusters/{cluster_id}/databases:\001*\262\322*\"\n\026CreateDatabaseMetadata\022\010Database',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Update',
-    full_name='yandex.cloud.mdb.postgresql.v1.DatabaseService.Update',
-    index=3,
-    containing_service=None,
-    input_type=_UPDATEDATABASEREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002K2F/managed-postgresql/v1/clusters/{cluster_id}/databases/{database_name}:\001*\262\322*\"\n\026UpdateDatabaseMetadata\022\010Database',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Delete',
-    full_name='yandex.cloud.mdb.postgresql.v1.DatabaseService.Delete',
-    index=4,
-    containing_service=None,
-    input_type=_DELETEDATABASEREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002H*F/managed-postgresql/v1/clusters/{cluster_id}/databases/{database_name}\262\322*/\n\026DeleteDatabaseMetadata\022\025google.protobuf.Empty',
-    create_key=_descriptor._internal_create_key,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_DATABASESERVICE)
-
-DESCRIPTOR.services_by_name['DatabaseService'] = _DATABASESERVICE
-
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n\"yandex.cloud.api.mdb.postgresql.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/postgresql/v1;postgresql'
+  _GETDATABASEREQUEST.fields_by_name['cluster_id']._options = None
+  _GETDATABASEREQUEST.fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _GETDATABASEREQUEST.fields_by_name['database_name']._options = None
+  _GETDATABASEREQUEST.fields_by_name['database_name']._serialized_options = b'\350\3071\001\362\3071\016[a-zA-Z0-9_-]*\212\3101\004<=63'
+  _LISTDATABASESREQUEST.fields_by_name['cluster_id']._options = None
+  _LISTDATABASESREQUEST.fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTDATABASESREQUEST.fields_by_name['page_size']._options = None
+  _LISTDATABASESREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
+  _LISTDATABASESREQUEST.fields_by_name['page_token']._options = None
+  _LISTDATABASESREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
+  _CREATEDATABASEREQUEST.fields_by_name['cluster_id']._options = None
+  _CREATEDATABASEREQUEST.fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _CREATEDATABASEREQUEST.fields_by_name['database_spec']._options = None
+  _CREATEDATABASEREQUEST.fields_by_name['database_spec']._serialized_options = b'\350\3071\001'
+  _UPDATEDATABASEREQUEST.fields_by_name['cluster_id']._options = None
+  _UPDATEDATABASEREQUEST.fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _UPDATEDATABASEREQUEST.fields_by_name['database_name']._options = None
+  _UPDATEDATABASEREQUEST.fields_by_name['database_name']._serialized_options = b'\350\3071\001\362\3071\016[a-zA-Z0-9_-]*\212\3101\004<=63'
+  _UPDATEDATABASEREQUEST.fields_by_name['new_database_name']._options = None
+  _UPDATEDATABASEREQUEST.fields_by_name['new_database_name']._serialized_options = b'\350\3071\000\362\3071\016[a-zA-Z0-9_-]*\212\3101\004<=63'
+  _DELETEDATABASEREQUEST.fields_by_name['cluster_id']._options = None
+  _DELETEDATABASEREQUEST.fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _DELETEDATABASEREQUEST.fields_by_name['database_name']._options = None
+  _DELETEDATABASEREQUEST.fields_by_name['database_name']._serialized_options = b'\350\3071\001\362\3071\016[a-zA-Z0-9_-]*\212\3101\004<=63'
+  _DATABASESERVICE.methods_by_name['Get']._options = None
+  _DATABASESERVICE.methods_by_name['Get']._serialized_options = b'\202\323\344\223\002H\022F/managed-postgresql/v1/clusters/{cluster_id}/databases/{database_name}'
+  _DATABASESERVICE.methods_by_name['List']._options = None
+  _DATABASESERVICE.methods_by_name['List']._serialized_options = b'\202\323\344\223\0028\0226/managed-postgresql/v1/clusters/{cluster_id}/databases'
+  _DATABASESERVICE.methods_by_name['Create']._options = None
+  _DATABASESERVICE.methods_by_name['Create']._serialized_options = b'\262\322*\"\n\026CreateDatabaseMetadata\022\010Database\202\323\344\223\002;\"6/managed-postgresql/v1/clusters/{cluster_id}/databases:\001*'
+  _DATABASESERVICE.methods_by_name['Update']._options = None
+  _DATABASESERVICE.methods_by_name['Update']._serialized_options = b'\262\322*\"\n\026UpdateDatabaseMetadata\022\010Database\202\323\344\223\002K2F/managed-postgresql/v1/clusters/{cluster_id}/databases/{database_name}:\001*'
+  _DATABASESERVICE.methods_by_name['Delete']._options = None
+  _DATABASESERVICE.methods_by_name['Delete']._serialized_options = b'\262\322*/\n\026DeleteDatabaseMetadata\022\025google.protobuf.Empty\202\323\344\223\002H*F/managed-postgresql/v1/clusters/{cluster_id}/databases/{database_name}'
+  _globals['_GETDATABASEREQUEST']._serialized_start=337
+  _globals['_GETDATABASEREQUEST']._serialized_end=446
+  _globals['_LISTDATABASESREQUEST']._serialized_start=448
+  _globals['_LISTDATABASESREQUEST']._serialized_end=566
+  _globals['_LISTDATABASESRESPONSE']._serialized_start=568
+  _globals['_LISTDATABASESRESPONSE']._serialized_end=677
+  _globals['_CREATEDATABASEREQUEST']._serialized_start=680
+  _globals['_CREATEDATABASEREQUEST']._serialized_end=812
+  _globals['_CREATEDATABASEMETADATA']._serialized_start=814
+  _globals['_CREATEDATABASEMETADATA']._serialized_end=881
+  _globals['_UPDATEDATABASEREQUEST']._serialized_start=884
+  _globals['_UPDATEDATABASEREQUEST']._serialized_end=1224
+  _globals['_UPDATEDATABASEMETADATA']._serialized_start=1226
+  _globals['_UPDATEDATABASEMETADATA']._serialized_end=1293
+  _globals['_DELETEDATABASEREQUEST']._serialized_start=1295
+  _globals['_DELETEDATABASEREQUEST']._serialized_end=1407
+  _globals['_DELETEDATABASEMETADATA']._serialized_start=1409
+  _globals['_DELETEDATABASEMETADATA']._serialized_end=1476
+  _globals['_DATABASESERVICE']._serialized_start=1479
+  _globals['_DATABASESERVICE']._serialized_end=2521
 # @@protoc_insertion_point(module_scope)

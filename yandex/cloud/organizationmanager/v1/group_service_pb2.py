@@ -3,9 +3,9 @@
 # source: yandex/cloud/organizationmanager/v1/group_service.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -20,1012 +20,117 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/organizationmanager/v1/group_service.proto',
-  package='yandex.cloud.organizationmanager.v1',
-  syntax='proto3',
-  serialized_options=b'\n\'yandex.cloud.api.organizationmanager.v1Z[github.com/yandex-cloud/go-genproto/yandex/cloud/organizationmanager/v1;organizationmanager',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n7yandex/cloud/organizationmanager/v1/group_service.proto\x12#yandex.cloud.organizationmanager.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a/yandex/cloud/organizationmanager/v1/group.proto\x1a yandex/cloud/access/access.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"1\n\x0fGetGroupRequest\x12\x1e\n\x08group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x95\x01\n\x11ListGroupsRequest\x12%\n\x0forganization_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"i\n\x12ListGroupsResponse\x12:\n\x06groups\x18\x01 \x03(\x0b\x32*.yandex.cloud.organizationmanager.v1.Group\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x92\x01\n\x12\x43reateGroupRequest\x12%\n\x0forganization_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\x04name\x18\x02 \x01(\tB\'\xe8\xc7\x31\x01\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\"\'\n\x13\x43reateGroupMetadata\x12\x10\n\x08group_id\x18\x01 \x01(\t\"\xb9\x01\n\x12UpdateGroupRequest\x12\x1e\n\x08group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\"\'\n\x13UpdateGroupMetadata\x12\x10\n\x08group_id\x18\x01 \x01(\t\"4\n\x12\x44\x65leteGroupRequest\x12\x1e\n\x08group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\'\n\x13\x44\x65leteGroupMetadata\x12\x10\n\x08group_id\x18\x01 \x01(\t\"{\n\x1aListGroupOperationsRequest\x12\x1e\n\x08group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\"m\n\x1bListGroupOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"x\n\x17ListGroupMembersRequest\x12\x1e\n\x08group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\"v\n\x18ListGroupMembersResponse\x12\x41\n\x07members\x18\x01 \x03(\x0b\x32\x30.yandex.cloud.organizationmanager.v1.GroupMember\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"7\n\x0bGroupMember\x12\x12\n\nsubject_id\x18\x01 \x01(\t\x12\x14\n\x0csubject_type\x18\x02 \x01(\t\"\x90\x01\n\x19UpdateGroupMembersRequest\x12\x1e\n\x08group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12S\n\rmember_deltas\x18\x02 \x03(\x0b\x32\x30.yandex.cloud.organizationmanager.v1.MemberDeltaB\n\x82\xc8\x31\x06\x31-1000\".\n\x1aUpdateGroupMembersMetadata\x12\x10\n\x08group_id\x18\x01 \x01(\t\"\xc8\x01\n\x0bMemberDelta\x12S\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32=.yandex.cloud.organizationmanager.v1.MemberDelta.MemberActionB\x04\xe8\xc7\x31\x01\x12 \n\nsubject_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"B\n\x0cMemberAction\x12\x1d\n\x19MEMBER_ACTION_UNSPECIFIED\x10\x00\x12\x07\n\x03\x41\x44\x44\x10\x01\x12\n\n\x06REMOVE\x10\x02\x32\xee\x11\n\x0cGroupService\x12\x9b\x01\n\x03Get\x12\x34.yandex.cloud.organizationmanager.v1.GetGroupRequest\x1a*.yandex.cloud.organizationmanager.v1.Group\"2\x82\xd3\xe4\x93\x02,\x12*/organization-manager/v1/groups/{group_id}\x12\xa0\x01\n\x04List\x12\x36.yandex.cloud.organizationmanager.v1.ListGroupsRequest\x1a\x37.yandex.cloud.organizationmanager.v1.ListGroupsResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/organization-manager/v1/groups\x12\xb0\x01\n\x06\x43reate\x12\x37.yandex.cloud.organizationmanager.v1.CreateGroupRequest\x1a!.yandex.cloud.operation.Operation\"J\x82\xd3\xe4\x93\x02$\"\x1f/organization-manager/v1/groups:\x01*\xb2\xd2*\x1c\n\x13\x43reateGroupMetadata\x12\x05Group\x12\xbb\x01\n\x06Update\x12\x37.yandex.cloud.organizationmanager.v1.UpdateGroupRequest\x1a!.yandex.cloud.operation.Operation\"U\x82\xd3\xe4\x93\x02/2*/organization-manager/v1/groups/{group_id}:\x01*\xb2\xd2*\x1c\n\x13UpdateGroupMetadata\x12\x05Group\x12\xc8\x01\n\x06\x44\x65lete\x12\x37.yandex.cloud.organizationmanager.v1.DeleteGroupRequest\x1a!.yandex.cloud.operation.Operation\"b\x82\xd3\xe4\x93\x02,**/organization-manager/v1/groups/{group_id}\xb2\xd2*,\n\x13\x44\x65leteGroupMetadata\x12\x15google.protobuf.Empty\x12\xd2\x01\n\x0eListOperations\x12?.yandex.cloud.organizationmanager.v1.ListGroupOperationsRequest\x1a@.yandex.cloud.organizationmanager.v1.ListGroupOperationsResponse\"=\x82\xd3\xe4\x93\x02\x37\x12\x35/organization-manager/v1/groups/{group_id}/operations\x12\xca\x01\n\x0bListMembers\x12<.yandex.cloud.organizationmanager.v1.ListGroupMembersRequest\x1a=.yandex.cloud.organizationmanager.v1.ListGroupMembersResponse\">\x82\xd3\xe4\x93\x02\x38\x12\x36/organization-manager/v1/groups/{group_id}:listMembers\x12\xee\x01\n\rUpdateMembers\x12>.yandex.cloud.organizationmanager.v1.UpdateGroupMembersRequest\x1a!.yandex.cloud.operation.Operation\"z\x82\xd3\xe4\x93\x02=\"8/organization-manager/v1/groups/{group_id}:updateMembers:\x01*\xb2\xd2*3\n\x1aUpdateGroupMembersMetadata\x12\x15google.protobuf.Empty\x12\xbf\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"H\x82\xd3\xe4\x93\x02\x42\x12@/organization-manager/v1/groups/{resource_id}:listAccessBindings\x12\xfe\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x96\x01\x82\xd3\xe4\x93\x02\x44\"?/organization-manager/v1/groups/{resource_id}:setAccessBindings:\x01*\xb2\xd2*H\n access.SetAccessBindingsMetadata\x12$access.AccessBindingsOperationResult\x12\x8a\x02\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x9c\x01\x82\xd3\xe4\x93\x02G\"B/organization-manager/v1/groups/{resource_id}:updateAccessBindings:\x01*\xb2\xd2*K\n#access.UpdateAccessBindingsMetadata\x12$access.AccessBindingsOperationResultB\x86\x01\n\'yandex.cloud.api.organizationmanager.v1Z[github.com/yandex-cloud/go-genproto/yandex/cloud/organizationmanager/v1;organizationmanagerb\x06proto3'
-  ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__pb2.DESCRIPTOR,yandex_dot_cloud_dot_access_dot_access__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n7yandex/cloud/organizationmanager/v1/group_service.proto\x12#yandex.cloud.organizationmanager.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a/yandex/cloud/organizationmanager/v1/group.proto\x1a yandex/cloud/access/access.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"1\n\x0fGetGroupRequest\x12\x1e\n\x08group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x95\x01\n\x11ListGroupsRequest\x12%\n\x0forganization_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"i\n\x12ListGroupsResponse\x12:\n\x06groups\x18\x01 \x03(\x0b\x32*.yandex.cloud.organizationmanager.v1.Group\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x92\x01\n\x12\x43reateGroupRequest\x12%\n\x0forganization_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\x04name\x18\x02 \x01(\tB\'\xe8\xc7\x31\x01\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\"\'\n\x13\x43reateGroupMetadata\x12\x10\n\x08group_id\x18\x01 \x01(\t\"\xb9\x01\n\x12UpdateGroupRequest\x12\x1e\n\x08group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\"\'\n\x13UpdateGroupMetadata\x12\x10\n\x08group_id\x18\x01 \x01(\t\"4\n\x12\x44\x65leteGroupRequest\x12\x1e\n\x08group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\'\n\x13\x44\x65leteGroupMetadata\x12\x10\n\x08group_id\x18\x01 \x01(\t\"{\n\x1aListGroupOperationsRequest\x12\x1e\n\x08group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\"m\n\x1bListGroupOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"x\n\x17ListGroupMembersRequest\x12\x1e\n\x08group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\"v\n\x18ListGroupMembersResponse\x12\x41\n\x07members\x18\x01 \x03(\x0b\x32\x30.yandex.cloud.organizationmanager.v1.GroupMember\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"7\n\x0bGroupMember\x12\x12\n\nsubject_id\x18\x01 \x01(\t\x12\x14\n\x0csubject_type\x18\x02 \x01(\t\"\x90\x01\n\x19UpdateGroupMembersRequest\x12\x1e\n\x08group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12S\n\rmember_deltas\x18\x02 \x03(\x0b\x32\x30.yandex.cloud.organizationmanager.v1.MemberDeltaB\n\x82\xc8\x31\x06\x31-1000\".\n\x1aUpdateGroupMembersMetadata\x12\x10\n\x08group_id\x18\x01 \x01(\t\"\xc8\x01\n\x0bMemberDelta\x12S\n\x06\x61\x63tion\x18\x01 \x01(\x0e\x32=.yandex.cloud.organizationmanager.v1.MemberDelta.MemberActionB\x04\xe8\xc7\x31\x01\x12 \n\nsubject_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"B\n\x0cMemberAction\x12\x1d\n\x19MEMBER_ACTION_UNSPECIFIED\x10\x00\x12\x07\n\x03\x41\x44\x44\x10\x01\x12\n\n\x06REMOVE\x10\x02\x32\xee\x11\n\x0cGroupService\x12\x9b\x01\n\x03Get\x12\x34.yandex.cloud.organizationmanager.v1.GetGroupRequest\x1a*.yandex.cloud.organizationmanager.v1.Group\"2\x82\xd3\xe4\x93\x02,\x12*/organization-manager/v1/groups/{group_id}\x12\xa0\x01\n\x04List\x12\x36.yandex.cloud.organizationmanager.v1.ListGroupsRequest\x1a\x37.yandex.cloud.organizationmanager.v1.ListGroupsResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/organization-manager/v1/groups\x12\xb0\x01\n\x06\x43reate\x12\x37.yandex.cloud.organizationmanager.v1.CreateGroupRequest\x1a!.yandex.cloud.operation.Operation\"J\xb2\xd2*\x1c\n\x13\x43reateGroupMetadata\x12\x05Group\x82\xd3\xe4\x93\x02$\"\x1f/organization-manager/v1/groups:\x01*\x12\xbb\x01\n\x06Update\x12\x37.yandex.cloud.organizationmanager.v1.UpdateGroupRequest\x1a!.yandex.cloud.operation.Operation\"U\xb2\xd2*\x1c\n\x13UpdateGroupMetadata\x12\x05Group\x82\xd3\xe4\x93\x02/2*/organization-manager/v1/groups/{group_id}:\x01*\x12\xc8\x01\n\x06\x44\x65lete\x12\x37.yandex.cloud.organizationmanager.v1.DeleteGroupRequest\x1a!.yandex.cloud.operation.Operation\"b\xb2\xd2*,\n\x13\x44\x65leteGroupMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02,**/organization-manager/v1/groups/{group_id}\x12\xd2\x01\n\x0eListOperations\x12?.yandex.cloud.organizationmanager.v1.ListGroupOperationsRequest\x1a@.yandex.cloud.organizationmanager.v1.ListGroupOperationsResponse\"=\x82\xd3\xe4\x93\x02\x37\x12\x35/organization-manager/v1/groups/{group_id}/operations\x12\xca\x01\n\x0bListMembers\x12<.yandex.cloud.organizationmanager.v1.ListGroupMembersRequest\x1a=.yandex.cloud.organizationmanager.v1.ListGroupMembersResponse\">\x82\xd3\xe4\x93\x02\x38\x12\x36/organization-manager/v1/groups/{group_id}:listMembers\x12\xee\x01\n\rUpdateMembers\x12>.yandex.cloud.organizationmanager.v1.UpdateGroupMembersRequest\x1a!.yandex.cloud.operation.Operation\"z\xb2\xd2*3\n\x1aUpdateGroupMembersMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02=\"8/organization-manager/v1/groups/{group_id}:updateMembers:\x01*\x12\xbf\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"H\x82\xd3\xe4\x93\x02\x42\x12@/organization-manager/v1/groups/{resource_id}:listAccessBindings\x12\xfe\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x96\x01\xb2\xd2*H\n access.SetAccessBindingsMetadata\x12$access.AccessBindingsOperationResult\x82\xd3\xe4\x93\x02\x44\"?/organization-manager/v1/groups/{resource_id}:setAccessBindings:\x01*\x12\x8a\x02\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x9c\x01\xb2\xd2*K\n#access.UpdateAccessBindingsMetadata\x12$access.AccessBindingsOperationResult\x82\xd3\xe4\x93\x02G\"B/organization-manager/v1/groups/{resource_id}:updateAccessBindings:\x01*B\x86\x01\n\'yandex.cloud.api.organizationmanager.v1Z[github.com/yandex-cloud/go-genproto/yandex/cloud/organizationmanager/v1;organizationmanagerb\x06proto3')
 
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.organizationmanager.v1.group_service_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-_MEMBERDELTA_MEMBERACTION = _descriptor.EnumDescriptor(
-  name='MemberAction',
-  full_name='yandex.cloud.organizationmanager.v1.MemberDelta.MemberAction',
-  filename=None,
-  file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='MEMBER_ACTION_UNSPECIFIED', index=0, number=0,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='ADD', index=1, number=1,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='REMOVE', index=2, number=2,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-  ],
-  containing_type=None,
-  serialized_options=None,
-  serialized_start=2037,
-  serialized_end=2103,
-)
-_sym_db.RegisterEnumDescriptor(_MEMBERDELTA_MEMBERACTION)
-
-
-_GETGROUPREQUEST = _descriptor.Descriptor(
-  name='GetGroupRequest',
-  full_name='yandex.cloud.organizationmanager.v1.GetGroupRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='group_id', full_name='yandex.cloud.organizationmanager.v1.GetGroupRequest.group_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=348,
-  serialized_end=397,
-)
-
-
-_LISTGROUPSREQUEST = _descriptor.Descriptor(
-  name='ListGroupsRequest',
-  full_name='yandex.cloud.organizationmanager.v1.ListGroupsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='organization_id', full_name='yandex.cloud.organizationmanager.v1.ListGroupsRequest.organization_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.organizationmanager.v1.ListGroupsRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\0060-1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.organizationmanager.v1.ListGroupsRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=2000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='filter', full_name='yandex.cloud.organizationmanager.v1.ListGroupsRequest.filter', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=400,
-  serialized_end=549,
-)
-
-
-_LISTGROUPSRESPONSE = _descriptor.Descriptor(
-  name='ListGroupsResponse',
-  full_name='yandex.cloud.organizationmanager.v1.ListGroupsResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='groups', full_name='yandex.cloud.organizationmanager.v1.ListGroupsResponse.groups', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.organizationmanager.v1.ListGroupsResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=551,
-  serialized_end=656,
-)
-
-
-_CREATEGROUPREQUEST = _descriptor.Descriptor(
-  name='CreateGroupRequest',
-  full_name='yandex.cloud.organizationmanager.v1.CreateGroupRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='organization_id', full_name='yandex.cloud.organizationmanager.v1.CreateGroupRequest.organization_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.organizationmanager.v1.CreateGroupRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\362\3071\037[a-z]([-a-z0-9]{0,61}[a-z0-9])?', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='yandex.cloud.organizationmanager.v1.CreateGroupRequest.description', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=659,
-  serialized_end=805,
-)
-
-
-_CREATEGROUPMETADATA = _descriptor.Descriptor(
-  name='CreateGroupMetadata',
-  full_name='yandex.cloud.organizationmanager.v1.CreateGroupMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='group_id', full_name='yandex.cloud.organizationmanager.v1.CreateGroupMetadata.group_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=807,
-  serialized_end=846,
-)
-
-
-_UPDATEGROUPREQUEST = _descriptor.Descriptor(
-  name='UpdateGroupRequest',
-  full_name='yandex.cloud.organizationmanager.v1.UpdateGroupRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='group_id', full_name='yandex.cloud.organizationmanager.v1.UpdateGroupRequest.group_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='update_mask', full_name='yandex.cloud.organizationmanager.v1.UpdateGroupRequest.update_mask', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.organizationmanager.v1.UpdateGroupRequest.name', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='yandex.cloud.organizationmanager.v1.UpdateGroupRequest.description', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=849,
-  serialized_end=1034,
-)
-
-
-_UPDATEGROUPMETADATA = _descriptor.Descriptor(
-  name='UpdateGroupMetadata',
-  full_name='yandex.cloud.organizationmanager.v1.UpdateGroupMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='group_id', full_name='yandex.cloud.organizationmanager.v1.UpdateGroupMetadata.group_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1036,
-  serialized_end=1075,
-)
-
-
-_DELETEGROUPREQUEST = _descriptor.Descriptor(
-  name='DeleteGroupRequest',
-  full_name='yandex.cloud.organizationmanager.v1.DeleteGroupRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='group_id', full_name='yandex.cloud.organizationmanager.v1.DeleteGroupRequest.group_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1077,
-  serialized_end=1129,
-)
-
-
-_DELETEGROUPMETADATA = _descriptor.Descriptor(
-  name='DeleteGroupMetadata',
-  full_name='yandex.cloud.organizationmanager.v1.DeleteGroupMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='group_id', full_name='yandex.cloud.organizationmanager.v1.DeleteGroupMetadata.group_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1131,
-  serialized_end=1170,
-)
-
-
-_LISTGROUPOPERATIONSREQUEST = _descriptor.Descriptor(
-  name='ListGroupOperationsRequest',
-  full_name='yandex.cloud.organizationmanager.v1.ListGroupOperationsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='group_id', full_name='yandex.cloud.organizationmanager.v1.ListGroupOperationsRequest.group_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.organizationmanager.v1.ListGroupOperationsRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\0060-1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.organizationmanager.v1.ListGroupOperationsRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=2000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1172,
-  serialized_end=1295,
-)
-
-
-_LISTGROUPOPERATIONSRESPONSE = _descriptor.Descriptor(
-  name='ListGroupOperationsResponse',
-  full_name='yandex.cloud.organizationmanager.v1.ListGroupOperationsResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='operations', full_name='yandex.cloud.organizationmanager.v1.ListGroupOperationsResponse.operations', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.organizationmanager.v1.ListGroupOperationsResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1297,
-  serialized_end=1406,
-)
-
-
-_LISTGROUPMEMBERSREQUEST = _descriptor.Descriptor(
-  name='ListGroupMembersRequest',
-  full_name='yandex.cloud.organizationmanager.v1.ListGroupMembersRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='group_id', full_name='yandex.cloud.organizationmanager.v1.ListGroupMembersRequest.group_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.organizationmanager.v1.ListGroupMembersRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\0060-1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.organizationmanager.v1.ListGroupMembersRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=2000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1408,
-  serialized_end=1528,
-)
-
-
-_LISTGROUPMEMBERSRESPONSE = _descriptor.Descriptor(
-  name='ListGroupMembersResponse',
-  full_name='yandex.cloud.organizationmanager.v1.ListGroupMembersResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='members', full_name='yandex.cloud.organizationmanager.v1.ListGroupMembersResponse.members', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.organizationmanager.v1.ListGroupMembersResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1530,
-  serialized_end=1648,
-)
-
-
-_GROUPMEMBER = _descriptor.Descriptor(
-  name='GroupMember',
-  full_name='yandex.cloud.organizationmanager.v1.GroupMember',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='subject_id', full_name='yandex.cloud.organizationmanager.v1.GroupMember.subject_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='subject_type', full_name='yandex.cloud.organizationmanager.v1.GroupMember.subject_type', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1650,
-  serialized_end=1705,
-)
-
-
-_UPDATEGROUPMEMBERSREQUEST = _descriptor.Descriptor(
-  name='UpdateGroupMembersRequest',
-  full_name='yandex.cloud.organizationmanager.v1.UpdateGroupMembersRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='group_id', full_name='yandex.cloud.organizationmanager.v1.UpdateGroupMembersRequest.group_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='member_deltas', full_name='yandex.cloud.organizationmanager.v1.UpdateGroupMembersRequest.member_deltas', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\0061-1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1708,
-  serialized_end=1852,
-)
-
-
-_UPDATEGROUPMEMBERSMETADATA = _descriptor.Descriptor(
-  name='UpdateGroupMembersMetadata',
-  full_name='yandex.cloud.organizationmanager.v1.UpdateGroupMembersMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='group_id', full_name='yandex.cloud.organizationmanager.v1.UpdateGroupMembersMetadata.group_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1854,
-  serialized_end=1900,
-)
-
-
-_MEMBERDELTA = _descriptor.Descriptor(
-  name='MemberDelta',
-  full_name='yandex.cloud.organizationmanager.v1.MemberDelta',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='action', full_name='yandex.cloud.organizationmanager.v1.MemberDelta.action', index=0,
-      number=1, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='subject_id', full_name='yandex.cloud.organizationmanager.v1.MemberDelta.subject_id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-    _MEMBERDELTA_MEMBERACTION,
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1903,
-  serialized_end=2103,
-)
-
-_LISTGROUPSRESPONSE.fields_by_name['groups'].message_type = yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__pb2._GROUP
-_UPDATEGROUPREQUEST.fields_by_name['update_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
-_LISTGROUPOPERATIONSRESPONSE.fields_by_name['operations'].message_type = yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION
-_LISTGROUPMEMBERSRESPONSE.fields_by_name['members'].message_type = _GROUPMEMBER
-_UPDATEGROUPMEMBERSREQUEST.fields_by_name['member_deltas'].message_type = _MEMBERDELTA
-_MEMBERDELTA.fields_by_name['action'].enum_type = _MEMBERDELTA_MEMBERACTION
-_MEMBERDELTA_MEMBERACTION.containing_type = _MEMBERDELTA
-DESCRIPTOR.message_types_by_name['GetGroupRequest'] = _GETGROUPREQUEST
-DESCRIPTOR.message_types_by_name['ListGroupsRequest'] = _LISTGROUPSREQUEST
-DESCRIPTOR.message_types_by_name['ListGroupsResponse'] = _LISTGROUPSRESPONSE
-DESCRIPTOR.message_types_by_name['CreateGroupRequest'] = _CREATEGROUPREQUEST
-DESCRIPTOR.message_types_by_name['CreateGroupMetadata'] = _CREATEGROUPMETADATA
-DESCRIPTOR.message_types_by_name['UpdateGroupRequest'] = _UPDATEGROUPREQUEST
-DESCRIPTOR.message_types_by_name['UpdateGroupMetadata'] = _UPDATEGROUPMETADATA
-DESCRIPTOR.message_types_by_name['DeleteGroupRequest'] = _DELETEGROUPREQUEST
-DESCRIPTOR.message_types_by_name['DeleteGroupMetadata'] = _DELETEGROUPMETADATA
-DESCRIPTOR.message_types_by_name['ListGroupOperationsRequest'] = _LISTGROUPOPERATIONSREQUEST
-DESCRIPTOR.message_types_by_name['ListGroupOperationsResponse'] = _LISTGROUPOPERATIONSRESPONSE
-DESCRIPTOR.message_types_by_name['ListGroupMembersRequest'] = _LISTGROUPMEMBERSREQUEST
-DESCRIPTOR.message_types_by_name['ListGroupMembersResponse'] = _LISTGROUPMEMBERSRESPONSE
-DESCRIPTOR.message_types_by_name['GroupMember'] = _GROUPMEMBER
-DESCRIPTOR.message_types_by_name['UpdateGroupMembersRequest'] = _UPDATEGROUPMEMBERSREQUEST
-DESCRIPTOR.message_types_by_name['UpdateGroupMembersMetadata'] = _UPDATEGROUPMEMBERSMETADATA
-DESCRIPTOR.message_types_by_name['MemberDelta'] = _MEMBERDELTA
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-GetGroupRequest = _reflection.GeneratedProtocolMessageType('GetGroupRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETGROUPREQUEST,
-  '__module__' : 'yandex.cloud.organizationmanager.v1.group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.organizationmanager.v1.GetGroupRequest)
-  })
-_sym_db.RegisterMessage(GetGroupRequest)
-
-ListGroupsRequest = _reflection.GeneratedProtocolMessageType('ListGroupsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTGROUPSREQUEST,
-  '__module__' : 'yandex.cloud.organizationmanager.v1.group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.organizationmanager.v1.ListGroupsRequest)
-  })
-_sym_db.RegisterMessage(ListGroupsRequest)
-
-ListGroupsResponse = _reflection.GeneratedProtocolMessageType('ListGroupsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTGROUPSRESPONSE,
-  '__module__' : 'yandex.cloud.organizationmanager.v1.group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.organizationmanager.v1.ListGroupsResponse)
-  })
-_sym_db.RegisterMessage(ListGroupsResponse)
-
-CreateGroupRequest = _reflection.GeneratedProtocolMessageType('CreateGroupRequest', (_message.Message,), {
-  'DESCRIPTOR' : _CREATEGROUPREQUEST,
-  '__module__' : 'yandex.cloud.organizationmanager.v1.group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.organizationmanager.v1.CreateGroupRequest)
-  })
-_sym_db.RegisterMessage(CreateGroupRequest)
-
-CreateGroupMetadata = _reflection.GeneratedProtocolMessageType('CreateGroupMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _CREATEGROUPMETADATA,
-  '__module__' : 'yandex.cloud.organizationmanager.v1.group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.organizationmanager.v1.CreateGroupMetadata)
-  })
-_sym_db.RegisterMessage(CreateGroupMetadata)
-
-UpdateGroupRequest = _reflection.GeneratedProtocolMessageType('UpdateGroupRequest', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATEGROUPREQUEST,
-  '__module__' : 'yandex.cloud.organizationmanager.v1.group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.organizationmanager.v1.UpdateGroupRequest)
-  })
-_sym_db.RegisterMessage(UpdateGroupRequest)
-
-UpdateGroupMetadata = _reflection.GeneratedProtocolMessageType('UpdateGroupMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATEGROUPMETADATA,
-  '__module__' : 'yandex.cloud.organizationmanager.v1.group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.organizationmanager.v1.UpdateGroupMetadata)
-  })
-_sym_db.RegisterMessage(UpdateGroupMetadata)
-
-DeleteGroupRequest = _reflection.GeneratedProtocolMessageType('DeleteGroupRequest', (_message.Message,), {
-  'DESCRIPTOR' : _DELETEGROUPREQUEST,
-  '__module__' : 'yandex.cloud.organizationmanager.v1.group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.organizationmanager.v1.DeleteGroupRequest)
-  })
-_sym_db.RegisterMessage(DeleteGroupRequest)
-
-DeleteGroupMetadata = _reflection.GeneratedProtocolMessageType('DeleteGroupMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _DELETEGROUPMETADATA,
-  '__module__' : 'yandex.cloud.organizationmanager.v1.group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.organizationmanager.v1.DeleteGroupMetadata)
-  })
-_sym_db.RegisterMessage(DeleteGroupMetadata)
-
-ListGroupOperationsRequest = _reflection.GeneratedProtocolMessageType('ListGroupOperationsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTGROUPOPERATIONSREQUEST,
-  '__module__' : 'yandex.cloud.organizationmanager.v1.group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.organizationmanager.v1.ListGroupOperationsRequest)
-  })
-_sym_db.RegisterMessage(ListGroupOperationsRequest)
-
-ListGroupOperationsResponse = _reflection.GeneratedProtocolMessageType('ListGroupOperationsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTGROUPOPERATIONSRESPONSE,
-  '__module__' : 'yandex.cloud.organizationmanager.v1.group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.organizationmanager.v1.ListGroupOperationsResponse)
-  })
-_sym_db.RegisterMessage(ListGroupOperationsResponse)
-
-ListGroupMembersRequest = _reflection.GeneratedProtocolMessageType('ListGroupMembersRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTGROUPMEMBERSREQUEST,
-  '__module__' : 'yandex.cloud.organizationmanager.v1.group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.organizationmanager.v1.ListGroupMembersRequest)
-  })
-_sym_db.RegisterMessage(ListGroupMembersRequest)
-
-ListGroupMembersResponse = _reflection.GeneratedProtocolMessageType('ListGroupMembersResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTGROUPMEMBERSRESPONSE,
-  '__module__' : 'yandex.cloud.organizationmanager.v1.group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.organizationmanager.v1.ListGroupMembersResponse)
-  })
-_sym_db.RegisterMessage(ListGroupMembersResponse)
-
-GroupMember = _reflection.GeneratedProtocolMessageType('GroupMember', (_message.Message,), {
-  'DESCRIPTOR' : _GROUPMEMBER,
-  '__module__' : 'yandex.cloud.organizationmanager.v1.group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.organizationmanager.v1.GroupMember)
-  })
-_sym_db.RegisterMessage(GroupMember)
-
-UpdateGroupMembersRequest = _reflection.GeneratedProtocolMessageType('UpdateGroupMembersRequest', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATEGROUPMEMBERSREQUEST,
-  '__module__' : 'yandex.cloud.organizationmanager.v1.group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.organizationmanager.v1.UpdateGroupMembersRequest)
-  })
-_sym_db.RegisterMessage(UpdateGroupMembersRequest)
-
-UpdateGroupMembersMetadata = _reflection.GeneratedProtocolMessageType('UpdateGroupMembersMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATEGROUPMEMBERSMETADATA,
-  '__module__' : 'yandex.cloud.organizationmanager.v1.group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.organizationmanager.v1.UpdateGroupMembersMetadata)
-  })
-_sym_db.RegisterMessage(UpdateGroupMembersMetadata)
-
-MemberDelta = _reflection.GeneratedProtocolMessageType('MemberDelta', (_message.Message,), {
-  'DESCRIPTOR' : _MEMBERDELTA,
-  '__module__' : 'yandex.cloud.organizationmanager.v1.group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.organizationmanager.v1.MemberDelta)
-  })
-_sym_db.RegisterMessage(MemberDelta)
-
-
-DESCRIPTOR._options = None
-_GETGROUPREQUEST.fields_by_name['group_id']._options = None
-_LISTGROUPSREQUEST.fields_by_name['organization_id']._options = None
-_LISTGROUPSREQUEST.fields_by_name['page_size']._options = None
-_LISTGROUPSREQUEST.fields_by_name['page_token']._options = None
-_LISTGROUPSREQUEST.fields_by_name['filter']._options = None
-_CREATEGROUPREQUEST.fields_by_name['organization_id']._options = None
-_CREATEGROUPREQUEST.fields_by_name['name']._options = None
-_CREATEGROUPREQUEST.fields_by_name['description']._options = None
-_UPDATEGROUPREQUEST.fields_by_name['group_id']._options = None
-_UPDATEGROUPREQUEST.fields_by_name['name']._options = None
-_UPDATEGROUPREQUEST.fields_by_name['description']._options = None
-_DELETEGROUPREQUEST.fields_by_name['group_id']._options = None
-_LISTGROUPOPERATIONSREQUEST.fields_by_name['group_id']._options = None
-_LISTGROUPOPERATIONSREQUEST.fields_by_name['page_size']._options = None
-_LISTGROUPOPERATIONSREQUEST.fields_by_name['page_token']._options = None
-_LISTGROUPMEMBERSREQUEST.fields_by_name['group_id']._options = None
-_LISTGROUPMEMBERSREQUEST.fields_by_name['page_size']._options = None
-_LISTGROUPMEMBERSREQUEST.fields_by_name['page_token']._options = None
-_UPDATEGROUPMEMBERSREQUEST.fields_by_name['group_id']._options = None
-_UPDATEGROUPMEMBERSREQUEST.fields_by_name['member_deltas']._options = None
-_MEMBERDELTA.fields_by_name['action']._options = None
-_MEMBERDELTA.fields_by_name['subject_id']._options = None
-
-_GROUPSERVICE = _descriptor.ServiceDescriptor(
-  name='GroupService',
-  full_name='yandex.cloud.organizationmanager.v1.GroupService',
-  file=DESCRIPTOR,
-  index=0,
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_start=2106,
-  serialized_end=4392,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='Get',
-    full_name='yandex.cloud.organizationmanager.v1.GroupService.Get',
-    index=0,
-    containing_service=None,
-    input_type=_GETGROUPREQUEST,
-    output_type=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__pb2._GROUP,
-    serialized_options=b'\202\323\344\223\002,\022*/organization-manager/v1/groups/{group_id}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='List',
-    full_name='yandex.cloud.organizationmanager.v1.GroupService.List',
-    index=1,
-    containing_service=None,
-    input_type=_LISTGROUPSREQUEST,
-    output_type=_LISTGROUPSRESPONSE,
-    serialized_options=b'\202\323\344\223\002!\022\037/organization-manager/v1/groups',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Create',
-    full_name='yandex.cloud.organizationmanager.v1.GroupService.Create',
-    index=2,
-    containing_service=None,
-    input_type=_CREATEGROUPREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002$\"\037/organization-manager/v1/groups:\001*\262\322*\034\n\023CreateGroupMetadata\022\005Group',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Update',
-    full_name='yandex.cloud.organizationmanager.v1.GroupService.Update',
-    index=3,
-    containing_service=None,
-    input_type=_UPDATEGROUPREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002/2*/organization-manager/v1/groups/{group_id}:\001*\262\322*\034\n\023UpdateGroupMetadata\022\005Group',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Delete',
-    full_name='yandex.cloud.organizationmanager.v1.GroupService.Delete',
-    index=4,
-    containing_service=None,
-    input_type=_DELETEGROUPREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002,**/organization-manager/v1/groups/{group_id}\262\322*,\n\023DeleteGroupMetadata\022\025google.protobuf.Empty',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListOperations',
-    full_name='yandex.cloud.organizationmanager.v1.GroupService.ListOperations',
-    index=5,
-    containing_service=None,
-    input_type=_LISTGROUPOPERATIONSREQUEST,
-    output_type=_LISTGROUPOPERATIONSRESPONSE,
-    serialized_options=b'\202\323\344\223\0027\0225/organization-manager/v1/groups/{group_id}/operations',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListMembers',
-    full_name='yandex.cloud.organizationmanager.v1.GroupService.ListMembers',
-    index=6,
-    containing_service=None,
-    input_type=_LISTGROUPMEMBERSREQUEST,
-    output_type=_LISTGROUPMEMBERSRESPONSE,
-    serialized_options=b'\202\323\344\223\0028\0226/organization-manager/v1/groups/{group_id}:listMembers',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='UpdateMembers',
-    full_name='yandex.cloud.organizationmanager.v1.GroupService.UpdateMembers',
-    index=7,
-    containing_service=None,
-    input_type=_UPDATEGROUPMEMBERSREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002=\"8/organization-manager/v1/groups/{group_id}:updateMembers:\001*\262\322*3\n\032UpdateGroupMembersMetadata\022\025google.protobuf.Empty',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListAccessBindings',
-    full_name='yandex.cloud.organizationmanager.v1.GroupService.ListAccessBindings',
-    index=8,
-    containing_service=None,
-    input_type=yandex_dot_cloud_dot_access_dot_access__pb2._LISTACCESSBINDINGSREQUEST,
-    output_type=yandex_dot_cloud_dot_access_dot_access__pb2._LISTACCESSBINDINGSRESPONSE,
-    serialized_options=b'\202\323\344\223\002B\022@/organization-manager/v1/groups/{resource_id}:listAccessBindings',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='SetAccessBindings',
-    full_name='yandex.cloud.organizationmanager.v1.GroupService.SetAccessBindings',
-    index=9,
-    containing_service=None,
-    input_type=yandex_dot_cloud_dot_access_dot_access__pb2._SETACCESSBINDINGSREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002D\"?/organization-manager/v1/groups/{resource_id}:setAccessBindings:\001*\262\322*H\n access.SetAccessBindingsMetadata\022$access.AccessBindingsOperationResult',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='UpdateAccessBindings',
-    full_name='yandex.cloud.organizationmanager.v1.GroupService.UpdateAccessBindings',
-    index=10,
-    containing_service=None,
-    input_type=yandex_dot_cloud_dot_access_dot_access__pb2._UPDATEACCESSBINDINGSREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002G\"B/organization-manager/v1/groups/{resource_id}:updateAccessBindings:\001*\262\322*K\n#access.UpdateAccessBindingsMetadata\022$access.AccessBindingsOperationResult',
-    create_key=_descriptor._internal_create_key,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_GROUPSERVICE)
-
-DESCRIPTOR.services_by_name['GroupService'] = _GROUPSERVICE
-
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n\'yandex.cloud.api.organizationmanager.v1Z[github.com/yandex-cloud/go-genproto/yandex/cloud/organizationmanager/v1;organizationmanager'
+  _GETGROUPREQUEST.fields_by_name['group_id']._options = None
+  _GETGROUPREQUEST.fields_by_name['group_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTGROUPSREQUEST.fields_by_name['organization_id']._options = None
+  _LISTGROUPSREQUEST.fields_by_name['organization_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTGROUPSREQUEST.fields_by_name['page_size']._options = None
+  _LISTGROUPSREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\0060-1000'
+  _LISTGROUPSREQUEST.fields_by_name['page_token']._options = None
+  _LISTGROUPSREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\006<=2000'
+  _LISTGROUPSREQUEST.fields_by_name['filter']._options = None
+  _LISTGROUPSREQUEST.fields_by_name['filter']._serialized_options = b'\212\3101\006<=1000'
+  _CREATEGROUPREQUEST.fields_by_name['organization_id']._options = None
+  _CREATEGROUPREQUEST.fields_by_name['organization_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _CREATEGROUPREQUEST.fields_by_name['name']._options = None
+  _CREATEGROUPREQUEST.fields_by_name['name']._serialized_options = b'\350\3071\001\362\3071\037[a-z]([-a-z0-9]{0,61}[a-z0-9])?'
+  _CREATEGROUPREQUEST.fields_by_name['description']._options = None
+  _CREATEGROUPREQUEST.fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
+  _UPDATEGROUPREQUEST.fields_by_name['group_id']._options = None
+  _UPDATEGROUPREQUEST.fields_by_name['group_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _UPDATEGROUPREQUEST.fields_by_name['name']._options = None
+  _UPDATEGROUPREQUEST.fields_by_name['name']._serialized_options = b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?'
+  _UPDATEGROUPREQUEST.fields_by_name['description']._options = None
+  _UPDATEGROUPREQUEST.fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
+  _DELETEGROUPREQUEST.fields_by_name['group_id']._options = None
+  _DELETEGROUPREQUEST.fields_by_name['group_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTGROUPOPERATIONSREQUEST.fields_by_name['group_id']._options = None
+  _LISTGROUPOPERATIONSREQUEST.fields_by_name['group_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTGROUPOPERATIONSREQUEST.fields_by_name['page_size']._options = None
+  _LISTGROUPOPERATIONSREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\0060-1000'
+  _LISTGROUPOPERATIONSREQUEST.fields_by_name['page_token']._options = None
+  _LISTGROUPOPERATIONSREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\006<=2000'
+  _LISTGROUPMEMBERSREQUEST.fields_by_name['group_id']._options = None
+  _LISTGROUPMEMBERSREQUEST.fields_by_name['group_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTGROUPMEMBERSREQUEST.fields_by_name['page_size']._options = None
+  _LISTGROUPMEMBERSREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\0060-1000'
+  _LISTGROUPMEMBERSREQUEST.fields_by_name['page_token']._options = None
+  _LISTGROUPMEMBERSREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\006<=2000'
+  _UPDATEGROUPMEMBERSREQUEST.fields_by_name['group_id']._options = None
+  _UPDATEGROUPMEMBERSREQUEST.fields_by_name['group_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _UPDATEGROUPMEMBERSREQUEST.fields_by_name['member_deltas']._options = None
+  _UPDATEGROUPMEMBERSREQUEST.fields_by_name['member_deltas']._serialized_options = b'\202\3101\0061-1000'
+  _MEMBERDELTA.fields_by_name['action']._options = None
+  _MEMBERDELTA.fields_by_name['action']._serialized_options = b'\350\3071\001'
+  _MEMBERDELTA.fields_by_name['subject_id']._options = None
+  _MEMBERDELTA.fields_by_name['subject_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _GROUPSERVICE.methods_by_name['Get']._options = None
+  _GROUPSERVICE.methods_by_name['Get']._serialized_options = b'\202\323\344\223\002,\022*/organization-manager/v1/groups/{group_id}'
+  _GROUPSERVICE.methods_by_name['List']._options = None
+  _GROUPSERVICE.methods_by_name['List']._serialized_options = b'\202\323\344\223\002!\022\037/organization-manager/v1/groups'
+  _GROUPSERVICE.methods_by_name['Create']._options = None
+  _GROUPSERVICE.methods_by_name['Create']._serialized_options = b'\262\322*\034\n\023CreateGroupMetadata\022\005Group\202\323\344\223\002$\"\037/organization-manager/v1/groups:\001*'
+  _GROUPSERVICE.methods_by_name['Update']._options = None
+  _GROUPSERVICE.methods_by_name['Update']._serialized_options = b'\262\322*\034\n\023UpdateGroupMetadata\022\005Group\202\323\344\223\002/2*/organization-manager/v1/groups/{group_id}:\001*'
+  _GROUPSERVICE.methods_by_name['Delete']._options = None
+  _GROUPSERVICE.methods_by_name['Delete']._serialized_options = b'\262\322*,\n\023DeleteGroupMetadata\022\025google.protobuf.Empty\202\323\344\223\002,**/organization-manager/v1/groups/{group_id}'
+  _GROUPSERVICE.methods_by_name['ListOperations']._options = None
+  _GROUPSERVICE.methods_by_name['ListOperations']._serialized_options = b'\202\323\344\223\0027\0225/organization-manager/v1/groups/{group_id}/operations'
+  _GROUPSERVICE.methods_by_name['ListMembers']._options = None
+  _GROUPSERVICE.methods_by_name['ListMembers']._serialized_options = b'\202\323\344\223\0028\0226/organization-manager/v1/groups/{group_id}:listMembers'
+  _GROUPSERVICE.methods_by_name['UpdateMembers']._options = None
+  _GROUPSERVICE.methods_by_name['UpdateMembers']._serialized_options = b'\262\322*3\n\032UpdateGroupMembersMetadata\022\025google.protobuf.Empty\202\323\344\223\002=\"8/organization-manager/v1/groups/{group_id}:updateMembers:\001*'
+  _GROUPSERVICE.methods_by_name['ListAccessBindings']._options = None
+  _GROUPSERVICE.methods_by_name['ListAccessBindings']._serialized_options = b'\202\323\344\223\002B\022@/organization-manager/v1/groups/{resource_id}:listAccessBindings'
+  _GROUPSERVICE.methods_by_name['SetAccessBindings']._options = None
+  _GROUPSERVICE.methods_by_name['SetAccessBindings']._serialized_options = b'\262\322*H\n access.SetAccessBindingsMetadata\022$access.AccessBindingsOperationResult\202\323\344\223\002D\"?/organization-manager/v1/groups/{resource_id}:setAccessBindings:\001*'
+  _GROUPSERVICE.methods_by_name['UpdateAccessBindings']._options = None
+  _GROUPSERVICE.methods_by_name['UpdateAccessBindings']._serialized_options = b'\262\322*K\n#access.UpdateAccessBindingsMetadata\022$access.AccessBindingsOperationResult\202\323\344\223\002G\"B/organization-manager/v1/groups/{resource_id}:updateAccessBindings:\001*'
+  _globals['_GETGROUPREQUEST']._serialized_start=348
+  _globals['_GETGROUPREQUEST']._serialized_end=397
+  _globals['_LISTGROUPSREQUEST']._serialized_start=400
+  _globals['_LISTGROUPSREQUEST']._serialized_end=549
+  _globals['_LISTGROUPSRESPONSE']._serialized_start=551
+  _globals['_LISTGROUPSRESPONSE']._serialized_end=656
+  _globals['_CREATEGROUPREQUEST']._serialized_start=659
+  _globals['_CREATEGROUPREQUEST']._serialized_end=805
+  _globals['_CREATEGROUPMETADATA']._serialized_start=807
+  _globals['_CREATEGROUPMETADATA']._serialized_end=846
+  _globals['_UPDATEGROUPREQUEST']._serialized_start=849
+  _globals['_UPDATEGROUPREQUEST']._serialized_end=1034
+  _globals['_UPDATEGROUPMETADATA']._serialized_start=1036
+  _globals['_UPDATEGROUPMETADATA']._serialized_end=1075
+  _globals['_DELETEGROUPREQUEST']._serialized_start=1077
+  _globals['_DELETEGROUPREQUEST']._serialized_end=1129
+  _globals['_DELETEGROUPMETADATA']._serialized_start=1131
+  _globals['_DELETEGROUPMETADATA']._serialized_end=1170
+  _globals['_LISTGROUPOPERATIONSREQUEST']._serialized_start=1172
+  _globals['_LISTGROUPOPERATIONSREQUEST']._serialized_end=1295
+  _globals['_LISTGROUPOPERATIONSRESPONSE']._serialized_start=1297
+  _globals['_LISTGROUPOPERATIONSRESPONSE']._serialized_end=1406
+  _globals['_LISTGROUPMEMBERSREQUEST']._serialized_start=1408
+  _globals['_LISTGROUPMEMBERSREQUEST']._serialized_end=1528
+  _globals['_LISTGROUPMEMBERSRESPONSE']._serialized_start=1530
+  _globals['_LISTGROUPMEMBERSRESPONSE']._serialized_end=1648
+  _globals['_GROUPMEMBER']._serialized_start=1650
+  _globals['_GROUPMEMBER']._serialized_end=1705
+  _globals['_UPDATEGROUPMEMBERSREQUEST']._serialized_start=1708
+  _globals['_UPDATEGROUPMEMBERSREQUEST']._serialized_end=1852
+  _globals['_UPDATEGROUPMEMBERSMETADATA']._serialized_start=1854
+  _globals['_UPDATEGROUPMEMBERSMETADATA']._serialized_end=1900
+  _globals['_MEMBERDELTA']._serialized_start=1903
+  _globals['_MEMBERDELTA']._serialized_end=2103
+  _globals['_MEMBERDELTA_MEMBERACTION']._serialized_start=2037
+  _globals['_MEMBERDELTA_MEMBERACTION']._serialized_end=2103
+  _globals['_GROUPSERVICE']._serialized_start=2106
+  _globals['_GROUPSERVICE']._serialized_end=4392
 # @@protoc_insertion_point(module_scope)

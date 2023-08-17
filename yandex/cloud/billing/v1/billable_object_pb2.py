@@ -3,9 +3,9 @@
 # source: yandex/cloud/billing/v1/billable_object.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -14,116 +14,17 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/billing/v1/billable_object.proto',
-  package='yandex.cloud.billing.v1',
-  syntax='proto3',
-  serialized_options=b'\n\033yandex.cloud.api.billing.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/billing/v1;billing',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n-yandex/cloud/billing/v1/billable_object.proto\x12\x17yandex.cloud.billing.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"*\n\x0e\x42illableObject\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\"\x8d\x01\n\x15\x42illableObjectBinding\x12\x32\n\x0e\x65\x66\x66\x65\x63tive_time\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12@\n\x0f\x62illable_object\x18\x02 \x01(\x0b\x32\'.yandex.cloud.billing.v1.BillableObjectBb\n\x1byandex.cloud.api.billing.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/billing/v1;billingb\x06proto3'
-  ,
-  dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n-yandex/cloud/billing/v1/billable_object.proto\x12\x17yandex.cloud.billing.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"*\n\x0e\x42illableObject\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\"\x8d\x01\n\x15\x42illableObjectBinding\x12\x32\n\x0e\x65\x66\x66\x65\x63tive_time\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12@\n\x0f\x62illable_object\x18\x02 \x01(\x0b\x32\'.yandex.cloud.billing.v1.BillableObjectBb\n\x1byandex.cloud.api.billing.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/billing/v1;billingb\x06proto3')
 
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.billing.v1.billable_object_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-
-_BILLABLEOBJECT = _descriptor.Descriptor(
-  name='BillableObject',
-  full_name='yandex.cloud.billing.v1.BillableObject',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='yandex.cloud.billing.v1.BillableObject.id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='type', full_name='yandex.cloud.billing.v1.BillableObject.type', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=107,
-  serialized_end=149,
-)
-
-
-_BILLABLEOBJECTBINDING = _descriptor.Descriptor(
-  name='BillableObjectBinding',
-  full_name='yandex.cloud.billing.v1.BillableObjectBinding',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='effective_time', full_name='yandex.cloud.billing.v1.BillableObjectBinding.effective_time', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='billable_object', full_name='yandex.cloud.billing.v1.BillableObjectBinding.billable_object', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=152,
-  serialized_end=293,
-)
-
-_BILLABLEOBJECTBINDING.fields_by_name['effective_time'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
-_BILLABLEOBJECTBINDING.fields_by_name['billable_object'].message_type = _BILLABLEOBJECT
-DESCRIPTOR.message_types_by_name['BillableObject'] = _BILLABLEOBJECT
-DESCRIPTOR.message_types_by_name['BillableObjectBinding'] = _BILLABLEOBJECTBINDING
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-BillableObject = _reflection.GeneratedProtocolMessageType('BillableObject', (_message.Message,), {
-  'DESCRIPTOR' : _BILLABLEOBJECT,
-  '__module__' : 'yandex.cloud.billing.v1.billable_object_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.billing.v1.BillableObject)
-  })
-_sym_db.RegisterMessage(BillableObject)
-
-BillableObjectBinding = _reflection.GeneratedProtocolMessageType('BillableObjectBinding', (_message.Message,), {
-  'DESCRIPTOR' : _BILLABLEOBJECTBINDING,
-  '__module__' : 'yandex.cloud.billing.v1.billable_object_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.billing.v1.BillableObjectBinding)
-  })
-_sym_db.RegisterMessage(BillableObjectBinding)
-
-
-DESCRIPTOR._options = None
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n\033yandex.cloud.api.billing.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/billing/v1;billing'
+  _globals['_BILLABLEOBJECT']._serialized_start=107
+  _globals['_BILLABLEOBJECT']._serialized_end=149
+  _globals['_BILLABLEOBJECTBINDING']._serialized_start=152
+  _globals['_BILLABLEOBJECTBINDING']._serialized_end=293
 # @@protoc_insertion_point(module_scope)

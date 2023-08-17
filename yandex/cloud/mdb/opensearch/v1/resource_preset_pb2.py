@@ -3,9 +3,9 @@
 # source: yandex/cloud/mdb/opensearch/v1/resource_preset.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -13,80 +13,15 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/mdb/opensearch/v1/resource_preset.proto',
-  package='yandex.cloud.mdb.opensearch.v1',
-  syntax='proto3',
-  serialized_options=b'\n\"yandex.cloud.api.mdb.opensearch.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/opensearch/v1;opensearch',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n4yandex/cloud/mdb/opensearch/v1/resource_preset.proto\x12\x1eyandex.cloud.mdb.opensearch.v1\"M\n\x0eResourcePreset\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08zone_ids\x18\x02 \x03(\t\x12\r\n\x05\x63ores\x18\x03 \x01(\x03\x12\x0e\n\x06memory\x18\x04 \x01(\x03\x42s\n\"yandex.cloud.api.mdb.opensearch.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/opensearch/v1;opensearchb\x06proto3'
-)
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n4yandex/cloud/mdb/opensearch/v1/resource_preset.proto\x12\x1eyandex.cloud.mdb.opensearch.v1\"M\n\x0eResourcePreset\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08zone_ids\x18\x02 \x03(\t\x12\r\n\x05\x63ores\x18\x03 \x01(\x03\x12\x0e\n\x06memory\x18\x04 \x01(\x03\x42s\n\"yandex.cloud.api.mdb.opensearch.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/opensearch/v1;opensearchb\x06proto3')
 
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.mdb.opensearch.v1.resource_preset_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-
-_RESOURCEPRESET = _descriptor.Descriptor(
-  name='ResourcePreset',
-  full_name='yandex.cloud.mdb.opensearch.v1.ResourcePreset',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='yandex.cloud.mdb.opensearch.v1.ResourcePreset.id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='zone_ids', full_name='yandex.cloud.mdb.opensearch.v1.ResourcePreset.zone_ids', index=1,
-      number=2, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='cores', full_name='yandex.cloud.mdb.opensearch.v1.ResourcePreset.cores', index=2,
-      number=3, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='memory', full_name='yandex.cloud.mdb.opensearch.v1.ResourcePreset.memory', index=3,
-      number=4, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=88,
-  serialized_end=165,
-)
-
-DESCRIPTOR.message_types_by_name['ResourcePreset'] = _RESOURCEPRESET
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-ResourcePreset = _reflection.GeneratedProtocolMessageType('ResourcePreset', (_message.Message,), {
-  'DESCRIPTOR' : _RESOURCEPRESET,
-  '__module__' : 'yandex.cloud.mdb.opensearch.v1.resource_preset_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.opensearch.v1.ResourcePreset)
-  })
-_sym_db.RegisterMessage(ResourcePreset)
-
-
-DESCRIPTOR._options = None
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n\"yandex.cloud.api.mdb.opensearch.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/opensearch/v1;opensearch'
+  _globals['_RESOURCEPRESET']._serialized_start=88
+  _globals['_RESOURCEPRESET']._serialized_end=165
 # @@protoc_insertion_point(module_scope)

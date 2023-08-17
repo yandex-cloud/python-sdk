@@ -3,9 +3,9 @@
 # source: yandex/cloud/compute/v1/disk_placement_group_service.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -20,911 +20,109 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/compute/v1/disk_placement_group_service.proto',
-  package='yandex.cloud.compute.v1',
-  syntax='proto3',
-  serialized_options=b'\n\033yandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;compute',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n:yandex/cloud/compute/v1/disk_placement_group_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a\"yandex/cloud/compute/v1/disk.proto\x1a\x32yandex/cloud/compute/v1/disk_placement_group.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"M\n\x1cGetDiskPlacementGroupRequest\x12-\n\x17\x64isk_placement_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xb8\x01\n\x1eListDiskPlacementGroupsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1b\n\x08order_by\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=100\"\x86\x01\n\x1fListDiskPlacementGroupsResponse\x12J\n\x15\x64isk_placement_groups\x18\x01 \x03(\x0b\x32+.yandex.cloud.compute.v1.DiskPlacementGroup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xdc\x04\n\x1f\x43reateDiskPlacementGroupRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\x04name\x18\x02 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x9d\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x44.yandex.cloud.compute.v1.CreateDiskPlacementGroupRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x1d\n\x07zone_id\x18\x05 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12Y\n\x19spread_placement_strategy\x18\x06 \x01(\x0b\x32\x34.yandex.cloud.compute.v1.DiskSpreadPlacementStrategyH\x00\x12_\n\x1cpartition_placement_strategy\x18\x07 \x01(\x0b\x32\x37.yandex.cloud.compute.v1.DiskPartitionPlacementStrategyH\x00\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x1a\n\x12placement_strategy\x12\x04\xc0\xc1\x31\x01\"C\n CreateDiskPlacementGroupMetadata\x12\x1f\n\x17\x64isk_placement_group_id\x18\x01 \x01(\t\"\xa4\x03\n\x1fUpdateDiskPlacementGroupRequest\x12-\n\x17\x64isk_placement_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x9d\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x44.yandex.cloud.compute.v1.UpdateDiskPlacementGroupRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"C\n UpdateDiskPlacementGroupMetadata\x12\x1f\n\x17\x64isk_placement_group_id\x18\x01 \x01(\t\"P\n\x1f\x44\x65leteDiskPlacementGroupRequest\x12-\n\x17\x64isk_placement_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"C\n DeleteDiskPlacementGroupMetadata\x12\x1f\n\x17\x64isk_placement_group_id\x18\x01 \x01(\t\"\x91\x01\n\"ListDiskPlacementGroupDisksRequest\x12-\n\x17\x64isk_placement_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"l\n#ListDiskPlacementGroupDisksResponse\x12,\n\x05\x64isks\x18\x01 \x03(\x0b\x32\x1d.yandex.cloud.compute.v1.Disk\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x96\x01\n\'ListDiskPlacementGroupOperationsRequest\x12-\n\x17\x64isk_placement_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"z\n(ListDiskPlacementGroupOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xc5\x0b\n\x19\x44iskPlacementGroupService\x12\xac\x01\n\x03Get\x12\x35.yandex.cloud.compute.v1.GetDiskPlacementGroupRequest\x1a+.yandex.cloud.compute.v1.DiskPlacementGroup\"A\x82\xd3\xe4\x93\x02;\x12\x39/compute/v1/diskPlacementGroups/{disk_placement_group_id}\x12\xa2\x01\n\x04List\x12\x37.yandex.cloud.compute.v1.ListDiskPlacementGroupsRequest\x1a\x38.yandex.cloud.compute.v1.ListDiskPlacementGroupsResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/compute/v1/diskPlacementGroups\x12\xcb\x01\n\x06\x43reate\x12\x38.yandex.cloud.compute.v1.CreateDiskPlacementGroupRequest\x1a!.yandex.cloud.operation.Operation\"d\x82\xd3\xe4\x93\x02$\"\x1f/compute/v1/diskPlacementGroups:\x01*\xb2\xd2*6\n CreateDiskPlacementGroupMetadata\x12\x12\x44iskPlacementGroup\x12\xe5\x01\n\x06Update\x12\x38.yandex.cloud.compute.v1.UpdateDiskPlacementGroupRequest\x1a!.yandex.cloud.operation.Operation\"~\x82\xd3\xe4\x93\x02>29/compute/v1/diskPlacementGroups/{disk_placement_group_id}:\x01*\xb2\xd2*6\n UpdateDiskPlacementGroupMetadata\x12\x12\x44iskPlacementGroup\x12\xe5\x01\n\x06\x44\x65lete\x12\x38.yandex.cloud.compute.v1.DeleteDiskPlacementGroupRequest\x1a!.yandex.cloud.operation.Operation\"~\x82\xd3\xe4\x93\x02;*9/compute/v1/diskPlacementGroups/{disk_placement_group_id}\xb2\xd2*9\n DeleteDiskPlacementGroupMetadata\x12\x15google.protobuf.Empty\x12\xcf\x01\n\tListDisks\x12;.yandex.cloud.compute.v1.ListDiskPlacementGroupDisksRequest\x1a<.yandex.cloud.compute.v1.ListDiskPlacementGroupDisksResponse\"G\x82\xd3\xe4\x93\x02\x41\x12?/compute/v1/diskPlacementGroups/{disk_placement_group_id}/disks\x12\xe3\x01\n\x0eListOperations\x12@.yandex.cloud.compute.v1.ListDiskPlacementGroupOperationsRequest\x1a\x41.yandex.cloud.compute.v1.ListDiskPlacementGroupOperationsResponse\"L\x82\xd3\xe4\x93\x02\x46\x12\x44/compute/v1/diskPlacementGroups/{disk_placement_group_id}/operationsBb\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3'
-  ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_compute_dot_v1_dot_disk__pb2.DESCRIPTOR,yandex_dot_cloud_dot_compute_dot_v1_dot_disk__placement__group__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n:yandex/cloud/compute/v1/disk_placement_group_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a\"yandex/cloud/compute/v1/disk.proto\x1a\x32yandex/cloud/compute/v1/disk_placement_group.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"M\n\x1cGetDiskPlacementGroupRequest\x12-\n\x17\x64isk_placement_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xb8\x01\n\x1eListDiskPlacementGroupsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1b\n\x08order_by\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=100\"\x86\x01\n\x1fListDiskPlacementGroupsResponse\x12J\n\x15\x64isk_placement_groups\x18\x01 \x03(\x0b\x32+.yandex.cloud.compute.v1.DiskPlacementGroup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xd8\x04\n\x1f\x43reateDiskPlacementGroupRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\x04name\x18\x02 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x99\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x44.yandex.cloud.compute.v1.CreateDiskPlacementGroupRequest.LabelsEntryBC\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x1c\x12\x14[a-z][-_./\\@0-9a-z]*\x1a\x04\x31-63\x12\x1d\n\x07zone_id\x18\x05 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12Y\n\x19spread_placement_strategy\x18\x06 \x01(\x0b\x32\x34.yandex.cloud.compute.v1.DiskSpreadPlacementStrategyH\x00\x12_\n\x1cpartition_placement_strategy\x18\x07 \x01(\x0b\x32\x37.yandex.cloud.compute.v1.DiskPartitionPlacementStrategyH\x00\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x1a\n\x12placement_strategy\x12\x04\xc0\xc1\x31\x01\"C\n CreateDiskPlacementGroupMetadata\x12\x1f\n\x17\x64isk_placement_group_id\x18\x01 \x01(\t\"\xa0\x03\n\x1fUpdateDiskPlacementGroupRequest\x12-\n\x17\x64isk_placement_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x99\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x44.yandex.cloud.compute.v1.UpdateDiskPlacementGroupRequest.LabelsEntryBC\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x1c\x12\x14[a-z][-_./\\@0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"C\n UpdateDiskPlacementGroupMetadata\x12\x1f\n\x17\x64isk_placement_group_id\x18\x01 \x01(\t\"P\n\x1f\x44\x65leteDiskPlacementGroupRequest\x12-\n\x17\x64isk_placement_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"C\n DeleteDiskPlacementGroupMetadata\x12\x1f\n\x17\x64isk_placement_group_id\x18\x01 \x01(\t\"\x91\x01\n\"ListDiskPlacementGroupDisksRequest\x12-\n\x17\x64isk_placement_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"l\n#ListDiskPlacementGroupDisksResponse\x12,\n\x05\x64isks\x18\x01 \x03(\x0b\x32\x1d.yandex.cloud.compute.v1.Disk\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x96\x01\n\'ListDiskPlacementGroupOperationsRequest\x12-\n\x17\x64isk_placement_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"z\n(ListDiskPlacementGroupOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xc5\x0b\n\x19\x44iskPlacementGroupService\x12\xac\x01\n\x03Get\x12\x35.yandex.cloud.compute.v1.GetDiskPlacementGroupRequest\x1a+.yandex.cloud.compute.v1.DiskPlacementGroup\"A\x82\xd3\xe4\x93\x02;\x12\x39/compute/v1/diskPlacementGroups/{disk_placement_group_id}\x12\xa2\x01\n\x04List\x12\x37.yandex.cloud.compute.v1.ListDiskPlacementGroupsRequest\x1a\x38.yandex.cloud.compute.v1.ListDiskPlacementGroupsResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/compute/v1/diskPlacementGroups\x12\xcb\x01\n\x06\x43reate\x12\x38.yandex.cloud.compute.v1.CreateDiskPlacementGroupRequest\x1a!.yandex.cloud.operation.Operation\"d\xb2\xd2*6\n CreateDiskPlacementGroupMetadata\x12\x12\x44iskPlacementGroup\x82\xd3\xe4\x93\x02$\"\x1f/compute/v1/diskPlacementGroups:\x01*\x12\xe5\x01\n\x06Update\x12\x38.yandex.cloud.compute.v1.UpdateDiskPlacementGroupRequest\x1a!.yandex.cloud.operation.Operation\"~\xb2\xd2*6\n UpdateDiskPlacementGroupMetadata\x12\x12\x44iskPlacementGroup\x82\xd3\xe4\x93\x02>29/compute/v1/diskPlacementGroups/{disk_placement_group_id}:\x01*\x12\xe5\x01\n\x06\x44\x65lete\x12\x38.yandex.cloud.compute.v1.DeleteDiskPlacementGroupRequest\x1a!.yandex.cloud.operation.Operation\"~\xb2\xd2*9\n DeleteDiskPlacementGroupMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02;*9/compute/v1/diskPlacementGroups/{disk_placement_group_id}\x12\xcf\x01\n\tListDisks\x12;.yandex.cloud.compute.v1.ListDiskPlacementGroupDisksRequest\x1a<.yandex.cloud.compute.v1.ListDiskPlacementGroupDisksResponse\"G\x82\xd3\xe4\x93\x02\x41\x12?/compute/v1/diskPlacementGroups/{disk_placement_group_id}/disks\x12\xe3\x01\n\x0eListOperations\x12@.yandex.cloud.compute.v1.ListDiskPlacementGroupOperationsRequest\x1a\x41.yandex.cloud.compute.v1.ListDiskPlacementGroupOperationsResponse\"L\x82\xd3\xe4\x93\x02\x46\x12\x44/compute/v1/diskPlacementGroups/{disk_placement_group_id}/operationsBb\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3')
 
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.compute.v1.disk_placement_group_service_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-
-_GETDISKPLACEMENTGROUPREQUEST = _descriptor.Descriptor(
-  name='GetDiskPlacementGroupRequest',
-  full_name='yandex.cloud.compute.v1.GetDiskPlacementGroupRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='disk_placement_group_id', full_name='yandex.cloud.compute.v1.GetDiskPlacementGroupRequest.disk_placement_group_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=344,
-  serialized_end=421,
-)
-
-
-_LISTDISKPLACEMENTGROUPSREQUEST = _descriptor.Descriptor(
-  name='ListDiskPlacementGroupsRequest',
-  full_name='yandex.cloud.compute.v1.ListDiskPlacementGroupsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.compute.v1.ListDiskPlacementGroupsRequest.folder_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.compute.v1.ListDiskPlacementGroupsRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.compute.v1.ListDiskPlacementGroupsRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='filter', full_name='yandex.cloud.compute.v1.ListDiskPlacementGroupsRequest.filter', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='order_by', full_name='yandex.cloud.compute.v1.ListDiskPlacementGroupsRequest.order_by', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=424,
-  serialized_end=608,
-)
-
-
-_LISTDISKPLACEMENTGROUPSRESPONSE = _descriptor.Descriptor(
-  name='ListDiskPlacementGroupsResponse',
-  full_name='yandex.cloud.compute.v1.ListDiskPlacementGroupsResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='disk_placement_groups', full_name='yandex.cloud.compute.v1.ListDiskPlacementGroupsResponse.disk_placement_groups', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.compute.v1.ListDiskPlacementGroupsResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=611,
-  serialized_end=745,
-)
-
-
-_CREATEDISKPLACEMENTGROUPREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='yandex.cloud.compute.v1.CreateDiskPlacementGroupRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='yandex.cloud.compute.v1.CreateDiskPlacementGroupRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='yandex.cloud.compute.v1.CreateDiskPlacementGroupRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1279,
-  serialized_end=1324,
-)
-
-_CREATEDISKPLACEMENTGROUPREQUEST = _descriptor.Descriptor(
-  name='CreateDiskPlacementGroupRequest',
-  full_name='yandex.cloud.compute.v1.CreateDiskPlacementGroupRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.compute.v1.CreateDiskPlacementGroupRequest.folder_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.compute.v1.CreateDiskPlacementGroupRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='yandex.cloud.compute.v1.CreateDiskPlacementGroupRequest.description', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='yandex.cloud.compute.v1.CreateDiskPlacementGroupRequest.labels', index=3,
-      number=4, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\017[-_./\\@0-9a-z]*\262\3101\006\032\0041-63\262\3101\026\022\024[a-z][-_./\\@0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='zone_id', full_name='yandex.cloud.compute.v1.CreateDiskPlacementGroupRequest.zone_id', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='spread_placement_strategy', full_name='yandex.cloud.compute.v1.CreateDiskPlacementGroupRequest.spread_placement_strategy', index=5,
-      number=6, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='partition_placement_strategy', full_name='yandex.cloud.compute.v1.CreateDiskPlacementGroupRequest.partition_placement_strategy', index=6,
-      number=7, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_CREATEDISKPLACEMENTGROUPREQUEST_LABELSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-    _descriptor.OneofDescriptor(
-      name='placement_strategy', full_name='yandex.cloud.compute.v1.CreateDiskPlacementGroupRequest.placement_strategy',
-      index=0, containing_type=None,
-      create_key=_descriptor._internal_create_key,
-    fields=[], serialized_options=b'\300\3011\001'),
-  ],
-  serialized_start=748,
-  serialized_end=1352,
-)
-
-
-_CREATEDISKPLACEMENTGROUPMETADATA = _descriptor.Descriptor(
-  name='CreateDiskPlacementGroupMetadata',
-  full_name='yandex.cloud.compute.v1.CreateDiskPlacementGroupMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='disk_placement_group_id', full_name='yandex.cloud.compute.v1.CreateDiskPlacementGroupMetadata.disk_placement_group_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1354,
-  serialized_end=1421,
-)
-
-
-_UPDATEDISKPLACEMENTGROUPREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='yandex.cloud.compute.v1.UpdateDiskPlacementGroupRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='yandex.cloud.compute.v1.UpdateDiskPlacementGroupRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='yandex.cloud.compute.v1.UpdateDiskPlacementGroupRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1279,
-  serialized_end=1324,
-)
-
-_UPDATEDISKPLACEMENTGROUPREQUEST = _descriptor.Descriptor(
-  name='UpdateDiskPlacementGroupRequest',
-  full_name='yandex.cloud.compute.v1.UpdateDiskPlacementGroupRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='disk_placement_group_id', full_name='yandex.cloud.compute.v1.UpdateDiskPlacementGroupRequest.disk_placement_group_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='update_mask', full_name='yandex.cloud.compute.v1.UpdateDiskPlacementGroupRequest.update_mask', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.compute.v1.UpdateDiskPlacementGroupRequest.name', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='yandex.cloud.compute.v1.UpdateDiskPlacementGroupRequest.description', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='yandex.cloud.compute.v1.UpdateDiskPlacementGroupRequest.labels', index=4,
-      number=5, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\017[-_./\\@0-9a-z]*\262\3101\006\032\0041-63\262\3101\026\022\024[a-z][-_./\\@0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_UPDATEDISKPLACEMENTGROUPREQUEST_LABELSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1424,
-  serialized_end=1844,
-)
-
-
-_UPDATEDISKPLACEMENTGROUPMETADATA = _descriptor.Descriptor(
-  name='UpdateDiskPlacementGroupMetadata',
-  full_name='yandex.cloud.compute.v1.UpdateDiskPlacementGroupMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='disk_placement_group_id', full_name='yandex.cloud.compute.v1.UpdateDiskPlacementGroupMetadata.disk_placement_group_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1846,
-  serialized_end=1913,
-)
-
-
-_DELETEDISKPLACEMENTGROUPREQUEST = _descriptor.Descriptor(
-  name='DeleteDiskPlacementGroupRequest',
-  full_name='yandex.cloud.compute.v1.DeleteDiskPlacementGroupRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='disk_placement_group_id', full_name='yandex.cloud.compute.v1.DeleteDiskPlacementGroupRequest.disk_placement_group_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1915,
-  serialized_end=1995,
-)
-
-
-_DELETEDISKPLACEMENTGROUPMETADATA = _descriptor.Descriptor(
-  name='DeleteDiskPlacementGroupMetadata',
-  full_name='yandex.cloud.compute.v1.DeleteDiskPlacementGroupMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='disk_placement_group_id', full_name='yandex.cloud.compute.v1.DeleteDiskPlacementGroupMetadata.disk_placement_group_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1997,
-  serialized_end=2064,
-)
-
-
-_LISTDISKPLACEMENTGROUPDISKSREQUEST = _descriptor.Descriptor(
-  name='ListDiskPlacementGroupDisksRequest',
-  full_name='yandex.cloud.compute.v1.ListDiskPlacementGroupDisksRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='disk_placement_group_id', full_name='yandex.cloud.compute.v1.ListDiskPlacementGroupDisksRequest.disk_placement_group_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.compute.v1.ListDiskPlacementGroupDisksRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.compute.v1.ListDiskPlacementGroupDisksRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2067,
-  serialized_end=2212,
-)
-
-
-_LISTDISKPLACEMENTGROUPDISKSRESPONSE = _descriptor.Descriptor(
-  name='ListDiskPlacementGroupDisksResponse',
-  full_name='yandex.cloud.compute.v1.ListDiskPlacementGroupDisksResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='disks', full_name='yandex.cloud.compute.v1.ListDiskPlacementGroupDisksResponse.disks', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.compute.v1.ListDiskPlacementGroupDisksResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2214,
-  serialized_end=2322,
-)
-
-
-_LISTDISKPLACEMENTGROUPOPERATIONSREQUEST = _descriptor.Descriptor(
-  name='ListDiskPlacementGroupOperationsRequest',
-  full_name='yandex.cloud.compute.v1.ListDiskPlacementGroupOperationsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='disk_placement_group_id', full_name='yandex.cloud.compute.v1.ListDiskPlacementGroupOperationsRequest.disk_placement_group_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.compute.v1.ListDiskPlacementGroupOperationsRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.compute.v1.ListDiskPlacementGroupOperationsRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2325,
-  serialized_end=2475,
-)
-
-
-_LISTDISKPLACEMENTGROUPOPERATIONSRESPONSE = _descriptor.Descriptor(
-  name='ListDiskPlacementGroupOperationsResponse',
-  full_name='yandex.cloud.compute.v1.ListDiskPlacementGroupOperationsResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='operations', full_name='yandex.cloud.compute.v1.ListDiskPlacementGroupOperationsResponse.operations', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.compute.v1.ListDiskPlacementGroupOperationsResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2477,
-  serialized_end=2599,
-)
-
-_LISTDISKPLACEMENTGROUPSRESPONSE.fields_by_name['disk_placement_groups'].message_type = yandex_dot_cloud_dot_compute_dot_v1_dot_disk__placement__group__pb2._DISKPLACEMENTGROUP
-_CREATEDISKPLACEMENTGROUPREQUEST_LABELSENTRY.containing_type = _CREATEDISKPLACEMENTGROUPREQUEST
-_CREATEDISKPLACEMENTGROUPREQUEST.fields_by_name['labels'].message_type = _CREATEDISKPLACEMENTGROUPREQUEST_LABELSENTRY
-_CREATEDISKPLACEMENTGROUPREQUEST.fields_by_name['spread_placement_strategy'].message_type = yandex_dot_cloud_dot_compute_dot_v1_dot_disk__placement__group__pb2._DISKSPREADPLACEMENTSTRATEGY
-_CREATEDISKPLACEMENTGROUPREQUEST.fields_by_name['partition_placement_strategy'].message_type = yandex_dot_cloud_dot_compute_dot_v1_dot_disk__placement__group__pb2._DISKPARTITIONPLACEMENTSTRATEGY
-_CREATEDISKPLACEMENTGROUPREQUEST.oneofs_by_name['placement_strategy'].fields.append(
-  _CREATEDISKPLACEMENTGROUPREQUEST.fields_by_name['spread_placement_strategy'])
-_CREATEDISKPLACEMENTGROUPREQUEST.fields_by_name['spread_placement_strategy'].containing_oneof = _CREATEDISKPLACEMENTGROUPREQUEST.oneofs_by_name['placement_strategy']
-_CREATEDISKPLACEMENTGROUPREQUEST.oneofs_by_name['placement_strategy'].fields.append(
-  _CREATEDISKPLACEMENTGROUPREQUEST.fields_by_name['partition_placement_strategy'])
-_CREATEDISKPLACEMENTGROUPREQUEST.fields_by_name['partition_placement_strategy'].containing_oneof = _CREATEDISKPLACEMENTGROUPREQUEST.oneofs_by_name['placement_strategy']
-_UPDATEDISKPLACEMENTGROUPREQUEST_LABELSENTRY.containing_type = _UPDATEDISKPLACEMENTGROUPREQUEST
-_UPDATEDISKPLACEMENTGROUPREQUEST.fields_by_name['update_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
-_UPDATEDISKPLACEMENTGROUPREQUEST.fields_by_name['labels'].message_type = _UPDATEDISKPLACEMENTGROUPREQUEST_LABELSENTRY
-_LISTDISKPLACEMENTGROUPDISKSRESPONSE.fields_by_name['disks'].message_type = yandex_dot_cloud_dot_compute_dot_v1_dot_disk__pb2._DISK
-_LISTDISKPLACEMENTGROUPOPERATIONSRESPONSE.fields_by_name['operations'].message_type = yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION
-DESCRIPTOR.message_types_by_name['GetDiskPlacementGroupRequest'] = _GETDISKPLACEMENTGROUPREQUEST
-DESCRIPTOR.message_types_by_name['ListDiskPlacementGroupsRequest'] = _LISTDISKPLACEMENTGROUPSREQUEST
-DESCRIPTOR.message_types_by_name['ListDiskPlacementGroupsResponse'] = _LISTDISKPLACEMENTGROUPSRESPONSE
-DESCRIPTOR.message_types_by_name['CreateDiskPlacementGroupRequest'] = _CREATEDISKPLACEMENTGROUPREQUEST
-DESCRIPTOR.message_types_by_name['CreateDiskPlacementGroupMetadata'] = _CREATEDISKPLACEMENTGROUPMETADATA
-DESCRIPTOR.message_types_by_name['UpdateDiskPlacementGroupRequest'] = _UPDATEDISKPLACEMENTGROUPREQUEST
-DESCRIPTOR.message_types_by_name['UpdateDiskPlacementGroupMetadata'] = _UPDATEDISKPLACEMENTGROUPMETADATA
-DESCRIPTOR.message_types_by_name['DeleteDiskPlacementGroupRequest'] = _DELETEDISKPLACEMENTGROUPREQUEST
-DESCRIPTOR.message_types_by_name['DeleteDiskPlacementGroupMetadata'] = _DELETEDISKPLACEMENTGROUPMETADATA
-DESCRIPTOR.message_types_by_name['ListDiskPlacementGroupDisksRequest'] = _LISTDISKPLACEMENTGROUPDISKSREQUEST
-DESCRIPTOR.message_types_by_name['ListDiskPlacementGroupDisksResponse'] = _LISTDISKPLACEMENTGROUPDISKSRESPONSE
-DESCRIPTOR.message_types_by_name['ListDiskPlacementGroupOperationsRequest'] = _LISTDISKPLACEMENTGROUPOPERATIONSREQUEST
-DESCRIPTOR.message_types_by_name['ListDiskPlacementGroupOperationsResponse'] = _LISTDISKPLACEMENTGROUPOPERATIONSRESPONSE
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-GetDiskPlacementGroupRequest = _reflection.GeneratedProtocolMessageType('GetDiskPlacementGroupRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETDISKPLACEMENTGROUPREQUEST,
-  '__module__' : 'yandex.cloud.compute.v1.disk_placement_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.GetDiskPlacementGroupRequest)
-  })
-_sym_db.RegisterMessage(GetDiskPlacementGroupRequest)
-
-ListDiskPlacementGroupsRequest = _reflection.GeneratedProtocolMessageType('ListDiskPlacementGroupsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTDISKPLACEMENTGROUPSREQUEST,
-  '__module__' : 'yandex.cloud.compute.v1.disk_placement_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.ListDiskPlacementGroupsRequest)
-  })
-_sym_db.RegisterMessage(ListDiskPlacementGroupsRequest)
-
-ListDiskPlacementGroupsResponse = _reflection.GeneratedProtocolMessageType('ListDiskPlacementGroupsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTDISKPLACEMENTGROUPSRESPONSE,
-  '__module__' : 'yandex.cloud.compute.v1.disk_placement_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.ListDiskPlacementGroupsResponse)
-  })
-_sym_db.RegisterMessage(ListDiskPlacementGroupsResponse)
-
-CreateDiskPlacementGroupRequest = _reflection.GeneratedProtocolMessageType('CreateDiskPlacementGroupRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _CREATEDISKPLACEMENTGROUPREQUEST_LABELSENTRY,
-    '__module__' : 'yandex.cloud.compute.v1.disk_placement_group_service_pb2'
-    # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.CreateDiskPlacementGroupRequest.LabelsEntry)
-    })
-  ,
-  'DESCRIPTOR' : _CREATEDISKPLACEMENTGROUPREQUEST,
-  '__module__' : 'yandex.cloud.compute.v1.disk_placement_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.CreateDiskPlacementGroupRequest)
-  })
-_sym_db.RegisterMessage(CreateDiskPlacementGroupRequest)
-_sym_db.RegisterMessage(CreateDiskPlacementGroupRequest.LabelsEntry)
-
-CreateDiskPlacementGroupMetadata = _reflection.GeneratedProtocolMessageType('CreateDiskPlacementGroupMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _CREATEDISKPLACEMENTGROUPMETADATA,
-  '__module__' : 'yandex.cloud.compute.v1.disk_placement_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.CreateDiskPlacementGroupMetadata)
-  })
-_sym_db.RegisterMessage(CreateDiskPlacementGroupMetadata)
-
-UpdateDiskPlacementGroupRequest = _reflection.GeneratedProtocolMessageType('UpdateDiskPlacementGroupRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _UPDATEDISKPLACEMENTGROUPREQUEST_LABELSENTRY,
-    '__module__' : 'yandex.cloud.compute.v1.disk_placement_group_service_pb2'
-    # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.UpdateDiskPlacementGroupRequest.LabelsEntry)
-    })
-  ,
-  'DESCRIPTOR' : _UPDATEDISKPLACEMENTGROUPREQUEST,
-  '__module__' : 'yandex.cloud.compute.v1.disk_placement_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.UpdateDiskPlacementGroupRequest)
-  })
-_sym_db.RegisterMessage(UpdateDiskPlacementGroupRequest)
-_sym_db.RegisterMessage(UpdateDiskPlacementGroupRequest.LabelsEntry)
-
-UpdateDiskPlacementGroupMetadata = _reflection.GeneratedProtocolMessageType('UpdateDiskPlacementGroupMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATEDISKPLACEMENTGROUPMETADATA,
-  '__module__' : 'yandex.cloud.compute.v1.disk_placement_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.UpdateDiskPlacementGroupMetadata)
-  })
-_sym_db.RegisterMessage(UpdateDiskPlacementGroupMetadata)
-
-DeleteDiskPlacementGroupRequest = _reflection.GeneratedProtocolMessageType('DeleteDiskPlacementGroupRequest', (_message.Message,), {
-  'DESCRIPTOR' : _DELETEDISKPLACEMENTGROUPREQUEST,
-  '__module__' : 'yandex.cloud.compute.v1.disk_placement_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.DeleteDiskPlacementGroupRequest)
-  })
-_sym_db.RegisterMessage(DeleteDiskPlacementGroupRequest)
-
-DeleteDiskPlacementGroupMetadata = _reflection.GeneratedProtocolMessageType('DeleteDiskPlacementGroupMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _DELETEDISKPLACEMENTGROUPMETADATA,
-  '__module__' : 'yandex.cloud.compute.v1.disk_placement_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.DeleteDiskPlacementGroupMetadata)
-  })
-_sym_db.RegisterMessage(DeleteDiskPlacementGroupMetadata)
-
-ListDiskPlacementGroupDisksRequest = _reflection.GeneratedProtocolMessageType('ListDiskPlacementGroupDisksRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTDISKPLACEMENTGROUPDISKSREQUEST,
-  '__module__' : 'yandex.cloud.compute.v1.disk_placement_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.ListDiskPlacementGroupDisksRequest)
-  })
-_sym_db.RegisterMessage(ListDiskPlacementGroupDisksRequest)
-
-ListDiskPlacementGroupDisksResponse = _reflection.GeneratedProtocolMessageType('ListDiskPlacementGroupDisksResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTDISKPLACEMENTGROUPDISKSRESPONSE,
-  '__module__' : 'yandex.cloud.compute.v1.disk_placement_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.ListDiskPlacementGroupDisksResponse)
-  })
-_sym_db.RegisterMessage(ListDiskPlacementGroupDisksResponse)
-
-ListDiskPlacementGroupOperationsRequest = _reflection.GeneratedProtocolMessageType('ListDiskPlacementGroupOperationsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTDISKPLACEMENTGROUPOPERATIONSREQUEST,
-  '__module__' : 'yandex.cloud.compute.v1.disk_placement_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.ListDiskPlacementGroupOperationsRequest)
-  })
-_sym_db.RegisterMessage(ListDiskPlacementGroupOperationsRequest)
-
-ListDiskPlacementGroupOperationsResponse = _reflection.GeneratedProtocolMessageType('ListDiskPlacementGroupOperationsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTDISKPLACEMENTGROUPOPERATIONSRESPONSE,
-  '__module__' : 'yandex.cloud.compute.v1.disk_placement_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.ListDiskPlacementGroupOperationsResponse)
-  })
-_sym_db.RegisterMessage(ListDiskPlacementGroupOperationsResponse)
-
-
-DESCRIPTOR._options = None
-_GETDISKPLACEMENTGROUPREQUEST.fields_by_name['disk_placement_group_id']._options = None
-_LISTDISKPLACEMENTGROUPSREQUEST.fields_by_name['folder_id']._options = None
-_LISTDISKPLACEMENTGROUPSREQUEST.fields_by_name['page_size']._options = None
-_LISTDISKPLACEMENTGROUPSREQUEST.fields_by_name['page_token']._options = None
-_LISTDISKPLACEMENTGROUPSREQUEST.fields_by_name['filter']._options = None
-_LISTDISKPLACEMENTGROUPSREQUEST.fields_by_name['order_by']._options = None
-_CREATEDISKPLACEMENTGROUPREQUEST_LABELSENTRY._options = None
-_CREATEDISKPLACEMENTGROUPREQUEST.oneofs_by_name['placement_strategy']._options = None
-_CREATEDISKPLACEMENTGROUPREQUEST.fields_by_name['folder_id']._options = None
-_CREATEDISKPLACEMENTGROUPREQUEST.fields_by_name['name']._options = None
-_CREATEDISKPLACEMENTGROUPREQUEST.fields_by_name['description']._options = None
-_CREATEDISKPLACEMENTGROUPREQUEST.fields_by_name['labels']._options = None
-_CREATEDISKPLACEMENTGROUPREQUEST.fields_by_name['zone_id']._options = None
-_UPDATEDISKPLACEMENTGROUPREQUEST_LABELSENTRY._options = None
-_UPDATEDISKPLACEMENTGROUPREQUEST.fields_by_name['disk_placement_group_id']._options = None
-_UPDATEDISKPLACEMENTGROUPREQUEST.fields_by_name['name']._options = None
-_UPDATEDISKPLACEMENTGROUPREQUEST.fields_by_name['description']._options = None
-_UPDATEDISKPLACEMENTGROUPREQUEST.fields_by_name['labels']._options = None
-_DELETEDISKPLACEMENTGROUPREQUEST.fields_by_name['disk_placement_group_id']._options = None
-_LISTDISKPLACEMENTGROUPDISKSREQUEST.fields_by_name['disk_placement_group_id']._options = None
-_LISTDISKPLACEMENTGROUPDISKSREQUEST.fields_by_name['page_size']._options = None
-_LISTDISKPLACEMENTGROUPDISKSREQUEST.fields_by_name['page_token']._options = None
-_LISTDISKPLACEMENTGROUPOPERATIONSREQUEST.fields_by_name['disk_placement_group_id']._options = None
-_LISTDISKPLACEMENTGROUPOPERATIONSREQUEST.fields_by_name['page_size']._options = None
-_LISTDISKPLACEMENTGROUPOPERATIONSREQUEST.fields_by_name['page_token']._options = None
-
-_DISKPLACEMENTGROUPSERVICE = _descriptor.ServiceDescriptor(
-  name='DiskPlacementGroupService',
-  full_name='yandex.cloud.compute.v1.DiskPlacementGroupService',
-  file=DESCRIPTOR,
-  index=0,
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_start=2602,
-  serialized_end=4079,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='Get',
-    full_name='yandex.cloud.compute.v1.DiskPlacementGroupService.Get',
-    index=0,
-    containing_service=None,
-    input_type=_GETDISKPLACEMENTGROUPREQUEST,
-    output_type=yandex_dot_cloud_dot_compute_dot_v1_dot_disk__placement__group__pb2._DISKPLACEMENTGROUP,
-    serialized_options=b'\202\323\344\223\002;\0229/compute/v1/diskPlacementGroups/{disk_placement_group_id}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='List',
-    full_name='yandex.cloud.compute.v1.DiskPlacementGroupService.List',
-    index=1,
-    containing_service=None,
-    input_type=_LISTDISKPLACEMENTGROUPSREQUEST,
-    output_type=_LISTDISKPLACEMENTGROUPSRESPONSE,
-    serialized_options=b'\202\323\344\223\002!\022\037/compute/v1/diskPlacementGroups',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Create',
-    full_name='yandex.cloud.compute.v1.DiskPlacementGroupService.Create',
-    index=2,
-    containing_service=None,
-    input_type=_CREATEDISKPLACEMENTGROUPREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002$\"\037/compute/v1/diskPlacementGroups:\001*\262\322*6\n CreateDiskPlacementGroupMetadata\022\022DiskPlacementGroup',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Update',
-    full_name='yandex.cloud.compute.v1.DiskPlacementGroupService.Update',
-    index=3,
-    containing_service=None,
-    input_type=_UPDATEDISKPLACEMENTGROUPREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002>29/compute/v1/diskPlacementGroups/{disk_placement_group_id}:\001*\262\322*6\n UpdateDiskPlacementGroupMetadata\022\022DiskPlacementGroup',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Delete',
-    full_name='yandex.cloud.compute.v1.DiskPlacementGroupService.Delete',
-    index=4,
-    containing_service=None,
-    input_type=_DELETEDISKPLACEMENTGROUPREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002;*9/compute/v1/diskPlacementGroups/{disk_placement_group_id}\262\322*9\n DeleteDiskPlacementGroupMetadata\022\025google.protobuf.Empty',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListDisks',
-    full_name='yandex.cloud.compute.v1.DiskPlacementGroupService.ListDisks',
-    index=5,
-    containing_service=None,
-    input_type=_LISTDISKPLACEMENTGROUPDISKSREQUEST,
-    output_type=_LISTDISKPLACEMENTGROUPDISKSRESPONSE,
-    serialized_options=b'\202\323\344\223\002A\022?/compute/v1/diskPlacementGroups/{disk_placement_group_id}/disks',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListOperations',
-    full_name='yandex.cloud.compute.v1.DiskPlacementGroupService.ListOperations',
-    index=6,
-    containing_service=None,
-    input_type=_LISTDISKPLACEMENTGROUPOPERATIONSREQUEST,
-    output_type=_LISTDISKPLACEMENTGROUPOPERATIONSRESPONSE,
-    serialized_options=b'\202\323\344\223\002F\022D/compute/v1/diskPlacementGroups/{disk_placement_group_id}/operations',
-    create_key=_descriptor._internal_create_key,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_DISKPLACEMENTGROUPSERVICE)
-
-DESCRIPTOR.services_by_name['DiskPlacementGroupService'] = _DISKPLACEMENTGROUPSERVICE
-
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n\033yandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;compute'
+  _GETDISKPLACEMENTGROUPREQUEST.fields_by_name['disk_placement_group_id']._options = None
+  _GETDISKPLACEMENTGROUPREQUEST.fields_by_name['disk_placement_group_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTDISKPLACEMENTGROUPSREQUEST.fields_by_name['folder_id']._options = None
+  _LISTDISKPLACEMENTGROUPSREQUEST.fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTDISKPLACEMENTGROUPSREQUEST.fields_by_name['page_size']._options = None
+  _LISTDISKPLACEMENTGROUPSREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
+  _LISTDISKPLACEMENTGROUPSREQUEST.fields_by_name['page_token']._options = None
+  _LISTDISKPLACEMENTGROUPSREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
+  _LISTDISKPLACEMENTGROUPSREQUEST.fields_by_name['filter']._options = None
+  _LISTDISKPLACEMENTGROUPSREQUEST.fields_by_name['filter']._serialized_options = b'\212\3101\006<=1000'
+  _LISTDISKPLACEMENTGROUPSREQUEST.fields_by_name['order_by']._options = None
+  _LISTDISKPLACEMENTGROUPSREQUEST.fields_by_name['order_by']._serialized_options = b'\212\3101\005<=100'
+  _CREATEDISKPLACEMENTGROUPREQUEST_LABELSENTRY._options = None
+  _CREATEDISKPLACEMENTGROUPREQUEST_LABELSENTRY._serialized_options = b'8\001'
+  _CREATEDISKPLACEMENTGROUPREQUEST.oneofs_by_name['placement_strategy']._options = None
+  _CREATEDISKPLACEMENTGROUPREQUEST.oneofs_by_name['placement_strategy']._serialized_options = b'\300\3011\001'
+  _CREATEDISKPLACEMENTGROUPREQUEST.fields_by_name['folder_id']._options = None
+  _CREATEDISKPLACEMENTGROUPREQUEST.fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _CREATEDISKPLACEMENTGROUPREQUEST.fields_by_name['name']._options = None
+  _CREATEDISKPLACEMENTGROUPREQUEST.fields_by_name['name']._serialized_options = b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?'
+  _CREATEDISKPLACEMENTGROUPREQUEST.fields_by_name['description']._options = None
+  _CREATEDISKPLACEMENTGROUPREQUEST.fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
+  _CREATEDISKPLACEMENTGROUPREQUEST.fields_by_name['labels']._options = None
+  _CREATEDISKPLACEMENTGROUPREQUEST.fields_by_name['labels']._serialized_options = b'\362\3071\017[-_./\\@0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\034\022\024[a-z][-_./\\@0-9a-z]*\032\0041-63'
+  _CREATEDISKPLACEMENTGROUPREQUEST.fields_by_name['zone_id']._options = None
+  _CREATEDISKPLACEMENTGROUPREQUEST.fields_by_name['zone_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _UPDATEDISKPLACEMENTGROUPREQUEST_LABELSENTRY._options = None
+  _UPDATEDISKPLACEMENTGROUPREQUEST_LABELSENTRY._serialized_options = b'8\001'
+  _UPDATEDISKPLACEMENTGROUPREQUEST.fields_by_name['disk_placement_group_id']._options = None
+  _UPDATEDISKPLACEMENTGROUPREQUEST.fields_by_name['disk_placement_group_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _UPDATEDISKPLACEMENTGROUPREQUEST.fields_by_name['name']._options = None
+  _UPDATEDISKPLACEMENTGROUPREQUEST.fields_by_name['name']._serialized_options = b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?'
+  _UPDATEDISKPLACEMENTGROUPREQUEST.fields_by_name['description']._options = None
+  _UPDATEDISKPLACEMENTGROUPREQUEST.fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
+  _UPDATEDISKPLACEMENTGROUPREQUEST.fields_by_name['labels']._options = None
+  _UPDATEDISKPLACEMENTGROUPREQUEST.fields_by_name['labels']._serialized_options = b'\362\3071\017[-_./\\@0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\034\022\024[a-z][-_./\\@0-9a-z]*\032\0041-63'
+  _DELETEDISKPLACEMENTGROUPREQUEST.fields_by_name['disk_placement_group_id']._options = None
+  _DELETEDISKPLACEMENTGROUPREQUEST.fields_by_name['disk_placement_group_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTDISKPLACEMENTGROUPDISKSREQUEST.fields_by_name['disk_placement_group_id']._options = None
+  _LISTDISKPLACEMENTGROUPDISKSREQUEST.fields_by_name['disk_placement_group_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTDISKPLACEMENTGROUPDISKSREQUEST.fields_by_name['page_size']._options = None
+  _LISTDISKPLACEMENTGROUPDISKSREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
+  _LISTDISKPLACEMENTGROUPDISKSREQUEST.fields_by_name['page_token']._options = None
+  _LISTDISKPLACEMENTGROUPDISKSREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
+  _LISTDISKPLACEMENTGROUPOPERATIONSREQUEST.fields_by_name['disk_placement_group_id']._options = None
+  _LISTDISKPLACEMENTGROUPOPERATIONSREQUEST.fields_by_name['disk_placement_group_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTDISKPLACEMENTGROUPOPERATIONSREQUEST.fields_by_name['page_size']._options = None
+  _LISTDISKPLACEMENTGROUPOPERATIONSREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
+  _LISTDISKPLACEMENTGROUPOPERATIONSREQUEST.fields_by_name['page_token']._options = None
+  _LISTDISKPLACEMENTGROUPOPERATIONSREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
+  _DISKPLACEMENTGROUPSERVICE.methods_by_name['Get']._options = None
+  _DISKPLACEMENTGROUPSERVICE.methods_by_name['Get']._serialized_options = b'\202\323\344\223\002;\0229/compute/v1/diskPlacementGroups/{disk_placement_group_id}'
+  _DISKPLACEMENTGROUPSERVICE.methods_by_name['List']._options = None
+  _DISKPLACEMENTGROUPSERVICE.methods_by_name['List']._serialized_options = b'\202\323\344\223\002!\022\037/compute/v1/diskPlacementGroups'
+  _DISKPLACEMENTGROUPSERVICE.methods_by_name['Create']._options = None
+  _DISKPLACEMENTGROUPSERVICE.methods_by_name['Create']._serialized_options = b'\262\322*6\n CreateDiskPlacementGroupMetadata\022\022DiskPlacementGroup\202\323\344\223\002$\"\037/compute/v1/diskPlacementGroups:\001*'
+  _DISKPLACEMENTGROUPSERVICE.methods_by_name['Update']._options = None
+  _DISKPLACEMENTGROUPSERVICE.methods_by_name['Update']._serialized_options = b'\262\322*6\n UpdateDiskPlacementGroupMetadata\022\022DiskPlacementGroup\202\323\344\223\002>29/compute/v1/diskPlacementGroups/{disk_placement_group_id}:\001*'
+  _DISKPLACEMENTGROUPSERVICE.methods_by_name['Delete']._options = None
+  _DISKPLACEMENTGROUPSERVICE.methods_by_name['Delete']._serialized_options = b'\262\322*9\n DeleteDiskPlacementGroupMetadata\022\025google.protobuf.Empty\202\323\344\223\002;*9/compute/v1/diskPlacementGroups/{disk_placement_group_id}'
+  _DISKPLACEMENTGROUPSERVICE.methods_by_name['ListDisks']._options = None
+  _DISKPLACEMENTGROUPSERVICE.methods_by_name['ListDisks']._serialized_options = b'\202\323\344\223\002A\022?/compute/v1/diskPlacementGroups/{disk_placement_group_id}/disks'
+  _DISKPLACEMENTGROUPSERVICE.methods_by_name['ListOperations']._options = None
+  _DISKPLACEMENTGROUPSERVICE.methods_by_name['ListOperations']._serialized_options = b'\202\323\344\223\002F\022D/compute/v1/diskPlacementGroups/{disk_placement_group_id}/operations'
+  _globals['_GETDISKPLACEMENTGROUPREQUEST']._serialized_start=344
+  _globals['_GETDISKPLACEMENTGROUPREQUEST']._serialized_end=421
+  _globals['_LISTDISKPLACEMENTGROUPSREQUEST']._serialized_start=424
+  _globals['_LISTDISKPLACEMENTGROUPSREQUEST']._serialized_end=608
+  _globals['_LISTDISKPLACEMENTGROUPSRESPONSE']._serialized_start=611
+  _globals['_LISTDISKPLACEMENTGROUPSRESPONSE']._serialized_end=745
+  _globals['_CREATEDISKPLACEMENTGROUPREQUEST']._serialized_start=748
+  _globals['_CREATEDISKPLACEMENTGROUPREQUEST']._serialized_end=1348
+  _globals['_CREATEDISKPLACEMENTGROUPREQUEST_LABELSENTRY']._serialized_start=1275
+  _globals['_CREATEDISKPLACEMENTGROUPREQUEST_LABELSENTRY']._serialized_end=1320
+  _globals['_CREATEDISKPLACEMENTGROUPMETADATA']._serialized_start=1350
+  _globals['_CREATEDISKPLACEMENTGROUPMETADATA']._serialized_end=1417
+  _globals['_UPDATEDISKPLACEMENTGROUPREQUEST']._serialized_start=1420
+  _globals['_UPDATEDISKPLACEMENTGROUPREQUEST']._serialized_end=1836
+  _globals['_UPDATEDISKPLACEMENTGROUPREQUEST_LABELSENTRY']._serialized_start=1275
+  _globals['_UPDATEDISKPLACEMENTGROUPREQUEST_LABELSENTRY']._serialized_end=1320
+  _globals['_UPDATEDISKPLACEMENTGROUPMETADATA']._serialized_start=1838
+  _globals['_UPDATEDISKPLACEMENTGROUPMETADATA']._serialized_end=1905
+  _globals['_DELETEDISKPLACEMENTGROUPREQUEST']._serialized_start=1907
+  _globals['_DELETEDISKPLACEMENTGROUPREQUEST']._serialized_end=1987
+  _globals['_DELETEDISKPLACEMENTGROUPMETADATA']._serialized_start=1989
+  _globals['_DELETEDISKPLACEMENTGROUPMETADATA']._serialized_end=2056
+  _globals['_LISTDISKPLACEMENTGROUPDISKSREQUEST']._serialized_start=2059
+  _globals['_LISTDISKPLACEMENTGROUPDISKSREQUEST']._serialized_end=2204
+  _globals['_LISTDISKPLACEMENTGROUPDISKSRESPONSE']._serialized_start=2206
+  _globals['_LISTDISKPLACEMENTGROUPDISKSRESPONSE']._serialized_end=2314
+  _globals['_LISTDISKPLACEMENTGROUPOPERATIONSREQUEST']._serialized_start=2317
+  _globals['_LISTDISKPLACEMENTGROUPOPERATIONSREQUEST']._serialized_end=2467
+  _globals['_LISTDISKPLACEMENTGROUPOPERATIONSRESPONSE']._serialized_start=2469
+  _globals['_LISTDISKPLACEMENTGROUPOPERATIONSRESPONSE']._serialized_end=2591
+  _globals['_DISKPLACEMENTGROUPSERVICE']._serialized_start=2594
+  _globals['_DISKPLACEMENTGROUPSERVICE']._serialized_end=4071
 # @@protoc_insertion_point(module_scope)

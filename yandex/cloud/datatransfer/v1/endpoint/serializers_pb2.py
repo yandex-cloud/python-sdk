@@ -3,9 +3,9 @@
 # source: yandex/cloud/datatransfer/v1/endpoint/serializers.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -13,244 +13,23 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/datatransfer/v1/endpoint/serializers.proto',
-  package='yandex.cloud.datatransfer.v1.endpoint',
-  syntax='proto3',
-  serialized_options=b'\n)yandex.cloud.api.datatransfer.v1.endpointZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1/endpoint;endpoint\252\002%Yandex.Cloud.Datatransfer.V1.EndPoint',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n7yandex/cloud/datatransfer/v1/endpoint/serializers.proto\x12%yandex.cloud.datatransfer.v1.endpoint\"\x10\n\x0eSerializerAuto\"\x10\n\x0eSerializerJSON\"9\n\x1b\x44\x65\x62\x65ziumSerializerParameter\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"w\n\x12SerializerDebezium\x12\x61\n\x15serializer_parameters\x18\x01 \x03(\x0b\x32\x42.yandex.cloud.datatransfer.v1.endpoint.DebeziumSerializerParameter\"\x98\x02\n\nSerializer\x12P\n\x0fserializer_auto\x18\x01 \x01(\x0b\x32\x35.yandex.cloud.datatransfer.v1.endpoint.SerializerAutoH\x00\x12P\n\x0fserializer_json\x18\x02 \x01(\x0b\x32\x35.yandex.cloud.datatransfer.v1.endpoint.SerializerJSONH\x00\x12X\n\x13serializer_debezium\x18\x03 \x01(\x0b\x32\x39.yandex.cloud.datatransfer.v1.endpoint.SerializerDebeziumH\x00\x42\x0c\n\nserializerB\xa7\x01\n)yandex.cloud.api.datatransfer.v1.endpointZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1/endpoint;endpoint\xaa\x02%Yandex.Cloud.Datatransfer.V1.EndPointb\x06proto3'
-)
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n7yandex/cloud/datatransfer/v1/endpoint/serializers.proto\x12%yandex.cloud.datatransfer.v1.endpoint\"\x10\n\x0eSerializerAuto\"\x10\n\x0eSerializerJSON\"9\n\x1b\x44\x65\x62\x65ziumSerializerParameter\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"w\n\x12SerializerDebezium\x12\x61\n\x15serializer_parameters\x18\x01 \x03(\x0b\x32\x42.yandex.cloud.datatransfer.v1.endpoint.DebeziumSerializerParameter\"\x98\x02\n\nSerializer\x12P\n\x0fserializer_auto\x18\x01 \x01(\x0b\x32\x35.yandex.cloud.datatransfer.v1.endpoint.SerializerAutoH\x00\x12P\n\x0fserializer_json\x18\x02 \x01(\x0b\x32\x35.yandex.cloud.datatransfer.v1.endpoint.SerializerJSONH\x00\x12X\n\x13serializer_debezium\x18\x03 \x01(\x0b\x32\x39.yandex.cloud.datatransfer.v1.endpoint.SerializerDebeziumH\x00\x42\x0c\n\nserializerB\xa7\x01\n)yandex.cloud.api.datatransfer.v1.endpointZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1/endpoint;endpoint\xaa\x02%Yandex.Cloud.Datatransfer.V1.EndPointb\x06proto3')
 
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.datatransfer.v1.endpoint.serializers_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-
-_SERIALIZERAUTO = _descriptor.Descriptor(
-  name='SerializerAuto',
-  full_name='yandex.cloud.datatransfer.v1.endpoint.SerializerAuto',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=98,
-  serialized_end=114,
-)
-
-
-_SERIALIZERJSON = _descriptor.Descriptor(
-  name='SerializerJSON',
-  full_name='yandex.cloud.datatransfer.v1.endpoint.SerializerJSON',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=116,
-  serialized_end=132,
-)
-
-
-_DEBEZIUMSERIALIZERPARAMETER = _descriptor.Descriptor(
-  name='DebeziumSerializerParameter',
-  full_name='yandex.cloud.datatransfer.v1.endpoint.DebeziumSerializerParameter',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='yandex.cloud.datatransfer.v1.endpoint.DebeziumSerializerParameter.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='yandex.cloud.datatransfer.v1.endpoint.DebeziumSerializerParameter.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=134,
-  serialized_end=191,
-)
-
-
-_SERIALIZERDEBEZIUM = _descriptor.Descriptor(
-  name='SerializerDebezium',
-  full_name='yandex.cloud.datatransfer.v1.endpoint.SerializerDebezium',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='serializer_parameters', full_name='yandex.cloud.datatransfer.v1.endpoint.SerializerDebezium.serializer_parameters', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=193,
-  serialized_end=312,
-)
-
-
-_SERIALIZER = _descriptor.Descriptor(
-  name='Serializer',
-  full_name='yandex.cloud.datatransfer.v1.endpoint.Serializer',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='serializer_auto', full_name='yandex.cloud.datatransfer.v1.endpoint.Serializer.serializer_auto', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='serializer_json', full_name='yandex.cloud.datatransfer.v1.endpoint.Serializer.serializer_json', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='serializer_debezium', full_name='yandex.cloud.datatransfer.v1.endpoint.Serializer.serializer_debezium', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-    _descriptor.OneofDescriptor(
-      name='serializer', full_name='yandex.cloud.datatransfer.v1.endpoint.Serializer.serializer',
-      index=0, containing_type=None,
-      create_key=_descriptor._internal_create_key,
-    fields=[]),
-  ],
-  serialized_start=315,
-  serialized_end=595,
-)
-
-_SERIALIZERDEBEZIUM.fields_by_name['serializer_parameters'].message_type = _DEBEZIUMSERIALIZERPARAMETER
-_SERIALIZER.fields_by_name['serializer_auto'].message_type = _SERIALIZERAUTO
-_SERIALIZER.fields_by_name['serializer_json'].message_type = _SERIALIZERJSON
-_SERIALIZER.fields_by_name['serializer_debezium'].message_type = _SERIALIZERDEBEZIUM
-_SERIALIZER.oneofs_by_name['serializer'].fields.append(
-  _SERIALIZER.fields_by_name['serializer_auto'])
-_SERIALIZER.fields_by_name['serializer_auto'].containing_oneof = _SERIALIZER.oneofs_by_name['serializer']
-_SERIALIZER.oneofs_by_name['serializer'].fields.append(
-  _SERIALIZER.fields_by_name['serializer_json'])
-_SERIALIZER.fields_by_name['serializer_json'].containing_oneof = _SERIALIZER.oneofs_by_name['serializer']
-_SERIALIZER.oneofs_by_name['serializer'].fields.append(
-  _SERIALIZER.fields_by_name['serializer_debezium'])
-_SERIALIZER.fields_by_name['serializer_debezium'].containing_oneof = _SERIALIZER.oneofs_by_name['serializer']
-DESCRIPTOR.message_types_by_name['SerializerAuto'] = _SERIALIZERAUTO
-DESCRIPTOR.message_types_by_name['SerializerJSON'] = _SERIALIZERJSON
-DESCRIPTOR.message_types_by_name['DebeziumSerializerParameter'] = _DEBEZIUMSERIALIZERPARAMETER
-DESCRIPTOR.message_types_by_name['SerializerDebezium'] = _SERIALIZERDEBEZIUM
-DESCRIPTOR.message_types_by_name['Serializer'] = _SERIALIZER
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-SerializerAuto = _reflection.GeneratedProtocolMessageType('SerializerAuto', (_message.Message,), {
-  'DESCRIPTOR' : _SERIALIZERAUTO,
-  '__module__' : 'yandex.cloud.datatransfer.v1.endpoint.serializers_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.datatransfer.v1.endpoint.SerializerAuto)
-  })
-_sym_db.RegisterMessage(SerializerAuto)
-
-SerializerJSON = _reflection.GeneratedProtocolMessageType('SerializerJSON', (_message.Message,), {
-  'DESCRIPTOR' : _SERIALIZERJSON,
-  '__module__' : 'yandex.cloud.datatransfer.v1.endpoint.serializers_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.datatransfer.v1.endpoint.SerializerJSON)
-  })
-_sym_db.RegisterMessage(SerializerJSON)
-
-DebeziumSerializerParameter = _reflection.GeneratedProtocolMessageType('DebeziumSerializerParameter', (_message.Message,), {
-  'DESCRIPTOR' : _DEBEZIUMSERIALIZERPARAMETER,
-  '__module__' : 'yandex.cloud.datatransfer.v1.endpoint.serializers_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.datatransfer.v1.endpoint.DebeziumSerializerParameter)
-  })
-_sym_db.RegisterMessage(DebeziumSerializerParameter)
-
-SerializerDebezium = _reflection.GeneratedProtocolMessageType('SerializerDebezium', (_message.Message,), {
-  'DESCRIPTOR' : _SERIALIZERDEBEZIUM,
-  '__module__' : 'yandex.cloud.datatransfer.v1.endpoint.serializers_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.datatransfer.v1.endpoint.SerializerDebezium)
-  })
-_sym_db.RegisterMessage(SerializerDebezium)
-
-Serializer = _reflection.GeneratedProtocolMessageType('Serializer', (_message.Message,), {
-  'DESCRIPTOR' : _SERIALIZER,
-  '__module__' : 'yandex.cloud.datatransfer.v1.endpoint.serializers_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.datatransfer.v1.endpoint.Serializer)
-  })
-_sym_db.RegisterMessage(Serializer)
-
-
-DESCRIPTOR._options = None
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n)yandex.cloud.api.datatransfer.v1.endpointZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1/endpoint;endpoint\252\002%Yandex.Cloud.Datatransfer.V1.EndPoint'
+  _globals['_SERIALIZERAUTO']._serialized_start=98
+  _globals['_SERIALIZERAUTO']._serialized_end=114
+  _globals['_SERIALIZERJSON']._serialized_start=116
+  _globals['_SERIALIZERJSON']._serialized_end=132
+  _globals['_DEBEZIUMSERIALIZERPARAMETER']._serialized_start=134
+  _globals['_DEBEZIUMSERIALIZERPARAMETER']._serialized_end=191
+  _globals['_SERIALIZERDEBEZIUM']._serialized_start=193
+  _globals['_SERIALIZERDEBEZIUM']._serialized_end=312
+  _globals['_SERIALIZER']._serialized_start=315
+  _globals['_SERIALIZER']._serialized_end=595
 # @@protoc_insertion_point(module_scope)

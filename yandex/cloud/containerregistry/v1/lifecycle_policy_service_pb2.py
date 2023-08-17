@@ -3,9 +3,9 @@
 # source: yandex/cloud/containerregistry/v1/lifecycle_policy_service.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -21,1058 +21,125 @@ from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/containerregistry/v1/lifecycle_policy_service.proto',
-  package='yandex.cloud.containerregistry.v1',
-  syntax='proto3',
-  serialized_options=b'\n%yandex.cloud.api.containerregistry.v1ZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/containerregistry/v1;containerregistry',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n@yandex/cloud/containerregistry/v1/lifecycle_policy_service.proto\x12!yandex.cloud.containerregistry.v1\x1a yandex/cloud/api/operation.proto\x1a-yandex/cloud/containerregistry/v1/image.proto\x1a\x38yandex/cloud/containerregistry/v1/lifecycle_policy.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1cgoogle/api/annotations.proto\"F\n\x19GetLifecyclePolicyRequest\x12)\n\x13lifecycle_policy_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xe5\x01\n\x1cListLifecyclePoliciesRequest\x12\x1f\n\x0bregistry_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12!\n\rrepository_id\x18\x06 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1b\n\x08order_by\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=100B\n\n\x02id\x12\x04\xc0\xc1\x31\x01\"\x88\x01\n\x1dListLifecyclePoliciesResponse\x12N\n\x12lifecycle_policies\x18\x01 \x03(\x0b\x32\x32.yandex.cloud.containerregistry.v1.LifecyclePolicy\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xa6\x02\n\x1c\x43reateLifecyclePolicyRequest\x12#\n\rrepository_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12O\n\x06status\x18\x04 \x01(\x0e\x32\x39.yandex.cloud.containerregistry.v1.LifecyclePolicy.StatusB\x04\xe8\xc7\x31\x01\x12?\n\x05rules\x18\x05 \x03(\x0b\x32\x30.yandex.cloud.containerregistry.v1.LifecycleRule\"\xdd\x02\n\x1cUpdateLifecyclePolicyRequest\x12)\n\x13lifecycle_policy_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12O\n\x06status\x18\x05 \x01(\x0e\x32\x39.yandex.cloud.containerregistry.v1.LifecyclePolicy.StatusB\x04\xe8\xc7\x31\x01\x12?\n\x05rules\x18\x06 \x03(\x0b\x32\x30.yandex.cloud.containerregistry.v1.LifecycleRule\"I\n\x1c\x44\x65leteLifecyclePolicyRequest\x12)\n\x13lifecycle_policy_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"<\n\x1d\x43reateLifecyclePolicyMetadata\x12\x1b\n\x13lifecycle_policy_id\x18\x01 \x01(\t\"<\n\x1dUpdateLifecyclePolicyMetadata\x12\x1b\n\x13lifecycle_policy_id\x18\x01 \x01(\t\"<\n\x1d\x44\x65leteLifecyclePolicyMetadata\x12\x1b\n\x13lifecycle_policy_id\x18\x01 \x01(\t\"I\n\x1c\x44ryRunLifecyclePolicyRequest\x12)\n\x13lifecycle_policy_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"h\n\x1d\x44ryRunLifecyclePolicyMetadata\x12*\n\"dry_run_lifecycle_policy_result_id\x18\x01 \x01(\t\x12\x1b\n\x13lifecycle_policy_id\x18\x02 \x01(\t\"\xb1\x01\n\x1b\x44ryRunLifecyclePolicyResult\x12*\n\"dry_run_lifecycle_policy_result_id\x18\x01 \x01(\t\x12\x1b\n\x13lifecycle_policy_id\x18\x02 \x01(\t\x12*\n\x06run_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1d\n\x15\x61\x66\x66\x65\x63ted_images_count\x18\x04 \x01(\x03\"a\n%GetDryRunLifecyclePolicyResultRequest\x12\x38\n\"dry_run_lifecycle_policy_result_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xcb\x01\n\'ListDryRunLifecyclePolicyResultsRequest\x12)\n\x13lifecycle_policy_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1b\n\x08order_by\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=100\"\xad\x01\n(ListDryRunLifecyclePolicyResultsResponse\x12h\n dry_run_lifecycle_policy_results\x18\x01 \x03(\x0b\x32>.yandex.cloud.containerregistry.v1.DryRunLifecyclePolicyResult\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xe7\x01\n4ListDryRunLifecyclePolicyResultAffectedImagesRequest\x12\x38\n\"dry_run_lifecycle_policy_result_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1b\n\x08order_by\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=100\"\x93\x01\n5ListDryRunLifecyclePolicyResultAffectedImagesResponse\x12\x41\n\x0f\x61\x66\x66\x65\x63ted_images\x18\x01 \x03(\x0b\x32(.yandex.cloud.containerregistry.v1.Image\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\x82\x11\n\x16LifecyclePolicyService\x12\xbf\x01\n\x03Get\x12<.yandex.cloud.containerregistry.v1.GetLifecyclePolicyRequest\x1a\x32.yandex.cloud.containerregistry.v1.LifecyclePolicy\"F\x82\xd3\xe4\x93\x02@\x12>/container-registry/v1/lifecyclePolicies/{lifecycle_policy_id}\x12\xbb\x01\n\x04List\x12?.yandex.cloud.containerregistry.v1.ListLifecyclePoliciesRequest\x1a@.yandex.cloud.containerregistry.v1.ListLifecyclePoliciesResponse\"0\x82\xd3\xe4\x93\x02*\x12(/container-registry/v1/lifecyclePolicies\x12\xd5\x01\n\x06\x43reate\x12?.yandex.cloud.containerregistry.v1.CreateLifecyclePolicyRequest\x1a!.yandex.cloud.operation.Operation\"g\x82\xd3\xe4\x93\x02-\"(/container-registry/v1/lifecyclePolicies:\x01*\xb2\xd2*0\n\x1d\x43reateLifecyclePolicyMetadata\x12\x0fLifecyclePolicy\x12\xeb\x01\n\x06Update\x12?.yandex.cloud.containerregistry.v1.UpdateLifecyclePolicyRequest\x1a!.yandex.cloud.operation.Operation\"}\x82\xd3\xe4\x93\x02\x43\x32>/container-registry/v1/lifecyclePolicies/{lifecycle_policy_id}:\x01*\xb2\xd2*0\n\x1dUpdateLifecyclePolicyMetadata\x12\x0fLifecyclePolicy\x12\xef\x01\n\x06\x44\x65lete\x12?.yandex.cloud.containerregistry.v1.DeleteLifecyclePolicyRequest\x1a!.yandex.cloud.operation.Operation\"\x80\x01\x82\xd3\xe4\x93\x02@*>/container-registry/v1/lifecyclePolicies/{lifecycle_policy_id}\xb2\xd2*6\n\x1d\x44\x65leteLifecyclePolicyMetadata\x12\x15google.protobuf.Empty\x12\xfc\x01\n\x06\x44ryRun\x12?.yandex.cloud.containerregistry.v1.DryRunLifecyclePolicyRequest\x1a!.yandex.cloud.operation.Operation\"\x8d\x01\x82\xd3\xe4\x93\x02G\"B/container-registry/v1/dryRunLifecyclePolicy/{lifecycle_policy_id}:\x01*\xb2\xd2*<\n\x1d\x44ryRunLifecyclePolicyMetadata\x12\x1b\x44ryRunLifecyclePolicyResult\x12\xfd\x01\n\x0fGetDryRunResult\x12H.yandex.cloud.containerregistry.v1.GetDryRunLifecyclePolicyResultRequest\x1a>.yandex.cloud.containerregistry.v1.DryRunLifecyclePolicyResult\"`\x82\xd3\xe4\x93\x02Z\x12X/container-registry/v1/dryRunLifecyclePolicyResults/{dry_run_lifecycle_policy_result_id}\x12\xe9\x01\n\x11ListDryRunResults\x12J.yandex.cloud.containerregistry.v1.ListDryRunLifecyclePolicyResultsRequest\x1aK.yandex.cloud.containerregistry.v1.ListDryRunLifecyclePolicyResultsResponse\";\x82\xd3\xe4\x93\x02\x35\x12\x33/container-registry/v1/dryRunLifecyclePolicyResults\x12\xc4\x02\n\x1eListDryRunResultAffectedImages\x12W.yandex.cloud.containerregistry.v1.ListDryRunLifecyclePolicyResultAffectedImagesRequest\x1aX.yandex.cloud.containerregistry.v1.ListDryRunLifecyclePolicyResultAffectedImagesResponse\"o\x82\xd3\xe4\x93\x02i\x12g/container-registry/v1/dryRunLifecyclePolicyResults/{dry_run_lifecycle_policy_result_id}:affectedImagesB\x80\x01\n%yandex.cloud.api.containerregistry.v1ZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/containerregistry/v1;containerregistryb\x06proto3'
-  ,
-  dependencies=[yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_containerregistry_dot_v1_dot_image__pb2.DESCRIPTOR,yandex_dot_cloud_dot_containerregistry_dot_v1_dot_lifecycle__policy__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n@yandex/cloud/containerregistry/v1/lifecycle_policy_service.proto\x12!yandex.cloud.containerregistry.v1\x1a yandex/cloud/api/operation.proto\x1a-yandex/cloud/containerregistry/v1/image.proto\x1a\x38yandex/cloud/containerregistry/v1/lifecycle_policy.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1cgoogle/api/annotations.proto\"F\n\x19GetLifecyclePolicyRequest\x12)\n\x13lifecycle_policy_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xe5\x01\n\x1cListLifecyclePoliciesRequest\x12\x1f\n\x0bregistry_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12!\n\rrepository_id\x18\x06 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1b\n\x08order_by\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=100B\n\n\x02id\x12\x04\xc0\xc1\x31\x01\"\x88\x01\n\x1dListLifecyclePoliciesResponse\x12N\n\x12lifecycle_policies\x18\x01 \x03(\x0b\x32\x32.yandex.cloud.containerregistry.v1.LifecyclePolicy\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xa6\x02\n\x1c\x43reateLifecyclePolicyRequest\x12#\n\rrepository_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12O\n\x06status\x18\x04 \x01(\x0e\x32\x39.yandex.cloud.containerregistry.v1.LifecyclePolicy.StatusB\x04\xe8\xc7\x31\x01\x12?\n\x05rules\x18\x05 \x03(\x0b\x32\x30.yandex.cloud.containerregistry.v1.LifecycleRule\"\xdd\x02\n\x1cUpdateLifecyclePolicyRequest\x12)\n\x13lifecycle_policy_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12O\n\x06status\x18\x05 \x01(\x0e\x32\x39.yandex.cloud.containerregistry.v1.LifecyclePolicy.StatusB\x04\xe8\xc7\x31\x01\x12?\n\x05rules\x18\x06 \x03(\x0b\x32\x30.yandex.cloud.containerregistry.v1.LifecycleRule\"I\n\x1c\x44\x65leteLifecyclePolicyRequest\x12)\n\x13lifecycle_policy_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"<\n\x1d\x43reateLifecyclePolicyMetadata\x12\x1b\n\x13lifecycle_policy_id\x18\x01 \x01(\t\"<\n\x1dUpdateLifecyclePolicyMetadata\x12\x1b\n\x13lifecycle_policy_id\x18\x01 \x01(\t\"<\n\x1d\x44\x65leteLifecyclePolicyMetadata\x12\x1b\n\x13lifecycle_policy_id\x18\x01 \x01(\t\"I\n\x1c\x44ryRunLifecyclePolicyRequest\x12)\n\x13lifecycle_policy_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"h\n\x1d\x44ryRunLifecyclePolicyMetadata\x12*\n\"dry_run_lifecycle_policy_result_id\x18\x01 \x01(\t\x12\x1b\n\x13lifecycle_policy_id\x18\x02 \x01(\t\"\xb1\x01\n\x1b\x44ryRunLifecyclePolicyResult\x12*\n\"dry_run_lifecycle_policy_result_id\x18\x01 \x01(\t\x12\x1b\n\x13lifecycle_policy_id\x18\x02 \x01(\t\x12*\n\x06run_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1d\n\x15\x61\x66\x66\x65\x63ted_images_count\x18\x04 \x01(\x03\"a\n%GetDryRunLifecyclePolicyResultRequest\x12\x38\n\"dry_run_lifecycle_policy_result_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xcb\x01\n\'ListDryRunLifecyclePolicyResultsRequest\x12)\n\x13lifecycle_policy_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1b\n\x08order_by\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=100\"\xad\x01\n(ListDryRunLifecyclePolicyResultsResponse\x12h\n dry_run_lifecycle_policy_results\x18\x01 \x03(\x0b\x32>.yandex.cloud.containerregistry.v1.DryRunLifecyclePolicyResult\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xe7\x01\n4ListDryRunLifecyclePolicyResultAffectedImagesRequest\x12\x38\n\"dry_run_lifecycle_policy_result_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1b\n\x08order_by\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=100\"\x93\x01\n5ListDryRunLifecyclePolicyResultAffectedImagesResponse\x12\x41\n\x0f\x61\x66\x66\x65\x63ted_images\x18\x01 \x03(\x0b\x32(.yandex.cloud.containerregistry.v1.Image\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\x82\x11\n\x16LifecyclePolicyService\x12\xbf\x01\n\x03Get\x12<.yandex.cloud.containerregistry.v1.GetLifecyclePolicyRequest\x1a\x32.yandex.cloud.containerregistry.v1.LifecyclePolicy\"F\x82\xd3\xe4\x93\x02@\x12>/container-registry/v1/lifecyclePolicies/{lifecycle_policy_id}\x12\xbb\x01\n\x04List\x12?.yandex.cloud.containerregistry.v1.ListLifecyclePoliciesRequest\x1a@.yandex.cloud.containerregistry.v1.ListLifecyclePoliciesResponse\"0\x82\xd3\xe4\x93\x02*\x12(/container-registry/v1/lifecyclePolicies\x12\xd5\x01\n\x06\x43reate\x12?.yandex.cloud.containerregistry.v1.CreateLifecyclePolicyRequest\x1a!.yandex.cloud.operation.Operation\"g\xb2\xd2*0\n\x1d\x43reateLifecyclePolicyMetadata\x12\x0fLifecyclePolicy\x82\xd3\xe4\x93\x02-\"(/container-registry/v1/lifecyclePolicies:\x01*\x12\xeb\x01\n\x06Update\x12?.yandex.cloud.containerregistry.v1.UpdateLifecyclePolicyRequest\x1a!.yandex.cloud.operation.Operation\"}\xb2\xd2*0\n\x1dUpdateLifecyclePolicyMetadata\x12\x0fLifecyclePolicy\x82\xd3\xe4\x93\x02\x43\x32>/container-registry/v1/lifecyclePolicies/{lifecycle_policy_id}:\x01*\x12\xef\x01\n\x06\x44\x65lete\x12?.yandex.cloud.containerregistry.v1.DeleteLifecyclePolicyRequest\x1a!.yandex.cloud.operation.Operation\"\x80\x01\xb2\xd2*6\n\x1d\x44\x65leteLifecyclePolicyMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02@*>/container-registry/v1/lifecyclePolicies/{lifecycle_policy_id}\x12\xfc\x01\n\x06\x44ryRun\x12?.yandex.cloud.containerregistry.v1.DryRunLifecyclePolicyRequest\x1a!.yandex.cloud.operation.Operation\"\x8d\x01\xb2\xd2*<\n\x1d\x44ryRunLifecyclePolicyMetadata\x12\x1b\x44ryRunLifecyclePolicyResult\x82\xd3\xe4\x93\x02G\"B/container-registry/v1/dryRunLifecyclePolicy/{lifecycle_policy_id}:\x01*\x12\xfd\x01\n\x0fGetDryRunResult\x12H.yandex.cloud.containerregistry.v1.GetDryRunLifecyclePolicyResultRequest\x1a>.yandex.cloud.containerregistry.v1.DryRunLifecyclePolicyResult\"`\x82\xd3\xe4\x93\x02Z\x12X/container-registry/v1/dryRunLifecyclePolicyResults/{dry_run_lifecycle_policy_result_id}\x12\xe9\x01\n\x11ListDryRunResults\x12J.yandex.cloud.containerregistry.v1.ListDryRunLifecyclePolicyResultsRequest\x1aK.yandex.cloud.containerregistry.v1.ListDryRunLifecyclePolicyResultsResponse\";\x82\xd3\xe4\x93\x02\x35\x12\x33/container-registry/v1/dryRunLifecyclePolicyResults\x12\xc4\x02\n\x1eListDryRunResultAffectedImages\x12W.yandex.cloud.containerregistry.v1.ListDryRunLifecyclePolicyResultAffectedImagesRequest\x1aX.yandex.cloud.containerregistry.v1.ListDryRunLifecyclePolicyResultAffectedImagesResponse\"o\x82\xd3\xe4\x93\x02i\x12g/container-registry/v1/dryRunLifecyclePolicyResults/{dry_run_lifecycle_policy_result_id}:affectedImagesB\x80\x01\n%yandex.cloud.api.containerregistry.v1ZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/containerregistry/v1;containerregistryb\x06proto3')
 
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.containerregistry.v1.lifecycle_policy_service_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-
-_GETLIFECYCLEPOLICYREQUEST = _descriptor.Descriptor(
-  name='GetLifecyclePolicyRequest',
-  full_name='yandex.cloud.containerregistry.v1.GetLifecyclePolicyRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='lifecycle_policy_id', full_name='yandex.cloud.containerregistry.v1.GetLifecyclePolicyRequest.lifecycle_policy_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=410,
-  serialized_end=480,
-)
-
-
-_LISTLIFECYCLEPOLICIESREQUEST = _descriptor.Descriptor(
-  name='ListLifecyclePoliciesRequest',
-  full_name='yandex.cloud.containerregistry.v1.ListLifecyclePoliciesRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='registry_id', full_name='yandex.cloud.containerregistry.v1.ListLifecyclePoliciesRequest.registry_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='repository_id', full_name='yandex.cloud.containerregistry.v1.ListLifecyclePoliciesRequest.repository_id', index=1,
-      number=6, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.containerregistry.v1.ListLifecyclePoliciesRequest.page_size', index=2,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\0060-1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.containerregistry.v1.ListLifecyclePoliciesRequest.page_token', index=3,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='filter', full_name='yandex.cloud.containerregistry.v1.ListLifecyclePoliciesRequest.filter', index=4,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='order_by', full_name='yandex.cloud.containerregistry.v1.ListLifecyclePoliciesRequest.order_by', index=5,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-    _descriptor.OneofDescriptor(
-      name='id', full_name='yandex.cloud.containerregistry.v1.ListLifecyclePoliciesRequest.id',
-      index=0, containing_type=None,
-      create_key=_descriptor._internal_create_key,
-    fields=[], serialized_options=b'\300\3011\001'),
-  ],
-  serialized_start=483,
-  serialized_end=712,
-)
-
-
-_LISTLIFECYCLEPOLICIESRESPONSE = _descriptor.Descriptor(
-  name='ListLifecyclePoliciesResponse',
-  full_name='yandex.cloud.containerregistry.v1.ListLifecyclePoliciesResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='lifecycle_policies', full_name='yandex.cloud.containerregistry.v1.ListLifecyclePoliciesResponse.lifecycle_policies', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.containerregistry.v1.ListLifecyclePoliciesResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=715,
-  serialized_end=851,
-)
-
-
-_CREATELIFECYCLEPOLICYREQUEST = _descriptor.Descriptor(
-  name='CreateLifecyclePolicyRequest',
-  full_name='yandex.cloud.containerregistry.v1.CreateLifecyclePolicyRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='repository_id', full_name='yandex.cloud.containerregistry.v1.CreateLifecyclePolicyRequest.repository_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.containerregistry.v1.CreateLifecyclePolicyRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='yandex.cloud.containerregistry.v1.CreateLifecyclePolicyRequest.description', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='status', full_name='yandex.cloud.containerregistry.v1.CreateLifecyclePolicyRequest.status', index=3,
-      number=4, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='rules', full_name='yandex.cloud.containerregistry.v1.CreateLifecyclePolicyRequest.rules', index=4,
-      number=5, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=854,
-  serialized_end=1148,
-)
-
-
-_UPDATELIFECYCLEPOLICYREQUEST = _descriptor.Descriptor(
-  name='UpdateLifecyclePolicyRequest',
-  full_name='yandex.cloud.containerregistry.v1.UpdateLifecyclePolicyRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='lifecycle_policy_id', full_name='yandex.cloud.containerregistry.v1.UpdateLifecyclePolicyRequest.lifecycle_policy_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='update_mask', full_name='yandex.cloud.containerregistry.v1.UpdateLifecyclePolicyRequest.update_mask', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.containerregistry.v1.UpdateLifecyclePolicyRequest.name', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='yandex.cloud.containerregistry.v1.UpdateLifecyclePolicyRequest.description', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='status', full_name='yandex.cloud.containerregistry.v1.UpdateLifecyclePolicyRequest.status', index=4,
-      number=5, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='rules', full_name='yandex.cloud.containerregistry.v1.UpdateLifecyclePolicyRequest.rules', index=5,
-      number=6, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1151,
-  serialized_end=1500,
-)
-
-
-_DELETELIFECYCLEPOLICYREQUEST = _descriptor.Descriptor(
-  name='DeleteLifecyclePolicyRequest',
-  full_name='yandex.cloud.containerregistry.v1.DeleteLifecyclePolicyRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='lifecycle_policy_id', full_name='yandex.cloud.containerregistry.v1.DeleteLifecyclePolicyRequest.lifecycle_policy_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1502,
-  serialized_end=1575,
-)
-
-
-_CREATELIFECYCLEPOLICYMETADATA = _descriptor.Descriptor(
-  name='CreateLifecyclePolicyMetadata',
-  full_name='yandex.cloud.containerregistry.v1.CreateLifecyclePolicyMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='lifecycle_policy_id', full_name='yandex.cloud.containerregistry.v1.CreateLifecyclePolicyMetadata.lifecycle_policy_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1577,
-  serialized_end=1637,
-)
-
-
-_UPDATELIFECYCLEPOLICYMETADATA = _descriptor.Descriptor(
-  name='UpdateLifecyclePolicyMetadata',
-  full_name='yandex.cloud.containerregistry.v1.UpdateLifecyclePolicyMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='lifecycle_policy_id', full_name='yandex.cloud.containerregistry.v1.UpdateLifecyclePolicyMetadata.lifecycle_policy_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1639,
-  serialized_end=1699,
-)
-
-
-_DELETELIFECYCLEPOLICYMETADATA = _descriptor.Descriptor(
-  name='DeleteLifecyclePolicyMetadata',
-  full_name='yandex.cloud.containerregistry.v1.DeleteLifecyclePolicyMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='lifecycle_policy_id', full_name='yandex.cloud.containerregistry.v1.DeleteLifecyclePolicyMetadata.lifecycle_policy_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1701,
-  serialized_end=1761,
-)
-
-
-_DRYRUNLIFECYCLEPOLICYREQUEST = _descriptor.Descriptor(
-  name='DryRunLifecyclePolicyRequest',
-  full_name='yandex.cloud.containerregistry.v1.DryRunLifecyclePolicyRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='lifecycle_policy_id', full_name='yandex.cloud.containerregistry.v1.DryRunLifecyclePolicyRequest.lifecycle_policy_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1763,
-  serialized_end=1836,
-)
-
-
-_DRYRUNLIFECYCLEPOLICYMETADATA = _descriptor.Descriptor(
-  name='DryRunLifecyclePolicyMetadata',
-  full_name='yandex.cloud.containerregistry.v1.DryRunLifecyclePolicyMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='dry_run_lifecycle_policy_result_id', full_name='yandex.cloud.containerregistry.v1.DryRunLifecyclePolicyMetadata.dry_run_lifecycle_policy_result_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='lifecycle_policy_id', full_name='yandex.cloud.containerregistry.v1.DryRunLifecyclePolicyMetadata.lifecycle_policy_id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1838,
-  serialized_end=1942,
-)
-
-
-_DRYRUNLIFECYCLEPOLICYRESULT = _descriptor.Descriptor(
-  name='DryRunLifecyclePolicyResult',
-  full_name='yandex.cloud.containerregistry.v1.DryRunLifecyclePolicyResult',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='dry_run_lifecycle_policy_result_id', full_name='yandex.cloud.containerregistry.v1.DryRunLifecyclePolicyResult.dry_run_lifecycle_policy_result_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='lifecycle_policy_id', full_name='yandex.cloud.containerregistry.v1.DryRunLifecyclePolicyResult.lifecycle_policy_id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='run_at', full_name='yandex.cloud.containerregistry.v1.DryRunLifecyclePolicyResult.run_at', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='affected_images_count', full_name='yandex.cloud.containerregistry.v1.DryRunLifecyclePolicyResult.affected_images_count', index=3,
-      number=4, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1945,
-  serialized_end=2122,
-)
-
-
-_GETDRYRUNLIFECYCLEPOLICYRESULTREQUEST = _descriptor.Descriptor(
-  name='GetDryRunLifecyclePolicyResultRequest',
-  full_name='yandex.cloud.containerregistry.v1.GetDryRunLifecyclePolicyResultRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='dry_run_lifecycle_policy_result_id', full_name='yandex.cloud.containerregistry.v1.GetDryRunLifecyclePolicyResultRequest.dry_run_lifecycle_policy_result_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2124,
-  serialized_end=2221,
-)
-
-
-_LISTDRYRUNLIFECYCLEPOLICYRESULTSREQUEST = _descriptor.Descriptor(
-  name='ListDryRunLifecyclePolicyResultsRequest',
-  full_name='yandex.cloud.containerregistry.v1.ListDryRunLifecyclePolicyResultsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='lifecycle_policy_id', full_name='yandex.cloud.containerregistry.v1.ListDryRunLifecyclePolicyResultsRequest.lifecycle_policy_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.containerregistry.v1.ListDryRunLifecyclePolicyResultsRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\0060-1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.containerregistry.v1.ListDryRunLifecyclePolicyResultsRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='filter', full_name='yandex.cloud.containerregistry.v1.ListDryRunLifecyclePolicyResultsRequest.filter', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='order_by', full_name='yandex.cloud.containerregistry.v1.ListDryRunLifecyclePolicyResultsRequest.order_by', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2224,
-  serialized_end=2427,
-)
-
-
-_LISTDRYRUNLIFECYCLEPOLICYRESULTSRESPONSE = _descriptor.Descriptor(
-  name='ListDryRunLifecyclePolicyResultsResponse',
-  full_name='yandex.cloud.containerregistry.v1.ListDryRunLifecyclePolicyResultsResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='dry_run_lifecycle_policy_results', full_name='yandex.cloud.containerregistry.v1.ListDryRunLifecyclePolicyResultsResponse.dry_run_lifecycle_policy_results', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.containerregistry.v1.ListDryRunLifecyclePolicyResultsResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2430,
-  serialized_end=2603,
-)
-
-
-_LISTDRYRUNLIFECYCLEPOLICYRESULTAFFECTEDIMAGESREQUEST = _descriptor.Descriptor(
-  name='ListDryRunLifecyclePolicyResultAffectedImagesRequest',
-  full_name='yandex.cloud.containerregistry.v1.ListDryRunLifecyclePolicyResultAffectedImagesRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='dry_run_lifecycle_policy_result_id', full_name='yandex.cloud.containerregistry.v1.ListDryRunLifecyclePolicyResultAffectedImagesRequest.dry_run_lifecycle_policy_result_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.containerregistry.v1.ListDryRunLifecyclePolicyResultAffectedImagesRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\0060-1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.containerregistry.v1.ListDryRunLifecyclePolicyResultAffectedImagesRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='filter', full_name='yandex.cloud.containerregistry.v1.ListDryRunLifecyclePolicyResultAffectedImagesRequest.filter', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='order_by', full_name='yandex.cloud.containerregistry.v1.ListDryRunLifecyclePolicyResultAffectedImagesRequest.order_by', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2606,
-  serialized_end=2837,
-)
-
-
-_LISTDRYRUNLIFECYCLEPOLICYRESULTAFFECTEDIMAGESRESPONSE = _descriptor.Descriptor(
-  name='ListDryRunLifecyclePolicyResultAffectedImagesResponse',
-  full_name='yandex.cloud.containerregistry.v1.ListDryRunLifecyclePolicyResultAffectedImagesResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='affected_images', full_name='yandex.cloud.containerregistry.v1.ListDryRunLifecyclePolicyResultAffectedImagesResponse.affected_images', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.containerregistry.v1.ListDryRunLifecyclePolicyResultAffectedImagesResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2840,
-  serialized_end=2987,
-)
-
-_LISTLIFECYCLEPOLICIESREQUEST.oneofs_by_name['id'].fields.append(
-  _LISTLIFECYCLEPOLICIESREQUEST.fields_by_name['registry_id'])
-_LISTLIFECYCLEPOLICIESREQUEST.fields_by_name['registry_id'].containing_oneof = _LISTLIFECYCLEPOLICIESREQUEST.oneofs_by_name['id']
-_LISTLIFECYCLEPOLICIESREQUEST.oneofs_by_name['id'].fields.append(
-  _LISTLIFECYCLEPOLICIESREQUEST.fields_by_name['repository_id'])
-_LISTLIFECYCLEPOLICIESREQUEST.fields_by_name['repository_id'].containing_oneof = _LISTLIFECYCLEPOLICIESREQUEST.oneofs_by_name['id']
-_LISTLIFECYCLEPOLICIESRESPONSE.fields_by_name['lifecycle_policies'].message_type = yandex_dot_cloud_dot_containerregistry_dot_v1_dot_lifecycle__policy__pb2._LIFECYCLEPOLICY
-_CREATELIFECYCLEPOLICYREQUEST.fields_by_name['status'].enum_type = yandex_dot_cloud_dot_containerregistry_dot_v1_dot_lifecycle__policy__pb2._LIFECYCLEPOLICY_STATUS
-_CREATELIFECYCLEPOLICYREQUEST.fields_by_name['rules'].message_type = yandex_dot_cloud_dot_containerregistry_dot_v1_dot_lifecycle__policy__pb2._LIFECYCLERULE
-_UPDATELIFECYCLEPOLICYREQUEST.fields_by_name['update_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
-_UPDATELIFECYCLEPOLICYREQUEST.fields_by_name['status'].enum_type = yandex_dot_cloud_dot_containerregistry_dot_v1_dot_lifecycle__policy__pb2._LIFECYCLEPOLICY_STATUS
-_UPDATELIFECYCLEPOLICYREQUEST.fields_by_name['rules'].message_type = yandex_dot_cloud_dot_containerregistry_dot_v1_dot_lifecycle__policy__pb2._LIFECYCLERULE
-_DRYRUNLIFECYCLEPOLICYRESULT.fields_by_name['run_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
-_LISTDRYRUNLIFECYCLEPOLICYRESULTSRESPONSE.fields_by_name['dry_run_lifecycle_policy_results'].message_type = _DRYRUNLIFECYCLEPOLICYRESULT
-_LISTDRYRUNLIFECYCLEPOLICYRESULTAFFECTEDIMAGESRESPONSE.fields_by_name['affected_images'].message_type = yandex_dot_cloud_dot_containerregistry_dot_v1_dot_image__pb2._IMAGE
-DESCRIPTOR.message_types_by_name['GetLifecyclePolicyRequest'] = _GETLIFECYCLEPOLICYREQUEST
-DESCRIPTOR.message_types_by_name['ListLifecyclePoliciesRequest'] = _LISTLIFECYCLEPOLICIESREQUEST
-DESCRIPTOR.message_types_by_name['ListLifecyclePoliciesResponse'] = _LISTLIFECYCLEPOLICIESRESPONSE
-DESCRIPTOR.message_types_by_name['CreateLifecyclePolicyRequest'] = _CREATELIFECYCLEPOLICYREQUEST
-DESCRIPTOR.message_types_by_name['UpdateLifecyclePolicyRequest'] = _UPDATELIFECYCLEPOLICYREQUEST
-DESCRIPTOR.message_types_by_name['DeleteLifecyclePolicyRequest'] = _DELETELIFECYCLEPOLICYREQUEST
-DESCRIPTOR.message_types_by_name['CreateLifecyclePolicyMetadata'] = _CREATELIFECYCLEPOLICYMETADATA
-DESCRIPTOR.message_types_by_name['UpdateLifecyclePolicyMetadata'] = _UPDATELIFECYCLEPOLICYMETADATA
-DESCRIPTOR.message_types_by_name['DeleteLifecyclePolicyMetadata'] = _DELETELIFECYCLEPOLICYMETADATA
-DESCRIPTOR.message_types_by_name['DryRunLifecyclePolicyRequest'] = _DRYRUNLIFECYCLEPOLICYREQUEST
-DESCRIPTOR.message_types_by_name['DryRunLifecyclePolicyMetadata'] = _DRYRUNLIFECYCLEPOLICYMETADATA
-DESCRIPTOR.message_types_by_name['DryRunLifecyclePolicyResult'] = _DRYRUNLIFECYCLEPOLICYRESULT
-DESCRIPTOR.message_types_by_name['GetDryRunLifecyclePolicyResultRequest'] = _GETDRYRUNLIFECYCLEPOLICYRESULTREQUEST
-DESCRIPTOR.message_types_by_name['ListDryRunLifecyclePolicyResultsRequest'] = _LISTDRYRUNLIFECYCLEPOLICYRESULTSREQUEST
-DESCRIPTOR.message_types_by_name['ListDryRunLifecyclePolicyResultsResponse'] = _LISTDRYRUNLIFECYCLEPOLICYRESULTSRESPONSE
-DESCRIPTOR.message_types_by_name['ListDryRunLifecyclePolicyResultAffectedImagesRequest'] = _LISTDRYRUNLIFECYCLEPOLICYRESULTAFFECTEDIMAGESREQUEST
-DESCRIPTOR.message_types_by_name['ListDryRunLifecyclePolicyResultAffectedImagesResponse'] = _LISTDRYRUNLIFECYCLEPOLICYRESULTAFFECTEDIMAGESRESPONSE
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-GetLifecyclePolicyRequest = _reflection.GeneratedProtocolMessageType('GetLifecyclePolicyRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETLIFECYCLEPOLICYREQUEST,
-  '__module__' : 'yandex.cloud.containerregistry.v1.lifecycle_policy_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.GetLifecyclePolicyRequest)
-  })
-_sym_db.RegisterMessage(GetLifecyclePolicyRequest)
-
-ListLifecyclePoliciesRequest = _reflection.GeneratedProtocolMessageType('ListLifecyclePoliciesRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTLIFECYCLEPOLICIESREQUEST,
-  '__module__' : 'yandex.cloud.containerregistry.v1.lifecycle_policy_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.ListLifecyclePoliciesRequest)
-  })
-_sym_db.RegisterMessage(ListLifecyclePoliciesRequest)
-
-ListLifecyclePoliciesResponse = _reflection.GeneratedProtocolMessageType('ListLifecyclePoliciesResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTLIFECYCLEPOLICIESRESPONSE,
-  '__module__' : 'yandex.cloud.containerregistry.v1.lifecycle_policy_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.ListLifecyclePoliciesResponse)
-  })
-_sym_db.RegisterMessage(ListLifecyclePoliciesResponse)
-
-CreateLifecyclePolicyRequest = _reflection.GeneratedProtocolMessageType('CreateLifecyclePolicyRequest', (_message.Message,), {
-  'DESCRIPTOR' : _CREATELIFECYCLEPOLICYREQUEST,
-  '__module__' : 'yandex.cloud.containerregistry.v1.lifecycle_policy_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.CreateLifecyclePolicyRequest)
-  })
-_sym_db.RegisterMessage(CreateLifecyclePolicyRequest)
-
-UpdateLifecyclePolicyRequest = _reflection.GeneratedProtocolMessageType('UpdateLifecyclePolicyRequest', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATELIFECYCLEPOLICYREQUEST,
-  '__module__' : 'yandex.cloud.containerregistry.v1.lifecycle_policy_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.UpdateLifecyclePolicyRequest)
-  })
-_sym_db.RegisterMessage(UpdateLifecyclePolicyRequest)
-
-DeleteLifecyclePolicyRequest = _reflection.GeneratedProtocolMessageType('DeleteLifecyclePolicyRequest', (_message.Message,), {
-  'DESCRIPTOR' : _DELETELIFECYCLEPOLICYREQUEST,
-  '__module__' : 'yandex.cloud.containerregistry.v1.lifecycle_policy_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.DeleteLifecyclePolicyRequest)
-  })
-_sym_db.RegisterMessage(DeleteLifecyclePolicyRequest)
-
-CreateLifecyclePolicyMetadata = _reflection.GeneratedProtocolMessageType('CreateLifecyclePolicyMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _CREATELIFECYCLEPOLICYMETADATA,
-  '__module__' : 'yandex.cloud.containerregistry.v1.lifecycle_policy_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.CreateLifecyclePolicyMetadata)
-  })
-_sym_db.RegisterMessage(CreateLifecyclePolicyMetadata)
-
-UpdateLifecyclePolicyMetadata = _reflection.GeneratedProtocolMessageType('UpdateLifecyclePolicyMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATELIFECYCLEPOLICYMETADATA,
-  '__module__' : 'yandex.cloud.containerregistry.v1.lifecycle_policy_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.UpdateLifecyclePolicyMetadata)
-  })
-_sym_db.RegisterMessage(UpdateLifecyclePolicyMetadata)
-
-DeleteLifecyclePolicyMetadata = _reflection.GeneratedProtocolMessageType('DeleteLifecyclePolicyMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _DELETELIFECYCLEPOLICYMETADATA,
-  '__module__' : 'yandex.cloud.containerregistry.v1.lifecycle_policy_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.DeleteLifecyclePolicyMetadata)
-  })
-_sym_db.RegisterMessage(DeleteLifecyclePolicyMetadata)
-
-DryRunLifecyclePolicyRequest = _reflection.GeneratedProtocolMessageType('DryRunLifecyclePolicyRequest', (_message.Message,), {
-  'DESCRIPTOR' : _DRYRUNLIFECYCLEPOLICYREQUEST,
-  '__module__' : 'yandex.cloud.containerregistry.v1.lifecycle_policy_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.DryRunLifecyclePolicyRequest)
-  })
-_sym_db.RegisterMessage(DryRunLifecyclePolicyRequest)
-
-DryRunLifecyclePolicyMetadata = _reflection.GeneratedProtocolMessageType('DryRunLifecyclePolicyMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _DRYRUNLIFECYCLEPOLICYMETADATA,
-  '__module__' : 'yandex.cloud.containerregistry.v1.lifecycle_policy_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.DryRunLifecyclePolicyMetadata)
-  })
-_sym_db.RegisterMessage(DryRunLifecyclePolicyMetadata)
-
-DryRunLifecyclePolicyResult = _reflection.GeneratedProtocolMessageType('DryRunLifecyclePolicyResult', (_message.Message,), {
-  'DESCRIPTOR' : _DRYRUNLIFECYCLEPOLICYRESULT,
-  '__module__' : 'yandex.cloud.containerregistry.v1.lifecycle_policy_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.DryRunLifecyclePolicyResult)
-  })
-_sym_db.RegisterMessage(DryRunLifecyclePolicyResult)
-
-GetDryRunLifecyclePolicyResultRequest = _reflection.GeneratedProtocolMessageType('GetDryRunLifecyclePolicyResultRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETDRYRUNLIFECYCLEPOLICYRESULTREQUEST,
-  '__module__' : 'yandex.cloud.containerregistry.v1.lifecycle_policy_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.GetDryRunLifecyclePolicyResultRequest)
-  })
-_sym_db.RegisterMessage(GetDryRunLifecyclePolicyResultRequest)
-
-ListDryRunLifecyclePolicyResultsRequest = _reflection.GeneratedProtocolMessageType('ListDryRunLifecyclePolicyResultsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTDRYRUNLIFECYCLEPOLICYRESULTSREQUEST,
-  '__module__' : 'yandex.cloud.containerregistry.v1.lifecycle_policy_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.ListDryRunLifecyclePolicyResultsRequest)
-  })
-_sym_db.RegisterMessage(ListDryRunLifecyclePolicyResultsRequest)
-
-ListDryRunLifecyclePolicyResultsResponse = _reflection.GeneratedProtocolMessageType('ListDryRunLifecyclePolicyResultsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTDRYRUNLIFECYCLEPOLICYRESULTSRESPONSE,
-  '__module__' : 'yandex.cloud.containerregistry.v1.lifecycle_policy_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.ListDryRunLifecyclePolicyResultsResponse)
-  })
-_sym_db.RegisterMessage(ListDryRunLifecyclePolicyResultsResponse)
-
-ListDryRunLifecyclePolicyResultAffectedImagesRequest = _reflection.GeneratedProtocolMessageType('ListDryRunLifecyclePolicyResultAffectedImagesRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTDRYRUNLIFECYCLEPOLICYRESULTAFFECTEDIMAGESREQUEST,
-  '__module__' : 'yandex.cloud.containerregistry.v1.lifecycle_policy_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.ListDryRunLifecyclePolicyResultAffectedImagesRequest)
-  })
-_sym_db.RegisterMessage(ListDryRunLifecyclePolicyResultAffectedImagesRequest)
-
-ListDryRunLifecyclePolicyResultAffectedImagesResponse = _reflection.GeneratedProtocolMessageType('ListDryRunLifecyclePolicyResultAffectedImagesResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTDRYRUNLIFECYCLEPOLICYRESULTAFFECTEDIMAGESRESPONSE,
-  '__module__' : 'yandex.cloud.containerregistry.v1.lifecycle_policy_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.ListDryRunLifecyclePolicyResultAffectedImagesResponse)
-  })
-_sym_db.RegisterMessage(ListDryRunLifecyclePolicyResultAffectedImagesResponse)
-
-
-DESCRIPTOR._options = None
-_GETLIFECYCLEPOLICYREQUEST.fields_by_name['lifecycle_policy_id']._options = None
-_LISTLIFECYCLEPOLICIESREQUEST.oneofs_by_name['id']._options = None
-_LISTLIFECYCLEPOLICIESREQUEST.fields_by_name['registry_id']._options = None
-_LISTLIFECYCLEPOLICIESREQUEST.fields_by_name['repository_id']._options = None
-_LISTLIFECYCLEPOLICIESREQUEST.fields_by_name['page_size']._options = None
-_LISTLIFECYCLEPOLICIESREQUEST.fields_by_name['page_token']._options = None
-_LISTLIFECYCLEPOLICIESREQUEST.fields_by_name['filter']._options = None
-_LISTLIFECYCLEPOLICIESREQUEST.fields_by_name['order_by']._options = None
-_CREATELIFECYCLEPOLICYREQUEST.fields_by_name['repository_id']._options = None
-_CREATELIFECYCLEPOLICYREQUEST.fields_by_name['name']._options = None
-_CREATELIFECYCLEPOLICYREQUEST.fields_by_name['description']._options = None
-_CREATELIFECYCLEPOLICYREQUEST.fields_by_name['status']._options = None
-_UPDATELIFECYCLEPOLICYREQUEST.fields_by_name['lifecycle_policy_id']._options = None
-_UPDATELIFECYCLEPOLICYREQUEST.fields_by_name['name']._options = None
-_UPDATELIFECYCLEPOLICYREQUEST.fields_by_name['description']._options = None
-_UPDATELIFECYCLEPOLICYREQUEST.fields_by_name['status']._options = None
-_DELETELIFECYCLEPOLICYREQUEST.fields_by_name['lifecycle_policy_id']._options = None
-_DRYRUNLIFECYCLEPOLICYREQUEST.fields_by_name['lifecycle_policy_id']._options = None
-_GETDRYRUNLIFECYCLEPOLICYRESULTREQUEST.fields_by_name['dry_run_lifecycle_policy_result_id']._options = None
-_LISTDRYRUNLIFECYCLEPOLICYRESULTSREQUEST.fields_by_name['lifecycle_policy_id']._options = None
-_LISTDRYRUNLIFECYCLEPOLICYRESULTSREQUEST.fields_by_name['page_size']._options = None
-_LISTDRYRUNLIFECYCLEPOLICYRESULTSREQUEST.fields_by_name['page_token']._options = None
-_LISTDRYRUNLIFECYCLEPOLICYRESULTSREQUEST.fields_by_name['filter']._options = None
-_LISTDRYRUNLIFECYCLEPOLICYRESULTSREQUEST.fields_by_name['order_by']._options = None
-_LISTDRYRUNLIFECYCLEPOLICYRESULTAFFECTEDIMAGESREQUEST.fields_by_name['dry_run_lifecycle_policy_result_id']._options = None
-_LISTDRYRUNLIFECYCLEPOLICYRESULTAFFECTEDIMAGESREQUEST.fields_by_name['page_size']._options = None
-_LISTDRYRUNLIFECYCLEPOLICYRESULTAFFECTEDIMAGESREQUEST.fields_by_name['page_token']._options = None
-_LISTDRYRUNLIFECYCLEPOLICYRESULTAFFECTEDIMAGESREQUEST.fields_by_name['filter']._options = None
-_LISTDRYRUNLIFECYCLEPOLICYRESULTAFFECTEDIMAGESREQUEST.fields_by_name['order_by']._options = None
-
-_LIFECYCLEPOLICYSERVICE = _descriptor.ServiceDescriptor(
-  name='LifecyclePolicyService',
-  full_name='yandex.cloud.containerregistry.v1.LifecyclePolicyService',
-  file=DESCRIPTOR,
-  index=0,
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_start=2990,
-  serialized_end=5168,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='Get',
-    full_name='yandex.cloud.containerregistry.v1.LifecyclePolicyService.Get',
-    index=0,
-    containing_service=None,
-    input_type=_GETLIFECYCLEPOLICYREQUEST,
-    output_type=yandex_dot_cloud_dot_containerregistry_dot_v1_dot_lifecycle__policy__pb2._LIFECYCLEPOLICY,
-    serialized_options=b'\202\323\344\223\002@\022>/container-registry/v1/lifecyclePolicies/{lifecycle_policy_id}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='List',
-    full_name='yandex.cloud.containerregistry.v1.LifecyclePolicyService.List',
-    index=1,
-    containing_service=None,
-    input_type=_LISTLIFECYCLEPOLICIESREQUEST,
-    output_type=_LISTLIFECYCLEPOLICIESRESPONSE,
-    serialized_options=b'\202\323\344\223\002*\022(/container-registry/v1/lifecyclePolicies',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Create',
-    full_name='yandex.cloud.containerregistry.v1.LifecyclePolicyService.Create',
-    index=2,
-    containing_service=None,
-    input_type=_CREATELIFECYCLEPOLICYREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002-\"(/container-registry/v1/lifecyclePolicies:\001*\262\322*0\n\035CreateLifecyclePolicyMetadata\022\017LifecyclePolicy',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Update',
-    full_name='yandex.cloud.containerregistry.v1.LifecyclePolicyService.Update',
-    index=3,
-    containing_service=None,
-    input_type=_UPDATELIFECYCLEPOLICYREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002C2>/container-registry/v1/lifecyclePolicies/{lifecycle_policy_id}:\001*\262\322*0\n\035UpdateLifecyclePolicyMetadata\022\017LifecyclePolicy',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Delete',
-    full_name='yandex.cloud.containerregistry.v1.LifecyclePolicyService.Delete',
-    index=4,
-    containing_service=None,
-    input_type=_DELETELIFECYCLEPOLICYREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002@*>/container-registry/v1/lifecyclePolicies/{lifecycle_policy_id}\262\322*6\n\035DeleteLifecyclePolicyMetadata\022\025google.protobuf.Empty',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='DryRun',
-    full_name='yandex.cloud.containerregistry.v1.LifecyclePolicyService.DryRun',
-    index=5,
-    containing_service=None,
-    input_type=_DRYRUNLIFECYCLEPOLICYREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002G\"B/container-registry/v1/dryRunLifecyclePolicy/{lifecycle_policy_id}:\001*\262\322*<\n\035DryRunLifecyclePolicyMetadata\022\033DryRunLifecyclePolicyResult',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='GetDryRunResult',
-    full_name='yandex.cloud.containerregistry.v1.LifecyclePolicyService.GetDryRunResult',
-    index=6,
-    containing_service=None,
-    input_type=_GETDRYRUNLIFECYCLEPOLICYRESULTREQUEST,
-    output_type=_DRYRUNLIFECYCLEPOLICYRESULT,
-    serialized_options=b'\202\323\344\223\002Z\022X/container-registry/v1/dryRunLifecyclePolicyResults/{dry_run_lifecycle_policy_result_id}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListDryRunResults',
-    full_name='yandex.cloud.containerregistry.v1.LifecyclePolicyService.ListDryRunResults',
-    index=7,
-    containing_service=None,
-    input_type=_LISTDRYRUNLIFECYCLEPOLICYRESULTSREQUEST,
-    output_type=_LISTDRYRUNLIFECYCLEPOLICYRESULTSRESPONSE,
-    serialized_options=b'\202\323\344\223\0025\0223/container-registry/v1/dryRunLifecyclePolicyResults',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListDryRunResultAffectedImages',
-    full_name='yandex.cloud.containerregistry.v1.LifecyclePolicyService.ListDryRunResultAffectedImages',
-    index=8,
-    containing_service=None,
-    input_type=_LISTDRYRUNLIFECYCLEPOLICYRESULTAFFECTEDIMAGESREQUEST,
-    output_type=_LISTDRYRUNLIFECYCLEPOLICYRESULTAFFECTEDIMAGESRESPONSE,
-    serialized_options=b'\202\323\344\223\002i\022g/container-registry/v1/dryRunLifecyclePolicyResults/{dry_run_lifecycle_policy_result_id}:affectedImages',
-    create_key=_descriptor._internal_create_key,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_LIFECYCLEPOLICYSERVICE)
-
-DESCRIPTOR.services_by_name['LifecyclePolicyService'] = _LIFECYCLEPOLICYSERVICE
-
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n%yandex.cloud.api.containerregistry.v1ZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/containerregistry/v1;containerregistry'
+  _GETLIFECYCLEPOLICYREQUEST.fields_by_name['lifecycle_policy_id']._options = None
+  _GETLIFECYCLEPOLICYREQUEST.fields_by_name['lifecycle_policy_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTLIFECYCLEPOLICIESREQUEST.oneofs_by_name['id']._options = None
+  _LISTLIFECYCLEPOLICIESREQUEST.oneofs_by_name['id']._serialized_options = b'\300\3011\001'
+  _LISTLIFECYCLEPOLICIESREQUEST.fields_by_name['registry_id']._options = None
+  _LISTLIFECYCLEPOLICIESREQUEST.fields_by_name['registry_id']._serialized_options = b'\212\3101\004<=50'
+  _LISTLIFECYCLEPOLICIESREQUEST.fields_by_name['repository_id']._options = None
+  _LISTLIFECYCLEPOLICIESREQUEST.fields_by_name['repository_id']._serialized_options = b'\212\3101\004<=50'
+  _LISTLIFECYCLEPOLICIESREQUEST.fields_by_name['page_size']._options = None
+  _LISTLIFECYCLEPOLICIESREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\0060-1000'
+  _LISTLIFECYCLEPOLICIESREQUEST.fields_by_name['page_token']._options = None
+  _LISTLIFECYCLEPOLICIESREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
+  _LISTLIFECYCLEPOLICIESREQUEST.fields_by_name['filter']._options = None
+  _LISTLIFECYCLEPOLICIESREQUEST.fields_by_name['filter']._serialized_options = b'\212\3101\006<=1000'
+  _LISTLIFECYCLEPOLICIESREQUEST.fields_by_name['order_by']._options = None
+  _LISTLIFECYCLEPOLICIESREQUEST.fields_by_name['order_by']._serialized_options = b'\212\3101\005<=100'
+  _CREATELIFECYCLEPOLICYREQUEST.fields_by_name['repository_id']._options = None
+  _CREATELIFECYCLEPOLICYREQUEST.fields_by_name['repository_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _CREATELIFECYCLEPOLICYREQUEST.fields_by_name['name']._options = None
+  _CREATELIFECYCLEPOLICYREQUEST.fields_by_name['name']._serialized_options = b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'
+  _CREATELIFECYCLEPOLICYREQUEST.fields_by_name['description']._options = None
+  _CREATELIFECYCLEPOLICYREQUEST.fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
+  _CREATELIFECYCLEPOLICYREQUEST.fields_by_name['status']._options = None
+  _CREATELIFECYCLEPOLICYREQUEST.fields_by_name['status']._serialized_options = b'\350\3071\001'
+  _UPDATELIFECYCLEPOLICYREQUEST.fields_by_name['lifecycle_policy_id']._options = None
+  _UPDATELIFECYCLEPOLICYREQUEST.fields_by_name['lifecycle_policy_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _UPDATELIFECYCLEPOLICYREQUEST.fields_by_name['name']._options = None
+  _UPDATELIFECYCLEPOLICYREQUEST.fields_by_name['name']._serialized_options = b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'
+  _UPDATELIFECYCLEPOLICYREQUEST.fields_by_name['description']._options = None
+  _UPDATELIFECYCLEPOLICYREQUEST.fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
+  _UPDATELIFECYCLEPOLICYREQUEST.fields_by_name['status']._options = None
+  _UPDATELIFECYCLEPOLICYREQUEST.fields_by_name['status']._serialized_options = b'\350\3071\001'
+  _DELETELIFECYCLEPOLICYREQUEST.fields_by_name['lifecycle_policy_id']._options = None
+  _DELETELIFECYCLEPOLICYREQUEST.fields_by_name['lifecycle_policy_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _DRYRUNLIFECYCLEPOLICYREQUEST.fields_by_name['lifecycle_policy_id']._options = None
+  _DRYRUNLIFECYCLEPOLICYREQUEST.fields_by_name['lifecycle_policy_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _GETDRYRUNLIFECYCLEPOLICYRESULTREQUEST.fields_by_name['dry_run_lifecycle_policy_result_id']._options = None
+  _GETDRYRUNLIFECYCLEPOLICYRESULTREQUEST.fields_by_name['dry_run_lifecycle_policy_result_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTDRYRUNLIFECYCLEPOLICYRESULTSREQUEST.fields_by_name['lifecycle_policy_id']._options = None
+  _LISTDRYRUNLIFECYCLEPOLICYRESULTSREQUEST.fields_by_name['lifecycle_policy_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTDRYRUNLIFECYCLEPOLICYRESULTSREQUEST.fields_by_name['page_size']._options = None
+  _LISTDRYRUNLIFECYCLEPOLICYRESULTSREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\0060-1000'
+  _LISTDRYRUNLIFECYCLEPOLICYRESULTSREQUEST.fields_by_name['page_token']._options = None
+  _LISTDRYRUNLIFECYCLEPOLICYRESULTSREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
+  _LISTDRYRUNLIFECYCLEPOLICYRESULTSREQUEST.fields_by_name['filter']._options = None
+  _LISTDRYRUNLIFECYCLEPOLICYRESULTSREQUEST.fields_by_name['filter']._serialized_options = b'\212\3101\006<=1000'
+  _LISTDRYRUNLIFECYCLEPOLICYRESULTSREQUEST.fields_by_name['order_by']._options = None
+  _LISTDRYRUNLIFECYCLEPOLICYRESULTSREQUEST.fields_by_name['order_by']._serialized_options = b'\212\3101\005<=100'
+  _LISTDRYRUNLIFECYCLEPOLICYRESULTAFFECTEDIMAGESREQUEST.fields_by_name['dry_run_lifecycle_policy_result_id']._options = None
+  _LISTDRYRUNLIFECYCLEPOLICYRESULTAFFECTEDIMAGESREQUEST.fields_by_name['dry_run_lifecycle_policy_result_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTDRYRUNLIFECYCLEPOLICYRESULTAFFECTEDIMAGESREQUEST.fields_by_name['page_size']._options = None
+  _LISTDRYRUNLIFECYCLEPOLICYRESULTAFFECTEDIMAGESREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\0060-1000'
+  _LISTDRYRUNLIFECYCLEPOLICYRESULTAFFECTEDIMAGESREQUEST.fields_by_name['page_token']._options = None
+  _LISTDRYRUNLIFECYCLEPOLICYRESULTAFFECTEDIMAGESREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
+  _LISTDRYRUNLIFECYCLEPOLICYRESULTAFFECTEDIMAGESREQUEST.fields_by_name['filter']._options = None
+  _LISTDRYRUNLIFECYCLEPOLICYRESULTAFFECTEDIMAGESREQUEST.fields_by_name['filter']._serialized_options = b'\212\3101\006<=1000'
+  _LISTDRYRUNLIFECYCLEPOLICYRESULTAFFECTEDIMAGESREQUEST.fields_by_name['order_by']._options = None
+  _LISTDRYRUNLIFECYCLEPOLICYRESULTAFFECTEDIMAGESREQUEST.fields_by_name['order_by']._serialized_options = b'\212\3101\005<=100'
+  _LIFECYCLEPOLICYSERVICE.methods_by_name['Get']._options = None
+  _LIFECYCLEPOLICYSERVICE.methods_by_name['Get']._serialized_options = b'\202\323\344\223\002@\022>/container-registry/v1/lifecyclePolicies/{lifecycle_policy_id}'
+  _LIFECYCLEPOLICYSERVICE.methods_by_name['List']._options = None
+  _LIFECYCLEPOLICYSERVICE.methods_by_name['List']._serialized_options = b'\202\323\344\223\002*\022(/container-registry/v1/lifecyclePolicies'
+  _LIFECYCLEPOLICYSERVICE.methods_by_name['Create']._options = None
+  _LIFECYCLEPOLICYSERVICE.methods_by_name['Create']._serialized_options = b'\262\322*0\n\035CreateLifecyclePolicyMetadata\022\017LifecyclePolicy\202\323\344\223\002-\"(/container-registry/v1/lifecyclePolicies:\001*'
+  _LIFECYCLEPOLICYSERVICE.methods_by_name['Update']._options = None
+  _LIFECYCLEPOLICYSERVICE.methods_by_name['Update']._serialized_options = b'\262\322*0\n\035UpdateLifecyclePolicyMetadata\022\017LifecyclePolicy\202\323\344\223\002C2>/container-registry/v1/lifecyclePolicies/{lifecycle_policy_id}:\001*'
+  _LIFECYCLEPOLICYSERVICE.methods_by_name['Delete']._options = None
+  _LIFECYCLEPOLICYSERVICE.methods_by_name['Delete']._serialized_options = b'\262\322*6\n\035DeleteLifecyclePolicyMetadata\022\025google.protobuf.Empty\202\323\344\223\002@*>/container-registry/v1/lifecyclePolicies/{lifecycle_policy_id}'
+  _LIFECYCLEPOLICYSERVICE.methods_by_name['DryRun']._options = None
+  _LIFECYCLEPOLICYSERVICE.methods_by_name['DryRun']._serialized_options = b'\262\322*<\n\035DryRunLifecyclePolicyMetadata\022\033DryRunLifecyclePolicyResult\202\323\344\223\002G\"B/container-registry/v1/dryRunLifecyclePolicy/{lifecycle_policy_id}:\001*'
+  _LIFECYCLEPOLICYSERVICE.methods_by_name['GetDryRunResult']._options = None
+  _LIFECYCLEPOLICYSERVICE.methods_by_name['GetDryRunResult']._serialized_options = b'\202\323\344\223\002Z\022X/container-registry/v1/dryRunLifecyclePolicyResults/{dry_run_lifecycle_policy_result_id}'
+  _LIFECYCLEPOLICYSERVICE.methods_by_name['ListDryRunResults']._options = None
+  _LIFECYCLEPOLICYSERVICE.methods_by_name['ListDryRunResults']._serialized_options = b'\202\323\344\223\0025\0223/container-registry/v1/dryRunLifecyclePolicyResults'
+  _LIFECYCLEPOLICYSERVICE.methods_by_name['ListDryRunResultAffectedImages']._options = None
+  _LIFECYCLEPOLICYSERVICE.methods_by_name['ListDryRunResultAffectedImages']._serialized_options = b'\202\323\344\223\002i\022g/container-registry/v1/dryRunLifecyclePolicyResults/{dry_run_lifecycle_policy_result_id}:affectedImages'
+  _globals['_GETLIFECYCLEPOLICYREQUEST']._serialized_start=410
+  _globals['_GETLIFECYCLEPOLICYREQUEST']._serialized_end=480
+  _globals['_LISTLIFECYCLEPOLICIESREQUEST']._serialized_start=483
+  _globals['_LISTLIFECYCLEPOLICIESREQUEST']._serialized_end=712
+  _globals['_LISTLIFECYCLEPOLICIESRESPONSE']._serialized_start=715
+  _globals['_LISTLIFECYCLEPOLICIESRESPONSE']._serialized_end=851
+  _globals['_CREATELIFECYCLEPOLICYREQUEST']._serialized_start=854
+  _globals['_CREATELIFECYCLEPOLICYREQUEST']._serialized_end=1148
+  _globals['_UPDATELIFECYCLEPOLICYREQUEST']._serialized_start=1151
+  _globals['_UPDATELIFECYCLEPOLICYREQUEST']._serialized_end=1500
+  _globals['_DELETELIFECYCLEPOLICYREQUEST']._serialized_start=1502
+  _globals['_DELETELIFECYCLEPOLICYREQUEST']._serialized_end=1575
+  _globals['_CREATELIFECYCLEPOLICYMETADATA']._serialized_start=1577
+  _globals['_CREATELIFECYCLEPOLICYMETADATA']._serialized_end=1637
+  _globals['_UPDATELIFECYCLEPOLICYMETADATA']._serialized_start=1639
+  _globals['_UPDATELIFECYCLEPOLICYMETADATA']._serialized_end=1699
+  _globals['_DELETELIFECYCLEPOLICYMETADATA']._serialized_start=1701
+  _globals['_DELETELIFECYCLEPOLICYMETADATA']._serialized_end=1761
+  _globals['_DRYRUNLIFECYCLEPOLICYREQUEST']._serialized_start=1763
+  _globals['_DRYRUNLIFECYCLEPOLICYREQUEST']._serialized_end=1836
+  _globals['_DRYRUNLIFECYCLEPOLICYMETADATA']._serialized_start=1838
+  _globals['_DRYRUNLIFECYCLEPOLICYMETADATA']._serialized_end=1942
+  _globals['_DRYRUNLIFECYCLEPOLICYRESULT']._serialized_start=1945
+  _globals['_DRYRUNLIFECYCLEPOLICYRESULT']._serialized_end=2122
+  _globals['_GETDRYRUNLIFECYCLEPOLICYRESULTREQUEST']._serialized_start=2124
+  _globals['_GETDRYRUNLIFECYCLEPOLICYRESULTREQUEST']._serialized_end=2221
+  _globals['_LISTDRYRUNLIFECYCLEPOLICYRESULTSREQUEST']._serialized_start=2224
+  _globals['_LISTDRYRUNLIFECYCLEPOLICYRESULTSREQUEST']._serialized_end=2427
+  _globals['_LISTDRYRUNLIFECYCLEPOLICYRESULTSRESPONSE']._serialized_start=2430
+  _globals['_LISTDRYRUNLIFECYCLEPOLICYRESULTSRESPONSE']._serialized_end=2603
+  _globals['_LISTDRYRUNLIFECYCLEPOLICYRESULTAFFECTEDIMAGESREQUEST']._serialized_start=2606
+  _globals['_LISTDRYRUNLIFECYCLEPOLICYRESULTAFFECTEDIMAGESREQUEST']._serialized_end=2837
+  _globals['_LISTDRYRUNLIFECYCLEPOLICYRESULTAFFECTEDIMAGESRESPONSE']._serialized_start=2840
+  _globals['_LISTDRYRUNLIFECYCLEPOLICYRESULTAFFECTEDIMAGESRESPONSE']._serialized_end=2987
+  _globals['_LIFECYCLEPOLICYSERVICE']._serialized_start=2990
+  _globals['_LIFECYCLEPOLICYSERVICE']._serialized_end=5168
 # @@protoc_insertion_point(module_scope)

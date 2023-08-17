@@ -3,9 +3,9 @@
 # source: yandex/cloud/iot/devices/v1/registry_data_service.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -15,136 +15,27 @@ from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/iot/devices/v1/registry_data_service.proto',
-  package='yandex.cloud.iot.devices.v1',
-  syntax='proto3',
-  serialized_options=b'\n\037yandex.cloud.api.iot.devices.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/iot/devices/v1;devices',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n7yandex/cloud/iot/devices/v1/registry_data_service.proto\x12\x1byandex.cloud.iot.devices.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1dyandex/cloud/validation.proto\"z\n\x1aPublishRegistryDataRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\x05topic\x18\x02 \x01(\tB\x0e\xe8\xc7\x31\x01\x8a\xc8\x31\x06<=1024\x12\x1a\n\x04\x64\x61ta\x18\x03 \x01(\x0c\x42\x0c\x8a\xc8\x31\x08<=262144\"\x1d\n\x1bPublishRegistryDataResponse2\xd1\x01\n\x13RegistryDataService\x12\xb9\x01\n\x07Publish\x12\x37.yandex.cloud.iot.devices.v1.PublishRegistryDataRequest\x1a\x38.yandex.cloud.iot.devices.v1.PublishRegistryDataResponse\";\x82\xd3\xe4\x93\x02\x35\"0/iot-devices/v1/registries/{registry_id}/publish:\x01*Bj\n\x1fyandex.cloud.api.iot.devices.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/iot/devices/v1;devicesb\x06proto3'
-  ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n7yandex/cloud/iot/devices/v1/registry_data_service.proto\x12\x1byandex.cloud.iot.devices.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1dyandex/cloud/validation.proto\"z\n\x1aPublishRegistryDataRequest\x12!\n\x0bregistry_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\x05topic\x18\x02 \x01(\tB\x0e\xe8\xc7\x31\x01\x8a\xc8\x31\x06<=1024\x12\x1a\n\x04\x64\x61ta\x18\x03 \x01(\x0c\x42\x0c\x8a\xc8\x31\x08<=262144\"\x1d\n\x1bPublishRegistryDataResponse2\xd1\x01\n\x13RegistryDataService\x12\xb9\x01\n\x07Publish\x12\x37.yandex.cloud.iot.devices.v1.PublishRegistryDataRequest\x1a\x38.yandex.cloud.iot.devices.v1.PublishRegistryDataResponse\";\x82\xd3\xe4\x93\x02\x35\"0/iot-devices/v1/registries/{registry_id}/publish:\x01*Bj\n\x1fyandex.cloud.api.iot.devices.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/iot/devices/v1;devicesb\x06proto3')
 
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.iot.devices.v1.registry_data_service_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-
-_PUBLISHREGISTRYDATAREQUEST = _descriptor.Descriptor(
-  name='PublishRegistryDataRequest',
-  full_name='yandex.cloud.iot.devices.v1.PublishRegistryDataRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='registry_id', full_name='yandex.cloud.iot.devices.v1.PublishRegistryDataRequest.registry_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='topic', full_name='yandex.cloud.iot.devices.v1.PublishRegistryDataRequest.topic', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\006<=1024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='data', full_name='yandex.cloud.iot.devices.v1.PublishRegistryDataRequest.data', index=2,
-      number=3, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"",
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\010<=262144', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=149,
-  serialized_end=271,
-)
-
-
-_PUBLISHREGISTRYDATARESPONSE = _descriptor.Descriptor(
-  name='PublishRegistryDataResponse',
-  full_name='yandex.cloud.iot.devices.v1.PublishRegistryDataResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=273,
-  serialized_end=302,
-)
-
-DESCRIPTOR.message_types_by_name['PublishRegistryDataRequest'] = _PUBLISHREGISTRYDATAREQUEST
-DESCRIPTOR.message_types_by_name['PublishRegistryDataResponse'] = _PUBLISHREGISTRYDATARESPONSE
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-PublishRegistryDataRequest = _reflection.GeneratedProtocolMessageType('PublishRegistryDataRequest', (_message.Message,), {
-  'DESCRIPTOR' : _PUBLISHREGISTRYDATAREQUEST,
-  '__module__' : 'yandex.cloud.iot.devices.v1.registry_data_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.iot.devices.v1.PublishRegistryDataRequest)
-  })
-_sym_db.RegisterMessage(PublishRegistryDataRequest)
-
-PublishRegistryDataResponse = _reflection.GeneratedProtocolMessageType('PublishRegistryDataResponse', (_message.Message,), {
-  'DESCRIPTOR' : _PUBLISHREGISTRYDATARESPONSE,
-  '__module__' : 'yandex.cloud.iot.devices.v1.registry_data_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.iot.devices.v1.PublishRegistryDataResponse)
-  })
-_sym_db.RegisterMessage(PublishRegistryDataResponse)
-
-
-DESCRIPTOR._options = None
-_PUBLISHREGISTRYDATAREQUEST.fields_by_name['registry_id']._options = None
-_PUBLISHREGISTRYDATAREQUEST.fields_by_name['topic']._options = None
-_PUBLISHREGISTRYDATAREQUEST.fields_by_name['data']._options = None
-
-_REGISTRYDATASERVICE = _descriptor.ServiceDescriptor(
-  name='RegistryDataService',
-  full_name='yandex.cloud.iot.devices.v1.RegistryDataService',
-  file=DESCRIPTOR,
-  index=0,
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_start=305,
-  serialized_end=514,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='Publish',
-    full_name='yandex.cloud.iot.devices.v1.RegistryDataService.Publish',
-    index=0,
-    containing_service=None,
-    input_type=_PUBLISHREGISTRYDATAREQUEST,
-    output_type=_PUBLISHREGISTRYDATARESPONSE,
-    serialized_options=b'\202\323\344\223\0025\"0/iot-devices/v1/registries/{registry_id}/publish:\001*',
-    create_key=_descriptor._internal_create_key,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_REGISTRYDATASERVICE)
-
-DESCRIPTOR.services_by_name['RegistryDataService'] = _REGISTRYDATASERVICE
-
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n\037yandex.cloud.api.iot.devices.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/iot/devices/v1;devices'
+  _PUBLISHREGISTRYDATAREQUEST.fields_by_name['registry_id']._options = None
+  _PUBLISHREGISTRYDATAREQUEST.fields_by_name['registry_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _PUBLISHREGISTRYDATAREQUEST.fields_by_name['topic']._options = None
+  _PUBLISHREGISTRYDATAREQUEST.fields_by_name['topic']._serialized_options = b'\350\3071\001\212\3101\006<=1024'
+  _PUBLISHREGISTRYDATAREQUEST.fields_by_name['data']._options = None
+  _PUBLISHREGISTRYDATAREQUEST.fields_by_name['data']._serialized_options = b'\212\3101\010<=262144'
+  _REGISTRYDATASERVICE.methods_by_name['Publish']._options = None
+  _REGISTRYDATASERVICE.methods_by_name['Publish']._serialized_options = b'\202\323\344\223\0025\"0/iot-devices/v1/registries/{registry_id}/publish:\001*'
+  _globals['_PUBLISHREGISTRYDATAREQUEST']._serialized_start=149
+  _globals['_PUBLISHREGISTRYDATAREQUEST']._serialized_end=271
+  _globals['_PUBLISHREGISTRYDATARESPONSE']._serialized_start=273
+  _globals['_PUBLISHREGISTRYDATARESPONSE']._serialized_end=302
+  _globals['_REGISTRYDATASERVICE']._serialized_start=305
+  _globals['_REGISTRYDATASERVICE']._serialized_end=514
 # @@protoc_insertion_point(module_scope)

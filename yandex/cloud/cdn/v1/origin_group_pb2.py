@@ -3,9 +3,9 @@
 # source: yandex/cloud/cdn/v1/origin_group.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -14,89 +14,15 @@ _sym_db = _symbol_database.Default()
 from yandex.cloud.cdn.v1 import origin_pb2 as yandex_dot_cloud_dot_cdn_dot_v1_dot_origin__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/cdn/v1/origin_group.proto',
-  package='yandex.cloud.cdn.v1',
-  syntax='proto3',
-  serialized_options=b'\n\027yandex.cloud.api.cdn.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/cdn/v1;cdn',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n&yandex/cloud/cdn/v1/origin_group.proto\x12\x13yandex.cloud.cdn.v1\x1a yandex/cloud/cdn/v1/origin.proto\"z\n\x0bOriginGroup\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x10\n\x08use_next\x18\x04 \x01(\x08\x12,\n\x07origins\x18\x05 \x03(\x0b\x32\x1b.yandex.cloud.cdn.v1.OriginBV\n\x17yandex.cloud.api.cdn.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/cdn/v1;cdnb\x06proto3'
-  ,
-  dependencies=[yandex_dot_cloud_dot_cdn_dot_v1_dot_origin__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&yandex/cloud/cdn/v1/origin_group.proto\x12\x13yandex.cloud.cdn.v1\x1a yandex/cloud/cdn/v1/origin.proto\"z\n\x0bOriginGroup\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x10\n\x08use_next\x18\x04 \x01(\x08\x12,\n\x07origins\x18\x05 \x03(\x0b\x32\x1b.yandex.cloud.cdn.v1.OriginBV\n\x17yandex.cloud.api.cdn.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/cdn/v1;cdnb\x06proto3')
 
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.cdn.v1.origin_group_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-
-_ORIGINGROUP = _descriptor.Descriptor(
-  name='OriginGroup',
-  full_name='yandex.cloud.cdn.v1.OriginGroup',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='yandex.cloud.cdn.v1.OriginGroup.id', index=0,
-      number=1, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.cdn.v1.OriginGroup.folder_id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.cdn.v1.OriginGroup.name', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='use_next', full_name='yandex.cloud.cdn.v1.OriginGroup.use_next', index=3,
-      number=4, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='origins', full_name='yandex.cloud.cdn.v1.OriginGroup.origins', index=4,
-      number=5, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=97,
-  serialized_end=219,
-)
-
-_ORIGINGROUP.fields_by_name['origins'].message_type = yandex_dot_cloud_dot_cdn_dot_v1_dot_origin__pb2._ORIGIN
-DESCRIPTOR.message_types_by_name['OriginGroup'] = _ORIGINGROUP
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-OriginGroup = _reflection.GeneratedProtocolMessageType('OriginGroup', (_message.Message,), {
-  'DESCRIPTOR' : _ORIGINGROUP,
-  '__module__' : 'yandex.cloud.cdn.v1.origin_group_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.cdn.v1.OriginGroup)
-  })
-_sym_db.RegisterMessage(OriginGroup)
-
-
-DESCRIPTOR._options = None
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n\027yandex.cloud.api.cdn.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/cdn/v1;cdn'
+  _globals['_ORIGINGROUP']._serialized_start=97
+  _globals['_ORIGINGROUP']._serialized_end=219
 # @@protoc_insertion_point(module_scope)

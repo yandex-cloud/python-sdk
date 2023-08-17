@@ -3,9 +3,9 @@
 # source: yandex/cloud/apploadbalancer/v1/tls.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -14,79 +14,17 @@ _sym_db = _symbol_database.Default()
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/apploadbalancer/v1/tls.proto',
-  package='yandex.cloud.apploadbalancer.v1',
-  syntax='proto3',
-  serialized_options=b'\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancer',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n)yandex/cloud/apploadbalancer/v1/tls.proto\x12\x1fyandex.cloud.apploadbalancer.v1\x1a\x1dyandex/cloud/validation.proto\"\\\n\x11ValidationContext\x12\x17\n\rtrusted_ca_id\x18\x01 \x01(\tH\x00\x12\x1a\n\x10trusted_ca_bytes\x18\x02 \x01(\tH\x00\x42\x12\n\ntrusted_ca\x12\x04\xc0\xc1\x31\x01\x42z\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancerb\x06proto3'
-  ,
-  dependencies=[yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)yandex/cloud/apploadbalancer/v1/tls.proto\x12\x1fyandex.cloud.apploadbalancer.v1\x1a\x1dyandex/cloud/validation.proto\"\\\n\x11ValidationContext\x12\x17\n\rtrusted_ca_id\x18\x01 \x01(\tH\x00\x12\x1a\n\x10trusted_ca_bytes\x18\x02 \x01(\tH\x00\x42\x12\n\ntrusted_ca\x12\x04\xc0\xc1\x31\x01\x42z\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancerb\x06proto3')
 
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.apploadbalancer.v1.tls_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-
-_VALIDATIONCONTEXT = _descriptor.Descriptor(
-  name='ValidationContext',
-  full_name='yandex.cloud.apploadbalancer.v1.ValidationContext',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='trusted_ca_id', full_name='yandex.cloud.apploadbalancer.v1.ValidationContext.trusted_ca_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='trusted_ca_bytes', full_name='yandex.cloud.apploadbalancer.v1.ValidationContext.trusted_ca_bytes', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-    _descriptor.OneofDescriptor(
-      name='trusted_ca', full_name='yandex.cloud.apploadbalancer.v1.ValidationContext.trusted_ca',
-      index=0, containing_type=None,
-      create_key=_descriptor._internal_create_key,
-    fields=[], serialized_options=b'\300\3011\001'),
-  ],
-  serialized_start=109,
-  serialized_end=201,
-)
-
-_VALIDATIONCONTEXT.oneofs_by_name['trusted_ca'].fields.append(
-  _VALIDATIONCONTEXT.fields_by_name['trusted_ca_id'])
-_VALIDATIONCONTEXT.fields_by_name['trusted_ca_id'].containing_oneof = _VALIDATIONCONTEXT.oneofs_by_name['trusted_ca']
-_VALIDATIONCONTEXT.oneofs_by_name['trusted_ca'].fields.append(
-  _VALIDATIONCONTEXT.fields_by_name['trusted_ca_bytes'])
-_VALIDATIONCONTEXT.fields_by_name['trusted_ca_bytes'].containing_oneof = _VALIDATIONCONTEXT.oneofs_by_name['trusted_ca']
-DESCRIPTOR.message_types_by_name['ValidationContext'] = _VALIDATIONCONTEXT
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-ValidationContext = _reflection.GeneratedProtocolMessageType('ValidationContext', (_message.Message,), {
-  'DESCRIPTOR' : _VALIDATIONCONTEXT,
-  '__module__' : 'yandex.cloud.apploadbalancer.v1.tls_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.apploadbalancer.v1.ValidationContext)
-  })
-_sym_db.RegisterMessage(ValidationContext)
-
-
-DESCRIPTOR._options = None
-_VALIDATIONCONTEXT.oneofs_by_name['trusted_ca']._options = None
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancer'
+  _VALIDATIONCONTEXT.oneofs_by_name['trusted_ca']._options = None
+  _VALIDATIONCONTEXT.oneofs_by_name['trusted_ca']._serialized_options = b'\300\3011\001'
+  _globals['_VALIDATIONCONTEXT']._serialized_start=109
+  _globals['_VALIDATIONCONTEXT']._serialized_end=201
 # @@protoc_insertion_point(module_scope)

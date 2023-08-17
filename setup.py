@@ -14,9 +14,9 @@ setup(
     license="MIT",
     install_requires=[
         "cryptography>=2.8",
-        "grpcio>=1.38.1",
-        "protobuf<3.21",
-        "googleapis-common-protos>=1.53.0",
+        "grpcio>=1.56.2",
+        "protobuf>=4.23.4",
+        "googleapis-common-protos>=1.59.1",
         "pyjwt>=1.7.1",
         "requests>=2.22.0",
         "six>=1.14.0",

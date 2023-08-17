@@ -3,9 +3,9 @@
 # source: yandex/cloud/dns/v1/dns_zone_service.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -20,1386 +20,159 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/dns/v1/dns_zone_service.proto',
-  package='yandex.cloud.dns.v1',
-  syntax='proto3',
-  serialized_options=b'\n\027yandex.cloud.api.dns.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/dns/v1;dns',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n*yandex/cloud/dns/v1/dns_zone_service.proto\x12\x13yandex.cloud.dns.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/access/access.proto\x1a yandex/cloud/api/operation.proto\x1a\"yandex/cloud/dns/v1/dns_zone.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"\x86\x01\n#UpdateDnsZonePrivateNetworksRequest\x12\x13\n\x0b\x64ns_zone_id\x18\x01 \x01(\t\x12$\n\x1cprivate_network_id_additions\x18\x02 \x03(\t\x12$\n\x1cprivate_network_id_deletions\x18\x03 \x03(\t\";\n$UpdateDnsZonePrivateNetworksMetadata\x12\x13\n\x0b\x64ns_zone_id\x18\x01 \x01(\t\".\n\x11GetDnsZoneRequest\x12\x19\n\x0b\x64ns_zone_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\x89\x01\n\x13ListDnsZonesRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"`\n\x14ListDnsZonesResponse\x12/\n\tdns_zones\x18\x01 \x03(\x0b\x32\x1c.yandex.cloud.dns.v1.DnsZone\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x8b\x04\n\x14\x43reateDnsZoneRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\x8a\xc8\x31\x04<=50\xe8\xc7\x31\x01\x12\x32\n\x04name\x18\x02 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8e\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x35.yandex.cloud.dns.v1.CreateDnsZoneRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x38\n\x04zone\x18\x05 \x01(\tB*\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=255\xf2\xc7\x31\x19[.]|[a-z0-9][-a-z0-9.]*\\.\x12\x42\n\x12private_visibility\x18\x06 \x01(\x0b\x32&.yandex.cloud.dns.v1.PrivateVisibility\x12@\n\x11public_visibility\x18\x07 \x01(\x0b\x32%.yandex.cloud.dns.v1.PublicVisibility\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\",\n\x15\x43reateDnsZoneMetadata\x12\x13\n\x0b\x64ns_zone_id\x18\x01 \x01(\t\"\xfe\x03\n\x14UpdateDnsZoneRequest\x12\x1b\n\x0b\x64ns_zone_id\x18\x01 \x01(\tB\x06\x8a\xc8\x31\x02\x32\x30\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8e\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x35.yandex.cloud.dns.v1.UpdateDnsZoneRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x42\n\x12private_visibility\x18\x06 \x01(\x0b\x32&.yandex.cloud.dns.v1.PrivateVisibility\x12@\n\x11public_visibility\x18\x07 \x01(\x0b\x32%.yandex.cloud.dns.v1.PublicVisibility\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\",\n\x15UpdateDnsZoneMetadata\x12\x13\n\x0b\x64ns_zone_id\x18\x01 \x01(\t\"3\n\x14\x44\x65leteDnsZoneRequest\x12\x1b\n\x0b\x64ns_zone_id\x18\x01 \x01(\tB\x06\x8a\xc8\x31\x02\x32\x30\",\n\x15\x44\x65leteDnsZoneMetadata\x12\x13\n\x0b\x64ns_zone_id\x18\x01 \x01(\t\"r\n\x1aGetDnsZoneRecordSetRequest\x12\x1b\n\x0b\x64ns_zone_id\x18\x01 \x01(\tB\x06\x8a\xc8\x31\x02\x32\x30\x12\x1b\n\x04name\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=255\x12\x1a\n\x04type\x18\x03 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=10\"\x96\x01\n\x1cListDnsZoneRecordSetsRequest\x12\x1b\n\x0b\x64ns_zone_id\x18\x01 \x01(\tB\x06\x8a\xc8\x31\x02\x32\x30\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"m\n\x1dListDnsZoneRecordSetsResponse\x12\x33\n\x0brecord_sets\x18\x01 \x03(\x0b\x32\x1e.yandex.cloud.dns.v1.RecordSet\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xb4\x01\n\x17UpdateRecordSetsRequest\x12\x1b\n\x0b\x64ns_zone_id\x18\x01 \x01(\tB\x06\x8a\xc8\x31\x02\x32\x30\x12=\n\tdeletions\x18\x02 \x03(\x0b\x32\x1e.yandex.cloud.dns.v1.RecordSetB\n\x82\xc8\x31\x06<=1000\x12=\n\tadditions\x18\x03 \x03(\x0b\x32\x1e.yandex.cloud.dns.v1.RecordSetB\n\x82\xc8\x31\x06<=1000\"\x1a\n\x18UpdateRecordSetsMetadata\"\xf3\x01\n\x17UpsertRecordSetsRequest\x12\x1b\n\x0b\x64ns_zone_id\x18\x01 \x01(\tB\x06\x8a\xc8\x31\x02\x32\x30\x12=\n\tdeletions\x18\x02 \x03(\x0b\x32\x1e.yandex.cloud.dns.v1.RecordSetB\n\x82\xc8\x31\x06<=1000\x12@\n\x0creplacements\x18\x03 \x03(\x0b\x32\x1e.yandex.cloud.dns.v1.RecordSetB\n\x82\xc8\x31\x06<=1000\x12:\n\x06merges\x18\x04 \x03(\x0b\x32\x1e.yandex.cloud.dns.v1.RecordSetB\n\x82\xc8\x31\x06<=1000\"\x1a\n\x18UpsertRecordSetsMetadata\"u\n\rRecordSetDiff\x12\x31\n\tadditions\x18\x01 \x03(\x0b\x32\x1e.yandex.cloud.dns.v1.RecordSet\x12\x31\n\tdeletions\x18\x02 \x03(\x0b\x32\x1e.yandex.cloud.dns.v1.RecordSet\"\x96\x01\n\x1cListDnsZoneOperationsRequest\x12\x1b\n\x0b\x64ns_zone_id\x18\x01 \x01(\tB\x06\x8a\xc8\x31\x02\x32\x30\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"o\n\x1dListDnsZoneOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xc8\x13\n\x0e\x44nsZoneService\x12p\n\x03Get\x12&.yandex.cloud.dns.v1.GetDnsZoneRequest\x1a\x1c.yandex.cloud.dns.v1.DnsZone\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/dns/v1/zones/{dns_zone_id}\x12r\n\x04List\x12(.yandex.cloud.dns.v1.ListDnsZonesRequest\x1a).yandex.cloud.dns.v1.ListDnsZonesResponse\"\x15\x82\xd3\xe4\x93\x02\x0f\x12\r/dns/v1/zones\x12\x94\x01\n\x06\x43reate\x12).yandex.cloud.dns.v1.CreateDnsZoneRequest\x1a!.yandex.cloud.operation.Operation\"<\x82\xd3\xe4\x93\x02\x12\"\r/dns/v1/zones:\x01*\xb2\xd2* \n\x15\x43reateDnsZoneMetadata\x12\x07\x44nsZone\x12\xa2\x01\n\x06Update\x12).yandex.cloud.dns.v1.UpdateDnsZoneRequest\x1a!.yandex.cloud.operation.Operation\"J\x82\xd3\xe4\x93\x02 2\x1b/dns/v1/zones/{dns_zone_id}:\x01*\xb2\xd2* \n\x15UpdateDnsZoneMetadata\x12\x07\x44nsZone\x12\xad\x01\n\x06\x44\x65lete\x12).yandex.cloud.dns.v1.DeleteDnsZoneRequest\x1a!.yandex.cloud.operation.Operation\"U\x82\xd3\xe4\x93\x02\x1d*\x1b/dns/v1/zones/{dns_zone_id}\xb2\xd2*.\n\x15\x44\x65leteDnsZoneMetadata\x12\x15google.protobuf.Empty\x12\x91\x01\n\x0cGetRecordSet\x12/.yandex.cloud.dns.v1.GetDnsZoneRecordSetRequest\x1a\x1e.yandex.cloud.dns.v1.RecordSet\"0\x82\xd3\xe4\x93\x02*\x12(/dns/v1/zones/{dns_zone_id}:getRecordSet\x12\xab\x01\n\x0eListRecordSets\x12\x31.yandex.cloud.dns.v1.ListDnsZoneRecordSetsRequest\x1a\x32.yandex.cloud.dns.v1.ListDnsZoneRecordSetsResponse\"2\x82\xd3\xe4\x93\x02,\x12*/dns/v1/zones/{dns_zone_id}:listRecordSets\x12\xc9\x01\n\x10UpdateRecordSets\x12,.yandex.cloud.dns.v1.UpdateRecordSetsRequest\x1a!.yandex.cloud.operation.Operation\"d\x82\xd3\xe4\x93\x02\x31\",/dns/v1/zones/{dns_zone_id}:updateRecordSets:\x01*\xb2\xd2*)\n\x18UpdateRecordSetsMetadata\x12\rRecordSetDiff\x12\xc9\x01\n\x10UpsertRecordSets\x12,.yandex.cloud.dns.v1.UpsertRecordSetsRequest\x1a!.yandex.cloud.operation.Operation\"d\x82\xd3\xe4\x93\x02\x31\",/dns/v1/zones/{dns_zone_id}:upsertRecordSets:\x01*\xb2\xd2*)\n\x18UpsertRecordSetsMetadata\x12\rRecordSetDiff\x12\xa7\x01\n\x0eListOperations\x12\x31.yandex.cloud.dns.v1.ListDnsZoneOperationsRequest\x1a\x32.yandex.cloud.dns.v1.ListDnsZoneOperationsResponse\".\x82\xd3\xe4\x93\x02(\x12&/dns/v1/zones/{dns_zone_id}/operations\x12\xad\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"6\x82\xd3\xe4\x93\x02\x30\x12./dns/v1/zones/{resource_id}:listAccessBindings\x12\xdc\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"u\x82\xd3\xe4\x93\x02\x32\"-/dns/v1/zones/{resource_id}:setAccessBindings:\x01*\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\xe8\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"{\x82\xd3\xe4\x93\x02\x35\"0/dns/v1/zones/{resource_id}:updateAccessBindings:\x01*\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\xe5\x01\n\x15UpdatePrivateNetworks\x12\x38.yandex.cloud.dns.v1.UpdateDnsZonePrivateNetworksRequest\x1a!.yandex.cloud.operation.Operation\"o\x82\xd3\xe4\x93\x02\x36\x32\x31/dns/v1/zones/{dns_zone_id}:updatePrivateNetworks:\x01*\xb2\xd2*/\n$UpdateDnsZonePrivateNetworksMetadata\x12\x07\x44nsZoneBV\n\x17yandex.cloud.api.dns.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/dns/v1;dnsb\x06proto3'
-  ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_access_dot_access__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_dns_dot_v1_dot_dns__zone__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
-
-
-
-
-_UPDATEDNSZONEPRIVATENETWORKSREQUEST = _descriptor.Descriptor(
-  name='UpdateDnsZonePrivateNetworksRequest',
-  full_name='yandex.cloud.dns.v1.UpdateDnsZonePrivateNetworksRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='dns_zone_id', full_name='yandex.cloud.dns.v1.UpdateDnsZonePrivateNetworksRequest.dns_zone_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='private_network_id_additions', full_name='yandex.cloud.dns.v1.UpdateDnsZonePrivateNetworksRequest.private_network_id_additions', index=1,
-      number=2, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='private_network_id_deletions', full_name='yandex.cloud.dns.v1.UpdateDnsZonePrivateNetworksRequest.private_network_id_deletions', index=2,
-      number=3, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=307,
-  serialized_end=441,
-)
-
-
-_UPDATEDNSZONEPRIVATENETWORKSMETADATA = _descriptor.Descriptor(
-  name='UpdateDnsZonePrivateNetworksMetadata',
-  full_name='yandex.cloud.dns.v1.UpdateDnsZonePrivateNetworksMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='dns_zone_id', full_name='yandex.cloud.dns.v1.UpdateDnsZonePrivateNetworksMetadata.dns_zone_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=443,
-  serialized_end=502,
-)
-
-
-_GETDNSZONEREQUEST = _descriptor.Descriptor(
-  name='GetDnsZoneRequest',
-  full_name='yandex.cloud.dns.v1.GetDnsZoneRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='dns_zone_id', full_name='yandex.cloud.dns.v1.GetDnsZoneRequest.dns_zone_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=504,
-  serialized_end=550,
-)
-
-
-_LISTDNSZONESREQUEST = _descriptor.Descriptor(
-  name='ListDnsZonesRequest',
-  full_name='yandex.cloud.dns.v1.ListDnsZonesRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.dns.v1.ListDnsZonesRequest.folder_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.dns.v1.ListDnsZonesRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.dns.v1.ListDnsZonesRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='filter', full_name='yandex.cloud.dns.v1.ListDnsZonesRequest.filter', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=553,
-  serialized_end=690,
-)
-
-
-_LISTDNSZONESRESPONSE = _descriptor.Descriptor(
-  name='ListDnsZonesResponse',
-  full_name='yandex.cloud.dns.v1.ListDnsZonesResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='dns_zones', full_name='yandex.cloud.dns.v1.ListDnsZonesResponse.dns_zones', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.dns.v1.ListDnsZonesResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=692,
-  serialized_end=788,
-)
-
-
-_CREATEDNSZONEREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='yandex.cloud.dns.v1.CreateDnsZoneRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='yandex.cloud.dns.v1.CreateDnsZoneRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='yandex.cloud.dns.v1.CreateDnsZoneRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1269,
-  serialized_end=1314,
-)
-
-_CREATEDNSZONEREQUEST = _descriptor.Descriptor(
-  name='CreateDnsZoneRequest',
-  full_name='yandex.cloud.dns.v1.CreateDnsZoneRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.dns.v1.CreateDnsZoneRequest.folder_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\004<=50\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.dns.v1.CreateDnsZoneRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='yandex.cloud.dns.v1.CreateDnsZoneRequest.description', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='yandex.cloud.dns.v1.CreateDnsZoneRequest.labels', index=3,
-      number=4, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\017[-_./\\@0-9a-z]*\262\3101\006\032\0041-63\262\3101\026\022\024[a-z][-_./\\@0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='zone', full_name='yandex.cloud.dns.v1.CreateDnsZoneRequest.zone', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\005<=255\362\3071\031[.]|[a-z0-9][-a-z0-9.]*\\.', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='private_visibility', full_name='yandex.cloud.dns.v1.CreateDnsZoneRequest.private_visibility', index=5,
-      number=6, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='public_visibility', full_name='yandex.cloud.dns.v1.CreateDnsZoneRequest.public_visibility', index=6,
-      number=7, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_CREATEDNSZONEREQUEST_LABELSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=791,
-  serialized_end=1314,
-)
-
-
-_CREATEDNSZONEMETADATA = _descriptor.Descriptor(
-  name='CreateDnsZoneMetadata',
-  full_name='yandex.cloud.dns.v1.CreateDnsZoneMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='dns_zone_id', full_name='yandex.cloud.dns.v1.CreateDnsZoneMetadata.dns_zone_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1316,
-  serialized_end=1360,
-)
-
-
-_UPDATEDNSZONEREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='yandex.cloud.dns.v1.UpdateDnsZoneRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='yandex.cloud.dns.v1.UpdateDnsZoneRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='yandex.cloud.dns.v1.UpdateDnsZoneRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1269,
-  serialized_end=1314,
-)
-
-_UPDATEDNSZONEREQUEST = _descriptor.Descriptor(
-  name='UpdateDnsZoneRequest',
-  full_name='yandex.cloud.dns.v1.UpdateDnsZoneRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='dns_zone_id', full_name='yandex.cloud.dns.v1.UpdateDnsZoneRequest.dns_zone_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\00220', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='update_mask', full_name='yandex.cloud.dns.v1.UpdateDnsZoneRequest.update_mask', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.dns.v1.UpdateDnsZoneRequest.name', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='yandex.cloud.dns.v1.UpdateDnsZoneRequest.description', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='yandex.cloud.dns.v1.UpdateDnsZoneRequest.labels', index=4,
-      number=5, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\017[-_./\\@0-9a-z]*\262\3101\006\032\0041-63\262\3101\026\022\024[a-z][-_./\\@0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='private_visibility', full_name='yandex.cloud.dns.v1.UpdateDnsZoneRequest.private_visibility', index=5,
-      number=6, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='public_visibility', full_name='yandex.cloud.dns.v1.UpdateDnsZoneRequest.public_visibility', index=6,
-      number=7, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_UPDATEDNSZONEREQUEST_LABELSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1363,
-  serialized_end=1873,
-)
-
-
-_UPDATEDNSZONEMETADATA = _descriptor.Descriptor(
-  name='UpdateDnsZoneMetadata',
-  full_name='yandex.cloud.dns.v1.UpdateDnsZoneMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='dns_zone_id', full_name='yandex.cloud.dns.v1.UpdateDnsZoneMetadata.dns_zone_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1875,
-  serialized_end=1919,
-)
-
-
-_DELETEDNSZONEREQUEST = _descriptor.Descriptor(
-  name='DeleteDnsZoneRequest',
-  full_name='yandex.cloud.dns.v1.DeleteDnsZoneRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='dns_zone_id', full_name='yandex.cloud.dns.v1.DeleteDnsZoneRequest.dns_zone_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\00220', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1921,
-  serialized_end=1972,
-)
-
-
-_DELETEDNSZONEMETADATA = _descriptor.Descriptor(
-  name='DeleteDnsZoneMetadata',
-  full_name='yandex.cloud.dns.v1.DeleteDnsZoneMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='dns_zone_id', full_name='yandex.cloud.dns.v1.DeleteDnsZoneMetadata.dns_zone_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1974,
-  serialized_end=2018,
-)
-
-
-_GETDNSZONERECORDSETREQUEST = _descriptor.Descriptor(
-  name='GetDnsZoneRecordSetRequest',
-  full_name='yandex.cloud.dns.v1.GetDnsZoneRecordSetRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='dns_zone_id', full_name='yandex.cloud.dns.v1.GetDnsZoneRecordSetRequest.dns_zone_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\00220', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.dns.v1.GetDnsZoneRecordSetRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\005<=255', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='type', full_name='yandex.cloud.dns.v1.GetDnsZoneRecordSetRequest.type', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=10', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2020,
-  serialized_end=2134,
-)
-
-
-_LISTDNSZONERECORDSETSREQUEST = _descriptor.Descriptor(
-  name='ListDnsZoneRecordSetsRequest',
-  full_name='yandex.cloud.dns.v1.ListDnsZoneRecordSetsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='dns_zone_id', full_name='yandex.cloud.dns.v1.ListDnsZoneRecordSetsRequest.dns_zone_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\00220', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.dns.v1.ListDnsZoneRecordSetsRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.dns.v1.ListDnsZoneRecordSetsRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='filter', full_name='yandex.cloud.dns.v1.ListDnsZoneRecordSetsRequest.filter', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2137,
-  serialized_end=2287,
-)
-
-
-_LISTDNSZONERECORDSETSRESPONSE = _descriptor.Descriptor(
-  name='ListDnsZoneRecordSetsResponse',
-  full_name='yandex.cloud.dns.v1.ListDnsZoneRecordSetsResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='record_sets', full_name='yandex.cloud.dns.v1.ListDnsZoneRecordSetsResponse.record_sets', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.dns.v1.ListDnsZoneRecordSetsResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2289,
-  serialized_end=2398,
-)
-
-
-_UPDATERECORDSETSREQUEST = _descriptor.Descriptor(
-  name='UpdateRecordSetsRequest',
-  full_name='yandex.cloud.dns.v1.UpdateRecordSetsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='dns_zone_id', full_name='yandex.cloud.dns.v1.UpdateRecordSetsRequest.dns_zone_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\00220', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='deletions', full_name='yandex.cloud.dns.v1.UpdateRecordSetsRequest.deletions', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='additions', full_name='yandex.cloud.dns.v1.UpdateRecordSetsRequest.additions', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2401,
-  serialized_end=2581,
-)
-
-
-_UPDATERECORDSETSMETADATA = _descriptor.Descriptor(
-  name='UpdateRecordSetsMetadata',
-  full_name='yandex.cloud.dns.v1.UpdateRecordSetsMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2583,
-  serialized_end=2609,
-)
-
-
-_UPSERTRECORDSETSREQUEST = _descriptor.Descriptor(
-  name='UpsertRecordSetsRequest',
-  full_name='yandex.cloud.dns.v1.UpsertRecordSetsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='dns_zone_id', full_name='yandex.cloud.dns.v1.UpsertRecordSetsRequest.dns_zone_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\00220', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='deletions', full_name='yandex.cloud.dns.v1.UpsertRecordSetsRequest.deletions', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='replacements', full_name='yandex.cloud.dns.v1.UpsertRecordSetsRequest.replacements', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='merges', full_name='yandex.cloud.dns.v1.UpsertRecordSetsRequest.merges', index=3,
-      number=4, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2612,
-  serialized_end=2855,
-)
-
-
-_UPSERTRECORDSETSMETADATA = _descriptor.Descriptor(
-  name='UpsertRecordSetsMetadata',
-  full_name='yandex.cloud.dns.v1.UpsertRecordSetsMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2857,
-  serialized_end=2883,
-)
-
-
-_RECORDSETDIFF = _descriptor.Descriptor(
-  name='RecordSetDiff',
-  full_name='yandex.cloud.dns.v1.RecordSetDiff',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='additions', full_name='yandex.cloud.dns.v1.RecordSetDiff.additions', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='deletions', full_name='yandex.cloud.dns.v1.RecordSetDiff.deletions', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2885,
-  serialized_end=3002,
-)
-
-
-_LISTDNSZONEOPERATIONSREQUEST = _descriptor.Descriptor(
-  name='ListDnsZoneOperationsRequest',
-  full_name='yandex.cloud.dns.v1.ListDnsZoneOperationsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='dns_zone_id', full_name='yandex.cloud.dns.v1.ListDnsZoneOperationsRequest.dns_zone_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\00220', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.dns.v1.ListDnsZoneOperationsRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\0060-1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.dns.v1.ListDnsZoneOperationsRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='filter', full_name='yandex.cloud.dns.v1.ListDnsZoneOperationsRequest.filter', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=3005,
-  serialized_end=3155,
-)
-
-
-_LISTDNSZONEOPERATIONSRESPONSE = _descriptor.Descriptor(
-  name='ListDnsZoneOperationsResponse',
-  full_name='yandex.cloud.dns.v1.ListDnsZoneOperationsResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='operations', full_name='yandex.cloud.dns.v1.ListDnsZoneOperationsResponse.operations', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.dns.v1.ListDnsZoneOperationsResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=3157,
-  serialized_end=3268,
-)
-
-_LISTDNSZONESRESPONSE.fields_by_name['dns_zones'].message_type = yandex_dot_cloud_dot_dns_dot_v1_dot_dns__zone__pb2._DNSZONE
-_CREATEDNSZONEREQUEST_LABELSENTRY.containing_type = _CREATEDNSZONEREQUEST
-_CREATEDNSZONEREQUEST.fields_by_name['labels'].message_type = _CREATEDNSZONEREQUEST_LABELSENTRY
-_CREATEDNSZONEREQUEST.fields_by_name['private_visibility'].message_type = yandex_dot_cloud_dot_dns_dot_v1_dot_dns__zone__pb2._PRIVATEVISIBILITY
-_CREATEDNSZONEREQUEST.fields_by_name['public_visibility'].message_type = yandex_dot_cloud_dot_dns_dot_v1_dot_dns__zone__pb2._PUBLICVISIBILITY
-_UPDATEDNSZONEREQUEST_LABELSENTRY.containing_type = _UPDATEDNSZONEREQUEST
-_UPDATEDNSZONEREQUEST.fields_by_name['update_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
-_UPDATEDNSZONEREQUEST.fields_by_name['labels'].message_type = _UPDATEDNSZONEREQUEST_LABELSENTRY
-_UPDATEDNSZONEREQUEST.fields_by_name['private_visibility'].message_type = yandex_dot_cloud_dot_dns_dot_v1_dot_dns__zone__pb2._PRIVATEVISIBILITY
-_UPDATEDNSZONEREQUEST.fields_by_name['public_visibility'].message_type = yandex_dot_cloud_dot_dns_dot_v1_dot_dns__zone__pb2._PUBLICVISIBILITY
-_LISTDNSZONERECORDSETSRESPONSE.fields_by_name['record_sets'].message_type = yandex_dot_cloud_dot_dns_dot_v1_dot_dns__zone__pb2._RECORDSET
-_UPDATERECORDSETSREQUEST.fields_by_name['deletions'].message_type = yandex_dot_cloud_dot_dns_dot_v1_dot_dns__zone__pb2._RECORDSET
-_UPDATERECORDSETSREQUEST.fields_by_name['additions'].message_type = yandex_dot_cloud_dot_dns_dot_v1_dot_dns__zone__pb2._RECORDSET
-_UPSERTRECORDSETSREQUEST.fields_by_name['deletions'].message_type = yandex_dot_cloud_dot_dns_dot_v1_dot_dns__zone__pb2._RECORDSET
-_UPSERTRECORDSETSREQUEST.fields_by_name['replacements'].message_type = yandex_dot_cloud_dot_dns_dot_v1_dot_dns__zone__pb2._RECORDSET
-_UPSERTRECORDSETSREQUEST.fields_by_name['merges'].message_type = yandex_dot_cloud_dot_dns_dot_v1_dot_dns__zone__pb2._RECORDSET
-_RECORDSETDIFF.fields_by_name['additions'].message_type = yandex_dot_cloud_dot_dns_dot_v1_dot_dns__zone__pb2._RECORDSET
-_RECORDSETDIFF.fields_by_name['deletions'].message_type = yandex_dot_cloud_dot_dns_dot_v1_dot_dns__zone__pb2._RECORDSET
-_LISTDNSZONEOPERATIONSRESPONSE.fields_by_name['operations'].message_type = yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION
-DESCRIPTOR.message_types_by_name['UpdateDnsZonePrivateNetworksRequest'] = _UPDATEDNSZONEPRIVATENETWORKSREQUEST
-DESCRIPTOR.message_types_by_name['UpdateDnsZonePrivateNetworksMetadata'] = _UPDATEDNSZONEPRIVATENETWORKSMETADATA
-DESCRIPTOR.message_types_by_name['GetDnsZoneRequest'] = _GETDNSZONEREQUEST
-DESCRIPTOR.message_types_by_name['ListDnsZonesRequest'] = _LISTDNSZONESREQUEST
-DESCRIPTOR.message_types_by_name['ListDnsZonesResponse'] = _LISTDNSZONESRESPONSE
-DESCRIPTOR.message_types_by_name['CreateDnsZoneRequest'] = _CREATEDNSZONEREQUEST
-DESCRIPTOR.message_types_by_name['CreateDnsZoneMetadata'] = _CREATEDNSZONEMETADATA
-DESCRIPTOR.message_types_by_name['UpdateDnsZoneRequest'] = _UPDATEDNSZONEREQUEST
-DESCRIPTOR.message_types_by_name['UpdateDnsZoneMetadata'] = _UPDATEDNSZONEMETADATA
-DESCRIPTOR.message_types_by_name['DeleteDnsZoneRequest'] = _DELETEDNSZONEREQUEST
-DESCRIPTOR.message_types_by_name['DeleteDnsZoneMetadata'] = _DELETEDNSZONEMETADATA
-DESCRIPTOR.message_types_by_name['GetDnsZoneRecordSetRequest'] = _GETDNSZONERECORDSETREQUEST
-DESCRIPTOR.message_types_by_name['ListDnsZoneRecordSetsRequest'] = _LISTDNSZONERECORDSETSREQUEST
-DESCRIPTOR.message_types_by_name['ListDnsZoneRecordSetsResponse'] = _LISTDNSZONERECORDSETSRESPONSE
-DESCRIPTOR.message_types_by_name['UpdateRecordSetsRequest'] = _UPDATERECORDSETSREQUEST
-DESCRIPTOR.message_types_by_name['UpdateRecordSetsMetadata'] = _UPDATERECORDSETSMETADATA
-DESCRIPTOR.message_types_by_name['UpsertRecordSetsRequest'] = _UPSERTRECORDSETSREQUEST
-DESCRIPTOR.message_types_by_name['UpsertRecordSetsMetadata'] = _UPSERTRECORDSETSMETADATA
-DESCRIPTOR.message_types_by_name['RecordSetDiff'] = _RECORDSETDIFF
-DESCRIPTOR.message_types_by_name['ListDnsZoneOperationsRequest'] = _LISTDNSZONEOPERATIONSREQUEST
-DESCRIPTOR.message_types_by_name['ListDnsZoneOperationsResponse'] = _LISTDNSZONEOPERATIONSRESPONSE
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-UpdateDnsZonePrivateNetworksRequest = _reflection.GeneratedProtocolMessageType('UpdateDnsZonePrivateNetworksRequest', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATEDNSZONEPRIVATENETWORKSREQUEST,
-  '__module__' : 'yandex.cloud.dns.v1.dns_zone_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.dns.v1.UpdateDnsZonePrivateNetworksRequest)
-  })
-_sym_db.RegisterMessage(UpdateDnsZonePrivateNetworksRequest)
-
-UpdateDnsZonePrivateNetworksMetadata = _reflection.GeneratedProtocolMessageType('UpdateDnsZonePrivateNetworksMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATEDNSZONEPRIVATENETWORKSMETADATA,
-  '__module__' : 'yandex.cloud.dns.v1.dns_zone_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.dns.v1.UpdateDnsZonePrivateNetworksMetadata)
-  })
-_sym_db.RegisterMessage(UpdateDnsZonePrivateNetworksMetadata)
-
-GetDnsZoneRequest = _reflection.GeneratedProtocolMessageType('GetDnsZoneRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETDNSZONEREQUEST,
-  '__module__' : 'yandex.cloud.dns.v1.dns_zone_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.dns.v1.GetDnsZoneRequest)
-  })
-_sym_db.RegisterMessage(GetDnsZoneRequest)
-
-ListDnsZonesRequest = _reflection.GeneratedProtocolMessageType('ListDnsZonesRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTDNSZONESREQUEST,
-  '__module__' : 'yandex.cloud.dns.v1.dns_zone_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.dns.v1.ListDnsZonesRequest)
-  })
-_sym_db.RegisterMessage(ListDnsZonesRequest)
-
-ListDnsZonesResponse = _reflection.GeneratedProtocolMessageType('ListDnsZonesResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTDNSZONESRESPONSE,
-  '__module__' : 'yandex.cloud.dns.v1.dns_zone_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.dns.v1.ListDnsZonesResponse)
-  })
-_sym_db.RegisterMessage(ListDnsZonesResponse)
-
-CreateDnsZoneRequest = _reflection.GeneratedProtocolMessageType('CreateDnsZoneRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _CREATEDNSZONEREQUEST_LABELSENTRY,
-    '__module__' : 'yandex.cloud.dns.v1.dns_zone_service_pb2'
-    # @@protoc_insertion_point(class_scope:yandex.cloud.dns.v1.CreateDnsZoneRequest.LabelsEntry)
-    })
-  ,
-  'DESCRIPTOR' : _CREATEDNSZONEREQUEST,
-  '__module__' : 'yandex.cloud.dns.v1.dns_zone_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.dns.v1.CreateDnsZoneRequest)
-  })
-_sym_db.RegisterMessage(CreateDnsZoneRequest)
-_sym_db.RegisterMessage(CreateDnsZoneRequest.LabelsEntry)
-
-CreateDnsZoneMetadata = _reflection.GeneratedProtocolMessageType('CreateDnsZoneMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _CREATEDNSZONEMETADATA,
-  '__module__' : 'yandex.cloud.dns.v1.dns_zone_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.dns.v1.CreateDnsZoneMetadata)
-  })
-_sym_db.RegisterMessage(CreateDnsZoneMetadata)
-
-UpdateDnsZoneRequest = _reflection.GeneratedProtocolMessageType('UpdateDnsZoneRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _UPDATEDNSZONEREQUEST_LABELSENTRY,
-    '__module__' : 'yandex.cloud.dns.v1.dns_zone_service_pb2'
-    # @@protoc_insertion_point(class_scope:yandex.cloud.dns.v1.UpdateDnsZoneRequest.LabelsEntry)
-    })
-  ,
-  'DESCRIPTOR' : _UPDATEDNSZONEREQUEST,
-  '__module__' : 'yandex.cloud.dns.v1.dns_zone_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.dns.v1.UpdateDnsZoneRequest)
-  })
-_sym_db.RegisterMessage(UpdateDnsZoneRequest)
-_sym_db.RegisterMessage(UpdateDnsZoneRequest.LabelsEntry)
-
-UpdateDnsZoneMetadata = _reflection.GeneratedProtocolMessageType('UpdateDnsZoneMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATEDNSZONEMETADATA,
-  '__module__' : 'yandex.cloud.dns.v1.dns_zone_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.dns.v1.UpdateDnsZoneMetadata)
-  })
-_sym_db.RegisterMessage(UpdateDnsZoneMetadata)
-
-DeleteDnsZoneRequest = _reflection.GeneratedProtocolMessageType('DeleteDnsZoneRequest', (_message.Message,), {
-  'DESCRIPTOR' : _DELETEDNSZONEREQUEST,
-  '__module__' : 'yandex.cloud.dns.v1.dns_zone_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.dns.v1.DeleteDnsZoneRequest)
-  })
-_sym_db.RegisterMessage(DeleteDnsZoneRequest)
-
-DeleteDnsZoneMetadata = _reflection.GeneratedProtocolMessageType('DeleteDnsZoneMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _DELETEDNSZONEMETADATA,
-  '__module__' : 'yandex.cloud.dns.v1.dns_zone_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.dns.v1.DeleteDnsZoneMetadata)
-  })
-_sym_db.RegisterMessage(DeleteDnsZoneMetadata)
-
-GetDnsZoneRecordSetRequest = _reflection.GeneratedProtocolMessageType('GetDnsZoneRecordSetRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETDNSZONERECORDSETREQUEST,
-  '__module__' : 'yandex.cloud.dns.v1.dns_zone_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.dns.v1.GetDnsZoneRecordSetRequest)
-  })
-_sym_db.RegisterMessage(GetDnsZoneRecordSetRequest)
-
-ListDnsZoneRecordSetsRequest = _reflection.GeneratedProtocolMessageType('ListDnsZoneRecordSetsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTDNSZONERECORDSETSREQUEST,
-  '__module__' : 'yandex.cloud.dns.v1.dns_zone_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.dns.v1.ListDnsZoneRecordSetsRequest)
-  })
-_sym_db.RegisterMessage(ListDnsZoneRecordSetsRequest)
-
-ListDnsZoneRecordSetsResponse = _reflection.GeneratedProtocolMessageType('ListDnsZoneRecordSetsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTDNSZONERECORDSETSRESPONSE,
-  '__module__' : 'yandex.cloud.dns.v1.dns_zone_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.dns.v1.ListDnsZoneRecordSetsResponse)
-  })
-_sym_db.RegisterMessage(ListDnsZoneRecordSetsResponse)
-
-UpdateRecordSetsRequest = _reflection.GeneratedProtocolMessageType('UpdateRecordSetsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATERECORDSETSREQUEST,
-  '__module__' : 'yandex.cloud.dns.v1.dns_zone_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.dns.v1.UpdateRecordSetsRequest)
-  })
-_sym_db.RegisterMessage(UpdateRecordSetsRequest)
-
-UpdateRecordSetsMetadata = _reflection.GeneratedProtocolMessageType('UpdateRecordSetsMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATERECORDSETSMETADATA,
-  '__module__' : 'yandex.cloud.dns.v1.dns_zone_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.dns.v1.UpdateRecordSetsMetadata)
-  })
-_sym_db.RegisterMessage(UpdateRecordSetsMetadata)
-
-UpsertRecordSetsRequest = _reflection.GeneratedProtocolMessageType('UpsertRecordSetsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _UPSERTRECORDSETSREQUEST,
-  '__module__' : 'yandex.cloud.dns.v1.dns_zone_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.dns.v1.UpsertRecordSetsRequest)
-  })
-_sym_db.RegisterMessage(UpsertRecordSetsRequest)
-
-UpsertRecordSetsMetadata = _reflection.GeneratedProtocolMessageType('UpsertRecordSetsMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _UPSERTRECORDSETSMETADATA,
-  '__module__' : 'yandex.cloud.dns.v1.dns_zone_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.dns.v1.UpsertRecordSetsMetadata)
-  })
-_sym_db.RegisterMessage(UpsertRecordSetsMetadata)
-
-RecordSetDiff = _reflection.GeneratedProtocolMessageType('RecordSetDiff', (_message.Message,), {
-  'DESCRIPTOR' : _RECORDSETDIFF,
-  '__module__' : 'yandex.cloud.dns.v1.dns_zone_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.dns.v1.RecordSetDiff)
-  })
-_sym_db.RegisterMessage(RecordSetDiff)
-
-ListDnsZoneOperationsRequest = _reflection.GeneratedProtocolMessageType('ListDnsZoneOperationsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTDNSZONEOPERATIONSREQUEST,
-  '__module__' : 'yandex.cloud.dns.v1.dns_zone_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.dns.v1.ListDnsZoneOperationsRequest)
-  })
-_sym_db.RegisterMessage(ListDnsZoneOperationsRequest)
-
-ListDnsZoneOperationsResponse = _reflection.GeneratedProtocolMessageType('ListDnsZoneOperationsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTDNSZONEOPERATIONSRESPONSE,
-  '__module__' : 'yandex.cloud.dns.v1.dns_zone_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.dns.v1.ListDnsZoneOperationsResponse)
-  })
-_sym_db.RegisterMessage(ListDnsZoneOperationsResponse)
-
-
-DESCRIPTOR._options = None
-_GETDNSZONEREQUEST.fields_by_name['dns_zone_id']._options = None
-_LISTDNSZONESREQUEST.fields_by_name['folder_id']._options = None
-_LISTDNSZONESREQUEST.fields_by_name['page_size']._options = None
-_LISTDNSZONESREQUEST.fields_by_name['page_token']._options = None
-_LISTDNSZONESREQUEST.fields_by_name['filter']._options = None
-_CREATEDNSZONEREQUEST_LABELSENTRY._options = None
-_CREATEDNSZONEREQUEST.fields_by_name['folder_id']._options = None
-_CREATEDNSZONEREQUEST.fields_by_name['name']._options = None
-_CREATEDNSZONEREQUEST.fields_by_name['description']._options = None
-_CREATEDNSZONEREQUEST.fields_by_name['labels']._options = None
-_CREATEDNSZONEREQUEST.fields_by_name['zone']._options = None
-_UPDATEDNSZONEREQUEST_LABELSENTRY._options = None
-_UPDATEDNSZONEREQUEST.fields_by_name['dns_zone_id']._options = None
-_UPDATEDNSZONEREQUEST.fields_by_name['name']._options = None
-_UPDATEDNSZONEREQUEST.fields_by_name['description']._options = None
-_UPDATEDNSZONEREQUEST.fields_by_name['labels']._options = None
-_DELETEDNSZONEREQUEST.fields_by_name['dns_zone_id']._options = None
-_GETDNSZONERECORDSETREQUEST.fields_by_name['dns_zone_id']._options = None
-_GETDNSZONERECORDSETREQUEST.fields_by_name['name']._options = None
-_GETDNSZONERECORDSETREQUEST.fields_by_name['type']._options = None
-_LISTDNSZONERECORDSETSREQUEST.fields_by_name['dns_zone_id']._options = None
-_LISTDNSZONERECORDSETSREQUEST.fields_by_name['page_size']._options = None
-_LISTDNSZONERECORDSETSREQUEST.fields_by_name['page_token']._options = None
-_LISTDNSZONERECORDSETSREQUEST.fields_by_name['filter']._options = None
-_UPDATERECORDSETSREQUEST.fields_by_name['dns_zone_id']._options = None
-_UPDATERECORDSETSREQUEST.fields_by_name['deletions']._options = None
-_UPDATERECORDSETSREQUEST.fields_by_name['additions']._options = None
-_UPSERTRECORDSETSREQUEST.fields_by_name['dns_zone_id']._options = None
-_UPSERTRECORDSETSREQUEST.fields_by_name['deletions']._options = None
-_UPSERTRECORDSETSREQUEST.fields_by_name['replacements']._options = None
-_UPSERTRECORDSETSREQUEST.fields_by_name['merges']._options = None
-_LISTDNSZONEOPERATIONSREQUEST.fields_by_name['dns_zone_id']._options = None
-_LISTDNSZONEOPERATIONSREQUEST.fields_by_name['page_size']._options = None
-_LISTDNSZONEOPERATIONSREQUEST.fields_by_name['page_token']._options = None
-_LISTDNSZONEOPERATIONSREQUEST.fields_by_name['filter']._options = None
-
-_DNSZONESERVICE = _descriptor.ServiceDescriptor(
-  name='DnsZoneService',
-  full_name='yandex.cloud.dns.v1.DnsZoneService',
-  file=DESCRIPTOR,
-  index=0,
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_start=3271,
-  serialized_end=5775,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='Get',
-    full_name='yandex.cloud.dns.v1.DnsZoneService.Get',
-    index=0,
-    containing_service=None,
-    input_type=_GETDNSZONEREQUEST,
-    output_type=yandex_dot_cloud_dot_dns_dot_v1_dot_dns__zone__pb2._DNSZONE,
-    serialized_options=b'\202\323\344\223\002\035\022\033/dns/v1/zones/{dns_zone_id}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='List',
-    full_name='yandex.cloud.dns.v1.DnsZoneService.List',
-    index=1,
-    containing_service=None,
-    input_type=_LISTDNSZONESREQUEST,
-    output_type=_LISTDNSZONESRESPONSE,
-    serialized_options=b'\202\323\344\223\002\017\022\r/dns/v1/zones',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Create',
-    full_name='yandex.cloud.dns.v1.DnsZoneService.Create',
-    index=2,
-    containing_service=None,
-    input_type=_CREATEDNSZONEREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002\022\"\r/dns/v1/zones:\001*\262\322* \n\025CreateDnsZoneMetadata\022\007DnsZone',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Update',
-    full_name='yandex.cloud.dns.v1.DnsZoneService.Update',
-    index=3,
-    containing_service=None,
-    input_type=_UPDATEDNSZONEREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002 2\033/dns/v1/zones/{dns_zone_id}:\001*\262\322* \n\025UpdateDnsZoneMetadata\022\007DnsZone',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Delete',
-    full_name='yandex.cloud.dns.v1.DnsZoneService.Delete',
-    index=4,
-    containing_service=None,
-    input_type=_DELETEDNSZONEREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002\035*\033/dns/v1/zones/{dns_zone_id}\262\322*.\n\025DeleteDnsZoneMetadata\022\025google.protobuf.Empty',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='GetRecordSet',
-    full_name='yandex.cloud.dns.v1.DnsZoneService.GetRecordSet',
-    index=5,
-    containing_service=None,
-    input_type=_GETDNSZONERECORDSETREQUEST,
-    output_type=yandex_dot_cloud_dot_dns_dot_v1_dot_dns__zone__pb2._RECORDSET,
-    serialized_options=b'\202\323\344\223\002*\022(/dns/v1/zones/{dns_zone_id}:getRecordSet',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListRecordSets',
-    full_name='yandex.cloud.dns.v1.DnsZoneService.ListRecordSets',
-    index=6,
-    containing_service=None,
-    input_type=_LISTDNSZONERECORDSETSREQUEST,
-    output_type=_LISTDNSZONERECORDSETSRESPONSE,
-    serialized_options=b'\202\323\344\223\002,\022*/dns/v1/zones/{dns_zone_id}:listRecordSets',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='UpdateRecordSets',
-    full_name='yandex.cloud.dns.v1.DnsZoneService.UpdateRecordSets',
-    index=7,
-    containing_service=None,
-    input_type=_UPDATERECORDSETSREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\0021\",/dns/v1/zones/{dns_zone_id}:updateRecordSets:\001*\262\322*)\n\030UpdateRecordSetsMetadata\022\rRecordSetDiff',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='UpsertRecordSets',
-    full_name='yandex.cloud.dns.v1.DnsZoneService.UpsertRecordSets',
-    index=8,
-    containing_service=None,
-    input_type=_UPSERTRECORDSETSREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\0021\",/dns/v1/zones/{dns_zone_id}:upsertRecordSets:\001*\262\322*)\n\030UpsertRecordSetsMetadata\022\rRecordSetDiff',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListOperations',
-    full_name='yandex.cloud.dns.v1.DnsZoneService.ListOperations',
-    index=9,
-    containing_service=None,
-    input_type=_LISTDNSZONEOPERATIONSREQUEST,
-    output_type=_LISTDNSZONEOPERATIONSRESPONSE,
-    serialized_options=b'\202\323\344\223\002(\022&/dns/v1/zones/{dns_zone_id}/operations',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListAccessBindings',
-    full_name='yandex.cloud.dns.v1.DnsZoneService.ListAccessBindings',
-    index=10,
-    containing_service=None,
-    input_type=yandex_dot_cloud_dot_access_dot_access__pb2._LISTACCESSBINDINGSREQUEST,
-    output_type=yandex_dot_cloud_dot_access_dot_access__pb2._LISTACCESSBINDINGSRESPONSE,
-    serialized_options=b'\202\323\344\223\0020\022./dns/v1/zones/{resource_id}:listAccessBindings',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='SetAccessBindings',
-    full_name='yandex.cloud.dns.v1.DnsZoneService.SetAccessBindings',
-    index=11,
-    containing_service=None,
-    input_type=yandex_dot_cloud_dot_access_dot_access__pb2._SETACCESSBINDINGSREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\0022\"-/dns/v1/zones/{resource_id}:setAccessBindings:\001*\262\322*9\n access.SetAccessBindingsMetadata\022\025google.protobuf.Empty',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='UpdateAccessBindings',
-    full_name='yandex.cloud.dns.v1.DnsZoneService.UpdateAccessBindings',
-    index=12,
-    containing_service=None,
-    input_type=yandex_dot_cloud_dot_access_dot_access__pb2._UPDATEACCESSBINDINGSREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\0025\"0/dns/v1/zones/{resource_id}:updateAccessBindings:\001*\262\322*<\n#access.UpdateAccessBindingsMetadata\022\025google.protobuf.Empty',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='UpdatePrivateNetworks',
-    full_name='yandex.cloud.dns.v1.DnsZoneService.UpdatePrivateNetworks',
-    index=13,
-    containing_service=None,
-    input_type=_UPDATEDNSZONEPRIVATENETWORKSREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002621/dns/v1/zones/{dns_zone_id}:updatePrivateNetworks:\001*\262\322*/\n$UpdateDnsZonePrivateNetworksMetadata\022\007DnsZone',
-    create_key=_descriptor._internal_create_key,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_DNSZONESERVICE)
-
-DESCRIPTOR.services_by_name['DnsZoneService'] = _DNSZONESERVICE
-
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*yandex/cloud/dns/v1/dns_zone_service.proto\x12\x13yandex.cloud.dns.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/access/access.proto\x1a yandex/cloud/api/operation.proto\x1a\"yandex/cloud/dns/v1/dns_zone.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"\x86\x01\n#UpdateDnsZonePrivateNetworksRequest\x12\x13\n\x0b\x64ns_zone_id\x18\x01 \x01(\t\x12$\n\x1cprivate_network_id_additions\x18\x02 \x03(\t\x12$\n\x1cprivate_network_id_deletions\x18\x03 \x03(\t\";\n$UpdateDnsZonePrivateNetworksMetadata\x12\x13\n\x0b\x64ns_zone_id\x18\x01 \x01(\t\".\n\x11GetDnsZoneRequest\x12\x19\n\x0b\x64ns_zone_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\x89\x01\n\x13ListDnsZonesRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"`\n\x14ListDnsZonesResponse\x12/\n\tdns_zones\x18\x01 \x03(\x0b\x32\x1c.yandex.cloud.dns.v1.DnsZone\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x87\x04\n\x14\x43reateDnsZoneRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\x04name\x18\x02 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8a\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x35.yandex.cloud.dns.v1.CreateDnsZoneRequest.LabelsEntryBC\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x1c\x12\x14[a-z][-_./\\@0-9a-z]*\x1a\x04\x31-63\x12\x38\n\x04zone\x18\x05 \x01(\tB*\xe8\xc7\x31\x01\xf2\xc7\x31\x19[.]|[a-z0-9][-a-z0-9.]*\\.\x8a\xc8\x31\x05<=255\x12\x42\n\x12private_visibility\x18\x06 \x01(\x0b\x32&.yandex.cloud.dns.v1.PrivateVisibility\x12@\n\x11public_visibility\x18\x07 \x01(\x0b\x32%.yandex.cloud.dns.v1.PublicVisibility\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\",\n\x15\x43reateDnsZoneMetadata\x12\x13\n\x0b\x64ns_zone_id\x18\x01 \x01(\t\"\xfa\x03\n\x14UpdateDnsZoneRequest\x12\x1b\n\x0b\x64ns_zone_id\x18\x01 \x01(\tB\x06\x8a\xc8\x31\x02\x32\x30\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8a\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x35.yandex.cloud.dns.v1.UpdateDnsZoneRequest.LabelsEntryBC\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x1c\x12\x14[a-z][-_./\\@0-9a-z]*\x1a\x04\x31-63\x12\x42\n\x12private_visibility\x18\x06 \x01(\x0b\x32&.yandex.cloud.dns.v1.PrivateVisibility\x12@\n\x11public_visibility\x18\x07 \x01(\x0b\x32%.yandex.cloud.dns.v1.PublicVisibility\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\",\n\x15UpdateDnsZoneMetadata\x12\x13\n\x0b\x64ns_zone_id\x18\x01 \x01(\t\"3\n\x14\x44\x65leteDnsZoneRequest\x12\x1b\n\x0b\x64ns_zone_id\x18\x01 \x01(\tB\x06\x8a\xc8\x31\x02\x32\x30\",\n\x15\x44\x65leteDnsZoneMetadata\x12\x13\n\x0b\x64ns_zone_id\x18\x01 \x01(\t\"r\n\x1aGetDnsZoneRecordSetRequest\x12\x1b\n\x0b\x64ns_zone_id\x18\x01 \x01(\tB\x06\x8a\xc8\x31\x02\x32\x30\x12\x1b\n\x04name\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=255\x12\x1a\n\x04type\x18\x03 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=10\"\x96\x01\n\x1cListDnsZoneRecordSetsRequest\x12\x1b\n\x0b\x64ns_zone_id\x18\x01 \x01(\tB\x06\x8a\xc8\x31\x02\x32\x30\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"m\n\x1dListDnsZoneRecordSetsResponse\x12\x33\n\x0brecord_sets\x18\x01 \x03(\x0b\x32\x1e.yandex.cloud.dns.v1.RecordSet\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xb4\x01\n\x17UpdateRecordSetsRequest\x12\x1b\n\x0b\x64ns_zone_id\x18\x01 \x01(\tB\x06\x8a\xc8\x31\x02\x32\x30\x12=\n\tdeletions\x18\x02 \x03(\x0b\x32\x1e.yandex.cloud.dns.v1.RecordSetB\n\x82\xc8\x31\x06<=1000\x12=\n\tadditions\x18\x03 \x03(\x0b\x32\x1e.yandex.cloud.dns.v1.RecordSetB\n\x82\xc8\x31\x06<=1000\"\x1a\n\x18UpdateRecordSetsMetadata\"\xf3\x01\n\x17UpsertRecordSetsRequest\x12\x1b\n\x0b\x64ns_zone_id\x18\x01 \x01(\tB\x06\x8a\xc8\x31\x02\x32\x30\x12=\n\tdeletions\x18\x02 \x03(\x0b\x32\x1e.yandex.cloud.dns.v1.RecordSetB\n\x82\xc8\x31\x06<=1000\x12@\n\x0creplacements\x18\x03 \x03(\x0b\x32\x1e.yandex.cloud.dns.v1.RecordSetB\n\x82\xc8\x31\x06<=1000\x12:\n\x06merges\x18\x04 \x03(\x0b\x32\x1e.yandex.cloud.dns.v1.RecordSetB\n\x82\xc8\x31\x06<=1000\"\x1a\n\x18UpsertRecordSetsMetadata\"u\n\rRecordSetDiff\x12\x31\n\tadditions\x18\x01 \x03(\x0b\x32\x1e.yandex.cloud.dns.v1.RecordSet\x12\x31\n\tdeletions\x18\x02 \x03(\x0b\x32\x1e.yandex.cloud.dns.v1.RecordSet\"\x96\x01\n\x1cListDnsZoneOperationsRequest\x12\x1b\n\x0b\x64ns_zone_id\x18\x01 \x01(\tB\x06\x8a\xc8\x31\x02\x32\x30\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"o\n\x1dListDnsZoneOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xc8\x13\n\x0e\x44nsZoneService\x12p\n\x03Get\x12&.yandex.cloud.dns.v1.GetDnsZoneRequest\x1a\x1c.yandex.cloud.dns.v1.DnsZone\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/dns/v1/zones/{dns_zone_id}\x12r\n\x04List\x12(.yandex.cloud.dns.v1.ListDnsZonesRequest\x1a).yandex.cloud.dns.v1.ListDnsZonesResponse\"\x15\x82\xd3\xe4\x93\x02\x0f\x12\r/dns/v1/zones\x12\x94\x01\n\x06\x43reate\x12).yandex.cloud.dns.v1.CreateDnsZoneRequest\x1a!.yandex.cloud.operation.Operation\"<\xb2\xd2* \n\x15\x43reateDnsZoneMetadata\x12\x07\x44nsZone\x82\xd3\xe4\x93\x02\x12\"\r/dns/v1/zones:\x01*\x12\xa2\x01\n\x06Update\x12).yandex.cloud.dns.v1.UpdateDnsZoneRequest\x1a!.yandex.cloud.operation.Operation\"J\xb2\xd2* \n\x15UpdateDnsZoneMetadata\x12\x07\x44nsZone\x82\xd3\xe4\x93\x02 2\x1b/dns/v1/zones/{dns_zone_id}:\x01*\x12\xad\x01\n\x06\x44\x65lete\x12).yandex.cloud.dns.v1.DeleteDnsZoneRequest\x1a!.yandex.cloud.operation.Operation\"U\xb2\xd2*.\n\x15\x44\x65leteDnsZoneMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x1d*\x1b/dns/v1/zones/{dns_zone_id}\x12\x91\x01\n\x0cGetRecordSet\x12/.yandex.cloud.dns.v1.GetDnsZoneRecordSetRequest\x1a\x1e.yandex.cloud.dns.v1.RecordSet\"0\x82\xd3\xe4\x93\x02*\x12(/dns/v1/zones/{dns_zone_id}:getRecordSet\x12\xab\x01\n\x0eListRecordSets\x12\x31.yandex.cloud.dns.v1.ListDnsZoneRecordSetsRequest\x1a\x32.yandex.cloud.dns.v1.ListDnsZoneRecordSetsResponse\"2\x82\xd3\xe4\x93\x02,\x12*/dns/v1/zones/{dns_zone_id}:listRecordSets\x12\xc9\x01\n\x10UpdateRecordSets\x12,.yandex.cloud.dns.v1.UpdateRecordSetsRequest\x1a!.yandex.cloud.operation.Operation\"d\xb2\xd2*)\n\x18UpdateRecordSetsMetadata\x12\rRecordSetDiff\x82\xd3\xe4\x93\x02\x31\",/dns/v1/zones/{dns_zone_id}:updateRecordSets:\x01*\x12\xc9\x01\n\x10UpsertRecordSets\x12,.yandex.cloud.dns.v1.UpsertRecordSetsRequest\x1a!.yandex.cloud.operation.Operation\"d\xb2\xd2*)\n\x18UpsertRecordSetsMetadata\x12\rRecordSetDiff\x82\xd3\xe4\x93\x02\x31\",/dns/v1/zones/{dns_zone_id}:upsertRecordSets:\x01*\x12\xa7\x01\n\x0eListOperations\x12\x31.yandex.cloud.dns.v1.ListDnsZoneOperationsRequest\x1a\x32.yandex.cloud.dns.v1.ListDnsZoneOperationsResponse\".\x82\xd3\xe4\x93\x02(\x12&/dns/v1/zones/{dns_zone_id}/operations\x12\xad\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"6\x82\xd3\xe4\x93\x02\x30\x12./dns/v1/zones/{resource_id}:listAccessBindings\x12\xdc\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"u\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x32\"-/dns/v1/zones/{resource_id}:setAccessBindings:\x01*\x12\xe8\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"{\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x35\"0/dns/v1/zones/{resource_id}:updateAccessBindings:\x01*\x12\xe5\x01\n\x15UpdatePrivateNetworks\x12\x38.yandex.cloud.dns.v1.UpdateDnsZonePrivateNetworksRequest\x1a!.yandex.cloud.operation.Operation\"o\xb2\xd2*/\n$UpdateDnsZonePrivateNetworksMetadata\x12\x07\x44nsZone\x82\xd3\xe4\x93\x02\x36\x32\x31/dns/v1/zones/{dns_zone_id}:updatePrivateNetworks:\x01*BV\n\x17yandex.cloud.api.dns.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/dns/v1;dnsb\x06proto3')
+
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.dns.v1.dns_zone_service_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
+
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n\027yandex.cloud.api.dns.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/dns/v1;dns'
+  _GETDNSZONEREQUEST.fields_by_name['dns_zone_id']._options = None
+  _GETDNSZONEREQUEST.fields_by_name['dns_zone_id']._serialized_options = b'\350\3071\001'
+  _LISTDNSZONESREQUEST.fields_by_name['folder_id']._options = None
+  _LISTDNSZONESREQUEST.fields_by_name['folder_id']._serialized_options = b'\350\3071\001'
+  _LISTDNSZONESREQUEST.fields_by_name['page_size']._options = None
+  _LISTDNSZONESREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
+  _LISTDNSZONESREQUEST.fields_by_name['page_token']._options = None
+  _LISTDNSZONESREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\006<=1000'
+  _LISTDNSZONESREQUEST.fields_by_name['filter']._options = None
+  _LISTDNSZONESREQUEST.fields_by_name['filter']._serialized_options = b'\212\3101\006<=1000'
+  _CREATEDNSZONEREQUEST_LABELSENTRY._options = None
+  _CREATEDNSZONEREQUEST_LABELSENTRY._serialized_options = b'8\001'
+  _CREATEDNSZONEREQUEST.fields_by_name['folder_id']._options = None
+  _CREATEDNSZONEREQUEST.fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _CREATEDNSZONEREQUEST.fields_by_name['name']._options = None
+  _CREATEDNSZONEREQUEST.fields_by_name['name']._serialized_options = b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?'
+  _CREATEDNSZONEREQUEST.fields_by_name['description']._options = None
+  _CREATEDNSZONEREQUEST.fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
+  _CREATEDNSZONEREQUEST.fields_by_name['labels']._options = None
+  _CREATEDNSZONEREQUEST.fields_by_name['labels']._serialized_options = b'\362\3071\017[-_./\\@0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\034\022\024[a-z][-_./\\@0-9a-z]*\032\0041-63'
+  _CREATEDNSZONEREQUEST.fields_by_name['zone']._options = None
+  _CREATEDNSZONEREQUEST.fields_by_name['zone']._serialized_options = b'\350\3071\001\362\3071\031[.]|[a-z0-9][-a-z0-9.]*\\.\212\3101\005<=255'
+  _UPDATEDNSZONEREQUEST_LABELSENTRY._options = None
+  _UPDATEDNSZONEREQUEST_LABELSENTRY._serialized_options = b'8\001'
+  _UPDATEDNSZONEREQUEST.fields_by_name['dns_zone_id']._options = None
+  _UPDATEDNSZONEREQUEST.fields_by_name['dns_zone_id']._serialized_options = b'\212\3101\00220'
+  _UPDATEDNSZONEREQUEST.fields_by_name['name']._options = None
+  _UPDATEDNSZONEREQUEST.fields_by_name['name']._serialized_options = b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?'
+  _UPDATEDNSZONEREQUEST.fields_by_name['description']._options = None
+  _UPDATEDNSZONEREQUEST.fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
+  _UPDATEDNSZONEREQUEST.fields_by_name['labels']._options = None
+  _UPDATEDNSZONEREQUEST.fields_by_name['labels']._serialized_options = b'\362\3071\017[-_./\\@0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\034\022\024[a-z][-_./\\@0-9a-z]*\032\0041-63'
+  _DELETEDNSZONEREQUEST.fields_by_name['dns_zone_id']._options = None
+  _DELETEDNSZONEREQUEST.fields_by_name['dns_zone_id']._serialized_options = b'\212\3101\00220'
+  _GETDNSZONERECORDSETREQUEST.fields_by_name['dns_zone_id']._options = None
+  _GETDNSZONERECORDSETREQUEST.fields_by_name['dns_zone_id']._serialized_options = b'\212\3101\00220'
+  _GETDNSZONERECORDSETREQUEST.fields_by_name['name']._options = None
+  _GETDNSZONERECORDSETREQUEST.fields_by_name['name']._serialized_options = b'\350\3071\001\212\3101\005<=255'
+  _GETDNSZONERECORDSETREQUEST.fields_by_name['type']._options = None
+  _GETDNSZONERECORDSETREQUEST.fields_by_name['type']._serialized_options = b'\350\3071\001\212\3101\004<=10'
+  _LISTDNSZONERECORDSETSREQUEST.fields_by_name['dns_zone_id']._options = None
+  _LISTDNSZONERECORDSETSREQUEST.fields_by_name['dns_zone_id']._serialized_options = b'\212\3101\00220'
+  _LISTDNSZONERECORDSETSREQUEST.fields_by_name['page_size']._options = None
+  _LISTDNSZONERECORDSETSREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
+  _LISTDNSZONERECORDSETSREQUEST.fields_by_name['page_token']._options = None
+  _LISTDNSZONERECORDSETSREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\006<=1000'
+  _LISTDNSZONERECORDSETSREQUEST.fields_by_name['filter']._options = None
+  _LISTDNSZONERECORDSETSREQUEST.fields_by_name['filter']._serialized_options = b'\212\3101\006<=1000'
+  _UPDATERECORDSETSREQUEST.fields_by_name['dns_zone_id']._options = None
+  _UPDATERECORDSETSREQUEST.fields_by_name['dns_zone_id']._serialized_options = b'\212\3101\00220'
+  _UPDATERECORDSETSREQUEST.fields_by_name['deletions']._options = None
+  _UPDATERECORDSETSREQUEST.fields_by_name['deletions']._serialized_options = b'\202\3101\006<=1000'
+  _UPDATERECORDSETSREQUEST.fields_by_name['additions']._options = None
+  _UPDATERECORDSETSREQUEST.fields_by_name['additions']._serialized_options = b'\202\3101\006<=1000'
+  _UPSERTRECORDSETSREQUEST.fields_by_name['dns_zone_id']._options = None
+  _UPSERTRECORDSETSREQUEST.fields_by_name['dns_zone_id']._serialized_options = b'\212\3101\00220'
+  _UPSERTRECORDSETSREQUEST.fields_by_name['deletions']._options = None
+  _UPSERTRECORDSETSREQUEST.fields_by_name['deletions']._serialized_options = b'\202\3101\006<=1000'
+  _UPSERTRECORDSETSREQUEST.fields_by_name['replacements']._options = None
+  _UPSERTRECORDSETSREQUEST.fields_by_name['replacements']._serialized_options = b'\202\3101\006<=1000'
+  _UPSERTRECORDSETSREQUEST.fields_by_name['merges']._options = None
+  _UPSERTRECORDSETSREQUEST.fields_by_name['merges']._serialized_options = b'\202\3101\006<=1000'
+  _LISTDNSZONEOPERATIONSREQUEST.fields_by_name['dns_zone_id']._options = None
+  _LISTDNSZONEOPERATIONSREQUEST.fields_by_name['dns_zone_id']._serialized_options = b'\212\3101\00220'
+  _LISTDNSZONEOPERATIONSREQUEST.fields_by_name['page_size']._options = None
+  _LISTDNSZONEOPERATIONSREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\0060-1000'
+  _LISTDNSZONEOPERATIONSREQUEST.fields_by_name['page_token']._options = None
+  _LISTDNSZONEOPERATIONSREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\006<=1000'
+  _LISTDNSZONEOPERATIONSREQUEST.fields_by_name['filter']._options = None
+  _LISTDNSZONEOPERATIONSREQUEST.fields_by_name['filter']._serialized_options = b'\212\3101\006<=1000'
+  _DNSZONESERVICE.methods_by_name['Get']._options = None
+  _DNSZONESERVICE.methods_by_name['Get']._serialized_options = b'\202\323\344\223\002\035\022\033/dns/v1/zones/{dns_zone_id}'
+  _DNSZONESERVICE.methods_by_name['List']._options = None
+  _DNSZONESERVICE.methods_by_name['List']._serialized_options = b'\202\323\344\223\002\017\022\r/dns/v1/zones'
+  _DNSZONESERVICE.methods_by_name['Create']._options = None
+  _DNSZONESERVICE.methods_by_name['Create']._serialized_options = b'\262\322* \n\025CreateDnsZoneMetadata\022\007DnsZone\202\323\344\223\002\022\"\r/dns/v1/zones:\001*'
+  _DNSZONESERVICE.methods_by_name['Update']._options = None
+  _DNSZONESERVICE.methods_by_name['Update']._serialized_options = b'\262\322* \n\025UpdateDnsZoneMetadata\022\007DnsZone\202\323\344\223\002 2\033/dns/v1/zones/{dns_zone_id}:\001*'
+  _DNSZONESERVICE.methods_by_name['Delete']._options = None
+  _DNSZONESERVICE.methods_by_name['Delete']._serialized_options = b'\262\322*.\n\025DeleteDnsZoneMetadata\022\025google.protobuf.Empty\202\323\344\223\002\035*\033/dns/v1/zones/{dns_zone_id}'
+  _DNSZONESERVICE.methods_by_name['GetRecordSet']._options = None
+  _DNSZONESERVICE.methods_by_name['GetRecordSet']._serialized_options = b'\202\323\344\223\002*\022(/dns/v1/zones/{dns_zone_id}:getRecordSet'
+  _DNSZONESERVICE.methods_by_name['ListRecordSets']._options = None
+  _DNSZONESERVICE.methods_by_name['ListRecordSets']._serialized_options = b'\202\323\344\223\002,\022*/dns/v1/zones/{dns_zone_id}:listRecordSets'
+  _DNSZONESERVICE.methods_by_name['UpdateRecordSets']._options = None
+  _DNSZONESERVICE.methods_by_name['UpdateRecordSets']._serialized_options = b'\262\322*)\n\030UpdateRecordSetsMetadata\022\rRecordSetDiff\202\323\344\223\0021\",/dns/v1/zones/{dns_zone_id}:updateRecordSets:\001*'
+  _DNSZONESERVICE.methods_by_name['UpsertRecordSets']._options = None
+  _DNSZONESERVICE.methods_by_name['UpsertRecordSets']._serialized_options = b'\262\322*)\n\030UpsertRecordSetsMetadata\022\rRecordSetDiff\202\323\344\223\0021\",/dns/v1/zones/{dns_zone_id}:upsertRecordSets:\001*'
+  _DNSZONESERVICE.methods_by_name['ListOperations']._options = None
+  _DNSZONESERVICE.methods_by_name['ListOperations']._serialized_options = b'\202\323\344\223\002(\022&/dns/v1/zones/{dns_zone_id}/operations'
+  _DNSZONESERVICE.methods_by_name['ListAccessBindings']._options = None
+  _DNSZONESERVICE.methods_by_name['ListAccessBindings']._serialized_options = b'\202\323\344\223\0020\022./dns/v1/zones/{resource_id}:listAccessBindings'
+  _DNSZONESERVICE.methods_by_name['SetAccessBindings']._options = None
+  _DNSZONESERVICE.methods_by_name['SetAccessBindings']._serialized_options = b'\262\322*9\n access.SetAccessBindingsMetadata\022\025google.protobuf.Empty\202\323\344\223\0022\"-/dns/v1/zones/{resource_id}:setAccessBindings:\001*'
+  _DNSZONESERVICE.methods_by_name['UpdateAccessBindings']._options = None
+  _DNSZONESERVICE.methods_by_name['UpdateAccessBindings']._serialized_options = b'\262\322*<\n#access.UpdateAccessBindingsMetadata\022\025google.protobuf.Empty\202\323\344\223\0025\"0/dns/v1/zones/{resource_id}:updateAccessBindings:\001*'
+  _DNSZONESERVICE.methods_by_name['UpdatePrivateNetworks']._options = None
+  _DNSZONESERVICE.methods_by_name['UpdatePrivateNetworks']._serialized_options = b'\262\322*/\n$UpdateDnsZonePrivateNetworksMetadata\022\007DnsZone\202\323\344\223\002621/dns/v1/zones/{dns_zone_id}:updatePrivateNetworks:\001*'
+  _globals['_UPDATEDNSZONEPRIVATENETWORKSREQUEST']._serialized_start=307
+  _globals['_UPDATEDNSZONEPRIVATENETWORKSREQUEST']._serialized_end=441
+  _globals['_UPDATEDNSZONEPRIVATENETWORKSMETADATA']._serialized_start=443
+  _globals['_UPDATEDNSZONEPRIVATENETWORKSMETADATA']._serialized_end=502
+  _globals['_GETDNSZONEREQUEST']._serialized_start=504
+  _globals['_GETDNSZONEREQUEST']._serialized_end=550
+  _globals['_LISTDNSZONESREQUEST']._serialized_start=553
+  _globals['_LISTDNSZONESREQUEST']._serialized_end=690
+  _globals['_LISTDNSZONESRESPONSE']._serialized_start=692
+  _globals['_LISTDNSZONESRESPONSE']._serialized_end=788
+  _globals['_CREATEDNSZONEREQUEST']._serialized_start=791
+  _globals['_CREATEDNSZONEREQUEST']._serialized_end=1310
+  _globals['_CREATEDNSZONEREQUEST_LABELSENTRY']._serialized_start=1265
+  _globals['_CREATEDNSZONEREQUEST_LABELSENTRY']._serialized_end=1310
+  _globals['_CREATEDNSZONEMETADATA']._serialized_start=1312
+  _globals['_CREATEDNSZONEMETADATA']._serialized_end=1356
+  _globals['_UPDATEDNSZONEREQUEST']._serialized_start=1359
+  _globals['_UPDATEDNSZONEREQUEST']._serialized_end=1865
+  _globals['_UPDATEDNSZONEREQUEST_LABELSENTRY']._serialized_start=1265
+  _globals['_UPDATEDNSZONEREQUEST_LABELSENTRY']._serialized_end=1310
+  _globals['_UPDATEDNSZONEMETADATA']._serialized_start=1867
+  _globals['_UPDATEDNSZONEMETADATA']._serialized_end=1911
+  _globals['_DELETEDNSZONEREQUEST']._serialized_start=1913
+  _globals['_DELETEDNSZONEREQUEST']._serialized_end=1964
+  _globals['_DELETEDNSZONEMETADATA']._serialized_start=1966
+  _globals['_DELETEDNSZONEMETADATA']._serialized_end=2010
+  _globals['_GETDNSZONERECORDSETREQUEST']._serialized_start=2012
+  _globals['_GETDNSZONERECORDSETREQUEST']._serialized_end=2126
+  _globals['_LISTDNSZONERECORDSETSREQUEST']._serialized_start=2129
+  _globals['_LISTDNSZONERECORDSETSREQUEST']._serialized_end=2279
+  _globals['_LISTDNSZONERECORDSETSRESPONSE']._serialized_start=2281
+  _globals['_LISTDNSZONERECORDSETSRESPONSE']._serialized_end=2390
+  _globals['_UPDATERECORDSETSREQUEST']._serialized_start=2393
+  _globals['_UPDATERECORDSETSREQUEST']._serialized_end=2573
+  _globals['_UPDATERECORDSETSMETADATA']._serialized_start=2575
+  _globals['_UPDATERECORDSETSMETADATA']._serialized_end=2601
+  _globals['_UPSERTRECORDSETSREQUEST']._serialized_start=2604
+  _globals['_UPSERTRECORDSETSREQUEST']._serialized_end=2847
+  _globals['_UPSERTRECORDSETSMETADATA']._serialized_start=2849
+  _globals['_UPSERTRECORDSETSMETADATA']._serialized_end=2875
+  _globals['_RECORDSETDIFF']._serialized_start=2877
+  _globals['_RECORDSETDIFF']._serialized_end=2994
+  _globals['_LISTDNSZONEOPERATIONSREQUEST']._serialized_start=2997
+  _globals['_LISTDNSZONEOPERATIONSREQUEST']._serialized_end=3147
+  _globals['_LISTDNSZONEOPERATIONSRESPONSE']._serialized_start=3149
+  _globals['_LISTDNSZONEOPERATIONSRESPONSE']._serialized_end=3260
+  _globals['_DNSZONESERVICE']._serialized_start=3263
+  _globals['_DNSZONESERVICE']._serialized_end=5767
 # @@protoc_insertion_point(module_scope)

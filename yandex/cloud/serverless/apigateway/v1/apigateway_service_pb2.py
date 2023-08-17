@@ -3,9 +3,9 @@
 # source: yandex/cloud/serverless/apigateway/v1/apigateway_service.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -20,1221 +20,125 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/serverless/apigateway/v1/apigateway_service.proto',
-  package='yandex.cloud.serverless.apigateway.v1',
-  syntax='proto3',
-  serialized_options=b'\n)yandex.cloud.api.serverless.apigateway.v1ZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/apigateway/v1;apigateway',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n>yandex/cloud/serverless/apigateway/v1/apigateway_service.proto\x12%yandex.cloud.serverless.apigateway.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a yandex/cloud/access/access.proto\x1a\x36yandex/cloud/serverless/apigateway/v1/apigateway.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"4\n\x14GetApiGatewayRequest\x12\x1c\n\x0e\x61pi_gateway_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"g\n\x15ListApiGatewayRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\"z\n\x16ListApiGatewayResponse\x12G\n\x0c\x61pi_gateways\x18\x01 \x03(\x0b\x32\x31.yandex.cloud.serverless.apigateway.v1.ApiGateway\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x94\x04\n\x17\x43reateApiGatewayRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x32\n\x04name\x18\x02 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\xa3\x01\n\x06labels\x18\x04 \x03(\x0b\x32J.yandex.cloud.serverless.apigateway.v1.CreateApiGatewayRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x16\n\x0copenapi_spec\x18\x05 \x01(\tH\x00\x12I\n\x0c\x63onnectivity\x18\x06 \x01(\x0b\x32\x33.yandex.cloud.serverless.apigateway.v1.Connectivity\x12\x46\n\x0blog_options\x18\x07 \x01(\x0b\x32\x31.yandex.cloud.serverless.apigateway.v1.LogOptions\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0c\n\x04spec\x12\x04\xc0\xc1\x31\x01\"\xca\x04\n\x17UpdateApiGatewayRequest\x12\x1c\n\x0e\x61pi_gateway_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\xa3\x01\n\x06labels\x18\x05 \x03(\x0b\x32J.yandex.cloud.serverless.apigateway.v1.UpdateApiGatewayRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x16\n\x0copenapi_spec\x18\x06 \x01(\tH\x00\x12I\n\x0c\x63onnectivity\x18\x07 \x01(\x0b\x32\x33.yandex.cloud.serverless.apigateway.v1.Connectivity\x12\x46\n\x0blog_options\x18\x08 \x01(\x0b\x32\x31.yandex.cloud.serverless.apigateway.v1.LogOptions\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0c\n\x04spec\x12\x04\xc0\xc1\x31\x01\"7\n\x17\x44\x65leteApiGatewayRequest\x12\x1c\n\x0e\x61pi_gateway_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"]\n\x10\x41\x64\x64\x44omainRequest\x12\x1c\n\x0e\x61pi_gateway_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x13\n\x0b\x64omain_name\x18\x03 \x01(\t\x12\x16\n\x0e\x63\x65rtificate_id\x18\x04 \x01(\t\"L\n\x13RemoveDomainRequest\x12\x1c\n\x0e\x61pi_gateway_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tdomain_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"2\n\x18\x43reateApiGatewayMetadata\x12\x16\n\x0e\x61pi_gateway_id\x18\x01 \x01(\t\"2\n\x18UpdateApiGatewayMetadata\x12\x16\n\x0e\x61pi_gateway_id\x18\x01 \x01(\t\"2\n\x18\x44\x65leteApiGatewayMetadata\x12\x16\n\x0e\x61pi_gateway_id\x18\x01 \x01(\t\"k\n\x11\x41\x64\x64\x44omainMetadata\x12\x16\n\x0e\x61pi_gateway_id\x18\x01 \x01(\t\x12\x11\n\tdomain_id\x18\x02 \x01(\t\x12\x13\n\x0b\x64omain_name\x18\x03 \x01(\t\x12\x16\n\x0e\x63\x65rtificate_id\x18\x04 \x01(\t\"A\n\x14RemoveDomainMetadata\x12\x16\n\x0e\x61pi_gateway_id\x18\x01 \x01(\t\x12\x11\n\tdomain_id\x18\x02 \x01(\t\"\x8f\x01\n\x15ListOperationsRequest\x12\x1c\n\x0e\x61pi_gateway_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"h\n\x16ListOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xc0\x01\n\x15GetOpenapiSpecRequest\x12\x1c\n\x0e\x61pi_gateway_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12S\n\x06\x66ormat\x18\x02 \x01(\x0e\x32\x43.yandex.cloud.serverless.apigateway.v1.GetOpenapiSpecRequest.Format\"4\n\x06\x46ormat\x12\x16\n\x12\x46ORMAT_UNSPECIFIED\x10\x00\x12\x08\n\x04JSON\x10\x01\x12\x08\n\x04YAML\x10\x02\"F\n\x16GetOpenapiSpecResponse\x12\x16\n\x0e\x61pi_gateway_id\x18\x01 \x01(\t\x12\x14\n\x0copenapi_spec\x18\x02 \x01(\t2\xda\x13\n\x11\x41piGatewayService\x12\xab\x01\n\x03Get\x12;.yandex.cloud.serverless.apigateway.v1.GetApiGatewayRequest\x1a\x31.yandex.cloud.serverless.apigateway.v1.ApiGateway\"4\x82\xd3\xe4\x93\x02.\x12,/apigateways/v1/apigateways/{api_gateway_id}\x12\xa8\x01\n\x04List\x12<.yandex.cloud.serverless.apigateway.v1.ListApiGatewayRequest\x1a=.yandex.cloud.serverless.apigateway.v1.ListApiGatewayResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/apigateways/v1/apigateways\x12\xbd\x01\n\x06\x43reate\x12>.yandex.cloud.serverless.apigateway.v1.CreateApiGatewayRequest\x1a!.yandex.cloud.operation.Operation\"P\x82\xd3\xe4\x93\x02 \"\x1b/apigateways/v1/apigateways:\x01*\xb2\xd2*&\n\x18\x43reateApiGatewayMetadata\x12\nApiGateway\x12\xce\x01\n\x06Update\x12>.yandex.cloud.serverless.apigateway.v1.UpdateApiGatewayRequest\x1a!.yandex.cloud.operation.Operation\"a\x82\xd3\xe4\x93\x02\x31\x32,/apigateways/v1/apigateways/{api_gateway_id}:\x01*\xb2\xd2*&\n\x18UpdateApiGatewayMetadata\x12\nApiGateway\x12\xd6\x01\n\x06\x44\x65lete\x12>.yandex.cloud.serverless.apigateway.v1.DeleteApiGatewayRequest\x1a!.yandex.cloud.operation.Operation\"i\x82\xd3\xe4\x93\x02.*,/apigateways/v1/apigateways/{api_gateway_id}\xb2\xd2*1\n\x18\x44\x65leteApiGatewayMetadata\x12\x15google.protobuf.Empty\x12\xd8\x01\n\tAddDomain\x12\x37.yandex.cloud.serverless.apigateway.v1.AddDomainRequest\x1a!.yandex.cloud.operation.Operation\"o\x82\xd3\xe4\x93\x02;\"6/apigateways/v1/apigateways/{api_gateway_id}:addDomain:\x01*\xb2\xd2**\n\x11\x41\x64\x64\x44omainMetadata\x12\x15google.protobuf.Empty\x12\xe4\x01\n\x0cRemoveDomain\x12:.yandex.cloud.serverless.apigateway.v1.RemoveDomainRequest\x1a!.yandex.cloud.operation.Operation\"u\x82\xd3\xe4\x93\x02>\"9/apigateways/v1/apigateways/{api_gateway_id}:removeDomain:\x01*\xb2\xd2*-\n\x14RemoveDomainMetadata\x12\x15google.protobuf.Empty\x12\xc8\x01\n\x0eGetOpenapiSpec\x12<.yandex.cloud.serverless.apigateway.v1.GetOpenapiSpecRequest\x1a=.yandex.cloud.serverless.apigateway.v1.GetOpenapiSpecResponse\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/apigateways/v1/apigateways/{api_gateway_id}:spec\x12\xce\x01\n\x0eListOperations\x12<.yandex.cloud.serverless.apigateway.v1.ListOperationsRequest\x1a=.yandex.cloud.serverless.apigateway.v1.ListOperationsResponse\"?\x82\xd3\xe4\x93\x02\x39\x12\x37/apigateways/v1/apigateways/{api_gateway_id}/operations\x12\xbb\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"D\x82\xd3\xe4\x93\x02>\x12</apigateways/v1/apigateways/{resource_id}:listAccessBindings\x12\xeb\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x83\x01\x82\xd3\xe4\x93\x02@\";/apigateways/v1/apigateways/{resource_id}:setAccessBindings:\x01*\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\xf7\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x89\x01\x82\xd3\xe4\x93\x02\x43\x32>/apigateways/v1/apigateways/{resource_id}:updateAccessBindings:\x01*\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.EmptyB\x81\x01\n)yandex.cloud.api.serverless.apigateway.v1ZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/apigateway/v1;apigatewayb\x06proto3'
-  ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_access_dot_access__pb2.DESCRIPTOR,yandex_dot_cloud_dot_serverless_dot_apigateway_dot_v1_dot_apigateway__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
-
-
-
-_GETOPENAPISPECREQUEST_FORMAT = _descriptor.EnumDescriptor(
-  name='Format',
-  full_name='yandex.cloud.serverless.apigateway.v1.GetOpenapiSpecRequest.Format',
-  filename=None,
-  file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='FORMAT_UNSPECIFIED', index=0, number=0,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='JSON', index=1, number=1,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='YAML', index=2, number=2,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-  ],
-  containing_type=None,
-  serialized_options=None,
-  serialized_start=2726,
-  serialized_end=2778,
-)
-_sym_db.RegisterEnumDescriptor(_GETOPENAPISPECREQUEST_FORMAT)
-
-
-_GETAPIGATEWAYREQUEST = _descriptor.Descriptor(
-  name='GetApiGatewayRequest',
-  full_name='yandex.cloud.serverless.apigateway.v1.GetApiGatewayRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='api_gateway_id', full_name='yandex.cloud.serverless.apigateway.v1.GetApiGatewayRequest.api_gateway_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=364,
-  serialized_end=416,
-)
-
-
-_LISTAPIGATEWAYREQUEST = _descriptor.Descriptor(
-  name='ListApiGatewayRequest',
-  full_name='yandex.cloud.serverless.apigateway.v1.ListApiGatewayRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.serverless.apigateway.v1.ListApiGatewayRequest.folder_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.serverless.apigateway.v1.ListApiGatewayRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.serverless.apigateway.v1.ListApiGatewayRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='filter', full_name='yandex.cloud.serverless.apigateway.v1.ListApiGatewayRequest.filter', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=418,
-  serialized_end=521,
-)
-
-
-_LISTAPIGATEWAYRESPONSE = _descriptor.Descriptor(
-  name='ListApiGatewayResponse',
-  full_name='yandex.cloud.serverless.apigateway.v1.ListApiGatewayResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='api_gateways', full_name='yandex.cloud.serverless.apigateway.v1.ListApiGatewayResponse.api_gateways', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.serverless.apigateway.v1.ListApiGatewayResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=523,
-  serialized_end=645,
-)
-
-
-_CREATEAPIGATEWAYREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='yandex.cloud.serverless.apigateway.v1.CreateApiGatewayRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='yandex.cloud.serverless.apigateway.v1.CreateApiGatewayRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='yandex.cloud.serverless.apigateway.v1.CreateApiGatewayRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1121,
-  serialized_end=1166,
-)
-
-_CREATEAPIGATEWAYREQUEST = _descriptor.Descriptor(
-  name='CreateApiGatewayRequest',
-  full_name='yandex.cloud.serverless.apigateway.v1.CreateApiGatewayRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.serverless.apigateway.v1.CreateApiGatewayRequest.folder_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.serverless.apigateway.v1.CreateApiGatewayRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='yandex.cloud.serverless.apigateway.v1.CreateApiGatewayRequest.description', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='yandex.cloud.serverless.apigateway.v1.CreateApiGatewayRequest.labels', index=3,
-      number=4, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\017[-_./\\@0-9a-z]*\262\3101\006\032\0041-63\262\3101\026\022\024[a-z][-_./\\@0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='openapi_spec', full_name='yandex.cloud.serverless.apigateway.v1.CreateApiGatewayRequest.openapi_spec', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='connectivity', full_name='yandex.cloud.serverless.apigateway.v1.CreateApiGatewayRequest.connectivity', index=5,
-      number=6, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='log_options', full_name='yandex.cloud.serverless.apigateway.v1.CreateApiGatewayRequest.log_options', index=6,
-      number=7, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_CREATEAPIGATEWAYREQUEST_LABELSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-    _descriptor.OneofDescriptor(
-      name='spec', full_name='yandex.cloud.serverless.apigateway.v1.CreateApiGatewayRequest.spec',
-      index=0, containing_type=None,
-      create_key=_descriptor._internal_create_key,
-    fields=[], serialized_options=b'\300\3011\001'),
-  ],
-  serialized_start=648,
-  serialized_end=1180,
-)
-
-
-_UPDATEAPIGATEWAYREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='yandex.cloud.serverless.apigateway.v1.UpdateApiGatewayRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='yandex.cloud.serverless.apigateway.v1.UpdateApiGatewayRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='yandex.cloud.serverless.apigateway.v1.UpdateApiGatewayRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1121,
-  serialized_end=1166,
-)
-
-_UPDATEAPIGATEWAYREQUEST = _descriptor.Descriptor(
-  name='UpdateApiGatewayRequest',
-  full_name='yandex.cloud.serverless.apigateway.v1.UpdateApiGatewayRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='api_gateway_id', full_name='yandex.cloud.serverless.apigateway.v1.UpdateApiGatewayRequest.api_gateway_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='update_mask', full_name='yandex.cloud.serverless.apigateway.v1.UpdateApiGatewayRequest.update_mask', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.serverless.apigateway.v1.UpdateApiGatewayRequest.name', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='yandex.cloud.serverless.apigateway.v1.UpdateApiGatewayRequest.description', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='yandex.cloud.serverless.apigateway.v1.UpdateApiGatewayRequest.labels', index=4,
-      number=5, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\017[-_./\\@0-9a-z]*\262\3101\006\032\0041-63\262\3101\026\022\024[a-z][-_./\\@0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='openapi_spec', full_name='yandex.cloud.serverless.apigateway.v1.UpdateApiGatewayRequest.openapi_spec', index=5,
-      number=6, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='connectivity', full_name='yandex.cloud.serverless.apigateway.v1.UpdateApiGatewayRequest.connectivity', index=6,
-      number=7, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='log_options', full_name='yandex.cloud.serverless.apigateway.v1.UpdateApiGatewayRequest.log_options', index=7,
-      number=8, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_UPDATEAPIGATEWAYREQUEST_LABELSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-    _descriptor.OneofDescriptor(
-      name='spec', full_name='yandex.cloud.serverless.apigateway.v1.UpdateApiGatewayRequest.spec',
-      index=0, containing_type=None,
-      create_key=_descriptor._internal_create_key,
-    fields=[], serialized_options=b'\300\3011\001'),
-  ],
-  serialized_start=1183,
-  serialized_end=1769,
-)
-
-
-_DELETEAPIGATEWAYREQUEST = _descriptor.Descriptor(
-  name='DeleteApiGatewayRequest',
-  full_name='yandex.cloud.serverless.apigateway.v1.DeleteApiGatewayRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='api_gateway_id', full_name='yandex.cloud.serverless.apigateway.v1.DeleteApiGatewayRequest.api_gateway_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1771,
-  serialized_end=1826,
-)
-
-
-_ADDDOMAINREQUEST = _descriptor.Descriptor(
-  name='AddDomainRequest',
-  full_name='yandex.cloud.serverless.apigateway.v1.AddDomainRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='api_gateway_id', full_name='yandex.cloud.serverless.apigateway.v1.AddDomainRequest.api_gateway_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='domain_name', full_name='yandex.cloud.serverless.apigateway.v1.AddDomainRequest.domain_name', index=1,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='certificate_id', full_name='yandex.cloud.serverless.apigateway.v1.AddDomainRequest.certificate_id', index=2,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1828,
-  serialized_end=1921,
-)
-
-
-_REMOVEDOMAINREQUEST = _descriptor.Descriptor(
-  name='RemoveDomainRequest',
-  full_name='yandex.cloud.serverless.apigateway.v1.RemoveDomainRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='api_gateway_id', full_name='yandex.cloud.serverless.apigateway.v1.RemoveDomainRequest.api_gateway_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='domain_id', full_name='yandex.cloud.serverless.apigateway.v1.RemoveDomainRequest.domain_id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1923,
-  serialized_end=1999,
-)
-
-
-_CREATEAPIGATEWAYMETADATA = _descriptor.Descriptor(
-  name='CreateApiGatewayMetadata',
-  full_name='yandex.cloud.serverless.apigateway.v1.CreateApiGatewayMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='api_gateway_id', full_name='yandex.cloud.serverless.apigateway.v1.CreateApiGatewayMetadata.api_gateway_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2001,
-  serialized_end=2051,
-)
-
-
-_UPDATEAPIGATEWAYMETADATA = _descriptor.Descriptor(
-  name='UpdateApiGatewayMetadata',
-  full_name='yandex.cloud.serverless.apigateway.v1.UpdateApiGatewayMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='api_gateway_id', full_name='yandex.cloud.serverless.apigateway.v1.UpdateApiGatewayMetadata.api_gateway_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2053,
-  serialized_end=2103,
-)
-
-
-_DELETEAPIGATEWAYMETADATA = _descriptor.Descriptor(
-  name='DeleteApiGatewayMetadata',
-  full_name='yandex.cloud.serverless.apigateway.v1.DeleteApiGatewayMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='api_gateway_id', full_name='yandex.cloud.serverless.apigateway.v1.DeleteApiGatewayMetadata.api_gateway_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2105,
-  serialized_end=2155,
-)
-
-
-_ADDDOMAINMETADATA = _descriptor.Descriptor(
-  name='AddDomainMetadata',
-  full_name='yandex.cloud.serverless.apigateway.v1.AddDomainMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='api_gateway_id', full_name='yandex.cloud.serverless.apigateway.v1.AddDomainMetadata.api_gateway_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='domain_id', full_name='yandex.cloud.serverless.apigateway.v1.AddDomainMetadata.domain_id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='domain_name', full_name='yandex.cloud.serverless.apigateway.v1.AddDomainMetadata.domain_name', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='certificate_id', full_name='yandex.cloud.serverless.apigateway.v1.AddDomainMetadata.certificate_id', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2157,
-  serialized_end=2264,
-)
-
-
-_REMOVEDOMAINMETADATA = _descriptor.Descriptor(
-  name='RemoveDomainMetadata',
-  full_name='yandex.cloud.serverless.apigateway.v1.RemoveDomainMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='api_gateway_id', full_name='yandex.cloud.serverless.apigateway.v1.RemoveDomainMetadata.api_gateway_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='domain_id', full_name='yandex.cloud.serverless.apigateway.v1.RemoveDomainMetadata.domain_id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2266,
-  serialized_end=2331,
-)
-
-
-_LISTOPERATIONSREQUEST = _descriptor.Descriptor(
-  name='ListOperationsRequest',
-  full_name='yandex.cloud.serverless.apigateway.v1.ListOperationsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='api_gateway_id', full_name='yandex.cloud.serverless.apigateway.v1.ListOperationsRequest.api_gateway_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.serverless.apigateway.v1.ListOperationsRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\0060-1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.serverless.apigateway.v1.ListOperationsRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='filter', full_name='yandex.cloud.serverless.apigateway.v1.ListOperationsRequest.filter', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2334,
-  serialized_end=2477,
-)
-
-
-_LISTOPERATIONSRESPONSE = _descriptor.Descriptor(
-  name='ListOperationsResponse',
-  full_name='yandex.cloud.serverless.apigateway.v1.ListOperationsResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='operations', full_name='yandex.cloud.serverless.apigateway.v1.ListOperationsResponse.operations', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.serverless.apigateway.v1.ListOperationsResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2479,
-  serialized_end=2583,
-)
-
-
-_GETOPENAPISPECREQUEST = _descriptor.Descriptor(
-  name='GetOpenapiSpecRequest',
-  full_name='yandex.cloud.serverless.apigateway.v1.GetOpenapiSpecRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='api_gateway_id', full_name='yandex.cloud.serverless.apigateway.v1.GetOpenapiSpecRequest.api_gateway_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='format', full_name='yandex.cloud.serverless.apigateway.v1.GetOpenapiSpecRequest.format', index=1,
-      number=2, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-    _GETOPENAPISPECREQUEST_FORMAT,
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2586,
-  serialized_end=2778,
-)
-
-
-_GETOPENAPISPECRESPONSE = _descriptor.Descriptor(
-  name='GetOpenapiSpecResponse',
-  full_name='yandex.cloud.serverless.apigateway.v1.GetOpenapiSpecResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='api_gateway_id', full_name='yandex.cloud.serverless.apigateway.v1.GetOpenapiSpecResponse.api_gateway_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='openapi_spec', full_name='yandex.cloud.serverless.apigateway.v1.GetOpenapiSpecResponse.openapi_spec', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2780,
-  serialized_end=2850,
-)
-
-_LISTAPIGATEWAYRESPONSE.fields_by_name['api_gateways'].message_type = yandex_dot_cloud_dot_serverless_dot_apigateway_dot_v1_dot_apigateway__pb2._APIGATEWAY
-_CREATEAPIGATEWAYREQUEST_LABELSENTRY.containing_type = _CREATEAPIGATEWAYREQUEST
-_CREATEAPIGATEWAYREQUEST.fields_by_name['labels'].message_type = _CREATEAPIGATEWAYREQUEST_LABELSENTRY
-_CREATEAPIGATEWAYREQUEST.fields_by_name['connectivity'].message_type = yandex_dot_cloud_dot_serverless_dot_apigateway_dot_v1_dot_apigateway__pb2._CONNECTIVITY
-_CREATEAPIGATEWAYREQUEST.fields_by_name['log_options'].message_type = yandex_dot_cloud_dot_serverless_dot_apigateway_dot_v1_dot_apigateway__pb2._LOGOPTIONS
-_CREATEAPIGATEWAYREQUEST.oneofs_by_name['spec'].fields.append(
-  _CREATEAPIGATEWAYREQUEST.fields_by_name['openapi_spec'])
-_CREATEAPIGATEWAYREQUEST.fields_by_name['openapi_spec'].containing_oneof = _CREATEAPIGATEWAYREQUEST.oneofs_by_name['spec']
-_UPDATEAPIGATEWAYREQUEST_LABELSENTRY.containing_type = _UPDATEAPIGATEWAYREQUEST
-_UPDATEAPIGATEWAYREQUEST.fields_by_name['update_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
-_UPDATEAPIGATEWAYREQUEST.fields_by_name['labels'].message_type = _UPDATEAPIGATEWAYREQUEST_LABELSENTRY
-_UPDATEAPIGATEWAYREQUEST.fields_by_name['connectivity'].message_type = yandex_dot_cloud_dot_serverless_dot_apigateway_dot_v1_dot_apigateway__pb2._CONNECTIVITY
-_UPDATEAPIGATEWAYREQUEST.fields_by_name['log_options'].message_type = yandex_dot_cloud_dot_serverless_dot_apigateway_dot_v1_dot_apigateway__pb2._LOGOPTIONS
-_UPDATEAPIGATEWAYREQUEST.oneofs_by_name['spec'].fields.append(
-  _UPDATEAPIGATEWAYREQUEST.fields_by_name['openapi_spec'])
-_UPDATEAPIGATEWAYREQUEST.fields_by_name['openapi_spec'].containing_oneof = _UPDATEAPIGATEWAYREQUEST.oneofs_by_name['spec']
-_LISTOPERATIONSRESPONSE.fields_by_name['operations'].message_type = yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION
-_GETOPENAPISPECREQUEST.fields_by_name['format'].enum_type = _GETOPENAPISPECREQUEST_FORMAT
-_GETOPENAPISPECREQUEST_FORMAT.containing_type = _GETOPENAPISPECREQUEST
-DESCRIPTOR.message_types_by_name['GetApiGatewayRequest'] = _GETAPIGATEWAYREQUEST
-DESCRIPTOR.message_types_by_name['ListApiGatewayRequest'] = _LISTAPIGATEWAYREQUEST
-DESCRIPTOR.message_types_by_name['ListApiGatewayResponse'] = _LISTAPIGATEWAYRESPONSE
-DESCRIPTOR.message_types_by_name['CreateApiGatewayRequest'] = _CREATEAPIGATEWAYREQUEST
-DESCRIPTOR.message_types_by_name['UpdateApiGatewayRequest'] = _UPDATEAPIGATEWAYREQUEST
-DESCRIPTOR.message_types_by_name['DeleteApiGatewayRequest'] = _DELETEAPIGATEWAYREQUEST
-DESCRIPTOR.message_types_by_name['AddDomainRequest'] = _ADDDOMAINREQUEST
-DESCRIPTOR.message_types_by_name['RemoveDomainRequest'] = _REMOVEDOMAINREQUEST
-DESCRIPTOR.message_types_by_name['CreateApiGatewayMetadata'] = _CREATEAPIGATEWAYMETADATA
-DESCRIPTOR.message_types_by_name['UpdateApiGatewayMetadata'] = _UPDATEAPIGATEWAYMETADATA
-DESCRIPTOR.message_types_by_name['DeleteApiGatewayMetadata'] = _DELETEAPIGATEWAYMETADATA
-DESCRIPTOR.message_types_by_name['AddDomainMetadata'] = _ADDDOMAINMETADATA
-DESCRIPTOR.message_types_by_name['RemoveDomainMetadata'] = _REMOVEDOMAINMETADATA
-DESCRIPTOR.message_types_by_name['ListOperationsRequest'] = _LISTOPERATIONSREQUEST
-DESCRIPTOR.message_types_by_name['ListOperationsResponse'] = _LISTOPERATIONSRESPONSE
-DESCRIPTOR.message_types_by_name['GetOpenapiSpecRequest'] = _GETOPENAPISPECREQUEST
-DESCRIPTOR.message_types_by_name['GetOpenapiSpecResponse'] = _GETOPENAPISPECRESPONSE
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-GetApiGatewayRequest = _reflection.GeneratedProtocolMessageType('GetApiGatewayRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETAPIGATEWAYREQUEST,
-  '__module__' : 'yandex.cloud.serverless.apigateway.v1.apigateway_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.serverless.apigateway.v1.GetApiGatewayRequest)
-  })
-_sym_db.RegisterMessage(GetApiGatewayRequest)
-
-ListApiGatewayRequest = _reflection.GeneratedProtocolMessageType('ListApiGatewayRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTAPIGATEWAYREQUEST,
-  '__module__' : 'yandex.cloud.serverless.apigateway.v1.apigateway_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.serverless.apigateway.v1.ListApiGatewayRequest)
-  })
-_sym_db.RegisterMessage(ListApiGatewayRequest)
-
-ListApiGatewayResponse = _reflection.GeneratedProtocolMessageType('ListApiGatewayResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTAPIGATEWAYRESPONSE,
-  '__module__' : 'yandex.cloud.serverless.apigateway.v1.apigateway_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.serverless.apigateway.v1.ListApiGatewayResponse)
-  })
-_sym_db.RegisterMessage(ListApiGatewayResponse)
-
-CreateApiGatewayRequest = _reflection.GeneratedProtocolMessageType('CreateApiGatewayRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _CREATEAPIGATEWAYREQUEST_LABELSENTRY,
-    '__module__' : 'yandex.cloud.serverless.apigateway.v1.apigateway_service_pb2'
-    # @@protoc_insertion_point(class_scope:yandex.cloud.serverless.apigateway.v1.CreateApiGatewayRequest.LabelsEntry)
-    })
-  ,
-  'DESCRIPTOR' : _CREATEAPIGATEWAYREQUEST,
-  '__module__' : 'yandex.cloud.serverless.apigateway.v1.apigateway_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.serverless.apigateway.v1.CreateApiGatewayRequest)
-  })
-_sym_db.RegisterMessage(CreateApiGatewayRequest)
-_sym_db.RegisterMessage(CreateApiGatewayRequest.LabelsEntry)
-
-UpdateApiGatewayRequest = _reflection.GeneratedProtocolMessageType('UpdateApiGatewayRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _UPDATEAPIGATEWAYREQUEST_LABELSENTRY,
-    '__module__' : 'yandex.cloud.serverless.apigateway.v1.apigateway_service_pb2'
-    # @@protoc_insertion_point(class_scope:yandex.cloud.serverless.apigateway.v1.UpdateApiGatewayRequest.LabelsEntry)
-    })
-  ,
-  'DESCRIPTOR' : _UPDATEAPIGATEWAYREQUEST,
-  '__module__' : 'yandex.cloud.serverless.apigateway.v1.apigateway_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.serverless.apigateway.v1.UpdateApiGatewayRequest)
-  })
-_sym_db.RegisterMessage(UpdateApiGatewayRequest)
-_sym_db.RegisterMessage(UpdateApiGatewayRequest.LabelsEntry)
-
-DeleteApiGatewayRequest = _reflection.GeneratedProtocolMessageType('DeleteApiGatewayRequest', (_message.Message,), {
-  'DESCRIPTOR' : _DELETEAPIGATEWAYREQUEST,
-  '__module__' : 'yandex.cloud.serverless.apigateway.v1.apigateway_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.serverless.apigateway.v1.DeleteApiGatewayRequest)
-  })
-_sym_db.RegisterMessage(DeleteApiGatewayRequest)
-
-AddDomainRequest = _reflection.GeneratedProtocolMessageType('AddDomainRequest', (_message.Message,), {
-  'DESCRIPTOR' : _ADDDOMAINREQUEST,
-  '__module__' : 'yandex.cloud.serverless.apigateway.v1.apigateway_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.serverless.apigateway.v1.AddDomainRequest)
-  })
-_sym_db.RegisterMessage(AddDomainRequest)
-
-RemoveDomainRequest = _reflection.GeneratedProtocolMessageType('RemoveDomainRequest', (_message.Message,), {
-  'DESCRIPTOR' : _REMOVEDOMAINREQUEST,
-  '__module__' : 'yandex.cloud.serverless.apigateway.v1.apigateway_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.serverless.apigateway.v1.RemoveDomainRequest)
-  })
-_sym_db.RegisterMessage(RemoveDomainRequest)
-
-CreateApiGatewayMetadata = _reflection.GeneratedProtocolMessageType('CreateApiGatewayMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _CREATEAPIGATEWAYMETADATA,
-  '__module__' : 'yandex.cloud.serverless.apigateway.v1.apigateway_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.serverless.apigateway.v1.CreateApiGatewayMetadata)
-  })
-_sym_db.RegisterMessage(CreateApiGatewayMetadata)
-
-UpdateApiGatewayMetadata = _reflection.GeneratedProtocolMessageType('UpdateApiGatewayMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATEAPIGATEWAYMETADATA,
-  '__module__' : 'yandex.cloud.serverless.apigateway.v1.apigateway_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.serverless.apigateway.v1.UpdateApiGatewayMetadata)
-  })
-_sym_db.RegisterMessage(UpdateApiGatewayMetadata)
-
-DeleteApiGatewayMetadata = _reflection.GeneratedProtocolMessageType('DeleteApiGatewayMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _DELETEAPIGATEWAYMETADATA,
-  '__module__' : 'yandex.cloud.serverless.apigateway.v1.apigateway_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.serverless.apigateway.v1.DeleteApiGatewayMetadata)
-  })
-_sym_db.RegisterMessage(DeleteApiGatewayMetadata)
-
-AddDomainMetadata = _reflection.GeneratedProtocolMessageType('AddDomainMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _ADDDOMAINMETADATA,
-  '__module__' : 'yandex.cloud.serverless.apigateway.v1.apigateway_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.serverless.apigateway.v1.AddDomainMetadata)
-  })
-_sym_db.RegisterMessage(AddDomainMetadata)
-
-RemoveDomainMetadata = _reflection.GeneratedProtocolMessageType('RemoveDomainMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _REMOVEDOMAINMETADATA,
-  '__module__' : 'yandex.cloud.serverless.apigateway.v1.apigateway_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.serverless.apigateway.v1.RemoveDomainMetadata)
-  })
-_sym_db.RegisterMessage(RemoveDomainMetadata)
-
-ListOperationsRequest = _reflection.GeneratedProtocolMessageType('ListOperationsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTOPERATIONSREQUEST,
-  '__module__' : 'yandex.cloud.serverless.apigateway.v1.apigateway_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.serverless.apigateway.v1.ListOperationsRequest)
-  })
-_sym_db.RegisterMessage(ListOperationsRequest)
-
-ListOperationsResponse = _reflection.GeneratedProtocolMessageType('ListOperationsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTOPERATIONSRESPONSE,
-  '__module__' : 'yandex.cloud.serverless.apigateway.v1.apigateway_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.serverless.apigateway.v1.ListOperationsResponse)
-  })
-_sym_db.RegisterMessage(ListOperationsResponse)
-
-GetOpenapiSpecRequest = _reflection.GeneratedProtocolMessageType('GetOpenapiSpecRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETOPENAPISPECREQUEST,
-  '__module__' : 'yandex.cloud.serverless.apigateway.v1.apigateway_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.serverless.apigateway.v1.GetOpenapiSpecRequest)
-  })
-_sym_db.RegisterMessage(GetOpenapiSpecRequest)
-
-GetOpenapiSpecResponse = _reflection.GeneratedProtocolMessageType('GetOpenapiSpecResponse', (_message.Message,), {
-  'DESCRIPTOR' : _GETOPENAPISPECRESPONSE,
-  '__module__' : 'yandex.cloud.serverless.apigateway.v1.apigateway_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.serverless.apigateway.v1.GetOpenapiSpecResponse)
-  })
-_sym_db.RegisterMessage(GetOpenapiSpecResponse)
-
-
-DESCRIPTOR._options = None
-_GETAPIGATEWAYREQUEST.fields_by_name['api_gateway_id']._options = None
-_LISTAPIGATEWAYREQUEST.fields_by_name['folder_id']._options = None
-_CREATEAPIGATEWAYREQUEST_LABELSENTRY._options = None
-_CREATEAPIGATEWAYREQUEST.oneofs_by_name['spec']._options = None
-_CREATEAPIGATEWAYREQUEST.fields_by_name['folder_id']._options = None
-_CREATEAPIGATEWAYREQUEST.fields_by_name['name']._options = None
-_CREATEAPIGATEWAYREQUEST.fields_by_name['description']._options = None
-_CREATEAPIGATEWAYREQUEST.fields_by_name['labels']._options = None
-_UPDATEAPIGATEWAYREQUEST_LABELSENTRY._options = None
-_UPDATEAPIGATEWAYREQUEST.oneofs_by_name['spec']._options = None
-_UPDATEAPIGATEWAYREQUEST.fields_by_name['api_gateway_id']._options = None
-_UPDATEAPIGATEWAYREQUEST.fields_by_name['name']._options = None
-_UPDATEAPIGATEWAYREQUEST.fields_by_name['description']._options = None
-_UPDATEAPIGATEWAYREQUEST.fields_by_name['labels']._options = None
-_DELETEAPIGATEWAYREQUEST.fields_by_name['api_gateway_id']._options = None
-_ADDDOMAINREQUEST.fields_by_name['api_gateway_id']._options = None
-_REMOVEDOMAINREQUEST.fields_by_name['api_gateway_id']._options = None
-_REMOVEDOMAINREQUEST.fields_by_name['domain_id']._options = None
-_LISTOPERATIONSREQUEST.fields_by_name['api_gateway_id']._options = None
-_LISTOPERATIONSREQUEST.fields_by_name['page_size']._options = None
-_LISTOPERATIONSREQUEST.fields_by_name['page_token']._options = None
-_LISTOPERATIONSREQUEST.fields_by_name['filter']._options = None
-_GETOPENAPISPECREQUEST.fields_by_name['api_gateway_id']._options = None
-
-_APIGATEWAYSERVICE = _descriptor.ServiceDescriptor(
-  name='ApiGatewayService',
-  full_name='yandex.cloud.serverless.apigateway.v1.ApiGatewayService',
-  file=DESCRIPTOR,
-  index=0,
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_start=2853,
-  serialized_end=5375,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='Get',
-    full_name='yandex.cloud.serverless.apigateway.v1.ApiGatewayService.Get',
-    index=0,
-    containing_service=None,
-    input_type=_GETAPIGATEWAYREQUEST,
-    output_type=yandex_dot_cloud_dot_serverless_dot_apigateway_dot_v1_dot_apigateway__pb2._APIGATEWAY,
-    serialized_options=b'\202\323\344\223\002.\022,/apigateways/v1/apigateways/{api_gateway_id}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='List',
-    full_name='yandex.cloud.serverless.apigateway.v1.ApiGatewayService.List',
-    index=1,
-    containing_service=None,
-    input_type=_LISTAPIGATEWAYREQUEST,
-    output_type=_LISTAPIGATEWAYRESPONSE,
-    serialized_options=b'\202\323\344\223\002\035\022\033/apigateways/v1/apigateways',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Create',
-    full_name='yandex.cloud.serverless.apigateway.v1.ApiGatewayService.Create',
-    index=2,
-    containing_service=None,
-    input_type=_CREATEAPIGATEWAYREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002 \"\033/apigateways/v1/apigateways:\001*\262\322*&\n\030CreateApiGatewayMetadata\022\nApiGateway',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Update',
-    full_name='yandex.cloud.serverless.apigateway.v1.ApiGatewayService.Update',
-    index=3,
-    containing_service=None,
-    input_type=_UPDATEAPIGATEWAYREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\00212,/apigateways/v1/apigateways/{api_gateway_id}:\001*\262\322*&\n\030UpdateApiGatewayMetadata\022\nApiGateway',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Delete',
-    full_name='yandex.cloud.serverless.apigateway.v1.ApiGatewayService.Delete',
-    index=4,
-    containing_service=None,
-    input_type=_DELETEAPIGATEWAYREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002.*,/apigateways/v1/apigateways/{api_gateway_id}\262\322*1\n\030DeleteApiGatewayMetadata\022\025google.protobuf.Empty',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='AddDomain',
-    full_name='yandex.cloud.serverless.apigateway.v1.ApiGatewayService.AddDomain',
-    index=5,
-    containing_service=None,
-    input_type=_ADDDOMAINREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002;\"6/apigateways/v1/apigateways/{api_gateway_id}:addDomain:\001*\262\322**\n\021AddDomainMetadata\022\025google.protobuf.Empty',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='RemoveDomain',
-    full_name='yandex.cloud.serverless.apigateway.v1.ApiGatewayService.RemoveDomain',
-    index=6,
-    containing_service=None,
-    input_type=_REMOVEDOMAINREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002>\"9/apigateways/v1/apigateways/{api_gateway_id}:removeDomain:\001*\262\322*-\n\024RemoveDomainMetadata\022\025google.protobuf.Empty',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='GetOpenapiSpec',
-    full_name='yandex.cloud.serverless.apigateway.v1.ApiGatewayService.GetOpenapiSpec',
-    index=7,
-    containing_service=None,
-    input_type=_GETOPENAPISPECREQUEST,
-    output_type=_GETOPENAPISPECRESPONSE,
-    serialized_options=b'\202\323\344\223\0023\0221/apigateways/v1/apigateways/{api_gateway_id}:spec',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListOperations',
-    full_name='yandex.cloud.serverless.apigateway.v1.ApiGatewayService.ListOperations',
-    index=8,
-    containing_service=None,
-    input_type=_LISTOPERATIONSREQUEST,
-    output_type=_LISTOPERATIONSRESPONSE,
-    serialized_options=b'\202\323\344\223\0029\0227/apigateways/v1/apigateways/{api_gateway_id}/operations',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListAccessBindings',
-    full_name='yandex.cloud.serverless.apigateway.v1.ApiGatewayService.ListAccessBindings',
-    index=9,
-    containing_service=None,
-    input_type=yandex_dot_cloud_dot_access_dot_access__pb2._LISTACCESSBINDINGSREQUEST,
-    output_type=yandex_dot_cloud_dot_access_dot_access__pb2._LISTACCESSBINDINGSRESPONSE,
-    serialized_options=b'\202\323\344\223\002>\022</apigateways/v1/apigateways/{resource_id}:listAccessBindings',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='SetAccessBindings',
-    full_name='yandex.cloud.serverless.apigateway.v1.ApiGatewayService.SetAccessBindings',
-    index=10,
-    containing_service=None,
-    input_type=yandex_dot_cloud_dot_access_dot_access__pb2._SETACCESSBINDINGSREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002@\";/apigateways/v1/apigateways/{resource_id}:setAccessBindings:\001*\262\322*9\n access.SetAccessBindingsMetadata\022\025google.protobuf.Empty',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='UpdateAccessBindings',
-    full_name='yandex.cloud.serverless.apigateway.v1.ApiGatewayService.UpdateAccessBindings',
-    index=11,
-    containing_service=None,
-    input_type=yandex_dot_cloud_dot_access_dot_access__pb2._UPDATEACCESSBINDINGSREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002C2>/apigateways/v1/apigateways/{resource_id}:updateAccessBindings:\001*\262\322*<\n#access.UpdateAccessBindingsMetadata\022\025google.protobuf.Empty',
-    create_key=_descriptor._internal_create_key,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_APIGATEWAYSERVICE)
-
-DESCRIPTOR.services_by_name['ApiGatewayService'] = _APIGATEWAYSERVICE
-
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n>yandex/cloud/serverless/apigateway/v1/apigateway_service.proto\x12%yandex.cloud.serverless.apigateway.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a yandex/cloud/access/access.proto\x1a\x36yandex/cloud/serverless/apigateway/v1/apigateway.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"4\n\x14GetApiGatewayRequest\x12\x1c\n\x0e\x61pi_gateway_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"g\n\x15ListApiGatewayRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\"z\n\x16ListApiGatewayResponse\x12G\n\x0c\x61pi_gateways\x18\x01 \x03(\x0b\x32\x31.yandex.cloud.serverless.apigateway.v1.ApiGateway\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x90\x04\n\x17\x43reateApiGatewayRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x32\n\x04name\x18\x02 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x9f\x01\n\x06labels\x18\x04 \x03(\x0b\x32J.yandex.cloud.serverless.apigateway.v1.CreateApiGatewayRequest.LabelsEntryBC\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x1c\x12\x14[a-z][-_./\\@0-9a-z]*\x1a\x04\x31-63\x12\x16\n\x0copenapi_spec\x18\x05 \x01(\tH\x00\x12I\n\x0c\x63onnectivity\x18\x06 \x01(\x0b\x32\x33.yandex.cloud.serverless.apigateway.v1.Connectivity\x12\x46\n\x0blog_options\x18\x07 \x01(\x0b\x32\x31.yandex.cloud.serverless.apigateway.v1.LogOptions\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0c\n\x04spec\x12\x04\xc0\xc1\x31\x01\"\xc6\x04\n\x17UpdateApiGatewayRequest\x12\x1c\n\x0e\x61pi_gateway_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x9f\x01\n\x06labels\x18\x05 \x03(\x0b\x32J.yandex.cloud.serverless.apigateway.v1.UpdateApiGatewayRequest.LabelsEntryBC\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x1c\x12\x14[a-z][-_./\\@0-9a-z]*\x1a\x04\x31-63\x12\x16\n\x0copenapi_spec\x18\x06 \x01(\tH\x00\x12I\n\x0c\x63onnectivity\x18\x07 \x01(\x0b\x32\x33.yandex.cloud.serverless.apigateway.v1.Connectivity\x12\x46\n\x0blog_options\x18\x08 \x01(\x0b\x32\x31.yandex.cloud.serverless.apigateway.v1.LogOptions\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0c\n\x04spec\x12\x04\xc0\xc1\x31\x01\"7\n\x17\x44\x65leteApiGatewayRequest\x12\x1c\n\x0e\x61pi_gateway_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"]\n\x10\x41\x64\x64\x44omainRequest\x12\x1c\n\x0e\x61pi_gateway_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x13\n\x0b\x64omain_name\x18\x03 \x01(\t\x12\x16\n\x0e\x63\x65rtificate_id\x18\x04 \x01(\t\"L\n\x13RemoveDomainRequest\x12\x1c\n\x0e\x61pi_gateway_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tdomain_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"2\n\x18\x43reateApiGatewayMetadata\x12\x16\n\x0e\x61pi_gateway_id\x18\x01 \x01(\t\"2\n\x18UpdateApiGatewayMetadata\x12\x16\n\x0e\x61pi_gateway_id\x18\x01 \x01(\t\"2\n\x18\x44\x65leteApiGatewayMetadata\x12\x16\n\x0e\x61pi_gateway_id\x18\x01 \x01(\t\"k\n\x11\x41\x64\x64\x44omainMetadata\x12\x16\n\x0e\x61pi_gateway_id\x18\x01 \x01(\t\x12\x11\n\tdomain_id\x18\x02 \x01(\t\x12\x13\n\x0b\x64omain_name\x18\x03 \x01(\t\x12\x16\n\x0e\x63\x65rtificate_id\x18\x04 \x01(\t\"A\n\x14RemoveDomainMetadata\x12\x16\n\x0e\x61pi_gateway_id\x18\x01 \x01(\t\x12\x11\n\tdomain_id\x18\x02 \x01(\t\"\x8f\x01\n\x15ListOperationsRequest\x12\x1c\n\x0e\x61pi_gateway_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"h\n\x16ListOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xc0\x01\n\x15GetOpenapiSpecRequest\x12\x1c\n\x0e\x61pi_gateway_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12S\n\x06\x66ormat\x18\x02 \x01(\x0e\x32\x43.yandex.cloud.serverless.apigateway.v1.GetOpenapiSpecRequest.Format\"4\n\x06\x46ormat\x12\x16\n\x12\x46ORMAT_UNSPECIFIED\x10\x00\x12\x08\n\x04JSON\x10\x01\x12\x08\n\x04YAML\x10\x02\"F\n\x16GetOpenapiSpecResponse\x12\x16\n\x0e\x61pi_gateway_id\x18\x01 \x01(\t\x12\x14\n\x0copenapi_spec\x18\x02 \x01(\t2\xda\x13\n\x11\x41piGatewayService\x12\xab\x01\n\x03Get\x12;.yandex.cloud.serverless.apigateway.v1.GetApiGatewayRequest\x1a\x31.yandex.cloud.serverless.apigateway.v1.ApiGateway\"4\x82\xd3\xe4\x93\x02.\x12,/apigateways/v1/apigateways/{api_gateway_id}\x12\xa8\x01\n\x04List\x12<.yandex.cloud.serverless.apigateway.v1.ListApiGatewayRequest\x1a=.yandex.cloud.serverless.apigateway.v1.ListApiGatewayResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/apigateways/v1/apigateways\x12\xbd\x01\n\x06\x43reate\x12>.yandex.cloud.serverless.apigateway.v1.CreateApiGatewayRequest\x1a!.yandex.cloud.operation.Operation\"P\xb2\xd2*&\n\x18\x43reateApiGatewayMetadata\x12\nApiGateway\x82\xd3\xe4\x93\x02 \"\x1b/apigateways/v1/apigateways:\x01*\x12\xce\x01\n\x06Update\x12>.yandex.cloud.serverless.apigateway.v1.UpdateApiGatewayRequest\x1a!.yandex.cloud.operation.Operation\"a\xb2\xd2*&\n\x18UpdateApiGatewayMetadata\x12\nApiGateway\x82\xd3\xe4\x93\x02\x31\x32,/apigateways/v1/apigateways/{api_gateway_id}:\x01*\x12\xd6\x01\n\x06\x44\x65lete\x12>.yandex.cloud.serverless.apigateway.v1.DeleteApiGatewayRequest\x1a!.yandex.cloud.operation.Operation\"i\xb2\xd2*1\n\x18\x44\x65leteApiGatewayMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02.*,/apigateways/v1/apigateways/{api_gateway_id}\x12\xd8\x01\n\tAddDomain\x12\x37.yandex.cloud.serverless.apigateway.v1.AddDomainRequest\x1a!.yandex.cloud.operation.Operation\"o\xb2\xd2**\n\x11\x41\x64\x64\x44omainMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02;\"6/apigateways/v1/apigateways/{api_gateway_id}:addDomain:\x01*\x12\xe4\x01\n\x0cRemoveDomain\x12:.yandex.cloud.serverless.apigateway.v1.RemoveDomainRequest\x1a!.yandex.cloud.operation.Operation\"u\xb2\xd2*-\n\x14RemoveDomainMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02>\"9/apigateways/v1/apigateways/{api_gateway_id}:removeDomain:\x01*\x12\xc8\x01\n\x0eGetOpenapiSpec\x12<.yandex.cloud.serverless.apigateway.v1.GetOpenapiSpecRequest\x1a=.yandex.cloud.serverless.apigateway.v1.GetOpenapiSpecResponse\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/apigateways/v1/apigateways/{api_gateway_id}:spec\x12\xce\x01\n\x0eListOperations\x12<.yandex.cloud.serverless.apigateway.v1.ListOperationsRequest\x1a=.yandex.cloud.serverless.apigateway.v1.ListOperationsResponse\"?\x82\xd3\xe4\x93\x02\x39\x12\x37/apigateways/v1/apigateways/{api_gateway_id}/operations\x12\xbb\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"D\x82\xd3\xe4\x93\x02>\x12</apigateways/v1/apigateways/{resource_id}:listAccessBindings\x12\xeb\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x83\x01\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02@\";/apigateways/v1/apigateways/{resource_id}:setAccessBindings:\x01*\x12\xf7\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x89\x01\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x43\x32>/apigateways/v1/apigateways/{resource_id}:updateAccessBindings:\x01*B\x81\x01\n)yandex.cloud.api.serverless.apigateway.v1ZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/apigateway/v1;apigatewayb\x06proto3')
+
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.serverless.apigateway.v1.apigateway_service_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
+
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n)yandex.cloud.api.serverless.apigateway.v1ZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/apigateway/v1;apigateway'
+  _GETAPIGATEWAYREQUEST.fields_by_name['api_gateway_id']._options = None
+  _GETAPIGATEWAYREQUEST.fields_by_name['api_gateway_id']._serialized_options = b'\350\3071\001'
+  _LISTAPIGATEWAYREQUEST.fields_by_name['folder_id']._options = None
+  _LISTAPIGATEWAYREQUEST.fields_by_name['folder_id']._serialized_options = b'\350\3071\001'
+  _CREATEAPIGATEWAYREQUEST_LABELSENTRY._options = None
+  _CREATEAPIGATEWAYREQUEST_LABELSENTRY._serialized_options = b'8\001'
+  _CREATEAPIGATEWAYREQUEST.oneofs_by_name['spec']._options = None
+  _CREATEAPIGATEWAYREQUEST.oneofs_by_name['spec']._serialized_options = b'\300\3011\001'
+  _CREATEAPIGATEWAYREQUEST.fields_by_name['folder_id']._options = None
+  _CREATEAPIGATEWAYREQUEST.fields_by_name['folder_id']._serialized_options = b'\350\3071\001'
+  _CREATEAPIGATEWAYREQUEST.fields_by_name['name']._options = None
+  _CREATEAPIGATEWAYREQUEST.fields_by_name['name']._serialized_options = b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?'
+  _CREATEAPIGATEWAYREQUEST.fields_by_name['description']._options = None
+  _CREATEAPIGATEWAYREQUEST.fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
+  _CREATEAPIGATEWAYREQUEST.fields_by_name['labels']._options = None
+  _CREATEAPIGATEWAYREQUEST.fields_by_name['labels']._serialized_options = b'\362\3071\017[-_./\\@0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\034\022\024[a-z][-_./\\@0-9a-z]*\032\0041-63'
+  _UPDATEAPIGATEWAYREQUEST_LABELSENTRY._options = None
+  _UPDATEAPIGATEWAYREQUEST_LABELSENTRY._serialized_options = b'8\001'
+  _UPDATEAPIGATEWAYREQUEST.oneofs_by_name['spec']._options = None
+  _UPDATEAPIGATEWAYREQUEST.oneofs_by_name['spec']._serialized_options = b'\300\3011\001'
+  _UPDATEAPIGATEWAYREQUEST.fields_by_name['api_gateway_id']._options = None
+  _UPDATEAPIGATEWAYREQUEST.fields_by_name['api_gateway_id']._serialized_options = b'\350\3071\001'
+  _UPDATEAPIGATEWAYREQUEST.fields_by_name['name']._options = None
+  _UPDATEAPIGATEWAYREQUEST.fields_by_name['name']._serialized_options = b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?'
+  _UPDATEAPIGATEWAYREQUEST.fields_by_name['description']._options = None
+  _UPDATEAPIGATEWAYREQUEST.fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
+  _UPDATEAPIGATEWAYREQUEST.fields_by_name['labels']._options = None
+  _UPDATEAPIGATEWAYREQUEST.fields_by_name['labels']._serialized_options = b'\362\3071\017[-_./\\@0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\034\022\024[a-z][-_./\\@0-9a-z]*\032\0041-63'
+  _DELETEAPIGATEWAYREQUEST.fields_by_name['api_gateway_id']._options = None
+  _DELETEAPIGATEWAYREQUEST.fields_by_name['api_gateway_id']._serialized_options = b'\350\3071\001'
+  _ADDDOMAINREQUEST.fields_by_name['api_gateway_id']._options = None
+  _ADDDOMAINREQUEST.fields_by_name['api_gateway_id']._serialized_options = b'\350\3071\001'
+  _REMOVEDOMAINREQUEST.fields_by_name['api_gateway_id']._options = None
+  _REMOVEDOMAINREQUEST.fields_by_name['api_gateway_id']._serialized_options = b'\350\3071\001'
+  _REMOVEDOMAINREQUEST.fields_by_name['domain_id']._options = None
+  _REMOVEDOMAINREQUEST.fields_by_name['domain_id']._serialized_options = b'\350\3071\001'
+  _LISTOPERATIONSREQUEST.fields_by_name['api_gateway_id']._options = None
+  _LISTOPERATIONSREQUEST.fields_by_name['api_gateway_id']._serialized_options = b'\350\3071\001'
+  _LISTOPERATIONSREQUEST.fields_by_name['page_size']._options = None
+  _LISTOPERATIONSREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\0060-1000'
+  _LISTOPERATIONSREQUEST.fields_by_name['page_token']._options = None
+  _LISTOPERATIONSREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
+  _LISTOPERATIONSREQUEST.fields_by_name['filter']._options = None
+  _LISTOPERATIONSREQUEST.fields_by_name['filter']._serialized_options = b'\212\3101\006<=1000'
+  _GETOPENAPISPECREQUEST.fields_by_name['api_gateway_id']._options = None
+  _GETOPENAPISPECREQUEST.fields_by_name['api_gateway_id']._serialized_options = b'\350\3071\001'
+  _APIGATEWAYSERVICE.methods_by_name['Get']._options = None
+  _APIGATEWAYSERVICE.methods_by_name['Get']._serialized_options = b'\202\323\344\223\002.\022,/apigateways/v1/apigateways/{api_gateway_id}'
+  _APIGATEWAYSERVICE.methods_by_name['List']._options = None
+  _APIGATEWAYSERVICE.methods_by_name['List']._serialized_options = b'\202\323\344\223\002\035\022\033/apigateways/v1/apigateways'
+  _APIGATEWAYSERVICE.methods_by_name['Create']._options = None
+  _APIGATEWAYSERVICE.methods_by_name['Create']._serialized_options = b'\262\322*&\n\030CreateApiGatewayMetadata\022\nApiGateway\202\323\344\223\002 \"\033/apigateways/v1/apigateways:\001*'
+  _APIGATEWAYSERVICE.methods_by_name['Update']._options = None
+  _APIGATEWAYSERVICE.methods_by_name['Update']._serialized_options = b'\262\322*&\n\030UpdateApiGatewayMetadata\022\nApiGateway\202\323\344\223\00212,/apigateways/v1/apigateways/{api_gateway_id}:\001*'
+  _APIGATEWAYSERVICE.methods_by_name['Delete']._options = None
+  _APIGATEWAYSERVICE.methods_by_name['Delete']._serialized_options = b'\262\322*1\n\030DeleteApiGatewayMetadata\022\025google.protobuf.Empty\202\323\344\223\002.*,/apigateways/v1/apigateways/{api_gateway_id}'
+  _APIGATEWAYSERVICE.methods_by_name['AddDomain']._options = None
+  _APIGATEWAYSERVICE.methods_by_name['AddDomain']._serialized_options = b'\262\322**\n\021AddDomainMetadata\022\025google.protobuf.Empty\202\323\344\223\002;\"6/apigateways/v1/apigateways/{api_gateway_id}:addDomain:\001*'
+  _APIGATEWAYSERVICE.methods_by_name['RemoveDomain']._options = None
+  _APIGATEWAYSERVICE.methods_by_name['RemoveDomain']._serialized_options = b'\262\322*-\n\024RemoveDomainMetadata\022\025google.protobuf.Empty\202\323\344\223\002>\"9/apigateways/v1/apigateways/{api_gateway_id}:removeDomain:\001*'
+  _APIGATEWAYSERVICE.methods_by_name['GetOpenapiSpec']._options = None
+  _APIGATEWAYSERVICE.methods_by_name['GetOpenapiSpec']._serialized_options = b'\202\323\344\223\0023\0221/apigateways/v1/apigateways/{api_gateway_id}:spec'
+  _APIGATEWAYSERVICE.methods_by_name['ListOperations']._options = None
+  _APIGATEWAYSERVICE.methods_by_name['ListOperations']._serialized_options = b'\202\323\344\223\0029\0227/apigateways/v1/apigateways/{api_gateway_id}/operations'
+  _APIGATEWAYSERVICE.methods_by_name['ListAccessBindings']._options = None
+  _APIGATEWAYSERVICE.methods_by_name['ListAccessBindings']._serialized_options = b'\202\323\344\223\002>\022</apigateways/v1/apigateways/{resource_id}:listAccessBindings'
+  _APIGATEWAYSERVICE.methods_by_name['SetAccessBindings']._options = None
+  _APIGATEWAYSERVICE.methods_by_name['SetAccessBindings']._serialized_options = b'\262\322*9\n access.SetAccessBindingsMetadata\022\025google.protobuf.Empty\202\323\344\223\002@\";/apigateways/v1/apigateways/{resource_id}:setAccessBindings:\001*'
+  _APIGATEWAYSERVICE.methods_by_name['UpdateAccessBindings']._options = None
+  _APIGATEWAYSERVICE.methods_by_name['UpdateAccessBindings']._serialized_options = b'\262\322*<\n#access.UpdateAccessBindingsMetadata\022\025google.protobuf.Empty\202\323\344\223\002C2>/apigateways/v1/apigateways/{resource_id}:updateAccessBindings:\001*'
+  _globals['_GETAPIGATEWAYREQUEST']._serialized_start=364
+  _globals['_GETAPIGATEWAYREQUEST']._serialized_end=416
+  _globals['_LISTAPIGATEWAYREQUEST']._serialized_start=418
+  _globals['_LISTAPIGATEWAYREQUEST']._serialized_end=521
+  _globals['_LISTAPIGATEWAYRESPONSE']._serialized_start=523
+  _globals['_LISTAPIGATEWAYRESPONSE']._serialized_end=645
+  _globals['_CREATEAPIGATEWAYREQUEST']._serialized_start=648
+  _globals['_CREATEAPIGATEWAYREQUEST']._serialized_end=1176
+  _globals['_CREATEAPIGATEWAYREQUEST_LABELSENTRY']._serialized_start=1117
+  _globals['_CREATEAPIGATEWAYREQUEST_LABELSENTRY']._serialized_end=1162
+  _globals['_UPDATEAPIGATEWAYREQUEST']._serialized_start=1179
+  _globals['_UPDATEAPIGATEWAYREQUEST']._serialized_end=1761
+  _globals['_UPDATEAPIGATEWAYREQUEST_LABELSENTRY']._serialized_start=1117
+  _globals['_UPDATEAPIGATEWAYREQUEST_LABELSENTRY']._serialized_end=1162
+  _globals['_DELETEAPIGATEWAYREQUEST']._serialized_start=1763
+  _globals['_DELETEAPIGATEWAYREQUEST']._serialized_end=1818
+  _globals['_ADDDOMAINREQUEST']._serialized_start=1820
+  _globals['_ADDDOMAINREQUEST']._serialized_end=1913
+  _globals['_REMOVEDOMAINREQUEST']._serialized_start=1915
+  _globals['_REMOVEDOMAINREQUEST']._serialized_end=1991
+  _globals['_CREATEAPIGATEWAYMETADATA']._serialized_start=1993
+  _globals['_CREATEAPIGATEWAYMETADATA']._serialized_end=2043
+  _globals['_UPDATEAPIGATEWAYMETADATA']._serialized_start=2045
+  _globals['_UPDATEAPIGATEWAYMETADATA']._serialized_end=2095
+  _globals['_DELETEAPIGATEWAYMETADATA']._serialized_start=2097
+  _globals['_DELETEAPIGATEWAYMETADATA']._serialized_end=2147
+  _globals['_ADDDOMAINMETADATA']._serialized_start=2149
+  _globals['_ADDDOMAINMETADATA']._serialized_end=2256
+  _globals['_REMOVEDOMAINMETADATA']._serialized_start=2258
+  _globals['_REMOVEDOMAINMETADATA']._serialized_end=2323
+  _globals['_LISTOPERATIONSREQUEST']._serialized_start=2326
+  _globals['_LISTOPERATIONSREQUEST']._serialized_end=2469
+  _globals['_LISTOPERATIONSRESPONSE']._serialized_start=2471
+  _globals['_LISTOPERATIONSRESPONSE']._serialized_end=2575
+  _globals['_GETOPENAPISPECREQUEST']._serialized_start=2578
+  _globals['_GETOPENAPISPECREQUEST']._serialized_end=2770
+  _globals['_GETOPENAPISPECREQUEST_FORMAT']._serialized_start=2718
+  _globals['_GETOPENAPISPECREQUEST_FORMAT']._serialized_end=2770
+  _globals['_GETOPENAPISPECRESPONSE']._serialized_start=2772
+  _globals['_GETOPENAPISPECRESPONSE']._serialized_end=2842
+  _globals['_APIGATEWAYSERVICE']._serialized_start=2845
+  _globals['_APIGATEWAYSERVICE']._serialized_end=5367
 # @@protoc_insertion_point(module_scope)

@@ -3,9 +3,9 @@
 # source: yandex/cloud/loadbalancer/v1/target_group_service.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -19,976 +19,113 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud.loadbalancer.v1 import target_group_pb2 as yandex_dot_cloud_dot_loadbalancer_dot_v1_dot_target__group__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/loadbalancer/v1/target_group_service.proto',
-  package='yandex.cloud.loadbalancer.v1',
-  syntax='proto3',
-  serialized_options=b'\n yandex.cloud.api.loadbalancer.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadbalancer/v1;loadbalancer',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n7yandex/cloud/loadbalancer/v1/target_group_service.proto\x12\x1cyandex.cloud.loadbalancer.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a&yandex/cloud/operation/operation.proto\x1a/yandex/cloud/loadbalancer/v1/target_group.proto\">\n\x15GetTargetGroupRequest\x12%\n\x0ftarget_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x94\x01\n\x17ListTargetGroupsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"u\n\x18ListTargetGroupsResponse\x12@\n\rtarget_groups\x18\x01 \x03(\x0b\x32).yandex.cloud.loadbalancer.v1.TargetGroup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xa5\x03\n\x18\x43reateTargetGroupRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x93\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x42.yandex.cloud.loadbalancer.v1.CreateTargetGroupRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12\x1b\n\tregion_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x35\n\x07targets\x18\x07 \x03(\x0b\x32$.yandex.cloud.loadbalancer.v1.Target\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"4\n\x19\x43reateTargetGroupMetadata\x12\x17\n\x0ftarget_group_id\x18\x01 \x01(\t\"\xbf\x03\n\x18UpdateTargetGroupRequest\x12%\n\x0ftarget_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x93\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x42.yandex.cloud.loadbalancer.v1.UpdateTargetGroupRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12\x35\n\x07targets\x18\x06 \x03(\x0b\x32$.yandex.cloud.loadbalancer.v1.Target\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"4\n\x19UpdateTargetGroupMetadata\x12\x17\n\x0ftarget_group_id\x18\x01 \x01(\t\"A\n\x18\x44\x65leteTargetGroupRequest\x12%\n\x0ftarget_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"4\n\x19\x44\x65leteTargetGroupMetadata\x12\x17\n\x0ftarget_group_id\x18\x01 \x01(\t\"z\n\x11\x41\x64\x64TargetsRequest\x12%\n\x0ftarget_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12>\n\x07targets\x18\x02 \x03(\x0b\x32$.yandex.cloud.loadbalancer.v1.TargetB\x07\x82\xc8\x31\x03>=1\"-\n\x12\x41\x64\x64TargetsMetadata\x12\x17\n\x0ftarget_group_id\x18\x01 \x01(\t\"}\n\x14RemoveTargetsRequest\x12%\n\x0ftarget_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12>\n\x07targets\x18\x02 \x03(\x0b\x32$.yandex.cloud.loadbalancer.v1.TargetB\x07\x82\xc8\x31\x03>=1\"0\n\x15RemoveTargetsMetadata\x12\x17\n\x0ftarget_group_id\x18\x01 \x01(\t\"\x87\x01\n ListTargetGroupOperationsRequest\x12%\n\x0ftarget_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"s\n!ListTargetGroupOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xbd\x0c\n\x12TargetGroupService\x12\x9f\x01\n\x03Get\x12\x33.yandex.cloud.loadbalancer.v1.GetTargetGroupRequest\x1a).yandex.cloud.loadbalancer.v1.TargetGroup\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/load-balancer/v1/targetGroups/{target_group_id}\x12\x9d\x01\n\x04List\x12\x35.yandex.cloud.loadbalancer.v1.ListTargetGroupsRequest\x1a\x36.yandex.cloud.loadbalancer.v1.ListTargetGroupsResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/load-balancer/v1/targetGroups\x12\xba\x01\n\x06\x43reate\x12\x36.yandex.cloud.loadbalancer.v1.CreateTargetGroupRequest\x1a!.yandex.cloud.operation.Operation\"U\x82\xd3\xe4\x93\x02#\"\x1e/load-balancer/v1/targetGroups:\x01*\xb2\xd2*(\n\x19\x43reateTargetGroupMetadata\x12\x0bTargetGroup\x12\xcc\x01\n\x06Update\x12\x36.yandex.cloud.loadbalancer.v1.UpdateTargetGroupRequest\x1a!.yandex.cloud.operation.Operation\"g\x82\xd3\xe4\x93\x02\x35\x32\x30/load-balancer/v1/targetGroups/{target_group_id}:\x01*\xb2\xd2*(\n\x19UpdateTargetGroupMetadata\x12\x0bTargetGroup\x12\xd3\x01\n\x06\x44\x65lete\x12\x36.yandex.cloud.loadbalancer.v1.DeleteTargetGroupRequest\x1a!.yandex.cloud.operation.Operation\"n\x82\xd3\xe4\x93\x02\x32*0/load-balancer/v1/targetGroups/{target_group_id}\xb2\xd2*2\n\x19\x44\x65leteTargetGroupMetadata\x12\x15google.protobuf.Empty\x12\xcd\x01\n\nAddTargets\x12/.yandex.cloud.loadbalancer.v1.AddTargetsRequest\x1a!.yandex.cloud.operation.Operation\"k\x82\xd3\xe4\x93\x02@\";/load-balancer/v1/targetGroups/{target_group_id}:addTargets:\x01*\xb2\xd2*!\n\x12\x41\x64\x64TargetsMetadata\x12\x0bTargetGroup\x12\xd9\x01\n\rRemoveTargets\x12\x32.yandex.cloud.loadbalancer.v1.RemoveTargetsRequest\x1a!.yandex.cloud.operation.Operation\"q\x82\xd3\xe4\x93\x02\x43\">/load-balancer/v1/targetGroups/{target_group_id}:removeTargets:\x01*\xb2\xd2*$\n\x15RemoveTargetsMetadata\x12\x0bTargetGroup\x12\xd6\x01\n\x0eListOperations\x12>.yandex.cloud.loadbalancer.v1.ListTargetGroupOperationsRequest\x1a?.yandex.cloud.loadbalancer.v1.ListTargetGroupOperationsResponse\"C\x82\xd3\xe4\x93\x02=\x12;/load-balancer/v1/targetGroups/{target_group_id}/operationsBq\n yandex.cloud.api.loadbalancer.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadbalancer/v1;loadbalancerb\x06proto3'
-  ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_loadbalancer_dot_v1_dot_target__group__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n7yandex/cloud/loadbalancer/v1/target_group_service.proto\x12\x1cyandex.cloud.loadbalancer.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a&yandex/cloud/operation/operation.proto\x1a/yandex/cloud/loadbalancer/v1/target_group.proto\">\n\x15GetTargetGroupRequest\x12%\n\x0ftarget_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x94\x01\n\x17ListTargetGroupsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"u\n\x18ListTargetGroupsResponse\x12@\n\rtarget_groups\x18\x01 \x03(\x0b\x32).yandex.cloud.loadbalancer.v1.TargetGroup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xa1\x03\n\x18\x43reateTargetGroupRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8f\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x42.yandex.cloud.loadbalancer.v1.CreateTargetGroupRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12\x1b\n\tregion_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x35\n\x07targets\x18\x07 \x03(\x0b\x32$.yandex.cloud.loadbalancer.v1.Target\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"4\n\x19\x43reateTargetGroupMetadata\x12\x17\n\x0ftarget_group_id\x18\x01 \x01(\t\"\xbb\x03\n\x18UpdateTargetGroupRequest\x12%\n\x0ftarget_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8f\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x42.yandex.cloud.loadbalancer.v1.UpdateTargetGroupRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12\x35\n\x07targets\x18\x06 \x03(\x0b\x32$.yandex.cloud.loadbalancer.v1.Target\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"4\n\x19UpdateTargetGroupMetadata\x12\x17\n\x0ftarget_group_id\x18\x01 \x01(\t\"A\n\x18\x44\x65leteTargetGroupRequest\x12%\n\x0ftarget_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"4\n\x19\x44\x65leteTargetGroupMetadata\x12\x17\n\x0ftarget_group_id\x18\x01 \x01(\t\"z\n\x11\x41\x64\x64TargetsRequest\x12%\n\x0ftarget_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12>\n\x07targets\x18\x02 \x03(\x0b\x32$.yandex.cloud.loadbalancer.v1.TargetB\x07\x82\xc8\x31\x03>=1\"-\n\x12\x41\x64\x64TargetsMetadata\x12\x17\n\x0ftarget_group_id\x18\x01 \x01(\t\"}\n\x14RemoveTargetsRequest\x12%\n\x0ftarget_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12>\n\x07targets\x18\x02 \x03(\x0b\x32$.yandex.cloud.loadbalancer.v1.TargetB\x07\x82\xc8\x31\x03>=1\"0\n\x15RemoveTargetsMetadata\x12\x17\n\x0ftarget_group_id\x18\x01 \x01(\t\"\x87\x01\n ListTargetGroupOperationsRequest\x12%\n\x0ftarget_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"s\n!ListTargetGroupOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xbd\x0c\n\x12TargetGroupService\x12\x9f\x01\n\x03Get\x12\x33.yandex.cloud.loadbalancer.v1.GetTargetGroupRequest\x1a).yandex.cloud.loadbalancer.v1.TargetGroup\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/load-balancer/v1/targetGroups/{target_group_id}\x12\x9d\x01\n\x04List\x12\x35.yandex.cloud.loadbalancer.v1.ListTargetGroupsRequest\x1a\x36.yandex.cloud.loadbalancer.v1.ListTargetGroupsResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/load-balancer/v1/targetGroups\x12\xba\x01\n\x06\x43reate\x12\x36.yandex.cloud.loadbalancer.v1.CreateTargetGroupRequest\x1a!.yandex.cloud.operation.Operation\"U\xb2\xd2*(\n\x19\x43reateTargetGroupMetadata\x12\x0bTargetGroup\x82\xd3\xe4\x93\x02#\"\x1e/load-balancer/v1/targetGroups:\x01*\x12\xcc\x01\n\x06Update\x12\x36.yandex.cloud.loadbalancer.v1.UpdateTargetGroupRequest\x1a!.yandex.cloud.operation.Operation\"g\xb2\xd2*(\n\x19UpdateTargetGroupMetadata\x12\x0bTargetGroup\x82\xd3\xe4\x93\x02\x35\x32\x30/load-balancer/v1/targetGroups/{target_group_id}:\x01*\x12\xd3\x01\n\x06\x44\x65lete\x12\x36.yandex.cloud.loadbalancer.v1.DeleteTargetGroupRequest\x1a!.yandex.cloud.operation.Operation\"n\xb2\xd2*2\n\x19\x44\x65leteTargetGroupMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x32*0/load-balancer/v1/targetGroups/{target_group_id}\x12\xcd\x01\n\nAddTargets\x12/.yandex.cloud.loadbalancer.v1.AddTargetsRequest\x1a!.yandex.cloud.operation.Operation\"k\xb2\xd2*!\n\x12\x41\x64\x64TargetsMetadata\x12\x0bTargetGroup\x82\xd3\xe4\x93\x02@\";/load-balancer/v1/targetGroups/{target_group_id}:addTargets:\x01*\x12\xd9\x01\n\rRemoveTargets\x12\x32.yandex.cloud.loadbalancer.v1.RemoveTargetsRequest\x1a!.yandex.cloud.operation.Operation\"q\xb2\xd2*$\n\x15RemoveTargetsMetadata\x12\x0bTargetGroup\x82\xd3\xe4\x93\x02\x43\">/load-balancer/v1/targetGroups/{target_group_id}:removeTargets:\x01*\x12\xd6\x01\n\x0eListOperations\x12>.yandex.cloud.loadbalancer.v1.ListTargetGroupOperationsRequest\x1a?.yandex.cloud.loadbalancer.v1.ListTargetGroupOperationsResponse\"C\x82\xd3\xe4\x93\x02=\x12;/load-balancer/v1/targetGroups/{target_group_id}/operationsBq\n yandex.cloud.api.loadbalancer.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadbalancer/v1;loadbalancerb\x06proto3')
 
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.loadbalancer.v1.target_group_service_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-
-_GETTARGETGROUPREQUEST = _descriptor.Descriptor(
-  name='GetTargetGroupRequest',
-  full_name='yandex.cloud.loadbalancer.v1.GetTargetGroupRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='target_group_id', full_name='yandex.cloud.loadbalancer.v1.GetTargetGroupRequest.target_group_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=307,
-  serialized_end=369,
-)
-
-
-_LISTTARGETGROUPSREQUEST = _descriptor.Descriptor(
-  name='ListTargetGroupsRequest',
-  full_name='yandex.cloud.loadbalancer.v1.ListTargetGroupsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.loadbalancer.v1.ListTargetGroupsRequest.folder_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.loadbalancer.v1.ListTargetGroupsRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.loadbalancer.v1.ListTargetGroupsRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='filter', full_name='yandex.cloud.loadbalancer.v1.ListTargetGroupsRequest.filter', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=372,
-  serialized_end=520,
-)
-
-
-_LISTTARGETGROUPSRESPONSE = _descriptor.Descriptor(
-  name='ListTargetGroupsResponse',
-  full_name='yandex.cloud.loadbalancer.v1.ListTargetGroupsResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='target_groups', full_name='yandex.cloud.loadbalancer.v1.ListTargetGroupsResponse.target_groups', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.loadbalancer.v1.ListTargetGroupsResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=522,
-  serialized_end=639,
-)
-
-
-_CREATETARGETGROUPREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='yandex.cloud.loadbalancer.v1.CreateTargetGroupRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='yandex.cloud.loadbalancer.v1.CreateTargetGroupRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='yandex.cloud.loadbalancer.v1.CreateTargetGroupRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1018,
-  serialized_end=1063,
-)
-
-_CREATETARGETGROUPREQUEST = _descriptor.Descriptor(
-  name='CreateTargetGroupRequest',
-  full_name='yandex.cloud.loadbalancer.v1.CreateTargetGroupRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.loadbalancer.v1.CreateTargetGroupRequest.folder_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.loadbalancer.v1.CreateTargetGroupRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='yandex.cloud.loadbalancer.v1.CreateTargetGroupRequest.description', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='yandex.cloud.loadbalancer.v1.CreateTargetGroupRequest.labels', index=3,
-      number=4, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='region_id', full_name='yandex.cloud.loadbalancer.v1.CreateTargetGroupRequest.region_id', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='targets', full_name='yandex.cloud.loadbalancer.v1.CreateTargetGroupRequest.targets', index=5,
-      number=7, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_CREATETARGETGROUPREQUEST_LABELSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=642,
-  serialized_end=1063,
-)
-
-
-_CREATETARGETGROUPMETADATA = _descriptor.Descriptor(
-  name='CreateTargetGroupMetadata',
-  full_name='yandex.cloud.loadbalancer.v1.CreateTargetGroupMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='target_group_id', full_name='yandex.cloud.loadbalancer.v1.CreateTargetGroupMetadata.target_group_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1065,
-  serialized_end=1117,
-)
-
-
-_UPDATETARGETGROUPREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='yandex.cloud.loadbalancer.v1.UpdateTargetGroupRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='yandex.cloud.loadbalancer.v1.UpdateTargetGroupRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='yandex.cloud.loadbalancer.v1.UpdateTargetGroupRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1018,
-  serialized_end=1063,
-)
-
-_UPDATETARGETGROUPREQUEST = _descriptor.Descriptor(
-  name='UpdateTargetGroupRequest',
-  full_name='yandex.cloud.loadbalancer.v1.UpdateTargetGroupRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='target_group_id', full_name='yandex.cloud.loadbalancer.v1.UpdateTargetGroupRequest.target_group_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='update_mask', full_name='yandex.cloud.loadbalancer.v1.UpdateTargetGroupRequest.update_mask', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.loadbalancer.v1.UpdateTargetGroupRequest.name', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='yandex.cloud.loadbalancer.v1.UpdateTargetGroupRequest.description', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='yandex.cloud.loadbalancer.v1.UpdateTargetGroupRequest.labels', index=4,
-      number=5, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='targets', full_name='yandex.cloud.loadbalancer.v1.UpdateTargetGroupRequest.targets', index=5,
-      number=6, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_UPDATETARGETGROUPREQUEST_LABELSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1120,
-  serialized_end=1567,
-)
-
-
-_UPDATETARGETGROUPMETADATA = _descriptor.Descriptor(
-  name='UpdateTargetGroupMetadata',
-  full_name='yandex.cloud.loadbalancer.v1.UpdateTargetGroupMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='target_group_id', full_name='yandex.cloud.loadbalancer.v1.UpdateTargetGroupMetadata.target_group_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1569,
-  serialized_end=1621,
-)
-
-
-_DELETETARGETGROUPREQUEST = _descriptor.Descriptor(
-  name='DeleteTargetGroupRequest',
-  full_name='yandex.cloud.loadbalancer.v1.DeleteTargetGroupRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='target_group_id', full_name='yandex.cloud.loadbalancer.v1.DeleteTargetGroupRequest.target_group_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1623,
-  serialized_end=1688,
-)
-
-
-_DELETETARGETGROUPMETADATA = _descriptor.Descriptor(
-  name='DeleteTargetGroupMetadata',
-  full_name='yandex.cloud.loadbalancer.v1.DeleteTargetGroupMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='target_group_id', full_name='yandex.cloud.loadbalancer.v1.DeleteTargetGroupMetadata.target_group_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1690,
-  serialized_end=1742,
-)
-
-
-_ADDTARGETSREQUEST = _descriptor.Descriptor(
-  name='AddTargetsRequest',
-  full_name='yandex.cloud.loadbalancer.v1.AddTargetsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='target_group_id', full_name='yandex.cloud.loadbalancer.v1.AddTargetsRequest.target_group_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='targets', full_name='yandex.cloud.loadbalancer.v1.AddTargetsRequest.targets', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\003>=1', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1744,
-  serialized_end=1866,
-)
-
-
-_ADDTARGETSMETADATA = _descriptor.Descriptor(
-  name='AddTargetsMetadata',
-  full_name='yandex.cloud.loadbalancer.v1.AddTargetsMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='target_group_id', full_name='yandex.cloud.loadbalancer.v1.AddTargetsMetadata.target_group_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1868,
-  serialized_end=1913,
-)
-
-
-_REMOVETARGETSREQUEST = _descriptor.Descriptor(
-  name='RemoveTargetsRequest',
-  full_name='yandex.cloud.loadbalancer.v1.RemoveTargetsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='target_group_id', full_name='yandex.cloud.loadbalancer.v1.RemoveTargetsRequest.target_group_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='targets', full_name='yandex.cloud.loadbalancer.v1.RemoveTargetsRequest.targets', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\003>=1', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1915,
-  serialized_end=2040,
-)
-
-
-_REMOVETARGETSMETADATA = _descriptor.Descriptor(
-  name='RemoveTargetsMetadata',
-  full_name='yandex.cloud.loadbalancer.v1.RemoveTargetsMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='target_group_id', full_name='yandex.cloud.loadbalancer.v1.RemoveTargetsMetadata.target_group_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2042,
-  serialized_end=2090,
-)
-
-
-_LISTTARGETGROUPOPERATIONSREQUEST = _descriptor.Descriptor(
-  name='ListTargetGroupOperationsRequest',
-  full_name='yandex.cloud.loadbalancer.v1.ListTargetGroupOperationsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='target_group_id', full_name='yandex.cloud.loadbalancer.v1.ListTargetGroupOperationsRequest.target_group_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.loadbalancer.v1.ListTargetGroupOperationsRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.loadbalancer.v1.ListTargetGroupOperationsRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2093,
-  serialized_end=2228,
-)
-
-
-_LISTTARGETGROUPOPERATIONSRESPONSE = _descriptor.Descriptor(
-  name='ListTargetGroupOperationsResponse',
-  full_name='yandex.cloud.loadbalancer.v1.ListTargetGroupOperationsResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='operations', full_name='yandex.cloud.loadbalancer.v1.ListTargetGroupOperationsResponse.operations', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.loadbalancer.v1.ListTargetGroupOperationsResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2230,
-  serialized_end=2345,
-)
-
-_LISTTARGETGROUPSRESPONSE.fields_by_name['target_groups'].message_type = yandex_dot_cloud_dot_loadbalancer_dot_v1_dot_target__group__pb2._TARGETGROUP
-_CREATETARGETGROUPREQUEST_LABELSENTRY.containing_type = _CREATETARGETGROUPREQUEST
-_CREATETARGETGROUPREQUEST.fields_by_name['labels'].message_type = _CREATETARGETGROUPREQUEST_LABELSENTRY
-_CREATETARGETGROUPREQUEST.fields_by_name['targets'].message_type = yandex_dot_cloud_dot_loadbalancer_dot_v1_dot_target__group__pb2._TARGET
-_UPDATETARGETGROUPREQUEST_LABELSENTRY.containing_type = _UPDATETARGETGROUPREQUEST
-_UPDATETARGETGROUPREQUEST.fields_by_name['update_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
-_UPDATETARGETGROUPREQUEST.fields_by_name['labels'].message_type = _UPDATETARGETGROUPREQUEST_LABELSENTRY
-_UPDATETARGETGROUPREQUEST.fields_by_name['targets'].message_type = yandex_dot_cloud_dot_loadbalancer_dot_v1_dot_target__group__pb2._TARGET
-_ADDTARGETSREQUEST.fields_by_name['targets'].message_type = yandex_dot_cloud_dot_loadbalancer_dot_v1_dot_target__group__pb2._TARGET
-_REMOVETARGETSREQUEST.fields_by_name['targets'].message_type = yandex_dot_cloud_dot_loadbalancer_dot_v1_dot_target__group__pb2._TARGET
-_LISTTARGETGROUPOPERATIONSRESPONSE.fields_by_name['operations'].message_type = yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION
-DESCRIPTOR.message_types_by_name['GetTargetGroupRequest'] = _GETTARGETGROUPREQUEST
-DESCRIPTOR.message_types_by_name['ListTargetGroupsRequest'] = _LISTTARGETGROUPSREQUEST
-DESCRIPTOR.message_types_by_name['ListTargetGroupsResponse'] = _LISTTARGETGROUPSRESPONSE
-DESCRIPTOR.message_types_by_name['CreateTargetGroupRequest'] = _CREATETARGETGROUPREQUEST
-DESCRIPTOR.message_types_by_name['CreateTargetGroupMetadata'] = _CREATETARGETGROUPMETADATA
-DESCRIPTOR.message_types_by_name['UpdateTargetGroupRequest'] = _UPDATETARGETGROUPREQUEST
-DESCRIPTOR.message_types_by_name['UpdateTargetGroupMetadata'] = _UPDATETARGETGROUPMETADATA
-DESCRIPTOR.message_types_by_name['DeleteTargetGroupRequest'] = _DELETETARGETGROUPREQUEST
-DESCRIPTOR.message_types_by_name['DeleteTargetGroupMetadata'] = _DELETETARGETGROUPMETADATA
-DESCRIPTOR.message_types_by_name['AddTargetsRequest'] = _ADDTARGETSREQUEST
-DESCRIPTOR.message_types_by_name['AddTargetsMetadata'] = _ADDTARGETSMETADATA
-DESCRIPTOR.message_types_by_name['RemoveTargetsRequest'] = _REMOVETARGETSREQUEST
-DESCRIPTOR.message_types_by_name['RemoveTargetsMetadata'] = _REMOVETARGETSMETADATA
-DESCRIPTOR.message_types_by_name['ListTargetGroupOperationsRequest'] = _LISTTARGETGROUPOPERATIONSREQUEST
-DESCRIPTOR.message_types_by_name['ListTargetGroupOperationsResponse'] = _LISTTARGETGROUPOPERATIONSRESPONSE
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-GetTargetGroupRequest = _reflection.GeneratedProtocolMessageType('GetTargetGroupRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETTARGETGROUPREQUEST,
-  '__module__' : 'yandex.cloud.loadbalancer.v1.target_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.loadbalancer.v1.GetTargetGroupRequest)
-  })
-_sym_db.RegisterMessage(GetTargetGroupRequest)
-
-ListTargetGroupsRequest = _reflection.GeneratedProtocolMessageType('ListTargetGroupsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTTARGETGROUPSREQUEST,
-  '__module__' : 'yandex.cloud.loadbalancer.v1.target_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.loadbalancer.v1.ListTargetGroupsRequest)
-  })
-_sym_db.RegisterMessage(ListTargetGroupsRequest)
-
-ListTargetGroupsResponse = _reflection.GeneratedProtocolMessageType('ListTargetGroupsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTTARGETGROUPSRESPONSE,
-  '__module__' : 'yandex.cloud.loadbalancer.v1.target_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.loadbalancer.v1.ListTargetGroupsResponse)
-  })
-_sym_db.RegisterMessage(ListTargetGroupsResponse)
-
-CreateTargetGroupRequest = _reflection.GeneratedProtocolMessageType('CreateTargetGroupRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _CREATETARGETGROUPREQUEST_LABELSENTRY,
-    '__module__' : 'yandex.cloud.loadbalancer.v1.target_group_service_pb2'
-    # @@protoc_insertion_point(class_scope:yandex.cloud.loadbalancer.v1.CreateTargetGroupRequest.LabelsEntry)
-    })
-  ,
-  'DESCRIPTOR' : _CREATETARGETGROUPREQUEST,
-  '__module__' : 'yandex.cloud.loadbalancer.v1.target_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.loadbalancer.v1.CreateTargetGroupRequest)
-  })
-_sym_db.RegisterMessage(CreateTargetGroupRequest)
-_sym_db.RegisterMessage(CreateTargetGroupRequest.LabelsEntry)
-
-CreateTargetGroupMetadata = _reflection.GeneratedProtocolMessageType('CreateTargetGroupMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _CREATETARGETGROUPMETADATA,
-  '__module__' : 'yandex.cloud.loadbalancer.v1.target_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.loadbalancer.v1.CreateTargetGroupMetadata)
-  })
-_sym_db.RegisterMessage(CreateTargetGroupMetadata)
-
-UpdateTargetGroupRequest = _reflection.GeneratedProtocolMessageType('UpdateTargetGroupRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _UPDATETARGETGROUPREQUEST_LABELSENTRY,
-    '__module__' : 'yandex.cloud.loadbalancer.v1.target_group_service_pb2'
-    # @@protoc_insertion_point(class_scope:yandex.cloud.loadbalancer.v1.UpdateTargetGroupRequest.LabelsEntry)
-    })
-  ,
-  'DESCRIPTOR' : _UPDATETARGETGROUPREQUEST,
-  '__module__' : 'yandex.cloud.loadbalancer.v1.target_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.loadbalancer.v1.UpdateTargetGroupRequest)
-  })
-_sym_db.RegisterMessage(UpdateTargetGroupRequest)
-_sym_db.RegisterMessage(UpdateTargetGroupRequest.LabelsEntry)
-
-UpdateTargetGroupMetadata = _reflection.GeneratedProtocolMessageType('UpdateTargetGroupMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATETARGETGROUPMETADATA,
-  '__module__' : 'yandex.cloud.loadbalancer.v1.target_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.loadbalancer.v1.UpdateTargetGroupMetadata)
-  })
-_sym_db.RegisterMessage(UpdateTargetGroupMetadata)
-
-DeleteTargetGroupRequest = _reflection.GeneratedProtocolMessageType('DeleteTargetGroupRequest', (_message.Message,), {
-  'DESCRIPTOR' : _DELETETARGETGROUPREQUEST,
-  '__module__' : 'yandex.cloud.loadbalancer.v1.target_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.loadbalancer.v1.DeleteTargetGroupRequest)
-  })
-_sym_db.RegisterMessage(DeleteTargetGroupRequest)
-
-DeleteTargetGroupMetadata = _reflection.GeneratedProtocolMessageType('DeleteTargetGroupMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _DELETETARGETGROUPMETADATA,
-  '__module__' : 'yandex.cloud.loadbalancer.v1.target_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.loadbalancer.v1.DeleteTargetGroupMetadata)
-  })
-_sym_db.RegisterMessage(DeleteTargetGroupMetadata)
-
-AddTargetsRequest = _reflection.GeneratedProtocolMessageType('AddTargetsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _ADDTARGETSREQUEST,
-  '__module__' : 'yandex.cloud.loadbalancer.v1.target_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.loadbalancer.v1.AddTargetsRequest)
-  })
-_sym_db.RegisterMessage(AddTargetsRequest)
-
-AddTargetsMetadata = _reflection.GeneratedProtocolMessageType('AddTargetsMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _ADDTARGETSMETADATA,
-  '__module__' : 'yandex.cloud.loadbalancer.v1.target_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.loadbalancer.v1.AddTargetsMetadata)
-  })
-_sym_db.RegisterMessage(AddTargetsMetadata)
-
-RemoveTargetsRequest = _reflection.GeneratedProtocolMessageType('RemoveTargetsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _REMOVETARGETSREQUEST,
-  '__module__' : 'yandex.cloud.loadbalancer.v1.target_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.loadbalancer.v1.RemoveTargetsRequest)
-  })
-_sym_db.RegisterMessage(RemoveTargetsRequest)
-
-RemoveTargetsMetadata = _reflection.GeneratedProtocolMessageType('RemoveTargetsMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _REMOVETARGETSMETADATA,
-  '__module__' : 'yandex.cloud.loadbalancer.v1.target_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.loadbalancer.v1.RemoveTargetsMetadata)
-  })
-_sym_db.RegisterMessage(RemoveTargetsMetadata)
-
-ListTargetGroupOperationsRequest = _reflection.GeneratedProtocolMessageType('ListTargetGroupOperationsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTTARGETGROUPOPERATIONSREQUEST,
-  '__module__' : 'yandex.cloud.loadbalancer.v1.target_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.loadbalancer.v1.ListTargetGroupOperationsRequest)
-  })
-_sym_db.RegisterMessage(ListTargetGroupOperationsRequest)
-
-ListTargetGroupOperationsResponse = _reflection.GeneratedProtocolMessageType('ListTargetGroupOperationsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTTARGETGROUPOPERATIONSRESPONSE,
-  '__module__' : 'yandex.cloud.loadbalancer.v1.target_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.loadbalancer.v1.ListTargetGroupOperationsResponse)
-  })
-_sym_db.RegisterMessage(ListTargetGroupOperationsResponse)
-
-
-DESCRIPTOR._options = None
-_GETTARGETGROUPREQUEST.fields_by_name['target_group_id']._options = None
-_LISTTARGETGROUPSREQUEST.fields_by_name['folder_id']._options = None
-_LISTTARGETGROUPSREQUEST.fields_by_name['page_size']._options = None
-_LISTTARGETGROUPSREQUEST.fields_by_name['page_token']._options = None
-_LISTTARGETGROUPSREQUEST.fields_by_name['filter']._options = None
-_CREATETARGETGROUPREQUEST_LABELSENTRY._options = None
-_CREATETARGETGROUPREQUEST.fields_by_name['folder_id']._options = None
-_CREATETARGETGROUPREQUEST.fields_by_name['name']._options = None
-_CREATETARGETGROUPREQUEST.fields_by_name['description']._options = None
-_CREATETARGETGROUPREQUEST.fields_by_name['labels']._options = None
-_CREATETARGETGROUPREQUEST.fields_by_name['region_id']._options = None
-_UPDATETARGETGROUPREQUEST_LABELSENTRY._options = None
-_UPDATETARGETGROUPREQUEST.fields_by_name['target_group_id']._options = None
-_UPDATETARGETGROUPREQUEST.fields_by_name['name']._options = None
-_UPDATETARGETGROUPREQUEST.fields_by_name['description']._options = None
-_UPDATETARGETGROUPREQUEST.fields_by_name['labels']._options = None
-_DELETETARGETGROUPREQUEST.fields_by_name['target_group_id']._options = None
-_ADDTARGETSREQUEST.fields_by_name['target_group_id']._options = None
-_ADDTARGETSREQUEST.fields_by_name['targets']._options = None
-_REMOVETARGETSREQUEST.fields_by_name['target_group_id']._options = None
-_REMOVETARGETSREQUEST.fields_by_name['targets']._options = None
-_LISTTARGETGROUPOPERATIONSREQUEST.fields_by_name['target_group_id']._options = None
-_LISTTARGETGROUPOPERATIONSREQUEST.fields_by_name['page_size']._options = None
-_LISTTARGETGROUPOPERATIONSREQUEST.fields_by_name['page_token']._options = None
-
-_TARGETGROUPSERVICE = _descriptor.ServiceDescriptor(
-  name='TargetGroupService',
-  full_name='yandex.cloud.loadbalancer.v1.TargetGroupService',
-  file=DESCRIPTOR,
-  index=0,
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_start=2348,
-  serialized_end=3945,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='Get',
-    full_name='yandex.cloud.loadbalancer.v1.TargetGroupService.Get',
-    index=0,
-    containing_service=None,
-    input_type=_GETTARGETGROUPREQUEST,
-    output_type=yandex_dot_cloud_dot_loadbalancer_dot_v1_dot_target__group__pb2._TARGETGROUP,
-    serialized_options=b'\202\323\344\223\0022\0220/load-balancer/v1/targetGroups/{target_group_id}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='List',
-    full_name='yandex.cloud.loadbalancer.v1.TargetGroupService.List',
-    index=1,
-    containing_service=None,
-    input_type=_LISTTARGETGROUPSREQUEST,
-    output_type=_LISTTARGETGROUPSRESPONSE,
-    serialized_options=b'\202\323\344\223\002 \022\036/load-balancer/v1/targetGroups',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Create',
-    full_name='yandex.cloud.loadbalancer.v1.TargetGroupService.Create',
-    index=2,
-    containing_service=None,
-    input_type=_CREATETARGETGROUPREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002#\"\036/load-balancer/v1/targetGroups:\001*\262\322*(\n\031CreateTargetGroupMetadata\022\013TargetGroup',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Update',
-    full_name='yandex.cloud.loadbalancer.v1.TargetGroupService.Update',
-    index=3,
-    containing_service=None,
-    input_type=_UPDATETARGETGROUPREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002520/load-balancer/v1/targetGroups/{target_group_id}:\001*\262\322*(\n\031UpdateTargetGroupMetadata\022\013TargetGroup',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Delete',
-    full_name='yandex.cloud.loadbalancer.v1.TargetGroupService.Delete',
-    index=4,
-    containing_service=None,
-    input_type=_DELETETARGETGROUPREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\0022*0/load-balancer/v1/targetGroups/{target_group_id}\262\322*2\n\031DeleteTargetGroupMetadata\022\025google.protobuf.Empty',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='AddTargets',
-    full_name='yandex.cloud.loadbalancer.v1.TargetGroupService.AddTargets',
-    index=5,
-    containing_service=None,
-    input_type=_ADDTARGETSREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002@\";/load-balancer/v1/targetGroups/{target_group_id}:addTargets:\001*\262\322*!\n\022AddTargetsMetadata\022\013TargetGroup',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='RemoveTargets',
-    full_name='yandex.cloud.loadbalancer.v1.TargetGroupService.RemoveTargets',
-    index=6,
-    containing_service=None,
-    input_type=_REMOVETARGETSREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002C\">/load-balancer/v1/targetGroups/{target_group_id}:removeTargets:\001*\262\322*$\n\025RemoveTargetsMetadata\022\013TargetGroup',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListOperations',
-    full_name='yandex.cloud.loadbalancer.v1.TargetGroupService.ListOperations',
-    index=7,
-    containing_service=None,
-    input_type=_LISTTARGETGROUPOPERATIONSREQUEST,
-    output_type=_LISTTARGETGROUPOPERATIONSRESPONSE,
-    serialized_options=b'\202\323\344\223\002=\022;/load-balancer/v1/targetGroups/{target_group_id}/operations',
-    create_key=_descriptor._internal_create_key,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_TARGETGROUPSERVICE)
-
-DESCRIPTOR.services_by_name['TargetGroupService'] = _TARGETGROUPSERVICE
-
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n yandex.cloud.api.loadbalancer.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadbalancer/v1;loadbalancer'
+  _GETTARGETGROUPREQUEST.fields_by_name['target_group_id']._options = None
+  _GETTARGETGROUPREQUEST.fields_by_name['target_group_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTTARGETGROUPSREQUEST.fields_by_name['folder_id']._options = None
+  _LISTTARGETGROUPSREQUEST.fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTTARGETGROUPSREQUEST.fields_by_name['page_size']._options = None
+  _LISTTARGETGROUPSREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
+  _LISTTARGETGROUPSREQUEST.fields_by_name['page_token']._options = None
+  _LISTTARGETGROUPSREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
+  _LISTTARGETGROUPSREQUEST.fields_by_name['filter']._options = None
+  _LISTTARGETGROUPSREQUEST.fields_by_name['filter']._serialized_options = b'\212\3101\006<=1000'
+  _CREATETARGETGROUPREQUEST_LABELSENTRY._options = None
+  _CREATETARGETGROUPREQUEST_LABELSENTRY._serialized_options = b'8\001'
+  _CREATETARGETGROUPREQUEST.fields_by_name['folder_id']._options = None
+  _CREATETARGETGROUPREQUEST.fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _CREATETARGETGROUPREQUEST.fields_by_name['name']._options = None
+  _CREATETARGETGROUPREQUEST.fields_by_name['name']._serialized_options = b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'
+  _CREATETARGETGROUPREQUEST.fields_by_name['description']._options = None
+  _CREATETARGETGROUPREQUEST.fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
+  _CREATETARGETGROUPREQUEST.fields_by_name['labels']._options = None
+  _CREATETARGETGROUPREQUEST.fields_by_name['labels']._serialized_options = b'\362\3071\013[-_0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\0041-63'
+  _CREATETARGETGROUPREQUEST.fields_by_name['region_id']._options = None
+  _CREATETARGETGROUPREQUEST.fields_by_name['region_id']._serialized_options = b'\212\3101\004<=50'
+  _UPDATETARGETGROUPREQUEST_LABELSENTRY._options = None
+  _UPDATETARGETGROUPREQUEST_LABELSENTRY._serialized_options = b'8\001'
+  _UPDATETARGETGROUPREQUEST.fields_by_name['target_group_id']._options = None
+  _UPDATETARGETGROUPREQUEST.fields_by_name['target_group_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _UPDATETARGETGROUPREQUEST.fields_by_name['name']._options = None
+  _UPDATETARGETGROUPREQUEST.fields_by_name['name']._serialized_options = b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'
+  _UPDATETARGETGROUPREQUEST.fields_by_name['description']._options = None
+  _UPDATETARGETGROUPREQUEST.fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
+  _UPDATETARGETGROUPREQUEST.fields_by_name['labels']._options = None
+  _UPDATETARGETGROUPREQUEST.fields_by_name['labels']._serialized_options = b'\362\3071\013[-_0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\0041-63'
+  _DELETETARGETGROUPREQUEST.fields_by_name['target_group_id']._options = None
+  _DELETETARGETGROUPREQUEST.fields_by_name['target_group_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _ADDTARGETSREQUEST.fields_by_name['target_group_id']._options = None
+  _ADDTARGETSREQUEST.fields_by_name['target_group_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _ADDTARGETSREQUEST.fields_by_name['targets']._options = None
+  _ADDTARGETSREQUEST.fields_by_name['targets']._serialized_options = b'\202\3101\003>=1'
+  _REMOVETARGETSREQUEST.fields_by_name['target_group_id']._options = None
+  _REMOVETARGETSREQUEST.fields_by_name['target_group_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _REMOVETARGETSREQUEST.fields_by_name['targets']._options = None
+  _REMOVETARGETSREQUEST.fields_by_name['targets']._serialized_options = b'\202\3101\003>=1'
+  _LISTTARGETGROUPOPERATIONSREQUEST.fields_by_name['target_group_id']._options = None
+  _LISTTARGETGROUPOPERATIONSREQUEST.fields_by_name['target_group_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTTARGETGROUPOPERATIONSREQUEST.fields_by_name['page_size']._options = None
+  _LISTTARGETGROUPOPERATIONSREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
+  _LISTTARGETGROUPOPERATIONSREQUEST.fields_by_name['page_token']._options = None
+  _LISTTARGETGROUPOPERATIONSREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
+  _TARGETGROUPSERVICE.methods_by_name['Get']._options = None
+  _TARGETGROUPSERVICE.methods_by_name['Get']._serialized_options = b'\202\323\344\223\0022\0220/load-balancer/v1/targetGroups/{target_group_id}'
+  _TARGETGROUPSERVICE.methods_by_name['List']._options = None
+  _TARGETGROUPSERVICE.methods_by_name['List']._serialized_options = b'\202\323\344\223\002 \022\036/load-balancer/v1/targetGroups'
+  _TARGETGROUPSERVICE.methods_by_name['Create']._options = None
+  _TARGETGROUPSERVICE.methods_by_name['Create']._serialized_options = b'\262\322*(\n\031CreateTargetGroupMetadata\022\013TargetGroup\202\323\344\223\002#\"\036/load-balancer/v1/targetGroups:\001*'
+  _TARGETGROUPSERVICE.methods_by_name['Update']._options = None
+  _TARGETGROUPSERVICE.methods_by_name['Update']._serialized_options = b'\262\322*(\n\031UpdateTargetGroupMetadata\022\013TargetGroup\202\323\344\223\002520/load-balancer/v1/targetGroups/{target_group_id}:\001*'
+  _TARGETGROUPSERVICE.methods_by_name['Delete']._options = None
+  _TARGETGROUPSERVICE.methods_by_name['Delete']._serialized_options = b'\262\322*2\n\031DeleteTargetGroupMetadata\022\025google.protobuf.Empty\202\323\344\223\0022*0/load-balancer/v1/targetGroups/{target_group_id}'
+  _TARGETGROUPSERVICE.methods_by_name['AddTargets']._options = None
+  _TARGETGROUPSERVICE.methods_by_name['AddTargets']._serialized_options = b'\262\322*!\n\022AddTargetsMetadata\022\013TargetGroup\202\323\344\223\002@\";/load-balancer/v1/targetGroups/{target_group_id}:addTargets:\001*'
+  _TARGETGROUPSERVICE.methods_by_name['RemoveTargets']._options = None
+  _TARGETGROUPSERVICE.methods_by_name['RemoveTargets']._serialized_options = b'\262\322*$\n\025RemoveTargetsMetadata\022\013TargetGroup\202\323\344\223\002C\">/load-balancer/v1/targetGroups/{target_group_id}:removeTargets:\001*'
+  _TARGETGROUPSERVICE.methods_by_name['ListOperations']._options = None
+  _TARGETGROUPSERVICE.methods_by_name['ListOperations']._serialized_options = b'\202\323\344\223\002=\022;/load-balancer/v1/targetGroups/{target_group_id}/operations'
+  _globals['_GETTARGETGROUPREQUEST']._serialized_start=307
+  _globals['_GETTARGETGROUPREQUEST']._serialized_end=369
+  _globals['_LISTTARGETGROUPSREQUEST']._serialized_start=372
+  _globals['_LISTTARGETGROUPSREQUEST']._serialized_end=520
+  _globals['_LISTTARGETGROUPSRESPONSE']._serialized_start=522
+  _globals['_LISTTARGETGROUPSRESPONSE']._serialized_end=639
+  _globals['_CREATETARGETGROUPREQUEST']._serialized_start=642
+  _globals['_CREATETARGETGROUPREQUEST']._serialized_end=1059
+  _globals['_CREATETARGETGROUPREQUEST_LABELSENTRY']._serialized_start=1014
+  _globals['_CREATETARGETGROUPREQUEST_LABELSENTRY']._serialized_end=1059
+  _globals['_CREATETARGETGROUPMETADATA']._serialized_start=1061
+  _globals['_CREATETARGETGROUPMETADATA']._serialized_end=1113
+  _globals['_UPDATETARGETGROUPREQUEST']._serialized_start=1116
+  _globals['_UPDATETARGETGROUPREQUEST']._serialized_end=1559
+  _globals['_UPDATETARGETGROUPREQUEST_LABELSENTRY']._serialized_start=1014
+  _globals['_UPDATETARGETGROUPREQUEST_LABELSENTRY']._serialized_end=1059
+  _globals['_UPDATETARGETGROUPMETADATA']._serialized_start=1561
+  _globals['_UPDATETARGETGROUPMETADATA']._serialized_end=1613
+  _globals['_DELETETARGETGROUPREQUEST']._serialized_start=1615
+  _globals['_DELETETARGETGROUPREQUEST']._serialized_end=1680
+  _globals['_DELETETARGETGROUPMETADATA']._serialized_start=1682
+  _globals['_DELETETARGETGROUPMETADATA']._serialized_end=1734
+  _globals['_ADDTARGETSREQUEST']._serialized_start=1736
+  _globals['_ADDTARGETSREQUEST']._serialized_end=1858
+  _globals['_ADDTARGETSMETADATA']._serialized_start=1860
+  _globals['_ADDTARGETSMETADATA']._serialized_end=1905
+  _globals['_REMOVETARGETSREQUEST']._serialized_start=1907
+  _globals['_REMOVETARGETSREQUEST']._serialized_end=2032
+  _globals['_REMOVETARGETSMETADATA']._serialized_start=2034
+  _globals['_REMOVETARGETSMETADATA']._serialized_end=2082
+  _globals['_LISTTARGETGROUPOPERATIONSREQUEST']._serialized_start=2085
+  _globals['_LISTTARGETGROUPOPERATIONSREQUEST']._serialized_end=2220
+  _globals['_LISTTARGETGROUPOPERATIONSRESPONSE']._serialized_start=2222
+  _globals['_LISTTARGETGROUPOPERATIONSRESPONSE']._serialized_end=2337
+  _globals['_TARGETGROUPSERVICE']._serialized_start=2340
+  _globals['_TARGETGROUPSERVICE']._serialized_end=3937
 # @@protoc_insertion_point(module_scope)
