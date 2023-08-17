@@ -2,6 +2,14 @@
 
 <!--next-version-placeholder-->
 
+## v0.228.0 (2023-08-17)
+
+### Feature
+
+* Transition from the protobuf-3 to the protobuf-4 (#75)
+
+* transition from the protobuf-3 to the protobuf-4 ([`b4dd012`](https://github.com/yandex-cloud/python-sdk/commit/b4dd012d71553b0db8425a6590f7c8450e996f4c))
+
 ## v0.227.0 (2023-08-15)
 
 ### Feature
