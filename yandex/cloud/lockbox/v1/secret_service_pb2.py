@@ -3,9 +3,9 @@
 # source: yandex/cloud/lockbox/v1/secret_service.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -22,1538 +22,175 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/lockbox/v1/secret_service.proto',
-  package='yandex.cloud.lockbox.v1',
-  syntax='proto3',
-  serialized_options=b'\n\033yandex.cloud.api.lockbox.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/lockbox/v1;lockbox',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n,yandex/cloud/lockbox/v1/secret_service.proto\x12\x17yandex.cloud.lockbox.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1egoogle/protobuf/duration.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a yandex/cloud/access/access.proto\x1a yandex/cloud/api/operation.proto\x1a$yandex/cloud/lockbox/v1/secret.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"\x98\x01\n\x12PayloadEntryChange\x12\x31\n\x03key\x18\x01 \x01(\tB$\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=256\xf2\xc7\x31\x13[-_./\\\\@0-9a-zA-Z]+\x12!\n\ntext_value\x18\x02 \x01(\tB\x0b\x8a\xc8\x31\x07<=65536H\x00\x12#\n\x0c\x62inary_value\x18\x03 \x01(\x0c\x42\x0b\x8a\xc8\x31\x07<=65536H\x00\x42\x07\n\x05value\"3\n\x10GetSecretRequest\x12\x1f\n\tsecret_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"s\n\x12ListSecretsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"`\n\x13ListSecretsResponse\x12\x30\n\x07secrets\x18\x01 \x03(\x0b\x32\x1f.yandex.cloud.lockbox.v1.Secret\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xe6\x03\n\x13\x43reateSecretRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x17\n\x04name\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1f\n\x0b\x64\x65scription\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12\x89\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x38.yandex.cloud.lockbox.v1.CreateSecretRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12\x1c\n\nkms_key_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12&\n\x13version_description\x18\x06 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12V\n\x17version_payload_entries\x18\x07 \x03(\x0b\x32+.yandex.cloud.lockbox.v1.PayloadEntryChangeB\x08\x82\xc8\x31\x04<=32\x12\x1b\n\x13\x64\x65letion_protection\x18\x08 \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"=\n\x14\x43reateSecretMetadata\x12\x11\n\tsecret_id\x18\x01 \x01(\t\x12\x12\n\nversion_id\x18\x02 \x01(\t\"\xff\x02\n\x13UpdateSecretRequest\x12\x1f\n\tsecret_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe8\xc7\x31\x01\x12\x17\n\x04name\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1f\n\x0b\x64\x65scription\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12\x89\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x38.yandex.cloud.lockbox.v1.UpdateSecretRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04<=63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12\x1b\n\x13\x64\x65letion_protection\x18\x06 \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"7\n\x14UpdateSecretMetadata\x12\x1f\n\tsecret_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"6\n\x13\x44\x65leteSecretRequest\x12\x1f\n\tsecret_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\")\n\x14\x44\x65leteSecretMetadata\x12\x11\n\tsecret_id\x18\x01 \x01(\t\"8\n\x15\x41\x63tivateSecretRequest\x12\x1f\n\tsecret_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x16\x41\x63tivateSecretMetadata\x12\x11\n\tsecret_id\x18\x01 \x01(\t\":\n\x17\x44\x65\x61\x63tivateSecretRequest\x12\x1f\n\tsecret_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"-\n\x18\x44\x65\x61\x63tivateSecretMetadata\x12\x11\n\tsecret_id\x18\x01 \x01(\t\"\xc8\x01\n\x11\x41\x64\x64VersionRequest\x12\x1f\n\tsecret_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1f\n\x0b\x64\x65scription\x18\x02 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12N\n\x0fpayload_entries\x18\x03 \x03(\x0b\x32+.yandex.cloud.lockbox.v1.PayloadEntryChangeB\x08\x82\xc8\x31\x04<=32\x12!\n\x0f\x62\x61se_version_id\x18\x04 \x01(\tB\x08\x8a\xc8\x31\x04<=50\";\n\x12\x41\x64\x64VersionMetadata\x12\x11\n\tsecret_id\x18\x01 \x01(\t\x12\x12\n\nversion_id\x18\x02 \x01(\t\"t\n\x13ListVersionsRequest\x12\x1f\n\tsecret_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"c\n\x14ListVersionsResponse\x12\x32\n\x08versions\x18\x01 \x03(\x0b\x32 .yandex.cloud.lockbox.v1.Version\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x99\x01\n!ScheduleVersionDestructionRequest\x12\x1f\n\tsecret_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12 \n\nversion_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x31\n\x0epending_period\x18\x03 \x01(\x0b\x32\x19.google.protobuf.Duration\"{\n\"ScheduleVersionDestructionMetadata\x12\x11\n\tsecret_id\x18\x01 \x01(\t\x12\x12\n\nversion_id\x18\x02 \x01(\t\x12.\n\ndestroy_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"d\n\x1f\x43\x61ncelVersionDestructionRequest\x12\x1f\n\tsecret_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12 \n\nversion_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"I\n CancelVersionDestructionMetadata\x12\x11\n\tsecret_id\x18\x01 \x01(\t\x12\x12\n\nversion_id\x18\x02 \x01(\t\"|\n\x1bListSecretOperationsRequest\x12\x1f\n\tsecret_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"n\n\x1cListSecretOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xe9\x15\n\rSecretService\x12z\n\x03Get\x12).yandex.cloud.lockbox.v1.GetSecretRequest\x1a\x1f.yandex.cloud.lockbox.v1.Secret\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/lockbox/v1/secrets/{secret_id}\x12~\n\x04List\x12+.yandex.cloud.lockbox.v1.ListSecretsRequest\x1a,.yandex.cloud.lockbox.v1.ListSecretsResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/lockbox/v1/secrets\x12\x9b\x01\n\x06\x43reate\x12,.yandex.cloud.lockbox.v1.CreateSecretRequest\x1a!.yandex.cloud.operation.Operation\"@\x82\xd3\xe4\x93\x02\x18\"\x13/lockbox/v1/secrets:\x01*\xb2\xd2*\x1e\n\x14\x43reateSecretMetadata\x12\x06Secret\x12\xa7\x01\n\x06Update\x12,.yandex.cloud.lockbox.v1.UpdateSecretRequest\x1a!.yandex.cloud.operation.Operation\"L\x82\xd3\xe4\x93\x02$2\x1f/lockbox/v1/secrets/{secret_id}:\x01*\xb2\xd2*\x1e\n\x14UpdateSecretMetadata\x12\x06Secret\x12\xa4\x01\n\x06\x44\x65lete\x12,.yandex.cloud.lockbox.v1.DeleteSecretRequest\x1a!.yandex.cloud.operation.Operation\"I\x82\xd3\xe4\x93\x02!*\x1f/lockbox/v1/secrets/{secret_id}\xb2\xd2*\x1e\n\x14\x44\x65leteSecretMetadata\x12\x06Secret\x12\xb3\x01\n\x08\x41\x63tivate\x12..yandex.cloud.lockbox.v1.ActivateSecretRequest\x1a!.yandex.cloud.operation.Operation\"T\x82\xd3\xe4\x93\x02*\"(/lockbox/v1/secrets/{secret_id}:activate\xb2\xd2* \n\x16\x41\x63tivateSecretMetadata\x12\x06Secret\x12\xbb\x01\n\nDeactivate\x12\x30.yandex.cloud.lockbox.v1.DeactivateSecretRequest\x1a!.yandex.cloud.operation.Operation\"X\x82\xd3\xe4\x93\x02,\"*/lockbox/v1/secrets/{secret_id}:deactivate\xb2\xd2*\"\n\x18\x44\x65\x61\x63tivateSecretMetadata\x12\x06Secret\x12\x9d\x01\n\x0cListVersions\x12,.yandex.cloud.lockbox.v1.ListVersionsRequest\x1a-.yandex.cloud.lockbox.v1.ListVersionsResponse\"0\x82\xd3\xe4\x93\x02*\x12(/lockbox/v1/secrets/{secret_id}/versions\x12\xb3\x01\n\nAddVersion\x12*.yandex.cloud.lockbox.v1.AddVersionRequest\x1a!.yandex.cloud.operation.Operation\"V\x82\xd3\xe4\x93\x02/\"*/lockbox/v1/secrets/{secret_id}:addVersion:\x01*\xb2\xd2*\x1d\n\x12\x41\x64\x64VersionMetadata\x12\x07Version\x12\xf3\x01\n\x1aScheduleVersionDestruction\x12:.yandex.cloud.lockbox.v1.ScheduleVersionDestructionRequest\x1a!.yandex.cloud.operation.Operation\"v\x82\xd3\xe4\x93\x02?\":/lockbox/v1/secrets/{secret_id}:scheduleVersionDestruction:\x01*\xb2\xd2*-\n\"ScheduleVersionDestructionMetadata\x12\x07Version\x12\xeb\x01\n\x18\x43\x61ncelVersionDestruction\x12\x38.yandex.cloud.lockbox.v1.CancelVersionDestructionRequest\x1a!.yandex.cloud.operation.Operation\"r\x82\xd3\xe4\x93\x02=\"8/lockbox/v1/secrets/{secret_id}:cancelVersionDestruction:\x01*\xb2\xd2*+\n CancelVersionDestructionMetadata\x12\x07Version\x12\xb1\x01\n\x0eListOperations\x12\x34.yandex.cloud.lockbox.v1.ListSecretOperationsRequest\x1a\x35.yandex.cloud.lockbox.v1.ListSecretOperationsResponse\"2\x82\xd3\xe4\x93\x02,\x12*/lockbox/v1/secrets/{secret_id}/operations\x12\xb3\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/lockbox/v1/secrets/{resource_id}:listAccessBindings\x12\xe2\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"{\x82\xd3\xe4\x93\x02\x38\"3/lockbox/v1/secrets/{resource_id}:setAccessBindings:\x01*\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x12\xef\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x81\x01\x82\xd3\xe4\x93\x02;\"6/lockbox/v1/secrets/{resource_id}:updateAccessBindings:\x01*\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.EmptyBb\n\x1byandex.cloud.api.lockbox.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/lockbox/v1;lockboxb\x06proto3'
-  ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_access_dot_access__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_lockbox_dot_v1_dot_secret__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
-
-
-
-
-_PAYLOADENTRYCHANGE = _descriptor.Descriptor(
-  name='PayloadEntryChange',
-  full_name='yandex.cloud.lockbox.v1.PayloadEntryChange',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='yandex.cloud.lockbox.v1.PayloadEntryChange.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\005<=256\362\3071\023[-_./\\\\@0-9a-zA-Z]+', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='text_value', full_name='yandex.cloud.lockbox.v1.PayloadEntryChange.text_value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\007<=65536', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='binary_value', full_name='yandex.cloud.lockbox.v1.PayloadEntryChange.binary_value', index=2,
-      number=3, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"",
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\007<=65536', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-    _descriptor.OneofDescriptor(
-      name='value', full_name='yandex.cloud.lockbox.v1.PayloadEntryChange.value',
-      index=0, containing_type=None,
-      create_key=_descriptor._internal_create_key,
-    fields=[]),
-  ],
-  serialized_start=380,
-  serialized_end=532,
-)
-
-
-_GETSECRETREQUEST = _descriptor.Descriptor(
-  name='GetSecretRequest',
-  full_name='yandex.cloud.lockbox.v1.GetSecretRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='secret_id', full_name='yandex.cloud.lockbox.v1.GetSecretRequest.secret_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=534,
-  serialized_end=585,
-)
-
-
-_LISTSECRETSREQUEST = _descriptor.Descriptor(
-  name='ListSecretsRequest',
-  full_name='yandex.cloud.lockbox.v1.ListSecretsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.lockbox.v1.ListSecretsRequest.folder_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.lockbox.v1.ListSecretsRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.lockbox.v1.ListSecretsRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=587,
-  serialized_end=702,
-)
-
-
-_LISTSECRETSRESPONSE = _descriptor.Descriptor(
-  name='ListSecretsResponse',
-  full_name='yandex.cloud.lockbox.v1.ListSecretsResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='secrets', full_name='yandex.cloud.lockbox.v1.ListSecretsResponse.secrets', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.lockbox.v1.ListSecretsResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=704,
-  serialized_end=800,
-)
-
-
-_CREATESECRETREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='yandex.cloud.lockbox.v1.CreateSecretRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='yandex.cloud.lockbox.v1.CreateSecretRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='yandex.cloud.lockbox.v1.CreateSecretRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1244,
-  serialized_end=1289,
-)
-
-_CREATESECRETREQUEST = _descriptor.Descriptor(
-  name='CreateSecretRequest',
-  full_name='yandex.cloud.lockbox.v1.CreateSecretRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.lockbox.v1.CreateSecretRequest.folder_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.lockbox.v1.CreateSecretRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='yandex.cloud.lockbox.v1.CreateSecretRequest.description', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=1024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='yandex.cloud.lockbox.v1.CreateSecretRequest.labels', index=3,
-      number=4, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\004<=63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='kms_key_id', full_name='yandex.cloud.lockbox.v1.CreateSecretRequest.kms_key_id', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='version_description', full_name='yandex.cloud.lockbox.v1.CreateSecretRequest.version_description', index=5,
-      number=6, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='version_payload_entries', full_name='yandex.cloud.lockbox.v1.CreateSecretRequest.version_payload_entries', index=6,
-      number=7, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=32', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='deletion_protection', full_name='yandex.cloud.lockbox.v1.CreateSecretRequest.deletion_protection', index=7,
-      number=8, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_CREATESECRETREQUEST_LABELSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=803,
-  serialized_end=1289,
-)
-
-
-_CREATESECRETMETADATA = _descriptor.Descriptor(
-  name='CreateSecretMetadata',
-  full_name='yandex.cloud.lockbox.v1.CreateSecretMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='secret_id', full_name='yandex.cloud.lockbox.v1.CreateSecretMetadata.secret_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='version_id', full_name='yandex.cloud.lockbox.v1.CreateSecretMetadata.version_id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1291,
-  serialized_end=1352,
-)
-
-
-_UPDATESECRETREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='yandex.cloud.lockbox.v1.UpdateSecretRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='yandex.cloud.lockbox.v1.UpdateSecretRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='yandex.cloud.lockbox.v1.UpdateSecretRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1244,
-  serialized_end=1289,
-)
-
-_UPDATESECRETREQUEST = _descriptor.Descriptor(
-  name='UpdateSecretRequest',
-  full_name='yandex.cloud.lockbox.v1.UpdateSecretRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='secret_id', full_name='yandex.cloud.lockbox.v1.UpdateSecretRequest.secret_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='update_mask', full_name='yandex.cloud.lockbox.v1.UpdateSecretRequest.update_mask', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.lockbox.v1.UpdateSecretRequest.name', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='yandex.cloud.lockbox.v1.UpdateSecretRequest.description', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=1024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='yandex.cloud.lockbox.v1.UpdateSecretRequest.labels', index=4,
-      number=5, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\004<=63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='deletion_protection', full_name='yandex.cloud.lockbox.v1.UpdateSecretRequest.deletion_protection', index=5,
-      number=6, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_UPDATESECRETREQUEST_LABELSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1355,
-  serialized_end=1738,
-)
-
-
-_UPDATESECRETMETADATA = _descriptor.Descriptor(
-  name='UpdateSecretMetadata',
-  full_name='yandex.cloud.lockbox.v1.UpdateSecretMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='secret_id', full_name='yandex.cloud.lockbox.v1.UpdateSecretMetadata.secret_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1740,
-  serialized_end=1795,
-)
-
-
-_DELETESECRETREQUEST = _descriptor.Descriptor(
-  name='DeleteSecretRequest',
-  full_name='yandex.cloud.lockbox.v1.DeleteSecretRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='secret_id', full_name='yandex.cloud.lockbox.v1.DeleteSecretRequest.secret_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1797,
-  serialized_end=1851,
-)
-
-
-_DELETESECRETMETADATA = _descriptor.Descriptor(
-  name='DeleteSecretMetadata',
-  full_name='yandex.cloud.lockbox.v1.DeleteSecretMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='secret_id', full_name='yandex.cloud.lockbox.v1.DeleteSecretMetadata.secret_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1853,
-  serialized_end=1894,
-)
-
-
-_ACTIVATESECRETREQUEST = _descriptor.Descriptor(
-  name='ActivateSecretRequest',
-  full_name='yandex.cloud.lockbox.v1.ActivateSecretRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='secret_id', full_name='yandex.cloud.lockbox.v1.ActivateSecretRequest.secret_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1896,
-  serialized_end=1952,
-)
-
-
-_ACTIVATESECRETMETADATA = _descriptor.Descriptor(
-  name='ActivateSecretMetadata',
-  full_name='yandex.cloud.lockbox.v1.ActivateSecretMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='secret_id', full_name='yandex.cloud.lockbox.v1.ActivateSecretMetadata.secret_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1954,
-  serialized_end=1997,
-)
-
-
-_DEACTIVATESECRETREQUEST = _descriptor.Descriptor(
-  name='DeactivateSecretRequest',
-  full_name='yandex.cloud.lockbox.v1.DeactivateSecretRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='secret_id', full_name='yandex.cloud.lockbox.v1.DeactivateSecretRequest.secret_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1999,
-  serialized_end=2057,
-)
-
-
-_DEACTIVATESECRETMETADATA = _descriptor.Descriptor(
-  name='DeactivateSecretMetadata',
-  full_name='yandex.cloud.lockbox.v1.DeactivateSecretMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='secret_id', full_name='yandex.cloud.lockbox.v1.DeactivateSecretMetadata.secret_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2059,
-  serialized_end=2104,
-)
-
-
-_ADDVERSIONREQUEST = _descriptor.Descriptor(
-  name='AddVersionRequest',
-  full_name='yandex.cloud.lockbox.v1.AddVersionRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='secret_id', full_name='yandex.cloud.lockbox.v1.AddVersionRequest.secret_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='yandex.cloud.lockbox.v1.AddVersionRequest.description', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=1024', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='payload_entries', full_name='yandex.cloud.lockbox.v1.AddVersionRequest.payload_entries', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=32', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='base_version_id', full_name='yandex.cloud.lockbox.v1.AddVersionRequest.base_version_id', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2107,
-  serialized_end=2307,
-)
-
-
-_ADDVERSIONMETADATA = _descriptor.Descriptor(
-  name='AddVersionMetadata',
-  full_name='yandex.cloud.lockbox.v1.AddVersionMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='secret_id', full_name='yandex.cloud.lockbox.v1.AddVersionMetadata.secret_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='version_id', full_name='yandex.cloud.lockbox.v1.AddVersionMetadata.version_id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2309,
-  serialized_end=2368,
-)
-
-
-_LISTVERSIONSREQUEST = _descriptor.Descriptor(
-  name='ListVersionsRequest',
-  full_name='yandex.cloud.lockbox.v1.ListVersionsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='secret_id', full_name='yandex.cloud.lockbox.v1.ListVersionsRequest.secret_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.lockbox.v1.ListVersionsRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.lockbox.v1.ListVersionsRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2370,
-  serialized_end=2486,
-)
-
-
-_LISTVERSIONSRESPONSE = _descriptor.Descriptor(
-  name='ListVersionsResponse',
-  full_name='yandex.cloud.lockbox.v1.ListVersionsResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='versions', full_name='yandex.cloud.lockbox.v1.ListVersionsResponse.versions', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.lockbox.v1.ListVersionsResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2488,
-  serialized_end=2587,
-)
-
-
-_SCHEDULEVERSIONDESTRUCTIONREQUEST = _descriptor.Descriptor(
-  name='ScheduleVersionDestructionRequest',
-  full_name='yandex.cloud.lockbox.v1.ScheduleVersionDestructionRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='secret_id', full_name='yandex.cloud.lockbox.v1.ScheduleVersionDestructionRequest.secret_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='version_id', full_name='yandex.cloud.lockbox.v1.ScheduleVersionDestructionRequest.version_id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='pending_period', full_name='yandex.cloud.lockbox.v1.ScheduleVersionDestructionRequest.pending_period', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2590,
-  serialized_end=2743,
-)
-
-
-_SCHEDULEVERSIONDESTRUCTIONMETADATA = _descriptor.Descriptor(
-  name='ScheduleVersionDestructionMetadata',
-  full_name='yandex.cloud.lockbox.v1.ScheduleVersionDestructionMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='secret_id', full_name='yandex.cloud.lockbox.v1.ScheduleVersionDestructionMetadata.secret_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='version_id', full_name='yandex.cloud.lockbox.v1.ScheduleVersionDestructionMetadata.version_id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='destroy_at', full_name='yandex.cloud.lockbox.v1.ScheduleVersionDestructionMetadata.destroy_at', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2745,
-  serialized_end=2868,
-)
-
-
-_CANCELVERSIONDESTRUCTIONREQUEST = _descriptor.Descriptor(
-  name='CancelVersionDestructionRequest',
-  full_name='yandex.cloud.lockbox.v1.CancelVersionDestructionRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='secret_id', full_name='yandex.cloud.lockbox.v1.CancelVersionDestructionRequest.secret_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='version_id', full_name='yandex.cloud.lockbox.v1.CancelVersionDestructionRequest.version_id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2870,
-  serialized_end=2970,
-)
-
-
-_CANCELVERSIONDESTRUCTIONMETADATA = _descriptor.Descriptor(
-  name='CancelVersionDestructionMetadata',
-  full_name='yandex.cloud.lockbox.v1.CancelVersionDestructionMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='secret_id', full_name='yandex.cloud.lockbox.v1.CancelVersionDestructionMetadata.secret_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='version_id', full_name='yandex.cloud.lockbox.v1.CancelVersionDestructionMetadata.version_id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2972,
-  serialized_end=3045,
-)
-
-
-_LISTSECRETOPERATIONSREQUEST = _descriptor.Descriptor(
-  name='ListSecretOperationsRequest',
-  full_name='yandex.cloud.lockbox.v1.ListSecretOperationsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='secret_id', full_name='yandex.cloud.lockbox.v1.ListSecretOperationsRequest.secret_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.lockbox.v1.ListSecretOperationsRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.lockbox.v1.ListSecretOperationsRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=3047,
-  serialized_end=3171,
-)
-
-
-_LISTSECRETOPERATIONSRESPONSE = _descriptor.Descriptor(
-  name='ListSecretOperationsResponse',
-  full_name='yandex.cloud.lockbox.v1.ListSecretOperationsResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='operations', full_name='yandex.cloud.lockbox.v1.ListSecretOperationsResponse.operations', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.lockbox.v1.ListSecretOperationsResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=3173,
-  serialized_end=3283,
-)
-
-_PAYLOADENTRYCHANGE.oneofs_by_name['value'].fields.append(
-  _PAYLOADENTRYCHANGE.fields_by_name['text_value'])
-_PAYLOADENTRYCHANGE.fields_by_name['text_value'].containing_oneof = _PAYLOADENTRYCHANGE.oneofs_by_name['value']
-_PAYLOADENTRYCHANGE.oneofs_by_name['value'].fields.append(
-  _PAYLOADENTRYCHANGE.fields_by_name['binary_value'])
-_PAYLOADENTRYCHANGE.fields_by_name['binary_value'].containing_oneof = _PAYLOADENTRYCHANGE.oneofs_by_name['value']
-_LISTSECRETSRESPONSE.fields_by_name['secrets'].message_type = yandex_dot_cloud_dot_lockbox_dot_v1_dot_secret__pb2._SECRET
-_CREATESECRETREQUEST_LABELSENTRY.containing_type = _CREATESECRETREQUEST
-_CREATESECRETREQUEST.fields_by_name['labels'].message_type = _CREATESECRETREQUEST_LABELSENTRY
-_CREATESECRETREQUEST.fields_by_name['version_payload_entries'].message_type = _PAYLOADENTRYCHANGE
-_UPDATESECRETREQUEST_LABELSENTRY.containing_type = _UPDATESECRETREQUEST
-_UPDATESECRETREQUEST.fields_by_name['update_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
-_UPDATESECRETREQUEST.fields_by_name['labels'].message_type = _UPDATESECRETREQUEST_LABELSENTRY
-_ADDVERSIONREQUEST.fields_by_name['payload_entries'].message_type = _PAYLOADENTRYCHANGE
-_LISTVERSIONSRESPONSE.fields_by_name['versions'].message_type = yandex_dot_cloud_dot_lockbox_dot_v1_dot_secret__pb2._VERSION
-_SCHEDULEVERSIONDESTRUCTIONREQUEST.fields_by_name['pending_period'].message_type = google_dot_protobuf_dot_duration__pb2._DURATION
-_SCHEDULEVERSIONDESTRUCTIONMETADATA.fields_by_name['destroy_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
-_LISTSECRETOPERATIONSRESPONSE.fields_by_name['operations'].message_type = yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION
-DESCRIPTOR.message_types_by_name['PayloadEntryChange'] = _PAYLOADENTRYCHANGE
-DESCRIPTOR.message_types_by_name['GetSecretRequest'] = _GETSECRETREQUEST
-DESCRIPTOR.message_types_by_name['ListSecretsRequest'] = _LISTSECRETSREQUEST
-DESCRIPTOR.message_types_by_name['ListSecretsResponse'] = _LISTSECRETSRESPONSE
-DESCRIPTOR.message_types_by_name['CreateSecretRequest'] = _CREATESECRETREQUEST
-DESCRIPTOR.message_types_by_name['CreateSecretMetadata'] = _CREATESECRETMETADATA
-DESCRIPTOR.message_types_by_name['UpdateSecretRequest'] = _UPDATESECRETREQUEST
-DESCRIPTOR.message_types_by_name['UpdateSecretMetadata'] = _UPDATESECRETMETADATA
-DESCRIPTOR.message_types_by_name['DeleteSecretRequest'] = _DELETESECRETREQUEST
-DESCRIPTOR.message_types_by_name['DeleteSecretMetadata'] = _DELETESECRETMETADATA
-DESCRIPTOR.message_types_by_name['ActivateSecretRequest'] = _ACTIVATESECRETREQUEST
-DESCRIPTOR.message_types_by_name['ActivateSecretMetadata'] = _ACTIVATESECRETMETADATA
-DESCRIPTOR.message_types_by_name['DeactivateSecretRequest'] = _DEACTIVATESECRETREQUEST
-DESCRIPTOR.message_types_by_name['DeactivateSecretMetadata'] = _DEACTIVATESECRETMETADATA
-DESCRIPTOR.message_types_by_name['AddVersionRequest'] = _ADDVERSIONREQUEST
-DESCRIPTOR.message_types_by_name['AddVersionMetadata'] = _ADDVERSIONMETADATA
-DESCRIPTOR.message_types_by_name['ListVersionsRequest'] = _LISTVERSIONSREQUEST
-DESCRIPTOR.message_types_by_name['ListVersionsResponse'] = _LISTVERSIONSRESPONSE
-DESCRIPTOR.message_types_by_name['ScheduleVersionDestructionRequest'] = _SCHEDULEVERSIONDESTRUCTIONREQUEST
-DESCRIPTOR.message_types_by_name['ScheduleVersionDestructionMetadata'] = _SCHEDULEVERSIONDESTRUCTIONMETADATA
-DESCRIPTOR.message_types_by_name['CancelVersionDestructionRequest'] = _CANCELVERSIONDESTRUCTIONREQUEST
-DESCRIPTOR.message_types_by_name['CancelVersionDestructionMetadata'] = _CANCELVERSIONDESTRUCTIONMETADATA
-DESCRIPTOR.message_types_by_name['ListSecretOperationsRequest'] = _LISTSECRETOPERATIONSREQUEST
-DESCRIPTOR.message_types_by_name['ListSecretOperationsResponse'] = _LISTSECRETOPERATIONSRESPONSE
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-PayloadEntryChange = _reflection.GeneratedProtocolMessageType('PayloadEntryChange', (_message.Message,), {
-  'DESCRIPTOR' : _PAYLOADENTRYCHANGE,
-  '__module__' : 'yandex.cloud.lockbox.v1.secret_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.lockbox.v1.PayloadEntryChange)
-  })
-_sym_db.RegisterMessage(PayloadEntryChange)
-
-GetSecretRequest = _reflection.GeneratedProtocolMessageType('GetSecretRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETSECRETREQUEST,
-  '__module__' : 'yandex.cloud.lockbox.v1.secret_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.lockbox.v1.GetSecretRequest)
-  })
-_sym_db.RegisterMessage(GetSecretRequest)
-
-ListSecretsRequest = _reflection.GeneratedProtocolMessageType('ListSecretsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTSECRETSREQUEST,
-  '__module__' : 'yandex.cloud.lockbox.v1.secret_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.lockbox.v1.ListSecretsRequest)
-  })
-_sym_db.RegisterMessage(ListSecretsRequest)
-
-ListSecretsResponse = _reflection.GeneratedProtocolMessageType('ListSecretsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTSECRETSRESPONSE,
-  '__module__' : 'yandex.cloud.lockbox.v1.secret_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.lockbox.v1.ListSecretsResponse)
-  })
-_sym_db.RegisterMessage(ListSecretsResponse)
-
-CreateSecretRequest = _reflection.GeneratedProtocolMessageType('CreateSecretRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _CREATESECRETREQUEST_LABELSENTRY,
-    '__module__' : 'yandex.cloud.lockbox.v1.secret_service_pb2'
-    # @@protoc_insertion_point(class_scope:yandex.cloud.lockbox.v1.CreateSecretRequest.LabelsEntry)
-    })
-  ,
-  'DESCRIPTOR' : _CREATESECRETREQUEST,
-  '__module__' : 'yandex.cloud.lockbox.v1.secret_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.lockbox.v1.CreateSecretRequest)
-  })
-_sym_db.RegisterMessage(CreateSecretRequest)
-_sym_db.RegisterMessage(CreateSecretRequest.LabelsEntry)
-
-CreateSecretMetadata = _reflection.GeneratedProtocolMessageType('CreateSecretMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _CREATESECRETMETADATA,
-  '__module__' : 'yandex.cloud.lockbox.v1.secret_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.lockbox.v1.CreateSecretMetadata)
-  })
-_sym_db.RegisterMessage(CreateSecretMetadata)
-
-UpdateSecretRequest = _reflection.GeneratedProtocolMessageType('UpdateSecretRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _UPDATESECRETREQUEST_LABELSENTRY,
-    '__module__' : 'yandex.cloud.lockbox.v1.secret_service_pb2'
-    # @@protoc_insertion_point(class_scope:yandex.cloud.lockbox.v1.UpdateSecretRequest.LabelsEntry)
-    })
-  ,
-  'DESCRIPTOR' : _UPDATESECRETREQUEST,
-  '__module__' : 'yandex.cloud.lockbox.v1.secret_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.lockbox.v1.UpdateSecretRequest)
-  })
-_sym_db.RegisterMessage(UpdateSecretRequest)
-_sym_db.RegisterMessage(UpdateSecretRequest.LabelsEntry)
-
-UpdateSecretMetadata = _reflection.GeneratedProtocolMessageType('UpdateSecretMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATESECRETMETADATA,
-  '__module__' : 'yandex.cloud.lockbox.v1.secret_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.lockbox.v1.UpdateSecretMetadata)
-  })
-_sym_db.RegisterMessage(UpdateSecretMetadata)
-
-DeleteSecretRequest = _reflection.GeneratedProtocolMessageType('DeleteSecretRequest', (_message.Message,), {
-  'DESCRIPTOR' : _DELETESECRETREQUEST,
-  '__module__' : 'yandex.cloud.lockbox.v1.secret_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.lockbox.v1.DeleteSecretRequest)
-  })
-_sym_db.RegisterMessage(DeleteSecretRequest)
-
-DeleteSecretMetadata = _reflection.GeneratedProtocolMessageType('DeleteSecretMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _DELETESECRETMETADATA,
-  '__module__' : 'yandex.cloud.lockbox.v1.secret_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.lockbox.v1.DeleteSecretMetadata)
-  })
-_sym_db.RegisterMessage(DeleteSecretMetadata)
-
-ActivateSecretRequest = _reflection.GeneratedProtocolMessageType('ActivateSecretRequest', (_message.Message,), {
-  'DESCRIPTOR' : _ACTIVATESECRETREQUEST,
-  '__module__' : 'yandex.cloud.lockbox.v1.secret_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.lockbox.v1.ActivateSecretRequest)
-  })
-_sym_db.RegisterMessage(ActivateSecretRequest)
-
-ActivateSecretMetadata = _reflection.GeneratedProtocolMessageType('ActivateSecretMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _ACTIVATESECRETMETADATA,
-  '__module__' : 'yandex.cloud.lockbox.v1.secret_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.lockbox.v1.ActivateSecretMetadata)
-  })
-_sym_db.RegisterMessage(ActivateSecretMetadata)
-
-DeactivateSecretRequest = _reflection.GeneratedProtocolMessageType('DeactivateSecretRequest', (_message.Message,), {
-  'DESCRIPTOR' : _DEACTIVATESECRETREQUEST,
-  '__module__' : 'yandex.cloud.lockbox.v1.secret_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.lockbox.v1.DeactivateSecretRequest)
-  })
-_sym_db.RegisterMessage(DeactivateSecretRequest)
-
-DeactivateSecretMetadata = _reflection.GeneratedProtocolMessageType('DeactivateSecretMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _DEACTIVATESECRETMETADATA,
-  '__module__' : 'yandex.cloud.lockbox.v1.secret_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.lockbox.v1.DeactivateSecretMetadata)
-  })
-_sym_db.RegisterMessage(DeactivateSecretMetadata)
-
-AddVersionRequest = _reflection.GeneratedProtocolMessageType('AddVersionRequest', (_message.Message,), {
-  'DESCRIPTOR' : _ADDVERSIONREQUEST,
-  '__module__' : 'yandex.cloud.lockbox.v1.secret_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.lockbox.v1.AddVersionRequest)
-  })
-_sym_db.RegisterMessage(AddVersionRequest)
-
-AddVersionMetadata = _reflection.GeneratedProtocolMessageType('AddVersionMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _ADDVERSIONMETADATA,
-  '__module__' : 'yandex.cloud.lockbox.v1.secret_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.lockbox.v1.AddVersionMetadata)
-  })
-_sym_db.RegisterMessage(AddVersionMetadata)
-
-ListVersionsRequest = _reflection.GeneratedProtocolMessageType('ListVersionsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTVERSIONSREQUEST,
-  '__module__' : 'yandex.cloud.lockbox.v1.secret_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.lockbox.v1.ListVersionsRequest)
-  })
-_sym_db.RegisterMessage(ListVersionsRequest)
-
-ListVersionsResponse = _reflection.GeneratedProtocolMessageType('ListVersionsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTVERSIONSRESPONSE,
-  '__module__' : 'yandex.cloud.lockbox.v1.secret_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.lockbox.v1.ListVersionsResponse)
-  })
-_sym_db.RegisterMessage(ListVersionsResponse)
-
-ScheduleVersionDestructionRequest = _reflection.GeneratedProtocolMessageType('ScheduleVersionDestructionRequest', (_message.Message,), {
-  'DESCRIPTOR' : _SCHEDULEVERSIONDESTRUCTIONREQUEST,
-  '__module__' : 'yandex.cloud.lockbox.v1.secret_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.lockbox.v1.ScheduleVersionDestructionRequest)
-  })
-_sym_db.RegisterMessage(ScheduleVersionDestructionRequest)
-
-ScheduleVersionDestructionMetadata = _reflection.GeneratedProtocolMessageType('ScheduleVersionDestructionMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _SCHEDULEVERSIONDESTRUCTIONMETADATA,
-  '__module__' : 'yandex.cloud.lockbox.v1.secret_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.lockbox.v1.ScheduleVersionDestructionMetadata)
-  })
-_sym_db.RegisterMessage(ScheduleVersionDestructionMetadata)
-
-CancelVersionDestructionRequest = _reflection.GeneratedProtocolMessageType('CancelVersionDestructionRequest', (_message.Message,), {
-  'DESCRIPTOR' : _CANCELVERSIONDESTRUCTIONREQUEST,
-  '__module__' : 'yandex.cloud.lockbox.v1.secret_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.lockbox.v1.CancelVersionDestructionRequest)
-  })
-_sym_db.RegisterMessage(CancelVersionDestructionRequest)
-
-CancelVersionDestructionMetadata = _reflection.GeneratedProtocolMessageType('CancelVersionDestructionMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _CANCELVERSIONDESTRUCTIONMETADATA,
-  '__module__' : 'yandex.cloud.lockbox.v1.secret_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.lockbox.v1.CancelVersionDestructionMetadata)
-  })
-_sym_db.RegisterMessage(CancelVersionDestructionMetadata)
-
-ListSecretOperationsRequest = _reflection.GeneratedProtocolMessageType('ListSecretOperationsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTSECRETOPERATIONSREQUEST,
-  '__module__' : 'yandex.cloud.lockbox.v1.secret_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.lockbox.v1.ListSecretOperationsRequest)
-  })
-_sym_db.RegisterMessage(ListSecretOperationsRequest)
-
-ListSecretOperationsResponse = _reflection.GeneratedProtocolMessageType('ListSecretOperationsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTSECRETOPERATIONSRESPONSE,
-  '__module__' : 'yandex.cloud.lockbox.v1.secret_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.lockbox.v1.ListSecretOperationsResponse)
-  })
-_sym_db.RegisterMessage(ListSecretOperationsResponse)
-
-
-DESCRIPTOR._options = None
-_PAYLOADENTRYCHANGE.fields_by_name['key']._options = None
-_PAYLOADENTRYCHANGE.fields_by_name['text_value']._options = None
-_PAYLOADENTRYCHANGE.fields_by_name['binary_value']._options = None
-_GETSECRETREQUEST.fields_by_name['secret_id']._options = None
-_LISTSECRETSREQUEST.fields_by_name['folder_id']._options = None
-_LISTSECRETSREQUEST.fields_by_name['page_size']._options = None
-_LISTSECRETSREQUEST.fields_by_name['page_token']._options = None
-_CREATESECRETREQUEST_LABELSENTRY._options = None
-_CREATESECRETREQUEST.fields_by_name['folder_id']._options = None
-_CREATESECRETREQUEST.fields_by_name['name']._options = None
-_CREATESECRETREQUEST.fields_by_name['description']._options = None
-_CREATESECRETREQUEST.fields_by_name['labels']._options = None
-_CREATESECRETREQUEST.fields_by_name['kms_key_id']._options = None
-_CREATESECRETREQUEST.fields_by_name['version_description']._options = None
-_CREATESECRETREQUEST.fields_by_name['version_payload_entries']._options = None
-_UPDATESECRETREQUEST_LABELSENTRY._options = None
-_UPDATESECRETREQUEST.fields_by_name['secret_id']._options = None
-_UPDATESECRETREQUEST.fields_by_name['update_mask']._options = None
-_UPDATESECRETREQUEST.fields_by_name['name']._options = None
-_UPDATESECRETREQUEST.fields_by_name['description']._options = None
-_UPDATESECRETREQUEST.fields_by_name['labels']._options = None
-_UPDATESECRETMETADATA.fields_by_name['secret_id']._options = None
-_DELETESECRETREQUEST.fields_by_name['secret_id']._options = None
-_ACTIVATESECRETREQUEST.fields_by_name['secret_id']._options = None
-_DEACTIVATESECRETREQUEST.fields_by_name['secret_id']._options = None
-_ADDVERSIONREQUEST.fields_by_name['secret_id']._options = None
-_ADDVERSIONREQUEST.fields_by_name['description']._options = None
-_ADDVERSIONREQUEST.fields_by_name['payload_entries']._options = None
-_ADDVERSIONREQUEST.fields_by_name['base_version_id']._options = None
-_LISTVERSIONSREQUEST.fields_by_name['secret_id']._options = None
-_LISTVERSIONSREQUEST.fields_by_name['page_size']._options = None
-_LISTVERSIONSREQUEST.fields_by_name['page_token']._options = None
-_SCHEDULEVERSIONDESTRUCTIONREQUEST.fields_by_name['secret_id']._options = None
-_SCHEDULEVERSIONDESTRUCTIONREQUEST.fields_by_name['version_id']._options = None
-_CANCELVERSIONDESTRUCTIONREQUEST.fields_by_name['secret_id']._options = None
-_CANCELVERSIONDESTRUCTIONREQUEST.fields_by_name['version_id']._options = None
-_LISTSECRETOPERATIONSREQUEST.fields_by_name['secret_id']._options = None
-_LISTSECRETOPERATIONSREQUEST.fields_by_name['page_size']._options = None
-_LISTSECRETOPERATIONSREQUEST.fields_by_name['page_token']._options = None
-
-_SECRETSERVICE = _descriptor.ServiceDescriptor(
-  name='SecretService',
-  full_name='yandex.cloud.lockbox.v1.SecretService',
-  file=DESCRIPTOR,
-  index=0,
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_start=3286,
-  serialized_end=6079,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='Get',
-    full_name='yandex.cloud.lockbox.v1.SecretService.Get',
-    index=0,
-    containing_service=None,
-    input_type=_GETSECRETREQUEST,
-    output_type=yandex_dot_cloud_dot_lockbox_dot_v1_dot_secret__pb2._SECRET,
-    serialized_options=b'\202\323\344\223\002!\022\037/lockbox/v1/secrets/{secret_id}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='List',
-    full_name='yandex.cloud.lockbox.v1.SecretService.List',
-    index=1,
-    containing_service=None,
-    input_type=_LISTSECRETSREQUEST,
-    output_type=_LISTSECRETSRESPONSE,
-    serialized_options=b'\202\323\344\223\002\025\022\023/lockbox/v1/secrets',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Create',
-    full_name='yandex.cloud.lockbox.v1.SecretService.Create',
-    index=2,
-    containing_service=None,
-    input_type=_CREATESECRETREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002\030\"\023/lockbox/v1/secrets:\001*\262\322*\036\n\024CreateSecretMetadata\022\006Secret',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Update',
-    full_name='yandex.cloud.lockbox.v1.SecretService.Update',
-    index=3,
-    containing_service=None,
-    input_type=_UPDATESECRETREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002$2\037/lockbox/v1/secrets/{secret_id}:\001*\262\322*\036\n\024UpdateSecretMetadata\022\006Secret',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Delete',
-    full_name='yandex.cloud.lockbox.v1.SecretService.Delete',
-    index=4,
-    containing_service=None,
-    input_type=_DELETESECRETREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002!*\037/lockbox/v1/secrets/{secret_id}\262\322*\036\n\024DeleteSecretMetadata\022\006Secret',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Activate',
-    full_name='yandex.cloud.lockbox.v1.SecretService.Activate',
-    index=5,
-    containing_service=None,
-    input_type=_ACTIVATESECRETREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002*\"(/lockbox/v1/secrets/{secret_id}:activate\262\322* \n\026ActivateSecretMetadata\022\006Secret',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Deactivate',
-    full_name='yandex.cloud.lockbox.v1.SecretService.Deactivate',
-    index=6,
-    containing_service=None,
-    input_type=_DEACTIVATESECRETREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002,\"*/lockbox/v1/secrets/{secret_id}:deactivate\262\322*\"\n\030DeactivateSecretMetadata\022\006Secret',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListVersions',
-    full_name='yandex.cloud.lockbox.v1.SecretService.ListVersions',
-    index=7,
-    containing_service=None,
-    input_type=_LISTVERSIONSREQUEST,
-    output_type=_LISTVERSIONSRESPONSE,
-    serialized_options=b'\202\323\344\223\002*\022(/lockbox/v1/secrets/{secret_id}/versions',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='AddVersion',
-    full_name='yandex.cloud.lockbox.v1.SecretService.AddVersion',
-    index=8,
-    containing_service=None,
-    input_type=_ADDVERSIONREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002/\"*/lockbox/v1/secrets/{secret_id}:addVersion:\001*\262\322*\035\n\022AddVersionMetadata\022\007Version',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ScheduleVersionDestruction',
-    full_name='yandex.cloud.lockbox.v1.SecretService.ScheduleVersionDestruction',
-    index=9,
-    containing_service=None,
-    input_type=_SCHEDULEVERSIONDESTRUCTIONREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002?\":/lockbox/v1/secrets/{secret_id}:scheduleVersionDestruction:\001*\262\322*-\n\"ScheduleVersionDestructionMetadata\022\007Version',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='CancelVersionDestruction',
-    full_name='yandex.cloud.lockbox.v1.SecretService.CancelVersionDestruction',
-    index=10,
-    containing_service=None,
-    input_type=_CANCELVERSIONDESTRUCTIONREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002=\"8/lockbox/v1/secrets/{secret_id}:cancelVersionDestruction:\001*\262\322*+\n CancelVersionDestructionMetadata\022\007Version',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListOperations',
-    full_name='yandex.cloud.lockbox.v1.SecretService.ListOperations',
-    index=11,
-    containing_service=None,
-    input_type=_LISTSECRETOPERATIONSREQUEST,
-    output_type=_LISTSECRETOPERATIONSRESPONSE,
-    serialized_options=b'\202\323\344\223\002,\022*/lockbox/v1/secrets/{secret_id}/operations',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListAccessBindings',
-    full_name='yandex.cloud.lockbox.v1.SecretService.ListAccessBindings',
-    index=12,
-    containing_service=None,
-    input_type=yandex_dot_cloud_dot_access_dot_access__pb2._LISTACCESSBINDINGSREQUEST,
-    output_type=yandex_dot_cloud_dot_access_dot_access__pb2._LISTACCESSBINDINGSRESPONSE,
-    serialized_options=b'\202\323\344\223\0026\0224/lockbox/v1/secrets/{resource_id}:listAccessBindings',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='SetAccessBindings',
-    full_name='yandex.cloud.lockbox.v1.SecretService.SetAccessBindings',
-    index=13,
-    containing_service=None,
-    input_type=yandex_dot_cloud_dot_access_dot_access__pb2._SETACCESSBINDINGSREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\0028\"3/lockbox/v1/secrets/{resource_id}:setAccessBindings:\001*\262\322*9\n access.SetAccessBindingsMetadata\022\025google.protobuf.Empty',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='UpdateAccessBindings',
-    full_name='yandex.cloud.lockbox.v1.SecretService.UpdateAccessBindings',
-    index=14,
-    containing_service=None,
-    input_type=yandex_dot_cloud_dot_access_dot_access__pb2._UPDATEACCESSBINDINGSREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002;\"6/lockbox/v1/secrets/{resource_id}:updateAccessBindings:\001*\262\322*<\n#access.UpdateAccessBindingsMetadata\022\025google.protobuf.Empty',
-    create_key=_descriptor._internal_create_key,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_SECRETSERVICE)
-
-DESCRIPTOR.services_by_name['SecretService'] = _SECRETSERVICE
-
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,yandex/cloud/lockbox/v1/secret_service.proto\x12\x17yandex.cloud.lockbox.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1egoogle/protobuf/duration.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a yandex/cloud/access/access.proto\x1a yandex/cloud/api/operation.proto\x1a$yandex/cloud/lockbox/v1/secret.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"\x98\x01\n\x12PayloadEntryChange\x12\x31\n\x03key\x18\x01 \x01(\tB$\xe8\xc7\x31\x01\xf2\xc7\x31\x13[-_./\\\\@0-9a-zA-Z]+\x8a\xc8\x31\x05<=256\x12!\n\ntext_value\x18\x02 \x01(\tB\x0b\x8a\xc8\x31\x07<=65536H\x00\x12#\n\x0c\x62inary_value\x18\x03 \x01(\x0c\x42\x0b\x8a\xc8\x31\x07<=65536H\x00\x42\x07\n\x05value\"3\n\x10GetSecretRequest\x12\x1f\n\tsecret_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"s\n\x12ListSecretsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"`\n\x13ListSecretsResponse\x12\x30\n\x07secrets\x18\x01 \x03(\x0b\x32\x1f.yandex.cloud.lockbox.v1.Secret\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xe2\x03\n\x13\x43reateSecretRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x17\n\x04name\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1f\n\x0b\x64\x65scription\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12\x85\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x38.yandex.cloud.lockbox.v1.CreateSecretRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04<=63\x12\x1c\n\nkms_key_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12&\n\x13version_description\x18\x06 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12V\n\x17version_payload_entries\x18\x07 \x03(\x0b\x32+.yandex.cloud.lockbox.v1.PayloadEntryChangeB\x08\x82\xc8\x31\x04<=32\x12\x1b\n\x13\x64\x65letion_protection\x18\x08 \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"=\n\x14\x43reateSecretMetadata\x12\x11\n\tsecret_id\x18\x01 \x01(\t\x12\x12\n\nversion_id\x18\x02 \x01(\t\"\xfb\x02\n\x13UpdateSecretRequest\x12\x1f\n\tsecret_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe8\xc7\x31\x01\x12\x17\n\x04name\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1f\n\x0b\x64\x65scription\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12\x85\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x38.yandex.cloud.lockbox.v1.UpdateSecretRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04<=63\x12\x1b\n\x13\x64\x65letion_protection\x18\x06 \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"7\n\x14UpdateSecretMetadata\x12\x1f\n\tsecret_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"6\n\x13\x44\x65leteSecretRequest\x12\x1f\n\tsecret_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\")\n\x14\x44\x65leteSecretMetadata\x12\x11\n\tsecret_id\x18\x01 \x01(\t\"8\n\x15\x41\x63tivateSecretRequest\x12\x1f\n\tsecret_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x16\x41\x63tivateSecretMetadata\x12\x11\n\tsecret_id\x18\x01 \x01(\t\":\n\x17\x44\x65\x61\x63tivateSecretRequest\x12\x1f\n\tsecret_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"-\n\x18\x44\x65\x61\x63tivateSecretMetadata\x12\x11\n\tsecret_id\x18\x01 \x01(\t\"\xc8\x01\n\x11\x41\x64\x64VersionRequest\x12\x1f\n\tsecret_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1f\n\x0b\x64\x65scription\x18\x02 \x01(\tB\n\x8a\xc8\x31\x06<=1024\x12N\n\x0fpayload_entries\x18\x03 \x03(\x0b\x32+.yandex.cloud.lockbox.v1.PayloadEntryChangeB\x08\x82\xc8\x31\x04<=32\x12!\n\x0f\x62\x61se_version_id\x18\x04 \x01(\tB\x08\x8a\xc8\x31\x04<=50\";\n\x12\x41\x64\x64VersionMetadata\x12\x11\n\tsecret_id\x18\x01 \x01(\t\x12\x12\n\nversion_id\x18\x02 \x01(\t\"t\n\x13ListVersionsRequest\x12\x1f\n\tsecret_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"c\n\x14ListVersionsResponse\x12\x32\n\x08versions\x18\x01 \x03(\x0b\x32 .yandex.cloud.lockbox.v1.Version\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x99\x01\n!ScheduleVersionDestructionRequest\x12\x1f\n\tsecret_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12 \n\nversion_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x31\n\x0epending_period\x18\x03 \x01(\x0b\x32\x19.google.protobuf.Duration\"{\n\"ScheduleVersionDestructionMetadata\x12\x11\n\tsecret_id\x18\x01 \x01(\t\x12\x12\n\nversion_id\x18\x02 \x01(\t\x12.\n\ndestroy_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"d\n\x1f\x43\x61ncelVersionDestructionRequest\x12\x1f\n\tsecret_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12 \n\nversion_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"I\n CancelVersionDestructionMetadata\x12\x11\n\tsecret_id\x18\x01 \x01(\t\x12\x12\n\nversion_id\x18\x02 \x01(\t\"|\n\x1bListSecretOperationsRequest\x12\x1f\n\tsecret_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"n\n\x1cListSecretOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xe9\x15\n\rSecretService\x12z\n\x03Get\x12).yandex.cloud.lockbox.v1.GetSecretRequest\x1a\x1f.yandex.cloud.lockbox.v1.Secret\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/lockbox/v1/secrets/{secret_id}\x12~\n\x04List\x12+.yandex.cloud.lockbox.v1.ListSecretsRequest\x1a,.yandex.cloud.lockbox.v1.ListSecretsResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/lockbox/v1/secrets\x12\x9b\x01\n\x06\x43reate\x12,.yandex.cloud.lockbox.v1.CreateSecretRequest\x1a!.yandex.cloud.operation.Operation\"@\xb2\xd2*\x1e\n\x14\x43reateSecretMetadata\x12\x06Secret\x82\xd3\xe4\x93\x02\x18\"\x13/lockbox/v1/secrets:\x01*\x12\xa7\x01\n\x06Update\x12,.yandex.cloud.lockbox.v1.UpdateSecretRequest\x1a!.yandex.cloud.operation.Operation\"L\xb2\xd2*\x1e\n\x14UpdateSecretMetadata\x12\x06Secret\x82\xd3\xe4\x93\x02$2\x1f/lockbox/v1/secrets/{secret_id}:\x01*\x12\xa4\x01\n\x06\x44\x65lete\x12,.yandex.cloud.lockbox.v1.DeleteSecretRequest\x1a!.yandex.cloud.operation.Operation\"I\xb2\xd2*\x1e\n\x14\x44\x65leteSecretMetadata\x12\x06Secret\x82\xd3\xe4\x93\x02!*\x1f/lockbox/v1/secrets/{secret_id}\x12\xb3\x01\n\x08\x41\x63tivate\x12..yandex.cloud.lockbox.v1.ActivateSecretRequest\x1a!.yandex.cloud.operation.Operation\"T\xb2\xd2* \n\x16\x41\x63tivateSecretMetadata\x12\x06Secret\x82\xd3\xe4\x93\x02*\"(/lockbox/v1/secrets/{secret_id}:activate\x12\xbb\x01\n\nDeactivate\x12\x30.yandex.cloud.lockbox.v1.DeactivateSecretRequest\x1a!.yandex.cloud.operation.Operation\"X\xb2\xd2*\"\n\x18\x44\x65\x61\x63tivateSecretMetadata\x12\x06Secret\x82\xd3\xe4\x93\x02,\"*/lockbox/v1/secrets/{secret_id}:deactivate\x12\x9d\x01\n\x0cListVersions\x12,.yandex.cloud.lockbox.v1.ListVersionsRequest\x1a-.yandex.cloud.lockbox.v1.ListVersionsResponse\"0\x82\xd3\xe4\x93\x02*\x12(/lockbox/v1/secrets/{secret_id}/versions\x12\xb3\x01\n\nAddVersion\x12*.yandex.cloud.lockbox.v1.AddVersionRequest\x1a!.yandex.cloud.operation.Operation\"V\xb2\xd2*\x1d\n\x12\x41\x64\x64VersionMetadata\x12\x07Version\x82\xd3\xe4\x93\x02/\"*/lockbox/v1/secrets/{secret_id}:addVersion:\x01*\x12\xf3\x01\n\x1aScheduleVersionDestruction\x12:.yandex.cloud.lockbox.v1.ScheduleVersionDestructionRequest\x1a!.yandex.cloud.operation.Operation\"v\xb2\xd2*-\n\"ScheduleVersionDestructionMetadata\x12\x07Version\x82\xd3\xe4\x93\x02?\":/lockbox/v1/secrets/{secret_id}:scheduleVersionDestruction:\x01*\x12\xeb\x01\n\x18\x43\x61ncelVersionDestruction\x12\x38.yandex.cloud.lockbox.v1.CancelVersionDestructionRequest\x1a!.yandex.cloud.operation.Operation\"r\xb2\xd2*+\n CancelVersionDestructionMetadata\x12\x07Version\x82\xd3\xe4\x93\x02=\"8/lockbox/v1/secrets/{secret_id}:cancelVersionDestruction:\x01*\x12\xb1\x01\n\x0eListOperations\x12\x34.yandex.cloud.lockbox.v1.ListSecretOperationsRequest\x1a\x35.yandex.cloud.lockbox.v1.ListSecretOperationsResponse\"2\x82\xd3\xe4\x93\x02,\x12*/lockbox/v1/secrets/{secret_id}/operations\x12\xb3\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/lockbox/v1/secrets/{resource_id}:listAccessBindings\x12\xe2\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"{\xb2\xd2*9\n access.SetAccessBindingsMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x38\"3/lockbox/v1/secrets/{resource_id}:setAccessBindings:\x01*\x12\xef\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x81\x01\xb2\xd2*<\n#access.UpdateAccessBindingsMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02;\"6/lockbox/v1/secrets/{resource_id}:updateAccessBindings:\x01*Bb\n\x1byandex.cloud.api.lockbox.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/lockbox/v1;lockboxb\x06proto3')
+
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.lockbox.v1.secret_service_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
+
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n\033yandex.cloud.api.lockbox.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/lockbox/v1;lockbox'
+  _PAYLOADENTRYCHANGE.fields_by_name['key']._options = None
+  _PAYLOADENTRYCHANGE.fields_by_name['key']._serialized_options = b'\350\3071\001\362\3071\023[-_./\\\\@0-9a-zA-Z]+\212\3101\005<=256'
+  _PAYLOADENTRYCHANGE.fields_by_name['text_value']._options = None
+  _PAYLOADENTRYCHANGE.fields_by_name['text_value']._serialized_options = b'\212\3101\007<=65536'
+  _PAYLOADENTRYCHANGE.fields_by_name['binary_value']._options = None
+  _PAYLOADENTRYCHANGE.fields_by_name['binary_value']._serialized_options = b'\212\3101\007<=65536'
+  _GETSECRETREQUEST.fields_by_name['secret_id']._options = None
+  _GETSECRETREQUEST.fields_by_name['secret_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTSECRETSREQUEST.fields_by_name['folder_id']._options = None
+  _LISTSECRETSREQUEST.fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTSECRETSREQUEST.fields_by_name['page_size']._options = None
+  _LISTSECRETSREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
+  _LISTSECRETSREQUEST.fields_by_name['page_token']._options = None
+  _LISTSECRETSREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
+  _CREATESECRETREQUEST_LABELSENTRY._options = None
+  _CREATESECRETREQUEST_LABELSENTRY._serialized_options = b'8\001'
+  _CREATESECRETREQUEST.fields_by_name['folder_id']._options = None
+  _CREATESECRETREQUEST.fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _CREATESECRETREQUEST.fields_by_name['name']._options = None
+  _CREATESECRETREQUEST.fields_by_name['name']._serialized_options = b'\212\3101\005<=100'
+  _CREATESECRETREQUEST.fields_by_name['description']._options = None
+  _CREATESECRETREQUEST.fields_by_name['description']._serialized_options = b'\212\3101\006<=1024'
+  _CREATESECRETREQUEST.fields_by_name['labels']._options = None
+  _CREATESECRETREQUEST.fields_by_name['labels']._serialized_options = b'\362\3071\013[-_0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\004<=63'
+  _CREATESECRETREQUEST.fields_by_name['kms_key_id']._options = None
+  _CREATESECRETREQUEST.fields_by_name['kms_key_id']._serialized_options = b'\212\3101\004<=50'
+  _CREATESECRETREQUEST.fields_by_name['version_description']._options = None
+  _CREATESECRETREQUEST.fields_by_name['version_description']._serialized_options = b'\212\3101\005<=256'
+  _CREATESECRETREQUEST.fields_by_name['version_payload_entries']._options = None
+  _CREATESECRETREQUEST.fields_by_name['version_payload_entries']._serialized_options = b'\202\3101\004<=32'
+  _UPDATESECRETREQUEST_LABELSENTRY._options = None
+  _UPDATESECRETREQUEST_LABELSENTRY._serialized_options = b'8\001'
+  _UPDATESECRETREQUEST.fields_by_name['secret_id']._options = None
+  _UPDATESECRETREQUEST.fields_by_name['secret_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _UPDATESECRETREQUEST.fields_by_name['update_mask']._options = None
+  _UPDATESECRETREQUEST.fields_by_name['update_mask']._serialized_options = b'\350\3071\001'
+  _UPDATESECRETREQUEST.fields_by_name['name']._options = None
+  _UPDATESECRETREQUEST.fields_by_name['name']._serialized_options = b'\212\3101\005<=100'
+  _UPDATESECRETREQUEST.fields_by_name['description']._options = None
+  _UPDATESECRETREQUEST.fields_by_name['description']._serialized_options = b'\212\3101\006<=1024'
+  _UPDATESECRETREQUEST.fields_by_name['labels']._options = None
+  _UPDATESECRETREQUEST.fields_by_name['labels']._serialized_options = b'\362\3071\013[-_0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\004<=63'
+  _UPDATESECRETMETADATA.fields_by_name['secret_id']._options = None
+  _UPDATESECRETMETADATA.fields_by_name['secret_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _DELETESECRETREQUEST.fields_by_name['secret_id']._options = None
+  _DELETESECRETREQUEST.fields_by_name['secret_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _ACTIVATESECRETREQUEST.fields_by_name['secret_id']._options = None
+  _ACTIVATESECRETREQUEST.fields_by_name['secret_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _DEACTIVATESECRETREQUEST.fields_by_name['secret_id']._options = None
+  _DEACTIVATESECRETREQUEST.fields_by_name['secret_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _ADDVERSIONREQUEST.fields_by_name['secret_id']._options = None
+  _ADDVERSIONREQUEST.fields_by_name['secret_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _ADDVERSIONREQUEST.fields_by_name['description']._options = None
+  _ADDVERSIONREQUEST.fields_by_name['description']._serialized_options = b'\212\3101\006<=1024'
+  _ADDVERSIONREQUEST.fields_by_name['payload_entries']._options = None
+  _ADDVERSIONREQUEST.fields_by_name['payload_entries']._serialized_options = b'\202\3101\004<=32'
+  _ADDVERSIONREQUEST.fields_by_name['base_version_id']._options = None
+  _ADDVERSIONREQUEST.fields_by_name['base_version_id']._serialized_options = b'\212\3101\004<=50'
+  _LISTVERSIONSREQUEST.fields_by_name['secret_id']._options = None
+  _LISTVERSIONSREQUEST.fields_by_name['secret_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTVERSIONSREQUEST.fields_by_name['page_size']._options = None
+  _LISTVERSIONSREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
+  _LISTVERSIONSREQUEST.fields_by_name['page_token']._options = None
+  _LISTVERSIONSREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
+  _SCHEDULEVERSIONDESTRUCTIONREQUEST.fields_by_name['secret_id']._options = None
+  _SCHEDULEVERSIONDESTRUCTIONREQUEST.fields_by_name['secret_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _SCHEDULEVERSIONDESTRUCTIONREQUEST.fields_by_name['version_id']._options = None
+  _SCHEDULEVERSIONDESTRUCTIONREQUEST.fields_by_name['version_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _CANCELVERSIONDESTRUCTIONREQUEST.fields_by_name['secret_id']._options = None
+  _CANCELVERSIONDESTRUCTIONREQUEST.fields_by_name['secret_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _CANCELVERSIONDESTRUCTIONREQUEST.fields_by_name['version_id']._options = None
+  _CANCELVERSIONDESTRUCTIONREQUEST.fields_by_name['version_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTSECRETOPERATIONSREQUEST.fields_by_name['secret_id']._options = None
+  _LISTSECRETOPERATIONSREQUEST.fields_by_name['secret_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTSECRETOPERATIONSREQUEST.fields_by_name['page_size']._options = None
+  _LISTSECRETOPERATIONSREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
+  _LISTSECRETOPERATIONSREQUEST.fields_by_name['page_token']._options = None
+  _LISTSECRETOPERATIONSREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
+  _SECRETSERVICE.methods_by_name['Get']._options = None
+  _SECRETSERVICE.methods_by_name['Get']._serialized_options = b'\202\323\344\223\002!\022\037/lockbox/v1/secrets/{secret_id}'
+  _SECRETSERVICE.methods_by_name['List']._options = None
+  _SECRETSERVICE.methods_by_name['List']._serialized_options = b'\202\323\344\223\002\025\022\023/lockbox/v1/secrets'
+  _SECRETSERVICE.methods_by_name['Create']._options = None
+  _SECRETSERVICE.methods_by_name['Create']._serialized_options = b'\262\322*\036\n\024CreateSecretMetadata\022\006Secret\202\323\344\223\002\030\"\023/lockbox/v1/secrets:\001*'
+  _SECRETSERVICE.methods_by_name['Update']._options = None
+  _SECRETSERVICE.methods_by_name['Update']._serialized_options = b'\262\322*\036\n\024UpdateSecretMetadata\022\006Secret\202\323\344\223\002$2\037/lockbox/v1/secrets/{secret_id}:\001*'
+  _SECRETSERVICE.methods_by_name['Delete']._options = None
+  _SECRETSERVICE.methods_by_name['Delete']._serialized_options = b'\262\322*\036\n\024DeleteSecretMetadata\022\006Secret\202\323\344\223\002!*\037/lockbox/v1/secrets/{secret_id}'
+  _SECRETSERVICE.methods_by_name['Activate']._options = None
+  _SECRETSERVICE.methods_by_name['Activate']._serialized_options = b'\262\322* \n\026ActivateSecretMetadata\022\006Secret\202\323\344\223\002*\"(/lockbox/v1/secrets/{secret_id}:activate'
+  _SECRETSERVICE.methods_by_name['Deactivate']._options = None
+  _SECRETSERVICE.methods_by_name['Deactivate']._serialized_options = b'\262\322*\"\n\030DeactivateSecretMetadata\022\006Secret\202\323\344\223\002,\"*/lockbox/v1/secrets/{secret_id}:deactivate'
+  _SECRETSERVICE.methods_by_name['ListVersions']._options = None
+  _SECRETSERVICE.methods_by_name['ListVersions']._serialized_options = b'\202\323\344\223\002*\022(/lockbox/v1/secrets/{secret_id}/versions'
+  _SECRETSERVICE.methods_by_name['AddVersion']._options = None
+  _SECRETSERVICE.methods_by_name['AddVersion']._serialized_options = b'\262\322*\035\n\022AddVersionMetadata\022\007Version\202\323\344\223\002/\"*/lockbox/v1/secrets/{secret_id}:addVersion:\001*'
+  _SECRETSERVICE.methods_by_name['ScheduleVersionDestruction']._options = None
+  _SECRETSERVICE.methods_by_name['ScheduleVersionDestruction']._serialized_options = b'\262\322*-\n\"ScheduleVersionDestructionMetadata\022\007Version\202\323\344\223\002?\":/lockbox/v1/secrets/{secret_id}:scheduleVersionDestruction:\001*'
+  _SECRETSERVICE.methods_by_name['CancelVersionDestruction']._options = None
+  _SECRETSERVICE.methods_by_name['CancelVersionDestruction']._serialized_options = b'\262\322*+\n CancelVersionDestructionMetadata\022\007Version\202\323\344\223\002=\"8/lockbox/v1/secrets/{secret_id}:cancelVersionDestruction:\001*'
+  _SECRETSERVICE.methods_by_name['ListOperations']._options = None
+  _SECRETSERVICE.methods_by_name['ListOperations']._serialized_options = b'\202\323\344\223\002,\022*/lockbox/v1/secrets/{secret_id}/operations'
+  _SECRETSERVICE.methods_by_name['ListAccessBindings']._options = None
+  _SECRETSERVICE.methods_by_name['ListAccessBindings']._serialized_options = b'\202\323\344\223\0026\0224/lockbox/v1/secrets/{resource_id}:listAccessBindings'
+  _SECRETSERVICE.methods_by_name['SetAccessBindings']._options = None
+  _SECRETSERVICE.methods_by_name['SetAccessBindings']._serialized_options = b'\262\322*9\n access.SetAccessBindingsMetadata\022\025google.protobuf.Empty\202\323\344\223\0028\"3/lockbox/v1/secrets/{resource_id}:setAccessBindings:\001*'
+  _SECRETSERVICE.methods_by_name['UpdateAccessBindings']._options = None
+  _SECRETSERVICE.methods_by_name['UpdateAccessBindings']._serialized_options = b'\262\322*<\n#access.UpdateAccessBindingsMetadata\022\025google.protobuf.Empty\202\323\344\223\002;\"6/lockbox/v1/secrets/{resource_id}:updateAccessBindings:\001*'
+  _globals['_PAYLOADENTRYCHANGE']._serialized_start=380
+  _globals['_PAYLOADENTRYCHANGE']._serialized_end=532
+  _globals['_GETSECRETREQUEST']._serialized_start=534
+  _globals['_GETSECRETREQUEST']._serialized_end=585
+  _globals['_LISTSECRETSREQUEST']._serialized_start=587
+  _globals['_LISTSECRETSREQUEST']._serialized_end=702
+  _globals['_LISTSECRETSRESPONSE']._serialized_start=704
+  _globals['_LISTSECRETSRESPONSE']._serialized_end=800
+  _globals['_CREATESECRETREQUEST']._serialized_start=803
+  _globals['_CREATESECRETREQUEST']._serialized_end=1285
+  _globals['_CREATESECRETREQUEST_LABELSENTRY']._serialized_start=1240
+  _globals['_CREATESECRETREQUEST_LABELSENTRY']._serialized_end=1285
+  _globals['_CREATESECRETMETADATA']._serialized_start=1287
+  _globals['_CREATESECRETMETADATA']._serialized_end=1348
+  _globals['_UPDATESECRETREQUEST']._serialized_start=1351
+  _globals['_UPDATESECRETREQUEST']._serialized_end=1730
+  _globals['_UPDATESECRETREQUEST_LABELSENTRY']._serialized_start=1240
+  _globals['_UPDATESECRETREQUEST_LABELSENTRY']._serialized_end=1285
+  _globals['_UPDATESECRETMETADATA']._serialized_start=1732
+  _globals['_UPDATESECRETMETADATA']._serialized_end=1787
+  _globals['_DELETESECRETREQUEST']._serialized_start=1789
+  _globals['_DELETESECRETREQUEST']._serialized_end=1843
+  _globals['_DELETESECRETMETADATA']._serialized_start=1845
+  _globals['_DELETESECRETMETADATA']._serialized_end=1886
+  _globals['_ACTIVATESECRETREQUEST']._serialized_start=1888
+  _globals['_ACTIVATESECRETREQUEST']._serialized_end=1944
+  _globals['_ACTIVATESECRETMETADATA']._serialized_start=1946
+  _globals['_ACTIVATESECRETMETADATA']._serialized_end=1989
+  _globals['_DEACTIVATESECRETREQUEST']._serialized_start=1991
+  _globals['_DEACTIVATESECRETREQUEST']._serialized_end=2049
+  _globals['_DEACTIVATESECRETMETADATA']._serialized_start=2051
+  _globals['_DEACTIVATESECRETMETADATA']._serialized_end=2096
+  _globals['_ADDVERSIONREQUEST']._serialized_start=2099
+  _globals['_ADDVERSIONREQUEST']._serialized_end=2299
+  _globals['_ADDVERSIONMETADATA']._serialized_start=2301
+  _globals['_ADDVERSIONMETADATA']._serialized_end=2360
+  _globals['_LISTVERSIONSREQUEST']._serialized_start=2362
+  _globals['_LISTVERSIONSREQUEST']._serialized_end=2478
+  _globals['_LISTVERSIONSRESPONSE']._serialized_start=2480
+  _globals['_LISTVERSIONSRESPONSE']._serialized_end=2579
+  _globals['_SCHEDULEVERSIONDESTRUCTIONREQUEST']._serialized_start=2582
+  _globals['_SCHEDULEVERSIONDESTRUCTIONREQUEST']._serialized_end=2735
+  _globals['_SCHEDULEVERSIONDESTRUCTIONMETADATA']._serialized_start=2737
+  _globals['_SCHEDULEVERSIONDESTRUCTIONMETADATA']._serialized_end=2860
+  _globals['_CANCELVERSIONDESTRUCTIONREQUEST']._serialized_start=2862
+  _globals['_CANCELVERSIONDESTRUCTIONREQUEST']._serialized_end=2962
+  _globals['_CANCELVERSIONDESTRUCTIONMETADATA']._serialized_start=2964
+  _globals['_CANCELVERSIONDESTRUCTIONMETADATA']._serialized_end=3037
+  _globals['_LISTSECRETOPERATIONSREQUEST']._serialized_start=3039
+  _globals['_LISTSECRETOPERATIONSREQUEST']._serialized_end=3163
+  _globals['_LISTSECRETOPERATIONSRESPONSE']._serialized_start=3165
+  _globals['_LISTSECRETOPERATIONSRESPONSE']._serialized_end=3275
+  _globals['_SECRETSERVICE']._serialized_start=3278
+  _globals['_SECRETSERVICE']._serialized_end=6071
 # @@protoc_insertion_point(module_scope)

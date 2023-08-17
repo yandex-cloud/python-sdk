@@ -3,9 +3,9 @@
 # source: yandex/cloud/vpc/v1/gateway_service.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -19,916 +19,103 @@ from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 from yandex.cloud.vpc.v1 import gateway_pb2 as yandex_dot_cloud_dot_vpc_dot_v1_dot_gateway__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/vpc/v1/gateway_service.proto',
-  package='yandex.cloud.vpc.v1',
-  syntax='proto3',
-  serialized_options=b'\n\027yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpc',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n)yandex/cloud/vpc/v1/gateway_service.proto\x12\x13yandex.cloud.vpc.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a!yandex/cloud/vpc/v1/gateway.proto\"5\n\x11GetGatewayRequest\x12 \n\ngateway_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x90\x01\n\x13ListGatewaysRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"_\n\x14ListGatewaysResponse\x12.\n\x08gateways\x18\x01 \x03(\x0b\x32\x1c.yandex.cloud.vpc.v1.Gateway\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"~\n\x1cListGatewayOperationsRequest\x12 \n\ngateway_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"o\n\x1dListGatewayOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x19\n\x17SharedEgressGatewaySpec\"\xaa\x03\n\x14\x43reateGatewayRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\x04name\x18\x02 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8e\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x35.yandex.cloud.vpc.v1.CreateGatewayRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12R\n\x1ashared_egress_gateway_spec\x18\x05 \x01(\x0b\x32,.yandex.cloud.vpc.v1.SharedEgressGatewaySpecH\x00\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\t\n\x07gateway\"+\n\x15\x43reateGatewayMetadata\x12\x12\n\ngateway_id\x18\x01 \x01(\t\"\xdc\x03\n\x14UpdateGatewayRequest\x12 \n\ngateway_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8e\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x35.yandex.cloud.vpc.v1.UpdateGatewayRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12R\n\x1ashared_egress_gateway_spec\x18\x06 \x01(\x0b\x32,.yandex.cloud.vpc.v1.SharedEgressGatewaySpecH\x00\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\t\n\x07gateway\"+\n\x15UpdateGatewayMetadata\x12\x12\n\ngateway_id\x18\x01 \x01(\t\"8\n\x14\x44\x65leteGatewayRequest\x12 \n\ngateway_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x44\x65leteGatewayMetadata\x12\x12\n\ngateway_id\x18\x01 \x01(\t\"c\n\x12MoveGatewayRequest\x12 \n\ngateway_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12+\n\x15\x64\x65stination_folder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\")\n\x13MoveGatewayMetadata\x12\x12\n\ngateway_id\x18\x01 \x01(\t2\xc0\x08\n\x0eGatewayService\x12r\n\x03Get\x12&.yandex.cloud.vpc.v1.GetGatewayRequest\x1a\x1c.yandex.cloud.vpc.v1.Gateway\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/vpc/v1/gateways/{gateway_id}\x12u\n\x04List\x12(.yandex.cloud.vpc.v1.ListGatewaysRequest\x1a).yandex.cloud.vpc.v1.ListGatewaysResponse\"\x18\x82\xd3\xe4\x93\x02\x12\x12\x10/vpc/v1/gateways\x12\x97\x01\n\x06\x43reate\x12).yandex.cloud.vpc.v1.CreateGatewayRequest\x1a!.yandex.cloud.operation.Operation\"?\x82\xd3\xe4\x93\x02\x15\"\x10/vpc/v1/gateways:\x01*\xb2\xd2* \n\x15\x43reateGatewayMetadata\x12\x07Gateway\x12\xa4\x01\n\x06Update\x12).yandex.cloud.vpc.v1.UpdateGatewayRequest\x1a!.yandex.cloud.operation.Operation\"L\x82\xd3\xe4\x93\x02\"2\x1d/vpc/v1/gateways/{gateway_id}:\x01*\xb2\xd2* \n\x15UpdateGatewayMetadata\x12\x07Gateway\x12\xaf\x01\n\x06\x44\x65lete\x12).yandex.cloud.vpc.v1.DeleteGatewayRequest\x1a!.yandex.cloud.operation.Operation\"W\x82\xd3\xe4\x93\x02\x1f*\x1d/vpc/v1/gateways/{gateway_id}\xb2\xd2*.\n\x15\x44\x65leteGatewayMetadata\x12\x15google.protobuf.Empty\x12\xa9\x01\n\x0eListOperations\x12\x31.yandex.cloud.vpc.v1.ListGatewayOperationsRequest\x1a\x32.yandex.cloud.vpc.v1.ListGatewayOperationsResponse\"0\x82\xd3\xe4\x93\x02*\x12(/vpc/v1/gateways/{gateway_id}/operations\x12\xa3\x01\n\x04Move\x12\'.yandex.cloud.vpc.v1.MoveGatewayRequest\x1a!.yandex.cloud.operation.Operation\"O\x82\xd3\xe4\x93\x02\'\"\"/vpc/v1/gateways/{gateway_id}:move:\x01*\xb2\xd2*\x1e\n\x13MoveGatewayMetadata\x12\x07GatewayBV\n\x17yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpcb\x06proto3'
-  ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_vpc_dot_v1_dot_gateway__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)yandex/cloud/vpc/v1/gateway_service.proto\x12\x13yandex.cloud.vpc.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a!yandex/cloud/vpc/v1/gateway.proto\"5\n\x11GetGatewayRequest\x12 \n\ngateway_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x90\x01\n\x13ListGatewaysRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"_\n\x14ListGatewaysResponse\x12.\n\x08gateways\x18\x01 \x03(\x0b\x32\x1c.yandex.cloud.vpc.v1.Gateway\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"~\n\x1cListGatewayOperationsRequest\x12 \n\ngateway_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"o\n\x1dListGatewayOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x19\n\x17SharedEgressGatewaySpec\"\xa6\x03\n\x14\x43reateGatewayRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\x04name\x18\x02 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8a\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x35.yandex.cloud.vpc.v1.CreateGatewayRequest.LabelsEntryBC\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x1c\x12\x14[a-z][-_./\\@0-9a-z]*\x1a\x04\x31-63\x12R\n\x1ashared_egress_gateway_spec\x18\x05 \x01(\x0b\x32,.yandex.cloud.vpc.v1.SharedEgressGatewaySpecH\x00\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\t\n\x07gateway\"+\n\x15\x43reateGatewayMetadata\x12\x12\n\ngateway_id\x18\x01 \x01(\t\"\xd8\x03\n\x14UpdateGatewayRequest\x12 \n\ngateway_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x8a\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x35.yandex.cloud.vpc.v1.UpdateGatewayRequest.LabelsEntryBC\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x1c\x12\x14[a-z][-_./\\@0-9a-z]*\x1a\x04\x31-63\x12R\n\x1ashared_egress_gateway_spec\x18\x06 \x01(\x0b\x32,.yandex.cloud.vpc.v1.SharedEgressGatewaySpecH\x00\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\t\n\x07gateway\"+\n\x15UpdateGatewayMetadata\x12\x12\n\ngateway_id\x18\x01 \x01(\t\"8\n\x14\x44\x65leteGatewayRequest\x12 \n\ngateway_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x44\x65leteGatewayMetadata\x12\x12\n\ngateway_id\x18\x01 \x01(\t\"c\n\x12MoveGatewayRequest\x12 \n\ngateway_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12+\n\x15\x64\x65stination_folder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\")\n\x13MoveGatewayMetadata\x12\x12\n\ngateway_id\x18\x01 \x01(\t2\xc0\x08\n\x0eGatewayService\x12r\n\x03Get\x12&.yandex.cloud.vpc.v1.GetGatewayRequest\x1a\x1c.yandex.cloud.vpc.v1.Gateway\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/vpc/v1/gateways/{gateway_id}\x12u\n\x04List\x12(.yandex.cloud.vpc.v1.ListGatewaysRequest\x1a).yandex.cloud.vpc.v1.ListGatewaysResponse\"\x18\x82\xd3\xe4\x93\x02\x12\x12\x10/vpc/v1/gateways\x12\x97\x01\n\x06\x43reate\x12).yandex.cloud.vpc.v1.CreateGatewayRequest\x1a!.yandex.cloud.operation.Operation\"?\xb2\xd2* \n\x15\x43reateGatewayMetadata\x12\x07Gateway\x82\xd3\xe4\x93\x02\x15\"\x10/vpc/v1/gateways:\x01*\x12\xa4\x01\n\x06Update\x12).yandex.cloud.vpc.v1.UpdateGatewayRequest\x1a!.yandex.cloud.operation.Operation\"L\xb2\xd2* \n\x15UpdateGatewayMetadata\x12\x07Gateway\x82\xd3\xe4\x93\x02\"2\x1d/vpc/v1/gateways/{gateway_id}:\x01*\x12\xaf\x01\n\x06\x44\x65lete\x12).yandex.cloud.vpc.v1.DeleteGatewayRequest\x1a!.yandex.cloud.operation.Operation\"W\xb2\xd2*.\n\x15\x44\x65leteGatewayMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x1f*\x1d/vpc/v1/gateways/{gateway_id}\x12\xa9\x01\n\x0eListOperations\x12\x31.yandex.cloud.vpc.v1.ListGatewayOperationsRequest\x1a\x32.yandex.cloud.vpc.v1.ListGatewayOperationsResponse\"0\x82\xd3\xe4\x93\x02*\x12(/vpc/v1/gateways/{gateway_id}/operations\x12\xa3\x01\n\x04Move\x12\'.yandex.cloud.vpc.v1.MoveGatewayRequest\x1a!.yandex.cloud.operation.Operation\"O\xb2\xd2*\x1e\n\x13MoveGatewayMetadata\x12\x07Gateway\x82\xd3\xe4\x93\x02\'\"\"/vpc/v1/gateways/{gateway_id}:move:\x01*BV\n\x17yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpcb\x06proto3')
 
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.vpc.v1.gateway_service_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-
-_GETGATEWAYREQUEST = _descriptor.Descriptor(
-  name='GetGatewayRequest',
-  full_name='yandex.cloud.vpc.v1.GetGatewayRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='gateway_id', full_name='yandex.cloud.vpc.v1.GetGatewayRequest.gateway_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=270,
-  serialized_end=323,
-)
-
-
-_LISTGATEWAYSREQUEST = _descriptor.Descriptor(
-  name='ListGatewaysRequest',
-  full_name='yandex.cloud.vpc.v1.ListGatewaysRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.vpc.v1.ListGatewaysRequest.folder_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.vpc.v1.ListGatewaysRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.vpc.v1.ListGatewaysRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='filter', full_name='yandex.cloud.vpc.v1.ListGatewaysRequest.filter', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=326,
-  serialized_end=470,
-)
-
-
-_LISTGATEWAYSRESPONSE = _descriptor.Descriptor(
-  name='ListGatewaysResponse',
-  full_name='yandex.cloud.vpc.v1.ListGatewaysResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='gateways', full_name='yandex.cloud.vpc.v1.ListGatewaysResponse.gateways', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.vpc.v1.ListGatewaysResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=472,
-  serialized_end=567,
-)
-
-
-_LISTGATEWAYOPERATIONSREQUEST = _descriptor.Descriptor(
-  name='ListGatewayOperationsRequest',
-  full_name='yandex.cloud.vpc.v1.ListGatewayOperationsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='gateway_id', full_name='yandex.cloud.vpc.v1.ListGatewayOperationsRequest.gateway_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.vpc.v1.ListGatewayOperationsRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\0060-1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.vpc.v1.ListGatewayOperationsRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=569,
-  serialized_end=695,
-)
-
-
-_LISTGATEWAYOPERATIONSRESPONSE = _descriptor.Descriptor(
-  name='ListGatewayOperationsResponse',
-  full_name='yandex.cloud.vpc.v1.ListGatewayOperationsResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='operations', full_name='yandex.cloud.vpc.v1.ListGatewayOperationsResponse.operations', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.vpc.v1.ListGatewayOperationsResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=697,
-  serialized_end=808,
-)
-
-
-_SHAREDEGRESSGATEWAYSPEC = _descriptor.Descriptor(
-  name='SharedEgressGatewaySpec',
-  full_name='yandex.cloud.vpc.v1.SharedEgressGatewaySpec',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=810,
-  serialized_end=835,
-)
-
-
-_CREATEGATEWAYREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='yandex.cloud.vpc.v1.CreateGatewayRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='yandex.cloud.vpc.v1.CreateGatewayRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='yandex.cloud.vpc.v1.CreateGatewayRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1208,
-  serialized_end=1253,
-)
-
-_CREATEGATEWAYREQUEST = _descriptor.Descriptor(
-  name='CreateGatewayRequest',
-  full_name='yandex.cloud.vpc.v1.CreateGatewayRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.vpc.v1.CreateGatewayRequest.folder_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.vpc.v1.CreateGatewayRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='yandex.cloud.vpc.v1.CreateGatewayRequest.description', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='yandex.cloud.vpc.v1.CreateGatewayRequest.labels', index=3,
-      number=4, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\017[-_./\\@0-9a-z]*\262\3101\006\032\0041-63\262\3101\026\022\024[a-z][-_./\\@0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='shared_egress_gateway_spec', full_name='yandex.cloud.vpc.v1.CreateGatewayRequest.shared_egress_gateway_spec', index=4,
-      number=5, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_CREATEGATEWAYREQUEST_LABELSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-    _descriptor.OneofDescriptor(
-      name='gateway', full_name='yandex.cloud.vpc.v1.CreateGatewayRequest.gateway',
-      index=0, containing_type=None,
-      create_key=_descriptor._internal_create_key,
-    fields=[]),
-  ],
-  serialized_start=838,
-  serialized_end=1264,
-)
-
-
-_CREATEGATEWAYMETADATA = _descriptor.Descriptor(
-  name='CreateGatewayMetadata',
-  full_name='yandex.cloud.vpc.v1.CreateGatewayMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='gateway_id', full_name='yandex.cloud.vpc.v1.CreateGatewayMetadata.gateway_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1266,
-  serialized_end=1309,
-)
-
-
-_UPDATEGATEWAYREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='yandex.cloud.vpc.v1.UpdateGatewayRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='yandex.cloud.vpc.v1.UpdateGatewayRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='yandex.cloud.vpc.v1.UpdateGatewayRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1208,
-  serialized_end=1253,
-)
-
-_UPDATEGATEWAYREQUEST = _descriptor.Descriptor(
-  name='UpdateGatewayRequest',
-  full_name='yandex.cloud.vpc.v1.UpdateGatewayRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='gateway_id', full_name='yandex.cloud.vpc.v1.UpdateGatewayRequest.gateway_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='update_mask', full_name='yandex.cloud.vpc.v1.UpdateGatewayRequest.update_mask', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.vpc.v1.UpdateGatewayRequest.name', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='yandex.cloud.vpc.v1.UpdateGatewayRequest.description', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='yandex.cloud.vpc.v1.UpdateGatewayRequest.labels', index=4,
-      number=5, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\017[-_./\\@0-9a-z]*\262\3101\006\032\0041-63\262\3101\026\022\024[a-z][-_./\\@0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='shared_egress_gateway_spec', full_name='yandex.cloud.vpc.v1.UpdateGatewayRequest.shared_egress_gateway_spec', index=5,
-      number=6, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_UPDATEGATEWAYREQUEST_LABELSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-    _descriptor.OneofDescriptor(
-      name='gateway', full_name='yandex.cloud.vpc.v1.UpdateGatewayRequest.gateway',
-      index=0, containing_type=None,
-      create_key=_descriptor._internal_create_key,
-    fields=[]),
-  ],
-  serialized_start=1312,
-  serialized_end=1788,
-)
-
-
-_UPDATEGATEWAYMETADATA = _descriptor.Descriptor(
-  name='UpdateGatewayMetadata',
-  full_name='yandex.cloud.vpc.v1.UpdateGatewayMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='gateway_id', full_name='yandex.cloud.vpc.v1.UpdateGatewayMetadata.gateway_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1790,
-  serialized_end=1833,
-)
-
-
-_DELETEGATEWAYREQUEST = _descriptor.Descriptor(
-  name='DeleteGatewayRequest',
-  full_name='yandex.cloud.vpc.v1.DeleteGatewayRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='gateway_id', full_name='yandex.cloud.vpc.v1.DeleteGatewayRequest.gateway_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1835,
-  serialized_end=1891,
-)
-
-
-_DELETEGATEWAYMETADATA = _descriptor.Descriptor(
-  name='DeleteGatewayMetadata',
-  full_name='yandex.cloud.vpc.v1.DeleteGatewayMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='gateway_id', full_name='yandex.cloud.vpc.v1.DeleteGatewayMetadata.gateway_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1893,
-  serialized_end=1936,
-)
-
-
-_MOVEGATEWAYREQUEST = _descriptor.Descriptor(
-  name='MoveGatewayRequest',
-  full_name='yandex.cloud.vpc.v1.MoveGatewayRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='gateway_id', full_name='yandex.cloud.vpc.v1.MoveGatewayRequest.gateway_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='destination_folder_id', full_name='yandex.cloud.vpc.v1.MoveGatewayRequest.destination_folder_id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1938,
-  serialized_end=2037,
-)
-
-
-_MOVEGATEWAYMETADATA = _descriptor.Descriptor(
-  name='MoveGatewayMetadata',
-  full_name='yandex.cloud.vpc.v1.MoveGatewayMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='gateway_id', full_name='yandex.cloud.vpc.v1.MoveGatewayMetadata.gateway_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2039,
-  serialized_end=2080,
-)
-
-_LISTGATEWAYSRESPONSE.fields_by_name['gateways'].message_type = yandex_dot_cloud_dot_vpc_dot_v1_dot_gateway__pb2._GATEWAY
-_LISTGATEWAYOPERATIONSRESPONSE.fields_by_name['operations'].message_type = yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION
-_CREATEGATEWAYREQUEST_LABELSENTRY.containing_type = _CREATEGATEWAYREQUEST
-_CREATEGATEWAYREQUEST.fields_by_name['labels'].message_type = _CREATEGATEWAYREQUEST_LABELSENTRY
-_CREATEGATEWAYREQUEST.fields_by_name['shared_egress_gateway_spec'].message_type = _SHAREDEGRESSGATEWAYSPEC
-_CREATEGATEWAYREQUEST.oneofs_by_name['gateway'].fields.append(
-  _CREATEGATEWAYREQUEST.fields_by_name['shared_egress_gateway_spec'])
-_CREATEGATEWAYREQUEST.fields_by_name['shared_egress_gateway_spec'].containing_oneof = _CREATEGATEWAYREQUEST.oneofs_by_name['gateway']
-_UPDATEGATEWAYREQUEST_LABELSENTRY.containing_type = _UPDATEGATEWAYREQUEST
-_UPDATEGATEWAYREQUEST.fields_by_name['update_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
-_UPDATEGATEWAYREQUEST.fields_by_name['labels'].message_type = _UPDATEGATEWAYREQUEST_LABELSENTRY
-_UPDATEGATEWAYREQUEST.fields_by_name['shared_egress_gateway_spec'].message_type = _SHAREDEGRESSGATEWAYSPEC
-_UPDATEGATEWAYREQUEST.oneofs_by_name['gateway'].fields.append(
-  _UPDATEGATEWAYREQUEST.fields_by_name['shared_egress_gateway_spec'])
-_UPDATEGATEWAYREQUEST.fields_by_name['shared_egress_gateway_spec'].containing_oneof = _UPDATEGATEWAYREQUEST.oneofs_by_name['gateway']
-DESCRIPTOR.message_types_by_name['GetGatewayRequest'] = _GETGATEWAYREQUEST
-DESCRIPTOR.message_types_by_name['ListGatewaysRequest'] = _LISTGATEWAYSREQUEST
-DESCRIPTOR.message_types_by_name['ListGatewaysResponse'] = _LISTGATEWAYSRESPONSE
-DESCRIPTOR.message_types_by_name['ListGatewayOperationsRequest'] = _LISTGATEWAYOPERATIONSREQUEST
-DESCRIPTOR.message_types_by_name['ListGatewayOperationsResponse'] = _LISTGATEWAYOPERATIONSRESPONSE
-DESCRIPTOR.message_types_by_name['SharedEgressGatewaySpec'] = _SHAREDEGRESSGATEWAYSPEC
-DESCRIPTOR.message_types_by_name['CreateGatewayRequest'] = _CREATEGATEWAYREQUEST
-DESCRIPTOR.message_types_by_name['CreateGatewayMetadata'] = _CREATEGATEWAYMETADATA
-DESCRIPTOR.message_types_by_name['UpdateGatewayRequest'] = _UPDATEGATEWAYREQUEST
-DESCRIPTOR.message_types_by_name['UpdateGatewayMetadata'] = _UPDATEGATEWAYMETADATA
-DESCRIPTOR.message_types_by_name['DeleteGatewayRequest'] = _DELETEGATEWAYREQUEST
-DESCRIPTOR.message_types_by_name['DeleteGatewayMetadata'] = _DELETEGATEWAYMETADATA
-DESCRIPTOR.message_types_by_name['MoveGatewayRequest'] = _MOVEGATEWAYREQUEST
-DESCRIPTOR.message_types_by_name['MoveGatewayMetadata'] = _MOVEGATEWAYMETADATA
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-GetGatewayRequest = _reflection.GeneratedProtocolMessageType('GetGatewayRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETGATEWAYREQUEST,
-  '__module__' : 'yandex.cloud.vpc.v1.gateway_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.GetGatewayRequest)
-  })
-_sym_db.RegisterMessage(GetGatewayRequest)
-
-ListGatewaysRequest = _reflection.GeneratedProtocolMessageType('ListGatewaysRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTGATEWAYSREQUEST,
-  '__module__' : 'yandex.cloud.vpc.v1.gateway_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.ListGatewaysRequest)
-  })
-_sym_db.RegisterMessage(ListGatewaysRequest)
-
-ListGatewaysResponse = _reflection.GeneratedProtocolMessageType('ListGatewaysResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTGATEWAYSRESPONSE,
-  '__module__' : 'yandex.cloud.vpc.v1.gateway_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.ListGatewaysResponse)
-  })
-_sym_db.RegisterMessage(ListGatewaysResponse)
-
-ListGatewayOperationsRequest = _reflection.GeneratedProtocolMessageType('ListGatewayOperationsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTGATEWAYOPERATIONSREQUEST,
-  '__module__' : 'yandex.cloud.vpc.v1.gateway_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.ListGatewayOperationsRequest)
-  })
-_sym_db.RegisterMessage(ListGatewayOperationsRequest)
-
-ListGatewayOperationsResponse = _reflection.GeneratedProtocolMessageType('ListGatewayOperationsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTGATEWAYOPERATIONSRESPONSE,
-  '__module__' : 'yandex.cloud.vpc.v1.gateway_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.ListGatewayOperationsResponse)
-  })
-_sym_db.RegisterMessage(ListGatewayOperationsResponse)
-
-SharedEgressGatewaySpec = _reflection.GeneratedProtocolMessageType('SharedEgressGatewaySpec', (_message.Message,), {
-  'DESCRIPTOR' : _SHAREDEGRESSGATEWAYSPEC,
-  '__module__' : 'yandex.cloud.vpc.v1.gateway_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.SharedEgressGatewaySpec)
-  })
-_sym_db.RegisterMessage(SharedEgressGatewaySpec)
-
-CreateGatewayRequest = _reflection.GeneratedProtocolMessageType('CreateGatewayRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _CREATEGATEWAYREQUEST_LABELSENTRY,
-    '__module__' : 'yandex.cloud.vpc.v1.gateway_service_pb2'
-    # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.CreateGatewayRequest.LabelsEntry)
-    })
-  ,
-  'DESCRIPTOR' : _CREATEGATEWAYREQUEST,
-  '__module__' : 'yandex.cloud.vpc.v1.gateway_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.CreateGatewayRequest)
-  })
-_sym_db.RegisterMessage(CreateGatewayRequest)
-_sym_db.RegisterMessage(CreateGatewayRequest.LabelsEntry)
-
-CreateGatewayMetadata = _reflection.GeneratedProtocolMessageType('CreateGatewayMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _CREATEGATEWAYMETADATA,
-  '__module__' : 'yandex.cloud.vpc.v1.gateway_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.CreateGatewayMetadata)
-  })
-_sym_db.RegisterMessage(CreateGatewayMetadata)
-
-UpdateGatewayRequest = _reflection.GeneratedProtocolMessageType('UpdateGatewayRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _UPDATEGATEWAYREQUEST_LABELSENTRY,
-    '__module__' : 'yandex.cloud.vpc.v1.gateway_service_pb2'
-    # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.UpdateGatewayRequest.LabelsEntry)
-    })
-  ,
-  'DESCRIPTOR' : _UPDATEGATEWAYREQUEST,
-  '__module__' : 'yandex.cloud.vpc.v1.gateway_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.UpdateGatewayRequest)
-  })
-_sym_db.RegisterMessage(UpdateGatewayRequest)
-_sym_db.RegisterMessage(UpdateGatewayRequest.LabelsEntry)
-
-UpdateGatewayMetadata = _reflection.GeneratedProtocolMessageType('UpdateGatewayMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATEGATEWAYMETADATA,
-  '__module__' : 'yandex.cloud.vpc.v1.gateway_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.UpdateGatewayMetadata)
-  })
-_sym_db.RegisterMessage(UpdateGatewayMetadata)
-
-DeleteGatewayRequest = _reflection.GeneratedProtocolMessageType('DeleteGatewayRequest', (_message.Message,), {
-  'DESCRIPTOR' : _DELETEGATEWAYREQUEST,
-  '__module__' : 'yandex.cloud.vpc.v1.gateway_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.DeleteGatewayRequest)
-  })
-_sym_db.RegisterMessage(DeleteGatewayRequest)
-
-DeleteGatewayMetadata = _reflection.GeneratedProtocolMessageType('DeleteGatewayMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _DELETEGATEWAYMETADATA,
-  '__module__' : 'yandex.cloud.vpc.v1.gateway_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.DeleteGatewayMetadata)
-  })
-_sym_db.RegisterMessage(DeleteGatewayMetadata)
-
-MoveGatewayRequest = _reflection.GeneratedProtocolMessageType('MoveGatewayRequest', (_message.Message,), {
-  'DESCRIPTOR' : _MOVEGATEWAYREQUEST,
-  '__module__' : 'yandex.cloud.vpc.v1.gateway_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.MoveGatewayRequest)
-  })
-_sym_db.RegisterMessage(MoveGatewayRequest)
-
-MoveGatewayMetadata = _reflection.GeneratedProtocolMessageType('MoveGatewayMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _MOVEGATEWAYMETADATA,
-  '__module__' : 'yandex.cloud.vpc.v1.gateway_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.MoveGatewayMetadata)
-  })
-_sym_db.RegisterMessage(MoveGatewayMetadata)
-
-
-DESCRIPTOR._options = None
-_GETGATEWAYREQUEST.fields_by_name['gateway_id']._options = None
-_LISTGATEWAYSREQUEST.fields_by_name['folder_id']._options = None
-_LISTGATEWAYSREQUEST.fields_by_name['page_size']._options = None
-_LISTGATEWAYSREQUEST.fields_by_name['page_token']._options = None
-_LISTGATEWAYSREQUEST.fields_by_name['filter']._options = None
-_LISTGATEWAYOPERATIONSREQUEST.fields_by_name['gateway_id']._options = None
-_LISTGATEWAYOPERATIONSREQUEST.fields_by_name['page_size']._options = None
-_LISTGATEWAYOPERATIONSREQUEST.fields_by_name['page_token']._options = None
-_CREATEGATEWAYREQUEST_LABELSENTRY._options = None
-_CREATEGATEWAYREQUEST.fields_by_name['folder_id']._options = None
-_CREATEGATEWAYREQUEST.fields_by_name['name']._options = None
-_CREATEGATEWAYREQUEST.fields_by_name['description']._options = None
-_CREATEGATEWAYREQUEST.fields_by_name['labels']._options = None
-_UPDATEGATEWAYREQUEST_LABELSENTRY._options = None
-_UPDATEGATEWAYREQUEST.fields_by_name['gateway_id']._options = None
-_UPDATEGATEWAYREQUEST.fields_by_name['name']._options = None
-_UPDATEGATEWAYREQUEST.fields_by_name['description']._options = None
-_UPDATEGATEWAYREQUEST.fields_by_name['labels']._options = None
-_DELETEGATEWAYREQUEST.fields_by_name['gateway_id']._options = None
-_MOVEGATEWAYREQUEST.fields_by_name['gateway_id']._options = None
-_MOVEGATEWAYREQUEST.fields_by_name['destination_folder_id']._options = None
-
-_GATEWAYSERVICE = _descriptor.ServiceDescriptor(
-  name='GatewayService',
-  full_name='yandex.cloud.vpc.v1.GatewayService',
-  file=DESCRIPTOR,
-  index=0,
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_start=2083,
-  serialized_end=3171,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='Get',
-    full_name='yandex.cloud.vpc.v1.GatewayService.Get',
-    index=0,
-    containing_service=None,
-    input_type=_GETGATEWAYREQUEST,
-    output_type=yandex_dot_cloud_dot_vpc_dot_v1_dot_gateway__pb2._GATEWAY,
-    serialized_options=b'\202\323\344\223\002\037\022\035/vpc/v1/gateways/{gateway_id}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='List',
-    full_name='yandex.cloud.vpc.v1.GatewayService.List',
-    index=1,
-    containing_service=None,
-    input_type=_LISTGATEWAYSREQUEST,
-    output_type=_LISTGATEWAYSRESPONSE,
-    serialized_options=b'\202\323\344\223\002\022\022\020/vpc/v1/gateways',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Create',
-    full_name='yandex.cloud.vpc.v1.GatewayService.Create',
-    index=2,
-    containing_service=None,
-    input_type=_CREATEGATEWAYREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002\025\"\020/vpc/v1/gateways:\001*\262\322* \n\025CreateGatewayMetadata\022\007Gateway',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Update',
-    full_name='yandex.cloud.vpc.v1.GatewayService.Update',
-    index=3,
-    containing_service=None,
-    input_type=_UPDATEGATEWAYREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002\"2\035/vpc/v1/gateways/{gateway_id}:\001*\262\322* \n\025UpdateGatewayMetadata\022\007Gateway',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Delete',
-    full_name='yandex.cloud.vpc.v1.GatewayService.Delete',
-    index=4,
-    containing_service=None,
-    input_type=_DELETEGATEWAYREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002\037*\035/vpc/v1/gateways/{gateway_id}\262\322*.\n\025DeleteGatewayMetadata\022\025google.protobuf.Empty',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListOperations',
-    full_name='yandex.cloud.vpc.v1.GatewayService.ListOperations',
-    index=5,
-    containing_service=None,
-    input_type=_LISTGATEWAYOPERATIONSREQUEST,
-    output_type=_LISTGATEWAYOPERATIONSRESPONSE,
-    serialized_options=b'\202\323\344\223\002*\022(/vpc/v1/gateways/{gateway_id}/operations',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Move',
-    full_name='yandex.cloud.vpc.v1.GatewayService.Move',
-    index=6,
-    containing_service=None,
-    input_type=_MOVEGATEWAYREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002\'\"\"/vpc/v1/gateways/{gateway_id}:move:\001*\262\322*\036\n\023MoveGatewayMetadata\022\007Gateway',
-    create_key=_descriptor._internal_create_key,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_GATEWAYSERVICE)
-
-DESCRIPTOR.services_by_name['GatewayService'] = _GATEWAYSERVICE
-
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n\027yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpc'
+  _GETGATEWAYREQUEST.fields_by_name['gateway_id']._options = None
+  _GETGATEWAYREQUEST.fields_by_name['gateway_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTGATEWAYSREQUEST.fields_by_name['folder_id']._options = None
+  _LISTGATEWAYSREQUEST.fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTGATEWAYSREQUEST.fields_by_name['page_size']._options = None
+  _LISTGATEWAYSREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
+  _LISTGATEWAYSREQUEST.fields_by_name['page_token']._options = None
+  _LISTGATEWAYSREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
+  _LISTGATEWAYSREQUEST.fields_by_name['filter']._options = None
+  _LISTGATEWAYSREQUEST.fields_by_name['filter']._serialized_options = b'\212\3101\006<=1000'
+  _LISTGATEWAYOPERATIONSREQUEST.fields_by_name['gateway_id']._options = None
+  _LISTGATEWAYOPERATIONSREQUEST.fields_by_name['gateway_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTGATEWAYOPERATIONSREQUEST.fields_by_name['page_size']._options = None
+  _LISTGATEWAYOPERATIONSREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\0060-1000'
+  _LISTGATEWAYOPERATIONSREQUEST.fields_by_name['page_token']._options = None
+  _LISTGATEWAYOPERATIONSREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
+  _CREATEGATEWAYREQUEST_LABELSENTRY._options = None
+  _CREATEGATEWAYREQUEST_LABELSENTRY._serialized_options = b'8\001'
+  _CREATEGATEWAYREQUEST.fields_by_name['folder_id']._options = None
+  _CREATEGATEWAYREQUEST.fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _CREATEGATEWAYREQUEST.fields_by_name['name']._options = None
+  _CREATEGATEWAYREQUEST.fields_by_name['name']._serialized_options = b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?'
+  _CREATEGATEWAYREQUEST.fields_by_name['description']._options = None
+  _CREATEGATEWAYREQUEST.fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
+  _CREATEGATEWAYREQUEST.fields_by_name['labels']._options = None
+  _CREATEGATEWAYREQUEST.fields_by_name['labels']._serialized_options = b'\362\3071\017[-_./\\@0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\034\022\024[a-z][-_./\\@0-9a-z]*\032\0041-63'
+  _UPDATEGATEWAYREQUEST_LABELSENTRY._options = None
+  _UPDATEGATEWAYREQUEST_LABELSENTRY._serialized_options = b'8\001'
+  _UPDATEGATEWAYREQUEST.fields_by_name['gateway_id']._options = None
+  _UPDATEGATEWAYREQUEST.fields_by_name['gateway_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _UPDATEGATEWAYREQUEST.fields_by_name['name']._options = None
+  _UPDATEGATEWAYREQUEST.fields_by_name['name']._serialized_options = b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?'
+  _UPDATEGATEWAYREQUEST.fields_by_name['description']._options = None
+  _UPDATEGATEWAYREQUEST.fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
+  _UPDATEGATEWAYREQUEST.fields_by_name['labels']._options = None
+  _UPDATEGATEWAYREQUEST.fields_by_name['labels']._serialized_options = b'\362\3071\017[-_./\\@0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\034\022\024[a-z][-_./\\@0-9a-z]*\032\0041-63'
+  _DELETEGATEWAYREQUEST.fields_by_name['gateway_id']._options = None
+  _DELETEGATEWAYREQUEST.fields_by_name['gateway_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _MOVEGATEWAYREQUEST.fields_by_name['gateway_id']._options = None
+  _MOVEGATEWAYREQUEST.fields_by_name['gateway_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _MOVEGATEWAYREQUEST.fields_by_name['destination_folder_id']._options = None
+  _MOVEGATEWAYREQUEST.fields_by_name['destination_folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _GATEWAYSERVICE.methods_by_name['Get']._options = None
+  _GATEWAYSERVICE.methods_by_name['Get']._serialized_options = b'\202\323\344\223\002\037\022\035/vpc/v1/gateways/{gateway_id}'
+  _GATEWAYSERVICE.methods_by_name['List']._options = None
+  _GATEWAYSERVICE.methods_by_name['List']._serialized_options = b'\202\323\344\223\002\022\022\020/vpc/v1/gateways'
+  _GATEWAYSERVICE.methods_by_name['Create']._options = None
+  _GATEWAYSERVICE.methods_by_name['Create']._serialized_options = b'\262\322* \n\025CreateGatewayMetadata\022\007Gateway\202\323\344\223\002\025\"\020/vpc/v1/gateways:\001*'
+  _GATEWAYSERVICE.methods_by_name['Update']._options = None
+  _GATEWAYSERVICE.methods_by_name['Update']._serialized_options = b'\262\322* \n\025UpdateGatewayMetadata\022\007Gateway\202\323\344\223\002\"2\035/vpc/v1/gateways/{gateway_id}:\001*'
+  _GATEWAYSERVICE.methods_by_name['Delete']._options = None
+  _GATEWAYSERVICE.methods_by_name['Delete']._serialized_options = b'\262\322*.\n\025DeleteGatewayMetadata\022\025google.protobuf.Empty\202\323\344\223\002\037*\035/vpc/v1/gateways/{gateway_id}'
+  _GATEWAYSERVICE.methods_by_name['ListOperations']._options = None
+  _GATEWAYSERVICE.methods_by_name['ListOperations']._serialized_options = b'\202\323\344\223\002*\022(/vpc/v1/gateways/{gateway_id}/operations'
+  _GATEWAYSERVICE.methods_by_name['Move']._options = None
+  _GATEWAYSERVICE.methods_by_name['Move']._serialized_options = b'\262\322*\036\n\023MoveGatewayMetadata\022\007Gateway\202\323\344\223\002\'\"\"/vpc/v1/gateways/{gateway_id}:move:\001*'
+  _globals['_GETGATEWAYREQUEST']._serialized_start=270
+  _globals['_GETGATEWAYREQUEST']._serialized_end=323
+  _globals['_LISTGATEWAYSREQUEST']._serialized_start=326
+  _globals['_LISTGATEWAYSREQUEST']._serialized_end=470
+  _globals['_LISTGATEWAYSRESPONSE']._serialized_start=472
+  _globals['_LISTGATEWAYSRESPONSE']._serialized_end=567
+  _globals['_LISTGATEWAYOPERATIONSREQUEST']._serialized_start=569
+  _globals['_LISTGATEWAYOPERATIONSREQUEST']._serialized_end=695
+  _globals['_LISTGATEWAYOPERATIONSRESPONSE']._serialized_start=697
+  _globals['_LISTGATEWAYOPERATIONSRESPONSE']._serialized_end=808
+  _globals['_SHAREDEGRESSGATEWAYSPEC']._serialized_start=810
+  _globals['_SHAREDEGRESSGATEWAYSPEC']._serialized_end=835
+  _globals['_CREATEGATEWAYREQUEST']._serialized_start=838
+  _globals['_CREATEGATEWAYREQUEST']._serialized_end=1260
+  _globals['_CREATEGATEWAYREQUEST_LABELSENTRY']._serialized_start=1204
+  _globals['_CREATEGATEWAYREQUEST_LABELSENTRY']._serialized_end=1249
+  _globals['_CREATEGATEWAYMETADATA']._serialized_start=1262
+  _globals['_CREATEGATEWAYMETADATA']._serialized_end=1305
+  _globals['_UPDATEGATEWAYREQUEST']._serialized_start=1308
+  _globals['_UPDATEGATEWAYREQUEST']._serialized_end=1780
+  _globals['_UPDATEGATEWAYREQUEST_LABELSENTRY']._serialized_start=1204
+  _globals['_UPDATEGATEWAYREQUEST_LABELSENTRY']._serialized_end=1249
+  _globals['_UPDATEGATEWAYMETADATA']._serialized_start=1782
+  _globals['_UPDATEGATEWAYMETADATA']._serialized_end=1825
+  _globals['_DELETEGATEWAYREQUEST']._serialized_start=1827
+  _globals['_DELETEGATEWAYREQUEST']._serialized_end=1883
+  _globals['_DELETEGATEWAYMETADATA']._serialized_start=1885
+  _globals['_DELETEGATEWAYMETADATA']._serialized_end=1928
+  _globals['_MOVEGATEWAYREQUEST']._serialized_start=1930
+  _globals['_MOVEGATEWAYREQUEST']._serialized_end=2029
+  _globals['_MOVEGATEWAYMETADATA']._serialized_start=2031
+  _globals['_MOVEGATEWAYMETADATA']._serialized_end=2072
+  _globals['_GATEWAYSERVICE']._serialized_start=2075
+  _globals['_GATEWAYSERVICE']._serialized_end=3163
 # @@protoc_insertion_point(module_scope)

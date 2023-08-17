@@ -3,9 +3,9 @@
 # source: yandex/cloud/vpc/v1/route_table_service.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -19,875 +19,103 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/vpc/v1/route_table_service.proto',
-  package='yandex.cloud.vpc.v1',
-  syntax='proto3',
-  serialized_options=b'\n\027yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpc',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n-yandex/cloud/vpc/v1/route_table_service.proto\x12\x13yandex.cloud.vpc.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a%yandex/cloud/vpc/v1/route_table.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"<\n\x14GetRouteTableRequest\x12$\n\x0eroute_table_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x93\x01\n\x16ListRouteTablesRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"i\n\x17ListRouteTablesResponse\x12\x35\n\x0croute_tables\x18\x01 \x03(\x0b\x32\x1f.yandex.cloud.vpc.v1.RouteTable\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xa1\x03\n\x17\x43reateRouteTableRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x89\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x38.yandex.cloud.vpc.v1.CreateRouteTableRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12 \n\nnetwork_id\x18\x05 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x37\n\rstatic_routes\x18\x06 \x03(\x0b\x32 .yandex.cloud.vpc.v1.StaticRoute\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"2\n\x18\x43reateRouteTableMetadata\x12\x16\n\x0eroute_table_id\x18\x01 \x01(\t\"\xb5\x03\n\x17UpdateRouteTableRequest\x12$\n\x0eroute_table_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x89\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x38.yandex.cloud.vpc.v1.UpdateRouteTableRequest.LabelsEntryB?\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0b[-_0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x12\x12\x10[a-z][-_0-9a-z]*\x12\x37\n\rstatic_routes\x18\x06 \x03(\x0b\x32 .yandex.cloud.vpc.v1.StaticRoute\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"2\n\x18UpdateRouteTableMetadata\x12\x16\n\x0eroute_table_id\x18\x01 \x01(\t\"?\n\x17\x44\x65leteRouteTableRequest\x12$\n\x0eroute_table_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"2\n\x18\x44\x65leteRouteTableMetadata\x12\x16\n\x0eroute_table_id\x18\x01 \x01(\t\"\x85\x01\n\x1fListRouteTableOperationsRequest\x12$\n\x0eroute_table_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"r\n ListRouteTableOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"j\n\x15MoveRouteTableRequest\x12$\n\x0eroute_table_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12+\n\x15\x64\x65stination_folder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"0\n\x16MoveRouteTableMetadata\x12\x16\n\x0eroute_table_id\x18\x01 \x01(\t2\x9f\t\n\x11RouteTableService\x12\x7f\n\x03Get\x12).yandex.cloud.vpc.v1.GetRouteTableRequest\x1a\x1f.yandex.cloud.vpc.v1.RouteTable\",\x82\xd3\xe4\x93\x02&\x12$/vpc/v1/routeTables/{route_table_id}\x12~\n\x04List\x12+.yandex.cloud.vpc.v1.ListRouteTablesRequest\x1a,.yandex.cloud.vpc.v1.ListRouteTablesResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/vpc/v1/routeTables\x12\xa3\x01\n\x06\x43reate\x12,.yandex.cloud.vpc.v1.CreateRouteTableRequest\x1a!.yandex.cloud.operation.Operation\"H\x82\xd3\xe4\x93\x02\x18\"\x13/vpc/v1/routeTables:\x01*\xb2\xd2*&\n\x18\x43reateRouteTableMetadata\x12\nRouteTable\x12\xb4\x01\n\x06Update\x12,.yandex.cloud.vpc.v1.UpdateRouteTableRequest\x1a!.yandex.cloud.operation.Operation\"Y\x82\xd3\xe4\x93\x02)2$/vpc/v1/routeTables/{route_table_id}:\x01*\xb2\xd2*&\n\x18UpdateRouteTableMetadata\x12\nRouteTable\x12\xbc\x01\n\x06\x44\x65lete\x12,.yandex.cloud.vpc.v1.DeleteRouteTableRequest\x1a!.yandex.cloud.operation.Operation\"a\x82\xd3\xe4\x93\x02&*$/vpc/v1/routeTables/{route_table_id}\xb2\xd2*1\n\x18\x44\x65leteRouteTableMetadata\x12\x15google.protobuf.Empty\x12\xb6\x01\n\x0eListOperations\x12\x34.yandex.cloud.vpc.v1.ListRouteTableOperationsRequest\x1a\x35.yandex.cloud.vpc.v1.ListRouteTableOperationsResponse\"7\x82\xd3\xe4\x93\x02\x31\x12//vpc/v1/routeTables/{route_table_id}/operations\x12\xb3\x01\n\x04Move\x12*.yandex.cloud.vpc.v1.MoveRouteTableRequest\x1a!.yandex.cloud.operation.Operation\"\\\x82\xd3\xe4\x93\x02.\")/vpc/v1/routeTables/{route_table_id}:move:\x01*\xb2\xd2*$\n\x16MoveRouteTableMetadata\x12\nRouteTableBV\n\x17yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpcb\x06proto3'
-  ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_vpc_dot_v1_dot_route__table__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n-yandex/cloud/vpc/v1/route_table_service.proto\x12\x13yandex.cloud.vpc.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a%yandex/cloud/vpc/v1/route_table.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"<\n\x14GetRouteTableRequest\x12$\n\x0eroute_table_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x93\x01\n\x16ListRouteTablesRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"i\n\x17ListRouteTablesResponse\x12\x35\n\x0croute_tables\x18\x01 \x03(\x0b\x32\x1f.yandex.cloud.vpc.v1.RouteTable\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x9d\x03\n\x17\x43reateRouteTableRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x85\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x38.yandex.cloud.vpc.v1.CreateRouteTableRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12 \n\nnetwork_id\x18\x05 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x37\n\rstatic_routes\x18\x06 \x03(\x0b\x32 .yandex.cloud.vpc.v1.StaticRoute\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"2\n\x18\x43reateRouteTableMetadata\x12\x16\n\x0eroute_table_id\x18\x01 \x01(\t\"\xb1\x03\n\x17UpdateRouteTableRequest\x12$\n\x0eroute_table_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x85\x01\n\x06labels\x18\x05 \x03(\x0b\x32\x38.yandex.cloud.vpc.v1.UpdateRouteTableRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12\x37\n\rstatic_routes\x18\x06 \x03(\x0b\x32 .yandex.cloud.vpc.v1.StaticRoute\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"2\n\x18UpdateRouteTableMetadata\x12\x16\n\x0eroute_table_id\x18\x01 \x01(\t\"?\n\x17\x44\x65leteRouteTableRequest\x12$\n\x0eroute_table_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"2\n\x18\x44\x65leteRouteTableMetadata\x12\x16\n\x0eroute_table_id\x18\x01 \x01(\t\"\x85\x01\n\x1fListRouteTableOperationsRequest\x12$\n\x0eroute_table_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"r\n ListRouteTableOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"j\n\x15MoveRouteTableRequest\x12$\n\x0eroute_table_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12+\n\x15\x64\x65stination_folder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"0\n\x16MoveRouteTableMetadata\x12\x16\n\x0eroute_table_id\x18\x01 \x01(\t2\x9f\t\n\x11RouteTableService\x12\x7f\n\x03Get\x12).yandex.cloud.vpc.v1.GetRouteTableRequest\x1a\x1f.yandex.cloud.vpc.v1.RouteTable\",\x82\xd3\xe4\x93\x02&\x12$/vpc/v1/routeTables/{route_table_id}\x12~\n\x04List\x12+.yandex.cloud.vpc.v1.ListRouteTablesRequest\x1a,.yandex.cloud.vpc.v1.ListRouteTablesResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/vpc/v1/routeTables\x12\xa3\x01\n\x06\x43reate\x12,.yandex.cloud.vpc.v1.CreateRouteTableRequest\x1a!.yandex.cloud.operation.Operation\"H\xb2\xd2*&\n\x18\x43reateRouteTableMetadata\x12\nRouteTable\x82\xd3\xe4\x93\x02\x18\"\x13/vpc/v1/routeTables:\x01*\x12\xb4\x01\n\x06Update\x12,.yandex.cloud.vpc.v1.UpdateRouteTableRequest\x1a!.yandex.cloud.operation.Operation\"Y\xb2\xd2*&\n\x18UpdateRouteTableMetadata\x12\nRouteTable\x82\xd3\xe4\x93\x02)2$/vpc/v1/routeTables/{route_table_id}:\x01*\x12\xbc\x01\n\x06\x44\x65lete\x12,.yandex.cloud.vpc.v1.DeleteRouteTableRequest\x1a!.yandex.cloud.operation.Operation\"a\xb2\xd2*1\n\x18\x44\x65leteRouteTableMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02&*$/vpc/v1/routeTables/{route_table_id}\x12\xb6\x01\n\x0eListOperations\x12\x34.yandex.cloud.vpc.v1.ListRouteTableOperationsRequest\x1a\x35.yandex.cloud.vpc.v1.ListRouteTableOperationsResponse\"7\x82\xd3\xe4\x93\x02\x31\x12//vpc/v1/routeTables/{route_table_id}/operations\x12\xb3\x01\n\x04Move\x12*.yandex.cloud.vpc.v1.MoveRouteTableRequest\x1a!.yandex.cloud.operation.Operation\"\\\xb2\xd2*$\n\x16MoveRouteTableMetadata\x12\nRouteTable\x82\xd3\xe4\x93\x02.\")/vpc/v1/routeTables/{route_table_id}:move:\x01*BV\n\x17yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpcb\x06proto3')
 
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.vpc.v1.route_table_service_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-
-_GETROUTETABLEREQUEST = _descriptor.Descriptor(
-  name='GetRouteTableRequest',
-  full_name='yandex.cloud.vpc.v1.GetRouteTableRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='route_table_id', full_name='yandex.cloud.vpc.v1.GetRouteTableRequest.route_table_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=278,
-  serialized_end=338,
-)
-
-
-_LISTROUTETABLESREQUEST = _descriptor.Descriptor(
-  name='ListRouteTablesRequest',
-  full_name='yandex.cloud.vpc.v1.ListRouteTablesRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.vpc.v1.ListRouteTablesRequest.folder_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.vpc.v1.ListRouteTablesRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.vpc.v1.ListRouteTablesRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='filter', full_name='yandex.cloud.vpc.v1.ListRouteTablesRequest.filter', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=341,
-  serialized_end=488,
-)
-
-
-_LISTROUTETABLESRESPONSE = _descriptor.Descriptor(
-  name='ListRouteTablesResponse',
-  full_name='yandex.cloud.vpc.v1.ListRouteTablesResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='route_tables', full_name='yandex.cloud.vpc.v1.ListRouteTablesResponse.route_tables', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.vpc.v1.ListRouteTablesResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=490,
-  serialized_end=595,
-)
-
-
-_CREATEROUTETABLEREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='yandex.cloud.vpc.v1.CreateRouteTableRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='yandex.cloud.vpc.v1.CreateRouteTableRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='yandex.cloud.vpc.v1.CreateRouteTableRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=970,
-  serialized_end=1015,
-)
-
-_CREATEROUTETABLEREQUEST = _descriptor.Descriptor(
-  name='CreateRouteTableRequest',
-  full_name='yandex.cloud.vpc.v1.CreateRouteTableRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.vpc.v1.CreateRouteTableRequest.folder_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.vpc.v1.CreateRouteTableRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='yandex.cloud.vpc.v1.CreateRouteTableRequest.description', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='yandex.cloud.vpc.v1.CreateRouteTableRequest.labels', index=3,
-      number=4, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='network_id', full_name='yandex.cloud.vpc.v1.CreateRouteTableRequest.network_id', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='static_routes', full_name='yandex.cloud.vpc.v1.CreateRouteTableRequest.static_routes', index=5,
-      number=6, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_CREATEROUTETABLEREQUEST_LABELSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=598,
-  serialized_end=1015,
-)
-
-
-_CREATEROUTETABLEMETADATA = _descriptor.Descriptor(
-  name='CreateRouteTableMetadata',
-  full_name='yandex.cloud.vpc.v1.CreateRouteTableMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='route_table_id', full_name='yandex.cloud.vpc.v1.CreateRouteTableMetadata.route_table_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1017,
-  serialized_end=1067,
-)
-
-
-_UPDATEROUTETABLEREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='yandex.cloud.vpc.v1.UpdateRouteTableRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='yandex.cloud.vpc.v1.UpdateRouteTableRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='yandex.cloud.vpc.v1.UpdateRouteTableRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=970,
-  serialized_end=1015,
-)
-
-_UPDATEROUTETABLEREQUEST = _descriptor.Descriptor(
-  name='UpdateRouteTableRequest',
-  full_name='yandex.cloud.vpc.v1.UpdateRouteTableRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='route_table_id', full_name='yandex.cloud.vpc.v1.UpdateRouteTableRequest.route_table_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='update_mask', full_name='yandex.cloud.vpc.v1.UpdateRouteTableRequest.update_mask', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.vpc.v1.UpdateRouteTableRequest.name', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='yandex.cloud.vpc.v1.UpdateRouteTableRequest.description', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='yandex.cloud.vpc.v1.UpdateRouteTableRequest.labels', index=4,
-      number=5, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\013[-_0-9a-z]*\262\3101\006\032\0041-63\262\3101\022\022\020[a-z][-_0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='static_routes', full_name='yandex.cloud.vpc.v1.UpdateRouteTableRequest.static_routes', index=5,
-      number=6, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_UPDATEROUTETABLEREQUEST_LABELSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1070,
-  serialized_end=1507,
-)
-
-
-_UPDATEROUTETABLEMETADATA = _descriptor.Descriptor(
-  name='UpdateRouteTableMetadata',
-  full_name='yandex.cloud.vpc.v1.UpdateRouteTableMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='route_table_id', full_name='yandex.cloud.vpc.v1.UpdateRouteTableMetadata.route_table_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1509,
-  serialized_end=1559,
-)
-
-
-_DELETEROUTETABLEREQUEST = _descriptor.Descriptor(
-  name='DeleteRouteTableRequest',
-  full_name='yandex.cloud.vpc.v1.DeleteRouteTableRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='route_table_id', full_name='yandex.cloud.vpc.v1.DeleteRouteTableRequest.route_table_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1561,
-  serialized_end=1624,
-)
-
-
-_DELETEROUTETABLEMETADATA = _descriptor.Descriptor(
-  name='DeleteRouteTableMetadata',
-  full_name='yandex.cloud.vpc.v1.DeleteRouteTableMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='route_table_id', full_name='yandex.cloud.vpc.v1.DeleteRouteTableMetadata.route_table_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1626,
-  serialized_end=1676,
-)
-
-
-_LISTROUTETABLEOPERATIONSREQUEST = _descriptor.Descriptor(
-  name='ListRouteTableOperationsRequest',
-  full_name='yandex.cloud.vpc.v1.ListRouteTableOperationsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='route_table_id', full_name='yandex.cloud.vpc.v1.ListRouteTableOperationsRequest.route_table_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.vpc.v1.ListRouteTableOperationsRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.vpc.v1.ListRouteTableOperationsRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1679,
-  serialized_end=1812,
-)
-
-
-_LISTROUTETABLEOPERATIONSRESPONSE = _descriptor.Descriptor(
-  name='ListRouteTableOperationsResponse',
-  full_name='yandex.cloud.vpc.v1.ListRouteTableOperationsResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='operations', full_name='yandex.cloud.vpc.v1.ListRouteTableOperationsResponse.operations', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.vpc.v1.ListRouteTableOperationsResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1814,
-  serialized_end=1928,
-)
-
-
-_MOVEROUTETABLEREQUEST = _descriptor.Descriptor(
-  name='MoveRouteTableRequest',
-  full_name='yandex.cloud.vpc.v1.MoveRouteTableRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='route_table_id', full_name='yandex.cloud.vpc.v1.MoveRouteTableRequest.route_table_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='destination_folder_id', full_name='yandex.cloud.vpc.v1.MoveRouteTableRequest.destination_folder_id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1930,
-  serialized_end=2036,
-)
-
-
-_MOVEROUTETABLEMETADATA = _descriptor.Descriptor(
-  name='MoveRouteTableMetadata',
-  full_name='yandex.cloud.vpc.v1.MoveRouteTableMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='route_table_id', full_name='yandex.cloud.vpc.v1.MoveRouteTableMetadata.route_table_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2038,
-  serialized_end=2086,
-)
-
-_LISTROUTETABLESRESPONSE.fields_by_name['route_tables'].message_type = yandex_dot_cloud_dot_vpc_dot_v1_dot_route__table__pb2._ROUTETABLE
-_CREATEROUTETABLEREQUEST_LABELSENTRY.containing_type = _CREATEROUTETABLEREQUEST
-_CREATEROUTETABLEREQUEST.fields_by_name['labels'].message_type = _CREATEROUTETABLEREQUEST_LABELSENTRY
-_CREATEROUTETABLEREQUEST.fields_by_name['static_routes'].message_type = yandex_dot_cloud_dot_vpc_dot_v1_dot_route__table__pb2._STATICROUTE
-_UPDATEROUTETABLEREQUEST_LABELSENTRY.containing_type = _UPDATEROUTETABLEREQUEST
-_UPDATEROUTETABLEREQUEST.fields_by_name['update_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
-_UPDATEROUTETABLEREQUEST.fields_by_name['labels'].message_type = _UPDATEROUTETABLEREQUEST_LABELSENTRY
-_UPDATEROUTETABLEREQUEST.fields_by_name['static_routes'].message_type = yandex_dot_cloud_dot_vpc_dot_v1_dot_route__table__pb2._STATICROUTE
-_LISTROUTETABLEOPERATIONSRESPONSE.fields_by_name['operations'].message_type = yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION
-DESCRIPTOR.message_types_by_name['GetRouteTableRequest'] = _GETROUTETABLEREQUEST
-DESCRIPTOR.message_types_by_name['ListRouteTablesRequest'] = _LISTROUTETABLESREQUEST
-DESCRIPTOR.message_types_by_name['ListRouteTablesResponse'] = _LISTROUTETABLESRESPONSE
-DESCRIPTOR.message_types_by_name['CreateRouteTableRequest'] = _CREATEROUTETABLEREQUEST
-DESCRIPTOR.message_types_by_name['CreateRouteTableMetadata'] = _CREATEROUTETABLEMETADATA
-DESCRIPTOR.message_types_by_name['UpdateRouteTableRequest'] = _UPDATEROUTETABLEREQUEST
-DESCRIPTOR.message_types_by_name['UpdateRouteTableMetadata'] = _UPDATEROUTETABLEMETADATA
-DESCRIPTOR.message_types_by_name['DeleteRouteTableRequest'] = _DELETEROUTETABLEREQUEST
-DESCRIPTOR.message_types_by_name['DeleteRouteTableMetadata'] = _DELETEROUTETABLEMETADATA
-DESCRIPTOR.message_types_by_name['ListRouteTableOperationsRequest'] = _LISTROUTETABLEOPERATIONSREQUEST
-DESCRIPTOR.message_types_by_name['ListRouteTableOperationsResponse'] = _LISTROUTETABLEOPERATIONSRESPONSE
-DESCRIPTOR.message_types_by_name['MoveRouteTableRequest'] = _MOVEROUTETABLEREQUEST
-DESCRIPTOR.message_types_by_name['MoveRouteTableMetadata'] = _MOVEROUTETABLEMETADATA
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-GetRouteTableRequest = _reflection.GeneratedProtocolMessageType('GetRouteTableRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETROUTETABLEREQUEST,
-  '__module__' : 'yandex.cloud.vpc.v1.route_table_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.GetRouteTableRequest)
-  })
-_sym_db.RegisterMessage(GetRouteTableRequest)
-
-ListRouteTablesRequest = _reflection.GeneratedProtocolMessageType('ListRouteTablesRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTROUTETABLESREQUEST,
-  '__module__' : 'yandex.cloud.vpc.v1.route_table_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.ListRouteTablesRequest)
-  })
-_sym_db.RegisterMessage(ListRouteTablesRequest)
-
-ListRouteTablesResponse = _reflection.GeneratedProtocolMessageType('ListRouteTablesResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTROUTETABLESRESPONSE,
-  '__module__' : 'yandex.cloud.vpc.v1.route_table_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.ListRouteTablesResponse)
-  })
-_sym_db.RegisterMessage(ListRouteTablesResponse)
-
-CreateRouteTableRequest = _reflection.GeneratedProtocolMessageType('CreateRouteTableRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _CREATEROUTETABLEREQUEST_LABELSENTRY,
-    '__module__' : 'yandex.cloud.vpc.v1.route_table_service_pb2'
-    # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.CreateRouteTableRequest.LabelsEntry)
-    })
-  ,
-  'DESCRIPTOR' : _CREATEROUTETABLEREQUEST,
-  '__module__' : 'yandex.cloud.vpc.v1.route_table_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.CreateRouteTableRequest)
-  })
-_sym_db.RegisterMessage(CreateRouteTableRequest)
-_sym_db.RegisterMessage(CreateRouteTableRequest.LabelsEntry)
-
-CreateRouteTableMetadata = _reflection.GeneratedProtocolMessageType('CreateRouteTableMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _CREATEROUTETABLEMETADATA,
-  '__module__' : 'yandex.cloud.vpc.v1.route_table_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.CreateRouteTableMetadata)
-  })
-_sym_db.RegisterMessage(CreateRouteTableMetadata)
-
-UpdateRouteTableRequest = _reflection.GeneratedProtocolMessageType('UpdateRouteTableRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _UPDATEROUTETABLEREQUEST_LABELSENTRY,
-    '__module__' : 'yandex.cloud.vpc.v1.route_table_service_pb2'
-    # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.UpdateRouteTableRequest.LabelsEntry)
-    })
-  ,
-  'DESCRIPTOR' : _UPDATEROUTETABLEREQUEST,
-  '__module__' : 'yandex.cloud.vpc.v1.route_table_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.UpdateRouteTableRequest)
-  })
-_sym_db.RegisterMessage(UpdateRouteTableRequest)
-_sym_db.RegisterMessage(UpdateRouteTableRequest.LabelsEntry)
-
-UpdateRouteTableMetadata = _reflection.GeneratedProtocolMessageType('UpdateRouteTableMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATEROUTETABLEMETADATA,
-  '__module__' : 'yandex.cloud.vpc.v1.route_table_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.UpdateRouteTableMetadata)
-  })
-_sym_db.RegisterMessage(UpdateRouteTableMetadata)
-
-DeleteRouteTableRequest = _reflection.GeneratedProtocolMessageType('DeleteRouteTableRequest', (_message.Message,), {
-  'DESCRIPTOR' : _DELETEROUTETABLEREQUEST,
-  '__module__' : 'yandex.cloud.vpc.v1.route_table_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.DeleteRouteTableRequest)
-  })
-_sym_db.RegisterMessage(DeleteRouteTableRequest)
-
-DeleteRouteTableMetadata = _reflection.GeneratedProtocolMessageType('DeleteRouteTableMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _DELETEROUTETABLEMETADATA,
-  '__module__' : 'yandex.cloud.vpc.v1.route_table_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.DeleteRouteTableMetadata)
-  })
-_sym_db.RegisterMessage(DeleteRouteTableMetadata)
-
-ListRouteTableOperationsRequest = _reflection.GeneratedProtocolMessageType('ListRouteTableOperationsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTROUTETABLEOPERATIONSREQUEST,
-  '__module__' : 'yandex.cloud.vpc.v1.route_table_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.ListRouteTableOperationsRequest)
-  })
-_sym_db.RegisterMessage(ListRouteTableOperationsRequest)
-
-ListRouteTableOperationsResponse = _reflection.GeneratedProtocolMessageType('ListRouteTableOperationsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTROUTETABLEOPERATIONSRESPONSE,
-  '__module__' : 'yandex.cloud.vpc.v1.route_table_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.ListRouteTableOperationsResponse)
-  })
-_sym_db.RegisterMessage(ListRouteTableOperationsResponse)
-
-MoveRouteTableRequest = _reflection.GeneratedProtocolMessageType('MoveRouteTableRequest', (_message.Message,), {
-  'DESCRIPTOR' : _MOVEROUTETABLEREQUEST,
-  '__module__' : 'yandex.cloud.vpc.v1.route_table_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.MoveRouteTableRequest)
-  })
-_sym_db.RegisterMessage(MoveRouteTableRequest)
-
-MoveRouteTableMetadata = _reflection.GeneratedProtocolMessageType('MoveRouteTableMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _MOVEROUTETABLEMETADATA,
-  '__module__' : 'yandex.cloud.vpc.v1.route_table_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.vpc.v1.MoveRouteTableMetadata)
-  })
-_sym_db.RegisterMessage(MoveRouteTableMetadata)
-
-
-DESCRIPTOR._options = None
-_GETROUTETABLEREQUEST.fields_by_name['route_table_id']._options = None
-_LISTROUTETABLESREQUEST.fields_by_name['folder_id']._options = None
-_LISTROUTETABLESREQUEST.fields_by_name['page_size']._options = None
-_LISTROUTETABLESREQUEST.fields_by_name['page_token']._options = None
-_LISTROUTETABLESREQUEST.fields_by_name['filter']._options = None
-_CREATEROUTETABLEREQUEST_LABELSENTRY._options = None
-_CREATEROUTETABLEREQUEST.fields_by_name['folder_id']._options = None
-_CREATEROUTETABLEREQUEST.fields_by_name['name']._options = None
-_CREATEROUTETABLEREQUEST.fields_by_name['description']._options = None
-_CREATEROUTETABLEREQUEST.fields_by_name['labels']._options = None
-_CREATEROUTETABLEREQUEST.fields_by_name['network_id']._options = None
-_UPDATEROUTETABLEREQUEST_LABELSENTRY._options = None
-_UPDATEROUTETABLEREQUEST.fields_by_name['route_table_id']._options = None
-_UPDATEROUTETABLEREQUEST.fields_by_name['name']._options = None
-_UPDATEROUTETABLEREQUEST.fields_by_name['description']._options = None
-_UPDATEROUTETABLEREQUEST.fields_by_name['labels']._options = None
-_DELETEROUTETABLEREQUEST.fields_by_name['route_table_id']._options = None
-_LISTROUTETABLEOPERATIONSREQUEST.fields_by_name['route_table_id']._options = None
-_LISTROUTETABLEOPERATIONSREQUEST.fields_by_name['page_size']._options = None
-_LISTROUTETABLEOPERATIONSREQUEST.fields_by_name['page_token']._options = None
-_MOVEROUTETABLEREQUEST.fields_by_name['route_table_id']._options = None
-_MOVEROUTETABLEREQUEST.fields_by_name['destination_folder_id']._options = None
-
-_ROUTETABLESERVICE = _descriptor.ServiceDescriptor(
-  name='RouteTableService',
-  full_name='yandex.cloud.vpc.v1.RouteTableService',
-  file=DESCRIPTOR,
-  index=0,
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_start=2089,
-  serialized_end=3272,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='Get',
-    full_name='yandex.cloud.vpc.v1.RouteTableService.Get',
-    index=0,
-    containing_service=None,
-    input_type=_GETROUTETABLEREQUEST,
-    output_type=yandex_dot_cloud_dot_vpc_dot_v1_dot_route__table__pb2._ROUTETABLE,
-    serialized_options=b'\202\323\344\223\002&\022$/vpc/v1/routeTables/{route_table_id}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='List',
-    full_name='yandex.cloud.vpc.v1.RouteTableService.List',
-    index=1,
-    containing_service=None,
-    input_type=_LISTROUTETABLESREQUEST,
-    output_type=_LISTROUTETABLESRESPONSE,
-    serialized_options=b'\202\323\344\223\002\025\022\023/vpc/v1/routeTables',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Create',
-    full_name='yandex.cloud.vpc.v1.RouteTableService.Create',
-    index=2,
-    containing_service=None,
-    input_type=_CREATEROUTETABLEREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002\030\"\023/vpc/v1/routeTables:\001*\262\322*&\n\030CreateRouteTableMetadata\022\nRouteTable',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Update',
-    full_name='yandex.cloud.vpc.v1.RouteTableService.Update',
-    index=3,
-    containing_service=None,
-    input_type=_UPDATEROUTETABLEREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002)2$/vpc/v1/routeTables/{route_table_id}:\001*\262\322*&\n\030UpdateRouteTableMetadata\022\nRouteTable',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Delete',
-    full_name='yandex.cloud.vpc.v1.RouteTableService.Delete',
-    index=4,
-    containing_service=None,
-    input_type=_DELETEROUTETABLEREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002&*$/vpc/v1/routeTables/{route_table_id}\262\322*1\n\030DeleteRouteTableMetadata\022\025google.protobuf.Empty',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListOperations',
-    full_name='yandex.cloud.vpc.v1.RouteTableService.ListOperations',
-    index=5,
-    containing_service=None,
-    input_type=_LISTROUTETABLEOPERATIONSREQUEST,
-    output_type=_LISTROUTETABLEOPERATIONSRESPONSE,
-    serialized_options=b'\202\323\344\223\0021\022//vpc/v1/routeTables/{route_table_id}/operations',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Move',
-    full_name='yandex.cloud.vpc.v1.RouteTableService.Move',
-    index=6,
-    containing_service=None,
-    input_type=_MOVEROUTETABLEREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002.\")/vpc/v1/routeTables/{route_table_id}:move:\001*\262\322*$\n\026MoveRouteTableMetadata\022\nRouteTable',
-    create_key=_descriptor._internal_create_key,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_ROUTETABLESERVICE)
-
-DESCRIPTOR.services_by_name['RouteTableService'] = _ROUTETABLESERVICE
-
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n\027yandex.cloud.api.vpc.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/vpc/v1;vpc'
+  _GETROUTETABLEREQUEST.fields_by_name['route_table_id']._options = None
+  _GETROUTETABLEREQUEST.fields_by_name['route_table_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTROUTETABLESREQUEST.fields_by_name['folder_id']._options = None
+  _LISTROUTETABLESREQUEST.fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTROUTETABLESREQUEST.fields_by_name['page_size']._options = None
+  _LISTROUTETABLESREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
+  _LISTROUTETABLESREQUEST.fields_by_name['page_token']._options = None
+  _LISTROUTETABLESREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
+  _LISTROUTETABLESREQUEST.fields_by_name['filter']._options = None
+  _LISTROUTETABLESREQUEST.fields_by_name['filter']._serialized_options = b'\212\3101\006<=1000'
+  _CREATEROUTETABLEREQUEST_LABELSENTRY._options = None
+  _CREATEROUTETABLEREQUEST_LABELSENTRY._serialized_options = b'8\001'
+  _CREATEROUTETABLEREQUEST.fields_by_name['folder_id']._options = None
+  _CREATEROUTETABLEREQUEST.fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _CREATEROUTETABLEREQUEST.fields_by_name['name']._options = None
+  _CREATEROUTETABLEREQUEST.fields_by_name['name']._serialized_options = b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'
+  _CREATEROUTETABLEREQUEST.fields_by_name['description']._options = None
+  _CREATEROUTETABLEREQUEST.fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
+  _CREATEROUTETABLEREQUEST.fields_by_name['labels']._options = None
+  _CREATEROUTETABLEREQUEST.fields_by_name['labels']._serialized_options = b'\362\3071\013[-_0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\0041-63'
+  _CREATEROUTETABLEREQUEST.fields_by_name['network_id']._options = None
+  _CREATEROUTETABLEREQUEST.fields_by_name['network_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _UPDATEROUTETABLEREQUEST_LABELSENTRY._options = None
+  _UPDATEROUTETABLEREQUEST_LABELSENTRY._serialized_options = b'8\001'
+  _UPDATEROUTETABLEREQUEST.fields_by_name['route_table_id']._options = None
+  _UPDATEROUTETABLEREQUEST.fields_by_name['route_table_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _UPDATEROUTETABLEREQUEST.fields_by_name['name']._options = None
+  _UPDATEROUTETABLEREQUEST.fields_by_name['name']._serialized_options = b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'
+  _UPDATEROUTETABLEREQUEST.fields_by_name['description']._options = None
+  _UPDATEROUTETABLEREQUEST.fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
+  _UPDATEROUTETABLEREQUEST.fields_by_name['labels']._options = None
+  _UPDATEROUTETABLEREQUEST.fields_by_name['labels']._serialized_options = b'\362\3071\013[-_0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\0041-63'
+  _DELETEROUTETABLEREQUEST.fields_by_name['route_table_id']._options = None
+  _DELETEROUTETABLEREQUEST.fields_by_name['route_table_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTROUTETABLEOPERATIONSREQUEST.fields_by_name['route_table_id']._options = None
+  _LISTROUTETABLEOPERATIONSREQUEST.fields_by_name['route_table_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTROUTETABLEOPERATIONSREQUEST.fields_by_name['page_size']._options = None
+  _LISTROUTETABLEOPERATIONSREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
+  _LISTROUTETABLEOPERATIONSREQUEST.fields_by_name['page_token']._options = None
+  _LISTROUTETABLEOPERATIONSREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
+  _MOVEROUTETABLEREQUEST.fields_by_name['route_table_id']._options = None
+  _MOVEROUTETABLEREQUEST.fields_by_name['route_table_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _MOVEROUTETABLEREQUEST.fields_by_name['destination_folder_id']._options = None
+  _MOVEROUTETABLEREQUEST.fields_by_name['destination_folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _ROUTETABLESERVICE.methods_by_name['Get']._options = None
+  _ROUTETABLESERVICE.methods_by_name['Get']._serialized_options = b'\202\323\344\223\002&\022$/vpc/v1/routeTables/{route_table_id}'
+  _ROUTETABLESERVICE.methods_by_name['List']._options = None
+  _ROUTETABLESERVICE.methods_by_name['List']._serialized_options = b'\202\323\344\223\002\025\022\023/vpc/v1/routeTables'
+  _ROUTETABLESERVICE.methods_by_name['Create']._options = None
+  _ROUTETABLESERVICE.methods_by_name['Create']._serialized_options = b'\262\322*&\n\030CreateRouteTableMetadata\022\nRouteTable\202\323\344\223\002\030\"\023/vpc/v1/routeTables:\001*'
+  _ROUTETABLESERVICE.methods_by_name['Update']._options = None
+  _ROUTETABLESERVICE.methods_by_name['Update']._serialized_options = b'\262\322*&\n\030UpdateRouteTableMetadata\022\nRouteTable\202\323\344\223\002)2$/vpc/v1/routeTables/{route_table_id}:\001*'
+  _ROUTETABLESERVICE.methods_by_name['Delete']._options = None
+  _ROUTETABLESERVICE.methods_by_name['Delete']._serialized_options = b'\262\322*1\n\030DeleteRouteTableMetadata\022\025google.protobuf.Empty\202\323\344\223\002&*$/vpc/v1/routeTables/{route_table_id}'
+  _ROUTETABLESERVICE.methods_by_name['ListOperations']._options = None
+  _ROUTETABLESERVICE.methods_by_name['ListOperations']._serialized_options = b'\202\323\344\223\0021\022//vpc/v1/routeTables/{route_table_id}/operations'
+  _ROUTETABLESERVICE.methods_by_name['Move']._options = None
+  _ROUTETABLESERVICE.methods_by_name['Move']._serialized_options = b'\262\322*$\n\026MoveRouteTableMetadata\022\nRouteTable\202\323\344\223\002.\")/vpc/v1/routeTables/{route_table_id}:move:\001*'
+  _globals['_GETROUTETABLEREQUEST']._serialized_start=278
+  _globals['_GETROUTETABLEREQUEST']._serialized_end=338
+  _globals['_LISTROUTETABLESREQUEST']._serialized_start=341
+  _globals['_LISTROUTETABLESREQUEST']._serialized_end=488
+  _globals['_LISTROUTETABLESRESPONSE']._serialized_start=490
+  _globals['_LISTROUTETABLESRESPONSE']._serialized_end=595
+  _globals['_CREATEROUTETABLEREQUEST']._serialized_start=598
+  _globals['_CREATEROUTETABLEREQUEST']._serialized_end=1011
+  _globals['_CREATEROUTETABLEREQUEST_LABELSENTRY']._serialized_start=966
+  _globals['_CREATEROUTETABLEREQUEST_LABELSENTRY']._serialized_end=1011
+  _globals['_CREATEROUTETABLEMETADATA']._serialized_start=1013
+  _globals['_CREATEROUTETABLEMETADATA']._serialized_end=1063
+  _globals['_UPDATEROUTETABLEREQUEST']._serialized_start=1066
+  _globals['_UPDATEROUTETABLEREQUEST']._serialized_end=1499
+  _globals['_UPDATEROUTETABLEREQUEST_LABELSENTRY']._serialized_start=966
+  _globals['_UPDATEROUTETABLEREQUEST_LABELSENTRY']._serialized_end=1011
+  _globals['_UPDATEROUTETABLEMETADATA']._serialized_start=1501
+  _globals['_UPDATEROUTETABLEMETADATA']._serialized_end=1551
+  _globals['_DELETEROUTETABLEREQUEST']._serialized_start=1553
+  _globals['_DELETEROUTETABLEREQUEST']._serialized_end=1616
+  _globals['_DELETEROUTETABLEMETADATA']._serialized_start=1618
+  _globals['_DELETEROUTETABLEMETADATA']._serialized_end=1668
+  _globals['_LISTROUTETABLEOPERATIONSREQUEST']._serialized_start=1671
+  _globals['_LISTROUTETABLEOPERATIONSREQUEST']._serialized_end=1804
+  _globals['_LISTROUTETABLEOPERATIONSRESPONSE']._serialized_start=1806
+  _globals['_LISTROUTETABLEOPERATIONSRESPONSE']._serialized_end=1920
+  _globals['_MOVEROUTETABLEREQUEST']._serialized_start=1922
+  _globals['_MOVEROUTETABLEREQUEST']._serialized_end=2028
+  _globals['_MOVEROUTETABLEMETADATA']._serialized_start=2030
+  _globals['_MOVEROUTETABLEMETADATA']._serialized_end=2078
+  _globals['_ROUTETABLESERVICE']._serialized_start=2081
+  _globals['_ROUTETABLESERVICE']._serialized_end=3264
 # @@protoc_insertion_point(module_scope)

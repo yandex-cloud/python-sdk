@@ -3,9 +3,9 @@
 # source: yandex/cloud/iam/v1/awscompatibility/access_key_service.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -19,622 +19,73 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/iam/v1/awscompatibility/access_key_service.proto',
-  package='yandex.cloud.iam.v1.awscompatibility',
-  syntax='proto3',
-  serialized_options=b'\n(yandex.cloud.api.iam.v1.awscompatibilityZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1/awscompatibility;awscompatibility',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n=yandex/cloud/iam/v1/awscompatibility/access_key_service.proto\x12$yandex.cloud.iam.v1.awscompatibility\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a\x35yandex/cloud/iam/v1/awscompatibility/access_key.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\":\n\x13GetAccessKeyRequest\x12#\n\raccess_key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"|\n\x15ListAccessKeysRequest\x12$\n\x12service_account_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\"w\n\x16ListAccessKeysResponse\x12\x44\n\x0b\x61\x63\x63\x65ss_keys\x18\x01 \x03(\x0b\x32/.yandex.cloud.iam.v1.awscompatibility.AccessKey\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"^\n\x16\x43reateAccessKeyRequest\x12$\n\x12service_account_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1e\n\x0b\x64\x65scription\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=256\"n\n\x17\x43reateAccessKeyResponse\x12\x43\n\naccess_key\x18\x01 \x01(\x0b\x32/.yandex.cloud.iam.v1.awscompatibility.AccessKey\x12\x0e\n\x06secret\x18\x02 \x01(\t\"\x8e\x01\n\x16UpdateAccessKeyRequest\x12#\n\raccess_key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\"0\n\x17UpdateAccessKeyMetadata\x12\x15\n\raccess_key_id\x18\x01 \x01(\t\"=\n\x16\x44\x65leteAccessKeyRequest\x12#\n\raccess_key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"0\n\x17\x44\x65leteAccessKeyMetadata\x12\x15\n\raccess_key_id\x18\x01 \x01(\t\"\x84\x01\n\x1eListAccessKeyOperationsRequest\x12#\n\raccess_key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\"q\n\x1fListAccessKeyOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xcb\t\n\x10\x41\x63\x63\x65ssKeyService\x12\xaf\x01\n\x04List\x12;.yandex.cloud.iam.v1.awscompatibility.ListAccessKeysRequest\x1a<.yandex.cloud.iam.v1.awscompatibility.ListAccessKeysResponse\",\x82\xd3\xe4\x93\x02&\x12$/iam/aws-compatibility/v1/accessKeys\x12\xaf\x01\n\x03Get\x12\x39.yandex.cloud.iam.v1.awscompatibility.GetAccessKeyRequest\x1a/.yandex.cloud.iam.v1.awscompatibility.AccessKey\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/iam/aws-compatibility/v1/accessKeys/{access_key_id}\x12\xb6\x01\n\x06\x43reate\x12<.yandex.cloud.iam.v1.awscompatibility.CreateAccessKeyRequest\x1a=.yandex.cloud.iam.v1.awscompatibility.CreateAccessKeyResponse\"/\x82\xd3\xe4\x93\x02)\"$/iam/aws-compatibility/v1/accessKeys:\x01*\x12\xd2\x01\n\x06Update\x12<.yandex.cloud.iam.v1.awscompatibility.UpdateAccessKeyRequest\x1a!.yandex.cloud.operation.Operation\"g\x82\xd3\xe4\x93\x02\x39\x32\x34/iam/aws-compatibility/v1/accessKeys/{access_key_id}:\x01*\xb2\xd2*$\n\x17UpdateAccessKeyMetadata\x12\tAccessKey\x12\xdb\x01\n\x06\x44\x65lete\x12<.yandex.cloud.iam.v1.awscompatibility.DeleteAccessKeyRequest\x1a!.yandex.cloud.operation.Operation\"p\x82\xd3\xe4\x93\x02\x36*4/iam/aws-compatibility/v1/accessKeys/{access_key_id}\xb2\xd2*0\n\x17\x44\x65leteAccessKeyMetadata\x12\x15google.protobuf.Empty\x12\xe6\x01\n\x0eListOperations\x12\x44.yandex.cloud.iam.v1.awscompatibility.ListAccessKeyOperationsRequest\x1a\x45.yandex.cloud.iam.v1.awscompatibility.ListAccessKeyOperationsResponse\"G\x82\xd3\xe4\x93\x02\x41\x12?/iam/aws-compatibility/v1/accessKeys/{access_key_id}/operationsB\x85\x01\n(yandex.cloud.api.iam.v1.awscompatibilityZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1/awscompatibility;awscompatibilityb\x06proto3'
-  ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_iam_dot_v1_dot_awscompatibility_dot_access__key__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n=yandex/cloud/iam/v1/awscompatibility/access_key_service.proto\x12$yandex.cloud.iam.v1.awscompatibility\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a\x35yandex/cloud/iam/v1/awscompatibility/access_key.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\":\n\x13GetAccessKeyRequest\x12#\n\raccess_key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"|\n\x15ListAccessKeysRequest\x12$\n\x12service_account_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\"w\n\x16ListAccessKeysResponse\x12\x44\n\x0b\x61\x63\x63\x65ss_keys\x18\x01 \x03(\x0b\x32/.yandex.cloud.iam.v1.awscompatibility.AccessKey\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"^\n\x16\x43reateAccessKeyRequest\x12$\n\x12service_account_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1e\n\x0b\x64\x65scription\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=256\"n\n\x17\x43reateAccessKeyResponse\x12\x43\n\naccess_key\x18\x01 \x01(\x0b\x32/.yandex.cloud.iam.v1.awscompatibility.AccessKey\x12\x0e\n\x06secret\x18\x02 \x01(\t\"\x8e\x01\n\x16UpdateAccessKeyRequest\x12#\n\raccess_key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\"0\n\x17UpdateAccessKeyMetadata\x12\x15\n\raccess_key_id\x18\x01 \x01(\t\"=\n\x16\x44\x65leteAccessKeyRequest\x12#\n\raccess_key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"0\n\x17\x44\x65leteAccessKeyMetadata\x12\x15\n\raccess_key_id\x18\x01 \x01(\t\"\x84\x01\n\x1eListAccessKeyOperationsRequest\x12#\n\raccess_key_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\"q\n\x1fListAccessKeyOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xcb\t\n\x10\x41\x63\x63\x65ssKeyService\x12\xaf\x01\n\x04List\x12;.yandex.cloud.iam.v1.awscompatibility.ListAccessKeysRequest\x1a<.yandex.cloud.iam.v1.awscompatibility.ListAccessKeysResponse\",\x82\xd3\xe4\x93\x02&\x12$/iam/aws-compatibility/v1/accessKeys\x12\xaf\x01\n\x03Get\x12\x39.yandex.cloud.iam.v1.awscompatibility.GetAccessKeyRequest\x1a/.yandex.cloud.iam.v1.awscompatibility.AccessKey\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/iam/aws-compatibility/v1/accessKeys/{access_key_id}\x12\xb6\x01\n\x06\x43reate\x12<.yandex.cloud.iam.v1.awscompatibility.CreateAccessKeyRequest\x1a=.yandex.cloud.iam.v1.awscompatibility.CreateAccessKeyResponse\"/\x82\xd3\xe4\x93\x02)\"$/iam/aws-compatibility/v1/accessKeys:\x01*\x12\xd2\x01\n\x06Update\x12<.yandex.cloud.iam.v1.awscompatibility.UpdateAccessKeyRequest\x1a!.yandex.cloud.operation.Operation\"g\xb2\xd2*$\n\x17UpdateAccessKeyMetadata\x12\tAccessKey\x82\xd3\xe4\x93\x02\x39\x32\x34/iam/aws-compatibility/v1/accessKeys/{access_key_id}:\x01*\x12\xdb\x01\n\x06\x44\x65lete\x12<.yandex.cloud.iam.v1.awscompatibility.DeleteAccessKeyRequest\x1a!.yandex.cloud.operation.Operation\"p\xb2\xd2*0\n\x17\x44\x65leteAccessKeyMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x36*4/iam/aws-compatibility/v1/accessKeys/{access_key_id}\x12\xe6\x01\n\x0eListOperations\x12\x44.yandex.cloud.iam.v1.awscompatibility.ListAccessKeyOperationsRequest\x1a\x45.yandex.cloud.iam.v1.awscompatibility.ListAccessKeyOperationsResponse\"G\x82\xd3\xe4\x93\x02\x41\x12?/iam/aws-compatibility/v1/accessKeys/{access_key_id}/operationsB\x85\x01\n(yandex.cloud.api.iam.v1.awscompatibilityZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1/awscompatibility;awscompatibilityb\x06proto3')
 
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.iam.v1.awscompatibility.access_key_service_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-
-_GETACCESSKEYREQUEST = _descriptor.Descriptor(
-  name='GetAccessKeyRequest',
-  full_name='yandex.cloud.iam.v1.awscompatibility.GetAccessKeyRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='access_key_id', full_name='yandex.cloud.iam.v1.awscompatibility.GetAccessKeyRequest.access_key_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=327,
-  serialized_end=385,
-)
-
-
-_LISTACCESSKEYSREQUEST = _descriptor.Descriptor(
-  name='ListAccessKeysRequest',
-  full_name='yandex.cloud.iam.v1.awscompatibility.ListAccessKeysRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='service_account_id', full_name='yandex.cloud.iam.v1.awscompatibility.ListAccessKeysRequest.service_account_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.iam.v1.awscompatibility.ListAccessKeysRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.iam.v1.awscompatibility.ListAccessKeysRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=2000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=387,
-  serialized_end=511,
-)
-
-
-_LISTACCESSKEYSRESPONSE = _descriptor.Descriptor(
-  name='ListAccessKeysResponse',
-  full_name='yandex.cloud.iam.v1.awscompatibility.ListAccessKeysResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='access_keys', full_name='yandex.cloud.iam.v1.awscompatibility.ListAccessKeysResponse.access_keys', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.iam.v1.awscompatibility.ListAccessKeysResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=513,
-  serialized_end=632,
-)
-
-
-_CREATEACCESSKEYREQUEST = _descriptor.Descriptor(
-  name='CreateAccessKeyRequest',
-  full_name='yandex.cloud.iam.v1.awscompatibility.CreateAccessKeyRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='service_account_id', full_name='yandex.cloud.iam.v1.awscompatibility.CreateAccessKeyRequest.service_account_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='yandex.cloud.iam.v1.awscompatibility.CreateAccessKeyRequest.description', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=634,
-  serialized_end=728,
-)
-
-
-_CREATEACCESSKEYRESPONSE = _descriptor.Descriptor(
-  name='CreateAccessKeyResponse',
-  full_name='yandex.cloud.iam.v1.awscompatibility.CreateAccessKeyResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='access_key', full_name='yandex.cloud.iam.v1.awscompatibility.CreateAccessKeyResponse.access_key', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='secret', full_name='yandex.cloud.iam.v1.awscompatibility.CreateAccessKeyResponse.secret', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=730,
-  serialized_end=840,
-)
-
-
-_UPDATEACCESSKEYREQUEST = _descriptor.Descriptor(
-  name='UpdateAccessKeyRequest',
-  full_name='yandex.cloud.iam.v1.awscompatibility.UpdateAccessKeyRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='access_key_id', full_name='yandex.cloud.iam.v1.awscompatibility.UpdateAccessKeyRequest.access_key_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='update_mask', full_name='yandex.cloud.iam.v1.awscompatibility.UpdateAccessKeyRequest.update_mask', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='yandex.cloud.iam.v1.awscompatibility.UpdateAccessKeyRequest.description', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=843,
-  serialized_end=985,
-)
-
-
-_UPDATEACCESSKEYMETADATA = _descriptor.Descriptor(
-  name='UpdateAccessKeyMetadata',
-  full_name='yandex.cloud.iam.v1.awscompatibility.UpdateAccessKeyMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='access_key_id', full_name='yandex.cloud.iam.v1.awscompatibility.UpdateAccessKeyMetadata.access_key_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=987,
-  serialized_end=1035,
-)
-
-
-_DELETEACCESSKEYREQUEST = _descriptor.Descriptor(
-  name='DeleteAccessKeyRequest',
-  full_name='yandex.cloud.iam.v1.awscompatibility.DeleteAccessKeyRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='access_key_id', full_name='yandex.cloud.iam.v1.awscompatibility.DeleteAccessKeyRequest.access_key_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1037,
-  serialized_end=1098,
-)
-
-
-_DELETEACCESSKEYMETADATA = _descriptor.Descriptor(
-  name='DeleteAccessKeyMetadata',
-  full_name='yandex.cloud.iam.v1.awscompatibility.DeleteAccessKeyMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='access_key_id', full_name='yandex.cloud.iam.v1.awscompatibility.DeleteAccessKeyMetadata.access_key_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1100,
-  serialized_end=1148,
-)
-
-
-_LISTACCESSKEYOPERATIONSREQUEST = _descriptor.Descriptor(
-  name='ListAccessKeyOperationsRequest',
-  full_name='yandex.cloud.iam.v1.awscompatibility.ListAccessKeyOperationsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='access_key_id', full_name='yandex.cloud.iam.v1.awscompatibility.ListAccessKeyOperationsRequest.access_key_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.iam.v1.awscompatibility.ListAccessKeyOperationsRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\0060-1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.iam.v1.awscompatibility.ListAccessKeyOperationsRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=2000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1151,
-  serialized_end=1283,
-)
-
-
-_LISTACCESSKEYOPERATIONSRESPONSE = _descriptor.Descriptor(
-  name='ListAccessKeyOperationsResponse',
-  full_name='yandex.cloud.iam.v1.awscompatibility.ListAccessKeyOperationsResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='operations', full_name='yandex.cloud.iam.v1.awscompatibility.ListAccessKeyOperationsResponse.operations', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.iam.v1.awscompatibility.ListAccessKeyOperationsResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1285,
-  serialized_end=1398,
-)
-
-_LISTACCESSKEYSRESPONSE.fields_by_name['access_keys'].message_type = yandex_dot_cloud_dot_iam_dot_v1_dot_awscompatibility_dot_access__key__pb2._ACCESSKEY
-_CREATEACCESSKEYRESPONSE.fields_by_name['access_key'].message_type = yandex_dot_cloud_dot_iam_dot_v1_dot_awscompatibility_dot_access__key__pb2._ACCESSKEY
-_UPDATEACCESSKEYREQUEST.fields_by_name['update_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
-_LISTACCESSKEYOPERATIONSRESPONSE.fields_by_name['operations'].message_type = yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION
-DESCRIPTOR.message_types_by_name['GetAccessKeyRequest'] = _GETACCESSKEYREQUEST
-DESCRIPTOR.message_types_by_name['ListAccessKeysRequest'] = _LISTACCESSKEYSREQUEST
-DESCRIPTOR.message_types_by_name['ListAccessKeysResponse'] = _LISTACCESSKEYSRESPONSE
-DESCRIPTOR.message_types_by_name['CreateAccessKeyRequest'] = _CREATEACCESSKEYREQUEST
-DESCRIPTOR.message_types_by_name['CreateAccessKeyResponse'] = _CREATEACCESSKEYRESPONSE
-DESCRIPTOR.message_types_by_name['UpdateAccessKeyRequest'] = _UPDATEACCESSKEYREQUEST
-DESCRIPTOR.message_types_by_name['UpdateAccessKeyMetadata'] = _UPDATEACCESSKEYMETADATA
-DESCRIPTOR.message_types_by_name['DeleteAccessKeyRequest'] = _DELETEACCESSKEYREQUEST
-DESCRIPTOR.message_types_by_name['DeleteAccessKeyMetadata'] = _DELETEACCESSKEYMETADATA
-DESCRIPTOR.message_types_by_name['ListAccessKeyOperationsRequest'] = _LISTACCESSKEYOPERATIONSREQUEST
-DESCRIPTOR.message_types_by_name['ListAccessKeyOperationsResponse'] = _LISTACCESSKEYOPERATIONSRESPONSE
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-GetAccessKeyRequest = _reflection.GeneratedProtocolMessageType('GetAccessKeyRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETACCESSKEYREQUEST,
-  '__module__' : 'yandex.cloud.iam.v1.awscompatibility.access_key_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.iam.v1.awscompatibility.GetAccessKeyRequest)
-  })
-_sym_db.RegisterMessage(GetAccessKeyRequest)
-
-ListAccessKeysRequest = _reflection.GeneratedProtocolMessageType('ListAccessKeysRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTACCESSKEYSREQUEST,
-  '__module__' : 'yandex.cloud.iam.v1.awscompatibility.access_key_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.iam.v1.awscompatibility.ListAccessKeysRequest)
-  })
-_sym_db.RegisterMessage(ListAccessKeysRequest)
-
-ListAccessKeysResponse = _reflection.GeneratedProtocolMessageType('ListAccessKeysResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTACCESSKEYSRESPONSE,
-  '__module__' : 'yandex.cloud.iam.v1.awscompatibility.access_key_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.iam.v1.awscompatibility.ListAccessKeysResponse)
-  })
-_sym_db.RegisterMessage(ListAccessKeysResponse)
-
-CreateAccessKeyRequest = _reflection.GeneratedProtocolMessageType('CreateAccessKeyRequest', (_message.Message,), {
-  'DESCRIPTOR' : _CREATEACCESSKEYREQUEST,
-  '__module__' : 'yandex.cloud.iam.v1.awscompatibility.access_key_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.iam.v1.awscompatibility.CreateAccessKeyRequest)
-  })
-_sym_db.RegisterMessage(CreateAccessKeyRequest)
-
-CreateAccessKeyResponse = _reflection.GeneratedProtocolMessageType('CreateAccessKeyResponse', (_message.Message,), {
-  'DESCRIPTOR' : _CREATEACCESSKEYRESPONSE,
-  '__module__' : 'yandex.cloud.iam.v1.awscompatibility.access_key_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.iam.v1.awscompatibility.CreateAccessKeyResponse)
-  })
-_sym_db.RegisterMessage(CreateAccessKeyResponse)
-
-UpdateAccessKeyRequest = _reflection.GeneratedProtocolMessageType('UpdateAccessKeyRequest', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATEACCESSKEYREQUEST,
-  '__module__' : 'yandex.cloud.iam.v1.awscompatibility.access_key_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.iam.v1.awscompatibility.UpdateAccessKeyRequest)
-  })
-_sym_db.RegisterMessage(UpdateAccessKeyRequest)
-
-UpdateAccessKeyMetadata = _reflection.GeneratedProtocolMessageType('UpdateAccessKeyMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATEACCESSKEYMETADATA,
-  '__module__' : 'yandex.cloud.iam.v1.awscompatibility.access_key_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.iam.v1.awscompatibility.UpdateAccessKeyMetadata)
-  })
-_sym_db.RegisterMessage(UpdateAccessKeyMetadata)
-
-DeleteAccessKeyRequest = _reflection.GeneratedProtocolMessageType('DeleteAccessKeyRequest', (_message.Message,), {
-  'DESCRIPTOR' : _DELETEACCESSKEYREQUEST,
-  '__module__' : 'yandex.cloud.iam.v1.awscompatibility.access_key_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.iam.v1.awscompatibility.DeleteAccessKeyRequest)
-  })
-_sym_db.RegisterMessage(DeleteAccessKeyRequest)
-
-DeleteAccessKeyMetadata = _reflection.GeneratedProtocolMessageType('DeleteAccessKeyMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _DELETEACCESSKEYMETADATA,
-  '__module__' : 'yandex.cloud.iam.v1.awscompatibility.access_key_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.iam.v1.awscompatibility.DeleteAccessKeyMetadata)
-  })
-_sym_db.RegisterMessage(DeleteAccessKeyMetadata)
-
-ListAccessKeyOperationsRequest = _reflection.GeneratedProtocolMessageType('ListAccessKeyOperationsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTACCESSKEYOPERATIONSREQUEST,
-  '__module__' : 'yandex.cloud.iam.v1.awscompatibility.access_key_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.iam.v1.awscompatibility.ListAccessKeyOperationsRequest)
-  })
-_sym_db.RegisterMessage(ListAccessKeyOperationsRequest)
-
-ListAccessKeyOperationsResponse = _reflection.GeneratedProtocolMessageType('ListAccessKeyOperationsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTACCESSKEYOPERATIONSRESPONSE,
-  '__module__' : 'yandex.cloud.iam.v1.awscompatibility.access_key_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.iam.v1.awscompatibility.ListAccessKeyOperationsResponse)
-  })
-_sym_db.RegisterMessage(ListAccessKeyOperationsResponse)
-
-
-DESCRIPTOR._options = None
-_GETACCESSKEYREQUEST.fields_by_name['access_key_id']._options = None
-_LISTACCESSKEYSREQUEST.fields_by_name['service_account_id']._options = None
-_LISTACCESSKEYSREQUEST.fields_by_name['page_size']._options = None
-_LISTACCESSKEYSREQUEST.fields_by_name['page_token']._options = None
-_CREATEACCESSKEYREQUEST.fields_by_name['service_account_id']._options = None
-_CREATEACCESSKEYREQUEST.fields_by_name['description']._options = None
-_UPDATEACCESSKEYREQUEST.fields_by_name['access_key_id']._options = None
-_UPDATEACCESSKEYREQUEST.fields_by_name['description']._options = None
-_DELETEACCESSKEYREQUEST.fields_by_name['access_key_id']._options = None
-_LISTACCESSKEYOPERATIONSREQUEST.fields_by_name['access_key_id']._options = None
-_LISTACCESSKEYOPERATIONSREQUEST.fields_by_name['page_size']._options = None
-_LISTACCESSKEYOPERATIONSREQUEST.fields_by_name['page_token']._options = None
-
-_ACCESSKEYSERVICE = _descriptor.ServiceDescriptor(
-  name='AccessKeyService',
-  full_name='yandex.cloud.iam.v1.awscompatibility.AccessKeyService',
-  file=DESCRIPTOR,
-  index=0,
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_start=1401,
-  serialized_end=2628,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='List',
-    full_name='yandex.cloud.iam.v1.awscompatibility.AccessKeyService.List',
-    index=0,
-    containing_service=None,
-    input_type=_LISTACCESSKEYSREQUEST,
-    output_type=_LISTACCESSKEYSRESPONSE,
-    serialized_options=b'\202\323\344\223\002&\022$/iam/aws-compatibility/v1/accessKeys',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Get',
-    full_name='yandex.cloud.iam.v1.awscompatibility.AccessKeyService.Get',
-    index=1,
-    containing_service=None,
-    input_type=_GETACCESSKEYREQUEST,
-    output_type=yandex_dot_cloud_dot_iam_dot_v1_dot_awscompatibility_dot_access__key__pb2._ACCESSKEY,
-    serialized_options=b'\202\323\344\223\0026\0224/iam/aws-compatibility/v1/accessKeys/{access_key_id}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Create',
-    full_name='yandex.cloud.iam.v1.awscompatibility.AccessKeyService.Create',
-    index=2,
-    containing_service=None,
-    input_type=_CREATEACCESSKEYREQUEST,
-    output_type=_CREATEACCESSKEYRESPONSE,
-    serialized_options=b'\202\323\344\223\002)\"$/iam/aws-compatibility/v1/accessKeys:\001*',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Update',
-    full_name='yandex.cloud.iam.v1.awscompatibility.AccessKeyService.Update',
-    index=3,
-    containing_service=None,
-    input_type=_UPDATEACCESSKEYREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002924/iam/aws-compatibility/v1/accessKeys/{access_key_id}:\001*\262\322*$\n\027UpdateAccessKeyMetadata\022\tAccessKey',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Delete',
-    full_name='yandex.cloud.iam.v1.awscompatibility.AccessKeyService.Delete',
-    index=4,
-    containing_service=None,
-    input_type=_DELETEACCESSKEYREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\0026*4/iam/aws-compatibility/v1/accessKeys/{access_key_id}\262\322*0\n\027DeleteAccessKeyMetadata\022\025google.protobuf.Empty',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListOperations',
-    full_name='yandex.cloud.iam.v1.awscompatibility.AccessKeyService.ListOperations',
-    index=5,
-    containing_service=None,
-    input_type=_LISTACCESSKEYOPERATIONSREQUEST,
-    output_type=_LISTACCESSKEYOPERATIONSRESPONSE,
-    serialized_options=b'\202\323\344\223\002A\022?/iam/aws-compatibility/v1/accessKeys/{access_key_id}/operations',
-    create_key=_descriptor._internal_create_key,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_ACCESSKEYSERVICE)
-
-DESCRIPTOR.services_by_name['AccessKeyService'] = _ACCESSKEYSERVICE
-
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n(yandex.cloud.api.iam.v1.awscompatibilityZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1/awscompatibility;awscompatibility'
+  _GETACCESSKEYREQUEST.fields_by_name['access_key_id']._options = None
+  _GETACCESSKEYREQUEST.fields_by_name['access_key_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTACCESSKEYSREQUEST.fields_by_name['service_account_id']._options = None
+  _LISTACCESSKEYSREQUEST.fields_by_name['service_account_id']._serialized_options = b'\212\3101\004<=50'
+  _LISTACCESSKEYSREQUEST.fields_by_name['page_size']._options = None
+  _LISTACCESSKEYSREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
+  _LISTACCESSKEYSREQUEST.fields_by_name['page_token']._options = None
+  _LISTACCESSKEYSREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\006<=2000'
+  _CREATEACCESSKEYREQUEST.fields_by_name['service_account_id']._options = None
+  _CREATEACCESSKEYREQUEST.fields_by_name['service_account_id']._serialized_options = b'\212\3101\004<=50'
+  _CREATEACCESSKEYREQUEST.fields_by_name['description']._options = None
+  _CREATEACCESSKEYREQUEST.fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
+  _UPDATEACCESSKEYREQUEST.fields_by_name['access_key_id']._options = None
+  _UPDATEACCESSKEYREQUEST.fields_by_name['access_key_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _UPDATEACCESSKEYREQUEST.fields_by_name['description']._options = None
+  _UPDATEACCESSKEYREQUEST.fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
+  _DELETEACCESSKEYREQUEST.fields_by_name['access_key_id']._options = None
+  _DELETEACCESSKEYREQUEST.fields_by_name['access_key_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTACCESSKEYOPERATIONSREQUEST.fields_by_name['access_key_id']._options = None
+  _LISTACCESSKEYOPERATIONSREQUEST.fields_by_name['access_key_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTACCESSKEYOPERATIONSREQUEST.fields_by_name['page_size']._options = None
+  _LISTACCESSKEYOPERATIONSREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\0060-1000'
+  _LISTACCESSKEYOPERATIONSREQUEST.fields_by_name['page_token']._options = None
+  _LISTACCESSKEYOPERATIONSREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\006<=2000'
+  _ACCESSKEYSERVICE.methods_by_name['List']._options = None
+  _ACCESSKEYSERVICE.methods_by_name['List']._serialized_options = b'\202\323\344\223\002&\022$/iam/aws-compatibility/v1/accessKeys'
+  _ACCESSKEYSERVICE.methods_by_name['Get']._options = None
+  _ACCESSKEYSERVICE.methods_by_name['Get']._serialized_options = b'\202\323\344\223\0026\0224/iam/aws-compatibility/v1/accessKeys/{access_key_id}'
+  _ACCESSKEYSERVICE.methods_by_name['Create']._options = None
+  _ACCESSKEYSERVICE.methods_by_name['Create']._serialized_options = b'\202\323\344\223\002)\"$/iam/aws-compatibility/v1/accessKeys:\001*'
+  _ACCESSKEYSERVICE.methods_by_name['Update']._options = None
+  _ACCESSKEYSERVICE.methods_by_name['Update']._serialized_options = b'\262\322*$\n\027UpdateAccessKeyMetadata\022\tAccessKey\202\323\344\223\002924/iam/aws-compatibility/v1/accessKeys/{access_key_id}:\001*'
+  _ACCESSKEYSERVICE.methods_by_name['Delete']._options = None
+  _ACCESSKEYSERVICE.methods_by_name['Delete']._serialized_options = b'\262\322*0\n\027DeleteAccessKeyMetadata\022\025google.protobuf.Empty\202\323\344\223\0026*4/iam/aws-compatibility/v1/accessKeys/{access_key_id}'
+  _ACCESSKEYSERVICE.methods_by_name['ListOperations']._options = None
+  _ACCESSKEYSERVICE.methods_by_name['ListOperations']._serialized_options = b'\202\323\344\223\002A\022?/iam/aws-compatibility/v1/accessKeys/{access_key_id}/operations'
+  _globals['_GETACCESSKEYREQUEST']._serialized_start=327
+  _globals['_GETACCESSKEYREQUEST']._serialized_end=385
+  _globals['_LISTACCESSKEYSREQUEST']._serialized_start=387
+  _globals['_LISTACCESSKEYSREQUEST']._serialized_end=511
+  _globals['_LISTACCESSKEYSRESPONSE']._serialized_start=513
+  _globals['_LISTACCESSKEYSRESPONSE']._serialized_end=632
+  _globals['_CREATEACCESSKEYREQUEST']._serialized_start=634
+  _globals['_CREATEACCESSKEYREQUEST']._serialized_end=728
+  _globals['_CREATEACCESSKEYRESPONSE']._serialized_start=730
+  _globals['_CREATEACCESSKEYRESPONSE']._serialized_end=840
+  _globals['_UPDATEACCESSKEYREQUEST']._serialized_start=843
+  _globals['_UPDATEACCESSKEYREQUEST']._serialized_end=985
+  _globals['_UPDATEACCESSKEYMETADATA']._serialized_start=987
+  _globals['_UPDATEACCESSKEYMETADATA']._serialized_end=1035
+  _globals['_DELETEACCESSKEYREQUEST']._serialized_start=1037
+  _globals['_DELETEACCESSKEYREQUEST']._serialized_end=1098
+  _globals['_DELETEACCESSKEYMETADATA']._serialized_start=1100
+  _globals['_DELETEACCESSKEYMETADATA']._serialized_end=1148
+  _globals['_LISTACCESSKEYOPERATIONSREQUEST']._serialized_start=1151
+  _globals['_LISTACCESSKEYOPERATIONSREQUEST']._serialized_end=1283
+  _globals['_LISTACCESSKEYOPERATIONSRESPONSE']._serialized_start=1285
+  _globals['_LISTACCESSKEYOPERATIONSRESPONSE']._serialized_end=1398
+  _globals['_ACCESSKEYSERVICE']._serialized_start=1401
+  _globals['_ACCESSKEYSERVICE']._serialized_end=2628
 # @@protoc_insertion_point(module_scope)

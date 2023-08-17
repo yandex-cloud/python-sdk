@@ -3,9 +3,9 @@
 # source: yandex/cloud/cdn/v1/origin_group_service.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -20,549 +20,69 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/cdn/v1/origin_group_service.proto',
-  package='yandex.cloud.cdn.v1',
-  syntax='proto3',
-  serialized_options=b'\n\027yandex.cloud.api.cdn.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/cdn/v1;cdn',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n.yandex/cloud/cdn/v1/origin_group_service.proto\x12\x13yandex.cloud.cdn.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a yandex/cloud/api/operation.proto\x1a yandex/cloud/cdn/v1/origin.proto\x1a&yandex/cloud/cdn/v1/origin_group.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"Y\n\x15GetOriginGroupRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1f\n\x0forigin_group_id\x18\x02 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\"x\n\x17ListOriginGroupsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"l\n\x18ListOriginGroupsResponse\x12\x37\n\rorigin_groups\x18\x01 \x03(\x0b\x32 .yandex.cloud.cdn.v1.OriginGroup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xab\x01\n\x18\x43reateOriginGroupRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x0c\n\x04name\x18\x02 \x01(\t\x12,\n\x08use_next\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x32\n\x07origins\x18\x04 \x03(\x0b\x32!.yandex.cloud.cdn.v1.OriginParams\"<\n\x19\x43reateOriginGroupMetadata\x12\x1f\n\x0forigin_group_id\x18\x01 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\"\xf0\x01\n\x18UpdateOriginGroupRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1f\n\x0forigin_group_id\x18\x02 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\x12\x30\n\ngroup_name\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12,\n\x08use_next\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x32\n\x07origins\x18\x05 \x03(\x0b\x32!.yandex.cloud.cdn.v1.OriginParams\"<\n\x19UpdateOriginGroupMetadata\x12\x1f\n\x0forigin_group_id\x18\x01 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\"\\\n\x18\x44\x65leteOriginGroupRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1f\n\x0forigin_group_id\x18\x02 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\"<\n\x19\x44\x65leteOriginGroupMetadata\x12\x1f\n\x0forigin_group_id\x18\x01 \x01(\x03\x42\x06\xfa\xc7\x31\x02>02\xb5\x06\n\x12OriginGroupService\x12\x83\x01\n\x03Get\x12*.yandex.cloud.cdn.v1.GetOriginGroupRequest\x1a .yandex.cloud.cdn.v1.OriginGroup\".\x82\xd3\xe4\x93\x02(\x12&/cdn/v1/originGroups/{origin_group_id}\x12\x81\x01\n\x04List\x12,.yandex.cloud.cdn.v1.ListOriginGroupsRequest\x1a-.yandex.cloud.cdn.v1.ListOriginGroupsResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/cdn/v1/originGroups\x12\xa7\x01\n\x06\x43reate\x12-.yandex.cloud.cdn.v1.CreateOriginGroupRequest\x1a!.yandex.cloud.operation.Operation\"K\x82\xd3\xe4\x93\x02\x19\"\x14/cdn/v1/originGroups:\x01*\xb2\xd2*(\n\x19\x43reateOriginGroupMetadata\x12\x0bOriginGroup\x12\xa7\x01\n\x06Update\x12-.yandex.cloud.cdn.v1.UpdateOriginGroupRequest\x1a!.yandex.cloud.operation.Operation\"K\x82\xd3\xe4\x93\x02\x19\x32\x14/cdn/v1/originGroups:\x01*\xb2\xd2*(\n\x19UpdateOriginGroupMetadata\x12\x0bOriginGroup\x12\xc0\x01\n\x06\x44\x65lete\x12-.yandex.cloud.cdn.v1.DeleteOriginGroupRequest\x1a!.yandex.cloud.operation.Operation\"d\x82\xd3\xe4\x93\x02(*&/cdn/v1/originGroups/{origin_group_id}\xb2\xd2*2\n\x19\x44\x65leteOriginGroupMetadata\x12\x15google.protobuf.EmptyBV\n\x17yandex.cloud.api.cdn.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/cdn/v1;cdnb\x06proto3'
-  ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_cdn_dot_v1_dot_origin__pb2.DESCRIPTOR,yandex_dot_cloud_dot_cdn_dot_v1_dot_origin__group__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n.yandex/cloud/cdn/v1/origin_group_service.proto\x12\x13yandex.cloud.cdn.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a yandex/cloud/api/operation.proto\x1a yandex/cloud/cdn/v1/origin.proto\x1a&yandex/cloud/cdn/v1/origin_group.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"Y\n\x15GetOriginGroupRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1f\n\x0forigin_group_id\x18\x02 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\"x\n\x17ListOriginGroupsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"l\n\x18ListOriginGroupsResponse\x12\x37\n\rorigin_groups\x18\x01 \x03(\x0b\x32 .yandex.cloud.cdn.v1.OriginGroup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xab\x01\n\x18\x43reateOriginGroupRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x0c\n\x04name\x18\x02 \x01(\t\x12,\n\x08use_next\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x32\n\x07origins\x18\x04 \x03(\x0b\x32!.yandex.cloud.cdn.v1.OriginParams\"<\n\x19\x43reateOriginGroupMetadata\x12\x1f\n\x0forigin_group_id\x18\x01 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\"\xf0\x01\n\x18UpdateOriginGroupRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1f\n\x0forigin_group_id\x18\x02 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\x12\x30\n\ngroup_name\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12,\n\x08use_next\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x32\n\x07origins\x18\x05 \x03(\x0b\x32!.yandex.cloud.cdn.v1.OriginParams\"<\n\x19UpdateOriginGroupMetadata\x12\x1f\n\x0forigin_group_id\x18\x01 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\"\\\n\x18\x44\x65leteOriginGroupRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1f\n\x0forigin_group_id\x18\x02 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\"<\n\x19\x44\x65leteOriginGroupMetadata\x12\x1f\n\x0forigin_group_id\x18\x01 \x01(\x03\x42\x06\xfa\xc7\x31\x02>02\xb5\x06\n\x12OriginGroupService\x12\x83\x01\n\x03Get\x12*.yandex.cloud.cdn.v1.GetOriginGroupRequest\x1a .yandex.cloud.cdn.v1.OriginGroup\".\x82\xd3\xe4\x93\x02(\x12&/cdn/v1/originGroups/{origin_group_id}\x12\x81\x01\n\x04List\x12,.yandex.cloud.cdn.v1.ListOriginGroupsRequest\x1a-.yandex.cloud.cdn.v1.ListOriginGroupsResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/cdn/v1/originGroups\x12\xa7\x01\n\x06\x43reate\x12-.yandex.cloud.cdn.v1.CreateOriginGroupRequest\x1a!.yandex.cloud.operation.Operation\"K\xb2\xd2*(\n\x19\x43reateOriginGroupMetadata\x12\x0bOriginGroup\x82\xd3\xe4\x93\x02\x19\"\x14/cdn/v1/originGroups:\x01*\x12\xa7\x01\n\x06Update\x12-.yandex.cloud.cdn.v1.UpdateOriginGroupRequest\x1a!.yandex.cloud.operation.Operation\"K\xb2\xd2*(\n\x19UpdateOriginGroupMetadata\x12\x0bOriginGroup\x82\xd3\xe4\x93\x02\x19\x32\x14/cdn/v1/originGroups:\x01*\x12\xc0\x01\n\x06\x44\x65lete\x12-.yandex.cloud.cdn.v1.DeleteOriginGroupRequest\x1a!.yandex.cloud.operation.Operation\"d\xb2\xd2*2\n\x19\x44\x65leteOriginGroupMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02(*&/cdn/v1/originGroups/{origin_group_id}BV\n\x17yandex.cloud.api.cdn.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/cdn/v1;cdnb\x06proto3')
 
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.cdn.v1.origin_group_service_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-
-_GETORIGINGROUPREQUEST = _descriptor.Descriptor(
-  name='GetOriginGroupRequest',
-  full_name='yandex.cloud.cdn.v1.GetOriginGroupRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.cdn.v1.GetOriginGroupRequest.folder_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='origin_group_id', full_name='yandex.cloud.cdn.v1.GetOriginGroupRequest.origin_group_id', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\002>0', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=312,
-  serialized_end=401,
-)
-
-
-_LISTORIGINGROUPSREQUEST = _descriptor.Descriptor(
-  name='ListOriginGroupsRequest',
-  full_name='yandex.cloud.cdn.v1.ListOriginGroupsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.cdn.v1.ListOriginGroupsRequest.folder_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.cdn.v1.ListOriginGroupsRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.cdn.v1.ListOriginGroupsRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=403,
-  serialized_end=523,
-)
-
-
-_LISTORIGINGROUPSRESPONSE = _descriptor.Descriptor(
-  name='ListOriginGroupsResponse',
-  full_name='yandex.cloud.cdn.v1.ListOriginGroupsResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='origin_groups', full_name='yandex.cloud.cdn.v1.ListOriginGroupsResponse.origin_groups', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.cdn.v1.ListOriginGroupsResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=525,
-  serialized_end=633,
-)
-
-
-_CREATEORIGINGROUPREQUEST = _descriptor.Descriptor(
-  name='CreateOriginGroupRequest',
-  full_name='yandex.cloud.cdn.v1.CreateOriginGroupRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.cdn.v1.CreateOriginGroupRequest.folder_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.cdn.v1.CreateOriginGroupRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='use_next', full_name='yandex.cloud.cdn.v1.CreateOriginGroupRequest.use_next', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='origins', full_name='yandex.cloud.cdn.v1.CreateOriginGroupRequest.origins', index=3,
-      number=4, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=636,
-  serialized_end=807,
-)
-
-
-_CREATEORIGINGROUPMETADATA = _descriptor.Descriptor(
-  name='CreateOriginGroupMetadata',
-  full_name='yandex.cloud.cdn.v1.CreateOriginGroupMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='origin_group_id', full_name='yandex.cloud.cdn.v1.CreateOriginGroupMetadata.origin_group_id', index=0,
-      number=1, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\002>0', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=809,
-  serialized_end=869,
-)
-
-
-_UPDATEORIGINGROUPREQUEST = _descriptor.Descriptor(
-  name='UpdateOriginGroupRequest',
-  full_name='yandex.cloud.cdn.v1.UpdateOriginGroupRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.cdn.v1.UpdateOriginGroupRequest.folder_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='origin_group_id', full_name='yandex.cloud.cdn.v1.UpdateOriginGroupRequest.origin_group_id', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\002>0', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='group_name', full_name='yandex.cloud.cdn.v1.UpdateOriginGroupRequest.group_name', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='use_next', full_name='yandex.cloud.cdn.v1.UpdateOriginGroupRequest.use_next', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='origins', full_name='yandex.cloud.cdn.v1.UpdateOriginGroupRequest.origins', index=4,
-      number=5, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=872,
-  serialized_end=1112,
-)
-
-
-_UPDATEORIGINGROUPMETADATA = _descriptor.Descriptor(
-  name='UpdateOriginGroupMetadata',
-  full_name='yandex.cloud.cdn.v1.UpdateOriginGroupMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='origin_group_id', full_name='yandex.cloud.cdn.v1.UpdateOriginGroupMetadata.origin_group_id', index=0,
-      number=1, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\002>0', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1114,
-  serialized_end=1174,
-)
-
-
-_DELETEORIGINGROUPREQUEST = _descriptor.Descriptor(
-  name='DeleteOriginGroupRequest',
-  full_name='yandex.cloud.cdn.v1.DeleteOriginGroupRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.cdn.v1.DeleteOriginGroupRequest.folder_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='origin_group_id', full_name='yandex.cloud.cdn.v1.DeleteOriginGroupRequest.origin_group_id', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\002>0', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1176,
-  serialized_end=1268,
-)
-
-
-_DELETEORIGINGROUPMETADATA = _descriptor.Descriptor(
-  name='DeleteOriginGroupMetadata',
-  full_name='yandex.cloud.cdn.v1.DeleteOriginGroupMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='origin_group_id', full_name='yandex.cloud.cdn.v1.DeleteOriginGroupMetadata.origin_group_id', index=0,
-      number=1, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\002>0', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1270,
-  serialized_end=1330,
-)
-
-_LISTORIGINGROUPSRESPONSE.fields_by_name['origin_groups'].message_type = yandex_dot_cloud_dot_cdn_dot_v1_dot_origin__group__pb2._ORIGINGROUP
-_CREATEORIGINGROUPREQUEST.fields_by_name['use_next'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
-_CREATEORIGINGROUPREQUEST.fields_by_name['origins'].message_type = yandex_dot_cloud_dot_cdn_dot_v1_dot_origin__pb2._ORIGINPARAMS
-_UPDATEORIGINGROUPREQUEST.fields_by_name['group_name'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
-_UPDATEORIGINGROUPREQUEST.fields_by_name['use_next'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
-_UPDATEORIGINGROUPREQUEST.fields_by_name['origins'].message_type = yandex_dot_cloud_dot_cdn_dot_v1_dot_origin__pb2._ORIGINPARAMS
-DESCRIPTOR.message_types_by_name['GetOriginGroupRequest'] = _GETORIGINGROUPREQUEST
-DESCRIPTOR.message_types_by_name['ListOriginGroupsRequest'] = _LISTORIGINGROUPSREQUEST
-DESCRIPTOR.message_types_by_name['ListOriginGroupsResponse'] = _LISTORIGINGROUPSRESPONSE
-DESCRIPTOR.message_types_by_name['CreateOriginGroupRequest'] = _CREATEORIGINGROUPREQUEST
-DESCRIPTOR.message_types_by_name['CreateOriginGroupMetadata'] = _CREATEORIGINGROUPMETADATA
-DESCRIPTOR.message_types_by_name['UpdateOriginGroupRequest'] = _UPDATEORIGINGROUPREQUEST
-DESCRIPTOR.message_types_by_name['UpdateOriginGroupMetadata'] = _UPDATEORIGINGROUPMETADATA
-DESCRIPTOR.message_types_by_name['DeleteOriginGroupRequest'] = _DELETEORIGINGROUPREQUEST
-DESCRIPTOR.message_types_by_name['DeleteOriginGroupMetadata'] = _DELETEORIGINGROUPMETADATA
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-GetOriginGroupRequest = _reflection.GeneratedProtocolMessageType('GetOriginGroupRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETORIGINGROUPREQUEST,
-  '__module__' : 'yandex.cloud.cdn.v1.origin_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.cdn.v1.GetOriginGroupRequest)
-  })
-_sym_db.RegisterMessage(GetOriginGroupRequest)
-
-ListOriginGroupsRequest = _reflection.GeneratedProtocolMessageType('ListOriginGroupsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTORIGINGROUPSREQUEST,
-  '__module__' : 'yandex.cloud.cdn.v1.origin_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.cdn.v1.ListOriginGroupsRequest)
-  })
-_sym_db.RegisterMessage(ListOriginGroupsRequest)
-
-ListOriginGroupsResponse = _reflection.GeneratedProtocolMessageType('ListOriginGroupsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTORIGINGROUPSRESPONSE,
-  '__module__' : 'yandex.cloud.cdn.v1.origin_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.cdn.v1.ListOriginGroupsResponse)
-  })
-_sym_db.RegisterMessage(ListOriginGroupsResponse)
-
-CreateOriginGroupRequest = _reflection.GeneratedProtocolMessageType('CreateOriginGroupRequest', (_message.Message,), {
-  'DESCRIPTOR' : _CREATEORIGINGROUPREQUEST,
-  '__module__' : 'yandex.cloud.cdn.v1.origin_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.cdn.v1.CreateOriginGroupRequest)
-  })
-_sym_db.RegisterMessage(CreateOriginGroupRequest)
-
-CreateOriginGroupMetadata = _reflection.GeneratedProtocolMessageType('CreateOriginGroupMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _CREATEORIGINGROUPMETADATA,
-  '__module__' : 'yandex.cloud.cdn.v1.origin_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.cdn.v1.CreateOriginGroupMetadata)
-  })
-_sym_db.RegisterMessage(CreateOriginGroupMetadata)
-
-UpdateOriginGroupRequest = _reflection.GeneratedProtocolMessageType('UpdateOriginGroupRequest', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATEORIGINGROUPREQUEST,
-  '__module__' : 'yandex.cloud.cdn.v1.origin_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.cdn.v1.UpdateOriginGroupRequest)
-  })
-_sym_db.RegisterMessage(UpdateOriginGroupRequest)
-
-UpdateOriginGroupMetadata = _reflection.GeneratedProtocolMessageType('UpdateOriginGroupMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATEORIGINGROUPMETADATA,
-  '__module__' : 'yandex.cloud.cdn.v1.origin_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.cdn.v1.UpdateOriginGroupMetadata)
-  })
-_sym_db.RegisterMessage(UpdateOriginGroupMetadata)
-
-DeleteOriginGroupRequest = _reflection.GeneratedProtocolMessageType('DeleteOriginGroupRequest', (_message.Message,), {
-  'DESCRIPTOR' : _DELETEORIGINGROUPREQUEST,
-  '__module__' : 'yandex.cloud.cdn.v1.origin_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.cdn.v1.DeleteOriginGroupRequest)
-  })
-_sym_db.RegisterMessage(DeleteOriginGroupRequest)
-
-DeleteOriginGroupMetadata = _reflection.GeneratedProtocolMessageType('DeleteOriginGroupMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _DELETEORIGINGROUPMETADATA,
-  '__module__' : 'yandex.cloud.cdn.v1.origin_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.cdn.v1.DeleteOriginGroupMetadata)
-  })
-_sym_db.RegisterMessage(DeleteOriginGroupMetadata)
-
-
-DESCRIPTOR._options = None
-_GETORIGINGROUPREQUEST.fields_by_name['folder_id']._options = None
-_GETORIGINGROUPREQUEST.fields_by_name['origin_group_id']._options = None
-_LISTORIGINGROUPSREQUEST.fields_by_name['folder_id']._options = None
-_LISTORIGINGROUPSREQUEST.fields_by_name['page_size']._options = None
-_LISTORIGINGROUPSREQUEST.fields_by_name['page_token']._options = None
-_CREATEORIGINGROUPREQUEST.fields_by_name['folder_id']._options = None
-_CREATEORIGINGROUPMETADATA.fields_by_name['origin_group_id']._options = None
-_UPDATEORIGINGROUPREQUEST.fields_by_name['folder_id']._options = None
-_UPDATEORIGINGROUPREQUEST.fields_by_name['origin_group_id']._options = None
-_UPDATEORIGINGROUPMETADATA.fields_by_name['origin_group_id']._options = None
-_DELETEORIGINGROUPREQUEST.fields_by_name['folder_id']._options = None
-_DELETEORIGINGROUPREQUEST.fields_by_name['origin_group_id']._options = None
-_DELETEORIGINGROUPMETADATA.fields_by_name['origin_group_id']._options = None
-
-_ORIGINGROUPSERVICE = _descriptor.ServiceDescriptor(
-  name='OriginGroupService',
-  full_name='yandex.cloud.cdn.v1.OriginGroupService',
-  file=DESCRIPTOR,
-  index=0,
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_start=1333,
-  serialized_end=2154,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='Get',
-    full_name='yandex.cloud.cdn.v1.OriginGroupService.Get',
-    index=0,
-    containing_service=None,
-    input_type=_GETORIGINGROUPREQUEST,
-    output_type=yandex_dot_cloud_dot_cdn_dot_v1_dot_origin__group__pb2._ORIGINGROUP,
-    serialized_options=b'\202\323\344\223\002(\022&/cdn/v1/originGroups/{origin_group_id}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='List',
-    full_name='yandex.cloud.cdn.v1.OriginGroupService.List',
-    index=1,
-    containing_service=None,
-    input_type=_LISTORIGINGROUPSREQUEST,
-    output_type=_LISTORIGINGROUPSRESPONSE,
-    serialized_options=b'\202\323\344\223\002\026\022\024/cdn/v1/originGroups',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Create',
-    full_name='yandex.cloud.cdn.v1.OriginGroupService.Create',
-    index=2,
-    containing_service=None,
-    input_type=_CREATEORIGINGROUPREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002\031\"\024/cdn/v1/originGroups:\001*\262\322*(\n\031CreateOriginGroupMetadata\022\013OriginGroup',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Update',
-    full_name='yandex.cloud.cdn.v1.OriginGroupService.Update',
-    index=3,
-    containing_service=None,
-    input_type=_UPDATEORIGINGROUPREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002\0312\024/cdn/v1/originGroups:\001*\262\322*(\n\031UpdateOriginGroupMetadata\022\013OriginGroup',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Delete',
-    full_name='yandex.cloud.cdn.v1.OriginGroupService.Delete',
-    index=4,
-    containing_service=None,
-    input_type=_DELETEORIGINGROUPREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002(*&/cdn/v1/originGroups/{origin_group_id}\262\322*2\n\031DeleteOriginGroupMetadata\022\025google.protobuf.Empty',
-    create_key=_descriptor._internal_create_key,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_ORIGINGROUPSERVICE)
-
-DESCRIPTOR.services_by_name['OriginGroupService'] = _ORIGINGROUPSERVICE
-
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n\027yandex.cloud.api.cdn.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/cdn/v1;cdn'
+  _GETORIGINGROUPREQUEST.fields_by_name['folder_id']._options = None
+  _GETORIGINGROUPREQUEST.fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _GETORIGINGROUPREQUEST.fields_by_name['origin_group_id']._options = None
+  _GETORIGINGROUPREQUEST.fields_by_name['origin_group_id']._serialized_options = b'\372\3071\002>0'
+  _LISTORIGINGROUPSREQUEST.fields_by_name['folder_id']._options = None
+  _LISTORIGINGROUPSREQUEST.fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTORIGINGROUPSREQUEST.fields_by_name['page_size']._options = None
+  _LISTORIGINGROUPSREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
+  _LISTORIGINGROUPSREQUEST.fields_by_name['page_token']._options = None
+  _LISTORIGINGROUPSREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
+  _CREATEORIGINGROUPREQUEST.fields_by_name['folder_id']._options = None
+  _CREATEORIGINGROUPREQUEST.fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _CREATEORIGINGROUPMETADATA.fields_by_name['origin_group_id']._options = None
+  _CREATEORIGINGROUPMETADATA.fields_by_name['origin_group_id']._serialized_options = b'\372\3071\002>0'
+  _UPDATEORIGINGROUPREQUEST.fields_by_name['folder_id']._options = None
+  _UPDATEORIGINGROUPREQUEST.fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _UPDATEORIGINGROUPREQUEST.fields_by_name['origin_group_id']._options = None
+  _UPDATEORIGINGROUPREQUEST.fields_by_name['origin_group_id']._serialized_options = b'\372\3071\002>0'
+  _UPDATEORIGINGROUPMETADATA.fields_by_name['origin_group_id']._options = None
+  _UPDATEORIGINGROUPMETADATA.fields_by_name['origin_group_id']._serialized_options = b'\372\3071\002>0'
+  _DELETEORIGINGROUPREQUEST.fields_by_name['folder_id']._options = None
+  _DELETEORIGINGROUPREQUEST.fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _DELETEORIGINGROUPREQUEST.fields_by_name['origin_group_id']._options = None
+  _DELETEORIGINGROUPREQUEST.fields_by_name['origin_group_id']._serialized_options = b'\372\3071\002>0'
+  _DELETEORIGINGROUPMETADATA.fields_by_name['origin_group_id']._options = None
+  _DELETEORIGINGROUPMETADATA.fields_by_name['origin_group_id']._serialized_options = b'\372\3071\002>0'
+  _ORIGINGROUPSERVICE.methods_by_name['Get']._options = None
+  _ORIGINGROUPSERVICE.methods_by_name['Get']._serialized_options = b'\202\323\344\223\002(\022&/cdn/v1/originGroups/{origin_group_id}'
+  _ORIGINGROUPSERVICE.methods_by_name['List']._options = None
+  _ORIGINGROUPSERVICE.methods_by_name['List']._serialized_options = b'\202\323\344\223\002\026\022\024/cdn/v1/originGroups'
+  _ORIGINGROUPSERVICE.methods_by_name['Create']._options = None
+  _ORIGINGROUPSERVICE.methods_by_name['Create']._serialized_options = b'\262\322*(\n\031CreateOriginGroupMetadata\022\013OriginGroup\202\323\344\223\002\031\"\024/cdn/v1/originGroups:\001*'
+  _ORIGINGROUPSERVICE.methods_by_name['Update']._options = None
+  _ORIGINGROUPSERVICE.methods_by_name['Update']._serialized_options = b'\262\322*(\n\031UpdateOriginGroupMetadata\022\013OriginGroup\202\323\344\223\002\0312\024/cdn/v1/originGroups:\001*'
+  _ORIGINGROUPSERVICE.methods_by_name['Delete']._options = None
+  _ORIGINGROUPSERVICE.methods_by_name['Delete']._serialized_options = b'\262\322*2\n\031DeleteOriginGroupMetadata\022\025google.protobuf.Empty\202\323\344\223\002(*&/cdn/v1/originGroups/{origin_group_id}'
+  _globals['_GETORIGINGROUPREQUEST']._serialized_start=312
+  _globals['_GETORIGINGROUPREQUEST']._serialized_end=401
+  _globals['_LISTORIGINGROUPSREQUEST']._serialized_start=403
+  _globals['_LISTORIGINGROUPSREQUEST']._serialized_end=523
+  _globals['_LISTORIGINGROUPSRESPONSE']._serialized_start=525
+  _globals['_LISTORIGINGROUPSRESPONSE']._serialized_end=633
+  _globals['_CREATEORIGINGROUPREQUEST']._serialized_start=636
+  _globals['_CREATEORIGINGROUPREQUEST']._serialized_end=807
+  _globals['_CREATEORIGINGROUPMETADATA']._serialized_start=809
+  _globals['_CREATEORIGINGROUPMETADATA']._serialized_end=869
+  _globals['_UPDATEORIGINGROUPREQUEST']._serialized_start=872
+  _globals['_UPDATEORIGINGROUPREQUEST']._serialized_end=1112
+  _globals['_UPDATEORIGINGROUPMETADATA']._serialized_start=1114
+  _globals['_UPDATEORIGINGROUPMETADATA']._serialized_end=1174
+  _globals['_DELETEORIGINGROUPREQUEST']._serialized_start=1176
+  _globals['_DELETEORIGINGROUPREQUEST']._serialized_end=1268
+  _globals['_DELETEORIGINGROUPMETADATA']._serialized_start=1270
+  _globals['_DELETEORIGINGROUPMETADATA']._serialized_end=1330
+  _globals['_ORIGINGROUPSERVICE']._serialized_start=1333
+  _globals['_ORIGINGROUPSERVICE']._serialized_end=2154
 # @@protoc_insertion_point(module_scope)

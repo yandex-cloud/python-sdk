@@ -3,9 +3,9 @@
 # source: yandex/cloud/containerregistry/v1/scan_policy.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -16,258 +16,27 @@ from google.protobuf import duration_pb2 as google_dot_protobuf_dot_duration__pb
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/containerregistry/v1/scan_policy.proto',
-  package='yandex.cloud.containerregistry.v1',
-  syntax='proto3',
-  serialized_options=b'\n%yandex.cloud.api.containerregistry.v1ZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/containerregistry/v1;containerregistry',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n3yandex/cloud/containerregistry/v1/scan_policy.proto\x12!yandex.cloud.containerregistry.v1\x1a\x1dyandex/cloud/validation.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xcf\x01\n\nScanPolicy\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x0bregistry_id\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12;\n\x05rules\x18\x05 \x01(\x0b\x32,.yandex.cloud.containerregistry.v1.ScanRules\x12.\n\ncreated_at\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x08\x64isabled\x18\x07 \x01(\x08\"\x95\x01\n\tScanRules\x12>\n\tpush_rule\x18\x01 \x01(\x0b\x32+.yandex.cloud.containerregistry.v1.PushRule\x12H\n\x0eschedule_rules\x18\x02 \x03(\x0b\x32\x30.yandex.cloud.containerregistry.v1.ScheduledRule\"\x86\x01\n\x08PushRule\x12h\n\x13repository_prefixes\x18\x01 \x03(\tBK\x82\xc8\x31\x02>0\xf2\xc7\x31\x41\\*|[a-z0-9]+(?:[._-][a-z0-9]+)*(/([a-z0-9]+(?:[._-][a-z0-9]+)*))*\x12\x10\n\x08\x64isabled\x18\x02 \x01(\x08\"\xc3\x01\n\rScheduledRule\x12h\n\x13repository_prefixes\x18\x01 \x03(\tBK\x82\xc8\x31\x02>0\xf2\xc7\x31\x41\\*|[a-z0-9]+(?:[._-][a-z0-9]+)*(/([a-z0-9]+(?:[._-][a-z0-9]+)*))*\x12\x36\n\rrescan_period\x18\x02 \x01(\x0b\x32\x19.google.protobuf.DurationB\x04\xe8\xc7\x31\x01\x12\x10\n\x08\x64isabled\x18\x03 \x01(\x08\x42\x80\x01\n%yandex.cloud.api.containerregistry.v1ZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/containerregistry/v1;containerregistryb\x06proto3'
-  ,
-  dependencies=[yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n3yandex/cloud/containerregistry/v1/scan_policy.proto\x12!yandex.cloud.containerregistry.v1\x1a\x1dyandex/cloud/validation.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xcf\x01\n\nScanPolicy\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x0bregistry_id\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12;\n\x05rules\x18\x05 \x01(\x0b\x32,.yandex.cloud.containerregistry.v1.ScanRules\x12.\n\ncreated_at\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x10\n\x08\x64isabled\x18\x07 \x01(\x08\"\x95\x01\n\tScanRules\x12>\n\tpush_rule\x18\x01 \x01(\x0b\x32+.yandex.cloud.containerregistry.v1.PushRule\x12H\n\x0eschedule_rules\x18\x02 \x03(\x0b\x32\x30.yandex.cloud.containerregistry.v1.ScheduledRule\"\x86\x01\n\x08PushRule\x12h\n\x13repository_prefixes\x18\x01 \x03(\tBK\xf2\xc7\x31\x41\\*|[a-z0-9]+(?:[._-][a-z0-9]+)*(/([a-z0-9]+(?:[._-][a-z0-9]+)*))*\x82\xc8\x31\x02>0\x12\x10\n\x08\x64isabled\x18\x02 \x01(\x08\"\xc3\x01\n\rScheduledRule\x12h\n\x13repository_prefixes\x18\x01 \x03(\tBK\xf2\xc7\x31\x41\\*|[a-z0-9]+(?:[._-][a-z0-9]+)*(/([a-z0-9]+(?:[._-][a-z0-9]+)*))*\x82\xc8\x31\x02>0\x12\x36\n\rrescan_period\x18\x02 \x01(\x0b\x32\x19.google.protobuf.DurationB\x04\xe8\xc7\x31\x01\x12\x10\n\x08\x64isabled\x18\x03 \x01(\x08\x42\x80\x01\n%yandex.cloud.api.containerregistry.v1ZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/containerregistry/v1;containerregistryb\x06proto3')
 
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.containerregistry.v1.scan_policy_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-
-_SCANPOLICY = _descriptor.Descriptor(
-  name='ScanPolicy',
-  full_name='yandex.cloud.containerregistry.v1.ScanPolicy',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='yandex.cloud.containerregistry.v1.ScanPolicy.id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='registry_id', full_name='yandex.cloud.containerregistry.v1.ScanPolicy.registry_id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.containerregistry.v1.ScanPolicy.name', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='yandex.cloud.containerregistry.v1.ScanPolicy.description', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='rules', full_name='yandex.cloud.containerregistry.v1.ScanPolicy.rules', index=4,
-      number=5, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='created_at', full_name='yandex.cloud.containerregistry.v1.ScanPolicy.created_at', index=5,
-      number=6, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='disabled', full_name='yandex.cloud.containerregistry.v1.ScanPolicy.disabled', index=6,
-      number=7, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=187,
-  serialized_end=394,
-)
-
-
-_SCANRULES = _descriptor.Descriptor(
-  name='ScanRules',
-  full_name='yandex.cloud.containerregistry.v1.ScanRules',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='push_rule', full_name='yandex.cloud.containerregistry.v1.ScanRules.push_rule', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='schedule_rules', full_name='yandex.cloud.containerregistry.v1.ScanRules.schedule_rules', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=397,
-  serialized_end=546,
-)
-
-
-_PUSHRULE = _descriptor.Descriptor(
-  name='PushRule',
-  full_name='yandex.cloud.containerregistry.v1.PushRule',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='repository_prefixes', full_name='yandex.cloud.containerregistry.v1.PushRule.repository_prefixes', index=0,
-      number=1, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\002>0\362\3071A\\*|[a-z0-9]+(?:[._-][a-z0-9]+)*(/([a-z0-9]+(?:[._-][a-z0-9]+)*))*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='disabled', full_name='yandex.cloud.containerregistry.v1.PushRule.disabled', index=1,
-      number=2, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=549,
-  serialized_end=683,
-)
-
-
-_SCHEDULEDRULE = _descriptor.Descriptor(
-  name='ScheduledRule',
-  full_name='yandex.cloud.containerregistry.v1.ScheduledRule',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='repository_prefixes', full_name='yandex.cloud.containerregistry.v1.ScheduledRule.repository_prefixes', index=0,
-      number=1, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\002>0\362\3071A\\*|[a-z0-9]+(?:[._-][a-z0-9]+)*(/([a-z0-9]+(?:[._-][a-z0-9]+)*))*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='rescan_period', full_name='yandex.cloud.containerregistry.v1.ScheduledRule.rescan_period', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='disabled', full_name='yandex.cloud.containerregistry.v1.ScheduledRule.disabled', index=2,
-      number=3, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=686,
-  serialized_end=881,
-)
-
-_SCANPOLICY.fields_by_name['rules'].message_type = _SCANRULES
-_SCANPOLICY.fields_by_name['created_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
-_SCANRULES.fields_by_name['push_rule'].message_type = _PUSHRULE
-_SCANRULES.fields_by_name['schedule_rules'].message_type = _SCHEDULEDRULE
-_SCHEDULEDRULE.fields_by_name['rescan_period'].message_type = google_dot_protobuf_dot_duration__pb2._DURATION
-DESCRIPTOR.message_types_by_name['ScanPolicy'] = _SCANPOLICY
-DESCRIPTOR.message_types_by_name['ScanRules'] = _SCANRULES
-DESCRIPTOR.message_types_by_name['PushRule'] = _PUSHRULE
-DESCRIPTOR.message_types_by_name['ScheduledRule'] = _SCHEDULEDRULE
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-ScanPolicy = _reflection.GeneratedProtocolMessageType('ScanPolicy', (_message.Message,), {
-  'DESCRIPTOR' : _SCANPOLICY,
-  '__module__' : 'yandex.cloud.containerregistry.v1.scan_policy_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.ScanPolicy)
-  })
-_sym_db.RegisterMessage(ScanPolicy)
-
-ScanRules = _reflection.GeneratedProtocolMessageType('ScanRules', (_message.Message,), {
-  'DESCRIPTOR' : _SCANRULES,
-  '__module__' : 'yandex.cloud.containerregistry.v1.scan_policy_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.ScanRules)
-  })
-_sym_db.RegisterMessage(ScanRules)
-
-PushRule = _reflection.GeneratedProtocolMessageType('PushRule', (_message.Message,), {
-  'DESCRIPTOR' : _PUSHRULE,
-  '__module__' : 'yandex.cloud.containerregistry.v1.scan_policy_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.PushRule)
-  })
-_sym_db.RegisterMessage(PushRule)
-
-ScheduledRule = _reflection.GeneratedProtocolMessageType('ScheduledRule', (_message.Message,), {
-  'DESCRIPTOR' : _SCHEDULEDRULE,
-  '__module__' : 'yandex.cloud.containerregistry.v1.scan_policy_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.containerregistry.v1.ScheduledRule)
-  })
-_sym_db.RegisterMessage(ScheduledRule)
-
-
-DESCRIPTOR._options = None
-_PUSHRULE.fields_by_name['repository_prefixes']._options = None
-_SCHEDULEDRULE.fields_by_name['repository_prefixes']._options = None
-_SCHEDULEDRULE.fields_by_name['rescan_period']._options = None
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n%yandex.cloud.api.containerregistry.v1ZWgithub.com/yandex-cloud/go-genproto/yandex/cloud/containerregistry/v1;containerregistry'
+  _PUSHRULE.fields_by_name['repository_prefixes']._options = None
+  _PUSHRULE.fields_by_name['repository_prefixes']._serialized_options = b'\362\3071A\\*|[a-z0-9]+(?:[._-][a-z0-9]+)*(/([a-z0-9]+(?:[._-][a-z0-9]+)*))*\202\3101\002>0'
+  _SCHEDULEDRULE.fields_by_name['repository_prefixes']._options = None
+  _SCHEDULEDRULE.fields_by_name['repository_prefixes']._serialized_options = b'\362\3071A\\*|[a-z0-9]+(?:[._-][a-z0-9]+)*(/([a-z0-9]+(?:[._-][a-z0-9]+)*))*\202\3101\002>0'
+  _SCHEDULEDRULE.fields_by_name['rescan_period']._options = None
+  _SCHEDULEDRULE.fields_by_name['rescan_period']._serialized_options = b'\350\3071\001'
+  _globals['_SCANPOLICY']._serialized_start=187
+  _globals['_SCANPOLICY']._serialized_end=394
+  _globals['_SCANRULES']._serialized_start=397
+  _globals['_SCANRULES']._serialized_end=546
+  _globals['_PUSHRULE']._serialized_start=549
+  _globals['_PUSHRULE']._serialized_end=683
+  _globals['_SCHEDULEDRULE']._serialized_start=686
+  _globals['_SCHEDULEDRULE']._serialized_end=881
 # @@protoc_insertion_point(module_scope)

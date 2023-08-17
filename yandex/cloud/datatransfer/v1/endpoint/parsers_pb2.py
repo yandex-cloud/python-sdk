@@ -3,9 +3,9 @@
 # source: yandex/cloud/datatransfer/v1/endpoint/parsers.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -14,223 +14,21 @@ _sym_db = _symbol_database.Default()
 from yandex.cloud.datatransfer.v1.endpoint import common_pb2 as yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_common__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/datatransfer/v1/endpoint/parsers.proto',
-  package='yandex.cloud.datatransfer.v1.endpoint',
-  syntax='proto3',
-  serialized_options=b'\n)yandex.cloud.api.datatransfer.v1.endpointZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1/endpoint;endpoint\252\002%Yandex.Cloud.Datatransfer.V1.EndPoint',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n3yandex/cloud/datatransfer/v1/endpoint/parsers.proto\x12%yandex.cloud.datatransfer.v1.endpoint\x1a\x32yandex/cloud/datatransfer/v1/endpoint/common.proto\"\xf1\x02\n\x06Parser\x12Q\n\x0bjson_parser\x18\x01 \x01(\x0b\x32:.yandex.cloud.datatransfer.v1.endpoint.GenericParserCommonH\x00\x12\\\n\x16\x61udit_trails_v1_parser\x18\x02 \x01(\x0b\x32:.yandex.cloud.datatransfer.v1.endpoint.AuditTrailsV1ParserH\x00\x12Y\n\x14\x63loud_logging_parser\x18\x04 \x01(\x0b\x32\x39.yandex.cloud.datatransfer.v1.endpoint.CloudLoggingParserH\x00\x12Q\n\x0btskv_parser\x18\x06 \x01(\x0b\x32:.yandex.cloud.datatransfer.v1.endpoint.GenericParserCommonH\x00\x42\x08\n\x06parser\"\x91\x01\n\x13GenericParserCommon\x12\x46\n\x0b\x64\x61ta_schema\x18\x01 \x01(\x0b\x32\x31.yandex.cloud.datatransfer.v1.endpoint.DataSchema\x12\x19\n\x11null_keys_allowed\x18\x02 \x01(\x08\x12\x17\n\x0f\x61\x64\x64_rest_column\x18\x03 \x01(\x08\"\x15\n\x13\x41uditTrailsV1Parser\"\x14\n\x12\x43loudLoggingParserB\xa7\x01\n)yandex.cloud.api.datatransfer.v1.endpointZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1/endpoint;endpoint\xaa\x02%Yandex.Cloud.Datatransfer.V1.EndPointb\x06proto3'
-  ,
-  dependencies=[yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_common__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n3yandex/cloud/datatransfer/v1/endpoint/parsers.proto\x12%yandex.cloud.datatransfer.v1.endpoint\x1a\x32yandex/cloud/datatransfer/v1/endpoint/common.proto\"\xf1\x02\n\x06Parser\x12Q\n\x0bjson_parser\x18\x01 \x01(\x0b\x32:.yandex.cloud.datatransfer.v1.endpoint.GenericParserCommonH\x00\x12\\\n\x16\x61udit_trails_v1_parser\x18\x02 \x01(\x0b\x32:.yandex.cloud.datatransfer.v1.endpoint.AuditTrailsV1ParserH\x00\x12Y\n\x14\x63loud_logging_parser\x18\x04 \x01(\x0b\x32\x39.yandex.cloud.datatransfer.v1.endpoint.CloudLoggingParserH\x00\x12Q\n\x0btskv_parser\x18\x06 \x01(\x0b\x32:.yandex.cloud.datatransfer.v1.endpoint.GenericParserCommonH\x00\x42\x08\n\x06parser\"\x91\x01\n\x13GenericParserCommon\x12\x46\n\x0b\x64\x61ta_schema\x18\x01 \x01(\x0b\x32\x31.yandex.cloud.datatransfer.v1.endpoint.DataSchema\x12\x19\n\x11null_keys_allowed\x18\x02 \x01(\x08\x12\x17\n\x0f\x61\x64\x64_rest_column\x18\x03 \x01(\x08\"\x15\n\x13\x41uditTrailsV1Parser\"\x14\n\x12\x43loudLoggingParserB\xa7\x01\n)yandex.cloud.api.datatransfer.v1.endpointZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1/endpoint;endpoint\xaa\x02%Yandex.Cloud.Datatransfer.V1.EndPointb\x06proto3')
 
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.datatransfer.v1.endpoint.parsers_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-
-_PARSER = _descriptor.Descriptor(
-  name='Parser',
-  full_name='yandex.cloud.datatransfer.v1.endpoint.Parser',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='json_parser', full_name='yandex.cloud.datatransfer.v1.endpoint.Parser.json_parser', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='audit_trails_v1_parser', full_name='yandex.cloud.datatransfer.v1.endpoint.Parser.audit_trails_v1_parser', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='cloud_logging_parser', full_name='yandex.cloud.datatransfer.v1.endpoint.Parser.cloud_logging_parser', index=2,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='tskv_parser', full_name='yandex.cloud.datatransfer.v1.endpoint.Parser.tskv_parser', index=3,
-      number=6, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-    _descriptor.OneofDescriptor(
-      name='parser', full_name='yandex.cloud.datatransfer.v1.endpoint.Parser.parser',
-      index=0, containing_type=None,
-      create_key=_descriptor._internal_create_key,
-    fields=[]),
-  ],
-  serialized_start=147,
-  serialized_end=516,
-)
-
-
-_GENERICPARSERCOMMON = _descriptor.Descriptor(
-  name='GenericParserCommon',
-  full_name='yandex.cloud.datatransfer.v1.endpoint.GenericParserCommon',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='data_schema', full_name='yandex.cloud.datatransfer.v1.endpoint.GenericParserCommon.data_schema', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='null_keys_allowed', full_name='yandex.cloud.datatransfer.v1.endpoint.GenericParserCommon.null_keys_allowed', index=1,
-      number=2, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='add_rest_column', full_name='yandex.cloud.datatransfer.v1.endpoint.GenericParserCommon.add_rest_column', index=2,
-      number=3, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=519,
-  serialized_end=664,
-)
-
-
-_AUDITTRAILSV1PARSER = _descriptor.Descriptor(
-  name='AuditTrailsV1Parser',
-  full_name='yandex.cloud.datatransfer.v1.endpoint.AuditTrailsV1Parser',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=666,
-  serialized_end=687,
-)
-
-
-_CLOUDLOGGINGPARSER = _descriptor.Descriptor(
-  name='CloudLoggingParser',
-  full_name='yandex.cloud.datatransfer.v1.endpoint.CloudLoggingParser',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=689,
-  serialized_end=709,
-)
-
-_PARSER.fields_by_name['json_parser'].message_type = _GENERICPARSERCOMMON
-_PARSER.fields_by_name['audit_trails_v1_parser'].message_type = _AUDITTRAILSV1PARSER
-_PARSER.fields_by_name['cloud_logging_parser'].message_type = _CLOUDLOGGINGPARSER
-_PARSER.fields_by_name['tskv_parser'].message_type = _GENERICPARSERCOMMON
-_PARSER.oneofs_by_name['parser'].fields.append(
-  _PARSER.fields_by_name['json_parser'])
-_PARSER.fields_by_name['json_parser'].containing_oneof = _PARSER.oneofs_by_name['parser']
-_PARSER.oneofs_by_name['parser'].fields.append(
-  _PARSER.fields_by_name['audit_trails_v1_parser'])
-_PARSER.fields_by_name['audit_trails_v1_parser'].containing_oneof = _PARSER.oneofs_by_name['parser']
-_PARSER.oneofs_by_name['parser'].fields.append(
-  _PARSER.fields_by_name['cloud_logging_parser'])
-_PARSER.fields_by_name['cloud_logging_parser'].containing_oneof = _PARSER.oneofs_by_name['parser']
-_PARSER.oneofs_by_name['parser'].fields.append(
-  _PARSER.fields_by_name['tskv_parser'])
-_PARSER.fields_by_name['tskv_parser'].containing_oneof = _PARSER.oneofs_by_name['parser']
-_GENERICPARSERCOMMON.fields_by_name['data_schema'].message_type = yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_common__pb2._DATASCHEMA
-DESCRIPTOR.message_types_by_name['Parser'] = _PARSER
-DESCRIPTOR.message_types_by_name['GenericParserCommon'] = _GENERICPARSERCOMMON
-DESCRIPTOR.message_types_by_name['AuditTrailsV1Parser'] = _AUDITTRAILSV1PARSER
-DESCRIPTOR.message_types_by_name['CloudLoggingParser'] = _CLOUDLOGGINGPARSER
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-Parser = _reflection.GeneratedProtocolMessageType('Parser', (_message.Message,), {
-  'DESCRIPTOR' : _PARSER,
-  '__module__' : 'yandex.cloud.datatransfer.v1.endpoint.parsers_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.datatransfer.v1.endpoint.Parser)
-  })
-_sym_db.RegisterMessage(Parser)
-
-GenericParserCommon = _reflection.GeneratedProtocolMessageType('GenericParserCommon', (_message.Message,), {
-  'DESCRIPTOR' : _GENERICPARSERCOMMON,
-  '__module__' : 'yandex.cloud.datatransfer.v1.endpoint.parsers_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.datatransfer.v1.endpoint.GenericParserCommon)
-  })
-_sym_db.RegisterMessage(GenericParserCommon)
-
-AuditTrailsV1Parser = _reflection.GeneratedProtocolMessageType('AuditTrailsV1Parser', (_message.Message,), {
-  'DESCRIPTOR' : _AUDITTRAILSV1PARSER,
-  '__module__' : 'yandex.cloud.datatransfer.v1.endpoint.parsers_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.datatransfer.v1.endpoint.AuditTrailsV1Parser)
-  })
-_sym_db.RegisterMessage(AuditTrailsV1Parser)
-
-CloudLoggingParser = _reflection.GeneratedProtocolMessageType('CloudLoggingParser', (_message.Message,), {
-  'DESCRIPTOR' : _CLOUDLOGGINGPARSER,
-  '__module__' : 'yandex.cloud.datatransfer.v1.endpoint.parsers_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.datatransfer.v1.endpoint.CloudLoggingParser)
-  })
-_sym_db.RegisterMessage(CloudLoggingParser)
-
-
-DESCRIPTOR._options = None
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n)yandex.cloud.api.datatransfer.v1.endpointZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1/endpoint;endpoint\252\002%Yandex.Cloud.Datatransfer.V1.EndPoint'
+  _globals['_PARSER']._serialized_start=147
+  _globals['_PARSER']._serialized_end=516
+  _globals['_GENERICPARSERCOMMON']._serialized_start=519
+  _globals['_GENERICPARSERCOMMON']._serialized_end=664
+  _globals['_AUDITTRAILSV1PARSER']._serialized_start=666
+  _globals['_AUDITTRAILSV1PARSER']._serialized_end=687
+  _globals['_CLOUDLOGGINGPARSER']._serialized_start=689
+  _globals['_CLOUDLOGGINGPARSER']._serialized_end=709
 # @@protoc_insertion_point(module_scope)

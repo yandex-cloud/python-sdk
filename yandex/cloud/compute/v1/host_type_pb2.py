@@ -3,9 +3,9 @@
 # source: yandex/cloud/compute/v1/host_type.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -13,87 +13,15 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/compute/v1/host_type.proto',
-  package='yandex.cloud.compute.v1',
-  syntax='proto3',
-  serialized_options=b'\n\033yandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;compute',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\'yandex/cloud/compute/v1/host_type.proto\x12\x17yandex.cloud.compute.v1\"W\n\x08HostType\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05\x63ores\x18\x02 \x01(\x03\x12\x0e\n\x06memory\x18\x03 \x01(\x03\x12\r\n\x05\x64isks\x18\x04 \x01(\x03\x12\x11\n\tdisk_size\x18\x05 \x01(\x03\x42\x62\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3'
-)
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'yandex/cloud/compute/v1/host_type.proto\x12\x17yandex.cloud.compute.v1\"W\n\x08HostType\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05\x63ores\x18\x02 \x01(\x03\x12\x0e\n\x06memory\x18\x03 \x01(\x03\x12\r\n\x05\x64isks\x18\x04 \x01(\x03\x12\x11\n\tdisk_size\x18\x05 \x01(\x03\x42\x62\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3')
 
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.compute.v1.host_type_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-
-_HOSTTYPE = _descriptor.Descriptor(
-  name='HostType',
-  full_name='yandex.cloud.compute.v1.HostType',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='yandex.cloud.compute.v1.HostType.id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='cores', full_name='yandex.cloud.compute.v1.HostType.cores', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='memory', full_name='yandex.cloud.compute.v1.HostType.memory', index=2,
-      number=3, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='disks', full_name='yandex.cloud.compute.v1.HostType.disks', index=3,
-      number=4, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='disk_size', full_name='yandex.cloud.compute.v1.HostType.disk_size', index=4,
-      number=5, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=68,
-  serialized_end=155,
-)
-
-DESCRIPTOR.message_types_by_name['HostType'] = _HOSTTYPE
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-HostType = _reflection.GeneratedProtocolMessageType('HostType', (_message.Message,), {
-  'DESCRIPTOR' : _HOSTTYPE,
-  '__module__' : 'yandex.cloud.compute.v1.host_type_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.HostType)
-  })
-_sym_db.RegisterMessage(HostType)
-
-
-DESCRIPTOR._options = None
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n\033yandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;compute'
+  _globals['_HOSTTYPE']._serialized_start=68
+  _globals['_HOSTTYPE']._serialized_end=155
 # @@protoc_insertion_point(module_scope)

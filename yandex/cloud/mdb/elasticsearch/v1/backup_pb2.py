@@ -3,9 +3,9 @@
 # source: yandex/cloud/mdb/elasticsearch/v1/backup.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -15,119 +15,17 @@ from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/mdb/elasticsearch/v1/backup.proto',
-  package='yandex.cloud.mdb.elasticsearch.v1',
-  syntax='proto3',
-  serialized_options=b'\n%yandex.cloud.api.mdb.elasticsearch.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/elasticsearch/v1;elasticsearch',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n.yandex/cloud/mdb/elasticsearch/v1/backup.proto\x12!yandex.cloud.mdb.elasticsearch.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\x88\x02\n\x06\x42\x61\x63kup\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12\x19\n\x11source_cluster_id\x18\x03 \x01(\t\x12.\n\nstarted_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\ncreated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1a\n\x07indices\x18\x06 \x03(\tB\t\x82\xc8\x31\x05<=100\x12\x1d\n\x15\x65lasticsearch_version\x18\x07 \x01(\t\x12\x12\n\nsize_bytes\x18\x08 \x01(\x03\x12\x15\n\rindices_total\x18\t \x01(\x03\x42|\n%yandex.cloud.api.mdb.elasticsearch.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/elasticsearch/v1;elasticsearchb\x06proto3'
-  ,
-  dependencies=[google_dot_protobuf_dot_timestamp__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n.yandex/cloud/mdb/elasticsearch/v1/backup.proto\x12!yandex.cloud.mdb.elasticsearch.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\x88\x02\n\x06\x42\x61\x63kup\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12\x19\n\x11source_cluster_id\x18\x03 \x01(\t\x12.\n\nstarted_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\ncreated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1a\n\x07indices\x18\x06 \x03(\tB\t\x82\xc8\x31\x05<=100\x12\x1d\n\x15\x65lasticsearch_version\x18\x07 \x01(\t\x12\x12\n\nsize_bytes\x18\x08 \x01(\x03\x12\x15\n\rindices_total\x18\t \x01(\x03\x42|\n%yandex.cloud.api.mdb.elasticsearch.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/elasticsearch/v1;elasticsearchb\x06proto3')
 
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.mdb.elasticsearch.v1.backup_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-
-_BACKUP = _descriptor.Descriptor(
-  name='Backup',
-  full_name='yandex.cloud.mdb.elasticsearch.v1.Backup',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='yandex.cloud.mdb.elasticsearch.v1.Backup.id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.mdb.elasticsearch.v1.Backup.folder_id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='source_cluster_id', full_name='yandex.cloud.mdb.elasticsearch.v1.Backup.source_cluster_id', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='started_at', full_name='yandex.cloud.mdb.elasticsearch.v1.Backup.started_at', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='created_at', full_name='yandex.cloud.mdb.elasticsearch.v1.Backup.created_at', index=4,
-      number=5, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='indices', full_name='yandex.cloud.mdb.elasticsearch.v1.Backup.indices', index=5,
-      number=6, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='elasticsearch_version', full_name='yandex.cloud.mdb.elasticsearch.v1.Backup.elasticsearch_version', index=6,
-      number=7, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='size_bytes', full_name='yandex.cloud.mdb.elasticsearch.v1.Backup.size_bytes', index=7,
-      number=8, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='indices_total', full_name='yandex.cloud.mdb.elasticsearch.v1.Backup.indices_total', index=8,
-      number=9, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=150,
-  serialized_end=414,
-)
-
-_BACKUP.fields_by_name['started_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
-_BACKUP.fields_by_name['created_at'].message_type = google_dot_protobuf_dot_timestamp__pb2._TIMESTAMP
-DESCRIPTOR.message_types_by_name['Backup'] = _BACKUP
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-Backup = _reflection.GeneratedProtocolMessageType('Backup', (_message.Message,), {
-  'DESCRIPTOR' : _BACKUP,
-  '__module__' : 'yandex.cloud.mdb.elasticsearch.v1.backup_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.elasticsearch.v1.Backup)
-  })
-_sym_db.RegisterMessage(Backup)
-
-
-DESCRIPTOR._options = None
-_BACKUP.fields_by_name['indices']._options = None
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n%yandex.cloud.api.mdb.elasticsearch.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/elasticsearch/v1;elasticsearch'
+  _BACKUP.fields_by_name['indices']._options = None
+  _BACKUP.fields_by_name['indices']._serialized_options = b'\202\3101\005<=100'
+  _globals['_BACKUP']._serialized_start=150
+  _globals['_BACKUP']._serialized_end=414
 # @@protoc_insertion_point(module_scope)

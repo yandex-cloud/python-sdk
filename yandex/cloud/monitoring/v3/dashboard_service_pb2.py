@@ -3,9 +3,9 @@
 # source: yandex/cloud/monitoring/v3/dashboard_service.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -20,820 +20,91 @@ from yandex.cloud.monitoring.v3 import parametrization_pb2 as yandex_dot_cloud_d
 from yandex.cloud.monitoring.v3 import widget_pb2 as yandex_dot_cloud_dot_monitoring_dot_v3_dot_widget__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/monitoring/v3/dashboard_service.proto',
-  package='yandex.cloud.monitoring.v3',
-  syntax='proto3',
-  serialized_options=b'\n\036yandex.cloud.api.monitoring.v3ZIgithub.com/yandex-cloud/go-genproto/yandex/cloud/monitoring/v3;monitoring',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n2yandex/cloud/monitoring/v3/dashboard_service.proto\x12\x1ayandex.cloud.monitoring.v3\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a*yandex/cloud/monitoring/v3/dashboard.proto\x1a\x30yandex/cloud/monitoring/v3/parametrization.proto\x1a\'yandex/cloud/monitoring/v3/widget.proto\"9\n\x13GetDashboardRequest\x12\"\n\x0c\x64\x61shboard_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xa1\x01\n\x15ListDashboardsRequest\x12!\n\tfolder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50H\x00\x12\x1d\n\tpage_size\x18\x13 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x14 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x15 \x01(\tB\n\x8a\xc8\x31\x06<=1000B\x0b\n\tcontainer\"l\n\x16ListDashboardsResponse\x12\x39\n\ndashboards\x18\x01 \x03(\x0b\x32%.yandex.cloud.monitoring.v3.Dashboard\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xef\x03\n\x16\x43reateDashboardRequest\x12!\n\tfolder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50H\x00\x12\x32\n\x04name\x18\x13 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x14 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x97\x01\n\x06labels\x18\x15 \x03(\x0b\x32>.yandex.cloud.monitoring.v3.CreateDashboardRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\r\n\x05title\x18\x16 \x01(\t\x12\x33\n\x07widgets\x18\x17 \x03(\x0b\x32\".yandex.cloud.monitoring.v3.Widget\x12\x44\n\x0fparametrization\x18\x18 \x01(\x0b\x32+.yandex.cloud.monitoring.v3.Parametrization\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0b\n\tcontainer\"/\n\x17\x43reateDashboardMetadata\x12\x14\n\x0c\x64\x61shboard_id\x18\x01 \x01(\t\"\xf1\x03\n\x16UpdateDashboardRequest\x12\"\n\x0c\x64\x61shboard_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\x04name\x18\x02 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x97\x01\n\x06labels\x18\x04 \x03(\x0b\x32>.yandex.cloud.monitoring.v3.UpdateDashboardRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\r\n\x05title\x18\x05 \x01(\t\x12\x33\n\x07widgets\x18\x06 \x03(\x0b\x32\".yandex.cloud.monitoring.v3.Widget\x12\x44\n\x0fparametrization\x18\x07 \x01(\x0b\x32+.yandex.cloud.monitoring.v3.Parametrization\x12\x0c\n\x04\x65tag\x18\x08 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"/\n\x17UpdateDashboardMetadata\x12\x14\n\x0c\x64\x61shboard_id\x18\x01 \x01(\t\"J\n\x16\x44\x65leteDashboardRequest\x12\"\n\x0c\x64\x61shboard_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x0c\n\x04\x65tag\x18\x02 \x01(\t\"/\n\x17\x44\x65leteDashboardMetadata\x12\x14\n\x0c\x64\x61shboard_id\x18\x01 \x01(\t\"\x82\x01\n\x1eListDashboardOperationsRequest\x12\"\n\x0c\x64\x61shboard_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"q\n\x1fListDashboardOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xb7\x08\n\x10\x44\x61shboardService\x12\x8f\x01\n\x03Get\x12/.yandex.cloud.monitoring.v3.GetDashboardRequest\x1a%.yandex.cloud.monitoring.v3.Dashboard\"0\x82\xd3\xe4\x93\x02*\x12(/monitoring/v3/dashboards/{dashboard_id}\x12\x90\x01\n\x04List\x12\x31.yandex.cloud.monitoring.v3.ListDashboardsRequest\x1a\x32.yandex.cloud.monitoring.v3.ListDashboardsResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/monitoring/v3/dashboards\x12\xad\x01\n\x06\x43reate\x12\x32.yandex.cloud.monitoring.v3.CreateDashboardRequest\x1a!.yandex.cloud.operation.Operation\"L\x82\xd3\xe4\x93\x02\x1e\"\x19/monitoring/v3/dashboards:\x01*\xb2\xd2*$\n\x17\x43reateDashboardMetadata\x12\tDashboard\x12\xbc\x01\n\x06Update\x12\x32.yandex.cloud.monitoring.v3.UpdateDashboardRequest\x1a!.yandex.cloud.operation.Operation\"[\x82\xd3\xe4\x93\x02-2(/monitoring/v3/dashboards/{dashboard_id}:\x01*\xb2\xd2*$\n\x17UpdateDashboardMetadata\x12\tDashboard\x12\xc5\x01\n\x06\x44\x65lete\x12\x32.yandex.cloud.monitoring.v3.DeleteDashboardRequest\x1a!.yandex.cloud.operation.Operation\"d\x82\xd3\xe4\x93\x02**(/monitoring/v3/dashboards/{dashboard_id}\xb2\xd2*0\n\x17\x44\x65leteDashboardMetadata\x12\x15google.protobuf.Empty\x12\xc6\x01\n\x0eListOperations\x12:.yandex.cloud.monitoring.v3.ListDashboardOperationsRequest\x1a;.yandex.cloud.monitoring.v3.ListDashboardOperationsResponse\";\x82\xd3\xe4\x93\x02\x35\x12\x33/monitoring/v3/dashboards/{dashboard_id}/operationsBk\n\x1eyandex.cloud.api.monitoring.v3ZIgithub.com/yandex-cloud/go-genproto/yandex/cloud/monitoring/v3;monitoringb\x06proto3'
-  ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__pb2.DESCRIPTOR,yandex_dot_cloud_dot_monitoring_dot_v3_dot_parametrization__pb2.DESCRIPTOR,yandex_dot_cloud_dot_monitoring_dot_v3_dot_widget__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2yandex/cloud/monitoring/v3/dashboard_service.proto\x12\x1ayandex.cloud.monitoring.v3\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a*yandex/cloud/monitoring/v3/dashboard.proto\x1a\x30yandex/cloud/monitoring/v3/parametrization.proto\x1a\'yandex/cloud/monitoring/v3/widget.proto\"9\n\x13GetDashboardRequest\x12\"\n\x0c\x64\x61shboard_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xa1\x01\n\x15ListDashboardsRequest\x12!\n\tfolder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50H\x00\x12\x1d\n\tpage_size\x18\x13 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x14 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x15 \x01(\tB\n\x8a\xc8\x31\x06<=1000B\x0b\n\tcontainer\"l\n\x16ListDashboardsResponse\x12\x39\n\ndashboards\x18\x01 \x03(\x0b\x32%.yandex.cloud.monitoring.v3.Dashboard\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xeb\x03\n\x16\x43reateDashboardRequest\x12!\n\tfolder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50H\x00\x12\x32\n\x04name\x18\x13 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x14 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x93\x01\n\x06labels\x18\x15 \x03(\x0b\x32>.yandex.cloud.monitoring.v3.CreateDashboardRequest.LabelsEntryBC\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x1c\x12\x14[a-z][-_./\\@0-9a-z]*\x1a\x04\x31-63\x12\r\n\x05title\x18\x16 \x01(\t\x12\x33\n\x07widgets\x18\x17 \x03(\x0b\x32\".yandex.cloud.monitoring.v3.Widget\x12\x44\n\x0fparametrization\x18\x18 \x01(\x0b\x32+.yandex.cloud.monitoring.v3.Parametrization\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0b\n\tcontainer\"/\n\x17\x43reateDashboardMetadata\x12\x14\n\x0c\x64\x61shboard_id\x18\x01 \x01(\t\"\xed\x03\n\x16UpdateDashboardRequest\x12\"\n\x0c\x64\x61shboard_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\x04name\x18\x02 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x93\x01\n\x06labels\x18\x04 \x03(\x0b\x32>.yandex.cloud.monitoring.v3.UpdateDashboardRequest.LabelsEntryBC\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x1c\x12\x14[a-z][-_./\\@0-9a-z]*\x1a\x04\x31-63\x12\r\n\x05title\x18\x05 \x01(\t\x12\x33\n\x07widgets\x18\x06 \x03(\x0b\x32\".yandex.cloud.monitoring.v3.Widget\x12\x44\n\x0fparametrization\x18\x07 \x01(\x0b\x32+.yandex.cloud.monitoring.v3.Parametrization\x12\x0c\n\x04\x65tag\x18\x08 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"/\n\x17UpdateDashboardMetadata\x12\x14\n\x0c\x64\x61shboard_id\x18\x01 \x01(\t\"J\n\x16\x44\x65leteDashboardRequest\x12\"\n\x0c\x64\x61shboard_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x0c\n\x04\x65tag\x18\x02 \x01(\t\"/\n\x17\x44\x65leteDashboardMetadata\x12\x14\n\x0c\x64\x61shboard_id\x18\x01 \x01(\t\"\x82\x01\n\x1eListDashboardOperationsRequest\x12\"\n\x0c\x64\x61shboard_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"q\n\x1fListDashboardOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xb7\x08\n\x10\x44\x61shboardService\x12\x8f\x01\n\x03Get\x12/.yandex.cloud.monitoring.v3.GetDashboardRequest\x1a%.yandex.cloud.monitoring.v3.Dashboard\"0\x82\xd3\xe4\x93\x02*\x12(/monitoring/v3/dashboards/{dashboard_id}\x12\x90\x01\n\x04List\x12\x31.yandex.cloud.monitoring.v3.ListDashboardsRequest\x1a\x32.yandex.cloud.monitoring.v3.ListDashboardsResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/monitoring/v3/dashboards\x12\xad\x01\n\x06\x43reate\x12\x32.yandex.cloud.monitoring.v3.CreateDashboardRequest\x1a!.yandex.cloud.operation.Operation\"L\xb2\xd2*$\n\x17\x43reateDashboardMetadata\x12\tDashboard\x82\xd3\xe4\x93\x02\x1e\"\x19/monitoring/v3/dashboards:\x01*\x12\xbc\x01\n\x06Update\x12\x32.yandex.cloud.monitoring.v3.UpdateDashboardRequest\x1a!.yandex.cloud.operation.Operation\"[\xb2\xd2*$\n\x17UpdateDashboardMetadata\x12\tDashboard\x82\xd3\xe4\x93\x02-2(/monitoring/v3/dashboards/{dashboard_id}:\x01*\x12\xc5\x01\n\x06\x44\x65lete\x12\x32.yandex.cloud.monitoring.v3.DeleteDashboardRequest\x1a!.yandex.cloud.operation.Operation\"d\xb2\xd2*0\n\x17\x44\x65leteDashboardMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02**(/monitoring/v3/dashboards/{dashboard_id}\x12\xc6\x01\n\x0eListOperations\x12:.yandex.cloud.monitoring.v3.ListDashboardOperationsRequest\x1a;.yandex.cloud.monitoring.v3.ListDashboardOperationsResponse\";\x82\xd3\xe4\x93\x02\x35\x12\x33/monitoring/v3/dashboards/{dashboard_id}/operationsBk\n\x1eyandex.cloud.api.monitoring.v3ZIgithub.com/yandex-cloud/go-genproto/yandex/cloud/monitoring/v3;monitoringb\x06proto3')
 
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.monitoring.v3.dashboard_service_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-
-_GETDASHBOARDREQUEST = _descriptor.Descriptor(
-  name='GetDashboardRequest',
-  full_name='yandex.cloud.monitoring.v3.GetDashboardRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='dashboard_id', full_name='yandex.cloud.monitoring.v3.GetDashboardRequest.dashboard_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=352,
-  serialized_end=409,
-)
-
-
-_LISTDASHBOARDSREQUEST = _descriptor.Descriptor(
-  name='ListDashboardsRequest',
-  full_name='yandex.cloud.monitoring.v3.ListDashboardsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.monitoring.v3.ListDashboardsRequest.folder_id', index=0,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.monitoring.v3.ListDashboardsRequest.page_size', index=1,
-      number=19, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.monitoring.v3.ListDashboardsRequest.page_token', index=2,
-      number=20, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='filter', full_name='yandex.cloud.monitoring.v3.ListDashboardsRequest.filter', index=3,
-      number=21, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-    _descriptor.OneofDescriptor(
-      name='container', full_name='yandex.cloud.monitoring.v3.ListDashboardsRequest.container',
-      index=0, containing_type=None,
-      create_key=_descriptor._internal_create_key,
-    fields=[]),
-  ],
-  serialized_start=412,
-  serialized_end=573,
-)
-
-
-_LISTDASHBOARDSRESPONSE = _descriptor.Descriptor(
-  name='ListDashboardsResponse',
-  full_name='yandex.cloud.monitoring.v3.ListDashboardsResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='dashboards', full_name='yandex.cloud.monitoring.v3.ListDashboardsResponse.dashboards', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.monitoring.v3.ListDashboardsResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=575,
-  serialized_end=683,
-)
-
-
-_CREATEDASHBOARDREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='yandex.cloud.monitoring.v3.CreateDashboardRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='yandex.cloud.monitoring.v3.CreateDashboardRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='yandex.cloud.monitoring.v3.CreateDashboardRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1123,
-  serialized_end=1168,
-)
-
-_CREATEDASHBOARDREQUEST = _descriptor.Descriptor(
-  name='CreateDashboardRequest',
-  full_name='yandex.cloud.monitoring.v3.CreateDashboardRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.monitoring.v3.CreateDashboardRequest.folder_id', index=0,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.monitoring.v3.CreateDashboardRequest.name', index=1,
-      number=19, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='yandex.cloud.monitoring.v3.CreateDashboardRequest.description', index=2,
-      number=20, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='yandex.cloud.monitoring.v3.CreateDashboardRequest.labels', index=3,
-      number=21, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\017[-_./\\@0-9a-z]*\262\3101\006\032\0041-63\262\3101\026\022\024[a-z][-_./\\@0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='title', full_name='yandex.cloud.monitoring.v3.CreateDashboardRequest.title', index=4,
-      number=22, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='widgets', full_name='yandex.cloud.monitoring.v3.CreateDashboardRequest.widgets', index=5,
-      number=23, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='parametrization', full_name='yandex.cloud.monitoring.v3.CreateDashboardRequest.parametrization', index=6,
-      number=24, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_CREATEDASHBOARDREQUEST_LABELSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-    _descriptor.OneofDescriptor(
-      name='container', full_name='yandex.cloud.monitoring.v3.CreateDashboardRequest.container',
-      index=0, containing_type=None,
-      create_key=_descriptor._internal_create_key,
-    fields=[]),
-  ],
-  serialized_start=686,
-  serialized_end=1181,
-)
-
-
-_CREATEDASHBOARDMETADATA = _descriptor.Descriptor(
-  name='CreateDashboardMetadata',
-  full_name='yandex.cloud.monitoring.v3.CreateDashboardMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='dashboard_id', full_name='yandex.cloud.monitoring.v3.CreateDashboardMetadata.dashboard_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1183,
-  serialized_end=1230,
-)
-
-
-_UPDATEDASHBOARDREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='yandex.cloud.monitoring.v3.UpdateDashboardRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='yandex.cloud.monitoring.v3.UpdateDashboardRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='yandex.cloud.monitoring.v3.UpdateDashboardRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1123,
-  serialized_end=1168,
-)
-
-_UPDATEDASHBOARDREQUEST = _descriptor.Descriptor(
-  name='UpdateDashboardRequest',
-  full_name='yandex.cloud.monitoring.v3.UpdateDashboardRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='dashboard_id', full_name='yandex.cloud.monitoring.v3.UpdateDashboardRequest.dashboard_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.monitoring.v3.UpdateDashboardRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='yandex.cloud.monitoring.v3.UpdateDashboardRequest.description', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='yandex.cloud.monitoring.v3.UpdateDashboardRequest.labels', index=3,
-      number=4, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\017[-_./\\@0-9a-z]*\262\3101\006\032\0041-63\262\3101\026\022\024[a-z][-_./\\@0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='title', full_name='yandex.cloud.monitoring.v3.UpdateDashboardRequest.title', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='widgets', full_name='yandex.cloud.monitoring.v3.UpdateDashboardRequest.widgets', index=5,
-      number=6, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='parametrization', full_name='yandex.cloud.monitoring.v3.UpdateDashboardRequest.parametrization', index=6,
-      number=7, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='etag', full_name='yandex.cloud.monitoring.v3.UpdateDashboardRequest.etag', index=7,
-      number=8, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_UPDATEDASHBOARDREQUEST_LABELSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1233,
-  serialized_end=1730,
-)
-
-
-_UPDATEDASHBOARDMETADATA = _descriptor.Descriptor(
-  name='UpdateDashboardMetadata',
-  full_name='yandex.cloud.monitoring.v3.UpdateDashboardMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='dashboard_id', full_name='yandex.cloud.monitoring.v3.UpdateDashboardMetadata.dashboard_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1732,
-  serialized_end=1779,
-)
-
-
-_DELETEDASHBOARDREQUEST = _descriptor.Descriptor(
-  name='DeleteDashboardRequest',
-  full_name='yandex.cloud.monitoring.v3.DeleteDashboardRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='dashboard_id', full_name='yandex.cloud.monitoring.v3.DeleteDashboardRequest.dashboard_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='etag', full_name='yandex.cloud.monitoring.v3.DeleteDashboardRequest.etag', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1781,
-  serialized_end=1855,
-)
-
-
-_DELETEDASHBOARDMETADATA = _descriptor.Descriptor(
-  name='DeleteDashboardMetadata',
-  full_name='yandex.cloud.monitoring.v3.DeleteDashboardMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='dashboard_id', full_name='yandex.cloud.monitoring.v3.DeleteDashboardMetadata.dashboard_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1857,
-  serialized_end=1904,
-)
-
-
-_LISTDASHBOARDOPERATIONSREQUEST = _descriptor.Descriptor(
-  name='ListDashboardOperationsRequest',
-  full_name='yandex.cloud.monitoring.v3.ListDashboardOperationsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='dashboard_id', full_name='yandex.cloud.monitoring.v3.ListDashboardOperationsRequest.dashboard_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.monitoring.v3.ListDashboardOperationsRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.monitoring.v3.ListDashboardOperationsRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1907,
-  serialized_end=2037,
-)
-
-
-_LISTDASHBOARDOPERATIONSRESPONSE = _descriptor.Descriptor(
-  name='ListDashboardOperationsResponse',
-  full_name='yandex.cloud.monitoring.v3.ListDashboardOperationsResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='operations', full_name='yandex.cloud.monitoring.v3.ListDashboardOperationsResponse.operations', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.monitoring.v3.ListDashboardOperationsResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2039,
-  serialized_end=2152,
-)
-
-_LISTDASHBOARDSREQUEST.oneofs_by_name['container'].fields.append(
-  _LISTDASHBOARDSREQUEST.fields_by_name['folder_id'])
-_LISTDASHBOARDSREQUEST.fields_by_name['folder_id'].containing_oneof = _LISTDASHBOARDSREQUEST.oneofs_by_name['container']
-_LISTDASHBOARDSRESPONSE.fields_by_name['dashboards'].message_type = yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__pb2._DASHBOARD
-_CREATEDASHBOARDREQUEST_LABELSENTRY.containing_type = _CREATEDASHBOARDREQUEST
-_CREATEDASHBOARDREQUEST.fields_by_name['labels'].message_type = _CREATEDASHBOARDREQUEST_LABELSENTRY
-_CREATEDASHBOARDREQUEST.fields_by_name['widgets'].message_type = yandex_dot_cloud_dot_monitoring_dot_v3_dot_widget__pb2._WIDGET
-_CREATEDASHBOARDREQUEST.fields_by_name['parametrization'].message_type = yandex_dot_cloud_dot_monitoring_dot_v3_dot_parametrization__pb2._PARAMETRIZATION
-_CREATEDASHBOARDREQUEST.oneofs_by_name['container'].fields.append(
-  _CREATEDASHBOARDREQUEST.fields_by_name['folder_id'])
-_CREATEDASHBOARDREQUEST.fields_by_name['folder_id'].containing_oneof = _CREATEDASHBOARDREQUEST.oneofs_by_name['container']
-_UPDATEDASHBOARDREQUEST_LABELSENTRY.containing_type = _UPDATEDASHBOARDREQUEST
-_UPDATEDASHBOARDREQUEST.fields_by_name['labels'].message_type = _UPDATEDASHBOARDREQUEST_LABELSENTRY
-_UPDATEDASHBOARDREQUEST.fields_by_name['widgets'].message_type = yandex_dot_cloud_dot_monitoring_dot_v3_dot_widget__pb2._WIDGET
-_UPDATEDASHBOARDREQUEST.fields_by_name['parametrization'].message_type = yandex_dot_cloud_dot_monitoring_dot_v3_dot_parametrization__pb2._PARAMETRIZATION
-_LISTDASHBOARDOPERATIONSRESPONSE.fields_by_name['operations'].message_type = yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION
-DESCRIPTOR.message_types_by_name['GetDashboardRequest'] = _GETDASHBOARDREQUEST
-DESCRIPTOR.message_types_by_name['ListDashboardsRequest'] = _LISTDASHBOARDSREQUEST
-DESCRIPTOR.message_types_by_name['ListDashboardsResponse'] = _LISTDASHBOARDSRESPONSE
-DESCRIPTOR.message_types_by_name['CreateDashboardRequest'] = _CREATEDASHBOARDREQUEST
-DESCRIPTOR.message_types_by_name['CreateDashboardMetadata'] = _CREATEDASHBOARDMETADATA
-DESCRIPTOR.message_types_by_name['UpdateDashboardRequest'] = _UPDATEDASHBOARDREQUEST
-DESCRIPTOR.message_types_by_name['UpdateDashboardMetadata'] = _UPDATEDASHBOARDMETADATA
-DESCRIPTOR.message_types_by_name['DeleteDashboardRequest'] = _DELETEDASHBOARDREQUEST
-DESCRIPTOR.message_types_by_name['DeleteDashboardMetadata'] = _DELETEDASHBOARDMETADATA
-DESCRIPTOR.message_types_by_name['ListDashboardOperationsRequest'] = _LISTDASHBOARDOPERATIONSREQUEST
-DESCRIPTOR.message_types_by_name['ListDashboardOperationsResponse'] = _LISTDASHBOARDOPERATIONSRESPONSE
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-GetDashboardRequest = _reflection.GeneratedProtocolMessageType('GetDashboardRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETDASHBOARDREQUEST,
-  '__module__' : 'yandex.cloud.monitoring.v3.dashboard_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.monitoring.v3.GetDashboardRequest)
-  })
-_sym_db.RegisterMessage(GetDashboardRequest)
-
-ListDashboardsRequest = _reflection.GeneratedProtocolMessageType('ListDashboardsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTDASHBOARDSREQUEST,
-  '__module__' : 'yandex.cloud.monitoring.v3.dashboard_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.monitoring.v3.ListDashboardsRequest)
-  })
-_sym_db.RegisterMessage(ListDashboardsRequest)
-
-ListDashboardsResponse = _reflection.GeneratedProtocolMessageType('ListDashboardsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTDASHBOARDSRESPONSE,
-  '__module__' : 'yandex.cloud.monitoring.v3.dashboard_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.monitoring.v3.ListDashboardsResponse)
-  })
-_sym_db.RegisterMessage(ListDashboardsResponse)
-
-CreateDashboardRequest = _reflection.GeneratedProtocolMessageType('CreateDashboardRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _CREATEDASHBOARDREQUEST_LABELSENTRY,
-    '__module__' : 'yandex.cloud.monitoring.v3.dashboard_service_pb2'
-    # @@protoc_insertion_point(class_scope:yandex.cloud.monitoring.v3.CreateDashboardRequest.LabelsEntry)
-    })
-  ,
-  'DESCRIPTOR' : _CREATEDASHBOARDREQUEST,
-  '__module__' : 'yandex.cloud.monitoring.v3.dashboard_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.monitoring.v3.CreateDashboardRequest)
-  })
-_sym_db.RegisterMessage(CreateDashboardRequest)
-_sym_db.RegisterMessage(CreateDashboardRequest.LabelsEntry)
-
-CreateDashboardMetadata = _reflection.GeneratedProtocolMessageType('CreateDashboardMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _CREATEDASHBOARDMETADATA,
-  '__module__' : 'yandex.cloud.monitoring.v3.dashboard_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.monitoring.v3.CreateDashboardMetadata)
-  })
-_sym_db.RegisterMessage(CreateDashboardMetadata)
-
-UpdateDashboardRequest = _reflection.GeneratedProtocolMessageType('UpdateDashboardRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _UPDATEDASHBOARDREQUEST_LABELSENTRY,
-    '__module__' : 'yandex.cloud.monitoring.v3.dashboard_service_pb2'
-    # @@protoc_insertion_point(class_scope:yandex.cloud.monitoring.v3.UpdateDashboardRequest.LabelsEntry)
-    })
-  ,
-  'DESCRIPTOR' : _UPDATEDASHBOARDREQUEST,
-  '__module__' : 'yandex.cloud.monitoring.v3.dashboard_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.monitoring.v3.UpdateDashboardRequest)
-  })
-_sym_db.RegisterMessage(UpdateDashboardRequest)
-_sym_db.RegisterMessage(UpdateDashboardRequest.LabelsEntry)
-
-UpdateDashboardMetadata = _reflection.GeneratedProtocolMessageType('UpdateDashboardMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATEDASHBOARDMETADATA,
-  '__module__' : 'yandex.cloud.monitoring.v3.dashboard_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.monitoring.v3.UpdateDashboardMetadata)
-  })
-_sym_db.RegisterMessage(UpdateDashboardMetadata)
-
-DeleteDashboardRequest = _reflection.GeneratedProtocolMessageType('DeleteDashboardRequest', (_message.Message,), {
-  'DESCRIPTOR' : _DELETEDASHBOARDREQUEST,
-  '__module__' : 'yandex.cloud.monitoring.v3.dashboard_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.monitoring.v3.DeleteDashboardRequest)
-  })
-_sym_db.RegisterMessage(DeleteDashboardRequest)
-
-DeleteDashboardMetadata = _reflection.GeneratedProtocolMessageType('DeleteDashboardMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _DELETEDASHBOARDMETADATA,
-  '__module__' : 'yandex.cloud.monitoring.v3.dashboard_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.monitoring.v3.DeleteDashboardMetadata)
-  })
-_sym_db.RegisterMessage(DeleteDashboardMetadata)
-
-ListDashboardOperationsRequest = _reflection.GeneratedProtocolMessageType('ListDashboardOperationsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTDASHBOARDOPERATIONSREQUEST,
-  '__module__' : 'yandex.cloud.monitoring.v3.dashboard_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.monitoring.v3.ListDashboardOperationsRequest)
-  })
-_sym_db.RegisterMessage(ListDashboardOperationsRequest)
-
-ListDashboardOperationsResponse = _reflection.GeneratedProtocolMessageType('ListDashboardOperationsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTDASHBOARDOPERATIONSRESPONSE,
-  '__module__' : 'yandex.cloud.monitoring.v3.dashboard_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.monitoring.v3.ListDashboardOperationsResponse)
-  })
-_sym_db.RegisterMessage(ListDashboardOperationsResponse)
-
-
-DESCRIPTOR._options = None
-_GETDASHBOARDREQUEST.fields_by_name['dashboard_id']._options = None
-_LISTDASHBOARDSREQUEST.fields_by_name['folder_id']._options = None
-_LISTDASHBOARDSREQUEST.fields_by_name['page_size']._options = None
-_LISTDASHBOARDSREQUEST.fields_by_name['page_token']._options = None
-_LISTDASHBOARDSREQUEST.fields_by_name['filter']._options = None
-_CREATEDASHBOARDREQUEST_LABELSENTRY._options = None
-_CREATEDASHBOARDREQUEST.fields_by_name['folder_id']._options = None
-_CREATEDASHBOARDREQUEST.fields_by_name['name']._options = None
-_CREATEDASHBOARDREQUEST.fields_by_name['description']._options = None
-_CREATEDASHBOARDREQUEST.fields_by_name['labels']._options = None
-_UPDATEDASHBOARDREQUEST_LABELSENTRY._options = None
-_UPDATEDASHBOARDREQUEST.fields_by_name['dashboard_id']._options = None
-_UPDATEDASHBOARDREQUEST.fields_by_name['name']._options = None
-_UPDATEDASHBOARDREQUEST.fields_by_name['description']._options = None
-_UPDATEDASHBOARDREQUEST.fields_by_name['labels']._options = None
-_DELETEDASHBOARDREQUEST.fields_by_name['dashboard_id']._options = None
-_LISTDASHBOARDOPERATIONSREQUEST.fields_by_name['dashboard_id']._options = None
-_LISTDASHBOARDOPERATIONSREQUEST.fields_by_name['page_size']._options = None
-_LISTDASHBOARDOPERATIONSREQUEST.fields_by_name['page_token']._options = None
-
-_DASHBOARDSERVICE = _descriptor.ServiceDescriptor(
-  name='DashboardService',
-  full_name='yandex.cloud.monitoring.v3.DashboardService',
-  file=DESCRIPTOR,
-  index=0,
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_start=2155,
-  serialized_end=3234,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='Get',
-    full_name='yandex.cloud.monitoring.v3.DashboardService.Get',
-    index=0,
-    containing_service=None,
-    input_type=_GETDASHBOARDREQUEST,
-    output_type=yandex_dot_cloud_dot_monitoring_dot_v3_dot_dashboard__pb2._DASHBOARD,
-    serialized_options=b'\202\323\344\223\002*\022(/monitoring/v3/dashboards/{dashboard_id}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='List',
-    full_name='yandex.cloud.monitoring.v3.DashboardService.List',
-    index=1,
-    containing_service=None,
-    input_type=_LISTDASHBOARDSREQUEST,
-    output_type=_LISTDASHBOARDSRESPONSE,
-    serialized_options=b'\202\323\344\223\002\033\022\031/monitoring/v3/dashboards',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Create',
-    full_name='yandex.cloud.monitoring.v3.DashboardService.Create',
-    index=2,
-    containing_service=None,
-    input_type=_CREATEDASHBOARDREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002\036\"\031/monitoring/v3/dashboards:\001*\262\322*$\n\027CreateDashboardMetadata\022\tDashboard',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Update',
-    full_name='yandex.cloud.monitoring.v3.DashboardService.Update',
-    index=3,
-    containing_service=None,
-    input_type=_UPDATEDASHBOARDREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002-2(/monitoring/v3/dashboards/{dashboard_id}:\001*\262\322*$\n\027UpdateDashboardMetadata\022\tDashboard',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Delete',
-    full_name='yandex.cloud.monitoring.v3.DashboardService.Delete',
-    index=4,
-    containing_service=None,
-    input_type=_DELETEDASHBOARDREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002**(/monitoring/v3/dashboards/{dashboard_id}\262\322*0\n\027DeleteDashboardMetadata\022\025google.protobuf.Empty',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListOperations',
-    full_name='yandex.cloud.monitoring.v3.DashboardService.ListOperations',
-    index=5,
-    containing_service=None,
-    input_type=_LISTDASHBOARDOPERATIONSREQUEST,
-    output_type=_LISTDASHBOARDOPERATIONSRESPONSE,
-    serialized_options=b'\202\323\344\223\0025\0223/monitoring/v3/dashboards/{dashboard_id}/operations',
-    create_key=_descriptor._internal_create_key,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_DASHBOARDSERVICE)
-
-DESCRIPTOR.services_by_name['DashboardService'] = _DASHBOARDSERVICE
-
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n\036yandex.cloud.api.monitoring.v3ZIgithub.com/yandex-cloud/go-genproto/yandex/cloud/monitoring/v3;monitoring'
+  _GETDASHBOARDREQUEST.fields_by_name['dashboard_id']._options = None
+  _GETDASHBOARDREQUEST.fields_by_name['dashboard_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTDASHBOARDSREQUEST.fields_by_name['folder_id']._options = None
+  _LISTDASHBOARDSREQUEST.fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTDASHBOARDSREQUEST.fields_by_name['page_size']._options = None
+  _LISTDASHBOARDSREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
+  _LISTDASHBOARDSREQUEST.fields_by_name['page_token']._options = None
+  _LISTDASHBOARDSREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
+  _LISTDASHBOARDSREQUEST.fields_by_name['filter']._options = None
+  _LISTDASHBOARDSREQUEST.fields_by_name['filter']._serialized_options = b'\212\3101\006<=1000'
+  _CREATEDASHBOARDREQUEST_LABELSENTRY._options = None
+  _CREATEDASHBOARDREQUEST_LABELSENTRY._serialized_options = b'8\001'
+  _CREATEDASHBOARDREQUEST.fields_by_name['folder_id']._options = None
+  _CREATEDASHBOARDREQUEST.fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _CREATEDASHBOARDREQUEST.fields_by_name['name']._options = None
+  _CREATEDASHBOARDREQUEST.fields_by_name['name']._serialized_options = b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?'
+  _CREATEDASHBOARDREQUEST.fields_by_name['description']._options = None
+  _CREATEDASHBOARDREQUEST.fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
+  _CREATEDASHBOARDREQUEST.fields_by_name['labels']._options = None
+  _CREATEDASHBOARDREQUEST.fields_by_name['labels']._serialized_options = b'\362\3071\017[-_./\\@0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\034\022\024[a-z][-_./\\@0-9a-z]*\032\0041-63'
+  _UPDATEDASHBOARDREQUEST_LABELSENTRY._options = None
+  _UPDATEDASHBOARDREQUEST_LABELSENTRY._serialized_options = b'8\001'
+  _UPDATEDASHBOARDREQUEST.fields_by_name['dashboard_id']._options = None
+  _UPDATEDASHBOARDREQUEST.fields_by_name['dashboard_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _UPDATEDASHBOARDREQUEST.fields_by_name['name']._options = None
+  _UPDATEDASHBOARDREQUEST.fields_by_name['name']._serialized_options = b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?'
+  _UPDATEDASHBOARDREQUEST.fields_by_name['description']._options = None
+  _UPDATEDASHBOARDREQUEST.fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
+  _UPDATEDASHBOARDREQUEST.fields_by_name['labels']._options = None
+  _UPDATEDASHBOARDREQUEST.fields_by_name['labels']._serialized_options = b'\362\3071\017[-_./\\@0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\034\022\024[a-z][-_./\\@0-9a-z]*\032\0041-63'
+  _DELETEDASHBOARDREQUEST.fields_by_name['dashboard_id']._options = None
+  _DELETEDASHBOARDREQUEST.fields_by_name['dashboard_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTDASHBOARDOPERATIONSREQUEST.fields_by_name['dashboard_id']._options = None
+  _LISTDASHBOARDOPERATIONSREQUEST.fields_by_name['dashboard_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTDASHBOARDOPERATIONSREQUEST.fields_by_name['page_size']._options = None
+  _LISTDASHBOARDOPERATIONSREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
+  _LISTDASHBOARDOPERATIONSREQUEST.fields_by_name['page_token']._options = None
+  _LISTDASHBOARDOPERATIONSREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
+  _DASHBOARDSERVICE.methods_by_name['Get']._options = None
+  _DASHBOARDSERVICE.methods_by_name['Get']._serialized_options = b'\202\323\344\223\002*\022(/monitoring/v3/dashboards/{dashboard_id}'
+  _DASHBOARDSERVICE.methods_by_name['List']._options = None
+  _DASHBOARDSERVICE.methods_by_name['List']._serialized_options = b'\202\323\344\223\002\033\022\031/monitoring/v3/dashboards'
+  _DASHBOARDSERVICE.methods_by_name['Create']._options = None
+  _DASHBOARDSERVICE.methods_by_name['Create']._serialized_options = b'\262\322*$\n\027CreateDashboardMetadata\022\tDashboard\202\323\344\223\002\036\"\031/monitoring/v3/dashboards:\001*'
+  _DASHBOARDSERVICE.methods_by_name['Update']._options = None
+  _DASHBOARDSERVICE.methods_by_name['Update']._serialized_options = b'\262\322*$\n\027UpdateDashboardMetadata\022\tDashboard\202\323\344\223\002-2(/monitoring/v3/dashboards/{dashboard_id}:\001*'
+  _DASHBOARDSERVICE.methods_by_name['Delete']._options = None
+  _DASHBOARDSERVICE.methods_by_name['Delete']._serialized_options = b'\262\322*0\n\027DeleteDashboardMetadata\022\025google.protobuf.Empty\202\323\344\223\002**(/monitoring/v3/dashboards/{dashboard_id}'
+  _DASHBOARDSERVICE.methods_by_name['ListOperations']._options = None
+  _DASHBOARDSERVICE.methods_by_name['ListOperations']._serialized_options = b'\202\323\344\223\0025\0223/monitoring/v3/dashboards/{dashboard_id}/operations'
+  _globals['_GETDASHBOARDREQUEST']._serialized_start=352
+  _globals['_GETDASHBOARDREQUEST']._serialized_end=409
+  _globals['_LISTDASHBOARDSREQUEST']._serialized_start=412
+  _globals['_LISTDASHBOARDSREQUEST']._serialized_end=573
+  _globals['_LISTDASHBOARDSRESPONSE']._serialized_start=575
+  _globals['_LISTDASHBOARDSRESPONSE']._serialized_end=683
+  _globals['_CREATEDASHBOARDREQUEST']._serialized_start=686
+  _globals['_CREATEDASHBOARDREQUEST']._serialized_end=1177
+  _globals['_CREATEDASHBOARDREQUEST_LABELSENTRY']._serialized_start=1119
+  _globals['_CREATEDASHBOARDREQUEST_LABELSENTRY']._serialized_end=1164
+  _globals['_CREATEDASHBOARDMETADATA']._serialized_start=1179
+  _globals['_CREATEDASHBOARDMETADATA']._serialized_end=1226
+  _globals['_UPDATEDASHBOARDREQUEST']._serialized_start=1229
+  _globals['_UPDATEDASHBOARDREQUEST']._serialized_end=1722
+  _globals['_UPDATEDASHBOARDREQUEST_LABELSENTRY']._serialized_start=1119
+  _globals['_UPDATEDASHBOARDREQUEST_LABELSENTRY']._serialized_end=1164
+  _globals['_UPDATEDASHBOARDMETADATA']._serialized_start=1724
+  _globals['_UPDATEDASHBOARDMETADATA']._serialized_end=1771
+  _globals['_DELETEDASHBOARDREQUEST']._serialized_start=1773
+  _globals['_DELETEDASHBOARDREQUEST']._serialized_end=1847
+  _globals['_DELETEDASHBOARDMETADATA']._serialized_start=1849
+  _globals['_DELETEDASHBOARDMETADATA']._serialized_end=1896
+  _globals['_LISTDASHBOARDOPERATIONSREQUEST']._serialized_start=1899
+  _globals['_LISTDASHBOARDOPERATIONSREQUEST']._serialized_end=2029
+  _globals['_LISTDASHBOARDOPERATIONSRESPONSE']._serialized_start=2031
+  _globals['_LISTDASHBOARDOPERATIONSRESPONSE']._serialized_end=2144
+  _globals['_DASHBOARDSERVICE']._serialized_start=2147
+  _globals['_DASHBOARDSERVICE']._serialized_end=3226
 # @@protoc_insertion_point(module_scope)

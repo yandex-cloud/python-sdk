@@ -3,9 +3,9 @@
 # source: yandex/cloud/mdb/sqlserver/v1/config/sqlserver2017.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -15,288 +15,37 @@ from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/mdb/sqlserver/v1/config/sqlserver2017.proto',
-  package='yandex.cloud.mdb.sqlserver.v1.config',
-  syntax='proto3',
-  serialized_options=b'\n(yandex.cloud.api.mdb.sqlserver.v1.configZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/sqlserver/v1/config;sqlserver',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n8yandex/cloud/mdb/sqlserver/v1/config/sqlserver2017.proto\x12$yandex.cloud.mdb.sqlserver.v1.config\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\xf7\x02\n\x16SQLServerConfig2017std\x12H\n\x19max_degree_of_parallelism\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x08\xfa\xc7\x31\x04\x31-99\x12P\n\x1e\x63ost_threshold_for_parallelism\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0b\xfa\xc7\x31\x07\x35-32767\x12\x39\n\x0b\x61udit_level\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03\x30-3\x12\x43\n\x13\x66ill_factor_percent\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\t\xfa\xc7\x31\x05\x30-100\x12\x41\n\x1doptimize_for_ad_hoc_workloads\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"\x9c\x02\n\x19SQLServerConfigSet2017std\x12V\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32<.yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfig2017std\x12Q\n\x0buser_config\x18\x02 \x01(\x0b\x32<.yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfig2017std\x12T\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32<.yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfig2017std\"\xf7\x02\n\x16SQLServerConfig2017ent\x12H\n\x19max_degree_of_parallelism\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x08\xfa\xc7\x31\x04\x31-99\x12P\n\x1e\x63ost_threshold_for_parallelism\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0b\xfa\xc7\x31\x07\x35-32767\x12\x39\n\x0b\x61udit_level\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03\x30-3\x12\x43\n\x13\x66ill_factor_percent\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\t\xfa\xc7\x31\x05\x30-100\x12\x41\n\x1doptimize_for_ad_hoc_workloads\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"\x9c\x02\n\x19SQLServerConfigSet2017ent\x12V\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32<.yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfig2017ent\x12Q\n\x0buser_config\x18\x02 \x01(\x0b\x32<.yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfig2017ent\x12T\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32<.yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfig2017entB~\n(yandex.cloud.api.mdb.sqlserver.v1.configZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/sqlserver/v1/config;sqlserverb\x06proto3'
-  ,
-  dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n8yandex/cloud/mdb/sqlserver/v1/config/sqlserver2017.proto\x12$yandex.cloud.mdb.sqlserver.v1.config\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\xf7\x02\n\x16SQLServerConfig2017std\x12H\n\x19max_degree_of_parallelism\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x08\xfa\xc7\x31\x04\x31-99\x12P\n\x1e\x63ost_threshold_for_parallelism\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0b\xfa\xc7\x31\x07\x35-32767\x12\x39\n\x0b\x61udit_level\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03\x30-3\x12\x43\n\x13\x66ill_factor_percent\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\t\xfa\xc7\x31\x05\x30-100\x12\x41\n\x1doptimize_for_ad_hoc_workloads\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"\x9c\x02\n\x19SQLServerConfigSet2017std\x12V\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32<.yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfig2017std\x12Q\n\x0buser_config\x18\x02 \x01(\x0b\x32<.yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfig2017std\x12T\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32<.yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfig2017std\"\xf7\x02\n\x16SQLServerConfig2017ent\x12H\n\x19max_degree_of_parallelism\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x08\xfa\xc7\x31\x04\x31-99\x12P\n\x1e\x63ost_threshold_for_parallelism\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0b\xfa\xc7\x31\x07\x35-32767\x12\x39\n\x0b\x61udit_level\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03\x30-3\x12\x43\n\x13\x66ill_factor_percent\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\t\xfa\xc7\x31\x05\x30-100\x12\x41\n\x1doptimize_for_ad_hoc_workloads\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\"\x9c\x02\n\x19SQLServerConfigSet2017ent\x12V\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32<.yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfig2017ent\x12Q\n\x0buser_config\x18\x02 \x01(\x0b\x32<.yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfig2017ent\x12T\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32<.yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfig2017entB~\n(yandex.cloud.api.mdb.sqlserver.v1.configZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/sqlserver/v1/config;sqlserverb\x06proto3')
 
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.mdb.sqlserver.v1.config.sqlserver2017_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-
-_SQLSERVERCONFIG2017STD = _descriptor.Descriptor(
-  name='SQLServerConfig2017std',
-  full_name='yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfig2017std',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='max_degree_of_parallelism', full_name='yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfig2017std.max_degree_of_parallelism', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\0041-99', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='cost_threshold_for_parallelism', full_name='yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfig2017std.cost_threshold_for_parallelism', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\0075-32767', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='audit_level', full_name='yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfig2017std.audit_level', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\0030-3', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='fill_factor_percent', full_name='yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfig2017std.fill_factor_percent', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\0050-100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='optimize_for_ad_hoc_workloads', full_name='yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfig2017std.optimize_for_ad_hoc_workloads', index=4,
-      number=5, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=162,
-  serialized_end=537,
-)
-
-
-_SQLSERVERCONFIGSET2017STD = _descriptor.Descriptor(
-  name='SQLServerConfigSet2017std',
-  full_name='yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfigSet2017std',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='effective_config', full_name='yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfigSet2017std.effective_config', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='user_config', full_name='yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfigSet2017std.user_config', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='default_config', full_name='yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfigSet2017std.default_config', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=540,
-  serialized_end=824,
-)
-
-
-_SQLSERVERCONFIG2017ENT = _descriptor.Descriptor(
-  name='SQLServerConfig2017ent',
-  full_name='yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfig2017ent',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='max_degree_of_parallelism', full_name='yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfig2017ent.max_degree_of_parallelism', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\0041-99', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='cost_threshold_for_parallelism', full_name='yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfig2017ent.cost_threshold_for_parallelism', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\0075-32767', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='audit_level', full_name='yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfig2017ent.audit_level', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\0030-3', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='fill_factor_percent', full_name='yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfig2017ent.fill_factor_percent', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\0050-100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='optimize_for_ad_hoc_workloads', full_name='yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfig2017ent.optimize_for_ad_hoc_workloads', index=4,
-      number=5, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=827,
-  serialized_end=1202,
-)
-
-
-_SQLSERVERCONFIGSET2017ENT = _descriptor.Descriptor(
-  name='SQLServerConfigSet2017ent',
-  full_name='yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfigSet2017ent',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='effective_config', full_name='yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfigSet2017ent.effective_config', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='user_config', full_name='yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfigSet2017ent.user_config', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='default_config', full_name='yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfigSet2017ent.default_config', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1205,
-  serialized_end=1489,
-)
-
-_SQLSERVERCONFIG2017STD.fields_by_name['max_degree_of_parallelism'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
-_SQLSERVERCONFIG2017STD.fields_by_name['cost_threshold_for_parallelism'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
-_SQLSERVERCONFIG2017STD.fields_by_name['audit_level'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
-_SQLSERVERCONFIG2017STD.fields_by_name['fill_factor_percent'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
-_SQLSERVERCONFIG2017STD.fields_by_name['optimize_for_ad_hoc_workloads'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
-_SQLSERVERCONFIGSET2017STD.fields_by_name['effective_config'].message_type = _SQLSERVERCONFIG2017STD
-_SQLSERVERCONFIGSET2017STD.fields_by_name['user_config'].message_type = _SQLSERVERCONFIG2017STD
-_SQLSERVERCONFIGSET2017STD.fields_by_name['default_config'].message_type = _SQLSERVERCONFIG2017STD
-_SQLSERVERCONFIG2017ENT.fields_by_name['max_degree_of_parallelism'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
-_SQLSERVERCONFIG2017ENT.fields_by_name['cost_threshold_for_parallelism'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
-_SQLSERVERCONFIG2017ENT.fields_by_name['audit_level'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
-_SQLSERVERCONFIG2017ENT.fields_by_name['fill_factor_percent'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT64VALUE
-_SQLSERVERCONFIG2017ENT.fields_by_name['optimize_for_ad_hoc_workloads'].message_type = google_dot_protobuf_dot_wrappers__pb2._BOOLVALUE
-_SQLSERVERCONFIGSET2017ENT.fields_by_name['effective_config'].message_type = _SQLSERVERCONFIG2017ENT
-_SQLSERVERCONFIGSET2017ENT.fields_by_name['user_config'].message_type = _SQLSERVERCONFIG2017ENT
-_SQLSERVERCONFIGSET2017ENT.fields_by_name['default_config'].message_type = _SQLSERVERCONFIG2017ENT
-DESCRIPTOR.message_types_by_name['SQLServerConfig2017std'] = _SQLSERVERCONFIG2017STD
-DESCRIPTOR.message_types_by_name['SQLServerConfigSet2017std'] = _SQLSERVERCONFIGSET2017STD
-DESCRIPTOR.message_types_by_name['SQLServerConfig2017ent'] = _SQLSERVERCONFIG2017ENT
-DESCRIPTOR.message_types_by_name['SQLServerConfigSet2017ent'] = _SQLSERVERCONFIGSET2017ENT
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-SQLServerConfig2017std = _reflection.GeneratedProtocolMessageType('SQLServerConfig2017std', (_message.Message,), {
-  'DESCRIPTOR' : _SQLSERVERCONFIG2017STD,
-  '__module__' : 'yandex.cloud.mdb.sqlserver.v1.config.sqlserver2017_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfig2017std)
-  })
-_sym_db.RegisterMessage(SQLServerConfig2017std)
-
-SQLServerConfigSet2017std = _reflection.GeneratedProtocolMessageType('SQLServerConfigSet2017std', (_message.Message,), {
-  'DESCRIPTOR' : _SQLSERVERCONFIGSET2017STD,
-  '__module__' : 'yandex.cloud.mdb.sqlserver.v1.config.sqlserver2017_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfigSet2017std)
-  })
-_sym_db.RegisterMessage(SQLServerConfigSet2017std)
-
-SQLServerConfig2017ent = _reflection.GeneratedProtocolMessageType('SQLServerConfig2017ent', (_message.Message,), {
-  'DESCRIPTOR' : _SQLSERVERCONFIG2017ENT,
-  '__module__' : 'yandex.cloud.mdb.sqlserver.v1.config.sqlserver2017_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfig2017ent)
-  })
-_sym_db.RegisterMessage(SQLServerConfig2017ent)
-
-SQLServerConfigSet2017ent = _reflection.GeneratedProtocolMessageType('SQLServerConfigSet2017ent', (_message.Message,), {
-  'DESCRIPTOR' : _SQLSERVERCONFIGSET2017ENT,
-  '__module__' : 'yandex.cloud.mdb.sqlserver.v1.config.sqlserver2017_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.sqlserver.v1.config.SQLServerConfigSet2017ent)
-  })
-_sym_db.RegisterMessage(SQLServerConfigSet2017ent)
-
-
-DESCRIPTOR._options = None
-_SQLSERVERCONFIG2017STD.fields_by_name['max_degree_of_parallelism']._options = None
-_SQLSERVERCONFIG2017STD.fields_by_name['cost_threshold_for_parallelism']._options = None
-_SQLSERVERCONFIG2017STD.fields_by_name['audit_level']._options = None
-_SQLSERVERCONFIG2017STD.fields_by_name['fill_factor_percent']._options = None
-_SQLSERVERCONFIG2017ENT.fields_by_name['max_degree_of_parallelism']._options = None
-_SQLSERVERCONFIG2017ENT.fields_by_name['cost_threshold_for_parallelism']._options = None
-_SQLSERVERCONFIG2017ENT.fields_by_name['audit_level']._options = None
-_SQLSERVERCONFIG2017ENT.fields_by_name['fill_factor_percent']._options = None
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n(yandex.cloud.api.mdb.sqlserver.v1.configZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/sqlserver/v1/config;sqlserver'
+  _SQLSERVERCONFIG2017STD.fields_by_name['max_degree_of_parallelism']._options = None
+  _SQLSERVERCONFIG2017STD.fields_by_name['max_degree_of_parallelism']._serialized_options = b'\372\3071\0041-99'
+  _SQLSERVERCONFIG2017STD.fields_by_name['cost_threshold_for_parallelism']._options = None
+  _SQLSERVERCONFIG2017STD.fields_by_name['cost_threshold_for_parallelism']._serialized_options = b'\372\3071\0075-32767'
+  _SQLSERVERCONFIG2017STD.fields_by_name['audit_level']._options = None
+  _SQLSERVERCONFIG2017STD.fields_by_name['audit_level']._serialized_options = b'\372\3071\0030-3'
+  _SQLSERVERCONFIG2017STD.fields_by_name['fill_factor_percent']._options = None
+  _SQLSERVERCONFIG2017STD.fields_by_name['fill_factor_percent']._serialized_options = b'\372\3071\0050-100'
+  _SQLSERVERCONFIG2017ENT.fields_by_name['max_degree_of_parallelism']._options = None
+  _SQLSERVERCONFIG2017ENT.fields_by_name['max_degree_of_parallelism']._serialized_options = b'\372\3071\0041-99'
+  _SQLSERVERCONFIG2017ENT.fields_by_name['cost_threshold_for_parallelism']._options = None
+  _SQLSERVERCONFIG2017ENT.fields_by_name['cost_threshold_for_parallelism']._serialized_options = b'\372\3071\0075-32767'
+  _SQLSERVERCONFIG2017ENT.fields_by_name['audit_level']._options = None
+  _SQLSERVERCONFIG2017ENT.fields_by_name['audit_level']._serialized_options = b'\372\3071\0030-3'
+  _SQLSERVERCONFIG2017ENT.fields_by_name['fill_factor_percent']._options = None
+  _SQLSERVERCONFIG2017ENT.fields_by_name['fill_factor_percent']._serialized_options = b'\372\3071\0050-100'
+  _globals['_SQLSERVERCONFIG2017STD']._serialized_start=162
+  _globals['_SQLSERVERCONFIG2017STD']._serialized_end=537
+  _globals['_SQLSERVERCONFIGSET2017STD']._serialized_start=540
+  _globals['_SQLSERVERCONFIGSET2017STD']._serialized_end=824
+  _globals['_SQLSERVERCONFIG2017ENT']._serialized_start=827
+  _globals['_SQLSERVERCONFIG2017ENT']._serialized_end=1202
+  _globals['_SQLSERVERCONFIGSET2017ENT']._serialized_start=1205
+  _globals['_SQLSERVERCONFIGSET2017ENT']._serialized_end=1489
 # @@protoc_insertion_point(module_scope)

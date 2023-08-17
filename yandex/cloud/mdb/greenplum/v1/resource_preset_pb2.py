@@ -3,9 +3,9 @@
 # source: yandex/cloud/mdb/greenplum/v1/resource_preset.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -13,141 +13,17 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/mdb/greenplum/v1/resource_preset.proto',
-  package='yandex.cloud.mdb.greenplum.v1',
-  syntax='proto3',
-  serialized_options=b'\n!yandex.cloud.api.mdb.greenplum.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/greenplum/v1;greenplum',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n3yandex/cloud/mdb/greenplum/v1/resource_preset.proto\x12\x1dyandex.cloud.mdb.greenplum.v1\"\x9c\x02\n\x0eResourcePreset\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08zone_ids\x18\x02 \x03(\t\x12\x15\n\rdisk_type_ids\x18\n \x03(\t\x12\r\n\x05\x63ores\x18\x03 \x01(\x03\x12\x0e\n\x06memory\x18\x04 \x01(\x03\x12@\n\x04type\x18\x05 \x01(\x0e\x32\x32.yandex.cloud.mdb.greenplum.v1.ResourcePreset.Type\x12\x1a\n\x12host_count_divider\x18\x08 \x01(\x03\x12!\n\x19max_segment_in_host_count\x18\t \x01(\x03\"5\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\n\n\x06MASTER\x10\x01\x12\x0b\n\x07SEGMENT\x10\x02\x42p\n!yandex.cloud.api.mdb.greenplum.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/greenplum/v1;greenplumb\x06proto3'
-)
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n3yandex/cloud/mdb/greenplum/v1/resource_preset.proto\x12\x1dyandex.cloud.mdb.greenplum.v1\"\x9c\x02\n\x0eResourcePreset\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08zone_ids\x18\x02 \x03(\t\x12\x15\n\rdisk_type_ids\x18\n \x03(\t\x12\r\n\x05\x63ores\x18\x03 \x01(\x03\x12\x0e\n\x06memory\x18\x04 \x01(\x03\x12@\n\x04type\x18\x05 \x01(\x0e\x32\x32.yandex.cloud.mdb.greenplum.v1.ResourcePreset.Type\x12\x1a\n\x12host_count_divider\x18\x08 \x01(\x03\x12!\n\x19max_segment_in_host_count\x18\t \x01(\x03\"5\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\n\n\x06MASTER\x10\x01\x12\x0b\n\x07SEGMENT\x10\x02\x42p\n!yandex.cloud.api.mdb.greenplum.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/greenplum/v1;greenplumb\x06proto3')
 
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.mdb.greenplum.v1.resource_preset_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-_RESOURCEPRESET_TYPE = _descriptor.EnumDescriptor(
-  name='Type',
-  full_name='yandex.cloud.mdb.greenplum.v1.ResourcePreset.Type',
-  filename=None,
-  file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='TYPE_UNSPECIFIED', index=0, number=0,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='MASTER', index=1, number=1,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='SEGMENT', index=2, number=2,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-  ],
-  containing_type=None,
-  serialized_options=None,
-  serialized_start=318,
-  serialized_end=371,
-)
-_sym_db.RegisterEnumDescriptor(_RESOURCEPRESET_TYPE)
-
-
-_RESOURCEPRESET = _descriptor.Descriptor(
-  name='ResourcePreset',
-  full_name='yandex.cloud.mdb.greenplum.v1.ResourcePreset',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='yandex.cloud.mdb.greenplum.v1.ResourcePreset.id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='zone_ids', full_name='yandex.cloud.mdb.greenplum.v1.ResourcePreset.zone_ids', index=1,
-      number=2, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='disk_type_ids', full_name='yandex.cloud.mdb.greenplum.v1.ResourcePreset.disk_type_ids', index=2,
-      number=10, type=9, cpp_type=9, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='cores', full_name='yandex.cloud.mdb.greenplum.v1.ResourcePreset.cores', index=3,
-      number=3, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='memory', full_name='yandex.cloud.mdb.greenplum.v1.ResourcePreset.memory', index=4,
-      number=4, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='type', full_name='yandex.cloud.mdb.greenplum.v1.ResourcePreset.type', index=5,
-      number=5, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='host_count_divider', full_name='yandex.cloud.mdb.greenplum.v1.ResourcePreset.host_count_divider', index=6,
-      number=8, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='max_segment_in_host_count', full_name='yandex.cloud.mdb.greenplum.v1.ResourcePreset.max_segment_in_host_count', index=7,
-      number=9, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-    _RESOURCEPRESET_TYPE,
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=87,
-  serialized_end=371,
-)
-
-_RESOURCEPRESET.fields_by_name['type'].enum_type = _RESOURCEPRESET_TYPE
-_RESOURCEPRESET_TYPE.containing_type = _RESOURCEPRESET
-DESCRIPTOR.message_types_by_name['ResourcePreset'] = _RESOURCEPRESET
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-ResourcePreset = _reflection.GeneratedProtocolMessageType('ResourcePreset', (_message.Message,), {
-  'DESCRIPTOR' : _RESOURCEPRESET,
-  '__module__' : 'yandex.cloud.mdb.greenplum.v1.resource_preset_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.greenplum.v1.ResourcePreset)
-  })
-_sym_db.RegisterMessage(ResourcePreset)
-
-
-DESCRIPTOR._options = None
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n!yandex.cloud.api.mdb.greenplum.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/greenplum/v1;greenplum'
+  _globals['_RESOURCEPRESET']._serialized_start=87
+  _globals['_RESOURCEPRESET']._serialized_end=371
+  _globals['_RESOURCEPRESET_TYPE']._serialized_start=318
+  _globals['_RESOURCEPRESET_TYPE']._serialized_end=371
 # @@protoc_insertion_point(module_scope)

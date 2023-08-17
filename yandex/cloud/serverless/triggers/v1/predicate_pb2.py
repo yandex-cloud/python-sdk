@@ -3,9 +3,9 @@
 # source: yandex/cloud/serverless/triggers/v1/predicate.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -14,199 +14,25 @@ _sym_db = _symbol_database.Default()
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/serverless/triggers/v1/predicate.proto',
-  package='yandex.cloud.serverless.triggers.v1',
-  syntax='proto3',
-  serialized_options=b'\n\'yandex.cloud.api.serverless.triggers.v1ZPgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/triggers/v1;triggers',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n3yandex/cloud/serverless/triggers/v1/predicate.proto\x12#yandex.cloud.serverless.triggers.v1\x1a\x1dyandex/cloud/validation.proto\"\xc5\x01\n\tPredicate\x12J\n\rand_predicate\x18\x02 \x01(\x0b\x32\x31.yandex.cloud.serverless.triggers.v1.AndPredicateH\x00\x12Y\n\x15\x66ield_value_predicate\x18\x04 \x01(\x0b\x32\x38.yandex.cloud.serverless.triggers.v1.FieldValuePredicateH\x00\x42\x11\n\tpredicate\x12\x04\xc0\xc1\x31\x01\"Q\n\x0c\x41ndPredicate\x12\x41\n\tpredicate\x18\x01 \x03(\x0b\x32..yandex.cloud.serverless.triggers.v1.Predicate\"s\n\x13\x46ieldValuePredicate\x12\x18\n\nfield_path\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x0f\n\x05\x65xact\x18\x03 \x01(\tH\x00\x12\x10\n\x06prefix\x18\x08 \x01(\tH\x00\x12\x10\n\x06suffix\x18\t \x01(\tH\x00\x42\r\n\x05value\x12\x04\xc0\xc1\x31\x01\x42{\n\'yandex.cloud.api.serverless.triggers.v1ZPgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/triggers/v1;triggersb\x06proto3'
-  ,
-  dependencies=[yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n3yandex/cloud/serverless/triggers/v1/predicate.proto\x12#yandex.cloud.serverless.triggers.v1\x1a\x1dyandex/cloud/validation.proto\"\xc5\x01\n\tPredicate\x12J\n\rand_predicate\x18\x02 \x01(\x0b\x32\x31.yandex.cloud.serverless.triggers.v1.AndPredicateH\x00\x12Y\n\x15\x66ield_value_predicate\x18\x04 \x01(\x0b\x32\x38.yandex.cloud.serverless.triggers.v1.FieldValuePredicateH\x00\x42\x11\n\tpredicate\x12\x04\xc0\xc1\x31\x01\"Q\n\x0c\x41ndPredicate\x12\x41\n\tpredicate\x18\x01 \x03(\x0b\x32..yandex.cloud.serverless.triggers.v1.Predicate\"s\n\x13\x46ieldValuePredicate\x12\x18\n\nfield_path\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x0f\n\x05\x65xact\x18\x03 \x01(\tH\x00\x12\x10\n\x06prefix\x18\x08 \x01(\tH\x00\x12\x10\n\x06suffix\x18\t \x01(\tH\x00\x42\r\n\x05value\x12\x04\xc0\xc1\x31\x01\x42{\n\'yandex.cloud.api.serverless.triggers.v1ZPgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/triggers/v1;triggersb\x06proto3')
 
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.serverless.triggers.v1.predicate_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-
-_PREDICATE = _descriptor.Descriptor(
-  name='Predicate',
-  full_name='yandex.cloud.serverless.triggers.v1.Predicate',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='and_predicate', full_name='yandex.cloud.serverless.triggers.v1.Predicate.and_predicate', index=0,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='field_value_predicate', full_name='yandex.cloud.serverless.triggers.v1.Predicate.field_value_predicate', index=1,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-    _descriptor.OneofDescriptor(
-      name='predicate', full_name='yandex.cloud.serverless.triggers.v1.Predicate.predicate',
-      index=0, containing_type=None,
-      create_key=_descriptor._internal_create_key,
-    fields=[], serialized_options=b'\300\3011\001'),
-  ],
-  serialized_start=124,
-  serialized_end=321,
-)
-
-
-_ANDPREDICATE = _descriptor.Descriptor(
-  name='AndPredicate',
-  full_name='yandex.cloud.serverless.triggers.v1.AndPredicate',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='predicate', full_name='yandex.cloud.serverless.triggers.v1.AndPredicate.predicate', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=323,
-  serialized_end=404,
-)
-
-
-_FIELDVALUEPREDICATE = _descriptor.Descriptor(
-  name='FieldValuePredicate',
-  full_name='yandex.cloud.serverless.triggers.v1.FieldValuePredicate',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='field_path', full_name='yandex.cloud.serverless.triggers.v1.FieldValuePredicate.field_path', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='exact', full_name='yandex.cloud.serverless.triggers.v1.FieldValuePredicate.exact', index=1,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='prefix', full_name='yandex.cloud.serverless.triggers.v1.FieldValuePredicate.prefix', index=2,
-      number=8, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='suffix', full_name='yandex.cloud.serverless.triggers.v1.FieldValuePredicate.suffix', index=3,
-      number=9, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-    _descriptor.OneofDescriptor(
-      name='value', full_name='yandex.cloud.serverless.triggers.v1.FieldValuePredicate.value',
-      index=0, containing_type=None,
-      create_key=_descriptor._internal_create_key,
-    fields=[], serialized_options=b'\300\3011\001'),
-  ],
-  serialized_start=406,
-  serialized_end=521,
-)
-
-_PREDICATE.fields_by_name['and_predicate'].message_type = _ANDPREDICATE
-_PREDICATE.fields_by_name['field_value_predicate'].message_type = _FIELDVALUEPREDICATE
-_PREDICATE.oneofs_by_name['predicate'].fields.append(
-  _PREDICATE.fields_by_name['and_predicate'])
-_PREDICATE.fields_by_name['and_predicate'].containing_oneof = _PREDICATE.oneofs_by_name['predicate']
-_PREDICATE.oneofs_by_name['predicate'].fields.append(
-  _PREDICATE.fields_by_name['field_value_predicate'])
-_PREDICATE.fields_by_name['field_value_predicate'].containing_oneof = _PREDICATE.oneofs_by_name['predicate']
-_ANDPREDICATE.fields_by_name['predicate'].message_type = _PREDICATE
-_FIELDVALUEPREDICATE.oneofs_by_name['value'].fields.append(
-  _FIELDVALUEPREDICATE.fields_by_name['exact'])
-_FIELDVALUEPREDICATE.fields_by_name['exact'].containing_oneof = _FIELDVALUEPREDICATE.oneofs_by_name['value']
-_FIELDVALUEPREDICATE.oneofs_by_name['value'].fields.append(
-  _FIELDVALUEPREDICATE.fields_by_name['prefix'])
-_FIELDVALUEPREDICATE.fields_by_name['prefix'].containing_oneof = _FIELDVALUEPREDICATE.oneofs_by_name['value']
-_FIELDVALUEPREDICATE.oneofs_by_name['value'].fields.append(
-  _FIELDVALUEPREDICATE.fields_by_name['suffix'])
-_FIELDVALUEPREDICATE.fields_by_name['suffix'].containing_oneof = _FIELDVALUEPREDICATE.oneofs_by_name['value']
-DESCRIPTOR.message_types_by_name['Predicate'] = _PREDICATE
-DESCRIPTOR.message_types_by_name['AndPredicate'] = _ANDPREDICATE
-DESCRIPTOR.message_types_by_name['FieldValuePredicate'] = _FIELDVALUEPREDICATE
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-Predicate = _reflection.GeneratedProtocolMessageType('Predicate', (_message.Message,), {
-  'DESCRIPTOR' : _PREDICATE,
-  '__module__' : 'yandex.cloud.serverless.triggers.v1.predicate_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.serverless.triggers.v1.Predicate)
-  })
-_sym_db.RegisterMessage(Predicate)
-
-AndPredicate = _reflection.GeneratedProtocolMessageType('AndPredicate', (_message.Message,), {
-  'DESCRIPTOR' : _ANDPREDICATE,
-  '__module__' : 'yandex.cloud.serverless.triggers.v1.predicate_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.serverless.triggers.v1.AndPredicate)
-  })
-_sym_db.RegisterMessage(AndPredicate)
-
-FieldValuePredicate = _reflection.GeneratedProtocolMessageType('FieldValuePredicate', (_message.Message,), {
-  'DESCRIPTOR' : _FIELDVALUEPREDICATE,
-  '__module__' : 'yandex.cloud.serverless.triggers.v1.predicate_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.serverless.triggers.v1.FieldValuePredicate)
-  })
-_sym_db.RegisterMessage(FieldValuePredicate)
-
-
-DESCRIPTOR._options = None
-_PREDICATE.oneofs_by_name['predicate']._options = None
-_FIELDVALUEPREDICATE.oneofs_by_name['value']._options = None
-_FIELDVALUEPREDICATE.fields_by_name['field_path']._options = None
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n\'yandex.cloud.api.serverless.triggers.v1ZPgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/triggers/v1;triggers'
+  _PREDICATE.oneofs_by_name['predicate']._options = None
+  _PREDICATE.oneofs_by_name['predicate']._serialized_options = b'\300\3011\001'
+  _FIELDVALUEPREDICATE.oneofs_by_name['value']._options = None
+  _FIELDVALUEPREDICATE.oneofs_by_name['value']._serialized_options = b'\300\3011\001'
+  _FIELDVALUEPREDICATE.fields_by_name['field_path']._options = None
+  _FIELDVALUEPREDICATE.fields_by_name['field_path']._serialized_options = b'\350\3071\001'
+  _globals['_PREDICATE']._serialized_start=124
+  _globals['_PREDICATE']._serialized_end=321
+  _globals['_ANDPREDICATE']._serialized_start=323
+  _globals['_ANDPREDICATE']._serialized_end=404
+  _globals['_FIELDVALUEPREDICATE']._serialized_start=406
+  _globals['_FIELDVALUEPREDICATE']._serialized_end=521
 # @@protoc_insertion_point(module_scope)

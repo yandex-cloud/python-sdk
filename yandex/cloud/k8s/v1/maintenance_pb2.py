@@ -3,9 +3,9 @@
 # source: yandex/cloud/k8s/v1/maintenance.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -17,278 +17,37 @@ from google.protobuf import duration_pb2 as google_dot_protobuf_dot_duration__pb
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/k8s/v1/maintenance.proto',
-  package='yandex.cloud.k8s.v1',
-  syntax='proto3',
-  serialized_options=b'\n\027yandex.cloud.api.k8s.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/k8s/v1;k8s',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n%yandex/cloud/k8s/v1/maintenance.proto\x12\x13yandex.cloud.k8s.v1\x1a\x1bgoogle/type/dayofweek.proto\x1a\x1bgoogle/type/timeofday.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1dyandex/cloud/validation.proto\"\x89\x02\n\x11MaintenanceWindow\x12@\n\x07\x61nytime\x18\x01 \x01(\x0b\x32-.yandex.cloud.k8s.v1.AnytimeMaintenanceWindowH\x00\x12O\n\x18\x64\x61ily_maintenance_window\x18\x02 \x01(\x0b\x32+.yandex.cloud.k8s.v1.DailyMaintenanceWindowH\x00\x12Q\n\x19weekly_maintenance_window\x18\x03 \x01(\x0b\x32,.yandex.cloud.k8s.v1.WeeklyMaintenanceWindowH\x00\x42\x0e\n\x06policy\x12\x04\xc0\xc1\x31\x01\"\x1a\n\x18\x41nytimeMaintenanceWindow\"\x83\x01\n\x16\x44\x61ilyMaintenanceWindow\x12\x30\n\nstart_time\x18\x01 \x01(\x0b\x32\x16.google.type.TimeOfDayB\x04\xe8\xc7\x31\x01\x12\x37\n\x08\x64uration\x18\x02 \x01(\x0b\x32\x19.google.protobuf.DurationB\n\xfa\xc7\x31\x06\x31h-24h\"\xb7\x01\n\x1b\x44\x61ysOfWeekMaintenanceWindow\x12-\n\x04\x64\x61ys\x18\x01 \x03(\x0e\x32\x16.google.type.DayOfWeekB\x07\x82\xc8\x31\x03\x31-7\x12\x30\n\nstart_time\x18\x02 \x01(\x0b\x32\x16.google.type.TimeOfDayB\x04\xe8\xc7\x31\x01\x12\x37\n\x08\x64uration\x18\x03 \x01(\x0b\x32\x19.google.protobuf.DurationB\n\xfa\xc7\x31\x06\x31h-24h\"j\n\x17WeeklyMaintenanceWindow\x12O\n\x0c\x64\x61ys_of_week\x18\x01 \x03(\x0b\x32\x30.yandex.cloud.k8s.v1.DaysOfWeekMaintenanceWindowB\x07\x82\xc8\x31\x03\x31-7BV\n\x17yandex.cloud.api.k8s.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/k8s/v1;k8sb\x06proto3'
-  ,
-  dependencies=[google_dot_type_dot_dayofweek__pb2.DESCRIPTOR,google_dot_type_dot_timeofday__pb2.DESCRIPTOR,google_dot_protobuf_dot_duration__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%yandex/cloud/k8s/v1/maintenance.proto\x12\x13yandex.cloud.k8s.v1\x1a\x1bgoogle/type/dayofweek.proto\x1a\x1bgoogle/type/timeofday.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1dyandex/cloud/validation.proto\"\x89\x02\n\x11MaintenanceWindow\x12@\n\x07\x61nytime\x18\x01 \x01(\x0b\x32-.yandex.cloud.k8s.v1.AnytimeMaintenanceWindowH\x00\x12O\n\x18\x64\x61ily_maintenance_window\x18\x02 \x01(\x0b\x32+.yandex.cloud.k8s.v1.DailyMaintenanceWindowH\x00\x12Q\n\x19weekly_maintenance_window\x18\x03 \x01(\x0b\x32,.yandex.cloud.k8s.v1.WeeklyMaintenanceWindowH\x00\x42\x0e\n\x06policy\x12\x04\xc0\xc1\x31\x01\"\x1a\n\x18\x41nytimeMaintenanceWindow\"\x83\x01\n\x16\x44\x61ilyMaintenanceWindow\x12\x30\n\nstart_time\x18\x01 \x01(\x0b\x32\x16.google.type.TimeOfDayB\x04\xe8\xc7\x31\x01\x12\x37\n\x08\x64uration\x18\x02 \x01(\x0b\x32\x19.google.protobuf.DurationB\n\xfa\xc7\x31\x06\x31h-24h\"\xb7\x01\n\x1b\x44\x61ysOfWeekMaintenanceWindow\x12-\n\x04\x64\x61ys\x18\x01 \x03(\x0e\x32\x16.google.type.DayOfWeekB\x07\x82\xc8\x31\x03\x31-7\x12\x30\n\nstart_time\x18\x02 \x01(\x0b\x32\x16.google.type.TimeOfDayB\x04\xe8\xc7\x31\x01\x12\x37\n\x08\x64uration\x18\x03 \x01(\x0b\x32\x19.google.protobuf.DurationB\n\xfa\xc7\x31\x06\x31h-24h\"j\n\x17WeeklyMaintenanceWindow\x12O\n\x0c\x64\x61ys_of_week\x18\x01 \x03(\x0b\x32\x30.yandex.cloud.k8s.v1.DaysOfWeekMaintenanceWindowB\x07\x82\xc8\x31\x03\x31-7BV\n\x17yandex.cloud.api.k8s.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/k8s/v1;k8sb\x06proto3')
 
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.k8s.v1.maintenance_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-
-_MAINTENANCEWINDOW = _descriptor.Descriptor(
-  name='MaintenanceWindow',
-  full_name='yandex.cloud.k8s.v1.MaintenanceWindow',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='anytime', full_name='yandex.cloud.k8s.v1.MaintenanceWindow.anytime', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='daily_maintenance_window', full_name='yandex.cloud.k8s.v1.MaintenanceWindow.daily_maintenance_window', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='weekly_maintenance_window', full_name='yandex.cloud.k8s.v1.MaintenanceWindow.weekly_maintenance_window', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-    _descriptor.OneofDescriptor(
-      name='policy', full_name='yandex.cloud.k8s.v1.MaintenanceWindow.policy',
-      index=0, containing_type=None,
-      create_key=_descriptor._internal_create_key,
-    fields=[], serialized_options=b'\300\3011\001'),
-  ],
-  serialized_start=184,
-  serialized_end=449,
-)
-
-
-_ANYTIMEMAINTENANCEWINDOW = _descriptor.Descriptor(
-  name='AnytimeMaintenanceWindow',
-  full_name='yandex.cloud.k8s.v1.AnytimeMaintenanceWindow',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=451,
-  serialized_end=477,
-)
-
-
-_DAILYMAINTENANCEWINDOW = _descriptor.Descriptor(
-  name='DailyMaintenanceWindow',
-  full_name='yandex.cloud.k8s.v1.DailyMaintenanceWindow',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='start_time', full_name='yandex.cloud.k8s.v1.DailyMaintenanceWindow.start_time', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='duration', full_name='yandex.cloud.k8s.v1.DailyMaintenanceWindow.duration', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\0061h-24h', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=480,
-  serialized_end=611,
-)
-
-
-_DAYSOFWEEKMAINTENANCEWINDOW = _descriptor.Descriptor(
-  name='DaysOfWeekMaintenanceWindow',
-  full_name='yandex.cloud.k8s.v1.DaysOfWeekMaintenanceWindow',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='days', full_name='yandex.cloud.k8s.v1.DaysOfWeekMaintenanceWindow.days', index=0,
-      number=1, type=14, cpp_type=8, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\0031-7', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='start_time', full_name='yandex.cloud.k8s.v1.DaysOfWeekMaintenanceWindow.start_time', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='duration', full_name='yandex.cloud.k8s.v1.DaysOfWeekMaintenanceWindow.duration', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\0061h-24h', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=614,
-  serialized_end=797,
-)
-
-
-_WEEKLYMAINTENANCEWINDOW = _descriptor.Descriptor(
-  name='WeeklyMaintenanceWindow',
-  full_name='yandex.cloud.k8s.v1.WeeklyMaintenanceWindow',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='days_of_week', full_name='yandex.cloud.k8s.v1.WeeklyMaintenanceWindow.days_of_week', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\0031-7', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=799,
-  serialized_end=905,
-)
-
-_MAINTENANCEWINDOW.fields_by_name['anytime'].message_type = _ANYTIMEMAINTENANCEWINDOW
-_MAINTENANCEWINDOW.fields_by_name['daily_maintenance_window'].message_type = _DAILYMAINTENANCEWINDOW
-_MAINTENANCEWINDOW.fields_by_name['weekly_maintenance_window'].message_type = _WEEKLYMAINTENANCEWINDOW
-_MAINTENANCEWINDOW.oneofs_by_name['policy'].fields.append(
-  _MAINTENANCEWINDOW.fields_by_name['anytime'])
-_MAINTENANCEWINDOW.fields_by_name['anytime'].containing_oneof = _MAINTENANCEWINDOW.oneofs_by_name['policy']
-_MAINTENANCEWINDOW.oneofs_by_name['policy'].fields.append(
-  _MAINTENANCEWINDOW.fields_by_name['daily_maintenance_window'])
-_MAINTENANCEWINDOW.fields_by_name['daily_maintenance_window'].containing_oneof = _MAINTENANCEWINDOW.oneofs_by_name['policy']
-_MAINTENANCEWINDOW.oneofs_by_name['policy'].fields.append(
-  _MAINTENANCEWINDOW.fields_by_name['weekly_maintenance_window'])
-_MAINTENANCEWINDOW.fields_by_name['weekly_maintenance_window'].containing_oneof = _MAINTENANCEWINDOW.oneofs_by_name['policy']
-_DAILYMAINTENANCEWINDOW.fields_by_name['start_time'].message_type = google_dot_type_dot_timeofday__pb2._TIMEOFDAY
-_DAILYMAINTENANCEWINDOW.fields_by_name['duration'].message_type = google_dot_protobuf_dot_duration__pb2._DURATION
-_DAYSOFWEEKMAINTENANCEWINDOW.fields_by_name['days'].enum_type = google_dot_type_dot_dayofweek__pb2._DAYOFWEEK
-_DAYSOFWEEKMAINTENANCEWINDOW.fields_by_name['start_time'].message_type = google_dot_type_dot_timeofday__pb2._TIMEOFDAY
-_DAYSOFWEEKMAINTENANCEWINDOW.fields_by_name['duration'].message_type = google_dot_protobuf_dot_duration__pb2._DURATION
-_WEEKLYMAINTENANCEWINDOW.fields_by_name['days_of_week'].message_type = _DAYSOFWEEKMAINTENANCEWINDOW
-DESCRIPTOR.message_types_by_name['MaintenanceWindow'] = _MAINTENANCEWINDOW
-DESCRIPTOR.message_types_by_name['AnytimeMaintenanceWindow'] = _ANYTIMEMAINTENANCEWINDOW
-DESCRIPTOR.message_types_by_name['DailyMaintenanceWindow'] = _DAILYMAINTENANCEWINDOW
-DESCRIPTOR.message_types_by_name['DaysOfWeekMaintenanceWindow'] = _DAYSOFWEEKMAINTENANCEWINDOW
-DESCRIPTOR.message_types_by_name['WeeklyMaintenanceWindow'] = _WEEKLYMAINTENANCEWINDOW
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-MaintenanceWindow = _reflection.GeneratedProtocolMessageType('MaintenanceWindow', (_message.Message,), {
-  'DESCRIPTOR' : _MAINTENANCEWINDOW,
-  '__module__' : 'yandex.cloud.k8s.v1.maintenance_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.k8s.v1.MaintenanceWindow)
-  })
-_sym_db.RegisterMessage(MaintenanceWindow)
-
-AnytimeMaintenanceWindow = _reflection.GeneratedProtocolMessageType('AnytimeMaintenanceWindow', (_message.Message,), {
-  'DESCRIPTOR' : _ANYTIMEMAINTENANCEWINDOW,
-  '__module__' : 'yandex.cloud.k8s.v1.maintenance_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.k8s.v1.AnytimeMaintenanceWindow)
-  })
-_sym_db.RegisterMessage(AnytimeMaintenanceWindow)
-
-DailyMaintenanceWindow = _reflection.GeneratedProtocolMessageType('DailyMaintenanceWindow', (_message.Message,), {
-  'DESCRIPTOR' : _DAILYMAINTENANCEWINDOW,
-  '__module__' : 'yandex.cloud.k8s.v1.maintenance_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.k8s.v1.DailyMaintenanceWindow)
-  })
-_sym_db.RegisterMessage(DailyMaintenanceWindow)
-
-DaysOfWeekMaintenanceWindow = _reflection.GeneratedProtocolMessageType('DaysOfWeekMaintenanceWindow', (_message.Message,), {
-  'DESCRIPTOR' : _DAYSOFWEEKMAINTENANCEWINDOW,
-  '__module__' : 'yandex.cloud.k8s.v1.maintenance_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.k8s.v1.DaysOfWeekMaintenanceWindow)
-  })
-_sym_db.RegisterMessage(DaysOfWeekMaintenanceWindow)
-
-WeeklyMaintenanceWindow = _reflection.GeneratedProtocolMessageType('WeeklyMaintenanceWindow', (_message.Message,), {
-  'DESCRIPTOR' : _WEEKLYMAINTENANCEWINDOW,
-  '__module__' : 'yandex.cloud.k8s.v1.maintenance_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.k8s.v1.WeeklyMaintenanceWindow)
-  })
-_sym_db.RegisterMessage(WeeklyMaintenanceWindow)
-
-
-DESCRIPTOR._options = None
-_MAINTENANCEWINDOW.oneofs_by_name['policy']._options = None
-_DAILYMAINTENANCEWINDOW.fields_by_name['start_time']._options = None
-_DAILYMAINTENANCEWINDOW.fields_by_name['duration']._options = None
-_DAYSOFWEEKMAINTENANCEWINDOW.fields_by_name['days']._options = None
-_DAYSOFWEEKMAINTENANCEWINDOW.fields_by_name['start_time']._options = None
-_DAYSOFWEEKMAINTENANCEWINDOW.fields_by_name['duration']._options = None
-_WEEKLYMAINTENANCEWINDOW.fields_by_name['days_of_week']._options = None
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n\027yandex.cloud.api.k8s.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/k8s/v1;k8s'
+  _MAINTENANCEWINDOW.oneofs_by_name['policy']._options = None
+  _MAINTENANCEWINDOW.oneofs_by_name['policy']._serialized_options = b'\300\3011\001'
+  _DAILYMAINTENANCEWINDOW.fields_by_name['start_time']._options = None
+  _DAILYMAINTENANCEWINDOW.fields_by_name['start_time']._serialized_options = b'\350\3071\001'
+  _DAILYMAINTENANCEWINDOW.fields_by_name['duration']._options = None
+  _DAILYMAINTENANCEWINDOW.fields_by_name['duration']._serialized_options = b'\372\3071\0061h-24h'
+  _DAYSOFWEEKMAINTENANCEWINDOW.fields_by_name['days']._options = None
+  _DAYSOFWEEKMAINTENANCEWINDOW.fields_by_name['days']._serialized_options = b'\202\3101\0031-7'
+  _DAYSOFWEEKMAINTENANCEWINDOW.fields_by_name['start_time']._options = None
+  _DAYSOFWEEKMAINTENANCEWINDOW.fields_by_name['start_time']._serialized_options = b'\350\3071\001'
+  _DAYSOFWEEKMAINTENANCEWINDOW.fields_by_name['duration']._options = None
+  _DAYSOFWEEKMAINTENANCEWINDOW.fields_by_name['duration']._serialized_options = b'\372\3071\0061h-24h'
+  _WEEKLYMAINTENANCEWINDOW.fields_by_name['days_of_week']._options = None
+  _WEEKLYMAINTENANCEWINDOW.fields_by_name['days_of_week']._serialized_options = b'\202\3101\0031-7'
+  _globals['_MAINTENANCEWINDOW']._serialized_start=184
+  _globals['_MAINTENANCEWINDOW']._serialized_end=449
+  _globals['_ANYTIMEMAINTENANCEWINDOW']._serialized_start=451
+  _globals['_ANYTIMEMAINTENANCEWINDOW']._serialized_end=477
+  _globals['_DAILYMAINTENANCEWINDOW']._serialized_start=480
+  _globals['_DAILYMAINTENANCEWINDOW']._serialized_end=611
+  _globals['_DAYSOFWEEKMAINTENANCEWINDOW']._serialized_start=614
+  _globals['_DAYSOFWEEKMAINTENANCEWINDOW']._serialized_end=797
+  _globals['_WEEKLYMAINTENANCEWINDOW']._serialized_start=799
+  _globals['_WEEKLYMAINTENANCEWINDOW']._serialized_end=905
 # @@protoc_insertion_point(module_scope)

@@ -3,9 +3,9 @@
 # source: yandex/cloud/reference/reference.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -13,147 +13,19 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/reference/reference.proto',
-  package='yandex.cloud.reference',
-  syntax='proto3',
-  serialized_options=b'\n\032yandex.cloud.api.referenceZDgithub.com/yandex-cloud/go-genproto/yandex/cloud/reference;reference',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n&yandex/cloud/reference/reference.proto\x12\x16yandex.cloud.reference\"\xb0\x01\n\tReference\x12\x32\n\x08referrer\x18\x01 \x01(\x0b\x32 .yandex.cloud.reference.Referrer\x12\x34\n\x04type\x18\x02 \x01(\x0e\x32&.yandex.cloud.reference.Reference.Type\"9\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x0e\n\nMANAGED_BY\x10\x01\x12\x0b\n\x07USED_BY\x10\x02\"$\n\x08Referrer\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\tBb\n\x1ayandex.cloud.api.referenceZDgithub.com/yandex-cloud/go-genproto/yandex/cloud/reference;referenceb\x06proto3'
-)
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&yandex/cloud/reference/reference.proto\x12\x16yandex.cloud.reference\"\xb0\x01\n\tReference\x12\x32\n\x08referrer\x18\x01 \x01(\x0b\x32 .yandex.cloud.reference.Referrer\x12\x34\n\x04type\x18\x02 \x01(\x0e\x32&.yandex.cloud.reference.Reference.Type\"9\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x0e\n\nMANAGED_BY\x10\x01\x12\x0b\n\x07USED_BY\x10\x02\"$\n\x08Referrer\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\tBb\n\x1ayandex.cloud.api.referenceZDgithub.com/yandex-cloud/go-genproto/yandex/cloud/reference;referenceb\x06proto3')
 
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.reference.reference_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-_REFERENCE_TYPE = _descriptor.EnumDescriptor(
-  name='Type',
-  full_name='yandex.cloud.reference.Reference.Type',
-  filename=None,
-  file=DESCRIPTOR,
-  create_key=_descriptor._internal_create_key,
-  values=[
-    _descriptor.EnumValueDescriptor(
-      name='TYPE_UNSPECIFIED', index=0, number=0,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='MANAGED_BY', index=1, number=1,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-    _descriptor.EnumValueDescriptor(
-      name='USED_BY', index=2, number=2,
-      serialized_options=None,
-      type=None,
-      create_key=_descriptor._internal_create_key),
-  ],
-  containing_type=None,
-  serialized_options=None,
-  serialized_start=186,
-  serialized_end=243,
-)
-_sym_db.RegisterEnumDescriptor(_REFERENCE_TYPE)
-
-
-_REFERENCE = _descriptor.Descriptor(
-  name='Reference',
-  full_name='yandex.cloud.reference.Reference',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='referrer', full_name='yandex.cloud.reference.Reference.referrer', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='type', full_name='yandex.cloud.reference.Reference.type', index=1,
-      number=2, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-    _REFERENCE_TYPE,
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=67,
-  serialized_end=243,
-)
-
-
-_REFERRER = _descriptor.Descriptor(
-  name='Referrer',
-  full_name='yandex.cloud.reference.Referrer',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='type', full_name='yandex.cloud.reference.Referrer.type', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='id', full_name='yandex.cloud.reference.Referrer.id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=245,
-  serialized_end=281,
-)
-
-_REFERENCE.fields_by_name['referrer'].message_type = _REFERRER
-_REFERENCE.fields_by_name['type'].enum_type = _REFERENCE_TYPE
-_REFERENCE_TYPE.containing_type = _REFERENCE
-DESCRIPTOR.message_types_by_name['Reference'] = _REFERENCE
-DESCRIPTOR.message_types_by_name['Referrer'] = _REFERRER
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-Reference = _reflection.GeneratedProtocolMessageType('Reference', (_message.Message,), {
-  'DESCRIPTOR' : _REFERENCE,
-  '__module__' : 'yandex.cloud.reference.reference_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.reference.Reference)
-  })
-_sym_db.RegisterMessage(Reference)
-
-Referrer = _reflection.GeneratedProtocolMessageType('Referrer', (_message.Message,), {
-  'DESCRIPTOR' : _REFERRER,
-  '__module__' : 'yandex.cloud.reference.reference_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.reference.Referrer)
-  })
-_sym_db.RegisterMessage(Referrer)
-
-
-DESCRIPTOR._options = None
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n\032yandex.cloud.api.referenceZDgithub.com/yandex-cloud/go-genproto/yandex/cloud/reference;reference'
+  _globals['_REFERENCE']._serialized_start=67
+  _globals['_REFERENCE']._serialized_end=243
+  _globals['_REFERENCE_TYPE']._serialized_start=186
+  _globals['_REFERENCE_TYPE']._serialized_end=243
+  _globals['_REFERRER']._serialized_start=245
+  _globals['_REFERRER']._serialized_end=281
 # @@protoc_insertion_point(module_scope)

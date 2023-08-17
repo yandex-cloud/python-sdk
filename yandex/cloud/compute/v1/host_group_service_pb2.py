@@ -3,9 +3,9 @@
 # source: yandex/cloud/compute/v1/host_group_service.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -20,1046 +20,123 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/compute/v1/host_group_service.proto',
-  package='yandex.cloud.compute.v1',
-  syntax='proto3',
-  serialized_options=b'\n\033yandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;compute',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n0yandex/cloud/compute/v1/host_group_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/compute/v1/instance.proto\x1a(yandex/cloud/compute/v1/host_group.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\":\n\x13GetHostGroupRequest\x12#\n\rhost_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xaf\x01\n\x15ListHostGroupsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1b\n\x08order_by\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=100\"j\n\x16ListHostGroupsResponse\x12\x37\n\x0bhost_groups\x18\x01 \x03(\x0b\x32\".yandex.cloud.compute.v1.HostGroup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x95\x04\n\x16\x43reateHostGroupRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\x04name\x18\x02 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x94\x01\n\x06labels\x18\x04 \x03(\x0b\x32;.yandex.cloud.compute.v1.CreateHostGroupRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x1d\n\x07zone_id\x18\x05 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\x07type_id\x18\x06 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x46\n\x12maintenance_policy\x18\x07 \x01(\x0e\x32*.yandex.cloud.compute.v1.MaintenancePolicy\x12:\n\x0cscale_policy\x18\x08 \x01(\x0b\x32$.yandex.cloud.compute.v1.ScalePolicy\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"0\n\x17\x43reateHostGroupMetadata\x12\x15\n\rhost_group_id\x18\x01 \x01(\t\"\x8c\x04\n\x16UpdateHostGroupRequest\x12#\n\rhost_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x94\x01\n\x06labels\x18\x05 \x03(\x0b\x32;.yandex.cloud.compute.v1.UpdateHostGroupRequest.LabelsEntryBG\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\xb2\xc8\x31\x06\x1a\x04\x31-63\xb2\xc8\x31\x16\x12\x14[a-z][-_./\\@0-9a-z]*\x12\x46\n\x12maintenance_policy\x18\x06 \x01(\x0e\x32*.yandex.cloud.compute.v1.MaintenancePolicy\x12:\n\x0cscale_policy\x18\x07 \x01(\x0b\x32$.yandex.cloud.compute.v1.ScalePolicy\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"0\n\x17UpdateHostGroupMetadata\x12\x15\n\rhost_group_id\x18\x01 \x01(\t\"=\n\x16\x44\x65leteHostGroupRequest\x12#\n\rhost_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"0\n\x17\x44\x65leteHostGroupMetadata\x12\x15\n\rhost_group_id\x18\x01 \x01(\t\"\x9e\x01\n\x1dListHostGroupInstancesRequest\x12#\n\rhost_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"o\n\x1eListHostGroupInstancesResponse\x12\x34\n\tinstances\x18\x01 \x03(\x0b\x32!.yandex.cloud.compute.v1.Instance\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"~\n\x19ListHostGroupHostsRequest\x12#\n\rhost_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"c\n\x1aListHostGroupHostsResponse\x12,\n\x05hosts\x18\x01 \x03(\x0b\x32\x1d.yandex.cloud.compute.v1.Host\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x83\x01\n\x1eListHostGroupOperationsRequest\x12#\n\rhost_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"q\n\x1fListHostGroupOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xf8\n\n\x10HostGroupService\x12\x87\x01\n\x03Get\x12,.yandex.cloud.compute.v1.GetHostGroupRequest\x1a\".yandex.cloud.compute.v1.HostGroup\".\x82\xd3\xe4\x93\x02(\x12&/compute/v1/hostGroups/{host_group_id}\x12\x87\x01\n\x04List\x12..yandex.cloud.compute.v1.ListHostGroupsRequest\x1a/.yandex.cloud.compute.v1.ListHostGroupsResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/compute/v1/hostGroups\x12\xa7\x01\n\x06\x43reate\x12/.yandex.cloud.compute.v1.CreateHostGroupRequest\x1a!.yandex.cloud.operation.Operation\"I\x82\xd3\xe4\x93\x02\x1b\"\x16/compute/v1/hostGroups:\x01*\xb2\xd2*$\n\x17\x43reateHostGroupMetadata\x12\tHostGroup\x12\xb7\x01\n\x06Update\x12/.yandex.cloud.compute.v1.UpdateHostGroupRequest\x1a!.yandex.cloud.operation.Operation\"Y\x82\xd3\xe4\x93\x02+2&/compute/v1/hostGroups/{host_group_id}:\x01*\xb2\xd2*$\n\x17UpdateHostGroupMetadata\x12\tHostGroup\x12\xc0\x01\n\x06\x44\x65lete\x12/.yandex.cloud.compute.v1.DeleteHostGroupRequest\x1a!.yandex.cloud.operation.Operation\"b\x82\xd3\xe4\x93\x02(*&/compute/v1/hostGroups/{host_group_id}\xb2\xd2*0\n\x17\x44\x65leteHostGroupMetadata\x12\x15google.protobuf.Empty\x12\xbe\x01\n\x0eListOperations\x12\x37.yandex.cloud.compute.v1.ListHostGroupOperationsRequest\x1a\x38.yandex.cloud.compute.v1.ListHostGroupOperationsResponse\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/compute/v1/hostGroups/{host_group_id}/operations\x12\xba\x01\n\rListInstances\x12\x36.yandex.cloud.compute.v1.ListHostGroupInstancesRequest\x1a\x37.yandex.cloud.compute.v1.ListHostGroupInstancesResponse\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/compute/v1/hostGroups/{host_group_id}/instances\x12\xaa\x01\n\tListHosts\x12\x32.yandex.cloud.compute.v1.ListHostGroupHostsRequest\x1a\x33.yandex.cloud.compute.v1.ListHostGroupHostsResponse\"4\x82\xd3\xe4\x93\x02.\x12,/compute/v1/hostGroups/{host_group_id}/hostsBb\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3'
-  ,
-  dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_field__mask__pb2.DESCRIPTOR,yandex_dot_cloud_dot_api_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_compute_dot_v1_dot_instance__pb2.DESCRIPTOR,yandex_dot_cloud_dot_compute_dot_v1_dot_host__group__pb2.DESCRIPTOR,yandex_dot_cloud_dot_operation_dot_operation__pb2.DESCRIPTOR,yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n0yandex/cloud/compute/v1/host_group_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/compute/v1/instance.proto\x1a(yandex/cloud/compute/v1/host_group.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\":\n\x13GetHostGroupRequest\x12#\n\rhost_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xaf\x01\n\x15ListHostGroupsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1b\n\x08order_by\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=100\"j\n\x16ListHostGroupsResponse\x12\x37\n\x0bhost_groups\x18\x01 \x03(\x0b\x32\".yandex.cloud.compute.v1.HostGroup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x91\x04\n\x16\x43reateHostGroupRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\x04name\x18\x02 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x90\x01\n\x06labels\x18\x04 \x03(\x0b\x32;.yandex.cloud.compute.v1.CreateHostGroupRequest.LabelsEntryBC\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x1c\x12\x14[a-z][-_./\\@0-9a-z]*\x1a\x04\x31-63\x12\x1d\n\x07zone_id\x18\x05 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\x07type_id\x18\x06 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x46\n\x12maintenance_policy\x18\x07 \x01(\x0e\x32*.yandex.cloud.compute.v1.MaintenancePolicy\x12:\n\x0cscale_policy\x18\x08 \x01(\x0b\x32$.yandex.cloud.compute.v1.ScalePolicy\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"0\n\x17\x43reateHostGroupMetadata\x12\x15\n\rhost_group_id\x18\x01 \x01(\t\"\x88\x04\n\x16UpdateHostGroupRequest\x12#\n\rhost_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x90\x01\n\x06labels\x18\x05 \x03(\x0b\x32;.yandex.cloud.compute.v1.UpdateHostGroupRequest.LabelsEntryBC\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x1c\x12\x14[a-z][-_./\\@0-9a-z]*\x1a\x04\x31-63\x12\x46\n\x12maintenance_policy\x18\x06 \x01(\x0e\x32*.yandex.cloud.compute.v1.MaintenancePolicy\x12:\n\x0cscale_policy\x18\x07 \x01(\x0b\x32$.yandex.cloud.compute.v1.ScalePolicy\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"0\n\x17UpdateHostGroupMetadata\x12\x15\n\rhost_group_id\x18\x01 \x01(\t\"=\n\x16\x44\x65leteHostGroupRequest\x12#\n\rhost_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"0\n\x17\x44\x65leteHostGroupMetadata\x12\x15\n\rhost_group_id\x18\x01 \x01(\t\"\x9e\x01\n\x1dListHostGroupInstancesRequest\x12#\n\rhost_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"o\n\x1eListHostGroupInstancesResponse\x12\x34\n\tinstances\x18\x01 \x03(\x0b\x32!.yandex.cloud.compute.v1.Instance\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"~\n\x19ListHostGroupHostsRequest\x12#\n\rhost_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"c\n\x1aListHostGroupHostsResponse\x12,\n\x05hosts\x18\x01 \x03(\x0b\x32\x1d.yandex.cloud.compute.v1.Host\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x83\x01\n\x1eListHostGroupOperationsRequest\x12#\n\rhost_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"q\n\x1fListHostGroupOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xf8\n\n\x10HostGroupService\x12\x87\x01\n\x03Get\x12,.yandex.cloud.compute.v1.GetHostGroupRequest\x1a\".yandex.cloud.compute.v1.HostGroup\".\x82\xd3\xe4\x93\x02(\x12&/compute/v1/hostGroups/{host_group_id}\x12\x87\x01\n\x04List\x12..yandex.cloud.compute.v1.ListHostGroupsRequest\x1a/.yandex.cloud.compute.v1.ListHostGroupsResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/compute/v1/hostGroups\x12\xa7\x01\n\x06\x43reate\x12/.yandex.cloud.compute.v1.CreateHostGroupRequest\x1a!.yandex.cloud.operation.Operation\"I\xb2\xd2*$\n\x17\x43reateHostGroupMetadata\x12\tHostGroup\x82\xd3\xe4\x93\x02\x1b\"\x16/compute/v1/hostGroups:\x01*\x12\xb7\x01\n\x06Update\x12/.yandex.cloud.compute.v1.UpdateHostGroupRequest\x1a!.yandex.cloud.operation.Operation\"Y\xb2\xd2*$\n\x17UpdateHostGroupMetadata\x12\tHostGroup\x82\xd3\xe4\x93\x02+2&/compute/v1/hostGroups/{host_group_id}:\x01*\x12\xc0\x01\n\x06\x44\x65lete\x12/.yandex.cloud.compute.v1.DeleteHostGroupRequest\x1a!.yandex.cloud.operation.Operation\"b\xb2\xd2*0\n\x17\x44\x65leteHostGroupMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02(*&/compute/v1/hostGroups/{host_group_id}\x12\xbe\x01\n\x0eListOperations\x12\x37.yandex.cloud.compute.v1.ListHostGroupOperationsRequest\x1a\x38.yandex.cloud.compute.v1.ListHostGroupOperationsResponse\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/compute/v1/hostGroups/{host_group_id}/operations\x12\xba\x01\n\rListInstances\x12\x36.yandex.cloud.compute.v1.ListHostGroupInstancesRequest\x1a\x37.yandex.cloud.compute.v1.ListHostGroupInstancesResponse\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/compute/v1/hostGroups/{host_group_id}/instances\x12\xaa\x01\n\tListHosts\x12\x32.yandex.cloud.compute.v1.ListHostGroupHostsRequest\x1a\x33.yandex.cloud.compute.v1.ListHostGroupHostsResponse\"4\x82\xd3\xe4\x93\x02.\x12,/compute/v1/hostGroups/{host_group_id}/hostsBb\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3')
 
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.compute.v1.host_group_service_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-
-_GETHOSTGROUPREQUEST = _descriptor.Descriptor(
-  name='GetHostGroupRequest',
-  full_name='yandex.cloud.compute.v1.GetHostGroupRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='host_group_id', full_name='yandex.cloud.compute.v1.GetHostGroupRequest.host_group_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=328,
-  serialized_end=386,
-)
-
-
-_LISTHOSTGROUPSREQUEST = _descriptor.Descriptor(
-  name='ListHostGroupsRequest',
-  full_name='yandex.cloud.compute.v1.ListHostGroupsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.compute.v1.ListHostGroupsRequest.folder_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.compute.v1.ListHostGroupsRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.compute.v1.ListHostGroupsRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='filter', full_name='yandex.cloud.compute.v1.ListHostGroupsRequest.filter', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='order_by', full_name='yandex.cloud.compute.v1.ListHostGroupsRequest.order_by', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=389,
-  serialized_end=564,
-)
-
-
-_LISTHOSTGROUPSRESPONSE = _descriptor.Descriptor(
-  name='ListHostGroupsResponse',
-  full_name='yandex.cloud.compute.v1.ListHostGroupsResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='host_groups', full_name='yandex.cloud.compute.v1.ListHostGroupsResponse.host_groups', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.compute.v1.ListHostGroupsResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=566,
-  serialized_end=672,
-)
-
-
-_CREATEHOSTGROUPREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='yandex.cloud.compute.v1.CreateHostGroupRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='yandex.cloud.compute.v1.CreateHostGroupRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='yandex.cloud.compute.v1.CreateHostGroupRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1163,
-  serialized_end=1208,
-)
-
-_CREATEHOSTGROUPREQUEST = _descriptor.Descriptor(
-  name='CreateHostGroupRequest',
-  full_name='yandex.cloud.compute.v1.CreateHostGroupRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='folder_id', full_name='yandex.cloud.compute.v1.CreateHostGroupRequest.folder_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.compute.v1.CreateHostGroupRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='yandex.cloud.compute.v1.CreateHostGroupRequest.description', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='yandex.cloud.compute.v1.CreateHostGroupRequest.labels', index=3,
-      number=4, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\017[-_./\\@0-9a-z]*\262\3101\006\032\0041-63\262\3101\026\022\024[a-z][-_./\\@0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='zone_id', full_name='yandex.cloud.compute.v1.CreateHostGroupRequest.zone_id', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='type_id', full_name='yandex.cloud.compute.v1.CreateHostGroupRequest.type_id', index=5,
-      number=6, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='maintenance_policy', full_name='yandex.cloud.compute.v1.CreateHostGroupRequest.maintenance_policy', index=6,
-      number=7, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='scale_policy', full_name='yandex.cloud.compute.v1.CreateHostGroupRequest.scale_policy', index=7,
-      number=8, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_CREATEHOSTGROUPREQUEST_LABELSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=675,
-  serialized_end=1208,
-)
-
-
-_CREATEHOSTGROUPMETADATA = _descriptor.Descriptor(
-  name='CreateHostGroupMetadata',
-  full_name='yandex.cloud.compute.v1.CreateHostGroupMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='host_group_id', full_name='yandex.cloud.compute.v1.CreateHostGroupMetadata.host_group_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1210,
-  serialized_end=1258,
-)
-
-
-_UPDATEHOSTGROUPREQUEST_LABELSENTRY = _descriptor.Descriptor(
-  name='LabelsEntry',
-  full_name='yandex.cloud.compute.v1.UpdateHostGroupRequest.LabelsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='yandex.cloud.compute.v1.UpdateHostGroupRequest.LabelsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='yandex.cloud.compute.v1.UpdateHostGroupRequest.LabelsEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1163,
-  serialized_end=1208,
-)
-
-_UPDATEHOSTGROUPREQUEST = _descriptor.Descriptor(
-  name='UpdateHostGroupRequest',
-  full_name='yandex.cloud.compute.v1.UpdateHostGroupRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='host_group_id', full_name='yandex.cloud.compute.v1.UpdateHostGroupRequest.host_group_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='update_mask', full_name='yandex.cloud.compute.v1.UpdateHostGroupRequest.update_mask', index=1,
-      number=2, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='yandex.cloud.compute.v1.UpdateHostGroupRequest.name', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='description', full_name='yandex.cloud.compute.v1.UpdateHostGroupRequest.description', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=256', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='labels', full_name='yandex.cloud.compute.v1.UpdateHostGroupRequest.labels', index=4,
-      number=5, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\202\3101\004<=64\212\3101\004<=63\362\3071\017[-_./\\@0-9a-z]*\262\3101\006\032\0041-63\262\3101\026\022\024[a-z][-_./\\@0-9a-z]*', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='maintenance_policy', full_name='yandex.cloud.compute.v1.UpdateHostGroupRequest.maintenance_policy', index=5,
-      number=6, type=14, cpp_type=8, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='scale_policy', full_name='yandex.cloud.compute.v1.UpdateHostGroupRequest.scale_policy', index=6,
-      number=7, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_UPDATEHOSTGROUPREQUEST_LABELSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1261,
-  serialized_end=1785,
-)
-
-
-_UPDATEHOSTGROUPMETADATA = _descriptor.Descriptor(
-  name='UpdateHostGroupMetadata',
-  full_name='yandex.cloud.compute.v1.UpdateHostGroupMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='host_group_id', full_name='yandex.cloud.compute.v1.UpdateHostGroupMetadata.host_group_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1787,
-  serialized_end=1835,
-)
-
-
-_DELETEHOSTGROUPREQUEST = _descriptor.Descriptor(
-  name='DeleteHostGroupRequest',
-  full_name='yandex.cloud.compute.v1.DeleteHostGroupRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='host_group_id', full_name='yandex.cloud.compute.v1.DeleteHostGroupRequest.host_group_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1837,
-  serialized_end=1898,
-)
-
-
-_DELETEHOSTGROUPMETADATA = _descriptor.Descriptor(
-  name='DeleteHostGroupMetadata',
-  full_name='yandex.cloud.compute.v1.DeleteHostGroupMetadata',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='host_group_id', full_name='yandex.cloud.compute.v1.DeleteHostGroupMetadata.host_group_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1900,
-  serialized_end=1948,
-)
-
-
-_LISTHOSTGROUPINSTANCESREQUEST = _descriptor.Descriptor(
-  name='ListHostGroupInstancesRequest',
-  full_name='yandex.cloud.compute.v1.ListHostGroupInstancesRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='host_group_id', full_name='yandex.cloud.compute.v1.ListHostGroupInstancesRequest.host_group_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.compute.v1.ListHostGroupInstancesRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.compute.v1.ListHostGroupInstancesRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='filter', full_name='yandex.cloud.compute.v1.ListHostGroupInstancesRequest.filter', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1951,
-  serialized_end=2109,
-)
-
-
-_LISTHOSTGROUPINSTANCESRESPONSE = _descriptor.Descriptor(
-  name='ListHostGroupInstancesResponse',
-  full_name='yandex.cloud.compute.v1.ListHostGroupInstancesResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='instances', full_name='yandex.cloud.compute.v1.ListHostGroupInstancesResponse.instances', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.compute.v1.ListHostGroupInstancesResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2111,
-  serialized_end=2222,
-)
-
-
-_LISTHOSTGROUPHOSTSREQUEST = _descriptor.Descriptor(
-  name='ListHostGroupHostsRequest',
-  full_name='yandex.cloud.compute.v1.ListHostGroupHostsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='host_group_id', full_name='yandex.cloud.compute.v1.ListHostGroupHostsRequest.host_group_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.compute.v1.ListHostGroupHostsRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.compute.v1.ListHostGroupHostsRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2224,
-  serialized_end=2350,
-)
-
-
-_LISTHOSTGROUPHOSTSRESPONSE = _descriptor.Descriptor(
-  name='ListHostGroupHostsResponse',
-  full_name='yandex.cloud.compute.v1.ListHostGroupHostsResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='hosts', full_name='yandex.cloud.compute.v1.ListHostGroupHostsResponse.hosts', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.compute.v1.ListHostGroupHostsResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2352,
-  serialized_end=2451,
-)
-
-
-_LISTHOSTGROUPOPERATIONSREQUEST = _descriptor.Descriptor(
-  name='ListHostGroupOperationsRequest',
-  full_name='yandex.cloud.compute.v1.ListHostGroupOperationsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='host_group_id', full_name='yandex.cloud.compute.v1.ListHostGroupOperationsRequest.host_group_id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\350\3071\001\212\3101\004<=50', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_size', full_name='yandex.cloud.compute.v1.ListHostGroupOperationsRequest.page_size', index=1,
-      number=2, type=3, cpp_type=2, label=1,
-      has_default_value=False, default_value=0,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\372\3071\006<=1000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='page_token', full_name='yandex.cloud.compute.v1.ListHostGroupOperationsRequest.page_token', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=100', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2454,
-  serialized_end=2585,
-)
-
-
-_LISTHOSTGROUPOPERATIONSRESPONSE = _descriptor.Descriptor(
-  name='ListHostGroupOperationsResponse',
-  full_name='yandex.cloud.compute.v1.ListHostGroupOperationsResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='operations', full_name='yandex.cloud.compute.v1.ListHostGroupOperationsResponse.operations', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='next_page_token', full_name='yandex.cloud.compute.v1.ListHostGroupOperationsResponse.next_page_token', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=2587,
-  serialized_end=2700,
-)
-
-_LISTHOSTGROUPSRESPONSE.fields_by_name['host_groups'].message_type = yandex_dot_cloud_dot_compute_dot_v1_dot_host__group__pb2._HOSTGROUP
-_CREATEHOSTGROUPREQUEST_LABELSENTRY.containing_type = _CREATEHOSTGROUPREQUEST
-_CREATEHOSTGROUPREQUEST.fields_by_name['labels'].message_type = _CREATEHOSTGROUPREQUEST_LABELSENTRY
-_CREATEHOSTGROUPREQUEST.fields_by_name['maintenance_policy'].enum_type = yandex_dot_cloud_dot_compute_dot_v1_dot_host__group__pb2._MAINTENANCEPOLICY
-_CREATEHOSTGROUPREQUEST.fields_by_name['scale_policy'].message_type = yandex_dot_cloud_dot_compute_dot_v1_dot_host__group__pb2._SCALEPOLICY
-_UPDATEHOSTGROUPREQUEST_LABELSENTRY.containing_type = _UPDATEHOSTGROUPREQUEST
-_UPDATEHOSTGROUPREQUEST.fields_by_name['update_mask'].message_type = google_dot_protobuf_dot_field__mask__pb2._FIELDMASK
-_UPDATEHOSTGROUPREQUEST.fields_by_name['labels'].message_type = _UPDATEHOSTGROUPREQUEST_LABELSENTRY
-_UPDATEHOSTGROUPREQUEST.fields_by_name['maintenance_policy'].enum_type = yandex_dot_cloud_dot_compute_dot_v1_dot_host__group__pb2._MAINTENANCEPOLICY
-_UPDATEHOSTGROUPREQUEST.fields_by_name['scale_policy'].message_type = yandex_dot_cloud_dot_compute_dot_v1_dot_host__group__pb2._SCALEPOLICY
-_LISTHOSTGROUPINSTANCESRESPONSE.fields_by_name['instances'].message_type = yandex_dot_cloud_dot_compute_dot_v1_dot_instance__pb2._INSTANCE
-_LISTHOSTGROUPHOSTSRESPONSE.fields_by_name['hosts'].message_type = yandex_dot_cloud_dot_compute_dot_v1_dot_host__group__pb2._HOST
-_LISTHOSTGROUPOPERATIONSRESPONSE.fields_by_name['operations'].message_type = yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION
-DESCRIPTOR.message_types_by_name['GetHostGroupRequest'] = _GETHOSTGROUPREQUEST
-DESCRIPTOR.message_types_by_name['ListHostGroupsRequest'] = _LISTHOSTGROUPSREQUEST
-DESCRIPTOR.message_types_by_name['ListHostGroupsResponse'] = _LISTHOSTGROUPSRESPONSE
-DESCRIPTOR.message_types_by_name['CreateHostGroupRequest'] = _CREATEHOSTGROUPREQUEST
-DESCRIPTOR.message_types_by_name['CreateHostGroupMetadata'] = _CREATEHOSTGROUPMETADATA
-DESCRIPTOR.message_types_by_name['UpdateHostGroupRequest'] = _UPDATEHOSTGROUPREQUEST
-DESCRIPTOR.message_types_by_name['UpdateHostGroupMetadata'] = _UPDATEHOSTGROUPMETADATA
-DESCRIPTOR.message_types_by_name['DeleteHostGroupRequest'] = _DELETEHOSTGROUPREQUEST
-DESCRIPTOR.message_types_by_name['DeleteHostGroupMetadata'] = _DELETEHOSTGROUPMETADATA
-DESCRIPTOR.message_types_by_name['ListHostGroupInstancesRequest'] = _LISTHOSTGROUPINSTANCESREQUEST
-DESCRIPTOR.message_types_by_name['ListHostGroupInstancesResponse'] = _LISTHOSTGROUPINSTANCESRESPONSE
-DESCRIPTOR.message_types_by_name['ListHostGroupHostsRequest'] = _LISTHOSTGROUPHOSTSREQUEST
-DESCRIPTOR.message_types_by_name['ListHostGroupHostsResponse'] = _LISTHOSTGROUPHOSTSRESPONSE
-DESCRIPTOR.message_types_by_name['ListHostGroupOperationsRequest'] = _LISTHOSTGROUPOPERATIONSREQUEST
-DESCRIPTOR.message_types_by_name['ListHostGroupOperationsResponse'] = _LISTHOSTGROUPOPERATIONSRESPONSE
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-GetHostGroupRequest = _reflection.GeneratedProtocolMessageType('GetHostGroupRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETHOSTGROUPREQUEST,
-  '__module__' : 'yandex.cloud.compute.v1.host_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.GetHostGroupRequest)
-  })
-_sym_db.RegisterMessage(GetHostGroupRequest)
-
-ListHostGroupsRequest = _reflection.GeneratedProtocolMessageType('ListHostGroupsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTHOSTGROUPSREQUEST,
-  '__module__' : 'yandex.cloud.compute.v1.host_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.ListHostGroupsRequest)
-  })
-_sym_db.RegisterMessage(ListHostGroupsRequest)
-
-ListHostGroupsResponse = _reflection.GeneratedProtocolMessageType('ListHostGroupsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTHOSTGROUPSRESPONSE,
-  '__module__' : 'yandex.cloud.compute.v1.host_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.ListHostGroupsResponse)
-  })
-_sym_db.RegisterMessage(ListHostGroupsResponse)
-
-CreateHostGroupRequest = _reflection.GeneratedProtocolMessageType('CreateHostGroupRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _CREATEHOSTGROUPREQUEST_LABELSENTRY,
-    '__module__' : 'yandex.cloud.compute.v1.host_group_service_pb2'
-    # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.CreateHostGroupRequest.LabelsEntry)
-    })
-  ,
-  'DESCRIPTOR' : _CREATEHOSTGROUPREQUEST,
-  '__module__' : 'yandex.cloud.compute.v1.host_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.CreateHostGroupRequest)
-  })
-_sym_db.RegisterMessage(CreateHostGroupRequest)
-_sym_db.RegisterMessage(CreateHostGroupRequest.LabelsEntry)
-
-CreateHostGroupMetadata = _reflection.GeneratedProtocolMessageType('CreateHostGroupMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _CREATEHOSTGROUPMETADATA,
-  '__module__' : 'yandex.cloud.compute.v1.host_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.CreateHostGroupMetadata)
-  })
-_sym_db.RegisterMessage(CreateHostGroupMetadata)
-
-UpdateHostGroupRequest = _reflection.GeneratedProtocolMessageType('UpdateHostGroupRequest', (_message.Message,), {
-
-  'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _UPDATEHOSTGROUPREQUEST_LABELSENTRY,
-    '__module__' : 'yandex.cloud.compute.v1.host_group_service_pb2'
-    # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.UpdateHostGroupRequest.LabelsEntry)
-    })
-  ,
-  'DESCRIPTOR' : _UPDATEHOSTGROUPREQUEST,
-  '__module__' : 'yandex.cloud.compute.v1.host_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.UpdateHostGroupRequest)
-  })
-_sym_db.RegisterMessage(UpdateHostGroupRequest)
-_sym_db.RegisterMessage(UpdateHostGroupRequest.LabelsEntry)
-
-UpdateHostGroupMetadata = _reflection.GeneratedProtocolMessageType('UpdateHostGroupMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATEHOSTGROUPMETADATA,
-  '__module__' : 'yandex.cloud.compute.v1.host_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.UpdateHostGroupMetadata)
-  })
-_sym_db.RegisterMessage(UpdateHostGroupMetadata)
-
-DeleteHostGroupRequest = _reflection.GeneratedProtocolMessageType('DeleteHostGroupRequest', (_message.Message,), {
-  'DESCRIPTOR' : _DELETEHOSTGROUPREQUEST,
-  '__module__' : 'yandex.cloud.compute.v1.host_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.DeleteHostGroupRequest)
-  })
-_sym_db.RegisterMessage(DeleteHostGroupRequest)
-
-DeleteHostGroupMetadata = _reflection.GeneratedProtocolMessageType('DeleteHostGroupMetadata', (_message.Message,), {
-  'DESCRIPTOR' : _DELETEHOSTGROUPMETADATA,
-  '__module__' : 'yandex.cloud.compute.v1.host_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.DeleteHostGroupMetadata)
-  })
-_sym_db.RegisterMessage(DeleteHostGroupMetadata)
-
-ListHostGroupInstancesRequest = _reflection.GeneratedProtocolMessageType('ListHostGroupInstancesRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTHOSTGROUPINSTANCESREQUEST,
-  '__module__' : 'yandex.cloud.compute.v1.host_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.ListHostGroupInstancesRequest)
-  })
-_sym_db.RegisterMessage(ListHostGroupInstancesRequest)
-
-ListHostGroupInstancesResponse = _reflection.GeneratedProtocolMessageType('ListHostGroupInstancesResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTHOSTGROUPINSTANCESRESPONSE,
-  '__module__' : 'yandex.cloud.compute.v1.host_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.ListHostGroupInstancesResponse)
-  })
-_sym_db.RegisterMessage(ListHostGroupInstancesResponse)
-
-ListHostGroupHostsRequest = _reflection.GeneratedProtocolMessageType('ListHostGroupHostsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTHOSTGROUPHOSTSREQUEST,
-  '__module__' : 'yandex.cloud.compute.v1.host_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.ListHostGroupHostsRequest)
-  })
-_sym_db.RegisterMessage(ListHostGroupHostsRequest)
-
-ListHostGroupHostsResponse = _reflection.GeneratedProtocolMessageType('ListHostGroupHostsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTHOSTGROUPHOSTSRESPONSE,
-  '__module__' : 'yandex.cloud.compute.v1.host_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.ListHostGroupHostsResponse)
-  })
-_sym_db.RegisterMessage(ListHostGroupHostsResponse)
-
-ListHostGroupOperationsRequest = _reflection.GeneratedProtocolMessageType('ListHostGroupOperationsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTHOSTGROUPOPERATIONSREQUEST,
-  '__module__' : 'yandex.cloud.compute.v1.host_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.ListHostGroupOperationsRequest)
-  })
-_sym_db.RegisterMessage(ListHostGroupOperationsRequest)
-
-ListHostGroupOperationsResponse = _reflection.GeneratedProtocolMessageType('ListHostGroupOperationsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTHOSTGROUPOPERATIONSRESPONSE,
-  '__module__' : 'yandex.cloud.compute.v1.host_group_service_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.compute.v1.ListHostGroupOperationsResponse)
-  })
-_sym_db.RegisterMessage(ListHostGroupOperationsResponse)
-
-
-DESCRIPTOR._options = None
-_GETHOSTGROUPREQUEST.fields_by_name['host_group_id']._options = None
-_LISTHOSTGROUPSREQUEST.fields_by_name['folder_id']._options = None
-_LISTHOSTGROUPSREQUEST.fields_by_name['page_size']._options = None
-_LISTHOSTGROUPSREQUEST.fields_by_name['page_token']._options = None
-_LISTHOSTGROUPSREQUEST.fields_by_name['filter']._options = None
-_LISTHOSTGROUPSREQUEST.fields_by_name['order_by']._options = None
-_CREATEHOSTGROUPREQUEST_LABELSENTRY._options = None
-_CREATEHOSTGROUPREQUEST.fields_by_name['folder_id']._options = None
-_CREATEHOSTGROUPREQUEST.fields_by_name['name']._options = None
-_CREATEHOSTGROUPREQUEST.fields_by_name['description']._options = None
-_CREATEHOSTGROUPREQUEST.fields_by_name['labels']._options = None
-_CREATEHOSTGROUPREQUEST.fields_by_name['zone_id']._options = None
-_CREATEHOSTGROUPREQUEST.fields_by_name['type_id']._options = None
-_UPDATEHOSTGROUPREQUEST_LABELSENTRY._options = None
-_UPDATEHOSTGROUPREQUEST.fields_by_name['host_group_id']._options = None
-_UPDATEHOSTGROUPREQUEST.fields_by_name['name']._options = None
-_UPDATEHOSTGROUPREQUEST.fields_by_name['description']._options = None
-_UPDATEHOSTGROUPREQUEST.fields_by_name['labels']._options = None
-_DELETEHOSTGROUPREQUEST.fields_by_name['host_group_id']._options = None
-_LISTHOSTGROUPINSTANCESREQUEST.fields_by_name['host_group_id']._options = None
-_LISTHOSTGROUPINSTANCESREQUEST.fields_by_name['page_size']._options = None
-_LISTHOSTGROUPINSTANCESREQUEST.fields_by_name['page_token']._options = None
-_LISTHOSTGROUPINSTANCESREQUEST.fields_by_name['filter']._options = None
-_LISTHOSTGROUPHOSTSREQUEST.fields_by_name['host_group_id']._options = None
-_LISTHOSTGROUPHOSTSREQUEST.fields_by_name['page_size']._options = None
-_LISTHOSTGROUPHOSTSREQUEST.fields_by_name['page_token']._options = None
-_LISTHOSTGROUPOPERATIONSREQUEST.fields_by_name['host_group_id']._options = None
-_LISTHOSTGROUPOPERATIONSREQUEST.fields_by_name['page_size']._options = None
-_LISTHOSTGROUPOPERATIONSREQUEST.fields_by_name['page_token']._options = None
-
-_HOSTGROUPSERVICE = _descriptor.ServiceDescriptor(
-  name='HostGroupService',
-  full_name='yandex.cloud.compute.v1.HostGroupService',
-  file=DESCRIPTOR,
-  index=0,
-  serialized_options=None,
-  create_key=_descriptor._internal_create_key,
-  serialized_start=2703,
-  serialized_end=4103,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='Get',
-    full_name='yandex.cloud.compute.v1.HostGroupService.Get',
-    index=0,
-    containing_service=None,
-    input_type=_GETHOSTGROUPREQUEST,
-    output_type=yandex_dot_cloud_dot_compute_dot_v1_dot_host__group__pb2._HOSTGROUP,
-    serialized_options=b'\202\323\344\223\002(\022&/compute/v1/hostGroups/{host_group_id}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='List',
-    full_name='yandex.cloud.compute.v1.HostGroupService.List',
-    index=1,
-    containing_service=None,
-    input_type=_LISTHOSTGROUPSREQUEST,
-    output_type=_LISTHOSTGROUPSRESPONSE,
-    serialized_options=b'\202\323\344\223\002\030\022\026/compute/v1/hostGroups',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Create',
-    full_name='yandex.cloud.compute.v1.HostGroupService.Create',
-    index=2,
-    containing_service=None,
-    input_type=_CREATEHOSTGROUPREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002\033\"\026/compute/v1/hostGroups:\001*\262\322*$\n\027CreateHostGroupMetadata\022\tHostGroup',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Update',
-    full_name='yandex.cloud.compute.v1.HostGroupService.Update',
-    index=3,
-    containing_service=None,
-    input_type=_UPDATEHOSTGROUPREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002+2&/compute/v1/hostGroups/{host_group_id}:\001*\262\322*$\n\027UpdateHostGroupMetadata\022\tHostGroup',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='Delete',
-    full_name='yandex.cloud.compute.v1.HostGroupService.Delete',
-    index=4,
-    containing_service=None,
-    input_type=_DELETEHOSTGROUPREQUEST,
-    output_type=yandex_dot_cloud_dot_operation_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002(*&/compute/v1/hostGroups/{host_group_id}\262\322*0\n\027DeleteHostGroupMetadata\022\025google.protobuf.Empty',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListOperations',
-    full_name='yandex.cloud.compute.v1.HostGroupService.ListOperations',
-    index=5,
-    containing_service=None,
-    input_type=_LISTHOSTGROUPOPERATIONSREQUEST,
-    output_type=_LISTHOSTGROUPOPERATIONSRESPONSE,
-    serialized_options=b'\202\323\344\223\0023\0221/compute/v1/hostGroups/{host_group_id}/operations',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListInstances',
-    full_name='yandex.cloud.compute.v1.HostGroupService.ListInstances',
-    index=6,
-    containing_service=None,
-    input_type=_LISTHOSTGROUPINSTANCESREQUEST,
-    output_type=_LISTHOSTGROUPINSTANCESRESPONSE,
-    serialized_options=b'\202\323\344\223\0022\0220/compute/v1/hostGroups/{host_group_id}/instances',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListHosts',
-    full_name='yandex.cloud.compute.v1.HostGroupService.ListHosts',
-    index=7,
-    containing_service=None,
-    input_type=_LISTHOSTGROUPHOSTSREQUEST,
-    output_type=_LISTHOSTGROUPHOSTSRESPONSE,
-    serialized_options=b'\202\323\344\223\002.\022,/compute/v1/hostGroups/{host_group_id}/hosts',
-    create_key=_descriptor._internal_create_key,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_HOSTGROUPSERVICE)
-
-DESCRIPTOR.services_by_name['HostGroupService'] = _HOSTGROUPSERVICE
-
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n\033yandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;compute'
+  _GETHOSTGROUPREQUEST.fields_by_name['host_group_id']._options = None
+  _GETHOSTGROUPREQUEST.fields_by_name['host_group_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTHOSTGROUPSREQUEST.fields_by_name['folder_id']._options = None
+  _LISTHOSTGROUPSREQUEST.fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTHOSTGROUPSREQUEST.fields_by_name['page_size']._options = None
+  _LISTHOSTGROUPSREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
+  _LISTHOSTGROUPSREQUEST.fields_by_name['page_token']._options = None
+  _LISTHOSTGROUPSREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
+  _LISTHOSTGROUPSREQUEST.fields_by_name['filter']._options = None
+  _LISTHOSTGROUPSREQUEST.fields_by_name['filter']._serialized_options = b'\212\3101\006<=1000'
+  _LISTHOSTGROUPSREQUEST.fields_by_name['order_by']._options = None
+  _LISTHOSTGROUPSREQUEST.fields_by_name['order_by']._serialized_options = b'\212\3101\005<=100'
+  _CREATEHOSTGROUPREQUEST_LABELSENTRY._options = None
+  _CREATEHOSTGROUPREQUEST_LABELSENTRY._serialized_options = b'8\001'
+  _CREATEHOSTGROUPREQUEST.fields_by_name['folder_id']._options = None
+  _CREATEHOSTGROUPREQUEST.fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _CREATEHOSTGROUPREQUEST.fields_by_name['name']._options = None
+  _CREATEHOSTGROUPREQUEST.fields_by_name['name']._serialized_options = b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?'
+  _CREATEHOSTGROUPREQUEST.fields_by_name['description']._options = None
+  _CREATEHOSTGROUPREQUEST.fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
+  _CREATEHOSTGROUPREQUEST.fields_by_name['labels']._options = None
+  _CREATEHOSTGROUPREQUEST.fields_by_name['labels']._serialized_options = b'\362\3071\017[-_./\\@0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\034\022\024[a-z][-_./\\@0-9a-z]*\032\0041-63'
+  _CREATEHOSTGROUPREQUEST.fields_by_name['zone_id']._options = None
+  _CREATEHOSTGROUPREQUEST.fields_by_name['zone_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _CREATEHOSTGROUPREQUEST.fields_by_name['type_id']._options = None
+  _CREATEHOSTGROUPREQUEST.fields_by_name['type_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _UPDATEHOSTGROUPREQUEST_LABELSENTRY._options = None
+  _UPDATEHOSTGROUPREQUEST_LABELSENTRY._serialized_options = b'8\001'
+  _UPDATEHOSTGROUPREQUEST.fields_by_name['host_group_id']._options = None
+  _UPDATEHOSTGROUPREQUEST.fields_by_name['host_group_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _UPDATEHOSTGROUPREQUEST.fields_by_name['name']._options = None
+  _UPDATEHOSTGROUPREQUEST.fields_by_name['name']._serialized_options = b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?'
+  _UPDATEHOSTGROUPREQUEST.fields_by_name['description']._options = None
+  _UPDATEHOSTGROUPREQUEST.fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
+  _UPDATEHOSTGROUPREQUEST.fields_by_name['labels']._options = None
+  _UPDATEHOSTGROUPREQUEST.fields_by_name['labels']._serialized_options = b'\362\3071\017[-_./\\@0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\034\022\024[a-z][-_./\\@0-9a-z]*\032\0041-63'
+  _DELETEHOSTGROUPREQUEST.fields_by_name['host_group_id']._options = None
+  _DELETEHOSTGROUPREQUEST.fields_by_name['host_group_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTHOSTGROUPINSTANCESREQUEST.fields_by_name['host_group_id']._options = None
+  _LISTHOSTGROUPINSTANCESREQUEST.fields_by_name['host_group_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTHOSTGROUPINSTANCESREQUEST.fields_by_name['page_size']._options = None
+  _LISTHOSTGROUPINSTANCESREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
+  _LISTHOSTGROUPINSTANCESREQUEST.fields_by_name['page_token']._options = None
+  _LISTHOSTGROUPINSTANCESREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
+  _LISTHOSTGROUPINSTANCESREQUEST.fields_by_name['filter']._options = None
+  _LISTHOSTGROUPINSTANCESREQUEST.fields_by_name['filter']._serialized_options = b'\212\3101\006<=1000'
+  _LISTHOSTGROUPHOSTSREQUEST.fields_by_name['host_group_id']._options = None
+  _LISTHOSTGROUPHOSTSREQUEST.fields_by_name['host_group_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTHOSTGROUPHOSTSREQUEST.fields_by_name['page_size']._options = None
+  _LISTHOSTGROUPHOSTSREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
+  _LISTHOSTGROUPHOSTSREQUEST.fields_by_name['page_token']._options = None
+  _LISTHOSTGROUPHOSTSREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
+  _LISTHOSTGROUPOPERATIONSREQUEST.fields_by_name['host_group_id']._options = None
+  _LISTHOSTGROUPOPERATIONSREQUEST.fields_by_name['host_group_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTHOSTGROUPOPERATIONSREQUEST.fields_by_name['page_size']._options = None
+  _LISTHOSTGROUPOPERATIONSREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
+  _LISTHOSTGROUPOPERATIONSREQUEST.fields_by_name['page_token']._options = None
+  _LISTHOSTGROUPOPERATIONSREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
+  _HOSTGROUPSERVICE.methods_by_name['Get']._options = None
+  _HOSTGROUPSERVICE.methods_by_name['Get']._serialized_options = b'\202\323\344\223\002(\022&/compute/v1/hostGroups/{host_group_id}'
+  _HOSTGROUPSERVICE.methods_by_name['List']._options = None
+  _HOSTGROUPSERVICE.methods_by_name['List']._serialized_options = b'\202\323\344\223\002\030\022\026/compute/v1/hostGroups'
+  _HOSTGROUPSERVICE.methods_by_name['Create']._options = None
+  _HOSTGROUPSERVICE.methods_by_name['Create']._serialized_options = b'\262\322*$\n\027CreateHostGroupMetadata\022\tHostGroup\202\323\344\223\002\033\"\026/compute/v1/hostGroups:\001*'
+  _HOSTGROUPSERVICE.methods_by_name['Update']._options = None
+  _HOSTGROUPSERVICE.methods_by_name['Update']._serialized_options = b'\262\322*$\n\027UpdateHostGroupMetadata\022\tHostGroup\202\323\344\223\002+2&/compute/v1/hostGroups/{host_group_id}:\001*'
+  _HOSTGROUPSERVICE.methods_by_name['Delete']._options = None
+  _HOSTGROUPSERVICE.methods_by_name['Delete']._serialized_options = b'\262\322*0\n\027DeleteHostGroupMetadata\022\025google.protobuf.Empty\202\323\344\223\002(*&/compute/v1/hostGroups/{host_group_id}'
+  _HOSTGROUPSERVICE.methods_by_name['ListOperations']._options = None
+  _HOSTGROUPSERVICE.methods_by_name['ListOperations']._serialized_options = b'\202\323\344\223\0023\0221/compute/v1/hostGroups/{host_group_id}/operations'
+  _HOSTGROUPSERVICE.methods_by_name['ListInstances']._options = None
+  _HOSTGROUPSERVICE.methods_by_name['ListInstances']._serialized_options = b'\202\323\344\223\0022\0220/compute/v1/hostGroups/{host_group_id}/instances'
+  _HOSTGROUPSERVICE.methods_by_name['ListHosts']._options = None
+  _HOSTGROUPSERVICE.methods_by_name['ListHosts']._serialized_options = b'\202\323\344\223\002.\022,/compute/v1/hostGroups/{host_group_id}/hosts'
+  _globals['_GETHOSTGROUPREQUEST']._serialized_start=328
+  _globals['_GETHOSTGROUPREQUEST']._serialized_end=386
+  _globals['_LISTHOSTGROUPSREQUEST']._serialized_start=389
+  _globals['_LISTHOSTGROUPSREQUEST']._serialized_end=564
+  _globals['_LISTHOSTGROUPSRESPONSE']._serialized_start=566
+  _globals['_LISTHOSTGROUPSRESPONSE']._serialized_end=672
+  _globals['_CREATEHOSTGROUPREQUEST']._serialized_start=675
+  _globals['_CREATEHOSTGROUPREQUEST']._serialized_end=1204
+  _globals['_CREATEHOSTGROUPREQUEST_LABELSENTRY']._serialized_start=1159
+  _globals['_CREATEHOSTGROUPREQUEST_LABELSENTRY']._serialized_end=1204
+  _globals['_CREATEHOSTGROUPMETADATA']._serialized_start=1206
+  _globals['_CREATEHOSTGROUPMETADATA']._serialized_end=1254
+  _globals['_UPDATEHOSTGROUPREQUEST']._serialized_start=1257
+  _globals['_UPDATEHOSTGROUPREQUEST']._serialized_end=1777
+  _globals['_UPDATEHOSTGROUPREQUEST_LABELSENTRY']._serialized_start=1159
+  _globals['_UPDATEHOSTGROUPREQUEST_LABELSENTRY']._serialized_end=1204
+  _globals['_UPDATEHOSTGROUPMETADATA']._serialized_start=1779
+  _globals['_UPDATEHOSTGROUPMETADATA']._serialized_end=1827
+  _globals['_DELETEHOSTGROUPREQUEST']._serialized_start=1829
+  _globals['_DELETEHOSTGROUPREQUEST']._serialized_end=1890
+  _globals['_DELETEHOSTGROUPMETADATA']._serialized_start=1892
+  _globals['_DELETEHOSTGROUPMETADATA']._serialized_end=1940
+  _globals['_LISTHOSTGROUPINSTANCESREQUEST']._serialized_start=1943
+  _globals['_LISTHOSTGROUPINSTANCESREQUEST']._serialized_end=2101
+  _globals['_LISTHOSTGROUPINSTANCESRESPONSE']._serialized_start=2103
+  _globals['_LISTHOSTGROUPINSTANCESRESPONSE']._serialized_end=2214
+  _globals['_LISTHOSTGROUPHOSTSREQUEST']._serialized_start=2216
+  _globals['_LISTHOSTGROUPHOSTSREQUEST']._serialized_end=2342
+  _globals['_LISTHOSTGROUPHOSTSRESPONSE']._serialized_start=2344
+  _globals['_LISTHOSTGROUPHOSTSRESPONSE']._serialized_end=2443
+  _globals['_LISTHOSTGROUPOPERATIONSREQUEST']._serialized_start=2446
+  _globals['_LISTHOSTGROUPOPERATIONSREQUEST']._serialized_end=2577
+  _globals['_LISTHOSTGROUPOPERATIONSRESPONSE']._serialized_start=2579
+  _globals['_LISTHOSTGROUPOPERATIONSRESPONSE']._serialized_end=2692
+  _globals['_HOSTGROUPSERVICE']._serialized_start=2695
+  _globals['_HOSTGROUPSERVICE']._serialized_end=4095
 # @@protoc_insertion_point(module_scope)

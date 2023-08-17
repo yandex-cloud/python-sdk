@@ -3,9 +3,9 @@
 # source: yandex/cloud/mdb/opensearch/v1/auth.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import message as _message
-from google.protobuf import reflection as _reflection
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import symbol_database as _symbol_database
+from google.protobuf.internal import builder as _builder
 # @@protoc_insertion_point(imports)
 
 _sym_db = _symbol_database.Default()
@@ -14,149 +14,29 @@ _sym_db = _symbol_database.Default()
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='yandex/cloud/mdb/opensearch/v1/auth.proto',
-  package='yandex.cloud.mdb.opensearch.v1',
-  syntax='proto3',
-  serialized_options=b'\n\"yandex.cloud.api.mdb.opensearch.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/opensearch/v1;opensearch',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n)yandex/cloud/mdb/opensearch/v1/auth.proto\x12\x1eyandex.cloud.mdb.opensearch.v1\x1a\x1dyandex/cloud/validation.proto\"J\n\x0c\x41uthSettings\x12:\n\x04saml\x18\x01 \x01(\x0b\x32,.yandex.cloud.mdb.opensearch.v1.SAMLSettings\"\xeb\x01\n\x0cSAMLSettings\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12 \n\ridp_entity_id\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=250\x12&\n\x11idp_metadata_file\x18\x03 \x01(\x0c\x42\x0b\x8a\xc8\x31\x07<=10000\x12\x1f\n\x0csp_entity_id\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=250\x12!\n\x0e\x64\x61shboards_url\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=250\x12\x1c\n\troles_key\x18\x06 \x01(\tB\t\x8a\xc8\x31\x05<=250\x12\x1e\n\x0bsubject_key\x18\x07 \x01(\tB\t\x8a\xc8\x31\x05<=250Bs\n\"yandex.cloud.api.mdb.opensearch.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/opensearch/v1;opensearchb\x06proto3'
-  ,
-  dependencies=[yandex_dot_cloud_dot_validation__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)yandex/cloud/mdb/opensearch/v1/auth.proto\x12\x1eyandex.cloud.mdb.opensearch.v1\x1a\x1dyandex/cloud/validation.proto\"J\n\x0c\x41uthSettings\x12:\n\x04saml\x18\x01 \x01(\x0b\x32,.yandex.cloud.mdb.opensearch.v1.SAMLSettings\"\xeb\x01\n\x0cSAMLSettings\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12 \n\ridp_entity_id\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=250\x12&\n\x11idp_metadata_file\x18\x03 \x01(\x0c\x42\x0b\x8a\xc8\x31\x07<=10000\x12\x1f\n\x0csp_entity_id\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=250\x12!\n\x0e\x64\x61shboards_url\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=250\x12\x1c\n\troles_key\x18\x06 \x01(\tB\t\x8a\xc8\x31\x05<=250\x12\x1e\n\x0bsubject_key\x18\x07 \x01(\tB\t\x8a\xc8\x31\x05<=250Bs\n\"yandex.cloud.api.mdb.opensearch.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/opensearch/v1;opensearchb\x06proto3')
 
+_globals = globals()
+_builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
+_builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.mdb.opensearch.v1.auth_pb2', _globals)
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-
-
-_AUTHSETTINGS = _descriptor.Descriptor(
-  name='AuthSettings',
-  full_name='yandex.cloud.mdb.opensearch.v1.AuthSettings',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='saml', full_name='yandex.cloud.mdb.opensearch.v1.AuthSettings.saml', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=108,
-  serialized_end=182,
-)
-
-
-_SAMLSETTINGS = _descriptor.Descriptor(
-  name='SAMLSettings',
-  full_name='yandex.cloud.mdb.opensearch.v1.SAMLSettings',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='enabled', full_name='yandex.cloud.mdb.opensearch.v1.SAMLSettings.enabled', index=0,
-      number=1, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='idp_entity_id', full_name='yandex.cloud.mdb.opensearch.v1.SAMLSettings.idp_entity_id', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=250', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='idp_metadata_file', full_name='yandex.cloud.mdb.opensearch.v1.SAMLSettings.idp_metadata_file', index=2,
-      number=3, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"",
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\007<=10000', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='sp_entity_id', full_name='yandex.cloud.mdb.opensearch.v1.SAMLSettings.sp_entity_id', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=250', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='dashboards_url', full_name='yandex.cloud.mdb.opensearch.v1.SAMLSettings.dashboards_url', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=250', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='roles_key', full_name='yandex.cloud.mdb.opensearch.v1.SAMLSettings.roles_key', index=5,
-      number=6, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=250', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='subject_key', full_name='yandex.cloud.mdb.opensearch.v1.SAMLSettings.subject_key', index=6,
-      number=7, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=b'\212\3101\005<=250', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=185,
-  serialized_end=420,
-)
-
-_AUTHSETTINGS.fields_by_name['saml'].message_type = _SAMLSETTINGS
-DESCRIPTOR.message_types_by_name['AuthSettings'] = _AUTHSETTINGS
-DESCRIPTOR.message_types_by_name['SAMLSettings'] = _SAMLSETTINGS
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
-AuthSettings = _reflection.GeneratedProtocolMessageType('AuthSettings', (_message.Message,), {
-  'DESCRIPTOR' : _AUTHSETTINGS,
-  '__module__' : 'yandex.cloud.mdb.opensearch.v1.auth_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.opensearch.v1.AuthSettings)
-  })
-_sym_db.RegisterMessage(AuthSettings)
-
-SAMLSettings = _reflection.GeneratedProtocolMessageType('SAMLSettings', (_message.Message,), {
-  'DESCRIPTOR' : _SAMLSETTINGS,
-  '__module__' : 'yandex.cloud.mdb.opensearch.v1.auth_pb2'
-  # @@protoc_insertion_point(class_scope:yandex.cloud.mdb.opensearch.v1.SAMLSettings)
-  })
-_sym_db.RegisterMessage(SAMLSettings)
-
-
-DESCRIPTOR._options = None
-_SAMLSETTINGS.fields_by_name['idp_entity_id']._options = None
-_SAMLSETTINGS.fields_by_name['idp_metadata_file']._options = None
-_SAMLSETTINGS.fields_by_name['sp_entity_id']._options = None
-_SAMLSETTINGS.fields_by_name['dashboards_url']._options = None
-_SAMLSETTINGS.fields_by_name['roles_key']._options = None
-_SAMLSETTINGS.fields_by_name['subject_key']._options = None
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n\"yandex.cloud.api.mdb.opensearch.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/opensearch/v1;opensearch'
+  _SAMLSETTINGS.fields_by_name['idp_entity_id']._options = None
+  _SAMLSETTINGS.fields_by_name['idp_entity_id']._serialized_options = b'\212\3101\005<=250'
+  _SAMLSETTINGS.fields_by_name['idp_metadata_file']._options = None
+  _SAMLSETTINGS.fields_by_name['idp_metadata_file']._serialized_options = b'\212\3101\007<=10000'
+  _SAMLSETTINGS.fields_by_name['sp_entity_id']._options = None
+  _SAMLSETTINGS.fields_by_name['sp_entity_id']._serialized_options = b'\212\3101\005<=250'
+  _SAMLSETTINGS.fields_by_name['dashboards_url']._options = None
+  _SAMLSETTINGS.fields_by_name['dashboards_url']._serialized_options = b'\212\3101\005<=250'
+  _SAMLSETTINGS.fields_by_name['roles_key']._options = None
+  _SAMLSETTINGS.fields_by_name['roles_key']._serialized_options = b'\212\3101\005<=250'
+  _SAMLSETTINGS.fields_by_name['subject_key']._options = None
+  _SAMLSETTINGS.fields_by_name['subject_key']._serialized_options = b'\212\3101\005<=250'
+  _globals['_AUTHSETTINGS']._serialized_start=108
+  _globals['_AUTHSETTINGS']._serialized_end=182
+  _globals['_SAMLSETTINGS']._serialized_start=185
+  _globals['_SAMLSETTINGS']._serialized_end=420
 # @@protoc_insertion_point(module_scope)
