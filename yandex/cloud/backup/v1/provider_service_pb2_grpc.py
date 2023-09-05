@@ -7,7 +7,8 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class ProviderServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing [backup providers](/docs/backup/concepts/#providers).
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -28,7 +29,8 @@ class ProviderServiceStub(object):
 
 
 class ProviderServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing [backup providers](/docs/backup/concepts/#providers).
+    """
 
     def Activate(self, request, context):
         """Activate provider for specified client.
@@ -65,7 +67,8 @@ def add_ProviderServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class ProviderService(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing [backup providers](/docs/backup/concepts/#providers).
+    """
 
     @staticmethod
     def Activate(request,

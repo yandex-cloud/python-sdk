@@ -158,3 +158,64 @@ class TokenizerService(object):
             yandex_dot_cloud_dot_ai_dot_llm_dot_v1alpha_dot_llm__service__pb2.TokenizeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+
+class EmbeddingsServiceStub(object):
+    """Missing associated documentation comment in .proto file."""
+
+    def __init__(self, channel):
+        """Constructor.
+
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.Embedding = channel.unary_unary(
+                '/yandex.cloud.ai.llm.v1alpha.EmbeddingsService/Embedding',
+                request_serializer=yandex_dot_cloud_dot_ai_dot_llm_dot_v1alpha_dot_llm__service__pb2.EmbeddingRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_ai_dot_llm_dot_v1alpha_dot_llm__service__pb2.EmbeddingResponse.FromString,
+                )
+
+
+class EmbeddingsServiceServicer(object):
+    """Missing associated documentation comment in .proto file."""
+
+    def Embedding(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+
+def add_EmbeddingsServiceServicer_to_server(servicer, server):
+    rpc_method_handlers = {
+            'Embedding': grpc.unary_unary_rpc_method_handler(
+                    servicer.Embedding,
+                    request_deserializer=yandex_dot_cloud_dot_ai_dot_llm_dot_v1alpha_dot_llm__service__pb2.EmbeddingRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_ai_dot_llm_dot_v1alpha_dot_llm__service__pb2.EmbeddingResponse.SerializeToString,
+            ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'yandex.cloud.ai.llm.v1alpha.EmbeddingsService', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+
+
+ # This class is part of an EXPERIMENTAL API.
+class EmbeddingsService(object):
+    """Missing associated documentation comment in .proto file."""
+
+    @staticmethod
+    def Embedding(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.ai.llm.v1alpha.EmbeddingsService/Embedding',
+            yandex_dot_cloud_dot_ai_dot_llm_dot_v1alpha_dot_llm__service__pb2.EmbeddingRequest.SerializeToString,
+            yandex_dot_cloud_dot_ai_dot_llm_dot_v1alpha_dot_llm__service__pb2.EmbeddingResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

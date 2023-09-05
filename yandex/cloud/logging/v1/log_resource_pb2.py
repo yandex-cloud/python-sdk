@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*yandex/cloud/logging/v1/log_resource.proto\x12\x17yandex.cloud.logging.v1\x1a\x1dyandex/cloud/validation.proto\"y\n\x10LogEntryResource\x12\x31\n\x04type\x18\x01 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?\x12\x32\n\x02id\x18\x02 \x01(\tB&\xf2\xc7\x31\"([a-zA-Z0-9][-a-zA-Z0-9_.]{0,63})?\"-\n\x10LogGroupResource\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0b\n\x03ids\x18\x02 \x03(\tBb\n\x1byandex.cloud.api.logging.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/logging/v1;loggingb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*yandex/cloud/logging/v1/log_resource.proto\x12\x17yandex.cloud.logging.v1\x1a\x1dyandex/cloud/validation.proto\"@\n\x10LogEntryResource\x12\x16\n\x04type\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=63\x12\x14\n\x02id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=63\"-\n\x10LogGroupResource\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0b\n\x03ids\x18\x02 \x03(\tBb\n\x1byandex.cloud.api.logging.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/logging/v1;loggingb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -24,11 +24,11 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\033yandex.cloud.api.logging.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/logging/v1;logging'
   _LOGENTRYRESOURCE.fields_by_name['type']._options = None
-  _LOGENTRYRESOURCE.fields_by_name['type']._serialized_options = b'\362\3071\037([a-zA-Z][-a-zA-Z0-9_.]{0,63})?'
+  _LOGENTRYRESOURCE.fields_by_name['type']._serialized_options = b'\212\3101\004<=63'
   _LOGENTRYRESOURCE.fields_by_name['id']._options = None
-  _LOGENTRYRESOURCE.fields_by_name['id']._serialized_options = b'\362\3071\"([a-zA-Z0-9][-a-zA-Z0-9_.]{0,63})?'
+  _LOGENTRYRESOURCE.fields_by_name['id']._serialized_options = b'\212\3101\004<=63'
   _globals['_LOGENTRYRESOURCE']._serialized_start=102
-  _globals['_LOGENTRYRESOURCE']._serialized_end=223
-  _globals['_LOGGROUPRESOURCE']._serialized_start=225
-  _globals['_LOGGROUPRESOURCE']._serialized_end=270
+  _globals['_LOGENTRYRESOURCE']._serialized_end=166
+  _globals['_LOGGROUPRESOURCE']._serialized_start=168
+  _globals['_LOGGROUPRESOURCE']._serialized_end=213
 # @@protoc_insertion_point(module_scope)

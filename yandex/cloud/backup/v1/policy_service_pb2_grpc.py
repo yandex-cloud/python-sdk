@@ -8,7 +8,8 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class PolicyServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing [policies](/docs/backup/concepts/policy).
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -64,7 +65,8 @@ class PolicyServiceStub(object):
 
 
 class PolicyServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing [policies](/docs/backup/concepts/policy).
+    """
 
     def List(self, request, context):
         """List [policies](/docs/backup/concepts/policy) of specified folder.
@@ -189,7 +191,8 @@ def add_PolicyServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class PolicyService(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing [policies](/docs/backup/concepts/policy).
+    """
 
     @staticmethod
     def List(request,

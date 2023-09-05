@@ -7,7 +7,8 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class ResourceServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing backup resources: [Compute Cloud instances](/docs/backup/concepts/vm-connection#os).
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -48,10 +49,11 @@ class ResourceServiceStub(object):
 
 
 class ResourceServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing backup resources: [Compute Cloud instances](/docs/backup/concepts/vm-connection#os).
+    """
 
     def List(self, request, context):
-        """List resources: [Compute Cloud instances](/docs/backup/concepts/vm-connection#os).
+        """List resources: Compute Cloud instances.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -135,7 +137,8 @@ def add_ResourceServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class ResourceService(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing backup resources: [Compute Cloud instances](/docs/backup/concepts/vm-connection#os).
+    """
 
     @staticmethod
     def List(request,
