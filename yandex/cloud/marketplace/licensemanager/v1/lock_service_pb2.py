@@ -18,7 +18,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n=yandex/cloud/marketplace/licensemanager/v1/lock_service.proto\x12*yandex.cloud.marketplace.licensemanager.v1\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a\x35yandex/cloud/marketplace/licensemanager/v1/lock.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"\'\n\x0eGetLockRequest\x12\x15\n\x07lock_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"I\n\x11\x43reateLockRequest\x12\x19\n\x0binstance_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x19\n\x0bresource_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"%\n\x12\x43reateLockMetadata\x12\x0f\n\x07lock_id\x18\x01 \x01(\t\"%\n\x12\x45nsureLockMetadata\x12\x0f\n\x07lock_id\x18\x01 \x01(\t\"*\n\x11\x44\x65leteLockRequest\x12\x15\n\x07lock_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"%\n\x12\x44\x65leteLockMetadata\x12\x0f\n\x07lock_id\x18\x01 \x01(\t\"[\n#GetLockByInstanceAndResourceRequest\x12\x19\n\x0binstance_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x19\n\x0bresource_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x32\x88\x08\n\x0bLockService\x12\xac\x01\n\x03Get\x12:.yandex.cloud.marketplace.licensemanager.v1.GetLockRequest\x1a\x30.yandex.cloud.marketplace.licensemanager.v1.Lock\"7\x82\xd3\xe4\x93\x02\x31\x12//marketplace/license-manager/v1/locks/{lock_id}\x12\xe5\x01\n\x18GetByInstanceAndResource\x12O.yandex.cloud.marketplace.licensemanager.v1.GetLockByInstanceAndResourceRequest\x1a\x30.yandex.cloud.marketplace.licensemanager.v1.Lock\"F\x82\xd3\xe4\x93\x02@\x12>/marketplace/license-manager/v1/locks:getByInstanceAndResource\x12\xba\x01\n\x06\x43reate\x12=.yandex.cloud.marketplace.licensemanager.v1.CreateLockRequest\x1a!.yandex.cloud.operation.Operation\"N\xb2\xd2*\x1a\n\x12\x43reateLockMetadata\x12\x04Lock\x82\xd3\xe4\x93\x02*\"%/marketplace/license-manager/v1/locks:\x01*\x12\xcf\x01\n\x06\x45nsure\x12=.yandex.cloud.marketplace.licensemanager.v1.CreateLockRequest\x1a!.yandex.cloud.operation.Operation\"c\xb2\xd2*\x1a\n\x12\x43reateLockMetadata\x12\x04Lock\x82\xd3\xe4\x93\x02?\":/marketplace/license-manager/v1/locks/{instance_id}:ensure:\x01*\x12\xd2\x01\n\x06\x44\x65lete\x12=.yandex.cloud.marketplace.licensemanager.v1.DeleteLockRequest\x1a!.yandex.cloud.operation.Operation\"f\xb2\xd2*+\n\x12\x44\x65leteLockMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x31*//marketplace/license-manager/v1/locks/{lock_id}B\x8f\x01\n.yandex.cloud.api.marketplace.licensemanager.v1Z]github.com/yandex-cloud/go-genproto/yandex/cloud/marketplace/licensemanager/v1;licensemanagerb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n=yandex/cloud/marketplace/licensemanager/v1/lock_service.proto\x12*yandex.cloud.marketplace.licensemanager.v1\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a\x35yandex/cloud/marketplace/licensemanager/v1/lock.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"\'\n\x0eGetLockRequest\x12\x15\n\x07lock_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"I\n\x11\x43reateLockRequest\x12\x19\n\x0binstance_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x19\n\x0bresource_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"I\n\x11\x45nsureLockRequest\x12\x19\n\x0binstance_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x19\n\x0bresource_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"%\n\x12\x43reateLockMetadata\x12\x0f\n\x07lock_id\x18\x01 \x01(\t\"%\n\x12\x45nsureLockMetadata\x12\x0f\n\x07lock_id\x18\x01 \x01(\t\"*\n\x11\x44\x65leteLockRequest\x12\x15\n\x07lock_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"%\n\x12\x44\x65leteLockMetadata\x12\x0f\n\x07lock_id\x18\x01 \x01(\t\"[\n#GetLockByInstanceAndResourceRequest\x12\x19\n\x0binstance_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x19\n\x0bresource_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x32\x88\x08\n\x0bLockService\x12\xac\x01\n\x03Get\x12:.yandex.cloud.marketplace.licensemanager.v1.GetLockRequest\x1a\x30.yandex.cloud.marketplace.licensemanager.v1.Lock\"7\x82\xd3\xe4\x93\x02\x31\x12//marketplace/license-manager/v1/locks/{lock_id}\x12\xe5\x01\n\x18GetByInstanceAndResource\x12O.yandex.cloud.marketplace.licensemanager.v1.GetLockByInstanceAndResourceRequest\x1a\x30.yandex.cloud.marketplace.licensemanager.v1.Lock\"F\x82\xd3\xe4\x93\x02@\x12>/marketplace/license-manager/v1/locks:getByInstanceAndResource\x12\xba\x01\n\x06\x43reate\x12=.yandex.cloud.marketplace.licensemanager.v1.CreateLockRequest\x1a!.yandex.cloud.operation.Operation\"N\xb2\xd2*\x1a\n\x12\x43reateLockMetadata\x12\x04Lock\x82\xd3\xe4\x93\x02*\"%/marketplace/license-manager/v1/locks:\x01*\x12\xcf\x01\n\x06\x45nsure\x12=.yandex.cloud.marketplace.licensemanager.v1.EnsureLockRequest\x1a!.yandex.cloud.operation.Operation\"c\xb2\xd2*\x1a\n\x12\x45nsureLockMetadata\x12\x04Lock\x82\xd3\xe4\x93\x02?\":/marketplace/license-manager/v1/locks/{instance_id}:ensure:\x01*\x12\xd2\x01\n\x06\x44\x65lete\x12=.yandex.cloud.marketplace.licensemanager.v1.DeleteLockRequest\x1a!.yandex.cloud.operation.Operation\"f\xb2\xd2*+\n\x12\x44\x65leteLockMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x31*//marketplace/license-manager/v1/locks/{lock_id}B\x8f\x01\n.yandex.cloud.api.marketplace.licensemanager.v1Z]github.com/yandex-cloud/go-genproto/yandex/cloud/marketplace/licensemanager/v1;licensemanagerb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,6 +33,10 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _CREATELOCKREQUEST.fields_by_name['instance_id']._serialized_options = b'\350\3071\001'
   _CREATELOCKREQUEST.fields_by_name['resource_id']._options = None
   _CREATELOCKREQUEST.fields_by_name['resource_id']._serialized_options = b'\350\3071\001'
+  _ENSURELOCKREQUEST.fields_by_name['instance_id']._options = None
+  _ENSURELOCKREQUEST.fields_by_name['instance_id']._serialized_options = b'\350\3071\001'
+  _ENSURELOCKREQUEST.fields_by_name['resource_id']._options = None
+  _ENSURELOCKREQUEST.fields_by_name['resource_id']._serialized_options = b'\350\3071\001'
   _DELETELOCKREQUEST.fields_by_name['lock_id']._options = None
   _DELETELOCKREQUEST.fields_by_name['lock_id']._serialized_options = b'\350\3071\001'
   _GETLOCKBYINSTANCEANDRESOURCEREQUEST.fields_by_name['instance_id']._options = None
@@ -46,23 +50,25 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _LOCKSERVICE.methods_by_name['Create']._options = None
   _LOCKSERVICE.methods_by_name['Create']._serialized_options = b'\262\322*\032\n\022CreateLockMetadata\022\004Lock\202\323\344\223\002*\"%/marketplace/license-manager/v1/locks:\001*'
   _LOCKSERVICE.methods_by_name['Ensure']._options = None
-  _LOCKSERVICE.methods_by_name['Ensure']._serialized_options = b'\262\322*\032\n\022CreateLockMetadata\022\004Lock\202\323\344\223\002?\":/marketplace/license-manager/v1/locks/{instance_id}:ensure:\001*'
+  _LOCKSERVICE.methods_by_name['Ensure']._serialized_options = b'\262\322*\032\n\022EnsureLockMetadata\022\004Lock\202\323\344\223\002?\":/marketplace/license-manager/v1/locks/{instance_id}:ensure:\001*'
   _LOCKSERVICE.methods_by_name['Delete']._options = None
   _LOCKSERVICE.methods_by_name['Delete']._serialized_options = b'\262\322*+\n\022DeleteLockMetadata\022\025google.protobuf.Empty\202\323\344\223\0021*//marketplace/license-manager/v1/locks/{lock_id}'
   _globals['_GETLOCKREQUEST']._serialized_start=299
   _globals['_GETLOCKREQUEST']._serialized_end=338
   _globals['_CREATELOCKREQUEST']._serialized_start=340
   _globals['_CREATELOCKREQUEST']._serialized_end=413
-  _globals['_CREATELOCKMETADATA']._serialized_start=415
-  _globals['_CREATELOCKMETADATA']._serialized_end=452
-  _globals['_ENSURELOCKMETADATA']._serialized_start=454
-  _globals['_ENSURELOCKMETADATA']._serialized_end=491
-  _globals['_DELETELOCKREQUEST']._serialized_start=493
-  _globals['_DELETELOCKREQUEST']._serialized_end=535
-  _globals['_DELETELOCKMETADATA']._serialized_start=537
-  _globals['_DELETELOCKMETADATA']._serialized_end=574
-  _globals['_GETLOCKBYINSTANCEANDRESOURCEREQUEST']._serialized_start=576
-  _globals['_GETLOCKBYINSTANCEANDRESOURCEREQUEST']._serialized_end=667
-  _globals['_LOCKSERVICE']._serialized_start=670
-  _globals['_LOCKSERVICE']._serialized_end=1702
+  _globals['_ENSURELOCKREQUEST']._serialized_start=415
+  _globals['_ENSURELOCKREQUEST']._serialized_end=488
+  _globals['_CREATELOCKMETADATA']._serialized_start=490
+  _globals['_CREATELOCKMETADATA']._serialized_end=527
+  _globals['_ENSURELOCKMETADATA']._serialized_start=529
+  _globals['_ENSURELOCKMETADATA']._serialized_end=566
+  _globals['_DELETELOCKREQUEST']._serialized_start=568
+  _globals['_DELETELOCKREQUEST']._serialized_end=610
+  _globals['_DELETELOCKMETADATA']._serialized_start=612
+  _globals['_DELETELOCKMETADATA']._serialized_end=649
+  _globals['_GETLOCKBYINSTANCEANDRESOURCEREQUEST']._serialized_start=651
+  _globals['_GETLOCKBYINSTANCEANDRESOURCEREQUEST']._serialized_end=742
+  _globals['_LOCKSERVICE']._serialized_start=745
+  _globals['_LOCKSERVICE']._serialized_end=1777
 # @@protoc_insertion_point(module_scope)

@@ -14,9 +14,11 @@ _sym_db = _symbol_database.Default()
 from yandex.cloud.ai.llm.v1alpha import llm_pb2 as yandex_dot_cloud_dot_ai_dot_llm_dot_v1alpha_dot_llm__pb2
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
+from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
+from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n-yandex/cloud/ai/llm/v1alpha/llm_service.proto\x12\x1byandex.cloud.ai.llm.v1alpha\x1a%yandex/cloud/ai/llm/v1alpha/llm.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1dyandex/cloud/validation.proto\"\xdf\x01\n\x0fInstructRequest\x12\x17\n\x05model\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12J\n\x12generation_options\x18\x02 \x01(\x0b\x32..yandex.cloud.ai.llm.v1alpha.GenerationOptions\x12\x1a\n\x10instruction_text\x18\x03 \x01(\tH\x00\x12\x19\n\x0finstruction_uri\x18\x05 \x01(\tH\x00\x12\x16\n\x0crequest_text\x18\x04 \x01(\tH\x01\x42\r\n\x0bInstructionB\t\n\x07Request\"m\n\x10InstructResponse\x12>\n\x0c\x61lternatives\x18\x01 \x03(\x0b\x32(.yandex.cloud.ai.llm.v1alpha.Alternative\x12\x19\n\x11num_prompt_tokens\x18\x02 \x01(\x03\"\xd5\x01\n\x0b\x43hatRequest\x12\x17\n\x05model\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12J\n\x12generation_options\x18\x02 \x01(\x0b\x32..yandex.cloud.ai.llm.v1alpha.GenerationOptions\x12\x1a\n\x10instruction_text\x18\x03 \x01(\tH\x00\x12\x36\n\x08messages\x18\x04 \x03(\x0b\x32$.yandex.cloud.ai.llm.v1alpha.MessageB\r\n\x0bInstruction\"Y\n\x0c\x43hatResponse\x12\x35\n\x07message\x18\x01 \x01(\x0b\x32$.yandex.cloud.ai.llm.v1alpha.Message\x12\x12\n\nnum_tokens\x18\x02 \x01(\x03\"8\n\x0fTokenizeRequest\x12\x17\n\x05model\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x0c\n\x04text\x18\x02 \x01(\t\"F\n\x10TokenizeResponse\x12\x32\n\x06tokens\x18\x01 \x03(\x0b\x32\".yandex.cloud.ai.llm.v1alpha.Token\"\xec\x01\n\x10\x45mbeddingRequest\x12S\n\x0e\x65mbedding_type\x18\x01 \x01(\x0e\x32;.yandex.cloud.ai.llm.v1alpha.EmbeddingRequest.EmbeddingType\x12\r\n\x05model\x18\x02 \x01(\t\x12\x0c\n\x04text\x18\x03 \x01(\t\"f\n\rEmbeddingType\x12\x1e\n\x1a\x45MBEDDING_TYPE_UNSPECIFIED\x10\x00\x12\x18\n\x14\x45MBEDDING_TYPE_QUERY\x10\x01\x12\x1b\n\x17\x45MBEDDING_TYPE_DOCUMENT\x10\x02\":\n\x11\x45mbeddingResponse\x12\x11\n\tembedding\x18\x01 \x03(\x01\x12\x12\n\nnum_tokens\x18\x02 \x01(\x03\x32\xa2\x02\n\x15TextGenerationService\x12\x8b\x01\n\x08Instruct\x12,.yandex.cloud.ai.llm.v1alpha.InstructRequest\x1a-.yandex.cloud.ai.llm.v1alpha.InstructResponse\" \x82\xd3\xe4\x93\x02\x1a\"\x15/llm/v1alpha/instruct:\x01*0\x01\x12{\n\x04\x43hat\x12(.yandex.cloud.ai.llm.v1alpha.ChatRequest\x1a).yandex.cloud.ai.llm.v1alpha.ChatResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/llm/v1alpha/chat:\x01*0\x01\x32\x9e\x01\n\x10TokenizerService\x12\x89\x01\n\x08Tokenize\x12,.yandex.cloud.ai.llm.v1alpha.TokenizeRequest\x1a-.yandex.cloud.ai.llm.v1alpha.TokenizeResponse\" \x82\xd3\xe4\x93\x02\x1a\"\x15/llm/v1alpha/tokenize:\x01*2\xa3\x01\n\x11\x45mbeddingsService\x12\x8d\x01\n\tEmbedding\x12-.yandex.cloud.ai.llm.v1alpha.EmbeddingRequest\x1a..yandex.cloud.ai.llm.v1alpha.EmbeddingResponse\"!\x82\xd3\xe4\x93\x02\x1b\"\x16/llm/v1alpha/embedding:\x01*Bf\n\x1fyandex.cloud.api.ai.llm.v1alphaZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/llm/v1alpha;llmb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n-yandex/cloud/ai/llm/v1alpha/llm_service.proto\x12\x1byandex.cloud.ai.llm.v1alpha\x1a%yandex/cloud/ai/llm/v1alpha/llm.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1dyandex/cloud/validation.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\"\xdf\x01\n\x0fInstructRequest\x12\x17\n\x05model\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12J\n\x12generation_options\x18\x02 \x01(\x0b\x32..yandex.cloud.ai.llm.v1alpha.GenerationOptions\x12\x1a\n\x10instruction_text\x18\x03 \x01(\tH\x00\x12\x19\n\x0finstruction_uri\x18\x05 \x01(\tH\x00\x12\x16\n\x0crequest_text\x18\x04 \x01(\tH\x01\x42\r\n\x0bInstructionB\t\n\x07Request\"m\n\x10InstructResponse\x12>\n\x0c\x61lternatives\x18\x01 \x03(\x0b\x32(.yandex.cloud.ai.llm.v1alpha.Alternative\x12\x19\n\x11num_prompt_tokens\x18\x02 \x01(\x03\"\xd5\x01\n\x0b\x43hatRequest\x12\x17\n\x05model\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12J\n\x12generation_options\x18\x02 \x01(\x0b\x32..yandex.cloud.ai.llm.v1alpha.GenerationOptions\x12\x1a\n\x10instruction_text\x18\x03 \x01(\tH\x00\x12\x36\n\x08messages\x18\x04 \x03(\x0b\x32$.yandex.cloud.ai.llm.v1alpha.MessageB\r\n\x0bInstruction\"Y\n\x0c\x43hatResponse\x12\x35\n\x07message\x18\x01 \x01(\x0b\x32$.yandex.cloud.ai.llm.v1alpha.Message\x12\x12\n\nnum_tokens\x18\x02 \x01(\x03\"8\n\x0fTokenizeRequest\x12\x17\n\x05model\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x0c\n\x04text\x18\x02 \x01(\t\"F\n\x10TokenizeResponse\x12\x32\n\x06tokens\x18\x01 \x03(\x0b\x32\".yandex.cloud.ai.llm.v1alpha.Token\"\xf6\x01\n\x10\x45mbeddingRequest\x12S\n\x0e\x65mbedding_type\x18\x01 \x01(\x0e\x32;.yandex.cloud.ai.llm.v1alpha.EmbeddingRequest.EmbeddingType\x12\x17\n\x05model\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x0c\n\x04text\x18\x03 \x01(\t\"f\n\rEmbeddingType\x12\x1e\n\x1a\x45MBEDDING_TYPE_UNSPECIFIED\x10\x00\x12\x18\n\x14\x45MBEDDING_TYPE_QUERY\x10\x01\x12\x1b\n\x17\x45MBEDDING_TYPE_DOCUMENT\x10\x02\":\n\x11\x45mbeddingResponse\x12\x11\n\tembedding\x18\x01 \x03(\x01\x12\x12\n\nnum_tokens\x18\x02 \x01(\x03\x32\xa2\x02\n\x15TextGenerationService\x12\x8b\x01\n\x08Instruct\x12,.yandex.cloud.ai.llm.v1alpha.InstructRequest\x1a-.yandex.cloud.ai.llm.v1alpha.InstructResponse\" \x82\xd3\xe4\x93\x02\x1a\"\x15/llm/v1alpha/instruct:\x01*0\x01\x12{\n\x04\x43hat\x12(.yandex.cloud.ai.llm.v1alpha.ChatRequest\x1a).yandex.cloud.ai.llm.v1alpha.ChatResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/llm/v1alpha/chat:\x01*0\x01\x32\x9e\x01\n\x10TokenizerService\x12\x89\x01\n\x08Tokenize\x12,.yandex.cloud.ai.llm.v1alpha.TokenizeRequest\x1a-.yandex.cloud.ai.llm.v1alpha.TokenizeResponse\" \x82\xd3\xe4\x93\x02\x1a\"\x15/llm/v1alpha/tokenize:\x01*2\xa3\x01\n\x11\x45mbeddingsService\x12\x8d\x01\n\tEmbedding\x12-.yandex.cloud.ai.llm.v1alpha.EmbeddingRequest\x1a..yandex.cloud.ai.llm.v1alpha.EmbeddingResponse\"!\x82\xd3\xe4\x93\x02\x1b\"\x16/llm/v1alpha/embedding:\x01*2\xb7\x01\n\x1aTextGenerationAsyncService\x12\x98\x01\n\x08Instruct\x12,.yandex.cloud.ai.llm.v1alpha.InstructRequest\x1a!.yandex.cloud.operation.Operation\";\xb2\xd2*\x12\x12\x10InstructResponse\x82\xd3\xe4\x93\x02\x1f\"\x1a/llm/v1alpha/instructAsync:\x01*Bf\n\x1fyandex.cloud.api.ai.llm.v1alphaZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/llm/v1alpha;llmb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -31,6 +33,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _CHATREQUEST.fields_by_name['model']._serialized_options = b'\212\3101\004<=50'
   _TOKENIZEREQUEST.fields_by_name['model']._options = None
   _TOKENIZEREQUEST.fields_by_name['model']._serialized_options = b'\212\3101\004<=50'
+  _EMBEDDINGREQUEST.fields_by_name['model']._options = None
+  _EMBEDDINGREQUEST.fields_by_name['model']._serialized_options = b'\212\3101\004<=50'
   _TEXTGENERATIONSERVICE.methods_by_name['Instruct']._options = None
   _TEXTGENERATIONSERVICE.methods_by_name['Instruct']._serialized_options = b'\202\323\344\223\002\032\"\025/llm/v1alpha/instruct:\001*'
   _TEXTGENERATIONSERVICE.methods_by_name['Chat']._options = None
@@ -39,28 +43,32 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _TOKENIZERSERVICE.methods_by_name['Tokenize']._serialized_options = b'\202\323\344\223\002\032\"\025/llm/v1alpha/tokenize:\001*'
   _EMBEDDINGSSERVICE.methods_by_name['Embedding']._options = None
   _EMBEDDINGSSERVICE.methods_by_name['Embedding']._serialized_options = b'\202\323\344\223\002\033\"\026/llm/v1alpha/embedding:\001*'
-  _globals['_INSTRUCTREQUEST']._serialized_start=179
-  _globals['_INSTRUCTREQUEST']._serialized_end=402
-  _globals['_INSTRUCTRESPONSE']._serialized_start=404
-  _globals['_INSTRUCTRESPONSE']._serialized_end=513
-  _globals['_CHATREQUEST']._serialized_start=516
-  _globals['_CHATREQUEST']._serialized_end=729
-  _globals['_CHATRESPONSE']._serialized_start=731
-  _globals['_CHATRESPONSE']._serialized_end=820
-  _globals['_TOKENIZEREQUEST']._serialized_start=822
-  _globals['_TOKENIZEREQUEST']._serialized_end=878
-  _globals['_TOKENIZERESPONSE']._serialized_start=880
-  _globals['_TOKENIZERESPONSE']._serialized_end=950
-  _globals['_EMBEDDINGREQUEST']._serialized_start=953
-  _globals['_EMBEDDINGREQUEST']._serialized_end=1189
-  _globals['_EMBEDDINGREQUEST_EMBEDDINGTYPE']._serialized_start=1087
-  _globals['_EMBEDDINGREQUEST_EMBEDDINGTYPE']._serialized_end=1189
-  _globals['_EMBEDDINGRESPONSE']._serialized_start=1191
-  _globals['_EMBEDDINGRESPONSE']._serialized_end=1249
-  _globals['_TEXTGENERATIONSERVICE']._serialized_start=1252
-  _globals['_TEXTGENERATIONSERVICE']._serialized_end=1542
-  _globals['_TOKENIZERSERVICE']._serialized_start=1545
-  _globals['_TOKENIZERSERVICE']._serialized_end=1703
-  _globals['_EMBEDDINGSSERVICE']._serialized_start=1706
-  _globals['_EMBEDDINGSSERVICE']._serialized_end=1869
+  _TEXTGENERATIONASYNCSERVICE.methods_by_name['Instruct']._options = None
+  _TEXTGENERATIONASYNCSERVICE.methods_by_name['Instruct']._serialized_options = b'\262\322*\022\022\020InstructResponse\202\323\344\223\002\037\"\032/llm/v1alpha/instructAsync:\001*'
+  _globals['_INSTRUCTREQUEST']._serialized_start=253
+  _globals['_INSTRUCTREQUEST']._serialized_end=476
+  _globals['_INSTRUCTRESPONSE']._serialized_start=478
+  _globals['_INSTRUCTRESPONSE']._serialized_end=587
+  _globals['_CHATREQUEST']._serialized_start=590
+  _globals['_CHATREQUEST']._serialized_end=803
+  _globals['_CHATRESPONSE']._serialized_start=805
+  _globals['_CHATRESPONSE']._serialized_end=894
+  _globals['_TOKENIZEREQUEST']._serialized_start=896
+  _globals['_TOKENIZEREQUEST']._serialized_end=952
+  _globals['_TOKENIZERESPONSE']._serialized_start=954
+  _globals['_TOKENIZERESPONSE']._serialized_end=1024
+  _globals['_EMBEDDINGREQUEST']._serialized_start=1027
+  _globals['_EMBEDDINGREQUEST']._serialized_end=1273
+  _globals['_EMBEDDINGREQUEST_EMBEDDINGTYPE']._serialized_start=1171
+  _globals['_EMBEDDINGREQUEST_EMBEDDINGTYPE']._serialized_end=1273
+  _globals['_EMBEDDINGRESPONSE']._serialized_start=1275
+  _globals['_EMBEDDINGRESPONSE']._serialized_end=1333
+  _globals['_TEXTGENERATIONSERVICE']._serialized_start=1336
+  _globals['_TEXTGENERATIONSERVICE']._serialized_end=1626
+  _globals['_TOKENIZERSERVICE']._serialized_start=1629
+  _globals['_TOKENIZERSERVICE']._serialized_end=1787
+  _globals['_EMBEDDINGSSERVICE']._serialized_start=1790
+  _globals['_EMBEDDINGSSERVICE']._serialized_end=1953
+  _globals['_TEXTGENERATIONASYNCSERVICE']._serialized_start=1956
+  _globals['_TEXTGENERATIONASYNCSERVICE']._serialized_end=2139
 # @@protoc_insertion_point(module_scope)

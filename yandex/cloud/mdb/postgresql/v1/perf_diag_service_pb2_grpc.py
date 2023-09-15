@@ -6,7 +6,7 @@ from yandex.cloud.mdb.postgresql.v1 import perf_diag_service_pb2 as yandex_dot_c
 
 
 class PerformanceDiagnosticsServiceStub(object):
-    """A set of methods for getting PostgreSQL performance diagnostics.
+    """A set of methods for PostgreSQL performance diagnostics.
     """
 
     def __init__(self, channel):
@@ -28,18 +28,19 @@ class PerformanceDiagnosticsServiceStub(object):
 
 
 class PerformanceDiagnosticsServiceServicer(object):
-    """A set of methods for getting PostgreSQL performance diagnostics.
+    """A set of methods for PostgreSQL performance diagnostics.
     """
 
     def ListRawSessionStates(self, request, context):
-        """Handlers for raw data export
+        """Retrieves raw statistics on sessions. Corresponds to the [pg_stat_activity view](https://www.postgresql.org/docs/current/monitoring-stats.html#MONITORING-PG-STAT-ACTIVITY-VIEW).
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListRawStatements(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Retrieves statistics on planning and execution of SQL statements (queries).
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -65,7 +66,7 @@ def add_PerformanceDiagnosticsServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class PerformanceDiagnosticsService(object):
-    """A set of methods for getting PostgreSQL performance diagnostics.
+    """A set of methods for PostgreSQL performance diagnostics.
     """
 
     @staticmethod

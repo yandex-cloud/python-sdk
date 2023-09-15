@@ -7,7 +7,8 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class TextRecognitionServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for the Vision OCR service.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -23,10 +24,12 @@ class TextRecognitionServiceStub(object):
 
 
 class TextRecognitionServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for the Vision OCR service.
+    """
 
     def Recognize(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """To send the image for text recognition.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -47,7 +50,8 @@ def add_TextRecognitionServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class TextRecognitionService(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for the Vision OCR service.
+    """
 
     @staticmethod
     def Recognize(request,
@@ -68,7 +72,8 @@ class TextRecognitionService(object):
 
 
 class TextRecognitionAsyncServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing operations for asynchronous API requests.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -89,16 +94,19 @@ class TextRecognitionAsyncServiceStub(object):
 
 
 class TextRecognitionAsyncServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing operations for asynchronous API requests.
+    """
 
     def Recognize(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """To send the image for asynchronous text recognition.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetRecognition(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """To get recognition results.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -124,7 +132,8 @@ def add_TextRecognitionAsyncServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class TextRecognitionAsyncService(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing operations for asynchronous API requests.
+    """
 
     @staticmethod
     def Recognize(request,

@@ -3,10 +3,12 @@
 import grpc
 
 from yandex.cloud.ai.llm.v1alpha import llm_service_pb2 as yandex_dot_cloud_dot_ai_dot_llm_dot_v1alpha_dot_llm__service__pb2
+from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 
 
 class TextGenerationServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """Service for text generation and conversation.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -27,16 +29,19 @@ class TextGenerationServiceStub(object):
 
 
 class TextGenerationServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """Service for text generation and conversation.
+    """
 
     def Instruct(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """RPC method for instructing the model to generate text.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Chat(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """RPC method for engaging in a chat conversation with the model.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -62,7 +67,8 @@ def add_TextGenerationServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class TextGenerationService(object):
-    """Missing associated documentation comment in .proto file."""
+    """Service for text generation and conversation.
+    """
 
     @staticmethod
     def Instruct(request,
@@ -100,7 +106,8 @@ class TextGenerationService(object):
 
 
 class TokenizerServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """Service for tokenizing input text.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -116,10 +123,12 @@ class TokenizerServiceStub(object):
 
 
 class TokenizerServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """Service for tokenizing input text.
+    """
 
     def Tokenize(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """RPC method for tokenizing input text.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -140,7 +149,8 @@ def add_TokenizerServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class TokenizerService(object):
-    """Missing associated documentation comment in .proto file."""
+    """Service for tokenizing input text.
+    """
 
     @staticmethod
     def Tokenize(request,
@@ -161,7 +171,8 @@ class TokenizerService(object):
 
 
 class EmbeddingsServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """Service for obtaining embeddings for text data.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -177,10 +188,12 @@ class EmbeddingsServiceStub(object):
 
 
 class EmbeddingsServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """Service for obtaining embeddings for text data.
+    """
 
     def Embedding(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """RPC method to obtain embeddings for input text data.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -201,7 +214,8 @@ def add_EmbeddingsServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class EmbeddingsService(object):
-    """Missing associated documentation comment in .proto file."""
+    """Service for obtaining embeddings for text data.
+    """
 
     @staticmethod
     def Embedding(request,
@@ -217,5 +231,70 @@ class EmbeddingsService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.ai.llm.v1alpha.EmbeddingsService/Embedding',
             yandex_dot_cloud_dot_ai_dot_llm_dot_v1alpha_dot_llm__service__pb2.EmbeddingRequest.SerializeToString,
             yandex_dot_cloud_dot_ai_dot_llm_dot_v1alpha_dot_llm__service__pb2.EmbeddingResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+
+class TextGenerationAsyncServiceStub(object):
+    """Service for asynchronous text generation.
+    """
+
+    def __init__(self, channel):
+        """Constructor.
+
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.Instruct = channel.unary_unary(
+                '/yandex.cloud.ai.llm.v1alpha.TextGenerationAsyncService/Instruct',
+                request_serializer=yandex_dot_cloud_dot_ai_dot_llm_dot_v1alpha_dot_llm__service__pb2.InstructRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
+
+
+class TextGenerationAsyncServiceServicer(object):
+    """Service for asynchronous text generation.
+    """
+
+    def Instruct(self, request, context):
+        """RPC method for instructing the model to generate text.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+
+def add_TextGenerationAsyncServiceServicer_to_server(servicer, server):
+    rpc_method_handlers = {
+            'Instruct': grpc.unary_unary_rpc_method_handler(
+                    servicer.Instruct,
+                    request_deserializer=yandex_dot_cloud_dot_ai_dot_llm_dot_v1alpha_dot_llm__service__pb2.InstructRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'yandex.cloud.ai.llm.v1alpha.TextGenerationAsyncService', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+
+
+ # This class is part of an EXPERIMENTAL API.
+class TextGenerationAsyncService(object):
+    """Service for asynchronous text generation.
+    """
+
+    @staticmethod
+    def Instruct(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.ai.llm.v1alpha.TextGenerationAsyncService/Instruct',
+            yandex_dot_cloud_dot_ai_dot_llm_dot_v1alpha_dot_llm__service__pb2.InstructRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -33,7 +33,7 @@ class LockServiceStub(object):
                 )
         self.Ensure = channel.unary_unary(
                 '/yandex.cloud.marketplace.licensemanager.v1.LockService/Ensure',
-                request_serializer=yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_lock__service__pb2.CreateLockRequest.SerializeToString,
+                request_serializer=yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_lock__service__pb2.EnsureLockRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
         self.Delete = channel.unary_unary(
@@ -96,7 +96,7 @@ def add_LockServiceServicer_to_server(servicer, server):
             ),
             'Ensure': grpc.unary_unary_rpc_method_handler(
                     servicer.Ensure,
-                    request_deserializer=yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_lock__service__pb2.CreateLockRequest.FromString,
+                    request_deserializer=yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_lock__service__pb2.EnsureLockRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'Delete': grpc.unary_unary_rpc_method_handler(
@@ -177,7 +177,7 @@ class LockService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.marketplace.licensemanager.v1.LockService/Ensure',
-            yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_lock__service__pb2.CreateLockRequest.SerializeToString,
+            yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_lock__service__pb2.EnsureLockRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
