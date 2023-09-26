@@ -7,7 +7,8 @@ from yandex.cloud.marketplace.licensemanager.v1 import instance_service_pb2 as y
 
 
 class InstanceServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing subscription instances.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -28,16 +29,21 @@ class InstanceServiceStub(object):
 
 
 class InstanceServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing subscription instances.
+    """
 
     def Get(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Returns the specified subscription instance.
+
+        To get the list of all available subscription instances, make a [List] request.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Retrieves the list of subscription instances in the specified folder.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -63,7 +69,8 @@ def add_InstanceServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class InstanceService(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing subscription instances.
+    """
 
     @staticmethod
     def Get(request,

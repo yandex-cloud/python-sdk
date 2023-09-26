@@ -8,7 +8,8 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class LockServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing subscription locks.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -44,34 +45,41 @@ class LockServiceStub(object):
 
 
 class LockServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing subscription locks.
+    """
 
     def Get(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Returns the specified subscription lock.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetByInstanceAndResource(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Returns the subscription lock for specified subscription instance and resource.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Locks the specified subscription instance to the resource.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Ensure(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Checks if the she specified subscription is already locked to the specified resource.
+        If it is not locked, locks the subscription to the resource.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Unlocks the specified subscription lock.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -112,7 +120,8 @@ def add_LockServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class LockService(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing subscription locks.
+    """
 
     @staticmethod
     def Get(request,
