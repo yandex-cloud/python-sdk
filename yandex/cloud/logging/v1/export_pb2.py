@@ -11,11 +11,12 @@ from google.protobuf.internal import builder as _builder
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from yandex.cloud.logging.v1 import log_entry_pb2 as yandex_dot_cloud_dot_logging_dot_v1_dot_log__entry__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$yandex/cloud/logging/v1/export.proto\x12\x17yandex.cloud.logging.v1\x1a\'yandex/cloud/logging/v1/log_entry.proto\x1a\x1dyandex/cloud/validation.proto\"\xea\x01\n\x0c\x45xportParams\x12)\n\x0eresource_types\x18\x01 \x03(\tB\x11\x82\xc8\x31\x05<=100\x8a\xc8\x31\x04<=63\x12\'\n\x0cresource_ids\x18\x02 \x03(\tB\x11\x82\xc8\x31\x05<=100\x8a\xc8\x31\x04<=63\x12\'\n\x0cstream_names\x18\x03 \x03(\tB\x11\x82\xc8\x31\x05<=100\x8a\xc8\x31\x04<=63\x12\x41\n\x06levels\x18\x04 \x03(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.LevelB\x08\x82\xc8\x31\x04<=10\x12\x1a\n\x06\x66ilter\x18\x05 \x01(\tB\n\x8a\xc8\x31\x06<=1000Bb\n\x1byandex.cloud.api.logging.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/logging/v1;loggingb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$yandex/cloud/logging/v1/export.proto\x12\x17yandex.cloud.logging.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\'yandex/cloud/logging/v1/log_entry.proto\x1a\x1dyandex/cloud/validation.proto\"\xd2\x02\n\x06\x45xport\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12\x10\n\x08\x63loud_id\x18\x03 \x01(\t\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x05 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x06 \x01(\t\x12;\n\x06labels\x18\x07 \x03(\x0b\x32+.yandex.cloud.logging.v1.Export.LabelsEntry\x12\x10\n\x08group_id\x18\x08 \x01(\t\x12\x0f\n\x07sink_id\x18\t \x01(\t\x12\x35\n\x06params\x18\n \x01(\x0b\x32%.yandex.cloud.logging.v1.ExportParams\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xea\x01\n\x0c\x45xportParams\x12)\n\x0eresource_types\x18\x01 \x03(\tB\x11\x82\xc8\x31\x05<=100\x8a\xc8\x31\x04<=63\x12\'\n\x0cresource_ids\x18\x02 \x03(\tB\x11\x82\xc8\x31\x05<=100\x8a\xc8\x31\x04<=63\x12\'\n\x0cstream_names\x18\x03 \x03(\tB\x11\x82\xc8\x31\x05<=100\x8a\xc8\x31\x04<=63\x12\x41\n\x06levels\x18\x04 \x03(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.LevelB\x08\x82\xc8\x31\x04<=10\x12\x1a\n\x06\x66ilter\x18\x05 \x01(\tB\n\x8a\xc8\x31\x06<=1000Bb\n\x1byandex.cloud.api.logging.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/logging/v1;loggingb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -24,6 +25,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\033yandex.cloud.api.logging.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/logging/v1;logging'
+  _EXPORT_LABELSENTRY._options = None
+  _EXPORT_LABELSENTRY._serialized_options = b'8\001'
   _EXPORTPARAMS.fields_by_name['resource_types']._options = None
   _EXPORTPARAMS.fields_by_name['resource_types']._serialized_options = b'\202\3101\005<=100\212\3101\004<=63'
   _EXPORTPARAMS.fields_by_name['resource_ids']._options = None
@@ -34,6 +37,10 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _EXPORTPARAMS.fields_by_name['levels']._serialized_options = b'\202\3101\004<=10'
   _EXPORTPARAMS.fields_by_name['filter']._options = None
   _EXPORTPARAMS.fields_by_name['filter']._serialized_options = b'\212\3101\006<=1000'
-  _globals['_EXPORTPARAMS']._serialized_start=138
-  _globals['_EXPORTPARAMS']._serialized_end=372
+  _globals['_EXPORT']._serialized_start=171
+  _globals['_EXPORT']._serialized_end=509
+  _globals['_EXPORT_LABELSENTRY']._serialized_start=464
+  _globals['_EXPORT_LABELSENTRY']._serialized_end=509
+  _globals['_EXPORTPARAMS']._serialized_start=512
+  _globals['_EXPORTPARAMS']._serialized_end=746
 # @@protoc_insertion_point(module_scope)
