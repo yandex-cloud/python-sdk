@@ -15,7 +15,7 @@ from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'yandex/cloud/mdb/greenplum/v1/pxf.proto\x12\x1dyandex.cloud.mdb.greenplum.v1\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\xc5\x04\n\tPXFConfig\x12\x42\n\x12\x63onnection_timeout\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\t\xfa\xc7\x31\x05\x35-600\x12>\n\x0eupload_timeout\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\t\xfa\xc7\x31\x05\x35-600\x12<\n\x0bmax_threads\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\n\xfa\xc7\x31\x06\x31-1024\x12\x42\n\x1epool_allow_core_thread_timeout\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12?\n\x0epool_core_size\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\n\xfa\xc7\x31\x06\x31-1024\x12\x41\n\x13pool_queue_capacity\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12>\n\rpool_max_size\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\n\xfa\xc7\x31\x06\x31-1024\x12\x36\n\x03xmx\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0c\xfa\xc7\x31\x08\x36\x34-16384\x12\x36\n\x03xms\x18\t \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0c\xfa\xc7\x31\x08\x36\x34-16384\"\xd9\x01\n\x0cPXFConfigSet\x12H\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32(.yandex.cloud.mdb.greenplum.v1.PXFConfigB\x04\xe8\xc7\x31\x01\x12=\n\x0buser_config\x18\x02 \x01(\x0b\x32(.yandex.cloud.mdb.greenplum.v1.PXFConfig\x12@\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32(.yandex.cloud.mdb.greenplum.v1.PXFConfigBp\n!yandex.cloud.api.mdb.greenplum.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/greenplum/v1;greenplumb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'yandex/cloud/mdb/greenplum/v1/pxf.proto\x12\x1dyandex.cloud.mdb.greenplum.v1\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\xc5\x04\n\tPXFConfig\x12\x42\n\x12\x63onnection_timeout\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\t\xfa\xc7\x31\x05\x35-600\x12>\n\x0eupload_timeout\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\t\xfa\xc7\x31\x05\x35-600\x12<\n\x0bmax_threads\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\n\xfa\xc7\x31\x06\x31-1024\x12\x42\n\x1epool_allow_core_thread_timeout\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12?\n\x0epool_core_size\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\n\xfa\xc7\x31\x06\x31-1024\x12\x41\n\x13pool_queue_capacity\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=0\x12>\n\rpool_max_size\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\n\xfa\xc7\x31\x06\x31-1024\x12\x36\n\x03xmx\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0c\xfa\xc7\x31\x08\x36\x34-16384\x12\x36\n\x03xms\x18\t \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0c\xfa\xc7\x31\x08\x36\x34-16384\"\xd9\x01\n\x0cPXFConfigSet\x12H\n\x10\x65\x66\x66\x65\x63tive_config\x18\x01 \x01(\x0b\x32(.yandex.cloud.mdb.greenplum.v1.PXFConfigB\x04\xe8\xc7\x31\x01\x12=\n\x0buser_config\x18\x02 \x01(\x0b\x32(.yandex.cloud.mdb.greenplum.v1.PXFConfig\x12@\n\x0e\x64\x65\x66\x61ult_config\x18\x03 \x01(\x0b\x32(.yandex.cloud.mdb.greenplum.v1.PXFConfig\"\x9d\x01\n\x0fPXFDatasourceS3\x12\x1d\n\naccess_key\x18\x01 \x01(\tB\t\x8a\xc8\x31\x05<=200\x12\x1d\n\nsecret_key\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=200\x12/\n\x0b\x66\x61st_upload\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x1b\n\x08\x65ndpoint\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=200\"\xa6\x05\n\x11PXFDatasourceJDBC\x12\x18\n\x06\x64river\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x16\n\x03url\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=200\x12\x17\n\x04user\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=200\x12\x1b\n\x08password\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=200\x12\x46\n\x14statement_batch_size\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0b\xfa\xc7\x31\x07\x35\x30-1000\x12G\n\x14statement_fetch_size\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0c\xfa\xc7\x31\x08\x35\x30-10000\x12G\n\x17statement_query_timeout\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\t\xfa\xc7\x31\x05\x35-600\x12\x30\n\x0cpool_enabled\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x42\n\x11pool_maximum_size\x18\t \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\n\xfa\xc7\x31\x06\x31\x30-200\x12M\n\x17pool_connection_timeout\x18\n \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0f\xfa\xc7\x31\x0b\x35\x30\x30\x30-600000\x12G\n\x11pool_idle_timeout\x18\x0b \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x0f\xfa\xc7\x31\x0b\x35\x30\x30\x30-600000\x12\x41\n\x11pool_minimum_idle\x18\x0c \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\t\xfa\xc7\x31\x05\x30-200\"^\n\x11PXFDatasourceCore\x12\x1d\n\ndefault_fs\x18\x01 \x01(\tB\t\x8a\xc8\x31\x05<=200\x12*\n\x16security_auth_to_local\x18\x02 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"\xcf\x02\n\x15PXFDatasourceKerberos\x12*\n\x06\x65nable\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x1a\n\x07primary\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=128\x12\x19\n\x05realm\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\'\n\x0bkdc_servers\x18\x04 \x03(\tB\x12\x82\xc8\x31\x05<=200\x8a\xc8\x31\x05\x31-200\x12\x1f\n\x0c\x61\x64min_server\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=128\x12!\n\x0e\x64\x65\x66\x61ult_domain\x18\x06 \x01(\tB\t\x8a\xc8\x31\x05<=128\x12\x66\n\rkeytab_base64\x18\x07 \x01(\tBO\xf2\xc7\x31@^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$\x8a\xc8\x31\x07<=65536\"\xad\x01\n\x1cPXFDatasourceHDFSDfsNamenode\x12\x1f\n\x0brpc_address\x18\x01 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\'\n\x13service_rpc_address\x18\x02 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12 \n\x0chttp_address\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12!\n\rhttps_address\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"\xa7\x03\n\x14PXFDatasourceHDFSDfs\x12\x41\n\x1dha_automatic_failover_enabled\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12>\n\x1a\x62lock_access_token_enabled\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x39\n\x15use_datanode_hostname\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x62\n\tnamenodes\x18\x04 \x03(\x0b\x32\x42.yandex.cloud.mdb.greenplum.v1.PXFDatasourceHDFSDfs.NamenodesEntryB\x0b\x82\xc8\x31\x07<=10000\x1am\n\x0eNamenodesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12J\n\x05value\x18\x02 \x01(\x0b\x32;.yandex.cloud.mdb.greenplum.v1.PXFDatasourceHDFSDfsNamenode:\x02\x38\x01\"\x96\x02\n\x19PXFDatasourceHDFSYarnHaRm\x12\x1f\n\x17resourcemanager_address\x18\x01 \x01(\t\x12)\n!resourcemanager_scheduler_address\x18\x02 \x01(\t\x12\x30\n(resourcemanager_resource_tracker_address\x18\x03 \x01(\t\x12%\n\x1dresourcemanager_admin_address\x18\x04 \x01(\t\x12&\n\x1eresourcemanager_webapp_address\x18\x05 \x01(\t\x12,\n$resourcemanager_webapp_https_address\x18\x06 \x01(\t\"\xe7\x03\n\x15PXFDatasourceHDFSYarn\x12>\n\x1aresourcemanager_ha_enabled\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12L\n(resourcemanager_ha_auto_failover_enabled\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12M\n)resourcemanager_ha_auto_failover_embedded\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12.\n\x1aresourcemanager_cluster_id\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12Z\n\x05ha_rm\x18\x05 \x03(\x0b\x32>.yandex.cloud.mdb.greenplum.v1.PXFDatasourceHDFSYarn.HaRmEntryB\x0b\x82\xc8\x31\x07<=10000\x1a\x65\n\tHaRmEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12G\n\x05value\x18\x02 \x01(\x0b\x32\x38.yandex.cloud.mdb.greenplum.v1.PXFDatasourceHDFSYarnHaRm:\x02\x38\x01\"\xe4\x03\n\x11PXFDatasourceHDFS\x12>\n\x04\x63ore\x18\x01 \x01(\x0b\x32\x30.yandex.cloud.mdb.greenplum.v1.PXFDatasourceCore\x12\x46\n\x08kerberos\x18\x02 \x01(\x0b\x32\x34.yandex.cloud.mdb.greenplum.v1.PXFDatasourceKerberos\x12\x36\n\x12user_impersonation\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x1b\n\x08username\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=128\x12\x46\n\x17sasl_connection_retries\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x08\xfa\xc7\x31\x04\x31-50\x12$\n\x08zk_hosts\x18\x06 \x03(\tB\x12\x82\xc8\x31\x05<=200\x8a\xc8\x31\x05\x31-200\x12@\n\x03\x64\x66s\x18\x07 \x01(\x0b\x32\x33.yandex.cloud.mdb.greenplum.v1.PXFDatasourceHDFSDfs\x12\x42\n\x04yarn\x18\x08 \x01(\x0b\x32\x34.yandex.cloud.mdb.greenplum.v1.PXFDatasourceHDFSYarn\"\x92\x04\n\x11PXFDatasourceHive\x12>\n\x04\x63ore\x18\x01 \x01(\x0b\x32\x30.yandex.cloud.mdb.greenplum.v1.PXFDatasourceCore\x12\x46\n\x08kerberos\x18\x02 \x01(\x0b\x32\x34.yandex.cloud.mdb.greenplum.v1.PXFDatasourceKerberos\x12\x36\n\x12user_impersonation\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x1b\n\x08username\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=128\x12\x46\n\x17sasl_connection_retries\x18\x05 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x08\xfa\xc7\x31\x04\x31-50\x12$\n\x08zk_hosts\x18\x06 \x03(\tB\x12\x82\xc8\x31\x05<=200\x8a\xc8\x31\x05\x31-200\x12\'\n\x03ppd\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12*\n\x0emetastore_uris\x18\x08 \x03(\tB\x12\x82\xc8\x31\x05<=200\x8a\xc8\x31\x05\x31-200\x12\x30\n\x1cmetastore_kerberos_principal\x18\t \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12+\n\x17\x61uth_kerberos_principal\x18\n \x01(\tB\n\x8a\xc8\x31\x06<=1000\"\xbc\x02\n\rPXFDatasource\x12\x1b\n\x04name\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x33-200\x12<\n\x02s3\x18\x02 \x01(\x0b\x32..yandex.cloud.mdb.greenplum.v1.PXFDatasourceS3H\x00\x12@\n\x04jdbc\x18\x03 \x01(\x0b\x32\x30.yandex.cloud.mdb.greenplum.v1.PXFDatasourceJDBCH\x00\x12@\n\x04hdfs\x18\x04 \x01(\x0b\x32\x30.yandex.cloud.mdb.greenplum.v1.PXFDatasourceHDFSH\x00\x12@\n\x04hive\x18\x05 \x01(\x0b\x32\x30.yandex.cloud.mdb.greenplum.v1.PXFDatasourceHiveH\x00\x42\n\n\x08settingsBp\n!yandex.cloud.api.mdb.greenplum.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/greenplum/v1;greenplumb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -42,8 +42,116 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _PXFCONFIG.fields_by_name['xms']._serialized_options = b'\372\3071\01064-16384'
   _PXFCONFIGSET.fields_by_name['effective_config']._options = None
   _PXFCONFIGSET.fields_by_name['effective_config']._serialized_options = b'\350\3071\001'
+  _PXFDATASOURCES3.fields_by_name['access_key']._options = None
+  _PXFDATASOURCES3.fields_by_name['access_key']._serialized_options = b'\212\3101\005<=200'
+  _PXFDATASOURCES3.fields_by_name['secret_key']._options = None
+  _PXFDATASOURCES3.fields_by_name['secret_key']._serialized_options = b'\212\3101\005<=200'
+  _PXFDATASOURCES3.fields_by_name['endpoint']._options = None
+  _PXFDATASOURCES3.fields_by_name['endpoint']._serialized_options = b'\212\3101\005<=200'
+  _PXFDATASOURCEJDBC.fields_by_name['driver']._options = None
+  _PXFDATASOURCEJDBC.fields_by_name['driver']._serialized_options = b'\212\3101\004<=50'
+  _PXFDATASOURCEJDBC.fields_by_name['url']._options = None
+  _PXFDATASOURCEJDBC.fields_by_name['url']._serialized_options = b'\212\3101\005<=200'
+  _PXFDATASOURCEJDBC.fields_by_name['user']._options = None
+  _PXFDATASOURCEJDBC.fields_by_name['user']._serialized_options = b'\212\3101\005<=200'
+  _PXFDATASOURCEJDBC.fields_by_name['password']._options = None
+  _PXFDATASOURCEJDBC.fields_by_name['password']._serialized_options = b'\212\3101\005<=200'
+  _PXFDATASOURCEJDBC.fields_by_name['statement_batch_size']._options = None
+  _PXFDATASOURCEJDBC.fields_by_name['statement_batch_size']._serialized_options = b'\372\3071\00750-1000'
+  _PXFDATASOURCEJDBC.fields_by_name['statement_fetch_size']._options = None
+  _PXFDATASOURCEJDBC.fields_by_name['statement_fetch_size']._serialized_options = b'\372\3071\01050-10000'
+  _PXFDATASOURCEJDBC.fields_by_name['statement_query_timeout']._options = None
+  _PXFDATASOURCEJDBC.fields_by_name['statement_query_timeout']._serialized_options = b'\372\3071\0055-600'
+  _PXFDATASOURCEJDBC.fields_by_name['pool_maximum_size']._options = None
+  _PXFDATASOURCEJDBC.fields_by_name['pool_maximum_size']._serialized_options = b'\372\3071\00610-200'
+  _PXFDATASOURCEJDBC.fields_by_name['pool_connection_timeout']._options = None
+  _PXFDATASOURCEJDBC.fields_by_name['pool_connection_timeout']._serialized_options = b'\372\3071\0135000-600000'
+  _PXFDATASOURCEJDBC.fields_by_name['pool_idle_timeout']._options = None
+  _PXFDATASOURCEJDBC.fields_by_name['pool_idle_timeout']._serialized_options = b'\372\3071\0135000-600000'
+  _PXFDATASOURCEJDBC.fields_by_name['pool_minimum_idle']._options = None
+  _PXFDATASOURCEJDBC.fields_by_name['pool_minimum_idle']._serialized_options = b'\372\3071\0050-200'
+  _PXFDATASOURCECORE.fields_by_name['default_fs']._options = None
+  _PXFDATASOURCECORE.fields_by_name['default_fs']._serialized_options = b'\212\3101\005<=200'
+  _PXFDATASOURCECORE.fields_by_name['security_auth_to_local']._options = None
+  _PXFDATASOURCECORE.fields_by_name['security_auth_to_local']._serialized_options = b'\212\3101\006<=1000'
+  _PXFDATASOURCEKERBEROS.fields_by_name['primary']._options = None
+  _PXFDATASOURCEKERBEROS.fields_by_name['primary']._serialized_options = b'\212\3101\005<=128'
+  _PXFDATASOURCEKERBEROS.fields_by_name['realm']._options = None
+  _PXFDATASOURCEKERBEROS.fields_by_name['realm']._serialized_options = b'\212\3101\006<=1000'
+  _PXFDATASOURCEKERBEROS.fields_by_name['kdc_servers']._options = None
+  _PXFDATASOURCEKERBEROS.fields_by_name['kdc_servers']._serialized_options = b'\202\3101\005<=200\212\3101\0051-200'
+  _PXFDATASOURCEKERBEROS.fields_by_name['admin_server']._options = None
+  _PXFDATASOURCEKERBEROS.fields_by_name['admin_server']._serialized_options = b'\212\3101\005<=128'
+  _PXFDATASOURCEKERBEROS.fields_by_name['default_domain']._options = None
+  _PXFDATASOURCEKERBEROS.fields_by_name['default_domain']._serialized_options = b'\212\3101\005<=128'
+  _PXFDATASOURCEKERBEROS.fields_by_name['keytab_base64']._options = None
+  _PXFDATASOURCEKERBEROS.fields_by_name['keytab_base64']._serialized_options = b'\362\3071@^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$\212\3101\007<=65536'
+  _PXFDATASOURCEHDFSDFSNAMENODE.fields_by_name['rpc_address']._options = None
+  _PXFDATASOURCEHDFSDFSNAMENODE.fields_by_name['rpc_address']._serialized_options = b'\212\3101\006<=1000'
+  _PXFDATASOURCEHDFSDFSNAMENODE.fields_by_name['service_rpc_address']._options = None
+  _PXFDATASOURCEHDFSDFSNAMENODE.fields_by_name['service_rpc_address']._serialized_options = b'\212\3101\006<=1000'
+  _PXFDATASOURCEHDFSDFSNAMENODE.fields_by_name['http_address']._options = None
+  _PXFDATASOURCEHDFSDFSNAMENODE.fields_by_name['http_address']._serialized_options = b'\212\3101\006<=1000'
+  _PXFDATASOURCEHDFSDFSNAMENODE.fields_by_name['https_address']._options = None
+  _PXFDATASOURCEHDFSDFSNAMENODE.fields_by_name['https_address']._serialized_options = b'\212\3101\006<=1000'
+  _PXFDATASOURCEHDFSDFS_NAMENODESENTRY._options = None
+  _PXFDATASOURCEHDFSDFS_NAMENODESENTRY._serialized_options = b'8\001'
+  _PXFDATASOURCEHDFSDFS.fields_by_name['namenodes']._options = None
+  _PXFDATASOURCEHDFSDFS.fields_by_name['namenodes']._serialized_options = b'\202\3101\007<=10000'
+  _PXFDATASOURCEHDFSYARN_HARMENTRY._options = None
+  _PXFDATASOURCEHDFSYARN_HARMENTRY._serialized_options = b'8\001'
+  _PXFDATASOURCEHDFSYARN.fields_by_name['resourcemanager_cluster_id']._options = None
+  _PXFDATASOURCEHDFSYARN.fields_by_name['resourcemanager_cluster_id']._serialized_options = b'\212\3101\006<=1000'
+  _PXFDATASOURCEHDFSYARN.fields_by_name['ha_rm']._options = None
+  _PXFDATASOURCEHDFSYARN.fields_by_name['ha_rm']._serialized_options = b'\202\3101\007<=10000'
+  _PXFDATASOURCEHDFS.fields_by_name['username']._options = None
+  _PXFDATASOURCEHDFS.fields_by_name['username']._serialized_options = b'\212\3101\005<=128'
+  _PXFDATASOURCEHDFS.fields_by_name['sasl_connection_retries']._options = None
+  _PXFDATASOURCEHDFS.fields_by_name['sasl_connection_retries']._serialized_options = b'\372\3071\0041-50'
+  _PXFDATASOURCEHDFS.fields_by_name['zk_hosts']._options = None
+  _PXFDATASOURCEHDFS.fields_by_name['zk_hosts']._serialized_options = b'\202\3101\005<=200\212\3101\0051-200'
+  _PXFDATASOURCEHIVE.fields_by_name['username']._options = None
+  _PXFDATASOURCEHIVE.fields_by_name['username']._serialized_options = b'\212\3101\005<=128'
+  _PXFDATASOURCEHIVE.fields_by_name['sasl_connection_retries']._options = None
+  _PXFDATASOURCEHIVE.fields_by_name['sasl_connection_retries']._serialized_options = b'\372\3071\0041-50'
+  _PXFDATASOURCEHIVE.fields_by_name['zk_hosts']._options = None
+  _PXFDATASOURCEHIVE.fields_by_name['zk_hosts']._serialized_options = b'\202\3101\005<=200\212\3101\0051-200'
+  _PXFDATASOURCEHIVE.fields_by_name['metastore_uris']._options = None
+  _PXFDATASOURCEHIVE.fields_by_name['metastore_uris']._serialized_options = b'\202\3101\005<=200\212\3101\0051-200'
+  _PXFDATASOURCEHIVE.fields_by_name['metastore_kerberos_principal']._options = None
+  _PXFDATASOURCEHIVE.fields_by_name['metastore_kerberos_principal']._serialized_options = b'\212\3101\006<=1000'
+  _PXFDATASOURCEHIVE.fields_by_name['auth_kerberos_principal']._options = None
+  _PXFDATASOURCEHIVE.fields_by_name['auth_kerberos_principal']._serialized_options = b'\212\3101\006<=1000'
+  _PXFDATASOURCE.fields_by_name['name']._options = None
+  _PXFDATASOURCE.fields_by_name['name']._serialized_options = b'\350\3071\001\212\3101\0053-200'
   _globals['_PXFCONFIG']._serialized_start=138
   _globals['_PXFCONFIG']._serialized_end=719
   _globals['_PXFCONFIGSET']._serialized_start=722
   _globals['_PXFCONFIGSET']._serialized_end=939
+  _globals['_PXFDATASOURCES3']._serialized_start=942
+  _globals['_PXFDATASOURCES3']._serialized_end=1099
+  _globals['_PXFDATASOURCEJDBC']._serialized_start=1102
+  _globals['_PXFDATASOURCEJDBC']._serialized_end=1780
+  _globals['_PXFDATASOURCECORE']._serialized_start=1782
+  _globals['_PXFDATASOURCECORE']._serialized_end=1876
+  _globals['_PXFDATASOURCEKERBEROS']._serialized_start=1879
+  _globals['_PXFDATASOURCEKERBEROS']._serialized_end=2214
+  _globals['_PXFDATASOURCEHDFSDFSNAMENODE']._serialized_start=2217
+  _globals['_PXFDATASOURCEHDFSDFSNAMENODE']._serialized_end=2390
+  _globals['_PXFDATASOURCEHDFSDFS']._serialized_start=2393
+  _globals['_PXFDATASOURCEHDFSDFS']._serialized_end=2816
+  _globals['_PXFDATASOURCEHDFSDFS_NAMENODESENTRY']._serialized_start=2707
+  _globals['_PXFDATASOURCEHDFSDFS_NAMENODESENTRY']._serialized_end=2816
+  _globals['_PXFDATASOURCEHDFSYARNHARM']._serialized_start=2819
+  _globals['_PXFDATASOURCEHDFSYARNHARM']._serialized_end=3097
+  _globals['_PXFDATASOURCEHDFSYARN']._serialized_start=3100
+  _globals['_PXFDATASOURCEHDFSYARN']._serialized_end=3587
+  _globals['_PXFDATASOURCEHDFSYARN_HARMENTRY']._serialized_start=3486
+  _globals['_PXFDATASOURCEHDFSYARN_HARMENTRY']._serialized_end=3587
+  _globals['_PXFDATASOURCEHDFS']._serialized_start=3590
+  _globals['_PXFDATASOURCEHDFS']._serialized_end=4074
+  _globals['_PXFDATASOURCEHIVE']._serialized_start=4077
+  _globals['_PXFDATASOURCEHIVE']._serialized_end=4607
+  _globals['_PXFDATASOURCE']._serialized_start=4610
+  _globals['_PXFDATASOURCE']._serialized_end=4926
 # @@protoc_insertion_point(module_scope)

@@ -43,10 +43,10 @@ class ProjectJobServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.ReadProjectJobStdLogsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.ReadProjectJobStdLogsResponse.FromString,
                 )
-        self.DownloadStdLogs = channel.unary_unary(
-                '/yandex.cloud.datasphere.v2.jobs.ProjectJobService/DownloadStdLogs',
-                request_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.DownloadProjectJobStdLogsRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.DownloadProjectJobStdLogsResponse.FromString,
+        self.ReadLogs = channel.unary_stream(
+                '/yandex.cloud.datasphere.v2.jobs.ProjectJobService/ReadLogs',
+                request_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.ReadProjectJobLogsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.ReadProjectJobLogsResponse.FromString,
                 )
         self.List = channel.unary_unary(
                 '/yandex.cloud.datasphere.v2.jobs.ProjectJobService/List',
@@ -104,8 +104,8 @@ class ProjectJobServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def DownloadStdLogs(self, request, context):
-        """Returns URL for downloading job logs.
+    def ReadLogs(self, request, context):
+        """Returns stream of job logs.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -160,10 +160,10 @@ def add_ProjectJobServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.ReadProjectJobStdLogsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.ReadProjectJobStdLogsResponse.SerializeToString,
             ),
-            'DownloadStdLogs': grpc.unary_unary_rpc_method_handler(
-                    servicer.DownloadStdLogs,
-                    request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.DownloadProjectJobStdLogsRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.DownloadProjectJobStdLogsResponse.SerializeToString,
+            'ReadLogs': grpc.unary_stream_rpc_method_handler(
+                    servicer.ReadLogs,
+                    request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.ReadProjectJobLogsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.ReadProjectJobLogsResponse.SerializeToString,
             ),
             'List': grpc.unary_unary_rpc_method_handler(
                     servicer.List,
@@ -277,7 +277,7 @@ class ProjectJobService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def DownloadStdLogs(request,
+    def ReadLogs(request,
             target,
             options=(),
             channel_credentials=None,
@@ -287,9 +287,9 @@ class ProjectJobService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v2.jobs.ProjectJobService/DownloadStdLogs',
-            yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.DownloadProjectJobStdLogsRequest.SerializeToString,
-            yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.DownloadProjectJobStdLogsResponse.FromString,
+        return grpc.experimental.unary_stream(request, target, '/yandex.cloud.datasphere.v2.jobs.ProjectJobService/ReadLogs',
+            yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.ReadProjectJobLogsRequest.SerializeToString,
+            yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.ReadProjectJobLogsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

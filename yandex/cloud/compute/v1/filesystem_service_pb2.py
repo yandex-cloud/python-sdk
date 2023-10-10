@@ -13,13 +13,14 @@ _sym_db = _symbol_database.Default()
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
+from yandex.cloud.access import access_pb2 as yandex_dot_cloud_dot_access_dot_access__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.compute.v1 import filesystem_pb2 as yandex_dot_cloud_dot_compute_dot_v1_dot_filesystem__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n0yandex/cloud/compute/v1/filesystem_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a(yandex/cloud/compute/v1/filesystem.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\";\n\x14GetFilesystemRequest\x12#\n\rfilesystem_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xb0\x01\n\x16ListFilesystemsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1b\n\x08order_by\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=100\"l\n\x17ListFilesystemsResponse\x12\x38\n\x0b\x66ilesystems\x18\x01 \x03(\x0b\x32#.yandex.cloud.compute.v1.Filesystem\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xb3\x03\n\x17\x43reateFilesystemRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\x04name\x18\x02 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x91\x01\n\x06labels\x18\x04 \x03(\x0b\x32<.yandex.cloud.compute.v1.CreateFilesystemRequest.LabelsEntryBC\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x1c\x12\x14[a-z][-_./\\@0-9a-z]*\x1a\x04\x31-63\x12\x19\n\x07type_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\x07zone_id\x18\x06 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x12\n\x04size\x18\x07 \x01(\x03\x42\x04\xe8\xc7\x31\x01\x12\x12\n\nblock_size\x18\x08 \x01(\x03\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"1\n\x18\x43reateFilesystemMetadata\x12\x15\n\rfilesystem_id\x18\x01 \x01(\t\"\x94\x03\n\x17UpdateFilesystemRequest\x12#\n\rfilesystem_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x91\x01\n\x06labels\x18\x05 \x03(\x0b\x32<.yandex.cloud.compute.v1.UpdateFilesystemRequest.LabelsEntryBC\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x1c\x12\x14[a-z][-_./\\@0-9a-z]*\x1a\x04\x31-63\x12\x0c\n\x04size\x18\x06 \x01(\x03\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"1\n\x18UpdateFilesystemMetadata\x12\x15\n\rfilesystem_id\x18\x01 \x01(\t\">\n\x17\x44\x65leteFilesystemRequest\x12#\n\rfilesystem_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"1\n\x18\x44\x65leteFilesystemMetadata\x12\x15\n\rfilesystem_id\x18\x01 \x01(\t\"\x84\x01\n\x1fListFilesystemOperationsRequest\x12#\n\rfilesystem_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"r\n ListFilesystemOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xa3\x08\n\x11\x46ilesystemService\x12\x8a\x01\n\x03Get\x12-.yandex.cloud.compute.v1.GetFilesystemRequest\x1a#.yandex.cloud.compute.v1.Filesystem\"/\x82\xd3\xe4\x93\x02)\x12\'/compute/v1/filesystems/{filesystem_id}\x12\x8a\x01\n\x04List\x12/.yandex.cloud.compute.v1.ListFilesystemsRequest\x1a\x30.yandex.cloud.compute.v1.ListFilesystemsResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/compute/v1/filesystems\x12\xab\x01\n\x06\x43reate\x12\x30.yandex.cloud.compute.v1.CreateFilesystemRequest\x1a!.yandex.cloud.operation.Operation\"L\xb2\xd2*&\n\x18\x43reateFilesystemMetadata\x12\nFilesystem\x82\xd3\xe4\x93\x02\x1c\"\x17/compute/v1/filesystems:\x01*\x12\xbb\x01\n\x06Update\x12\x30.yandex.cloud.compute.v1.UpdateFilesystemRequest\x1a!.yandex.cloud.operation.Operation\"\\\xb2\xd2*&\n\x18UpdateFilesystemMetadata\x12\nFilesystem\x82\xd3\xe4\x93\x02,2\'/compute/v1/filesystems/{filesystem_id}:\x01*\x12\xc3\x01\n\x06\x44\x65lete\x12\x30.yandex.cloud.compute.v1.DeleteFilesystemRequest\x1a!.yandex.cloud.operation.Operation\"d\xb2\xd2*1\n\x18\x44\x65leteFilesystemMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02)*\'/compute/v1/filesystems/{filesystem_id}\x12\xc1\x01\n\x0eListOperations\x12\x38.yandex.cloud.compute.v1.ListFilesystemOperationsRequest\x1a\x39.yandex.cloud.compute.v1.ListFilesystemOperationsResponse\":\x82\xd3\xe4\x93\x02\x34\x12\x32/compute/v1/filesystems/{filesystem_id}/operationsBb\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n0yandex/cloud/compute/v1/filesystem_service.proto\x12\x17yandex.cloud.compute.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/access/access.proto\x1a yandex/cloud/api/operation.proto\x1a(yandex/cloud/compute/v1/filesystem.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\";\n\x14GetFilesystemRequest\x12#\n\rfilesystem_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xb0\x01\n\x16ListFilesystemsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\x12\x1b\n\x08order_by\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=100\"l\n\x17ListFilesystemsResponse\x12\x38\n\x0b\x66ilesystems\x18\x01 \x03(\x0b\x32#.yandex.cloud.compute.v1.Filesystem\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xb3\x03\n\x17\x43reateFilesystemRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x32\n\x04name\x18\x02 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x91\x01\n\x06labels\x18\x04 \x03(\x0b\x32<.yandex.cloud.compute.v1.CreateFilesystemRequest.LabelsEntryBC\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x1c\x12\x14[a-z][-_./\\@0-9a-z]*\x1a\x04\x31-63\x12\x19\n\x07type_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\x07zone_id\x18\x06 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x12\n\x04size\x18\x07 \x01(\x03\x42\x04\xe8\xc7\x31\x01\x12\x12\n\nblock_size\x18\x08 \x01(\x03\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"1\n\x18\x43reateFilesystemMetadata\x12\x15\n\rfilesystem_id\x18\x01 \x01(\t\"\x94\x03\n\x17UpdateFilesystemRequest\x12#\n\rfilesystem_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x32\n\x04name\x18\x03 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x91\x01\n\x06labels\x18\x05 \x03(\x0b\x32<.yandex.cloud.compute.v1.UpdateFilesystemRequest.LabelsEntryBC\xf2\xc7\x31\x0f[-_./\\@0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x1c\x12\x14[a-z][-_./\\@0-9a-z]*\x1a\x04\x31-63\x12\x0c\n\x04size\x18\x06 \x01(\x03\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"1\n\x18UpdateFilesystemMetadata\x12\x15\n\rfilesystem_id\x18\x01 \x01(\t\">\n\x17\x44\x65leteFilesystemRequest\x12#\n\rfilesystem_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"1\n\x18\x44\x65leteFilesystemMetadata\x12\x15\n\rfilesystem_id\x18\x01 \x01(\t\"\x84\x01\n\x1fListFilesystemOperationsRequest\x12#\n\rfilesystem_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"r\n ListFilesystemOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xdb\r\n\x11\x46ilesystemService\x12\x8a\x01\n\x03Get\x12-.yandex.cloud.compute.v1.GetFilesystemRequest\x1a#.yandex.cloud.compute.v1.Filesystem\"/\x82\xd3\xe4\x93\x02)\x12\'/compute/v1/filesystems/{filesystem_id}\x12\x8a\x01\n\x04List\x12/.yandex.cloud.compute.v1.ListFilesystemsRequest\x1a\x30.yandex.cloud.compute.v1.ListFilesystemsResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/compute/v1/filesystems\x12\xab\x01\n\x06\x43reate\x12\x30.yandex.cloud.compute.v1.CreateFilesystemRequest\x1a!.yandex.cloud.operation.Operation\"L\xb2\xd2*&\n\x18\x43reateFilesystemMetadata\x12\nFilesystem\x82\xd3\xe4\x93\x02\x1c\"\x17/compute/v1/filesystems:\x01*\x12\xbb\x01\n\x06Update\x12\x30.yandex.cloud.compute.v1.UpdateFilesystemRequest\x1a!.yandex.cloud.operation.Operation\"\\\xb2\xd2*&\n\x18UpdateFilesystemMetadata\x12\nFilesystem\x82\xd3\xe4\x93\x02,2\'/compute/v1/filesystems/{filesystem_id}:\x01*\x12\xc3\x01\n\x06\x44\x65lete\x12\x30.yandex.cloud.compute.v1.DeleteFilesystemRequest\x1a!.yandex.cloud.operation.Operation\"d\xb2\xd2*1\n\x18\x44\x65leteFilesystemMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02)*\'/compute/v1/filesystems/{filesystem_id}\x12\xc1\x01\n\x0eListOperations\x12\x38.yandex.cloud.compute.v1.ListFilesystemOperationsRequest\x1a\x39.yandex.cloud.compute.v1.ListFilesystemOperationsResponse\":\x82\xd3\xe4\x93\x02\x34\x12\x32/compute/v1/filesystems/{filesystem_id}/operations\x12\xb7\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"@\x82\xd3\xe4\x93\x02:\x12\x38/compute/v1/filesystems/{resource_id}:listAccessBindings\x12\xf6\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x8e\x01\xb2\xd2*H\n access.SetAccessBindingsMetadata\x12$access.AccessBindingsOperationResult\x82\xd3\xe4\x93\x02<\"7/compute/v1/filesystems/{resource_id}:setAccessBindings:\x01*\x12\x82\x02\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x94\x01\xb2\xd2*K\n#access.UpdateAccessBindingsMetadata\x12$access.AccessBindingsOperationResult\x82\xd3\xe4\x93\x02?\":/compute/v1/filesystems/{resource_id}:updateAccessBindings:\x01*Bb\n\x1byandex.cloud.api.compute.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/compute/v1;computeb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -86,32 +87,38 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _FILESYSTEMSERVICE.methods_by_name['Delete']._serialized_options = b'\262\322*1\n\030DeleteFilesystemMetadata\022\025google.protobuf.Empty\202\323\344\223\002)*\'/compute/v1/filesystems/{filesystem_id}'
   _FILESYSTEMSERVICE.methods_by_name['ListOperations']._options = None
   _FILESYSTEMSERVICE.methods_by_name['ListOperations']._serialized_options = b'\202\323\344\223\0024\0222/compute/v1/filesystems/{filesystem_id}/operations'
-  _globals['_GETFILESYSTEMREQUEST']._serialized_start=288
-  _globals['_GETFILESYSTEMREQUEST']._serialized_end=347
-  _globals['_LISTFILESYSTEMSREQUEST']._serialized_start=350
-  _globals['_LISTFILESYSTEMSREQUEST']._serialized_end=526
-  _globals['_LISTFILESYSTEMSRESPONSE']._serialized_start=528
-  _globals['_LISTFILESYSTEMSRESPONSE']._serialized_end=636
-  _globals['_CREATEFILESYSTEMREQUEST']._serialized_start=639
-  _globals['_CREATEFILESYSTEMREQUEST']._serialized_end=1074
-  _globals['_CREATEFILESYSTEMREQUEST_LABELSENTRY']._serialized_start=1029
-  _globals['_CREATEFILESYSTEMREQUEST_LABELSENTRY']._serialized_end=1074
-  _globals['_CREATEFILESYSTEMMETADATA']._serialized_start=1076
-  _globals['_CREATEFILESYSTEMMETADATA']._serialized_end=1125
-  _globals['_UPDATEFILESYSTEMREQUEST']._serialized_start=1128
-  _globals['_UPDATEFILESYSTEMREQUEST']._serialized_end=1532
-  _globals['_UPDATEFILESYSTEMREQUEST_LABELSENTRY']._serialized_start=1029
-  _globals['_UPDATEFILESYSTEMREQUEST_LABELSENTRY']._serialized_end=1074
-  _globals['_UPDATEFILESYSTEMMETADATA']._serialized_start=1534
-  _globals['_UPDATEFILESYSTEMMETADATA']._serialized_end=1583
-  _globals['_DELETEFILESYSTEMREQUEST']._serialized_start=1585
-  _globals['_DELETEFILESYSTEMREQUEST']._serialized_end=1647
-  _globals['_DELETEFILESYSTEMMETADATA']._serialized_start=1649
-  _globals['_DELETEFILESYSTEMMETADATA']._serialized_end=1698
-  _globals['_LISTFILESYSTEMOPERATIONSREQUEST']._serialized_start=1701
-  _globals['_LISTFILESYSTEMOPERATIONSREQUEST']._serialized_end=1833
-  _globals['_LISTFILESYSTEMOPERATIONSRESPONSE']._serialized_start=1835
-  _globals['_LISTFILESYSTEMOPERATIONSRESPONSE']._serialized_end=1949
-  _globals['_FILESYSTEMSERVICE']._serialized_start=1952
-  _globals['_FILESYSTEMSERVICE']._serialized_end=3011
+  _FILESYSTEMSERVICE.methods_by_name['ListAccessBindings']._options = None
+  _FILESYSTEMSERVICE.methods_by_name['ListAccessBindings']._serialized_options = b'\202\323\344\223\002:\0228/compute/v1/filesystems/{resource_id}:listAccessBindings'
+  _FILESYSTEMSERVICE.methods_by_name['SetAccessBindings']._options = None
+  _FILESYSTEMSERVICE.methods_by_name['SetAccessBindings']._serialized_options = b'\262\322*H\n access.SetAccessBindingsMetadata\022$access.AccessBindingsOperationResult\202\323\344\223\002<\"7/compute/v1/filesystems/{resource_id}:setAccessBindings:\001*'
+  _FILESYSTEMSERVICE.methods_by_name['UpdateAccessBindings']._options = None
+  _FILESYSTEMSERVICE.methods_by_name['UpdateAccessBindings']._serialized_options = b'\262\322*K\n#access.UpdateAccessBindingsMetadata\022$access.AccessBindingsOperationResult\202\323\344\223\002?\":/compute/v1/filesystems/{resource_id}:updateAccessBindings:\001*'
+  _globals['_GETFILESYSTEMREQUEST']._serialized_start=322
+  _globals['_GETFILESYSTEMREQUEST']._serialized_end=381
+  _globals['_LISTFILESYSTEMSREQUEST']._serialized_start=384
+  _globals['_LISTFILESYSTEMSREQUEST']._serialized_end=560
+  _globals['_LISTFILESYSTEMSRESPONSE']._serialized_start=562
+  _globals['_LISTFILESYSTEMSRESPONSE']._serialized_end=670
+  _globals['_CREATEFILESYSTEMREQUEST']._serialized_start=673
+  _globals['_CREATEFILESYSTEMREQUEST']._serialized_end=1108
+  _globals['_CREATEFILESYSTEMREQUEST_LABELSENTRY']._serialized_start=1063
+  _globals['_CREATEFILESYSTEMREQUEST_LABELSENTRY']._serialized_end=1108
+  _globals['_CREATEFILESYSTEMMETADATA']._serialized_start=1110
+  _globals['_CREATEFILESYSTEMMETADATA']._serialized_end=1159
+  _globals['_UPDATEFILESYSTEMREQUEST']._serialized_start=1162
+  _globals['_UPDATEFILESYSTEMREQUEST']._serialized_end=1566
+  _globals['_UPDATEFILESYSTEMREQUEST_LABELSENTRY']._serialized_start=1063
+  _globals['_UPDATEFILESYSTEMREQUEST_LABELSENTRY']._serialized_end=1108
+  _globals['_UPDATEFILESYSTEMMETADATA']._serialized_start=1568
+  _globals['_UPDATEFILESYSTEMMETADATA']._serialized_end=1617
+  _globals['_DELETEFILESYSTEMREQUEST']._serialized_start=1619
+  _globals['_DELETEFILESYSTEMREQUEST']._serialized_end=1681
+  _globals['_DELETEFILESYSTEMMETADATA']._serialized_start=1683
+  _globals['_DELETEFILESYSTEMMETADATA']._serialized_end=1732
+  _globals['_LISTFILESYSTEMOPERATIONSREQUEST']._serialized_start=1735
+  _globals['_LISTFILESYSTEMOPERATIONSREQUEST']._serialized_end=1867
+  _globals['_LISTFILESYSTEMOPERATIONSRESPONSE']._serialized_start=1869
+  _globals['_LISTFILESYSTEMOPERATIONSRESPONSE']._serialized_end=1983
+  _globals['_FILESYSTEMSERVICE']._serialized_start=1986
+  _globals['_FILESYSTEMSERVICE']._serialized_end=3741
 # @@protoc_insertion_point(module_scope)
