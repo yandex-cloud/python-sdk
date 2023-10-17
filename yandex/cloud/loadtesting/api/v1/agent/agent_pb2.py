@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from yandex.cloud.loadtesting.api.v1.agent import status_pb2 as yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_agent_dot_status__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n1yandex/cloud/loadtesting/api/v1/agent/agent.proto\x12%yandex.cloud.loadtesting.api.v1.agent\x1a\x32yandex/cloud/loadtesting/api/v1/agent/status.proto\"\xcd\x01\n\x05\x41gent\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x1b\n\x13\x63ompute_instance_id\x18\x05 \x01(\t\x12=\n\x06status\x18\x07 \x01(\x0e\x32-.yandex.cloud.loadtesting.api.v1.agent.Status\x12\x0e\n\x06\x65rrors\x18\x08 \x03(\t\x12\x16\n\x0e\x63urrent_job_id\x18\t \x01(\tB|\n)yandex.cloud.api.loadtesting.api.v1.agentZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadtesting/api/v1/agent;agentb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n1yandex/cloud/loadtesting/api/v1/agent/agent.proto\x12%yandex.cloud.loadtesting.api.v1.agent\x1a\x32yandex/cloud/loadtesting/api/v1/agent/status.proto\"\xe7\x01\n\x05\x41gent\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x1b\n\x13\x63ompute_instance_id\x18\x05 \x01(\t\x12=\n\x06status\x18\x07 \x01(\x0e\x32-.yandex.cloud.loadtesting.api.v1.agent.Status\x12\x0e\n\x06\x65rrors\x18\x08 \x03(\t\x12\x16\n\x0e\x63urrent_job_id\x18\t \x01(\t\x12\x18\n\x10\x61gent_version_id\x18\n \x01(\tB|\n)yandex.cloud.api.loadtesting.api.v1.agentZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadtesting/api/v1/agent;agentb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -24,5 +24,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n)yandex.cloud.api.loadtesting.api.v1.agentZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadtesting/api/v1/agent;agent'
   _globals['_AGENT']._serialized_start=145
-  _globals['_AGENT']._serialized_end=350
+  _globals['_AGENT']._serialized_end=376
 # @@protoc_insertion_point(module_scope)

@@ -27,6 +27,11 @@ class LockServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_lock__service__pb2.GetLockByInstanceAndResourceRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_lock__pb2.Lock.FromString,
                 )
+        self.List = channel.unary_unary(
+                '/yandex.cloud.marketplace.licensemanager.v1.LockService/List',
+                request_serializer=yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_lock__service__pb2.ListLocksRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_lock__service__pb2.ListLocksResponse.FromString,
+                )
         self.Create = channel.unary_unary(
                 '/yandex.cloud.marketplace.licensemanager.v1.LockService/Create',
                 request_serializer=yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_lock__service__pb2.CreateLockRequest.SerializeToString,
@@ -58,6 +63,12 @@ class LockServiceServicer(object):
     def GetByInstanceAndResource(self, request, context):
         """Returns the subscription lock for specified subscription instance and resource.
         """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def List(self, request, context):
+        """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -96,6 +107,11 @@ def add_LockServiceServicer_to_server(servicer, server):
                     servicer.GetByInstanceAndResource,
                     request_deserializer=yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_lock__service__pb2.GetLockByInstanceAndResourceRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_lock__pb2.Lock.SerializeToString,
+            ),
+            'List': grpc.unary_unary_rpc_method_handler(
+                    servicer.List,
+                    request_deserializer=yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_lock__service__pb2.ListLocksRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_lock__service__pb2.ListLocksResponse.SerializeToString,
             ),
             'Create': grpc.unary_unary_rpc_method_handler(
                     servicer.Create,
@@ -154,6 +170,23 @@ class LockService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.marketplace.licensemanager.v1.LockService/GetByInstanceAndResource',
             yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_lock__service__pb2.GetLockByInstanceAndResourceRequest.SerializeToString,
             yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_lock__pb2.Lock.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def List(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.marketplace.licensemanager.v1.LockService/List',
+            yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_lock__service__pb2.ListLocksRequest.SerializeToString,
+            yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_lock__service__pb2.ListLocksResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
