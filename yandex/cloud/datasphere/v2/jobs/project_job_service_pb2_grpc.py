@@ -48,6 +48,11 @@ class ProjectJobServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.ReadProjectJobLogsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.ReadProjectJobLogsResponse.FromString,
                 )
+        self.DownloadJobFiles = channel.unary_unary(
+                '/yandex.cloud.datasphere.v2.jobs.ProjectJobService/DownloadJobFiles',
+                request_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.DownloadProjectJobFilesRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.DownloadProjectJobFilesResponse.FromString,
+                )
         self.List = channel.unary_unary(
                 '/yandex.cloud.datasphere.v2.jobs.ProjectJobService/List',
                 request_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.ListProjectJobRequest.SerializeToString,
@@ -111,6 +116,13 @@ class ProjectJobServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def DownloadJobFiles(self, request, context):
+        """Returns download urls for job files.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def List(self, request, context):
         """Lists jobs.
         """
@@ -164,6 +176,11 @@ def add_ProjectJobServiceServicer_to_server(servicer, server):
                     servicer.ReadLogs,
                     request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.ReadProjectJobLogsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.ReadProjectJobLogsResponse.SerializeToString,
+            ),
+            'DownloadJobFiles': grpc.unary_unary_rpc_method_handler(
+                    servicer.DownloadJobFiles,
+                    request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.DownloadProjectJobFilesRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.DownloadProjectJobFilesResponse.SerializeToString,
             ),
             'List': grpc.unary_unary_rpc_method_handler(
                     servicer.List,
@@ -290,6 +307,23 @@ class ProjectJobService(object):
         return grpc.experimental.unary_stream(request, target, '/yandex.cloud.datasphere.v2.jobs.ProjectJobService/ReadLogs',
             yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.ReadProjectJobLogsRequest.SerializeToString,
             yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.ReadProjectJobLogsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DownloadJobFiles(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v2.jobs.ProjectJobService/DownloadJobFiles',
+            yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.DownloadProjectJobFilesRequest.SerializeToString,
+            yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.DownloadProjectJobFilesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
