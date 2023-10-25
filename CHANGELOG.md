@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v0.239.0 (2023-10-25)
+
+### Feature
+
+* Add ai-llm to _supported_modules ([`add2897`](https://github.com/yandex-cloud/python-sdk/commit/add28971a0f7b0946c244878512a966cf115adb7))
+
 ## v0.238.0 (2023-10-24)
 
 ### Feature
