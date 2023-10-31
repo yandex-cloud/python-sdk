@@ -58,6 +58,11 @@ class HostGroupServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_host__group__service__pb2.ListHostGroupHostsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_host__group__service__pb2.ListHostGroupHostsResponse.FromString,
                 )
+        self.UpdateHost = channel.unary_unary(
+                '/yandex.cloud.compute.v1.HostGroupService/UpdateHost',
+                request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_host__group__service__pb2.UpdateHostGroupHostRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
         self.ListAccessBindings = channel.unary_unary(
                 '/yandex.cloud.compute.v1.HostGroupService/ListAccessBindings',
                 request_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessBindingsRequest.SerializeToString,
@@ -135,6 +140,13 @@ class HostGroupServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def UpdateHost(self, request, context):
+        """Update host
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListAccessBindings(self, request, context):
         """access
 
@@ -200,6 +212,11 @@ def add_HostGroupServiceServicer_to_server(servicer, server):
                     servicer.ListHosts,
                     request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_host__group__service__pb2.ListHostGroupHostsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_host__group__service__pb2.ListHostGroupHostsResponse.SerializeToString,
+            ),
+            'UpdateHost': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateHost,
+                    request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_host__group__service__pb2.UpdateHostGroupHostRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'ListAccessBindings': grpc.unary_unary_rpc_method_handler(
                     servicer.ListAccessBindings,
@@ -360,6 +377,23 @@ class HostGroupService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.compute.v1.HostGroupService/ListHosts',
             yandex_dot_cloud_dot_compute_dot_v1_dot_host__group__service__pb2.ListHostGroupHostsRequest.SerializeToString,
             yandex_dot_cloud_dot_compute_dot_v1_dot_host__group__service__pb2.ListHostGroupHostsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateHost(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.compute.v1.HostGroupService/UpdateHost',
+            yandex_dot_cloud_dot_compute_dot_v1_dot_host__group__service__pb2.UpdateHostGroupHostRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
