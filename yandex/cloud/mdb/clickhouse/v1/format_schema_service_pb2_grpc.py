@@ -8,7 +8,8 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class FormatSchemaServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing [format schemas](https://clickhouse.com/docs/en/interfaces/formats) for input and output data.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -44,34 +45,40 @@ class FormatSchemaServiceStub(object):
 
 
 class FormatSchemaServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing [format schemas](https://clickhouse.com/docs/en/interfaces/formats) for input and output data.
+    """
 
     def Get(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Returns detailed information about a given format schema.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Returns a list of format schemas in a cluster.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Adds a format schema to a cluster.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Changes a format schema.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Deletes a format schema from a cluster.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -112,7 +119,8 @@ def add_FormatSchemaServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class FormatSchemaService(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing [format schemas](https://clickhouse.com/docs/en/interfaces/formats) for input and output data.
+    """
 
     @staticmethod
     def Get(request,

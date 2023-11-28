@@ -21,11 +21,6 @@ class TestServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_loadtesting_dot_agent_dot_v1_dot_test__service__pb2.GetTestRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_loadtesting_dot_agent_dot_v1_dot_test__pb2.Test.FromString,
                 )
-        self.Create = channel.unary_unary(
-                '/yandex.cloud.loadtesting.agent.v1.TestService/Create',
-                request_serializer=yandex_dot_cloud_dot_loadtesting_dot_agent_dot_v1_dot_test__service__pb2.CreateTestRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-                )
         self.Update = channel.unary_unary(
                 '/yandex.cloud.loadtesting.agent.v1.TestService/Update',
                 request_serializer=yandex_dot_cloud_dot_loadtesting_dot_agent_dot_v1_dot_test__service__pb2.UpdateTestRequest.SerializeToString,
@@ -38,13 +33,6 @@ class TestServiceServicer(object):
 
     def Get(self, request, context):
         """Returns test by test id.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def Create(self, request, context):
-        """Creates test for the specified folder.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -64,11 +52,6 @@ def add_TestServiceServicer_to_server(servicer, server):
                     servicer.Get,
                     request_deserializer=yandex_dot_cloud_dot_loadtesting_dot_agent_dot_v1_dot_test__service__pb2.GetTestRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_loadtesting_dot_agent_dot_v1_dot_test__pb2.Test.SerializeToString,
-            ),
-            'Create': grpc.unary_unary_rpc_method_handler(
-                    servicer.Create,
-                    request_deserializer=yandex_dot_cloud_dot_loadtesting_dot_agent_dot_v1_dot_test__service__pb2.CreateTestRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'Update': grpc.unary_unary_rpc_method_handler(
                     servicer.Update,
@@ -99,23 +82,6 @@ class TestService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.loadtesting.agent.v1.TestService/Get',
             yandex_dot_cloud_dot_loadtesting_dot_agent_dot_v1_dot_test__service__pb2.GetTestRequest.SerializeToString,
             yandex_dot_cloud_dot_loadtesting_dot_agent_dot_v1_dot_test__pb2.Test.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def Create(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.loadtesting.agent.v1.TestService/Create',
-            yandex_dot_cloud_dot_loadtesting_dot_agent_dot_v1_dot_test__service__pb2.CreateTestRequest.SerializeToString,
-            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

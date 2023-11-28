@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n yandex/cloud/ai/ocr/v1/ocr.proto\x12\x16yandex.cloud.ai.ocr.v1\";\n\x07Polygon\x12\x30\n\x08vertices\x18\x01 \x03(\x0b\x32\x1e.yandex.cloud.ai.ocr.v1.Vertex\"\x1e\n\x06Vertex\x12\t\n\x01x\x18\x01 \x01(\x03\x12\t\n\x01y\x18\x02 \x01(\x03\"\x90\x01\n\x0eTextAnnotation\x12\r\n\x05width\x18\x01 \x01(\x03\x12\x0e\n\x06height\x18\x02 \x01(\x03\x12-\n\x06\x62locks\x18\x03 \x03(\x0b\x32\x1d.yandex.cloud.ai.ocr.v1.Block\x12\x30\n\x08\x65ntities\x18\x04 \x03(\x0b\x32\x1e.yandex.cloud.ai.ocr.v1.Entity\"$\n\x06\x45ntity\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04text\x18\x02 \x01(\t\"\xd9\x01\n\x05\x42lock\x12\x35\n\x0c\x62ounding_box\x18\x01 \x01(\x0b\x32\x1f.yandex.cloud.ai.ocr.v1.Polygon\x12+\n\x05lines\x18\x02 \x03(\x0b\x32\x1c.yandex.cloud.ai.ocr.v1.Line\x12\x41\n\tlanguages\x18\x03 \x03(\x0b\x32..yandex.cloud.ai.ocr.v1.Block.DetectedLanguage\x1a)\n\x10\x44\x65tectedLanguage\x12\x15\n\rlanguage_code\x18\x01 \x01(\t\"x\n\x04Line\x12\x35\n\x0c\x62ounding_box\x18\x01 \x01(\x0b\x32\x1f.yandex.cloud.ai.ocr.v1.Polygon\x12\x0c\n\x04text\x18\x02 \x01(\t\x12+\n\x05words\x18\x03 \x03(\x0b\x32\x1c.yandex.cloud.ai.ocr.v1.Word\"a\n\x04Word\x12\x35\n\x0c\x62ounding_box\x18\x01 \x01(\x0b\x32\x1f.yandex.cloud.ai.ocr.v1.Polygon\x12\x0c\n\x04text\x18\x02 \x01(\t\x12\x14\n\x0c\x65ntity_index\x18\x03 \x01(\x03\x42\\\n\x1ayandex.cloud.api.ai.ocr.v1Z>github.com/yandex-cloud/go-genproto/yandex/cloud/ai/ocr/v1;ocrb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n yandex/cloud/ai/ocr/v1/ocr.proto\x12\x16yandex.cloud.ai.ocr.v1\";\n\x07Polygon\x12\x30\n\x08vertices\x18\x01 \x03(\x0b\x32\x1e.yandex.cloud.ai.ocr.v1.Vertex\"\x1e\n\x06Vertex\x12\t\n\x01x\x18\x01 \x01(\x03\x12\t\n\x01y\x18\x02 \x01(\x03\"\xd2\x01\n\x0eTextAnnotation\x12\r\n\x05width\x18\x01 \x01(\x03\x12\x0e\n\x06height\x18\x02 \x01(\x03\x12-\n\x06\x62locks\x18\x03 \x03(\x0b\x32\x1d.yandex.cloud.ai.ocr.v1.Block\x12\x30\n\x08\x65ntities\x18\x04 \x03(\x0b\x32\x1e.yandex.cloud.ai.ocr.v1.Entity\x12-\n\x06tables\x18\x05 \x03(\x0b\x32\x1d.yandex.cloud.ai.ocr.v1.Table\x12\x11\n\tfull_text\x18\x06 \x01(\t\"$\n\x06\x45ntity\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04text\x18\x02 \x01(\t\"\x96\x02\n\x05\x42lock\x12\x35\n\x0c\x62ounding_box\x18\x01 \x01(\x0b\x32\x1f.yandex.cloud.ai.ocr.v1.Polygon\x12+\n\x05lines\x18\x02 \x03(\x0b\x32\x1c.yandex.cloud.ai.ocr.v1.Line\x12\x41\n\tlanguages\x18\x03 \x03(\x0b\x32..yandex.cloud.ai.ocr.v1.Block.DetectedLanguage\x12;\n\rtext_segments\x18\x04 \x03(\x0b\x32$.yandex.cloud.ai.ocr.v1.TextSegments\x1a)\n\x10\x44\x65tectedLanguage\x12\x15\n\rlanguage_code\x18\x01 \x01(\t\"\xb5\x01\n\x04Line\x12\x35\n\x0c\x62ounding_box\x18\x01 \x01(\x0b\x32\x1f.yandex.cloud.ai.ocr.v1.Polygon\x12\x0c\n\x04text\x18\x02 \x01(\t\x12+\n\x05words\x18\x03 \x03(\x0b\x32\x1c.yandex.cloud.ai.ocr.v1.Word\x12;\n\rtext_segments\x18\x04 \x03(\x0b\x32$.yandex.cloud.ai.ocr.v1.TextSegments\"\x9e\x01\n\x04Word\x12\x35\n\x0c\x62ounding_box\x18\x01 \x01(\x0b\x32\x1f.yandex.cloud.ai.ocr.v1.Polygon\x12\x0c\n\x04text\x18\x02 \x01(\t\x12\x14\n\x0c\x65ntity_index\x18\x03 \x01(\x03\x12;\n\rtext_segments\x18\x04 \x03(\x0b\x32$.yandex.cloud.ai.ocr.v1.TextSegments\"3\n\x0cTextSegments\x12\x13\n\x0bstart_index\x18\x01 \x01(\x03\x12\x0e\n\x06length\x18\x02 \x01(\x03\"\xd6\x01\n\x05Table\x12\x35\n\x0c\x62ounding_box\x18\x01 \x01(\x0b\x32\x1f.yandex.cloud.ai.ocr.v1.Polygon\x12\x11\n\trow_count\x18\x02 \x01(\x03\x12\x14\n\x0c\x63olumn_count\x18\x03 \x01(\x03\x12;\n\rtext_segments\x18\x04 \x01(\x0b\x32$.yandex.cloud.ai.ocr.v1.TextSegments\x12\x30\n\x05\x63\x65lls\x18\x05 \x03(\x0b\x32!.yandex.cloud.ai.ocr.v1.TableCell\"\xdd\x01\n\tTableCell\x12\x35\n\x0c\x62ounding_box\x18\x01 \x01(\x0b\x32\x1f.yandex.cloud.ai.ocr.v1.Polygon\x12\x11\n\trow_index\x18\x02 \x01(\x03\x12\x14\n\x0c\x63olumn_index\x18\x03 \x01(\x03\x12\x13\n\x0b\x63olumn_span\x18\x04 \x01(\x03\x12\x10\n\x08row_span\x18\x05 \x01(\x03\x12\x0c\n\x04text\x18\x06 \x01(\t\x12;\n\rtext_segments\x18\x07 \x01(\x0b\x32$.yandex.cloud.ai.ocr.v1.TextSegmentsB\\\n\x1ayandex.cloud.api.ai.ocr.v1Z>github.com/yandex-cloud/go-genproto/yandex/cloud/ai/ocr/v1;ocrb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -27,15 +27,21 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_VERTEX']._serialized_start=121
   _globals['_VERTEX']._serialized_end=151
   _globals['_TEXTANNOTATION']._serialized_start=154
-  _globals['_TEXTANNOTATION']._serialized_end=298
-  _globals['_ENTITY']._serialized_start=300
-  _globals['_ENTITY']._serialized_end=336
-  _globals['_BLOCK']._serialized_start=339
-  _globals['_BLOCK']._serialized_end=556
-  _globals['_BLOCK_DETECTEDLANGUAGE']._serialized_start=515
-  _globals['_BLOCK_DETECTEDLANGUAGE']._serialized_end=556
-  _globals['_LINE']._serialized_start=558
-  _globals['_LINE']._serialized_end=678
-  _globals['_WORD']._serialized_start=680
-  _globals['_WORD']._serialized_end=777
+  _globals['_TEXTANNOTATION']._serialized_end=364
+  _globals['_ENTITY']._serialized_start=366
+  _globals['_ENTITY']._serialized_end=402
+  _globals['_BLOCK']._serialized_start=405
+  _globals['_BLOCK']._serialized_end=683
+  _globals['_BLOCK_DETECTEDLANGUAGE']._serialized_start=642
+  _globals['_BLOCK_DETECTEDLANGUAGE']._serialized_end=683
+  _globals['_LINE']._serialized_start=686
+  _globals['_LINE']._serialized_end=867
+  _globals['_WORD']._serialized_start=870
+  _globals['_WORD']._serialized_end=1028
+  _globals['_TEXTSEGMENTS']._serialized_start=1030
+  _globals['_TEXTSEGMENTS']._serialized_end=1081
+  _globals['_TABLE']._serialized_start=1084
+  _globals['_TABLE']._serialized_end=1298
+  _globals['_TABLECELL']._serialized_start=1301
+  _globals['_TABLECELL']._serialized_end=1522
 # @@protoc_insertion_point(module_scope)
