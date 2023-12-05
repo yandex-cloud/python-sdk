@@ -9,7 +9,8 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class ProjectJobServiceStub(object):
-    """A set of methods for managing Project Jobs.
+    """A set of methods for managing Project Jobs. Do not use these methods manually.
+    For working with DataSphere Jobs, install DataSphere CLI via `pip install datasphere`.
     """
 
     def __init__(self, channel):
@@ -71,7 +72,8 @@ class ProjectJobServiceStub(object):
 
 
 class ProjectJobServiceServicer(object):
-    """A set of methods for managing Project Jobs.
+    """A set of methods for managing Project Jobs. Do not use these methods manually.
+    For working with DataSphere Jobs, install DataSphere CLI via `pip install datasphere`.
     """
 
     def Create(self, request, context):
@@ -205,7 +207,8 @@ def add_ProjectJobServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class ProjectJobService(object):
-    """A set of methods for managing Project Jobs.
+    """A set of methods for managing Project Jobs. Do not use these methods manually.
+    For working with DataSphere Jobs, install DataSphere CLI via `pip install datasphere`.
     """
 
     @staticmethod

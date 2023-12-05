@@ -25,7 +25,8 @@ class ReportServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def GetTable(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Returns a report table for the specified test.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')

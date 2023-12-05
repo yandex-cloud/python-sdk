@@ -9,7 +9,8 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class CommunityServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing Community resources.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -60,7 +61,8 @@ class CommunityServiceStub(object):
 
 
 class CommunityServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing Community resources.
+    """
 
     def Create(self, request, context):
         """Creates community in specified organization.
@@ -169,7 +171,8 @@ def add_CommunityServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class CommunityService(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing Community resources.
+    """
 
     @staticmethod
     def Create(request,

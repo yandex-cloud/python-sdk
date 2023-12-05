@@ -26,19 +26,59 @@ class TestServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_test__service__pb2.GetTestRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_test_dot_test__pb2.Test.FromString,
                 )
+        self.Stop = channel.unary_unary(
+                '/yandex.cloud.loadtesting.api.v1.TestService/Stop',
+                request_serializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_test__service__pb2.StopTestRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
+        self.Delete = channel.unary_unary(
+                '/yandex.cloud.loadtesting.api.v1.TestService/Delete',
+                request_serializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_test__service__pb2.DeleteTestRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
+        self.List = channel.unary_unary(
+                '/yandex.cloud.loadtesting.api.v1.TestService/List',
+                request_serializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_test__service__pb2.ListTestsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_test__service__pb2.ListTestsResponse.FromString,
+                )
 
 
 class TestServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def Create(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Creates (runs) a test in the specified folder.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Get(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Returns the specified test.
+
+        To get the list of all available tests, make a [List] request.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Stop(self, request, context):
+        """Stops the specified test.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Delete(self, request, context):
+        """Deletes specified tests.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def List(self, request, context):
+        """Retrieves the list of test in the specified folder.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -55,6 +95,21 @@ def add_TestServiceServicer_to_server(servicer, server):
                     servicer.Get,
                     request_deserializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_test__service__pb2.GetTestRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_test_dot_test__pb2.Test.SerializeToString,
+            ),
+            'Stop': grpc.unary_unary_rpc_method_handler(
+                    servicer.Stop,
+                    request_deserializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_test__service__pb2.StopTestRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'Delete': grpc.unary_unary_rpc_method_handler(
+                    servicer.Delete,
+                    request_deserializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_test__service__pb2.DeleteTestRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'List': grpc.unary_unary_rpc_method_handler(
+                    servicer.List,
+                    request_deserializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_test__service__pb2.ListTestsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_test__service__pb2.ListTestsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -97,5 +152,56 @@ class TestService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.loadtesting.api.v1.TestService/Get',
             yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_test__service__pb2.GetTestRequest.SerializeToString,
             yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_test_dot_test__pb2.Test.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Stop(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.loadtesting.api.v1.TestService/Stop',
+            yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_test__service__pb2.StopTestRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Delete(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.loadtesting.api.v1.TestService/Delete',
+            yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_test__service__pb2.DeleteTestRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def List(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.loadtesting.api.v1.TestService/List',
+            yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_test__service__pb2.ListTestsRequest.SerializeToString,
+            yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_test__service__pb2.ListTestsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

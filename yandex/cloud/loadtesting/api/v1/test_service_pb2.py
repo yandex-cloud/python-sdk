@@ -20,7 +20,7 @@ from yandex.cloud.loadtesting.api.v1.test import test_pb2 as yandex_dot_cloud_do
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2yandex/cloud/loadtesting/api/v1/test_service.proto\x12\x1fyandex.cloud.loadtesting.api.v1\x1a\x1cgoogle/api/annotations.proto\x1a&yandex/cloud/operation/operation.proto\x1a yandex/cloud/api/operation.proto\x1a\x45yandex/cloud/loadtesting/api/v1/test/single_agent_configuration.proto\x1a\x32yandex/cloud/loadtesting/api/v1/test/details.proto\x1a/yandex/cloud/loadtesting/api/v1/test/test.proto\x1a\x1dyandex/cloud/validation.proto\"\xd1\x01\n\x11\x43reateTestRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12V\n\x0e\x63onfigurations\x18\x02 \x03(\x0b\x32>.yandex.cloud.loadtesting.api.v1.test.SingleAgentConfiguration\x12\x43\n\x0ctest_details\x18\x03 \x01(\x0b\x32-.yandex.cloud.loadtesting.api.v1.test.Details\"%\n\x12\x43reateTestMetadata\x12\x0f\n\x07test_id\x18\x01 \x01(\t\"\'\n\x0eGetTestRequest\x12\x15\n\x07test_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x32\xca\x02\n\x0bTestService\x12\xa8\x01\n\x06\x43reate\x12\x32.yandex.cloud.loadtesting.api.v1.CreateTestRequest\x1a!.yandex.cloud.operation.Operation\"G\xb2\xd2*\x1f\n\x12\x43reateTestMetadata\x12\ttest.Test\x82\xd3\xe4\x93\x02\x1e\"\x19/loadtesting/api/v1/tests:\x01*\x12\x8f\x01\n\x03Get\x12/.yandex.cloud.loadtesting.api.v1.GetTestRequest\x1a*.yandex.cloud.loadtesting.api.v1.test.Test\"+\x82\xd3\xe4\x93\x02%\x12#/loadtesting/api/v1/tests/{test_id}Bv\n#yandex.cloud.api.loadtesting.api.v1ZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadtesting/api/v1;loadtestingb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2yandex/cloud/loadtesting/api/v1/test_service.proto\x12\x1fyandex.cloud.loadtesting.api.v1\x1a\x1cgoogle/api/annotations.proto\x1a&yandex/cloud/operation/operation.proto\x1a yandex/cloud/api/operation.proto\x1a\x45yandex/cloud/loadtesting/api/v1/test/single_agent_configuration.proto\x1a\x32yandex/cloud/loadtesting/api/v1/test/details.proto\x1a/yandex/cloud/loadtesting/api/v1/test/test.proto\x1a\x1dyandex/cloud/validation.proto\"\xd1\x01\n\x11\x43reateTestRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12V\n\x0e\x63onfigurations\x18\x02 \x03(\x0b\x32>.yandex.cloud.loadtesting.api.v1.test.SingleAgentConfiguration\x12\x43\n\x0ctest_details\x18\x03 \x01(\x0b\x32-.yandex.cloud.loadtesting.api.v1.test.Details\"%\n\x12\x43reateTestMetadata\x12\x0f\n\x07test_id\x18\x01 \x01(\t\"\'\n\x0eGetTestRequest\x12\x15\n\x07test_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\"\n\x0fStopTestRequest\x12\x0f\n\x07test_id\x18\x01 \x01(\t\"#\n\x10StopTestMetadata\x12\x0f\n\x07test_id\x18\x01 \x01(\t\"$\n\x11\x44\x65leteTestRequest\x12\x0f\n\x07test_id\x18\x01 \x01(\t\"%\n\x12\x44\x65leteTestMetadata\x12\x0f\n\x07test_id\x18\x01 \x01(\t\"\\\n\x10ListTestsRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\"g\n\x11ListTestsResponse\x12\x39\n\x05tests\x18\x01 \x03(\x0b\x32*.yandex.cloud.loadtesting.api.v1.test.Test\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xcf\x06\n\x0bTestService\x12\xa8\x01\n\x06\x43reate\x12\x32.yandex.cloud.loadtesting.api.v1.CreateTestRequest\x1a!.yandex.cloud.operation.Operation\"G\xb2\xd2*\x1f\n\x12\x43reateTestMetadata\x12\ttest.Test\x82\xd3\xe4\x93\x02\x1e\"\x19/loadtesting/api/v1/tests:\x01*\x12\x8f\x01\n\x03Get\x12/.yandex.cloud.loadtesting.api.v1.GetTestRequest\x1a*.yandex.cloud.loadtesting.api.v1.test.Test\"+\x82\xd3\xe4\x93\x02%\x12#/loadtesting/api/v1/tests/{test_id}\x12\xb1\x01\n\x04Stop\x12\x30.yandex.cloud.loadtesting.api.v1.StopTestRequest\x1a!.yandex.cloud.operation.Operation\"T\xb2\xd2*\x1d\n\x10StopTestMetadata\x12\ttest.Test\x82\xd3\xe4\x93\x02-\"(/loadtesting/api/v1/tests/{test_id}:stop:\x01*\x12\xbb\x01\n\x06\x44\x65lete\x12\x32.yandex.cloud.loadtesting.api.v1.DeleteTestRequest\x1a!.yandex.cloud.operation.Operation\"Z\xb2\xd2*+\n\x12\x44\x65leteTestMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02%*#/loadtesting/api/v1/tests/{test_id}\x12\x90\x01\n\x04List\x12\x31.yandex.cloud.loadtesting.api.v1.ListTestsRequest\x1a\x32.yandex.cloud.loadtesting.api.v1.ListTestsResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/loadtesting/api/v1/testsBv\n#yandex.cloud.api.loadtesting.api.v1ZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadtesting/api/v1;loadtestingb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -37,12 +37,30 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _TESTSERVICE.methods_by_name['Create']._serialized_options = b'\262\322*\037\n\022CreateTestMetadata\022\ttest.Test\202\323\344\223\002\036\"\031/loadtesting/api/v1/tests:\001*'
   _TESTSERVICE.methods_by_name['Get']._options = None
   _TESTSERVICE.methods_by_name['Get']._serialized_options = b'\202\323\344\223\002%\022#/loadtesting/api/v1/tests/{test_id}'
+  _TESTSERVICE.methods_by_name['Stop']._options = None
+  _TESTSERVICE.methods_by_name['Stop']._serialized_options = b'\262\322*\035\n\020StopTestMetadata\022\ttest.Test\202\323\344\223\002-\"(/loadtesting/api/v1/tests/{test_id}:stop:\001*'
+  _TESTSERVICE.methods_by_name['Delete']._options = None
+  _TESTSERVICE.methods_by_name['Delete']._serialized_options = b'\262\322*+\n\022DeleteTestMetadata\022\025google.protobuf.Empty\202\323\344\223\002%*#/loadtesting/api/v1/tests/{test_id}'
+  _TESTSERVICE.methods_by_name['List']._options = None
+  _TESTSERVICE.methods_by_name['List']._serialized_options = b'\202\323\344\223\002\033\022\031/loadtesting/api/v1/tests'
   _globals['_CREATETESTREQUEST']._serialized_start=395
   _globals['_CREATETESTREQUEST']._serialized_end=604
   _globals['_CREATETESTMETADATA']._serialized_start=606
   _globals['_CREATETESTMETADATA']._serialized_end=643
   _globals['_GETTESTREQUEST']._serialized_start=645
   _globals['_GETTESTREQUEST']._serialized_end=684
-  _globals['_TESTSERVICE']._serialized_start=687
-  _globals['_TESTSERVICE']._serialized_end=1017
+  _globals['_STOPTESTREQUEST']._serialized_start=686
+  _globals['_STOPTESTREQUEST']._serialized_end=720
+  _globals['_STOPTESTMETADATA']._serialized_start=722
+  _globals['_STOPTESTMETADATA']._serialized_end=757
+  _globals['_DELETETESTREQUEST']._serialized_start=759
+  _globals['_DELETETESTREQUEST']._serialized_end=795
+  _globals['_DELETETESTMETADATA']._serialized_start=797
+  _globals['_DELETETESTMETADATA']._serialized_end=834
+  _globals['_LISTTESTSREQUEST']._serialized_start=836
+  _globals['_LISTTESTSREQUEST']._serialized_end=928
+  _globals['_LISTTESTSRESPONSE']._serialized_start=930
+  _globals['_LISTTESTSRESPONSE']._serialized_end=1033
+  _globals['_TESTSERVICE']._serialized_start=1036
+  _globals['_TESTSERVICE']._serialized_end=1883
 # @@protoc_insertion_point(module_scope)

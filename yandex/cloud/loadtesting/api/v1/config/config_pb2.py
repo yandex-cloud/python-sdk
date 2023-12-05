@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n3yandex/cloud/loadtesting/api/v1/config/config.proto\x12&yandex.cloud.loadtesting.api.v1.config\"\x14\n\x06\x43onfig\x12\n\n\x02id\x18\x01 \x01(\tB\x7f\n*yandex.cloud.api.loadtesting.api.v1.configZQgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadtesting/api/v1/config;configb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n3yandex/cloud/loadtesting/api/v1/config/config.proto\x12&yandex.cloud.loadtesting.api.v1.config\"<\n\x06\x43onfig\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12\x13\n\x0byaml_string\x18\x03 \x01(\tB\x7f\n*yandex.cloud.api.loadtesting.api.v1.configZQgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadtesting/api/v1/config;configb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -23,5 +23,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n*yandex.cloud.api.loadtesting.api.v1.configZQgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadtesting/api/v1/config;config'
   _globals['_CONFIG']._serialized_start=95
-  _globals['_CONFIG']._serialized_end=115
+  _globals['_CONFIG']._serialized_end=155
 # @@protoc_insertion_point(module_scope)
