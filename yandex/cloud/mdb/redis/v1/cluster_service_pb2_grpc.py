@@ -142,6 +142,11 @@ class ClusterServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__service__pb2.RebalanceClusterRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
+        self.EnableSharding = channel.unary_unary(
+                '/yandex.cloud.mdb.redis.v1.ClusterService/EnableSharding',
+                request_serializer=yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__service__pb2.EnableShardingClusterRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
 
 
 class ClusterServiceServicer(object):
@@ -326,6 +331,13 @@ class ClusterServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def EnableSharding(self, request, context):
+        """Enable Sharding on non sharded cluster
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ClusterServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -452,6 +464,11 @@ def add_ClusterServiceServicer_to_server(servicer, server):
             'Rebalance': grpc.unary_unary_rpc_method_handler(
                     servicer.Rebalance,
                     request_deserializer=yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__service__pb2.RebalanceClusterRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'EnableSharding': grpc.unary_unary_rpc_method_handler(
+                    servicer.EnableSharding,
+                    request_deserializer=yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__service__pb2.EnableShardingClusterRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
@@ -886,6 +903,23 @@ class ClusterService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.mdb.redis.v1.ClusterService/Rebalance',
             yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__service__pb2.RebalanceClusterRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def EnableSharding(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.mdb.redis.v1.ClusterService/EnableSharding',
+            yandex_dot_cloud_dot_mdb_dot_redis_dot_v1_dot_cluster__service__pb2.EnableShardingClusterRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

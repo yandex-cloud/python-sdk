@@ -118,6 +118,11 @@ class InstanceServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.RelocateInstanceRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
+        self.SimulateMaintenanceEvent = channel.unary_unary(
+                '/yandex.cloud.compute.v1.InstanceService/SimulateMaintenanceEvent',
+                request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.SimulateInstanceMaintenanceEventRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
         self.ListAccessBindings = channel.unary_unary(
                 '/yandex.cloud.compute.v1.InstanceService/ListAccessBindings',
                 request_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessBindingsRequest.SerializeToString,
@@ -304,6 +309,14 @@ class InstanceServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def SimulateMaintenanceEvent(self, request, context):
+        """maintenance
+
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListAccessBindings(self, request, context):
         """access
 
@@ -428,6 +441,11 @@ def add_InstanceServiceServicer_to_server(servicer, server):
             'Relocate': grpc.unary_unary_rpc_method_handler(
                     servicer.Relocate,
                     request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.RelocateInstanceRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'SimulateMaintenanceEvent': grpc.unary_unary_rpc_method_handler(
+                    servicer.SimulateMaintenanceEvent,
+                    request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.SimulateInstanceMaintenanceEventRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'ListAccessBindings': grpc.unary_unary_rpc_method_handler(
@@ -792,6 +810,23 @@ class InstanceService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.compute.v1.InstanceService/Relocate',
             yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.RelocateInstanceRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SimulateMaintenanceEvent(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.compute.v1.InstanceService/SimulateMaintenanceEvent',
+            yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.SimulateInstanceMaintenanceEventRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
