@@ -36,7 +36,7 @@ def __validate_service_account_key(sa_key):
         raise RuntimeError("Invalid Service Account Key: missing private key.")
 
     private_key_prefix = "-----BEGIN PRIVATE KEY-----"
-    if not isinstance(private_key, six.string_types) or not private_key.startswith(private_key_prefix):
+    if not isinstance(private_key, six.string_types) or private_key_prefix not in private_key:
         error_message = (
             "Invalid Service Account Key: private key is in incorrect format."
             + "Should start with {prefix}.\n".format(prefix=private_key_prefix)
