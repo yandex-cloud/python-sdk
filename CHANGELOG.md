@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v0.248.0 (2023-12-13)
+
+### Feature
+
+* Fix: service account private key validation with new header ([`adbea9d`](https://github.com/yandex-cloud/python-sdk/commit/adbea9d02daa8b8b727299606096a1f2b1a3ee9d))
+
 ## v0.247.0 (2023-12-12)
 
 ### Feature
