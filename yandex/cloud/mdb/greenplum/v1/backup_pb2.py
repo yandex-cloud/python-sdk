@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*yandex/cloud/mdb/greenplum/v1/backup.proto\x12\x1dyandex.cloud.mdb.greenplum.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xb0\x01\n\x06\x42\x61\x63kup\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x19\n\x11source_cluster_id\x18\x04 \x01(\t\x12.\n\nstarted_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04size\x18\x06 \x01(\x03\x42p\n!yandex.cloud.api.mdb.greenplum.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/greenplum/v1;greenplumb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*yandex/cloud/mdb/greenplum/v1/backup.proto\x12\x1dyandex.cloud.mdb.greenplum.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xf3\x03\n\x06\x42\x61\x63kup\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x19\n\x11source_cluster_id\x18\x04 \x01(\t\x12.\n\nstarted_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04size\x18\x06 \x01(\x03\x12\x46\n\x04type\x18\x07 \x01(\x0e\x32\x38.yandex.cloud.mdb.greenplum.v1.Backup.BackupCreationType\x12\x42\n\x06method\x18\x08 \x01(\x0e\x32\x32.yandex.cloud.mdb.greenplum.v1.Backup.BackupMethod\x12\x14\n\x0cjournal_size\x18\t \x01(\x03\"H\n\x0c\x42\x61\x63kupMethod\x12\x1d\n\x19\x42\x41\x43KUP_METHOD_UNSPECIFIED\x10\x00\x12\x08\n\x04\x42\x41SE\x10\x01\x12\x0f\n\x0bINCREMENTAL\x10\x02\"U\n\x12\x42\x61\x63kupCreationType\x12$\n BACKUP_CREATION_TYPE_UNSPECIFIED\x10\x00\x12\r\n\tAUTOMATED\x10\x01\x12\n\n\x06MANUAL\x10\x02\x42p\n!yandex.cloud.api.mdb.greenplum.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/greenplum/v1;greenplumb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -24,5 +24,9 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n!yandex.cloud.api.mdb.greenplum.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/greenplum/v1;greenplum'
   _globals['_BACKUP']._serialized_start=111
-  _globals['_BACKUP']._serialized_end=287
+  _globals['_BACKUP']._serialized_end=610
+  _globals['_BACKUP_BACKUPMETHOD']._serialized_start=451
+  _globals['_BACKUP_BACKUPMETHOD']._serialized_end=523
+  _globals['_BACKUP_BACKUPCREATIONTYPE']._serialized_start=525
+  _globals['_BACKUP_BACKUPCREATIONTYPE']._serialized_end=610
 # @@protoc_insertion_point(module_scope)

@@ -6,7 +6,8 @@ from yandex.cloud.loadtesting.api.v1 import report_service_pb2 as yandex_dot_clo
 
 
 class ReportServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing test reports.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -22,7 +23,8 @@ class ReportServiceStub(object):
 
 
 class ReportServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing test reports.
+    """
 
     def GetTable(self, request, context):
         """Returns a report table for the specified test.
@@ -47,7 +49,8 @@ def add_ReportServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class ReportService(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing test reports.
+    """
 
     @staticmethod
     def GetTable(request,

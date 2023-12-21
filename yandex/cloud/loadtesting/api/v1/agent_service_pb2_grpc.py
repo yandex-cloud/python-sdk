@@ -8,7 +8,8 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class AgentServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing Load Testing agents.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -39,7 +40,8 @@ class AgentServiceStub(object):
 
 
 class AgentServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing Load Testing agents.
+    """
 
     def Create(self, request, context):
         """Creates an agent in the specified folder.
@@ -106,7 +108,8 @@ def add_AgentServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class AgentService(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing Load Testing agents.
+    """
 
     @staticmethod
     def Create(request,

@@ -12,9 +12,11 @@ _sym_db = _symbol_database.Default()
 
 
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+from yandex.cloud.logging.v1 import log_entry_pb2 as yandex_dot_cloud_dot_logging_dot_v1_dot_log__entry__pb2
+from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*yandex/cloud/iot/devices/v1/registry.proto\x12\x1byandex.cloud.iot.devices.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\x8c\x03\n\x08Registry\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x41\n\x06labels\x18\x06 \x03(\x0b\x32\x31.yandex.cloud.iot.devices.v1.Registry.LabelsEntry\x12<\n\x06status\x18\x07 \x01(\x0e\x32,.yandex.cloud.iot.devices.v1.Registry.Status\x12\x14\n\x0clog_group_id\x18\x08 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"H\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08\x44\x45LETING\x10\x03\"\x89\x01\n\x13RegistryCertificate\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\x12\x13\n\x0b\x66ingerprint\x18\x02 \x01(\t\x12\x18\n\x10\x63\x65rtificate_data\x18\x03 \x01(\t\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"E\n\x0b\x44\x65viceAlias\x12\x11\n\tdevice_id\x18\x01 \x01(\t\x12\x14\n\x0ctopic_prefix\x18\x02 \x01(\t\x12\r\n\x05\x61lias\x18\x03 \x01(\t\"c\n\x10RegistryPassword\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xca\x01\n\x10\x44\x61taStreamExport\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0bregistry_id\x18\x03 \x01(\t\x12\x19\n\x11mqtt_topic_filter\x18\x04 \x01(\t\x12\x10\n\x08\x64\x61tabase\x18\x05 \x01(\t\x12\x0e\n\x06stream\x18\x06 \x01(\t\x12\x1a\n\x12service_account_id\x18\x07 \x01(\t\x12.\n\ncreated_at\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.TimestampBj\n\x1fyandex.cloud.api.iot.devices.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/iot/devices/v1;devicesb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*yandex/cloud/iot/devices/v1/registry.proto\x12\x1byandex.cloud.iot.devices.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\'yandex/cloud/logging/v1/log_entry.proto\x1a\x1dyandex/cloud/validation.proto\"\xca\x03\n\x08Registry\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x41\n\x06labels\x18\x06 \x03(\x0b\x32\x31.yandex.cloud.iot.devices.v1.Registry.LabelsEntry\x12<\n\x06status\x18\x07 \x01(\x0e\x32,.yandex.cloud.iot.devices.v1.Registry.Status\x12\x14\n\x0clog_group_id\x18\x08 \x01(\t\x12<\n\x0blog_options\x18\t \x01(\x0b\x32\'.yandex.cloud.iot.devices.v1.LogOptions\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"H\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08\x44\x45LETING\x10\x03\"\x89\x01\n\x13RegistryCertificate\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\x12\x13\n\x0b\x66ingerprint\x18\x02 \x01(\t\x12\x18\n\x10\x63\x65rtificate_data\x18\x03 \x01(\t\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"E\n\x0b\x44\x65viceAlias\x12\x11\n\tdevice_id\x18\x01 \x01(\t\x12\x14\n\x0ctopic_prefix\x18\x02 \x01(\t\x12\r\n\x05\x61lias\x18\x03 \x01(\t\"c\n\x10RegistryPassword\x12\x13\n\x0bregistry_id\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xca\x01\n\x10\x44\x61taStreamExport\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0bregistry_id\x18\x03 \x01(\t\x12\x19\n\x11mqtt_topic_filter\x18\x04 \x01(\t\x12\x10\n\x08\x64\x61tabase\x18\x05 \x01(\t\x12\x0e\n\x06stream\x18\x06 \x01(\t\x12\x1a\n\x12service_account_id\x18\x07 \x01(\t\x12.\n\ncreated_at\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xe0\x01\n\nLogOptions\x12\x10\n\x08\x64isabled\x18\x01 \x01(\x08\x12;\n\x0clog_group_id\x18\x02 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?H\x00\x12\x38\n\tfolder_id\x18\x03 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?H\x00\x12:\n\tmin_level\x18\x04 \x01(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.LevelB\r\n\x0b\x64\x65stinationBj\n\x1fyandex.cloud.api.iot.devices.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/iot/devices/v1;devicesb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -25,18 +27,24 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._serialized_options = b'\n\037yandex.cloud.api.iot.devices.v1ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/iot/devices/v1;devices'
   _REGISTRY_LABELSENTRY._options = None
   _REGISTRY_LABELSENTRY._serialized_options = b'8\001'
-  _globals['_REGISTRY']._serialized_start=109
-  _globals['_REGISTRY']._serialized_end=505
-  _globals['_REGISTRY_LABELSENTRY']._serialized_start=386
-  _globals['_REGISTRY_LABELSENTRY']._serialized_end=431
-  _globals['_REGISTRY_STATUS']._serialized_start=433
-  _globals['_REGISTRY_STATUS']._serialized_end=505
-  _globals['_REGISTRYCERTIFICATE']._serialized_start=508
-  _globals['_REGISTRYCERTIFICATE']._serialized_end=645
-  _globals['_DEVICEALIAS']._serialized_start=647
-  _globals['_DEVICEALIAS']._serialized_end=716
-  _globals['_REGISTRYPASSWORD']._serialized_start=718
-  _globals['_REGISTRYPASSWORD']._serialized_end=817
-  _globals['_DATASTREAMEXPORT']._serialized_start=820
-  _globals['_DATASTREAMEXPORT']._serialized_end=1022
+  _LOGOPTIONS.fields_by_name['log_group_id']._options = None
+  _LOGOPTIONS.fields_by_name['log_group_id']._serialized_options = b'\362\3071\037([a-zA-Z][-a-zA-Z0-9_.]{0,63})?'
+  _LOGOPTIONS.fields_by_name['folder_id']._options = None
+  _LOGOPTIONS.fields_by_name['folder_id']._serialized_options = b'\362\3071\037([a-zA-Z][-a-zA-Z0-9_.]{0,63})?'
+  _globals['_REGISTRY']._serialized_start=181
+  _globals['_REGISTRY']._serialized_end=639
+  _globals['_REGISTRY_LABELSENTRY']._serialized_start=520
+  _globals['_REGISTRY_LABELSENTRY']._serialized_end=565
+  _globals['_REGISTRY_STATUS']._serialized_start=567
+  _globals['_REGISTRY_STATUS']._serialized_end=639
+  _globals['_REGISTRYCERTIFICATE']._serialized_start=642
+  _globals['_REGISTRYCERTIFICATE']._serialized_end=779
+  _globals['_DEVICEALIAS']._serialized_start=781
+  _globals['_DEVICEALIAS']._serialized_end=850
+  _globals['_REGISTRYPASSWORD']._serialized_start=852
+  _globals['_REGISTRYPASSWORD']._serialized_end=951
+  _globals['_DATASTREAMEXPORT']._serialized_start=954
+  _globals['_DATASTREAMEXPORT']._serialized_end=1156
+  _globals['_LOGOPTIONS']._serialized_start=1159
+  _globals['_LOGOPTIONS']._serialized_end=1383
 # @@protoc_insertion_point(module_scope)

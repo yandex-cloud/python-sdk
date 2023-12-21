@@ -88,6 +88,16 @@ class ProjectServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessBindingsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
+        self.AddResource = channel.unary_unary(
+                '/yandex.cloud.datasphere.v2.ProjectService/AddResource',
+                request_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_project__service__pb2.AddResourceToProjectRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
+        self.RemoveResource = channel.unary_unary(
+                '/yandex.cloud.datasphere.v2.ProjectService/RemoveResource',
+                request_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_project__service__pb2.RemoveResourceFromProjectRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
 
 
 class ProjectServiceServicer(object):
@@ -192,6 +202,20 @@ class ProjectServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def AddResource(self, request, context):
+        """Adds shared resource to project
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def RemoveResource(self, request, context):
+        """Removes shared resource from project
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ProjectServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -263,6 +287,16 @@ def add_ProjectServiceServicer_to_server(servicer, server):
             'UpdateAccessBindings': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateAccessBindings,
                     request_deserializer=yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessBindingsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'AddResource': grpc.unary_unary_rpc_method_handler(
+                    servicer.AddResource,
+                    request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_project__service__pb2.AddResourceToProjectRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'RemoveResource': grpc.unary_unary_rpc_method_handler(
+                    servicer.RemoveResource,
+                    request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_project__service__pb2.RemoveResourceFromProjectRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
@@ -510,6 +544,40 @@ class ProjectService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v2.ProjectService/UpdateAccessBindings',
             yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessBindingsRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def AddResource(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v2.ProjectService/AddResource',
+            yandex_dot_cloud_dot_datasphere_dot_v2_dot_project__service__pb2.AddResourceToProjectRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RemoveResource(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v2.ProjectService/RemoveResource',
+            yandex_dot_cloud_dot_datasphere_dot_v2_dot_project__service__pb2.RemoveResourceFromProjectRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -16,7 +16,7 @@ from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 from yandex.cloud.mdb.greenplum.v1 import backup_pb2 as yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_backup__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2yandex/cloud/mdb/greenplum/v1/backup_service.proto\x12\x1dyandex.cloud.mdb.greenplum.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1dyandex/cloud/validation.proto\x1a*yandex/cloud/mdb/greenplum/v1/backup.proto\"+\n\x10GetBackupRequest\x12\x17\n\tbackup_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"s\n\x12ListBackupsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"f\n\x13ListBackupsResponse\x12\x36\n\x07\x62\x61\x63kups\x18\x01 \x03(\x0b\x32%.yandex.cloud.mdb.greenplum.v1.Backup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\".\n\x13\x44\x65leteBackupRequest\x12\x17\n\tbackup_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"=\n\x14\x44\x65leteBackupMetadata\x12\x11\n\tbackup_id\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t2\xb9\x02\n\rBackupService\x12\x90\x01\n\x03Get\x12/.yandex.cloud.mdb.greenplum.v1.GetBackupRequest\x1a%.yandex.cloud.mdb.greenplum.v1.Backup\"1\x82\xd3\xe4\x93\x02+\x12)/managed-greenplum/v1/backups/{backup_id}\x12\x94\x01\n\x04List\x12\x31.yandex.cloud.mdb.greenplum.v1.ListBackupsRequest\x1a\x32.yandex.cloud.mdb.greenplum.v1.ListBackupsResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/managed-greenplum/v1/backupsBp\n!yandex.cloud.api.mdb.greenplum.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/greenplum/v1;greenplumb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2yandex/cloud/mdb/greenplum/v1/backup_service.proto\x12\x1dyandex.cloud.mdb.greenplum.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1dyandex/cloud/validation.proto\x1a*yandex/cloud/mdb/greenplum/v1/backup.proto\"+\n\x10GetBackupRequest\x12\x17\n\tbackup_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"s\n\x12ListBackupsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"f\n\x13ListBackupsResponse\x12\x36\n\x07\x62\x61\x63kups\x18\x01 \x03(\x0b\x32%.yandex.cloud.mdb.greenplum.v1.Backup\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\".\n\x13\x44\x65leteBackupRequest\x12\x17\n\tbackup_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"G\n\x14\x44\x65leteBackupMetadata\x12\x11\n\tbackup_id\x18\x01 \x01(\t\x12\x1c\n\ncluster_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=502\xb9\x02\n\rBackupService\x12\x90\x01\n\x03Get\x12/.yandex.cloud.mdb.greenplum.v1.GetBackupRequest\x1a%.yandex.cloud.mdb.greenplum.v1.Backup\"1\x82\xd3\xe4\x93\x02+\x12)/managed-greenplum/v1/backups/{backup_id}\x12\x94\x01\n\x04List\x12\x31.yandex.cloud.mdb.greenplum.v1.ListBackupsRequest\x1a\x32.yandex.cloud.mdb.greenplum.v1.ListBackupsResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/managed-greenplum/v1/backupsBp\n!yandex.cloud.api.mdb.greenplum.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/greenplum/v1;greenplumb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,6 +35,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _LISTBACKUPSREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
   _DELETEBACKUPREQUEST.fields_by_name['backup_id']._options = None
   _DELETEBACKUPREQUEST.fields_by_name['backup_id']._serialized_options = b'\350\3071\001'
+  _DELETEBACKUPMETADATA.fields_by_name['cluster_id']._options = None
+  _DELETEBACKUPMETADATA.fields_by_name['cluster_id']._serialized_options = b'\212\3101\004<=50'
   _BACKUPSERVICE.methods_by_name['Get']._options = None
   _BACKUPSERVICE.methods_by_name['Get']._serialized_options = b'\202\323\344\223\002+\022)/managed-greenplum/v1/backups/{backup_id}'
   _BACKUPSERVICE.methods_by_name['List']._options = None
@@ -48,7 +50,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_DELETEBACKUPREQUEST']._serialized_start=456
   _globals['_DELETEBACKUPREQUEST']._serialized_end=502
   _globals['_DELETEBACKUPMETADATA']._serialized_start=504
-  _globals['_DELETEBACKUPMETADATA']._serialized_end=565
-  _globals['_BACKUPSERVICE']._serialized_start=568
-  _globals['_BACKUPSERVICE']._serialized_end=881
+  _globals['_DELETEBACKUPMETADATA']._serialized_end=575
+  _globals['_BACKUPSERVICE']._serialized_start=578
+  _globals['_BACKUPSERVICE']._serialized_end=891
 # @@protoc_insertion_point(module_scope)

@@ -58,6 +58,16 @@ class CommunityServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessBindingsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
+        self.AddResource = channel.unary_unary(
+                '/yandex.cloud.datasphere.v2.CommunityService/AddResource',
+                request_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_community__service__pb2.AddCommunityResourceRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
+        self.RemoveResource = channel.unary_unary(
+                '/yandex.cloud.datasphere.v2.CommunityService/RemoveResource',
+                request_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_community__service__pb2.RemoveCommunityResourceRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
 
 
 class CommunityServiceServicer(object):
@@ -120,6 +130,20 @@ class CommunityServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def AddResource(self, request, context):
+        """Adds shared resource to community
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def RemoveResource(self, request, context):
+        """Removes shared resource from community
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CommunityServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -161,6 +185,16 @@ def add_CommunityServiceServicer_to_server(servicer, server):
             'UpdateAccessBindings': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateAccessBindings,
                     request_deserializer=yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessBindingsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'AddResource': grpc.unary_unary_rpc_method_handler(
+                    servicer.AddResource,
+                    request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_community__service__pb2.AddCommunityResourceRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'RemoveResource': grpc.unary_unary_rpc_method_handler(
+                    servicer.RemoveResource,
+                    request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_community__service__pb2.RemoveCommunityResourceRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
@@ -306,6 +340,40 @@ class CommunityService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v2.CommunityService/UpdateAccessBindings',
             yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessBindingsRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def AddResource(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v2.CommunityService/AddResource',
+            yandex_dot_cloud_dot_datasphere_dot_v2_dot_community__service__pb2.AddCommunityResourceRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RemoveResource(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v2.CommunityService/RemoveResource',
+            yandex_dot_cloud_dot_datasphere_dot_v2_dot_community__service__pb2.RemoveCommunityResourceRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

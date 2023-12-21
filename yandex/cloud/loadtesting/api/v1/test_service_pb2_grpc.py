@@ -8,7 +8,8 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class TestServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing tests.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -44,7 +45,8 @@ class TestServiceStub(object):
 
 
 class TestServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing tests.
+    """
 
     def Create(self, request, context):
         """Creates (runs) a test in the specified folder.
@@ -119,7 +121,8 @@ def add_TestServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class TestService(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing tests.
+    """
 
     @staticmethod
     def Create(request,
