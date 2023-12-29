@@ -24,6 +24,21 @@ class JobServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_dataproc_dot_manager_dot_v1_dot_job__service__pb2.UpdateJobStatusRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_dataproc_dot_manager_dot_v1_dot_job__service__pb2.UpdateJobStatusResponse.FromString,
                 )
+        self.ListSupportActive = channel.unary_unary(
+                '/yandex.cloud.dataproc.manager.v1.JobService/ListSupportActive',
+                request_serializer=yandex_dot_cloud_dot_dataproc_dot_manager_dot_v1_dot_job__service__pb2.ListJobsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_dataproc_dot_manager_dot_v1_dot_job__service__pb2.ListSupportJobsResponse.FromString,
+                )
+        self.UpdateSupportStatus = channel.unary_unary(
+                '/yandex.cloud.dataproc.manager.v1.JobService/UpdateSupportStatus',
+                request_serializer=yandex_dot_cloud_dot_dataproc_dot_manager_dot_v1_dot_job__service__pb2.UpdateSupportJobStatusRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_dataproc_dot_manager_dot_v1_dot_job__service__pb2.UpdateJobStatusResponse.FromString,
+                )
+        self.SaveSupportLog = channel.unary_unary(
+                '/yandex.cloud.dataproc.manager.v1.JobService/SaveSupportLog',
+                request_serializer=yandex_dot_cloud_dot_dataproc_dot_manager_dot_v1_dot_job__service__pb2.SaveSupportJobLogRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_dataproc_dot_manager_dot_v1_dot_job__service__pb2.SaveSupportJobLogResponse.FromString,
+                )
 
 
 class JobServiceServicer(object):
@@ -43,6 +58,27 @@ class JobServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListSupportActive(self, request, context):
+        """Retrieves a list of support jobs for Data Proc cluster.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateSupportStatus(self, request, context):
+        """Currently used to update support job status.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SaveSupportLog(self, request, context):
+        """Save support job output.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_JobServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -55,6 +91,21 @@ def add_JobServiceServicer_to_server(servicer, server):
                     servicer.UpdateStatus,
                     request_deserializer=yandex_dot_cloud_dot_dataproc_dot_manager_dot_v1_dot_job__service__pb2.UpdateJobStatusRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_dataproc_dot_manager_dot_v1_dot_job__service__pb2.UpdateJobStatusResponse.SerializeToString,
+            ),
+            'ListSupportActive': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListSupportActive,
+                    request_deserializer=yandex_dot_cloud_dot_dataproc_dot_manager_dot_v1_dot_job__service__pb2.ListJobsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_dataproc_dot_manager_dot_v1_dot_job__service__pb2.ListSupportJobsResponse.SerializeToString,
+            ),
+            'UpdateSupportStatus': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateSupportStatus,
+                    request_deserializer=yandex_dot_cloud_dot_dataproc_dot_manager_dot_v1_dot_job__service__pb2.UpdateSupportJobStatusRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_dataproc_dot_manager_dot_v1_dot_job__service__pb2.UpdateJobStatusResponse.SerializeToString,
+            ),
+            'SaveSupportLog': grpc.unary_unary_rpc_method_handler(
+                    servicer.SaveSupportLog,
+                    request_deserializer=yandex_dot_cloud_dot_dataproc_dot_manager_dot_v1_dot_job__service__pb2.SaveSupportJobLogRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_dataproc_dot_manager_dot_v1_dot_job__service__pb2.SaveSupportJobLogResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -97,5 +148,56 @@ class JobService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.dataproc.manager.v1.JobService/UpdateStatus',
             yandex_dot_cloud_dot_dataproc_dot_manager_dot_v1_dot_job__service__pb2.UpdateJobStatusRequest.SerializeToString,
             yandex_dot_cloud_dot_dataproc_dot_manager_dot_v1_dot_job__service__pb2.UpdateJobStatusResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListSupportActive(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.dataproc.manager.v1.JobService/ListSupportActive',
+            yandex_dot_cloud_dot_dataproc_dot_manager_dot_v1_dot_job__service__pb2.ListJobsRequest.SerializeToString,
+            yandex_dot_cloud_dot_dataproc_dot_manager_dot_v1_dot_job__service__pb2.ListSupportJobsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateSupportStatus(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.dataproc.manager.v1.JobService/UpdateSupportStatus',
+            yandex_dot_cloud_dot_dataproc_dot_manager_dot_v1_dot_job__service__pb2.UpdateSupportJobStatusRequest.SerializeToString,
+            yandex_dot_cloud_dot_dataproc_dot_manager_dot_v1_dot_job__service__pb2.UpdateJobStatusResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SaveSupportLog(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.dataproc.manager.v1.JobService/SaveSupportLog',
+            yandex_dot_cloud_dot_dataproc_dot_manager_dot_v1_dot_job__service__pb2.SaveSupportJobLogRequest.SerializeToString,
+            yandex_dot_cloud_dot_dataproc_dot_manager_dot_v1_dot_job__service__pb2.SaveSupportJobLogResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
