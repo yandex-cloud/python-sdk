@@ -53,7 +53,7 @@ def get_auth_token_requester(
     auth_methods = [(auth_type, value) for auth_type, value in auth_methods if value is not None]
 
     if len(auth_methods) == 0:
-        return MetadataAuth(metadata_addr=metadata_addr or os.environ.get('YC_METADATA_ADDR', _MDS_ADDR))
+        return MetadataAuth(metadata_addr=metadata_addr or os.environ.get("YC_METADATA_ADDR", _MDS_ADDR))
 
     if len(auth_methods) > 1:
         raise RuntimeError(
