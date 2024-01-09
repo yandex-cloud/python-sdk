@@ -2,6 +2,15 @@
 
 <!--next-version-placeholder-->
 
+## v0.251.0 (2024-01-09)
+
+### Feature
+
+* Fix: YC_METADATA_ADDR quotes ([`40bad38`](https://github.com/yandex-cloud/python-sdk/commit/40bad381e9a918cf226987eb99300413a0ffc06a))
+* Auth: Support setting of Metadata Service Addr via env variable `YC_METADATA_ADDR`
+
+Needed for Y.Cloud Managed Airflow seamless integration with clsuter Service Account auth ([`55f610d`](https://github.com/yandex-cloud/python-sdk/commit/55f610de2126f5a15e2b91531915a75077694ac1))
+
 ## v0.250.0 (2023-12-29)
 
 ### Feature
