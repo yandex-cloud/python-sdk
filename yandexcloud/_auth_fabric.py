@@ -1,3 +1,4 @@
+import os
 import time
 from datetime import datetime
 
@@ -46,13 +47,13 @@ def __validate_service_account_key(sa_key):
 
 
 def get_auth_token_requester(
-    token=None, service_account_key=None, iam_token=None, metadata_addr=_MDS_ADDR, endpoint=YC_API_ENDPOINT
+    token=None, service_account_key=None, iam_token=None, metadata_addr=None, endpoint=YC_API_ENDPOINT
 ):
     auth_methods = [("token", token), ("service_account_key", service_account_key), ("iam_token", iam_token)]
     auth_methods = [(auth_type, value) for auth_type, value in auth_methods if value is not None]
 
     if len(auth_methods) == 0:
-        return MetadataAuth(metadata_addr=metadata_addr)
+        return MetadataAuth(metadata_addr=metadata_addr or os.environ.get("YC_METADATA_ADDR", _MDS_ADDR))
 
     if len(auth_methods) > 1:
         raise RuntimeError(
