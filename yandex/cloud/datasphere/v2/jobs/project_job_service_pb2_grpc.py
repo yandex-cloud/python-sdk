@@ -34,11 +34,6 @@ class ProjectJobServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.CancelProjectJobRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
-        self.Finalize = channel.unary_unary(
-                '/yandex.cloud.datasphere.v2.jobs.ProjectJobService/Finalize',
-                request_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.FinalizeProjectJobRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.FinalizeProjectJobResponse.FromString,
-                )
         self.ReadStdLogs = channel.unary_stream(
                 '/yandex.cloud.datasphere.v2.jobs.ProjectJobService/ReadStdLogs',
                 request_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.ReadProjectJobStdLogsRequest.SerializeToString,
@@ -69,6 +64,16 @@ class ProjectJobServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.DeleteProjectJobRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
+        self.DeleteData = channel.unary_unary(
+                '/yandex.cloud.datasphere.v2.jobs.ProjectJobService/DeleteData',
+                request_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.DeleteProjectJobDataRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
+        self.DeleteAllData = channel.unary_unary(
+                '/yandex.cloud.datasphere.v2.jobs.ProjectJobService/DeleteAllData',
+                request_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.DeleteAllDataRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
 
 
 class ProjectJobServiceServicer(object):
@@ -92,13 +97,6 @@ class ProjectJobServiceServicer(object):
 
     def Cancel(self, request, context):
         """Cancels running job.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def Finalize(self, request, context):
-        """Triggers cleanup after downloading job results.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -146,6 +144,20 @@ class ProjectJobServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def DeleteData(self, request, context):
+        """Delete job data.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteAllData(self, request, context):
+        """Delete all jobs data.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ProjectJobServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -163,11 +175,6 @@ def add_ProjectJobServiceServicer_to_server(servicer, server):
                     servicer.Cancel,
                     request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.CancelProjectJobRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-            ),
-            'Finalize': grpc.unary_unary_rpc_method_handler(
-                    servicer.Finalize,
-                    request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.FinalizeProjectJobRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.FinalizeProjectJobResponse.SerializeToString,
             ),
             'ReadStdLogs': grpc.unary_stream_rpc_method_handler(
                     servicer.ReadStdLogs,
@@ -197,6 +204,16 @@ def add_ProjectJobServiceServicer_to_server(servicer, server):
             'Delete': grpc.unary_unary_rpc_method_handler(
                     servicer.Delete,
                     request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.DeleteProjectJobRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'DeleteData': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteData,
+                    request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.DeleteProjectJobDataRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'DeleteAllData': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteAllData,
+                    request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.DeleteAllDataRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
@@ -259,23 +276,6 @@ class ProjectJobService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v2.jobs.ProjectJobService/Cancel',
             yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.CancelProjectJobRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def Finalize(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v2.jobs.ProjectJobService/Finalize',
-            yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.FinalizeProjectJobRequest.SerializeToString,
-            yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.FinalizeProjectJobResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -377,6 +377,40 @@ class ProjectJobService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v2.jobs.ProjectJobService/Delete',
             yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.DeleteProjectJobRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteData(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v2.jobs.ProjectJobService/DeleteData',
+            yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.DeleteProjectJobDataRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteAllData(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v2.jobs.ProjectJobService/DeleteAllData',
+            yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.DeleteAllDataRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
