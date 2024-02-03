@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from yandex.cloud.datatransfer.v1.endpoint import common_pb2 as yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_common__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n3yandex/cloud/datatransfer/v1/endpoint/parsers.proto\x12%yandex.cloud.datatransfer.v1.endpoint\x1a\x32yandex/cloud/datatransfer/v1/endpoint/common.proto\"\xf1\x02\n\x06Parser\x12Q\n\x0bjson_parser\x18\x01 \x01(\x0b\x32:.yandex.cloud.datatransfer.v1.endpoint.GenericParserCommonH\x00\x12\\\n\x16\x61udit_trails_v1_parser\x18\x02 \x01(\x0b\x32:.yandex.cloud.datatransfer.v1.endpoint.AuditTrailsV1ParserH\x00\x12Y\n\x14\x63loud_logging_parser\x18\x04 \x01(\x0b\x32\x39.yandex.cloud.datatransfer.v1.endpoint.CloudLoggingParserH\x00\x12Q\n\x0btskv_parser\x18\x06 \x01(\x0b\x32:.yandex.cloud.datatransfer.v1.endpoint.GenericParserCommonH\x00\x42\x08\n\x06parser\"\x91\x01\n\x13GenericParserCommon\x12\x46\n\x0b\x64\x61ta_schema\x18\x01 \x01(\x0b\x32\x31.yandex.cloud.datatransfer.v1.endpoint.DataSchema\x12\x19\n\x11null_keys_allowed\x18\x02 \x01(\x08\x12\x17\n\x0f\x61\x64\x64_rest_column\x18\x03 \x01(\x08\"\x15\n\x13\x41uditTrailsV1Parser\"\x14\n\x12\x43loudLoggingParserB\xa7\x01\n)yandex.cloud.api.datatransfer.v1.endpointZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1/endpoint;endpoint\xaa\x02%Yandex.Cloud.Datatransfer.V1.EndPointb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n3yandex/cloud/datatransfer/v1/endpoint/parsers.proto\x12%yandex.cloud.datatransfer.v1.endpoint\x1a\x32yandex/cloud/datatransfer/v1/endpoint/common.proto\"\xfd\x02\n\x06Parser\x12Q\n\x0bjson_parser\x18\x01 \x01(\x0b\x32:.yandex.cloud.datatransfer.v1.endpoint.GenericParserCommonH\x00\x12\\\n\x16\x61udit_trails_v1_parser\x18\x02 \x01(\x0b\x32:.yandex.cloud.datatransfer.v1.endpoint.AuditTrailsV1ParserH\x00\x12Y\n\x14\x63loud_logging_parser\x18\x04 \x01(\x0b\x32\x39.yandex.cloud.datatransfer.v1.endpoint.CloudLoggingParserH\x00\x12Q\n\x0btskv_parser\x18\x06 \x01(\x0b\x32:.yandex.cloud.datatransfer.v1.endpoint.GenericParserCommonH\x00\x42\x08\n\x06parserJ\x04\x08\x03\x10\x04J\x04\x08\x05\x10\x06\"\xb7\x01\n\x13GenericParserCommon\x12\x46\n\x0b\x64\x61ta_schema\x18\x01 \x01(\x0b\x32\x31.yandex.cloud.datatransfer.v1.endpoint.DataSchema\x12\x19\n\x11null_keys_allowed\x18\x02 \x01(\x08\x12\x17\n\x0f\x61\x64\x64_rest_column\x18\x03 \x01(\x08\x12\x1e\n\x16unescape_string_values\x18\x07 \x01(\x08J\x04\x08\x04\x10\x07\"\x15\n\x13\x41uditTrailsV1Parser\"\x14\n\x12\x43loudLoggingParserB\xa7\x01\n)yandex.cloud.api.datatransfer.v1.endpointZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1/endpoint;endpoint\xaa\x02%Yandex.Cloud.Datatransfer.V1.EndPointb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -24,11 +24,11 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n)yandex.cloud.api.datatransfer.v1.endpointZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1/endpoint;endpoint\252\002%Yandex.Cloud.Datatransfer.V1.EndPoint'
   _globals['_PARSER']._serialized_start=147
-  _globals['_PARSER']._serialized_end=516
-  _globals['_GENERICPARSERCOMMON']._serialized_start=519
-  _globals['_GENERICPARSERCOMMON']._serialized_end=664
-  _globals['_AUDITTRAILSV1PARSER']._serialized_start=666
-  _globals['_AUDITTRAILSV1PARSER']._serialized_end=687
-  _globals['_CLOUDLOGGINGPARSER']._serialized_start=689
-  _globals['_CLOUDLOGGINGPARSER']._serialized_end=709
+  _globals['_PARSER']._serialized_end=528
+  _globals['_GENERICPARSERCOMMON']._serialized_start=531
+  _globals['_GENERICPARSERCOMMON']._serialized_end=714
+  _globals['_AUDITTRAILSV1PARSER']._serialized_start=716
+  _globals['_AUDITTRAILSV1PARSER']._serialized_end=737
+  _globals['_CLOUDLOGGINGPARSER']._serialized_start=739
+  _globals['_CLOUDLOGGINGPARSER']._serialized_end=759
 # @@protoc_insertion_point(module_scope)

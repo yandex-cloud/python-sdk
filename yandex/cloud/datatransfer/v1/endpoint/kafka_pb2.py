@@ -16,7 +16,7 @@ from yandex.cloud.datatransfer.v1.endpoint import parsers_pb2 as yandex_dot_clou
 from yandex.cloud.datatransfer.v1.endpoint import serializers_pb2 as yandex_dot_cloud_dot_datatransfer_dot_v1_dot_endpoint_dot_serializers__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n1yandex/cloud/datatransfer/v1/endpoint/kafka.proto\x12%yandex.cloud.datatransfer.v1.endpoint\x1a\x32yandex/cloud/datatransfer/v1/endpoint/common.proto\x1a\x33yandex/cloud/datatransfer/v1/endpoint/parsers.proto\x1a\x37yandex/cloud/datatransfer/v1/endpoint/serializers.proto\"\x89\x01\n\x16KafkaConnectionOptions\x12\x14\n\ncluster_id\x18\x01 \x01(\tH\x00\x12K\n\non_premise\x18\x02 \x01(\x0b\x32\x35.yandex.cloud.datatransfer.v1.endpoint.OnPremiseKafkaH\x00\x42\x0c\n\nconnection\"z\n\x0eOnPremiseKafka\x12\x13\n\x0b\x62roker_urls\x18\x01 \x03(\t\x12@\n\x08tls_mode\x18\x05 \x01(\x0b\x32..yandex.cloud.datatransfer.v1.endpoint.TLSMode\x12\x11\n\tsubnet_id\x18\x04 \x01(\t\"\xa3\x01\n\tKafkaAuth\x12H\n\x04sasl\x18\x01 \x01(\x0b\x32\x38.yandex.cloud.datatransfer.v1.endpoint.KafkaSaslSecurityH\x00\x12@\n\x07no_auth\x18\x02 \x01(\x0b\x32-.yandex.cloud.datatransfer.v1.endpoint.NoAuthH\x00\x42\n\n\x08security\"\xac\x01\n\x11KafkaSaslSecurity\x12\x0c\n\x04user\x18\x01 \x01(\t\x12?\n\x08password\x18\x04 \x01(\x0b\x32-.yandex.cloud.datatransfer.v1.endpoint.Secret\x12H\n\tmechanism\x18\x03 \x01(\x0e\x32\x35.yandex.cloud.datatransfer.v1.endpoint.KafkaMechanism\"\xfc\x02\n\x0bKafkaSource\x12Q\n\nconnection\x18\x01 \x01(\x0b\x32=.yandex.cloud.datatransfer.v1.endpoint.KafkaConnectionOptions\x12>\n\x04\x61uth\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.datatransfer.v1.endpoint.KafkaAuth\x12\x17\n\x0fsecurity_groups\x18\x03 \x03(\t\x12\x16\n\ntopic_name\x18\x04 \x01(\tB\x02\x18\x01\x12U\n\x0btransformer\x18\x05 \x01(\x0b\x32@.yandex.cloud.datatransfer.v1.endpoint.DataTransformationOptions\x12=\n\x06parser\x18\x07 \x01(\x0b\x32-.yandex.cloud.datatransfer.v1.endpoint.Parser\x12\x13\n\x0btopic_names\x18\x08 \x03(\t\"\xd9\x02\n\x0bKafkaTarget\x12Q\n\nconnection\x18\x01 \x01(\x0b\x32=.yandex.cloud.datatransfer.v1.endpoint.KafkaConnectionOptions\x12>\n\x04\x61uth\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.datatransfer.v1.endpoint.KafkaAuth\x12\x17\n\x0fsecurity_groups\x18\x03 \x03(\t\x12W\n\x0etopic_settings\x18\x07 \x01(\x0b\x32?.yandex.cloud.datatransfer.v1.endpoint.KafkaTargetTopicSettings\x12\x45\n\nserializer\x18\x08 \x01(\x0b\x32\x31.yandex.cloud.datatransfer.v1.endpoint.Serializer\"\x8e\x01\n\x18KafkaTargetTopicSettings\x12H\n\x05topic\x18\x01 \x01(\x0b\x32\x37.yandex.cloud.datatransfer.v1.endpoint.KafkaTargetTopicH\x00\x12\x16\n\x0ctopic_prefix\x18\x02 \x01(\tH\x00\x42\x10\n\x0etopic_settings\"=\n\x10KafkaTargetTopic\x12\x12\n\ntopic_name\x18\x01 \x01(\t\x12\x15\n\rsave_tx_order\x18\x02 \x01(\x08*i\n\x0eKafkaMechanism\x12\x1f\n\x1bKAFKA_MECHANISM_UNSPECIFIED\x10\x00\x12\x1a\n\x16KAFKA_MECHANISM_SHA256\x10\x01\x12\x1a\n\x16KAFKA_MECHANISM_SHA512\x10\x02\x42\xa7\x01\n)yandex.cloud.api.datatransfer.v1.endpointZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1/endpoint;endpoint\xaa\x02%Yandex.Cloud.Datatransfer.V1.EndPointb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n1yandex/cloud/datatransfer/v1/endpoint/kafka.proto\x12%yandex.cloud.datatransfer.v1.endpoint\x1a\x32yandex/cloud/datatransfer/v1/endpoint/common.proto\x1a\x33yandex/cloud/datatransfer/v1/endpoint/parsers.proto\x1a\x37yandex/cloud/datatransfer/v1/endpoint/serializers.proto\"\x89\x01\n\x16KafkaConnectionOptions\x12\x14\n\ncluster_id\x18\x01 \x01(\tH\x00\x12K\n\non_premise\x18\x02 \x01(\x0b\x32\x35.yandex.cloud.datatransfer.v1.endpoint.OnPremiseKafkaH\x00\x42\x0c\n\nconnection\"\x80\x01\n\x0eOnPremiseKafka\x12\x13\n\x0b\x62roker_urls\x18\x01 \x03(\t\x12\x11\n\tsubnet_id\x18\x04 \x01(\t\x12@\n\x08tls_mode\x18\x05 \x01(\x0b\x32..yandex.cloud.datatransfer.v1.endpoint.TLSModeJ\x04\x08\x02\x10\x04\"\xa3\x01\n\tKafkaAuth\x12H\n\x04sasl\x18\x01 \x01(\x0b\x32\x38.yandex.cloud.datatransfer.v1.endpoint.KafkaSaslSecurityH\x00\x12@\n\x07no_auth\x18\x02 \x01(\x0b\x32-.yandex.cloud.datatransfer.v1.endpoint.NoAuthH\x00\x42\n\n\x08security\"\xb2\x01\n\x11KafkaSaslSecurity\x12\x0c\n\x04user\x18\x01 \x01(\t\x12H\n\tmechanism\x18\x03 \x01(\x0e\x32\x35.yandex.cloud.datatransfer.v1.endpoint.KafkaMechanism\x12?\n\x08password\x18\x04 \x01(\x0b\x32-.yandex.cloud.datatransfer.v1.endpoint.SecretJ\x04\x08\x02\x10\x03\"\x82\x03\n\x0bKafkaSource\x12Q\n\nconnection\x18\x01 \x01(\x0b\x32=.yandex.cloud.datatransfer.v1.endpoint.KafkaConnectionOptions\x12>\n\x04\x61uth\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.datatransfer.v1.endpoint.KafkaAuth\x12\x17\n\x0fsecurity_groups\x18\x03 \x03(\t\x12\x16\n\ntopic_name\x18\x04 \x01(\tB\x02\x18\x01\x12U\n\x0btransformer\x18\x05 \x01(\x0b\x32@.yandex.cloud.datatransfer.v1.endpoint.DataTransformationOptions\x12=\n\x06parser\x18\x07 \x01(\x0b\x32-.yandex.cloud.datatransfer.v1.endpoint.Parser\x12\x13\n\x0btopic_names\x18\x08 \x03(\tJ\x04\x08\x06\x10\x07\"\xdf\x02\n\x0bKafkaTarget\x12Q\n\nconnection\x18\x01 \x01(\x0b\x32=.yandex.cloud.datatransfer.v1.endpoint.KafkaConnectionOptions\x12>\n\x04\x61uth\x18\x02 \x01(\x0b\x32\x30.yandex.cloud.datatransfer.v1.endpoint.KafkaAuth\x12\x17\n\x0fsecurity_groups\x18\x03 \x03(\t\x12W\n\x0etopic_settings\x18\x07 \x01(\x0b\x32?.yandex.cloud.datatransfer.v1.endpoint.KafkaTargetTopicSettings\x12\x45\n\nserializer\x18\x08 \x01(\x0b\x32\x31.yandex.cloud.datatransfer.v1.endpoint.SerializerJ\x04\x08\x04\x10\x07\"\x8e\x01\n\x18KafkaTargetTopicSettings\x12H\n\x05topic\x18\x01 \x01(\x0b\x32\x37.yandex.cloud.datatransfer.v1.endpoint.KafkaTargetTopicH\x00\x12\x16\n\x0ctopic_prefix\x18\x02 \x01(\tH\x00\x42\x10\n\x0etopic_settings\"=\n\x10KafkaTargetTopic\x12\x12\n\ntopic_name\x18\x01 \x01(\t\x12\x15\n\rsave_tx_order\x18\x02 \x01(\x08*i\n\x0eKafkaMechanism\x12\x1f\n\x1bKAFKA_MECHANISM_UNSPECIFIED\x10\x00\x12\x1a\n\x16KAFKA_MECHANISM_SHA256\x10\x01\x12\x1a\n\x16KAFKA_MECHANISM_SHA512\x10\x02\x42\xa7\x01\n)yandex.cloud.api.datatransfer.v1.endpointZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1/endpoint;endpoint\xaa\x02%Yandex.Cloud.Datatransfer.V1.EndPointb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -27,22 +27,22 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._serialized_options = b'\n)yandex.cloud.api.datatransfer.v1.endpointZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/datatransfer/v1/endpoint;endpoint\252\002%Yandex.Cloud.Datatransfer.V1.EndPoint'
   _KAFKASOURCE.fields_by_name['topic_name']._options = None
   _KAFKASOURCE.fields_by_name['topic_name']._serialized_options = b'\030\001'
-  _globals['_KAFKAMECHANISM']._serialized_start=1798
-  _globals['_KAFKAMECHANISM']._serialized_end=1903
+  _globals['_KAFKAMECHANISM']._serialized_start=1823
+  _globals['_KAFKAMECHANISM']._serialized_end=1928
   _globals['_KAFKACONNECTIONOPTIONS']._serialized_start=255
   _globals['_KAFKACONNECTIONOPTIONS']._serialized_end=392
-  _globals['_ONPREMISEKAFKA']._serialized_start=394
-  _globals['_ONPREMISEKAFKA']._serialized_end=516
-  _globals['_KAFKAAUTH']._serialized_start=519
-  _globals['_KAFKAAUTH']._serialized_end=682
-  _globals['_KAFKASASLSECURITY']._serialized_start=685
-  _globals['_KAFKASASLSECURITY']._serialized_end=857
-  _globals['_KAFKASOURCE']._serialized_start=860
-  _globals['_KAFKASOURCE']._serialized_end=1240
-  _globals['_KAFKATARGET']._serialized_start=1243
-  _globals['_KAFKATARGET']._serialized_end=1588
-  _globals['_KAFKATARGETTOPICSETTINGS']._serialized_start=1591
-  _globals['_KAFKATARGETTOPICSETTINGS']._serialized_end=1733
-  _globals['_KAFKATARGETTOPIC']._serialized_start=1735
-  _globals['_KAFKATARGETTOPIC']._serialized_end=1796
+  _globals['_ONPREMISEKAFKA']._serialized_start=395
+  _globals['_ONPREMISEKAFKA']._serialized_end=523
+  _globals['_KAFKAAUTH']._serialized_start=526
+  _globals['_KAFKAAUTH']._serialized_end=689
+  _globals['_KAFKASASLSECURITY']._serialized_start=692
+  _globals['_KAFKASASLSECURITY']._serialized_end=870
+  _globals['_KAFKASOURCE']._serialized_start=873
+  _globals['_KAFKASOURCE']._serialized_end=1259
+  _globals['_KAFKATARGET']._serialized_start=1262
+  _globals['_KAFKATARGET']._serialized_end=1613
+  _globals['_KAFKATARGETTOPICSETTINGS']._serialized_start=1616
+  _globals['_KAFKATARGETTOPICSETTINGS']._serialized_end=1758
+  _globals['_KAFKATARGETTOPIC']._serialized_start=1760
+  _globals['_KAFKATARGETTOPIC']._serialized_end=1821
 # @@protoc_insertion_point(module_scope)
