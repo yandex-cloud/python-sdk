@@ -47,6 +47,11 @@ class FederationServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.AddFederatedUserAccountsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
+        self.DeleteUserAccounts = channel.unary_unary(
+                '/yandex.cloud.organizationmanager.v1.saml.FederationService/DeleteUserAccounts',
+                request_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.DeleteFederatedUserAccountsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
         self.ListUserAccounts = channel.unary_unary(
                 '/yandex.cloud.organizationmanager.v1.saml.FederationService/ListUserAccounts',
                 request_serializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.ListFederatedUserAccountsRequest.SerializeToString,
@@ -107,6 +112,13 @@ class FederationServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def DeleteUserAccounts(self, request, context):
+        """Deletes users from the specified federation.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListUserAccounts(self, request, context):
         """Lists users for the specified federation.
         """
@@ -152,6 +164,11 @@ def add_FederationServiceServicer_to_server(servicer, server):
             'AddUserAccounts': grpc.unary_unary_rpc_method_handler(
                     servicer.AddUserAccounts,
                     request_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.AddFederatedUserAccountsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'DeleteUserAccounts': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteUserAccounts,
+                    request_deserializer=yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.DeleteFederatedUserAccountsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'ListUserAccounts': grpc.unary_unary_rpc_method_handler(
@@ -273,6 +290,23 @@ class FederationService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.organizationmanager.v1.saml.FederationService/AddUserAccounts',
             yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.AddFederatedUserAccountsRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteUserAccounts(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.organizationmanager.v1.saml.FederationService/DeleteUserAccounts',
+            yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_saml_dot_federation__service__pb2.DeleteFederatedUserAccountsRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
