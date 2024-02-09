@@ -7,7 +7,8 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class DockerImageServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing Docker Images.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -23,7 +24,8 @@ class DockerImageServiceStub(object):
 
 
 class DockerImageServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing Docker Images.
+    """
 
     def Activate(self, request, context):
         """Activates shared docker image in project
@@ -48,7 +50,8 @@ def add_DockerImageServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class DockerImageService(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing Docker Images.
+    """
 
     @staticmethod
     def Activate(request,

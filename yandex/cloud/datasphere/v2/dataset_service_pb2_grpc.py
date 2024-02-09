@@ -7,7 +7,8 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class DatasetServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing Datasets.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -28,7 +29,8 @@ class DatasetServiceStub(object):
 
 
 class DatasetServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing Datasets.
+    """
 
     def Activate(self, request, context):
         """Activates shared dataset for project
@@ -65,7 +67,8 @@ def add_DatasetServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class DatasetService(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing Datasets.
+    """
 
     @staticmethod
     def Activate(request,

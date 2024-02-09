@@ -16,7 +16,7 @@ from yandex.cloud.monitoring.v3 import parametrization_pb2 as yandex_dot_cloud_d
 from yandex.cloud.monitoring.v3 import widget_pb2 as yandex_dot_cloud_dot_monitoring_dot_v3_dot_widget__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*yandex/cloud/monitoring/v3/dashboard.proto\x12\x1ayandex.cloud.monitoring.v3\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x30yandex/cloud/monitoring/v3/parametrization.proto\x1a\'yandex/cloud/monitoring/v3/widget.proto\"\xf0\x03\n\tDashboard\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\tfolder_id\x18\x03 \x01(\tH\x00\x12.\n\ncreated_at\x18\x14 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0bmodified_at\x18\x15 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x12\n\ncreated_by\x18\x16 \x01(\t\x12\x13\n\x0bmodified_by\x18\x17 \x01(\t\x12\x0c\n\x04name\x18\x18 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x19 \x01(\t\x12\x41\n\x06labels\x18\x1a \x03(\x0b\x32\x31.yandex.cloud.monitoring.v3.Dashboard.LabelsEntry\x12\r\n\x05title\x18\x1b \x01(\t\x12\x33\n\x07widgets\x18\x1c \x03(\x0b\x32\".yandex.cloud.monitoring.v3.Widget\x12\x44\n\x0fparametrization\x18\x1d \x01(\x0b\x32+.yandex.cloud.monitoring.v3.Parametrization\x12\x0c\n\x04\x65tag\x18\x1e \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0b\n\tcontainerBk\n\x1eyandex.cloud.api.monitoring.v3ZIgithub.com/yandex-cloud/go-genproto/yandex/cloud/monitoring/v3;monitoringb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*yandex/cloud/monitoring/v3/dashboard.proto\x12\x1ayandex.cloud.monitoring.v3\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x30yandex/cloud/monitoring/v3/parametrization.proto\x1a\'yandex/cloud/monitoring/v3/widget.proto\"\xa0\x04\n\tDashboard\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\tfolder_id\x18\x03 \x01(\tH\x00\x12.\n\ncreated_at\x18\x14 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0bmodified_at\x18\x15 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x12\n\ncreated_by\x18\x16 \x01(\t\x12\x13\n\x0bmodified_by\x18\x17 \x01(\t\x12\x0c\n\x04name\x18\x18 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x19 \x01(\t\x12\x41\n\x06labels\x18\x1a \x03(\x0b\x32\x31.yandex.cloud.monitoring.v3.Dashboard.LabelsEntry\x12\r\n\x05title\x18\x1b \x01(\t\x12\x33\n\x07widgets\x18\x1c \x03(\x0b\x32\".yandex.cloud.monitoring.v3.Widget\x12\x44\n\x0fparametrization\x18\x1d \x01(\x0b\x32+.yandex.cloud.monitoring.v3.Parametrization\x12\x0c\n\x04\x65tag\x18\x1e \x01(\t\x12\x12\n\nmanaged_by\x18  \x01(\t\x12\x14\n\x0cmanaged_link\x18! \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0b\n\tcontainerJ\x04\x08\x1f\x10 Bk\n\x1eyandex.cloud.api.monitoring.v3ZIgithub.com/yandex-cloud/go-genproto/yandex/cloud/monitoring/v3;monitoringb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -28,7 +28,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _DASHBOARD_LABELSENTRY._options = None
   _DASHBOARD_LABELSENTRY._serialized_options = b'8\001'
   _globals['_DASHBOARD']._serialized_start=199
-  _globals['_DASHBOARD']._serialized_end=695
-  _globals['_DASHBOARD_LABELSENTRY']._serialized_start=637
-  _globals['_DASHBOARD_LABELSENTRY']._serialized_end=682
+  _globals['_DASHBOARD']._serialized_end=743
+  _globals['_DASHBOARD_LABELSENTRY']._serialized_start=679
+  _globals['_DASHBOARD_LABELSENTRY']._serialized_end=724
 # @@protoc_insertion_point(module_scope)

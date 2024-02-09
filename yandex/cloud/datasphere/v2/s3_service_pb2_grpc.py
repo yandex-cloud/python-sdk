@@ -7,7 +7,8 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class S3ServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing S3 configurations.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -28,7 +29,8 @@ class S3ServiceStub(object):
 
 
 class S3ServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing S3 configurations.
+    """
 
     def Activate(self, request, context):
         """Activates shared s3 for project
@@ -65,7 +67,8 @@ def add_S3ServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class S3Service(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing S3 configurations.
+    """
 
     @staticmethod
     def Activate(request,
