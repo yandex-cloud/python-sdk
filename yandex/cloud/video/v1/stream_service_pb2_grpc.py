@@ -8,7 +8,8 @@ from yandex.cloud.video.v1 import stream_service_pb2 as yandex_dot_cloud_dot_vid
 
 
 class StreamServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """Stream management service.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -49,40 +50,47 @@ class StreamServiceStub(object):
 
 
 class StreamServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """Stream management service.
+    """
 
     def Get(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Returns the specific stream.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """List streams for channel.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Create stream.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Update stream.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Delete stream.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def PerformAction(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Perform an action on the episode.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -128,7 +136,8 @@ def add_StreamServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class StreamService(object):
-    """Missing associated documentation comment in .proto file."""
+    """Stream management service.
+    """
 
     @staticmethod
     def Get(request,

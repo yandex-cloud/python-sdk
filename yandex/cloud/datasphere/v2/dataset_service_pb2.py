@@ -17,7 +17,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n0yandex/cloud/datasphere/v2/dataset_service.proto\x12\x1ayandex.cloud.datasphere.v2\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"\\\n\x16\x41\x63tivateDatasetRequest\x12 \n\ndataset_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12 \n\nproject_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"^\n\x18\x44\x65\x61\x63tivateDatasetRequest\x12 \n\ndataset_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12 \n\nproject_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=502\xeb\x02\n\x0e\x44\x61tasetService\x12\xa7\x01\n\x08\x41\x63tivate\x12\x32.yandex.cloud.datasphere.v2.ActivateDatasetRequest\x1a!.yandex.cloud.operation.Operation\"D\xb2\xd2*\x17\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02#\"\x1e/datasphere/v2/docker/activate:\x01*\x12\xae\x01\n\nDeactivate\x12\x34.yandex.cloud.datasphere.v2.DeactivateDatasetRequest\x1a!.yandex.cloud.operation.Operation\"G\xb2\xd2*\x17\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02&\"!/datasphere/v2/dataset/deactivate:\x01*Bk\n\x1eyandex.cloud.api.datasphere.v2ZIgithub.com/yandex-cloud/go-genproto/yandex/cloud/datasphere/v2;datasphereb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n0yandex/cloud/datasphere/v2/dataset_service.proto\x12\x1ayandex.cloud.datasphere.v2\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"\\\n\x16\x41\x63tivateDatasetRequest\x12 \n\ndataset_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12 \n\nproject_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"^\n\x18\x44\x65\x61\x63tivateDatasetRequest\x12 \n\ndataset_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12 \n\nproject_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=502\xec\x02\n\x0e\x44\x61tasetService\x12\xa8\x01\n\x08\x41\x63tivate\x12\x32.yandex.cloud.datasphere.v2.ActivateDatasetRequest\x1a!.yandex.cloud.operation.Operation\"E\xb2\xd2*\x17\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02$\"\x1f/datasphere/v2/dataset/activate:\x01*\x12\xae\x01\n\nDeactivate\x12\x34.yandex.cloud.datasphere.v2.DeactivateDatasetRequest\x1a!.yandex.cloud.operation.Operation\"G\xb2\xd2*\x17\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02&\"!/datasphere/v2/dataset/deactivate:\x01*Bk\n\x1eyandex.cloud.api.datasphere.v2ZIgithub.com/yandex-cloud/go-genproto/yandex/cloud/datasphere/v2;datasphereb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,7 +35,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _DEACTIVATEDATASETREQUEST.fields_by_name['project_id']._options = None
   _DEACTIVATEDATASETREQUEST.fields_by_name['project_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _DATASETSERVICE.methods_by_name['Activate']._options = None
-  _DATASETSERVICE.methods_by_name['Activate']._serialized_options = b'\262\322*\027\022\025google.protobuf.Empty\202\323\344\223\002#\"\036/datasphere/v2/docker/activate:\001*'
+  _DATASETSERVICE.methods_by_name['Activate']._serialized_options = b'\262\322*\027\022\025google.protobuf.Empty\202\323\344\223\002$\"\037/datasphere/v2/dataset/activate:\001*'
   _DATASETSERVICE.methods_by_name['Deactivate']._options = None
   _DATASETSERVICE.methods_by_name['Deactivate']._serialized_options = b'\262\322*\027\022\025google.protobuf.Empty\202\323\344\223\002&\"!/datasphere/v2/dataset/deactivate:\001*'
   _globals['_ACTIVATEDATASETREQUEST']._serialized_start=215
@@ -43,5 +43,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_DEACTIVATEDATASETREQUEST']._serialized_start=309
   _globals['_DEACTIVATEDATASETREQUEST']._serialized_end=403
   _globals['_DATASETSERVICE']._serialized_start=406
-  _globals['_DATASETSERVICE']._serialized_end=769
+  _globals['_DATASETSERVICE']._serialized_end=770
 # @@protoc_insertion_point(module_scope)

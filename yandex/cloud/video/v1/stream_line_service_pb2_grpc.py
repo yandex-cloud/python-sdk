@@ -62,49 +62,57 @@ class StreamLineServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def Get(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Returns the specific stream line.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """List lines for channel.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Create stream line.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Update stream line.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Delete stream line.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def PerformAction(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Perform an action on the line.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetStreamKey(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Returns unique stream key.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateStreamKey(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Change stream key.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')

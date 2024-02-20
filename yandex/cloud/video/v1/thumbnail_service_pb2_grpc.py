@@ -41,25 +41,29 @@ class ThumbnailServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def List(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """List thumbnails for channel.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Create thumbnail.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def BatchGenerateDownloadURLs(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Generate urls for download images.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GenerateUploadURL(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Generate url for upload image.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')

@@ -8,7 +8,8 @@ from yandex.cloud.video.v1 import channel_service_pb2 as yandex_dot_cloud_dot_vi
 
 
 class ChannelServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """Channel management service.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -44,34 +45,40 @@ class ChannelServiceStub(object):
 
 
 class ChannelServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """Channel management service.
+    """
 
     def Get(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Returns the specific channel.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """List channels for organization.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Create channel.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Update channel.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Delete channel.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -112,7 +119,8 @@ def add_ChannelServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class ChannelService(object):
-    """Missing associated documentation comment in .proto file."""
+    """Channel management service.
+    """
 
     @staticmethod
     def Get(request,
