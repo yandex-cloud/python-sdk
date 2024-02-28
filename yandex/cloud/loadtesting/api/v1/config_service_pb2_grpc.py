@@ -32,6 +32,11 @@ class ConfigServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_config__service__pb2.ListConfigsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_config__service__pb2.ListConfigsResponse.FromString,
                 )
+        self.Delete = channel.unary_unary(
+                '/yandex.cloud.loadtesting.api.v1.ConfigService/Delete',
+                request_serializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_config__service__pb2.DeleteConfigRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
 
 
 class ConfigServiceServicer(object):
@@ -61,6 +66,13 @@ class ConfigServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Delete(self, request, context):
+        """Deletes the specified config.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ConfigServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -78,6 +90,11 @@ def add_ConfigServiceServicer_to_server(servicer, server):
                     servicer.List,
                     request_deserializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_config__service__pb2.ListConfigsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_config__service__pb2.ListConfigsResponse.SerializeToString,
+            ),
+            'Delete': grpc.unary_unary_rpc_method_handler(
+                    servicer.Delete,
+                    request_deserializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_config__service__pb2.DeleteConfigRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -138,5 +155,22 @@ class ConfigService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.loadtesting.api.v1.ConfigService/List',
             yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_config__service__pb2.ListConfigsRequest.SerializeToString,
             yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_config__service__pb2.ListConfigsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Delete(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.loadtesting.api.v1.ConfigService/Delete',
+            yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_config__service__pb2.DeleteConfigRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

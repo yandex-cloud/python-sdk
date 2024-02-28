@@ -18,7 +18,7 @@ from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 from yandex.cloud.loadtesting.api.v1.config import config_pb2 as yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_config_dot_config__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n4yandex/cloud/loadtesting/api/v1/config_service.proto\x12\x1fyandex.cloud.loadtesting.api.v1\x1a\x1cgoogle/api/annotations.proto\x1a&yandex/cloud/operation/operation.proto\x1a yandex/cloud/api/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a\x33yandex/cloud/loadtesting/api/v1/config/config.proto\"W\n\x13\x43reateConfigRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x15\n\x0byaml_string\x18\x02 \x01(\tH\x00\x42\x08\n\x06\x63onfig\")\n\x14\x43reateConfigMetadata\x12\x11\n\tconfig_id\x18\x01 \x01(\t\"%\n\x10GetConfigRequest\x12\x11\n\tconfig_id\x18\x01 \x01(\t\"N\n\x12ListConfigsRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\"o\n\x13ListConfigsResponse\x12?\n\x07\x63onfigs\x18\x01 \x03(\x0b\x32..yandex.cloud.loadtesting.api.v1.config.Config\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xf9\x03\n\rConfigService\x12\xb2\x01\n\x06\x43reate\x12\x34.yandex.cloud.loadtesting.api.v1.CreateConfigRequest\x1a!.yandex.cloud.operation.Operation\"O\xb2\xd2*%\n\x14\x43reateConfigMetadata\x12\rconfig.Config\x82\xd3\xe4\x93\x02 \"\x1b/loadtesting/api/v1/configs:\x01*\x12\x99\x01\n\x03Get\x12\x31.yandex.cloud.loadtesting.api.v1.GetConfigRequest\x1a..yandex.cloud.loadtesting.api.v1.config.Config\"/\x82\xd3\xe4\x93\x02)\x12\'/loadtesting/api/v1/configs/{config_id}\x12\x96\x01\n\x04List\x12\x33.yandex.cloud.loadtesting.api.v1.ListConfigsRequest\x1a\x34.yandex.cloud.loadtesting.api.v1.ListConfigsResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/loadtesting/api/v1/configsBv\n#yandex.cloud.api.loadtesting.api.v1ZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadtesting/api/v1;loadtestingb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n4yandex/cloud/loadtesting/api/v1/config_service.proto\x12\x1fyandex.cloud.loadtesting.api.v1\x1a\x1cgoogle/api/annotations.proto\x1a&yandex/cloud/operation/operation.proto\x1a yandex/cloud/api/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a\x33yandex/cloud/loadtesting/api/v1/config/config.proto\"k\n\x13\x43reateConfigRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x15\n\x0byaml_string\x18\x02 \x01(\tH\x00\x12\x0c\n\x04name\x18\n \x01(\tB\x08\n\x06\x63onfigJ\x04\x08\x03\x10\n\")\n\x14\x43reateConfigMetadata\x12\x11\n\tconfig_id\x18\x01 \x01(\t\"%\n\x10GetConfigRequest\x12\x11\n\tconfig_id\x18\x01 \x01(\t\"j\n\x12ListConfigsRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"o\n\x13ListConfigsResponse\x12?\n\x07\x63onfigs\x18\x01 \x03(\x0b\x32..yandex.cloud.loadtesting.api.v1.config.Config\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"(\n\x13\x44\x65leteConfigRequest\x12\x11\n\tconfig_id\x18\x01 \x01(\t\")\n\x14\x44\x65leteConfigMetadata\x12\x11\n\tconfig_id\x18\x01 \x01(\t2\xbf\x05\n\rConfigService\x12\xb2\x01\n\x06\x43reate\x12\x34.yandex.cloud.loadtesting.api.v1.CreateConfigRequest\x1a!.yandex.cloud.operation.Operation\"O\xb2\xd2*%\n\x14\x43reateConfigMetadata\x12\rconfig.Config\x82\xd3\xe4\x93\x02 \"\x1b/loadtesting/api/v1/configs:\x01*\x12\x99\x01\n\x03Get\x12\x31.yandex.cloud.loadtesting.api.v1.GetConfigRequest\x1a..yandex.cloud.loadtesting.api.v1.config.Config\"/\x82\xd3\xe4\x93\x02)\x12\'/loadtesting/api/v1/configs/{config_id}\x12\x96\x01\n\x04List\x12\x33.yandex.cloud.loadtesting.api.v1.ListConfigsRequest\x1a\x34.yandex.cloud.loadtesting.api.v1.ListConfigsResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/loadtesting/api/v1/configs\x12\xc3\x01\n\x06\x44\x65lete\x12\x34.yandex.cloud.loadtesting.api.v1.DeleteConfigRequest\x1a!.yandex.cloud.operation.Operation\"`\xb2\xd2*-\n\x14\x44\x65leteConfigMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02)*\'/loadtesting/api/v1/configs/{config_id}Bv\n#yandex.cloud.api.loadtesting.api.v1ZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadtesting/api/v1;loadtestingb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -29,22 +29,30 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._serialized_options = b'\n#yandex.cloud.api.loadtesting.api.v1ZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadtesting/api/v1;loadtesting'
   _CREATECONFIGREQUEST.fields_by_name['folder_id']._options = None
   _CREATECONFIGREQUEST.fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTCONFIGSREQUEST.fields_by_name['filter']._options = None
+  _LISTCONFIGSREQUEST.fields_by_name['filter']._serialized_options = b'\212\3101\006<=1000'
   _CONFIGSERVICE.methods_by_name['Create']._options = None
   _CONFIGSERVICE.methods_by_name['Create']._serialized_options = b'\262\322*%\n\024CreateConfigMetadata\022\rconfig.Config\202\323\344\223\002 \"\033/loadtesting/api/v1/configs:\001*'
   _CONFIGSERVICE.methods_by_name['Get']._options = None
   _CONFIGSERVICE.methods_by_name['Get']._serialized_options = b'\202\323\344\223\002)\022\'/loadtesting/api/v1/configs/{config_id}'
   _CONFIGSERVICE.methods_by_name['List']._options = None
   _CONFIGSERVICE.methods_by_name['List']._serialized_options = b'\202\323\344\223\002\035\022\033/loadtesting/api/v1/configs'
+  _CONFIGSERVICE.methods_by_name['Delete']._options = None
+  _CONFIGSERVICE.methods_by_name['Delete']._serialized_options = b'\262\322*-\n\024DeleteConfigMetadata\022\025google.protobuf.Empty\202\323\344\223\002)*\'/loadtesting/api/v1/configs/{config_id}'
   _globals['_CREATECONFIGREQUEST']._serialized_start=277
-  _globals['_CREATECONFIGREQUEST']._serialized_end=364
-  _globals['_CREATECONFIGMETADATA']._serialized_start=366
-  _globals['_CREATECONFIGMETADATA']._serialized_end=407
-  _globals['_GETCONFIGREQUEST']._serialized_start=409
-  _globals['_GETCONFIGREQUEST']._serialized_end=446
-  _globals['_LISTCONFIGSREQUEST']._serialized_start=448
-  _globals['_LISTCONFIGSREQUEST']._serialized_end=526
-  _globals['_LISTCONFIGSRESPONSE']._serialized_start=528
-  _globals['_LISTCONFIGSRESPONSE']._serialized_end=639
-  _globals['_CONFIGSERVICE']._serialized_start=642
-  _globals['_CONFIGSERVICE']._serialized_end=1147
+  _globals['_CREATECONFIGREQUEST']._serialized_end=384
+  _globals['_CREATECONFIGMETADATA']._serialized_start=386
+  _globals['_CREATECONFIGMETADATA']._serialized_end=427
+  _globals['_GETCONFIGREQUEST']._serialized_start=429
+  _globals['_GETCONFIGREQUEST']._serialized_end=466
+  _globals['_LISTCONFIGSREQUEST']._serialized_start=468
+  _globals['_LISTCONFIGSREQUEST']._serialized_end=574
+  _globals['_LISTCONFIGSRESPONSE']._serialized_start=576
+  _globals['_LISTCONFIGSRESPONSE']._serialized_end=687
+  _globals['_DELETECONFIGREQUEST']._serialized_start=689
+  _globals['_DELETECONFIGREQUEST']._serialized_end=729
+  _globals['_DELETECONFIGMETADATA']._serialized_start=731
+  _globals['_DELETECONFIGMETADATA']._serialized_end=772
+  _globals['_CONFIGSERVICE']._serialized_start=775
+  _globals['_CONFIGSERVICE']._serialized_end=1478
 # @@protoc_insertion_point(module_scope)

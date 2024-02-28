@@ -16,7 +16,7 @@ from yandex.cloud.loadtesting.api.v1.test import status_pb2 as yandex_dot_cloud_
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2yandex/cloud/loadtesting/api/v1/test/summary.proto\x12$yandex.cloud.loadtesting.api.v1.test\x1a:yandex/cloud/loadtesting/api/v1/test/imbalance_point.proto\x1a\x31yandex/cloud/loadtesting/api/v1/test/status.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xdf\x02\n\x07Summary\x12<\n\x06status\x18\x01 \x01(\x0e\x32,.yandex.cloud.loadtesting.api.v1.test.Status\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x12\n\ncreated_by\x18\x03 \x01(\t\x12.\n\nstarted_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0b\x66inished_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x13\n\x0bis_finished\x18\x06 \x01(\x08\x12\r\n\x05\x65rror\x18\x07 \x01(\t\x12M\n\x0fimbalance_point\x18\x08 \x01(\x0b\x32\x34.yandex.cloud.loadtesting.api.v1.test.ImbalancePointBy\n(yandex.cloud.api.loadtesting.api.v1.testZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadtesting/api/v1/test;testb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2yandex/cloud/loadtesting/api/v1/test/summary.proto\x12$yandex.cloud.loadtesting.api.v1.test\x1a:yandex/cloud/loadtesting/api/v1/test/imbalance_point.proto\x1a\x31yandex/cloud/loadtesting/api/v1/test/status.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xfa\x02\n\x07Summary\x12<\n\x06status\x18\x01 \x01(\x0e\x32,.yandex.cloud.loadtesting.api.v1.test.Status\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x12\n\ncreated_by\x18\x03 \x01(\t\x12.\n\nstarted_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0b\x66inished_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x13\n\x0bis_finished\x18\x06 \x01(\x08\x12\r\n\x05\x65rror\x18\x07 \x01(\t\x12M\n\x0fimbalance_point\x18\x08 \x01(\x0b\x32\x34.yandex.cloud.loadtesting.api.v1.test.ImbalancePoint\x12\x19\n\x11\x61ssigned_agent_id\x18\t \x01(\tBy\n(yandex.cloud.api.loadtesting.api.v1.testZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadtesting/api/v1/test;testb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -26,5 +26,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n(yandex.cloud.api.loadtesting.api.v1.testZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadtesting/api/v1/test;test'
   _globals['_SUMMARY']._serialized_start=237
-  _globals['_SUMMARY']._serialized_end=588
+  _globals['_SUMMARY']._serialized_end=615
 # @@protoc_insertion_point(module_scope)

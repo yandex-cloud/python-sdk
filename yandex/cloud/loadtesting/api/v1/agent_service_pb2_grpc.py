@@ -37,6 +37,11 @@ class AgentServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_agent__service__pb2.DeleteAgentRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
+        self.Update = channel.unary_unary(
+                '/yandex.cloud.loadtesting.api.v1.AgentService/Update',
+                request_serializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_agent__service__pb2.UpdateAgentRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
 
 
 class AgentServiceServicer(object):
@@ -77,6 +82,13 @@ class AgentServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Update(self, request, context):
+        """Updates the specified agent.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_AgentServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -98,6 +110,11 @@ def add_AgentServiceServicer_to_server(servicer, server):
             'Delete': grpc.unary_unary_rpc_method_handler(
                     servicer.Delete,
                     request_deserializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_agent__service__pb2.DeleteAgentRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'Update': grpc.unary_unary_rpc_method_handler(
+                    servicer.Update,
+                    request_deserializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_agent__service__pb2.UpdateAgentRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
@@ -175,6 +192,23 @@ class AgentService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.loadtesting.api.v1.AgentService/Delete',
             yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_agent__service__pb2.DeleteAgentRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Update(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.loadtesting.api.v1.AgentService/Update',
+            yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_agent__service__pb2.UpdateAgentRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
