@@ -161,7 +161,7 @@ class ProjectServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Execute(self, request, context):
-        """Executes code in the specified cell or notebook.
+        """// Executes code of the specified notebook using configuration defined in the project settings. If the default project configuration is not specified, `c1.4` is used.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -169,6 +169,7 @@ class ProjectServiceServicer(object):
 
     def GetCellOutputs(self, request, context):
         """Returns outputs of the specified cell.
+        Deprecated
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -176,6 +177,7 @@ class ProjectServiceServicer(object):
 
     def GetStateVariables(self, request, context):
         """Returns state variables of the specified notebook.
+        Deprecated
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
