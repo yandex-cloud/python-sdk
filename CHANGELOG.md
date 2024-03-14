@@ -2,6 +2,22 @@
 
 <!--next-version-placeholder-->
 
+## v0.265.0 (2024-03-14)
+
+### Feature
+
+* Adding support for managed opensearch (#85)
+
+* keeping _supported_modules sorted
+
+* adding support for managed-opensearch
+
+* fixing flake8:E128 error for _sdk.py
+
+---------
+
+Co-authored-by: Islam Alibekov <everest@yandex-team.ru> ([`1ec9d39`](https://github.com/yandex-cloud/python-sdk/commit/1ec9d397003eedd37afd8d80b300878bb359cd50))
+
 ## v0.264.0 (2024-03-12)
 
 ### Feature
