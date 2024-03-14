@@ -123,6 +123,7 @@ _supported_modules = [
     ("yandex.cloud.mdb.kafka", "managed-kafka"),
     ("yandex.cloud.mdb.mongodb", "managed-mongodb"),
     ("yandex.cloud.mdb.mysql", "managed-mysql"),
+    ("yandex.cloud.mdb.opensearch", "managed-opensearch"),
     ("yandex.cloud.mdb.postgresql", "managed-postgresql"),
     ("yandex.cloud.mdb.redis", "managed-redis"),
     ("yandex.cloud.mdb.sqlserver", "managed-sqlserver"),
