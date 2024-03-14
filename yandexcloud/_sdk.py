@@ -95,8 +95,7 @@ _supported_modules = [
     ("yandex.cloud.billing", "billing"),
     ("yandex.cloud.cdn", "cdn"),
     ("yandex.cloud.certificatemanager", "certificate-manager"),
-    ("yandex.cloud.certificatemanager.v1.certificate_content_service",
-    "certificate-manager-data"),
+    ("yandex.cloud.certificatemanager.v1.certificate_content_service", "certificate-manager-data"),
     ("yandex.cloud.compute", "compute"),
     ("yandex.cloud.containerregistry", "container-registry"),
     ("yandex.cloud.dataproc", "dataproc"),
@@ -137,5 +136,5 @@ _supported_modules = [
     ("yandex.cloud.serverless.triggers", "serverless-triggers"),
     ("yandex.cloud.storage", "storage-api"),
     ("yandex.cloud.vpc", "vpc"),
-    ("yandex.cloud.ydb", "ydb")
+    ("yandex.cloud.ydb", "ydb"),
 ]
