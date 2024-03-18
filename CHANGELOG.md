@@ -2,6 +2,14 @@
 
 <!--next-version-placeholder-->
 
+## v0.266.0 (2024-03-18)
+
+### Feature
+
+* Fix `_service_for_ctor` service lookup bug from #85 (#86)
+
+Co-authored-by: Petr Reznikov <prez@yandex-team.ru> ([`6d5714e`](https://github.com/yandex-cloud/python-sdk/commit/6d5714e72580e6af0156cee2c6bff56eef55dd02))
+
 ## v0.265.0 (2024-03-14)
 
 ### Feature
