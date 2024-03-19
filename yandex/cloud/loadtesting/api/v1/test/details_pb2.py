@@ -12,10 +12,11 @@ _sym_db = _symbol_database.Default()
 
 
 from yandex.cloud.loadtesting.api.v1.common import tag_pb2 as yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_common_dot_tag__pb2
+from yandex.cloud.loadtesting.api.v1.test import artifact_settings_pb2 as yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_test_dot_artifact__settings__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2yandex/cloud/loadtesting/api/v1/test/details.proto\x12$yandex.cloud.loadtesting.api.v1.test\x1a\x30yandex/cloud/loadtesting/api/v1/common/tag.proto\x1a\x1dyandex/cloud/validation.proto\"\xb6\x01\n\x07\x44\x65tails\x12\x32\n\x04name\x18\x01 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x39\n\x04tags\x18\x03 \x03(\x0b\x32+.yandex.cloud.loadtesting.api.v1.common.Tag\x12\x1c\n\x14logging_log_group_id\x18\x04 \x01(\tBy\n(yandex.cloud.api.loadtesting.api.v1.testZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadtesting/api/v1/test;testb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2yandex/cloud/loadtesting/api/v1/test/details.proto\x12$yandex.cloud.loadtesting.api.v1.test\x1a\x30yandex/cloud/loadtesting/api/v1/common/tag.proto\x1a<yandex/cloud/loadtesting/api/v1/test/artifact_settings.proto\x1a\x1dyandex/cloud/validation.proto\"\x89\x02\n\x07\x44\x65tails\x12\x32\n\x04name\x18\x01 \x01(\tB$\xf2\xc7\x31 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x39\n\x04tags\x18\x03 \x03(\x0b\x32+.yandex.cloud.loadtesting.api.v1.common.Tag\x12\x1c\n\x14logging_log_group_id\x18\x04 \x01(\t\x12Q\n\x11\x61rtifact_settings\x18\x05 \x01(\x0b\x32\x36.yandex.cloud.loadtesting.api.v1.test.ArtifactSettingsBy\n(yandex.cloud.api.loadtesting.api.v1.testZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadtesting/api/v1/test;testb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -28,6 +29,6 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _DETAILS.fields_by_name['name']._serialized_options = b'\362\3071 |[a-z]([-a-z0-9]{0,61}[a-z0-9])?'
   _DETAILS.fields_by_name['description']._options = None
   _DETAILS.fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
-  _globals['_DETAILS']._serialized_start=174
-  _globals['_DETAILS']._serialized_end=356
+  _globals['_DETAILS']._serialized_start=236
+  _globals['_DETAILS']._serialized_end=501
 # @@protoc_insertion_point(module_scope)

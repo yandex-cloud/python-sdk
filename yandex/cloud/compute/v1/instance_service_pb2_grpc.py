@@ -88,6 +88,16 @@ class InstanceServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.DetachInstanceFilesystemRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
+        self.AttachNetworkInterface = channel.unary_unary(
+                '/yandex.cloud.compute.v1.InstanceService/AttachNetworkInterface',
+                request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.AttachInstanceNetworkInterfaceRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
+        self.DetachNetworkInterface = channel.unary_unary(
+                '/yandex.cloud.compute.v1.InstanceService/DetachNetworkInterface',
+                request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.DetachInstanceNetworkInterfaceRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
         self.AddOneToOneNat = channel.unary_unary(
                 '/yandex.cloud.compute.v1.InstanceService/AddOneToOneNat',
                 request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.AddInstanceOneToOneNatRequest.SerializeToString,
@@ -238,10 +248,6 @@ class InstanceServiceServicer(object):
 
         The instance and the filesystem must reside in the same availability zone.
 
-        To attach a filesystem, the instance must have a `STOPPED` status ([Instance.status]).
-        To check the instance status, make a [InstanceService.Get] request.
-        To stop the running instance, make a [InstanceService.Stop] request.
-
         To use the instance with an attached filesystem, the latter must be mounted.
         For details, see [documentation](/docs/compute/operations/filesystem/attach-to-vm).
         """
@@ -251,8 +257,26 @@ class InstanceServiceServicer(object):
 
     def DetachFilesystem(self, request, context):
         """Detaches the filesystem from the instance.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
-        To detach a filesystem, the instance must have a `STOPPED` status ([Instance.status]).
+    def AttachNetworkInterface(self, request, context):
+        """Attaches the network-interface to the instance.
+
+        To attach a network-interface, the instance must have a `STOPPED` status ([Instance.status]).
+        To check the instance status, make a [InstanceService.Get] request.
+        To stop the running instance, make a [InstanceService.Stop] request.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DetachNetworkInterface(self, request, context):
+        """Detaches the network-interface to the instance.
+
+        To Detach a network-interface, the instance must have a `STOPPED` status ([Instance.status]).
         To check the instance status, make a [InstanceService.Get] request.
         To stop the running instance, make a [InstanceService.Stop] request.
         """
@@ -411,6 +435,16 @@ def add_InstanceServiceServicer_to_server(servicer, server):
             'DetachFilesystem': grpc.unary_unary_rpc_method_handler(
                     servicer.DetachFilesystem,
                     request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.DetachInstanceFilesystemRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'AttachNetworkInterface': grpc.unary_unary_rpc_method_handler(
+                    servicer.AttachNetworkInterface,
+                    request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.AttachInstanceNetworkInterfaceRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'DetachNetworkInterface': grpc.unary_unary_rpc_method_handler(
+                    servicer.DetachNetworkInterface,
+                    request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.DetachInstanceNetworkInterfaceRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'AddOneToOneNat': grpc.unary_unary_rpc_method_handler(
@@ -708,6 +742,40 @@ class InstanceService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.compute.v1.InstanceService/DetachFilesystem',
             yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.DetachInstanceFilesystemRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def AttachNetworkInterface(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.compute.v1.InstanceService/AttachNetworkInterface',
+            yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.AttachInstanceNetworkInterfaceRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DetachNetworkInterface(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.compute.v1.InstanceService/DetachNetworkInterface',
+            yandex_dot_cloud_dot_compute_dot_v1_dot_instance__service__pb2.DetachInstanceNetworkInterfaceRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
