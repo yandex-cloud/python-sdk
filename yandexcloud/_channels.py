@@ -1,5 +1,4 @@
 import grpc
-import pkg_resources
 
 from yandex.cloud.endpoint.api_endpoint_service_pb2 import ListApiEndpointsRequest
 from yandex.cloud.endpoint.api_endpoint_service_pb2_grpc import ApiEndpointServiceStub
@@ -7,8 +6,13 @@ from yandexcloud import _auth_plugin
 from yandexcloud._auth_fabric import YC_API_ENDPOINT, get_auth_token_requester
 
 try:
-    VERSION = pkg_resources.get_distribution("yandexcloud").version
-except pkg_resources.DistributionNotFound:
+    from importlib.metadata import PackageNotFoundError, version
+except ImportError:
+    from importlib_metadata import PackageNotFoundError, version
+
+try:
+    VERSION = version("yandexcloud")
+except PackageNotFoundError:
     VERSION = "0.0.0"
 
 SDK_USER_AGENT = "yandex-cloud-python-sdk/{version}".format(version=VERSION)
