@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v0.268.0 (2024-03-26)
+
+### Feature
+
+* Adding support for `ai.foundation_models` ([`e93ab8b`](https://github.com/yandex-cloud/python-sdk/commit/e93ab8b6bcb3181160137ef862f433df2d1b2853))
+
 ## v0.267.0 (2024-03-19)
 
 ### Feature
