@@ -20,6 +20,7 @@ setup(
         "pyjwt>=1.7.1",
         "requests>=2.22.0",
         "six>=1.14.0",
+        "importlib-metadata;python_version<'3.8'",
     ],
     classifiers=[
         "Programming Language :: Python",
@@ -28,6 +29,8 @@ setup(
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
     ],
     tests_require=["pytest"],
     packages=packages,
