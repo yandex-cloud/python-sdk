@@ -24,6 +24,11 @@ class TalkServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.UploadTalkRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.UploadTalkResponse.FromString,
                 )
+        self.UploadText = channel.unary_unary(
+                '/yandex.cloud.speechsense.v1.TalkService/UploadText',
+                request_serializer=yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.UploadTextRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.UploadTextResponse.FromString,
+                )
 
 
 class TalkServiceServicer(object):
@@ -44,6 +49,13 @@ class TalkServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def UploadText(self, request, context):
+        """rpc for uploading text talk document
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_TalkServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -56,6 +68,11 @@ def add_TalkServiceServicer_to_server(servicer, server):
                     servicer.Upload,
                     request_deserializer=yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.UploadTalkRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.UploadTalkResponse.SerializeToString,
+            ),
+            'UploadText': grpc.unary_unary_rpc_method_handler(
+                    servicer.UploadText,
+                    request_deserializer=yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.UploadTextRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.UploadTextResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -98,5 +115,22 @@ class TalkService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.speechsense.v1.TalkService/Upload',
             yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.UploadTalkRequest.SerializeToString,
             yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.UploadTalkResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UploadText(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.speechsense.v1.TalkService/UploadText',
+            yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.UploadTextRequest.SerializeToString,
+            yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.UploadTextResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

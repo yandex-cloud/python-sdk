@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1dyandex/cloud/iam/v1/key.proto\x12\x13yandex.cloud.iam.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xad\x02\n\x03Key\x12\n\n\x02id\x18\x01 \x01(\t\x12\x19\n\x0fuser_account_id\x18\x02 \x01(\tH\x00\x12\x1c\n\x12service_account_id\x18\x03 \x01(\tH\x00\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x39\n\rkey_algorithm\x18\x06 \x01(\x0e\x32\".yandex.cloud.iam.v1.Key.Algorithm\x12\x12\n\npublic_key\x18\x07 \x01(\t\"B\n\tAlgorithm\x12\x19\n\x15\x41LGORITHM_UNSPECIFIED\x10\x00\x12\x0c\n\x08RSA_2048\x10\x01\x12\x0c\n\x08RSA_4096\x10\x02\x42\t\n\x07subjectBV\n\x17yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1dyandex/cloud/iam/v1/key.proto\x12\x13yandex.cloud.iam.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xe5\x02\n\x03Key\x12\n\n\x02id\x18\x01 \x01(\t\x12\x19\n\x0fuser_account_id\x18\x02 \x01(\tH\x00\x12\x1c\n\x12service_account_id\x18\x03 \x01(\tH\x00\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x39\n\rkey_algorithm\x18\x06 \x01(\x0e\x32\".yandex.cloud.iam.v1.Key.Algorithm\x12\x12\n\npublic_key\x18\x07 \x01(\t\x12\x30\n\x0clast_used_at\x18\t \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"B\n\tAlgorithm\x12\x19\n\x15\x41LGORITHM_UNSPECIFIED\x10\x00\x12\x0c\n\x08RSA_2048\x10\x01\x12\x0c\n\x08RSA_4096\x10\x02\x42\t\n\x07subjectJ\x04\x08\x08\x10\tBV\n\x17yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -24,7 +24,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\027yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iam'
   _globals['_KEY']._serialized_start=88
-  _globals['_KEY']._serialized_end=389
-  _globals['_KEY_ALGORITHM']._serialized_start=312
-  _globals['_KEY_ALGORITHM']._serialized_end=378
+  _globals['_KEY']._serialized_end=445
+  _globals['_KEY_ALGORITHM']._serialized_start=362
+  _globals['_KEY_ALGORITHM']._serialized_end=428
 # @@protoc_insertion_point(module_scope)

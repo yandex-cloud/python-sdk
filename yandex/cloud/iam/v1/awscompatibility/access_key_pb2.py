@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n5yandex/cloud/iam/v1/awscompatibility/access_key.proto\x12$yandex.cloud.iam.v1.awscompatibility\x1a\x1fgoogle/protobuf/timestamp.proto\"\x88\x01\n\tAccessKey\x12\n\n\x02id\x18\x01 \x01(\t\x12\x1a\n\x12service_account_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0e\n\x06key_id\x18\x05 \x01(\tB\x85\x01\n(yandex.cloud.api.iam.v1.awscompatibilityZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1/awscompatibility;awscompatibilityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n5yandex/cloud/iam/v1/awscompatibility/access_key.proto\x12$yandex.cloud.iam.v1.awscompatibility\x1a\x1fgoogle/protobuf/timestamp.proto\"\xc0\x01\n\tAccessKey\x12\n\n\x02id\x18\x01 \x01(\t\x12\x1a\n\x12service_account_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x0e\n\x06key_id\x18\x05 \x01(\t\x12\x30\n\x0clast_used_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.TimestampJ\x04\x08\x06\x10\x07\x42\x85\x01\n(yandex.cloud.api.iam.v1.awscompatibilityZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1/awscompatibility;awscompatibilityb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -24,5 +24,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n(yandex.cloud.api.iam.v1.awscompatibilityZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1/awscompatibility;awscompatibility'
   _globals['_ACCESSKEY']._serialized_start=129
-  _globals['_ACCESSKEY']._serialized_end=265
+  _globals['_ACCESSKEY']._serialized_end=321
 # @@protoc_insertion_point(module_scope)

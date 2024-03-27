@@ -107,6 +107,11 @@ class ClusterServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_cluster__service__pb2.DeleteClusterHostsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
+        self.UpdateHosts = channel.unary_unary(
+                '/yandex.cloud.mdb.mongodb.v1.ClusterService/UpdateHosts',
+                request_serializer=yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_cluster__service__pb2.UpdateClusterHostsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
         self.EnableSharding = channel.unary_unary(
                 '/yandex.cloud.mdb.mongodb.v1.ClusterService/EnableSharding',
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_cluster__service__pb2.EnableClusterShardingRequest.SerializeToString,
@@ -283,6 +288,13 @@ class ClusterServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def UpdateHosts(self, request, context):
+        """Updates the specified parameters for the host.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def EnableSharding(self, request, context):
         """Enables sharding for the cluster:
         creates 3 mongoinfra (or 3 mongocfg and 2 mongos) hosts
@@ -432,6 +444,11 @@ def add_ClusterServiceServicer_to_server(servicer, server):
             'DeleteHosts': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteHosts,
                     request_deserializer=yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_cluster__service__pb2.DeleteClusterHostsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'UpdateHosts': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateHosts,
+                    request_deserializer=yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_cluster__service__pb2.UpdateClusterHostsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'EnableSharding': grpc.unary_unary_rpc_method_handler(
@@ -787,6 +804,23 @@ class ClusterService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.mdb.mongodb.v1.ClusterService/DeleteHosts',
             yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_cluster__service__pb2.DeleteClusterHostsRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateHosts(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.mdb.mongodb.v1.ClusterService/UpdateHosts',
+            yandex_dot_cloud_dot_mdb_dot_mongodb_dot_v1_dot_cluster__service__pb2.UpdateClusterHostsRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
