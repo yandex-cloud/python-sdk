@@ -2,6 +2,14 @@
 
 <!--next-version-placeholder-->
 
+## v0.270.0 (2024-03-27)
+
+### Feature
+
+* Fix compatibility with python 3.12 (#88)
+
+Adding support for python 3.11 and 3.12 ([`7395bf6`](https://github.com/yandex-cloud/python-sdk/commit/7395bf650753acbdfb6ff9991eeae42aaceaa686))
+
 ## v0.269.0 (2024-03-27)
 
 ### Feature
