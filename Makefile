@@ -29,8 +29,8 @@ format:
 	python3 -m black yandexcloud setup.py changelog.py
 
 test-all-versions: ## run test for multiple python versions using docker
-	# python 3.10 not provided in image so we skip it
-	docker run --rm -v $(REPO_ROOT):/src fkrull/multi-python tox -c /src -e py36,py37,py38,py39
+	# python 3.12 not provided in image so we skip it
+	docker run --rm -v $(REPO_ROOT):/src ghcr.io/fkrull/docker-multi-python:bionic tox -c /src -e py38,py39,py310,py311
 
 submodule:  ## update submodules
 	git submodule update --init --recursive --remote

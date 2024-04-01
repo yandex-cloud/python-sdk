@@ -1,14 +1,11 @@
+from importlib.metadata import PackageNotFoundError, version
+
 import grpc
 
 from yandex.cloud.endpoint.api_endpoint_service_pb2 import ListApiEndpointsRequest
 from yandex.cloud.endpoint.api_endpoint_service_pb2_grpc import ApiEndpointServiceStub
 from yandexcloud import _auth_plugin
 from yandexcloud._auth_fabric import YC_API_ENDPOINT, get_auth_token_requester
-
-try:
-    from importlib.metadata import PackageNotFoundError, version
-except ImportError:
-    from importlib_metadata import PackageNotFoundError, version
 
 try:
     VERSION = version("yandexcloud")
