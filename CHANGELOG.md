@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v0.271.0 (2024-04-01)
+
+### Feature
+
+* Remove py37 support ([`e116162`](https://github.com/yandex-cloud/python-sdk/commit/e116162563ba9b210d161ef0112ca1f24e662b9e))
+
 ## v0.270.0 (2024-03-27)
 
 ### Feature
