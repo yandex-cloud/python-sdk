@@ -28,7 +28,7 @@ class ImageGenerationAsyncServiceServicer(object):
     """
 
     def Generate(self, request, context):
-        """RPC method for obtaining image from inpt data.
+        """A method for generating an image based on a textual description.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

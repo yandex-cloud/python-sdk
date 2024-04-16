@@ -7,7 +7,8 @@ from yandex.cloud.video.v1 import thumbnail_service_pb2 as yandex_dot_cloud_dot_
 
 
 class ThumbnailServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """Thumbnail management service.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -38,7 +39,8 @@ class ThumbnailServiceStub(object):
 
 
 class ThumbnailServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """Thumbnail management service.
+    """
 
     def List(self, request, context):
         """List thumbnails for channel.
@@ -99,7 +101,8 @@ def add_ThumbnailServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class ThumbnailService(object):
-    """Missing associated documentation comment in .proto file."""
+    """Thumbnail management service.
+    """
 
     @staticmethod
     def List(request,

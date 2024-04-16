@@ -28,7 +28,7 @@ class TextGenerationServiceServicer(object):
     """
 
     def Completion(self, request, context):
-        """RPC method for generating text completions.
+        """A method for generating text completions in [synchronous mode](/docs/foundation-models/concepts/#working-mode).
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -93,7 +93,7 @@ class TextGenerationAsyncServiceServicer(object):
     """
 
     def Completion(self, request, context):
-        """RPC method for generating text completions in asynchronous mode.
+        """A method for generating text completions in [asynchronous mode](/docs/foundation-models/concepts/#working-mode).
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

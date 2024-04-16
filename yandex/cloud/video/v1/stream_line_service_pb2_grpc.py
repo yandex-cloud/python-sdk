@@ -8,7 +8,8 @@ from yandex.cloud.video.v1 import stream_line_service_pb2 as yandex_dot_cloud_do
 
 
 class StreamLineServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """Stream line management service.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -59,7 +60,8 @@ class StreamLineServiceStub(object):
 
 
 class StreamLineServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """Stream line management service.
+    """
 
     def Get(self, request, context):
         """Returns the specific stream line.
@@ -168,7 +170,8 @@ def add_StreamLineServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class StreamLineService(object):
-    """Missing associated documentation comment in .proto file."""
+    """Stream line management service.
+    """
 
     @staticmethod
     def Get(request,

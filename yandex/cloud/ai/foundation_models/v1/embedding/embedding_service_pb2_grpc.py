@@ -27,7 +27,7 @@ class EmbeddingsServiceServicer(object):
     """
 
     def TextEmbedding(self, request, context):
-        """RPC method for obtaining embeddings from text data.
+        """A method for obtaining embeddings from text data.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
