@@ -2,6 +2,22 @@
 
 <!--next-version-placeholder-->
 
+## v0.275.0 (2024-04-22)
+
+### Feature
+
+* Upgrade workflows actions versions (#91)
+
+* upgrading  and  workflow actions
+
+* upgrading  to 3.12 in  action
+
+* fix problem with setuptools in release
+
+---------
+
+Co-authored-by: Islam Alibekov <everest@yandex-team.ru> ([`3c1d737`](https://github.com/yandex-cloud/python-sdk/commit/3c1d737c1af4b3ff9aaea14799b0b3931bed0e11))
+
 ## v0.274.0 (2024-04-22)
 
 ### Feature
