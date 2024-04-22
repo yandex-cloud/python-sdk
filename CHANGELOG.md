@@ -2,6 +2,12 @@
 
 <!--next-version-placeholder-->
 
+## v0.276.0 (2024-04-22)
+
+### Feature
+
+* Set python 3.11 in release workflow ([`3016dcc`](https://github.com/yandex-cloud/python-sdk/commit/3016dcc651aba7f93e879955b12e155e7a2ebd56))
+
 ## v0.275.0 (2024-04-22)
 
 ### Feature
