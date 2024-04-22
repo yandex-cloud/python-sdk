@@ -2,6 +2,20 @@
 
 <!--next-version-placeholder-->
 
+## v0.274.0 (2024-04-22)
+
+### Feature
+
+* Upgrade workflows actions versions (#90)
+
+* upgrading  and  workflow actions
+
+* upgrading  to 3.12 in  action
+
+---------
+
+Co-authored-by: Islam Alibekov <everest@yandex-team.ru> ([`d25e67a`](https://github.com/yandex-cloud/python-sdk/commit/d25e67a10d26ecdd4f027f0d9264921dade5a915))
+
 ## v0.273.0 (2024-04-16)
 
 ### Feature
