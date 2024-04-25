@@ -3,10 +3,12 @@ from yandexcloud import SDK
 from yandexcloud._auth_fabric import get_auth_token_requester
 
 
-def get_iam_token(service_account_key=None):
+def get_iam_token_by_metadata():
+    return get_auth_token_requester().get_token()
+
+
+def get_iam_token_by_sa_key(service_account_key):
     token_requester = get_auth_token_requester(service_account_key=service_account_key)
-    if not service_account_key:
-        return token_requester.get_token()
 
     sdk = SDK()
     client = sdk.client(IamTokenServiceStub)
