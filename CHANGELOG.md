@@ -2,6 +2,17 @@
 
 <!--next-version-placeholder-->
 
+## v0.277.0 (2024-04-26)
+
+### Feature
+
+* Tox formatting fixes ([`d1b46df`](https://github.com/yandex-cloud/python-sdk/commit/d1b46dfb27af333f91507d9c0289148e90395cd0))
+* Return back to one ultimate method ([`5b8c2b8`](https://github.com/yandex-cloud/python-sdk/commit/5b8c2b882599aadbfd26fdeb3fdf513df82b486f))
+* Some fixes ([`64a7935`](https://github.com/yandex-cloud/python-sdk/commit/64a793592155bec26452c04d63c86eda1e80236f))
+* Iam-token-request method splitted ([`11f5688`](https://github.com/yandex-cloud/python-sdk/commit/11f5688a7030d8f5ec9245d459ab58273e370d84))
+* Fixed formatting and imports ([`0d85ed7`](https://github.com/yandex-cloud/python-sdk/commit/0d85ed79ef6e7f02bb59785a51ad1eb1e9c42894))
+* First draft ([`78f3840`](https://github.com/yandex-cloud/python-sdk/commit/78f38406358db8bb4b015c1927a6781fb1c11428))
+
 ## v0.276.0 (2024-04-22)
 
 ### Feature
