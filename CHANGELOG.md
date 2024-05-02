@@ -2,6 +2,20 @@
 
 <!--next-version-placeholder-->
 
+## v0.278.0 (2024-05-02)
+
+### Feature
+
+* Added `endpoint` arg to `get_auth_token()` (#93)
+
+* added `endpoint` arg to `get_auth_token()`
+
+* styling fixes
+
+---------
+
+Co-authored-by: Dmitry Chumak <dmchumak@yandex-team.ru> ([`caa8c67`](https://github.com/yandex-cloud/python-sdk/commit/caa8c679901dedc4e6e4df9f549d9fc908c22371))
+
 ## v0.277.0 (2024-04-26)
 
 ### Feature
