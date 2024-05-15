@@ -2,6 +2,13 @@
 
 
 
+## v0.281.0 (2024-05-15)
+
+### Feature
+
+* add workflow permissions ([`2817e26`](https://github.com/yandex-cloud/python-sdk/commit/2817e26a4e567ae7b9d27a6cb1d2d871524468f4))
+
+
 ## v0.280.0 (2024-05-15)
 
 ### Feature
