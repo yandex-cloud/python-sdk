@@ -2,6 +2,19 @@
 
 
 
+## v0.280.0 (2024-05-15)
+
+### Feature
+
+* add pypi creds ([`92ba0cf`](https://github.com/yandex-cloud/python-sdk/commit/92ba0cff03b65ccf5a72ad5e5160e810a8c74e17))
+
+### Unknown
+
+* Merge pull request #97 from yandex-cloud/add-pypi-creds
+
+add pypi creds ([`7acd92c`](https://github.com/yandex-cloud/python-sdk/commit/7acd92c12e753ff2e459d8db7a9be5723ba3c3c8))
+
+
 ## v0.279.0 (2024-05-15)
 
 ### Feature
