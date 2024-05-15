@@ -8,6 +8,9 @@ on:
 
 jobs:
   release:
+    permissions:
+      id-token: write
+      contents: write
     runs-on: ubuntu-latest
     # disallows two or more release jobs to run in parallel
     concurrency: release
@@ -42,7 +45,6 @@ jobs:
       # See https://github.com/actions/runner/issues/1173
       if: steps.release.outputs.released == 'true'
       with:
-        user: __token__
         password: ${{ secrets.PYPI_TOKEN }}
 
     - name: Publish package distributions to GitHub Releases
