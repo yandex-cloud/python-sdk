@@ -28,6 +28,7 @@ jobs:
 
         git config --global user.name 'Yandex.Cloud Bot'
         git config --global user.email 'ycloud-bot@yandex.ru'
+        echo "PYTHONPATH=$PYTHONPATH:$(pwd)" >> $GITHUB_ENV
 
     - name: Python Semantic Release
       id: release
