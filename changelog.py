@@ -13,10 +13,11 @@ class PythonSDKCommitParser(
             or commit.message.startswith("Merge branch")
         ):
             return semantic_release.ParseError(commit=commit, error="Inappropriate commit message")
-        return semantic_release.ParseResult(
+        return semantic_release.ParsedCommit(
             bump=LevelBump.MINOR,
             type="feature",
-            scope=None,
             descriptions=[commit.message],
             breaking_descriptions=[],
+            commit=commit,
+            scope="",
         )
