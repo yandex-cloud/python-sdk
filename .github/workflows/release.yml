@@ -45,7 +45,6 @@ jobs:
       # See https://github.com/actions/runner/issues/1173
       if: steps.release.outputs.released == 'true'
       with:
-        packages-dir: /
         password: ${{ secrets.PYPI_TOKEN }}
 
     - name: Publish package distributions to GitHub Releases
