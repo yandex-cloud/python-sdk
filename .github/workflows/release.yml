@@ -20,16 +20,29 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-          python-version: "3.11"
+          python-version: "3.12"
 
-    - name: Bump version and release to PyPi
+    - name: Configure python and git user
       run: |
         make deps
 
         git config --global user.name 'Yandex.Cloud Bot'
         git config --global user.email 'ycloud-bot@yandex.ru'
 
-        make release
-      env:
-        REPOSITORY_USERNAME: __token__
-        REPOSITORY_PASSWORD: ${{ secrets.PYPI_TOKEN }}
+    - name: Python Semantic Release
+      id: release
+      uses: python-semantic-release/python-semantic-release@v9.7.2
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Publish package distributions to PyPI
+      uses: pypa/gh-action-pypi-publish@release/v1
+      # NOTE: DO NOT wrap the conditional in ${{ }} as it will always evaluate to true.
+      # See https://github.com/actions/runner/issues/1173
+      if: steps.release.outputs.released == 'true'
+
+    - name: Publish package distributions to GitHub Releases
+      uses: python-semantic-release/upload-to-gh-release@main
+      if: steps.release.outputs.released == 'true'
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
