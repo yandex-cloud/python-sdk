@@ -1,57 +1,6 @@
 # CHANGELOG
 
 
-
-## v0.282.0 (2024-05-15)
-
-### Feature
-
-* change package dir ([`ac0120b`](https://github.com/yandex-cloud/python-sdk/commit/ac0120b7b85b92b54d0c109e2c519ffd5633daa2))
-
-
-## v0.281.0 (2024-05-15)
-
-### Feature
-
-* add workflow permissions ([`2817e26`](https://github.com/yandex-cloud/python-sdk/commit/2817e26a4e567ae7b9d27a6cb1d2d871524468f4))
-
-
-## v0.280.0 (2024-05-15)
-
-### Feature
-
-* add pypi creds ([`92ba0cf`](https://github.com/yandex-cloud/python-sdk/commit/92ba0cff03b65ccf5a72ad5e5160e810a8c74e17))
-
-### Unknown
-
-* Merge pull request #97 from yandex-cloud/add-pypi-creds
-
-add pypi creds ([`7acd92c`](https://github.com/yandex-cloud/python-sdk/commit/7acd92c12e753ff2e459d8db7a9be5723ba3c3c8))
-
-
-## v0.279.0 (2024-05-15)
-
-### Feature
-
-* fix commit Parser return type ([`0bdeea0`](https://github.com/yandex-cloud/python-sdk/commit/0bdeea0db205c1113710708da4c88a301907c26b))
-
-* update Commit Parser and semantic_release config ([`0ef04d6`](https://github.com/yandex-cloud/python-sdk/commit/0ef04d67e8596637ebe81e6b6b0b71f9d2e2f328))
-
-* Update release process with and python semantic version release (#94)
-
-Co-authored-by: iva-romanenko &lt;iva-romanenko@yandex-team.ru&gt; ([`222d516`](https://github.com/yandex-cloud/python-sdk/commit/222d51601b4767ddde3969ca4066ed118c4a91ba))
-
-### Unknown
-
-* Merge pull request #96 from yandex-cloud/fix-commit-parser-return-type
-
-fix commit Parser return type ([`234fb76`](https://github.com/yandex-cloud/python-sdk/commit/234fb76af2fa60f8ab2556736a0e1f003c04dd1a))
-
-* Merge pull request #95 from yandex-cloud/fix-config-for-semantic-release
-
-Update Commit Parser and semantic_release config ([`752f857`](https://github.com/yandex-cloud/python-sdk/commit/752f857d3526b369db0efec19488eda9406b4f94))
-
-
 ## v0.278.0 (2024-05-02)
 
 ### Feature

@@ -37,7 +37,6 @@ jobs:
       id: release
       uses: python-semantic-release/python-semantic-release@v9.7.2
       with:
-        packages-dir: /
         github_token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Publish package distributions to PyPI
@@ -46,6 +45,7 @@ jobs:
       # See https://github.com/actions/runner/issues/1173
       if: steps.release.outputs.released == 'true'
       with:
+        packages-dir: /
         password: ${{ secrets.PYPI_TOKEN }}
 
     - name: Publish package distributions to GitHub Releases
