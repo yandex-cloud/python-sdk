@@ -2,6 +2,13 @@
 
 
 
+## v0.282.0 (2024-05-15)
+
+### Feature
+
+* change package dir ([`ac0120b`](https://github.com/yandex-cloud/python-sdk/commit/ac0120b7b85b92b54d0c109e2c519ffd5633daa2))
+
+
 ## v0.281.0 (2024-05-15)
 
 ### Feature
