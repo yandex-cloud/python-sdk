@@ -2,6 +2,13 @@
 
 
 
+## v0.280.0 (2024-05-15)
+
+### Feature
+
+* add parser_options for PythonSDKCommitParser ([`3e44909`](https://github.com/yandex-cloud/python-sdk/commit/3e44909ea1e3d552b3bfc6b2836e0ca9f50b8664))
+
+
 ## v0.279.0 (2024-05-15)
 
 ### Feature
