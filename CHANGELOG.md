@@ -2,6 +2,25 @@
 
 
 
+## v0.281.0 (2024-05-16)
+
+### Feature
+
+* regenerate proto ([`4056cd1`](https://github.com/yandex-cloud/python-sdk/commit/4056cd15b3a007984938c39a8efe474fe05342db))
+
+* update protobuf requirements ([`cb5f1ee`](https://github.com/yandex-cloud/python-sdk/commit/cb5f1ee2388300c295426eec03964aa259e27d75))
+
+* regenerate proto ([`b9a5537`](https://github.com/yandex-cloud/python-sdk/commit/b9a55372b9ac188e25a33ad4cd84a856d8f0cefe))
+
+* update grpcio-tools version ([`fd1c482`](https://github.com/yandex-cloud/python-sdk/commit/fd1c4825986d179a465e2602ab14858d33288d0b))
+
+### Unknown
+
+* Merge pull request #98 from yandex-cloud/bugfix/update-grpcio-tools
+
+update grpcio-tools version ([`662328f`](https://github.com/yandex-cloud/python-sdk/commit/662328f05d6f519031b892f2f60953e5f09f8ee8))
+
+
 ## v0.280.0 (2024-05-15)
 
 ### Feature
