@@ -2,9 +2,20 @@
 
 
 
+## v0.282.0 (2024-05-16)
+
+### Unknown
+
+* Merge pull request #99 from yandex-cloud/fix/iam-token-by-iam-token
+
+fix getting iamtoken with iamtoken provided ([`516237e`](https://github.com/yandex-cloud/python-sdk/commit/516237e70932b39c8f0a13402b03605859ff0daf))
+
+
 ## v0.281.0 (2024-05-16)
 
 ### Feature
+
+* fix getting iamtoken with iamtoken provided ([`e88c53d`](https://github.com/yandex-cloud/python-sdk/commit/e88c53df172ce556b4154c0efbf4bfc72059fc60))
 
 * regenerate proto ([`4056cd1`](https://github.com/yandex-cloud/python-sdk/commit/4056cd15b3a007984938c39a8efe474fe05342db))
 
