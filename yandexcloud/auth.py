@@ -2,6 +2,7 @@ from yandex.cloud.iam.v1.iam_token_service_pb2_grpc import IamTokenServiceStub
 from yandexcloud import SDK
 from yandexcloud._auth_fabric import (
     YC_API_ENDPOINT,
+    IamTokenAuth,
     MetadataAuth,
     get_auth_token_requester,
 )
@@ -15,7 +16,7 @@ def get_auth_token(token=None, service_account_key=None, iam_token=None, metadat
         metadata_addr=metadata_addr,
         endpoint=endpoint,
     )
-    if isinstance(requester, MetadataAuth):
+    if isinstance(requester, (MetadataAuth, IamTokenAuth)):
         return requester.get_token()
 
     sdk = SDK()
