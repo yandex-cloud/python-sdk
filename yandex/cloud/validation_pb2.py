@@ -20,16 +20,6 @@ _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.validation_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
-  google_dot_protobuf_dot_descriptor__pb2.OneofOptions.RegisterExtension(exactly_one)
-  google_dot_protobuf_dot_descriptor__pb2.FieldOptions.RegisterExtension(required)
-  google_dot_protobuf_dot_descriptor__pb2.FieldOptions.RegisterExtension(pattern)
-  google_dot_protobuf_dot_descriptor__pb2.FieldOptions.RegisterExtension(value)
-  google_dot_protobuf_dot_descriptor__pb2.FieldOptions.RegisterExtension(size)
-  google_dot_protobuf_dot_descriptor__pb2.FieldOptions.RegisterExtension(length)
-  google_dot_protobuf_dot_descriptor__pb2.FieldOptions.RegisterExtension(unique)
-  google_dot_protobuf_dot_descriptor__pb2.FieldOptions.RegisterExtension(map_key)
-  google_dot_protobuf_dot_descriptor__pb2.FieldOptions.RegisterExtension(bytes)
-
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\020yandex.cloud.apiZ6github.com/yandex-cloud/go-genproto/yandex/cloud;cloud'
   _globals['_MAPKEYSPEC']._serialized_start=81

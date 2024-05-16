@@ -20,6 +20,11 @@ class TextClassificationServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_ai_dot_foundation__models_dot_v1_dot_text__classification_dot_text__classification__service__pb2.TextClassificationRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_ai_dot_foundation__models_dot_v1_dot_text__classification_dot_text__classification__service__pb2.TextClassificationResponse.FromString,
                 )
+        self.FewShotClassify = channel.unary_unary(
+                '/yandex.cloud.ai.foundation_models.v1.text_classification.TextClassificationService/FewShotClassify',
+                request_serializer=yandex_dot_cloud_dot_ai_dot_foundation__models_dot_v1_dot_text__classification_dot_text__classification__service__pb2.FewShotTextClassificationRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_ai_dot_foundation__models_dot_v1_dot_text__classification_dot_text__classification__service__pb2.FewShotTextClassificationResponse.FromString,
+                )
 
 
 class TextClassificationServiceServicer(object):
@@ -27,7 +32,14 @@ class TextClassificationServiceServicer(object):
     """
 
     def Classify(self, request, context):
-        """RPC method for classifying text.
+        """RPC method for text classification.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def FewShotClassify(self, request, context):
+        """RPC method for few-shot text classification.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -40,6 +52,11 @@ def add_TextClassificationServiceServicer_to_server(servicer, server):
                     servicer.Classify,
                     request_deserializer=yandex_dot_cloud_dot_ai_dot_foundation__models_dot_v1_dot_text__classification_dot_text__classification__service__pb2.TextClassificationRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_ai_dot_foundation__models_dot_v1_dot_text__classification_dot_text__classification__service__pb2.TextClassificationResponse.SerializeToString,
+            ),
+            'FewShotClassify': grpc.unary_unary_rpc_method_handler(
+                    servicer.FewShotClassify,
+                    request_deserializer=yandex_dot_cloud_dot_ai_dot_foundation__models_dot_v1_dot_text__classification_dot_text__classification__service__pb2.FewShotTextClassificationRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_ai_dot_foundation__models_dot_v1_dot_text__classification_dot_text__classification__service__pb2.FewShotTextClassificationResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -66,5 +83,22 @@ class TextClassificationService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.ai.foundation_models.v1.text_classification.TextClassificationService/Classify',
             yandex_dot_cloud_dot_ai_dot_foundation__models_dot_v1_dot_text__classification_dot_text__classification__service__pb2.TextClassificationRequest.SerializeToString,
             yandex_dot_cloud_dot_ai_dot_foundation__models_dot_v1_dot_text__classification_dot_text__classification__service__pb2.TextClassificationResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def FewShotClassify(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.ai.foundation_models.v1.text_classification.TextClassificationService/FewShotClassify',
+            yandex_dot_cloud_dot_ai_dot_foundation__models_dot_v1_dot_text__classification_dot_text__classification__service__pb2.FewShotTextClassificationRequest.SerializeToString,
+            yandex_dot_cloud_dot_ai_dot_foundation__models_dot_v1_dot_text__classification_dot_text__classification__service__pb2.FewShotTextClassificationResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

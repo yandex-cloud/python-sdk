@@ -21,7 +21,6 @@ _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.endpoint.api_endpoint_service_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
-
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\031yandex.cloud.api.endpointZBgithub.com/yandex-cloud/go-genproto/yandex/cloud/endpoint;endpoint'
   _APIENDPOINTSERVICE.methods_by_name['Get']._options = None

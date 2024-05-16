@@ -19,7 +19,6 @@ _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.quota.quota_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
-
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\026yandex.cloud.api.quotaZ<github.com/yandex-cloud/go-genproto/yandex/cloud/quota;quota'
   _globals['_QUOTAMETRIC']._serialized_start=54

@@ -26,7 +26,6 @@ _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.loadtesting.api.v1.test_service_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
-
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n#yandex.cloud.api.loadtesting.api.v1ZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadtesting/api/v1;loadtesting'
   _CREATETESTREQUEST.fields_by_name['folder_id']._options = None

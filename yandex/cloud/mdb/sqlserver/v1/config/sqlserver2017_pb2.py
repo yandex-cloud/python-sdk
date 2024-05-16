@@ -21,7 +21,6 @@ _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.mdb.sqlserver.v1.config.sqlserver2017_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
-
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n(yandex.cloud.api.mdb.sqlserver.v1.configZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/sqlserver/v1/config;sqlserver'
   _SQLSERVERCONFIG2017STD.fields_by_name['max_degree_of_parallelism']._options = None

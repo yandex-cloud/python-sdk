@@ -23,7 +23,6 @@ _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.loadtesting.api.v1.test.summary_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
-
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n(yandex.cloud.api.loadtesting.api.v1.testZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadtesting/api/v1/test;test'
   _globals['_SUMMARY']._serialized_start=294

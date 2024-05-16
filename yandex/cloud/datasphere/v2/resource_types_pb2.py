@@ -19,7 +19,6 @@ _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.datasphere.v2.resource_types_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
-
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\036yandex.cloud.api.datasphere.v2B\017DsResourceTypesZIgithub.com/yandex-cloud/go-genproto/yandex/cloud/datasphere/v2;datasphere'
   _globals['_RESOURCETYPE']._serialized_start=80

@@ -2,9 +2,11 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
+from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from yandex.cloud.access import access_pb2 as yandex_dot_cloud_dot_access_dot_access__pb2
 from yandex.cloud.datasphere.v2 import project_pb2 as yandex_dot_cloud_dot_datasphere_dot_v2_dot_project__pb2
 from yandex.cloud.datasphere.v2 import project_service_pb2 as yandex_dot_cloud_dot_datasphere_dot_v2_dot_project__service__pb2
+from yandex.cloud.datasphere.v2 import restrictions_pb2 as yandex_dot_cloud_dot_datasphere_dot_v2_dot_restrictions__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 
 
@@ -96,6 +98,21 @@ class ProjectServiceStub(object):
         self.RemoveResource = channel.unary_unary(
                 '/yandex.cloud.datasphere.v2.ProjectService/RemoveResource',
                 request_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_project__service__pb2.RemoveResourceFromProjectRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
+        self.GetRestrictionsMeta = channel.unary_unary(
+                '/yandex.cloud.datasphere.v2.ProjectService/GetRestrictionsMeta',
+                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_restrictions__pb2.GetRestrictionsMetaResponse.FromString,
+                )
+        self.GetRestrictions = channel.unary_unary(
+                '/yandex.cloud.datasphere.v2.ProjectService/GetRestrictions',
+                request_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_project__service__pb2.GetProjectRestrictionsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_restrictions__pb2.RestrictionsResponse.FromString,
+                )
+        self.SetRestrictions = channel.unary_unary(
+                '/yandex.cloud.datasphere.v2.ProjectService/SetRestrictions',
+                request_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_project__service__pb2.SetProjectRestrictionsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
 
@@ -218,6 +235,27 @@ class ProjectServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetRestrictionsMeta(self, request, context):
+        """Get meta information about available restrictions.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetRestrictions(self, request, context):
+        """Get current project restrictions.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SetRestrictions(self, request, context):
+        """Set project restrictions.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ProjectServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -299,6 +337,21 @@ def add_ProjectServiceServicer_to_server(servicer, server):
             'RemoveResource': grpc.unary_unary_rpc_method_handler(
                     servicer.RemoveResource,
                     request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_project__service__pb2.RemoveResourceFromProjectRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'GetRestrictionsMeta': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetRestrictionsMeta,
+                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                    response_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_restrictions__pb2.GetRestrictionsMetaResponse.SerializeToString,
+            ),
+            'GetRestrictions': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetRestrictions,
+                    request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_project__service__pb2.GetProjectRestrictionsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_restrictions__pb2.RestrictionsResponse.SerializeToString,
+            ),
+            'SetRestrictions': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetRestrictions,
+                    request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_project__service__pb2.SetProjectRestrictionsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
@@ -580,6 +633,57 @@ class ProjectService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v2.ProjectService/RemoveResource',
             yandex_dot_cloud_dot_datasphere_dot_v2_dot_project__service__pb2.RemoveResourceFromProjectRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetRestrictionsMeta(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v2.ProjectService/GetRestrictionsMeta',
+            google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            yandex_dot_cloud_dot_datasphere_dot_v2_dot_restrictions__pb2.GetRestrictionsMetaResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetRestrictions(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v2.ProjectService/GetRestrictions',
+            yandex_dot_cloud_dot_datasphere_dot_v2_dot_project__service__pb2.GetProjectRestrictionsRequest.SerializeToString,
+            yandex_dot_cloud_dot_datasphere_dot_v2_dot_restrictions__pb2.RestrictionsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SetRestrictions(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v2.ProjectService/SetRestrictions',
+            yandex_dot_cloud_dot_datasphere_dot_v2_dot_project__service__pb2.SetProjectRestrictionsRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

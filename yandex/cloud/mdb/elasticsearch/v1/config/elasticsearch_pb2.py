@@ -21,7 +21,6 @@ _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.mdb.elasticsearch.v1.config.elasticsearch_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
-
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n,yandex.cloud.api.mdb.elasticsearch.v1.configZZgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/elasticsearch/v1/config;elasticsearch'
   _ELASTICSEARCHCONFIGSET7.fields_by_name['effective_config']._options = None

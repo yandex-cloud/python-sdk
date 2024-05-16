@@ -24,7 +24,6 @@ _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.dataproc.v1.job_service_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
-
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\034yandex.cloud.api.dataproc.v1B\004PHJSZEgithub.com/yandex-cloud/go-genproto/yandex/cloud/dataproc/v1;dataproc'
   _GETJOBREQUEST.fields_by_name['cluster_id']._options = None

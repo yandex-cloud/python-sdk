@@ -27,7 +27,6 @@ _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.serverless.containers.v1.container_service_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
-
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n)yandex.cloud.api.serverless.containers.v1ZTgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/containers/v1;containers'
   _GETCONTAINERREQUEST.fields_by_name['container_id']._options = None

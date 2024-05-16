@@ -24,6 +24,11 @@ class ProjectJobServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.CreateProjectJobRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
+        self.Clone = channel.unary_unary(
+                '/yandex.cloud.datasphere.v2.jobs.ProjectJobService/Clone',
+                request_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.CloneProjectJobRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
         self.Execute = channel.unary_unary(
                 '/yandex.cloud.datasphere.v2.jobs.ProjectJobService/Execute',
                 request_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.ExecuteProjectJobRequest.SerializeToString,
@@ -71,8 +76,13 @@ class ProjectJobServiceStub(object):
                 )
         self.DeleteAllData = channel.unary_unary(
                 '/yandex.cloud.datasphere.v2.jobs.ProjectJobService/DeleteAllData',
-                request_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.DeleteAllDataRequest.SerializeToString,
+                request_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.DeleteAllProjectJobDataRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
+        self.SetDataTtl = channel.unary_unary(
+                '/yandex.cloud.datasphere.v2.jobs.ProjectJobService/SetDataTtl',
+                request_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.SetProjectJobDataTtlRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.SetProjectJobDataTtlResponse.FromString,
                 )
 
 
@@ -83,6 +93,13 @@ class ProjectJobServiceServicer(object):
 
     def Create(self, request, context):
         """Creates job.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Clone(self, request, context):
+        """Clone job.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -158,12 +175,24 @@ class ProjectJobServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def SetDataTtl(self, request, context):
+        """Update job data ttl.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ProjectJobServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'Create': grpc.unary_unary_rpc_method_handler(
                     servicer.Create,
                     request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.CreateProjectJobRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'Clone': grpc.unary_unary_rpc_method_handler(
+                    servicer.Clone,
+                    request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.CloneProjectJobRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'Execute': grpc.unary_unary_rpc_method_handler(
@@ -213,8 +242,13 @@ def add_ProjectJobServiceServicer_to_server(servicer, server):
             ),
             'DeleteAllData': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteAllData,
-                    request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.DeleteAllDataRequest.FromString,
+                    request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.DeleteAllProjectJobDataRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'SetDataTtl': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetDataTtl,
+                    request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.SetProjectJobDataTtlRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.SetProjectJobDataTtlResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -241,6 +275,23 @@ class ProjectJobService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v2.jobs.ProjectJobService/Create',
             yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.CreateProjectJobRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Clone(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v2.jobs.ProjectJobService/Clone',
+            yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.CloneProjectJobRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
@@ -410,7 +461,24 @@ class ProjectJobService(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v2.jobs.ProjectJobService/DeleteAllData',
-            yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.DeleteAllDataRequest.SerializeToString,
+            yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.DeleteAllProjectJobDataRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SetDataTtl(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v2.jobs.ProjectJobService/SetDataTtl',
+            yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.SetProjectJobDataTtlRequest.SerializeToString,
+            yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2.SetProjectJobDataTtlResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

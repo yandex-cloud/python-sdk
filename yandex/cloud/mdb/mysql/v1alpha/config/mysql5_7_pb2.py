@@ -21,7 +21,6 @@ _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.mdb.mysql.v1alpha.config.mysql5_7_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
-
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n)yandex.cloud.api.mdb.mysql.v1alpha.configZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/mysql/v1alpha/config;mysql'
   _MYSQLCONFIG5_7.fields_by_name['innodb_buffer_pool_size']._options = None

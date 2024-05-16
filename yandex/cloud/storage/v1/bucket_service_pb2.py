@@ -26,7 +26,6 @@ _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.storage.v1.bucket_service_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
-
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\033yandex.cloud.api.storage.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/storage/v1;storage'
   _GETBUCKETREQUEST.fields_by_name['name']._options = None

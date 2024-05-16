@@ -2,9 +2,11 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
+from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from yandex.cloud.access import access_pb2 as yandex_dot_cloud_dot_access_dot_access__pb2
 from yandex.cloud.datasphere.v2 import community_pb2 as yandex_dot_cloud_dot_datasphere_dot_v2_dot_community__pb2
 from yandex.cloud.datasphere.v2 import community_service_pb2 as yandex_dot_cloud_dot_datasphere_dot_v2_dot_community__service__pb2
+from yandex.cloud.datasphere.v2 import restrictions_pb2 as yandex_dot_cloud_dot_datasphere_dot_v2_dot_restrictions__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 
 
@@ -66,6 +68,21 @@ class CommunityServiceStub(object):
         self.RemoveResource = channel.unary_unary(
                 '/yandex.cloud.datasphere.v2.CommunityService/RemoveResource',
                 request_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_community__service__pb2.RemoveCommunityResourceRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
+        self.GetRestrictionsMeta = channel.unary_unary(
+                '/yandex.cloud.datasphere.v2.CommunityService/GetRestrictionsMeta',
+                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_restrictions__pb2.GetRestrictionsMetaResponse.FromString,
+                )
+        self.GetRestrictions = channel.unary_unary(
+                '/yandex.cloud.datasphere.v2.CommunityService/GetRestrictions',
+                request_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_community__service__pb2.GetCommunityRestrictionsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_restrictions__pb2.RestrictionsResponse.FromString,
+                )
+        self.SetRestrictions = channel.unary_unary(
+                '/yandex.cloud.datasphere.v2.CommunityService/SetRestrictions',
+                request_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_community__service__pb2.SetCommunityRestrictionsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
 
@@ -144,6 +161,27 @@ class CommunityServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetRestrictionsMeta(self, request, context):
+        """Get meta information about available restrictions.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetRestrictions(self, request, context):
+        """Get current community restrictions.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SetRestrictions(self, request, context):
+        """Set community restrictions.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CommunityServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -195,6 +233,21 @@ def add_CommunityServiceServicer_to_server(servicer, server):
             'RemoveResource': grpc.unary_unary_rpc_method_handler(
                     servicer.RemoveResource,
                     request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_community__service__pb2.RemoveCommunityResourceRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'GetRestrictionsMeta': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetRestrictionsMeta,
+                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                    response_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_restrictions__pb2.GetRestrictionsMetaResponse.SerializeToString,
+            ),
+            'GetRestrictions': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetRestrictions,
+                    request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_community__service__pb2.GetCommunityRestrictionsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_restrictions__pb2.RestrictionsResponse.SerializeToString,
+            ),
+            'SetRestrictions': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetRestrictions,
+                    request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_community__service__pb2.SetCommunityRestrictionsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
@@ -374,6 +427,57 @@ class CommunityService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v2.CommunityService/RemoveResource',
             yandex_dot_cloud_dot_datasphere_dot_v2_dot_community__service__pb2.RemoveCommunityResourceRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetRestrictionsMeta(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v2.CommunityService/GetRestrictionsMeta',
+            google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            yandex_dot_cloud_dot_datasphere_dot_v2_dot_restrictions__pb2.GetRestrictionsMetaResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetRestrictions(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v2.CommunityService/GetRestrictions',
+            yandex_dot_cloud_dot_datasphere_dot_v2_dot_community__service__pb2.GetCommunityRestrictionsRequest.SerializeToString,
+            yandex_dot_cloud_dot_datasphere_dot_v2_dot_restrictions__pb2.RestrictionsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SetRestrictions(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v2.CommunityService/SetRestrictions',
+            yandex_dot_cloud_dot_datasphere_dot_v2_dot_community__service__pb2.SetCommunityRestrictionsRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

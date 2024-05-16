@@ -20,8 +20,6 @@ _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.api.operation_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
-  google_dot_protobuf_dot_descriptor__pb2.MethodOptions.RegisterExtension(operation)
-
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'Z8github.com/yandex-cloud/go-genproto/yandex/cloud/api;api'
   _globals['_OPERATION']._serialized_start=88
