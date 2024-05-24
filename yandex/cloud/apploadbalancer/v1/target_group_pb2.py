@@ -15,7 +15,7 @@ from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2yandex/cloud/apploadbalancer/v1/target_group.proto\x12\x1fyandex.cloud.apploadbalancer.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\xb2\x02\n\x0bTargetGroup\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x11\n\tfolder_id\x18\x04 \x01(\t\x12H\n\x06labels\x18\x05 \x03(\x0b\x32\x38.yandex.cloud.apploadbalancer.v1.TargetGroup.LabelsEntry\x12\x38\n\x07targets\x18\x06 \x03(\x0b\x32\'.yandex.cloud.apploadbalancer.v1.Target\x12.\n\ncreated_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"e\n\x06Target\x12\x14\n\nip_address\x18\x01 \x01(\tH\x00\x12\x11\n\tsubnet_id\x18\x03 \x01(\t\x12\x1c\n\x14private_ipv4_address\x18\x04 \x01(\x08\x42\x14\n\x0c\x61\x64\x64ress_type\x12\x04\xc0\xc1\x31\x01\x42z\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancerb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2yandex/cloud/apploadbalancer/v1/target_group.proto\x12\x1fyandex.cloud.apploadbalancer.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\xb2\x02\n\x0bTargetGroup\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x11\n\tfolder_id\x18\x04 \x01(\t\x12H\n\x06labels\x18\x05 \x03(\x0b\x32\x38.yandex.cloud.apploadbalancer.v1.TargetGroup.LabelsEntry\x12\x38\n\x07targets\x18\x06 \x03(\x0b\x32\'.yandex.cloud.apploadbalancer.v1.Target\x12.\n\ncreated_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"k\n\x06Target\x12\x14\n\nip_address\x18\x01 \x01(\tH\x00\x12\x11\n\tsubnet_id\x18\x03 \x01(\t\x12\x1c\n\x14private_ipv4_address\x18\x04 \x01(\x08\x42\x14\n\x0c\x61\x64\x64ress_type\x12\x04\xc0\xc1\x31\x01J\x04\x08\x02\x10\x03\x42z\n#yandex.cloud.api.apploadbalancer.v1ZSgithub.com/yandex-cloud/go-genproto/yandex/cloud/apploadbalancer/v1;apploadbalancerb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,5 +32,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_TARGETGROUP_LABELSENTRY']._serialized_start=413
   _globals['_TARGETGROUP_LABELSENTRY']._serialized_end=458
   _globals['_TARGET']._serialized_start=460
-  _globals['_TARGET']._serialized_end=561
+  _globals['_TARGET']._serialized_end=567
 # @@protoc_insertion_point(module_scope)

@@ -11,14 +11,14 @@ from google.protobuf.internal import builder as _builder
 _sym_db = _symbol_database.Default()
 
 
-from yandex.cloud.organizationmanager.v1 import group_mapping_pb2 as yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__mapping__pb2
+from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
+from yandex.cloud.organizationmanager.v1 import group_mapping_pb2 as yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_group__mapping__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
-from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n?yandex/cloud/organizationmanager/v1/group_mapping_service.proto\x12#yandex.cloud.organizationmanager.v1\x1a\x37yandex/cloud/organizationmanager/v1/group_mapping.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a google/protobuf/field_mask.proto\"=\n\x16GetGroupMappingRequest\x12#\n\rfederation_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"c\n\x17GetGroupMappingResponse\x12H\n\rgroup_mapping\x18\x01 \x01(\x0b\x32\x31.yandex.cloud.organizationmanager.v1.GroupMapping\"Q\n\x19\x43reateGroupMappingRequest\x12#\n\rfederation_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x0f\n\x07\x65nabled\x18\x03 \x01(\x08\"3\n\x1a\x43reateGroupMappingMetadata\x12\x15\n\rfederation_id\x18\x01 \x01(\t\"\x82\x01\n\x19UpdateGroupMappingRequest\x12#\n\rfederation_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x0f\n\x07\x65nabled\x18\x03 \x01(\x08\"3\n\x1aUpdateGroupMappingMetadata\x12\x15\n\rfederation_id\x18\x01 \x01(\t\"@\n\x19\x44\x65leteGroupMappingRequest\x12#\n\rfederation_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"3\n\x1a\x44\x65leteGroupMappingMetadata\x12\x15\n\rfederation_id\x18\x01 \x01(\t\"\xb0\x01\n\x1eUpdateGroupMappingItemsRequest\x12#\n\rfederation_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12i\n\x19group_mapping_item_deltas\x18\x04 \x03(\x0b\x32:.yandex.cloud.organizationmanager.v1.GroupMappingItemDeltaB\n\x82\xc8\x31\x06\x31-1000\"\xe6\x01\n\x15GroupMappingItemDelta\x12\x43\n\x04item\x18\x01 \x01(\x0b\x32\x35.yandex.cloud.organizationmanager.v1.GroupMappingItem\x12Q\n\x06\x61\x63tion\x18\x02 \x01(\x0e\x32\x41.yandex.cloud.organizationmanager.v1.GroupMappingItemDelta.Action\"5\n\x06\x41\x63tion\x12\x16\n\x12\x41\x43TION_UNSPECIFIED\x10\x00\x12\x07\n\x03\x41\x44\x44\x10\x01\x12\n\n\x06REMOVE\x10\x02\"8\n\x1fUpdateGroupMappingItemsMetadata\x12\x15\n\rfederation_id\x18\x01 \x01(\t\"\x80\x01\n\x1fUpdateGroupMappingItemsResponse\x12]\n\x19group_mapping_item_deltas\x18\x04 \x03(\x0b\x32:.yandex.cloud.organizationmanager.v1.GroupMappingItemDelta\"\x9e\x01\n\x1cListGroupMappingItemsRequest\x12#\n\rfederation_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"\x8c\x01\n\x1dListGroupMappingItemsResponse\x12R\n\x13group_mapping_items\x18\x01 \x03(\x0b\x32\x35.yandex.cloud.organizationmanager.v1.GroupMappingItem\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xd0\x07\n\x13GroupMappingService\x12\x80\x01\n\x03Get\x12;.yandex.cloud.organizationmanager.v1.GetGroupMappingRequest\x1a<.yandex.cloud.organizationmanager.v1.GetGroupMappingResponse\x12\x9b\x01\n\x06\x43reate\x12>.yandex.cloud.organizationmanager.v1.CreateGroupMappingRequest\x1a!.yandex.cloud.operation.Operation\".\xb2\xd2**\n\x1a\x43reateGroupMappingMetadata\x12\x0cGroupMapping\x12\x9b\x01\n\x06Update\x12>.yandex.cloud.organizationmanager.v1.UpdateGroupMappingRequest\x1a!.yandex.cloud.operation.Operation\".\xb2\xd2**\n\x1aUpdateGroupMappingMetadata\x12\x0cGroupMapping\x12\xa4\x01\n\x06\x44\x65lete\x12>.yandex.cloud.organizationmanager.v1.DeleteGroupMappingRequest\x1a!.yandex.cloud.operation.Operation\"7\xb2\xd2*3\n\x1a\x44\x65leteGroupMappingMetadata\x12\x15google.protobuf.Empty\x12\x92\x01\n\tListItems\x12\x41.yandex.cloud.organizationmanager.v1.ListGroupMappingItemsRequest\x1a\x42.yandex.cloud.organizationmanager.v1.ListGroupMappingItemsResponse\x12\xbd\x01\n\x0bUpdateItems\x12\x43.yandex.cloud.organizationmanager.v1.UpdateGroupMappingItemsRequest\x1a!.yandex.cloud.operation.Operation\"F\xb2\xd2*B\n\x1fUpdateGroupMappingItemsMetadata\x12\x1fUpdateGroupMappingItemsResponseB\x86\x01\n\'yandex.cloud.api.organizationmanager.v1Z[github.com/yandex-cloud/go-genproto/yandex/cloud/organizationmanager/v1;organizationmanagerb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n?yandex/cloud/organizationmanager/v1/group_mapping_service.proto\x12#yandex.cloud.organizationmanager.v1\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x37yandex/cloud/organizationmanager/v1/group_mapping.proto\x1a\x1dyandex/cloud/validation.proto\"=\n\x16GetGroupMappingRequest\x12#\n\rfederation_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"c\n\x17GetGroupMappingResponse\x12H\n\rgroup_mapping\x18\x01 \x01(\x0b\x32\x31.yandex.cloud.organizationmanager.v1.GroupMapping\"W\n\x19\x43reateGroupMappingRequest\x12#\n\rfederation_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x0f\n\x07\x65nabled\x18\x03 \x01(\x08J\x04\x08\x02\x10\x03\"3\n\x1a\x43reateGroupMappingMetadata\x12\x15\n\rfederation_id\x18\x01 \x01(\t\"\x82\x01\n\x19UpdateGroupMappingRequest\x12#\n\rfederation_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x0f\n\x07\x65nabled\x18\x03 \x01(\x08\"3\n\x1aUpdateGroupMappingMetadata\x12\x15\n\rfederation_id\x18\x01 \x01(\t\"@\n\x19\x44\x65leteGroupMappingRequest\x12#\n\rfederation_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"3\n\x1a\x44\x65leteGroupMappingMetadata\x12\x15\n\rfederation_id\x18\x01 \x01(\t\"\xb6\x01\n\x1eUpdateGroupMappingItemsRequest\x12#\n\rfederation_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12i\n\x19group_mapping_item_deltas\x18\x04 \x03(\x0b\x32:.yandex.cloud.organizationmanager.v1.GroupMappingItemDeltaB\n\x82\xc8\x31\x06\x31-1000J\x04\x08\x02\x10\x04\"\xe6\x01\n\x15GroupMappingItemDelta\x12\x43\n\x04item\x18\x01 \x01(\x0b\x32\x35.yandex.cloud.organizationmanager.v1.GroupMappingItem\x12Q\n\x06\x61\x63tion\x18\x02 \x01(\x0e\x32\x41.yandex.cloud.organizationmanager.v1.GroupMappingItemDelta.Action\"5\n\x06\x41\x63tion\x12\x16\n\x12\x41\x43TION_UNSPECIFIED\x10\x00\x12\x07\n\x03\x41\x44\x44\x10\x01\x12\n\n\x06REMOVE\x10\x02\"8\n\x1fUpdateGroupMappingItemsMetadata\x12\x15\n\rfederation_id\x18\x01 \x01(\t\"\x80\x01\n\x1fUpdateGroupMappingItemsResponse\x12]\n\x19group_mapping_item_deltas\x18\x04 \x03(\x0b\x32:.yandex.cloud.organizationmanager.v1.GroupMappingItemDelta\"\x9e\x01\n\x1cListGroupMappingItemsRequest\x12#\n\rfederation_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"\x8c\x01\n\x1dListGroupMappingItemsResponse\x12R\n\x13group_mapping_items\x18\x01 \x03(\x0b\x32\x35.yandex.cloud.organizationmanager.v1.GroupMappingItem\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xd0\x07\n\x13GroupMappingService\x12\x80\x01\n\x03Get\x12;.yandex.cloud.organizationmanager.v1.GetGroupMappingRequest\x1a<.yandex.cloud.organizationmanager.v1.GetGroupMappingResponse\x12\x9b\x01\n\x06\x43reate\x12>.yandex.cloud.organizationmanager.v1.CreateGroupMappingRequest\x1a!.yandex.cloud.operation.Operation\".\xb2\xd2**\n\x1a\x43reateGroupMappingMetadata\x12\x0cGroupMapping\x12\x9b\x01\n\x06Update\x12>.yandex.cloud.organizationmanager.v1.UpdateGroupMappingRequest\x1a!.yandex.cloud.operation.Operation\".\xb2\xd2**\n\x1aUpdateGroupMappingMetadata\x12\x0cGroupMapping\x12\xa4\x01\n\x06\x44\x65lete\x12>.yandex.cloud.organizationmanager.v1.DeleteGroupMappingRequest\x1a!.yandex.cloud.operation.Operation\"7\xb2\xd2*3\n\x1a\x44\x65leteGroupMappingMetadata\x12\x15google.protobuf.Empty\x12\x92\x01\n\tListItems\x12\x41.yandex.cloud.organizationmanager.v1.ListGroupMappingItemsRequest\x1a\x42.yandex.cloud.organizationmanager.v1.ListGroupMappingItemsResponse\x12\xbd\x01\n\x0bUpdateItems\x12\x43.yandex.cloud.organizationmanager.v1.UpdateGroupMappingItemsRequest\x1a!.yandex.cloud.operation.Operation\"F\xb2\xd2*B\n\x1fUpdateGroupMappingItemsMetadata\x12\x1fUpdateGroupMappingItemsResponseB\x86\x01\n\'yandex.cloud.api.organizationmanager.v1Z[github.com/yandex-cloud/go-genproto/yandex/cloud/organizationmanager/v1;organizationmanagerb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -59,31 +59,31 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_GETGROUPMAPPINGRESPONSE']._serialized_start=363
   _globals['_GETGROUPMAPPINGRESPONSE']._serialized_end=462
   _globals['_CREATEGROUPMAPPINGREQUEST']._serialized_start=464
-  _globals['_CREATEGROUPMAPPINGREQUEST']._serialized_end=545
-  _globals['_CREATEGROUPMAPPINGMETADATA']._serialized_start=547
-  _globals['_CREATEGROUPMAPPINGMETADATA']._serialized_end=598
-  _globals['_UPDATEGROUPMAPPINGREQUEST']._serialized_start=601
-  _globals['_UPDATEGROUPMAPPINGREQUEST']._serialized_end=731
-  _globals['_UPDATEGROUPMAPPINGMETADATA']._serialized_start=733
-  _globals['_UPDATEGROUPMAPPINGMETADATA']._serialized_end=784
-  _globals['_DELETEGROUPMAPPINGREQUEST']._serialized_start=786
-  _globals['_DELETEGROUPMAPPINGREQUEST']._serialized_end=850
-  _globals['_DELETEGROUPMAPPINGMETADATA']._serialized_start=852
-  _globals['_DELETEGROUPMAPPINGMETADATA']._serialized_end=903
-  _globals['_UPDATEGROUPMAPPINGITEMSREQUEST']._serialized_start=906
-  _globals['_UPDATEGROUPMAPPINGITEMSREQUEST']._serialized_end=1082
-  _globals['_GROUPMAPPINGITEMDELTA']._serialized_start=1085
-  _globals['_GROUPMAPPINGITEMDELTA']._serialized_end=1315
-  _globals['_GROUPMAPPINGITEMDELTA_ACTION']._serialized_start=1262
-  _globals['_GROUPMAPPINGITEMDELTA_ACTION']._serialized_end=1315
-  _globals['_UPDATEGROUPMAPPINGITEMSMETADATA']._serialized_start=1317
-  _globals['_UPDATEGROUPMAPPINGITEMSMETADATA']._serialized_end=1373
-  _globals['_UPDATEGROUPMAPPINGITEMSRESPONSE']._serialized_start=1376
-  _globals['_UPDATEGROUPMAPPINGITEMSRESPONSE']._serialized_end=1504
-  _globals['_LISTGROUPMAPPINGITEMSREQUEST']._serialized_start=1507
-  _globals['_LISTGROUPMAPPINGITEMSREQUEST']._serialized_end=1665
-  _globals['_LISTGROUPMAPPINGITEMSRESPONSE']._serialized_start=1668
-  _globals['_LISTGROUPMAPPINGITEMSRESPONSE']._serialized_end=1808
-  _globals['_GROUPMAPPINGSERVICE']._serialized_start=1811
-  _globals['_GROUPMAPPINGSERVICE']._serialized_end=2787
+  _globals['_CREATEGROUPMAPPINGREQUEST']._serialized_end=551
+  _globals['_CREATEGROUPMAPPINGMETADATA']._serialized_start=553
+  _globals['_CREATEGROUPMAPPINGMETADATA']._serialized_end=604
+  _globals['_UPDATEGROUPMAPPINGREQUEST']._serialized_start=607
+  _globals['_UPDATEGROUPMAPPINGREQUEST']._serialized_end=737
+  _globals['_UPDATEGROUPMAPPINGMETADATA']._serialized_start=739
+  _globals['_UPDATEGROUPMAPPINGMETADATA']._serialized_end=790
+  _globals['_DELETEGROUPMAPPINGREQUEST']._serialized_start=792
+  _globals['_DELETEGROUPMAPPINGREQUEST']._serialized_end=856
+  _globals['_DELETEGROUPMAPPINGMETADATA']._serialized_start=858
+  _globals['_DELETEGROUPMAPPINGMETADATA']._serialized_end=909
+  _globals['_UPDATEGROUPMAPPINGITEMSREQUEST']._serialized_start=912
+  _globals['_UPDATEGROUPMAPPINGITEMSREQUEST']._serialized_end=1094
+  _globals['_GROUPMAPPINGITEMDELTA']._serialized_start=1097
+  _globals['_GROUPMAPPINGITEMDELTA']._serialized_end=1327
+  _globals['_GROUPMAPPINGITEMDELTA_ACTION']._serialized_start=1274
+  _globals['_GROUPMAPPINGITEMDELTA_ACTION']._serialized_end=1327
+  _globals['_UPDATEGROUPMAPPINGITEMSMETADATA']._serialized_start=1329
+  _globals['_UPDATEGROUPMAPPINGITEMSMETADATA']._serialized_end=1385
+  _globals['_UPDATEGROUPMAPPINGITEMSRESPONSE']._serialized_start=1388
+  _globals['_UPDATEGROUPMAPPINGITEMSRESPONSE']._serialized_end=1516
+  _globals['_LISTGROUPMAPPINGITEMSREQUEST']._serialized_start=1519
+  _globals['_LISTGROUPMAPPINGITEMSREQUEST']._serialized_end=1677
+  _globals['_LISTGROUPMAPPINGITEMSRESPONSE']._serialized_start=1680
+  _globals['_LISTGROUPMAPPINGITEMSRESPONSE']._serialized_end=1820
+  _globals['_GROUPMAPPINGSERVICE']._serialized_start=1823
+  _globals['_GROUPMAPPINGSERVICE']._serialized_end=2799
 # @@protoc_insertion_point(module_scope)

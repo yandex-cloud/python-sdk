@@ -12,13 +12,13 @@ _sym_db = _symbol_database.Default()
 
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
-from yandex.cloud.billing.v1 import customer_pb2 as yandex_dot_cloud_dot_billing_dot_v1_dot_customer__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
+from yandex.cloud.billing.v1 import customer_pb2 as yandex_dot_cloud_dot_billing_dot_v1_dot_customer__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n.yandex/cloud/billing/v1/customer_service.proto\x12\x17yandex.cloud.billing.v1\x1a\x1cgoogle/api/annotations.proto\x1a&yandex/cloud/billing/v1/customer.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"w\n\x14ListCustomersRequest\x12!\n\x0breseller_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x03 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=100\"f\n\x15ListCustomersResponse\x12\x34\n\tcustomers\x18\x01 \x03(\x0b\x32!.yandex.cloud.billing.v1.Customer\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xad\x01\n\x15InviteCustomerRequest\x12!\n\x0breseller_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x12\n\x04name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1e\n\x10invitation_email\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12=\n\x06person\x18\x04 \x01(\x0b\x32\'.yandex.cloud.billing.v1.CustomerPersonB\x04\xe8\xc7\x31\x01\"\x9b\x01\n#CreateResellerServedCustomerRequest\x12!\n\x0breseller_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x12\n\x04name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12=\n\x06person\x18\x03 \x01(\x0b\x32\'.yandex.cloud.billing.v1.CustomerPersonB\x04\xe8\xc7\x31\x01\"<\n\x17\x41\x63tivateCustomerRequest\x12!\n\x0b\x63ustomer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\";\n\x16SuspendCustomerRequest\x12!\n\x0b\x63ustomer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"<\n\x10\x43ustomerMetadata\x12\x13\n\x0breseller_id\x18\x01 \x01(\t\x12\x13\n\x0b\x63ustomer_id\x18\x02 \x01(\t2\x85\x07\n\x0f\x43ustomerService\x12\x84\x01\n\x04List\x12-.yandex.cloud.billing.v1.ListCustomersRequest\x1a..yandex.cloud.billing.v1.ListCustomersResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/billing/v1/customers\x12\xa4\x01\n\x06Invite\x12..yandex.cloud.billing.v1.InviteCustomerRequest\x1a!.yandex.cloud.operation.Operation\"G\xb2\xd2*\x1c\n\x10\x43ustomerMetadata\x12\x08\x43ustomer\x82\xd3\xe4\x93\x02!\"\x1c/billing/v1/customers:invite:\x01*\x12\xd6\x01\n\x14\x43reateResellerServed\x12<.yandex.cloud.billing.v1.CreateResellerServedCustomerRequest\x1a!.yandex.cloud.operation.Operation\"]\xb2\xd2*\x1c\n\x10\x43ustomerMetadata\x12\x08\x43ustomer\x82\xd3\xe4\x93\x02\x37\"2/billing/v1/customers:createResellerServedCustomer:\x01*\x12\xb5\x01\n\x08\x41\x63tivate\x12\x30.yandex.cloud.billing.v1.ActivateCustomerRequest\x1a!.yandex.cloud.operation.Operation\"T\xb2\xd2*\x1c\n\x10\x43ustomerMetadata\x12\x08\x43ustomer\x82\xd3\xe4\x93\x02.\",/billing/v1/customers/{customer_id}:activate\x12\xb2\x01\n\x07Suspend\x12/.yandex.cloud.billing.v1.SuspendCustomerRequest\x1a!.yandex.cloud.operation.Operation\"S\xb2\xd2*\x1c\n\x10\x43ustomerMetadata\x12\x08\x43ustomer\x82\xd3\xe4\x93\x02-\"+/billing/v1/customers/{customer_id}:suspendBb\n\x1byandex.cloud.api.billing.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/billing/v1;billingb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n.yandex/cloud/billing/v1/customer_service.proto\x12\x17yandex.cloud.billing.v1\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/billing/v1/customer.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"}\n\x14ListCustomersRequest\x12!\n\x0breseller_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x03 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=100J\x04\x08\x02\x10\x03\"f\n\x15ListCustomersResponse\x12\x34\n\tcustomers\x18\x01 \x03(\x0b\x32!.yandex.cloud.billing.v1.Customer\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xad\x01\n\x15InviteCustomerRequest\x12!\n\x0breseller_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x12\n\x04name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1e\n\x10invitation_email\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12=\n\x06person\x18\x04 \x01(\x0b\x32\'.yandex.cloud.billing.v1.CustomerPersonB\x04\xe8\xc7\x31\x01\"\x9b\x01\n#CreateResellerServedCustomerRequest\x12!\n\x0breseller_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x12\n\x04name\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12=\n\x06person\x18\x03 \x01(\x0b\x32\'.yandex.cloud.billing.v1.CustomerPersonB\x04\xe8\xc7\x31\x01\"<\n\x17\x41\x63tivateCustomerRequest\x12!\n\x0b\x63ustomer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\";\n\x16SuspendCustomerRequest\x12!\n\x0b\x63ustomer_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"<\n\x10\x43ustomerMetadata\x12\x13\n\x0breseller_id\x18\x01 \x01(\t\x12\x13\n\x0b\x63ustomer_id\x18\x02 \x01(\t2\x85\x07\n\x0f\x43ustomerService\x12\x84\x01\n\x04List\x12-.yandex.cloud.billing.v1.ListCustomersRequest\x1a..yandex.cloud.billing.v1.ListCustomersResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/billing/v1/customers\x12\xa4\x01\n\x06Invite\x12..yandex.cloud.billing.v1.InviteCustomerRequest\x1a!.yandex.cloud.operation.Operation\"G\xb2\xd2*\x1c\n\x10\x43ustomerMetadata\x12\x08\x43ustomer\x82\xd3\xe4\x93\x02!\"\x1c/billing/v1/customers:invite:\x01*\x12\xd6\x01\n\x14\x43reateResellerServed\x12<.yandex.cloud.billing.v1.CreateResellerServedCustomerRequest\x1a!.yandex.cloud.operation.Operation\"]\xb2\xd2*\x1c\n\x10\x43ustomerMetadata\x12\x08\x43ustomer\x82\xd3\xe4\x93\x02\x37\"2/billing/v1/customers:createResellerServedCustomer:\x01*\x12\xb5\x01\n\x08\x41\x63tivate\x12\x30.yandex.cloud.billing.v1.ActivateCustomerRequest\x1a!.yandex.cloud.operation.Operation\"T\xb2\xd2*\x1c\n\x10\x43ustomerMetadata\x12\x08\x43ustomer\x82\xd3\xe4\x93\x02.\",/billing/v1/customers/{customer_id}:activate\x12\xb2\x01\n\x07Suspend\x12/.yandex.cloud.billing.v1.SuspendCustomerRequest\x1a!.yandex.cloud.operation.Operation\"S\xb2\xd2*\x1c\n\x10\x43ustomerMetadata\x12\x08\x43ustomer\x82\xd3\xe4\x93\x02-\"+/billing/v1/customers/{customer_id}:suspendBb\n\x1byandex.cloud.api.billing.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/billing/v1;billingb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -61,19 +61,19 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _CUSTOMERSERVICE.methods_by_name['Suspend']._options = None
   _CUSTOMERSERVICE.methods_by_name['Suspend']._serialized_options = b'\262\322*\034\n\020CustomerMetadata\022\010Customer\202\323\344\223\002-\"+/billing/v1/customers/{customer_id}:suspend'
   _globals['_LISTCUSTOMERSREQUEST']._serialized_start=250
-  _globals['_LISTCUSTOMERSREQUEST']._serialized_end=369
-  _globals['_LISTCUSTOMERSRESPONSE']._serialized_start=371
-  _globals['_LISTCUSTOMERSRESPONSE']._serialized_end=473
-  _globals['_INVITECUSTOMERREQUEST']._serialized_start=476
-  _globals['_INVITECUSTOMERREQUEST']._serialized_end=649
-  _globals['_CREATERESELLERSERVEDCUSTOMERREQUEST']._serialized_start=652
-  _globals['_CREATERESELLERSERVEDCUSTOMERREQUEST']._serialized_end=807
-  _globals['_ACTIVATECUSTOMERREQUEST']._serialized_start=809
-  _globals['_ACTIVATECUSTOMERREQUEST']._serialized_end=869
-  _globals['_SUSPENDCUSTOMERREQUEST']._serialized_start=871
-  _globals['_SUSPENDCUSTOMERREQUEST']._serialized_end=930
-  _globals['_CUSTOMERMETADATA']._serialized_start=932
-  _globals['_CUSTOMERMETADATA']._serialized_end=992
-  _globals['_CUSTOMERSERVICE']._serialized_start=995
-  _globals['_CUSTOMERSERVICE']._serialized_end=1896
+  _globals['_LISTCUSTOMERSREQUEST']._serialized_end=375
+  _globals['_LISTCUSTOMERSRESPONSE']._serialized_start=377
+  _globals['_LISTCUSTOMERSRESPONSE']._serialized_end=479
+  _globals['_INVITECUSTOMERREQUEST']._serialized_start=482
+  _globals['_INVITECUSTOMERREQUEST']._serialized_end=655
+  _globals['_CREATERESELLERSERVEDCUSTOMERREQUEST']._serialized_start=658
+  _globals['_CREATERESELLERSERVEDCUSTOMERREQUEST']._serialized_end=813
+  _globals['_ACTIVATECUSTOMERREQUEST']._serialized_start=815
+  _globals['_ACTIVATECUSTOMERREQUEST']._serialized_end=875
+  _globals['_SUSPENDCUSTOMERREQUEST']._serialized_start=877
+  _globals['_SUSPENDCUSTOMERREQUEST']._serialized_end=936
+  _globals['_CUSTOMERMETADATA']._serialized_start=938
+  _globals['_CUSTOMERMETADATA']._serialized_end=998
+  _globals['_CUSTOMERSERVICE']._serialized_start=1001
+  _globals['_CUSTOMERSERVICE']._serialized_end=1902
 # @@protoc_insertion_point(module_scope)

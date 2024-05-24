@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n3yandex/cloud/mdb/greenplum/v1/resource_preset.proto\x12\x1dyandex.cloud.mdb.greenplum.v1\"\x9c\x02\n\x0eResourcePreset\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08zone_ids\x18\x02 \x03(\t\x12\x15\n\rdisk_type_ids\x18\n \x03(\t\x12\r\n\x05\x63ores\x18\x03 \x01(\x03\x12\x0e\n\x06memory\x18\x04 \x01(\x03\x12@\n\x04type\x18\x05 \x01(\x0e\x32\x32.yandex.cloud.mdb.greenplum.v1.ResourcePreset.Type\x12\x1a\n\x12host_count_divider\x18\x08 \x01(\x03\x12!\n\x19max_segment_in_host_count\x18\t \x01(\x03\"5\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\n\n\x06MASTER\x10\x01\x12\x0b\n\x07SEGMENT\x10\x02\x42p\n!yandex.cloud.api.mdb.greenplum.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/greenplum/v1;greenplumb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n3yandex/cloud/mdb/greenplum/v1/resource_preset.proto\x12\x1dyandex.cloud.mdb.greenplum.v1\"\xa2\x02\n\x0eResourcePreset\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08zone_ids\x18\x02 \x03(\t\x12\x15\n\rdisk_type_ids\x18\n \x03(\t\x12\r\n\x05\x63ores\x18\x03 \x01(\x03\x12\x0e\n\x06memory\x18\x04 \x01(\x03\x12@\n\x04type\x18\x05 \x01(\x0e\x32\x32.yandex.cloud.mdb.greenplum.v1.ResourcePreset.Type\x12\x1a\n\x12host_count_divider\x18\x08 \x01(\x03\x12!\n\x19max_segment_in_host_count\x18\t \x01(\x03\"5\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\n\n\x06MASTER\x10\x01\x12\x0b\n\x07SEGMENT\x10\x02J\x04\x08\x06\x10\x08\x42p\n!yandex.cloud.api.mdb.greenplum.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/greenplum/v1;greenplumb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -22,7 +22,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n!yandex.cloud.api.mdb.greenplum.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/greenplum/v1;greenplum'
   _globals['_RESOURCEPRESET']._serialized_start=87
-  _globals['_RESOURCEPRESET']._serialized_end=371
+  _globals['_RESOURCEPRESET']._serialized_end=377
   _globals['_RESOURCEPRESET_TYPE']._serialized_start=318
   _globals['_RESOURCEPRESET_TYPE']._serialized_end=371
 # @@protoc_insertion_point(module_scope)

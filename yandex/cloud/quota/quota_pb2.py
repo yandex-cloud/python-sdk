@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1eyandex/cloud/quota/quota.proto\x12\x12yandex.cloud.quota\"9\n\x0bQuotaMetric\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\r\n\x05usage\x18\x04 \x01(\x01\"*\n\x0bMetricLimit\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05limit\x18\x02 \x01(\x03\"\x9e\x01\n\x0cQuotaFailure\x12>\n\nviolations\x18\x02 \x03(\x0b\x32*.yandex.cloud.quota.QuotaFailure.Violation\x1aN\n\tViolation\x12/\n\x06metric\x18\x01 \x01(\x0b\x32\x1f.yandex.cloud.quota.QuotaMetric\x12\x10\n\x08required\x18\x02 \x01(\x03\x42V\n\x16yandex.cloud.api.quotaZ<github.com/yandex-cloud/go-genproto/yandex/cloud/quota;quotab\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1eyandex/cloud/quota/quota.proto\x12\x12yandex.cloud.quota\"?\n\x0bQuotaMetric\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05limit\x18\x03 \x01(\x03\x12\r\n\x05usage\x18\x04 \x01(\x01J\x04\x08\x02\x10\x03\"*\n\x0bMetricLimit\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05limit\x18\x02 \x01(\x03\"\x9e\x01\n\x0cQuotaFailure\x12>\n\nviolations\x18\x02 \x03(\x0b\x32*.yandex.cloud.quota.QuotaFailure.Violation\x1aN\n\tViolation\x12/\n\x06metric\x18\x01 \x01(\x0b\x32\x1f.yandex.cloud.quota.QuotaMetric\x12\x10\n\x08required\x18\x02 \x01(\x03\x42V\n\x16yandex.cloud.api.quotaZ<github.com/yandex-cloud/go-genproto/yandex/cloud/quota;quotab\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -22,11 +22,11 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\026yandex.cloud.api.quotaZ<github.com/yandex-cloud/go-genproto/yandex/cloud/quota;quota'
   _globals['_QUOTAMETRIC']._serialized_start=54
-  _globals['_QUOTAMETRIC']._serialized_end=111
-  _globals['_METRICLIMIT']._serialized_start=113
-  _globals['_METRICLIMIT']._serialized_end=155
-  _globals['_QUOTAFAILURE']._serialized_start=158
-  _globals['_QUOTAFAILURE']._serialized_end=316
-  _globals['_QUOTAFAILURE_VIOLATION']._serialized_start=238
-  _globals['_QUOTAFAILURE_VIOLATION']._serialized_end=316
+  _globals['_QUOTAMETRIC']._serialized_end=117
+  _globals['_METRICLIMIT']._serialized_start=119
+  _globals['_METRICLIMIT']._serialized_end=161
+  _globals['_QUOTAFAILURE']._serialized_start=164
+  _globals['_QUOTAFAILURE']._serialized_end=322
+  _globals['_QUOTAFAILURE_VIOLATION']._serialized_start=244
+  _globals['_QUOTAFAILURE_VIOLATION']._serialized_end=322
 # @@protoc_insertion_point(module_scope)

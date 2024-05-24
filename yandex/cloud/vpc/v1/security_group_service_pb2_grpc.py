@@ -8,7 +8,8 @@ from yandex.cloud.vpc.v1 import security_group_service_pb2 as yandex_dot_cloud_d
 
 
 class SecurityGroupServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing SecurityGroup resources.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -64,59 +65,71 @@ class SecurityGroupServiceStub(object):
 
 
 class SecurityGroupServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing SecurityGroup resources.
+    """
 
     def Get(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Returns the specified SecurityGroup resource.
+
+        To get the list of all available SecurityGroup resources, make a [List] request.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Retrieves the list of SecurityGroup resources in the specified folder.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Creates a security group in the specified folder and network.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Updates the specified security group.
+        Method starts an asynchronous operation that can be cancelled while it is in progress.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateRules(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Updates the rules of the specified security group.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateRule(self, request, context):
-        """update rule description or labels
+        """Updates the specified rule.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Deletes the specified security group.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Move(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Moves security groups to another folder.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListOperations(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Lists operations for the specified security groups.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -177,7 +190,8 @@ def add_SecurityGroupServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class SecurityGroupService(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing SecurityGroup resources.
+    """
 
     @staticmethod
     def Get(request,

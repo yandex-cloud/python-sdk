@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nDyandex/cloud/certificatemanager/v1/certificate_content_service.proto\x12\"yandex.cloud.certificatemanager.v1\x1a\x1cgoogle/api/annotations.proto\"g\n\x1dGetCertificateContentResponse\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\x12\x19\n\x11\x63\x65rtificate_chain\x18\x03 \x03(\t\x12\x13\n\x0bprivate_key\x18\x04 \x01(\t\"\x9c\x01\n\x1cGetCertificateContentRequest\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\x12\x12\n\nversion_id\x18\x02 \x01(\t\x12P\n\x12private_key_format\x18\x03 \x01(\x0e\x32\x34.yandex.cloud.certificatemanager.v1.PrivateKeyFormat*L\n\x10PrivateKeyFormat\x12\"\n\x1ePRIVATE_KEY_FORMAT_UNSPECIFIED\x10\x00\x12\t\n\x05PKCS1\x10\x01\x12\t\n\x05PKCS8\x10\x02\x32\xf2\x01\n\x19\x43\x65rtificateContentService\x12\xd4\x01\n\x03Get\x12@.yandex.cloud.certificatemanager.v1.GetCertificateContentRequest\x1a\x41.yandex.cloud.certificatemanager.v1.GetCertificateContentResponse\"H\x82\xd3\xe4\x93\x02\x42\x12@/certificate-manager/v1/certificates/{certificate_id}:getContentB\x83\x01\n&yandex.cloud.api.certificatemanager.v1ZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/certificatemanager/v1;certificatemanagerb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nDyandex/cloud/certificatemanager/v1/certificate_content_service.proto\x12\"yandex.cloud.certificatemanager.v1\x1a\x1cgoogle/api/annotations.proto\"m\n\x1dGetCertificateContentResponse\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\x12\x19\n\x11\x63\x65rtificate_chain\x18\x03 \x03(\t\x12\x13\n\x0bprivate_key\x18\x04 \x01(\tJ\x04\x08\x02\x10\x03\"\x9c\x01\n\x1cGetCertificateContentRequest\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\x12\x12\n\nversion_id\x18\x02 \x01(\t\x12P\n\x12private_key_format\x18\x03 \x01(\x0e\x32\x34.yandex.cloud.certificatemanager.v1.PrivateKeyFormat*L\n\x10PrivateKeyFormat\x12\"\n\x1ePRIVATE_KEY_FORMAT_UNSPECIFIED\x10\x00\x12\t\n\x05PKCS1\x10\x01\x12\t\n\x05PKCS8\x10\x02\x32\xf2\x01\n\x19\x43\x65rtificateContentService\x12\xd4\x01\n\x03Get\x12@.yandex.cloud.certificatemanager.v1.GetCertificateContentRequest\x1a\x41.yandex.cloud.certificatemanager.v1.GetCertificateContentResponse\"H\x82\xd3\xe4\x93\x02\x42\x12@/certificate-manager/v1/certificates/{certificate_id}:getContentB\x83\x01\n&yandex.cloud.api.certificatemanager.v1ZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/certificatemanager/v1;certificatemanagerb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -24,12 +24,12 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._serialized_options = b'\n&yandex.cloud.api.certificatemanager.v1ZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/certificatemanager/v1;certificatemanager'
   _CERTIFICATECONTENTSERVICE.methods_by_name['Get']._options = None
   _CERTIFICATECONTENTSERVICE.methods_by_name['Get']._serialized_options = b'\202\323\344\223\002B\022@/certificate-manager/v1/certificates/{certificate_id}:getContent'
-  _globals['_PRIVATEKEYFORMAT']._serialized_start=402
-  _globals['_PRIVATEKEYFORMAT']._serialized_end=478
+  _globals['_PRIVATEKEYFORMAT']._serialized_start=408
+  _globals['_PRIVATEKEYFORMAT']._serialized_end=484
   _globals['_GETCERTIFICATECONTENTRESPONSE']._serialized_start=138
-  _globals['_GETCERTIFICATECONTENTRESPONSE']._serialized_end=241
-  _globals['_GETCERTIFICATECONTENTREQUEST']._serialized_start=244
-  _globals['_GETCERTIFICATECONTENTREQUEST']._serialized_end=400
-  _globals['_CERTIFICATECONTENTSERVICE']._serialized_start=481
-  _globals['_CERTIFICATECONTENTSERVICE']._serialized_end=723
+  _globals['_GETCERTIFICATECONTENTRESPONSE']._serialized_end=247
+  _globals['_GETCERTIFICATECONTENTREQUEST']._serialized_start=250
+  _globals['_GETCERTIFICATECONTENTREQUEST']._serialized_end=406
+  _globals['_CERTIFICATECONTENTSERVICE']._serialized_start=487
+  _globals['_CERTIFICATECONTENTSERVICE']._serialized_end=729
 # @@protoc_insertion_point(module_scope)

@@ -17,7 +17,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud.video.v1 import video_pb2 as yandex_dot_cloud_dot_video_dot_v1_dot_video__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)yandex/cloud/video/v1/video_service.proto\x12\x15yandex.cloud.video.v1\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a!yandex/cloud/video/v1/video.proto\"#\n\x0fGetVideoRequest\x12\x10\n\x08video_id\x18\x01 \x01(\t\"o\n\x10ListVideoRequest\x12\x12\n\nchannel_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x64 \x01(\x03\x12\x12\n\npage_token\x18\x65 \x01(\t\x12\x10\n\x08order_by\x18\x66 \x01(\t\x12\x0e\n\x06\x66ilter\x18g \x01(\t\"Z\n\x11ListVideoResponse\x12,\n\x06videos\x18\x01 \x03(\x0b\x32\x1c.yandex.cloud.video.v1.Video\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\t\"\xd2\x03\n\x12\x43reateVideoRequest\x12\x12\n\nchannel_id\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x14\n\x0cthumbnail_id\x18\x04 \x01(\t\x12\x46\n\x06labels\x18\xc8\x01 \x03(\x0b\x32\x35.yandex.cloud.video.v1.CreateVideoRequest.LabelsEntry\x12\x37\n\x04tusd\x18\xe8\x07 \x01(\x0b\x32&.yandex.cloud.video.v1.VideoTUSDParamsH\x00\x12H\n\rpublic_access\x18\xd0\x0f \x01(\x0b\x32..yandex.cloud.video.v1.VideoPublicAccessParamsH\x01\x12Q\n\x12\x61uth_system_access\x18\xd2\x0f \x01(\x0b\x32\x32.yandex.cloud.video.v1.VideoAuthSystemAccessParamsH\x01\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x08\n\x06sourceB\x0f\n\raccess_rightsJ\x06\x08\xd1\x0f\x10\xd2\x0f\"7\n\x0fVideoTUSDParams\x12\x11\n\tfile_size\x18\x01 \x01(\x03\x12\x11\n\tfile_name\x18\x02 \x01(\t\"\x19\n\x17VideoPublicAccessParams\"\x1d\n\x1bVideoAuthSystemAccessParams\"\'\n\x13\x43reateVideoMetadata\x12\x10\n\x08video_id\x18\x01 \x01(\t\"\xbd\x03\n\x12UpdateVideoRequest\x12\x10\n\x08video_id\x18\x01 \x01(\t\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\r\n\x05title\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x14\n\x0cthumbnail_id\x18\x05 \x01(\t\x12\x46\n\x06labels\x18\xc8\x01 \x03(\x0b\x32\x35.yandex.cloud.video.v1.UpdateVideoRequest.LabelsEntry\x12H\n\rpublic_access\x18\xd0\x0f \x01(\x0b\x32..yandex.cloud.video.v1.VideoPublicAccessParamsH\x00\x12Q\n\x12\x61uth_system_access\x18\xd2\x0f \x01(\x0b\x32\x32.yandex.cloud.video.v1.VideoAuthSystemAccessParamsH\x00\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0f\n\raccess_rightsJ\x06\x08\xd1\x0f\x10\xd2\x0f\"\'\n\x13UpdateVideoMetadata\x12\x10\n\x08video_id\x18\x01 \x01(\t\"&\n\x12\x44\x65leteVideoRequest\x12\x10\n\x08video_id\x18\x01 \x01(\t\"\'\n\x13\x44\x65leteVideoMetadata\x12\x10\n\x08video_id\x18\x01 \x01(\t\"\xb9\x01\n\x19PerformVideoActionRequest\x12\x10\n\x08video_id\x18\x01 \x01(\t\x12=\n\x07publish\x18\xe8\x07 \x01(\x0b\x32).yandex.cloud.video.v1.PublishVideoActionH\x00\x12\x41\n\tunpublish\x18\xe9\x07 \x01(\x0b\x32+.yandex.cloud.video.v1.UnpublishVideoActionH\x00\x42\x08\n\x06\x61\x63tion\"\x14\n\x12PublishVideoAction\"\x16\n\x14UnpublishVideoAction\".\n\x1aPerformVideoActionMetadata\x12\x10\n\x08video_id\x18\x01 \x01(\t\"f\n\x18GetVideoPlayerURLRequest\x12\x10\n\x08video_id\x18\x01 \x01(\t\x12\x38\n\x06params\x18\x02 \x01(\x0b\x32(.yandex.cloud.video.v1.VideoPlayerParams\"C\n\x11VideoPlayerParams\x12\x0c\n\x04mute\x18\x01 \x01(\x08\x12\x10\n\x08\x61utoplay\x18\x02 \x01(\x08\x12\x0e\n\x06hidden\x18\x03 \x01(\x08\"=\n\x19GetVideoPlayerURLResponse\x12\x12\n\nplayer_url\x18\x01 \x01(\t\x12\x0c\n\x04html\x18\x02 \x01(\t2\xbe\x06\n\x0cVideoService\x12M\n\x03Get\x12&.yandex.cloud.video.v1.GetVideoRequest\x1a\x1c.yandex.cloud.video.v1.Video\"\x00\x12[\n\x04List\x12\'.yandex.cloud.video.v1.ListVideoRequest\x1a(.yandex.cloud.video.v1.ListVideoResponse\"\x00\x12x\n\x06\x43reate\x12).yandex.cloud.video.v1.CreateVideoRequest\x1a!.yandex.cloud.operation.Operation\" \xb2\xd2*\x1c\n\x13\x43reateVideoMetadata\x12\x05Video\x12x\n\x06Update\x12).yandex.cloud.video.v1.UpdateVideoRequest\x1a!.yandex.cloud.operation.Operation\" \xb2\xd2*\x1c\n\x13UpdateVideoMetadata\x12\x05Video\x12\x88\x01\n\x06\x44\x65lete\x12).yandex.cloud.video.v1.DeleteVideoRequest\x1a!.yandex.cloud.operation.Operation\"0\xb2\xd2*,\n\x13\x44\x65leteVideoMetadata\x12\x15google.protobuf.Empty\x12\x8d\x01\n\rPerformAction\x12\x30.yandex.cloud.video.v1.PerformVideoActionRequest\x1a!.yandex.cloud.operation.Operation\"\'\xb2\xd2*#\n\x1aPerformVideoActionMetadata\x12\x05Video\x12s\n\x0cGetPlayerURL\x12/.yandex.cloud.video.v1.GetVideoPlayerURLRequest\x1a\x30.yandex.cloud.video.v1.GetVideoPlayerURLResponse\"\x00\x42\\\n\x19yandex.cloud.api.video.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/video/v1;videob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)yandex/cloud/video/v1/video_service.proto\x12\x15yandex.cloud.video.v1\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a!yandex/cloud/video/v1/video.proto\"#\n\x0fGetVideoRequest\x12\x10\n\x08video_id\x18\x01 \x01(\t\"u\n\x10ListVideoRequest\x12\x12\n\nchannel_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x64 \x01(\x03\x12\x12\n\npage_token\x18\x65 \x01(\t\x12\x10\n\x08order_by\x18\x66 \x01(\t\x12\x0e\n\x06\x66ilter\x18g \x01(\tJ\x04\x08\x02\x10\x64\"`\n\x11ListVideoResponse\x12,\n\x06videos\x18\x01 \x03(\x0b\x32\x1c.yandex.cloud.video.v1.Video\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\"\xe9\x03\n\x12\x43reateVideoRequest\x12\x12\n\nchannel_id\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x14\n\x0cthumbnail_id\x18\x04 \x01(\t\x12\x46\n\x06labels\x18\xc8\x01 \x03(\x0b\x32\x35.yandex.cloud.video.v1.CreateVideoRequest.LabelsEntry\x12\x37\n\x04tusd\x18\xe8\x07 \x01(\x0b\x32&.yandex.cloud.video.v1.VideoTUSDParamsH\x00\x12H\n\rpublic_access\x18\xd0\x0f \x01(\x0b\x32..yandex.cloud.video.v1.VideoPublicAccessParamsH\x01\x12Q\n\x12\x61uth_system_access\x18\xd2\x0f \x01(\x0b\x32\x32.yandex.cloud.video.v1.VideoAuthSystemAccessParamsH\x01\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x08\n\x06sourceB\x0f\n\raccess_rightsJ\x06\x08\xc9\x01\x10\xe8\x07J\x06\x08\xe9\x07\x10\xd0\x0fJ\x06\x08\xd1\x0f\x10\xd2\x0fJ\x05\x08\x05\x10\xc8\x01\"7\n\x0fVideoTUSDParams\x12\x11\n\tfile_size\x18\x01 \x01(\x03\x12\x11\n\tfile_name\x18\x02 \x01(\t\"\x19\n\x17VideoPublicAccessParams\"\x1d\n\x1bVideoAuthSystemAccessParams\"\'\n\x13\x43reateVideoMetadata\x12\x10\n\x08video_id\x18\x01 \x01(\t\"\xcc\x03\n\x12UpdateVideoRequest\x12\x10\n\x08video_id\x18\x01 \x01(\t\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\r\n\x05title\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x14\n\x0cthumbnail_id\x18\x05 \x01(\t\x12\x46\n\x06labels\x18\xc8\x01 \x03(\x0b\x32\x35.yandex.cloud.video.v1.UpdateVideoRequest.LabelsEntry\x12H\n\rpublic_access\x18\xd0\x0f \x01(\x0b\x32..yandex.cloud.video.v1.VideoPublicAccessParamsH\x00\x12Q\n\x12\x61uth_system_access\x18\xd2\x0f \x01(\x0b\x32\x32.yandex.cloud.video.v1.VideoAuthSystemAccessParamsH\x00\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x0f\n\raccess_rightsJ\x06\x08\xc9\x01\x10\xd0\x0fJ\x06\x08\xd1\x0f\x10\xd2\x0fJ\x05\x08\x06\x10\xc8\x01\"\'\n\x13UpdateVideoMetadata\x12\x10\n\x08video_id\x18\x01 \x01(\t\"&\n\x12\x44\x65leteVideoRequest\x12\x10\n\x08video_id\x18\x01 \x01(\t\"\'\n\x13\x44\x65leteVideoMetadata\x12\x10\n\x08video_id\x18\x01 \x01(\t\"\xc0\x01\n\x19PerformVideoActionRequest\x12\x10\n\x08video_id\x18\x01 \x01(\t\x12=\n\x07publish\x18\xe8\x07 \x01(\x0b\x32).yandex.cloud.video.v1.PublishVideoActionH\x00\x12\x41\n\tunpublish\x18\xe9\x07 \x01(\x0b\x32+.yandex.cloud.video.v1.UnpublishVideoActionH\x00\x42\x08\n\x06\x61\x63tionJ\x05\x08\x02\x10\xe8\x07\"\x14\n\x12PublishVideoAction\"\x16\n\x14UnpublishVideoAction\".\n\x1aPerformVideoActionMetadata\x12\x10\n\x08video_id\x18\x01 \x01(\t\"f\n\x18GetVideoPlayerURLRequest\x12\x10\n\x08video_id\x18\x01 \x01(\t\x12\x38\n\x06params\x18\x02 \x01(\x0b\x32(.yandex.cloud.video.v1.VideoPlayerParams\"C\n\x11VideoPlayerParams\x12\x0c\n\x04mute\x18\x01 \x01(\x08\x12\x10\n\x08\x61utoplay\x18\x02 \x01(\x08\x12\x0e\n\x06hidden\x18\x03 \x01(\x08\"=\n\x19GetVideoPlayerURLResponse\x12\x12\n\nplayer_url\x18\x01 \x01(\t\x12\x0c\n\x04html\x18\x02 \x01(\t2\xbe\x06\n\x0cVideoService\x12M\n\x03Get\x12&.yandex.cloud.video.v1.GetVideoRequest\x1a\x1c.yandex.cloud.video.v1.Video\"\x00\x12[\n\x04List\x12\'.yandex.cloud.video.v1.ListVideoRequest\x1a(.yandex.cloud.video.v1.ListVideoResponse\"\x00\x12x\n\x06\x43reate\x12).yandex.cloud.video.v1.CreateVideoRequest\x1a!.yandex.cloud.operation.Operation\" \xb2\xd2*\x1c\n\x13\x43reateVideoMetadata\x12\x05Video\x12x\n\x06Update\x12).yandex.cloud.video.v1.UpdateVideoRequest\x1a!.yandex.cloud.operation.Operation\" \xb2\xd2*\x1c\n\x13UpdateVideoMetadata\x12\x05Video\x12\x88\x01\n\x06\x44\x65lete\x12).yandex.cloud.video.v1.DeleteVideoRequest\x1a!.yandex.cloud.operation.Operation\"0\xb2\xd2*,\n\x13\x44\x65leteVideoMetadata\x12\x15google.protobuf.Empty\x12\x8d\x01\n\rPerformAction\x12\x30.yandex.cloud.video.v1.PerformVideoActionRequest\x1a!.yandex.cloud.operation.Operation\"\'\xb2\xd2*#\n\x1aPerformVideoActionMetadata\x12\x05Video\x12s\n\x0cGetPlayerURL\x12/.yandex.cloud.video.v1.GetVideoPlayerURLRequest\x1a\x30.yandex.cloud.video.v1.GetVideoPlayerURLResponse\"\x00\x42\\\n\x19yandex.cloud.api.video.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/video/v1;videob\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -40,45 +40,45 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_GETVIDEOREQUEST']._serialized_start=211
   _globals['_GETVIDEOREQUEST']._serialized_end=246
   _globals['_LISTVIDEOREQUEST']._serialized_start=248
-  _globals['_LISTVIDEOREQUEST']._serialized_end=359
-  _globals['_LISTVIDEORESPONSE']._serialized_start=361
-  _globals['_LISTVIDEORESPONSE']._serialized_end=451
-  _globals['_CREATEVIDEOREQUEST']._serialized_start=454
-  _globals['_CREATEVIDEOREQUEST']._serialized_end=920
-  _globals['_CREATEVIDEOREQUEST_LABELSENTRY']._serialized_start=840
-  _globals['_CREATEVIDEOREQUEST_LABELSENTRY']._serialized_end=885
-  _globals['_VIDEOTUSDPARAMS']._serialized_start=922
-  _globals['_VIDEOTUSDPARAMS']._serialized_end=977
-  _globals['_VIDEOPUBLICACCESSPARAMS']._serialized_start=979
-  _globals['_VIDEOPUBLICACCESSPARAMS']._serialized_end=1004
-  _globals['_VIDEOAUTHSYSTEMACCESSPARAMS']._serialized_start=1006
-  _globals['_VIDEOAUTHSYSTEMACCESSPARAMS']._serialized_end=1035
-  _globals['_CREATEVIDEOMETADATA']._serialized_start=1037
-  _globals['_CREATEVIDEOMETADATA']._serialized_end=1076
-  _globals['_UPDATEVIDEOREQUEST']._serialized_start=1079
-  _globals['_UPDATEVIDEOREQUEST']._serialized_end=1524
-  _globals['_UPDATEVIDEOREQUEST_LABELSENTRY']._serialized_start=840
-  _globals['_UPDATEVIDEOREQUEST_LABELSENTRY']._serialized_end=885
-  _globals['_UPDATEVIDEOMETADATA']._serialized_start=1526
-  _globals['_UPDATEVIDEOMETADATA']._serialized_end=1565
-  _globals['_DELETEVIDEOREQUEST']._serialized_start=1567
-  _globals['_DELETEVIDEOREQUEST']._serialized_end=1605
-  _globals['_DELETEVIDEOMETADATA']._serialized_start=1607
-  _globals['_DELETEVIDEOMETADATA']._serialized_end=1646
-  _globals['_PERFORMVIDEOACTIONREQUEST']._serialized_start=1649
-  _globals['_PERFORMVIDEOACTIONREQUEST']._serialized_end=1834
-  _globals['_PUBLISHVIDEOACTION']._serialized_start=1836
-  _globals['_PUBLISHVIDEOACTION']._serialized_end=1856
-  _globals['_UNPUBLISHVIDEOACTION']._serialized_start=1858
-  _globals['_UNPUBLISHVIDEOACTION']._serialized_end=1880
-  _globals['_PERFORMVIDEOACTIONMETADATA']._serialized_start=1882
-  _globals['_PERFORMVIDEOACTIONMETADATA']._serialized_end=1928
-  _globals['_GETVIDEOPLAYERURLREQUEST']._serialized_start=1930
-  _globals['_GETVIDEOPLAYERURLREQUEST']._serialized_end=2032
-  _globals['_VIDEOPLAYERPARAMS']._serialized_start=2034
-  _globals['_VIDEOPLAYERPARAMS']._serialized_end=2101
-  _globals['_GETVIDEOPLAYERURLRESPONSE']._serialized_start=2103
-  _globals['_GETVIDEOPLAYERURLRESPONSE']._serialized_end=2164
-  _globals['_VIDEOSERVICE']._serialized_start=2167
-  _globals['_VIDEOSERVICE']._serialized_end=2997
+  _globals['_LISTVIDEOREQUEST']._serialized_end=365
+  _globals['_LISTVIDEORESPONSE']._serialized_start=367
+  _globals['_LISTVIDEORESPONSE']._serialized_end=463
+  _globals['_CREATEVIDEOREQUEST']._serialized_start=466
+  _globals['_CREATEVIDEOREQUEST']._serialized_end=955
+  _globals['_CREATEVIDEOREQUEST_LABELSENTRY']._serialized_start=852
+  _globals['_CREATEVIDEOREQUEST_LABELSENTRY']._serialized_end=897
+  _globals['_VIDEOTUSDPARAMS']._serialized_start=957
+  _globals['_VIDEOTUSDPARAMS']._serialized_end=1012
+  _globals['_VIDEOPUBLICACCESSPARAMS']._serialized_start=1014
+  _globals['_VIDEOPUBLICACCESSPARAMS']._serialized_end=1039
+  _globals['_VIDEOAUTHSYSTEMACCESSPARAMS']._serialized_start=1041
+  _globals['_VIDEOAUTHSYSTEMACCESSPARAMS']._serialized_end=1070
+  _globals['_CREATEVIDEOMETADATA']._serialized_start=1072
+  _globals['_CREATEVIDEOMETADATA']._serialized_end=1111
+  _globals['_UPDATEVIDEOREQUEST']._serialized_start=1114
+  _globals['_UPDATEVIDEOREQUEST']._serialized_end=1574
+  _globals['_UPDATEVIDEOREQUEST_LABELSENTRY']._serialized_start=852
+  _globals['_UPDATEVIDEOREQUEST_LABELSENTRY']._serialized_end=897
+  _globals['_UPDATEVIDEOMETADATA']._serialized_start=1576
+  _globals['_UPDATEVIDEOMETADATA']._serialized_end=1615
+  _globals['_DELETEVIDEOREQUEST']._serialized_start=1617
+  _globals['_DELETEVIDEOREQUEST']._serialized_end=1655
+  _globals['_DELETEVIDEOMETADATA']._serialized_start=1657
+  _globals['_DELETEVIDEOMETADATA']._serialized_end=1696
+  _globals['_PERFORMVIDEOACTIONREQUEST']._serialized_start=1699
+  _globals['_PERFORMVIDEOACTIONREQUEST']._serialized_end=1891
+  _globals['_PUBLISHVIDEOACTION']._serialized_start=1893
+  _globals['_PUBLISHVIDEOACTION']._serialized_end=1913
+  _globals['_UNPUBLISHVIDEOACTION']._serialized_start=1915
+  _globals['_UNPUBLISHVIDEOACTION']._serialized_end=1937
+  _globals['_PERFORMVIDEOACTIONMETADATA']._serialized_start=1939
+  _globals['_PERFORMVIDEOACTIONMETADATA']._serialized_end=1985
+  _globals['_GETVIDEOPLAYERURLREQUEST']._serialized_start=1987
+  _globals['_GETVIDEOPLAYERURLREQUEST']._serialized_end=2089
+  _globals['_VIDEOPLAYERPARAMS']._serialized_start=2091
+  _globals['_VIDEOPLAYERPARAMS']._serialized_end=2158
+  _globals['_GETVIDEOPLAYERURLRESPONSE']._serialized_start=2160
+  _globals['_GETVIDEOPLAYERURLRESPONSE']._serialized_end=2221
+  _globals['_VIDEOSERVICE']._serialized_start=2224
+  _globals['_VIDEOSERVICE']._serialized_end=3054
 # @@protoc_insertion_point(module_scope)
