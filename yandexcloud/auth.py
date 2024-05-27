@@ -8,7 +8,9 @@ from yandexcloud._auth_fabric import (
 )
 
 
-def get_auth_token(token=None, service_account_key=None, iam_token=None, metadata_addr=None, endpoint=YC_API_ENDPOINT):
+def get_auth_token(token=None, service_account_key=None, iam_token=None, metadata_addr=None, endpoint=None):
+    if endpoint is None:
+        endpoint = YC_API_ENDPOINT
     requester = get_auth_token_requester(
         token=token,
         service_account_key=service_account_key,

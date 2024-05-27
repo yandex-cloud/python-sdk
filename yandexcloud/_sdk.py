@@ -1,4 +1,5 @@
 import inspect
+from typing import Dict, Optional
 
 import grpc
 
@@ -8,8 +9,8 @@ from yandexcloud._retry_interceptor import RetryInterceptor
 from yandexcloud._wrappers import Wrappers
 
 
-class SDK(object):
-    def __init__(self, interceptor=None, user_agent=None, **kwargs):
+class SDK:
+    def __init__(self, interceptor=None, user_agent=None, endpoints: Optional[Dict[str, str]] = None, **kwargs):
         """
         API entry-point object.
 
@@ -22,8 +23,10 @@ class SDK(object):
         ]
         :param user_agent: String to prepend User-Agent metadata header for all GRPC requests made via SDK object
         :type user_agent: Optional[str]
+        :param endpoints: Dict with services endpoints overrides. Example: {'vpc': 'new.vpc.endpoint:443'}
+
         """
-        self._channels = _channels.Channels(client_user_agent=user_agent, **kwargs)
+        self._channels = _channels.Channels(client_user_agent=user_agent, endpoints=endpoints, **kwargs)
         if interceptor is None:
             interceptor = RetryInterceptor(
                 max_retry_count=5,
@@ -37,9 +40,9 @@ class SDK(object):
     def set_interceptor(self, interceptor):
         self._default_interceptor = interceptor
 
-    def client(self, stub_ctor, interceptor=None):
+    def client(self, stub_ctor, interceptor=None, endpoint: Optional[str] = None, insecure: bool = False):
         service = _service_for_ctor(stub_ctor)
-        channel = self._channels.channel(service)
+        channel = self._channels.channel(service, endpoint, insecure)
         if interceptor is not None:
             channel = grpc.intercept_channel(channel, interceptor)
         elif self._default_interceptor is not None:

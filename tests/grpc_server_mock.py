@@ -1,11 +1,11 @@
-import grpc
 import time
-
 from concurrent import futures
 
-import yandex.cloud.compute.v1.zone_service_pb2_grpc as zone_service_pb2_grpc
-import yandex.cloud.compute.v1.zone_service_pb2 as zone_service_pb2
+import grpc
+
 import yandex.cloud.compute.v1.zone_pb2 as zone_pb2
+import yandex.cloud.compute.v1.zone_service_pb2 as zone_service_pb2
+import yandex.cloud.compute.v1.zone_service_pb2_grpc as zone_service_pb2_grpc
 
 _DEFAULT_SERVICE_PORT = "50051"
 _SERVICE_ADDR = "localhost:" + _DEFAULT_SERVICE_PORT
@@ -22,7 +22,7 @@ class ZoneServiceMock(object):
 
     def List(self, request, context):
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
+        context.set_details("Method not implemented!")
         return zone_service_pb2.ListZonesResponse()
 
 

@@ -1,16 +1,13 @@
-import pytest
-import grpc
 import uuid
-
 from threading import Event
 
-import yandex.cloud.compute.v1.zone_service_pb2_grpc as zone_service_pb2_grpc
+import grpc
+import pytest
+
 import yandex.cloud.compute.v1.zone_service_pb2 as zone_service_pb2
-
-from yandexcloud import RetryInterceptor
-from yandexcloud import default_backoff, backoff_linear_with_jitter
-
-from tests.grpc_server_mock import DEFAULT_ZONE, grpc_server, default_channel
+import yandex.cloud.compute.v1.zone_service_pb2_grpc as zone_service_pb2_grpc
+from tests.grpc_server_mock import DEFAULT_ZONE, default_channel, grpc_server
+from yandexcloud import RetryInterceptor, backoff_linear_with_jitter, default_backoff
 
 
 class _FailFirstAttempts:
@@ -52,7 +49,7 @@ def test_five_retries():
         res = client.Get(request)
 
         assert res == DEFAULT_ZONE
-        
+
     server.stop(0)
 
 
@@ -105,9 +102,7 @@ class _RetriableCodes:
 
 
 def test_retriable_codes():
-    retriable_codes = [grpc.StatusCode.RESOURCE_EXHAUSTED,
-                       grpc.StatusCode.UNAVAILABLE,
-                       grpc.StatusCode.DATA_LOSS]
+    retriable_codes = [grpc.StatusCode.RESOURCE_EXHAUSTED, grpc.StatusCode.UNAVAILABLE, grpc.StatusCode.DATA_LOSS]
 
     service = _RetriableCodes(retriable_codes)
     server = grpc_server(service.handler)
@@ -161,8 +156,12 @@ def test_infinite_retries_deadline_and_backoff(backoff):
     server = grpc_server(service.handler)
 
     with default_channel() as channel:
-        interceptor = RetryInterceptor(max_retry_count=-1, retriable_codes=[grpc.StatusCode.UNAVAILABLE],
-                                       add_retry_count_to_header=True, back_off_func=backoff)
+        interceptor = RetryInterceptor(
+            max_retry_count=-1,
+            retriable_codes=[grpc.StatusCode.UNAVAILABLE],
+            add_retry_count_to_header=True,
+            back_off_func=backoff,
+        )
 
         ch = grpc.intercept_channel(channel, interceptor)
         client = zone_service_pb2_grpc.ZoneServiceStub(ch)
@@ -183,7 +182,7 @@ class _NeverReturnsInTime:
         time_remaining = context.time_remaining()
 
         # using hack here, since deadline is never None. 31557600 ~= one year in seconds
-        if time_remaining < 31557600.:
+        if time_remaining < 31557600.0:
             self.__shutdown.wait()
 
         context.set_code(grpc.StatusCode.UNAVAILABLE)
@@ -196,8 +195,12 @@ def test_per_call_timeout():
     server = grpc_server(service.handler)
 
     with default_channel() as channel:
-        interceptor = RetryInterceptor(max_retry_count=10, retriable_codes=[grpc.StatusCode.UNAVAILABLE],
-                                       per_call_timeout=1, add_retry_count_to_header=True)
+        interceptor = RetryInterceptor(
+            max_retry_count=10,
+            retriable_codes=[grpc.StatusCode.UNAVAILABLE],
+            per_call_timeout=1,
+            add_retry_count_to_header=True,
+        )
 
         ch = grpc.intercept_channel(channel, interceptor)
         client = zone_service_pb2_grpc.ZoneServiceStub(ch)
@@ -258,8 +261,9 @@ def test_header_token_and_retry_count():
     server = grpc_server(service.handler)
 
     with default_channel() as channel:
-        interceptor = RetryInterceptor(max_retry_count=100, retriable_codes=[grpc.StatusCode.UNAVAILABLE],
-                                       add_retry_count_to_header=True)
+        interceptor = RetryInterceptor(
+            max_retry_count=100, retriable_codes=[grpc.StatusCode.UNAVAILABLE], add_retry_count_to_header=True
+        )
         ch = grpc.intercept_channel(channel, interceptor)
         client = zone_service_pb2_grpc.ZoneServiceStub(ch)
 
@@ -302,8 +306,9 @@ def test_idempotency_token_not_changed():
     server = grpc_server(service.handler)
 
     with default_channel() as channel:
-        interceptor = RetryInterceptor(max_retry_count=100, retriable_codes=[grpc.StatusCode.UNAVAILABLE],
-                                       add_retry_count_to_header=True)
+        interceptor = RetryInterceptor(
+            max_retry_count=100, retriable_codes=[grpc.StatusCode.UNAVAILABLE], add_retry_count_to_header=True
+        )
         ch = grpc.intercept_channel(channel, interceptor)
         client = zone_service_pb2_grpc.ZoneServiceStub(ch)
 

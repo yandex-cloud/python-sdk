@@ -41,4 +41,3 @@ def test_timeout():
         time.sleep(1)
 
     assert waiter.operation.done is False
-
