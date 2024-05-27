@@ -2,6 +2,13 @@
 
 
 
+## v0.284.0 (2024-05-27)
+
+### Feature
+
+* make bdist_wheel for release ([`d5ac0cb`](https://github.com/yandex-cloud/python-sdk/commit/d5ac0cb91bdd272d6cf4d8f5f2e45949e56d3de4))
+
+
 ## v0.283.0 (2024-05-24)
 
 ### Feature
