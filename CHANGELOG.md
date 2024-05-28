@@ -2,6 +2,13 @@
 
 
 
+## v0.286.0 (2024-05-28)
+
+### Feature
+
+* format setup ([`f722535`](https://github.com/yandex-cloud/python-sdk/commit/f7225354f2b53fe5d124d3834cec04602c36ae9f))
+
+
 ## v0.285.0 (2024-05-28)
 
 ### Feature
