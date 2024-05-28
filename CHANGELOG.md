@@ -2,6 +2,13 @@
 
 
 
+## v0.285.0 (2024-05-28)
+
+### Feature
+
+* add long description for release ([`7c7bbb2`](https://github.com/yandex-cloud/python-sdk/commit/7c7bbb2f1b0486e9d0bfddc01ac92550f66caa7a))
+
+
 ## v0.284.0 (2024-05-27)
 
 ### Feature
