@@ -4,6 +4,9 @@ packages = find_packages(".", include=["yandexcloud*", "yandex*"])
 
 __version__ = "0.284.0"
 
+with open('README.md') as file:
+    README = file.read()
+
 setup(
     name="yandexcloud",
     version=__version__,
@@ -11,6 +14,8 @@ setup(
     url="https://github.com/yandex-cloud/python-sdk",
     author="Yandex LLC",
     author_email="cloud@support.yandex.ru",
+    long_description=README,
+    long_description_content_type="text/markdown",
     license="MIT",
     install_requires=[
         "cryptography>=2.8",
