@@ -25,8 +25,8 @@ lint: ## run linters, formatters for current python versions
 	python3 -m pylint yandexcloud
 
 format:
-	python3 -m isort yandexcloud setup.py changelog.py
-	python3 -m black yandexcloud setup.py changelog.py
+	python3 -m isort yandexcloud setup.py changelog.py tests
+	python3 -m black yandexcloud setup.py changelog.py tests
 
 test-all-versions: ## run test for multiple python versions using docker
 	# python 3.12 not provided in image so we skip it

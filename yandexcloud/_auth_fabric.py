@@ -19,6 +19,13 @@ _MDS_TIMEOUT = (1.0, 1.0)  # 1sec connect, 1sec read
 YC_API_ENDPOINT = "api.cloud.yandex.net"
 
 
+def set_up_yc_api_endpoint(endpoint: str) -> str:
+    # pylint: disable-next=global-statement
+    global YC_API_ENDPOINT
+    YC_API_ENDPOINT = endpoint
+    return YC_API_ENDPOINT
+
+
 def __validate_service_account_key(sa_key):
     if not isinstance(sa_key, dict):
         raise RuntimeError("Invalid Service Account Key: expecting dictionary, actually got {}".format(type(sa_key)))
@@ -46,9 +53,9 @@ def __validate_service_account_key(sa_key):
         raise RuntimeError(error_message)
 
 
-def get_auth_token_requester(
-    token=None, service_account_key=None, iam_token=None, metadata_addr=None, endpoint=YC_API_ENDPOINT
-):
+def get_auth_token_requester(token=None, service_account_key=None, iam_token=None, metadata_addr=None, endpoint=None):
+    if endpoint is None:
+        endpoint = YC_API_ENDPOINT
     auth_methods = [("token", token), ("service_account_key", service_account_key), ("iam_token", iam_token)]
     auth_methods = [(auth_type, value) for auth_type, value in auth_methods if value is not None]
 
@@ -97,9 +104,9 @@ class TokenAuth:
 class ServiceAccountAuth:
     __SECONDS_IN_HOUR = 60.0 * 60.0
 
-    def __init__(self, sa_key, endpoint=YC_API_ENDPOINT):
+    def __init__(self, sa_key, endpoint=None):
         self.__sa_key = sa_key
-        self._endpoint = endpoint
+        self._endpoint = endpoint if endpoint is not None else YC_API_ENDPOINT
 
     def get_token_request(self):
         return CreateIamTokenRequest(jwt=self.__prepare_request(self._endpoint))

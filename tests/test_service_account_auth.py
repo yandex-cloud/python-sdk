@@ -1,6 +1,7 @@
-import pytest
-import jwt
 import time
+
+import jwt
+import pytest
 
 from yandexcloud._auth_fabric import get_auth_token_requester
 
@@ -19,11 +20,14 @@ def test_invalid_service_account_type():
     assert str(e.value).startswith("Invalid Service Account Key: expecting dictionary, actually got")
 
 
-@pytest.mark.parametrize("key, error_msg", [
-    ("id", "Invalid Service Account Key: missing key object id."),
-    ("service_account_id", "Invalid Service Account Key: missing service account id."),
-    ("private_key", "Invalid Service Account Key: missing private key."),
-])
+@pytest.mark.parametrize(
+    "key, error_msg",
+    [
+        ("id", "Invalid Service Account Key: missing key object id."),
+        ("service_account_id", "Invalid Service Account Key: missing service account id."),
+        ("private_key", "Invalid Service Account Key: missing private key."),
+    ],
+)
 def test_service_account_no_id(service_account_key, key, error_msg):
     service_account_key.pop(key)
 
@@ -47,7 +51,7 @@ def test_service_account_key(service_account_key):
     parsed = jwt.decode(
         request.jwt,
         key=service_account_key["public_key"],
-        algorithms=['PS256'],
+        algorithms=["PS256"],
         audience="https://iam.api.cloud.yandex.net/iam/v1/tokens",
     )
     assert headers["typ"] == "JWT"
@@ -58,7 +62,8 @@ def test_service_account_key(service_account_key):
     assert parsed["aud"] == "https://iam.api.cloud.yandex.net/iam/v1/tokens"
     assert now - 60 <= int(parsed["iat"]) <= now
 
+
 def test_iam_token(iam_token):
     token_func = get_auth_token_requester(iam_token=iam_token).get_token
     token = token_func()
-    assert token == iam_token 
+    assert token == iam_token

@@ -1,6 +1,6 @@
-from .metadata_server_mock import metadata_server
-
 from yandexcloud._auth_fabric import get_auth_token_requester
+
+from .metadata_server_mock import metadata_server
 
 
 def test_metadata_auth(iam_token):
