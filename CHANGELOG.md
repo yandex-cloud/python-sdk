@@ -2,6 +2,19 @@
 
 
 
+## v0.287.0 (2024-05-29)
+
+### Feature
+
+* support endpoints overriding in SDK ([`0d837f2`](https://github.com/yandex-cloud/python-sdk/commit/0d837f20b901a825946f1574b4860c51e957564f))
+
+### Unknown
+
+* Merge pull request #100 from yandex-cloud/feature/support-endpoints-override
+
+Feature/support endpoints override ([`f3e0293`](https://github.com/yandex-cloud/python-sdk/commit/f3e029399be003c5b78b04ab1c019b61a4ce46a5))
+
+
 ## v0.286.0 (2024-05-28)
 
 ### Feature
