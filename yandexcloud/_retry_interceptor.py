@@ -1,6 +1,7 @@
 import collections
 import time
 import uuid
+from typing import Callable, Iterable, Optional
 
 import grpc
 
@@ -41,11 +42,11 @@ class RetryInterceptor(grpc.UnaryUnaryClientInterceptor):
 
     def __init__(
         self,
-        max_retry_count=0,
-        retriable_codes=_DEFAULT_RETRIABLE_CODES,
-        add_retry_count_to_header=False,
-        back_off_func=None,
-        per_call_timeout=None,
+        max_retry_count: int = 0,
+        retriable_codes: Iterable["grpc.StatusCode"] = _DEFAULT_RETRIABLE_CODES,
+        add_retry_count_to_header: bool = False,
+        back_off_func: Optional[Callable[[int], float]] = None,
+        per_call_timeout: Optional[float] = None,
     ):
         # pylint: disable=super-init-not-called
         self.__max_retry_count = max_retry_count
@@ -54,7 +55,12 @@ class RetryInterceptor(grpc.UnaryUnaryClientInterceptor):
         self.__back_off_func = back_off_func
         self.__per_call_timeout = per_call_timeout
 
-    def intercept_unary_unary(self, continuation, client_call_details, request):
+    def intercept_unary_unary(
+        self,
+        continuation: Callable[["grpc.ClientCallDetails", "grpc.TRequest"], "grpc.CallFuture[grpc.TResponse]"],
+        client_call_details: "grpc.ClientCallDetails",
+        request: "grpc.TRequest",
+    ) -> "grpc.CallFuture[grpc.TResponse]":
         client_call_details = self.__add_idempotency_token(client_call_details)
 
         attempt = 0
@@ -66,7 +72,7 @@ class RetryInterceptor(grpc.UnaryUnaryClientInterceptor):
             except _RetryCall:
                 attempt += 1
 
-    def __wait_backoff(self, attempt, deadline):
+    def __wait_backoff(self, attempt: int, deadline: Optional[float]) -> None:
         if self.__back_off_func is None:
             return
 
@@ -82,10 +88,10 @@ class RetryInterceptor(grpc.UnaryUnaryClientInterceptor):
             time.sleep(backoff_timeout)
 
     @staticmethod
-    def __deadline(timeout):
+    def __deadline(timeout: Optional[float]) -> Optional[float]:
         return time.time() + timeout if timeout is not None else None
 
-    def __is_retriable(self, error):
+    def __is_retriable(self, error: "grpc.StatusCode") -> bool:
         if error in self._NON_RETRIABLE_CODES:
             return False
 
@@ -95,7 +101,9 @@ class RetryInterceptor(grpc.UnaryUnaryClientInterceptor):
         return False
 
     @staticmethod
-    def __min_deadline(d1, d2):
+    def __min_deadline(d1: Optional[float], d2: Optional[float]) -> Optional[float]:
+        if d2 is None and d1 is None:
+            return None
         if d1 is None:
             return d2
 
@@ -104,7 +112,14 @@ class RetryInterceptor(grpc.UnaryUnaryClientInterceptor):
 
         return min(d1, d2)
 
-    def __grpc_call(self, attempt, deadline, continuation, client_call_details, request):
+    def __grpc_call(
+        self,
+        attempt: int,
+        deadline: Optional[float],
+        continuation: Callable[["grpc.ClientCallDetails", "grpc.TRequest"], "grpc.CallFuture[grpc.TResponse]"],
+        client_call_details: "grpc.ClientCallDetails",
+        request: "grpc.TRequest",
+    ) -> "grpc.CallFuture[grpc.TResponse]":
         if attempt > 0:
             if self.__add_retry_count_to_header:
                 client_call_details = self.__append_retry_attempt_header(client_call_details, attempt)
@@ -115,24 +130,21 @@ class RetryInterceptor(grpc.UnaryUnaryClientInterceptor):
             if call_deadline is not None:
                 client_call_details = self.__adjust_timeout(client_call_details, call_deadline)
 
-        def retry():
+        def retry() -> None:
             self.__wait_backoff(attempt, deadline)
             raise _RetryCall()
 
         try:
             result = continuation(client_call_details, request)
-            if isinstance(result, grpc.RpcError):
+            if isinstance(result, grpc.RpcError):  # type: ignore
                 raise result
             return result
-        except grpc.RpcError as e:
+        except grpc.RpcError as error:
             # no retries left
             if 0 <= self.__max_retry_count <= attempt:
                 raise
 
-            err_code = None
-            if isinstance(e, grpc.Call):
-                err_code = e.code()
-
+            err_code = error.code()  # pylint: disable=no-member
             if err_code == grpc.StatusCode.DEADLINE_EXCEEDED:
                 # if there is no per_call_timeout, or it is original deadline -> abort, otherwise, retry call.
                 if self.__per_call_timeout is None or deadline is not None and deadline < time.time():
@@ -144,9 +156,10 @@ class RetryInterceptor(grpc.UnaryUnaryClientInterceptor):
                 raise
 
         retry()
+        raise RuntimeError("Unexpected behavior")
 
     @staticmethod
-    def __adjust_timeout(client_call_details, deadline):
+    def __adjust_timeout(client_call_details: "grpc.ClientCallDetails", deadline: float) -> "grpc.ClientCallDetails":
         timeout = max(deadline - time.time(), 0.0)
         return _ClientCallDetails(
             client_call_details.method,
@@ -157,14 +170,18 @@ class RetryInterceptor(grpc.UnaryUnaryClientInterceptor):
             getattr(client_call_details, "compression", None),
         )
 
-    def __add_idempotency_token(self, client_call_details):
+    def __add_idempotency_token(self, client_call_details: "grpc.ClientCallDetails") -> "grpc.ClientCallDetails":
         return self.__append_metadata(client_call_details, self._IDEMPOTENCY_TOKEN_METADATA_KEY, str(uuid.uuid4()))
 
-    def __append_retry_attempt_header(self, client_call_details, attempt):
+    def __append_retry_attempt_header(
+        self, client_call_details: "grpc.ClientCallDetails", attempt: int
+    ) -> "grpc.ClientCallDetails":
         return self.__append_metadata(client_call_details, self._ATTEMPT_METADATA_KEY, str(attempt), force=True)
 
     @staticmethod
-    def __append_metadata(client_call_details, header, value, force=False):
+    def __append_metadata(
+        client_call_details: "grpc.ClientCallDetails", header: str, value: str, force: bool = False
+    ) -> "grpc.ClientCallDetails":
         metadata = []
         if client_call_details.metadata is not None:
             metadata = list(client_call_details.metadata)
