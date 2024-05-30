@@ -23,10 +23,11 @@ test: ## run tests ONLY for current python version
 lint: ## run linters, formatters for current python versions
 	python3 -m flake8 yandexcloud
 	python3 -m pylint yandexcloud
+	python3 -m mypy yandexcloud
 
 format:
-	python3 -m isort yandexcloud setup.py changelog.py tests
-	python3 -m black yandexcloud setup.py changelog.py tests
+	python3 -m isort yandexcloud setup.py changelog.py tests examples
+	python3 -m black yandexcloud setup.py changelog.py tests examples
 
 test-all-versions: ## run test for multiple python versions using docker
 	# python 3.12 not provided in image so we skip it
@@ -41,6 +42,7 @@ proto:  ## regenerate code from protobuf
         --proto_path=cloudapi \
         --proto_path=cloudapi/third_party/googleapis \
         --python_out=. \
+        --mypy_out=. \
         --grpc_python_out=. \
         `find cloudapi/yandex -name '*.proto'`
 	find yandex -type d -exec touch {}/__init__.py \;

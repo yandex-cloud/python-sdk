@@ -12,3 +12,48 @@ line-length = 120
 
 [tool.isort]
 profile = "black"
+
+[tool.pylint.FORMAT]
+max-line-length=120
+
+[tool.pylint.MASTER]
+disable= [
+    "C0114", # Missing module docstring (missing-module-docstring)
+    "C0115", # Missing class docstring (missing-class-docstring)
+    "C0116", # Missing function or method docstring (missing-function-docstring)
+    "E0611", # No name 'Empty' in module 'google.protobuf.empty_pb2' (no-name-in-module) — proto code creates attributes in runtime and linter goes crazy
+    "R0903", # Too few public methods (1/2) (too-few-public-methods)
+    "R0913", # Too many arguments (6/5) (too-many-arguments)
+]
+
+[tool.flake8]
+max-line-length = 120
+max-complexity = 15
+# https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html#slices
+ignore = ['E203',]
+
+[tool.mypy]
+disallow_untyped_defs = true
+disallow_any_unimported = true
+check_untyped_defs = true
+no_implicit_reexport = true
+warn_unreachable = true
+warn_unused_configs = true
+warn_redundant_casts = true
+
+# mypy per-module options:
+[[tool.mypy.overrides]]
+module = [
+    "yandex.cloud.*",
+]
+disallow_untyped_defs = false
+check_untyped_defs = false
+disallow_any_unimported = false
+
+
+[[tool.mypy.overrides]]
+module = [
+    "google.rpc.status_pb2.*",
+    "google.rpc.*",
+]
+ignore_missing_imports = true

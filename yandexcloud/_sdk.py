@@ -1,5 +1,5 @@
 import inspect
-from typing import Dict, Optional
+from typing import TYPE_CHECKING, Any, Dict, Optional, Type, Union
 
 import grpc
 
@@ -8,25 +8,57 @@ from yandexcloud._backoff import backoff_exponential_with_jitter
 from yandexcloud._retry_interceptor import RetryInterceptor
 from yandexcloud._wrappers import Wrappers
 
+if TYPE_CHECKING:
+    import logging
+
+    import google.protobuf.message
+
+    from yandex.cloud.operation.operation_pb2 import Operation
+    from yandexcloud._operation_waiter import OperationWaiter
+    from yandexcloud.operations import OperationError, OperationResult
+
 
 class SDK:
-    def __init__(self, interceptor=None, user_agent=None, endpoints: Optional[Dict[str, str]] = None, **kwargs):
+    def __init__(
+        self,
+        interceptor: Union[
+            grpc.UnaryUnaryClientInterceptor,
+            grpc.UnaryStreamClientInterceptor,
+            grpc.StreamUnaryClientInterceptor,
+            grpc.StreamStreamClientInterceptor,
+            None,
+        ] = None,
+        user_agent: Optional[str] = None,
+        endpoints: Optional[Dict[str, str]] = None,
+        token: Optional[str] = None,
+        iam_token: Optional[str] = None,
+        endpoint: Optional[str] = None,
+        service_account_key: Optional[Dict[str, str]] = None,
+        root_certificates: Optional[bytes] = None,
+        private_key: Optional[bytes] = None,
+        certificate_chain: Optional[bytes] = None,
+        **kwargs: str,
+    ):
         """
         API entry-point object.
 
         :param interceptor: GRPC interceptor to be used instead of default RetryInterceptor
-        :type interceptor: Union[
-            UnaryUnaryClientInterceptor,
-            UnaryStreamClientInterceptor,
-            StreamUnaryClientInterceptor,
-            StreamStreamClientInterceptor
-        ]
         :param user_agent: String to prepend User-Agent metadata header for all GRPC requests made via SDK object
-        :type user_agent: Optional[str]
         :param endpoints: Dict with services endpoints overrides. Example: {'vpc': 'new.vpc.endpoint:443'}
 
         """
-        self._channels = _channels.Channels(client_user_agent=user_agent, endpoints=endpoints, **kwargs)
+        self._channels = _channels.Channels(
+            user_agent,
+            endpoints,
+            token,
+            iam_token,
+            endpoint,
+            service_account_key,
+            root_certificates,
+            private_key,
+            certificate_chain,
+            **kwargs,
+        )
         if interceptor is None:
             interceptor = RetryInterceptor(
                 max_retry_count=5,
@@ -37,10 +69,19 @@ class SDK:
         self.helpers = _helpers.Helpers(self)
         self.wrappers = Wrappers(self)
 
-    def set_interceptor(self, interceptor):
-        self._default_interceptor = interceptor
-
-    def client(self, stub_ctor, interceptor=None, endpoint: Optional[str] = None, insecure: bool = False):
+    def client(
+        self,
+        stub_ctor: Type,
+        interceptor: Union[
+            grpc.UnaryUnaryClientInterceptor,
+            grpc.UnaryStreamClientInterceptor,
+            grpc.StreamUnaryClientInterceptor,
+            grpc.StreamStreamClientInterceptor,
+            None,
+        ] = None,
+        endpoint: Optional[str] = None,
+        insecure: bool = False,
+    ) -> Any:
         service = _service_for_ctor(stub_ctor)
         channel = self._channels.channel(service, endpoint, insecure)
         if interceptor is not None:
@@ -49,22 +90,29 @@ class SDK:
             channel = grpc.intercept_channel(channel, self._default_interceptor)
         return stub_ctor(channel)
 
-    def waiter(self, operation_id, timeout=None):
+    def waiter(self, operation_id: str, timeout: Optional[float] = None) -> "OperationWaiter":
         return _operation_waiter.operation_waiter(self, operation_id, timeout)
 
-    def wait_operation_and_get_result(self, operation, response_type=None, meta_type=None, timeout=None, logger=None):
+    def wait_operation_and_get_result(
+        self,
+        operation: "Operation",
+        response_type: Optional[Type["google.protobuf.message.Message"]] = None,
+        meta_type: Optional[Type["google.protobuf.message.Message"]] = None,
+        timeout: Optional[float] = None,
+        logger: Optional["logging.Logger"] = None,
+    ) -> Union["OperationResult", "OperationError"]:
         return _operation_waiter.get_operation_result(self, operation, response_type, meta_type, timeout, logger)
 
     def create_operation_and_get_result(
         self,
-        request,
-        service,
-        method_name,
-        response_type=None,
-        meta_type=None,
-        timeout=None,
-        logger=None,
-    ):
+        request: Type["google.protobuf.message.Message"],
+        service: Any,
+        method_name: str,
+        response_type: Optional[Type["google.protobuf.message.Message"]] = None,
+        meta_type: Optional[Type["google.protobuf.message.Message"]] = None,
+        timeout: Optional[float] = None,
+        logger: Optional["logging.Logger"] = None,
+    ) -> Union["OperationResult", "OperationError"]:
         operation = getattr(self.client(service), method_name)(request)
         return self.wait_operation_and_get_result(
             operation,
@@ -75,17 +123,18 @@ class SDK:
         )
 
 
-def _service_for_ctor(stub_ctor):
+def _service_for_ctor(stub_ctor: Any) -> str:
     m = inspect.getmodule(stub_ctor)
-    name = m.__name__
-    if not name.startswith("yandex.cloud"):
-        raise RuntimeError("Not a yandex.cloud service {}".format(stub_ctor))
+    if m is not None:
+        name = m.__name__
+        if not name.startswith("yandex.cloud"):
+            raise RuntimeError(f"Not a yandex.cloud service {stub_ctor}")
 
-    for k, v in _supported_modules:
-        if name.startswith(k):
-            return v
+        for k, v in _supported_modules:
+            if name.startswith(k):
+                return v
 
-    raise RuntimeError("Unknown service {}".format(stub_ctor))
+    raise RuntimeError(f"Unknown service {stub_ctor}")
 
 
 _supported_modules = [

@@ -14,28 +14,40 @@ try:
 except PackageNotFoundError:
     VERSION = "0.0.0"
 
-SDK_USER_AGENT = "yandex-cloud-python-sdk/{version}".format(version=VERSION)
+SDK_USER_AGENT = f"yandex-cloud-python-sdk/{VERSION}"
 logger = logging.getLogger(__name__)
 
 
 class Channels:
-    def __init__(self, client_user_agent=None, endpoints: Optional[Dict[str, str]] = None, **kwargs):
+    def __init__(
+        self,
+        client_user_agent: Optional[str] = None,
+        endpoints: Optional[Dict[str, str]] = None,
+        token: Optional[str] = None,
+        iam_token: Optional[str] = None,
+        endpoint: Optional[str] = None,
+        service_account_key: Optional[Dict[str, str]] = None,
+        root_certificates: Optional[bytes] = None,
+        private_key: Optional[bytes] = None,
+        certificate_chain: Optional[bytes] = None,
+        **_: str,
+    ) -> None:
         self._channel_creds = grpc.ssl_channel_credentials(
-            root_certificates=kwargs.get("root_certificates"),
-            private_key=kwargs.get("private_key"),
-            certificate_chain=kwargs.get("certificate_chain"),
+            root_certificates=root_certificates,
+            private_key=private_key,
+            certificate_chain=certificate_chain,
         )
-        self._endpoint = kwargs.get("endpoint", YC_API_ENDPOINT)
+        self._endpoint = endpoint if endpoint is not None else YC_API_ENDPOINT
         self._token_requester = get_auth_token_requester(
-            token=kwargs.get("token"),
-            service_account_key=kwargs.get("service_account_key"),
-            iam_token=kwargs.get("iam_token"),
+            token=token,
+            service_account_key=service_account_key,
+            iam_token=iam_token,
             endpoint=self._endpoint,
         )
 
         self._client_user_agent = client_user_agent
         self._config_endpoints = endpoints if endpoints is not None else {}
-        self._endpoints = None
+        self._endpoints: Optional[Dict[str, str]] = None
         self.channel_options = tuple(
             ("grpc.primary_user_agent", user_agent)
             for user_agent in [self._client_user_agent, SDK_USER_AGENT]
@@ -49,7 +61,7 @@ class Channels:
                 logger.info("Insecure option is ON, no IAM endpoint used for verification")
                 return grpc.insecure_channel(endpoint, options=self.channel_options)
             logger.info("Insecure option is OFF,IAM endpoint %s used for verification")
-            creds = self._get_creds(self.endpoints["iam"])
+            creds: grpc.ChannelCredentials = self._get_creds(self.endpoints["iam"])
             return grpc.secure_channel(endpoint, creds, options=self.channel_options)
         if service not in self._config_endpoints and insecure:
             logger.warning(
@@ -74,7 +86,7 @@ class Channels:
         return grpc.secure_channel(self.endpoints[service], creds, options=self.channel_options)
 
     @property
-    def endpoints(self) -> Optional[dict]:
+    def endpoints(self) -> Dict[str, str]:
         if self._endpoints is None:
             self._endpoints = self._get_endpoints()
             for id_, address in self._config_endpoints.items():
@@ -94,7 +106,9 @@ class Channels:
         return {endpoint.id: endpoint.address for endpoint in resp.endpoints}
 
     def _get_creds(self, iam_endpoint: str) -> grpc.ChannelCredentials:
-        plugin = _auth_plugin.Credentials(self._token_requester, lambda: iam_endpoint)
+        plugin = _auth_plugin.Credentials(
+            self._token_requester, lambda: grpc.secure_channel(iam_endpoint, creds, options=self.channel_options)
+        )
         call_creds = grpc.metadata_call_credentials(plugin)
         creds = grpc.composite_channel_credentials(self._channel_creds, call_creds)
         return creds

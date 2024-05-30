@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 # pylint: disable=no-member
+# mypy: ignore-errors
 import logging
 import random
 from typing import List, NamedTuple
@@ -32,7 +33,7 @@ class InitializationAction(NamedTuple):
         )
 
 
-class Dataproc(object):
+class Dataproc:
     """
     A base hook for Yandex.Cloud Data Proc.
 
@@ -47,7 +48,7 @@ class Dataproc(object):
     """
 
     def __init__(self, default_folder_id=None, default_public_ssh_key=None, logger=None, sdk=None):
-        self.sdk = sdk or self.sdk
+        self.sdk = sdk
         self.log = logger
         if not self.log:
             self.log = logging.getLogger()
@@ -200,7 +201,7 @@ class Dataproc(object):
 
         if not cluster_name:
             random_int = random.randint(0, 999)
-            cluster_name = "dataproc-{random_int}".format(random_int=random_int)
+            cluster_name = f"dataproc-{random_int}"
 
         if not subnet_id:
             network_id = self.sdk.helpers.find_network_id(folder_id)
@@ -397,7 +398,7 @@ class Dataproc(object):
             disk_type_id=disk_type,
         )
 
-        self.log.info("Adding subcluster to cluster {cluster_id}".format(cluster_id=cluster_id))
+        self.log.info("Adding subcluster to cluster %s", cluster_id)
         autoscaling_config = None
         if max_hosts_count:
             autoscaling_config = subcluster_pb.AutoscalingConfig(
@@ -439,7 +440,7 @@ class Dataproc(object):
         if not cluster_id:
             raise RuntimeError("Cluster id must be specified.")
 
-        self.log.info("Updating cluster {cluster_id}".format(cluster_id=cluster_id))
+        self.log.info("Updating cluster %s", cluster_id)
         mask = FieldMask(paths=["description"])
         request = cluster_service_pb.UpdateClusterRequest(
             cluster_id=cluster_id,
@@ -464,7 +465,7 @@ class Dataproc(object):
         if not cluster_id:
             raise RuntimeError("Cluster id must be specified.")
 
-        self.log.info("Deleting cluster {cluster_id}".format(cluster_id=cluster_id))
+        self.log.info("Deleting cluster %s", cluster_id)
         request = cluster_service_pb.DeleteClusterRequest(cluster_id=cluster_id)
         return self.sdk.create_operation_and_get_result(
             request,
@@ -507,7 +508,7 @@ class Dataproc(object):
             raise RuntimeError("Cluster id must be specified.")
         if (query and query_file_uri) or not (query or query_file_uri):
             raise RuntimeError("Either query or query_file_uri must be specified.")
-        self.log.info("Running Hive job. Cluster ID: {cluster_id}".format(cluster_id=cluster_id))
+        self.log.info("Running Hive job. Cluster ID: %s", cluster_id)
 
         hive_job = job_pb.HiveJob(
             query_file_uri=query_file_uri,
@@ -574,7 +575,7 @@ class Dataproc(object):
         cluster_id = cluster_id or self.cluster_id
         if not cluster_id:
             raise RuntimeError("Cluster id must be specified.")
-        self.log.info("Running Mapreduce job. Cluster ID: {cluster_id}".format(cluster_id=cluster_id))
+        self.log.info("Running Mapreduce job. Cluster ID: %s", cluster_id)
 
         request = job_service_pb.CreateJobRequest(
             cluster_id=cluster_id,
@@ -646,7 +647,7 @@ class Dataproc(object):
         cluster_id = cluster_id or self.cluster_id
         if not cluster_id:
             raise RuntimeError("Cluster id must be specified.")
-        self.log.info("Running Spark job. Cluster ID: {cluster_id}".format(cluster_id=cluster_id))
+        self.log.info("Running Spark job. Cluster ID: %s", cluster_id)
 
         request = job_service_pb.CreateJobRequest(
             cluster_id=cluster_id,
@@ -721,7 +722,7 @@ class Dataproc(object):
         cluster_id = cluster_id or self.cluster_id
         if not cluster_id:
             raise RuntimeError("Cluster id must be specified.")
-        self.log.info("Running Pyspark job. Cluster ID: {cluster_id}".format(cluster_id=cluster_id))
+        self.log.info("Running Pyspark job. Cluster ID: %s", cluster_id)
         request = job_service_pb.CreateJobRequest(
             cluster_id=cluster_id,
             name=name,
