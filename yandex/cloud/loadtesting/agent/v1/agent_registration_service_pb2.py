@@ -16,7 +16,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nByandex/cloud/loadtesting/agent/v1/agent_registration_service.proto\x12!yandex.cloud.loadtesting.agent.v1\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1cgoogle/api/annotations.proto\".\n\x0fRegisterRequest\x12\x1b\n\x13\x63ompute_instance_id\x18\x01 \x01(\t\"-\n\x10RegisterResponse\x12\x19\n\x11\x61gent_instance_id\x18\x01 \x01(\t\"s\n\x1c\x45xternalAgentRegisterRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x1b\n\x13\x63ompute_instance_id\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x15\n\ragent_version\x18\x04 \x01(\t\":\n\x1d\x45xternalAgentRegisterMetadata\x12\x19\n\x11\x61gent_instance_id\x18\x01 \x01(\t2\xb2\x03\n\x18\x41gentRegistrationService\x12\xa5\x01\n\x08Register\x12\x32.yandex.cloud.loadtesting.agent.v1.RegisterRequest\x1a\x33.yandex.cloud.loadtesting.agent.v1.RegisterResponse\"0\x82\xd3\xe4\x93\x02*\"%/loadtesting/agent/v1/agents/register:\x01*\x12\xed\x01\n\x15\x45xternalAgentRegister\x12?.yandex.cloud.loadtesting.agent.v1.ExternalAgentRegisterRequest\x1a!.yandex.cloud.operation.Operation\"p\xb2\xd2*.\n\x1d\x45xternalAgentRegisterMetadata\x12\rAgentInstance\x82\xd3\xe4\x93\x02\x38\"3/loadtesting/agent/v1/agents/externalAgentsRegister:\x01*Bt\n%yandex.cloud.api.loadtesting.agent.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadtesting/agent/v1;agentb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nByandex/cloud/loadtesting/agent/v1/agent_registration_service.proto\x12!yandex.cloud.loadtesting.agent.v1\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1cgoogle/api/annotations.proto\"E\n\x0fRegisterRequest\x12\x1b\n\x13\x63ompute_instance_id\x18\x01 \x01(\t\x12\x15\n\ragent_version\x18\x02 \x01(\t\"-\n\x10RegisterResponse\x12\x19\n\x11\x61gent_instance_id\x18\x01 \x01(\t\"s\n\x1c\x45xternalAgentRegisterRequest\x12\x11\n\tfolder_id\x18\x01 \x01(\t\x12\x1b\n\x13\x63ompute_instance_id\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x15\n\ragent_version\x18\x04 \x01(\t\":\n\x1d\x45xternalAgentRegisterMetadata\x12\x19\n\x11\x61gent_instance_id\x18\x01 \x01(\t2\xb2\x03\n\x18\x41gentRegistrationService\x12\xa5\x01\n\x08Register\x12\x32.yandex.cloud.loadtesting.agent.v1.RegisterRequest\x1a\x33.yandex.cloud.loadtesting.agent.v1.RegisterResponse\"0\x82\xd3\xe4\x93\x02*\"%/loadtesting/agent/v1/agents/register:\x01*\x12\xed\x01\n\x15\x45xternalAgentRegister\x12?.yandex.cloud.loadtesting.agent.v1.ExternalAgentRegisterRequest\x1a!.yandex.cloud.operation.Operation\"p\xb2\xd2*.\n\x1d\x45xternalAgentRegisterMetadata\x12\rAgentInstance\x82\xd3\xe4\x93\x02\x38\"3/loadtesting/agent/v1/agents/externalAgentsRegister:\x01*Bt\n%yandex.cloud.api.loadtesting.agent.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadtesting/agent/v1;agentb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -29,13 +29,13 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _AGENTREGISTRATIONSERVICE.methods_by_name['ExternalAgentRegister']._options = None
   _AGENTREGISTRATIONSERVICE.methods_by_name['ExternalAgentRegister']._serialized_options = b'\262\322*.\n\035ExternalAgentRegisterMetadata\022\rAgentInstance\202\323\344\223\0028\"3/loadtesting/agent/v1/agents/externalAgentsRegister:\001*'
   _globals['_REGISTERREQUEST']._serialized_start=209
-  _globals['_REGISTERREQUEST']._serialized_end=255
-  _globals['_REGISTERRESPONSE']._serialized_start=257
-  _globals['_REGISTERRESPONSE']._serialized_end=302
-  _globals['_EXTERNALAGENTREGISTERREQUEST']._serialized_start=304
-  _globals['_EXTERNALAGENTREGISTERREQUEST']._serialized_end=419
-  _globals['_EXTERNALAGENTREGISTERMETADATA']._serialized_start=421
-  _globals['_EXTERNALAGENTREGISTERMETADATA']._serialized_end=479
-  _globals['_AGENTREGISTRATIONSERVICE']._serialized_start=482
-  _globals['_AGENTREGISTRATIONSERVICE']._serialized_end=916
+  _globals['_REGISTERREQUEST']._serialized_end=278
+  _globals['_REGISTERRESPONSE']._serialized_start=280
+  _globals['_REGISTERRESPONSE']._serialized_end=325
+  _globals['_EXTERNALAGENTREGISTERREQUEST']._serialized_start=327
+  _globals['_EXTERNALAGENTREGISTERREQUEST']._serialized_end=442
+  _globals['_EXTERNALAGENTREGISTERMETADATA']._serialized_start=444
+  _globals['_EXTERNALAGENTREGISTERMETADATA']._serialized_end=502
+  _globals['_AGENTREGISTRATIONSERVICE']._serialized_start=505
+  _globals['_AGENTREGISTRATIONSERVICE']._serialized_end=939
 # @@protoc_insertion_point(module_scope)
