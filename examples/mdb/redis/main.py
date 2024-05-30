@@ -6,10 +6,9 @@ import logging
 from google.protobuf.field_mask_pb2 import FieldMask
 
 import yandex.cloud.mdb.redis.v1.cluster_pb2 as cluster_pb
-import yandex.cloud.mdb.redis.v1.config.redis5_0_pb2 as redis5_0_pb2
 import yandex.cloud.mdb.redis.v1.cluster_service_pb2 as cluster_service
 import yandex.cloud.mdb.redis.v1.cluster_service_pb2_grpc as cluster_service_grpc
-
+import yandex.cloud.mdb.redis.v1.config.redis5_0_pb2 as redis5_0_pb2
 import yandexcloud
 
 
@@ -36,23 +35,21 @@ def main():
 
 
 def parse_cmd():
-    parser = argparse.ArgumentParser(
-        description=__doc__,
-        formatter_class=argparse.RawTextHelpFormatter)
+    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawTextHelpFormatter)
     auth = parser.add_mutually_exclusive_group(required=True)
     auth.add_argument(
-        '--sa-json-path',
-        help='Path to the service account key JSON file.\nThis file can be created using YC CLI:\n'
-        'yc iam key create --output sa.json --service-account-id <id>',
+        "--sa-json-path",
+        help="Path to the service account key JSON file.\nThis file can be created using YC CLI:\n"
+        "yc iam key create --output sa.json --service-account-id <id>",
     )
-    auth.add_argument('--token', help='OAuth token')
-    parser.add_argument('--folder-id', help='Your Yandex.Cloud folder id', required=True)
-    parser.add_argument('--zone', default='ru-central1-b', help='Compute Engine zone to deploy to')
-    parser.add_argument('--network-id', default='', help='Your Yandex.Cloud network id')
-    parser.add_argument('--subnet-id', default='', help='Subnet for the cluster')
-    parser.add_argument('--cluster-name', default='cluster1', help='New cluster name')
-    parser.add_argument('--cluster-desc', default='', help='New cluster description')
-    parser.add_argument('--password', default='password123')
+    auth.add_argument("--token", help="OAuth token")
+    parser.add_argument("--folder-id", help="Your Yandex.Cloud folder id", required=True)
+    parser.add_argument("--zone", default="ru-central1-b", help="Compute Engine zone to deploy to")
+    parser.add_argument("--network-id", default="", help="Your Yandex.Cloud network id")
+    parser.add_argument("--subnet-id", default="", help="Subnet for the cluster")
+    parser.add_argument("--cluster-name", default="cluster1", help="New cluster name")
+    parser.add_argument("--cluster-desc", default="", help="New cluster description")
+    parser.add_argument("--password", default="password123")
     return parser.parse_args()
 
 
@@ -78,7 +75,7 @@ def create_cluster(sdk, request):
 
 
 def add_cluster_host(sdk, cluster_id, params):
-    logging.info('Adding host to cluster {}'.format(cluster_id))
+    logging.info("Adding host to cluster {}".format(cluster_id))
 
     host_specs = [cluster_service.HostSpec(zone_id=params.zone, subnet_id=params.subnet_id)]
     request = cluster_service.AddClusterHostsRequest(cluster_id=cluster_id, host_specs=host_specs)
@@ -91,11 +88,12 @@ def add_cluster_host(sdk, cluster_id, params):
 
 
 def change_cluster_description(sdk, cluster_id):
-    logging.info('Updating cluster {}'.format(cluster_id))
-    mask = FieldMask(paths=['description'])
+    logging.info("Updating cluster {}".format(cluster_id))
+    mask = FieldMask(paths=["description"])
     request = cluster_service.UpdateClusterRequest(
-        cluster_id=cluster_id, update_mask=mask,
-        description='New Description',
+        cluster_id=cluster_id,
+        update_mask=mask,
+        description="New Description",
     )
 
     operation = sdk.client(cluster_service_grpc.ClusterServiceStub).Update(request)
@@ -107,9 +105,10 @@ def change_cluster_description(sdk, cluster_id):
 
 
 def delete_cluster(sdk, cluster_id):
-    logging.info('Deleting cluster {}'.format(cluster_id))
+    logging.info("Deleting cluster {}".format(cluster_id))
     operation = sdk.client(cluster_service_grpc.ClusterServiceStub).Delete(
-        cluster_service.DeleteClusterRequest(cluster_id=cluster_id))
+        cluster_service.DeleteClusterRequest(cluster_id=cluster_id)
+    )
     return sdk.wait_operation_and_get_result(
         operation,
         meta_type=cluster_service.DeleteClusterMetadata,
@@ -118,12 +117,12 @@ def delete_cluster(sdk, cluster_id):
 
 def create_cluster_request(params):
     host_specs = [cluster_service.HostSpec(zone_id=params.zone, subnet_id=params.subnet_id)]
-    res = cluster_pb.Resources(resource_preset_id='hm1.nano', disk_size=16 * (1024 ** 3))
+    res = cluster_pb.Resources(resource_preset_id="hm1.nano", disk_size=16 * (1024**3))
 
     config_spec = cluster_service.ConfigSpec(
-        version='5.0',
+        version="5.0",
         redis_config_5_0=redis5_0_pb2.RedisConfig5_0(
-            maxmemory_policy='MAXMEMORY_POLICY_UNSPECIFIED',
+            maxmemory_policy="MAXMEMORY_POLICY_UNSPECIFIED",
             password=params.password,
         ),
         resources=res,
@@ -134,7 +133,7 @@ def create_cluster_request(params):
         folder_id=params.folder_id,
         name=params.cluster_name,
         description=params.cluster_desc,
-        environment='PRODUCTION',
+        environment="PRODUCTION",
         config_spec=config_spec,
         host_specs=host_specs,
         network_id=params.network_id,
@@ -142,5 +141,5 @@ def create_cluster_request(params):
     )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
