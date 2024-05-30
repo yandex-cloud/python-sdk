@@ -2,6 +2,17 @@
 
 
 
+## v0.289.0 (2024-05-30)
+
+### Feature
+
+* support mypy in proto and sdk ([`42e725e`](https://github.com/yandex-cloud/python-sdk/commit/42e725e2c86890cbecaca9b8e8cf88b28909994d))
+
+* change authors ([`4cc6078`](https://github.com/yandex-cloud/python-sdk/commit/4cc607839660a63cd2c2de8979cb8a64264a9dd7))
+
+* format examples ([`6eb47cc`](https://github.com/yandex-cloud/python-sdk/commit/6eb47cc2dd083dc5cab322e484af78883e50aecc))
+
+
 ## v0.288.0 (2024-05-30)
 
 ### Feature
