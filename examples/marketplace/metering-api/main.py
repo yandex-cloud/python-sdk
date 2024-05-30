@@ -1,14 +1,18 @@
 #!/usr/bin/env python3
 
 import argparse
-import logging
 import time
 from uuid import uuid4
 
 import grpc
+
 import yandexcloud
-from yandex.cloud.marketplace.v1.metering.image_product_usage_service_pb2 import WriteImageProductUsageRequest
-from yandex.cloud.marketplace.v1.metering.image_product_usage_service_pb2_grpc import ImageProductUsageServiceStub
+from yandex.cloud.marketplace.v1.metering.image_product_usage_service_pb2 import (
+    WriteImageProductUsageRequest,
+)
+from yandex.cloud.marketplace.v1.metering.image_product_usage_service_pb2_grpc import (
+    ImageProductUsageServiceStub,
+)
 from yandex.cloud.marketplace.v1.metering.usage_record_pb2 import UsageRecord
 
 
@@ -36,10 +40,10 @@ def build_product_usage_write_request(product_id, sku_id, quantity, timestamp=No
 def business_logic(product_id, sku_id):
     """Example of service."""
 
-    if product_id == 'Secure Firewall' and sku_id == 'Ingress network traffic':
+    if product_id == "Secure Firewall" and sku_id == "Ingress network traffic":
         return 1 + 1
 
-    if product_id == 'Secure Firewall' and sku_id == 'Egress network traffic':
+    if product_id == "Secure Firewall" and sku_id == "Egress network traffic":
         return 1 * 1
 
     return 0
@@ -53,10 +57,10 @@ def validate_write_response(response):
     # response.accepted - list of accepted usage records
 
     if len(response.rejected) > 0:
-        error_msg = 'Unable to provide the service to customer. Rejected: %s, Accepted: %s.'
+        error_msg = "Unable to provide the service to customer. Rejected: %s, Accepted: %s."
         raise ValueError(error_msg % (str(response.rejected), str(response.accepted)))
     elif len(response.accepted) == 0:
-        error_msg = 'Unable to provide the service to customer. Got empty list of accepted metrics.'
+        error_msg = "Unable to provide the service to customer. Got empty list of accepted metrics."
         raise ValueError(error_msg)
 
 
@@ -88,20 +92,22 @@ def main(product_id, sku_id, quantity, timestamp=None, uuid=None):
     return response
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument('--product-id', help='Marketplace image product ID', required=True)
-    parser.add_argument('--sku-id', help='Marketplace image product SKU', required=True)
-    parser.add_argument('--quantity', help='Usage quantity', required=True)
-    parser.add_argument('--timestamp', help='Usage time', required=False)
-    parser.add_argument('--uuid', help='Usage request unique identifier', required=False)
+    parser.add_argument("--product-id", help="Marketplace image product ID", required=True)
+    parser.add_argument("--sku-id", help="Marketplace image product SKU", required=True)
+    parser.add_argument("--quantity", help="Usage quantity", required=True)
+    parser.add_argument("--timestamp", help="Usage time", required=False)
+    parser.add_argument("--uuid", help="Usage request unique identifier", required=False)
 
     args = parser.parse_args()
 
-    print(main(
-        args.product_id,
-        args.sku_id,
-        args.quantity,
-        args.timestamp,
-        args.uuid,
-    ))
+    print(
+        main(
+            args.product_id,
+            args.sku_id,
+            args.quantity,
+            args.timestamp,
+            args.uuid,
+        )
+    )
