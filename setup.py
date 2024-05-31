@@ -16,6 +16,7 @@ setup(
     author_email="cloud@support.yandex.ru",
     long_description=README,
     long_description_content_type="text/markdown",
+    include_package_data=True,
     license="MIT",
     install_requires=[
         "cryptography>=2.8",

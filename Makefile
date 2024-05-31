@@ -44,6 +44,7 @@ proto:  ## regenerate code from protobuf
         --python_out=. \
         --mypy_out=. \
         --grpc_python_out=. \
+        --mypy_grpc_out=. \
         `find cloudapi/yandex -name '*.proto'`
 	find yandex -type d -exec touch {}/__init__.py \;
 
