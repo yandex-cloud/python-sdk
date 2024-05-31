@@ -2,6 +2,22 @@
 
 
 
+## v0.290.0 (2024-05-31)
+
+### Feature
+
+* add pyi files to release build (#104)
+
+* add pyi files to release build
+
+* regenerate proto
+
+---------
+
+Co-authored-by: iva-romanenko &lt;iva-romanenko@yandex-team.ru&gt;
+Co-authored-by: Yandex.Cloud Bot &lt;ycloud-bot@yandex.ru&gt; ([`d8eea7a`](https://github.com/yandex-cloud/python-sdk/commit/d8eea7ae8e79df76cf3854374279656a18af9149))
+
+
 ## v0.289.0 (2024-05-30)
 
 ### Feature
