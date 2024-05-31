@@ -2,6 +2,13 @@
 
 
 
+## v0.292.0 (2024-05-31)
+
+### Feature
+
+* add py.typed ([`f76b0ec`](https://github.com/yandex-cloud/python-sdk/commit/f76b0ec130990dae88c83bdb0002d9b51632b293))
+
+
 ## v0.291.0 (2024-05-31)
 
 ### Feature
