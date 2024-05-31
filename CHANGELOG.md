@@ -2,6 +2,13 @@
 
 
 
+## v0.291.0 (2024-05-31)
+
+### Feature
+
+* fix airflow dataproc integration ([`9d2e631`](https://github.com/yandex-cloud/python-sdk/commit/9d2e631bb90b43928b2e13e782be7975428ec52b))
+
+
 ## v0.290.0 (2024-05-31)
 
 ### Feature
