@@ -48,7 +48,7 @@ class Dataproc:
     """
 
     def __init__(self, default_folder_id=None, default_public_ssh_key=None, logger=None, sdk=None):
-        self.sdk = sdk
+        self.sdk = sdk or self.sdk
         self.log = logger
         if not self.log:
             self.log = logging.getLogger()
