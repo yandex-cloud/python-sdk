@@ -2,6 +2,13 @@
 
 
 
+## v0.294.0 (2024-06-17)
+
+### Feature
+
+* fix ci job genproto deleting py.typed ([`0dc07ad`](https://github.com/yandex-cloud/python-sdk/commit/0dc07ad96450ef6ea0ffa596ef4cb842b2bd3b8b))
+
+
 ## v0.293.0 (2024-06-01)
 
 ### Feature
