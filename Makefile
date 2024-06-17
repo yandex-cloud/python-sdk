@@ -47,6 +47,7 @@ proto:  ## regenerate code from protobuf
         --mypy_grpc_out=. \
         `find cloudapi/yandex -name '*.proto'`
 	find yandex -type d -exec touch {}/__init__.py \;
+	touch yandex/py.typed \;
 
 help: ## Show help message
 	@IFS=$$'\n' ; \
