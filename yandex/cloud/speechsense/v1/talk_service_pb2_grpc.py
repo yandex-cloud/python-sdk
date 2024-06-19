@@ -29,6 +29,16 @@ class TalkServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.UploadTextRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.UploadTextResponse.FromString,
                 )
+        self.Search = channel.unary_unary(
+                '/yandex.cloud.speechsense.v1.TalkService/Search',
+                request_serializer=yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.SearchTalkRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.SearchTalkResponse.FromString,
+                )
+        self.Get = channel.unary_unary(
+                '/yandex.cloud.speechsense.v1.TalkService/Get',
+                request_serializer=yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.GetTalkRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.GetTalkResponse.FromString,
+                )
 
 
 class TalkServiceServicer(object):
@@ -56,6 +66,20 @@ class TalkServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Search(self, request, context):
+        """rpc for searching talks. will return ids only
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Get(self, request, context):
+        """rpc for bulk get
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_TalkServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -73,6 +97,16 @@ def add_TalkServiceServicer_to_server(servicer, server):
                     servicer.UploadText,
                     request_deserializer=yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.UploadTextRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.UploadTextResponse.SerializeToString,
+            ),
+            'Search': grpc.unary_unary_rpc_method_handler(
+                    servicer.Search,
+                    request_deserializer=yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.SearchTalkRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.SearchTalkResponse.SerializeToString,
+            ),
+            'Get': grpc.unary_unary_rpc_method_handler(
+                    servicer.Get,
+                    request_deserializer=yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.GetTalkRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.GetTalkResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -132,5 +166,39 @@ class TalkService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.speechsense.v1.TalkService/UploadText',
             yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.UploadTextRequest.SerializeToString,
             yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.UploadTextResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Search(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.speechsense.v1.TalkService/Search',
+            yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.SearchTalkRequest.SerializeToString,
+            yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.SearchTalkResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Get(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.speechsense.v1.TalkService/Get',
+            yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.GetTalkRequest.SerializeToString,
+            yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.GetTalkResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

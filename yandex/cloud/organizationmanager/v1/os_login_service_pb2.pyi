@@ -269,7 +269,7 @@ class UpdateOsLoginProfileRequest(google.protobuf.message.Message):
     login: builtins.str
     """must not contain . or end in ~"""
     uid: builtins.int
-    """1 - 2^63 - 1"""
+    """1000 - 2^63 - 1"""
     home_directory: builtins.str
     shell: builtins.str
     @property
@@ -319,7 +319,7 @@ class CreateOsLoginProfileRequest(google.protobuf.message.Message):
     login: builtins.str
     """must not contain . or end in ~"""
     uid: builtins.int
-    """1 - 2^63 - 1"""
+    """1000 - 2^63 - 1"""
     home_directory: builtins.str
     shell: builtins.str
     def __init__(

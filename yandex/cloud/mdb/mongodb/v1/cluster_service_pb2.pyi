@@ -1239,7 +1239,7 @@ class UpdateClusterHostsRequest(google.protobuf.message.Message):
     """
     @property
     def update_host_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___UpdateHostSpec]:
-        """New configurations to apply to hosts."""
+        """New configurations to apply to hosts of a Managed Service for MongoDB cluster."""
 
     def __init__(
         self,
@@ -1301,20 +1301,26 @@ class UpdateHostSpec(google.protobuf.message.Message):
     UPDATE_MASK_FIELD_NUMBER: builtins.int
     TAGS_FIELD_NUMBER: builtins.int
     host_name: builtins.str
-    """Names of hosts to update."""
+    """Host to be updated. Specify the [host FQDN](https://yandex.cloud/en/docs/managed-mongodb/operations/connect/#fqdn)."""
     assign_public_ip: builtins.bool
-    """Whether the host should get a public IP address on update."""
+    """Determines whether the host should get a public IP address after the update."""
     @property
     def hidden(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Is host hidden in replSet"""
+        """Determines if the host is a hidden replica set member.
+
+        Such members cannot become primary in a replica set, and they are invisible to client applications. However, hidden members can participate in elections of the primary host. For more information, see the [MongoDB documentation](https://www.mongodb.com/docs/manual/core/replica-set-hidden-member/).
+        """
 
     @property
     def secondary_delay_secs(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The number of seconds "behind" the primary that this replica set member should "lag" """
+        """The time, in seconds, by which the given replica set member lags behind the primary host."""
 
     @property
     def priority(self) -> google.protobuf.wrappers_pb2.DoubleValue:
-        """Priority of host for the election in replSet"""
+        """Priority of the host to be elected as the primary in the replica set.
+
+        The minimum value is `0` if the Managed Service for MongoDB cluster contains three or more secondary hosts. Otherwise, the minimum value is `1`.
+        """
 
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
@@ -1322,7 +1328,7 @@ class UpdateHostSpec(google.protobuf.message.Message):
 
     @property
     def tags(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Host tags"""
+        """Host tag list that contains key-value pairs for the given replica set member. For more information about how to specify the tags and what values to choose, see the [MongoDB documentation](https://www.mongodb.com/docs/manual/reference/replica-configuration/#mongodb-rsconf-rsconf.members-n-.tags)."""
 
     def __init__(
         self,

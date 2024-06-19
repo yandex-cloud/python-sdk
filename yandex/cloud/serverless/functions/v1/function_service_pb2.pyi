@@ -602,6 +602,7 @@ class CreateFunctionVersionRequest(google.protobuf.message.Message):
     STORAGE_MOUNTS_FIELD_NUMBER: builtins.int
     ASYNC_INVOCATION_CONFIG_FIELD_NUMBER: builtins.int
     TMPFS_SIZE_FIELD_NUMBER: builtins.int
+    CONCURRENCY_FIELD_NUMBER: builtins.int
     function_id: builtins.str
     """ID of the function to create a version for.
 
@@ -627,6 +628,8 @@ class CreateFunctionVersionRequest(google.protobuf.message.Message):
 
     0 or in range from 512 MiB to 3/4 of resources.memory.
     """
+    concurrency: builtins.int
+    """The maximum number of requests processed by a function instance at the same time"""
     @property
     def resources(self) -> yandex.cloud.serverless.functions.v1.function_pb2.Resources:
         """Resources allocated to the version."""
@@ -696,9 +699,10 @@ class CreateFunctionVersionRequest(google.protobuf.message.Message):
         storage_mounts: collections.abc.Iterable[yandex.cloud.serverless.functions.v1.function_pb2.StorageMount] | None = ...,
         async_invocation_config: yandex.cloud.serverless.functions.v1.function_pb2.AsyncInvocationConfig | None = ...,
         tmpfs_size: builtins.int = ...,
+        concurrency: builtins.int = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["async_invocation_config", b"async_invocation_config", "connectivity", b"connectivity", "content", b"content", "execution_timeout", b"execution_timeout", "log_options", b"log_options", "package", b"package", "package_source", b"package_source", "resources", b"resources", "version_id", b"version_id"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["async_invocation_config", b"async_invocation_config", "connectivity", b"connectivity", "content", b"content", "description", b"description", "entrypoint", b"entrypoint", "environment", b"environment", "execution_timeout", b"execution_timeout", "function_id", b"function_id", "log_options", b"log_options", "named_service_accounts", b"named_service_accounts", "package", b"package", "package_source", b"package_source", "resources", b"resources", "runtime", b"runtime", "secrets", b"secrets", "service_account_id", b"service_account_id", "storage_mounts", b"storage_mounts", "tag", b"tag", "tmpfs_size", b"tmpfs_size", "version_id", b"version_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["async_invocation_config", b"async_invocation_config", "concurrency", b"concurrency", "connectivity", b"connectivity", "content", b"content", "description", b"description", "entrypoint", b"entrypoint", "environment", b"environment", "execution_timeout", b"execution_timeout", "function_id", b"function_id", "log_options", b"log_options", "named_service_accounts", b"named_service_accounts", "package", b"package", "package_source", b"package_source", "resources", b"resources", "runtime", b"runtime", "secrets", b"secrets", "service_account_id", b"service_account_id", "storage_mounts", b"storage_mounts", "tag", b"tag", "tmpfs_size", b"tmpfs_size", "version_id", b"version_id"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["package_source", b"package_source"]) -> typing.Literal["package", "content", "version_id"] | None: ...
 
 global___CreateFunctionVersionRequest = CreateFunctionVersionRequest

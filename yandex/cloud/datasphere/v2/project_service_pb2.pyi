@@ -515,6 +515,8 @@ class ProjectExecutionRequest(google.protobuf.message.Message):
     CELL_ID_FIELD_NUMBER: builtins.int
     INPUT_VARIABLES_FIELD_NUMBER: builtins.int
     OUTPUT_VARIABLE_NAMES_FIELD_NUMBER: builtins.int
+    SPEC_FIELD_NUMBER: builtins.int
+    SPARK_CONNECTOR_ID_FIELD_NUMBER: builtins.int
     project_id: builtins.str
     """ID of the project to execute notebook/cell in."""
     notebook_id: builtins.str
@@ -526,9 +528,13 @@ class ProjectExecutionRequest(google.protobuf.message.Message):
     """ID of the cell to execute.
     Deprecated
     """
+    spec: builtins.str
+    """Specification of the VM"""
+    spark_connector_id: builtins.str
+    """ID of the Spark Connector"""
     @property
     def input_variables(self) -> google.protobuf.struct_pb2.Struct:
-        """Values of input variables."""
+        """Values of input variables. Input variables will be available in the project as environment variables."""
 
     @property
     def output_variable_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
@@ -542,9 +548,11 @@ class ProjectExecutionRequest(google.protobuf.message.Message):
         cell_id: builtins.str = ...,
         input_variables: google.protobuf.struct_pb2.Struct | None = ...,
         output_variable_names: collections.abc.Iterable[builtins.str] | None = ...,
+        spec: builtins.str = ...,
+        spark_connector_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["cell_id", b"cell_id", "input_variables", b"input_variables", "notebook_id", b"notebook_id", "target", b"target"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cell_id", b"cell_id", "input_variables", b"input_variables", "notebook_id", b"notebook_id", "output_variable_names", b"output_variable_names", "project_id", b"project_id", "target", b"target"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cell_id", b"cell_id", "input_variables", b"input_variables", "notebook_id", b"notebook_id", "output_variable_names", b"output_variable_names", "project_id", b"project_id", "spark_connector_id", b"spark_connector_id", "spec", b"spec", "target", b"target"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["target", b"target"]) -> typing.Literal["notebook_id", "cell_id"] | None: ...
 
 global___ProjectExecutionRequest = ProjectExecutionRequest
@@ -590,7 +598,9 @@ class ProjectExecutionResponse(google.protobuf.message.Message):
     """Execution final status."""
     @property
     def output_variables(self) -> google.protobuf.struct_pb2.Struct:
-        """Values of output variables resulting from the execution."""
+        """Values of output variables resulting from the execution.
+        Deprecated
+        """
 
     def __init__(
         self,

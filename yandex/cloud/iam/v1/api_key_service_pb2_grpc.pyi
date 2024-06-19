@@ -62,6 +62,12 @@ class ApiKeyServiceStub:
     ]
     """Retrieves the list of operations for the specified API key."""
 
+    ListScopes: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.iam.v1.api_key_service_pb2.ListApiKeyScopesRequest,
+        yandex.cloud.iam.v1.api_key_service_pb2.ListApiKeyScopesResponse,
+    ]
+    """Retrieves the list of scopes."""
+
 class ApiKeyServiceAsyncStub:
     """A set of methods for managing API keys."""
 
@@ -103,6 +109,12 @@ class ApiKeyServiceAsyncStub:
         yandex.cloud.iam.v1.api_key_service_pb2.ListApiKeyOperationsResponse,
     ]
     """Retrieves the list of operations for the specified API key."""
+
+    ListScopes: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.iam.v1.api_key_service_pb2.ListApiKeyScopesRequest,
+        yandex.cloud.iam.v1.api_key_service_pb2.ListApiKeyScopesResponse,
+    ]
+    """Retrieves the list of scopes."""
 
 class ApiKeyServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing API keys."""
@@ -157,5 +169,13 @@ class ApiKeyServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.iam.v1.api_key_service_pb2.ListApiKeyOperationsResponse, collections.abc.Awaitable[yandex.cloud.iam.v1.api_key_service_pb2.ListApiKeyOperationsResponse]]:
         """Retrieves the list of operations for the specified API key."""
+
+    @abc.abstractmethod
+    def ListScopes(
+        self,
+        request: yandex.cloud.iam.v1.api_key_service_pb2.ListApiKeyScopesRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.iam.v1.api_key_service_pb2.ListApiKeyScopesResponse, collections.abc.Awaitable[yandex.cloud.iam.v1.api_key_service_pb2.ListApiKeyScopesResponse]]:
+        """Retrieves the list of scopes."""
 
 def add_ApiKeyServiceServicer_to_server(servicer: ApiKeyServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

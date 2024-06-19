@@ -40,6 +40,8 @@ class Registry(google.protobuf.message.Message):
         """Registry is ready to use."""
         DELETING: Registry._Status.ValueType  # 3
         """Registry is being deleted."""
+        DISABLED: Registry._Status.ValueType  # 4
+        """Registry is disabled."""
 
     class Status(_Status, metaclass=_StatusEnumTypeWrapper): ...
     STATUS_UNSPECIFIED: Registry.Status.ValueType  # 0
@@ -49,6 +51,8 @@ class Registry(google.protobuf.message.Message):
     """Registry is ready to use."""
     DELETING: Registry.Status.ValueType  # 3
     """Registry is being deleted."""
+    DISABLED: Registry.Status.ValueType  # 4
+    """Registry is disabled."""
 
     @typing.final
     class LabelsEntry(google.protobuf.message.Message):

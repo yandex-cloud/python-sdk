@@ -78,6 +78,7 @@ class JobParameters(google.protobuf.message.Message):
     CLOUD_INSTANCE_TYPES_FIELD_NUMBER: builtins.int
     EXTENDED_WORKING_STORAGE_FIELD_NUMBER: builtins.int
     ARGUMENTS_FIELD_NUMBER: builtins.int
+    OUTPUT_DATASETS_FIELD_NUMBER: builtins.int
     cmd: builtins.str
     """Job run command."""
     attach_project_disk: builtins.bool
@@ -114,6 +115,10 @@ class JobParameters(google.protobuf.message.Message):
     def arguments(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Argument]:
         """List of literal arguments."""
 
+    @property
+    def output_datasets(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___OutputDatasetDesc]:
+        """List of DataSets descriptions to create"""
+
     def __init__(
         self,
         *,
@@ -127,9 +132,10 @@ class JobParameters(google.protobuf.message.Message):
         cloud_instance_types: collections.abc.Iterable[global___CloudInstanceType] | None = ...,
         extended_working_storage: global___ExtendedWorkingStorage | None = ...,
         arguments: collections.abc.Iterable[global___Argument] | None = ...,
+        output_datasets: collections.abc.Iterable[global___OutputDatasetDesc] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["env", b"env", "extended_working_storage", b"extended_working_storage"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["arguments", b"arguments", "attach_project_disk", b"attach_project_disk", "cloud_instance_types", b"cloud_instance_types", "cmd", b"cmd", "dataset_ids", b"dataset_ids", "env", b"env", "extended_working_storage", b"extended_working_storage", "input_files", b"input_files", "output_files", b"output_files", "s3_mount_ids", b"s3_mount_ids"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["arguments", b"arguments", "attach_project_disk", b"attach_project_disk", "cloud_instance_types", b"cloud_instance_types", "cmd", b"cmd", "dataset_ids", b"dataset_ids", "env", b"env", "extended_working_storage", b"extended_working_storage", "input_files", b"input_files", "output_datasets", b"output_datasets", "output_files", b"output_files", "s3_mount_ids", b"s3_mount_ids"]) -> None: ...
 
 global___JobParameters = JobParameters
 
@@ -369,6 +375,77 @@ class PythonEnv(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["conda_yaml", b"conda_yaml", "local_modules", b"local_modules"]) -> None: ...
 
 global___PythonEnv = PythonEnv
+
+@typing.final
+class OutputDatasetDesc(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class LabelsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
+    NAME_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
+    LABELS_FIELD_NUMBER: builtins.int
+    SIZE_GB_FIELD_NUMBER: builtins.int
+    VAR_FIELD_NUMBER: builtins.int
+    name: builtins.str
+    """Name to create dataset with"""
+    description: builtins.str
+    """Description to show in UI"""
+    size_gb: builtins.int
+    """Size of dataset to create"""
+    var: builtins.str
+    """Var name to replace in cmd, like in FileDesc"""
+    @property
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
+    def __init__(
+        self,
+        *,
+        name: builtins.str = ...,
+        description: builtins.str = ...,
+        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        size_gb: builtins.int = ...,
+        var: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "labels", b"labels", "name", b"name", "size_gb", b"size_gb", "var", b"var"]) -> None: ...
+
+global___OutputDatasetDesc = OutputDatasetDesc
+
+@typing.final
+class OutputDataset(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DESC_FIELD_NUMBER: builtins.int
+    ID_FIELD_NUMBER: builtins.int
+    id: builtins.str
+    """Id of created dataset"""
+    @property
+    def desc(self) -> global___OutputDatasetDesc:
+        """Dataset description"""
+
+    def __init__(
+        self,
+        *,
+        desc: global___OutputDatasetDesc | None = ...,
+        id: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["desc", b"desc"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["desc", b"desc", "id", b"id"]) -> None: ...
+
+global___OutputDataset = OutputDataset
 
 @typing.final
 class Job(google.protobuf.message.Message):

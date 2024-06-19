@@ -61,6 +61,33 @@ class Resource(google.protobuf.message.Message):
     for more information.
     """
 
+    class _InitStatus:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _InitStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Resource._InitStatus.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        INIT_STATUS_UNSPECIFIED: Resource._InitStatus.ValueType  # 0
+        REGISTERING: Resource._InitStatus.ValueType  # 1
+        """Registration of instance in cloud backups have started."""
+        REGISTRED: Resource._InitStatus.ValueType  # 2
+        """Instance is registered in cloud backups."""
+        FAILED_REGISTRATION: Resource._InitStatus.ValueType  # 3
+        """Instance registration failed."""
+        DELETED: Resource._InitStatus.ValueType  # 4
+        """Instance is deleted from cloud backup service."""
+
+    class InitStatus(_InitStatus, metaclass=_InitStatusEnumTypeWrapper): ...
+    INIT_STATUS_UNSPECIFIED: Resource.InitStatus.ValueType  # 0
+    REGISTERING: Resource.InitStatus.ValueType  # 1
+    """Registration of instance in cloud backups have started."""
+    REGISTRED: Resource.InitStatus.ValueType  # 2
+    """Instance is registered in cloud backups."""
+    FAILED_REGISTRATION: Resource.InitStatus.ValueType  # 3
+    """Instance registration failed."""
+    DELETED: Resource.InitStatus.ValueType  # 4
+    """Instance is deleted from cloud backup service."""
+
     COMPUTE_INSTANCE_ID_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
     UPDATED_AT_FIELD_NUMBER: builtins.int
@@ -73,6 +100,8 @@ class Resource(google.protobuf.message.Message):
     NEXT_BACKUP_TIME_FIELD_NUMBER: builtins.int
     RESOURCE_ID_FIELD_NUMBER: builtins.int
     IS_ACTIVE_FIELD_NUMBER: builtins.int
+    INIT_STATUS_FIELD_NUMBER: builtins.int
+    METADATA_FIELD_NUMBER: builtins.int
     compute_instance_id: builtins.str
     """Compute Cloud instance ID."""
     online: builtins.bool
@@ -94,6 +123,12 @@ class Resource(google.protobuf.message.Message):
     """Status `is_active` shows whether current Compute Cloud instance controls Cloud Backup resource.
     If status `is_active` is false it means Compute Cloud instance is not able to manipulate
     Cloud Backup resource.
+    """
+    init_status: global___Resource.InitStatus.ValueType
+    """Status of resource initialization in cloud backup service."""
+    metadata: builtins.str
+    """Metadata to provide details about instance registration process
+    if status is FAILED_REGISTRATION or REGISTERING
     """
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
@@ -118,9 +153,11 @@ class Resource(google.protobuf.message.Message):
         next_backup_time: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         resource_id: builtins.str = ...,
         is_active: builtins.bool = ...,
+        init_status: global___Resource.InitStatus.ValueType = ...,
+        metadata: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at", "last_backup_time", b"last_backup_time", "next_backup_time", b"next_backup_time", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["compute_instance_id", b"compute_instance_id", "created_at", b"created_at", "enabled", b"enabled", "is_active", b"is_active", "last_backup_time", b"last_backup_time", "next_backup_time", b"next_backup_time", "online", b"online", "resource_id", b"resource_id", "status", b"status", "status_details", b"status_details", "status_progress", b"status_progress", "updated_at", b"updated_at"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["compute_instance_id", b"compute_instance_id", "created_at", b"created_at", "enabled", b"enabled", "init_status", b"init_status", "is_active", b"is_active", "last_backup_time", b"last_backup_time", "metadata", b"metadata", "next_backup_time", b"next_backup_time", "online", b"online", "resource_id", b"resource_id", "status", b"status", "status_details", b"status_details", "status_progress", b"status_progress", "updated_at", b"updated_at"]) -> None: ...
 
 global___Resource = Resource
 

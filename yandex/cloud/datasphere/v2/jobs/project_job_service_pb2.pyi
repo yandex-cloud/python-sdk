@@ -230,10 +230,15 @@ class ExecuteProjectJobResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     OUTPUT_FILES_FIELD_NUMBER: builtins.int
+    OUTPUT_DATASETS_FIELD_NUMBER: builtins.int
     RESULT_FIELD_NUMBER: builtins.int
     @property
     def output_files(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.datasphere.v2.jobs.jobs_pb2.StorageFile]:
         """Uploaded output files with URLs."""
+
+    @property
+    def output_datasets(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.datasphere.v2.jobs.jobs_pb2.OutputDataset]:
+        """Created datasets"""
 
     @property
     def result(self) -> yandex.cloud.datasphere.v2.jobs.jobs_pb2.JobResult:
@@ -243,10 +248,11 @@ class ExecuteProjectJobResponse(google.protobuf.message.Message):
         self,
         *,
         output_files: collections.abc.Iterable[yandex.cloud.datasphere.v2.jobs.jobs_pb2.StorageFile] | None = ...,
+        output_datasets: collections.abc.Iterable[yandex.cloud.datasphere.v2.jobs.jobs_pb2.OutputDataset] | None = ...,
         result: yandex.cloud.datasphere.v2.jobs.jobs_pb2.JobResult | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["result", b"result"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["output_files", b"output_files", "result", b"result"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["output_datasets", b"output_datasets", "output_files", b"output_files", "result", b"result"]) -> None: ...
 
 global___ExecuteProjectJobResponse = ExecuteProjectJobResponse
 
@@ -411,6 +417,7 @@ class ListProjectJobRequest(google.protobuf.message.Message):
     PROJECT_ID_FIELD_NUMBER: builtins.int
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    FILTER_FIELD_NUMBER: builtins.int
     project_id: builtins.str
     """ID of the project."""
     page_size: builtins.int
@@ -423,14 +430,22 @@ class ListProjectJobRequest(google.protobuf.message.Message):
     """Page token. To get the next page of results, set [page_token] to the
     [ListProjectJobResponse.page_token] returned by a previous list request.
     """
+    filter: builtins.str
+    """restrictions:
+      * only `status` field is supported
+      * only `IN` operator is supported
+    example:
+      * only running jobs == "status IN (EXECUTING, UPLOADING_OUTPUT)"
+    """
     def __init__(
         self,
         *,
         project_id: builtins.str = ...,
         page_size: builtins.int = ...,
         page_token: builtins.str = ...,
+        filter: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["page_size", b"page_size", "page_token", b"page_token", "project_id", b"project_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["filter", b"filter", "page_size", b"page_size", "page_token", b"page_token", "project_id", b"project_id"]) -> None: ...
 
 global___ListProjectJobRequest = ListProjectJobRequest
 
@@ -439,8 +454,8 @@ class ListProjectJobResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     JOBS_FIELD_NUMBER: builtins.int
-    PAGE_TOKEN_FIELD_NUMBER: builtins.int
-    page_token: builtins.str
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    next_page_token: builtins.str
     """This token allows you to get the next page of results for list requests. If the number of results
     is larger than [ListProjectJobRequest.page_size], use
     the [next_page_token] as the value
@@ -456,9 +471,9 @@ class ListProjectJobResponse(google.protobuf.message.Message):
         self,
         *,
         jobs: collections.abc.Iterable[yandex.cloud.datasphere.v2.jobs.jobs_pb2.Job] | None = ...,
-        page_token: builtins.str = ...,
+        next_page_token: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["jobs", b"jobs", "page_token", b"page_token"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["jobs", b"jobs", "next_page_token", b"next_page_token"]) -> None: ...
 
 global___ListProjectJobResponse = ListProjectJobResponse
 

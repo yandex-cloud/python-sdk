@@ -6,10 +6,13 @@ isort:skip_file
 import builtins
 import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.field_mask_pb2
 import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
 import yandex.cloud.speechsense.v1.audio_pb2
+import yandex.cloud.speechsense.v1.search_pb2
+import yandex.cloud.speechsense.v1.talk_pb2
 import yandex.cloud.speechsense.v1.text_pb2
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
@@ -159,3 +162,143 @@ class TalkMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["connection_id", b"connection_id", "fields", b"fields"]) -> None: ...
 
 global___TalkMetadata = TalkMetadata
+
+@typing.final
+class SearchTalkRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ORGANIZATION_ID_FIELD_NUMBER: builtins.int
+    SPACE_ID_FIELD_NUMBER: builtins.int
+    CONNECTION_ID_FIELD_NUMBER: builtins.int
+    PROJECT_ID_FIELD_NUMBER: builtins.int
+    FILTERS_FIELD_NUMBER: builtins.int
+    QUERY_FIELD_NUMBER: builtins.int
+    PAGE_SIZE_FIELD_NUMBER: builtins.int
+    PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    SORT_DATA_FIELD_NUMBER: builtins.int
+    organization_id: builtins.str
+    """id of organization"""
+    space_id: builtins.str
+    """id of space"""
+    connection_id: builtins.str
+    """id of connection"""
+    project_id: builtins.str
+    """id of project"""
+    page_size: builtins.int
+    """page size, from 1 to 1000, default 100"""
+    page_token: builtins.str
+    """next page token, if page is not first"""
+    @property
+    def filters(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.speechsense.v1.search_pb2.Filter]:
+        """metadata keys filters (user and system)"""
+
+    @property
+    def query(self) -> yandex.cloud.speechsense.v1.search_pb2.Query:
+        """Full-text search query"""
+
+    @property
+    def sort_data(self) -> yandex.cloud.speechsense.v1.search_pb2.SortData:
+        """talks sorting options"""
+
+    def __init__(
+        self,
+        *,
+        organization_id: builtins.str = ...,
+        space_id: builtins.str = ...,
+        connection_id: builtins.str = ...,
+        project_id: builtins.str = ...,
+        filters: collections.abc.Iterable[yandex.cloud.speechsense.v1.search_pb2.Filter] | None = ...,
+        query: yandex.cloud.speechsense.v1.search_pb2.Query | None = ...,
+        page_size: builtins.int = ...,
+        page_token: builtins.str = ...,
+        sort_data: yandex.cloud.speechsense.v1.search_pb2.SortData | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["query", b"query", "sort_data", b"sort_data"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["connection_id", b"connection_id", "filters", b"filters", "organization_id", b"organization_id", "page_size", b"page_size", "page_token", b"page_token", "project_id", b"project_id", "query", b"query", "sort_data", b"sort_data", "space_id", b"space_id"]) -> None: ...
+
+global___SearchTalkRequest = SearchTalkRequest
+
+@typing.final
+class SearchTalkResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TALK_IDS_FIELD_NUMBER: builtins.int
+    TALKS_COUNT_FIELD_NUMBER: builtins.int
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    talks_count: builtins.int
+    """total documents matched"""
+    next_page_token: builtins.str
+    """page token for next request"""
+    @property
+    def talk_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """page results entries"""
+
+    def __init__(
+        self,
+        *,
+        talk_ids: collections.abc.Iterable[builtins.str] | None = ...,
+        talks_count: builtins.int = ...,
+        next_page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["next_page_token", b"next_page_token", "talk_ids", b"talk_ids", "talks_count", b"talks_count"]) -> None: ...
+
+global___SearchTalkResponse = SearchTalkResponse
+
+@typing.final
+class GetTalkRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ORGANIZATION_ID_FIELD_NUMBER: builtins.int
+    SPACE_ID_FIELD_NUMBER: builtins.int
+    CONNECTION_ID_FIELD_NUMBER: builtins.int
+    PROJECT_ID_FIELD_NUMBER: builtins.int
+    TALK_IDS_FIELD_NUMBER: builtins.int
+    RESULTS_MASK_FIELD_NUMBER: builtins.int
+    organization_id: builtins.str
+    """id of organization"""
+    space_id: builtins.str
+    """id of space"""
+    connection_id: builtins.str
+    """id of connection to search data"""
+    project_id: builtins.str
+    """id of project to search data"""
+    @property
+    def talk_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """ids of talks to return. Requesting too many talks may result in "message exceeds maximum size" error.
+        Up to 100 of talks per request is recommended.
+        """
+
+    @property
+    def results_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
+        """All types of analysis will be returned if not set."""
+
+    def __init__(
+        self,
+        *,
+        organization_id: builtins.str = ...,
+        space_id: builtins.str = ...,
+        connection_id: builtins.str = ...,
+        project_id: builtins.str = ...,
+        talk_ids: collections.abc.Iterable[builtins.str] | None = ...,
+        results_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["results_mask", b"results_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["connection_id", b"connection_id", "organization_id", b"organization_id", "project_id", b"project_id", "results_mask", b"results_mask", "space_id", b"space_id", "talk_ids", b"talk_ids"]) -> None: ...
+
+global___GetTalkRequest = GetTalkRequest
+
+@typing.final
+class GetTalkResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TALK_FIELD_NUMBER: builtins.int
+    @property
+    def talk(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.speechsense.v1.talk_pb2.Talk]: ...
+    def __init__(
+        self,
+        *,
+        talk: collections.abc.Iterable[yandex.cloud.speechsense.v1.talk_pb2.Talk] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["talk", b"talk"]) -> None: ...
+
+global___GetTalkResponse = GetTalkResponse

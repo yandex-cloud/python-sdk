@@ -127,6 +127,18 @@ class RegistryServiceStub:
     ]
     """Lists operations for the specified registry."""
 
+    Disable: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.iot.devices.v1.registry_service_pb2.DisableRegistryRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Disables the specified registry."""
+
+    Enable: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.iot.devices.v1.registry_service_pb2.EnableRegistryRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Enables the specified registry."""
+
 class RegistryServiceAsyncStub:
     """A set of methods for managing registry."""
 
@@ -233,6 +245,18 @@ class RegistryServiceAsyncStub:
         yandex.cloud.iot.devices.v1.registry_service_pb2.ListRegistryOperationsResponse,
     ]
     """Lists operations for the specified registry."""
+
+    Disable: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.iot.devices.v1.registry_service_pb2.DisableRegistryRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Disables the specified registry."""
+
+    Enable: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.iot.devices.v1.registry_service_pb2.EnableRegistryRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Enables the specified registry."""
 
 class RegistryServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing registry."""
@@ -374,5 +398,21 @@ class RegistryServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.iot.devices.v1.registry_service_pb2.ListRegistryOperationsResponse, collections.abc.Awaitable[yandex.cloud.iot.devices.v1.registry_service_pb2.ListRegistryOperationsResponse]]:
         """Lists operations for the specified registry."""
+
+    @abc.abstractmethod
+    def Disable(
+        self,
+        request: yandex.cloud.iot.devices.v1.registry_service_pb2.DisableRegistryRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Disables the specified registry."""
+
+    @abc.abstractmethod
+    def Enable(
+        self,
+        request: yandex.cloud.iot.devices.v1.registry_service_pb2.EnableRegistryRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Enables the specified registry."""
 
 def add_RegistryServiceServicer_to_server(servicer: RegistryServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

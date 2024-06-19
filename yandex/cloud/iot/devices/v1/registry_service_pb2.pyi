@@ -847,3 +847,67 @@ class ListDataStreamExportsResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["data_stream_exports", b"data_stream_exports"]) -> None: ...
 
 global___ListDataStreamExportsResponse = ListDataStreamExportsResponse
+
+@typing.final
+class DisableRegistryRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    REGISTRY_ID_FIELD_NUMBER: builtins.int
+    registry_id: builtins.str
+    """ID of the registry to disable."""
+    def __init__(
+        self,
+        *,
+        registry_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["registry_id", b"registry_id"]) -> None: ...
+
+global___DisableRegistryRequest = DisableRegistryRequest
+
+@typing.final
+class DisableRegistryMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    REGISTRY_ID_FIELD_NUMBER: builtins.int
+    registry_id: builtins.str
+    """ID of the registry that was disabled."""
+    def __init__(
+        self,
+        *,
+        registry_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["registry_id", b"registry_id"]) -> None: ...
+
+global___DisableRegistryMetadata = DisableRegistryMetadata
+
+@typing.final
+class EnableRegistryRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    REGISTRY_ID_FIELD_NUMBER: builtins.int
+    registry_id: builtins.str
+    """ID of the registry to enable."""
+    def __init__(
+        self,
+        *,
+        registry_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["registry_id", b"registry_id"]) -> None: ...
+
+global___EnableRegistryRequest = EnableRegistryRequest
+
+@typing.final
+class EnableRegistryMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    REGISTRY_ID_FIELD_NUMBER: builtins.int
+    registry_id: builtins.str
+    """ID of the registry that was enabled."""
+    def __init__(
+        self,
+        *,
+        registry_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["registry_id", b"registry_id"]) -> None: ...
+
+global___EnableRegistryMetadata = EnableRegistryMetadata

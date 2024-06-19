@@ -94,9 +94,9 @@ class User(google.protobuf.message.Message):
 
     @property
     def deletion_protection(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Deletion Protection inhibits deletion of the user
+        """Determines whether the user deletion protection is enabled.
 
-        Default value: `unspecified` (inherits cluster's deletion_protection)
+        The default value is `unspecified`. In this case, the user configuration inherits the cluster's deletion protection settings.
         """
 
     def __init__(
@@ -244,7 +244,22 @@ class PGAuditSettings(google.protobuf.message.Message):
 
     LOG_FIELD_NUMBER: builtins.int
     @property
-    def log(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[global___PGAuditSettings.PGAuditSettingsLog.ValueType]: ...
+    def log(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[global___PGAuditSettings.PGAuditSettingsLog.ValueType]:
+        """Defines which user queries will be written to the audit log. Corresponds to the [Pg audit log](https://yandex.cloud/en/docs/managed-postgresql/concepts/settings-list#setting-pg-audit-log) user setting.
+
+        The possible values are the following:
+
+        * PG_AUDIT_SETTINGS_LOG_READ: `SELECT` and `COPY` queries are logged if the data source is a relation or query.
+        * PG_AUDIT_SETTINGS_LOG_WRITE: `INSERT`, `UPDATE`, `DELETE`, `TRUNCATE`, and `COPY` queries are logged if the data target is a relation.
+        * PG_AUDIT_SETTINGS_LOG_FUNCTION: Function invocations and `DO` sections are logged.
+        * PG_AUDIT_SETTINGS_LOG_ROLE: Statements related to role and privilege management, such as `GRANT`, `REVOKE`, or `CREATE/ALTER/DROP ROLE`, are logged.
+        * PG_AUDIT_SETTINGS_LOG_DDL: Any `DDL` statements that do not belong to the `ROLE` class are logged.
+        * PG_AUDIT_SETTINGS_LOG_MISC: Miscellaneous commands, such as `DISCARD`, `FETCH`, `CHECKPOINT`, `VACUUM`, and `SET`, are logged.
+        * PG_AUDIT_SETTINGS_LOG_MISC_SET: Miscellaneous `SET` commands, e.g., `SET ROLE`, are logged.
+
+        The default value is PG_AUDIT_SETTINGS_LOG_UNSPECIFIED. In this case, the parameter is not configured.
+        """
+
     def __init__(
         self,
         *,
@@ -407,7 +422,7 @@ class UserSettings(google.protobuf.message.Message):
     """SQL sets an isolation level for each transaction.
     This setting defines the default isolation level to be set for all new SQL transactions.
 
-    See in-depth description in [PostgreSQL documentation](https://www.postgresql.org/docs/current/transaction-iso.html).
+    For more information, see the [PostgreSQL documentation](https://www.postgresql.org/docs/current/transaction-iso.html).
     """
     synchronous_commit: global___UserSettings.SynchronousCommit.ValueType
     """This setting defines whether DBMS will commit transaction in a synchronous way.
@@ -415,17 +430,17 @@ class UserSettings(google.protobuf.message.Message):
     When synchronization is enabled, cluster waits for the synchronous operations to be completed prior to reporting `success` to the client.
     These operations guarantee different levels of the data safety and visibility in the cluster.
 
-    See in-depth description in [PostgreSQL documentation](https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-SYNCHRONOUS-COMMIT).
+    For more information, see the [PostgreSQL documentation](https://www.postgresql.org/docs/current/runtime-config-wal.html#GUC-SYNCHRONOUS-COMMIT).
     """
     log_statement: global___UserSettings.LogStatement.ValueType
     """This setting specifies which SQL statements should be logged (on the user level).
 
-    See in-depth description in [PostgreSQL documentation](https://www.postgresql.org/docs/current/runtime-config-logging.html).
+    For more information, see the [PostgreSQL documentation](https://www.postgresql.org/docs/current/runtime-config-logging.html).
     """
     pool_mode: global___UserSettings.PoolingMode.ValueType
     """Mode that the connection pooler is working in with specified user.
 
-    See in-depth description in [Odyssey documentation](https://github.com/yandex/odyssey/blob/master/documentation/configuration.md#pool-string)
+    For more information, see the [Odyssey documentation](https://github.com/yandex/odyssey/blob/master/documentation/configuration.md#pool-string).
     """
     @property
     def lock_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
@@ -446,7 +461,7 @@ class UserSettings(google.protobuf.message.Message):
 
         Value of `-1` (default) disables logging of the duration of statements.
 
-        See in-depth description in [PostgreSQL documentation](https://www.postgresql.org/docs/current/runtime-config-logging.html).
+        For more information, see the [PostgreSQL documentation](https://www.postgresql.org/docs/current/runtime-config-logging.html).
         """
 
     @property
@@ -461,7 +476,7 @@ class UserSettings(google.protobuf.message.Message):
     def prepared_statements_pooling(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """User can use prepared statements with transaction pooling.
 
-        See in-depth description in [PostgreSQL documentation](https://www.postgresql.org/docs/current/sql-prepare.html)
+        For more information, see the [PostgreSQL documentation](https://www.postgresql.org/docs/current/sql-prepare.html).
         """
 
     @property
@@ -484,33 +499,35 @@ class UserSettings(google.protobuf.message.Message):
 
         Value of `0` disables the timeout mechanism.
 
-        See in-depth description in [PostgreSQL documentation](https://www.postgresql.org/docs/current/runtime-config-replication.html)
+        For more information, see the [PostgreSQL documentation](https://www.postgresql.org/docs/current/runtime-config-replication.html).
         """
 
     @property
     def idle_in_transaction_session_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Sets the maximum allowed idle time (in milliseconds) between queries, when in a transaction.
+        """Sets the maximum allowed idle time, in milliseconds, between queries while in a transaction.
 
-        Values of `0` (default) disables the timeout.
+        The default value is `0`, which disables the timeout.
 
-        See in-depth description in [PostgreSQL documentation](https://www.postgresql.org/docs/current/runtime-config-client.html)
+        For more information, see the [PostgreSQL documentation](https://www.postgresql.org/docs/current/runtime-config-client.html).
         in milliseconds.
         """
 
     @property
     def statement_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum time (in milliseconds) to wait for statement
+        """The maximum time (in milliseconds) to wait for statement.
         The timeout is measured from the time a command arrives at the server until it is completed by the server. 
 
         If `log_min_error_statement` is set to ERROR or lower, the statement that timed out will also be logged.
 
         Value of `0` (default) disables the timeout
 
-        See in-depth description in [PostgreSQL documentation](https://www.postgresql.org/docs/current/runtime-config-client.html)
+        For more information, see the [PostgreSQL documentation](https://www.postgresql.org/docs/current/runtime-config-client.html).
         """
 
     @property
-    def pgaudit(self) -> global___PGAuditSettings: ...
+    def pgaudit(self) -> global___PGAuditSettings:
+        """Settings of the [PostgreSQL Audit Extension](https://www.pgaudit.org/) (pgaudit)."""
+
     def __init__(
         self,
         *,

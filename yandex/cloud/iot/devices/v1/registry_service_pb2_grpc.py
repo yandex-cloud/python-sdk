@@ -102,6 +102,16 @@ class RegistryServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.ListRegistryOperationsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.ListRegistryOperationsResponse.FromString,
                 )
+        self.Disable = channel.unary_unary(
+                '/yandex.cloud.iot.devices.v1.RegistryService/Disable',
+                request_serializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.DisableRegistryRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
+        self.Enable = channel.unary_unary(
+                '/yandex.cloud.iot.devices.v1.RegistryService/Enable',
+                request_serializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.EnableRegistryRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
 
 
 class RegistryServiceServicer(object):
@@ -228,6 +238,20 @@ class RegistryServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Disable(self, request, context):
+        """Disables the specified registry.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Enable(self, request, context):
+        """Enables the specified registry.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_RegistryServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -315,6 +339,16 @@ def add_RegistryServiceServicer_to_server(servicer, server):
                     servicer.ListOperations,
                     request_deserializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.ListRegistryOperationsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.ListRegistryOperationsResponse.SerializeToString,
+            ),
+            'Disable': grpc.unary_unary_rpc_method_handler(
+                    servicer.Disable,
+                    request_deserializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.DisableRegistryRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'Enable': grpc.unary_unary_rpc_method_handler(
+                    servicer.Enable,
+                    request_deserializer=yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.EnableRegistryRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -613,5 +647,39 @@ class RegistryService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.iot.devices.v1.RegistryService/ListOperations',
             yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.ListRegistryOperationsRequest.SerializeToString,
             yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.ListRegistryOperationsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Disable(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.iot.devices.v1.RegistryService/Disable',
+            yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.DisableRegistryRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Enable(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.iot.devices.v1.RegistryService/Enable',
+            yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__service__pb2.EnableRegistryRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

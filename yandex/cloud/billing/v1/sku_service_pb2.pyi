@@ -74,6 +74,7 @@ class ListSkusRequest(google.protobuf.message.Message):
     1. The field name. Currently you can use filtering only on the [yandex.cloud.billing.v1.Sku.id] and [yandex.cloud.billing.v1.Sku.service_id] field.
     2. An `=` operator.
     3. The value in double quotes (`"`). Must be 3-63 characters long and match the regular expression `[a-z][-a-z0-9]{1,61}[a-z0-9]`.
+    E.g. `filter=serviceId="dn28hpu6268356q0j8mk"`.
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available

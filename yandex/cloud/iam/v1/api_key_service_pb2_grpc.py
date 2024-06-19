@@ -47,6 +47,11 @@ class ApiKeyServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_api__key__service__pb2.ListApiKeyOperationsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_api__key__service__pb2.ListApiKeyOperationsResponse.FromString,
                 )
+        self.ListScopes = channel.unary_unary(
+                '/yandex.cloud.iam.v1.ApiKeyService/ListScopes',
+                request_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_api__key__service__pb2.ListApiKeyScopesRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_api__key__service__pb2.ListApiKeyScopesResponse.FromString,
+                )
 
 
 class ApiKeyServiceServicer(object):
@@ -97,6 +102,13 @@ class ApiKeyServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListScopes(self, request, context):
+        """Retrieves the list of scopes.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ApiKeyServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -129,6 +141,11 @@ def add_ApiKeyServiceServicer_to_server(servicer, server):
                     servicer.ListOperations,
                     request_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_api__key__service__pb2.ListApiKeyOperationsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_api__key__service__pb2.ListApiKeyOperationsResponse.SerializeToString,
+            ),
+            'ListScopes': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListScopes,
+                    request_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_api__key__service__pb2.ListApiKeyScopesRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_api__key__service__pb2.ListApiKeyScopesResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -240,5 +257,22 @@ class ApiKeyService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.iam.v1.ApiKeyService/ListOperations',
             yandex_dot_cloud_dot_iam_dot_v1_dot_api__key__service__pb2.ListApiKeyOperationsRequest.SerializeToString,
             yandex_dot_cloud_dot_iam_dot_v1_dot_api__key__service__pb2.ListApiKeyOperationsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListScopes(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.iam.v1.ApiKeyService/ListScopes',
+            yandex_dot_cloud_dot_iam_dot_v1_dot_api__key__service__pb2.ListApiKeyScopesRequest.SerializeToString,
+            yandex_dot_cloud_dot_iam_dot_v1_dot_api__key__service__pb2.ListApiKeyScopesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

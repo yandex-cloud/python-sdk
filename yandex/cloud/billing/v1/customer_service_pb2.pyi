@@ -81,7 +81,7 @@ class InviteCustomerRequest(google.protobuf.message.Message):
     INVITATION_EMAIL_FIELD_NUMBER: builtins.int
     PERSON_FIELD_NUMBER: builtins.int
     reseller_id: builtins.str
-    """ID of the reseller that customer will be associated with."""
+    """Billing account ID of the reseller that the customer will be associated with."""
     name: builtins.str
     """Name of the customer."""
     invitation_email: builtins.str

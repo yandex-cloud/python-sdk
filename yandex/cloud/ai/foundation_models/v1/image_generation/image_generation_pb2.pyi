@@ -33,21 +33,48 @@ class Message(google.protobuf.message.Message):
 global___Message = Message
 
 @typing.final
+class AspectRatio(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    WIDTH_RATIO_FIELD_NUMBER: builtins.int
+    HEIGHT_RATIO_FIELD_NUMBER: builtins.int
+    width_ratio: builtins.int
+    """Weight of width in image."""
+    height_ratio: builtins.int
+    """Weight of height in image."""
+    def __init__(
+        self,
+        *,
+        width_ratio: builtins.int = ...,
+        height_ratio: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["height_ratio", b"height_ratio", "width_ratio", b"width_ratio"]) -> None: ...
+
+global___AspectRatio = AspectRatio
+
+@typing.final
 class ImageGenerationOptions(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     MIME_TYPE_FIELD_NUMBER: builtins.int
     SEED_FIELD_NUMBER: builtins.int
+    ASPECT_RATIO_FIELD_NUMBER: builtins.int
     mime_type: builtins.str
     """MIME type of generated image format."""
     seed: builtins.int
     """Seed for image generation."""
+    @property
+    def aspect_ratio(self) -> global___AspectRatio:
+        """Aspect ratio of generated image."""
+
     def __init__(
         self,
         *,
         mime_type: builtins.str = ...,
         seed: builtins.int = ...,
+        aspect_ratio: global___AspectRatio | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["mime_type", b"mime_type", "seed", b"seed"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["aspect_ratio", b"aspect_ratio"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["aspect_ratio", b"aspect_ratio", "mime_type", b"mime_type", "seed", b"seed"]) -> None: ...
 
 global___ImageGenerationOptions = ImageGenerationOptions

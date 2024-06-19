@@ -28,28 +28,52 @@ class PXFConfig(google.protobuf.message.Message):
     XMS_FIELD_NUMBER: builtins.int
     @property
     def connection_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Connection"""
+        """Timeout for connection to the Apache Tomcat® server when making read requests.
+
+        Specify values in seconds.
+        """
 
     @property
-    def upload_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def upload_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Timeout for connection to the Apache Tomcat® server when making write requests.
+
+        Specify the values in seconds.
+        """
+
     @property
     def max_threads(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Thread pool"""
+        """Maximum number of the Apache Tomcat® threads.
+
+        To prevent situations when requests get stuck or fail due to running out of memory or malfunctioning of the Java garbage collector, specify the number of the Apache Tomcat® threads. Learn more about adjusting the number of threads in the [VMware Greenplum® Platform Extension Framework](https://docs.vmware.com/en/VMware-Greenplum-Platform-Extension-Framework/6.9/greenplum-platform-extension-framework/cfg_mem.html) documentation.
+        """
 
     @property
-    def pool_allow_core_thread_timeout(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def pool_allow_core_thread_timeout(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Determines whether the timeout for core streaming threads is permitted."""
+
     @property
-    def pool_core_size(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def pool_core_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Number of core streaming threads per pool."""
+
     @property
-    def pool_queue_capacity(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def pool_queue_capacity(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Maximum number of requests you can add to a pool queue for core streaming threads.
+
+        If `0`, no pool queue is generated.
+        """
+
     @property
-    def pool_max_size(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def pool_max_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Maximum allowed number of core streaming threads."""
+
     @property
     def xmx(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """JVM"""
+        """Initial size, in megabytes, of the JVM heap for the PXF daemon."""
 
     @property
-    def xms(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def xms(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Maximum size, in megabytes, of the JVM heap for the PXF daemon."""
+
     def __init__(
         self,
         *,
@@ -79,11 +103,11 @@ class PXFConfigSet(google.protobuf.message.Message):
     def effective_config(self) -> global___PXFConfig: ...
     @property
     def user_config(self) -> global___PXFConfig:
-        """User-defined settings"""
+        """User-defined settings."""
 
     @property
     def default_config(self) -> global___PXFConfig:
-        """Default configuration"""
+        """Default configuration."""
 
     def __init__(
         self,
@@ -108,10 +132,18 @@ class PXFDatasourceS3(google.protobuf.message.Message):
     FAST_UPLOAD_FIELD_NUMBER: builtins.int
     ENDPOINT_FIELD_NUMBER: builtins.int
     access_key: builtins.str
+    """Public key to access S3 storage."""
     secret_key: builtins.str
+    """Secret key to access S3 storage."""
     endpoint: builtins.str
+    """S3 storage address. The default value is `storage.yandexcloud.net` used for Yandex Object Storage."""
     @property
-    def fast_upload(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def fast_upload(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Manages a fast upload of big files to S3 storage. In case of the `false` value, the PXF generates files on disk before sending them to the S3 storage. In case of the `true` value, the PXF generates files in RAM (the PXF writes to disc only if there is not enough RAM).
+
+        The fast upload is enabled by default.
+        """
+
     def __init__(
         self,
         *,
@@ -142,44 +174,81 @@ class PXFDatasourceJDBC(google.protobuf.message.Message):
     POOL_IDLE_TIMEOUT_FIELD_NUMBER: builtins.int
     POOL_MINIMUM_IDLE_FIELD_NUMBER: builtins.int
     driver: builtins.str
-    """Matches jdbc.driver"""
+    """JDBC driver class in Java. The possible values are the following:
+
+    * `com.simba.athena.jdbc.Driver`
+    * `com.clickhouse.jdbc.ClickHouseDriver`
+    * `com.ibm.as400.access.AS400JDBCDriver`
+    * `com.microsoft.sqlserver.jdbc.SQLServerDriver`
+    * `com.mysql.cj.jdbc.Driver`
+    * `org.postgresql.Driver`
+    * `oracle.jdbc.driver.OracleDriver`
+    * `net.snowflake.client.jdbc.SnowflakeDriver`
+    * `io.trino.jdbc.TrinoDriver`
+    """
     url: builtins.str
-    """Matches jdbc.url"""
+    """URL that the JDBC driver uses to connect to the database. Examples:
+
+    * `jdbc:mysql://mysqlhost:3306/testdb`: Local MySQL DB.
+    * `jdbc:postgresql://c-<cluster_id>.rw.mdb.yandexcloud.net:6432/db1`: Managed Service for PostgreSQL cluster. The address contains the special FQDN of the cluster's master.
+    * `jdbc:oracle:thin:@host.example:1521:orcl`: Oracle DB.
+    """
     user: builtins.str
-    """Matches jdbc.user"""
+    """Username of the DB owner."""
     password: builtins.str
-    """Matches jdbc.password"""
+    """Password of the DB owner."""
     @property
     def statement_batch_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Matches jdbc.statement.batchsize"""
+        """Number of rows to read in an external table, in a batch.
+
+        The default value is `100`.
+        """
 
     @property
     def statement_fetch_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Matches jdbc.statement.fetchsize"""
+        """Number of rows to fetch (buffer) when reading from an external table.
+
+        The default value is `1000`.
+        """
 
     @property
     def statement_query_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Matches jdbc.statement.querytimeout"""
+        """Amount of time (in seconds) the JDBC driver waits for a statement to run. This timeout applies to statements created for both read and write operations.
+
+        The default value is `60`.
+        """
 
     @property
     def pool_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Matches jdbc.pool.enabled"""
+        """Determines whether JDBC connection pooling is used in a server configuration. By default, it is used."""
 
     @property
     def pool_maximum_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Matches jdbc.pool.property.maximumpoolsize"""
+        """Maximum number of connections to the DB backend.
+
+        The default value is `5`.
+        """
 
     @property
     def pool_connection_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Matches jdbc.pool.property.connectiontimeout"""
+        """Maximum amount of time, in milliseconds, after which an inactive connection is considered idle.
+
+        The default value is `30000`.
+        """
 
     @property
     def pool_idle_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Matches jdbc.pool.property.idletimeout"""
+        """Maximum amount of time, in milliseconds, after which an inactive connection is considered idle.
+
+        The default value is `30000`.
+        """
 
     @property
     def pool_minimum_idle(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Matches jdbc.pool.property.minimumidle"""
+        """Minimum number of idle connections maintained in the connection pool.
+
+        The default value is `0`.
+        """
 
     def __init__(
         self,
@@ -209,7 +278,9 @@ class PXFDatasourceCore(google.protobuf.message.Message):
     DEFAULT_FS_FIELD_NUMBER: builtins.int
     SECURITY_AUTH_TO_LOCAL_FIELD_NUMBER: builtins.int
     default_fs: builtins.str
+    """URI whose scheme and authority determine the file system implementation."""
     security_auth_to_local: builtins.str
+    """Rules for mapping Kerberos principals to operating system user accounts."""
     def __init__(
         self,
         *,
@@ -232,14 +303,23 @@ class PXFDatasourceKerberos(google.protobuf.message.Message):
     DEFAULT_DOMAIN_FIELD_NUMBER: builtins.int
     KEYTAB_BASE64_FIELD_NUMBER: builtins.int
     primary: builtins.str
+    """Host of the primary KDC server (Key Distribution Center)."""
     realm: builtins.str
+    """Kerberos realm for a Greenplum® DB."""
     admin_server: builtins.str
+    """Administration server host. Usually, this is the primary Kerberos server."""
     default_domain: builtins.str
+    """Domain that is used for the host name extension. Applicable when Kerberos 4 service members become Kerberos 5 service members (for example, when rcmd.hostname is replaced with host/hostname.domain)."""
     keytab_base64: builtins.str
+    """Base64 encoded contents of the keytab file."""
     @property
-    def enable(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def enable(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Determines whether the Kerberos authentication server is used. By default, it is not used."""
+
     @property
-    def kdc_servers(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def kdc_servers(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """KDC server hosts."""
+
     def __init__(
         self,
         *,
@@ -310,13 +390,30 @@ class PXFDatasourceHDFSDfs(google.protobuf.message.Message):
     nameservices: builtins.str
     """Corresponds well-known HDFS client setting "dfs.nameservices" for this datasource"""
     @property
-    def ha_automatic_failover_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def ha_automatic_failover_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Determines whether automatic failover is enabled for the high availability of the file system.
+
+        The automatic failover is enabled by default.
+        """
+
     @property
-    def block_access_token_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def block_access_token_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """If `true`, access tokens are used as capabilities for accessing datanodes. If `false`, no access tokens are checked on accessing datanodes.
+
+        The check of access tokens is enabled by default.
+        """
+
     @property
-    def use_datanode_hostname(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def use_datanode_hostname(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Determines whether the datanode hostname is used when connecting to datanodes."""
+
     @property
-    def namenodes(self) -> google.protobuf.internal.containers.MessageMap[builtins.str, global___PXFDatasourceHDFSDfsNamenode]: ...
+    def namenodes(self) -> google.protobuf.internal.containers.MessageMap[builtins.str, global___PXFDatasourceHDFSDfsNamenode]:
+        """List of HDFS service logical names.
+
+        Specify them separated by commas. The names can be arbitrary.
+        """
+
     def __init__(
         self,
         *,
@@ -389,14 +486,29 @@ class PXFDatasourceHDFSYarn(google.protobuf.message.Message):
     RESOURCEMANAGER_CLUSTER_ID_FIELD_NUMBER: builtins.int
     HA_RM_FIELD_NUMBER: builtins.int
     resourcemanager_cluster_id: builtins.str
+    """Cluster ID. Specify it, so the ResourceManager service does not become active for a different cluster."""
     @property
-    def resourcemanager_ha_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def resourcemanager_ha_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Determines whether high availability is enabled for YARN's ResourceManager services.
+
+        The high availability is enabled by default.
+        """
+
     @property
-    def resourcemanager_ha_auto_failover_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def resourcemanager_ha_auto_failover_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Determines whether another ResourceManager should automatically become active when the active ResourceManager has failed and does not respond.
+
+        The switch of ResourceManagers is enabled by default if the high availability is enabled.
+        """
+
     @property
-    def resourcemanager_ha_auto_failover_embedded(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def resourcemanager_ha_auto_failover_embedded(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Determines whether the embedded ActiveStandbyElector method should be used for the election of the active ResourceManager. If the current active ResourceManager has failed and does not respond, the ActiveStandbyElector method makes another ResourceManager active which then takes over."""
+
     @property
-    def ha_rm(self) -> google.protobuf.internal.containers.MessageMap[builtins.str, global___PXFDatasourceHDFSYarnHaRm]: ...
+    def ha_rm(self) -> google.protobuf.internal.containers.MessageMap[builtins.str, global___PXFDatasourceHDFSYarnHaRm]:
+        """Highly available ResourceManager service."""
+
     def __init__(
         self,
         *,
@@ -424,20 +536,44 @@ class PXFDatasourceHDFS(google.protobuf.message.Message):
     DFS_FIELD_NUMBER: builtins.int
     YARN_FIELD_NUMBER: builtins.int
     username: builtins.str
+    """Login username for the remote file storage or DBMS if authentication on behalf of the Greenplum® user is enabled."""
     @property
-    def core(self) -> global___PXFDatasourceCore: ...
+    def core(self) -> global___PXFDatasourceCore:
+        """Settings of the file system and security rules."""
+
     @property
-    def kerberos(self) -> global___PXFDatasourceKerberos: ...
+    def kerberos(self) -> global___PXFDatasourceKerberos:
+        """Settings of the Kerberos network authentication protocol."""
+
     @property
-    def user_impersonation(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def user_impersonation(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables authentication on behalf of the Greenplum® user when connecting to the remote file storage or DBMS.
+
+        The authentication is disabled by default.
+        """
+
     @property
-    def sasl_connection_retries(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def sasl_connection_retries(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Maximum number of times that PXF retries a SASL connection request after a refused connection returns a `GSS initiate failed` error.
+
+        The default value is `5`.
+        """
+
     @property
-    def zk_hosts(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def zk_hosts(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """ZooKeeper server hosts.
+
+        Specify values in the `<address>:<port>` format.
+        """
+
     @property
-    def dfs(self) -> global___PXFDatasourceHDFSDfs: ...
+    def dfs(self) -> global___PXFDatasourceHDFSDfs:
+        """Settings of the distributed file system."""
+
     @property
-    def yarn(self) -> global___PXFDatasourceHDFSYarn: ...
+    def yarn(self) -> global___PXFDatasourceHDFSYarn:
+        """Settings of the ResourceManager service that is responsible for tracking resources in a cluster and scheduling applications (e.g., MapReduce jobs)."""
+
     def __init__(
         self,
         *,
@@ -470,22 +606,51 @@ class PXFDatasourceHive(google.protobuf.message.Message):
     METASTORE_KERBEROS_PRINCIPAL_FIELD_NUMBER: builtins.int
     AUTH_KERBEROS_PRINCIPAL_FIELD_NUMBER: builtins.int
     username: builtins.str
+    """Login username for the remote file storage or DBMS if authentication on behalf of the Greenplum® user is enabled."""
     metastore_kerberos_principal: builtins.str
+    """Service principal for the Metastore Thrift server."""
     auth_kerberos_principal: builtins.str
+    """Kerberos server principal."""
     @property
-    def core(self) -> global___PXFDatasourceCore: ...
+    def core(self) -> global___PXFDatasourceCore:
+        """Settings of the file system and security rules."""
+
     @property
-    def kerberos(self) -> global___PXFDatasourceKerberos: ...
+    def kerberos(self) -> global___PXFDatasourceKerberos:
+        """Settings of the Kerberos network authentication protocol."""
+
     @property
-    def user_impersonation(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def user_impersonation(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables authentication on behalf of the Greenplum® user when connecting to the remote file storage or DBMS.
+
+        The authentication is disabled by default.
+        """
+
     @property
-    def sasl_connection_retries(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def sasl_connection_retries(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Maximum number of times that PXF retries a SASL connection request after a refused connection returns a `GSS initiate failed` error.
+
+        The default value is `5`.
+        """
+
     @property
-    def zk_hosts(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def zk_hosts(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """ZooKeeper server hosts.
+
+        Specify values in the `<address>:<port>` format.
+        """
+
     @property
-    def ppd(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    def ppd(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Specifies if predicate pushdown is enabled for queries on external tables.
+
+        The predicate pushdown is enabled by default.
+        """
+
     @property
-    def metastore_uris(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def metastore_uris(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of URIs separated by commas. To request metadata, the remote DBMS connects to Metastore by one of these URIs."""
+
     def __init__(
         self,
         *,
@@ -515,14 +680,23 @@ class PXFDatasource(google.protobuf.message.Message):
     HDFS_FIELD_NUMBER: builtins.int
     HIVE_FIELD_NUMBER: builtins.int
     name: builtins.str
+    """Data source name."""
     @property
-    def s3(self) -> global___PXFDatasourceS3: ...
+    def s3(self) -> global___PXFDatasourceS3:
+        """Settings of an external S3 data source."""
+
     @property
-    def jdbc(self) -> global___PXFDatasourceJDBC: ...
+    def jdbc(self) -> global___PXFDatasourceJDBC:
+        """Settings of an external JDBC data source."""
+
     @property
-    def hdfs(self) -> global___PXFDatasourceHDFS: ...
+    def hdfs(self) -> global___PXFDatasourceHDFS:
+        """Settings of an external HDFS data source."""
+
     @property
-    def hive(self) -> global___PXFDatasourceHive: ...
+    def hive(self) -> global___PXFDatasourceHive:
+        """Settings of an external Hive data source."""
+
     def __init__(
         self,
         *,

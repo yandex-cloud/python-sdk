@@ -328,6 +328,7 @@ class ConfigSpec(google.protobuf.message.Message):
     SCHEMA_REGISTRY_FIELD_NUMBER: builtins.int
     ACCESS_FIELD_NUMBER: builtins.int
     REST_API_CONFIG_FIELD_NUMBER: builtins.int
+    DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
     version: builtins.str
     """Version of Apache Kafka® used in the cluster. Possible values: `2.1`, `2.6`."""
     assign_public_ip: builtins.bool
@@ -364,6 +365,10 @@ class ConfigSpec(google.protobuf.message.Message):
     def rest_api_config(self) -> global___ConfigSpec.RestAPIConfig:
         """Configuration of REST API."""
 
+    @property
+    def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+        """DiskSizeAutoscaling settings"""
+
     def __init__(
         self,
         *,
@@ -377,9 +382,10 @@ class ConfigSpec(google.protobuf.message.Message):
         schema_registry: builtins.bool = ...,
         access: global___Access | None = ...,
         rest_api_config: global___ConfigSpec.RestAPIConfig | None = ...,
+        disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access", b"access", "brokers_count", b"brokers_count", "kafka", b"kafka", "rest_api_config", b"rest_api_config", "zookeeper", b"zookeeper"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access", b"access", "assign_public_ip", b"assign_public_ip", "brokers_count", b"brokers_count", "kafka", b"kafka", "rest_api_config", b"rest_api_config", "schema_registry", b"schema_registry", "unmanaged_topics", b"unmanaged_topics", "version", b"version", "zone_id", b"zone_id", "zookeeper", b"zookeeper"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access", b"access", "brokers_count", b"brokers_count", "disk_size_autoscaling", b"disk_size_autoscaling", "kafka", b"kafka", "rest_api_config", b"rest_api_config", "zookeeper", b"zookeeper"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access", b"access", "assign_public_ip", b"assign_public_ip", "brokers_count", b"brokers_count", "disk_size_autoscaling", b"disk_size_autoscaling", "kafka", b"kafka", "rest_api_config", b"rest_api_config", "schema_registry", b"schema_registry", "unmanaged_topics", b"unmanaged_topics", "version", b"version", "zone_id", b"zone_id", "zookeeper", b"zookeeper"]) -> None: ...
 
 global___ConfigSpec = ConfigSpec
 
@@ -842,3 +848,27 @@ class Access(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["data_transfer", b"data_transfer"]) -> None: ...
 
 global___Access = Access
+
+@typing.final
+class DiskSizeAutoscaling(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PLANNED_USAGE_THRESHOLD_FIELD_NUMBER: builtins.int
+    EMERGENCY_USAGE_THRESHOLD_FIELD_NUMBER: builtins.int
+    DISK_SIZE_LIMIT_FIELD_NUMBER: builtins.int
+    planned_usage_threshold: builtins.int
+    """Threshold of storage usage (in percent) that triggers automatic scaling of the storage during the maintenance window. Zero value means disabled threshold."""
+    emergency_usage_threshold: builtins.int
+    """Threshold of storage usage (in percent) that triggers immediate automatic scaling of the storage. Zero value means disabled threshold."""
+    disk_size_limit: builtins.int
+    """New storage size (in bytes) that is set when one of the thresholds is achieved."""
+    def __init__(
+        self,
+        *,
+        planned_usage_threshold: builtins.int = ...,
+        emergency_usage_threshold: builtins.int = ...,
+        disk_size_limit: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["disk_size_limit", b"disk_size_limit", "emergency_usage_threshold", b"emergency_usage_threshold", "planned_usage_threshold", b"planned_usage_threshold"]) -> None: ...
+
+global___DiskSizeAutoscaling = DiskSizeAutoscaling
