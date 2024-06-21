@@ -2,6 +2,13 @@
 
 
 
+## v0.296.0 (2024-06-21)
+
+### Feature
+
+* pin deps versions ([`a04752e`](https://github.com/yandex-cloud/python-sdk/commit/a04752e37cebfb80b228fb6f3fb1882d039b19df))
+
+
 ## v0.295.0 (2024-06-19)
 
 ### Feature
