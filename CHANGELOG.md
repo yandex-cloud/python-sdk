@@ -2,6 +2,15 @@
 
 
 
+## v0.297.0 (2024-06-24)
+
+### Feature
+
+* Enable support for datasphere (#111)
+
+It useful to programatically run jobs ([`a47b09c`](https://github.com/yandex-cloud/python-sdk/commit/a47b09cd6472ea9939f9d64bb1339470c3ffeddc))
+
+
 ## v0.296.0 (2024-06-21)
 
 ### Feature
