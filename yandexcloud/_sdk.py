@@ -154,6 +154,7 @@ _supported_modules = [
     ("yandex.cloud.dataproc.manager", "dataproc-manager"),
     ("yandex.cloud.dataproc", "dataproc"),
     ("yandex.cloud.datatransfer", "datatransfer"),
+    ("yandex.cloud.datasphere", "datasphere"),
     ("yandex.cloud.dns", "dns"),
     ("yandex.cloud.endpoint", "endpoint"),
     ("yandex.cloud.iam", "iam"),
