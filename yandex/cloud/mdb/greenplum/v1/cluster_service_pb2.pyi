@@ -462,6 +462,9 @@ class ExpandRequest(google.protobuf.message.Message):
     SEGMENT_HOST_COUNT_FIELD_NUMBER: builtins.int
     ADD_SEGMENTS_PER_HOST_COUNT_FIELD_NUMBER: builtins.int
     DURATION_FIELD_NUMBER: builtins.int
+    PARALLEL_FIELD_NUMBER: builtins.int
+    CLOSE_CLUSTER_FIELD_NUMBER: builtins.int
+    DELAY_REDISTRIBUTION_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Greenplum Cluster resource to update.
     To get the Greenplum cluster ID, use a [ClusterService.List] request.
@@ -472,6 +475,12 @@ class ExpandRequest(google.protobuf.message.Message):
     """Number of segments per host to add"""
     duration: builtins.int
     """Redistribute duration, in seconds"""
+    parallel: builtins.int
+    """Redistribute process parallelilsm, 0 - for automatic detection"""
+    close_cluster: builtins.bool
+    """Deny all client connections during the expand operation"""
+    delay_redistribution: builtins.bool
+    """Perfrom redistribution process by small chunks as background activity"""
     def __init__(
         self,
         *,
@@ -479,8 +488,11 @@ class ExpandRequest(google.protobuf.message.Message):
         segment_host_count: builtins.int = ...,
         add_segments_per_host_count: builtins.int = ...,
         duration: builtins.int = ...,
+        parallel: builtins.int = ...,
+        close_cluster: builtins.bool = ...,
+        delay_redistribution: builtins.bool = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["add_segments_per_host_count", b"add_segments_per_host_count", "cluster_id", b"cluster_id", "duration", b"duration", "segment_host_count", b"segment_host_count"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["add_segments_per_host_count", b"add_segments_per_host_count", "close_cluster", b"close_cluster", "cluster_id", b"cluster_id", "delay_redistribution", b"delay_redistribution", "duration", b"duration", "parallel", b"parallel", "segment_host_count", b"segment_host_count"]) -> None: ...
 
 global___ExpandRequest = ExpandRequest
 

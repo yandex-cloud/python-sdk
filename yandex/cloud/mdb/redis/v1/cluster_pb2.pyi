@@ -307,6 +307,7 @@ class ClusterConfig(google.protobuf.message.Message):
     BACKUP_WINDOW_START_FIELD_NUMBER: builtins.int
     ACCESS_FIELD_NUMBER: builtins.int
     REDIS_FIELD_NUMBER: builtins.int
+    DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
     version: builtins.str
     """Version of Redis server software."""
     @property
@@ -341,6 +342,10 @@ class ClusterConfig(google.protobuf.message.Message):
     def redis(self) -> yandex.cloud.mdb.redis.v1.config.redis_pb2.RedisConfigSet:
         """Unified configuration of a Redis cluster."""
 
+    @property
+    def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+        """Disk size autoscaling settings"""
+
     def __init__(
         self,
         *,
@@ -353,9 +358,10 @@ class ClusterConfig(google.protobuf.message.Message):
         backup_window_start: google.type.timeofday_pb2.TimeOfDay | None = ...,
         access: global___Access | None = ...,
         redis: yandex.cloud.mdb.redis.v1.config.redis_pb2.RedisConfigSet | None = ...,
+        disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access", b"access", "backup_window_start", b"backup_window_start", "redis", b"redis", "redis_config", b"redis_config", "redis_config_5_0", b"redis_config_5_0", "redis_config_6_0", b"redis_config_6_0", "redis_config_6_2", b"redis_config_6_2", "redis_config_7_0", b"redis_config_7_0", "resources", b"resources"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access", b"access", "backup_window_start", b"backup_window_start", "redis", b"redis", "redis_config", b"redis_config", "redis_config_5_0", b"redis_config_5_0", "redis_config_6_0", b"redis_config_6_0", "redis_config_6_2", b"redis_config_6_2", "redis_config_7_0", b"redis_config_7_0", "resources", b"resources", "version", b"version"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access", b"access", "backup_window_start", b"backup_window_start", "disk_size_autoscaling", b"disk_size_autoscaling", "redis", b"redis", "redis_config", b"redis_config", "redis_config_5_0", b"redis_config_5_0", "redis_config_6_0", b"redis_config_6_0", "redis_config_6_2", b"redis_config_6_2", "redis_config_7_0", b"redis_config_7_0", "resources", b"resources"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access", b"access", "backup_window_start", b"backup_window_start", "disk_size_autoscaling", b"disk_size_autoscaling", "redis", b"redis", "redis_config", b"redis_config", "redis_config_5_0", b"redis_config_5_0", "redis_config_6_0", b"redis_config_6_0", "redis_config_6_2", b"redis_config_6_2", "redis_config_7_0", b"redis_config_7_0", "resources", b"resources", "version", b"version"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["redis_config", b"redis_config"]) -> typing.Literal["redis_config_5_0", "redis_config_6_0", "redis_config_6_2", "redis_config_7_0"] | None: ...
 
 global___ClusterConfig = ClusterConfig
@@ -608,3 +614,34 @@ class Access(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["data_lens", b"data_lens"]) -> None: ...
 
 global___Access = Access
+
+@typing.final
+class DiskSizeAutoscaling(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PLANNED_USAGE_THRESHOLD_FIELD_NUMBER: builtins.int
+    EMERGENCY_USAGE_THRESHOLD_FIELD_NUMBER: builtins.int
+    DISK_SIZE_LIMIT_FIELD_NUMBER: builtins.int
+    @property
+    def planned_usage_threshold(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Amount of used storage for automatic disk scaling in the maintenance window, 0 means disabled, in percent."""
+
+    @property
+    def emergency_usage_threshold(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Amount of used storage for immediately  automatic disk scaling, 0 means disabled, in percent."""
+
+    @property
+    def disk_size_limit(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Limit on how large the storage for database instances can automatically grow, in bytes."""
+
+    def __init__(
+        self,
+        *,
+        planned_usage_threshold: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        emergency_usage_threshold: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        disk_size_limit: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["disk_size_limit", b"disk_size_limit", "emergency_usage_threshold", b"emergency_usage_threshold", "planned_usage_threshold", b"planned_usage_threshold"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["disk_size_limit", b"disk_size_limit", "emergency_usage_threshold", b"emergency_usage_threshold", "planned_usage_threshold", b"planned_usage_threshold"]) -> None: ...
+
+global___DiskSizeAutoscaling = DiskSizeAutoscaling

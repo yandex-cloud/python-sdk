@@ -181,6 +181,7 @@ class CreateClusterRequest(google.protobuf.message.Message):
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     PERSISTENCE_MODE_FIELD_NUMBER: builtins.int
     ANNOUNCE_HOSTNAMES_FIELD_NUMBER: builtins.int
+    MAINTENANCE_WINDOW_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create the Redis cluster in."""
     name: builtins.str
@@ -221,6 +222,10 @@ class CreateClusterRequest(google.protobuf.message.Message):
     def tls_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """TLS port and functionality on\\off"""
 
+    @property
+    def maintenance_window(self) -> yandex.cloud.mdb.redis.v1.maintenance_pb2.MaintenanceWindow:
+        """Window of maintenance operations."""
+
     def __init__(
         self,
         *,
@@ -238,9 +243,10 @@ class CreateClusterRequest(google.protobuf.message.Message):
         deletion_protection: builtins.bool = ...,
         persistence_mode: yandex.cloud.mdb.redis.v1.cluster_pb2.Cluster.PersistenceMode.ValueType = ...,
         announce_hostnames: builtins.bool = ...,
+        maintenance_window: yandex.cloud.mdb.redis.v1.maintenance_pb2.MaintenanceWindow | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "tls_enabled", b"tls_enabled"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["announce_hostnames", b"announce_hostnames", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "environment", b"environment", "folder_id", b"folder_id", "host_specs", b"host_specs", "labels", b"labels", "name", b"name", "network_id", b"network_id", "persistence_mode", b"persistence_mode", "security_group_ids", b"security_group_ids", "sharded", b"sharded", "tls_enabled", b"tls_enabled"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "maintenance_window", b"maintenance_window", "tls_enabled", b"tls_enabled"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["announce_hostnames", b"announce_hostnames", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "environment", b"environment", "folder_id", b"folder_id", "host_specs", b"host_specs", "labels", b"labels", "maintenance_window", b"maintenance_window", "name", b"name", "network_id", b"network_id", "persistence_mode", b"persistence_mode", "security_group_ids", b"security_group_ids", "sharded", b"sharded", "tls_enabled", b"tls_enabled"]) -> None: ...
 
 global___CreateClusterRequest = CreateClusterRequest
 
@@ -622,6 +628,7 @@ class RestoreClusterRequest(google.protobuf.message.Message):
     PERSISTENCE_MODE_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     ANNOUNCE_HOSTNAMES_FIELD_NUMBER: builtins.int
+    MAINTENANCE_WINDOW_FIELD_NUMBER: builtins.int
     backup_id: builtins.str
     """ID of the backup to create a cluster from.
     To get the backup ID, use a [ClusterService.ListBackups] request.
@@ -666,6 +673,10 @@ class RestoreClusterRequest(google.protobuf.message.Message):
     def tls_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """TLS port and functionality on\\off"""
 
+    @property
+    def maintenance_window(self) -> yandex.cloud.mdb.redis.v1.maintenance_pb2.MaintenanceWindow:
+        """Window of maintenance operations."""
+
     def __init__(
         self,
         *,
@@ -683,9 +694,10 @@ class RestoreClusterRequest(google.protobuf.message.Message):
         persistence_mode: yandex.cloud.mdb.redis.v1.cluster_pb2.Cluster.PersistenceMode.ValueType = ...,
         deletion_protection: builtins.bool = ...,
         announce_hostnames: builtins.bool = ...,
+        maintenance_window: yandex.cloud.mdb.redis.v1.maintenance_pb2.MaintenanceWindow | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "tls_enabled", b"tls_enabled"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["announce_hostnames", b"announce_hostnames", "backup_id", b"backup_id", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "environment", b"environment", "folder_id", b"folder_id", "host_specs", b"host_specs", "labels", b"labels", "name", b"name", "network_id", b"network_id", "persistence_mode", b"persistence_mode", "security_group_ids", b"security_group_ids", "tls_enabled", b"tls_enabled"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "maintenance_window", b"maintenance_window", "tls_enabled", b"tls_enabled"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["announce_hostnames", b"announce_hostnames", "backup_id", b"backup_id", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "environment", b"environment", "folder_id", b"folder_id", "host_specs", b"host_specs", "labels", b"labels", "maintenance_window", b"maintenance_window", "name", b"name", "network_id", b"network_id", "persistence_mode", b"persistence_mode", "security_group_ids", b"security_group_ids", "tls_enabled", b"tls_enabled"]) -> None: ...
 
 global___RestoreClusterRequest = RestoreClusterRequest
 
@@ -1640,6 +1652,7 @@ class ConfigSpec(google.protobuf.message.Message):
     BACKUP_WINDOW_START_FIELD_NUMBER: builtins.int
     ACCESS_FIELD_NUMBER: builtins.int
     REDIS_FIELD_NUMBER: builtins.int
+    DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
     version: builtins.str
     """Version of Redis used in the cluster."""
     @property
@@ -1666,6 +1679,10 @@ class ConfigSpec(google.protobuf.message.Message):
     def redis(self) -> yandex.cloud.mdb.redis.v1.config.redis_pb2.RedisConfig:
         """Unified configuration of a Redis cluster"""
 
+    @property
+    def disk_size_autoscaling(self) -> yandex.cloud.mdb.redis.v1.cluster_pb2.DiskSizeAutoscaling:
+        """Disk size autoscaling settings"""
+
     def __init__(
         self,
         *,
@@ -1678,9 +1695,10 @@ class ConfigSpec(google.protobuf.message.Message):
         backup_window_start: google.type.timeofday_pb2.TimeOfDay | None = ...,
         access: yandex.cloud.mdb.redis.v1.cluster_pb2.Access | None = ...,
         redis: yandex.cloud.mdb.redis.v1.config.redis_pb2.RedisConfig | None = ...,
+        disk_size_autoscaling: yandex.cloud.mdb.redis.v1.cluster_pb2.DiskSizeAutoscaling | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access", b"access", "backup_window_start", b"backup_window_start", "redis", b"redis", "redis_config_5_0", b"redis_config_5_0", "redis_config_6_0", b"redis_config_6_0", "redis_config_6_2", b"redis_config_6_2", "redis_config_7_0", b"redis_config_7_0", "redis_spec", b"redis_spec", "resources", b"resources"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access", b"access", "backup_window_start", b"backup_window_start", "redis", b"redis", "redis_config_5_0", b"redis_config_5_0", "redis_config_6_0", b"redis_config_6_0", "redis_config_6_2", b"redis_config_6_2", "redis_config_7_0", b"redis_config_7_0", "redis_spec", b"redis_spec", "resources", b"resources", "version", b"version"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access", b"access", "backup_window_start", b"backup_window_start", "disk_size_autoscaling", b"disk_size_autoscaling", "redis", b"redis", "redis_config_5_0", b"redis_config_5_0", "redis_config_6_0", b"redis_config_6_0", "redis_config_6_2", b"redis_config_6_2", "redis_config_7_0", b"redis_config_7_0", "redis_spec", b"redis_spec", "resources", b"resources"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access", b"access", "backup_window_start", b"backup_window_start", "disk_size_autoscaling", b"disk_size_autoscaling", "redis", b"redis", "redis_config_5_0", b"redis_config_5_0", "redis_config_6_0", b"redis_config_6_0", "redis_config_6_2", b"redis_config_6_2", "redis_config_7_0", b"redis_config_7_0", "redis_spec", b"redis_spec", "resources", b"resources", "version", b"version"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["redis_spec", b"redis_spec"]) -> typing.Literal["redis_config_5_0", "redis_config_6_0", "redis_config_6_2", "redis_config_7_0"] | None: ...
 
 global___ConfigSpec = ConfigSpec

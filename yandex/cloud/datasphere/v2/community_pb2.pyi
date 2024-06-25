@@ -40,6 +40,7 @@ class Community(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     CREATED_BY_ID_FIELD_NUMBER: builtins.int
     ORGANIZATION_ID_FIELD_NUMBER: builtins.int
+    ZONE_ID_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the community."""
     name: builtins.str
@@ -50,6 +51,8 @@ class Community(google.protobuf.message.Message):
     """ID of the user who created the community."""
     organization_id: builtins.str
     """ID of the organization to which community belongs."""
+    zone_id: builtins.str
+    """ID of the zone where this community was created"""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Time when community was created."""
@@ -68,8 +71,9 @@ class Community(google.protobuf.message.Message):
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         created_by_id: builtins.str = ...,
         organization_id: builtins.str = ...,
+        zone_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "created_by_id", b"created_by_id", "description", b"description", "id", b"id", "labels", b"labels", "name", b"name", "organization_id", b"organization_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "created_by_id", b"created_by_id", "description", b"description", "id", b"id", "labels", b"labels", "name", b"name", "organization_id", b"organization_id", "zone_id", b"zone_id"]) -> None: ...
 
 global___Community = Community

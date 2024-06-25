@@ -41,6 +41,7 @@ class CreateCommunityRequest(google.protobuf.message.Message):
     ORGANIZATION_ID_FIELD_NUMBER: builtins.int
     BILLING_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
+    ZONE_ID_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the community."""
     description: builtins.str
@@ -49,6 +50,8 @@ class CreateCommunityRequest(google.protobuf.message.Message):
     """ID of the organization where community should be created."""
     billing_account_id: builtins.str
     """ID of the billing account for the created community. Optional, billing account could be bound to community later."""
+    zone_id: builtins.str
+    """ID of the zone where community will be created (all projects and other resources will be in this zone)"""
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Labels of the community."""
@@ -61,8 +64,9 @@ class CreateCommunityRequest(google.protobuf.message.Message):
         organization_id: builtins.str = ...,
         billing_account_id: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        zone_id: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["billing_account_id", b"billing_account_id", "description", b"description", "labels", b"labels", "name", b"name", "organization_id", b"organization_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["billing_account_id", b"billing_account_id", "description", b"description", "labels", b"labels", "name", b"name", "organization_id", b"organization_id", "zone_id", b"zone_id"]) -> None: ...
 
 global___CreateCommunityRequest = CreateCommunityRequest
 

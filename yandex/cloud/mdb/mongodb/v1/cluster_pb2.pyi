@@ -387,6 +387,7 @@ class Mongodb3_6(google.protobuf.message.Message):
 
         CONFIG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb3_6_pb2.MongodConfigSet3_6:
             """Configuration for a mongod 3.6 hosts."""
@@ -395,14 +396,19 @@ class Mongodb3_6(google.protobuf.message.Message):
         def resources(self) -> global___Resources:
             """Resources allocated to MongoDB hosts."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
             config: yandex.cloud.mdb.mongodb.v1.config.mongodb3_6_pb2.MongodConfigSet3_6 | None = ...,
             resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     @typing.final
     class MongoCfg(google.protobuf.message.Message):
@@ -410,20 +416,26 @@ class Mongodb3_6(google.protobuf.message.Message):
 
         CONFIG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb3_6_pb2.MongoCfgConfigSet3_6: ...
         @property
         def resources(self) -> global___Resources:
             """Resources allocated to mongocfg hosts."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
             config: yandex.cloud.mdb.mongodb.v1.config.mongodb3_6_pb2.MongoCfgConfigSet3_6 | None = ...,
             resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     @typing.final
     class Mongos(google.protobuf.message.Message):
@@ -431,20 +443,26 @@ class Mongodb3_6(google.protobuf.message.Message):
 
         CONFIG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb3_6_pb2.MongosConfigSet3_6: ...
         @property
         def resources(self) -> global___Resources:
             """Resources allocated to mongos hosts."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
             config: yandex.cloud.mdb.mongodb.v1.config.mongodb3_6_pb2.MongosConfigSet3_6 | None = ...,
             resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     @typing.final
     class MongoInfra(google.protobuf.message.Message):
@@ -453,6 +471,7 @@ class Mongodb3_6(google.protobuf.message.Message):
         CONFIG_MONGOS_FIELD_NUMBER: builtins.int
         CONFIG_MONGOCFG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config_mongos(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb3_6_pb2.MongosConfigSet3_6: ...
         @property
@@ -461,15 +480,20 @@ class Mongodb3_6(google.protobuf.message.Message):
         def resources(self) -> global___Resources:
             """Resources allocated to mongoinfra (mongos+mongocfg) hosts."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
             config_mongos: yandex.cloud.mdb.mongodb.v1.config.mongodb3_6_pb2.MongosConfigSet3_6 | None = ...,
             config_mongocfg: yandex.cloud.mdb.mongodb.v1.config.mongodb3_6_pb2.MongoCfgConfigSet3_6 | None = ...,
             resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config_mongocfg", b"config_mongocfg", "config_mongos", b"config_mongos", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config_mongocfg", b"config_mongocfg", "config_mongos", b"config_mongos", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config_mongocfg", b"config_mongocfg", "config_mongos", b"config_mongos", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config_mongocfg", b"config_mongocfg", "config_mongos", b"config_mongos", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     MONGOD_FIELD_NUMBER: builtins.int
     MONGOCFG_FIELD_NUMBER: builtins.int
@@ -514,6 +538,7 @@ class Mongodb4_0(google.protobuf.message.Message):
 
         CONFIG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb4_0_pb2.MongodConfigSet4_0:
             """Configuration for mongod 4.0 hosts."""
@@ -522,14 +547,19 @@ class Mongodb4_0(google.protobuf.message.Message):
         def resources(self) -> global___Resources:
             """Resources allocated to mongod hosts."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
             config: yandex.cloud.mdb.mongodb.v1.config.mongodb4_0_pb2.MongodConfigSet4_0 | None = ...,
             resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     @typing.final
     class MongoCfg(google.protobuf.message.Message):
@@ -537,6 +567,7 @@ class Mongodb4_0(google.protobuf.message.Message):
 
         CONFIG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb4_0_pb2.MongoCfgConfigSet4_0:
             """Configuration for mongocfg 4.0 hosts."""
@@ -545,14 +576,19 @@ class Mongodb4_0(google.protobuf.message.Message):
         def resources(self) -> global___Resources:
             """Resources allocated to mongocfg hosts."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
             config: yandex.cloud.mdb.mongodb.v1.config.mongodb4_0_pb2.MongoCfgConfigSet4_0 | None = ...,
             resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     @typing.final
     class Mongos(google.protobuf.message.Message):
@@ -560,6 +596,7 @@ class Mongodb4_0(google.protobuf.message.Message):
 
         CONFIG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb4_0_pb2.MongosConfigSet4_0:
             """Configuration for mongos 4.0 hosts."""
@@ -568,14 +605,19 @@ class Mongodb4_0(google.protobuf.message.Message):
         def resources(self) -> global___Resources:
             """Resources allocated to mongos hosts."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
             config: yandex.cloud.mdb.mongodb.v1.config.mongodb4_0_pb2.MongosConfigSet4_0 | None = ...,
             resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     @typing.final
     class MongoInfra(google.protobuf.message.Message):
@@ -584,6 +626,7 @@ class Mongodb4_0(google.protobuf.message.Message):
         CONFIG_MONGOS_FIELD_NUMBER: builtins.int
         CONFIG_MONGOCFG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config_mongos(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb4_0_pb2.MongosConfigSet4_0: ...
         @property
@@ -592,15 +635,20 @@ class Mongodb4_0(google.protobuf.message.Message):
         def resources(self) -> global___Resources:
             """Resources allocated to mongoinfra (mongos+mongocfg) hosts."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
             config_mongos: yandex.cloud.mdb.mongodb.v1.config.mongodb4_0_pb2.MongosConfigSet4_0 | None = ...,
             config_mongocfg: yandex.cloud.mdb.mongodb.v1.config.mongodb4_0_pb2.MongoCfgConfigSet4_0 | None = ...,
             resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config_mongocfg", b"config_mongocfg", "config_mongos", b"config_mongos", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config_mongocfg", b"config_mongocfg", "config_mongos", b"config_mongos", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config_mongocfg", b"config_mongocfg", "config_mongos", b"config_mongos", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config_mongocfg", b"config_mongocfg", "config_mongos", b"config_mongos", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     MONGOD_FIELD_NUMBER: builtins.int
     MONGOCFG_FIELD_NUMBER: builtins.int
@@ -645,6 +693,7 @@ class Mongodb4_2(google.protobuf.message.Message):
 
         CONFIG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb4_2_pb2.MongodConfigSet4_2:
             """Configuration for mongod 4.2 hosts."""
@@ -653,14 +702,19 @@ class Mongodb4_2(google.protobuf.message.Message):
         def resources(self) -> global___Resources:
             """Resources allocated to mongod hosts."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
             config: yandex.cloud.mdb.mongodb.v1.config.mongodb4_2_pb2.MongodConfigSet4_2 | None = ...,
             resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     @typing.final
     class MongoCfg(google.protobuf.message.Message):
@@ -668,6 +722,7 @@ class Mongodb4_2(google.protobuf.message.Message):
 
         CONFIG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb4_2_pb2.MongoCfgConfigSet4_2:
             """Configuration for mongocfg 4.2 hosts."""
@@ -676,14 +731,19 @@ class Mongodb4_2(google.protobuf.message.Message):
         def resources(self) -> global___Resources:
             """Resources allocated to mongocfg hosts."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
             config: yandex.cloud.mdb.mongodb.v1.config.mongodb4_2_pb2.MongoCfgConfigSet4_2 | None = ...,
             resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     @typing.final
     class Mongos(google.protobuf.message.Message):
@@ -691,6 +751,7 @@ class Mongodb4_2(google.protobuf.message.Message):
 
         CONFIG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb4_2_pb2.MongosConfigSet4_2:
             """Configuration for mongos 4.2 hosts."""
@@ -699,14 +760,19 @@ class Mongodb4_2(google.protobuf.message.Message):
         def resources(self) -> global___Resources:
             """Resources allocated to mongos hosts."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
             config: yandex.cloud.mdb.mongodb.v1.config.mongodb4_2_pb2.MongosConfigSet4_2 | None = ...,
             resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     @typing.final
     class MongoInfra(google.protobuf.message.Message):
@@ -715,6 +781,7 @@ class Mongodb4_2(google.protobuf.message.Message):
         CONFIG_MONGOS_FIELD_NUMBER: builtins.int
         CONFIG_MONGOCFG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config_mongos(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb4_2_pb2.MongosConfigSet4_2: ...
         @property
@@ -723,15 +790,20 @@ class Mongodb4_2(google.protobuf.message.Message):
         def resources(self) -> global___Resources:
             """Resources allocated to mongoinfra (mongos+mongocfg) hosts."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
             config_mongos: yandex.cloud.mdb.mongodb.v1.config.mongodb4_2_pb2.MongosConfigSet4_2 | None = ...,
             config_mongocfg: yandex.cloud.mdb.mongodb.v1.config.mongodb4_2_pb2.MongoCfgConfigSet4_2 | None = ...,
             resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config_mongocfg", b"config_mongocfg", "config_mongos", b"config_mongos", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config_mongocfg", b"config_mongocfg", "config_mongos", b"config_mongos", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config_mongocfg", b"config_mongocfg", "config_mongos", b"config_mongos", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config_mongocfg", b"config_mongocfg", "config_mongos", b"config_mongos", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     MONGOD_FIELD_NUMBER: builtins.int
     MONGOCFG_FIELD_NUMBER: builtins.int
@@ -776,6 +848,7 @@ class Mongodb4_4(google.protobuf.message.Message):
 
         CONFIG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb4_4_pb2.MongodConfigSet4_4:
             """Configuration for mongod 4.4 hosts."""
@@ -784,14 +857,19 @@ class Mongodb4_4(google.protobuf.message.Message):
         def resources(self) -> global___Resources:
             """Resources allocated to mongod hosts."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
             config: yandex.cloud.mdb.mongodb.v1.config.mongodb4_4_pb2.MongodConfigSet4_4 | None = ...,
             resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     @typing.final
     class MongoCfg(google.protobuf.message.Message):
@@ -799,6 +877,7 @@ class Mongodb4_4(google.protobuf.message.Message):
 
         CONFIG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb4_4_pb2.MongoCfgConfigSet4_4:
             """Configuration for mongocfg 4.4 hosts."""
@@ -807,14 +886,19 @@ class Mongodb4_4(google.protobuf.message.Message):
         def resources(self) -> global___Resources:
             """Resources allocated to mongocfg hosts."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
             config: yandex.cloud.mdb.mongodb.v1.config.mongodb4_4_pb2.MongoCfgConfigSet4_4 | None = ...,
             resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     @typing.final
     class Mongos(google.protobuf.message.Message):
@@ -822,6 +906,7 @@ class Mongodb4_4(google.protobuf.message.Message):
 
         CONFIG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb4_4_pb2.MongosConfigSet4_4:
             """Configuration for mongos 4.4 hosts."""
@@ -830,14 +915,19 @@ class Mongodb4_4(google.protobuf.message.Message):
         def resources(self) -> global___Resources:
             """Resources allocated to mongos hosts."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
             config: yandex.cloud.mdb.mongodb.v1.config.mongodb4_4_pb2.MongosConfigSet4_4 | None = ...,
             resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     @typing.final
     class MongoInfra(google.protobuf.message.Message):
@@ -846,6 +936,7 @@ class Mongodb4_4(google.protobuf.message.Message):
         CONFIG_MONGOS_FIELD_NUMBER: builtins.int
         CONFIG_MONGOCFG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config_mongos(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb4_4_pb2.MongosConfigSet4_4: ...
         @property
@@ -854,15 +945,20 @@ class Mongodb4_4(google.protobuf.message.Message):
         def resources(self) -> global___Resources:
             """Resources allocated to mongoinfra (mongos+mongocfg) hosts."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
             config_mongos: yandex.cloud.mdb.mongodb.v1.config.mongodb4_4_pb2.MongosConfigSet4_4 | None = ...,
             config_mongocfg: yandex.cloud.mdb.mongodb.v1.config.mongodb4_4_pb2.MongoCfgConfigSet4_4 | None = ...,
             resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config_mongocfg", b"config_mongocfg", "config_mongos", b"config_mongos", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config_mongocfg", b"config_mongocfg", "config_mongos", b"config_mongos", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config_mongocfg", b"config_mongocfg", "config_mongos", b"config_mongos", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config_mongocfg", b"config_mongocfg", "config_mongos", b"config_mongos", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     MONGOD_FIELD_NUMBER: builtins.int
     MONGOCFG_FIELD_NUMBER: builtins.int
@@ -907,6 +1003,7 @@ class Mongodb4_4_enterprise(google.protobuf.message.Message):
 
         CONFIG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb4_4_enterprise_pb2.MongodConfigSet4_4_enterprise:
             """Configuration for mongod 4.4 hosts."""
@@ -915,14 +1012,19 @@ class Mongodb4_4_enterprise(google.protobuf.message.Message):
         def resources(self) -> global___Resources:
             """Resources allocated to mongod hosts."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
             config: yandex.cloud.mdb.mongodb.v1.config.mongodb4_4_enterprise_pb2.MongodConfigSet4_4_enterprise | None = ...,
             resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     @typing.final
     class MongoCfg(google.protobuf.message.Message):
@@ -930,6 +1032,7 @@ class Mongodb4_4_enterprise(google.protobuf.message.Message):
 
         CONFIG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb4_4_enterprise_pb2.MongoCfgConfigSet4_4_enterprise:
             """Configuration for mongocfg 4.4 hosts."""
@@ -938,14 +1041,19 @@ class Mongodb4_4_enterprise(google.protobuf.message.Message):
         def resources(self) -> global___Resources:
             """Resources allocated to mongocfg hosts."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
             config: yandex.cloud.mdb.mongodb.v1.config.mongodb4_4_enterprise_pb2.MongoCfgConfigSet4_4_enterprise | None = ...,
             resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     @typing.final
     class Mongos(google.protobuf.message.Message):
@@ -953,6 +1061,7 @@ class Mongodb4_4_enterprise(google.protobuf.message.Message):
 
         CONFIG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb4_4_enterprise_pb2.MongosConfigSet4_4_enterprise:
             """Configuration for mongos 4.4 hosts."""
@@ -961,14 +1070,19 @@ class Mongodb4_4_enterprise(google.protobuf.message.Message):
         def resources(self) -> global___Resources:
             """Resources allocated to mongos hosts."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
             config: yandex.cloud.mdb.mongodb.v1.config.mongodb4_4_enterprise_pb2.MongosConfigSet4_4_enterprise | None = ...,
             resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     @typing.final
     class MongoInfra(google.protobuf.message.Message):
@@ -977,6 +1091,7 @@ class Mongodb4_4_enterprise(google.protobuf.message.Message):
         CONFIG_MONGOS_FIELD_NUMBER: builtins.int
         CONFIG_MONGOCFG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config_mongos(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb4_4_enterprise_pb2.MongosConfigSet4_4_enterprise: ...
         @property
@@ -985,15 +1100,20 @@ class Mongodb4_4_enterprise(google.protobuf.message.Message):
         def resources(self) -> global___Resources:
             """Resources allocated to mongoinfra (mongos+mongocfg) hosts."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
             config_mongos: yandex.cloud.mdb.mongodb.v1.config.mongodb4_4_enterprise_pb2.MongosConfigSet4_4_enterprise | None = ...,
             config_mongocfg: yandex.cloud.mdb.mongodb.v1.config.mongodb4_4_enterprise_pb2.MongoCfgConfigSet4_4_enterprise | None = ...,
             resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config_mongocfg", b"config_mongocfg", "config_mongos", b"config_mongos", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config_mongocfg", b"config_mongocfg", "config_mongos", b"config_mongos", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config_mongocfg", b"config_mongocfg", "config_mongos", b"config_mongos", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config_mongocfg", b"config_mongocfg", "config_mongos", b"config_mongos", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     MONGOD_FIELD_NUMBER: builtins.int
     MONGOCFG_FIELD_NUMBER: builtins.int
@@ -1038,6 +1158,7 @@ class Mongodb5_0(google.protobuf.message.Message):
 
         CONFIG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb5_0_pb2.MongodConfigSet5_0:
             """Configuration for mongod 5.0 hosts."""
@@ -1046,14 +1167,19 @@ class Mongodb5_0(google.protobuf.message.Message):
         def resources(self) -> global___Resources:
             """Resources allocated to mongod hosts."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
             config: yandex.cloud.mdb.mongodb.v1.config.mongodb5_0_pb2.MongodConfigSet5_0 | None = ...,
             resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     @typing.final
     class MongoCfg(google.protobuf.message.Message):
@@ -1061,6 +1187,7 @@ class Mongodb5_0(google.protobuf.message.Message):
 
         CONFIG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb5_0_pb2.MongoCfgConfigSet5_0:
             """Configuration for mongocfg 5.0 hosts."""
@@ -1069,14 +1196,19 @@ class Mongodb5_0(google.protobuf.message.Message):
         def resources(self) -> global___Resources:
             """Resources allocated to mongocfg hosts."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
             config: yandex.cloud.mdb.mongodb.v1.config.mongodb5_0_pb2.MongoCfgConfigSet5_0 | None = ...,
             resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     @typing.final
     class Mongos(google.protobuf.message.Message):
@@ -1084,6 +1216,7 @@ class Mongodb5_0(google.protobuf.message.Message):
 
         CONFIG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb5_0_pb2.MongosConfigSet5_0:
             """Configuration for mongos 5.0 hosts."""
@@ -1092,14 +1225,19 @@ class Mongodb5_0(google.protobuf.message.Message):
         def resources(self) -> global___Resources:
             """Resources allocated to mongos hosts."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
             config: yandex.cloud.mdb.mongodb.v1.config.mongodb5_0_pb2.MongosConfigSet5_0 | None = ...,
             resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     @typing.final
     class MongoInfra(google.protobuf.message.Message):
@@ -1108,6 +1246,7 @@ class Mongodb5_0(google.protobuf.message.Message):
         CONFIG_MONGOS_FIELD_NUMBER: builtins.int
         CONFIG_MONGOCFG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config_mongos(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb5_0_pb2.MongosConfigSet5_0: ...
         @property
@@ -1116,15 +1255,20 @@ class Mongodb5_0(google.protobuf.message.Message):
         def resources(self) -> global___Resources:
             """Resources allocated to mongoinfra (mongos+mongocfg) hosts."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
             config_mongos: yandex.cloud.mdb.mongodb.v1.config.mongodb5_0_pb2.MongosConfigSet5_0 | None = ...,
             config_mongocfg: yandex.cloud.mdb.mongodb.v1.config.mongodb5_0_pb2.MongoCfgConfigSet5_0 | None = ...,
             resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config_mongocfg", b"config_mongocfg", "config_mongos", b"config_mongos", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config_mongocfg", b"config_mongocfg", "config_mongos", b"config_mongos", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config_mongocfg", b"config_mongocfg", "config_mongos", b"config_mongos", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config_mongocfg", b"config_mongocfg", "config_mongos", b"config_mongos", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     MONGOD_FIELD_NUMBER: builtins.int
     MONGOCFG_FIELD_NUMBER: builtins.int
@@ -1169,6 +1313,7 @@ class Mongodb5_0_enterprise(google.protobuf.message.Message):
 
         CONFIG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb5_0_enterprise_pb2.MongodConfigSet5_0_enterprise:
             """Configuration for mongod 5.0 hosts."""
@@ -1177,14 +1322,19 @@ class Mongodb5_0_enterprise(google.protobuf.message.Message):
         def resources(self) -> global___Resources:
             """Resources allocated to mongod hosts."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
             config: yandex.cloud.mdb.mongodb.v1.config.mongodb5_0_enterprise_pb2.MongodConfigSet5_0_enterprise | None = ...,
             resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     @typing.final
     class MongoCfg(google.protobuf.message.Message):
@@ -1192,6 +1342,7 @@ class Mongodb5_0_enterprise(google.protobuf.message.Message):
 
         CONFIG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb5_0_enterprise_pb2.MongoCfgConfigSet5_0_enterprise:
             """Configuration for mongocfg 5.0 hosts."""
@@ -1200,14 +1351,19 @@ class Mongodb5_0_enterprise(google.protobuf.message.Message):
         def resources(self) -> global___Resources:
             """Resources allocated to mongocfg hosts."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
             config: yandex.cloud.mdb.mongodb.v1.config.mongodb5_0_enterprise_pb2.MongoCfgConfigSet5_0_enterprise | None = ...,
             resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     @typing.final
     class Mongos(google.protobuf.message.Message):
@@ -1215,6 +1371,7 @@ class Mongodb5_0_enterprise(google.protobuf.message.Message):
 
         CONFIG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb5_0_enterprise_pb2.MongosConfigSet5_0_enterprise:
             """Configuration for mongos 5.0 hosts."""
@@ -1223,14 +1380,19 @@ class Mongodb5_0_enterprise(google.protobuf.message.Message):
         def resources(self) -> global___Resources:
             """Resources allocated to mongos hosts."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
             config: yandex.cloud.mdb.mongodb.v1.config.mongodb5_0_enterprise_pb2.MongosConfigSet5_0_enterprise | None = ...,
             resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     @typing.final
     class MongoInfra(google.protobuf.message.Message):
@@ -1239,6 +1401,7 @@ class Mongodb5_0_enterprise(google.protobuf.message.Message):
         CONFIG_MONGOS_FIELD_NUMBER: builtins.int
         CONFIG_MONGOCFG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config_mongos(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb5_0_enterprise_pb2.MongosConfigSet5_0_enterprise: ...
         @property
@@ -1247,15 +1410,20 @@ class Mongodb5_0_enterprise(google.protobuf.message.Message):
         def resources(self) -> global___Resources:
             """Resources allocated to mongoinfra (mongos+mongocfg) hosts."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
             config_mongos: yandex.cloud.mdb.mongodb.v1.config.mongodb5_0_enterprise_pb2.MongosConfigSet5_0_enterprise | None = ...,
             config_mongocfg: yandex.cloud.mdb.mongodb.v1.config.mongodb5_0_enterprise_pb2.MongoCfgConfigSet5_0_enterprise | None = ...,
             resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config_mongocfg", b"config_mongocfg", "config_mongos", b"config_mongos", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config_mongocfg", b"config_mongocfg", "config_mongos", b"config_mongos", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config_mongocfg", b"config_mongocfg", "config_mongos", b"config_mongos", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config_mongocfg", b"config_mongocfg", "config_mongos", b"config_mongos", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     MONGOD_FIELD_NUMBER: builtins.int
     MONGOCFG_FIELD_NUMBER: builtins.int
@@ -1300,6 +1468,7 @@ class Mongodb6_0(google.protobuf.message.Message):
 
         CONFIG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb6_0_pb2.MongodConfigSet6_0:
             """Configuration for mongod 6.0 hosts."""
@@ -1308,14 +1477,19 @@ class Mongodb6_0(google.protobuf.message.Message):
         def resources(self) -> global___Resources:
             """Resources allocated to mongod hosts."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
             config: yandex.cloud.mdb.mongodb.v1.config.mongodb6_0_pb2.MongodConfigSet6_0 | None = ...,
             resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     @typing.final
     class MongoCfg(google.protobuf.message.Message):
@@ -1323,6 +1497,7 @@ class Mongodb6_0(google.protobuf.message.Message):
 
         CONFIG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb6_0_pb2.MongoCfgConfigSet6_0:
             """Configuration for mongocfg 6.0 hosts."""
@@ -1331,14 +1506,19 @@ class Mongodb6_0(google.protobuf.message.Message):
         def resources(self) -> global___Resources:
             """Resources allocated to mongocfg hosts."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
             config: yandex.cloud.mdb.mongodb.v1.config.mongodb6_0_pb2.MongoCfgConfigSet6_0 | None = ...,
             resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     @typing.final
     class Mongos(google.protobuf.message.Message):
@@ -1346,6 +1526,7 @@ class Mongodb6_0(google.protobuf.message.Message):
 
         CONFIG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb6_0_pb2.MongosConfigSet6_0:
             """Configuration for mongos 6.0 hosts."""
@@ -1354,14 +1535,19 @@ class Mongodb6_0(google.protobuf.message.Message):
         def resources(self) -> global___Resources:
             """Resources allocated to mongos hosts."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
             config: yandex.cloud.mdb.mongodb.v1.config.mongodb6_0_pb2.MongosConfigSet6_0 | None = ...,
             resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     @typing.final
     class MongoInfra(google.protobuf.message.Message):
@@ -1370,6 +1556,7 @@ class Mongodb6_0(google.protobuf.message.Message):
         CONFIG_MONGOS_FIELD_NUMBER: builtins.int
         CONFIG_MONGOCFG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config_mongos(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb6_0_pb2.MongosConfigSet6_0: ...
         @property
@@ -1378,15 +1565,20 @@ class Mongodb6_0(google.protobuf.message.Message):
         def resources(self) -> global___Resources:
             """Resources allocated to mongoinfra (mongos+mongocfg) hosts."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
             config_mongos: yandex.cloud.mdb.mongodb.v1.config.mongodb6_0_pb2.MongosConfigSet6_0 | None = ...,
             config_mongocfg: yandex.cloud.mdb.mongodb.v1.config.mongodb6_0_pb2.MongoCfgConfigSet6_0 | None = ...,
             resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config_mongocfg", b"config_mongocfg", "config_mongos", b"config_mongos", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config_mongocfg", b"config_mongocfg", "config_mongos", b"config_mongos", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config_mongocfg", b"config_mongocfg", "config_mongos", b"config_mongos", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config_mongocfg", b"config_mongocfg", "config_mongos", b"config_mongos", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     MONGOD_FIELD_NUMBER: builtins.int
     MONGOCFG_FIELD_NUMBER: builtins.int
@@ -1431,6 +1623,7 @@ class Mongodb6_0_enterprise(google.protobuf.message.Message):
 
         CONFIG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb6_0_enterprise_pb2.MongodConfigSet6_0_enterprise:
             """Configuration for mongod 6.0 hosts."""
@@ -1439,14 +1632,19 @@ class Mongodb6_0_enterprise(google.protobuf.message.Message):
         def resources(self) -> global___Resources:
             """Resources allocated to mongod hosts."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
             config: yandex.cloud.mdb.mongodb.v1.config.mongodb6_0_enterprise_pb2.MongodConfigSet6_0_enterprise | None = ...,
             resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     @typing.final
     class MongoCfg(google.protobuf.message.Message):
@@ -1454,6 +1652,7 @@ class Mongodb6_0_enterprise(google.protobuf.message.Message):
 
         CONFIG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb6_0_enterprise_pb2.MongoCfgConfigSet6_0_enterprise:
             """Configuration for mongocfg 6.0 hosts."""
@@ -1462,14 +1661,19 @@ class Mongodb6_0_enterprise(google.protobuf.message.Message):
         def resources(self) -> global___Resources:
             """Resources allocated to mongocfg hosts."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
             config: yandex.cloud.mdb.mongodb.v1.config.mongodb6_0_enterprise_pb2.MongoCfgConfigSet6_0_enterprise | None = ...,
             resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     @typing.final
     class Mongos(google.protobuf.message.Message):
@@ -1477,6 +1681,7 @@ class Mongodb6_0_enterprise(google.protobuf.message.Message):
 
         CONFIG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb6_0_enterprise_pb2.MongosConfigSet6_0_enterprise:
             """Configuration for mongos 6.0 hosts."""
@@ -1485,14 +1690,19 @@ class Mongodb6_0_enterprise(google.protobuf.message.Message):
         def resources(self) -> global___Resources:
             """Resources allocated to mongos hosts."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
             config: yandex.cloud.mdb.mongodb.v1.config.mongodb6_0_enterprise_pb2.MongosConfigSet6_0_enterprise | None = ...,
             resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     @typing.final
     class MongoInfra(google.protobuf.message.Message):
@@ -1501,6 +1711,7 @@ class Mongodb6_0_enterprise(google.protobuf.message.Message):
         CONFIG_MONGOS_FIELD_NUMBER: builtins.int
         CONFIG_MONGOCFG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config_mongos(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb6_0_enterprise_pb2.MongosConfigSet6_0_enterprise: ...
         @property
@@ -1509,15 +1720,20 @@ class Mongodb6_0_enterprise(google.protobuf.message.Message):
         def resources(self) -> global___Resources:
             """Resources allocated to mongoinfra (mongos+mongocfg) hosts."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
             config_mongos: yandex.cloud.mdb.mongodb.v1.config.mongodb6_0_enterprise_pb2.MongosConfigSet6_0_enterprise | None = ...,
             config_mongocfg: yandex.cloud.mdb.mongodb.v1.config.mongodb6_0_enterprise_pb2.MongoCfgConfigSet6_0_enterprise | None = ...,
             resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config_mongocfg", b"config_mongocfg", "config_mongos", b"config_mongos", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config_mongocfg", b"config_mongocfg", "config_mongos", b"config_mongos", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config_mongocfg", b"config_mongocfg", "config_mongos", b"config_mongos", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config_mongocfg", b"config_mongocfg", "config_mongos", b"config_mongos", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     MONGOD_FIELD_NUMBER: builtins.int
     MONGOCFG_FIELD_NUMBER: builtins.int
@@ -1888,3 +2104,34 @@ class PerformanceDiagnosticsConfig(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["profiling_enabled", b"profiling_enabled"]) -> None: ...
 
 global___PerformanceDiagnosticsConfig = PerformanceDiagnosticsConfig
+
+@typing.final
+class DiskSizeAutoscaling(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PLANNED_USAGE_THRESHOLD_FIELD_NUMBER: builtins.int
+    EMERGENCY_USAGE_THRESHOLD_FIELD_NUMBER: builtins.int
+    DISK_SIZE_LIMIT_FIELD_NUMBER: builtins.int
+    @property
+    def planned_usage_threshold(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Amount of used storage for automatic disk scaling in the maintenance window, 0 means disabled, in percent."""
+
+    @property
+    def emergency_usage_threshold(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Amount of used storage for immediately  automatic disk scaling, 0 means disabled, in percent."""
+
+    @property
+    def disk_size_limit(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Limit on how large the storage for database instances can automatically grow, in bytes."""
+
+    def __init__(
+        self,
+        *,
+        planned_usage_threshold: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        emergency_usage_threshold: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        disk_size_limit: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["disk_size_limit", b"disk_size_limit", "emergency_usage_threshold", b"emergency_usage_threshold", "planned_usage_threshold", b"planned_usage_threshold"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["disk_size_limit", b"disk_size_limit", "emergency_usage_threshold", b"emergency_usage_threshold", "planned_usage_threshold", b"planned_usage_threshold"]) -> None: ...
+
+global___DiskSizeAutoscaling = DiskSizeAutoscaling
