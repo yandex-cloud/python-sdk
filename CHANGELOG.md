@@ -2,6 +2,13 @@
 
 
 
+## v0.299.0 (2024-07-02)
+
+### Feature
+
+* regenerate proto ([`2fe647f`](https://github.com/yandex-cloud/python-sdk/commit/2fe647f8d8373609b5a12ecaca9eeef21116a8d6))
+
+
 ## v0.298.0 (2024-06-25)
 
 ### Feature
