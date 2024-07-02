@@ -49,16 +49,23 @@ class Gateway(google.protobuf.message.Message):
     name: builtins.str
     """Name of the gateway.
     The name is unique within the folder.
+    Value must match the regular expression ``\\|[a-z]([-a-z0-9]{0,61}[a-z0-9])?``.
     """
     description: builtins.str
-    """Description of the gateway."""
+    """Description of the gateway. 0-256 characters long."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp."""
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Resource labels as `key:value` pairs."""
+        """Gateway labels as `key:value` pairs. 
+        No more than 64 per resource. 
+        The maximum string length in characters for each value is 63. 
+        Each value must match the regular expression `[-_./\\\\@0-9a-z]*`. 
+        The string length in characters for each key must be 1-63. 
+        Each key must match the regular expression `[a-z][-_./\\\\@0-9a-z]*`.
+        """
 
     @property
     def shared_egress_gateway(self) -> global___SharedEgressGateway: ...

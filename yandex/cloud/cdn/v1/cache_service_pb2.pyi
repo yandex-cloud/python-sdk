@@ -27,7 +27,7 @@ class PurgeCacheRequest(google.protobuf.message.Message):
 
         You may use asterisk (`*`) as a wildcard character that substitutes any number of characters.
 
-        If an empty array of paths is specified, the cache is purged entirely.
+        If an empty array of paths is specified (`"paths": []`), the cache is purged entirely.
         """
 
     def __init__(

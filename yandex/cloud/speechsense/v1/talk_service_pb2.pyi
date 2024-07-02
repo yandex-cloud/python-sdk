@@ -8,14 +8,40 @@ import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.field_mask_pb2
 import google.protobuf.internal.containers
+import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
+import sys
 import typing
 import yandex.cloud.speechsense.v1.audio_pb2
 import yandex.cloud.speechsense.v1.search_pb2
 import yandex.cloud.speechsense.v1.talk_pb2
 import yandex.cloud.speechsense.v1.text_pb2
 
+if sys.version_info >= (3, 10):
+    import typing as typing_extensions
+else:
+    import typing_extensions
+
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
+
+class _UserRole:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _UserRoleEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_UserRole.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    USER_ROLE_UNSPECIFIED: _UserRole.ValueType  # 0
+    USER_ROLE_OPERATOR: _UserRole.ValueType  # 1
+    USER_ROLE_CLIENT: _UserRole.ValueType  # 2
+    USER_ROLE_BOT: _UserRole.ValueType  # 3
+
+class UserRole(_UserRole, metaclass=_UserRoleEnumTypeWrapper): ...
+
+USER_ROLE_UNSPECIFIED: UserRole.ValueType  # 0
+USER_ROLE_OPERATOR: UserRole.ValueType  # 1
+USER_ROLE_CLIENT: UserRole.ValueType  # 2
+USER_ROLE_BOT: UserRole.ValueType  # 3
+global___UserRole = UserRole
 
 @typing.final
 class StreamTalkRequest(google.protobuf.message.Message):
@@ -147,21 +173,65 @@ class TalkMetadata(google.protobuf.message.Message):
 
     CONNECTION_ID_FIELD_NUMBER: builtins.int
     FIELDS_FIELD_NUMBER: builtins.int
+    USERS_FIELD_NUMBER: builtins.int
     connection_id: builtins.str
     """id of connection this talk belongs too"""
     @property
     def fields(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """channel defined fields"""
 
+    @property
+    def users(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___UserMetadata]:
+        """per user specific metadata"""
+
     def __init__(
         self,
         *,
         connection_id: builtins.str = ...,
         fields: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        users: collections.abc.Iterable[global___UserMetadata] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["connection_id", b"connection_id", "fields", b"fields"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["connection_id", b"connection_id", "fields", b"fields", "users", b"users"]) -> None: ...
 
 global___TalkMetadata = TalkMetadata
+
+@typing.final
+class UserMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class FieldsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
+    ID_FIELD_NUMBER: builtins.int
+    ROLE_FIELD_NUMBER: builtins.int
+    FIELDS_FIELD_NUMBER: builtins.int
+    id: builtins.str
+    role: global___UserRole.ValueType
+    @property
+    def fields(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
+    def __init__(
+        self,
+        *,
+        id: builtins.str = ...,
+        role: global___UserRole.ValueType = ...,
+        fields: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["fields", b"fields", "id", b"id", "role", b"role"]) -> None: ...
+
+global___UserMetadata = UserMetadata
 
 @typing.final
 class SearchTalkRequest(google.protobuf.message.Message):

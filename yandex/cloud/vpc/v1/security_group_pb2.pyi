@@ -82,7 +82,10 @@ class SecurityGroup(google.protobuf.message.Message):
     folder_id: builtins.str
     """ID of the folder that the security group belongs to."""
     name: builtins.str
-    """Name of the security group. 1-63 characters long."""
+    """Name of the security group. 
+    The name must be unique within the folder. 
+    Value must match the regular expression ``\\|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?``.
+    """
     description: builtins.str
     """Description of the security group. 0-256 characters long."""
     network_id: builtins.str
@@ -97,7 +100,13 @@ class SecurityGroup(google.protobuf.message.Message):
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Resource labels as `` key:value `` pairs. Maximum of 64 per resource."""
+        """Resource labels as `key:value` pairs. 
+        No more than 64 per resource.
+        The maximum string length in characters for each value is 63. 
+        Each value must match the regular expression `[-_./\\\\@0-9a-z]*`. 
+        The string length in characters for each key must be 1-63. 
+        Each key must match the regular expression `[a-z][-_./\\\\@0-9a-z]*`.
+        """
 
     @property
     def rules(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___SecurityGroupRule]:

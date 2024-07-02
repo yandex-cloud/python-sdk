@@ -76,7 +76,10 @@ class Subnet(google.protobuf.message.Message):
     folder_id: builtins.str
     """ID of the folder that the subnet belongs to."""
     name: builtins.str
-    """Name of the subnet. The name is unique within the project. 3-63 characters long."""
+    """Name of the subnet. 
+    The name must be unique within the folder. 
+    Value must match the regular expression ``\\|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?``.
+    """
     description: builtins.str
     """Optional description of the subnet. 0-256 characters long."""
     network_id: builtins.str
@@ -93,7 +96,13 @@ class Subnet(google.protobuf.message.Message):
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Resource labels as `` key:value `` pairs. Maximum of 64 per resource."""
+        """Resource labels, `key:value` pairs. 
+        No more than 64 per resource. 
+        The maximum string length in characters for each value is 63. 
+        Each value must match the regular expression `[-_0-9a-z]*`. 
+        The string length in characters for each key must be 1-63. 
+        Each key must match the regular expression `[a-z][-_0-9a-z]*`.
+        """
 
     @property
     def v4_cidr_blocks(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
@@ -109,7 +118,9 @@ class Subnet(google.protobuf.message.Message):
         """IPv6 not available yet."""
 
     @property
-    def dhcp_options(self) -> global___DhcpOptions: ...
+    def dhcp_options(self) -> global___DhcpOptions:
+        """DHCP options for the subnet."""
+
     def __init__(
         self,
         *,
@@ -139,10 +150,15 @@ class DhcpOptions(google.protobuf.message.Message):
     DOMAIN_NAME_FIELD_NUMBER: builtins.int
     NTP_SERVERS_FIELD_NUMBER: builtins.int
     domain_name: builtins.str
+    """A domain name to us as a suffix when resolving host names in this subnet."""
     @property
-    def domain_name_servers(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def domain_name_servers(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """A list of DHCP servers for this subnet."""
+
     @property
-    def ntp_servers(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def ntp_servers(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of NTP servers for this subnet."""
+
     def __init__(
         self,
         *,

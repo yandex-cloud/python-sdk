@@ -100,9 +100,10 @@ class Address(google.protobuf.message.Message):
     name: builtins.str
     """Name of the address.
     The name is unique within the folder.
+    Value must match the regular expression ``\\|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?``.
     """
     description: builtins.str
-    """Description of the address."""
+    """Description of the address. 0-256 characters long."""
     reserved: builtins.bool
     """Specifies if address is reserved or not."""
     used: builtins.bool
@@ -119,7 +120,13 @@ class Address(google.protobuf.message.Message):
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Resource labels as `key:value` pairs."""
+        """Address labels as `key:value` pairs. 
+        No more than 64 per resource. 
+        The maximum string length in characters for each value is 63.
+        Each value must match the regular expression `[-_0-9a-z]*`. 
+        The string length in characters for each key must be 1-63. 
+        Each key must match the regular expression `[a-z][-_0-9a-z]*`.
+        """
 
     @property
     def external_ipv4_address(self) -> global___ExternalIpv4Address: ...
