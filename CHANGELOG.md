@@ -2,6 +2,15 @@
 
 
 
+## v0.300.0 (2024-07-03)
+
+### Feature
+
+* pin major version (#113)
+
+Co-authored-by: iva-romanenko &lt;iva-romanenko@yandex-team.ru&gt; ([`f995ce7`](https://github.com/yandex-cloud/python-sdk/commit/f995ce73af0f745e525c057a2f6a1f042165785d))
+
+
 ## v0.299.0 (2024-07-02)
 
 ### Feature
