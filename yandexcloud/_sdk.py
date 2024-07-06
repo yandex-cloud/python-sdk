@@ -140,6 +140,7 @@ def _service_for_ctor(stub_ctor: Any) -> str:
 _supported_modules = [
     ("yandex.cloud.ai.foundation_models", "ai-foundation-models"),
     ("yandex.cloud.ai.llm", "ai-llm"),
+    ("yandex.cloud.ai.ocr", "ai-vision-ocr"),
     ("yandex.cloud.ai.stt", "ai-stt"),
     ("yandex.cloud.ai.translate", "ai-translate"),
     ("yandex.cloud.ai.tts", "ai-speechkit"),
