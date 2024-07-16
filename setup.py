@@ -19,7 +19,7 @@ setup(
     include_package_data=True,
     license="MIT",
     install_requires=[
-        "cryptography>=41.0.7",
+        "cryptography>=41.0.7,<43",
         "grpcio>=1.64.0,<2",
         "protobuf>=4.25.3,<5",
         "googleapis-common-protos>=1.63.0,<2",
