@@ -52,6 +52,11 @@ class VideoServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GetVideoPlayerURLRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GetVideoPlayerURLResponse.FromString,
                 )
+        self.GetManifests = channel.unary_unary(
+                '/yandex.cloud.video.v1.VideoService/GetManifests',
+                request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GetVideoManifestsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GetVideoManifestsResponse.FromString,
+                )
 
 
 class VideoServiceServicer(object):
@@ -107,6 +112,13 @@ class VideoServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetManifests(self, request, context):
+        """Returns manifest urls.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_VideoServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -144,6 +156,11 @@ def add_VideoServiceServicer_to_server(servicer, server):
                     servicer.GetPlayerURL,
                     request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GetVideoPlayerURLRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GetVideoPlayerURLResponse.SerializeToString,
+            ),
+            'GetManifests': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetManifests,
+                    request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GetVideoManifestsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GetVideoManifestsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -272,5 +289,22 @@ class VideoService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.video.v1.VideoService/GetPlayerURL',
             yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GetVideoPlayerURLRequest.SerializeToString,
             yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GetVideoPlayerURLResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetManifests(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.video.v1.VideoService/GetManifests',
+            yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GetVideoManifestsRequest.SerializeToString,
+            yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GetVideoManifestsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

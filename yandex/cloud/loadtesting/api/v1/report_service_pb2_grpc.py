@@ -20,6 +20,11 @@ class ReportServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_report__service__pb2.GetTableReportRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_report__service__pb2.GetTableReportResponse.FromString,
                 )
+        self.CalculateKpiValues = channel.unary_unary(
+                '/yandex.cloud.loadtesting.api.v1.ReportService/CalculateKpiValues',
+                request_serializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_report__service__pb2.CalculateReportKpiValuesRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_report__service__pb2.CalculateReportKpiValuesResponse.FromString,
+                )
 
 
 class ReportServiceServicer(object):
@@ -33,6 +38,13 @@ class ReportServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def CalculateKpiValues(self, request, context):
+        """Returns a list of KPI values for tests matching the specified filter.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ReportServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -40,6 +52,11 @@ def add_ReportServiceServicer_to_server(servicer, server):
                     servicer.GetTable,
                     request_deserializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_report__service__pb2.GetTableReportRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_report__service__pb2.GetTableReportResponse.SerializeToString,
+            ),
+            'CalculateKpiValues': grpc.unary_unary_rpc_method_handler(
+                    servicer.CalculateKpiValues,
+                    request_deserializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_report__service__pb2.CalculateReportKpiValuesRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_report__service__pb2.CalculateReportKpiValuesResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -66,5 +83,22 @@ class ReportService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.loadtesting.api.v1.ReportService/GetTable',
             yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_report__service__pb2.GetTableReportRequest.SerializeToString,
             yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_report__service__pb2.GetTableReportResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CalculateKpiValues(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.loadtesting.api.v1.ReportService/CalculateKpiValues',
+            yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_report__service__pb2.CalculateReportKpiValuesRequest.SerializeToString,
+            yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_report__service__pb2.CalculateReportKpiValuesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

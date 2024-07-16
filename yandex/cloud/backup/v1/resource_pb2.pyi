@@ -18,6 +18,27 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+class _ResourceType:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _ResourceTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ResourceType.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    RESOURCE_TYPE_UNSPECIFIED: _ResourceType.ValueType  # 0
+    COMPUTE: _ResourceType.ValueType  # 1
+    """Resource is Compute Cloud VM"""
+    BMS: _ResourceType.ValueType  # 2
+    """Resource is baremetal server"""
+
+class ResourceType(_ResourceType, metaclass=_ResourceTypeEnumTypeWrapper): ...
+
+RESOURCE_TYPE_UNSPECIFIED: ResourceType.ValueType  # 0
+COMPUTE: ResourceType.ValueType  # 1
+"""Resource is Compute Cloud VM"""
+BMS: ResourceType.ValueType  # 2
+"""Resource is baremetal server"""
+global___ResourceType = ResourceType
+
 @typing.final
 class Resource(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
@@ -102,6 +123,7 @@ class Resource(google.protobuf.message.Message):
     IS_ACTIVE_FIELD_NUMBER: builtins.int
     INIT_STATUS_FIELD_NUMBER: builtins.int
     METADATA_FIELD_NUMBER: builtins.int
+    TYPE_FIELD_NUMBER: builtins.int
     compute_instance_id: builtins.str
     """Compute Cloud instance ID."""
     online: builtins.bool
@@ -130,6 +152,8 @@ class Resource(google.protobuf.message.Message):
     """Metadata to provide details about instance registration process
     if status is FAILED_REGISTRATION or REGISTERING
     """
+    type: global___ResourceType.ValueType
+    """Type of resource -- could be compute VM or baremetal server"""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
     @property
@@ -155,9 +179,10 @@ class Resource(google.protobuf.message.Message):
         is_active: builtins.bool = ...,
         init_status: global___Resource.InitStatus.ValueType = ...,
         metadata: builtins.str = ...,
+        type: global___ResourceType.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at", "last_backup_time", b"last_backup_time", "next_backup_time", b"next_backup_time", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["compute_instance_id", b"compute_instance_id", "created_at", b"created_at", "enabled", b"enabled", "init_status", b"init_status", "is_active", b"is_active", "last_backup_time", b"last_backup_time", "metadata", b"metadata", "next_backup_time", b"next_backup_time", "online", b"online", "resource_id", b"resource_id", "status", b"status", "status_details", b"status_details", "status_progress", b"status_progress", "updated_at", b"updated_at"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["compute_instance_id", b"compute_instance_id", "created_at", b"created_at", "enabled", b"enabled", "init_status", b"init_status", "is_active", b"is_active", "last_backup_time", b"last_backup_time", "metadata", b"metadata", "next_backup_time", b"next_backup_time", "online", b"online", "resource_id", b"resource_id", "status", b"status", "status_details", b"status_details", "status_progress", b"status_progress", "type", b"type", "updated_at", b"updated_at"]) -> None: ...
 
 global___Resource = Resource
 

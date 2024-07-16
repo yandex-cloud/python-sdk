@@ -294,20 +294,20 @@ global___FieldList = FieldList
 class DataSchema(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    FIELDS_FIELD_NUMBER: builtins.int
     JSON_FIELDS_FIELD_NUMBER: builtins.int
+    FIELDS_FIELD_NUMBER: builtins.int
     json_fields: builtins.str
     @property
     def fields(self) -> global___FieldList: ...
     def __init__(
         self,
         *,
-        fields: global___FieldList | None = ...,
         json_fields: builtins.str = ...,
+        fields: global___FieldList | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["fields", b"fields", "json_fields", b"json_fields", "schema", b"schema"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["fields", b"fields", "json_fields", b"json_fields", "schema", b"schema"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["schema", b"schema"]) -> typing.Literal["fields", "json_fields"] | None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["schema", b"schema"]) -> typing.Literal["json_fields", "fields"] | None: ...
 
 global___DataSchema = DataSchema
 

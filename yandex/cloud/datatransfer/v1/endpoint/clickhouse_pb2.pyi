@@ -90,8 +90,8 @@ global___OnPremiseClickhouse = OnPremiseClickhouse
 class ClickhouseConnectionOptions(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    MDB_CLUSTER_ID_FIELD_NUMBER: builtins.int
     ON_PREMISE_FIELD_NUMBER: builtins.int
+    MDB_CLUSTER_ID_FIELD_NUMBER: builtins.int
     USER_FIELD_NUMBER: builtins.int
     PASSWORD_FIELD_NUMBER: builtins.int
     DATABASE_FIELD_NUMBER: builtins.int
@@ -106,15 +106,15 @@ class ClickhouseConnectionOptions(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        mdb_cluster_id: builtins.str = ...,
         on_premise: global___OnPremiseClickhouse | None = ...,
+        mdb_cluster_id: builtins.str = ...,
         user: builtins.str = ...,
         password: yandex.cloud.datatransfer.v1.endpoint.common_pb2.Secret | None = ...,
         database: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["address", b"address", "mdb_cluster_id", b"mdb_cluster_id", "on_premise", b"on_premise", "password", b"password"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["address", b"address", "database", b"database", "mdb_cluster_id", b"mdb_cluster_id", "on_premise", b"on_premise", "password", b"password", "user", b"user"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["address", b"address"]) -> typing.Literal["mdb_cluster_id", "on_premise"] | None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["address", b"address"]) -> typing.Literal["on_premise", "mdb_cluster_id"] | None: ...
 
 global___ClickhouseConnectionOptions = ClickhouseConnectionOptions
 

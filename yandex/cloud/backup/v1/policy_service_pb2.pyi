@@ -222,21 +222,25 @@ class ListApplicationsRequest(google.protobuf.message.Message):
     FOLDER_ID_FIELD_NUMBER: builtins.int
     POLICY_ID_FIELD_NUMBER: builtins.int
     COMPUTE_INSTANCE_ID_FIELD_NUMBER: builtins.int
+    SHOW_PROCESSING_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """Folder ID."""
     policy_id: builtins.str
     """Policy ID."""
     compute_instance_id: builtins.str
     """Compute Cloud instance ID."""
+    show_processing: builtins.bool
+    """If true, also returns applications that in the process of binding."""
     def __init__(
         self,
         *,
         folder_id: builtins.str = ...,
         policy_id: builtins.str = ...,
         compute_instance_id: builtins.str = ...,
+        show_processing: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["compute_instance_id", b"compute_instance_id", "folder_id", b"folder_id", "id", b"id", "policy_id", b"policy_id"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["compute_instance_id", b"compute_instance_id", "folder_id", b"folder_id", "id", b"id", "policy_id", b"policy_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["compute_instance_id", b"compute_instance_id", "folder_id", b"folder_id", "id", b"id", "policy_id", b"policy_id", "show_processing", b"show_processing"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["id", b"id"]) -> typing.Literal["folder_id", "policy_id", "compute_instance_id"] | None: ...
 
 global___ListApplicationsRequest = ListApplicationsRequest

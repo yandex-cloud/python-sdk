@@ -719,12 +719,15 @@ class PolicyApplication(google.protobuf.message.Message):
     ENABLED_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
+    IS_PROCESSING_FIELD_NUMBER: builtins.int
     policy_id: builtins.str
     """Policy ID."""
     compute_instance_id: builtins.str
     """Compute Cloud instance ID."""
     enabled: builtins.bool
     status: global___PolicyApplication.Status.ValueType
+    is_processing: builtins.bool
+    """If true, then the policy is in in the process of binding to the instance."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
     def __init__(
@@ -735,8 +738,9 @@ class PolicyApplication(google.protobuf.message.Message):
         enabled: builtins.bool = ...,
         status: global___PolicyApplication.Status.ValueType = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        is_processing: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["compute_instance_id", b"compute_instance_id", "created_at", b"created_at", "enabled", b"enabled", "policy_id", b"policy_id", "status", b"status"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["compute_instance_id", b"compute_instance_id", "created_at", b"created_at", "enabled", b"enabled", "is_processing", b"is_processing", "policy_id", b"policy_id", "status", b"status"]) -> None: ...
 
 global___PolicyApplication = PolicyApplication

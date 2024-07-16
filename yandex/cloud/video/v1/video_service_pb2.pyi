@@ -10,6 +10,7 @@ import google.protobuf.field_mask_pb2
 import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
+import yandex.cloud.video.v1.manifest_pb2
 import yandex.cloud.video.v1.video_pb2
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
@@ -462,3 +463,35 @@ class GetVideoPlayerURLResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["html", b"html", "player_url", b"player_url"]) -> None: ...
 
 global___GetVideoPlayerURLResponse = GetVideoPlayerURLResponse
+
+@typing.final
+class GetVideoManifestsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    VIDEO_ID_FIELD_NUMBER: builtins.int
+    video_id: builtins.str
+    """ID of the video."""
+    def __init__(
+        self,
+        *,
+        video_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["video_id", b"video_id"]) -> None: ...
+
+global___GetVideoManifestsRequest = GetVideoManifestsRequest
+
+@typing.final
+class GetVideoManifestsResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    MANIFESTS_FIELD_NUMBER: builtins.int
+    @property
+    def manifests(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.video.v1.manifest_pb2.Manifest]: ...
+    def __init__(
+        self,
+        *,
+        manifests: collections.abc.Iterable[yandex.cloud.video.v1.manifest_pb2.Manifest] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["manifests", b"manifests"]) -> None: ...
+
+global___GetVideoManifestsResponse = GetVideoManifestsResponse

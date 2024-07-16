@@ -27,6 +27,12 @@ class ReportServiceStub:
     ]
     """Returns a report table for the specified test."""
 
+    CalculateKpiValues: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.loadtesting.api.v1.report_service_pb2.CalculateReportKpiValuesRequest,
+        yandex.cloud.loadtesting.api.v1.report_service_pb2.CalculateReportKpiValuesResponse,
+    ]
+    """Returns a list of KPI values for tests matching the specified filter."""
+
 class ReportServiceAsyncStub:
     """A set of methods for managing test reports."""
 
@@ -35,6 +41,12 @@ class ReportServiceAsyncStub:
         yandex.cloud.loadtesting.api.v1.report_service_pb2.GetTableReportResponse,
     ]
     """Returns a report table for the specified test."""
+
+    CalculateKpiValues: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.loadtesting.api.v1.report_service_pb2.CalculateReportKpiValuesRequest,
+        yandex.cloud.loadtesting.api.v1.report_service_pb2.CalculateReportKpiValuesResponse,
+    ]
+    """Returns a list of KPI values for tests matching the specified filter."""
 
 class ReportServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing test reports."""
@@ -46,5 +58,13 @@ class ReportServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.loadtesting.api.v1.report_service_pb2.GetTableReportResponse, collections.abc.Awaitable[yandex.cloud.loadtesting.api.v1.report_service_pb2.GetTableReportResponse]]:
         """Returns a report table for the specified test."""
+
+    @abc.abstractmethod
+    def CalculateKpiValues(
+        self,
+        request: yandex.cloud.loadtesting.api.v1.report_service_pb2.CalculateReportKpiValuesRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.loadtesting.api.v1.report_service_pb2.CalculateReportKpiValuesResponse, collections.abc.Awaitable[yandex.cloud.loadtesting.api.v1.report_service_pb2.CalculateReportKpiValuesResponse]]:
+        """Returns a list of KPI values for tests matching the specified filter."""
 
 def add_ReportServiceServicer_to_server(servicer: ReportServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

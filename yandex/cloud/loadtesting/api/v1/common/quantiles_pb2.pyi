@@ -5,10 +5,69 @@ isort:skip_file
 
 import builtins
 import google.protobuf.descriptor
+import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
+import sys
 import typing
 
+if sys.version_info >= (3, 10):
+    import typing as typing_extensions
+else:
+    import typing_extensions
+
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
+
+class _QuantileType:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _QuantileTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_QuantileType.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    QUANTILE_TYPE_UNSPECIFIED: _QuantileType.ValueType  # 0
+    """Unspecified percentile."""
+    QUANTILE_TYPE_50: _QuantileType.ValueType  # 1
+    """50 percentile (median)."""
+    QUANTILE_TYPE_75: _QuantileType.ValueType  # 2
+    """75 percentile."""
+    QUANTILE_TYPE_80: _QuantileType.ValueType  # 3
+    """80 percentile."""
+    QUANTILE_TYPE_85: _QuantileType.ValueType  # 4
+    """85 percentile."""
+    QUANTILE_TYPE_90: _QuantileType.ValueType  # 5
+    """90 percentile."""
+    QUANTILE_TYPE_95: _QuantileType.ValueType  # 6
+    """95 percentile."""
+    QUANTILE_TYPE_98: _QuantileType.ValueType  # 7
+    """98 percentile."""
+    QUANTILE_TYPE_99: _QuantileType.ValueType  # 8
+    """99 percentile."""
+    QUANTILE_TYPE_100: _QuantileType.ValueType  # 9
+    """100 percentile (maximum or minimum)."""
+
+class QuantileType(_QuantileType, metaclass=_QuantileTypeEnumTypeWrapper):
+    """Quantiles (percentiles)."""
+
+QUANTILE_TYPE_UNSPECIFIED: QuantileType.ValueType  # 0
+"""Unspecified percentile."""
+QUANTILE_TYPE_50: QuantileType.ValueType  # 1
+"""50 percentile (median)."""
+QUANTILE_TYPE_75: QuantileType.ValueType  # 2
+"""75 percentile."""
+QUANTILE_TYPE_80: QuantileType.ValueType  # 3
+"""80 percentile."""
+QUANTILE_TYPE_85: QuantileType.ValueType  # 4
+"""85 percentile."""
+QUANTILE_TYPE_90: QuantileType.ValueType  # 5
+"""90 percentile."""
+QUANTILE_TYPE_95: QuantileType.ValueType  # 6
+"""95 percentile."""
+QUANTILE_TYPE_98: QuantileType.ValueType  # 7
+"""98 percentile."""
+QUANTILE_TYPE_99: QuantileType.ValueType  # 8
+"""99 percentile."""
+QUANTILE_TYPE_100: QuantileType.ValueType  # 9
+"""100 percentile (maximum or minimum)."""
+global___QuantileType = QuantileType
 
 @typing.final
 class Quantiles(google.protobuf.message.Message):

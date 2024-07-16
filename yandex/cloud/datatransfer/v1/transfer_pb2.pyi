@@ -473,9 +473,10 @@ global___ReplacePrimaryKeyTransformer = ReplacePrimaryKeyTransformer
 
 @typing.final
 class ToStringTransformer(google.protobuf.message.Message):
-    """Convert column values to strings.
-    The values will be converted depending on the source type.
-    Conversion rules are described in [documentation](/docs/data-transfer/concepts/data-transformation#convert-to-string).
+    """Convert column values to strings
+    The values will be converted depending on the source type
+    Conversion rules are described here:
+    https://cloud.yandex.com/en/docs/data-transfer/concepts/data-transformation#convert-to-string
     """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
@@ -592,7 +593,8 @@ class FilterRowsTransformer(google.protobuf.message.Message):
     """Filtering criterion. This can be comparison operators for numeric, string, and
     Boolean values,
     comparison to NULL, and checking whether a substring is part of a string.
-    For more details see [documentation](/docs/data-transfer/concepts/data-transformation#append-only-sources).
+    Details here:
+    https://yandex.cloud/en-ru/docs/data-transfer/concepts/data-transformation#append-only-sources
     """
     @property
     def tables(self) -> global___TablesFilter:

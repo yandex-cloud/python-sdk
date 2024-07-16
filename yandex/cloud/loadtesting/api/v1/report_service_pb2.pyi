@@ -9,6 +9,8 @@ import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
+import yandex.cloud.loadtesting.api.v1.report.kpi_pb2
+import yandex.cloud.loadtesting.api.v1.report.kpi_value_pb2
 import yandex.cloud.loadtesting.api.v1.report.status_pb2
 import yandex.cloud.loadtesting.api.v1.report.table.report_pb2
 
@@ -76,3 +78,59 @@ class GetTableReportResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["cases", b"cases", "overall", b"overall", "status", b"status"]) -> None: ...
 
 global___GetTableReportResponse = GetTableReportResponse
+
+@typing.final
+class CalculateReportKpiValuesRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    TEST_FILTER_FIELD_NUMBER: builtins.int
+    TEST_CASE_FIELD_NUMBER: builtins.int
+    KPI_FIELD_NUMBER: builtins.int
+    folder_id: builtins.str
+    """ID of the folder containing tests."""
+    test_filter: builtins.str
+    """Test filter selector to calculate KPI values for."""
+    test_case: builtins.str
+    """Test case to calculate KPI values for.
+
+    If not specified, KPI values will be calculated for 'overall' case.
+    """
+    @property
+    def kpi(self) -> yandex.cloud.loadtesting.api.v1.report.kpi_pb2.Kpi:
+        """KPI to be calculated."""
+
+    def __init__(
+        self,
+        *,
+        folder_id: builtins.str = ...,
+        test_filter: builtins.str = ...,
+        test_case: builtins.str = ...,
+        kpi: yandex.cloud.loadtesting.api.v1.report.kpi_pb2.Kpi | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["kpi", b"kpi"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "kpi", b"kpi", "test_case", b"test_case", "test_filter", b"test_filter"]) -> None: ...
+
+global___CalculateReportKpiValuesRequest = CalculateReportKpiValuesRequest
+
+@typing.final
+class CalculateReportKpiValuesResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    VALUES_FIELD_NUMBER: builtins.int
+    folder_id: builtins.str
+    """ID of the folder."""
+    @property
+    def values(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.loadtesting.api.v1.report.kpi_value_pb2.KpiValue]:
+        """Actual KPI values."""
+
+    def __init__(
+        self,
+        *,
+        folder_id: builtins.str = ...,
+        values: collections.abc.Iterable[yandex.cloud.loadtesting.api.v1.report.kpi_value_pb2.KpiValue] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "values", b"values"]) -> None: ...
+
+global___CalculateReportKpiValuesResponse = CalculateReportKpiValuesResponse

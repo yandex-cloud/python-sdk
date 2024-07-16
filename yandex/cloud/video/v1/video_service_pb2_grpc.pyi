@@ -65,6 +65,12 @@ class VideoServiceStub:
     ]
     """Returns url to the player."""
 
+    GetManifests: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.video.v1.video_service_pb2.GetVideoManifestsRequest,
+        yandex.cloud.video.v1.video_service_pb2.GetVideoManifestsResponse,
+    ]
+    """Returns manifest urls."""
+
 class VideoServiceAsyncStub:
     """Video management service."""
 
@@ -109,6 +115,12 @@ class VideoServiceAsyncStub:
         yandex.cloud.video.v1.video_service_pb2.GetVideoPlayerURLResponse,
     ]
     """Returns url to the player."""
+
+    GetManifests: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.video.v1.video_service_pb2.GetVideoManifestsRequest,
+        yandex.cloud.video.v1.video_service_pb2.GetVideoManifestsResponse,
+    ]
+    """Returns manifest urls."""
 
 class VideoServiceServicer(metaclass=abc.ABCMeta):
     """Video management service."""
@@ -168,5 +180,13 @@ class VideoServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.video_service_pb2.GetVideoPlayerURLResponse, collections.abc.Awaitable[yandex.cloud.video.v1.video_service_pb2.GetVideoPlayerURLResponse]]:
         """Returns url to the player."""
+
+    @abc.abstractmethod
+    def GetManifests(
+        self,
+        request: yandex.cloud.video.v1.video_service_pb2.GetVideoManifestsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.video.v1.video_service_pb2.GetVideoManifestsResponse, collections.abc.Awaitable[yandex.cloud.video.v1.video_service_pb2.GetVideoManifestsResponse]]:
+        """Returns manifest urls."""
 
 def add_VideoServiceServicer_to_server(servicer: VideoServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

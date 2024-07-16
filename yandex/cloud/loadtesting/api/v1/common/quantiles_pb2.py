@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n6yandex/cloud/loadtesting/api/v1/common/quantiles.proto\x12&yandex.cloud.loadtesting.api.v1.common\"\x81\x01\n\tQuantiles\x12\x0b\n\x03q50\x18\x01 \x01(\x01\x12\x0b\n\x03q75\x18\x02 \x01(\x01\x12\x0b\n\x03q80\x18\x03 \x01(\x01\x12\x0b\n\x03q85\x18\x04 \x01(\x01\x12\x0b\n\x03q90\x18\x05 \x01(\x01\x12\x0b\n\x03q95\x18\x06 \x01(\x01\x12\x0b\n\x03q98\x18\x07 \x01(\x01\x12\x0b\n\x03q99\x18\x08 \x01(\x01\x12\x0c\n\x04q100\x18\t \x01(\x01\x42\x7f\n*yandex.cloud.api.loadtesting.api.v1.commonZQgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadtesting/api/v1/common;commonb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n6yandex/cloud/loadtesting/api/v1/common/quantiles.proto\x12&yandex.cloud.loadtesting.api.v1.common\"\x81\x01\n\tQuantiles\x12\x0b\n\x03q50\x18\x01 \x01(\x01\x12\x0b\n\x03q75\x18\x02 \x01(\x01\x12\x0b\n\x03q80\x18\x03 \x01(\x01\x12\x0b\n\x03q85\x18\x04 \x01(\x01\x12\x0b\n\x03q90\x18\x05 \x01(\x01\x12\x0b\n\x03q95\x18\x06 \x01(\x01\x12\x0b\n\x03q98\x18\x07 \x01(\x01\x12\x0b\n\x03q99\x18\x08 \x01(\x01\x12\x0c\n\x04q100\x18\t \x01(\x01*\xf4\x01\n\x0cQuantileType\x12\x1d\n\x19QUANTILE_TYPE_UNSPECIFIED\x10\x00\x12\x14\n\x10QUANTILE_TYPE_50\x10\x01\x12\x14\n\x10QUANTILE_TYPE_75\x10\x02\x12\x14\n\x10QUANTILE_TYPE_80\x10\x03\x12\x14\n\x10QUANTILE_TYPE_85\x10\x04\x12\x14\n\x10QUANTILE_TYPE_90\x10\x05\x12\x14\n\x10QUANTILE_TYPE_95\x10\x06\x12\x14\n\x10QUANTILE_TYPE_98\x10\x07\x12\x14\n\x10QUANTILE_TYPE_99\x10\x08\x12\x15\n\x11QUANTILE_TYPE_100\x10\tB\x7f\n*yandex.cloud.api.loadtesting.api.v1.commonZQgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadtesting/api/v1/common;commonb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -21,6 +21,8 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.loadtesting.ap
 if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n*yandex.cloud.api.loadtesting.api.v1.commonZQgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadtesting/api/v1/common;common'
+  _globals['_QUANTILETYPE']._serialized_start=231
+  _globals['_QUANTILETYPE']._serialized_end=475
   _globals['_QUANTILES']._serialized_start=99
   _globals['_QUANTILES']._serialized_end=228
 # @@protoc_insertion_point(module_scope)
