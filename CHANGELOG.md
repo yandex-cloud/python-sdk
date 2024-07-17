@@ -2,6 +2,15 @@
 
 
 
+## v0.302.0 (2024-07-17)
+
+### Feature
+
+* Fix dependencies conflict on airflow tests with gcloud ([`bbaa266`](https://github.com/yandex-cloud/python-sdk/commit/bbaa266239d890a37fe4b3512b358bf961cd8f47))
+
+* Fix dependencies conflict on airflow tests with gcloud ([`7b830d5`](https://github.com/yandex-cloud/python-sdk/commit/7b830d5447c9cabb463ca96b64b9f484072f22a2))
+
+
 ## v0.301.0 (2024-07-16)
 
 ### Feature
