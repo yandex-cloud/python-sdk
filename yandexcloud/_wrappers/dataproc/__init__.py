@@ -3,7 +3,7 @@
 # mypy: ignore-errors
 import logging
 import random
-from typing import List, NamedTuple
+from typing import NamedTuple, Iterable
 
 from google.protobuf.field_mask_pb2 import FieldMask
 from six import string_types
@@ -22,7 +22,7 @@ import yandex.cloud.dataproc.v1.subcluster_service_pb2_grpc as subcluster_servic
 
 class InitializationAction(NamedTuple):
     uri: str  # Uri of the executable file
-    args: List[str]  # Arguments to the initialization action
+    args: Iterable[str]  # Arguments to the initialization action
     timeout: int  # Execution timeout
 
     def to_grpc(self):
@@ -183,7 +183,7 @@ class Dataproc:
                                    Docs: https://cloud.yandex.com/en-ru/docs/data-proc/concepts/network#security-groups
         :type security_group_ids: List[str]
         :param initialization_actions: Set of init-actions to run when cluster starts
-        :type initialization_actions: List[InitializationAction]
+        :type initialization_actions: Iterable[InitializationAction]
         :param labels: Cluster labels as key:value pairs. No more than 64 per resource.
         :type labels: Dict[str, str]
 
