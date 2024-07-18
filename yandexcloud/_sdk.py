@@ -11,11 +11,15 @@ from yandexcloud._wrappers import Wrappers
 if TYPE_CHECKING:
     import logging
 
-    import google.protobuf.message
-
     from yandex.cloud.operation.operation_pb2 import Operation
     from yandexcloud._operation_waiter import OperationWaiter
-    from yandexcloud.operations import OperationError, OperationResult
+    from yandexcloud.operations import (
+        MetaType,
+        OperationError,
+        OperationResult,
+        RequestType,
+        ResponseType,
+    )
 
 
 class SDK:
@@ -96,8 +100,8 @@ class SDK:
     def wait_operation_and_get_result(
         self,
         operation: "Operation",
-        response_type: Optional[Type["google.protobuf.message.Message"]] = None,
-        meta_type: Optional[Type["google.protobuf.message.Message"]] = None,
+        response_type: Optional[Type["ResponseType"]] = None,
+        meta_type: Optional[Type["MetaType"]] = None,
         timeout: Optional[float] = None,
         logger: Optional["logging.Logger"] = None,
     ) -> Union["OperationResult", "OperationError"]:
@@ -105,11 +109,11 @@ class SDK:
 
     def create_operation_and_get_result(
         self,
-        request: Type["google.protobuf.message.Message"],
+        request: Type["RequestType"],
         service: Any,
         method_name: str,
-        response_type: Optional[Type["google.protobuf.message.Message"]] = None,
-        meta_type: Optional[Type["google.protobuf.message.Message"]] = None,
+        response_type: Optional[Type["ResponseType"]] = None,
+        meta_type: Optional[Type["MetaType"]] = None,
         timeout: Optional[float] = None,
         logger: Optional["logging.Logger"] = None,
     ) -> Union["OperationResult", "OperationError"]:

@@ -1,19 +1,22 @@
-from typing import TYPE_CHECKING, Optional
+from typing import TYPE_CHECKING, Optional, TypeVar
 
 if TYPE_CHECKING:
     import google.protobuf.message
 
     from yandex.cloud.operation.operation_pb2 import Operation
 
-    # from yandex.cloud.api.operation_pb2 import Operation
+
+RequestType = TypeVar("RequestType", bound="google.protobuf.message.Message")  # pylint: disable=C0103
+ResponseType = TypeVar("ResponseType", bound="google.protobuf.message.Message")  # pylint: disable=C0103
+MetaType = TypeVar("MetaType", bound="google.protobuf.message.Message")  # pylint: disable=C0103
 
 
 class OperationResult:
     def __init__(
         self,
         operation: "Operation",
-        response: Optional["google.protobuf.message.Message"] = None,
-        meta: Optional["google.protobuf.message.Message"] = None,
+        response: Optional["ResponseType"] = None,
+        meta: Optional["MetaType"] = None,
     ):
         self.operation = operation
         self.response = response
