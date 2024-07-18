@@ -10,11 +10,14 @@ from yandex.cloud.operation.operation_service_pb2 import GetOperationRequest
 from yandex.cloud.operation.operation_service_pb2_grpc import OperationServiceStub
 from yandexcloud._backoff import backoff_exponential_jittered_min_interval
 from yandexcloud._retry_interceptor import RetryInterceptor
-from yandexcloud.operations import OperationError, OperationResult
+from yandexcloud.operations import (
+    MetaType,
+    OperationError,
+    OperationResult,
+    ResponseType,
+)
 
 if TYPE_CHECKING:
-    import google.protobuf.message
-
     from yandex.cloud.operation.operation_pb2 import Operation
     from yandexcloud._sdk import SDK
 
@@ -49,8 +52,8 @@ def wait_for_operation(sdk: "SDK", operation_id: str, timeout: Optional[float]) 
 def get_operation_result(
     sdk: "SDK",
     operation: "Operation",
-    response_type: Optional[Type["google.protobuf.message.Message"]] = None,
-    meta_type: Optional[Type["google.protobuf.message.Message"]] = None,
+    response_type: Optional[Type["ResponseType"]] = None,
+    meta_type: Optional[Type["MetaType"]] = None,
     timeout: Optional[float] = None,
     logger: Optional[logging.Logger] = None,
 ) -> Union["OperationResult", "OperationError"]:
