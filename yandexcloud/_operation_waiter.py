@@ -56,11 +56,11 @@ def get_operation_result(
     meta_type: Optional[Type["MetaType"]] = None,
     timeout: Optional[float] = None,
     logger: Optional[logging.Logger] = None,
-) -> Union["OperationResult", "OperationError"]:
+) -> Union["OperationResult[ResponseType, MetaType]", "OperationError"]:
     if not logger:
         logger = logging.getLogger()
         logger.addHandler(logging.NullHandler())
-    operation_result = OperationResult(operation)
+    operation_result: OperationResult[ResponseType, MetaType] = OperationResult(operation)
     created_at = datetime.fromtimestamp(operation.created_at.seconds)
     message = (
         "Running Yandex.Cloud operation. ID: {id}. "
