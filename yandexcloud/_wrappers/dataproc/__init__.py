@@ -3,7 +3,7 @@
 # mypy: ignore-errors
 import logging
 import random
-from typing import NamedTuple, Iterable
+from typing import Iterable, NamedTuple
 
 from google.protobuf.field_mask_pb2 import FieldMask
 from six import string_types
