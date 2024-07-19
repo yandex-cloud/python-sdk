@@ -104,7 +104,7 @@ class SDK:
         meta_type: Optional[Type["MetaType"]] = None,
         timeout: Optional[float] = None,
         logger: Optional["logging.Logger"] = None,
-    ) -> Union["OperationResult", "OperationError"]:
+    ) -> Union["OperationResult[ResponseType, MetaType]", "OperationError"]:
         return _operation_waiter.get_operation_result(self, operation, response_type, meta_type, timeout, logger)
 
     def create_operation_and_get_result(

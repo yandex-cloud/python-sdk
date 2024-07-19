@@ -1,4 +1,4 @@
-from typing import TYPE_CHECKING, Optional, TypeVar
+from typing import TYPE_CHECKING, Generic, Optional, TypeVar
 
 if TYPE_CHECKING:
     import google.protobuf.message
@@ -11,7 +11,7 @@ ResponseType = TypeVar("ResponseType", bound="google.protobuf.message.Message") 
 MetaType = TypeVar("MetaType", bound="google.protobuf.message.Message")  # pylint: disable=C0103
 
 
-class OperationResult:
+class OperationResult(Generic[ResponseType, MetaType]):
     def __init__(
         self,
         operation: "Operation",
@@ -24,7 +24,7 @@ class OperationResult:
 
 
 class OperationError(RuntimeError):
-    def __init__(self, message: str, operation_result: OperationResult):
+    def __init__(self, message: str, operation_result: OperationResult[ResponseType, MetaType]):
         super(OperationError, self).__init__(message)  # pylint: disable=super-with-arguments
         self.message = message
         self.operation_result = operation_result
