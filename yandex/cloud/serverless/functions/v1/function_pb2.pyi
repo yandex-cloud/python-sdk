@@ -77,7 +77,6 @@ class Function(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
-    LOG_GROUP_ID_FIELD_NUMBER: builtins.int
     HTTP_INVOKE_URL_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
     id: builtins.str
@@ -88,8 +87,6 @@ class Function(google.protobuf.message.Message):
     """Name of the function. The name is unique within the folder."""
     description: builtins.str
     """Description of the function."""
-    log_group_id: builtins.str
-    """ID of the log group for the function."""
     http_invoke_url: builtins.str
     """URL that needs to be requested to invoke the function."""
     status: global___Function.Status.ValueType
@@ -111,12 +108,11 @@ class Function(google.protobuf.message.Message):
         name: builtins.str = ...,
         description: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
-        log_group_id: builtins.str = ...,
         http_invoke_url: builtins.str = ...,
         status: global___Function.Status.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "folder_id", b"folder_id", "http_invoke_url", b"http_invoke_url", "id", b"id", "labels", b"labels", "log_group_id", b"log_group_id", "name", b"name", "status", b"status"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "folder_id", b"folder_id", "http_invoke_url", b"http_invoke_url", "id", b"id", "labels", b"labels", "name", b"name", "status", b"status"]) -> None: ...
 
 global___Function = Function
 
@@ -189,7 +185,6 @@ class Version(google.protobuf.message.Message):
     IMAGE_SIZE_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
     TAGS_FIELD_NUMBER: builtins.int
-    LOG_GROUP_ID_FIELD_NUMBER: builtins.int
     ENVIRONMENT_FIELD_NUMBER: builtins.int
     CONNECTIVITY_FIELD_NUMBER: builtins.int
     NAMED_SERVICE_ACCOUNTS_FIELD_NUMBER: builtins.int
@@ -221,8 +216,6 @@ class Version(google.protobuf.message.Message):
     """Final size of the deployment package after unpacking."""
     status: global___Version.Status.ValueType
     """Status of the version."""
-    log_group_id: builtins.str
-    """ID of the log group for the version."""
     tmpfs_size: builtins.int
     """Optional size of in-memory mounted /tmp directory in bytes."""
     concurrency: builtins.int
@@ -289,7 +282,6 @@ class Version(google.protobuf.message.Message):
         image_size: builtins.int = ...,
         status: global___Version.Status.ValueType = ...,
         tags: collections.abc.Iterable[builtins.str] | None = ...,
-        log_group_id: builtins.str = ...,
         environment: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         connectivity: global___Connectivity | None = ...,
         named_service_accounts: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
@@ -301,7 +293,7 @@ class Version(google.protobuf.message.Message):
         concurrency: builtins.int = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["async_invocation_config", b"async_invocation_config", "connectivity", b"connectivity", "created_at", b"created_at", "execution_timeout", b"execution_timeout", "log_options", b"log_options", "resources", b"resources"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["async_invocation_config", b"async_invocation_config", "concurrency", b"concurrency", "connectivity", b"connectivity", "created_at", b"created_at", "description", b"description", "entrypoint", b"entrypoint", "environment", b"environment", "execution_timeout", b"execution_timeout", "function_id", b"function_id", "id", b"id", "image_size", b"image_size", "log_group_id", b"log_group_id", "log_options", b"log_options", "named_service_accounts", b"named_service_accounts", "resources", b"resources", "runtime", b"runtime", "secrets", b"secrets", "service_account_id", b"service_account_id", "status", b"status", "storage_mounts", b"storage_mounts", "tags", b"tags", "tmpfs_size", b"tmpfs_size"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["async_invocation_config", b"async_invocation_config", "concurrency", b"concurrency", "connectivity", b"connectivity", "created_at", b"created_at", "description", b"description", "entrypoint", b"entrypoint", "environment", b"environment", "execution_timeout", b"execution_timeout", "function_id", b"function_id", "id", b"id", "image_size", b"image_size", "log_options", b"log_options", "named_service_accounts", b"named_service_accounts", "resources", b"resources", "runtime", b"runtime", "secrets", b"secrets", "service_account_id", b"service_account_id", "status", b"status", "storage_mounts", b"storage_mounts", "tags", b"tags", "tmpfs_size", b"tmpfs_size"]) -> None: ...
 
 global___Version = Version
 

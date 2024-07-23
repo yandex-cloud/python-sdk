@@ -6,6 +6,7 @@ isort:skip_file
 import builtins
 import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.duration_pb2
 import google.protobuf.internal.containers
 import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
@@ -79,6 +80,7 @@ class JobParameters(google.protobuf.message.Message):
     EXTENDED_WORKING_STORAGE_FIELD_NUMBER: builtins.int
     ARGUMENTS_FIELD_NUMBER: builtins.int
     OUTPUT_DATASETS_FIELD_NUMBER: builtins.int
+    GRACEFUL_SHUTDOWN_PARAMETERS_FIELD_NUMBER: builtins.int
     cmd: builtins.str
     """Job run command."""
     attach_project_disk: builtins.bool
@@ -119,6 +121,8 @@ class JobParameters(google.protobuf.message.Message):
     def output_datasets(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___OutputDatasetDesc]:
         """List of DataSets descriptions to create"""
 
+    @property
+    def graceful_shutdown_parameters(self) -> global___GracefulShutdownParameters: ...
     def __init__(
         self,
         *,
@@ -133,9 +137,10 @@ class JobParameters(google.protobuf.message.Message):
         extended_working_storage: global___ExtendedWorkingStorage | None = ...,
         arguments: collections.abc.Iterable[global___Argument] | None = ...,
         output_datasets: collections.abc.Iterable[global___OutputDatasetDesc] | None = ...,
+        graceful_shutdown_parameters: global___GracefulShutdownParameters | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["env", b"env", "extended_working_storage", b"extended_working_storage"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["arguments", b"arguments", "attach_project_disk", b"attach_project_disk", "cloud_instance_types", b"cloud_instance_types", "cmd", b"cmd", "dataset_ids", b"dataset_ids", "env", b"env", "extended_working_storage", b"extended_working_storage", "input_files", b"input_files", "output_datasets", b"output_datasets", "output_files", b"output_files", "s3_mount_ids", b"s3_mount_ids"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["env", b"env", "extended_working_storage", b"extended_working_storage", "graceful_shutdown_parameters", b"graceful_shutdown_parameters"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["arguments", b"arguments", "attach_project_disk", b"attach_project_disk", "cloud_instance_types", b"cloud_instance_types", "cmd", b"cmd", "dataset_ids", b"dataset_ids", "env", b"env", "extended_working_storage", b"extended_working_storage", "graceful_shutdown_parameters", b"graceful_shutdown_parameters", "input_files", b"input_files", "output_datasets", b"output_datasets", "output_files", b"output_files", "s3_mount_ids", b"s3_mount_ids"]) -> None: ...
 
 global___JobParameters = JobParameters
 
@@ -559,3 +564,24 @@ class JobResult(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["return_code", b"return_code"]) -> None: ...
 
 global___JobResult = JobResult
+
+@typing.final
+class GracefulShutdownParameters(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TIMEOUT_FIELD_NUMBER: builtins.int
+    SIGNAL_FIELD_NUMBER: builtins.int
+    signal: builtins.int
+    """default 15 (SIGTERM)"""
+    @property
+    def timeout(self) -> google.protobuf.duration_pb2.Duration: ...
+    def __init__(
+        self,
+        *,
+        timeout: google.protobuf.duration_pb2.Duration | None = ...,
+        signal: builtins.int = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["timeout", b"timeout"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["signal", b"signal", "timeout", b"timeout"]) -> None: ...
+
+global___GracefulShutdownParameters = GracefulShutdownParameters

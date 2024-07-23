@@ -128,6 +128,7 @@ class CreateRegistryRequest(google.protobuf.message.Message):
     FOLDER_ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
+    SECURE_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a registry in.
 
@@ -138,6 +139,8 @@ class CreateRegistryRequest(google.protobuf.message.Message):
 
     There may be only one registry per folder.
     """
+    secure: builtins.bool
+    """If true, registry will be created with pre-setup scanning policy (on push and on schedule every 7 days)"""
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Resource labels as `key:value` pairs."""
@@ -148,8 +151,9 @@ class CreateRegistryRequest(google.protobuf.message.Message):
         folder_id: builtins.str = ...,
         name: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        secure: builtins.bool = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "labels", b"labels", "name", b"name"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "labels", b"labels", "name", b"name", "secure", b"secure"]) -> None: ...
 
 global___CreateRegistryRequest = CreateRegistryRequest
 
