@@ -2,6 +2,13 @@
 
 
 
+## v0.308.0 (2024-07-30)
+
+### Feature
+
+* Fix typing for airflow provider ([`be3d103`](https://github.com/yandex-cloud/python-sdk/commit/be3d1038b62a0e16e8d6e543f864443ddc852b4d))
+
+
 ## v0.307.0 (2024-07-30)
 
 ### Feature
