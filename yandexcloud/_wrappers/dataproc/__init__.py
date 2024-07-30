@@ -178,12 +178,12 @@ class Dataproc:
         :type enable_ui_proxy: Bool
         :param host_group_ids: Dedicated host groups to place VMs of cluster on.
                                Docs: https://cloud.yandex.com/en-ru/docs/compute/concepts/dedicated-host
-        :type host_group_ids: List[str]
+        :type host_group_ids: Iterable[str] | None
         :param security_group_ids: User security groups
                                    Docs: https://cloud.yandex.com/en-ru/docs/data-proc/concepts/network#security-groups
-        :type security_group_ids: List[str]
+        :type security_group_ids: Iterable[str] | None
         :param initialization_actions: Set of init-actions to run when cluster starts
-        :type initialization_actions: Iterable[InitializationAction]
+        :type initialization_actions: Iterable[InitializationAction] | None
         :param labels: Cluster labels as key:value pairs. No more than 64 per resource.
         :type labels: Dict[str, str]
 
@@ -291,7 +291,9 @@ class Dataproc:
                     ssh_public_keys=ssh_public_keys,
                     properties=properties,
                     initialization_actions=(
-                        initialization_actions and [action.to_grpc() for action in initialization_actions]
+                        (initialization_actions and [action.to_grpc() for action in initialization_actions])
+                        if initialization_actions
+                        else None
                     ),
                 ),
                 subclusters_spec=subclusters,
