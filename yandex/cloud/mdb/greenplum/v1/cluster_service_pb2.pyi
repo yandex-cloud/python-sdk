@@ -599,6 +599,50 @@ class StopClusterMetadata(google.protobuf.message.Message):
 global___StopClusterMetadata = StopClusterMetadata
 
 @typing.final
+class MoveClusterRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    DESTINATION_FOLDER_ID_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the Greenplum® cluster to move."""
+    destination_folder_id: builtins.str
+    """ID of the destination folder."""
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        destination_folder_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "destination_folder_id", b"destination_folder_id"]) -> None: ...
+
+global___MoveClusterRequest = MoveClusterRequest
+
+@typing.final
+class MoveClusterMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    SOURCE_FOLDER_ID_FIELD_NUMBER: builtins.int
+    DESTINATION_FOLDER_ID_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the Greenplum® cluster being moved."""
+    source_folder_id: builtins.str
+    """ID of the source folder."""
+    destination_folder_id: builtins.str
+    """ID of the destnation folder."""
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        source_folder_id: builtins.str = ...,
+        destination_folder_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "destination_folder_id", b"destination_folder_id", "source_folder_id", b"source_folder_id"]) -> None: ...
+
+global___MoveClusterMetadata = MoveClusterMetadata
+
+@typing.final
 class ListClusterOperationsRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

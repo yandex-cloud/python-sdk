@@ -96,3 +96,27 @@ class Service(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["resource", b"resource", "service_id", b"service_id", "status", b"status", "updated_at", b"updated_at"]) -> None: ...
 
 global___Service = Service
+
+@typing.final
+class ServiceAgent(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
+    SERVICE_ID_FIELD_NUMBER: builtins.int
+    MICROSERVICE_ID_FIELD_NUMBER: builtins.int
+    service_account_id: builtins.str
+    """ID of the agent service account."""
+    service_id: builtins.str
+    """ID of the service."""
+    microservice_id: builtins.str
+    """ID of the microservice."""
+    def __init__(
+        self,
+        *,
+        service_account_id: builtins.str = ...,
+        service_id: builtins.str = ...,
+        microservice_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["microservice_id", b"microservice_id", "service_account_id", b"service_account_id", "service_id", b"service_id"]) -> None: ...
+
+global___ServiceAgent = ServiceAgent

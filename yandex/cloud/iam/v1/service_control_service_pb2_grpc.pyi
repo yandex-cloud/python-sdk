@@ -62,6 +62,12 @@ class ServiceControlServiceStub:
     ]
     """Disable a service in the specified resource container."""
 
+    ResolveAgent: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.iam.v1.service_control_service_pb2.ResolveServiceAgentRequest,
+        yandex.cloud.iam.v1.service_control_pb2.ServiceAgent,
+    ]
+    """Resolve agent service account for the service in the specified resource container."""
+
 class ServiceControlServiceAsyncStub:
     """A set of methods for managing Service resources."""
 
@@ -103,6 +109,12 @@ class ServiceControlServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Disable a service in the specified resource container."""
+
+    ResolveAgent: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.iam.v1.service_control_service_pb2.ResolveServiceAgentRequest,
+        yandex.cloud.iam.v1.service_control_pb2.ServiceAgent,
+    ]
+    """Resolve agent service account for the service in the specified resource container."""
 
 class ServiceControlServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing Service resources."""
@@ -157,5 +169,13 @@ class ServiceControlServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Disable a service in the specified resource container."""
+
+    @abc.abstractmethod
+    def ResolveAgent(
+        self,
+        request: yandex.cloud.iam.v1.service_control_service_pb2.ResolveServiceAgentRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.iam.v1.service_control_pb2.ServiceAgent, collections.abc.Awaitable[yandex.cloud.iam.v1.service_control_pb2.ServiceAgent]]:
+        """Resolve agent service account for the service in the specified resource container."""
 
 def add_ServiceControlServiceServicer_to_server(servicer: ServiceControlServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

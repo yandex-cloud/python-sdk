@@ -23,6 +23,7 @@ import yandex.cloud.mdb.mongodb.v1.config.mongodb5_0_enterprise_pb2
 import yandex.cloud.mdb.mongodb.v1.config.mongodb5_0_pb2
 import yandex.cloud.mdb.mongodb.v1.config.mongodb6_0_enterprise_pb2
 import yandex.cloud.mdb.mongodb.v1.config.mongodb6_0_pb2
+import yandex.cloud.mdb.mongodb.v1.config.mongodb_pb2
 import yandex.cloud.mdb.mongodb.v1.maintenance_pb2
 
 if sys.version_info >= (3, 10):
@@ -287,8 +288,9 @@ class ClusterConfig(google.protobuf.message.Message):
     BACKUP_RETAIN_PERIOD_DAYS_FIELD_NUMBER: builtins.int
     PERFORMANCE_DIAGNOSTICS_FIELD_NUMBER: builtins.int
     ACCESS_FIELD_NUMBER: builtins.int
+    MONGODB_CONFIG_FIELD_NUMBER: builtins.int
     version: builtins.str
-    """Version of MongoDB server software. Possible values: `3.6`, `4.0`, `4.2`, `4.4`, `4.4-enterprise`, `5.0`, `5.0-enterprise`, `6.0`, `6.0-enterprise`."""
+    """Version of MongoDB server software. Possible values: `3.6`, `4.0`, `4.2`, `4.4`, `4.4-enterprise`, `5.0`, `5.0-enterprise`, `6.0`, `6.0-enterprise`, `7.0`, `7.0-enterprise`."""
     feature_compatibility_version: builtins.str
     """MongoDB feature compatibility version. See usage details in [MongoDB documentation](https://docs.mongodb.com/manual/reference/command/setFeatureCompatibilityVersion/).
 
@@ -352,6 +354,10 @@ class ClusterConfig(google.protobuf.message.Message):
     def access(self) -> global___Access:
         """Access policy to DB"""
 
+    @property
+    def mongodb_config(self) -> global___Mongodb:
+        """Configuration and resource allocation for a MongoDB Enterprise cluster."""
+
     def __init__(
         self,
         *,
@@ -370,9 +376,10 @@ class ClusterConfig(google.protobuf.message.Message):
         backup_retain_period_days: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         performance_diagnostics: global___PerformanceDiagnosticsConfig | None = ...,
         access: global___Access | None = ...,
+        mongodb_config: global___Mongodb | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "mongodb", b"mongodb", "mongodb_3_6", b"mongodb_3_6", "mongodb_4_0", b"mongodb_4_0", "mongodb_4_2", b"mongodb_4_2", "mongodb_4_4", b"mongodb_4_4", "mongodb_4_4_enterprise", b"mongodb_4_4_enterprise", "mongodb_5_0", b"mongodb_5_0", "mongodb_5_0_enterprise", b"mongodb_5_0_enterprise", "mongodb_6_0", b"mongodb_6_0", "mongodb_6_0_enterprise", b"mongodb_6_0_enterprise", "performance_diagnostics", b"performance_diagnostics"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "feature_compatibility_version", b"feature_compatibility_version", "mongodb", b"mongodb", "mongodb_3_6", b"mongodb_3_6", "mongodb_4_0", b"mongodb_4_0", "mongodb_4_2", b"mongodb_4_2", "mongodb_4_4", b"mongodb_4_4", "mongodb_4_4_enterprise", b"mongodb_4_4_enterprise", "mongodb_5_0", b"mongodb_5_0", "mongodb_5_0_enterprise", b"mongodb_5_0_enterprise", "mongodb_6_0", b"mongodb_6_0", "mongodb_6_0_enterprise", b"mongodb_6_0_enterprise", "performance_diagnostics", b"performance_diagnostics", "version", b"version"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "mongodb", b"mongodb", "mongodb_3_6", b"mongodb_3_6", "mongodb_4_0", b"mongodb_4_0", "mongodb_4_2", b"mongodb_4_2", "mongodb_4_4", b"mongodb_4_4", "mongodb_4_4_enterprise", b"mongodb_4_4_enterprise", "mongodb_5_0", b"mongodb_5_0", "mongodb_5_0_enterprise", b"mongodb_5_0_enterprise", "mongodb_6_0", b"mongodb_6_0", "mongodb_6_0_enterprise", b"mongodb_6_0_enterprise", "mongodb_config", b"mongodb_config", "performance_diagnostics", b"performance_diagnostics"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "feature_compatibility_version", b"feature_compatibility_version", "mongodb", b"mongodb", "mongodb_3_6", b"mongodb_3_6", "mongodb_4_0", b"mongodb_4_0", "mongodb_4_2", b"mongodb_4_2", "mongodb_4_4", b"mongodb_4_4", "mongodb_4_4_enterprise", b"mongodb_4_4_enterprise", "mongodb_5_0", b"mongodb_5_0", "mongodb_5_0_enterprise", b"mongodb_5_0_enterprise", "mongodb_6_0", b"mongodb_6_0", "mongodb_6_0_enterprise", b"mongodb_6_0_enterprise", "mongodb_config", b"mongodb_config", "performance_diagnostics", b"performance_diagnostics", "version", b"version"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["mongodb", b"mongodb"]) -> typing.Literal["mongodb_3_6", "mongodb_4_0", "mongodb_4_2", "mongodb_4_4", "mongodb_5_0", "mongodb_6_0", "mongodb_4_4_enterprise", "mongodb_5_0_enterprise", "mongodb_6_0_enterprise"] | None: ...
 
 global___ClusterConfig = ClusterConfig
@@ -1767,6 +1774,161 @@ class Mongodb6_0_enterprise(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["mongocfg", b"mongocfg", "mongod", b"mongod", "mongoinfra", b"mongoinfra", "mongos", b"mongos"]) -> None: ...
 
 global___Mongodb6_0_enterprise = Mongodb6_0_enterprise
+
+@typing.final
+class Mongodb(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class Mongod(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        CONFIG_FIELD_NUMBER: builtins.int
+        RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
+        @property
+        def config(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb_pb2.MongodConfigSet:
+            """Configuration for mongod hosts."""
+
+        @property
+        def resources(self) -> global___Resources:
+            """Resources allocated to mongod hosts."""
+
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
+        def __init__(
+            self,
+            *,
+            config: yandex.cloud.mdb.mongodb.v1.config.mongodb_pb2.MongodConfigSet | None = ...,
+            resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
+
+    @typing.final
+    class MongoCfg(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        CONFIG_FIELD_NUMBER: builtins.int
+        RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
+        @property
+        def config(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb_pb2.MongoCfgConfigSet:
+            """Configuration for mongocfg hosts."""
+
+        @property
+        def resources(self) -> global___Resources:
+            """Resources allocated to mongocfg hosts."""
+
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
+        def __init__(
+            self,
+            *,
+            config: yandex.cloud.mdb.mongodb.v1.config.mongodb_pb2.MongoCfgConfigSet | None = ...,
+            resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
+
+    @typing.final
+    class Mongos(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        CONFIG_FIELD_NUMBER: builtins.int
+        RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
+        @property
+        def config(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb_pb2.MongosConfigSet:
+            """Configuration for mongos hosts."""
+
+        @property
+        def resources(self) -> global___Resources:
+            """Resources allocated to mongos hosts."""
+
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
+        def __init__(
+            self,
+            *,
+            config: yandex.cloud.mdb.mongodb.v1.config.mongodb_pb2.MongosConfigSet | None = ...,
+            resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
+
+    @typing.final
+    class MongoInfra(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        CONFIG_MONGOS_FIELD_NUMBER: builtins.int
+        CONFIG_MONGOCFG_FIELD_NUMBER: builtins.int
+        RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
+        @property
+        def config_mongos(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb_pb2.MongosConfigSet: ...
+        @property
+        def config_mongocfg(self) -> yandex.cloud.mdb.mongodb.v1.config.mongodb_pb2.MongoCfgConfigSet: ...
+        @property
+        def resources(self) -> global___Resources:
+            """Resources allocated to mongoinfra (mongos+mongocfg) hosts."""
+
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
+        def __init__(
+            self,
+            *,
+            config_mongos: yandex.cloud.mdb.mongodb.v1.config.mongodb_pb2.MongosConfigSet | None = ...,
+            config_mongocfg: yandex.cloud.mdb.mongodb.v1.config.mongodb_pb2.MongoCfgConfigSet | None = ...,
+            resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["config_mongocfg", b"config_mongocfg", "config_mongos", b"config_mongos", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config_mongocfg", b"config_mongocfg", "config_mongos", b"config_mongos", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
+
+    MONGOD_FIELD_NUMBER: builtins.int
+    MONGOCFG_FIELD_NUMBER: builtins.int
+    MONGOS_FIELD_NUMBER: builtins.int
+    MONGOINFRA_FIELD_NUMBER: builtins.int
+    @property
+    def mongod(self) -> global___Mongodb.Mongod:
+        """Configuration and resource allocation for mongod in a MongoDB cluster."""
+
+    @property
+    def mongocfg(self) -> global___Mongodb.MongoCfg:
+        """Configuration and resource allocation for mongocfg in a MongoDB cluster."""
+
+    @property
+    def mongos(self) -> global___Mongodb.Mongos:
+        """Configuration and resource allocation for mongos in a MongoDB cluster."""
+
+    @property
+    def mongoinfra(self) -> global___Mongodb.MongoInfra:
+        """Configuration and resource allocation for mongoinfra (mongos+mongocfg) in a MongoDB cluster."""
+
+    def __init__(
+        self,
+        *,
+        mongod: global___Mongodb.Mongod | None = ...,
+        mongocfg: global___Mongodb.MongoCfg | None = ...,
+        mongos: global___Mongodb.Mongos | None = ...,
+        mongoinfra: global___Mongodb.MongoInfra | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["mongocfg", b"mongocfg", "mongod", b"mongod", "mongoinfra", b"mongoinfra", "mongos", b"mongos"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["mongocfg", b"mongocfg", "mongod", b"mongod", "mongoinfra", b"mongoinfra", "mongos", b"mongos"]) -> None: ...
+
+global___Mongodb = Mongodb
 
 @typing.final
 class Shard(google.protobuf.message.Message):

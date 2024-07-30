@@ -308,3 +308,30 @@ class DisableServiceMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["resource", b"resource", "service_id", b"service_id"]) -> None: ...
 
 global___DisableServiceMetadata = DisableServiceMetadata
+
+@typing.final
+class ResolveServiceAgentRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SERVICE_ID_FIELD_NUMBER: builtins.int
+    MICROSERVICE_ID_FIELD_NUMBER: builtins.int
+    RESOURCE_FIELD_NUMBER: builtins.int
+    service_id: builtins.str
+    """ID of the Service."""
+    microservice_id: builtins.str
+    """ID of the Microservice."""
+    @property
+    def resource(self) -> yandex.cloud.iam.v1.resource_pb2.Resource:
+        """Resource container."""
+
+    def __init__(
+        self,
+        *,
+        service_id: builtins.str = ...,
+        microservice_id: builtins.str = ...,
+        resource: yandex.cloud.iam.v1.resource_pb2.Resource | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["resource", b"resource"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["microservice_id", b"microservice_id", "resource", b"resource", "service_id", b"service_id"]) -> None: ...
+
+global___ResolveServiceAgentRequest = ResolveServiceAgentRequest

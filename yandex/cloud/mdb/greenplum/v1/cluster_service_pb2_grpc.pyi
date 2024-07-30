@@ -74,6 +74,12 @@ class ClusterServiceStub:
     ]
     """Stops the specified Greenplum® cluster."""
 
+    Move: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.MoveClusterRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Moves the specified Greenplum® cluster to the specified folder."""
+
     ListOperations: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.ListClusterOperationsRequest,
         yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.ListClusterOperationsResponse,
@@ -175,6 +181,12 @@ class ClusterServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Stops the specified Greenplum® cluster."""
+
+    Move: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.MoveClusterRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Moves the specified Greenplum® cluster to the specified folder."""
 
     ListOperations: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.ListClusterOperationsRequest,
@@ -293,6 +305,14 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Stops the specified Greenplum® cluster."""
+
+    @abc.abstractmethod
+    def Move(
+        self,
+        request: yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.MoveClusterRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Moves the specified Greenplum® cluster to the specified folder."""
 
     @abc.abstractmethod
     def ListOperations(
