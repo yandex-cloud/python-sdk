@@ -2,6 +2,15 @@
 
 
 
+## v0.309.0 (2024-08-02)
+
+### Feature
+
+* actualized supported services (#120)
+
+Co-authored-by: Islam Alibekov &lt;everest@yandex-team.ru&gt; ([`f9e0a5c`](https://github.com/yandex-cloud/python-sdk/commit/f9e0a5c7289e25772bc9a7c38e7a39376d0bede7))
+
+
 ## v0.308.0 (2024-07-30)
 
 ### Feature
