@@ -68,6 +68,7 @@ Check `examples` directory for more examples.
 |------------------------------------------------------------------------|--------------------------|
 | yandex.cloud.ai.foundation_models                                      | ai-foundation-models     |
 | yandex.cloud.ai.llm                                                    | ai-llm                   |
+| yandex.cloud.ai.ocr                                                    | ai-vision-ocr            |
 | yandex.cloud.ai.stt                                                    | ai-stt                   |
 | yandex.cloud.ai.translate                                              | ai-translate             |
 | yandex.cloud.ai.tts                                                    | ai-speechkit             |
@@ -81,14 +82,15 @@ Check `examples` directory for more examples.
 | yandex.cloud.containerregistry                                         | container-registry       |
 | yandex.cloud.dataproc.manager                                          | dataproc-manager         |
 | yandex.cloud.dataproc                                                  | dataproc                 |
+| yandex.cloud.datasphere                                                | datasphere               |
 | yandex.cloud.datatransfer                                              | datatransfer             |
 | yandex.cloud.dns                                                       | dns                      |
 | yandex.cloud.endpoint                                                  | endpoint                 |
 | yandex.cloud.iam                                                       | iam                      |
 | yandex.cloud.iot.devices                                               | iot-devices              |
 | yandex.cloud.k8s                                                       | managed-kubernetes       |
-| yandex.cloud.kms                                                       | kms                      |
 | yandex.cloud.kms.v1.symmetric_crypto_service                           | kms-crypto               |
+| yandex.cloud.kms                                                       | kms                      |
 | yandex.cloud.loadbalancer                                              | load-balancer            |
 | yandex.cloud.loadtesting                                               | loadtesting              |
 | yandex.cloud.lockbox.v1.payload_service                                | lockbox-payload          |
@@ -110,8 +112,8 @@ Check `examples` directory for more examples.
 | yandex.cloud.operation                                                 | operation                |
 | yandex.cloud.organizationmanager                                       | organization-manager     |
 | yandex.cloud.resourcemanager                                           | resource-manager         |
-| yandex.cloud.serverless.apigateway                                     | serverless-apigateway    |
 | yandex.cloud.serverless.apigateway.websocket                           | apigateway-connections   |
+| yandex.cloud.serverless.apigateway                                     | serverless-apigateway    |
 | yandex.cloud.serverless.containers                                     | serverless-containers    |
 | yandex.cloud.serverless.functions                                      | serverless-functions     |
 | yandex.cloud.serverless.triggers                                       | serverless-triggers      |
