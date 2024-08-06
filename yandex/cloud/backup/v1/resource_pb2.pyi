@@ -153,7 +153,7 @@ class Resource(google.protobuf.message.Message):
     if status is FAILED_REGISTRATION or REGISTERING
     """
     type: global___ResourceType.ValueType
-    """Type of resource -- could be compute VM or baremetal server"""
+    """Type of resource. Could be compute VM or baremetal server."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
     @property

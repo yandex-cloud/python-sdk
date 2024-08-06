@@ -4,9 +4,12 @@ isort:skip_file
 """
 
 import builtins
+import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.internal.containers
 import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
+import google.protobuf.timestamp_pb2
 import sys
 import typing
 
@@ -77,3 +80,99 @@ class ClaimAgentStatusResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["code", b"code"]) -> None: ...
 
 global___ClaimAgentStatusResponse = ClaimAgentStatusResponse
+
+@typing.final
+class ReportEventLogsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    AGENT_INSTANCE_ID_FIELD_NUMBER: builtins.int
+    IDEMPOTENCY_KEY_FIELD_NUMBER: builtins.int
+    EVENTS_FIELD_NUMBER: builtins.int
+    agent_instance_id: builtins.str
+    idempotency_key: builtins.str
+    @property
+    def events(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___EventLog]: ...
+    def __init__(
+        self,
+        *,
+        agent_instance_id: builtins.str = ...,
+        idempotency_key: builtins.str = ...,
+        events: collections.abc.Iterable[global___EventLog] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["agent_instance_id", b"agent_instance_id", "events", b"events", "idempotency_key", b"idempotency_key"]) -> None: ...
+
+global___ReportEventLogsRequest = ReportEventLogsRequest
+
+@typing.final
+class ReportEventLogsResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___ReportEventLogsResponse = ReportEventLogsResponse
+
+@typing.final
+class EventLog(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _Severity:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _SeverityEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[EventLog._Severity.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        SEVERITY_UNSPECIFIED: EventLog._Severity.ValueType  # 0
+        DEBUG: EventLog._Severity.ValueType  # 1
+        INFO: EventLog._Severity.ValueType  # 2
+        WARNING: EventLog._Severity.ValueType  # 3
+        ERROR: EventLog._Severity.ValueType  # 4
+        FATAL: EventLog._Severity.ValueType  # 5
+
+    class Severity(_Severity, metaclass=_SeverityEnumTypeWrapper): ...
+    SEVERITY_UNSPECIFIED: EventLog.Severity.ValueType  # 0
+    DEBUG: EventLog.Severity.ValueType  # 1
+    INFO: EventLog.Severity.ValueType  # 2
+    WARNING: EventLog.Severity.ValueType  # 3
+    ERROR: EventLog.Severity.ValueType  # 4
+    FATAL: EventLog.Severity.ValueType  # 5
+
+    @typing.final
+    class MetadataEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
+    MESSAGE_FIELD_NUMBER: builtins.int
+    SEVERITY_FIELD_NUMBER: builtins.int
+    TIMESTAMP_FIELD_NUMBER: builtins.int
+    METADATA_FIELD_NUMBER: builtins.int
+    message: builtins.str
+    severity: global___EventLog.Severity.ValueType
+    @property
+    def timestamp(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
+    @property
+    def metadata(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
+    def __init__(
+        self,
+        *,
+        message: builtins.str = ...,
+        severity: global___EventLog.Severity.ValueType = ...,
+        timestamp: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        metadata: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["timestamp", b"timestamp"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["message", b"message", "metadata", b"metadata", "severity", b"severity", "timestamp", b"timestamp"]) -> None: ...
+
+global___EventLog = EventLog

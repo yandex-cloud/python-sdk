@@ -28,20 +28,24 @@ class ListResourcesRequest(google.protobuf.message.Message):
     FOLDER_ID_FIELD_NUMBER: builtins.int
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    TYPE_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """Folder ID."""
     page_size: builtins.int
     """Number of results per page."""
     page_token: builtins.str
     """Token for the results page."""
+    type: yandex.cloud.backup.v1.resource_pb2.ResourceType.ValueType
+    """Type of resource. Could be compute VM or baremetal server."""
     def __init__(
         self,
         *,
         folder_id: builtins.str = ...,
         page_size: builtins.int = ...,
         page_token: builtins.str = ...,
+        type: yandex.cloud.backup.v1.resource_pb2.ResourceType.ValueType = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "page_size", b"page_size", "page_token", b"page_token"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "page_size", b"page_size", "page_token", b"page_token", "type", b"type"]) -> None: ...
 
 global___ListResourcesRequest = ListResourcesRequest
 

@@ -19,7 +19,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n1yandex/cloud/iam/v1/service_control_service.proto\x12\x13yandex.cloud.iam.v1\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a\"yandex/cloud/iam/v1/resource.proto\x1a)yandex/cloud/iam/v1/service_control.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"l\n\x11GetServiceRequest\x12 \n\nservice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\x08resource\x18\x02 \x01(\x0b\x32\x1d.yandex.cloud.iam.v1.ResourceB\x04\xe8\xc7\x31\x01\"\x8b\x01\n\x13ListServicesRequest\x12\x35\n\x08resource\x18\x01 \x01(\x0b\x32\x1d.yandex.cloud.iam.v1.ResourceB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\"_\n\x14ListServicesResponse\x12.\n\x08services\x18\x01 \x03(\x0b\x32\x1c.yandex.cloud.iam.v1.Service\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"o\n\x14\x45nableServiceRequest\x12 \n\nservice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\x08resource\x18\x02 \x01(\x0b\x32\x1d.yandex.cloud.iam.v1.ResourceB\x04\xe8\xc7\x31\x01\"\\\n\x15\x45nableServiceMetadata\x12\x12\n\nservice_id\x18\x01 \x01(\t\x12/\n\x08resource\x18\x02 \x01(\x0b\x32\x1d.yandex.cloud.iam.v1.Resource\"o\n\x14ResumeServiceRequest\x12 \n\nservice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\x08resource\x18\x02 \x01(\x0b\x32\x1d.yandex.cloud.iam.v1.ResourceB\x04\xe8\xc7\x31\x01\"\\\n\x15ResumeServiceMetadata\x12\x12\n\nservice_id\x18\x01 \x01(\t\x12/\n\x08resource\x18\x02 \x01(\x0b\x32\x1d.yandex.cloud.iam.v1.Resource\"}\n\x13PauseServiceRequest\x12 \n\nservice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\x08resource\x18\x02 \x01(\x0b\x32\x1d.yandex.cloud.iam.v1.ResourceB\x04\xe8\xc7\x31\x01\x12\r\n\x05\x66orce\x18\x03 \x01(\x08\"[\n\x14PauseServiceMetadata\x12\x12\n\nservice_id\x18\x01 \x01(\t\x12/\n\x08resource\x18\x02 \x01(\x0b\x32\x1d.yandex.cloud.iam.v1.Resource\"p\n\x15\x44isableServiceRequest\x12 \n\nservice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\x08resource\x18\x02 \x01(\x0b\x32\x1d.yandex.cloud.iam.v1.ResourceB\x04\xe8\xc7\x31\x01\"]\n\x16\x44isableServiceMetadata\x12\x12\n\nservice_id\x18\x01 \x01(\t\x12/\n\x08resource\x18\x02 \x01(\x0b\x32\x1d.yandex.cloud.iam.v1.Resource\"\x98\x01\n\x1aResolveServiceAgentRequest\x12 \n\nservice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12!\n\x0fmicroservice_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x35\n\x08resource\x18\x03 \x01(\x0b\x32\x1d.yandex.cloud.iam.v1.ResourceB\x04\xe8\xc7\x31\x01\x32\xe0\x08\n\x15ServiceControlService\x12r\n\x03Get\x12&.yandex.cloud.iam.v1.GetServiceRequest\x1a\x1c.yandex.cloud.iam.v1.Service\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/iam/v1/services/{service_id}\x12u\n\x04List\x12(.yandex.cloud.iam.v1.ListServicesRequest\x1a).yandex.cloud.iam.v1.ListServicesResponse\"\x18\x82\xd3\xe4\x93\x02\x12\x12\x10/iam/v1/services\x12\xaa\x01\n\x06\x45nable\x12).yandex.cloud.iam.v1.EnableServiceRequest\x1a!.yandex.cloud.operation.Operation\"R\xb2\xd2* \n\x15\x45nableServiceMetadata\x12\x07Service\x82\xd3\xe4\x93\x02(\"#/iam/v1/service/{service_id}:enable:\x01*\x12\xaa\x01\n\x06Resume\x12).yandex.cloud.iam.v1.ResumeServiceRequest\x1a!.yandex.cloud.operation.Operation\"R\xb2\xd2* \n\x15ResumeServiceMetadata\x12\x07Service\x82\xd3\xe4\x93\x02(\"#/iam/v1/service/{service_id}:resume:\x01*\x12\xa6\x01\n\x05Pause\x12(.yandex.cloud.iam.v1.PauseServiceRequest\x1a!.yandex.cloud.operation.Operation\"P\xb2\xd2*\x1f\n\x14PauseServiceMetadata\x12\x07Service\x82\xd3\xe4\x93\x02\'\"\"/iam/v1/service/{service_id}:pause:\x01*\x12\xae\x01\n\x07\x44isable\x12*.yandex.cloud.iam.v1.DisableServiceRequest\x1a!.yandex.cloud.operation.Operation\"T\xb2\xd2*!\n\x16\x44isableServiceMetadata\x12\x07Service\x82\xd3\xe4\x93\x02)\"$/iam/v1/service/{service_id}:disable:\x01*\x12\xa7\x01\n\x0cResolveAgent\x12/.yandex.cloud.iam.v1.ResolveServiceAgentRequest\x1a!.yandex.cloud.iam.v1.ServiceAgent\"C\x82\xd3\xe4\x93\x02=\x12;/iam/v1/service/{service_id}/microservice/{microservice_id}BV\n\x17yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n1yandex/cloud/iam/v1/service_control_service.proto\x12\x13yandex.cloud.iam.v1\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a\"yandex/cloud/iam/v1/resource.proto\x1a)yandex/cloud/iam/v1/service_control.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"l\n\x11GetServiceRequest\x12 \n\nservice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\x08resource\x18\x02 \x01(\x0b\x32\x1d.yandex.cloud.iam.v1.ResourceB\x04\xe8\xc7\x31\x01\"\x8b\x01\n\x13ListServicesRequest\x12\x35\n\x08resource\x18\x01 \x01(\x0b\x32\x1d.yandex.cloud.iam.v1.ResourceB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\"_\n\x14ListServicesResponse\x12.\n\x08services\x18\x01 \x03(\x0b\x32\x1c.yandex.cloud.iam.v1.Service\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"o\n\x14\x45nableServiceRequest\x12 \n\nservice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\x08resource\x18\x02 \x01(\x0b\x32\x1d.yandex.cloud.iam.v1.ResourceB\x04\xe8\xc7\x31\x01\"\\\n\x15\x45nableServiceMetadata\x12\x12\n\nservice_id\x18\x01 \x01(\t\x12/\n\x08resource\x18\x02 \x01(\x0b\x32\x1d.yandex.cloud.iam.v1.Resource\"p\n\x15\x44isableServiceRequest\x12 \n\nservice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\x08resource\x18\x02 \x01(\x0b\x32\x1d.yandex.cloud.iam.v1.ResourceB\x04\xe8\xc7\x31\x01\"]\n\x16\x44isableServiceMetadata\x12\x12\n\nservice_id\x18\x01 \x01(\t\x12/\n\x08resource\x18\x02 \x01(\x0b\x32\x1d.yandex.cloud.iam.v1.Resource\"\x98\x01\n\x1aResolveServiceAgentRequest\x12 \n\nservice_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12!\n\x0fmicroservice_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x35\n\x08resource\x18\x03 \x01(\x0b\x32\x1d.yandex.cloud.iam.v1.ResourceB\x04\xe8\xc7\x31\x01\x32\x8a\x06\n\x15ServiceControlService\x12r\n\x03Get\x12&.yandex.cloud.iam.v1.GetServiceRequest\x1a\x1c.yandex.cloud.iam.v1.Service\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/iam/v1/services/{service_id}\x12u\n\x04List\x12(.yandex.cloud.iam.v1.ListServicesRequest\x1a).yandex.cloud.iam.v1.ListServicesResponse\"\x18\x82\xd3\xe4\x93\x02\x12\x12\x10/iam/v1/services\x12\xaa\x01\n\x06\x45nable\x12).yandex.cloud.iam.v1.EnableServiceRequest\x1a!.yandex.cloud.operation.Operation\"R\xb2\xd2* \n\x15\x45nableServiceMetadata\x12\x07Service\x82\xd3\xe4\x93\x02(\"#/iam/v1/service/{service_id}:enable:\x01*\x12\xae\x01\n\x07\x44isable\x12*.yandex.cloud.iam.v1.DisableServiceRequest\x1a!.yandex.cloud.operation.Operation\"T\xb2\xd2*!\n\x16\x44isableServiceMetadata\x12\x07Service\x82\xd3\xe4\x93\x02)\"$/iam/v1/service/{service_id}:disable:\x01*\x12\xa7\x01\n\x0cResolveAgent\x12/.yandex.cloud.iam.v1.ResolveServiceAgentRequest\x1a!.yandex.cloud.iam.v1.ServiceAgent\"C\x82\xd3\xe4\x93\x02=\x12;/iam/v1/service/{service_id}/microservice/{microservice_id}BV\n\x17yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -41,14 +41,6 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _ENABLESERVICEREQUEST.fields_by_name['service_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _ENABLESERVICEREQUEST.fields_by_name['resource']._options = None
   _ENABLESERVICEREQUEST.fields_by_name['resource']._serialized_options = b'\350\3071\001'
-  _RESUMESERVICEREQUEST.fields_by_name['service_id']._options = None
-  _RESUMESERVICEREQUEST.fields_by_name['service_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _RESUMESERVICEREQUEST.fields_by_name['resource']._options = None
-  _RESUMESERVICEREQUEST.fields_by_name['resource']._serialized_options = b'\350\3071\001'
-  _PAUSESERVICEREQUEST.fields_by_name['service_id']._options = None
-  _PAUSESERVICEREQUEST.fields_by_name['service_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _PAUSESERVICEREQUEST.fields_by_name['resource']._options = None
-  _PAUSESERVICEREQUEST.fields_by_name['resource']._serialized_options = b'\350\3071\001'
   _DISABLESERVICEREQUEST.fields_by_name['service_id']._options = None
   _DISABLESERVICEREQUEST.fields_by_name['service_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _DISABLESERVICEREQUEST.fields_by_name['resource']._options = None
@@ -65,10 +57,6 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _SERVICECONTROLSERVICE.methods_by_name['List']._serialized_options = b'\202\323\344\223\002\022\022\020/iam/v1/services'
   _SERVICECONTROLSERVICE.methods_by_name['Enable']._options = None
   _SERVICECONTROLSERVICE.methods_by_name['Enable']._serialized_options = b'\262\322* \n\025EnableServiceMetadata\022\007Service\202\323\344\223\002(\"#/iam/v1/service/{service_id}:enable:\001*'
-  _SERVICECONTROLSERVICE.methods_by_name['Resume']._options = None
-  _SERVICECONTROLSERVICE.methods_by_name['Resume']._serialized_options = b'\262\322* \n\025ResumeServiceMetadata\022\007Service\202\323\344\223\002(\"#/iam/v1/service/{service_id}:resume:\001*'
-  _SERVICECONTROLSERVICE.methods_by_name['Pause']._options = None
-  _SERVICECONTROLSERVICE.methods_by_name['Pause']._serialized_options = b'\262\322*\037\n\024PauseServiceMetadata\022\007Service\202\323\344\223\002\'\"\"/iam/v1/service/{service_id}:pause:\001*'
   _SERVICECONTROLSERVICE.methods_by_name['Disable']._options = None
   _SERVICECONTROLSERVICE.methods_by_name['Disable']._serialized_options = b'\262\322*!\n\026DisableServiceMetadata\022\007Service\202\323\344\223\002)\"$/iam/v1/service/{service_id}:disable:\001*'
   _SERVICECONTROLSERVICE.methods_by_name['ResolveAgent']._options = None
@@ -83,20 +71,12 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_ENABLESERVICEREQUEST']._serialized_end=748
   _globals['_ENABLESERVICEMETADATA']._serialized_start=750
   _globals['_ENABLESERVICEMETADATA']._serialized_end=842
-  _globals['_RESUMESERVICEREQUEST']._serialized_start=844
-  _globals['_RESUMESERVICEREQUEST']._serialized_end=955
-  _globals['_RESUMESERVICEMETADATA']._serialized_start=957
-  _globals['_RESUMESERVICEMETADATA']._serialized_end=1049
-  _globals['_PAUSESERVICEREQUEST']._serialized_start=1051
-  _globals['_PAUSESERVICEREQUEST']._serialized_end=1176
-  _globals['_PAUSESERVICEMETADATA']._serialized_start=1178
-  _globals['_PAUSESERVICEMETADATA']._serialized_end=1269
-  _globals['_DISABLESERVICEREQUEST']._serialized_start=1271
-  _globals['_DISABLESERVICEREQUEST']._serialized_end=1383
-  _globals['_DISABLESERVICEMETADATA']._serialized_start=1385
-  _globals['_DISABLESERVICEMETADATA']._serialized_end=1478
-  _globals['_RESOLVESERVICEAGENTREQUEST']._serialized_start=1481
-  _globals['_RESOLVESERVICEAGENTREQUEST']._serialized_end=1633
-  _globals['_SERVICECONTROLSERVICE']._serialized_start=1636
-  _globals['_SERVICECONTROLSERVICE']._serialized_end=2756
+  _globals['_DISABLESERVICEREQUEST']._serialized_start=844
+  _globals['_DISABLESERVICEREQUEST']._serialized_end=956
+  _globals['_DISABLESERVICEMETADATA']._serialized_start=958
+  _globals['_DISABLESERVICEMETADATA']._serialized_end=1051
+  _globals['_RESOLVESERVICEAGENTREQUEST']._serialized_start=1054
+  _globals['_RESOLVESERVICEAGENTREQUEST']._serialized_end=1206
+  _globals['_SERVICECONTROLSERVICE']._serialized_start=1209
+  _globals['_SERVICECONTROLSERVICE']._serialized_end=1987
 # @@protoc_insertion_point(module_scope)

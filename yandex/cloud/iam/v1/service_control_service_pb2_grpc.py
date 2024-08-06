@@ -32,16 +32,6 @@ class ServiceControlServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_service__control__service__pb2.EnableServiceRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
-        self.Resume = channel.unary_unary(
-                '/yandex.cloud.iam.v1.ServiceControlService/Resume',
-                request_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_service__control__service__pb2.ResumeServiceRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-                )
-        self.Pause = channel.unary_unary(
-                '/yandex.cloud.iam.v1.ServiceControlService/Pause',
-                request_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_service__control__service__pb2.PauseServiceRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-                )
         self.Disable = channel.unary_unary(
                 '/yandex.cloud.iam.v1.ServiceControlService/Disable',
                 request_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_service__control__service__pb2.DisableServiceRequest.SerializeToString,
@@ -81,20 +71,6 @@ class ServiceControlServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def Resume(self, request, context):
-        """Resume a service in the specified resource container.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def Pause(self, request, context):
-        """Pause a service in the specified resource container.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
     def Disable(self, request, context):
         """Disable a service in the specified resource container.
         """
@@ -125,16 +101,6 @@ def add_ServiceControlServiceServicer_to_server(servicer, server):
             'Enable': grpc.unary_unary_rpc_method_handler(
                     servicer.Enable,
                     request_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_service__control__service__pb2.EnableServiceRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
-            ),
-            'Resume': grpc.unary_unary_rpc_method_handler(
-                    servicer.Resume,
-                    request_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_service__control__service__pb2.ResumeServiceRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
-            ),
-            'Pause': grpc.unary_unary_rpc_method_handler(
-                    servicer.Pause,
-                    request_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_service__control__service__pb2.PauseServiceRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'Disable': grpc.unary_unary_rpc_method_handler(
@@ -205,40 +171,6 @@ class ServiceControlService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.iam.v1.ServiceControlService/Enable',
             yandex_dot_cloud_dot_iam_dot_v1_dot_service__control__service__pb2.EnableServiceRequest.SerializeToString,
-            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def Resume(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.iam.v1.ServiceControlService/Resume',
-            yandex_dot_cloud_dot_iam_dot_v1_dot_service__control__service__pb2.ResumeServiceRequest.SerializeToString,
-            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def Pause(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.iam.v1.ServiceControlService/Pause',
-            yandex_dot_cloud_dot_iam_dot_v1_dot_service__control__service__pb2.PauseServiceRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

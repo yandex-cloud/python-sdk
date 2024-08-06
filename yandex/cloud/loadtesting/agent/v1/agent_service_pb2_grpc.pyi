@@ -25,12 +25,22 @@ class AgentServiceStub:
     ]
     """Claims status for the specified agent."""
 
+    ReportEventLogs: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.loadtesting.agent.v1.agent_service_pb2.ReportEventLogsRequest,
+        yandex.cloud.loadtesting.agent.v1.agent_service_pb2.ReportEventLogsResponse,
+    ]
+
 class AgentServiceAsyncStub:
     ClaimStatus: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.loadtesting.agent.v1.agent_service_pb2.ClaimAgentStatusRequest,
         yandex.cloud.loadtesting.agent.v1.agent_service_pb2.ClaimAgentStatusResponse,
     ]
     """Claims status for the specified agent."""
+
+    ReportEventLogs: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.loadtesting.agent.v1.agent_service_pb2.ReportEventLogsRequest,
+        yandex.cloud.loadtesting.agent.v1.agent_service_pb2.ReportEventLogsResponse,
+    ]
 
 class AgentServiceServicer(metaclass=abc.ABCMeta):
     @abc.abstractmethod
@@ -40,5 +50,12 @@ class AgentServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.loadtesting.agent.v1.agent_service_pb2.ClaimAgentStatusResponse, collections.abc.Awaitable[yandex.cloud.loadtesting.agent.v1.agent_service_pb2.ClaimAgentStatusResponse]]:
         """Claims status for the specified agent."""
+
+    @abc.abstractmethod
+    def ReportEventLogs(
+        self,
+        request: yandex.cloud.loadtesting.agent.v1.agent_service_pb2.ReportEventLogsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.loadtesting.agent.v1.agent_service_pb2.ReportEventLogsResponse, collections.abc.Awaitable[yandex.cloud.loadtesting.agent.v1.agent_service_pb2.ReportEventLogsResponse]]: ...
 
 def add_AgentServiceServicer_to_server(servicer: AgentServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

@@ -281,17 +281,21 @@ class CancelProjectJobRequest(google.protobuf.message.Message):
 
     JOB_ID_FIELD_NUMBER: builtins.int
     REASON_FIELD_NUMBER: builtins.int
+    GRACEFUL_FIELD_NUMBER: builtins.int
     job_id: builtins.str
     """ID of the job."""
     reason: builtins.str
     """Optional cancellation reason."""
+    graceful: builtins.bool
+    """If the job is launched with graceful shutdown support, the shutdown will be performed gracefully"""
     def __init__(
         self,
         *,
         job_id: builtins.str = ...,
         reason: builtins.str = ...,
+        graceful: builtins.bool = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["job_id", b"job_id", "reason", b"reason"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["graceful", b"graceful", "job_id", b"job_id", "reason", b"reason"]) -> None: ...
 
 global___CancelProjectJobRequest = CancelProjectJobRequest
 

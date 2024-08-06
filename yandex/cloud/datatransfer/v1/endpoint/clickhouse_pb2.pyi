@@ -223,7 +223,10 @@ class ClickhouseSource(google.protobuf.message.Message):
     EXCLUDE_TABLES_FIELD_NUMBER: builtins.int
     SUBNET_ID_FIELD_NUMBER: builtins.int
     SECURITY_GROUPS_FIELD_NUMBER: builtins.int
+    CLICKHOUSE_CLUSTER_NAME_FIELD_NUMBER: builtins.int
     subnet_id: builtins.str
+    clickhouse_cluster_name: builtins.str
+    """Also could be name of MDB's shard group."""
     @property
     def connection(self) -> global___ClickhouseConnection: ...
     @property
@@ -248,9 +251,10 @@ class ClickhouseSource(google.protobuf.message.Message):
         exclude_tables: collections.abc.Iterable[builtins.str] | None = ...,
         subnet_id: builtins.str = ...,
         security_groups: collections.abc.Iterable[builtins.str] | None = ...,
+        clickhouse_cluster_name: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["connection", b"connection"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["connection", b"connection", "exclude_tables", b"exclude_tables", "include_tables", b"include_tables", "security_groups", b"security_groups", "subnet_id", b"subnet_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["clickhouse_cluster_name", b"clickhouse_cluster_name", "connection", b"connection", "exclude_tables", b"exclude_tables", "include_tables", b"include_tables", "security_groups", b"security_groups", "subnet_id", b"subnet_id"]) -> None: ...
 
 global___ClickhouseSource = ClickhouseSource
 
@@ -268,6 +272,7 @@ class ClickhouseTarget(google.protobuf.message.Message):
     subnet_id: builtins.str
     cleanup_policy: global___ClickhouseCleanupPolicy.ValueType
     clickhouse_cluster_name: builtins.str
+    """Also could be name of MDB's shard group."""
     @property
     def connection(self) -> global___ClickhouseConnection: ...
     @property

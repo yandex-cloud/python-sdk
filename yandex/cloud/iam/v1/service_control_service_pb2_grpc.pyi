@@ -44,18 +44,6 @@ class ServiceControlServiceStub:
     ]
     """Enable a service in the specified resource container."""
 
-    Resume: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.iam.v1.service_control_service_pb2.ResumeServiceRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Resume a service in the specified resource container."""
-
-    Pause: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.iam.v1.service_control_service_pb2.PauseServiceRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Pause a service in the specified resource container."""
-
     Disable: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.iam.v1.service_control_service_pb2.DisableServiceRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -91,18 +79,6 @@ class ServiceControlServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Enable a service in the specified resource container."""
-
-    Resume: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.iam.v1.service_control_service_pb2.ResumeServiceRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Resume a service in the specified resource container."""
-
-    Pause: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.iam.v1.service_control_service_pb2.PauseServiceRequest,
-        yandex.cloud.operation.operation_pb2.Operation,
-    ]
-    """Pause a service in the specified resource container."""
 
     Disable: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.iam.v1.service_control_service_pb2.DisableServiceRequest,
@@ -145,22 +121,6 @@ class ServiceControlServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Enable a service in the specified resource container."""
-
-    @abc.abstractmethod
-    def Resume(
-        self,
-        request: yandex.cloud.iam.v1.service_control_service_pb2.ResumeServiceRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Resume a service in the specified resource container."""
-
-    @abc.abstractmethod
-    def Pause(
-        self,
-        request: yandex.cloud.iam.v1.service_control_service_pb2.PauseServiceRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Pause a service in the specified resource container."""
 
     @abc.abstractmethod
     def Disable(

@@ -19,6 +19,11 @@ class AgentServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_loadtesting_dot_agent_dot_v1_dot_agent__service__pb2.ClaimAgentStatusRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_loadtesting_dot_agent_dot_v1_dot_agent__service__pb2.ClaimAgentStatusResponse.FromString,
                 )
+        self.ReportEventLogs = channel.unary_unary(
+                '/yandex.cloud.loadtesting.agent.v1.AgentService/ReportEventLogs',
+                request_serializer=yandex_dot_cloud_dot_loadtesting_dot_agent_dot_v1_dot_agent__service__pb2.ReportEventLogsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_loadtesting_dot_agent_dot_v1_dot_agent__service__pb2.ReportEventLogsResponse.FromString,
+                )
 
 
 class AgentServiceServicer(object):
@@ -31,6 +36,12 @@ class AgentServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ReportEventLogs(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_AgentServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -38,6 +49,11 @@ def add_AgentServiceServicer_to_server(servicer, server):
                     servicer.ClaimStatus,
                     request_deserializer=yandex_dot_cloud_dot_loadtesting_dot_agent_dot_v1_dot_agent__service__pb2.ClaimAgentStatusRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_loadtesting_dot_agent_dot_v1_dot_agent__service__pb2.ClaimAgentStatusResponse.SerializeToString,
+            ),
+            'ReportEventLogs': grpc.unary_unary_rpc_method_handler(
+                    servicer.ReportEventLogs,
+                    request_deserializer=yandex_dot_cloud_dot_loadtesting_dot_agent_dot_v1_dot_agent__service__pb2.ReportEventLogsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_loadtesting_dot_agent_dot_v1_dot_agent__service__pb2.ReportEventLogsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -63,5 +79,22 @@ class AgentService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.loadtesting.agent.v1.AgentService/ClaimStatus',
             yandex_dot_cloud_dot_loadtesting_dot_agent_dot_v1_dot_agent__service__pb2.ClaimAgentStatusRequest.SerializeToString,
             yandex_dot_cloud_dot_loadtesting_dot_agent_dot_v1_dot_agent__service__pb2.ClaimAgentStatusResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ReportEventLogs(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.loadtesting.agent.v1.AgentService/ReportEventLogs',
+            yandex_dot_cloud_dot_loadtesting_dot_agent_dot_v1_dot_agent__service__pb2.ReportEventLogsRequest.SerializeToString,
+            yandex_dot_cloud_dot_loadtesting_dot_agent_dot_v1_dot_agent__service__pb2.ReportEventLogsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

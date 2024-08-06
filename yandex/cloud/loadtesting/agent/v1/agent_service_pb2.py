@@ -12,9 +12,11 @@ _sym_db = _symbol_database.Default()
 
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n5yandex/cloud/loadtesting/agent/v1/agent_service.proto\x12!yandex.cloud.loadtesting.agent.v1\x1a\x1cgoogle/api/annotations.proto\"\xb9\x02\n\x17\x43laimAgentStatusRequest\x12\x19\n\x11\x61gent_instance_id\x18\x01 \x01(\t\x12Q\n\x06status\x18\x02 \x01(\x0e\x32\x41.yandex.cloud.loadtesting.agent.v1.ClaimAgentStatusRequest.Status\x12\x16\n\x0estatus_message\x18\x03 \x01(\t\"\x97\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eREADY_FOR_TEST\x10\x01\x12\x12\n\x0ePREPARING_TEST\x10\x02\x12\x0b\n\x07TESTING\x10\x03\x12\x0f\n\x0bTANK_FAILED\x10\x04\x12\x0b\n\x07STOPPED\x10\x05\x12\x17\n\x13UPLOADING_ARTIFACTS\x10\x06\x12\t\n\x05\x45RROR\x10\x07\"(\n\x18\x43laimAgentStatusResponse\x12\x0c\n\x04\x63ode\x18\x01 \x01(\x03\x32\xe0\x01\n\x0c\x41gentService\x12\xcf\x01\n\x0b\x43laimStatus\x12:.yandex.cloud.loadtesting.agent.v1.ClaimAgentStatusRequest\x1a;.yandex.cloud.loadtesting.agent.v1.ClaimAgentStatusResponse\"G\x82\xd3\xe4\x93\x02\x41\"</loadtesting/agent/v1/agents/{agent_instance_id}/claimStatus:\x01*Bt\n%yandex.cloud.api.loadtesting.agent.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadtesting/agent/v1;agentb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n5yandex/cloud/loadtesting/agent/v1/agent_service.proto\x12!yandex.cloud.loadtesting.agent.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\xb9\x02\n\x17\x43laimAgentStatusRequest\x12\x19\n\x11\x61gent_instance_id\x18\x01 \x01(\t\x12Q\n\x06status\x18\x02 \x01(\x0e\x32\x41.yandex.cloud.loadtesting.agent.v1.ClaimAgentStatusRequest.Status\x12\x16\n\x0estatus_message\x18\x03 \x01(\t\"\x97\x01\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eREADY_FOR_TEST\x10\x01\x12\x12\n\x0ePREPARING_TEST\x10\x02\x12\x0b\n\x07TESTING\x10\x03\x12\x0f\n\x0bTANK_FAILED\x10\x04\x12\x0b\n\x07STOPPED\x10\x05\x12\x17\n\x13UPLOADING_ARTIFACTS\x10\x06\x12\t\n\x05\x45RROR\x10\x07\"(\n\x18\x43laimAgentStatusResponse\x12\x0c\n\x04\x63ode\x18\x01 \x01(\x03\"\xb1\x01\n\x16ReportEventLogsRequest\x12\'\n\x11\x61gent_instance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12%\n\x0fidempotency_key\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=36\x12G\n\x06\x65vents\x18\x03 \x03(\x0b\x32+.yandex.cloud.loadtesting.agent.v1.EventLogB\n\x82\xc8\x31\x06<=1000\"\x19\n\x17ReportEventLogsResponse\"\x84\x03\n\x08\x45ventLog\x12\x1f\n\x07message\x18\x01 \x01(\tB\x0e\xe8\xc7\x31\x01\x8a\xc8\x31\x06<=2000\x12\x46\n\x08severity\x18\x02 \x01(\x0e\x32\x34.yandex.cloud.loadtesting.agent.v1.EventLog.Severity\x12\x33\n\ttimestamp\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12K\n\x08metadata\x18\x04 \x03(\x0b\x32\x39.yandex.cloud.loadtesting.agent.v1.EventLog.MetadataEntry\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\\\n\x08Severity\x12\x18\n\x14SEVERITY_UNSPECIFIED\x10\x00\x12\t\n\x05\x44\x45\x42UG\x10\x01\x12\x08\n\x04INFO\x10\x02\x12\x0b\n\x07WARNING\x10\x03\x12\t\n\x05\x45RROR\x10\x04\x12\t\n\x05\x46\x41TAL\x10\x05\x32\xb8\x03\n\x0c\x41gentService\x12\xcf\x01\n\x0b\x43laimStatus\x12:.yandex.cloud.loadtesting.agent.v1.ClaimAgentStatusRequest\x1a;.yandex.cloud.loadtesting.agent.v1.ClaimAgentStatusResponse\"G\x82\xd3\xe4\x93\x02\x41\"</loadtesting/agent/v1/agents/{agent_instance_id}/claimStatus:\x01*\x12\xd5\x01\n\x0fReportEventLogs\x12\x39.yandex.cloud.loadtesting.agent.v1.ReportEventLogsRequest\x1a:.yandex.cloud.loadtesting.agent.v1.ReportEventLogsResponse\"K\x82\xd3\xe4\x93\x02\x45\"@/loadtesting/agent/v1/agents/{agent_instance_id}/reportEventLogs:\x01*Bt\n%yandex.cloud.api.loadtesting.agent.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadtesting/agent/v1;agentb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -22,14 +24,38 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.loadtesting.ag
 if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n%yandex.cloud.api.loadtesting.agent.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadtesting/agent/v1;agent'
+  _REPORTEVENTLOGSREQUEST.fields_by_name['agent_instance_id']._options = None
+  _REPORTEVENTLOGSREQUEST.fields_by_name['agent_instance_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _REPORTEVENTLOGSREQUEST.fields_by_name['idempotency_key']._options = None
+  _REPORTEVENTLOGSREQUEST.fields_by_name['idempotency_key']._serialized_options = b'\350\3071\001\212\3101\004<=36'
+  _REPORTEVENTLOGSREQUEST.fields_by_name['events']._options = None
+  _REPORTEVENTLOGSREQUEST.fields_by_name['events']._serialized_options = b'\202\3101\006<=1000'
+  _EVENTLOG_METADATAENTRY._options = None
+  _EVENTLOG_METADATAENTRY._serialized_options = b'8\001'
+  _EVENTLOG.fields_by_name['message']._options = None
+  _EVENTLOG.fields_by_name['message']._serialized_options = b'\350\3071\001\212\3101\006<=2000'
+  _EVENTLOG.fields_by_name['timestamp']._options = None
+  _EVENTLOG.fields_by_name['timestamp']._serialized_options = b'\350\3071\001'
   _AGENTSERVICE.methods_by_name['ClaimStatus']._options = None
   _AGENTSERVICE.methods_by_name['ClaimStatus']._serialized_options = b'\202\323\344\223\002A\"</loadtesting/agent/v1/agents/{agent_instance_id}/claimStatus:\001*'
-  _globals['_CLAIMAGENTSTATUSREQUEST']._serialized_start=123
-  _globals['_CLAIMAGENTSTATUSREQUEST']._serialized_end=436
-  _globals['_CLAIMAGENTSTATUSREQUEST_STATUS']._serialized_start=285
-  _globals['_CLAIMAGENTSTATUSREQUEST_STATUS']._serialized_end=436
-  _globals['_CLAIMAGENTSTATUSRESPONSE']._serialized_start=438
-  _globals['_CLAIMAGENTSTATUSRESPONSE']._serialized_end=478
-  _globals['_AGENTSERVICE']._serialized_start=481
-  _globals['_AGENTSERVICE']._serialized_end=705
+  _AGENTSERVICE.methods_by_name['ReportEventLogs']._options = None
+  _AGENTSERVICE.methods_by_name['ReportEventLogs']._serialized_options = b'\202\323\344\223\002E\"@/loadtesting/agent/v1/agents/{agent_instance_id}/reportEventLogs:\001*'
+  _globals['_CLAIMAGENTSTATUSREQUEST']._serialized_start=187
+  _globals['_CLAIMAGENTSTATUSREQUEST']._serialized_end=500
+  _globals['_CLAIMAGENTSTATUSREQUEST_STATUS']._serialized_start=349
+  _globals['_CLAIMAGENTSTATUSREQUEST_STATUS']._serialized_end=500
+  _globals['_CLAIMAGENTSTATUSRESPONSE']._serialized_start=502
+  _globals['_CLAIMAGENTSTATUSRESPONSE']._serialized_end=542
+  _globals['_REPORTEVENTLOGSREQUEST']._serialized_start=545
+  _globals['_REPORTEVENTLOGSREQUEST']._serialized_end=722
+  _globals['_REPORTEVENTLOGSRESPONSE']._serialized_start=724
+  _globals['_REPORTEVENTLOGSRESPONSE']._serialized_end=749
+  _globals['_EVENTLOG']._serialized_start=752
+  _globals['_EVENTLOG']._serialized_end=1140
+  _globals['_EVENTLOG_METADATAENTRY']._serialized_start=999
+  _globals['_EVENTLOG_METADATAENTRY']._serialized_end=1046
+  _globals['_EVENTLOG_SEVERITY']._serialized_start=1048
+  _globals['_EVENTLOG_SEVERITY']._serialized_end=1140
+  _globals['_AGENTSERVICE']._serialized_start=1143
+  _globals['_AGENTSERVICE']._serialized_end=1583
 # @@protoc_insertion_point(module_scope)
