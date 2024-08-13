@@ -290,7 +290,6 @@ class CreateInstanceRequest(google.protobuf.message.Message):
     def network_interface_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___NetworkInterfaceSpec]:
         """Network configuration for the instance. Specifies how the network interface is configured
         to interact with other services on the internal network and on the internet.
-        Currently only one network interface is supported per instance.
         """
 
     @property

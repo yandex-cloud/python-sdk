@@ -15,7 +15,7 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class RouteTable(google.protobuf.message.Message):
-    """A RouteTable resource. For more information, see [Static Routes](/docs/vpc/concepts/static-routes)."""
+    """A RouteTable resource. For more information, see [Static Routes](/docs/vpc/concepts/routing)."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -92,7 +92,7 @@ global___RouteTable = RouteTable
 
 @typing.final
 class StaticRoute(google.protobuf.message.Message):
-    """A StaticRoute resource. For more information, see [Static Routes](/docs/vpc/concepts/static-routes)."""
+    """A StaticRoute resource. For more information, see [Static Routes](/docs/vpc/concepts/routing)."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
