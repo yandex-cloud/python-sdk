@@ -81,6 +81,10 @@ class ClickhouseConfig(google.protobuf.message.Message):
         MIN_AGE_TO_FORCE_MERGE_SECONDS_FIELD_NUMBER: builtins.int
         MIN_AGE_TO_FORCE_MERGE_ON_PARTITION_ONLY_FIELD_NUMBER: builtins.int
         MERGE_SELECTING_SLEEP_MS_FIELD_NUMBER: builtins.int
+        MERGE_MAX_BLOCK_SIZE_FIELD_NUMBER: builtins.int
+        CHECK_SAMPLE_COLUMN_IS_CORRECT_FIELD_NUMBER: builtins.int
+        MAX_MERGE_SELECTING_SLEEP_MS_FIELD_NUMBER: builtins.int
+        MAX_CLEANUP_DELAY_PERIOD_FIELD_NUMBER: builtins.int
         @property
         def replicated_deduplication_window(self) -> google.protobuf.wrappers_pb2.Int64Value:
             """Number of blocks of hashes to keep in ZooKeeper."""
@@ -186,6 +190,36 @@ class ClickhouseConfig(google.protobuf.message.Message):
             See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#merge_selecting_sleep_ms)
             """
 
+        @property
+        def merge_max_block_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """The number of rows that are read from the merged parts into memory.
+            Default: 8192
+            See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#merge_max_block_size)
+            """
+
+        @property
+        def check_sample_column_is_correct(self) -> google.protobuf.wrappers_pb2.BoolValue:
+            """Enables the check at table creation, that the data type of a column for sampling or sampling expression is correct. The data type must be one of unsigned [integer types](https://clickhouse.com/docs/en/sql-reference/data-types/int-uint): UInt8, UInt16, UInt32, UInt64.
+            Default: true
+            See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/merge-tree-settings#check_sample_column_is_correct)
+            """
+
+        @property
+        def max_merge_selecting_sleep_ms(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """Maximum sleep time for merge selecting, a lower setting will trigger selecting tasks in background_schedule_pool frequently which result in large amount of requests to zookeeper in large-scale clusters.
+            Default: 60000
+            Min_version: 23.6
+            See in-depth description in [ClickHouse GitHub](https://github.com/ClickHouse/ClickHouse/blob/4add9db84859bff7410cf934a3904b0414e36e51/src/Storages/MergeTree/MergeTreeSettings.h#L71)
+            """
+
+        @property
+        def max_cleanup_delay_period(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """Maximum period to clean old queue logs, blocks hashes and parts.
+            Default: 300
+            Min_version: 23.6
+            See in-depth description in [ClickHouse GitHub](https://github.com/ClickHouse/ClickHouse/blob/4add9db84859bff7410cf934a3904b0414e36e51/src/Storages/MergeTree/MergeTreeSettings.h#L142)
+            """
+
         def __init__(
             self,
             *,
@@ -213,9 +247,13 @@ class ClickhouseConfig(google.protobuf.message.Message):
             min_age_to_force_merge_seconds: google.protobuf.wrappers_pb2.Int64Value | None = ...,
             min_age_to_force_merge_on_partition_only: google.protobuf.wrappers_pb2.BoolValue | None = ...,
             merge_selecting_sleep_ms: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+            merge_max_block_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+            check_sample_column_is_correct: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+            max_merge_selecting_sleep_ms: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+            max_cleanup_delay_period: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["allow_remote_fs_zero_copy_replication", b"allow_remote_fs_zero_copy_replication", "cleanup_delay_period", b"cleanup_delay_period", "inactive_parts_to_delay_insert", b"inactive_parts_to_delay_insert", "inactive_parts_to_throw_insert", b"inactive_parts_to_throw_insert", "max_avg_part_size_for_too_many_parts", b"max_avg_part_size_for_too_many_parts", "max_bytes_to_merge_at_max_space_in_pool", b"max_bytes_to_merge_at_max_space_in_pool", "max_bytes_to_merge_at_min_space_in_pool", b"max_bytes_to_merge_at_min_space_in_pool", "max_number_of_merges_with_ttl_in_pool", b"max_number_of_merges_with_ttl_in_pool", "max_parts_in_total", b"max_parts_in_total", "max_replicated_merges_in_queue", b"max_replicated_merges_in_queue", "merge_selecting_sleep_ms", b"merge_selecting_sleep_ms", "merge_with_recompression_ttl_timeout", b"merge_with_recompression_ttl_timeout", "merge_with_ttl_timeout", b"merge_with_ttl_timeout", "min_age_to_force_merge_on_partition_only", b"min_age_to_force_merge_on_partition_only", "min_age_to_force_merge_seconds", b"min_age_to_force_merge_seconds", "min_bytes_for_wide_part", b"min_bytes_for_wide_part", "min_rows_for_wide_part", b"min_rows_for_wide_part", "number_of_free_entries_in_pool_to_execute_mutation", b"number_of_free_entries_in_pool_to_execute_mutation", "number_of_free_entries_in_pool_to_lower_max_size_of_merge", b"number_of_free_entries_in_pool_to_lower_max_size_of_merge", "parts_to_delay_insert", b"parts_to_delay_insert", "parts_to_throw_insert", b"parts_to_throw_insert", "replicated_deduplication_window", b"replicated_deduplication_window", "replicated_deduplication_window_seconds", b"replicated_deduplication_window_seconds", "ttl_only_drop_parts", b"ttl_only_drop_parts"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["allow_remote_fs_zero_copy_replication", b"allow_remote_fs_zero_copy_replication", "cleanup_delay_period", b"cleanup_delay_period", "inactive_parts_to_delay_insert", b"inactive_parts_to_delay_insert", "inactive_parts_to_throw_insert", b"inactive_parts_to_throw_insert", "max_avg_part_size_for_too_many_parts", b"max_avg_part_size_for_too_many_parts", "max_bytes_to_merge_at_max_space_in_pool", b"max_bytes_to_merge_at_max_space_in_pool", "max_bytes_to_merge_at_min_space_in_pool", b"max_bytes_to_merge_at_min_space_in_pool", "max_number_of_merges_with_ttl_in_pool", b"max_number_of_merges_with_ttl_in_pool", "max_parts_in_total", b"max_parts_in_total", "max_replicated_merges_in_queue", b"max_replicated_merges_in_queue", "merge_selecting_sleep_ms", b"merge_selecting_sleep_ms", "merge_with_recompression_ttl_timeout", b"merge_with_recompression_ttl_timeout", "merge_with_ttl_timeout", b"merge_with_ttl_timeout", "min_age_to_force_merge_on_partition_only", b"min_age_to_force_merge_on_partition_only", "min_age_to_force_merge_seconds", b"min_age_to_force_merge_seconds", "min_bytes_for_wide_part", b"min_bytes_for_wide_part", "min_rows_for_wide_part", b"min_rows_for_wide_part", "number_of_free_entries_in_pool_to_execute_mutation", b"number_of_free_entries_in_pool_to_execute_mutation", "number_of_free_entries_in_pool_to_lower_max_size_of_merge", b"number_of_free_entries_in_pool_to_lower_max_size_of_merge", "parts_to_delay_insert", b"parts_to_delay_insert", "parts_to_throw_insert", b"parts_to_throw_insert", "replicated_deduplication_window", b"replicated_deduplication_window", "replicated_deduplication_window_seconds", b"replicated_deduplication_window_seconds", "ttl_only_drop_parts", b"ttl_only_drop_parts"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["allow_remote_fs_zero_copy_replication", b"allow_remote_fs_zero_copy_replication", "check_sample_column_is_correct", b"check_sample_column_is_correct", "cleanup_delay_period", b"cleanup_delay_period", "inactive_parts_to_delay_insert", b"inactive_parts_to_delay_insert", "inactive_parts_to_throw_insert", b"inactive_parts_to_throw_insert", "max_avg_part_size_for_too_many_parts", b"max_avg_part_size_for_too_many_parts", "max_bytes_to_merge_at_max_space_in_pool", b"max_bytes_to_merge_at_max_space_in_pool", "max_bytes_to_merge_at_min_space_in_pool", b"max_bytes_to_merge_at_min_space_in_pool", "max_cleanup_delay_period", b"max_cleanup_delay_period", "max_merge_selecting_sleep_ms", b"max_merge_selecting_sleep_ms", "max_number_of_merges_with_ttl_in_pool", b"max_number_of_merges_with_ttl_in_pool", "max_parts_in_total", b"max_parts_in_total", "max_replicated_merges_in_queue", b"max_replicated_merges_in_queue", "merge_max_block_size", b"merge_max_block_size", "merge_selecting_sleep_ms", b"merge_selecting_sleep_ms", "merge_with_recompression_ttl_timeout", b"merge_with_recompression_ttl_timeout", "merge_with_ttl_timeout", b"merge_with_ttl_timeout", "min_age_to_force_merge_on_partition_only", b"min_age_to_force_merge_on_partition_only", "min_age_to_force_merge_seconds", b"min_age_to_force_merge_seconds", "min_bytes_for_wide_part", b"min_bytes_for_wide_part", "min_rows_for_wide_part", b"min_rows_for_wide_part", "number_of_free_entries_in_pool_to_execute_mutation", b"number_of_free_entries_in_pool_to_execute_mutation", "number_of_free_entries_in_pool_to_lower_max_size_of_merge", b"number_of_free_entries_in_pool_to_lower_max_size_of_merge", "parts_to_delay_insert", b"parts_to_delay_insert", "parts_to_throw_insert", b"parts_to_throw_insert", "replicated_deduplication_window", b"replicated_deduplication_window", "replicated_deduplication_window_seconds", b"replicated_deduplication_window_seconds", "ttl_only_drop_parts", b"ttl_only_drop_parts"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["allow_remote_fs_zero_copy_replication", b"allow_remote_fs_zero_copy_replication", "check_sample_column_is_correct", b"check_sample_column_is_correct", "cleanup_delay_period", b"cleanup_delay_period", "inactive_parts_to_delay_insert", b"inactive_parts_to_delay_insert", "inactive_parts_to_throw_insert", b"inactive_parts_to_throw_insert", "max_avg_part_size_for_too_many_parts", b"max_avg_part_size_for_too_many_parts", "max_bytes_to_merge_at_max_space_in_pool", b"max_bytes_to_merge_at_max_space_in_pool", "max_bytes_to_merge_at_min_space_in_pool", b"max_bytes_to_merge_at_min_space_in_pool", "max_cleanup_delay_period", b"max_cleanup_delay_period", "max_merge_selecting_sleep_ms", b"max_merge_selecting_sleep_ms", "max_number_of_merges_with_ttl_in_pool", b"max_number_of_merges_with_ttl_in_pool", "max_parts_in_total", b"max_parts_in_total", "max_replicated_merges_in_queue", b"max_replicated_merges_in_queue", "merge_max_block_size", b"merge_max_block_size", "merge_selecting_sleep_ms", b"merge_selecting_sleep_ms", "merge_with_recompression_ttl_timeout", b"merge_with_recompression_ttl_timeout", "merge_with_ttl_timeout", b"merge_with_ttl_timeout", "min_age_to_force_merge_on_partition_only", b"min_age_to_force_merge_on_partition_only", "min_age_to_force_merge_seconds", b"min_age_to_force_merge_seconds", "min_bytes_for_wide_part", b"min_bytes_for_wide_part", "min_rows_for_wide_part", b"min_rows_for_wide_part", "number_of_free_entries_in_pool_to_execute_mutation", b"number_of_free_entries_in_pool_to_execute_mutation", "number_of_free_entries_in_pool_to_lower_max_size_of_merge", b"number_of_free_entries_in_pool_to_lower_max_size_of_merge", "parts_to_delay_insert", b"parts_to_delay_insert", "parts_to_throw_insert", b"parts_to_throw_insert", "replicated_deduplication_window", b"replicated_deduplication_window", "replicated_deduplication_window_seconds", b"replicated_deduplication_window_seconds", "ttl_only_drop_parts", b"ttl_only_drop_parts"]) -> None: ...
 
     @typing.final
     class Kafka(google.protobuf.message.Message):
@@ -259,6 +297,84 @@ class ClickhouseConfig(google.protobuf.message.Message):
         SASL_MECHANISM_SCRAM_SHA_256: ClickhouseConfig.Kafka.SaslMechanism.ValueType  # 3
         SASL_MECHANISM_SCRAM_SHA_512: ClickhouseConfig.Kafka.SaslMechanism.ValueType  # 4
 
+        class _Debug:
+            ValueType = typing.NewType("ValueType", builtins.int)
+            V: typing_extensions.TypeAlias = ValueType
+
+        class _DebugEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ClickhouseConfig.Kafka._Debug.ValueType], builtins.type):
+            DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+            DEBUG_UNSPECIFIED: ClickhouseConfig.Kafka._Debug.ValueType  # 0
+            DEBUG_GENERIC: ClickhouseConfig.Kafka._Debug.ValueType  # 1
+            DEBUG_BROKER: ClickhouseConfig.Kafka._Debug.ValueType  # 2
+            DEBUG_TOPIC: ClickhouseConfig.Kafka._Debug.ValueType  # 3
+            DEBUG_METADATA: ClickhouseConfig.Kafka._Debug.ValueType  # 4
+            DEBUG_FEATURE: ClickhouseConfig.Kafka._Debug.ValueType  # 5
+            DEBUG_QUEUE: ClickhouseConfig.Kafka._Debug.ValueType  # 6
+            DEBUG_MSG: ClickhouseConfig.Kafka._Debug.ValueType  # 7
+            DEBUG_PROTOCOL: ClickhouseConfig.Kafka._Debug.ValueType  # 8
+            DEBUG_CGRP: ClickhouseConfig.Kafka._Debug.ValueType  # 9
+            DEBUG_SECURITY: ClickhouseConfig.Kafka._Debug.ValueType  # 10
+            DEBUG_FETCH: ClickhouseConfig.Kafka._Debug.ValueType  # 11
+            DEBUG_INTERCEPTOR: ClickhouseConfig.Kafka._Debug.ValueType  # 12
+            DEBUG_PLUGIN: ClickhouseConfig.Kafka._Debug.ValueType  # 13
+            DEBUG_CONSUMER: ClickhouseConfig.Kafka._Debug.ValueType  # 14
+            DEBUG_ADMIN: ClickhouseConfig.Kafka._Debug.ValueType  # 15
+            DEBUG_EOS: ClickhouseConfig.Kafka._Debug.ValueType  # 16
+            DEBUG_MOCK: ClickhouseConfig.Kafka._Debug.ValueType  # 17
+            DEBUG_ASSIGNOR: ClickhouseConfig.Kafka._Debug.ValueType  # 18
+            DEBUG_CONF: ClickhouseConfig.Kafka._Debug.ValueType  # 19
+            DEBUG_TELEMETRY: ClickhouseConfig.Kafka._Debug.ValueType  # 20
+            DEBUG_ALL: ClickhouseConfig.Kafka._Debug.ValueType  # 21
+
+        class Debug(_Debug, metaclass=_DebugEnumTypeWrapper): ...
+        DEBUG_UNSPECIFIED: ClickhouseConfig.Kafka.Debug.ValueType  # 0
+        DEBUG_GENERIC: ClickhouseConfig.Kafka.Debug.ValueType  # 1
+        DEBUG_BROKER: ClickhouseConfig.Kafka.Debug.ValueType  # 2
+        DEBUG_TOPIC: ClickhouseConfig.Kafka.Debug.ValueType  # 3
+        DEBUG_METADATA: ClickhouseConfig.Kafka.Debug.ValueType  # 4
+        DEBUG_FEATURE: ClickhouseConfig.Kafka.Debug.ValueType  # 5
+        DEBUG_QUEUE: ClickhouseConfig.Kafka.Debug.ValueType  # 6
+        DEBUG_MSG: ClickhouseConfig.Kafka.Debug.ValueType  # 7
+        DEBUG_PROTOCOL: ClickhouseConfig.Kafka.Debug.ValueType  # 8
+        DEBUG_CGRP: ClickhouseConfig.Kafka.Debug.ValueType  # 9
+        DEBUG_SECURITY: ClickhouseConfig.Kafka.Debug.ValueType  # 10
+        DEBUG_FETCH: ClickhouseConfig.Kafka.Debug.ValueType  # 11
+        DEBUG_INTERCEPTOR: ClickhouseConfig.Kafka.Debug.ValueType  # 12
+        DEBUG_PLUGIN: ClickhouseConfig.Kafka.Debug.ValueType  # 13
+        DEBUG_CONSUMER: ClickhouseConfig.Kafka.Debug.ValueType  # 14
+        DEBUG_ADMIN: ClickhouseConfig.Kafka.Debug.ValueType  # 15
+        DEBUG_EOS: ClickhouseConfig.Kafka.Debug.ValueType  # 16
+        DEBUG_MOCK: ClickhouseConfig.Kafka.Debug.ValueType  # 17
+        DEBUG_ASSIGNOR: ClickhouseConfig.Kafka.Debug.ValueType  # 18
+        DEBUG_CONF: ClickhouseConfig.Kafka.Debug.ValueType  # 19
+        DEBUG_TELEMETRY: ClickhouseConfig.Kafka.Debug.ValueType  # 20
+        DEBUG_ALL: ClickhouseConfig.Kafka.Debug.ValueType  # 21
+
+        class _AutoOffsetReset:
+            ValueType = typing.NewType("ValueType", builtins.int)
+            V: typing_extensions.TypeAlias = ValueType
+
+        class _AutoOffsetResetEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ClickhouseConfig.Kafka._AutoOffsetReset.ValueType], builtins.type):
+            DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+            AUTO_OFFSET_RESET_UNSPECIFIED: ClickhouseConfig.Kafka._AutoOffsetReset.ValueType  # 0
+            AUTO_OFFSET_RESET_SMALLEST: ClickhouseConfig.Kafka._AutoOffsetReset.ValueType  # 1
+            AUTO_OFFSET_RESET_EARLIEST: ClickhouseConfig.Kafka._AutoOffsetReset.ValueType  # 2
+            AUTO_OFFSET_RESET_BEGINNING: ClickhouseConfig.Kafka._AutoOffsetReset.ValueType  # 3
+            AUTO_OFFSET_RESET_LARGEST: ClickhouseConfig.Kafka._AutoOffsetReset.ValueType  # 4
+            AUTO_OFFSET_RESET_LATEST: ClickhouseConfig.Kafka._AutoOffsetReset.ValueType  # 5
+            AUTO_OFFSET_RESET_END: ClickhouseConfig.Kafka._AutoOffsetReset.ValueType  # 6
+            AUTO_OFFSET_RESET_ERROR: ClickhouseConfig.Kafka._AutoOffsetReset.ValueType  # 7
+
+        class AutoOffsetReset(_AutoOffsetReset, metaclass=_AutoOffsetResetEnumTypeWrapper): ...
+        AUTO_OFFSET_RESET_UNSPECIFIED: ClickhouseConfig.Kafka.AutoOffsetReset.ValueType  # 0
+        AUTO_OFFSET_RESET_SMALLEST: ClickhouseConfig.Kafka.AutoOffsetReset.ValueType  # 1
+        AUTO_OFFSET_RESET_EARLIEST: ClickhouseConfig.Kafka.AutoOffsetReset.ValueType  # 2
+        AUTO_OFFSET_RESET_BEGINNING: ClickhouseConfig.Kafka.AutoOffsetReset.ValueType  # 3
+        AUTO_OFFSET_RESET_LARGEST: ClickhouseConfig.Kafka.AutoOffsetReset.ValueType  # 4
+        AUTO_OFFSET_RESET_LATEST: ClickhouseConfig.Kafka.AutoOffsetReset.ValueType  # 5
+        AUTO_OFFSET_RESET_END: ClickhouseConfig.Kafka.AutoOffsetReset.ValueType  # 6
+        AUTO_OFFSET_RESET_ERROR: ClickhouseConfig.Kafka.AutoOffsetReset.ValueType  # 7
+
         SECURITY_PROTOCOL_FIELD_NUMBER: builtins.int
         SASL_MECHANISM_FIELD_NUMBER: builtins.int
         SASL_USERNAME_FIELD_NUMBER: builtins.int
@@ -266,10 +382,14 @@ class ClickhouseConfig(google.protobuf.message.Message):
         ENABLE_SSL_CERTIFICATE_VERIFICATION_FIELD_NUMBER: builtins.int
         MAX_POLL_INTERVAL_MS_FIELD_NUMBER: builtins.int
         SESSION_TIMEOUT_MS_FIELD_NUMBER: builtins.int
+        DEBUG_FIELD_NUMBER: builtins.int
+        AUTO_OFFSET_RESET_FIELD_NUMBER: builtins.int
         security_protocol: global___ClickhouseConfig.Kafka.SecurityProtocol.ValueType
         sasl_mechanism: global___ClickhouseConfig.Kafka.SaslMechanism.ValueType
         sasl_username: builtins.str
         sasl_password: builtins.str
+        debug: global___ClickhouseConfig.Kafka.Debug.ValueType
+        auto_offset_reset: global___ClickhouseConfig.Kafka.AutoOffsetReset.ValueType
         @property
         def enable_ssl_certificate_verification(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
         @property
@@ -286,9 +406,11 @@ class ClickhouseConfig(google.protobuf.message.Message):
             enable_ssl_certificate_verification: google.protobuf.wrappers_pb2.BoolValue | None = ...,
             max_poll_interval_ms: google.protobuf.wrappers_pb2.Int64Value | None = ...,
             session_timeout_ms: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+            debug: global___ClickhouseConfig.Kafka.Debug.ValueType = ...,
+            auto_offset_reset: global___ClickhouseConfig.Kafka.AutoOffsetReset.ValueType = ...,
         ) -> None: ...
         def HasField(self, field_name: typing.Literal["enable_ssl_certificate_verification", b"enable_ssl_certificate_verification", "max_poll_interval_ms", b"max_poll_interval_ms", "session_timeout_ms", b"session_timeout_ms"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["enable_ssl_certificate_verification", b"enable_ssl_certificate_verification", "max_poll_interval_ms", b"max_poll_interval_ms", "sasl_mechanism", b"sasl_mechanism", "sasl_password", b"sasl_password", "sasl_username", b"sasl_username", "security_protocol", b"security_protocol", "session_timeout_ms", b"session_timeout_ms"]) -> None: ...
+        def ClearField(self, field_name: typing.Literal["auto_offset_reset", b"auto_offset_reset", "debug", b"debug", "enable_ssl_certificate_verification", b"enable_ssl_certificate_verification", "max_poll_interval_ms", b"max_poll_interval_ms", "sasl_mechanism", b"sasl_mechanism", "sasl_password", b"sasl_password", "sasl_username", b"sasl_username", "security_protocol", b"security_protocol", "session_timeout_ms", b"session_timeout_ms"]) -> None: ...
 
     @typing.final
     class KafkaTopic(google.protobuf.message.Message):
@@ -384,19 +506,41 @@ class ClickhouseConfig(google.protobuf.message.Message):
         class HttpSource(google.protobuf.message.Message):
             DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+            @typing.final
+            class Header(google.protobuf.message.Message):
+                DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+                NAME_FIELD_NUMBER: builtins.int
+                VALUE_FIELD_NUMBER: builtins.int
+                name: builtins.str
+                value: builtins.str
+                def __init__(
+                    self,
+                    *,
+                    name: builtins.str = ...,
+                    value: builtins.str = ...,
+                ) -> None: ...
+                def ClearField(self, field_name: typing.Literal["name", b"name", "value", b"value"]) -> None: ...
+
             URL_FIELD_NUMBER: builtins.int
             FORMAT_FIELD_NUMBER: builtins.int
+            HEADERS_FIELD_NUMBER: builtins.int
             url: builtins.str
             """URL of the source dictionary available over HTTP."""
             format: builtins.str
             """The data format. Valid values are all formats supported by ClickHouse SQL dialect."""
+            @property
+            def headers(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ClickhouseConfig.ExternalDictionary.HttpSource.Header]:
+                """HTTP headers."""
+
             def __init__(
                 self,
                 *,
                 url: builtins.str = ...,
                 format: builtins.str = ...,
+                headers: collections.abc.Iterable[global___ClickhouseConfig.ExternalDictionary.HttpSource.Header] | None = ...,
             ) -> None: ...
-            def ClearField(self, field_name: typing.Literal["format", b"format", "url", b"url"]) -> None: ...
+            def ClearField(self, field_name: typing.Literal["format", b"format", "headers", b"headers", "url", b"url"]) -> None: ...
 
         @typing.final
         class MysqlSource(google.protobuf.message.Message):
@@ -444,6 +588,8 @@ class ClickhouseConfig(google.protobuf.message.Message):
             REPLICAS_FIELD_NUMBER: builtins.int
             WHERE_FIELD_NUMBER: builtins.int
             INVALIDATE_QUERY_FIELD_NUMBER: builtins.int
+            CLOSE_CONNECTION_FIELD_NUMBER: builtins.int
+            SHARE_CONNECTION_FIELD_NUMBER: builtins.int
             db: builtins.str
             """Name of the MySQL database to connect to."""
             table: builtins.str
@@ -464,6 +610,14 @@ class ClickhouseConfig(google.protobuf.message.Message):
             def replicas(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ClickhouseConfig.ExternalDictionary.MysqlSource.Replica]:
                 """List of MySQL replicas of the database used as dictionary source."""
 
+            @property
+            def close_connection(self) -> google.protobuf.wrappers_pb2.BoolValue:
+                """Should the connection be closed after each request."""
+
+            @property
+            def share_connection(self) -> google.protobuf.wrappers_pb2.BoolValue:
+                """Should a connection be shared for some requests."""
+
             def __init__(
                 self,
                 *,
@@ -475,8 +629,11 @@ class ClickhouseConfig(google.protobuf.message.Message):
                 replicas: collections.abc.Iterable[global___ClickhouseConfig.ExternalDictionary.MysqlSource.Replica] | None = ...,
                 where: builtins.str = ...,
                 invalidate_query: builtins.str = ...,
+                close_connection: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+                share_connection: google.protobuf.wrappers_pb2.BoolValue | None = ...,
             ) -> None: ...
-            def ClearField(self, field_name: typing.Literal["db", b"db", "invalidate_query", b"invalidate_query", "password", b"password", "port", b"port", "replicas", b"replicas", "table", b"table", "user", b"user", "where", b"where"]) -> None: ...
+            def HasField(self, field_name: typing.Literal["close_connection", b"close_connection", "share_connection", b"share_connection"]) -> builtins.bool: ...
+            def ClearField(self, field_name: typing.Literal["close_connection", b"close_connection", "db", b"db", "invalidate_query", b"invalidate_query", "password", b"password", "port", b"port", "replicas", b"replicas", "share_connection", b"share_connection", "table", b"table", "user", b"user", "where", b"where"]) -> None: ...
 
         @typing.final
         class ClickhouseSource(google.protobuf.message.Message):
@@ -489,6 +646,7 @@ class ClickhouseConfig(google.protobuf.message.Message):
             USER_FIELD_NUMBER: builtins.int
             PASSWORD_FIELD_NUMBER: builtins.int
             WHERE_FIELD_NUMBER: builtins.int
+            SECURE_FIELD_NUMBER: builtins.int
             db: builtins.str
             """Name of the ClickHouse database."""
             table: builtins.str
@@ -503,6 +661,10 @@ class ClickhouseConfig(google.protobuf.message.Message):
             """Password of the ClickHouse database user."""
             where: builtins.str
             """Selection criteria for the data in the specified ClickHouse table."""
+            @property
+            def secure(self) -> google.protobuf.wrappers_pb2.BoolValue:
+                """Use ssl for connection."""
+
             def __init__(
                 self,
                 *,
@@ -513,8 +675,10 @@ class ClickhouseConfig(google.protobuf.message.Message):
                 user: builtins.str = ...,
                 password: builtins.str = ...,
                 where: builtins.str = ...,
+                secure: google.protobuf.wrappers_pb2.BoolValue | None = ...,
             ) -> None: ...
-            def ClearField(self, field_name: typing.Literal["db", b"db", "host", b"host", "password", b"password", "port", b"port", "table", b"table", "user", b"user", "where", b"where"]) -> None: ...
+            def HasField(self, field_name: typing.Literal["secure", b"secure"]) -> builtins.bool: ...
+            def ClearField(self, field_name: typing.Literal["db", b"db", "host", b"host", "password", b"password", "port", b"port", "secure", b"secure", "table", b"table", "user", b"user", "where", b"where"]) -> None: ...
 
         @typing.final
         class MongodbSource(google.protobuf.message.Message):
@@ -822,19 +986,25 @@ class ClickhouseConfig(google.protobuf.message.Message):
 
             TYPE_FIELD_NUMBER: builtins.int
             SIZE_IN_CELLS_FIELD_NUMBER: builtins.int
+            MAX_ARRAY_SIZE_FIELD_NUMBER: builtins.int
             type: global___ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType
             """Layout type for an external dictionary."""
             size_in_cells: builtins.int
             """Number of cells in the cache. Rounded up to a power of two.
             Applicable only for CACHE and COMPLEX_KEY_CACHE layout types.
             """
+            max_array_size: builtins.int
+            """Maximum dictionary key size.
+            Applicable only for FLAT layout type.
+            """
             def __init__(
                 self,
                 *,
                 type: global___ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType = ...,
                 size_in_cells: builtins.int = ...,
+                max_array_size: builtins.int = ...,
             ) -> None: ...
-            def ClearField(self, field_name: typing.Literal["size_in_cells", b"size_in_cells", "type", b"type"]) -> None: ...
+            def ClearField(self, field_name: typing.Literal["max_array_size", b"max_array_size", "size_in_cells", b"size_in_cells", "type", b"type"]) -> None: ...
 
         @typing.final
         class Range(google.protobuf.message.Message):
@@ -975,8 +1145,32 @@ class ClickhouseConfig(google.protobuf.message.Message):
 
         NAME_FIELD_NUMBER: builtins.int
         PATTERNS_FIELD_NUMBER: builtins.int
+        PATH_COLUMN_NAME_FIELD_NUMBER: builtins.int
+        TIME_COLUMN_NAME_FIELD_NUMBER: builtins.int
+        VALUE_COLUMN_NAME_FIELD_NUMBER: builtins.int
+        VERSION_COLUMN_NAME_FIELD_NUMBER: builtins.int
         name: builtins.str
         """Name for the specified combination of settings for Graphite rollup."""
+        path_column_name: builtins.str
+        """The name of the column storing the metric name (Graphite sensor).
+        Default: Path
+        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/ru/engines/table-engines/mergetree-family/graphitemergetree#required-columns)
+        """
+        time_column_name: builtins.str
+        """The name of the column storing the time of measuring the metric.
+        Default: Time
+        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/ru/engines/table-engines/mergetree-family/graphitemergetree#required-columns)
+        """
+        value_column_name: builtins.str
+        """The name of the column storing the value of the metric at the time set in time_column_name.
+        Default: Value
+        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/ru/engines/table-engines/mergetree-family/graphitemergetree#required-columns)
+        """
+        version_column_name: builtins.str
+        """The name of the column storing the version of the metric.
+        Default: Timestamp
+        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/ru/engines/table-engines/mergetree-family/graphitemergetree#required-columns)
+        """
         @property
         def patterns(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ClickhouseConfig.GraphiteRollup.Pattern]:
             """Pattern to use for the rollup."""
@@ -986,8 +1180,81 @@ class ClickhouseConfig(google.protobuf.message.Message):
             *,
             name: builtins.str = ...,
             patterns: collections.abc.Iterable[global___ClickhouseConfig.GraphiteRollup.Pattern] | None = ...,
+            path_column_name: builtins.str = ...,
+            time_column_name: builtins.str = ...,
+            value_column_name: builtins.str = ...,
+            version_column_name: builtins.str = ...,
         ) -> None: ...
-        def ClearField(self, field_name: typing.Literal["name", b"name", "patterns", b"patterns"]) -> None: ...
+        def ClearField(self, field_name: typing.Literal["name", b"name", "path_column_name", b"path_column_name", "patterns", b"patterns", "time_column_name", b"time_column_name", "value_column_name", b"value_column_name", "version_column_name", b"version_column_name"]) -> None: ...
+
+    @typing.final
+    class QueryMaskingRule(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        NAME_FIELD_NUMBER: builtins.int
+        REGEXP_FIELD_NUMBER: builtins.int
+        REPLACE_FIELD_NUMBER: builtins.int
+        name: builtins.str
+        """Name for the rule."""
+        regexp: builtins.str
+        """RE2 compatible regular expression.
+        Required.
+        """
+        replace: builtins.str
+        """Substitution string for sensitive data.
+        Default: six asterisks
+        """
+        def __init__(
+            self,
+            *,
+            name: builtins.str = ...,
+            regexp: builtins.str = ...,
+            replace: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["name", b"name", "regexp", b"regexp", "replace", b"replace"]) -> None: ...
+
+    @typing.final
+    class QueryCache(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        MAX_SIZE_IN_BYTES_FIELD_NUMBER: builtins.int
+        MAX_ENTRIES_FIELD_NUMBER: builtins.int
+        MAX_ENTRY_SIZE_IN_BYTES_FIELD_NUMBER: builtins.int
+        MAX_ENTRY_SIZE_IN_ROWS_FIELD_NUMBER: builtins.int
+        @property
+        def max_size_in_bytes(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """The maximum cache size in bytes.
+            Default: 1073741824 (1 GiB)
+            """
+
+        @property
+        def max_entries(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """The maximum number of SELECT query results stored in the cache.
+            Default: 1024
+            """
+
+        @property
+        def max_entry_size_in_bytes(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """The maximum size in bytes SELECT query results may have to be saved in the cache.
+            Dafault: 1048576 (1 MiB)
+            """
+
+        @property
+        def max_entry_size_in_rows(self) -> google.protobuf.wrappers_pb2.Int64Value:
+            """The maximum number of rows SELECT query results may have to be saved in the cache.
+            Default: 30000000 (30 mil)
+            """
+
+        def __init__(
+            self,
+            *,
+            max_size_in_bytes: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+            max_entries: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+            max_entry_size_in_bytes: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+            max_entry_size_in_rows: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["max_entries", b"max_entries", "max_entry_size_in_bytes", b"max_entry_size_in_bytes", "max_entry_size_in_rows", b"max_entry_size_in_rows", "max_size_in_bytes", b"max_size_in_bytes"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["max_entries", b"max_entries", "max_entry_size_in_bytes", b"max_entry_size_in_bytes", "max_entry_size_in_rows", b"max_entry_size_in_rows", "max_size_in_bytes", b"max_size_in_bytes"]) -> None: ...
 
     LOG_LEVEL_FIELD_NUMBER: builtins.int
     MERGE_TREE_FIELD_NUMBER: builtins.int
@@ -1055,6 +1322,9 @@ class ClickhouseConfig(google.protobuf.message.Message):
     DEFAULT_DATABASE_FIELD_NUMBER: builtins.int
     TOTAL_MEMORY_PROFILER_STEP_FIELD_NUMBER: builtins.int
     TOTAL_MEMORY_TRACKER_SAMPLE_PROBABILITY_FIELD_NUMBER: builtins.int
+    QUERY_MASKING_RULES_FIELD_NUMBER: builtins.int
+    DICTIONARIES_LAZY_LOAD_FIELD_NUMBER: builtins.int
+    QUERY_CACHE_FIELD_NUMBER: builtins.int
     log_level: global___ClickhouseConfig.LogLevel.ValueType
     """Logging level for the ClickHouse cluster. Possible values: TRACE, DEBUG, INFORMATION, WARNING, ERROR."""
     timezone: builtins.str
@@ -1364,6 +1634,27 @@ class ClickhouseConfig(google.protobuf.message.Message):
 
     @property
     def total_memory_tracker_sample_probability(self) -> google.protobuf.wrappers_pb2.DoubleValue: ...
+    @property
+    def query_masking_rules(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ClickhouseConfig.QueryMaskingRule]:
+        """Regexp-based rules, which will be applied to queries as well as all log messages before storing them in server logs, system.query_log, system.text_log, system.processes tables, and in logs sent to the client. That allows preventing sensitive data leakage from SQL queries (like names, emails, personal identifiers or credit card numbers) to logs.
+        Change of these settings is applied with ClickHouse restart
+        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/server-configuration-parameters/settings#query-masking-rules)
+        """
+
+    @property
+    def dictionaries_lazy_load(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Lazy loading of dictionaries.
+        Default: true
+        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/server-configuration-parameters/settings#dictionaries_lazy_load)
+        """
+
+    @property
+    def query_cache(self) -> global___ClickhouseConfig.QueryCache:
+        """[Query cache](https://clickhouse.com/docs/en/operations/query-cache) configuration.
+        Min version: 23.5
+        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/server-configuration-parameters/settings#query_cache)
+        """
+
     def __init__(
         self,
         *,
@@ -1433,9 +1724,12 @@ class ClickhouseConfig(google.protobuf.message.Message):
         default_database: google.protobuf.wrappers_pb2.StringValue | None = ...,
         total_memory_profiler_step: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         total_memory_tracker_sample_probability: google.protobuf.wrappers_pb2.DoubleValue | None = ...,
+        query_masking_rules: collections.abc.Iterable[global___ClickhouseConfig.QueryMaskingRule] | None = ...,
+        dictionaries_lazy_load: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        query_cache: global___ClickhouseConfig.QueryCache | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["asynchronous_insert_log_enabled", b"asynchronous_insert_log_enabled", "asynchronous_insert_log_retention_size", b"asynchronous_insert_log_retention_size", "asynchronous_insert_log_retention_time", b"asynchronous_insert_log_retention_time", "asynchronous_metric_log_enabled", b"asynchronous_metric_log_enabled", "asynchronous_metric_log_retention_size", b"asynchronous_metric_log_retention_size", "asynchronous_metric_log_retention_time", b"asynchronous_metric_log_retention_time", "background_buffer_flush_schedule_pool_size", b"background_buffer_flush_schedule_pool_size", "background_common_pool_size", b"background_common_pool_size", "background_distributed_schedule_pool_size", b"background_distributed_schedule_pool_size", "background_fetches_pool_size", b"background_fetches_pool_size", "background_merges_mutations_concurrency_ratio", b"background_merges_mutations_concurrency_ratio", "background_message_broker_schedule_pool_size", b"background_message_broker_schedule_pool_size", "background_move_pool_size", b"background_move_pool_size", "background_pool_size", b"background_pool_size", "background_schedule_pool_size", b"background_schedule_pool_size", "builtin_dictionaries_reload_interval", b"builtin_dictionaries_reload_interval", "default_database", b"default_database", "geobase_enabled", b"geobase_enabled", "kafka", b"kafka", "keep_alive_timeout", b"keep_alive_timeout", "mark_cache_size", b"mark_cache_size", "max_concurrent_queries", b"max_concurrent_queries", "max_connections", b"max_connections", "max_partition_size_to_drop", b"max_partition_size_to_drop", "max_table_size_to_drop", b"max_table_size_to_drop", "merge_tree", b"merge_tree", "metric_log_enabled", b"metric_log_enabled", "metric_log_retention_size", b"metric_log_retention_size", "metric_log_retention_time", b"metric_log_retention_time", "opentelemetry_span_log_enabled", b"opentelemetry_span_log_enabled", "opentelemetry_span_log_retention_size", b"opentelemetry_span_log_retention_size", "opentelemetry_span_log_retention_time", b"opentelemetry_span_log_retention_time", "part_log_retention_size", b"part_log_retention_size", "part_log_retention_time", b"part_log_retention_time", "query_log_retention_size", b"query_log_retention_size", "query_log_retention_time", b"query_log_retention_time", "query_thread_log_enabled", b"query_thread_log_enabled", "query_thread_log_retention_size", b"query_thread_log_retention_size", "query_thread_log_retention_time", b"query_thread_log_retention_time", "query_views_log_enabled", b"query_views_log_enabled", "query_views_log_retention_size", b"query_views_log_retention_size", "query_views_log_retention_time", b"query_views_log_retention_time", "rabbitmq", b"rabbitmq", "session_log_enabled", b"session_log_enabled", "session_log_retention_size", b"session_log_retention_size", "session_log_retention_time", b"session_log_retention_time", "text_log_enabled", b"text_log_enabled", "text_log_retention_size", b"text_log_retention_size", "text_log_retention_time", b"text_log_retention_time", "total_memory_profiler_step", b"total_memory_profiler_step", "total_memory_tracker_sample_probability", b"total_memory_tracker_sample_probability", "trace_log_enabled", b"trace_log_enabled", "trace_log_retention_size", b"trace_log_retention_size", "trace_log_retention_time", b"trace_log_retention_time", "uncompressed_cache_size", b"uncompressed_cache_size", "zookeeper_log_enabled", b"zookeeper_log_enabled", "zookeeper_log_retention_size", b"zookeeper_log_retention_size", "zookeeper_log_retention_time", b"zookeeper_log_retention_time"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["asynchronous_insert_log_enabled", b"asynchronous_insert_log_enabled", "asynchronous_insert_log_retention_size", b"asynchronous_insert_log_retention_size", "asynchronous_insert_log_retention_time", b"asynchronous_insert_log_retention_time", "asynchronous_metric_log_enabled", b"asynchronous_metric_log_enabled", "asynchronous_metric_log_retention_size", b"asynchronous_metric_log_retention_size", "asynchronous_metric_log_retention_time", b"asynchronous_metric_log_retention_time", "background_buffer_flush_schedule_pool_size", b"background_buffer_flush_schedule_pool_size", "background_common_pool_size", b"background_common_pool_size", "background_distributed_schedule_pool_size", b"background_distributed_schedule_pool_size", "background_fetches_pool_size", b"background_fetches_pool_size", "background_merges_mutations_concurrency_ratio", b"background_merges_mutations_concurrency_ratio", "background_message_broker_schedule_pool_size", b"background_message_broker_schedule_pool_size", "background_move_pool_size", b"background_move_pool_size", "background_pool_size", b"background_pool_size", "background_schedule_pool_size", b"background_schedule_pool_size", "builtin_dictionaries_reload_interval", b"builtin_dictionaries_reload_interval", "compression", b"compression", "default_database", b"default_database", "dictionaries", b"dictionaries", "geobase_enabled", b"geobase_enabled", "geobase_uri", b"geobase_uri", "graphite_rollup", b"graphite_rollup", "kafka", b"kafka", "kafka_topics", b"kafka_topics", "keep_alive_timeout", b"keep_alive_timeout", "log_level", b"log_level", "mark_cache_size", b"mark_cache_size", "max_concurrent_queries", b"max_concurrent_queries", "max_connections", b"max_connections", "max_partition_size_to_drop", b"max_partition_size_to_drop", "max_table_size_to_drop", b"max_table_size_to_drop", "merge_tree", b"merge_tree", "metric_log_enabled", b"metric_log_enabled", "metric_log_retention_size", b"metric_log_retention_size", "metric_log_retention_time", b"metric_log_retention_time", "opentelemetry_span_log_enabled", b"opentelemetry_span_log_enabled", "opentelemetry_span_log_retention_size", b"opentelemetry_span_log_retention_size", "opentelemetry_span_log_retention_time", b"opentelemetry_span_log_retention_time", "part_log_retention_size", b"part_log_retention_size", "part_log_retention_time", b"part_log_retention_time", "query_log_retention_size", b"query_log_retention_size", "query_log_retention_time", b"query_log_retention_time", "query_thread_log_enabled", b"query_thread_log_enabled", "query_thread_log_retention_size", b"query_thread_log_retention_size", "query_thread_log_retention_time", b"query_thread_log_retention_time", "query_views_log_enabled", b"query_views_log_enabled", "query_views_log_retention_size", b"query_views_log_retention_size", "query_views_log_retention_time", b"query_views_log_retention_time", "rabbitmq", b"rabbitmq", "session_log_enabled", b"session_log_enabled", "session_log_retention_size", b"session_log_retention_size", "session_log_retention_time", b"session_log_retention_time", "text_log_enabled", b"text_log_enabled", "text_log_level", b"text_log_level", "text_log_retention_size", b"text_log_retention_size", "text_log_retention_time", b"text_log_retention_time", "timezone", b"timezone", "total_memory_profiler_step", b"total_memory_profiler_step", "total_memory_tracker_sample_probability", b"total_memory_tracker_sample_probability", "trace_log_enabled", b"trace_log_enabled", "trace_log_retention_size", b"trace_log_retention_size", "trace_log_retention_time", b"trace_log_retention_time", "uncompressed_cache_size", b"uncompressed_cache_size", "zookeeper_log_enabled", b"zookeeper_log_enabled", "zookeeper_log_retention_size", b"zookeeper_log_retention_size", "zookeeper_log_retention_time", b"zookeeper_log_retention_time"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["asynchronous_insert_log_enabled", b"asynchronous_insert_log_enabled", "asynchronous_insert_log_retention_size", b"asynchronous_insert_log_retention_size", "asynchronous_insert_log_retention_time", b"asynchronous_insert_log_retention_time", "asynchronous_metric_log_enabled", b"asynchronous_metric_log_enabled", "asynchronous_metric_log_retention_size", b"asynchronous_metric_log_retention_size", "asynchronous_metric_log_retention_time", b"asynchronous_metric_log_retention_time", "background_buffer_flush_schedule_pool_size", b"background_buffer_flush_schedule_pool_size", "background_common_pool_size", b"background_common_pool_size", "background_distributed_schedule_pool_size", b"background_distributed_schedule_pool_size", "background_fetches_pool_size", b"background_fetches_pool_size", "background_merges_mutations_concurrency_ratio", b"background_merges_mutations_concurrency_ratio", "background_message_broker_schedule_pool_size", b"background_message_broker_schedule_pool_size", "background_move_pool_size", b"background_move_pool_size", "background_pool_size", b"background_pool_size", "background_schedule_pool_size", b"background_schedule_pool_size", "builtin_dictionaries_reload_interval", b"builtin_dictionaries_reload_interval", "default_database", b"default_database", "dictionaries_lazy_load", b"dictionaries_lazy_load", "geobase_enabled", b"geobase_enabled", "kafka", b"kafka", "keep_alive_timeout", b"keep_alive_timeout", "mark_cache_size", b"mark_cache_size", "max_concurrent_queries", b"max_concurrent_queries", "max_connections", b"max_connections", "max_partition_size_to_drop", b"max_partition_size_to_drop", "max_table_size_to_drop", b"max_table_size_to_drop", "merge_tree", b"merge_tree", "metric_log_enabled", b"metric_log_enabled", "metric_log_retention_size", b"metric_log_retention_size", "metric_log_retention_time", b"metric_log_retention_time", "opentelemetry_span_log_enabled", b"opentelemetry_span_log_enabled", "opentelemetry_span_log_retention_size", b"opentelemetry_span_log_retention_size", "opentelemetry_span_log_retention_time", b"opentelemetry_span_log_retention_time", "part_log_retention_size", b"part_log_retention_size", "part_log_retention_time", b"part_log_retention_time", "query_cache", b"query_cache", "query_log_retention_size", b"query_log_retention_size", "query_log_retention_time", b"query_log_retention_time", "query_thread_log_enabled", b"query_thread_log_enabled", "query_thread_log_retention_size", b"query_thread_log_retention_size", "query_thread_log_retention_time", b"query_thread_log_retention_time", "query_views_log_enabled", b"query_views_log_enabled", "query_views_log_retention_size", b"query_views_log_retention_size", "query_views_log_retention_time", b"query_views_log_retention_time", "rabbitmq", b"rabbitmq", "session_log_enabled", b"session_log_enabled", "session_log_retention_size", b"session_log_retention_size", "session_log_retention_time", b"session_log_retention_time", "text_log_enabled", b"text_log_enabled", "text_log_retention_size", b"text_log_retention_size", "text_log_retention_time", b"text_log_retention_time", "total_memory_profiler_step", b"total_memory_profiler_step", "total_memory_tracker_sample_probability", b"total_memory_tracker_sample_probability", "trace_log_enabled", b"trace_log_enabled", "trace_log_retention_size", b"trace_log_retention_size", "trace_log_retention_time", b"trace_log_retention_time", "uncompressed_cache_size", b"uncompressed_cache_size", "zookeeper_log_enabled", b"zookeeper_log_enabled", "zookeeper_log_retention_size", b"zookeeper_log_retention_size", "zookeeper_log_retention_time", b"zookeeper_log_retention_time"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["asynchronous_insert_log_enabled", b"asynchronous_insert_log_enabled", "asynchronous_insert_log_retention_size", b"asynchronous_insert_log_retention_size", "asynchronous_insert_log_retention_time", b"asynchronous_insert_log_retention_time", "asynchronous_metric_log_enabled", b"asynchronous_metric_log_enabled", "asynchronous_metric_log_retention_size", b"asynchronous_metric_log_retention_size", "asynchronous_metric_log_retention_time", b"asynchronous_metric_log_retention_time", "background_buffer_flush_schedule_pool_size", b"background_buffer_flush_schedule_pool_size", "background_common_pool_size", b"background_common_pool_size", "background_distributed_schedule_pool_size", b"background_distributed_schedule_pool_size", "background_fetches_pool_size", b"background_fetches_pool_size", "background_merges_mutations_concurrency_ratio", b"background_merges_mutations_concurrency_ratio", "background_message_broker_schedule_pool_size", b"background_message_broker_schedule_pool_size", "background_move_pool_size", b"background_move_pool_size", "background_pool_size", b"background_pool_size", "background_schedule_pool_size", b"background_schedule_pool_size", "builtin_dictionaries_reload_interval", b"builtin_dictionaries_reload_interval", "compression", b"compression", "default_database", b"default_database", "dictionaries", b"dictionaries", "dictionaries_lazy_load", b"dictionaries_lazy_load", "geobase_enabled", b"geobase_enabled", "geobase_uri", b"geobase_uri", "graphite_rollup", b"graphite_rollup", "kafka", b"kafka", "kafka_topics", b"kafka_topics", "keep_alive_timeout", b"keep_alive_timeout", "log_level", b"log_level", "mark_cache_size", b"mark_cache_size", "max_concurrent_queries", b"max_concurrent_queries", "max_connections", b"max_connections", "max_partition_size_to_drop", b"max_partition_size_to_drop", "max_table_size_to_drop", b"max_table_size_to_drop", "merge_tree", b"merge_tree", "metric_log_enabled", b"metric_log_enabled", "metric_log_retention_size", b"metric_log_retention_size", "metric_log_retention_time", b"metric_log_retention_time", "opentelemetry_span_log_enabled", b"opentelemetry_span_log_enabled", "opentelemetry_span_log_retention_size", b"opentelemetry_span_log_retention_size", "opentelemetry_span_log_retention_time", b"opentelemetry_span_log_retention_time", "part_log_retention_size", b"part_log_retention_size", "part_log_retention_time", b"part_log_retention_time", "query_cache", b"query_cache", "query_log_retention_size", b"query_log_retention_size", "query_log_retention_time", b"query_log_retention_time", "query_masking_rules", b"query_masking_rules", "query_thread_log_enabled", b"query_thread_log_enabled", "query_thread_log_retention_size", b"query_thread_log_retention_size", "query_thread_log_retention_time", b"query_thread_log_retention_time", "query_views_log_enabled", b"query_views_log_enabled", "query_views_log_retention_size", b"query_views_log_retention_size", "query_views_log_retention_time", b"query_views_log_retention_time", "rabbitmq", b"rabbitmq", "session_log_enabled", b"session_log_enabled", "session_log_retention_size", b"session_log_retention_size", "session_log_retention_time", b"session_log_retention_time", "text_log_enabled", b"text_log_enabled", "text_log_level", b"text_log_level", "text_log_retention_size", b"text_log_retention_size", "text_log_retention_time", b"text_log_retention_time", "timezone", b"timezone", "total_memory_profiler_step", b"total_memory_profiler_step", "total_memory_tracker_sample_probability", b"total_memory_tracker_sample_probability", "trace_log_enabled", b"trace_log_enabled", "trace_log_retention_size", b"trace_log_retention_size", "trace_log_retention_time", b"trace_log_retention_time", "uncompressed_cache_size", b"uncompressed_cache_size", "zookeeper_log_enabled", b"zookeeper_log_enabled", "zookeeper_log_retention_size", b"zookeeper_log_retention_size", "zookeeper_log_retention_time", b"zookeeper_log_retention_time"]) -> None: ...
 
 global___ClickhouseConfig = ClickhouseConfig
 

@@ -135,6 +135,7 @@ class CreateTrailRequest(google.protobuf.message.Message):
     DESTINATION_FIELD_NUMBER: builtins.int
     SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     FILTER_FIELD_NUMBER: builtins.int
+    FILTERING_POLICY_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a trail in."""
     name: builtins.str
@@ -155,7 +156,13 @@ class CreateTrailRequest(google.protobuf.message.Message):
 
     @property
     def filter(self) -> yandex.cloud.audittrails.v1.trail_pb2.Trail.Filter:
-        """Event filtering configuration of the trail"""
+        """Event filtering configuration of the trail
+        deprecated: use filtering_policy instead
+        """
+
+    @property
+    def filtering_policy(self) -> yandex.cloud.audittrails.v1.trail_pb2.Trail.FilteringPolicy:
+        """Event filtering policy of the trail"""
 
     def __init__(
         self,
@@ -167,9 +174,10 @@ class CreateTrailRequest(google.protobuf.message.Message):
         destination: yandex.cloud.audittrails.v1.trail_pb2.Trail.Destination | None = ...,
         service_account_id: builtins.str = ...,
         filter: yandex.cloud.audittrails.v1.trail_pb2.Trail.Filter | None = ...,
+        filtering_policy: yandex.cloud.audittrails.v1.trail_pb2.Trail.FilteringPolicy | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["destination", b"destination", "filter", b"filter"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "destination", b"destination", "filter", b"filter", "folder_id", b"folder_id", "labels", b"labels", "name", b"name", "service_account_id", b"service_account_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["destination", b"destination", "filter", b"filter", "filtering_policy", b"filtering_policy"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "destination", b"destination", "filter", b"filter", "filtering_policy", b"filtering_policy", "folder_id", b"folder_id", "labels", b"labels", "name", b"name", "service_account_id", b"service_account_id"]) -> None: ...
 
 global___CreateTrailRequest = CreateTrailRequest
 
@@ -201,6 +209,7 @@ class UpdateTrailRequest(google.protobuf.message.Message):
     DESTINATION_FIELD_NUMBER: builtins.int
     SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     FILTER_FIELD_NUMBER: builtins.int
+    FILTERING_POLICY_FIELD_NUMBER: builtins.int
     trail_id: builtins.str
     """ID of the trail to update."""
     name: builtins.str
@@ -223,7 +232,13 @@ class UpdateTrailRequest(google.protobuf.message.Message):
 
     @property
     def filter(self) -> yandex.cloud.audittrails.v1.trail_pb2.Trail.Filter:
-        """New filtering configuration of the trail"""
+        """Updated filtering configuration of the trail
+        deprecated: use filtering_policy instead
+        """
+
+    @property
+    def filtering_policy(self) -> yandex.cloud.audittrails.v1.trail_pb2.Trail.FilteringPolicy:
+        """Updated event filtering policy"""
 
     def __init__(
         self,
@@ -236,9 +251,10 @@ class UpdateTrailRequest(google.protobuf.message.Message):
         destination: yandex.cloud.audittrails.v1.trail_pb2.Trail.Destination | None = ...,
         service_account_id: builtins.str = ...,
         filter: yandex.cloud.audittrails.v1.trail_pb2.Trail.Filter | None = ...,
+        filtering_policy: yandex.cloud.audittrails.v1.trail_pb2.Trail.FilteringPolicy | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["destination", b"destination", "filter", b"filter", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "destination", b"destination", "filter", b"filter", "labels", b"labels", "name", b"name", "service_account_id", b"service_account_id", "trail_id", b"trail_id", "update_mask", b"update_mask"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["destination", b"destination", "filter", b"filter", "filtering_policy", b"filtering_policy", "update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "destination", b"destination", "filter", b"filter", "filtering_policy", b"filtering_policy", "labels", b"labels", "name", b"name", "service_account_id", b"service_account_id", "trail_id", b"trail_id", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateTrailRequest = UpdateTrailRequest
 

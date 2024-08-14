@@ -283,7 +283,7 @@ class Trail(google.protobuf.message.Message):
         FILTERS_FIELD_NUMBER: builtins.int
         @property
         def resource(self) -> global___Trail.Resource:
-            """Definition of the resource that contains"""
+            """Definition of the resource that contains nested resources"""
 
         @property
         def filters(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Trail.PathFilterElement]:
@@ -377,6 +377,107 @@ class Trail(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["plane", b"plane", "type", b"type"]) -> None: ...
 
+    @typing.final
+    class DataEventsFiltering(google.protobuf.message.Message):
+        """Policy for gathering data events"""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        SERVICE_FIELD_NUMBER: builtins.int
+        INCLUDED_EVENTS_FIELD_NUMBER: builtins.int
+        EXCLUDED_EVENTS_FIELD_NUMBER: builtins.int
+        RESOURCE_SCOPES_FIELD_NUMBER: builtins.int
+        service: builtins.str
+        """Name of the service whose events will be delivered"""
+        @property
+        def included_events(self) -> global___Trail.EventTypes:
+            """Explicitly included events of specified service
+            New events of the service won't be delivered by default
+            """
+
+        @property
+        def excluded_events(self) -> global___Trail.EventTypes:
+            """Explicitly excluded events of specified service
+            New events of the service will be delivered by default
+            """
+
+        @property
+        def resource_scopes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Trail.Resource]:
+            """A list of resources which will be monitored by the trail"""
+
+        def __init__(
+            self,
+            *,
+            service: builtins.str = ...,
+            included_events: global___Trail.EventTypes | None = ...,
+            excluded_events: global___Trail.EventTypes | None = ...,
+            resource_scopes: collections.abc.Iterable[global___Trail.Resource] | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["additional_rules", b"additional_rules", "excluded_events", b"excluded_events", "included_events", b"included_events"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["additional_rules", b"additional_rules", "excluded_events", b"excluded_events", "included_events", b"included_events", "resource_scopes", b"resource_scopes", "service", b"service"]) -> None: ...
+        def WhichOneof(self, oneof_group: typing.Literal["additional_rules", b"additional_rules"]) -> typing.Literal["included_events", "excluded_events"] | None: ...
+
+    @typing.final
+    class EventTypes(google.protobuf.message.Message):
+        """Policy with explicitly specified event group"""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        EVENT_TYPES_FIELD_NUMBER: builtins.int
+        @property
+        def event_types(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+        def __init__(
+            self,
+            *,
+            event_types: collections.abc.Iterable[builtins.str] | None = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["event_types", b"event_types"]) -> None: ...
+
+    @typing.final
+    class ManagementEventsFiltering(google.protobuf.message.Message):
+        """Policy for gathering management events"""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        RESOURCE_SCOPES_FIELD_NUMBER: builtins.int
+        @property
+        def resource_scopes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Trail.Resource]:
+            """A list of resources which will be monitored by the trail"""
+
+        def __init__(
+            self,
+            *,
+            resource_scopes: collections.abc.Iterable[global___Trail.Resource] | None = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["resource_scopes", b"resource_scopes"]) -> None: ...
+
+    @typing.final
+    class FilteringPolicy(google.protobuf.message.Message):
+        """Combination of policies describing event filtering process of the trail
+        At least one filed must be filled
+        """
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        MANAGEMENT_EVENTS_FILTER_FIELD_NUMBER: builtins.int
+        DATA_EVENTS_FILTERS_FIELD_NUMBER: builtins.int
+        @property
+        def management_events_filter(self) -> global___Trail.ManagementEventsFiltering:
+            """Singular filter describing gathering management events"""
+
+        @property
+        def data_events_filters(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Trail.DataEventsFiltering]:
+            """List of filters describing gathering data events"""
+
+        def __init__(
+            self,
+            *,
+            management_events_filter: global___Trail.ManagementEventsFiltering | None = ...,
+            data_events_filters: collections.abc.Iterable[global___Trail.DataEventsFiltering] | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["management_events_filter", b"management_events_filter"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["data_events_filters", b"data_events_filters", "management_events_filter", b"management_events_filter"]) -> None: ...
+
     ID_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
@@ -390,6 +491,7 @@ class Trail(google.protobuf.message.Message):
     FILTER_FIELD_NUMBER: builtins.int
     STATUS_ERROR_MESSAGE_FIELD_NUMBER: builtins.int
     CLOUD_ID_FIELD_NUMBER: builtins.int
+    FILTERING_POLICY_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the trail"""
     folder_id: builtins.str
@@ -424,7 +526,15 @@ class Trail(google.protobuf.message.Message):
 
     @property
     def filter(self) -> global___Trail.Filter:
-        """Filtering configuration of the trail"""
+        """Filtering configuration of the trail
+        deprecated: use filtering_policy instead
+        """
+
+    @property
+    def filtering_policy(self) -> global___Trail.FilteringPolicy:
+        """Event filtering policy
+        Describes which groups of events will be sent and which resources will be monitored
+        """
 
     def __init__(
         self,
@@ -442,8 +552,9 @@ class Trail(google.protobuf.message.Message):
         filter: global___Trail.Filter | None = ...,
         status_error_message: builtins.str = ...,
         cloud_id: builtins.str = ...,
+        filtering_policy: global___Trail.FilteringPolicy | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "destination", b"destination", "filter", b"filter", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cloud_id", b"cloud_id", "created_at", b"created_at", "description", b"description", "destination", b"destination", "filter", b"filter", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "name", b"name", "service_account_id", b"service_account_id", "status", b"status", "status_error_message", b"status_error_message", "updated_at", b"updated_at"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "destination", b"destination", "filter", b"filter", "filtering_policy", b"filtering_policy", "updated_at", b"updated_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cloud_id", b"cloud_id", "created_at", b"created_at", "description", b"description", "destination", b"destination", "filter", b"filter", "filtering_policy", b"filtering_policy", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "name", b"name", "service_account_id", b"service_account_id", "status", b"status", "status_error_message", b"status_error_message", "updated_at", b"updated_at"]) -> None: ...
 
 global___Trail = Trail

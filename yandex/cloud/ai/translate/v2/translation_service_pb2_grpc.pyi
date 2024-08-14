@@ -18,7 +18,10 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class TranslationServiceStub:
-    """A set of methods for the Translate service."""
+    """A set of methods for the Translate service.
+
+    Make sure you send your [authentication](/docs/translate/api-ref/authentication) credentials in the `Authorization` header of each request.
+    """
 
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Translate: grpc.UnaryUnaryMultiCallable[
@@ -40,7 +43,10 @@ class TranslationServiceStub:
     """Retrieves the list of supported languages."""
 
 class TranslationServiceAsyncStub:
-    """A set of methods for the Translate service."""
+    """A set of methods for the Translate service.
+
+    Make sure you send your [authentication](/docs/translate/api-ref/authentication) credentials in the `Authorization` header of each request.
+    """
 
     Translate: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.translate.v2.translation_service_pb2.TranslateRequest,
@@ -61,7 +67,10 @@ class TranslationServiceAsyncStub:
     """Retrieves the list of supported languages."""
 
 class TranslationServiceServicer(metaclass=abc.ABCMeta):
-    """A set of methods for the Translate service."""
+    """A set of methods for the Translate service.
+
+    Make sure you send your [authentication](/docs/translate/api-ref/authentication) credentials in the `Authorization` header of each request.
+    """
 
     @abc.abstractmethod
     def Translate(
