@@ -41,6 +41,7 @@ class ServiceAccount(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
+    LAST_AUTHENTICATED_AT_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the service account."""
     folder_id: builtins.str
@@ -59,6 +60,10 @@ class ServiceAccount(google.protobuf.message.Message):
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Resource labels as `` key:value `` pairs. Maximum of 64 per resource."""
 
+    @property
+    def last_authenticated_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp for the last authentication of this service account."""
+
     def __init__(
         self,
         *,
@@ -68,8 +73,9 @@ class ServiceAccount(google.protobuf.message.Message):
         name: builtins.str = ...,
         description: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        last_authenticated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["created_at", b"created_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "name", b"name"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "last_authenticated_at", b"last_authenticated_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "last_authenticated_at", b"last_authenticated_at", "name", b"name"]) -> None: ...
 
 global___ServiceAccount = ServiceAccount

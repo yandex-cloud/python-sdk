@@ -218,12 +218,16 @@ class Task(google.protobuf.message.Message):
         BACKUP: Task._Type.ValueType  # 1
         RETENTION: Task._Type.ValueType  # 2
         RECOVERY: Task._Type.ValueType  # 3
+        APPLY_POLICY: Task._Type.ValueType  # 4
+        REVOKE_POLICY: Task._Type.ValueType  # 5
 
     class Type(_Type, metaclass=_TypeEnumTypeWrapper): ...
     TYPE_UNSPECIFIED: Task.Type.ValueType  # 0
     BACKUP: Task.Type.ValueType  # 1
     RETENTION: Task.Type.ValueType  # 2
     RECOVERY: Task.Type.ValueType  # 3
+    APPLY_POLICY: Task.Type.ValueType  # 4
+    REVOKE_POLICY: Task.Type.ValueType  # 5
 
     class _Status:
         ValueType = typing.NewType("ValueType", builtins.int)

@@ -10,6 +10,7 @@ import google.protobuf.field_mask_pb2
 import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
+import yandex.cloud.compute.v1.hardware_generation_pb2
 import yandex.cloud.compute.v1.snapshot_pb2
 import yandex.cloud.operation.operation_pb2
 
@@ -137,6 +138,7 @@ class CreateSnapshotRequest(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
+    HARDWARE_GENERATION_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a snapshot in.
     To get the folder ID use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
@@ -153,6 +155,12 @@ class CreateSnapshotRequest(google.protobuf.message.Message):
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Resource labels as `key:value` pairs."""
 
+    @property
+    def hardware_generation(self) -> yandex.cloud.compute.v1.hardware_generation_pb2.HardwareGeneration:
+        """Specify the overrides to hardware_generation of a source disk, image or snapshot,
+        or to the default values if the source does not define it.
+        """
+
     def __init__(
         self,
         *,
@@ -161,8 +169,10 @@ class CreateSnapshotRequest(google.protobuf.message.Message):
         name: builtins.str = ...,
         description: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        hardware_generation: yandex.cloud.compute.v1.hardware_generation_pb2.HardwareGeneration | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "disk_id", b"disk_id", "folder_id", b"folder_id", "labels", b"labels", "name", b"name"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["hardware_generation", b"hardware_generation"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "disk_id", b"disk_id", "folder_id", b"folder_id", "hardware_generation", b"hardware_generation", "labels", b"labels", "name", b"name"]) -> None: ...
 
 global___CreateSnapshotRequest = CreateSnapshotRequest
 

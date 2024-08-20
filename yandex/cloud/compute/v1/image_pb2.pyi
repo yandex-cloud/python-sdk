@@ -12,6 +12,7 @@ import google.protobuf.message
 import google.protobuf.timestamp_pb2
 import sys
 import typing
+import yandex.cloud.compute.v1.hardware_generation_pb2
 
 if sys.version_info >= (3, 10):
     import typing as typing_extensions
@@ -82,6 +83,7 @@ class Image(google.protobuf.message.Message):
     STATUS_FIELD_NUMBER: builtins.int
     OS_FIELD_NUMBER: builtins.int
     POOLED_FIELD_NUMBER: builtins.int
+    HARDWARE_GENERATION_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the image."""
     folder_id: builtins.str
@@ -127,6 +129,12 @@ class Image(google.protobuf.message.Message):
     def os(self) -> global___Os:
         """Operating system that is contained in the image."""
 
+    @property
+    def hardware_generation(self) -> yandex.cloud.compute.v1.hardware_generation_pb2.HardwareGeneration:
+        """If specified, forces the same HardwareGeneration features to be applied to the instance
+        created using this image as a source for the boot disk. Otherwise the current default will be used.
+        """
+
     def __init__(
         self,
         *,
@@ -143,9 +151,10 @@ class Image(google.protobuf.message.Message):
         status: global___Image.Status.ValueType = ...,
         os: global___Os | None = ...,
         pooled: builtins.bool = ...,
+        hardware_generation: yandex.cloud.compute.v1.hardware_generation_pb2.HardwareGeneration | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "os", b"os"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "family", b"family", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "min_disk_size", b"min_disk_size", "name", b"name", "os", b"os", "pooled", b"pooled", "product_ids", b"product_ids", "status", b"status", "storage_size", b"storage_size"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "hardware_generation", b"hardware_generation", "os", b"os"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "family", b"family", "folder_id", b"folder_id", "hardware_generation", b"hardware_generation", "id", b"id", "labels", b"labels", "min_disk_size", b"min_disk_size", "name", b"name", "os", b"os", "pooled", b"pooled", "product_ids", b"product_ids", "status", b"status", "storage_size", b"storage_size"]) -> None: ...
 
 global___Image = Image
 

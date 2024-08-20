@@ -13,6 +13,7 @@ import google.protobuf.message
 import google.protobuf.timestamp_pb2
 import sys
 import typing
+import yandex.cloud.compute.v1.hardware_generation_pb2
 import yandex.cloud.compute.v1.maintenance_pb2
 
 if sys.version_info >= (3, 10):
@@ -181,6 +182,7 @@ class Instance(google.protobuf.message.Message):
     HOST_ID_FIELD_NUMBER: builtins.int
     MAINTENANCE_POLICY_FIELD_NUMBER: builtins.int
     MAINTENANCE_GRACE_PERIOD_FIELD_NUMBER: builtins.int
+    HARDWARE_GENERATION_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the instance."""
     folder_id: builtins.str
@@ -277,6 +279,10 @@ class Instance(google.protobuf.message.Message):
     def maintenance_grace_period(self) -> google.protobuf.duration_pb2.Duration:
         """Time between notification via metadata service and maintenance"""
 
+    @property
+    def hardware_generation(self) -> yandex.cloud.compute.v1.hardware_generation_pb2.HardwareGeneration:
+        """This feature set is inherited from the image/disk used as a boot one at the creation of the instance."""
+
     def __init__(
         self,
         *,
@@ -308,9 +314,10 @@ class Instance(google.protobuf.message.Message):
         host_id: builtins.str = ...,
         maintenance_policy: yandex.cloud.compute.v1.maintenance_pb2.MaintenancePolicy.ValueType = ...,
         maintenance_grace_period: google.protobuf.duration_pb2.Duration | None = ...,
+        hardware_generation: yandex.cloud.compute.v1.hardware_generation_pb2.HardwareGeneration | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["boot_disk", b"boot_disk", "created_at", b"created_at", "gpu_settings", b"gpu_settings", "maintenance_grace_period", b"maintenance_grace_period", "metadata_options", b"metadata_options", "network_settings", b"network_settings", "placement_policy", b"placement_policy", "resources", b"resources", "scheduling_policy", b"scheduling_policy", "serial_port_settings", b"serial_port_settings"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["boot_disk", b"boot_disk", "created_at", b"created_at", "description", b"description", "filesystems", b"filesystems", "folder_id", b"folder_id", "fqdn", b"fqdn", "gpu_settings", b"gpu_settings", "host_group_id", b"host_group_id", "host_id", b"host_id", "id", b"id", "labels", b"labels", "local_disks", b"local_disks", "maintenance_grace_period", b"maintenance_grace_period", "maintenance_policy", b"maintenance_policy", "metadata", b"metadata", "metadata_options", b"metadata_options", "name", b"name", "network_interfaces", b"network_interfaces", "network_settings", b"network_settings", "placement_policy", b"placement_policy", "platform_id", b"platform_id", "resources", b"resources", "scheduling_policy", b"scheduling_policy", "secondary_disks", b"secondary_disks", "serial_port_settings", b"serial_port_settings", "service_account_id", b"service_account_id", "status", b"status", "zone_id", b"zone_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["boot_disk", b"boot_disk", "created_at", b"created_at", "gpu_settings", b"gpu_settings", "hardware_generation", b"hardware_generation", "maintenance_grace_period", b"maintenance_grace_period", "metadata_options", b"metadata_options", "network_settings", b"network_settings", "placement_policy", b"placement_policy", "resources", b"resources", "scheduling_policy", b"scheduling_policy", "serial_port_settings", b"serial_port_settings"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["boot_disk", b"boot_disk", "created_at", b"created_at", "description", b"description", "filesystems", b"filesystems", "folder_id", b"folder_id", "fqdn", b"fqdn", "gpu_settings", b"gpu_settings", "hardware_generation", b"hardware_generation", "host_group_id", b"host_group_id", "host_id", b"host_id", "id", b"id", "labels", b"labels", "local_disks", b"local_disks", "maintenance_grace_period", b"maintenance_grace_period", "maintenance_policy", b"maintenance_policy", "metadata", b"metadata", "metadata_options", b"metadata_options", "name", b"name", "network_interfaces", b"network_interfaces", "network_settings", b"network_settings", "placement_policy", b"placement_policy", "platform_id", b"platform_id", "resources", b"resources", "scheduling_policy", b"scheduling_policy", "secondary_disks", b"secondary_disks", "serial_port_settings", b"serial_port_settings", "service_account_id", b"service_account_id", "status", b"status", "zone_id", b"zone_id"]) -> None: ...
 
 global___Instance = Instance
 

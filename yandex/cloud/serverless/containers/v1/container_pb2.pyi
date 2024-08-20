@@ -157,6 +157,7 @@ class Revision(google.protobuf.message.Message):
     SCALING_POLICY_FIELD_NUMBER: builtins.int
     LOG_OPTIONS_FIELD_NUMBER: builtins.int
     STORAGE_MOUNTS_FIELD_NUMBER: builtins.int
+    MOUNTS_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the revision."""
     container_id: builtins.str
@@ -213,7 +214,11 @@ class Revision(google.protobuf.message.Message):
 
     @property
     def storage_mounts(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___StorageMount]:
-        """S3 mounts to be used by the version."""
+        """S3 mounts to be used by the revision."""
+
+    @property
+    def mounts(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Mount]:
+        """Mounts to be used by the revision."""
 
     def __init__(
         self,
@@ -234,9 +239,10 @@ class Revision(google.protobuf.message.Message):
         scaling_policy: global___ScalingPolicy | None = ...,
         log_options: global___LogOptions | None = ...,
         storage_mounts: collections.abc.Iterable[global___StorageMount] | None = ...,
+        mounts: collections.abc.Iterable[global___Mount] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["connectivity", b"connectivity", "created_at", b"created_at", "execution_timeout", b"execution_timeout", "image", b"image", "log_options", b"log_options", "provision_policy", b"provision_policy", "resources", b"resources", "scaling_policy", b"scaling_policy"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["concurrency", b"concurrency", "connectivity", b"connectivity", "container_id", b"container_id", "created_at", b"created_at", "description", b"description", "execution_timeout", b"execution_timeout", "id", b"id", "image", b"image", "log_options", b"log_options", "provision_policy", b"provision_policy", "resources", b"resources", "scaling_policy", b"scaling_policy", "secrets", b"secrets", "service_account_id", b"service_account_id", "status", b"status", "storage_mounts", b"storage_mounts"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["concurrency", b"concurrency", "connectivity", b"connectivity", "container_id", b"container_id", "created_at", b"created_at", "description", b"description", "execution_timeout", b"execution_timeout", "id", b"id", "image", b"image", "log_options", b"log_options", "mounts", b"mounts", "provision_policy", b"provision_policy", "resources", b"resources", "scaling_policy", b"scaling_policy", "secrets", b"secrets", "service_account_id", b"service_account_id", "status", b"status", "storage_mounts", b"storage_mounts"]) -> None: ...
 
 global___Revision = Revision
 
@@ -536,3 +542,94 @@ class StorageMount(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["bucket_id", b"bucket_id", "mount_point_path", b"mount_point_path", "prefix", b"prefix", "read_only", b"read_only"]) -> None: ...
 
 global___StorageMount = StorageMount
+
+@typing.final
+class Mount(google.protobuf.message.Message):
+    """Mount contains an information about version's external storage mount"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _Mode:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _ModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Mount._Mode.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        MODE_UNSPECIFIED: Mount._Mode.ValueType  # 0
+        READ_ONLY: Mount._Mode.ValueType  # 1
+        READ_WRITE: Mount._Mode.ValueType  # 2
+
+    class Mode(_Mode, metaclass=_ModeEnumTypeWrapper): ...
+    MODE_UNSPECIFIED: Mount.Mode.ValueType  # 0
+    READ_ONLY: Mount.Mode.ValueType  # 1
+    READ_WRITE: Mount.Mode.ValueType  # 2
+
+    @typing.final
+    class ObjectStorage(google.protobuf.message.Message):
+        """ObjectStorage as a mount"""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        BUCKET_ID_FIELD_NUMBER: builtins.int
+        PREFIX_FIELD_NUMBER: builtins.int
+        bucket_id: builtins.str
+        """ObjectStorage bucket name for mounting."""
+        prefix: builtins.str
+        """ObjectStorage bucket prefix for mounting."""
+        def __init__(
+            self,
+            *,
+            bucket_id: builtins.str = ...,
+            prefix: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["bucket_id", b"bucket_id", "prefix", b"prefix"]) -> None: ...
+
+    @typing.final
+    class DiskSpec(google.protobuf.message.Message):
+        """Disk as a mount"""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        SIZE_FIELD_NUMBER: builtins.int
+        BLOCK_SIZE_FIELD_NUMBER: builtins.int
+        size: builtins.int
+        """The size of disk for mount in bytes"""
+        block_size: builtins.int
+        """Optional block size of disk for mount in bytes"""
+        def __init__(
+            self,
+            *,
+            size: builtins.int = ...,
+            block_size: builtins.int = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["block_size", b"block_size", "size", b"size"]) -> None: ...
+
+    MOUNT_POINT_PATH_FIELD_NUMBER: builtins.int
+    MODE_FIELD_NUMBER: builtins.int
+    OBJECT_STORAGE_FIELD_NUMBER: builtins.int
+    EPHEMERAL_DISK_SPEC_FIELD_NUMBER: builtins.int
+    mount_point_path: builtins.str
+    """The absolute mount point path inside the container for mounting."""
+    mode: global___Mount.Mode.ValueType
+    """Mount's mode"""
+    @property
+    def object_storage(self) -> global___Mount.ObjectStorage:
+        """Object storage mounts"""
+
+    @property
+    def ephemeral_disk_spec(self) -> global___Mount.DiskSpec:
+        """Working disk (worker-local non-shared read-write NBS disk templates)"""
+
+    def __init__(
+        self,
+        *,
+        mount_point_path: builtins.str = ...,
+        mode: global___Mount.Mode.ValueType = ...,
+        object_storage: global___Mount.ObjectStorage | None = ...,
+        ephemeral_disk_spec: global___Mount.DiskSpec | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["ephemeral_disk_spec", b"ephemeral_disk_spec", "object_storage", b"object_storage", "target", b"target"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["ephemeral_disk_spec", b"ephemeral_disk_spec", "mode", b"mode", "mount_point_path", b"mount_point_path", "object_storage", b"object_storage", "target", b"target"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["target", b"target"]) -> typing.Literal["object_storage", "ephemeral_disk_spec"] | None: ...
+
+global___Mount = Mount

@@ -12,6 +12,7 @@ import google.protobuf.message
 import google.protobuf.timestamp_pb2
 import sys
 import typing
+import yandex.cloud.compute.v1.hardware_generation_pb2
 
 if sys.version_info >= (3, 10):
     import typing as typing_extensions
@@ -85,6 +86,7 @@ class Disk(google.protobuf.message.Message):
     SOURCE_SNAPSHOT_ID_FIELD_NUMBER: builtins.int
     INSTANCE_IDS_FIELD_NUMBER: builtins.int
     DISK_PLACEMENT_POLICY_FIELD_NUMBER: builtins.int
+    HARDWARE_GENERATION_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the disk."""
     folder_id: builtins.str
@@ -133,6 +135,12 @@ class Disk(google.protobuf.message.Message):
     def disk_placement_policy(self) -> global___DiskPlacementPolicy:
         """Placement policy configuration."""
 
+    @property
+    def hardware_generation(self) -> yandex.cloud.compute.v1.hardware_generation_pb2.HardwareGeneration:
+        """If specified, forces the same HardwareGeneration features to be applied to the instance
+        created using this disk as a boot one. Otherwise the current default will be used.
+        """
+
     def __init__(
         self,
         *,
@@ -152,9 +160,10 @@ class Disk(google.protobuf.message.Message):
         source_snapshot_id: builtins.str = ...,
         instance_ids: collections.abc.Iterable[builtins.str] | None = ...,
         disk_placement_policy: global___DiskPlacementPolicy | None = ...,
+        hardware_generation: yandex.cloud.compute.v1.hardware_generation_pb2.HardwareGeneration | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "disk_placement_policy", b"disk_placement_policy", "source", b"source", "source_image_id", b"source_image_id", "source_snapshot_id", b"source_snapshot_id"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["block_size", b"block_size", "created_at", b"created_at", "description", b"description", "disk_placement_policy", b"disk_placement_policy", "folder_id", b"folder_id", "id", b"id", "instance_ids", b"instance_ids", "labels", b"labels", "name", b"name", "product_ids", b"product_ids", "size", b"size", "source", b"source", "source_image_id", b"source_image_id", "source_snapshot_id", b"source_snapshot_id", "status", b"status", "type_id", b"type_id", "zone_id", b"zone_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "disk_placement_policy", b"disk_placement_policy", "hardware_generation", b"hardware_generation", "source", b"source", "source_image_id", b"source_image_id", "source_snapshot_id", b"source_snapshot_id"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["block_size", b"block_size", "created_at", b"created_at", "description", b"description", "disk_placement_policy", b"disk_placement_policy", "folder_id", b"folder_id", "hardware_generation", b"hardware_generation", "id", b"id", "instance_ids", b"instance_ids", "labels", b"labels", "name", b"name", "product_ids", b"product_ids", "size", b"size", "source", b"source", "source_image_id", b"source_image_id", "source_snapshot_id", b"source_snapshot_id", "status", b"status", "type_id", b"type_id", "zone_id", b"zone_id"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["source", b"source"]) -> typing.Literal["source_image_id", "source_snapshot_id"] | None: ...
 
 global___Disk = Disk

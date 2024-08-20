@@ -10,6 +10,7 @@ import google.protobuf.field_mask_pb2
 import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
+import yandex.cloud.compute.v1.hardware_generation_pb2
 import yandex.cloud.compute.v1.image_pb2
 import yandex.cloud.operation.operation_pb2
 
@@ -167,6 +168,7 @@ class CreateImageRequest(google.protobuf.message.Message):
     URI_FIELD_NUMBER: builtins.int
     OS_FIELD_NUMBER: builtins.int
     POOLED_FIELD_NUMBER: builtins.int
+    HARDWARE_GENERATION_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create an image in.
     To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
@@ -221,6 +223,12 @@ class CreateImageRequest(google.protobuf.message.Message):
         If not specified and you used the `image_id` or `disk_id` field to set the source, then the value can be inherited from the source resource.
         """
 
+    @property
+    def hardware_generation(self) -> yandex.cloud.compute.v1.hardware_generation_pb2.HardwareGeneration:
+        """Specify the overrides to hardware_generation of a source disk, image or snapshot,
+        or to the default values if the source does not define it.
+        """
+
     def __init__(
         self,
         *,
@@ -237,9 +245,10 @@ class CreateImageRequest(google.protobuf.message.Message):
         uri: builtins.str = ...,
         os: yandex.cloud.compute.v1.image_pb2.Os | None = ...,
         pooled: builtins.bool = ...,
+        hardware_generation: yandex.cloud.compute.v1.hardware_generation_pb2.HardwareGeneration | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["disk_id", b"disk_id", "image_id", b"image_id", "os", b"os", "snapshot_id", b"snapshot_id", "source", b"source", "uri", b"uri"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "disk_id", b"disk_id", "family", b"family", "folder_id", b"folder_id", "image_id", b"image_id", "labels", b"labels", "min_disk_size", b"min_disk_size", "name", b"name", "os", b"os", "pooled", b"pooled", "product_ids", b"product_ids", "snapshot_id", b"snapshot_id", "source", b"source", "uri", b"uri"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["disk_id", b"disk_id", "hardware_generation", b"hardware_generation", "image_id", b"image_id", "os", b"os", "snapshot_id", b"snapshot_id", "source", b"source", "uri", b"uri"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "disk_id", b"disk_id", "family", b"family", "folder_id", b"folder_id", "hardware_generation", b"hardware_generation", "image_id", b"image_id", "labels", b"labels", "min_disk_size", b"min_disk_size", "name", b"name", "os", b"os", "pooled", b"pooled", "product_ids", b"product_ids", "snapshot_id", b"snapshot_id", "source", b"source", "uri", b"uri"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["source", b"source"]) -> typing.Literal["image_id", "disk_id", "snapshot_id", "uri"] | None: ...
 
 global___CreateImageRequest = CreateImageRequest

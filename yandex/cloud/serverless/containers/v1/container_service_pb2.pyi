@@ -401,6 +401,7 @@ class DeployContainerRevisionRequest(google.protobuf.message.Message):
     SCALING_POLICY_FIELD_NUMBER: builtins.int
     LOG_OPTIONS_FIELD_NUMBER: builtins.int
     STORAGE_MOUNTS_FIELD_NUMBER: builtins.int
+    MOUNTS_FIELD_NUMBER: builtins.int
     container_id: builtins.str
     """ID of the container to create a revision for.
 
@@ -455,7 +456,11 @@ class DeployContainerRevisionRequest(google.protobuf.message.Message):
 
     @property
     def storage_mounts(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.serverless.containers.v1.container_pb2.StorageMount]:
-        """S3 mounts to be used by the version."""
+        """S3 mounts to be used by the revision."""
+
+    @property
+    def mounts(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.serverless.containers.v1.container_pb2.Mount]:
+        """Mounts to be used by the revision."""
 
     def __init__(
         self,
@@ -473,9 +478,10 @@ class DeployContainerRevisionRequest(google.protobuf.message.Message):
         scaling_policy: yandex.cloud.serverless.containers.v1.container_pb2.ScalingPolicy | None = ...,
         log_options: yandex.cloud.serverless.containers.v1.container_pb2.LogOptions | None = ...,
         storage_mounts: collections.abc.Iterable[yandex.cloud.serverless.containers.v1.container_pb2.StorageMount] | None = ...,
+        mounts: collections.abc.Iterable[yandex.cloud.serverless.containers.v1.container_pb2.Mount] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["connectivity", b"connectivity", "execution_timeout", b"execution_timeout", "image_spec", b"image_spec", "log_options", b"log_options", "provision_policy", b"provision_policy", "resources", b"resources", "scaling_policy", b"scaling_policy"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["concurrency", b"concurrency", "connectivity", b"connectivity", "container_id", b"container_id", "description", b"description", "execution_timeout", b"execution_timeout", "image_spec", b"image_spec", "log_options", b"log_options", "provision_policy", b"provision_policy", "resources", b"resources", "scaling_policy", b"scaling_policy", "secrets", b"secrets", "service_account_id", b"service_account_id", "storage_mounts", b"storage_mounts"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["concurrency", b"concurrency", "connectivity", b"connectivity", "container_id", b"container_id", "description", b"description", "execution_timeout", b"execution_timeout", "image_spec", b"image_spec", "log_options", b"log_options", "mounts", b"mounts", "provision_policy", b"provision_policy", "resources", b"resources", "scaling_policy", b"scaling_policy", "secrets", b"secrets", "service_account_id", b"service_account_id", "storage_mounts", b"storage_mounts"]) -> None: ...
 
 global___DeployContainerRevisionRequest = DeployContainerRevisionRequest
 

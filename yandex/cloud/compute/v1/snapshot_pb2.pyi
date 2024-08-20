@@ -12,6 +12,7 @@ import google.protobuf.message
 import google.protobuf.timestamp_pb2
 import sys
 import typing
+import yandex.cloud.compute.v1.hardware_generation_pb2
 
 if sys.version_info >= (3, 10):
     import typing as typing_extensions
@@ -80,6 +81,7 @@ class Snapshot(google.protobuf.message.Message):
     PRODUCT_IDS_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
     SOURCE_DISK_ID_FIELD_NUMBER: builtins.int
+    HARDWARE_GENERATION_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the snapshot."""
     folder_id: builtins.str
@@ -118,6 +120,12 @@ class Snapshot(google.protobuf.message.Message):
         You can specify them in the [yandex.cloud.compute.v1.ImageService.Create] request.
         """
 
+    @property
+    def hardware_generation(self) -> yandex.cloud.compute.v1.hardware_generation_pb2.HardwareGeneration:
+        """If specified, forces the same HardwareGeneration features to be applied to the instance
+        created using this snapshot as source for the boot disk. Otherwise the current default will be used.
+        """
+
     def __init__(
         self,
         *,
@@ -132,8 +140,9 @@ class Snapshot(google.protobuf.message.Message):
         product_ids: collections.abc.Iterable[builtins.str] | None = ...,
         status: global___Snapshot.Status.ValueType = ...,
         source_disk_id: builtins.str = ...,
+        hardware_generation: yandex.cloud.compute.v1.hardware_generation_pb2.HardwareGeneration | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["created_at", b"created_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "disk_size", b"disk_size", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "name", b"name", "product_ids", b"product_ids", "source_disk_id", b"source_disk_id", "status", b"status", "storage_size", b"storage_size"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "hardware_generation", b"hardware_generation"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "disk_size", b"disk_size", "folder_id", b"folder_id", "hardware_generation", b"hardware_generation", "id", b"id", "labels", b"labels", "name", b"name", "product_ids", b"product_ids", "source_disk_id", b"source_disk_id", "status", b"status", "storage_size", b"storage_size"]) -> None: ...
 
 global___Snapshot = Snapshot
