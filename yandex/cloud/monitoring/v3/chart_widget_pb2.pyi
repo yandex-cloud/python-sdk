@@ -290,9 +290,18 @@ class ChartWidget(google.protobuf.message.Message):
                 ) -> None: ...
                 def ClearField(self, field_name: typing.Literal["green_value", b"green_value", "red_value", b"red_value", "violet_value", b"violet_value", "yellow_value", b"yellow_value"]) -> None: ...
 
+            @typing.final
+            class HashColorScheme(google.protobuf.message.Message):
+                DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+                def __init__(
+                    self,
+                ) -> None: ...
+
             AUTOMATIC_FIELD_NUMBER: builtins.int
             STANDARD_FIELD_NUMBER: builtins.int
             GRADIENT_FIELD_NUMBER: builtins.int
+            HASH_FIELD_NUMBER: builtins.int
             @property
             def automatic(self) -> global___ChartWidget.VisualizationSettings.ColorSchemeSettings.AutomaticColorScheme:
                 """Automatic color scheme."""
@@ -305,16 +314,21 @@ class ChartWidget(google.protobuf.message.Message):
             def gradient(self) -> global___ChartWidget.VisualizationSettings.ColorSchemeSettings.GradientColorScheme:
                 """Gradient color scheme."""
 
+            @property
+            def hash(self) -> global___ChartWidget.VisualizationSettings.ColorSchemeSettings.HashColorScheme:
+                """Hash color scheme. Based on line name or value."""
+
             def __init__(
                 self,
                 *,
                 automatic: global___ChartWidget.VisualizationSettings.ColorSchemeSettings.AutomaticColorScheme | None = ...,
                 standard: global___ChartWidget.VisualizationSettings.ColorSchemeSettings.StandardColorScheme | None = ...,
                 gradient: global___ChartWidget.VisualizationSettings.ColorSchemeSettings.GradientColorScheme | None = ...,
+                hash: global___ChartWidget.VisualizationSettings.ColorSchemeSettings.HashColorScheme | None = ...,
             ) -> None: ...
-            def HasField(self, field_name: typing.Literal["automatic", b"automatic", "gradient", b"gradient", "scheme", b"scheme", "standard", b"standard"]) -> builtins.bool: ...
-            def ClearField(self, field_name: typing.Literal["automatic", b"automatic", "gradient", b"gradient", "scheme", b"scheme", "standard", b"standard"]) -> None: ...
-            def WhichOneof(self, oneof_group: typing.Literal["scheme", b"scheme"]) -> typing.Literal["automatic", "standard", "gradient"] | None: ...
+            def HasField(self, field_name: typing.Literal["automatic", b"automatic", "gradient", b"gradient", "hash", b"hash", "scheme", b"scheme", "standard", b"standard"]) -> builtins.bool: ...
+            def ClearField(self, field_name: typing.Literal["automatic", b"automatic", "gradient", b"gradient", "hash", b"hash", "scheme", b"scheme", "standard", b"standard"]) -> None: ...
+            def WhichOneof(self, oneof_group: typing.Literal["scheme", b"scheme"]) -> typing.Literal["automatic", "standard", "gradient", "hash"] | None: ...
 
         @typing.final
         class HeatmapSettings(google.protobuf.message.Message):

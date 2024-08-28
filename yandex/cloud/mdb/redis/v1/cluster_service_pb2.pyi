@@ -296,6 +296,7 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     PERSISTENCE_MODE_FIELD_NUMBER: builtins.int
+    NETWORK_ID_FIELD_NUMBER: builtins.int
     ANNOUNCE_HOSTNAMES_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Redis cluster to update.
@@ -309,6 +310,8 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     """Deletion Protection inhibits deletion of the cluster"""
     persistence_mode: yandex.cloud.mdb.redis.v1.cluster_pb2.Cluster.PersistenceMode.ValueType
     """Persistence mode"""
+    network_id: builtins.str
+    """ID of the network to move the cluster to."""
     announce_hostnames: builtins.bool
     """Enable FQDN instead of ip"""
     @property
@@ -349,10 +352,11 @@ class UpdateClusterRequest(google.protobuf.message.Message):
         security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         deletion_protection: builtins.bool = ...,
         persistence_mode: yandex.cloud.mdb.redis.v1.cluster_pb2.Cluster.PersistenceMode.ValueType = ...,
+        network_id: builtins.str = ...,
         announce_hostnames: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "maintenance_window", b"maintenance_window", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["announce_hostnames", b"announce_hostnames", "cluster_id", b"cluster_id", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "labels", b"labels", "maintenance_window", b"maintenance_window", "name", b"name", "persistence_mode", b"persistence_mode", "security_group_ids", b"security_group_ids", "update_mask", b"update_mask"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["announce_hostnames", b"announce_hostnames", "cluster_id", b"cluster_id", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "labels", b"labels", "maintenance_window", b"maintenance_window", "name", b"name", "network_id", b"network_id", "persistence_mode", b"persistence_mode", "security_group_ids", b"security_group_ids", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateClusterRequest = UpdateClusterRequest
 

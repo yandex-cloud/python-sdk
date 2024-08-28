@@ -260,6 +260,7 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     MAINTENANCE_WINDOW_FIELD_NUMBER: builtins.int
+    NETWORK_ID_FIELD_NUMBER: builtins.int
     SUBNET_IDS_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Apache Kafka® cluster to update.
@@ -272,6 +273,8 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     """New name for the Apache Kafka® cluster."""
     deletion_protection: builtins.bool
     """Deletion Protection inhibits deletion of the cluster"""
+    network_id: builtins.str
+    """ID of the network to move the cluster to."""
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask: ...
     @property
@@ -315,10 +318,11 @@ class UpdateClusterRequest(google.protobuf.message.Message):
         security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         deletion_protection: builtins.bool = ...,
         maintenance_window: yandex.cloud.mdb.kafka.v1.maintenance_pb2.MaintenanceWindow | None = ...,
+        network_id: builtins.str = ...,
         subnet_ids: collections.abc.Iterable[builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "maintenance_window", b"maintenance_window", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "labels", b"labels", "maintenance_window", b"maintenance_window", "name", b"name", "security_group_ids", b"security_group_ids", "subnet_ids", b"subnet_ids", "update_mask", b"update_mask"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "labels", b"labels", "maintenance_window", b"maintenance_window", "name", b"name", "network_id", b"network_id", "security_group_ids", b"security_group_ids", "subnet_ids", b"subnet_ids", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateClusterRequest = UpdateClusterRequest
 

@@ -55,6 +55,7 @@ class Backup(google.protobuf.message.Message):
     SOURCE_SHARD_NAMES_FIELD_NUMBER: builtins.int
     SIZE_FIELD_NUMBER: builtins.int
     TYPE_FIELD_NUMBER: builtins.int
+    JOURNAL_SIZE_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the backup. Required."""
     folder_id: builtins.str
@@ -65,6 +66,8 @@ class Backup(google.protobuf.message.Message):
     """Size of backup in bytes"""
     type: global___Backup.BackupType.ValueType
     """How this backup was created (manual/automatic/etc...)"""
+    journal_size: builtins.int
+    """Size of the journal associated with backup, in bytes"""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format
@@ -90,8 +93,9 @@ class Backup(google.protobuf.message.Message):
         source_shard_names: collections.abc.Iterable[builtins.str] | None = ...,
         size: builtins.int = ...,
         type: global___Backup.BackupType.ValueType = ...,
+        journal_size: builtins.int = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at", "started_at", b"started_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "folder_id", b"folder_id", "id", b"id", "size", b"size", "source_cluster_id", b"source_cluster_id", "source_shard_names", b"source_shard_names", "started_at", b"started_at", "type", b"type"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "folder_id", b"folder_id", "id", b"id", "journal_size", b"journal_size", "size", b"size", "source_cluster_id", b"source_cluster_id", "source_shard_names", b"source_shard_names", "started_at", b"started_at", "type", b"type"]) -> None: ...
 
 global___Backup = Backup

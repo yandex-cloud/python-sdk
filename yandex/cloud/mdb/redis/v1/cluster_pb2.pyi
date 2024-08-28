@@ -604,14 +604,18 @@ class Access(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     DATA_LENS_FIELD_NUMBER: builtins.int
+    WEB_SQL_FIELD_NUMBER: builtins.int
     data_lens: builtins.bool
     """Allow access for DataLens"""
+    web_sql: builtins.bool
+    """Allow access for Web SQL."""
     def __init__(
         self,
         *,
         data_lens: builtins.bool = ...,
+        web_sql: builtins.bool = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["data_lens", b"data_lens"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["data_lens", b"data_lens", "web_sql", b"web_sql"]) -> None: ...
 
 global___Access = Access
 

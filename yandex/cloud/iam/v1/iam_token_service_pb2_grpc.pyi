@@ -25,13 +25,19 @@ class IamTokenServiceStub:
         yandex.cloud.iam.v1.iam_token_service_pb2.CreateIamTokenRequest,
         yandex.cloud.iam.v1.iam_token_service_pb2.CreateIamTokenResponse,
     ]
-    """Creates an IAM token for the specified identity."""
+    """Create an IAM token for the specified identity."""
 
     CreateForServiceAccount: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.iam.v1.iam_token_service_pb2.CreateIamTokenForServiceAccountRequest,
         yandex.cloud.iam.v1.iam_token_service_pb2.CreateIamTokenResponse,
     ]
-    """Create iam token for service account."""
+    """Create an IAM token for service account."""
+
+    Revoke: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.iam.v1.iam_token_service_pb2.RevokeIamTokenRequest,
+        yandex.cloud.iam.v1.iam_token_service_pb2.RevokeIamTokenResponse,
+    ]
+    """Revoke the IAM token."""
 
 class IamTokenServiceAsyncStub:
     """A set of methods for managing IAM tokens."""
@@ -40,13 +46,19 @@ class IamTokenServiceAsyncStub:
         yandex.cloud.iam.v1.iam_token_service_pb2.CreateIamTokenRequest,
         yandex.cloud.iam.v1.iam_token_service_pb2.CreateIamTokenResponse,
     ]
-    """Creates an IAM token for the specified identity."""
+    """Create an IAM token for the specified identity."""
 
     CreateForServiceAccount: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.iam.v1.iam_token_service_pb2.CreateIamTokenForServiceAccountRequest,
         yandex.cloud.iam.v1.iam_token_service_pb2.CreateIamTokenResponse,
     ]
-    """Create iam token for service account."""
+    """Create an IAM token for service account."""
+
+    Revoke: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.iam.v1.iam_token_service_pb2.RevokeIamTokenRequest,
+        yandex.cloud.iam.v1.iam_token_service_pb2.RevokeIamTokenResponse,
+    ]
+    """Revoke the IAM token."""
 
 class IamTokenServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing IAM tokens."""
@@ -57,7 +69,7 @@ class IamTokenServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.iam.v1.iam_token_service_pb2.CreateIamTokenRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.iam.v1.iam_token_service_pb2.CreateIamTokenResponse, collections.abc.Awaitable[yandex.cloud.iam.v1.iam_token_service_pb2.CreateIamTokenResponse]]:
-        """Creates an IAM token for the specified identity."""
+        """Create an IAM token for the specified identity."""
 
     @abc.abstractmethod
     def CreateForServiceAccount(
@@ -65,6 +77,14 @@ class IamTokenServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.iam.v1.iam_token_service_pb2.CreateIamTokenForServiceAccountRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.iam.v1.iam_token_service_pb2.CreateIamTokenResponse, collections.abc.Awaitable[yandex.cloud.iam.v1.iam_token_service_pb2.CreateIamTokenResponse]]:
-        """Create iam token for service account."""
+        """Create an IAM token for service account."""
+
+    @abc.abstractmethod
+    def Revoke(
+        self,
+        request: yandex.cloud.iam.v1.iam_token_service_pb2.RevokeIamTokenRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.iam.v1.iam_token_service_pb2.RevokeIamTokenResponse, collections.abc.Awaitable[yandex.cloud.iam.v1.iam_token_service_pb2.RevokeIamTokenResponse]]:
+        """Revoke the IAM token."""
 
 def add_IamTokenServiceServicer_to_server(servicer: IamTokenServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

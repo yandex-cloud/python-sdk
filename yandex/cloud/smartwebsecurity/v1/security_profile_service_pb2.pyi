@@ -95,6 +95,7 @@ class CreateSecurityProfileRequest(google.protobuf.message.Message):
     DEFAULT_ACTION_FIELD_NUMBER: builtins.int
     SECURITY_RULES_FIELD_NUMBER: builtins.int
     CAPTCHA_ID_FIELD_NUMBER: builtins.int
+    ADVANCED_RATE_LIMITER_PROFILE_ID_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a security profile in."""
     name: builtins.str
@@ -105,6 +106,8 @@ class CreateSecurityProfileRequest(google.protobuf.message.Message):
     """Action to perform if none of rules matched."""
     captcha_id: builtins.str
     """Captcha ID to use with this security profile. Set empty to use default."""
+    advanced_rate_limiter_profile_id: builtins.str
+    """Advanced rate limiter profile ID to use with this security profile. Set empty to use default."""
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Labels as `` key:value `` pairs. Maximum of 64 per resource."""
@@ -123,8 +126,9 @@ class CreateSecurityProfileRequest(google.protobuf.message.Message):
         default_action: yandex.cloud.smartwebsecurity.v1.security_profile_pb2.SecurityProfile.DefaultAction.ValueType = ...,
         security_rules: collections.abc.Iterable[yandex.cloud.smartwebsecurity.v1.security_profile_pb2.SecurityRule] | None = ...,
         captcha_id: builtins.str = ...,
+        advanced_rate_limiter_profile_id: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["captcha_id", b"captcha_id", "default_action", b"default_action", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "name", b"name", "security_rules", b"security_rules"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["advanced_rate_limiter_profile_id", b"advanced_rate_limiter_profile_id", "captcha_id", b"captcha_id", "default_action", b"default_action", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "name", b"name", "security_rules", b"security_rules"]) -> None: ...
 
 global___CreateSecurityProfileRequest = CreateSecurityProfileRequest
 
@@ -172,6 +176,7 @@ class UpdateSecurityProfileRequest(google.protobuf.message.Message):
     DEFAULT_ACTION_FIELD_NUMBER: builtins.int
     SECURITY_RULES_FIELD_NUMBER: builtins.int
     CAPTCHA_ID_FIELD_NUMBER: builtins.int
+    ADVANCED_RATE_LIMITER_PROFILE_ID_FIELD_NUMBER: builtins.int
     security_profile_id: builtins.str
     """ID of the security profile to update."""
     name: builtins.str
@@ -182,6 +187,8 @@ class UpdateSecurityProfileRequest(google.protobuf.message.Message):
     """Action to perform if none of rules matched."""
     captcha_id: builtins.str
     """Captcha ID to use with this security profile. Set empty to use default."""
+    advanced_rate_limiter_profile_id: builtins.str
+    """Advanced rate limiter profile ID to use with this security profile. Set empty to use default."""
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which fields of the SecurityProfile resource are going to be updated."""
@@ -205,9 +212,10 @@ class UpdateSecurityProfileRequest(google.protobuf.message.Message):
         default_action: yandex.cloud.smartwebsecurity.v1.security_profile_pb2.SecurityProfile.DefaultAction.ValueType = ...,
         security_rules: collections.abc.Iterable[yandex.cloud.smartwebsecurity.v1.security_profile_pb2.SecurityRule] | None = ...,
         captcha_id: builtins.str = ...,
+        advanced_rate_limiter_profile_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["captcha_id", b"captcha_id", "default_action", b"default_action", "description", b"description", "labels", b"labels", "name", b"name", "security_profile_id", b"security_profile_id", "security_rules", b"security_rules", "update_mask", b"update_mask"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["advanced_rate_limiter_profile_id", b"advanced_rate_limiter_profile_id", "captcha_id", b"captcha_id", "default_action", b"default_action", "description", b"description", "labels", b"labels", "name", b"name", "security_profile_id", b"security_profile_id", "security_rules", b"security_rules", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateSecurityProfileRequest = UpdateSecurityProfileRequest
 

@@ -226,7 +226,9 @@ class ClickhouseSource(google.protobuf.message.Message):
     CLICKHOUSE_CLUSTER_NAME_FIELD_NUMBER: builtins.int
     subnet_id: builtins.str
     clickhouse_cluster_name: builtins.str
-    """Also could be name of MDB's shard group."""
+    """Name of the ClickHouse cluster. For Managed ClickHouse that is name of
+    ShardGroup.
+    """
     @property
     def connection(self) -> global___ClickhouseConnection: ...
     @property
@@ -272,7 +274,9 @@ class ClickhouseTarget(google.protobuf.message.Message):
     subnet_id: builtins.str
     cleanup_policy: global___ClickhouseCleanupPolicy.ValueType
     clickhouse_cluster_name: builtins.str
-    """Also could be name of MDB's shard group."""
+    """Name of the ClickHouse cluster. For Managed ClickHouse that is name of
+    ShardGroup.
+    """
     @property
     def connection(self) -> global___ClickhouseConnection: ...
     @property

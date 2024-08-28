@@ -25,6 +25,11 @@ class IamTokenServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_iam__token__service__pb2.CreateIamTokenForServiceAccountRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_iam__token__service__pb2.CreateIamTokenResponse.FromString,
                 )
+        self.Revoke = channel.unary_unary(
+                '/yandex.cloud.iam.v1.IamTokenService/Revoke',
+                request_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_iam__token__service__pb2.RevokeIamTokenRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_iam__token__service__pb2.RevokeIamTokenResponse.FromString,
+                )
 
 
 class IamTokenServiceServicer(object):
@@ -32,14 +37,21 @@ class IamTokenServiceServicer(object):
     """
 
     def Create(self, request, context):
-        """Creates an IAM token for the specified identity.
+        """Create an IAM token for the specified identity.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CreateForServiceAccount(self, request, context):
-        """Create iam token for service account.
+        """Create an IAM token for service account.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Revoke(self, request, context):
+        """Revoke the IAM token.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -57,6 +69,11 @@ def add_IamTokenServiceServicer_to_server(servicer, server):
                     servicer.CreateForServiceAccount,
                     request_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_iam__token__service__pb2.CreateIamTokenForServiceAccountRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_iam__token__service__pb2.CreateIamTokenResponse.SerializeToString,
+            ),
+            'Revoke': grpc.unary_unary_rpc_method_handler(
+                    servicer.Revoke,
+                    request_deserializer=yandex_dot_cloud_dot_iam_dot_v1_dot_iam__token__service__pb2.RevokeIamTokenRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_iam_dot_v1_dot_iam__token__service__pb2.RevokeIamTokenResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -100,5 +117,22 @@ class IamTokenService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.iam.v1.IamTokenService/CreateForServiceAccount',
             yandex_dot_cloud_dot_iam_dot_v1_dot_iam__token__service__pb2.CreateIamTokenForServiceAccountRequest.SerializeToString,
             yandex_dot_cloud_dot_iam_dot_v1_dot_iam__token__service__pb2.CreateIamTokenResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Revoke(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.iam.v1.IamTokenService/Revoke',
+            yandex_dot_cloud_dot_iam_dot_v1_dot_iam__token__service__pb2.RevokeIamTokenRequest.SerializeToString,
+            yandex_dot_cloud_dot_iam_dot_v1_dot_iam__token__service__pb2.RevokeIamTokenResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

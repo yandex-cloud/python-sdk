@@ -207,20 +207,90 @@ class BackgroundActivitiesConfig(google.protobuf.message.Message):
 
     TABLE_SIZES_FIELD_NUMBER: builtins.int
     ANALYZE_AND_VACUUM_FIELD_NUMBER: builtins.int
+    QUERY_KILLER_SCRIPTS_FIELD_NUMBER: builtins.int
     @property
-    def table_sizes(self) -> global___TableSizes: ...
+    def table_sizes(self) -> global___TableSizes:
+        """Enables scripts that collects tables sizes to `*_sizes` tables in `mdb_toolkit` schema."""
+
     @property
-    def analyze_and_vacuum(self) -> global___AnalyzeAndVacuum: ...
+    def analyze_and_vacuum(self) -> global___AnalyzeAndVacuum:
+        """Configuration for `ANALYZE` and `VACUUM` operations."""
+
+    @property
+    def query_killer_scripts(self) -> global___QueryKillerScripts:
+        """Configuration for long running queries killer."""
+
     def __init__(
         self,
         *,
         table_sizes: global___TableSizes | None = ...,
         analyze_and_vacuum: global___AnalyzeAndVacuum | None = ...,
+        query_killer_scripts: global___QueryKillerScripts | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["analyze_and_vacuum", b"analyze_and_vacuum", "table_sizes", b"table_sizes"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["analyze_and_vacuum", b"analyze_and_vacuum", "table_sizes", b"table_sizes"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["analyze_and_vacuum", b"analyze_and_vacuum", "query_killer_scripts", b"query_killer_scripts", "table_sizes", b"table_sizes"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["analyze_and_vacuum", b"analyze_and_vacuum", "query_killer_scripts", b"query_killer_scripts", "table_sizes", b"table_sizes"]) -> None: ...
 
 global___BackgroundActivitiesConfig = BackgroundActivitiesConfig
+
+@typing.final
+class QueryKiller(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ENABLE_FIELD_NUMBER: builtins.int
+    MAX_AGE_FIELD_NUMBER: builtins.int
+    IGNORE_USERS_FIELD_NUMBER: builtins.int
+    @property
+    def enable(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
+    @property
+    def max_age(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Maximum duration for this type of queries (in seconds)."""
+
+    @property
+    def ignore_users(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Ignore these users when considering queries to terminate"""
+
+    def __init__(
+        self,
+        *,
+        enable: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        max_age: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        ignore_users: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["enable", b"enable", "max_age", b"max_age"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["enable", b"enable", "ignore_users", b"ignore_users", "max_age", b"max_age"]) -> None: ...
+
+global___QueryKiller = QueryKiller
+
+@typing.final
+class QueryKillerScripts(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    IDLE_FIELD_NUMBER: builtins.int
+    IDLE_IN_TRANSACTION_FIELD_NUMBER: builtins.int
+    LONG_RUNNING_FIELD_NUMBER: builtins.int
+    @property
+    def idle(self) -> global___QueryKiller:
+        """Configuration of script that kills long running queries that are in `idle` state."""
+
+    @property
+    def idle_in_transaction(self) -> global___QueryKiller:
+        """Configuration of script that kills long running queries that are in `idle in transaction` state."""
+
+    @property
+    def long_running(self) -> global___QueryKiller:
+        """Configuration of script that kills long running queries (in any state)."""
+
+    def __init__(
+        self,
+        *,
+        idle: global___QueryKiller | None = ...,
+        idle_in_transaction: global___QueryKiller | None = ...,
+        long_running: global___QueryKiller | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["idle", b"idle", "idle_in_transaction", b"idle_in_transaction", "long_running", b"long_running"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["idle", b"idle", "idle_in_transaction", b"idle_in_transaction", "long_running", b"long_running"]) -> None: ...
+
+global___QueryKillerScripts = QueryKillerScripts
 
 @typing.final
 class MasterSubclusterConfig(google.protobuf.message.Message):

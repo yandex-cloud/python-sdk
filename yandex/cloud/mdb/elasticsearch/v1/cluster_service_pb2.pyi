@@ -267,6 +267,7 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     MAINTENANCE_WINDOW_FIELD_NUMBER: builtins.int
+    NETWORK_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the Elasticsearch cluster to update.
 
@@ -280,6 +281,8 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     """ID of the service account used for access to Object Storage."""
     deletion_protection: builtins.bool
     """Deletion Protection inhibits deletion of the cluster"""
+    network_id: builtins.str
+    """ID of the network to move the cluster to."""
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask: ...
     @property
@@ -320,9 +323,10 @@ class UpdateClusterRequest(google.protobuf.message.Message):
         service_account_id: builtins.str = ...,
         deletion_protection: builtins.bool = ...,
         maintenance_window: yandex.cloud.mdb.elasticsearch.v1.maintenance_pb2.MaintenanceWindow | None = ...,
+        network_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "maintenance_window", b"maintenance_window", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "labels", b"labels", "maintenance_window", b"maintenance_window", "name", b"name", "security_group_ids", b"security_group_ids", "service_account_id", b"service_account_id", "update_mask", b"update_mask"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "labels", b"labels", "maintenance_window", b"maintenance_window", "name", b"name", "network_id", b"network_id", "security_group_ids", b"security_group_ids", "service_account_id", b"service_account_id", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateClusterRequest = UpdateClusterRequest
 

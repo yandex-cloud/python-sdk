@@ -51,6 +51,7 @@ class _JobStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._Enum
     SUCCESS: _JobStatus.ValueType  # 4
     ERROR: _JobStatus.ValueType  # 5
     CANCELLED: _JobStatus.ValueType  # 6
+    CANCELLING: _JobStatus.ValueType  # 7
 
 class JobStatus(_JobStatus, metaclass=_JobStatusEnumTypeWrapper): ...
 
@@ -61,6 +62,7 @@ UPLOADING_OUTPUT: JobStatus.ValueType  # 3
 SUCCESS: JobStatus.ValueType  # 4
 ERROR: JobStatus.ValueType  # 5
 CANCELLED: JobStatus.ValueType  # 6
+CANCELLING: JobStatus.ValueType  # 7
 global___JobStatus = JobStatus
 
 @typing.final

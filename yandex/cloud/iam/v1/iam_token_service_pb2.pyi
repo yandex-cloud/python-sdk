@@ -78,3 +78,33 @@ class CreateIamTokenForServiceAccountRequest(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["service_account_id", b"service_account_id"]) -> None: ...
 
 global___CreateIamTokenForServiceAccountRequest = CreateIamTokenForServiceAccountRequest
+
+@typing.final
+class RevokeIamTokenRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    IAM_TOKEN_FIELD_NUMBER: builtins.int
+    iam_token: builtins.str
+    def __init__(
+        self,
+        *,
+        iam_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["iam_token", b"iam_token"]) -> None: ...
+
+global___RevokeIamTokenRequest = RevokeIamTokenRequest
+
+@typing.final
+class RevokeIamTokenResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SUBJECT_ID_FIELD_NUMBER: builtins.int
+    subject_id: builtins.str
+    def __init__(
+        self,
+        *,
+        subject_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["subject_id", b"subject_id"]) -> None: ...
+
+global___RevokeIamTokenResponse = RevokeIamTokenResponse

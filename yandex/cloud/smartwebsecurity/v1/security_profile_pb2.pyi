@@ -65,28 +65,31 @@ class SecurityProfile(google.protobuf.message.Message):
 
     ID_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int
-    CLOUD_ID_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     DEFAULT_ACTION_FIELD_NUMBER: builtins.int
     SECURITY_RULES_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
+    CLOUD_ID_FIELD_NUMBER: builtins.int
     CAPTCHA_ID_FIELD_NUMBER: builtins.int
+    ADVANCED_RATE_LIMITER_PROFILE_ID_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the security profile."""
     folder_id: builtins.str
     """ID of the folder that the security profile belongs to."""
-    cloud_id: builtins.str
-    """ID of the cloud that the security profile belongs to."""
     name: builtins.str
     """Name of the security profile. The name is unique within the folder. 1-50 characters long."""
     description: builtins.str
     """Optional description of the security profile."""
     default_action: global___SecurityProfile.DefaultAction.ValueType
     """Action to perform if none of rules matched."""
+    cloud_id: builtins.str
+    """ID of the cloud that the security profile belongs to."""
     captcha_id: builtins.str
     """Captcha ID to use with this security profile. Set empty to use default."""
+    advanced_rate_limiter_profile_id: builtins.str
+    """Advanced rate limiter profile ID to use with this security profile. Set empty to use default."""
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Labels as `` key:value `` pairs. Maximum of 64 per resource."""
@@ -104,17 +107,18 @@ class SecurityProfile(google.protobuf.message.Message):
         *,
         id: builtins.str = ...,
         folder_id: builtins.str = ...,
-        cloud_id: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         name: builtins.str = ...,
         description: builtins.str = ...,
         default_action: global___SecurityProfile.DefaultAction.ValueType = ...,
         security_rules: collections.abc.Iterable[global___SecurityRule] | None = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        cloud_id: builtins.str = ...,
         captcha_id: builtins.str = ...,
+        advanced_rate_limiter_profile_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["captcha_id", b"captcha_id", "cloud_id", b"cloud_id", "created_at", b"created_at", "default_action", b"default_action", "description", b"description", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "name", b"name", "security_rules", b"security_rules"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["advanced_rate_limiter_profile_id", b"advanced_rate_limiter_profile_id", "captcha_id", b"captcha_id", "cloud_id", b"cloud_id", "created_at", b"created_at", "default_action", b"default_action", "description", b"description", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "name", b"name", "security_rules", b"security_rules"]) -> None: ...
 
 global___SecurityProfile = SecurityProfile
 
@@ -220,14 +224,71 @@ class SecurityRule(google.protobuf.message.Message):
         def HasField(self, field_name: typing.Literal["condition", b"condition"]) -> builtins.bool: ...
         def ClearField(self, field_name: typing.Literal["condition", b"condition", "mode", b"mode"]) -> None: ...
 
+    @typing.final
+    class Waf(google.protobuf.message.Message):
+        """Waf object."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        class _Mode:
+            ValueType = typing.NewType("ValueType", builtins.int)
+            V: typing_extensions.TypeAlias = ValueType
+
+        class _ModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[SecurityRule.Waf._Mode.ValueType], builtins.type):
+            DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+            MODE_UNSPECIFIED: SecurityRule.Waf._Mode.ValueType  # 0
+            FULL: SecurityRule.Waf._Mode.ValueType  # 1
+            """Full protection means that the traffic will be checked based on ML models and behavioral analysis,
+            with suspicious requests being sent to SmartCaptcha.
+            """
+            API: SecurityRule.Waf._Mode.ValueType  # 2
+            """API protection means checking the traffic based on ML models and behavioral analysis without sending suspicious
+            requests to SmartCaptcha. The suspicious requests will be blocked.
+            """
+
+        class Mode(_Mode, metaclass=_ModeEnumTypeWrapper):
+            """Mode of protection."""
+
+        MODE_UNSPECIFIED: SecurityRule.Waf.Mode.ValueType  # 0
+        FULL: SecurityRule.Waf.Mode.ValueType  # 1
+        """Full protection means that the traffic will be checked based on ML models and behavioral analysis,
+        with suspicious requests being sent to SmartCaptcha.
+        """
+        API: SecurityRule.Waf.Mode.ValueType  # 2
+        """API protection means checking the traffic based on ML models and behavioral analysis without sending suspicious
+        requests to SmartCaptcha. The suspicious requests will be blocked.
+        """
+
+        MODE_FIELD_NUMBER: builtins.int
+        CONDITION_FIELD_NUMBER: builtins.int
+        WAF_PROFILE_ID_FIELD_NUMBER: builtins.int
+        mode: global___SecurityRule.Waf.Mode.ValueType
+        """Mode of protection."""
+        waf_profile_id: builtins.str
+        """ID of WAF profile to use in this rule."""
+        @property
+        def condition(self) -> global___Condition:
+            """The condition for matching the rule."""
+
+        def __init__(
+            self,
+            *,
+            mode: global___SecurityRule.Waf.Mode.ValueType = ...,
+            condition: global___Condition | None = ...,
+            waf_profile_id: builtins.str = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["condition", b"condition"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["condition", b"condition", "mode", b"mode", "waf_profile_id", b"waf_profile_id"]) -> None: ...
+
     NAME_FIELD_NUMBER: builtins.int
     PRIORITY_FIELD_NUMBER: builtins.int
     DRY_RUN_FIELD_NUMBER: builtins.int
     RULE_CONDITION_FIELD_NUMBER: builtins.int
     SMART_PROTECTION_FIELD_NUMBER: builtins.int
+    WAF_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     name: builtins.str
-    """Name of the rule. The name is unique within the folder. 1-50 characters long."""
+    """Name of the rule. The name is unique within the security profile. 1-50 characters long."""
     priority: builtins.int
     """Determines the priority for checking the incoming traffic.
     Enter an integer within the range of 1 and 999999.
@@ -250,6 +311,10 @@ class SecurityRule(google.protobuf.message.Message):
     def smart_protection(self) -> global___SecurityRule.SmartProtection:
         """Smart Protection rule, see [Smart Protection rules](/docs/smartwebsecurity/concepts/rules#smart-protection-rules)."""
 
+    @property
+    def waf(self) -> global___SecurityRule.Waf:
+        """Web Application Firewall (WAF) rule, see [WAF rules](/docs/smartwebsecurity/concepts/rules#waf-rules)."""
+
     def __init__(
         self,
         *,
@@ -258,11 +323,12 @@ class SecurityRule(google.protobuf.message.Message):
         dry_run: builtins.bool = ...,
         rule_condition: global___SecurityRule.RuleCondition | None = ...,
         smart_protection: global___SecurityRule.SmartProtection | None = ...,
+        waf: global___SecurityRule.Waf | None = ...,
         description: builtins.str = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["rule_condition", b"rule_condition", "rule_specifier", b"rule_specifier", "smart_protection", b"smart_protection"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "dry_run", b"dry_run", "name", b"name", "priority", b"priority", "rule_condition", b"rule_condition", "rule_specifier", b"rule_specifier", "smart_protection", b"smart_protection"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["rule_specifier", b"rule_specifier"]) -> typing.Literal["rule_condition", "smart_protection"] | None: ...
+    def HasField(self, field_name: typing.Literal["rule_condition", b"rule_condition", "rule_specifier", b"rule_specifier", "smart_protection", b"smart_protection", "waf", b"waf"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "dry_run", b"dry_run", "name", b"name", "priority", b"priority", "rule_condition", b"rule_condition", "rule_specifier", b"rule_specifier", "smart_protection", b"smart_protection", "waf", b"waf"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["rule_specifier", b"rule_specifier"]) -> typing.Literal["rule_condition", "smart_protection", "waf"] | None: ...
 
 global___SecurityRule = SecurityRule
 
