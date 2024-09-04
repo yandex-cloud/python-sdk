@@ -2,7 +2,7 @@ from setuptools import find_packages, setup
 
 packages = find_packages(".", include=["yandexcloud*", "yandex*"])
 
-__version__ = "0.315.0"
+__version__ = "0.316.0"
 
 with open("README.md") as file:
     README = file.read()
