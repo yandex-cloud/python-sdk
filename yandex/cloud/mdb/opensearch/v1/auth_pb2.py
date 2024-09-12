@@ -11,10 +11,11 @@ from google.protobuf.internal import builder as _builder
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)yandex/cloud/mdb/opensearch/v1/auth.proto\x12\x1eyandex.cloud.mdb.opensearch.v1\x1a\x1dyandex/cloud/validation.proto\"J\n\x0c\x41uthSettings\x12:\n\x04saml\x18\x01 \x01(\x0b\x32,.yandex.cloud.mdb.opensearch.v1.SAMLSettings\"\xeb\x01\n\x0cSAMLSettings\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12 \n\ridp_entity_id\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=250\x12&\n\x11idp_metadata_file\x18\x03 \x01(\x0c\x42\x0b\x8a\xc8\x31\x07<=10000\x12\x1f\n\x0csp_entity_id\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=250\x12!\n\x0e\x64\x61shboards_url\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=250\x12\x1c\n\troles_key\x18\x06 \x01(\tB\t\x8a\xc8\x31\x05<=250\x12\x1e\n\x0bsubject_key\x18\x07 \x01(\tB\t\x8a\xc8\x31\x05<=250Bs\n\"yandex.cloud.api.mdb.opensearch.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/opensearch/v1;opensearchb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)yandex/cloud/mdb/opensearch/v1/auth.proto\x12\x1eyandex.cloud.mdb.opensearch.v1\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"J\n\x0c\x41uthSettings\x12:\n\x04saml\x18\x01 \x01(\x0b\x32,.yandex.cloud.mdb.opensearch.v1.SAMLSettings\"\xb0\x02\n\x0cSAMLSettings\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12 \n\ridp_entity_id\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=250\x12&\n\x11idp_metadata_file\x18\x03 \x01(\x0c\x42\x0b\x8a\xc8\x31\x07<=10000\x12\x1f\n\x0csp_entity_id\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=250\x12!\n\x0e\x64\x61shboards_url\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=250\x12\x1c\n\troles_key\x18\x06 \x01(\tB\t\x8a\xc8\x31\x05<=250\x12\x1e\n\x0bsubject_key\x18\x07 \x01(\tB\t\x8a\xc8\x31\x05<=250\x12\x43\n\x1ejwt_default_expiration_timeout\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueBs\n\"yandex.cloud.api.mdb.opensearch.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/opensearch/v1;opensearchb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,8 +35,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _SAMLSETTINGS.fields_by_name['roles_key']._serialized_options = b'\212\3101\005<=250'
   _SAMLSETTINGS.fields_by_name['subject_key']._options = None
   _SAMLSETTINGS.fields_by_name['subject_key']._serialized_options = b'\212\3101\005<=250'
-  _globals['_AUTHSETTINGS']._serialized_start=108
-  _globals['_AUTHSETTINGS']._serialized_end=182
-  _globals['_SAMLSETTINGS']._serialized_start=185
-  _globals['_SAMLSETTINGS']._serialized_end=420
+  _globals['_AUTHSETTINGS']._serialized_start=140
+  _globals['_AUTHSETTINGS']._serialized_end=214
+  _globals['_SAMLSETTINGS']._serialized_start=217
+  _globals['_SAMLSETTINGS']._serialized_end=521
 # @@protoc_insertion_point(module_scope)

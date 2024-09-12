@@ -6,6 +6,7 @@ isort:skip_file
 import builtins
 import google.protobuf.descriptor
 import google.protobuf.message
+import google.protobuf.wrappers_pb2
 import typing
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
@@ -40,6 +41,7 @@ class SAMLSettings(google.protobuf.message.Message):
     DASHBOARDS_URL_FIELD_NUMBER: builtins.int
     ROLES_KEY_FIELD_NUMBER: builtins.int
     SUBJECT_KEY_FIELD_NUMBER: builtins.int
+    JWT_DEFAULT_EXPIRATION_TIMEOUT_FIELD_NUMBER: builtins.int
     enabled: builtins.bool
     idp_entity_id: builtins.str
     """Required. The entity ID of your IdP."""
@@ -53,6 +55,10 @@ class SAMLSettings(google.protobuf.message.Message):
     """Optional. The attribute in the SAML response where the roles are stored. If not configured, no roles are used."""
     subject_key: builtins.str
     """Optional. The attribute in the SAML response where the subject is stored. If not configured, the NameID attribute is used."""
+    @property
+    def jwt_default_expiration_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """default jwt expiration timeout."""
+
     def __init__(
         self,
         *,
@@ -63,7 +69,9 @@ class SAMLSettings(google.protobuf.message.Message):
         dashboards_url: builtins.str = ...,
         roles_key: builtins.str = ...,
         subject_key: builtins.str = ...,
+        jwt_default_expiration_timeout: google.protobuf.wrappers_pb2.Int64Value | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["dashboards_url", b"dashboards_url", "enabled", b"enabled", "idp_entity_id", b"idp_entity_id", "idp_metadata_file", b"idp_metadata_file", "roles_key", b"roles_key", "sp_entity_id", b"sp_entity_id", "subject_key", b"subject_key"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["jwt_default_expiration_timeout", b"jwt_default_expiration_timeout"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["dashboards_url", b"dashboards_url", "enabled", b"enabled", "idp_entity_id", b"idp_entity_id", "idp_metadata_file", b"idp_metadata_file", "jwt_default_expiration_timeout", b"jwt_default_expiration_timeout", "roles_key", b"roles_key", "sp_entity_id", b"sp_entity_id", "subject_key", b"subject_key"]) -> None: ...
 
 global___SAMLSettings = SAMLSettings

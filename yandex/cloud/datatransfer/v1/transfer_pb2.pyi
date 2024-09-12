@@ -589,25 +589,39 @@ class FilterRowsTransformer(google.protobuf.message.Message):
 
     TABLES_FIELD_NUMBER: builtins.int
     FILTER_FIELD_NUMBER: builtins.int
+    FILTERS_FIELD_NUMBER: builtins.int
     filter: builtins.str
     """Filtering criterion. This can be comparison operators for numeric, string, and
     Boolean values,
     comparison to NULL, and checking whether a substring is part of a string.
     Details here:
-    https://yandex.cloud/en-ru/docs/data-transfer/concepts/data-transformation#append-only-sources
+    https://yandex.cloud/en-ru/docs/data-transfer/concepts/data-transformation#append-only-sources.
+    Deprecated: Use filters instead.
     """
     @property
     def tables(self) -> global___TablesFilter:
-        """List of included and excluded tables"""
+        """List of included and excluded tables."""
+
+    @property
+    def filters(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Data is transported if it satisfies at least one of filters. Consider that there
+        is OR statement between filters.
+        Each filter can be comparison operators for numeric, string, and Boolean values,
+        comparison to NULL, and
+        checking whether a substring is part of a string.
+        Details in docs:
+        https://yandex.cloud/en-ru/docs/data-transfer/concepts/data-transformation#append-only-sources.
+        """
 
     def __init__(
         self,
         *,
         tables: global___TablesFilter | None = ...,
         filter: builtins.str = ...,
+        filters: collections.abc.Iterable[builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["tables", b"tables"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["filter", b"filter", "tables", b"tables"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["filter", b"filter", "filters", b"filters", "tables", b"tables"]) -> None: ...
 
 global___FilterRowsTransformer = FilterRowsTransformer
 

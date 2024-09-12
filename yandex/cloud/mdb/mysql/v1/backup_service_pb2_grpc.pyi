@@ -10,6 +10,7 @@ import grpc.aio
 import typing
 import yandex.cloud.mdb.mysql.v1.backup_pb2
 import yandex.cloud.mdb.mysql.v1.backup_service_pb2
+import yandex.cloud.operation.operation_pb2
 
 _T = typing.TypeVar("_T")
 
@@ -40,6 +41,12 @@ class BackupServiceStub:
     To list backups for an existing cluster, make a [ClusterService.ListBackups] request.
     """
 
+    Delete: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.mysql.v1.backup_service_pb2.DeleteBackupRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Deletes the specified MySQL cluster backup."""
+
 class BackupServiceAsyncStub:
     """A set of methods for managing MySQL backups.
 
@@ -60,6 +67,12 @@ class BackupServiceAsyncStub:
 
     To list backups for an existing cluster, make a [ClusterService.ListBackups] request.
     """
+
+    Delete: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.mysql.v1.backup_service_pb2.DeleteBackupRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Deletes the specified MySQL cluster backup."""
 
 class BackupServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing MySQL backups.
@@ -85,5 +98,13 @@ class BackupServiceServicer(metaclass=abc.ABCMeta):
 
         To list backups for an existing cluster, make a [ClusterService.ListBackups] request.
         """
+
+    @abc.abstractmethod
+    def Delete(
+        self,
+        request: yandex.cloud.mdb.mysql.v1.backup_service_pb2.DeleteBackupRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Deletes the specified MySQL cluster backup."""
 
 def add_BackupServiceServicer_to_server(servicer: BackupServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

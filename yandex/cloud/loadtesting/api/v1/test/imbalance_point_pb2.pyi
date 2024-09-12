@@ -19,8 +19,11 @@ class ImbalancePoint(google.protobuf.message.Message):
 
     AT_FIELD_NUMBER: builtins.int
     RPS_FIELD_NUMBER: builtins.int
+    COMMENT_FIELD_NUMBER: builtins.int
     rps: builtins.int
     """Imbalance moment RPS."""
+    comment: builtins.str
+    """Imbalance reason comment."""
     @property
     def at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Imbalance moment timestamp."""
@@ -30,8 +33,9 @@ class ImbalancePoint(google.protobuf.message.Message):
         *,
         at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         rps: builtins.int = ...,
+        comment: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["at", b"at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["at", b"at", "rps", b"rps"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["at", b"at", "comment", b"comment", "rps", b"rps"]) -> None: ...
 
 global___ImbalancePoint = ImbalancePoint

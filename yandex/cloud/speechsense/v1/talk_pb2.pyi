@@ -17,6 +17,7 @@ import yandex.cloud.speechsense.v1.analysis.interrupts_statistics_pb2
 import yandex.cloud.speechsense.v1.analysis.points_pb2
 import yandex.cloud.speechsense.v1.analysis.silence_statistics_pb2
 import yandex.cloud.speechsense.v1.analysis.speech_statistics_pb2
+import yandex.cloud.speechsense.v1.analysis.summarization_pb2
 import yandex.cloud.speechsense.v1.analysis.text_classifiers_pb2
 import yandex.cloud.speechsense.v1.analysis.transcription_pb2
 
@@ -74,6 +75,7 @@ class Talk(google.protobuf.message.Message):
     CONVERSATION_STATISTICS_FIELD_NUMBER: builtins.int
     POINTS_FIELD_NUMBER: builtins.int
     TEXT_CLASSIFIERS_FIELD_NUMBER: builtins.int
+    SUMMARIZATION_FIELD_NUMBER: builtins.int
     id: builtins.str
     """talk id"""
     organization_id: builtins.str
@@ -108,6 +110,8 @@ class Talk(google.protobuf.message.Message):
     def points(self) -> yandex.cloud.speechsense.v1.analysis.points_pb2.Points: ...
     @property
     def text_classifiers(self) -> yandex.cloud.speechsense.v1.analysis.text_classifiers_pb2.TextClassifiers: ...
+    @property
+    def summarization(self) -> yandex.cloud.speechsense.v1.analysis.summarization_pb2.Summarization: ...
     def __init__(
         self,
         *,
@@ -128,9 +132,10 @@ class Talk(google.protobuf.message.Message):
         conversation_statistics: yandex.cloud.speechsense.v1.analysis.conversation_statistics_pb2.ConversationStatistics | None = ...,
         points: yandex.cloud.speechsense.v1.analysis.points_pb2.Points | None = ...,
         text_classifiers: yandex.cloud.speechsense.v1.analysis.text_classifiers_pb2.TextClassifiers | None = ...,
+        summarization: yandex.cloud.speechsense.v1.analysis.summarization_pb2.Summarization | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["conversation_statistics", b"conversation_statistics", "created_at", b"created_at", "interrupts_statistics", b"interrupts_statistics", "modified_at", b"modified_at", "points", b"points", "silence_statistics", b"silence_statistics", "speech_statistics", b"speech_statistics", "text_classifiers", b"text_classifiers", "transcription", b"transcription"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["connection_id", b"connection_id", "conversation_statistics", b"conversation_statistics", "created_at", b"created_at", "created_by", b"created_by", "id", b"id", "interrupts_statistics", b"interrupts_statistics", "modified_at", b"modified_at", "modified_by", b"modified_by", "organization_id", b"organization_id", "points", b"points", "project_ids", b"project_ids", "silence_statistics", b"silence_statistics", "space_id", b"space_id", "speech_statistics", b"speech_statistics", "talk_fields", b"talk_fields", "text_classifiers", b"text_classifiers", "transcription", b"transcription"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["conversation_statistics", b"conversation_statistics", "created_at", b"created_at", "interrupts_statistics", b"interrupts_statistics", "modified_at", b"modified_at", "points", b"points", "silence_statistics", b"silence_statistics", "speech_statistics", b"speech_statistics", "summarization", b"summarization", "text_classifiers", b"text_classifiers", "transcription", b"transcription"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["connection_id", b"connection_id", "conversation_statistics", b"conversation_statistics", "created_at", b"created_at", "created_by", b"created_by", "id", b"id", "interrupts_statistics", b"interrupts_statistics", "modified_at", b"modified_at", "modified_by", b"modified_by", "organization_id", b"organization_id", "points", b"points", "project_ids", b"project_ids", "silence_statistics", b"silence_statistics", "space_id", b"space_id", "speech_statistics", b"speech_statistics", "summarization", b"summarization", "talk_fields", b"talk_fields", "text_classifiers", b"text_classifiers", "transcription", b"transcription"]) -> None: ...
 
 global___Talk = Talk
 

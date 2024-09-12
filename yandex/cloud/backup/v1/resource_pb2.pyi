@@ -289,6 +289,7 @@ class Task(google.protobuf.message.Message):
     COMPLETED_AT_FIELD_NUMBER: builtins.int
     COMPUTE_INSTANCE_ID_FIELD_NUMBER: builtins.int
     RESULT_CODE_FIELD_NUMBER: builtins.int
+    ERROR_FIELD_NUMBER: builtins.int
     id: builtins.int
     """Task ID."""
     cancellable: builtins.bool
@@ -305,6 +306,8 @@ class Task(google.protobuf.message.Message):
     """Compute Cloud instance ID."""
     result_code: global___Task.Code.ValueType
     """Task result code."""
+    error: builtins.str
+    """Task error message if task finished with not OK code"""
     @property
     def progress(self) -> global___Progress:
         """Task progress."""
@@ -332,8 +335,9 @@ class Task(google.protobuf.message.Message):
         completed_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         compute_instance_id: builtins.str = ...,
         result_code: global___Task.Code.ValueType = ...,
+        error: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["completed_at", b"completed_at", "enqueued_at", b"enqueued_at", "progress", b"progress", "started_at", b"started_at", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cancellable", b"cancellable", "completed_at", b"completed_at", "compute_instance_id", b"compute_instance_id", "enqueued_at", b"enqueued_at", "id", b"id", "policy_id", b"policy_id", "progress", b"progress", "result_code", b"result_code", "started_at", b"started_at", "status", b"status", "type", b"type", "updated_at", b"updated_at"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cancellable", b"cancellable", "completed_at", b"completed_at", "compute_instance_id", b"compute_instance_id", "enqueued_at", b"enqueued_at", "error", b"error", "id", b"id", "policy_id", b"policy_id", "progress", b"progress", "result_code", b"result_code", "started_at", b"started_at", "status", b"status", "type", b"type", "updated_at", b"updated_at"]) -> None: ...
 
 global___Task = Task

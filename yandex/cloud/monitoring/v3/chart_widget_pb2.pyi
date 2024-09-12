@@ -601,6 +601,26 @@ class ChartWidget(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["names", b"names", "positive", b"positive"]) -> None: ...
 
+    @typing.final
+    class RepeatSettings(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        REPEAT_BY_FIELD_NUMBER: builtins.int
+        MAX_CHARTS_IN_ROW_FIELD_NUMBER: builtins.int
+        max_charts_in_row: builtins.int
+        """Max number of chart in one row."""
+        @property
+        def repeat_by(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+            """Parameters to repeat by."""
+
+        def __init__(
+            self,
+            *,
+            repeat_by: collections.abc.Iterable[builtins.str] | None = ...,
+            max_charts_in_row: builtins.int = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["max_charts_in_row", b"max_charts_in_row", "repeat_by", b"repeat_by"]) -> None: ...
+
     ID_FIELD_NUMBER: builtins.int
     QUERIES_FIELD_NUMBER: builtins.int
     VISUALIZATION_SETTINGS_FIELD_NUMBER: builtins.int
@@ -610,6 +630,7 @@ class ChartWidget(google.protobuf.message.Message):
     TITLE_FIELD_NUMBER: builtins.int
     DISPLAY_LEGEND_FIELD_NUMBER: builtins.int
     FREEZE_FIELD_NUMBER: builtins.int
+    REPEAT_FIELD_NUMBER: builtins.int
     id: builtins.str
     """Required. Chart ID."""
     description: builtins.str
@@ -636,6 +657,10 @@ class ChartWidget(google.protobuf.message.Message):
     def name_hiding_settings(self) -> global___ChartWidget.NameHidingSettings:
         """Name hiding settings."""
 
+    @property
+    def repeat(self) -> global___ChartWidget.RepeatSettings:
+        """Setting for repeat panel / repeat row"""
+
     def __init__(
         self,
         *,
@@ -648,8 +673,9 @@ class ChartWidget(google.protobuf.message.Message):
         title: builtins.str = ...,
         display_legend: builtins.bool = ...,
         freeze: global___ChartWidget.FreezeDuration.ValueType = ...,
+        repeat: global___ChartWidget.RepeatSettings | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["name_hiding_settings", b"name_hiding_settings", "queries", b"queries", "visualization_settings", b"visualization_settings"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "display_legend", b"display_legend", "freeze", b"freeze", "id", b"id", "name_hiding_settings", b"name_hiding_settings", "queries", b"queries", "series_overrides", b"series_overrides", "title", b"title", "visualization_settings", b"visualization_settings"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["name_hiding_settings", b"name_hiding_settings", "queries", b"queries", "repeat", b"repeat", "visualization_settings", b"visualization_settings"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "display_legend", b"display_legend", "freeze", b"freeze", "id", b"id", "name_hiding_settings", b"name_hiding_settings", "queries", b"queries", "repeat", b"repeat", "series_overrides", b"series_overrides", "title", b"title", "visualization_settings", b"visualization_settings"]) -> None: ...
 
 global___ChartWidget = ChartWidget
