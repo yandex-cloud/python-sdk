@@ -211,7 +211,9 @@ class GetWorkflowResponse(google.protobuf.message.Message):
 
     WORKFLOW_FIELD_NUMBER: builtins.int
     @property
-    def workflow(self) -> yandex.cloud.serverless.workflows.v1.workflow_pb2.Workflow: ...
+    def workflow(self) -> yandex.cloud.serverless.workflows.v1.workflow_pb2.Workflow:
+        """Workflow properties."""
+
     def __init__(
         self,
         *,
@@ -310,7 +312,9 @@ class ListWorkflowsResponse(google.protobuf.message.Message):
     Each subsequent page will have its own `next_page_token` to continue paging through the results.
     """
     @property
-    def workflows(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.serverless.workflows.v1.workflow_pb2.WorkflowPreview]: ...
+    def workflows(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.serverless.workflows.v1.workflow_pb2.WorkflowPreview]:
+        """List of Workflows."""
+
     def __init__(
         self,
         *,

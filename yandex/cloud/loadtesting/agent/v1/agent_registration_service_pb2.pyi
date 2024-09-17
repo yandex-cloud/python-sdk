@@ -4,7 +4,9 @@ isort:skip_file
 """
 
 import builtins
+import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
 
@@ -47,14 +49,33 @@ global___RegisterResponse = RegisterResponse
 class ExternalAgentRegisterRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    @typing.final
+    class LabelsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
     FOLDER_ID_FIELD_NUMBER: builtins.int
     COMPUTE_INSTANCE_ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     AGENT_VERSION_FIELD_NUMBER: builtins.int
+    LABELS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     compute_instance_id: builtins.str
     name: builtins.str
     agent_version: builtins.str
+    @property
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
     def __init__(
         self,
         *,
@@ -62,8 +83,9 @@ class ExternalAgentRegisterRequest(google.protobuf.message.Message):
         compute_instance_id: builtins.str = ...,
         name: builtins.str = ...,
         agent_version: builtins.str = ...,
+        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["agent_version", b"agent_version", "compute_instance_id", b"compute_instance_id", "folder_id", b"folder_id", "name", b"name"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["agent_version", b"agent_version", "compute_instance_id", b"compute_instance_id", "folder_id", b"folder_id", "labels", b"labels", "name", b"name"]) -> None: ...
 
 global___ExternalAgentRegisterRequest = ExternalAgentRegisterRequest
 

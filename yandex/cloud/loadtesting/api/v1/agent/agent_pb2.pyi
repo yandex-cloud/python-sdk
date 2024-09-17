@@ -9,6 +9,7 @@ import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
+import yandex.cloud.loadtesting.api.v1.agent.log_settings_pb2
 import yandex.cloud.loadtesting.api.v1.agent.status_pb2
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
@@ -45,6 +46,7 @@ class Agent(google.protobuf.message.Message):
     CURRENT_JOB_ID_FIELD_NUMBER: builtins.int
     AGENT_VERSION_ID_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
+    LOG_SETTINGS_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the agent. Generated at creation time."""
     folder_id: builtins.str
@@ -72,6 +74,10 @@ class Agent(google.protobuf.message.Message):
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Agent labels as `key:value` pairs."""
 
+    @property
+    def log_settings(self) -> yandex.cloud.loadtesting.api.v1.agent.log_settings_pb2.LogSettings:
+        """Agent log settings"""
+
     def __init__(
         self,
         *,
@@ -85,7 +91,9 @@ class Agent(google.protobuf.message.Message):
         current_job_id: builtins.str = ...,
         agent_version_id: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        log_settings: yandex.cloud.loadtesting.api.v1.agent.log_settings_pb2.LogSettings | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["agent_version_id", b"agent_version_id", "compute_instance_id", b"compute_instance_id", "current_job_id", b"current_job_id", "description", b"description", "errors", b"errors", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "name", b"name", "status", b"status"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["log_settings", b"log_settings"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["agent_version_id", b"agent_version_id", "compute_instance_id", b"compute_instance_id", "current_job_id", b"current_job_id", "description", b"description", "errors", b"errors", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "log_settings", b"log_settings", "name", b"name", "status", b"status"]) -> None: ...
 
 global___Agent = Agent

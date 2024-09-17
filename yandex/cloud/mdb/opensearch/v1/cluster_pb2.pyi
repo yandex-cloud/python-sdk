@@ -333,6 +333,7 @@ class OpenSearch(google.protobuf.message.Message):
         SUBNET_IDS_FIELD_NUMBER: builtins.int
         ASSIGN_PUBLIC_IP_FIELD_NUMBER: builtins.int
         ROLES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         name: builtins.str
         """Name of the group. Must be 1-63 characters long."""
         hosts_count: builtins.int
@@ -355,6 +356,10 @@ class OpenSearch(google.protobuf.message.Message):
         def roles(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[global___OpenSearch.GroupRole.ValueType]:
             """Roles of the host group."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
@@ -365,9 +370,10 @@ class OpenSearch(google.protobuf.message.Message):
             subnet_ids: collections.abc.Iterable[builtins.str] | None = ...,
             assign_public_ip: builtins.bool = ...,
             roles: collections.abc.Iterable[global___OpenSearch.GroupRole.ValueType] | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["assign_public_ip", b"assign_public_ip", "hosts_count", b"hosts_count", "name", b"name", "resources", b"resources", "roles", b"roles", "subnet_ids", b"subnet_ids", "zone_ids", b"zone_ids"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["assign_public_ip", b"assign_public_ip", "disk_size_autoscaling", b"disk_size_autoscaling", "hosts_count", b"hosts_count", "name", b"name", "resources", b"resources", "roles", b"roles", "subnet_ids", b"subnet_ids", "zone_ids", b"zone_ids"]) -> None: ...
 
     PLUGINS_FIELD_NUMBER: builtins.int
     NODE_GROUPS_FIELD_NUMBER: builtins.int
@@ -417,6 +423,7 @@ class Dashboards(google.protobuf.message.Message):
         ZONE_IDS_FIELD_NUMBER: builtins.int
         SUBNET_IDS_FIELD_NUMBER: builtins.int
         ASSIGN_PUBLIC_IP_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         name: builtins.str
         """Name of the group. 1-63 characters long."""
         hosts_count: builtins.int
@@ -435,6 +442,10 @@ class Dashboards(google.protobuf.message.Message):
         def subnet_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
             """IDs of the subnets that the hosts belong to."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
@@ -444,9 +455,10 @@ class Dashboards(google.protobuf.message.Message):
             zone_ids: collections.abc.Iterable[builtins.str] | None = ...,
             subnet_ids: collections.abc.Iterable[builtins.str] | None = ...,
             assign_public_ip: builtins.bool = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["assign_public_ip", b"assign_public_ip", "hosts_count", b"hosts_count", "name", b"name", "resources", b"resources", "subnet_ids", b"subnet_ids", "zone_ids", b"zone_ids"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["assign_public_ip", b"assign_public_ip", "disk_size_autoscaling", b"disk_size_autoscaling", "hosts_count", b"hosts_count", "name", b"name", "resources", b"resources", "subnet_ids", b"subnet_ids", "zone_ids", b"zone_ids"]) -> None: ...
 
     NODE_GROUPS_FIELD_NUMBER: builtins.int
     @property
@@ -724,3 +736,27 @@ class Access(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["data_transfer", b"data_transfer", "serverless", b"serverless"]) -> None: ...
 
 global___Access = Access
+
+@typing.final
+class DiskSizeAutoscaling(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PLANNED_USAGE_THRESHOLD_FIELD_NUMBER: builtins.int
+    EMERGENCY_USAGE_THRESHOLD_FIELD_NUMBER: builtins.int
+    DISK_SIZE_LIMIT_FIELD_NUMBER: builtins.int
+    planned_usage_threshold: builtins.int
+    """Amount of used storage for automatic disk scaling in the maintenance window, 0 means disabled, in percent."""
+    emergency_usage_threshold: builtins.int
+    """Amount of used storage for immediately  automatic disk scaling, 0 means disabled, in percent."""
+    disk_size_limit: builtins.int
+    """Limit on how large the storage for database instances can automatically grow, in bytes."""
+    def __init__(
+        self,
+        *,
+        planned_usage_threshold: builtins.int = ...,
+        emergency_usage_threshold: builtins.int = ...,
+        disk_size_limit: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["disk_size_limit", b"disk_size_limit", "emergency_usage_threshold", b"emergency_usage_threshold", "planned_usage_threshold", b"planned_usage_threshold"]) -> None: ...
+
+global___DiskSizeAutoscaling = DiskSizeAutoscaling

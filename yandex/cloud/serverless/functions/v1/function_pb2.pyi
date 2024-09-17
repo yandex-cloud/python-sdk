@@ -133,6 +133,10 @@ class Version(google.protobuf.message.Message):
         """Version is being created."""
         ACTIVE: Version._Status.ValueType  # 2
         """Version is ready to use."""
+        OBSOLETE: Version._Status.ValueType  # 3
+        """Version will be deleted soon."""
+        DELETING: Version._Status.ValueType  # 4
+        """Version is being deleted."""
 
     class Status(_Status, metaclass=_StatusEnumTypeWrapper): ...
     STATUS_UNSPECIFIED: Version.Status.ValueType  # 0
@@ -140,6 +144,10 @@ class Version(google.protobuf.message.Message):
     """Version is being created."""
     ACTIVE: Version.Status.ValueType  # 2
     """Version is ready to use."""
+    OBSOLETE: Version.Status.ValueType  # 3
+    """Version will be deleted soon."""
+    DELETING: Version.Status.ValueType  # 4
+    """Version is being deleted."""
 
     @typing.final
     class EnvironmentEntry(google.protobuf.message.Message):

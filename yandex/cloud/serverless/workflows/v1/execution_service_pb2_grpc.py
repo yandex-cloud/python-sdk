@@ -6,7 +6,8 @@ from yandex.cloud.serverless.workflows.v1 import execution_service_pb2 as yandex
 
 
 class ExecutionServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """Set of methods for managing Workflows Executions.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -42,7 +43,8 @@ class ExecutionServiceStub(object):
 
 
 class ExecutionServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """Set of methods for managing Workflows Executions.
+    """
 
     def Start(self, request, context):
         """Starts new Workflow execution.
@@ -115,7 +117,8 @@ def add_ExecutionServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class ExecutionService(object):
-    """Missing associated documentation comment in .proto file."""
+    """Set of methods for managing Workflows Executions.
+    """
 
     @staticmethod
     def Start(request,

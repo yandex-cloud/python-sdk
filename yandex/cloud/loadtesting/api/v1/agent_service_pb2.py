@@ -15,12 +15,13 @@ from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
-from yandex.cloud.loadtesting.api.v1.agent import create_compute_instance_pb2 as yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_agent_dot_create__compute__instance__pb2
 from yandex.cloud.loadtesting.api.v1.agent import agent_pb2 as yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_agent_dot_agent__pb2
+from yandex.cloud.loadtesting.api.v1.agent import create_compute_instance_pb2 as yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_agent_dot_create__compute__instance__pb2
+from yandex.cloud.loadtesting.api.v1.agent import log_settings_pb2 as yandex_dot_cloud_dot_loadtesting_dot_api_dot_v1_dot_agent_dot_log__settings__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n3yandex/cloud/loadtesting/api/v1/agent_service.proto\x12\x1fyandex.cloud.loadtesting.api.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a&yandex/cloud/operation/operation.proto\x1a yandex/cloud/api/operation.proto\x1a\x43yandex/cloud/loadtesting/api/v1/agent/create_compute_instance.proto\x1a\x31yandex/cloud/loadtesting/api/v1/agent/agent.proto\x1a\x1dyandex/cloud/validation.proto\"\xba\x03\n\x12\x43reateAgentRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12]\n\x17\x63ompute_instance_params\x18\x04 \x01(\x0b\x32<.yandex.cloud.loadtesting.api.v1.agent.CreateComputeInstance\x12\x15\n\ragent_version\x18\x05 \x01(\t\x12\x8c\x01\n\x06labels\x18\x06 \x03(\x0b\x32?.yandex.cloud.loadtesting.api.v1.CreateAgentRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\'\n\x13\x43reateAgentMetadata\x12\x10\n\x08\x61gent_id\x18\x01 \x01(\t\"#\n\x0fGetAgentRequest\x12\x10\n\x08\x61gent_id\x18\x02 \x01(\t\"&\n\x12\x44\x65leteAgentRequest\x12\x10\n\x08\x61gent_id\x18\x01 \x01(\t\"\'\n\x13\x44\x65leteAgentMetadata\x12\x10\n\x08\x61gent_id\x18\x01 \x01(\t\"\x8e\x01\n\x11ListAgentsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"v\n\x12ListAgentsResponse\x12<\n\x06\x61gents\x18\x01 \x03(\x0b\x32,.yandex.cloud.loadtesting.api.v1.agent.Agent\x12\"\n\x0fnext_page_token\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=100\"\xd1\x03\n\x12UpdateAgentRequest\x12\x16\n\x08\x61gent_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x35\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe8\xc7\x31\x01\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12]\n\x17\x63ompute_instance_params\x18\x05 \x01(\x0b\x32<.yandex.cloud.loadtesting.api.v1.agent.CreateComputeInstance\x12\x8c\x01\n\x06labels\x18\x06 \x03(\x0b\x32?.yandex.cloud.loadtesting.api.v1.UpdateAgentRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\'\n\x13UpdateAgentMetadata\x12\x10\n\x08\x61gent_id\x18\x01 \x01(\t2\xe3\x06\n\x0c\x41gentService\x12\xac\x01\n\x06\x43reate\x12\x33.yandex.cloud.loadtesting.api.v1.CreateAgentRequest\x1a!.yandex.cloud.operation.Operation\"J\xb2\xd2*\"\n\x13\x43reateAgentMetadata\x12\x0b\x61gent.Agent\x82\xd3\xe4\x93\x02\x1e\"\x19/loadtesting/api/v1/agent:\x01*\x12\x93\x01\n\x03Get\x12\x30.yandex.cloud.loadtesting.api.v1.GetAgentRequest\x1a,.yandex.cloud.loadtesting.api.v1.agent.Agent\",\x82\xd3\xe4\x93\x02&\x12$/loadtesting/api/v1/agent/{agent_id}\x12\x92\x01\n\x04List\x12\x32.yandex.cloud.loadtesting.api.v1.ListAgentsRequest\x1a\x33.yandex.cloud.loadtesting.api.v1.ListAgentsResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/loadtesting/api/v1/agent\x12\xbe\x01\n\x06\x44\x65lete\x12\x33.yandex.cloud.loadtesting.api.v1.DeleteAgentRequest\x1a!.yandex.cloud.operation.Operation\"\\\xb2\xd2*,\n\x13\x44\x65leteAgentMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02&*$/loadtesting/api/v1/agent/{agent_id}\x12\xb7\x01\n\x06Update\x12\x33.yandex.cloud.loadtesting.api.v1.UpdateAgentRequest\x1a!.yandex.cloud.operation.Operation\"U\xb2\xd2*\"\n\x13UpdateAgentMetadata\x12\x0b\x61gent.Agent\x82\xd3\xe4\x93\x02)2$/loadtesting/api/v1/agent/{agent_id}:\x01*Bv\n#yandex.cloud.api.loadtesting.api.v1ZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadtesting/api/v1;loadtestingb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n3yandex/cloud/loadtesting/api/v1/agent_service.proto\x12\x1fyandex.cloud.loadtesting.api.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a&yandex/cloud/operation/operation.proto\x1a yandex/cloud/api/operation.proto\x1a\x31yandex/cloud/loadtesting/api/v1/agent/agent.proto\x1a\x43yandex/cloud/loadtesting/api/v1/agent/create_compute_instance.proto\x1a\x38yandex/cloud/loadtesting/api/v1/agent/log_settings.proto\x1a\x1dyandex/cloud/validation.proto\"\x84\x04\n\x12\x43reateAgentRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12]\n\x17\x63ompute_instance_params\x18\x04 \x01(\x0b\x32<.yandex.cloud.loadtesting.api.v1.agent.CreateComputeInstance\x12\x15\n\ragent_version\x18\x05 \x01(\t\x12\x8c\x01\n\x06labels\x18\x06 \x03(\x0b\x32?.yandex.cloud.loadtesting.api.v1.CreateAgentRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12H\n\x0clog_settings\x18\x07 \x01(\x0b\x32\x32.yandex.cloud.loadtesting.api.v1.agent.LogSettings\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\'\n\x13\x43reateAgentMetadata\x12\x10\n\x08\x61gent_id\x18\x01 \x01(\t\"#\n\x0fGetAgentRequest\x12\x10\n\x08\x61gent_id\x18\x02 \x01(\t\"&\n\x12\x44\x65leteAgentRequest\x12\x10\n\x08\x61gent_id\x18\x01 \x01(\t\"\'\n\x13\x44\x65leteAgentMetadata\x12\x10\n\x08\x61gent_id\x18\x01 \x01(\t\"\x8e\x01\n\x11ListAgentsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"v\n\x12ListAgentsResponse\x12<\n\x06\x61gents\x18\x01 \x03(\x0b\x32,.yandex.cloud.loadtesting.api.v1.agent.Agent\x12\"\n\x0fnext_page_token\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=100\"\xd1\x03\n\x12UpdateAgentRequest\x12\x16\n\x08\x61gent_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x35\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe8\xc7\x31\x01\x12/\n\x04name\x18\x03 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12]\n\x17\x63ompute_instance_params\x18\x05 \x01(\x0b\x32<.yandex.cloud.loadtesting.api.v1.agent.CreateComputeInstance\x12\x8c\x01\n\x06labels\x18\x06 \x03(\x0b\x32?.yandex.cloud.loadtesting.api.v1.UpdateAgentRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\'\n\x13UpdateAgentMetadata\x12\x10\n\x08\x61gent_id\x18\x01 \x01(\t2\xe3\x06\n\x0c\x41gentService\x12\xac\x01\n\x06\x43reate\x12\x33.yandex.cloud.loadtesting.api.v1.CreateAgentRequest\x1a!.yandex.cloud.operation.Operation\"J\xb2\xd2*\"\n\x13\x43reateAgentMetadata\x12\x0b\x61gent.Agent\x82\xd3\xe4\x93\x02\x1e\"\x19/loadtesting/api/v1/agent:\x01*\x12\x93\x01\n\x03Get\x12\x30.yandex.cloud.loadtesting.api.v1.GetAgentRequest\x1a,.yandex.cloud.loadtesting.api.v1.agent.Agent\",\x82\xd3\xe4\x93\x02&\x12$/loadtesting/api/v1/agent/{agent_id}\x12\x92\x01\n\x04List\x12\x32.yandex.cloud.loadtesting.api.v1.ListAgentsRequest\x1a\x33.yandex.cloud.loadtesting.api.v1.ListAgentsResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/loadtesting/api/v1/agent\x12\xbe\x01\n\x06\x44\x65lete\x12\x33.yandex.cloud.loadtesting.api.v1.DeleteAgentRequest\x1a!.yandex.cloud.operation.Operation\"\\\xb2\xd2*,\n\x13\x44\x65leteAgentMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02&*$/loadtesting/api/v1/agent/{agent_id}\x12\xb7\x01\n\x06Update\x12\x33.yandex.cloud.loadtesting.api.v1.UpdateAgentRequest\x1a!.yandex.cloud.operation.Operation\"U\xb2\xd2*\"\n\x13UpdateAgentMetadata\x12\x0b\x61gent.Agent\x82\xd3\xe4\x93\x02)2$/loadtesting/api/v1/agent/{agent_id}:\x01*Bv\n#yandex.cloud.api.loadtesting.api.v1ZOgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadtesting/api/v1;loadtestingb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -70,28 +71,28 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _AGENTSERVICE.methods_by_name['Delete']._serialized_options = b'\262\322*,\n\023DeleteAgentMetadata\022\025google.protobuf.Empty\202\323\344\223\002&*$/loadtesting/api/v1/agent/{agent_id}'
   _AGENTSERVICE.methods_by_name['Update']._options = None
   _AGENTSERVICE.methods_by_name['Update']._serialized_options = b'\262\322*\"\n\023UpdateAgentMetadata\022\013agent.Agent\202\323\344\223\002)2$/loadtesting/api/v1/agent/{agent_id}:\001*'
-  _globals['_CREATEAGENTREQUEST']._serialized_start=378
-  _globals['_CREATEAGENTREQUEST']._serialized_end=820
-  _globals['_CREATEAGENTREQUEST_LABELSENTRY']._serialized_start=775
-  _globals['_CREATEAGENTREQUEST_LABELSENTRY']._serialized_end=820
-  _globals['_CREATEAGENTMETADATA']._serialized_start=822
-  _globals['_CREATEAGENTMETADATA']._serialized_end=861
-  _globals['_GETAGENTREQUEST']._serialized_start=863
-  _globals['_GETAGENTREQUEST']._serialized_end=898
-  _globals['_DELETEAGENTREQUEST']._serialized_start=900
-  _globals['_DELETEAGENTREQUEST']._serialized_end=938
-  _globals['_DELETEAGENTMETADATA']._serialized_start=940
-  _globals['_DELETEAGENTMETADATA']._serialized_end=979
-  _globals['_LISTAGENTSREQUEST']._serialized_start=982
-  _globals['_LISTAGENTSREQUEST']._serialized_end=1124
-  _globals['_LISTAGENTSRESPONSE']._serialized_start=1126
-  _globals['_LISTAGENTSRESPONSE']._serialized_end=1244
-  _globals['_UPDATEAGENTREQUEST']._serialized_start=1247
-  _globals['_UPDATEAGENTREQUEST']._serialized_end=1712
-  _globals['_UPDATEAGENTREQUEST_LABELSENTRY']._serialized_start=775
-  _globals['_UPDATEAGENTREQUEST_LABELSENTRY']._serialized_end=820
-  _globals['_UPDATEAGENTMETADATA']._serialized_start=1714
-  _globals['_UPDATEAGENTMETADATA']._serialized_end=1753
-  _globals['_AGENTSERVICE']._serialized_start=1756
-  _globals['_AGENTSERVICE']._serialized_end=2623
+  _globals['_CREATEAGENTREQUEST']._serialized_start=436
+  _globals['_CREATEAGENTREQUEST']._serialized_end=952
+  _globals['_CREATEAGENTREQUEST_LABELSENTRY']._serialized_start=907
+  _globals['_CREATEAGENTREQUEST_LABELSENTRY']._serialized_end=952
+  _globals['_CREATEAGENTMETADATA']._serialized_start=954
+  _globals['_CREATEAGENTMETADATA']._serialized_end=993
+  _globals['_GETAGENTREQUEST']._serialized_start=995
+  _globals['_GETAGENTREQUEST']._serialized_end=1030
+  _globals['_DELETEAGENTREQUEST']._serialized_start=1032
+  _globals['_DELETEAGENTREQUEST']._serialized_end=1070
+  _globals['_DELETEAGENTMETADATA']._serialized_start=1072
+  _globals['_DELETEAGENTMETADATA']._serialized_end=1111
+  _globals['_LISTAGENTSREQUEST']._serialized_start=1114
+  _globals['_LISTAGENTSREQUEST']._serialized_end=1256
+  _globals['_LISTAGENTSRESPONSE']._serialized_start=1258
+  _globals['_LISTAGENTSRESPONSE']._serialized_end=1376
+  _globals['_UPDATEAGENTREQUEST']._serialized_start=1379
+  _globals['_UPDATEAGENTREQUEST']._serialized_end=1844
+  _globals['_UPDATEAGENTREQUEST_LABELSENTRY']._serialized_start=907
+  _globals['_UPDATEAGENTREQUEST_LABELSENTRY']._serialized_end=952
+  _globals['_UPDATEAGENTMETADATA']._serialized_start=1846
+  _globals['_UPDATEAGENTMETADATA']._serialized_end=1885
+  _globals['_AGENTSERVICE']._serialized_start=1888
+  _globals['_AGENTSERVICE']._serialized_end=2755
 # @@protoc_insertion_point(module_scope)

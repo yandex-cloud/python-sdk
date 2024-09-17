@@ -957,6 +957,7 @@ class OpenSearchCreateSpec(google.protobuf.message.Message):
         SUBNET_IDS_FIELD_NUMBER: builtins.int
         ASSIGN_PUBLIC_IP_FIELD_NUMBER: builtins.int
         ROLES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         name: builtins.str
         """Name of the group."""
         hosts_count: builtins.int
@@ -979,6 +980,10 @@ class OpenSearchCreateSpec(google.protobuf.message.Message):
         def roles(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[yandex.cloud.mdb.opensearch.v1.cluster_pb2.OpenSearch.GroupRole.ValueType]:
             """Roles of the hosts in the group."""
 
+        @property
+        def disk_size_autoscaling(self) -> yandex.cloud.mdb.opensearch.v1.cluster_pb2.DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
@@ -989,9 +994,10 @@ class OpenSearchCreateSpec(google.protobuf.message.Message):
             subnet_ids: collections.abc.Iterable[builtins.str] | None = ...,
             assign_public_ip: builtins.bool = ...,
             roles: collections.abc.Iterable[yandex.cloud.mdb.opensearch.v1.cluster_pb2.OpenSearch.GroupRole.ValueType] | None = ...,
+            disk_size_autoscaling: yandex.cloud.mdb.opensearch.v1.cluster_pb2.DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["assign_public_ip", b"assign_public_ip", "hosts_count", b"hosts_count", "name", b"name", "resources", b"resources", "roles", b"roles", "subnet_ids", b"subnet_ids", "zone_ids", b"zone_ids"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["assign_public_ip", b"assign_public_ip", "disk_size_autoscaling", b"disk_size_autoscaling", "hosts_count", b"hosts_count", "name", b"name", "resources", b"resources", "roles", b"roles", "subnet_ids", b"subnet_ids", "zone_ids", b"zone_ids"]) -> None: ...
 
     PLUGINS_FIELD_NUMBER: builtins.int
     NODE_GROUPS_FIELD_NUMBER: builtins.int
@@ -1041,6 +1047,7 @@ class DashboardsCreateSpec(google.protobuf.message.Message):
         ZONE_IDS_FIELD_NUMBER: builtins.int
         SUBNET_IDS_FIELD_NUMBER: builtins.int
         ASSIGN_PUBLIC_IP_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         name: builtins.str
         """Name of the group."""
         hosts_count: builtins.int
@@ -1059,6 +1066,10 @@ class DashboardsCreateSpec(google.protobuf.message.Message):
         def subnet_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
             """IDs of the subnets that the hosts belong to."""
 
+        @property
+        def disk_size_autoscaling(self) -> yandex.cloud.mdb.opensearch.v1.cluster_pb2.DiskSizeAutoscaling:
+            """Disk size autoscaling settings"""
+
         def __init__(
             self,
             *,
@@ -1068,9 +1079,10 @@ class DashboardsCreateSpec(google.protobuf.message.Message):
             zone_ids: collections.abc.Iterable[builtins.str] | None = ...,
             subnet_ids: collections.abc.Iterable[builtins.str] | None = ...,
             assign_public_ip: builtins.bool = ...,
+            disk_size_autoscaling: yandex.cloud.mdb.opensearch.v1.cluster_pb2.DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["assign_public_ip", b"assign_public_ip", "hosts_count", b"hosts_count", "name", b"name", "resources", b"resources", "subnet_ids", b"subnet_ids", "zone_ids", b"zone_ids"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["assign_public_ip", b"assign_public_ip", "disk_size_autoscaling", b"disk_size_autoscaling", "hosts_count", b"hosts_count", "name", b"name", "resources", b"resources", "subnet_ids", b"subnet_ids", "zone_ids", b"zone_ids"]) -> None: ...
 
     NODE_GROUPS_FIELD_NUMBER: builtins.int
     @property
@@ -1533,6 +1545,7 @@ class OpenSearchNodeGroupUpdateSpec(google.protobuf.message.Message):
     ZONE_IDS_FIELD_NUMBER: builtins.int
     SUBNET_IDS_FIELD_NUMBER: builtins.int
     ASSIGN_PUBLIC_IP_FIELD_NUMBER: builtins.int
+    DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
     hosts_count: builtins.int
     """Number of hosts in the group."""
     assign_public_ip: builtins.bool
@@ -1553,6 +1566,10 @@ class OpenSearchNodeGroupUpdateSpec(google.protobuf.message.Message):
     def subnet_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """IDs of the subnets for hosts"""
 
+    @property
+    def disk_size_autoscaling(self) -> yandex.cloud.mdb.opensearch.v1.cluster_pb2.DiskSizeAutoscaling:
+        """Disk size autoscaling settings"""
+
     def __init__(
         self,
         *,
@@ -1562,9 +1579,10 @@ class OpenSearchNodeGroupUpdateSpec(google.protobuf.message.Message):
         zone_ids: collections.abc.Iterable[builtins.str] | None = ...,
         subnet_ids: collections.abc.Iterable[builtins.str] | None = ...,
         assign_public_ip: builtins.bool = ...,
+        disk_size_autoscaling: yandex.cloud.mdb.opensearch.v1.cluster_pb2.DiskSizeAutoscaling | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["resources", b"resources"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["assign_public_ip", b"assign_public_ip", "hosts_count", b"hosts_count", "resources", b"resources", "roles", b"roles", "subnet_ids", b"subnet_ids", "zone_ids", b"zone_ids"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["assign_public_ip", b"assign_public_ip", "disk_size_autoscaling", b"disk_size_autoscaling", "hosts_count", b"hosts_count", "resources", b"resources", "roles", b"roles", "subnet_ids", b"subnet_ids", "zone_ids", b"zone_ids"]) -> None: ...
 
 global___OpenSearchNodeGroupUpdateSpec = OpenSearchNodeGroupUpdateSpec
 
@@ -1659,6 +1677,7 @@ class DashboardsNodeGroupUpdateSpec(google.protobuf.message.Message):
     ZONE_IDS_FIELD_NUMBER: builtins.int
     SUBNET_IDS_FIELD_NUMBER: builtins.int
     ASSIGN_PUBLIC_IP_FIELD_NUMBER: builtins.int
+    DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
     hosts_count: builtins.int
     """Number of hosts in the group."""
     assign_public_ip: builtins.bool
@@ -1675,6 +1694,10 @@ class DashboardsNodeGroupUpdateSpec(google.protobuf.message.Message):
     def subnet_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """IDs of the subnets for hosts"""
 
+    @property
+    def disk_size_autoscaling(self) -> yandex.cloud.mdb.opensearch.v1.cluster_pb2.DiskSizeAutoscaling:
+        """Disk size autoscaling settings"""
+
     def __init__(
         self,
         *,
@@ -1683,9 +1706,10 @@ class DashboardsNodeGroupUpdateSpec(google.protobuf.message.Message):
         zone_ids: collections.abc.Iterable[builtins.str] | None = ...,
         subnet_ids: collections.abc.Iterable[builtins.str] | None = ...,
         assign_public_ip: builtins.bool = ...,
+        disk_size_autoscaling: yandex.cloud.mdb.opensearch.v1.cluster_pb2.DiskSizeAutoscaling | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["resources", b"resources"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["assign_public_ip", b"assign_public_ip", "hosts_count", b"hosts_count", "resources", b"resources", "subnet_ids", b"subnet_ids", "zone_ids", b"zone_ids"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["assign_public_ip", b"assign_public_ip", "disk_size_autoscaling", b"disk_size_autoscaling", "hosts_count", b"hosts_count", "resources", b"resources", "subnet_ids", b"subnet_ids", "zone_ids", b"zone_ids"]) -> None: ...
 
 global___DashboardsNodeGroupUpdateSpec = DashboardsNodeGroupUpdateSpec
 

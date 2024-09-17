@@ -18,6 +18,8 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class ExecutionServiceStub:
+    """Set of methods for managing Workflows Executions."""
+
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Start: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.serverless.workflows.v1.execution_service_pb2.StartExecutionRequest,
@@ -50,6 +52,8 @@ class ExecutionServiceStub:
     """Retrieves list of Workflow executions."""
 
 class ExecutionServiceAsyncStub:
+    """Set of methods for managing Workflows Executions."""
+
     Start: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.serverless.workflows.v1.execution_service_pb2.StartExecutionRequest,
         yandex.cloud.serverless.workflows.v1.execution_service_pb2.StartExecutionResponse,
@@ -81,6 +85,8 @@ class ExecutionServiceAsyncStub:
     """Retrieves list of Workflow executions."""
 
 class ExecutionServiceServicer(metaclass=abc.ABCMeta):
+    """Set of methods for managing Workflows Executions."""
+
     @abc.abstractmethod
     def Start(
         self,

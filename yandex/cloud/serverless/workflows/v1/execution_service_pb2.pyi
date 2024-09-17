@@ -107,7 +107,9 @@ class GetExecutionResponse(google.protobuf.message.Message):
 
     EXECUTION_FIELD_NUMBER: builtins.int
     @property
-    def execution(self) -> yandex.cloud.serverless.workflows.v1.execution_pb2.Execution: ...
+    def execution(self) -> yandex.cloud.serverless.workflows.v1.execution_pb2.Execution:
+        """Workflow execution details."""
+
     def __init__(
         self,
         *,
@@ -141,7 +143,9 @@ class GetExecutionHistoryResponse(google.protobuf.message.Message):
     EXECUTION_FIELD_NUMBER: builtins.int
     ENTRIES_FIELD_NUMBER: builtins.int
     @property
-    def execution(self) -> yandex.cloud.serverless.workflows.v1.execution_pb2.ExecutionPreview: ...
+    def execution(self) -> yandex.cloud.serverless.workflows.v1.execution_pb2.ExecutionPreview:
+        """Workflow execution details."""
+
     @property
     def entries(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.serverless.workflows.v1.history_entry_pb2.HistoryEntry]:
         """Workflow execution detailed history items."""
