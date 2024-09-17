@@ -6,6 +6,7 @@ REPO_ROOT:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 deps: ## install deps (library & development)
 	python3 -m pip install --upgrade pip
 	python3 -m pip install -r requirements-dev.txt
+	python3 -m pip install setuptools wheel
 
 deps-genproto: ## install deps (library & development)
 	python3 -m pip install --upgrade pip
