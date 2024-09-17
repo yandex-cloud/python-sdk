@@ -30,6 +30,10 @@ Replace the bracketed text as follows:
 
 It is enough to provide us such notification once. 
 
+## Commit message style 
+
+We use angular commit message style (https://www.conventionalcommits.org/en/v1.0.0-beta.4/)
+
 ## Other questions
 
 If you have any questions, please mail us at opensource@yandex-team.ru.
