@@ -11,17 +11,17 @@ jobs:
     permissions:
       id-token: write
       contents: write
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     # disallows two or more release jobs to run in parallel
     concurrency: release
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v4.1.7
       with:
         fetch-depth: 0
 
     - name: Set up Python
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v5.1.1
       with:
           python-version: "3.12"
 
@@ -31,16 +31,15 @@ jobs:
 
         git config --global user.name 'Yandex.Cloud Bot'
         git config --global user.email 'ycloud-bot@yandex.ru'
-        echo "PYTHONPATH=$PYTHONPATH:$(pwd)" >> $GITHUB_ENV
 
     - name: Python Semantic Release
       id: release
-      uses: python-semantic-release/python-semantic-release@v9.7.2
+      uses: python-semantic-release/python-semantic-release@v9.8.8
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Publish package distributions to PyPI
-      uses: pypa/gh-action-pypi-publish@release/v1
+      uses: pypa/gh-action-pypi-publish@v1.10.1
       # NOTE: DO NOT wrap the conditional in ${{ }} as it will always evaluate to true.
       # See https://github.com/actions/runner/issues/1173
       if: steps.release.outputs.released == 'true'
@@ -48,7 +47,7 @@ jobs:
         password: ${{ secrets.PYPI_TOKEN }}
 
     - name: Publish package distributions to GitHub Releases
-      uses: python-semantic-release/upload-to-gh-release@main
+      uses: python-semantic-release/upload-to-gh-release@v9.8.8
       if: steps.release.outputs.released == 'true'
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
