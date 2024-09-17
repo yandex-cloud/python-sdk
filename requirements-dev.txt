@@ -5,7 +5,7 @@ isort==5.13.2
 mccabe==0.7.0
 pylint==3.1.0
 pytest==8.1.1
-python-semantic-release==v9.7.2
+python-semantic-release==v9.8.8
 tox==4.14.2
 tox-gh-actions==3.2.0
 Flake8-pyproject==1.2.3

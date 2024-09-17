@@ -26,25 +26,20 @@ jobs:
 
     - name: Configure python and git user
       run: |
-        python3 -m venv venv
-        source venv/bin/activate
-        echo "VIRTUAL_ENV=$(pwd)/venv/bin" >> $GITHUB_PATH
         make deps
 
         git config --global user.name 'Yandex.Cloud Bot'
         git config --global user.email 'ycloud-bot@yandex.ru'
-        echo "PYTHONPATH=$PYTHONPATH:$(pwd)/venv/bin" >> $GITHUB_ENV
-
-    - name: Test
-      run: echo $VIRTUAL_ENV
 
     - name: Python Semantic Release
       id: release
       uses: python-semantic-release/python-semantic-release@v9.8.8
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-      env:
-        GITHUB_ACTIONS: true
+
+    - name: Build python
+      run: |
+        python3 setup.py sdist bdist_wheel
 
     - name: Publish package distributions to PyPI
       uses: pypa/gh-action-pypi-publish@v1.10.1
