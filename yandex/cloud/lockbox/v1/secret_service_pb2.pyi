@@ -147,6 +147,7 @@ class CreateSecretRequest(google.protobuf.message.Message):
     VERSION_DESCRIPTION_FIELD_NUMBER: builtins.int
     VERSION_PAYLOAD_ENTRIES_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
+    PASSWORD_PAYLOAD_SPECIFICATION_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a secret in."""
     name: builtins.str
@@ -169,6 +170,8 @@ class CreateSecretRequest(google.protobuf.message.Message):
     def version_payload_entries(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___PayloadEntryChange]:
         """Payload entries added to the first version."""
 
+    @property
+    def password_payload_specification(self) -> yandex.cloud.lockbox.v1.secret_pb2.PasswordPayloadSpecification: ...
     def __init__(
         self,
         *,
@@ -180,8 +183,11 @@ class CreateSecretRequest(google.protobuf.message.Message):
         version_description: builtins.str = ...,
         version_payload_entries: collections.abc.Iterable[global___PayloadEntryChange] | None = ...,
         deletion_protection: builtins.bool = ...,
+        password_payload_specification: yandex.cloud.lockbox.v1.secret_pb2.PasswordPayloadSpecification | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["deletion_protection", b"deletion_protection", "description", b"description", "folder_id", b"folder_id", "kms_key_id", b"kms_key_id", "labels", b"labels", "name", b"name", "version_description", b"version_description", "version_payload_entries", b"version_payload_entries"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["password_payload_specification", b"password_payload_specification", "payload_specification", b"payload_specification"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["deletion_protection", b"deletion_protection", "description", b"description", "folder_id", b"folder_id", "kms_key_id", b"kms_key_id", "labels", b"labels", "name", b"name", "password_payload_specification", b"password_payload_specification", "payload_specification", b"payload_specification", "version_description", b"version_description", "version_payload_entries", b"version_payload_entries"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["payload_specification", b"payload_specification"]) -> typing.Literal["password_payload_specification"] | None: ...
 
 global___CreateSecretRequest = CreateSecretRequest
 
@@ -231,6 +237,7 @@ class UpdateSecretRequest(google.protobuf.message.Message):
     DESCRIPTION_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
+    PASSWORD_PAYLOAD_SPECIFICATION_FIELD_NUMBER: builtins.int
     secret_id: builtins.str
     """ID of the secret to update."""
     name: builtins.str
@@ -247,6 +254,8 @@ class UpdateSecretRequest(google.protobuf.message.Message):
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Custom labels for the secret as `key:value` pairs. Maximum 64 per key."""
 
+    @property
+    def password_payload_specification(self) -> yandex.cloud.lockbox.v1.secret_pb2.PasswordPayloadSpecification: ...
     def __init__(
         self,
         *,
@@ -256,9 +265,11 @@ class UpdateSecretRequest(google.protobuf.message.Message):
         description: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         deletion_protection: builtins.bool = ...,
+        password_payload_specification: yandex.cloud.lockbox.v1.secret_pb2.PasswordPayloadSpecification | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["deletion_protection", b"deletion_protection", "description", b"description", "labels", b"labels", "name", b"name", "secret_id", b"secret_id", "update_mask", b"update_mask"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["password_payload_specification", b"password_payload_specification", "payload_specification", b"payload_specification", "update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["deletion_protection", b"deletion_protection", "description", b"description", "labels", b"labels", "name", b"name", "password_payload_specification", b"password_payload_specification", "payload_specification", b"payload_specification", "secret_id", b"secret_id", "update_mask", b"update_mask"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["payload_specification", b"payload_specification"]) -> typing.Literal["password_payload_specification"] | None: ...
 
 global___UpdateSecretRequest = UpdateSecretRequest
 

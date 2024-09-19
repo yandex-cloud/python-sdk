@@ -7,6 +7,7 @@ import builtins
 import google.protobuf.descriptor
 import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
+import google.protobuf.timestamp_pb2
 import sys
 import typing
 
@@ -56,6 +57,7 @@ class SubjectClaims(google.protobuf.message.Message):
     PHONE_NUMBER_FIELD_NUMBER: builtins.int
     SUB_TYPE_FIELD_NUMBER: builtins.int
     FEDERATION_FIELD_NUMBER: builtins.int
+    LAST_AUTHENTICATED_AT_FIELD_NUMBER: builtins.int
     sub: builtins.str
     """Subject - Identifier for the End-User at the Issuer."""
     name: builtins.str
@@ -92,6 +94,10 @@ class SubjectClaims(google.protobuf.message.Message):
     def federation(self) -> global___Federation:
         """User federation, non-empty only for federated users."""
 
+    @property
+    def last_authenticated_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Last time the access token was created. Filled only for federated users (not for global users)."""
+
     def __init__(
         self,
         *,
@@ -107,9 +113,10 @@ class SubjectClaims(google.protobuf.message.Message):
         phone_number: builtins.str = ...,
         sub_type: global___SubjectType.ValueType = ...,
         federation: global___Federation | None = ...,
+        last_authenticated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["federation", b"federation"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["email", b"email", "family_name", b"family_name", "federation", b"federation", "given_name", b"given_name", "locale", b"locale", "name", b"name", "phone_number", b"phone_number", "picture", b"picture", "preferred_username", b"preferred_username", "sub", b"sub", "sub_type", b"sub_type", "zoneinfo", b"zoneinfo"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["federation", b"federation", "last_authenticated_at", b"last_authenticated_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["email", b"email", "family_name", b"family_name", "federation", b"federation", "given_name", b"given_name", "last_authenticated_at", b"last_authenticated_at", "locale", b"locale", "name", b"name", "phone_number", b"phone_number", "picture", b"picture", "preferred_username", b"preferred_username", "sub", b"sub", "sub_type", b"sub_type", "zoneinfo", b"zoneinfo"]) -> None: ...
 
 global___SubjectClaims = SubjectClaims
 

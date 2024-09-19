@@ -41,7 +41,9 @@ class ListRulesRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     FILTER_FIELD_NUMBER: builtins.int
     bus_id: builtins.str
+    """ID of the bus to list rules in."""
     folder_id: builtins.str
+    """ID of the folder to list rules in."""
     page_size: builtins.int
     """The maximum number of results per response."""
     page_token: builtins.str

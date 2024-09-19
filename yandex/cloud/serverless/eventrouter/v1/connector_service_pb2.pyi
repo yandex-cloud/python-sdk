@@ -119,7 +119,7 @@ class CreateConnectorRequest(google.protobuf.message.Message):
     SOURCE_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     bus_id: builtins.str
-    """/ ID of the bus to create a connector in."""
+    """ID of the bus to create a connector in."""
     name: builtins.str
     """Name of the connector."""
     description: builtins.str

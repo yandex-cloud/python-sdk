@@ -111,9 +111,17 @@ class CreateResellerServedCustomerRequest(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     PERSON_FIELD_NUMBER: builtins.int
     reseller_id: builtins.str
-    """ID of the reseller that customer will be associated with."""
+    """ID of the reseller that customer will be associated with.
+
+    Value must match either one of the two regular expressions: 
+    `^([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}|[0-9a-f]{32})$` 
+    or `^[a-z][-a-zA-Z0-9.]{0,48}[a-zA-Z0-9]$`.
+    """
     name: builtins.str
-    """Name of the customer."""
+    """Name of the customer.
+
+    String length is not limited.
+    """
     @property
     def person(self) -> yandex.cloud.billing.v1.customer_pb2.CustomerPerson:
         """Person of the customer."""

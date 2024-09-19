@@ -396,7 +396,9 @@ class GatewayWebsocketBroadcastTarget(google.protobuf.message.Message):
     service_account_id: builtins.str
     """Service account which has permission for writing to websockets."""
     @property
-    def batch_settings(self) -> global___BatchSettings: ...
+    def batch_settings(self) -> global___BatchSettings:
+        """Batch settings."""
+
     def __init__(
         self,
         *,

@@ -399,6 +399,22 @@ class Shard(google.protobuf.message.Message):
 global___Shard = Shard
 
 @typing.final
+class Shards(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SHARDS_FIELD_NUMBER: builtins.int
+    @property
+    def shards(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Shard]: ...
+    def __init__(
+        self,
+        *,
+        shards: collections.abc.Iterable[global___Shard] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["shards", b"shards"]) -> None: ...
+
+global___Shards = Shards
+
+@typing.final
 class ShardGroup(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

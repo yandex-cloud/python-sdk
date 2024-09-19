@@ -48,6 +48,8 @@ class Service(google.protobuf.message.Message):
         """The service is being disabled."""
         ERROR: Service._Status.ValueType  # 8
         """The service is in error state."""
+        DEFAULT: Service._Status.ValueType  # 9
+        """The service could be auto enabled."""
 
     class Status(_Status, metaclass=_StatusEnumTypeWrapper): ...
     STATUS_UNSPECIFIED: Service.Status.ValueType  # 0
@@ -67,6 +69,8 @@ class Service(google.protobuf.message.Message):
     """The service is being disabled."""
     ERROR: Service.Status.ValueType  # 8
     """The service is in error state."""
+    DEFAULT: Service.Status.ValueType  # 9
+    """The service could be auto enabled."""
 
     SERVICE_ID_FIELD_NUMBER: builtins.int
     RESOURCE_FIELD_NUMBER: builtins.int

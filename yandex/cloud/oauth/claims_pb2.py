@@ -11,10 +11,11 @@ from google.protobuf.internal import builder as _builder
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1fyandex/cloud/oauth/claims.proto\x12\x12yandex.cloud.oauth\x1a\x1dyandex/cloud/validation.proto\"\xda\x02\n\rSubjectClaims\x12\x19\n\x03sub\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x12\n\ngiven_name\x18\x03 \x01(\t\x12\x13\n\x0b\x66\x61mily_name\x18\x04 \x01(\t\x12\x1a\n\x12preferred_username\x18\x07 \x01(\t\x12\x0f\n\x07picture\x18\t \x01(\t\x12\r\n\x05\x65mail\x18\x0b \x01(\t\x12\x10\n\x08zoneinfo\x18\x0f \x01(\t\x12\x0e\n\x06locale\x18\x10 \x01(\t\x12\x14\n\x0cphone_number\x18\x11 \x01(\t\x12\x31\n\x08sub_type\x18\x63 \x01(\x0e\x32\x1f.yandex.cloud.oauth.SubjectType\x12\x32\n\nfederation\x18\x64 \x01(\x0b\x32\x1e.yandex.cloud.oauth.FederationJ\x04\x08\x08\x10\tJ\x04\x08\n\x10\x0bJ\x04\x08\x0c\x10\x0fJ\x04\x08\x12\x10\x63J\x04\x08\x05\x10\x07\":\n\nFederation\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x0c\n\x04name\x18\x03 \x01(\tJ\x04\x08\x02\x10\x03*j\n\x0bSubjectType\x12\x1c\n\x18SUBJECT_TYPE_UNSPECIFIED\x10\x00\x12\x10\n\x0cUSER_ACCOUNT\x10\x01\x12\x13\n\x0fSERVICE_ACCOUNT\x10\x02\x12\t\n\x05GROUP\x10\x03\x12\x0b\n\x07INVITEE\x10\x04\x42Y\n\x19yandex.cloud.api.oauth.v1Z<github.com/yandex-cloud/go-genproto/yandex/cloud/oauth;oauthb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1fyandex/cloud/oauth/claims.proto\x12\x12yandex.cloud.oauth\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\xad\x03\n\rSubjectClaims\x12\x19\n\x03sub\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x12\n\ngiven_name\x18\x03 \x01(\t\x12\x13\n\x0b\x66\x61mily_name\x18\x04 \x01(\t\x12\x1a\n\x12preferred_username\x18\x07 \x01(\t\x12\x0f\n\x07picture\x18\t \x01(\t\x12\r\n\x05\x65mail\x18\x0b \x01(\t\x12\x10\n\x08zoneinfo\x18\x0f \x01(\t\x12\x0e\n\x06locale\x18\x10 \x01(\t\x12\x14\n\x0cphone_number\x18\x11 \x01(\t\x12\x31\n\x08sub_type\x18\x63 \x01(\x0e\x32\x1f.yandex.cloud.oauth.SubjectType\x12\x32\n\nfederation\x18\x64 \x01(\x0b\x32\x1e.yandex.cloud.oauth.Federation\x12\x39\n\x15last_authenticated_at\x18i \x01(\x0b\x32\x1a.google.protobuf.TimestampJ\x04\x08\x08\x10\tJ\x04\x08\n\x10\x0bJ\x04\x08\x0c\x10\x0fJ\x04\x08\x12\x10\x63J\x04\x08\x05\x10\x07J\x04\x08\x65\x10\x66J\x04\x08\x66\x10gJ\x04\x08g\x10hJ\x04\x08h\x10i\":\n\nFederation\x12\x18\n\x02id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x0c\n\x04name\x18\x03 \x01(\tJ\x04\x08\x02\x10\x03*j\n\x0bSubjectType\x12\x1c\n\x18SUBJECT_TYPE_UNSPECIFIED\x10\x00\x12\x10\n\x0cUSER_ACCOUNT\x10\x01\x12\x13\n\x0fSERVICE_ACCOUNT\x10\x02\x12\t\n\x05GROUP\x10\x03\x12\x0b\n\x07INVITEE\x10\x04\x42Y\n\x19yandex.cloud.api.oauth.v1Z<github.com/yandex-cloud/go-genproto/yandex/cloud/oauth;oauthb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -26,10 +27,10 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _SUBJECTCLAIMS.fields_by_name['sub']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _FEDERATION.fields_by_name['id']._options = None
   _FEDERATION.fields_by_name['id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _globals['_SUBJECTTYPE']._serialized_start=495
-  _globals['_SUBJECTTYPE']._serialized_end=601
-  _globals['_SUBJECTCLAIMS']._serialized_start=87
-  _globals['_SUBJECTCLAIMS']._serialized_end=433
-  _globals['_FEDERATION']._serialized_start=435
-  _globals['_FEDERATION']._serialized_end=493
+  _globals['_SUBJECTTYPE']._serialized_start=611
+  _globals['_SUBJECTTYPE']._serialized_end=717
+  _globals['_SUBJECTCLAIMS']._serialized_start=120
+  _globals['_SUBJECTCLAIMS']._serialized_end=549
+  _globals['_FEDERATION']._serialized_start=551
+  _globals['_FEDERATION']._serialized_end=609
 # @@protoc_insertion_point(module_scope)

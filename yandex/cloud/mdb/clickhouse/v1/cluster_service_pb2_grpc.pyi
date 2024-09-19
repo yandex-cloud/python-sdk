@@ -171,6 +171,12 @@ class ClusterServiceStub:
     ]
     """Creates a new shard in the specified cluster."""
 
+    AddShards: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.AddClusterShardsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Creates one or more shards in the specified cluster."""
+
     UpdateShard: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.UpdateClusterShardRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -182,6 +188,12 @@ class ClusterServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified shard."""
+
+    DeleteShards: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.DeleteClusterShardsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Deletes the specified shards (one or more)."""
 
     GetShardGroup: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.GetClusterShardGroupRequest,
@@ -388,6 +400,12 @@ class ClusterServiceAsyncStub:
     ]
     """Creates a new shard in the specified cluster."""
 
+    AddShards: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.AddClusterShardsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Creates one or more shards in the specified cluster."""
+
     UpdateShard: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.UpdateClusterShardRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -399,6 +417,12 @@ class ClusterServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified shard."""
+
+    DeleteShards: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.DeleteClusterShardsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Deletes the specified shards (one or more)."""
 
     GetShardGroup: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.GetClusterShardGroupRequest,
@@ -654,6 +678,14 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         """Creates a new shard in the specified cluster."""
 
     @abc.abstractmethod
+    def AddShards(
+        self,
+        request: yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.AddClusterShardsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Creates one or more shards in the specified cluster."""
+
+    @abc.abstractmethod
     def UpdateShard(
         self,
         request: yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.UpdateClusterShardRequest,
@@ -668,6 +700,14 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Deletes the specified shard."""
+
+    @abc.abstractmethod
+    def DeleteShards(
+        self,
+        request: yandex.cloud.mdb.clickhouse.v1.cluster_service_pb2.DeleteClusterShardsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Deletes the specified shards (one or more)."""
 
     @abc.abstractmethod
     def GetShardGroup(

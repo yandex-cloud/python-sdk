@@ -1537,6 +1537,73 @@ class AddClusterShardMetadata(google.protobuf.message.Message):
 global___AddClusterShardMetadata = AddClusterShardMetadata
 
 @typing.final
+class AddClusterShardsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    SHARD_SPECS_FIELD_NUMBER: builtins.int
+    HOST_SPECS_FIELD_NUMBER: builtins.int
+    COPY_SCHEMA_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the ClickHouse cluster to add shards to.
+    To get the ClickHouse cluster ID, use a [ClusterService.List] request.
+    """
+    @property
+    def shard_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ShardSpec]:
+        """Properties of each shard to be created.
+        If [ShardSpec.config_spec] is not specified for some shard, for this shard
+        it defaults to the configuration of the first shard in the cluster.
+        """
+
+    @property
+    def host_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___HostSpec]:
+        """Individual configurations for hosts that should be created for the shards.
+        Two options are available:
+        1. If `host_specs` is empty, each shard's number and configurations of hosts will
+           be copied from those of the first shard in the cluster;
+        2. Otherwise `host_specs` should contain at least one host per created shard.
+        """
+
+    @property
+    def copy_schema(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Whether to copy schema to hosts of the new shards. The schema is copied from hosts of an existing shard."""
+
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        shard_specs: collections.abc.Iterable[global___ShardSpec] | None = ...,
+        host_specs: collections.abc.Iterable[global___HostSpec] | None = ...,
+        copy_schema: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["copy_schema", b"copy_schema"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "copy_schema", b"copy_schema", "host_specs", b"host_specs", "shard_specs", b"shard_specs"]) -> None: ...
+
+global___AddClusterShardsRequest = AddClusterShardsRequest
+
+@typing.final
+class AddClusterShardsMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    SHARD_NAMES_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the cluster that the shards are being added to."""
+    @property
+    def shard_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Names of the shards being created."""
+
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        shard_names: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "shard_names", b"shard_names"]) -> None: ...
+
+global___AddClusterShardsMetadata = AddClusterShardsMetadata
+
+@typing.final
 class UpdateClusterShardRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -1636,6 +1703,54 @@ class DeleteClusterShardMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "shard_name", b"shard_name"]) -> None: ...
 
 global___DeleteClusterShardMetadata = DeleteClusterShardMetadata
+
+@typing.final
+class DeleteClusterShardsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    SHARD_NAMES_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the ClickHouse cluster the shards belong to.
+    To get the cluster ID, use a [ClusterService.List] request.
+    """
+    @property
+    def shard_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Names of the shards to be deleted.
+        To get the name of a shard, use a [ClusterService.ListShards] request.
+        """
+
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        shard_names: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "shard_names", b"shard_names"]) -> None: ...
+
+global___DeleteClusterShardsRequest = DeleteClusterShardsRequest
+
+@typing.final
+class DeleteClusterShardsMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    SHARD_NAMES_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the cluster that contains the shards being deleted."""
+    @property
+    def shard_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Names of the shards being deleted."""
+
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        shard_names: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "shard_names", b"shard_names"]) -> None: ...
+
+global___DeleteClusterShardsMetadata = DeleteClusterShardsMetadata
 
 @typing.final
 class GetClusterShardGroupRequest(google.protobuf.message.Message):
@@ -2282,3 +2397,32 @@ class ShardConfigSpec(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["clickhouse", b"clickhouse"]) -> None: ...
 
 global___ShardConfigSpec = ShardConfigSpec
+
+@typing.final
+class ShardSpec(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    NAME_FIELD_NUMBER: builtins.int
+    CONFIG_SPEC_FIELD_NUMBER: builtins.int
+    SHARD_GROUP_NAMES_FIELD_NUMBER: builtins.int
+    name: builtins.str
+    """Name of the shard to be created."""
+    @property
+    def config_spec(self) -> global___ShardConfigSpec:
+        """Configuration of the shard to be created."""
+
+    @property
+    def shard_group_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Shard groups that contain the shard."""
+
+    def __init__(
+        self,
+        *,
+        name: builtins.str = ...,
+        config_spec: global___ShardConfigSpec | None = ...,
+        shard_group_names: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["config_spec", b"config_spec"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["config_spec", b"config_spec", "name", b"name", "shard_group_names", b"shard_group_names"]) -> None: ...
+
+global___ShardSpec = ShardSpec

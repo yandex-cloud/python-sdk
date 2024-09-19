@@ -18,6 +18,7 @@ class ActivateProviderRequest(google.protobuf.message.Message):
 
     FOLDER_ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
+    SKIP_DEFAULT_POLICY_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """Activate provider for Folder iD."""
     name: builtins.str
@@ -25,13 +26,16 @@ class ActivateProviderRequest(google.protobuf.message.Message):
 
     For more information, please see [activate-provider](/docs/backup/quickstart#activate-provider)
     """
+    skip_default_policy: builtins.bool
+    """Don't create default policies while activating the provider."""
     def __init__(
         self,
         *,
         folder_id: builtins.str = ...,
         name: builtins.str = ...,
+        skip_default_policy: builtins.bool = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "name", b"name"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "name", b"name", "skip_default_policy", b"skip_default_policy"]) -> None: ...
 
 global___ActivateProviderRequest = ActivateProviderRequest
 
