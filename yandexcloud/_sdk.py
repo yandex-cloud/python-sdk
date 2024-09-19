@@ -147,6 +147,7 @@ _supported_modules = [
     ("yandex.cloud.ai.ocr", "ai-vision-ocr"),
     ("yandex.cloud.ai.stt", "ai-stt"),
     ("yandex.cloud.ai.translate", "ai-translate"),
+    ("yandex.cloud.ai.assistants", "ai-assistants"),
     ("yandex.cloud.ai.tts", "ai-speechkit"),
     ("yandex.cloud.ai.vision", "ai-vision"),
     ("yandex.cloud.apploadbalancer", "alb"),
