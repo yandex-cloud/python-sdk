@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## v0.318.0 (2024-09-19)
+
+### Feature
+
+* feat: add ai-assistants to supported modules ([`73a7c7a`](https://github.com/yandex-cloud/python-sdk/commit/73a7c7aa7688c56fce7362bd0fc24aba07b4775a))
+
+* feat: regenerate proto ([`e3c7741`](https://github.com/yandex-cloud/python-sdk/commit/e3c7741de7ceb55e9b8d2e2f66e7388685ec1c4d))
+
+### Fix
+
+* fix: remove custom changelog ([`b773f8c`](https://github.com/yandex-cloud/python-sdk/commit/b773f8c4ac1bb860ac29ce4f37a1cc9d6451f846))
+
 ## v0.317.0 (2024-09-17)
 
 ### Feature
