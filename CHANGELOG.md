@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v0.319.0 (2024-09-19)
+
+### Feature
+
+* feat: add ai-files support ([`5472996`](https://github.com/yandex-cloud/python-sdk/commit/5472996ef1596fa3cef0808b211eecfc295bad3b))
+
 ## v0.318.0 (2024-09-19)
 
 ### Feature
