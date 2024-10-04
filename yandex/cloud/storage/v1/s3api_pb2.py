@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#yandex/cloud/storage/v1/s3api.proto\x12\x17yandex.cloud.storage.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xcd\x05\n\x16S3APIGetObjectResponse\x12\x0c\n\x04\x65tag\x18\x01 \x01(\t\x12\x12\n\nrequest_id\x18\x02 \x01(\t\x12\x15\n\raccept_ranges\x18\x03 \x01(\t\x12\x15\n\rcache_control\x18\x04 \x01(\t\x12\x1b\n\x13\x63ontent_disposition\x18\x05 \x01(\t\x12\x18\n\x10\x63ontent_encoding\x18\x06 \x01(\t\x12\x18\n\x10\x63ontent_language\x18\x07 \x01(\t\x12\x16\n\x0e\x63ontent_length\x18\x08 \x01(\x03\x12\x15\n\rcontent_range\x18\t \x01(\t\x12\x14\n\x0c\x63ontent_type\x18\n \x01(\t\x12\x12\n\nversion_id\x18\x0b \x01(\t\x12.\n\nexpires_at\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x34\n\x10last_modified_at\x18\r \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12O\n\x08metadata\x18\x0e \x03(\x0b\x32=.yandex.cloud.storage.v1.S3APIGetObjectResponse.MetadataEntry\x12\x15\n\rstorage_class\x18\x0f \x01(\t\x12\x1e\n\x16server_side_encryption\x18\x10 \x01(\t\x12\x16\n\x0esse_kms_key_id\x18\x11 \x01(\t\x12\x18\n\x10object_lock_mode\x18\x12 \x01(\t\x12\x41\n\x1dobject_lock_retain_until_date\x18\x13 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12%\n\x1dobject_lock_legal_hold_status\x18\x14 \x01(\t\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"N\n\x16S3APIPutObjectResponse\x12\x0c\n\x04\x65tag\x18\x01 \x01(\t\x12\x12\n\nrequest_id\x18\x02 \x01(\t\x12\x12\n\nversion_id\x18\x03 \x01(\t\"C\n\x19S3APIDeleteObjectResponse\x12\x12\n\nrequest_id\x18\x01 \x01(\t\x12\x12\n\nversion_id\x18\x02 \x01(\tBb\n\x1byandex.cloud.api.storage.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/storage/v1;storageb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#yandex/cloud/storage/v1/s3api.proto\x12\x17yandex.cloud.storage.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xcd\x05\n\x16S3APIGetObjectResponse\x12\x0c\n\x04\x65tag\x18\x01 \x01(\t\x12\x12\n\nrequest_id\x18\x02 \x01(\t\x12\x15\n\raccept_ranges\x18\x03 \x01(\t\x12\x15\n\rcache_control\x18\x04 \x01(\t\x12\x1b\n\x13\x63ontent_disposition\x18\x05 \x01(\t\x12\x18\n\x10\x63ontent_encoding\x18\x06 \x01(\t\x12\x18\n\x10\x63ontent_language\x18\x07 \x01(\t\x12\x16\n\x0e\x63ontent_length\x18\x08 \x01(\x03\x12\x15\n\rcontent_range\x18\t \x01(\t\x12\x14\n\x0c\x63ontent_type\x18\n \x01(\t\x12\x12\n\nversion_id\x18\x0b \x01(\t\x12.\n\nexpires_at\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x34\n\x10last_modified_at\x18\r \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12O\n\x08metadata\x18\x0e \x03(\x0b\x32=.yandex.cloud.storage.v1.S3APIGetObjectResponse.MetadataEntry\x12\x15\n\rstorage_class\x18\x0f \x01(\t\x12\x1e\n\x16server_side_encryption\x18\x10 \x01(\t\x12\x16\n\x0esse_kms_key_id\x18\x11 \x01(\t\x12\x18\n\x10object_lock_mode\x18\x12 \x01(\t\x12\x41\n\x1dobject_lock_retain_until_date\x18\x13 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12%\n\x1dobject_lock_legal_hold_status\x18\x14 \x01(\t\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"N\n\x16S3APIPutObjectResponse\x12\x0c\n\x04\x65tag\x18\x01 \x01(\t\x12\x12\n\nrequest_id\x18\x02 \x01(\t\x12\x12\n\nversion_id\x18\x03 \x01(\t\"C\n\x19S3APIDeleteObjectResponse\x12\x12\n\nrequest_id\x18\x01 \x01(\t\x12\x12\n\nversion_id\x18\x02 \x01(\t\"V\n\x10\x43opyObjectResult\x12\x0c\n\x04\x65tag\x18\x01 \x01(\t\x12\x34\n\x10last_modified_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\xa8\x01\n\x17S3APICopyObjectResponse\x12\x45\n\x12\x63opy_object_result\x18\x01 \x01(\x0b\x32).yandex.cloud.storage.v1.CopyObjectResult\x12\x12\n\nrequest_id\x18\x02 \x01(\t\x12\x1e\n\x16\x63opy_source_version_id\x18\x03 \x01(\t\x12\x12\n\nversion_id\x18\x04 \x01(\t\"u\n\x19SuccessfullyDeletedObject\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x12\n\nversion_id\x18\x02 \x01(\t\x12\x15\n\rdelete_marker\x18\x03 \x01(\x08\x12 \n\x18\x64\x65lete_marker_version_id\x18\x04 \x01(\t\"O\n\x11\x44\x65leteObjectError\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x12\n\nversion_id\x18\x02 \x01(\t\x12\x0c\n\x04\x63ode\x18\x03 \x01(\t\x12\x0b\n\x03msg\x18\x04 \x01(\t\"\xb1\x01\n\x1aS3APIDeleteObjectsResponse\x12\x43\n\x07\x64\x65leted\x18\x01 \x03(\x0b\x32\x32.yandex.cloud.storage.v1.SuccessfullyDeletedObject\x12:\n\x06\x65rrors\x18\x02 \x03(\x0b\x32*.yandex.cloud.storage.v1.DeleteObjectError\x12\x12\n\nrequest_id\x18\x03 \x01(\t\"5\n\x1fS3APIPutObjectRetentionResponse\x12\x12\n\nrequest_id\x18\x01 \x01(\t\"Z\n\x13ObjectLockRetention\x12\x0c\n\x04mode\x18\x01 \x01(\t\x12\x35\n\x11retain_until_date\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"v\n\x1fS3APIGetObjectRetentionResponse\x12\x12\n\nrequest_id\x18\x01 \x01(\t\x12?\n\tretention\x18\x02 \x01(\x0b\x32,.yandex.cloud.storage.v1.ObjectLockRetention\"5\n\x1fS3APIPutObjectLegalHoldResponse\x12\x12\n\nrequest_id\x18\x01 \x01(\t\"%\n\x13ObjectLockLegalHold\x12\x0e\n\x06status\x18\x01 \x01(\t\"w\n\x1fS3APIGetObjectLegalHoldResponse\x12\x12\n\nrequest_id\x18\x01 \x01(\t\x12@\n\nlegal_hold\x18\x02 \x01(\x0b\x32,.yandex.cloud.storage.v1.ObjectLockLegalHold\"G\n\x1dS3APIPutObjectTaggingResponse\x12\x12\n\nrequest_id\x18\x01 \x01(\t\x12\x12\n\nversion_id\x18\x02 \x01(\t\"\'\n\tObjectTag\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"|\n\x1dS3APIGetObjectTaggingResponse\x12\x12\n\nrequest_id\x18\x01 \x01(\t\x12\x12\n\nversion_id\x18\x02 \x01(\t\x12\x33\n\x07tag_set\x18\x03 \x03(\x0b\x32\".yandex.cloud.storage.v1.ObjectTag\"J\n S3APIDeleteObjectTaggingResponse\x12\x12\n\nrequest_id\x18\x01 \x01(\t\x12\x12\n\nversion_id\x18\x02 \x01(\tBb\n\x1byandex.cloud.api.storage.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/storage/v1;storageb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,4 +32,34 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_S3APIPUTOBJECTRESPONSE']._serialized_end=895
   _globals['_S3APIDELETEOBJECTRESPONSE']._serialized_start=897
   _globals['_S3APIDELETEOBJECTRESPONSE']._serialized_end=964
+  _globals['_COPYOBJECTRESULT']._serialized_start=966
+  _globals['_COPYOBJECTRESULT']._serialized_end=1052
+  _globals['_S3APICOPYOBJECTRESPONSE']._serialized_start=1055
+  _globals['_S3APICOPYOBJECTRESPONSE']._serialized_end=1223
+  _globals['_SUCCESSFULLYDELETEDOBJECT']._serialized_start=1225
+  _globals['_SUCCESSFULLYDELETEDOBJECT']._serialized_end=1342
+  _globals['_DELETEOBJECTERROR']._serialized_start=1344
+  _globals['_DELETEOBJECTERROR']._serialized_end=1423
+  _globals['_S3APIDELETEOBJECTSRESPONSE']._serialized_start=1426
+  _globals['_S3APIDELETEOBJECTSRESPONSE']._serialized_end=1603
+  _globals['_S3APIPUTOBJECTRETENTIONRESPONSE']._serialized_start=1605
+  _globals['_S3APIPUTOBJECTRETENTIONRESPONSE']._serialized_end=1658
+  _globals['_OBJECTLOCKRETENTION']._serialized_start=1660
+  _globals['_OBJECTLOCKRETENTION']._serialized_end=1750
+  _globals['_S3APIGETOBJECTRETENTIONRESPONSE']._serialized_start=1752
+  _globals['_S3APIGETOBJECTRETENTIONRESPONSE']._serialized_end=1870
+  _globals['_S3APIPUTOBJECTLEGALHOLDRESPONSE']._serialized_start=1872
+  _globals['_S3APIPUTOBJECTLEGALHOLDRESPONSE']._serialized_end=1925
+  _globals['_OBJECTLOCKLEGALHOLD']._serialized_start=1927
+  _globals['_OBJECTLOCKLEGALHOLD']._serialized_end=1964
+  _globals['_S3APIGETOBJECTLEGALHOLDRESPONSE']._serialized_start=1966
+  _globals['_S3APIGETOBJECTLEGALHOLDRESPONSE']._serialized_end=2085
+  _globals['_S3APIPUTOBJECTTAGGINGRESPONSE']._serialized_start=2087
+  _globals['_S3APIPUTOBJECTTAGGINGRESPONSE']._serialized_end=2158
+  _globals['_OBJECTTAG']._serialized_start=2160
+  _globals['_OBJECTTAG']._serialized_end=2199
+  _globals['_S3APIGETOBJECTTAGGINGRESPONSE']._serialized_start=2201
+  _globals['_S3APIGETOBJECTTAGGINGRESPONSE']._serialized_end=2325
+  _globals['_S3APIDELETEOBJECTTAGGINGRESPONSE']._serialized_start=2327
+  _globals['_S3APIDELETEOBJECTTAGGINGRESPONSE']._serialized_end=2401
 # @@protoc_insertion_point(module_scope)

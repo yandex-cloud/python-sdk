@@ -121,10 +121,12 @@ class JobParameters(google.protobuf.message.Message):
 
     @property
     def output_datasets(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___OutputDatasetDesc]:
-        """List of DataSets descriptions to create"""
+        """List of DataSets descriptions to create."""
 
     @property
-    def graceful_shutdown_parameters(self) -> global___GracefulShutdownParameters: ...
+    def graceful_shutdown_parameters(self) -> global___GracefulShutdownParameters:
+        """Graceful shutdown settings."""
+
     def __init__(
         self,
         *,
@@ -282,6 +284,30 @@ class FileDesc(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["path", b"path", "var", b"var"]) -> None: ...
 
 global___FileDesc = FileDesc
+
+@typing.final
+class FileUploadError(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    OUTPUT_FILE_DESC_FIELD_NUMBER: builtins.int
+    LOG_FILE_NAME_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
+    log_file_name: builtins.str
+    description: builtins.str
+    @property
+    def output_file_desc(self) -> global___FileDesc: ...
+    def __init__(
+        self,
+        *,
+        output_file_desc: global___FileDesc | None = ...,
+        log_file_name: builtins.str = ...,
+        description: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["file_type", b"file_type", "log_file_name", b"log_file_name", "output_file_desc", b"output_file_desc"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "file_type", b"file_type", "log_file_name", b"log_file_name", "output_file_desc", b"output_file_desc"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["file_type", b"file_type"]) -> typing.Literal["output_file_desc", "log_file_name"] | None: ...
+
+global___FileUploadError = FileUploadError
 
 @typing.final
 class Environment(google.protobuf.message.Message):
@@ -464,7 +490,6 @@ class Job(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     DESC_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
-    STARTED_AT_FIELD_NUMBER: builtins.int
     FINISHED_AT_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
     CONFIG_FIELD_NUMBER: builtins.int
@@ -477,6 +502,12 @@ class Job(google.protobuf.message.Message):
     LOG_FILES_FIELD_NUMBER: builtins.int
     DIAGNOSTIC_FILES_FIELD_NUMBER: builtins.int
     DATA_SIZE_BYTES_FIELD_NUMBER: builtins.int
+    STARTED_AT_FIELD_NUMBER: builtins.int
+    STATUS_DETAILS_FIELD_NUMBER: builtins.int
+    ACTUAL_CLOUD_INSTANCE_TYPE_FIELD_NUMBER: builtins.int
+    PARENT_JOB_ID_FIELD_NUMBER: builtins.int
+    FILE_ERRORS_FIELD_NUMBER: builtins.int
+    OUTPUT_DATASETS_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the job."""
     name: builtins.str
@@ -495,13 +526,13 @@ class Job(google.protobuf.message.Message):
     """Marks if the job data has been cleared."""
     data_size_bytes: builtins.int
     """Job total data size."""
+    status_details: builtins.str
+    """Details."""
+    parent_job_id: builtins.str
+    """Reference to the parent job."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Create job timestamp."""
-
-    @property
-    def started_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Start job timestamp."""
 
     @property
     def finished_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
@@ -525,6 +556,22 @@ class Job(google.protobuf.message.Message):
     def diagnostic_files(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___File]:
         """Job diagnostics files."""
 
+    @property
+    def started_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Start job timestamp."""
+
+    @property
+    def actual_cloud_instance_type(self) -> global___CloudInstanceType:
+        """Actual VM instance type, job is running on."""
+
+    @property
+    def file_errors(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___FileUploadError]:
+        """Failed uploads."""
+
+    @property
+    def output_datasets(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___OutputDataset]:
+        """Created datasets."""
+
     def __init__(
         self,
         *,
@@ -532,7 +579,6 @@ class Job(google.protobuf.message.Message):
         name: builtins.str = ...,
         desc: builtins.str = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
-        started_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         finished_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         status: global___JobStatus.ValueType = ...,
         config: builtins.str = ...,
@@ -545,9 +591,15 @@ class Job(google.protobuf.message.Message):
         log_files: collections.abc.Iterable[global___File] | None = ...,
         diagnostic_files: collections.abc.Iterable[global___File] | None = ...,
         data_size_bytes: builtins.int = ...,
+        started_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        status_details: builtins.str = ...,
+        actual_cloud_instance_type: global___CloudInstanceType | None = ...,
+        parent_job_id: builtins.str = ...,
+        file_errors: collections.abc.Iterable[global___FileUploadError] | None = ...,
+        output_datasets: collections.abc.Iterable[global___OutputDataset] | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "data_expires_at", b"data_expires_at", "finished_at", b"finished_at", "job_parameters", b"job_parameters", "started_at", b"started_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["config", b"config", "created_at", b"created_at", "created_by_id", b"created_by_id", "data_cleared", b"data_cleared", "data_expires_at", b"data_expires_at", "data_size_bytes", b"data_size_bytes", "desc", b"desc", "diagnostic_files", b"diagnostic_files", "finished_at", b"finished_at", "id", b"id", "job_parameters", b"job_parameters", "log_files", b"log_files", "name", b"name", "output_files", b"output_files", "project_id", b"project_id", "started_at", b"started_at", "status", b"status"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["actual_cloud_instance_type", b"actual_cloud_instance_type", "created_at", b"created_at", "data_expires_at", b"data_expires_at", "finished_at", b"finished_at", "job_parameters", b"job_parameters", "started_at", b"started_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["actual_cloud_instance_type", b"actual_cloud_instance_type", "config", b"config", "created_at", b"created_at", "created_by_id", b"created_by_id", "data_cleared", b"data_cleared", "data_expires_at", b"data_expires_at", "data_size_bytes", b"data_size_bytes", "desc", b"desc", "diagnostic_files", b"diagnostic_files", "file_errors", b"file_errors", "finished_at", b"finished_at", "id", b"id", "job_parameters", b"job_parameters", "log_files", b"log_files", "name", b"name", "output_datasets", b"output_datasets", "output_files", b"output_files", "parent_job_id", b"parent_job_id", "project_id", b"project_id", "started_at", b"started_at", "status", b"status", "status_details", b"status_details"]) -> None: ...
 
 global___Job = Job
 

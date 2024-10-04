@@ -58,6 +58,35 @@ class HistoryEntry(google.protobuf.message.Message):
     CANCELLED: HistoryEntry.Status.ValueType  # 6
     """Step execution is canceled."""
 
+    @typing.final
+    class FailedAttempt(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        STARTED_AT_FIELD_NUMBER: builtins.int
+        DURATION_FIELD_NUMBER: builtins.int
+        ERROR_FIELD_NUMBER: builtins.int
+        @property
+        def started_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+            """Start timestamp for the attempt."""
+
+        @property
+        def duration(self) -> google.protobuf.duration_pb2.Duration:
+            """Duration of the attempt."""
+
+        @property
+        def error(self) -> global___HistoryEntryError:
+            """Error details."""
+
+        def __init__(
+            self,
+            *,
+            started_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+            duration: google.protobuf.duration_pb2.Duration | None = ...,
+            error: global___HistoryEntryError | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["duration", b"duration", "error", b"error", "started_at", b"started_at"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["duration", b"duration", "error", b"error", "started_at", b"started_at"]) -> None: ...
+
     ID_FIELD_NUMBER: builtins.int
     TITLE_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
@@ -68,6 +97,8 @@ class HistoryEntry(google.protobuf.message.Message):
     ERROR_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
     TYPE_FIELD_NUMBER: builtins.int
+    ATTEMPTS_FIELD_NUMBER: builtins.int
+    LAST_ERROR_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the Workflow step."""
     title: builtins.str
@@ -78,6 +109,8 @@ class HistoryEntry(google.protobuf.message.Message):
     """Status of the Workflow step."""
     type: builtins.str
     """Type of the Workflow step (for example, FunctionCall or HttpCall)."""
+    attempts: builtins.int
+    """Number of attempts (including all retries of unsuccessful attempts). Value "1" means there were no retries."""
     @property
     def started_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Start timestamp for the Workflow step."""
@@ -98,6 +131,10 @@ class HistoryEntry(google.protobuf.message.Message):
     def error(self) -> global___HistoryEntryError:
         """Error details, in case Workflow step failed."""
 
+    @property
+    def last_error(self) -> global___HistoryEntryError:
+        """Last received error details in case of retries."""
+
     def __init__(
         self,
         *,
@@ -111,9 +148,11 @@ class HistoryEntry(google.protobuf.message.Message):
         error: global___HistoryEntryError | None = ...,
         status: global___HistoryEntry.Status.ValueType = ...,
         type: builtins.str = ...,
+        attempts: builtins.int = ...,
+        last_error: global___HistoryEntryError | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["duration", b"duration", "error", b"error", "input", b"input", "output", b"output", "started_at", b"started_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "duration", b"duration", "error", b"error", "id", b"id", "input", b"input", "output", b"output", "started_at", b"started_at", "status", b"status", "title", b"title", "type", b"type"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["duration", b"duration", "error", b"error", "input", b"input", "last_error", b"last_error", "output", b"output", "started_at", b"started_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["attempts", b"attempts", "description", b"description", "duration", b"duration", "error", b"error", "id", b"id", "input", b"input", "last_error", b"last_error", "output", b"output", "started_at", b"started_at", "status", b"status", "title", b"title", "type", b"type"]) -> None: ...
 
 global___HistoryEntry = HistoryEntry
 

@@ -10,6 +10,7 @@ import grpc.aio
 import typing
 import yandex.cloud.mdb.redis.v1.backup_pb2
 import yandex.cloud.mdb.redis.v1.backup_service_pb2
+import yandex.cloud.operation.operation_pb2
 
 _T = typing.TypeVar("_T")
 
@@ -37,6 +38,12 @@ class BackupServiceStub:
     ]
     """Retrieves the list of Redis backups available for the specified folder."""
 
+    Delete: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.redis.v1.backup_service_pb2.DeleteBackupRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Returns the list of available backups for the specified Redis cluster."""
+
 class BackupServiceAsyncStub:
     """A set of methods for managing Redis backups."""
 
@@ -54,6 +61,12 @@ class BackupServiceAsyncStub:
         yandex.cloud.mdb.redis.v1.backup_service_pb2.ListBackupsResponse,
     ]
     """Retrieves the list of Redis backups available for the specified folder."""
+
+    Delete: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.redis.v1.backup_service_pb2.DeleteBackupRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Returns the list of available backups for the specified Redis cluster."""
 
 class BackupServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing Redis backups."""
@@ -76,5 +89,13 @@ class BackupServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.redis.v1.backup_service_pb2.ListBackupsResponse, collections.abc.Awaitable[yandex.cloud.mdb.redis.v1.backup_service_pb2.ListBackupsResponse]]:
         """Retrieves the list of Redis backups available for the specified folder."""
+
+    @abc.abstractmethod
+    def Delete(
+        self,
+        request: yandex.cloud.mdb.redis.v1.backup_service_pb2.DeleteBackupRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Returns the list of available backups for the specified Redis cluster."""
 
 def add_BackupServiceServicer_to_server(servicer: BackupServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

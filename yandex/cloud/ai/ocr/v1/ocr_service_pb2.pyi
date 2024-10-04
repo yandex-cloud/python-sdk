@@ -26,15 +26,15 @@ class RecognizeTextRequest(google.protobuf.message.Message):
     mime_type: builtins.str
     """Specifications of the ([MIME type](https://en.wikipedia.org/wiki/Media_type)). Each specification contains the file to analyze and features to use for analysis. Restrictions:
     * Supported file formats: `JPEG`, `PNG`, `PDF`.
-    * Maximum file size: 20 MB.
+    * Maximum file size: see [documentation](/docs/vision/concepts/limits).
     * Image size should not exceed 20M pixels (length x width).
-    * The number of pages in a PDF file should not exceed 200 (each page counts as 1 request).
+    * The number of pages in a PDF file should not exceed 1.
     """
     model: builtins.str
-    """Model to use for text detection."""
+    """[Model](/docs/vision/concepts/ocr/template-recognition#models) to use for text detection."""
     @property
     def language_codes(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """List of the languages to recognize text.
+        """[List of the languages](/docs/vision/concepts/ocr/supported-languages) to recognize text.
         Specified in [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) format (for example, `ru`).
         """
 
@@ -62,7 +62,7 @@ class RecognizeTextResponse(google.protobuf.message.Message):
     """Page number in PDF file."""
     @property
     def text_annotation(self) -> yandex.cloud.ai.ocr.v1.ocr_pb2.TextAnnotation:
-        """Recognized text blocks in this page or text from entities."""
+        """Recognized text blocks in page or text from entities."""
 
     def __init__(
         self,

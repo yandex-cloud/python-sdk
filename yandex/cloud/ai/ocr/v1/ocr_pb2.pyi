@@ -96,7 +96,7 @@ class TextAnnotation(google.protobuf.message.Message):
     full_text: builtins.str
     """Full text recognized from image."""
     rotate: global___Angle.ValueType
-    """Angle of rotate image"""
+    """Angle of image rotation."""
     @property
     def blocks(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Block]:
         """Recognized text blocks in this page."""
@@ -205,7 +205,7 @@ class Line(google.protobuf.message.Message):
     text: builtins.str
     """Recognized text."""
     orientation: global___Angle.ValueType
-    """Angle of rotate line"""
+    """Angle of line rotation."""
     @property
     def bounding_box(self) -> global___Polygon:
         """Area on the page where the line is located."""

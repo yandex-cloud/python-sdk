@@ -87,3 +87,35 @@ class ListBackupsResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["backups", b"backups", "next_page_token", b"next_page_token"]) -> None: ...
 
 global___ListBackupsResponse = ListBackupsResponse
+
+@typing.final
+class DeleteBackupRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    BACKUP_ID_FIELD_NUMBER: builtins.int
+    backup_id: builtins.str
+    """Required. ID of the backup to delete."""
+    def __init__(
+        self,
+        *,
+        backup_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["backup_id", b"backup_id"]) -> None: ...
+
+global___DeleteBackupRequest = DeleteBackupRequest
+
+@typing.final
+class DeleteBackupMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    BACKUP_ID_FIELD_NUMBER: builtins.int
+    backup_id: builtins.str
+    """Required. ID of the deleting Redis backup."""
+    def __init__(
+        self,
+        *,
+        backup_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["backup_id", b"backup_id"]) -> None: ...
+
+global___DeleteBackupMetadata = DeleteBackupMetadata
