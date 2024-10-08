@@ -220,7 +220,7 @@ class PostgresSource(google.protobuf.message.Message):
     database: builtins.str
     """Database name"""
     user: builtins.str
-    """User for database access."""
+    """User for database access. not required as may be in connection"""
     slot_byte_lag_limit: builtins.int
     """Maximum lag of replication slot (in bytes); after exceeding this limit
     replication will be aborted.
@@ -293,7 +293,7 @@ class PostgresTarget(google.protobuf.message.Message):
     database: builtins.str
     """Database name"""
     user: builtins.str
-    """User for database access."""
+    """User for database access. not required as may be in connection"""
     cleanup_policy: yandex.cloud.datatransfer.v1.endpoint.common_pb2.CleanupPolicy.ValueType
     """Cleanup policy for activate, reactivate and reupload processes. Default is
     truncate.

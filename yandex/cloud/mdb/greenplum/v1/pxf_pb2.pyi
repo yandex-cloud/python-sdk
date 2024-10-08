@@ -231,7 +231,7 @@ class PXFDatasourceJDBC(google.protobuf.message.Message):
 
     @property
     def pool_connection_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """Maximum amount of time, in milliseconds, after which an inactive connection is considered idle.
+        """Maximum time, in milliseconds, to wait for a connection from the pool.
 
         The default value is `30000`.
         """
