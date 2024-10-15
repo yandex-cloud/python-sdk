@@ -6,6 +6,7 @@ isort:skip_file
 import builtins
 import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.duration_pb2
 import google.protobuf.internal.containers
 import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
@@ -532,6 +533,7 @@ class StreamHandler(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     BACKEND_GROUP_ID_FIELD_NUMBER: builtins.int
+    IDLE_TIMEOUT_FIELD_NUMBER: builtins.int
     backend_group_id: builtins.str
     """ID of the backend group processing requests. For details about the concept, see
     [documentation](/docs/application-load-balancer/concepts/backend-group).
@@ -540,12 +542,20 @@ class StreamHandler(google.protobuf.message.Message):
 
     To get the list of all available backend groups, make a [BackendGroupService.List] request.
     """
+    @property
+    def idle_timeout(self) -> google.protobuf.duration_pb2.Duration:
+        """The idle timeout is duration during which no data is transmitted or received on either the upstream or downstream connection. 
+        If not configured, the default idle timeout is 1 hour. Setting it to 0 disables the timeout.
+        """
+
     def __init__(
         self,
         *,
         backend_group_id: builtins.str = ...,
+        idle_timeout: google.protobuf.duration_pb2.Duration | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["backend_group_id", b"backend_group_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["idle_timeout", b"idle_timeout"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["backend_group_id", b"backend_group_id", "idle_timeout", b"idle_timeout"]) -> None: ...
 
 global___StreamHandler = StreamHandler
 

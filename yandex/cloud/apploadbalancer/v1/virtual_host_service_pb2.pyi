@@ -10,6 +10,7 @@ import google.protobuf.field_mask_pb2
 import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
+import yandex.cloud.apploadbalancer.v1.rate_limit_pb2
 import yandex.cloud.apploadbalancer.v1.virtual_host_pb2
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
@@ -111,6 +112,7 @@ class CreateVirtualHostRequest(google.protobuf.message.Message):
     MODIFY_REQUEST_HEADERS_FIELD_NUMBER: builtins.int
     MODIFY_RESPONSE_HEADERS_FIELD_NUMBER: builtins.int
     ROUTE_OPTIONS_FIELD_NUMBER: builtins.int
+    RATE_LIMIT_FIELD_NUMBER: builtins.int
     http_router_id: builtins.str
     """ID of the HTTP router to create a virtual host in.
 
@@ -160,6 +162,10 @@ class CreateVirtualHostRequest(google.protobuf.message.Message):
     def route_options(self) -> yandex.cloud.apploadbalancer.v1.virtual_host_pb2.RouteOptions:
         """Route options for the virtual host."""
 
+    @property
+    def rate_limit(self) -> yandex.cloud.apploadbalancer.v1.rate_limit_pb2.RateLimit:
+        """RateLimit is a rate limit configuration applied for a whole virtual host."""
+
     def __init__(
         self,
         *,
@@ -170,9 +176,10 @@ class CreateVirtualHostRequest(google.protobuf.message.Message):
         modify_request_headers: collections.abc.Iterable[yandex.cloud.apploadbalancer.v1.virtual_host_pb2.HeaderModification] | None = ...,
         modify_response_headers: collections.abc.Iterable[yandex.cloud.apploadbalancer.v1.virtual_host_pb2.HeaderModification] | None = ...,
         route_options: yandex.cloud.apploadbalancer.v1.virtual_host_pb2.RouteOptions | None = ...,
+        rate_limit: yandex.cloud.apploadbalancer.v1.rate_limit_pb2.RateLimit | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["route_options", b"route_options"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["authority", b"authority", "http_router_id", b"http_router_id", "modify_request_headers", b"modify_request_headers", "modify_response_headers", b"modify_response_headers", "name", b"name", "route_options", b"route_options", "routes", b"routes"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["rate_limit", b"rate_limit", "route_options", b"route_options"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["authority", b"authority", "http_router_id", b"http_router_id", "modify_request_headers", b"modify_request_headers", "modify_response_headers", b"modify_response_headers", "name", b"name", "rate_limit", b"rate_limit", "route_options", b"route_options", "routes", b"routes"]) -> None: ...
 
 global___CreateVirtualHostRequest = CreateVirtualHostRequest
 
@@ -208,6 +215,7 @@ class UpdateVirtualHostRequest(google.protobuf.message.Message):
     MODIFY_REQUEST_HEADERS_FIELD_NUMBER: builtins.int
     MODIFY_RESPONSE_HEADERS_FIELD_NUMBER: builtins.int
     ROUTE_OPTIONS_FIELD_NUMBER: builtins.int
+    RATE_LIMIT_FIELD_NUMBER: builtins.int
     http_router_id: builtins.str
     """ID of the HTTP router to update a virtual host in.
 
@@ -277,6 +285,10 @@ class UpdateVirtualHostRequest(google.protobuf.message.Message):
     def route_options(self) -> yandex.cloud.apploadbalancer.v1.virtual_host_pb2.RouteOptions:
         """New route options for the virtual host."""
 
+    @property
+    def rate_limit(self) -> yandex.cloud.apploadbalancer.v1.rate_limit_pb2.RateLimit:
+        """RateLimit is a rate limit configuration applied for a whole virtual host."""
+
     def __init__(
         self,
         *,
@@ -288,9 +300,10 @@ class UpdateVirtualHostRequest(google.protobuf.message.Message):
         modify_request_headers: collections.abc.Iterable[yandex.cloud.apploadbalancer.v1.virtual_host_pb2.HeaderModification] | None = ...,
         modify_response_headers: collections.abc.Iterable[yandex.cloud.apploadbalancer.v1.virtual_host_pb2.HeaderModification] | None = ...,
         route_options: yandex.cloud.apploadbalancer.v1.virtual_host_pb2.RouteOptions | None = ...,
+        rate_limit: yandex.cloud.apploadbalancer.v1.rate_limit_pb2.RateLimit | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["route_options", b"route_options", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["authority", b"authority", "http_router_id", b"http_router_id", "modify_request_headers", b"modify_request_headers", "modify_response_headers", b"modify_response_headers", "route_options", b"route_options", "routes", b"routes", "update_mask", b"update_mask", "virtual_host_name", b"virtual_host_name"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["rate_limit", b"rate_limit", "route_options", b"route_options", "update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["authority", b"authority", "http_router_id", b"http_router_id", "modify_request_headers", b"modify_request_headers", "modify_response_headers", b"modify_response_headers", "rate_limit", b"rate_limit", "route_options", b"route_options", "routes", b"routes", "update_mask", b"update_mask", "virtual_host_name", b"virtual_host_name"]) -> None: ...
 
 global___UpdateVirtualHostRequest = UpdateVirtualHostRequest
 

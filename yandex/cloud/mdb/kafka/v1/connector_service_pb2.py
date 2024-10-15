@@ -19,7 +19,7 @@ from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 from yandex.cloud.mdb.kafka.v1 import connector_pb2 as yandex_dot_cloud_dot_mdb_dot_kafka_dot_v1_dot_connector__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n1yandex/cloud/mdb/kafka/v1/connector_service.proto\x12\x19yandex.cloud.mdb.kafka.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a)yandex/cloud/mdb/kafka/v1/connector.proto\"p\n\x13GetConnectorRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x37\n\x0e\x63onnector_name\x18\x02 \x01(\tB\x1f\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x05<=256\"w\n\x15ListConnectorsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"k\n\x16ListConnectorsResponse\x12\x38\n\nconnectors\x18\x01 \x03(\x0b\x32$.yandex.cloud.mdb.kafka.v1.Connector\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x82\x01\n\x16\x43reateConnectorRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x46\n\x0e\x63onnector_spec\x18\x02 \x01(\x0b\x32(.yandex.cloud.mdb.kafka.v1.ConnectorSpecB\x04\xe8\xc7\x31\x01\"f\n\x17\x43reateConnectorMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x37\n\x0e\x63onnector_name\x18\x02 \x01(\tB\x1f\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x05<=256\"\xf2\x01\n\x16UpdateConnectorRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x37\n\x0e\x63onnector_name\x18\x02 \x01(\tB\x1f\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x05<=256\x12/\n\x0bupdate_mask\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12L\n\x0e\x63onnector_spec\x18\x04 \x01(\x0b\x32..yandex.cloud.mdb.kafka.v1.UpdateConnectorSpecB\x04\xe8\xc7\x31\x01\"t\n\x17UpdateConnectorMetadata\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x37\n\x0e\x63onnector_name\x18\x02 \x01(\tB\x1f\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x05<=256\"s\n\x16\x44\x65leteConnectorRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x37\n\x0e\x63onnector_name\x18\x02 \x01(\tB\x1f\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x05<=256\"E\n\x17\x44\x65leteConnectorMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x16\n\x0e\x63onnector_name\x18\x02 \x01(\t\"s\n\x16ResumeConnectorRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x37\n\x0e\x63onnector_name\x18\x02 \x01(\tB\x1f\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x05<=256\"f\n\x17ResumeConnectorMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x37\n\x0e\x63onnector_name\x18\x02 \x01(\tB\x1f\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x05<=256\"r\n\x15PauseConnectorRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x37\n\x0e\x63onnector_name\x18\x02 \x01(\tB\x1f\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x05<=256\"e\n\x16PauseConnectorMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x37\n\x0e\x63onnector_name\x18\x02 \x01(\tB\x1f\xe8\xc7\x31\x01\xf2\xc7\x31\x0e[a-zA-Z0-9_-]*\x8a\xc8\x31\x05<=2562\xa6\x0b\n\x10\x43onnectorService\x12\xa8\x01\n\x03Get\x12..yandex.cloud.mdb.kafka.v1.GetConnectorRequest\x1a$.yandex.cloud.mdb.kafka.v1.Connector\"K\x82\xd3\xe4\x93\x02\x45\x12\x43/managed-kafka/v1/clusters/{cluster_id}/connectors/{connector_name}\x12\xa7\x01\n\x04List\x12\x30.yandex.cloud.mdb.kafka.v1.ListConnectorsRequest\x1a\x31.yandex.cloud.mdb.kafka.v1.ListConnectorsResponse\":\x82\xd3\xe4\x93\x02\x34\x12\x32/managed-kafka/v1/clusters/{cluster_id}/connectors\x12\xc5\x01\n\x06\x43reate\x12\x31.yandex.cloud.mdb.kafka.v1.CreateConnectorRequest\x1a!.yandex.cloud.operation.Operation\"e\xb2\xd2*$\n\x17\x43reateConnectorMetadata\x12\tConnector\x82\xd3\xe4\x93\x02\x37\"2/managed-kafka/v1/clusters/{cluster_id}/connectors:\x01*\x12\xd6\x01\n\x06Update\x12\x31.yandex.cloud.mdb.kafka.v1.UpdateConnectorRequest\x1a!.yandex.cloud.operation.Operation\"v\xb2\xd2*$\n\x17UpdateConnectorMetadata\x12\tConnector\x82\xd3\xe4\x93\x02H2C/managed-kafka/v1/clusters/{cluster_id}/connectors/{connector_name}:\x01*\x12\xdf\x01\n\x06\x44\x65lete\x12\x31.yandex.cloud.mdb.kafka.v1.DeleteConnectorRequest\x1a!.yandex.cloud.operation.Operation\"\x7f\xb2\xd2*0\n\x17\x44\x65leteConnectorMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x45*C/managed-kafka/v1/clusters/{cluster_id}/connectors/{connector_name}\x12\xdd\x01\n\x06Resume\x12\x31.yandex.cloud.mdb.kafka.v1.ResumeConnectorRequest\x1a!.yandex.cloud.operation.Operation\"}\xb2\xd2*$\n\x17ResumeConnectorMetadata\x12\tConnector\x82\xd3\xe4\x93\x02O\"J/managed-kafka/v1/clusters/{cluster_id}/connectors/resume/{connector_name}:\x01*\x12\xd9\x01\n\x05Pause\x12\x30.yandex.cloud.mdb.kafka.v1.PauseConnectorRequest\x1a!.yandex.cloud.operation.Operation\"{\xb2\xd2*#\n\x16PauseConnectorMetadata\x12\tConnector\x82\xd3\xe4\x93\x02N\"I/managed-kafka/v1/clusters/{cluster_id}/connectors/pause/{connector_name}:\x01*Bd\n\x1dyandex.cloud.api.mdb.kafka.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/kafka/v1;kafkab\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n1yandex/cloud/mdb/kafka/v1/connector_service.proto\x12\x19yandex.cloud.mdb.kafka.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a)yandex/cloud/mdb/kafka/v1/connector.proto\"q\n\x13GetConnectorRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x38\n\x0e\x63onnector_name\x18\x02 \x01(\tB \xe8\xc7\x31\x01\xf2\xc7\x31\x0f[-_.a-zA-Z0-9]*\x8a\xc8\x31\x05<=256\"w\n\x15ListConnectorsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"k\n\x16ListConnectorsResponse\x12\x38\n\nconnectors\x18\x01 \x03(\x0b\x32$.yandex.cloud.mdb.kafka.v1.Connector\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x82\x01\n\x16\x43reateConnectorRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x46\n\x0e\x63onnector_spec\x18\x02 \x01(\x0b\x32(.yandex.cloud.mdb.kafka.v1.ConnectorSpecB\x04\xe8\xc7\x31\x01\"g\n\x17\x43reateConnectorMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x38\n\x0e\x63onnector_name\x18\x02 \x01(\tB \xe8\xc7\x31\x01\xf2\xc7\x31\x0f[-_.a-zA-Z0-9]*\x8a\xc8\x31\x05<=256\"\xf3\x01\n\x16UpdateConnectorRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x38\n\x0e\x63onnector_name\x18\x02 \x01(\tB \xe8\xc7\x31\x01\xf2\xc7\x31\x0f[-_.a-zA-Z0-9]*\x8a\xc8\x31\x05<=256\x12/\n\x0bupdate_mask\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12L\n\x0e\x63onnector_spec\x18\x04 \x01(\x0b\x32..yandex.cloud.mdb.kafka.v1.UpdateConnectorSpecB\x04\xe8\xc7\x31\x01\"u\n\x17UpdateConnectorMetadata\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x38\n\x0e\x63onnector_name\x18\x02 \x01(\tB \xe8\xc7\x31\x01\xf2\xc7\x31\x0f[-_.a-zA-Z0-9]*\x8a\xc8\x31\x05<=256\"t\n\x16\x44\x65leteConnectorRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x38\n\x0e\x63onnector_name\x18\x02 \x01(\tB \xe8\xc7\x31\x01\xf2\xc7\x31\x0f[-_.a-zA-Z0-9]*\x8a\xc8\x31\x05<=256\"E\n\x17\x44\x65leteConnectorMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x16\n\x0e\x63onnector_name\x18\x02 \x01(\t\"t\n\x16ResumeConnectorRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x38\n\x0e\x63onnector_name\x18\x02 \x01(\tB \xe8\xc7\x31\x01\xf2\xc7\x31\x0f[-_.a-zA-Z0-9]*\x8a\xc8\x31\x05<=256\"g\n\x17ResumeConnectorMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x38\n\x0e\x63onnector_name\x18\x02 \x01(\tB \xe8\xc7\x31\x01\xf2\xc7\x31\x0f[-_.a-zA-Z0-9]*\x8a\xc8\x31\x05<=256\"s\n\x15PauseConnectorRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x38\n\x0e\x63onnector_name\x18\x02 \x01(\tB \xe8\xc7\x31\x01\xf2\xc7\x31\x0f[-_.a-zA-Z0-9]*\x8a\xc8\x31\x05<=256\"f\n\x16PauseConnectorMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x38\n\x0e\x63onnector_name\x18\x02 \x01(\tB \xe8\xc7\x31\x01\xf2\xc7\x31\x0f[-_.a-zA-Z0-9]*\x8a\xc8\x31\x05<=2562\xa6\x0b\n\x10\x43onnectorService\x12\xa8\x01\n\x03Get\x12..yandex.cloud.mdb.kafka.v1.GetConnectorRequest\x1a$.yandex.cloud.mdb.kafka.v1.Connector\"K\x82\xd3\xe4\x93\x02\x45\x12\x43/managed-kafka/v1/clusters/{cluster_id}/connectors/{connector_name}\x12\xa7\x01\n\x04List\x12\x30.yandex.cloud.mdb.kafka.v1.ListConnectorsRequest\x1a\x31.yandex.cloud.mdb.kafka.v1.ListConnectorsResponse\":\x82\xd3\xe4\x93\x02\x34\x12\x32/managed-kafka/v1/clusters/{cluster_id}/connectors\x12\xc5\x01\n\x06\x43reate\x12\x31.yandex.cloud.mdb.kafka.v1.CreateConnectorRequest\x1a!.yandex.cloud.operation.Operation\"e\xb2\xd2*$\n\x17\x43reateConnectorMetadata\x12\tConnector\x82\xd3\xe4\x93\x02\x37\"2/managed-kafka/v1/clusters/{cluster_id}/connectors:\x01*\x12\xd6\x01\n\x06Update\x12\x31.yandex.cloud.mdb.kafka.v1.UpdateConnectorRequest\x1a!.yandex.cloud.operation.Operation\"v\xb2\xd2*$\n\x17UpdateConnectorMetadata\x12\tConnector\x82\xd3\xe4\x93\x02H2C/managed-kafka/v1/clusters/{cluster_id}/connectors/{connector_name}:\x01*\x12\xdf\x01\n\x06\x44\x65lete\x12\x31.yandex.cloud.mdb.kafka.v1.DeleteConnectorRequest\x1a!.yandex.cloud.operation.Operation\"\x7f\xb2\xd2*0\n\x17\x44\x65leteConnectorMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x45*C/managed-kafka/v1/clusters/{cluster_id}/connectors/{connector_name}\x12\xdd\x01\n\x06Resume\x12\x31.yandex.cloud.mdb.kafka.v1.ResumeConnectorRequest\x1a!.yandex.cloud.operation.Operation\"}\xb2\xd2*$\n\x17ResumeConnectorMetadata\x12\tConnector\x82\xd3\xe4\x93\x02O\"J/managed-kafka/v1/clusters/{cluster_id}/connectors/resume/{connector_name}:\x01*\x12\xd9\x01\n\x05Pause\x12\x30.yandex.cloud.mdb.kafka.v1.PauseConnectorRequest\x1a!.yandex.cloud.operation.Operation\"{\xb2\xd2*#\n\x16PauseConnectorMetadata\x12\tConnector\x82\xd3\xe4\x93\x02N\"I/managed-kafka/v1/clusters/{cluster_id}/connectors/pause/{connector_name}:\x01*Bd\n\x1dyandex.cloud.api.mdb.kafka.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/kafka/v1;kafkab\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -30,7 +30,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _GETCONNECTORREQUEST.fields_by_name['cluster_id']._options = None
   _GETCONNECTORREQUEST.fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _GETCONNECTORREQUEST.fields_by_name['connector_name']._options = None
-  _GETCONNECTORREQUEST.fields_by_name['connector_name']._serialized_options = b'\350\3071\001\362\3071\016[a-zA-Z0-9_-]*\212\3101\005<=256'
+  _GETCONNECTORREQUEST.fields_by_name['connector_name']._serialized_options = b'\350\3071\001\362\3071\017[-_.a-zA-Z0-9]*\212\3101\005<=256'
   _LISTCONNECTORSREQUEST.fields_by_name['cluster_id']._options = None
   _LISTCONNECTORSREQUEST.fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _LISTCONNECTORSREQUEST.fields_by_name['page_size']._options = None
@@ -42,33 +42,33 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _CREATECONNECTORREQUEST.fields_by_name['connector_spec']._options = None
   _CREATECONNECTORREQUEST.fields_by_name['connector_spec']._serialized_options = b'\350\3071\001'
   _CREATECONNECTORMETADATA.fields_by_name['connector_name']._options = None
-  _CREATECONNECTORMETADATA.fields_by_name['connector_name']._serialized_options = b'\350\3071\001\362\3071\016[a-zA-Z0-9_-]*\212\3101\005<=256'
+  _CREATECONNECTORMETADATA.fields_by_name['connector_name']._serialized_options = b'\350\3071\001\362\3071\017[-_.a-zA-Z0-9]*\212\3101\005<=256'
   _UPDATECONNECTORREQUEST.fields_by_name['cluster_id']._options = None
   _UPDATECONNECTORREQUEST.fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _UPDATECONNECTORREQUEST.fields_by_name['connector_name']._options = None
-  _UPDATECONNECTORREQUEST.fields_by_name['connector_name']._serialized_options = b'\350\3071\001\362\3071\016[a-zA-Z0-9_-]*\212\3101\005<=256'
+  _UPDATECONNECTORREQUEST.fields_by_name['connector_name']._serialized_options = b'\350\3071\001\362\3071\017[-_.a-zA-Z0-9]*\212\3101\005<=256'
   _UPDATECONNECTORREQUEST.fields_by_name['connector_spec']._options = None
   _UPDATECONNECTORREQUEST.fields_by_name['connector_spec']._serialized_options = b'\350\3071\001'
   _UPDATECONNECTORMETADATA.fields_by_name['cluster_id']._options = None
   _UPDATECONNECTORMETADATA.fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _UPDATECONNECTORMETADATA.fields_by_name['connector_name']._options = None
-  _UPDATECONNECTORMETADATA.fields_by_name['connector_name']._serialized_options = b'\350\3071\001\362\3071\016[a-zA-Z0-9_-]*\212\3101\005<=256'
+  _UPDATECONNECTORMETADATA.fields_by_name['connector_name']._serialized_options = b'\350\3071\001\362\3071\017[-_.a-zA-Z0-9]*\212\3101\005<=256'
   _DELETECONNECTORREQUEST.fields_by_name['cluster_id']._options = None
   _DELETECONNECTORREQUEST.fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _DELETECONNECTORREQUEST.fields_by_name['connector_name']._options = None
-  _DELETECONNECTORREQUEST.fields_by_name['connector_name']._serialized_options = b'\350\3071\001\362\3071\016[a-zA-Z0-9_-]*\212\3101\005<=256'
+  _DELETECONNECTORREQUEST.fields_by_name['connector_name']._serialized_options = b'\350\3071\001\362\3071\017[-_.a-zA-Z0-9]*\212\3101\005<=256'
   _RESUMECONNECTORREQUEST.fields_by_name['cluster_id']._options = None
   _RESUMECONNECTORREQUEST.fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _RESUMECONNECTORREQUEST.fields_by_name['connector_name']._options = None
-  _RESUMECONNECTORREQUEST.fields_by_name['connector_name']._serialized_options = b'\350\3071\001\362\3071\016[a-zA-Z0-9_-]*\212\3101\005<=256'
+  _RESUMECONNECTORREQUEST.fields_by_name['connector_name']._serialized_options = b'\350\3071\001\362\3071\017[-_.a-zA-Z0-9]*\212\3101\005<=256'
   _RESUMECONNECTORMETADATA.fields_by_name['connector_name']._options = None
-  _RESUMECONNECTORMETADATA.fields_by_name['connector_name']._serialized_options = b'\350\3071\001\362\3071\016[a-zA-Z0-9_-]*\212\3101\005<=256'
+  _RESUMECONNECTORMETADATA.fields_by_name['connector_name']._serialized_options = b'\350\3071\001\362\3071\017[-_.a-zA-Z0-9]*\212\3101\005<=256'
   _PAUSECONNECTORREQUEST.fields_by_name['cluster_id']._options = None
   _PAUSECONNECTORREQUEST.fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _PAUSECONNECTORREQUEST.fields_by_name['connector_name']._options = None
-  _PAUSECONNECTORREQUEST.fields_by_name['connector_name']._serialized_options = b'\350\3071\001\362\3071\016[a-zA-Z0-9_-]*\212\3101\005<=256'
+  _PAUSECONNECTORREQUEST.fields_by_name['connector_name']._serialized_options = b'\350\3071\001\362\3071\017[-_.a-zA-Z0-9]*\212\3101\005<=256'
   _PAUSECONNECTORMETADATA.fields_by_name['connector_name']._options = None
-  _PAUSECONNECTORMETADATA.fields_by_name['connector_name']._serialized_options = b'\350\3071\001\362\3071\016[a-zA-Z0-9_-]*\212\3101\005<=256'
+  _PAUSECONNECTORMETADATA.fields_by_name['connector_name']._serialized_options = b'\350\3071\001\362\3071\017[-_.a-zA-Z0-9]*\212\3101\005<=256'
   _CONNECTORSERVICE.methods_by_name['Get']._options = None
   _CONNECTORSERVICE.methods_by_name['Get']._serialized_options = b'\202\323\344\223\002E\022C/managed-kafka/v1/clusters/{cluster_id}/connectors/{connector_name}'
   _CONNECTORSERVICE.methods_by_name['List']._options = None
@@ -84,31 +84,31 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _CONNECTORSERVICE.methods_by_name['Pause']._options = None
   _CONNECTORSERVICE.methods_by_name['Pause']._serialized_options = b'\262\322*#\n\026PauseConnectorMetadata\022\tConnector\202\323\344\223\002N\"I/managed-kafka/v1/clusters/{cluster_id}/connectors/pause/{connector_name}:\001*'
   _globals['_GETCONNECTORREQUEST']._serialized_start=292
-  _globals['_GETCONNECTORREQUEST']._serialized_end=404
-  _globals['_LISTCONNECTORSREQUEST']._serialized_start=406
-  _globals['_LISTCONNECTORSREQUEST']._serialized_end=525
-  _globals['_LISTCONNECTORSRESPONSE']._serialized_start=527
-  _globals['_LISTCONNECTORSRESPONSE']._serialized_end=634
-  _globals['_CREATECONNECTORREQUEST']._serialized_start=637
-  _globals['_CREATECONNECTORREQUEST']._serialized_end=767
-  _globals['_CREATECONNECTORMETADATA']._serialized_start=769
-  _globals['_CREATECONNECTORMETADATA']._serialized_end=871
-  _globals['_UPDATECONNECTORREQUEST']._serialized_start=874
-  _globals['_UPDATECONNECTORREQUEST']._serialized_end=1116
-  _globals['_UPDATECONNECTORMETADATA']._serialized_start=1118
-  _globals['_UPDATECONNECTORMETADATA']._serialized_end=1234
-  _globals['_DELETECONNECTORREQUEST']._serialized_start=1236
-  _globals['_DELETECONNECTORREQUEST']._serialized_end=1351
-  _globals['_DELETECONNECTORMETADATA']._serialized_start=1353
-  _globals['_DELETECONNECTORMETADATA']._serialized_end=1422
-  _globals['_RESUMECONNECTORREQUEST']._serialized_start=1424
-  _globals['_RESUMECONNECTORREQUEST']._serialized_end=1539
-  _globals['_RESUMECONNECTORMETADATA']._serialized_start=1541
-  _globals['_RESUMECONNECTORMETADATA']._serialized_end=1643
-  _globals['_PAUSECONNECTORREQUEST']._serialized_start=1645
-  _globals['_PAUSECONNECTORREQUEST']._serialized_end=1759
-  _globals['_PAUSECONNECTORMETADATA']._serialized_start=1761
-  _globals['_PAUSECONNECTORMETADATA']._serialized_end=1862
-  _globals['_CONNECTORSERVICE']._serialized_start=1865
-  _globals['_CONNECTORSERVICE']._serialized_end=3311
+  _globals['_GETCONNECTORREQUEST']._serialized_end=405
+  _globals['_LISTCONNECTORSREQUEST']._serialized_start=407
+  _globals['_LISTCONNECTORSREQUEST']._serialized_end=526
+  _globals['_LISTCONNECTORSRESPONSE']._serialized_start=528
+  _globals['_LISTCONNECTORSRESPONSE']._serialized_end=635
+  _globals['_CREATECONNECTORREQUEST']._serialized_start=638
+  _globals['_CREATECONNECTORREQUEST']._serialized_end=768
+  _globals['_CREATECONNECTORMETADATA']._serialized_start=770
+  _globals['_CREATECONNECTORMETADATA']._serialized_end=873
+  _globals['_UPDATECONNECTORREQUEST']._serialized_start=876
+  _globals['_UPDATECONNECTORREQUEST']._serialized_end=1119
+  _globals['_UPDATECONNECTORMETADATA']._serialized_start=1121
+  _globals['_UPDATECONNECTORMETADATA']._serialized_end=1238
+  _globals['_DELETECONNECTORREQUEST']._serialized_start=1240
+  _globals['_DELETECONNECTORREQUEST']._serialized_end=1356
+  _globals['_DELETECONNECTORMETADATA']._serialized_start=1358
+  _globals['_DELETECONNECTORMETADATA']._serialized_end=1427
+  _globals['_RESUMECONNECTORREQUEST']._serialized_start=1429
+  _globals['_RESUMECONNECTORREQUEST']._serialized_end=1545
+  _globals['_RESUMECONNECTORMETADATA']._serialized_start=1547
+  _globals['_RESUMECONNECTORMETADATA']._serialized_end=1650
+  _globals['_PAUSECONNECTORREQUEST']._serialized_start=1652
+  _globals['_PAUSECONNECTORREQUEST']._serialized_end=1767
+  _globals['_PAUSECONNECTORMETADATA']._serialized_start=1769
+  _globals['_PAUSECONNECTORMETADATA']._serialized_end=1871
+  _globals['_CONNECTORSERVICE']._serialized_start=1874
+  _globals['_CONNECTORSERVICE']._serialized_end=3320
 # @@protoc_insertion_point(module_scope)

@@ -126,6 +126,12 @@ class ProjectServiceStub:
     ]
     """Removes shared resource from project"""
 
+    ResizeDisk: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.datasphere.v2.project_service_pb2.ResizeProjectDiskRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Resizes project disk"""
+
     GetRestrictionsMeta: grpc.UnaryUnaryMultiCallable[
         google.protobuf.empty_pb2.Empty,
         yandex.cloud.datasphere.v2.restrictions_pb2.GetRestrictionsMetaResponse,
@@ -246,6 +252,12 @@ class ProjectServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Removes shared resource from project"""
+
+    ResizeDisk: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.datasphere.v2.project_service_pb2.ResizeProjectDiskRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Resizes project disk"""
 
     GetRestrictionsMeta: grpc.aio.UnaryUnaryMultiCallable[
         google.protobuf.empty_pb2.Empty,
@@ -399,6 +411,14 @@ class ProjectServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Removes shared resource from project"""
+
+    @abc.abstractmethod
+    def ResizeDisk(
+        self,
+        request: yandex.cloud.datasphere.v2.project_service_pb2.ResizeProjectDiskRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Resizes project disk"""
 
     @abc.abstractmethod
     def GetRestrictionsMeta(

@@ -183,11 +183,15 @@ class Cluster(google.protobuf.message.Message):
 
     @property
     def monitoring(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Monitoring]:
-        """Description of monitoring systems relevant to the Apache Kafka® cluster."""
+        """Description of monitoring systems relevant to the Apache Kafka® cluster.
+        * The field is ignored for response of List method.
+        """
 
     @property
     def config(self) -> global___ConfigSpec:
-        """Configuration of the Apache Kafka® cluster."""
+        """Configuration of the Apache Kafka® cluster.
+        * The field is ignored for response of List method.
+        """
 
     @property
     def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
@@ -305,6 +309,23 @@ class ConfigSpec(google.protobuf.message.Message):
         def ClearField(self, field_name: typing.Literal["resources", b"resources"]) -> None: ...
 
     @typing.final
+    class KRaft(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        RESOURCES_FIELD_NUMBER: builtins.int
+        @property
+        def resources(self) -> global___Resources:
+            """Resources allocated to KRaft controller hosts."""
+
+        def __init__(
+            self,
+            *,
+            resources: global___Resources | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["resources", b"resources"]) -> None: ...
+
+    @typing.final
     class RestAPIConfig(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -329,8 +350,9 @@ class ConfigSpec(google.protobuf.message.Message):
     ACCESS_FIELD_NUMBER: builtins.int
     REST_API_CONFIG_FIELD_NUMBER: builtins.int
     DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
+    KRAFT_FIELD_NUMBER: builtins.int
     version: builtins.str
-    """Version of Apache Kafka® used in the cluster. Possible values: `2.1`, `2.6`."""
+    """Version of Apache Kafka® used in the cluster. Possible values: `2.8`, `3.0`, `3.1`, `3.2`, `3.3`, `3.4`, `3.5`, `3.6`."""
     assign_public_ip: builtins.bool
     """The flag that defines whether a public IP address is assigned to the cluster.
     If the value is `true`, then Apache Kafka® cluster is available on the Internet via it's public IP address.
@@ -369,6 +391,10 @@ class ConfigSpec(google.protobuf.message.Message):
     def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
         """DiskSizeAutoscaling settings"""
 
+    @property
+    def kraft(self) -> global___ConfigSpec.KRaft:
+        """Configuration and resource allocation for KRaft-controller hosts."""
+
     def __init__(
         self,
         *,
@@ -383,9 +409,10 @@ class ConfigSpec(google.protobuf.message.Message):
         access: global___Access | None = ...,
         rest_api_config: global___ConfigSpec.RestAPIConfig | None = ...,
         disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
+        kraft: global___ConfigSpec.KRaft | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access", b"access", "brokers_count", b"brokers_count", "disk_size_autoscaling", b"disk_size_autoscaling", "kafka", b"kafka", "rest_api_config", b"rest_api_config", "zookeeper", b"zookeeper"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access", b"access", "assign_public_ip", b"assign_public_ip", "brokers_count", b"brokers_count", "disk_size_autoscaling", b"disk_size_autoscaling", "kafka", b"kafka", "rest_api_config", b"rest_api_config", "schema_registry", b"schema_registry", "unmanaged_topics", b"unmanaged_topics", "version", b"version", "zone_id", b"zone_id", "zookeeper", b"zookeeper"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access", b"access", "brokers_count", b"brokers_count", "disk_size_autoscaling", b"disk_size_autoscaling", "kafka", b"kafka", "kraft", b"kraft", "rest_api_config", b"rest_api_config", "zookeeper", b"zookeeper"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access", b"access", "assign_public_ip", b"assign_public_ip", "brokers_count", b"brokers_count", "disk_size_autoscaling", b"disk_size_autoscaling", "kafka", b"kafka", "kraft", b"kraft", "rest_api_config", b"rest_api_config", "schema_registry", b"schema_registry", "unmanaged_topics", b"unmanaged_topics", "version", b"version", "zone_id", b"zone_id", "zookeeper", b"zookeeper"]) -> None: ...
 
 global___ConfigSpec = ConfigSpec
 

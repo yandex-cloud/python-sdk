@@ -100,6 +100,11 @@ class ProjectServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_project__service__pb2.RemoveResourceFromProjectRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
+        self.ResizeDisk = channel.unary_unary(
+                '/yandex.cloud.datasphere.v2.ProjectService/ResizeDisk',
+                request_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_project__service__pb2.ResizeProjectDiskRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
         self.GetRestrictionsMeta = channel.unary_unary(
                 '/yandex.cloud.datasphere.v2.ProjectService/GetRestrictionsMeta',
                 request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
@@ -235,6 +240,13 @@ class ProjectServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ResizeDisk(self, request, context):
+        """Resizes project disk
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def GetRestrictionsMeta(self, request, context):
         """Get meta information about available restrictions.
         """
@@ -337,6 +349,11 @@ def add_ProjectServiceServicer_to_server(servicer, server):
             'RemoveResource': grpc.unary_unary_rpc_method_handler(
                     servicer.RemoveResource,
                     request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_project__service__pb2.RemoveResourceFromProjectRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'ResizeDisk': grpc.unary_unary_rpc_method_handler(
+                    servicer.ResizeDisk,
+                    request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_project__service__pb2.ResizeProjectDiskRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'GetRestrictionsMeta': grpc.unary_unary_rpc_method_handler(
@@ -633,6 +650,23 @@ class ProjectService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v2.ProjectService/RemoveResource',
             yandex_dot_cloud_dot_datasphere_dot_v2_dot_project__service__pb2.RemoveResourceFromProjectRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ResizeDisk(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v2.ProjectService/ResizeDisk',
+            yandex_dot_cloud_dot_datasphere_dot_v2_dot_project__service__pb2.ResizeProjectDiskRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

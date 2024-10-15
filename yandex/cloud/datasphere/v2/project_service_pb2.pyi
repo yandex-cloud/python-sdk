@@ -823,3 +823,104 @@ class SetProjectRestrictionsRequest(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["project_id", b"project_id", "restrictions", b"restrictions"]) -> None: ...
 
 global___SetProjectRestrictionsRequest = SetProjectRestrictionsRequest
+
+@typing.final
+class ResizeProjectDiskRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PROJECT_ID_FIELD_NUMBER: builtins.int
+    NEW_DISK_SIZE_GB_FIELD_NUMBER: builtins.int
+    project_id: builtins.str
+    """ID of the project."""
+    new_disk_size_gb: builtins.int
+    """Set new size project disk in gigabytes."""
+    def __init__(
+        self,
+        *,
+        project_id: builtins.str = ...,
+        new_disk_size_gb: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["new_disk_size_gb", b"new_disk_size_gb", "project_id", b"project_id"]) -> None: ...
+
+global___ResizeProjectDiskRequest = ResizeProjectDiskRequest
+
+@typing.final
+class ResizeProjectDiskMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PROJECT_ID_FIELD_NUMBER: builtins.int
+    OLD_DISK_SIZE_GB_FIELD_NUMBER: builtins.int
+    NEW_DISK_SIZE_GB_FIELD_NUMBER: builtins.int
+    project_id: builtins.str
+    """ID of the project which resized project disk."""
+    old_disk_size_gb: builtins.int
+    """Old size project disk in gigabytes."""
+    new_disk_size_gb: builtins.int
+    """New size project disk in gigabytes."""
+    def __init__(
+        self,
+        *,
+        project_id: builtins.str = ...,
+        old_disk_size_gb: builtins.int = ...,
+        new_disk_size_gb: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["new_disk_size_gb", b"new_disk_size_gb", "old_disk_size_gb", b"old_disk_size_gb", "project_id", b"project_id"]) -> None: ...
+
+global___ResizeProjectDiskMetadata = ResizeProjectDiskMetadata
+
+@typing.final
+class DiskInfo(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class DetailedDiskInfo(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        USER_DATA_GB_FIELD_NUMBER: builtins.int
+        PACKAGES_GB_FIELD_NUMBER: builtins.int
+        SYSTEM_DATA_GB_FIELD_NUMBER: builtins.int
+        FREE_SPACE_GB_FIELD_NUMBER: builtins.int
+        user_data_gb: builtins.float
+        """Used project disk for user data in gigabytes."""
+        packages_gb: builtins.float
+        """Used project disk for packages in gigabytes."""
+        system_data_gb: builtins.float
+        """Used project disk for system data in gigabytes."""
+        free_space_gb: builtins.float
+        """Free space project disk in gigabytes."""
+        def __init__(
+            self,
+            *,
+            user_data_gb: builtins.float = ...,
+            packages_gb: builtins.float = ...,
+            system_data_gb: builtins.float = ...,
+            free_space_gb: builtins.float = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["free_space_gb", b"free_space_gb", "packages_gb", b"packages_gb", "system_data_gb", b"system_data_gb", "user_data_gb", b"user_data_gb"]) -> None: ...
+
+    PROJECT_ID_FIELD_NUMBER: builtins.int
+    DISK_SIZE_GB_FIELD_NUMBER: builtins.int
+    DISK_USED_GB_FIELD_NUMBER: builtins.int
+    DETAILED_USAGE_FIELD_NUMBER: builtins.int
+    project_id: builtins.str
+    """ID of the project."""
+    disk_size_gb: builtins.float
+    """Project disk size in gigabytes."""
+    disk_used_gb: builtins.float
+    """Used project disk in gigabytes."""
+    @property
+    def detailed_usage(self) -> global___DiskInfo.DetailedDiskInfo:
+        """Detailed information about the project disk."""
+
+    def __init__(
+        self,
+        *,
+        project_id: builtins.str = ...,
+        disk_size_gb: builtins.float = ...,
+        disk_used_gb: builtins.float = ...,
+        detailed_usage: global___DiskInfo.DetailedDiskInfo | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["detailed_usage", b"detailed_usage"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["detailed_usage", b"detailed_usage", "disk_size_gb", b"disk_size_gb", "disk_used_gb", b"disk_used_gb", "project_id", b"project_id"]) -> None: ...
+
+global___DiskInfo = DiskInfo

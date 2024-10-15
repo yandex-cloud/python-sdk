@@ -393,21 +393,70 @@ class PythonEnv(google.protobuf.message.Message):
 
     CONDA_YAML_FIELD_NUMBER: builtins.int
     LOCAL_MODULES_FIELD_NUMBER: builtins.int
+    PYTHON_VERSION_FIELD_NUMBER: builtins.int
+    REQUIREMENTS_FIELD_NUMBER: builtins.int
+    PIP_OPTIONS_FIELD_NUMBER: builtins.int
     conda_yaml: builtins.str
     """Conda YAML."""
+    python_version: builtins.str
+    """Python version reduced to major.minor"""
     @property
     def local_modules(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___File]:
         """List of local modules descriptions."""
+
+    @property
+    def requirements(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of pip requirements"""
+
+    @property
+    def pip_options(self) -> global___PipOptions:
+        """Pip install options"""
 
     def __init__(
         self,
         *,
         conda_yaml: builtins.str = ...,
         local_modules: collections.abc.Iterable[global___File] | None = ...,
+        python_version: builtins.str = ...,
+        requirements: collections.abc.Iterable[builtins.str] | None = ...,
+        pip_options: global___PipOptions | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["conda_yaml", b"conda_yaml", "local_modules", b"local_modules"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["pip_options", b"pip_options"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["conda_yaml", b"conda_yaml", "local_modules", b"local_modules", "pip_options", b"pip_options", "python_version", b"python_version", "requirements", b"requirements"]) -> None: ...
 
 global___PythonEnv = PythonEnv
+
+@typing.final
+class PipOptions(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    INDEX_URL_FIELD_NUMBER: builtins.int
+    EXTRA_INDEX_URLS_FIELD_NUMBER: builtins.int
+    TRUSTED_HOSTS_FIELD_NUMBER: builtins.int
+    NO_DEPS_FIELD_NUMBER: builtins.int
+    index_url: builtins.str
+    """--index-url option"""
+    no_deps: builtins.bool
+    """--no-deps option"""
+    @property
+    def extra_index_urls(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """--extra-index-urls option"""
+
+    @property
+    def trusted_hosts(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """--trusted-hosts option"""
+
+    def __init__(
+        self,
+        *,
+        index_url: builtins.str = ...,
+        extra_index_urls: collections.abc.Iterable[builtins.str] | None = ...,
+        trusted_hosts: collections.abc.Iterable[builtins.str] | None = ...,
+        no_deps: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["extra_index_urls", b"extra_index_urls", "index_url", b"index_url", "no_deps", b"no_deps", "trusted_hosts", b"trusted_hosts"]) -> None: ...
+
+global___PipOptions = PipOptions
 
 @typing.final
 class OutputDatasetDesc(google.protobuf.message.Message):

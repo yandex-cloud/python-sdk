@@ -13,6 +13,7 @@ import google.protobuf.message
 import sys
 import typing
 import yandex.cloud.apploadbalancer.v1.payload_pb2
+import yandex.cloud.apploadbalancer.v1.rate_limit_pb2
 
 if sys.version_info >= (3, 10):
     import typing as typing_extensions
@@ -35,6 +36,7 @@ class VirtualHost(google.protobuf.message.Message):
     MODIFY_REQUEST_HEADERS_FIELD_NUMBER: builtins.int
     MODIFY_RESPONSE_HEADERS_FIELD_NUMBER: builtins.int
     ROUTE_OPTIONS_FIELD_NUMBER: builtins.int
+    RATE_LIMIT_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the virtual host. The name is unique within the HTTP router."""
     @property
@@ -75,6 +77,10 @@ class VirtualHost(google.protobuf.message.Message):
 
     @property
     def route_options(self) -> global___RouteOptions: ...
+    @property
+    def rate_limit(self) -> yandex.cloud.apploadbalancer.v1.rate_limit_pb2.RateLimit:
+        """RateLimit is a rate limit configuration applied for a whole virtual host."""
+
     def __init__(
         self,
         *,
@@ -84,9 +90,10 @@ class VirtualHost(google.protobuf.message.Message):
         modify_request_headers: collections.abc.Iterable[global___HeaderModification] | None = ...,
         modify_response_headers: collections.abc.Iterable[global___HeaderModification] | None = ...,
         route_options: global___RouteOptions | None = ...,
+        rate_limit: yandex.cloud.apploadbalancer.v1.rate_limit_pb2.RateLimit | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["route_options", b"route_options"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["authority", b"authority", "modify_request_headers", b"modify_request_headers", "modify_response_headers", b"modify_response_headers", "name", b"name", "route_options", b"route_options", "routes", b"routes"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["rate_limit", b"rate_limit", "route_options", b"route_options"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["authority", b"authority", "modify_request_headers", b"modify_request_headers", "modify_response_headers", b"modify_response_headers", "name", b"name", "rate_limit", b"rate_limit", "route_options", b"route_options", "routes", b"routes"]) -> None: ...
 
 global___VirtualHost = VirtualHost
 
@@ -677,6 +684,7 @@ class HttpRouteAction(google.protobuf.message.Message):
     AUTO_HOST_REWRITE_FIELD_NUMBER: builtins.int
     PREFIX_REWRITE_FIELD_NUMBER: builtins.int
     UPGRADE_TYPES_FIELD_NUMBER: builtins.int
+    RATE_LIMIT_FIELD_NUMBER: builtins.int
     backend_group_id: builtins.str
     """Backend group to forward requests to.
 
@@ -722,6 +730,10 @@ class HttpRouteAction(google.protobuf.message.Message):
     def upgrade_types(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Supported values for HTTP `Upgrade` header. E.g. `websocket`."""
 
+    @property
+    def rate_limit(self) -> yandex.cloud.apploadbalancer.v1.rate_limit_pb2.RateLimit:
+        """RateLimit is a rate limit configuration applied for route."""
+
     def __init__(
         self,
         *,
@@ -732,9 +744,10 @@ class HttpRouteAction(google.protobuf.message.Message):
         auto_host_rewrite: builtins.bool = ...,
         prefix_rewrite: builtins.str = ...,
         upgrade_types: collections.abc.Iterable[builtins.str] | None = ...,
+        rate_limit: yandex.cloud.apploadbalancer.v1.rate_limit_pb2.RateLimit | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["auto_host_rewrite", b"auto_host_rewrite", "host_rewrite", b"host_rewrite", "host_rewrite_specifier", b"host_rewrite_specifier", "idle_timeout", b"idle_timeout", "timeout", b"timeout"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["auto_host_rewrite", b"auto_host_rewrite", "backend_group_id", b"backend_group_id", "host_rewrite", b"host_rewrite", "host_rewrite_specifier", b"host_rewrite_specifier", "idle_timeout", b"idle_timeout", "prefix_rewrite", b"prefix_rewrite", "timeout", b"timeout", "upgrade_types", b"upgrade_types"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["auto_host_rewrite", b"auto_host_rewrite", "host_rewrite", b"host_rewrite", "host_rewrite_specifier", b"host_rewrite_specifier", "idle_timeout", b"idle_timeout", "rate_limit", b"rate_limit", "timeout", b"timeout"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["auto_host_rewrite", b"auto_host_rewrite", "backend_group_id", b"backend_group_id", "host_rewrite", b"host_rewrite", "host_rewrite_specifier", b"host_rewrite_specifier", "idle_timeout", b"idle_timeout", "prefix_rewrite", b"prefix_rewrite", "rate_limit", b"rate_limit", "timeout", b"timeout", "upgrade_types", b"upgrade_types"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["host_rewrite_specifier", b"host_rewrite_specifier"]) -> typing.Literal["host_rewrite", "auto_host_rewrite"] | None: ...
 
 global___HttpRouteAction = HttpRouteAction
@@ -750,6 +763,7 @@ class GrpcRouteAction(google.protobuf.message.Message):
     IDLE_TIMEOUT_FIELD_NUMBER: builtins.int
     HOST_REWRITE_FIELD_NUMBER: builtins.int
     AUTO_HOST_REWRITE_FIELD_NUMBER: builtins.int
+    RATE_LIMIT_FIELD_NUMBER: builtins.int
     backend_group_id: builtins.str
     """Backend group to forward requests to."""
     host_rewrite: builtins.str
@@ -782,6 +796,10 @@ class GrpcRouteAction(google.protobuf.message.Message):
         (see [max_timeout]).
         """
 
+    @property
+    def rate_limit(self) -> yandex.cloud.apploadbalancer.v1.rate_limit_pb2.RateLimit:
+        """RateLimit is a rate limit configuration applied for route."""
+
     def __init__(
         self,
         *,
@@ -790,9 +808,10 @@ class GrpcRouteAction(google.protobuf.message.Message):
         idle_timeout: google.protobuf.duration_pb2.Duration | None = ...,
         host_rewrite: builtins.str = ...,
         auto_host_rewrite: builtins.bool = ...,
+        rate_limit: yandex.cloud.apploadbalancer.v1.rate_limit_pb2.RateLimit | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["auto_host_rewrite", b"auto_host_rewrite", "host_rewrite", b"host_rewrite", "host_rewrite_specifier", b"host_rewrite_specifier", "idle_timeout", b"idle_timeout", "max_timeout", b"max_timeout"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["auto_host_rewrite", b"auto_host_rewrite", "backend_group_id", b"backend_group_id", "host_rewrite", b"host_rewrite", "host_rewrite_specifier", b"host_rewrite_specifier", "idle_timeout", b"idle_timeout", "max_timeout", b"max_timeout"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["auto_host_rewrite", b"auto_host_rewrite", "host_rewrite", b"host_rewrite", "host_rewrite_specifier", b"host_rewrite_specifier", "idle_timeout", b"idle_timeout", "max_timeout", b"max_timeout", "rate_limit", b"rate_limit"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["auto_host_rewrite", b"auto_host_rewrite", "backend_group_id", b"backend_group_id", "host_rewrite", b"host_rewrite", "host_rewrite_specifier", b"host_rewrite_specifier", "idle_timeout", b"idle_timeout", "max_timeout", b"max_timeout", "rate_limit", b"rate_limit"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["host_rewrite_specifier", b"host_rewrite_specifier"]) -> typing.Literal["host_rewrite", "auto_host_rewrite"] | None: ...
 
 global___GrpcRouteAction = GrpcRouteAction
