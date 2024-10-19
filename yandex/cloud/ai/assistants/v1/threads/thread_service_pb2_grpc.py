@@ -7,7 +7,8 @@ from yandex.cloud.ai.assistants.v1.threads import thread_service_pb2 as yandex_d
 
 
 class ThreadServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """ThreadService provides operations for managing threads.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -43,34 +44,40 @@ class ThreadServiceStub(object):
 
 
 class ThreadServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """ThreadService provides operations for managing threads.
+    """
 
     def Create(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Create a new thread.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Get(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Retrieve details of a specific thread by its ID.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Update an existing thread.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Delete a thread by its ID.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """List threads in a specific folder.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -111,7 +118,8 @@ def add_ThreadServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class ThreadService(object):
-    """Missing associated documentation comment in .proto file."""
+    """ThreadService provides operations for managing threads.
+    """
 
     @staticmethod
     def Create(request,

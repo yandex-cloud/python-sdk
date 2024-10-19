@@ -78,24 +78,6 @@ class ProjectServiceStub:
     ]
     """Executes code in the specified cell or notebook."""
 
-    GetCellOutputs: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.datasphere.v1.project_service_pb2.CellOutputsRequest,
-        yandex.cloud.datasphere.v1.project_service_pb2.CellOutputsResponse,
-    ]
-    """Returns outputs of the specified cell."""
-
-    GetStateVariables: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.datasphere.v1.project_service_pb2.GetStateVariablesRequest,
-        yandex.cloud.datasphere.v1.project_service_pb2.GetStateVariablesResponse,
-    ]
-    """Returns state variables of the specified notebook."""
-
-    GetNotebookMetadata: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.datasphere.v1.project_service_pb2.GetNotebookMetadataRequest,
-        yandex.cloud.datasphere.v1.project_service_pb2.GetNotebookMetadataResponse,
-    ]
-    """Returns metadata of the specified notebook."""
-
 class ProjectServiceAsyncStub:
     """A set of methods for managing Project resources."""
 
@@ -152,24 +134,6 @@ class ProjectServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Executes code in the specified cell or notebook."""
-
-    GetCellOutputs: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.datasphere.v1.project_service_pb2.CellOutputsRequest,
-        yandex.cloud.datasphere.v1.project_service_pb2.CellOutputsResponse,
-    ]
-    """Returns outputs of the specified cell."""
-
-    GetStateVariables: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.datasphere.v1.project_service_pb2.GetStateVariablesRequest,
-        yandex.cloud.datasphere.v1.project_service_pb2.GetStateVariablesResponse,
-    ]
-    """Returns state variables of the specified notebook."""
-
-    GetNotebookMetadata: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.datasphere.v1.project_service_pb2.GetNotebookMetadataRequest,
-        yandex.cloud.datasphere.v1.project_service_pb2.GetNotebookMetadataResponse,
-    ]
-    """Returns metadata of the specified notebook."""
 
 class ProjectServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing Project resources."""
@@ -245,29 +209,5 @@ class ProjectServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Executes code in the specified cell or notebook."""
-
-    @abc.abstractmethod
-    def GetCellOutputs(
-        self,
-        request: yandex.cloud.datasphere.v1.project_service_pb2.CellOutputsRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.datasphere.v1.project_service_pb2.CellOutputsResponse, collections.abc.Awaitable[yandex.cloud.datasphere.v1.project_service_pb2.CellOutputsResponse]]:
-        """Returns outputs of the specified cell."""
-
-    @abc.abstractmethod
-    def GetStateVariables(
-        self,
-        request: yandex.cloud.datasphere.v1.project_service_pb2.GetStateVariablesRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.datasphere.v1.project_service_pb2.GetStateVariablesResponse, collections.abc.Awaitable[yandex.cloud.datasphere.v1.project_service_pb2.GetStateVariablesResponse]]:
-        """Returns state variables of the specified notebook."""
-
-    @abc.abstractmethod
-    def GetNotebookMetadata(
-        self,
-        request: yandex.cloud.datasphere.v1.project_service_pb2.GetNotebookMetadataRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.datasphere.v1.project_service_pb2.GetNotebookMetadataResponse, collections.abc.Awaitable[yandex.cloud.datasphere.v1.project_service_pb2.GetNotebookMetadataResponse]]:
-        """Returns metadata of the specified notebook."""
 
 def add_ProjectServiceServicer_to_server(servicer: ProjectServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

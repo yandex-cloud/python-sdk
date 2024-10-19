@@ -65,16 +65,6 @@ class ProjectServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_project__service__pb2.ProjectExecutionRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
-        self.GetCellOutputs = channel.unary_unary(
-                '/yandex.cloud.datasphere.v2.ProjectService/GetCellOutputs',
-                request_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_project__service__pb2.CellOutputsRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_project__service__pb2.CellOutputsResponse.FromString,
-                )
-        self.GetStateVariables = channel.unary_unary(
-                '/yandex.cloud.datasphere.v2.ProjectService/GetStateVariables',
-                request_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_project__service__pb2.GetStateVariablesRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_project__service__pb2.GetStateVariablesResponse.FromString,
-                )
         self.ListAccessBindings = channel.unary_unary(
                 '/yandex.cloud.datasphere.v2.ProjectService/ListAccessBindings',
                 request_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.ListAccessBindingsRequest.SerializeToString,
@@ -184,22 +174,6 @@ class ProjectServiceServicer(object):
 
     def Execute(self, request, context):
         """Executes code of the specified notebook using configuration defined in the project settings. If the default project configuration is not specified, `c1.4` is used.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetCellOutputs(self, request, context):
-        """Returns outputs of the specified cell.
-        Deprecated
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetStateVariables(self, request, context):
-        """Returns state variables of the specified notebook.
-        Deprecated
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -315,16 +289,6 @@ def add_ProjectServiceServicer_to_server(servicer, server):
                     servicer.Execute,
                     request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_project__service__pb2.ProjectExecutionRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
-            ),
-            'GetCellOutputs': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetCellOutputs,
-                    request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_project__service__pb2.CellOutputsRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_project__service__pb2.CellOutputsResponse.SerializeToString,
-            ),
-            'GetStateVariables': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetStateVariables,
-                    request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_project__service__pb2.GetStateVariablesRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_datasphere_dot_v2_dot_project__service__pb2.GetStateVariablesResponse.SerializeToString,
             ),
             'ListAccessBindings': grpc.unary_unary_rpc_method_handler(
                     servicer.ListAccessBindings,
@@ -532,40 +496,6 @@ class ProjectService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v2.ProjectService/Execute',
             yandex_dot_cloud_dot_datasphere_dot_v2_dot_project__service__pb2.ProjectExecutionRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def GetCellOutputs(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v2.ProjectService/GetCellOutputs',
-            yandex_dot_cloud_dot_datasphere_dot_v2_dot_project__service__pb2.CellOutputsRequest.SerializeToString,
-            yandex_dot_cloud_dot_datasphere_dot_v2_dot_project__service__pb2.CellOutputsResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def GetStateVariables(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v2.ProjectService/GetStateVariables',
-            yandex_dot_cloud_dot_datasphere_dot_v2_dot_project__service__pb2.GetStateVariablesRequest.SerializeToString,
-            yandex_dot_cloud_dot_datasphere_dot_v2_dot_project__service__pb2.GetStateVariablesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

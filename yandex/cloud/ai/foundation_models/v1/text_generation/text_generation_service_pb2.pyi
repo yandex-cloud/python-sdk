@@ -22,6 +22,7 @@ class CompletionRequest(google.protobuf.message.Message):
     MODEL_URI_FIELD_NUMBER: builtins.int
     COMPLETION_OPTIONS_FIELD_NUMBER: builtins.int
     MESSAGES_FIELD_NUMBER: builtins.int
+    TOOLS_FIELD_NUMBER: builtins.int
     model_uri: builtins.str
     """The [ID of the model](/docs/foundation-models/concepts/yandexgpt/models) to be used for completion generation."""
     @property
@@ -32,15 +33,22 @@ class CompletionRequest(google.protobuf.message.Message):
     def messages(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.ai.foundation_models.v1.text_common_pb2.Message]:
         """A list of messages representing the context for the completion model."""
 
+    @property
+    def tools(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.ai.foundation_models.v1.text_common_pb2.Tool]:
+        """List of tools that are available for the model to invoke during the completion generation.
+        Note: This parameter is not yet supported and will be ignored if provided.
+        """
+
     def __init__(
         self,
         *,
         model_uri: builtins.str = ...,
         completion_options: yandex.cloud.ai.foundation_models.v1.text_common_pb2.CompletionOptions | None = ...,
         messages: collections.abc.Iterable[yandex.cloud.ai.foundation_models.v1.text_common_pb2.Message] | None = ...,
+        tools: collections.abc.Iterable[yandex.cloud.ai.foundation_models.v1.text_common_pb2.Tool] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["completion_options", b"completion_options"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["completion_options", b"completion_options", "messages", b"messages", "model_uri", b"model_uri"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["completion_options", b"completion_options", "messages", b"messages", "model_uri", b"model_uri", "tools", b"tools"]) -> None: ...
 
 global___CompletionRequest = CompletionRequest
 

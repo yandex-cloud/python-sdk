@@ -17,6 +17,8 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class Assistant(google.protobuf.message.Message):
+    """Assistant represents an AI assistant configuration with various settings and metadata."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     @typing.final
@@ -52,29 +54,57 @@ class Assistant(google.protobuf.message.Message):
     COMPLETION_OPTIONS_FIELD_NUMBER: builtins.int
     TOOLS_FIELD_NUMBER: builtins.int
     id: builtins.str
+    """Unique identifier of the assistant."""
     folder_id: builtins.str
+    """ID of the folder that the assistant belongs to."""
     name: builtins.str
+    """Name of the assistant."""
     description: builtins.str
+    """Description of the assistant."""
     created_by: builtins.str
+    """Identifier of the subject who created this assistant."""
     updated_by: builtins.str
+    """Identifier of the subject who last updated this assistant."""
     model_uri: builtins.str
+    """The [ID of the model](/docs/foundation-models/concepts/yandexgpt/models) to be used for completion generation."""
     instruction: builtins.str
+    """Instructions or guidelines that the assistant should follow when generating responses or performing tasks.
+    These instructions can help guide the assistant's behavior and responses.
+    """
     @property
-    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
+    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp representing when the assistant was created."""
+
     @property
-    def updated_at(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
+    def updated_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp representing the last time this assistant was updated."""
+
     @property
-    def expiration_config(self) -> yandex.cloud.ai.common.common_pb2.ExpirationConfig: ...
+    def expiration_config(self) -> yandex.cloud.ai.common.common_pb2.ExpirationConfig:
+        """Configuration for the expiration of the assistant, defining when and how the assistant will expire."""
+
     @property
-    def expires_at(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
+    def expires_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp representing when the assistant will expire."""
+
     @property
-    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Set of key-value pairs that can be used to organize and categorize the assistant."""
+
     @property
-    def prompt_truncation_options(self) -> yandex.cloud.ai.assistants.v1.common_pb2.PromptTruncationOptions: ...
+    def prompt_truncation_options(self) -> yandex.cloud.ai.assistants.v1.common_pb2.PromptTruncationOptions:
+        """Configuration options for truncating the prompt when the token count exceeds a specified limit."""
+
     @property
-    def completion_options(self) -> yandex.cloud.ai.assistants.v1.common_pb2.CompletionOptions: ...
+    def completion_options(self) -> yandex.cloud.ai.assistants.v1.common_pb2.CompletionOptions:
+        """Configuration options for completion generation."""
+
     @property
-    def tools(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.ai.assistants.v1.common_pb2.Tool]: ...
+    def tools(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.ai.assistants.v1.common_pb2.Tool]:
+        """List of tools that the assistant can use to perform additional tasks.
+        One example is the SearchIndexTool, which is used for Retrieval-Augmented Generation (RAG).
+        """
+
     def __init__(
         self,
         *,

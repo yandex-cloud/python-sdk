@@ -7,17 +7,10 @@ import builtins
 import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
-import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
 import google.protobuf.timestamp_pb2
 import google.protobuf.wrappers_pb2
-import sys
 import typing
-
-if sys.version_info >= (3, 10):
-    import typing as typing_extensions
-else:
-    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -31,33 +24,9 @@ class Project(google.protobuf.message.Message):
     class Settings(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-        class _CommitMode:
-            ValueType = typing.NewType("ValueType", builtins.int)
-            V: typing_extensions.TypeAlias = ValueType
-
-        class _CommitModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Project.Settings._CommitMode.ValueType], builtins.type):
-            DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
-            COMMIT_MODE_UNSPECIFIED: Project.Settings._CommitMode.ValueType  # 0
-            STANDARD: Project.Settings._CommitMode.ValueType  # 1
-            """Commit happens after the execution of a cell or group of cells or after completion with an error."""
-            AUTO: Project.Settings._CommitMode.ValueType  # 2
-            """Commit happens periodically.
-            Also, automatic saving of state occurs when switching to another type of computing resource.
-            """
-
-        class CommitMode(_CommitMode, metaclass=_CommitModeEnumTypeWrapper): ...
-        COMMIT_MODE_UNSPECIFIED: Project.Settings.CommitMode.ValueType  # 0
-        STANDARD: Project.Settings.CommitMode.ValueType  # 1
-        """Commit happens after the execution of a cell or group of cells or after completion with an error."""
-        AUTO: Project.Settings.CommitMode.ValueType  # 2
-        """Commit happens periodically.
-        Also, automatic saving of state occurs when switching to another type of computing resource.
-        """
-
         SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
         SUBNET_ID_FIELD_NUMBER: builtins.int
         DATA_PROC_CLUSTER_ID_FIELD_NUMBER: builtins.int
-        COMMIT_MODE_FIELD_NUMBER: builtins.int
         SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
         service_account_id: builtins.str
         """ID of the service account, on whose behalf all operations with clusters will be performed."""
@@ -67,8 +36,6 @@ class Project(google.protobuf.message.Message):
         """
         data_proc_cluster_id: builtins.str
         """ID of the DataProc cluster."""
-        commit_mode: global___Project.Settings.CommitMode.ValueType
-        """Commit mode that is assigned to the project."""
         @property
         def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
             """Network interfaces security groups."""
@@ -79,10 +46,9 @@ class Project(google.protobuf.message.Message):
             service_account_id: builtins.str = ...,
             subnet_id: builtins.str = ...,
             data_proc_cluster_id: builtins.str = ...,
-            commit_mode: global___Project.Settings.CommitMode.ValueType = ...,
             security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         ) -> None: ...
-        def ClearField(self, field_name: typing.Literal["commit_mode", b"commit_mode", "data_proc_cluster_id", b"data_proc_cluster_id", "security_group_ids", b"security_group_ids", "service_account_id", b"service_account_id", "subnet_id", b"subnet_id"]) -> None: ...
+        def ClearField(self, field_name: typing.Literal["data_proc_cluster_id", b"data_proc_cluster_id", "security_group_ids", b"security_group_ids", "service_account_id", b"service_account_id", "subnet_id", b"subnet_id"]) -> None: ...
 
     @typing.final
     class Limits(google.protobuf.message.Message):

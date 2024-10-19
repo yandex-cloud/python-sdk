@@ -7,7 +7,8 @@ from yandex.cloud.ai.assistants.v1.users import user_service_pb2 as yandex_dot_c
 
 
 class UserServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """UserService provides operations for managing users.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -43,34 +44,40 @@ class UserServiceStub(object):
 
 
 class UserServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """UserService provides operations for managing users.
+    """
 
     def Create(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Create a new user.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Get(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Retrieve details of a specific user by its ID.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Update an existing user.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Delete a user by its ID.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """List users in a specific folder.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -111,7 +118,8 @@ def add_UserServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class UserService(object):
-    """Missing associated documentation comment in .proto file."""
+    """UserService provides operations for managing users.
+    """
 
     @staticmethod
     def Create(request,

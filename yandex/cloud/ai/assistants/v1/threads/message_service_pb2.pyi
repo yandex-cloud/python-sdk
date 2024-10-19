@@ -15,6 +15,8 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class CreateMessageRequest(google.protobuf.message.Message):
+    """Request to create a new message in a specific thread."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     @typing.final
@@ -38,12 +40,21 @@ class CreateMessageRequest(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     CONTENT_FIELD_NUMBER: builtins.int
     thread_id: builtins.str
+    """ID of the thread to which the message will be added."""
     @property
-    def author(self) -> yandex.cloud.ai.assistants.v1.threads.message_pb2.Author: ...
+    def author(self) -> yandex.cloud.ai.assistants.v1.threads.message_pb2.Author:
+        """Author of the message, containing details about the message's creator.
+        If not provided, the default author ID specified in the corresponding thread will be used.
+        """
+
     @property
-    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Set of key-value pairs to label the message."""
+
     @property
-    def content(self) -> yandex.cloud.ai.assistants.v1.threads.message_pb2.MessageContent: ...
+    def content(self) -> yandex.cloud.ai.assistants.v1.threads.message_pb2.MessageContent:
+        """Content of the message."""
+
     def __init__(
         self,
         *,
@@ -59,12 +70,16 @@ global___CreateMessageRequest = CreateMessageRequest
 
 @typing.final
 class GetMessageRequest(google.protobuf.message.Message):
+    """Request message for retrieving a message from a thread."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     THREAD_ID_FIELD_NUMBER: builtins.int
     MESSAGE_ID_FIELD_NUMBER: builtins.int
     thread_id: builtins.str
+    """ID of the thread that contains the message."""
     message_id: builtins.str
+    """ID of the message to retrieve."""
     def __init__(
         self,
         *,
@@ -77,10 +92,13 @@ global___GetMessageRequest = GetMessageRequest
 
 @typing.final
 class ListMessagesRequest(google.protobuf.message.Message):
+    """Request message for listing messages in a specific thread."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     THREAD_ID_FIELD_NUMBER: builtins.int
     thread_id: builtins.str
+    """ID of the thread whose messages will be listed."""
     def __init__(
         self,
         *,

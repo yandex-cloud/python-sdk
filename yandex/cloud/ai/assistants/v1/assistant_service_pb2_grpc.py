@@ -7,7 +7,8 @@ from yandex.cloud.ai.assistants.v1 import assistant_service_pb2 as yandex_dot_cl
 
 
 class AssistantServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """AssistantService provides operations for managing assistants.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -48,40 +49,47 @@ class AssistantServiceStub(object):
 
 
 class AssistantServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """AssistantService provides operations for managing assistants.
+    """
 
     def Create(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Create a new assistant.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Get(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Retrieve details of a specific assistant by its ID.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Update an existing assistant.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Delete an assistant by its ID.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """List assistants in a specific folder.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListVersions(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Lists all versions of a specific assistant.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -127,7 +135,8 @@ def add_AssistantServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class AssistantService(object):
-    """Missing associated documentation comment in .proto file."""
+    """AssistantService provides operations for managing assistants.
+    """
 
     @staticmethod
     def Create(request,

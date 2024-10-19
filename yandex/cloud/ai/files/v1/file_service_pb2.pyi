@@ -17,6 +17,8 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class CreateFileRequest(google.protobuf.message.Message):
+    """Request message for creating a new file."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     @typing.final
@@ -44,13 +46,23 @@ class CreateFileRequest(google.protobuf.message.Message):
     EXPIRATION_CONFIG_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     name: builtins.str
+    """Name of the file."""
     description: builtins.str
+    """Description of the file."""
     mime_type: builtins.str
+    """MIME type of the file, indicating the file's format (e.g., "application/pdf").
+    If not specified, will be deduced automatically based on the file content.
+    """
     content: builtins.bytes
+    """Binary content of the file."""
     @property
-    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Set of key-value pairs to label the file."""
+
     @property
-    def expiration_config(self) -> yandex.cloud.ai.common.common_pb2.ExpirationConfig: ...
+    def expiration_config(self) -> yandex.cloud.ai.common.common_pb2.ExpirationConfig:
+        """Expiration configuration for the file."""
+
     def __init__(
         self,
         *,
@@ -69,10 +81,13 @@ global___CreateFileRequest = CreateFileRequest
 
 @typing.final
 class GetFileRequest(google.protobuf.message.Message):
+    """Request message for retrieving a file by ID."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     FILE_ID_FIELD_NUMBER: builtins.int
     file_id: builtins.str
+    """ID of the file to retrieve."""
     def __init__(
         self,
         *,
@@ -84,10 +99,13 @@ global___GetFileRequest = GetFileRequest
 
 @typing.final
 class GetFileUrlRequest(google.protobuf.message.Message):
+    """Request message for retrieving the URL of a specific file."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     FILE_ID_FIELD_NUMBER: builtins.int
     file_id: builtins.str
+    """ID of the file which the URL is requested."""
     def __init__(
         self,
         *,
@@ -99,10 +117,13 @@ global___GetFileUrlRequest = GetFileUrlRequest
 
 @typing.final
 class GetFileUrlResponse(google.protobuf.message.Message):
+    """Response message containing the URL to access the requested file."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     URL_FIELD_NUMBER: builtins.int
     url: builtins.str
+    """URL that can be used to access or download the file."""
     def __init__(
         self,
         *,
@@ -114,6 +135,8 @@ global___GetFileUrlResponse = GetFileUrlResponse
 
 @typing.final
 class UpdateFileRequest(google.protobuf.message.Message):
+    """Request message for updating an existing file."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     @typing.final
@@ -139,14 +162,23 @@ class UpdateFileRequest(google.protobuf.message.Message):
     EXPIRATION_CONFIG_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     file_id: builtins.str
+    """ID of the file to update."""
     name: builtins.str
+    """New name for the file."""
     description: builtins.str
+    """New description for the file."""
     @property
-    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask: ...
+    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
+        """Field mask specifying which fields to update."""
+
     @property
-    def expiration_config(self) -> yandex.cloud.ai.common.common_pb2.ExpirationConfig: ...
+    def expiration_config(self) -> yandex.cloud.ai.common.common_pb2.ExpirationConfig:
+        """New expiration configuration for the file."""
+
     @property
-    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """New set of labels for the file."""
+
     def __init__(
         self,
         *,
@@ -164,10 +196,13 @@ global___UpdateFileRequest = UpdateFileRequest
 
 @typing.final
 class DeleteFileRequest(google.protobuf.message.Message):
+    """Request message for deleting a file by ID."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     FILE_ID_FIELD_NUMBER: builtins.int
     file_id: builtins.str
+    """ID of the file to delete."""
     def __init__(
         self,
         *,
@@ -179,6 +214,8 @@ global___DeleteFileRequest = DeleteFileRequest
 
 @typing.final
 class DeleteFileResponse(google.protobuf.message.Message):
+    """Response message for the delete operation."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     def __init__(
@@ -189,14 +226,19 @@ global___DeleteFileResponse = DeleteFileResponse
 
 @typing.final
 class ListFilesRequest(google.protobuf.message.Message):
+    """Request message for listing files in a specific folder."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     FOLDER_ID_FIELD_NUMBER: builtins.int
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
+    """Folder ID from which to list files."""
     page_size: builtins.int
+    """Maximum number of files to return per page."""
     page_token: builtins.str
+    """Token to retrieve the next page of results."""
     def __init__(
         self,
         *,
@@ -210,13 +252,18 @@ global___ListFilesRequest = ListFilesRequest
 
 @typing.final
 class ListFilesResponse(google.protobuf.message.Message):
+    """Response message for the list operation."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     FILES_FIELD_NUMBER: builtins.int
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
+    """Token to retrieve the next page of results."""
     @property
-    def files(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.ai.files.v1.file_pb2.File]: ...
+    def files(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.ai.files.v1.file_pb2.File]:
+        """List of files in the specified folder."""
+
     def __init__(
         self,
         *,

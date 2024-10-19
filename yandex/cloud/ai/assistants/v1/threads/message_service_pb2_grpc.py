@@ -7,7 +7,8 @@ from yandex.cloud.ai.assistants.v1.threads import message_service_pb2 as yandex_
 
 
 class MessageServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """MessageService provides operations for managing messages.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -33,22 +34,27 @@ class MessageServiceStub(object):
 
 
 class MessageServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """MessageService provides operations for managing messages.
+    """
 
     def Create(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Create a new message.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Get(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Retrieve details of a specific message by its ID.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """List messages in a specific thread.
+        By default, messages are listed in reverse chronological order, i.e., from the newest to the oldest.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -79,7 +85,8 @@ def add_MessageServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class MessageService(object):
-    """Missing associated documentation comment in .proto file."""
+    """MessageService provides operations for managing messages.
+    """
 
     @staticmethod
     def Create(request,

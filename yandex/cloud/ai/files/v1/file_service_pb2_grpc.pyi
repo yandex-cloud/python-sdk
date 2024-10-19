@@ -19,109 +19,133 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class FileServiceStub:
+    """FileService provides operations for managing files."""
+
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Create: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.files.v1.file_service_pb2.CreateFileRequest,
         yandex.cloud.ai.files.v1.file_pb2.File,
     ]
+    """Create a new file."""
 
     Get: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.files.v1.file_service_pb2.GetFileRequest,
         yandex.cloud.ai.files.v1.file_pb2.File,
     ]
+    """Retrieve details of a specific file by its ID."""
 
     GetUrl: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.files.v1.file_service_pb2.GetFileUrlRequest,
         yandex.cloud.ai.files.v1.file_service_pb2.GetFileUrlResponse,
     ]
+    """Retrieve a URL for accessing or downloading a specific file."""
 
     Update: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.files.v1.file_service_pb2.UpdateFileRequest,
         yandex.cloud.ai.files.v1.file_pb2.File,
     ]
+    """Update an existing file."""
 
     Delete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.files.v1.file_service_pb2.DeleteFileRequest,
         yandex.cloud.ai.files.v1.file_service_pb2.DeleteFileResponse,
     ]
+    """Delete a file by its ID."""
 
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.files.v1.file_service_pb2.ListFilesRequest,
         yandex.cloud.ai.files.v1.file_service_pb2.ListFilesResponse,
     ]
+    """List files in a specific folder."""
 
 class FileServiceAsyncStub:
+    """FileService provides operations for managing files."""
+
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.files.v1.file_service_pb2.CreateFileRequest,
         yandex.cloud.ai.files.v1.file_pb2.File,
     ]
+    """Create a new file."""
 
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.files.v1.file_service_pb2.GetFileRequest,
         yandex.cloud.ai.files.v1.file_pb2.File,
     ]
+    """Retrieve details of a specific file by its ID."""
 
     GetUrl: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.files.v1.file_service_pb2.GetFileUrlRequest,
         yandex.cloud.ai.files.v1.file_service_pb2.GetFileUrlResponse,
     ]
+    """Retrieve a URL for accessing or downloading a specific file."""
 
     Update: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.files.v1.file_service_pb2.UpdateFileRequest,
         yandex.cloud.ai.files.v1.file_pb2.File,
     ]
+    """Update an existing file."""
 
     Delete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.files.v1.file_service_pb2.DeleteFileRequest,
         yandex.cloud.ai.files.v1.file_service_pb2.DeleteFileResponse,
     ]
+    """Delete a file by its ID."""
 
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.files.v1.file_service_pb2.ListFilesRequest,
         yandex.cloud.ai.files.v1.file_service_pb2.ListFilesResponse,
     ]
+    """List files in a specific folder."""
 
 class FileServiceServicer(metaclass=abc.ABCMeta):
+    """FileService provides operations for managing files."""
+
     @abc.abstractmethod
     def Create(
         self,
         request: yandex.cloud.ai.files.v1.file_service_pb2.CreateFileRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.files.v1.file_pb2.File, collections.abc.Awaitable[yandex.cloud.ai.files.v1.file_pb2.File]]: ...
+    ) -> typing.Union[yandex.cloud.ai.files.v1.file_pb2.File, collections.abc.Awaitable[yandex.cloud.ai.files.v1.file_pb2.File]]:
+        """Create a new file."""
 
     @abc.abstractmethod
     def Get(
         self,
         request: yandex.cloud.ai.files.v1.file_service_pb2.GetFileRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.files.v1.file_pb2.File, collections.abc.Awaitable[yandex.cloud.ai.files.v1.file_pb2.File]]: ...
+    ) -> typing.Union[yandex.cloud.ai.files.v1.file_pb2.File, collections.abc.Awaitable[yandex.cloud.ai.files.v1.file_pb2.File]]:
+        """Retrieve details of a specific file by its ID."""
 
     @abc.abstractmethod
     def GetUrl(
         self,
         request: yandex.cloud.ai.files.v1.file_service_pb2.GetFileUrlRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.files.v1.file_service_pb2.GetFileUrlResponse, collections.abc.Awaitable[yandex.cloud.ai.files.v1.file_service_pb2.GetFileUrlResponse]]: ...
+    ) -> typing.Union[yandex.cloud.ai.files.v1.file_service_pb2.GetFileUrlResponse, collections.abc.Awaitable[yandex.cloud.ai.files.v1.file_service_pb2.GetFileUrlResponse]]:
+        """Retrieve a URL for accessing or downloading a specific file."""
 
     @abc.abstractmethod
     def Update(
         self,
         request: yandex.cloud.ai.files.v1.file_service_pb2.UpdateFileRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.files.v1.file_pb2.File, collections.abc.Awaitable[yandex.cloud.ai.files.v1.file_pb2.File]]: ...
+    ) -> typing.Union[yandex.cloud.ai.files.v1.file_pb2.File, collections.abc.Awaitable[yandex.cloud.ai.files.v1.file_pb2.File]]:
+        """Update an existing file."""
 
     @abc.abstractmethod
     def Delete(
         self,
         request: yandex.cloud.ai.files.v1.file_service_pb2.DeleteFileRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.files.v1.file_service_pb2.DeleteFileResponse, collections.abc.Awaitable[yandex.cloud.ai.files.v1.file_service_pb2.DeleteFileResponse]]: ...
+    ) -> typing.Union[yandex.cloud.ai.files.v1.file_service_pb2.DeleteFileResponse, collections.abc.Awaitable[yandex.cloud.ai.files.v1.file_service_pb2.DeleteFileResponse]]:
+        """Delete a file by its ID."""
 
     @abc.abstractmethod
     def List(
         self,
         request: yandex.cloud.ai.files.v1.file_service_pb2.ListFilesRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.files.v1.file_service_pb2.ListFilesResponse, collections.abc.Awaitable[yandex.cloud.ai.files.v1.file_service_pb2.ListFilesResponse]]: ...
+    ) -> typing.Union[yandex.cloud.ai.files.v1.file_service_pb2.ListFilesResponse, collections.abc.Awaitable[yandex.cloud.ai.files.v1.file_service_pb2.ListFilesResponse]]:
+        """List files in a specific folder."""
 
 def add_FileServiceServicer_to_server(servicer: FileServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

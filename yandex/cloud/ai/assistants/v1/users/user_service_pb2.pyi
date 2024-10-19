@@ -17,6 +17,8 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class CreateUserRequest(google.protobuf.message.Message):
+    """Request message for creating a new user."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     @typing.final
@@ -43,12 +45,18 @@ class CreateUserRequest(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     name: builtins.str
+    """Name of the user."""
     description: builtins.str
+    """Description of the user."""
     source: builtins.str
     @property
-    def expiration_config(self) -> yandex.cloud.ai.common.common_pb2.ExpirationConfig: ...
+    def expiration_config(self) -> yandex.cloud.ai.common.common_pb2.ExpirationConfig:
+        """Expiration configuration for the user."""
+
     @property
-    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Set of key-value pairs to label the user."""
+
     def __init__(
         self,
         *,
@@ -66,10 +74,13 @@ global___CreateUserRequest = CreateUserRequest
 
 @typing.final
 class GetUserRequest(google.protobuf.message.Message):
+    """Request message for retrieving a user by ID."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     USER_ID_FIELD_NUMBER: builtins.int
     user_id: builtins.str
+    """ID of the user to retrieve."""
     def __init__(
         self,
         *,
@@ -81,6 +92,8 @@ global___GetUserRequest = GetUserRequest
 
 @typing.final
 class UpdateUserRequest(google.protobuf.message.Message):
+    """Request message for updating an existing user."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     @typing.final
@@ -106,14 +119,23 @@ class UpdateUserRequest(google.protobuf.message.Message):
     EXPIRATION_CONFIG_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     user_id: builtins.str
+    """ID of the user to update."""
     name: builtins.str
+    """New name for the user."""
     description: builtins.str
+    """New description for the user."""
     @property
-    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask: ...
+    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
+        """A field mask specifying which fields to update."""
+
     @property
-    def expiration_config(self) -> yandex.cloud.ai.common.common_pb2.ExpirationConfig: ...
+    def expiration_config(self) -> yandex.cloud.ai.common.common_pb2.ExpirationConfig:
+        """New expiration configuration for the user."""
+
     @property
-    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """New set of labels for the user."""
+
     def __init__(
         self,
         *,
@@ -131,10 +153,13 @@ global___UpdateUserRequest = UpdateUserRequest
 
 @typing.final
 class DeleteUserRequest(google.protobuf.message.Message):
+    """Request message for deleting a user by ID."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     USER_ID_FIELD_NUMBER: builtins.int
     user_id: builtins.str
+    """ID of the user to delete."""
     def __init__(
         self,
         *,
@@ -146,6 +171,8 @@ global___DeleteUserRequest = DeleteUserRequest
 
 @typing.final
 class DeleteUserResponse(google.protobuf.message.Message):
+    """Response message for the delete operation."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     def __init__(
@@ -156,14 +183,19 @@ global___DeleteUserResponse = DeleteUserResponse
 
 @typing.final
 class ListUsersRequest(google.protobuf.message.Message):
+    """Request message for listing users in a specific folder."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     FOLDER_ID_FIELD_NUMBER: builtins.int
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
+    """Folder ID from which to list users."""
     page_size: builtins.int
+    """Maximum number of users to return per page."""
     page_token: builtins.str
+    """Token to retrieve the next page of results."""
     def __init__(
         self,
         *,
@@ -177,13 +209,18 @@ global___ListUsersRequest = ListUsersRequest
 
 @typing.final
 class ListUsersResponse(google.protobuf.message.Message):
+    """Response message for the list operation."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     USERS_FIELD_NUMBER: builtins.int
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
+    """Token to retrieve the next page of results."""
     @property
-    def users(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.ai.assistants.v1.users.user_pb2.User]: ...
+    def users(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.ai.assistants.v1.users.user_pb2.User]:
+        """List of users in the specified folder."""
+
     def __init__(
         self,
         *,

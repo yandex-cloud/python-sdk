@@ -63,21 +63,6 @@ class ProjectServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__service__pb2.ProjectExecutionRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
-        self.GetCellOutputs = channel.unary_unary(
-                '/yandex.cloud.datasphere.v1.ProjectService/GetCellOutputs',
-                request_serializer=yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__service__pb2.CellOutputsRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__service__pb2.CellOutputsResponse.FromString,
-                )
-        self.GetStateVariables = channel.unary_unary(
-                '/yandex.cloud.datasphere.v1.ProjectService/GetStateVariables',
-                request_serializer=yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__service__pb2.GetStateVariablesRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__service__pb2.GetStateVariablesResponse.FromString,
-                )
-        self.GetNotebookMetadata = channel.unary_unary(
-                '/yandex.cloud.datasphere.v1.ProjectService/GetNotebookMetadata',
-                request_serializer=yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__service__pb2.GetNotebookMetadataRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__service__pb2.GetNotebookMetadataResponse.FromString,
-                )
 
 
 class ProjectServiceServicer(object):
@@ -147,27 +132,6 @@ class ProjectServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GetCellOutputs(self, request, context):
-        """Returns outputs of the specified cell.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetStateVariables(self, request, context):
-        """Returns state variables of the specified notebook.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetNotebookMetadata(self, request, context):
-        """Returns metadata of the specified notebook.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
 
 def add_ProjectServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -215,21 +179,6 @@ def add_ProjectServiceServicer_to_server(servicer, server):
                     servicer.Execute,
                     request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__service__pb2.ProjectExecutionRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
-            ),
-            'GetCellOutputs': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetCellOutputs,
-                    request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__service__pb2.CellOutputsRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__service__pb2.CellOutputsResponse.SerializeToString,
-            ),
-            'GetStateVariables': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetStateVariables,
-                    request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__service__pb2.GetStateVariablesRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__service__pb2.GetStateVariablesResponse.SerializeToString,
-            ),
-            'GetNotebookMetadata': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetNotebookMetadata,
-                    request_deserializer=yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__service__pb2.GetNotebookMetadataRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__service__pb2.GetNotebookMetadataResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -392,56 +341,5 @@ class ProjectService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v1.ProjectService/Execute',
             yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__service__pb2.ProjectExecutionRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def GetCellOutputs(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v1.ProjectService/GetCellOutputs',
-            yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__service__pb2.CellOutputsRequest.SerializeToString,
-            yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__service__pb2.CellOutputsResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def GetStateVariables(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v1.ProjectService/GetStateVariables',
-            yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__service__pb2.GetStateVariablesRequest.SerializeToString,
-            yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__service__pb2.GetStateVariablesResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def GetNotebookMetadata(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.datasphere.v1.ProjectService/GetNotebookMetadata',
-            yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__service__pb2.GetNotebookMetadataRequest.SerializeToString,
-            yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__service__pb2.GetNotebookMetadataResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

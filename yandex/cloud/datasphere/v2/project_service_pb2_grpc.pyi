@@ -80,22 +80,6 @@ class ProjectServiceStub:
     ]
     """Executes code of the specified notebook using configuration defined in the project settings. If the default project configuration is not specified, `c1.4` is used."""
 
-    GetCellOutputs: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.datasphere.v2.project_service_pb2.CellOutputsRequest,
-        yandex.cloud.datasphere.v2.project_service_pb2.CellOutputsResponse,
-    ]
-    """Returns outputs of the specified cell.
-    Deprecated
-    """
-
-    GetStateVariables: grpc.UnaryUnaryMultiCallable[
-        yandex.cloud.datasphere.v2.project_service_pb2.GetStateVariablesRequest,
-        yandex.cloud.datasphere.v2.project_service_pb2.GetStateVariablesResponse,
-    ]
-    """Returns state variables of the specified notebook.
-    Deprecated
-    """
-
     ListAccessBindings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
@@ -206,22 +190,6 @@ class ProjectServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Executes code of the specified notebook using configuration defined in the project settings. If the default project configuration is not specified, `c1.4` is used."""
-
-    GetCellOutputs: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.datasphere.v2.project_service_pb2.CellOutputsRequest,
-        yandex.cloud.datasphere.v2.project_service_pb2.CellOutputsResponse,
-    ]
-    """Returns outputs of the specified cell.
-    Deprecated
-    """
-
-    GetStateVariables: grpc.aio.UnaryUnaryMultiCallable[
-        yandex.cloud.datasphere.v2.project_service_pb2.GetStateVariablesRequest,
-        yandex.cloud.datasphere.v2.project_service_pb2.GetStateVariablesResponse,
-    ]
-    """Returns state variables of the specified notebook.
-    Deprecated
-    """
 
     ListAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
@@ -351,26 +319,6 @@ class ProjectServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Executes code of the specified notebook using configuration defined in the project settings. If the default project configuration is not specified, `c1.4` is used."""
-
-    @abc.abstractmethod
-    def GetCellOutputs(
-        self,
-        request: yandex.cloud.datasphere.v2.project_service_pb2.CellOutputsRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.datasphere.v2.project_service_pb2.CellOutputsResponse, collections.abc.Awaitable[yandex.cloud.datasphere.v2.project_service_pb2.CellOutputsResponse]]:
-        """Returns outputs of the specified cell.
-        Deprecated
-        """
-
-    @abc.abstractmethod
-    def GetStateVariables(
-        self,
-        request: yandex.cloud.datasphere.v2.project_service_pb2.GetStateVariablesRequest,
-        context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.datasphere.v2.project_service_pb2.GetStateVariablesResponse, collections.abc.Awaitable[yandex.cloud.datasphere.v2.project_service_pb2.GetStateVariablesResponse]]:
-        """Returns state variables of the specified notebook.
-        Deprecated
-        """
 
     @abc.abstractmethod
     def ListAccessBindings(

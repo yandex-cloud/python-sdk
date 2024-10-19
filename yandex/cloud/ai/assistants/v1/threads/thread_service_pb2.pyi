@@ -18,6 +18,8 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class CreateThreadRequest(google.protobuf.message.Message):
+    """Request message for creating a new thread."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     @typing.final
@@ -45,14 +47,23 @@ class CreateThreadRequest(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     name: builtins.str
+    """Name of the thread."""
     description: builtins.str
+    """Description of the thread."""
     default_message_author_id: builtins.str
+    """Default user ID that will be used as the author for thread messages if no other author is specified."""
     @property
-    def messages(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.ai.assistants.v1.threads.message_pb2.MessageData]: ...
+    def messages(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.ai.assistants.v1.threads.message_pb2.MessageData]:
+        """List of messages to initialize the thread."""
+
     @property
-    def expiration_config(self) -> yandex.cloud.ai.common.common_pb2.ExpirationConfig: ...
+    def expiration_config(self) -> yandex.cloud.ai.common.common_pb2.ExpirationConfig:
+        """Expiration configuration for the thread."""
+
     @property
-    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Set of key-value pairs to label the thread."""
+
     def __init__(
         self,
         *,
@@ -71,10 +82,13 @@ global___CreateThreadRequest = CreateThreadRequest
 
 @typing.final
 class GetThreadRequest(google.protobuf.message.Message):
+    """Request message for retrieving a thread by ID."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     THREAD_ID_FIELD_NUMBER: builtins.int
     thread_id: builtins.str
+    """ID of the thread to retrieve."""
     def __init__(
         self,
         *,
@@ -86,6 +100,8 @@ global___GetThreadRequest = GetThreadRequest
 
 @typing.final
 class UpdateThreadRequest(google.protobuf.message.Message):
+    """Request message for updating an existing thread."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     @typing.final
@@ -111,14 +127,23 @@ class UpdateThreadRequest(google.protobuf.message.Message):
     EXPIRATION_CONFIG_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     thread_id: builtins.str
+    """ID of the thread to update."""
     name: builtins.str
+    """New name for the thread."""
     description: builtins.str
+    """New description for the thread."""
     @property
-    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask: ...
+    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
+        """Field mask specifying which fields to update."""
+
     @property
-    def expiration_config(self) -> yandex.cloud.ai.common.common_pb2.ExpirationConfig: ...
+    def expiration_config(self) -> yandex.cloud.ai.common.common_pb2.ExpirationConfig:
+        """New expiration configuration for the thread."""
+
     @property
-    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """New set of labels for the thread."""
+
     def __init__(
         self,
         *,
@@ -136,10 +161,13 @@ global___UpdateThreadRequest = UpdateThreadRequest
 
 @typing.final
 class DeleteThreadRequest(google.protobuf.message.Message):
+    """Request message for deleting a thread by ID."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     THREAD_ID_FIELD_NUMBER: builtins.int
     thread_id: builtins.str
+    """ID of the thread to delete."""
     def __init__(
         self,
         *,
@@ -151,6 +179,8 @@ global___DeleteThreadRequest = DeleteThreadRequest
 
 @typing.final
 class DeleteThreadResponse(google.protobuf.message.Message):
+    """Response message for the delete operation."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     def __init__(
@@ -161,14 +191,19 @@ global___DeleteThreadResponse = DeleteThreadResponse
 
 @typing.final
 class ListThreadsRequest(google.protobuf.message.Message):
+    """Request message for listing threads in a specific folder."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     FOLDER_ID_FIELD_NUMBER: builtins.int
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
+    """Folder ID from which to list threads."""
     page_size: builtins.int
+    """Maximum number of threads to return per page."""
     page_token: builtins.str
+    """Token to retrieve the next page of results."""
     def __init__(
         self,
         *,
@@ -182,13 +217,18 @@ global___ListThreadsRequest = ListThreadsRequest
 
 @typing.final
 class ListThreadsResponse(google.protobuf.message.Message):
+    """Response message for the list operation."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     THREADS_FIELD_NUMBER: builtins.int
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
+    """Token to retrieve the next page of results."""
     @property
-    def threads(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.ai.assistants.v1.threads.thread_pb2.Thread]: ...
+    def threads(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.ai.assistants.v1.threads.thread_pb2.Thread]:
+        """List of threads in the specified folder."""
+
     def __init__(
         self,
         *,

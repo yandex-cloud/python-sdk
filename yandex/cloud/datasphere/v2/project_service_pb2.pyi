@@ -11,7 +11,6 @@ import google.protobuf.internal.containers
 import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
 import google.protobuf.struct_pb2
-import google.protobuf.timestamp_pb2
 import google.protobuf.wrappers_pb2
 import sys
 import typing
@@ -282,8 +281,6 @@ class OpenProjectMetadata(google.protobuf.message.Message):
         """Allocating resources for the project."""
         OPEN_PROJECT_STATUS_STARTING_IDE: OpenProjectMetadata._OpenProjectStatus.ValueType  # 5
         """Starting IDE."""
-        OPEN_PROJECT_STATUS_APPLYING_CHECKPOINT: OpenProjectMetadata._OpenProjectStatus.ValueType  # 6
-        """Applying checkpoint to project."""
         OPEN_PROJECT_STATUS_UNKNOWN: OpenProjectMetadata._OpenProjectStatus.ValueType  # 7
         """Unknown open project status."""
 
@@ -299,8 +296,6 @@ class OpenProjectMetadata(google.protobuf.message.Message):
     """Allocating resources for the project."""
     OPEN_PROJECT_STATUS_STARTING_IDE: OpenProjectMetadata.OpenProjectStatus.ValueType  # 5
     """Starting IDE."""
-    OPEN_PROJECT_STATUS_APPLYING_CHECKPOINT: OpenProjectMetadata.OpenProjectStatus.ValueType  # 6
-    """Applying checkpoint to project."""
     OPEN_PROJECT_STATUS_UNKNOWN: OpenProjectMetadata.OpenProjectStatus.ValueType  # 7
     """Unknown open project status."""
 
@@ -587,130 +582,17 @@ global___ProjectExecutionMetadata = ProjectExecutionMetadata
 class ProjectExecutionResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    CHECKPOINT_ID_FIELD_NUMBER: builtins.int
-    OUTPUT_VARIABLES_FIELD_NUMBER: builtins.int
     EXECUTION_STATUS_FIELD_NUMBER: builtins.int
-    checkpoint_id: builtins.str
-    """ID of the checkpoint resulting from the execution.
-    <project_id>/checkpoint/<uuid>
-    """
     execution_status: global___ExecutionStatus.ValueType
     """Execution final status."""
-    @property
-    def output_variables(self) -> google.protobuf.struct_pb2.Struct:
-        """Values of output variables resulting from the execution.
-        Deprecated
-        """
-
     def __init__(
         self,
         *,
-        checkpoint_id: builtins.str = ...,
-        output_variables: google.protobuf.struct_pb2.Struct | None = ...,
         execution_status: global___ExecutionStatus.ValueType = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["output_variables", b"output_variables"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["checkpoint_id", b"checkpoint_id", "execution_status", b"execution_status", "output_variables", b"output_variables"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["execution_status", b"execution_status"]) -> None: ...
 
 global___ProjectExecutionResponse = ProjectExecutionResponse
-
-@typing.final
-class CellOutputsRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    PROJECT_ID_FIELD_NUMBER: builtins.int
-    CELL_ID_FIELD_NUMBER: builtins.int
-    CHECKPOINT_ID_FIELD_NUMBER: builtins.int
-    START_AT_FIELD_NUMBER: builtins.int
-    project_id: builtins.str
-    """ID of the project to return cell outputs for."""
-    cell_id: builtins.str
-    """ID of the cell to return outputs for."""
-    checkpoint_id: builtins.str
-    """ID of the checkpoint to return cell outputs for."""
-    @property
-    def start_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Timestamp from which to return outputs."""
-
-    def __init__(
-        self,
-        *,
-        project_id: builtins.str = ...,
-        cell_id: builtins.str = ...,
-        checkpoint_id: builtins.str = ...,
-        start_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["start_at", b"start_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cell_id", b"cell_id", "checkpoint_id", b"checkpoint_id", "project_id", b"project_id", "start_at", b"start_at"]) -> None: ...
-
-global___CellOutputsRequest = CellOutputsRequest
-
-@typing.final
-class CellOutputsResponse(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    OUTPUTS_FIELD_NUMBER: builtins.int
-    @property
-    def outputs(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """List of outputs."""
-
-    def __init__(
-        self,
-        *,
-        outputs: collections.abc.Iterable[builtins.str] | None = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["outputs", b"outputs"]) -> None: ...
-
-global___CellOutputsResponse = CellOutputsResponse
-
-@typing.final
-class GetStateVariablesRequest(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    PROJECT_ID_FIELD_NUMBER: builtins.int
-    NOTEBOOK_ID_FIELD_NUMBER: builtins.int
-    VARIABLE_NAMES_FIELD_NUMBER: builtins.int
-    CHECKPOINT_ID_FIELD_NUMBER: builtins.int
-    project_id: builtins.str
-    """ID of the project, for which to return state variables."""
-    notebook_id: builtins.str
-    """ID of the notebook, for which to return state variables."""
-    checkpoint_id: builtins.str
-    """ID of the checkpoint, for which to return state variables."""
-    @property
-    def variable_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Names of variables to return."""
-
-    def __init__(
-        self,
-        *,
-        project_id: builtins.str = ...,
-        notebook_id: builtins.str = ...,
-        variable_names: collections.abc.Iterable[builtins.str] | None = ...,
-        checkpoint_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["checkpoint_id", b"checkpoint_id", "notebook_id", b"notebook_id", "project_id", b"project_id", "variable_names", b"variable_names"]) -> None: ...
-
-global___GetStateVariablesRequest = GetStateVariablesRequest
-
-@typing.final
-class GetStateVariablesResponse(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    VARIABLES_FIELD_NUMBER: builtins.int
-    @property
-    def variables(self) -> google.protobuf.struct_pb2.Struct:
-        """Values of the specified variables."""
-
-    def __init__(
-        self,
-        *,
-        variables: google.protobuf.struct_pb2.Struct | None = ...,
-    ) -> None: ...
-    def HasField(self, field_name: typing.Literal["variables", b"variables"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["variables", b"variables"]) -> None: ...
-
-global___GetStateVariablesResponse = GetStateVariablesResponse
 
 @typing.final
 class SetProjectAccessBindingsMetadata(google.protobuf.message.Message):

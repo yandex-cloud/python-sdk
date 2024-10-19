@@ -19,109 +19,133 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class AssistantServiceStub:
+    """AssistantService provides operations for managing assistants."""
+
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Create: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.assistant_service_pb2.CreateAssistantRequest,
         yandex.cloud.ai.assistants.v1.assistant_pb2.Assistant,
     ]
+    """Create a new assistant."""
 
     Get: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.assistant_service_pb2.GetAssistantRequest,
         yandex.cloud.ai.assistants.v1.assistant_pb2.Assistant,
     ]
+    """Retrieve details of a specific assistant by its ID."""
 
     Update: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.assistant_service_pb2.UpdateAssistantRequest,
         yandex.cloud.ai.assistants.v1.assistant_pb2.Assistant,
     ]
+    """Update an existing assistant."""
 
     Delete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.assistant_service_pb2.DeleteAssistantRequest,
         yandex.cloud.ai.assistants.v1.assistant_service_pb2.DeleteAssistantResponse,
     ]
+    """Delete an assistant by its ID."""
 
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.assistant_service_pb2.ListAssistantsRequest,
         yandex.cloud.ai.assistants.v1.assistant_service_pb2.ListAssistantsResponse,
     ]
+    """List assistants in a specific folder."""
 
     ListVersions: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.assistant_service_pb2.ListAssistantVersionsRequest,
         yandex.cloud.ai.assistants.v1.assistant_service_pb2.ListAssistantVersionsResponse,
     ]
+    """Lists all versions of a specific assistant."""
 
 class AssistantServiceAsyncStub:
+    """AssistantService provides operations for managing assistants."""
+
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.assistant_service_pb2.CreateAssistantRequest,
         yandex.cloud.ai.assistants.v1.assistant_pb2.Assistant,
     ]
+    """Create a new assistant."""
 
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.assistant_service_pb2.GetAssistantRequest,
         yandex.cloud.ai.assistants.v1.assistant_pb2.Assistant,
     ]
+    """Retrieve details of a specific assistant by its ID."""
 
     Update: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.assistant_service_pb2.UpdateAssistantRequest,
         yandex.cloud.ai.assistants.v1.assistant_pb2.Assistant,
     ]
+    """Update an existing assistant."""
 
     Delete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.assistant_service_pb2.DeleteAssistantRequest,
         yandex.cloud.ai.assistants.v1.assistant_service_pb2.DeleteAssistantResponse,
     ]
+    """Delete an assistant by its ID."""
 
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.assistant_service_pb2.ListAssistantsRequest,
         yandex.cloud.ai.assistants.v1.assistant_service_pb2.ListAssistantsResponse,
     ]
+    """List assistants in a specific folder."""
 
     ListVersions: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.assistant_service_pb2.ListAssistantVersionsRequest,
         yandex.cloud.ai.assistants.v1.assistant_service_pb2.ListAssistantVersionsResponse,
     ]
+    """Lists all versions of a specific assistant."""
 
 class AssistantServiceServicer(metaclass=abc.ABCMeta):
+    """AssistantService provides operations for managing assistants."""
+
     @abc.abstractmethod
     def Create(
         self,
         request: yandex.cloud.ai.assistants.v1.assistant_service_pb2.CreateAssistantRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.assistants.v1.assistant_pb2.Assistant, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.assistant_pb2.Assistant]]: ...
+    ) -> typing.Union[yandex.cloud.ai.assistants.v1.assistant_pb2.Assistant, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.assistant_pb2.Assistant]]:
+        """Create a new assistant."""
 
     @abc.abstractmethod
     def Get(
         self,
         request: yandex.cloud.ai.assistants.v1.assistant_service_pb2.GetAssistantRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.assistants.v1.assistant_pb2.Assistant, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.assistant_pb2.Assistant]]: ...
+    ) -> typing.Union[yandex.cloud.ai.assistants.v1.assistant_pb2.Assistant, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.assistant_pb2.Assistant]]:
+        """Retrieve details of a specific assistant by its ID."""
 
     @abc.abstractmethod
     def Update(
         self,
         request: yandex.cloud.ai.assistants.v1.assistant_service_pb2.UpdateAssistantRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.assistants.v1.assistant_pb2.Assistant, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.assistant_pb2.Assistant]]: ...
+    ) -> typing.Union[yandex.cloud.ai.assistants.v1.assistant_pb2.Assistant, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.assistant_pb2.Assistant]]:
+        """Update an existing assistant."""
 
     @abc.abstractmethod
     def Delete(
         self,
         request: yandex.cloud.ai.assistants.v1.assistant_service_pb2.DeleteAssistantRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.assistants.v1.assistant_service_pb2.DeleteAssistantResponse, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.assistant_service_pb2.DeleteAssistantResponse]]: ...
+    ) -> typing.Union[yandex.cloud.ai.assistants.v1.assistant_service_pb2.DeleteAssistantResponse, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.assistant_service_pb2.DeleteAssistantResponse]]:
+        """Delete an assistant by its ID."""
 
     @abc.abstractmethod
     def List(
         self,
         request: yandex.cloud.ai.assistants.v1.assistant_service_pb2.ListAssistantsRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.assistants.v1.assistant_service_pb2.ListAssistantsResponse, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.assistant_service_pb2.ListAssistantsResponse]]: ...
+    ) -> typing.Union[yandex.cloud.ai.assistants.v1.assistant_service_pb2.ListAssistantsResponse, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.assistant_service_pb2.ListAssistantsResponse]]:
+        """List assistants in a specific folder."""
 
     @abc.abstractmethod
     def ListVersions(
         self,
         request: yandex.cloud.ai.assistants.v1.assistant_service_pb2.ListAssistantVersionsRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.assistants.v1.assistant_service_pb2.ListAssistantVersionsResponse, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.assistant_service_pb2.ListAssistantVersionsResponse]]: ...
+    ) -> typing.Union[yandex.cloud.ai.assistants.v1.assistant_service_pb2.ListAssistantVersionsResponse, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.assistant_service_pb2.ListAssistantVersionsResponse]]:
+        """Lists all versions of a specific assistant."""
 
 def add_AssistantServiceServicer_to_server(servicer: AssistantServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

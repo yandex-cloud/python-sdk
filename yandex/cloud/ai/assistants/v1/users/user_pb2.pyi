@@ -47,22 +47,38 @@ class User(google.protobuf.message.Message):
     EXPIRES_AT_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     id: builtins.str
+    """Unique identifier of the user."""
     folder_id: builtins.str
+    """ID of the folder that the user belongs to."""
     name: builtins.str
+    """Name of the user."""
     description: builtins.str
+    """Description of the user."""
     source: builtins.str
     created_by: builtins.str
+    """Identifier of the subject who created this user."""
     updated_by: builtins.str
+    """Identifier of the subject who last updated this user."""
     @property
-    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
+    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp representing when the user was created."""
+
     @property
-    def updated_at(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
+    def updated_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp representing the last time this user was updated."""
+
     @property
-    def expiration_config(self) -> yandex.cloud.ai.common.common_pb2.ExpirationConfig: ...
+    def expiration_config(self) -> yandex.cloud.ai.common.common_pb2.ExpirationConfig:
+        """Configuration for the expiration of the user, defining when and how the user will expire."""
+
     @property
-    def expires_at(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
+    def expires_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp representing when the user will expire."""
+
     @property
-    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Set of key-value pairs that can be used to organize and categorize the user."""
+
     def __init__(
         self,
         *,

@@ -32,29 +32,6 @@ class Project(google.protobuf.message.Message):
     class Settings(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-        class _CommitMode:
-            ValueType = typing.NewType("ValueType", builtins.int)
-            V: typing_extensions.TypeAlias = ValueType
-
-        class _CommitModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Project.Settings._CommitMode.ValueType], builtins.type):
-            DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
-            COMMIT_MODE_UNSPECIFIED: Project.Settings._CommitMode.ValueType  # 0
-            STANDARD: Project.Settings._CommitMode.ValueType  # 1
-            """Commit happens after the execution of a cell or group of cells or after completion with an error."""
-            AUTO: Project.Settings._CommitMode.ValueType  # 2
-            """Commit happens periodically.
-            Also, automatic saving of state occurs when switching to another type of computing resource.
-            """
-
-        class CommitMode(_CommitMode, metaclass=_CommitModeEnumTypeWrapper): ...
-        COMMIT_MODE_UNSPECIFIED: Project.Settings.CommitMode.ValueType  # 0
-        STANDARD: Project.Settings.CommitMode.ValueType  # 1
-        """Commit happens after the execution of a cell or group of cells or after completion with an error."""
-        AUTO: Project.Settings.CommitMode.ValueType  # 2
-        """Commit happens periodically.
-        Also, automatic saving of state occurs when switching to another type of computing resource.
-        """
-
         class _Ide:
             ValueType = typing.NewType("ValueType", builtins.int)
             V: typing_extensions.TypeAlias = ValueType
@@ -93,39 +70,14 @@ class Project(google.protobuf.message.Message):
         NO_TIMEOUT: Project.Settings.StaleExecutionTimeoutMode.ValueType  # 3
         """Setting to never automatically stop stale executions."""
 
-        class _IdeExecutionMode:
-            ValueType = typing.NewType("ValueType", builtins.int)
-            V: typing_extensions.TypeAlias = ValueType
-
-        class _IdeExecutionModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Project.Settings._IdeExecutionMode.ValueType], builtins.type):
-            DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
-            IDE_EXECUTION_MODE_UNSPECIFIED: Project.Settings._IdeExecutionMode.ValueType  # 0
-            SERVERLESS: Project.Settings._IdeExecutionMode.ValueType  # 1
-            """VM is allocated for specific execution and deallocated after the execution ends."""
-            DEDICATED: Project.Settings._IdeExecutionMode.ValueType  # 2
-            """VM is allocated at the first execution and stays allocated until manually deallocated.
-            Or until timeout exceeded.
-            """
-
-        class IdeExecutionMode(_IdeExecutionMode, metaclass=_IdeExecutionModeEnumTypeWrapper): ...
-        IDE_EXECUTION_MODE_UNSPECIFIED: Project.Settings.IdeExecutionMode.ValueType  # 0
-        SERVERLESS: Project.Settings.IdeExecutionMode.ValueType  # 1
-        """VM is allocated for specific execution and deallocated after the execution ends."""
-        DEDICATED: Project.Settings.IdeExecutionMode.ValueType  # 2
-        """VM is allocated at the first execution and stays allocated until manually deallocated.
-        Or until timeout exceeded.
-        """
-
         SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
         SUBNET_ID_FIELD_NUMBER: builtins.int
         DATA_PROC_CLUSTER_ID_FIELD_NUMBER: builtins.int
-        COMMIT_MODE_FIELD_NUMBER: builtins.int
         SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
         EARLY_ACCESS_FIELD_NUMBER: builtins.int
         IDE_FIELD_NUMBER: builtins.int
         DEFAULT_FOLDER_ID_FIELD_NUMBER: builtins.int
         STALE_EXEC_TIMEOUT_MODE_FIELD_NUMBER: builtins.int
-        IDE_EXECUTION_MODE_FIELD_NUMBER: builtins.int
         VM_INACTIVITY_TIMEOUT_FIELD_NUMBER: builtins.int
         DEFAULT_DEDICATED_SPEC_FIELD_NUMBER: builtins.int
         service_account_id: builtins.str
@@ -136,8 +88,6 @@ class Project(google.protobuf.message.Message):
         """
         data_proc_cluster_id: builtins.str
         """ID of the DataProc cluster."""
-        commit_mode: global___Project.Settings.CommitMode.ValueType
-        """Commit mode that is assigned to the project."""
         early_access: builtins.bool
         """Is early access preview enabled for the project."""
         ide: global___Project.Settings.Ide.ValueType
@@ -146,8 +96,6 @@ class Project(google.protobuf.message.Message):
         """Default project folder ID."""
         stale_exec_timeout_mode: global___Project.Settings.StaleExecutionTimeoutMode.ValueType
         """Timeout to automatically stop stale executions."""
-        ide_execution_mode: global___Project.Settings.IdeExecutionMode.ValueType
-        """VM allocation mode."""
         default_dedicated_spec: builtins.str
         """Default VM configuration for DEDICATED mode."""
         @property
@@ -164,18 +112,16 @@ class Project(google.protobuf.message.Message):
             service_account_id: builtins.str = ...,
             subnet_id: builtins.str = ...,
             data_proc_cluster_id: builtins.str = ...,
-            commit_mode: global___Project.Settings.CommitMode.ValueType = ...,
             security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
             early_access: builtins.bool = ...,
             ide: global___Project.Settings.Ide.ValueType = ...,
             default_folder_id: builtins.str = ...,
             stale_exec_timeout_mode: global___Project.Settings.StaleExecutionTimeoutMode.ValueType = ...,
-            ide_execution_mode: global___Project.Settings.IdeExecutionMode.ValueType = ...,
             vm_inactivity_timeout: google.protobuf.duration_pb2.Duration | None = ...,
             default_dedicated_spec: builtins.str = ...,
         ) -> None: ...
         def HasField(self, field_name: typing.Literal["vm_inactivity_timeout", b"vm_inactivity_timeout"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["commit_mode", b"commit_mode", "data_proc_cluster_id", b"data_proc_cluster_id", "default_dedicated_spec", b"default_dedicated_spec", "default_folder_id", b"default_folder_id", "early_access", b"early_access", "ide", b"ide", "ide_execution_mode", b"ide_execution_mode", "security_group_ids", b"security_group_ids", "service_account_id", b"service_account_id", "stale_exec_timeout_mode", b"stale_exec_timeout_mode", "subnet_id", b"subnet_id", "vm_inactivity_timeout", b"vm_inactivity_timeout"]) -> None: ...
+        def ClearField(self, field_name: typing.Literal["data_proc_cluster_id", b"data_proc_cluster_id", "default_dedicated_spec", b"default_dedicated_spec", "default_folder_id", b"default_folder_id", "early_access", b"early_access", "ide", b"ide", "security_group_ids", b"security_group_ids", "service_account_id", b"service_account_id", "stale_exec_timeout_mode", b"stale_exec_timeout_mode", "subnet_id", b"subnet_id", "vm_inactivity_timeout", b"vm_inactivity_timeout"]) -> None: ...
 
     @typing.final
     class Limits(google.protobuf.message.Message):

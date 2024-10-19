@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n/yandex/cloud/datasphere/v2/resource_types.proto\x12\x1ayandex.cloud.datasphere.v2*\x95\x02\n\x0cResourceType\x12\x1d\n\x19RESOURCE_TYPE_UNSPECIFIED\x10\x00\x12%\n!RESOURCE_TYPE_UNPINNED_CHECKPOINT\x10\x01\x12\x18\n\x14RESOURCE_TYPE_SECRET\x10\x02\x12\x1e\n\x1aRESOURCE_TYPE_DOCKER_IMAGE\x10\x03\x12\x19\n\x15RESOURCE_TYPE_DATASET\x10\x04\x12\x14\n\x10RESOURCE_TYPE_S3\x10\x05\x12\x16\n\x12RESOURCE_TYPE_NODE\x10\x06\x12#\n\x1fRESOURCE_TYPE_PINNED_CHECKPOINT\x10\x07\x12\x17\n\x13RESOURCE_TYPE_ALIAS\x10\x08\x42|\n\x1eyandex.cloud.api.datasphere.v2B\x0f\x44sResourceTypesZIgithub.com/yandex-cloud/go-genproto/yandex/cloud/datasphere/v2;datasphereb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n/yandex/cloud/datasphere/v2/resource_types.proto\x12\x1ayandex.cloud.datasphere.v2*\xd5\x01\n\x0cResourceType\x12\x1d\n\x19RESOURCE_TYPE_UNSPECIFIED\x10\x00\x12\x18\n\x14RESOURCE_TYPE_SECRET\x10\x02\x12\x1e\n\x1aRESOURCE_TYPE_DOCKER_IMAGE\x10\x03\x12\x19\n\x15RESOURCE_TYPE_DATASET\x10\x04\x12\x14\n\x10RESOURCE_TYPE_S3\x10\x05\x12\x16\n\x12RESOURCE_TYPE_NODE\x10\x06\x12\x17\n\x13RESOURCE_TYPE_ALIAS\x10\x08\"\x04\x08\x01\x10\x01\"\x04\x08\x07\x10\x07\x42|\n\x1eyandex.cloud.api.datasphere.v2B\x0f\x44sResourceTypesZIgithub.com/yandex-cloud/go-genproto/yandex/cloud/datasphere/v2;datasphereb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -22,5 +22,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\036yandex.cloud.api.datasphere.v2B\017DsResourceTypesZIgithub.com/yandex-cloud/go-genproto/yandex/cloud/datasphere/v2;datasphere'
   _globals['_RESOURCETYPE']._serialized_start=80
-  _globals['_RESOURCETYPE']._serialized_end=357
+  _globals['_RESOURCETYPE']._serialized_end=293
 # @@protoc_insertion_point(module_scope)

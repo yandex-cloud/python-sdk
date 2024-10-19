@@ -15,7 +15,6 @@ from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from google.protobuf import struct_pb2 as google_dot_protobuf_dot_struct__pb2
-from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.access import access_pb2 as yandex_dot_cloud_dot_access_dot_access__pb2
@@ -26,7 +25,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n0yandex/cloud/datasphere/v2/project_service.proto\x12\x1ayandex.cloud.datasphere.v2\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a yandex/cloud/api/operation.proto\x1a yandex/cloud/access/access.proto\x1a(yandex/cloud/datasphere/v2/project.proto\x1a/yandex/cloud/datasphere/v2/resource_types.proto\x1a-yandex/cloud/datasphere/v2/restrictions.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"\xd2\x03\n\x14\x43reateProjectRequest\x12\"\n\x0c\x63ommunity_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x39\n\x04name\x18\x02 \x01(\tB+\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x8a\xc8\x31\x04<=63\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x89\x01\n\x06labels\x18\x04 \x03(\x0b\x32<.yandex.cloud.datasphere.v2.CreateProjectRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12>\n\x08settings\x18\x05 \x01(\x0b\x32,.yandex.cloud.datasphere.v2.Project.Settings\x12:\n\x06limits\x18\x06 \x01(\x0b\x32*.yandex.cloud.datasphere.v2.Project.Limits\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x07\x10\x08\"+\n\x15\x43reateProjectMetadata\x12\x12\n\nproject_id\x18\x01 \x01(\t\"\xfb\x03\n\x14UpdateProjectRequest\x12 \n\nproject_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x39\n\x04name\x18\x03 \x01(\tB+\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x8a\xc8\x31\x04<=63\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x89\x01\n\x06labels\x18\x05 \x03(\x0b\x32<.yandex.cloud.datasphere.v2.UpdateProjectRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12>\n\x08settings\x18\x06 \x01(\x0b\x32,.yandex.cloud.datasphere.v2.Project.Settings\x12:\n\x06limits\x18\x07 \x01(\x0b\x32*.yandex.cloud.datasphere.v2.Project.Limits\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15UpdateProjectMetadata\x12\x12\n\nproject_id\x18\x01 \x01(\t\"8\n\x14\x44\x65leteProjectRequest\x12 \n\nproject_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x44\x65leteProjectMetadata\x12\x12\n\nproject_id\x18\x01 \x01(\t\"6\n\x12OpenProjectRequest\x12 \n\nproject_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xd0\x03\n\x13OpenProjectMetadata\x12\x12\n\nproject_id\x18\x01 \x01(\t\x12Q\n\x06status\x18\x02 \x01(\x0e\x32\x41.yandex.cloud.datasphere.v2.OpenProjectMetadata.OpenProjectStatus\"\xd1\x02\n\x11OpenProjectStatus\x12#\n\x1fOPEN_PROJECT_STATUS_UNSPECIFIED\x10\x00\x12#\n\x1fOPEN_PROJECT_STATUS_CLOSING_IDE\x10\x01\x12)\n%OPEN_PROJECT_STATUS_UNZIPPING_PROJECT\x10\x02\x12%\n!OPEN_PROJECT_STATUS_ALLOCATING_VM\x10\x03\x12,\n(OPEN_PROJECT_STATUS_ALLOCATING_RESOURCES\x10\x04\x12$\n OPEN_PROJECT_STATUS_STARTING_IDE\x10\x05\x12+\n\'OPEN_PROJECT_STATUS_APPLYING_CHECKPOINT\x10\x06\x12\x1f\n\x1bOPEN_PROJECT_STATUS_UNKNOWN\x10\x07\"A\n\x13OpenProjectResponse\x12\x13\n\x0bproject_url\x18\x01 \x01(\t\x12\x15\n\rsession_token\x18\x02 \x01(\t\"5\n\x11GetProjectRequest\x12 \n\nproject_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xa2\x01\n\x13ListProjectsRequest\x12\x1a\n\x0c\x63ommunity_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1c\n\x14project_name_pattern\x18\x04 \x01(\t\x12\x13\n\x0bowned_by_id\x18\x05 \x01(\t\"f\n\x14ListProjectsResponse\x12\x35\n\x08projects\x18\x01 \x03(\x0b\x32#.yandex.cloud.datasphere.v2.Project\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"9\n\x15GetUnitBalanceRequest\x12 \n\nproject_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"K\n\x16GetUnitBalanceResponse\x12\x31\n\x0cunit_balance\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"l\n\x15SetUnitBalanceRequest\x12 \n\nproject_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x31\n\x0cunit_balance\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\",\n\x16SetUnitBalanceMetadata\x12\x12\n\nproject_id\x18\x01 \x01(\t\"\x93\x02\n\x17ProjectExecutionRequest\x12 \n\nproject_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12 \n\x0bnotebook_id\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=200H\x00\x12\x1e\n\x07\x63\x65ll_id\x18\x03 \x01(\tB\x0b\x18\x01\x8a\xc8\x31\x05<=200H\x00\x12\x30\n\x0finput_variables\x18\x04 \x01(\x0b\x32\x17.google.protobuf.Struct\x12\x1d\n\x15output_variable_names\x18\x05 \x03(\t\x12\x0c\n\x04spec\x18\x06 \x01(\t\x12%\n\x12spark_connector_id\x18\x07 \x01(\tB\t\x8a\xc8\x31\x05<=200B\x0e\n\x06target\x12\x04\xc0\xc1\x31\x01\"~\n\x18ProjectExecutionMetadata\x12\x12\n\nproject_id\x18\x01 \x01(\t\x12 \n\x0bnotebook_id\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=200H\x00\x12\x1c\n\x07\x63\x65ll_id\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=200H\x00\x42\x0e\n\x06target\x12\x04\xc0\xc1\x31\x01\"\xaf\x01\n\x18ProjectExecutionResponse\x12\x15\n\rcheckpoint_id\x18\x01 \x01(\t\x12\x35\n\x10output_variables\x18\x02 \x01(\x0b\x32\x17.google.protobuf.StructB\x02\x18\x01\x12\x45\n\x10\x65xecution_status\x18\x03 \x01(\x0e\x32+.yandex.cloud.datasphere.v2.ExecutionStatus\"\x9b\x01\n\x12\x43\x65llOutputsRequest\x12 \n\nproject_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1e\n\x07\x63\x65ll_id\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=200\x12\x15\n\rcheckpoint_id\x18\x03 \x01(\t\x12,\n\x08start_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"&\n\x13\x43\x65llOutputsResponse\x12\x0f\n\x07outputs\x18\x01 \x03(\t\"\x8f\x01\n\x18GetStateVariablesRequest\x12 \n\nproject_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\"\n\x0bnotebook_id\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=200\x12\x16\n\x0evariable_names\x18\x03 \x03(\t\x12\x15\n\rcheckpoint_id\x18\x04 \x01(\t\"G\n\x19GetStateVariablesResponse\x12*\n\tvariables\x18\x01 \x01(\x0b\x32\x17.google.protobuf.Struct\"6\n SetProjectAccessBindingsMetadata\x12\x12\n\nproject_id\x18\x01 \x01(\t\"9\n#UpdateProjectAccessBindingsMetadata\x12\x12\n\nproject_id\x18\x01 \x01(\t\"\x9b\x01\n\x1b\x41\x64\x64ResourceToProjectRequest\x12 \n\nproject_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12?\n\rresource_type\x18\x02 \x01(\x0e\x32(.yandex.cloud.datasphere.v2.ResourceType\x12\x19\n\x0bresource_id\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\"\xa0\x01\n RemoveResourceFromProjectRequest\x12 \n\nproject_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12?\n\rresource_type\x18\x02 \x01(\x0e\x32(.yandex.cloud.datasphere.v2.ResourceType\x12\x19\n\x0bresource_id\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\"9\n\x1dGetProjectRestrictionsRequest\x12\x18\n\nproject_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"x\n\x1dSetProjectRestrictionsRequest\x12\x18\n\nproject_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12=\n\x0crestrictions\x18\x02 \x03(\x0b\x32\'.yandex.cloud.datasphere.v2.Restriction\"V\n\x18ResizeProjectDiskRequest\x12 \n\nproject_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x18\n\x10new_disk_size_gb\x18\x02 \x01(\x03\"c\n\x19ResizeProjectDiskMetadata\x12\x12\n\nproject_id\x18\x01 \x01(\t\x12\x18\n\x10old_disk_size_gb\x18\x02 \x01(\x03\x12\x18\n\x10new_disk_size_gb\x18\x03 \x01(\x03\"\x87\x02\n\x08\x44iskInfo\x12\x12\n\nproject_id\x18\x01 \x01(\t\x12\x14\n\x0c\x64isk_size_gb\x18\x02 \x01(\x01\x12\x14\n\x0c\x64isk_used_gb\x18\x03 \x01(\x01\x12M\n\x0e\x64\x65tailed_usage\x18\x04 \x01(\x0b\x32\x35.yandex.cloud.datasphere.v2.DiskInfo.DetailedDiskInfo\x1al\n\x10\x44\x65tailedDiskInfo\x12\x14\n\x0cuser_data_gb\x18\x01 \x01(\x01\x12\x13\n\x0bpackages_gb\x18\x02 \x01(\x01\x12\x16\n\x0esystem_data_gb\x18\x03 \x01(\x01\x12\x15\n\rfree_space_gb\x18\x04 \x01(\x01*S\n\x0f\x45xecutionStatus\x12 \n\x1c\x45XECUTION_STATUS_UNSPECIFIED\x10\x00\x12\x06\n\x02OK\x10\x01\x12\t\n\x05\x45RROR\x10\x02\x12\x0b\n\x07\x41\x42ORTED\x10\x03\x32\xb5\x1d\n\x0eProjectService\x12\xa5\x01\n\x06\x43reate\x12\x30.yandex.cloud.datasphere.v2.CreateProjectRequest\x1a!.yandex.cloud.operation.Operation\"F\xb2\xd2* \n\x15\x43reateProjectMetadata\x12\x07Project\x82\xd3\xe4\x93\x02\x1c\"\x17/datasphere/v2/projects:\x01*\x12\xb2\x01\n\x06Update\x12\x30.yandex.cloud.datasphere.v2.UpdateProjectRequest\x1a!.yandex.cloud.operation.Operation\"S\xb2\xd2* \n\x15UpdateProjectMetadata\x12\x07Project\x82\xd3\xe4\x93\x02)2$/datasphere/v2/projects/{project_id}:\x01*\x12\xbd\x01\n\x06\x44\x65lete\x12\x30.yandex.cloud.datasphere.v2.DeleteProjectRequest\x1a!.yandex.cloud.operation.Operation\"^\xb2\xd2*.\n\x15\x44\x65leteProjectMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02&*$/datasphere/v2/projects/{project_id}\x12\xbd\x01\n\x04Open\x12..yandex.cloud.datasphere.v2.OpenProjectRequest\x1a!.yandex.cloud.operation.Operation\"b\xb2\xd2**\n\x13OpenProjectMetadata\x12\x13OpenProjectResponse\x82\xd3\xe4\x93\x02.\")/datasphere/v2/projects/{project_id}:open:\x01*\x12\x87\x01\n\x03Get\x12-.yandex.cloud.datasphere.v2.GetProjectRequest\x1a#.yandex.cloud.datasphere.v2.Project\",\x82\xd3\xe4\x93\x02&\x12$/datasphere/v2/projects/{project_id}\x12\x8a\x01\n\x04List\x12/.yandex.cloud.datasphere.v2.ListProjectsRequest\x1a\x30.yandex.cloud.datasphere.v2.ListProjectsResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/datasphere/v2/projects\x12\xb1\x01\n\x0eGetUnitBalance\x12\x31.yandex.cloud.datasphere.v2.GetUnitBalanceRequest\x1a\x32.yandex.cloud.datasphere.v2.GetUnitBalanceResponse\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/datasphere/v2/projects/{project_id}:unitBalance\x12\xd6\x01\n\x0eSetUnitBalance\x12\x31.yandex.cloud.datasphere.v2.SetUnitBalanceRequest\x1a!.yandex.cloud.operation.Operation\"n\xb2\xd2*/\n\x16SetUnitBalanceMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x35\"0/datasphere/v2/projects/{project_id}:unitBalance:\x01*\x12\xd2\x01\n\x07\x45xecute\x12\x33.yandex.cloud.datasphere.v2.ProjectExecutionRequest\x1a!.yandex.cloud.operation.Operation\"o\xb2\xd2*4\n\x18ProjectExecutionMetadata\x12\x18ProjectExecutionResponse\x82\xd3\xe4\x93\x02\x31\",/datasphere/v2/projects/{project_id}:execute:\x01*\x12\xab\x01\n\x0eGetCellOutputs\x12..yandex.cloud.datasphere.v2.CellOutputsRequest\x1a/.yandex.cloud.datasphere.v2.CellOutputsResponse\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/datasphere/v2/projects/{project_id}:cellOutputs\x12\xbd\x01\n\x11GetStateVariables\x12\x34.yandex.cloud.datasphere.v2.GetStateVariablesRequest\x1a\x35.yandex.cloud.datasphere.v2.GetStateVariablesResponse\";\x82\xd3\xe4\x93\x02\x35\x12\x33/datasphere/v2/projects/{project_id}:stateVariables\x12\xb3\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/datasphere/v2/projects/{resource_id}:accessBindings\x12\xe6\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x7f\xb2\xd2*9\n SetProjectAccessBindingsMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02<\"7/datasphere/v2/projects/{resource_id}:setAccessBindings:\x01*\x12\xf3\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x85\x01\xb2\xd2*<\n#UpdateProjectAccessBindingsMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02?2:/datasphere/v2/projects/{resource_id}:updateAccessBindings:\x01*\x12\xc2\x01\n\x0b\x41\x64\x64Resource\x12\x37.yandex.cloud.datasphere.v2.AddResourceToProjectRequest\x1a!.yandex.cloud.operation.Operation\"W\xb2\xd2*\x17\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x36\"1/datasphere/v2/projects/{resource_id}:addResource:\x01*\x12\xcd\x01\n\x0eRemoveResource\x12<.yandex.cloud.datasphere.v2.RemoveResourceFromProjectRequest\x1a!.yandex.cloud.operation.Operation\"Z\xb2\xd2*\x17\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x39\"4/datasphere/v2/projects/{resource_id}:removeResource:\x01*\x12\x90\x01\n\nResizeDisk\x12\x34.yandex.cloud.datasphere.v2.ResizeProjectDiskRequest\x1a!.yandex.cloud.operation.Operation\")\xb2\xd2*%\n\x19ResizeProjectDiskMetadata\x12\x08\x44iskInfo\x12\x98\x01\n\x13GetRestrictionsMeta\x12\x16.google.protobuf.Empty\x1a\x37.yandex.cloud.datasphere.v2.GetRestrictionsMetaResponse\"0\x82\xd3\xe4\x93\x02*\x12(/datasphere/v2/projects/restrictionsMeta\x12\xb9\x01\n\x0fGetRestrictions\x12\x39.yandex.cloud.datasphere.v2.GetProjectRestrictionsRequest\x1a\x30.yandex.cloud.datasphere.v2.RestrictionsResponse\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/datasphere/v2/projects/{project_id}:restrictions\x12\xca\x01\n\x0fSetRestrictions\x12\x39.yandex.cloud.datasphere.v2.SetProjectRestrictionsRequest\x1a!.yandex.cloud.operation.Operation\"Y\xb2\xd2*\x16\x12\x14RestrictionsResponse\x82\xd3\xe4\x93\x02\x39\"4/datasphere/v2/projects/{project_id}:setRestrictions:\x01*Bk\n\x1eyandex.cloud.api.datasphere.v2ZIgithub.com/yandex-cloud/go-genproto/yandex/cloud/datasphere/v2;datasphereb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n0yandex/cloud/datasphere/v2/project_service.proto\x12\x1ayandex.cloud.datasphere.v2\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a google/protobuf/field_mask.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a yandex/cloud/api/operation.proto\x1a yandex/cloud/access/access.proto\x1a(yandex/cloud/datasphere/v2/project.proto\x1a/yandex/cloud/datasphere/v2/resource_types.proto\x1a-yandex/cloud/datasphere/v2/restrictions.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\"\xd2\x03\n\x14\x43reateProjectRequest\x12\"\n\x0c\x63ommunity_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x39\n\x04name\x18\x02 \x01(\tB+\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x8a\xc8\x31\x04<=63\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x89\x01\n\x06labels\x18\x04 \x03(\x0b\x32<.yandex.cloud.datasphere.v2.CreateProjectRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12>\n\x08settings\x18\x05 \x01(\x0b\x32,.yandex.cloud.datasphere.v2.Project.Settings\x12:\n\x06limits\x18\x06 \x01(\x0b\x32*.yandex.cloud.datasphere.v2.Project.Limits\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x07\x10\x08\"+\n\x15\x43reateProjectMetadata\x12\x12\n\nproject_id\x18\x01 \x01(\t\"\xfb\x03\n\x14UpdateProjectRequest\x12 \n\nproject_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x39\n\x04name\x18\x03 \x01(\tB+\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x8a\xc8\x31\x04<=63\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x89\x01\n\x06labels\x18\x05 \x03(\x0b\x32<.yandex.cloud.datasphere.v2.UpdateProjectRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12>\n\x08settings\x18\x06 \x01(\x0b\x32,.yandex.cloud.datasphere.v2.Project.Settings\x12:\n\x06limits\x18\x07 \x01(\x0b\x32*.yandex.cloud.datasphere.v2.Project.Limits\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x15UpdateProjectMetadata\x12\x12\n\nproject_id\x18\x01 \x01(\t\"8\n\x14\x44\x65leteProjectRequest\x12 \n\nproject_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x44\x65leteProjectMetadata\x12\x12\n\nproject_id\x18\x01 \x01(\t\"6\n\x12OpenProjectRequest\x12 \n\nproject_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xa9\x03\n\x13OpenProjectMetadata\x12\x12\n\nproject_id\x18\x01 \x01(\t\x12Q\n\x06status\x18\x02 \x01(\x0e\x32\x41.yandex.cloud.datasphere.v2.OpenProjectMetadata.OpenProjectStatus\"\xaa\x02\n\x11OpenProjectStatus\x12#\n\x1fOPEN_PROJECT_STATUS_UNSPECIFIED\x10\x00\x12#\n\x1fOPEN_PROJECT_STATUS_CLOSING_IDE\x10\x01\x12)\n%OPEN_PROJECT_STATUS_UNZIPPING_PROJECT\x10\x02\x12%\n!OPEN_PROJECT_STATUS_ALLOCATING_VM\x10\x03\x12,\n(OPEN_PROJECT_STATUS_ALLOCATING_RESOURCES\x10\x04\x12$\n OPEN_PROJECT_STATUS_STARTING_IDE\x10\x05\x12\x1f\n\x1bOPEN_PROJECT_STATUS_UNKNOWN\x10\x07\"\x04\x08\x06\x10\x06\"A\n\x13OpenProjectResponse\x12\x13\n\x0bproject_url\x18\x01 \x01(\t\x12\x15\n\rsession_token\x18\x02 \x01(\t\"5\n\x11GetProjectRequest\x12 \n\nproject_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xa2\x01\n\x13ListProjectsRequest\x12\x1a\n\x0c\x63ommunity_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1c\n\x14project_name_pattern\x18\x04 \x01(\t\x12\x13\n\x0bowned_by_id\x18\x05 \x01(\t\"f\n\x14ListProjectsResponse\x12\x35\n\x08projects\x18\x01 \x03(\x0b\x32#.yandex.cloud.datasphere.v2.Project\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"9\n\x15GetUnitBalanceRequest\x12 \n\nproject_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"K\n\x16GetUnitBalanceResponse\x12\x31\n\x0cunit_balance\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"l\n\x15SetUnitBalanceRequest\x12 \n\nproject_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x31\n\x0cunit_balance\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\",\n\x16SetUnitBalanceMetadata\x12\x12\n\nproject_id\x18\x01 \x01(\t\"\x93\x02\n\x17ProjectExecutionRequest\x12 \n\nproject_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12 \n\x0bnotebook_id\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=200H\x00\x12\x1e\n\x07\x63\x65ll_id\x18\x03 \x01(\tB\x0b\x18\x01\x8a\xc8\x31\x05<=200H\x00\x12\x30\n\x0finput_variables\x18\x04 \x01(\x0b\x32\x17.google.protobuf.Struct\x12\x1d\n\x15output_variable_names\x18\x05 \x03(\t\x12\x0c\n\x04spec\x18\x06 \x01(\t\x12%\n\x12spark_connector_id\x18\x07 \x01(\tB\t\x8a\xc8\x31\x05<=200B\x0e\n\x06target\x12\x04\xc0\xc1\x31\x01\"~\n\x18ProjectExecutionMetadata\x12\x12\n\nproject_id\x18\x01 \x01(\t\x12 \n\x0bnotebook_id\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=200H\x00\x12\x1c\n\x07\x63\x65ll_id\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=200H\x00\x42\x0e\n\x06target\x12\x04\xc0\xc1\x31\x01\"m\n\x18ProjectExecutionResponse\x12\x45\n\x10\x65xecution_status\x18\x03 \x01(\x0e\x32+.yandex.cloud.datasphere.v2.ExecutionStatusJ\x04\x08\x01\x10\x02J\x04\x08\x02\x10\x03\"6\n SetProjectAccessBindingsMetadata\x12\x12\n\nproject_id\x18\x01 \x01(\t\"9\n#UpdateProjectAccessBindingsMetadata\x12\x12\n\nproject_id\x18\x01 \x01(\t\"\x9b\x01\n\x1b\x41\x64\x64ResourceToProjectRequest\x12 \n\nproject_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12?\n\rresource_type\x18\x02 \x01(\x0e\x32(.yandex.cloud.datasphere.v2.ResourceType\x12\x19\n\x0bresource_id\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\"\xa0\x01\n RemoveResourceFromProjectRequest\x12 \n\nproject_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12?\n\rresource_type\x18\x02 \x01(\x0e\x32(.yandex.cloud.datasphere.v2.ResourceType\x12\x19\n\x0bresource_id\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\"9\n\x1dGetProjectRestrictionsRequest\x12\x18\n\nproject_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"x\n\x1dSetProjectRestrictionsRequest\x12\x18\n\nproject_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12=\n\x0crestrictions\x18\x02 \x03(\x0b\x32\'.yandex.cloud.datasphere.v2.Restriction\"V\n\x18ResizeProjectDiskRequest\x12 \n\nproject_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x18\n\x10new_disk_size_gb\x18\x02 \x01(\x03\"c\n\x19ResizeProjectDiskMetadata\x12\x12\n\nproject_id\x18\x01 \x01(\t\x12\x18\n\x10old_disk_size_gb\x18\x02 \x01(\x03\x12\x18\n\x10new_disk_size_gb\x18\x03 \x01(\x03\"\x87\x02\n\x08\x44iskInfo\x12\x12\n\nproject_id\x18\x01 \x01(\t\x12\x14\n\x0c\x64isk_size_gb\x18\x02 \x01(\x01\x12\x14\n\x0c\x64isk_used_gb\x18\x03 \x01(\x01\x12M\n\x0e\x64\x65tailed_usage\x18\x04 \x01(\x0b\x32\x35.yandex.cloud.datasphere.v2.DiskInfo.DetailedDiskInfo\x1al\n\x10\x44\x65tailedDiskInfo\x12\x14\n\x0cuser_data_gb\x18\x01 \x01(\x01\x12\x13\n\x0bpackages_gb\x18\x02 \x01(\x01\x12\x16\n\x0esystem_data_gb\x18\x03 \x01(\x01\x12\x15\n\rfree_space_gb\x18\x04 \x01(\x01*S\n\x0f\x45xecutionStatus\x12 \n\x1c\x45XECUTION_STATUS_UNSPECIFIED\x10\x00\x12\x06\n\x02OK\x10\x01\x12\t\n\x05\x45RROR\x10\x02\x12\x0b\n\x07\x41\x42ORTED\x10\x03\x32\xc7\x1a\n\x0eProjectService\x12\xa5\x01\n\x06\x43reate\x12\x30.yandex.cloud.datasphere.v2.CreateProjectRequest\x1a!.yandex.cloud.operation.Operation\"F\xb2\xd2* \n\x15\x43reateProjectMetadata\x12\x07Project\x82\xd3\xe4\x93\x02\x1c\"\x17/datasphere/v2/projects:\x01*\x12\xb2\x01\n\x06Update\x12\x30.yandex.cloud.datasphere.v2.UpdateProjectRequest\x1a!.yandex.cloud.operation.Operation\"S\xb2\xd2* \n\x15UpdateProjectMetadata\x12\x07Project\x82\xd3\xe4\x93\x02)2$/datasphere/v2/projects/{project_id}:\x01*\x12\xbd\x01\n\x06\x44\x65lete\x12\x30.yandex.cloud.datasphere.v2.DeleteProjectRequest\x1a!.yandex.cloud.operation.Operation\"^\xb2\xd2*.\n\x15\x44\x65leteProjectMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02&*$/datasphere/v2/projects/{project_id}\x12\xbd\x01\n\x04Open\x12..yandex.cloud.datasphere.v2.OpenProjectRequest\x1a!.yandex.cloud.operation.Operation\"b\xb2\xd2**\n\x13OpenProjectMetadata\x12\x13OpenProjectResponse\x82\xd3\xe4\x93\x02.\")/datasphere/v2/projects/{project_id}:open:\x01*\x12\x87\x01\n\x03Get\x12-.yandex.cloud.datasphere.v2.GetProjectRequest\x1a#.yandex.cloud.datasphere.v2.Project\",\x82\xd3\xe4\x93\x02&\x12$/datasphere/v2/projects/{project_id}\x12\x8a\x01\n\x04List\x12/.yandex.cloud.datasphere.v2.ListProjectsRequest\x1a\x30.yandex.cloud.datasphere.v2.ListProjectsResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/datasphere/v2/projects\x12\xb1\x01\n\x0eGetUnitBalance\x12\x31.yandex.cloud.datasphere.v2.GetUnitBalanceRequest\x1a\x32.yandex.cloud.datasphere.v2.GetUnitBalanceResponse\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/datasphere/v2/projects/{project_id}:unitBalance\x12\xd6\x01\n\x0eSetUnitBalance\x12\x31.yandex.cloud.datasphere.v2.SetUnitBalanceRequest\x1a!.yandex.cloud.operation.Operation\"n\xb2\xd2*/\n\x16SetUnitBalanceMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x35\"0/datasphere/v2/projects/{project_id}:unitBalance:\x01*\x12\xd2\x01\n\x07\x45xecute\x12\x33.yandex.cloud.datasphere.v2.ProjectExecutionRequest\x1a!.yandex.cloud.operation.Operation\"o\xb2\xd2*4\n\x18ProjectExecutionMetadata\x12\x18ProjectExecutionResponse\x82\xd3\xe4\x93\x02\x31\",/datasphere/v2/projects/{project_id}:execute:\x01*\x12\xb3\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"<\x82\xd3\xe4\x93\x02\x36\x12\x34/datasphere/v2/projects/{resource_id}:accessBindings\x12\xe6\x01\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x7f\xb2\xd2*9\n SetProjectAccessBindingsMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02<\"7/datasphere/v2/projects/{resource_id}:setAccessBindings:\x01*\x12\xf3\x01\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x85\x01\xb2\xd2*<\n#UpdateProjectAccessBindingsMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02?2:/datasphere/v2/projects/{resource_id}:updateAccessBindings:\x01*\x12\xc2\x01\n\x0b\x41\x64\x64Resource\x12\x37.yandex.cloud.datasphere.v2.AddResourceToProjectRequest\x1a!.yandex.cloud.operation.Operation\"W\xb2\xd2*\x17\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x36\"1/datasphere/v2/projects/{resource_id}:addResource:\x01*\x12\xcd\x01\n\x0eRemoveResource\x12<.yandex.cloud.datasphere.v2.RemoveResourceFromProjectRequest\x1a!.yandex.cloud.operation.Operation\"Z\xb2\xd2*\x17\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x39\"4/datasphere/v2/projects/{resource_id}:removeResource:\x01*\x12\x90\x01\n\nResizeDisk\x12\x34.yandex.cloud.datasphere.v2.ResizeProjectDiskRequest\x1a!.yandex.cloud.operation.Operation\")\xb2\xd2*%\n\x19ResizeProjectDiskMetadata\x12\x08\x44iskInfo\x12\x98\x01\n\x13GetRestrictionsMeta\x12\x16.google.protobuf.Empty\x1a\x37.yandex.cloud.datasphere.v2.GetRestrictionsMetaResponse\"0\x82\xd3\xe4\x93\x02*\x12(/datasphere/v2/projects/restrictionsMeta\x12\xb9\x01\n\x0fGetRestrictions\x12\x39.yandex.cloud.datasphere.v2.GetProjectRestrictionsRequest\x1a\x30.yandex.cloud.datasphere.v2.RestrictionsResponse\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/datasphere/v2/projects/{project_id}:restrictions\x12\xca\x01\n\x0fSetRestrictions\x12\x39.yandex.cloud.datasphere.v2.SetProjectRestrictionsRequest\x1a!.yandex.cloud.operation.Operation\"Y\xb2\xd2*\x16\x12\x14RestrictionsResponse\x82\xd3\xe4\x93\x02\x39\"4/datasphere/v2/projects/{project_id}:setRestrictions:\x01*Bk\n\x1eyandex.cloud.api.datasphere.v2ZIgithub.com/yandex-cloud/go-genproto/yandex/cloud/datasphere/v2;datasphereb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -86,16 +85,6 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _PROJECTEXECUTIONMETADATA.fields_by_name['notebook_id']._serialized_options = b'\212\3101\005<=200'
   _PROJECTEXECUTIONMETADATA.fields_by_name['cell_id']._options = None
   _PROJECTEXECUTIONMETADATA.fields_by_name['cell_id']._serialized_options = b'\212\3101\005<=200'
-  _PROJECTEXECUTIONRESPONSE.fields_by_name['output_variables']._options = None
-  _PROJECTEXECUTIONRESPONSE.fields_by_name['output_variables']._serialized_options = b'\030\001'
-  _CELLOUTPUTSREQUEST.fields_by_name['project_id']._options = None
-  _CELLOUTPUTSREQUEST.fields_by_name['project_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _CELLOUTPUTSREQUEST.fields_by_name['cell_id']._options = None
-  _CELLOUTPUTSREQUEST.fields_by_name['cell_id']._serialized_options = b'\350\3071\001\212\3101\005<=200'
-  _GETSTATEVARIABLESREQUEST.fields_by_name['project_id']._options = None
-  _GETSTATEVARIABLESREQUEST.fields_by_name['project_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
-  _GETSTATEVARIABLESREQUEST.fields_by_name['notebook_id']._options = None
-  _GETSTATEVARIABLESREQUEST.fields_by_name['notebook_id']._serialized_options = b'\350\3071\001\212\3101\005<=200'
   _ADDRESOURCETOPROJECTREQUEST.fields_by_name['project_id']._options = None
   _ADDRESOURCETOPROJECTREQUEST.fields_by_name['project_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _ADDRESOURCETOPROJECTREQUEST.fields_by_name['resource_id']._options = None
@@ -128,10 +117,6 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _PROJECTSERVICE.methods_by_name['SetUnitBalance']._serialized_options = b'\262\322*/\n\026SetUnitBalanceMetadata\022\025google.protobuf.Empty\202\323\344\223\0025\"0/datasphere/v2/projects/{project_id}:unitBalance:\001*'
   _PROJECTSERVICE.methods_by_name['Execute']._options = None
   _PROJECTSERVICE.methods_by_name['Execute']._serialized_options = b'\262\322*4\n\030ProjectExecutionMetadata\022\030ProjectExecutionResponse\202\323\344\223\0021\",/datasphere/v2/projects/{project_id}:execute:\001*'
-  _PROJECTSERVICE.methods_by_name['GetCellOutputs']._options = None
-  _PROJECTSERVICE.methods_by_name['GetCellOutputs']._serialized_options = b'\202\323\344\223\0022\0220/datasphere/v2/projects/{project_id}:cellOutputs'
-  _PROJECTSERVICE.methods_by_name['GetStateVariables']._options = None
-  _PROJECTSERVICE.methods_by_name['GetStateVariables']._serialized_options = b'\202\323\344\223\0025\0223/datasphere/v2/projects/{project_id}:stateVariables'
   _PROJECTSERVICE.methods_by_name['ListAccessBindings']._options = None
   _PROJECTSERVICE.methods_by_name['ListAccessBindings']._serialized_options = b'\202\323\344\223\0026\0224/datasphere/v2/projects/{resource_id}:accessBindings'
   _PROJECTSERVICE.methods_by_name['SetAccessBindings']._options = None
@@ -150,80 +135,72 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _PROJECTSERVICE.methods_by_name['GetRestrictions']._serialized_options = b'\202\323\344\223\0023\0221/datasphere/v2/projects/{project_id}:restrictions'
   _PROJECTSERVICE.methods_by_name['SetRestrictions']._options = None
   _PROJECTSERVICE.methods_by_name['SetRestrictions']._serialized_options = b'\262\322*\026\022\024RestrictionsResponse\202\323\344\223\0029\"4/datasphere/v2/projects/{project_id}:setRestrictions:\001*'
-  _globals['_EXECUTIONSTATUS']._serialized_start=4996
-  _globals['_EXECUTIONSTATUS']._serialized_end=5079
-  _globals['_CREATEPROJECTREQUEST']._serialized_start=546
-  _globals['_CREATEPROJECTREQUEST']._serialized_end=1012
-  _globals['_CREATEPROJECTREQUEST_LABELSENTRY']._serialized_start=961
-  _globals['_CREATEPROJECTREQUEST_LABELSENTRY']._serialized_end=1006
-  _globals['_CREATEPROJECTMETADATA']._serialized_start=1014
-  _globals['_CREATEPROJECTMETADATA']._serialized_end=1057
-  _globals['_UPDATEPROJECTREQUEST']._serialized_start=1060
-  _globals['_UPDATEPROJECTREQUEST']._serialized_end=1567
-  _globals['_UPDATEPROJECTREQUEST_LABELSENTRY']._serialized_start=961
-  _globals['_UPDATEPROJECTREQUEST_LABELSENTRY']._serialized_end=1006
-  _globals['_UPDATEPROJECTMETADATA']._serialized_start=1569
-  _globals['_UPDATEPROJECTMETADATA']._serialized_end=1612
-  _globals['_DELETEPROJECTREQUEST']._serialized_start=1614
-  _globals['_DELETEPROJECTREQUEST']._serialized_end=1670
-  _globals['_DELETEPROJECTMETADATA']._serialized_start=1672
-  _globals['_DELETEPROJECTMETADATA']._serialized_end=1715
-  _globals['_OPENPROJECTREQUEST']._serialized_start=1717
-  _globals['_OPENPROJECTREQUEST']._serialized_end=1771
-  _globals['_OPENPROJECTMETADATA']._serialized_start=1774
-  _globals['_OPENPROJECTMETADATA']._serialized_end=2238
-  _globals['_OPENPROJECTMETADATA_OPENPROJECTSTATUS']._serialized_start=1901
-  _globals['_OPENPROJECTMETADATA_OPENPROJECTSTATUS']._serialized_end=2238
-  _globals['_OPENPROJECTRESPONSE']._serialized_start=2240
-  _globals['_OPENPROJECTRESPONSE']._serialized_end=2305
-  _globals['_GETPROJECTREQUEST']._serialized_start=2307
-  _globals['_GETPROJECTREQUEST']._serialized_end=2360
-  _globals['_LISTPROJECTSREQUEST']._serialized_start=2363
-  _globals['_LISTPROJECTSREQUEST']._serialized_end=2525
-  _globals['_LISTPROJECTSRESPONSE']._serialized_start=2527
-  _globals['_LISTPROJECTSRESPONSE']._serialized_end=2629
-  _globals['_GETUNITBALANCEREQUEST']._serialized_start=2631
-  _globals['_GETUNITBALANCEREQUEST']._serialized_end=2688
-  _globals['_GETUNITBALANCERESPONSE']._serialized_start=2690
-  _globals['_GETUNITBALANCERESPONSE']._serialized_end=2765
-  _globals['_SETUNITBALANCEREQUEST']._serialized_start=2767
-  _globals['_SETUNITBALANCEREQUEST']._serialized_end=2875
-  _globals['_SETUNITBALANCEMETADATA']._serialized_start=2877
-  _globals['_SETUNITBALANCEMETADATA']._serialized_end=2921
-  _globals['_PROJECTEXECUTIONREQUEST']._serialized_start=2924
-  _globals['_PROJECTEXECUTIONREQUEST']._serialized_end=3199
-  _globals['_PROJECTEXECUTIONMETADATA']._serialized_start=3201
-  _globals['_PROJECTEXECUTIONMETADATA']._serialized_end=3327
-  _globals['_PROJECTEXECUTIONRESPONSE']._serialized_start=3330
-  _globals['_PROJECTEXECUTIONRESPONSE']._serialized_end=3505
-  _globals['_CELLOUTPUTSREQUEST']._serialized_start=3508
-  _globals['_CELLOUTPUTSREQUEST']._serialized_end=3663
-  _globals['_CELLOUTPUTSRESPONSE']._serialized_start=3665
-  _globals['_CELLOUTPUTSRESPONSE']._serialized_end=3703
-  _globals['_GETSTATEVARIABLESREQUEST']._serialized_start=3706
-  _globals['_GETSTATEVARIABLESREQUEST']._serialized_end=3849
-  _globals['_GETSTATEVARIABLESRESPONSE']._serialized_start=3851
-  _globals['_GETSTATEVARIABLESRESPONSE']._serialized_end=3922
-  _globals['_SETPROJECTACCESSBINDINGSMETADATA']._serialized_start=3924
-  _globals['_SETPROJECTACCESSBINDINGSMETADATA']._serialized_end=3978
-  _globals['_UPDATEPROJECTACCESSBINDINGSMETADATA']._serialized_start=3980
-  _globals['_UPDATEPROJECTACCESSBINDINGSMETADATA']._serialized_end=4037
-  _globals['_ADDRESOURCETOPROJECTREQUEST']._serialized_start=4040
-  _globals['_ADDRESOURCETOPROJECTREQUEST']._serialized_end=4195
-  _globals['_REMOVERESOURCEFROMPROJECTREQUEST']._serialized_start=4198
-  _globals['_REMOVERESOURCEFROMPROJECTREQUEST']._serialized_end=4358
-  _globals['_GETPROJECTRESTRICTIONSREQUEST']._serialized_start=4360
-  _globals['_GETPROJECTRESTRICTIONSREQUEST']._serialized_end=4417
-  _globals['_SETPROJECTRESTRICTIONSREQUEST']._serialized_start=4419
-  _globals['_SETPROJECTRESTRICTIONSREQUEST']._serialized_end=4539
-  _globals['_RESIZEPROJECTDISKREQUEST']._serialized_start=4541
-  _globals['_RESIZEPROJECTDISKREQUEST']._serialized_end=4627
-  _globals['_RESIZEPROJECTDISKMETADATA']._serialized_start=4629
-  _globals['_RESIZEPROJECTDISKMETADATA']._serialized_end=4728
-  _globals['_DISKINFO']._serialized_start=4731
-  _globals['_DISKINFO']._serialized_end=4994
-  _globals['_DISKINFO_DETAILEDDISKINFO']._serialized_start=4886
-  _globals['_DISKINFO_DETAILEDDISKINFO']._serialized_end=4994
-  _globals['_PROJECTSERVICE']._serialized_start=5082
-  _globals['_PROJECTSERVICE']._serialized_end=8847
+  _globals['_EXECUTIONSTATUS']._serialized_start=4440
+  _globals['_EXECUTIONSTATUS']._serialized_end=4523
+  _globals['_CREATEPROJECTREQUEST']._serialized_start=513
+  _globals['_CREATEPROJECTREQUEST']._serialized_end=979
+  _globals['_CREATEPROJECTREQUEST_LABELSENTRY']._serialized_start=928
+  _globals['_CREATEPROJECTREQUEST_LABELSENTRY']._serialized_end=973
+  _globals['_CREATEPROJECTMETADATA']._serialized_start=981
+  _globals['_CREATEPROJECTMETADATA']._serialized_end=1024
+  _globals['_UPDATEPROJECTREQUEST']._serialized_start=1027
+  _globals['_UPDATEPROJECTREQUEST']._serialized_end=1534
+  _globals['_UPDATEPROJECTREQUEST_LABELSENTRY']._serialized_start=928
+  _globals['_UPDATEPROJECTREQUEST_LABELSENTRY']._serialized_end=973
+  _globals['_UPDATEPROJECTMETADATA']._serialized_start=1536
+  _globals['_UPDATEPROJECTMETADATA']._serialized_end=1579
+  _globals['_DELETEPROJECTREQUEST']._serialized_start=1581
+  _globals['_DELETEPROJECTREQUEST']._serialized_end=1637
+  _globals['_DELETEPROJECTMETADATA']._serialized_start=1639
+  _globals['_DELETEPROJECTMETADATA']._serialized_end=1682
+  _globals['_OPENPROJECTREQUEST']._serialized_start=1684
+  _globals['_OPENPROJECTREQUEST']._serialized_end=1738
+  _globals['_OPENPROJECTMETADATA']._serialized_start=1741
+  _globals['_OPENPROJECTMETADATA']._serialized_end=2166
+  _globals['_OPENPROJECTMETADATA_OPENPROJECTSTATUS']._serialized_start=1868
+  _globals['_OPENPROJECTMETADATA_OPENPROJECTSTATUS']._serialized_end=2166
+  _globals['_OPENPROJECTRESPONSE']._serialized_start=2168
+  _globals['_OPENPROJECTRESPONSE']._serialized_end=2233
+  _globals['_GETPROJECTREQUEST']._serialized_start=2235
+  _globals['_GETPROJECTREQUEST']._serialized_end=2288
+  _globals['_LISTPROJECTSREQUEST']._serialized_start=2291
+  _globals['_LISTPROJECTSREQUEST']._serialized_end=2453
+  _globals['_LISTPROJECTSRESPONSE']._serialized_start=2455
+  _globals['_LISTPROJECTSRESPONSE']._serialized_end=2557
+  _globals['_GETUNITBALANCEREQUEST']._serialized_start=2559
+  _globals['_GETUNITBALANCEREQUEST']._serialized_end=2616
+  _globals['_GETUNITBALANCERESPONSE']._serialized_start=2618
+  _globals['_GETUNITBALANCERESPONSE']._serialized_end=2693
+  _globals['_SETUNITBALANCEREQUEST']._serialized_start=2695
+  _globals['_SETUNITBALANCEREQUEST']._serialized_end=2803
+  _globals['_SETUNITBALANCEMETADATA']._serialized_start=2805
+  _globals['_SETUNITBALANCEMETADATA']._serialized_end=2849
+  _globals['_PROJECTEXECUTIONREQUEST']._serialized_start=2852
+  _globals['_PROJECTEXECUTIONREQUEST']._serialized_end=3127
+  _globals['_PROJECTEXECUTIONMETADATA']._serialized_start=3129
+  _globals['_PROJECTEXECUTIONMETADATA']._serialized_end=3255
+  _globals['_PROJECTEXECUTIONRESPONSE']._serialized_start=3257
+  _globals['_PROJECTEXECUTIONRESPONSE']._serialized_end=3366
+  _globals['_SETPROJECTACCESSBINDINGSMETADATA']._serialized_start=3368
+  _globals['_SETPROJECTACCESSBINDINGSMETADATA']._serialized_end=3422
+  _globals['_UPDATEPROJECTACCESSBINDINGSMETADATA']._serialized_start=3424
+  _globals['_UPDATEPROJECTACCESSBINDINGSMETADATA']._serialized_end=3481
+  _globals['_ADDRESOURCETOPROJECTREQUEST']._serialized_start=3484
+  _globals['_ADDRESOURCETOPROJECTREQUEST']._serialized_end=3639
+  _globals['_REMOVERESOURCEFROMPROJECTREQUEST']._serialized_start=3642
+  _globals['_REMOVERESOURCEFROMPROJECTREQUEST']._serialized_end=3802
+  _globals['_GETPROJECTRESTRICTIONSREQUEST']._serialized_start=3804
+  _globals['_GETPROJECTRESTRICTIONSREQUEST']._serialized_end=3861
+  _globals['_SETPROJECTRESTRICTIONSREQUEST']._serialized_start=3863
+  _globals['_SETPROJECTRESTRICTIONSREQUEST']._serialized_end=3983
+  _globals['_RESIZEPROJECTDISKREQUEST']._serialized_start=3985
+  _globals['_RESIZEPROJECTDISKREQUEST']._serialized_end=4071
+  _globals['_RESIZEPROJECTDISKMETADATA']._serialized_start=4073
+  _globals['_RESIZEPROJECTDISKMETADATA']._serialized_end=4172
+  _globals['_DISKINFO']._serialized_start=4175
+  _globals['_DISKINFO']._serialized_end=4438
+  _globals['_DISKINFO_DETAILEDDISKINFO']._serialized_start=4330
+  _globals['_DISKINFO_DETAILEDDISKINFO']._serialized_end=4438
+  _globals['_PROJECTSERVICE']._serialized_start=4526
+  _globals['_PROJECTSERVICE']._serialized_end=7925
 # @@protoc_insertion_point(module_scope)

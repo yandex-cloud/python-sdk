@@ -20,92 +20,113 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class SearchIndexServiceStub:
+    """ThreadService provides operations for managing search indexes."""
+
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Create: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.searchindex.search_index_service_pb2.CreateSearchIndexRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Create a new search index in [asynchronous mode](/docs/foundation-models/concepts/#working-mode)."""
 
     Get: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.searchindex.search_index_service_pb2.GetSearchIndexRequest,
         yandex.cloud.ai.assistants.v1.searchindex.search_index_pb2.SearchIndex,
     ]
+    """Retrieve details of a specific search index by its ID."""
 
     Update: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.searchindex.search_index_service_pb2.UpdateSearchIndexRequest,
         yandex.cloud.ai.assistants.v1.searchindex.search_index_pb2.SearchIndex,
     ]
+    """Update an existing search index."""
 
     Delete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.searchindex.search_index_service_pb2.DeleteSearchIndexRequest,
         yandex.cloud.ai.assistants.v1.searchindex.search_index_service_pb2.DeleteSearchIndexResponse,
     ]
+    """Delete a search index by its ID."""
 
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.searchindex.search_index_service_pb2.ListSearchIndicesRequest,
         yandex.cloud.ai.assistants.v1.searchindex.search_index_service_pb2.ListSearchIndicesResponse,
     ]
+    """List search indexes in a specific folder."""
 
 class SearchIndexServiceAsyncStub:
+    """ThreadService provides operations for managing search indexes."""
+
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.searchindex.search_index_service_pb2.CreateSearchIndexRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Create a new search index in [asynchronous mode](/docs/foundation-models/concepts/#working-mode)."""
 
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.searchindex.search_index_service_pb2.GetSearchIndexRequest,
         yandex.cloud.ai.assistants.v1.searchindex.search_index_pb2.SearchIndex,
     ]
+    """Retrieve details of a specific search index by its ID."""
 
     Update: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.searchindex.search_index_service_pb2.UpdateSearchIndexRequest,
         yandex.cloud.ai.assistants.v1.searchindex.search_index_pb2.SearchIndex,
     ]
+    """Update an existing search index."""
 
     Delete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.searchindex.search_index_service_pb2.DeleteSearchIndexRequest,
         yandex.cloud.ai.assistants.v1.searchindex.search_index_service_pb2.DeleteSearchIndexResponse,
     ]
+    """Delete a search index by its ID."""
 
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.searchindex.search_index_service_pb2.ListSearchIndicesRequest,
         yandex.cloud.ai.assistants.v1.searchindex.search_index_service_pb2.ListSearchIndicesResponse,
     ]
+    """List search indexes in a specific folder."""
 
 class SearchIndexServiceServicer(metaclass=abc.ABCMeta):
+    """ThreadService provides operations for managing search indexes."""
+
     @abc.abstractmethod
     def Create(
         self,
         request: yandex.cloud.ai.assistants.v1.searchindex.search_index_service_pb2.CreateSearchIndexRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Create a new search index in [asynchronous mode](/docs/foundation-models/concepts/#working-mode)."""
 
     @abc.abstractmethod
     def Get(
         self,
         request: yandex.cloud.ai.assistants.v1.searchindex.search_index_service_pb2.GetSearchIndexRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.assistants.v1.searchindex.search_index_pb2.SearchIndex, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.searchindex.search_index_pb2.SearchIndex]]: ...
+    ) -> typing.Union[yandex.cloud.ai.assistants.v1.searchindex.search_index_pb2.SearchIndex, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.searchindex.search_index_pb2.SearchIndex]]:
+        """Retrieve details of a specific search index by its ID."""
 
     @abc.abstractmethod
     def Update(
         self,
         request: yandex.cloud.ai.assistants.v1.searchindex.search_index_service_pb2.UpdateSearchIndexRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.assistants.v1.searchindex.search_index_pb2.SearchIndex, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.searchindex.search_index_pb2.SearchIndex]]: ...
+    ) -> typing.Union[yandex.cloud.ai.assistants.v1.searchindex.search_index_pb2.SearchIndex, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.searchindex.search_index_pb2.SearchIndex]]:
+        """Update an existing search index."""
 
     @abc.abstractmethod
     def Delete(
         self,
         request: yandex.cloud.ai.assistants.v1.searchindex.search_index_service_pb2.DeleteSearchIndexRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.assistants.v1.searchindex.search_index_service_pb2.DeleteSearchIndexResponse, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.searchindex.search_index_service_pb2.DeleteSearchIndexResponse]]: ...
+    ) -> typing.Union[yandex.cloud.ai.assistants.v1.searchindex.search_index_service_pb2.DeleteSearchIndexResponse, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.searchindex.search_index_service_pb2.DeleteSearchIndexResponse]]:
+        """Delete a search index by its ID."""
 
     @abc.abstractmethod
     def List(
         self,
         request: yandex.cloud.ai.assistants.v1.searchindex.search_index_service_pb2.ListSearchIndicesRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.assistants.v1.searchindex.search_index_service_pb2.ListSearchIndicesResponse, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.searchindex.search_index_service_pb2.ListSearchIndicesResponse]]: ...
+    ) -> typing.Union[yandex.cloud.ai.assistants.v1.searchindex.search_index_service_pb2.ListSearchIndicesResponse, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.searchindex.search_index_service_pb2.ListSearchIndicesResponse]]:
+        """List search indexes in a specific folder."""
 
 def add_SearchIndexServiceServicer_to_server(servicer: SearchIndexServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

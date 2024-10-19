@@ -7,7 +7,8 @@ from yandex.cloud.ai.assistants.v1.searchindex import search_index_file_service_
 
 
 class SearchIndexFileServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """ThreadService provides operations for managing files within search indexes.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -28,16 +29,19 @@ class SearchIndexFileServiceStub(object):
 
 
 class SearchIndexFileServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """ThreadService provides operations for managing files within search indexes.
+    """
 
     def Get(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Retrieves details of a specific file that has been indexed within a search index.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """List files that are indexed within a specific search index.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -63,7 +67,8 @@ def add_SearchIndexFileServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class SearchIndexFileService(object):
-    """Missing associated documentation comment in .proto file."""
+    """ThreadService provides operations for managing files within search indexes.
+    """
 
     @staticmethod
     def Get(request,

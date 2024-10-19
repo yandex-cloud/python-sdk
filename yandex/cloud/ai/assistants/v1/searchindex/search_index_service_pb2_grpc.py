@@ -8,7 +8,8 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class SearchIndexServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """ThreadService provides operations for managing search indexes.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -44,34 +45,40 @@ class SearchIndexServiceStub(object):
 
 
 class SearchIndexServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """ThreadService provides operations for managing search indexes.
+    """
 
     def Create(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Create a new search index in [asynchronous mode](/docs/foundation-models/concepts/#working-mode).
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Get(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Retrieve details of a specific search index by its ID.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Update an existing search index.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Delete a search index by its ID.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """List search indexes in a specific folder.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -112,7 +119,8 @@ def add_SearchIndexServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class SearchIndexService(object):
-    """Missing associated documentation comment in .proto file."""
+    """ThreadService provides operations for managing search indexes.
+    """
 
     @staticmethod
     def Create(request,

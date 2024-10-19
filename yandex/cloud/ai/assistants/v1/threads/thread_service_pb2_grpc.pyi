@@ -19,92 +19,113 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class ThreadServiceStub:
+    """ThreadService provides operations for managing threads."""
+
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Create: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.threads.thread_service_pb2.CreateThreadRequest,
         yandex.cloud.ai.assistants.v1.threads.thread_pb2.Thread,
     ]
+    """Create a new thread."""
 
     Get: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.threads.thread_service_pb2.GetThreadRequest,
         yandex.cloud.ai.assistants.v1.threads.thread_pb2.Thread,
     ]
+    """Retrieve details of a specific thread by its ID."""
 
     Update: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.threads.thread_service_pb2.UpdateThreadRequest,
         yandex.cloud.ai.assistants.v1.threads.thread_pb2.Thread,
     ]
+    """Update an existing thread."""
 
     Delete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.threads.thread_service_pb2.DeleteThreadRequest,
         yandex.cloud.ai.assistants.v1.threads.thread_service_pb2.DeleteThreadResponse,
     ]
+    """Delete a thread by its ID."""
 
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.threads.thread_service_pb2.ListThreadsRequest,
         yandex.cloud.ai.assistants.v1.threads.thread_service_pb2.ListThreadsResponse,
     ]
+    """List threads in a specific folder."""
 
 class ThreadServiceAsyncStub:
+    """ThreadService provides operations for managing threads."""
+
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.threads.thread_service_pb2.CreateThreadRequest,
         yandex.cloud.ai.assistants.v1.threads.thread_pb2.Thread,
     ]
+    """Create a new thread."""
 
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.threads.thread_service_pb2.GetThreadRequest,
         yandex.cloud.ai.assistants.v1.threads.thread_pb2.Thread,
     ]
+    """Retrieve details of a specific thread by its ID."""
 
     Update: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.threads.thread_service_pb2.UpdateThreadRequest,
         yandex.cloud.ai.assistants.v1.threads.thread_pb2.Thread,
     ]
+    """Update an existing thread."""
 
     Delete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.threads.thread_service_pb2.DeleteThreadRequest,
         yandex.cloud.ai.assistants.v1.threads.thread_service_pb2.DeleteThreadResponse,
     ]
+    """Delete a thread by its ID."""
 
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.threads.thread_service_pb2.ListThreadsRequest,
         yandex.cloud.ai.assistants.v1.threads.thread_service_pb2.ListThreadsResponse,
     ]
+    """List threads in a specific folder."""
 
 class ThreadServiceServicer(metaclass=abc.ABCMeta):
+    """ThreadService provides operations for managing threads."""
+
     @abc.abstractmethod
     def Create(
         self,
         request: yandex.cloud.ai.assistants.v1.threads.thread_service_pb2.CreateThreadRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.assistants.v1.threads.thread_pb2.Thread, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.threads.thread_pb2.Thread]]: ...
+    ) -> typing.Union[yandex.cloud.ai.assistants.v1.threads.thread_pb2.Thread, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.threads.thread_pb2.Thread]]:
+        """Create a new thread."""
 
     @abc.abstractmethod
     def Get(
         self,
         request: yandex.cloud.ai.assistants.v1.threads.thread_service_pb2.GetThreadRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.assistants.v1.threads.thread_pb2.Thread, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.threads.thread_pb2.Thread]]: ...
+    ) -> typing.Union[yandex.cloud.ai.assistants.v1.threads.thread_pb2.Thread, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.threads.thread_pb2.Thread]]:
+        """Retrieve details of a specific thread by its ID."""
 
     @abc.abstractmethod
     def Update(
         self,
         request: yandex.cloud.ai.assistants.v1.threads.thread_service_pb2.UpdateThreadRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.assistants.v1.threads.thread_pb2.Thread, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.threads.thread_pb2.Thread]]: ...
+    ) -> typing.Union[yandex.cloud.ai.assistants.v1.threads.thread_pb2.Thread, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.threads.thread_pb2.Thread]]:
+        """Update an existing thread."""
 
     @abc.abstractmethod
     def Delete(
         self,
         request: yandex.cloud.ai.assistants.v1.threads.thread_service_pb2.DeleteThreadRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.assistants.v1.threads.thread_service_pb2.DeleteThreadResponse, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.threads.thread_service_pb2.DeleteThreadResponse]]: ...
+    ) -> typing.Union[yandex.cloud.ai.assistants.v1.threads.thread_service_pb2.DeleteThreadResponse, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.threads.thread_service_pb2.DeleteThreadResponse]]:
+        """Delete a thread by its ID."""
 
     @abc.abstractmethod
     def List(
         self,
         request: yandex.cloud.ai.assistants.v1.threads.thread_service_pb2.ListThreadsRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.assistants.v1.threads.thread_service_pb2.ListThreadsResponse, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.threads.thread_service_pb2.ListThreadsResponse]]: ...
+    ) -> typing.Union[yandex.cloud.ai.assistants.v1.threads.thread_service_pb2.ListThreadsResponse, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.threads.thread_service_pb2.ListThreadsResponse]]:
+        """List threads in a specific folder."""
 
 def add_ThreadServiceServicer_to_server(servicer: ThreadServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

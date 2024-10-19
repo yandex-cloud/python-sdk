@@ -12,12 +12,23 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class StaticChunkingStrategy(google.protobuf.message.Message):
+    """Defines a chunking strategy where chunks are created with a fixed maximum chunk size and an overlap between consecutive chunks."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     MAX_CHUNK_SIZE_TOKENS_FIELD_NUMBER: builtins.int
     CHUNK_OVERLAP_TOKENS_FIELD_NUMBER: builtins.int
     max_chunk_size_tokens: builtins.int
+    """The maximum number of tokens allowed in a single chunk.
+    Constraints: must be within the range [100, 2048].
+    Default value: 800
+    """
     chunk_overlap_tokens: builtins.int
+    """The number of tokens that should overlap between consecutive chunks.
+    This allows for some context from the previous chunk to be included in the next chunk.
+    Constraints: must be less than or equal to half of `max_chunk_size_tokens`.
+    Default value: 400
+    """
     def __init__(
         self,
         *,
@@ -30,6 +41,10 @@ global___StaticChunkingStrategy = StaticChunkingStrategy
 
 @typing.final
 class ChunkingStrategy(google.protobuf.message.Message):
+    """Defines a general strategy for chunking text into smaller segments.
+    Currently, only StaticChunkingStrategy is supported.
+    """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     STATIC_STRATEGY_FIELD_NUMBER: builtins.int

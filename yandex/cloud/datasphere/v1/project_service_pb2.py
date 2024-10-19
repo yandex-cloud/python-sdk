@@ -15,7 +15,6 @@ from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
-from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from google.protobuf import struct_pb2 as google_dot_protobuf_dot_struct__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
@@ -23,7 +22,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud.datasphere.v1 import project_pb2 as yandex_dot_cloud_dot_datasphere_dot_v1_dot_project__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n0yandex/cloud/datasphere/v1/project_service.proto\x12\x1ayandex.cloud.datasphere.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a yandex/cloud/api/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a&yandex/cloud/operation/operation.proto\x1a(yandex/cloud/datasphere/v1/project.proto\"\x8e\x02\n\x14\x43reateProjectRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x39\n\x04name\x18\x02 \x01(\tB+\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x8a\xc8\x31\x04<=63\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12>\n\x08settings\x18\x04 \x01(\x0b\x32,.yandex.cloud.datasphere.v1.Project.Settings\x12:\n\x06limits\x18\x05 \x01(\x0b\x32*.yandex.cloud.datasphere.v1.Project.Limits\"+\n\x15\x43reateProjectMetadata\x12\x12\n\nproject_id\x18\x01 \x01(\t\"\xc1\x02\n\x14UpdateProjectRequest\x12!\n\nproject_id\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=200\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x39\n\x04name\x18\x03 \x01(\tB+\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x8a\xc8\x31\x04<=63\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12>\n\x08settings\x18\x05 \x01(\x0b\x32,.yandex.cloud.datasphere.v1.Project.Settings\x12:\n\x06limits\x18\x06 \x01(\x0b\x32*.yandex.cloud.datasphere.v1.Project.Limits\"+\n\x15UpdateProjectMetadata\x12\x12\n\nproject_id\x18\x01 \x01(\t\"9\n\x14\x44\x65leteProjectRequest\x12!\n\nproject_id\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=200\"+\n\x15\x44\x65leteProjectMetadata\x12\x12\n\nproject_id\x18\x01 \x01(\t\"7\n\x12OpenProjectRequest\x12!\n\nproject_id\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=200\")\n\x13OpenProjectMetadata\x12\x12\n\nproject_id\x18\x01 \x01(\t\"A\n\x13OpenProjectResponse\x12\x13\n\x0bproject_url\x18\x01 \x01(\t\x12\x15\n\rsession_token\x18\x02 \x01(\t\"6\n\x11GetProjectRequest\x12!\n\nproject_id\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=200\"t\n\x13ListProjectsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"f\n\x14ListProjectsResponse\x12\x35\n\x08projects\x18\x01 \x03(\x0b\x32#.yandex.cloud.datasphere.v1.Project\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\":\n\x15GetUnitBalanceRequest\x12!\n\nproject_id\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=200\"K\n\x16GetUnitBalanceResponse\x12\x31\n\x0cunit_balance\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"m\n\x15SetUnitBalanceRequest\x12!\n\nproject_id\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=200\x12\x31\n\x0cunit_balance\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"\xdd\x01\n\x17ProjectExecutionRequest\x12!\n\nproject_id\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=200\x12 \n\x0bnotebook_id\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=200H\x00\x12\x1c\n\x07\x63\x65ll_id\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=200H\x00\x12\x30\n\x0finput_variables\x18\x04 \x01(\x0b\x32\x17.google.protobuf.Struct\x12\x1d\n\x15output_variable_names\x18\x05 \x03(\tB\x0e\n\x06target\x12\x04\xc0\xc1\x31\x01\"~\n\x18ProjectExecutionMetadata\x12\x12\n\nproject_id\x18\x01 \x01(\t\x12 \n\x0bnotebook_id\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=200H\x00\x12\x1c\n\x07\x63\x65ll_id\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=200H\x00\x42\x0e\n\x06target\x12\x04\xc0\xc1\x31\x01\"d\n\x18ProjectExecutionResponse\x12\x15\n\rcheckpoint_id\x18\x01 \x01(\t\x12\x31\n\x10output_variables\x18\x02 \x01(\x0b\x32\x17.google.protobuf.Struct\"\x9c\x01\n\x12\x43\x65llOutputsRequest\x12!\n\nproject_id\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=200\x12\x1e\n\x07\x63\x65ll_id\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=200\x12\x15\n\rcheckpoint_id\x18\x03 \x01(\t\x12,\n\x08start_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"&\n\x13\x43\x65llOutputsResponse\x12\x0f\n\x07outputs\x18\x01 \x03(\t\"\x90\x01\n\x18GetStateVariablesRequest\x12!\n\nproject_id\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=200\x12\"\n\x0bnotebook_id\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=200\x12\x16\n\x0evariable_names\x18\x03 \x03(\t\x12\x15\n\rcheckpoint_id\x18\x04 \x01(\t\"G\n\x19GetStateVariablesResponse\x12*\n\tvariables\x18\x01 \x01(\x0b\x32\x17.google.protobuf.Struct\"\\\n\x1aGetNotebookMetadataRequest\x12!\n\nproject_id\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=200\x12\x1b\n\rnotebook_path\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"\xbd\x01\n\x1bGetNotebookMetadataResponse\x12\x13\n\x0bnotebook_id\x18\x01 \x01(\t\x12.\n\ncreated_at\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0bmodified_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x16\n\x0e\x63ontent_length\x18\x04 \x01(\x03\x12\x10\n\x08\x63\x65ll_ids\x18\x05 \x03(\t2\xdb\x10\n\x0eProjectService\x12\xa5\x01\n\x06\x43reate\x12\x30.yandex.cloud.datasphere.v1.CreateProjectRequest\x1a!.yandex.cloud.operation.Operation\"F\xb2\xd2* \n\x15\x43reateProjectMetadata\x12\x07Project\x82\xd3\xe4\x93\x02\x1c\"\x17/datasphere/v1/projects:\x01*\x12\xb2\x01\n\x06Update\x12\x30.yandex.cloud.datasphere.v1.UpdateProjectRequest\x1a!.yandex.cloud.operation.Operation\"S\xb2\xd2* \n\x15UpdateProjectMetadata\x12\x07Project\x82\xd3\xe4\x93\x02)2$/datasphere/v1/projects/{project_id}:\x01*\x12\xbd\x01\n\x06\x44\x65lete\x12\x30.yandex.cloud.datasphere.v1.DeleteProjectRequest\x1a!.yandex.cloud.operation.Operation\"^\xb2\xd2*.\n\x15\x44\x65leteProjectMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02&*$/datasphere/v1/projects/{project_id}\x12\xba\x01\n\x04Open\x12..yandex.cloud.datasphere.v1.OpenProjectRequest\x1a!.yandex.cloud.operation.Operation\"_\xb2\xd2**\n\x13OpenProjectMetadata\x12\x13OpenProjectResponse\x82\xd3\xe4\x93\x02+\")/datasphere/v1/projects/{project_id}:open\x12\x87\x01\n\x03Get\x12-.yandex.cloud.datasphere.v1.GetProjectRequest\x1a#.yandex.cloud.datasphere.v1.Project\",\x82\xd3\xe4\x93\x02&\x12$/datasphere/v1/projects/{project_id}\x12\x8a\x01\n\x04List\x12/.yandex.cloud.datasphere.v1.ListProjectsRequest\x1a\x30.yandex.cloud.datasphere.v1.ListProjectsResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/datasphere/v1/projects\x12\xb1\x01\n\x0eGetUnitBalance\x12\x31.yandex.cloud.datasphere.v1.GetUnitBalanceRequest\x1a\x32.yandex.cloud.datasphere.v1.GetUnitBalanceResponse\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/datasphere/v1/projects/{project_id}:unitBalance\x12\x98\x01\n\x0eSetUnitBalance\x12\x31.yandex.cloud.datasphere.v1.SetUnitBalanceRequest\x1a\x16.google.protobuf.Empty\";\x82\xd3\xe4\x93\x02\x35\"0/datasphere/v1/projects/{project_id}:unitBalance:\x01*\x12\xd2\x01\n\x07\x45xecute\x12\x33.yandex.cloud.datasphere.v1.ProjectExecutionRequest\x1a!.yandex.cloud.operation.Operation\"o\xb2\xd2*4\n\x18ProjectExecutionMetadata\x12\x18ProjectExecutionResponse\x82\xd3\xe4\x93\x02\x31\",/datasphere/v1/projects/{project_id}:execute:\x01*\x12\xab\x01\n\x0eGetCellOutputs\x12..yandex.cloud.datasphere.v1.CellOutputsRequest\x1a/.yandex.cloud.datasphere.v1.CellOutputsResponse\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/datasphere/v1/projects/{project_id}:cellOutputs\x12\xbd\x01\n\x11GetStateVariables\x12\x34.yandex.cloud.datasphere.v1.GetStateVariablesRequest\x1a\x35.yandex.cloud.datasphere.v1.GetStateVariablesResponse\";\x82\xd3\xe4\x93\x02\x35\x12\x33/datasphere/v1/projects/{project_id}:stateVariables\x12\xc5\x01\n\x13GetNotebookMetadata\x12\x36.yandex.cloud.datasphere.v1.GetNotebookMetadataRequest\x1a\x37.yandex.cloud.datasphere.v1.GetNotebookMetadataResponse\"=\x82\xd3\xe4\x93\x02\x37\x12\x35/datasphere/v1/projects/{project_id}:notebookMetadataBk\n\x1eyandex.cloud.api.datasphere.v1ZIgithub.com/yandex-cloud/go-genproto/yandex/cloud/datasphere/v1;datasphereb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n0yandex/cloud/datasphere/v1/project_service.proto\x12\x1ayandex.cloud.datasphere.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a yandex/cloud/api/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a&yandex/cloud/operation/operation.proto\x1a(yandex/cloud/datasphere/v1/project.proto\"\x8e\x02\n\x14\x43reateProjectRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x39\n\x04name\x18\x02 \x01(\tB+\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x8a\xc8\x31\x04<=63\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12>\n\x08settings\x18\x04 \x01(\x0b\x32,.yandex.cloud.datasphere.v1.Project.Settings\x12:\n\x06limits\x18\x05 \x01(\x0b\x32*.yandex.cloud.datasphere.v1.Project.Limits\"+\n\x15\x43reateProjectMetadata\x12\x12\n\nproject_id\x18\x01 \x01(\t\"\xc1\x02\n\x14UpdateProjectRequest\x12!\n\nproject_id\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=200\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x39\n\x04name\x18\x03 \x01(\tB+\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x8a\xc8\x31\x04<=63\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12>\n\x08settings\x18\x05 \x01(\x0b\x32,.yandex.cloud.datasphere.v1.Project.Settings\x12:\n\x06limits\x18\x06 \x01(\x0b\x32*.yandex.cloud.datasphere.v1.Project.Limits\"+\n\x15UpdateProjectMetadata\x12\x12\n\nproject_id\x18\x01 \x01(\t\"9\n\x14\x44\x65leteProjectRequest\x12!\n\nproject_id\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=200\"+\n\x15\x44\x65leteProjectMetadata\x12\x12\n\nproject_id\x18\x01 \x01(\t\"7\n\x12OpenProjectRequest\x12!\n\nproject_id\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=200\")\n\x13OpenProjectMetadata\x12\x12\n\nproject_id\x18\x01 \x01(\t\"A\n\x13OpenProjectResponse\x12\x13\n\x0bproject_url\x18\x01 \x01(\t\x12\x15\n\rsession_token\x18\x02 \x01(\t\"6\n\x11GetProjectRequest\x12!\n\nproject_id\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=200\"t\n\x13ListProjectsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"f\n\x14ListProjectsResponse\x12\x35\n\x08projects\x18\x01 \x03(\x0b\x32#.yandex.cloud.datasphere.v1.Project\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\":\n\x15GetUnitBalanceRequest\x12!\n\nproject_id\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=200\"K\n\x16GetUnitBalanceResponse\x12\x31\n\x0cunit_balance\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"m\n\x15SetUnitBalanceRequest\x12!\n\nproject_id\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=200\x12\x31\n\x0cunit_balance\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"\xdd\x01\n\x17ProjectExecutionRequest\x12!\n\nproject_id\x18\x01 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=200\x12 \n\x0bnotebook_id\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=200H\x00\x12\x1c\n\x07\x63\x65ll_id\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=200H\x00\x12\x30\n\x0finput_variables\x18\x04 \x01(\x0b\x32\x17.google.protobuf.Struct\x12\x1d\n\x15output_variable_names\x18\x05 \x03(\tB\x0e\n\x06target\x12\x04\xc0\xc1\x31\x01\"~\n\x18ProjectExecutionMetadata\x12\x12\n\nproject_id\x18\x01 \x01(\t\x12 \n\x0bnotebook_id\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=200H\x00\x12\x1c\n\x07\x63\x65ll_id\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=200H\x00\x42\x0e\n\x06target\x12\x04\xc0\xc1\x31\x01\"&\n\x18ProjectExecutionResponseJ\x04\x08\x01\x10\x02J\x04\x08\x02\x10\x03\x32\xa5\x0c\n\x0eProjectService\x12\xa5\x01\n\x06\x43reate\x12\x30.yandex.cloud.datasphere.v1.CreateProjectRequest\x1a!.yandex.cloud.operation.Operation\"F\xb2\xd2* \n\x15\x43reateProjectMetadata\x12\x07Project\x82\xd3\xe4\x93\x02\x1c\"\x17/datasphere/v1/projects:\x01*\x12\xb2\x01\n\x06Update\x12\x30.yandex.cloud.datasphere.v1.UpdateProjectRequest\x1a!.yandex.cloud.operation.Operation\"S\xb2\xd2* \n\x15UpdateProjectMetadata\x12\x07Project\x82\xd3\xe4\x93\x02)2$/datasphere/v1/projects/{project_id}:\x01*\x12\xbd\x01\n\x06\x44\x65lete\x12\x30.yandex.cloud.datasphere.v1.DeleteProjectRequest\x1a!.yandex.cloud.operation.Operation\"^\xb2\xd2*.\n\x15\x44\x65leteProjectMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02&*$/datasphere/v1/projects/{project_id}\x12\xba\x01\n\x04Open\x12..yandex.cloud.datasphere.v1.OpenProjectRequest\x1a!.yandex.cloud.operation.Operation\"_\xb2\xd2**\n\x13OpenProjectMetadata\x12\x13OpenProjectResponse\x82\xd3\xe4\x93\x02+\")/datasphere/v1/projects/{project_id}:open\x12\x87\x01\n\x03Get\x12-.yandex.cloud.datasphere.v1.GetProjectRequest\x1a#.yandex.cloud.datasphere.v1.Project\",\x82\xd3\xe4\x93\x02&\x12$/datasphere/v1/projects/{project_id}\x12\x8a\x01\n\x04List\x12/.yandex.cloud.datasphere.v1.ListProjectsRequest\x1a\x30.yandex.cloud.datasphere.v1.ListProjectsResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/datasphere/v1/projects\x12\xb1\x01\n\x0eGetUnitBalance\x12\x31.yandex.cloud.datasphere.v1.GetUnitBalanceRequest\x1a\x32.yandex.cloud.datasphere.v1.GetUnitBalanceResponse\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/datasphere/v1/projects/{project_id}:unitBalance\x12\x98\x01\n\x0eSetUnitBalance\x12\x31.yandex.cloud.datasphere.v1.SetUnitBalanceRequest\x1a\x16.google.protobuf.Empty\";\x82\xd3\xe4\x93\x02\x35\"0/datasphere/v1/projects/{project_id}:unitBalance:\x01*\x12\xd2\x01\n\x07\x45xecute\x12\x33.yandex.cloud.datasphere.v1.ProjectExecutionRequest\x1a!.yandex.cloud.operation.Operation\"o\xb2\xd2*4\n\x18ProjectExecutionMetadata\x12\x18ProjectExecutionResponse\x82\xd3\xe4\x93\x02\x31\",/datasphere/v1/projects/{project_id}:execute:\x01*Bk\n\x1eyandex.cloud.api.datasphere.v1ZIgithub.com/yandex-cloud/go-genproto/yandex/cloud/datasphere/v1;datasphereb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -73,18 +72,6 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _PROJECTEXECUTIONMETADATA.fields_by_name['notebook_id']._serialized_options = b'\212\3101\005<=200'
   _PROJECTEXECUTIONMETADATA.fields_by_name['cell_id']._options = None
   _PROJECTEXECUTIONMETADATA.fields_by_name['cell_id']._serialized_options = b'\212\3101\005<=200'
-  _CELLOUTPUTSREQUEST.fields_by_name['project_id']._options = None
-  _CELLOUTPUTSREQUEST.fields_by_name['project_id']._serialized_options = b'\350\3071\001\212\3101\005<=200'
-  _CELLOUTPUTSREQUEST.fields_by_name['cell_id']._options = None
-  _CELLOUTPUTSREQUEST.fields_by_name['cell_id']._serialized_options = b'\350\3071\001\212\3101\005<=200'
-  _GETSTATEVARIABLESREQUEST.fields_by_name['project_id']._options = None
-  _GETSTATEVARIABLESREQUEST.fields_by_name['project_id']._serialized_options = b'\350\3071\001\212\3101\005<=200'
-  _GETSTATEVARIABLESREQUEST.fields_by_name['notebook_id']._options = None
-  _GETSTATEVARIABLESREQUEST.fields_by_name['notebook_id']._serialized_options = b'\350\3071\001\212\3101\005<=200'
-  _GETNOTEBOOKMETADATAREQUEST.fields_by_name['project_id']._options = None
-  _GETNOTEBOOKMETADATAREQUEST.fields_by_name['project_id']._serialized_options = b'\350\3071\001\212\3101\005<=200'
-  _GETNOTEBOOKMETADATAREQUEST.fields_by_name['notebook_path']._options = None
-  _GETNOTEBOOKMETADATAREQUEST.fields_by_name['notebook_path']._serialized_options = b'\350\3071\001'
   _PROJECTSERVICE.methods_by_name['Create']._options = None
   _PROJECTSERVICE.methods_by_name['Create']._serialized_options = b'\262\322* \n\025CreateProjectMetadata\022\007Project\202\323\344\223\002\034\"\027/datasphere/v1/projects:\001*'
   _PROJECTSERVICE.methods_by_name['Update']._options = None
@@ -103,60 +90,42 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _PROJECTSERVICE.methods_by_name['SetUnitBalance']._serialized_options = b'\202\323\344\223\0025\"0/datasphere/v1/projects/{project_id}:unitBalance:\001*'
   _PROJECTSERVICE.methods_by_name['Execute']._options = None
   _PROJECTSERVICE.methods_by_name['Execute']._serialized_options = b'\262\322*4\n\030ProjectExecutionMetadata\022\030ProjectExecutionResponse\202\323\344\223\0021\",/datasphere/v1/projects/{project_id}:execute:\001*'
-  _PROJECTSERVICE.methods_by_name['GetCellOutputs']._options = None
-  _PROJECTSERVICE.methods_by_name['GetCellOutputs']._serialized_options = b'\202\323\344\223\0022\0220/datasphere/v1/projects/{project_id}:cellOutputs'
-  _PROJECTSERVICE.methods_by_name['GetStateVariables']._options = None
-  _PROJECTSERVICE.methods_by_name['GetStateVariables']._serialized_options = b'\202\323\344\223\0025\0223/datasphere/v1/projects/{project_id}:stateVariables'
-  _PROJECTSERVICE.methods_by_name['GetNotebookMetadata']._options = None
-  _PROJECTSERVICE.methods_by_name['GetNotebookMetadata']._serialized_options = b'\202\323\344\223\0027\0225/datasphere/v1/projects/{project_id}:notebookMetadata'
-  _globals['_CREATEPROJECTREQUEST']._serialized_start=416
-  _globals['_CREATEPROJECTREQUEST']._serialized_end=686
-  _globals['_CREATEPROJECTMETADATA']._serialized_start=688
-  _globals['_CREATEPROJECTMETADATA']._serialized_end=731
-  _globals['_UPDATEPROJECTREQUEST']._serialized_start=734
-  _globals['_UPDATEPROJECTREQUEST']._serialized_end=1055
-  _globals['_UPDATEPROJECTMETADATA']._serialized_start=1057
-  _globals['_UPDATEPROJECTMETADATA']._serialized_end=1100
-  _globals['_DELETEPROJECTREQUEST']._serialized_start=1102
-  _globals['_DELETEPROJECTREQUEST']._serialized_end=1159
-  _globals['_DELETEPROJECTMETADATA']._serialized_start=1161
-  _globals['_DELETEPROJECTMETADATA']._serialized_end=1204
-  _globals['_OPENPROJECTREQUEST']._serialized_start=1206
-  _globals['_OPENPROJECTREQUEST']._serialized_end=1261
-  _globals['_OPENPROJECTMETADATA']._serialized_start=1263
-  _globals['_OPENPROJECTMETADATA']._serialized_end=1304
-  _globals['_OPENPROJECTRESPONSE']._serialized_start=1306
-  _globals['_OPENPROJECTRESPONSE']._serialized_end=1371
-  _globals['_GETPROJECTREQUEST']._serialized_start=1373
-  _globals['_GETPROJECTREQUEST']._serialized_end=1427
-  _globals['_LISTPROJECTSREQUEST']._serialized_start=1429
-  _globals['_LISTPROJECTSREQUEST']._serialized_end=1545
-  _globals['_LISTPROJECTSRESPONSE']._serialized_start=1547
-  _globals['_LISTPROJECTSRESPONSE']._serialized_end=1649
-  _globals['_GETUNITBALANCEREQUEST']._serialized_start=1651
-  _globals['_GETUNITBALANCEREQUEST']._serialized_end=1709
-  _globals['_GETUNITBALANCERESPONSE']._serialized_start=1711
-  _globals['_GETUNITBALANCERESPONSE']._serialized_end=1786
-  _globals['_SETUNITBALANCEREQUEST']._serialized_start=1788
-  _globals['_SETUNITBALANCEREQUEST']._serialized_end=1897
-  _globals['_PROJECTEXECUTIONREQUEST']._serialized_start=1900
-  _globals['_PROJECTEXECUTIONREQUEST']._serialized_end=2121
-  _globals['_PROJECTEXECUTIONMETADATA']._serialized_start=2123
-  _globals['_PROJECTEXECUTIONMETADATA']._serialized_end=2249
-  _globals['_PROJECTEXECUTIONRESPONSE']._serialized_start=2251
-  _globals['_PROJECTEXECUTIONRESPONSE']._serialized_end=2351
-  _globals['_CELLOUTPUTSREQUEST']._serialized_start=2354
-  _globals['_CELLOUTPUTSREQUEST']._serialized_end=2510
-  _globals['_CELLOUTPUTSRESPONSE']._serialized_start=2512
-  _globals['_CELLOUTPUTSRESPONSE']._serialized_end=2550
-  _globals['_GETSTATEVARIABLESREQUEST']._serialized_start=2553
-  _globals['_GETSTATEVARIABLESREQUEST']._serialized_end=2697
-  _globals['_GETSTATEVARIABLESRESPONSE']._serialized_start=2699
-  _globals['_GETSTATEVARIABLESRESPONSE']._serialized_end=2770
-  _globals['_GETNOTEBOOKMETADATAREQUEST']._serialized_start=2772
-  _globals['_GETNOTEBOOKMETADATAREQUEST']._serialized_end=2864
-  _globals['_GETNOTEBOOKMETADATARESPONSE']._serialized_start=2867
-  _globals['_GETNOTEBOOKMETADATARESPONSE']._serialized_end=3056
-  _globals['_PROJECTSERVICE']._serialized_start=3059
-  _globals['_PROJECTSERVICE']._serialized_end=5198
+  _globals['_CREATEPROJECTREQUEST']._serialized_start=383
+  _globals['_CREATEPROJECTREQUEST']._serialized_end=653
+  _globals['_CREATEPROJECTMETADATA']._serialized_start=655
+  _globals['_CREATEPROJECTMETADATA']._serialized_end=698
+  _globals['_UPDATEPROJECTREQUEST']._serialized_start=701
+  _globals['_UPDATEPROJECTREQUEST']._serialized_end=1022
+  _globals['_UPDATEPROJECTMETADATA']._serialized_start=1024
+  _globals['_UPDATEPROJECTMETADATA']._serialized_end=1067
+  _globals['_DELETEPROJECTREQUEST']._serialized_start=1069
+  _globals['_DELETEPROJECTREQUEST']._serialized_end=1126
+  _globals['_DELETEPROJECTMETADATA']._serialized_start=1128
+  _globals['_DELETEPROJECTMETADATA']._serialized_end=1171
+  _globals['_OPENPROJECTREQUEST']._serialized_start=1173
+  _globals['_OPENPROJECTREQUEST']._serialized_end=1228
+  _globals['_OPENPROJECTMETADATA']._serialized_start=1230
+  _globals['_OPENPROJECTMETADATA']._serialized_end=1271
+  _globals['_OPENPROJECTRESPONSE']._serialized_start=1273
+  _globals['_OPENPROJECTRESPONSE']._serialized_end=1338
+  _globals['_GETPROJECTREQUEST']._serialized_start=1340
+  _globals['_GETPROJECTREQUEST']._serialized_end=1394
+  _globals['_LISTPROJECTSREQUEST']._serialized_start=1396
+  _globals['_LISTPROJECTSREQUEST']._serialized_end=1512
+  _globals['_LISTPROJECTSRESPONSE']._serialized_start=1514
+  _globals['_LISTPROJECTSRESPONSE']._serialized_end=1616
+  _globals['_GETUNITBALANCEREQUEST']._serialized_start=1618
+  _globals['_GETUNITBALANCEREQUEST']._serialized_end=1676
+  _globals['_GETUNITBALANCERESPONSE']._serialized_start=1678
+  _globals['_GETUNITBALANCERESPONSE']._serialized_end=1753
+  _globals['_SETUNITBALANCEREQUEST']._serialized_start=1755
+  _globals['_SETUNITBALANCEREQUEST']._serialized_end=1864
+  _globals['_PROJECTEXECUTIONREQUEST']._serialized_start=1867
+  _globals['_PROJECTEXECUTIONREQUEST']._serialized_end=2088
+  _globals['_PROJECTEXECUTIONMETADATA']._serialized_start=2090
+  _globals['_PROJECTEXECUTIONMETADATA']._serialized_end=2216
+  _globals['_PROJECTEXECUTIONRESPONSE']._serialized_start=2218
+  _globals['_PROJECTEXECUTIONRESPONSE']._serialized_end=2256
+  _globals['_PROJECTSERVICE']._serialized_start=2259
+  _globals['_PROJECTSERVICE']._serialized_end=3832
 # @@protoc_insertion_point(module_scope)

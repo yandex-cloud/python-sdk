@@ -19,58 +19,79 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class MessageServiceStub:
+    """MessageService provides operations for managing messages."""
+
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Create: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.threads.message_service_pb2.CreateMessageRequest,
         yandex.cloud.ai.assistants.v1.threads.message_pb2.Message,
     ]
+    """Create a new message."""
 
     Get: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.threads.message_service_pb2.GetMessageRequest,
         yandex.cloud.ai.assistants.v1.threads.message_pb2.Message,
     ]
+    """Retrieve details of a specific message by its ID."""
 
     List: grpc.UnaryStreamMultiCallable[
         yandex.cloud.ai.assistants.v1.threads.message_service_pb2.ListMessagesRequest,
         yandex.cloud.ai.assistants.v1.threads.message_pb2.Message,
     ]
+    """List messages in a specific thread.
+    By default, messages are listed in reverse chronological order, i.e., from the newest to the oldest.
+    """
 
 class MessageServiceAsyncStub:
+    """MessageService provides operations for managing messages."""
+
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.threads.message_service_pb2.CreateMessageRequest,
         yandex.cloud.ai.assistants.v1.threads.message_pb2.Message,
     ]
+    """Create a new message."""
 
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.threads.message_service_pb2.GetMessageRequest,
         yandex.cloud.ai.assistants.v1.threads.message_pb2.Message,
     ]
+    """Retrieve details of a specific message by its ID."""
 
     List: grpc.aio.UnaryStreamMultiCallable[
         yandex.cloud.ai.assistants.v1.threads.message_service_pb2.ListMessagesRequest,
         yandex.cloud.ai.assistants.v1.threads.message_pb2.Message,
     ]
+    """List messages in a specific thread.
+    By default, messages are listed in reverse chronological order, i.e., from the newest to the oldest.
+    """
 
 class MessageServiceServicer(metaclass=abc.ABCMeta):
+    """MessageService provides operations for managing messages."""
+
     @abc.abstractmethod
     def Create(
         self,
         request: yandex.cloud.ai.assistants.v1.threads.message_service_pb2.CreateMessageRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.assistants.v1.threads.message_pb2.Message, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.threads.message_pb2.Message]]: ...
+    ) -> typing.Union[yandex.cloud.ai.assistants.v1.threads.message_pb2.Message, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.threads.message_pb2.Message]]:
+        """Create a new message."""
 
     @abc.abstractmethod
     def Get(
         self,
         request: yandex.cloud.ai.assistants.v1.threads.message_service_pb2.GetMessageRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.assistants.v1.threads.message_pb2.Message, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.threads.message_pb2.Message]]: ...
+    ) -> typing.Union[yandex.cloud.ai.assistants.v1.threads.message_pb2.Message, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.threads.message_pb2.Message]]:
+        """Retrieve details of a specific message by its ID."""
 
     @abc.abstractmethod
     def List(
         self,
         request: yandex.cloud.ai.assistants.v1.threads.message_service_pb2.ListMessagesRequest,
         context: _ServicerContext,
-    ) -> typing.Union[collections.abc.Iterator[yandex.cloud.ai.assistants.v1.threads.message_pb2.Message], collections.abc.AsyncIterator[yandex.cloud.ai.assistants.v1.threads.message_pb2.Message]]: ...
+    ) -> typing.Union[collections.abc.Iterator[yandex.cloud.ai.assistants.v1.threads.message_pb2.Message], collections.abc.AsyncIterator[yandex.cloud.ai.assistants.v1.threads.message_pb2.Message]]:
+        """List messages in a specific thread.
+        By default, messages are listed in reverse chronological order, i.e., from the newest to the oldest.
+        """
 
 def add_MessageServiceServicer_to_server(servicer: MessageServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

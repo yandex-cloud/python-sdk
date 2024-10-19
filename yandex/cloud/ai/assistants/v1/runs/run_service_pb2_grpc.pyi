@@ -19,92 +19,122 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class RunServiceStub:
+    """RunService provides operations for managing runs."""
+
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Create: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.runs.run_service_pb2.CreateRunRequest,
         yandex.cloud.ai.assistants.v1.runs.run_pb2.Run,
     ]
+    """Create a new run for a given assistant and thread."""
 
     Listen: grpc.UnaryStreamMultiCallable[
         yandex.cloud.ai.assistants.v1.runs.run_service_pb2.ListenRunRequest,
         yandex.cloud.ai.assistants.v1.runs.run_service_pb2.StreamEvent,
     ]
+    """Listen to events from a specific run.
+    If the run was created with `stream = false`, Listen will only respond with the final status of the run
+    and will not stream partial messages or intermediate events.
+    """
 
     Get: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.runs.run_service_pb2.GetRunRequest,
         yandex.cloud.ai.assistants.v1.runs.run_pb2.Run,
     ]
+    """Retrieve details of a specific run by its ID."""
 
     GetLastByThread: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.runs.run_service_pb2.GetLastRunByThreadRequest,
         yandex.cloud.ai.assistants.v1.runs.run_pb2.Run,
     ]
+    """Retrieves the most recent run for a specific thread."""
 
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.runs.run_service_pb2.ListRunsRequest,
         yandex.cloud.ai.assistants.v1.runs.run_service_pb2.ListRunsResponse,
     ]
+    """List runs in a specific folder."""
 
 class RunServiceAsyncStub:
+    """RunService provides operations for managing runs."""
+
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.runs.run_service_pb2.CreateRunRequest,
         yandex.cloud.ai.assistants.v1.runs.run_pb2.Run,
     ]
+    """Create a new run for a given assistant and thread."""
 
     Listen: grpc.aio.UnaryStreamMultiCallable[
         yandex.cloud.ai.assistants.v1.runs.run_service_pb2.ListenRunRequest,
         yandex.cloud.ai.assistants.v1.runs.run_service_pb2.StreamEvent,
     ]
+    """Listen to events from a specific run.
+    If the run was created with `stream = false`, Listen will only respond with the final status of the run
+    and will not stream partial messages or intermediate events.
+    """
 
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.runs.run_service_pb2.GetRunRequest,
         yandex.cloud.ai.assistants.v1.runs.run_pb2.Run,
     ]
+    """Retrieve details of a specific run by its ID."""
 
     GetLastByThread: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.runs.run_service_pb2.GetLastRunByThreadRequest,
         yandex.cloud.ai.assistants.v1.runs.run_pb2.Run,
     ]
+    """Retrieves the most recent run for a specific thread."""
 
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.runs.run_service_pb2.ListRunsRequest,
         yandex.cloud.ai.assistants.v1.runs.run_service_pb2.ListRunsResponse,
     ]
+    """List runs in a specific folder."""
 
 class RunServiceServicer(metaclass=abc.ABCMeta):
+    """RunService provides operations for managing runs."""
+
     @abc.abstractmethod
     def Create(
         self,
         request: yandex.cloud.ai.assistants.v1.runs.run_service_pb2.CreateRunRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.assistants.v1.runs.run_pb2.Run, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.runs.run_pb2.Run]]: ...
+    ) -> typing.Union[yandex.cloud.ai.assistants.v1.runs.run_pb2.Run, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.runs.run_pb2.Run]]:
+        """Create a new run for a given assistant and thread."""
 
     @abc.abstractmethod
     def Listen(
         self,
         request: yandex.cloud.ai.assistants.v1.runs.run_service_pb2.ListenRunRequest,
         context: _ServicerContext,
-    ) -> typing.Union[collections.abc.Iterator[yandex.cloud.ai.assistants.v1.runs.run_service_pb2.StreamEvent], collections.abc.AsyncIterator[yandex.cloud.ai.assistants.v1.runs.run_service_pb2.StreamEvent]]: ...
+    ) -> typing.Union[collections.abc.Iterator[yandex.cloud.ai.assistants.v1.runs.run_service_pb2.StreamEvent], collections.abc.AsyncIterator[yandex.cloud.ai.assistants.v1.runs.run_service_pb2.StreamEvent]]:
+        """Listen to events from a specific run.
+        If the run was created with `stream = false`, Listen will only respond with the final status of the run
+        and will not stream partial messages or intermediate events.
+        """
 
     @abc.abstractmethod
     def Get(
         self,
         request: yandex.cloud.ai.assistants.v1.runs.run_service_pb2.GetRunRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.assistants.v1.runs.run_pb2.Run, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.runs.run_pb2.Run]]: ...
+    ) -> typing.Union[yandex.cloud.ai.assistants.v1.runs.run_pb2.Run, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.runs.run_pb2.Run]]:
+        """Retrieve details of a specific run by its ID."""
 
     @abc.abstractmethod
     def GetLastByThread(
         self,
         request: yandex.cloud.ai.assistants.v1.runs.run_service_pb2.GetLastRunByThreadRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.assistants.v1.runs.run_pb2.Run, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.runs.run_pb2.Run]]: ...
+    ) -> typing.Union[yandex.cloud.ai.assistants.v1.runs.run_pb2.Run, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.runs.run_pb2.Run]]:
+        """Retrieves the most recent run for a specific thread."""
 
     @abc.abstractmethod
     def List(
         self,
         request: yandex.cloud.ai.assistants.v1.runs.run_service_pb2.ListRunsRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.assistants.v1.runs.run_service_pb2.ListRunsResponse, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.runs.run_service_pb2.ListRunsResponse]]: ...
+    ) -> typing.Union[yandex.cloud.ai.assistants.v1.runs.run_service_pb2.ListRunsResponse, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.runs.run_service_pb2.ListRunsResponse]]:
+        """List runs in a specific folder."""
 
 def add_RunServiceServicer_to_server(servicer: RunServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

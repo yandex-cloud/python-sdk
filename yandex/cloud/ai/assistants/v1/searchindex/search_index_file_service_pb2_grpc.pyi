@@ -19,41 +19,53 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class SearchIndexFileServiceStub:
+    """ThreadService provides operations for managing files within search indexes."""
+
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Get: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.searchindex.search_index_file_service_pb2.GetSearchIndexFileRequest,
         yandex.cloud.ai.assistants.v1.searchindex.search_index_file_pb2.SearchIndexFile,
     ]
+    """Retrieves details of a specific file that has been indexed within a search index."""
 
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.searchindex.search_index_file_service_pb2.ListSearchIndexFilesRequest,
         yandex.cloud.ai.assistants.v1.searchindex.search_index_file_service_pb2.ListSearchIndexFilesResponse,
     ]
+    """List files that are indexed within a specific search index."""
 
 class SearchIndexFileServiceAsyncStub:
+    """ThreadService provides operations for managing files within search indexes."""
+
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.searchindex.search_index_file_service_pb2.GetSearchIndexFileRequest,
         yandex.cloud.ai.assistants.v1.searchindex.search_index_file_pb2.SearchIndexFile,
     ]
+    """Retrieves details of a specific file that has been indexed within a search index."""
 
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.searchindex.search_index_file_service_pb2.ListSearchIndexFilesRequest,
         yandex.cloud.ai.assistants.v1.searchindex.search_index_file_service_pb2.ListSearchIndexFilesResponse,
     ]
+    """List files that are indexed within a specific search index."""
 
 class SearchIndexFileServiceServicer(metaclass=abc.ABCMeta):
+    """ThreadService provides operations for managing files within search indexes."""
+
     @abc.abstractmethod
     def Get(
         self,
         request: yandex.cloud.ai.assistants.v1.searchindex.search_index_file_service_pb2.GetSearchIndexFileRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.assistants.v1.searchindex.search_index_file_pb2.SearchIndexFile, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.searchindex.search_index_file_pb2.SearchIndexFile]]: ...
+    ) -> typing.Union[yandex.cloud.ai.assistants.v1.searchindex.search_index_file_pb2.SearchIndexFile, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.searchindex.search_index_file_pb2.SearchIndexFile]]:
+        """Retrieves details of a specific file that has been indexed within a search index."""
 
     @abc.abstractmethod
     def List(
         self,
         request: yandex.cloud.ai.assistants.v1.searchindex.search_index_file_service_pb2.ListSearchIndexFilesRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.assistants.v1.searchindex.search_index_file_service_pb2.ListSearchIndexFilesResponse, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.searchindex.search_index_file_service_pb2.ListSearchIndexFilesResponse]]: ...
+    ) -> typing.Union[yandex.cloud.ai.assistants.v1.searchindex.search_index_file_service_pb2.ListSearchIndexFilesResponse, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.searchindex.search_index_file_service_pb2.ListSearchIndexFilesResponse]]:
+        """List files that are indexed within a specific search index."""
 
 def add_SearchIndexFileServiceServicer_to_server(servicer: SearchIndexFileServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

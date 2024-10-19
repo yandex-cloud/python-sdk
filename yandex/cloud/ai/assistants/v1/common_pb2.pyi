@@ -15,11 +15,18 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class PromptTruncationOptions(google.protobuf.message.Message):
+    """Defines the options for truncating thread messages within a prompt."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     MAX_PROMPT_TOKENS_FIELD_NUMBER: builtins.int
     @property
-    def max_prompt_tokens(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def max_prompt_tokens(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """The maximum number of tokens allowed in the prompt.
+        If the prompt exceeds this limit, the thread messages will be truncated.
+        Default max_prompt_tokens: 7000
+        """
+
     def __init__(
         self,
         *,
@@ -32,14 +39,25 @@ global___PromptTruncationOptions = PromptTruncationOptions
 
 @typing.final
 class CompletionOptions(google.protobuf.message.Message):
+    """Defines the options for completion generation."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     MAX_TOKENS_FIELD_NUMBER: builtins.int
     TEMPERATURE_FIELD_NUMBER: builtins.int
     @property
-    def max_tokens(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def max_tokens(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """The limit on the number of tokens used for single completion generation.
+        Must be greater than zero. This maximum allowed parameter value may depend on the model being used.
+        """
+
     @property
-    def temperature(self) -> google.protobuf.wrappers_pb2.DoubleValue: ...
+    def temperature(self) -> google.protobuf.wrappers_pb2.DoubleValue:
+        """Affects creativity and randomness of responses. Should be a double number between 0 (inclusive) and 1 (inclusive).
+        Lower values produce more straightforward responses while higher values lead to increased creativity and randomness.
+        Default temperature: 0.3
+        """
+
     def __init__(
         self,
         *,
@@ -53,14 +71,23 @@ global___CompletionOptions = CompletionOptions
 
 @typing.final
 class SearchIndexTool(google.protobuf.message.Message):
+    """Configures a tool that enables Retrieval-Augmented Generation (RAG) by allowing the assistant to search across a specified search index."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     SEARCH_INDEX_IDS_FIELD_NUMBER: builtins.int
     MAX_NUM_RESULTS_FIELD_NUMBER: builtins.int
     @property
-    def search_index_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def search_index_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """A list of search index IDs that this tool will query. Currently, only a single index ID is supported."""
+
     @property
-    def max_num_results(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def max_num_results(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """The maximum number of results to return from the search.
+        Fewer results may be returned if necessary to fit within the prompt's token limit.
+        This ensures that the combined prompt and search results do not exceed the token constraints.
+        """
+
     def __init__(
         self,
         *,
@@ -74,11 +101,15 @@ global___SearchIndexTool = SearchIndexTool
 
 @typing.final
 class Tool(google.protobuf.message.Message):
+    """Represents a general tool that can be one of several types."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     SEARCH_INDEX_FIELD_NUMBER: builtins.int
     @property
-    def search_index(self) -> global___SearchIndexTool: ...
+    def search_index(self) -> global___SearchIndexTool:
+        """SearchIndexTool tool that performs search across specified indexes."""
+
     def __init__(
         self,
         *,

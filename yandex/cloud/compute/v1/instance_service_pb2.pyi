@@ -1367,10 +1367,11 @@ class AttachedDiskSpec(google.protobuf.message.Message):
         DESCRIPTION_FIELD_NUMBER: builtins.int
         TYPE_ID_FIELD_NUMBER: builtins.int
         SIZE_FIELD_NUMBER: builtins.int
-        BLOCK_SIZE_FIELD_NUMBER: builtins.int
-        DISK_PLACEMENT_POLICY_FIELD_NUMBER: builtins.int
         IMAGE_ID_FIELD_NUMBER: builtins.int
         SNAPSHOT_ID_FIELD_NUMBER: builtins.int
+        DISK_PLACEMENT_POLICY_FIELD_NUMBER: builtins.int
+        BLOCK_SIZE_FIELD_NUMBER: builtins.int
+        KMS_KEY_ID_FIELD_NUMBER: builtins.int
         name: builtins.str
         """Name of the disk."""
         description: builtins.str
@@ -1381,12 +1382,14 @@ class AttachedDiskSpec(google.protobuf.message.Message):
         """
         size: builtins.int
         """Size of the disk, specified in bytes."""
-        block_size: builtins.int
-        """Block size of the disk, specified in bytes. The default is 4096."""
         image_id: builtins.str
         """ID of the image to create the disk from."""
         snapshot_id: builtins.str
         """ID of the snapshot to restore the disk from."""
+        block_size: builtins.int
+        """Block size of the disk, specified in bytes. The default is 4096."""
+        kms_key_id: builtins.str
+        """ID of KMS key for disk encryption"""
         @property
         def disk_placement_policy(self) -> yandex.cloud.compute.v1.disk_pb2.DiskPlacementPolicy:
             """Placement policy configuration."""
@@ -1398,13 +1401,14 @@ class AttachedDiskSpec(google.protobuf.message.Message):
             description: builtins.str = ...,
             type_id: builtins.str = ...,
             size: builtins.int = ...,
-            block_size: builtins.int = ...,
-            disk_placement_policy: yandex.cloud.compute.v1.disk_pb2.DiskPlacementPolicy | None = ...,
             image_id: builtins.str = ...,
             snapshot_id: builtins.str = ...,
+            disk_placement_policy: yandex.cloud.compute.v1.disk_pb2.DiskPlacementPolicy | None = ...,
+            block_size: builtins.int = ...,
+            kms_key_id: builtins.str = ...,
         ) -> None: ...
         def HasField(self, field_name: typing.Literal["disk_placement_policy", b"disk_placement_policy", "image_id", b"image_id", "snapshot_id", b"snapshot_id", "source", b"source"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["block_size", b"block_size", "description", b"description", "disk_placement_policy", b"disk_placement_policy", "image_id", b"image_id", "name", b"name", "size", b"size", "snapshot_id", b"snapshot_id", "source", b"source", "type_id", b"type_id"]) -> None: ...
+        def ClearField(self, field_name: typing.Literal["block_size", b"block_size", "description", b"description", "disk_placement_policy", b"disk_placement_policy", "image_id", b"image_id", "kms_key_id", b"kms_key_id", "name", b"name", "size", b"size", "snapshot_id", b"snapshot_id", "source", b"source", "type_id", b"type_id"]) -> None: ...
         def WhichOneof(self, oneof_group: typing.Literal["source", b"source"]) -> typing.Literal["image_id", "snapshot_id"] | None: ...
 
     MODE_FIELD_NUMBER: builtins.int

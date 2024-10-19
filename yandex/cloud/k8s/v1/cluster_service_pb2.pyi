@@ -305,6 +305,7 @@ class MasterUpdateSpec(google.protobuf.message.Message):
     SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
     MASTER_LOGGING_FIELD_NUMBER: builtins.int
     LOCATIONS_FIELD_NUMBER: builtins.int
+    EXTERNAL_V6_ADDRESS_SPEC_FIELD_NUMBER: builtins.int
     @property
     def version(self) -> yandex.cloud.k8s.v1.version_pb2.UpdateVersionSpec:
         """Specification of the master update."""
@@ -325,6 +326,10 @@ class MasterUpdateSpec(google.protobuf.message.Message):
     def locations(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___LocationSpec]:
         """Update master instance locations."""
 
+    @property
+    def external_v6_address_spec(self) -> global___ExternalAddressSpec:
+        """Specification of parameters for external IPv6 networking."""
+
     def __init__(
         self,
         *,
@@ -333,9 +338,10 @@ class MasterUpdateSpec(google.protobuf.message.Message):
         security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         master_logging: yandex.cloud.k8s.v1.cluster_pb2.MasterLogging | None = ...,
         locations: collections.abc.Iterable[global___LocationSpec] | None = ...,
+        external_v6_address_spec: global___ExternalAddressSpec | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["maintenance_policy", b"maintenance_policy", "master_logging", b"master_logging", "version", b"version"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["locations", b"locations", "maintenance_policy", b"maintenance_policy", "master_logging", b"master_logging", "security_group_ids", b"security_group_ids", "version", b"version"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["external_v6_address_spec", b"external_v6_address_spec", "maintenance_policy", b"maintenance_policy", "master_logging", b"master_logging", "version", b"version"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["external_v6_address_spec", b"external_v6_address_spec", "locations", b"locations", "maintenance_policy", b"maintenance_policy", "master_logging", b"master_logging", "security_group_ids", b"security_group_ids", "version", b"version"]) -> None: ...
 
 global___MasterUpdateSpec = MasterUpdateSpec
 

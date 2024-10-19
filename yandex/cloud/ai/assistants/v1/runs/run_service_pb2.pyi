@@ -26,6 +26,8 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class CreateRunRequest(google.protobuf.message.Message):
+    """Request message for creating a new run."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     @typing.final
@@ -52,16 +54,31 @@ class CreateRunRequest(google.protobuf.message.Message):
     CUSTOM_COMPLETION_OPTIONS_FIELD_NUMBER: builtins.int
     STREAM_FIELD_NUMBER: builtins.int
     assistant_id: builtins.str
+    """ID of the assistant for which the run is being created"""
     thread_id: builtins.str
+    """ID of the thread associated with the run."""
     stream: builtins.bool
+    """Enables streaming of intermediate events, such as partial messages."""
     @property
-    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Set of key-value pairs to label the run."""
+
     @property
-    def additional_messages(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.ai.assistants.v1.threads.message_pb2.MessageData]: ...
+    def additional_messages(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.ai.assistants.v1.threads.message_pb2.MessageData]:
+        """Additional messages that will be written to the thread before the run starts."""
+
     @property
-    def custom_prompt_truncation_options(self) -> yandex.cloud.ai.assistants.v1.common_pb2.PromptTruncationOptions: ...
+    def custom_prompt_truncation_options(self) -> yandex.cloud.ai.assistants.v1.common_pb2.PromptTruncationOptions:
+        """Configuration options for truncating the prompt when the token count exceeds a specified limit.
+        If specified, these options will override the assistant's prompt truncation settings for this run.
+        """
+
     @property
-    def custom_completion_options(self) -> yandex.cloud.ai.assistants.v1.common_pb2.CompletionOptions: ...
+    def custom_completion_options(self) -> yandex.cloud.ai.assistants.v1.common_pb2.CompletionOptions:
+        """Configuration options for completion generation.
+        If specified, these options will override the assistant's completion settings for this run.
+        """
+
     def __init__(
         self,
         *,
@@ -80,13 +97,18 @@ global___CreateRunRequest = CreateRunRequest
 
 @typing.final
 class ListenRunRequest(google.protobuf.message.Message):
+    """Request message for listing to a run events."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     RUN_ID_FIELD_NUMBER: builtins.int
     EVENTS_START_IDX_FIELD_NUMBER: builtins.int
     run_id: builtins.str
+    """ID of the run to listen to."""
     @property
-    def events_start_idx(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
+    def events_start_idx(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Starting index for events. If provided, listening will start from this event."""
+
     def __init__(
         self,
         *,
@@ -100,10 +122,13 @@ global___ListenRunRequest = ListenRunRequest
 
 @typing.final
 class GetRunRequest(google.protobuf.message.Message):
+    """Request message for retrieving a specific run by its ID."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     RUN_ID_FIELD_NUMBER: builtins.int
     run_id: builtins.str
+    """ID of the run to retrieve."""
     def __init__(
         self,
         *,
@@ -115,10 +140,13 @@ global___GetRunRequest = GetRunRequest
 
 @typing.final
 class GetLastRunByThreadRequest(google.protobuf.message.Message):
+    """Request message for retrieving the last run associated with a specific thread."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     THREAD_ID_FIELD_NUMBER: builtins.int
     thread_id: builtins.str
+    """ID of the thread for which the last run is being fetched."""
     def __init__(
         self,
         *,
@@ -130,14 +158,19 @@ global___GetLastRunByThreadRequest = GetLastRunByThreadRequest
 
 @typing.final
 class ListRunsRequest(google.protobuf.message.Message):
+    """Request message for listing runs."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     FOLDER_ID_FIELD_NUMBER: builtins.int
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
+    """Folder ID from which to list runs."""
     page_size: builtins.int
+    """Maximum number of threads to return per page."""
     page_token: builtins.str
+    """Token to retrieve the next page of results."""
     def __init__(
         self,
         *,
@@ -151,13 +184,18 @@ global___ListRunsRequest = ListRunsRequest
 
 @typing.final
 class ListRunsResponse(google.protobuf.message.Message):
+    """Response message for the list operation."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     RUNS_FIELD_NUMBER: builtins.int
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
+    """Token to retrieve the next page of results."""
     @property
-    def runs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.ai.assistants.v1.runs.run_pb2.Run]: ...
+    def runs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.ai.assistants.v1.runs.run_pb2.Run]:
+        """List of runs in the specified folder."""
+
     def __init__(
         self,
         *,
@@ -170,12 +208,16 @@ global___ListRunsResponse = ListRunsResponse
 
 @typing.final
 class StreamCursor(google.protobuf.message.Message):
+    """Represents the cursor position in a stream of events."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CURRENT_EVENT_IDX_FIELD_NUMBER: builtins.int
     NUM_USER_EVENTS_RECEIVED_FIELD_NUMBER: builtins.int
     current_event_idx: builtins.int
+    """Index of the current event in the stream."""
     num_user_events_received: builtins.int
+    """The number of user events received so far."""
     def __init__(
         self,
         *,
@@ -188,6 +230,8 @@ global___StreamCursor = StreamCursor
 
 @typing.final
 class StreamEvent(google.protobuf.message.Message):
+    """Represents an event in the stream of a run."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     class _EventType:
@@ -197,15 +241,25 @@ class StreamEvent(google.protobuf.message.Message):
     class _EventTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[StreamEvent._EventType.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         EVENT_TYPE_UNSPECIFIED: StreamEvent._EventType.ValueType  # 0
+        """Unspecified event type."""
         PARTIAL_MESSAGE: StreamEvent._EventType.ValueType  # 1
+        """Partial message is available."""
         ERROR: StreamEvent._EventType.ValueType  # 2
+        """Run has failed due to an error."""
         DONE: StreamEvent._EventType.ValueType  # 3
+        """The run has completed."""
 
-    class EventType(_EventType, metaclass=_EventTypeEnumTypeWrapper): ...
+    class EventType(_EventType, metaclass=_EventTypeEnumTypeWrapper):
+        """Enum representing events that can occur in the stream."""
+
     EVENT_TYPE_UNSPECIFIED: StreamEvent.EventType.ValueType  # 0
+    """Unspecified event type."""
     PARTIAL_MESSAGE: StreamEvent.EventType.ValueType  # 1
+    """Partial message is available."""
     ERROR: StreamEvent.EventType.ValueType  # 2
+    """Run has failed due to an error."""
     DONE: StreamEvent.EventType.ValueType  # 3
+    """The run has completed."""
 
     EVENT_TYPE_FIELD_NUMBER: builtins.int
     STREAM_CURSOR_FIELD_NUMBER: builtins.int
@@ -213,14 +267,23 @@ class StreamEvent(google.protobuf.message.Message):
     PARTIAL_MESSAGE_FIELD_NUMBER: builtins.int
     COMPLETED_MESSAGE_FIELD_NUMBER: builtins.int
     event_type: global___StreamEvent.EventType.ValueType
+    """The type of event."""
     @property
-    def stream_cursor(self) -> global___StreamCursor: ...
+    def stream_cursor(self) -> global___StreamCursor:
+        """The current position in the stream."""
+
     @property
-    def error(self) -> yandex.cloud.ai.common.common_pb2.Error: ...
+    def error(self) -> yandex.cloud.ai.common.common_pb2.Error:
+        """Error information if the run has failed."""
+
     @property
-    def partial_message(self) -> yandex.cloud.ai.assistants.v1.threads.message_pb2.MessageContent: ...
+    def partial_message(self) -> yandex.cloud.ai.assistants.v1.threads.message_pb2.MessageContent:
+        """Partially generated message."""
+
     @property
-    def completed_message(self) -> yandex.cloud.ai.assistants.v1.threads.message_pb2.Message: ...
+    def completed_message(self) -> yandex.cloud.ai.assistants.v1.threads.message_pb2.Message:
+        """Final message generated by an assistant if a run has completed successfully."""
+
     def __init__(
         self,
         *,

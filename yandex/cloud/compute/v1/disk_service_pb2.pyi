@@ -147,6 +147,7 @@ class CreateDiskRequest(google.protobuf.message.Message):
     DISK_PLACEMENT_POLICY_FIELD_NUMBER: builtins.int
     SNAPSHOT_SCHEDULE_IDS_FIELD_NUMBER: builtins.int
     HARDWARE_GENERATION_FIELD_NUMBER: builtins.int
+    KMS_KEY_ID_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a disk in.
     To get the folder ID use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
@@ -174,6 +175,8 @@ class CreateDiskRequest(google.protobuf.message.Message):
     """ID of the snapshot to restore the disk from."""
     block_size: builtins.int
     """Block size used for disk, specified in bytes. The default is 4096."""
+    kms_key_id: builtins.str
+    """ID of KMS key for disk encryption."""
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Resource labels as `key:value` pairs."""
@@ -208,9 +211,10 @@ class CreateDiskRequest(google.protobuf.message.Message):
         disk_placement_policy: yandex.cloud.compute.v1.disk_pb2.DiskPlacementPolicy | None = ...,
         snapshot_schedule_ids: collections.abc.Iterable[builtins.str] | None = ...,
         hardware_generation: yandex.cloud.compute.v1.hardware_generation_pb2.HardwareGeneration | None = ...,
+        kms_key_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["disk_placement_policy", b"disk_placement_policy", "hardware_generation", b"hardware_generation", "image_id", b"image_id", "snapshot_id", b"snapshot_id", "source", b"source"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["block_size", b"block_size", "description", b"description", "disk_placement_policy", b"disk_placement_policy", "folder_id", b"folder_id", "hardware_generation", b"hardware_generation", "image_id", b"image_id", "labels", b"labels", "name", b"name", "size", b"size", "snapshot_id", b"snapshot_id", "snapshot_schedule_ids", b"snapshot_schedule_ids", "source", b"source", "type_id", b"type_id", "zone_id", b"zone_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["block_size", b"block_size", "description", b"description", "disk_placement_policy", b"disk_placement_policy", "folder_id", b"folder_id", "hardware_generation", b"hardware_generation", "image_id", b"image_id", "kms_key_id", b"kms_key_id", "labels", b"labels", "name", b"name", "size", b"size", "snapshot_id", b"snapshot_id", "snapshot_schedule_ids", b"snapshot_schedule_ids", "source", b"source", "type_id", b"type_id", "zone_id", b"zone_id"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["source", b"source"]) -> typing.Literal["image_id", "snapshot_id"] | None: ...
 
 global___CreateDiskRequest = CreateDiskRequest

@@ -7,7 +7,8 @@ from yandex.cloud.ai.files.v1 import file_service_pb2 as yandex_dot_cloud_dot_ai
 
 
 class FileServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """FileService provides operations for managing files.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -48,40 +49,47 @@ class FileServiceStub(object):
 
 
 class FileServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """FileService provides operations for managing files.
+    """
 
     def Create(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Create a new file.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Get(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Retrieve details of a specific file by its ID.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetUrl(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Retrieve a URL for accessing or downloading a specific file.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Update an existing file.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Delete a file by its ID.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """List files in a specific folder.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -127,7 +135,8 @@ def add_FileServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class FileService(object):
-    """Missing associated documentation comment in .proto file."""
+    """FileService provides operations for managing files.
+    """
 
     @staticmethod
     def Create(request,

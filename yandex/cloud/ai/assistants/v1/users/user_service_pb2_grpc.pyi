@@ -19,92 +19,113 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class UserServiceStub:
+    """UserService provides operations for managing users."""
+
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Create: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.users.user_service_pb2.CreateUserRequest,
         yandex.cloud.ai.assistants.v1.users.user_pb2.User,
     ]
+    """Create a new user."""
 
     Get: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.users.user_service_pb2.GetUserRequest,
         yandex.cloud.ai.assistants.v1.users.user_pb2.User,
     ]
+    """Retrieve details of a specific user by its ID."""
 
     Update: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.users.user_service_pb2.UpdateUserRequest,
         yandex.cloud.ai.assistants.v1.users.user_pb2.User,
     ]
+    """Update an existing user."""
 
     Delete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.users.user_service_pb2.DeleteUserRequest,
         yandex.cloud.ai.assistants.v1.users.user_service_pb2.DeleteUserResponse,
     ]
+    """Delete a user by its ID."""
 
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.users.user_service_pb2.ListUsersRequest,
         yandex.cloud.ai.assistants.v1.users.user_service_pb2.ListUsersResponse,
     ]
+    """List users in a specific folder."""
 
 class UserServiceAsyncStub:
+    """UserService provides operations for managing users."""
+
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.users.user_service_pb2.CreateUserRequest,
         yandex.cloud.ai.assistants.v1.users.user_pb2.User,
     ]
+    """Create a new user."""
 
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.users.user_service_pb2.GetUserRequest,
         yandex.cloud.ai.assistants.v1.users.user_pb2.User,
     ]
+    """Retrieve details of a specific user by its ID."""
 
     Update: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.users.user_service_pb2.UpdateUserRequest,
         yandex.cloud.ai.assistants.v1.users.user_pb2.User,
     ]
+    """Update an existing user."""
 
     Delete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.users.user_service_pb2.DeleteUserRequest,
         yandex.cloud.ai.assistants.v1.users.user_service_pb2.DeleteUserResponse,
     ]
+    """Delete a user by its ID."""
 
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.users.user_service_pb2.ListUsersRequest,
         yandex.cloud.ai.assistants.v1.users.user_service_pb2.ListUsersResponse,
     ]
+    """List users in a specific folder."""
 
 class UserServiceServicer(metaclass=abc.ABCMeta):
+    """UserService provides operations for managing users."""
+
     @abc.abstractmethod
     def Create(
         self,
         request: yandex.cloud.ai.assistants.v1.users.user_service_pb2.CreateUserRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.assistants.v1.users.user_pb2.User, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.users.user_pb2.User]]: ...
+    ) -> typing.Union[yandex.cloud.ai.assistants.v1.users.user_pb2.User, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.users.user_pb2.User]]:
+        """Create a new user."""
 
     @abc.abstractmethod
     def Get(
         self,
         request: yandex.cloud.ai.assistants.v1.users.user_service_pb2.GetUserRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.assistants.v1.users.user_pb2.User, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.users.user_pb2.User]]: ...
+    ) -> typing.Union[yandex.cloud.ai.assistants.v1.users.user_pb2.User, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.users.user_pb2.User]]:
+        """Retrieve details of a specific user by its ID."""
 
     @abc.abstractmethod
     def Update(
         self,
         request: yandex.cloud.ai.assistants.v1.users.user_service_pb2.UpdateUserRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.assistants.v1.users.user_pb2.User, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.users.user_pb2.User]]: ...
+    ) -> typing.Union[yandex.cloud.ai.assistants.v1.users.user_pb2.User, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.users.user_pb2.User]]:
+        """Update an existing user."""
 
     @abc.abstractmethod
     def Delete(
         self,
         request: yandex.cloud.ai.assistants.v1.users.user_service_pb2.DeleteUserRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.assistants.v1.users.user_service_pb2.DeleteUserResponse, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.users.user_service_pb2.DeleteUserResponse]]: ...
+    ) -> typing.Union[yandex.cloud.ai.assistants.v1.users.user_service_pb2.DeleteUserResponse, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.users.user_service_pb2.DeleteUserResponse]]:
+        """Delete a user by its ID."""
 
     @abc.abstractmethod
     def List(
         self,
         request: yandex.cloud.ai.assistants.v1.users.user_service_pb2.ListUsersRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.assistants.v1.users.user_service_pb2.ListUsersResponse, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.users.user_service_pb2.ListUsersResponse]]: ...
+    ) -> typing.Union[yandex.cloud.ai.assistants.v1.users.user_service_pb2.ListUsersResponse, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.users.user_service_pb2.ListUsersResponse]]:
+        """List users in a specific folder."""
 
 def add_UserServiceServicer_to_server(servicer: UserServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

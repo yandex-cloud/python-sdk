@@ -17,6 +17,8 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class SearchIndex(google.protobuf.message.Message):
+    """Represents a search index used to store and query data, either using traditional keyword-based text search or vector-based search mechanisms."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     @typing.final
@@ -49,25 +51,49 @@ class SearchIndex(google.protobuf.message.Message):
     TEXT_SEARCH_INDEX_FIELD_NUMBER: builtins.int
     VECTOR_SEARCH_INDEX_FIELD_NUMBER: builtins.int
     id: builtins.str
+    """Unique identifier of the search index."""
     folder_id: builtins.str
+    """ID of the folder that the search index belongs to."""
     name: builtins.str
+    """Name of the search index."""
     description: builtins.str
+    """Description of the search index."""
     created_by: builtins.str
+    """Identifier of the subject who created this search index."""
     updated_by: builtins.str
+    """Identifier of the subject who last updated this search index."""
     @property
-    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
+    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp representing when the search index was created."""
+
     @property
-    def updated_at(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
+    def updated_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp representing the last time this search index was updated."""
+
     @property
-    def expiration_config(self) -> yandex.cloud.ai.common.common_pb2.ExpirationConfig: ...
+    def expiration_config(self) -> yandex.cloud.ai.common.common_pb2.ExpirationConfig:
+        """Configuration for the expiration of the search index, defining when and how the search index will expire."""
+
     @property
-    def expires_at(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
+    def expires_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp representing when the search index will expire."""
+
     @property
-    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Set of key-value pairs that can be used to organize and categorize the search index."""
+
     @property
-    def text_search_index(self) -> global___TextSearchIndex: ...
+    def text_search_index(self) -> global___TextSearchIndex:
+        """Keyword-based text search index configuration.
+        This type of index is used for traditional text search, where documents are indexed based on their keywords.
+        """
+
     @property
-    def vector_search_index(self) -> global___VectorSearchIndex: ...
+    def vector_search_index(self) -> global___VectorSearchIndex:
+        """Vector-based search index configuration.
+        This type is used for vector search, where documents are indexed using vector embeddings.
+        """
+
     def __init__(
         self,
         *,
@@ -93,11 +119,15 @@ global___SearchIndex = SearchIndex
 
 @typing.final
 class TextSearchIndex(google.protobuf.message.Message):
+    """Defines the configuration for a traditional keyword-based text search index."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CHUNKING_STRATEGY_FIELD_NUMBER: builtins.int
     @property
-    def chunking_strategy(self) -> yandex.cloud.ai.assistants.v1.searchindex.common_pb2.ChunkingStrategy: ...
+    def chunking_strategy(self) -> yandex.cloud.ai.assistants.v1.searchindex.common_pb2.ChunkingStrategy:
+        """Chunking strategy used to split text into smaller chunks before indexing."""
+
     def __init__(
         self,
         *,
@@ -110,15 +140,21 @@ global___TextSearchIndex = TextSearchIndex
 
 @typing.final
 class VectorSearchIndex(google.protobuf.message.Message):
+    """Defines the configuration for a vector-based search index. This type uses embeddings to represent documents and queries."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     DOC_EMBEDDER_URI_FIELD_NUMBER: builtins.int
     QUERY_EMBEDDER_URI_FIELD_NUMBER: builtins.int
     CHUNKING_STRATEGY_FIELD_NUMBER: builtins.int
     doc_embedder_uri: builtins.str
+    """The [ID of the model](/docs/foundation-models/concepts/embeddings) to be used for obtaining document text embeddings."""
     query_embedder_uri: builtins.str
+    """The [ID of the model](/docs/foundation-models/concepts/embeddings) to be used for obtaining query text embeddings."""
     @property
-    def chunking_strategy(self) -> yandex.cloud.ai.assistants.v1.searchindex.common_pb2.ChunkingStrategy: ...
+    def chunking_strategy(self) -> yandex.cloud.ai.assistants.v1.searchindex.common_pb2.ChunkingStrategy:
+        """Chunking strategy used to split text into smaller chunks before indexing."""
+
     def __init__(
         self,
         *,

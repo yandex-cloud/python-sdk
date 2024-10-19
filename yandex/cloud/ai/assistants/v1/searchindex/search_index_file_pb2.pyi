@@ -14,6 +14,8 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class SearchIndexFile(google.protobuf.message.Message):
+    """Represents a file that has been indexed within a search index."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     ID_FIELD_NUMBER: builtins.int
@@ -22,10 +24,15 @@ class SearchIndexFile(google.protobuf.message.Message):
     CREATED_AT_FIELD_NUMBER: builtins.int
     CHUNKING_STRATEGY_FIELD_NUMBER: builtins.int
     id: builtins.str
+    """Unique identifier of the file that was used for indexing."""
     search_index_id: builtins.str
+    """ID of the search index that contains this file."""
     created_by: builtins.str
+    """Identifier of the subject who created the file in the search index."""
     @property
-    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
+    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp representing when the file was created."""
+
     @property
     def chunking_strategy(self) -> yandex.cloud.ai.assistants.v1.searchindex.common_pb2.ChunkingStrategy: ...
     def __init__(

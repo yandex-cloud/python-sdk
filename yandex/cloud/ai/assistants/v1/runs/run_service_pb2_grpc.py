@@ -7,7 +7,8 @@ from yandex.cloud.ai.assistants.v1.runs import run_service_pb2 as yandex_dot_clo
 
 
 class RunServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """RunService provides operations for managing runs.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -43,34 +44,42 @@ class RunServiceStub(object):
 
 
 class RunServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """RunService provides operations for managing runs.
+    """
 
     def Create(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Create a new run for a given assistant and thread.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Listen(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Listen to events from a specific run.
+        If the run was created with `stream = false`, Listen will only respond with the final status of the run
+        and will not stream partial messages or intermediate events.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Get(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Retrieve details of a specific run by its ID.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetLastByThread(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Retrieves the most recent run for a specific thread.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """List runs in a specific folder.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -111,7 +120,8 @@ def add_RunServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class RunService(object):
-    """Missing associated documentation comment in .proto file."""
+    """RunService provides operations for managing runs.
+    """
 
     @staticmethod
     def Create(request,

@@ -116,6 +116,15 @@ class RedisConfig(google.protobuf.message.Message):
     CLIENT_OUTPUT_BUFFER_LIMIT_PUBSUB_FIELD_NUMBER: builtins.int
     CLIENT_OUTPUT_BUFFER_LIMIT_NORMAL_FIELD_NUMBER: builtins.int
     MAXMEMORY_PERCENT_FIELD_NUMBER: builtins.int
+    LUA_TIME_LIMIT_FIELD_NUMBER: builtins.int
+    REPL_BACKLOG_SIZE_PERCENT_FIELD_NUMBER: builtins.int
+    CLUSTER_REQUIRE_FULL_COVERAGE_FIELD_NUMBER: builtins.int
+    CLUSTER_ALLOW_READS_WHEN_DOWN_FIELD_NUMBER: builtins.int
+    CLUSTER_ALLOW_PUBSUBSHARD_WHEN_DOWN_FIELD_NUMBER: builtins.int
+    LFU_DECAY_TIME_FIELD_NUMBER: builtins.int
+    LFU_LOG_FACTOR_FIELD_NUMBER: builtins.int
+    TURN_BEFORE_SWITCHOVER_FIELD_NUMBER: builtins.int
+    ALLOW_DATA_LOSS_FIELD_NUMBER: builtins.int
     maxmemory_policy: global___RedisConfig.MaxmemoryPolicy.ValueType
     """Redis key eviction policy for a dataset that reaches maximum memory,
     available to the host. Redis maxmemory setting depends on Managed
@@ -157,6 +166,42 @@ class RedisConfig(google.protobuf.message.Message):
     def maxmemory_percent(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Redis maxmemory percent"""
 
+    @property
+    def lua_time_limit(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Maximum time in milliseconds for Lua scripts, 0 - disabled mechanism"""
+
+    @property
+    def repl_backlog_size_percent(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Replication backlog size as a percentage of flavor maxmemory"""
+
+    @property
+    def cluster_require_full_coverage(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Controls whether all hash slots must be covered by nodes"""
+
+    @property
+    def cluster_allow_reads_when_down(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Allows read operations when cluster is down"""
+
+    @property
+    def cluster_allow_pubsubshard_when_down(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Permits Pub/Sub shard operations when cluster is down"""
+
+    @property
+    def lfu_decay_time(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """The time, in minutes, that must elapse in order for the key counter to be divided by two (or decremented if it has a value less <= 10)"""
+
+    @property
+    def lfu_log_factor(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Determines how the frequency counter represents key hits."""
+
+    @property
+    def turn_before_switchover(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Allows to turn before switchover in RDSync"""
+
+    @property
+    def allow_data_loss(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Allows some data to be lost in favor of faster switchover/restart"""
+
     def __init__(
         self,
         *,
@@ -170,9 +215,18 @@ class RedisConfig(google.protobuf.message.Message):
         client_output_buffer_limit_pubsub: global___RedisConfig.ClientOutputBufferLimit | None = ...,
         client_output_buffer_limit_normal: global___RedisConfig.ClientOutputBufferLimit | None = ...,
         maxmemory_percent: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        lua_time_limit: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        repl_backlog_size_percent: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        cluster_require_full_coverage: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        cluster_allow_reads_when_down: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        cluster_allow_pubsubshard_when_down: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        lfu_decay_time: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        lfu_log_factor: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        turn_before_switchover: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        allow_data_loss: google.protobuf.wrappers_pb2.BoolValue | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["client_output_buffer_limit_normal", b"client_output_buffer_limit_normal", "client_output_buffer_limit_pubsub", b"client_output_buffer_limit_pubsub", "databases", b"databases", "maxmemory_percent", b"maxmemory_percent", "slowlog_log_slower_than", b"slowlog_log_slower_than", "slowlog_max_len", b"slowlog_max_len", "timeout", b"timeout"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["client_output_buffer_limit_normal", b"client_output_buffer_limit_normal", "client_output_buffer_limit_pubsub", b"client_output_buffer_limit_pubsub", "databases", b"databases", "maxmemory_percent", b"maxmemory_percent", "maxmemory_policy", b"maxmemory_policy", "notify_keyspace_events", b"notify_keyspace_events", "password", b"password", "slowlog_log_slower_than", b"slowlog_log_slower_than", "slowlog_max_len", b"slowlog_max_len", "timeout", b"timeout"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["allow_data_loss", b"allow_data_loss", "client_output_buffer_limit_normal", b"client_output_buffer_limit_normal", "client_output_buffer_limit_pubsub", b"client_output_buffer_limit_pubsub", "cluster_allow_pubsubshard_when_down", b"cluster_allow_pubsubshard_when_down", "cluster_allow_reads_when_down", b"cluster_allow_reads_when_down", "cluster_require_full_coverage", b"cluster_require_full_coverage", "databases", b"databases", "lfu_decay_time", b"lfu_decay_time", "lfu_log_factor", b"lfu_log_factor", "lua_time_limit", b"lua_time_limit", "maxmemory_percent", b"maxmemory_percent", "repl_backlog_size_percent", b"repl_backlog_size_percent", "slowlog_log_slower_than", b"slowlog_log_slower_than", "slowlog_max_len", b"slowlog_max_len", "timeout", b"timeout", "turn_before_switchover", b"turn_before_switchover"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["allow_data_loss", b"allow_data_loss", "client_output_buffer_limit_normal", b"client_output_buffer_limit_normal", "client_output_buffer_limit_pubsub", b"client_output_buffer_limit_pubsub", "cluster_allow_pubsubshard_when_down", b"cluster_allow_pubsubshard_when_down", "cluster_allow_reads_when_down", b"cluster_allow_reads_when_down", "cluster_require_full_coverage", b"cluster_require_full_coverage", "databases", b"databases", "lfu_decay_time", b"lfu_decay_time", "lfu_log_factor", b"lfu_log_factor", "lua_time_limit", b"lua_time_limit", "maxmemory_percent", b"maxmemory_percent", "maxmemory_policy", b"maxmemory_policy", "notify_keyspace_events", b"notify_keyspace_events", "password", b"password", "repl_backlog_size_percent", b"repl_backlog_size_percent", "slowlog_log_slower_than", b"slowlog_log_slower_than", "slowlog_max_len", b"slowlog_max_len", "timeout", b"timeout", "turn_before_switchover", b"turn_before_switchover"]) -> None: ...
 
 global___RedisConfig = RedisConfig
 

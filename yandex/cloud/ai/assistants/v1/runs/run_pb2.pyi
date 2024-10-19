@@ -25,6 +25,8 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class Run(google.protobuf.message.Message):
+    """Represents a run of an assistant over a specific thread of messages."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     @typing.final
@@ -54,21 +56,41 @@ class Run(google.protobuf.message.Message):
     CUSTOM_PROMPT_TRUNCATION_OPTIONS_FIELD_NUMBER: builtins.int
     CUSTOM_COMPLETION_OPTIONS_FIELD_NUMBER: builtins.int
     id: builtins.str
+    """Unique identifier of the run."""
     assistant_id: builtins.str
+    """Identifier for the assistant that is being run."""
     thread_id: builtins.str
+    """Identifier for the thread of messages that this run is associated with."""
     created_by: builtins.str
+    """Identifier of the subject who created this run."""
     @property
-    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
+    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp representing when the run was created."""
+
     @property
-    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Set of key-value pairs that can be used to organize and categorize the run."""
+
     @property
-    def state(self) -> global___RunState: ...
+    def state(self) -> global___RunState:
+        """Current state of the run, including its status and any associated data."""
+
     @property
-    def usage(self) -> global___ContentUsage: ...
+    def usage(self) -> global___ContentUsage:
+        """Information about the content usage during the run, such as the number of [tokens](/docs/foundation-models/concepts/yandexgpt/tokens) used by the completion model."""
+
     @property
-    def custom_prompt_truncation_options(self) -> yandex.cloud.ai.assistants.v1.common_pb2.PromptTruncationOptions: ...
+    def custom_prompt_truncation_options(self) -> yandex.cloud.ai.assistants.v1.common_pb2.PromptTruncationOptions:
+        """Configuration options for truncating the prompt when the token count exceeds a specified limit.
+        If specified, these options will override the assistant's prompt truncation settings for this run.
+        """
+
     @property
-    def custom_completion_options(self) -> yandex.cloud.ai.assistants.v1.common_pb2.CompletionOptions: ...
+    def custom_completion_options(self) -> yandex.cloud.ai.assistants.v1.common_pb2.CompletionOptions:
+        """Configuration options for completion generation.
+        If specified, these options will override the assistant's completion settings for this run.
+        """
+
     def __init__(
         self,
         *,
@@ -90,6 +112,8 @@ global___Run = Run
 
 @typing.final
 class RunState(google.protobuf.message.Message):
+    """Represents the current state of a run."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     class _RunStatus:
@@ -99,26 +123,43 @@ class RunState(google.protobuf.message.Message):
     class _RunStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[RunState._RunStatus.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         RUN_STATUS_UNSPECIFIED: RunState._RunStatus.ValueType  # 0
+        """Default unspecified status."""
         PENDING: RunState._RunStatus.ValueType  # 1
+        """Run has been created but has not started yet."""
         IN_PROGRESS: RunState._RunStatus.ValueType  # 2
+        """Run is currently in progress."""
         FAILED: RunState._RunStatus.ValueType  # 3
+        """Run has failed due to an error."""
         COMPLETED: RunState._RunStatus.ValueType  # 4
+        """Run has completed successfully."""
 
-    class RunStatus(_RunStatus, metaclass=_RunStatusEnumTypeWrapper): ...
+    class RunStatus(_RunStatus, metaclass=_RunStatusEnumTypeWrapper):
+        """Enum representing the status of a run."""
+
     RUN_STATUS_UNSPECIFIED: RunState.RunStatus.ValueType  # 0
+    """Default unspecified status."""
     PENDING: RunState.RunStatus.ValueType  # 1
+    """Run has been created but has not started yet."""
     IN_PROGRESS: RunState.RunStatus.ValueType  # 2
+    """Run is currently in progress."""
     FAILED: RunState.RunStatus.ValueType  # 3
+    """Run has failed due to an error."""
     COMPLETED: RunState.RunStatus.ValueType  # 4
+    """Run has completed successfully."""
 
     STATUS_FIELD_NUMBER: builtins.int
     ERROR_FIELD_NUMBER: builtins.int
     COMPLETED_MESSAGE_FIELD_NUMBER: builtins.int
     status: global___RunState.RunStatus.ValueType
+    """Current status of a run."""
     @property
-    def error(self) -> yandex.cloud.ai.common.common_pb2.Error: ...
+    def error(self) -> yandex.cloud.ai.common.common_pb2.Error:
+        """Error information if a run has failed."""
+
     @property
-    def completed_message(self) -> yandex.cloud.ai.assistants.v1.threads.message_pb2.Message: ...
+    def completed_message(self) -> yandex.cloud.ai.assistants.v1.threads.message_pb2.Message:
+        """Final message generated by an assistant if a run has completed successfully."""
+
     def __init__(
         self,
         *,
@@ -134,14 +175,19 @@ global___RunState = RunState
 
 @typing.final
 class ContentUsage(google.protobuf.message.Message):
+    """Represents the content usage during a run, such as the number of [tokens](/docs/foundation-models/concepts/yandexgpt/tokens) used by the completion model."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     PROMPT_TOKENS_FIELD_NUMBER: builtins.int
     COMPLETION_TOKENS_FIELD_NUMBER: builtins.int
     TOTAL_TOKENS_FIELD_NUMBER: builtins.int
     prompt_tokens: builtins.int
+    """The number of tokens used in the prompt."""
     completion_tokens: builtins.int
+    """The number of tokens used in the completion response."""
     total_tokens: builtins.int
+    """The total number of tokens used (prompt + completion)."""
     def __init__(
         self,
         *,

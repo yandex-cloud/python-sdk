@@ -47,22 +47,39 @@ class File(google.protobuf.message.Message):
     EXPIRES_AT_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     id: builtins.str
+    """Unique identifier of the file."""
     folder_id: builtins.str
+    """ID of the folder that the file belongs to."""
     name: builtins.str
+    """Name of the file."""
     description: builtins.str
+    """Description of the file."""
     mime_type: builtins.str
+    """MIME type of the file, indicating the file's format (e.g., "application/pdf")"""
     created_by: builtins.str
+    """Identifier of the subject who created this file."""
     updated_by: builtins.str
+    """Identifier of the subject who last updated this file."""
     @property
-    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
+    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp representing when the file was created."""
+
     @property
-    def updated_at(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
+    def updated_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp representing the last time this file was updated."""
+
     @property
-    def expiration_config(self) -> yandex.cloud.ai.common.common_pb2.ExpirationConfig: ...
+    def expiration_config(self) -> yandex.cloud.ai.common.common_pb2.ExpirationConfig:
+        """Configuration for the expiration of the file, defining when and how the file will expire."""
+
     @property
-    def expires_at(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
+    def expires_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp representing when the file will expire."""
+
     @property
-    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Set of key-value pairs that can be used to organize and categorize the file."""
+
     def __init__(
         self,
         *,
