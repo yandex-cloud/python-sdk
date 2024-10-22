@@ -209,13 +209,13 @@ class Tool(google.protobuf.message.Message):
 
     FUNCTION_FIELD_NUMBER: builtins.int
     @property
-    def function(self) -> global___Function:
+    def function(self) -> global___FunctionTool:
         """Represents a function that can be called."""
 
     def __init__(
         self,
         *,
-        function: global___Function | None = ...,
+        function: global___FunctionTool | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["ToolType", b"ToolType", "function", b"function"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["ToolType", b"ToolType", "function", b"function"]) -> None: ...
@@ -224,7 +224,7 @@ class Tool(google.protobuf.message.Message):
 global___Tool = Tool
 
 @typing.final
-class Function(google.protobuf.message.Message):
+class FunctionTool(google.protobuf.message.Message):
     """Represents a function tool that can be invoked during completion generation."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
@@ -252,7 +252,7 @@ class Function(google.protobuf.message.Message):
     def HasField(self, field_name: typing.Literal["parameters", b"parameters"]) -> builtins.bool: ...
     def ClearField(self, field_name: typing.Literal["description", b"description", "name", b"name", "parameters", b"parameters"]) -> None: ...
 
-global___Function = Function
+global___FunctionTool = FunctionTool
 
 @typing.final
 class ToolCall(google.protobuf.message.Message):
