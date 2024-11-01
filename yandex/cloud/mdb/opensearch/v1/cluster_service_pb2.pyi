@@ -1223,6 +1223,46 @@ class BackupClusterMetadata(google.protobuf.message.Message):
 global___BackupClusterMetadata = BackupClusterMetadata
 
 @typing.final
+class DeleteBackupRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    BACKUP_ID_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """Required. ID of the OpenSearch cluster."""
+    backup_id: builtins.str
+    """Required. ID of the backup to delete."""
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        backup_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["backup_id", b"backup_id", "cluster_id", b"cluster_id"]) -> None: ...
+
+global___DeleteBackupRequest = DeleteBackupRequest
+
+@typing.final
+class DeleteBackupMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    BACKUP_ID_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the OpenSearch cluster."""
+    backup_id: builtins.str
+    """ID of the backup to delete."""
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        backup_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["backup_id", b"backup_id", "cluster_id", b"cluster_id"]) -> None: ...
+
+global___DeleteBackupMetadata = DeleteBackupMetadata
+
+@typing.final
 class RestoreClusterRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

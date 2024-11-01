@@ -48,6 +48,11 @@ class ClusterServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_opensearch_dot_v1_dot_cluster__service__pb2.BackupClusterRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
+        self.DeleteBackup = channel.unary_unary(
+                '/yandex.cloud.mdb.opensearch.v1.ClusterService/DeleteBackup',
+                request_serializer=yandex_dot_cloud_dot_mdb_dot_opensearch_dot_v1_dot_cluster__service__pb2.DeleteBackupRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
         self.Restore = channel.unary_unary(
                 '/yandex.cloud.mdb.opensearch.v1.ClusterService/Restore',
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_opensearch_dot_v1_dot_cluster__service__pb2.RestoreClusterRequest.SerializeToString,
@@ -183,6 +188,13 @@ class ClusterServiceServicer(object):
 
     def Backup(self, request, context):
         """Creates a backup for the specified OpenSearch cluster.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteBackup(self, request, context):
+        """Delete backup for the specified OpenSearch cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -346,6 +358,11 @@ def add_ClusterServiceServicer_to_server(servicer, server):
             'Backup': grpc.unary_unary_rpc_method_handler(
                     servicer.Backup,
                     request_deserializer=yandex_dot_cloud_dot_mdb_dot_opensearch_dot_v1_dot_cluster__service__pb2.BackupClusterRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'DeleteBackup': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteBackup,
+                    request_deserializer=yandex_dot_cloud_dot_mdb_dot_opensearch_dot_v1_dot_cluster__service__pb2.DeleteBackupRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'Restore': grpc.unary_unary_rpc_method_handler(
@@ -547,6 +564,23 @@ class ClusterService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.mdb.opensearch.v1.ClusterService/Backup',
             yandex_dot_cloud_dot_mdb_dot_opensearch_dot_v1_dot_cluster__service__pb2.BackupClusterRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteBackup(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.mdb.opensearch.v1.ClusterService/DeleteBackup',
+            yandex_dot_cloud_dot_mdb_dot_opensearch_dot_v1_dot_cluster__service__pb2.DeleteBackupRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

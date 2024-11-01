@@ -97,23 +97,17 @@ class RoutingInstance(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
         MANUAL_INFO_FIELD_NUMBER: builtins.int
-        AUTOMATIC_INFO_FIELD_NUMBER: builtins.int
         @property
         def manual_info(self) -> global___RoutingInstance.VpcManualInfo:
             """VpcInfo which is set by user"""
-
-        @property
-        def automatic_info(self) -> global___RoutingInstance.VpcAutomaticInfo:
-            """VpcInfo which is get from vpc service by attached networks"""
 
         def __init__(
             self,
             *,
             manual_info: global___RoutingInstance.VpcManualInfo | None = ...,
-            automatic_info: global___RoutingInstance.VpcAutomaticInfo | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["automatic_info", b"automatic_info", "manual_info", b"manual_info"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["automatic_info", b"automatic_info", "manual_info", b"manual_info"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["manual_info", b"manual_info"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["manual_info", b"manual_info"]) -> None: ...
 
     @typing.final
     class VpcManualInfo(google.protobuf.message.Message):
@@ -126,26 +120,6 @@ class RoutingInstance(google.protobuf.message.Message):
         @property
         def prefixes(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
             """List of prefixes to announce"""
-
-        def __init__(
-            self,
-            *,
-            az_id: builtins.str = ...,
-            prefixes: collections.abc.Iterable[builtins.str] | None = ...,
-        ) -> None: ...
-        def ClearField(self, field_name: typing.Literal["az_id", b"az_id", "prefixes", b"prefixes"]) -> None: ...
-
-    @typing.final
-    class VpcAutomaticInfo(google.protobuf.message.Message):
-        DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-        AZ_ID_FIELD_NUMBER: builtins.int
-        PREFIXES_FIELD_NUMBER: builtins.int
-        az_id: builtins.str
-        """ID of the AZ"""
-        @property
-        def prefixes(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-            """List of prefixes from attached VpcNetwork"""
 
         def __init__(
             self,

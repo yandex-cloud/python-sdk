@@ -15,7 +15,7 @@ from google.protobuf import struct_pb2 as google_dot_protobuf_dot_struct__pb2
 from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n6yandex/cloud/ai/foundation_models/v1/text_common.proto\x12$yandex.cloud.ai.foundation_models.v1\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1egoogle/protobuf/wrappers.proto\"\x87\x01\n\x11\x43ompletionOptions\x12\x0e\n\x06stream\x18\x01 \x01(\x08\x12\x31\n\x0btemperature\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\x12/\n\nmax_tokens\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"2\n\x07Message\x12\x0c\n\x04role\x18\x01 \x01(\t\x12\x0e\n\x04text\x18\x02 \x01(\tH\x00\x42\t\n\x07\x43ontent\"Z\n\x0c\x43ontentUsage\x12\x19\n\x11input_text_tokens\x18\x01 \x01(\x03\x12\x19\n\x11\x63ompletion_tokens\x18\x02 \x01(\x03\x12\x14\n\x0ctotal_tokens\x18\x03 \x01(\x03\"\x8c\x03\n\x0b\x41lternative\x12>\n\x07message\x18\x01 \x01(\x0b\x32-.yandex.cloud.ai.foundation_models.v1.Message\x12S\n\x06status\x18\x02 \x01(\x0e\x32\x43.yandex.cloud.ai.foundation_models.v1.Alternative.AlternativeStatus\"\xe7\x01\n\x11\x41lternativeStatus\x12\"\n\x1e\x41LTERNATIVE_STATUS_UNSPECIFIED\x10\x00\x12\x1e\n\x1a\x41LTERNATIVE_STATUS_PARTIAL\x10\x01\x12&\n\"ALTERNATIVE_STATUS_TRUNCATED_FINAL\x10\x02\x12\x1c\n\x18\x41LTERNATIVE_STATUS_FINAL\x10\x03\x12%\n!ALTERNATIVE_STATUS_CONTENT_FILTER\x10\x04\x12!\n\x1d\x41LTERNATIVE_STATUS_TOOL_CALLS\x10\x05\"2\n\x05Token\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04text\x18\x02 \x01(\t\x12\x0f\n\x07special\x18\x03 \x01(\x08\"Z\n\x04Tool\x12\x46\n\x08\x66unction\x18\x01 \x01(\x0b\x32\x32.yandex.cloud.ai.foundation_models.v1.FunctionToolH\x00\x42\n\n\x08ToolType\"^\n\x0c\x46unctionTool\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12+\n\nparameters\x18\x03 \x01(\x0b\x32\x17.google.protobuf.Struct\"g\n\x08ToolCall\x12K\n\rfunction_call\x18\x01 \x01(\x0b\x32\x32.yandex.cloud.ai.foundation_models.v1.FunctionCallH\x00\x42\x0e\n\x0cToolCallType\"H\n\x0c\x46unctionCall\x12\x0c\n\x04name\x18\x01 \x01(\t\x12*\n\targuments\x18\x02 \x01(\x0b\x32\x17.google.protobuf.Struct\"R\n\x0cToolCallList\x12\x42\n\ntool_calls\x18\x01 \x03(\x0b\x32..yandex.cloud.ai.foundation_models.v1.ToolCall\"o\n\nToolResult\x12O\n\x0f\x66unction_result\x18\x01 \x01(\x0b\x32\x34.yandex.cloud.ai.foundation_models.v1.FunctionResultH\x00\x42\x10\n\x0eToolResultType\"@\n\x0e\x46unctionResult\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\x07\x63ontent\x18\x02 \x01(\tH\x00\x42\r\n\x0b\x43ontentType\"X\n\x0eToolResultList\x12\x46\n\x0ctool_results\x18\x01 \x03(\x0b\x32\x30.yandex.cloud.ai.foundation_models.v1.ToolResultB\x86\x01\n(yandex.cloud.api.ai.foundation_models.v1ZZgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/foundation_models/v1;foundation_modelsb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n6yandex/cloud/ai/foundation_models/v1/text_common.proto\x12$yandex.cloud.ai.foundation_models.v1\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1egoogle/protobuf/wrappers.proto\"\x87\x01\n\x11\x43ompletionOptions\x12\x0e\n\x06stream\x18\x01 \x01(\x08\x12\x31\n\x0btemperature\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.DoubleValue\x12/\n\nmax_tokens\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"\xd2\x01\n\x07Message\x12\x0c\n\x04role\x18\x01 \x01(\t\x12\x0e\n\x04text\x18\x02 \x01(\tH\x00\x12L\n\x0etool_call_list\x18\x03 \x01(\x0b\x32\x32.yandex.cloud.ai.foundation_models.v1.ToolCallListH\x00\x12P\n\x10tool_result_list\x18\x04 \x01(\x0b\x32\x34.yandex.cloud.ai.foundation_models.v1.ToolResultListH\x00\x42\t\n\x07\x43ontent\"Z\n\x0c\x43ontentUsage\x12\x19\n\x11input_text_tokens\x18\x01 \x01(\x03\x12\x19\n\x11\x63ompletion_tokens\x18\x02 \x01(\x03\x12\x14\n\x0ctotal_tokens\x18\x03 \x01(\x03\"\x8c\x03\n\x0b\x41lternative\x12>\n\x07message\x18\x01 \x01(\x0b\x32-.yandex.cloud.ai.foundation_models.v1.Message\x12S\n\x06status\x18\x02 \x01(\x0e\x32\x43.yandex.cloud.ai.foundation_models.v1.Alternative.AlternativeStatus\"\xe7\x01\n\x11\x41lternativeStatus\x12\"\n\x1e\x41LTERNATIVE_STATUS_UNSPECIFIED\x10\x00\x12\x1e\n\x1a\x41LTERNATIVE_STATUS_PARTIAL\x10\x01\x12&\n\"ALTERNATIVE_STATUS_TRUNCATED_FINAL\x10\x02\x12\x1c\n\x18\x41LTERNATIVE_STATUS_FINAL\x10\x03\x12%\n!ALTERNATIVE_STATUS_CONTENT_FILTER\x10\x04\x12!\n\x1d\x41LTERNATIVE_STATUS_TOOL_CALLS\x10\x05\"2\n\x05Token\x12\n\n\x02id\x18\x01 \x01(\x03\x12\x0c\n\x04text\x18\x02 \x01(\t\x12\x0f\n\x07special\x18\x03 \x01(\x08\"Z\n\x04Tool\x12\x46\n\x08\x66unction\x18\x01 \x01(\x0b\x32\x32.yandex.cloud.ai.foundation_models.v1.FunctionToolH\x00\x42\n\n\x08ToolType\"^\n\x0c\x46unctionTool\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12+\n\nparameters\x18\x03 \x01(\x0b\x32\x17.google.protobuf.Struct\"g\n\x08ToolCall\x12K\n\rfunction_call\x18\x01 \x01(\x0b\x32\x32.yandex.cloud.ai.foundation_models.v1.FunctionCallH\x00\x42\x0e\n\x0cToolCallType\"H\n\x0c\x46unctionCall\x12\x0c\n\x04name\x18\x01 \x01(\t\x12*\n\targuments\x18\x02 \x01(\x0b\x32\x17.google.protobuf.Struct\"R\n\x0cToolCallList\x12\x42\n\ntool_calls\x18\x01 \x03(\x0b\x32..yandex.cloud.ai.foundation_models.v1.ToolCall\"o\n\nToolResult\x12O\n\x0f\x66unction_result\x18\x01 \x01(\x0b\x32\x34.yandex.cloud.ai.foundation_models.v1.FunctionResultH\x00\x42\x10\n\x0eToolResultType\"@\n\x0e\x46unctionResult\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\x07\x63ontent\x18\x02 \x01(\tH\x00\x42\r\n\x0b\x43ontentType\"X\n\x0eToolResultList\x12\x46\n\x0ctool_results\x18\x01 \x03(\x0b\x32\x30.yandex.cloud.ai.foundation_models.v1.ToolResultB\x86\x01\n(yandex.cloud.api.ai.foundation_models.v1ZZgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/foundation_models/v1;foundation_modelsb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -25,30 +25,30 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._serialized_options = b'\n(yandex.cloud.api.ai.foundation_models.v1ZZgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/foundation_models/v1;foundation_models'
   _globals['_COMPLETIONOPTIONS']._serialized_start=159
   _globals['_COMPLETIONOPTIONS']._serialized_end=294
-  _globals['_MESSAGE']._serialized_start=296
-  _globals['_MESSAGE']._serialized_end=346
-  _globals['_CONTENTUSAGE']._serialized_start=348
-  _globals['_CONTENTUSAGE']._serialized_end=438
-  _globals['_ALTERNATIVE']._serialized_start=441
-  _globals['_ALTERNATIVE']._serialized_end=837
-  _globals['_ALTERNATIVE_ALTERNATIVESTATUS']._serialized_start=606
-  _globals['_ALTERNATIVE_ALTERNATIVESTATUS']._serialized_end=837
-  _globals['_TOKEN']._serialized_start=839
-  _globals['_TOKEN']._serialized_end=889
-  _globals['_TOOL']._serialized_start=891
-  _globals['_TOOL']._serialized_end=981
-  _globals['_FUNCTIONTOOL']._serialized_start=983
-  _globals['_FUNCTIONTOOL']._serialized_end=1077
-  _globals['_TOOLCALL']._serialized_start=1079
-  _globals['_TOOLCALL']._serialized_end=1182
-  _globals['_FUNCTIONCALL']._serialized_start=1184
-  _globals['_FUNCTIONCALL']._serialized_end=1256
-  _globals['_TOOLCALLLIST']._serialized_start=1258
-  _globals['_TOOLCALLLIST']._serialized_end=1340
-  _globals['_TOOLRESULT']._serialized_start=1342
-  _globals['_TOOLRESULT']._serialized_end=1453
-  _globals['_FUNCTIONRESULT']._serialized_start=1455
-  _globals['_FUNCTIONRESULT']._serialized_end=1519
-  _globals['_TOOLRESULTLIST']._serialized_start=1521
-  _globals['_TOOLRESULTLIST']._serialized_end=1609
+  _globals['_MESSAGE']._serialized_start=297
+  _globals['_MESSAGE']._serialized_end=507
+  _globals['_CONTENTUSAGE']._serialized_start=509
+  _globals['_CONTENTUSAGE']._serialized_end=599
+  _globals['_ALTERNATIVE']._serialized_start=602
+  _globals['_ALTERNATIVE']._serialized_end=998
+  _globals['_ALTERNATIVE_ALTERNATIVESTATUS']._serialized_start=767
+  _globals['_ALTERNATIVE_ALTERNATIVESTATUS']._serialized_end=998
+  _globals['_TOKEN']._serialized_start=1000
+  _globals['_TOKEN']._serialized_end=1050
+  _globals['_TOOL']._serialized_start=1052
+  _globals['_TOOL']._serialized_end=1142
+  _globals['_FUNCTIONTOOL']._serialized_start=1144
+  _globals['_FUNCTIONTOOL']._serialized_end=1238
+  _globals['_TOOLCALL']._serialized_start=1240
+  _globals['_TOOLCALL']._serialized_end=1343
+  _globals['_FUNCTIONCALL']._serialized_start=1345
+  _globals['_FUNCTIONCALL']._serialized_end=1417
+  _globals['_TOOLCALLLIST']._serialized_start=1419
+  _globals['_TOOLCALLLIST']._serialized_end=1501
+  _globals['_TOOLRESULT']._serialized_start=1503
+  _globals['_TOOLRESULT']._serialized_end=1614
+  _globals['_FUNCTIONRESULT']._serialized_start=1616
+  _globals['_FUNCTIONRESULT']._serialized_end=1680
+  _globals['_TOOLRESULTLIST']._serialized_start=1682
+  _globals['_TOOLRESULTLIST']._serialized_end=1770
 # @@protoc_insertion_point(module_scope)

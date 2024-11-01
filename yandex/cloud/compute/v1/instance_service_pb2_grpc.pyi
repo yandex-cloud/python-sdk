@@ -63,7 +63,7 @@ class InstanceServiceStub:
         yandex.cloud.compute.v1.instance_service_pb2.UpdateInstanceMetadataRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Updates the metadata of the specified instance."""
+    """Updates the metadata of the specified instance. For more information on metadata, see [VM metadata](/docs/compute/concepts/vm-metadata)."""
 
     GetSerialPortOutput: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.compute.v1.instance_service_pb2.GetInstanceSerialPortOutputRequest,
@@ -258,7 +258,7 @@ class InstanceServiceAsyncStub:
         yandex.cloud.compute.v1.instance_service_pb2.UpdateInstanceMetadataRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Updates the metadata of the specified instance."""
+    """Updates the metadata of the specified instance. For more information on metadata, see [VM metadata](/docs/compute/concepts/vm-metadata)."""
 
     GetSerialPortOutput: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.compute.v1.instance_service_pb2.GetInstanceSerialPortOutputRequest,
@@ -465,7 +465,7 @@ class InstanceServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.compute.v1.instance_service_pb2.UpdateInstanceMetadataRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Updates the metadata of the specified instance."""
+        """Updates the metadata of the specified instance. For more information on metadata, see [VM metadata](/docs/compute/concepts/vm-metadata)."""
 
     @abc.abstractmethod
     def GetSerialPortOutput(

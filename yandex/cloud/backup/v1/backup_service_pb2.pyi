@@ -12,6 +12,7 @@ import google.protobuf.message
 import sys
 import typing
 import yandex.cloud.backup.v1.backup_pb2
+import yandex.cloud.backup.v1.resource_pb2
 
 if sys.version_info >= (3, 10):
     import typing as typing_extensions
@@ -106,6 +107,7 @@ class ListBackupsRequest(google.protobuf.message.Message):
     POLICY_ID_FIELD_NUMBER: builtins.int
     ORDER_BY_FIELD_NUMBER: builtins.int
     FILTER_FIELD_NUMBER: builtins.int
+    TYPE_FIELD_NUMBER: builtins.int
     compute_instance_id: builtins.str
     """List backups that belongs to specific Compute Cloud instance."""
     folder_id: builtins.str
@@ -126,6 +128,8 @@ class ListBackupsRequest(google.protobuf.message.Message):
     Supported logic operators:
     * AND
     """
+    type: yandex.cloud.backup.v1.resource_pb2.ResourceType.ValueType
+    """Type of resource. Could be compute VM or baremetal server."""
     @property
     def archive(self) -> global___ListBackupsRequest.ArchiveParameters:
         """List backups that belongs to specific archive of specific folder."""
@@ -145,9 +149,10 @@ class ListBackupsRequest(google.protobuf.message.Message):
         policy_id: builtins.str = ...,
         order_by: builtins.str = ...,
         filter: builtins.str = ...,
+        type: yandex.cloud.backup.v1.resource_pb2.ResourceType.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["archive", b"archive", "compute_instance_id", b"compute_instance_id", "folder_id", b"folder_id", "id", b"id", "instance_policy", b"instance_policy", "policy_id", b"policy_id", "resource_id", b"resource_id"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["archive", b"archive", "compute_instance_id", b"compute_instance_id", "filter", b"filter", "folder_id", b"folder_id", "id", b"id", "instance_policy", b"instance_policy", "order_by", b"order_by", "policy_id", b"policy_id", "resource_id", b"resource_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["archive", b"archive", "compute_instance_id", b"compute_instance_id", "filter", b"filter", "folder_id", b"folder_id", "id", b"id", "instance_policy", b"instance_policy", "order_by", b"order_by", "policy_id", b"policy_id", "resource_id", b"resource_id", "type", b"type"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["id", b"id"]) -> typing.Literal["compute_instance_id", "archive", "folder_id", "instance_policy", "resource_id", "policy_id"] | None: ...
 
 global___ListBackupsRequest = ListBackupsRequest

@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2yandex/cloud/cloudrouter/v1/routing_instance.proto\x12\x1byandex.cloud.cloudrouter.v1\"\x91\x08\n\x0fRoutingInstance\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x11\n\tfolder_id\x18\x05 \x01(\t\x12\x11\n\tregion_id\x18\x06 \x01(\t\x12\x46\n\x08vpc_info\x18\x07 \x03(\x0b\x32\x34.yandex.cloud.cloudrouter.v1.RoutingInstance.VpcInfo\x12j\n\x1b\x63ic_private_connection_info\x18\x08 \x03(\x0b\x32\x45.yandex.cloud.cloudrouter.v1.RoutingInstance.CicPrivateConnectionInfo\x12\x43\n\x06status\x18\t \x01(\x0e\x32\x33.yandex.cloud.cloudrouter.v1.RoutingInstance.Status\x12H\n\x06labels\x18\x18 \x03(\x0b\x32\x38.yandex.cloud.cloudrouter.v1.RoutingInstance.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a=\n\x18\x43icPrivateConnectionInfo\x12!\n\x19\x63ic_private_connection_id\x18\x01 \x01(\t\x1ak\n\x07VpcInfo\x12\x16\n\x0evpc_network_id\x18\x01 \x01(\t\x12H\n\x08\x61z_infos\x18\x02 \x03(\x0b\x32\x36.yandex.cloud.cloudrouter.v1.RoutingInstance.VpcAzInfo\x1a\xb9\x01\n\tVpcAzInfo\x12O\n\x0bmanual_info\x18\x02 \x01(\x0b\x32:.yandex.cloud.cloudrouter.v1.RoutingInstance.VpcManualInfo\x12U\n\x0e\x61utomatic_info\x18\x03 \x01(\x0b\x32=.yandex.cloud.cloudrouter.v1.RoutingInstance.VpcAutomaticInfoJ\x04\x08\x01\x10\x02\x1a\x36\n\rVpcManualInfo\x12\r\n\x05\x61z_id\x18\x01 \x01(\t\x12\x10\n\x08prefixes\x18\x05 \x03(\tJ\x04\x08\x02\x10\x05\x1a\x33\n\x10VpcAutomaticInfo\x12\r\n\x05\x61z_id\x18\x01 \x01(\t\x12\x10\n\x08prefixes\x18\x02 \x03(\t\"V\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0c\n\x08UPDATING\x10\x02\x12\x0c\n\x08\x44\x45LETING\x10\x03\x12\n\n\x06\x41\x43TIVE\x10\x04J\x04\x08\x04\x10\x05J\x04\x08\n\x10\x18\x42n\n\x1fyandex.cloud.api.cloudrouter.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/cloudrouter/v1;cloudrouterb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2yandex/cloud/cloudrouter/v1/routing_instance.proto\x12\x1byandex.cloud.cloudrouter.v1\"\x84\x07\n\x0fRoutingInstance\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x11\n\tfolder_id\x18\x05 \x01(\t\x12\x11\n\tregion_id\x18\x06 \x01(\t\x12\x46\n\x08vpc_info\x18\x07 \x03(\x0b\x32\x34.yandex.cloud.cloudrouter.v1.RoutingInstance.VpcInfo\x12j\n\x1b\x63ic_private_connection_info\x18\x08 \x03(\x0b\x32\x45.yandex.cloud.cloudrouter.v1.RoutingInstance.CicPrivateConnectionInfo\x12\x43\n\x06status\x18\t \x01(\x0e\x32\x33.yandex.cloud.cloudrouter.v1.RoutingInstance.Status\x12H\n\x06labels\x18\x18 \x03(\x0b\x32\x38.yandex.cloud.cloudrouter.v1.RoutingInstance.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a=\n\x18\x43icPrivateConnectionInfo\x12!\n\x19\x63ic_private_connection_id\x18\x01 \x01(\t\x1ak\n\x07VpcInfo\x12\x16\n\x0evpc_network_id\x18\x01 \x01(\t\x12H\n\x08\x61z_infos\x18\x02 \x03(\x0b\x32\x36.yandex.cloud.cloudrouter.v1.RoutingInstance.VpcAzInfo\x1a\x62\n\tVpcAzInfo\x12O\n\x0bmanual_info\x18\x02 \x01(\x0b\x32:.yandex.cloud.cloudrouter.v1.RoutingInstance.VpcManualInfoJ\x04\x08\x01\x10\x02\x1a\x36\n\rVpcManualInfo\x12\r\n\x05\x61z_id\x18\x01 \x01(\t\x12\x10\n\x08prefixes\x18\x05 \x03(\tJ\x04\x08\x02\x10\x05\"V\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0c\n\x08UPDATING\x10\x02\x12\x0c\n\x08\x44\x45LETING\x10\x03\x12\n\n\x06\x41\x43TIVE\x10\x04J\x04\x08\x04\x10\x05J\x04\x08\n\x10\x18\x42n\n\x1fyandex.cloud.api.cloudrouter.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/cloudrouter/v1;cloudrouterb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -24,19 +24,17 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _ROUTINGINSTANCE_LABELSENTRY._options = None
   _ROUTINGINSTANCE_LABELSENTRY._serialized_options = b'8\001'
   _globals['_ROUTINGINSTANCE']._serialized_start=84
-  _globals['_ROUTINGINSTANCE']._serialized_end=1125
+  _globals['_ROUTINGINSTANCE']._serialized_end=984
   _globals['_ROUTINGINSTANCE_LABELSENTRY']._serialized_start=511
   _globals['_ROUTINGINSTANCE_LABELSENTRY']._serialized_end=556
   _globals['_ROUTINGINSTANCE_CICPRIVATECONNECTIONINFO']._serialized_start=558
   _globals['_ROUTINGINSTANCE_CICPRIVATECONNECTIONINFO']._serialized_end=619
   _globals['_ROUTINGINSTANCE_VPCINFO']._serialized_start=621
   _globals['_ROUTINGINSTANCE_VPCINFO']._serialized_end=728
-  _globals['_ROUTINGINSTANCE_VPCAZINFO']._serialized_start=731
-  _globals['_ROUTINGINSTANCE_VPCAZINFO']._serialized_end=916
-  _globals['_ROUTINGINSTANCE_VPCMANUALINFO']._serialized_start=918
-  _globals['_ROUTINGINSTANCE_VPCMANUALINFO']._serialized_end=972
-  _globals['_ROUTINGINSTANCE_VPCAUTOMATICINFO']._serialized_start=974
-  _globals['_ROUTINGINSTANCE_VPCAUTOMATICINFO']._serialized_end=1025
-  _globals['_ROUTINGINSTANCE_STATUS']._serialized_start=1027
-  _globals['_ROUTINGINSTANCE_STATUS']._serialized_end=1113
+  _globals['_ROUTINGINSTANCE_VPCAZINFO']._serialized_start=730
+  _globals['_ROUTINGINSTANCE_VPCAZINFO']._serialized_end=828
+  _globals['_ROUTINGINSTANCE_VPCMANUALINFO']._serialized_start=830
+  _globals['_ROUTINGINSTANCE_VPCMANUALINFO']._serialized_end=884
+  _globals['_ROUTINGINSTANCE_STATUS']._serialized_start=886
+  _globals['_ROUTINGINSTANCE_STATUS']._serialized_end=972
 # @@protoc_insertion_point(module_scope)

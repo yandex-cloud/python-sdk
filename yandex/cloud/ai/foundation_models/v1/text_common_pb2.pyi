@@ -65,6 +65,8 @@ class Message(google.protobuf.message.Message):
 
     ROLE_FIELD_NUMBER: builtins.int
     TEXT_FIELD_NUMBER: builtins.int
+    TOOL_CALL_LIST_FIELD_NUMBER: builtins.int
+    TOOL_RESULT_LIST_FIELD_NUMBER: builtins.int
     role: builtins.str
     """The ID of the message sender. Supported roles:
     * `system`: Special role used to define the behaviour of the completion model.
@@ -73,15 +75,25 @@ class Message(google.protobuf.message.Message):
     """
     text: builtins.str
     """Textual content of the message."""
+    @property
+    def tool_call_list(self) -> global___ToolCallList:
+        """List of tool calls made by the model as part of the response generation."""
+
+    @property
+    def tool_result_list(self) -> global___ToolResultList:
+        """List of tool results returned from external tools that were invoked by the model."""
+
     def __init__(
         self,
         *,
         role: builtins.str = ...,
         text: builtins.str = ...,
+        tool_call_list: global___ToolCallList | None = ...,
+        tool_result_list: global___ToolResultList | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["Content", b"Content", "text", b"text"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["Content", b"Content", "role", b"role", "text", b"text"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["Content", b"Content"]) -> typing.Literal["text"] | None: ...
+    def HasField(self, field_name: typing.Literal["Content", b"Content", "text", b"text", "tool_call_list", b"tool_call_list", "tool_result_list", b"tool_result_list"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["Content", b"Content", "role", b"role", "text", b"text", "tool_call_list", b"tool_call_list", "tool_result_list", b"tool_result_list"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["Content", b"Content"]) -> typing.Literal["text", "tool_call_list", "tool_result_list"] | None: ...
 
 global___Message = Message
 

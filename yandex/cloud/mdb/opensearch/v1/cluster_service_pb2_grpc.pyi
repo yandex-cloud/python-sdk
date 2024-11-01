@@ -63,6 +63,12 @@ class ClusterServiceStub:
     ]
     """Creates a backup for the specified OpenSearch cluster."""
 
+    DeleteBackup: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.DeleteBackupRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Delete backup for the specified OpenSearch cluster."""
+
     Restore: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.RestoreClusterRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -214,6 +220,12 @@ class ClusterServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Creates a backup for the specified OpenSearch cluster."""
+
+    DeleteBackup: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.DeleteBackupRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Delete backup for the specified OpenSearch cluster."""
 
     Restore: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.RestoreClusterRequest,
@@ -378,6 +390,14 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Creates a backup for the specified OpenSearch cluster."""
+
+    @abc.abstractmethod
+    def DeleteBackup(
+        self,
+        request: yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.DeleteBackupRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Delete backup for the specified OpenSearch cluster."""
 
     @abc.abstractmethod
     def Restore(

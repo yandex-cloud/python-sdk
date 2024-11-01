@@ -193,7 +193,7 @@ class InstanceServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def UpdateMetadata(self, request, context):
-        """Updates the metadata of the specified instance.
+        """Updates the metadata of the specified instance. For more information on metadata, see [VM metadata](/docs/compute/concepts/vm-metadata).
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
