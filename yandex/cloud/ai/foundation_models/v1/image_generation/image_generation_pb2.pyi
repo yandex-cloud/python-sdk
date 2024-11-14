@@ -60,9 +60,11 @@ class ImageGenerationOptions(google.protobuf.message.Message):
     SEED_FIELD_NUMBER: builtins.int
     ASPECT_RATIO_FIELD_NUMBER: builtins.int
     mime_type: builtins.str
-    """MIME type of generated image format."""
+    """The [MIME type](https://en.wikipedia.org/wiki/Media_type) of generated image format.
+    For possible specifications, see [documentation](/docs/foundation-models/concepts).
+    """
     seed: builtins.int
-    """Seed for image generation."""
+    """Seed for image generation. It serves as a starting point for image generation from noise."""
     @property
     def aspect_ratio(self) -> global___AspectRatio:
         """Aspect ratio of generated image."""

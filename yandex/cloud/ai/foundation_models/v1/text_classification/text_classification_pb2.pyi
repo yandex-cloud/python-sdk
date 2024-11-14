@@ -12,16 +12,16 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class ClassificationLabel(google.protobuf.message.Message):
-    """A pair of text label and corresponding confidence used in classification problems."""
+    """A pair of text labels and their corresponding confidence values."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     LABEL_FIELD_NUMBER: builtins.int
     CONFIDENCE_FIELD_NUMBER: builtins.int
     label: builtins.str
-    """A label with a class name."""
+    """A class name label."""
     confidence: builtins.float
-    """Confidence of item's belonging to a class."""
+    """The probability of classifying text into a specific class."""
     def __init__(
         self,
         *,

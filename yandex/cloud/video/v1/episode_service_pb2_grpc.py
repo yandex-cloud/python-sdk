@@ -27,6 +27,11 @@ class EpisodeServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_episode__service__pb2.ListEpisodesRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_episode__service__pb2.ListEpisodesResponse.FromString,
                 )
+        self.BatchGet = channel.unary_unary(
+                '/yandex.cloud.video.v1.EpisodeService/BatchGet',
+                request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_episode__service__pb2.BatchGetEpisodesRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_episode__service__pb2.BatchGetEpisodesResponse.FromString,
+                )
         self.Create = channel.unary_unary(
                 '/yandex.cloud.video.v1.EpisodeService/Create',
                 request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_episode__service__pb2.CreateEpisodeRequest.SerializeToString,
@@ -72,6 +77,13 @@ class EpisodeServiceServicer(object):
 
     def List(self, request, context):
         """List episodes for stream or line.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def BatchGet(self, request, context):
+        """Batch get episodes for channel.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -131,6 +143,11 @@ def add_EpisodeServiceServicer_to_server(servicer, server):
                     servicer.List,
                     request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_episode__service__pb2.ListEpisodesRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_episode__service__pb2.ListEpisodesResponse.SerializeToString,
+            ),
+            'BatchGet': grpc.unary_unary_rpc_method_handler(
+                    servicer.BatchGet,
+                    request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_episode__service__pb2.BatchGetEpisodesRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_episode__service__pb2.BatchGetEpisodesResponse.SerializeToString,
             ),
             'Create': grpc.unary_unary_rpc_method_handler(
                     servicer.Create,
@@ -204,6 +221,23 @@ class EpisodeService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.video.v1.EpisodeService/List',
             yandex_dot_cloud_dot_video_dot_v1_dot_episode__service__pb2.ListEpisodesRequest.SerializeToString,
             yandex_dot_cloud_dot_video_dot_v1_dot_episode__service__pb2.ListEpisodesResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def BatchGet(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.video.v1.EpisodeService/BatchGet',
+            yandex_dot_cloud_dot_video_dot_v1_dot_episode__service__pb2.BatchGetEpisodesRequest.SerializeToString,
+            yandex_dot_cloud_dot_video_dot_v1_dot_episode__service__pb2.BatchGetEpisodesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

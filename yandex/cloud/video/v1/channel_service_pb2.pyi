@@ -257,3 +257,43 @@ class DeleteChannelMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["channel_id", b"channel_id"]) -> None: ...
 
 global___DeleteChannelMetadata = DeleteChannelMetadata
+
+@typing.final
+class BatchDeleteChannelsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ORGANIZATION_ID_FIELD_NUMBER: builtins.int
+    CHANNEL_IDS_FIELD_NUMBER: builtins.int
+    organization_id: builtins.str
+    """ID of the organization."""
+    @property
+    def channel_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of channel IDs."""
+
+    def __init__(
+        self,
+        *,
+        organization_id: builtins.str = ...,
+        channel_ids: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["channel_ids", b"channel_ids", "organization_id", b"organization_id"]) -> None: ...
+
+global___BatchDeleteChannelsRequest = BatchDeleteChannelsRequest
+
+@typing.final
+class BatchDeleteChannelsMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CHANNEL_IDS_FIELD_NUMBER: builtins.int
+    @property
+    def channel_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of channel IDs."""
+
+    def __init__(
+        self,
+        *,
+        channel_ids: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["channel_ids", b"channel_ids"]) -> None: ...
+
+global___BatchDeleteChannelsMetadata = BatchDeleteChannelsMetadata

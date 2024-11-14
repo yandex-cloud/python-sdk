@@ -35,6 +35,12 @@ class EpisodeServiceStub:
     ]
     """List episodes for stream or line."""
 
+    BatchGet: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.video.v1.episode_service_pb2.BatchGetEpisodesRequest,
+        yandex.cloud.video.v1.episode_service_pb2.BatchGetEpisodesResponse,
+    ]
+    """Batch get episodes for channel."""
+
     Create: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.episode_service_pb2.CreateEpisodeRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -85,6 +91,12 @@ class EpisodeServiceAsyncStub:
         yandex.cloud.video.v1.episode_service_pb2.ListEpisodesResponse,
     ]
     """List episodes for stream or line."""
+
+    BatchGet: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.video.v1.episode_service_pb2.BatchGetEpisodesRequest,
+        yandex.cloud.video.v1.episode_service_pb2.BatchGetEpisodesResponse,
+    ]
+    """Batch get episodes for channel."""
 
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.episode_service_pb2.CreateEpisodeRequest,
@@ -140,6 +152,14 @@ class EpisodeServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.episode_service_pb2.ListEpisodesResponse, collections.abc.Awaitable[yandex.cloud.video.v1.episode_service_pb2.ListEpisodesResponse]]:
         """List episodes for stream or line."""
+
+    @abc.abstractmethod
+    def BatchGet(
+        self,
+        request: yandex.cloud.video.v1.episode_service_pb2.BatchGetEpisodesRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.video.v1.episode_service_pb2.BatchGetEpisodesResponse, collections.abc.Awaitable[yandex.cloud.video.v1.episode_service_pb2.BatchGetEpisodesResponse]]:
+        """Batch get episodes for channel."""
 
     @abc.abstractmethod
     def Create(

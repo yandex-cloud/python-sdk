@@ -31,11 +31,7 @@ class Manifest(google.protobuf.message.Message):
         DASH: Manifest._ManifestType.ValueType  # 1
         HLS: Manifest._ManifestType.ValueType  # 2
 
-    class ManifestType(_ManifestType, metaclass=_ManifestTypeEnumTypeWrapper):
-        """TODO: CLOUDAPI-336
-        TODO: reserved 3;
-        """
-
+    class ManifestType(_ManifestType, metaclass=_ManifestTypeEnumTypeWrapper): ...
     MANIFEST_TYPE_UNSPECIFIED: Manifest.ManifestType.ValueType  # 0
     DASH: Manifest.ManifestType.ValueType  # 1
     HLS: Manifest.ManifestType.ValueType  # 2

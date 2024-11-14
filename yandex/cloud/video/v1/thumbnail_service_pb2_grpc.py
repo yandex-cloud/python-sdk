@@ -3,6 +3,7 @@
 import grpc
 
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
+from yandex.cloud.video.v1 import thumbnail_pb2 as yandex_dot_cloud_dot_video_dot_v1_dot_thumbnail__pb2
 from yandex.cloud.video.v1 import thumbnail_service_pb2 as yandex_dot_cloud_dot_video_dot_v1_dot_thumbnail__service__pb2
 
 
@@ -16,6 +17,11 @@ class ThumbnailServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
+        self.Get = channel.unary_unary(
+                '/yandex.cloud.video.v1.ThumbnailService/Get',
+                request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_thumbnail__service__pb2.GetThumbnailRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_thumbnail__pb2.Thumbnail.FromString,
+                )
         self.List = channel.unary_unary(
                 '/yandex.cloud.video.v1.ThumbnailService/List',
                 request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_thumbnail__service__pb2.ListThumbnailRequest.SerializeToString,
@@ -36,11 +42,23 @@ class ThumbnailServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_thumbnail__service__pb2.GenerateThumbnailUploadURLRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_thumbnail__service__pb2.GenerateThumbnailUploadURLResponse.FromString,
                 )
+        self.Delete = channel.unary_unary(
+                '/yandex.cloud.video.v1.ThumbnailService/Delete',
+                request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_thumbnail__service__pb2.DeleteThumbnailRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
 
 
 class ThumbnailServiceServicer(object):
     """Thumbnail management service.
     """
+
+    def Get(self, request, context):
+        """Returns the specific thumbnail.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
         """List thumbnails for channel.
@@ -70,9 +88,21 @@ class ThumbnailServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Delete(self, request, context):
+        """Delete thumbnail.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ThumbnailServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
+            'Get': grpc.unary_unary_rpc_method_handler(
+                    servicer.Get,
+                    request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_thumbnail__service__pb2.GetThumbnailRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_thumbnail__pb2.Thumbnail.SerializeToString,
+            ),
             'List': grpc.unary_unary_rpc_method_handler(
                     servicer.List,
                     request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_thumbnail__service__pb2.ListThumbnailRequest.FromString,
@@ -93,6 +123,11 @@ def add_ThumbnailServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_thumbnail__service__pb2.GenerateThumbnailUploadURLRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_thumbnail__service__pb2.GenerateThumbnailUploadURLResponse.SerializeToString,
             ),
+            'Delete': grpc.unary_unary_rpc_method_handler(
+                    servicer.Delete,
+                    request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_thumbnail__service__pb2.DeleteThumbnailRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
             'yandex.cloud.video.v1.ThumbnailService', rpc_method_handlers)
@@ -103,6 +138,23 @@ def add_ThumbnailServiceServicer_to_server(servicer, server):
 class ThumbnailService(object):
     """Thumbnail management service.
     """
+
+    @staticmethod
+    def Get(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.video.v1.ThumbnailService/Get',
+            yandex_dot_cloud_dot_video_dot_v1_dot_thumbnail__service__pb2.GetThumbnailRequest.SerializeToString,
+            yandex_dot_cloud_dot_video_dot_v1_dot_thumbnail__pb2.Thumbnail.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def List(request,
@@ -169,5 +221,22 @@ class ThumbnailService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.video.v1.ThumbnailService/GenerateUploadURL',
             yandex_dot_cloud_dot_video_dot_v1_dot_thumbnail__service__pb2.GenerateThumbnailUploadURLRequest.SerializeToString,
             yandex_dot_cloud_dot_video_dot_v1_dot_thumbnail__service__pb2.GenerateThumbnailUploadURLResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Delete(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.video.v1.ThumbnailService/Delete',
+            yandex_dot_cloud_dot_video_dot_v1_dot_thumbnail__service__pb2.DeleteThumbnailRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

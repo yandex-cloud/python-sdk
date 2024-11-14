@@ -25,6 +25,11 @@ class ExecutionServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_serverless_dot_workflows_dot_v1_dot_execution__service__pb2.StopExecutionRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_serverless_dot_workflows_dot_v1_dot_execution__service__pb2.StopExecutionResponse.FromString,
                 )
+        self.Terminate = channel.unary_unary(
+                '/yandex.cloud.serverless.workflows.v1.ExecutionService/Terminate',
+                request_serializer=yandex_dot_cloud_dot_serverless_dot_workflows_dot_v1_dot_execution__service__pb2.TerminateExecutionRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_serverless_dot_workflows_dot_v1_dot_execution__service__pb2.TerminateExecutionResponse.FromString,
+                )
         self.Get = channel.unary_unary(
                 '/yandex.cloud.serverless.workflows.v1.ExecutionService/Get',
                 request_serializer=yandex_dot_cloud_dot_serverless_dot_workflows_dot_v1_dot_execution__service__pb2.GetExecutionRequest.SerializeToString,
@@ -55,6 +60,13 @@ class ExecutionServiceServicer(object):
 
     def Stop(self, request, context):
         """Stops specified Workflow execution.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Terminate(self, request, context):
+        """Terminates specified Workflow execution.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -93,6 +105,11 @@ def add_ExecutionServiceServicer_to_server(servicer, server):
                     servicer.Stop,
                     request_deserializer=yandex_dot_cloud_dot_serverless_dot_workflows_dot_v1_dot_execution__service__pb2.StopExecutionRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_serverless_dot_workflows_dot_v1_dot_execution__service__pb2.StopExecutionResponse.SerializeToString,
+            ),
+            'Terminate': grpc.unary_unary_rpc_method_handler(
+                    servicer.Terminate,
+                    request_deserializer=yandex_dot_cloud_dot_serverless_dot_workflows_dot_v1_dot_execution__service__pb2.TerminateExecutionRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_serverless_dot_workflows_dot_v1_dot_execution__service__pb2.TerminateExecutionResponse.SerializeToString,
             ),
             'Get': grpc.unary_unary_rpc_method_handler(
                     servicer.Get,
@@ -151,6 +168,23 @@ class ExecutionService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.serverless.workflows.v1.ExecutionService/Stop',
             yandex_dot_cloud_dot_serverless_dot_workflows_dot_v1_dot_execution__service__pb2.StopExecutionRequest.SerializeToString,
             yandex_dot_cloud_dot_serverless_dot_workflows_dot_v1_dot_execution__service__pb2.StopExecutionResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def Terminate(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.serverless.workflows.v1.ExecutionService/Terminate',
+            yandex_dot_cloud_dot_serverless_dot_workflows_dot_v1_dot_execution__service__pb2.TerminateExecutionRequest.SerializeToString,
+            yandex_dot_cloud_dot_serverless_dot_workflows_dot_v1_dot_execution__service__pb2.TerminateExecutionResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

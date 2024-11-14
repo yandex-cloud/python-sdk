@@ -16,10 +16,11 @@ from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mas
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
+from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 from yandex.cloud.video.v1 import stream_pb2 as yandex_dot_cloud_dot_video_dot_v1_dot_stream__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*yandex/cloud/video/v1/stream_service.proto\x12\x15yandex.cloud.video.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\"yandex/cloud/video/v1/stream.proto\"%\n\x10GetStreamRequest\x12\x11\n\tstream_id\x18\x01 \x01(\t\"w\n\x12ListStreamsRequest\x12\x12\n\nchannel_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x64 \x01(\x03\x12\x12\n\npage_token\x18\x65 \x01(\t\x12\x10\n\x08order_by\x18\x66 \x01(\t\x12\x0e\n\x06\x66ilter\x18g \x01(\tJ\x04\x08\x02\x10\x64\"d\n\x13ListStreamsResponse\x12.\n\x07streams\x18\x01 \x03(\x0b\x32\x1d.yandex.cloud.video.v1.Stream\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\"\x83\x03\n\x13\x43reateStreamRequest\x12\x12\n\nchannel_id\x18\x01 \x01(\t\x12\x0f\n\x07line_id\x18\x02 \x01(\t\x12\r\n\x05title\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x14\n\x0cthumbnail_id\x18\x05 \x01(\t\x12G\n\x06labels\x18\xc8\x01 \x03(\x0b\x32\x36.yandex.cloud.video.v1.CreateStreamRequest.LabelsEntry\x12;\n\ton_demand\x18\xe8\x07 \x01(\x0b\x32%.yandex.cloud.video.v1.OnDemandParamsH\x00\x12:\n\x08schedule\x18\xe9\x07 \x01(\x0b\x32%.yandex.cloud.video.v1.ScheduleParamsH\x00\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\r\n\x0bstream_typeJ\x06\x08\xc9\x01\x10\xe8\x07J\x05\x08\x06\x10\xc8\x01\"\x10\n\x0eOnDemandParams\"q\n\x0eScheduleParams\x12.\n\nstart_time\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0b\x66inish_time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\")\n\x14\x43reateStreamMetadata\x12\x11\n\tstream_id\x18\x01 \x01(\t\"\xb2\x03\n\x13UpdateStreamRequest\x12\x11\n\tstream_id\x18\x01 \x01(\t\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x0f\n\x07line_id\x18\x03 \x01(\t\x12\r\n\x05title\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x14\n\x0cthumbnail_id\x18\x06 \x01(\t\x12G\n\x06labels\x18\xc8\x01 \x03(\x0b\x32\x36.yandex.cloud.video.v1.UpdateStreamRequest.LabelsEntry\x12;\n\ton_demand\x18\xe8\x07 \x01(\x0b\x32%.yandex.cloud.video.v1.OnDemandParamsH\x00\x12:\n\x08schedule\x18\xe9\x07 \x01(\x0b\x32%.yandex.cloud.video.v1.ScheduleParamsH\x00\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\r\n\x0bstream_typeJ\x06\x08\xc9\x01\x10\xe8\x07J\x05\x08\x07\x10\xc8\x01\")\n\x14UpdateStreamMetadata\x12\x11\n\tstream_id\x18\x01 \x01(\t\"(\n\x13\x44\x65leteStreamRequest\x12\x11\n\tstream_id\x18\x01 \x01(\t\")\n\x14\x44\x65leteStreamMetadata\x12\x11\n\tstream_id\x18\x01 \x01(\t\"\xb6\x01\n\x1aPerformStreamActionRequest\x12\x11\n\tstream_id\x18\x01 \x01(\t\x12\x38\n\x07publish\x18\xe8\x07 \x01(\x0b\x32$.yandex.cloud.video.v1.PublishActionH\x00\x12\x32\n\x04stop\x18\xea\x07 \x01(\x0b\x32!.yandex.cloud.video.v1.StopActionH\x00\x42\x08\n\x06\x61\x63tionJ\x05\x08\x02\x10\xe8\x07J\x06\x08\xe9\x07\x10\xea\x07\"\x0f\n\rPublishAction\"\x0c\n\nStopAction\"0\n\x1bPerformStreamActionMetadata\x12\x11\n\tstream_id\x18\x01 \x01(\t2\xba\x07\n\rStreamService\x12t\n\x03Get\x12\'.yandex.cloud.video.v1.GetStreamRequest\x1a\x1d.yandex.cloud.video.v1.Stream\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/video/v1/streams/{stream_id}\x12x\n\x04List\x12).yandex.cloud.video.v1.ListStreamsRequest\x1a*.yandex.cloud.video.v1.ListStreamsResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/video/v1/streams\x12\x97\x01\n\x06\x43reate\x12*.yandex.cloud.video.v1.CreateStreamRequest\x1a!.yandex.cloud.operation.Operation\">\xb2\xd2*\x1e\n\x14\x43reateStreamMetadata\x12\x06Stream\x82\xd3\xe4\x93\x02\x16\"\x11/video/v1/streams:\x01*\x12\xa3\x01\n\x06Update\x12*.yandex.cloud.video.v1.UpdateStreamRequest\x1a!.yandex.cloud.operation.Operation\"J\xb2\xd2*\x1e\n\x14UpdateStreamMetadata\x12\x06Stream\x82\xd3\xe4\x93\x02\"2\x1d/video/v1/streams/{stream_id}:\x01*\x12\xaf\x01\n\x06\x44\x65lete\x12*.yandex.cloud.video.v1.DeleteStreamRequest\x1a!.yandex.cloud.operation.Operation\"V\xb2\xd2*-\n\x14\x44\x65leteStreamMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x1f*\x1d/video/v1/streams/{stream_id}\x12\xc6\x01\n\rPerformAction\x12\x31.yandex.cloud.video.v1.PerformStreamActionRequest\x1a!.yandex.cloud.operation.Operation\"_\xb2\xd2*%\n\x1bPerformStreamActionMetadata\x12\x06Stream\x82\xd3\xe4\x93\x02\x30\"+/video/v1/streams/{stream_id}:performAction:\x01*B\\\n\x19yandex.cloud.api.video.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/video/v1;videob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*yandex/cloud/video/v1/stream_service.proto\x12\x15yandex.cloud.video.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a\"yandex/cloud/video/v1/stream.proto\"3\n\x10GetStreamRequest\x12\x1f\n\tstream_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xa8\x01\n\x12ListStreamsRequest\x12 \n\nchannel_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x64 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x65 \x01(\tB\t\x8a\xc8\x31\x05<=200\x12\x10\n\x08order_by\x18\x66 \x01(\t\x12\x1a\n\x06\x66ilter\x18g \x01(\tB\n\x8a\xc8\x31\x06<=1000J\x04\x08\x02\x10\x64\"d\n\x13ListStreamsResponse\x12.\n\x07streams\x18\x01 \x03(\x0b\x32\x1d.yandex.cloud.video.v1.Stream\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\"`\n\x16\x42\x61tchGetStreamsRequest\x12 \n\nchannel_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12$\n\nstream_ids\x18\x02 \x03(\tB\x10\x82\xc8\x31\x04\x31-50\x8a\xc8\x31\x04<=50\"I\n\x17\x42\x61tchGetStreamsResponse\x12.\n\x07streams\x18\x01 \x03(\x0b\x32\x1d.yandex.cloud.video.v1.Stream\"\xf7\x03\n\x13\x43reateStreamRequest\x12 \n\nchannel_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\x07line_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x13\n\x05title\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x1e\n\x0cthumbnail_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x88\x01\n\x06labels\x18\xc8\x01 \x03(\x0b\x32\x36.yandex.cloud.video.v1.CreateStreamRequest.LabelsEntryB?\xf2\xc7\x31\x0f[-_.@:/0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04<=63\x12;\n\ton_demand\x18\xe8\x07 \x01(\x0b\x32%.yandex.cloud.video.v1.OnDemandParamsH\x00\x12:\n\x08schedule\x18\xe9\x07 \x01(\x0b\x32%.yandex.cloud.video.v1.ScheduleParamsH\x00\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x13\n\x0bstream_type\x12\x04\xc0\xc1\x31\x01J\x05\x08\x06\x10\xc8\x01J\x06\x08\xc9\x01\x10\xe8\x07\"\x10\n\x0eOnDemandParams\"}\n\x0eScheduleParams\x12\x34\n\nstart_time\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12\x35\n\x0b\x66inish_time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\")\n\x14\x43reateStreamMetadata\x12\x11\n\tstream_id\x18\x01 \x01(\t\"\x96\x04\n\x13UpdateStreamRequest\x12\x1f\n\tstream_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x19\n\x07line_id\x18\x03 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\r\n\x05title\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12\x1e\n\x0cthumbnail_id\x18\x06 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x88\x01\n\x06labels\x18\xc8\x01 \x03(\x0b\x32\x36.yandex.cloud.video.v1.UpdateStreamRequest.LabelsEntryB?\xf2\xc7\x31\x0f[-_.@:/0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04<=63\x12;\n\ton_demand\x18\xe8\x07 \x01(\x0b\x32%.yandex.cloud.video.v1.OnDemandParamsH\x00\x12:\n\x08schedule\x18\xe9\x07 \x01(\x0b\x32%.yandex.cloud.video.v1.ScheduleParamsH\x00\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\r\n\x0bstream_typeJ\x05\x08\x07\x10\xc8\x01J\x06\x08\xc9\x01\x10\xe8\x07\")\n\x14UpdateStreamMetadata\x12\x11\n\tstream_id\x18\x01 \x01(\t\"6\n\x13\x44\x65leteStreamRequest\x12\x1f\n\tstream_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\")\n\x14\x44\x65leteStreamMetadata\x12\x11\n\tstream_id\x18\x01 \x01(\t\"c\n\x19\x42\x61tchDeleteStreamsRequest\x12 \n\nchannel_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12$\n\nstream_ids\x18\x02 \x03(\tB\x10\x82\xc8\x31\x04\x31-50\x8a\xc8\x31\x04<=50\"0\n\x1a\x42\x61tchDeleteStreamsMetadata\x12\x12\n\nstream_ids\x18\x01 \x03(\t\"\xca\x01\n\x1aPerformStreamActionRequest\x12\x1f\n\tstream_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x38\n\x07publish\x18\xe8\x07 \x01(\x0b\x32$.yandex.cloud.video.v1.PublishActionH\x00\x12\x32\n\x04stop\x18\xea\x07 \x01(\x0b\x32!.yandex.cloud.video.v1.StopActionH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01J\x06\x08\xe9\x07\x10\xea\x07J\x05\x08\x02\x10\xe8\x07\"\x0f\n\rPublishAction\"\x0c\n\nStopAction\"0\n\x1bPerformStreamActionMetadata\x12\x11\n\tstream_id\x18\x01 \x01(\t2\x93\n\n\rStreamService\x12t\n\x03Get\x12\'.yandex.cloud.video.v1.GetStreamRequest\x1a\x1d.yandex.cloud.video.v1.Stream\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/video/v1/streams/{stream_id}\x12x\n\x04List\x12).yandex.cloud.video.v1.ListStreamsRequest\x1a*.yandex.cloud.video.v1.ListStreamsResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/video/v1/streams\x12\x90\x01\n\x08\x42\x61tchGet\x12-.yandex.cloud.video.v1.BatchGetStreamsRequest\x1a..yandex.cloud.video.v1.BatchGetStreamsResponse\"%\x82\xd3\xe4\x93\x02\x1f\"\x1a/video/v1/streams:batchGet:\x01*\x12\x97\x01\n\x06\x43reate\x12*.yandex.cloud.video.v1.CreateStreamRequest\x1a!.yandex.cloud.operation.Operation\">\xb2\xd2*\x1e\n\x14\x43reateStreamMetadata\x12\x06Stream\x82\xd3\xe4\x93\x02\x16\"\x11/video/v1/streams:\x01*\x12\xa3\x01\n\x06Update\x12*.yandex.cloud.video.v1.UpdateStreamRequest\x1a!.yandex.cloud.operation.Operation\"J\xb2\xd2*\x1e\n\x14UpdateStreamMetadata\x12\x06Stream\x82\xd3\xe4\x93\x02\"2\x1d/video/v1/streams/{stream_id}:\x01*\x12\xaf\x01\n\x06\x44\x65lete\x12*.yandex.cloud.video.v1.DeleteStreamRequest\x1a!.yandex.cloud.operation.Operation\"V\xb2\xd2*-\n\x14\x44\x65leteStreamMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x1f*\x1d/video/v1/streams/{stream_id}\x12\xc3\x01\n\x0b\x42\x61tchDelete\x12\x30.yandex.cloud.video.v1.BatchDeleteStreamsRequest\x1a!.yandex.cloud.operation.Operation\"_\xb2\xd2*3\n\x1a\x42\x61tchDeleteStreamsMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\"\"\x1d/video/v1/streams:batchDelete:\x01*\x12\xc6\x01\n\rPerformAction\x12\x31.yandex.cloud.video.v1.PerformStreamActionRequest\x1a!.yandex.cloud.operation.Operation\"_\xb2\xd2*%\n\x1bPerformStreamActionMetadata\x12\x06Stream\x82\xd3\xe4\x93\x02\x30\"+/video/v1/streams/{stream_id}:performAction:\x01*B\\\n\x19yandex.cloud.api.video.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/video/v1;videob\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -27,56 +28,116 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.video.v1.strea
 if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\031yandex.cloud.api.video.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/video/v1;video'
+  _GETSTREAMREQUEST.fields_by_name['stream_id']._options = None
+  _GETSTREAMREQUEST.fields_by_name['stream_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTSTREAMSREQUEST.fields_by_name['channel_id']._options = None
+  _LISTSTREAMSREQUEST.fields_by_name['channel_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTSTREAMSREQUEST.fields_by_name['page_size']._options = None
+  _LISTSTREAMSREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
+  _LISTSTREAMSREQUEST.fields_by_name['page_token']._options = None
+  _LISTSTREAMSREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\005<=200'
+  _LISTSTREAMSREQUEST.fields_by_name['filter']._options = None
+  _LISTSTREAMSREQUEST.fields_by_name['filter']._serialized_options = b'\212\3101\006<=1000'
+  _BATCHGETSTREAMSREQUEST.fields_by_name['channel_id']._options = None
+  _BATCHGETSTREAMSREQUEST.fields_by_name['channel_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _BATCHGETSTREAMSREQUEST.fields_by_name['stream_ids']._options = None
+  _BATCHGETSTREAMSREQUEST.fields_by_name['stream_ids']._serialized_options = b'\202\3101\0041-50\212\3101\004<=50'
   _CREATESTREAMREQUEST_LABELSENTRY._options = None
   _CREATESTREAMREQUEST_LABELSENTRY._serialized_options = b'8\001'
+  _CREATESTREAMREQUEST.oneofs_by_name['stream_type']._options = None
+  _CREATESTREAMREQUEST.oneofs_by_name['stream_type']._serialized_options = b'\300\3011\001'
+  _CREATESTREAMREQUEST.fields_by_name['channel_id']._options = None
+  _CREATESTREAMREQUEST.fields_by_name['channel_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _CREATESTREAMREQUEST.fields_by_name['line_id']._options = None
+  _CREATESTREAMREQUEST.fields_by_name['line_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _CREATESTREAMREQUEST.fields_by_name['title']._options = None
+  _CREATESTREAMREQUEST.fields_by_name['title']._serialized_options = b'\350\3071\001'
+  _CREATESTREAMREQUEST.fields_by_name['thumbnail_id']._options = None
+  _CREATESTREAMREQUEST.fields_by_name['thumbnail_id']._serialized_options = b'\212\3101\004<=50'
+  _CREATESTREAMREQUEST.fields_by_name['labels']._options = None
+  _CREATESTREAMREQUEST.fields_by_name['labels']._serialized_options = b'\362\3071\017[-_.@:/0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\004<=63'
+  _SCHEDULEPARAMS.fields_by_name['start_time']._options = None
+  _SCHEDULEPARAMS.fields_by_name['start_time']._serialized_options = b'\350\3071\001'
+  _SCHEDULEPARAMS.fields_by_name['finish_time']._options = None
+  _SCHEDULEPARAMS.fields_by_name['finish_time']._serialized_options = b'\350\3071\001'
   _UPDATESTREAMREQUEST_LABELSENTRY._options = None
   _UPDATESTREAMREQUEST_LABELSENTRY._serialized_options = b'8\001'
+  _UPDATESTREAMREQUEST.fields_by_name['stream_id']._options = None
+  _UPDATESTREAMREQUEST.fields_by_name['stream_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _UPDATESTREAMREQUEST.fields_by_name['line_id']._options = None
+  _UPDATESTREAMREQUEST.fields_by_name['line_id']._serialized_options = b'\212\3101\004<=50'
+  _UPDATESTREAMREQUEST.fields_by_name['thumbnail_id']._options = None
+  _UPDATESTREAMREQUEST.fields_by_name['thumbnail_id']._serialized_options = b'\212\3101\004<=50'
+  _UPDATESTREAMREQUEST.fields_by_name['labels']._options = None
+  _UPDATESTREAMREQUEST.fields_by_name['labels']._serialized_options = b'\362\3071\017[-_.@:/0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\004<=63'
+  _DELETESTREAMREQUEST.fields_by_name['stream_id']._options = None
+  _DELETESTREAMREQUEST.fields_by_name['stream_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _BATCHDELETESTREAMSREQUEST.fields_by_name['channel_id']._options = None
+  _BATCHDELETESTREAMSREQUEST.fields_by_name['channel_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _BATCHDELETESTREAMSREQUEST.fields_by_name['stream_ids']._options = None
+  _BATCHDELETESTREAMSREQUEST.fields_by_name['stream_ids']._serialized_options = b'\202\3101\0041-50\212\3101\004<=50'
+  _PERFORMSTREAMACTIONREQUEST.oneofs_by_name['action']._options = None
+  _PERFORMSTREAMACTIONREQUEST.oneofs_by_name['action']._serialized_options = b'\300\3011\001'
+  _PERFORMSTREAMACTIONREQUEST.fields_by_name['stream_id']._options = None
+  _PERFORMSTREAMACTIONREQUEST.fields_by_name['stream_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _STREAMSERVICE.methods_by_name['Get']._options = None
   _STREAMSERVICE.methods_by_name['Get']._serialized_options = b'\202\323\344\223\002\037\022\035/video/v1/streams/{stream_id}'
   _STREAMSERVICE.methods_by_name['List']._options = None
   _STREAMSERVICE.methods_by_name['List']._serialized_options = b'\202\323\344\223\002\023\022\021/video/v1/streams'
+  _STREAMSERVICE.methods_by_name['BatchGet']._options = None
+  _STREAMSERVICE.methods_by_name['BatchGet']._serialized_options = b'\202\323\344\223\002\037\"\032/video/v1/streams:batchGet:\001*'
   _STREAMSERVICE.methods_by_name['Create']._options = None
   _STREAMSERVICE.methods_by_name['Create']._serialized_options = b'\262\322*\036\n\024CreateStreamMetadata\022\006Stream\202\323\344\223\002\026\"\021/video/v1/streams:\001*'
   _STREAMSERVICE.methods_by_name['Update']._options = None
   _STREAMSERVICE.methods_by_name['Update']._serialized_options = b'\262\322*\036\n\024UpdateStreamMetadata\022\006Stream\202\323\344\223\002\"2\035/video/v1/streams/{stream_id}:\001*'
   _STREAMSERVICE.methods_by_name['Delete']._options = None
   _STREAMSERVICE.methods_by_name['Delete']._serialized_options = b'\262\322*-\n\024DeleteStreamMetadata\022\025google.protobuf.Empty\202\323\344\223\002\037*\035/video/v1/streams/{stream_id}'
+  _STREAMSERVICE.methods_by_name['BatchDelete']._options = None
+  _STREAMSERVICE.methods_by_name['BatchDelete']._serialized_options = b'\262\322*3\n\032BatchDeleteStreamsMetadata\022\025google.protobuf.Empty\202\323\344\223\002\"\"\035/video/v1/streams:batchDelete:\001*'
   _STREAMSERVICE.methods_by_name['PerformAction']._options = None
   _STREAMSERVICE.methods_by_name['PerformAction']._serialized_options = b'\262\322*%\n\033PerformStreamActionMetadata\022\006Stream\202\323\344\223\0020\"+/video/v1/streams/{stream_id}:performAction:\001*'
-  _globals['_GETSTREAMREQUEST']._serialized_start=276
-  _globals['_GETSTREAMREQUEST']._serialized_end=313
-  _globals['_LISTSTREAMSREQUEST']._serialized_start=315
-  _globals['_LISTSTREAMSREQUEST']._serialized_end=434
-  _globals['_LISTSTREAMSRESPONSE']._serialized_start=436
-  _globals['_LISTSTREAMSRESPONSE']._serialized_end=536
-  _globals['_CREATESTREAMREQUEST']._serialized_start=539
-  _globals['_CREATESTREAMREQUEST']._serialized_end=926
-  _globals['_CREATESTREAMREQUEST_LABELSENTRY']._serialized_start=851
-  _globals['_CREATESTREAMREQUEST_LABELSENTRY']._serialized_end=896
-  _globals['_ONDEMANDPARAMS']._serialized_start=928
-  _globals['_ONDEMANDPARAMS']._serialized_end=944
-  _globals['_SCHEDULEPARAMS']._serialized_start=946
-  _globals['_SCHEDULEPARAMS']._serialized_end=1059
-  _globals['_CREATESTREAMMETADATA']._serialized_start=1061
-  _globals['_CREATESTREAMMETADATA']._serialized_end=1102
-  _globals['_UPDATESTREAMREQUEST']._serialized_start=1105
-  _globals['_UPDATESTREAMREQUEST']._serialized_end=1539
-  _globals['_UPDATESTREAMREQUEST_LABELSENTRY']._serialized_start=851
-  _globals['_UPDATESTREAMREQUEST_LABELSENTRY']._serialized_end=896
-  _globals['_UPDATESTREAMMETADATA']._serialized_start=1541
-  _globals['_UPDATESTREAMMETADATA']._serialized_end=1582
-  _globals['_DELETESTREAMREQUEST']._serialized_start=1584
-  _globals['_DELETESTREAMREQUEST']._serialized_end=1624
-  _globals['_DELETESTREAMMETADATA']._serialized_start=1626
-  _globals['_DELETESTREAMMETADATA']._serialized_end=1667
-  _globals['_PERFORMSTREAMACTIONREQUEST']._serialized_start=1670
-  _globals['_PERFORMSTREAMACTIONREQUEST']._serialized_end=1852
-  _globals['_PUBLISHACTION']._serialized_start=1854
-  _globals['_PUBLISHACTION']._serialized_end=1869
-  _globals['_STOPACTION']._serialized_start=1871
-  _globals['_STOPACTION']._serialized_end=1883
-  _globals['_PERFORMSTREAMACTIONMETADATA']._serialized_start=1885
-  _globals['_PERFORMSTREAMACTIONMETADATA']._serialized_end=1933
-  _globals['_STREAMSERVICE']._serialized_start=1936
-  _globals['_STREAMSERVICE']._serialized_end=2890
+  _globals['_GETSTREAMREQUEST']._serialized_start=307
+  _globals['_GETSTREAMREQUEST']._serialized_end=358
+  _globals['_LISTSTREAMSREQUEST']._serialized_start=361
+  _globals['_LISTSTREAMSREQUEST']._serialized_end=529
+  _globals['_LISTSTREAMSRESPONSE']._serialized_start=531
+  _globals['_LISTSTREAMSRESPONSE']._serialized_end=631
+  _globals['_BATCHGETSTREAMSREQUEST']._serialized_start=633
+  _globals['_BATCHGETSTREAMSREQUEST']._serialized_end=729
+  _globals['_BATCHGETSTREAMSRESPONSE']._serialized_start=731
+  _globals['_BATCHGETSTREAMSRESPONSE']._serialized_end=804
+  _globals['_CREATESTREAMREQUEST']._serialized_start=807
+  _globals['_CREATESTREAMREQUEST']._serialized_end=1310
+  _globals['_CREATESTREAMREQUEST_LABELSENTRY']._serialized_start=1229
+  _globals['_CREATESTREAMREQUEST_LABELSENTRY']._serialized_end=1274
+  _globals['_ONDEMANDPARAMS']._serialized_start=1312
+  _globals['_ONDEMANDPARAMS']._serialized_end=1328
+  _globals['_SCHEDULEPARAMS']._serialized_start=1330
+  _globals['_SCHEDULEPARAMS']._serialized_end=1455
+  _globals['_CREATESTREAMMETADATA']._serialized_start=1457
+  _globals['_CREATESTREAMMETADATA']._serialized_end=1498
+  _globals['_UPDATESTREAMREQUEST']._serialized_start=1501
+  _globals['_UPDATESTREAMREQUEST']._serialized_end=2035
+  _globals['_UPDATESTREAMREQUEST_LABELSENTRY']._serialized_start=1229
+  _globals['_UPDATESTREAMREQUEST_LABELSENTRY']._serialized_end=1274
+  _globals['_UPDATESTREAMMETADATA']._serialized_start=2037
+  _globals['_UPDATESTREAMMETADATA']._serialized_end=2078
+  _globals['_DELETESTREAMREQUEST']._serialized_start=2080
+  _globals['_DELETESTREAMREQUEST']._serialized_end=2134
+  _globals['_DELETESTREAMMETADATA']._serialized_start=2136
+  _globals['_DELETESTREAMMETADATA']._serialized_end=2177
+  _globals['_BATCHDELETESTREAMSREQUEST']._serialized_start=2179
+  _globals['_BATCHDELETESTREAMSREQUEST']._serialized_end=2278
+  _globals['_BATCHDELETESTREAMSMETADATA']._serialized_start=2280
+  _globals['_BATCHDELETESTREAMSMETADATA']._serialized_end=2328
+  _globals['_PERFORMSTREAMACTIONREQUEST']._serialized_start=2331
+  _globals['_PERFORMSTREAMACTIONREQUEST']._serialized_end=2533
+  _globals['_PUBLISHACTION']._serialized_start=2535
+  _globals['_PUBLISHACTION']._serialized_end=2550
+  _globals['_STOPACTION']._serialized_start=2552
+  _globals['_STOPACTION']._serialized_end=2564
+  _globals['_PERFORMSTREAMACTIONMETADATA']._serialized_start=2566
+  _globals['_PERFORMSTREAMACTIONMETADATA']._serialized_end=2614
+  _globals['_STREAMSERVICE']._serialized_start=2617
+  _globals['_STREAMSERVICE']._serialized_end=3916
 # @@protoc_insertion_point(module_scope)

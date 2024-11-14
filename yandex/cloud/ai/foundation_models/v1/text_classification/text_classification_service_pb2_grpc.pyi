@@ -18,38 +18,54 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class TextClassificationServiceStub:
-    """Service for classifying text from input text."""
+    """Service for classifying the text requests provided in prompts."""
 
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Classify: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.foundation_models.v1.text_classification.text_classification_service_pb2.TextClassificationRequest,
         yandex.cloud.ai.foundation_models.v1.text_classification.text_classification_service_pb2.TextClassificationResponse,
     ]
-    """RPC method for text classification."""
+    """RPC method to classify text with tuned model.
+
+    The names of the classes between which the model will be distributing requests 
+    must be specified during model tuning and are not provided in the request.
+    """
 
     FewShotClassify: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.foundation_models.v1.text_classification.text_classification_service_pb2.FewShotTextClassificationRequest,
         yandex.cloud.ai.foundation_models.v1.text_classification.text_classification_service_pb2.FewShotTextClassificationResponse,
     ]
-    """RPC method for few-shot text classification."""
+    """RPC method for binary and multi-class classification. 
+
+    You can provide up to 20 classes for few-shot text classification
+    with optional examples.
+    """
 
 class TextClassificationServiceAsyncStub:
-    """Service for classifying text from input text."""
+    """Service for classifying the text requests provided in prompts."""
 
     Classify: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.foundation_models.v1.text_classification.text_classification_service_pb2.TextClassificationRequest,
         yandex.cloud.ai.foundation_models.v1.text_classification.text_classification_service_pb2.TextClassificationResponse,
     ]
-    """RPC method for text classification."""
+    """RPC method to classify text with tuned model.
+
+    The names of the classes between which the model will be distributing requests 
+    must be specified during model tuning and are not provided in the request.
+    """
 
     FewShotClassify: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.foundation_models.v1.text_classification.text_classification_service_pb2.FewShotTextClassificationRequest,
         yandex.cloud.ai.foundation_models.v1.text_classification.text_classification_service_pb2.FewShotTextClassificationResponse,
     ]
-    """RPC method for few-shot text classification."""
+    """RPC method for binary and multi-class classification. 
+
+    You can provide up to 20 classes for few-shot text classification
+    with optional examples.
+    """
 
 class TextClassificationServiceServicer(metaclass=abc.ABCMeta):
-    """Service for classifying text from input text."""
+    """Service for classifying the text requests provided in prompts."""
 
     @abc.abstractmethod
     def Classify(
@@ -57,7 +73,11 @@ class TextClassificationServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.ai.foundation_models.v1.text_classification.text_classification_service_pb2.TextClassificationRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.ai.foundation_models.v1.text_classification.text_classification_service_pb2.TextClassificationResponse, collections.abc.Awaitable[yandex.cloud.ai.foundation_models.v1.text_classification.text_classification_service_pb2.TextClassificationResponse]]:
-        """RPC method for text classification."""
+        """RPC method to classify text with tuned model.
+
+        The names of the classes between which the model will be distributing requests 
+        must be specified during model tuning and are not provided in the request.
+        """
 
     @abc.abstractmethod
     def FewShotClassify(
@@ -65,6 +85,10 @@ class TextClassificationServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.ai.foundation_models.v1.text_classification.text_classification_service_pb2.FewShotTextClassificationRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.ai.foundation_models.v1.text_classification.text_classification_service_pb2.FewShotTextClassificationResponse, collections.abc.Awaitable[yandex.cloud.ai.foundation_models.v1.text_classification.text_classification_service_pb2.FewShotTextClassificationResponse]]:
-        """RPC method for few-shot text classification."""
+        """RPC method for binary and multi-class classification. 
+
+        You can provide up to 20 classes for few-shot text classification
+        with optional examples.
+        """
 
 def add_TextClassificationServiceServicer_to_server(servicer: TextClassificationServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

@@ -268,10 +268,13 @@ class UpdateResourceRequest(google.protobuf.message.Message):
     ACTIVE_FIELD_NUMBER: builtins.int
     SSL_CERTIFICATE_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
+    REMOVE_LABELS_FIELD_NUMBER: builtins.int
     resource_id: builtins.str
     """ID of updated resource."""
     origin_protocol: yandex.cloud.cdn.v1.resource_pb2.OriginProtocol.ValueType
     """Specify the protocol schema to be used in communication with origin."""
+    remove_labels: builtins.bool
+    """If flag is set to true resource labels will be deleted."""
     @property
     def origin_group_id(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """ID of updated origin group."""
@@ -310,9 +313,10 @@ class UpdateResourceRequest(google.protobuf.message.Message):
         active: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         ssl_certificate: yandex.cloud.cdn.v1.resource_pb2.SSLTargetCertificate | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        remove_labels: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["active", b"active", "options", b"options", "origin_group_id", b"origin_group_id", "secondary_hostnames", b"secondary_hostnames", "ssl_certificate", b"ssl_certificate"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["active", b"active", "labels", b"labels", "options", b"options", "origin_group_id", b"origin_group_id", "origin_protocol", b"origin_protocol", "resource_id", b"resource_id", "secondary_hostnames", b"secondary_hostnames", "ssl_certificate", b"ssl_certificate"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["active", b"active", "labels", b"labels", "options", b"options", "origin_group_id", b"origin_group_id", "origin_protocol", b"origin_protocol", "remove_labels", b"remove_labels", "resource_id", b"resource_id", "secondary_hostnames", b"secondary_hostnames", "ssl_certificate", b"ssl_certificate"]) -> None: ...
 
 global___UpdateResourceRequest = UpdateResourceRequest
 

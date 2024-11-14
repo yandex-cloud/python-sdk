@@ -104,6 +104,46 @@ class ListEpisodesResponse(google.protobuf.message.Message):
 global___ListEpisodesResponse = ListEpisodesResponse
 
 @typing.final
+class BatchGetEpisodesRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CHANNEL_ID_FIELD_NUMBER: builtins.int
+    EPISODE_IDS_FIELD_NUMBER: builtins.int
+    channel_id: builtins.str
+    """ID of the channel."""
+    @property
+    def episode_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of requested episode IDs."""
+
+    def __init__(
+        self,
+        *,
+        channel_id: builtins.str = ...,
+        episode_ids: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["channel_id", b"channel_id", "episode_ids", b"episode_ids"]) -> None: ...
+
+global___BatchGetEpisodesRequest = BatchGetEpisodesRequest
+
+@typing.final
+class BatchGetEpisodesResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    EPISODES_FIELD_NUMBER: builtins.int
+    @property
+    def episodes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.video.v1.episode_pb2.Episode]:
+        """List of episodes for specific channel."""
+
+    def __init__(
+        self,
+        *,
+        episodes: collections.abc.Iterable[yandex.cloud.video.v1.episode_pb2.Episode] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["episodes", b"episodes"]) -> None: ...
+
+global___BatchGetEpisodesResponse = BatchGetEpisodesResponse
+
+@typing.final
 class CreateEpisodeRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -117,6 +157,7 @@ class CreateEpisodeRequest(google.protobuf.message.Message):
     DVR_SECONDS_FIELD_NUMBER: builtins.int
     PUBLIC_ACCESS_FIELD_NUMBER: builtins.int
     AUTH_SYSTEM_ACCESS_FIELD_NUMBER: builtins.int
+    SIGN_URL_ACCESS_FIELD_NUMBER: builtins.int
     stream_id: builtins.str
     """ID of the stream."""
     line_id: builtins.str
@@ -150,6 +191,10 @@ class CreateEpisodeRequest(google.protobuf.message.Message):
     def auth_system_access(self) -> global___EpisodeAuthSystemAccessParams:
         """Checking access rights using the authorization system."""
 
+    @property
+    def sign_url_access(self) -> global___EpisodeSignURLAccessParams:
+        """Checking access rights using url's signature."""
+
     def __init__(
         self,
         *,
@@ -163,11 +208,12 @@ class CreateEpisodeRequest(google.protobuf.message.Message):
         dvr_seconds: builtins.int = ...,
         public_access: global___EpisodePublicAccessParams | None = ...,
         auth_system_access: global___EpisodeAuthSystemAccessParams | None = ...,
+        sign_url_access: global___EpisodeSignURLAccessParams | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access_rights", b"access_rights", "auth_system_access", b"auth_system_access", "finish_time", b"finish_time", "line_id", b"line_id", "parent_id", b"parent_id", "public_access", b"public_access", "start_time", b"start_time", "stream_id", b"stream_id"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access_rights", b"access_rights", "auth_system_access", b"auth_system_access", "description", b"description", "dvr_seconds", b"dvr_seconds", "finish_time", b"finish_time", "line_id", b"line_id", "parent_id", b"parent_id", "public_access", b"public_access", "start_time", b"start_time", "stream_id", b"stream_id", "thumbnail_id", b"thumbnail_id", "title", b"title"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access_rights", b"access_rights", "auth_system_access", b"auth_system_access", "finish_time", b"finish_time", "line_id", b"line_id", "parent_id", b"parent_id", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "start_time", b"start_time", "stream_id", b"stream_id"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access_rights", b"access_rights", "auth_system_access", b"auth_system_access", "description", b"description", "dvr_seconds", b"dvr_seconds", "finish_time", b"finish_time", "line_id", b"line_id", "parent_id", b"parent_id", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "start_time", b"start_time", "stream_id", b"stream_id", "thumbnail_id", b"thumbnail_id", "title", b"title"]) -> None: ...
     @typing.overload
-    def WhichOneof(self, oneof_group: typing.Literal["access_rights", b"access_rights"]) -> typing.Literal["public_access", "auth_system_access"] | None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["access_rights", b"access_rights"]) -> typing.Literal["public_access", "auth_system_access", "sign_url_access"] | None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["parent_id", b"parent_id"]) -> typing.Literal["stream_id", "line_id"] | None: ...
 
@@ -192,6 +238,16 @@ class EpisodeAuthSystemAccessParams(google.protobuf.message.Message):
     ) -> None: ...
 
 global___EpisodeAuthSystemAccessParams = EpisodeAuthSystemAccessParams
+
+@typing.final
+class EpisodeSignURLAccessParams(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___EpisodeSignURLAccessParams = EpisodeSignURLAccessParams
 
 @typing.final
 class CreateEpisodeMetadata(google.protobuf.message.Message):
@@ -223,6 +279,7 @@ class UpdateEpisodeRequest(google.protobuf.message.Message):
     DVR_SECONDS_FIELD_NUMBER: builtins.int
     PUBLIC_ACCESS_FIELD_NUMBER: builtins.int
     AUTH_SYSTEM_ACCESS_FIELD_NUMBER: builtins.int
+    SIGN_URL_ACCESS_FIELD_NUMBER: builtins.int
     episode_id: builtins.str
     """ID of the episode."""
     title: builtins.str
@@ -256,6 +313,10 @@ class UpdateEpisodeRequest(google.protobuf.message.Message):
     def auth_system_access(self) -> global___EpisodeAuthSystemAccessParams:
         """Checking access rights using the authorization system."""
 
+    @property
+    def sign_url_access(self) -> global___EpisodeSignURLAccessParams:
+        """Checking access rights using url's signature."""
+
     def __init__(
         self,
         *,
@@ -269,10 +330,11 @@ class UpdateEpisodeRequest(google.protobuf.message.Message):
         dvr_seconds: builtins.int = ...,
         public_access: global___EpisodePublicAccessParams | None = ...,
         auth_system_access: global___EpisodeAuthSystemAccessParams | None = ...,
+        sign_url_access: global___EpisodeSignURLAccessParams | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access_rights", b"access_rights", "auth_system_access", b"auth_system_access", "field_mask", b"field_mask", "finish_time", b"finish_time", "public_access", b"public_access", "start_time", b"start_time"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access_rights", b"access_rights", "auth_system_access", b"auth_system_access", "description", b"description", "dvr_seconds", b"dvr_seconds", "episode_id", b"episode_id", "field_mask", b"field_mask", "finish_time", b"finish_time", "public_access", b"public_access", "start_time", b"start_time", "thumbnail_id", b"thumbnail_id", "title", b"title"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["access_rights", b"access_rights"]) -> typing.Literal["public_access", "auth_system_access"] | None: ...
+    def HasField(self, field_name: typing.Literal["access_rights", b"access_rights", "auth_system_access", b"auth_system_access", "field_mask", b"field_mask", "finish_time", b"finish_time", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "start_time", b"start_time"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access_rights", b"access_rights", "auth_system_access", b"auth_system_access", "description", b"description", "dvr_seconds", b"dvr_seconds", "episode_id", b"episode_id", "field_mask", b"field_mask", "finish_time", b"finish_time", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "start_time", b"start_time", "thumbnail_id", b"thumbnail_id", "title", b"title"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["access_rights", b"access_rights"]) -> typing.Literal["public_access", "auth_system_access", "sign_url_access"] | None: ...
 
 global___UpdateEpisodeRequest = UpdateEpisodeRequest
 

@@ -97,6 +97,46 @@ class ListStreamsResponse(google.protobuf.message.Message):
 global___ListStreamsResponse = ListStreamsResponse
 
 @typing.final
+class BatchGetStreamsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CHANNEL_ID_FIELD_NUMBER: builtins.int
+    STREAM_IDS_FIELD_NUMBER: builtins.int
+    channel_id: builtins.str
+    """ID of the channel."""
+    @property
+    def stream_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of requested stream IDs."""
+
+    def __init__(
+        self,
+        *,
+        channel_id: builtins.str = ...,
+        stream_ids: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["channel_id", b"channel_id", "stream_ids", b"stream_ids"]) -> None: ...
+
+global___BatchGetStreamsRequest = BatchGetStreamsRequest
+
+@typing.final
+class BatchGetStreamsResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    STREAMS_FIELD_NUMBER: builtins.int
+    @property
+    def streams(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.video.v1.stream_pb2.Stream]:
+        """List of streams for specific channel."""
+
+    def __init__(
+        self,
+        *,
+        streams: collections.abc.Iterable[yandex.cloud.video.v1.stream_pb2.Stream] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["streams", b"streams"]) -> None: ...
+
+global___BatchGetStreamsResponse = BatchGetStreamsResponse
+
+@typing.final
 class CreateStreamRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -332,6 +372,46 @@ class DeleteStreamMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["stream_id", b"stream_id"]) -> None: ...
 
 global___DeleteStreamMetadata = DeleteStreamMetadata
+
+@typing.final
+class BatchDeleteStreamsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CHANNEL_ID_FIELD_NUMBER: builtins.int
+    STREAM_IDS_FIELD_NUMBER: builtins.int
+    channel_id: builtins.str
+    """ID of the channel."""
+    @property
+    def stream_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of stream IDs."""
+
+    def __init__(
+        self,
+        *,
+        channel_id: builtins.str = ...,
+        stream_ids: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["channel_id", b"channel_id", "stream_ids", b"stream_ids"]) -> None: ...
+
+global___BatchDeleteStreamsRequest = BatchDeleteStreamsRequest
+
+@typing.final
+class BatchDeleteStreamsMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    STREAM_IDS_FIELD_NUMBER: builtins.int
+    @property
+    def stream_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of stream IDs."""
+
+    def __init__(
+        self,
+        *,
+        stream_ids: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["stream_ids", b"stream_ids"]) -> None: ...
+
+global___BatchDeleteStreamsMetadata = BatchDeleteStreamsMetadata
 
 @typing.final
 class PerformStreamActionRequest(google.protobuf.message.Message):

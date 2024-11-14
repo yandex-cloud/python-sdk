@@ -41,6 +41,10 @@ class Connector(google.protobuf.message.Message):
         """service account does not have read permission on source"""
         SUBJECT_NOT_FOUND: Connector._Status.ValueType  # 5
         """service account not found"""
+        DELETING: Connector._Status.ValueType  # 7
+        """deletion in progress"""
+        CREATING: Connector._Status.ValueType  # 8
+        """creation in progress"""
 
     class Status(_Status, metaclass=_StatusEnumTypeWrapper):
         """Status of the connector."""
@@ -55,6 +59,10 @@ class Connector(google.protobuf.message.Message):
     """service account does not have read permission on source"""
     SUBJECT_NOT_FOUND: Connector.Status.ValueType  # 5
     """service account not found"""
+    DELETING: Connector.Status.ValueType  # 7
+    """deletion in progress"""
+    CREATING: Connector.Status.ValueType  # 8
+    """creation in progress"""
 
     @typing.final
     class LabelsEntry(google.protobuf.message.Message):

@@ -8,7 +8,8 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 
 
 class ArtifactServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing Artifacts.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -29,19 +30,20 @@ class ArtifactServiceStub(object):
 
 
 class ArtifactServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing Artifacts.
+    """
 
     def Get(self, request, context):
-        """Returns the specified Registry artifact resource.
+        """Returns the specified artifact resource.
 
-        To get the list of available Registry artifact resources, make RegistryService.ListArtifacts method call.
+        To get the list of available artifact resources, make [RegistryService.ListArtifacts] method call.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Deletes the specified registry artifact.
+        """Deletes the specified artifact.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -68,7 +70,8 @@ def add_ArtifactServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class ArtifactService(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing Artifacts.
+    """
 
     @staticmethod
     def Get(request,

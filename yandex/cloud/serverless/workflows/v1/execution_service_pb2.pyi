@@ -86,6 +86,38 @@ class StopExecutionResponse(google.protobuf.message.Message):
 global___StopExecutionResponse = StopExecutionResponse
 
 @typing.final
+class TerminateExecutionRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    EXECUTION_ID_FIELD_NUMBER: builtins.int
+    execution_id: builtins.str
+    """ID of the Workflow execution."""
+    def __init__(
+        self,
+        *,
+        execution_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["execution_id", b"execution_id"]) -> None: ...
+
+global___TerminateExecutionRequest = TerminateExecutionRequest
+
+@typing.final
+class TerminateExecutionResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    EXECUTION_ID_FIELD_NUMBER: builtins.int
+    execution_id: builtins.str
+    """ID of the Workflow execution."""
+    def __init__(
+        self,
+        *,
+        execution_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["execution_id", b"execution_id"]) -> None: ...
+
+global___TerminateExecutionResponse = TerminateExecutionResponse
+
+@typing.final
 class GetExecutionRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

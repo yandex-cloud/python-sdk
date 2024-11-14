@@ -42,6 +42,11 @@ class ChannelServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_channel__service__pb2.DeleteChannelRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
+        self.BatchDelete = channel.unary_unary(
+                '/yandex.cloud.video.v1.ChannelService/BatchDelete',
+                request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_channel__service__pb2.BatchDeleteChannelsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
 
 
 class ChannelServiceServicer(object):
@@ -83,6 +88,13 @@ class ChannelServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def BatchDelete(self, request, context):
+        """Batch delete channels.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ChannelServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -109,6 +121,11 @@ def add_ChannelServiceServicer_to_server(servicer, server):
             'Delete': grpc.unary_unary_rpc_method_handler(
                     servicer.Delete,
                     request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_channel__service__pb2.DeleteChannelRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'BatchDelete': grpc.unary_unary_rpc_method_handler(
+                    servicer.BatchDelete,
+                    request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_channel__service__pb2.BatchDeleteChannelsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
@@ -203,6 +220,23 @@ class ChannelService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.video.v1.ChannelService/Delete',
             yandex_dot_cloud_dot_video_dot_v1_dot_channel__service__pb2.DeleteChannelRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def BatchDelete(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.video.v1.ChannelService/BatchDelete',
+            yandex_dot_cloud_dot_video_dot_v1_dot_channel__service__pb2.BatchDeleteChannelsRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

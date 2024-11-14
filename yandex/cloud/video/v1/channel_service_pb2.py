@@ -15,10 +15,11 @@ from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
+from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 from yandex.cloud.video.v1 import channel_pb2 as yandex_dot_cloud_dot_video_dot_v1_dot_channel__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n+yandex/cloud/video/v1/channel_service.proto\x12\x15yandex.cloud.video.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a#yandex/cloud/video/v1/channel.proto\"\'\n\x11GetChannelRequest\x12\x12\n\nchannel_id\x18\x01 \x01(\t\"}\n\x13ListChannelsRequest\x12\x17\n\x0forganization_id\x18\x01 \x01(\t\x12\x11\n\tpage_size\x18\x64 \x01(\x03\x12\x12\n\npage_token\x18\x65 \x01(\t\x12\x10\n\x08order_by\x18\x66 \x01(\t\x12\x0e\n\x06\x66ilter\x18g \x01(\tJ\x04\x08\x02\x10\x64\"g\n\x14ListChannelsResponse\x12\x30\n\x08\x63hannels\x18\x01 \x03(\x0b\x32\x1e.yandex.cloud.video.v1.Channel\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\"\xd3\x01\n\x14\x43reateChannelRequest\x12\x17\n\x0forganization_id\x18\x01 \x01(\t\x12\r\n\x05title\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12H\n\x06labels\x18\xc8\x01 \x03(\x0b\x32\x37.yandex.cloud.video.v1.CreateChannelRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x05\x08\x04\x10\xc8\x01\"+\n\x15\x43reateChannelMetadata\x12\x12\n\nchannel_id\x18\x01 \x01(\t\"\xfe\x01\n\x14UpdateChannelRequest\x12\x12\n\nchannel_id\x18\x01 \x01(\t\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\r\n\x05title\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12H\n\x06labels\x18\xc8\x01 \x03(\x0b\x32\x37.yandex.cloud.video.v1.UpdateChannelRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x05\x08\x05\x10\xc8\x01\"+\n\x15UpdateChannelMetadata\x12\x12\n\nchannel_id\x18\x01 \x01(\t\"*\n\x14\x44\x65leteChannelRequest\x12\x12\n\nchannel_id\x18\x01 \x01(\t\"+\n\x15\x44\x65leteChannelMetadata\x12\x12\n\nchannel_id\x18\x01 \x01(\t2\x86\x06\n\x0e\x43hannelService\x12x\n\x03Get\x12(.yandex.cloud.video.v1.GetChannelRequest\x1a\x1e.yandex.cloud.video.v1.Channel\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/video/v1/channels/{channel_id}\x12{\n\x04List\x12*.yandex.cloud.video.v1.ListChannelsRequest\x1a+.yandex.cloud.video.v1.ListChannelsResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/video/v1/channels\x12\x9b\x01\n\x06\x43reate\x12+.yandex.cloud.video.v1.CreateChannelRequest\x1a!.yandex.cloud.operation.Operation\"A\xb2\xd2* \n\x15\x43reateChannelMetadata\x12\x07\x43hannel\x82\xd3\xe4\x93\x02\x17\"\x12/video/v1/channels:\x01*\x12\xa8\x01\n\x06Update\x12+.yandex.cloud.video.v1.UpdateChannelRequest\x1a!.yandex.cloud.operation.Operation\"N\xb2\xd2* \n\x15UpdateChannelMetadata\x12\x07\x43hannel\x82\xd3\xe4\x93\x02$2\x1f/video/v1/channels/{channel_id}:\x01*\x12\xb3\x01\n\x06\x44\x65lete\x12+.yandex.cloud.video.v1.DeleteChannelRequest\x1a!.yandex.cloud.operation.Operation\"Y\xb2\xd2*.\n\x15\x44\x65leteChannelMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02!*\x1f/video/v1/channels/{channel_id}B\\\n\x19yandex.cloud.api.video.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/video/v1;videob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n+yandex/cloud/video/v1/channel_service.proto\x12\x15yandex.cloud.video.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a#yandex/cloud/video/v1/channel.proto\"5\n\x11GetChannelRequest\x12 \n\nchannel_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xae\x01\n\x13ListChannelsRequest\x12%\n\x0forganization_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x64 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x65 \x01(\tB\t\x8a\xc8\x31\x05<=200\x12\x10\n\x08order_by\x18\x66 \x01(\t\x12\x1a\n\x06\x66ilter\x18g \x01(\tB\n\x8a\xc8\x31\x06<=1000J\x04\x08\x02\x10\x64\"g\n\x14ListChannelsResponse\x12\x30\n\x08\x63hannels\x18\x01 \x03(\x0b\x32\x1e.yandex.cloud.video.v1.Channel\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\"\xa9\x02\n\x14\x43reateChannelRequest\x12%\n\x0forganization_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x13\n\x05title\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x89\x01\n\x06labels\x18\xc8\x01 \x03(\x0b\x32\x37.yandex.cloud.video.v1.CreateChannelRequest.LabelsEntryB?\xf2\xc7\x31\x0f[-_.@:/0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04<=63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x05\x08\x04\x10\xc8\x01\"+\n\x15\x43reateChannelMetadata\x12\x12\n\nchannel_id\x18\x01 \x01(\t\"\xce\x02\n\x14UpdateChannelRequest\x12 \n\nchannel_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12.\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\r\n\x05title\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x89\x01\n\x06labels\x18\xc8\x01 \x03(\x0b\x32\x37.yandex.cloud.video.v1.UpdateChannelRequest.LabelsEntryB?\xf2\xc7\x31\x0f[-_.@:/0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04<=63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x05\x08\x05\x10\xc8\x01\"+\n\x15UpdateChannelMetadata\x12\x12\n\nchannel_id\x18\x01 \x01(\t\"8\n\x14\x44\x65leteChannelRequest\x12 \n\nchannel_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x44\x65leteChannelMetadata\x12\x12\n\nchannel_id\x18\x01 \x01(\t\"j\n\x1a\x42\x61tchDeleteChannelsRequest\x12%\n\x0forganization_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12%\n\x0b\x63hannel_ids\x18\x02 \x03(\tB\x10\x82\xc8\x31\x04\x31-50\x8a\xc8\x31\x04<=50\"2\n\x1b\x42\x61tchDeleteChannelsMetadata\x12\x13\n\x0b\x63hannel_ids\x18\x01 \x03(\t2\xcf\x07\n\x0e\x43hannelService\x12x\n\x03Get\x12(.yandex.cloud.video.v1.GetChannelRequest\x1a\x1e.yandex.cloud.video.v1.Channel\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/video/v1/channels/{channel_id}\x12{\n\x04List\x12*.yandex.cloud.video.v1.ListChannelsRequest\x1a+.yandex.cloud.video.v1.ListChannelsResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/video/v1/channels\x12\x9b\x01\n\x06\x43reate\x12+.yandex.cloud.video.v1.CreateChannelRequest\x1a!.yandex.cloud.operation.Operation\"A\xb2\xd2* \n\x15\x43reateChannelMetadata\x12\x07\x43hannel\x82\xd3\xe4\x93\x02\x17\"\x12/video/v1/channels:\x01*\x12\xa8\x01\n\x06Update\x12+.yandex.cloud.video.v1.UpdateChannelRequest\x1a!.yandex.cloud.operation.Operation\"N\xb2\xd2* \n\x15UpdateChannelMetadata\x12\x07\x43hannel\x82\xd3\xe4\x93\x02$2\x1f/video/v1/channels/{channel_id}:\x01*\x12\xb3\x01\n\x06\x44\x65lete\x12+.yandex.cloud.video.v1.DeleteChannelRequest\x1a!.yandex.cloud.operation.Operation\"Y\xb2\xd2*.\n\x15\x44\x65leteChannelMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02!*\x1f/video/v1/channels/{channel_id}\x12\xc6\x01\n\x0b\x42\x61tchDelete\x12\x31.yandex.cloud.video.v1.BatchDeleteChannelsRequest\x1a!.yandex.cloud.operation.Operation\"a\xb2\xd2*4\n\x1b\x42\x61tchDeleteChannelsMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02#\"\x1e/video/v1/channels:batchDelete:\x01*B\\\n\x19yandex.cloud.api.video.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/video/v1;videob\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -26,10 +27,36 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.video.v1.chann
 if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\031yandex.cloud.api.video.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/video/v1;video'
+  _GETCHANNELREQUEST.fields_by_name['channel_id']._options = None
+  _GETCHANNELREQUEST.fields_by_name['channel_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTCHANNELSREQUEST.fields_by_name['organization_id']._options = None
+  _LISTCHANNELSREQUEST.fields_by_name['organization_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _LISTCHANNELSREQUEST.fields_by_name['page_size']._options = None
+  _LISTCHANNELSREQUEST.fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
+  _LISTCHANNELSREQUEST.fields_by_name['page_token']._options = None
+  _LISTCHANNELSREQUEST.fields_by_name['page_token']._serialized_options = b'\212\3101\005<=200'
+  _LISTCHANNELSREQUEST.fields_by_name['filter']._options = None
+  _LISTCHANNELSREQUEST.fields_by_name['filter']._serialized_options = b'\212\3101\006<=1000'
   _CREATECHANNELREQUEST_LABELSENTRY._options = None
   _CREATECHANNELREQUEST_LABELSENTRY._serialized_options = b'8\001'
+  _CREATECHANNELREQUEST.fields_by_name['organization_id']._options = None
+  _CREATECHANNELREQUEST.fields_by_name['organization_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _CREATECHANNELREQUEST.fields_by_name['title']._options = None
+  _CREATECHANNELREQUEST.fields_by_name['title']._serialized_options = b'\350\3071\001'
+  _CREATECHANNELREQUEST.fields_by_name['labels']._options = None
+  _CREATECHANNELREQUEST.fields_by_name['labels']._serialized_options = b'\362\3071\017[-_.@:/0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\004<=63'
   _UPDATECHANNELREQUEST_LABELSENTRY._options = None
   _UPDATECHANNELREQUEST_LABELSENTRY._serialized_options = b'8\001'
+  _UPDATECHANNELREQUEST.fields_by_name['channel_id']._options = None
+  _UPDATECHANNELREQUEST.fields_by_name['channel_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _UPDATECHANNELREQUEST.fields_by_name['labels']._options = None
+  _UPDATECHANNELREQUEST.fields_by_name['labels']._serialized_options = b'\362\3071\017[-_.@:/0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\004<=63'
+  _DELETECHANNELREQUEST.fields_by_name['channel_id']._options = None
+  _DELETECHANNELREQUEST.fields_by_name['channel_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _BATCHDELETECHANNELSREQUEST.fields_by_name['organization_id']._options = None
+  _BATCHDELETECHANNELSREQUEST.fields_by_name['organization_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _BATCHDELETECHANNELSREQUEST.fields_by_name['channel_ids']._options = None
+  _BATCHDELETECHANNELSREQUEST.fields_by_name['channel_ids']._serialized_options = b'\202\3101\0041-50\212\3101\004<=50'
   _CHANNELSERVICE.methods_by_name['Get']._options = None
   _CHANNELSERVICE.methods_by_name['Get']._serialized_options = b'\202\323\344\223\002!\022\037/video/v1/channels/{channel_id}'
   _CHANNELSERVICE.methods_by_name['List']._options = None
@@ -40,28 +67,34 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _CHANNELSERVICE.methods_by_name['Update']._serialized_options = b'\262\322* \n\025UpdateChannelMetadata\022\007Channel\202\323\344\223\002$2\037/video/v1/channels/{channel_id}:\001*'
   _CHANNELSERVICE.methods_by_name['Delete']._options = None
   _CHANNELSERVICE.methods_by_name['Delete']._serialized_options = b'\262\322*.\n\025DeleteChannelMetadata\022\025google.protobuf.Empty\202\323\344\223\002!*\037/video/v1/channels/{channel_id}'
-  _globals['_GETCHANNELREQUEST']._serialized_start=245
-  _globals['_GETCHANNELREQUEST']._serialized_end=284
-  _globals['_LISTCHANNELSREQUEST']._serialized_start=286
-  _globals['_LISTCHANNELSREQUEST']._serialized_end=411
-  _globals['_LISTCHANNELSRESPONSE']._serialized_start=413
-  _globals['_LISTCHANNELSRESPONSE']._serialized_end=516
-  _globals['_CREATECHANNELREQUEST']._serialized_start=519
-  _globals['_CREATECHANNELREQUEST']._serialized_end=730
-  _globals['_CREATECHANNELREQUEST_LABELSENTRY']._serialized_start=678
-  _globals['_CREATECHANNELREQUEST_LABELSENTRY']._serialized_end=723
-  _globals['_CREATECHANNELMETADATA']._serialized_start=732
-  _globals['_CREATECHANNELMETADATA']._serialized_end=775
-  _globals['_UPDATECHANNELREQUEST']._serialized_start=778
-  _globals['_UPDATECHANNELREQUEST']._serialized_end=1032
-  _globals['_UPDATECHANNELREQUEST_LABELSENTRY']._serialized_start=678
-  _globals['_UPDATECHANNELREQUEST_LABELSENTRY']._serialized_end=723
-  _globals['_UPDATECHANNELMETADATA']._serialized_start=1034
-  _globals['_UPDATECHANNELMETADATA']._serialized_end=1077
-  _globals['_DELETECHANNELREQUEST']._serialized_start=1079
-  _globals['_DELETECHANNELREQUEST']._serialized_end=1121
-  _globals['_DELETECHANNELMETADATA']._serialized_start=1123
-  _globals['_DELETECHANNELMETADATA']._serialized_end=1166
-  _globals['_CHANNELSERVICE']._serialized_start=1169
-  _globals['_CHANNELSERVICE']._serialized_end=1943
+  _CHANNELSERVICE.methods_by_name['BatchDelete']._options = None
+  _CHANNELSERVICE.methods_by_name['BatchDelete']._serialized_options = b'\262\322*4\n\033BatchDeleteChannelsMetadata\022\025google.protobuf.Empty\202\323\344\223\002#\"\036/video/v1/channels:batchDelete:\001*'
+  _globals['_GETCHANNELREQUEST']._serialized_start=276
+  _globals['_GETCHANNELREQUEST']._serialized_end=329
+  _globals['_LISTCHANNELSREQUEST']._serialized_start=332
+  _globals['_LISTCHANNELSREQUEST']._serialized_end=506
+  _globals['_LISTCHANNELSRESPONSE']._serialized_start=508
+  _globals['_LISTCHANNELSRESPONSE']._serialized_end=611
+  _globals['_CREATECHANNELREQUEST']._serialized_start=614
+  _globals['_CREATECHANNELREQUEST']._serialized_end=911
+  _globals['_CREATECHANNELREQUEST_LABELSENTRY']._serialized_start=859
+  _globals['_CREATECHANNELREQUEST_LABELSENTRY']._serialized_end=904
+  _globals['_CREATECHANNELMETADATA']._serialized_start=913
+  _globals['_CREATECHANNELMETADATA']._serialized_end=956
+  _globals['_UPDATECHANNELREQUEST']._serialized_start=959
+  _globals['_UPDATECHANNELREQUEST']._serialized_end=1293
+  _globals['_UPDATECHANNELREQUEST_LABELSENTRY']._serialized_start=859
+  _globals['_UPDATECHANNELREQUEST_LABELSENTRY']._serialized_end=904
+  _globals['_UPDATECHANNELMETADATA']._serialized_start=1295
+  _globals['_UPDATECHANNELMETADATA']._serialized_end=1338
+  _globals['_DELETECHANNELREQUEST']._serialized_start=1340
+  _globals['_DELETECHANNELREQUEST']._serialized_end=1396
+  _globals['_DELETECHANNELMETADATA']._serialized_start=1398
+  _globals['_DELETECHANNELMETADATA']._serialized_end=1441
+  _globals['_BATCHDELETECHANNELSREQUEST']._serialized_start=1443
+  _globals['_BATCHDELETECHANNELSREQUEST']._serialized_end=1549
+  _globals['_BATCHDELETECHANNELSMETADATA']._serialized_start=1551
+  _globals['_BATCHDELETECHANNELSMETADATA']._serialized_end=1601
+  _globals['_CHANNELSERVICE']._serialized_start=1604
+  _globals['_CHANNELSERVICE']._serialized_end=2579
 # @@protoc_insertion_point(module_scope)

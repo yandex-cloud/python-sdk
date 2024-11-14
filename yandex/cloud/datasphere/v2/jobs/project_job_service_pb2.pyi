@@ -261,17 +261,29 @@ class ExecuteProjectJobMetadata(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     JOB_FIELD_NUMBER: builtins.int
+    PROGRESS_FIELD_NUMBER: builtins.int
+    METADATA_FIELD_NUMBER: builtins.int
     @property
     def job(self) -> yandex.cloud.datasphere.v2.jobs.jobs_pb2.Job:
         """Instance of the job."""
+
+    @property
+    def progress(self) -> yandex.cloud.datasphere.v2.jobs.jobs_pb2.JobProgress:
+        """Job progress info"""
+
+    @property
+    def metadata(self) -> yandex.cloud.datasphere.v2.jobs.jobs_pb2.JobMetadata:
+        """Job metadata with main job info"""
 
     def __init__(
         self,
         *,
         job: yandex.cloud.datasphere.v2.jobs.jobs_pb2.Job | None = ...,
+        progress: yandex.cloud.datasphere.v2.jobs.jobs_pb2.JobProgress | None = ...,
+        metadata: yandex.cloud.datasphere.v2.jobs.jobs_pb2.JobMetadata | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["job", b"job"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["job", b"job"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["job", b"job", "metadata", b"metadata", "progress", b"progress"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["job", b"job", "metadata", b"metadata", "progress", b"progress"]) -> None: ...
 
 global___ExecuteProjectJobMetadata = ExecuteProjectJobMetadata
 

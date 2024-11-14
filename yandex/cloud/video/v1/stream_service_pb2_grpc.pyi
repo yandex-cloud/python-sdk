@@ -35,6 +35,12 @@ class StreamServiceStub:
     ]
     """List streams for channel."""
 
+    BatchGet: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.video.v1.stream_service_pb2.BatchGetStreamsRequest,
+        yandex.cloud.video.v1.stream_service_pb2.BatchGetStreamsResponse,
+    ]
+    """Batch get streams for channel."""
+
     Create: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_service_pb2.CreateStreamRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -52,6 +58,12 @@ class StreamServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Delete stream."""
+
+    BatchDelete: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.video.v1.stream_service_pb2.BatchDeleteStreamsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Batch delete streams."""
 
     PerformAction: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_service_pb2.PerformStreamActionRequest,
@@ -74,6 +86,12 @@ class StreamServiceAsyncStub:
     ]
     """List streams for channel."""
 
+    BatchGet: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.video.v1.stream_service_pb2.BatchGetStreamsRequest,
+        yandex.cloud.video.v1.stream_service_pb2.BatchGetStreamsResponse,
+    ]
+    """Batch get streams for channel."""
+
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_service_pb2.CreateStreamRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -91,6 +109,12 @@ class StreamServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Delete stream."""
+
+    BatchDelete: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.video.v1.stream_service_pb2.BatchDeleteStreamsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Batch delete streams."""
 
     PerformAction: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_service_pb2.PerformStreamActionRequest,
@@ -118,6 +142,14 @@ class StreamServiceServicer(metaclass=abc.ABCMeta):
         """List streams for channel."""
 
     @abc.abstractmethod
+    def BatchGet(
+        self,
+        request: yandex.cloud.video.v1.stream_service_pb2.BatchGetStreamsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.video.v1.stream_service_pb2.BatchGetStreamsResponse, collections.abc.Awaitable[yandex.cloud.video.v1.stream_service_pb2.BatchGetStreamsResponse]]:
+        """Batch get streams for channel."""
+
+    @abc.abstractmethod
     def Create(
         self,
         request: yandex.cloud.video.v1.stream_service_pb2.CreateStreamRequest,
@@ -140,6 +172,14 @@ class StreamServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Delete stream."""
+
+    @abc.abstractmethod
+    def BatchDelete(
+        self,
+        request: yandex.cloud.video.v1.stream_service_pb2.BatchDeleteStreamsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Batch delete streams."""
 
     @abc.abstractmethod
     def PerformAction(

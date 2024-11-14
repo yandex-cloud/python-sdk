@@ -9,6 +9,7 @@ import grpc
 import grpc.aio
 import typing
 import yandex.cloud.operation.operation_pb2
+import yandex.cloud.video.v1.thumbnail_pb2
 import yandex.cloud.video.v1.thumbnail_service_pb2
 
 _T = typing.TypeVar("_T")
@@ -22,6 +23,12 @@ class ThumbnailServiceStub:
     """Thumbnail management service."""
 
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
+    Get: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.video.v1.thumbnail_service_pb2.GetThumbnailRequest,
+        yandex.cloud.video.v1.thumbnail_pb2.Thumbnail,
+    ]
+    """Returns the specific thumbnail."""
+
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.thumbnail_service_pb2.ListThumbnailRequest,
         yandex.cloud.video.v1.thumbnail_service_pb2.ListThumbnailResponse,
@@ -46,8 +53,20 @@ class ThumbnailServiceStub:
     ]
     """Generate url for upload image."""
 
+    Delete: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.video.v1.thumbnail_service_pb2.DeleteThumbnailRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Delete thumbnail."""
+
 class ThumbnailServiceAsyncStub:
     """Thumbnail management service."""
+
+    Get: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.video.v1.thumbnail_service_pb2.GetThumbnailRequest,
+        yandex.cloud.video.v1.thumbnail_pb2.Thumbnail,
+    ]
+    """Returns the specific thumbnail."""
 
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.thumbnail_service_pb2.ListThumbnailRequest,
@@ -73,8 +92,22 @@ class ThumbnailServiceAsyncStub:
     ]
     """Generate url for upload image."""
 
+    Delete: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.video.v1.thumbnail_service_pb2.DeleteThumbnailRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Delete thumbnail."""
+
 class ThumbnailServiceServicer(metaclass=abc.ABCMeta):
     """Thumbnail management service."""
+
+    @abc.abstractmethod
+    def Get(
+        self,
+        request: yandex.cloud.video.v1.thumbnail_service_pb2.GetThumbnailRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.video.v1.thumbnail_pb2.Thumbnail, collections.abc.Awaitable[yandex.cloud.video.v1.thumbnail_pb2.Thumbnail]]:
+        """Returns the specific thumbnail."""
 
     @abc.abstractmethod
     def List(
@@ -107,5 +140,13 @@ class ThumbnailServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.thumbnail_service_pb2.GenerateThumbnailUploadURLResponse, collections.abc.Awaitable[yandex.cloud.video.v1.thumbnail_service_pb2.GenerateThumbnailUploadURLResponse]]:
         """Generate url for upload image."""
+
+    @abc.abstractmethod
+    def Delete(
+        self,
+        request: yandex.cloud.video.v1.thumbnail_service_pb2.DeleteThumbnailRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Delete thumbnail."""
 
 def add_ThumbnailServiceServicer_to_server(servicer: ThumbnailServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

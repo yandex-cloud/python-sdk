@@ -48,6 +48,45 @@ class SecurityProfile(google.protobuf.message.Message):
     """Deny request."""
 
     @typing.final
+    class AnalyzeRequestBody(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        class _Action:
+            ValueType = typing.NewType("ValueType", builtins.int)
+            V: typing_extensions.TypeAlias = ValueType
+
+        class _ActionEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[SecurityProfile.AnalyzeRequestBody._Action.ValueType], builtins.type):
+            DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+            ACTION_UNSPECIFIED: SecurityProfile.AnalyzeRequestBody._Action.ValueType  # 0
+            IGNORE: SecurityProfile.AnalyzeRequestBody._Action.ValueType  # 1
+            """Ignore body."""
+            DENY: SecurityProfile.AnalyzeRequestBody._Action.ValueType  # 2
+            """Deny request."""
+
+        class Action(_Action, metaclass=_ActionEnumTypeWrapper):
+            """Action to perform if maximum size of body exceeded."""
+
+        ACTION_UNSPECIFIED: SecurityProfile.AnalyzeRequestBody.Action.ValueType  # 0
+        IGNORE: SecurityProfile.AnalyzeRequestBody.Action.ValueType  # 1
+        """Ignore body."""
+        DENY: SecurityProfile.AnalyzeRequestBody.Action.ValueType  # 2
+        """Deny request."""
+
+        SIZE_LIMIT_FIELD_NUMBER: builtins.int
+        SIZE_LIMIT_ACTION_FIELD_NUMBER: builtins.int
+        size_limit: builtins.int
+        """Maximum size of body to pass to analyzer. In kilobytes."""
+        size_limit_action: global___SecurityProfile.AnalyzeRequestBody.Action.ValueType
+        """Action to perform if maximum size of body exceeded."""
+        def __init__(
+            self,
+            *,
+            size_limit: builtins.int = ...,
+            size_limit_action: global___SecurityProfile.AnalyzeRequestBody.Action.ValueType = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["size_limit", b"size_limit", "size_limit_action", b"size_limit_action"]) -> None: ...
+
+    @typing.final
     class LabelsEntry(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -74,6 +113,7 @@ class SecurityProfile(google.protobuf.message.Message):
     CLOUD_ID_FIELD_NUMBER: builtins.int
     CAPTCHA_ID_FIELD_NUMBER: builtins.int
     ADVANCED_RATE_LIMITER_PROFILE_ID_FIELD_NUMBER: builtins.int
+    ANALYZE_REQUEST_BODY_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the security profile."""
     folder_id: builtins.str
@@ -102,6 +142,10 @@ class SecurityProfile(google.protobuf.message.Message):
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format."""
 
+    @property
+    def analyze_request_body(self) -> global___SecurityProfile.AnalyzeRequestBody:
+        """Parameters for request body analyzer."""
+
     def __init__(
         self,
         *,
@@ -116,9 +160,10 @@ class SecurityProfile(google.protobuf.message.Message):
         cloud_id: builtins.str = ...,
         captcha_id: builtins.str = ...,
         advanced_rate_limiter_profile_id: builtins.str = ...,
+        analyze_request_body: global___SecurityProfile.AnalyzeRequestBody | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["created_at", b"created_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["advanced_rate_limiter_profile_id", b"advanced_rate_limiter_profile_id", "captcha_id", b"captcha_id", "cloud_id", b"cloud_id", "created_at", b"created_at", "default_action", b"default_action", "description", b"description", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "name", b"name", "security_rules", b"security_rules"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["analyze_request_body", b"analyze_request_body", "created_at", b"created_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["advanced_rate_limiter_profile_id", b"advanced_rate_limiter_profile_id", "analyze_request_body", b"analyze_request_body", "captcha_id", b"captcha_id", "cloud_id", b"cloud_id", "created_at", b"created_at", "default_action", b"default_action", "description", b"description", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "name", b"name", "security_rules", b"security_rules"]) -> None: ...
 
 global___SecurityProfile = SecurityProfile
 

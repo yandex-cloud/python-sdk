@@ -96,6 +96,7 @@ class CreateSecurityProfileRequest(google.protobuf.message.Message):
     SECURITY_RULES_FIELD_NUMBER: builtins.int
     CAPTCHA_ID_FIELD_NUMBER: builtins.int
     ADVANCED_RATE_LIMITER_PROFILE_ID_FIELD_NUMBER: builtins.int
+    ANALYZE_REQUEST_BODY_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a security profile in."""
     name: builtins.str
@@ -116,6 +117,10 @@ class CreateSecurityProfileRequest(google.protobuf.message.Message):
     def security_rules(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.smartwebsecurity.v1.security_profile_pb2.SecurityRule]:
         """List of security rules."""
 
+    @property
+    def analyze_request_body(self) -> yandex.cloud.smartwebsecurity.v1.security_profile_pb2.SecurityProfile.AnalyzeRequestBody:
+        """Parameters for request body analyzer."""
+
     def __init__(
         self,
         *,
@@ -127,8 +132,10 @@ class CreateSecurityProfileRequest(google.protobuf.message.Message):
         security_rules: collections.abc.Iterable[yandex.cloud.smartwebsecurity.v1.security_profile_pb2.SecurityRule] | None = ...,
         captcha_id: builtins.str = ...,
         advanced_rate_limiter_profile_id: builtins.str = ...,
+        analyze_request_body: yandex.cloud.smartwebsecurity.v1.security_profile_pb2.SecurityProfile.AnalyzeRequestBody | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["advanced_rate_limiter_profile_id", b"advanced_rate_limiter_profile_id", "captcha_id", b"captcha_id", "default_action", b"default_action", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "name", b"name", "security_rules", b"security_rules"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["analyze_request_body", b"analyze_request_body"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["advanced_rate_limiter_profile_id", b"advanced_rate_limiter_profile_id", "analyze_request_body", b"analyze_request_body", "captcha_id", b"captcha_id", "default_action", b"default_action", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "name", b"name", "security_rules", b"security_rules"]) -> None: ...
 
 global___CreateSecurityProfileRequest = CreateSecurityProfileRequest
 
@@ -177,6 +184,7 @@ class UpdateSecurityProfileRequest(google.protobuf.message.Message):
     SECURITY_RULES_FIELD_NUMBER: builtins.int
     CAPTCHA_ID_FIELD_NUMBER: builtins.int
     ADVANCED_RATE_LIMITER_PROFILE_ID_FIELD_NUMBER: builtins.int
+    ANALYZE_REQUEST_BODY_FIELD_NUMBER: builtins.int
     security_profile_id: builtins.str
     """ID of the security profile to update."""
     name: builtins.str
@@ -201,6 +209,10 @@ class UpdateSecurityProfileRequest(google.protobuf.message.Message):
     def security_rules(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.smartwebsecurity.v1.security_profile_pb2.SecurityRule]:
         """List of security rules."""
 
+    @property
+    def analyze_request_body(self) -> yandex.cloud.smartwebsecurity.v1.security_profile_pb2.SecurityProfile.AnalyzeRequestBody:
+        """Parameters for request body analyzer."""
+
     def __init__(
         self,
         *,
@@ -213,9 +225,10 @@ class UpdateSecurityProfileRequest(google.protobuf.message.Message):
         security_rules: collections.abc.Iterable[yandex.cloud.smartwebsecurity.v1.security_profile_pb2.SecurityRule] | None = ...,
         captcha_id: builtins.str = ...,
         advanced_rate_limiter_profile_id: builtins.str = ...,
+        analyze_request_body: yandex.cloud.smartwebsecurity.v1.security_profile_pb2.SecurityProfile.AnalyzeRequestBody | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["advanced_rate_limiter_profile_id", b"advanced_rate_limiter_profile_id", "captcha_id", b"captcha_id", "default_action", b"default_action", "description", b"description", "labels", b"labels", "name", b"name", "security_profile_id", b"security_profile_id", "security_rules", b"security_rules", "update_mask", b"update_mask"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["analyze_request_body", b"analyze_request_body", "update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["advanced_rate_limiter_profile_id", b"advanced_rate_limiter_profile_id", "analyze_request_body", b"analyze_request_body", "captcha_id", b"captcha_id", "default_action", b"default_action", "description", b"description", "labels", b"labels", "name", b"name", "security_profile_id", b"security_profile_id", "security_rules", b"security_rules", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateSecurityProfileRequest = UpdateSecurityProfileRequest
 

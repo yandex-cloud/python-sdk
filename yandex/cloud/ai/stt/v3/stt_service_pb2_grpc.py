@@ -2,6 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
+from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from yandex.cloud.ai.stt.v3 import stt_pb2 as yandex_dot_cloud_dot_ai_dot_stt_dot_v3_dot_stt__pb2
 from yandex.cloud.ai.stt.v3 import stt_service_pb2 as yandex_dot_cloud_dot_ai_dot_stt_dot_v3_dot_stt__service__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
@@ -92,6 +93,11 @@ class AsyncRecognizerStub(object):
                 request_serializer=yandex_dot_cloud_dot_ai_dot_stt_dot_v3_dot_stt__service__pb2.GetRecognitionRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_ai_dot_stt_dot_v3_dot_stt__pb2.StreamingResponse.FromString,
                 )
+        self.DeleteRecognition = channel.unary_unary(
+                '/speechkit.stt.v3.AsyncRecognizer/DeleteRecognition',
+                request_serializer=yandex_dot_cloud_dot_ai_dot_stt_dot_v3_dot_stt__pb2.DeleteRecognitionRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
 
 
 class AsyncRecognizerServicer(object):
@@ -110,6 +116,12 @@ class AsyncRecognizerServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def DeleteRecognition(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_AsyncRecognizerServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -122,6 +134,11 @@ def add_AsyncRecognizerServicer_to_server(servicer, server):
                     servicer.GetRecognition,
                     request_deserializer=yandex_dot_cloud_dot_ai_dot_stt_dot_v3_dot_stt__service__pb2.GetRecognitionRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_ai_dot_stt_dot_v3_dot_stt__pb2.StreamingResponse.SerializeToString,
+            ),
+            'DeleteRecognition': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteRecognition,
+                    request_deserializer=yandex_dot_cloud_dot_ai_dot_stt_dot_v3_dot_stt__pb2.DeleteRecognitionRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -165,5 +182,22 @@ class AsyncRecognizer(object):
         return grpc.experimental.unary_stream(request, target, '/speechkit.stt.v3.AsyncRecognizer/GetRecognition',
             yandex_dot_cloud_dot_ai_dot_stt_dot_v3_dot_stt__service__pb2.GetRecognitionRequest.SerializeToString,
             yandex_dot_cloud_dot_ai_dot_stt_dot_v3_dot_stt__pb2.StreamingResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteRecognition(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/speechkit.stt.v3.AsyncRecognizer/DeleteRecognition',
+            yandex_dot_cloud_dot_ai_dot_stt_dot_v3_dot_stt__pb2.DeleteRecognitionRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

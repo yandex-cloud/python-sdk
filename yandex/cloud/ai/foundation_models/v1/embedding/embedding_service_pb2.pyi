@@ -21,7 +21,7 @@ class TextEmbeddingRequest(google.protobuf.message.Message):
     MODEL_URI_FIELD_NUMBER: builtins.int
     TEXT_FIELD_NUMBER: builtins.int
     model_uri: builtins.str
-    """The [ID of the model](/docs/foundation-models/concepts/embeddings) to be used for obtaining text embeddings."""
+    """The [model URI](/docs/foundation-models/concepts/embeddings) to be used for obtaining text embeddings."""
     text: builtins.str
     """The input text for which the embedding is requested."""
     def __init__(

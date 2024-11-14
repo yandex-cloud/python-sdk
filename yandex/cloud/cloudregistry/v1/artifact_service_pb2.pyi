@@ -16,7 +16,7 @@ class GetArtifactRequest(google.protobuf.message.Message):
 
     ARTIFACT_ID_FIELD_NUMBER: builtins.int
     artifact_id: builtins.str
-    """ID of the Registry artifact resource to return."""
+    """ID of the artifact resource to return."""
     def __init__(
         self,
         *,
@@ -32,7 +32,7 @@ class DeleteArtifactRequest(google.protobuf.message.Message):
 
     ARTIFACT_ID_FIELD_NUMBER: builtins.int
     artifact_id: builtins.str
-    """ID of the Registry artifact to delete."""
+    """ID of the artifact to delete."""
     def __init__(
         self,
         *,
@@ -48,7 +48,7 @@ class DeleteArtifactMetadata(google.protobuf.message.Message):
 
     ARTIFACT_ID_FIELD_NUMBER: builtins.int
     artifact_id: builtins.str
-    """ID of the registry artifact to delete."""
+    """ID of the artifact to delete."""
     def __init__(
         self,
         *,

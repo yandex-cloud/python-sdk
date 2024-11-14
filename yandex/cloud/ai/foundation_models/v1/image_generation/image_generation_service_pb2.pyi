@@ -15,7 +15,10 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class ImageGenerationRequest(google.protobuf.message.Message):
-    """Request for the service to generate an image."""
+    """Request for the service to generate an image.
+
+    For examples of usage, see [step-by-step guide](/docs/operations/yandexart/request).
+    """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -23,7 +26,7 @@ class ImageGenerationRequest(google.protobuf.message.Message):
     MESSAGES_FIELD_NUMBER: builtins.int
     GENERATION_OPTIONS_FIELD_NUMBER: builtins.int
     model_uri: builtins.str
-    """The [ID of the model](/docs/foundation-models/concepts/yandexart/models) to be used for image generation."""
+    """The [model URI](/docs/foundation-models/concepts/yandexart/models) to be used for image generation."""
     @property
     def messages(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.ai.foundation_models.v1.image_generation.image_generation_pb2.Message]:
         """A list of messages representing the context for the image generation model."""
@@ -53,7 +56,7 @@ class ImageGenerationResponse(google.protobuf.message.Message):
     IMAGE_FIELD_NUMBER: builtins.int
     MODEL_VERSION_FIELD_NUMBER: builtins.int
     image: builtins.bytes
-    """The image is serialized as an array of bytes encoded in base64."""
+    """The image is serialized as an array of bytes encoded in [Base64](https://en.wikipedia.org/wiki/Base64)."""
     model_version: builtins.str
     """The model version changes with each new releases."""
     def __init__(

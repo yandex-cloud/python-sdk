@@ -27,6 +27,11 @@ class StreamServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_stream__service__pb2.ListStreamsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_stream__service__pb2.ListStreamsResponse.FromString,
                 )
+        self.BatchGet = channel.unary_unary(
+                '/yandex.cloud.video.v1.StreamService/BatchGet',
+                request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_stream__service__pb2.BatchGetStreamsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_stream__service__pb2.BatchGetStreamsResponse.FromString,
+                )
         self.Create = channel.unary_unary(
                 '/yandex.cloud.video.v1.StreamService/Create',
                 request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_stream__service__pb2.CreateStreamRequest.SerializeToString,
@@ -40,6 +45,11 @@ class StreamServiceStub(object):
         self.Delete = channel.unary_unary(
                 '/yandex.cloud.video.v1.StreamService/Delete',
                 request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_stream__service__pb2.DeleteStreamRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
+        self.BatchDelete = channel.unary_unary(
+                '/yandex.cloud.video.v1.StreamService/BatchDelete',
+                request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_stream__service__pb2.BatchDeleteStreamsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
         self.PerformAction = channel.unary_unary(
@@ -67,6 +77,13 @@ class StreamServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def BatchGet(self, request, context):
+        """Batch get streams for channel.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def Create(self, request, context):
         """Create stream.
         """
@@ -83,6 +100,13 @@ class StreamServiceServicer(object):
 
     def Delete(self, request, context):
         """Delete stream.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def BatchDelete(self, request, context):
+        """Batch delete streams.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -108,6 +132,11 @@ def add_StreamServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_stream__service__pb2.ListStreamsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_stream__service__pb2.ListStreamsResponse.SerializeToString,
             ),
+            'BatchGet': grpc.unary_unary_rpc_method_handler(
+                    servicer.BatchGet,
+                    request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_stream__service__pb2.BatchGetStreamsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_stream__service__pb2.BatchGetStreamsResponse.SerializeToString,
+            ),
             'Create': grpc.unary_unary_rpc_method_handler(
                     servicer.Create,
                     request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_stream__service__pb2.CreateStreamRequest.FromString,
@@ -121,6 +150,11 @@ def add_StreamServiceServicer_to_server(servicer, server):
             'Delete': grpc.unary_unary_rpc_method_handler(
                     servicer.Delete,
                     request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_stream__service__pb2.DeleteStreamRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'BatchDelete': grpc.unary_unary_rpc_method_handler(
+                    servicer.BatchDelete,
+                    request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_stream__service__pb2.BatchDeleteStreamsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'PerformAction': grpc.unary_unary_rpc_method_handler(
@@ -174,6 +208,23 @@ class StreamService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
+    def BatchGet(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.video.v1.StreamService/BatchGet',
+            yandex_dot_cloud_dot_video_dot_v1_dot_stream__service__pb2.BatchGetStreamsRequest.SerializeToString,
+            yandex_dot_cloud_dot_video_dot_v1_dot_stream__service__pb2.BatchGetStreamsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
     def Create(request,
             target,
             options=(),
@@ -220,6 +271,23 @@ class StreamService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.video.v1.StreamService/Delete',
             yandex_dot_cloud_dot_video_dot_v1_dot_stream__service__pb2.DeleteStreamRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def BatchDelete(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.video.v1.StreamService/BatchDelete',
+            yandex_dot_cloud_dot_video_dot_v1_dot_stream__service__pb2.BatchDeleteStreamsRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

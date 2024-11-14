@@ -5,6 +5,7 @@ isort:skip_file
 
 import abc
 import collections.abc
+import google.protobuf.empty_pb2
 import grpc
 import grpc.aio
 import typing
@@ -65,6 +66,11 @@ class AsyncRecognizerStub:
         yandex.cloud.ai.stt.v3.stt_pb2.StreamingResponse,
     ]
 
+    DeleteRecognition: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.stt.v3.stt_pb2.DeleteRecognitionRequest,
+        google.protobuf.empty_pb2.Empty,
+    ]
+
 class AsyncRecognizerAsyncStub:
     """A set of methods for async voice recognition."""
 
@@ -76,6 +82,11 @@ class AsyncRecognizerAsyncStub:
     GetRecognition: grpc.aio.UnaryStreamMultiCallable[
         yandex.cloud.ai.stt.v3.stt_service_pb2.GetRecognitionRequest,
         yandex.cloud.ai.stt.v3.stt_pb2.StreamingResponse,
+    ]
+
+    DeleteRecognition: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.stt.v3.stt_pb2.DeleteRecognitionRequest,
+        google.protobuf.empty_pb2.Empty,
     ]
 
 class AsyncRecognizerServicer(metaclass=abc.ABCMeta):
@@ -94,5 +105,12 @@ class AsyncRecognizerServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.ai.stt.v3.stt_service_pb2.GetRecognitionRequest,
         context: _ServicerContext,
     ) -> typing.Union[collections.abc.Iterator[yandex.cloud.ai.stt.v3.stt_pb2.StreamingResponse], collections.abc.AsyncIterator[yandex.cloud.ai.stt.v3.stt_pb2.StreamingResponse]]: ...
+
+    @abc.abstractmethod
+    def DeleteRecognition(
+        self,
+        request: yandex.cloud.ai.stt.v3.stt_pb2.DeleteRecognitionRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[google.protobuf.empty_pb2.Empty, collections.abc.Awaitable[google.protobuf.empty_pb2.Empty]]: ...
 
 def add_AsyncRecognizerServicer_to_server(servicer: AsyncRecognizerServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

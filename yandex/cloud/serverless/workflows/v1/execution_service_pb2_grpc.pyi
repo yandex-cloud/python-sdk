@@ -33,6 +33,12 @@ class ExecutionServiceStub:
     ]
     """Stops specified Workflow execution."""
 
+    Terminate: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.serverless.workflows.v1.execution_service_pb2.TerminateExecutionRequest,
+        yandex.cloud.serverless.workflows.v1.execution_service_pb2.TerminateExecutionResponse,
+    ]
+    """Terminates specified Workflow execution."""
+
     Get: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.serverless.workflows.v1.execution_service_pb2.GetExecutionRequest,
         yandex.cloud.serverless.workflows.v1.execution_service_pb2.GetExecutionResponse,
@@ -65,6 +71,12 @@ class ExecutionServiceAsyncStub:
         yandex.cloud.serverless.workflows.v1.execution_service_pb2.StopExecutionResponse,
     ]
     """Stops specified Workflow execution."""
+
+    Terminate: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.serverless.workflows.v1.execution_service_pb2.TerminateExecutionRequest,
+        yandex.cloud.serverless.workflows.v1.execution_service_pb2.TerminateExecutionResponse,
+    ]
+    """Terminates specified Workflow execution."""
 
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.serverless.workflows.v1.execution_service_pb2.GetExecutionRequest,
@@ -102,6 +114,14 @@ class ExecutionServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.serverless.workflows.v1.execution_service_pb2.StopExecutionResponse, collections.abc.Awaitable[yandex.cloud.serverless.workflows.v1.execution_service_pb2.StopExecutionResponse]]:
         """Stops specified Workflow execution."""
+
+    @abc.abstractmethod
+    def Terminate(
+        self,
+        request: yandex.cloud.serverless.workflows.v1.execution_service_pb2.TerminateExecutionRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.serverless.workflows.v1.execution_service_pb2.TerminateExecutionResponse, collections.abc.Awaitable[yandex.cloud.serverless.workflows.v1.execution_service_pb2.TerminateExecutionResponse]]:
+        """Terminates specified Workflow execution."""
 
     @abc.abstractmethod
     def Get(

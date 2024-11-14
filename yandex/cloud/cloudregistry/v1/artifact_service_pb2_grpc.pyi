@@ -20,48 +20,54 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class ArtifactServiceStub:
+    """A set of methods for managing Artifacts."""
+
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Get: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.cloudregistry.v1.artifact_service_pb2.GetArtifactRequest,
         yandex.cloud.cloudregistry.v1.artifact_pb2.Artifact,
     ]
-    """Returns the specified Registry artifact resource.
+    """Returns the specified artifact resource.
 
-    To get the list of available Registry artifact resources, make RegistryService.ListArtifacts method call.
+    To get the list of available artifact resources, make [RegistryService.ListArtifacts] method call.
     """
 
     Delete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.cloudregistry.v1.artifact_service_pb2.DeleteArtifactRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Deletes the specified registry artifact."""
+    """Deletes the specified artifact."""
 
 class ArtifactServiceAsyncStub:
+    """A set of methods for managing Artifacts."""
+
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.cloudregistry.v1.artifact_service_pb2.GetArtifactRequest,
         yandex.cloud.cloudregistry.v1.artifact_pb2.Artifact,
     ]
-    """Returns the specified Registry artifact resource.
+    """Returns the specified artifact resource.
 
-    To get the list of available Registry artifact resources, make RegistryService.ListArtifacts method call.
+    To get the list of available artifact resources, make [RegistryService.ListArtifacts] method call.
     """
 
     Delete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.cloudregistry.v1.artifact_service_pb2.DeleteArtifactRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Deletes the specified registry artifact."""
+    """Deletes the specified artifact."""
 
 class ArtifactServiceServicer(metaclass=abc.ABCMeta):
+    """A set of methods for managing Artifacts."""
+
     @abc.abstractmethod
     def Get(
         self,
         request: yandex.cloud.cloudregistry.v1.artifact_service_pb2.GetArtifactRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.cloudregistry.v1.artifact_pb2.Artifact, collections.abc.Awaitable[yandex.cloud.cloudregistry.v1.artifact_pb2.Artifact]]:
-        """Returns the specified Registry artifact resource.
+        """Returns the specified artifact resource.
 
-        To get the list of available Registry artifact resources, make RegistryService.ListArtifacts method call.
+        To get the list of available artifact resources, make [RegistryService.ListArtifacts] method call.
         """
 
     @abc.abstractmethod
@@ -70,6 +76,6 @@ class ArtifactServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.cloudregistry.v1.artifact_service_pb2.DeleteArtifactRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Deletes the specified registry artifact."""
+        """Deletes the specified artifact."""
 
 def add_ArtifactServiceServicer_to_server(servicer: ArtifactServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

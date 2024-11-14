@@ -6,7 +6,7 @@ from yandex.cloud.ai.foundation_models.v1.text_classification import text_classi
 
 
 class TextClassificationServiceStub(object):
-    """Service for classifying text from input text.
+    """Service for classifying the text requests provided in prompts.
     """
 
     def __init__(self, channel):
@@ -28,18 +28,24 @@ class TextClassificationServiceStub(object):
 
 
 class TextClassificationServiceServicer(object):
-    """Service for classifying text from input text.
+    """Service for classifying the text requests provided in prompts.
     """
 
     def Classify(self, request, context):
-        """RPC method for text classification.
+        """RPC method to classify text with tuned model.
+
+        The names of the classes between which the model will be distributing requests 
+        must be specified during model tuning and are not provided in the request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def FewShotClassify(self, request, context):
-        """RPC method for few-shot text classification.
+        """RPC method for binary and multi-class classification. 
+
+        You can provide up to 20 classes for few-shot text classification
+        with optional examples.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -66,7 +72,7 @@ def add_TextClassificationServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class TextClassificationService(object):
-    """Service for classifying text from input text.
+    """Service for classifying the text requests provided in prompts.
     """
 
     @staticmethod

@@ -442,12 +442,17 @@ class StreamBackend(google.protobuf.message.Message):
     HEALTHCHECKS_FIELD_NUMBER: builtins.int
     TLS_FIELD_NUMBER: builtins.int
     ENABLE_PROXY_PROTOCOL_FIELD_NUMBER: builtins.int
+    KEEP_CONNECTIONS_ON_HOST_HEALTH_FAILURE_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the backend."""
     port: builtins.int
     """Port used by all targets to receive traffic."""
     enable_proxy_protocol: builtins.bool
     """If set, proxy protocol will be enabled for this backend."""
+    keep_connections_on_host_health_failure: builtins.bool
+    """If a backend host becomes unhealthy (as determined by the configured health checks),
+    keep connections to the failed host.
+    """
     @property
     def backend_weight(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Backend weight. Traffic is distributed between backends of a backend group according to their weights.
@@ -496,9 +501,10 @@ class StreamBackend(google.protobuf.message.Message):
         healthchecks: collections.abc.Iterable[global___HealthCheck] | None = ...,
         tls: global___BackendTls | None = ...,
         enable_proxy_protocol: builtins.bool = ...,
+        keep_connections_on_host_health_failure: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["backend_type", b"backend_type", "backend_weight", b"backend_weight", "load_balancing_config", b"load_balancing_config", "target_groups", b"target_groups", "tls", b"tls"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["backend_type", b"backend_type", "backend_weight", b"backend_weight", "enable_proxy_protocol", b"enable_proxy_protocol", "healthchecks", b"healthchecks", "load_balancing_config", b"load_balancing_config", "name", b"name", "port", b"port", "target_groups", b"target_groups", "tls", b"tls"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["backend_type", b"backend_type", "backend_weight", b"backend_weight", "enable_proxy_protocol", b"enable_proxy_protocol", "healthchecks", b"healthchecks", "keep_connections_on_host_health_failure", b"keep_connections_on_host_health_failure", "load_balancing_config", b"load_balancing_config", "name", b"name", "port", b"port", "target_groups", b"target_groups", "tls", b"tls"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["backend_type", b"backend_type"]) -> typing.Literal["target_groups"] | None: ...
 
 global___StreamBackend = StreamBackend

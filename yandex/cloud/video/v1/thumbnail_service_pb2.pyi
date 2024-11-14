@@ -14,6 +14,22 @@ import yandex.cloud.video.v1.thumbnail_pb2
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
+class GetThumbnailRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    THUMBNAIL_ID_FIELD_NUMBER: builtins.int
+    thumbnail_id: builtins.str
+    """ID of the thumbnail."""
+    def __init__(
+        self,
+        *,
+        thumbnail_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["thumbnail_id", b"thumbnail_id"]) -> None: ...
+
+global___GetThumbnailRequest = GetThumbnailRequest
+
+@typing.final
 class ListThumbnailRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -182,3 +198,35 @@ class GenerateThumbnailUploadURLResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["upload_url", b"upload_url"]) -> None: ...
 
 global___GenerateThumbnailUploadURLResponse = GenerateThumbnailUploadURLResponse
+
+@typing.final
+class DeleteThumbnailRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    THUMBNAIL_ID_FIELD_NUMBER: builtins.int
+    thumbnail_id: builtins.str
+    """ID of the thumbnail."""
+    def __init__(
+        self,
+        *,
+        thumbnail_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["thumbnail_id", b"thumbnail_id"]) -> None: ...
+
+global___DeleteThumbnailRequest = DeleteThumbnailRequest
+
+@typing.final
+class DeleteThumbnailMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    THUMBNAIL_ID_FIELD_NUMBER: builtins.int
+    thumbnail_id: builtins.str
+    """ID of the thumbnail."""
+    def __init__(
+        self,
+        *,
+        thumbnail_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["thumbnail_id", b"thumbnail_id"]) -> None: ...
+
+global___DeleteThumbnailMetadata = DeleteThumbnailMetadata

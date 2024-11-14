@@ -19,7 +19,7 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class UserAccountServiceStub:
-    """A set of methods for managing user accounts. Currently applicable only for [Yandex accounts](/docs/iam/concepts/#passport)."""
+    """A set of methods for managing user accounts. Currently applicable only for [Yandex accounts](/docs/iam/concepts/users/accounts#passport)."""
 
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Get: grpc.UnaryUnaryMultiCallable[
@@ -29,7 +29,7 @@ class UserAccountServiceStub:
     """Returns the specified UserAccount resource."""
 
 class UserAccountServiceAsyncStub:
-    """A set of methods for managing user accounts. Currently applicable only for [Yandex accounts](/docs/iam/concepts/#passport)."""
+    """A set of methods for managing user accounts. Currently applicable only for [Yandex accounts](/docs/iam/concepts/users/accounts#passport)."""
 
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.iam.v1.user_account_service_pb2.GetUserAccountRequest,
@@ -38,7 +38,7 @@ class UserAccountServiceAsyncStub:
     """Returns the specified UserAccount resource."""
 
 class UserAccountServiceServicer(metaclass=abc.ABCMeta):
-    """A set of methods for managing user accounts. Currently applicable only for [Yandex accounts](/docs/iam/concepts/#passport)."""
+    """A set of methods for managing user accounts. Currently applicable only for [Yandex accounts](/docs/iam/concepts/users/accounts#passport)."""
 
     @abc.abstractmethod
     def Get(

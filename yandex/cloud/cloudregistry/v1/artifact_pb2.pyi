@@ -20,6 +20,8 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class Artifact(google.protobuf.message.Message):
+    """A Artifact resource."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     class _Kind:

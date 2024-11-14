@@ -15,14 +15,20 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class TextClassificationRequest(google.protobuf.message.Message):
-    """Request for the service to classify text."""
+    """Request for the service to classify text with tuned model.
+
+    The names of the classes between which the model will be distributing requests must be specified during model tuning; 
+    therefore, they are not provided in the request.
+
+    For examples of usage, see [step-by-step guides](/docs/operations/classifier/additionally-trained).
+    """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     MODEL_URI_FIELD_NUMBER: builtins.int
     TEXT_FIELD_NUMBER: builtins.int
     model_uri: builtins.str
-    """The identifier of the classification model."""
+    """The [URI](/docs/foundation-models/concepts/classifier/models) of your tuned classifier model."""
     text: builtins.str
     """Text for classification."""
     def __init__(
@@ -37,17 +43,19 @@ global___TextClassificationRequest = TextClassificationRequest
 
 @typing.final
 class TextClassificationResponse(google.protobuf.message.Message):
-    """Response containing classifier predictions."""
+    """Response with classifier predictions."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     PREDICTIONS_FIELD_NUMBER: builtins.int
     MODEL_VERSION_FIELD_NUMBER: builtins.int
     model_version: builtins.str
-    """Model version (changes with model releases)."""
+    """The model version changes with each new releases."""
     @property
     def predictions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.ai.foundation_models.v1.text_classification.text_classification_pb2.ClassificationLabel]:
-        """Result of classification - a list of label-confidence pairs."""
+        """The classification results with the `confidence`` values 
+        for the probability of classifying the request text into each class.
+        """
 
     def __init__(
         self,
@@ -61,7 +69,9 @@ global___TextClassificationResponse = TextClassificationResponse
 
 @typing.final
 class FewShotTextClassificationRequest(google.protobuf.message.Message):
-    """Request for the service to classify text."""
+    """Request for the service to classify text.
+    For examples of usage, see [step-by-step guides](/docs/operations/classifier/readymade).
+    """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -71,14 +81,17 @@ class FewShotTextClassificationRequest(google.protobuf.message.Message):
     TEXT_FIELD_NUMBER: builtins.int
     SAMPLES_FIELD_NUMBER: builtins.int
     model_uri: builtins.str
-    """The identifier of the classification model."""
+    """The [URI](/docs/foundation-models/concepts/classifier/models) of the classifier model."""
     task_description: builtins.str
     """Text description of the classification task."""
     text: builtins.str
     """Text for classification."""
     @property
     def labels(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """List of available labels for the classification result."""
+        """List of available labels for the classification result.
+        Give meaningful names to label classes: this is essential for correct classification results. 
+        For example, use ``chemistry`` and ``physics`` rather than ``chm`` and ``phs`` for class names.
+        """
 
     @property
     def samples(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.ai.foundation_models.v1.text_classification.text_classification_pb2.ClassificationSample]:
@@ -106,10 +119,12 @@ class FewShotTextClassificationResponse(google.protobuf.message.Message):
     PREDICTIONS_FIELD_NUMBER: builtins.int
     MODEL_VERSION_FIELD_NUMBER: builtins.int
     model_version: builtins.str
-    """Model version (changes with model releases)."""
+    """The model version changes with each new releases."""
     @property
     def predictions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.ai.foundation_models.v1.text_classification.text_classification_pb2.ClassificationLabel]:
-        """Result of classification - a list of label-confidence pairs."""
+        """The classification results with the `confidence`` values 
+        for the probability of classifying the request text into each class.
+        """
 
     def __init__(
         self,

@@ -158,6 +158,7 @@ class Revision(google.protobuf.message.Message):
     LOG_OPTIONS_FIELD_NUMBER: builtins.int
     STORAGE_MOUNTS_FIELD_NUMBER: builtins.int
     MOUNTS_FIELD_NUMBER: builtins.int
+    RUNTIME_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the revision."""
     container_id: builtins.str
@@ -220,6 +221,10 @@ class Revision(google.protobuf.message.Message):
     def mounts(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Mount]:
         """Mounts to be used by the revision."""
 
+    @property
+    def runtime(self) -> global___Runtime:
+        """The container's execution mode"""
+
     def __init__(
         self,
         *,
@@ -240,9 +245,10 @@ class Revision(google.protobuf.message.Message):
         log_options: global___LogOptions | None = ...,
         storage_mounts: collections.abc.Iterable[global___StorageMount] | None = ...,
         mounts: collections.abc.Iterable[global___Mount] | None = ...,
+        runtime: global___Runtime | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["connectivity", b"connectivity", "created_at", b"created_at", "execution_timeout", b"execution_timeout", "image", b"image", "log_options", b"log_options", "provision_policy", b"provision_policy", "resources", b"resources", "scaling_policy", b"scaling_policy"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["concurrency", b"concurrency", "connectivity", b"connectivity", "container_id", b"container_id", "created_at", b"created_at", "description", b"description", "execution_timeout", b"execution_timeout", "id", b"id", "image", b"image", "log_options", b"log_options", "mounts", b"mounts", "provision_policy", b"provision_policy", "resources", b"resources", "scaling_policy", b"scaling_policy", "secrets", b"secrets", "service_account_id", b"service_account_id", "status", b"status", "storage_mounts", b"storage_mounts"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["connectivity", b"connectivity", "created_at", b"created_at", "execution_timeout", b"execution_timeout", "image", b"image", "log_options", b"log_options", "provision_policy", b"provision_policy", "resources", b"resources", "runtime", b"runtime", "scaling_policy", b"scaling_policy"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["concurrency", b"concurrency", "connectivity", b"connectivity", "container_id", b"container_id", "created_at", b"created_at", "description", b"description", "execution_timeout", b"execution_timeout", "id", b"id", "image", b"image", "log_options", b"log_options", "mounts", b"mounts", "provision_policy", b"provision_policy", "resources", b"resources", "runtime", b"runtime", "scaling_policy", b"scaling_policy", "secrets", b"secrets", "service_account_id", b"service_account_id", "status", b"status", "storage_mounts", b"storage_mounts"]) -> None: ...
 
 global___Revision = Revision
 
@@ -633,3 +639,47 @@ class Mount(google.protobuf.message.Message):
     def WhichOneof(self, oneof_group: typing.Literal["target", b"target"]) -> typing.Literal["object_storage", "ephemeral_disk_spec"] | None: ...
 
 global___Mount = Mount
+
+@typing.final
+class Runtime(google.protobuf.message.Message):
+    """The container's execution mode"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class Http(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        def __init__(
+            self,
+        ) -> None: ...
+
+    @typing.final
+    class Task(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        def __init__(
+            self,
+        ) -> None: ...
+
+    HTTP_FIELD_NUMBER: builtins.int
+    TASK_FIELD_NUMBER: builtins.int
+    @property
+    def http(self) -> global___Runtime.Http:
+        """The classic one. You need to run an HTTP server inside the container."""
+
+    @property
+    def task(self) -> global___Runtime.Task:
+        """We run a process from ENTRYPOINT inside the container for each user request."""
+
+    def __init__(
+        self,
+        *,
+        http: global___Runtime.Http | None = ...,
+        task: global___Runtime.Task | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["http", b"http", "task", b"task", "type", b"type"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["http", b"http", "task", b"task", "type", b"type"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["type", b"type"]) -> typing.Literal["http", "task"] | None: ...
+
+global___Runtime = Runtime

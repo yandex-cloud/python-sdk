@@ -21,6 +21,29 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+class _AutoTranscode:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _AutoTranscodeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_AutoTranscode.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    AUTO_TRANSCODE_UNSPECIFIED: _AutoTranscode.ValueType  # 0
+    """Unspecified auto transcoding value."""
+    ENABLE: _AutoTranscode.ValueType  # 1
+    """Enable auto transcoding."""
+    DISABLE: _AutoTranscode.ValueType  # 2
+    """Disable auto transcoding."""
+
+class AutoTranscode(_AutoTranscode, metaclass=_AutoTranscodeEnumTypeWrapper): ...
+
+AUTO_TRANSCODE_UNSPECIFIED: AutoTranscode.ValueType  # 0
+"""Unspecified auto transcoding value."""
+ENABLE: AutoTranscode.ValueType  # 1
+"""Enable auto transcoding."""
+DISABLE: AutoTranscode.ValueType  # 2
+"""Disable auto transcoding."""
+global___AutoTranscode = AutoTranscode
+
 @typing.final
 class Video(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
@@ -99,9 +122,12 @@ class Video(google.protobuf.message.Message):
     STATUS_FIELD_NUMBER: builtins.int
     DURATION_FIELD_NUMBER: builtins.int
     VISIBILITY_STATUS_FIELD_NUMBER: builtins.int
+    AUTO_TRANSCODE_FIELD_NUMBER: builtins.int
+    SUBTITLE_IDS_FIELD_NUMBER: builtins.int
     TUSD_FIELD_NUMBER: builtins.int
     PUBLIC_ACCESS_FIELD_NUMBER: builtins.int
     AUTH_SYSTEM_ACCESS_FIELD_NUMBER: builtins.int
+    SIGN_URL_ACCESS_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
     UPDATED_AT_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
@@ -119,9 +145,18 @@ class Video(google.protobuf.message.Message):
     """Video status."""
     visibility_status: global___Video.VisibilityStatus.ValueType
     """Video visibility status."""
+    auto_transcode: global___AutoTranscode.ValueType
+    """Auto start transcoding.
+    If set to ENABLE, transcoding process is initiated automatically after video upload.
+    If set to DISABLE, manual "Transcode()" call is required instead.
+    """
     @property
     def duration(self) -> google.protobuf.duration_pb2.Duration:
         """Video duration. Optional, may be empty until the transcoding result is ready."""
+
+    @property
+    def subtitle_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """IDs of active video subtitles."""
 
     @property
     def tusd(self) -> global___VideoTUSDSource:
@@ -134,6 +169,10 @@ class Video(google.protobuf.message.Message):
     @property
     def auth_system_access(self) -> global___VideoAuthSystemAccessRights:
         """Checking access rights using the authorization system."""
+
+    @property
+    def sign_url_access(self) -> global___VideoSignURLAccessRights:
+        """Checking access rights using url's signature."""
 
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
@@ -158,17 +197,20 @@ class Video(google.protobuf.message.Message):
         status: global___Video.VideoStatus.ValueType = ...,
         duration: google.protobuf.duration_pb2.Duration | None = ...,
         visibility_status: global___Video.VisibilityStatus.ValueType = ...,
+        auto_transcode: global___AutoTranscode.ValueType = ...,
+        subtitle_ids: collections.abc.Iterable[builtins.str] | None = ...,
         tusd: global___VideoTUSDSource | None = ...,
         public_access: global___VideoPublicAccessRights | None = ...,
         auth_system_access: global___VideoAuthSystemAccessRights | None = ...,
+        sign_url_access: global___VideoSignURLAccessRights | None = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         updated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access_rights", b"access_rights", "auth_system_access", b"auth_system_access", "created_at", b"created_at", "duration", b"duration", "public_access", b"public_access", "source", b"source", "tusd", b"tusd", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access_rights", b"access_rights", "auth_system_access", b"auth_system_access", "channel_id", b"channel_id", "created_at", b"created_at", "description", b"description", "duration", b"duration", "id", b"id", "labels", b"labels", "public_access", b"public_access", "source", b"source", "status", b"status", "thumbnail_id", b"thumbnail_id", "title", b"title", "tusd", b"tusd", "updated_at", b"updated_at", "visibility_status", b"visibility_status"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access_rights", b"access_rights", "auth_system_access", b"auth_system_access", "created_at", b"created_at", "duration", b"duration", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "source", b"source", "tusd", b"tusd", "updated_at", b"updated_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access_rights", b"access_rights", "auth_system_access", b"auth_system_access", "auto_transcode", b"auto_transcode", "channel_id", b"channel_id", "created_at", b"created_at", "description", b"description", "duration", b"duration", "id", b"id", "labels", b"labels", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "source", b"source", "status", b"status", "subtitle_ids", b"subtitle_ids", "thumbnail_id", b"thumbnail_id", "title", b"title", "tusd", b"tusd", "updated_at", b"updated_at", "visibility_status", b"visibility_status"]) -> None: ...
     @typing.overload
-    def WhichOneof(self, oneof_group: typing.Literal["access_rights", b"access_rights"]) -> typing.Literal["public_access", "auth_system_access"] | None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["access_rights", b"access_rights"]) -> typing.Literal["public_access", "auth_system_access", "sign_url_access"] | None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["source", b"source"]) -> typing.Literal["tusd"] | None: ...
 
@@ -209,3 +251,13 @@ class VideoAuthSystemAccessRights(google.protobuf.message.Message):
     ) -> None: ...
 
 global___VideoAuthSystemAccessRights = VideoAuthSystemAccessRights
+
+@typing.final
+class VideoSignURLAccessRights(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___VideoSignURLAccessRights = VideoSignURLAccessRights

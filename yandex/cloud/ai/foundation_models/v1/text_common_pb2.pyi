@@ -109,7 +109,7 @@ class ContentUsage(google.protobuf.message.Message):
     input_text_tokens: builtins.int
     """The number of tokens in the textual part of the model input."""
     completion_tokens: builtins.int
-    """The total number of tokens in the generated completions."""
+    """The number of tokens in the generated completion."""
     total_tokens: builtins.int
     """The total number of tokens, including all input tokens and all generated tokens."""
     def __init__(
@@ -171,10 +171,10 @@ class Alternative(google.protobuf.message.Message):
     MESSAGE_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
     status: global___Alternative.AlternativeStatus.ValueType
-    """The generation status of the alternative"""
+    """The generation status of the alternative."""
     @property
     def message(self) -> global___Message:
-        """A message containing the content of the alternative."""
+        """A message with the content of the alternative."""
 
     def __init__(
         self,

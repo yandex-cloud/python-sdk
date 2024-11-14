@@ -35,6 +35,12 @@ class VideoServiceStub:
     ]
     """List videos for channel."""
 
+    BatchGet: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.video.v1.video_service_pb2.BatchGetVideosRequest,
+        yandex.cloud.video.v1.video_service_pb2.BatchGetVideosResponse,
+    ]
+    """Batch get video in specific channel."""
+
     Create: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.video_service_pb2.CreateVideoRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -47,11 +53,23 @@ class VideoServiceStub:
     ]
     """Update video."""
 
+    Transcode: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.video.v1.video_service_pb2.TranscodeVideoRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Transcode video."""
+
     Delete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.video_service_pb2.DeleteVideoRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Delete video."""
+
+    BatchDelete: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.video.v1.video_service_pb2.BatchDeleteVideosRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Batch delete video."""
 
     PerformAction: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.video_service_pb2.PerformVideoActionRequest,
@@ -86,6 +104,12 @@ class VideoServiceAsyncStub:
     ]
     """List videos for channel."""
 
+    BatchGet: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.video.v1.video_service_pb2.BatchGetVideosRequest,
+        yandex.cloud.video.v1.video_service_pb2.BatchGetVideosResponse,
+    ]
+    """Batch get video in specific channel."""
+
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.video_service_pb2.CreateVideoRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -98,11 +122,23 @@ class VideoServiceAsyncStub:
     ]
     """Update video."""
 
+    Transcode: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.video.v1.video_service_pb2.TranscodeVideoRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Transcode video."""
+
     Delete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.video_service_pb2.DeleteVideoRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Delete video."""
+
+    BatchDelete: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.video.v1.video_service_pb2.BatchDeleteVideosRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Batch delete video."""
 
     PerformAction: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.video_service_pb2.PerformVideoActionRequest,
@@ -142,6 +178,14 @@ class VideoServiceServicer(metaclass=abc.ABCMeta):
         """List videos for channel."""
 
     @abc.abstractmethod
+    def BatchGet(
+        self,
+        request: yandex.cloud.video.v1.video_service_pb2.BatchGetVideosRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.video.v1.video_service_pb2.BatchGetVideosResponse, collections.abc.Awaitable[yandex.cloud.video.v1.video_service_pb2.BatchGetVideosResponse]]:
+        """Batch get video in specific channel."""
+
+    @abc.abstractmethod
     def Create(
         self,
         request: yandex.cloud.video.v1.video_service_pb2.CreateVideoRequest,
@@ -158,12 +202,28 @@ class VideoServiceServicer(metaclass=abc.ABCMeta):
         """Update video."""
 
     @abc.abstractmethod
+    def Transcode(
+        self,
+        request: yandex.cloud.video.v1.video_service_pb2.TranscodeVideoRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Transcode video."""
+
+    @abc.abstractmethod
     def Delete(
         self,
         request: yandex.cloud.video.v1.video_service_pb2.DeleteVideoRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Delete video."""
+
+    @abc.abstractmethod
+    def BatchDelete(
+        self,
+        request: yandex.cloud.video.v1.video_service_pb2.BatchDeleteVideosRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Batch delete video."""
 
     @abc.abstractmethod
     def PerformAction(

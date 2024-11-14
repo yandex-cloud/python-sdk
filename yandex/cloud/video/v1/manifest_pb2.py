@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$yandex/cloud/video/v1/manifest.proto\x12\x15yandex.cloud.video.v1\"\x95\x01\n\x08Manifest\x12\x0b\n\x03url\x18\x01 \x01(\t\x12:\n\x04type\x18\x02 \x01(\x0e\x32,.yandex.cloud.video.v1.Manifest.ManifestType\"@\n\x0cManifestType\x12\x1d\n\x19MANIFEST_TYPE_UNSPECIFIED\x10\x00\x12\x08\n\x04\x44\x41SH\x10\x01\x12\x07\n\x03HLS\x10\x02\x42\\\n\x19yandex.cloud.api.video.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/video/v1;videob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$yandex/cloud/video/v1/manifest.proto\x12\x15yandex.cloud.video.v1\"\x9b\x01\n\x08Manifest\x12\x0b\n\x03url\x18\x01 \x01(\t\x12:\n\x04type\x18\x02 \x01(\x0e\x32,.yandex.cloud.video.v1.Manifest.ManifestType\"F\n\x0cManifestType\x12\x1d\n\x19MANIFEST_TYPE_UNSPECIFIED\x10\x00\x12\x08\n\x04\x44\x41SH\x10\x01\x12\x07\n\x03HLS\x10\x02\"\x04\x08\x03\x10\x03\x42\\\n\x19yandex.cloud.api.video.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/video/v1;videob\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -22,7 +22,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\031yandex.cloud.api.video.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/video/v1;video'
   _globals['_MANIFEST']._serialized_start=64
-  _globals['_MANIFEST']._serialized_end=213
+  _globals['_MANIFEST']._serialized_end=219
   _globals['_MANIFEST_MANIFESTTYPE']._serialized_start=149
-  _globals['_MANIFEST_MANIFESTTYPE']._serialized_end=213
+  _globals['_MANIFEST_MANIFESTTYPE']._serialized_end=219
 # @@protoc_insertion_point(module_scope)

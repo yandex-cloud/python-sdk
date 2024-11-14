@@ -27,6 +27,11 @@ class VideoServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.ListVideoRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.ListVideoResponse.FromString,
                 )
+        self.BatchGet = channel.unary_unary(
+                '/yandex.cloud.video.v1.VideoService/BatchGet',
+                request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.BatchGetVideosRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.BatchGetVideosResponse.FromString,
+                )
         self.Create = channel.unary_unary(
                 '/yandex.cloud.video.v1.VideoService/Create',
                 request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.CreateVideoRequest.SerializeToString,
@@ -37,9 +42,19 @@ class VideoServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.UpdateVideoRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
+        self.Transcode = channel.unary_unary(
+                '/yandex.cloud.video.v1.VideoService/Transcode',
+                request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.TranscodeVideoRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
         self.Delete = channel.unary_unary(
                 '/yandex.cloud.video.v1.VideoService/Delete',
                 request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.DeleteVideoRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
+        self.BatchDelete = channel.unary_unary(
+                '/yandex.cloud.video.v1.VideoService/BatchDelete',
+                request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.BatchDeleteVideosRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 )
         self.PerformAction = channel.unary_unary(
@@ -77,6 +92,13 @@ class VideoServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def BatchGet(self, request, context):
+        """Batch get video in specific channel.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def Create(self, request, context):
         """Create video.
         """
@@ -91,8 +113,22 @@ class VideoServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Transcode(self, request, context):
+        """Transcode video.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def Delete(self, request, context):
         """Delete video.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def BatchDelete(self, request, context):
+        """Batch delete video.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -132,6 +168,11 @@ def add_VideoServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.ListVideoRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.ListVideoResponse.SerializeToString,
             ),
+            'BatchGet': grpc.unary_unary_rpc_method_handler(
+                    servicer.BatchGet,
+                    request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.BatchGetVideosRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.BatchGetVideosResponse.SerializeToString,
+            ),
             'Create': grpc.unary_unary_rpc_method_handler(
                     servicer.Create,
                     request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.CreateVideoRequest.FromString,
@@ -142,9 +183,19 @@ def add_VideoServiceServicer_to_server(servicer, server):
                     request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.UpdateVideoRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
+            'Transcode': grpc.unary_unary_rpc_method_handler(
+                    servicer.Transcode,
+                    request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.TranscodeVideoRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
             'Delete': grpc.unary_unary_rpc_method_handler(
                     servicer.Delete,
                     request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.DeleteVideoRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'BatchDelete': grpc.unary_unary_rpc_method_handler(
+                    servicer.BatchDelete,
+                    request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.BatchDeleteVideosRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'PerformAction': grpc.unary_unary_rpc_method_handler(
@@ -208,6 +259,23 @@ class VideoService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
+    def BatchGet(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.video.v1.VideoService/BatchGet',
+            yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.BatchGetVideosRequest.SerializeToString,
+            yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.BatchGetVideosResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
     def Create(request,
             target,
             options=(),
@@ -242,6 +310,23 @@ class VideoService(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
+    def Transcode(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.video.v1.VideoService/Transcode',
+            yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.TranscodeVideoRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
     def Delete(request,
             target,
             options=(),
@@ -254,6 +339,23 @@ class VideoService(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.video.v1.VideoService/Delete',
             yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.DeleteVideoRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def BatchDelete(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.video.v1.VideoService/BatchDelete',
+            yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.BatchDeleteVideosRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

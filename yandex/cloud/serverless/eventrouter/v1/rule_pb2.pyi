@@ -40,6 +40,8 @@ class Rule(google.protobuf.message.Message):
         """Rule update in progress, rule is disabled during update"""
         DISABLED: Rule._Status.ValueType  # 4
         """Rule is explicitly disabled by the user"""
+        DELETING: Rule._Status.ValueType  # 5
+        """Rule deletion in progress"""
 
     class Status(_Status, metaclass=_StatusEnumTypeWrapper): ...
     STATUS_UNSPECIFIED: Rule.Status.ValueType  # 0
@@ -51,6 +53,8 @@ class Rule(google.protobuf.message.Message):
     """Rule update in progress, rule is disabled during update"""
     DISABLED: Rule.Status.ValueType  # 4
     """Rule is explicitly disabled by the user"""
+    DELETING: Rule.Status.ValueType  # 5
+    """Rule deletion in progress"""
 
     @typing.final
     class LabelsEntry(google.protobuf.message.Message):

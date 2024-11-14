@@ -19,7 +19,7 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class ImageGenerationAsyncServiceStub:
-    """Service for obtaining images from input data."""
+    """Service for creating images based on a text description."""
 
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Generate: grpc.UnaryUnaryMultiCallable[
@@ -29,7 +29,7 @@ class ImageGenerationAsyncServiceStub:
     """A method for generating an image based on a textual description."""
 
 class ImageGenerationAsyncServiceAsyncStub:
-    """Service for obtaining images from input data."""
+    """Service for creating images based on a text description."""
 
     Generate: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.foundation_models.v1.image_generation.image_generation_service_pb2.ImageGenerationRequest,
@@ -38,7 +38,7 @@ class ImageGenerationAsyncServiceAsyncStub:
     """A method for generating an image based on a textual description."""
 
 class ImageGenerationAsyncServiceServicer(metaclass=abc.ABCMeta):
-    """Service for obtaining images from input data."""
+    """Service for creating images based on a text description."""
 
     @abc.abstractmethod
     def Generate(

@@ -87,7 +87,7 @@ class RegistryServiceServicer(object):
     def Get(self, request, context):
         """Returns the specified Registry resource.
 
-        To get the list of available Registry resources, make a [List] request.
+        To get the list of available Registry resources, make a [RegistryService.List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -166,7 +166,7 @@ class RegistryServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListArtifacts(self, request, context):
-        """Retrieves the list of Registry artifact resources in the specified registry.
+        """Retrieves the list of registry artifact resources in the specified registry.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

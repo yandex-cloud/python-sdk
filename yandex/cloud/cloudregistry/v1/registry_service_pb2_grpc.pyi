@@ -30,7 +30,7 @@ class RegistryServiceStub:
     ]
     """Returns the specified Registry resource.
 
-    To get the list of available Registry resources, make a [List] request.
+    To get the list of available Registry resources, make a [RegistryService.List] request.
     """
 
     List: grpc.UnaryUnaryMultiCallable[
@@ -100,7 +100,7 @@ class RegistryServiceStub:
         yandex.cloud.cloudregistry.v1.registry_service_pb2.ListArtifactsRequest,
         yandex.cloud.cloudregistry.v1.registry_service_pb2.ListArtifactsResponse,
     ]
-    """Retrieves the list of Registry artifact resources in the specified registry."""
+    """Retrieves the list of registry artifact resources in the specified registry."""
 
 class RegistryServiceAsyncStub:
     """A set of methods for managing Registry resources."""
@@ -111,7 +111,7 @@ class RegistryServiceAsyncStub:
     ]
     """Returns the specified Registry resource.
 
-    To get the list of available Registry resources, make a [List] request.
+    To get the list of available Registry resources, make a [RegistryService.List] request.
     """
 
     List: grpc.aio.UnaryUnaryMultiCallable[
@@ -181,7 +181,7 @@ class RegistryServiceAsyncStub:
         yandex.cloud.cloudregistry.v1.registry_service_pb2.ListArtifactsRequest,
         yandex.cloud.cloudregistry.v1.registry_service_pb2.ListArtifactsResponse,
     ]
-    """Retrieves the list of Registry artifact resources in the specified registry."""
+    """Retrieves the list of registry artifact resources in the specified registry."""
 
 class RegistryServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing Registry resources."""
@@ -194,7 +194,7 @@ class RegistryServiceServicer(metaclass=abc.ABCMeta):
     ) -> typing.Union[yandex.cloud.cloudregistry.v1.registry_pb2.Registry, collections.abc.Awaitable[yandex.cloud.cloudregistry.v1.registry_pb2.Registry]]:
         """Returns the specified Registry resource.
 
-        To get the list of available Registry resources, make a [List] request.
+        To get the list of available Registry resources, make a [RegistryService.List] request.
         """
 
     @abc.abstractmethod
@@ -286,6 +286,6 @@ class RegistryServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.cloudregistry.v1.registry_service_pb2.ListArtifactsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.cloudregistry.v1.registry_service_pb2.ListArtifactsResponse, collections.abc.Awaitable[yandex.cloud.cloudregistry.v1.registry_service_pb2.ListArtifactsResponse]]:
-        """Retrieves the list of Registry artifact resources in the specified registry."""
+        """Retrieves the list of registry artifact resources in the specified registry."""
 
 def add_RegistryServiceServicer_to_server(servicer: RegistryServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

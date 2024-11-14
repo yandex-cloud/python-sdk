@@ -14,7 +14,7 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class UserAccount(google.protobuf.message.Message):
-    """Currently represents only [Yandex account](/docs/iam/concepts/#passport)."""
+    """Currently represents only [Yandex account](/docs/iam/concepts/users/accounts#passport)."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -47,7 +47,7 @@ global___UserAccount = UserAccount
 @typing.final
 class YandexPassportUserAccount(google.protobuf.message.Message):
     """A YandexPassportUserAccount resource.
-    For more information, see [Yandex account](/docs/iam/concepts/#passport).
+    For more information, see [Yandex account](/docs/iam/concepts/users/accounts#passport).
     """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor

@@ -688,3 +688,99 @@ class GracefulShutdownParameters(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["signal", b"signal", "timeout", b"timeout"]) -> None: ...
 
 global___GracefulShutdownParameters = GracefulShutdownParameters
+
+@typing.final
+class JobMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ID_FIELD_NUMBER: builtins.int
+    NAME_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
+    CREATED_AT_FIELD_NUMBER: builtins.int
+    STARTED_AT_FIELD_NUMBER: builtins.int
+    FINISHED_AT_FIELD_NUMBER: builtins.int
+    DATA_EXPIRES_AT_FIELD_NUMBER: builtins.int
+    STATUS_FIELD_NUMBER: builtins.int
+    STATUS_DETAILS_FIELD_NUMBER: builtins.int
+    CREATED_BY_ID_FIELD_NUMBER: builtins.int
+    PROJECT_ID_FIELD_NUMBER: builtins.int
+    PARENT_JOB_ID_FIELD_NUMBER: builtins.int
+    id: builtins.str
+    """ID of the job."""
+    name: builtins.str
+    """Name of the job."""
+    description: builtins.str
+    """Description of the job."""
+    status: global___JobStatus.ValueType
+    """Status of the job."""
+    status_details: builtins.str
+    """Details."""
+    created_by_id: builtins.str
+    """ID of the user who created the job."""
+    project_id: builtins.str
+    """ID of the project."""
+    parent_job_id: builtins.str
+    """Reference to the parent job."""
+    @property
+    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Create job timestamp."""
+
+    @property
+    def started_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Start job timestamp."""
+
+    @property
+    def finished_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Finish job timestamp."""
+
+    @property
+    def data_expires_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Job data expiration timestamp."""
+
+    def __init__(
+        self,
+        *,
+        id: builtins.str = ...,
+        name: builtins.str = ...,
+        description: builtins.str = ...,
+        created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        started_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        finished_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        data_expires_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        status: global___JobStatus.ValueType = ...,
+        status_details: builtins.str = ...,
+        created_by_id: builtins.str = ...,
+        project_id: builtins.str = ...,
+        parent_job_id: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "data_expires_at", b"data_expires_at", "finished_at", b"finished_at", "started_at", b"started_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "created_by_id", b"created_by_id", "data_expires_at", b"data_expires_at", "description", b"description", "finished_at", b"finished_at", "id", b"id", "name", b"name", "parent_job_id", b"parent_job_id", "project_id", b"project_id", "started_at", b"started_at", "status", b"status", "status_details", b"status_details"]) -> None: ...
+
+global___JobMetadata = JobMetadata
+
+@typing.final
+class JobProgress(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    MESSAGE_FIELD_NUMBER: builtins.int
+    PROGRESS_FIELD_NUMBER: builtins.int
+    CREATE_TIME_FIELD_NUMBER: builtins.int
+    message: builtins.str
+    """Progress message"""
+    progress: builtins.int
+    """Progress of the job from 0 to 100"""
+    @property
+    def create_time(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Progress create time"""
+
+    def __init__(
+        self,
+        *,
+        message: builtins.str = ...,
+        progress: builtins.int = ...,
+        create_time: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["create_time", b"create_time"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["create_time", b"create_time", "message", b"message", "progress", b"progress"]) -> None: ...
+
+global___JobProgress = JobProgress

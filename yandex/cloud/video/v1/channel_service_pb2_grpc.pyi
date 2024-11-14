@@ -53,6 +53,12 @@ class ChannelServiceStub:
     ]
     """Delete channel."""
 
+    BatchDelete: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.video.v1.channel_service_pb2.BatchDeleteChannelsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Batch delete channels."""
+
 class ChannelServiceAsyncStub:
     """Channel management service."""
 
@@ -85,6 +91,12 @@ class ChannelServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Delete channel."""
+
+    BatchDelete: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.video.v1.channel_service_pb2.BatchDeleteChannelsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Batch delete channels."""
 
 class ChannelServiceServicer(metaclass=abc.ABCMeta):
     """Channel management service."""
@@ -128,5 +140,13 @@ class ChannelServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Delete channel."""
+
+    @abc.abstractmethod
+    def BatchDelete(
+        self,
+        request: yandex.cloud.video.v1.channel_service_pb2.BatchDeleteChannelsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Batch delete channels."""
 
 def add_ChannelServiceServicer_to_server(servicer: ChannelServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

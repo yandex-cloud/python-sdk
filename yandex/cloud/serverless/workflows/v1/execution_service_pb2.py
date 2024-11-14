@@ -17,7 +17,7 @@ from yandex.cloud.serverless.workflows.v1 import history_entry_pb2 as yandex_dot
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n<yandex/cloud/serverless/workflows/v1/execution_service.proto\x12$yandex.cloud.serverless.workflows.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x34yandex/cloud/serverless/workflows/v1/execution.proto\x1a\x38yandex/cloud/serverless/workflows/v1/history_entry.proto\x1a\x1dyandex/cloud/validation.proto\"}\n\x15StartExecutionRequest\x12\x19\n\x0bworkflow_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x43\n\x05input\x18\x03 \x01(\x0b\x32\x34.yandex.cloud.serverless.workflows.v1.ExecutionInputJ\x04\x08\x02\x10\x03\".\n\x16StartExecutionResponse\x12\x14\n\x0c\x65xecution_id\x18\x01 \x01(\t\"2\n\x14StopExecutionRequest\x12\x1a\n\x0c\x65xecution_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"-\n\x15StopExecutionResponse\x12\x14\n\x0c\x65xecution_id\x18\x01 \x01(\t\"1\n\x13GetExecutionRequest\x12\x1a\n\x0c\x65xecution_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"Z\n\x14GetExecutionResponse\x12\x42\n\texecution\x18\x01 \x01(\x0b\x32/.yandex.cloud.serverless.workflows.v1.Execution\"8\n\x1aGetExecutionHistoryRequest\x12\x1a\n\x0c\x65xecution_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\xb5\x01\n\x1bGetExecutionHistoryResponse\x12I\n\texecution\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.serverless.workflows.v1.ExecutionPreview\x12K\n\x07\x65ntries\x18\x02 \x03(\x0b\x32\x32.yandex.cloud.serverless.workflows.v1.HistoryEntryB\x06\x82\xc8\x31\x02>0\"{\n\x15ListExecutionsRequest\x12\x19\n\x0bworkflow_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12#\n\tpage_size\x18\x02 \x01(\x03\x42\x10\xfa\xc7\x31\x0c\x30-2147483647\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\"}\n\x16ListExecutionsResponse\x12J\n\nexecutions\x18\x01 \x03(\x0b\x32\x36.yandex.cloud.serverless.workflows.v1.ExecutionPreview\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\x98\x07\n\x10\x45xecutionService\x12\xac\x01\n\x05Start\x12;.yandex.cloud.serverless.workflows.v1.StartExecutionRequest\x1a<.yandex.cloud.serverless.workflows.v1.StartExecutionResponse\"(\x82\xd3\xe4\x93\x02\"\"\x1d/workflows/v1/execution/start:\x01*\x12\xb4\x01\n\x04Stop\x12:.yandex.cloud.serverless.workflows.v1.StopExecutionRequest\x1a;.yandex.cloud.serverless.workflows.v1.StopExecutionResponse\"3\x82\xd3\xe4\x93\x02-\"+/workflows/v1/execution/{execution_id}/stop\x12\xac\x01\n\x03Get\x12\x39.yandex.cloud.serverless.workflows.v1.GetExecutionRequest\x1a:.yandex.cloud.serverless.workflows.v1.GetExecutionResponse\".\x82\xd3\xe4\x93\x02(\x12&/workflows/v1/execution/{execution_id}\x12\xc9\x01\n\nGetHistory\x12@.yandex.cloud.serverless.workflows.v1.GetExecutionHistoryRequest\x1a\x41.yandex.cloud.serverless.workflows.v1.GetExecutionHistoryResponse\"6\x82\xd3\xe4\x93\x02\x30\x12./workflows/v1/execution/{execution_id}/history\x12\xa2\x01\n\x04List\x12;.yandex.cloud.serverless.workflows.v1.ListExecutionsRequest\x1a<.yandex.cloud.serverless.workflows.v1.ListExecutionsResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/workflows/v1/executionB~\n(yandex.cloud.api.serverless.workflows.v1ZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/workflows/v1;workflowsb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n<yandex/cloud/serverless/workflows/v1/execution_service.proto\x12$yandex.cloud.serverless.workflows.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x34yandex/cloud/serverless/workflows/v1/execution.proto\x1a\x38yandex/cloud/serverless/workflows/v1/history_entry.proto\x1a\x1dyandex/cloud/validation.proto\"}\n\x15StartExecutionRequest\x12\x19\n\x0bworkflow_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x43\n\x05input\x18\x03 \x01(\x0b\x32\x34.yandex.cloud.serverless.workflows.v1.ExecutionInputJ\x04\x08\x02\x10\x03\".\n\x16StartExecutionResponse\x12\x14\n\x0c\x65xecution_id\x18\x01 \x01(\t\"2\n\x14StopExecutionRequest\x12\x1a\n\x0c\x65xecution_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"-\n\x15StopExecutionResponse\x12\x14\n\x0c\x65xecution_id\x18\x01 \x01(\t\"7\n\x19TerminateExecutionRequest\x12\x1a\n\x0c\x65xecution_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"2\n\x1aTerminateExecutionResponse\x12\x14\n\x0c\x65xecution_id\x18\x01 \x01(\t\"1\n\x13GetExecutionRequest\x12\x1a\n\x0c\x65xecution_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"Z\n\x14GetExecutionResponse\x12\x42\n\texecution\x18\x01 \x01(\x0b\x32/.yandex.cloud.serverless.workflows.v1.Execution\"8\n\x1aGetExecutionHistoryRequest\x12\x1a\n\x0c\x65xecution_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\xb5\x01\n\x1bGetExecutionHistoryResponse\x12I\n\texecution\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.serverless.workflows.v1.ExecutionPreview\x12K\n\x07\x65ntries\x18\x02 \x03(\x0b\x32\x32.yandex.cloud.serverless.workflows.v1.HistoryEntryB\x06\x82\xc8\x31\x02>0\"{\n\x15ListExecutionsRequest\x12\x19\n\x0bworkflow_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12#\n\tpage_size\x18\x02 \x01(\x03\x42\x10\xfa\xc7\x31\x0c\x30-2147483647\x12\x12\n\npage_token\x18\x03 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x04 \x01(\t\"}\n\x16ListExecutionsResponse\x12J\n\nexecutions\x18\x01 \x03(\x0b\x32\x36.yandex.cloud.serverless.workflows.v1.ExecutionPreview\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xe3\x08\n\x10\x45xecutionService\x12\xac\x01\n\x05Start\x12;.yandex.cloud.serverless.workflows.v1.StartExecutionRequest\x1a<.yandex.cloud.serverless.workflows.v1.StartExecutionResponse\"(\x82\xd3\xe4\x93\x02\"\"\x1d/workflows/v1/execution/start:\x01*\x12\xb4\x01\n\x04Stop\x12:.yandex.cloud.serverless.workflows.v1.StopExecutionRequest\x1a;.yandex.cloud.serverless.workflows.v1.StopExecutionResponse\"3\x82\xd3\xe4\x93\x02-\"+/workflows/v1/execution/{execution_id}/stop\x12\xc8\x01\n\tTerminate\x12?.yandex.cloud.serverless.workflows.v1.TerminateExecutionRequest\x1a@.yandex.cloud.serverless.workflows.v1.TerminateExecutionResponse\"8\x82\xd3\xe4\x93\x02\x32\"0/workflows/v1/execution/{execution_id}/terminate\x12\xac\x01\n\x03Get\x12\x39.yandex.cloud.serverless.workflows.v1.GetExecutionRequest\x1a:.yandex.cloud.serverless.workflows.v1.GetExecutionResponse\".\x82\xd3\xe4\x93\x02(\x12&/workflows/v1/execution/{execution_id}\x12\xc9\x01\n\nGetHistory\x12@.yandex.cloud.serverless.workflows.v1.GetExecutionHistoryRequest\x1a\x41.yandex.cloud.serverless.workflows.v1.GetExecutionHistoryResponse\"6\x82\xd3\xe4\x93\x02\x30\x12./workflows/v1/execution/{execution_id}/history\x12\xa2\x01\n\x04List\x12;.yandex.cloud.serverless.workflows.v1.ListExecutionsRequest\x1a<.yandex.cloud.serverless.workflows.v1.ListExecutionsResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/workflows/v1/executionB~\n(yandex.cloud.api.serverless.workflows.v1ZRgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/workflows/v1;workflowsb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -29,6 +29,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _STARTEXECUTIONREQUEST.fields_by_name['workflow_id']._serialized_options = b'\350\3071\001'
   _STOPEXECUTIONREQUEST.fields_by_name['execution_id']._options = None
   _STOPEXECUTIONREQUEST.fields_by_name['execution_id']._serialized_options = b'\350\3071\001'
+  _TERMINATEEXECUTIONREQUEST.fields_by_name['execution_id']._options = None
+  _TERMINATEEXECUTIONREQUEST.fields_by_name['execution_id']._serialized_options = b'\350\3071\001'
   _GETEXECUTIONREQUEST.fields_by_name['execution_id']._options = None
   _GETEXECUTIONREQUEST.fields_by_name['execution_id']._serialized_options = b'\350\3071\001'
   _GETEXECUTIONHISTORYREQUEST.fields_by_name['execution_id']._options = None
@@ -43,6 +45,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _EXECUTIONSERVICE.methods_by_name['Start']._serialized_options = b'\202\323\344\223\002\"\"\035/workflows/v1/execution/start:\001*'
   _EXECUTIONSERVICE.methods_by_name['Stop']._options = None
   _EXECUTIONSERVICE.methods_by_name['Stop']._serialized_options = b'\202\323\344\223\002-\"+/workflows/v1/execution/{execution_id}/stop'
+  _EXECUTIONSERVICE.methods_by_name['Terminate']._options = None
+  _EXECUTIONSERVICE.methods_by_name['Terminate']._serialized_options = b'\202\323\344\223\0022\"0/workflows/v1/execution/{execution_id}/terminate'
   _EXECUTIONSERVICE.methods_by_name['Get']._options = None
   _EXECUTIONSERVICE.methods_by_name['Get']._serialized_options = b'\202\323\344\223\002(\022&/workflows/v1/execution/{execution_id}'
   _EXECUTIONSERVICE.methods_by_name['GetHistory']._options = None
@@ -57,18 +61,22 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_STOPEXECUTIONREQUEST']._serialized_end=500
   _globals['_STOPEXECUTIONRESPONSE']._serialized_start=502
   _globals['_STOPEXECUTIONRESPONSE']._serialized_end=547
-  _globals['_GETEXECUTIONREQUEST']._serialized_start=549
-  _globals['_GETEXECUTIONREQUEST']._serialized_end=598
-  _globals['_GETEXECUTIONRESPONSE']._serialized_start=600
-  _globals['_GETEXECUTIONRESPONSE']._serialized_end=690
-  _globals['_GETEXECUTIONHISTORYREQUEST']._serialized_start=692
-  _globals['_GETEXECUTIONHISTORYREQUEST']._serialized_end=748
-  _globals['_GETEXECUTIONHISTORYRESPONSE']._serialized_start=751
-  _globals['_GETEXECUTIONHISTORYRESPONSE']._serialized_end=932
-  _globals['_LISTEXECUTIONSREQUEST']._serialized_start=934
-  _globals['_LISTEXECUTIONSREQUEST']._serialized_end=1057
-  _globals['_LISTEXECUTIONSRESPONSE']._serialized_start=1059
-  _globals['_LISTEXECUTIONSRESPONSE']._serialized_end=1184
-  _globals['_EXECUTIONSERVICE']._serialized_start=1187
-  _globals['_EXECUTIONSERVICE']._serialized_end=2107
+  _globals['_TERMINATEEXECUTIONREQUEST']._serialized_start=549
+  _globals['_TERMINATEEXECUTIONREQUEST']._serialized_end=604
+  _globals['_TERMINATEEXECUTIONRESPONSE']._serialized_start=606
+  _globals['_TERMINATEEXECUTIONRESPONSE']._serialized_end=656
+  _globals['_GETEXECUTIONREQUEST']._serialized_start=658
+  _globals['_GETEXECUTIONREQUEST']._serialized_end=707
+  _globals['_GETEXECUTIONRESPONSE']._serialized_start=709
+  _globals['_GETEXECUTIONRESPONSE']._serialized_end=799
+  _globals['_GETEXECUTIONHISTORYREQUEST']._serialized_start=801
+  _globals['_GETEXECUTIONHISTORYREQUEST']._serialized_end=857
+  _globals['_GETEXECUTIONHISTORYRESPONSE']._serialized_start=860
+  _globals['_GETEXECUTIONHISTORYRESPONSE']._serialized_end=1041
+  _globals['_LISTEXECUTIONSREQUEST']._serialized_start=1043
+  _globals['_LISTEXECUTIONSREQUEST']._serialized_end=1166
+  _globals['_LISTEXECUTIONSRESPONSE']._serialized_start=1168
+  _globals['_LISTEXECUTIONSRESPONSE']._serialized_end=1293
+  _globals['_EXECUTIONSERVICE']._serialized_start=1296
+  _globals['_EXECUTIONSERVICE']._serialized_end=2419
 # @@protoc_insertion_point(module_scope)
