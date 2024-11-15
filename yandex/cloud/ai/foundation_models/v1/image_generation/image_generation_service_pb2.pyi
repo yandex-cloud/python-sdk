@@ -17,7 +17,7 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 class ImageGenerationRequest(google.protobuf.message.Message):
     """Request for the service to generate an image.
 
-    For examples of usage, see [step-by-step guide](/docs/operations/yandexart/request).
+    For examples of usage, see [step-by-step guide](/docs/foundation-models/operations/yandexart/request).
     """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor

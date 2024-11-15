@@ -617,7 +617,7 @@ class PolicySettings(google.protobuf.message.Message):
     compression: global___PolicySettings.Compression.ValueType
     """Archive compression level."""
     format: global___Format.ValueType
-    """Format of the Acronis backup archive."""
+    """Format of the Cyberprotect backup archive."""
     multi_volume_snapshotting_enabled: builtins.bool
     """If true, snapshots of multiple volumes will be taken simultaneously."""
     preserve_file_security_settings: builtins.bool
