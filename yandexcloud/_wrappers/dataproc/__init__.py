@@ -474,6 +474,45 @@ class Dataproc:
             meta_type=cluster_service_pb.DeleteClusterMetadata,
         )
 
+    def stop_cluster(self, cluster_id=None, decommission_timeout=0):
+        """
+        Stop Yandex.Cloud Data Proc cluster.
+        :param cluster_id: ID of the cluster to stop.
+        :type cluster_id: str
+        :param decommission_timeout: Timeout to gracefully decommission nodes during downscaling. In seconds.
+        :type decommission_timeout: int
+        """
+        cluster_id = cluster_id or self.cluster_id
+        if not cluster_id:
+            raise RuntimeError("Cluster id must be specified.")
+
+        request = cluster_service_pb.StopClusterRequest(
+            cluster_id=cluster_id, decommission_timeout=decommission_timeout
+        )
+        return self.sdk.create_operation_and_get_result(
+            request,
+            service=cluster_service_grpc_pb.ClusterServiceStub,
+            method_name="Stop",
+            meta_type=cluster_service_pb.StopClusterMetadata,
+        )
+
+    def start_cluster(self, cluster_id=None):
+        """
+        Start Yandex.Cloud Data Proc cluster.
+        :param cluster_id: ID of the cluster to start.
+        :type cluster_id: str
+        """
+        cluster_id = cluster_id or self.cluster_id
+        if not cluster_id:
+            raise RuntimeError("Cluster id must be specified.")
+        request = cluster_service_pb.StartClusterRequest(cluster_id=cluster_id)
+        return self.sdk.create_operation_and_get_result(
+            request,
+            service=cluster_service_grpc_pb.ClusterServiceStub,
+            method_name="Start",
+            meta_type=cluster_service_pb.StartClusterMetadata,
+        )
+
     def create_hive_job(
         self,
         query=None,
