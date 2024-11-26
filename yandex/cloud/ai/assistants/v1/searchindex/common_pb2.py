@@ -11,9 +11,10 @@ from google.protobuf.internal import builder as _builder
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n6yandex/cloud/ai/assistants/v1/searchindex/common.proto\x12)yandex.cloud.ai.assistants.v1.searchindex\"U\n\x16StaticChunkingStrategy\x12\x1d\n\x15max_chunk_size_tokens\x18\x01 \x01(\x03\x12\x1c\n\x14\x63hunk_overlap_tokens\x18\x02 \x01(\x03\"|\n\x10\x43hunkingStrategy\x12\\\n\x0fstatic_strategy\x18\x01 \x01(\x0b\x32\x41.yandex.cloud.ai.assistants.v1.searchindex.StaticChunkingStrategyH\x00\x42\n\n\x08StrategyB\x8a\x01\n-yandex.cloud.api.ai.assistants.v1.searchindexZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/assistants/v1/searchindex;searchindexb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n6yandex/cloud/ai/assistants/v1/searchindex/common.proto\x12)yandex.cloud.ai.assistants.v1.searchindex\x1a\x1egoogle/protobuf/wrappers.proto\"U\n\x16StaticChunkingStrategy\x12\x1d\n\x15max_chunk_size_tokens\x18\x01 \x01(\x03\x12\x1c\n\x14\x63hunk_overlap_tokens\x18\x02 \x01(\x03\"|\n\x10\x43hunkingStrategy\x12\\\n\x0fstatic_strategy\x18\x01 \x01(\x0b\x32\x41.yandex.cloud.ai.assistants.v1.searchindex.StaticChunkingStrategyH\x00\x42\n\n\x08Strategy\"\x9c\x02\n\x17MeanCombinationStrategy\x12}\n\x19mean_evaluation_technique\x18\x01 \x01(\x0e\x32Z.yandex.cloud.ai.assistants.v1.searchindex.MeanCombinationStrategy.MeanEvaluationTechnique\x12\x0f\n\x07weights\x18\x02 \x03(\x01\"q\n\x17MeanEvaluationTechnique\x12)\n%MEAN_EVALUATION_TECHNIQUE_UNSPECIFIED\x10\x00\x12\x0e\n\nARITHMETIC\x10\x01\x12\r\n\tGEOMETRIC\x10\x02\x12\x0c\n\x08HARMONIC\x10\x03\"Q\n\'ReciprocalRankFusionCombinationStrategy\x12&\n\x01k\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"\xf0\x01\n\x13\x43ombinationStrategy\x12^\n\x10mean_combination\x18\x01 \x01(\x0b\x32\x42.yandex.cloud.ai.assistants.v1.searchindex.MeanCombinationStrategyH\x00\x12m\n\x0frrf_combination\x18\x02 \x01(\x0b\x32R.yandex.cloud.ai.assistants.v1.searchindex.ReciprocalRankFusionCombinationStrategyH\x00\x42\n\n\x08Strategy\"n\n\x0eNgramTokenizer\x12-\n\x08min_gram\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12-\n\x08max_gram\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value*T\n\x15NormalizationStrategy\x12&\n\"NORMALIZATION_STRATEGY_UNSPECIFIED\x10\x00\x12\x0b\n\x07MIN_MAX\x10\x01\x12\x06\n\x02L2\x10\x02\x42\x8a\x01\n-yandex.cloud.api.ai.assistants.v1.searchindexZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/assistants/v1/searchindex;searchindexb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -21,8 +22,20 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.ai.assistants.
 if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n-yandex.cloud.api.ai.assistants.v1.searchindexZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/assistants/v1/searchindex;searchindex'
-  _globals['_STATICCHUNKINGSTRATEGY']._serialized_start=101
-  _globals['_STATICCHUNKINGSTRATEGY']._serialized_end=186
-  _globals['_CHUNKINGSTRATEGY']._serialized_start=188
-  _globals['_CHUNKINGSTRATEGY']._serialized_end=312
+  _globals['_NORMALIZATIONSTRATEGY']._serialized_start=1071
+  _globals['_NORMALIZATIONSTRATEGY']._serialized_end=1155
+  _globals['_STATICCHUNKINGSTRATEGY']._serialized_start=133
+  _globals['_STATICCHUNKINGSTRATEGY']._serialized_end=218
+  _globals['_CHUNKINGSTRATEGY']._serialized_start=220
+  _globals['_CHUNKINGSTRATEGY']._serialized_end=344
+  _globals['_MEANCOMBINATIONSTRATEGY']._serialized_start=347
+  _globals['_MEANCOMBINATIONSTRATEGY']._serialized_end=631
+  _globals['_MEANCOMBINATIONSTRATEGY_MEANEVALUATIONTECHNIQUE']._serialized_start=518
+  _globals['_MEANCOMBINATIONSTRATEGY_MEANEVALUATIONTECHNIQUE']._serialized_end=631
+  _globals['_RECIPROCALRANKFUSIONCOMBINATIONSTRATEGY']._serialized_start=633
+  _globals['_RECIPROCALRANKFUSIONCOMBINATIONSTRATEGY']._serialized_end=714
+  _globals['_COMBINATIONSTRATEGY']._serialized_start=717
+  _globals['_COMBINATIONSTRATEGY']._serialized_end=957
+  _globals['_NGRAMTOKENIZER']._serialized_start=959
+  _globals['_NGRAMTOKENIZER']._serialized_end=1069
 # @@protoc_insertion_point(module_scope)

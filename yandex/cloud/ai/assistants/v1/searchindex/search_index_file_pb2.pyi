@@ -8,7 +8,6 @@ import google.protobuf.descriptor
 import google.protobuf.message
 import google.protobuf.timestamp_pb2
 import typing
-import yandex.cloud.ai.assistants.v1.searchindex.common_pb2
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -22,7 +21,6 @@ class SearchIndexFile(google.protobuf.message.Message):
     SEARCH_INDEX_ID_FIELD_NUMBER: builtins.int
     CREATED_BY_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
-    CHUNKING_STRATEGY_FIELD_NUMBER: builtins.int
     id: builtins.str
     """Unique identifier of the file that was used for indexing."""
     search_index_id: builtins.str
@@ -33,8 +31,6 @@ class SearchIndexFile(google.protobuf.message.Message):
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Timestamp representing when the file was created."""
 
-    @property
-    def chunking_strategy(self) -> yandex.cloud.ai.assistants.v1.searchindex.common_pb2.ChunkingStrategy: ...
     def __init__(
         self,
         *,
@@ -42,9 +38,8 @@ class SearchIndexFile(google.protobuf.message.Message):
         search_index_id: builtins.str = ...,
         created_by: builtins.str = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
-        chunking_strategy: yandex.cloud.ai.assistants.v1.searchindex.common_pb2.ChunkingStrategy | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["chunking_strategy", b"chunking_strategy", "created_at", b"created_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["chunking_strategy", b"chunking_strategy", "created_at", b"created_at", "created_by", b"created_by", "id", b"id", "search_index_id", b"search_index_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["created_at", b"created_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "created_by", b"created_by", "id", b"id", "search_index_id", b"search_index_id"]) -> None: ...
 
 global___SearchIndexFile = SearchIndexFile

@@ -11,10 +11,11 @@ from google.protobuf.internal import builder as _builder
 _sym_db = _symbol_database.Default()
 
 
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&yandex/cloud/iam/v1/user_account.proto\x12\x13yandex.cloud.iam.v1\x1a\x1dyandex/cloud/validation.proto\"\xca\x01\n\x0bUserAccount\x12\n\n\x02id\x18\x01 \x01(\t\x12V\n\x1cyandex_passport_user_account\x18\x02 \x01(\x0b\x32..yandex.cloud.iam.v1.YandexPassportUserAccountH\x00\x12\x41\n\x11saml_user_account\x18\x03 \x01(\x0b\x32$.yandex.cloud.iam.v1.SamlUserAccountH\x00\x42\x14\n\x0cuser_account\x12\x04\xc0\xc1\x31\x01\"A\n\x19YandexPassportUserAccount\x12\r\n\x05login\x18\x01 \x01(\t\x12\x15\n\rdefault_email\x18\x02 \x01(\t\"\x9f\x02\n\x0fSamlUserAccount\x12#\n\rfederation_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1e\n\x07name_id\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x31-256\x12H\n\nattributes\x18\x03 \x03(\x0b\x32\x34.yandex.cloud.iam.v1.SamlUserAccount.AttributesEntry\x1a\x1a\n\tAttribute\x12\r\n\x05value\x18\x01 \x03(\t\x1a\x61\n\x0f\x41ttributesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12=\n\x05value\x18\x02 \x01(\x0b\x32..yandex.cloud.iam.v1.SamlUserAccount.Attribute:\x02\x38\x01\x42V\n\x17yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&yandex/cloud/iam/v1/user_account.proto\x12\x13yandex.cloud.iam.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\x85\x02\n\x0bUserAccount\x12\n\n\x02id\x18\x01 \x01(\t\x12V\n\x1cyandex_passport_user_account\x18\x02 \x01(\x0b\x32..yandex.cloud.iam.v1.YandexPassportUserAccountH\x00\x12\x41\n\x11saml_user_account\x18\x03 \x01(\x0b\x32$.yandex.cloud.iam.v1.SamlUserAccountH\x00\x12\x39\n\x15last_authenticated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x14\n\x0cuser_account\x12\x04\xc0\xc1\x31\x01\"A\n\x19YandexPassportUserAccount\x12\r\n\x05login\x18\x01 \x01(\t\x12\x15\n\rdefault_email\x18\x02 \x01(\t\"\x9f\x02\n\x0fSamlUserAccount\x12#\n\rfederation_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1e\n\x07name_id\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x31-256\x12H\n\nattributes\x18\x03 \x03(\x0b\x32\x34.yandex.cloud.iam.v1.SamlUserAccount.AttributesEntry\x1a\x1a\n\tAttribute\x12\r\n\x05value\x18\x01 \x03(\t\x1a\x61\n\x0f\x41ttributesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12=\n\x05value\x18\x02 \x01(\x0b\x32..yandex.cloud.iam.v1.SamlUserAccount.Attribute:\x02\x38\x01\x42V\n\x17yandex.cloud.api.iam.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1;iamb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -30,14 +31,14 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _SAMLUSERACCOUNT.fields_by_name['federation_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _SAMLUSERACCOUNT.fields_by_name['name_id']._options = None
   _SAMLUSERACCOUNT.fields_by_name['name_id']._serialized_options = b'\350\3071\001\212\3101\0051-256'
-  _globals['_USERACCOUNT']._serialized_start=95
-  _globals['_USERACCOUNT']._serialized_end=297
-  _globals['_YANDEXPASSPORTUSERACCOUNT']._serialized_start=299
-  _globals['_YANDEXPASSPORTUSERACCOUNT']._serialized_end=364
-  _globals['_SAMLUSERACCOUNT']._serialized_start=367
-  _globals['_SAMLUSERACCOUNT']._serialized_end=654
-  _globals['_SAMLUSERACCOUNT_ATTRIBUTE']._serialized_start=529
-  _globals['_SAMLUSERACCOUNT_ATTRIBUTE']._serialized_end=555
-  _globals['_SAMLUSERACCOUNT_ATTRIBUTESENTRY']._serialized_start=557
-  _globals['_SAMLUSERACCOUNT_ATTRIBUTESENTRY']._serialized_end=654
+  _globals['_USERACCOUNT']._serialized_start=128
+  _globals['_USERACCOUNT']._serialized_end=389
+  _globals['_YANDEXPASSPORTUSERACCOUNT']._serialized_start=391
+  _globals['_YANDEXPASSPORTUSERACCOUNT']._serialized_end=456
+  _globals['_SAMLUSERACCOUNT']._serialized_start=459
+  _globals['_SAMLUSERACCOUNT']._serialized_end=746
+  _globals['_SAMLUSERACCOUNT_ATTRIBUTE']._serialized_start=621
+  _globals['_SAMLUSERACCOUNT_ATTRIBUTE']._serialized_end=647
+  _globals['_SAMLUSERACCOUNT_ATTRIBUTESENTRY']._serialized_start=649
+  _globals['_SAMLUSERACCOUNT_ATTRIBUTESENTRY']._serialized_end=746
 # @@protoc_insertion_point(module_scope)

@@ -4,11 +4,43 @@ isort:skip_file
 """
 
 import builtins
+import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.internal.containers
+import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
+import google.protobuf.wrappers_pb2
+import sys
 import typing
 
+if sys.version_info >= (3, 10):
+    import typing as typing_extensions
+else:
+    import typing_extensions
+
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
+
+class _NormalizationStrategy:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _NormalizationStrategyEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_NormalizationStrategy.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    NORMALIZATION_STRATEGY_UNSPECIFIED: _NormalizationStrategy.ValueType  # 0
+    MIN_MAX: _NormalizationStrategy.ValueType  # 1
+    """https://en.wikipedia.org/wiki/Feature_scaling#Rescaling_(min-max_normalization)"""
+    L2: _NormalizationStrategy.ValueType  # 2
+    """https://en.wikipedia.org/wiki/Cosine_similarity#L2-normalized_Euclidean_distance"""
+
+class NormalizationStrategy(_NormalizationStrategy, metaclass=_NormalizationStrategyEnumTypeWrapper):
+    """Normalization strategy for relevance scores from different indices"""
+
+NORMALIZATION_STRATEGY_UNSPECIFIED: NormalizationStrategy.ValueType  # 0
+MIN_MAX: NormalizationStrategy.ValueType  # 1
+"""https://en.wikipedia.org/wiki/Feature_scaling#Rescaling_(min-max_normalization)"""
+L2: NormalizationStrategy.ValueType  # 2
+"""https://en.wikipedia.org/wiki/Cosine_similarity#L2-normalized_Euclidean_distance"""
+global___NormalizationStrategy = NormalizationStrategy
 
 @typing.final
 class StaticChunkingStrategy(google.protobuf.message.Message):
@@ -60,3 +92,120 @@ class ChunkingStrategy(google.protobuf.message.Message):
     def WhichOneof(self, oneof_group: typing.Literal["Strategy", b"Strategy"]) -> typing.Literal["static_strategy"] | None: ...
 
 global___ChunkingStrategy = ChunkingStrategy
+
+@typing.final
+class MeanCombinationStrategy(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _MeanEvaluationTechnique:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _MeanEvaluationTechniqueEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[MeanCombinationStrategy._MeanEvaluationTechnique.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        MEAN_EVALUATION_TECHNIQUE_UNSPECIFIED: MeanCombinationStrategy._MeanEvaluationTechnique.ValueType  # 0
+        ARITHMETIC: MeanCombinationStrategy._MeanEvaluationTechnique.ValueType  # 1
+        """https://en.wikipedia.org/wiki/Arithmetic_mean"""
+        GEOMETRIC: MeanCombinationStrategy._MeanEvaluationTechnique.ValueType  # 2
+        """https://en.wikipedia.org/wiki/Geometric_mean"""
+        HARMONIC: MeanCombinationStrategy._MeanEvaluationTechnique.ValueType  # 3
+        """https://en.wikipedia.org/wiki/Harmonic_mean"""
+
+    class MeanEvaluationTechnique(_MeanEvaluationTechnique, metaclass=_MeanEvaluationTechniqueEnumTypeWrapper): ...
+    MEAN_EVALUATION_TECHNIQUE_UNSPECIFIED: MeanCombinationStrategy.MeanEvaluationTechnique.ValueType  # 0
+    ARITHMETIC: MeanCombinationStrategy.MeanEvaluationTechnique.ValueType  # 1
+    """https://en.wikipedia.org/wiki/Arithmetic_mean"""
+    GEOMETRIC: MeanCombinationStrategy.MeanEvaluationTechnique.ValueType  # 2
+    """https://en.wikipedia.org/wiki/Geometric_mean"""
+    HARMONIC: MeanCombinationStrategy.MeanEvaluationTechnique.ValueType  # 3
+    """https://en.wikipedia.org/wiki/Harmonic_mean"""
+
+    MEAN_EVALUATION_TECHNIQUE_FIELD_NUMBER: builtins.int
+    WEIGHTS_FIELD_NUMBER: builtins.int
+    mean_evaluation_technique: global___MeanCombinationStrategy.MeanEvaluationTechnique.ValueType
+    """Technique for averaging relevance scores from different indices. Default is ARITHMETIC"""
+    @property
+    def weights(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.float]:
+        """Weights used for evaluating the weighted mean of relevance scores. The sum of the values must equal 1.0
+        If not provided, all scores are given equal weight
+        """
+
+    def __init__(
+        self,
+        *,
+        mean_evaluation_technique: global___MeanCombinationStrategy.MeanEvaluationTechnique.ValueType = ...,
+        weights: collections.abc.Iterable[builtins.float] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["mean_evaluation_technique", b"mean_evaluation_technique", "weights", b"weights"]) -> None: ...
+
+global___MeanCombinationStrategy = MeanCombinationStrategy
+
+@typing.final
+class ReciprocalRankFusionCombinationStrategy(google.protobuf.message.Message):
+    """https://plg.uwaterloo.ca/~gvcormac/cormacksigir09-rrf.pdf"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    K_FIELD_NUMBER: builtins.int
+    @property
+    def k(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """The parameter k for RRFscore. Default is 60"""
+
+    def __init__(
+        self,
+        *,
+        k: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["k", b"k"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["k", b"k"]) -> None: ...
+
+global___ReciprocalRankFusionCombinationStrategy = ReciprocalRankFusionCombinationStrategy
+
+@typing.final
+class CombinationStrategy(google.protobuf.message.Message):
+    """Combination strategy for merging rankings from different indices"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    MEAN_COMBINATION_FIELD_NUMBER: builtins.int
+    RRF_COMBINATION_FIELD_NUMBER: builtins.int
+    @property
+    def mean_combination(self) -> global___MeanCombinationStrategy: ...
+    @property
+    def rrf_combination(self) -> global___ReciprocalRankFusionCombinationStrategy: ...
+    def __init__(
+        self,
+        *,
+        mean_combination: global___MeanCombinationStrategy | None = ...,
+        rrf_combination: global___ReciprocalRankFusionCombinationStrategy | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["Strategy", b"Strategy", "mean_combination", b"mean_combination", "rrf_combination", b"rrf_combination"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["Strategy", b"Strategy", "mean_combination", b"mean_combination", "rrf_combination", b"rrf_combination"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["Strategy", b"Strategy"]) -> typing.Literal["mean_combination", "rrf_combination"] | None: ...
+
+global___CombinationStrategy = CombinationStrategy
+
+@typing.final
+class NgramTokenizer(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    MIN_GRAM_FIELD_NUMBER: builtins.int
+    MAX_GRAM_FIELD_NUMBER: builtins.int
+    @property
+    def min_gram(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Minimum length of characters in a gram. Defaults to 3"""
+
+    @property
+    def max_gram(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Maximum length of characters in a gram. Defaults to 4"""
+
+    def __init__(
+        self,
+        *,
+        min_gram: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        max_gram: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["max_gram", b"max_gram", "min_gram", b"min_gram"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["max_gram", b"max_gram", "min_gram", b"min_gram"]) -> None: ...
+
+global___NgramTokenizer = NgramTokenizer

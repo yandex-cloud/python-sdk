@@ -50,6 +50,7 @@ class SearchIndex(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     TEXT_SEARCH_INDEX_FIELD_NUMBER: builtins.int
     VECTOR_SEARCH_INDEX_FIELD_NUMBER: builtins.int
+    HYBRID_SEARCH_INDEX_FIELD_NUMBER: builtins.int
     id: builtins.str
     """Unique identifier of the search index."""
     folder_id: builtins.str
@@ -94,6 +95,12 @@ class SearchIndex(google.protobuf.message.Message):
         This type is used for vector search, where documents are indexed using vector embeddings.
         """
 
+    @property
+    def hybrid_search_index(self) -> global___HybridSearchIndex:
+        """Hybrid (vector-based + keyword-based) search index configuration
+        This type is used for hybrid search, where documents are indexed using both keyword-based and vector-based search mechanisms.
+        """
+
     def __init__(
         self,
         *,
@@ -110,10 +117,11 @@ class SearchIndex(google.protobuf.message.Message):
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         text_search_index: global___TextSearchIndex | None = ...,
         vector_search_index: global___VectorSearchIndex | None = ...,
+        hybrid_search_index: global___HybridSearchIndex | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["IndexType", b"IndexType", "created_at", b"created_at", "expiration_config", b"expiration_config", "expires_at", b"expires_at", "text_search_index", b"text_search_index", "updated_at", b"updated_at", "vector_search_index", b"vector_search_index"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["IndexType", b"IndexType", "created_at", b"created_at", "created_by", b"created_by", "description", b"description", "expiration_config", b"expiration_config", "expires_at", b"expires_at", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "name", b"name", "text_search_index", b"text_search_index", "updated_at", b"updated_at", "updated_by", b"updated_by", "vector_search_index", b"vector_search_index"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["IndexType", b"IndexType"]) -> typing.Literal["text_search_index", "vector_search_index"] | None: ...
+    def HasField(self, field_name: typing.Literal["IndexType", b"IndexType", "created_at", b"created_at", "expiration_config", b"expiration_config", "expires_at", b"expires_at", "hybrid_search_index", b"hybrid_search_index", "text_search_index", b"text_search_index", "updated_at", b"updated_at", "vector_search_index", b"vector_search_index"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["IndexType", b"IndexType", "created_at", b"created_at", "created_by", b"created_by", "description", b"description", "expiration_config", b"expiration_config", "expires_at", b"expires_at", "folder_id", b"folder_id", "hybrid_search_index", b"hybrid_search_index", "id", b"id", "labels", b"labels", "name", b"name", "text_search_index", b"text_search_index", "updated_at", b"updated_at", "updated_by", b"updated_by", "vector_search_index", b"vector_search_index"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["IndexType", b"IndexType"]) -> typing.Literal["text_search_index", "vector_search_index", "hybrid_search_index"] | None: ...
 
 global___SearchIndex = SearchIndex
 
@@ -126,7 +134,9 @@ class TextSearchIndex(google.protobuf.message.Message):
     CHUNKING_STRATEGY_FIELD_NUMBER: builtins.int
     @property
     def chunking_strategy(self) -> yandex.cloud.ai.assistants.v1.searchindex.common_pb2.ChunkingStrategy:
-        """Chunking strategy used to split text into smaller chunks before indexing."""
+        """Chunking strategy used to split text into smaller chunks before indexing.
+        In the case of text search, tokens are individual text characters.
+        """
 
     def __init__(
         self,
@@ -153,7 +163,9 @@ class VectorSearchIndex(google.protobuf.message.Message):
     """The [ID of the model](/docs/foundation-models/concepts/embeddings) to be used for obtaining query text embeddings."""
     @property
     def chunking_strategy(self) -> yandex.cloud.ai.assistants.v1.searchindex.common_pb2.ChunkingStrategy:
-        """Chunking strategy used to split text into smaller chunks before indexing."""
+        """Chunking strategy used to split text into smaller chunks before indexing.
+        In the case of vector search, tokens are produced by the tokenizer from the embedding model.
+        """
 
     def __init__(
         self,
@@ -166,3 +178,49 @@ class VectorSearchIndex(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["chunking_strategy", b"chunking_strategy", "doc_embedder_uri", b"doc_embedder_uri", "query_embedder_uri", b"query_embedder_uri"]) -> None: ...
 
 global___VectorSearchIndex = VectorSearchIndex
+
+@typing.final
+class HybridSearchIndex(google.protobuf.message.Message):
+    """Defines the configuration for a hybrid (vector-based + keyword-based) search index. This type uses both embeddings and keyword-based search to represent documents and queries."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TEXT_SEARCH_INDEX_FIELD_NUMBER: builtins.int
+    VECTOR_SEARCH_INDEX_FIELD_NUMBER: builtins.int
+    CHUNKING_STRATEGY_FIELD_NUMBER: builtins.int
+    NORMALIZATION_STRATEGY_FIELD_NUMBER: builtins.int
+    COMBINATION_STRATEGY_FIELD_NUMBER: builtins.int
+    normalization_strategy: yandex.cloud.ai.assistants.v1.searchindex.common_pb2.NormalizationStrategy.ValueType
+    """Normalization strategy for relevance scores from different indices. Default is MIN_MAX_STRATEGY"""
+    @property
+    def text_search_index(self) -> global___TextSearchIndex:
+        """Configuration for a traditional keyword-based text search index."""
+
+    @property
+    def vector_search_index(self) -> global___VectorSearchIndex:
+        """Configuration for a vector-based search index."""
+
+    @property
+    def chunking_strategy(self) -> yandex.cloud.ai.assistants.v1.searchindex.common_pb2.ChunkingStrategy:
+        """Common chunking strategy that applies to both text and vector search indexes.
+        If provided, it overrides the individual chunking strategies in both `text_search_index` and `vector_search_index`.
+        In this case, both text and vector search will use token-based chunking, where tokens are produced by the tokenizer of the embedding model.
+        """
+
+    @property
+    def combination_strategy(self) -> yandex.cloud.ai.assistants.v1.searchindex.common_pb2.CombinationStrategy:
+        """Combination strategy for merging rankings from different indices. Default is arithmetic mean"""
+
+    def __init__(
+        self,
+        *,
+        text_search_index: global___TextSearchIndex | None = ...,
+        vector_search_index: global___VectorSearchIndex | None = ...,
+        chunking_strategy: yandex.cloud.ai.assistants.v1.searchindex.common_pb2.ChunkingStrategy | None = ...,
+        normalization_strategy: yandex.cloud.ai.assistants.v1.searchindex.common_pb2.NormalizationStrategy.ValueType = ...,
+        combination_strategy: yandex.cloud.ai.assistants.v1.searchindex.common_pb2.CombinationStrategy | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["chunking_strategy", b"chunking_strategy", "combination_strategy", b"combination_strategy", "text_search_index", b"text_search_index", "vector_search_index", b"vector_search_index"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["chunking_strategy", b"chunking_strategy", "combination_strategy", b"combination_strategy", "normalization_strategy", b"normalization_strategy", "text_search_index", b"text_search_index", "vector_search_index", b"vector_search_index"]) -> None: ...
+
+global___HybridSearchIndex = HybridSearchIndex

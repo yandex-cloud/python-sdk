@@ -11,11 +11,10 @@ from google.protobuf.internal import builder as _builder
 _sym_db = _symbol_database.Default()
 
 
-from yandex.cloud.ai.assistants.v1.searchindex import common_pb2 as yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_searchindex_dot_common__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nAyandex/cloud/ai/assistants/v1/searchindex/search_index_file.proto\x12)yandex.cloud.ai.assistants.v1.searchindex\x1a\x36yandex/cloud/ai/assistants/v1/searchindex/common.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xd2\x01\n\x0fSearchIndexFile\x12\n\n\x02id\x18\x01 \x01(\t\x12\x17\n\x0fsearch_index_id\x18\x02 \x01(\t\x12\x12\n\ncreated_by\x18\x03 \x01(\t\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12V\n\x11\x63hunking_strategy\x18\x05 \x01(\x0b\x32;.yandex.cloud.ai.assistants.v1.searchindex.ChunkingStrategyB\x8a\x01\n-yandex.cloud.api.ai.assistants.v1.searchindexZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/assistants/v1/searchindex;searchindexb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nAyandex/cloud/ai/assistants/v1/searchindex/search_index_file.proto\x12)yandex.cloud.ai.assistants.v1.searchindex\x1a\x1fgoogle/protobuf/timestamp.proto\"z\n\x0fSearchIndexFile\x12\n\n\x02id\x18\x01 \x01(\t\x12\x17\n\x0fsearch_index_id\x18\x02 \x01(\t\x12\x12\n\ncreated_by\x18\x03 \x01(\t\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x8a\x01\n-yandex.cloud.api.ai.assistants.v1.searchindexZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/assistants/v1/searchindex;searchindexb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -23,6 +22,6 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.ai.assistants.
 if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n-yandex.cloud.api.ai.assistants.v1.searchindexZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/assistants/v1/searchindex;searchindex'
-  _globals['_SEARCHINDEXFILE']._serialized_start=202
-  _globals['_SEARCHINDEXFILE']._serialized_end=412
+  _globals['_SEARCHINDEXFILE']._serialized_start=145
+  _globals['_SEARCHINDEXFILE']._serialized_end=267
 # @@protoc_insertion_point(module_scope)

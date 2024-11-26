@@ -45,6 +45,7 @@ class CreateSearchIndexRequest(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     TEXT_SEARCH_INDEX_FIELD_NUMBER: builtins.int
     VECTOR_SEARCH_INDEX_FIELD_NUMBER: builtins.int
+    HYBRID_SEARCH_INDEX_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     name: builtins.str
     """Name of the search index."""
@@ -70,6 +71,10 @@ class CreateSearchIndexRequest(google.protobuf.message.Message):
     def vector_search_index(self) -> yandex.cloud.ai.assistants.v1.searchindex.search_index_pb2.VectorSearchIndex:
         """Configuration for a vector-based search index using embeddings."""
 
+    @property
+    def hybrid_search_index(self) -> yandex.cloud.ai.assistants.v1.searchindex.search_index_pb2.HybridSearchIndex:
+        """Configuration for a hybrid (vector-based + keyword-based) search index."""
+
     def __init__(
         self,
         *,
@@ -81,10 +86,11 @@ class CreateSearchIndexRequest(google.protobuf.message.Message):
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         text_search_index: yandex.cloud.ai.assistants.v1.searchindex.search_index_pb2.TextSearchIndex | None = ...,
         vector_search_index: yandex.cloud.ai.assistants.v1.searchindex.search_index_pb2.VectorSearchIndex | None = ...,
+        hybrid_search_index: yandex.cloud.ai.assistants.v1.searchindex.search_index_pb2.HybridSearchIndex | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["IndexType", b"IndexType", "expiration_config", b"expiration_config", "text_search_index", b"text_search_index", "vector_search_index", b"vector_search_index"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["IndexType", b"IndexType", "description", b"description", "expiration_config", b"expiration_config", "file_ids", b"file_ids", "folder_id", b"folder_id", "labels", b"labels", "name", b"name", "text_search_index", b"text_search_index", "vector_search_index", b"vector_search_index"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["IndexType", b"IndexType"]) -> typing.Literal["text_search_index", "vector_search_index"] | None: ...
+    def HasField(self, field_name: typing.Literal["IndexType", b"IndexType", "expiration_config", b"expiration_config", "hybrid_search_index", b"hybrid_search_index", "text_search_index", b"text_search_index", "vector_search_index", b"vector_search_index"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["IndexType", b"IndexType", "description", b"description", "expiration_config", b"expiration_config", "file_ids", b"file_ids", "folder_id", b"folder_id", "hybrid_search_index", b"hybrid_search_index", "labels", b"labels", "name", b"name", "text_search_index", b"text_search_index", "vector_search_index", b"vector_search_index"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["IndexType", b"IndexType"]) -> typing.Literal["text_search_index", "vector_search_index", "hybrid_search_index"] | None: ...
 
 global___CreateSearchIndexRequest = CreateSearchIndexRequest
 

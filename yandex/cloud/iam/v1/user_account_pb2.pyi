@@ -8,6 +8,7 @@ import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
+import google.protobuf.timestamp_pb2
 import typing
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
@@ -21,6 +22,7 @@ class UserAccount(google.protobuf.message.Message):
     ID_FIELD_NUMBER: builtins.int
     YANDEX_PASSPORT_USER_ACCOUNT_FIELD_NUMBER: builtins.int
     SAML_USER_ACCOUNT_FIELD_NUMBER: builtins.int
+    LAST_AUTHENTICATED_AT_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the user account."""
     @property
@@ -31,15 +33,18 @@ class UserAccount(google.protobuf.message.Message):
     def saml_user_account(self) -> global___SamlUserAccount:
         """A SAML federated user."""
 
+    @property
+    def last_authenticated_at(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
     def __init__(
         self,
         *,
         id: builtins.str = ...,
         yandex_passport_user_account: global___YandexPassportUserAccount | None = ...,
         saml_user_account: global___SamlUserAccount | None = ...,
+        last_authenticated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["saml_user_account", b"saml_user_account", "user_account", b"user_account", "yandex_passport_user_account", b"yandex_passport_user_account"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["id", b"id", "saml_user_account", b"saml_user_account", "user_account", b"user_account", "yandex_passport_user_account", b"yandex_passport_user_account"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["last_authenticated_at", b"last_authenticated_at", "saml_user_account", b"saml_user_account", "user_account", b"user_account", "yandex_passport_user_account", b"yandex_passport_user_account"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["id", b"id", "last_authenticated_at", b"last_authenticated_at", "saml_user_account", b"saml_user_account", "user_account", b"user_account", "yandex_passport_user_account", b"yandex_passport_user_account"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["user_account", b"user_account"]) -> typing.Literal["yandex_passport_user_account", "saml_user_account"] | None: ...
 
 global___UserAccount = UserAccount

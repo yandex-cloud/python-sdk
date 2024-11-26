@@ -54,6 +54,52 @@ FIELD_TYPE_DATE: FieldType.ValueType  # 5
 FIELD_TYPE_JSON: FieldType.ValueType  # 6
 global___FieldType = FieldType
 
+class _ProcessingState:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _ProcessingStateEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_ProcessingState.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    PROCESSING_STATE_UNSPECIFIED: _ProcessingState.ValueType  # 0
+    PROCESSING_STATE_NOT_STARTED: _ProcessingState.ValueType  # 1
+    PROCESSING_STATE_PROCESSING: _ProcessingState.ValueType  # 2
+    PROCESSING_STATE_SUCCESS: _ProcessingState.ValueType  # 3
+    PROCESSING_STATE_FAILED: _ProcessingState.ValueType  # 4
+
+class ProcessingState(_ProcessingState, metaclass=_ProcessingStateEnumTypeWrapper): ...
+
+PROCESSING_STATE_UNSPECIFIED: ProcessingState.ValueType  # 0
+PROCESSING_STATE_NOT_STARTED: ProcessingState.ValueType  # 1
+PROCESSING_STATE_PROCESSING: ProcessingState.ValueType  # 2
+PROCESSING_STATE_SUCCESS: ProcessingState.ValueType  # 3
+PROCESSING_STATE_FAILED: ProcessingState.ValueType  # 4
+global___ProcessingState = ProcessingState
+
+class _Algorithm:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _AlgorithmEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_Algorithm.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    ALGORITHM_UNSPECIFIED: _Algorithm.ValueType  # 0
+    ALGORITHM_SPEECHKIT: _Algorithm.ValueType  # 1
+    ALGORITHM_YGPT: _Algorithm.ValueType  # 2
+    ALGORITHM_CLASSIFIER: _Algorithm.ValueType  # 3
+    ALGORITHM_SUMMARIZATION: _Algorithm.ValueType  # 4
+    ALGORITHM_EMBEDDING: _Algorithm.ValueType  # 5
+    ALGORITHM_STATISTICS: _Algorithm.ValueType  # 6
+
+class Algorithm(_Algorithm, metaclass=_AlgorithmEnumTypeWrapper): ...
+
+ALGORITHM_UNSPECIFIED: Algorithm.ValueType  # 0
+ALGORITHM_SPEECHKIT: Algorithm.ValueType  # 1
+ALGORITHM_YGPT: Algorithm.ValueType  # 2
+ALGORITHM_CLASSIFIER: Algorithm.ValueType  # 3
+ALGORITHM_SUMMARIZATION: Algorithm.ValueType  # 4
+ALGORITHM_EMBEDDING: Algorithm.ValueType  # 5
+ALGORITHM_STATISTICS: Algorithm.ValueType  # 6
+global___Algorithm = Algorithm
+
 @typing.final
 class Talk(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
@@ -76,6 +122,7 @@ class Talk(google.protobuf.message.Message):
     POINTS_FIELD_NUMBER: builtins.int
     TEXT_CLASSIFIERS_FIELD_NUMBER: builtins.int
     SUMMARIZATION_FIELD_NUMBER: builtins.int
+    TALK_STATE_FIELD_NUMBER: builtins.int
     id: builtins.str
     """talk id"""
     organization_id: builtins.str
@@ -112,6 +159,8 @@ class Talk(google.protobuf.message.Message):
     def text_classifiers(self) -> yandex.cloud.speechsense.v1.analysis.text_classifiers_pb2.TextClassifiers: ...
     @property
     def summarization(self) -> yandex.cloud.speechsense.v1.analysis.summarization_pb2.Summarization: ...
+    @property
+    def talk_state(self) -> global___TalkState: ...
     def __init__(
         self,
         *,
@@ -133,11 +182,31 @@ class Talk(google.protobuf.message.Message):
         points: yandex.cloud.speechsense.v1.analysis.points_pb2.Points | None = ...,
         text_classifiers: yandex.cloud.speechsense.v1.analysis.text_classifiers_pb2.TextClassifiers | None = ...,
         summarization: yandex.cloud.speechsense.v1.analysis.summarization_pb2.Summarization | None = ...,
+        talk_state: global___TalkState | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["conversation_statistics", b"conversation_statistics", "created_at", b"created_at", "interrupts_statistics", b"interrupts_statistics", "modified_at", b"modified_at", "points", b"points", "silence_statistics", b"silence_statistics", "speech_statistics", b"speech_statistics", "summarization", b"summarization", "text_classifiers", b"text_classifiers", "transcription", b"transcription"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["connection_id", b"connection_id", "conversation_statistics", b"conversation_statistics", "created_at", b"created_at", "created_by", b"created_by", "id", b"id", "interrupts_statistics", b"interrupts_statistics", "modified_at", b"modified_at", "modified_by", b"modified_by", "organization_id", b"organization_id", "points", b"points", "project_ids", b"project_ids", "silence_statistics", b"silence_statistics", "space_id", b"space_id", "speech_statistics", b"speech_statistics", "summarization", b"summarization", "talk_fields", b"talk_fields", "text_classifiers", b"text_classifiers", "transcription", b"transcription"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["conversation_statistics", b"conversation_statistics", "created_at", b"created_at", "interrupts_statistics", b"interrupts_statistics", "modified_at", b"modified_at", "points", b"points", "silence_statistics", b"silence_statistics", "speech_statistics", b"speech_statistics", "summarization", b"summarization", "talk_state", b"talk_state", "text_classifiers", b"text_classifiers", "transcription", b"transcription"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["connection_id", b"connection_id", "conversation_statistics", b"conversation_statistics", "created_at", b"created_at", "created_by", b"created_by", "id", b"id", "interrupts_statistics", b"interrupts_statistics", "modified_at", b"modified_at", "modified_by", b"modified_by", "organization_id", b"organization_id", "points", b"points", "project_ids", b"project_ids", "silence_statistics", b"silence_statistics", "space_id", b"space_id", "speech_statistics", b"speech_statistics", "summarization", b"summarization", "talk_fields", b"talk_fields", "talk_state", b"talk_state", "text_classifiers", b"text_classifiers", "transcription", b"transcription"]) -> None: ...
 
 global___Talk = Talk
+
+@typing.final
+class TalkState(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PROCESSING_STATE_FIELD_NUMBER: builtins.int
+    ALGORITHM_PROCESSING_INFOS_FIELD_NUMBER: builtins.int
+    processing_state: global___ProcessingState.ValueType
+    @property
+    def algorithm_processing_infos(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___AlgorithmProcessingInfo]: ...
+    def __init__(
+        self,
+        *,
+        processing_state: global___ProcessingState.ValueType = ...,
+        algorithm_processing_infos: collections.abc.Iterable[global___AlgorithmProcessingInfo] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["algorithm_processing_infos", b"algorithm_processing_infos", "processing_state", b"processing_state"]) -> None: ...
+
+global___TalkState = TalkState
 
 @typing.final
 class Field(google.protobuf.message.Message):
@@ -164,3 +233,21 @@ class Field(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["name", b"name", "type", b"type", "value", b"value"]) -> None: ...
 
 global___Field = Field
+
+@typing.final
+class AlgorithmProcessingInfo(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ALGORITHM_FIELD_NUMBER: builtins.int
+    PROCESSING_STATE_FIELD_NUMBER: builtins.int
+    algorithm: global___Algorithm.ValueType
+    processing_state: global___ProcessingState.ValueType
+    def __init__(
+        self,
+        *,
+        algorithm: global___Algorithm.ValueType = ...,
+        processing_state: global___ProcessingState.ValueType = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["algorithm", b"algorithm", "processing_state", b"processing_state"]) -> None: ...
+
+global___AlgorithmProcessingInfo = AlgorithmProcessingInfo

@@ -820,6 +820,7 @@ class HealthCheck(google.protobuf.message.Message):
         HOST_FIELD_NUMBER: builtins.int
         PATH_FIELD_NUMBER: builtins.int
         USE_HTTP2_FIELD_NUMBER: builtins.int
+        EXPECTED_STATUSES_FIELD_NUMBER: builtins.int
         host: builtins.str
         """Value for the HTTP/1.1 `Host` header or the HTTP/2 `:authority` pseudo-header used in requests to targets."""
         path: builtins.str
@@ -831,14 +832,21 @@ class HealthCheck(google.protobuf.message.Message):
 
         Default value: `false`, HTTP/1.1 is used.
         """
+        @property
+        def expected_statuses(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.int]:
+            """A list of HTTP response statuses considered healthy.
+            By default only 200 HTTP status code considered healthy.
+            """
+
         def __init__(
             self,
             *,
             host: builtins.str = ...,
             path: builtins.str = ...,
             use_http2: builtins.bool = ...,
+            expected_statuses: collections.abc.Iterable[builtins.int] | None = ...,
         ) -> None: ...
-        def ClearField(self, field_name: typing.Literal["host", b"host", "path", b"path", "use_http2", b"use_http2"]) -> None: ...
+        def ClearField(self, field_name: typing.Literal["expected_statuses", b"expected_statuses", "host", b"host", "path", b"path", "use_http2", b"use_http2"]) -> None: ...
 
     @typing.final
     class GrpcHealthCheck(google.protobuf.message.Message):
