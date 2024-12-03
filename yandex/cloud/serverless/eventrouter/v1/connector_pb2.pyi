@@ -145,19 +145,23 @@ class Source(google.protobuf.message.Message):
 
     DATA_STREAM_FIELD_NUMBER: builtins.int
     MESSAGE_QUEUE_FIELD_NUMBER: builtins.int
+    TIMER_FIELD_NUMBER: builtins.int
     @property
     def data_stream(self) -> global___DataStream: ...
     @property
     def message_queue(self) -> global___MessageQueue: ...
+    @property
+    def timer(self) -> global___Timer: ...
     def __init__(
         self,
         *,
         data_stream: global___DataStream | None = ...,
         message_queue: global___MessageQueue | None = ...,
+        timer: global___Timer | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["data_stream", b"data_stream", "message_queue", b"message_queue", "source", b"source"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["data_stream", b"data_stream", "message_queue", b"message_queue", "source", b"source"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["source", b"source"]) -> typing.Literal["data_stream", "message_queue"] | None: ...
+    def HasField(self, field_name: typing.Literal["data_stream", b"data_stream", "message_queue", b"message_queue", "source", b"source", "timer", b"timer"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["data_stream", b"data_stream", "message_queue", b"message_queue", "source", b"source", "timer", b"timer"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["source", b"source"]) -> typing.Literal["data_stream", "message_queue", "timer"] | None: ...
 
 global___Source = Source
 
@@ -229,3 +233,27 @@ class MessageQueue(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["batch_size", b"batch_size", "polling_timeout", b"polling_timeout", "queue_arn", b"queue_arn", "service_account_id", b"service_account_id", "visibility_timeout", b"visibility_timeout"]) -> None: ...
 
 global___MessageQueue = MessageQueue
+
+@typing.final
+class Timer(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CRON_EXPRESSION_FIELD_NUMBER: builtins.int
+    TIME_ZONE_FIELD_NUMBER: builtins.int
+    PAYLOAD_FIELD_NUMBER: builtins.int
+    cron_expression: builtins.str
+    """cron expression, with second precision"""
+    time_zone: builtins.str
+    """time zone, e.g. Europe/Moscow"""
+    payload: builtins.str
+    """payload to send to target"""
+    def __init__(
+        self,
+        *,
+        cron_expression: builtins.str = ...,
+        time_zone: builtins.str = ...,
+        payload: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cron_expression", b"cron_expression", "payload", b"payload", "time_zone", b"time_zone"]) -> None: ...
+
+global___Timer = Timer

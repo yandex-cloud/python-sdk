@@ -52,6 +52,7 @@ class _JobStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._Enum
     ERROR: _JobStatus.ValueType  # 5
     CANCELLED: _JobStatus.ValueType  # 6
     CANCELLING: _JobStatus.ValueType  # 7
+    PREPARING: _JobStatus.ValueType  # 8
 
 class JobStatus(_JobStatus, metaclass=_JobStatusEnumTypeWrapper): ...
 
@@ -63,6 +64,7 @@ SUCCESS: JobStatus.ValueType  # 4
 ERROR: JobStatus.ValueType  # 5
 CANCELLED: JobStatus.ValueType  # 6
 CANCELLING: JobStatus.ValueType  # 7
+PREPARING: JobStatus.ValueType  # 8
 global___JobStatus = JobStatus
 
 @typing.final
@@ -289,11 +291,28 @@ global___FileDesc = FileDesc
 class FileUploadError(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    class _ErrorType:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _ErrorTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[FileUploadError._ErrorType.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        ERROR_TYPE_UNSPECIFIED: FileUploadError._ErrorType.ValueType  # 0
+        UPLOAD_FAILED: FileUploadError._ErrorType.ValueType  # 1
+        NOT_FOUND: FileUploadError._ErrorType.ValueType  # 2
+
+    class ErrorType(_ErrorType, metaclass=_ErrorTypeEnumTypeWrapper): ...
+    ERROR_TYPE_UNSPECIFIED: FileUploadError.ErrorType.ValueType  # 0
+    UPLOAD_FAILED: FileUploadError.ErrorType.ValueType  # 1
+    NOT_FOUND: FileUploadError.ErrorType.ValueType  # 2
+
     OUTPUT_FILE_DESC_FIELD_NUMBER: builtins.int
     LOG_FILE_NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
+    TYPE_FIELD_NUMBER: builtins.int
     log_file_name: builtins.str
     description: builtins.str
+    type: global___FileUploadError.ErrorType.ValueType
     @property
     def output_file_desc(self) -> global___FileDesc: ...
     def __init__(
@@ -302,9 +321,10 @@ class FileUploadError(google.protobuf.message.Message):
         output_file_desc: global___FileDesc | None = ...,
         log_file_name: builtins.str = ...,
         description: builtins.str = ...,
+        type: global___FileUploadError.ErrorType.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["file_type", b"file_type", "log_file_name", b"log_file_name", "output_file_desc", b"output_file_desc"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "file_type", b"file_type", "log_file_name", b"log_file_name", "output_file_desc", b"output_file_desc"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "file_type", b"file_type", "log_file_name", b"log_file_name", "output_file_desc", b"output_file_desc", "type", b"type"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["file_type", b"file_type"]) -> typing.Literal["output_file_desc", "log_file_name"] | None: ...
 
 global___FileUploadError = FileUploadError

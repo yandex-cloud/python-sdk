@@ -84,6 +84,12 @@ class DatasetServiceStub:
     ]
     """Finishes multipart upload of the dataset."""
 
+    ListTypes: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListTypesRequest,
+        yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListTypesResponse,
+    ]
+    """Returns a list of dataset types"""
+
 class DatasetServiceAsyncStub:
     """A set of methods for managing datasets."""
 
@@ -148,6 +154,12 @@ class DatasetServiceAsyncStub:
         yandex.cloud.ai.dataset.v1.dataset_service_pb2.FinishMultipartUploadDraftResponse,
     ]
     """Finishes multipart upload of the dataset."""
+
+    ListTypes: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListTypesRequest,
+        yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListTypesResponse,
+    ]
+    """Returns a list of dataset types"""
 
 class DatasetServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing datasets."""
@@ -233,5 +245,13 @@ class DatasetServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.ai.dataset.v1.dataset_service_pb2.FinishMultipartUploadDraftResponse, collections.abc.Awaitable[yandex.cloud.ai.dataset.v1.dataset_service_pb2.FinishMultipartUploadDraftResponse]]:
         """Finishes multipart upload of the dataset."""
+
+    @abc.abstractmethod
+    def ListTypes(
+        self,
+        request: yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListTypesRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListTypesResponse, collections.abc.Awaitable[yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListTypesResponse]]:
+        """Returns a list of dataset types"""
 
 def add_DatasetServiceServicer_to_server(servicer: DatasetServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

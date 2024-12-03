@@ -282,6 +282,7 @@ class CreateClusterRequest(google.protobuf.message.Message):
     HOST_GROUP_IDS_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     LOG_GROUP_ID_FIELD_NUMBER: builtins.int
+    ENVIRONMENT_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a cluster in.
 
@@ -308,6 +309,8 @@ class CreateClusterRequest(google.protobuf.message.Message):
     """Deletion Protection inhibits deletion of the cluster"""
     log_group_id: builtins.str
     """ID of the cloud logging log group to write logs. If not set, logs will not be sent to logging service"""
+    environment: yandex.cloud.dataproc.v1.cluster_pb2.Cluster.Environment.ValueType
+    """Environment of the cluster"""
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Cluster labels as `key:value` pairs."""
@@ -340,9 +343,10 @@ class CreateClusterRequest(google.protobuf.message.Message):
         host_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         deletion_protection: builtins.bool = ...,
         log_group_id: builtins.str = ...,
+        environment: yandex.cloud.dataproc.v1.cluster_pb2.Cluster.Environment.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["config_spec", b"config_spec"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["bucket", b"bucket", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "folder_id", b"folder_id", "host_group_ids", b"host_group_ids", "labels", b"labels", "log_group_id", b"log_group_id", "name", b"name", "security_group_ids", b"security_group_ids", "service_account_id", b"service_account_id", "ui_proxy", b"ui_proxy", "zone_id", b"zone_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["bucket", b"bucket", "config_spec", b"config_spec", "deletion_protection", b"deletion_protection", "description", b"description", "environment", b"environment", "folder_id", b"folder_id", "host_group_ids", b"host_group_ids", "labels", b"labels", "log_group_id", b"log_group_id", "name", b"name", "security_group_ids", b"security_group_ids", "service_account_id", b"service_account_id", "ui_proxy", b"ui_proxy", "zone_id", b"zone_id"]) -> None: ...
 
 global___CreateClusterRequest = CreateClusterRequest
 

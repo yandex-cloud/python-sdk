@@ -64,6 +64,21 @@ class Cluster(google.protobuf.message.Message):
     STARTING: Cluster.Status.ValueType  # 6
     """Cluster is starting."""
 
+    class _Environment:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _EnvironmentEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Cluster._Environment.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        ENVIRONMENT_UNSPECIFIED: Cluster._Environment.ValueType  # 0
+        PRODUCTION: Cluster._Environment.ValueType  # 1
+        PRESTABLE: Cluster._Environment.ValueType  # 2
+
+    class Environment(_Environment, metaclass=_EnvironmentEnumTypeWrapper): ...
+    ENVIRONMENT_UNSPECIFIED: Cluster.Environment.ValueType  # 0
+    PRODUCTION: Cluster.Environment.ValueType  # 1
+    PRESTABLE: Cluster.Environment.ValueType  # 2
+
     @typing.final
     class LabelsEntry(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
@@ -98,6 +113,7 @@ class Cluster(google.protobuf.message.Message):
     HOST_GROUP_IDS_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     LOG_GROUP_ID_FIELD_NUMBER: builtins.int
+    ENVIRONMENT_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the cluster. Generated at creation time."""
     folder_id: builtins.str
@@ -124,6 +140,8 @@ class Cluster(google.protobuf.message.Message):
     """ID of the cloud logging log group to write logs. If not set, default log group for the folder will be used.
     To prevent logs from being sent to the cloud set cluster property dataproc:disable_cloud_logging = true
     """
+    environment: global___Cluster.Environment.ValueType
+    """Environment of the cluster"""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp."""
@@ -169,9 +187,10 @@ class Cluster(google.protobuf.message.Message):
         host_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         deletion_protection: builtins.bool = ...,
         log_group_id: builtins.str = ...,
+        environment: global___Cluster.Environment.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["config", b"config", "created_at", b"created_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["bucket", b"bucket", "config", b"config", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "folder_id", b"folder_id", "health", b"health", "host_group_ids", b"host_group_ids", "id", b"id", "labels", b"labels", "log_group_id", b"log_group_id", "monitoring", b"monitoring", "name", b"name", "security_group_ids", b"security_group_ids", "service_account_id", b"service_account_id", "status", b"status", "ui_proxy", b"ui_proxy", "zone_id", b"zone_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["bucket", b"bucket", "config", b"config", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "environment", b"environment", "folder_id", b"folder_id", "health", b"health", "host_group_ids", b"host_group_ids", "id", b"id", "labels", b"labels", "log_group_id", b"log_group_id", "monitoring", b"monitoring", "name", b"name", "security_group_ids", b"security_group_ids", "service_account_id", b"service_account_id", "status", b"status", "ui_proxy", b"ui_proxy", "zone_id", b"zone_id"]) -> None: ...
 
 global___Cluster = Cluster
 

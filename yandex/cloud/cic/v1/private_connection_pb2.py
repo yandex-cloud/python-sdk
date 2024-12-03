@@ -15,7 +15,7 @@ from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb
 from yandex.cloud.cic.v1 import peering_pb2 as yandex_dot_cloud_dot_cic_dot_v1_dot_peering__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,yandex/cloud/cic/v1/private_connection.proto\x12\x13yandex.cloud.cic.v1\x1a\x1egoogle/protobuf/wrappers.proto\x1a!yandex/cloud/cic/v1/peering.proto\"\xed\x03\n\x11PrivateConnection\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x11\n\tfolder_id\x18\x05 \x01(\t\x12\x11\n\tregion_id\x18\x06 \x01(\t\x12\x1b\n\x13trunk_connection_id\x18\x07 \x01(\t\x12,\n\x07vlan_id\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x32\n\x0cipv4_peering\x18\t \x01(\x0b\x32\x1c.yandex.cloud.cic.v1.Peering\x12N\n\x12ipv4_static_routes\x18\x12 \x03(\x0b\x32\x32.yandex.cloud.cic.v1.PrivateConnection.StaticRoute\x12\x42\n\x06labels\x18\x18 \x03(\x0b\x32\x32.yandex.cloud.cic.v1.PrivateConnection.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a/\n\x0bStaticRoute\x12\x0e\n\x06prefix\x18\x01 \x01(\t\x12\x10\n\x08next_hop\x18\x02 \x03(\tJ\x04\x08\x04\x10\x05J\x04\x08\n\x10\x12J\x04\x08\x13\x10\x18\x42V\n\x17yandex.cloud.api.cic.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/cic/v1;cicb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,yandex/cloud/cic/v1/private_connection.proto\x12\x13yandex.cloud.cic.v1\x1a\x1egoogle/protobuf/wrappers.proto\x1a!yandex/cloud/cic/v1/peering.proto\"\xf1\x03\n\x11PrivateConnection\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x11\n\tfolder_id\x18\x05 \x01(\t\x12\x11\n\tregion_id\x18\x06 \x01(\t\x12\x1b\n\x13trunk_connection_id\x18\x07 \x01(\t\x12,\n\x07vlan_id\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x32\n\x0cipv4_peering\x18\t \x01(\x0b\x32\x1c.yandex.cloud.cic.v1.Peering\x12N\n\x12ipv4_static_routes\x18\x12 \x03(\x0b\x32\x32.yandex.cloud.cic.v1.PrivateConnection.StaticRoute\x12\x42\n\x06labels\x18\x18 \x03(\x0b\x32\x32.yandex.cloud.cic.v1.PrivateConnection.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x33\n\x0bStaticRoute\x12\x0e\n\x06prefix\x18\x01 \x01(\t\x12\x14\n\x08next_hop\x18\x02 \x03(\tB\x02\x18\x01J\x04\x08\x04\x10\x05J\x04\x08\n\x10\x12J\x04\x08\x13\x10\x18\x42V\n\x17yandex.cloud.api.cic.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/cic/v1;cicb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -25,10 +25,12 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._serialized_options = b'\n\027yandex.cloud.api.cic.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/cic/v1;cic'
   _PRIVATECONNECTION_LABELSENTRY._options = None
   _PRIVATECONNECTION_LABELSENTRY._serialized_options = b'8\001'
+  _PRIVATECONNECTION_STATICROUTE.fields_by_name['next_hop']._options = None
+  _PRIVATECONNECTION_STATICROUTE.fields_by_name['next_hop']._serialized_options = b'\030\001'
   _globals['_PRIVATECONNECTION']._serialized_start=137
-  _globals['_PRIVATECONNECTION']._serialized_end=630
+  _globals['_PRIVATECONNECTION']._serialized_end=634
   _globals['_PRIVATECONNECTION_LABELSENTRY']._serialized_start=518
   _globals['_PRIVATECONNECTION_LABELSENTRY']._serialized_end=563
   _globals['_PRIVATECONNECTION_STATICROUTE']._serialized_start=565
-  _globals['_PRIVATECONNECTION_STATICROUTE']._serialized_end=612
+  _globals['_PRIVATECONNECTION_STATICROUTE']._serialized_end=616
 # @@protoc_insertion_point(module_scope)

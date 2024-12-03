@@ -18,7 +18,7 @@ from yandex.cloud.ai.dataset.v1 import dataset_pb2 as yandex_dot_cloud_dot_ai_do
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n0yandex/cloud/ai/dataset/v1/dataset_service.proto\x12\x1ayandex.cloud.ai.dataset.v1\x1a\x1dyandex/cloud/validation.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a(yandex/cloud/ai/dataset/v1/dataset.proto\x1a google/protobuf/field_mask.proto\"2\n\x16\x44\x65scribeDatasetRequest\x12\x18\n\ndataset_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"S\n\x17\x44\x65scribeDatasetResponse\x12\x38\n\x07\x64\x61taset\x18\x01 \x01(\x0b\x32\'.yandex.cloud.ai.dataset.v1.DatasetInfo\"2\n\x16ValidateDatasetRequest\x12\x18\n\ndataset_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"Y\n\x17ValidateDatasetMetadata\x12\x12\n\ndataset_id\x18\x01 \x01(\t\x12\x12\n\nvalid_rows\x18\x02 \x01(\x03\x12\x16\n\x0eprocessed_rows\x18\x03 \x01(\x03\"|\n\x17ValidateDatasetResponse\x12\x12\n\ndataset_id\x18\x01 \x01(\t\x12\x10\n\x08is_valid\x18\x02 \x01(\x08\x12;\n\x06\x65rrors\x18\x03 \x03(\x0b\x32+.yandex.cloud.ai.dataset.v1.ValidationError\"0\n\x14\x44\x65leteDatasetRequest\x12\x18\n\ndataset_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\x17\n\x15\x44\x65leteDatasetResponse\"\x97\x02\n\x14\x43reateDatasetRequest\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tfolder_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x10\n\x08metadata\x18\x04 \x01(\t\x12\x17\n\ttask_type\x18\x05 \x01(\tB\x04\xe8\xc7\x31\x01\x12L\n\x06labels\x18\x06 \x03(\x0b\x32<.yandex.cloud.ai.dataset.v1.CreateDatasetRequest.LabelsEntry\x12\x15\n\rupload_format\x18\x07 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"e\n\x15\x43reateDatasetResponse\x12\x12\n\ndataset_id\x18\x01 \x01(\t\x12\x38\n\x07\x64\x61taset\x18\x02 \x01(\x0b\x32\'.yandex.cloud.ai.dataset.v1.DatasetInfo\"\x81\x02\n\x14UpdateDatasetRequest\x12\x18\n\ndataset_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12L\n\x06labels\x18\x05 \x03(\x0b\x32<.yandex.cloud.ai.dataset.v1.UpdateDatasetRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"Q\n\x15UpdateDatasetResponse\x12\x38\n\x07\x64\x61taset\x18\x01 \x01(\x0b\x32\'.yandex.cloud.ai.dataset.v1.DatasetInfo\"P\n\x18GetUploadDraftUrlRequest\x12\x18\n\ndataset_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1a\n\nsize_bytes\x18\x02 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\"C\n\x19GetUploadDraftUrlResponse\x12\x12\n\ndataset_id\x18\x01 \x01(\t\x12\x12\n\nupload_url\x18\x02 \x01(\t\"g\n StartMultipartUploadDraftRequest\x12\x18\n\ndataset_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1a\n\nsize_bytes\x18\x02 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\x12\r\n\x05parts\x18\x03 \x01(\x03\"V\n!StartMultipartUploadDraftResponse\x12\x12\n\ndataset_id\x18\x01 \x01(\t\x12\x1d\n\x15multipart_upload_urls\x18\x02 \x03(\t\"E\n\x10UploadedPartInfo\x12\x1d\n\x08part_num\x18\x01 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x31-10000\x12\x12\n\x04\x65tag\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"\x83\x01\n!FinishMultipartUploadDraftRequest\x12\x18\n\ndataset_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x44\n\x0euploaded_parts\x18\x02 \x03(\x0b\x32,.yandex.cloud.ai.dataset.v1.UploadedPartInfo\"8\n\"FinishMultipartUploadDraftResponse\x12\x12\n\ndataset_id\x18\x01 \x01(\t\"\x8c\x01\n\x13ListDatasetsRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12>\n\x06status\x18\x02 \x01(\x0e\x32..yandex.cloud.ai.dataset.v1.DatasetInfo.Status\x12\x1c\n\x14\x64\x61taset_name_pattern\x18\x03 \x01(\t\"Q\n\x14ListDatasetsResponse\x12\x39\n\x08\x64\x61tasets\x18\x01 \x03(\x0b\x32\'.yandex.cloud.ai.dataset.v1.DatasetInfo\"3\n\x18ListUploadFormatsRequest\x12\x17\n\ttask_type\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\",\n\x19ListUploadFormatsResponse\x12\x0f\n\x07\x66ormats\x18\x01 \x03(\t2\x98\n\n\x0e\x44\x61tasetService\x12s\n\x08\x44\x65scribe\x12\x32.yandex.cloud.ai.dataset.v1.DescribeDatasetRequest\x1a\x33.yandex.cloud.ai.dataset.v1.DescribeDatasetResponse\x12\x99\x01\n\x08Validate\x12\x32.yandex.cloud.ai.dataset.v1.ValidateDatasetRequest\x1a!.yandex.cloud.operation.Operation\"6\xb2\xd2*2\n\x17ValidateDatasetMetadata\x12\x17ValidateDatasetResponse\x12m\n\x06\x43reate\x12\x30.yandex.cloud.ai.dataset.v1.CreateDatasetRequest\x1a\x31.yandex.cloud.ai.dataset.v1.CreateDatasetResponse\x12m\n\x06Update\x12\x30.yandex.cloud.ai.dataset.v1.UpdateDatasetRequest\x1a\x31.yandex.cloud.ai.dataset.v1.UpdateDatasetResponse\x12m\n\x06\x44\x65lete\x12\x30.yandex.cloud.ai.dataset.v1.DeleteDatasetRequest\x1a\x31.yandex.cloud.ai.dataset.v1.DeleteDatasetResponse\x12i\n\x04List\x12/.yandex.cloud.ai.dataset.v1.ListDatasetsRequest\x1a\x30.yandex.cloud.ai.dataset.v1.ListDatasetsResponse\x12\x80\x01\n\x11ListUploadFormats\x12\x34.yandex.cloud.ai.dataset.v1.ListUploadFormatsRequest\x1a\x35.yandex.cloud.ai.dataset.v1.ListUploadFormatsResponse\x12\x80\x01\n\x11GetUploadDraftUrl\x12\x34.yandex.cloud.ai.dataset.v1.GetUploadDraftUrlRequest\x1a\x35.yandex.cloud.ai.dataset.v1.GetUploadDraftUrlResponse\x12\x98\x01\n\x19StartMultipartUploadDraft\x12<.yandex.cloud.ai.dataset.v1.StartMultipartUploadDraftRequest\x1a=.yandex.cloud.ai.dataset.v1.StartMultipartUploadDraftResponse\x12\x9b\x01\n\x1a\x46inishMultipartUploadDraft\x12=.yandex.cloud.ai.dataset.v1.FinishMultipartUploadDraftRequest\x1a>.yandex.cloud.ai.dataset.v1.FinishMultipartUploadDraftResponseBe\n\x1eyandex.cloud.api.ai.dataset.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/dataset/v1;fomob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n0yandex/cloud/ai/dataset/v1/dataset_service.proto\x12\x1ayandex.cloud.ai.dataset.v1\x1a\x1dyandex/cloud/validation.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a(yandex/cloud/ai/dataset/v1/dataset.proto\x1a google/protobuf/field_mask.proto\"2\n\x16\x44\x65scribeDatasetRequest\x12\x18\n\ndataset_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"S\n\x17\x44\x65scribeDatasetResponse\x12\x38\n\x07\x64\x61taset\x18\x01 \x01(\x0b\x32\'.yandex.cloud.ai.dataset.v1.DatasetInfo\"2\n\x16ValidateDatasetRequest\x12\x18\n\ndataset_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"Y\n\x17ValidateDatasetMetadata\x12\x12\n\ndataset_id\x18\x01 \x01(\t\x12\x12\n\nvalid_rows\x18\x02 \x01(\x03\x12\x16\n\x0eprocessed_rows\x18\x03 \x01(\x03\"|\n\x17ValidateDatasetResponse\x12\x12\n\ndataset_id\x18\x01 \x01(\t\x12\x10\n\x08is_valid\x18\x02 \x01(\x08\x12;\n\x06\x65rrors\x18\x03 \x03(\x0b\x32+.yandex.cloud.ai.dataset.v1.ValidationError\"0\n\x14\x44\x65leteDatasetRequest\x12\x18\n\ndataset_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\x17\n\x15\x44\x65leteDatasetResponse\"\xbd\x02\n\x14\x43reateDatasetRequest\x12\x1a\n\x04name\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=63\x12\x1f\n\tfolder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x10\n\x08metadata\x18\x04 \x01(\t\x12\x1f\n\ttask_type\x18\x05 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12L\n\x06labels\x18\x06 \x03(\x0b\x32<.yandex.cloud.ai.dataset.v1.CreateDatasetRequest.LabelsEntry\x12#\n\rupload_format\x18\x07 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"e\n\x15\x43reateDatasetResponse\x12\x12\n\ndataset_id\x18\x01 \x01(\t\x12\x38\n\x07\x64\x61taset\x18\x02 \x01(\x0b\x32\'.yandex.cloud.ai.dataset.v1.DatasetInfo\"\x81\x02\n\x14UpdateDatasetRequest\x12\x18\n\ndataset_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12L\n\x06labels\x18\x05 \x03(\x0b\x32<.yandex.cloud.ai.dataset.v1.UpdateDatasetRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"Q\n\x15UpdateDatasetResponse\x12\x38\n\x07\x64\x61taset\x18\x01 \x01(\x0b\x32\'.yandex.cloud.ai.dataset.v1.DatasetInfo\"P\n\x18GetUploadDraftUrlRequest\x12\x18\n\ndataset_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1a\n\nsize_bytes\x18\x02 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\"C\n\x19GetUploadDraftUrlResponse\x12\x12\n\ndataset_id\x18\x01 \x01(\t\x12\x12\n\nupload_url\x18\x02 \x01(\t\"g\n StartMultipartUploadDraftRequest\x12\x18\n\ndataset_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1a\n\nsize_bytes\x18\x02 \x01(\x03\x42\x06\xfa\xc7\x31\x02>0\x12\r\n\x05parts\x18\x03 \x01(\x03\"V\n!StartMultipartUploadDraftResponse\x12\x12\n\ndataset_id\x18\x01 \x01(\t\x12\x1d\n\x15multipart_upload_urls\x18\x02 \x03(\t\"E\n\x10UploadedPartInfo\x12\x1d\n\x08part_num\x18\x01 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x31-10000\x12\x12\n\x04\x65tag\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"\x83\x01\n!FinishMultipartUploadDraftRequest\x12\x18\n\ndataset_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x44\n\x0euploaded_parts\x18\x02 \x03(\x0b\x32,.yandex.cloud.ai.dataset.v1.UploadedPartInfo\"8\n\"FinishMultipartUploadDraftResponse\x12\x12\n\ndataset_id\x18\x01 \x01(\t\"\xcd\x01\n\x13ListDatasetsRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12>\n\x06status\x18\x02 \x01(\x0e\x32..yandex.cloud.ai.dataset.v1.DatasetInfo.Status\x12\x1c\n\x14\x64\x61taset_name_pattern\x18\x03 \x01(\t\x12\x18\n\x10task_type_filter\x18\x04 \x01(\t\x12\x11\n\tpage_size\x18\x05 \x01(\x03\x12\x12\n\npage_token\x18\x06 \x01(\t\"j\n\x14ListDatasetsResponse\x12\x39\n\x08\x64\x61tasets\x18\x01 \x03(\x0b\x32\'.yandex.cloud.ai.dataset.v1.DatasetInfo\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"3\n\x18ListUploadFormatsRequest\x12\x17\n\ttask_type\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\",\n\x19ListUploadFormatsResponse\x12\x0f\n\x07\x66ormats\x18\x01 \x03(\t\"\x12\n\x10ListTypesRequest\"\"\n\x11ListTypesResponse\x12\r\n\x05types\x18\x01 \x03(\t2\x82\x0b\n\x0e\x44\x61tasetService\x12s\n\x08\x44\x65scribe\x12\x32.yandex.cloud.ai.dataset.v1.DescribeDatasetRequest\x1a\x33.yandex.cloud.ai.dataset.v1.DescribeDatasetResponse\x12\x99\x01\n\x08Validate\x12\x32.yandex.cloud.ai.dataset.v1.ValidateDatasetRequest\x1a!.yandex.cloud.operation.Operation\"6\xb2\xd2*2\n\x17ValidateDatasetMetadata\x12\x17ValidateDatasetResponse\x12m\n\x06\x43reate\x12\x30.yandex.cloud.ai.dataset.v1.CreateDatasetRequest\x1a\x31.yandex.cloud.ai.dataset.v1.CreateDatasetResponse\x12m\n\x06Update\x12\x30.yandex.cloud.ai.dataset.v1.UpdateDatasetRequest\x1a\x31.yandex.cloud.ai.dataset.v1.UpdateDatasetResponse\x12m\n\x06\x44\x65lete\x12\x30.yandex.cloud.ai.dataset.v1.DeleteDatasetRequest\x1a\x31.yandex.cloud.ai.dataset.v1.DeleteDatasetResponse\x12i\n\x04List\x12/.yandex.cloud.ai.dataset.v1.ListDatasetsRequest\x1a\x30.yandex.cloud.ai.dataset.v1.ListDatasetsResponse\x12\x80\x01\n\x11ListUploadFormats\x12\x34.yandex.cloud.ai.dataset.v1.ListUploadFormatsRequest\x1a\x35.yandex.cloud.ai.dataset.v1.ListUploadFormatsResponse\x12\x80\x01\n\x11GetUploadDraftUrl\x12\x34.yandex.cloud.ai.dataset.v1.GetUploadDraftUrlRequest\x1a\x35.yandex.cloud.ai.dataset.v1.GetUploadDraftUrlResponse\x12\x98\x01\n\x19StartMultipartUploadDraft\x12<.yandex.cloud.ai.dataset.v1.StartMultipartUploadDraftRequest\x1a=.yandex.cloud.ai.dataset.v1.StartMultipartUploadDraftResponse\x12\x9b\x01\n\x1a\x46inishMultipartUploadDraft\x12=.yandex.cloud.ai.dataset.v1.FinishMultipartUploadDraftRequest\x1a>.yandex.cloud.ai.dataset.v1.FinishMultipartUploadDraftResponse\x12h\n\tListTypes\x12,.yandex.cloud.ai.dataset.v1.ListTypesRequest\x1a-.yandex.cloud.ai.dataset.v1.ListTypesResponseBe\n\x1eyandex.cloud.api.ai.dataset.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/dataset/v1;fomob\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,11 +35,13 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _CREATEDATASETREQUEST_LABELSENTRY._options = None
   _CREATEDATASETREQUEST_LABELSENTRY._serialized_options = b'8\001'
   _CREATEDATASETREQUEST.fields_by_name['name']._options = None
-  _CREATEDATASETREQUEST.fields_by_name['name']._serialized_options = b'\350\3071\001'
+  _CREATEDATASETREQUEST.fields_by_name['name']._serialized_options = b'\350\3071\001\212\3101\004<=63'
   _CREATEDATASETREQUEST.fields_by_name['folder_id']._options = None
-  _CREATEDATASETREQUEST.fields_by_name['folder_id']._serialized_options = b'\350\3071\001'
+  _CREATEDATASETREQUEST.fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _CREATEDATASETREQUEST.fields_by_name['task_type']._options = None
-  _CREATEDATASETREQUEST.fields_by_name['task_type']._serialized_options = b'\350\3071\001'
+  _CREATEDATASETREQUEST.fields_by_name['task_type']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _CREATEDATASETREQUEST.fields_by_name['upload_format']._options = None
+  _CREATEDATASETREQUEST.fields_by_name['upload_format']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _UPDATEDATASETREQUEST_LABELSENTRY._options = None
   _UPDATEDATASETREQUEST_LABELSENTRY._serialized_options = b'8\001'
   _UPDATEDATASETREQUEST.fields_by_name['dataset_id']._options = None
@@ -79,39 +81,43 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_DELETEDATASETRESPONSE']._serialized_start=717
   _globals['_DELETEDATASETRESPONSE']._serialized_end=740
   _globals['_CREATEDATASETREQUEST']._serialized_start=743
-  _globals['_CREATEDATASETREQUEST']._serialized_end=1022
-  _globals['_CREATEDATASETREQUEST_LABELSENTRY']._serialized_start=977
-  _globals['_CREATEDATASETREQUEST_LABELSENTRY']._serialized_end=1022
-  _globals['_CREATEDATASETRESPONSE']._serialized_start=1024
-  _globals['_CREATEDATASETRESPONSE']._serialized_end=1125
-  _globals['_UPDATEDATASETREQUEST']._serialized_start=1128
-  _globals['_UPDATEDATASETREQUEST']._serialized_end=1385
-  _globals['_UPDATEDATASETREQUEST_LABELSENTRY']._serialized_start=977
-  _globals['_UPDATEDATASETREQUEST_LABELSENTRY']._serialized_end=1022
-  _globals['_UPDATEDATASETRESPONSE']._serialized_start=1387
-  _globals['_UPDATEDATASETRESPONSE']._serialized_end=1468
-  _globals['_GETUPLOADDRAFTURLREQUEST']._serialized_start=1470
-  _globals['_GETUPLOADDRAFTURLREQUEST']._serialized_end=1550
-  _globals['_GETUPLOADDRAFTURLRESPONSE']._serialized_start=1552
-  _globals['_GETUPLOADDRAFTURLRESPONSE']._serialized_end=1619
-  _globals['_STARTMULTIPARTUPLOADDRAFTREQUEST']._serialized_start=1621
-  _globals['_STARTMULTIPARTUPLOADDRAFTREQUEST']._serialized_end=1724
-  _globals['_STARTMULTIPARTUPLOADDRAFTRESPONSE']._serialized_start=1726
-  _globals['_STARTMULTIPARTUPLOADDRAFTRESPONSE']._serialized_end=1812
-  _globals['_UPLOADEDPARTINFO']._serialized_start=1814
-  _globals['_UPLOADEDPARTINFO']._serialized_end=1883
-  _globals['_FINISHMULTIPARTUPLOADDRAFTREQUEST']._serialized_start=1886
-  _globals['_FINISHMULTIPARTUPLOADDRAFTREQUEST']._serialized_end=2017
-  _globals['_FINISHMULTIPARTUPLOADDRAFTRESPONSE']._serialized_start=2019
-  _globals['_FINISHMULTIPARTUPLOADDRAFTRESPONSE']._serialized_end=2075
-  _globals['_LISTDATASETSREQUEST']._serialized_start=2078
-  _globals['_LISTDATASETSREQUEST']._serialized_end=2218
-  _globals['_LISTDATASETSRESPONSE']._serialized_start=2220
-  _globals['_LISTDATASETSRESPONSE']._serialized_end=2301
-  _globals['_LISTUPLOADFORMATSREQUEST']._serialized_start=2303
-  _globals['_LISTUPLOADFORMATSREQUEST']._serialized_end=2354
-  _globals['_LISTUPLOADFORMATSRESPONSE']._serialized_start=2356
-  _globals['_LISTUPLOADFORMATSRESPONSE']._serialized_end=2400
-  _globals['_DATASETSERVICE']._serialized_start=2403
-  _globals['_DATASETSERVICE']._serialized_end=3707
+  _globals['_CREATEDATASETREQUEST']._serialized_end=1060
+  _globals['_CREATEDATASETREQUEST_LABELSENTRY']._serialized_start=1015
+  _globals['_CREATEDATASETREQUEST_LABELSENTRY']._serialized_end=1060
+  _globals['_CREATEDATASETRESPONSE']._serialized_start=1062
+  _globals['_CREATEDATASETRESPONSE']._serialized_end=1163
+  _globals['_UPDATEDATASETREQUEST']._serialized_start=1166
+  _globals['_UPDATEDATASETREQUEST']._serialized_end=1423
+  _globals['_UPDATEDATASETREQUEST_LABELSENTRY']._serialized_start=1015
+  _globals['_UPDATEDATASETREQUEST_LABELSENTRY']._serialized_end=1060
+  _globals['_UPDATEDATASETRESPONSE']._serialized_start=1425
+  _globals['_UPDATEDATASETRESPONSE']._serialized_end=1506
+  _globals['_GETUPLOADDRAFTURLREQUEST']._serialized_start=1508
+  _globals['_GETUPLOADDRAFTURLREQUEST']._serialized_end=1588
+  _globals['_GETUPLOADDRAFTURLRESPONSE']._serialized_start=1590
+  _globals['_GETUPLOADDRAFTURLRESPONSE']._serialized_end=1657
+  _globals['_STARTMULTIPARTUPLOADDRAFTREQUEST']._serialized_start=1659
+  _globals['_STARTMULTIPARTUPLOADDRAFTREQUEST']._serialized_end=1762
+  _globals['_STARTMULTIPARTUPLOADDRAFTRESPONSE']._serialized_start=1764
+  _globals['_STARTMULTIPARTUPLOADDRAFTRESPONSE']._serialized_end=1850
+  _globals['_UPLOADEDPARTINFO']._serialized_start=1852
+  _globals['_UPLOADEDPARTINFO']._serialized_end=1921
+  _globals['_FINISHMULTIPARTUPLOADDRAFTREQUEST']._serialized_start=1924
+  _globals['_FINISHMULTIPARTUPLOADDRAFTREQUEST']._serialized_end=2055
+  _globals['_FINISHMULTIPARTUPLOADDRAFTRESPONSE']._serialized_start=2057
+  _globals['_FINISHMULTIPARTUPLOADDRAFTRESPONSE']._serialized_end=2113
+  _globals['_LISTDATASETSREQUEST']._serialized_start=2116
+  _globals['_LISTDATASETSREQUEST']._serialized_end=2321
+  _globals['_LISTDATASETSRESPONSE']._serialized_start=2323
+  _globals['_LISTDATASETSRESPONSE']._serialized_end=2429
+  _globals['_LISTUPLOADFORMATSREQUEST']._serialized_start=2431
+  _globals['_LISTUPLOADFORMATSREQUEST']._serialized_end=2482
+  _globals['_LISTUPLOADFORMATSRESPONSE']._serialized_start=2484
+  _globals['_LISTUPLOADFORMATSRESPONSE']._serialized_end=2528
+  _globals['_LISTTYPESREQUEST']._serialized_start=2530
+  _globals['_LISTTYPESREQUEST']._serialized_end=2548
+  _globals['_LISTTYPESRESPONSE']._serialized_start=2550
+  _globals['_LISTTYPESRESPONSE']._serialized_end=2584
+  _globals['_DATASETSERVICE']._serialized_start=2587
+  _globals['_DATASETSERVICE']._serialized_end=3997
 # @@protoc_insertion_point(module_scope)

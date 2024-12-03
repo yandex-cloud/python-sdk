@@ -78,6 +78,8 @@ class DatasetInfo(google.protobuf.message.Message):
     SIZE_BYTES_FIELD_NUMBER: builtins.int
     CREATED_BY_ID_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
+    CREATED_BY_FIELD_NUMBER: builtins.int
+    UPDATED_BY_FIELD_NUMBER: builtins.int
     dataset_id: builtins.str
     """ID of the dataset."""
     folder_id: builtins.str
@@ -97,7 +99,11 @@ class DatasetInfo(google.protobuf.message.Message):
     size_bytes: builtins.int
     """Size of the dataset."""
     created_by_id: builtins.str
+    """Deprecated. Use created_by instead"""
+    created_by: builtins.str
     """User ID of the dataset's creator."""
+    updated_by: builtins.str
+    """User ID of the dataset's last updater."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Create dataset timestamp."""
@@ -126,9 +132,11 @@ class DatasetInfo(google.protobuf.message.Message):
         size_bytes: builtins.int = ...,
         created_by_id: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        created_by: builtins.str = ...,
+        updated_by: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "created_by_id", b"created_by_id", "dataset_id", b"dataset_id", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "metadata", b"metadata", "name", b"name", "rows", b"rows", "size_bytes", b"size_bytes", "status", b"status", "task_type", b"task_type", "updated_at", b"updated_at"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "created_by", b"created_by", "created_by_id", b"created_by_id", "dataset_id", b"dataset_id", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "metadata", b"metadata", "name", b"name", "rows", b"rows", "size_bytes", b"size_bytes", "status", b"status", "task_type", b"task_type", "updated_at", b"updated_at", "updated_by", b"updated_by"]) -> None: ...
 
 global___DatasetInfo = DatasetInfo
 

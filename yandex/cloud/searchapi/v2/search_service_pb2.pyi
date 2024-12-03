@@ -30,16 +30,16 @@ class SortSpec(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         SORT_ORDER_UNSPECIFIED: SortSpec._SortOrder.ValueType  # 0
         SORT_ORDER_ASC: SortSpec._SortOrder.ValueType  # 1
-        """Direct order from most recent to oldest (default).."""
-        SORT_ORDER_DESC: SortSpec._SortOrder.ValueType  # 2
         """Reverse order from oldest to most recent."""
+        SORT_ORDER_DESC: SortSpec._SortOrder.ValueType  # 2
+        """Direct order from most recent to oldest (default)."""
 
     class SortOrder(_SortOrder, metaclass=_SortOrderEnumTypeWrapper): ...
     SORT_ORDER_UNSPECIFIED: SortSpec.SortOrder.ValueType  # 0
     SORT_ORDER_ASC: SortSpec.SortOrder.ValueType  # 1
-    """Direct order from most recent to oldest (default).."""
-    SORT_ORDER_DESC: SortSpec.SortOrder.ValueType  # 2
     """Reverse order from oldest to most recent."""
+    SORT_ORDER_DESC: SortSpec.SortOrder.ValueType  # 2
+    """Direct order from most recent to oldest (default)."""
 
     class _SortMode:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -158,6 +158,25 @@ class WebSearchRequest(google.protobuf.message.Message):
     LOCALIZATION_EN: WebSearchRequest.Localization.ValueType  # 6
     """English"""
 
+    class _Format:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _FormatEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[WebSearchRequest._Format.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        FORMAT_UNSPECIFIED: WebSearchRequest._Format.ValueType  # 0
+        FORMAT_XML: WebSearchRequest._Format.ValueType  # 1
+        """XML format (default value)"""
+        FORMAT_HTML: WebSearchRequest._Format.ValueType  # 2
+        """HTML format"""
+
+    class Format(_Format, metaclass=_FormatEnumTypeWrapper): ...
+    FORMAT_UNSPECIFIED: WebSearchRequest.Format.ValueType  # 0
+    FORMAT_XML: WebSearchRequest.Format.ValueType  # 1
+    """XML format (default value)"""
+    FORMAT_HTML: WebSearchRequest.Format.ValueType  # 2
+    """HTML format"""
+
     QUERY_FIELD_NUMBER: builtins.int
     SORT_SPEC_FIELD_NUMBER: builtins.int
     GROUP_SPEC_FIELD_NUMBER: builtins.int
@@ -165,6 +184,8 @@ class WebSearchRequest(google.protobuf.message.Message):
     REGION_FIELD_NUMBER: builtins.int
     L10N_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int
+    RESPONSE_FORMAT_FIELD_NUMBER: builtins.int
+    USER_AGENT_FIELD_NUMBER: builtins.int
     max_passages: builtins.int
     """The maximum number of passages that can be used when generating a document snippet."""
     region: builtins.str
@@ -173,6 +194,10 @@ class WebSearchRequest(google.protobuf.message.Message):
     """The notification language for a search response."""
     folder_id: builtins.str
     """ID of the folder."""
+    response_format: global___WebSearchRequest.Format.ValueType
+    """Search results format."""
+    user_agent: builtins.str
+    """User-Agent request header value."""
     @property
     def query(self) -> yandex.cloud.searchapi.v2.search_query_pb2.SearchQuery:
         """Search query."""
@@ -195,9 +220,11 @@ class WebSearchRequest(google.protobuf.message.Message):
         region: builtins.str = ...,
         l10n: global___WebSearchRequest.Localization.ValueType = ...,
         folder_id: builtins.str = ...,
+        response_format: global___WebSearchRequest.Format.ValueType = ...,
+        user_agent: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["group_spec", b"group_spec", "query", b"query", "sort_spec", b"sort_spec"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "group_spec", b"group_spec", "l10n", b"l10n", "max_passages", b"max_passages", "query", b"query", "region", b"region", "sort_spec", b"sort_spec"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "group_spec", b"group_spec", "l10n", b"l10n", "max_passages", b"max_passages", "query", b"query", "region", b"region", "response_format", b"response_format", "sort_spec", b"sort_spec", "user_agent", b"user_agent"]) -> None: ...
 
 global___WebSearchRequest = WebSearchRequest
 
@@ -207,7 +234,7 @@ class WebSearchResponse(google.protobuf.message.Message):
 
     RAW_DATA_FIELD_NUMBER: builtins.int
     raw_data: builtins.bytes
-    """Search results, usually in XML format."""
+    """Search results, either in XML or HTML format depending on the request settings."""
     def __init__(
         self,
         *,

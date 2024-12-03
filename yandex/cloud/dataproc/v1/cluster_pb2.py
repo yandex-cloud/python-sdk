@@ -16,7 +16,7 @@ from yandex.cloud.dataproc.v1 import common_pb2 as yandex_dot_cloud_dot_dataproc
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&yandex/cloud/dataproc/v1/cluster.proto\x12\x18yandex.cloud.dataproc.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a%yandex/cloud/dataproc/v1/common.proto\x1a\x1dyandex/cloud/validation.proto\"\x8a\x06\n\x07\x43luster\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x16\n\x04name\x18\x04 \x01(\tB\x08\x8a\xc8\x31\x04\x31-63\x12\x1e\n\x0b\x64\x65scription\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05\x30-256\x12G\n\x06labels\x18\x06 \x03(\x0b\x32-.yandex.cloud.dataproc.v1.Cluster.LabelsEntryB\x08\x82\xc8\x31\x04<=64\x12\x38\n\nmonitoring\x18\x07 \x03(\x0b\x32$.yandex.cloud.dataproc.v1.Monitoring\x12\x37\n\x06\x63onfig\x18\x08 \x01(\x0b\x32\'.yandex.cloud.dataproc.v1.ClusterConfig\x12\x30\n\x06health\x18\t \x01(\x0e\x32 .yandex.cloud.dataproc.v1.Health\x12\x38\n\x06status\x18\n \x01(\x0e\x32(.yandex.cloud.dataproc.v1.Cluster.Status\x12\x0f\n\x07zone_id\x18\x0b \x01(\t\x12\x1a\n\x12service_account_id\x18\x0c \x01(\t\x12\x0e\n\x06\x62ucket\x18\r \x01(\t\x12\x10\n\x08ui_proxy\x18\x0e \x01(\x08\x12\x1a\n\x12security_group_ids\x18\x0f \x03(\t\x12\x16\n\x0ehost_group_ids\x18\x10 \x03(\t\x12\x1b\n\x13\x64\x65letion_protection\x18\x11 \x01(\x08\x12\x14\n\x0clog_group_id\x18\x12 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"k\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\t\n\x05\x45RROR\x10\x03\x12\x0c\n\x08STOPPING\x10\x04\x12\x0b\n\x07STOPPED\x10\x05\x12\x0c\n\x08STARTING\x10\x06\"=\n\nMonitoring\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0c\n\x04link\x18\x03 \x01(\t\"\xf1\x03\n\x0cHadoopConfig\x12@\n\x08services\x18\x01 \x03(\x0e\x32..yandex.cloud.dataproc.v1.HadoopConfig.Service\x12J\n\nproperties\x18\x02 \x03(\x0b\x32\x36.yandex.cloud.dataproc.v1.HadoopConfig.PropertiesEntry\x12\x17\n\x0fssh_public_keys\x18\x03 \x03(\t\x12N\n\x16initialization_actions\x18\x04 \x03(\x0b\x32..yandex.cloud.dataproc.v1.InitializationAction\x1a\x31\n\x0fPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xb6\x01\n\x07Service\x12\x17\n\x13SERVICE_UNSPECIFIED\x10\x00\x12\x08\n\x04HDFS\x10\x01\x12\x08\n\x04YARN\x10\x02\x12\r\n\tMAPREDUCE\x10\x03\x12\x08\n\x04HIVE\x10\x04\x12\x07\n\x03TEZ\x10\x05\x12\r\n\tZOOKEEPER\x10\x06\x12\t\n\x05HBASE\x10\x07\x12\t\n\x05SQOOP\x10\x08\x12\t\n\x05\x46LUME\x10\t\x12\t\n\x05SPARK\x10\n\x12\x0c\n\x08ZEPPELIN\x10\x0b\x12\t\n\x05OOZIE\x10\x0c\x12\x08\n\x04LIVY\x10\r\"[\n\rClusterConfig\x12\x12\n\nversion_id\x18\x01 \x01(\t\x12\x36\n\x06hadoop\x18\x02 \x01(\x0b\x32&.yandex.cloud.dataproc.v1.HadoopConfig\"B\n\x14InitializationAction\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0c\n\x04\x61rgs\x18\x02 \x03(\t\x12\x0f\n\x07timeout\x18\x03 \x01(\x03\x42\x65\n\x1cyandex.cloud.api.dataproc.v1ZEgithub.com/yandex-cloud/go-genproto/yandex/cloud/dataproc/v1;dataprocb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&yandex/cloud/dataproc/v1/cluster.proto\x12\x18yandex.cloud.dataproc.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a%yandex/cloud/dataproc/v1/common.proto\x1a\x1dyandex/cloud/validation.proto\"\x99\x07\n\x07\x43luster\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x16\n\x04name\x18\x04 \x01(\tB\x08\x8a\xc8\x31\x04\x31-63\x12\x1e\n\x0b\x64\x65scription\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05\x30-256\x12G\n\x06labels\x18\x06 \x03(\x0b\x32-.yandex.cloud.dataproc.v1.Cluster.LabelsEntryB\x08\x82\xc8\x31\x04<=64\x12\x38\n\nmonitoring\x18\x07 \x03(\x0b\x32$.yandex.cloud.dataproc.v1.Monitoring\x12\x37\n\x06\x63onfig\x18\x08 \x01(\x0b\x32\'.yandex.cloud.dataproc.v1.ClusterConfig\x12\x30\n\x06health\x18\t \x01(\x0e\x32 .yandex.cloud.dataproc.v1.Health\x12\x38\n\x06status\x18\n \x01(\x0e\x32(.yandex.cloud.dataproc.v1.Cluster.Status\x12\x0f\n\x07zone_id\x18\x0b \x01(\t\x12\x1a\n\x12service_account_id\x18\x0c \x01(\t\x12\x0e\n\x06\x62ucket\x18\r \x01(\t\x12\x10\n\x08ui_proxy\x18\x0e \x01(\x08\x12\x1a\n\x12security_group_ids\x18\x0f \x03(\t\x12\x16\n\x0ehost_group_ids\x18\x10 \x03(\t\x12\x1b\n\x13\x64\x65letion_protection\x18\x11 \x01(\x08\x12\x14\n\x0clog_group_id\x18\x12 \x01(\t\x12\x42\n\x0b\x65nvironment\x18\x13 \x01(\x0e\x32-.yandex.cloud.dataproc.v1.Cluster.Environment\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"k\n\x06Status\x12\x12\n\x0eSTATUS_UNKNOWN\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\t\n\x05\x45RROR\x10\x03\x12\x0c\n\x08STOPPING\x10\x04\x12\x0b\n\x07STOPPED\x10\x05\x12\x0c\n\x08STARTING\x10\x06\"I\n\x0b\x45nvironment\x12\x1b\n\x17\x45NVIRONMENT_UNSPECIFIED\x10\x00\x12\x0e\n\nPRODUCTION\x10\x01\x12\r\n\tPRESTABLE\x10\x02\"=\n\nMonitoring\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x0c\n\x04link\x18\x03 \x01(\t\"\xf1\x03\n\x0cHadoopConfig\x12@\n\x08services\x18\x01 \x03(\x0e\x32..yandex.cloud.dataproc.v1.HadoopConfig.Service\x12J\n\nproperties\x18\x02 \x03(\x0b\x32\x36.yandex.cloud.dataproc.v1.HadoopConfig.PropertiesEntry\x12\x17\n\x0fssh_public_keys\x18\x03 \x03(\t\x12N\n\x16initialization_actions\x18\x04 \x03(\x0b\x32..yandex.cloud.dataproc.v1.InitializationAction\x1a\x31\n\x0fPropertiesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xb6\x01\n\x07Service\x12\x17\n\x13SERVICE_UNSPECIFIED\x10\x00\x12\x08\n\x04HDFS\x10\x01\x12\x08\n\x04YARN\x10\x02\x12\r\n\tMAPREDUCE\x10\x03\x12\x08\n\x04HIVE\x10\x04\x12\x07\n\x03TEZ\x10\x05\x12\r\n\tZOOKEEPER\x10\x06\x12\t\n\x05HBASE\x10\x07\x12\t\n\x05SQOOP\x10\x08\x12\t\n\x05\x46LUME\x10\t\x12\t\n\x05SPARK\x10\n\x12\x0c\n\x08ZEPPELIN\x10\x0b\x12\t\n\x05OOZIE\x10\x0c\x12\x08\n\x04LIVY\x10\r\"[\n\rClusterConfig\x12\x12\n\nversion_id\x18\x01 \x01(\t\x12\x36\n\x06hadoop\x18\x02 \x01(\x0b\x32&.yandex.cloud.dataproc.v1.HadoopConfig\"B\n\x14InitializationAction\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x0c\n\x04\x61rgs\x18\x02 \x03(\t\x12\x0f\n\x07timeout\x18\x03 \x01(\x03\x42\x65\n\x1cyandex.cloud.api.dataproc.v1ZEgithub.com/yandex-cloud/go-genproto/yandex/cloud/dataproc/v1;dataprocb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,21 +35,23 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _HADOOPCONFIG_PROPERTIESENTRY._options = None
   _HADOOPCONFIG_PROPERTIESENTRY._serialized_options = b'8\001'
   _globals['_CLUSTER']._serialized_start=172
-  _globals['_CLUSTER']._serialized_end=950
-  _globals['_CLUSTER_LABELSENTRY']._serialized_start=796
-  _globals['_CLUSTER_LABELSENTRY']._serialized_end=841
-  _globals['_CLUSTER_STATUS']._serialized_start=843
-  _globals['_CLUSTER_STATUS']._serialized_end=950
-  _globals['_MONITORING']._serialized_start=952
-  _globals['_MONITORING']._serialized_end=1013
-  _globals['_HADOOPCONFIG']._serialized_start=1016
-  _globals['_HADOOPCONFIG']._serialized_end=1513
-  _globals['_HADOOPCONFIG_PROPERTIESENTRY']._serialized_start=1279
-  _globals['_HADOOPCONFIG_PROPERTIESENTRY']._serialized_end=1328
-  _globals['_HADOOPCONFIG_SERVICE']._serialized_start=1331
-  _globals['_HADOOPCONFIG_SERVICE']._serialized_end=1513
-  _globals['_CLUSTERCONFIG']._serialized_start=1515
-  _globals['_CLUSTERCONFIG']._serialized_end=1606
-  _globals['_INITIALIZATIONACTION']._serialized_start=1608
-  _globals['_INITIALIZATIONACTION']._serialized_end=1674
+  _globals['_CLUSTER']._serialized_end=1093
+  _globals['_CLUSTER_LABELSENTRY']._serialized_start=864
+  _globals['_CLUSTER_LABELSENTRY']._serialized_end=909
+  _globals['_CLUSTER_STATUS']._serialized_start=911
+  _globals['_CLUSTER_STATUS']._serialized_end=1018
+  _globals['_CLUSTER_ENVIRONMENT']._serialized_start=1020
+  _globals['_CLUSTER_ENVIRONMENT']._serialized_end=1093
+  _globals['_MONITORING']._serialized_start=1095
+  _globals['_MONITORING']._serialized_end=1156
+  _globals['_HADOOPCONFIG']._serialized_start=1159
+  _globals['_HADOOPCONFIG']._serialized_end=1656
+  _globals['_HADOOPCONFIG_PROPERTIESENTRY']._serialized_start=1422
+  _globals['_HADOOPCONFIG_PROPERTIESENTRY']._serialized_end=1471
+  _globals['_HADOOPCONFIG_SERVICE']._serialized_start=1474
+  _globals['_HADOOPCONFIG_SERVICE']._serialized_end=1656
+  _globals['_CLUSTERCONFIG']._serialized_start=1658
+  _globals['_CLUSTERCONFIG']._serialized_end=1749
+  _globals['_INITIALIZATIONACTION']._serialized_start=1751
+  _globals['_INITIALIZATIONACTION']._serialized_end=1817
 # @@protoc_insertion_point(module_scope)

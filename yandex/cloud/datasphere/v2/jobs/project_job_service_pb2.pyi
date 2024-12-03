@@ -230,11 +230,16 @@ class ExecuteProjectJobResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     OUTPUT_FILES_FIELD_NUMBER: builtins.int
+    OUTPUT_FILES_ERRORS_FIELD_NUMBER: builtins.int
     OUTPUT_DATASETS_FIELD_NUMBER: builtins.int
     RESULT_FIELD_NUMBER: builtins.int
     @property
     def output_files(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.datasphere.v2.jobs.jobs_pb2.StorageFile]:
         """Uploaded output files with URLs."""
+
+    @property
+    def output_files_errors(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.datasphere.v2.jobs.jobs_pb2.FileUploadError]:
+        """Output file errors"""
 
     @property
     def output_datasets(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.datasphere.v2.jobs.jobs_pb2.OutputDataset]:
@@ -248,11 +253,12 @@ class ExecuteProjectJobResponse(google.protobuf.message.Message):
         self,
         *,
         output_files: collections.abc.Iterable[yandex.cloud.datasphere.v2.jobs.jobs_pb2.StorageFile] | None = ...,
+        output_files_errors: collections.abc.Iterable[yandex.cloud.datasphere.v2.jobs.jobs_pb2.FileUploadError] | None = ...,
         output_datasets: collections.abc.Iterable[yandex.cloud.datasphere.v2.jobs.jobs_pb2.OutputDataset] | None = ...,
         result: yandex.cloud.datasphere.v2.jobs.jobs_pb2.JobResult | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["result", b"result"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["output_datasets", b"output_datasets", "output_files", b"output_files", "result", b"result"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["output_datasets", b"output_datasets", "output_files", b"output_files", "output_files_errors", b"output_files_errors", "result", b"result"]) -> None: ...
 
 global___ExecuteProjectJobResponse = ExecuteProjectJobResponse
 

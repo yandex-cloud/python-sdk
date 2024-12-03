@@ -450,20 +450,38 @@ class ListDatasetsRequest(google.protobuf.message.Message):
     FOLDER_ID_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
     DATASET_NAME_PATTERN_FIELD_NUMBER: builtins.int
+    TASK_TYPE_FILTER_FIELD_NUMBER: builtins.int
+    PAGE_SIZE_FIELD_NUMBER: builtins.int
+    PAGE_TOKEN_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """Folder ID of the datasets to list."""
     status: yandex.cloud.ai.dataset.v1.dataset_pb2.DatasetInfo.Status.ValueType
     """Status of the datasets to list. Optional."""
     dataset_name_pattern: builtins.str
     """Name substring of the datasets to list. Optional."""
+    task_type_filter: builtins.str
+    """Task type of the datasets to list. Optional."""
+    page_size: builtins.int
+    """The maximum number of results per page to return. If the number of available
+    results is larger than [page_size],
+    the service returns a [ListDatasetsResponse.next_page_token]
+    that can be used to get the next page of results in subsequent list requests. Default value: 100.
+    """
+    page_token: builtins.str
+    """Page token. To get the next page of results, set [page_token] to the
+    [ListDatasetsResponse.next_page_token] returned by a previous list request.
+    """
     def __init__(
         self,
         *,
         folder_id: builtins.str = ...,
         status: yandex.cloud.ai.dataset.v1.dataset_pb2.DatasetInfo.Status.ValueType = ...,
         dataset_name_pattern: builtins.str = ...,
+        task_type_filter: builtins.str = ...,
+        page_size: builtins.int = ...,
+        page_token: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["dataset_name_pattern", b"dataset_name_pattern", "folder_id", b"folder_id", "status", b"status"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["dataset_name_pattern", b"dataset_name_pattern", "folder_id", b"folder_id", "page_size", b"page_size", "page_token", b"page_token", "status", b"status", "task_type_filter", b"task_type_filter"]) -> None: ...
 
 global___ListDatasetsRequest = ListDatasetsRequest
 
@@ -472,6 +490,14 @@ class ListDatasetsResponse(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     DATASETS_FIELD_NUMBER: builtins.int
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    next_page_token: builtins.str
+    """[next_page_token] token allows you to get the next page of results for list requests.
+    If the number of results is larger than [ListDatasetsRequest.page_size], use
+    the [next_page_token] as the value for the [ListDatasetsRequest.page_token] query parameter
+    in the next list request. Each subsequent list request will have its own
+    [next_page_token] to continue paging through the results.
+    """
     @property
     def datasets(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.ai.dataset.v1.dataset_pb2.DatasetInfo]:
         """Information about listed datasets."""
@@ -480,8 +506,9 @@ class ListDatasetsResponse(google.protobuf.message.Message):
         self,
         *,
         datasets: collections.abc.Iterable[yandex.cloud.ai.dataset.v1.dataset_pb2.DatasetInfo] | None = ...,
+        next_page_token: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["datasets", b"datasets"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["datasets", b"datasets", "next_page_token", b"next_page_token"]) -> None: ...
 
 global___ListDatasetsResponse = ListDatasetsResponse
 
@@ -518,3 +545,31 @@ class ListUploadFormatsResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["formats", b"formats"]) -> None: ...
 
 global___ListUploadFormatsResponse = ListUploadFormatsResponse
+
+@typing.final
+class ListTypesRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___ListTypesRequest = ListTypesRequest
+
+@typing.final
+class ListTypesResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TYPES_FIELD_NUMBER: builtins.int
+    @property
+    def types(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of dataset type"""
+
+    def __init__(
+        self,
+        *,
+        types: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["types", b"types"]) -> None: ...
+
+global___ListTypesResponse = ListTypesResponse

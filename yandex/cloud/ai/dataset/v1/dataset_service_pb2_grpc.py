@@ -66,6 +66,11 @@ class DatasetServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.FinishMultipartUploadDraftRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.FinishMultipartUploadDraftResponse.FromString,
                 )
+        self.ListTypes = channel.unary_unary(
+                '/yandex.cloud.ai.dataset.v1.DatasetService/ListTypes',
+                request_serializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.ListTypesRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.ListTypesResponse.FromString,
+                )
 
 
 class DatasetServiceServicer(object):
@@ -143,6 +148,13 @@ class DatasetServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListTypes(self, request, context):
+        """Returns a list of dataset types
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_DatasetServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -195,6 +207,11 @@ def add_DatasetServiceServicer_to_server(servicer, server):
                     servicer.FinishMultipartUploadDraft,
                     request_deserializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.FinishMultipartUploadDraftRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.FinishMultipartUploadDraftResponse.SerializeToString,
+            ),
+            'ListTypes': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListTypes,
+                    request_deserializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.ListTypesRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.ListTypesResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -374,5 +391,22 @@ class DatasetService(object):
         return grpc.experimental.unary_unary(request, target, '/yandex.cloud.ai.dataset.v1.DatasetService/FinishMultipartUploadDraft',
             yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.FinishMultipartUploadDraftRequest.SerializeToString,
             yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.FinishMultipartUploadDraftResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListTypes(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.ai.dataset.v1.DatasetService/ListTypes',
+            yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.ListTypesRequest.SerializeToString,
+            yandex_dot_cloud_dot_ai_dot_dataset_dot_v1_dot_dataset__service__pb2.ListTypesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

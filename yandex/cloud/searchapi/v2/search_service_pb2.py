@@ -18,7 +18,7 @@ from yandex.cloud.searchapi.v2 import search_query_pb2 as yandex_dot_cloud_dot_s
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n.yandex/cloud/searchapi/v2/search_service.proto\x12\x19yandex.cloud.searchapi.v2\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a,yandex/cloud/searchapi/v2/search_query.proto\x1a\x1cgoogle/api/annotations.proto\"\xba\x02\n\x08SortSpec\x12?\n\tsort_mode\x18\x01 \x01(\x0e\x32,.yandex.cloud.searchapi.v2.SortSpec.SortMode\x12\x41\n\nsort_order\x18\x02 \x01(\x0e\x32-.yandex.cloud.searchapi.v2.SortSpec.SortOrder\"P\n\tSortOrder\x12\x1a\n\x16SORT_ORDER_UNSPECIFIED\x10\x00\x12\x12\n\x0eSORT_ORDER_ASC\x10\x01\x12\x13\n\x0fSORT_ORDER_DESC\x10\x02\"X\n\x08SortMode\x12\x19\n\x15SORT_MODE_UNSPECIFIED\x10\x00\x12\x1a\n\x16SORT_MODE_BY_RELEVANCE\x10\x01\x12\x15\n\x11SORT_MODE_BY_TIME\x10\x02\"\xe5\x01\n\tGroupSpec\x12\x42\n\ngroup_mode\x18\x01 \x01(\x0e\x32..yandex.cloud.searchapi.v2.GroupSpec.GroupMode\x12!\n\x0egroups_on_page\x18\x02 \x01(\x03\x42\t\xfa\xc7\x31\x05\x31-100\x12\x1e\n\rdocs_in_group\x18\x03 \x01(\x03\x42\x07\xfa\xc7\x31\x03\x31-3\"Q\n\tGroupMode\x12\x1a\n\x16GROUP_MODE_UNSPECIFIED\x10\x00\x12\x13\n\x0fGROUP_MODE_FLAT\x10\x01\x12\x13\n\x0fGROUP_MODE_DEEP\x10\x02\"\x82\x04\n\x10WebSearchRequest\x12;\n\x05query\x18\x01 \x01(\x0b\x32&.yandex.cloud.searchapi.v2.SearchQueryB\x04\xe8\xc7\x31\x01\x12\x36\n\tsort_spec\x18\x02 \x01(\x0b\x32#.yandex.cloud.searchapi.v2.SortSpec\x12\x38\n\ngroup_spec\x18\x03 \x01(\x0b\x32$.yandex.cloud.searchapi.v2.GroupSpec\x12\x1d\n\x0cmax_passages\x18\x04 \x01(\x03\x42\x07\xfa\xc7\x31\x03\x31-5\x12\x0e\n\x06region\x18\x05 \x01(\t\x12\x46\n\x04l10n\x18\x06 \x01(\x0e\x32\x38.yandex.cloud.searchapi.v2.WebSearchRequest.Localization\x12\x1b\n\tfolder_id\x18\x07 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"\xaa\x01\n\x0cLocalization\x12\x1c\n\x18LOCALIZATION_UNSPECIFIED\x10\x00\x12\x13\n\x0fLOCALIZATION_RU\x10\x01\x12\x13\n\x0fLOCALIZATION_UK\x10\x02\x12\x13\n\x0fLOCALIZATION_BE\x10\x03\x12\x13\n\x0fLOCALIZATION_KK\x10\x04\x12\x13\n\x0fLOCALIZATION_TR\x10\x05\x12\x13\n\x0fLOCALIZATION_EN\x10\x06\"+\n\x11WebSearchResponse\x12\x16\n\x08raw_data\x18\x01 \x01(\x0c\x42\x04\xe8\xc7\x31\x01\x32\xa9\x01\n\x15WebSearchAsyncService\x12\x8f\x01\n\x06Search\x12+.yandex.cloud.searchapi.v2.WebSearchRequest\x1a!.yandex.cloud.operation.Operation\"5\xb2\xd2*\x13\x12\x11WebSearchResponse\x82\xd3\xe4\x93\x02\x18\"\x13/v2/web/searchAsync:\x01*Be\n\x1ayandex.cloud.api.search.v2ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/searchapi/v2;searchapib\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n.yandex/cloud/searchapi/v2/search_service.proto\x12\x19yandex.cloud.searchapi.v2\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a,yandex/cloud/searchapi/v2/search_query.proto\x1a\x1cgoogle/api/annotations.proto\"\xba\x02\n\x08SortSpec\x12?\n\tsort_mode\x18\x01 \x01(\x0e\x32,.yandex.cloud.searchapi.v2.SortSpec.SortMode\x12\x41\n\nsort_order\x18\x02 \x01(\x0e\x32-.yandex.cloud.searchapi.v2.SortSpec.SortOrder\"P\n\tSortOrder\x12\x1a\n\x16SORT_ORDER_UNSPECIFIED\x10\x00\x12\x12\n\x0eSORT_ORDER_ASC\x10\x01\x12\x13\n\x0fSORT_ORDER_DESC\x10\x02\"X\n\x08SortMode\x12\x19\n\x15SORT_MODE_UNSPECIFIED\x10\x00\x12\x1a\n\x16SORT_MODE_BY_RELEVANCE\x10\x01\x12\x15\n\x11SORT_MODE_BY_TIME\x10\x02\"\xe5\x01\n\tGroupSpec\x12\x42\n\ngroup_mode\x18\x01 \x01(\x0e\x32..yandex.cloud.searchapi.v2.GroupSpec.GroupMode\x12!\n\x0egroups_on_page\x18\x02 \x01(\x03\x42\t\xfa\xc7\x31\x05\x31-100\x12\x1e\n\rdocs_in_group\x18\x03 \x01(\x03\x42\x07\xfa\xc7\x31\x03\x31-3\"Q\n\tGroupMode\x12\x1a\n\x16GROUP_MODE_UNSPECIFIED\x10\x00\x12\x13\n\x0fGROUP_MODE_FLAT\x10\x01\x12\x13\n\x0fGROUP_MODE_DEEP\x10\x02\"\xb1\x05\n\x10WebSearchRequest\x12;\n\x05query\x18\x01 \x01(\x0b\x32&.yandex.cloud.searchapi.v2.SearchQueryB\x04\xe8\xc7\x31\x01\x12\x36\n\tsort_spec\x18\x02 \x01(\x0b\x32#.yandex.cloud.searchapi.v2.SortSpec\x12\x38\n\ngroup_spec\x18\x03 \x01(\x0b\x32$.yandex.cloud.searchapi.v2.GroupSpec\x12\x1d\n\x0cmax_passages\x18\x04 \x01(\x03\x42\x07\xfa\xc7\x31\x03\x31-5\x12\x0e\n\x06region\x18\x05 \x01(\t\x12\x46\n\x04l10n\x18\x06 \x01(\x0e\x32\x38.yandex.cloud.searchapi.v2.WebSearchRequest.Localization\x12\x1b\n\tfolder_id\x18\x07 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12K\n\x0fresponse_format\x18\x08 \x01(\x0e\x32\x32.yandex.cloud.searchapi.v2.WebSearchRequest.Format\x12\x1d\n\nuser_agent\x18\t \x01(\tB\t\x8a\xc8\x31\x05<=200\"\xaa\x01\n\x0cLocalization\x12\x1c\n\x18LOCALIZATION_UNSPECIFIED\x10\x00\x12\x13\n\x0fLOCALIZATION_RU\x10\x01\x12\x13\n\x0fLOCALIZATION_UK\x10\x02\x12\x13\n\x0fLOCALIZATION_BE\x10\x03\x12\x13\n\x0fLOCALIZATION_KK\x10\x04\x12\x13\n\x0fLOCALIZATION_TR\x10\x05\x12\x13\n\x0fLOCALIZATION_EN\x10\x06\"A\n\x06\x46ormat\x12\x16\n\x12\x46ORMAT_UNSPECIFIED\x10\x00\x12\x0e\n\nFORMAT_XML\x10\x01\x12\x0f\n\x0b\x46ORMAT_HTML\x10\x02\"+\n\x11WebSearchResponse\x12\x16\n\x08raw_data\x18\x01 \x01(\x0c\x42\x04\xe8\xc7\x31\x01\x32\xa9\x01\n\x15WebSearchAsyncService\x12\x8f\x01\n\x06Search\x12+.yandex.cloud.searchapi.v2.WebSearchRequest\x1a!.yandex.cloud.operation.Operation\"5\xb2\xd2*\x13\x12\x11WebSearchResponse\x82\xd3\xe4\x93\x02\x18\"\x13/v2/web/searchAsync:\x01*2y\n\x10WebSearchService\x12\x65\n\x06Search\x12+.yandex.cloud.searchapi.v2.WebSearchRequest\x1a,.yandex.cloud.searchapi.v2.WebSearchResponse\"\x00\x42\x65\n\x1ayandex.cloud.api.search.v2ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/searchapi/v2;searchapib\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,6 +36,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _WEBSEARCHREQUEST.fields_by_name['max_passages']._serialized_options = b'\372\3071\0031-5'
   _WEBSEARCHREQUEST.fields_by_name['folder_id']._options = None
   _WEBSEARCHREQUEST.fields_by_name['folder_id']._serialized_options = b'\212\3101\004<=50'
+  _WEBSEARCHREQUEST.fields_by_name['user_agent']._options = None
+  _WEBSEARCHREQUEST.fields_by_name['user_agent']._serialized_options = b'\212\3101\005<=200'
   _WEBSEARCHRESPONSE.fields_by_name['raw_data']._options = None
   _WEBSEARCHRESPONSE.fields_by_name['raw_data']._serialized_options = b'\350\3071\001'
   _WEBSEARCHASYNCSERVICE.methods_by_name['Search']._options = None
@@ -51,11 +53,15 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_GROUPSPEC_GROUPMODE']._serialized_start=724
   _globals['_GROUPSPEC_GROUPMODE']._serialized_end=805
   _globals['_WEBSEARCHREQUEST']._serialized_start=808
-  _globals['_WEBSEARCHREQUEST']._serialized_end=1322
-  _globals['_WEBSEARCHREQUEST_LOCALIZATION']._serialized_start=1152
-  _globals['_WEBSEARCHREQUEST_LOCALIZATION']._serialized_end=1322
-  _globals['_WEBSEARCHRESPONSE']._serialized_start=1324
-  _globals['_WEBSEARCHRESPONSE']._serialized_end=1367
-  _globals['_WEBSEARCHASYNCSERVICE']._serialized_start=1370
-  _globals['_WEBSEARCHASYNCSERVICE']._serialized_end=1539
+  _globals['_WEBSEARCHREQUEST']._serialized_end=1497
+  _globals['_WEBSEARCHREQUEST_LOCALIZATION']._serialized_start=1260
+  _globals['_WEBSEARCHREQUEST_LOCALIZATION']._serialized_end=1430
+  _globals['_WEBSEARCHREQUEST_FORMAT']._serialized_start=1432
+  _globals['_WEBSEARCHREQUEST_FORMAT']._serialized_end=1497
+  _globals['_WEBSEARCHRESPONSE']._serialized_start=1499
+  _globals['_WEBSEARCHRESPONSE']._serialized_end=1542
+  _globals['_WEBSEARCHASYNCSERVICE']._serialized_start=1545
+  _globals['_WEBSEARCHASYNCSERVICE']._serialized_end=1714
+  _globals['_WEBSEARCHSERVICE']._serialized_start=1716
+  _globals['_WEBSEARCHSERVICE']._serialized_end=1837
 # @@protoc_insertion_point(module_scope)

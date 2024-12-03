@@ -75,10 +75,30 @@ class SearchQuery(google.protobuf.message.Message):
     and those with profanity are excluded from search results.
     """
 
+    class _FixTypoMode:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _FixTypoModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[SearchQuery._FixTypoMode.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        FIX_TYPO_MODE_UNSPECIFIED: SearchQuery._FixTypoMode.ValueType  # 0
+        FIX_TYPO_MODE_ON: SearchQuery._FixTypoMode.ValueType  # 1
+        """Automatically correct typos (default value)."""
+        FIX_TYPO_MODE_OFF: SearchQuery._FixTypoMode.ValueType  # 2
+        """Autocorrection is off."""
+
+    class FixTypoMode(_FixTypoMode, metaclass=_FixTypoModeEnumTypeWrapper): ...
+    FIX_TYPO_MODE_UNSPECIFIED: SearchQuery.FixTypoMode.ValueType  # 0
+    FIX_TYPO_MODE_ON: SearchQuery.FixTypoMode.ValueType  # 1
+    """Automatically correct typos (default value)."""
+    FIX_TYPO_MODE_OFF: SearchQuery.FixTypoMode.ValueType  # 2
+    """Autocorrection is off."""
+
     SEARCH_TYPE_FIELD_NUMBER: builtins.int
     QUERY_TEXT_FIELD_NUMBER: builtins.int
     FAMILY_MODE_FIELD_NUMBER: builtins.int
     PAGE_FIELD_NUMBER: builtins.int
+    FIX_TYPO_MODE_FIELD_NUMBER: builtins.int
     search_type: global___SearchQuery.SearchType.ValueType
     """Search type that determines the domain name that will be used for the search queries."""
     query_text: builtins.str
@@ -87,6 +107,8 @@ class SearchQuery(google.protobuf.message.Message):
     """Rule for filtering search results and determines whether any documents should be excluded."""
     page: builtins.int
     """The number of a requested page with search results"""
+    fix_typo_mode: global___SearchQuery.FixTypoMode.ValueType
+    """Typos autocorrections mode"""
     def __init__(
         self,
         *,
@@ -94,7 +116,8 @@ class SearchQuery(google.protobuf.message.Message):
         query_text: builtins.str = ...,
         family_mode: global___SearchQuery.FamilyMode.ValueType = ...,
         page: builtins.int = ...,
+        fix_typo_mode: global___SearchQuery.FixTypoMode.ValueType = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["family_mode", b"family_mode", "page", b"page", "query_text", b"query_text", "search_type", b"search_type"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["family_mode", b"family_mode", "fix_typo_mode", b"fix_typo_mode", "page", b"page", "query_text", b"query_text", "search_type", b"search_type"]) -> None: ...
 
 global___SearchQuery = SearchQuery

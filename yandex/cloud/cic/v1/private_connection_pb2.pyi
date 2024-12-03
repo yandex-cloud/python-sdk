@@ -50,6 +50,7 @@ class PrivateConnection(google.protobuf.message.Message):
         def next_hop(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
             """PeerIp.
             It's an ip with just an ipAddress format without mask.
+            Will be removed in some next release
             """
 
         def __init__(
