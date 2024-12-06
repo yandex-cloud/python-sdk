@@ -233,7 +233,7 @@ class ClickhouseSource(google.protobuf.message.Message):
     def connection(self) -> global___ClickhouseConnection: ...
     @property
     def include_tables(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """While list of tables for replication. If none or empty list is presented - will
+        """White list of tables for replication. If none or empty list is presented - will
         replicate all tables. Can contain * patterns.
         """
 

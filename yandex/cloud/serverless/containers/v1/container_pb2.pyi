@@ -22,6 +22,29 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+class _MetadataOption:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _MetadataOptionEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_MetadataOption.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    METADATA_OPTION_UNSPECIFIED: _MetadataOption.ValueType  # 0
+    """Option is default"""
+    ENABLED: _MetadataOption.ValueType  # 1
+    """Option is enabled"""
+    DISABLED: _MetadataOption.ValueType  # 2
+    """Option is disabled"""
+
+class MetadataOption(_MetadataOption, metaclass=_MetadataOptionEnumTypeWrapper): ...
+
+METADATA_OPTION_UNSPECIFIED: MetadataOption.ValueType  # 0
+"""Option is default"""
+ENABLED: MetadataOption.ValueType  # 1
+"""Option is enabled"""
+DISABLED: MetadataOption.ValueType  # 2
+"""Option is disabled"""
+global___MetadataOption = MetadataOption
+
 @typing.final
 class Container(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
@@ -159,6 +182,7 @@ class Revision(google.protobuf.message.Message):
     STORAGE_MOUNTS_FIELD_NUMBER: builtins.int
     MOUNTS_FIELD_NUMBER: builtins.int
     RUNTIME_FIELD_NUMBER: builtins.int
+    METADATA_OPTIONS_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the revision."""
     container_id: builtins.str
@@ -225,6 +249,10 @@ class Revision(google.protobuf.message.Message):
     def runtime(self) -> global___Runtime:
         """The container's execution mode"""
 
+    @property
+    def metadata_options(self) -> global___MetadataOptions:
+        """Metadata options for the revision."""
+
     def __init__(
         self,
         *,
@@ -246,9 +274,10 @@ class Revision(google.protobuf.message.Message):
         storage_mounts: collections.abc.Iterable[global___StorageMount] | None = ...,
         mounts: collections.abc.Iterable[global___Mount] | None = ...,
         runtime: global___Runtime | None = ...,
+        metadata_options: global___MetadataOptions | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["connectivity", b"connectivity", "created_at", b"created_at", "execution_timeout", b"execution_timeout", "image", b"image", "log_options", b"log_options", "provision_policy", b"provision_policy", "resources", b"resources", "runtime", b"runtime", "scaling_policy", b"scaling_policy"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["concurrency", b"concurrency", "connectivity", b"connectivity", "container_id", b"container_id", "created_at", b"created_at", "description", b"description", "execution_timeout", b"execution_timeout", "id", b"id", "image", b"image", "log_options", b"log_options", "mounts", b"mounts", "provision_policy", b"provision_policy", "resources", b"resources", "runtime", b"runtime", "scaling_policy", b"scaling_policy", "secrets", b"secrets", "service_account_id", b"service_account_id", "status", b"status", "storage_mounts", b"storage_mounts"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["connectivity", b"connectivity", "created_at", b"created_at", "execution_timeout", b"execution_timeout", "image", b"image", "log_options", b"log_options", "metadata_options", b"metadata_options", "provision_policy", b"provision_policy", "resources", b"resources", "runtime", b"runtime", "scaling_policy", b"scaling_policy"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["concurrency", b"concurrency", "connectivity", b"connectivity", "container_id", b"container_id", "created_at", b"created_at", "description", b"description", "execution_timeout", b"execution_timeout", "id", b"id", "image", b"image", "log_options", b"log_options", "metadata_options", b"metadata_options", "mounts", b"mounts", "provision_policy", b"provision_policy", "resources", b"resources", "runtime", b"runtime", "scaling_policy", b"scaling_policy", "secrets", b"secrets", "service_account_id", b"service_account_id", "status", b"status", "storage_mounts", b"storage_mounts"]) -> None: ...
 
 global___Revision = Revision
 
@@ -683,3 +712,23 @@ class Runtime(google.protobuf.message.Message):
     def WhichOneof(self, oneof_group: typing.Literal["type", b"type"]) -> typing.Literal["http", "task"] | None: ...
 
 global___Runtime = Runtime
+
+@typing.final
+class MetadataOptions(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    GCE_HTTP_ENDPOINT_FIELD_NUMBER: builtins.int
+    AWS_V1_HTTP_ENDPOINT_FIELD_NUMBER: builtins.int
+    gce_http_endpoint: global___MetadataOption.ValueType
+    """Enabled access to GCE flavored metadata"""
+    aws_v1_http_endpoint: global___MetadataOption.ValueType
+    """Enabled access to AWS flavored metadata (IMDSv1)"""
+    def __init__(
+        self,
+        *,
+        gce_http_endpoint: global___MetadataOption.ValueType = ...,
+        aws_v1_http_endpoint: global___MetadataOption.ValueType = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["aws_v1_http_endpoint", b"aws_v1_http_endpoint", "gce_http_endpoint", b"gce_http_endpoint"]) -> None: ...
+
+global___MetadataOptions = MetadataOptions

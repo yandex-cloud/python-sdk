@@ -110,6 +110,7 @@ class YDSTarget(google.protobuf.message.Message):
     STREAM_FIELD_NUMBER: builtins.int
     SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     SAVE_TX_ORDER_FIELD_NUMBER: builtins.int
+    COMPRESSION_CODEC_FIELD_NUMBER: builtins.int
     SERIALIZER_FIELD_NUMBER: builtins.int
     ENDPOINT_FIELD_NUMBER: builtins.int
     SUBNET_ID_FIELD_NUMBER: builtins.int
@@ -125,6 +126,7 @@ class YDSTarget(google.protobuf.message.Message):
     Not to split events queue into separate per-table queues.
     Incompatible with setting Topic prefix, only with Topic full name.
     """
+    compression_codec: global___YdsCompressionCodec.ValueType
     endpoint: builtins.str
     """for dedicated db"""
     subnet_id: builtins.str
@@ -144,12 +146,13 @@ class YDSTarget(google.protobuf.message.Message):
         stream: builtins.str = ...,
         service_account_id: builtins.str = ...,
         save_tx_order: builtins.bool = ...,
+        compression_codec: global___YdsCompressionCodec.ValueType = ...,
         serializer: yandex.cloud.datatransfer.v1.endpoint.serializers_pb2.Serializer | None = ...,
         endpoint: builtins.str = ...,
         subnet_id: builtins.str = ...,
         security_groups: collections.abc.Iterable[builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["serializer", b"serializer"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["database", b"database", "endpoint", b"endpoint", "save_tx_order", b"save_tx_order", "security_groups", b"security_groups", "serializer", b"serializer", "service_account_id", b"service_account_id", "stream", b"stream", "subnet_id", b"subnet_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["compression_codec", b"compression_codec", "database", b"database", "endpoint", b"endpoint", "save_tx_order", b"save_tx_order", "security_groups", b"security_groups", "serializer", b"serializer", "service_account_id", b"service_account_id", "stream", b"stream", "subnet_id", b"subnet_id"]) -> None: ...
 
 global___YDSTarget = YDSTarget

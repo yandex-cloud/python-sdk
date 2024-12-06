@@ -4,10 +4,11 @@ import grpc
 
 from yandex.cloud.ai.assistants.v1.searchindex import search_index_file_pb2 as yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_searchindex_dot_search__index__file__pb2
 from yandex.cloud.ai.assistants.v1.searchindex import search_index_file_service_pb2 as yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_searchindex_dot_search__index__file__service__pb2
+from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 
 
 class SearchIndexFileServiceStub(object):
-    """ThreadService provides operations for managing files within search indexes.
+    """SearchIndexFileService provides operations for managing files within search indexes.
     """
 
     def __init__(self, channel):
@@ -16,6 +17,11 @@ class SearchIndexFileServiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
+        self.BatchCreate = channel.unary_unary(
+                '/yandex.cloud.ai.assistants.v1.searchindex.SearchIndexFileService/BatchCreate',
+                request_serializer=yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_searchindex_dot_search__index__file__service__pb2.BatchCreateSearchIndexFileRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                )
         self.Get = channel.unary_unary(
                 '/yandex.cloud.ai.assistants.v1.searchindex.SearchIndexFileService/Get',
                 request_serializer=yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_searchindex_dot_search__index__file__service__pb2.GetSearchIndexFileRequest.SerializeToString,
@@ -29,8 +35,15 @@ class SearchIndexFileServiceStub(object):
 
 
 class SearchIndexFileServiceServicer(object):
-    """ThreadService provides operations for managing files within search indexes.
+    """SearchIndexFileService provides operations for managing files within search indexes.
     """
+
+    def BatchCreate(self, request, context):
+        """Creates multiple files within a search index in [asynchronous mode](/docs/foundation-models/concepts/#working-mode).
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
 
     def Get(self, request, context):
         """Retrieves details of a specific file that has been indexed within a search index.
@@ -49,6 +62,11 @@ class SearchIndexFileServiceServicer(object):
 
 def add_SearchIndexFileServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
+            'BatchCreate': grpc.unary_unary_rpc_method_handler(
+                    servicer.BatchCreate,
+                    request_deserializer=yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_searchindex_dot_search__index__file__service__pb2.BatchCreateSearchIndexFileRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
             'Get': grpc.unary_unary_rpc_method_handler(
                     servicer.Get,
                     request_deserializer=yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_searchindex_dot_search__index__file__service__pb2.GetSearchIndexFileRequest.FromString,
@@ -67,8 +85,25 @@ def add_SearchIndexFileServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class SearchIndexFileService(object):
-    """ThreadService provides operations for managing files within search indexes.
+    """SearchIndexFileService provides operations for managing files within search indexes.
     """
+
+    @staticmethod
+    def BatchCreate(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/yandex.cloud.ai.assistants.v1.searchindex.SearchIndexFileService/BatchCreate',
+            yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_searchindex_dot_search__index__file__service__pb2.BatchCreateSearchIndexFileRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def Get(request,

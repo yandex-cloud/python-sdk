@@ -85,6 +85,7 @@ class JobParameters(google.protobuf.message.Message):
     ARGUMENTS_FIELD_NUMBER: builtins.int
     OUTPUT_DATASETS_FIELD_NUMBER: builtins.int
     GRACEFUL_SHUTDOWN_PARAMETERS_FIELD_NUMBER: builtins.int
+    SPARK_PARAMETERS_FIELD_NUMBER: builtins.int
     cmd: builtins.str
     """Job run command."""
     attach_project_disk: builtins.bool
@@ -129,6 +130,10 @@ class JobParameters(google.protobuf.message.Message):
     def graceful_shutdown_parameters(self) -> global___GracefulShutdownParameters:
         """Graceful shutdown settings."""
 
+    @property
+    def spark_parameters(self) -> global___SparkParameters:
+        """Spark connector settings."""
+
     def __init__(
         self,
         *,
@@ -144,9 +149,10 @@ class JobParameters(google.protobuf.message.Message):
         arguments: collections.abc.Iterable[global___Argument] | None = ...,
         output_datasets: collections.abc.Iterable[global___OutputDatasetDesc] | None = ...,
         graceful_shutdown_parameters: global___GracefulShutdownParameters | None = ...,
+        spark_parameters: global___SparkParameters | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["env", b"env", "extended_working_storage", b"extended_working_storage", "graceful_shutdown_parameters", b"graceful_shutdown_parameters"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["arguments", b"arguments", "attach_project_disk", b"attach_project_disk", "cloud_instance_types", b"cloud_instance_types", "cmd", b"cmd", "dataset_ids", b"dataset_ids", "env", b"env", "extended_working_storage", b"extended_working_storage", "graceful_shutdown_parameters", b"graceful_shutdown_parameters", "input_files", b"input_files", "output_datasets", b"output_datasets", "output_files", b"output_files", "s3_mount_ids", b"s3_mount_ids"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["env", b"env", "extended_working_storage", b"extended_working_storage", "graceful_shutdown_parameters", b"graceful_shutdown_parameters", "spark_parameters", b"spark_parameters"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["arguments", b"arguments", "attach_project_disk", b"attach_project_disk", "cloud_instance_types", b"cloud_instance_types", "cmd", b"cmd", "dataset_ids", b"dataset_ids", "env", b"env", "extended_working_storage", b"extended_working_storage", "graceful_shutdown_parameters", b"graceful_shutdown_parameters", "input_files", b"input_files", "output_datasets", b"output_datasets", "output_files", b"output_files", "s3_mount_ids", b"s3_mount_ids", "spark_parameters", b"spark_parameters"]) -> None: ...
 
 global___JobParameters = JobParameters
 
@@ -804,3 +810,19 @@ class JobProgress(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["create_time", b"create_time", "message", b"message", "progress", b"progress"]) -> None: ...
 
 global___JobProgress = JobProgress
+
+@typing.final
+class SparkParameters(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CONNECTOR_ID_FIELD_NUMBER: builtins.int
+    connector_id: builtins.str
+    """ID of the Spark connector."""
+    def __init__(
+        self,
+        *,
+        connector_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["connector_id", b"connector_id"]) -> None: ...
+
+global___SparkParameters = SparkParameters

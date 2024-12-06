@@ -80,6 +80,7 @@ class DatasetInfo(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     CREATED_BY_FIELD_NUMBER: builtins.int
     UPDATED_BY_FIELD_NUMBER: builtins.int
+    VALIDATION_ERROR_FIELD_NUMBER: builtins.int
     dataset_id: builtins.str
     """ID of the dataset."""
     folder_id: builtins.str
@@ -116,6 +117,8 @@ class DatasetInfo(google.protobuf.message.Message):
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Labels of the dataset"""
 
+    @property
+    def validation_error(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ValidationError]: ...
     def __init__(
         self,
         *,
@@ -134,9 +137,10 @@ class DatasetInfo(google.protobuf.message.Message):
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         created_by: builtins.str = ...,
         updated_by: builtins.str = ...,
+        validation_error: collections.abc.Iterable[global___ValidationError] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "created_by", b"created_by", "created_by_id", b"created_by_id", "dataset_id", b"dataset_id", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "metadata", b"metadata", "name", b"name", "rows", b"rows", "size_bytes", b"size_bytes", "status", b"status", "task_type", b"task_type", "updated_at", b"updated_at", "updated_by", b"updated_by"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "created_by", b"created_by", "created_by_id", b"created_by_id", "dataset_id", b"dataset_id", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "metadata", b"metadata", "name", b"name", "rows", b"rows", "size_bytes", b"size_bytes", "status", b"status", "task_type", b"task_type", "updated_at", b"updated_at", "updated_by", b"updated_by", "validation_error", b"validation_error"]) -> None: ...
 
 global___DatasetInfo = DatasetInfo
 

@@ -125,7 +125,7 @@ class MysqlSource(google.protobuf.message.Message):
     databases at the same time from this source.
     """
     user: builtins.str
-    """User for database access."""
+    """User for database access. not required as may be in connection"""
     timezone: builtins.str
     """Database timezone
 
@@ -202,7 +202,7 @@ class MysqlTarget(google.protobuf.message.Message):
     schema for service table.
     """
     user: builtins.str
-    """User for database access."""
+    """User for database access. not required as may be in connection"""
     sql_mode: builtins.str
     """Default: NO_AUTO_VALUE_ON_ZERO,NO_DIR_IN_CREATE,NO_ENGINE_SUBSTITUTION."""
     skip_constraint_checks: builtins.bool

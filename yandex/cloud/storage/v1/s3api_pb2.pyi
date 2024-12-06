@@ -538,3 +538,395 @@ class S3APIDeleteObjectTaggingResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["request_id", b"request_id", "version_id", b"version_id"]) -> None: ...
 
 global___S3APIDeleteObjectTaggingResponse = S3APIDeleteObjectTaggingResponse
+
+@typing.final
+class S3APIStartMultipartUploadResponse(google.protobuf.message.Message):
+    """Represents a response of start multipart upload request to S3."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    REQUEST_ID_FIELD_NUMBER: builtins.int
+    BUCKET_FIELD_NUMBER: builtins.int
+    KEY_FIELD_NUMBER: builtins.int
+    UPLOAD_ID_FIELD_NUMBER: builtins.int
+    request_id: builtins.str
+    """Unique request ID."""
+    bucket: builtins.str
+    """The name of the bucket in which the initiated multipart upload was initiated."""
+    key: builtins.str
+    """Object key for which the multipart upload was initiated."""
+    upload_id: builtins.str
+    """The ID of the initiated multipart upload."""
+    def __init__(
+        self,
+        *,
+        request_id: builtins.str = ...,
+        bucket: builtins.str = ...,
+        key: builtins.str = ...,
+        upload_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["bucket", b"bucket", "key", b"key", "request_id", b"request_id", "upload_id", b"upload_id"]) -> None: ...
+
+global___S3APIStartMultipartUploadResponse = S3APIStartMultipartUploadResponse
+
+@typing.final
+class S3APIUploadPartResponse(google.protobuf.message.Message):
+    """Represents a response of upload part request to S3."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    REQUEST_ID_FIELD_NUMBER: builtins.int
+    ETAG_FIELD_NUMBER: builtins.int
+    request_id: builtins.str
+    """Unique request ID."""
+    etag: builtins.str
+    """MD5 hash of the object."""
+    def __init__(
+        self,
+        *,
+        request_id: builtins.str = ...,
+        etag: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["etag", b"etag", "request_id", b"request_id"]) -> None: ...
+
+global___S3APIUploadPartResponse = S3APIUploadPartResponse
+
+@typing.final
+class S3APIListPartsResponse(google.protobuf.message.Message):
+    """Represents a response of list parts request to S3."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    BUCKET_FIELD_NUMBER: builtins.int
+    KEY_FIELD_NUMBER: builtins.int
+    UPLOAD_ID_FIELD_NUMBER: builtins.int
+    PART_NUMBER_MARKER_FIELD_NUMBER: builtins.int
+    NEXT_PART_NUMBER_MARKER_FIELD_NUMBER: builtins.int
+    MAX_PARTS_FIELD_NUMBER: builtins.int
+    IS_TRUNCATED_FIELD_NUMBER: builtins.int
+    PARTS_FIELD_NUMBER: builtins.int
+    INITIATOR_FIELD_NUMBER: builtins.int
+    OWNER_FIELD_NUMBER: builtins.int
+    STORAGE_CLASS_FIELD_NUMBER: builtins.int
+    REQUEST_ID_FIELD_NUMBER: builtins.int
+    bucket: builtins.str
+    """The name of the bucket to which the multipart upload was initiated."""
+    key: builtins.str
+    """Object key for which the multipart upload was initiated."""
+    upload_id: builtins.str
+    """Upload ID identifying the multipart upload whose parts are being listed."""
+    part_number_marker: builtins.str
+    """When a list is truncated, this element specifies the last part in the list, as
+    well as the value to use for the part-number-marker request parameter in a
+    subsequent request.
+    """
+    next_part_number_marker: builtins.str
+    """When a list is truncated, this element specifies the last part in the list, as
+    well as the value to use for the part-number-marker request parameter in a
+    subsequent request.
+    """
+    max_parts: builtins.int
+    """Maximum number of parts that were allowed in the response."""
+    is_truncated: builtins.bool
+    """Indicates whether the returned list of parts is truncated."""
+    storage_class: builtins.str
+    """Class of storage used to store the uploaded object."""
+    request_id: builtins.str
+    """Unique request ID."""
+    @property
+    def parts(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___S3APIPart]:
+        """Container for elements related to a particular part."""
+
+    @property
+    def initiator(self) -> global___S3APIOwner:
+        """Container element that identifies who initiated the multipart upload."""
+
+    @property
+    def owner(self) -> global___S3APIOwner:
+        """Container element that identifies who initiated the multipart upload."""
+
+    def __init__(
+        self,
+        *,
+        bucket: builtins.str = ...,
+        key: builtins.str = ...,
+        upload_id: builtins.str = ...,
+        part_number_marker: builtins.str = ...,
+        next_part_number_marker: builtins.str = ...,
+        max_parts: builtins.int = ...,
+        is_truncated: builtins.bool = ...,
+        parts: collections.abc.Iterable[global___S3APIPart] | None = ...,
+        initiator: global___S3APIOwner | None = ...,
+        owner: global___S3APIOwner | None = ...,
+        storage_class: builtins.str = ...,
+        request_id: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["initiator", b"initiator", "owner", b"owner"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["bucket", b"bucket", "initiator", b"initiator", "is_truncated", b"is_truncated", "key", b"key", "max_parts", b"max_parts", "next_part_number_marker", b"next_part_number_marker", "owner", b"owner", "part_number_marker", b"part_number_marker", "parts", b"parts", "request_id", b"request_id", "storage_class", b"storage_class", "upload_id", b"upload_id"]) -> None: ...
+
+global___S3APIListPartsResponse = S3APIListPartsResponse
+
+@typing.final
+class S3APIPart(google.protobuf.message.Message):
+    """Container for elements related to a part."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PART_NUMBER_FIELD_NUMBER: builtins.int
+    LAST_MODIFIED_AT_FIELD_NUMBER: builtins.int
+    SIZE_FIELD_NUMBER: builtins.int
+    ETAG_FIELD_NUMBER: builtins.int
+    part_number: builtins.int
+    """Part number identifying the part. This is a positive integer between 1 and
+    10,000.
+    """
+    size: builtins.int
+    """Size in bytes of the uploaded part data."""
+    etag: builtins.str
+    """Entity tag returned when the part was uploaded."""
+    @property
+    def last_modified_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Date and time at which the part was uploaded."""
+
+    def __init__(
+        self,
+        *,
+        part_number: builtins.int = ...,
+        last_modified_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        size: builtins.int = ...,
+        etag: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["last_modified_at", b"last_modified_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["etag", b"etag", "last_modified_at", b"last_modified_at", "part_number", b"part_number", "size", b"size"]) -> None: ...
+
+global___S3APIPart = S3APIPart
+
+@typing.final
+class S3APIAbortMultipartUploadResponse(google.protobuf.message.Message):
+    """Represents a response of abort multipart upload request to S3."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    REQUEST_ID_FIELD_NUMBER: builtins.int
+    request_id: builtins.str
+    """Unique request ID."""
+    def __init__(
+        self,
+        *,
+        request_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["request_id", b"request_id"]) -> None: ...
+
+global___S3APIAbortMultipartUploadResponse = S3APIAbortMultipartUploadResponse
+
+@typing.final
+class S3APICompleteMultipartUploadResponse(google.protobuf.message.Message):
+    """Represents a response of complete multipart upload request to S3."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    REQUEST_ID_FIELD_NUMBER: builtins.int
+    BUCKET_FIELD_NUMBER: builtins.int
+    KEY_FIELD_NUMBER: builtins.int
+    ETAG_FIELD_NUMBER: builtins.int
+    LOCATION_FIELD_NUMBER: builtins.int
+    VERSION_ID_FIELD_NUMBER: builtins.int
+    request_id: builtins.str
+    """Unique request ID."""
+    bucket: builtins.str
+    """The name of the bucket that contains the newly created object."""
+    key: builtins.str
+    """The object key of the newly created object."""
+    etag: builtins.str
+    """Entity tag that identifies the newly created object's data."""
+    location: builtins.str
+    """The URI that identifies the newly created object."""
+    version_id: builtins.str
+    """Version ID of the newly created object, in case the bucket has versioning
+    turned on.
+    """
+    def __init__(
+        self,
+        *,
+        request_id: builtins.str = ...,
+        bucket: builtins.str = ...,
+        key: builtins.str = ...,
+        etag: builtins.str = ...,
+        location: builtins.str = ...,
+        version_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["bucket", b"bucket", "etag", b"etag", "key", b"key", "location", b"location", "request_id", b"request_id", "version_id", b"version_id"]) -> None: ...
+
+global___S3APICompleteMultipartUploadResponse = S3APICompleteMultipartUploadResponse
+
+@typing.final
+class S3APIListMultipartUploadsResponse(google.protobuf.message.Message):
+    """Represents a response of list multipart uploads request to S3."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    BUCKET_FIELD_NUMBER: builtins.int
+    KEY_MARKER_FIELD_NUMBER: builtins.int
+    UPLOAD_ID_MARKER_FIELD_NUMBER: builtins.int
+    NEXT_KEY_MARKER_FIELD_NUMBER: builtins.int
+    NEXT_UPLOAD_ID_MARKER_FIELD_NUMBER: builtins.int
+    DELIMITER_FIELD_NUMBER: builtins.int
+    PREFIX_FIELD_NUMBER: builtins.int
+    MAX_UPLOADS_FIELD_NUMBER: builtins.int
+    IS_TRUNCATED_FIELD_NUMBER: builtins.int
+    UPLOADS_FIELD_NUMBER: builtins.int
+    COMMON_PREFIXES_FIELD_NUMBER: builtins.int
+    REQUEST_ID_FIELD_NUMBER: builtins.int
+    bucket: builtins.str
+    """The name of the bucket to which the multipart upload was initiated."""
+    key_marker: builtins.str
+    """The key at or after which the listing began."""
+    upload_id_marker: builtins.str
+    """Upload ID after which listing began."""
+    next_key_marker: builtins.str
+    """When a list is truncated, this element specifies the value that should be used
+    for the key-marker request parameter in a subsequent request.
+    """
+    next_upload_id_marker: builtins.str
+    """When a list is truncated, this element specifies the value that should be used
+    for the upload-id-marker request parameter in a subsequent request.
+    """
+    delimiter: builtins.str
+    """Contains the delimiter you specified in the request."""
+    prefix: builtins.str
+    """When a prefix is provided in the request, this field contains the specified
+    prefix.
+    """
+    max_uploads: builtins.int
+    """Maximum number of multipart uploads that could have been included in the
+    response.
+    """
+    is_truncated: builtins.bool
+    """Indicates whether the returned list of multipart uploads is truncated."""
+    request_id: builtins.str
+    """Unique request ID."""
+    @property
+    def uploads(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___S3APIMultipartUpload]:
+        """Container for elements related to a particular multipart upload."""
+
+    @property
+    def common_prefixes(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """If you specify a delimiter in the request, then the result returns each
+        distinct key prefix containing the delimiter in a CommonPrefixes element.
+        """
+
+    def __init__(
+        self,
+        *,
+        bucket: builtins.str = ...,
+        key_marker: builtins.str = ...,
+        upload_id_marker: builtins.str = ...,
+        next_key_marker: builtins.str = ...,
+        next_upload_id_marker: builtins.str = ...,
+        delimiter: builtins.str = ...,
+        prefix: builtins.str = ...,
+        max_uploads: builtins.int = ...,
+        is_truncated: builtins.bool = ...,
+        uploads: collections.abc.Iterable[global___S3APIMultipartUpload] | None = ...,
+        common_prefixes: collections.abc.Iterable[builtins.str] | None = ...,
+        request_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["bucket", b"bucket", "common_prefixes", b"common_prefixes", "delimiter", b"delimiter", "is_truncated", b"is_truncated", "key_marker", b"key_marker", "max_uploads", b"max_uploads", "next_key_marker", b"next_key_marker", "next_upload_id_marker", b"next_upload_id_marker", "prefix", b"prefix", "request_id", b"request_id", "upload_id_marker", b"upload_id_marker", "uploads", b"uploads"]) -> None: ...
+
+global___S3APIListMultipartUploadsResponse = S3APIListMultipartUploadsResponse
+
+@typing.final
+class S3APIMultipartUpload(google.protobuf.message.Message):
+    """Container for the MultipartUpload for the Amazon S3 object."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    KEY_FIELD_NUMBER: builtins.int
+    UPLOAD_ID_FIELD_NUMBER: builtins.int
+    INITIATOR_FIELD_NUMBER: builtins.int
+    OWNER_FIELD_NUMBER: builtins.int
+    STORAGE_CLASS_FIELD_NUMBER: builtins.int
+    INITIATED_AT_FIELD_NUMBER: builtins.int
+    key: builtins.str
+    """Key of the object for which the multipart upload was initiated."""
+    upload_id: builtins.str
+    """Upload ID that identifies the multipart upload."""
+    storage_class: builtins.str
+    """The class of storage used to store the object."""
+    @property
+    def initiator(self) -> global___S3APIOwner:
+        """Identifies who initiated the multipart upload."""
+
+    @property
+    def owner(self) -> global___S3APIOwner:
+        """Specifies the owner of the object that is part of the multipart upload."""
+
+    @property
+    def initiated_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Date and time at which the multipart upload was initiated."""
+
+    def __init__(
+        self,
+        *,
+        key: builtins.str = ...,
+        upload_id: builtins.str = ...,
+        initiator: global___S3APIOwner | None = ...,
+        owner: global___S3APIOwner | None = ...,
+        storage_class: builtins.str = ...,
+        initiated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["initiated_at", b"initiated_at", "initiator", b"initiator", "owner", b"owner"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["initiated_at", b"initiated_at", "initiator", b"initiator", "key", b"key", "owner", b"owner", "storage_class", b"storage_class", "upload_id", b"upload_id"]) -> None: ...
+
+global___S3APIMultipartUpload = S3APIMultipartUpload
+
+@typing.final
+class S3APIOwner(google.protobuf.message.Message):
+    """Container for the owner/initiator display name and ID."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ID_FIELD_NUMBER: builtins.int
+    DISPLAY_NAME_FIELD_NUMBER: builtins.int
+    id: builtins.str
+    """Container for the ID of the owner/initiator."""
+    display_name: builtins.str
+    """Container for the display name of the owner/initiator."""
+    def __init__(
+        self,
+        *,
+        id: builtins.str = ...,
+        display_name: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["display_name", b"display_name", "id", b"id"]) -> None: ...
+
+global___S3APIOwner = S3APIOwner
+
+@typing.final
+class S3APIUploadPartCopyResponse(google.protobuf.message.Message):
+    """Response message for UploadPartCopy operation"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ETAG_FIELD_NUMBER: builtins.int
+    LAST_MODIFIED_AT_FIELD_NUMBER: builtins.int
+    REQUEST_ID_FIELD_NUMBER: builtins.int
+    etag: builtins.str
+    """Entity tag of the object."""
+    request_id: builtins.str
+    """Unique request ID."""
+    @property
+    def last_modified_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Date and time at which the object was uploaded."""
+
+    def __init__(
+        self,
+        *,
+        etag: builtins.str = ...,
+        last_modified_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        request_id: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["last_modified_at", b"last_modified_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["etag", b"etag", "last_modified_at", b"last_modified_at", "request_id", b"request_id"]) -> None: ...
+
+global___S3APIUploadPartCopyResponse = S3APIUploadPartCopyResponse

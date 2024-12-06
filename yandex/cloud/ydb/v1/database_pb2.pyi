@@ -524,17 +524,67 @@ class ScalePolicy(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["size", b"size"]) -> None: ...
 
+    @typing.final
+    class AutoScale(google.protobuf.message.Message):
+        """Scale policy that dynamically changes the number of database nodes within a user-defined range."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        @typing.final
+        class TargetTracking(google.protobuf.message.Message):
+            """Autoscaling algorithm that tracks metric and reactively scale database nodes to keep metric
+            close to the specified target value.
+            """
+
+            DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+            CPU_UTILIZATION_PERCENT_FIELD_NUMBER: builtins.int
+            cpu_utilization_percent: builtins.int
+            """A percentage of database nodes average CPU utilization."""
+            def __init__(
+                self,
+                *,
+                cpu_utilization_percent: builtins.int = ...,
+            ) -> None: ...
+            def HasField(self, field_name: typing.Literal["cpu_utilization_percent", b"cpu_utilization_percent", "target", b"target"]) -> builtins.bool: ...
+            def ClearField(self, field_name: typing.Literal["cpu_utilization_percent", b"cpu_utilization_percent", "target", b"target"]) -> None: ...
+            def WhichOneof(self, oneof_group: typing.Literal["target", b"target"]) -> typing.Literal["cpu_utilization_percent"] | None: ...
+
+        MIN_SIZE_FIELD_NUMBER: builtins.int
+        MAX_SIZE_FIELD_NUMBER: builtins.int
+        TARGET_TRACKING_FIELD_NUMBER: builtins.int
+        min_size: builtins.int
+        """Minimum number of nodes to which autoscaling can scale the database."""
+        max_size: builtins.int
+        """Maximum number of nodes to which autoscaling can scale the database."""
+        @property
+        def target_tracking(self) -> global___ScalePolicy.AutoScale.TargetTracking: ...
+        def __init__(
+            self,
+            *,
+            min_size: builtins.int = ...,
+            max_size: builtins.int = ...,
+            target_tracking: global___ScalePolicy.AutoScale.TargetTracking | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["auto_scale_type", b"auto_scale_type", "target_tracking", b"target_tracking"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["auto_scale_type", b"auto_scale_type", "max_size", b"max_size", "min_size", b"min_size", "target_tracking", b"target_tracking"]) -> None: ...
+        def WhichOneof(self, oneof_group: typing.Literal["auto_scale_type", b"auto_scale_type"]) -> typing.Literal["target_tracking"] | None: ...
+
     FIXED_SCALE_FIELD_NUMBER: builtins.int
+    AUTO_SCALE_FIELD_NUMBER: builtins.int
     @property
     def fixed_scale(self) -> global___ScalePolicy.FixedScale: ...
+    @property
+    def auto_scale(self) -> global___ScalePolicy.AutoScale: ...
     def __init__(
         self,
         *,
         fixed_scale: global___ScalePolicy.FixedScale | None = ...,
+        auto_scale: global___ScalePolicy.AutoScale | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["fixed_scale", b"fixed_scale", "scale_type", b"scale_type"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["fixed_scale", b"fixed_scale", "scale_type", b"scale_type"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["scale_type", b"scale_type"]) -> typing.Literal["fixed_scale"] | None: ...
+    def HasField(self, field_name: typing.Literal["auto_scale", b"auto_scale", "fixed_scale", b"fixed_scale", "scale_type", b"scale_type"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["auto_scale", b"auto_scale", "fixed_scale", b"fixed_scale", "scale_type", b"scale_type"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["scale_type", b"scale_type"]) -> typing.Literal["fixed_scale", "auto_scale"] | None: ...
 
 global___ScalePolicy = ScalePolicy
 

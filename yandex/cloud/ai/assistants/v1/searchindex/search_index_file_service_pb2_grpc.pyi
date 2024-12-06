@@ -10,6 +10,7 @@ import grpc.aio
 import typing
 import yandex.cloud.ai.assistants.v1.searchindex.search_index_file_pb2
 import yandex.cloud.ai.assistants.v1.searchindex.search_index_file_service_pb2
+import yandex.cloud.operation.operation_pb2
 
 _T = typing.TypeVar("_T")
 
@@ -19,9 +20,15 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class SearchIndexFileServiceStub:
-    """ThreadService provides operations for managing files within search indexes."""
+    """SearchIndexFileService provides operations for managing files within search indexes."""
 
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
+    BatchCreate: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.assistants.v1.searchindex.search_index_file_service_pb2.BatchCreateSearchIndexFileRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Creates multiple files within a search index in [asynchronous mode](/docs/foundation-models/concepts/#working-mode)."""
+
     Get: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.searchindex.search_index_file_service_pb2.GetSearchIndexFileRequest,
         yandex.cloud.ai.assistants.v1.searchindex.search_index_file_pb2.SearchIndexFile,
@@ -35,7 +42,13 @@ class SearchIndexFileServiceStub:
     """List files that are indexed within a specific search index."""
 
 class SearchIndexFileServiceAsyncStub:
-    """ThreadService provides operations for managing files within search indexes."""
+    """SearchIndexFileService provides operations for managing files within search indexes."""
+
+    BatchCreate: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.assistants.v1.searchindex.search_index_file_service_pb2.BatchCreateSearchIndexFileRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Creates multiple files within a search index in [asynchronous mode](/docs/foundation-models/concepts/#working-mode)."""
 
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.searchindex.search_index_file_service_pb2.GetSearchIndexFileRequest,
@@ -50,7 +63,15 @@ class SearchIndexFileServiceAsyncStub:
     """List files that are indexed within a specific search index."""
 
 class SearchIndexFileServiceServicer(metaclass=abc.ABCMeta):
-    """ThreadService provides operations for managing files within search indexes."""
+    """SearchIndexFileService provides operations for managing files within search indexes."""
+
+    @abc.abstractmethod
+    def BatchCreate(
+        self,
+        request: yandex.cloud.ai.assistants.v1.searchindex.search_index_file_service_pb2.BatchCreateSearchIndexFileRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Creates multiple files within a search index in [asynchronous mode](/docs/foundation-models/concepts/#working-mode)."""
 
     @abc.abstractmethod
     def Get(

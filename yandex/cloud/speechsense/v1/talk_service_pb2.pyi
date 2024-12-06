@@ -77,8 +77,11 @@ class UploadTalkRequest(google.protobuf.message.Message):
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    TALK_ID_FIELD_NUMBER: builtins.int
     METADATA_FIELD_NUMBER: builtins.int
     AUDIO_FIELD_NUMBER: builtins.int
+    talk_id: builtins.str
+    """talk_id, blank if initial upload request and present on metadata update"""
     @property
     def metadata(self) -> global___TalkMetadata: ...
     @property
@@ -88,11 +91,12 @@ class UploadTalkRequest(google.protobuf.message.Message):
     def __init__(
         self,
         *,
+        talk_id: builtins.str = ...,
         metadata: global___TalkMetadata | None = ...,
         audio: yandex.cloud.speechsense.v1.audio_pb2.AudioRequest | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["audio", b"audio", "metadata", b"metadata"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["audio", b"audio", "metadata", b"metadata"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["audio", b"audio", "metadata", b"metadata", "talk_id", b"talk_id"]) -> None: ...
 
 global___UploadTalkRequest = UploadTalkRequest
 
@@ -118,8 +122,11 @@ class UploadTextRequest(google.protobuf.message.Message):
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    TALK_ID_FIELD_NUMBER: builtins.int
     METADATA_FIELD_NUMBER: builtins.int
     TEXT_CONTENT_FIELD_NUMBER: builtins.int
+    talk_id: builtins.str
+    """talk_id, blank if initial upload request and present on metadata update"""
     @property
     def metadata(self) -> global___TalkMetadata: ...
     @property
@@ -127,11 +134,12 @@ class UploadTextRequest(google.protobuf.message.Message):
     def __init__(
         self,
         *,
+        talk_id: builtins.str = ...,
         metadata: global___TalkMetadata | None = ...,
         text_content: yandex.cloud.speechsense.v1.text_pb2.TextContent | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["metadata", b"metadata", "text_content", b"text_content"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["metadata", b"metadata", "text_content", b"text_content"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["metadata", b"metadata", "talk_id", b"talk_id", "text_content", b"text_content"]) -> None: ...
 
 global___UploadTextRequest = UploadTextRequest
 

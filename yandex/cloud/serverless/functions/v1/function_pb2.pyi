@@ -22,6 +22,29 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+class _MetadataOption:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _MetadataOptionEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_MetadataOption.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    METADATA_OPTION_UNSPECIFIED: _MetadataOption.ValueType  # 0
+    """Option is default"""
+    ENABLED: _MetadataOption.ValueType  # 1
+    """Option is enabled"""
+    DISABLED: _MetadataOption.ValueType  # 2
+    """Option is disabled"""
+
+class MetadataOption(_MetadataOption, metaclass=_MetadataOptionEnumTypeWrapper): ...
+
+METADATA_OPTION_UNSPECIFIED: MetadataOption.ValueType  # 0
+"""Option is default"""
+ENABLED: MetadataOption.ValueType  # 1
+"""Option is enabled"""
+DISABLED: MetadataOption.ValueType  # 2
+"""Option is disabled"""
+global___MetadataOption = MetadataOption
+
 @typing.final
 class Function(google.protobuf.message.Message):
     """A serverless function. For details about the concept, see [Functions](/docs/functions/concepts/function)."""
@@ -203,6 +226,7 @@ class Version(google.protobuf.message.Message):
     TMPFS_SIZE_FIELD_NUMBER: builtins.int
     CONCURRENCY_FIELD_NUMBER: builtins.int
     MOUNTS_FIELD_NUMBER: builtins.int
+    METADATA_OPTIONS_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the version."""
     function_id: builtins.str
@@ -280,6 +304,10 @@ class Version(google.protobuf.message.Message):
     def mounts(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Mount]:
         """Mounts to be used by the version."""
 
+    @property
+    def metadata_options(self) -> global___MetadataOptions:
+        """Metadata options for the version."""
+
     def __init__(
         self,
         *,
@@ -305,9 +333,10 @@ class Version(google.protobuf.message.Message):
         tmpfs_size: builtins.int = ...,
         concurrency: builtins.int = ...,
         mounts: collections.abc.Iterable[global___Mount] | None = ...,
+        metadata_options: global___MetadataOptions | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["async_invocation_config", b"async_invocation_config", "connectivity", b"connectivity", "created_at", b"created_at", "execution_timeout", b"execution_timeout", "log_options", b"log_options", "resources", b"resources"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["async_invocation_config", b"async_invocation_config", "concurrency", b"concurrency", "connectivity", b"connectivity", "created_at", b"created_at", "description", b"description", "entrypoint", b"entrypoint", "environment", b"environment", "execution_timeout", b"execution_timeout", "function_id", b"function_id", "id", b"id", "image_size", b"image_size", "log_options", b"log_options", "mounts", b"mounts", "named_service_accounts", b"named_service_accounts", "resources", b"resources", "runtime", b"runtime", "secrets", b"secrets", "service_account_id", b"service_account_id", "status", b"status", "storage_mounts", b"storage_mounts", "tags", b"tags", "tmpfs_size", b"tmpfs_size"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["async_invocation_config", b"async_invocation_config", "connectivity", b"connectivity", "created_at", b"created_at", "execution_timeout", b"execution_timeout", "log_options", b"log_options", "metadata_options", b"metadata_options", "resources", b"resources"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["async_invocation_config", b"async_invocation_config", "concurrency", b"concurrency", "connectivity", b"connectivity", "created_at", b"created_at", "description", b"description", "entrypoint", b"entrypoint", "environment", b"environment", "execution_timeout", b"execution_timeout", "function_id", b"function_id", "id", b"id", "image_size", b"image_size", "log_options", b"log_options", "metadata_options", b"metadata_options", "mounts", b"mounts", "named_service_accounts", b"named_service_accounts", "resources", b"resources", "runtime", b"runtime", "secrets", b"secrets", "service_account_id", b"service_account_id", "status", b"status", "storage_mounts", b"storage_mounts", "tags", b"tags", "tmpfs_size", b"tmpfs_size"]) -> None: ...
 
 global___Version = Version
 
@@ -706,3 +735,23 @@ class EmptyTarget(google.protobuf.message.Message):
     ) -> None: ...
 
 global___EmptyTarget = EmptyTarget
+
+@typing.final
+class MetadataOptions(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    GCE_HTTP_ENDPOINT_FIELD_NUMBER: builtins.int
+    AWS_V1_HTTP_ENDPOINT_FIELD_NUMBER: builtins.int
+    gce_http_endpoint: global___MetadataOption.ValueType
+    """Enabled access to GCE flavored metadata"""
+    aws_v1_http_endpoint: global___MetadataOption.ValueType
+    """Enabled access to AWS flavored metadata (IMDSv1)"""
+    def __init__(
+        self,
+        *,
+        gce_http_endpoint: global___MetadataOption.ValueType = ...,
+        aws_v1_http_endpoint: global___MetadataOption.ValueType = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["aws_v1_http_endpoint", b"aws_v1_http_endpoint", "gce_http_endpoint", b"gce_http_endpoint"]) -> None: ...
+
+global___MetadataOptions = MetadataOptions

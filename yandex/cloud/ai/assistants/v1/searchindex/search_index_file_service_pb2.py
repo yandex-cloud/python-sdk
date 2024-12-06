@@ -12,11 +12,13 @@ _sym_db = _symbol_database.Default()
 
 
 from yandex.cloud.ai.assistants.v1.searchindex import search_index_file_pb2 as yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_searchindex_dot_search__index__file__pb2
+from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
+from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nIyandex/cloud/ai/assistants/v1/searchindex/search_index_file_service.proto\x12)yandex.cloud.ai.assistants.v1.searchindex\x1a\x41yandex/cloud/ai/assistants/v1/searchindex/search_index_file.proto\x1a\x1dyandex/cloud/validation.proto\x1a\x1cgoogle/api/annotations.proto\"Q\n\x19GetSearchIndexFileRequest\x12\x15\n\x07\x66ile_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\x0fsearch_index_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"c\n\x1bListSearchIndexFilesRequest\x12\x1d\n\x0fsearch_index_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x82\x01\n\x1cListSearchIndexFilesResponse\x12I\n\x05\x66iles\x18\x01 \x03(\x0b\x32:.yandex.cloud.ai.assistants.v1.searchindex.SearchIndexFile\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xba\x03\n\x16SearchIndexFileService\x12\xcb\x01\n\x03Get\x12\x44.yandex.cloud.ai.assistants.v1.searchindex.GetSearchIndexFileRequest\x1a:.yandex.cloud.ai.assistants.v1.searchindex.SearchIndexFile\"B\x82\xd3\xe4\x93\x02<\x12:/assistants/v1/searchIndexFile/{search_index_id}/{file_id}\x12\xd1\x01\n\x04List\x12\x46.yandex.cloud.ai.assistants.v1.searchindex.ListSearchIndexFilesRequest\x1aG.yandex.cloud.ai.assistants.v1.searchindex.ListSearchIndexFilesResponse\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/assistants/v1/searchIndexFile/{search_index_id}B\x8a\x01\n-yandex.cloud.api.ai.assistants.v1.searchindexZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/assistants/v1/searchindex;searchindexb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nIyandex/cloud/ai/assistants/v1/searchindex/search_index_file_service.proto\x12)yandex.cloud.ai.assistants.v1.searchindex\x1a\x41yandex/cloud/ai/assistants/v1/searchindex/search_index_file.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a\x1cgoogle/api/annotations.proto\"\\\n!BatchCreateSearchIndexFileRequest\x12\x18\n\x08\x66ile_ids\x18\x01 \x03(\tB\x06\x82\xc8\x31\x02>0\x12\x1d\n\x0fsearch_index_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"o\n\"BatchCreateSearchIndexFileResponse\x12I\n\x05\x66iles\x18\x01 \x03(\x0b\x32:.yandex.cloud.ai.assistants.v1.searchindex.SearchIndexFile\"Q\n\x19GetSearchIndexFileRequest\x12\x15\n\x07\x66ile_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1d\n\x0fsearch_index_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\"c\n\x1bListSearchIndexFilesRequest\x12\x1d\n\x0fsearch_index_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\"\x82\x01\n\x1cListSearchIndexFilesResponse\x12I\n\x05\x66iles\x18\x01 \x03(\x0b\x32:.yandex.cloud.ai.assistants.v1.searchindex.SearchIndexFile\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\x9a\x05\n\x16SearchIndexFileService\x12\xdd\x01\n\x0b\x42\x61tchCreate\x12L.yandex.cloud.ai.assistants.v1.searchindex.BatchCreateSearchIndexFileRequest\x1a!.yandex.cloud.operation.Operation\"]\xb2\xd2*$\x12\"BatchCreateSearchIndexFileResponse\x82\xd3\xe4\x93\x02/\"*/assistants/v1/searchIndexFile:batchCreate:\x01*\x12\xcb\x01\n\x03Get\x12\x44.yandex.cloud.ai.assistants.v1.searchindex.GetSearchIndexFileRequest\x1a:.yandex.cloud.ai.assistants.v1.searchindex.SearchIndexFile\"B\x82\xd3\xe4\x93\x02<\x12:/assistants/v1/searchIndexFile/{search_index_id}/{file_id}\x12\xd1\x01\n\x04List\x12\x46.yandex.cloud.ai.assistants.v1.searchindex.ListSearchIndexFilesRequest\x1aG.yandex.cloud.ai.assistants.v1.searchindex.ListSearchIndexFilesResponse\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/assistants/v1/searchIndexFile/{search_index_id}B\x8a\x01\n-yandex.cloud.api.ai.assistants.v1.searchindexZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/assistants/v1/searchindex;searchindexb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -24,22 +26,32 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.ai.assistants.
 if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n-yandex.cloud.api.ai.assistants.v1.searchindexZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/assistants/v1/searchindex;searchindex'
+  _BATCHCREATESEARCHINDEXFILEREQUEST.fields_by_name['file_ids']._options = None
+  _BATCHCREATESEARCHINDEXFILEREQUEST.fields_by_name['file_ids']._serialized_options = b'\202\3101\002>0'
+  _BATCHCREATESEARCHINDEXFILEREQUEST.fields_by_name['search_index_id']._options = None
+  _BATCHCREATESEARCHINDEXFILEREQUEST.fields_by_name['search_index_id']._serialized_options = b'\350\3071\001'
   _GETSEARCHINDEXFILEREQUEST.fields_by_name['file_id']._options = None
   _GETSEARCHINDEXFILEREQUEST.fields_by_name['file_id']._serialized_options = b'\350\3071\001'
   _GETSEARCHINDEXFILEREQUEST.fields_by_name['search_index_id']._options = None
   _GETSEARCHINDEXFILEREQUEST.fields_by_name['search_index_id']._serialized_options = b'\350\3071\001'
   _LISTSEARCHINDEXFILESREQUEST.fields_by_name['search_index_id']._options = None
   _LISTSEARCHINDEXFILESREQUEST.fields_by_name['search_index_id']._serialized_options = b'\350\3071\001'
+  _SEARCHINDEXFILESERVICE.methods_by_name['BatchCreate']._options = None
+  _SEARCHINDEXFILESERVICE.methods_by_name['BatchCreate']._serialized_options = b'\262\322*$\022\"BatchCreateSearchIndexFileResponse\202\323\344\223\002/\"*/assistants/v1/searchIndexFile:batchCreate:\001*'
   _SEARCHINDEXFILESERVICE.methods_by_name['Get']._options = None
   _SEARCHINDEXFILESERVICE.methods_by_name['Get']._serialized_options = b'\202\323\344\223\002<\022:/assistants/v1/searchIndexFile/{search_index_id}/{file_id}'
   _SEARCHINDEXFILESERVICE.methods_by_name['List']._options = None
   _SEARCHINDEXFILESERVICE.methods_by_name['List']._serialized_options = b'\202\323\344\223\0022\0220/assistants/v1/searchIndexFile/{search_index_id}'
-  _globals['_GETSEARCHINDEXFILEREQUEST']._serialized_start=248
-  _globals['_GETSEARCHINDEXFILEREQUEST']._serialized_end=329
-  _globals['_LISTSEARCHINDEXFILESREQUEST']._serialized_start=331
-  _globals['_LISTSEARCHINDEXFILESREQUEST']._serialized_end=430
-  _globals['_LISTSEARCHINDEXFILESRESPONSE']._serialized_start=433
-  _globals['_LISTSEARCHINDEXFILESRESPONSE']._serialized_end=563
-  _globals['_SEARCHINDEXFILESERVICE']._serialized_start=566
-  _globals['_SEARCHINDEXFILESERVICE']._serialized_end=1008
+  _globals['_BATCHCREATESEARCHINDEXFILEREQUEST']._serialized_start=322
+  _globals['_BATCHCREATESEARCHINDEXFILEREQUEST']._serialized_end=414
+  _globals['_BATCHCREATESEARCHINDEXFILERESPONSE']._serialized_start=416
+  _globals['_BATCHCREATESEARCHINDEXFILERESPONSE']._serialized_end=527
+  _globals['_GETSEARCHINDEXFILEREQUEST']._serialized_start=529
+  _globals['_GETSEARCHINDEXFILEREQUEST']._serialized_end=610
+  _globals['_LISTSEARCHINDEXFILESREQUEST']._serialized_start=612
+  _globals['_LISTSEARCHINDEXFILESREQUEST']._serialized_end=711
+  _globals['_LISTSEARCHINDEXFILESRESPONSE']._serialized_start=714
+  _globals['_LISTSEARCHINDEXFILESRESPONSE']._serialized_end=844
+  _globals['_SEARCHINDEXFILESERVICE']._serialized_start=847
+  _globals['_SEARCHINDEXFILESERVICE']._serialized_end=1513
 # @@protoc_insertion_point(module_scope)

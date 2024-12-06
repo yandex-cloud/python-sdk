@@ -14,6 +14,45 @@ import yandex.cloud.ai.assistants.v1.searchindex.search_index_file_pb2
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
+class BatchCreateSearchIndexFileRequest(google.protobuf.message.Message):
+    """Request message for creating multiple files within a search index."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FILE_IDS_FIELD_NUMBER: builtins.int
+    SEARCH_INDEX_ID_FIELD_NUMBER: builtins.int
+    search_index_id: builtins.str
+    @property
+    def file_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def __init__(
+        self,
+        *,
+        file_ids: collections.abc.Iterable[builtins.str] | None = ...,
+        search_index_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["file_ids", b"file_ids", "search_index_id", b"search_index_id"]) -> None: ...
+
+global___BatchCreateSearchIndexFileRequest = BatchCreateSearchIndexFileRequest
+
+@typing.final
+class BatchCreateSearchIndexFileResponse(google.protobuf.message.Message):
+    """Response message for the BatchCreate operation."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FILES_FIELD_NUMBER: builtins.int
+    @property
+    def files(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.ai.assistants.v1.searchindex.search_index_file_pb2.SearchIndexFile]: ...
+    def __init__(
+        self,
+        *,
+        files: collections.abc.Iterable[yandex.cloud.ai.assistants.v1.searchindex.search_index_file_pb2.SearchIndexFile] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["files", b"files"]) -> None: ...
+
+global___BatchCreateSearchIndexFileResponse = BatchCreateSearchIndexFileResponse
+
+@typing.final
 class GetSearchIndexFileRequest(google.protobuf.message.Message):
     """Request message for retrieving a file from a search index."""
 

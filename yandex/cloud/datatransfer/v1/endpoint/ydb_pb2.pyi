@@ -65,6 +65,7 @@ class YdbSource(google.protobuf.message.Message):
     SA_KEY_CONTENT_FIELD_NUMBER: builtins.int
     SECURITY_GROUPS_FIELD_NUMBER: builtins.int
     CHANGEFEED_CUSTOM_NAME_FIELD_NUMBER: builtins.int
+    CHANGEFEED_CUSTOM_CONSUMER_NAME_FIELD_NUMBER: builtins.int
     database: builtins.str
     """Path in YDB where to store tables"""
     instance: builtins.str
@@ -76,6 +77,7 @@ class YdbSource(google.protobuf.message.Message):
     """Authorization Key"""
     changefeed_custom_name: builtins.str
     """Pre-created change feed"""
+    changefeed_custom_consumer_name: builtins.str
     @property
     def paths(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
     @property
@@ -93,8 +95,9 @@ class YdbSource(google.protobuf.message.Message):
         sa_key_content: builtins.str = ...,
         security_groups: collections.abc.Iterable[builtins.str] | None = ...,
         changefeed_custom_name: builtins.str = ...,
+        changefeed_custom_consumer_name: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["changefeed_custom_name", b"changefeed_custom_name", "database", b"database", "instance", b"instance", "paths", b"paths", "sa_key_content", b"sa_key_content", "security_groups", b"security_groups", "service_account_id", b"service_account_id", "subnet_id", b"subnet_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["changefeed_custom_consumer_name", b"changefeed_custom_consumer_name", "changefeed_custom_name", b"changefeed_custom_name", "database", b"database", "instance", b"instance", "paths", b"paths", "sa_key_content", b"sa_key_content", "security_groups", b"security_groups", "service_account_id", b"service_account_id", "subnet_id", b"subnet_id"]) -> None: ...
 
 global___YdbSource = YdbSource
 
