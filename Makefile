@@ -31,8 +31,8 @@ format:
 	python3 -m black yandexcloud setup.py tests examples
 
 test-all-versions: ## run test for multiple python versions using docker
-	# python 3.12 not provided in image so we skip it
-	docker run --rm -v $(REPO_ROOT):/src ghcr.io/fkrull/docker-multi-python:bionic tox -c /src -e py38,py39,py310,py311
+	# python 3.12 and 3.13 are not provided in image so we skip them
+	docker run --rm -v $(REPO_ROOT):/src ghcr.io/fkrull/docker-multi-python:bionic tox -c /src -e py39,py310,py311
 
 submodule:  ## update submodules
 	git submodule update --init --recursive --remote
