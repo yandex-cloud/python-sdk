@@ -35,26 +35,32 @@ content-type = "text/markdown"
 [project.urls]
 Homepage = "https://github.com/yandex-cloud/python-sdk"
 
-[project.optional-dependencies]
+[dependency-groups]
 dev = [
-    "python-semantic-release>=v9.8.8",
-    "tox-gh-actions>=3.2.0",
-    "tox>=4.14.2",
-    "yandexcloud[format,genproto,lint,test]",
     "pre-commit>=4.0.1",
+    "python-semantic-release>=v9.8.8",
+    "tox-gh>=1.3.1",
+    "tox>=4.14.2",
+    "yandexcloud"
 ]
 format = [
     "black>=24.4.2",
     "isort>=5.13.2",
 ]
 genproto = [
-    "grpcio-tools>=1.59.3",
-    "mypy-protobuf>=3.6.0",
+    "grpcio-tools==1.59.3",
+    "mypy-protobuf==3.6.0",
 ]
-lint = [
+type = [
+    "mypy==1.10",
+    "grpc-stubs>=1.53.0.5",
+    "types-requests>=2.32.0.20241016",
+    "types-six>=1.17.0.20241205",
+]
+style = [
     "flake8>=7.0.0",
-    "mypy>=1.10",
-    "pylint>=3.1.0",
+    "flake8-pyproject>=1.2.3",
+    "pylint==3.1.0",
 ]
 test = [
     "pytest>=8.1.1",
@@ -126,27 +132,65 @@ module = [
 ignore_missing_imports = true
 
 [tool.tox]
-legacy_tox_ini = """
-[gh-actions]
-python =
-    3.9: py39
-    3.10: py310
-    3.11: py311
-    3.12: py312
-    3.13: py313
+env_list = [
+    "3.9",
+    "3.10",
+    "3.11",
+    "3.12",
+    # "3.13",
+    "type",
+    "format",
+    "style",
+]
+skip_missing_interpreters = true
 
-[tox]
-envlist = py{39,310,311,312,313}
+[tool.tox.env_run_base]
+description = "Run tests under {base_python}"
+dependency_groups = [
+    "test",
+]
+commands = [["pytest"]]
 
-[testenv]
-deps = -rrequirements-dev.txt
-commands =
-    pytest tests
-    flake8 yandexcloud
-    pylint yandexcloud
-    mypy yandexcloud
-    isort --diff yandexcloud setup.py
-    isort --check yandexcloud setup.py
-    black --diff yandexcloud setup.py
-    black --check yandexcloud setup.py
-"""
+[tool.tox.env.type]
+description = "Check types with mypy"
+skip_install = true
+dependency_groups = [
+    "type",
+    "genproto",
+    "dev"  # without it cannot import jwt and cryptography dependencies and E0401 is raised
+]
+commands = [["mypy", "yandexcloud"]]  # TODO: add `tests` directory
+
+[tool.tox.env.format]
+description = "Format code with black and isort"
+skip_install = true
+dependency_groups = [
+  "format",
+]
+commands = [
+    ["black", "--check", "--diff", "yandexcloud"],
+    ["isort", "--check", "--diff", "yandexcloud"],
+]
+
+[tool.tox.env.style]
+description = "Check style with flake8 and pylint"
+skip_install = true
+dependency_groups = [
+    "style",
+    "dev"  # without it cannot import yandexcloud dependencies and E0401 is raised
+]
+commands = [
+    ["flake8", "yandexcloud"],
+    ["pylint", "yandexcloud"],
+]
+
+[tool.tox.gh.python]
+# uncomment when upgrade grpcio-tools, current version does not work with 3.13
+# "3.13" = ["3.13", "type", "format", "style"]
+"3.12" = ["3.12"]
+"3.11" = ["3.11"]
+"3.10" = ["3.10"]
+"3.9" = ["3.9"]
+"type" = ["type"]
+"format" = ["format"]
+"style" = ["style"]

@@ -1,0 +1,45 @@
+name: Tests
+
+on: [pull_request]
+
+jobs:
+  test:
+    name: Run tests with Python ${{ matrix.env }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+
+    strategy:
+      fail-fast: false
+      matrix:
+        env:
+          # uncomment when upgrade grpcio-tools, current version does not work with 3.13
+          # - "3.13"
+          - "3.12"
+          - "3.11"
+          - "3.10"
+          - "3.9"
+        os:
+          - ubuntu-latest
+          # - macos-latest
+
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          # Install a specific version of uv.
+          version: "0.5.8"
+          enable-cache: true
+
+      - name: Install tox
+        run: uv tool install --python-preference only-managed --python ${{ matrix.env }} tox --with tox-uv --with tox-gh
+
+      - name: Install Python
+        run: uv python install --python-preference only-managed ${{ matrix.env }}
+
+      - name: Run test suite
+        run: make tox
+        env:
+          TOX_GH_MAJOR_MINOR: ${{ matrix.env }}
