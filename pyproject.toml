@@ -37,26 +37,27 @@ Homepage = "https://github.com/yandex-cloud/python-sdk"
 
 [project.optional-dependencies]
 dev = [
-    "python-semantic-release==v9.8.8",
-    "tox-gh-actions==3.2.0",
-    "tox==4.14.2",
+    "python-semantic-release>=v9.8.8",
+    "tox-gh-actions>=3.2.0",
+    "tox>=4.14.2",
     "yandexcloud[format,genproto,lint,test]",
+    "pre-commit>=4.0.1",
 ]
 format = [
-    "black==24.4.2",
-    "isort==5.13.2",
+    "black>=24.4.2",
+    "isort>=5.13.2",
 ]
 genproto = [
-    "grpcio-tools==1.59.3",
-    "mypy-protobuf==3.6.0",
+    "grpcio-tools>=1.59.3",
+    "mypy-protobuf>=3.6.0",
 ]
 lint = [
-    "flake8==7.0.0",
-    "mypy==1.10",
-    "pylint==3.1.0",
+    "flake8>=7.0.0",
+    "mypy>=1.10",
+    "pylint>=3.1.0",
 ]
 test = [
-    "pytest==8.1.1",
+    "pytest>=8.1.1",
 ]
 
 [tool.setuptools]
