@@ -1,2 +1,0 @@
-grpcio-tools==1.59.3
-mypy-protobuf==3.6.0

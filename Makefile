@@ -27,8 +27,8 @@ lint: ## run linters, formatters for current python versions
 	python3 -m mypy yandexcloud
 
 format:
-	python3 -m isort yandexcloud setup.py tests examples
-	python3 -m black yandexcloud setup.py tests examples
+	python3 -m isort yandexcloud tests examples
+	python3 -m black yandexcloud tests examples
 
 test-all-versions: ## run test for multiple python versions using docker
 	# python 3.12 and 3.13 are not provided in image so we skip them
@@ -48,7 +48,7 @@ proto:  ## regenerate code from protobuf
         --mypy_grpc_out=. \
         `find cloudapi/yandex -name '*.proto'`
 	find yandex -type d -exec touch {}/__init__.py \;
-	touch yandex/py.typed \;
+	touch yandex/py.typed
 
 help: ## Show help message
 	@IFS=$$'\n' ; \
