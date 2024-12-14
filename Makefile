@@ -3,6 +3,9 @@
 
 REPO_ROOT:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
+build:
+	uv build
+
 deps: ## install deps (library & development)
 	uv sync --all-groups
 

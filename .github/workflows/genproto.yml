@@ -17,6 +17,13 @@ jobs:
       with:
           token: ${{ secrets.YANDEX_CLOUD_BOT_TOKEN }}
 
+    - name: Install uv
+      uses: astral-sh/setup-uv@v4
+      with:
+        # Install a specific version of uv.
+        version: "0.5.8"
+        enable-cache: true
+
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
@@ -29,7 +36,7 @@ jobs:
         make proto
         make deps
         make tox
-        
+
         git config --global user.name 'Yandex.Cloud Bot'
         git config --global user.email 'ycloud-bot@yandex.ru'
         git add yandex cloudapi

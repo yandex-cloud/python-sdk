@@ -19,6 +19,13 @@ jobs:
       with:
         fetch-depth: 0
 
+    - name: Install uv
+      uses: astral-sh/setup-uv@v4
+      with:
+        # Install a specific version of uv.
+        version: "0.5.8"
+        enable-cache: true
+
     - name: Set up Python
       uses: actions/setup-python@v5.1.1
       with:
@@ -37,9 +44,9 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Build python
+    - name: Build yandexcloud
       run: |
-        python3 setup.py sdist bdist_wheel
+        make build
 
     - name: Publish package distributions to PyPI
       uses: pypa/gh-action-pypi-publish@v1.10.1
