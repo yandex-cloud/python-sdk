@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # pylint: disable=no-member
 # mypy: ignore-errors
 import logging
@@ -6,7 +5,6 @@ import random
 from typing import Iterable, NamedTuple
 
 from google.protobuf.field_mask_pb2 import FieldMask
-from six import string_types
 
 import yandex.cloud.dataproc.v1.cluster_pb2 as cluster_pb
 import yandex.cloud.dataproc.v1.cluster_service_pb2 as cluster_service_pb
@@ -215,7 +213,7 @@ class Dataproc:
                 ssh_public_keys = (self.default_public_ssh_key,)
             else:
                 raise RuntimeError("Public ssh keys must be specified.")
-        elif isinstance(ssh_public_keys, string_types):
+        elif isinstance(ssh_public_keys, str):
             ssh_public_keys = [ssh_public_keys]
 
         gib = 1024**3

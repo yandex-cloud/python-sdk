@@ -13,7 +13,7 @@ _SERVICE_ADDR = "localhost:" + _DEFAULT_SERVICE_PORT
 DEFAULT_ZONE = zone_pb2.Zone()
 
 
-class ZoneServiceMock(object):
+class ZoneServiceMock:
     def __init__(self, handler):
         self.__handler = handler
 
