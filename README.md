@@ -158,7 +158,7 @@ set_up_yc_api_endpoint(kz_region_endpoint)
 
 ## Contributing
 ### Dependencies
-We use [uv](https://docs.astral.sh/uv) to manage dependencies.
+We use [uv](https://docs.astral.sh/uv) to manage dependencies and run commands in Makefile.
 Install it with official standalone installer:
 `curl -LsSf https://astral.sh/uv/install.sh | sh`
 
@@ -174,6 +174,9 @@ add to `dev` extras section
 
 add to `genproto` extras section
 `uv add grpcio-tools --group genproto`
+
+### Pre-commit hooks
+Setup pre commit hooks with `pre-commit install` command.
 
 ### Formatting
 Use `make format` to autoformat code with black tool.
