@@ -83,9 +83,6 @@ version_toml = ["pyproject.toml:project.version"]
 major_on_zero = false
 commit_parser = "angular"
 
-[tool.semantic_release.branches."better-pyproject"]
-match = "better-pyproject"
-
 [tool.black]
 line-length = 120
 
