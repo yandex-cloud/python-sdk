@@ -3,32 +3,38 @@
 
 REPO_ROOT:=$(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 
-deps: ## install deps (library & development)
-	python3 -m pip install --upgrade pip
-	python3 -m pip install -r requirements-dev.txt
-	python3 -m pip install setuptools wheel
+build:
+	uv build
 
-deps-genproto: ## install deps (library & development)
-	python3 -m pip install --upgrade pip
-	python3 -m pip install -r requirements-genproto.txt
+deps: ## install deps (library & development)
+	uv sync --all-groups
+
+deps-genproto:
+	uv sync --group genproto
+
+deps-dev:
+	uv sync --group dev
+
+git-hooks: ## install git hooks (pre-commit, commit-msg, etc.)
+	uv run pre-commit install --install-hooks
 
 tox: ## run ALL checks for ALL available python versions
-	python3 -m tox
+	uv run tox
 
 tox-current: ## run ALL checks ONLY for current python version
-	python3 -m tox -e `python3 -c 'import platform; print("py" + "".join(platform.python_version_tuple()[:2]))'`
+	uv run tox -e `python3 -c 'import platform; print("py" + "".join(platform.python_version_tuple()[:2]))'`
 
 test: ## run tests ONLY for current python version
-	python3 -m pytest
+	uv run pytest
 
 lint: ## run linters, formatters for current python versions
-	python3 -m flake8 yandexcloud
-	python3 -m pylint yandexcloud
-	python3 -m mypy yandexcloud
+	uv run flake8 yandexcloud
+	uv run pylint yandexcloud
+	uv run mypy yandexcloud
 
 format:
-	python3 -m isort yandexcloud setup.py tests examples
-	python3 -m black yandexcloud setup.py tests examples
+	uv run isort yandexcloud tests examples
+	uv run black yandexcloud tests examples
 
 test-all-versions: ## run test for multiple python versions using docker
 	# python 3.12 and 3.13 are not provided in image so we skip them
@@ -39,7 +45,7 @@ submodule:  ## update submodules
 
 proto:  ## regenerate code from protobuf
 	rm -rf yandex
-	python3 -m grpc_tools.protoc \
+	uv run -m grpc_tools.protoc \
         --proto_path=cloudapi \
         --proto_path=cloudapi/third_party/googleapis \
         --python_out=. \
@@ -48,7 +54,7 @@ proto:  ## regenerate code from protobuf
         --mypy_grpc_out=. \
         `find cloudapi/yandex -name '*.proto'`
 	find yandex -type d -exec touch {}/__init__.py \;
-	touch yandex/py.typed \;
+	touch yandex/py.typed
 
 help: ## Show help message
 	@IFS=$$'\n' ; \
