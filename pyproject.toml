@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "yandexcloud"
-dynamic = ["version"]
+version = "0.328.1"
 authors = [{name = "Yandex LLC", email = "cloud@support.yandex.ru"}]
 license = {text = "MIT"}
 description = "The Yandex Cloud official SDK"
@@ -21,11 +21,12 @@ classifiers = [
 dependencies = [
     "cryptography>=41.0.7,<43",
     "grpcio>=1.64.0,<2",
-    "protobuf>=4.25.3,<5",
+    "protobuf>=5.0.0,<6",
     "googleapis-common-protos>=1.63.0,<2",
     "pyjwt>=2.8.0,<3",
     "requests>=2.32.3,<3",
     "six>=1.16.0,<2",
+    "grpcio-tools>=1.59.3",
 ]
 
 [project.readme]
@@ -48,11 +49,11 @@ format = [
     "isort>=5.13.2",
 ]
 genproto = [
-    "grpcio-tools==1.59.3",
-    "mypy-protobuf==3.6.0",
+    "grpcio-tools>=1.59.3",
+    "mypy-protobuf>=3.6.0",
 ]
 type = [
-    "mypy==1.10",
+    "mypy>=1.10",
     "grpc-stubs>=1.53.0.5",
     "types-requests>=2.32.0.20241016",
     "types-six>=1.17.0.20241205",
@@ -60,7 +61,7 @@ type = [
 style = [
     "flake8>=7.0.0",
     "flake8-pyproject>=1.2.3",
-    "pylint==3.1.0",
+    "pylint>=3.1.0",
 ]
 test = [
     "pytest>=8.1.1",
@@ -77,10 +78,13 @@ namespaces = false
 
 [tool.semantic_release]
 version_variables = ["yandexcloud/__init__.py:__version__"]
-# version_toml = ["pyproject.toml:project.version"]
+version_toml = ["pyproject.toml:project.version"]
 # https://python-semantic-release.readthedocs.io/en/latest/configuration.html#major-on-zero
 major_on_zero = false
 commit_parser = "angular"
+
+[tool.semantic_release.branches."better-pyproject"]
+match = "better-pyproject"
 
 [tool.black]
 line-length = 120
@@ -99,6 +103,7 @@ disable= [
     "E0611", # No name 'Empty' in module 'google.protobuf.empty_pb2' (no-name-in-module) — proto code creates attributes in runtime and linter goes crazy
     "R0903", # Too few public methods (1/2) (too-few-public-methods)
     "R0913", # Too many arguments (6/5) (too-many-arguments)
+    "R0917", # Too many positional arguments (6/5) (too-many-positional-arguments)
 ]
 
 [tool.flake8]
@@ -139,7 +144,7 @@ env_list = [
     "3.10",
     "3.11",
     "3.12",
-    # "3.13",
+    "3.13",
     "type",
     "format",
     "style",
@@ -188,7 +193,7 @@ commands = [
 
 [tool.tox.gh.python]
 # uncomment when upgrade grpcio-tools, current version does not work with 3.13
-# "3.13" = ["3.13", "type", "format", "style"]
+"3.13" = ["3.13"]
 "3.12" = ["3.12"]
 "3.11" = ["3.11"]
 "3.10" = ["3.10"]
