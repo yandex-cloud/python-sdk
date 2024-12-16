@@ -1423,7 +1423,7 @@ requires-dist = [
     { name = "googleapis-common-protos", specifier = ">=1.63.0,<2" },
     { name = "grpcio", specifier = ">=1.64.0,<2" },
     { name = "grpcio-tools", specifier = ">=1.59.3" },
-    { name = "protobuf", specifier = ">=4.25.3,<6" },
+    { name = "protobuf", specifier = ">=5.0.0,<6" },
     { name = "pyjwt", specifier = ">=2.8.0,<3" },
     { name = "requests", specifier = ">=2.32.3,<3" },
     { name = "six", specifier = ">=1.16.0,<2" },
