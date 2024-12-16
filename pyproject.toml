@@ -82,9 +82,6 @@ version_variables = ["yandexcloud/__init__.py:__version__"]
 major_on_zero = false
 commit_parser = "angular"
 
-[tool.semantic_release.branches."better-pyproject"]
-match = "better-pyproject"
-
 [tool.black]
 line-length = 120
 
