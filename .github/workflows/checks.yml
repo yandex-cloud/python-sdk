@@ -1,0 +1,42 @@
+name: Checks
+
+on: [pull_request]
+
+jobs:
+  check:
+    name: Check ${{ matrix.env }} on Python ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+
+    timeout-minutes: 10
+
+    strategy:
+      fail-fast: false
+      matrix:
+        env:
+          - "style"
+          - "format"
+          - "type"
+        python-version:
+          - "3.12"
+
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v4
+        with:
+          # Install a specific version of uv.
+          version: "0.5.8"
+          enable-cache: true
+
+      - name: Install tox
+        run: uv tool install --python-preference only-managed --python ${{ matrix.python-version }} tox --with tox-uv --with tox-gh
+
+      - name: Install Python ${{ matrix.python-version }}
+        run: uv python install --python-preference only-managed ${{ matrix.python-version }}
+
+      - name: Run ${{ matrix.env }}
+        run: make tox
+        env:
+          TOX_GH_MAJOR_MINOR: ${{ matrix.env }}

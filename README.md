@@ -11,7 +11,7 @@
 [license-image]: https://img.shields.io/github/license/yandex-cloud/python-sdk.svg
 [license-url]: https://github.com/yandex-cloud/python-sdk/blob/master/LICENSE
 
-# Yandex.Cloud SDK (Python) 
+# Yandex.Cloud SDK (Python)
 
 Need to automate your infrastructure or use services provided by Yandex.Cloud? We've got you covered.
 
@@ -42,7 +42,7 @@ sdk = yandexcloud.SDK()
 ### Service Account Keys
 
 ```python
-# you can store and read it from JSON file 
+# you can store and read it from JSON file
 sa_key = {
     "id": "...",
     "service_account_id": "...",
@@ -150,7 +150,7 @@ Notice: if both overrides are used for same endpoint, override by client has pri
 ```python
 from yandexcloud import SDK, set_up_yc_api_endpoint
 kz_region_endpoint = "api.yandexcloud.kz"
-# this will make SDK list endpoints from KZ yc installation 
+# this will make SDK list endpoints from KZ yc installation
 sdk = SDK(iam_token="t1.9eu...", endpoint="api.yandexcloud.kz")
 # or you can use global function
 set_up_yc_api_endpoint(kz_region_endpoint)
@@ -158,10 +158,28 @@ set_up_yc_api_endpoint(kz_region_endpoint)
 
 ## Contributing
 ### Dependencies
+We use [uv](https://docs.astral.sh/uv) to manage dependencies and run commands in Makefile.
+Install it with official standalone installer:
+`curl -LsSf https://astral.sh/uv/install.sh | sh`
+
+#### Installing dependencies
 Use `make deps` command to install library, its production and development dependencies.
 
+#### Adding new project dependency with uv
+`uv add cryptography`
+
+#### Adding new optional dependency with uv
+add to `dev` extras section
+`uv add pre-commit --group dev`
+
+add to `genproto` extras section
+`uv add grpcio-tools --group genproto`
+
+### Git hooks
+Setup pre-commit and commit-msg hooks with `make git-hooks` command.
+
 ### Formatting
-Use `make format` to autoformat code with black tool. 
+Use `make format` to autoformat code with black tool.
 
 ### Tests
 - `make test` to run tests for current python version
@@ -170,10 +188,12 @@ Use `make format` to autoformat code with black tool.
 - `make tox` to run all checks for all supported (installed in your system) python versions
 - `make test-all-versions` to run all checks for all supported python versions in docker container
 
+### Run Github Actions locally
+Use https://github.com/nektos/act
 
 ### Maintaining
-If pull request consists of several meaningful commits, that should be preserved, 
-then use "Rebase and merge" option. Otherwise use "Squash and merge". 
+If pull request consists of several meaningful commits, that should be preserved,
+then use "Rebase and merge" option. Otherwise use "Squash and merge".
 
-New release (changelog, tag and pypi upload) will be automatically created 
+New release (changelog, tag and pypi upload) will be automatically created
 on each push to master via Github Actions workflow.

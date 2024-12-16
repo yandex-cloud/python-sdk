@@ -1,9 +1,89 @@
-[tool.semantic_release]
-version_variables = [
-    "setup.py:__version__",
+[build-system]
+requires = ["setuptools>=61.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "yandexcloud"
+dynamic = ["version"]
+authors = [{name = "Yandex LLC", email = "cloud@support.yandex.ru"}]
+license = {text = "MIT"}
+description = "The Yandex Cloud official SDK"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
 ]
+dependencies = [
+    "cryptography>=41.0.7,<43",
+    "grpcio>=1.64.0,<2",
+    "protobuf>=4.25.3,<5",
+    "googleapis-common-protos>=1.63.0,<2",
+    "pyjwt>=2.8.0,<3",
+    "requests>=2.32.3,<3",
+    "six>=1.16.0,<2",
+]
+
+[project.readme]
+file = "README.md"
+content-type = "text/markdown"
+
+[project.urls]
+Homepage = "https://github.com/yandex-cloud/python-sdk"
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.0.1",
+    "python-semantic-release>=v9.8.8",
+    "tox-gh>=1.3.1",
+    "tox>=4.14.2",
+    "yandexcloud",
+]
+format = [
+    "black>=24.4.2",
+    "isort>=5.13.2",
+]
+genproto = [
+    "grpcio-tools==1.59.3",
+    "mypy-protobuf==3.6.0",
+]
+type = [
+    "mypy==1.10",
+    "grpc-stubs>=1.53.0.5",
+    "types-requests>=2.32.0.20241016",
+    "types-six>=1.17.0.20241205",
+]
+style = [
+    "flake8>=7.0.0",
+    "flake8-pyproject>=1.2.3",
+    "pylint==3.1.0",
+]
+test = [
+    "pytest>=8.1.1",
+]
+
+[tool.setuptools]
+zip-safe = false
+include-package-data = true
+
+[tool.setuptools.packages.find]
+# include = ["yandexcloud*"] # yandex*
+include = ["yandexcloud*", "yandex*"]
+namespaces = false
+
+[tool.semantic_release]
+version_variables = ["yandexcloud/__init__.py:__version__"]
+# version_toml = ["pyproject.toml:project.version"]
 # https://python-semantic-release.readthedocs.io/en/latest/configuration.html#major-on-zero
 major_on_zero = false
+commit_parser = "angular"
+
+[tool.semantic_release.branches."better-pyproject"]
+match = "better-pyproject"
 
 [tool.black]
 line-length = 120
@@ -55,3 +135,67 @@ module = [
     "google.rpc.*",
 ]
 ignore_missing_imports = true
+
+[tool.tox]
+env_list = [
+    "3.9",
+    "3.10",
+    "3.11",
+    "3.12",
+    # "3.13",
+    "type",
+    "format",
+    "style",
+]
+skip_missing_interpreters = true
+
+[tool.tox.env_run_base]
+description = "Run tests under {base_python}"
+dependency_groups = [
+    "test",
+]
+commands = [["pytest"]]
+
+[tool.tox.env.type]
+description = "Check types with mypy"
+skip_install = true
+dependency_groups = [
+    "type",
+    "genproto",
+    "dev"  # without it cannot import jwt and cryptography dependencies and E0401 is raised
+]
+commands = [["mypy", "yandexcloud"]]  # TODO: add `tests` directory
+
+[tool.tox.env.format]
+description = "Format code with black and isort"
+skip_install = true
+dependency_groups = [
+  "format",
+]
+commands = [
+    ["black", "--check", "--diff", "yandexcloud"],
+    ["isort", "--check", "--diff", "yandexcloud"],
+]
+
+[tool.tox.env.style]
+description = "Check style with flake8 and pylint"
+skip_install = true
+dependency_groups = [
+    "style",
+    "dev"  # without it cannot import yandexcloud dependencies and E0401 is raised
+]
+commands = [
+    ["flake8", "yandexcloud"],
+    ["pylint", "yandexcloud"],
+]
+
+[tool.tox.gh.python]
+# uncomment when upgrade grpcio-tools, current version does not work with 3.13
+# "3.13" = ["3.13", "type", "format", "style"]
+"3.12" = ["3.12"]
+"3.11" = ["3.11"]
+"3.10" = ["3.10"]
+"3.9" = ["3.9"]
+"type" = ["type"]
+"format" = ["format"]
+"style" = ["style"]
