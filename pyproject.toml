@@ -103,6 +103,7 @@ disable= [
     "E0611", # No name 'Empty' in module 'google.protobuf.empty_pb2' (no-name-in-module) — proto code creates attributes in runtime and linter goes crazy
     "R0903", # Too few public methods (1/2) (too-few-public-methods)
     "R0913", # Too many arguments (6/5) (too-many-arguments)
+    "R0917", # Too many positional arguments (6/5) (too-many-positional-arguments)
 ]
 
 [tool.flake8]
