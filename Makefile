@@ -15,6 +15,9 @@ deps-genproto:
 deps-dev:
 	uv sync --group dev
 
+git-hooks: ## install git hooks (pre-commit, commit-msg, etc.)
+	uv run pre-commit install --install-hooks
+
 tox: ## run ALL checks for ALL available python versions
 	uv run tox
 

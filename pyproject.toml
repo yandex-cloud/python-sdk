@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "yandexcloud"
-version = "0.328.0"
+dynamic = ["version"]
 authors = [{name = "Yandex LLC", email = "cloud@support.yandex.ru"}]
 license = {text = "MIT"}
 description = "The Yandex Cloud official SDK"
@@ -76,9 +76,14 @@ include = ["yandexcloud*", "yandex*"]
 namespaces = false
 
 [tool.semantic_release]
-version_variable = "pyproject.toml:version"
+version_variables = ["yandexcloud/__init__.py:__version__"]
+# version_toml = ["pyproject.toml:project.version"]
 # https://python-semantic-release.readthedocs.io/en/latest/configuration.html#major-on-zero
 major_on_zero = false
+commit_parser = "angular"
+
+[tool.semantic_release.branches."better-pyproject"]
+match = "better-pyproject"
 
 [tool.black]
 line-length = 120

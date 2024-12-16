@@ -175,8 +175,8 @@ add to `dev` extras section
 add to `genproto` extras section
 `uv add grpcio-tools --group genproto`
 
-### Pre-commit hooks
-Setup pre commit hooks with `pre-commit install` command.
+### Git hooks
+Setup pre-commit and commit-msg hooks with `make git-hooks` command.
 
 ### Formatting
 Use `make format` to autoformat code with black tool.
@@ -188,6 +188,8 @@ Use `make format` to autoformat code with black tool.
 - `make tox` to run all checks for all supported (installed in your system) python versions
 - `make test-all-versions` to run all checks for all supported python versions in docker container
 
+### Run Github Actions locally
+Use https://github.com/nektos/act
 
 ### Maintaining
 If pull request consists of several meaningful commits, that should be preserved,

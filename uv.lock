@@ -1359,7 +1359,7 @@ wheels = [
 
 [[package]]
 name = "yandexcloud"
-version = "0.328.0"
+version = "0.0.0"
 source = { editable = "." }
 dependencies = [
     { name = "cryptography" },
