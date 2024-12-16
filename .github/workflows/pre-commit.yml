@@ -1,0 +1,16 @@
+name: pre-commit
+
+on: [pull_request]
+
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout sources
+      uses: actions/checkout@v4
+
+    - name: Install Python
+      uses: actions/setup-python@v5
+
+    - name: Pre-commit hooks
+      uses: pre-commit/action@v3.0.1
