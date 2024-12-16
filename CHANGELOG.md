@@ -1,5 +1,29 @@
 # CHANGELOG
 
+## v0.329.0 (2024-12-16)
+
+### Feature
+
+* feat: upgrade dependencies (#125)
+
+* feat: upgrade dependencies
+
+* ci: use python 3.13 in CI
+
+* fix: ignore some rules for pylint
+
+* feat: updated protobuf&gt;=5.0.0
+
+---------
+
+Co-authored-by: Islam Alibekov &lt;everest@yandex-team.ru&gt; ([`018ac93`](https://github.com/yandex-cloud/python-sdk/commit/018ac935561a9d0e88bbe50b6670aa691b2c3cde))
+
+### Fix
+
+* fix: fix semantic release config (#126)
+
+Co-authored-by: Islam Alibekov &lt;everest@yandex-team.ru&gt; ([`fb8a0bb`](https://github.com/yandex-cloud/python-sdk/commit/fb8a0bb492286e5f40e0f8d77c01d44124287aa8))
+
 ## v0.328.1 (2024-12-16)
 
 ### Fix
