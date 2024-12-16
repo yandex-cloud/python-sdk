@@ -25,6 +25,6 @@ class OperationResult(Generic[ResponseType, MetaType]):
 
 class OperationError(RuntimeError):
     def __init__(self, message: str, operation_result: OperationResult[ResponseType, MetaType]):
-        super(OperationError, self).__init__(message)  # pylint: disable=super-with-arguments
+        super().__init__(message)  # pylint: disable=super-with-arguments
         self.message = message
         self.operation_result = operation_result

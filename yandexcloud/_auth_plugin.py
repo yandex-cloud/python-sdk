@@ -1,8 +1,8 @@
 from datetime import datetime
 from typing import TYPE_CHECKING, Callable, Optional, Tuple, Union
+from urllib.parse import urlparse
 
 import grpc
-from six.moves.urllib.parse import urlparse
 
 from yandex.cloud.iam.v1.iam_token_service_pb2_grpc import IamTokenServiceStub
 

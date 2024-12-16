@@ -8,7 +8,6 @@ from typing import Dict, Optional, Union
 import cryptography  # noqa: F401; pylint: disable=unused-import
 import jwt
 import requests
-import six
 
 from yandex.cloud.iam.v1.iam_token_service_pb2 import CreateIamTokenRequest
 
@@ -45,7 +44,7 @@ def __validate_service_account_key(sa_key: Optional[dict]) -> bool:
         raise RuntimeError("Invalid Service Account Key: missing private key.")
 
     private_key_prefix = "-----BEGIN PRIVATE KEY-----"
-    if not isinstance(private_key, six.string_types) or private_key_prefix not in private_key:
+    if not isinstance(private_key, str) or private_key_prefix not in private_key:
         error_message = (
             "Invalid Service Account Key: private key is in incorrect format."
             f"Should start with {private_key_prefix}.\n"
