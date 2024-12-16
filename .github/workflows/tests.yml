@@ -12,8 +12,7 @@ jobs:
       fail-fast: false
       matrix:
         env:
-          # uncomment when upgrade grpcio-tools, current version does not work with 3.13
-          # - "3.13"
+          - "3.13"
           - "3.12"
           - "3.11"
           - "3.10"

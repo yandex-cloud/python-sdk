@@ -143,7 +143,7 @@ env_list = [
     "3.10",
     "3.11",
     "3.12",
-    # "3.13",
+    "3.13",
     "type",
     "format",
     "style",
@@ -192,7 +192,7 @@ commands = [
 
 [tool.tox.gh.python]
 # uncomment when upgrade grpcio-tools, current version does not work with 3.13
-# "3.13" = ["3.13", "type", "format", "style"]
+"3.13" = ["3.13"]
 "3.12" = ["3.12"]
 "3.11" = ["3.11"]
 "3.10" = ["3.10"]
