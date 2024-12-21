@@ -224,6 +224,7 @@ class UpdateBucketRequest(google.protobuf.message.Message):
     TAGS_FIELD_NUMBER: builtins.int
     OBJECT_LOCK_FIELD_NUMBER: builtins.int
     ENCRYPTION_FIELD_NUMBER: builtins.int
+    ALLOWED_PRIVATE_ENDPOINTS_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the bucket to update.
 
@@ -304,6 +305,10 @@ class UpdateBucketRequest(google.protobuf.message.Message):
         For detauls, see [documentation](/docs/storage/concepts/encryption)
         """
 
+    @property
+    def allowed_private_endpoints(self) -> yandex.cloud.storage.v1.bucket_pb2.BucketAllowedPrivateEndpoints:
+        """requires permission s3:PutBucketAllowedPrivateEndpoints"""
+
     def __init__(
         self,
         *,
@@ -321,9 +326,10 @@ class UpdateBucketRequest(google.protobuf.message.Message):
         tags: collections.abc.Iterable[yandex.cloud.storage.v1.bucket_pb2.Tag] | None = ...,
         object_lock: yandex.cloud.storage.v1.bucket_pb2.ObjectLock | None = ...,
         encryption: yandex.cloud.storage.v1.bucket_pb2.Encryption | None = ...,
+        allowed_private_endpoints: yandex.cloud.storage.v1.bucket_pb2.BucketAllowedPrivateEndpoints | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["acl", b"acl", "anonymous_access_flags", b"anonymous_access_flags", "encryption", b"encryption", "object_lock", b"object_lock", "policy", b"policy", "update_mask", b"update_mask", "website_settings", b"website_settings"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["acl", b"acl", "anonymous_access_flags", b"anonymous_access_flags", "cors", b"cors", "default_storage_class", b"default_storage_class", "encryption", b"encryption", "lifecycle_rules", b"lifecycle_rules", "max_size", b"max_size", "name", b"name", "object_lock", b"object_lock", "policy", b"policy", "tags", b"tags", "update_mask", b"update_mask", "versioning", b"versioning", "website_settings", b"website_settings"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["acl", b"acl", "allowed_private_endpoints", b"allowed_private_endpoints", "anonymous_access_flags", b"anonymous_access_flags", "encryption", b"encryption", "object_lock", b"object_lock", "policy", b"policy", "update_mask", b"update_mask", "website_settings", b"website_settings"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["acl", b"acl", "allowed_private_endpoints", b"allowed_private_endpoints", "anonymous_access_flags", b"anonymous_access_flags", "cors", b"cors", "default_storage_class", b"default_storage_class", "encryption", b"encryption", "lifecycle_rules", b"lifecycle_rules", "max_size", b"max_size", "name", b"name", "object_lock", b"object_lock", "policy", b"policy", "tags", b"tags", "update_mask", b"update_mask", "versioning", b"versioning", "website_settings", b"website_settings"]) -> None: ...
 
 global___UpdateBucketRequest = UpdateBucketRequest
 

@@ -20,7 +20,7 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class SearchIndexServiceStub:
-    """ThreadService provides operations for managing search indexes."""
+    """SearchIndexService provides operations for managing search indexes."""
 
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Create: grpc.UnaryUnaryMultiCallable[
@@ -54,7 +54,7 @@ class SearchIndexServiceStub:
     """List search indexes in a specific folder."""
 
 class SearchIndexServiceAsyncStub:
-    """ThreadService provides operations for managing search indexes."""
+    """SearchIndexService provides operations for managing search indexes."""
 
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.assistants.v1.searchindex.search_index_service_pb2.CreateSearchIndexRequest,
@@ -87,7 +87,7 @@ class SearchIndexServiceAsyncStub:
     """List search indexes in a specific folder."""
 
 class SearchIndexServiceServicer(metaclass=abc.ABCMeta):
-    """ThreadService provides operations for managing search indexes."""
+    """SearchIndexService provides operations for managing search indexes."""
 
     @abc.abstractmethod
     def Create(

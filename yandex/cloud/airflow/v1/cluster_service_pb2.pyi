@@ -207,6 +207,12 @@ class UpdateClusterConfigSpec(google.protobuf.message.Message):
     WORKER_FIELD_NUMBER: builtins.int
     DEPENDENCIES_FIELD_NUMBER: builtins.int
     LOCKBOX_FIELD_NUMBER: builtins.int
+    AIRFLOW_VERSION_FIELD_NUMBER: builtins.int
+    PYTHON_VERSION_FIELD_NUMBER: builtins.int
+    airflow_version: builtins.str
+    """Apache Airflow version. Format: "Major.Minor" """
+    python_version: builtins.str
+    """Python version. Format: "Major.Minor" """
     @property
     def airflow(self) -> yandex.cloud.airflow.v1.cluster_pb2.AirflowConfig:
         """Configuration of the Apache Airflow application itself."""
@@ -245,9 +251,11 @@ class UpdateClusterConfigSpec(google.protobuf.message.Message):
         worker: yandex.cloud.airflow.v1.cluster_pb2.WorkerConfig | None = ...,
         dependencies: yandex.cloud.airflow.v1.cluster_pb2.Dependencies | None = ...,
         lockbox: yandex.cloud.airflow.v1.cluster_pb2.LockboxConfig | None = ...,
+        airflow_version: builtins.str = ...,
+        python_version: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["airflow", b"airflow", "dependencies", b"dependencies", "lockbox", b"lockbox", "scheduler", b"scheduler", "triggerer", b"triggerer", "webserver", b"webserver", "worker", b"worker"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["airflow", b"airflow", "dependencies", b"dependencies", "lockbox", b"lockbox", "scheduler", b"scheduler", "triggerer", b"triggerer", "webserver", b"webserver", "worker", b"worker"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["airflow", b"airflow", "airflow_version", b"airflow_version", "dependencies", b"dependencies", "lockbox", b"lockbox", "python_version", b"python_version", "scheduler", b"scheduler", "triggerer", b"triggerer", "webserver", b"webserver", "worker", b"worker"]) -> None: ...
 
 global___UpdateClusterConfigSpec = UpdateClusterConfigSpec
 

@@ -27,7 +27,7 @@ from yandex.cloud.lockbox.v1 import payload_pb2 as yandex_dot_cloud_dot_lockbox_
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n-yandex/cloud/lockbox/v1/payload_service.proto\x12\x17yandex.cloud.lockbox.v1\x1a\x1cgoogle/api/annotations.proto\x1a%yandex/cloud/lockbox/v1/payload.proto\x1a\x1dyandex/cloud/validation.proto\"R\n\x11GetPayloadRequest\x12\x1f\n\tsecret_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1c\n\nversion_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=502\x97\x01\n\x0ePayloadService\x12\x84\x01\n\x03Get\x12*.yandex.cloud.lockbox.v1.GetPayloadRequest\x1a .yandex.cloud.lockbox.v1.Payload\"/\x82\xd3\xe4\x93\x02)\x12\'/lockbox/v1/secrets/{secret_id}/payloadBb\n\x1byandex.cloud.api.lockbox.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/lockbox/v1;lockboxb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n-yandex/cloud/lockbox/v1/payload_service.proto\x12\x17yandex.cloud.lockbox.v1\x1a\x1cgoogle/api/annotations.proto\x1a%yandex/cloud/lockbox/v1/payload.proto\x1a\x1dyandex/cloud/validation.proto\"R\n\x11GetPayloadRequest\x12\x1f\n\tsecret_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1c\n\nversion_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50\"\xa8\x01\n\x0cGetExRequest\x12\x1d\n\tsecret_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x41\n\x0f\x66older_and_name\x18\x02 \x01(\x0b\x32&.yandex.cloud.lockbox.v1.FolderAndNameH\x00\x12\x1c\n\nversion_id\x18\x15 \x01(\tB\x08\x8a\xc8\x31\x04<=50B\x12\n\nidentifier\x12\x04\xc0\xc1\x31\x01J\x04\x08\x03\x10\x15\"T\n\rFolderAndName\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\"\n\x0bsecret_name\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=100\"\x99\x01\n\rGetExResponse\x12\x12\n\nversion_id\x18\x01 \x01(\t\x12\x44\n\x07\x65ntries\x18\x02 \x03(\x0b\x32\x33.yandex.cloud.lockbox.v1.GetExResponse.EntriesEntry\x1a.\n\x0c\x45ntriesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x32\x92\x02\n\x0ePayloadService\x12\x84\x01\n\x03Get\x12*.yandex.cloud.lockbox.v1.GetPayloadRequest\x1a .yandex.cloud.lockbox.v1.Payload\"/\x82\xd3\xe4\x93\x02)\x12\'/lockbox/v1/secrets/{secret_id}/payload\x12y\n\x05GetEx\x12%.yandex.cloud.lockbox.v1.GetExRequest\x1a&.yandex.cloud.lockbox.v1.GetExResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/lockbox/v1/secrets:getExBb\n\x1byandex.cloud.api.lockbox.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/lockbox/v1;lockboxb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -39,10 +39,32 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETPAYLOADREQUEST'].fields_by_name['secret_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_GETPAYLOADREQUEST'].fields_by_name['version_id']._loaded_options = None
   _globals['_GETPAYLOADREQUEST'].fields_by_name['version_id']._serialized_options = b'\212\3101\004<=50'
+  _globals['_GETEXREQUEST'].oneofs_by_name['identifier']._loaded_options = None
+  _globals['_GETEXREQUEST'].oneofs_by_name['identifier']._serialized_options = b'\300\3011\001'
+  _globals['_GETEXREQUEST'].fields_by_name['secret_id']._loaded_options = None
+  _globals['_GETEXREQUEST'].fields_by_name['secret_id']._serialized_options = b'\212\3101\004<=50'
+  _globals['_GETEXREQUEST'].fields_by_name['version_id']._loaded_options = None
+  _globals['_GETEXREQUEST'].fields_by_name['version_id']._serialized_options = b'\212\3101\004<=50'
+  _globals['_FOLDERANDNAME'].fields_by_name['folder_id']._loaded_options = None
+  _globals['_FOLDERANDNAME'].fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _globals['_FOLDERANDNAME'].fields_by_name['secret_name']._loaded_options = None
+  _globals['_FOLDERANDNAME'].fields_by_name['secret_name']._serialized_options = b'\350\3071\001\212\3101\005<=100'
+  _globals['_GETEXRESPONSE_ENTRIESENTRY']._loaded_options = None
+  _globals['_GETEXRESPONSE_ENTRIESENTRY']._serialized_options = b'8\001'
   _globals['_PAYLOADSERVICE'].methods_by_name['Get']._loaded_options = None
   _globals['_PAYLOADSERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\002)\022\'/lockbox/v1/secrets/{secret_id}/payload'
+  _globals['_PAYLOADSERVICE'].methods_by_name['GetEx']._loaded_options = None
+  _globals['_PAYLOADSERVICE'].methods_by_name['GetEx']._serialized_options = b'\202\323\344\223\002\033\022\031/lockbox/v1/secrets:getEx'
   _globals['_GETPAYLOADREQUEST']._serialized_start=174
   _globals['_GETPAYLOADREQUEST']._serialized_end=256
-  _globals['_PAYLOADSERVICE']._serialized_start=259
-  _globals['_PAYLOADSERVICE']._serialized_end=410
+  _globals['_GETEXREQUEST']._serialized_start=259
+  _globals['_GETEXREQUEST']._serialized_end=427
+  _globals['_FOLDERANDNAME']._serialized_start=429
+  _globals['_FOLDERANDNAME']._serialized_end=513
+  _globals['_GETEXRESPONSE']._serialized_start=516
+  _globals['_GETEXRESPONSE']._serialized_end=669
+  _globals['_GETEXRESPONSE_ENTRIESENTRY']._serialized_start=623
+  _globals['_GETEXRESPONSE_ENTRIESENTRY']._serialized_end=669
+  _globals['_PAYLOADSERVICE']._serialized_start=672
+  _globals['_PAYLOADSERVICE']._serialized_end=946
 # @@protoc_insertion_point(module_scope)

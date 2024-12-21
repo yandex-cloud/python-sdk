@@ -23,20 +23,23 @@ class ListTuningsRequest(google.protobuf.message.Message):
     FOLDER_ID_FIELD_NUMBER: builtins.int
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    STATUS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """Required field. ID of the folder to list tunings in."""
     page_size: builtins.int
     """Maximum number of tuning tasks to return per page."""
     page_token: builtins.str
     """Token to retrieve the next page of results."""
+    status: yandex.cloud.ai.tuning.v1.tuning_task_pb2.TuningTask.Status.ValueType
     def __init__(
         self,
         *,
         folder_id: builtins.str = ...,
         page_size: builtins.int = ...,
         page_token: builtins.str = ...,
+        status: yandex.cloud.ai.tuning.v1.tuning_task_pb2.TuningTask.Status.ValueType = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "page_size", b"page_size", "page_token", b"page_token"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "page_size", b"page_size", "page_token", b"page_token", "status", b"status"]) -> None: ...
 
 global___ListTuningsRequest = ListTuningsRequest
 
@@ -151,15 +154,21 @@ class TuningMetadata(google.protobuf.message.Message):
 
     TUNING_TASK_ID_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
+    TOTAL_STEPS_FIELD_NUMBER: builtins.int
+    CURRENT_STEP_FIELD_NUMBER: builtins.int
     tuning_task_id: builtins.str
     status: yandex.cloud.ai.tuning.v1.tuning_task_pb2.TuningTask.Status.ValueType
+    total_steps: builtins.int
+    current_step: builtins.int
     def __init__(
         self,
         *,
         tuning_task_id: builtins.str = ...,
         status: yandex.cloud.ai.tuning.v1.tuning_task_pb2.TuningTask.Status.ValueType = ...,
+        total_steps: builtins.int = ...,
+        current_step: builtins.int = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["status", b"status", "tuning_task_id", b"tuning_task_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["current_step", b"current_step", "status", b"status", "total_steps", b"total_steps", "tuning_task_id", b"tuning_task_id"]) -> None: ...
 
 global___TuningMetadata = TuningMetadata
 

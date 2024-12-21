@@ -34,6 +34,7 @@ class TuningTask(google.protobuf.message.Message):
         IN_PROGRESS: TuningTask._Status.ValueType  # 3
         COMPLETED: TuningTask._Status.ValueType  # 4
         FAILED: TuningTask._Status.ValueType  # 5
+        CANCELED: TuningTask._Status.ValueType  # 6
 
     class Status(_Status, metaclass=_StatusEnumTypeWrapper): ...
     STATUS_UNSPECIFIED: TuningTask.Status.ValueType  # 0
@@ -42,6 +43,7 @@ class TuningTask(google.protobuf.message.Message):
     IN_PROGRESS: TuningTask.Status.ValueType  # 3
     COMPLETED: TuningTask.Status.ValueType  # 4
     FAILED: TuningTask.Status.ValueType  # 5
+    CANCELED: TuningTask.Status.ValueType  # 6
 
     TASK_ID_FIELD_NUMBER: builtins.int
     OPERATION_ID_FIELD_NUMBER: builtins.int

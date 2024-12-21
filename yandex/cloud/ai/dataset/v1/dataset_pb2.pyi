@@ -171,3 +171,24 @@ class ValidationError(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["error", b"error", "error_description", b"error_description", "row_numbers", b"row_numbers"]) -> None: ...
 
 global___ValidationError = ValidationError
+
+@typing.final
+class DatasetUploadSchema(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TASK_TYPE_FIELD_NUMBER: builtins.int
+    UPLOAD_FORMAT_FIELD_NUMBER: builtins.int
+    SCHEMA_FIELD_NUMBER: builtins.int
+    task_type: builtins.str
+    upload_format: builtins.str
+    schema: builtins.str
+    def __init__(
+        self,
+        *,
+        task_type: builtins.str = ...,
+        upload_format: builtins.str = ...,
+        schema: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["schema", b"schema", "task_type", b"task_type", "upload_format", b"upload_format"]) -> None: ...
+
+global___DatasetUploadSchema = DatasetUploadSchema

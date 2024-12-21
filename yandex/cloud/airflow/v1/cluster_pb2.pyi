@@ -216,8 +216,16 @@ class ClusterConfig(google.protobuf.message.Message):
     WORKER_FIELD_NUMBER: builtins.int
     DEPENDENCIES_FIELD_NUMBER: builtins.int
     LOCKBOX_FIELD_NUMBER: builtins.int
+    AIRFLOW_VERSION_FIELD_NUMBER: builtins.int
+    PYTHON_VERSION_FIELD_NUMBER: builtins.int
     version_id: builtins.str
-    """Version of Apache that runs on the cluster."""
+    """Version of Apache Airflow that runs on the cluster.
+    Use `airlow_version` instead.
+    """
+    airflow_version: builtins.str
+    """Apache Airflow version. Format: "Major.Minor" """
+    python_version: builtins.str
+    """Python version. Format: "Major.Minor" """
     @property
     def airflow(self) -> global___AirflowConfig:
         """Configuration of the Apache Airflow application itself."""
@@ -257,9 +265,11 @@ class ClusterConfig(google.protobuf.message.Message):
         worker: global___WorkerConfig | None = ...,
         dependencies: global___Dependencies | None = ...,
         lockbox: global___LockboxConfig | None = ...,
+        airflow_version: builtins.str = ...,
+        python_version: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["airflow", b"airflow", "dependencies", b"dependencies", "lockbox", b"lockbox", "scheduler", b"scheduler", "triggerer", b"triggerer", "webserver", b"webserver", "worker", b"worker"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["airflow", b"airflow", "dependencies", b"dependencies", "lockbox", b"lockbox", "scheduler", b"scheduler", "triggerer", b"triggerer", "version_id", b"version_id", "webserver", b"webserver", "worker", b"worker"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["airflow", b"airflow", "airflow_version", b"airflow_version", "dependencies", b"dependencies", "lockbox", b"lockbox", "python_version", b"python_version", "scheduler", b"scheduler", "triggerer", b"triggerer", "version_id", b"version_id", "webserver", b"webserver", "worker", b"worker"]) -> None: ...
 
 global___ClusterConfig = ClusterConfig
 

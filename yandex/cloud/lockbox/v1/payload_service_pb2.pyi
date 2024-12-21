@@ -4,7 +4,9 @@ isort:skip_file
 """
 
 import builtins
+import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
 
@@ -29,3 +31,80 @@ class GetPayloadRequest(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["secret_id", b"secret_id", "version_id", b"version_id"]) -> None: ...
 
 global___GetPayloadRequest = GetPayloadRequest
+
+@typing.final
+class GetExRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SECRET_ID_FIELD_NUMBER: builtins.int
+    FOLDER_AND_NAME_FIELD_NUMBER: builtins.int
+    VERSION_ID_FIELD_NUMBER: builtins.int
+    secret_id: builtins.str
+    version_id: builtins.str
+    @property
+    def folder_and_name(self) -> global___FolderAndName: ...
+    def __init__(
+        self,
+        *,
+        secret_id: builtins.str = ...,
+        folder_and_name: global___FolderAndName | None = ...,
+        version_id: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["folder_and_name", b"folder_and_name", "identifier", b"identifier", "secret_id", b"secret_id"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["folder_and_name", b"folder_and_name", "identifier", b"identifier", "secret_id", b"secret_id", "version_id", b"version_id"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["identifier", b"identifier"]) -> typing.Literal["secret_id", "folder_and_name"] | None: ...
+
+global___GetExRequest = GetExRequest
+
+@typing.final
+class FolderAndName(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    SECRET_NAME_FIELD_NUMBER: builtins.int
+    folder_id: builtins.str
+    secret_name: builtins.str
+    def __init__(
+        self,
+        *,
+        folder_id: builtins.str = ...,
+        secret_name: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "secret_name", b"secret_name"]) -> None: ...
+
+global___FolderAndName = FolderAndName
+
+@typing.final
+class GetExResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class EntriesEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.bytes
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.bytes = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
+    VERSION_ID_FIELD_NUMBER: builtins.int
+    ENTRIES_FIELD_NUMBER: builtins.int
+    version_id: builtins.str
+    @property
+    def entries(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.bytes]: ...
+    def __init__(
+        self,
+        *,
+        version_id: builtins.str = ...,
+        entries: collections.abc.Mapping[builtins.str, builtins.bytes] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["entries", b"entries", "version_id", b"version_id"]) -> None: ...
+
+global___GetExResponse = GetExResponse

@@ -28,7 +28,7 @@ if _version_not_supported:
 
 
 class SearchIndexServiceStub(object):
-    """ThreadService provides operations for managing search indexes.
+    """SearchIndexService provides operations for managing search indexes.
     """
 
     def __init__(self, channel):
@@ -65,7 +65,7 @@ class SearchIndexServiceStub(object):
 
 
 class SearchIndexServiceServicer(object):
-    """ThreadService provides operations for managing search indexes.
+    """SearchIndexService provides operations for managing search indexes.
     """
 
     def Create(self, request, context):
@@ -140,7 +140,7 @@ def add_SearchIndexServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class SearchIndexService(object):
-    """ThreadService provides operations for managing search indexes.
+    """SearchIndexService provides operations for managing search indexes.
     """
 
     @staticmethod

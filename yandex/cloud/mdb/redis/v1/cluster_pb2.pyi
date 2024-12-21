@@ -308,6 +308,7 @@ class ClusterConfig(google.protobuf.message.Message):
     ACCESS_FIELD_NUMBER: builtins.int
     REDIS_FIELD_NUMBER: builtins.int
     DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
+    BACKUP_RETAIN_PERIOD_DAYS_FIELD_NUMBER: builtins.int
     version: builtins.str
     """Version of Redis server software."""
     @property
@@ -346,6 +347,10 @@ class ClusterConfig(google.protobuf.message.Message):
     def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
         """Disk size autoscaling settings"""
 
+    @property
+    def backup_retain_period_days(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Retain period of automatically created backup in days"""
+
     def __init__(
         self,
         *,
@@ -359,9 +364,10 @@ class ClusterConfig(google.protobuf.message.Message):
         access: global___Access | None = ...,
         redis: yandex.cloud.mdb.redis.v1.config.redis_pb2.RedisConfigSet | None = ...,
         disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
+        backup_retain_period_days: google.protobuf.wrappers_pb2.Int64Value | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access", b"access", "backup_window_start", b"backup_window_start", "disk_size_autoscaling", b"disk_size_autoscaling", "redis", b"redis", "redis_config", b"redis_config", "redis_config_5_0", b"redis_config_5_0", "redis_config_6_0", b"redis_config_6_0", "redis_config_6_2", b"redis_config_6_2", "redis_config_7_0", b"redis_config_7_0", "resources", b"resources"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access", b"access", "backup_window_start", b"backup_window_start", "disk_size_autoscaling", b"disk_size_autoscaling", "redis", b"redis", "redis_config", b"redis_config", "redis_config_5_0", b"redis_config_5_0", "redis_config_6_0", b"redis_config_6_0", "redis_config_6_2", b"redis_config_6_2", "redis_config_7_0", b"redis_config_7_0", "resources", b"resources", "version", b"version"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "disk_size_autoscaling", b"disk_size_autoscaling", "redis", b"redis", "redis_config", b"redis_config", "redis_config_5_0", b"redis_config_5_0", "redis_config_6_0", b"redis_config_6_0", "redis_config_6_2", b"redis_config_6_2", "redis_config_7_0", b"redis_config_7_0", "resources", b"resources"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "disk_size_autoscaling", b"disk_size_autoscaling", "redis", b"redis", "redis_config", b"redis_config", "redis_config_5_0", b"redis_config_5_0", "redis_config_6_0", b"redis_config_6_0", "redis_config_6_2", b"redis_config_6_2", "redis_config_7_0", b"redis_config_7_0", "resources", b"resources", "version", b"version"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["redis_config", b"redis_config"]) -> typing.Literal["redis_config_5_0", "redis_config_6_0", "redis_config_6_2", "redis_config_7_0"] | None: ...
 
 global___ClusterConfig = ClusterConfig

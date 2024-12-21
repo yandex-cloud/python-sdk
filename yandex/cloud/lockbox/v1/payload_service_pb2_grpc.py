@@ -41,6 +41,11 @@ class PayloadServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_lockbox_dot_v1_dot_payload__service__pb2.GetPayloadRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_lockbox_dot_v1_dot_payload__pb2.Payload.FromString,
                 _registered_method=True)
+        self.GetEx = channel.unary_unary(
+                '/yandex.cloud.lockbox.v1.PayloadService/GetEx',
+                request_serializer=yandex_dot_cloud_dot_lockbox_dot_v1_dot_payload__service__pb2.GetExRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_lockbox_dot_v1_dot_payload__service__pb2.GetExResponse.FromString,
+                _registered_method=True)
 
 
 class PayloadServiceServicer(object):
@@ -56,6 +61,12 @@ class PayloadServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetEx(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_PayloadServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -63,6 +74,11 @@ def add_PayloadServiceServicer_to_server(servicer, server):
                     servicer.Get,
                     request_deserializer=yandex_dot_cloud_dot_lockbox_dot_v1_dot_payload__service__pb2.GetPayloadRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_lockbox_dot_v1_dot_payload__pb2.Payload.SerializeToString,
+            ),
+            'GetEx': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetEx,
+                    request_deserializer=yandex_dot_cloud_dot_lockbox_dot_v1_dot_payload__service__pb2.GetExRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_lockbox_dot_v1_dot_payload__service__pb2.GetExResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -93,6 +109,33 @@ class PayloadService(object):
             '/yandex.cloud.lockbox.v1.PayloadService/Get',
             yandex_dot_cloud_dot_lockbox_dot_v1_dot_payload__service__pb2.GetPayloadRequest.SerializeToString,
             yandex_dot_cloud_dot_lockbox_dot_v1_dot_payload__pb2.Payload.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetEx(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.lockbox.v1.PayloadService/GetEx',
+            yandex_dot_cloud_dot_lockbox_dot_v1_dot_payload__service__pb2.GetExRequest.SerializeToString,
+            yandex_dot_cloud_dot_lockbox_dot_v1_dot_payload__service__pb2.GetExResponse.FromString,
             options,
             channel_credentials,
             insecure,

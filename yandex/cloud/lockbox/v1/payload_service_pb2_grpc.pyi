@@ -31,6 +31,11 @@ class PayloadServiceStub:
     To get the list of all available secrets, make a [SecretService.List] request.
     """
 
+    GetEx: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.lockbox.v1.payload_service_pb2.GetExRequest,
+        yandex.cloud.lockbox.v1.payload_service_pb2.GetExResponse,
+    ]
+
 class PayloadServiceAsyncStub:
     """Set of methods to access payload of secrets."""
 
@@ -42,6 +47,11 @@ class PayloadServiceAsyncStub:
 
     To get the list of all available secrets, make a [SecretService.List] request.
     """
+
+    GetEx: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.lockbox.v1.payload_service_pb2.GetExRequest,
+        yandex.cloud.lockbox.v1.payload_service_pb2.GetExResponse,
+    ]
 
 class PayloadServiceServicer(metaclass=abc.ABCMeta):
     """Set of methods to access payload of secrets."""
@@ -56,5 +66,12 @@ class PayloadServiceServicer(metaclass=abc.ABCMeta):
 
         To get the list of all available secrets, make a [SecretService.List] request.
         """
+
+    @abc.abstractmethod
+    def GetEx(
+        self,
+        request: yandex.cloud.lockbox.v1.payload_service_pb2.GetExRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.lockbox.v1.payload_service_pb2.GetExResponse, collections.abc.Awaitable[yandex.cloud.lockbox.v1.payload_service_pb2.GetExResponse]]: ...
 
 def add_PayloadServiceServicer_to_server(servicer: PayloadServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

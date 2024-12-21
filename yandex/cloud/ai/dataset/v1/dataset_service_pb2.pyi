@@ -547,6 +547,40 @@ class ListUploadFormatsResponse(google.protobuf.message.Message):
 global___ListUploadFormatsResponse = ListUploadFormatsResponse
 
 @typing.final
+class ListUploadSchemasRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TASK_TYPE_FIELD_NUMBER: builtins.int
+    task_type: builtins.str
+    """Dataset task type to list schemas."""
+    def __init__(
+        self,
+        *,
+        task_type: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["task_type", b"task_type"]) -> None: ...
+
+global___ListUploadSchemasRequest = ListUploadSchemasRequest
+
+@typing.final
+class ListUploadSchemasResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SCHEMAS_FIELD_NUMBER: builtins.int
+    @property
+    def schemas(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.ai.dataset.v1.dataset_pb2.DatasetUploadSchema]:
+        """List of dataset schemas for the specified dataset task type."""
+
+    def __init__(
+        self,
+        *,
+        schemas: collections.abc.Iterable[yandex.cloud.ai.dataset.v1.dataset_pb2.DatasetUploadSchema] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["schemas", b"schemas"]) -> None: ...
+
+global___ListUploadSchemasResponse = ListUploadSchemasResponse
+
+@typing.final
 class ListTypesRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -573,3 +607,41 @@ class ListTypesResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["types", b"types"]) -> None: ...
 
 global___ListTypesResponse = ListTypesResponse
+
+@typing.final
+class GetDatasetPreviewRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DATASET_ID_FIELD_NUMBER: builtins.int
+    dataset_id: builtins.str
+    """ID of the dataset."""
+    def __init__(
+        self,
+        *,
+        dataset_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["dataset_id", b"dataset_id"]) -> None: ...
+
+global___GetDatasetPreviewRequest = GetDatasetPreviewRequest
+
+@typing.final
+class GetDatasetPreviewResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DATASET_ID_FIELD_NUMBER: builtins.int
+    PREVIEW_LINES_FIELD_NUMBER: builtins.int
+    dataset_id: builtins.str
+    """ID of the dataset."""
+    @property
+    def preview_lines(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of dataset preview lines"""
+
+    def __init__(
+        self,
+        *,
+        dataset_id: builtins.str = ...,
+        preview_lines: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["dataset_id", b"dataset_id", "preview_lines", b"preview_lines"]) -> None: ...
+
+global___GetDatasetPreviewResponse = GetDatasetPreviewResponse

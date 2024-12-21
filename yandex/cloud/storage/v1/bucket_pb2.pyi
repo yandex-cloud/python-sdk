@@ -103,6 +103,7 @@ class Bucket(google.protobuf.message.Message):
     TAGS_FIELD_NUMBER: builtins.int
     OBJECT_LOCK_FIELD_NUMBER: builtins.int
     ENCRYPTION_FIELD_NUMBER: builtins.int
+    ALLOWED_PRIVATE_ENDPOINTS_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the bucket. Always equal to [name], which has priority."""
     name: builtins.str
@@ -181,8 +182,12 @@ class Bucket(google.protobuf.message.Message):
     @property
     def encryption(self) -> global___Encryption:
         """Configuration for bucket's encryption
-        For detauls, see [documentation](/docs/storage/concepts/encryption)
+        For details, see [documentation](/docs/storage/concepts/encryption)
         """
+
+    @property
+    def allowed_private_endpoints(self) -> global___BucketAllowedPrivateEndpoints:
+        """Bucket allowed private endpoints."""
 
     def __init__(
         self,
@@ -203,9 +208,10 @@ class Bucket(google.protobuf.message.Message):
         tags: collections.abc.Iterable[global___Tag] | None = ...,
         object_lock: global___ObjectLock | None = ...,
         encryption: global___Encryption | None = ...,
+        allowed_private_endpoints: global___BucketAllowedPrivateEndpoints | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["acl", b"acl", "anonymous_access_flags", b"anonymous_access_flags", "created_at", b"created_at", "encryption", b"encryption", "object_lock", b"object_lock", "policy", b"policy", "website_settings", b"website_settings"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["acl", b"acl", "anonymous_access_flags", b"anonymous_access_flags", "cors", b"cors", "created_at", b"created_at", "default_storage_class", b"default_storage_class", "encryption", b"encryption", "folder_id", b"folder_id", "id", b"id", "lifecycle_rules", b"lifecycle_rules", "max_size", b"max_size", "name", b"name", "object_lock", b"object_lock", "policy", b"policy", "tags", b"tags", "versioning", b"versioning", "website_settings", b"website_settings"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["acl", b"acl", "allowed_private_endpoints", b"allowed_private_endpoints", "anonymous_access_flags", b"anonymous_access_flags", "created_at", b"created_at", "encryption", b"encryption", "object_lock", b"object_lock", "policy", b"policy", "website_settings", b"website_settings"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["acl", b"acl", "allowed_private_endpoints", b"allowed_private_endpoints", "anonymous_access_flags", b"anonymous_access_flags", "cors", b"cors", "created_at", b"created_at", "default_storage_class", b"default_storage_class", "encryption", b"encryption", "folder_id", b"folder_id", "id", b"id", "lifecycle_rules", b"lifecycle_rules", "max_size", b"max_size", "name", b"name", "object_lock", b"object_lock", "policy", b"policy", "tags", b"tags", "versioning", b"versioning", "website_settings", b"website_settings"]) -> None: ...
 
 global___Bucket = Bucket
 
@@ -1463,3 +1469,27 @@ class Encryption(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["rules", b"rules"]) -> None: ...
 
 global___Encryption = Encryption
+
+@typing.final
+class BucketAllowedPrivateEndpoints(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ENABLED_FIELD_NUMBER: builtins.int
+    PRIVATE_ENDPOINTS_FIELD_NUMBER: builtins.int
+    enabled: builtins.bool
+    """if true, private endpoints white list check is enabled
+    even if private_endpoints list is empty
+    """
+    @property
+    def private_endpoints(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """white list of private endpoints bucket accessible from"""
+
+    def __init__(
+        self,
+        *,
+        enabled: builtins.bool = ...,
+        private_endpoints: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["enabled", b"enabled", "private_endpoints", b"private_endpoints"]) -> None: ...
+
+global___BucketAllowedPrivateEndpoints = BucketAllowedPrivateEndpoints

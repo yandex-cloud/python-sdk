@@ -105,6 +105,7 @@ class CreateApiKeyRequest(google.protobuf.message.Message):
     SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     SCOPE_FIELD_NUMBER: builtins.int
+    SCOPES_FIELD_NUMBER: builtins.int
     EXPIRES_AT_FIELD_NUMBER: builtins.int
     service_account_id: builtins.str
     """ID of the service account to create an API key for.
@@ -117,6 +118,10 @@ class CreateApiKeyRequest(google.protobuf.message.Message):
     scope: builtins.str
     """Scope of the API key."""
     @property
+    def scopes(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Scopes of the API key."""
+
+    @property
     def expires_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """API key expiration timestamp, if not specified, then the API key doesn't expire"""
 
@@ -126,10 +131,11 @@ class CreateApiKeyRequest(google.protobuf.message.Message):
         service_account_id: builtins.str = ...,
         description: builtins.str = ...,
         scope: builtins.str = ...,
+        scopes: collections.abc.Iterable[builtins.str] | None = ...,
         expires_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["expires_at", b"expires_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "expires_at", b"expires_at", "scope", b"scope", "service_account_id", b"service_account_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "expires_at", b"expires_at", "scope", b"scope", "scopes", b"scopes", "service_account_id", b"service_account_id"]) -> None: ...
 
 global___CreateApiKeyRequest = CreateApiKeyRequest
 
@@ -163,6 +169,8 @@ class UpdateApiKeyRequest(google.protobuf.message.Message):
     API_KEY_ID_FIELD_NUMBER: builtins.int
     UPDATE_MASK_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
+    SCOPES_FIELD_NUMBER: builtins.int
+    EXPIRES_AT_FIELD_NUMBER: builtins.int
     api_key_id: builtins.str
     """ID of the ApiKey resource to update.
     To get the API key ID, use a [ApiKeyService.List] request.
@@ -173,15 +181,25 @@ class UpdateApiKeyRequest(google.protobuf.message.Message):
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which fields of the ApiKey resource are going to be updated."""
 
+    @property
+    def scopes(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Scopes of the API key."""
+
+    @property
+    def expires_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """API key expiration timestamp, if not specified, then the API key doesn't expire"""
+
     def __init__(
         self,
         *,
         api_key_id: builtins.str = ...,
         update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
         description: builtins.str = ...,
+        scopes: collections.abc.Iterable[builtins.str] | None = ...,
+        expires_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["api_key_id", b"api_key_id", "description", b"description", "update_mask", b"update_mask"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["expires_at", b"expires_at", "update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["api_key_id", b"api_key_id", "description", b"description", "expires_at", b"expires_at", "scopes", b"scopes", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateApiKeyRequest = UpdateApiKeyRequest
 

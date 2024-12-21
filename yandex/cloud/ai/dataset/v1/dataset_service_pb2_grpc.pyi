@@ -62,7 +62,13 @@ class DatasetServiceStub:
         yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadFormatsRequest,
         yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadFormatsResponse,
     ]
-    """Lists supported upload formats for the specified dataset task type."""
+    """Deprecated. Use ListUploadSchemas."""
+
+    ListUploadSchemas: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadSchemasRequest,
+        yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadSchemasResponse,
+    ]
+    """Lists supported dataset upload formats types and schemas for the specified dataset task type."""
 
     GetUploadDraftUrl: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.dataset.v1.dataset_service_pb2.GetUploadDraftUrlRequest,
@@ -89,6 +95,12 @@ class DatasetServiceStub:
         yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListTypesResponse,
     ]
     """Returns a list of dataset types"""
+
+    GetPreview: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.dataset.v1.dataset_service_pb2.GetDatasetPreviewRequest,
+        yandex.cloud.ai.dataset.v1.dataset_service_pb2.GetDatasetPreviewResponse,
+    ]
+    """Returns a preview of dataset types"""
 
 class DatasetServiceAsyncStub:
     """A set of methods for managing datasets."""
@@ -133,7 +145,13 @@ class DatasetServiceAsyncStub:
         yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadFormatsRequest,
         yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadFormatsResponse,
     ]
-    """Lists supported upload formats for the specified dataset task type."""
+    """Deprecated. Use ListUploadSchemas."""
+
+    ListUploadSchemas: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadSchemasRequest,
+        yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadSchemasResponse,
+    ]
+    """Lists supported dataset upload formats types and schemas for the specified dataset task type."""
 
     GetUploadDraftUrl: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.dataset.v1.dataset_service_pb2.GetUploadDraftUrlRequest,
@@ -160,6 +178,12 @@ class DatasetServiceAsyncStub:
         yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListTypesResponse,
     ]
     """Returns a list of dataset types"""
+
+    GetPreview: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.dataset.v1.dataset_service_pb2.GetDatasetPreviewRequest,
+        yandex.cloud.ai.dataset.v1.dataset_service_pb2.GetDatasetPreviewResponse,
+    ]
+    """Returns a preview of dataset types"""
 
 class DatasetServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing datasets."""
@@ -218,7 +242,15 @@ class DatasetServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadFormatsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadFormatsResponse, collections.abc.Awaitable[yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadFormatsResponse]]:
-        """Lists supported upload formats for the specified dataset task type."""
+        """Deprecated. Use ListUploadSchemas."""
+
+    @abc.abstractmethod
+    def ListUploadSchemas(
+        self,
+        request: yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadSchemasRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadSchemasResponse, collections.abc.Awaitable[yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListUploadSchemasResponse]]:
+        """Lists supported dataset upload formats types and schemas for the specified dataset task type."""
 
     @abc.abstractmethod
     def GetUploadDraftUrl(
@@ -253,5 +285,13 @@ class DatasetServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListTypesResponse, collections.abc.Awaitable[yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListTypesResponse]]:
         """Returns a list of dataset types"""
+
+    @abc.abstractmethod
+    def GetPreview(
+        self,
+        request: yandex.cloud.ai.dataset.v1.dataset_service_pb2.GetDatasetPreviewRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.ai.dataset.v1.dataset_service_pb2.GetDatasetPreviewResponse, collections.abc.Awaitable[yandex.cloud.ai.dataset.v1.dataset_service_pb2.GetDatasetPreviewResponse]]:
+        """Returns a preview of dataset types"""
 
 def add_DatasetServiceServicer_to_server(servicer: DatasetServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

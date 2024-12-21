@@ -4,7 +4,9 @@ isort:skip_file
 """
 
 import builtins
+import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.internal.containers
 import google.protobuf.message
 import google.protobuf.timestamp_pb2
 import typing
@@ -23,6 +25,7 @@ class ApiKey(google.protobuf.message.Message):
     DESCRIPTION_FIELD_NUMBER: builtins.int
     LAST_USED_AT_FIELD_NUMBER: builtins.int
     SCOPE_FIELD_NUMBER: builtins.int
+    SCOPES_FIELD_NUMBER: builtins.int
     EXPIRES_AT_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the API Key."""
@@ -41,6 +44,10 @@ class ApiKey(google.protobuf.message.Message):
         """Timestamp for the last authentication using this API key."""
 
     @property
+    def scopes(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Scopes of the API key. 0-256 characters long."""
+
+    @property
     def expires_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """API key expiration timestamp."""
 
@@ -53,9 +60,10 @@ class ApiKey(google.protobuf.message.Message):
         description: builtins.str = ...,
         last_used_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         scope: builtins.str = ...,
+        scopes: collections.abc.Iterable[builtins.str] | None = ...,
         expires_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at", "expires_at", b"expires_at", "last_used_at", b"last_used_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "expires_at", b"expires_at", "id", b"id", "last_used_at", b"last_used_at", "scope", b"scope", "service_account_id", b"service_account_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "expires_at", b"expires_at", "id", b"id", "last_used_at", b"last_used_at", "scope", b"scope", "scopes", b"scopes", "service_account_id", b"service_account_id"]) -> None: ...
 
 global___ApiKey = ApiKey
