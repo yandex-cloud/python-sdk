@@ -1,5 +1,33 @@
 # CHANGELOG
 
+## v0.330.0 (2024-12-23)
+
+### Ci
+
+* ci: added pre-commit workflow (#130)
+
+Co-authored-by: Islam Alibekov &lt;everest@yandex-team.ru&gt; ([`47a017e`](https://github.com/yandex-cloud/python-sdk/commit/47a017e03df9faf41ebacec089cbb77e0646c6ef))
+
+### Feature
+
+* feat: regenerate proto ([`3844d96`](https://github.com/yandex-cloud/python-sdk/commit/3844d96e19c0a12c1bbdbbb8d0994d47b89790f2))
+
+### Fix
+
+* fix: fix trailing-whitespace (#128)
+
+Co-authored-by: Islam Alibekov &lt;everest@yandex-team.ru&gt; ([`0e0cee9`](https://github.com/yandex-cloud/python-sdk/commit/0e0cee9232f62660fee53b54b8de6ccec2633de8))
+
+* fix: bump cryptography version due to vulnerability issue (#127)
+
+Co-authored-by: Islam Alibekov &lt;everest@yandex-team.ru&gt; ([`bb10518`](https://github.com/yandex-cloud/python-sdk/commit/bb105182ccf26ab491e876f2d21b56ba89284e94))
+
+### Style
+
+* style: support pyupgrade pre-commit hook (#129)
+
+Co-authored-by: Islam Alibekov &lt;everest@yandex-team.ru&gt; ([`3d18e01`](https://github.com/yandex-cloud/python-sdk/commit/3d18e0182a05c13f9292a854ff1d7e9eb38825de))
+
 ## v0.329.0 (2024-12-16)
 
 ### Feature
