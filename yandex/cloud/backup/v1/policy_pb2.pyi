@@ -569,6 +569,7 @@ class PolicySettings(google.protobuf.message.Message):
         RAND_MAX_DELAY_FIELD_NUMBER: builtins.int
         SCHEME_FIELD_NUMBER: builtins.int
         WEEKLY_BACKUP_DAY_FIELD_NUMBER: builtins.int
+        TASK_FAILURE_FIELD_NUMBER: builtins.int
         enabled: builtins.bool
         """If true, the backup schedule will be enabled."""
         max_parallel_backups: builtins.int
@@ -585,6 +586,10 @@ class PolicySettings(google.protobuf.message.Message):
         def rand_max_delay(self) -> global___PolicySettings.Interval:
             """Configuration of the random delay between the execution of parallel tasks."""
 
+        @property
+        def task_failure(self) -> global___PolicySettings.RetriesConfiguration:
+            """Task failure settings in case of failure of scheduled task, not applicable to  manually launched tasks"""
+
         def __init__(
             self,
             *,
@@ -594,9 +599,10 @@ class PolicySettings(google.protobuf.message.Message):
             rand_max_delay: global___PolicySettings.Interval | None = ...,
             scheme: global___PolicySettings.Scheduling.Scheme.ValueType = ...,
             weekly_backup_day: global___PolicySettings.Day.ValueType = ...,
+            task_failure: global___PolicySettings.RetriesConfiguration | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["rand_max_delay", b"rand_max_delay"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["backup_sets", b"backup_sets", "enabled", b"enabled", "max_parallel_backups", b"max_parallel_backups", "rand_max_delay", b"rand_max_delay", "scheme", b"scheme", "weekly_backup_day", b"weekly_backup_day"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["rand_max_delay", b"rand_max_delay", "task_failure", b"task_failure"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["backup_sets", b"backup_sets", "enabled", b"enabled", "max_parallel_backups", b"max_parallel_backups", "rand_max_delay", b"rand_max_delay", "scheme", b"scheme", "task_failure", b"task_failure", "weekly_backup_day", b"weekly_backup_day"]) -> None: ...
 
     COMPRESSION_FIELD_NUMBER: builtins.int
     FORMAT_FIELD_NUMBER: builtins.int

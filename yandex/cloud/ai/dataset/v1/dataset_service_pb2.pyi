@@ -168,6 +168,7 @@ class CreateDatasetRequest(google.protobuf.message.Message):
     TASK_TYPE_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     UPLOAD_FORMAT_FIELD_NUMBER: builtins.int
+    ALLOW_DATA_LOG_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the dataset."""
     folder_id: builtins.str
@@ -182,6 +183,8 @@ class CreateDatasetRequest(google.protobuf.message.Message):
     """Upload format of the dataset.
     The list of supported upload formats can be retrieved via ListUploadFormats method.
     """
+    allow_data_log: builtins.bool
+    """Allow to use the dataset to improve the models quality. Default false."""
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Labels of the dataset. Optional."""
@@ -196,8 +199,9 @@ class CreateDatasetRequest(google.protobuf.message.Message):
         task_type: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         upload_format: builtins.str = ...,
+        allow_data_log: builtins.bool = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "folder_id", b"folder_id", "labels", b"labels", "metadata", b"metadata", "name", b"name", "task_type", b"task_type", "upload_format", b"upload_format"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["allow_data_log", b"allow_data_log", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "metadata", b"metadata", "name", b"name", "task_type", b"task_type", "upload_format", b"upload_format"]) -> None: ...
 
 global___CreateDatasetRequest = CreateDatasetRequest
 
@@ -645,3 +649,87 @@ class GetDatasetPreviewResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["dataset_id", b"dataset_id", "preview_lines", b"preview_lines"]) -> None: ...
 
 global___GetDatasetPreviewResponse = GetDatasetPreviewResponse
+
+@typing.final
+class GetDownloadUrlsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DATASET_ID_FIELD_NUMBER: builtins.int
+    dataset_id: builtins.str
+    """ID of the dataset."""
+    def __init__(
+        self,
+        *,
+        dataset_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["dataset_id", b"dataset_id"]) -> None: ...
+
+global___GetDownloadUrlsRequest = GetDownloadUrlsRequest
+
+@typing.final
+class GetDownloadUrlsResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DATASET_ID_FIELD_NUMBER: builtins.int
+    DOWNLOAD_URLS_FIELD_NUMBER: builtins.int
+    dataset_id: builtins.str
+    """ID of the dataset."""
+    @property
+    def download_urls(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.ai.dataset.v1.dataset_pb2.DatasetFileDownloadUrl]: ...
+    def __init__(
+        self,
+        *,
+        dataset_id: builtins.str = ...,
+        download_urls: collections.abc.Iterable[yandex.cloud.ai.dataset.v1.dataset_pb2.DatasetFileDownloadUrl] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["dataset_id", b"dataset_id", "download_urls", b"download_urls"]) -> None: ...
+
+global___GetDownloadUrlsResponse = GetDownloadUrlsResponse
+
+@typing.final
+class ListOperationsIdsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DATASET_ID_FIELD_NUMBER: builtins.int
+    @property
+    def dataset_id(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def __init__(
+        self,
+        *,
+        dataset_id: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["dataset_id", b"dataset_id"]) -> None: ...
+
+global___ListOperationsIdsRequest = ListOperationsIdsRequest
+
+@typing.final
+class ListOperationsIdsResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class DatasetIdToOperationIdEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
+    DATASET_ID_TO_OPERATION_ID_FIELD_NUMBER: builtins.int
+    @property
+    def dataset_id_to_operation_id(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
+    def __init__(
+        self,
+        *,
+        dataset_id_to_operation_id: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["dataset_id_to_operation_id", b"dataset_id_to_operation_id"]) -> None: ...
+
+global___ListOperationsIdsResponse = ListOperationsIdsResponse

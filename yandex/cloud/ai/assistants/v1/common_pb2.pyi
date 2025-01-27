@@ -8,6 +8,7 @@ import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
+import google.protobuf.struct_pb2
 import google.protobuf.wrappers_pb2
 import typing
 
@@ -19,7 +20,40 @@ class PromptTruncationOptions(google.protobuf.message.Message):
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    @typing.final
+    class AutoStrategy(google.protobuf.message.Message):
+        """Auto truncation strategy.
+        No specific parameters are required for this strategy.
+        The system will handle truncation in a way that aims to preserve the most relevant context.
+        """
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        def __init__(
+            self,
+        ) -> None: ...
+
+    @typing.final
+    class LastMessagesStrategy(google.protobuf.message.Message):
+        """Truncates the prompt by retaining only the last `num_messages` messages in the thread."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        NUM_MESSAGES_FIELD_NUMBER: builtins.int
+        num_messages: builtins.int
+        """The number of most recent messages to retain in the prompt.
+        If these messages exceed `max_prompt_tokens`, older messages will be further truncated to fit the limit.
+        """
+        def __init__(
+            self,
+            *,
+            num_messages: builtins.int = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["num_messages", b"num_messages"]) -> None: ...
+
     MAX_PROMPT_TOKENS_FIELD_NUMBER: builtins.int
+    AUTO_STRATEGY_FIELD_NUMBER: builtins.int
+    LAST_MESSAGES_STRATEGY_FIELD_NUMBER: builtins.int
     @property
     def max_prompt_tokens(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The maximum number of tokens allowed in the prompt.
@@ -27,13 +61,24 @@ class PromptTruncationOptions(google.protobuf.message.Message):
         Default max_prompt_tokens: 7000
         """
 
+    @property
+    def auto_strategy(self) -> global___PromptTruncationOptions.AutoStrategy: ...
+    @property
+    def last_messages_strategy(self) -> global___PromptTruncationOptions.LastMessagesStrategy:
+        """Retains only the last `num_messages` messages in the thread.
+        If these messages exceed `max_prompt_tokens`, older messages will be further truncated to fit the limit.
+        """
+
     def __init__(
         self,
         *,
         max_prompt_tokens: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        auto_strategy: global___PromptTruncationOptions.AutoStrategy | None = ...,
+        last_messages_strategy: global___PromptTruncationOptions.LastMessagesStrategy | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["max_prompt_tokens", b"max_prompt_tokens"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["max_prompt_tokens", b"max_prompt_tokens"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["TruncationStrategy", b"TruncationStrategy", "auto_strategy", b"auto_strategy", "last_messages_strategy", b"last_messages_strategy", "max_prompt_tokens", b"max_prompt_tokens"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["TruncationStrategy", b"TruncationStrategy", "auto_strategy", b"auto_strategy", "last_messages_strategy", b"last_messages_strategy", "max_prompt_tokens", b"max_prompt_tokens"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["TruncationStrategy", b"TruncationStrategy"]) -> typing.Literal["auto_strategy", "last_messages_strategy"] | None: ...
 
 global___PromptTruncationOptions = PromptTruncationOptions
 
@@ -70,6 +115,118 @@ class CompletionOptions(google.protobuf.message.Message):
 global___CompletionOptions = CompletionOptions
 
 @typing.final
+class Tool(google.protobuf.message.Message):
+    """Represents a general tool that can be one of several types."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SEARCH_INDEX_FIELD_NUMBER: builtins.int
+    FUNCTION_FIELD_NUMBER: builtins.int
+    @property
+    def search_index(self) -> global___SearchIndexTool:
+        """SearchIndexTool tool that performs search across specified indexes."""
+
+    @property
+    def function(self) -> global___FunctionTool:
+        """Function tool that can be invoked by the assistant."""
+
+    def __init__(
+        self,
+        *,
+        search_index: global___SearchIndexTool | None = ...,
+        function: global___FunctionTool | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["ToolType", b"ToolType", "function", b"function", "search_index", b"search_index"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["ToolType", b"ToolType", "function", b"function", "search_index", b"search_index"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["ToolType", b"ToolType"]) -> typing.Literal["search_index", "function"] | None: ...
+
+global___Tool = Tool
+
+@typing.final
+class ToolCall(google.protobuf.message.Message):
+    """Represents a call to a tool."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FUNCTION_CALL_FIELD_NUMBER: builtins.int
+    @property
+    def function_call(self) -> global___FunctionCall:
+        """Represents a call to a function."""
+
+    def __init__(
+        self,
+        *,
+        function_call: global___FunctionCall | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["ToolCallType", b"ToolCallType", "function_call", b"function_call"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["ToolCallType", b"ToolCallType", "function_call", b"function_call"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["ToolCallType", b"ToolCallType"]) -> typing.Literal["function_call"] | None: ...
+
+global___ToolCall = ToolCall
+
+@typing.final
+class ToolCallList(google.protobuf.message.Message):
+    """Represents a list of tool calls."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TOOL_CALLS_FIELD_NUMBER: builtins.int
+    @property
+    def tool_calls(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ToolCall]:
+        """A list of tool calls to be executed."""
+
+    def __init__(
+        self,
+        *,
+        tool_calls: collections.abc.Iterable[global___ToolCall] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["tool_calls", b"tool_calls"]) -> None: ...
+
+global___ToolCallList = ToolCallList
+
+@typing.final
+class ToolResult(google.protobuf.message.Message):
+    """Represents the result of a tool call."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FUNCTION_RESULT_FIELD_NUMBER: builtins.int
+    @property
+    def function_result(self) -> global___FunctionResult:
+        """Represents the result of a function call."""
+
+    def __init__(
+        self,
+        *,
+        function_result: global___FunctionResult | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["ToolResultType", b"ToolResultType", "function_result", b"function_result"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["ToolResultType", b"ToolResultType", "function_result", b"function_result"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["ToolResultType", b"ToolResultType"]) -> typing.Literal["function_result"] | None: ...
+
+global___ToolResult = ToolResult
+
+@typing.final
+class ToolResultList(google.protobuf.message.Message):
+    """Represents a list of tool results."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TOOL_RESULTS_FIELD_NUMBER: builtins.int
+    @property
+    def tool_results(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ToolResult]:
+        """A list of tool results."""
+
+    def __init__(
+        self,
+        *,
+        tool_results: collections.abc.Iterable[global___ToolResult] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["tool_results", b"tool_results"]) -> None: ...
+
+global___ToolResultList = ToolResultList
+
+@typing.final
 class SearchIndexTool(google.protobuf.message.Message):
     """Configures a tool that enables Retrieval-Augmented Generation (RAG) by allowing the assistant to search across a specified search index."""
 
@@ -100,23 +257,85 @@ class SearchIndexTool(google.protobuf.message.Message):
 global___SearchIndexTool = SearchIndexTool
 
 @typing.final
-class Tool(google.protobuf.message.Message):
-    """Represents a general tool that can be one of several types."""
+class FunctionTool(google.protobuf.message.Message):
+    """Represents a function tool that can be invoked by the assistant."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
-    SEARCH_INDEX_FIELD_NUMBER: builtins.int
+    NAME_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
+    PARAMETERS_FIELD_NUMBER: builtins.int
+    name: builtins.str
+    """The name of the function."""
+    description: builtins.str
+    """A description of the function's purpose or behavior."""
     @property
-    def search_index(self) -> global___SearchIndexTool:
-        """SearchIndexTool tool that performs search across specified indexes."""
+    def parameters(self) -> google.protobuf.struct_pb2.Struct:
+        """A JSON Schema that defines the expected parameters for the function.
+        The schema should describe the required fields, their types, and any constraints or default values.
+        """
 
     def __init__(
         self,
         *,
-        search_index: global___SearchIndexTool | None = ...,
+        name: builtins.str = ...,
+        description: builtins.str = ...,
+        parameters: google.protobuf.struct_pb2.Struct | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["ToolType", b"ToolType", "search_index", b"search_index"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["ToolType", b"ToolType", "search_index", b"search_index"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["ToolType", b"ToolType"]) -> typing.Literal["search_index"] | None: ...
+    def HasField(self, field_name: typing.Literal["parameters", b"parameters"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "name", b"name", "parameters", b"parameters"]) -> None: ...
 
-global___Tool = Tool
+global___FunctionTool = FunctionTool
+
+@typing.final
+class FunctionCall(google.protobuf.message.Message):
+    """Represents the invocation of a function with specific arguments."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    NAME_FIELD_NUMBER: builtins.int
+    ARGUMENTS_FIELD_NUMBER: builtins.int
+    name: builtins.str
+    """The name of the function being called."""
+    @property
+    def arguments(self) -> google.protobuf.struct_pb2.Struct:
+        """The structured arguments passed to the function.
+        These arguments must adhere to the JSON Schema defined in the corresponding function's parameters.
+        """
+
+    def __init__(
+        self,
+        *,
+        name: builtins.str = ...,
+        arguments: google.protobuf.struct_pb2.Struct | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["arguments", b"arguments"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["arguments", b"arguments", "name", b"name"]) -> None: ...
+
+global___FunctionCall = FunctionCall
+
+@typing.final
+class FunctionResult(google.protobuf.message.Message):
+    """Represents the result of a function call."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    NAME_FIELD_NUMBER: builtins.int
+    CONTENT_FIELD_NUMBER: builtins.int
+    name: builtins.str
+    """The name of the function that was executed."""
+    content: builtins.str
+    """The result of the function call, represented as a string.
+    This field can be used to store the output of the function.
+    """
+    def __init__(
+        self,
+        *,
+        name: builtins.str = ...,
+        content: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["ContentType", b"ContentType", "content", b"content"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["ContentType", b"ContentType", "content", b"content", "name", b"name"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["ContentType", b"ContentType"]) -> typing.Literal["content"] | None: ...
+
+global___FunctionResult = FunctionResult

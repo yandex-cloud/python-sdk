@@ -53,6 +53,7 @@ class CreateRunRequest(google.protobuf.message.Message):
     CUSTOM_PROMPT_TRUNCATION_OPTIONS_FIELD_NUMBER: builtins.int
     CUSTOM_COMPLETION_OPTIONS_FIELD_NUMBER: builtins.int
     STREAM_FIELD_NUMBER: builtins.int
+    TOOLS_FIELD_NUMBER: builtins.int
     assistant_id: builtins.str
     """ID of the assistant for which the run is being created"""
     thread_id: builtins.str
@@ -79,6 +80,10 @@ class CreateRunRequest(google.protobuf.message.Message):
         If specified, these options will override the assistant's completion settings for this run.
         """
 
+    @property
+    def tools(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.ai.assistants.v1.common_pb2.Tool]:
+        """List of tools that are available for the assistant to use in this run."""
+
     def __init__(
         self,
         *,
@@ -89,9 +94,10 @@ class CreateRunRequest(google.protobuf.message.Message):
         custom_prompt_truncation_options: yandex.cloud.ai.assistants.v1.common_pb2.PromptTruncationOptions | None = ...,
         custom_completion_options: yandex.cloud.ai.assistants.v1.common_pb2.CompletionOptions | None = ...,
         stream: builtins.bool = ...,
+        tools: collections.abc.Iterable[yandex.cloud.ai.assistants.v1.common_pb2.Tool] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["custom_completion_options", b"custom_completion_options", "custom_prompt_truncation_options", b"custom_prompt_truncation_options"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["additional_messages", b"additional_messages", "assistant_id", b"assistant_id", "custom_completion_options", b"custom_completion_options", "custom_prompt_truncation_options", b"custom_prompt_truncation_options", "labels", b"labels", "stream", b"stream", "thread_id", b"thread_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["additional_messages", b"additional_messages", "assistant_id", b"assistant_id", "custom_completion_options", b"custom_completion_options", "custom_prompt_truncation_options", b"custom_prompt_truncation_options", "labels", b"labels", "stream", b"stream", "thread_id", b"thread_id", "tools", b"tools"]) -> None: ...
 
 global___CreateRunRequest = CreateRunRequest
 
@@ -119,6 +125,36 @@ class ListenRunRequest(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["events_start_idx", b"events_start_idx", "run_id", b"run_id"]) -> None: ...
 
 global___ListenRunRequest = ListenRunRequest
+
+@typing.final
+class AttachRunRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    RUN_ID_FIELD_NUMBER: builtins.int
+    EVENTS_START_IDX_FIELD_NUMBER: builtins.int
+    TOOL_RESULT_LIST_FIELD_NUMBER: builtins.int
+    run_id: builtins.str
+    """ID of the run to listen to."""
+    @property
+    def events_start_idx(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Starting index for events. If provided, listening will start from this event."""
+
+    @property
+    def tool_result_list(self) -> yandex.cloud.ai.assistants.v1.common_pb2.ToolResultList:
+        """A list of tool results to submit to the run, such as the output of a function call."""
+
+    def __init__(
+        self,
+        *,
+        run_id: builtins.str = ...,
+        events_start_idx: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        tool_result_list: yandex.cloud.ai.assistants.v1.common_pb2.ToolResultList | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["Event", b"Event", "events_start_idx", b"events_start_idx", "tool_result_list", b"tool_result_list"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["Event", b"Event", "events_start_idx", b"events_start_idx", "run_id", b"run_id", "tool_result_list", b"tool_result_list"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["Event", b"Event"]) -> typing.Literal["tool_result_list"] | None: ...
+
+global___AttachRunRequest = AttachRunRequest
 
 @typing.final
 class GetRunRequest(google.protobuf.message.Message):
@@ -248,6 +284,8 @@ class StreamEvent(google.protobuf.message.Message):
         """Run has failed due to an error."""
         DONE: StreamEvent._EventType.ValueType  # 3
         """The run has completed."""
+        TOOL_CALLS: StreamEvent._EventType.ValueType  # 4
+        """The run is waiting for tool calls to be executed and their results to be submitted."""
 
     class EventType(_EventType, metaclass=_EventTypeEnumTypeWrapper):
         """Enum representing events that can occur in the stream."""
@@ -260,12 +298,15 @@ class StreamEvent(google.protobuf.message.Message):
     """Run has failed due to an error."""
     DONE: StreamEvent.EventType.ValueType  # 3
     """The run has completed."""
+    TOOL_CALLS: StreamEvent.EventType.ValueType  # 4
+    """The run is waiting for tool calls to be executed and their results to be submitted."""
 
     EVENT_TYPE_FIELD_NUMBER: builtins.int
     STREAM_CURSOR_FIELD_NUMBER: builtins.int
     ERROR_FIELD_NUMBER: builtins.int
     PARTIAL_MESSAGE_FIELD_NUMBER: builtins.int
     COMPLETED_MESSAGE_FIELD_NUMBER: builtins.int
+    TOOL_CALL_LIST_FIELD_NUMBER: builtins.int
     event_type: global___StreamEvent.EventType.ValueType
     """The type of event."""
     @property
@@ -284,6 +325,10 @@ class StreamEvent(google.protobuf.message.Message):
     def completed_message(self) -> yandex.cloud.ai.assistants.v1.threads.message_pb2.Message:
         """Final message generated by an assistant if a run has completed successfully."""
 
+    @property
+    def tool_call_list(self) -> yandex.cloud.ai.assistants.v1.common_pb2.ToolCallList:
+        """A list of tool calls requested by the assistant."""
+
     def __init__(
         self,
         *,
@@ -292,9 +337,10 @@ class StreamEvent(google.protobuf.message.Message):
         error: yandex.cloud.ai.common.common_pb2.Error | None = ...,
         partial_message: yandex.cloud.ai.assistants.v1.threads.message_pb2.MessageContent | None = ...,
         completed_message: yandex.cloud.ai.assistants.v1.threads.message_pb2.Message | None = ...,
+        tool_call_list: yandex.cloud.ai.assistants.v1.common_pb2.ToolCallList | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["EventData", b"EventData", "completed_message", b"completed_message", "error", b"error", "partial_message", b"partial_message", "stream_cursor", b"stream_cursor"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["EventData", b"EventData", "completed_message", b"completed_message", "error", b"error", "event_type", b"event_type", "partial_message", b"partial_message", "stream_cursor", b"stream_cursor"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["EventData", b"EventData"]) -> typing.Literal["error", "partial_message", "completed_message"] | None: ...
+    def HasField(self, field_name: typing.Literal["EventData", b"EventData", "completed_message", b"completed_message", "error", b"error", "partial_message", b"partial_message", "stream_cursor", b"stream_cursor", "tool_call_list", b"tool_call_list"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["EventData", b"EventData", "completed_message", b"completed_message", "error", b"error", "event_type", b"event_type", "partial_message", b"partial_message", "stream_cursor", b"stream_cursor", "tool_call_list", b"tool_call_list"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["EventData", b"EventData"]) -> typing.Literal["error", "partial_message", "completed_message", "tool_call_list"] | None: ...
 
 global___StreamEvent = StreamEvent

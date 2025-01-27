@@ -20,7 +20,7 @@ class TranslatedText(google.protobuf.message.Message):
     """Translated text."""
     detected_language_code: builtins.str
     """The language code of the source text.
-    Specified in [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) format (for example, `` en ``).
+    Most languages are specified in [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) format (for example, `` ru ``), but the field are not limited to it.
     """
     def __init__(
         self,
@@ -40,7 +40,7 @@ class Language(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     code: builtins.str
     """The language code.
-    Specified in [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) format (for example, `` en ``).
+    Most languages are specified in [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) format (for example, `` ru ``), but the field are not limited to it.
     """
     name: builtins.str
     """The name of the language (for example, `` English ``)."""

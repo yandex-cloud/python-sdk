@@ -109,9 +109,7 @@ class ClusterServiceStub:
         yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.ListClusterLogsRequest,
         yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.ListClusterLogsResponse,
     ]
-    """Retrieves logs for the specified OpenSearch cluster.
-    For detailed description, see the [Logs](/yandex-mdb-guide/concepts/logs.html) section in the developer's guide.
-    """
+    """Retrieves logs for the specified OpenSearch cluster."""
 
     StreamLogs: grpc.UnaryStreamMultiCallable[
         yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.StreamClusterLogsRequest,
@@ -267,9 +265,7 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.ListClusterLogsRequest,
         yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.ListClusterLogsResponse,
     ]
-    """Retrieves logs for the specified OpenSearch cluster.
-    For detailed description, see the [Logs](/yandex-mdb-guide/concepts/logs.html) section in the developer's guide.
-    """
+    """Retrieves logs for the specified OpenSearch cluster."""
 
     StreamLogs: grpc.aio.UnaryStreamMultiCallable[
         yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.StreamClusterLogsRequest,
@@ -453,9 +449,7 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.ListClusterLogsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.ListClusterLogsResponse, collections.abc.Awaitable[yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.ListClusterLogsResponse]]:
-        """Retrieves logs for the specified OpenSearch cluster.
-        For detailed description, see the [Logs](/yandex-mdb-guide/concepts/logs.html) section in the developer's guide.
-        """
+        """Retrieves logs for the specified OpenSearch cluster."""
 
     @abc.abstractmethod
     def StreamLogs(

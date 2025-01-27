@@ -23,6 +23,7 @@ _sym_db = _symbol_database.Default()
 
 
 from yandex.cloud.ai.common import common_pb2 as yandex_dot_cloud_dot_ai_dot_common_dot_common__pb2
+from yandex.cloud.ai.assistants.v1 import common_pb2 as yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_common__pb2
 from yandex.cloud.ai.assistants.v1.threads import message_pb2 as yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_threads_dot_message__pb2
 from yandex.cloud.ai.assistants.v1.threads import thread_pb2 as yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_threads_dot_thread__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
@@ -30,7 +31,7 @@ from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n:yandex/cloud/ai/assistants/v1/threads/thread_service.proto\x12%yandex.cloud.ai.assistants.v1.threads\x1a#yandex/cloud/ai/common/common.proto\x1a\x33yandex/cloud/ai/assistants/v1/threads/message.proto\x1a\x32yandex/cloud/ai/assistants/v1/threads/thread.proto\x1a\x1dyandex/cloud/validation.proto\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\"\x86\x03\n\x13\x43reateThreadRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x44\n\x08messages\x18\x02 \x03(\x0b\x32\x32.yandex.cloud.ai.assistants.v1.threads.MessageData\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12!\n\x19\x64\x65\x66\x61ult_message_author_id\x18\x05 \x01(\t\x12\x43\n\x11\x65xpiration_config\x18\x06 \x01(\x0b\x32(.yandex.cloud.ai.common.ExpirationConfig\x12V\n\x06labels\x18\x07 \x03(\x0b\x32\x46.yandex.cloud.ai.assistants.v1.threads.CreateThreadRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x10GetThreadRequest\x12\x17\n\tthread_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\xd4\x02\n\x13UpdateThreadRequest\x12\x17\n\tthread_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x35\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe8\xc7\x31\x01\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x43\n\x11\x65xpiration_config\x18\x05 \x01(\x0b\x32(.yandex.cloud.ai.common.ExpirationConfig\x12V\n\x06labels\x18\x06 \x03(\x0b\x32\x46.yandex.cloud.ai.assistants.v1.threads.UpdateThreadRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\".\n\x13\x44\x65leteThreadRequest\x12\x17\n\tthread_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\x16\n\x14\x44\x65leteThreadResponse\"T\n\x12ListThreadsRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\"n\n\x13ListThreadsResponse\x12>\n\x07threads\x18\x01 \x03(\x0b\x32-.yandex.cloud.ai.assistants.v1.threads.Thread\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xb9\x06\n\rThreadService\x12\x96\x01\n\x06\x43reate\x12:.yandex.cloud.ai.assistants.v1.threads.CreateThreadRequest\x1a-.yandex.cloud.ai.assistants.v1.threads.Thread\"!\x82\xd3\xe4\x93\x02\x1b\"\x16/assistants/v1/threads:\x01*\x12\x99\x01\n\x03Get\x12\x37.yandex.cloud.ai.assistants.v1.threads.GetThreadRequest\x1a-.yandex.cloud.ai.assistants.v1.threads.Thread\"*\x82\xd3\xe4\x93\x02$\x12\"/assistants/v1/threads/{thread_id}\x12\xa2\x01\n\x06Update\x12:.yandex.cloud.ai.assistants.v1.threads.UpdateThreadRequest\x1a-.yandex.cloud.ai.assistants.v1.threads.Thread\"-\x82\xd3\xe4\x93\x02\'2\"/assistants/v1/threads/{thread_id}:\x01*\x12\xad\x01\n\x06\x44\x65lete\x12:.yandex.cloud.ai.assistants.v1.threads.DeleteThreadRequest\x1a;.yandex.cloud.ai.assistants.v1.threads.DeleteThreadResponse\"*\x82\xd3\xe4\x93\x02$*\"/assistants/v1/threads/{thread_id}\x12\x9d\x01\n\x04List\x12\x39.yandex.cloud.ai.assistants.v1.threads.ListThreadsRequest\x1a:.yandex.cloud.ai.assistants.v1.threads.ListThreadsResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/assistants/v1/threadsB~\n)yandex.cloud.api.ai.assistants.v1.threadsZQgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/assistants/v1/threads;threadsb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n:yandex/cloud/ai/assistants/v1/threads/thread_service.proto\x12%yandex.cloud.ai.assistants.v1.threads\x1a#yandex/cloud/ai/common/common.proto\x1a*yandex/cloud/ai/assistants/v1/common.proto\x1a\x33yandex/cloud/ai/assistants/v1/threads/message.proto\x1a\x32yandex/cloud/ai/assistants/v1/threads/thread.proto\x1a\x1dyandex/cloud/validation.proto\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\"\xba\x03\n\x13\x43reateThreadRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x44\n\x08messages\x18\x02 \x03(\x0b\x32\x32.yandex.cloud.ai.assistants.v1.threads.MessageData\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12!\n\x19\x64\x65\x66\x61ult_message_author_id\x18\x05 \x01(\t\x12\x43\n\x11\x65xpiration_config\x18\x06 \x01(\x0b\x32(.yandex.cloud.ai.common.ExpirationConfig\x12V\n\x06labels\x18\x07 \x03(\x0b\x32\x46.yandex.cloud.ai.assistants.v1.threads.CreateThreadRequest.LabelsEntry\x12\x32\n\x05tools\x18\x08 \x03(\x0b\x32#.yandex.cloud.ai.assistants.v1.Tool\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"+\n\x10GetThreadRequest\x12\x17\n\tthread_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\x88\x03\n\x13UpdateThreadRequest\x12\x17\n\tthread_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x35\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe8\xc7\x31\x01\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x43\n\x11\x65xpiration_config\x18\x05 \x01(\x0b\x32(.yandex.cloud.ai.common.ExpirationConfig\x12V\n\x06labels\x18\x06 \x03(\x0b\x32\x46.yandex.cloud.ai.assistants.v1.threads.UpdateThreadRequest.LabelsEntry\x12\x32\n\x05tools\x18\x07 \x03(\x0b\x32#.yandex.cloud.ai.assistants.v1.Tool\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\".\n\x13\x44\x65leteThreadRequest\x12\x17\n\tthread_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"\x16\n\x14\x44\x65leteThreadResponse\"T\n\x12ListThreadsRequest\x12\x17\n\tfolder_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\"n\n\x13ListThreadsResponse\x12>\n\x07threads\x18\x01 \x03(\x0b\x32-.yandex.cloud.ai.assistants.v1.threads.Thread\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xb9\x06\n\rThreadService\x12\x96\x01\n\x06\x43reate\x12:.yandex.cloud.ai.assistants.v1.threads.CreateThreadRequest\x1a-.yandex.cloud.ai.assistants.v1.threads.Thread\"!\x82\xd3\xe4\x93\x02\x1b\"\x16/assistants/v1/threads:\x01*\x12\x99\x01\n\x03Get\x12\x37.yandex.cloud.ai.assistants.v1.threads.GetThreadRequest\x1a-.yandex.cloud.ai.assistants.v1.threads.Thread\"*\x82\xd3\xe4\x93\x02$\x12\"/assistants/v1/threads/{thread_id}\x12\xa2\x01\n\x06Update\x12:.yandex.cloud.ai.assistants.v1.threads.UpdateThreadRequest\x1a-.yandex.cloud.ai.assistants.v1.threads.Thread\"-\x82\xd3\xe4\x93\x02\'2\"/assistants/v1/threads/{thread_id}:\x01*\x12\xad\x01\n\x06\x44\x65lete\x12:.yandex.cloud.ai.assistants.v1.threads.DeleteThreadRequest\x1a;.yandex.cloud.ai.assistants.v1.threads.DeleteThreadResponse\"*\x82\xd3\xe4\x93\x02$*\"/assistants/v1/threads/{thread_id}\x12\x9d\x01\n\x04List\x12\x39.yandex.cloud.ai.assistants.v1.threads.ListThreadsRequest\x1a:.yandex.cloud.ai.assistants.v1.threads.ListThreadsResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/assistants/v1/threadsB~\n)yandex.cloud.api.ai.assistants.v1.threadsZQgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/assistants/v1/threads;threadsb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -64,24 +65,24 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_THREADSERVICE'].methods_by_name['Delete']._serialized_options = b'\202\323\344\223\002$*\"/assistants/v1/threads/{thread_id}'
   _globals['_THREADSERVICE'].methods_by_name['List']._loaded_options = None
   _globals['_THREADSERVICE'].methods_by_name['List']._serialized_options = b'\202\323\344\223\002\030\022\026/assistants/v1/threads'
-  _globals['_CREATETHREADREQUEST']._serialized_start=339
-  _globals['_CREATETHREADREQUEST']._serialized_end=729
-  _globals['_CREATETHREADREQUEST_LABELSENTRY']._serialized_start=684
-  _globals['_CREATETHREADREQUEST_LABELSENTRY']._serialized_end=729
-  _globals['_GETTHREADREQUEST']._serialized_start=731
-  _globals['_GETTHREADREQUEST']._serialized_end=774
-  _globals['_UPDATETHREADREQUEST']._serialized_start=777
-  _globals['_UPDATETHREADREQUEST']._serialized_end=1117
-  _globals['_UPDATETHREADREQUEST_LABELSENTRY']._serialized_start=684
-  _globals['_UPDATETHREADREQUEST_LABELSENTRY']._serialized_end=729
-  _globals['_DELETETHREADREQUEST']._serialized_start=1119
-  _globals['_DELETETHREADREQUEST']._serialized_end=1165
-  _globals['_DELETETHREADRESPONSE']._serialized_start=1167
-  _globals['_DELETETHREADRESPONSE']._serialized_end=1189
-  _globals['_LISTTHREADSREQUEST']._serialized_start=1191
-  _globals['_LISTTHREADSREQUEST']._serialized_end=1275
-  _globals['_LISTTHREADSRESPONSE']._serialized_start=1277
-  _globals['_LISTTHREADSRESPONSE']._serialized_end=1387
-  _globals['_THREADSERVICE']._serialized_start=1390
-  _globals['_THREADSERVICE']._serialized_end=2215
+  _globals['_CREATETHREADREQUEST']._serialized_start=383
+  _globals['_CREATETHREADREQUEST']._serialized_end=825
+  _globals['_CREATETHREADREQUEST_LABELSENTRY']._serialized_start=780
+  _globals['_CREATETHREADREQUEST_LABELSENTRY']._serialized_end=825
+  _globals['_GETTHREADREQUEST']._serialized_start=827
+  _globals['_GETTHREADREQUEST']._serialized_end=870
+  _globals['_UPDATETHREADREQUEST']._serialized_start=873
+  _globals['_UPDATETHREADREQUEST']._serialized_end=1265
+  _globals['_UPDATETHREADREQUEST_LABELSENTRY']._serialized_start=780
+  _globals['_UPDATETHREADREQUEST_LABELSENTRY']._serialized_end=825
+  _globals['_DELETETHREADREQUEST']._serialized_start=1267
+  _globals['_DELETETHREADREQUEST']._serialized_end=1313
+  _globals['_DELETETHREADRESPONSE']._serialized_start=1315
+  _globals['_DELETETHREADRESPONSE']._serialized_end=1337
+  _globals['_LISTTHREADSREQUEST']._serialized_start=1339
+  _globals['_LISTTHREADSREQUEST']._serialized_end=1423
+  _globals['_LISTTHREADSRESPONSE']._serialized_start=1425
+  _globals['_LISTTHREADSRESPONSE']._serialized_end=1535
+  _globals['_THREADSERVICE']._serialized_start=1538
+  _globals['_THREADSERVICE']._serialized_end=2363
 # @@protoc_insertion_point(module_scope)

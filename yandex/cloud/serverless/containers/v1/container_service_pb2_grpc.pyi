@@ -75,7 +75,7 @@ class ContainerServiceStub:
     ]
     """Returns the specified revision of a container.
 
-    To get the list of available revision, make a [ListRevisions] request.
+    To get the list of available revisions, make a [ListRevisions] request.
     """
 
     ListRevisions: grpc.UnaryUnaryMultiCallable[
@@ -164,7 +164,7 @@ class ContainerServiceAsyncStub:
     ]
     """Returns the specified revision of a container.
 
-    To get the list of available revision, make a [ListRevisions] request.
+    To get the list of available revisions, make a [ListRevisions] request.
     """
 
     ListRevisions: grpc.aio.UnaryUnaryMultiCallable[
@@ -269,7 +269,7 @@ class ContainerServiceServicer(metaclass=abc.ABCMeta):
     ) -> typing.Union[yandex.cloud.serverless.containers.v1.container_pb2.Revision, collections.abc.Awaitable[yandex.cloud.serverless.containers.v1.container_pb2.Revision]]:
         """Returns the specified revision of a container.
 
-        To get the list of available revision, make a [ListRevisions] request.
+        To get the list of available revisions, make a [ListRevisions] request.
         """
 
     @abc.abstractmethod

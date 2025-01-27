@@ -30,6 +30,7 @@ class CompletionOptions(google.protobuf.message.Message):
     STREAM_FIELD_NUMBER: builtins.int
     TEMPERATURE_FIELD_NUMBER: builtins.int
     MAX_TOKENS_FIELD_NUMBER: builtins.int
+    REASONING_OPTIONS_FIELD_NUMBER: builtins.int
     stream: builtins.bool
     """Enables streaming of partially generated text."""
     @property
@@ -45,17 +46,63 @@ class CompletionOptions(google.protobuf.message.Message):
         Must be greater than zero. This maximum allowed parameter value may depend on the model being used.
         """
 
+    @property
+    def reasoning_options(self) -> global___ReasoningOptions:
+        """Configures reasoning capabilities for the model, allowing it to perform internal reasoning before responding."""
+
     def __init__(
         self,
         *,
         stream: builtins.bool = ...,
         temperature: google.protobuf.wrappers_pb2.DoubleValue | None = ...,
         max_tokens: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        reasoning_options: global___ReasoningOptions | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["max_tokens", b"max_tokens", "temperature", b"temperature"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["max_tokens", b"max_tokens", "stream", b"stream", "temperature", b"temperature"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["max_tokens", b"max_tokens", "reasoning_options", b"reasoning_options", "temperature", b"temperature"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["max_tokens", b"max_tokens", "reasoning_options", b"reasoning_options", "stream", b"stream", "temperature", b"temperature"]) -> None: ...
 
 global___CompletionOptions = CompletionOptions
+
+@typing.final
+class ReasoningOptions(google.protobuf.message.Message):
+    """Represents reasoning options that enable the model's ability to perform internal reasoning before generating a response."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _ReasoningMode:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _ReasoningModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ReasoningOptions._ReasoningMode.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        REASONING_MODE_UNSPECIFIED: ReasoningOptions._ReasoningMode.ValueType  # 0
+        """Unspecified reasoning mode."""
+        DISABLED: ReasoningOptions._ReasoningMode.ValueType  # 1
+        """Disables reasoning. The model will generate a response without performing any internal reasoning."""
+        ENABLED_HIDDEN: ReasoningOptions._ReasoningMode.ValueType  # 2
+        """Enables reasoning in a hidden manner without exposing the reasoning steps to the user."""
+
+    class ReasoningMode(_ReasoningMode, metaclass=_ReasoningModeEnumTypeWrapper):
+        """Enum representing the reasoning mode."""
+
+    REASONING_MODE_UNSPECIFIED: ReasoningOptions.ReasoningMode.ValueType  # 0
+    """Unspecified reasoning mode."""
+    DISABLED: ReasoningOptions.ReasoningMode.ValueType  # 1
+    """Disables reasoning. The model will generate a response without performing any internal reasoning."""
+    ENABLED_HIDDEN: ReasoningOptions.ReasoningMode.ValueType  # 2
+    """Enables reasoning in a hidden manner without exposing the reasoning steps to the user."""
+
+    MODE_FIELD_NUMBER: builtins.int
+    mode: global___ReasoningOptions.ReasoningMode.ValueType
+    """Specifies the reasoning mode to be used."""
+    def __init__(
+        self,
+        *,
+        mode: global___ReasoningOptions.ReasoningMode.ValueType = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["mode", b"mode"]) -> None: ...
+
+global___ReasoningOptions = ReasoningOptions
 
 @typing.final
 class Message(google.protobuf.message.Message):
@@ -103,23 +150,46 @@ class ContentUsage(google.protobuf.message.Message):
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    @typing.final
+    class CompletionTokensDetails(google.protobuf.message.Message):
+        """Provides additional information about how the completion tokens were utilized."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        REASONING_TOKENS_FIELD_NUMBER: builtins.int
+        reasoning_tokens: builtins.int
+        """The number of tokens used specifically for internal reasoning performed by the model."""
+        def __init__(
+            self,
+            *,
+            reasoning_tokens: builtins.int = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["reasoning_tokens", b"reasoning_tokens"]) -> None: ...
+
     INPUT_TEXT_TOKENS_FIELD_NUMBER: builtins.int
     COMPLETION_TOKENS_FIELD_NUMBER: builtins.int
     TOTAL_TOKENS_FIELD_NUMBER: builtins.int
+    COMPLETION_TOKENS_DETAILS_FIELD_NUMBER: builtins.int
     input_text_tokens: builtins.int
     """The number of tokens in the textual part of the model input."""
     completion_tokens: builtins.int
     """The number of tokens in the generated completion."""
     total_tokens: builtins.int
     """The total number of tokens, including all input tokens and all generated tokens."""
+    @property
+    def completion_tokens_details(self) -> global___ContentUsage.CompletionTokensDetails:
+        """Provides additional information about how the completion tokens were utilized."""
+
     def __init__(
         self,
         *,
         input_text_tokens: builtins.int = ...,
         completion_tokens: builtins.int = ...,
         total_tokens: builtins.int = ...,
+        completion_tokens_details: global___ContentUsage.CompletionTokensDetails | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["completion_tokens", b"completion_tokens", "input_text_tokens", b"input_text_tokens", "total_tokens", b"total_tokens"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["completion_tokens_details", b"completion_tokens_details"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["completion_tokens", b"completion_tokens", "completion_tokens_details", b"completion_tokens_details", "input_text_tokens", b"input_text_tokens", "total_tokens", b"total_tokens"]) -> None: ...
 
 global___ContentUsage = ContentUsage
 

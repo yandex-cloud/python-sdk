@@ -10,6 +10,7 @@ import google.protobuf.field_mask_pb2
 import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
+import yandex.cloud.ai.assistants.v1.common_pb2
 import yandex.cloud.ai.assistants.v1.threads.message_pb2
 import yandex.cloud.ai.assistants.v1.threads.thread_pb2
 import yandex.cloud.ai.common.common_pb2
@@ -45,6 +46,7 @@ class CreateThreadRequest(google.protobuf.message.Message):
     DEFAULT_MESSAGE_AUTHOR_ID_FIELD_NUMBER: builtins.int
     EXPIRATION_CONFIG_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
+    TOOLS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     name: builtins.str
     """Name of the thread."""
@@ -64,6 +66,10 @@ class CreateThreadRequest(google.protobuf.message.Message):
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Set of key-value pairs to label the thread."""
 
+    @property
+    def tools(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.ai.assistants.v1.common_pb2.Tool]:
+        """List of tools that are available for assistants to use in this thread."""
+
     def __init__(
         self,
         *,
@@ -74,9 +80,10 @@ class CreateThreadRequest(google.protobuf.message.Message):
         default_message_author_id: builtins.str = ...,
         expiration_config: yandex.cloud.ai.common.common_pb2.ExpirationConfig | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        tools: collections.abc.Iterable[yandex.cloud.ai.assistants.v1.common_pb2.Tool] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["expiration_config", b"expiration_config"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["default_message_author_id", b"default_message_author_id", "description", b"description", "expiration_config", b"expiration_config", "folder_id", b"folder_id", "labels", b"labels", "messages", b"messages", "name", b"name"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["default_message_author_id", b"default_message_author_id", "description", b"description", "expiration_config", b"expiration_config", "folder_id", b"folder_id", "labels", b"labels", "messages", b"messages", "name", b"name", "tools", b"tools"]) -> None: ...
 
 global___CreateThreadRequest = CreateThreadRequest
 
@@ -126,6 +133,7 @@ class UpdateThreadRequest(google.protobuf.message.Message):
     DESCRIPTION_FIELD_NUMBER: builtins.int
     EXPIRATION_CONFIG_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
+    TOOLS_FIELD_NUMBER: builtins.int
     thread_id: builtins.str
     """ID of the thread to update."""
     name: builtins.str
@@ -144,6 +152,10 @@ class UpdateThreadRequest(google.protobuf.message.Message):
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """New set of labels for the thread."""
 
+    @property
+    def tools(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.ai.assistants.v1.common_pb2.Tool]:
+        """A new list of tools that are available for assistants to use in this thread."""
+
     def __init__(
         self,
         *,
@@ -153,9 +165,10 @@ class UpdateThreadRequest(google.protobuf.message.Message):
         description: builtins.str = ...,
         expiration_config: yandex.cloud.ai.common.common_pb2.ExpirationConfig | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        tools: collections.abc.Iterable[yandex.cloud.ai.assistants.v1.common_pb2.Tool] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["expiration_config", b"expiration_config", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "expiration_config", b"expiration_config", "labels", b"labels", "name", b"name", "thread_id", b"thread_id", "update_mask", b"update_mask"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "expiration_config", b"expiration_config", "labels", b"labels", "name", b"name", "thread_id", b"thread_id", "tools", b"tools", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateThreadRequest = UpdateThreadRequest
 

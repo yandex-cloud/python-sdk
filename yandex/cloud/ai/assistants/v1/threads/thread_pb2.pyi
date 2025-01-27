@@ -10,6 +10,7 @@ import google.protobuf.internal.containers
 import google.protobuf.message
 import google.protobuf.timestamp_pb2
 import typing
+import yandex.cloud.ai.assistants.v1.common_pb2
 import yandex.cloud.ai.common.common_pb2
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
@@ -46,6 +47,7 @@ class Thread(google.protobuf.message.Message):
     EXPIRATION_CONFIG_FIELD_NUMBER: builtins.int
     EXPIRES_AT_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
+    TOOLS_FIELD_NUMBER: builtins.int
     id: builtins.str
     """Unique identifier of the thread."""
     folder_id: builtins.str
@@ -80,6 +82,10 @@ class Thread(google.protobuf.message.Message):
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Set of key-value pairs that can be used to organize and categorize the thread."""
 
+    @property
+    def tools(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.ai.assistants.v1.common_pb2.Tool]:
+        """List of tools that are available for assistants to use in this thread."""
+
     def __init__(
         self,
         *,
@@ -95,8 +101,9 @@ class Thread(google.protobuf.message.Message):
         expiration_config: yandex.cloud.ai.common.common_pb2.ExpirationConfig | None = ...,
         expires_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        tools: collections.abc.Iterable[yandex.cloud.ai.assistants.v1.common_pb2.Tool] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at", "expiration_config", b"expiration_config", "expires_at", b"expires_at", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "created_by", b"created_by", "default_message_author_id", b"default_message_author_id", "description", b"description", "expiration_config", b"expiration_config", "expires_at", b"expires_at", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "name", b"name", "updated_at", b"updated_at", "updated_by", b"updated_by"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "created_by", b"created_by", "default_message_author_id", b"default_message_author_id", "description", b"description", "expiration_config", b"expiration_config", "expires_at", b"expires_at", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "name", b"name", "tools", b"tools", "updated_at", b"updated_at", "updated_by", b"updated_by"]) -> None: ...
 
 global___Thread = Thread

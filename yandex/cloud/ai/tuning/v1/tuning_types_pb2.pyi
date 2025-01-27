@@ -20,6 +20,7 @@ class TuningTypeLora(google.protobuf.message.Message):
     TYPE_FIELD_NUMBER: builtins.int
     rank: builtins.int
     alpha: builtins.float
+    """Integer value"""
     initialization: builtins.str
     type: builtins.str
     def __init__(

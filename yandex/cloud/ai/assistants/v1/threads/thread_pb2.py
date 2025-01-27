@@ -22,11 +22,12 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from yandex.cloud.ai.assistants.v1 import common_pb2 as yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_common__pb2
 from yandex.cloud.ai.common import common_pb2 as yandex_dot_cloud_dot_ai_dot_common_dot_common__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2yandex/cloud/ai/assistants/v1/threads/thread.proto\x12%yandex.cloud.ai.assistants.v1.threads\x1a#yandex/cloud/ai/common/common.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xe4\x03\n\x06Thread\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12!\n\x19\x64\x65\x66\x61ult_message_author_id\x18\x05 \x01(\t\x12\x12\n\ncreated_by\x18\x06 \x01(\t\x12.\n\ncreated_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x12\n\nupdated_by\x18\x08 \x01(\t\x12.\n\nupdated_at\x18\t \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x43\n\x11\x65xpiration_config\x18\n \x01(\x0b\x32(.yandex.cloud.ai.common.ExpirationConfig\x12.\n\nexpires_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12I\n\x06labels\x18\x0c \x03(\x0b\x32\x39.yandex.cloud.ai.assistants.v1.threads.Thread.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42~\n)yandex.cloud.api.ai.assistants.v1.threadsZQgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/assistants/v1/threads;threadsb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2yandex/cloud/ai/assistants/v1/threads/thread.proto\x12%yandex.cloud.ai.assistants.v1.threads\x1a*yandex/cloud/ai/assistants/v1/common.proto\x1a#yandex/cloud/ai/common/common.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x98\x04\n\x06Thread\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12!\n\x19\x64\x65\x66\x61ult_message_author_id\x18\x05 \x01(\t\x12\x12\n\ncreated_by\x18\x06 \x01(\t\x12.\n\ncreated_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x12\n\nupdated_by\x18\x08 \x01(\t\x12.\n\nupdated_at\x18\t \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x43\n\x11\x65xpiration_config\x18\n \x01(\x0b\x32(.yandex.cloud.ai.common.ExpirationConfig\x12.\n\nexpires_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12I\n\x06labels\x18\x0c \x03(\x0b\x32\x39.yandex.cloud.ai.assistants.v1.threads.Thread.LabelsEntry\x12\x32\n\x05tools\x18\r \x03(\x0b\x32#.yandex.cloud.ai.assistants.v1.Tool\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42~\n)yandex.cloud.api.ai.assistants.v1.threadsZQgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/assistants/v1/threads;threadsb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,8 +37,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'\n)yandex.cloud.api.ai.assistants.v1.threadsZQgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/assistants/v1/threads;threads'
   _globals['_THREAD_LABELSENTRY']._loaded_options = None
   _globals['_THREAD_LABELSENTRY']._serialized_options = b'8\001'
-  _globals['_THREAD']._serialized_start=164
-  _globals['_THREAD']._serialized_end=648
-  _globals['_THREAD_LABELSENTRY']._serialized_start=603
-  _globals['_THREAD_LABELSENTRY']._serialized_end=648
+  _globals['_THREAD']._serialized_start=208
+  _globals['_THREAD']._serialized_end=744
+  _globals['_THREAD_LABELSENTRY']._serialized_start=699
+  _globals['_THREAD_LABELSENTRY']._serialized_end=744
 # @@protoc_insertion_point(module_scope)

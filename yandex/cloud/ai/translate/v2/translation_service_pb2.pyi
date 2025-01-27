@@ -53,25 +53,25 @@ class TranslateRequest(google.protobuf.message.Message):
     SPELLER_FIELD_NUMBER: builtins.int
     source_language_code: builtins.str
     """The text language to translate from.
-    Specified in [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) format (for example, `` ru ``).
+    Most languages are specified in [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) format (for example, `` ru ``), but the field are not limited to it.
 
-    Required for translating with glossary.
+    Required for translating with [glossary](/docs/translate/concepts/glossary).
     """
     target_language_code: builtins.str
     """The target language to translate the text.
-    Specified in [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) format (for example, `` en ``).
+    Most languages are specified in [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) format (for example, `` ru ``), but the field are not limited to it.
     """
     format: global___TranslateRequest.Format.ValueType
-    """Format of the text."""
+    """Format of the text to be translated."""
     folder_id: builtins.str
     """ID of the folder to which you have access.
-    Required for authorization with a user account (see [yandex.cloud.iam.v1.UserAccount] resource).
-    Don't specify this field if you make the request on behalf of a service account.
+    Required for authorization with a [user account](/docs/iam/concepts/users/accounts).
+    Do not specify this field if you make the request on behalf of a [service account](/docs/iam/concepts/users/accounts#sa).
     """
     model: builtins.str
-    """Do not specify this field, custom models are not supported yet."""
+    """Model ID if you use custom model."""
     speller: builtins.bool
-    """use speller"""
+    """Enable spell checking."""
     @property
     def texts(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Array of the strings to translate.
@@ -106,7 +106,7 @@ class TranslateGlossaryConfig(google.protobuf.message.Message):
     GLOSSARY_DATA_FIELD_NUMBER: builtins.int
     @property
     def glossary_data(self) -> global___GlossaryData:
-        """Pass glossary data in the request. Currently, only this way to pass glossary is supported."""
+        """Pass glossary data in the request. Currently, the only way to pass glossary."""
 
     def __init__(
         self,
@@ -153,6 +153,7 @@ class GlossaryPair(google.protobuf.message.Message):
     translated_text: builtins.str
     """Text in the target language."""
     exact: builtins.bool
+    """Allows to add translations for specific terms to [neuroglossaries](/docs/translate/concepts/glossary#word-forms)."""
     def __init__(
         self,
         *,
@@ -199,7 +200,7 @@ class DetectLanguageRequest(google.protobuf.message.Message):
     @property
     def language_code_hints(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """List of the most likely languages. These languages will be given preference when detecting the text language.
-        Specified in [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) format (for example, `` ru ``).
+        Most languages are specified in [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) format (for example, `` ru ``), but the field are not limited to it.
 
         To get the list of supported languages, use a [TranslationService.ListLanguages] request.
         """
@@ -221,7 +222,7 @@ class DetectLanguageResponse(google.protobuf.message.Message):
 
     LANGUAGE_CODE_FIELD_NUMBER: builtins.int
     language_code: builtins.str
-    """The text language in [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) format (for example, `` ru ``).
+    """Most languages are specified in [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639-1) format (for example, `` ru ``), but the field are not limited to it.
 
     To get the language name, use a [TranslationService.ListLanguages] request.
     """
@@ -241,8 +242,8 @@ class ListLanguagesRequest(google.protobuf.message.Message):
     FOLDER_ID_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to which you have access.
-    Required for authorization with a user account (see [yandex.cloud.iam.v1.UserAccount] resource).
-    Don't specify this field if you make the request on behalf of a service account.
+    Required for authorization with a [user account](/docs/iam/concepts/users/accounts).
+    Do not specify this field if you make the request on behalf of a [service account](/docs/iam/concepts/users/accounts#sa).
     """
     def __init__(
         self,

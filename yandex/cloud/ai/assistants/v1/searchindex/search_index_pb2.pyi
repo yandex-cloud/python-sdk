@@ -132,19 +132,26 @@ class TextSearchIndex(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CHUNKING_STRATEGY_FIELD_NUMBER: builtins.int
+    NGRAM_TOKENIZER_FIELD_NUMBER: builtins.int
     @property
     def chunking_strategy(self) -> yandex.cloud.ai.assistants.v1.searchindex.common_pb2.ChunkingStrategy:
         """Chunking strategy used to split text into smaller chunks before indexing.
         In the case of text search, tokens are individual text characters.
         """
 
+    @property
+    def ngram_tokenizer(self) -> yandex.cloud.ai.assistants.v1.searchindex.common_pb2.NgramTokenizer:
+        """Tokenizer that generates n-grams."""
+
     def __init__(
         self,
         *,
         chunking_strategy: yandex.cloud.ai.assistants.v1.searchindex.common_pb2.ChunkingStrategy | None = ...,
+        ngram_tokenizer: yandex.cloud.ai.assistants.v1.searchindex.common_pb2.NgramTokenizer | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["chunking_strategy", b"chunking_strategy"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["chunking_strategy", b"chunking_strategy"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["TextTokenizer", b"TextTokenizer", "chunking_strategy", b"chunking_strategy", "ngram_tokenizer", b"ngram_tokenizer"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["TextTokenizer", b"TextTokenizer", "chunking_strategy", b"chunking_strategy", "ngram_tokenizer", b"ngram_tokenizer"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["TextTokenizer", b"TextTokenizer"]) -> typing.Literal["ngram_tokenizer"] | None: ...
 
 global___TextSearchIndex = TextSearchIndex
 

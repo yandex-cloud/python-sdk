@@ -348,6 +348,8 @@ class GreenplumConfig6(google.protobuf.message.Message):
     MAX_STATEMENT_MEM_FIELD_NUMBER: builtins.int
     LOG_STATEMENT_FIELD_NUMBER: builtins.int
     GP_ADD_COLUMN_INHERITS_TABLE_SETTING_FIELD_NUMBER: builtins.int
+    GP_ENABLE_GLOBAL_DEADLOCK_DETECTOR_FIELD_NUMBER: builtins.int
+    GP_GLOBAL_DEADLOCK_DETECTOR_PERIOD_FIELD_NUMBER: builtins.int
     log_statement: global___LogStatement.ValueType
     """Controls which SQL statements are logged. DDL logs all data definition commands like CREATE, ALTER, and DROP commands.
     MOD logs all DDL statements, plus INSERT, UPDATE, DELETE, TRUNCATE, and COPY FROM.
@@ -416,6 +418,20 @@ class GreenplumConfig6(google.protobuf.message.Message):
     def gp_add_column_inherits_table_setting(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """https://docs.vmware.com/en/VMware-Tanzu-Greenplum/6/greenplum-database/GUID-ref_guide-config_params-guc-list.html#gp_add_column_inherits_table_setting"""
 
+    @property
+    def gp_enable_global_deadlock_detector(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Controls whether the Greenplum Database Global Deadlock Detector is enabled to manage concurrent UPDATE and DELETE operations on heap tables to improve performance. See Inserting, Updating, and Deleting Datain the Greenplum Database Administrator Guide. The default is off, the Global Deadlock Detector is deactivated.
+        If the Global Deadlock Detector is deactivated (the default), Greenplum Database runs concurrent update and delete operations on a heap table serially.
+        If the Global Deadlock Detector is enabled, concurrent updates are permitted and the Global Deadlock Detector determines when a deadlock exists, and breaks the deadlock by cancelling one or more backend processes associated with the youngest transaction(s) involved.
+        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#gp_enable_global_deadlock_detector
+        """
+
+    @property
+    def gp_global_deadlock_detector_period(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Specifies the executing interval (in seconds) of the global deadlock detector background worker process.
+        https://techdocs.broadcom.com/us/en/vmware-tanzu/data-solutions/tanzu-greenplum/6/greenplum-database/ref_guide-config_params-guc-list.html#gp_global_deadlock_detector_period
+        """
+
     def __init__(
         self,
         *,
@@ -429,9 +445,11 @@ class GreenplumConfig6(google.protobuf.message.Message):
         max_statement_mem: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         log_statement: global___LogStatement.ValueType = ...,
         gp_add_column_inherits_table_setting: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        gp_enable_global_deadlock_detector: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        gp_global_deadlock_detector_period: google.protobuf.wrappers_pb2.Int64Value | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["gp_add_column_inherits_table_setting", b"gp_add_column_inherits_table_setting", "gp_workfile_compression", b"gp_workfile_compression", "gp_workfile_limit_files_per_query", b"gp_workfile_limit_files_per_query", "gp_workfile_limit_per_query", b"gp_workfile_limit_per_query", "gp_workfile_limit_per_segment", b"gp_workfile_limit_per_segment", "max_connections", b"max_connections", "max_prepared_transactions", b"max_prepared_transactions", "max_slot_wal_keep_size", b"max_slot_wal_keep_size", "max_statement_mem", b"max_statement_mem"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["gp_add_column_inherits_table_setting", b"gp_add_column_inherits_table_setting", "gp_workfile_compression", b"gp_workfile_compression", "gp_workfile_limit_files_per_query", b"gp_workfile_limit_files_per_query", "gp_workfile_limit_per_query", b"gp_workfile_limit_per_query", "gp_workfile_limit_per_segment", b"gp_workfile_limit_per_segment", "log_statement", b"log_statement", "max_connections", b"max_connections", "max_prepared_transactions", b"max_prepared_transactions", "max_slot_wal_keep_size", b"max_slot_wal_keep_size", "max_statement_mem", b"max_statement_mem"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["gp_add_column_inherits_table_setting", b"gp_add_column_inherits_table_setting", "gp_enable_global_deadlock_detector", b"gp_enable_global_deadlock_detector", "gp_global_deadlock_detector_period", b"gp_global_deadlock_detector_period", "gp_workfile_compression", b"gp_workfile_compression", "gp_workfile_limit_files_per_query", b"gp_workfile_limit_files_per_query", "gp_workfile_limit_per_query", b"gp_workfile_limit_per_query", "gp_workfile_limit_per_segment", b"gp_workfile_limit_per_segment", "max_connections", b"max_connections", "max_prepared_transactions", b"max_prepared_transactions", "max_slot_wal_keep_size", b"max_slot_wal_keep_size", "max_statement_mem", b"max_statement_mem"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["gp_add_column_inherits_table_setting", b"gp_add_column_inherits_table_setting", "gp_enable_global_deadlock_detector", b"gp_enable_global_deadlock_detector", "gp_global_deadlock_detector_period", b"gp_global_deadlock_detector_period", "gp_workfile_compression", b"gp_workfile_compression", "gp_workfile_limit_files_per_query", b"gp_workfile_limit_files_per_query", "gp_workfile_limit_per_query", b"gp_workfile_limit_per_query", "gp_workfile_limit_per_segment", b"gp_workfile_limit_per_segment", "log_statement", b"log_statement", "max_connections", b"max_connections", "max_prepared_transactions", b"max_prepared_transactions", "max_slot_wal_keep_size", b"max_slot_wal_keep_size", "max_statement_mem", b"max_statement_mem"]) -> None: ...
 
 global___GreenplumConfig6 = GreenplumConfig6
 

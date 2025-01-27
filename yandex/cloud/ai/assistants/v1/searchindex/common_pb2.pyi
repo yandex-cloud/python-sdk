@@ -187,6 +187,19 @@ global___CombinationStrategy = CombinationStrategy
 
 @typing.final
 class NgramTokenizer(google.protobuf.message.Message):
+    """Configuration for the NgramTokenizer, which splits text into overlapping character sequences (n-grams) of specified lengths.
+
+    Example:
+    Input text: `hello`
+    min_gram = 2, max_gram = 3
+
+    Generated tokens:
+    * For n = 2 (2-character n-grams): `he`, `el`, `ll`, `lo`
+    * For n = 3 (3-character n-grams): `hel`, `ell`, `llo`
+
+    Final tokens: `[he, el, ll, lo, hel, ell, llo]`
+    """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     MIN_GRAM_FIELD_NUMBER: builtins.int

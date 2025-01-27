@@ -78,6 +78,12 @@ class DatasetServiceStub:
     This method only applicable if the dataset size does not exceed 5GB.
     """
 
+    GetDownloadUrls: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.dataset.v1.dataset_service_pb2.GetDownloadUrlsRequest,
+        yandex.cloud.ai.dataset.v1.dataset_service_pb2.GetDownloadUrlsResponse,
+    ]
+    """Get urls to download dataset"""
+
     StartMultipartUploadDraft: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.dataset.v1.dataset_service_pb2.StartMultipartUploadDraftRequest,
         yandex.cloud.ai.dataset.v1.dataset_service_pb2.StartMultipartUploadDraftResponse,
@@ -101,6 +107,11 @@ class DatasetServiceStub:
         yandex.cloud.ai.dataset.v1.dataset_service_pb2.GetDatasetPreviewResponse,
     ]
     """Returns a preview of dataset types"""
+
+    ListOperationsIds: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListOperationsIdsRequest,
+        yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListOperationsIdsResponse,
+    ]
 
 class DatasetServiceAsyncStub:
     """A set of methods for managing datasets."""
@@ -161,6 +172,12 @@ class DatasetServiceAsyncStub:
     This method only applicable if the dataset size does not exceed 5GB.
     """
 
+    GetDownloadUrls: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.dataset.v1.dataset_service_pb2.GetDownloadUrlsRequest,
+        yandex.cloud.ai.dataset.v1.dataset_service_pb2.GetDownloadUrlsResponse,
+    ]
+    """Get urls to download dataset"""
+
     StartMultipartUploadDraft: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.dataset.v1.dataset_service_pb2.StartMultipartUploadDraftRequest,
         yandex.cloud.ai.dataset.v1.dataset_service_pb2.StartMultipartUploadDraftResponse,
@@ -184,6 +201,11 @@ class DatasetServiceAsyncStub:
         yandex.cloud.ai.dataset.v1.dataset_service_pb2.GetDatasetPreviewResponse,
     ]
     """Returns a preview of dataset types"""
+
+    ListOperationsIds: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListOperationsIdsRequest,
+        yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListOperationsIdsResponse,
+    ]
 
 class DatasetServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing datasets."""
@@ -263,6 +285,14 @@ class DatasetServiceServicer(metaclass=abc.ABCMeta):
         """
 
     @abc.abstractmethod
+    def GetDownloadUrls(
+        self,
+        request: yandex.cloud.ai.dataset.v1.dataset_service_pb2.GetDownloadUrlsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.ai.dataset.v1.dataset_service_pb2.GetDownloadUrlsResponse, collections.abc.Awaitable[yandex.cloud.ai.dataset.v1.dataset_service_pb2.GetDownloadUrlsResponse]]:
+        """Get urls to download dataset"""
+
+    @abc.abstractmethod
     def StartMultipartUploadDraft(
         self,
         request: yandex.cloud.ai.dataset.v1.dataset_service_pb2.StartMultipartUploadDraftRequest,
@@ -293,5 +323,12 @@ class DatasetServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.ai.dataset.v1.dataset_service_pb2.GetDatasetPreviewResponse, collections.abc.Awaitable[yandex.cloud.ai.dataset.v1.dataset_service_pb2.GetDatasetPreviewResponse]]:
         """Returns a preview of dataset types"""
+
+    @abc.abstractmethod
+    def ListOperationsIds(
+        self,
+        request: yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListOperationsIdsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListOperationsIdsResponse, collections.abc.Awaitable[yandex.cloud.ai.dataset.v1.dataset_service_pb2.ListOperationsIdsResponse]]: ...
 
 def add_DatasetServiceServicer_to_server(servicer: DatasetServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

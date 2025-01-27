@@ -9,6 +9,7 @@ import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
+import yandex.cloud.ai.tuning.v1.tuning_error_pb2
 import yandex.cloud.ai.tuning.v1.tuning_optimizers_pb2
 import yandex.cloud.ai.tuning.v1.tuning_schedulers_pb2
 import yandex.cloud.ai.tuning.v1.tuning_task_pb2
@@ -218,9 +219,8 @@ class TuningRequest(google.protobuf.message.Message):
     DESCRIPTION_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     base_model_uri: builtins.str
-    """Format like a gpt://{folder_id}/yandex-gpt/latest"""
+    """Format like a `gpt://{folder_id}/yandex-gpt/latest`"""
     name: builtins.str
-    """common params"""
     description: builtins.str
     @property
     def train_datasets(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___TuningRequest.WeightedDataset]: ...
@@ -592,3 +592,34 @@ class GetOptionsResponse(google.protobuf.message.Message):
     def WhichOneof(self, oneof_group: typing.Literal["tuning_params", b"tuning_params"]) -> typing.Literal["text_to_text_completion", "text_classification_multilabel", "text_classification_multiclass"] | None: ...
 
 global___GetOptionsResponse = GetOptionsResponse
+
+@typing.final
+class ListErrorsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TUNING_TASK_ID_FIELD_NUMBER: builtins.int
+    tuning_task_id: builtins.str
+    def __init__(
+        self,
+        *,
+        tuning_task_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["tuning_task_id", b"tuning_task_id"]) -> None: ...
+
+global___ListErrorsRequest = ListErrorsRequest
+
+@typing.final
+class ListErrorsResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TUNING_ERROR_FIELD_NUMBER: builtins.int
+    @property
+    def tuning_error(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.ai.tuning.v1.tuning_error_pb2.TuningError]: ...
+    def __init__(
+        self,
+        *,
+        tuning_error: collections.abc.Iterable[yandex.cloud.ai.tuning.v1.tuning_error_pb2.TuningError] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["tuning_error", b"tuning_error"]) -> None: ...
+
+global___ListErrorsResponse = ListErrorsResponse

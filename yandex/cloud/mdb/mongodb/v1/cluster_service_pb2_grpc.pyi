@@ -98,9 +98,7 @@ class ClusterServiceStub:
         yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.ListClusterLogsRequest,
         yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.ListClusterLogsResponse,
     ]
-    """Retrieves logs for the specified MongoDB cluster.
-    See the [Logs](/yandex-mdb-guide/concepts/logs.html) section in the developers guide for detailed logs description.
-    """
+    """Retrieves logs for the specified MongoDB cluster."""
 
     StreamLogs: grpc.UnaryStreamMultiCallable[
         yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.StreamClusterLogsRequest,
@@ -273,9 +271,7 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.ListClusterLogsRequest,
         yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.ListClusterLogsResponse,
     ]
-    """Retrieves logs for the specified MongoDB cluster.
-    See the [Logs](/yandex-mdb-guide/concepts/logs.html) section in the developers guide for detailed logs description.
-    """
+    """Retrieves logs for the specified MongoDB cluster."""
 
     StreamLogs: grpc.aio.UnaryStreamMultiCallable[
         yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.StreamClusterLogsRequest,
@@ -472,9 +468,7 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.ListClusterLogsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.ListClusterLogsResponse, collections.abc.Awaitable[yandex.cloud.mdb.mongodb.v1.cluster_service_pb2.ListClusterLogsResponse]]:
-        """Retrieves logs for the specified MongoDB cluster.
-        See the [Logs](/yandex-mdb-guide/concepts/logs.html) section in the developers guide for detailed logs description.
-        """
+        """Retrieves logs for the specified MongoDB cluster."""
 
     @abc.abstractmethod
     def StreamLogs(

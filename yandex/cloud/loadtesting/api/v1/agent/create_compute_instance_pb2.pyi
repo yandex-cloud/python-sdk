@@ -66,7 +66,7 @@ class CreateComputeInstance(google.protobuf.message.Message):
     To get the service account ID, use a [yandex.cloud.iam.v1.ServiceAccountService.List] request.
     """
     platform_id: builtins.str
-    """ID of the [Compute VM platform](docs/compute/concepts/vm-platforms) on which the agent will be created.
+    """ID of the [Compute VM platform](/docs/compute/concepts/vm-platforms) on which the agent will be created.
     Default value: "standard-v2"
     """
     @property

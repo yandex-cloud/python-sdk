@@ -386,6 +386,7 @@ class Trail(google.protobuf.message.Message):
         SERVICE_FIELD_NUMBER: builtins.int
         INCLUDED_EVENTS_FIELD_NUMBER: builtins.int
         EXCLUDED_EVENTS_FIELD_NUMBER: builtins.int
+        DNS_FILTER_FIELD_NUMBER: builtins.int
         RESOURCE_SCOPES_FIELD_NUMBER: builtins.int
         service: builtins.str
         """Name of the service whose events will be delivered"""
@@ -402,6 +403,10 @@ class Trail(google.protobuf.message.Message):
             """
 
         @property
+        def dns_filter(self) -> global___Trail.DnsDataEventsFilter:
+            """Filter is allowed only if service = dns"""
+
+        @property
         def resource_scopes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Trail.Resource]:
             """A list of resources which will be monitored by the trail"""
 
@@ -411,11 +416,15 @@ class Trail(google.protobuf.message.Message):
             service: builtins.str = ...,
             included_events: global___Trail.EventTypes | None = ...,
             excluded_events: global___Trail.EventTypes | None = ...,
+            dns_filter: global___Trail.DnsDataEventsFilter | None = ...,
             resource_scopes: collections.abc.Iterable[global___Trail.Resource] | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["additional_rules", b"additional_rules", "excluded_events", b"excluded_events", "included_events", b"included_events"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["additional_rules", b"additional_rules", "excluded_events", b"excluded_events", "included_events", b"included_events", "resource_scopes", b"resource_scopes", "service", b"service"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["additional_rules", b"additional_rules", "dns_filter", b"dns_filter", "excluded_events", b"excluded_events", "included_events", b"included_events", "service_specific_rules", b"service_specific_rules"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["additional_rules", b"additional_rules", "dns_filter", b"dns_filter", "excluded_events", b"excluded_events", "included_events", b"included_events", "resource_scopes", b"resource_scopes", "service", b"service", "service_specific_rules", b"service_specific_rules"]) -> None: ...
+        @typing.overload
         def WhichOneof(self, oneof_group: typing.Literal["additional_rules", b"additional_rules"]) -> typing.Literal["included_events", "excluded_events"] | None: ...
+        @typing.overload
+        def WhichOneof(self, oneof_group: typing.Literal["service_specific_rules", b"service_specific_rules"]) -> typing.Literal["dns_filter"] | None: ...
 
     @typing.final
     class EventTypes(google.protobuf.message.Message):
@@ -477,6 +486,20 @@ class Trail(google.protobuf.message.Message):
         ) -> None: ...
         def HasField(self, field_name: typing.Literal["management_events_filter", b"management_events_filter"]) -> builtins.bool: ...
         def ClearField(self, field_name: typing.Literal["data_events_filters", b"data_events_filters", "management_events_filter", b"management_events_filter"]) -> None: ...
+
+    @typing.final
+    class DnsDataEventsFilter(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        ONLY_RECURSIVE_QUERIES_FIELD_NUMBER: builtins.int
+        only_recursive_queries: builtins.bool
+        """Only recursive queries will be delivered"""
+        def __init__(
+            self,
+            *,
+            only_recursive_queries: builtins.bool = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["only_recursive_queries", b"only_recursive_queries"]) -> None: ...
 
     ID_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int

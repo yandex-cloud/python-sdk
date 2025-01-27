@@ -94,17 +94,20 @@ class GetExResponse(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
+    SECRET_ID_FIELD_NUMBER: builtins.int
     VERSION_ID_FIELD_NUMBER: builtins.int
     ENTRIES_FIELD_NUMBER: builtins.int
+    secret_id: builtins.str
     version_id: builtins.str
     @property
     def entries(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.bytes]: ...
     def __init__(
         self,
         *,
+        secret_id: builtins.str = ...,
         version_id: builtins.str = ...,
         entries: collections.abc.Mapping[builtins.str, builtins.bytes] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["entries", b"entries", "version_id", b"version_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["entries", b"entries", "secret_id", b"secret_id", "version_id", b"version_id"]) -> None: ...
 
 global___GetExResponse = GetExResponse

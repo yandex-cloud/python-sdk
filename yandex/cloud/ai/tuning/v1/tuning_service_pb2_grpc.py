@@ -65,6 +65,11 @@ class TuningServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.GetOptionsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.GetOptionsResponse.FromString,
                 _registered_method=True)
+        self.ListErrors = channel.unary_unary(
+                '/yandex.cloud.ai.tuning.v1.TuningService/ListErrors',
+                request_serializer=yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.ListErrorsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.ListErrorsResponse.FromString,
+                _registered_method=True)
 
 
 class TuningServiceServicer(object):
@@ -106,6 +111,12 @@ class TuningServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListErrors(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_TuningServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -138,6 +149,11 @@ def add_TuningServiceServicer_to_server(servicer, server):
                     servicer.GetOptions,
                     request_deserializer=yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.GetOptionsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.GetOptionsResponse.SerializeToString,
+            ),
+            'ListErrors': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListErrors,
+                    request_deserializer=yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.ListErrorsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.ListErrorsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -302,6 +318,33 @@ class TuningService(object):
             '/yandex.cloud.ai.tuning.v1.TuningService/GetOptions',
             yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.GetOptionsRequest.SerializeToString,
             yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.GetOptionsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListErrors(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.ai.tuning.v1.TuningService/ListErrors',
+            yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.ListErrorsRequest.SerializeToString,
+            yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.ListErrorsResponse.FromString,
             options,
             channel_credentials,
             insecure,

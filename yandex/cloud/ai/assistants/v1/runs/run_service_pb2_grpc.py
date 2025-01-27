@@ -46,6 +46,11 @@ class RunServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_runs_dot_run__service__pb2.ListenRunRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_runs_dot_run__service__pb2.StreamEvent.FromString,
                 _registered_method=True)
+        self.Attach = channel.stream_stream(
+                '/yandex.cloud.ai.assistants.v1.runs.RunService/Attach',
+                request_serializer=yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_runs_dot_run__service__pb2.AttachRunRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_runs_dot_run__service__pb2.StreamEvent.FromString,
+                _registered_method=True)
         self.Get = channel.unary_unary(
                 '/yandex.cloud.ai.assistants.v1.runs.RunService/Get',
                 request_serializer=yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_runs_dot_run__service__pb2.GetRunRequest.SerializeToString,
@@ -83,6 +88,15 @@ class RunServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Attach(self, request_iterator, context):
+        """Bi-directional streaming method to interact with a specific run.
+        Like `Listen`, `Attach` streams events from the run, but also allows clients to send events back.
+        For example, it can be used to submit function call results when the run is waiting for user input.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def Get(self, request, context):
         """Retrieve details of a specific run by its ID.
         """
@@ -115,6 +129,11 @@ def add_RunServiceServicer_to_server(servicer, server):
             'Listen': grpc.unary_stream_rpc_method_handler(
                     servicer.Listen,
                     request_deserializer=yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_runs_dot_run__service__pb2.ListenRunRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_runs_dot_run__service__pb2.StreamEvent.SerializeToString,
+            ),
+            'Attach': grpc.stream_stream_rpc_method_handler(
+                    servicer.Attach,
+                    request_deserializer=yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_runs_dot_run__service__pb2.AttachRunRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_runs_dot_run__service__pb2.StreamEvent.SerializeToString,
             ),
             'Get': grpc.unary_unary_rpc_method_handler(
@@ -187,6 +206,33 @@ class RunService(object):
             target,
             '/yandex.cloud.ai.assistants.v1.runs.RunService/Listen',
             yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_runs_dot_run__service__pb2.ListenRunRequest.SerializeToString,
+            yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_runs_dot_run__service__pb2.StreamEvent.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Attach(request_iterator,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.stream_stream(
+            request_iterator,
+            target,
+            '/yandex.cloud.ai.assistants.v1.runs.RunService/Attach',
+            yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_runs_dot_run__service__pb2.AttachRunRequest.SerializeToString,
             yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_runs_dot_run__service__pb2.StreamEvent.FromString,
             options,
             channel_credentials,

@@ -163,7 +163,7 @@ class ContainerServiceServicer(object):
     def GetRevision(self, request, context):
         """Returns the specified revision of a container.
 
-        To get the list of available revision, make a [ListRevisions] request.
+        To get the list of available revisions, make a [ListRevisions] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

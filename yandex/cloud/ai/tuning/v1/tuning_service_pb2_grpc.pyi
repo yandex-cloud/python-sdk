@@ -50,6 +50,11 @@ class TuningServiceStub:
         yandex.cloud.ai.tuning.v1.tuning_service_pb2.GetOptionsResponse,
     ]
 
+    ListErrors: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.tuning.v1.tuning_service_pb2.ListErrorsRequest,
+        yandex.cloud.ai.tuning.v1.tuning_service_pb2.ListErrorsResponse,
+    ]
+
 class TuningServiceAsyncStub:
     Tune: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.tuning.v1.tuning_service_pb2.TuningRequest,
@@ -79,6 +84,11 @@ class TuningServiceAsyncStub:
     GetOptions: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.tuning.v1.tuning_service_pb2.GetOptionsRequest,
         yandex.cloud.ai.tuning.v1.tuning_service_pb2.GetOptionsResponse,
+    ]
+
+    ListErrors: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.tuning.v1.tuning_service_pb2.ListErrorsRequest,
+        yandex.cloud.ai.tuning.v1.tuning_service_pb2.ListErrorsResponse,
     ]
 
 class TuningServiceServicer(metaclass=abc.ABCMeta):
@@ -123,5 +133,12 @@ class TuningServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.ai.tuning.v1.tuning_service_pb2.GetOptionsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.ai.tuning.v1.tuning_service_pb2.GetOptionsResponse, collections.abc.Awaitable[yandex.cloud.ai.tuning.v1.tuning_service_pb2.GetOptionsResponse]]: ...
+
+    @abc.abstractmethod
+    def ListErrors(
+        self,
+        request: yandex.cloud.ai.tuning.v1.tuning_service_pb2.ListErrorsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.ai.tuning.v1.tuning_service_pb2.ListErrorsResponse, collections.abc.Awaitable[yandex.cloud.ai.tuning.v1.tuning_service_pb2.ListErrorsResponse]]: ...
 
 def add_TuningServiceServicer_to_server(servicer: TuningServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

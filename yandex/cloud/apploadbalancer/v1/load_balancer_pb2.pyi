@@ -114,7 +114,7 @@ class LoadBalancer(google.protobuf.message.Message):
     log_group_id: builtins.str
     """ID of the log group that stores access logs of the application load balancer.
 
-    The logs can be accessed using a Cloud Functions [trigger for Cloud Logs](/docs/functions/operations/trigger/cloudlogs-trigger-create).
+    The logs can be accessed using a Cloud Functions [trigger for Cloud Logs](/docs/functions/operations/trigger/cloud-logging-trigger-create).
     """
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:

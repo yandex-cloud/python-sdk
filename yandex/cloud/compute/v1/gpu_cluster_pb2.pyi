@@ -39,7 +39,7 @@ global___GpuInterconnectType = GpuInterconnectType
 
 @typing.final
 class GpuCluster(google.protobuf.message.Message):
-    """A GPU cluster. For details about the concept, see [documentation](/docs/compute/concepts/gpu-cluster)."""
+    """A GPU cluster. For details about the concept, see [documentation](/docs/compute/concepts/gpus#gpu-clusters)."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

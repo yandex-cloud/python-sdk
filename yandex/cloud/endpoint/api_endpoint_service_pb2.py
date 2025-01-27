@@ -26,7 +26,7 @@ from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from yandex.cloud.endpoint import api_endpoint_pb2 as yandex_dot_cloud_dot_endpoint_dot_api__endpoint__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n0yandex/cloud/endpoint/api_endpoint_service.proto\x12\x15yandex.cloud.endpoint\x1a\x1cgoogle/api/annotations.proto\x1a(yandex/cloud/endpoint/api_endpoint.proto\"0\n\x15GetApiEndpointRequest\x12\x17\n\x0f\x61pi_endpoint_id\x18\x01 \x01(\t\"@\n\x17ListApiEndpointsRequest\x12\x11\n\tpage_size\x18\x01 \x01(\x03\x12\x12\n\npage_token\x18\x02 \x01(\t\"j\n\x18ListApiEndpointsResponse\x12\x35\n\tendpoints\x18\x01 \x03(\x0b\x32\".yandex.cloud.endpoint.ApiEndpoint\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\x90\x02\n\x12\x41piEndpointService\x12}\n\x03Get\x12,.yandex.cloud.endpoint.GetApiEndpointRequest\x1a\".yandex.cloud.endpoint.ApiEndpoint\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/endpoints/{api_endpoint_id}\x12{\n\x04List\x12..yandex.cloud.endpoint.ListApiEndpointsRequest\x1a/.yandex.cloud.endpoint.ListApiEndpointsResponse\"\x12\x82\xd3\xe4\x93\x02\x0c\x12\n/endpointsB_\n\x19yandex.cloud.api.endpointZBgithub.com/yandex-cloud/go-genproto/yandex/cloud/endpoint;endpointb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n0yandex/cloud/endpoint/api_endpoint_service.proto\x12\x15yandex.cloud.endpoint\x1a\x1cgoogle/api/annotations.proto\x1a(yandex/cloud/endpoint/api_endpoint.proto\"0\n\x15GetApiEndpointRequest\x12\x17\n\x0f\x61pi_endpoint_id\x18\x01 \x01(\t\"H\n\x17ListApiEndpointsRequest\x12\x15\n\tpage_size\x18\x01 \x01(\x03\x42\x02\x18\x01\x12\x16\n\npage_token\x18\x02 \x01(\tB\x02\x18\x01\"j\n\x18ListApiEndpointsResponse\x12\x35\n\tendpoints\x18\x01 \x03(\x0b\x32\".yandex.cloud.endpoint.ApiEndpoint\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\x90\x02\n\x12\x41piEndpointService\x12}\n\x03Get\x12,.yandex.cloud.endpoint.GetApiEndpointRequest\x1a\".yandex.cloud.endpoint.ApiEndpoint\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/endpoints/{api_endpoint_id}\x12{\n\x04List\x12..yandex.cloud.endpoint.ListApiEndpointsRequest\x1a/.yandex.cloud.endpoint.ListApiEndpointsResponse\"\x12\x82\xd3\xe4\x93\x02\x0c\x12\n/endpointsB_\n\x19yandex.cloud.api.endpointZBgithub.com/yandex-cloud/go-genproto/yandex/cloud/endpoint;endpointb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,6 +34,10 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.endpoint.api_e
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\031yandex.cloud.api.endpointZBgithub.com/yandex-cloud/go-genproto/yandex/cloud/endpoint;endpoint'
+  _globals['_LISTAPIENDPOINTSREQUEST'].fields_by_name['page_size']._loaded_options = None
+  _globals['_LISTAPIENDPOINTSREQUEST'].fields_by_name['page_size']._serialized_options = b'\030\001'
+  _globals['_LISTAPIENDPOINTSREQUEST'].fields_by_name['page_token']._loaded_options = None
+  _globals['_LISTAPIENDPOINTSREQUEST'].fields_by_name['page_token']._serialized_options = b'\030\001'
   _globals['_APIENDPOINTSERVICE'].methods_by_name['Get']._loaded_options = None
   _globals['_APIENDPOINTSERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\002\036\022\034/endpoints/{api_endpoint_id}'
   _globals['_APIENDPOINTSERVICE'].methods_by_name['List']._loaded_options = None
@@ -41,9 +45,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETAPIENDPOINTREQUEST']._serialized_start=147
   _globals['_GETAPIENDPOINTREQUEST']._serialized_end=195
   _globals['_LISTAPIENDPOINTSREQUEST']._serialized_start=197
-  _globals['_LISTAPIENDPOINTSREQUEST']._serialized_end=261
-  _globals['_LISTAPIENDPOINTSRESPONSE']._serialized_start=263
-  _globals['_LISTAPIENDPOINTSRESPONSE']._serialized_end=369
-  _globals['_APIENDPOINTSERVICE']._serialized_start=372
-  _globals['_APIENDPOINTSERVICE']._serialized_end=644
+  _globals['_LISTAPIENDPOINTSREQUEST']._serialized_end=269
+  _globals['_LISTAPIENDPOINTSRESPONSE']._serialized_start=271
+  _globals['_LISTAPIENDPOINTSRESPONSE']._serialized_end=377
+  _globals['_APIENDPOINTSERVICE']._serialized_start=380
+  _globals['_APIENDPOINTSERVICE']._serialized_end=652
 # @@protoc_insertion_point(module_scope)
