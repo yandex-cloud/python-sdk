@@ -121,7 +121,10 @@ class PostgresObjectTransferSettings(google.protobuf.message.Message):
     CREATE MATERIALIZED VIEW ...
     """
     sequence_set: yandex.cloud.datatransfer.v1.endpoint.common_pb2.ObjectTransferStage.ValueType
-    """"""
+    """Sequence sets
+
+    CREATE SEQUENCE ...
+    """
     def __init__(
         self,
         *,
@@ -185,21 +188,25 @@ class PostgresConnection(google.protobuf.message.Message):
 
     MDB_CLUSTER_ID_FIELD_NUMBER: builtins.int
     ON_PREMISE_FIELD_NUMBER: builtins.int
+    CONNECTION_MANAGER_CONNECTION_FIELD_NUMBER: builtins.int
     mdb_cluster_id: builtins.str
     """Managed Service for PostgreSQL cluster ID"""
     @property
     def on_premise(self) -> global___OnPremisePostgres:
         """Connection options for on-premise PostgreSQL"""
 
+    @property
+    def connection_manager_connection(self) -> yandex.cloud.datatransfer.v1.endpoint.common_pb2.ConnectionManagerConnection: ...
     def __init__(
         self,
         *,
         mdb_cluster_id: builtins.str = ...,
         on_premise: global___OnPremisePostgres | None = ...,
+        connection_manager_connection: yandex.cloud.datatransfer.v1.endpoint.common_pb2.ConnectionManagerConnection | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["connection", b"connection", "mdb_cluster_id", b"mdb_cluster_id", "on_premise", b"on_premise"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["connection", b"connection", "mdb_cluster_id", b"mdb_cluster_id", "on_premise", b"on_premise"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["connection", b"connection"]) -> typing.Literal["mdb_cluster_id", "on_premise"] | None: ...
+    def HasField(self, field_name: typing.Literal["connection", b"connection", "connection_manager_connection", b"connection_manager_connection", "mdb_cluster_id", b"mdb_cluster_id", "on_premise", b"on_premise"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["connection", b"connection", "connection_manager_connection", b"connection_manager_connection", "mdb_cluster_id", b"mdb_cluster_id", "on_premise", b"on_premise"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["connection", b"connection"]) -> typing.Literal["mdb_cluster_id", "on_premise", "connection_manager_connection"] | None: ...
 
 global___PostgresConnection = PostgresConnection
 

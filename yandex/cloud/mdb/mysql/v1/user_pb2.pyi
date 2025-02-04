@@ -117,6 +117,7 @@ class User(google.protobuf.message.Message):
     GLOBAL_PERMISSIONS_FIELD_NUMBER: builtins.int
     CONNECTION_LIMITS_FIELD_NUMBER: builtins.int
     AUTHENTICATION_PLUGIN_FIELD_NUMBER: builtins.int
+    CONNECTION_MANAGER_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the user."""
     cluster_id: builtins.str
@@ -135,6 +136,10 @@ class User(google.protobuf.message.Message):
     def connection_limits(self) -> global___ConnectionLimits:
         """Set of user connection limits."""
 
+    @property
+    def connection_manager(self) -> global___ConnectionManager:
+        """Connection Manager Connection and settings associated with user. Read only field."""
+
     def __init__(
         self,
         *,
@@ -144,9 +149,10 @@ class User(google.protobuf.message.Message):
         global_permissions: collections.abc.Iterable[global___GlobalPermission.ValueType] | None = ...,
         connection_limits: global___ConnectionLimits | None = ...,
         authentication_plugin: global___AuthPlugin.ValueType = ...,
+        connection_manager: global___ConnectionManager | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["connection_limits", b"connection_limits"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["authentication_plugin", b"authentication_plugin", "cluster_id", b"cluster_id", "connection_limits", b"connection_limits", "global_permissions", b"global_permissions", "name", b"name", "permissions", b"permissions"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["connection_limits", b"connection_limits", "connection_manager", b"connection_manager"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["authentication_plugin", b"authentication_plugin", "cluster_id", b"cluster_id", "connection_limits", b"connection_limits", "connection_manager", b"connection_manager", "global_permissions", b"global_permissions", "name", b"name", "permissions", b"permissions"]) -> None: ...
 
 global___User = User
 
@@ -310,6 +316,22 @@ class ConnectionLimits(google.protobuf.message.Message):
 global___ConnectionLimits = ConnectionLimits
 
 @typing.final
+class ConnectionManager(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CONNECTION_ID_FIELD_NUMBER: builtins.int
+    connection_id: builtins.str
+    """ID of Connection Manager Connection"""
+    def __init__(
+        self,
+        *,
+        connection_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["connection_id", b"connection_id"]) -> None: ...
+
+global___ConnectionManager = ConnectionManager
+
+@typing.final
 class UserSpec(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -319,6 +341,7 @@ class UserSpec(google.protobuf.message.Message):
     GLOBAL_PERMISSIONS_FIELD_NUMBER: builtins.int
     CONNECTION_LIMITS_FIELD_NUMBER: builtins.int
     AUTHENTICATION_PLUGIN_FIELD_NUMBER: builtins.int
+    GENERATE_PASSWORD_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the user."""
     password: builtins.str
@@ -341,6 +364,10 @@ class UserSpec(google.protobuf.message.Message):
     def connection_limits(self) -> global___ConnectionLimits:
         """Set of user connection limits."""
 
+    @property
+    def generate_password(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Generate password using Connection Manager."""
+
     def __init__(
         self,
         *,
@@ -350,8 +377,9 @@ class UserSpec(google.protobuf.message.Message):
         global_permissions: collections.abc.Iterable[global___GlobalPermission.ValueType] | None = ...,
         connection_limits: global___ConnectionLimits | None = ...,
         authentication_plugin: global___AuthPlugin.ValueType = ...,
+        generate_password: google.protobuf.wrappers_pb2.BoolValue | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["connection_limits", b"connection_limits"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["authentication_plugin", b"authentication_plugin", "connection_limits", b"connection_limits", "global_permissions", b"global_permissions", "name", b"name", "password", b"password", "permissions", b"permissions"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["connection_limits", b"connection_limits", "generate_password", b"generate_password"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["authentication_plugin", b"authentication_plugin", "connection_limits", b"connection_limits", "generate_password", b"generate_password", "global_permissions", b"global_permissions", "name", b"name", "password", b"password", "permissions", b"permissions"]) -> None: ...
 
 global___UserSpec = UserSpec

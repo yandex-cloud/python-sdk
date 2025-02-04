@@ -25,72 +25,104 @@ class TransferServiceStub:
         yandex.cloud.datatransfer.v1.transfer_service_pb2.CreateTransferRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Creates a transfer in the specified folder."""
 
     Update: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.datatransfer.v1.transfer_service_pb2.UpdateTransferRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Updates the specified transfer."""
 
     Delete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.datatransfer.v1.transfer_service_pb2.DeleteTransferRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Deletes the specified transfer."""
 
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.datatransfer.v1.transfer_service_pb2.ListTransfersRequest,
         yandex.cloud.datatransfer.v1.transfer_service_pb2.ListTransfersResponse,
     ]
+    """Lists transfers in the specified folder."""
 
     Get: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.datatransfer.v1.transfer_service_pb2.GetTransferRequest,
         yandex.cloud.datatransfer.v1.transfer_pb2.Transfer,
     ]
+    """Returns the specified transfer.
+
+    To get the list of all available transfers, make a [List] request.
+    """
 
     Deactivate: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.datatransfer.v1.transfer_service_pb2.DeactivateTransferRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Deactivates the specified transfer.
+
+    To get the list of all available transfers, make a [List] request.
+    """
 
     Activate: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.datatransfer.v1.transfer_service_pb2.ActivateTransferRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Activates the specified transfer.
+
+    To get the list of all available transfers, make a [List] request.
+    """
 
 class TransferServiceAsyncStub:
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.datatransfer.v1.transfer_service_pb2.CreateTransferRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Creates a transfer in the specified folder."""
 
     Update: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.datatransfer.v1.transfer_service_pb2.UpdateTransferRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Updates the specified transfer."""
 
     Delete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.datatransfer.v1.transfer_service_pb2.DeleteTransferRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Deletes the specified transfer."""
 
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.datatransfer.v1.transfer_service_pb2.ListTransfersRequest,
         yandex.cloud.datatransfer.v1.transfer_service_pb2.ListTransfersResponse,
     ]
+    """Lists transfers in the specified folder."""
 
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.datatransfer.v1.transfer_service_pb2.GetTransferRequest,
         yandex.cloud.datatransfer.v1.transfer_pb2.Transfer,
     ]
+    """Returns the specified transfer.
+
+    To get the list of all available transfers, make a [List] request.
+    """
 
     Deactivate: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.datatransfer.v1.transfer_service_pb2.DeactivateTransferRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Deactivates the specified transfer.
+
+    To get the list of all available transfers, make a [List] request.
+    """
 
     Activate: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.datatransfer.v1.transfer_service_pb2.ActivateTransferRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Activates the specified transfer.
+
+    To get the list of all available transfers, make a [List] request.
+    """
 
 class TransferServiceServicer(metaclass=abc.ABCMeta):
     @abc.abstractmethod
@@ -98,48 +130,64 @@ class TransferServiceServicer(metaclass=abc.ABCMeta):
         self,
         request: yandex.cloud.datatransfer.v1.transfer_service_pb2.CreateTransferRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Creates a transfer in the specified folder."""
 
     @abc.abstractmethod
     def Update(
         self,
         request: yandex.cloud.datatransfer.v1.transfer_service_pb2.UpdateTransferRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Updates the specified transfer."""
 
     @abc.abstractmethod
     def Delete(
         self,
         request: yandex.cloud.datatransfer.v1.transfer_service_pb2.DeleteTransferRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Deletes the specified transfer."""
 
     @abc.abstractmethod
     def List(
         self,
         request: yandex.cloud.datatransfer.v1.transfer_service_pb2.ListTransfersRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.datatransfer.v1.transfer_service_pb2.ListTransfersResponse, collections.abc.Awaitable[yandex.cloud.datatransfer.v1.transfer_service_pb2.ListTransfersResponse]]: ...
+    ) -> typing.Union[yandex.cloud.datatransfer.v1.transfer_service_pb2.ListTransfersResponse, collections.abc.Awaitable[yandex.cloud.datatransfer.v1.transfer_service_pb2.ListTransfersResponse]]:
+        """Lists transfers in the specified folder."""
 
     @abc.abstractmethod
     def Get(
         self,
         request: yandex.cloud.datatransfer.v1.transfer_service_pb2.GetTransferRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.datatransfer.v1.transfer_pb2.Transfer, collections.abc.Awaitable[yandex.cloud.datatransfer.v1.transfer_pb2.Transfer]]: ...
+    ) -> typing.Union[yandex.cloud.datatransfer.v1.transfer_pb2.Transfer, collections.abc.Awaitable[yandex.cloud.datatransfer.v1.transfer_pb2.Transfer]]:
+        """Returns the specified transfer.
+
+        To get the list of all available transfers, make a [List] request.
+        """
 
     @abc.abstractmethod
     def Deactivate(
         self,
         request: yandex.cloud.datatransfer.v1.transfer_service_pb2.DeactivateTransferRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Deactivates the specified transfer.
+
+        To get the list of all available transfers, make a [List] request.
+        """
 
     @abc.abstractmethod
     def Activate(
         self,
         request: yandex.cloud.datatransfer.v1.transfer_service_pb2.ActivateTransferRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Activates the specified transfer.
+
+        To get the list of all available transfers, make a [List] request.
+        """
 
 def add_TransferServiceServicer_to_server(servicer: TransferServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

@@ -28,7 +28,9 @@ if _version_not_supported:
 
 
 class EndpointServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing [endpoints]({{ api-url-prefix
+    }}/data-transfer/concepts/#endpoint).
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -64,34 +66,43 @@ class EndpointServiceStub(object):
 
 
 class EndpointServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing [endpoints]({{ api-url-prefix
+    }}/data-transfer/concepts/#endpoint).
+    """
 
     def Get(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Returns the specified endpoint.
+
+        To get the list of all available endpoints, make a [List] request.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Lists endpoints in the specified folder.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Creates an endpoint in the specified folder.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Updates the specified endpoint.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Deletes the specified endpoint.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -133,7 +144,9 @@ def add_EndpointServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class EndpointService(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing [endpoints]({{ api-url-prefix
+    }}/data-transfer/concepts/#endpoint).
+    """
 
     @staticmethod
     def Get(request,

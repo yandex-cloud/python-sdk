@@ -9,6 +9,7 @@ import google.protobuf.descriptor
 import google.protobuf.field_mask_pb2
 import google.protobuf.internal.containers
 import google.protobuf.message
+import google.protobuf.wrappers_pb2
 import typing
 import yandex.cloud.mdb.clickhouse.v1.user_pb2
 
@@ -151,6 +152,7 @@ class UpdateUserRequest(google.protobuf.message.Message):
     PERMISSIONS_FIELD_NUMBER: builtins.int
     SETTINGS_FIELD_NUMBER: builtins.int
     QUOTAS_FIELD_NUMBER: builtins.int
+    GENERATE_PASSWORD_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the ClickHouse cluster the user belongs to.
     To get the cluster ID, use a [ClusterService.List] request.
@@ -173,6 +175,10 @@ class UpdateUserRequest(google.protobuf.message.Message):
     def settings(self) -> yandex.cloud.mdb.clickhouse.v1.user_pb2.UserSettings: ...
     @property
     def quotas(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.mdb.clickhouse.v1.user_pb2.UserQuota]: ...
+    @property
+    def generate_password(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Generate password using Connection Manager."""
+
     def __init__(
         self,
         *,
@@ -183,9 +189,10 @@ class UpdateUserRequest(google.protobuf.message.Message):
         permissions: collections.abc.Iterable[yandex.cloud.mdb.clickhouse.v1.user_pb2.Permission] | None = ...,
         settings: yandex.cloud.mdb.clickhouse.v1.user_pb2.UserSettings | None = ...,
         quotas: collections.abc.Iterable[yandex.cloud.mdb.clickhouse.v1.user_pb2.UserQuota] | None = ...,
+        generate_password: google.protobuf.wrappers_pb2.BoolValue | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["settings", b"settings", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "password", b"password", "permissions", b"permissions", "quotas", b"quotas", "settings", b"settings", "update_mask", b"update_mask", "user_name", b"user_name"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["generate_password", b"generate_password", "settings", b"settings", "update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "generate_password", b"generate_password", "password", b"password", "permissions", b"permissions", "quotas", b"quotas", "settings", b"settings", "update_mask", b"update_mask", "user_name", b"user_name"]) -> None: ...
 
 global___UpdateUserRequest = UpdateUserRequest
 

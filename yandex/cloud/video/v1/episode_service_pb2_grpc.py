@@ -67,6 +67,11 @@ class EpisodeServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_episode__service__pb2.DeleteEpisodeRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.BatchDelete = channel.unary_unary(
+                '/yandex.cloud.video.v1.EpisodeService/BatchDelete',
+                request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_episode__service__pb2.BatchDeleteEpisodesRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
         self.PerformAction = channel.unary_unary(
                 '/yandex.cloud.video.v1.EpisodeService/PerformAction',
                 request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_episode__service__pb2.PerformEpisodeActionRequest.SerializeToString,
@@ -130,6 +135,13 @@ class EpisodeServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def BatchDelete(self, request, context):
+        """Batch delete episode.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def PerformAction(self, request, context):
         """Perform an action on the episode.
         """
@@ -182,6 +194,11 @@ def add_EpisodeServiceServicer_to_server(servicer, server):
             'Delete': grpc.unary_unary_rpc_method_handler(
                     servicer.Delete,
                     request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_episode__service__pb2.DeleteEpisodeRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'BatchDelete': grpc.unary_unary_rpc_method_handler(
+                    servicer.BatchDelete,
+                    request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_episode__service__pb2.BatchDeleteEpisodesRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'PerformAction': grpc.unary_unary_rpc_method_handler(
@@ -362,6 +379,33 @@ class EpisodeService(object):
             target,
             '/yandex.cloud.video.v1.EpisodeService/Delete',
             yandex_dot_cloud_dot_video_dot_v1_dot_episode__service__pb2.DeleteEpisodeRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def BatchDelete(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.video.v1.EpisodeService/BatchDelete',
+            yandex_dot_cloud_dot_video_dot_v1_dot_episode__service__pb2.BatchDeleteEpisodesRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

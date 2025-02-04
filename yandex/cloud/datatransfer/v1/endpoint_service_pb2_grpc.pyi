@@ -20,92 +20,128 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class EndpointServiceStub:
+    """A set of methods for managing [endpoints]({{ api-url-prefix
+    }}/data-transfer/concepts/#endpoint).
+    """
+
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Get: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.datatransfer.v1.endpoint_service_pb2.GetEndpointRequest,
         yandex.cloud.datatransfer.v1.endpoint_pb2.Endpoint,
     ]
+    """Returns the specified endpoint.
+
+    To get the list of all available endpoints, make a [List] request.
+    """
 
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.datatransfer.v1.endpoint_service_pb2.ListEndpointsRequest,
         yandex.cloud.datatransfer.v1.endpoint_service_pb2.ListEndpointsResponse,
     ]
+    """Lists endpoints in the specified folder."""
 
     Create: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.datatransfer.v1.endpoint_service_pb2.CreateEndpointRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Creates an endpoint in the specified folder."""
 
     Update: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.datatransfer.v1.endpoint_service_pb2.UpdateEndpointRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Updates the specified endpoint."""
 
     Delete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.datatransfer.v1.endpoint_service_pb2.DeleteEndpointRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Deletes the specified endpoint."""
 
 class EndpointServiceAsyncStub:
+    """A set of methods for managing [endpoints]({{ api-url-prefix
+    }}/data-transfer/concepts/#endpoint).
+    """
+
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.datatransfer.v1.endpoint_service_pb2.GetEndpointRequest,
         yandex.cloud.datatransfer.v1.endpoint_pb2.Endpoint,
     ]
+    """Returns the specified endpoint.
+
+    To get the list of all available endpoints, make a [List] request.
+    """
 
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.datatransfer.v1.endpoint_service_pb2.ListEndpointsRequest,
         yandex.cloud.datatransfer.v1.endpoint_service_pb2.ListEndpointsResponse,
     ]
+    """Lists endpoints in the specified folder."""
 
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.datatransfer.v1.endpoint_service_pb2.CreateEndpointRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Creates an endpoint in the specified folder."""
 
     Update: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.datatransfer.v1.endpoint_service_pb2.UpdateEndpointRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Updates the specified endpoint."""
 
     Delete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.datatransfer.v1.endpoint_service_pb2.DeleteEndpointRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Deletes the specified endpoint."""
 
 class EndpointServiceServicer(metaclass=abc.ABCMeta):
+    """A set of methods for managing [endpoints]({{ api-url-prefix
+    }}/data-transfer/concepts/#endpoint).
+    """
+
     @abc.abstractmethod
     def Get(
         self,
         request: yandex.cloud.datatransfer.v1.endpoint_service_pb2.GetEndpointRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.datatransfer.v1.endpoint_pb2.Endpoint, collections.abc.Awaitable[yandex.cloud.datatransfer.v1.endpoint_pb2.Endpoint]]: ...
+    ) -> typing.Union[yandex.cloud.datatransfer.v1.endpoint_pb2.Endpoint, collections.abc.Awaitable[yandex.cloud.datatransfer.v1.endpoint_pb2.Endpoint]]:
+        """Returns the specified endpoint.
+
+        To get the list of all available endpoints, make a [List] request.
+        """
 
     @abc.abstractmethod
     def List(
         self,
         request: yandex.cloud.datatransfer.v1.endpoint_service_pb2.ListEndpointsRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.datatransfer.v1.endpoint_service_pb2.ListEndpointsResponse, collections.abc.Awaitable[yandex.cloud.datatransfer.v1.endpoint_service_pb2.ListEndpointsResponse]]: ...
+    ) -> typing.Union[yandex.cloud.datatransfer.v1.endpoint_service_pb2.ListEndpointsResponse, collections.abc.Awaitable[yandex.cloud.datatransfer.v1.endpoint_service_pb2.ListEndpointsResponse]]:
+        """Lists endpoints in the specified folder."""
 
     @abc.abstractmethod
     def Create(
         self,
         request: yandex.cloud.datatransfer.v1.endpoint_service_pb2.CreateEndpointRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Creates an endpoint in the specified folder."""
 
     @abc.abstractmethod
     def Update(
         self,
         request: yandex.cloud.datatransfer.v1.endpoint_service_pb2.UpdateEndpointRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Updates the specified endpoint."""
 
     @abc.abstractmethod
     def Delete(
         self,
         request: yandex.cloud.datatransfer.v1.endpoint_service_pb2.DeleteEndpointRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Deletes the specified endpoint."""
 
 def add_EndpointServiceServicer_to_server(servicer: EndpointServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

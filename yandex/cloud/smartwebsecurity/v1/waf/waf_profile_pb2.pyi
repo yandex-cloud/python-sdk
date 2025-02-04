@@ -163,7 +163,7 @@ class WafProfile(google.protobuf.message.Message):
 
     @property
     def analyze_request_body(self) -> global___WafProfile.AnalyzeRequestBody:
-        """Parameters for request body analyzer."""
+        """The parameter is deprecated. Parameters for request body analyzer."""
 
     def __init__(
         self,

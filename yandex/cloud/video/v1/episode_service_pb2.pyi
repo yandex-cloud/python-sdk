@@ -387,6 +387,48 @@ class DeleteEpisodeMetadata(google.protobuf.message.Message):
 global___DeleteEpisodeMetadata = DeleteEpisodeMetadata
 
 @typing.final
+class BatchDeleteEpisodesRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    STREAM_ID_FIELD_NUMBER: builtins.int
+    LINE_ID_FIELD_NUMBER: builtins.int
+    EPISODE_IDS_FIELD_NUMBER: builtins.int
+    stream_id: builtins.str
+    """ID of the stream."""
+    line_id: builtins.str
+    """ID of the line."""
+    @property
+    def episode_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def __init__(
+        self,
+        *,
+        stream_id: builtins.str = ...,
+        line_id: builtins.str = ...,
+        episode_ids: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["id", b"id", "line_id", b"line_id", "stream_id", b"stream_id"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["episode_ids", b"episode_ids", "id", b"id", "line_id", b"line_id", "stream_id", b"stream_id"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["id", b"id"]) -> typing.Literal["stream_id", "line_id"] | None: ...
+
+global___BatchDeleteEpisodesRequest = BatchDeleteEpisodesRequest
+
+@typing.final
+class BatchDeleteEpisodesMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    EPISODE_IDS_FIELD_NUMBER: builtins.int
+    @property
+    def episode_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def __init__(
+        self,
+        *,
+        episode_ids: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["episode_ids", b"episode_ids"]) -> None: ...
+
+global___BatchDeleteEpisodesMetadata = BatchDeleteEpisodesMetadata
+
+@typing.final
 class PerformEpisodeActionRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

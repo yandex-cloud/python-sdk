@@ -59,6 +59,12 @@ class EpisodeServiceStub:
     ]
     """Delete episode."""
 
+    BatchDelete: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.video.v1.episode_service_pb2.BatchDeleteEpisodesRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Batch delete episode."""
+
     PerformAction: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.episode_service_pb2.PerformEpisodeActionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -115,6 +121,12 @@ class EpisodeServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Delete episode."""
+
+    BatchDelete: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.video.v1.episode_service_pb2.BatchDeleteEpisodesRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Batch delete episode."""
 
     PerformAction: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.episode_service_pb2.PerformEpisodeActionRequest,
@@ -184,6 +196,14 @@ class EpisodeServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Delete episode."""
+
+    @abc.abstractmethod
+    def BatchDelete(
+        self,
+        request: yandex.cloud.video.v1.episode_service_pb2.BatchDeleteEpisodesRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Batch delete episode."""
 
     @abc.abstractmethod
     def PerformAction(

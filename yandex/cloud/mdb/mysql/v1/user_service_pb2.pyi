@@ -9,6 +9,7 @@ import google.protobuf.descriptor
 import google.protobuf.field_mask_pb2
 import google.protobuf.internal.containers
 import google.protobuf.message
+import google.protobuf.wrappers_pb2
 import typing
 import yandex.cloud.mdb.mysql.v1.user_pb2
 
@@ -158,6 +159,7 @@ class UpdateUserRequest(google.protobuf.message.Message):
     GLOBAL_PERMISSIONS_FIELD_NUMBER: builtins.int
     CONNECTION_LIMITS_FIELD_NUMBER: builtins.int
     AUTHENTICATION_PLUGIN_FIELD_NUMBER: builtins.int
+    GENERATE_PASSWORD_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the cluster to update the user in.
 
@@ -188,6 +190,10 @@ class UpdateUserRequest(google.protobuf.message.Message):
     def connection_limits(self) -> yandex.cloud.mdb.mysql.v1.user_pb2.ConnectionLimits:
         """Set of changed user connection limits."""
 
+    @property
+    def generate_password(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Generate password using Connection Manager."""
+
     def __init__(
         self,
         *,
@@ -199,9 +205,10 @@ class UpdateUserRequest(google.protobuf.message.Message):
         global_permissions: collections.abc.Iterable[yandex.cloud.mdb.mysql.v1.user_pb2.GlobalPermission.ValueType] | None = ...,
         connection_limits: yandex.cloud.mdb.mysql.v1.user_pb2.ConnectionLimits | None = ...,
         authentication_plugin: yandex.cloud.mdb.mysql.v1.user_pb2.AuthPlugin.ValueType = ...,
+        generate_password: google.protobuf.wrappers_pb2.BoolValue | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["connection_limits", b"connection_limits", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["authentication_plugin", b"authentication_plugin", "cluster_id", b"cluster_id", "connection_limits", b"connection_limits", "global_permissions", b"global_permissions", "password", b"password", "permissions", b"permissions", "update_mask", b"update_mask", "user_name", b"user_name"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["connection_limits", b"connection_limits", "generate_password", b"generate_password", "update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["authentication_plugin", b"authentication_plugin", "cluster_id", b"cluster_id", "connection_limits", b"connection_limits", "generate_password", b"generate_password", "global_permissions", b"global_permissions", "password", b"password", "permissions", b"permissions", "update_mask", b"update_mask", "user_name", b"user_name"]) -> None: ...
 
 global___UpdateUserRequest = UpdateUserRequest
 

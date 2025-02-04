@@ -43,18 +43,36 @@ class CreateTransferRequest(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     TRANSFORMATION_FIELD_NUMBER: builtins.int
+    DATA_OBJECTS_FIELD_NUMBER: builtins.int
     source_id: builtins.str
+    """Identifier of the source endpoint."""
     target_id: builtins.str
+    """Identifier of the target endpoint."""
     description: builtins.str
+    """Description of the transfer."""
     folder_id: builtins.str
+    """ID of the folder to create the transfer in.
+
+    To get the folder ID, make a
+    [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    """
     type: yandex.cloud.datatransfer.v1.transfer_pb2.TransferType.ValueType
     name: builtins.str
+    """The transfer name. Must be unique within the folder."""
     @property
     def runtime(self) -> yandex.cloud.datatransfer.v1.transfer_pb2.Runtime: ...
     @property
-    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Transfer labels as `key:value` pairs.
+
+        For details about the concept, see [documentation]({{ api-url-prefix
+        }}/resource-manager/concepts/labels).
+        """
+
     @property
     def transformation(self) -> yandex.cloud.datatransfer.v1.transfer_pb2.Transformation: ...
+    @property
+    def data_objects(self) -> yandex.cloud.datatransfer.v1.transfer_pb2.DataObjects: ...
     def __init__(
         self,
         *,
@@ -67,9 +85,10 @@ class CreateTransferRequest(google.protobuf.message.Message):
         name: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         transformation: yandex.cloud.datatransfer.v1.transfer_pb2.Transformation | None = ...,
+        data_objects: yandex.cloud.datatransfer.v1.transfer_pb2.DataObjects | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["runtime", b"runtime", "transformation", b"transformation"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "folder_id", b"folder_id", "labels", b"labels", "name", b"name", "runtime", b"runtime", "source_id", b"source_id", "target_id", b"target_id", "transformation", b"transformation", "type", b"type"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["data_objects", b"data_objects", "runtime", b"runtime", "transformation", b"transformation"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["data_objects", b"data_objects", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "name", b"name", "runtime", b"runtime", "source_id", b"source_id", "target_id", b"target_id", "transformation", b"transformation", "type", b"type"]) -> None: ...
 
 global___CreateTransferRequest = CreateTransferRequest
 
@@ -115,6 +134,7 @@ class UpdateTransferRequest(google.protobuf.message.Message):
     UPDATE_MASK_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     TRANSFORMATION_FIELD_NUMBER: builtins.int
+    DATA_OBJECTS_FIELD_NUMBER: builtins.int
     transfer_id: builtins.str
     """Identifier of the transfer to be updated."""
     description: builtins.str
@@ -133,9 +153,17 @@ class UpdateTransferRequest(google.protobuf.message.Message):
         """
 
     @property
-    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Transfer labels as `key:value` pairs.
+
+        For details about the concept, see [documentation]({{ api-url-prefix
+        }}/resource-manager/concepts/labels).
+        """
+
     @property
     def transformation(self) -> yandex.cloud.datatransfer.v1.transfer_pb2.Transformation: ...
+    @property
+    def data_objects(self) -> yandex.cloud.datatransfer.v1.transfer_pb2.DataObjects: ...
     def __init__(
         self,
         *,
@@ -146,9 +174,10 @@ class UpdateTransferRequest(google.protobuf.message.Message):
         update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         transformation: yandex.cloud.datatransfer.v1.transfer_pb2.Transformation | None = ...,
+        data_objects: yandex.cloud.datatransfer.v1.transfer_pb2.DataObjects | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["runtime", b"runtime", "transformation", b"transformation", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "labels", b"labels", "name", b"name", "runtime", b"runtime", "transfer_id", b"transfer_id", "transformation", b"transformation", "update_mask", b"update_mask"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["data_objects", b"data_objects", "runtime", b"runtime", "transformation", b"transformation", "update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["data_objects", b"data_objects", "description", b"description", "labels", b"labels", "name", b"name", "runtime", b"runtime", "transfer_id", b"transfer_id", "transformation", b"transformation", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateTransferRequest = UpdateTransferRequest
 
@@ -173,6 +202,7 @@ class DeleteTransferRequest(google.protobuf.message.Message):
 
     TRANSFER_ID_FIELD_NUMBER: builtins.int
     transfer_id: builtins.str
+    """Identifier of the transfer to be deleted."""
     def __init__(
         self,
         *,
@@ -205,7 +235,11 @@ class ListTransfersRequest(google.protobuf.message.Message):
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
-    """Identifier of the folder containing the transfers to be listed."""
+    """Identifier of the folder containing the transfers to be listed.
+
+    To get the folder ID, make a
+    [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    """
     page_size: builtins.int
     """The maximum number of transfers to be sent in the response message. If the
     folder contains more transfers than `page_size`, `next_page_token` will be
@@ -268,6 +302,10 @@ class GetTransferRequest(google.protobuf.message.Message):
 
     TRANSFER_ID_FIELD_NUMBER: builtins.int
     transfer_id: builtins.str
+    """Identifier of the transfer to be returned.
+
+    To get the list of all available transfers, make a [List] request.
+    """
     def __init__(
         self,
         *,
@@ -283,6 +321,10 @@ class DeactivateTransferRequest(google.protobuf.message.Message):
 
     TRANSFER_ID_FIELD_NUMBER: builtins.int
     transfer_id: builtins.str
+    """Identifier of the transfer to be deactivated.
+
+    To get the list of all available transfers, make a [List] request.
+    """
     def __init__(
         self,
         *,
@@ -313,6 +355,10 @@ class ActivateTransferRequest(google.protobuf.message.Message):
 
     TRANSFER_ID_FIELD_NUMBER: builtins.int
     transfer_id: builtins.str
+    """Identifier of the transfer to be activated.
+
+    To get the list of all available transfers, make a [List] request.
+    """
     def __init__(
         self,
         *,

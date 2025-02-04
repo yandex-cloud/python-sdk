@@ -50,21 +50,25 @@ class MysqlConnection(google.protobuf.message.Message):
 
     MDB_CLUSTER_ID_FIELD_NUMBER: builtins.int
     ON_PREMISE_FIELD_NUMBER: builtins.int
+    CONNECTION_MANAGER_CONNECTION_FIELD_NUMBER: builtins.int
     mdb_cluster_id: builtins.str
     """Managed Service for MySQL cluster ID"""
     @property
     def on_premise(self) -> global___OnPremiseMysql:
         """Connection options for on-premise MySQL"""
 
+    @property
+    def connection_manager_connection(self) -> yandex.cloud.datatransfer.v1.endpoint.common_pb2.ConnectionManagerConnection: ...
     def __init__(
         self,
         *,
         mdb_cluster_id: builtins.str = ...,
         on_premise: global___OnPremiseMysql | None = ...,
+        connection_manager_connection: yandex.cloud.datatransfer.v1.endpoint.common_pb2.ConnectionManagerConnection | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["connection", b"connection", "mdb_cluster_id", b"mdb_cluster_id", "on_premise", b"on_premise"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["connection", b"connection", "mdb_cluster_id", b"mdb_cluster_id", "on_premise", b"on_premise"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["connection", b"connection"]) -> typing.Literal["mdb_cluster_id", "on_premise"] | None: ...
+    def HasField(self, field_name: typing.Literal["connection", b"connection", "connection_manager_connection", b"connection_manager_connection", "mdb_cluster_id", b"mdb_cluster_id", "on_premise", b"on_premise"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["connection", b"connection", "connection_manager_connection", b"connection_manager_connection", "mdb_cluster_id", b"mdb_cluster_id", "on_premise", b"on_premise"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["connection", b"connection"]) -> typing.Literal["mdb_cluster_id", "on_premise", "connection_manager_connection"] | None: ...
 
 global___MysqlConnection = MysqlConnection
 

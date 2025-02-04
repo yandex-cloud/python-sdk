@@ -27,7 +27,7 @@ from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 from yandex.cloud.smartwebsecurity.v1 import security_profile_pb2 as yandex_dot_cloud_dot_smartwebsecurity_dot_v1_dot_security__profile__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n6yandex/cloud/smartwebsecurity/v1/waf/waf_profile.proto\x12$yandex.cloud.smartwebsecurity.v1.waf\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\x1a\x37yandex/cloud/smartwebsecurity/v1/security_profile.proto\"\xa7\t\n\nWafProfile\x12\x10\n\x02id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tfolder_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x16\n\x08\x63loud_id\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x38\n\x04name\x18\x04 \x01(\tB*\xe8\xc7\x31\x01\xf2\xc7\x31\x1a[a-zA-Z0-9][a-zA-Z0-9-_.]*\x8a\xc8\x31\x04\x31-50\x12\x1e\n\x0b\x64\x65scription\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=512\x12\x89\x01\n\x06labels\x18\x06 \x03(\x0b\x32<.yandex.cloud.smartwebsecurity.v1.waf.WafProfile.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12.\n\ncreated_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x43\n\x05rules\x18\t \x03(\x0b\x32\x34.yandex.cloud.smartwebsecurity.v1.waf.WafProfileRule\x12V\n\x0f\x65xclusion_rules\x18\n \x03(\x0b\x32=.yandex.cloud.smartwebsecurity.v1.waf.WafProfileExclusionRule\x12U\n\rcore_rule_set\x18\x0b \x01(\x0b\x32<.yandex.cloud.smartwebsecurity.v1.waf.WafProfile.CoreRuleSetH\x00\x12\x61\n\x14\x61nalyze_request_body\x18\x0c \x01(\x0b\x32\x43.yandex.cloud.smartwebsecurity.v1.waf.WafProfile.AnalyzeRequestBody\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\xa5\x01\n\x0b\x43oreRuleSet\x12*\n\x15inbound_anomaly_score\x18\x01 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x32-10000\x12#\n\x0eparanoia_level\x18\x02 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x31,2,3,4\x12\x45\n\x08rule_set\x18\x03 \x01(\x0b\x32-.yandex.cloud.smartwebsecurity.v1.waf.RuleSetB\x04\xe8\xc7\x31\x01\x1a\xf9\x01\n\x12\x41nalyzeRequestBody\x12\x12\n\nis_enabled\x18\x01 \x01(\x08\x12\x30\n\nsize_limit\x18\x02 \x01(\x03\x42\x1c\xfa\xc7\x31\x18\x30,8,16,32,64,128,256,512\x12\x65\n\x11size_limit_action\x18\x03 \x01(\x0e\x32J.yandex.cloud.smartwebsecurity.v1.waf.WafProfile.AnalyzeRequestBody.Action\"6\n\x06\x41\x63tion\x12\x16\n\x12\x41\x43TION_UNSPECIFIED\x10\x00\x12\n\n\x06IGNORE\x10\x01\x12\x08\n\x04\x44\x45NY\x10\x02\x42\x10\n\x08rule_set\x12\x04\xc0\xc1\x31\x01J\x04\x08\x08\x10\t\"P\n\x0eWafProfileRule\x12\x15\n\x07rule_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x12\n\nis_enabled\x18\x02 \x01(\x08\x12\x13\n\x0bis_blocking\x18\x03 \x01(\x08\"\xc3\x02\n\x17WafProfileExclusionRule\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1e\n\x0b\x64\x65scription\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=512\x12>\n\tcondition\x18\x03 \x01(\x0b\x32+.yandex.cloud.smartwebsecurity.v1.Condition\x12g\n\rexclude_rules\x18\x04 \x01(\x0b\x32J.yandex.cloud.smartwebsecurity.v1.waf.WafProfileExclusionRule.ExcludeRulesB\x04\xe8\xc7\x31\x01\x12\x14\n\x0clog_excluded\x18\x05 \x01(\x08\x1a\x35\n\x0c\x45xcludeRules\x12\x13\n\x0b\x65xclude_all\x18\x01 \x01(\x08\x12\x10\n\x08rule_ids\x18\x02 \x03(\t\"4\n\x07RuleSet\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x15\n\x07version\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x42\x85\x01\n(yandex.cloud.api.smartwebsecurity.v1.wafZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/smartwebsecurity/v1/waf;smartwebsecurityb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n6yandex/cloud/smartwebsecurity/v1/waf/waf_profile.proto\x12$yandex.cloud.smartwebsecurity.v1.waf\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\x1a\x37yandex/cloud/smartwebsecurity/v1/security_profile.proto\"\xab\t\n\nWafProfile\x12\x10\n\x02id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x17\n\tfolder_id\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x16\n\x08\x63loud_id\x18\x03 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x38\n\x04name\x18\x04 \x01(\tB*\xe8\xc7\x31\x01\xf2\xc7\x31\x1a[a-zA-Z0-9][a-zA-Z0-9-_.]*\x8a\xc8\x31\x04\x31-50\x12\x1e\n\x0b\x64\x65scription\x18\x05 \x01(\tB\t\x8a\xc8\x31\x05<=512\x12\x89\x01\n\x06labels\x18\x06 \x03(\x0b\x32<.yandex.cloud.smartwebsecurity.v1.waf.WafProfile.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12.\n\ncreated_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x43\n\x05rules\x18\t \x03(\x0b\x32\x34.yandex.cloud.smartwebsecurity.v1.waf.WafProfileRule\x12V\n\x0f\x65xclusion_rules\x18\n \x03(\x0b\x32=.yandex.cloud.smartwebsecurity.v1.waf.WafProfileExclusionRule\x12U\n\rcore_rule_set\x18\x0b \x01(\x0b\x32<.yandex.cloud.smartwebsecurity.v1.waf.WafProfile.CoreRuleSetH\x00\x12\x65\n\x14\x61nalyze_request_body\x18\x0c \x01(\x0b\x32\x43.yandex.cloud.smartwebsecurity.v1.waf.WafProfile.AnalyzeRequestBodyB\x02\x18\x01\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\xa5\x01\n\x0b\x43oreRuleSet\x12*\n\x15inbound_anomaly_score\x18\x01 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x32-10000\x12#\n\x0eparanoia_level\x18\x02 \x01(\x03\x42\x0b\xfa\xc7\x31\x07\x31,2,3,4\x12\x45\n\x08rule_set\x18\x03 \x01(\x0b\x32-.yandex.cloud.smartwebsecurity.v1.waf.RuleSetB\x04\xe8\xc7\x31\x01\x1a\xf9\x01\n\x12\x41nalyzeRequestBody\x12\x12\n\nis_enabled\x18\x01 \x01(\x08\x12\x30\n\nsize_limit\x18\x02 \x01(\x03\x42\x1c\xfa\xc7\x31\x18\x30,8,16,32,64,128,256,512\x12\x65\n\x11size_limit_action\x18\x03 \x01(\x0e\x32J.yandex.cloud.smartwebsecurity.v1.waf.WafProfile.AnalyzeRequestBody.Action\"6\n\x06\x41\x63tion\x12\x16\n\x12\x41\x43TION_UNSPECIFIED\x10\x00\x12\n\n\x06IGNORE\x10\x01\x12\x08\n\x04\x44\x45NY\x10\x02\x42\x10\n\x08rule_set\x12\x04\xc0\xc1\x31\x01J\x04\x08\x08\x10\t\"P\n\x0eWafProfileRule\x12\x15\n\x07rule_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x12\n\nis_enabled\x18\x02 \x01(\x08\x12\x13\n\x0bis_blocking\x18\x03 \x01(\x08\"\xc3\x02\n\x17WafProfileExclusionRule\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x1e\n\x0b\x64\x65scription\x18\x02 \x01(\tB\t\x8a\xc8\x31\x05<=512\x12>\n\tcondition\x18\x03 \x01(\x0b\x32+.yandex.cloud.smartwebsecurity.v1.Condition\x12g\n\rexclude_rules\x18\x04 \x01(\x0b\x32J.yandex.cloud.smartwebsecurity.v1.waf.WafProfileExclusionRule.ExcludeRulesB\x04\xe8\xc7\x31\x01\x12\x14\n\x0clog_excluded\x18\x05 \x01(\x08\x1a\x35\n\x0c\x45xcludeRules\x12\x13\n\x0b\x65xclude_all\x18\x01 \x01(\x08\x12\x10\n\x08rule_ids\x18\x02 \x03(\t\"4\n\x07RuleSet\x12\x12\n\x04name\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x15\n\x07version\x18\x02 \x01(\tB\x04\xe8\xc7\x31\x01\x42\x85\x01\n(yandex.cloud.api.smartwebsecurity.v1.wafZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/smartwebsecurity/v1/waf;smartwebsecurityb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -59,6 +59,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_WAFPROFILE'].fields_by_name['description']._serialized_options = b'\212\3101\005<=512'
   _globals['_WAFPROFILE'].fields_by_name['labels']._loaded_options = None
   _globals['_WAFPROFILE'].fields_by_name['labels']._serialized_options = b'\362\3071\013[-_0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\0041-63'
+  _globals['_WAFPROFILE'].fields_by_name['analyze_request_body']._loaded_options = None
+  _globals['_WAFPROFILE'].fields_by_name['analyze_request_body']._serialized_options = b'\030\001'
   _globals['_WAFPROFILERULE'].fields_by_name['rule_id']._loaded_options = None
   _globals['_WAFPROFILERULE'].fields_by_name['rule_id']._serialized_options = b'\350\3071\001'
   _globals['_WAFPROFILEEXCLUSIONRULE'].fields_by_name['name']._loaded_options = None
@@ -72,21 +74,21 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_RULESET'].fields_by_name['version']._loaded_options = None
   _globals['_RULESET'].fields_by_name['version']._serialized_options = b'\350\3071\001'
   _globals['_WAFPROFILE']._serialized_start=218
-  _globals['_WAFPROFILE']._serialized_end=1409
-  _globals['_WAFPROFILE_LABELSENTRY']._serialized_start=920
-  _globals['_WAFPROFILE_LABELSENTRY']._serialized_end=965
-  _globals['_WAFPROFILE_CORERULESET']._serialized_start=968
-  _globals['_WAFPROFILE_CORERULESET']._serialized_end=1133
-  _globals['_WAFPROFILE_ANALYZEREQUESTBODY']._serialized_start=1136
-  _globals['_WAFPROFILE_ANALYZEREQUESTBODY']._serialized_end=1385
-  _globals['_WAFPROFILE_ANALYZEREQUESTBODY_ACTION']._serialized_start=1331
-  _globals['_WAFPROFILE_ANALYZEREQUESTBODY_ACTION']._serialized_end=1385
-  _globals['_WAFPROFILERULE']._serialized_start=1411
-  _globals['_WAFPROFILERULE']._serialized_end=1491
-  _globals['_WAFPROFILEEXCLUSIONRULE']._serialized_start=1494
-  _globals['_WAFPROFILEEXCLUSIONRULE']._serialized_end=1817
-  _globals['_WAFPROFILEEXCLUSIONRULE_EXCLUDERULES']._serialized_start=1764
-  _globals['_WAFPROFILEEXCLUSIONRULE_EXCLUDERULES']._serialized_end=1817
-  _globals['_RULESET']._serialized_start=1819
-  _globals['_RULESET']._serialized_end=1871
+  _globals['_WAFPROFILE']._serialized_end=1413
+  _globals['_WAFPROFILE_LABELSENTRY']._serialized_start=924
+  _globals['_WAFPROFILE_LABELSENTRY']._serialized_end=969
+  _globals['_WAFPROFILE_CORERULESET']._serialized_start=972
+  _globals['_WAFPROFILE_CORERULESET']._serialized_end=1137
+  _globals['_WAFPROFILE_ANALYZEREQUESTBODY']._serialized_start=1140
+  _globals['_WAFPROFILE_ANALYZEREQUESTBODY']._serialized_end=1389
+  _globals['_WAFPROFILE_ANALYZEREQUESTBODY_ACTION']._serialized_start=1335
+  _globals['_WAFPROFILE_ANALYZEREQUESTBODY_ACTION']._serialized_end=1389
+  _globals['_WAFPROFILERULE']._serialized_start=1415
+  _globals['_WAFPROFILERULE']._serialized_end=1495
+  _globals['_WAFPROFILEEXCLUSIONRULE']._serialized_start=1498
+  _globals['_WAFPROFILEEXCLUSIONRULE']._serialized_end=1821
+  _globals['_WAFPROFILEEXCLUSIONRULE_EXCLUDERULES']._serialized_start=1768
+  _globals['_WAFPROFILEEXCLUSIONRULE_EXCLUDERULES']._serialized_end=1821
+  _globals['_RULESET']._serialized_start=1823
+  _globals['_RULESET']._serialized_end=1875
 # @@protoc_insertion_point(module_scope)

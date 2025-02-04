@@ -20,6 +20,10 @@ class GetEndpointRequest(google.protobuf.message.Message):
 
     ENDPOINT_ID_FIELD_NUMBER: builtins.int
     endpoint_id: builtins.str
+    """Identifier of the endpoint to return.
+
+    To get the endpoint ID, make an [EndpointService.List] request.
+    """
     def __init__(
         self,
         *,
@@ -119,10 +123,26 @@ class CreateEndpointRequest(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     SETTINGS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
+    """ID of the folder to create the endpoint in.
+
+    To get the folder ID, make a
+    [yandex.cloud.resourcemanager.v1.FolderService.List] request.
+    """
     name: builtins.str
+    """Name of the endpoint.
+
+    The name must be unique within the folder.
+    """
     description: builtins.str
+    """Description of the endpoint."""
     @property
-    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Endpoint labels as `key:value` pairs.
+
+        For details about the concept, see [documentation]({{ api-url-prefix
+        }}/resource-manager/concepts/labels).
+        """
+
     @property
     def settings(self) -> yandex.cloud.datatransfer.v1.endpoint_pb2.EndpointSettings: ...
     def __init__(
@@ -187,10 +207,16 @@ class UpdateEndpointRequest(google.protobuf.message.Message):
     description: builtins.str
     """The new description for the endpoint."""
     @property
-    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Endpoint labels as `key:value` pairs.
+
+        For details about the concept, see [documentation]({{ api-url-prefix
+        }}/resource-manager/concepts/labels).
+        """
+
     @property
     def settings(self) -> yandex.cloud.datatransfer.v1.endpoint_pb2.EndpointSettings:
-        """The new endpoint name. Must be unique within the folder."""
+        """The new endpoint settings."""
 
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
@@ -237,6 +263,10 @@ class DeleteEndpointRequest(google.protobuf.message.Message):
 
     ENDPOINT_ID_FIELD_NUMBER: builtins.int
     endpoint_id: builtins.str
+    """Identifier of the endpoint to delete.
+
+    To get the list of all available endpoints, make a [List] request.
+    """
     def __init__(
         self,
         *,

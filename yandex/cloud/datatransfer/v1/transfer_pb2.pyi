@@ -124,6 +124,7 @@ class Transfer(google.protobuf.message.Message):
     TYPE_FIELD_NUMBER: builtins.int
     WARNING_FIELD_NUMBER: builtins.int
     TRANSFORMATION_FIELD_NUMBER: builtins.int
+    DATA_OBJECTS_FIELD_NUMBER: builtins.int
     PRESTABLE_FIELD_NUMBER: builtins.int
     id: builtins.str
     folder_id: builtins.str
@@ -143,6 +144,8 @@ class Transfer(google.protobuf.message.Message):
     def runtime(self) -> global___Runtime: ...
     @property
     def transformation(self) -> global___Transformation: ...
+    @property
+    def data_objects(self) -> global___DataObjects: ...
     def __init__(
         self,
         *,
@@ -158,10 +161,11 @@ class Transfer(google.protobuf.message.Message):
         type: global___TransferType.ValueType = ...,
         warning: builtins.str = ...,
         transformation: global___Transformation | None = ...,
+        data_objects: global___DataObjects | None = ...,
         prestable: builtins.bool = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["runtime", b"runtime", "source", b"source", "target", b"target", "transformation", b"transformation"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "name", b"name", "prestable", b"prestable", "runtime", b"runtime", "source", b"source", "status", b"status", "target", b"target", "transformation", b"transformation", "type", b"type", "warning", b"warning"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["data_objects", b"data_objects", "runtime", b"runtime", "source", b"source", "target", b"target", "transformation", b"transformation"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["data_objects", b"data_objects", "description", b"description", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "name", b"name", "prestable", b"prestable", "runtime", b"runtime", "source", b"source", "status", b"status", "target", b"target", "transformation", b"transformation", "type", b"type", "warning", b"warning"]) -> None: ...
 
 global___Transfer = Transfer
 
@@ -703,3 +707,19 @@ class Transformation(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["transformers", b"transformers"]) -> None: ...
 
 global___Transformation = Transformation
+
+@typing.final
+class DataObjects(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    INCLUDE_OBJECTS_FIELD_NUMBER: builtins.int
+    @property
+    def include_objects(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def __init__(
+        self,
+        *,
+        include_objects: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["include_objects", b"include_objects"]) -> None: ...
+
+global___DataObjects = DataObjects

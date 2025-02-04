@@ -54,6 +54,7 @@ class User(google.protobuf.message.Message):
     GRANTS_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     USER_PASSWORD_ENCRYPTION_FIELD_NUMBER: builtins.int
+    CONNECTION_MANAGER_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the PostgreSQL user."""
     cluster_id: builtins.str
@@ -99,6 +100,10 @@ class User(google.protobuf.message.Message):
         The default value is `unspecified`. In this case, the user configuration inherits the cluster's deletion protection settings.
         """
 
+    @property
+    def connection_manager(self) -> global___ConnectionManager:
+        """Connection Manager Connection and settings associated with user. Read only field."""
+
     def __init__(
         self,
         *,
@@ -111,9 +116,10 @@ class User(google.protobuf.message.Message):
         grants: collections.abc.Iterable[builtins.str] | None = ...,
         deletion_protection: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         user_password_encryption: global___UserPasswordEncryption.ValueType = ...,
+        connection_manager: global___ConnectionManager | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["deletion_protection", b"deletion_protection", "login", b"login", "settings", b"settings"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "conn_limit", b"conn_limit", "deletion_protection", b"deletion_protection", "grants", b"grants", "login", b"login", "name", b"name", "permissions", b"permissions", "settings", b"settings", "user_password_encryption", b"user_password_encryption"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["connection_manager", b"connection_manager", "deletion_protection", b"deletion_protection", "login", b"login", "settings", b"settings"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "conn_limit", b"conn_limit", "connection_manager", b"connection_manager", "deletion_protection", b"deletion_protection", "grants", b"grants", "login", b"login", "name", b"name", "permissions", b"permissions", "settings", b"settings", "user_password_encryption", b"user_password_encryption"]) -> None: ...
 
 global___User = User
 
@@ -134,6 +140,22 @@ class Permission(google.protobuf.message.Message):
 global___Permission = Permission
 
 @typing.final
+class ConnectionManager(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CONNECTION_ID_FIELD_NUMBER: builtins.int
+    connection_id: builtins.str
+    """ID of Connection Manager Connection"""
+    def __init__(
+        self,
+        *,
+        connection_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["connection_id", b"connection_id"]) -> None: ...
+
+global___ConnectionManager = ConnectionManager
+
+@typing.final
 class UserSpec(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -146,6 +168,7 @@ class UserSpec(google.protobuf.message.Message):
     GRANTS_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     USER_PASSWORD_ENCRYPTION_FIELD_NUMBER: builtins.int
+    GENERATE_PASSWORD_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the PostgreSQL user."""
     password: builtins.str
@@ -195,6 +218,10 @@ class UserSpec(google.protobuf.message.Message):
         Default value: `unspecified` (inherits cluster's deletion_protection)
         """
 
+    @property
+    def generate_password(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Generate password using Connection Manager."""
+
     def __init__(
         self,
         *,
@@ -207,9 +234,10 @@ class UserSpec(google.protobuf.message.Message):
         grants: collections.abc.Iterable[builtins.str] | None = ...,
         deletion_protection: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         user_password_encryption: global___UserPasswordEncryption.ValueType = ...,
+        generate_password: google.protobuf.wrappers_pb2.BoolValue | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["conn_limit", b"conn_limit", "deletion_protection", b"deletion_protection", "login", b"login", "settings", b"settings"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["conn_limit", b"conn_limit", "deletion_protection", b"deletion_protection", "grants", b"grants", "login", b"login", "name", b"name", "password", b"password", "permissions", b"permissions", "settings", b"settings", "user_password_encryption", b"user_password_encryption"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["conn_limit", b"conn_limit", "deletion_protection", b"deletion_protection", "generate_password", b"generate_password", "login", b"login", "settings", b"settings"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["conn_limit", b"conn_limit", "deletion_protection", b"deletion_protection", "generate_password", b"generate_password", "grants", b"grants", "login", b"login", "name", b"name", "password", b"password", "permissions", b"permissions", "settings", b"settings", "user_password_encryption", b"user_password_encryption"]) -> None: ...
 
 global___UserSpec = UserSpec
 

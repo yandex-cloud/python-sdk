@@ -33,6 +33,7 @@ class User(google.protobuf.message.Message):
     PERMISSIONS_FIELD_NUMBER: builtins.int
     SETTINGS_FIELD_NUMBER: builtins.int
     QUOTAS_FIELD_NUMBER: builtins.int
+    CONNECTION_MANAGER_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the ClickHouse user."""
     cluster_id: builtins.str
@@ -47,6 +48,10 @@ class User(google.protobuf.message.Message):
     def quotas(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___UserQuota]:
         """Set of quotas assigned to the user."""
 
+    @property
+    def connection_manager(self) -> global___ConnectionManager:
+        """Connection Manager connection configuration. Read only field."""
+
     def __init__(
         self,
         *,
@@ -55,9 +60,10 @@ class User(google.protobuf.message.Message):
         permissions: collections.abc.Iterable[global___Permission] | None = ...,
         settings: global___UserSettings | None = ...,
         quotas: collections.abc.Iterable[global___UserQuota] | None = ...,
+        connection_manager: global___ConnectionManager | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["settings", b"settings"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "name", b"name", "permissions", b"permissions", "quotas", b"quotas", "settings", b"settings"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["connection_manager", b"connection_manager", "settings", b"settings"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "connection_manager", b"connection_manager", "name", b"name", "permissions", b"permissions", "quotas", b"quotas", "settings", b"settings"]) -> None: ...
 
 global___User = User
 
@@ -78,6 +84,24 @@ class Permission(google.protobuf.message.Message):
 global___Permission = Permission
 
 @typing.final
+class ConnectionManager(google.protobuf.message.Message):
+    """Connection Manager connection configuration."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CONNECTION_ID_FIELD_NUMBER: builtins.int
+    connection_id: builtins.str
+    """ID of Connection Manager connection."""
+    def __init__(
+        self,
+        *,
+        connection_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["connection_id", b"connection_id"]) -> None: ...
+
+global___ConnectionManager = ConnectionManager
+
+@typing.final
 class UserSpec(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -86,6 +110,7 @@ class UserSpec(google.protobuf.message.Message):
     PERMISSIONS_FIELD_NUMBER: builtins.int
     SETTINGS_FIELD_NUMBER: builtins.int
     QUOTAS_FIELD_NUMBER: builtins.int
+    GENERATE_PASSWORD_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the ClickHouse user."""
     password: builtins.str
@@ -100,6 +125,10 @@ class UserSpec(google.protobuf.message.Message):
     def quotas(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___UserQuota]:
         """Set of quotas assigned to the user."""
 
+    @property
+    def generate_password(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Generate password using Connection Manager."""
+
     def __init__(
         self,
         *,
@@ -108,9 +137,10 @@ class UserSpec(google.protobuf.message.Message):
         permissions: collections.abc.Iterable[global___Permission] | None = ...,
         settings: global___UserSettings | None = ...,
         quotas: collections.abc.Iterable[global___UserQuota] | None = ...,
+        generate_password: google.protobuf.wrappers_pb2.BoolValue | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["settings", b"settings"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["name", b"name", "password", b"password", "permissions", b"permissions", "quotas", b"quotas", "settings", b"settings"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["generate_password", b"generate_password", "settings", b"settings"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["generate_password", b"generate_password", "name", b"name", "password", b"password", "permissions", b"permissions", "quotas", b"quotas", "settings", b"settings"]) -> None: ...
 
 global___UserSpec = UserSpec
 
