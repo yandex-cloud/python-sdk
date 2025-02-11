@@ -127,6 +127,7 @@ class RedisConfig(google.protobuf.message.Message):
     ALLOW_DATA_LOSS_FIELD_NUMBER: builtins.int
     USE_LUAJIT_FIELD_NUMBER: builtins.int
     IO_THREADS_ALLOWED_FIELD_NUMBER: builtins.int
+    ZSET_MAX_LISTPACK_ENTRIES_FIELD_NUMBER: builtins.int
     maxmemory_policy: global___RedisConfig.MaxmemoryPolicy.ValueType
     """Redis key eviction policy for a dataset that reaches maximum memory,
     available to the host. Redis maxmemory setting depends on Managed
@@ -212,6 +213,10 @@ class RedisConfig(google.protobuf.message.Message):
     def io_threads_allowed(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Allow redis to use io-threads"""
 
+    @property
+    def zset_max_listpack_entries(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Controls max number of entries in zset before conversion from memory-efficient listpack to CPU-efficient hash table and skiplist"""
+
     def __init__(
         self,
         *,
@@ -236,9 +241,10 @@ class RedisConfig(google.protobuf.message.Message):
         allow_data_loss: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         use_luajit: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         io_threads_allowed: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        zset_max_listpack_entries: google.protobuf.wrappers_pb2.Int64Value | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["allow_data_loss", b"allow_data_loss", "client_output_buffer_limit_normal", b"client_output_buffer_limit_normal", "client_output_buffer_limit_pubsub", b"client_output_buffer_limit_pubsub", "cluster_allow_pubsubshard_when_down", b"cluster_allow_pubsubshard_when_down", "cluster_allow_reads_when_down", b"cluster_allow_reads_when_down", "cluster_require_full_coverage", b"cluster_require_full_coverage", "databases", b"databases", "io_threads_allowed", b"io_threads_allowed", "lfu_decay_time", b"lfu_decay_time", "lfu_log_factor", b"lfu_log_factor", "lua_time_limit", b"lua_time_limit", "maxmemory_percent", b"maxmemory_percent", "repl_backlog_size_percent", b"repl_backlog_size_percent", "slowlog_log_slower_than", b"slowlog_log_slower_than", "slowlog_max_len", b"slowlog_max_len", "timeout", b"timeout", "turn_before_switchover", b"turn_before_switchover", "use_luajit", b"use_luajit"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["allow_data_loss", b"allow_data_loss", "client_output_buffer_limit_normal", b"client_output_buffer_limit_normal", "client_output_buffer_limit_pubsub", b"client_output_buffer_limit_pubsub", "cluster_allow_pubsubshard_when_down", b"cluster_allow_pubsubshard_when_down", "cluster_allow_reads_when_down", b"cluster_allow_reads_when_down", "cluster_require_full_coverage", b"cluster_require_full_coverage", "databases", b"databases", "io_threads_allowed", b"io_threads_allowed", "lfu_decay_time", b"lfu_decay_time", "lfu_log_factor", b"lfu_log_factor", "lua_time_limit", b"lua_time_limit", "maxmemory_percent", b"maxmemory_percent", "maxmemory_policy", b"maxmemory_policy", "notify_keyspace_events", b"notify_keyspace_events", "password", b"password", "repl_backlog_size_percent", b"repl_backlog_size_percent", "slowlog_log_slower_than", b"slowlog_log_slower_than", "slowlog_max_len", b"slowlog_max_len", "timeout", b"timeout", "turn_before_switchover", b"turn_before_switchover", "use_luajit", b"use_luajit"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["allow_data_loss", b"allow_data_loss", "client_output_buffer_limit_normal", b"client_output_buffer_limit_normal", "client_output_buffer_limit_pubsub", b"client_output_buffer_limit_pubsub", "cluster_allow_pubsubshard_when_down", b"cluster_allow_pubsubshard_when_down", "cluster_allow_reads_when_down", b"cluster_allow_reads_when_down", "cluster_require_full_coverage", b"cluster_require_full_coverage", "databases", b"databases", "io_threads_allowed", b"io_threads_allowed", "lfu_decay_time", b"lfu_decay_time", "lfu_log_factor", b"lfu_log_factor", "lua_time_limit", b"lua_time_limit", "maxmemory_percent", b"maxmemory_percent", "repl_backlog_size_percent", b"repl_backlog_size_percent", "slowlog_log_slower_than", b"slowlog_log_slower_than", "slowlog_max_len", b"slowlog_max_len", "timeout", b"timeout", "turn_before_switchover", b"turn_before_switchover", "use_luajit", b"use_luajit", "zset_max_listpack_entries", b"zset_max_listpack_entries"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["allow_data_loss", b"allow_data_loss", "client_output_buffer_limit_normal", b"client_output_buffer_limit_normal", "client_output_buffer_limit_pubsub", b"client_output_buffer_limit_pubsub", "cluster_allow_pubsubshard_when_down", b"cluster_allow_pubsubshard_when_down", "cluster_allow_reads_when_down", b"cluster_allow_reads_when_down", "cluster_require_full_coverage", b"cluster_require_full_coverage", "databases", b"databases", "io_threads_allowed", b"io_threads_allowed", "lfu_decay_time", b"lfu_decay_time", "lfu_log_factor", b"lfu_log_factor", "lua_time_limit", b"lua_time_limit", "maxmemory_percent", b"maxmemory_percent", "maxmemory_policy", b"maxmemory_policy", "notify_keyspace_events", b"notify_keyspace_events", "password", b"password", "repl_backlog_size_percent", b"repl_backlog_size_percent", "slowlog_log_slower_than", b"slowlog_log_slower_than", "slowlog_max_len", b"slowlog_max_len", "timeout", b"timeout", "turn_before_switchover", b"turn_before_switchover", "use_luajit", b"use_luajit", "zset_max_listpack_entries", b"zset_max_listpack_entries"]) -> None: ...
 
 global___RedisConfig = RedisConfig
 

@@ -457,3 +457,55 @@ class DeleteBackupMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["backup_id", b"backup_id", "compute_instance_id", b"compute_instance_id"]) -> None: ...
 
 global___DeleteBackupMetadata = DeleteBackupMetadata
+
+@typing.final
+class DeleteArchiveRequest(google.protobuf.message.Message):
+    """must be specified archive_id and folder/instance_id 
+    or pair of policy id and instance_id
+    """
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ARCHIVE_ID_FIELD_NUMBER: builtins.int
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    INSTANCE_ID_FIELD_NUMBER: builtins.int
+    POLICY_ID_FIELD_NUMBER: builtins.int
+    archive_id: builtins.str
+    """Archive ID that should be deleted."""
+    folder_id: builtins.str
+    """Folder ID of the archive to delete."""
+    instance_id: builtins.str
+    """Instance ID of the Archive."""
+    policy_id: builtins.str
+    """Policy ID of the Archive."""
+    def __init__(
+        self,
+        *,
+        archive_id: builtins.str = ...,
+        folder_id: builtins.str = ...,
+        instance_id: builtins.str = ...,
+        policy_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["archive_id", b"archive_id", "folder_id", b"folder_id", "instance_id", b"instance_id", "policy_id", b"policy_id"]) -> None: ...
+
+global___DeleteArchiveRequest = DeleteArchiveRequest
+
+@typing.final
+class DeleteArchiveMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ARCHIVE_ID_FIELD_NUMBER: builtins.int
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    archive_id: builtins.str
+    """Archive ID that should be deleted."""
+    folder_id: builtins.str
+    """Folder ID of the archive."""
+    def __init__(
+        self,
+        *,
+        archive_id: builtins.str = ...,
+        folder_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["archive_id", b"archive_id", "folder_id", b"folder_id"]) -> None: ...
+
+global___DeleteArchiveMetadata = DeleteArchiveMetadata

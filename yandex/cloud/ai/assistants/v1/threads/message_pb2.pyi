@@ -12,6 +12,8 @@ import google.protobuf.message
 import google.protobuf.timestamp_pb2
 import sys
 import typing
+import yandex.cloud.ai.assistants.v1.searchindex.search_index_pb2
+import yandex.cloud.ai.files.v1.file_pb2
 
 if sys.version_info >= (3, 10):
     import typing as typing_extensions
@@ -75,6 +77,7 @@ class Message(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     CONTENT_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
+    CITATIONS_FIELD_NUMBER: builtins.int
     id: builtins.str
     """Unique identifier of the message."""
     thread_id: builtins.str
@@ -99,6 +102,10 @@ class Message(google.protobuf.message.Message):
     def content(self) -> global___MessageContent:
         """Content of the message."""
 
+    @property
+    def citations(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Citation]:
+        """List of citations used to generate the message."""
+
     def __init__(
         self,
         *,
@@ -110,9 +117,10 @@ class Message(google.protobuf.message.Message):
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         content: global___MessageContent | None = ...,
         status: global___Message.MessageStatus.ValueType = ...,
+        citations: collections.abc.Iterable[global___Citation] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["author", b"author", "content", b"content", "created_at", b"created_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["author", b"author", "content", b"content", "created_at", b"created_at", "created_by", b"created_by", "id", b"id", "labels", b"labels", "status", b"status", "thread_id", b"thread_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["author", b"author", "citations", b"citations", "content", b"content", "created_at", b"created_at", "created_by", b"created_by", "id", b"id", "labels", b"labels", "status", b"status", "thread_id", b"thread_id"]) -> None: ...
 
 global___Message = Message
 
@@ -248,3 +256,98 @@ class Author(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["id", b"id", "role", b"role"]) -> None: ...
 
 global___Author = Author
+
+@typing.final
+class Citation(google.protobuf.message.Message):
+    """Represents a citation used for generating a message."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SOURCES_FIELD_NUMBER: builtins.int
+    @property
+    def sources(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Source]:
+        """List of sources for citation."""
+
+    def __init__(
+        self,
+        *,
+        sources: collections.abc.Iterable[global___Source] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["sources", b"sources"]) -> None: ...
+
+global___Citation = Citation
+
+@typing.final
+class Source(google.protobuf.message.Message):
+    """Represents a source used for generating a message citation."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CHUNK_FIELD_NUMBER: builtins.int
+    @property
+    def chunk(self) -> global___FileChunk:
+        """File chunk source."""
+
+    def __init__(
+        self,
+        *,
+        chunk: global___FileChunk | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["SourceType", b"SourceType", "chunk", b"chunk"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["SourceType", b"SourceType", "chunk", b"chunk"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["SourceType", b"SourceType"]) -> typing.Literal["chunk"] | None: ...
+
+global___Source = Source
+
+@typing.final
+class FileChunk(google.protobuf.message.Message):
+    """FileChunk represents a chunk of a file used as a source."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SEARCH_INDEX_FIELD_NUMBER: builtins.int
+    SOURCE_FILE_FIELD_NUMBER: builtins.int
+    CONTENT_FIELD_NUMBER: builtins.int
+    @property
+    def search_index(self) -> yandex.cloud.ai.assistants.v1.searchindex.search_index_pb2.SearchIndex:
+        """Search index associated with the file chunk."""
+
+    @property
+    def source_file(self) -> yandex.cloud.ai.files.v1.file_pb2.File:
+        """The original file from which the chunk is derived."""
+
+    @property
+    def content(self) -> global___ChunkContent:
+        """Content of the file chunk."""
+
+    def __init__(
+        self,
+        *,
+        search_index: yandex.cloud.ai.assistants.v1.searchindex.search_index_pb2.SearchIndex | None = ...,
+        source_file: yandex.cloud.ai.files.v1.file_pb2.File | None = ...,
+        content: global___ChunkContent | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["content", b"content", "search_index", b"search_index", "source_file", b"source_file"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["content", b"content", "search_index", b"search_index", "source_file", b"source_file"]) -> None: ...
+
+global___FileChunk = FileChunk
+
+@typing.final
+class ChunkContent(google.protobuf.message.Message):
+    """Represents the content of a file chunk."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CONTENT_FIELD_NUMBER: builtins.int
+    @property
+    def content(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ContentPart]:
+        """A list of content parts that make up the chunk."""
+
+    def __init__(
+        self,
+        *,
+        content: collections.abc.Iterable[global___ContentPart] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["content", b"content"]) -> None: ...
+
+global___ChunkContent = ChunkContent

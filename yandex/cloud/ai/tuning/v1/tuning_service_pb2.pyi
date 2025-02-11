@@ -215,6 +215,8 @@ class TuningRequest(google.protobuf.message.Message):
     TEXT_TO_TEXT_COMPLETION_FIELD_NUMBER: builtins.int
     TEXT_CLASSIFICATION_MULTILABEL_FIELD_NUMBER: builtins.int
     TEXT_CLASSIFICATION_MULTICLASS_FIELD_NUMBER: builtins.int
+    TEXT_EMBEDDING_PAIR_PARAMS_FIELD_NUMBER: builtins.int
+    TEXT_EMBEDDING_TRIPLET_PARAMS_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
@@ -233,6 +235,14 @@ class TuningRequest(google.protobuf.message.Message):
     @property
     def text_classification_multiclass(self) -> global___TextClassificationMulticlassParams: ...
     @property
+    def text_embedding_pair_params(self) -> global___TextEmbeddingPairParams:
+        """TextEmbeddingPairParams  is unimplemented"""
+
+    @property
+    def text_embedding_triplet_params(self) -> global___TextEmbeddingTripletParams:
+        """TextEmbeddingTripletParams  is unimplemented"""
+
+    @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
     def __init__(
         self,
@@ -243,13 +253,15 @@ class TuningRequest(google.protobuf.message.Message):
         text_to_text_completion: global___TextToTextCompletionTuningParams | None = ...,
         text_classification_multilabel: global___TextClassificationMultilabelParams | None = ...,
         text_classification_multiclass: global___TextClassificationMulticlassParams | None = ...,
+        text_embedding_pair_params: global___TextEmbeddingPairParams | None = ...,
+        text_embedding_triplet_params: global___TextEmbeddingTripletParams | None = ...,
         name: builtins.str = ...,
         description: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["text_classification_multiclass", b"text_classification_multiclass", "text_classification_multilabel", b"text_classification_multilabel", "text_to_text_completion", b"text_to_text_completion", "tuning_params", b"tuning_params"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["base_model_uri", b"base_model_uri", "description", b"description", "labels", b"labels", "name", b"name", "text_classification_multiclass", b"text_classification_multiclass", "text_classification_multilabel", b"text_classification_multilabel", "text_to_text_completion", b"text_to_text_completion", "train_datasets", b"train_datasets", "tuning_params", b"tuning_params", "validation_datasets", b"validation_datasets"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["tuning_params", b"tuning_params"]) -> typing.Literal["text_to_text_completion", "text_classification_multilabel", "text_classification_multiclass"] | None: ...
+    def HasField(self, field_name: typing.Literal["text_classification_multiclass", b"text_classification_multiclass", "text_classification_multilabel", b"text_classification_multilabel", "text_embedding_pair_params", b"text_embedding_pair_params", "text_embedding_triplet_params", b"text_embedding_triplet_params", "text_to_text_completion", b"text_to_text_completion", "tuning_params", b"tuning_params"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["base_model_uri", b"base_model_uri", "description", b"description", "labels", b"labels", "name", b"name", "text_classification_multiclass", b"text_classification_multiclass", "text_classification_multilabel", b"text_classification_multilabel", "text_embedding_pair_params", b"text_embedding_pair_params", "text_embedding_triplet_params", b"text_embedding_triplet_params", "text_to_text_completion", b"text_to_text_completion", "train_datasets", b"train_datasets", "tuning_params", b"tuning_params", "validation_datasets", b"validation_datasets"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["tuning_params", b"tuning_params"]) -> typing.Literal["text_to_text_completion", "text_classification_multilabel", "text_classification_multiclass", "text_embedding_pair_params", "text_embedding_triplet_params"] | None: ...
 
 global___TuningRequest = TuningRequest
 
@@ -507,6 +519,190 @@ class TextClassificationMulticlassParams(google.protobuf.message.Message):
     def WhichOneof(self, oneof_group: typing.Literal["tuning_type", b"tuning_type"]) -> typing.Literal["lora", "prompt_tune"] | None: ...
 
 global___TextClassificationMulticlassParams = TextClassificationMulticlassParams
+
+@typing.final
+class TextEmbeddingPairParams(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class Scheduler(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        LINEAR_FIELD_NUMBER: builtins.int
+        CONSTANT_FIELD_NUMBER: builtins.int
+        COSINE_FIELD_NUMBER: builtins.int
+        WARMUP_RATIO_FIELD_NUMBER: builtins.int
+        warmup_ratio: builtins.float
+        @property
+        def linear(self) -> yandex.cloud.ai.tuning.v1.tuning_schedulers_pb2.SchedulerLinear: ...
+        @property
+        def constant(self) -> yandex.cloud.ai.tuning.v1.tuning_schedulers_pb2.SchedulerConstant: ...
+        @property
+        def cosine(self) -> yandex.cloud.ai.tuning.v1.tuning_schedulers_pb2.SchedulerCosine: ...
+        def __init__(
+            self,
+            *,
+            linear: yandex.cloud.ai.tuning.v1.tuning_schedulers_pb2.SchedulerLinear | None = ...,
+            constant: yandex.cloud.ai.tuning.v1.tuning_schedulers_pb2.SchedulerConstant | None = ...,
+            cosine: yandex.cloud.ai.tuning.v1.tuning_schedulers_pb2.SchedulerCosine | None = ...,
+            warmup_ratio: builtins.float = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["constant", b"constant", "cosine", b"cosine", "linear", b"linear", "optional_warmup_ratio", b"optional_warmup_ratio", "type", b"type", "warmup_ratio", b"warmup_ratio"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["constant", b"constant", "cosine", b"cosine", "linear", b"linear", "optional_warmup_ratio", b"optional_warmup_ratio", "type", b"type", "warmup_ratio", b"warmup_ratio"]) -> None: ...
+        @typing.overload
+        def WhichOneof(self, oneof_group: typing.Literal["optional_warmup_ratio", b"optional_warmup_ratio"]) -> typing.Literal["warmup_ratio"] | None: ...
+        @typing.overload
+        def WhichOneof(self, oneof_group: typing.Literal["type", b"type"]) -> typing.Literal["linear", "constant", "cosine"] | None: ...
+
+    @typing.final
+    class Optimizer(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        ADAMW_FIELD_NUMBER: builtins.int
+        @property
+        def adamw(self) -> yandex.cloud.ai.tuning.v1.tuning_optimizers_pb2.OptimizerAdamw: ...
+        def __init__(
+            self,
+            *,
+            adamw: yandex.cloud.ai.tuning.v1.tuning_optimizers_pb2.OptimizerAdamw | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["adamw", b"adamw", "type", b"type"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["adamw", b"adamw", "type", b"type"]) -> None: ...
+        def WhichOneof(self, oneof_group: typing.Literal["type", b"type"]) -> typing.Literal["adamw"] | None: ...
+
+    SEED_FIELD_NUMBER: builtins.int
+    LR_FIELD_NUMBER: builtins.int
+    N_SAMPLES_FIELD_NUMBER: builtins.int
+    ADDITIONAL_ARGUMENTS_FIELD_NUMBER: builtins.int
+    EMBEDDING_DIMS_FIELD_NUMBER: builtins.int
+    LORA_FIELD_NUMBER: builtins.int
+    PROMPT_TUNE_FIELD_NUMBER: builtins.int
+    SCHEDULER_FIELD_NUMBER: builtins.int
+    OPTIMIZER_FIELD_NUMBER: builtins.int
+    seed: builtins.int
+    lr: builtins.float
+    n_samples: builtins.int
+    additional_arguments: builtins.str
+    @property
+    def embedding_dims(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.int]: ...
+    @property
+    def lora(self) -> yandex.cloud.ai.tuning.v1.tuning_types_pb2.TuningTypeLora: ...
+    @property
+    def prompt_tune(self) -> yandex.cloud.ai.tuning.v1.tuning_types_pb2.TuningTypePromptTune: ...
+    @property
+    def scheduler(self) -> global___TextEmbeddingPairParams.Scheduler: ...
+    @property
+    def optimizer(self) -> global___TextEmbeddingPairParams.Optimizer: ...
+    def __init__(
+        self,
+        *,
+        seed: builtins.int = ...,
+        lr: builtins.float = ...,
+        n_samples: builtins.int = ...,
+        additional_arguments: builtins.str = ...,
+        embedding_dims: collections.abc.Iterable[builtins.int] | None = ...,
+        lora: yandex.cloud.ai.tuning.v1.tuning_types_pb2.TuningTypeLora | None = ...,
+        prompt_tune: yandex.cloud.ai.tuning.v1.tuning_types_pb2.TuningTypePromptTune | None = ...,
+        scheduler: global___TextEmbeddingPairParams.Scheduler | None = ...,
+        optimizer: global___TextEmbeddingPairParams.Optimizer | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["lora", b"lora", "optimizer", b"optimizer", "prompt_tune", b"prompt_tune", "scheduler", b"scheduler", "tuning_type", b"tuning_type"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["additional_arguments", b"additional_arguments", "embedding_dims", b"embedding_dims", "lora", b"lora", "lr", b"lr", "n_samples", b"n_samples", "optimizer", b"optimizer", "prompt_tune", b"prompt_tune", "scheduler", b"scheduler", "seed", b"seed", "tuning_type", b"tuning_type"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["tuning_type", b"tuning_type"]) -> typing.Literal["lora", "prompt_tune"] | None: ...
+
+global___TextEmbeddingPairParams = TextEmbeddingPairParams
+
+@typing.final
+class TextEmbeddingTripletParams(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class Scheduler(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        LINEAR_FIELD_NUMBER: builtins.int
+        CONSTANT_FIELD_NUMBER: builtins.int
+        COSINE_FIELD_NUMBER: builtins.int
+        WARMUP_RATIO_FIELD_NUMBER: builtins.int
+        warmup_ratio: builtins.float
+        @property
+        def linear(self) -> yandex.cloud.ai.tuning.v1.tuning_schedulers_pb2.SchedulerLinear: ...
+        @property
+        def constant(self) -> yandex.cloud.ai.tuning.v1.tuning_schedulers_pb2.SchedulerConstant: ...
+        @property
+        def cosine(self) -> yandex.cloud.ai.tuning.v1.tuning_schedulers_pb2.SchedulerCosine: ...
+        def __init__(
+            self,
+            *,
+            linear: yandex.cloud.ai.tuning.v1.tuning_schedulers_pb2.SchedulerLinear | None = ...,
+            constant: yandex.cloud.ai.tuning.v1.tuning_schedulers_pb2.SchedulerConstant | None = ...,
+            cosine: yandex.cloud.ai.tuning.v1.tuning_schedulers_pb2.SchedulerCosine | None = ...,
+            warmup_ratio: builtins.float = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["constant", b"constant", "cosine", b"cosine", "linear", b"linear", "optional_warmup_ratio", b"optional_warmup_ratio", "type", b"type", "warmup_ratio", b"warmup_ratio"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["constant", b"constant", "cosine", b"cosine", "linear", b"linear", "optional_warmup_ratio", b"optional_warmup_ratio", "type", b"type", "warmup_ratio", b"warmup_ratio"]) -> None: ...
+        @typing.overload
+        def WhichOneof(self, oneof_group: typing.Literal["optional_warmup_ratio", b"optional_warmup_ratio"]) -> typing.Literal["warmup_ratio"] | None: ...
+        @typing.overload
+        def WhichOneof(self, oneof_group: typing.Literal["type", b"type"]) -> typing.Literal["linear", "constant", "cosine"] | None: ...
+
+    @typing.final
+    class Optimizer(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        ADAMW_FIELD_NUMBER: builtins.int
+        @property
+        def adamw(self) -> yandex.cloud.ai.tuning.v1.tuning_optimizers_pb2.OptimizerAdamw: ...
+        def __init__(
+            self,
+            *,
+            adamw: yandex.cloud.ai.tuning.v1.tuning_optimizers_pb2.OptimizerAdamw | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["adamw", b"adamw", "type", b"type"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["adamw", b"adamw", "type", b"type"]) -> None: ...
+        def WhichOneof(self, oneof_group: typing.Literal["type", b"type"]) -> typing.Literal["adamw"] | None: ...
+
+    SEED_FIELD_NUMBER: builtins.int
+    LR_FIELD_NUMBER: builtins.int
+    N_SAMPLES_FIELD_NUMBER: builtins.int
+    ADDITIONAL_ARGUMENTS_FIELD_NUMBER: builtins.int
+    EMBEDDING_DIMS_FIELD_NUMBER: builtins.int
+    LORA_FIELD_NUMBER: builtins.int
+    PROMPT_TUNE_FIELD_NUMBER: builtins.int
+    SCHEDULER_FIELD_NUMBER: builtins.int
+    OPTIMIZER_FIELD_NUMBER: builtins.int
+    seed: builtins.int
+    lr: builtins.float
+    n_samples: builtins.int
+    additional_arguments: builtins.str
+    @property
+    def embedding_dims(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.int]: ...
+    @property
+    def lora(self) -> yandex.cloud.ai.tuning.v1.tuning_types_pb2.TuningTypeLora: ...
+    @property
+    def prompt_tune(self) -> yandex.cloud.ai.tuning.v1.tuning_types_pb2.TuningTypePromptTune: ...
+    @property
+    def scheduler(self) -> global___TextEmbeddingTripletParams.Scheduler: ...
+    @property
+    def optimizer(self) -> global___TextEmbeddingTripletParams.Optimizer: ...
+    def __init__(
+        self,
+        *,
+        seed: builtins.int = ...,
+        lr: builtins.float = ...,
+        n_samples: builtins.int = ...,
+        additional_arguments: builtins.str = ...,
+        embedding_dims: collections.abc.Iterable[builtins.int] | None = ...,
+        lora: yandex.cloud.ai.tuning.v1.tuning_types_pb2.TuningTypeLora | None = ...,
+        prompt_tune: yandex.cloud.ai.tuning.v1.tuning_types_pb2.TuningTypePromptTune | None = ...,
+        scheduler: global___TextEmbeddingTripletParams.Scheduler | None = ...,
+        optimizer: global___TextEmbeddingTripletParams.Optimizer | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["lora", b"lora", "optimizer", b"optimizer", "prompt_tune", b"prompt_tune", "scheduler", b"scheduler", "tuning_type", b"tuning_type"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["additional_arguments", b"additional_arguments", "embedding_dims", b"embedding_dims", "lora", b"lora", "lr", b"lr", "n_samples", b"n_samples", "optimizer", b"optimizer", "prompt_tune", b"prompt_tune", "scheduler", b"scheduler", "seed", b"seed", "tuning_type", b"tuning_type"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["tuning_type", b"tuning_type"]) -> typing.Literal["lora", "prompt_tune"] | None: ...
+
+global___TextEmbeddingTripletParams = TextEmbeddingTripletParams
 
 @typing.final
 class GetMetricsUrlRequest(google.protobuf.message.Message):

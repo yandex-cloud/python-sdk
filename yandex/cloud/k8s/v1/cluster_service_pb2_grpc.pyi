@@ -68,6 +68,12 @@ class ClusterServiceStub:
     ]
     """Starts the specified Kubernetes cluster."""
 
+    RescheduleMaintenance: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.k8s.v1.cluster_service_pb2.RescheduleMaintenanceRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Reschedules mandatory maintenance for the specified cluster."""
+
     ListNodeGroups: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.k8s.v1.cluster_service_pb2.ListClusterNodeGroupsRequest,
         yandex.cloud.k8s.v1.cluster_service_pb2.ListClusterNodeGroupsResponse,
@@ -133,6 +139,12 @@ class ClusterServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Starts the specified Kubernetes cluster."""
+
+    RescheduleMaintenance: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.k8s.v1.cluster_service_pb2.RescheduleMaintenanceRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Reschedules mandatory maintenance for the specified cluster."""
 
     ListNodeGroups: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.k8s.v1.cluster_service_pb2.ListClusterNodeGroupsRequest,
@@ -213,6 +225,14 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Starts the specified Kubernetes cluster."""
+
+    @abc.abstractmethod
+    def RescheduleMaintenance(
+        self,
+        request: yandex.cloud.k8s.v1.cluster_service_pb2.RescheduleMaintenanceRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Reschedules mandatory maintenance for the specified cluster."""
 
     @abc.abstractmethod
     def ListNodeGroups(

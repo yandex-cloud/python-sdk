@@ -16,6 +16,7 @@ import google.type.timeofday_pb2
 import sys
 import typing
 import yandex.cloud.mdb.postgresql.v1.backup_pb2
+import yandex.cloud.mdb.postgresql.v1.backup_retention_policy_pb2
 import yandex.cloud.mdb.postgresql.v1.cluster_pb2
 import yandex.cloud.mdb.postgresql.v1.config.host10_1c_pb2
 import yandex.cloud.mdb.postgresql.v1.config.host10_pb2
@@ -148,6 +149,39 @@ class ListClustersResponse(google.protobuf.message.Message):
 global___ListClustersResponse = ListClustersResponse
 
 @typing.final
+class BackupRetentionPolicySpec(google.protobuf.message.Message):
+    """Message to describe a new retention policy for cluster backups."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    POLICY_NAME_FIELD_NUMBER: builtins.int
+    CRON_FIELD_NUMBER: builtins.int
+    RETAIN_FOR_DAYS_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
+    policy_name: builtins.str
+    """Required. Policy name."""
+    retain_for_days: builtins.int
+    """Retention duration."""
+    description: builtins.str
+    """Human-readable description."""
+    @property
+    def cron(self) -> yandex.cloud.mdb.postgresql.v1.backup_retention_policy_pb2.CronTab:
+        """CronTab schedule."""
+
+    def __init__(
+        self,
+        *,
+        policy_name: builtins.str = ...,
+        cron: yandex.cloud.mdb.postgresql.v1.backup_retention_policy_pb2.CronTab | None = ...,
+        retain_for_days: builtins.int = ...,
+        description: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["cron", b"cron"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cron", b"cron", "description", b"description", "policy_name", b"policy_name", "retain_for_days", b"retain_for_days"]) -> None: ...
+
+global___BackupRetentionPolicySpec = BackupRetentionPolicySpec
+
+@typing.final
 class CreateClusterRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -181,6 +215,7 @@ class CreateClusterRequest(google.protobuf.message.Message):
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     HOST_GROUP_IDS_FIELD_NUMBER: builtins.int
     MAINTENANCE_WINDOW_FIELD_NUMBER: builtins.int
+    RETENTION_POLICIES_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create the PostgreSQL cluster in."""
     name: builtins.str
@@ -227,6 +262,10 @@ class CreateClusterRequest(google.protobuf.message.Message):
     def maintenance_window(self) -> yandex.cloud.mdb.postgresql.v1.maintenance_pb2.MaintenanceWindow:
         """Window of maintenance operations."""
 
+    @property
+    def retention_policies(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___BackupRetentionPolicySpec]:
+        """Backup long-term retention policies setting."""
+
     def __init__(
         self,
         *,
@@ -244,9 +283,10 @@ class CreateClusterRequest(google.protobuf.message.Message):
         deletion_protection: builtins.bool = ...,
         host_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         maintenance_window: yandex.cloud.mdb.postgresql.v1.maintenance_pb2.MaintenanceWindow | None = ...,
+        retention_policies: collections.abc.Iterable[global___BackupRetentionPolicySpec] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "maintenance_window", b"maintenance_window"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["config_spec", b"config_spec", "database_specs", b"database_specs", "deletion_protection", b"deletion_protection", "description", b"description", "environment", b"environment", "folder_id", b"folder_id", "host_group_ids", b"host_group_ids", "host_specs", b"host_specs", "labels", b"labels", "maintenance_window", b"maintenance_window", "name", b"name", "network_id", b"network_id", "security_group_ids", b"security_group_ids", "user_specs", b"user_specs"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["config_spec", b"config_spec", "database_specs", b"database_specs", "deletion_protection", b"deletion_protection", "description", b"description", "environment", b"environment", "folder_id", b"folder_id", "host_group_ids", b"host_group_ids", "host_specs", b"host_specs", "labels", b"labels", "maintenance_window", b"maintenance_window", "name", b"name", "network_id", b"network_id", "retention_policies", b"retention_policies", "security_group_ids", b"security_group_ids", "user_specs", b"user_specs"]) -> None: ...
 
 global___CreateClusterRequest = CreateClusterRequest
 

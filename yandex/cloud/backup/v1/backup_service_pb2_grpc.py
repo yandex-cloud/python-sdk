@@ -72,6 +72,11 @@ class BackupServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_backup_dot_v1_dot_backup__service__pb2.DeleteBackupRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.DeleteArchive = channel.unary_unary(
+                '/yandex.cloud.backup.v1.BackupService/DeleteArchive',
+                request_serializer=yandex_dot_cloud_dot_backup_dot_v1_dot_backup__service__pb2.DeleteArchiveRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
 
 
 class BackupServiceServicer(object):
@@ -130,6 +135,13 @@ class BackupServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def DeleteArchive(self, request, context):
+        """Delete specific archive.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_BackupServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -166,6 +178,11 @@ def add_BackupServiceServicer_to_server(servicer, server):
             'Delete': grpc.unary_unary_rpc_method_handler(
                     servicer.Delete,
                     request_deserializer=yandex_dot_cloud_dot_backup_dot_v1_dot_backup__service__pb2.DeleteBackupRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'DeleteArchive': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteArchive,
+                    request_deserializer=yandex_dot_cloud_dot_backup_dot_v1_dot_backup__service__pb2.DeleteArchiveRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
@@ -358,6 +375,33 @@ class BackupService(object):
             target,
             '/yandex.cloud.backup.v1.BackupService/Delete',
             yandex_dot_cloud_dot_backup_dot_v1_dot_backup__service__pb2.DeleteBackupRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def DeleteArchive(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.backup.v1.BackupService/DeleteArchive',
+            yandex_dot_cloud_dot_backup_dot_v1_dot_backup__service__pb2.DeleteArchiveRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

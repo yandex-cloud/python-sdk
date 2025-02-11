@@ -9,6 +9,7 @@ import google.protobuf.descriptor
 import google.protobuf.duration_pb2
 import google.protobuf.internal.containers
 import google.protobuf.message
+import google.protobuf.timestamp_pb2
 import google.type.dayofweek_pb2
 import google.type.timeofday_pb2
 import typing
@@ -130,3 +131,38 @@ class WeeklyMaintenanceWindow(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["days_of_week", b"days_of_week"]) -> None: ...
 
 global___WeeklyMaintenanceWindow = WeeklyMaintenanceWindow
+
+@typing.final
+class ScheduledMaintenance(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    DELAYED_UNTIL_FIELD_NUMBER: builtins.int
+    AVAILABLE_FROM_FIELD_NUMBER: builtins.int
+    NO_LATER_THAN_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
+    description: builtins.str
+    """Description of the planned operation, for example, "Infrastructure planned update"."""
+    @property
+    def delayed_until(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Time until which the update should be postponed."""
+
+    @property
+    def available_from(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Time when the update became available."""
+
+    @property
+    def no_later_than(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """The latest possible date by which a mandatory update must be applied."""
+
+    def __init__(
+        self,
+        *,
+        delayed_until: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        available_from: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        no_later_than: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        description: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["available_from", b"available_from", "delayed_until", b"delayed_until", "no_later_than", b"no_later_than"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["available_from", b"available_from", "delayed_until", b"delayed_until", "description", b"description", "no_later_than", b"no_later_than"]) -> None: ...
+
+global___ScheduledMaintenance = ScheduledMaintenance

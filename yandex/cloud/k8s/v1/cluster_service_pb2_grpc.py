@@ -72,6 +72,11 @@ class ClusterServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__service__pb2.StartClusterRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.RescheduleMaintenance = channel.unary_unary(
+                '/yandex.cloud.k8s.v1.ClusterService/RescheduleMaintenance',
+                request_serializer=yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__service__pb2.RescheduleMaintenanceRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
         self.ListNodeGroups = channel.unary_unary(
                 '/yandex.cloud.k8s.v1.ClusterService/ListNodeGroups',
                 request_serializer=yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__service__pb2.ListClusterNodeGroupsRequest.SerializeToString,
@@ -144,6 +149,13 @@ class ClusterServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def RescheduleMaintenance(self, request, context):
+        """Reschedules mandatory maintenance for the specified cluster.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListNodeGroups(self, request, context):
         """Lists nodegroup for the specified Kubernetes cluster.
         """
@@ -201,6 +213,11 @@ def add_ClusterServiceServicer_to_server(servicer, server):
             'Start': grpc.unary_unary_rpc_method_handler(
                     servicer.Start,
                     request_deserializer=yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__service__pb2.StartClusterRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'RescheduleMaintenance': grpc.unary_unary_rpc_method_handler(
+                    servicer.RescheduleMaintenance,
+                    request_deserializer=yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__service__pb2.RescheduleMaintenanceRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'ListNodeGroups': grpc.unary_unary_rpc_method_handler(
@@ -408,6 +425,33 @@ class ClusterService(object):
             target,
             '/yandex.cloud.k8s.v1.ClusterService/Start',
             yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__service__pb2.StartClusterRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def RescheduleMaintenance(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.k8s.v1.ClusterService/RescheduleMaintenance',
+            yandex_dot_cloud_dot_k8s_dot_v1_dot_cluster__service__pb2.RescheduleMaintenanceRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

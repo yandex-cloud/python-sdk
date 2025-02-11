@@ -9,6 +9,7 @@ import google.protobuf.descriptor
 import google.protobuf.field_mask_pb2
 import google.protobuf.internal.containers
 import google.protobuf.message
+import google.protobuf.timestamp_pb2
 import typing
 import yandex.cloud.k8s.v1.cluster_pb2
 import yandex.cloud.k8s.v1.node_group_pb2
@@ -908,3 +909,41 @@ class LocationSpec(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["subnet_id", b"subnet_id", "zone_id", b"zone_id"]) -> None: ...
 
 global___LocationSpec = LocationSpec
+
+@typing.final
+class RescheduleMaintenanceRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    DELAYED_UNTIL_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the Kubernetes cluster to reschedule maintenance."""
+    @property
+    def delayed_until(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Time until which the update should be postponed."""
+
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        delayed_until: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["delayed_until", b"delayed_until"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "delayed_until", b"delayed_until"]) -> None: ...
+
+global___RescheduleMaintenanceRequest = RescheduleMaintenanceRequest
+
+@typing.final
+class RescheduleMaintenanceMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
+
+global___RescheduleMaintenanceMetadata = RescheduleMaintenanceMetadata

@@ -70,6 +70,12 @@ class BackupServiceStub:
     ]
     """Delete specific backup."""
 
+    DeleteArchive: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.backup.v1.backup_service_pb2.DeleteArchiveRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Delete specific archive."""
+
 class BackupServiceAsyncStub:
     """A set of methods for managing [backups](/docs/backup/concepts/backup)."""
 
@@ -119,6 +125,12 @@ class BackupServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Delete specific backup."""
+
+    DeleteArchive: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.backup.v1.backup_service_pb2.DeleteArchiveRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Delete specific archive."""
 
 class BackupServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing [backups](/docs/backup/concepts/backup)."""
@@ -183,5 +195,13 @@ class BackupServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Delete specific backup."""
+
+    @abc.abstractmethod
+    def DeleteArchive(
+        self,
+        request: yandex.cloud.backup.v1.backup_service_pb2.DeleteArchiveRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Delete specific archive."""
 
 def add_BackupServiceServicer_to_server(servicer: BackupServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

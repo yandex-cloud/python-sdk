@@ -25,10 +25,11 @@ _sym_db = _symbol_database.Default()
 from google.type import dayofweek_pb2 as google_dot_type_dot_dayofweek__pb2
 from google.type import timeofday_pb2 as google_dot_type_dot_timeofday__pb2
 from google.protobuf import duration_pb2 as google_dot_protobuf_dot_duration__pb2
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%yandex/cloud/k8s/v1/maintenance.proto\x12\x13yandex.cloud.k8s.v1\x1a\x1bgoogle/type/dayofweek.proto\x1a\x1bgoogle/type/timeofday.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1dyandex/cloud/validation.proto\"\x89\x02\n\x11MaintenanceWindow\x12@\n\x07\x61nytime\x18\x01 \x01(\x0b\x32-.yandex.cloud.k8s.v1.AnytimeMaintenanceWindowH\x00\x12O\n\x18\x64\x61ily_maintenance_window\x18\x02 \x01(\x0b\x32+.yandex.cloud.k8s.v1.DailyMaintenanceWindowH\x00\x12Q\n\x19weekly_maintenance_window\x18\x03 \x01(\x0b\x32,.yandex.cloud.k8s.v1.WeeklyMaintenanceWindowH\x00\x42\x0e\n\x06policy\x12\x04\xc0\xc1\x31\x01\"\x1a\n\x18\x41nytimeMaintenanceWindow\"\x83\x01\n\x16\x44\x61ilyMaintenanceWindow\x12\x30\n\nstart_time\x18\x01 \x01(\x0b\x32\x16.google.type.TimeOfDayB\x04\xe8\xc7\x31\x01\x12\x37\n\x08\x64uration\x18\x02 \x01(\x0b\x32\x19.google.protobuf.DurationB\n\xfa\xc7\x31\x06\x31h-24h\"\xb7\x01\n\x1b\x44\x61ysOfWeekMaintenanceWindow\x12-\n\x04\x64\x61ys\x18\x01 \x03(\x0e\x32\x16.google.type.DayOfWeekB\x07\x82\xc8\x31\x03\x31-7\x12\x30\n\nstart_time\x18\x02 \x01(\x0b\x32\x16.google.type.TimeOfDayB\x04\xe8\xc7\x31\x01\x12\x37\n\x08\x64uration\x18\x03 \x01(\x0b\x32\x19.google.protobuf.DurationB\n\xfa\xc7\x31\x06\x31h-24h\"j\n\x17WeeklyMaintenanceWindow\x12O\n\x0c\x64\x61ys_of_week\x18\x01 \x03(\x0b\x32\x30.yandex.cloud.k8s.v1.DaysOfWeekMaintenanceWindowB\x07\x82\xc8\x31\x03\x31-7BV\n\x17yandex.cloud.api.k8s.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/k8s/v1;k8sb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%yandex/cloud/k8s/v1/maintenance.proto\x12\x13yandex.cloud.k8s.v1\x1a\x1bgoogle/type/dayofweek.proto\x1a\x1bgoogle/type/timeofday.proto\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\x89\x02\n\x11MaintenanceWindow\x12@\n\x07\x61nytime\x18\x01 \x01(\x0b\x32-.yandex.cloud.k8s.v1.AnytimeMaintenanceWindowH\x00\x12O\n\x18\x64\x61ily_maintenance_window\x18\x02 \x01(\x0b\x32+.yandex.cloud.k8s.v1.DailyMaintenanceWindowH\x00\x12Q\n\x19weekly_maintenance_window\x18\x03 \x01(\x0b\x32,.yandex.cloud.k8s.v1.WeeklyMaintenanceWindowH\x00\x42\x0e\n\x06policy\x12\x04\xc0\xc1\x31\x01\"\x1a\n\x18\x41nytimeMaintenanceWindow\"\x83\x01\n\x16\x44\x61ilyMaintenanceWindow\x12\x30\n\nstart_time\x18\x01 \x01(\x0b\x32\x16.google.type.TimeOfDayB\x04\xe8\xc7\x31\x01\x12\x37\n\x08\x64uration\x18\x02 \x01(\x0b\x32\x19.google.protobuf.DurationB\n\xfa\xc7\x31\x06\x31h-24h\"\xb7\x01\n\x1b\x44\x61ysOfWeekMaintenanceWindow\x12-\n\x04\x64\x61ys\x18\x01 \x03(\x0e\x32\x16.google.type.DayOfWeekB\x07\x82\xc8\x31\x03\x31-7\x12\x30\n\nstart_time\x18\x02 \x01(\x0b\x32\x16.google.type.TimeOfDayB\x04\xe8\xc7\x31\x01\x12\x37\n\x08\x64uration\x18\x03 \x01(\x0b\x32\x19.google.protobuf.DurationB\n\xfa\xc7\x31\x06\x31h-24h\"j\n\x17WeeklyMaintenanceWindow\x12O\n\x0c\x64\x61ys_of_week\x18\x01 \x03(\x0b\x32\x30.yandex.cloud.k8s.v1.DaysOfWeekMaintenanceWindowB\x07\x82\xc8\x31\x03\x31-7\"\xc5\x01\n\x14ScheduledMaintenance\x12\x31\n\rdelayed_until\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x32\n\x0e\x61vailable_from\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x31\n\rno_later_than\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\tBV\n\x17yandex.cloud.api.k8s.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/k8s/v1;k8sb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -50,14 +51,16 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_DAYSOFWEEKMAINTENANCEWINDOW'].fields_by_name['duration']._serialized_options = b'\372\3071\0061h-24h'
   _globals['_WEEKLYMAINTENANCEWINDOW'].fields_by_name['days_of_week']._loaded_options = None
   _globals['_WEEKLYMAINTENANCEWINDOW'].fields_by_name['days_of_week']._serialized_options = b'\202\3101\0031-7'
-  _globals['_MAINTENANCEWINDOW']._serialized_start=184
-  _globals['_MAINTENANCEWINDOW']._serialized_end=449
-  _globals['_ANYTIMEMAINTENANCEWINDOW']._serialized_start=451
-  _globals['_ANYTIMEMAINTENANCEWINDOW']._serialized_end=477
-  _globals['_DAILYMAINTENANCEWINDOW']._serialized_start=480
-  _globals['_DAILYMAINTENANCEWINDOW']._serialized_end=611
-  _globals['_DAYSOFWEEKMAINTENANCEWINDOW']._serialized_start=614
-  _globals['_DAYSOFWEEKMAINTENANCEWINDOW']._serialized_end=797
-  _globals['_WEEKLYMAINTENANCEWINDOW']._serialized_start=799
-  _globals['_WEEKLYMAINTENANCEWINDOW']._serialized_end=905
+  _globals['_MAINTENANCEWINDOW']._serialized_start=217
+  _globals['_MAINTENANCEWINDOW']._serialized_end=482
+  _globals['_ANYTIMEMAINTENANCEWINDOW']._serialized_start=484
+  _globals['_ANYTIMEMAINTENANCEWINDOW']._serialized_end=510
+  _globals['_DAILYMAINTENANCEWINDOW']._serialized_start=513
+  _globals['_DAILYMAINTENANCEWINDOW']._serialized_end=644
+  _globals['_DAYSOFWEEKMAINTENANCEWINDOW']._serialized_start=647
+  _globals['_DAYSOFWEEKMAINTENANCEWINDOW']._serialized_end=830
+  _globals['_WEEKLYMAINTENANCEWINDOW']._serialized_start=832
+  _globals['_WEEKLYMAINTENANCEWINDOW']._serialized_end=938
+  _globals['_SCHEDULEDMAINTENANCE']._serialized_start=941
+  _globals['_SCHEDULEDMAINTENANCE']._serialized_end=1138
 # @@protoc_insertion_point(module_scope)

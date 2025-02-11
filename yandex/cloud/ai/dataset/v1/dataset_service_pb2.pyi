@@ -72,20 +72,24 @@ class ValidateDatasetMetadata(google.protobuf.message.Message):
     DATASET_ID_FIELD_NUMBER: builtins.int
     VALID_ROWS_FIELD_NUMBER: builtins.int
     PROCESSED_ROWS_FIELD_NUMBER: builtins.int
+    TOTAL_ROWS_FIELD_NUMBER: builtins.int
     dataset_id: builtins.str
     """ID of the dataset."""
     valid_rows: builtins.int
     """Count of valid rows among currently processed rows in the dataset."""
     processed_rows: builtins.int
     """Count of currently processed rows in the dataset."""
+    total_rows: builtins.int
+    """Total count of rows in the dataset"""
     def __init__(
         self,
         *,
         dataset_id: builtins.str = ...,
         valid_rows: builtins.int = ...,
         processed_rows: builtins.int = ...,
+        total_rows: builtins.int = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["dataset_id", b"dataset_id", "processed_rows", b"processed_rows", "valid_rows", b"valid_rows"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["dataset_id", b"dataset_id", "processed_rows", b"processed_rows", "total_rows", b"total_rows", "valid_rows", b"valid_rows"]) -> None: ...
 
 global___ValidateDatasetMetadata = ValidateDatasetMetadata
 
