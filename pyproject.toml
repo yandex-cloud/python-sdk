@@ -27,6 +27,8 @@ dependencies = [
     "requests>=2.32.3,<3",
     "six>=1.16.0,<2",
     "grpcio-tools>=1.59.3",
+    "deprecated>=1.2.18",
+    "types-deprecated>=1.2.15.20241117",
 ]
 
 [project.readme]
