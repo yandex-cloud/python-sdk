@@ -182,6 +182,7 @@ class Cluster(google.protobuf.message.Message):
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     PERSISTENCE_MODE_FIELD_NUMBER: builtins.int
     ANNOUNCE_HOSTNAMES_FIELD_NUMBER: builtins.int
+    AUTH_SENTINEL_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the Redis cluster.
     This ID is assigned by MDB at creation time.
@@ -211,6 +212,8 @@ class Cluster(google.protobuf.message.Message):
     """Persistence mode"""
     announce_hostnames: builtins.bool
     """Enable FQDN instead of ip"""
+    auth_sentinel: builtins.bool
+    """Allows to use ACL users to auth in sentinel"""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format."""
@@ -264,9 +267,10 @@ class Cluster(google.protobuf.message.Message):
         deletion_protection: builtins.bool = ...,
         persistence_mode: global___Cluster.PersistenceMode.ValueType = ...,
         announce_hostnames: builtins.bool = ...,
+        auth_sentinel: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["config", b"config", "created_at", b"created_at", "maintenance_window", b"maintenance_window", "planned_operation", b"planned_operation"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["announce_hostnames", b"announce_hostnames", "config", b"config", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "environment", b"environment", "folder_id", b"folder_id", "health", b"health", "id", b"id", "labels", b"labels", "maintenance_window", b"maintenance_window", "monitoring", b"monitoring", "name", b"name", "network_id", b"network_id", "persistence_mode", b"persistence_mode", "planned_operation", b"planned_operation", "security_group_ids", b"security_group_ids", "sharded", b"sharded", "status", b"status", "tls_enabled", b"tls_enabled"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["announce_hostnames", b"announce_hostnames", "auth_sentinel", b"auth_sentinel", "config", b"config", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "environment", b"environment", "folder_id", b"folder_id", "health", b"health", "id", b"id", "labels", b"labels", "maintenance_window", b"maintenance_window", "monitoring", b"monitoring", "name", b"name", "network_id", b"network_id", "persistence_mode", b"persistence_mode", "planned_operation", b"planned_operation", "security_group_ids", b"security_group_ids", "sharded", b"sharded", "status", b"status", "tls_enabled", b"tls_enabled"]) -> None: ...
 
 global___Cluster = Cluster
 

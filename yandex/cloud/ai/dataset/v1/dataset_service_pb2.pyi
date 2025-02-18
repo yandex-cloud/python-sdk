@@ -463,12 +463,8 @@ class ListDatasetsRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """Folder ID of the datasets to list."""
-    status: yandex.cloud.ai.dataset.v1.dataset_pb2.DatasetInfo.Status.ValueType
-    """Status of the datasets to list. Optional."""
     dataset_name_pattern: builtins.str
     """Name substring of the datasets to list. Optional."""
-    task_type_filter: builtins.str
-    """Task type of the datasets to list. Optional."""
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than [page_size],
@@ -479,13 +475,21 @@ class ListDatasetsRequest(google.protobuf.message.Message):
     """Page token. To get the next page of results, set [page_token] to the
     [ListDatasetsResponse.next_page_token] returned by a previous list request.
     """
+    @property
+    def status(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[yandex.cloud.ai.dataset.v1.dataset_pb2.DatasetInfo.Status.ValueType]:
+        """Statuses of the datasets to list. Optional."""
+
+    @property
+    def task_type_filter(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Task types of the datasets to list. Optional."""
+
     def __init__(
         self,
         *,
         folder_id: builtins.str = ...,
-        status: yandex.cloud.ai.dataset.v1.dataset_pb2.DatasetInfo.Status.ValueType = ...,
+        status: collections.abc.Iterable[yandex.cloud.ai.dataset.v1.dataset_pb2.DatasetInfo.Status.ValueType] | None = ...,
         dataset_name_pattern: builtins.str = ...,
-        task_type_filter: builtins.str = ...,
+        task_type_filter: collections.abc.Iterable[builtins.str] | None = ...,
         page_size: builtins.int = ...,
         page_token: builtins.str = ...,
     ) -> None: ...

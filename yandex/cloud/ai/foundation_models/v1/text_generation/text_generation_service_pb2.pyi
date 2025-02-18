@@ -23,8 +23,15 @@ class CompletionRequest(google.protobuf.message.Message):
     COMPLETION_OPTIONS_FIELD_NUMBER: builtins.int
     MESSAGES_FIELD_NUMBER: builtins.int
     TOOLS_FIELD_NUMBER: builtins.int
+    JSON_OBJECT_FIELD_NUMBER: builtins.int
+    JSON_SCHEMA_FIELD_NUMBER: builtins.int
     model_uri: builtins.str
     """The [ID of the model](/docs/foundation-models/concepts/yandexgpt/models) to be used for completion generation."""
+    json_object: builtins.bool
+    """When set to true, the model will respond with a valid JSON object.
+    Be sure to explicitly ask the model for JSON.
+    Otherwise, it may generate excessive whitespace and run indefinitely until it reaches the token limit.
+    """
     @property
     def completion_options(self) -> yandex.cloud.ai.foundation_models.v1.text_common_pb2.CompletionOptions:
         """Configuration options for completion generation."""
@@ -39,6 +46,10 @@ class CompletionRequest(google.protobuf.message.Message):
         Note: This parameter is not yet supported and will be ignored if provided.
         """
 
+    @property
+    def json_schema(self) -> yandex.cloud.ai.foundation_models.v1.text_common_pb2.JsonSchema:
+        """Enforces a specific JSON structure for the model's response based on a provided schema."""
+
     def __init__(
         self,
         *,
@@ -46,9 +57,12 @@ class CompletionRequest(google.protobuf.message.Message):
         completion_options: yandex.cloud.ai.foundation_models.v1.text_common_pb2.CompletionOptions | None = ...,
         messages: collections.abc.Iterable[yandex.cloud.ai.foundation_models.v1.text_common_pb2.Message] | None = ...,
         tools: collections.abc.Iterable[yandex.cloud.ai.foundation_models.v1.text_common_pb2.Tool] | None = ...,
+        json_object: builtins.bool = ...,
+        json_schema: yandex.cloud.ai.foundation_models.v1.text_common_pb2.JsonSchema | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["completion_options", b"completion_options"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["completion_options", b"completion_options", "messages", b"messages", "model_uri", b"model_uri", "tools", b"tools"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["ResponseFormat", b"ResponseFormat", "completion_options", b"completion_options", "json_object", b"json_object", "json_schema", b"json_schema"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["ResponseFormat", b"ResponseFormat", "completion_options", b"completion_options", "json_object", b"json_object", "json_schema", b"json_schema", "messages", b"messages", "model_uri", b"model_uri", "tools", b"tools"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["ResponseFormat", b"ResponseFormat"]) -> typing.Literal["json_object", "json_schema"] | None: ...
 
 global___CompletionRequest = CompletionRequest
 

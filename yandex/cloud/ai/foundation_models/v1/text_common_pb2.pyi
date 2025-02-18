@@ -472,3 +472,24 @@ class ToolResultList(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["tool_results", b"tool_results"]) -> None: ...
 
 global___ToolResultList = ToolResultList
+
+@typing.final
+class JsonSchema(google.protobuf.message.Message):
+    """Represents the expected structure of the model's response using a JSON Schema."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SCHEMA_FIELD_NUMBER: builtins.int
+    @property
+    def schema(self) -> google.protobuf.struct_pb2.Struct:
+        """The JSON Schema that the model's output must conform to."""
+
+    def __init__(
+        self,
+        *,
+        schema: google.protobuf.struct_pb2.Struct | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["schema", b"schema"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["schema", b"schema"]) -> None: ...
+
+global___JsonSchema = JsonSchema

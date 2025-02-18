@@ -604,6 +604,28 @@ class PolicySettings(google.protobuf.message.Message):
         def HasField(self, field_name: typing.Literal["rand_max_delay", b"rand_max_delay", "task_failure", b"task_failure"]) -> builtins.bool: ...
         def ClearField(self, field_name: typing.Literal["backup_sets", b"backup_sets", "enabled", b"enabled", "max_parallel_backups", b"max_parallel_backups", "rand_max_delay", b"rand_max_delay", "scheme", b"scheme", "task_failure", b"task_failure", "weekly_backup_day", b"weekly_backup_day"]) -> None: ...
 
+    @typing.final
+    class FileFilters(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        EXCLUSION_MASKS_FIELD_NUMBER: builtins.int
+        INCLUSION_MASKS_FIELD_NUMBER: builtins.int
+        @property
+        def exclusion_masks(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+            """Do not backup files that match the following criteria"""
+
+        @property
+        def inclusion_masks(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+            """Backup only files that match the following criteria"""
+
+        def __init__(
+            self,
+            *,
+            exclusion_masks: collections.abc.Iterable[builtins.str] | None = ...,
+            inclusion_masks: collections.abc.Iterable[builtins.str] | None = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["exclusion_masks", b"exclusion_masks", "inclusion_masks", b"inclusion_masks"]) -> None: ...
+
     COMPRESSION_FIELD_NUMBER: builtins.int
     FORMAT_FIELD_NUMBER: builtins.int
     MULTI_VOLUME_SNAPSHOTTING_ENABLED_FIELD_NUMBER: builtins.int
@@ -620,6 +642,7 @@ class PolicySettings(google.protobuf.message.Message):
     CBT_FIELD_NUMBER: builtins.int
     FAST_BACKUP_ENABLED_FIELD_NUMBER: builtins.int
     QUIESCE_SNAPSHOTTING_ENABLED_FIELD_NUMBER: builtins.int
+    FILE_FILTERS_FIELD_NUMBER: builtins.int
     compression: global___PolicySettings.Compression.ValueType
     """Archive compression level."""
     format: global___Format.ValueType
@@ -668,6 +691,10 @@ class PolicySettings(google.protobuf.message.Message):
     def scheduling(self) -> global___PolicySettings.Scheduling:
         """Configuration of the backup schedule."""
 
+    @property
+    def file_filters(self) -> global___PolicySettings.FileFilters:
+        """File filters to specify masks of files to backup or to exclude of backuping"""
+
     def __init__(
         self,
         *,
@@ -687,9 +714,10 @@ class PolicySettings(google.protobuf.message.Message):
         cbt: global___PolicySettings.ChangedBlockTracking.ValueType = ...,
         fast_backup_enabled: builtins.bool = ...,
         quiesce_snapshotting_enabled: builtins.bool = ...,
+        file_filters: global___PolicySettings.FileFilters | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["archive", b"archive", "performance_window", b"performance_window", "reattempts", b"reattempts", "retention", b"retention", "scheduling", b"scheduling", "splitting", b"splitting", "vm_snapshot_reattempts", b"vm_snapshot_reattempts", "vss", b"vss"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["archive", b"archive", "cbt", b"cbt", "compression", b"compression", "fast_backup_enabled", b"fast_backup_enabled", "format", b"format", "multi_volume_snapshotting_enabled", b"multi_volume_snapshotting_enabled", "performance_window", b"performance_window", "preserve_file_security_settings", b"preserve_file_security_settings", "quiesce_snapshotting_enabled", b"quiesce_snapshotting_enabled", "reattempts", b"reattempts", "retention", b"retention", "scheduling", b"scheduling", "silent_mode_enabled", b"silent_mode_enabled", "splitting", b"splitting", "vm_snapshot_reattempts", b"vm_snapshot_reattempts", "vss", b"vss"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["archive", b"archive", "file_filters", b"file_filters", "performance_window", b"performance_window", "reattempts", b"reattempts", "retention", b"retention", "scheduling", b"scheduling", "splitting", b"splitting", "vm_snapshot_reattempts", b"vm_snapshot_reattempts", "vss", b"vss"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["archive", b"archive", "cbt", b"cbt", "compression", b"compression", "fast_backup_enabled", b"fast_backup_enabled", "file_filters", b"file_filters", "format", b"format", "multi_volume_snapshotting_enabled", b"multi_volume_snapshotting_enabled", "performance_window", b"performance_window", "preserve_file_security_settings", b"preserve_file_security_settings", "quiesce_snapshotting_enabled", b"quiesce_snapshotting_enabled", "reattempts", b"reattempts", "retention", b"retention", "scheduling", b"scheduling", "silent_mode_enabled", b"silent_mode_enabled", "splitting", b"splitting", "vm_snapshot_reattempts", b"vm_snapshot_reattempts", "vss", b"vss"]) -> None: ...
 
 global___PolicySettings = PolicySettings
 

@@ -85,11 +85,15 @@ class Registry(google.protobuf.message.Message):
         TYPE_UNSPECIFIED: Registry._Type.ValueType  # 0
         LOCAL: Registry._Type.ValueType  # 1
         """Registry type is local."""
+        REMOTE: Registry._Type.ValueType  # 2
+        VIRTUAL: Registry._Type.ValueType  # 3
 
     class Type(_Type, metaclass=_TypeEnumTypeWrapper): ...
     TYPE_UNSPECIFIED: Registry.Type.ValueType  # 0
     LOCAL: Registry.Type.ValueType  # 1
     """Registry type is local."""
+    REMOTE: Registry.Type.ValueType  # 2
+    VIRTUAL: Registry.Type.ValueType  # 3
 
     @typing.final
     class LabelsEntry(google.protobuf.message.Message):
