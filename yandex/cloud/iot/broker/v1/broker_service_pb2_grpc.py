@@ -7,7 +7,7 @@ from yandex.cloud.iot.broker.v1 import broker_pb2 as yandex_dot_cloud_dot_iot_do
 from yandex.cloud.iot.broker.v1 import broker_service_pb2 as yandex_dot_cloud_dot_iot_dot_broker_dot_v1_dot_broker__service__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 
-GRPC_GENERATED_VERSION = '1.68.1'
+GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

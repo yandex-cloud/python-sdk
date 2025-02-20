@@ -5,7 +5,7 @@ import warnings
 
 from yandex.cloud.marketplace.metering.v1 import image_product_usage_service_pb2 as yandex_dot_cloud_dot_marketplace_dot_metering_dot_v1_dot_image__product__usage__service__pb2
 
-GRPC_GENERATED_VERSION = '1.68.1'
+GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

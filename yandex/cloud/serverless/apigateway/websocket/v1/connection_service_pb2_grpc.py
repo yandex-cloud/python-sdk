@@ -6,7 +6,7 @@ import warnings
 from yandex.cloud.serverless.apigateway.websocket.v1 import connection_pb2 as yandex_dot_cloud_dot_serverless_dot_apigateway_dot_websocket_dot_v1_dot_connection__pb2
 from yandex.cloud.serverless.apigateway.websocket.v1 import connection_service_pb2 as yandex_dot_cloud_dot_serverless_dot_apigateway_dot_websocket_dot_v1_dot_connection__service__pb2
 
-GRPC_GENERATED_VERSION = '1.68.1'
+GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

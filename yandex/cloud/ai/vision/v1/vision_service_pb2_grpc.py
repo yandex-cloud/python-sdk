@@ -5,7 +5,7 @@ import warnings
 
 from yandex.cloud.ai.vision.v1 import vision_service_pb2 as yandex_dot_cloud_dot_ai_dot_vision_dot_v1_dot_vision__service__pb2
 
-GRPC_GENERATED_VERSION = '1.68.1'
+GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

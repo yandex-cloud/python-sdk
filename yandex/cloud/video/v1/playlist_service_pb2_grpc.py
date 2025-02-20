@@ -7,7 +7,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud.video.v1 import playlist_pb2 as yandex_dot_cloud_dot_video_dot_v1_dot_playlist__pb2
 from yandex.cloud.video.v1 import playlist_service_pb2 as yandex_dot_cloud_dot_video_dot_v1_dot_playlist__service__pb2
 
-GRPC_GENERATED_VERSION = '1.68.1'
+GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

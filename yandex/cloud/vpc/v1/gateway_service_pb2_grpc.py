@@ -7,7 +7,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud.vpc.v1 import gateway_pb2 as yandex_dot_cloud_dot_vpc_dot_v1_dot_gateway__pb2
 from yandex.cloud.vpc.v1 import gateway_service_pb2 as yandex_dot_cloud_dot_vpc_dot_v1_dot_gateway__service__pb2
 
-GRPC_GENERATED_VERSION = '1.68.1'
+GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

@@ -8,7 +8,7 @@ from yandex.cloud.compute.v1 import disk_placement_group_pb2 as yandex_dot_cloud
 from yandex.cloud.compute.v1 import disk_placement_group_service_pb2 as yandex_dot_cloud_dot_compute_dot_v1_dot_disk__placement__group__service__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 
-GRPC_GENERATED_VERSION = '1.68.1'
+GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

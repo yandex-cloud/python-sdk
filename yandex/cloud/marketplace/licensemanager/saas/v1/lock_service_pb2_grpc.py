@@ -7,7 +7,7 @@ from yandex.cloud.marketplace.licensemanager.saas.v1 import lock_service_pb2 as 
 from yandex.cloud.marketplace.licensemanager.v1 import lock_pb2 as yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_lock__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 
-GRPC_GENERATED_VERSION = '1.68.1'
+GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

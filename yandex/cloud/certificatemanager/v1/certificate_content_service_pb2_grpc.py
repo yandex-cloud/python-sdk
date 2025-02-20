@@ -5,7 +5,7 @@ import warnings
 
 from yandex.cloud.certificatemanager.v1 import certificate_content_service_pb2 as yandex_dot_cloud_dot_certificatemanager_dot_v1_dot_certificate__content__service__pb2
 
-GRPC_GENERATED_VERSION = '1.68.1'
+GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

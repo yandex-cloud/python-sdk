@@ -5,7 +5,7 @@ import warnings
 
 from yandex.cloud.mdb.postgresql.v1 import perf_diag_service_pb2 as yandex_dot_cloud_dot_mdb_dot_postgresql_dot_v1_dot_perf__diag__service__pb2
 
-GRPC_GENERATED_VERSION = '1.68.1'
+GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

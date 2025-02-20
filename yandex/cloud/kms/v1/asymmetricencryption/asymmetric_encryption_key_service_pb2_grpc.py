@@ -8,7 +8,7 @@ from yandex.cloud.kms.v1.asymmetricencryption import asymmetric_encryption_key_p
 from yandex.cloud.kms.v1.asymmetricencryption import asymmetric_encryption_key_service_pb2 as yandex_dot_cloud_dot_kms_dot_v1_dot_asymmetricencryption_dot_asymmetric__encryption__key__service__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 
-GRPC_GENERATED_VERSION = '1.68.1'
+GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

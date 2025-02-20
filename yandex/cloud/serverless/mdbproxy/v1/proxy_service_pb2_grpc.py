@@ -8,7 +8,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud.serverless.mdbproxy.v1 import proxy_pb2 as yandex_dot_cloud_dot_serverless_dot_mdbproxy_dot_v1_dot_proxy__pb2
 from yandex.cloud.serverless.mdbproxy.v1 import proxy_service_pb2 as yandex_dot_cloud_dot_serverless_dot_mdbproxy_dot_v1_dot_proxy__service__pb2
 
-GRPC_GENERATED_VERSION = '1.68.1'
+GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

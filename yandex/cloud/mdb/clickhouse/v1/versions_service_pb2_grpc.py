@@ -5,7 +5,7 @@ import warnings
 
 from yandex.cloud.mdb.clickhouse.v1 import versions_service_pb2 as yandex_dot_cloud_dot_mdb_dot_clickhouse_dot_v1_dot_versions__service__pb2
 
-GRPC_GENERATED_VERSION = '1.68.1'
+GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

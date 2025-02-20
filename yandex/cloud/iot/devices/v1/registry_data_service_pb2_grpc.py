@@ -5,7 +5,7 @@ import warnings
 
 from yandex.cloud.iot.devices.v1 import registry_data_service_pb2 as yandex_dot_cloud_dot_iot_dot_devices_dot_v1_dot_registry__data__service__pb2
 
-GRPC_GENERATED_VERSION = '1.68.1'
+GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

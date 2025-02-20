@@ -5,7 +5,7 @@ import warnings
 
 from yandex.cloud.k8s.v1 import version_service_pb2 as yandex_dot_cloud_dot_k8s_dot_v1_dot_version__service__pb2
 
-GRPC_GENERATED_VERSION = '1.68.1'
+GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

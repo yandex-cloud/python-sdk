@@ -5,7 +5,7 @@ import warnings
 
 from yandex.cloud.ai.translate.v2 import translation_service_pb2 as yandex_dot_cloud_dot_ai_dot_translate_dot_v2_dot_translation__service__pb2
 
-GRPC_GENERATED_VERSION = '1.68.1'
+GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

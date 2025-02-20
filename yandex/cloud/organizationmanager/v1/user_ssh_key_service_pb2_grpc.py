@@ -7,7 +7,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud.organizationmanager.v1 import user_ssh_key_pb2 as yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_user__ssh__key__pb2
 from yandex.cloud.organizationmanager.v1 import user_ssh_key_service_pb2 as yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_user__ssh__key__service__pb2
 
-GRPC_GENERATED_VERSION = '1.68.1'
+GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

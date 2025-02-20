@@ -8,7 +8,7 @@ from yandex.cloud.ai.stt.v3 import stt_pb2 as yandex_dot_cloud_dot_ai_dot_stt_do
 from yandex.cloud.ai.stt.v3 import stt_service_pb2 as yandex_dot_cloud_dot_ai_dot_stt_dot_v3_dot_stt__service__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 
-GRPC_GENERATED_VERSION = '1.68.1'
+GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

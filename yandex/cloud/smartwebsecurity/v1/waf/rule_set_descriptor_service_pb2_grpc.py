@@ -6,7 +6,7 @@ import warnings
 from yandex.cloud.smartwebsecurity.v1.waf import rule_set_descriptor_pb2 as yandex_dot_cloud_dot_smartwebsecurity_dot_v1_dot_waf_dot_rule__set__descriptor__pb2
 from yandex.cloud.smartwebsecurity.v1.waf import rule_set_descriptor_service_pb2 as yandex_dot_cloud_dot_smartwebsecurity_dot_v1_dot_waf_dot_rule__set__descriptor__service__pb2
 
-GRPC_GENERATED_VERSION = '1.68.1'
+GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

@@ -7,7 +7,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud.smartwebsecurity.v1.advanced_rate_limiter import advanced_rate_limiter_profile_pb2 as yandex_dot_cloud_dot_smartwebsecurity_dot_v1_dot_advanced__rate__limiter_dot_advanced__rate__limiter__profile__pb2
 from yandex.cloud.smartwebsecurity.v1.advanced_rate_limiter import advanced_rate_limiter_profile_service_pb2 as yandex_dot_cloud_dot_smartwebsecurity_dot_v1_dot_advanced__rate__limiter_dot_advanced__rate__limiter__profile__service__pb2
 
-GRPC_GENERATED_VERSION = '1.68.1'
+GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

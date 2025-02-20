@@ -8,7 +8,7 @@ from yandex.cloud.datasphere.v2.jobs import jobs_pb2 as yandex_dot_cloud_dot_dat
 from yandex.cloud.datasphere.v2.jobs import project_job_service_pb2 as yandex_dot_cloud_dot_datasphere_dot_v2_dot_jobs_dot_project__job__service__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 
-GRPC_GENERATED_VERSION = '1.68.1'
+GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

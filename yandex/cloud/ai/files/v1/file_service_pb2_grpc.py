@@ -6,7 +6,7 @@ import warnings
 from yandex.cloud.ai.files.v1 import file_pb2 as yandex_dot_cloud_dot_ai_dot_files_dot_v1_dot_file__pb2
 from yandex.cloud.ai.files.v1 import file_service_pb2 as yandex_dot_cloud_dot_ai_dot_files_dot_v1_dot_file__service__pb2
 
-GRPC_GENERATED_VERSION = '1.68.1'
+GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

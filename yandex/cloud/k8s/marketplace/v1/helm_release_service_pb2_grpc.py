@@ -7,7 +7,7 @@ from yandex.cloud.k8s.marketplace.v1 import helm_release_pb2 as yandex_dot_cloud
 from yandex.cloud.k8s.marketplace.v1 import helm_release_service_pb2 as yandex_dot_cloud_dot_k8s_dot_marketplace_dot_v1_dot_helm__release__service__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 
-GRPC_GENERATED_VERSION = '1.68.1'
+GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

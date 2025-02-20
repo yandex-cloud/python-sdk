@@ -6,7 +6,7 @@ import warnings
 from yandex.cloud.lockbox.v1 import payload_pb2 as yandex_dot_cloud_dot_lockbox_dot_v1_dot_payload__pb2
 from yandex.cloud.lockbox.v1 import payload_service_pb2 as yandex_dot_cloud_dot_lockbox_dot_v1_dot_payload__service__pb2
 
-GRPC_GENERATED_VERSION = '1.68.1'
+GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

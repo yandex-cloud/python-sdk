@@ -7,7 +7,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud.storage.v1 import bucket_pb2 as yandex_dot_cloud_dot_storage_dot_v1_dot_bucket__pb2
 from yandex.cloud.storage.v1 import bucket_service_pb2 as yandex_dot_cloud_dot_storage_dot_v1_dot_bucket__service__pb2
 
-GRPC_GENERATED_VERSION = '1.68.1'
+GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

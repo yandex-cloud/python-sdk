@@ -5,7 +5,7 @@ import warnings
 
 from yandex.cloud.kms.v1.asymmetricencryption import asymmetric_encryption_crypto_service_pb2 as yandex_dot_cloud_dot_kms_dot_v1_dot_asymmetricencryption_dot_asymmetric__encryption__crypto__service__pb2
 
-GRPC_GENERATED_VERSION = '1.68.1'
+GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

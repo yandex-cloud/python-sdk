@@ -6,7 +6,7 @@ import warnings
 from yandex.cloud.ydb.v1 import storage_type_pb2 as yandex_dot_cloud_dot_ydb_dot_v1_dot_storage__type__pb2
 from yandex.cloud.ydb.v1 import storage_type_service_pb2 as yandex_dot_cloud_dot_ydb_dot_v1_dot_storage__type__service__pb2
 
-GRPC_GENERATED_VERSION = '1.68.1'
+GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

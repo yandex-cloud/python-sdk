@@ -6,7 +6,7 @@ import warnings
 from yandex.cloud.ai.assistants.v1.threads import thread_pb2 as yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_threads_dot_thread__pb2
 from yandex.cloud.ai.assistants.v1.threads import thread_service_pb2 as yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_threads_dot_thread__service__pb2
 
-GRPC_GENERATED_VERSION = '1.68.1'
+GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

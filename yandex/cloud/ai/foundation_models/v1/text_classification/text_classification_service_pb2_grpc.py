@@ -5,7 +5,7 @@ import warnings
 
 from yandex.cloud.ai.foundation_models.v1.text_classification import text_classification_service_pb2 as yandex_dot_cloud_dot_ai_dot_foundation__models_dot_v1_dot_text__classification_dot_text__classification__service__pb2
 
-GRPC_GENERATED_VERSION = '1.68.1'
+GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

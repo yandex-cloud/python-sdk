@@ -8,7 +8,7 @@ from yandex.cloud.dns.v1 import dns_zone_pb2 as yandex_dot_cloud_dot_dns_dot_v1_
 from yandex.cloud.dns.v1 import dns_zone_service_pb2 as yandex_dot_cloud_dot_dns_dot_v1_dot_dns__zone__service__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 
-GRPC_GENERATED_VERSION = '1.68.1'
+GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

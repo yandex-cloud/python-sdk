@@ -5,7 +5,7 @@ import warnings
 
 from yandex.cloud.serverless.workflows.v1 import execution_service_pb2 as yandex_dot_cloud_dot_serverless_dot_workflows_dot_v1_dot_execution__service__pb2
 
-GRPC_GENERATED_VERSION = '1.68.1'
+GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

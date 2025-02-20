@@ -8,7 +8,7 @@ from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operati
 from yandex.cloud.organizationmanager.v1 import organization_pb2 as yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_organization__pb2
 from yandex.cloud.organizationmanager.v1 import organization_service_pb2 as yandex_dot_cloud_dot_organizationmanager_dot_v1_dot_organization__service__pb2
 
-GRPC_GENERATED_VERSION = '1.68.1'
+GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

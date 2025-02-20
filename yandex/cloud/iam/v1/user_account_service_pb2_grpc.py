@@ -6,7 +6,7 @@ import warnings
 from yandex.cloud.iam.v1 import user_account_pb2 as yandex_dot_cloud_dot_iam_dot_v1_dot_user__account__pb2
 from yandex.cloud.iam.v1 import user_account_service_pb2 as yandex_dot_cloud_dot_iam_dot_v1_dot_user__account__service__pb2
 
-GRPC_GENERATED_VERSION = '1.68.1'
+GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

@@ -6,7 +6,7 @@ import warnings
 from yandex.cloud.marketplace.licensemanager.saas.v1 import instance_service_pb2 as yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_saas_dot_v1_dot_instance__service__pb2
 from yandex.cloud.marketplace.licensemanager.v1 import instance_pb2 as yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_instance__pb2
 
-GRPC_GENERATED_VERSION = '1.68.1'
+GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
