@@ -7,3 +7,4 @@ venv*
 .tox
 build/
 dist
+.python-version

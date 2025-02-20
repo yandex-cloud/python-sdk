@@ -4,6 +4,7 @@ import uuid
 from typing import Callable, Iterable, Optional
 
 import grpc
+from deprecated import deprecated
 
 
 class _ClientCallDetails(
@@ -19,6 +20,7 @@ class _RetryCall(Exception):
     pass
 
 
+@deprecated(version="0.334.0", reason="Instead of this class use retry_policy field when building the SDK")
 class RetryInterceptor(grpc.UnaryUnaryClientInterceptor):
     """RetryInterceptor implements grpc retries.
     It supports retries quantity, list of retriable codes, backoff function,
