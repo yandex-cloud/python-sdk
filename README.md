@@ -156,6 +156,24 @@ sdk = SDK(iam_token="t1.9eu...", endpoint="api.yandexcloud.kz")
 set_up_yc_api_endpoint(kz_region_endpoint)
 ```
 
+### Retries
+If you want to retry SDK requests, build SDK with `retry_policy` field using `RetryPolicy` class:
+
+```python
+import grpc
+from yandexcloud import SDK, RetryPolicy
+
+sdk = SDK(retry_policy=RetryPolicy(max_attempts=2, status_codes=(grpc.StatusCode.UNAVAILABLE,)))
+```
+
+It's **strongly recommended** to use default settings of RetryPolicy to avoid retry amplification:
+```python
+import grpc
+from yandexcloud import SDK, RetryPolicy
+
+sdk = SDK(retry_policy=RetryPolicy())
+```
+
 ## Contributing
 ### Dependencies
 We use [uv](https://docs.astral.sh/uv) to manage dependencies and run commands in Makefile.

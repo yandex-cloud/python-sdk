@@ -8,6 +8,7 @@ from yandexcloud._backoff import (
     default_backoff,
 )
 from yandexcloud._retry_interceptor import RetryInterceptor
+from yandexcloud._retry_policy import RetryPolicy
 from yandexcloud._sdk import SDK
 
 __version__ = "0.333.0"

@@ -1,4 +1,5 @@
 version = 1
+revision = 1
 requires-python = ">=3.9"
 resolution-markers = [
     "python_full_version < '3.11'",
@@ -249,7 +250,7 @@ name = "click"
 version = "8.1.8"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
-    { name = "colorama", marker = "platform_system == 'Windows'" },
+    { name = "colorama", marker = "sys_platform == 'win32'" },
 ]
 sdist = { url = "https://files.pythonhosted.org/packages/b9/2e/0090cbf739cee7d23781ad4b89a9894a41538e4fcf4c31dcdd705b78eb8b/click-8.1.8.tar.gz", hash = "sha256:ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a", size = 226593 }
 wheels = [
@@ -1317,6 +1318,15 @@ wheels = [
 ]
 
 [[package]]
+name = "types-deprecated"
+version = "1.2.15.20241117"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/a8/76/d3735190891b12533115e73ac835cfdd1f28378b6b39fd50dfe2fbd63143/types-Deprecated-1.2.15.20241117.tar.gz", hash = "sha256:924002c8b7fddec51ba4949788a702411a2e3636cd9b2a33abd8ee119701d77e", size = 3377 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/27/ed/9091bd7a90d3e2e08ee8c0bdbf0c826d3d9e3730ddd9b15cb64f4ae51b9b/types_Deprecated-1.2.15.20241117-py3-none-any.whl", hash = "sha256:a0cc5e39f769fc54089fd8e005416b55d74aa03f6964d2ed1a0b0b2e28751884", size = 3779 },
+]
+
+[[package]]
 name = "types-protobuf"
 version = "5.29.1.20250208"
 source = { registry = "https://pypi.org/simple" }
@@ -1459,6 +1469,7 @@ version = "0.333.0"
 source = { editable = "." }
 dependencies = [
     { name = "cryptography" },
+    { name = "deprecated" },
     { name = "googleapis-common-protos" },
     { name = "grpcio" },
     { name = "grpcio-tools" },
@@ -1495,6 +1506,7 @@ test = [
 type = [
     { name = "grpc-stubs" },
     { name = "mypy" },
+    { name = "types-deprecated" },
     { name = "types-requests" },
     { name = "types-six" },
 ]
@@ -1502,6 +1514,7 @@ type = [
 [package.metadata]
 requires-dist = [
     { name = "cryptography", specifier = ">=44.0.0" },
+    { name = "deprecated", specifier = ">=1.2.18" },
     { name = "googleapis-common-protos", specifier = ">=1.66.0,<2" },
     { name = "grpcio", specifier = ">=1.68.1,<2" },
     { name = "grpcio-tools", specifier = ">=1.68.1" },
@@ -1536,6 +1549,7 @@ test = [{ name = "pytest", specifier = ">=8.3.4" }]
 type = [
     { name = "grpc-stubs", specifier = ">=1.53.0.5" },
     { name = "mypy", specifier = ">=1.13.0" },
+    { name = "types-deprecated", specifier = ">=1.2.15.20241117" },
     { name = "types-requests", specifier = ">=2.32.0.20241016" },
     { name = "types-six", specifier = ">=1.17.0.20241205" },
 ]

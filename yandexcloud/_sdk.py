@@ -3,9 +3,7 @@ from typing import TYPE_CHECKING, Any, Dict, Optional, Type, Union
 
 import grpc
 
-from yandexcloud import _channels, _helpers, _operation_waiter
-from yandexcloud._backoff import backoff_exponential_with_jitter
-from yandexcloud._retry_interceptor import RetryInterceptor
+from yandexcloud import _channels, _helpers, _operation_waiter, _retry_policy
 from yandexcloud._wrappers import Wrappers
 
 if TYPE_CHECKING:
@@ -41,14 +39,16 @@ class SDK:
         root_certificates: Optional[bytes] = None,
         private_key: Optional[bytes] = None,
         certificate_chain: Optional[bytes] = None,
+        retry_policy: Optional[_retry_policy.RetryPolicy] = None,
         **kwargs: str,
     ):
         """
         API entry-point object.
 
-        :param interceptor: GRPC interceptor to be used instead of default RetryInterceptor
+        :param interceptor: GRPC interceptor to be used
         :param user_agent: String to prepend User-Agent metadata header for all GRPC requests made via SDK object
         :param endpoints: Dict with services endpoints overrides. Example: {'vpc': 'new.vpc.endpoint:443'}
+        :param retry_policy: Retry policy configuration object to retry all failed GRPC requests
 
         """
         self._channels = _channels.Channels(
@@ -61,14 +61,9 @@ class SDK:
             root_certificates,
             private_key,
             certificate_chain,
+            retry_policy.to_json() if retry_policy is not None else None,
             **kwargs,
         )
-        if interceptor is None:
-            interceptor = RetryInterceptor(
-                max_retry_count=5,
-                per_call_timeout=30,
-                back_off_func=backoff_exponential_with_jitter(1, 30),
-            )
         self._default_interceptor = interceptor
         self.helpers = _helpers.Helpers(self)
         self.wrappers = Wrappers(self)
