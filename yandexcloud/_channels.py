@@ -30,6 +30,7 @@ class Channels:
         root_certificates: Optional[bytes] = None,
         private_key: Optional[bytes] = None,
         certificate_chain: Optional[bytes] = None,
+        service_config: Optional[str] = None,
         **_: str,
     ) -> None:
         self._channel_creds = grpc.ssl_channel_credentials(
@@ -48,10 +49,14 @@ class Channels:
         self._client_user_agent = client_user_agent
         self._config_endpoints = endpoints if endpoints is not None else {}
         self._endpoints: Optional[Dict[str, str]] = None
+        # flake8: noqa
         self.channel_options = tuple(
-            ("grpc.primary_user_agent", user_agent)
-            for user_agent in [self._client_user_agent, SDK_USER_AGENT]
-            if user_agent is not None
+            [
+                ("grpc.primary_user_agent", user_agent)
+                for user_agent in [self._client_user_agent, SDK_USER_AGENT]
+                if user_agent is not None
+            ]
+            + ([("grpc.service_config", service_config)] if service_config is not None else [])
         )
 
     def channel(self, service: str, endpoint: Optional[str] = None, insecure: bool = False) -> grpc.Channel:
