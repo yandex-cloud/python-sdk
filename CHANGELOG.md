@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## v0.334.0 (2025-02-24)
+
+### Feature
+
+* feat: regenerate proto ([`5c1313b`](https://github.com/yandex-cloud/python-sdk/commit/5c1313b22b0346a4492bee804aa93deb764e60da))
+
+* feat: upgrade package dependencies (#135)
+
+Co-authored-by: Islam Alibekov &lt;everest@yandex-team.ru&gt; ([`f4735c9`](https://github.com/yandex-cloud/python-sdk/commit/f4735c9dd9bd0d1c62af8509a1dbd8dfb9dc088b))
+
+* feat: regenerate proto ([`7f34e4e`](https://github.com/yandex-cloud/python-sdk/commit/7f34e4e7dd5a75ab1d9de80fd53002f1ed680097))
+
 ## v0.333.0 (2025-02-17)
 
 ### Feature
