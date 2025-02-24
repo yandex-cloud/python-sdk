@@ -3,7 +3,7 @@ name: Release
 on:
   workflow_dispatch:
   schedule:
-    - cron: "00 08 * * 1" # 08:00 UTC every Monday, which is 11:00 AM Moscow time
+    - cron: "00 15 * * 1" # 15:00 UTC every Monday, which is 6:00 PM Moscow time
 
 jobs:
   release:
