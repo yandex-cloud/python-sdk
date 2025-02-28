@@ -42,7 +42,7 @@ class Partner(google.protobuf.message.Message):
     REGION_ID_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
     id: builtins.str
-    """ID of the routingInstance."""
+    """ID of the partner."""
     region_id: builtins.str
     """ID of the region that the partner belongs to."""
     status: global___Partner.Status.ValueType

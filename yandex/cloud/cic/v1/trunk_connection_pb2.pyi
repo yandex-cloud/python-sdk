@@ -9,6 +9,7 @@ import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
+import google.protobuf.timestamp_pb2
 import google.protobuf.wrappers_pb2
 import sys
 import typing
@@ -72,6 +73,25 @@ class TrunkConnection(google.protobuf.message.Message):
     CAPACITY_40_GBPS: TrunkConnection.Capacity.ValueType  # 15
     CAPACITY_50_GBPS: TrunkConnection.Capacity.ValueType  # 16
     CAPACITY_100_GBPS: TrunkConnection.Capacity.ValueType  # 17
+
+    class _Status:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _StatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[TrunkConnection._Status.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        STATUS_UNSPECIFIED: TrunkConnection._Status.ValueType  # 0
+        CREATING: TrunkConnection._Status.ValueType  # 1
+        UPDATING: TrunkConnection._Status.ValueType  # 2
+        DELETING: TrunkConnection._Status.ValueType  # 3
+        ACTIVE: TrunkConnection._Status.ValueType  # 4
+
+    class Status(_Status, metaclass=_StatusEnumTypeWrapper): ...
+    STATUS_UNSPECIFIED: TrunkConnection.Status.ValueType  # 0
+    CREATING: TrunkConnection.Status.ValueType  # 1
+    UPDATING: TrunkConnection.Status.ValueType  # 2
+    DELETING: TrunkConnection.Status.ValueType  # 3
+    ACTIVE: TrunkConnection.Status.ValueType  # 4
 
     @typing.final
     class LabelsEntry(google.protobuf.message.Message):
@@ -174,12 +194,15 @@ class TrunkConnection(google.protobuf.message.Message):
     DESCRIPTION_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int
     REGION_ID_FIELD_NUMBER: builtins.int
+    CREATED_AT_FIELD_NUMBER: builtins.int
     SINGLE_PORT_DIRECT_JOINT_FIELD_NUMBER: builtins.int
     LAG_DIRECT_JOINT_FIELD_NUMBER: builtins.int
     PARTNER_JOINT_INFO_FIELD_NUMBER: builtins.int
     POINT_OF_PRESENCE_ID_FIELD_NUMBER: builtins.int
     CAPACITY_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
+    STATUS_FIELD_NUMBER: builtins.int
+    DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the trunkConnection."""
     name: builtins.str
@@ -195,6 +218,16 @@ class TrunkConnection(google.protobuf.message.Message):
     """ID of the region that the trunkConnection belongs to."""
     capacity: global___TrunkConnection.Capacity.ValueType
     """Capacity of the trunkConnection"""
+    status: global___TrunkConnection.Status.ValueType
+    """Status of the trunkConnection."""
+    deletion_protection: builtins.bool
+    """Optional deletion protection flag.
+    If set prohibits deletion of the trunkConnection.
+    """
+    @property
+    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Creation timestamp in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format."""
+
     @property
     def single_port_direct_joint(self) -> global___TrunkConnection.SinglePortDirectJoint: ...
     @property
@@ -226,15 +259,18 @@ class TrunkConnection(google.protobuf.message.Message):
         description: builtins.str = ...,
         folder_id: builtins.str = ...,
         region_id: builtins.str = ...,
+        created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         single_port_direct_joint: global___TrunkConnection.SinglePortDirectJoint | None = ...,
         lag_direct_joint: global___TrunkConnection.LagDirectJoint | None = ...,
         partner_joint_info: global___TrunkConnection.PartnerJointInfo | None = ...,
         point_of_presence_id: google.protobuf.wrappers_pb2.StringValue | None = ...,
         capacity: global___TrunkConnection.Capacity.ValueType = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        status: global___TrunkConnection.Status.ValueType = ...,
+        deletion_protection: builtins.bool = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["joint", b"joint", "lag_direct_joint", b"lag_direct_joint", "partner_joint_info", b"partner_joint_info", "point_of_presence_id", b"point_of_presence_id", "single_port_direct_joint", b"single_port_direct_joint"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["capacity", b"capacity", "description", b"description", "folder_id", b"folder_id", "id", b"id", "joint", b"joint", "labels", b"labels", "lag_direct_joint", b"lag_direct_joint", "name", b"name", "partner_joint_info", b"partner_joint_info", "point_of_presence_id", b"point_of_presence_id", "region_id", b"region_id", "single_port_direct_joint", b"single_port_direct_joint"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "joint", b"joint", "lag_direct_joint", b"lag_direct_joint", "partner_joint_info", b"partner_joint_info", "point_of_presence_id", b"point_of_presence_id", "single_port_direct_joint", b"single_port_direct_joint"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["capacity", b"capacity", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "folder_id", b"folder_id", "id", b"id", "joint", b"joint", "labels", b"labels", "lag_direct_joint", b"lag_direct_joint", "name", b"name", "partner_joint_info", b"partner_joint_info", "point_of_presence_id", b"point_of_presence_id", "region_id", b"region_id", "single_port_direct_joint", b"single_port_direct_joint", "status", b"status"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["joint", b"joint"]) -> typing.Literal["single_port_direct_joint", "lag_direct_joint", "partner_joint_info"] | None: ...
 
 global___TrunkConnection = TrunkConnection

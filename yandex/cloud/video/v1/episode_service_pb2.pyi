@@ -6,6 +6,7 @@ isort:skip_file
 import builtins
 import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.duration_pb2
 import google.protobuf.field_mask_pb2
 import google.protobuf.internal.containers
 import google.protobuf.message
@@ -496,18 +497,24 @@ class GetEpisodePlayerURLRequest(google.protobuf.message.Message):
 
     EPISODE_ID_FIELD_NUMBER: builtins.int
     PARAMS_FIELD_NUMBER: builtins.int
+    SIGNED_URL_EXPIRATION_DURATION_FIELD_NUMBER: builtins.int
     episode_id: builtins.str
     """ID of the episode."""
     @property
     def params(self) -> global___EpisodePlayerParams: ...
+    @property
+    def signed_url_expiration_duration(self) -> google.protobuf.duration_pb2.Duration:
+        """Optional field, used to set custom url expiration duration for episodes with sign_url_access"""
+
     def __init__(
         self,
         *,
         episode_id: builtins.str = ...,
         params: global___EpisodePlayerParams | None = ...,
+        signed_url_expiration_duration: google.protobuf.duration_pb2.Duration | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["params", b"params"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["episode_id", b"episode_id", "params", b"params"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["params", b"params", "signed_url_expiration_duration", b"signed_url_expiration_duration"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["episode_id", b"episode_id", "params", b"params", "signed_url_expiration_duration", b"signed_url_expiration_duration"]) -> None: ...
 
 global___GetEpisodePlayerURLRequest = GetEpisodePlayerURLRequest
 

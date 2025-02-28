@@ -782,7 +782,6 @@ class ListClusterLogsRequest(google.protobuf.message.Message):
         MONGOS: ListClusterLogsRequest._ServiceType.ValueType  # 2
         MONGOCFG: ListClusterLogsRequest._ServiceType.ValueType  # 3
         AUDIT: ListClusterLogsRequest._ServiceType.ValueType  # 4
-        """MongoDB Enterprise audit logs"""
 
     class ServiceType(_ServiceType, metaclass=_ServiceTypeEnumTypeWrapper): ...
     SERVICE_TYPE_UNSPECIFIED: ListClusterLogsRequest.ServiceType.ValueType  # 0
@@ -791,7 +790,6 @@ class ListClusterLogsRequest(google.protobuf.message.Message):
     MONGOS: ListClusterLogsRequest.ServiceType.ValueType  # 2
     MONGOCFG: ListClusterLogsRequest.ServiceType.ValueType  # 3
     AUDIT: ListClusterLogsRequest.ServiceType.ValueType  # 4
-    """MongoDB Enterprise audit logs"""
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     COLUMN_FILTER_FIELD_NUMBER: builtins.int

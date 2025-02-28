@@ -23,11 +23,14 @@ _sym_db = _symbol_database.Default()
 
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
+from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
+from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
+from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 from yandex.cloud.cloudrouter.v1 import routing_instance_pb2 as yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n:yandex/cloud/cloudrouter/v1/routing_instance_service.proto\x12\x1byandex.cloud.cloudrouter.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1dyandex/cloud/validation.proto\x1a\x32yandex/cloud/cloudrouter/v1/routing_instance.proto\"F\n\x19GetRoutingInstanceRequest\x12)\n\x13routing_instance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"d\n1GetRoutingInstanceByCicPrivateConnectionIdRequest\x12/\n\x19\x63ic_private_connection_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"O\n\'GetRoutingInstanceByVpcNetworkIdRequest\x12$\n\x0evpc_network_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x98\x01\n\x1bListRoutingInstancesRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"\x80\x01\n\x1cListRoutingInstancesResponse\x12G\n\x11routing_instances\x18\x01 \x03(\x0b\x32,.yandex.cloud.cloudrouter.v1.RoutingInstance\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xfd\x04\n\x16RoutingInstanceService\x12\x9e\x01\n\x03Get\x12\x36.yandex.cloud.cloudrouter.v1.GetRoutingInstanceRequest\x1a,.yandex.cloud.cloudrouter.v1.RoutingInstance\"1\x82\xd3\xe4\x93\x02+\x12)/vpc/v1/cloudrouter/{routing_instance_id}\x12\x87\x01\n\x11GetByVpcNetworkId\x12\x44.yandex.cloud.cloudrouter.v1.GetRoutingInstanceByVpcNetworkIdRequest\x1a,.yandex.cloud.cloudrouter.v1.RoutingInstance\x12\x9b\x01\n\x1bGetByCicPrivateConnectionId\x12N.yandex.cloud.cloudrouter.v1.GetRoutingInstanceByCicPrivateConnectionIdRequest\x1a,.yandex.cloud.cloudrouter.v1.RoutingInstance\x12\x99\x01\n\x04List\x12\x38.yandex.cloud.cloudrouter.v1.ListRoutingInstancesRequest\x1a\x39.yandex.cloud.cloudrouter.v1.ListRoutingInstancesResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/vpc/v1/cloudroutersBn\n\x1fyandex.cloud.api.cloudrouter.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/cloudrouter/v1;cloudrouterb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n:yandex/cloud/cloudrouter/v1/routing_instance_service.proto\x12\x1byandex.cloud.cloudrouter.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1dyandex/cloud/validation.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x32yandex/cloud/cloudrouter/v1/routing_instance.proto\"F\n\x19GetRoutingInstanceRequest\x12)\n\x13routing_instance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"d\n1GetRoutingInstanceByCicPrivateConnectionIdRequest\x12/\n\x19\x63ic_private_connection_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"O\n\'GetRoutingInstanceByVpcNetworkIdRequest\x12$\n\x0evpc_network_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x98\x01\n\x1bListRoutingInstancesRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"\x80\x01\n\x1cListRoutingInstancesResponse\x12G\n\x11routing_instances\x18\x01 \x03(\x0b\x32,.yandex.cloud.cloudrouter.v1.RoutingInstance\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xeb\x03\n\x1c\x43reateRoutingInstanceRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x11\n\tfolder_id\x18\x04 \x01(\t\x12\x11\n\tregion_id\x18\x05 \x01(\t\x12\x46\n\x08vpc_info\x18\x06 \x03(\x0b\x32\x34.yandex.cloud.cloudrouter.v1.RoutingInstance.VpcInfo\x12j\n\x1b\x63ic_private_connection_info\x18\x07 \x03(\x0b\x32\x45.yandex.cloud.cloudrouter.v1.RoutingInstance.CicPrivateConnectionInfo\x12\x92\x01\n\x06labels\x18\x0c \x03(\x0b\x32\x45.yandex.cloud.cloudrouter.v1.CreateRoutingInstanceRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x03\x10\x04J\x04\x08\x08\x10\x0c\"<\n\x1d\x43reateRoutingInstanceMetadata\x12\x1b\n\x13routing_instance_id\x18\x01 \x01(\t\"\xb4\x04\n\x1cUpdateRoutingInstanceRequest\x12)\n\x13routing_instance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x11\n\tregion_id\x18\x07 \x01(\t\x12\x46\n\x08vpc_info\x18\x08 \x03(\x0b\x32\x34.yandex.cloud.cloudrouter.v1.RoutingInstance.VpcInfo\x12j\n\x1b\x63ic_private_connection_info\x18\t \x03(\x0b\x32\x45.yandex.cloud.cloudrouter.v1.RoutingInstance.CicPrivateConnectionInfo\x12\x92\x01\n\x06labels\x18\x0e \x03(\x0b\x32\x45.yandex.cloud.cloudrouter.v1.UpdateRoutingInstanceRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x05\x10\x07J\x04\x08\n\x10\x0e\"<\n\x1dUpdateRoutingInstanceMetadata\x12\x1b\n\x13routing_instance_id\x18\x01 \x01(\t\"\xae\x01\n\x15UpsertPrefixesRequest\x12)\n\x13routing_instance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x16\n\x0evpc_network_id\x18\x02 \x01(\t\x12L\n\x14vpc_az_info_prefixes\x18\x03 \x03(\x0b\x32..yandex.cloud.cloudrouter.v1.VpcAzInfoPrefixesJ\x04\x08\x04\x10\x07\"\xa8\x01\n\x15RemovePrefixesRequest\x12)\n\x13routing_instance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x16\n\x0evpc_network_id\x18\x02 \x01(\t\x12L\n\x14vpc_az_info_prefixes\x18\x03 \x03(\x0b\x32..yandex.cloud.cloudrouter.v1.VpcAzInfoPrefixes\":\n\x11VpcAzInfoPrefixes\x12\r\n\x05\x61z_id\x18\x01 \x01(\t\x12\x10\n\x08prefixes\x18\x02 \x03(\tJ\x04\x08\x03\x10\x04\"q\n\x1b\x41\x64\x64PrivateConnectionRequest\x12)\n\x13routing_instance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12!\n\x19\x63ic_private_connection_id\x18\x02 \x01(\tJ\x04\x08\x03\x10\t\"n\n\x1eRemovePrivateConnectionRequest\x12)\n\x13routing_instance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12!\n\x19\x63ic_private_connection_id\x18\x02 \x01(\t\"I\n\x1c\x44\x65leteRoutingInstanceRequest\x12)\n\x13routing_instance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"<\n\x1d\x44\x65leteRoutingInstanceMetadata\x12\x1b\n\x13routing_instance_id\x18\x01 \x01(\t\"x\n$ListRoutingInstanceOperationsRequest\x12)\n\x13routing_instance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x11\n\tpage_size\x18\x02 \x01(\x03\x12\x12\n\npage_token\x18\x03 \x01(\t\"w\n%ListRoutingInstanceOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xe3\x13\n\x16RoutingInstanceService\x12\xab\x01\n\x03Get\x12\x36.yandex.cloud.cloudrouter.v1.GetRoutingInstanceRequest\x1a,.yandex.cloud.cloudrouter.v1.RoutingInstance\">\x82\xd3\xe4\x93\x02\x38\x12\x36/cloudrouter/v1/routingInstances/{routing_instance_id}\x12\x87\x01\n\x11GetByVpcNetworkId\x12\x44.yandex.cloud.cloudrouter.v1.GetRoutingInstanceByVpcNetworkIdRequest\x1a,.yandex.cloud.cloudrouter.v1.RoutingInstance\x12\x9b\x01\n\x1bGetByCicPrivateConnectionId\x12N.yandex.cloud.cloudrouter.v1.GetRoutingInstanceByCicPrivateConnectionIdRequest\x1a,.yandex.cloud.cloudrouter.v1.RoutingInstance\x12\xa5\x01\n\x04List\x12\x38.yandex.cloud.cloudrouter.v1.ListRoutingInstancesRequest\x1a\x39.yandex.cloud.cloudrouter.v1.ListRoutingInstancesResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /cloudrouter/v1/routingInstances\x12\xc7\x01\n\x06\x43reate\x12\x39.yandex.cloud.cloudrouter.v1.CreateRoutingInstanceRequest\x1a!.yandex.cloud.operation.Operation\"_\xb2\xd2*0\n\x1d\x43reateRoutingInstanceMetadata\x12\x0fRoutingInstance\x82\xd3\xe4\x93\x02%\" /cloudrouter/v1/routingInstances:\x01*\x12\xc7\x01\n\x06Update\x12\x39.yandex.cloud.cloudrouter.v1.UpdateRoutingInstanceRequest\x1a!.yandex.cloud.operation.Operation\"_\xb2\xd2*0\n\x1dUpdateRoutingInstanceMetadata\x12\x0fRoutingInstance\x82\xd3\xe4\x93\x02%2 /cloudrouter/v1/routingInstances:\x01*\x12\xee\x01\n\x0eUpsertPrefixes\x12\x32.yandex.cloud.cloudrouter.v1.UpsertPrefixesRequest\x1a!.yandex.cloud.operation.Operation\"\x84\x01\xb2\xd2*0\n\x1dUpdateRoutingInstanceMetadata\x12\x0fRoutingInstance\x82\xd3\xe4\x93\x02J\"E/cloudrouter/v1/routingInstances/{routing_instance_id}:upsertPrefixes:\x01*\x12\xee\x01\n\x0eRemovePrefixes\x12\x32.yandex.cloud.cloudrouter.v1.RemovePrefixesRequest\x1a!.yandex.cloud.operation.Operation\"\x84\x01\xb2\xd2*0\n\x1dUpdateRoutingInstanceMetadata\x12\x0fRoutingInstance\x82\xd3\xe4\x93\x02J\"E/cloudrouter/v1/routingInstances/{routing_instance_id}:removePrefixes:\x01*\x12\x80\x02\n\x14\x41\x64\x64PrivateConnection\x12\x38.yandex.cloud.cloudrouter.v1.AddPrivateConnectionRequest\x1a!.yandex.cloud.operation.Operation\"\x8a\x01\xb2\xd2*0\n\x1dUpdateRoutingInstanceMetadata\x12\x0fRoutingInstance\x82\xd3\xe4\x93\x02P\"K/cloudrouter/v1/routingInstances/{routing_instance_id}:addPrivateConnection:\x01*\x12\x89\x02\n\x17RemovePrivateConnection\x12;.yandex.cloud.cloudrouter.v1.RemovePrivateConnectionRequest\x1a!.yandex.cloud.operation.Operation\"\x8d\x01\xb2\xd2*0\n\x1dUpdateRoutingInstanceMetadata\x12\x0fRoutingInstance\x82\xd3\xe4\x93\x02S\"N/cloudrouter/v1/routingInstances/{routing_instance_id}:removePrivateConnection:\x01*\x12\xe0\x01\n\x06\x44\x65lete\x12\x39.yandex.cloud.cloudrouter.v1.DeleteRoutingInstanceRequest\x1a!.yandex.cloud.operation.Operation\"x\xb2\xd2*6\n\x1d\x44\x65leteRoutingInstanceMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x38*6/cloudrouter/v1/routingInstances/{routing_instance_id}\x12\xe2\x01\n\x0eListOperations\x12\x41.yandex.cloud.cloudrouter.v1.ListRoutingInstanceOperationsRequest\x1a\x42.yandex.cloud.cloudrouter.v1.ListRoutingInstanceOperationsResponse\"I\x82\xd3\xe4\x93\x02\x43\x12\x41/cloudrouter/v1/routingInstances/{routing_instance_id}/operationsBn\n\x1fyandex.cloud.api.cloudrouter.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/cloudrouter/v1;cloudrouterb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -49,20 +52,88 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LISTROUTINGINSTANCESREQUEST'].fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
   _globals['_LISTROUTINGINSTANCESREQUEST'].fields_by_name['filter']._loaded_options = None
   _globals['_LISTROUTINGINSTANCESREQUEST'].fields_by_name['filter']._serialized_options = b'\212\3101\006<=1000'
+  _globals['_CREATEROUTINGINSTANCEREQUEST_LABELSENTRY']._loaded_options = None
+  _globals['_CREATEROUTINGINSTANCEREQUEST_LABELSENTRY']._serialized_options = b'8\001'
+  _globals['_CREATEROUTINGINSTANCEREQUEST'].fields_by_name['labels']._loaded_options = None
+  _globals['_CREATEROUTINGINSTANCEREQUEST'].fields_by_name['labels']._serialized_options = b'\362\3071\013[-_0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\0041-63'
+  _globals['_UPDATEROUTINGINSTANCEREQUEST_LABELSENTRY']._loaded_options = None
+  _globals['_UPDATEROUTINGINSTANCEREQUEST_LABELSENTRY']._serialized_options = b'8\001'
+  _globals['_UPDATEROUTINGINSTANCEREQUEST'].fields_by_name['routing_instance_id']._loaded_options = None
+  _globals['_UPDATEROUTINGINSTANCEREQUEST'].fields_by_name['routing_instance_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _globals['_UPDATEROUTINGINSTANCEREQUEST'].fields_by_name['labels']._loaded_options = None
+  _globals['_UPDATEROUTINGINSTANCEREQUEST'].fields_by_name['labels']._serialized_options = b'\362\3071\013[-_0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\0041-63'
+  _globals['_UPSERTPREFIXESREQUEST'].fields_by_name['routing_instance_id']._loaded_options = None
+  _globals['_UPSERTPREFIXESREQUEST'].fields_by_name['routing_instance_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _globals['_REMOVEPREFIXESREQUEST'].fields_by_name['routing_instance_id']._loaded_options = None
+  _globals['_REMOVEPREFIXESREQUEST'].fields_by_name['routing_instance_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _globals['_ADDPRIVATECONNECTIONREQUEST'].fields_by_name['routing_instance_id']._loaded_options = None
+  _globals['_ADDPRIVATECONNECTIONREQUEST'].fields_by_name['routing_instance_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _globals['_REMOVEPRIVATECONNECTIONREQUEST'].fields_by_name['routing_instance_id']._loaded_options = None
+  _globals['_REMOVEPRIVATECONNECTIONREQUEST'].fields_by_name['routing_instance_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _globals['_DELETEROUTINGINSTANCEREQUEST'].fields_by_name['routing_instance_id']._loaded_options = None
+  _globals['_DELETEROUTINGINSTANCEREQUEST'].fields_by_name['routing_instance_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _globals['_LISTROUTINGINSTANCEOPERATIONSREQUEST'].fields_by_name['routing_instance_id']._loaded_options = None
+  _globals['_LISTROUTINGINSTANCEOPERATIONSREQUEST'].fields_by_name['routing_instance_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_ROUTINGINSTANCESERVICE'].methods_by_name['Get']._loaded_options = None
-  _globals['_ROUTINGINSTANCESERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\002+\022)/vpc/v1/cloudrouter/{routing_instance_id}'
+  _globals['_ROUTINGINSTANCESERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\0028\0226/cloudrouter/v1/routingInstances/{routing_instance_id}'
   _globals['_ROUTINGINSTANCESERVICE'].methods_by_name['List']._loaded_options = None
-  _globals['_ROUTINGINSTANCESERVICE'].methods_by_name['List']._serialized_options = b'\202\323\344\223\002\026\022\024/vpc/v1/cloudrouters'
-  _globals['_GETROUTINGINSTANCEREQUEST']._serialized_start=204
-  _globals['_GETROUTINGINSTANCEREQUEST']._serialized_end=274
-  _globals['_GETROUTINGINSTANCEBYCICPRIVATECONNECTIONIDREQUEST']._serialized_start=276
-  _globals['_GETROUTINGINSTANCEBYCICPRIVATECONNECTIONIDREQUEST']._serialized_end=376
-  _globals['_GETROUTINGINSTANCEBYVPCNETWORKIDREQUEST']._serialized_start=378
-  _globals['_GETROUTINGINSTANCEBYVPCNETWORKIDREQUEST']._serialized_end=457
-  _globals['_LISTROUTINGINSTANCESREQUEST']._serialized_start=460
-  _globals['_LISTROUTINGINSTANCESREQUEST']._serialized_end=612
-  _globals['_LISTROUTINGINSTANCESRESPONSE']._serialized_start=615
-  _globals['_LISTROUTINGINSTANCESRESPONSE']._serialized_end=743
-  _globals['_ROUTINGINSTANCESERVICE']._serialized_start=746
-  _globals['_ROUTINGINSTANCESERVICE']._serialized_end=1383
+  _globals['_ROUTINGINSTANCESERVICE'].methods_by_name['List']._serialized_options = b'\202\323\344\223\002\"\022 /cloudrouter/v1/routingInstances'
+  _globals['_ROUTINGINSTANCESERVICE'].methods_by_name['Create']._loaded_options = None
+  _globals['_ROUTINGINSTANCESERVICE'].methods_by_name['Create']._serialized_options = b'\262\322*0\n\035CreateRoutingInstanceMetadata\022\017RoutingInstance\202\323\344\223\002%\" /cloudrouter/v1/routingInstances:\001*'
+  _globals['_ROUTINGINSTANCESERVICE'].methods_by_name['Update']._loaded_options = None
+  _globals['_ROUTINGINSTANCESERVICE'].methods_by_name['Update']._serialized_options = b'\262\322*0\n\035UpdateRoutingInstanceMetadata\022\017RoutingInstance\202\323\344\223\002%2 /cloudrouter/v1/routingInstances:\001*'
+  _globals['_ROUTINGINSTANCESERVICE'].methods_by_name['UpsertPrefixes']._loaded_options = None
+  _globals['_ROUTINGINSTANCESERVICE'].methods_by_name['UpsertPrefixes']._serialized_options = b'\262\322*0\n\035UpdateRoutingInstanceMetadata\022\017RoutingInstance\202\323\344\223\002J\"E/cloudrouter/v1/routingInstances/{routing_instance_id}:upsertPrefixes:\001*'
+  _globals['_ROUTINGINSTANCESERVICE'].methods_by_name['RemovePrefixes']._loaded_options = None
+  _globals['_ROUTINGINSTANCESERVICE'].methods_by_name['RemovePrefixes']._serialized_options = b'\262\322*0\n\035UpdateRoutingInstanceMetadata\022\017RoutingInstance\202\323\344\223\002J\"E/cloudrouter/v1/routingInstances/{routing_instance_id}:removePrefixes:\001*'
+  _globals['_ROUTINGINSTANCESERVICE'].methods_by_name['AddPrivateConnection']._loaded_options = None
+  _globals['_ROUTINGINSTANCESERVICE'].methods_by_name['AddPrivateConnection']._serialized_options = b'\262\322*0\n\035UpdateRoutingInstanceMetadata\022\017RoutingInstance\202\323\344\223\002P\"K/cloudrouter/v1/routingInstances/{routing_instance_id}:addPrivateConnection:\001*'
+  _globals['_ROUTINGINSTANCESERVICE'].methods_by_name['RemovePrivateConnection']._loaded_options = None
+  _globals['_ROUTINGINSTANCESERVICE'].methods_by_name['RemovePrivateConnection']._serialized_options = b'\262\322*0\n\035UpdateRoutingInstanceMetadata\022\017RoutingInstance\202\323\344\223\002S\"N/cloudrouter/v1/routingInstances/{routing_instance_id}:removePrivateConnection:\001*'
+  _globals['_ROUTINGINSTANCESERVICE'].methods_by_name['Delete']._loaded_options = None
+  _globals['_ROUTINGINSTANCESERVICE'].methods_by_name['Delete']._serialized_options = b'\262\322*6\n\035DeleteRoutingInstanceMetadata\022\025google.protobuf.Empty\202\323\344\223\0028*6/cloudrouter/v1/routingInstances/{routing_instance_id}'
+  _globals['_ROUTINGINSTANCESERVICE'].methods_by_name['ListOperations']._loaded_options = None
+  _globals['_ROUTINGINSTANCESERVICE'].methods_by_name['ListOperations']._serialized_options = b'\202\323\344\223\002C\022A/cloudrouter/v1/routingInstances/{routing_instance_id}/operations'
+  _globals['_GETROUTINGINSTANCEREQUEST']._serialized_start=312
+  _globals['_GETROUTINGINSTANCEREQUEST']._serialized_end=382
+  _globals['_GETROUTINGINSTANCEBYCICPRIVATECONNECTIONIDREQUEST']._serialized_start=384
+  _globals['_GETROUTINGINSTANCEBYCICPRIVATECONNECTIONIDREQUEST']._serialized_end=484
+  _globals['_GETROUTINGINSTANCEBYVPCNETWORKIDREQUEST']._serialized_start=486
+  _globals['_GETROUTINGINSTANCEBYVPCNETWORKIDREQUEST']._serialized_end=565
+  _globals['_LISTROUTINGINSTANCESREQUEST']._serialized_start=568
+  _globals['_LISTROUTINGINSTANCESREQUEST']._serialized_end=720
+  _globals['_LISTROUTINGINSTANCESRESPONSE']._serialized_start=723
+  _globals['_LISTROUTINGINSTANCESRESPONSE']._serialized_end=851
+  _globals['_CREATEROUTINGINSTANCEREQUEST']._serialized_start=854
+  _globals['_CREATEROUTINGINSTANCEREQUEST']._serialized_end=1345
+  _globals['_CREATEROUTINGINSTANCEREQUEST_LABELSENTRY']._serialized_start=1288
+  _globals['_CREATEROUTINGINSTANCEREQUEST_LABELSENTRY']._serialized_end=1333
+  _globals['_CREATEROUTINGINSTANCEMETADATA']._serialized_start=1347
+  _globals['_CREATEROUTINGINSTANCEMETADATA']._serialized_end=1407
+  _globals['_UPDATEROUTINGINSTANCEREQUEST']._serialized_start=1410
+  _globals['_UPDATEROUTINGINSTANCEREQUEST']._serialized_end=1974
+  _globals['_UPDATEROUTINGINSTANCEREQUEST_LABELSENTRY']._serialized_start=1288
+  _globals['_UPDATEROUTINGINSTANCEREQUEST_LABELSENTRY']._serialized_end=1333
+  _globals['_UPDATEROUTINGINSTANCEMETADATA']._serialized_start=1976
+  _globals['_UPDATEROUTINGINSTANCEMETADATA']._serialized_end=2036
+  _globals['_UPSERTPREFIXESREQUEST']._serialized_start=2039
+  _globals['_UPSERTPREFIXESREQUEST']._serialized_end=2213
+  _globals['_REMOVEPREFIXESREQUEST']._serialized_start=2216
+  _globals['_REMOVEPREFIXESREQUEST']._serialized_end=2384
+  _globals['_VPCAZINFOPREFIXES']._serialized_start=2386
+  _globals['_VPCAZINFOPREFIXES']._serialized_end=2444
+  _globals['_ADDPRIVATECONNECTIONREQUEST']._serialized_start=2446
+  _globals['_ADDPRIVATECONNECTIONREQUEST']._serialized_end=2559
+  _globals['_REMOVEPRIVATECONNECTIONREQUEST']._serialized_start=2561
+  _globals['_REMOVEPRIVATECONNECTIONREQUEST']._serialized_end=2671
+  _globals['_DELETEROUTINGINSTANCEREQUEST']._serialized_start=2673
+  _globals['_DELETEROUTINGINSTANCEREQUEST']._serialized_end=2746
+  _globals['_DELETEROUTINGINSTANCEMETADATA']._serialized_start=2748
+  _globals['_DELETEROUTINGINSTANCEMETADATA']._serialized_end=2808
+  _globals['_LISTROUTINGINSTANCEOPERATIONSREQUEST']._serialized_start=2810
+  _globals['_LISTROUTINGINSTANCEOPERATIONSREQUEST']._serialized_end=2930
+  _globals['_LISTROUTINGINSTANCEOPERATIONSRESPONSE']._serialized_start=2932
+  _globals['_LISTROUTINGINSTANCEOPERATIONSRESPONSE']._serialized_end=3051
+  _globals['_ROUTINGINSTANCESERVICE']._serialized_start=3054
+  _globals['_ROUTINGINSTANCESERVICE']._serialized_end=5585
 # @@protoc_insertion_point(module_scope)

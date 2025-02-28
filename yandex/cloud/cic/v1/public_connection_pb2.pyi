@@ -9,6 +9,7 @@ import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
+import google.protobuf.timestamp_pb2
 import google.protobuf.wrappers_pb2
 import sys
 import typing
@@ -60,6 +61,25 @@ class PublicConnection(google.protobuf.message.Message):
     CLOUD_SERVICES_ALL_API_ENDPOINT: PublicConnection.CloudServiceType.ValueType  # 10
     CLOUD_SERVICE_YMQ: PublicConnection.CloudServiceType.ValueType  # 11
 
+    class _Status:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _StatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[PublicConnection._Status.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        STATUS_UNSPECIFIED: PublicConnection._Status.ValueType  # 0
+        CREATING: PublicConnection._Status.ValueType  # 1
+        UPDATING: PublicConnection._Status.ValueType  # 2
+        DELETING: PublicConnection._Status.ValueType  # 3
+        ACTIVE: PublicConnection._Status.ValueType  # 4
+
+    class Status(_Status, metaclass=_StatusEnumTypeWrapper): ...
+    STATUS_UNSPECIFIED: PublicConnection.Status.ValueType  # 0
+    CREATING: PublicConnection.Status.ValueType  # 1
+    UPDATING: PublicConnection.Status.ValueType  # 2
+    DELETING: PublicConnection.Status.ValueType  # 3
+    ACTIVE: PublicConnection.Status.ValueType  # 4
+
     @typing.final
     class LabelsEntry(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
@@ -87,6 +107,8 @@ class PublicConnection(google.protobuf.message.Message):
     IPV4_ALLOWED_SERVICE_TYPES_FIELD_NUMBER: builtins.int
     IPV4_PEER_ANNOUNCED_PREFIXES_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
+    STATUS_FIELD_NUMBER: builtins.int
+    CREATED_AT_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the publicConnection."""
     name: builtins.str
@@ -102,6 +124,8 @@ class PublicConnection(google.protobuf.message.Message):
     """ID of the region that the publicConnection belongs to."""
     trunk_connection_id: builtins.str
     """ID of the trunk_connection that the publicConnection belongs to."""
+    status: global___PublicConnection.Status.ValueType
+    """Status of the publicConnection."""
     @property
     def vlan_id(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """VLAN_ID that the privateConnection uses in multiplexing.
@@ -133,6 +157,10 @@ class PublicConnection(google.protobuf.message.Message):
         Each key must match the regular expression `[a-z][-_0-9a-z]*`.
         """
 
+    @property
+    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Creation timestamp in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format."""
+
     def __init__(
         self,
         *,
@@ -147,8 +175,10 @@ class PublicConnection(google.protobuf.message.Message):
         ipv4_allowed_service_types: collections.abc.Iterable[global___PublicConnection.CloudServiceType.ValueType] | None = ...,
         ipv4_peer_announced_prefixes: collections.abc.Iterable[builtins.str] | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        status: global___PublicConnection.Status.ValueType = ...,
+        created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["ipv4_peering", b"ipv4_peering", "vlan_id", b"vlan_id"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "folder_id", b"folder_id", "id", b"id", "ipv4_allowed_service_types", b"ipv4_allowed_service_types", "ipv4_peer_announced_prefixes", b"ipv4_peer_announced_prefixes", "ipv4_peering", b"ipv4_peering", "labels", b"labels", "name", b"name", "region_id", b"region_id", "trunk_connection_id", b"trunk_connection_id", "vlan_id", b"vlan_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "ipv4_peering", b"ipv4_peering", "vlan_id", b"vlan_id"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "folder_id", b"folder_id", "id", b"id", "ipv4_allowed_service_types", b"ipv4_allowed_service_types", "ipv4_peer_announced_prefixes", b"ipv4_peer_announced_prefixes", "ipv4_peering", b"ipv4_peering", "labels", b"labels", "name", b"name", "region_id", b"region_id", "status", b"status", "trunk_connection_id", b"trunk_connection_id", "vlan_id", b"vlan_id"]) -> None: ...
 
 global___PublicConnection = PublicConnection

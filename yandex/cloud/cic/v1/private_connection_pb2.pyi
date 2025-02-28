@@ -7,10 +7,18 @@ import builtins
 import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
+import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
+import google.protobuf.timestamp_pb2
 import google.protobuf.wrappers_pb2
+import sys
 import typing
 import yandex.cloud.cic.v1.peering_pb2
+
+if sys.version_info >= (3, 10):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -19,6 +27,25 @@ class PrivateConnection(google.protobuf.message.Message):
     """A PrivateConnection resource."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _Status:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _StatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[PrivateConnection._Status.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        STATUS_UNSPECIFIED: PrivateConnection._Status.ValueType  # 0
+        CREATING: PrivateConnection._Status.ValueType  # 1
+        UPDATING: PrivateConnection._Status.ValueType  # 2
+        DELETING: PrivateConnection._Status.ValueType  # 3
+        ACTIVE: PrivateConnection._Status.ValueType  # 4
+
+    class Status(_Status, metaclass=_StatusEnumTypeWrapper): ...
+    STATUS_UNSPECIFIED: PrivateConnection.Status.ValueType  # 0
+    CREATING: PrivateConnection.Status.ValueType  # 1
+    UPDATING: PrivateConnection.Status.ValueType  # 2
+    DELETING: PrivateConnection.Status.ValueType  # 3
+    ACTIVE: PrivateConnection.Status.ValueType  # 4
 
     @typing.final
     class LabelsEntry(google.protobuf.message.Message):
@@ -41,25 +68,16 @@ class PrivateConnection(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
         PREFIX_FIELD_NUMBER: builtins.int
-        NEXT_HOP_FIELD_NUMBER: builtins.int
         prefix: builtins.str
         """Prefix.
         It's an ip with format ipPrefix/length where address part of ipPrefix is 0.
         """
-        @property
-        def next_hop(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-            """PeerIp.
-            It's an ip with just an ipAddress format without mask.
-            Will be removed in some next release
-            """
-
         def __init__(
             self,
             *,
             prefix: builtins.str = ...,
-            next_hop: collections.abc.Iterable[builtins.str] | None = ...,
         ) -> None: ...
-        def ClearField(self, field_name: typing.Literal["next_hop", b"next_hop", "prefix", b"prefix"]) -> None: ...
+        def ClearField(self, field_name: typing.Literal["prefix", b"prefix"]) -> None: ...
 
     ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
@@ -71,6 +89,8 @@ class PrivateConnection(google.protobuf.message.Message):
     IPV4_PEERING_FIELD_NUMBER: builtins.int
     IPV4_STATIC_ROUTES_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
+    STATUS_FIELD_NUMBER: builtins.int
+    CREATED_AT_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the privateConnection."""
     name: builtins.str
@@ -86,6 +106,8 @@ class PrivateConnection(google.protobuf.message.Message):
     """ID of the region that the privateConnection belongs to."""
     trunk_connection_id: builtins.str
     """ID of the trunk_connection that the privateConnection belongs to."""
+    status: global___PrivateConnection.Status.ValueType
+    """Status of the privateConnection."""
     @property
     def vlan_id(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """VLAN_ID that the privateConnection uses in multiplexing.
@@ -111,6 +133,10 @@ class PrivateConnection(google.protobuf.message.Message):
         Each key must match the regular expression `[a-z][-_0-9a-z]*`.
         """
 
+    @property
+    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Creation timestamp in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format."""
+
     def __init__(
         self,
         *,
@@ -124,8 +150,10 @@ class PrivateConnection(google.protobuf.message.Message):
         ipv4_peering: yandex.cloud.cic.v1.peering_pb2.Peering | None = ...,
         ipv4_static_routes: collections.abc.Iterable[global___PrivateConnection.StaticRoute] | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        status: global___PrivateConnection.Status.ValueType = ...,
+        created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["ipv4_peering", b"ipv4_peering", "vlan_id", b"vlan_id"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "folder_id", b"folder_id", "id", b"id", "ipv4_peering", b"ipv4_peering", "ipv4_static_routes", b"ipv4_static_routes", "labels", b"labels", "name", b"name", "region_id", b"region_id", "trunk_connection_id", b"trunk_connection_id", "vlan_id", b"vlan_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "ipv4_peering", b"ipv4_peering", "vlan_id", b"vlan_id"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "folder_id", b"folder_id", "id", b"id", "ipv4_peering", b"ipv4_peering", "ipv4_static_routes", b"ipv4_static_routes", "labels", b"labels", "name", b"name", "region_id", b"region_id", "status", b"status", "trunk_connection_id", b"trunk_connection_id", "vlan_id", b"vlan_id"]) -> None: ...
 
 global___PrivateConnection = PrivateConnection

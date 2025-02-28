@@ -183,6 +183,7 @@ class Instance(google.protobuf.message.Message):
     MAINTENANCE_POLICY_FIELD_NUMBER: builtins.int
     MAINTENANCE_GRACE_PERIOD_FIELD_NUMBER: builtins.int
     HARDWARE_GENERATION_FIELD_NUMBER: builtins.int
+    RESERVED_INSTANCE_POOL_ID_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the instance."""
     folder_id: builtins.str
@@ -213,6 +214,8 @@ class Instance(google.protobuf.message.Message):
     """ID of the dedicated host that the instance belongs to."""
     maintenance_policy: yandex.cloud.compute.v1.maintenance_pb2.MaintenancePolicy.ValueType
     """Behaviour on maintenance events"""
+    reserved_instance_pool_id: builtins.str
+    """ID of the reserved instance pool that the instance belongs to."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
     @property
@@ -315,9 +318,10 @@ class Instance(google.protobuf.message.Message):
         maintenance_policy: yandex.cloud.compute.v1.maintenance_pb2.MaintenancePolicy.ValueType = ...,
         maintenance_grace_period: google.protobuf.duration_pb2.Duration | None = ...,
         hardware_generation: yandex.cloud.compute.v1.hardware_generation_pb2.HardwareGeneration | None = ...,
+        reserved_instance_pool_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["boot_disk", b"boot_disk", "created_at", b"created_at", "gpu_settings", b"gpu_settings", "hardware_generation", b"hardware_generation", "maintenance_grace_period", b"maintenance_grace_period", "metadata_options", b"metadata_options", "network_settings", b"network_settings", "placement_policy", b"placement_policy", "resources", b"resources", "scheduling_policy", b"scheduling_policy", "serial_port_settings", b"serial_port_settings"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["boot_disk", b"boot_disk", "created_at", b"created_at", "description", b"description", "filesystems", b"filesystems", "folder_id", b"folder_id", "fqdn", b"fqdn", "gpu_settings", b"gpu_settings", "hardware_generation", b"hardware_generation", "host_group_id", b"host_group_id", "host_id", b"host_id", "id", b"id", "labels", b"labels", "local_disks", b"local_disks", "maintenance_grace_period", b"maintenance_grace_period", "maintenance_policy", b"maintenance_policy", "metadata", b"metadata", "metadata_options", b"metadata_options", "name", b"name", "network_interfaces", b"network_interfaces", "network_settings", b"network_settings", "placement_policy", b"placement_policy", "platform_id", b"platform_id", "resources", b"resources", "scheduling_policy", b"scheduling_policy", "secondary_disks", b"secondary_disks", "serial_port_settings", b"serial_port_settings", "service_account_id", b"service_account_id", "status", b"status", "zone_id", b"zone_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["boot_disk", b"boot_disk", "created_at", b"created_at", "description", b"description", "filesystems", b"filesystems", "folder_id", b"folder_id", "fqdn", b"fqdn", "gpu_settings", b"gpu_settings", "hardware_generation", b"hardware_generation", "host_group_id", b"host_group_id", "host_id", b"host_id", "id", b"id", "labels", b"labels", "local_disks", b"local_disks", "maintenance_grace_period", b"maintenance_grace_period", "maintenance_policy", b"maintenance_policy", "metadata", b"metadata", "metadata_options", b"metadata_options", "name", b"name", "network_interfaces", b"network_interfaces", "network_settings", b"network_settings", "placement_policy", b"placement_policy", "platform_id", b"platform_id", "reserved_instance_pool_id", b"reserved_instance_pool_id", "resources", b"resources", "scheduling_policy", b"scheduling_policy", "secondary_disks", b"secondary_disks", "serial_port_settings", b"serial_port_settings", "service_account_id", b"service_account_id", "status", b"status", "zone_id", b"zone_id"]) -> None: ...
 
 global___Instance = Instance
 

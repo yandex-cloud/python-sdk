@@ -10,6 +10,7 @@ import grpc.aio
 import typing
 import yandex.cloud.cic.v1.private_connection_pb2
 import yandex.cloud.cic.v1.private_connection_service_pb2
+import yandex.cloud.operation.operation_pb2
 
 _T = typing.TypeVar("_T")
 
@@ -37,6 +38,52 @@ class PrivateConnectionServiceStub:
     ]
     """Retrieves the list of PrivateConnection resources in the specified folder."""
 
+    Create: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.cic.v1.private_connection_service_pb2.CreatePrivateConnectionRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Creates a PrivateConnection resource in the specified folder using the data specified in the request.
+    Method starts an asynchronous operation that can be cancelled while it is in progress.
+    """
+
+    Update: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.cic.v1.private_connection_service_pb2.UpdatePrivateConnectionRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates a PrivateConnection resource using the data specified in the request.
+    Method starts an asynchronous operation that can be cancelled while it is in progress.
+    """
+
+    Delete: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.cic.v1.private_connection_service_pb2.DeletePrivateConnectionRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Deletes a PrivateConnection resource.
+    Method starts an asynchronous operation that can be cancelled while it is in progress.
+    """
+
+    UpsertStaticRoute: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.cic.v1.private_connection_service_pb2.UpsertStaticRouteRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Upserts specified static routes to a PrivateConnection resource.
+    Method starts an asynchronous operation that can be cancelled while it is in progress.
+    """
+
+    RemoveStaticRoute: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.cic.v1.private_connection_service_pb2.RemoveStaticRouteRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Removes specified static routes to a PrivateConnection resource.
+    Method starts an asynchronous operation that can be cancelled while it is in progress.
+    """
+
+    ListOperations: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.cic.v1.private_connection_service_pb2.ListPrivateConnectionOperationsRequest,
+        yandex.cloud.cic.v1.private_connection_service_pb2.ListPrivateConnectionOperationsResponse,
+    ]
+    """Lists operations for the specified PrivateConnection."""
+
 class PrivateConnectionServiceAsyncStub:
     """A set of methods for managing PrivateConnection resources."""
 
@@ -54,6 +101,52 @@ class PrivateConnectionServiceAsyncStub:
         yandex.cloud.cic.v1.private_connection_service_pb2.ListPrivateConnectionsResponse,
     ]
     """Retrieves the list of PrivateConnection resources in the specified folder."""
+
+    Create: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.cic.v1.private_connection_service_pb2.CreatePrivateConnectionRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Creates a PrivateConnection resource in the specified folder using the data specified in the request.
+    Method starts an asynchronous operation that can be cancelled while it is in progress.
+    """
+
+    Update: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.cic.v1.private_connection_service_pb2.UpdatePrivateConnectionRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates a PrivateConnection resource using the data specified in the request.
+    Method starts an asynchronous operation that can be cancelled while it is in progress.
+    """
+
+    Delete: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.cic.v1.private_connection_service_pb2.DeletePrivateConnectionRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Deletes a PrivateConnection resource.
+    Method starts an asynchronous operation that can be cancelled while it is in progress.
+    """
+
+    UpsertStaticRoute: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.cic.v1.private_connection_service_pb2.UpsertStaticRouteRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Upserts specified static routes to a PrivateConnection resource.
+    Method starts an asynchronous operation that can be cancelled while it is in progress.
+    """
+
+    RemoveStaticRoute: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.cic.v1.private_connection_service_pb2.RemoveStaticRouteRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Removes specified static routes to a PrivateConnection resource.
+    Method starts an asynchronous operation that can be cancelled while it is in progress.
+    """
+
+    ListOperations: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.cic.v1.private_connection_service_pb2.ListPrivateConnectionOperationsRequest,
+        yandex.cloud.cic.v1.private_connection_service_pb2.ListPrivateConnectionOperationsResponse,
+    ]
+    """Lists operations for the specified PrivateConnection."""
 
 class PrivateConnectionServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing PrivateConnection resources."""
@@ -76,5 +169,63 @@ class PrivateConnectionServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.cic.v1.private_connection_service_pb2.ListPrivateConnectionsResponse, collections.abc.Awaitable[yandex.cloud.cic.v1.private_connection_service_pb2.ListPrivateConnectionsResponse]]:
         """Retrieves the list of PrivateConnection resources in the specified folder."""
+
+    @abc.abstractmethod
+    def Create(
+        self,
+        request: yandex.cloud.cic.v1.private_connection_service_pb2.CreatePrivateConnectionRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Creates a PrivateConnection resource in the specified folder using the data specified in the request.
+        Method starts an asynchronous operation that can be cancelled while it is in progress.
+        """
+
+    @abc.abstractmethod
+    def Update(
+        self,
+        request: yandex.cloud.cic.v1.private_connection_service_pb2.UpdatePrivateConnectionRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Updates a PrivateConnection resource using the data specified in the request.
+        Method starts an asynchronous operation that can be cancelled while it is in progress.
+        """
+
+    @abc.abstractmethod
+    def Delete(
+        self,
+        request: yandex.cloud.cic.v1.private_connection_service_pb2.DeletePrivateConnectionRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Deletes a PrivateConnection resource.
+        Method starts an asynchronous operation that can be cancelled while it is in progress.
+        """
+
+    @abc.abstractmethod
+    def UpsertStaticRoute(
+        self,
+        request: yandex.cloud.cic.v1.private_connection_service_pb2.UpsertStaticRouteRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Upserts specified static routes to a PrivateConnection resource.
+        Method starts an asynchronous operation that can be cancelled while it is in progress.
+        """
+
+    @abc.abstractmethod
+    def RemoveStaticRoute(
+        self,
+        request: yandex.cloud.cic.v1.private_connection_service_pb2.RemoveStaticRouteRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Removes specified static routes to a PrivateConnection resource.
+        Method starts an asynchronous operation that can be cancelled while it is in progress.
+        """
+
+    @abc.abstractmethod
+    def ListOperations(
+        self,
+        request: yandex.cloud.cic.v1.private_connection_service_pb2.ListPrivateConnectionOperationsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.cic.v1.private_connection_service_pb2.ListPrivateConnectionOperationsResponse, collections.abc.Awaitable[yandex.cloud.cic.v1.private_connection_service_pb2.ListPrivateConnectionOperationsResponse]]:
+        """Lists operations for the specified PrivateConnection."""
 
 def add_PrivateConnectionServiceServicer_to_server(servicer: PrivateConnectionServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

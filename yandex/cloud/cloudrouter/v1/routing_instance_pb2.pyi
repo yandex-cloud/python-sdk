@@ -9,6 +9,7 @@ import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
+import google.protobuf.timestamp_pb2
 import sys
 import typing
 
@@ -137,6 +138,7 @@ class RoutingInstance(google.protobuf.message.Message):
     VPC_INFO_FIELD_NUMBER: builtins.int
     CIC_PRIVATE_CONNECTION_INFO_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
+    CREATED_AT_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the routingInstance."""
@@ -155,11 +157,15 @@ class RoutingInstance(google.protobuf.message.Message):
     """Status of the routingInstance."""
     @property
     def vpc_info(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___RoutingInstance.VpcInfo]:
-        """List of the info about vpcNetworks which are attached to routingInstance"""
+        """List of the info about vpcNetworks which are attached to routingInstance."""
 
     @property
     def cic_private_connection_info(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___RoutingInstance.CicPrivateConnectionInfo]:
-        """List of the info about privateConnections which are attached to routingInstance"""
+        """List of the info about privateConnections which are attached to routingInstance."""
+
+    @property
+    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Creation timestamp in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format."""
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
@@ -182,8 +188,10 @@ class RoutingInstance(google.protobuf.message.Message):
         vpc_info: collections.abc.Iterable[global___RoutingInstance.VpcInfo] | None = ...,
         cic_private_connection_info: collections.abc.Iterable[global___RoutingInstance.CicPrivateConnectionInfo] | None = ...,
         status: global___RoutingInstance.Status.ValueType = ...,
+        created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cic_private_connection_info", b"cic_private_connection_info", "description", b"description", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "name", b"name", "region_id", b"region_id", "status", b"status", "vpc_info", b"vpc_info"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["created_at", b"created_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cic_private_connection_info", b"cic_private_connection_info", "created_at", b"created_at", "description", b"description", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "name", b"name", "region_id", b"region_id", "status", b"status", "vpc_info", b"vpc_info"]) -> None: ...
 
 global___RoutingInstance = RoutingInstance

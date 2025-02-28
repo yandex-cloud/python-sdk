@@ -5,6 +5,7 @@ import warnings
 
 from yandex.cloud.cloudrouter.v1 import routing_instance_pb2 as yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__pb2
 from yandex.cloud.cloudrouter.v1 import routing_instance_service_pb2 as yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2
+from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 
 GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
@@ -56,6 +57,46 @@ class RoutingInstanceServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.ListRoutingInstancesRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.ListRoutingInstancesResponse.FromString,
                 _registered_method=True)
+        self.Create = channel.unary_unary(
+                '/yandex.cloud.cloudrouter.v1.RoutingInstanceService/Create',
+                request_serializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.CreateRoutingInstanceRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.Update = channel.unary_unary(
+                '/yandex.cloud.cloudrouter.v1.RoutingInstanceService/Update',
+                request_serializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.UpdateRoutingInstanceRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.UpsertPrefixes = channel.unary_unary(
+                '/yandex.cloud.cloudrouter.v1.RoutingInstanceService/UpsertPrefixes',
+                request_serializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.UpsertPrefixesRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.RemovePrefixes = channel.unary_unary(
+                '/yandex.cloud.cloudrouter.v1.RoutingInstanceService/RemovePrefixes',
+                request_serializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.RemovePrefixesRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.AddPrivateConnection = channel.unary_unary(
+                '/yandex.cloud.cloudrouter.v1.RoutingInstanceService/AddPrivateConnection',
+                request_serializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.AddPrivateConnectionRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.RemovePrivateConnection = channel.unary_unary(
+                '/yandex.cloud.cloudrouter.v1.RoutingInstanceService/RemovePrivateConnection',
+                request_serializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.RemovePrivateConnectionRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.Delete = channel.unary_unary(
+                '/yandex.cloud.cloudrouter.v1.RoutingInstanceService/Delete',
+                request_serializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.DeleteRoutingInstanceRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.ListOperations = channel.unary_unary(
+                '/yandex.cloud.cloudrouter.v1.RoutingInstanceService/ListOperations',
+                request_serializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.ListRoutingInstanceOperationsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.ListRoutingInstanceOperationsResponse.FromString,
+                _registered_method=True)
 
 
 class RoutingInstanceServiceServicer(object):
@@ -96,6 +137,69 @@ class RoutingInstanceServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Create(self, request, context):
+        """Creates a RoutingInstance resource in the specified folder using the data specified in the request.
+        Method starts an asynchronous operation that can be cancelled while it is in progress.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Update(self, request, context):
+        """Updates a RoutingInstance resource using the data specified in the request.
+        Method starts an asynchronous operation that can be cancelled while it is in progress.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpsertPrefixes(self, request, context):
+        """Upserts specified prefixes to a RoutingInstance resource.
+        Method starts an asynchronous operation that can be cancelled while it is in progress.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def RemovePrefixes(self, request, context):
+        """Removes specified prefixes from a RoutingInstance resource.
+        Method starts an asynchronous operation that can be cancelled while it is in progress.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def AddPrivateConnection(self, request, context):
+        """Adds specified PrivateConnection to a RoutingInstance resource.
+        Method starts an asynchronous operation that can be cancelled while it is in progress.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def RemovePrivateConnection(self, request, context):
+        """Removes specified PrivateConnection from a RoutingInstance resource.
+        Method starts an asynchronous operation that can be cancelled while it is in progress.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def Delete(self, request, context):
+        """Deletes a RoutingInstance resource.
+        Method starts an asynchronous operation that can be cancelled while it is in progress.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListOperations(self, request, context):
+        """Lists operations for the specified RoutingInstance.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_RoutingInstanceServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -118,6 +222,46 @@ def add_RoutingInstanceServiceServicer_to_server(servicer, server):
                     servicer.List,
                     request_deserializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.ListRoutingInstancesRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.ListRoutingInstancesResponse.SerializeToString,
+            ),
+            'Create': grpc.unary_unary_rpc_method_handler(
+                    servicer.Create,
+                    request_deserializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.CreateRoutingInstanceRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'Update': grpc.unary_unary_rpc_method_handler(
+                    servicer.Update,
+                    request_deserializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.UpdateRoutingInstanceRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'UpsertPrefixes': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpsertPrefixes,
+                    request_deserializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.UpsertPrefixesRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'RemovePrefixes': grpc.unary_unary_rpc_method_handler(
+                    servicer.RemovePrefixes,
+                    request_deserializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.RemovePrefixesRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'AddPrivateConnection': grpc.unary_unary_rpc_method_handler(
+                    servicer.AddPrivateConnection,
+                    request_deserializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.AddPrivateConnectionRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'RemovePrivateConnection': grpc.unary_unary_rpc_method_handler(
+                    servicer.RemovePrivateConnection,
+                    request_deserializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.RemovePrivateConnectionRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'Delete': grpc.unary_unary_rpc_method_handler(
+                    servicer.Delete,
+                    request_deserializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.DeleteRoutingInstanceRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'ListOperations': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListOperations,
+                    request_deserializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.ListRoutingInstanceOperationsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.ListRoutingInstanceOperationsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -229,6 +373,222 @@ class RoutingInstanceService(object):
             '/yandex.cloud.cloudrouter.v1.RoutingInstanceService/List',
             yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.ListRoutingInstancesRequest.SerializeToString,
             yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.ListRoutingInstancesResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Create(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.cloudrouter.v1.RoutingInstanceService/Create',
+            yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.CreateRoutingInstanceRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Update(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.cloudrouter.v1.RoutingInstanceService/Update',
+            yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.UpdateRoutingInstanceRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpsertPrefixes(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.cloudrouter.v1.RoutingInstanceService/UpsertPrefixes',
+            yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.UpsertPrefixesRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def RemovePrefixes(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.cloudrouter.v1.RoutingInstanceService/RemovePrefixes',
+            yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.RemovePrefixesRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def AddPrivateConnection(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.cloudrouter.v1.RoutingInstanceService/AddPrivateConnection',
+            yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.AddPrivateConnectionRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def RemovePrivateConnection(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.cloudrouter.v1.RoutingInstanceService/RemovePrivateConnection',
+            yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.RemovePrivateConnectionRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Delete(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.cloudrouter.v1.RoutingInstanceService/Delete',
+            yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.DeleteRoutingInstanceRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListOperations(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.cloudrouter.v1.RoutingInstanceService/ListOperations',
+            yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.ListRoutingInstanceOperationsRequest.SerializeToString,
+            yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.ListRoutingInstanceOperationsResponse.FromString,
             options,
             channel_credentials,
             insecure,

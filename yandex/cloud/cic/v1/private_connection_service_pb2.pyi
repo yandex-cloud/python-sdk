@@ -6,10 +6,14 @@ isort:skip_file
 import builtins
 import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.field_mask_pb2
 import google.protobuf.internal.containers
 import google.protobuf.message
+import google.protobuf.wrappers_pb2
 import typing
+import yandex.cloud.cic.v1.peering_pb2
 import yandex.cloud.cic.v1.private_connection_pb2
+import yandex.cloud.operation.operation_pb2
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -40,7 +44,7 @@ class ListPrivateConnectionsRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     FILTER_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
-    """ID of the folder to list privateConnections in.
+    """ID of the folder to list PrivateConnection resources.
     To get the folder ID use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     page_size: builtins.int
@@ -99,3 +103,377 @@ class ListPrivateConnectionsResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["next_page_token", b"next_page_token", "private_connections", b"private_connections"]) -> None: ...
 
 global___ListPrivateConnectionsResponse = ListPrivateConnectionsResponse
+
+@typing.final
+class CreatePrivateConnectionRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class LabelsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
+    NAME_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    REGION_ID_FIELD_NUMBER: builtins.int
+    TRUNK_CONNECTION_ID_FIELD_NUMBER: builtins.int
+    VLAN_ID_FIELD_NUMBER: builtins.int
+    IPV4_PEERING_FIELD_NUMBER: builtins.int
+    IPV4_STATIC_ROUTES_FIELD_NUMBER: builtins.int
+    LABELS_FIELD_NUMBER: builtins.int
+    name: builtins.str
+    """Name of the privateConnection.
+    The name must be unique within the folder.
+    Value must match the regular expression ``\\|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?``.
+    """
+    description: builtins.str
+    """Optional description of the privateConnection. 0-256 characters long."""
+    folder_id: builtins.str
+    """ID of the folder that the privateConnection belongs to."""
+    region_id: builtins.str
+    """ID of the region that the privateConnection belongs to."""
+    trunk_connection_id: builtins.str
+    """ID of the trunk_connection that the privateConnection belongs to."""
+    @property
+    def vlan_id(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """VLAN_ID that the privateConnection uses in multiplexing.
+        Not used in connections over partners-II
+        Value range: [1, 4095]
+        """
+
+    @property
+    def ipv4_peering(self) -> yandex.cloud.cic.v1.peering_pb2.Peering:
+        """IPv4 peering config of connection"""
+
+    @property
+    def ipv4_static_routes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.cic.v1.private_connection_pb2.PrivateConnection.StaticRoute]:
+        """IPv4 StaticRoute config of connection"""
+
+    @property
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Resource labels, `key:value` pairs.
+        No more than 64 per resource.
+        The maximum string length in characters for each value is 63.
+        Each value must match the regular expression `[-_0-9a-z]*`.
+        The string length in characters for each key must be 1-63.
+        Each key must match the regular expression `[a-z][-_0-9a-z]*`.
+        """
+
+    def __init__(
+        self,
+        *,
+        name: builtins.str = ...,
+        description: builtins.str = ...,
+        folder_id: builtins.str = ...,
+        region_id: builtins.str = ...,
+        trunk_connection_id: builtins.str = ...,
+        vlan_id: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        ipv4_peering: yandex.cloud.cic.v1.peering_pb2.Peering | None = ...,
+        ipv4_static_routes: collections.abc.Iterable[yandex.cloud.cic.v1.private_connection_pb2.PrivateConnection.StaticRoute] | None = ...,
+        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["ipv4_peering", b"ipv4_peering", "vlan_id", b"vlan_id"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "folder_id", b"folder_id", "ipv4_peering", b"ipv4_peering", "ipv4_static_routes", b"ipv4_static_routes", "labels", b"labels", "name", b"name", "region_id", b"region_id", "trunk_connection_id", b"trunk_connection_id", "vlan_id", b"vlan_id"]) -> None: ...
+
+global___CreatePrivateConnectionRequest = CreatePrivateConnectionRequest
+
+@typing.final
+class CreatePrivateConnectionMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PRIVATE_CONNECTION_ID_FIELD_NUMBER: builtins.int
+    private_connection_id: builtins.str
+    """ID of the PrivateConnection resource."""
+    def __init__(
+        self,
+        *,
+        private_connection_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["private_connection_id", b"private_connection_id"]) -> None: ...
+
+global___CreatePrivateConnectionMetadata = CreatePrivateConnectionMetadata
+
+@typing.final
+class UpdatePrivateConnectionRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class LabelsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
+    PRIVATE_CONNECTION_ID_FIELD_NUMBER: builtins.int
+    UPDATE_MASK_FIELD_NUMBER: builtins.int
+    NAME_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
+    REGION_ID_FIELD_NUMBER: builtins.int
+    TRUNK_CONNECTION_ID_FIELD_NUMBER: builtins.int
+    VLAN_ID_FIELD_NUMBER: builtins.int
+    IPV4_PEERING_FIELD_NUMBER: builtins.int
+    IPV4_STATIC_ROUTES_FIELD_NUMBER: builtins.int
+    LABELS_FIELD_NUMBER: builtins.int
+    private_connection_id: builtins.str
+    """ID of the PrivateConnection resource."""
+    name: builtins.str
+    """Name of the privateConnection.
+    The name must be unique within the folder.
+    Value must match the regular expression ``\\|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?``.
+    """
+    description: builtins.str
+    """Optional description of the privateConnection. 0-256 characters long."""
+    region_id: builtins.str
+    """ID of the region that the privateConnection belongs to."""
+    trunk_connection_id: builtins.str
+    """ID of the trunk_connection that the privateConnection belongs to."""
+    @property
+    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
+        """Field mask that specifies which fields of the PrivateConnection resource are going to be updated."""
+
+    @property
+    def vlan_id(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """VLAN_ID that the privateConnection uses in multiplexing.
+        Not used in connections over partners-II
+        Value range: [1, 4095]
+        """
+
+    @property
+    def ipv4_peering(self) -> yandex.cloud.cic.v1.peering_pb2.Peering:
+        """IPv4 peering config of connection"""
+
+    @property
+    def ipv4_static_routes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.cic.v1.private_connection_pb2.PrivateConnection.StaticRoute]:
+        """IPv4 StaticRoute config of connection"""
+
+    @property
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Resource labels, `key:value` pairs.
+        No more than 64 per resource.
+        The maximum string length in characters for each value is 63.
+        Each value must match the regular expression `[-_0-9a-z]*`.
+        The string length in characters for each key must be 1-63.
+        Each key must match the regular expression `[a-z][-_0-9a-z]*`.
+        """
+
+    def __init__(
+        self,
+        *,
+        private_connection_id: builtins.str = ...,
+        update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
+        name: builtins.str = ...,
+        description: builtins.str = ...,
+        region_id: builtins.str = ...,
+        trunk_connection_id: builtins.str = ...,
+        vlan_id: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        ipv4_peering: yandex.cloud.cic.v1.peering_pb2.Peering | None = ...,
+        ipv4_static_routes: collections.abc.Iterable[yandex.cloud.cic.v1.private_connection_pb2.PrivateConnection.StaticRoute] | None = ...,
+        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["ipv4_peering", b"ipv4_peering", "update_mask", b"update_mask", "vlan_id", b"vlan_id"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "ipv4_peering", b"ipv4_peering", "ipv4_static_routes", b"ipv4_static_routes", "labels", b"labels", "name", b"name", "private_connection_id", b"private_connection_id", "region_id", b"region_id", "trunk_connection_id", b"trunk_connection_id", "update_mask", b"update_mask", "vlan_id", b"vlan_id"]) -> None: ...
+
+global___UpdatePrivateConnectionRequest = UpdatePrivateConnectionRequest
+
+@typing.final
+class UpdatePrivateConnectionMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PRIVATE_CONNECTION_ID_FIELD_NUMBER: builtins.int
+    private_connection_id: builtins.str
+    """ID of the PrivateConnection resource."""
+    def __init__(
+        self,
+        *,
+        private_connection_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["private_connection_id", b"private_connection_id"]) -> None: ...
+
+global___UpdatePrivateConnectionMetadata = UpdatePrivateConnectionMetadata
+
+@typing.final
+class DeletePrivateConnectionRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PRIVATE_CONNECTION_ID_FIELD_NUMBER: builtins.int
+    private_connection_id: builtins.str
+    """ID of the PrivateConnection resource."""
+    def __init__(
+        self,
+        *,
+        private_connection_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["private_connection_id", b"private_connection_id"]) -> None: ...
+
+global___DeletePrivateConnectionRequest = DeletePrivateConnectionRequest
+
+@typing.final
+class DeletePrivateConnectionMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PRIVATE_CONNECTION_ID_FIELD_NUMBER: builtins.int
+    private_connection_id: builtins.str
+    """ID of the PrivateConnection resource."""
+    def __init__(
+        self,
+        *,
+        private_connection_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["private_connection_id", b"private_connection_id"]) -> None: ...
+
+global___DeletePrivateConnectionMetadata = DeletePrivateConnectionMetadata
+
+@typing.final
+class UpsertStaticRouteRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PRIVATE_CONNECTION_ID_FIELD_NUMBER: builtins.int
+    IPV4_STATIC_ROUTES_FIELD_NUMBER: builtins.int
+    private_connection_id: builtins.str
+    """ID of the PrivateConnection resource."""
+    @property
+    def ipv4_static_routes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.cic.v1.private_connection_pb2.PrivateConnection.StaticRoute]:
+        """IPv4 StaticRoute configs to upsert"""
+
+    def __init__(
+        self,
+        *,
+        private_connection_id: builtins.str = ...,
+        ipv4_static_routes: collections.abc.Iterable[yandex.cloud.cic.v1.private_connection_pb2.PrivateConnection.StaticRoute] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["ipv4_static_routes", b"ipv4_static_routes", "private_connection_id", b"private_connection_id"]) -> None: ...
+
+global___UpsertStaticRouteRequest = UpsertStaticRouteRequest
+
+@typing.final
+class UpsertStaticRouteMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PRIVATE_CONNECTION_ID_FIELD_NUMBER: builtins.int
+    private_connection_id: builtins.str
+    """ID of the PrivateConnection resource."""
+    def __init__(
+        self,
+        *,
+        private_connection_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["private_connection_id", b"private_connection_id"]) -> None: ...
+
+global___UpsertStaticRouteMetadata = UpsertStaticRouteMetadata
+
+@typing.final
+class RemoveStaticRouteRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PRIVATE_CONNECTION_ID_FIELD_NUMBER: builtins.int
+    IPV4_STATIC_ROUTES_FIELD_NUMBER: builtins.int
+    private_connection_id: builtins.str
+    """ID of the PrivateConnection resource."""
+    @property
+    def ipv4_static_routes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.cic.v1.private_connection_pb2.PrivateConnection.StaticRoute]:
+        """IPv4 StaticRoute configs to remove"""
+
+    def __init__(
+        self,
+        *,
+        private_connection_id: builtins.str = ...,
+        ipv4_static_routes: collections.abc.Iterable[yandex.cloud.cic.v1.private_connection_pb2.PrivateConnection.StaticRoute] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["ipv4_static_routes", b"ipv4_static_routes", "private_connection_id", b"private_connection_id"]) -> None: ...
+
+global___RemoveStaticRouteRequest = RemoveStaticRouteRequest
+
+@typing.final
+class RemoveStaticRouteMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PRIVATE_CONNECTION_ID_FIELD_NUMBER: builtins.int
+    private_connection_id: builtins.str
+    """ID of the PrivateConnection resource."""
+    def __init__(
+        self,
+        *,
+        private_connection_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["private_connection_id", b"private_connection_id"]) -> None: ...
+
+global___RemoveStaticRouteMetadata = RemoveStaticRouteMetadata
+
+@typing.final
+class ListPrivateConnectionOperationsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PRIVATE_CONNECTION_ID_FIELD_NUMBER: builtins.int
+    PAGE_SIZE_FIELD_NUMBER: builtins.int
+    PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    private_connection_id: builtins.str
+    """ID of the PrivateConnection resource."""
+    page_size: builtins.int
+    """The maximum number of results per page to return. If the number of available
+    results is larger than [page_size],
+    the service returns a [ListPrivateConnectionOperationsResponse.next_page_token]
+    that can be used to get the next page of results in subsequent list requests. Default value: 100.
+    """
+    page_token: builtins.str
+    """Page token. To get the next page of results, set [page_token] to the
+    [ListPrivateConnectionOperationsResponse.next_page_token] returned by a previous list request.
+    """
+    def __init__(
+        self,
+        *,
+        private_connection_id: builtins.str = ...,
+        page_size: builtins.int = ...,
+        page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["page_size", b"page_size", "page_token", b"page_token", "private_connection_id", b"private_connection_id"]) -> None: ...
+
+global___ListPrivateConnectionOperationsRequest = ListPrivateConnectionOperationsRequest
+
+@typing.final
+class ListPrivateConnectionOperationsResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    OPERATIONS_FIELD_NUMBER: builtins.int
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    next_page_token: builtins.str
+    """This token allows you to get the next page of results for list requests. If the number of results
+    is larger than [ListPrivateConnectionOperationsRequest.page_size], use
+    the [next_page_token] as the value
+    for the [ListPrivateConnectionOperationsRequest.page_token] query parameter
+    in the next list request. Subsequent list requests will have their own
+    [next_page_token] to continue paging through the results.
+    """
+    @property
+    def operations(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.operation.operation_pb2.Operation]:
+        """List of PrivateConnection operations."""
+
+    def __init__(
+        self,
+        *,
+        operations: collections.abc.Iterable[yandex.cloud.operation.operation_pb2.Operation] | None = ...,
+        next_page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["next_page_token", b"next_page_token", "operations", b"operations"]) -> None: ...
+
+global___ListPrivateConnectionOperationsResponse = ListPrivateConnectionOperationsResponse

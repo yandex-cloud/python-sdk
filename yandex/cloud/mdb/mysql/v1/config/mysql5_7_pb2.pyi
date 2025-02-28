@@ -111,6 +111,10 @@ class MysqlConfig5_7(google.protobuf.message.Message):
         CACHING_SHA2_PASSWORD: MysqlConfig5_7._AuthPlugin.ValueType  # 2
         SHA256_PASSWORD: MysqlConfig5_7._AuthPlugin.ValueType  # 3
         """Using [SHA-256 Pluggable Authentication](https://dev.mysql.com/doc/refman/5.7/en/sha256-pluggable-authentication.html)."""
+        MYSQL_NO_LOGIN: MysqlConfig5_7._AuthPlugin.ValueType  # 4
+        """Use [MYSQL_NO_LOGIN Pluggable Authentication](https://dev.mysql.com/doc/refman/5.7/en/no-login-pluggable-authentication.html)."""
+        MDB_IAMPROXY_AUTH: MysqlConfig5_7._AuthPlugin.ValueType  # 5
+        """Use [IAM Pluggable Authentication](https://yandex.cloud/en/docs/iam/concepts/authorization/)."""
 
     class AuthPlugin(_AuthPlugin, metaclass=_AuthPluginEnumTypeWrapper): ...
     AUTH_PLUGIN_UNSPECIFIED: MysqlConfig5_7.AuthPlugin.ValueType  # 0
@@ -119,6 +123,10 @@ class MysqlConfig5_7(google.protobuf.message.Message):
     CACHING_SHA2_PASSWORD: MysqlConfig5_7.AuthPlugin.ValueType  # 2
     SHA256_PASSWORD: MysqlConfig5_7.AuthPlugin.ValueType  # 3
     """Using [SHA-256 Pluggable Authentication](https://dev.mysql.com/doc/refman/5.7/en/sha256-pluggable-authentication.html)."""
+    MYSQL_NO_LOGIN: MysqlConfig5_7.AuthPlugin.ValueType  # 4
+    """Use [MYSQL_NO_LOGIN Pluggable Authentication](https://dev.mysql.com/doc/refman/5.7/en/no-login-pluggable-authentication.html)."""
+    MDB_IAMPROXY_AUTH: MysqlConfig5_7.AuthPlugin.ValueType  # 5
+    """Use [IAM Pluggable Authentication](https://yandex.cloud/en/docs/iam/concepts/authorization/)."""
 
     class _TransactionIsolation:
         ValueType = typing.NewType("ValueType", builtins.int)

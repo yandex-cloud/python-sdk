@@ -3,8 +3,8 @@
 import grpc
 import warnings
 
-from yandex.cloud.cic.v1 import trunk_connection_pb2 as yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__pb2
-from yandex.cloud.cic.v1 import trunk_connection_service_pb2 as yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2
+from yandex.cloud.compute.v1 import reserved_instance_pool_pb2 as yandex_dot_cloud_dot_compute_dot_v1_dot_reserved__instance__pool__pb2
+from yandex.cloud.compute.v1 import reserved_instance_pool_service_pb2 as yandex_dot_cloud_dot_compute_dot_v1_dot_reserved__instance__pool__service__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 
 GRPC_GENERATED_VERSION = '1.70.0'
@@ -20,15 +20,15 @@ except ImportError:
 if _version_not_supported:
     raise RuntimeError(
         f'The grpc package installed is at version {GRPC_VERSION},'
-        + f' but the generated code in yandex/cloud/cic/v1/trunk_connection_service_pb2_grpc.py depends on'
+        + f' but the generated code in yandex/cloud/compute/v1/reserved_instance_pool_service_pb2_grpc.py depends on'
         + f' grpcio>={GRPC_GENERATED_VERSION}.'
         + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
         + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
     )
 
 
-class TrunkConnectionServiceStub(object):
-    """A set of methods for managing TrunkConnection resources.
+class ReservedInstancePoolServiceStub(object):
+    """A set of methods for managing reserved instance pool resources.
     """
 
     def __init__(self, channel):
@@ -38,59 +38,54 @@ class TrunkConnectionServiceStub(object):
             channel: A grpc.Channel.
         """
         self.Get = channel.unary_unary(
-                '/yandex.cloud.cic.v1.TrunkConnectionService/Get',
-                request_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.GetTrunkConnectionRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__pb2.TrunkConnection.FromString,
+                '/yandex.cloud.compute.v1.ReservedInstancePoolService/Get',
+                request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_reserved__instance__pool__service__pb2.GetReservedInstancePoolRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_reserved__instance__pool__pb2.ReservedInstancePool.FromString,
                 _registered_method=True)
         self.List = channel.unary_unary(
-                '/yandex.cloud.cic.v1.TrunkConnectionService/List',
-                request_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.ListTrunkConnectionsRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.ListTrunkConnectionsResponse.FromString,
+                '/yandex.cloud.compute.v1.ReservedInstancePoolService/List',
+                request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_reserved__instance__pool__service__pb2.ListReservedInstancePoolsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_reserved__instance__pool__service__pb2.ListReservedInstancePoolsResponse.FromString,
                 _registered_method=True)
         self.Create = channel.unary_unary(
-                '/yandex.cloud.cic.v1.TrunkConnectionService/Create',
-                request_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.CreateTrunkConnectionRequest.SerializeToString,
+                '/yandex.cloud.compute.v1.ReservedInstancePoolService/Create',
+                request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_reserved__instance__pool__service__pb2.CreateReservedInstancePoolRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
         self.Update = channel.unary_unary(
-                '/yandex.cloud.cic.v1.TrunkConnectionService/Update',
-                request_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.UpdateTrunkConnectionRequest.SerializeToString,
+                '/yandex.cloud.compute.v1.ReservedInstancePoolService/Update',
+                request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_reserved__instance__pool__service__pb2.UpdateReservedInstancePoolRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
         self.Delete = channel.unary_unary(
-                '/yandex.cloud.cic.v1.TrunkConnectionService/Delete',
-                request_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.DeleteTrunkConnectionRequest.SerializeToString,
+                '/yandex.cloud.compute.v1.ReservedInstancePoolService/Delete',
+                request_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_reserved__instance__pool__service__pb2.DeleteReservedInstancePoolRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
-        self.ListOperations = channel.unary_unary(
-                '/yandex.cloud.cic.v1.TrunkConnectionService/ListOperations',
-                request_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.ListTrunkConnectionOperationsRequest.SerializeToString,
-                response_deserializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.ListTrunkConnectionOperationsResponse.FromString,
-                _registered_method=True)
 
 
-class TrunkConnectionServiceServicer(object):
-    """A set of methods for managing TrunkConnection resources.
+class ReservedInstancePoolServiceServicer(object):
+    """A set of methods for managing reserved instance pool resources.
     """
 
     def Get(self, request, context):
-        """Returns the specified TrunkConnection resource.
+        """Returns the specified reserved instance pool resource.
 
-        To get the list of available TrunkConnection resources, make a [List] request.
+        To get the list of available reserved instance pool resources, make a [List] request.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Retrieves the list of TrunkConnection resources in the specified folder.
+        """Retrieves the list of reserved instance pool resources in the specified folder.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Creates a TrunkConnection resource in the specified folder using the data specified in the request.
+        """Creates an reserved instance pool in the specified folder.
         Method starts an asynchronous operation that can be cancelled while it is in progress.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -98,71 +93,57 @@ class TrunkConnectionServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Updates a TrunkConnection resource using the data specified in the request.
-        Method starts an asynchronous operation that can be cancelled while it is in progress.
+        """Updates the specified reserved instance pool.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Deletes a TrunkConnection resource.
-        Method starts an asynchronous operation that can be cancelled while it is in progress.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def ListOperations(self, request, context):
-        """Lists operations for the specified TrunkConnection.
+        """Deletes the specified reserved instance pool.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
 
-def add_TrunkConnectionServiceServicer_to_server(servicer, server):
+def add_ReservedInstancePoolServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'Get': grpc.unary_unary_rpc_method_handler(
                     servicer.Get,
-                    request_deserializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.GetTrunkConnectionRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__pb2.TrunkConnection.SerializeToString,
+                    request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_reserved__instance__pool__service__pb2.GetReservedInstancePoolRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_reserved__instance__pool__pb2.ReservedInstancePool.SerializeToString,
             ),
             'List': grpc.unary_unary_rpc_method_handler(
                     servicer.List,
-                    request_deserializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.ListTrunkConnectionsRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.ListTrunkConnectionsResponse.SerializeToString,
+                    request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_reserved__instance__pool__service__pb2.ListReservedInstancePoolsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_compute_dot_v1_dot_reserved__instance__pool__service__pb2.ListReservedInstancePoolsResponse.SerializeToString,
             ),
             'Create': grpc.unary_unary_rpc_method_handler(
                     servicer.Create,
-                    request_deserializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.CreateTrunkConnectionRequest.FromString,
+                    request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_reserved__instance__pool__service__pb2.CreateReservedInstancePoolRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'Update': grpc.unary_unary_rpc_method_handler(
                     servicer.Update,
-                    request_deserializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.UpdateTrunkConnectionRequest.FromString,
+                    request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_reserved__instance__pool__service__pb2.UpdateReservedInstancePoolRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'Delete': grpc.unary_unary_rpc_method_handler(
                     servicer.Delete,
-                    request_deserializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.DeleteTrunkConnectionRequest.FromString,
+                    request_deserializer=yandex_dot_cloud_dot_compute_dot_v1_dot_reserved__instance__pool__service__pb2.DeleteReservedInstancePoolRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
-            ),
-            'ListOperations': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListOperations,
-                    request_deserializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.ListTrunkConnectionOperationsRequest.FromString,
-                    response_serializer=yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.ListTrunkConnectionOperationsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'yandex.cloud.cic.v1.TrunkConnectionService', rpc_method_handlers)
+            'yandex.cloud.compute.v1.ReservedInstancePoolService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('yandex.cloud.cic.v1.TrunkConnectionService', rpc_method_handlers)
+    server.add_registered_method_handlers('yandex.cloud.compute.v1.ReservedInstancePoolService', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
-class TrunkConnectionService(object):
-    """A set of methods for managing TrunkConnection resources.
+class ReservedInstancePoolService(object):
+    """A set of methods for managing reserved instance pool resources.
     """
 
     @staticmethod
@@ -179,9 +160,9 @@ class TrunkConnectionService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/yandex.cloud.cic.v1.TrunkConnectionService/Get',
-            yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.GetTrunkConnectionRequest.SerializeToString,
-            yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__pb2.TrunkConnection.FromString,
+            '/yandex.cloud.compute.v1.ReservedInstancePoolService/Get',
+            yandex_dot_cloud_dot_compute_dot_v1_dot_reserved__instance__pool__service__pb2.GetReservedInstancePoolRequest.SerializeToString,
+            yandex_dot_cloud_dot_compute_dot_v1_dot_reserved__instance__pool__pb2.ReservedInstancePool.FromString,
             options,
             channel_credentials,
             insecure,
@@ -206,9 +187,9 @@ class TrunkConnectionService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/yandex.cloud.cic.v1.TrunkConnectionService/List',
-            yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.ListTrunkConnectionsRequest.SerializeToString,
-            yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.ListTrunkConnectionsResponse.FromString,
+            '/yandex.cloud.compute.v1.ReservedInstancePoolService/List',
+            yandex_dot_cloud_dot_compute_dot_v1_dot_reserved__instance__pool__service__pb2.ListReservedInstancePoolsRequest.SerializeToString,
+            yandex_dot_cloud_dot_compute_dot_v1_dot_reserved__instance__pool__service__pb2.ListReservedInstancePoolsResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -233,8 +214,8 @@ class TrunkConnectionService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/yandex.cloud.cic.v1.TrunkConnectionService/Create',
-            yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.CreateTrunkConnectionRequest.SerializeToString,
+            '/yandex.cloud.compute.v1.ReservedInstancePoolService/Create',
+            yandex_dot_cloud_dot_compute_dot_v1_dot_reserved__instance__pool__service__pb2.CreateReservedInstancePoolRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
@@ -260,8 +241,8 @@ class TrunkConnectionService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/yandex.cloud.cic.v1.TrunkConnectionService/Update',
-            yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.UpdateTrunkConnectionRequest.SerializeToString,
+            '/yandex.cloud.compute.v1.ReservedInstancePoolService/Update',
+            yandex_dot_cloud_dot_compute_dot_v1_dot_reserved__instance__pool__service__pb2.UpdateReservedInstancePoolRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
@@ -287,36 +268,9 @@ class TrunkConnectionService(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/yandex.cloud.cic.v1.TrunkConnectionService/Delete',
-            yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.DeleteTrunkConnectionRequest.SerializeToString,
+            '/yandex.cloud.compute.v1.ReservedInstancePoolService/Delete',
+            yandex_dot_cloud_dot_compute_dot_v1_dot_reserved__instance__pool__service__pb2.DeleteReservedInstancePoolRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def ListOperations(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/yandex.cloud.cic.v1.TrunkConnectionService/ListOperations',
-            yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.ListTrunkConnectionOperationsRequest.SerializeToString,
-            yandex_dot_cloud_dot_cic_dot_v1_dot_trunk__connection__service__pb2.ListTrunkConnectionOperationsResponse.FromString,
             options,
             channel_credentials,
             insecure,

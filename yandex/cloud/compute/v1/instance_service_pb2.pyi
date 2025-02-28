@@ -205,6 +205,7 @@ class CreateInstanceRequest(google.protobuf.message.Message):
     MAINTENANCE_POLICY_FIELD_NUMBER: builtins.int
     MAINTENANCE_GRACE_PERIOD_FIELD_NUMBER: builtins.int
     SERIAL_PORT_SETTINGS_FIELD_NUMBER: builtins.int
+    RESERVED_INSTANCE_POOL_ID_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create an instance in.
     To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
@@ -238,6 +239,11 @@ class CreateInstanceRequest(google.protobuf.message.Message):
     """
     maintenance_policy: yandex.cloud.compute.v1.maintenance_pb2.MaintenancePolicy.ValueType
     """Behaviour on maintenance events"""
+    reserved_instance_pool_id: builtins.str
+    """ID of the reserved instance pool that the instance should belong to.
+    Instance will be created using resources from the reserved instance pool.
+    Reserved instance pool resource configuration must match the resource configuration of the instance.
+    """
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Resource labels as `key:value` pairs."""
@@ -342,9 +348,10 @@ class CreateInstanceRequest(google.protobuf.message.Message):
         maintenance_policy: yandex.cloud.compute.v1.maintenance_pb2.MaintenancePolicy.ValueType = ...,
         maintenance_grace_period: google.protobuf.duration_pb2.Duration | None = ...,
         serial_port_settings: yandex.cloud.compute.v1.instance_pb2.SerialPortSettings | None = ...,
+        reserved_instance_pool_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["boot_disk_spec", b"boot_disk_spec", "gpu_settings", b"gpu_settings", "maintenance_grace_period", b"maintenance_grace_period", "metadata_options", b"metadata_options", "network_settings", b"network_settings", "placement_policy", b"placement_policy", "resources_spec", b"resources_spec", "scheduling_policy", b"scheduling_policy", "serial_port_settings", b"serial_port_settings"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["boot_disk_spec", b"boot_disk_spec", "description", b"description", "filesystem_specs", b"filesystem_specs", "folder_id", b"folder_id", "gpu_settings", b"gpu_settings", "hostname", b"hostname", "labels", b"labels", "local_disk_specs", b"local_disk_specs", "maintenance_grace_period", b"maintenance_grace_period", "maintenance_policy", b"maintenance_policy", "metadata", b"metadata", "metadata_options", b"metadata_options", "name", b"name", "network_interface_specs", b"network_interface_specs", "network_settings", b"network_settings", "placement_policy", b"placement_policy", "platform_id", b"platform_id", "resources_spec", b"resources_spec", "scheduling_policy", b"scheduling_policy", "secondary_disk_specs", b"secondary_disk_specs", "serial_port_settings", b"serial_port_settings", "service_account_id", b"service_account_id", "zone_id", b"zone_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["boot_disk_spec", b"boot_disk_spec", "description", b"description", "filesystem_specs", b"filesystem_specs", "folder_id", b"folder_id", "gpu_settings", b"gpu_settings", "hostname", b"hostname", "labels", b"labels", "local_disk_specs", b"local_disk_specs", "maintenance_grace_period", b"maintenance_grace_period", "maintenance_policy", b"maintenance_policy", "metadata", b"metadata", "metadata_options", b"metadata_options", "name", b"name", "network_interface_specs", b"network_interface_specs", "network_settings", b"network_settings", "placement_policy", b"placement_policy", "platform_id", b"platform_id", "reserved_instance_pool_id", b"reserved_instance_pool_id", "resources_spec", b"resources_spec", "scheduling_policy", b"scheduling_policy", "secondary_disk_specs", b"secondary_disk_specs", "serial_port_settings", b"serial_port_settings", "service_account_id", b"service_account_id", "zone_id", b"zone_id"]) -> None: ...
 
 global___CreateInstanceRequest = CreateInstanceRequest
 
@@ -416,6 +423,7 @@ class UpdateInstanceRequest(google.protobuf.message.Message):
     MAINTENANCE_POLICY_FIELD_NUMBER: builtins.int
     MAINTENANCE_GRACE_PERIOD_FIELD_NUMBER: builtins.int
     SERIAL_PORT_SETTINGS_FIELD_NUMBER: builtins.int
+    RESERVED_INSTANCE_POOL_ID_FIELD_NUMBER: builtins.int
     instance_id: builtins.str
     """ID of the Instance resource to update.
     To get the instance ID, use a [InstanceService.List] request.
@@ -438,6 +446,12 @@ class UpdateInstanceRequest(google.protobuf.message.Message):
     """
     maintenance_policy: yandex.cloud.compute.v1.maintenance_pb2.MaintenancePolicy.ValueType
     """Behaviour on maintenance events"""
+    reserved_instance_pool_id: builtins.str
+    """ID of the reserved instance pool that the instance should belong to.
+    Attaching/detaching running instance will increase/decrease the size of the reserved instance pool.
+    Attaching/detaching stopped instance will leave the size of the reserved instance pool unchanged. Starting such attached instance will use resources from the reserved instance pool.
+    Reserved instance pool resource configuration must match the resource configuration of the instance.
+    """
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which fields of the Instance resource are going to be updated."""
@@ -512,9 +526,10 @@ class UpdateInstanceRequest(google.protobuf.message.Message):
         maintenance_policy: yandex.cloud.compute.v1.maintenance_pb2.MaintenancePolicy.ValueType = ...,
         maintenance_grace_period: google.protobuf.duration_pb2.Duration | None = ...,
         serial_port_settings: yandex.cloud.compute.v1.instance_pb2.SerialPortSettings | None = ...,
+        reserved_instance_pool_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["maintenance_grace_period", b"maintenance_grace_period", "metadata_options", b"metadata_options", "network_settings", b"network_settings", "placement_policy", b"placement_policy", "resources_spec", b"resources_spec", "scheduling_policy", b"scheduling_policy", "serial_port_settings", b"serial_port_settings", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "instance_id", b"instance_id", "labels", b"labels", "maintenance_grace_period", b"maintenance_grace_period", "maintenance_policy", b"maintenance_policy", "metadata", b"metadata", "metadata_options", b"metadata_options", "name", b"name", "network_settings", b"network_settings", "placement_policy", b"placement_policy", "platform_id", b"platform_id", "resources_spec", b"resources_spec", "scheduling_policy", b"scheduling_policy", "serial_port_settings", b"serial_port_settings", "service_account_id", b"service_account_id", "update_mask", b"update_mask"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "instance_id", b"instance_id", "labels", b"labels", "maintenance_grace_period", b"maintenance_grace_period", "maintenance_policy", b"maintenance_policy", "metadata", b"metadata", "metadata_options", b"metadata_options", "name", b"name", "network_settings", b"network_settings", "placement_policy", b"placement_policy", "platform_id", b"platform_id", "reserved_instance_pool_id", b"reserved_instance_pool_id", "resources_spec", b"resources_spec", "scheduling_policy", b"scheduling_policy", "serial_port_settings", b"serial_port_settings", "service_account_id", b"service_account_id", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateInstanceRequest = UpdateInstanceRequest
 

@@ -10,6 +10,7 @@ import grpc.aio
 import typing
 import yandex.cloud.cic.v1.trunk_connection_pb2
 import yandex.cloud.cic.v1.trunk_connection_service_pb2
+import yandex.cloud.operation.operation_pb2
 
 _T = typing.TypeVar("_T")
 
@@ -37,6 +38,36 @@ class TrunkConnectionServiceStub:
     ]
     """Retrieves the list of TrunkConnection resources in the specified folder."""
 
+    Create: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.cic.v1.trunk_connection_service_pb2.CreateTrunkConnectionRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Creates a TrunkConnection resource in the specified folder using the data specified in the request.
+    Method starts an asynchronous operation that can be cancelled while it is in progress.
+    """
+
+    Update: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.cic.v1.trunk_connection_service_pb2.UpdateTrunkConnectionRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates a TrunkConnection resource using the data specified in the request.
+    Method starts an asynchronous operation that can be cancelled while it is in progress.
+    """
+
+    Delete: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.cic.v1.trunk_connection_service_pb2.DeleteTrunkConnectionRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Deletes a TrunkConnection resource.
+    Method starts an asynchronous operation that can be cancelled while it is in progress.
+    """
+
+    ListOperations: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.cic.v1.trunk_connection_service_pb2.ListTrunkConnectionOperationsRequest,
+        yandex.cloud.cic.v1.trunk_connection_service_pb2.ListTrunkConnectionOperationsResponse,
+    ]
+    """Lists operations for the specified TrunkConnection."""
+
 class TrunkConnectionServiceAsyncStub:
     """A set of methods for managing TrunkConnection resources."""
 
@@ -54,6 +85,36 @@ class TrunkConnectionServiceAsyncStub:
         yandex.cloud.cic.v1.trunk_connection_service_pb2.ListTrunkConnectionsResponse,
     ]
     """Retrieves the list of TrunkConnection resources in the specified folder."""
+
+    Create: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.cic.v1.trunk_connection_service_pb2.CreateTrunkConnectionRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Creates a TrunkConnection resource in the specified folder using the data specified in the request.
+    Method starts an asynchronous operation that can be cancelled while it is in progress.
+    """
+
+    Update: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.cic.v1.trunk_connection_service_pb2.UpdateTrunkConnectionRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates a TrunkConnection resource using the data specified in the request.
+    Method starts an asynchronous operation that can be cancelled while it is in progress.
+    """
+
+    Delete: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.cic.v1.trunk_connection_service_pb2.DeleteTrunkConnectionRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Deletes a TrunkConnection resource.
+    Method starts an asynchronous operation that can be cancelled while it is in progress.
+    """
+
+    ListOperations: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.cic.v1.trunk_connection_service_pb2.ListTrunkConnectionOperationsRequest,
+        yandex.cloud.cic.v1.trunk_connection_service_pb2.ListTrunkConnectionOperationsResponse,
+    ]
+    """Lists operations for the specified TrunkConnection."""
 
 class TrunkConnectionServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing TrunkConnection resources."""
@@ -76,5 +137,43 @@ class TrunkConnectionServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.cic.v1.trunk_connection_service_pb2.ListTrunkConnectionsResponse, collections.abc.Awaitable[yandex.cloud.cic.v1.trunk_connection_service_pb2.ListTrunkConnectionsResponse]]:
         """Retrieves the list of TrunkConnection resources in the specified folder."""
+
+    @abc.abstractmethod
+    def Create(
+        self,
+        request: yandex.cloud.cic.v1.trunk_connection_service_pb2.CreateTrunkConnectionRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Creates a TrunkConnection resource in the specified folder using the data specified in the request.
+        Method starts an asynchronous operation that can be cancelled while it is in progress.
+        """
+
+    @abc.abstractmethod
+    def Update(
+        self,
+        request: yandex.cloud.cic.v1.trunk_connection_service_pb2.UpdateTrunkConnectionRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Updates a TrunkConnection resource using the data specified in the request.
+        Method starts an asynchronous operation that can be cancelled while it is in progress.
+        """
+
+    @abc.abstractmethod
+    def Delete(
+        self,
+        request: yandex.cloud.cic.v1.trunk_connection_service_pb2.DeleteTrunkConnectionRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Deletes a TrunkConnection resource.
+        Method starts an asynchronous operation that can be cancelled while it is in progress.
+        """
+
+    @abc.abstractmethod
+    def ListOperations(
+        self,
+        request: yandex.cloud.cic.v1.trunk_connection_service_pb2.ListTrunkConnectionOperationsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.cic.v1.trunk_connection_service_pb2.ListTrunkConnectionOperationsResponse, collections.abc.Awaitable[yandex.cloud.cic.v1.trunk_connection_service_pb2.ListTrunkConnectionOperationsResponse]]:
+        """Lists operations for the specified TrunkConnection."""
 
 def add_TrunkConnectionServiceServicer_to_server(servicer: TrunkConnectionServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

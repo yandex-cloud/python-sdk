@@ -23,11 +23,16 @@ _sym_db = _symbol_database.Default()
 
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
+from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
+from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
+from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
+from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
+from yandex.cloud.cic.v1 import peering_pb2 as yandex_dot_cloud_dot_cic_dot_v1_dot_peering__pb2
 from yandex.cloud.cic.v1 import private_connection_pb2 as yandex_dot_cloud_dot_cic_dot_v1_dot_private__connection__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n4yandex/cloud/cic/v1/private_connection_service.proto\x12\x13yandex.cloud.cic.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1dyandex/cloud/validation.proto\x1a,yandex/cloud/cic/v1/private_connection.proto\"J\n\x1bGetPrivateConnectionRequest\x12+\n\x15private_connection_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x9a\x01\n\x1dListPrivateConnectionsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"~\n\x1eListPrivateConnectionsResponse\x12\x43\n\x13private_connections\x18\x01 \x03(\x0b\x32&.yandex.cloud.cic.v1.PrivateConnection\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xce\x02\n\x18PrivateConnectionService\x12\x9b\x01\n\x03Get\x12\x30.yandex.cloud.cic.v1.GetPrivateConnectionRequest\x1a&.yandex.cloud.cic.v1.PrivateConnection\":\x82\xd3\xe4\x93\x02\x34\x12\x32/cic/v1/privateConnections/{private_connection_id}\x12\x93\x01\n\x04List\x12\x32.yandex.cloud.cic.v1.ListPrivateConnectionsRequest\x1a\x33.yandex.cloud.cic.v1.ListPrivateConnectionsResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/cic/v1/privateConnectionsBV\n\x17yandex.cloud.api.cic.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/cic/v1;cicb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n4yandex/cloud/cic/v1/private_connection_service.proto\x12\x13yandex.cloud.cic.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a!yandex/cloud/cic/v1/peering.proto\x1a,yandex/cloud/cic/v1/private_connection.proto\"J\n\x1bGetPrivateConnectionRequest\x12+\n\x15private_connection_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x9a\x01\n\x1dListPrivateConnectionsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"~\n\x1eListPrivateConnectionsResponse\x12\x43\n\x13private_connections\x18\x01 \x03(\x0b\x32&.yandex.cloud.cic.v1.PrivateConnection\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x8e\x04\n\x1e\x43reatePrivateConnectionRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x11\n\tfolder_id\x18\x04 \x01(\t\x12\x11\n\tregion_id\x18\x05 \x01(\t\x12\x1b\n\x13trunk_connection_id\x18\x06 \x01(\t\x12,\n\x07vlan_id\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x32\n\x0cipv4_peering\x18\n \x01(\x0b\x32\x1c.yandex.cloud.cic.v1.Peering\x12N\n\x12ipv4_static_routes\x18\x13 \x03(\x0b\x32\x32.yandex.cloud.cic.v1.PrivateConnection.StaticRoute\x12\x8c\x01\n\x06labels\x18\x1a \x03(\x0b\x32?.yandex.cloud.cic.v1.CreatePrivateConnectionRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x03\x10\x04J\x04\x08\x08\x10\nJ\x04\x08\x0b\x10\x13J\x04\x08\x14\x10\x1a\"@\n\x1f\x43reatePrivateConnectionMetadata\x12\x1d\n\x15private_connection_id\x18\x01 \x01(\t\"\xd3\x04\n\x1eUpdatePrivateConnectionRequest\x12+\n\x15private_connection_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x11\n\tregion_id\x18\x07 \x01(\t\x12\x1b\n\x13trunk_connection_id\x18\x08 \x01(\t\x12,\n\x07vlan_id\x18\t \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12\x32\n\x0cipv4_peering\x18\n \x01(\x0b\x32\x1c.yandex.cloud.cic.v1.Peering\x12N\n\x12ipv4_static_routes\x18\x13 \x03(\x0b\x32\x32.yandex.cloud.cic.v1.PrivateConnection.StaticRoute\x12\x8c\x01\n\x06labels\x18\x1a \x03(\x0b\x32?.yandex.cloud.cic.v1.UpdatePrivateConnectionRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x05\x10\x07J\x04\x08\x0b\x10\x13J\x04\x08\x14\x10\x1a\"@\n\x1fUpdatePrivateConnectionMetadata\x12\x1d\n\x15private_connection_id\x18\x01 \x01(\t\"M\n\x1e\x44\x65letePrivateConnectionRequest\x12+\n\x15private_connection_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"@\n\x1f\x44\x65letePrivateConnectionMetadata\x12\x1d\n\x15private_connection_id\x18\x01 \x01(\t\"\x9d\x01\n\x18UpsertStaticRouteRequest\x12+\n\x15private_connection_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12N\n\x12ipv4_static_routes\x18\x02 \x03(\x0b\x32\x32.yandex.cloud.cic.v1.PrivateConnection.StaticRouteJ\x04\x08\x03\x10\x04\":\n\x19UpsertStaticRouteMetadata\x12\x1d\n\x15private_connection_id\x18\x01 \x01(\t\"\x9d\x01\n\x18RemoveStaticRouteRequest\x12+\n\x15private_connection_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12N\n\x12ipv4_static_routes\x18\x02 \x03(\x0b\x32\x32.yandex.cloud.cic.v1.PrivateConnection.StaticRouteJ\x04\x08\x03\x10\x04\":\n\x19RemoveStaticRouteMetadata\x12\x1d\n\x15private_connection_id\x18\x01 \x01(\t\"\x93\x01\n&ListPrivateConnectionOperationsRequest\x12+\n\x15private_connection_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"y\n\'ListPrivateConnectionOperationsResponse\x12\x35\n\noperations\x18\x01 \x03(\x0b\x32!.yandex.cloud.operation.Operation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t2\xfc\x0c\n\x18PrivateConnectionService\x12\x9b\x01\n\x03Get\x12\x30.yandex.cloud.cic.v1.GetPrivateConnectionRequest\x1a&.yandex.cloud.cic.v1.PrivateConnection\":\x82\xd3\xe4\x93\x02\x34\x12\x32/cic/v1/privateConnections/{private_connection_id}\x12\x93\x01\n\x04List\x12\x32.yandex.cloud.cic.v1.ListPrivateConnectionsRequest\x1a\x33.yandex.cloud.cic.v1.ListPrivateConnectionsResponse\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/cic/v1/privateConnections\x12\xbf\x01\n\x06\x43reate\x12\x33.yandex.cloud.cic.v1.CreatePrivateConnectionRequest\x1a!.yandex.cloud.operation.Operation\"]\xb2\xd2*4\n\x1f\x43reatePrivateConnectionMetadata\x12\x11PrivateConnection\x82\xd3\xe4\x93\x02\x1f\"\x1a/cic/v1/privateConnections:\x01*\x12\xd7\x01\n\x06Update\x12\x33.yandex.cloud.cic.v1.UpdatePrivateConnectionRequest\x1a!.yandex.cloud.operation.Operation\"u\xb2\xd2*4\n\x1fUpdatePrivateConnectionMetadata\x12\x11PrivateConnection\x82\xd3\xe4\x93\x02\x37\x32\x32/cic/v1/privateConnections/{private_connection_id}:\x01*\x12\xd8\x01\n\x06\x44\x65lete\x12\x33.yandex.cloud.cic.v1.DeletePrivateConnectionRequest\x1a!.yandex.cloud.operation.Operation\"v\xb2\xd2*8\n\x1f\x44\x65letePrivateConnectionMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x34*2/cic/v1/privateConnections/{private_connection_id}\x12\xee\x01\n\x11UpsertStaticRoute\x12-.yandex.cloud.cic.v1.UpsertStaticRouteRequest\x1a!.yandex.cloud.operation.Operation\"\x86\x01\xb2\xd2*2\n\x19UpsertStaticRouteMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02J\"E/cic/v1/privateConnections/{private_connection_id}:upsertStaticRoutes:\x01*\x12\xee\x01\n\x11RemoveStaticRoute\x12-.yandex.cloud.cic.v1.RemoveStaticRouteRequest\x1a!.yandex.cloud.operation.Operation\"\x86\x01\xb2\xd2*2\n\x19RemoveStaticRouteMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02J\"E/cic/v1/privateConnections/{private_connection_id}:removeStaticRoutes:\x01*\x12\xd2\x01\n\x0eListOperations\x12;.yandex.cloud.cic.v1.ListPrivateConnectionOperationsRequest\x1a<.yandex.cloud.cic.v1.ListPrivateConnectionOperationsResponse\"E\x82\xd3\xe4\x93\x02?\x12=/cic/v1/privateConnections/{private_connection_id}/operationsBV\n\x17yandex.cloud.api.cic.v1Z;github.com/yandex-cloud/go-genproto/yandex/cloud/cic/v1;cicb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -45,16 +50,78 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LISTPRIVATECONNECTIONSREQUEST'].fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
   _globals['_LISTPRIVATECONNECTIONSREQUEST'].fields_by_name['filter']._loaded_options = None
   _globals['_LISTPRIVATECONNECTIONSREQUEST'].fields_by_name['filter']._serialized_options = b'\212\3101\006<=1000'
+  _globals['_CREATEPRIVATECONNECTIONREQUEST_LABELSENTRY']._loaded_options = None
+  _globals['_CREATEPRIVATECONNECTIONREQUEST_LABELSENTRY']._serialized_options = b'8\001'
+  _globals['_CREATEPRIVATECONNECTIONREQUEST'].fields_by_name['labels']._loaded_options = None
+  _globals['_CREATEPRIVATECONNECTIONREQUEST'].fields_by_name['labels']._serialized_options = b'\362\3071\013[-_0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\0041-63'
+  _globals['_UPDATEPRIVATECONNECTIONREQUEST_LABELSENTRY']._loaded_options = None
+  _globals['_UPDATEPRIVATECONNECTIONREQUEST_LABELSENTRY']._serialized_options = b'8\001'
+  _globals['_UPDATEPRIVATECONNECTIONREQUEST'].fields_by_name['private_connection_id']._loaded_options = None
+  _globals['_UPDATEPRIVATECONNECTIONREQUEST'].fields_by_name['private_connection_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _globals['_UPDATEPRIVATECONNECTIONREQUEST'].fields_by_name['labels']._loaded_options = None
+  _globals['_UPDATEPRIVATECONNECTIONREQUEST'].fields_by_name['labels']._serialized_options = b'\362\3071\013[-_0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\0041-63'
+  _globals['_DELETEPRIVATECONNECTIONREQUEST'].fields_by_name['private_connection_id']._loaded_options = None
+  _globals['_DELETEPRIVATECONNECTIONREQUEST'].fields_by_name['private_connection_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _globals['_UPSERTSTATICROUTEREQUEST'].fields_by_name['private_connection_id']._loaded_options = None
+  _globals['_UPSERTSTATICROUTEREQUEST'].fields_by_name['private_connection_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _globals['_REMOVESTATICROUTEREQUEST'].fields_by_name['private_connection_id']._loaded_options = None
+  _globals['_REMOVESTATICROUTEREQUEST'].fields_by_name['private_connection_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _globals['_LISTPRIVATECONNECTIONOPERATIONSREQUEST'].fields_by_name['private_connection_id']._loaded_options = None
+  _globals['_LISTPRIVATECONNECTIONOPERATIONSREQUEST'].fields_by_name['private_connection_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _globals['_LISTPRIVATECONNECTIONOPERATIONSREQUEST'].fields_by_name['page_size']._loaded_options = None
+  _globals['_LISTPRIVATECONNECTIONOPERATIONSREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\006<=1000'
+  _globals['_LISTPRIVATECONNECTIONOPERATIONSREQUEST'].fields_by_name['page_token']._loaded_options = None
+  _globals['_LISTPRIVATECONNECTIONOPERATIONSREQUEST'].fields_by_name['page_token']._serialized_options = b'\212\3101\005<=100'
   _globals['_PRIVATECONNECTIONSERVICE'].methods_by_name['Get']._loaded_options = None
   _globals['_PRIVATECONNECTIONSERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\0024\0222/cic/v1/privateConnections/{private_connection_id}'
   _globals['_PRIVATECONNECTIONSERVICE'].methods_by_name['List']._loaded_options = None
   _globals['_PRIVATECONNECTIONSERVICE'].methods_by_name['List']._serialized_options = b'\202\323\344\223\002\034\022\032/cic/v1/privateConnections'
-  _globals['_GETPRIVATECONNECTIONREQUEST']._serialized_start=184
-  _globals['_GETPRIVATECONNECTIONREQUEST']._serialized_end=258
-  _globals['_LISTPRIVATECONNECTIONSREQUEST']._serialized_start=261
-  _globals['_LISTPRIVATECONNECTIONSREQUEST']._serialized_end=415
-  _globals['_LISTPRIVATECONNECTIONSRESPONSE']._serialized_start=417
-  _globals['_LISTPRIVATECONNECTIONSRESPONSE']._serialized_end=543
-  _globals['_PRIVATECONNECTIONSERVICE']._serialized_start=546
-  _globals['_PRIVATECONNECTIONSERVICE']._serialized_end=880
+  _globals['_PRIVATECONNECTIONSERVICE'].methods_by_name['Create']._loaded_options = None
+  _globals['_PRIVATECONNECTIONSERVICE'].methods_by_name['Create']._serialized_options = b'\262\322*4\n\037CreatePrivateConnectionMetadata\022\021PrivateConnection\202\323\344\223\002\037\"\032/cic/v1/privateConnections:\001*'
+  _globals['_PRIVATECONNECTIONSERVICE'].methods_by_name['Update']._loaded_options = None
+  _globals['_PRIVATECONNECTIONSERVICE'].methods_by_name['Update']._serialized_options = b'\262\322*4\n\037UpdatePrivateConnectionMetadata\022\021PrivateConnection\202\323\344\223\002722/cic/v1/privateConnections/{private_connection_id}:\001*'
+  _globals['_PRIVATECONNECTIONSERVICE'].methods_by_name['Delete']._loaded_options = None
+  _globals['_PRIVATECONNECTIONSERVICE'].methods_by_name['Delete']._serialized_options = b'\262\322*8\n\037DeletePrivateConnectionMetadata\022\025google.protobuf.Empty\202\323\344\223\0024*2/cic/v1/privateConnections/{private_connection_id}'
+  _globals['_PRIVATECONNECTIONSERVICE'].methods_by_name['UpsertStaticRoute']._loaded_options = None
+  _globals['_PRIVATECONNECTIONSERVICE'].methods_by_name['UpsertStaticRoute']._serialized_options = b'\262\322*2\n\031UpsertStaticRouteMetadata\022\025google.protobuf.Empty\202\323\344\223\002J\"E/cic/v1/privateConnections/{private_connection_id}:upsertStaticRoutes:\001*'
+  _globals['_PRIVATECONNECTIONSERVICE'].methods_by_name['RemoveStaticRoute']._loaded_options = None
+  _globals['_PRIVATECONNECTIONSERVICE'].methods_by_name['RemoveStaticRoute']._serialized_options = b'\262\322*2\n\031RemoveStaticRouteMetadata\022\025google.protobuf.Empty\202\323\344\223\002J\"E/cic/v1/privateConnections/{private_connection_id}:removeStaticRoutes:\001*'
+  _globals['_PRIVATECONNECTIONSERVICE'].methods_by_name['ListOperations']._loaded_options = None
+  _globals['_PRIVATECONNECTIONSERVICE'].methods_by_name['ListOperations']._serialized_options = b'\202\323\344\223\002?\022=/cic/v1/privateConnections/{private_connection_id}/operations'
+  _globals['_GETPRIVATECONNECTIONREQUEST']._serialized_start=359
+  _globals['_GETPRIVATECONNECTIONREQUEST']._serialized_end=433
+  _globals['_LISTPRIVATECONNECTIONSREQUEST']._serialized_start=436
+  _globals['_LISTPRIVATECONNECTIONSREQUEST']._serialized_end=590
+  _globals['_LISTPRIVATECONNECTIONSRESPONSE']._serialized_start=592
+  _globals['_LISTPRIVATECONNECTIONSRESPONSE']._serialized_end=718
+  _globals['_CREATEPRIVATECONNECTIONREQUEST']._serialized_start=721
+  _globals['_CREATEPRIVATECONNECTIONREQUEST']._serialized_end=1247
+  _globals['_CREATEPRIVATECONNECTIONREQUEST_LABELSENTRY']._serialized_start=1178
+  _globals['_CREATEPRIVATECONNECTIONREQUEST_LABELSENTRY']._serialized_end=1223
+  _globals['_CREATEPRIVATECONNECTIONMETADATA']._serialized_start=1249
+  _globals['_CREATEPRIVATECONNECTIONMETADATA']._serialized_end=1313
+  _globals['_UPDATEPRIVATECONNECTIONREQUEST']._serialized_start=1316
+  _globals['_UPDATEPRIVATECONNECTIONREQUEST']._serialized_end=1911
+  _globals['_UPDATEPRIVATECONNECTIONREQUEST_LABELSENTRY']._serialized_start=1178
+  _globals['_UPDATEPRIVATECONNECTIONREQUEST_LABELSENTRY']._serialized_end=1223
+  _globals['_UPDATEPRIVATECONNECTIONMETADATA']._serialized_start=1913
+  _globals['_UPDATEPRIVATECONNECTIONMETADATA']._serialized_end=1977
+  _globals['_DELETEPRIVATECONNECTIONREQUEST']._serialized_start=1979
+  _globals['_DELETEPRIVATECONNECTIONREQUEST']._serialized_end=2056
+  _globals['_DELETEPRIVATECONNECTIONMETADATA']._serialized_start=2058
+  _globals['_DELETEPRIVATECONNECTIONMETADATA']._serialized_end=2122
+  _globals['_UPSERTSTATICROUTEREQUEST']._serialized_start=2125
+  _globals['_UPSERTSTATICROUTEREQUEST']._serialized_end=2282
+  _globals['_UPSERTSTATICROUTEMETADATA']._serialized_start=2284
+  _globals['_UPSERTSTATICROUTEMETADATA']._serialized_end=2342
+  _globals['_REMOVESTATICROUTEREQUEST']._serialized_start=2345
+  _globals['_REMOVESTATICROUTEREQUEST']._serialized_end=2502
+  _globals['_REMOVESTATICROUTEMETADATA']._serialized_start=2504
+  _globals['_REMOVESTATICROUTEMETADATA']._serialized_end=2562
+  _globals['_LISTPRIVATECONNECTIONOPERATIONSREQUEST']._serialized_start=2565
+  _globals['_LISTPRIVATECONNECTIONOPERATIONSREQUEST']._serialized_end=2712
+  _globals['_LISTPRIVATECONNECTIONOPERATIONSRESPONSE']._serialized_start=2714
+  _globals['_LISTPRIVATECONNECTIONOPERATIONSRESPONSE']._serialized_end=2835
+  _globals['_PRIVATECONNECTIONSERVICE']._serialized_start=2838
+  _globals['_PRIVATECONNECTIONSERVICE']._serialized_end=4498
 # @@protoc_insertion_point(module_scope)

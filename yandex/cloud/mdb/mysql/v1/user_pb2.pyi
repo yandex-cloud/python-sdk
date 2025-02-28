@@ -90,6 +90,10 @@ class _AuthPluginEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._Enu
     """Use [Caching SHA-2 Pluggable Authentication](https://dev.mysql.com/doc/refman/8.0/en/caching-sha2-pluggable-authentication.html)."""
     SHA256_PASSWORD: _AuthPlugin.ValueType  # 3
     """Use [SHA-256 Pluggable Authentication](https://dev.mysql.com/doc/refman/8.0/en/sha256-pluggable-authentication.html)."""
+    MYSQL_NO_LOGIN: _AuthPlugin.ValueType  # 4
+    """Use [MYSQL_NO_LOGIN Pluggable Authentication](https://dev.mysql.com/doc/refman/8.0/en/no-login-pluggable-authentication.html)."""
+    MDB_IAMPROXY_AUTH: _AuthPlugin.ValueType  # 5
+    """Use [IAM Pluggable Authentication](https://yandex.cloud/en/docs/iam/concepts/authorization/)."""
 
 class AuthPlugin(_AuthPlugin, metaclass=_AuthPluginEnumTypeWrapper): ...
 
@@ -100,6 +104,10 @@ CACHING_SHA2_PASSWORD: AuthPlugin.ValueType  # 2
 """Use [Caching SHA-2 Pluggable Authentication](https://dev.mysql.com/doc/refman/8.0/en/caching-sha2-pluggable-authentication.html)."""
 SHA256_PASSWORD: AuthPlugin.ValueType  # 3
 """Use [SHA-256 Pluggable Authentication](https://dev.mysql.com/doc/refman/8.0/en/sha256-pluggable-authentication.html)."""
+MYSQL_NO_LOGIN: AuthPlugin.ValueType  # 4
+"""Use [MYSQL_NO_LOGIN Pluggable Authentication](https://dev.mysql.com/doc/refman/8.0/en/no-login-pluggable-authentication.html)."""
+MDB_IAMPROXY_AUTH: AuthPlugin.ValueType  # 5
+"""Use [IAM Pluggable Authentication](https://yandex.cloud/en/docs/iam/concepts/authorization/)."""
 global___AuthPlugin = AuthPlugin
 
 @typing.final

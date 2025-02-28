@@ -92,6 +92,10 @@ class MysqlConfig8_0(google.protobuf.message.Message):
         """Using [Caching SHA-2 Pluggable Authentication](https://dev.mysql.com/doc/refman/8.0/en/caching-sha2-pluggable-authentication.html)."""
         SHA256_PASSWORD: MysqlConfig8_0._AuthPlugin.ValueType  # 3
         """Using [SHA-256 Pluggable Authentication](https://dev.mysql.com/doc/refman/8.0/en/sha256-pluggable-authentication.html)."""
+        MYSQL_NO_LOGIN: MysqlConfig8_0._AuthPlugin.ValueType  # 4
+        """Use [MYSQL_NO_LOGIN Pluggable Authentication](https://dev.mysql.com/doc/refman/8.0/en/no-login-pluggable-authentication.html)."""
+        MDB_IAMPROXY_AUTH: MysqlConfig8_0._AuthPlugin.ValueType  # 5
+        """Use [IAM Pluggable Authentication](https://yandex.cloud/en/docs/iam/concepts/authorization/)."""
 
     class AuthPlugin(_AuthPlugin, metaclass=_AuthPluginEnumTypeWrapper): ...
     AUTH_PLUGIN_UNSPECIFIED: MysqlConfig8_0.AuthPlugin.ValueType  # 0
@@ -101,6 +105,10 @@ class MysqlConfig8_0(google.protobuf.message.Message):
     """Using [Caching SHA-2 Pluggable Authentication](https://dev.mysql.com/doc/refman/8.0/en/caching-sha2-pluggable-authentication.html)."""
     SHA256_PASSWORD: MysqlConfig8_0.AuthPlugin.ValueType  # 3
     """Using [SHA-256 Pluggable Authentication](https://dev.mysql.com/doc/refman/8.0/en/sha256-pluggable-authentication.html)."""
+    MYSQL_NO_LOGIN: MysqlConfig8_0.AuthPlugin.ValueType  # 4
+    """Use [MYSQL_NO_LOGIN Pluggable Authentication](https://dev.mysql.com/doc/refman/8.0/en/no-login-pluggable-authentication.html)."""
+    MDB_IAMPROXY_AUTH: MysqlConfig8_0.AuthPlugin.ValueType  # 5
+    """Use [IAM Pluggable Authentication](https://yandex.cloud/en/docs/iam/concepts/authorization/)."""
 
     class _TransactionIsolation:
         ValueType = typing.NewType("ValueType", builtins.int)

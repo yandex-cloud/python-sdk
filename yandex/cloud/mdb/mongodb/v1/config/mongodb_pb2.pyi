@@ -343,11 +343,11 @@ class MongodConfig(google.protobuf.message.Message):
         KMIP_FIELD_NUMBER: builtins.int
         @property
         def enable_encryption(self) -> google.protobuf.wrappers_pb2.BoolValue:
-            """If encryption at rest should be enabled or not"""
+            """If encryption at rest should be enabled or not, MongoDB Enterprise only"""
 
         @property
         def kmip(self) -> global___MongodConfig.Security.KMIP:
-            """`kmip` section of mongod security config"""
+            """`kmip` section of mongod security config, MongoDB Enterprise only"""
 
         def __init__(
             self,
@@ -365,10 +365,12 @@ class MongodConfig(google.protobuf.message.Message):
         FILTER_FIELD_NUMBER: builtins.int
         RUNTIME_CONFIGURATION_FIELD_NUMBER: builtins.int
         filter: builtins.str
-        """Audit filter"""
+        """Audit filter, should be valid JSON object string"""
         @property
         def runtime_configuration(self) -> google.protobuf.wrappers_pb2.BoolValue:
-            """Allows runtime configuration of audit filter and auditAuthorizationSuccess"""
+            """Allows runtime configuration of audit filter and auditAuthorizationSuccess
+            !! Available for MongoDB Enterprise only !!
+            """
 
         def __init__(
             self,
@@ -388,7 +390,9 @@ class MongodConfig(google.protobuf.message.Message):
         MIN_SNAPSHOT_HISTORY_WINDOW_IN_SECONDS_FIELD_NUMBER: builtins.int
         @property
         def audit_authorization_success(self) -> google.protobuf.wrappers_pb2.BoolValue:
-            """Enables the auditing of authorization successes"""
+            """Enables the auditing of authorization successes
+            https://www.mongodb.com/docs/manual/reference/parameters/#mongodb-parameter-param.auditAuthorizationSuccess
+            """
 
         @property
         def enable_flow_control(self) -> google.protobuf.wrappers_pb2.BoolValue:
@@ -487,18 +491,41 @@ class MongoCfgConfig(google.protobuf.message.Message):
                 def HasField(self, field_name: typing.Literal["cache_size_gb", b"cache_size_gb"]) -> builtins.bool: ...
                 def ClearField(self, field_name: typing.Literal["cache_size_gb", b"cache_size_gb"]) -> None: ...
 
+            @typing.final
+            class IndexConfig(google.protobuf.message.Message):
+                DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+                PREFIX_COMPRESSION_FIELD_NUMBER: builtins.int
+                @property
+                def prefix_compression(self) -> google.protobuf.wrappers_pb2.BoolValue:
+                    """Enables or disables [prefix compression](https://www.mongodb.com/docs/manual/reference/glossary/#std-term-prefix-compression)"""
+
+                def __init__(
+                    self,
+                    *,
+                    prefix_compression: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+                ) -> None: ...
+                def HasField(self, field_name: typing.Literal["prefix_compression", b"prefix_compression"]) -> builtins.bool: ...
+                def ClearField(self, field_name: typing.Literal["prefix_compression", b"prefix_compression"]) -> None: ...
+
             ENGINE_CONFIG_FIELD_NUMBER: builtins.int
+            INDEX_CONFIG_FIELD_NUMBER: builtins.int
             @property
             def engine_config(self) -> global___MongoCfgConfig.Storage.WiredTiger.EngineConfig:
                 """Engine configuration for WiredTiger."""
+
+            @property
+            def index_config(self) -> global___MongoCfgConfig.Storage.WiredTiger.IndexConfig:
+                """Index configuration for WiredTiger."""
 
             def __init__(
                 self,
                 *,
                 engine_config: global___MongoCfgConfig.Storage.WiredTiger.EngineConfig | None = ...,
+                index_config: global___MongoCfgConfig.Storage.WiredTiger.IndexConfig | None = ...,
             ) -> None: ...
-            def HasField(self, field_name: typing.Literal["engine_config", b"engine_config"]) -> builtins.bool: ...
-            def ClearField(self, field_name: typing.Literal["engine_config", b"engine_config"]) -> None: ...
+            def HasField(self, field_name: typing.Literal["engine_config", b"engine_config", "index_config", b"index_config"]) -> builtins.bool: ...
+            def ClearField(self, field_name: typing.Literal["engine_config", b"engine_config", "index_config", b"index_config"]) -> None: ...
 
         WIRED_TIGER_FIELD_NUMBER: builtins.int
         @property
@@ -564,22 +591,120 @@ class MongoCfgConfig(google.protobuf.message.Message):
     class Network(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+        @typing.final
+        class Compression(google.protobuf.message.Message):
+            DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+            class _Compressor:
+                ValueType = typing.NewType("ValueType", builtins.int)
+                V: typing_extensions.TypeAlias = ValueType
+
+            class _CompressorEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[MongoCfgConfig.Network.Compression._Compressor.ValueType], builtins.type):
+                DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+                COMPRESSOR_UNSPECIFIED: MongoCfgConfig.Network.Compression._Compressor.ValueType  # 0
+                SNAPPY: MongoCfgConfig.Network.Compression._Compressor.ValueType  # 1
+                """The [Snappy](https://docs.mongodb.com/v4.2/reference/glossary/#term-snappy) compression."""
+                ZLIB: MongoCfgConfig.Network.Compression._Compressor.ValueType  # 2
+                """The [zlib](https://docs.mongodb.com/v4.2/reference/glossary/#term-zlib) compression."""
+                ZSTD: MongoCfgConfig.Network.Compression._Compressor.ValueType  # 3
+                """The [zstd](https://docs.mongodb.com/v4.2/reference/glossary/#term-zstd) compression."""
+                DISABLED: MongoCfgConfig.Network.Compression._Compressor.ValueType  # 4
+                """No compression"""
+
+            class Compressor(_Compressor, metaclass=_CompressorEnumTypeWrapper): ...
+            COMPRESSOR_UNSPECIFIED: MongoCfgConfig.Network.Compression.Compressor.ValueType  # 0
+            SNAPPY: MongoCfgConfig.Network.Compression.Compressor.ValueType  # 1
+            """The [Snappy](https://docs.mongodb.com/v4.2/reference/glossary/#term-snappy) compression."""
+            ZLIB: MongoCfgConfig.Network.Compression.Compressor.ValueType  # 2
+            """The [zlib](https://docs.mongodb.com/v4.2/reference/glossary/#term-zlib) compression."""
+            ZSTD: MongoCfgConfig.Network.Compression.Compressor.ValueType  # 3
+            """The [zstd](https://docs.mongodb.com/v4.2/reference/glossary/#term-zstd) compression."""
+            DISABLED: MongoCfgConfig.Network.Compression.Compressor.ValueType  # 4
+            """No compression"""
+
+            COMPRESSORS_FIELD_NUMBER: builtins.int
+            @property
+            def compressors(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[global___MongoCfgConfig.Network.Compression.Compressor.ValueType]:
+                """Specifies the default compressor(s) to use for communication between this mongod or mongos instance and:
+                - other members of the deployment if the instance is part of a replica set or a sharded cluster
+                - mongosh
+                - drivers that support the OP_COMPRESSED message format.
+                MongoDB supports the following compressors:
+                """
+
+            def __init__(
+                self,
+                *,
+                compressors: collections.abc.Iterable[global___MongoCfgConfig.Network.Compression.Compressor.ValueType] | None = ...,
+            ) -> None: ...
+            def ClearField(self, field_name: typing.Literal["compressors", b"compressors"]) -> None: ...
+
         MAX_INCOMING_CONNECTIONS_FIELD_NUMBER: builtins.int
+        COMPRESSION_FIELD_NUMBER: builtins.int
         @property
         def max_incoming_connections(self) -> google.protobuf.wrappers_pb2.Int64Value:
             """The maximum number of simultaneous connections that mongocfg will accept."""
+
+        @property
+        def compression(self) -> global___MongoCfgConfig.Network.Compression:
+            """Compression settings"""
 
         def __init__(
             self,
             *,
             max_incoming_connections: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+            compression: global___MongoCfgConfig.Network.Compression | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["max_incoming_connections", b"max_incoming_connections"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["max_incoming_connections", b"max_incoming_connections"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["compression", b"compression", "max_incoming_connections", b"max_incoming_connections"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["compression", b"compression", "max_incoming_connections", b"max_incoming_connections"]) -> None: ...
+
+    @typing.final
+    class SetParameter(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        ENABLE_FLOW_CONTROL_FIELD_NUMBER: builtins.int
+        AUDIT_AUTHORIZATION_SUCCESS_FIELD_NUMBER: builtins.int
+        @property
+        def enable_flow_control(self) -> google.protobuf.wrappers_pb2.BoolValue:
+            """Enables or disables the mechanism that controls the rate at which the primary applies its writes with the
+            goal of keeping the secondary members [majority committed](https://www.mongodb.com/docs/v4.2/reference/command/replSetGetStatus/#replSetGetStatus.optimes.lastCommittedOpTime)
+            lag under a configurable maximum value.
+            """
+
+        @property
+        def audit_authorization_success(self) -> google.protobuf.wrappers_pb2.BoolValue:
+            """Enables the auditing of authorization successes
+            https://www.mongodb.com/docs/manual/reference/parameters/#mongodb-parameter-param.auditAuthorizationSuccess
+            """
+
+        def __init__(
+            self,
+            *,
+            enable_flow_control: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+            audit_authorization_success: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["audit_authorization_success", b"audit_authorization_success", "enable_flow_control", b"enable_flow_control"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["audit_authorization_success", b"audit_authorization_success", "enable_flow_control", b"enable_flow_control"]) -> None: ...
+
+    @typing.final
+    class AuditLog(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        FILTER_FIELD_NUMBER: builtins.int
+        filter: builtins.str
+        """Audit filter, should be valid JSON object string"""
+        def __init__(
+            self,
+            *,
+            filter: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["filter", b"filter"]) -> None: ...
 
     STORAGE_FIELD_NUMBER: builtins.int
     OPERATION_PROFILING_FIELD_NUMBER: builtins.int
     NET_FIELD_NUMBER: builtins.int
+    SET_PARAMETER_FIELD_NUMBER: builtins.int
+    AUDIT_LOG_FIELD_NUMBER: builtins.int
     @property
     def storage(self) -> global___MongoCfgConfig.Storage:
         """`storage` section of mongocfg configuration."""
@@ -592,15 +717,25 @@ class MongoCfgConfig(google.protobuf.message.Message):
     def net(self) -> global___MongoCfgConfig.Network:
         """`net` section of mongocfg configuration."""
 
+    @property
+    def set_parameter(self) -> global___MongoCfgConfig.SetParameter:
+        """`setParameter` section of mongocfg configuration."""
+
+    @property
+    def audit_log(self) -> global___MongoCfgConfig.AuditLog:
+        """`AuditLog` section of mongocfg configuration."""
+
     def __init__(
         self,
         *,
         storage: global___MongoCfgConfig.Storage | None = ...,
         operation_profiling: global___MongoCfgConfig.OperationProfiling | None = ...,
         net: global___MongoCfgConfig.Network | None = ...,
+        set_parameter: global___MongoCfgConfig.SetParameter | None = ...,
+        audit_log: global___MongoCfgConfig.AuditLog | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["net", b"net", "operation_profiling", b"operation_profiling", "storage", b"storage"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["net", b"net", "operation_profiling", b"operation_profiling", "storage", b"storage"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["audit_log", b"audit_log", "net", b"net", "operation_profiling", b"operation_profiling", "set_parameter", b"set_parameter", "storage", b"storage"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["audit_log", b"audit_log", "net", b"net", "operation_profiling", b"operation_profiling", "set_parameter", b"set_parameter", "storage", b"storage"]) -> None: ...
 
 global___MongoCfgConfig = MongoCfgConfig
 
@@ -679,18 +814,63 @@ class MongosConfig(google.protobuf.message.Message):
         def HasField(self, field_name: typing.Literal["compression", b"compression", "max_incoming_connections", b"max_incoming_connections"]) -> builtins.bool: ...
         def ClearField(self, field_name: typing.Literal["compression", b"compression", "max_incoming_connections", b"max_incoming_connections"]) -> None: ...
 
+    @typing.final
+    class SetParameter(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        AUDIT_AUTHORIZATION_SUCCESS_FIELD_NUMBER: builtins.int
+        @property
+        def audit_authorization_success(self) -> google.protobuf.wrappers_pb2.BoolValue:
+            """Enables the auditing of authorization successes
+            https://www.mongodb.com/docs/manual/reference/parameters/#mongodb-parameter-param.auditAuthorizationSuccess
+            """
+
+        def __init__(
+            self,
+            *,
+            audit_authorization_success: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["audit_authorization_success", b"audit_authorization_success"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["audit_authorization_success", b"audit_authorization_success"]) -> None: ...
+
+    @typing.final
+    class AuditLog(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        FILTER_FIELD_NUMBER: builtins.int
+        filter: builtins.str
+        """Audit filter, should be valid JSON object string"""
+        def __init__(
+            self,
+            *,
+            filter: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["filter", b"filter"]) -> None: ...
+
     NET_FIELD_NUMBER: builtins.int
+    SET_PARAMETER_FIELD_NUMBER: builtins.int
+    AUDIT_LOG_FIELD_NUMBER: builtins.int
     @property
     def net(self) -> global___MongosConfig.Network:
         """Network settings for mongos."""
+
+    @property
+    def set_parameter(self) -> global___MongosConfig.SetParameter:
+        """`setParameter` section of mongos configuration."""
+
+    @property
+    def audit_log(self) -> global___MongosConfig.AuditLog:
+        """`AuditLog` section of mongos configuration."""
 
     def __init__(
         self,
         *,
         net: global___MongosConfig.Network | None = ...,
+        set_parameter: global___MongosConfig.SetParameter | None = ...,
+        audit_log: global___MongosConfig.AuditLog | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["net", b"net"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["net", b"net"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["audit_log", b"audit_log", "net", b"net", "set_parameter", b"set_parameter"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["audit_log", b"audit_log", "net", b"net", "set_parameter", b"set_parameter"]) -> None: ...
 
 global___MongosConfig = MongosConfig
 

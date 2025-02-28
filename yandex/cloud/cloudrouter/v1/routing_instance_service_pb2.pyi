@@ -6,10 +6,12 @@ isort:skip_file
 import builtins
 import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.field_mask_pb2
 import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
 import yandex.cloud.cloudrouter.v1.routing_instance_pb2
+import yandex.cloud.operation.operation_pb2
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -76,7 +78,7 @@ class ListRoutingInstancesRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     FILTER_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
-    """ID of the folder to list routingInstance in.
+    """ID of the folder to list RoutingInstance resources.
     To get the folder ID use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
     """
     page_size: builtins.int
@@ -135,3 +137,388 @@ class ListRoutingInstancesResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["next_page_token", b"next_page_token", "routing_instances", b"routing_instances"]) -> None: ...
 
 global___ListRoutingInstancesResponse = ListRoutingInstancesResponse
+
+@typing.final
+class CreateRoutingInstanceRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class LabelsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
+    NAME_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    REGION_ID_FIELD_NUMBER: builtins.int
+    VPC_INFO_FIELD_NUMBER: builtins.int
+    CIC_PRIVATE_CONNECTION_INFO_FIELD_NUMBER: builtins.int
+    LABELS_FIELD_NUMBER: builtins.int
+    name: builtins.str
+    """Name of the RoutingInstance.
+    The name must be unique within the folder.
+    Value must match the regular expression ``\\|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?``.
+    """
+    description: builtins.str
+    """Optional description of the RoutingInstance. 0-256 characters long."""
+    folder_id: builtins.str
+    """ID of the folder that the RoutingInstance belongs to."""
+    region_id: builtins.str
+    """ID of the region that the routingInstance belongs to."""
+    @property
+    def vpc_info(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.cloudrouter.v1.routing_instance_pb2.RoutingInstance.VpcInfo]:
+        """List of the info about vpcNetworks which are attached to the RoutingInstance."""
+
+    @property
+    def cic_private_connection_info(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.cloudrouter.v1.routing_instance_pb2.RoutingInstance.CicPrivateConnectionInfo]:
+        """List of the info about privateConnections which are attached to the RoutingInstance."""
+
+    @property
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Resource labels, `key:value` pairs.
+        No more than 64 per resource.
+        The maximum string length in characters for each value is 63.
+        Each value must match the regular expression `[-_0-9a-z]*`.
+        The string length in characters for each key must be 1-63.
+        Each key must match the regular expression `[a-z][-_0-9a-z]*`.
+        """
+
+    def __init__(
+        self,
+        *,
+        name: builtins.str = ...,
+        description: builtins.str = ...,
+        folder_id: builtins.str = ...,
+        region_id: builtins.str = ...,
+        vpc_info: collections.abc.Iterable[yandex.cloud.cloudrouter.v1.routing_instance_pb2.RoutingInstance.VpcInfo] | None = ...,
+        cic_private_connection_info: collections.abc.Iterable[yandex.cloud.cloudrouter.v1.routing_instance_pb2.RoutingInstance.CicPrivateConnectionInfo] | None = ...,
+        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cic_private_connection_info", b"cic_private_connection_info", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "name", b"name", "region_id", b"region_id", "vpc_info", b"vpc_info"]) -> None: ...
+
+global___CreateRoutingInstanceRequest = CreateRoutingInstanceRequest
+
+@typing.final
+class CreateRoutingInstanceMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ROUTING_INSTANCE_ID_FIELD_NUMBER: builtins.int
+    routing_instance_id: builtins.str
+    """ID of the RoutingInstance resource."""
+    def __init__(
+        self,
+        *,
+        routing_instance_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["routing_instance_id", b"routing_instance_id"]) -> None: ...
+
+global___CreateRoutingInstanceMetadata = CreateRoutingInstanceMetadata
+
+@typing.final
+class UpdateRoutingInstanceRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class LabelsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
+    ROUTING_INSTANCE_ID_FIELD_NUMBER: builtins.int
+    UPDATE_MASK_FIELD_NUMBER: builtins.int
+    NAME_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
+    REGION_ID_FIELD_NUMBER: builtins.int
+    VPC_INFO_FIELD_NUMBER: builtins.int
+    CIC_PRIVATE_CONNECTION_INFO_FIELD_NUMBER: builtins.int
+    LABELS_FIELD_NUMBER: builtins.int
+    routing_instance_id: builtins.str
+    """ID of the RoutingInstance resource to return."""
+    name: builtins.str
+    """Name of the RoutingInstance.
+    The name must be unique within the folder.
+    Value must match the regular expression ``\\|[a-zA-Z]([-_a-zA-Z0-9]{0,61}[a-zA-Z0-9])?``.
+    """
+    description: builtins.str
+    """Optional description of the RoutingInstance. 0-256 characters long."""
+    region_id: builtins.str
+    """ID of the region that the routingInstance belongs to."""
+    @property
+    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
+        """Field mask that specifies which fields of the RoutingInstance resource are going to be updated."""
+
+    @property
+    def vpc_info(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.cloudrouter.v1.routing_instance_pb2.RoutingInstance.VpcInfo]:
+        """List of the info about vpcNetworks which are attached to the RoutingInstance."""
+
+    @property
+    def cic_private_connection_info(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.cloudrouter.v1.routing_instance_pb2.RoutingInstance.CicPrivateConnectionInfo]:
+        """List of the info about privateConnections which are attached to the RoutingInstance."""
+
+    @property
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Resource labels, `key:value` pairs.
+        No more than 64 per resource.
+        The maximum string length in characters for each value is 63.
+        Each value must match the regular expression `[-_0-9a-z]*`.
+        The string length in characters for each key must be 1-63.
+        Each key must match the regular expression `[a-z][-_0-9a-z]*`.
+        """
+
+    def __init__(
+        self,
+        *,
+        routing_instance_id: builtins.str = ...,
+        update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
+        name: builtins.str = ...,
+        description: builtins.str = ...,
+        region_id: builtins.str = ...,
+        vpc_info: collections.abc.Iterable[yandex.cloud.cloudrouter.v1.routing_instance_pb2.RoutingInstance.VpcInfo] | None = ...,
+        cic_private_connection_info: collections.abc.Iterable[yandex.cloud.cloudrouter.v1.routing_instance_pb2.RoutingInstance.CicPrivateConnectionInfo] | None = ...,
+        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cic_private_connection_info", b"cic_private_connection_info", "description", b"description", "labels", b"labels", "name", b"name", "region_id", b"region_id", "routing_instance_id", b"routing_instance_id", "update_mask", b"update_mask", "vpc_info", b"vpc_info"]) -> None: ...
+
+global___UpdateRoutingInstanceRequest = UpdateRoutingInstanceRequest
+
+@typing.final
+class UpdateRoutingInstanceMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ROUTING_INSTANCE_ID_FIELD_NUMBER: builtins.int
+    routing_instance_id: builtins.str
+    """ID of the RoutingInstance resource."""
+    def __init__(
+        self,
+        *,
+        routing_instance_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["routing_instance_id", b"routing_instance_id"]) -> None: ...
+
+global___UpdateRoutingInstanceMetadata = UpdateRoutingInstanceMetadata
+
+@typing.final
+class UpsertPrefixesRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ROUTING_INSTANCE_ID_FIELD_NUMBER: builtins.int
+    VPC_NETWORK_ID_FIELD_NUMBER: builtins.int
+    VPC_AZ_INFO_PREFIXES_FIELD_NUMBER: builtins.int
+    routing_instance_id: builtins.str
+    """ID of the RoutingInstance resource."""
+    vpc_network_id: builtins.str
+    """ID of the VpcNetwork to update."""
+    @property
+    def vpc_az_info_prefixes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___VpcAzInfoPrefixes]:
+        """List of VpcAzInfoPrefixes to upsert."""
+
+    def __init__(
+        self,
+        *,
+        routing_instance_id: builtins.str = ...,
+        vpc_network_id: builtins.str = ...,
+        vpc_az_info_prefixes: collections.abc.Iterable[global___VpcAzInfoPrefixes] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["routing_instance_id", b"routing_instance_id", "vpc_az_info_prefixes", b"vpc_az_info_prefixes", "vpc_network_id", b"vpc_network_id"]) -> None: ...
+
+global___UpsertPrefixesRequest = UpsertPrefixesRequest
+
+@typing.final
+class RemovePrefixesRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ROUTING_INSTANCE_ID_FIELD_NUMBER: builtins.int
+    VPC_NETWORK_ID_FIELD_NUMBER: builtins.int
+    VPC_AZ_INFO_PREFIXES_FIELD_NUMBER: builtins.int
+    routing_instance_id: builtins.str
+    """ID of the RoutingInstance resource."""
+    vpc_network_id: builtins.str
+    """ID of the VpcNetwork to update."""
+    @property
+    def vpc_az_info_prefixes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___VpcAzInfoPrefixes]:
+        """List of VpcAzInfoPrefixes to remove."""
+
+    def __init__(
+        self,
+        *,
+        routing_instance_id: builtins.str = ...,
+        vpc_network_id: builtins.str = ...,
+        vpc_az_info_prefixes: collections.abc.Iterable[global___VpcAzInfoPrefixes] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["routing_instance_id", b"routing_instance_id", "vpc_az_info_prefixes", b"vpc_az_info_prefixes", "vpc_network_id", b"vpc_network_id"]) -> None: ...
+
+global___RemovePrefixesRequest = RemovePrefixesRequest
+
+@typing.final
+class VpcAzInfoPrefixes(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    AZ_ID_FIELD_NUMBER: builtins.int
+    PREFIXES_FIELD_NUMBER: builtins.int
+    az_id: builtins.str
+    """ID of the AZ."""
+    @property
+    def prefixes(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of prefixes."""
+
+    def __init__(
+        self,
+        *,
+        az_id: builtins.str = ...,
+        prefixes: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["az_id", b"az_id", "prefixes", b"prefixes"]) -> None: ...
+
+global___VpcAzInfoPrefixes = VpcAzInfoPrefixes
+
+@typing.final
+class AddPrivateConnectionRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ROUTING_INSTANCE_ID_FIELD_NUMBER: builtins.int
+    CIC_PRIVATE_CONNECTION_ID_FIELD_NUMBER: builtins.int
+    routing_instance_id: builtins.str
+    """ID of the RoutingInstance resource."""
+    cic_private_connection_id: builtins.str
+    """ID of the PrivateConnection to add to the RoutingInstance."""
+    def __init__(
+        self,
+        *,
+        routing_instance_id: builtins.str = ...,
+        cic_private_connection_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cic_private_connection_id", b"cic_private_connection_id", "routing_instance_id", b"routing_instance_id"]) -> None: ...
+
+global___AddPrivateConnectionRequest = AddPrivateConnectionRequest
+
+@typing.final
+class RemovePrivateConnectionRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ROUTING_INSTANCE_ID_FIELD_NUMBER: builtins.int
+    CIC_PRIVATE_CONNECTION_ID_FIELD_NUMBER: builtins.int
+    routing_instance_id: builtins.str
+    """ID of the RoutingInstance resource."""
+    cic_private_connection_id: builtins.str
+    """ID of the PrivateConnection to remove from the RoutingInstance."""
+    def __init__(
+        self,
+        *,
+        routing_instance_id: builtins.str = ...,
+        cic_private_connection_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cic_private_connection_id", b"cic_private_connection_id", "routing_instance_id", b"routing_instance_id"]) -> None: ...
+
+global___RemovePrivateConnectionRequest = RemovePrivateConnectionRequest
+
+@typing.final
+class DeleteRoutingInstanceRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ROUTING_INSTANCE_ID_FIELD_NUMBER: builtins.int
+    routing_instance_id: builtins.str
+    """ID of the RoutingInstance resource."""
+    def __init__(
+        self,
+        *,
+        routing_instance_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["routing_instance_id", b"routing_instance_id"]) -> None: ...
+
+global___DeleteRoutingInstanceRequest = DeleteRoutingInstanceRequest
+
+@typing.final
+class DeleteRoutingInstanceMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ROUTING_INSTANCE_ID_FIELD_NUMBER: builtins.int
+    routing_instance_id: builtins.str
+    """ID of the RoutingInstance resource."""
+    def __init__(
+        self,
+        *,
+        routing_instance_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["routing_instance_id", b"routing_instance_id"]) -> None: ...
+
+global___DeleteRoutingInstanceMetadata = DeleteRoutingInstanceMetadata
+
+@typing.final
+class ListRoutingInstanceOperationsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ROUTING_INSTANCE_ID_FIELD_NUMBER: builtins.int
+    PAGE_SIZE_FIELD_NUMBER: builtins.int
+    PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    routing_instance_id: builtins.str
+    """ID of the RoutingInstance resource."""
+    page_size: builtins.int
+    """The maximum number of results per page to return. If the number of available
+    results is larger than [page_size],
+    the service returns a [ListRoutingInstanceOperationsResponse.next_page_token]
+    that can be used to get the next page of results in subsequent list requests. Default value: 100.
+    """
+    page_token: builtins.str
+    """Page token. To get the next page of results, set [page_token] to the
+    [ListRoutingInstanceOperationsResponse.next_page_token] returned by a previous list request.
+    """
+    def __init__(
+        self,
+        *,
+        routing_instance_id: builtins.str = ...,
+        page_size: builtins.int = ...,
+        page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["page_size", b"page_size", "page_token", b"page_token", "routing_instance_id", b"routing_instance_id"]) -> None: ...
+
+global___ListRoutingInstanceOperationsRequest = ListRoutingInstanceOperationsRequest
+
+@typing.final
+class ListRoutingInstanceOperationsResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    OPERATIONS_FIELD_NUMBER: builtins.int
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    next_page_token: builtins.str
+    """This token allows you to get the next page of results for list requests. If the number of results
+    is larger than [ListRoutingInstanceOperationsRequest.page_size], use
+    the [next_page_token] as the value
+    for the [ListRoutingInstanceOperationsRequest.page_token] query parameter
+    in the next list request. Subsequent list requests will have their own
+    [next_page_token] to continue paging through the results.
+    """
+    @property
+    def operations(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.operation.operation_pb2.Operation]:
+        """List of RoutingInstance operations."""
+
+    def __init__(
+        self,
+        *,
+        operations: collections.abc.Iterable[yandex.cloud.operation.operation_pb2.Operation] | None = ...,
+        next_page_token: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["next_page_token", b"next_page_token", "operations", b"operations"]) -> None: ...
+
+global___ListRoutingInstanceOperationsResponse = ListRoutingInstanceOperationsResponse
