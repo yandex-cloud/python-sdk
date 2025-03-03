@@ -1,5 +1,31 @@
 # CHANGELOG
 
+## v0.335.0 (2025-03-03)
+
+### Feature
+
+* feat: regenerate proto ([`d7b2806`](https://github.com/yandex-cloud/python-sdk/commit/d7b2806fa84ae8a9ee1f353c75372d73e4c30bda))
+
+### Fix
+
+* fix(retries): update version in deprecated comments ([`12ec48b`](https://github.com/yandex-cloud/python-sdk/commit/12ec48b241946f9b3b131215eb113e08a2ba98e6))
+
+* fix(retries): update version in deprecated comments ([`72cef66`](https://github.com/yandex-cloud/python-sdk/commit/72cef666bd6eb84fca84426edb274cf436885b52))
+
+### Refactor
+
+* refactor(retries): added new retry policy to prevent retry amplification
+
+refactor(retries): added new retry policy to prevent retry amplification ([`417aa7c`](https://github.com/yandex-cloud/python-sdk/commit/417aa7c8ae31fdc28a2276e91b696f23a02a98d7))
+
+* refactor(retries): added new retry policy to prevent retry amplification ([`e1c9fa3`](https://github.com/yandex-cloud/python-sdk/commit/e1c9fa3825f5417464e835e88abfae2ea998f877))
+
+### Unknown
+
+* Update release.yml (#137)
+
+Delay release trigger so it starts after proto generation ([`8cc446d`](https://github.com/yandex-cloud/python-sdk/commit/8cc446dc69c90906c0bf413b85993aa7cd4a5458))
+
 ## v0.334.0 (2025-02-24)
 
 ### Feature

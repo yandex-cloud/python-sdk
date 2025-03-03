@@ -11,4 +11,4 @@ from yandexcloud._retry_interceptor import RetryInterceptor
 from yandexcloud._retry_policy import RetryPolicy
 from yandexcloud._sdk import SDK
 
-__version__ = "0.334.0"
+__version__ = "0.335.0"
