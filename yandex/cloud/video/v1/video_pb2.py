@@ -24,9 +24,10 @@ _sym_db = _symbol_database.Default()
 
 from google.protobuf import duration_pb2 as google_dot_protobuf_dot_duration__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!yandex/cloud/video/v1/video.proto\x12\x15yandex.cloud.video.v1\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xe3\x08\n\x05Video\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\nchannel_id\x18\x02 \x01(\t\x12\r\n\x05title\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x14\n\x0cthumbnail_id\x18\x05 \x01(\t\x12\x38\n\x06status\x18\x06 \x01(\x0e\x32(.yandex.cloud.video.v1.Video.VideoStatus\x12+\n\x08\x64uration\x18\x08 \x01(\x0b\x32\x19.google.protobuf.Duration\x12H\n\x11visibility_status\x18\t \x01(\x0e\x32-.yandex.cloud.video.v1.Video.VisibilityStatus\x12<\n\x0e\x61uto_transcode\x18\x0b \x01(\x0e\x32$.yandex.cloud.video.v1.AutoTranscode\x12\x14\n\x0csubtitle_ids\x18\x0c \x03(\t\x12\x37\n\x04tusd\x18\xe8\x07 \x01(\x0b\x32&.yandex.cloud.video.v1.VideoTUSDSourceH\x00\x12H\n\rpublic_access\x18\xd0\x0f \x01(\x0b\x32..yandex.cloud.video.v1.VideoPublicAccessRightsH\x01\x12Q\n\x12\x61uth_system_access\x18\xd2\x0f \x01(\x0b\x32\x32.yandex.cloud.video.v1.VideoAuthSystemAccessRightsH\x01\x12K\n\x0fsign_url_access\x18\xd3\x0f \x01(\x0b\x32/.yandex.cloud.video.v1.VideoSignURLAccessRightsH\x01\x12.\n\ncreated_at\x18\x64 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x65 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x39\n\x06labels\x18\xc8\x01 \x03(\x0b\x32(.yandex.cloud.video.v1.Video.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"k\n\x0bVideoStatus\x12\x1c\n\x18VIDEO_STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eWAIT_UPLOADING\x10\x01\x12\x0e\n\nPROCESSING\x10\x04\x12\t\n\x05READY\x10\x05\x12\t\n\x05\x45RROR\x10\x07\"\x04\x08\x06\x10\x06\"U\n\x10VisibilityStatus\x12!\n\x1dVISIBILITY_STATUS_UNSPECIFIED\x10\x00\x12\r\n\tPUBLISHED\x10\x01\x12\x0f\n\x0bUNPUBLISHED\x10\x02\x42\x08\n\x06sourceB\x0f\n\raccess_rightsJ\x06\x08\xd1\x0f\x10\xd2\x0fJ\x04\x08\x07\x10\x08J\x04\x08\n\x10\x0bJ\x04\x08\r\x10\x64J\x05\x08\x66\x10\xc8\x01J\x06\x08\xc9\x01\x10\xe8\x07J\x06\x08\xe9\x07\x10\xd0\x0f\"\x1e\n\x0fVideoTUSDSource\x12\x0b\n\x03url\x18\x01 \x01(\t\"\x19\n\x17VideoPublicAccessRights\"\x1d\n\x1bVideoAuthSystemAccessRights\"\x1a\n\x18VideoSignURLAccessRights*H\n\rAutoTranscode\x12\x1e\n\x1a\x41UTO_TRANSCODE_UNSPECIFIED\x10\x00\x12\n\n\x06\x45NABLE\x10\x01\x12\x0b\n\x07\x44ISABLE\x10\x02\x42\\\n\x19yandex.cloud.api.video.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/video/v1;videob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!yandex/cloud/video/v1/video.proto\x12\x15yandex.cloud.video.v1\x1a\x1egoogle/protobuf/duration.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto\"\x98\t\n\x05Video\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\nchannel_id\x18\x02 \x01(\t\x12\r\n\x05title\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x14\n\x0cthumbnail_id\x18\x05 \x01(\t\x12\x38\n\x06status\x18\x06 \x01(\x0e\x32(.yandex.cloud.video.v1.Video.VideoStatus\x12+\n\x08\x64uration\x18\x08 \x01(\x0b\x32\x19.google.protobuf.Duration\x12H\n\x11visibility_status\x18\t \x01(\x0e\x32-.yandex.cloud.video.v1.Video.VisibilityStatus\x12<\n\x0e\x61uto_transcode\x18\x0b \x01(\x0e\x32$.yandex.cloud.video.v1.AutoTranscode\x12-\n\tenable_ad\x18\x11 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x14\n\x0csubtitle_ids\x18\x0c \x03(\t\x12\x37\n\x04tusd\x18\xe8\x07 \x01(\x0b\x32&.yandex.cloud.video.v1.VideoTUSDSourceH\x00\x12H\n\rpublic_access\x18\xd0\x0f \x01(\x0b\x32..yandex.cloud.video.v1.VideoPublicAccessRightsH\x01\x12Q\n\x12\x61uth_system_access\x18\xd2\x0f \x01(\x0b\x32\x32.yandex.cloud.video.v1.VideoAuthSystemAccessRightsH\x01\x12K\n\x0fsign_url_access\x18\xd3\x0f \x01(\x0b\x32/.yandex.cloud.video.v1.VideoSignURLAccessRightsH\x01\x12.\n\ncreated_at\x18\x64 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x65 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x39\n\x06labels\x18\xc8\x01 \x03(\x0b\x32(.yandex.cloud.video.v1.Video.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"k\n\x0bVideoStatus\x12\x1c\n\x18VIDEO_STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eWAIT_UPLOADING\x10\x01\x12\x0e\n\nPROCESSING\x10\x04\x12\t\n\x05READY\x10\x05\x12\t\n\x05\x45RROR\x10\x07\"\x04\x08\x06\x10\x06\"U\n\x10VisibilityStatus\x12!\n\x1dVISIBILITY_STATUS_UNSPECIFIED\x10\x00\x12\r\n\tPUBLISHED\x10\x01\x12\x0f\n\x0bUNPUBLISHED\x10\x02\x42\x08\n\x06sourceB\x0f\n\raccess_rightsJ\x06\x08\xd1\x0f\x10\xd2\x0fJ\x04\x08\x07\x10\x08J\x04\x08\n\x10\x0bJ\x04\x08\r\x10\x11J\x04\x08\x12\x10\x64J\x05\x08\x66\x10\xc8\x01J\x06\x08\xc9\x01\x10\xe8\x07J\x06\x08\xe9\x07\x10\xd0\x0f\"\x1e\n\x0fVideoTUSDSource\x12\x0b\n\x03url\x18\x01 \x01(\t\"\x19\n\x17VideoPublicAccessRights\"\x1d\n\x1bVideoAuthSystemAccessRights\"\x1a\n\x18VideoSignURLAccessRights*H\n\rAutoTranscode\x12\x1e\n\x1a\x41UTO_TRANSCODE_UNSPECIFIED\x10\x00\x12\n\n\x06\x45NABLE\x10\x01\x12\x0b\n\x07\x44ISABLE\x10\x02\x42\\\n\x19yandex.cloud.api.video.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/video/v1;videob\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,22 +37,22 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'\n\031yandex.cloud.api.video.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/video/v1;video'
   _globals['_VIDEO_LABELSENTRY']._loaded_options = None
   _globals['_VIDEO_LABELSENTRY']._serialized_options = b'8\001'
-  _globals['_AUTOTRANSCODE']._serialized_start=1369
-  _globals['_AUTOTRANSCODE']._serialized_end=1441
-  _globals['_VIDEO']._serialized_start=126
-  _globals['_VIDEO']._serialized_end=1249
-  _globals['_VIDEO_LABELSENTRY']._serialized_start=932
-  _globals['_VIDEO_LABELSENTRY']._serialized_end=977
-  _globals['_VIDEO_VIDEOSTATUS']._serialized_start=979
-  _globals['_VIDEO_VIDEOSTATUS']._serialized_end=1086
-  _globals['_VIDEO_VISIBILITYSTATUS']._serialized_start=1088
-  _globals['_VIDEO_VISIBILITYSTATUS']._serialized_end=1173
-  _globals['_VIDEOTUSDSOURCE']._serialized_start=1251
-  _globals['_VIDEOTUSDSOURCE']._serialized_end=1281
-  _globals['_VIDEOPUBLICACCESSRIGHTS']._serialized_start=1283
-  _globals['_VIDEOPUBLICACCESSRIGHTS']._serialized_end=1308
-  _globals['_VIDEOAUTHSYSTEMACCESSRIGHTS']._serialized_start=1310
-  _globals['_VIDEOAUTHSYSTEMACCESSRIGHTS']._serialized_end=1339
-  _globals['_VIDEOSIGNURLACCESSRIGHTS']._serialized_start=1341
-  _globals['_VIDEOSIGNURLACCESSRIGHTS']._serialized_end=1367
+  _globals['_AUTOTRANSCODE']._serialized_start=1454
+  _globals['_AUTOTRANSCODE']._serialized_end=1526
+  _globals['_VIDEO']._serialized_start=158
+  _globals['_VIDEO']._serialized_end=1334
+  _globals['_VIDEO_LABELSENTRY']._serialized_start=1011
+  _globals['_VIDEO_LABELSENTRY']._serialized_end=1056
+  _globals['_VIDEO_VIDEOSTATUS']._serialized_start=1058
+  _globals['_VIDEO_VIDEOSTATUS']._serialized_end=1165
+  _globals['_VIDEO_VISIBILITYSTATUS']._serialized_start=1167
+  _globals['_VIDEO_VISIBILITYSTATUS']._serialized_end=1252
+  _globals['_VIDEOTUSDSOURCE']._serialized_start=1336
+  _globals['_VIDEOTUSDSOURCE']._serialized_end=1366
+  _globals['_VIDEOPUBLICACCESSRIGHTS']._serialized_start=1368
+  _globals['_VIDEOPUBLICACCESSRIGHTS']._serialized_end=1393
+  _globals['_VIDEOAUTHSYSTEMACCESSRIGHTS']._serialized_start=1395
+  _globals['_VIDEOAUTHSYSTEMACCESSRIGHTS']._serialized_end=1424
+  _globals['_VIDEOSIGNURLACCESSRIGHTS']._serialized_start=1426
+  _globals['_VIDEOSIGNURLACCESSRIGHTS']._serialized_end=1452
 # @@protoc_insertion_point(module_scope)

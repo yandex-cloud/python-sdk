@@ -10,6 +10,7 @@ import google.protobuf.duration_pb2
 import google.protobuf.field_mask_pb2
 import google.protobuf.internal.containers
 import google.protobuf.message
+import google.protobuf.wrappers_pb2
 import typing
 import yandex.cloud.video.v1.manifest_pb2
 import yandex.cloud.video.v1.video_pb2
@@ -160,6 +161,7 @@ class CreateVideoRequest(google.protobuf.message.Message):
     DESCRIPTION_FIELD_NUMBER: builtins.int
     THUMBNAIL_ID_FIELD_NUMBER: builtins.int
     AUTO_TRANSCODE_FIELD_NUMBER: builtins.int
+    ENABLE_AD_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     TUSD_FIELD_NUMBER: builtins.int
     PUBLIC_ACCESS_FIELD_NUMBER: builtins.int
@@ -175,6 +177,13 @@ class CreateVideoRequest(google.protobuf.message.Message):
     """ID of the thumbnail."""
     auto_transcode: yandex.cloud.video.v1.video_pb2.AutoTranscode.ValueType
     """Auto start transcoding."""
+    @property
+    def enable_ad(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enable advertisement for this video.
+        Default: true.
+        Use this to disable advertisement for a specific video.
+        """
+
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Custom labels as `` key:value `` pairs. Maximum 64 per resource."""
@@ -203,14 +212,15 @@ class CreateVideoRequest(google.protobuf.message.Message):
         description: builtins.str = ...,
         thumbnail_id: builtins.str = ...,
         auto_transcode: yandex.cloud.video.v1.video_pb2.AutoTranscode.ValueType = ...,
+        enable_ad: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         tusd: global___VideoTUSDParams | None = ...,
         public_access: global___VideoPublicAccessParams | None = ...,
         auth_system_access: global___VideoAuthSystemAccessParams | None = ...,
         sign_url_access: global___VideoSignURLAccessParams | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access_rights", b"access_rights", "auth_system_access", b"auth_system_access", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "source", b"source", "tusd", b"tusd"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access_rights", b"access_rights", "auth_system_access", b"auth_system_access", "auto_transcode", b"auto_transcode", "channel_id", b"channel_id", "description", b"description", "labels", b"labels", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "source", b"source", "thumbnail_id", b"thumbnail_id", "title", b"title", "tusd", b"tusd"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access_rights", b"access_rights", "auth_system_access", b"auth_system_access", "enable_ad", b"enable_ad", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "source", b"source", "tusd", b"tusd"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access_rights", b"access_rights", "auth_system_access", b"auth_system_access", "auto_transcode", b"auto_transcode", "channel_id", b"channel_id", "description", b"description", "enable_ad", b"enable_ad", "labels", b"labels", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "source", b"source", "thumbnail_id", b"thumbnail_id", "title", b"title", "tusd", b"tusd"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["access_rights", b"access_rights"]) -> typing.Literal["public_access", "auth_system_access", "sign_url_access"] | None: ...
     @typing.overload
@@ -310,6 +320,7 @@ class UpdateVideoRequest(google.protobuf.message.Message):
     DESCRIPTION_FIELD_NUMBER: builtins.int
     THUMBNAIL_ID_FIELD_NUMBER: builtins.int
     AUTO_TRANSCODE_FIELD_NUMBER: builtins.int
+    ENABLE_AD_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     PUBLIC_ACCESS_FIELD_NUMBER: builtins.int
     AUTH_SYSTEM_ACCESS_FIELD_NUMBER: builtins.int
@@ -327,6 +338,13 @@ class UpdateVideoRequest(google.protobuf.message.Message):
     @property
     def field_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which fields of the video are going to be updated."""
+
+    @property
+    def enable_ad(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enable advertisement for this video.
+        Default: true.
+        Use this to disable advertisement for a specific video.
+        """
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
@@ -347,13 +365,14 @@ class UpdateVideoRequest(google.protobuf.message.Message):
         description: builtins.str = ...,
         thumbnail_id: builtins.str = ...,
         auto_transcode: yandex.cloud.video.v1.video_pb2.AutoTranscode.ValueType = ...,
+        enable_ad: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         public_access: global___VideoPublicAccessParams | None = ...,
         auth_system_access: global___VideoAuthSystemAccessParams | None = ...,
         sign_url_access: global___VideoSignURLAccessParams | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access_rights", b"access_rights", "auth_system_access", b"auth_system_access", "field_mask", b"field_mask", "public_access", b"public_access", "sign_url_access", b"sign_url_access"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access_rights", b"access_rights", "auth_system_access", b"auth_system_access", "auto_transcode", b"auto_transcode", "description", b"description", "field_mask", b"field_mask", "labels", b"labels", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "thumbnail_id", b"thumbnail_id", "title", b"title", "video_id", b"video_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access_rights", b"access_rights", "auth_system_access", b"auth_system_access", "enable_ad", b"enable_ad", "field_mask", b"field_mask", "public_access", b"public_access", "sign_url_access", b"sign_url_access"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access_rights", b"access_rights", "auth_system_access", b"auth_system_access", "auto_transcode", b"auto_transcode", "description", b"description", "enable_ad", b"enable_ad", "field_mask", b"field_mask", "labels", b"labels", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "thumbnail_id", b"thumbnail_id", "title", b"title", "video_id", b"video_id"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["access_rights", b"access_rights"]) -> typing.Literal["public_access", "auth_system_access", "sign_url_access"] | None: ...
 
 global___UpdateVideoRequest = UpdateVideoRequest

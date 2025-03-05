@@ -11,6 +11,7 @@ import google.protobuf.internal.containers
 import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
 import google.protobuf.timestamp_pb2
+import google.protobuf.wrappers_pb2
 import sys
 import typing
 
@@ -123,6 +124,7 @@ class Video(google.protobuf.message.Message):
     DURATION_FIELD_NUMBER: builtins.int
     VISIBILITY_STATUS_FIELD_NUMBER: builtins.int
     AUTO_TRANSCODE_FIELD_NUMBER: builtins.int
+    ENABLE_AD_FIELD_NUMBER: builtins.int
     SUBTITLE_IDS_FIELD_NUMBER: builtins.int
     TUSD_FIELD_NUMBER: builtins.int
     PUBLIC_ACCESS_FIELD_NUMBER: builtins.int
@@ -153,6 +155,13 @@ class Video(google.protobuf.message.Message):
     @property
     def duration(self) -> google.protobuf.duration_pb2.Duration:
         """Video duration. Optional, may be empty until the transcoding result is ready."""
+
+    @property
+    def enable_ad(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enable advertisement for this video.
+        Default: true.
+        Use this to disable advertisement for a specific video.
+        """
 
     @property
     def subtitle_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
@@ -198,6 +207,7 @@ class Video(google.protobuf.message.Message):
         duration: google.protobuf.duration_pb2.Duration | None = ...,
         visibility_status: global___Video.VisibilityStatus.ValueType = ...,
         auto_transcode: global___AutoTranscode.ValueType = ...,
+        enable_ad: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         subtitle_ids: collections.abc.Iterable[builtins.str] | None = ...,
         tusd: global___VideoTUSDSource | None = ...,
         public_access: global___VideoPublicAccessRights | None = ...,
@@ -207,8 +217,8 @@ class Video(google.protobuf.message.Message):
         updated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access_rights", b"access_rights", "auth_system_access", b"auth_system_access", "created_at", b"created_at", "duration", b"duration", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "source", b"source", "tusd", b"tusd", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access_rights", b"access_rights", "auth_system_access", b"auth_system_access", "auto_transcode", b"auto_transcode", "channel_id", b"channel_id", "created_at", b"created_at", "description", b"description", "duration", b"duration", "id", b"id", "labels", b"labels", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "source", b"source", "status", b"status", "subtitle_ids", b"subtitle_ids", "thumbnail_id", b"thumbnail_id", "title", b"title", "tusd", b"tusd", "updated_at", b"updated_at", "visibility_status", b"visibility_status"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access_rights", b"access_rights", "auth_system_access", b"auth_system_access", "created_at", b"created_at", "duration", b"duration", "enable_ad", b"enable_ad", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "source", b"source", "tusd", b"tusd", "updated_at", b"updated_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access_rights", b"access_rights", "auth_system_access", b"auth_system_access", "auto_transcode", b"auto_transcode", "channel_id", b"channel_id", "created_at", b"created_at", "description", b"description", "duration", b"duration", "enable_ad", b"enable_ad", "id", b"id", "labels", b"labels", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "source", b"source", "status", b"status", "subtitle_ids", b"subtitle_ids", "thumbnail_id", b"thumbnail_id", "title", b"title", "tusd", b"tusd", "updated_at", b"updated_at", "visibility_status", b"visibility_status"]) -> None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["access_rights", b"access_rights"]) -> typing.Literal["public_access", "auth_system_access", "sign_url_access"] | None: ...
     @typing.overload

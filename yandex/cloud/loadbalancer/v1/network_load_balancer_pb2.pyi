@@ -163,6 +163,7 @@ class NetworkLoadBalancer(google.protobuf.message.Message):
     LISTENERS_FIELD_NUMBER: builtins.int
     ATTACHED_TARGET_GROUPS_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
+    ALLOW_ZONAL_SHIFT_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the network load balancer."""
     folder_id: builtins.str
@@ -181,6 +182,8 @@ class NetworkLoadBalancer(google.protobuf.message.Message):
     """Type of the session affinity. Only 5-tuple affinity is available now."""
     deletion_protection: builtins.bool
     """Specifies if network load balancer protected from deletion."""
+    allow_zonal_shift: builtins.bool
+    """Specifies if network load balancer available to zonal shift."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format."""
@@ -213,9 +216,10 @@ class NetworkLoadBalancer(google.protobuf.message.Message):
         listeners: collections.abc.Iterable[global___Listener] | None = ...,
         attached_target_groups: collections.abc.Iterable[global___AttachedTargetGroup] | None = ...,
         deletion_protection: builtins.bool = ...,
+        allow_zonal_shift: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["attached_target_groups", b"attached_target_groups", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "listeners", b"listeners", "name", b"name", "region_id", b"region_id", "session_affinity", b"session_affinity", "status", b"status", "type", b"type"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["allow_zonal_shift", b"allow_zonal_shift", "attached_target_groups", b"attached_target_groups", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "listeners", b"listeners", "name", b"name", "region_id", b"region_id", "session_affinity", b"session_affinity", "status", b"status", "type", b"type"]) -> None: ...
 
 global___NetworkLoadBalancer = NetworkLoadBalancer
 

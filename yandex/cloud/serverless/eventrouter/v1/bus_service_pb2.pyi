@@ -111,6 +111,8 @@ class CreateBusRequest(google.protobuf.message.Message):
     DESCRIPTION_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
+    LOGGING_ENABLED_FIELD_NUMBER: builtins.int
+    LOG_OPTIONS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a bus in."""
     name: builtins.str
@@ -119,9 +121,15 @@ class CreateBusRequest(google.protobuf.message.Message):
     """Description of the bus."""
     deletion_protection: builtins.bool
     """Flag that disallow deletion of the bus."""
+    logging_enabled: builtins.bool
+    """Is logging from the bus enabled."""
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Labels for the bus."""
+
+    @property
+    def log_options(self) -> yandex.cloud.serverless.eventrouter.v1.bus_pb2.LogOptions:
+        """Options for logging from the bus."""
 
     def __init__(
         self,
@@ -131,8 +139,11 @@ class CreateBusRequest(google.protobuf.message.Message):
         description: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         deletion_protection: builtins.bool = ...,
+        logging_enabled: builtins.bool = ...,
+        log_options: yandex.cloud.serverless.eventrouter.v1.bus_pb2.LogOptions | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["deletion_protection", b"deletion_protection", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "name", b"name"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["log_options", b"log_options"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["deletion_protection", b"deletion_protection", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "log_options", b"log_options", "logging_enabled", b"logging_enabled", "name", b"name"]) -> None: ...
 
 global___CreateBusRequest = CreateBusRequest
 
@@ -182,6 +193,8 @@ class UpdateBusRequest(google.protobuf.message.Message):
     DESCRIPTION_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
+    LOGGING_ENABLED_FIELD_NUMBER: builtins.int
+    LOG_OPTIONS_FIELD_NUMBER: builtins.int
     bus_id: builtins.str
     """ID of the bus to update."""
     name: builtins.str
@@ -190,6 +203,8 @@ class UpdateBusRequest(google.protobuf.message.Message):
     """ New description of the bus."""
     deletion_protection: builtins.bool
     """New flag that disallow deletion of the bus."""
+    logging_enabled: builtins.bool
+    """Is logging from the bus enabled."""
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which fields of the bus are going to be updated."""
@@ -197,6 +212,10 @@ class UpdateBusRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """New labels of the bus."""
+
+    @property
+    def log_options(self) -> yandex.cloud.serverless.eventrouter.v1.bus_pb2.LogOptions:
+        """New options for logging from the bus."""
 
     def __init__(
         self,
@@ -207,9 +226,11 @@ class UpdateBusRequest(google.protobuf.message.Message):
         description: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         deletion_protection: builtins.bool = ...,
+        logging_enabled: builtins.bool = ...,
+        log_options: yandex.cloud.serverless.eventrouter.v1.bus_pb2.LogOptions | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["bus_id", b"bus_id", "deletion_protection", b"deletion_protection", "description", b"description", "labels", b"labels", "name", b"name", "update_mask", b"update_mask"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["log_options", b"log_options", "update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["bus_id", b"bus_id", "deletion_protection", b"deletion_protection", "description", b"description", "labels", b"labels", "log_options", b"log_options", "logging_enabled", b"logging_enabled", "name", b"name", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateBusRequest = UpdateBusRequest
 

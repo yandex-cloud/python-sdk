@@ -11,6 +11,7 @@ import google.protobuf.internal.containers
 import google.protobuf.message
 import google.protobuf.wrappers_pb2
 import typing
+import yandex.cloud.cic.v1.common.lag_allocation_settings_pb2
 import yandex.cloud.cic.v1.common.transceiver_type_pb2
 import yandex.cloud.cic.v1.trunk_connection_pb2
 import yandex.cloud.operation.operation_pb2
@@ -147,14 +148,21 @@ class CreateTrunkConnectionRequest(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
         TRANSCEIVER_TYPE_FIELD_NUMBER: builtins.int
+        LAG_ALLOCATION_SETTINGS_FIELD_NUMBER: builtins.int
         transceiver_type: yandex.cloud.cic.v1.common.transceiver_type_pb2.TransceiverType.ValueType
         """Type of transceiver that the trunkConnection is deployed on."""
+        @property
+        def lag_allocation_settings(self) -> yandex.cloud.cic.v1.common.lag_allocation_settings_pb2.LagAllocationSettingsRequest:
+            """LAG allocation settings that the trunkConnection is deployed on."""
+
         def __init__(
             self,
             *,
             transceiver_type: yandex.cloud.cic.v1.common.transceiver_type_pb2.TransceiverType.ValueType = ...,
+            lag_allocation_settings: yandex.cloud.cic.v1.common.lag_allocation_settings_pb2.LagAllocationSettingsRequest | None = ...,
         ) -> None: ...
-        def ClearField(self, field_name: typing.Literal["transceiver_type", b"transceiver_type"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["lag_allocation_settings", b"lag_allocation_settings"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["lag_allocation_settings", b"lag_allocation_settings", "transceiver_type", b"transceiver_type"]) -> None: ...
 
     @typing.final
     class PartnerJoint(google.protobuf.message.Message):

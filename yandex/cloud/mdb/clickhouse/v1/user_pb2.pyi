@@ -386,6 +386,33 @@ class UserSettings(google.protobuf.message.Message):
     LOAD_BALANCING_FIRST_OR_RANDOM: UserSettings.LoadBalancing.ValueType  # 4
     LOAD_BALANCING_ROUND_ROBIN: UserSettings.LoadBalancing.ValueType  # 5
 
+    class _QueryCacheNondeterministicFunctionHandling:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _QueryCacheNondeterministicFunctionHandlingEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[UserSettings._QueryCacheNondeterministicFunctionHandling.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        QUERY_CACHE_NONDETERMINISTIC_FUNCTION_HANDLING_UNSPECIFIED: UserSettings._QueryCacheNondeterministicFunctionHandling.ValueType  # 0
+        QUERY_CACHE_NONDETERMINISTIC_FUNCTION_HANDLING_THROW: UserSettings._QueryCacheNondeterministicFunctionHandling.ValueType  # 1
+        """Throw an exception and don't cache the query result."""
+        QUERY_CACHE_NONDETERMINISTIC_FUNCTION_HANDLING_SAVE: UserSettings._QueryCacheNondeterministicFunctionHandling.ValueType  # 2
+        """Cache the query result."""
+        QUERY_CACHE_NONDETERMINISTIC_FUNCTION_HANDLING_IGNORE: UserSettings._QueryCacheNondeterministicFunctionHandling.ValueType  # 3
+        """Don't cache the query result and don't throw an exception."""
+
+    class QueryCacheNondeterministicFunctionHandling(_QueryCacheNondeterministicFunctionHandling, metaclass=_QueryCacheNondeterministicFunctionHandlingEnumTypeWrapper):
+        """Controls how the query cache handles SELECT queries with non-deterministic functions like rand() or now().
+        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#query_cache_nondeterministic_function_handling).
+        """
+
+    QUERY_CACHE_NONDETERMINISTIC_FUNCTION_HANDLING_UNSPECIFIED: UserSettings.QueryCacheNondeterministicFunctionHandling.ValueType  # 0
+    QUERY_CACHE_NONDETERMINISTIC_FUNCTION_HANDLING_THROW: UserSettings.QueryCacheNondeterministicFunctionHandling.ValueType  # 1
+    """Throw an exception and don't cache the query result."""
+    QUERY_CACHE_NONDETERMINISTIC_FUNCTION_HANDLING_SAVE: UserSettings.QueryCacheNondeterministicFunctionHandling.ValueType  # 2
+    """Cache the query result."""
+    QUERY_CACHE_NONDETERMINISTIC_FUNCTION_HANDLING_IGNORE: UserSettings.QueryCacheNondeterministicFunctionHandling.ValueType  # 3
+    """Don't cache the query result and don't throw an exception."""
+
     READONLY_FIELD_NUMBER: builtins.int
     ALLOW_DDL_FIELD_NUMBER: builtins.int
     ALLOW_INTROSPECTION_FUNCTIONS_FIELD_NUMBER: builtins.int
@@ -490,6 +517,8 @@ class UserSettings(google.protobuf.message.Message):
     ADD_HTTP_CORS_HEADER_FIELD_NUMBER: builtins.int
     CANCEL_HTTP_READONLY_QUERIES_ON_CLIENT_CLOSE_FIELD_NUMBER: builtins.int
     MAX_HTTP_GET_REDIRECTS_FIELD_NUMBER: builtins.int
+    HTTP_MAX_FIELD_NAME_SIZE_FIELD_NUMBER: builtins.int
+    HTTP_MAX_FIELD_VALUE_SIZE_FIELD_NUMBER: builtins.int
     JOINED_SUBQUERY_REQUIRES_ALIAS_FIELD_NUMBER: builtins.int
     JOIN_USE_NULLS_FIELD_NUMBER: builtins.int
     TRANSFORM_NULL_IN_FIELD_NUMBER: builtins.int
@@ -504,12 +533,14 @@ class UserSettings(google.protobuf.message.Message):
     WAIT_FOR_ASYNC_INSERT_TIMEOUT_FIELD_NUMBER: builtins.int
     ASYNC_INSERT_MAX_DATA_SIZE_FIELD_NUMBER: builtins.int
     ASYNC_INSERT_BUSY_TIMEOUT_FIELD_NUMBER: builtins.int
-    ASYNC_INSERT_STALE_TIMEOUT_FIELD_NUMBER: builtins.int
+    ASYNC_INSERT_USE_ADAPTIVE_BUSY_TIMEOUT_FIELD_NUMBER: builtins.int
     MEMORY_PROFILER_STEP_FIELD_NUMBER: builtins.int
     MEMORY_PROFILER_SAMPLE_PROBABILITY_FIELD_NUMBER: builtins.int
     MAX_FINAL_THREADS_FIELD_NUMBER: builtins.int
     INPUT_FORMAT_PARALLEL_PARSING_FIELD_NUMBER: builtins.int
     INPUT_FORMAT_IMPORT_NESTED_JSON_FIELD_NUMBER: builtins.int
+    FORMAT_AVRO_SCHEMA_REGISTRY_URL_FIELD_NUMBER: builtins.int
+    DATA_TYPE_DEFAULT_NULLABLE_FIELD_NUMBER: builtins.int
     LOCAL_FILESYSTEM_READ_METHOD_FIELD_NUMBER: builtins.int
     MAX_READ_BUFFER_SIZE_FIELD_NUMBER: builtins.int
     INSERT_KEEPER_MAX_RETRIES_FIELD_NUMBER: builtins.int
@@ -521,14 +552,31 @@ class UserSettings(google.protobuf.message.Message):
     MEMORY_OVERCOMMIT_RATIO_DENOMINATOR_FOR_USER_FIELD_NUMBER: builtins.int
     MEMORY_USAGE_OVERCOMMIT_MAX_WAIT_MICROSECONDS_FIELD_NUMBER: builtins.int
     LOG_QUERY_THREADS_FIELD_NUMBER: builtins.int
+    LOG_QUERY_VIEWS_FIELD_NUMBER: builtins.int
+    LOG_QUERIES_PROBABILITY_FIELD_NUMBER: builtins.int
+    LOG_PROCESSORS_PROFILES_FIELD_NUMBER: builtins.int
+    USE_QUERY_CACHE_FIELD_NUMBER: builtins.int
+    ENABLE_READS_FROM_QUERY_CACHE_FIELD_NUMBER: builtins.int
+    ENABLE_WRITES_TO_QUERY_CACHE_FIELD_NUMBER: builtins.int
+    QUERY_CACHE_MIN_QUERY_RUNS_FIELD_NUMBER: builtins.int
+    QUERY_CACHE_MIN_QUERY_DURATION_FIELD_NUMBER: builtins.int
+    QUERY_CACHE_TTL_FIELD_NUMBER: builtins.int
+    QUERY_CACHE_MAX_ENTRIES_FIELD_NUMBER: builtins.int
+    QUERY_CACHE_MAX_SIZE_IN_BYTES_FIELD_NUMBER: builtins.int
+    QUERY_CACHE_TAG_FIELD_NUMBER: builtins.int
+    QUERY_CACHE_SHARE_BETWEEN_USERS_FIELD_NUMBER: builtins.int
+    QUERY_CACHE_NONDETERMINISTIC_FUNCTION_HANDLING_FIELD_NUMBER: builtins.int
     MAX_INSERT_THREADS_FIELD_NUMBER: builtins.int
     USE_HEDGED_REQUESTS_FIELD_NUMBER: builtins.int
     IDLE_CONNECTION_TIMEOUT_FIELD_NUMBER: builtins.int
     HEDGED_CONNECTION_TIMEOUT_MS_FIELD_NUMBER: builtins.int
     LOAD_BALANCING_FIELD_NUMBER: builtins.int
     PREFER_LOCALHOST_REPLICA_FIELD_NUMBER: builtins.int
+    DO_NOT_MERGE_ACROSS_PARTITIONS_SELECT_FINAL_FIELD_NUMBER: builtins.int
+    IGNORE_MATERIALIZED_VIEWS_WITH_DROPPED_TARGET_TABLE_FIELD_NUMBER: builtins.int
     COMPILE_FIELD_NUMBER: builtins.int
     MIN_COUNT_TO_COMPILE_FIELD_NUMBER: builtins.int
+    ASYNC_INSERT_STALE_TIMEOUT_FIELD_NUMBER: builtins.int
     distributed_product_mode: global___UserSettings.DistributedProductMode.ValueType
     """Determine the behavior of distributed subqueries.
 
@@ -597,6 +645,10 @@ class UserSettings(google.protobuf.message.Message):
     """Regular expression (for Regexp format)"""
     format_regexp_escaping_rule: global___UserSettings.FormatRegexpEscapingRule.ValueType
     """See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#format_regexp_escaping_rule)."""
+    format_avro_schema_registry_url: builtins.str
+    """Avro schema registry URL.
+    See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/formats#format_avro_schema_registry_url).
+    """
     local_filesystem_read_method: global___UserSettings.LocalFilesystemReadMethod.ValueType
     """Method of reading data from local filesystem, one of: read, pread, mmap, io_uring, pread_threadpool. The 'io_uring' method is experimental and does not work for Log, TinyLog, StripeLog, File, Set and Join, and other tables with append-able files in presence of concurrent reads and writes."""
     remote_filesystem_read_method: global___UserSettings.RemoteFilesystemReadMethod.ValueType
@@ -604,6 +656,14 @@ class UserSettings(google.protobuf.message.Message):
     Default: read
     Min_version: 21.11
     See in-depth description in [ClickHouse GitHub](https://github.com/ClickHouse/ClickHouse/blob/f9558345e886876b9132d9c018e357f7fa9b22a3/src/Core/Settings.h#L660)
+    """
+    query_cache_tag: builtins.str
+    """A string which acts as a label for query cache entries. The same queries with different tags are considered different by the query cache.
+    See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#query_cache_tag).
+    """
+    query_cache_nondeterministic_function_handling: global___UserSettings.QueryCacheNondeterministicFunctionHandling.ValueType
+    """Controls how the query cache handles SELECT queries with non-deterministic functions like rand() or now().
+    See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#query_cache_nondeterministic_function_handling).
     """
     load_balancing: global___UserSettings.LoadBalancing.ValueType
     """Specifies the algorithm of replicas selection that is used for distributed query processing, one of: random, nearest_hostname, in_order, first_or_random, round_robin.
@@ -1390,6 +1450,18 @@ class UserSettings(google.protobuf.message.Message):
         """
 
     @property
+    def http_max_field_name_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Maximum length of field name in HTTP header.
+        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#http_max_field_name_size).
+        """
+
+    @property
+    def http_max_field_value_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Maximum length of field value in HTTP header.
+        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#http_max_field_value_size).
+        """
+
+    @property
     def joined_subquery_requires_alias(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
     @property
     def join_use_nulls(self) -> google.protobuf.wrappers_pb2.BoolValue: ...
@@ -1459,10 +1531,9 @@ class UserSettings(google.protobuf.message.Message):
         """
 
     @property
-    def async_insert_stale_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
-        """The maximum timeout in milliseconds since the last INSERT query before dumping collected data. If enabled, the settings prolongs the [async_insert_busy_timeout] with every INSERT query as long as [async_insert_max_data_size] is not exceeded.
-
-        More info see in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings/#async-insert-stale-timeout-ms).
+    def async_insert_use_adaptive_busy_timeout(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """If it is set to true, use adaptive busy timeout for asynchronous inserts.
+        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#async_insert_use_adaptive_busy_timeout).
         """
 
     @property
@@ -1497,6 +1568,12 @@ class UserSettings(google.protobuf.message.Message):
     def input_format_import_nested_json(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Enables or disables the insertion of JSON data with nested objects.
         See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#input-format-parallel-parsing)
+        """
+
+    @property
+    def data_type_default_nullable(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Allows data types without explicit modifiers NULL or NOT NULL in column definition will be Nullable.
+        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#data_type_default_nullable).
         """
 
     @property
@@ -1564,8 +1641,81 @@ class UserSettings(google.protobuf.message.Message):
     @property
     def log_query_threads(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Setting up query threads logging. Query threads log into the [system.query_thread_log](https://clickhouse.com/docs/en/operations/system-tables/query_thread_log) table. This setting has effect only when [log_queries](https://clickhouse.com/docs/en/operations/settings/settings#log-queries) is true. Queries threads run by ClickHouse with this setup are logged according to the rules in the [query_thread_log](https://clickhouse.com/docs/en/operations/server-configuration-parameters/settings#server_configuration_parameters-query_thread_log) server configuration parameter.
-        Default: true
+        Default: false
         See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#log_query_threads)
+        """
+
+    @property
+    def log_query_views(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables or disables query views logging to the the system.query_view_log table.
+        Default: true
+        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#log_query_views)
+        """
+
+    @property
+    def log_queries_probability(self) -> google.protobuf.wrappers_pb2.DoubleValue:
+        """Log queries with the specified probability.
+        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#log_queries_probability).
+        """
+
+    @property
+    def log_processors_profiles(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enabled or disable logging of processors level profiling data to the the system.log_processors_profiles table.
+        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#log_processors_profiles).
+        """
+
+    @property
+    def use_query_cache(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """If turned on, SELECT queries may utilize the query cache.
+        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#use_query_cache).
+        """
+
+    @property
+    def enable_reads_from_query_cache(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """If turned on, results of SELECT queries are retrieved from the query cache.
+        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#enable_reads_from_query_cache).
+        """
+
+    @property
+    def enable_writes_to_query_cache(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """If turned on, results of SELECT queries are stored in the query cache.
+        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#enable_writes_to_query_cache).
+        """
+
+    @property
+    def query_cache_min_query_runs(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Minimum number of times a SELECT query must run before its result is stored in the query cache.
+        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#query_cache_min_query_runs).
+        """
+
+    @property
+    def query_cache_min_query_duration(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Minimum duration in milliseconds a query needs to run for its result to be stored in the query cache.
+        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#query_cache_min_query_duration).
+        """
+
+    @property
+    def query_cache_ttl(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """After this time in seconds entries in the query cache become stale.
+        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#query_cache_ttl).
+        """
+
+    @property
+    def query_cache_max_entries(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """The maximum number of query results the current user may store in the query cache. 0 means unlimited.
+        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#query_cache_max_entries).
+        """
+
+    @property
+    def query_cache_max_size_in_bytes(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """The maximum amount of memory (in bytes) the current user may allocate in the query cache. 0 means unlimited.
+        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#query_cache_max_size_in_bytes).
+        """
+
+    @property
+    def query_cache_share_between_users(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """If turned on, the result of SELECT queries cached in the query cache can be read by other users. It is not recommended to enable this setting due to security reasons.
+        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#query_cache_share_between_users).
         """
 
     @property
@@ -1598,9 +1748,22 @@ class UserSettings(google.protobuf.message.Message):
 
     @property
     def prefer_localhost_replica(self) -> google.protobuf.wrappers_pb2.BoolValue:
-        """Enables/disables preferable using the localhost replica when processing distributed queries.
+        """Enables or disables preferable using the localhost replica when processing distributed queries.
         Default: true
         See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#prefer_localhost_replica)
+        """
+
+    @property
+    def do_not_merge_across_partitions_select_final(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enables or disable independent processing of partitions for SELECT queries with FINAL.
+        Default: false
+        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/guides/replacing-merge-tree#exploiting-partitions-with-replacingmergetree)
+        """
+
+    @property
+    def ignore_materialized_views_with_dropped_target_table(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Ignore materialized views with dropped target table during pushing to views.
+        See in-depth description in [ClickHouse documentation](https://clickhouse.com/docs/en/operations/settings/settings#ignore_materialized_views_with_dropped_target_table).
         """
 
     @property
@@ -1609,6 +1772,10 @@ class UserSettings(google.protobuf.message.Message):
 
     @property
     def min_count_to_compile(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """The setting is deprecated and has no effect."""
+
+    @property
+    def async_insert_stale_timeout(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """The setting is deprecated and has no effect."""
 
     def __init__(
@@ -1718,6 +1885,8 @@ class UserSettings(google.protobuf.message.Message):
         add_http_cors_header: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         cancel_http_readonly_queries_on_client_close: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         max_http_get_redirects: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        http_max_field_name_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        http_max_field_value_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         joined_subquery_requires_alias: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         join_use_nulls: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         transform_null_in: google.protobuf.wrappers_pb2.BoolValue | None = ...,
@@ -1732,12 +1901,14 @@ class UserSettings(google.protobuf.message.Message):
         wait_for_async_insert_timeout: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         async_insert_max_data_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         async_insert_busy_timeout: google.protobuf.wrappers_pb2.Int64Value | None = ...,
-        async_insert_stale_timeout: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        async_insert_use_adaptive_busy_timeout: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         memory_profiler_step: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         memory_profiler_sample_probability: google.protobuf.wrappers_pb2.DoubleValue | None = ...,
         max_final_threads: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         input_format_parallel_parsing: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         input_format_import_nested_json: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        format_avro_schema_registry_url: builtins.str = ...,
+        data_type_default_nullable: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         local_filesystem_read_method: global___UserSettings.LocalFilesystemReadMethod.ValueType = ...,
         max_read_buffer_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         insert_keeper_max_retries: google.protobuf.wrappers_pb2.Int64Value | None = ...,
@@ -1749,17 +1920,34 @@ class UserSettings(google.protobuf.message.Message):
         memory_overcommit_ratio_denominator_for_user: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         memory_usage_overcommit_max_wait_microseconds: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         log_query_threads: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        log_query_views: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        log_queries_probability: google.protobuf.wrappers_pb2.DoubleValue | None = ...,
+        log_processors_profiles: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        use_query_cache: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        enable_reads_from_query_cache: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        enable_writes_to_query_cache: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        query_cache_min_query_runs: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        query_cache_min_query_duration: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        query_cache_ttl: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        query_cache_max_entries: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        query_cache_max_size_in_bytes: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        query_cache_tag: builtins.str = ...,
+        query_cache_share_between_users: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        query_cache_nondeterministic_function_handling: global___UserSettings.QueryCacheNondeterministicFunctionHandling.ValueType = ...,
         max_insert_threads: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         use_hedged_requests: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         idle_connection_timeout: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         hedged_connection_timeout_ms: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         load_balancing: global___UserSettings.LoadBalancing.ValueType = ...,
         prefer_localhost_replica: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        do_not_merge_across_partitions_select_final: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        ignore_materialized_views_with_dropped_target_table: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         compile: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         min_count_to_compile: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        async_insert_stale_timeout: google.protobuf.wrappers_pb2.Int64Value | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["add_http_cors_header", b"add_http_cors_header", "allow_ddl", b"allow_ddl", "allow_introspection_functions", b"allow_introspection_functions", "allow_suspicious_low_cardinality_types", b"allow_suspicious_low_cardinality_types", "any_join_distinct_right_table_keys", b"any_join_distinct_right_table_keys", "async_insert", b"async_insert", "async_insert_busy_timeout", b"async_insert_busy_timeout", "async_insert_max_data_size", b"async_insert_max_data_size", "async_insert_stale_timeout", b"async_insert_stale_timeout", "async_insert_threads", b"async_insert_threads", "cancel_http_readonly_queries_on_client_close", b"cancel_http_readonly_queries_on_client_close", "compile", b"compile", "compile_expressions", b"compile_expressions", "connect_timeout", b"connect_timeout", "connect_timeout_with_failover", b"connect_timeout_with_failover", "deduplicate_blocks_in_dependent_materialized_views", b"deduplicate_blocks_in_dependent_materialized_views", "distributed_aggregation_memory_efficient", b"distributed_aggregation_memory_efficient", "distributed_ddl_task_timeout", b"distributed_ddl_task_timeout", "empty_result_for_aggregation_by_empty_set", b"empty_result_for_aggregation_by_empty_set", "enable_http_compression", b"enable_http_compression", "fallback_to_stale_replicas_for_distributed_queries", b"fallback_to_stale_replicas_for_distributed_queries", "flatten_nested", b"flatten_nested", "force_index_by_date", b"force_index_by_date", "force_primary_key", b"force_primary_key", "format_regexp_skip_unmatched", b"format_regexp_skip_unmatched", "group_by_two_level_threshold", b"group_by_two_level_threshold", "group_by_two_level_threshold_bytes", b"group_by_two_level_threshold_bytes", "hedged_connection_timeout_ms", b"hedged_connection_timeout_ms", "http_connection_timeout", b"http_connection_timeout", "http_headers_progress_interval", b"http_headers_progress_interval", "http_receive_timeout", b"http_receive_timeout", "http_send_timeout", b"http_send_timeout", "idle_connection_timeout", b"idle_connection_timeout", "input_format_defaults_for_omitted_fields", b"input_format_defaults_for_omitted_fields", "input_format_import_nested_json", b"input_format_import_nested_json", "input_format_null_as_default", b"input_format_null_as_default", "input_format_parallel_parsing", b"input_format_parallel_parsing", "input_format_values_interpret_expressions", b"input_format_values_interpret_expressions", "input_format_with_names_use_header", b"input_format_with_names_use_header", "insert_keeper_max_retries", b"insert_keeper_max_retries", "insert_null_as_default", b"insert_null_as_default", "insert_quorum", b"insert_quorum", "insert_quorum_parallel", b"insert_quorum_parallel", "insert_quorum_timeout", b"insert_quorum_timeout", "join_use_nulls", b"join_use_nulls", "joined_subquery_requires_alias", b"joined_subquery_requires_alias", "log_query_threads", b"log_query_threads", "low_cardinality_allow_in_native_format", b"low_cardinality_allow_in_native_format", "max_ast_depth", b"max_ast_depth", "max_ast_elements", b"max_ast_elements", "max_block_size", b"max_block_size", "max_bytes_before_external_group_by", b"max_bytes_before_external_group_by", "max_bytes_before_external_sort", b"max_bytes_before_external_sort", "max_bytes_in_distinct", b"max_bytes_in_distinct", "max_bytes_in_join", b"max_bytes_in_join", "max_bytes_in_set", b"max_bytes_in_set", "max_bytes_to_read", b"max_bytes_to_read", "max_bytes_to_sort", b"max_bytes_to_sort", "max_bytes_to_transfer", b"max_bytes_to_transfer", "max_columns_to_read", b"max_columns_to_read", "max_concurrent_queries_for_user", b"max_concurrent_queries_for_user", "max_execution_time", b"max_execution_time", "max_expanded_ast_elements", b"max_expanded_ast_elements", "max_final_threads", b"max_final_threads", "max_http_get_redirects", b"max_http_get_redirects", "max_insert_block_size", b"max_insert_block_size", "max_insert_threads", b"max_insert_threads", "max_memory_usage", b"max_memory_usage", "max_memory_usage_for_user", b"max_memory_usage_for_user", "max_network_bandwidth", b"max_network_bandwidth", "max_network_bandwidth_for_user", b"max_network_bandwidth_for_user", "max_parser_depth", b"max_parser_depth", "max_partitions_per_insert_block", b"max_partitions_per_insert_block", "max_query_size", b"max_query_size", "max_read_buffer_size", b"max_read_buffer_size", "max_replica_delay_for_distributed_queries", b"max_replica_delay_for_distributed_queries", "max_result_bytes", b"max_result_bytes", "max_result_rows", b"max_result_rows", "max_rows_in_distinct", b"max_rows_in_distinct", "max_rows_in_join", b"max_rows_in_join", "max_rows_in_set", b"max_rows_in_set", "max_rows_to_group_by", b"max_rows_to_group_by", "max_rows_to_read", b"max_rows_to_read", "max_rows_to_sort", b"max_rows_to_sort", "max_rows_to_transfer", b"max_rows_to_transfer", "max_temporary_columns", b"max_temporary_columns", "max_temporary_data_on_disk_size_for_query", b"max_temporary_data_on_disk_size_for_query", "max_temporary_data_on_disk_size_for_user", b"max_temporary_data_on_disk_size_for_user", "max_temporary_non_const_columns", b"max_temporary_non_const_columns", "max_threads", b"max_threads", "memory_overcommit_ratio_denominator", b"memory_overcommit_ratio_denominator", "memory_overcommit_ratio_denominator_for_user", b"memory_overcommit_ratio_denominator_for_user", "memory_profiler_sample_probability", b"memory_profiler_sample_probability", "memory_profiler_step", b"memory_profiler_step", "memory_usage_overcommit_max_wait_microseconds", b"memory_usage_overcommit_max_wait_microseconds", "merge_tree_max_bytes_to_use_cache", b"merge_tree_max_bytes_to_use_cache", "merge_tree_max_rows_to_use_cache", b"merge_tree_max_rows_to_use_cache", "merge_tree_min_bytes_for_concurrent_read", b"merge_tree_min_bytes_for_concurrent_read", "merge_tree_min_rows_for_concurrent_read", b"merge_tree_min_rows_for_concurrent_read", "min_bytes_to_use_direct_io", b"min_bytes_to_use_direct_io", "min_count_to_compile", b"min_count_to_compile", "min_count_to_compile_expression", b"min_count_to_compile_expression", "min_execution_speed", b"min_execution_speed", "min_execution_speed_bytes", b"min_execution_speed_bytes", "min_insert_block_size_bytes", b"min_insert_block_size_bytes", "min_insert_block_size_rows", b"min_insert_block_size_rows", "output_format_json_quote_64bit_integers", b"output_format_json_quote_64bit_integers", "output_format_json_quote_denormals", b"output_format_json_quote_denormals", "prefer_localhost_replica", b"prefer_localhost_replica", "priority", b"priority", "readonly", b"readonly", "receive_timeout", b"receive_timeout", "replication_alter_partitions_sync", b"replication_alter_partitions_sync", "select_sequential_consistency", b"select_sequential_consistency", "send_progress_in_http_headers", b"send_progress_in_http_headers", "send_timeout", b"send_timeout", "skip_unavailable_shards", b"skip_unavailable_shards", "timeout_before_checking_execution_speed", b"timeout_before_checking_execution_speed", "transform_null_in", b"transform_null_in", "use_hedged_requests", b"use_hedged_requests", "use_uncompressed_cache", b"use_uncompressed_cache", "wait_for_async_insert", b"wait_for_async_insert", "wait_for_async_insert_timeout", b"wait_for_async_insert_timeout"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["add_http_cors_header", b"add_http_cors_header", "allow_ddl", b"allow_ddl", "allow_introspection_functions", b"allow_introspection_functions", "allow_suspicious_low_cardinality_types", b"allow_suspicious_low_cardinality_types", "any_join_distinct_right_table_keys", b"any_join_distinct_right_table_keys", "async_insert", b"async_insert", "async_insert_busy_timeout", b"async_insert_busy_timeout", "async_insert_max_data_size", b"async_insert_max_data_size", "async_insert_stale_timeout", b"async_insert_stale_timeout", "async_insert_threads", b"async_insert_threads", "cancel_http_readonly_queries_on_client_close", b"cancel_http_readonly_queries_on_client_close", "compile", b"compile", "compile_expressions", b"compile_expressions", "connect_timeout", b"connect_timeout", "connect_timeout_with_failover", b"connect_timeout_with_failover", "count_distinct_implementation", b"count_distinct_implementation", "date_time_input_format", b"date_time_input_format", "date_time_output_format", b"date_time_output_format", "deduplicate_blocks_in_dependent_materialized_views", b"deduplicate_blocks_in_dependent_materialized_views", "distinct_overflow_mode", b"distinct_overflow_mode", "distributed_aggregation_memory_efficient", b"distributed_aggregation_memory_efficient", "distributed_ddl_task_timeout", b"distributed_ddl_task_timeout", "distributed_product_mode", b"distributed_product_mode", "empty_result_for_aggregation_by_empty_set", b"empty_result_for_aggregation_by_empty_set", "enable_http_compression", b"enable_http_compression", "fallback_to_stale_replicas_for_distributed_queries", b"fallback_to_stale_replicas_for_distributed_queries", "flatten_nested", b"flatten_nested", "force_index_by_date", b"force_index_by_date", "force_primary_key", b"force_primary_key", "format_regexp", b"format_regexp", "format_regexp_escaping_rule", b"format_regexp_escaping_rule", "format_regexp_skip_unmatched", b"format_regexp_skip_unmatched", "group_by_overflow_mode", b"group_by_overflow_mode", "group_by_two_level_threshold", b"group_by_two_level_threshold", "group_by_two_level_threshold_bytes", b"group_by_two_level_threshold_bytes", "hedged_connection_timeout_ms", b"hedged_connection_timeout_ms", "http_connection_timeout", b"http_connection_timeout", "http_headers_progress_interval", b"http_headers_progress_interval", "http_receive_timeout", b"http_receive_timeout", "http_send_timeout", b"http_send_timeout", "idle_connection_timeout", b"idle_connection_timeout", "input_format_defaults_for_omitted_fields", b"input_format_defaults_for_omitted_fields", "input_format_import_nested_json", b"input_format_import_nested_json", "input_format_null_as_default", b"input_format_null_as_default", "input_format_parallel_parsing", b"input_format_parallel_parsing", "input_format_values_interpret_expressions", b"input_format_values_interpret_expressions", "input_format_with_names_use_header", b"input_format_with_names_use_header", "insert_keeper_max_retries", b"insert_keeper_max_retries", "insert_null_as_default", b"insert_null_as_default", "insert_quorum", b"insert_quorum", "insert_quorum_parallel", b"insert_quorum_parallel", "insert_quorum_timeout", b"insert_quorum_timeout", "join_algorithm", b"join_algorithm", "join_overflow_mode", b"join_overflow_mode", "join_use_nulls", b"join_use_nulls", "joined_subquery_requires_alias", b"joined_subquery_requires_alias", "load_balancing", b"load_balancing", "local_filesystem_read_method", b"local_filesystem_read_method", "log_query_threads", b"log_query_threads", "low_cardinality_allow_in_native_format", b"low_cardinality_allow_in_native_format", "max_ast_depth", b"max_ast_depth", "max_ast_elements", b"max_ast_elements", "max_block_size", b"max_block_size", "max_bytes_before_external_group_by", b"max_bytes_before_external_group_by", "max_bytes_before_external_sort", b"max_bytes_before_external_sort", "max_bytes_in_distinct", b"max_bytes_in_distinct", "max_bytes_in_join", b"max_bytes_in_join", "max_bytes_in_set", b"max_bytes_in_set", "max_bytes_to_read", b"max_bytes_to_read", "max_bytes_to_sort", b"max_bytes_to_sort", "max_bytes_to_transfer", b"max_bytes_to_transfer", "max_columns_to_read", b"max_columns_to_read", "max_concurrent_queries_for_user", b"max_concurrent_queries_for_user", "max_execution_time", b"max_execution_time", "max_expanded_ast_elements", b"max_expanded_ast_elements", "max_final_threads", b"max_final_threads", "max_http_get_redirects", b"max_http_get_redirects", "max_insert_block_size", b"max_insert_block_size", "max_insert_threads", b"max_insert_threads", "max_memory_usage", b"max_memory_usage", "max_memory_usage_for_user", b"max_memory_usage_for_user", "max_network_bandwidth", b"max_network_bandwidth", "max_network_bandwidth_for_user", b"max_network_bandwidth_for_user", "max_parser_depth", b"max_parser_depth", "max_partitions_per_insert_block", b"max_partitions_per_insert_block", "max_query_size", b"max_query_size", "max_read_buffer_size", b"max_read_buffer_size", "max_replica_delay_for_distributed_queries", b"max_replica_delay_for_distributed_queries", "max_result_bytes", b"max_result_bytes", "max_result_rows", b"max_result_rows", "max_rows_in_distinct", b"max_rows_in_distinct", "max_rows_in_join", b"max_rows_in_join", "max_rows_in_set", b"max_rows_in_set", "max_rows_to_group_by", b"max_rows_to_group_by", "max_rows_to_read", b"max_rows_to_read", "max_rows_to_sort", b"max_rows_to_sort", "max_rows_to_transfer", b"max_rows_to_transfer", "max_temporary_columns", b"max_temporary_columns", "max_temporary_data_on_disk_size_for_query", b"max_temporary_data_on_disk_size_for_query", "max_temporary_data_on_disk_size_for_user", b"max_temporary_data_on_disk_size_for_user", "max_temporary_non_const_columns", b"max_temporary_non_const_columns", "max_threads", b"max_threads", "memory_overcommit_ratio_denominator", b"memory_overcommit_ratio_denominator", "memory_overcommit_ratio_denominator_for_user", b"memory_overcommit_ratio_denominator_for_user", "memory_profiler_sample_probability", b"memory_profiler_sample_probability", "memory_profiler_step", b"memory_profiler_step", "memory_usage_overcommit_max_wait_microseconds", b"memory_usage_overcommit_max_wait_microseconds", "merge_tree_max_bytes_to_use_cache", b"merge_tree_max_bytes_to_use_cache", "merge_tree_max_rows_to_use_cache", b"merge_tree_max_rows_to_use_cache", "merge_tree_min_bytes_for_concurrent_read", b"merge_tree_min_bytes_for_concurrent_read", "merge_tree_min_rows_for_concurrent_read", b"merge_tree_min_rows_for_concurrent_read", "min_bytes_to_use_direct_io", b"min_bytes_to_use_direct_io", "min_count_to_compile", b"min_count_to_compile", "min_count_to_compile_expression", b"min_count_to_compile_expression", "min_execution_speed", b"min_execution_speed", "min_execution_speed_bytes", b"min_execution_speed_bytes", "min_insert_block_size_bytes", b"min_insert_block_size_bytes", "min_insert_block_size_rows", b"min_insert_block_size_rows", "output_format_json_quote_64bit_integers", b"output_format_json_quote_64bit_integers", "output_format_json_quote_denormals", b"output_format_json_quote_denormals", "prefer_localhost_replica", b"prefer_localhost_replica", "priority", b"priority", "quota_mode", b"quota_mode", "read_overflow_mode", b"read_overflow_mode", "readonly", b"readonly", "receive_timeout", b"receive_timeout", "remote_filesystem_read_method", b"remote_filesystem_read_method", "replication_alter_partitions_sync", b"replication_alter_partitions_sync", "result_overflow_mode", b"result_overflow_mode", "select_sequential_consistency", b"select_sequential_consistency", "send_progress_in_http_headers", b"send_progress_in_http_headers", "send_timeout", b"send_timeout", "set_overflow_mode", b"set_overflow_mode", "skip_unavailable_shards", b"skip_unavailable_shards", "sort_overflow_mode", b"sort_overflow_mode", "timeout_before_checking_execution_speed", b"timeout_before_checking_execution_speed", "timeout_overflow_mode", b"timeout_overflow_mode", "transfer_overflow_mode", b"transfer_overflow_mode", "transform_null_in", b"transform_null_in", "use_hedged_requests", b"use_hedged_requests", "use_uncompressed_cache", b"use_uncompressed_cache", "wait_for_async_insert", b"wait_for_async_insert", "wait_for_async_insert_timeout", b"wait_for_async_insert_timeout"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["add_http_cors_header", b"add_http_cors_header", "allow_ddl", b"allow_ddl", "allow_introspection_functions", b"allow_introspection_functions", "allow_suspicious_low_cardinality_types", b"allow_suspicious_low_cardinality_types", "any_join_distinct_right_table_keys", b"any_join_distinct_right_table_keys", "async_insert", b"async_insert", "async_insert_busy_timeout", b"async_insert_busy_timeout", "async_insert_max_data_size", b"async_insert_max_data_size", "async_insert_stale_timeout", b"async_insert_stale_timeout", "async_insert_threads", b"async_insert_threads", "async_insert_use_adaptive_busy_timeout", b"async_insert_use_adaptive_busy_timeout", "cancel_http_readonly_queries_on_client_close", b"cancel_http_readonly_queries_on_client_close", "compile", b"compile", "compile_expressions", b"compile_expressions", "connect_timeout", b"connect_timeout", "connect_timeout_with_failover", b"connect_timeout_with_failover", "data_type_default_nullable", b"data_type_default_nullable", "deduplicate_blocks_in_dependent_materialized_views", b"deduplicate_blocks_in_dependent_materialized_views", "distributed_aggregation_memory_efficient", b"distributed_aggregation_memory_efficient", "distributed_ddl_task_timeout", b"distributed_ddl_task_timeout", "do_not_merge_across_partitions_select_final", b"do_not_merge_across_partitions_select_final", "empty_result_for_aggregation_by_empty_set", b"empty_result_for_aggregation_by_empty_set", "enable_http_compression", b"enable_http_compression", "enable_reads_from_query_cache", b"enable_reads_from_query_cache", "enable_writes_to_query_cache", b"enable_writes_to_query_cache", "fallback_to_stale_replicas_for_distributed_queries", b"fallback_to_stale_replicas_for_distributed_queries", "flatten_nested", b"flatten_nested", "force_index_by_date", b"force_index_by_date", "force_primary_key", b"force_primary_key", "format_regexp_skip_unmatched", b"format_regexp_skip_unmatched", "group_by_two_level_threshold", b"group_by_two_level_threshold", "group_by_two_level_threshold_bytes", b"group_by_two_level_threshold_bytes", "hedged_connection_timeout_ms", b"hedged_connection_timeout_ms", "http_connection_timeout", b"http_connection_timeout", "http_headers_progress_interval", b"http_headers_progress_interval", "http_max_field_name_size", b"http_max_field_name_size", "http_max_field_value_size", b"http_max_field_value_size", "http_receive_timeout", b"http_receive_timeout", "http_send_timeout", b"http_send_timeout", "idle_connection_timeout", b"idle_connection_timeout", "ignore_materialized_views_with_dropped_target_table", b"ignore_materialized_views_with_dropped_target_table", "input_format_defaults_for_omitted_fields", b"input_format_defaults_for_omitted_fields", "input_format_import_nested_json", b"input_format_import_nested_json", "input_format_null_as_default", b"input_format_null_as_default", "input_format_parallel_parsing", b"input_format_parallel_parsing", "input_format_values_interpret_expressions", b"input_format_values_interpret_expressions", "input_format_with_names_use_header", b"input_format_with_names_use_header", "insert_keeper_max_retries", b"insert_keeper_max_retries", "insert_null_as_default", b"insert_null_as_default", "insert_quorum", b"insert_quorum", "insert_quorum_parallel", b"insert_quorum_parallel", "insert_quorum_timeout", b"insert_quorum_timeout", "join_use_nulls", b"join_use_nulls", "joined_subquery_requires_alias", b"joined_subquery_requires_alias", "log_processors_profiles", b"log_processors_profiles", "log_queries_probability", b"log_queries_probability", "log_query_threads", b"log_query_threads", "log_query_views", b"log_query_views", "low_cardinality_allow_in_native_format", b"low_cardinality_allow_in_native_format", "max_ast_depth", b"max_ast_depth", "max_ast_elements", b"max_ast_elements", "max_block_size", b"max_block_size", "max_bytes_before_external_group_by", b"max_bytes_before_external_group_by", "max_bytes_before_external_sort", b"max_bytes_before_external_sort", "max_bytes_in_distinct", b"max_bytes_in_distinct", "max_bytes_in_join", b"max_bytes_in_join", "max_bytes_in_set", b"max_bytes_in_set", "max_bytes_to_read", b"max_bytes_to_read", "max_bytes_to_sort", b"max_bytes_to_sort", "max_bytes_to_transfer", b"max_bytes_to_transfer", "max_columns_to_read", b"max_columns_to_read", "max_concurrent_queries_for_user", b"max_concurrent_queries_for_user", "max_execution_time", b"max_execution_time", "max_expanded_ast_elements", b"max_expanded_ast_elements", "max_final_threads", b"max_final_threads", "max_http_get_redirects", b"max_http_get_redirects", "max_insert_block_size", b"max_insert_block_size", "max_insert_threads", b"max_insert_threads", "max_memory_usage", b"max_memory_usage", "max_memory_usage_for_user", b"max_memory_usage_for_user", "max_network_bandwidth", b"max_network_bandwidth", "max_network_bandwidth_for_user", b"max_network_bandwidth_for_user", "max_parser_depth", b"max_parser_depth", "max_partitions_per_insert_block", b"max_partitions_per_insert_block", "max_query_size", b"max_query_size", "max_read_buffer_size", b"max_read_buffer_size", "max_replica_delay_for_distributed_queries", b"max_replica_delay_for_distributed_queries", "max_result_bytes", b"max_result_bytes", "max_result_rows", b"max_result_rows", "max_rows_in_distinct", b"max_rows_in_distinct", "max_rows_in_join", b"max_rows_in_join", "max_rows_in_set", b"max_rows_in_set", "max_rows_to_group_by", b"max_rows_to_group_by", "max_rows_to_read", b"max_rows_to_read", "max_rows_to_sort", b"max_rows_to_sort", "max_rows_to_transfer", b"max_rows_to_transfer", "max_temporary_columns", b"max_temporary_columns", "max_temporary_data_on_disk_size_for_query", b"max_temporary_data_on_disk_size_for_query", "max_temporary_data_on_disk_size_for_user", b"max_temporary_data_on_disk_size_for_user", "max_temporary_non_const_columns", b"max_temporary_non_const_columns", "max_threads", b"max_threads", "memory_overcommit_ratio_denominator", b"memory_overcommit_ratio_denominator", "memory_overcommit_ratio_denominator_for_user", b"memory_overcommit_ratio_denominator_for_user", "memory_profiler_sample_probability", b"memory_profiler_sample_probability", "memory_profiler_step", b"memory_profiler_step", "memory_usage_overcommit_max_wait_microseconds", b"memory_usage_overcommit_max_wait_microseconds", "merge_tree_max_bytes_to_use_cache", b"merge_tree_max_bytes_to_use_cache", "merge_tree_max_rows_to_use_cache", b"merge_tree_max_rows_to_use_cache", "merge_tree_min_bytes_for_concurrent_read", b"merge_tree_min_bytes_for_concurrent_read", "merge_tree_min_rows_for_concurrent_read", b"merge_tree_min_rows_for_concurrent_read", "min_bytes_to_use_direct_io", b"min_bytes_to_use_direct_io", "min_count_to_compile", b"min_count_to_compile", "min_count_to_compile_expression", b"min_count_to_compile_expression", "min_execution_speed", b"min_execution_speed", "min_execution_speed_bytes", b"min_execution_speed_bytes", "min_insert_block_size_bytes", b"min_insert_block_size_bytes", "min_insert_block_size_rows", b"min_insert_block_size_rows", "output_format_json_quote_64bit_integers", b"output_format_json_quote_64bit_integers", "output_format_json_quote_denormals", b"output_format_json_quote_denormals", "prefer_localhost_replica", b"prefer_localhost_replica", "priority", b"priority", "query_cache_max_entries", b"query_cache_max_entries", "query_cache_max_size_in_bytes", b"query_cache_max_size_in_bytes", "query_cache_min_query_duration", b"query_cache_min_query_duration", "query_cache_min_query_runs", b"query_cache_min_query_runs", "query_cache_share_between_users", b"query_cache_share_between_users", "query_cache_ttl", b"query_cache_ttl", "readonly", b"readonly", "receive_timeout", b"receive_timeout", "replication_alter_partitions_sync", b"replication_alter_partitions_sync", "select_sequential_consistency", b"select_sequential_consistency", "send_progress_in_http_headers", b"send_progress_in_http_headers", "send_timeout", b"send_timeout", "skip_unavailable_shards", b"skip_unavailable_shards", "timeout_before_checking_execution_speed", b"timeout_before_checking_execution_speed", "transform_null_in", b"transform_null_in", "use_hedged_requests", b"use_hedged_requests", "use_query_cache", b"use_query_cache", "use_uncompressed_cache", b"use_uncompressed_cache", "wait_for_async_insert", b"wait_for_async_insert", "wait_for_async_insert_timeout", b"wait_for_async_insert_timeout"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["add_http_cors_header", b"add_http_cors_header", "allow_ddl", b"allow_ddl", "allow_introspection_functions", b"allow_introspection_functions", "allow_suspicious_low_cardinality_types", b"allow_suspicious_low_cardinality_types", "any_join_distinct_right_table_keys", b"any_join_distinct_right_table_keys", "async_insert", b"async_insert", "async_insert_busy_timeout", b"async_insert_busy_timeout", "async_insert_max_data_size", b"async_insert_max_data_size", "async_insert_stale_timeout", b"async_insert_stale_timeout", "async_insert_threads", b"async_insert_threads", "async_insert_use_adaptive_busy_timeout", b"async_insert_use_adaptive_busy_timeout", "cancel_http_readonly_queries_on_client_close", b"cancel_http_readonly_queries_on_client_close", "compile", b"compile", "compile_expressions", b"compile_expressions", "connect_timeout", b"connect_timeout", "connect_timeout_with_failover", b"connect_timeout_with_failover", "count_distinct_implementation", b"count_distinct_implementation", "data_type_default_nullable", b"data_type_default_nullable", "date_time_input_format", b"date_time_input_format", "date_time_output_format", b"date_time_output_format", "deduplicate_blocks_in_dependent_materialized_views", b"deduplicate_blocks_in_dependent_materialized_views", "distinct_overflow_mode", b"distinct_overflow_mode", "distributed_aggregation_memory_efficient", b"distributed_aggregation_memory_efficient", "distributed_ddl_task_timeout", b"distributed_ddl_task_timeout", "distributed_product_mode", b"distributed_product_mode", "do_not_merge_across_partitions_select_final", b"do_not_merge_across_partitions_select_final", "empty_result_for_aggregation_by_empty_set", b"empty_result_for_aggregation_by_empty_set", "enable_http_compression", b"enable_http_compression", "enable_reads_from_query_cache", b"enable_reads_from_query_cache", "enable_writes_to_query_cache", b"enable_writes_to_query_cache", "fallback_to_stale_replicas_for_distributed_queries", b"fallback_to_stale_replicas_for_distributed_queries", "flatten_nested", b"flatten_nested", "force_index_by_date", b"force_index_by_date", "force_primary_key", b"force_primary_key", "format_avro_schema_registry_url", b"format_avro_schema_registry_url", "format_regexp", b"format_regexp", "format_regexp_escaping_rule", b"format_regexp_escaping_rule", "format_regexp_skip_unmatched", b"format_regexp_skip_unmatched", "group_by_overflow_mode", b"group_by_overflow_mode", "group_by_two_level_threshold", b"group_by_two_level_threshold", "group_by_two_level_threshold_bytes", b"group_by_two_level_threshold_bytes", "hedged_connection_timeout_ms", b"hedged_connection_timeout_ms", "http_connection_timeout", b"http_connection_timeout", "http_headers_progress_interval", b"http_headers_progress_interval", "http_max_field_name_size", b"http_max_field_name_size", "http_max_field_value_size", b"http_max_field_value_size", "http_receive_timeout", b"http_receive_timeout", "http_send_timeout", b"http_send_timeout", "idle_connection_timeout", b"idle_connection_timeout", "ignore_materialized_views_with_dropped_target_table", b"ignore_materialized_views_with_dropped_target_table", "input_format_defaults_for_omitted_fields", b"input_format_defaults_for_omitted_fields", "input_format_import_nested_json", b"input_format_import_nested_json", "input_format_null_as_default", b"input_format_null_as_default", "input_format_parallel_parsing", b"input_format_parallel_parsing", "input_format_values_interpret_expressions", b"input_format_values_interpret_expressions", "input_format_with_names_use_header", b"input_format_with_names_use_header", "insert_keeper_max_retries", b"insert_keeper_max_retries", "insert_null_as_default", b"insert_null_as_default", "insert_quorum", b"insert_quorum", "insert_quorum_parallel", b"insert_quorum_parallel", "insert_quorum_timeout", b"insert_quorum_timeout", "join_algorithm", b"join_algorithm", "join_overflow_mode", b"join_overflow_mode", "join_use_nulls", b"join_use_nulls", "joined_subquery_requires_alias", b"joined_subquery_requires_alias", "load_balancing", b"load_balancing", "local_filesystem_read_method", b"local_filesystem_read_method", "log_processors_profiles", b"log_processors_profiles", "log_queries_probability", b"log_queries_probability", "log_query_threads", b"log_query_threads", "log_query_views", b"log_query_views", "low_cardinality_allow_in_native_format", b"low_cardinality_allow_in_native_format", "max_ast_depth", b"max_ast_depth", "max_ast_elements", b"max_ast_elements", "max_block_size", b"max_block_size", "max_bytes_before_external_group_by", b"max_bytes_before_external_group_by", "max_bytes_before_external_sort", b"max_bytes_before_external_sort", "max_bytes_in_distinct", b"max_bytes_in_distinct", "max_bytes_in_join", b"max_bytes_in_join", "max_bytes_in_set", b"max_bytes_in_set", "max_bytes_to_read", b"max_bytes_to_read", "max_bytes_to_sort", b"max_bytes_to_sort", "max_bytes_to_transfer", b"max_bytes_to_transfer", "max_columns_to_read", b"max_columns_to_read", "max_concurrent_queries_for_user", b"max_concurrent_queries_for_user", "max_execution_time", b"max_execution_time", "max_expanded_ast_elements", b"max_expanded_ast_elements", "max_final_threads", b"max_final_threads", "max_http_get_redirects", b"max_http_get_redirects", "max_insert_block_size", b"max_insert_block_size", "max_insert_threads", b"max_insert_threads", "max_memory_usage", b"max_memory_usage", "max_memory_usage_for_user", b"max_memory_usage_for_user", "max_network_bandwidth", b"max_network_bandwidth", "max_network_bandwidth_for_user", b"max_network_bandwidth_for_user", "max_parser_depth", b"max_parser_depth", "max_partitions_per_insert_block", b"max_partitions_per_insert_block", "max_query_size", b"max_query_size", "max_read_buffer_size", b"max_read_buffer_size", "max_replica_delay_for_distributed_queries", b"max_replica_delay_for_distributed_queries", "max_result_bytes", b"max_result_bytes", "max_result_rows", b"max_result_rows", "max_rows_in_distinct", b"max_rows_in_distinct", "max_rows_in_join", b"max_rows_in_join", "max_rows_in_set", b"max_rows_in_set", "max_rows_to_group_by", b"max_rows_to_group_by", "max_rows_to_read", b"max_rows_to_read", "max_rows_to_sort", b"max_rows_to_sort", "max_rows_to_transfer", b"max_rows_to_transfer", "max_temporary_columns", b"max_temporary_columns", "max_temporary_data_on_disk_size_for_query", b"max_temporary_data_on_disk_size_for_query", "max_temporary_data_on_disk_size_for_user", b"max_temporary_data_on_disk_size_for_user", "max_temporary_non_const_columns", b"max_temporary_non_const_columns", "max_threads", b"max_threads", "memory_overcommit_ratio_denominator", b"memory_overcommit_ratio_denominator", "memory_overcommit_ratio_denominator_for_user", b"memory_overcommit_ratio_denominator_for_user", "memory_profiler_sample_probability", b"memory_profiler_sample_probability", "memory_profiler_step", b"memory_profiler_step", "memory_usage_overcommit_max_wait_microseconds", b"memory_usage_overcommit_max_wait_microseconds", "merge_tree_max_bytes_to_use_cache", b"merge_tree_max_bytes_to_use_cache", "merge_tree_max_rows_to_use_cache", b"merge_tree_max_rows_to_use_cache", "merge_tree_min_bytes_for_concurrent_read", b"merge_tree_min_bytes_for_concurrent_read", "merge_tree_min_rows_for_concurrent_read", b"merge_tree_min_rows_for_concurrent_read", "min_bytes_to_use_direct_io", b"min_bytes_to_use_direct_io", "min_count_to_compile", b"min_count_to_compile", "min_count_to_compile_expression", b"min_count_to_compile_expression", "min_execution_speed", b"min_execution_speed", "min_execution_speed_bytes", b"min_execution_speed_bytes", "min_insert_block_size_bytes", b"min_insert_block_size_bytes", "min_insert_block_size_rows", b"min_insert_block_size_rows", "output_format_json_quote_64bit_integers", b"output_format_json_quote_64bit_integers", "output_format_json_quote_denormals", b"output_format_json_quote_denormals", "prefer_localhost_replica", b"prefer_localhost_replica", "priority", b"priority", "query_cache_max_entries", b"query_cache_max_entries", "query_cache_max_size_in_bytes", b"query_cache_max_size_in_bytes", "query_cache_min_query_duration", b"query_cache_min_query_duration", "query_cache_min_query_runs", b"query_cache_min_query_runs", "query_cache_nondeterministic_function_handling", b"query_cache_nondeterministic_function_handling", "query_cache_share_between_users", b"query_cache_share_between_users", "query_cache_tag", b"query_cache_tag", "query_cache_ttl", b"query_cache_ttl", "quota_mode", b"quota_mode", "read_overflow_mode", b"read_overflow_mode", "readonly", b"readonly", "receive_timeout", b"receive_timeout", "remote_filesystem_read_method", b"remote_filesystem_read_method", "replication_alter_partitions_sync", b"replication_alter_partitions_sync", "result_overflow_mode", b"result_overflow_mode", "select_sequential_consistency", b"select_sequential_consistency", "send_progress_in_http_headers", b"send_progress_in_http_headers", "send_timeout", b"send_timeout", "set_overflow_mode", b"set_overflow_mode", "skip_unavailable_shards", b"skip_unavailable_shards", "sort_overflow_mode", b"sort_overflow_mode", "timeout_before_checking_execution_speed", b"timeout_before_checking_execution_speed", "timeout_overflow_mode", b"timeout_overflow_mode", "transfer_overflow_mode", b"transfer_overflow_mode", "transform_null_in", b"transform_null_in", "use_hedged_requests", b"use_hedged_requests", "use_query_cache", b"use_query_cache", "use_uncompressed_cache", b"use_uncompressed_cache", "wait_for_async_insert", b"wait_for_async_insert", "wait_for_async_insert_timeout", b"wait_for_async_insert_timeout"]) -> None: ...
 
 global___UserSettings = UserSettings
 

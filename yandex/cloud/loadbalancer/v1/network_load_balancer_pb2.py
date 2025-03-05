@@ -27,7 +27,7 @@ from yandex.cloud.loadbalancer.v1 import health_check_pb2 as yandex_dot_cloud_do
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n8yandex/cloud/loadbalancer/v1/network_load_balancer.proto\x12\x1cyandex.cloud.loadbalancer.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a/yandex/cloud/loadbalancer/v1/health_check.proto\x1a\x1dyandex/cloud/validation.proto\"\xc0\x07\n\x13NetworkLoadBalancer\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12M\n\x06labels\x18\x06 \x03(\x0b\x32=.yandex.cloud.loadbalancer.v1.NetworkLoadBalancer.LabelsEntry\x12\x11\n\tregion_id\x18\x07 \x01(\t\x12H\n\x06status\x18\t \x01(\x0e\x32\x38.yandex.cloud.loadbalancer.v1.NetworkLoadBalancer.Status\x12\x44\n\x04type\x18\n \x01(\x0e\x32\x36.yandex.cloud.loadbalancer.v1.NetworkLoadBalancer.Type\x12[\n\x10session_affinity\x18\x0b \x01(\x0e\x32\x41.yandex.cloud.loadbalancer.v1.NetworkLoadBalancer.SessionAffinity\x12\x39\n\tlisteners\x18\x0c \x03(\x0b\x32&.yandex.cloud.loadbalancer.v1.Listener\x12Q\n\x16\x61ttached_target_groups\x18\r \x03(\x0b\x32\x31.yandex.cloud.loadbalancer.v1.AttachedTargetGroup\x12\x1b\n\x13\x64\x65letion_protection\x18\x0e \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x7f\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0c\n\x08STARTING\x10\x02\x12\n\n\x06\x41\x43TIVE\x10\x03\x12\x0c\n\x08STOPPING\x10\x04\x12\x0b\n\x07STOPPED\x10\x05\x12\x0c\n\x08\x44\x45LETING\x10\x06\x12\x0c\n\x08INACTIVE\x10\x07\"8\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x45XTERNAL\x10\x01\x12\x0c\n\x08INTERNAL\x10\x02\"M\n\x0fSessionAffinity\x12 \n\x1cSESSION_AFFINITY_UNSPECIFIED\x10\x00\x12\x18\n\x14\x43LIENT_IP_PORT_PROTO\x10\x01J\x04\x08\x08\x10\t\"\x85\x01\n\x13\x41ttachedTargetGroup\x12%\n\x0ftarget_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12G\n\rhealth_checks\x18\x02 \x03(\x0b\x32).yandex.cloud.loadbalancer.v1.HealthCheckB\x05\x82\xc8\x31\x01\x31\"\x97\x02\n\x08Listener\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x02 \x01(\t\x12\x0c\n\x04port\x18\x03 \x01(\x03\x12\x41\n\x08protocol\x18\x04 \x01(\x0e\x32/.yandex.cloud.loadbalancer.v1.Listener.Protocol\x12\x13\n\x0btarget_port\x18\x05 \x01(\x03\x12\x11\n\tsubnet_id\x18\x06 \x01(\t\x12;\n\nip_version\x18\x07 \x01(\x0e\x32\'.yandex.cloud.loadbalancer.v1.IpVersion\"6\n\x08Protocol\x12\x18\n\x14PROTOCOL_UNSPECIFIED\x10\x00\x12\x07\n\x03TCP\x10\x01\x12\x07\n\x03UDP\x10\x02\"\xda\x01\n\x0bTargetState\x12\x11\n\tsubnet_id\x18\x01 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x02 \x01(\t\x12@\n\x06status\x18\x03 \x01(\x0e\x32\x30.yandex.cloud.loadbalancer.v1.TargetState.Status\"e\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0b\n\x07INITIAL\x10\x01\x12\x0b\n\x07HEALTHY\x10\x02\x12\r\n\tUNHEALTHY\x10\x03\x12\x0c\n\x08\x44RAINING\x10\x04\x12\x0c\n\x08INACTIVE\x10\x05*;\n\tIpVersion\x12\x1a\n\x16IP_VERSION_UNSPECIFIED\x10\x00\x12\x08\n\x04IPV4\x10\x01\x12\x08\n\x04IPV6\x10\x02\x42q\n yandex.cloud.api.loadbalancer.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadbalancer/v1;loadbalancerb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n8yandex/cloud/loadbalancer/v1/network_load_balancer.proto\x12\x1cyandex.cloud.loadbalancer.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a/yandex/cloud/loadbalancer/v1/health_check.proto\x1a\x1dyandex/cloud/validation.proto\"\xdb\x07\n\x13NetworkLoadBalancer\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12.\n\ncreated_at\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x05 \x01(\t\x12M\n\x06labels\x18\x06 \x03(\x0b\x32=.yandex.cloud.loadbalancer.v1.NetworkLoadBalancer.LabelsEntry\x12\x11\n\tregion_id\x18\x07 \x01(\t\x12H\n\x06status\x18\t \x01(\x0e\x32\x38.yandex.cloud.loadbalancer.v1.NetworkLoadBalancer.Status\x12\x44\n\x04type\x18\n \x01(\x0e\x32\x36.yandex.cloud.loadbalancer.v1.NetworkLoadBalancer.Type\x12[\n\x10session_affinity\x18\x0b \x01(\x0e\x32\x41.yandex.cloud.loadbalancer.v1.NetworkLoadBalancer.SessionAffinity\x12\x39\n\tlisteners\x18\x0c \x03(\x0b\x32&.yandex.cloud.loadbalancer.v1.Listener\x12Q\n\x16\x61ttached_target_groups\x18\r \x03(\x0b\x32\x31.yandex.cloud.loadbalancer.v1.AttachedTargetGroup\x12\x1b\n\x13\x64\x65letion_protection\x18\x0e \x01(\x08\x12\x19\n\x11\x61llow_zonal_shift\x18\x0f \x01(\x08\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x7f\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\x0c\n\x08STARTING\x10\x02\x12\n\n\x06\x41\x43TIVE\x10\x03\x12\x0c\n\x08STOPPING\x10\x04\x12\x0b\n\x07STOPPED\x10\x05\x12\x0c\n\x08\x44\x45LETING\x10\x06\x12\x0c\n\x08INACTIVE\x10\x07\"8\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x45XTERNAL\x10\x01\x12\x0c\n\x08INTERNAL\x10\x02\"M\n\x0fSessionAffinity\x12 \n\x1cSESSION_AFFINITY_UNSPECIFIED\x10\x00\x12\x18\n\x14\x43LIENT_IP_PORT_PROTO\x10\x01J\x04\x08\x08\x10\t\"\x85\x01\n\x13\x41ttachedTargetGroup\x12%\n\x0ftarget_group_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12G\n\rhealth_checks\x18\x02 \x03(\x0b\x32).yandex.cloud.loadbalancer.v1.HealthCheckB\x05\x82\xc8\x31\x01\x31\"\x97\x02\n\x08Listener\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x02 \x01(\t\x12\x0c\n\x04port\x18\x03 \x01(\x03\x12\x41\n\x08protocol\x18\x04 \x01(\x0e\x32/.yandex.cloud.loadbalancer.v1.Listener.Protocol\x12\x13\n\x0btarget_port\x18\x05 \x01(\x03\x12\x11\n\tsubnet_id\x18\x06 \x01(\t\x12;\n\nip_version\x18\x07 \x01(\x0e\x32\'.yandex.cloud.loadbalancer.v1.IpVersion\"6\n\x08Protocol\x12\x18\n\x14PROTOCOL_UNSPECIFIED\x10\x00\x12\x07\n\x03TCP\x10\x01\x12\x07\n\x03UDP\x10\x02\"\xda\x01\n\x0bTargetState\x12\x11\n\tsubnet_id\x18\x01 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x02 \x01(\t\x12@\n\x06status\x18\x03 \x01(\x0e\x32\x30.yandex.cloud.loadbalancer.v1.TargetState.Status\"e\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0b\n\x07INITIAL\x10\x01\x12\x0b\n\x07HEALTHY\x10\x02\x12\r\n\tUNHEALTHY\x10\x03\x12\x0c\n\x08\x44RAINING\x10\x04\x12\x0c\n\x08INACTIVE\x10\x05*;\n\tIpVersion\x12\x1a\n\x16IP_VERSION_UNSPECIFIED\x10\x00\x12\x08\n\x04IPV4\x10\x01\x12\x08\n\x04IPV6\x10\x02\x42q\n yandex.cloud.api.loadbalancer.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/loadbalancer/v1;loadbalancerb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -41,26 +41,26 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_ATTACHEDTARGETGROUP'].fields_by_name['target_group_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_ATTACHEDTARGETGROUP'].fields_by_name['health_checks']._loaded_options = None
   _globals['_ATTACHEDTARGETGROUP'].fields_by_name['health_checks']._serialized_options = b'\202\3101\0011'
-  _globals['_IPVERSION']._serialized_start=1805
-  _globals['_IPVERSION']._serialized_end=1864
+  _globals['_IPVERSION']._serialized_start=1832
+  _globals['_IPVERSION']._serialized_end=1891
   _globals['_NETWORKLOADBALANCER']._serialized_start=204
-  _globals['_NETWORKLOADBALANCER']._serialized_end=1164
-  _globals['_NETWORKLOADBALANCER_LABELSENTRY']._serialized_start=847
-  _globals['_NETWORKLOADBALANCER_LABELSENTRY']._serialized_end=892
-  _globals['_NETWORKLOADBALANCER_STATUS']._serialized_start=894
-  _globals['_NETWORKLOADBALANCER_STATUS']._serialized_end=1021
-  _globals['_NETWORKLOADBALANCER_TYPE']._serialized_start=1023
-  _globals['_NETWORKLOADBALANCER_TYPE']._serialized_end=1079
-  _globals['_NETWORKLOADBALANCER_SESSIONAFFINITY']._serialized_start=1081
-  _globals['_NETWORKLOADBALANCER_SESSIONAFFINITY']._serialized_end=1158
-  _globals['_ATTACHEDTARGETGROUP']._serialized_start=1167
-  _globals['_ATTACHEDTARGETGROUP']._serialized_end=1300
-  _globals['_LISTENER']._serialized_start=1303
-  _globals['_LISTENER']._serialized_end=1582
-  _globals['_LISTENER_PROTOCOL']._serialized_start=1528
-  _globals['_LISTENER_PROTOCOL']._serialized_end=1582
-  _globals['_TARGETSTATE']._serialized_start=1585
-  _globals['_TARGETSTATE']._serialized_end=1803
-  _globals['_TARGETSTATE_STATUS']._serialized_start=1702
-  _globals['_TARGETSTATE_STATUS']._serialized_end=1803
+  _globals['_NETWORKLOADBALANCER']._serialized_end=1191
+  _globals['_NETWORKLOADBALANCER_LABELSENTRY']._serialized_start=874
+  _globals['_NETWORKLOADBALANCER_LABELSENTRY']._serialized_end=919
+  _globals['_NETWORKLOADBALANCER_STATUS']._serialized_start=921
+  _globals['_NETWORKLOADBALANCER_STATUS']._serialized_end=1048
+  _globals['_NETWORKLOADBALANCER_TYPE']._serialized_start=1050
+  _globals['_NETWORKLOADBALANCER_TYPE']._serialized_end=1106
+  _globals['_NETWORKLOADBALANCER_SESSIONAFFINITY']._serialized_start=1108
+  _globals['_NETWORKLOADBALANCER_SESSIONAFFINITY']._serialized_end=1185
+  _globals['_ATTACHEDTARGETGROUP']._serialized_start=1194
+  _globals['_ATTACHEDTARGETGROUP']._serialized_end=1327
+  _globals['_LISTENER']._serialized_start=1330
+  _globals['_LISTENER']._serialized_end=1609
+  _globals['_LISTENER_PROTOCOL']._serialized_start=1555
+  _globals['_LISTENER_PROTOCOL']._serialized_end=1609
+  _globals['_TARGETSTATE']._serialized_start=1612
+  _globals['_TARGETSTATE']._serialized_end=1830
+  _globals['_TARGETSTATE_STATUS']._serialized_start=1729
+  _globals['_TARGETSTATE_STATUS']._serialized_end=1830
 # @@protoc_insertion_point(module_scope)

@@ -42,6 +42,7 @@ class Channel(google.protobuf.message.Message):
     CREATED_AT_FIELD_NUMBER: builtins.int
     UPDATED_AT_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
+    SETTINGS_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the channel."""
     organization_id: builtins.str
@@ -62,6 +63,10 @@ class Channel(google.protobuf.message.Message):
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Custom labels as `` key:value `` pairs. Maximum 64 per resource."""
 
+    @property
+    def settings(self) -> global___ChannelSettings:
+        """Channel settings."""
+
     def __init__(
         self,
         *,
@@ -72,8 +77,74 @@ class Channel(google.protobuf.message.Message):
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         updated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        settings: global___ChannelSettings | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "id", b"id", "labels", b"labels", "organization_id", b"organization_id", "title", b"title", "updated_at", b"updated_at"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "settings", b"settings", "updated_at", b"updated_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "id", b"id", "labels", b"labels", "organization_id", b"organization_id", "settings", b"settings", "title", b"title", "updated_at", b"updated_at"]) -> None: ...
 
 global___Channel = Channel
+
+@typing.final
+class ChannelSettings(google.protobuf.message.Message):
+    """Channel settings."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ADVERTISEMENT_FIELD_NUMBER: builtins.int
+    @property
+    def advertisement(self) -> global___AdvertisementSettings:
+        """Advertisement settings."""
+
+    def __init__(
+        self,
+        *,
+        advertisement: global___AdvertisementSettings | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["advertisement", b"advertisement"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["advertisement", b"advertisement"]) -> None: ...
+
+global___ChannelSettings = ChannelSettings
+
+@typing.final
+class AdvertisementSettings(google.protobuf.message.Message):
+    """Advertisement settings."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class YandexDirect(google.protobuf.message.Message):
+        """YandexDirect provider settings."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        ENABLE_FIELD_NUMBER: builtins.int
+        PAGE_ID_FIELD_NUMBER: builtins.int
+        CATEGORY_FIELD_NUMBER: builtins.int
+        enable: builtins.bool
+        """Enable Partner Ad for Live and VOD content."""
+        page_id: builtins.int
+        """Advertisement page ID."""
+        category: builtins.int
+        """Advertisement category."""
+        def __init__(
+            self,
+            *,
+            enable: builtins.bool = ...,
+            page_id: builtins.int = ...,
+            category: builtins.int = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["category", b"category", "enable", b"enable", "page_id", b"page_id"]) -> None: ...
+
+    YANDEX_DIRECT_FIELD_NUMBER: builtins.int
+    @property
+    def yandex_direct(self) -> global___AdvertisementSettings.YandexDirect: ...
+    def __init__(
+        self,
+        *,
+        yandex_direct: global___AdvertisementSettings.YandexDirect | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["provider", b"provider", "yandex_direct", b"yandex_direct"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["provider", b"provider", "yandex_direct", b"yandex_direct"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["provider", b"provider"]) -> typing.Literal["yandex_direct"] | None: ...
+
+global___AdvertisementSettings = AdvertisementSettings

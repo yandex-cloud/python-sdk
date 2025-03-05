@@ -18,24 +18,18 @@ class LagAllocationSettingsRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     LAG_SIZE_FIELD_NUMBER: builtins.int
-    LAG_INFO_FIELD_NUMBER: builtins.int
     lag_size: builtins.int
     """Size of LAG.
     Must be from 1 to 10 inclusively.
     """
-    @property
-    def lag_info(self) -> yandex.cloud.cic.v1.common.lag_info_pb2.LagInfo:
-        """LagInfo"""
-
     def __init__(
         self,
         *,
         lag_size: builtins.int = ...,
-        lag_info: yandex.cloud.cic.v1.common.lag_info_pb2.LagInfo | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["lag", b"lag", "lag_info", b"lag_info", "lag_size", b"lag_size"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["lag", b"lag", "lag_info", b"lag_info", "lag_size", b"lag_size"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["lag", b"lag"]) -> typing.Literal["lag_size", "lag_info"] | None: ...
+    def HasField(self, field_name: typing.Literal["lag", b"lag", "lag_size", b"lag_size"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["lag", b"lag", "lag_size", b"lag_size"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["lag", b"lag"]) -> typing.Literal["lag_size"] | None: ...
 
 global___LagAllocationSettingsRequest = LagAllocationSettingsRequest
 

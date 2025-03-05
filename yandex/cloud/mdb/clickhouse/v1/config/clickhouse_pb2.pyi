@@ -57,6 +57,42 @@ class ClickhouseConfig(google.protobuf.message.Message):
 
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+        class _DeduplicateMergeProjectionMode:
+            ValueType = typing.NewType("ValueType", builtins.int)
+            V: typing_extensions.TypeAlias = ValueType
+
+        class _DeduplicateMergeProjectionModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ClickhouseConfig.MergeTree._DeduplicateMergeProjectionMode.ValueType], builtins.type):
+            DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+            DEDUPLICATE_MERGE_PROJECTION_MODE_UNSPECIFIED: ClickhouseConfig.MergeTree._DeduplicateMergeProjectionMode.ValueType  # 0
+            DEDUPLICATE_MERGE_PROJECTION_MODE_IGNORE: ClickhouseConfig.MergeTree._DeduplicateMergeProjectionMode.ValueType  # 1
+            DEDUPLICATE_MERGE_PROJECTION_MODE_THROW: ClickhouseConfig.MergeTree._DeduplicateMergeProjectionMode.ValueType  # 2
+            DEDUPLICATE_MERGE_PROJECTION_MODE_DROP: ClickhouseConfig.MergeTree._DeduplicateMergeProjectionMode.ValueType  # 3
+            DEDUPLICATE_MERGE_PROJECTION_MODE_REBUILD: ClickhouseConfig.MergeTree._DeduplicateMergeProjectionMode.ValueType  # 4
+
+        class DeduplicateMergeProjectionMode(_DeduplicateMergeProjectionMode, metaclass=_DeduplicateMergeProjectionModeEnumTypeWrapper): ...
+        DEDUPLICATE_MERGE_PROJECTION_MODE_UNSPECIFIED: ClickhouseConfig.MergeTree.DeduplicateMergeProjectionMode.ValueType  # 0
+        DEDUPLICATE_MERGE_PROJECTION_MODE_IGNORE: ClickhouseConfig.MergeTree.DeduplicateMergeProjectionMode.ValueType  # 1
+        DEDUPLICATE_MERGE_PROJECTION_MODE_THROW: ClickhouseConfig.MergeTree.DeduplicateMergeProjectionMode.ValueType  # 2
+        DEDUPLICATE_MERGE_PROJECTION_MODE_DROP: ClickhouseConfig.MergeTree.DeduplicateMergeProjectionMode.ValueType  # 3
+        DEDUPLICATE_MERGE_PROJECTION_MODE_REBUILD: ClickhouseConfig.MergeTree.DeduplicateMergeProjectionMode.ValueType  # 4
+
+        class _LightweightMutationProjectionMode:
+            ValueType = typing.NewType("ValueType", builtins.int)
+            V: typing_extensions.TypeAlias = ValueType
+
+        class _LightweightMutationProjectionModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ClickhouseConfig.MergeTree._LightweightMutationProjectionMode.ValueType], builtins.type):
+            DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+            LIGHTWEIGHT_MUTATION_PROJECTION_MODE_UNSPECIFIED: ClickhouseConfig.MergeTree._LightweightMutationProjectionMode.ValueType  # 0
+            LIGHTWEIGHT_MUTATION_PROJECTION_MODE_THROW: ClickhouseConfig.MergeTree._LightweightMutationProjectionMode.ValueType  # 1
+            LIGHTWEIGHT_MUTATION_PROJECTION_MODE_DROP: ClickhouseConfig.MergeTree._LightweightMutationProjectionMode.ValueType  # 2
+            LIGHTWEIGHT_MUTATION_PROJECTION_MODE_REBUILD: ClickhouseConfig.MergeTree._LightweightMutationProjectionMode.ValueType  # 3
+
+        class LightweightMutationProjectionMode(_LightweightMutationProjectionMode, metaclass=_LightweightMutationProjectionModeEnumTypeWrapper): ...
+        LIGHTWEIGHT_MUTATION_PROJECTION_MODE_UNSPECIFIED: ClickhouseConfig.MergeTree.LightweightMutationProjectionMode.ValueType  # 0
+        LIGHTWEIGHT_MUTATION_PROJECTION_MODE_THROW: ClickhouseConfig.MergeTree.LightweightMutationProjectionMode.ValueType  # 1
+        LIGHTWEIGHT_MUTATION_PROJECTION_MODE_DROP: ClickhouseConfig.MergeTree.LightweightMutationProjectionMode.ValueType  # 2
+        LIGHTWEIGHT_MUTATION_PROJECTION_MODE_REBUILD: ClickhouseConfig.MergeTree.LightweightMutationProjectionMode.ValueType  # 3
+
         REPLICATED_DEDUPLICATION_WINDOW_FIELD_NUMBER: builtins.int
         REPLICATED_DEDUPLICATION_WINDOW_SECONDS_FIELD_NUMBER: builtins.int
         PARTS_TO_DELAY_INSERT_FIELD_NUMBER: builtins.int
@@ -85,6 +121,15 @@ class ClickhouseConfig(google.protobuf.message.Message):
         CHECK_SAMPLE_COLUMN_IS_CORRECT_FIELD_NUMBER: builtins.int
         MAX_MERGE_SELECTING_SLEEP_MS_FIELD_NUMBER: builtins.int
         MAX_CLEANUP_DELAY_PERIOD_FIELD_NUMBER: builtins.int
+        DEDUPLICATE_MERGE_PROJECTION_MODE_FIELD_NUMBER: builtins.int
+        LIGHTWEIGHT_MUTATION_PROJECTION_MODE_FIELD_NUMBER: builtins.int
+        MATERIALIZE_TTL_RECALCULATE_ONLY_FIELD_NUMBER: builtins.int
+        deduplicate_merge_projection_mode: global___ClickhouseConfig.MergeTree.DeduplicateMergeProjectionMode.ValueType
+        """Determines the behavior of background merges for MergeTree tables with projections.
+        https://clickhouse.com/docs/en/operations/settings/merge-tree-settings#deduplicate_merge_projection_mode
+        """
+        lightweight_mutation_projection_mode: global___ClickhouseConfig.MergeTree.LightweightMutationProjectionMode.ValueType
+        """Determines the behavior of lightweight deletes for MergeTree tables with projections."""
         @property
         def replicated_deduplication_window(self) -> google.protobuf.wrappers_pb2.Int64Value:
             """Number of blocks of hashes to keep in ZooKeeper."""
@@ -220,6 +265,10 @@ class ClickhouseConfig(google.protobuf.message.Message):
             See in-depth description in [ClickHouse GitHub](https://github.com/ClickHouse/ClickHouse/blob/4add9db84859bff7410cf934a3904b0414e36e51/src/Storages/MergeTree/MergeTreeSettings.h#L142)
             """
 
+        @property
+        def materialize_ttl_recalculate_only(self) -> google.protobuf.wrappers_pb2.BoolValue:
+            """Only recalculate ttl info when MATERIALIZE TTL."""
+
         def __init__(
             self,
             *,
@@ -251,9 +300,12 @@ class ClickhouseConfig(google.protobuf.message.Message):
             check_sample_column_is_correct: google.protobuf.wrappers_pb2.BoolValue | None = ...,
             max_merge_selecting_sleep_ms: google.protobuf.wrappers_pb2.Int64Value | None = ...,
             max_cleanup_delay_period: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+            deduplicate_merge_projection_mode: global___ClickhouseConfig.MergeTree.DeduplicateMergeProjectionMode.ValueType = ...,
+            lightweight_mutation_projection_mode: global___ClickhouseConfig.MergeTree.LightweightMutationProjectionMode.ValueType = ...,
+            materialize_ttl_recalculate_only: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["allow_remote_fs_zero_copy_replication", b"allow_remote_fs_zero_copy_replication", "check_sample_column_is_correct", b"check_sample_column_is_correct", "cleanup_delay_period", b"cleanup_delay_period", "inactive_parts_to_delay_insert", b"inactive_parts_to_delay_insert", "inactive_parts_to_throw_insert", b"inactive_parts_to_throw_insert", "max_avg_part_size_for_too_many_parts", b"max_avg_part_size_for_too_many_parts", "max_bytes_to_merge_at_max_space_in_pool", b"max_bytes_to_merge_at_max_space_in_pool", "max_bytes_to_merge_at_min_space_in_pool", b"max_bytes_to_merge_at_min_space_in_pool", "max_cleanup_delay_period", b"max_cleanup_delay_period", "max_merge_selecting_sleep_ms", b"max_merge_selecting_sleep_ms", "max_number_of_merges_with_ttl_in_pool", b"max_number_of_merges_with_ttl_in_pool", "max_parts_in_total", b"max_parts_in_total", "max_replicated_merges_in_queue", b"max_replicated_merges_in_queue", "merge_max_block_size", b"merge_max_block_size", "merge_selecting_sleep_ms", b"merge_selecting_sleep_ms", "merge_with_recompression_ttl_timeout", b"merge_with_recompression_ttl_timeout", "merge_with_ttl_timeout", b"merge_with_ttl_timeout", "min_age_to_force_merge_on_partition_only", b"min_age_to_force_merge_on_partition_only", "min_age_to_force_merge_seconds", b"min_age_to_force_merge_seconds", "min_bytes_for_wide_part", b"min_bytes_for_wide_part", "min_rows_for_wide_part", b"min_rows_for_wide_part", "number_of_free_entries_in_pool_to_execute_mutation", b"number_of_free_entries_in_pool_to_execute_mutation", "number_of_free_entries_in_pool_to_lower_max_size_of_merge", b"number_of_free_entries_in_pool_to_lower_max_size_of_merge", "parts_to_delay_insert", b"parts_to_delay_insert", "parts_to_throw_insert", b"parts_to_throw_insert", "replicated_deduplication_window", b"replicated_deduplication_window", "replicated_deduplication_window_seconds", b"replicated_deduplication_window_seconds", "ttl_only_drop_parts", b"ttl_only_drop_parts"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["allow_remote_fs_zero_copy_replication", b"allow_remote_fs_zero_copy_replication", "check_sample_column_is_correct", b"check_sample_column_is_correct", "cleanup_delay_period", b"cleanup_delay_period", "inactive_parts_to_delay_insert", b"inactive_parts_to_delay_insert", "inactive_parts_to_throw_insert", b"inactive_parts_to_throw_insert", "max_avg_part_size_for_too_many_parts", b"max_avg_part_size_for_too_many_parts", "max_bytes_to_merge_at_max_space_in_pool", b"max_bytes_to_merge_at_max_space_in_pool", "max_bytes_to_merge_at_min_space_in_pool", b"max_bytes_to_merge_at_min_space_in_pool", "max_cleanup_delay_period", b"max_cleanup_delay_period", "max_merge_selecting_sleep_ms", b"max_merge_selecting_sleep_ms", "max_number_of_merges_with_ttl_in_pool", b"max_number_of_merges_with_ttl_in_pool", "max_parts_in_total", b"max_parts_in_total", "max_replicated_merges_in_queue", b"max_replicated_merges_in_queue", "merge_max_block_size", b"merge_max_block_size", "merge_selecting_sleep_ms", b"merge_selecting_sleep_ms", "merge_with_recompression_ttl_timeout", b"merge_with_recompression_ttl_timeout", "merge_with_ttl_timeout", b"merge_with_ttl_timeout", "min_age_to_force_merge_on_partition_only", b"min_age_to_force_merge_on_partition_only", "min_age_to_force_merge_seconds", b"min_age_to_force_merge_seconds", "min_bytes_for_wide_part", b"min_bytes_for_wide_part", "min_rows_for_wide_part", b"min_rows_for_wide_part", "number_of_free_entries_in_pool_to_execute_mutation", b"number_of_free_entries_in_pool_to_execute_mutation", "number_of_free_entries_in_pool_to_lower_max_size_of_merge", b"number_of_free_entries_in_pool_to_lower_max_size_of_merge", "parts_to_delay_insert", b"parts_to_delay_insert", "parts_to_throw_insert", b"parts_to_throw_insert", "replicated_deduplication_window", b"replicated_deduplication_window", "replicated_deduplication_window_seconds", b"replicated_deduplication_window_seconds", "ttl_only_drop_parts", b"ttl_only_drop_parts"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["allow_remote_fs_zero_copy_replication", b"allow_remote_fs_zero_copy_replication", "check_sample_column_is_correct", b"check_sample_column_is_correct", "cleanup_delay_period", b"cleanup_delay_period", "inactive_parts_to_delay_insert", b"inactive_parts_to_delay_insert", "inactive_parts_to_throw_insert", b"inactive_parts_to_throw_insert", "materialize_ttl_recalculate_only", b"materialize_ttl_recalculate_only", "max_avg_part_size_for_too_many_parts", b"max_avg_part_size_for_too_many_parts", "max_bytes_to_merge_at_max_space_in_pool", b"max_bytes_to_merge_at_max_space_in_pool", "max_bytes_to_merge_at_min_space_in_pool", b"max_bytes_to_merge_at_min_space_in_pool", "max_cleanup_delay_period", b"max_cleanup_delay_period", "max_merge_selecting_sleep_ms", b"max_merge_selecting_sleep_ms", "max_number_of_merges_with_ttl_in_pool", b"max_number_of_merges_with_ttl_in_pool", "max_parts_in_total", b"max_parts_in_total", "max_replicated_merges_in_queue", b"max_replicated_merges_in_queue", "merge_max_block_size", b"merge_max_block_size", "merge_selecting_sleep_ms", b"merge_selecting_sleep_ms", "merge_with_recompression_ttl_timeout", b"merge_with_recompression_ttl_timeout", "merge_with_ttl_timeout", b"merge_with_ttl_timeout", "min_age_to_force_merge_on_partition_only", b"min_age_to_force_merge_on_partition_only", "min_age_to_force_merge_seconds", b"min_age_to_force_merge_seconds", "min_bytes_for_wide_part", b"min_bytes_for_wide_part", "min_rows_for_wide_part", b"min_rows_for_wide_part", "number_of_free_entries_in_pool_to_execute_mutation", b"number_of_free_entries_in_pool_to_execute_mutation", "number_of_free_entries_in_pool_to_lower_max_size_of_merge", b"number_of_free_entries_in_pool_to_lower_max_size_of_merge", "parts_to_delay_insert", b"parts_to_delay_insert", "parts_to_throw_insert", b"parts_to_throw_insert", "replicated_deduplication_window", b"replicated_deduplication_window", "replicated_deduplication_window_seconds", b"replicated_deduplication_window_seconds", "ttl_only_drop_parts", b"ttl_only_drop_parts"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["allow_remote_fs_zero_copy_replication", b"allow_remote_fs_zero_copy_replication", "check_sample_column_is_correct", b"check_sample_column_is_correct", "cleanup_delay_period", b"cleanup_delay_period", "deduplicate_merge_projection_mode", b"deduplicate_merge_projection_mode", "inactive_parts_to_delay_insert", b"inactive_parts_to_delay_insert", "inactive_parts_to_throw_insert", b"inactive_parts_to_throw_insert", "lightweight_mutation_projection_mode", b"lightweight_mutation_projection_mode", "materialize_ttl_recalculate_only", b"materialize_ttl_recalculate_only", "max_avg_part_size_for_too_many_parts", b"max_avg_part_size_for_too_many_parts", "max_bytes_to_merge_at_max_space_in_pool", b"max_bytes_to_merge_at_max_space_in_pool", "max_bytes_to_merge_at_min_space_in_pool", b"max_bytes_to_merge_at_min_space_in_pool", "max_cleanup_delay_period", b"max_cleanup_delay_period", "max_merge_selecting_sleep_ms", b"max_merge_selecting_sleep_ms", "max_number_of_merges_with_ttl_in_pool", b"max_number_of_merges_with_ttl_in_pool", "max_parts_in_total", b"max_parts_in_total", "max_replicated_merges_in_queue", b"max_replicated_merges_in_queue", "merge_max_block_size", b"merge_max_block_size", "merge_selecting_sleep_ms", b"merge_selecting_sleep_ms", "merge_with_recompression_ttl_timeout", b"merge_with_recompression_ttl_timeout", "merge_with_ttl_timeout", b"merge_with_ttl_timeout", "min_age_to_force_merge_on_partition_only", b"min_age_to_force_merge_on_partition_only", "min_age_to_force_merge_seconds", b"min_age_to_force_merge_seconds", "min_bytes_for_wide_part", b"min_bytes_for_wide_part", "min_rows_for_wide_part", b"min_rows_for_wide_part", "number_of_free_entries_in_pool_to_execute_mutation", b"number_of_free_entries_in_pool_to_execute_mutation", "number_of_free_entries_in_pool_to_lower_max_size_of_merge", b"number_of_free_entries_in_pool_to_lower_max_size_of_merge", "parts_to_delay_insert", b"parts_to_delay_insert", "parts_to_throw_insert", b"parts_to_throw_insert", "replicated_deduplication_window", b"replicated_deduplication_window", "replicated_deduplication_window_seconds", b"replicated_deduplication_window_seconds", "ttl_only_drop_parts", b"ttl_only_drop_parts"]) -> None: ...
 
     @typing.final
     class Kafka(google.protobuf.message.Message):
@@ -955,6 +1007,18 @@ class ClickhouseConfig(google.protobuf.message.Message):
                 """Similar to CACHE, to be used with composite keys.
                 Available for MySQL, ClickHouse and HTTP dictionary sources.
                 """
+                SPARSE_HASHED: ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType  # 7
+                """Similar to HASHED, but uses less memory in favor of more CPU usage."""
+                COMPLEX_KEY_SPARSE_HASHED: ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType  # 8
+                """Similar to SPARSE_HASHED, to be used with composite keys."""
+                COMPLEX_KEY_RANGE_HASHED: ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType  # 9
+                """Similar to RANGE_HASHED, to be used with composite keys."""
+                DIRECT: ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType  # 10
+                """The dictionary is not stored in memory and directly goes to the source during the processing of a request."""
+                COMPLEX_KEY_DIRECT: ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType  # 11
+                """Similar to DIRECT, to be used with composite keys."""
+                IP_TRIE: ClickhouseConfig.ExternalDictionary.Layout._Type.ValueType  # 12
+                """The specialized layout type for mapping network prefixes (IP addresses) to metadata such as ASN."""
 
             class Type(_Type, metaclass=_TypeEnumTypeWrapper): ...
             TYPE_UNSPECIFIED: ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType  # 0
@@ -983,28 +1047,88 @@ class ClickhouseConfig(google.protobuf.message.Message):
             """Similar to CACHE, to be used with composite keys.
             Available for MySQL, ClickHouse and HTTP dictionary sources.
             """
+            SPARSE_HASHED: ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType  # 7
+            """Similar to HASHED, but uses less memory in favor of more CPU usage."""
+            COMPLEX_KEY_SPARSE_HASHED: ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType  # 8
+            """Similar to SPARSE_HASHED, to be used with composite keys."""
+            COMPLEX_KEY_RANGE_HASHED: ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType  # 9
+            """Similar to RANGE_HASHED, to be used with composite keys."""
+            DIRECT: ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType  # 10
+            """The dictionary is not stored in memory and directly goes to the source during the processing of a request."""
+            COMPLEX_KEY_DIRECT: ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType  # 11
+            """Similar to DIRECT, to be used with composite keys."""
+            IP_TRIE: ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType  # 12
+            """The specialized layout type for mapping network prefixes (IP addresses) to metadata such as ASN."""
 
             TYPE_FIELD_NUMBER: builtins.int
             SIZE_IN_CELLS_FIELD_NUMBER: builtins.int
+            ALLOW_READ_EXPIRED_KEYS_FIELD_NUMBER: builtins.int
+            MAX_UPDATE_QUEUE_SIZE_FIELD_NUMBER: builtins.int
+            UPDATE_QUEUE_PUSH_TIMEOUT_MILLISECONDS_FIELD_NUMBER: builtins.int
+            QUERY_WAIT_TIMEOUT_MILLISECONDS_FIELD_NUMBER: builtins.int
+            MAX_THREADS_FOR_UPDATES_FIELD_NUMBER: builtins.int
+            INITIAL_ARRAY_SIZE_FIELD_NUMBER: builtins.int
             MAX_ARRAY_SIZE_FIELD_NUMBER: builtins.int
+            ACCESS_TO_KEY_FROM_ATTRIBUTES_FIELD_NUMBER: builtins.int
             type: global___ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType
             """Layout type for an external dictionary."""
             size_in_cells: builtins.int
             """Number of cells in the cache. Rounded up to a power of two.
             Applicable only for CACHE and COMPLEX_KEY_CACHE layout types.
             """
+            max_update_queue_size: builtins.int
+            """Max size of update queue.
+            Applicable only for CACHE and COMPLEX_KEY_CACHE layout types.
+            """
+            update_queue_push_timeout_milliseconds: builtins.int
+            """Max timeout in milliseconds for push update task into queue.
+            Applicable only for CACHE and COMPLEX_KEY_CACHE layout types.
+            """
+            query_wait_timeout_milliseconds: builtins.int
+            """Max wait timeout in milliseconds for update task to complete.
+            Applicable only for CACHE and COMPLEX_KEY_CACHE layout types.
+            """
+            max_threads_for_updates: builtins.int
+            """Max threads for cache dictionary update.
+            Applicable only for CACHE and COMPLEX_KEY_CACHE layout types.
+            """
+            initial_array_size: builtins.int
+            """Initial dictionary key size.
+            Applicable only for FLAT layout type.
+            """
             max_array_size: builtins.int
             """Maximum dictionary key size.
             Applicable only for FLAT layout type.
             """
+            @property
+            def allow_read_expired_keys(self) -> google.protobuf.wrappers_pb2.BoolValue:
+                """Allows to read expired keys.
+                Applicable only for CACHE and COMPLEX_KEY_CACHE layout types.
+                """
+
+            @property
+            def access_to_key_from_attributes(self) -> google.protobuf.wrappers_pb2.BoolValue:
+                """Allows to retrieve key attribute using dictGetString function.
+                Enabling this option increases memory usage.
+                Applicable only for IP_TRIE layout type.
+                """
+
             def __init__(
                 self,
                 *,
                 type: global___ClickhouseConfig.ExternalDictionary.Layout.Type.ValueType = ...,
                 size_in_cells: builtins.int = ...,
+                allow_read_expired_keys: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+                max_update_queue_size: builtins.int = ...,
+                update_queue_push_timeout_milliseconds: builtins.int = ...,
+                query_wait_timeout_milliseconds: builtins.int = ...,
+                max_threads_for_updates: builtins.int = ...,
+                initial_array_size: builtins.int = ...,
                 max_array_size: builtins.int = ...,
+                access_to_key_from_attributes: google.protobuf.wrappers_pb2.BoolValue | None = ...,
             ) -> None: ...
-            def ClearField(self, field_name: typing.Literal["max_array_size", b"max_array_size", "size_in_cells", b"size_in_cells", "type", b"type"]) -> None: ...
+            def HasField(self, field_name: typing.Literal["access_to_key_from_attributes", b"access_to_key_from_attributes", "allow_read_expired_keys", b"allow_read_expired_keys"]) -> builtins.bool: ...
+            def ClearField(self, field_name: typing.Literal["access_to_key_from_attributes", b"access_to_key_from_attributes", "allow_read_expired_keys", b"allow_read_expired_keys", "initial_array_size", b"initial_array_size", "max_array_size", b"max_array_size", "max_threads_for_updates", b"max_threads_for_updates", "max_update_queue_size", b"max_update_queue_size", "query_wait_timeout_milliseconds", b"query_wait_timeout_milliseconds", "size_in_cells", b"size_in_cells", "type", b"type", "update_queue_push_timeout_milliseconds", b"update_queue_push_timeout_milliseconds"]) -> None: ...
 
         @typing.final
         class Range(google.protobuf.message.Message):
@@ -1333,6 +1457,9 @@ class ClickhouseConfig(google.protobuf.message.Message):
     ASYNCHRONOUS_INSERT_LOG_ENABLED_FIELD_NUMBER: builtins.int
     ASYNCHRONOUS_INSERT_LOG_RETENTION_SIZE_FIELD_NUMBER: builtins.int
     ASYNCHRONOUS_INSERT_LOG_RETENTION_TIME_FIELD_NUMBER: builtins.int
+    PROCESSORS_PROFILE_LOG_ENABLED_FIELD_NUMBER: builtins.int
+    PROCESSORS_PROFILE_LOG_RETENTION_SIZE_FIELD_NUMBER: builtins.int
+    PROCESSORS_PROFILE_LOG_RETENTION_TIME_FIELD_NUMBER: builtins.int
     BACKGROUND_POOL_SIZE_FIELD_NUMBER: builtins.int
     BACKGROUND_MERGES_MUTATIONS_CONCURRENCY_RATIO_FIELD_NUMBER: builtins.int
     BACKGROUND_SCHEDULE_POOL_SIZE_FIELD_NUMBER: builtins.int
@@ -1610,6 +1737,22 @@ class ClickhouseConfig(google.protobuf.message.Message):
         """
 
     @property
+    def processors_profile_log_enabled(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Enable or disable processors_profile_log system table."""
+
+    @property
+    def processors_profile_log_retention_size(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """The maximum size that processors_profile_log can grow to before old data will be removed.
+        If set to 0 (default), automatic removal of processors_profile_log data based on size is disabled.
+        """
+
+    @property
+    def processors_profile_log_retention_time(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """The maximum time that processors_profile_log records will be retained before removal.
+        If set to 0, automatic removal of processors_profile_log data based on time is disabled.
+        """
+
+    @property
     def background_pool_size(self) -> google.protobuf.wrappers_pb2.Int64Value: ...
     @property
     def background_merges_mutations_concurrency_ratio(self) -> google.protobuf.wrappers_pb2.Int64Value:
@@ -1742,6 +1885,9 @@ class ClickhouseConfig(google.protobuf.message.Message):
         asynchronous_insert_log_enabled: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         asynchronous_insert_log_retention_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         asynchronous_insert_log_retention_time: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        processors_profile_log_enabled: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        processors_profile_log_retention_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        processors_profile_log_retention_time: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         background_pool_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         background_merges_mutations_concurrency_ratio: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         background_schedule_pool_size: google.protobuf.wrappers_pb2.Int64Value | None = ...,
@@ -1759,8 +1905,8 @@ class ClickhouseConfig(google.protobuf.message.Message):
         query_cache: global___ClickhouseConfig.QueryCache | None = ...,
         jdbc_bridge: global___ClickhouseConfig.JdbcBridge | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["asynchronous_insert_log_enabled", b"asynchronous_insert_log_enabled", "asynchronous_insert_log_retention_size", b"asynchronous_insert_log_retention_size", "asynchronous_insert_log_retention_time", b"asynchronous_insert_log_retention_time", "asynchronous_metric_log_enabled", b"asynchronous_metric_log_enabled", "asynchronous_metric_log_retention_size", b"asynchronous_metric_log_retention_size", "asynchronous_metric_log_retention_time", b"asynchronous_metric_log_retention_time", "background_buffer_flush_schedule_pool_size", b"background_buffer_flush_schedule_pool_size", "background_common_pool_size", b"background_common_pool_size", "background_distributed_schedule_pool_size", b"background_distributed_schedule_pool_size", "background_fetches_pool_size", b"background_fetches_pool_size", "background_merges_mutations_concurrency_ratio", b"background_merges_mutations_concurrency_ratio", "background_message_broker_schedule_pool_size", b"background_message_broker_schedule_pool_size", "background_move_pool_size", b"background_move_pool_size", "background_pool_size", b"background_pool_size", "background_schedule_pool_size", b"background_schedule_pool_size", "builtin_dictionaries_reload_interval", b"builtin_dictionaries_reload_interval", "default_database", b"default_database", "dictionaries_lazy_load", b"dictionaries_lazy_load", "geobase_enabled", b"geobase_enabled", "jdbc_bridge", b"jdbc_bridge", "kafka", b"kafka", "keep_alive_timeout", b"keep_alive_timeout", "mark_cache_size", b"mark_cache_size", "max_concurrent_queries", b"max_concurrent_queries", "max_connections", b"max_connections", "max_partition_size_to_drop", b"max_partition_size_to_drop", "max_table_size_to_drop", b"max_table_size_to_drop", "merge_tree", b"merge_tree", "metric_log_enabled", b"metric_log_enabled", "metric_log_retention_size", b"metric_log_retention_size", "metric_log_retention_time", b"metric_log_retention_time", "opentelemetry_span_log_enabled", b"opentelemetry_span_log_enabled", "opentelemetry_span_log_retention_size", b"opentelemetry_span_log_retention_size", "opentelemetry_span_log_retention_time", b"opentelemetry_span_log_retention_time", "part_log_retention_size", b"part_log_retention_size", "part_log_retention_time", b"part_log_retention_time", "query_cache", b"query_cache", "query_log_retention_size", b"query_log_retention_size", "query_log_retention_time", b"query_log_retention_time", "query_thread_log_enabled", b"query_thread_log_enabled", "query_thread_log_retention_size", b"query_thread_log_retention_size", "query_thread_log_retention_time", b"query_thread_log_retention_time", "query_views_log_enabled", b"query_views_log_enabled", "query_views_log_retention_size", b"query_views_log_retention_size", "query_views_log_retention_time", b"query_views_log_retention_time", "rabbitmq", b"rabbitmq", "session_log_enabled", b"session_log_enabled", "session_log_retention_size", b"session_log_retention_size", "session_log_retention_time", b"session_log_retention_time", "text_log_enabled", b"text_log_enabled", "text_log_retention_size", b"text_log_retention_size", "text_log_retention_time", b"text_log_retention_time", "total_memory_profiler_step", b"total_memory_profiler_step", "total_memory_tracker_sample_probability", b"total_memory_tracker_sample_probability", "trace_log_enabled", b"trace_log_enabled", "trace_log_retention_size", b"trace_log_retention_size", "trace_log_retention_time", b"trace_log_retention_time", "uncompressed_cache_size", b"uncompressed_cache_size", "zookeeper_log_enabled", b"zookeeper_log_enabled", "zookeeper_log_retention_size", b"zookeeper_log_retention_size", "zookeeper_log_retention_time", b"zookeeper_log_retention_time"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["asynchronous_insert_log_enabled", b"asynchronous_insert_log_enabled", "asynchronous_insert_log_retention_size", b"asynchronous_insert_log_retention_size", "asynchronous_insert_log_retention_time", b"asynchronous_insert_log_retention_time", "asynchronous_metric_log_enabled", b"asynchronous_metric_log_enabled", "asynchronous_metric_log_retention_size", b"asynchronous_metric_log_retention_size", "asynchronous_metric_log_retention_time", b"asynchronous_metric_log_retention_time", "background_buffer_flush_schedule_pool_size", b"background_buffer_flush_schedule_pool_size", "background_common_pool_size", b"background_common_pool_size", "background_distributed_schedule_pool_size", b"background_distributed_schedule_pool_size", "background_fetches_pool_size", b"background_fetches_pool_size", "background_merges_mutations_concurrency_ratio", b"background_merges_mutations_concurrency_ratio", "background_message_broker_schedule_pool_size", b"background_message_broker_schedule_pool_size", "background_move_pool_size", b"background_move_pool_size", "background_pool_size", b"background_pool_size", "background_schedule_pool_size", b"background_schedule_pool_size", "builtin_dictionaries_reload_interval", b"builtin_dictionaries_reload_interval", "compression", b"compression", "default_database", b"default_database", "dictionaries", b"dictionaries", "dictionaries_lazy_load", b"dictionaries_lazy_load", "geobase_enabled", b"geobase_enabled", "geobase_uri", b"geobase_uri", "graphite_rollup", b"graphite_rollup", "jdbc_bridge", b"jdbc_bridge", "kafka", b"kafka", "kafka_topics", b"kafka_topics", "keep_alive_timeout", b"keep_alive_timeout", "log_level", b"log_level", "mark_cache_size", b"mark_cache_size", "max_concurrent_queries", b"max_concurrent_queries", "max_connections", b"max_connections", "max_partition_size_to_drop", b"max_partition_size_to_drop", "max_table_size_to_drop", b"max_table_size_to_drop", "merge_tree", b"merge_tree", "metric_log_enabled", b"metric_log_enabled", "metric_log_retention_size", b"metric_log_retention_size", "metric_log_retention_time", b"metric_log_retention_time", "opentelemetry_span_log_enabled", b"opentelemetry_span_log_enabled", "opentelemetry_span_log_retention_size", b"opentelemetry_span_log_retention_size", "opentelemetry_span_log_retention_time", b"opentelemetry_span_log_retention_time", "part_log_retention_size", b"part_log_retention_size", "part_log_retention_time", b"part_log_retention_time", "query_cache", b"query_cache", "query_log_retention_size", b"query_log_retention_size", "query_log_retention_time", b"query_log_retention_time", "query_masking_rules", b"query_masking_rules", "query_thread_log_enabled", b"query_thread_log_enabled", "query_thread_log_retention_size", b"query_thread_log_retention_size", "query_thread_log_retention_time", b"query_thread_log_retention_time", "query_views_log_enabled", b"query_views_log_enabled", "query_views_log_retention_size", b"query_views_log_retention_size", "query_views_log_retention_time", b"query_views_log_retention_time", "rabbitmq", b"rabbitmq", "session_log_enabled", b"session_log_enabled", "session_log_retention_size", b"session_log_retention_size", "session_log_retention_time", b"session_log_retention_time", "text_log_enabled", b"text_log_enabled", "text_log_level", b"text_log_level", "text_log_retention_size", b"text_log_retention_size", "text_log_retention_time", b"text_log_retention_time", "timezone", b"timezone", "total_memory_profiler_step", b"total_memory_profiler_step", "total_memory_tracker_sample_probability", b"total_memory_tracker_sample_probability", "trace_log_enabled", b"trace_log_enabled", "trace_log_retention_size", b"trace_log_retention_size", "trace_log_retention_time", b"trace_log_retention_time", "uncompressed_cache_size", b"uncompressed_cache_size", "zookeeper_log_enabled", b"zookeeper_log_enabled", "zookeeper_log_retention_size", b"zookeeper_log_retention_size", "zookeeper_log_retention_time", b"zookeeper_log_retention_time"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["asynchronous_insert_log_enabled", b"asynchronous_insert_log_enabled", "asynchronous_insert_log_retention_size", b"asynchronous_insert_log_retention_size", "asynchronous_insert_log_retention_time", b"asynchronous_insert_log_retention_time", "asynchronous_metric_log_enabled", b"asynchronous_metric_log_enabled", "asynchronous_metric_log_retention_size", b"asynchronous_metric_log_retention_size", "asynchronous_metric_log_retention_time", b"asynchronous_metric_log_retention_time", "background_buffer_flush_schedule_pool_size", b"background_buffer_flush_schedule_pool_size", "background_common_pool_size", b"background_common_pool_size", "background_distributed_schedule_pool_size", b"background_distributed_schedule_pool_size", "background_fetches_pool_size", b"background_fetches_pool_size", "background_merges_mutations_concurrency_ratio", b"background_merges_mutations_concurrency_ratio", "background_message_broker_schedule_pool_size", b"background_message_broker_schedule_pool_size", "background_move_pool_size", b"background_move_pool_size", "background_pool_size", b"background_pool_size", "background_schedule_pool_size", b"background_schedule_pool_size", "builtin_dictionaries_reload_interval", b"builtin_dictionaries_reload_interval", "default_database", b"default_database", "dictionaries_lazy_load", b"dictionaries_lazy_load", "geobase_enabled", b"geobase_enabled", "jdbc_bridge", b"jdbc_bridge", "kafka", b"kafka", "keep_alive_timeout", b"keep_alive_timeout", "mark_cache_size", b"mark_cache_size", "max_concurrent_queries", b"max_concurrent_queries", "max_connections", b"max_connections", "max_partition_size_to_drop", b"max_partition_size_to_drop", "max_table_size_to_drop", b"max_table_size_to_drop", "merge_tree", b"merge_tree", "metric_log_enabled", b"metric_log_enabled", "metric_log_retention_size", b"metric_log_retention_size", "metric_log_retention_time", b"metric_log_retention_time", "opentelemetry_span_log_enabled", b"opentelemetry_span_log_enabled", "opentelemetry_span_log_retention_size", b"opentelemetry_span_log_retention_size", "opentelemetry_span_log_retention_time", b"opentelemetry_span_log_retention_time", "part_log_retention_size", b"part_log_retention_size", "part_log_retention_time", b"part_log_retention_time", "processors_profile_log_enabled", b"processors_profile_log_enabled", "processors_profile_log_retention_size", b"processors_profile_log_retention_size", "processors_profile_log_retention_time", b"processors_profile_log_retention_time", "query_cache", b"query_cache", "query_log_retention_size", b"query_log_retention_size", "query_log_retention_time", b"query_log_retention_time", "query_thread_log_enabled", b"query_thread_log_enabled", "query_thread_log_retention_size", b"query_thread_log_retention_size", "query_thread_log_retention_time", b"query_thread_log_retention_time", "query_views_log_enabled", b"query_views_log_enabled", "query_views_log_retention_size", b"query_views_log_retention_size", "query_views_log_retention_time", b"query_views_log_retention_time", "rabbitmq", b"rabbitmq", "session_log_enabled", b"session_log_enabled", "session_log_retention_size", b"session_log_retention_size", "session_log_retention_time", b"session_log_retention_time", "text_log_enabled", b"text_log_enabled", "text_log_retention_size", b"text_log_retention_size", "text_log_retention_time", b"text_log_retention_time", "total_memory_profiler_step", b"total_memory_profiler_step", "total_memory_tracker_sample_probability", b"total_memory_tracker_sample_probability", "trace_log_enabled", b"trace_log_enabled", "trace_log_retention_size", b"trace_log_retention_size", "trace_log_retention_time", b"trace_log_retention_time", "uncompressed_cache_size", b"uncompressed_cache_size", "zookeeper_log_enabled", b"zookeeper_log_enabled", "zookeeper_log_retention_size", b"zookeeper_log_retention_size", "zookeeper_log_retention_time", b"zookeeper_log_retention_time"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["asynchronous_insert_log_enabled", b"asynchronous_insert_log_enabled", "asynchronous_insert_log_retention_size", b"asynchronous_insert_log_retention_size", "asynchronous_insert_log_retention_time", b"asynchronous_insert_log_retention_time", "asynchronous_metric_log_enabled", b"asynchronous_metric_log_enabled", "asynchronous_metric_log_retention_size", b"asynchronous_metric_log_retention_size", "asynchronous_metric_log_retention_time", b"asynchronous_metric_log_retention_time", "background_buffer_flush_schedule_pool_size", b"background_buffer_flush_schedule_pool_size", "background_common_pool_size", b"background_common_pool_size", "background_distributed_schedule_pool_size", b"background_distributed_schedule_pool_size", "background_fetches_pool_size", b"background_fetches_pool_size", "background_merges_mutations_concurrency_ratio", b"background_merges_mutations_concurrency_ratio", "background_message_broker_schedule_pool_size", b"background_message_broker_schedule_pool_size", "background_move_pool_size", b"background_move_pool_size", "background_pool_size", b"background_pool_size", "background_schedule_pool_size", b"background_schedule_pool_size", "builtin_dictionaries_reload_interval", b"builtin_dictionaries_reload_interval", "compression", b"compression", "default_database", b"default_database", "dictionaries", b"dictionaries", "dictionaries_lazy_load", b"dictionaries_lazy_load", "geobase_enabled", b"geobase_enabled", "geobase_uri", b"geobase_uri", "graphite_rollup", b"graphite_rollup", "jdbc_bridge", b"jdbc_bridge", "kafka", b"kafka", "kafka_topics", b"kafka_topics", "keep_alive_timeout", b"keep_alive_timeout", "log_level", b"log_level", "mark_cache_size", b"mark_cache_size", "max_concurrent_queries", b"max_concurrent_queries", "max_connections", b"max_connections", "max_partition_size_to_drop", b"max_partition_size_to_drop", "max_table_size_to_drop", b"max_table_size_to_drop", "merge_tree", b"merge_tree", "metric_log_enabled", b"metric_log_enabled", "metric_log_retention_size", b"metric_log_retention_size", "metric_log_retention_time", b"metric_log_retention_time", "opentelemetry_span_log_enabled", b"opentelemetry_span_log_enabled", "opentelemetry_span_log_retention_size", b"opentelemetry_span_log_retention_size", "opentelemetry_span_log_retention_time", b"opentelemetry_span_log_retention_time", "part_log_retention_size", b"part_log_retention_size", "part_log_retention_time", b"part_log_retention_time", "processors_profile_log_enabled", b"processors_profile_log_enabled", "processors_profile_log_retention_size", b"processors_profile_log_retention_size", "processors_profile_log_retention_time", b"processors_profile_log_retention_time", "query_cache", b"query_cache", "query_log_retention_size", b"query_log_retention_size", "query_log_retention_time", b"query_log_retention_time", "query_masking_rules", b"query_masking_rules", "query_thread_log_enabled", b"query_thread_log_enabled", "query_thread_log_retention_size", b"query_thread_log_retention_size", "query_thread_log_retention_time", b"query_thread_log_retention_time", "query_views_log_enabled", b"query_views_log_enabled", "query_views_log_retention_size", b"query_views_log_retention_size", "query_views_log_retention_time", b"query_views_log_retention_time", "rabbitmq", b"rabbitmq", "session_log_enabled", b"session_log_enabled", "session_log_retention_size", b"session_log_retention_size", "session_log_retention_time", b"session_log_retention_time", "text_log_enabled", b"text_log_enabled", "text_log_level", b"text_log_level", "text_log_retention_size", b"text_log_retention_size", "text_log_retention_time", b"text_log_retention_time", "timezone", b"timezone", "total_memory_profiler_step", b"total_memory_profiler_step", "total_memory_tracker_sample_probability", b"total_memory_tracker_sample_probability", "trace_log_enabled", b"trace_log_enabled", "trace_log_retention_size", b"trace_log_retention_size", "trace_log_retention_time", b"trace_log_retention_time", "uncompressed_cache_size", b"uncompressed_cache_size", "zookeeper_log_enabled", b"zookeeper_log_enabled", "zookeeper_log_retention_size", b"zookeeper_log_retention_size", "zookeeper_log_retention_time", b"zookeeper_log_retention_time"]) -> None: ...
 
 global___ClickhouseConfig = ClickhouseConfig
 

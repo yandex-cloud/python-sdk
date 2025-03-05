@@ -53,6 +53,7 @@ class TrunkConnection(google.protobuf.message.Message):
         CAPACITY_40_GBPS: TrunkConnection._Capacity.ValueType  # 15
         CAPACITY_50_GBPS: TrunkConnection._Capacity.ValueType  # 16
         CAPACITY_100_GBPS: TrunkConnection._Capacity.ValueType  # 17
+        CAPACITY_200_GBPS: TrunkConnection._Capacity.ValueType  # 18
 
     class Capacity(_Capacity, metaclass=_CapacityEnumTypeWrapper): ...
     CAPACITY_UNSPECIFIED: TrunkConnection.Capacity.ValueType  # 0
@@ -73,6 +74,7 @@ class TrunkConnection(google.protobuf.message.Message):
     CAPACITY_40_GBPS: TrunkConnection.Capacity.ValueType  # 15
     CAPACITY_50_GBPS: TrunkConnection.Capacity.ValueType  # 16
     CAPACITY_100_GBPS: TrunkConnection.Capacity.ValueType  # 17
+    CAPACITY_200_GBPS: TrunkConnection.Capacity.ValueType  # 18
 
     class _Status:
         ValueType = typing.NewType("ValueType", builtins.int)

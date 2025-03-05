@@ -132,6 +132,7 @@ class CreateNetworkLoadBalancerRequest(google.protobuf.message.Message):
     LISTENER_SPECS_FIELD_NUMBER: builtins.int
     ATTACHED_TARGET_GROUPS_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
+    ALLOW_ZONAL_SHIFT_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create a network load balancer in.
     To get the folder ID, use a [NetworkLoadBalancerService.List] request.
@@ -148,6 +149,8 @@ class CreateNetworkLoadBalancerRequest(google.protobuf.message.Message):
     """Type of the network load balancer."""
     deletion_protection: builtins.bool
     """Specifies if network load balancer protected from deletion."""
+    allow_zonal_shift: builtins.bool
+    """Specifies if network load balancer available to zonal shift."""
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Resource labels as `` key:value `` pairs."""
@@ -172,8 +175,9 @@ class CreateNetworkLoadBalancerRequest(google.protobuf.message.Message):
         listener_specs: collections.abc.Iterable[global___ListenerSpec] | None = ...,
         attached_target_groups: collections.abc.Iterable[yandex.cloud.loadbalancer.v1.network_load_balancer_pb2.AttachedTargetGroup] | None = ...,
         deletion_protection: builtins.bool = ...,
+        allow_zonal_shift: builtins.bool = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["attached_target_groups", b"attached_target_groups", "deletion_protection", b"deletion_protection", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "listener_specs", b"listener_specs", "name", b"name", "region_id", b"region_id", "type", b"type"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["allow_zonal_shift", b"allow_zonal_shift", "attached_target_groups", b"attached_target_groups", "deletion_protection", b"deletion_protection", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "listener_specs", b"listener_specs", "name", b"name", "region_id", b"region_id", "type", b"type"]) -> None: ...
 
 global___CreateNetworkLoadBalancerRequest = CreateNetworkLoadBalancerRequest
 
@@ -221,6 +225,7 @@ class UpdateNetworkLoadBalancerRequest(google.protobuf.message.Message):
     LISTENER_SPECS_FIELD_NUMBER: builtins.int
     ATTACHED_TARGET_GROUPS_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
+    ALLOW_ZONAL_SHIFT_FIELD_NUMBER: builtins.int
     network_load_balancer_id: builtins.str
     """ID of the network load balancer to update.
     To get the network load balancer ID, use a [NetworkLoadBalancerService.List] request.
@@ -233,6 +238,8 @@ class UpdateNetworkLoadBalancerRequest(google.protobuf.message.Message):
     """Description of the network load balancer."""
     deletion_protection: builtins.bool
     """Specifies if network load balancer protected from deletion."""
+    allow_zonal_shift: builtins.bool
+    """Specifies if network load balancer available to zonal shift."""
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which fields of the NetworkLoadBalancer resource are going to be updated."""
@@ -263,9 +270,10 @@ class UpdateNetworkLoadBalancerRequest(google.protobuf.message.Message):
         listener_specs: collections.abc.Iterable[global___ListenerSpec] | None = ...,
         attached_target_groups: collections.abc.Iterable[yandex.cloud.loadbalancer.v1.network_load_balancer_pb2.AttachedTargetGroup] | None = ...,
         deletion_protection: builtins.bool = ...,
+        allow_zonal_shift: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["attached_target_groups", b"attached_target_groups", "deletion_protection", b"deletion_protection", "description", b"description", "labels", b"labels", "listener_specs", b"listener_specs", "name", b"name", "network_load_balancer_id", b"network_load_balancer_id", "update_mask", b"update_mask"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["allow_zonal_shift", b"allow_zonal_shift", "attached_target_groups", b"attached_target_groups", "deletion_protection", b"deletion_protection", "description", b"description", "labels", b"labels", "listener_specs", b"listener_specs", "name", b"name", "network_load_balancer_id", b"network_load_balancer_id", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateNetworkLoadBalancerRequest = UpdateNetworkLoadBalancerRequest
 
