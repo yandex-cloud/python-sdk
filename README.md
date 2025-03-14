@@ -157,16 +157,8 @@ set_up_yc_api_endpoint(kz_region_endpoint)
 ```
 
 ### Retries
-If you want to retry SDK requests, build SDK with `retry_policy` field using `RetryPolicy` class:
+SDK provide built-in retry policy, that supports [exponential backoff and jitter](https://aws.amazon.com/ru/blogs/architecture/exponential-backoff-and-jitter/), and also [retry budget](https://github.com/grpc/proposal/blob/master/A6-client-retries.md#throttling-retry-attempts-and-hedged-rpcs). It's necessary to avoid retry amplification.
 
-```python
-import grpc
-from yandexcloud import SDK, RetryPolicy
-
-sdk = SDK(retry_policy=RetryPolicy(max_attempts=2, status_codes=(grpc.StatusCode.UNAVAILABLE,)))
-```
-
-It's **strongly recommended** to use default settings of RetryPolicy to avoid retry amplification:
 ```python
 import grpc
 from yandexcloud import SDK, RetryPolicy

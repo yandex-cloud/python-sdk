@@ -21,10 +21,10 @@ class RetryPolicy:
                         "backoffMultiplier": 2,
                         "retryableStatusCodes": [status.name for status in status_codes],
                     },
+                    "waitForReady": True,
                 }
             ],
             "retryThrottling": {"maxTokens": 100, "tokenRatio": 0.1},
-            "waitForReady": True,
         }
 
     def to_json(self) -> str:
