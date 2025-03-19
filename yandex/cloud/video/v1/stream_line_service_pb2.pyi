@@ -42,22 +42,26 @@ class ListStreamLinesRequest(google.protobuf.message.Message):
     channel_id: builtins.str
     """ID of the channel."""
     page_size: builtins.int
-    """The maximum number of the results per page to return. Default value: 100."""
+    """The maximum number of the results per page to return.
+    Default value: 100.
+    """
     page_token: builtins.str
     """Page token for getting the next page of the result."""
     order_by: builtins.str
     """By which column the listing should be ordered and in which direction,
-    format is "createdAt desc". "id asc" if omitted.
-    Possible fields: ["id", "title", "createdAt", "updatedAt"]
+    format is "<field> <order>" (e.g. "createdAt desc").
+    Default: "id asc".
+    Possible fields: ["id", "title", "createdAt", "updatedAt"].
     Both snake_case and camelCase are supported for fields.
     """
     filter: builtins.str
     """Filter expression that filters resources listed in the response.
     Expressions are composed of terms connected by logic operators.
-    Value in quotes: `'` or `"`
-    Example: "key1='value' AND key2='value'"
-    Supported operators: ["AND"].
-    Supported fields: ["title"]
+    If value contains spaces or quotes,
+    it should be in quotes (`'` or `"`) with the inner quotes being backslash escaped.
+    Example: "key1='value' AND key2='value'".
+    Supported operators: ["AND", "OR"].
+    Supported fields: ["id", "title"].
     Both snake_case and camelCase are supported for fields.
     """
     def __init__(
@@ -160,11 +164,7 @@ class CreateStreamLineRequest(google.protobuf.message.Message):
     THUMBNAIL_ID_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     RTMP_PUSH_FIELD_NUMBER: builtins.int
-    SRT_PUSH_FIELD_NUMBER: builtins.int
     RTMP_PULL_FIELD_NUMBER: builtins.int
-    SRT_PULL_FIELD_NUMBER: builtins.int
-    TCP_PULL_FIELD_NUMBER: builtins.int
-    RTSP_PULL_FIELD_NUMBER: builtins.int
     MANUAL_LINE_FIELD_NUMBER: builtins.int
     AUTO_LINE_FIELD_NUMBER: builtins.int
     channel_id: builtins.str
@@ -182,24 +182,8 @@ class CreateStreamLineRequest(google.protobuf.message.Message):
         """RTMP push input type."""
 
     @property
-    def srt_push(self) -> global___SRTPushParams:
-        """SRT push input type."""
-
-    @property
     def rtmp_pull(self) -> global___RTMPPullParams:
         """RTMP pull input type."""
-
-    @property
-    def srt_pull(self) -> global___SRTPullParams:
-        """SRT pull input type."""
-
-    @property
-    def tcp_pull(self) -> global___TCPPullParams:
-        """TCP pull input type."""
-
-    @property
-    def rtsp_pull(self) -> global___RTSPPullParams:
-        """RTSP pull input type."""
 
     @property
     def manual_line(self) -> global___ManualLineParams:
@@ -217,18 +201,14 @@ class CreateStreamLineRequest(google.protobuf.message.Message):
         thumbnail_id: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         rtmp_push: global___RTMPPushParams | None = ...,
-        srt_push: global___SRTPushParams | None = ...,
         rtmp_pull: global___RTMPPullParams | None = ...,
-        srt_pull: global___SRTPullParams | None = ...,
-        tcp_pull: global___TCPPullParams | None = ...,
-        rtsp_pull: global___RTSPPullParams | None = ...,
         manual_line: global___ManualLineParams | None = ...,
         auto_line: global___AutoLineParams | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["auto_line", b"auto_line", "input_params", b"input_params", "line_type_params", b"line_type_params", "manual_line", b"manual_line", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "rtsp_pull", b"rtsp_pull", "srt_pull", b"srt_pull", "srt_push", b"srt_push", "tcp_pull", b"tcp_pull"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["auto_line", b"auto_line", "channel_id", b"channel_id", "input_params", b"input_params", "labels", b"labels", "line_type_params", b"line_type_params", "manual_line", b"manual_line", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "rtsp_pull", b"rtsp_pull", "srt_pull", b"srt_pull", "srt_push", b"srt_push", "tcp_pull", b"tcp_pull", "thumbnail_id", b"thumbnail_id", "title", b"title"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["auto_line", b"auto_line", "input_params", b"input_params", "line_type_params", b"line_type_params", "manual_line", b"manual_line", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["auto_line", b"auto_line", "channel_id", b"channel_id", "input_params", b"input_params", "labels", b"labels", "line_type_params", b"line_type_params", "manual_line", b"manual_line", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "thumbnail_id", b"thumbnail_id", "title", b"title"]) -> None: ...
     @typing.overload
-    def WhichOneof(self, oneof_group: typing.Literal["input_params", b"input_params"]) -> typing.Literal["rtmp_push", "srt_push", "rtmp_pull", "srt_pull", "tcp_pull", "rtsp_pull"] | None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["input_params", b"input_params"]) -> typing.Literal["rtmp_push", "rtmp_pull"] | None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["line_type_params", b"line_type_params"]) -> typing.Literal["manual_line", "auto_line"] | None: ...
 
@@ -276,11 +256,7 @@ class UpdateStreamLineRequest(google.protobuf.message.Message):
     THUMBNAIL_ID_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     RTMP_PUSH_FIELD_NUMBER: builtins.int
-    SRT_PUSH_FIELD_NUMBER: builtins.int
     RTMP_PULL_FIELD_NUMBER: builtins.int
-    SRT_PULL_FIELD_NUMBER: builtins.int
-    TCP_PULL_FIELD_NUMBER: builtins.int
-    RTSP_PULL_FIELD_NUMBER: builtins.int
     stream_line_id: builtins.str
     """ID of the line."""
     title: builtins.str
@@ -300,24 +276,8 @@ class UpdateStreamLineRequest(google.protobuf.message.Message):
         """RTMP push input type."""
 
     @property
-    def srt_push(self) -> global___SRTPushParams:
-        """SRT push input type."""
-
-    @property
     def rtmp_pull(self) -> global___RTMPPullParams:
         """RTMP pull input type."""
-
-    @property
-    def srt_pull(self) -> global___SRTPullParams:
-        """SRT pull input type."""
-
-    @property
-    def tcp_pull(self) -> global___TCPPullParams:
-        """TCP pull input type."""
-
-    @property
-    def rtsp_pull(self) -> global___RTSPPullParams:
-        """RTSP pull input type."""
 
     def __init__(
         self,
@@ -328,15 +288,11 @@ class UpdateStreamLineRequest(google.protobuf.message.Message):
         thumbnail_id: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         rtmp_push: global___RTMPPushParams | None = ...,
-        srt_push: global___SRTPushParams | None = ...,
         rtmp_pull: global___RTMPPullParams | None = ...,
-        srt_pull: global___SRTPullParams | None = ...,
-        tcp_pull: global___TCPPullParams | None = ...,
-        rtsp_pull: global___RTSPPullParams | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["field_mask", b"field_mask", "input_params", b"input_params", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "rtsp_pull", b"rtsp_pull", "srt_pull", b"srt_pull", "srt_push", b"srt_push", "tcp_pull", b"tcp_pull"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["field_mask", b"field_mask", "input_params", b"input_params", "labels", b"labels", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "rtsp_pull", b"rtsp_pull", "srt_pull", b"srt_pull", "srt_push", b"srt_push", "stream_line_id", b"stream_line_id", "tcp_pull", b"tcp_pull", "thumbnail_id", b"thumbnail_id", "title", b"title"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["input_params", b"input_params"]) -> typing.Literal["rtmp_push", "srt_push", "rtmp_pull", "srt_pull", "tcp_pull", "rtsp_pull"] | None: ...
+    def HasField(self, field_name: typing.Literal["field_mask", b"field_mask", "input_params", b"input_params", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["field_mask", b"field_mask", "input_params", b"input_params", "labels", b"labels", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "stream_line_id", b"stream_line_id", "thumbnail_id", b"thumbnail_id", "title", b"title"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["input_params", b"input_params"]) -> typing.Literal["rtmp_push", "rtmp_pull"] | None: ...
 
 global___UpdateStreamLineRequest = UpdateStreamLineRequest
 
@@ -481,16 +437,6 @@ class RTMPPushParams(google.protobuf.message.Message):
 global___RTMPPushParams = RTMPPushParams
 
 @typing.final
-class SRTPushParams(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    def __init__(
-        self,
-    ) -> None: ...
-
-global___SRTPushParams = SRTPushParams
-
-@typing.final
 class RTMPPullParams(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -505,54 +451,6 @@ class RTMPPullParams(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["url", b"url"]) -> None: ...
 
 global___RTMPPullParams = RTMPPullParams
-
-@typing.final
-class SRTPullParams(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    URL_FIELD_NUMBER: builtins.int
-    url: builtins.str
-    """URL of a SRT streaming server."""
-    def __init__(
-        self,
-        *,
-        url: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["url", b"url"]) -> None: ...
-
-global___SRTPullParams = SRTPullParams
-
-@typing.final
-class TCPPullParams(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    URL_FIELD_NUMBER: builtins.int
-    url: builtins.str
-    """URL of a TCP streaming server."""
-    def __init__(
-        self,
-        *,
-        url: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["url", b"url"]) -> None: ...
-
-global___TCPPullParams = TCPPullParams
-
-@typing.final
-class RTSPPullParams(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    URL_FIELD_NUMBER: builtins.int
-    url: builtins.str
-    """URL of a RTSP streaming server."""
-    def __init__(
-        self,
-        *,
-        url: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["url", b"url"]) -> None: ...
-
-global___RTSPPullParams = RTSPPullParams
 
 @typing.final
 class ManualLineParams(google.protobuf.message.Message):

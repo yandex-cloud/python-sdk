@@ -79,7 +79,7 @@ class PlaylistServiceServicer(object):
     """
 
     def Get(self, request, context):
-        """Returns the specific playlist.
+        """Get the specific playlist.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -114,14 +114,14 @@ class PlaylistServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def BatchDelete(self, request, context):
-        """Batch delete playlist.
+        """Batch delete playlists.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetPlayerURL(self, request, context):
-        """Returns player's url.
+        """Get player url.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

@@ -45,22 +45,26 @@ class ListVideoRequest(google.protobuf.message.Message):
     channel_id: builtins.str
     """ID of the channel."""
     page_size: builtins.int
-    """The maximum number of the results per page to return. Default value: 100."""
+    """The maximum number of the results per page to return.
+    Default value: 100.
+    """
     page_token: builtins.str
     """Page token for getting the next page of the result."""
     order_by: builtins.str
     """By which column the listing should be ordered and in which direction,
-    format is "createdAt desc". "id asc" if omitted.
-    Possible fields: ["id", "createdAt", "updatedAt"]
+    format is "<field> <order>" (e.g. "createdAt desc").
+    Default: "id asc".
+    Possible fields: ["id", "title", "createdAt", "updatedAt"].
     Both snake_case and camelCase are supported for fields.
     """
     filter: builtins.str
     """Filter expression that filters resources listed in the response.
     Expressions are composed of terms connected by logic operators.
-    Value in quotes: `'` or `"`
-    Example: "key1='value' AND key2='value'"
-    Supported operators: ["AND"].
-    Supported fields: ["title", "status", "visibility_status"]
+    If value contains spaces or quotes,
+    it should be in quotes (`'` or `"`) with the inner quotes being backslash escaped.
+    Example: "key1='value' AND key2='value'".
+    Supported operators: ["AND", "OR"].
+    Supported fields: ["id", "title", "status", "visibilityStatus"].
     Both snake_case and camelCase are supported for fields.
     """
     def __init__(
@@ -161,11 +165,11 @@ class CreateVideoRequest(google.protobuf.message.Message):
     DESCRIPTION_FIELD_NUMBER: builtins.int
     THUMBNAIL_ID_FIELD_NUMBER: builtins.int
     AUTO_TRANSCODE_FIELD_NUMBER: builtins.int
+    AUTO_PUBLISH_FIELD_NUMBER: builtins.int
     ENABLE_AD_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     TUSD_FIELD_NUMBER: builtins.int
     PUBLIC_ACCESS_FIELD_NUMBER: builtins.int
-    AUTH_SYSTEM_ACCESS_FIELD_NUMBER: builtins.int
     SIGN_URL_ACCESS_FIELD_NUMBER: builtins.int
     channel_id: builtins.str
     """ID of the channel."""
@@ -178,10 +182,16 @@ class CreateVideoRequest(google.protobuf.message.Message):
     auto_transcode: yandex.cloud.video.v1.video_pb2.AutoTranscode.ValueType
     """Auto start transcoding."""
     @property
+    def auto_publish(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Automatically publish video after transcoding.
+        Switches visibility status to PUBLISHED.
+        """
+
+    @property
     def enable_ad(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Enable advertisement for this video.
         Default: true.
-        Use this to disable advertisement for a specific video.
+        Set explicitly to false to disable advertisements for a specific video.
         """
 
     @property
@@ -194,11 +204,9 @@ class CreateVideoRequest(google.protobuf.message.Message):
 
     @property
     def public_access(self) -> global___VideoPublicAccessParams:
-        """Video is available to everyone."""
-
-    @property
-    def auth_system_access(self) -> global___VideoAuthSystemAccessParams:
-        """Checking access rights using the authorization system."""
+        """Publicly accessible video available for viewing by anyone with the direct link.
+        No additional authorization or access control is applied.
+        """
 
     @property
     def sign_url_access(self) -> global___VideoSignURLAccessParams:
@@ -212,17 +220,17 @@ class CreateVideoRequest(google.protobuf.message.Message):
         description: builtins.str = ...,
         thumbnail_id: builtins.str = ...,
         auto_transcode: yandex.cloud.video.v1.video_pb2.AutoTranscode.ValueType = ...,
+        auto_publish: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         enable_ad: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         tusd: global___VideoTUSDParams | None = ...,
         public_access: global___VideoPublicAccessParams | None = ...,
-        auth_system_access: global___VideoAuthSystemAccessParams | None = ...,
         sign_url_access: global___VideoSignURLAccessParams | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access_rights", b"access_rights", "auth_system_access", b"auth_system_access", "enable_ad", b"enable_ad", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "source", b"source", "tusd", b"tusd"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access_rights", b"access_rights", "auth_system_access", b"auth_system_access", "auto_transcode", b"auto_transcode", "channel_id", b"channel_id", "description", b"description", "enable_ad", b"enable_ad", "labels", b"labels", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "source", b"source", "thumbnail_id", b"thumbnail_id", "title", b"title", "tusd", b"tusd"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access_rights", b"access_rights", "auto_publish", b"auto_publish", "enable_ad", b"enable_ad", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "source", b"source", "tusd", b"tusd"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access_rights", b"access_rights", "auto_publish", b"auto_publish", "auto_transcode", b"auto_transcode", "channel_id", b"channel_id", "description", b"description", "enable_ad", b"enable_ad", "labels", b"labels", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "source", b"source", "thumbnail_id", b"thumbnail_id", "title", b"title", "tusd", b"tusd"]) -> None: ...
     @typing.overload
-    def WhichOneof(self, oneof_group: typing.Literal["access_rights", b"access_rights"]) -> typing.Literal["public_access", "auth_system_access", "sign_url_access"] | None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["access_rights", b"access_rights"]) -> typing.Literal["public_access", "sign_url_access"] | None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["source", b"source"]) -> typing.Literal["tusd"] | None: ...
 
@@ -257,16 +265,6 @@ class VideoPublicAccessParams(google.protobuf.message.Message):
     ) -> None: ...
 
 global___VideoPublicAccessParams = VideoPublicAccessParams
-
-@typing.final
-class VideoAuthSystemAccessParams(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    def __init__(
-        self,
-    ) -> None: ...
-
-global___VideoAuthSystemAccessParams = VideoAuthSystemAccessParams
 
 @typing.final
 class VideoSignURLAccessParams(google.protobuf.message.Message):
@@ -323,7 +321,6 @@ class UpdateVideoRequest(google.protobuf.message.Message):
     ENABLE_AD_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     PUBLIC_ACCESS_FIELD_NUMBER: builtins.int
-    AUTH_SYSTEM_ACCESS_FIELD_NUMBER: builtins.int
     SIGN_URL_ACCESS_FIELD_NUMBER: builtins.int
     video_id: builtins.str
     """ID of the video."""
@@ -351,11 +348,15 @@ class UpdateVideoRequest(google.protobuf.message.Message):
         """Custom labels as `` key:value `` pairs. Maximum 64 per resource."""
 
     @property
-    def public_access(self) -> global___VideoPublicAccessParams: ...
+    def public_access(self) -> global___VideoPublicAccessParams:
+        """Publicly accessible video available for viewing by anyone with the direct link.
+        No additional authorization or access control is applied.
+        """
+
     @property
-    def auth_system_access(self) -> global___VideoAuthSystemAccessParams: ...
-    @property
-    def sign_url_access(self) -> global___VideoSignURLAccessParams: ...
+    def sign_url_access(self) -> global___VideoSignURLAccessParams:
+        """Checking access rights using url's signature."""
+
     def __init__(
         self,
         *,
@@ -368,12 +369,11 @@ class UpdateVideoRequest(google.protobuf.message.Message):
         enable_ad: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         public_access: global___VideoPublicAccessParams | None = ...,
-        auth_system_access: global___VideoAuthSystemAccessParams | None = ...,
         sign_url_access: global___VideoSignURLAccessParams | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access_rights", b"access_rights", "auth_system_access", b"auth_system_access", "enable_ad", b"enable_ad", "field_mask", b"field_mask", "public_access", b"public_access", "sign_url_access", b"sign_url_access"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access_rights", b"access_rights", "auth_system_access", b"auth_system_access", "auto_transcode", b"auto_transcode", "description", b"description", "enable_ad", b"enable_ad", "field_mask", b"field_mask", "labels", b"labels", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "thumbnail_id", b"thumbnail_id", "title", b"title", "video_id", b"video_id"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["access_rights", b"access_rights"]) -> typing.Literal["public_access", "auth_system_access", "sign_url_access"] | None: ...
+    def HasField(self, field_name: typing.Literal["access_rights", b"access_rights", "enable_ad", b"enable_ad", "field_mask", b"field_mask", "public_access", b"public_access", "sign_url_access", b"sign_url_access"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access_rights", b"access_rights", "auto_transcode", b"auto_transcode", "description", b"description", "enable_ad", b"enable_ad", "field_mask", b"field_mask", "labels", b"labels", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "thumbnail_id", b"thumbnail_id", "title", b"title", "video_id", b"video_id"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["access_rights", b"access_rights"]) -> typing.Literal["public_access", "sign_url_access"] | None: ...
 
 global___UpdateVideoRequest = UpdateVideoRequest
 
@@ -400,6 +400,8 @@ class TranscodeVideoRequest(google.protobuf.message.Message):
     VIDEO_ID_FIELD_NUMBER: builtins.int
     FIELD_MASK_FIELD_NUMBER: builtins.int
     SUBTITLE_IDS_FIELD_NUMBER: builtins.int
+    TRANSLATION_SETTINGS_FIELD_NUMBER: builtins.int
+    SUMMARIZATION_SETTINGS_FIELD_NUMBER: builtins.int
     video_id: builtins.str
     """ID of the video."""
     @property
@@ -410,7 +412,15 @@ class TranscodeVideoRequest(google.protobuf.message.Message):
 
     @property
     def subtitle_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """IDs of active video subtitles."""
+        """IDs of active manually uploaded video subtitles."""
+
+    @property
+    def translation_settings(self) -> global___VideoTranslationSettings:
+        """Video translation settings."""
+
+    @property
+    def summarization_settings(self) -> global___VideoSummarizationSettings:
+        """Video summarization settings."""
 
     def __init__(
         self,
@@ -418,11 +428,191 @@ class TranscodeVideoRequest(google.protobuf.message.Message):
         video_id: builtins.str = ...,
         field_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
         subtitle_ids: collections.abc.Iterable[builtins.str] | None = ...,
+        translation_settings: global___VideoTranslationSettings | None = ...,
+        summarization_settings: global___VideoSummarizationSettings | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["field_mask", b"field_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["field_mask", b"field_mask", "subtitle_ids", b"subtitle_ids", "video_id", b"video_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["field_mask", b"field_mask", "summarization_settings", b"summarization_settings", "translation_settings", b"translation_settings"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["field_mask", b"field_mask", "subtitle_ids", b"subtitle_ids", "summarization_settings", b"summarization_settings", "translation_settings", b"translation_settings", "video_id", b"video_id"]) -> None: ...
 
 global___TranscodeVideoRequest = TranscodeVideoRequest
+
+@typing.final
+class VideoTranslationSettings(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class TranslationTrack(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        INPUT_TRACK_FIELD_NUMBER: builtins.int
+        SUBTITLES_FIELD_NUMBER: builtins.int
+        AUDIO_FIELD_NUMBER: builtins.int
+        @property
+        def input_track(self) -> global___VideoTranslationSettings.InputTrack:
+            """Input track settings."""
+
+        @property
+        def subtitles(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___VideoTranslationSettings.SubtitleTrack]:
+            """Settings for target subtitle tracks."""
+
+        @property
+        def audio(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___VideoTranslationSettings.AudioTrack]:
+            """Settings for target audio tracks."""
+
+        def __init__(
+            self,
+            *,
+            input_track: global___VideoTranslationSettings.InputTrack | None = ...,
+            subtitles: collections.abc.Iterable[global___VideoTranslationSettings.SubtitleTrack] | None = ...,
+            audio: collections.abc.Iterable[global___VideoTranslationSettings.AudioTrack] | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["input_track", b"input_track"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["audio", b"audio", "input_track", b"input_track", "subtitles", b"subtitles"]) -> None: ...
+
+    @typing.final
+    class InputTrack(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        TRACK_INDEX_FIELD_NUMBER: builtins.int
+        SRC_LANG_FIELD_NUMBER: builtins.int
+        track_index: builtins.int
+        """Input audio track index (one-based)."""
+        src_lang: builtins.str
+        """Source track language in any of the following formats:
+        * three-letter code according to ISO 639-2/T, ISO 639-2/B, or ISO 639-3 
+        * two-letter code according to ISO 639-1                          
+        Track language will be deduced automatically if not provided.
+        In the latter case the deduction accuracy is not guaranteed.
+        For better performance please do specify the source track language when possible.
+        """
+        def __init__(
+            self,
+            *,
+            track_index: builtins.int = ...,
+            src_lang: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["src_lang", b"src_lang", "track_index", b"track_index"]) -> None: ...
+
+    @typing.final
+    class SubtitleTrack(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        DST_LANG_FIELD_NUMBER: builtins.int
+        LABEL_FIELD_NUMBER: builtins.int
+        dst_lang: builtins.str
+        """Target language in any of the following formats:
+        * three-letter code according to ISO 639-2/T, ISO 639-2/B, or ISO 639-3 
+        * two-letter code according to ISO 639-1
+        """
+        label: builtins.str
+        """Track label to be displayed on the screen during video playback."""
+        def __init__(
+            self,
+            *,
+            dst_lang: builtins.str = ...,
+            label: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["dst_lang", b"dst_lang", "label", b"label"]) -> None: ...
+
+    @typing.final
+    class AudioTrack(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        DST_LANG_FIELD_NUMBER: builtins.int
+        LABEL_FIELD_NUMBER: builtins.int
+        dst_lang: builtins.str
+        """Target language in any of the following formats:
+        * three-letter code according to ISO 639-2/T, ISO 639-2/B, or ISO 639-3 
+        * two-letter code according to ISO 639-1
+        """
+        label: builtins.str
+        """Track label to be displayed on the screen during video playback."""
+        def __init__(
+            self,
+            *,
+            dst_lang: builtins.str = ...,
+            label: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["dst_lang", b"dst_lang", "label", b"label"]) -> None: ...
+
+    TRACKS_FIELD_NUMBER: builtins.int
+    @property
+    def tracks(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___VideoTranslationSettings.TranslationTrack]:
+        """Translation settings for each track."""
+
+    def __init__(
+        self,
+        *,
+        tracks: collections.abc.Iterable[global___VideoTranslationSettings.TranslationTrack] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["tracks", b"tracks"]) -> None: ...
+
+global___VideoTranslationSettings = VideoTranslationSettings
+
+@typing.final
+class VideoSummarizationSettings(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class SummarizationTrack(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        INPUT_TRACK_FIELD_NUMBER: builtins.int
+        @property
+        def input_track(self) -> global___VideoSummarizationSettings.InputTrack:
+            """Input track settings."""
+
+        def __init__(
+            self,
+            *,
+            input_track: global___VideoSummarizationSettings.InputTrack | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["input_track", b"input_track"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["input_track", b"input_track"]) -> None: ...
+
+    @typing.final
+    class InputTrack(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        TRACK_INDEX_FIELD_NUMBER: builtins.int
+        SRC_LANG_FIELD_NUMBER: builtins.int
+        track_index: builtins.int
+        """Input audio track index (one-based)."""
+        src_lang: builtins.str
+        """Source track language (three-letter code according to ISO 639-2/T, ISO 639-2/B, or ISO 639-3).
+        It will be deduced automatically if not provided.
+        In the latter case the deduction accuracy is not guaranteed.
+        For better performance please do specify the source track language when possible.
+        """
+        def __init__(
+            self,
+            *,
+            track_index: builtins.int = ...,
+            src_lang: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["src_lang", b"src_lang", "track_index", b"track_index"]) -> None: ...
+
+    TRACKS_FIELD_NUMBER: builtins.int
+    PROCESS_ALL_TRACKS_FIELD_NUMBER: builtins.int
+    process_all_tracks: builtins.bool
+    """Summarize all available tracks.
+    If enabled, `tracks` parameter is ignored.
+    Enables automatic source language deduction for each track
+    and thus may lead to performance degradation.
+    """
+    @property
+    def tracks(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___VideoSummarizationSettings.SummarizationTrack]:
+        """Summarization settings for each track."""
+
+    def __init__(
+        self,
+        *,
+        tracks: collections.abc.Iterable[global___VideoSummarizationSettings.SummarizationTrack] | None = ...,
+        process_all_tracks: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["process_all_tracks", b"process_all_tracks", "tracks", b"tracks"]) -> None: ...
+
+global___VideoSummarizationSettings = VideoSummarizationSettings
 
 @typing.final
 class TranscodeVideoMetadata(google.protobuf.message.Message):
@@ -644,6 +834,55 @@ class GetVideoPlayerURLResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["html", b"html", "player_url", b"player_url"]) -> None: ...
 
 global___GetVideoPlayerURLResponse = GetVideoPlayerURLResponse
+
+@typing.final
+class BatchGetVideoPlayerURLsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CHANNEL_ID_FIELD_NUMBER: builtins.int
+    VIDEO_IDS_FIELD_NUMBER: builtins.int
+    PARAMS_FIELD_NUMBER: builtins.int
+    SIGNED_URL_EXPIRATION_DURATION_FIELD_NUMBER: builtins.int
+    channel_id: builtins.str
+    """ID of the channel."""
+    @property
+    def video_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of requested video IDs."""
+
+    @property
+    def params(self) -> global___VideoPlayerParams: ...
+    @property
+    def signed_url_expiration_duration(self) -> google.protobuf.duration_pb2.Duration:
+        """Optional field, used to set custom url expiration duration for videos with sign_url_access"""
+
+    def __init__(
+        self,
+        *,
+        channel_id: builtins.str = ...,
+        video_ids: collections.abc.Iterable[builtins.str] | None = ...,
+        params: global___VideoPlayerParams | None = ...,
+        signed_url_expiration_duration: google.protobuf.duration_pb2.Duration | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["params", b"params", "signed_url_expiration_duration", b"signed_url_expiration_duration"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["channel_id", b"channel_id", "params", b"params", "signed_url_expiration_duration", b"signed_url_expiration_duration", "video_ids", b"video_ids"]) -> None: ...
+
+global___BatchGetVideoPlayerURLsRequest = BatchGetVideoPlayerURLsRequest
+
+@typing.final
+class BatchGetVideoPlayerURLsResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PLAYER_URLS_FIELD_NUMBER: builtins.int
+    @property
+    def player_urls(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def __init__(
+        self,
+        *,
+        player_urls: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["player_urls", b"player_urls"]) -> None: ...
+
+global___BatchGetVideoPlayerURLsResponse = BatchGetVideoPlayerURLsResponse
 
 @typing.final
 class GetVideoManifestsRequest(google.protobuf.message.Message):

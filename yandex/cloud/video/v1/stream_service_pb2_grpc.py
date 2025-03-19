@@ -84,7 +84,7 @@ class StreamServiceServicer(object):
     """
 
     def Get(self, request, context):
-        """Returns the specific stream.
+        """Get the specific stream.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -133,7 +133,7 @@ class StreamServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def PerformAction(self, request, context):
-        """Perform an action on the episode.
+        """Perform an action on the stream.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

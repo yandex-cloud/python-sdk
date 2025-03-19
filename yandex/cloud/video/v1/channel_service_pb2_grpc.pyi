@@ -28,7 +28,7 @@ class ChannelServiceStub:
         yandex.cloud.video.v1.channel_service_pb2.GetChannelRequest,
         yandex.cloud.video.v1.channel_pb2.Channel,
     ]
-    """Returns the specific channel."""
+    """Get the specific channel."""
 
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.channel_service_pb2.ListChannelsRequest,
@@ -64,19 +64,19 @@ class ChannelServiceStub:
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
-    """Lists existing access bindings for the specified channel."""
+    """List existing access bindings for the specified channel."""
 
     SetAccessBindings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Sets access bindings for the channel."""
+    """Set access bindings for the channel."""
 
     UpdateAccessBindings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Updates access bindings for the specified channel."""
+    """Update access bindings for the specified channel."""
 
 class ChannelServiceAsyncStub:
     """Channel management service."""
@@ -85,7 +85,7 @@ class ChannelServiceAsyncStub:
         yandex.cloud.video.v1.channel_service_pb2.GetChannelRequest,
         yandex.cloud.video.v1.channel_pb2.Channel,
     ]
-    """Returns the specific channel."""
+    """Get the specific channel."""
 
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.channel_service_pb2.ListChannelsRequest,
@@ -121,19 +121,19 @@ class ChannelServiceAsyncStub:
         yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
     ]
-    """Lists existing access bindings for the specified channel."""
+    """List existing access bindings for the specified channel."""
 
     SetAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Sets access bindings for the channel."""
+    """Set access bindings for the channel."""
 
     UpdateAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Updates access bindings for the specified channel."""
+    """Update access bindings for the specified channel."""
 
 class ChannelServiceServicer(metaclass=abc.ABCMeta):
     """Channel management service."""
@@ -144,7 +144,7 @@ class ChannelServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.channel_service_pb2.GetChannelRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.channel_pb2.Channel, collections.abc.Awaitable[yandex.cloud.video.v1.channel_pb2.Channel]]:
-        """Returns the specific channel."""
+        """Get the specific channel."""
 
     @abc.abstractmethod
     def List(
@@ -192,7 +192,7 @@ class ChannelServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.access.access_pb2.ListAccessBindingsResponse, collections.abc.Awaitable[yandex.cloud.access.access_pb2.ListAccessBindingsResponse]]:
-        """Lists existing access bindings for the specified channel."""
+        """List existing access bindings for the specified channel."""
 
     @abc.abstractmethod
     def SetAccessBindings(
@@ -200,7 +200,7 @@ class ChannelServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Sets access bindings for the channel."""
+        """Set access bindings for the channel."""
 
     @abc.abstractmethod
     def UpdateAccessBindings(
@@ -208,6 +208,6 @@ class ChannelServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Updates access bindings for the specified channel."""
+        """Update access bindings for the specified channel."""
 
 def add_ChannelServiceServicer_to_server(servicer: ChannelServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

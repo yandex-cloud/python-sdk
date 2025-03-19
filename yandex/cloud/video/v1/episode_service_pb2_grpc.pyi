@@ -27,7 +27,7 @@ class EpisodeServiceStub:
         yandex.cloud.video.v1.episode_service_pb2.GetEpisodeRequest,
         yandex.cloud.video.v1.episode_pb2.Episode,
     ]
-    """Returns the specific channel."""
+    """Get the specific channel."""
 
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.episode_service_pb2.ListEpisodesRequest,
@@ -63,7 +63,7 @@ class EpisodeServiceStub:
         yandex.cloud.video.v1.episode_service_pb2.BatchDeleteEpisodesRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Batch delete episode."""
+    """Batch delete episodes."""
 
     PerformAction: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.episode_service_pb2.PerformEpisodeActionRequest,
@@ -75,13 +75,13 @@ class EpisodeServiceStub:
         yandex.cloud.video.v1.episode_service_pb2.GetEpisodePlayerURLRequest,
         yandex.cloud.video.v1.episode_service_pb2.GetEpisodePlayerURLResponse,
     ]
-    """Returns url to the player."""
+    """Get player url."""
 
     GetManifests: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.episode_service_pb2.GetEpisodeManifestsRequest,
         yandex.cloud.video.v1.episode_service_pb2.GetEpisodeManifestsResponse,
     ]
-    """Returns manifest urls."""
+    """Get manifest urls."""
 
 class EpisodeServiceAsyncStub:
     """Episode management service."""
@@ -90,7 +90,7 @@ class EpisodeServiceAsyncStub:
         yandex.cloud.video.v1.episode_service_pb2.GetEpisodeRequest,
         yandex.cloud.video.v1.episode_pb2.Episode,
     ]
-    """Returns the specific channel."""
+    """Get the specific channel."""
 
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.episode_service_pb2.ListEpisodesRequest,
@@ -126,7 +126,7 @@ class EpisodeServiceAsyncStub:
         yandex.cloud.video.v1.episode_service_pb2.BatchDeleteEpisodesRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Batch delete episode."""
+    """Batch delete episodes."""
 
     PerformAction: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.episode_service_pb2.PerformEpisodeActionRequest,
@@ -138,13 +138,13 @@ class EpisodeServiceAsyncStub:
         yandex.cloud.video.v1.episode_service_pb2.GetEpisodePlayerURLRequest,
         yandex.cloud.video.v1.episode_service_pb2.GetEpisodePlayerURLResponse,
     ]
-    """Returns url to the player."""
+    """Get player url."""
 
     GetManifests: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.episode_service_pb2.GetEpisodeManifestsRequest,
         yandex.cloud.video.v1.episode_service_pb2.GetEpisodeManifestsResponse,
     ]
-    """Returns manifest urls."""
+    """Get manifest urls."""
 
 class EpisodeServiceServicer(metaclass=abc.ABCMeta):
     """Episode management service."""
@@ -155,7 +155,7 @@ class EpisodeServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.episode_service_pb2.GetEpisodeRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.episode_pb2.Episode, collections.abc.Awaitable[yandex.cloud.video.v1.episode_pb2.Episode]]:
-        """Returns the specific channel."""
+        """Get the specific channel."""
 
     @abc.abstractmethod
     def List(
@@ -203,7 +203,7 @@ class EpisodeServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.episode_service_pb2.BatchDeleteEpisodesRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Batch delete episode."""
+        """Batch delete episodes."""
 
     @abc.abstractmethod
     def PerformAction(
@@ -219,7 +219,7 @@ class EpisodeServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.episode_service_pb2.GetEpisodePlayerURLRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.episode_service_pb2.GetEpisodePlayerURLResponse, collections.abc.Awaitable[yandex.cloud.video.v1.episode_service_pb2.GetEpisodePlayerURLResponse]]:
-        """Returns url to the player."""
+        """Get player url."""
 
     @abc.abstractmethod
     def GetManifests(
@@ -227,6 +227,6 @@ class EpisodeServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.episode_service_pb2.GetEpisodeManifestsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.episode_service_pb2.GetEpisodeManifestsResponse, collections.abc.Awaitable[yandex.cloud.video.v1.episode_service_pb2.GetEpisodeManifestsResponse]]:
-        """Returns manifest urls."""
+        """Get manifest urls."""
 
 def add_EpisodeServiceServicer_to_server(servicer: EpisodeServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

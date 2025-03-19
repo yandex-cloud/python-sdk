@@ -5,6 +5,7 @@ import warnings
 
 from yandex.cloud.marketplace.licensemanager.saas.v1 import instance_service_pb2 as yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_saas_dot_v1_dot_instance__service__pb2
 from yandex.cloud.marketplace.licensemanager.v1 import instance_pb2 as yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_instance__pb2
+from yandex.cloud.marketplace.licensemanager.v1 import user_info_pb2 as yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_user__info__pb2
 
 GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
@@ -41,6 +42,11 @@ class InstanceServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_saas_dot_v1_dot_instance__service__pb2.GetInstanceRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_instance__pb2.Instance.FromString,
                 _registered_method=True)
+        self.GetUserInfo = channel.unary_unary(
+                '/yandex.cloud.marketplace.licensemanager.saas.v1.InstanceService/GetUserInfo',
+                request_serializer=yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_saas_dot_v1_dot_instance__service__pb2.GetUserInfoRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_user__info__pb2.UserInfo.FromString,
+                _registered_method=True)
 
 
 class InstanceServiceServicer(object):
@@ -54,6 +60,13 @@ class InstanceServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetUserInfo(self, request, context):
+        """Returns information about legal person (Russia only) who owns this subscription instance.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_InstanceServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -61,6 +74,11 @@ def add_InstanceServiceServicer_to_server(servicer, server):
                     servicer.Get,
                     request_deserializer=yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_saas_dot_v1_dot_instance__service__pb2.GetInstanceRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_instance__pb2.Instance.SerializeToString,
+            ),
+            'GetUserInfo': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetUserInfo,
+                    request_deserializer=yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_saas_dot_v1_dot_instance__service__pb2.GetUserInfoRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_user__info__pb2.UserInfo.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -91,6 +109,33 @@ class InstanceService(object):
             '/yandex.cloud.marketplace.licensemanager.saas.v1.InstanceService/Get',
             yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_saas_dot_v1_dot_instance__service__pb2.GetInstanceRequest.SerializeToString,
             yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_instance__pb2.Instance.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetUserInfo(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.marketplace.licensemanager.saas.v1.InstanceService/GetUserInfo',
+            yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_saas_dot_v1_dot_instance__service__pb2.GetUserInfoRequest.SerializeToString,
+            yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_user__info__pb2.UserInfo.FromString,
             options,
             channel_credentials,
             insecure,

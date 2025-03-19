@@ -8,6 +8,7 @@ import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
+import google.protobuf.wrappers_pb2
 import typing
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
@@ -20,17 +21,24 @@ class TextEmbeddingRequest(google.protobuf.message.Message):
 
     MODEL_URI_FIELD_NUMBER: builtins.int
     TEXT_FIELD_NUMBER: builtins.int
+    DIM_FIELD_NUMBER: builtins.int
     model_uri: builtins.str
     """The [model URI](/docs/foundation-models/concepts/embeddings) to be used for obtaining text embeddings."""
     text: builtins.str
     """The input text for which the embedding is requested."""
+    @property
+    def dim(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Optional parameter to specify embedding dimension for models that support multi-dimensional outputs"""
+
     def __init__(
         self,
         *,
         model_uri: builtins.str = ...,
         text: builtins.str = ...,
+        dim: google.protobuf.wrappers_pb2.Int64Value | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["model_uri", b"model_uri", "text", b"text"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["dim", b"dim"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["dim", b"dim", "model_uri", b"model_uri", "text", b"text"]) -> None: ...
 
 global___TextEmbeddingRequest = TextEmbeddingRequest
 

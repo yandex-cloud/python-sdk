@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$yandex/cloud/video/v1/subtitle.proto\x12\x15yandex.cloud.video.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\xed\x02\n\x08Subtitle\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08language\x18\x02 \x01(\t\x12\r\n\x05label\x18\x03 \x01(\t\x12>\n\x06status\x18\x04 \x01(\x0e\x32..yandex.cloud.video.v1.Subtitle.SubtitleStatus\x12\x10\n\x08\x66ilename\x18\x05 \x01(\t\x12.\n\ncreated_at\x18\x64 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x65 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x13\n\x08video_id\x18\xe8\x07 \x01(\tH\x00\"S\n\x0eSubtitleStatus\x12\x1f\n\x1bSUBTITLE_STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eWAIT_UPLOADING\x10\x01\x12\x0c\n\x08UPLOADED\x10\x02\x42\x0b\n\tparent_idJ\x04\x08\x06\x10\x64J\x05\x08\x66\x10\xe8\x07\x42\\\n\x19yandex.cloud.api.video.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/video/v1;videob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$yandex/cloud/video/v1/subtitle.proto\x12\x15yandex.cloud.video.v1\x1a\x1fgoogle/protobuf/timestamp.proto\"\x8d\x04\n\x08Subtitle\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08language\x18\x02 \x01(\t\x12\r\n\x05label\x18\x03 \x01(\t\x12>\n\x06status\x18\x04 \x01(\x0e\x32..yandex.cloud.video.v1.Subtitle.SubtitleStatus\x12G\n\x0bsource_type\x18\x06 \x01(\x0e\x32\x32.yandex.cloud.video.v1.Subtitle.SubtitleSourceType\x12\x10\n\x08\x66ilename\x18\x05 \x01(\t\x12.\n\ncreated_at\x18\x64 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nupdated_at\x18\x65 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x13\n\x08video_id\x18\xe8\x07 \x01(\tH\x00\"S\n\x0eSubtitleStatus\x12\x1f\n\x1bSUBTITLE_STATUS_UNSPECIFIED\x10\x00\x12\x12\n\x0eWAIT_UPLOADING\x10\x01\x12\x0c\n\x08UPLOADED\x10\x02\"U\n\x12SubtitleSourceType\x12$\n SUBTITLE_SOURCE_TYPE_UNSPECIFIED\x10\x00\x12\n\n\x06MANUAL\x10\x01\x12\r\n\tGENERATED\x10\x02\x42\x0b\n\tparent_idJ\x04\x08\x07\x10\x64J\x05\x08\x66\x10\xe8\x07\x42\\\n\x19yandex.cloud.api.video.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/video/v1;videob\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,7 +34,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\031yandex.cloud.api.video.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/video/v1;video'
   _globals['_SUBTITLE']._serialized_start=97
-  _globals['_SUBTITLE']._serialized_end=462
-  _globals['_SUBTITLE_SUBTITLESTATUS']._serialized_start=353
-  _globals['_SUBTITLE_SUBTITLESTATUS']._serialized_end=436
+  _globals['_SUBTITLE']._serialized_end=622
+  _globals['_SUBTITLE_SUBTITLESTATUS']._serialized_start=426
+  _globals['_SUBTITLE_SUBTITLESTATUS']._serialized_end=509
+  _globals['_SUBTITLE_SUBTITLESOURCETYPE']._serialized_start=511
+  _globals['_SUBTITLE_SUBTITLESOURCETYPE']._serialized_end=596
 # @@protoc_insertion_point(module_scope)

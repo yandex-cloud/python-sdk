@@ -27,7 +27,7 @@ class StreamLineServiceStub:
         yandex.cloud.video.v1.stream_line_service_pb2.GetStreamLineRequest,
         yandex.cloud.video.v1.stream_line_pb2.StreamLine,
     ]
-    """Returns the specific stream line."""
+    """Get the specific stream line."""
 
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_line_service_pb2.ListStreamLinesRequest,
@@ -75,13 +75,13 @@ class StreamLineServiceStub:
         yandex.cloud.video.v1.stream_line_service_pb2.GetStreamKeyRequest,
         yandex.cloud.video.v1.stream_line_pb2.PushStreamKey,
     ]
-    """Returns unique stream key."""
+    """Get unique stream key."""
 
     UpdateStreamKey: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_line_service_pb2.UpdateStreamKeyRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Change stream key."""
+    """Update stream key."""
 
 class StreamLineServiceAsyncStub:
     """Stream line management service."""
@@ -90,7 +90,7 @@ class StreamLineServiceAsyncStub:
         yandex.cloud.video.v1.stream_line_service_pb2.GetStreamLineRequest,
         yandex.cloud.video.v1.stream_line_pb2.StreamLine,
     ]
-    """Returns the specific stream line."""
+    """Get the specific stream line."""
 
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_line_service_pb2.ListStreamLinesRequest,
@@ -138,13 +138,13 @@ class StreamLineServiceAsyncStub:
         yandex.cloud.video.v1.stream_line_service_pb2.GetStreamKeyRequest,
         yandex.cloud.video.v1.stream_line_pb2.PushStreamKey,
     ]
-    """Returns unique stream key."""
+    """Get unique stream key."""
 
     UpdateStreamKey: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_line_service_pb2.UpdateStreamKeyRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Change stream key."""
+    """Update stream key."""
 
 class StreamLineServiceServicer(metaclass=abc.ABCMeta):
     """Stream line management service."""
@@ -155,7 +155,7 @@ class StreamLineServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.stream_line_service_pb2.GetStreamLineRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.stream_line_pb2.StreamLine, collections.abc.Awaitable[yandex.cloud.video.v1.stream_line_pb2.StreamLine]]:
-        """Returns the specific stream line."""
+        """Get the specific stream line."""
 
     @abc.abstractmethod
     def List(
@@ -219,7 +219,7 @@ class StreamLineServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.stream_line_service_pb2.GetStreamKeyRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.stream_line_pb2.PushStreamKey, collections.abc.Awaitable[yandex.cloud.video.v1.stream_line_pb2.PushStreamKey]]:
-        """Returns unique stream key."""
+        """Get unique stream key."""
 
     @abc.abstractmethod
     def UpdateStreamKey(
@@ -227,6 +227,6 @@ class StreamLineServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.stream_line_service_pb2.UpdateStreamKeyRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Change stream key."""
+        """Update stream key."""
 
 def add_StreamLineServiceServicer_to_server(servicer: StreamLineServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

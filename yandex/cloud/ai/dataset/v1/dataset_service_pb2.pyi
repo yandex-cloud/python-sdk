@@ -563,14 +563,18 @@ class ListUploadSchemasRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     TASK_TYPE_FIELD_NUMBER: builtins.int
+    FOLDER_ID_FIELD_NUMBER: builtins.int
     task_type: builtins.str
     """Dataset task type to list schemas."""
+    folder_id: builtins.str
+    """Folder to search task type (if empty only public types allowed)"""
     def __init__(
         self,
         *,
         task_type: builtins.str = ...,
+        folder_id: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["task_type", b"task_type"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "task_type", b"task_type"]) -> None: ...
 
 global___ListUploadSchemasRequest = ListUploadSchemasRequest
 
@@ -596,9 +600,15 @@ global___ListUploadSchemasResponse = ListUploadSchemasResponse
 class ListTypesRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    folder_id: builtins.str
+    """Folder to search task types (if empty only public types will be returned)"""
     def __init__(
         self,
+        *,
+        folder_id: builtins.str = ...,
     ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id"]) -> None: ...
 
 global___ListTypesRequest = ListTypesRequest
 

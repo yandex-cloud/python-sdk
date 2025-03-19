@@ -116,6 +116,7 @@ class Database(google.protobuf.message.Message):
     KAFKA_API_ENDPOINT_FIELD_NUMBER: builtins.int
     MONITORING_CONFIG_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
+    SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
     id: builtins.str
     folder_id: builtins.str
     name: builtins.str
@@ -156,6 +157,8 @@ class Database(google.protobuf.message.Message):
     def backup_config(self) -> yandex.cloud.ydb.v1.backup_pb2.BackupConfig: ...
     @property
     def monitoring_config(self) -> global___MonitoringConfig: ...
+    @property
+    def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
     def __init__(
         self,
         *,
@@ -184,9 +187,10 @@ class Database(google.protobuf.message.Message):
         kafka_api_endpoint: builtins.str = ...,
         monitoring_config: global___MonitoringConfig | None = ...,
         deletion_protection: builtins.bool = ...,
+        security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["backup_config", b"backup_config", "created_at", b"created_at", "database_type", b"database_type", "dedicated_database", b"dedicated_database", "monitoring_config", b"monitoring_config", "regional_database", b"regional_database", "scale_policy", b"scale_policy", "serverless_database", b"serverless_database", "storage_config", b"storage_config", "zonal_database", b"zonal_database"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["assign_public_ips", b"assign_public_ips", "backup_config", b"backup_config", "created_at", b"created_at", "database_type", b"database_type", "dedicated_database", b"dedicated_database", "deletion_protection", b"deletion_protection", "description", b"description", "document_api_endpoint", b"document_api_endpoint", "endpoint", b"endpoint", "folder_id", b"folder_id", "id", b"id", "kafka_api_endpoint", b"kafka_api_endpoint", "kinesis_api_endpoint", b"kinesis_api_endpoint", "labels", b"labels", "location_id", b"location_id", "monitoring_config", b"monitoring_config", "name", b"name", "network_id", b"network_id", "regional_database", b"regional_database", "resource_preset_id", b"resource_preset_id", "scale_policy", b"scale_policy", "serverless_database", b"serverless_database", "status", b"status", "storage_config", b"storage_config", "subnet_ids", b"subnet_ids", "zonal_database", b"zonal_database"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["assign_public_ips", b"assign_public_ips", "backup_config", b"backup_config", "created_at", b"created_at", "database_type", b"database_type", "dedicated_database", b"dedicated_database", "deletion_protection", b"deletion_protection", "description", b"description", "document_api_endpoint", b"document_api_endpoint", "endpoint", b"endpoint", "folder_id", b"folder_id", "id", b"id", "kafka_api_endpoint", b"kafka_api_endpoint", "kinesis_api_endpoint", b"kinesis_api_endpoint", "labels", b"labels", "location_id", b"location_id", "monitoring_config", b"monitoring_config", "name", b"name", "network_id", b"network_id", "regional_database", b"regional_database", "resource_preset_id", b"resource_preset_id", "scale_policy", b"scale_policy", "security_group_ids", b"security_group_ids", "serverless_database", b"serverless_database", "status", b"status", "storage_config", b"storage_config", "subnet_ids", b"subnet_ids", "zonal_database", b"zonal_database"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["database_type", b"database_type"]) -> typing.Literal["zonal_database", "regional_database", "dedicated_database", "serverless_database"] | None: ...
 
 global___Database = Database
@@ -413,6 +417,7 @@ class DedicatedDatabase(google.protobuf.message.Message):
     NETWORK_ID_FIELD_NUMBER: builtins.int
     SUBNET_IDS_FIELD_NUMBER: builtins.int
     ASSIGN_PUBLIC_IPS_FIELD_NUMBER: builtins.int
+    SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
     resource_preset_id: builtins.str
     network_id: builtins.str
     assign_public_ips: builtins.bool
@@ -422,6 +427,8 @@ class DedicatedDatabase(google.protobuf.message.Message):
     def scale_policy(self) -> global___ScalePolicy: ...
     @property
     def subnet_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    @property
+    def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
     def __init__(
         self,
         *,
@@ -431,9 +438,10 @@ class DedicatedDatabase(google.protobuf.message.Message):
         network_id: builtins.str = ...,
         subnet_ids: collections.abc.Iterable[builtins.str] | None = ...,
         assign_public_ips: builtins.bool = ...,
+        security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["scale_policy", b"scale_policy", "storage_config", b"storage_config"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["assign_public_ips", b"assign_public_ips", "network_id", b"network_id", "resource_preset_id", b"resource_preset_id", "scale_policy", b"scale_policy", "storage_config", b"storage_config", "subnet_ids", b"subnet_ids"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["assign_public_ips", b"assign_public_ips", "network_id", b"network_id", "resource_preset_id", b"resource_preset_id", "scale_policy", b"scale_policy", "security_group_ids", b"security_group_ids", "storage_config", b"storage_config", "subnet_ids", b"subnet_ids"]) -> None: ...
 
 global___DedicatedDatabase = DedicatedDatabase
 

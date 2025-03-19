@@ -27,7 +27,7 @@ class ThumbnailServiceStub:
         yandex.cloud.video.v1.thumbnail_service_pb2.GetThumbnailRequest,
         yandex.cloud.video.v1.thumbnail_pb2.Thumbnail,
     ]
-    """Returns the specific thumbnail."""
+    """Get the specific thumbnail."""
 
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.thumbnail_service_pb2.ListThumbnailRequest,
@@ -45,13 +45,13 @@ class ThumbnailServiceStub:
         yandex.cloud.video.v1.thumbnail_service_pb2.BatchGenerateDownloadURLsRequest,
         yandex.cloud.video.v1.thumbnail_service_pb2.BatchGenerateDownloadURLsResponse,
     ]
-    """Generate urls for download images."""
+    """Generate urls for downloading images."""
 
     GenerateUploadURL: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.thumbnail_service_pb2.GenerateThumbnailUploadURLRequest,
         yandex.cloud.video.v1.thumbnail_service_pb2.GenerateThumbnailUploadURLResponse,
     ]
-    """Generate url for upload image."""
+    """Generate url for uploading an image."""
 
     Delete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.thumbnail_service_pb2.DeleteThumbnailRequest,
@@ -66,7 +66,7 @@ class ThumbnailServiceAsyncStub:
         yandex.cloud.video.v1.thumbnail_service_pb2.GetThumbnailRequest,
         yandex.cloud.video.v1.thumbnail_pb2.Thumbnail,
     ]
-    """Returns the specific thumbnail."""
+    """Get the specific thumbnail."""
 
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.thumbnail_service_pb2.ListThumbnailRequest,
@@ -84,13 +84,13 @@ class ThumbnailServiceAsyncStub:
         yandex.cloud.video.v1.thumbnail_service_pb2.BatchGenerateDownloadURLsRequest,
         yandex.cloud.video.v1.thumbnail_service_pb2.BatchGenerateDownloadURLsResponse,
     ]
-    """Generate urls for download images."""
+    """Generate urls for downloading images."""
 
     GenerateUploadURL: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.thumbnail_service_pb2.GenerateThumbnailUploadURLRequest,
         yandex.cloud.video.v1.thumbnail_service_pb2.GenerateThumbnailUploadURLResponse,
     ]
-    """Generate url for upload image."""
+    """Generate url for uploading an image."""
 
     Delete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.thumbnail_service_pb2.DeleteThumbnailRequest,
@@ -107,7 +107,7 @@ class ThumbnailServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.thumbnail_service_pb2.GetThumbnailRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.thumbnail_pb2.Thumbnail, collections.abc.Awaitable[yandex.cloud.video.v1.thumbnail_pb2.Thumbnail]]:
-        """Returns the specific thumbnail."""
+        """Get the specific thumbnail."""
 
     @abc.abstractmethod
     def List(
@@ -131,7 +131,7 @@ class ThumbnailServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.thumbnail_service_pb2.BatchGenerateDownloadURLsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.thumbnail_service_pb2.BatchGenerateDownloadURLsResponse, collections.abc.Awaitable[yandex.cloud.video.v1.thumbnail_service_pb2.BatchGenerateDownloadURLsResponse]]:
-        """Generate urls for download images."""
+        """Generate urls for downloading images."""
 
     @abc.abstractmethod
     def GenerateUploadURL(
@@ -139,7 +139,7 @@ class ThumbnailServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.thumbnail_service_pb2.GenerateThumbnailUploadURLRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.thumbnail_service_pb2.GenerateThumbnailUploadURLResponse, collections.abc.Awaitable[yandex.cloud.video.v1.thumbnail_service_pb2.GenerateThumbnailUploadURLResponse]]:
-        """Generate url for upload image."""
+        """Generate url for uploading an image."""
 
     @abc.abstractmethod
     def Delete(

@@ -74,7 +74,7 @@ class ThumbnailServiceServicer(object):
     """
 
     def Get(self, request, context):
-        """Returns the specific thumbnail.
+        """Get the specific thumbnail.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -95,14 +95,14 @@ class ThumbnailServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def BatchGenerateDownloadURLs(self, request, context):
-        """Generate urls for download images.
+        """Generate urls for downloading images.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GenerateUploadURL(self, request, context):
-        """Generate url for upload image.
+        """Generate url for uploading an image.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

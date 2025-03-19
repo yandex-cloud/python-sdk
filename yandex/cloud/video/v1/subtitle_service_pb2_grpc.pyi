@@ -27,7 +27,7 @@ class SubtitleServiceStub:
         yandex.cloud.video.v1.subtitle_service_pb2.GetSubtitleRequest,
         yandex.cloud.video.v1.subtitle_pb2.Subtitle,
     ]
-    """Return a specific subtitle."""
+    """Get a specific subtitle."""
 
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.subtitle_service_pb2.ListSubtitlesRequest,
@@ -60,7 +60,7 @@ class SubtitleServiceAsyncStub:
         yandex.cloud.video.v1.subtitle_service_pb2.GetSubtitleRequest,
         yandex.cloud.video.v1.subtitle_pb2.Subtitle,
     ]
-    """Return a specific subtitle."""
+    """Get a specific subtitle."""
 
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.subtitle_service_pb2.ListSubtitlesRequest,
@@ -95,7 +95,7 @@ class SubtitleServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.subtitle_service_pb2.GetSubtitleRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.subtitle_pb2.Subtitle, collections.abc.Awaitable[yandex.cloud.video.v1.subtitle_pb2.Subtitle]]:
-        """Return a specific subtitle."""
+        """Get a specific subtitle."""
 
     @abc.abstractmethod
     def List(

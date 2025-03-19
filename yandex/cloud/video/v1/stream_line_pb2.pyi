@@ -47,11 +47,7 @@ class StreamLine(google.protobuf.message.Message):
     TITLE_FIELD_NUMBER: builtins.int
     THUMBNAIL_ID_FIELD_NUMBER: builtins.int
     RTMP_PUSH_FIELD_NUMBER: builtins.int
-    SRT_PUSH_FIELD_NUMBER: builtins.int
     RTMP_PULL_FIELD_NUMBER: builtins.int
-    SRT_PULL_FIELD_NUMBER: builtins.int
-    TCP_PULL_FIELD_NUMBER: builtins.int
-    RTSP_PULL_FIELD_NUMBER: builtins.int
     MANUAL_LINE_FIELD_NUMBER: builtins.int
     AUTO_LINE_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
@@ -60,34 +56,18 @@ class StreamLine(google.protobuf.message.Message):
     id: builtins.str
     """ID of the line."""
     channel_id: builtins.str
-    """ID of the channel where the line was created."""
+    """ID of the channel to which this stream line belongs."""
     title: builtins.str
-    """Line title."""
+    """Title of the stream line."""
     thumbnail_id: builtins.str
-    """ID of the thumbnail."""
+    """ID of the thumbnail image associated with the stream line.."""
     @property
     def rtmp_push(self) -> global___RTMPPushInput:
-        """RTMP push input type."""
-
-    @property
-    def srt_push(self) -> global___SRTPushInput:
-        """SRT push input type."""
+        """Real-Time Messaging Protocol (RTMP) push input settings."""
 
     @property
     def rtmp_pull(self) -> global___RTMPPullInput:
-        """RTMP pull input type."""
-
-    @property
-    def srt_pull(self) -> global___SRTPullInput:
-        """SRT pull input type."""
-
-    @property
-    def tcp_pull(self) -> global___TCPPullInput:
-        """TCP pull input type."""
-
-    @property
-    def rtsp_pull(self) -> global___RTSPPullInput:
-        """RTSP pull input type."""
+        """Real-Time Messaging Protocol (RTMP) pull input type."""
 
     @property
     def manual_line(self) -> global___ManualLine:
@@ -99,11 +79,11 @@ class StreamLine(google.protobuf.message.Message):
 
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Time when line was created."""
+        """Time when the stream line was created."""
 
     @property
     def updated_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """Time of last line update."""
+        """Time when the stream line was last updated."""
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
@@ -117,21 +97,17 @@ class StreamLine(google.protobuf.message.Message):
         title: builtins.str = ...,
         thumbnail_id: builtins.str = ...,
         rtmp_push: global___RTMPPushInput | None = ...,
-        srt_push: global___SRTPushInput | None = ...,
         rtmp_pull: global___RTMPPullInput | None = ...,
-        srt_pull: global___SRTPullInput | None = ...,
-        tcp_pull: global___TCPPullInput | None = ...,
-        rtsp_pull: global___RTSPPullInput | None = ...,
         manual_line: global___ManualLine | None = ...,
         auto_line: global___AutoLine | None = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         updated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["auto_line", b"auto_line", "created_at", b"created_at", "input_type", b"input_type", "line_type", b"line_type", "manual_line", b"manual_line", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "rtsp_pull", b"rtsp_pull", "srt_pull", b"srt_pull", "srt_push", b"srt_push", "tcp_pull", b"tcp_pull", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["auto_line", b"auto_line", "channel_id", b"channel_id", "created_at", b"created_at", "id", b"id", "input_type", b"input_type", "labels", b"labels", "line_type", b"line_type", "manual_line", b"manual_line", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "rtsp_pull", b"rtsp_pull", "srt_pull", b"srt_pull", "srt_push", b"srt_push", "tcp_pull", b"tcp_pull", "thumbnail_id", b"thumbnail_id", "title", b"title", "updated_at", b"updated_at"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["auto_line", b"auto_line", "created_at", b"created_at", "input_type", b"input_type", "line_type", b"line_type", "manual_line", b"manual_line", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "updated_at", b"updated_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["auto_line", b"auto_line", "channel_id", b"channel_id", "created_at", b"created_at", "id", b"id", "input_type", b"input_type", "labels", b"labels", "line_type", b"line_type", "manual_line", b"manual_line", "rtmp_pull", b"rtmp_pull", "rtmp_push", b"rtmp_push", "thumbnail_id", b"thumbnail_id", "title", b"title", "updated_at", b"updated_at"]) -> None: ...
     @typing.overload
-    def WhichOneof(self, oneof_group: typing.Literal["input_type", b"input_type"]) -> typing.Literal["rtmp_push", "srt_push", "rtmp_pull", "srt_pull", "tcp_pull", "rtsp_pull"] | None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["input_type", b"input_type"]) -> typing.Literal["rtmp_push", "rtmp_pull"] | None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["line_type", b"line_type"]) -> typing.Literal["manual_line", "auto_line"] | None: ...
 
@@ -139,13 +115,13 @@ global___StreamLine = StreamLine
 
 @typing.final
 class PushStreamKey(google.protobuf.message.Message):
-    """Push stream key."""
+    """Represents the stream key used for pushing video streams."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     KEY_FIELD_NUMBER: builtins.int
     key: builtins.str
-    """Unique stream key."""
+    """The unique stream key."""
     def __init__(
         self,
         *,
@@ -157,6 +133,11 @@ global___PushStreamKey = PushStreamKey
 
 @typing.final
 class RTMPPushInput(google.protobuf.message.Message):
+    """Settings for an RTMP (Real-Time Messaging Protocol) push input.
+    Used when the video stream is pushed to an RTMP server.
+    @see https://en.wikipedia.org/wiki/Real-Time_Messaging_Protocol
+    """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     URL_FIELD_NUMBER: builtins.int
@@ -172,23 +153,12 @@ class RTMPPushInput(google.protobuf.message.Message):
 global___RTMPPushInput = RTMPPushInput
 
 @typing.final
-class SRTPushInput(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    URL_FIELD_NUMBER: builtins.int
-    url: builtins.str
-    """SRT server url."""
-    def __init__(
-        self,
-        *,
-        url: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["url", b"url"]) -> None: ...
-
-global___SRTPushInput = SRTPushInput
-
-@typing.final
 class RTMPPullInput(google.protobuf.message.Message):
+    """Settings for an RTMP pull input.
+    Used when the service pulls the video stream from an RTMP source.
+    @see https://en.wikipedia.org/wiki/Real-Time_Messaging_Protocol
+    """
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     URL_FIELD_NUMBER: builtins.int
@@ -204,56 +174,10 @@ class RTMPPullInput(google.protobuf.message.Message):
 global___RTMPPullInput = RTMPPullInput
 
 @typing.final
-class SRTPullInput(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    URL_FIELD_NUMBER: builtins.int
-    url: builtins.str
-    """SRT url for receiving video signal."""
-    def __init__(
-        self,
-        *,
-        url: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["url", b"url"]) -> None: ...
-
-global___SRTPullInput = SRTPullInput
-
-@typing.final
-class TCPPullInput(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    URL_FIELD_NUMBER: builtins.int
-    url: builtins.str
-    """TCP url for receiving video signal."""
-    def __init__(
-        self,
-        *,
-        url: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["url", b"url"]) -> None: ...
-
-global___TCPPullInput = TCPPullInput
-
-@typing.final
-class RTSPPullInput(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    URL_FIELD_NUMBER: builtins.int
-    url: builtins.str
-    """RTSP url for receiving video signal."""
-    def __init__(
-        self,
-        *,
-        url: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["url", b"url"]) -> None: ...
-
-global___RTSPPullInput = RTSPPullInput
-
-@typing.final
 class ManualLine(google.protobuf.message.Message):
-    """Manual line type."""
+    """Represents a manual line type where the stream control is handled manually.
+    This means that stream start/stop actions are performed by the user.
+    """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -265,7 +189,7 @@ global___ManualLine = ManualLine
 
 @typing.final
 class AutoLine(google.protobuf.message.Message):
-    """Auto line type."""
+    """Represents an automatic line type where the stream control is handled automatically."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -278,23 +202,25 @@ class AutoLine(google.protobuf.message.Message):
         AUTO_LINE_STATUS_UNSPECIFIED: AutoLine._AutoLineStatus.ValueType  # 0
         """Auto line status unspecified."""
         DEACTIVATED: AutoLine._AutoLineStatus.ValueType  # 1
-        """Auto line deactivated."""
+        """The automatic line is deactivated and not currently active."""
         ACTIVE: AutoLine._AutoLineStatus.ValueType  # 2
-        """Auto line active."""
+        """The automatic line is active and operational."""
 
     class AutoLineStatus(_AutoLineStatus, metaclass=_AutoLineStatusEnumTypeWrapper):
-        """Auto line status."""
+        """Enum representing the status of an automatic stream line.
+        Indicates whether the automatic line is active or deactivated.
+        """
 
     AUTO_LINE_STATUS_UNSPECIFIED: AutoLine.AutoLineStatus.ValueType  # 0
     """Auto line status unspecified."""
     DEACTIVATED: AutoLine.AutoLineStatus.ValueType  # 1
-    """Auto line deactivated."""
+    """The automatic line is deactivated and not currently active."""
     ACTIVE: AutoLine.AutoLineStatus.ValueType  # 2
-    """Auto line active."""
+    """The automatic line is active and operational."""
 
     STATUS_FIELD_NUMBER: builtins.int
     status: global___AutoLine.AutoLineStatus.ValueType
-    """Status of auto line."""
+    """The status of the automatic line."""
     def __init__(
         self,
         *,

@@ -94,7 +94,7 @@ class EpisodeServiceServicer(object):
     """
 
     def Get(self, request, context):
-        """Returns the specific channel.
+        """Get the specific channel.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -136,7 +136,7 @@ class EpisodeServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def BatchDelete(self, request, context):
-        """Batch delete episode.
+        """Batch delete episodes.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -150,14 +150,14 @@ class EpisodeServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetPlayerURL(self, request, context):
-        """Returns url to the player.
+        """Get player url.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetManifests(self, request, context):
-        """Returns manifest urls.
+        """Get manifest urls.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

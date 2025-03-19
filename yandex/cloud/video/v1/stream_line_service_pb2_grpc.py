@@ -94,7 +94,7 @@ class StreamLineServiceServicer(object):
     """
 
     def Get(self, request, context):
-        """Returns the specific stream line.
+        """Get the specific stream line.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -150,14 +150,14 @@ class StreamLineServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetStreamKey(self, request, context):
-        """Returns unique stream key.
+        """Get unique stream key.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateStreamKey(self, request, context):
-        """Change stream key.
+        """Update stream key.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

@@ -178,6 +178,83 @@ class TextGenerationAsyncService(object):
             _registered_method=True)
 
 
+class TextGenerationBatchServiceStub(object):
+    """Service for text generation.
+    """
+
+    def __init__(self, channel):
+        """Constructor.
+
+        Args:
+            channel: A grpc.Channel.
+        """
+        self.Completion = channel.unary_unary(
+                '/yandex.cloud.ai.foundation_models.v1.TextGenerationBatchService/Completion',
+                request_serializer=yandex_dot_cloud_dot_ai_dot_foundation__models_dot_v1_dot_text__generation_dot_text__generation__service__pb2.BatchCompletionRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+
+
+class TextGenerationBatchServiceServicer(object):
+    """Service for text generation.
+    """
+
+    def Completion(self, request, context):
+        """A method for generating text completions in [synchronous mode](/docs/foundation-models/concepts/#working-mode).
+        Note: Not implemented yet
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+
+def add_TextGenerationBatchServiceServicer_to_server(servicer, server):
+    rpc_method_handlers = {
+            'Completion': grpc.unary_unary_rpc_method_handler(
+                    servicer.Completion,
+                    request_deserializer=yandex_dot_cloud_dot_ai_dot_foundation__models_dot_v1_dot_text__generation_dot_text__generation__service__pb2.BatchCompletionRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+    }
+    generic_handler = grpc.method_handlers_generic_handler(
+            'yandex.cloud.ai.foundation_models.v1.TextGenerationBatchService', rpc_method_handlers)
+    server.add_generic_rpc_handlers((generic_handler,))
+    server.add_registered_method_handlers('yandex.cloud.ai.foundation_models.v1.TextGenerationBatchService', rpc_method_handlers)
+
+
+ # This class is part of an EXPERIMENTAL API.
+class TextGenerationBatchService(object):
+    """Service for text generation.
+    """
+
+    @staticmethod
+    def Completion(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.ai.foundation_models.v1.TextGenerationBatchService/Completion',
+            yandex_dot_cloud_dot_ai_dot_foundation__models_dot_v1_dot_text__generation_dot_text__generation__service__pb2.BatchCompletionRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+
 class TokenizerServiceStub(object):
     """Service for tokenizing input content.
     """

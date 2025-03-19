@@ -66,6 +66,11 @@ class RunServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_runs_dot_run__service__pb2.ListRunsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_runs_dot_run__service__pb2.ListRunsResponse.FromString,
                 _registered_method=True)
+        self.Submit = channel.unary_unary(
+                '/yandex.cloud.ai.assistants.v1.runs.RunService/Submit',
+                request_serializer=yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_runs_dot_run__service__pb2.SubmitToRunRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_runs_dot_run__service__pb2.SubmitToRunResponse.FromString,
+                _registered_method=True)
 
 
 class RunServiceServicer(object):
@@ -118,6 +123,14 @@ class RunServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Submit(self, request, context):
+        """Submit event to run
+        For example, submit function call results when the run is waiting for user input.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_RunServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -150,6 +163,11 @@ def add_RunServiceServicer_to_server(servicer, server):
                     servicer.List,
                     request_deserializer=yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_runs_dot_run__service__pb2.ListRunsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_runs_dot_run__service__pb2.ListRunsResponse.SerializeToString,
+            ),
+            'Submit': grpc.unary_unary_rpc_method_handler(
+                    servicer.Submit,
+                    request_deserializer=yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_runs_dot_run__service__pb2.SubmitToRunRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_runs_dot_run__service__pb2.SubmitToRunResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -315,6 +333,33 @@ class RunService(object):
             '/yandex.cloud.ai.assistants.v1.runs.RunService/List',
             yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_runs_dot_run__service__pb2.ListRunsRequest.SerializeToString,
             yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_runs_dot_run__service__pb2.ListRunsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Submit(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.ai.assistants.v1.runs.RunService/Submit',
+            yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_runs_dot_run__service__pb2.SubmitToRunRequest.SerializeToString,
+            yandex_dot_cloud_dot_ai_dot_assistants_dot_v1_dot_runs_dot_run__service__pb2.SubmitToRunResponse.FromString,
             options,
             channel_credentials,
             insecure,

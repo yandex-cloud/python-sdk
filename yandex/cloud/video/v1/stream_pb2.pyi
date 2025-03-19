@@ -10,6 +10,7 @@ import google.protobuf.internal.containers
 import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
 import google.protobuf.timestamp_pb2
+import google.protobuf.wrappers_pb2
 import sys
 import typing
 
@@ -85,6 +86,7 @@ class Stream(google.protobuf.message.Message):
     START_TIME_FIELD_NUMBER: builtins.int
     PUBLISH_TIME_FIELD_NUMBER: builtins.int
     FINISH_TIME_FIELD_NUMBER: builtins.int
+    AUTO_PUBLISH_FIELD_NUMBER: builtins.int
     ON_DEMAND_FIELD_NUMBER: builtins.int
     SCHEDULE_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
@@ -117,12 +119,18 @@ class Stream(google.protobuf.message.Message):
         """Stream finish time."""
 
     @property
+    def auto_publish(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Automatically publish stream when ready.
+        Switches status from READY to ONAIR.
+        """
+
+    @property
     def on_demand(self) -> global___OnDemand:
-        """On demand stream. It starts immediately when a signal appears."""
+        """On-demand stream. Starts immediately when a signal appears."""
 
     @property
     def schedule(self) -> global___Schedule:
-        """Schedule stream. Determines when to start receiving the signal or finish time."""
+        """Schedule stream. Starts or finished at the specified time."""
 
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
@@ -149,21 +157,24 @@ class Stream(google.protobuf.message.Message):
         start_time: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         publish_time: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         finish_time: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        auto_publish: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         on_demand: global___OnDemand | None = ...,
         schedule: global___Schedule | None = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         updated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "finish_time", b"finish_time", "on_demand", b"on_demand", "publish_time", b"publish_time", "schedule", b"schedule", "start_time", b"start_time", "stream_type", b"stream_type", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["channel_id", b"channel_id", "created_at", b"created_at", "description", b"description", "finish_time", b"finish_time", "id", b"id", "labels", b"labels", "line_id", b"line_id", "on_demand", b"on_demand", "publish_time", b"publish_time", "schedule", b"schedule", "start_time", b"start_time", "status", b"status", "stream_type", b"stream_type", "thumbnail_id", b"thumbnail_id", "title", b"title", "updated_at", b"updated_at"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["auto_publish", b"auto_publish", "created_at", b"created_at", "finish_time", b"finish_time", "on_demand", b"on_demand", "publish_time", b"publish_time", "schedule", b"schedule", "start_time", b"start_time", "stream_type", b"stream_type", "updated_at", b"updated_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["auto_publish", b"auto_publish", "channel_id", b"channel_id", "created_at", b"created_at", "description", b"description", "finish_time", b"finish_time", "id", b"id", "labels", b"labels", "line_id", b"line_id", "on_demand", b"on_demand", "publish_time", b"publish_time", "schedule", b"schedule", "start_time", b"start_time", "status", b"status", "stream_type", b"stream_type", "thumbnail_id", b"thumbnail_id", "title", b"title", "updated_at", b"updated_at"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["stream_type", b"stream_type"]) -> typing.Literal["on_demand", "schedule"] | None: ...
 
 global___Stream = Stream
 
 @typing.final
 class OnDemand(google.protobuf.message.Message):
-    """If "OnDemand" is used, client should start and finish explicitly."""
+    """On-demand stream type.
+    This type of streams should be started and finished explicitly.
+    """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -175,7 +186,9 @@ global___OnDemand = OnDemand
 
 @typing.final
 class Schedule(google.protobuf.message.Message):
-    """If "Schedule" is used, stream automatically start and finish at this time."""
+    """Schedule stream type.
+    This type of streams start and finish automatically at the specified time.
+    """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

@@ -10,6 +10,7 @@ import grpc.aio
 import typing
 import yandex.cloud.marketplace.licensemanager.saas.v1.instance_service_pb2
 import yandex.cloud.marketplace.licensemanager.v1.instance_pb2
+import yandex.cloud.marketplace.licensemanager.v1.user_info_pb2
 
 _T = typing.TypeVar("_T")
 
@@ -28,6 +29,12 @@ class InstanceServiceStub:
     ]
     """Returns the specified subscription instance."""
 
+    GetUserInfo: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.marketplace.licensemanager.saas.v1.instance_service_pb2.GetUserInfoRequest,
+        yandex.cloud.marketplace.licensemanager.v1.user_info_pb2.UserInfo,
+    ]
+    """Returns information about legal person (Russia only) who owns this subscription instance."""
+
 class InstanceServiceAsyncStub:
     """A set of methods for managing subscription instances."""
 
@@ -36,6 +43,12 @@ class InstanceServiceAsyncStub:
         yandex.cloud.marketplace.licensemanager.v1.instance_pb2.Instance,
     ]
     """Returns the specified subscription instance."""
+
+    GetUserInfo: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.marketplace.licensemanager.saas.v1.instance_service_pb2.GetUserInfoRequest,
+        yandex.cloud.marketplace.licensemanager.v1.user_info_pb2.UserInfo,
+    ]
+    """Returns information about legal person (Russia only) who owns this subscription instance."""
 
 class InstanceServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing subscription instances."""
@@ -47,5 +60,13 @@ class InstanceServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.marketplace.licensemanager.v1.instance_pb2.Instance, collections.abc.Awaitable[yandex.cloud.marketplace.licensemanager.v1.instance_pb2.Instance]]:
         """Returns the specified subscription instance."""
+
+    @abc.abstractmethod
+    def GetUserInfo(
+        self,
+        request: yandex.cloud.marketplace.licensemanager.saas.v1.instance_service_pb2.GetUserInfoRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.marketplace.licensemanager.v1.user_info_pb2.UserInfo, collections.abc.Awaitable[yandex.cloud.marketplace.licensemanager.v1.user_info_pb2.UserInfo]]:
+        """Returns information about legal person (Russia only) who owns this subscription instance."""
 
 def add_InstanceServiceServicer_to_server(servicer: InstanceServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

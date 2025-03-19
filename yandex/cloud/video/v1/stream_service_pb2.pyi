@@ -10,6 +10,7 @@ import google.protobuf.field_mask_pb2
 import google.protobuf.internal.containers
 import google.protobuf.message
 import google.protobuf.timestamp_pb2
+import google.protobuf.wrappers_pb2
 import typing
 import yandex.cloud.video.v1.stream_pb2
 
@@ -43,22 +44,26 @@ class ListStreamsRequest(google.protobuf.message.Message):
     channel_id: builtins.str
     """ID of the channel."""
     page_size: builtins.int
-    """The maximum number of the results per page to return. Default value: 100."""
+    """The maximum number of the results per page to return.
+    Default value: 100.
+    """
     page_token: builtins.str
     """Page token for getting the next page of the result."""
     order_by: builtins.str
     """By which column the listing should be ordered and in which direction,
-    format is "createdAt desc". "id asc" if omitted.
-    Possible fields: ["id", "title", "startTime", "finishTime", "createdAt", "updatedAt"]
+    format is "<field> <order>" (e.g. "createdAt desc").
+    Default: "id asc".
+    Possible fields: ["id", "title", "startTime", "finishTime", "createdAt", "updatedAt"].
     Both snake_case and camelCase are supported for fields.
     """
     filter: builtins.str
     """Filter expression that filters resources listed in the response.
     Expressions are composed of terms connected by logic operators.
-    Value in quotes: `'` or `"`
-    Example: "key1='value' AND key2='value'"
-    Supported operators: ["AND"].
-    Supported fields: ["title", "lineId", "status"]
+    If value contains spaces or quotes,
+    it should be in quotes (`'` or `"`) with the inner quotes being backslash escaped.
+    Example: "key1='value' AND key2='value'".
+    Supported operators: ["AND", "OR"].
+    Supported fields: ["id", "title", "lineId", "status"].
     Both snake_case and camelCase are supported for fields.
     """
     def __init__(
@@ -161,6 +166,7 @@ class CreateStreamRequest(google.protobuf.message.Message):
     TITLE_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     THUMBNAIL_ID_FIELD_NUMBER: builtins.int
+    AUTO_PUBLISH_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     ON_DEMAND_FIELD_NUMBER: builtins.int
     SCHEDULE_FIELD_NUMBER: builtins.int
@@ -175,16 +181,22 @@ class CreateStreamRequest(google.protobuf.message.Message):
     thumbnail_id: builtins.str
     """ID of the thumbnail."""
     @property
+    def auto_publish(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Automatically publish stream when ready.
+        Switches status from READY to ONAIR.
+        """
+
+    @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Custom labels as `` key:value `` pairs. Maximum 64 per resource."""
 
     @property
     def on_demand(self) -> global___OnDemandParams:
-        """On demand stream. It starts immediately when a signal appears."""
+        """On-demand stream. Starts immediately when a signal appears."""
 
     @property
     def schedule(self) -> global___ScheduleParams:
-        """Schedule stream. Determines when to start receiving the signal or finish time."""
+        """Schedule stream. Starts or finishes at the specified time."""
 
     def __init__(
         self,
@@ -194,12 +206,13 @@ class CreateStreamRequest(google.protobuf.message.Message):
         title: builtins.str = ...,
         description: builtins.str = ...,
         thumbnail_id: builtins.str = ...,
+        auto_publish: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         on_demand: global___OnDemandParams | None = ...,
         schedule: global___ScheduleParams | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["on_demand", b"on_demand", "schedule", b"schedule", "stream_type", b"stream_type"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["channel_id", b"channel_id", "description", b"description", "labels", b"labels", "line_id", b"line_id", "on_demand", b"on_demand", "schedule", b"schedule", "stream_type", b"stream_type", "thumbnail_id", b"thumbnail_id", "title", b"title"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["auto_publish", b"auto_publish", "on_demand", b"on_demand", "schedule", b"schedule", "stream_type", b"stream_type"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["auto_publish", b"auto_publish", "channel_id", b"channel_id", "description", b"description", "labels", b"labels", "line_id", b"line_id", "on_demand", b"on_demand", "schedule", b"schedule", "stream_type", b"stream_type", "thumbnail_id", b"thumbnail_id", "title", b"title"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["stream_type", b"stream_type"]) -> typing.Literal["on_demand", "schedule"] | None: ...
 
 global___CreateStreamRequest = CreateStreamRequest
@@ -277,6 +290,7 @@ class UpdateStreamRequest(google.protobuf.message.Message):
     TITLE_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     THUMBNAIL_ID_FIELD_NUMBER: builtins.int
+    AUTO_PUBLISH_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     ON_DEMAND_FIELD_NUMBER: builtins.int
     SCHEDULE_FIELD_NUMBER: builtins.int
@@ -293,6 +307,12 @@ class UpdateStreamRequest(google.protobuf.message.Message):
     @property
     def field_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which fields of the stream are going to be updated."""
+
+    @property
+    def auto_publish(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Automatically publish stream when ready.
+        Switches status from READY to ONAIR.
+        """
 
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
@@ -315,12 +335,13 @@ class UpdateStreamRequest(google.protobuf.message.Message):
         title: builtins.str = ...,
         description: builtins.str = ...,
         thumbnail_id: builtins.str = ...,
+        auto_publish: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         on_demand: global___OnDemandParams | None = ...,
         schedule: global___ScheduleParams | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["field_mask", b"field_mask", "on_demand", b"on_demand", "schedule", b"schedule", "stream_type", b"stream_type"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "field_mask", b"field_mask", "labels", b"labels", "line_id", b"line_id", "on_demand", b"on_demand", "schedule", b"schedule", "stream_id", b"stream_id", "stream_type", b"stream_type", "thumbnail_id", b"thumbnail_id", "title", b"title"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["auto_publish", b"auto_publish", "field_mask", b"field_mask", "on_demand", b"on_demand", "schedule", b"schedule", "stream_type", b"stream_type"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["auto_publish", b"auto_publish", "description", b"description", "field_mask", b"field_mask", "labels", b"labels", "line_id", b"line_id", "on_demand", b"on_demand", "schedule", b"schedule", "stream_id", b"stream_id", "stream_type", b"stream_type", "thumbnail_id", b"thumbnail_id", "title", b"title"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["stream_type", b"stream_type"]) -> typing.Literal["on_demand", "schedule"] | None: ...
 
 global___UpdateStreamRequest = UpdateStreamRequest

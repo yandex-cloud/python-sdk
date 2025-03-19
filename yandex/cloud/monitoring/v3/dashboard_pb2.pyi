@@ -11,6 +11,7 @@ import google.protobuf.message
 import google.protobuf.timestamp_pb2
 import typing
 import yandex.cloud.monitoring.v3.parametrization_pb2
+import yandex.cloud.monitoring.v3.timeline_pb2
 import yandex.cloud.monitoring.v3.widget_pb2
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
@@ -52,6 +53,7 @@ class Dashboard(google.protobuf.message.Message):
     ETAG_FIELD_NUMBER: builtins.int
     MANAGED_BY_FIELD_NUMBER: builtins.int
     MANAGED_LINK_FIELD_NUMBER: builtins.int
+    TIMELINE_FIELD_NUMBER: builtins.int
     id: builtins.str
     """Dashboard ID."""
     folder_id: builtins.str
@@ -96,6 +98,10 @@ class Dashboard(google.protobuf.message.Message):
     def parametrization(self) -> yandex.cloud.monitoring.v3.parametrization_pb2.Parametrization:
         """Dashboard parametrization."""
 
+    @property
+    def timeline(self) -> yandex.cloud.monitoring.v3.timeline_pb2.Timeline:
+        """Refresh and time window settings"""
+
     def __init__(
         self,
         *,
@@ -114,9 +120,10 @@ class Dashboard(google.protobuf.message.Message):
         etag: builtins.str = ...,
         managed_by: builtins.str = ...,
         managed_link: builtins.str = ...,
+        timeline: yandex.cloud.monitoring.v3.timeline_pb2.Timeline | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["container", b"container", "created_at", b"created_at", "folder_id", b"folder_id", "modified_at", b"modified_at", "parametrization", b"parametrization"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["container", b"container", "created_at", b"created_at", "created_by", b"created_by", "description", b"description", "etag", b"etag", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "managed_by", b"managed_by", "managed_link", b"managed_link", "modified_at", b"modified_at", "modified_by", b"modified_by", "name", b"name", "parametrization", b"parametrization", "title", b"title", "widgets", b"widgets"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["container", b"container", "created_at", b"created_at", "folder_id", b"folder_id", "modified_at", b"modified_at", "parametrization", b"parametrization", "timeline", b"timeline"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["container", b"container", "created_at", b"created_at", "created_by", b"created_by", "description", b"description", "etag", b"etag", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "managed_by", b"managed_by", "managed_link", b"managed_link", "modified_at", b"modified_at", "modified_by", b"modified_by", "name", b"name", "parametrization", b"parametrization", "timeline", b"timeline", "title", b"title", "widgets", b"widgets"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["container", b"container"]) -> typing.Literal["folder_id"] | None: ...
 
 global___Dashboard = Dashboard

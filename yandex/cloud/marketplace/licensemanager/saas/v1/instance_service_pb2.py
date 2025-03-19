@@ -24,10 +24,11 @@ _sym_db = _symbol_database.Default()
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from yandex.cloud.marketplace.licensemanager.v1 import instance_pb2 as yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_instance__pb2
+from yandex.cloud.marketplace.licensemanager.v1 import user_info_pb2 as yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_user__info__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nFyandex/cloud/marketplace/licensemanager/saas/v1/instance_service.proto\x12/yandex.cloud.marketplace.licensemanager.saas.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x39yandex/cloud/marketplace/licensemanager/v1/instance.proto\x1a\x1dyandex/cloud/validation.proto\"/\n\x12GetInstanceRequest\x12\x19\n\x0binstance_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x32\xda\x01\n\x0fInstanceService\x12\xc6\x01\n\x03Get\x12\x43.yandex.cloud.marketplace.licensemanager.saas.v1.GetInstanceRequest\x1a\x34.yandex.cloud.marketplace.licensemanager.v1.Instance\"D\x82\xd3\xe4\x93\x02>\x12</marketplace/license-manager/saas/v1/instances/{instance_id}B\x99\x01\n3yandex.cloud.api.marketplace.licensemanager.saas.v1Zbgithub.com/yandex-cloud/go-genproto/yandex/cloud/marketplace/licensemanager/saas/v1;licensemanagerb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nFyandex/cloud/marketplace/licensemanager/saas/v1/instance_service.proto\x12/yandex.cloud.marketplace.licensemanager.saas.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x39yandex/cloud/marketplace/licensemanager/v1/instance.proto\x1a:yandex/cloud/marketplace/licensemanager/v1/user_info.proto\x1a\x1dyandex/cloud/validation.proto\"/\n\x12GetInstanceRequest\x12\x19\n\x0binstance_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\"/\n\x12GetUserInfoRequest\x12\x19\n\x0binstance_id\x18\x01 \x01(\tB\x04\xe8\xc7\x31\x01\x32\xb5\x03\n\x0fInstanceService\x12\xc6\x01\n\x03Get\x12\x43.yandex.cloud.marketplace.licensemanager.saas.v1.GetInstanceRequest\x1a\x34.yandex.cloud.marketplace.licensemanager.v1.Instance\"D\x82\xd3\xe4\x93\x02>\x12</marketplace/license-manager/saas/v1/instances/{instance_id}\x12\xd8\x01\n\x0bGetUserInfo\x12\x43.yandex.cloud.marketplace.licensemanager.saas.v1.GetUserInfoRequest\x1a\x34.yandex.cloud.marketplace.licensemanager.v1.UserInfo\"N\x82\xd3\xe4\x93\x02H\x12\x46/marketplace/license-manager/saas/v1/instances/{instance_id}/user_infoB\x99\x01\n3yandex.cloud.api.marketplace.licensemanager.saas.v1Zbgithub.com/yandex-cloud/go-genproto/yandex/cloud/marketplace/licensemanager/saas/v1;licensemanagerb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -37,10 +38,16 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'\n3yandex.cloud.api.marketplace.licensemanager.saas.v1Zbgithub.com/yandex-cloud/go-genproto/yandex/cloud/marketplace/licensemanager/saas/v1;licensemanager'
   _globals['_GETINSTANCEREQUEST'].fields_by_name['instance_id']._loaded_options = None
   _globals['_GETINSTANCEREQUEST'].fields_by_name['instance_id']._serialized_options = b'\350\3071\001'
+  _globals['_GETUSERINFOREQUEST'].fields_by_name['instance_id']._loaded_options = None
+  _globals['_GETUSERINFOREQUEST'].fields_by_name['instance_id']._serialized_options = b'\350\3071\001'
   _globals['_INSTANCESERVICE'].methods_by_name['Get']._loaded_options = None
   _globals['_INSTANCESERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\002>\022</marketplace/license-manager/saas/v1/instances/{instance_id}'
-  _globals['_GETINSTANCEREQUEST']._serialized_start=243
-  _globals['_GETINSTANCEREQUEST']._serialized_end=290
-  _globals['_INSTANCESERVICE']._serialized_start=293
-  _globals['_INSTANCESERVICE']._serialized_end=511
+  _globals['_INSTANCESERVICE'].methods_by_name['GetUserInfo']._loaded_options = None
+  _globals['_INSTANCESERVICE'].methods_by_name['GetUserInfo']._serialized_options = b'\202\323\344\223\002H\022F/marketplace/license-manager/saas/v1/instances/{instance_id}/user_info'
+  _globals['_GETINSTANCEREQUEST']._serialized_start=303
+  _globals['_GETINSTANCEREQUEST']._serialized_end=350
+  _globals['_GETUSERINFOREQUEST']._serialized_start=352
+  _globals['_GETUSERINFOREQUEST']._serialized_end=399
+  _globals['_INSTANCESERVICE']._serialized_start=402
+  _globals['_INSTANCESERVICE']._serialized_end=839
 # @@protoc_insertion_point(module_scope)

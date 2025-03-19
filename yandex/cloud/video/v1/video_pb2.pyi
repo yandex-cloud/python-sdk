@@ -58,25 +58,29 @@ class Video(google.protobuf.message.Message):
         VIDEO_STATUS_UNSPECIFIED: Video._VideoStatus.ValueType  # 0
         """Video status unspecified."""
         WAIT_UPLOADING: Video._VideoStatus.ValueType  # 1
-        """Waiting for the whole number of bytes to be loaded."""
+        """Waiting for all the bytes to be loaded."""
+        UPLOADED: Video._VideoStatus.ValueType  # 2
+        """Fully uploaded, ready to be transcoded."""
         PROCESSING: Video._VideoStatus.ValueType  # 4
-        """Video processing."""
+        """Video is being processed."""
         READY: Video._VideoStatus.ValueType  # 5
-        """Video is ready, processing is completed."""
+        """Successfully processed and ready for use."""
         ERROR: Video._VideoStatus.ValueType  # 7
-        """An error occurred during video processing."""
+        """Video processing has failed."""
 
     class VideoStatus(_VideoStatus, metaclass=_VideoStatusEnumTypeWrapper): ...
     VIDEO_STATUS_UNSPECIFIED: Video.VideoStatus.ValueType  # 0
     """Video status unspecified."""
     WAIT_UPLOADING: Video.VideoStatus.ValueType  # 1
-    """Waiting for the whole number of bytes to be loaded."""
+    """Waiting for all the bytes to be loaded."""
+    UPLOADED: Video.VideoStatus.ValueType  # 2
+    """Fully uploaded, ready to be transcoded."""
     PROCESSING: Video.VideoStatus.ValueType  # 4
-    """Video processing."""
+    """Video is being processed."""
     READY: Video.VideoStatus.ValueType  # 5
-    """Video is ready, processing is completed."""
+    """Successfully processed and ready for use."""
     ERROR: Video.VideoStatus.ValueType  # 7
-    """An error occurred during video processing."""
+    """Video processing has failed."""
 
     class _VisibilityStatus:
         ValueType = typing.NewType("ValueType", builtins.int)
@@ -87,17 +91,17 @@ class Video(google.protobuf.message.Message):
         VISIBILITY_STATUS_UNSPECIFIED: Video._VisibilityStatus.ValueType  # 0
         """Visibility status unspecified."""
         PUBLISHED: Video._VisibilityStatus.ValueType  # 1
-        """Video is published and available for viewing."""
+        """Video published and available for public viewing."""
         UNPUBLISHED: Video._VisibilityStatus.ValueType  # 2
-        """Video is unpublished, only admin can watch."""
+        """Video unpublished, available only to administrators."""
 
     class VisibilityStatus(_VisibilityStatus, metaclass=_VisibilityStatusEnumTypeWrapper): ...
     VISIBILITY_STATUS_UNSPECIFIED: Video.VisibilityStatus.ValueType  # 0
     """Visibility status unspecified."""
     PUBLISHED: Video.VisibilityStatus.ValueType  # 1
-    """Video is published and available for viewing."""
+    """Video published and available for public viewing."""
     UNPUBLISHED: Video.VisibilityStatus.ValueType  # 2
-    """Video is unpublished, only admin can watch."""
+    """Video unpublished, available only to administrators."""
 
     @typing.final
     class LabelsEntry(google.protobuf.message.Message):
@@ -121,14 +125,15 @@ class Video(google.protobuf.message.Message):
     DESCRIPTION_FIELD_NUMBER: builtins.int
     THUMBNAIL_ID_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
-    DURATION_FIELD_NUMBER: builtins.int
+    ERROR_MESSAGE_FIELD_NUMBER: builtins.int
     VISIBILITY_STATUS_FIELD_NUMBER: builtins.int
+    DURATION_FIELD_NUMBER: builtins.int
     AUTO_TRANSCODE_FIELD_NUMBER: builtins.int
     ENABLE_AD_FIELD_NUMBER: builtins.int
     SUBTITLE_IDS_FIELD_NUMBER: builtins.int
+    FEATURES_FIELD_NUMBER: builtins.int
     TUSD_FIELD_NUMBER: builtins.int
     PUBLIC_ACCESS_FIELD_NUMBER: builtins.int
-    AUTH_SYSTEM_ACCESS_FIELD_NUMBER: builtins.int
     SIGN_URL_ACCESS_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
     UPDATED_AT_FIELD_NUMBER: builtins.int
@@ -138,19 +143,21 @@ class Video(google.protobuf.message.Message):
     channel_id: builtins.str
     """ID of the channel where the video was created."""
     title: builtins.str
-    """Video title."""
+    """Video title displayed to users."""
     description: builtins.str
-    """Video description."""
+    """Detailed description of the video."""
     thumbnail_id: builtins.str
-    """ID of the thumbnail."""
+    """ID of the video's thumbnail image."""
     status: global___Video.VideoStatus.ValueType
     """Video status."""
+    error_message: builtins.str
+    """Error message describing the reason for video processing failure, if any."""
     visibility_status: global___Video.VisibilityStatus.ValueType
-    """Video visibility status."""
+    """Visibility status of the video."""
     auto_transcode: global___AutoTranscode.ValueType
-    """Auto start transcoding.
-    If set to ENABLE, transcoding process is initiated automatically after video upload.
-    If set to DISABLE, manual "Transcode()" call is required instead.
+    """Auto-transcoding setting.
+    Set ENABLE to automatically initiate transcoding after upload,
+    or DISABLE for manual initiation via the Transcode() method.
     """
     @property
     def duration(self) -> google.protobuf.duration_pb2.Duration:
@@ -160,12 +167,16 @@ class Video(google.protobuf.message.Message):
     def enable_ad(self) -> google.protobuf.wrappers_pb2.BoolValue:
         """Enable advertisement for this video.
         Default: true.
-        Use this to disable advertisement for a specific video.
+        Set explicitly to false to disable advertisements for a specific video.
         """
 
     @property
     def subtitle_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """IDs of active video subtitles."""
+        """List of IDs defining the active subtitles for the video."""
+
+    @property
+    def features(self) -> global___VideoFeatures:
+        """Additional video processing features and their results."""
 
     @property
     def tusd(self) -> global___VideoTUSDSource:
@@ -173,11 +184,9 @@ class Video(google.protobuf.message.Message):
 
     @property
     def public_access(self) -> global___VideoPublicAccessRights:
-        """Video is available to everyone."""
-
-    @property
-    def auth_system_access(self) -> global___VideoAuthSystemAccessRights:
-        """Checking access rights using the authorization system."""
+        """Publicly accessible video available for viewing by anyone with the direct link.
+        No additional authorization or access control is applied.
+        """
 
     @property
     def sign_url_access(self) -> global___VideoSignURLAccessRights:
@@ -204,23 +213,24 @@ class Video(google.protobuf.message.Message):
         description: builtins.str = ...,
         thumbnail_id: builtins.str = ...,
         status: global___Video.VideoStatus.ValueType = ...,
-        duration: google.protobuf.duration_pb2.Duration | None = ...,
+        error_message: builtins.str = ...,
         visibility_status: global___Video.VisibilityStatus.ValueType = ...,
+        duration: google.protobuf.duration_pb2.Duration | None = ...,
         auto_transcode: global___AutoTranscode.ValueType = ...,
         enable_ad: google.protobuf.wrappers_pb2.BoolValue | None = ...,
         subtitle_ids: collections.abc.Iterable[builtins.str] | None = ...,
+        features: global___VideoFeatures | None = ...,
         tusd: global___VideoTUSDSource | None = ...,
         public_access: global___VideoPublicAccessRights | None = ...,
-        auth_system_access: global___VideoAuthSystemAccessRights | None = ...,
         sign_url_access: global___VideoSignURLAccessRights | None = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         updated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access_rights", b"access_rights", "auth_system_access", b"auth_system_access", "created_at", b"created_at", "duration", b"duration", "enable_ad", b"enable_ad", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "source", b"source", "tusd", b"tusd", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access_rights", b"access_rights", "auth_system_access", b"auth_system_access", "auto_transcode", b"auto_transcode", "channel_id", b"channel_id", "created_at", b"created_at", "description", b"description", "duration", b"duration", "enable_ad", b"enable_ad", "id", b"id", "labels", b"labels", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "source", b"source", "status", b"status", "subtitle_ids", b"subtitle_ids", "thumbnail_id", b"thumbnail_id", "title", b"title", "tusd", b"tusd", "updated_at", b"updated_at", "visibility_status", b"visibility_status"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access_rights", b"access_rights", "created_at", b"created_at", "duration", b"duration", "enable_ad", b"enable_ad", "features", b"features", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "source", b"source", "tusd", b"tusd", "updated_at", b"updated_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access_rights", b"access_rights", "auto_transcode", b"auto_transcode", "channel_id", b"channel_id", "created_at", b"created_at", "description", b"description", "duration", b"duration", "enable_ad", b"enable_ad", "error_message", b"error_message", "features", b"features", "id", b"id", "labels", b"labels", "public_access", b"public_access", "sign_url_access", b"sign_url_access", "source", b"source", "status", b"status", "subtitle_ids", b"subtitle_ids", "thumbnail_id", b"thumbnail_id", "title", b"title", "tusd", b"tusd", "updated_at", b"updated_at", "visibility_status", b"visibility_status"]) -> None: ...
     @typing.overload
-    def WhichOneof(self, oneof_group: typing.Literal["access_rights", b"access_rights"]) -> typing.Literal["public_access", "auth_system_access", "sign_url_access"] | None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["access_rights", b"access_rights"]) -> typing.Literal["public_access", "sign_url_access"] | None: ...
     @typing.overload
     def WhichOneof(self, oneof_group: typing.Literal["source", b"source"]) -> typing.Literal["tusd"] | None: ...
 
@@ -228,17 +238,23 @@ global___Video = Video
 
 @typing.final
 class VideoTUSDSource(google.protobuf.message.Message):
+    """Video upload source via tus protocol."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     URL_FIELD_NUMBER: builtins.int
+    FILE_SIZE_FIELD_NUMBER: builtins.int
     url: builtins.str
     """URL for uploading video via the tus protocol."""
+    file_size: builtins.int
+    """Size of the uploaded file, in bytes."""
     def __init__(
         self,
         *,
         url: builtins.str = ...,
+        file_size: builtins.int = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["url", b"url"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["file_size", b"file_size", "url", b"url"]) -> None: ...
 
 global___VideoTUSDSource = VideoTUSDSource
 
@@ -253,16 +269,6 @@ class VideoPublicAccessRights(google.protobuf.message.Message):
 global___VideoPublicAccessRights = VideoPublicAccessRights
 
 @typing.final
-class VideoAuthSystemAccessRights(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    def __init__(
-        self,
-    ) -> None: ...
-
-global___VideoAuthSystemAccessRights = VideoAuthSystemAccessRights
-
-@typing.final
 class VideoSignURLAccessRights(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -271,3 +277,89 @@ class VideoSignURLAccessRights(google.protobuf.message.Message):
     ) -> None: ...
 
 global___VideoSignURLAccessRights = VideoSignURLAccessRights
+
+@typing.final
+class VideoFeatures(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _FeatureResult:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _FeatureResultEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[VideoFeatures._FeatureResult.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        FEATURE_RESULT_UNSPECIFIED: VideoFeatures._FeatureResult.ValueType  # 0
+        NOT_REQUESTED: VideoFeatures._FeatureResult.ValueType  # 1
+        """Feature has not been requested."""
+        PROCESSING: VideoFeatures._FeatureResult.ValueType  # 2
+        """Feature is being processed."""
+        SUCCESS: VideoFeatures._FeatureResult.ValueType  # 3
+        """Feature processing completed successfully."""
+        FAILED: VideoFeatures._FeatureResult.ValueType  # 4
+        """Feature processing has failed."""
+
+    class FeatureResult(_FeatureResult, metaclass=_FeatureResultEnumTypeWrapper): ...
+    FEATURE_RESULT_UNSPECIFIED: VideoFeatures.FeatureResult.ValueType  # 0
+    NOT_REQUESTED: VideoFeatures.FeatureResult.ValueType  # 1
+    """Feature has not been requested."""
+    PROCESSING: VideoFeatures.FeatureResult.ValueType  # 2
+    """Feature is being processed."""
+    SUCCESS: VideoFeatures.FeatureResult.ValueType  # 3
+    """Feature processing completed successfully."""
+    FAILED: VideoFeatures.FeatureResult.ValueType  # 4
+    """Feature processing has failed."""
+
+    @typing.final
+    class Summary(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        @typing.final
+        class SummaryURL(google.protobuf.message.Message):
+            DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+            URL_FIELD_NUMBER: builtins.int
+            TRACK_INDEX_FIELD_NUMBER: builtins.int
+            SRC_LANG_FIELD_NUMBER: builtins.int
+            url: builtins.str
+            track_index: builtins.int
+            """Input audio track index (one-based)."""
+            src_lang: builtins.str
+            """Source track language (three-letter code according to ISO 639-2/T, ISO 639-2/B, or ISO 639-3).
+            Either provided in transcoding settings earlier or automatically deduced.
+            """
+            def __init__(
+                self,
+                *,
+                url: builtins.str = ...,
+                track_index: builtins.int = ...,
+                src_lang: builtins.str = ...,
+            ) -> None: ...
+            def ClearField(self, field_name: typing.Literal["src_lang", b"src_lang", "track_index", b"track_index", "url", b"url"]) -> None: ...
+
+        RESULT_FIELD_NUMBER: builtins.int
+        URLS_FIELD_NUMBER: builtins.int
+        result: global___VideoFeatures.FeatureResult.ValueType
+        @property
+        def urls(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___VideoFeatures.Summary.SummaryURL]: ...
+        def __init__(
+            self,
+            *,
+            result: global___VideoFeatures.FeatureResult.ValueType = ...,
+            urls: collections.abc.Iterable[global___VideoFeatures.Summary.SummaryURL] | None = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["result", b"result", "urls", b"urls"]) -> None: ...
+
+    SUMMARY_FIELD_NUMBER: builtins.int
+    @property
+    def summary(self) -> global___VideoFeatures.Summary:
+        """Summarization result."""
+
+    def __init__(
+        self,
+        *,
+        summary: global___VideoFeatures.Summary | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["summary", b"summary"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["summary", b"summary"]) -> None: ...
+
+global___VideoFeatures = VideoFeatures

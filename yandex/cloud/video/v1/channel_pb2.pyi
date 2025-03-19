@@ -91,17 +91,23 @@ class ChannelSettings(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     ADVERTISEMENT_FIELD_NUMBER: builtins.int
+    REFERER_VERIFICATION_FIELD_NUMBER: builtins.int
     @property
     def advertisement(self) -> global___AdvertisementSettings:
         """Advertisement settings."""
+
+    @property
+    def referer_verification(self) -> global___RefererVerificationSettings:
+        """Referer verification settings"""
 
     def __init__(
         self,
         *,
         advertisement: global___AdvertisementSettings | None = ...,
+        referer_verification: global___RefererVerificationSettings | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["advertisement", b"advertisement"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["advertisement", b"advertisement"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["advertisement", b"advertisement", "referer_verification", b"referer_verification"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["advertisement", b"advertisement", "referer_verification", b"referer_verification"]) -> None: ...
 
 global___ChannelSettings = ChannelSettings
 
@@ -148,3 +154,27 @@ class AdvertisementSettings(google.protobuf.message.Message):
     def WhichOneof(self, oneof_group: typing.Literal["provider", b"provider"]) -> typing.Literal["yandex_direct"] | None: ...
 
 global___AdvertisementSettings = AdvertisementSettings
+
+@typing.final
+class RefererVerificationSettings(google.protobuf.message.Message):
+    """Referer verification settings."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ENABLE_FIELD_NUMBER: builtins.int
+    ALLOWED_DOMAINS_FIELD_NUMBER: builtins.int
+    enable: builtins.bool
+    """Enable verification"""
+    @property
+    def allowed_domains(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """List of available domains"""
+
+    def __init__(
+        self,
+        *,
+        enable: builtins.bool = ...,
+        allowed_domains: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["allowed_domains", b"allowed_domains", "enable", b"enable"]) -> None: ...
+
+global___RefererVerificationSettings = RefererVerificationSettings

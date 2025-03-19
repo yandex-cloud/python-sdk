@@ -87,6 +87,11 @@ class VideoServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GetVideoPlayerURLRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GetVideoPlayerURLResponse.FromString,
                 _registered_method=True)
+        self.BatchGetPlayerURLs = channel.unary_unary(
+                '/yandex.cloud.video.v1.VideoService/BatchGetPlayerURLs',
+                request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.BatchGetVideoPlayerURLsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.BatchGetVideoPlayerURLsResponse.FromString,
+                _registered_method=True)
         self.GetManifests = channel.unary_unary(
                 '/yandex.cloud.video.v1.VideoService/GetManifests',
                 request_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GetVideoManifestsRequest.SerializeToString,
@@ -99,7 +104,7 @@ class VideoServiceServicer(object):
     """
 
     def Get(self, request, context):
-        """Returns the specific video.
+        """Get the specific video.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -113,7 +118,7 @@ class VideoServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def BatchGet(self, request, context):
-        """Batch get video in specific channel.
+        """Batch get videos in specific channel.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -148,28 +153,35 @@ class VideoServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def BatchDelete(self, request, context):
-        """Batch delete video.
+        """Batch delete videos.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def PerformAction(self, request, context):
-        """Perform an action on the episode.
+        """Perform an action on the video.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetPlayerURL(self, request, context):
-        """Returns url to the player.
+        """Get player url.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def BatchGetPlayerURLs(self, request, context):
+        """Batch get player urls.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetManifests(self, request, context):
-        """Returns manifest urls.
+        """Get manifest urls.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -227,6 +239,11 @@ def add_VideoServiceServicer_to_server(servicer, server):
                     servicer.GetPlayerURL,
                     request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GetVideoPlayerURLRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GetVideoPlayerURLResponse.SerializeToString,
+            ),
+            'BatchGetPlayerURLs': grpc.unary_unary_rpc_method_handler(
+                    servicer.BatchGetPlayerURLs,
+                    request_deserializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.BatchGetVideoPlayerURLsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.BatchGetVideoPlayerURLsResponse.SerializeToString,
             ),
             'GetManifests': grpc.unary_unary_rpc_method_handler(
                     servicer.GetManifests,
@@ -505,6 +522,33 @@ class VideoService(object):
             '/yandex.cloud.video.v1.VideoService/GetPlayerURL',
             yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GetVideoPlayerURLRequest.SerializeToString,
             yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.GetVideoPlayerURLResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def BatchGetPlayerURLs(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.video.v1.VideoService/BatchGetPlayerURLs',
+            yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.BatchGetVideoPlayerURLsRequest.SerializeToString,
+            yandex_dot_cloud_dot_video_dot_v1_dot_video__service__pb2.BatchGetVideoPlayerURLsResponse.FromString,
             options,
             channel_credentials,
             insecure,

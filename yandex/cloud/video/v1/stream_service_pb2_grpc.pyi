@@ -27,7 +27,7 @@ class StreamServiceStub:
         yandex.cloud.video.v1.stream_service_pb2.GetStreamRequest,
         yandex.cloud.video.v1.stream_pb2.Stream,
     ]
-    """Returns the specific stream."""
+    """Get the specific stream."""
 
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_service_pb2.ListStreamsRequest,
@@ -69,7 +69,7 @@ class StreamServiceStub:
         yandex.cloud.video.v1.stream_service_pb2.PerformStreamActionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Perform an action on the episode."""
+    """Perform an action on the stream."""
 
 class StreamServiceAsyncStub:
     """Stream management service."""
@@ -78,7 +78,7 @@ class StreamServiceAsyncStub:
         yandex.cloud.video.v1.stream_service_pb2.GetStreamRequest,
         yandex.cloud.video.v1.stream_pb2.Stream,
     ]
-    """Returns the specific stream."""
+    """Get the specific stream."""
 
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.stream_service_pb2.ListStreamsRequest,
@@ -120,7 +120,7 @@ class StreamServiceAsyncStub:
         yandex.cloud.video.v1.stream_service_pb2.PerformStreamActionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Perform an action on the episode."""
+    """Perform an action on the stream."""
 
 class StreamServiceServicer(metaclass=abc.ABCMeta):
     """Stream management service."""
@@ -131,7 +131,7 @@ class StreamServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.stream_service_pb2.GetStreamRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.stream_pb2.Stream, collections.abc.Awaitable[yandex.cloud.video.v1.stream_pb2.Stream]]:
-        """Returns the specific stream."""
+        """Get the specific stream."""
 
     @abc.abstractmethod
     def List(
@@ -187,6 +187,6 @@ class StreamServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.stream_service_pb2.PerformStreamActionRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Perform an action on the episode."""
+        """Perform an action on the stream."""
 
 def add_StreamServiceServicer_to_server(servicer: StreamServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

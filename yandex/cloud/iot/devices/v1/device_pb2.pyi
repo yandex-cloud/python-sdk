@@ -88,6 +88,22 @@ class Device(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
+    @typing.final
+    class LabelsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
     ID_FIELD_NUMBER: builtins.int
     REGISTRY_ID_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
@@ -96,6 +112,7 @@ class Device(google.protobuf.message.Message):
     TOPIC_ALIASES_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
     MONITORING_DATA_FIELD_NUMBER: builtins.int
+    LABELS_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the device."""
     registry_id: builtins.str
@@ -121,6 +138,10 @@ class Device(google.protobuf.message.Message):
     def monitoring_data(self) -> global___DeviceMonitoringData:
         """Device monitoring data, returns if FULL view specified."""
 
+    @property
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Resource labels as `key:value` pairs. Maximum of 64 per resource."""
+
     def __init__(
         self,
         *,
@@ -132,9 +153,10 @@ class Device(google.protobuf.message.Message):
         topic_aliases: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         status: global___Device.Status.ValueType = ...,
         monitoring_data: global___DeviceMonitoringData | None = ...,
+        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at", "monitoring_data", b"monitoring_data"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "id", b"id", "monitoring_data", b"monitoring_data", "name", b"name", "registry_id", b"registry_id", "status", b"status", "topic_aliases", b"topic_aliases"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "description", b"description", "id", b"id", "labels", b"labels", "monitoring_data", b"monitoring_data", "name", b"name", "registry_id", b"registry_id", "status", b"status", "topic_aliases", b"topic_aliases"]) -> None: ...
 
 global___Device = Device
 

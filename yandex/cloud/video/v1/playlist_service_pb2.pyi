@@ -42,21 +42,26 @@ class ListPlaylistsRequest(google.protobuf.message.Message):
     channel_id: builtins.str
     """ID of the channel."""
     page_size: builtins.int
-    """The maximum number of the results per page to return."""
+    """The maximum number of the results per page to return.
+    Default value: 100.
+    """
     page_token: builtins.str
     """Page token for getting the next page of the result."""
     order_by: builtins.str
     """By which column the listing should be ordered and in which direction,
-    format is "createdAt desc". "id asc" if omitted.
-    Possible fields: ["id", "title", "createdAt", "updatedAt"]
+    format is "<field> <order>" (e.g. "createdAt desc").
+    Default: "id asc".
+    Possible fields: ["id", "title", "createdAt", "updatedAt"].
     Both snake_case and camelCase are supported for fields.
     """
     filter: builtins.str
     """Filter expression that filters resources listed in the response.
     Expressions are composed of terms connected by logic operators.
-    Example: "key1=value AND key2=value"
-    Supported operators: ["AND"].
-    Supported fields: ["title"]
+    If value contains spaces or quotes,
+    it should be in quotes (`'` or `"`) with the inner quotes being backslash escaped.
+    Example: "key1='value' AND key2='value'".
+    Supported operators: ["AND", "OR"].
+    Supported fields: ["id", "title"].
     Both snake_case and camelCase are supported for fields.
     """
     def __init__(

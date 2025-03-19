@@ -37,7 +37,9 @@ class ListSubtitlesRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     VIDEO_ID_FIELD_NUMBER: builtins.int
     page_size: builtins.int
-    """The maximum number of the results per page to return."""
+    """The maximum number of the results per page to return.
+    Default value: 100.
+    """
     page_token: builtins.str
     """Page token for getting the next page of the result."""
     video_id: builtins.str
@@ -84,14 +86,14 @@ class CreateSubtitleRequest(google.protobuf.message.Message):
     VIDEO_ID_FIELD_NUMBER: builtins.int
     UPLOAD_FIELD_NUMBER: builtins.int
     language: builtins.str
-    """The language of the subtitles, represented as a three-letter ISO 639 code.
-    Supports ISO 639-2/T (terminological), ISO 639-2/B (bibliographical) variants and ISO 639-3.
-    Valid ISO language code corresponding to the subtitle text must be provided.
+    """Subtitle language in any of the following formats:
+    * three-letter code according to ISO 639-2/T, ISO 639-2/B, or ISO 639-3
+    * two-letter code according to ISO 639-1
     """
     label: builtins.str
     """Contains the subtitle label (or title) that will be displayed on screen during video playback.
     Should provide a concise and accurate representation of the spoken content.
-    If not provided, will be auto-generated based on the specified language.
+    If not provided, it will be auto-generated based on the specified language.
     """
     video_id: builtins.str
     """ID of the video."""

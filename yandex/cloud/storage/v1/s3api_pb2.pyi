@@ -837,7 +837,7 @@ global___S3APIListMultipartUploadsResponse = S3APIListMultipartUploadsResponse
 
 @typing.final
 class S3APIMultipartUpload(google.protobuf.message.Message):
-    """Container for the MultipartUpload for the Amazon S3 object."""
+    """Container for the MultipartUpload for the S3 object."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -930,3 +930,130 @@ class S3APIUploadPartCopyResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["etag", b"etag", "last_modified_at", b"last_modified_at", "request_id", b"request_id"]) -> None: ...
 
 global___S3APIUploadPartCopyResponse = S3APIUploadPartCopyResponse
+
+@typing.final
+class S3APIListObjectsV2Response(google.protobuf.message.Message):
+    """Represents a response of list objects v2 request to S3."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    IS_TRUNCATED_FIELD_NUMBER: builtins.int
+    CONTENTS_FIELD_NUMBER: builtins.int
+    NAME_FIELD_NUMBER: builtins.int
+    PREFIX_FIELD_NUMBER: builtins.int
+    DELIMITER_FIELD_NUMBER: builtins.int
+    MAX_KEYS_FIELD_NUMBER: builtins.int
+    COMMON_PREFIXES_FIELD_NUMBER: builtins.int
+    KEY_COUNT_FIELD_NUMBER: builtins.int
+    CONTINUATION_TOKEN_FIELD_NUMBER: builtins.int
+    NEXT_CONTINUATION_TOKEN_FIELD_NUMBER: builtins.int
+    START_AFTER_FIELD_NUMBER: builtins.int
+    REQUEST_ID_FIELD_NUMBER: builtins.int
+    is_truncated: builtins.bool
+    """A flag that indicates whether S3 returned all of the results that satisfied the search criteria."""
+    name: builtins.str
+    """The bucket name."""
+    prefix: builtins.str
+    """Keys that begin with the indicated prefix."""
+    delimiter: builtins.str
+    """Causes keys that contain the same string between the prefix and the first occurrence of the delimiter to be rolled up into a single result element in the CommonPrefixes collection."""
+    max_keys: builtins.int
+    """The maximum number of keys returned in the response body."""
+    key_count: builtins.int
+    """The number of keys returned with this request."""
+    continuation_token: builtins.str
+    """Indicates where in the bucket listing begins. This is only returned if a continuation token was used in the request."""
+    next_continuation_token: builtins.str
+    """If the response is truncated, S3 returns this continuation token, which you can use in the next request to fetch the next set of keys."""
+    start_after: builtins.str
+    """StartAfter is where you want S3 to start listing from. This is only returned if a start-after was used in the request."""
+    request_id: builtins.str
+    """Unique request ID."""
+    @property
+    def contents(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___S3APIObject]:
+        """Metadata about each object returned."""
+
+    @property
+    def common_prefixes(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___S3APICommonPrefix]:
+        """All of the keys rolled up into a common prefix count as a single return when calculating the number of returns."""
+
+    def __init__(
+        self,
+        *,
+        is_truncated: builtins.bool = ...,
+        contents: collections.abc.Iterable[global___S3APIObject] | None = ...,
+        name: builtins.str = ...,
+        prefix: builtins.str = ...,
+        delimiter: builtins.str = ...,
+        max_keys: builtins.int = ...,
+        common_prefixes: collections.abc.Iterable[global___S3APICommonPrefix] | None = ...,
+        key_count: builtins.int = ...,
+        continuation_token: builtins.str = ...,
+        next_continuation_token: builtins.str = ...,
+        start_after: builtins.str = ...,
+        request_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["common_prefixes", b"common_prefixes", "contents", b"contents", "continuation_token", b"continuation_token", "delimiter", b"delimiter", "is_truncated", b"is_truncated", "key_count", b"key_count", "max_keys", b"max_keys", "name", b"name", "next_continuation_token", b"next_continuation_token", "prefix", b"prefix", "request_id", b"request_id", "start_after", b"start_after"]) -> None: ...
+
+global___S3APIListObjectsV2Response = S3APIListObjectsV2Response
+
+@typing.final
+class S3APIObject(google.protobuf.message.Message):
+    """Container for object metadata."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    KEY_FIELD_NUMBER: builtins.int
+    LAST_MODIFIED_FIELD_NUMBER: builtins.int
+    ETAG_FIELD_NUMBER: builtins.int
+    SIZE_FIELD_NUMBER: builtins.int
+    OWNER_FIELD_NUMBER: builtins.int
+    STORAGE_CLASS_FIELD_NUMBER: builtins.int
+    key: builtins.str
+    """The object key."""
+    etag: builtins.str
+    """The entity tag is a hash of the object."""
+    size: builtins.int
+    """Size in bytes of the object."""
+    storage_class: builtins.str
+    """The class of storage used to store the object."""
+    @property
+    def last_modified(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Date and time the object was last modified."""
+
+    @property
+    def owner(self) -> global___S3APIOwner:
+        """The owner of the object."""
+
+    def __init__(
+        self,
+        *,
+        key: builtins.str = ...,
+        last_modified: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        etag: builtins.str = ...,
+        size: builtins.int = ...,
+        owner: global___S3APIOwner | None = ...,
+        storage_class: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["last_modified", b"last_modified", "owner", b"owner"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["etag", b"etag", "key", b"key", "last_modified", b"last_modified", "owner", b"owner", "size", b"size", "storage_class", b"storage_class"]) -> None: ...
+
+global___S3APIObject = S3APIObject
+
+@typing.final
+class S3APICommonPrefix(google.protobuf.message.Message):
+    """Container for common prefix information."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PREFIX_FIELD_NUMBER: builtins.int
+    prefix: builtins.str
+    """Container for the specified common prefix."""
+    def __init__(
+        self,
+        *,
+        prefix: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["prefix", b"prefix"]) -> None: ...
+
+global___S3APICommonPrefix = S3APICommonPrefix

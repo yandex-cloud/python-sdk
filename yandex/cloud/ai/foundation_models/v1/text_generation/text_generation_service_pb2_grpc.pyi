@@ -82,6 +82,44 @@ class TextGenerationAsyncServiceServicer(metaclass=abc.ABCMeta):
 
 def add_TextGenerationAsyncServiceServicer_to_server(servicer: TextGenerationAsyncServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...
 
+class TextGenerationBatchServiceStub:
+    """Service for text generation."""
+
+    def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
+    Completion: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.foundation_models.v1.text_generation.text_generation_service_pb2.BatchCompletionRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """A method for generating text completions in [synchronous mode](/docs/foundation-models/concepts/#working-mode).
+    Note: Not implemented yet
+    """
+
+class TextGenerationBatchServiceAsyncStub:
+    """Service for text generation."""
+
+    Completion: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.foundation_models.v1.text_generation.text_generation_service_pb2.BatchCompletionRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """A method for generating text completions in [synchronous mode](/docs/foundation-models/concepts/#working-mode).
+    Note: Not implemented yet
+    """
+
+class TextGenerationBatchServiceServicer(metaclass=abc.ABCMeta):
+    """Service for text generation."""
+
+    @abc.abstractmethod
+    def Completion(
+        self,
+        request: yandex.cloud.ai.foundation_models.v1.text_generation.text_generation_service_pb2.BatchCompletionRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """A method for generating text completions in [synchronous mode](/docs/foundation-models/concepts/#working-mode).
+        Note: Not implemented yet
+        """
+
+def add_TextGenerationBatchServiceServicer_to_server(servicer: TextGenerationBatchServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...
+
 class TokenizerServiceStub:
     """Service for tokenizing input content."""
 

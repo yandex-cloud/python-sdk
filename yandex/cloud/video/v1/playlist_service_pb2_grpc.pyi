@@ -27,7 +27,7 @@ class PlaylistServiceStub:
         yandex.cloud.video.v1.playlist_service_pb2.GetPlaylistRequest,
         yandex.cloud.video.v1.playlist_pb2.Playlist,
     ]
-    """Returns the specific playlist."""
+    """Get the specific playlist."""
 
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.playlist_service_pb2.ListPlaylistsRequest,
@@ -57,13 +57,13 @@ class PlaylistServiceStub:
         yandex.cloud.video.v1.playlist_service_pb2.BatchDeletePlaylistsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Batch delete playlist."""
+    """Batch delete playlists."""
 
     GetPlayerURL: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.playlist_service_pb2.GetPlaylistPlayerURLRequest,
         yandex.cloud.video.v1.playlist_service_pb2.GetPlaylistPlayerURLResponse,
     ]
-    """Returns player's url."""
+    """Get player url."""
 
 class PlaylistServiceAsyncStub:
     """Playlist management service."""
@@ -72,7 +72,7 @@ class PlaylistServiceAsyncStub:
         yandex.cloud.video.v1.playlist_service_pb2.GetPlaylistRequest,
         yandex.cloud.video.v1.playlist_pb2.Playlist,
     ]
-    """Returns the specific playlist."""
+    """Get the specific playlist."""
 
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.playlist_service_pb2.ListPlaylistsRequest,
@@ -102,13 +102,13 @@ class PlaylistServiceAsyncStub:
         yandex.cloud.video.v1.playlist_service_pb2.BatchDeletePlaylistsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Batch delete playlist."""
+    """Batch delete playlists."""
 
     GetPlayerURL: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.video.v1.playlist_service_pb2.GetPlaylistPlayerURLRequest,
         yandex.cloud.video.v1.playlist_service_pb2.GetPlaylistPlayerURLResponse,
     ]
-    """Returns player's url."""
+    """Get player url."""
 
 class PlaylistServiceServicer(metaclass=abc.ABCMeta):
     """Playlist management service."""
@@ -119,7 +119,7 @@ class PlaylistServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.playlist_service_pb2.GetPlaylistRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.playlist_pb2.Playlist, collections.abc.Awaitable[yandex.cloud.video.v1.playlist_pb2.Playlist]]:
-        """Returns the specific playlist."""
+        """Get the specific playlist."""
 
     @abc.abstractmethod
     def List(
@@ -159,7 +159,7 @@ class PlaylistServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.playlist_service_pb2.BatchDeletePlaylistsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Batch delete playlist."""
+        """Batch delete playlists."""
 
     @abc.abstractmethod
     def GetPlayerURL(
@@ -167,6 +167,6 @@ class PlaylistServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.video.v1.playlist_service_pb2.GetPlaylistPlayerURLRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.video.v1.playlist_service_pb2.GetPlaylistPlayerURLResponse, collections.abc.Awaitable[yandex.cloud.video.v1.playlist_service_pb2.GetPlaylistPlayerURLResponse]]:
-        """Returns player's url."""
+        """Get player url."""
 
 def add_PlaylistServiceServicer_to_server(servicer: PlaylistServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

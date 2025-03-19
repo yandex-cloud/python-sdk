@@ -4,7 +4,9 @@ isort:skip_file
 """
 
 import builtins
+import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.internal.containers
 import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
 import google.protobuf.timestamp_pb2
@@ -45,6 +47,22 @@ class TuningTask(google.protobuf.message.Message):
     FAILED: TuningTask.Status.ValueType  # 5
     CANCELED: TuningTask.Status.ValueType  # 6
 
+    @typing.final
+    class LabelsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
     TASK_ID_FIELD_NUMBER: builtins.int
     OPERATION_ID_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
@@ -55,6 +73,9 @@ class TuningTask(google.protobuf.message.Message):
     FINISHED_AT_FIELD_NUMBER: builtins.int
     SOURCE_MODEL_URI_FIELD_NUMBER: builtins.int
     TARGET_MODEL_URI_FIELD_NUMBER: builtins.int
+    NAME_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
+    LABELS_FIELD_NUMBER: builtins.int
     task_id: builtins.str
     operation_id: builtins.str
     status: global___TuningTask.Status.ValueType
@@ -62,12 +83,16 @@ class TuningTask(google.protobuf.message.Message):
     created_by: builtins.str
     source_model_uri: builtins.str
     target_model_uri: builtins.str
+    name: builtins.str
+    description: builtins.str
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
     @property
     def started_at(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
     @property
     def finished_at(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
+    @property
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
     def __init__(
         self,
         *,
@@ -81,8 +106,11 @@ class TuningTask(google.protobuf.message.Message):
         finished_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         source_model_uri: builtins.str = ...,
         target_model_uri: builtins.str = ...,
+        name: builtins.str = ...,
+        description: builtins.str = ...,
+        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at", "finished_at", b"finished_at", "started_at", b"started_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "created_by", b"created_by", "finished_at", b"finished_at", "folder_id", b"folder_id", "operation_id", b"operation_id", "source_model_uri", b"source_model_uri", "started_at", b"started_at", "status", b"status", "target_model_uri", b"target_model_uri", "task_id", b"task_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "created_by", b"created_by", "description", b"description", "finished_at", b"finished_at", "folder_id", b"folder_id", "labels", b"labels", "name", b"name", "operation_id", b"operation_id", "source_model_uri", b"source_model_uri", "started_at", b"started_at", "status", b"status", "target_model_uri", b"target_model_uri", "task_id", b"task_id"]) -> None: ...
 
 global___TuningTask = TuningTask

@@ -168,6 +168,22 @@ class CreateDeviceRequest(google.protobuf.message.Message):
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
     @typing.final
+    class LabelsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
+    @typing.final
     class Certificate(google.protobuf.message.Message):
         """Specification of a device certificate."""
 
@@ -189,6 +205,7 @@ class CreateDeviceRequest(google.protobuf.message.Message):
     CERTIFICATES_FIELD_NUMBER: builtins.int
     TOPIC_ALIASES_FIELD_NUMBER: builtins.int
     PASSWORD_FIELD_NUMBER: builtins.int
+    LABELS_FIELD_NUMBER: builtins.int
     registry_id: builtins.str
     """ID of the registry to create a device in.
 
@@ -214,6 +231,10 @@ class CreateDeviceRequest(google.protobuf.message.Message):
         Alias is an alternate name of a device topic assigned by the user. Map alias to canonical topic name prefix, e.g. `my/custom/alias` match to `$device/{id}/events`.
         """
 
+    @property
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Resource labels as `key:value` pairs."""
+
     def __init__(
         self,
         *,
@@ -223,8 +244,9 @@ class CreateDeviceRequest(google.protobuf.message.Message):
         certificates: collections.abc.Iterable[global___CreateDeviceRequest.Certificate] | None = ...,
         topic_aliases: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         password: builtins.str = ...,
+        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["certificates", b"certificates", "description", b"description", "name", b"name", "password", b"password", "registry_id", b"registry_id", "topic_aliases", b"topic_aliases"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["certificates", b"certificates", "description", b"description", "labels", b"labels", "name", b"name", "password", b"password", "registry_id", b"registry_id", "topic_aliases", b"topic_aliases"]) -> None: ...
 
 global___CreateDeviceRequest = CreateDeviceRequest
 
@@ -264,11 +286,28 @@ class UpdateDeviceRequest(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
+    @typing.final
+    class LabelsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
     DEVICE_ID_FIELD_NUMBER: builtins.int
     UPDATE_MASK_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     TOPIC_ALIASES_FIELD_NUMBER: builtins.int
+    LABELS_FIELD_NUMBER: builtins.int
     device_id: builtins.str
     """ID of the device to update.
 
@@ -289,6 +328,10 @@ class UpdateDeviceRequest(google.protobuf.message.Message):
         Alias is an alternate name of a device topic assigned by the user. Map alias to canonical topic name prefix, e.g. `my/custom/alias` match to `$device/{id}/events`.
         """
 
+    @property
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Resource labels as `key:value` pairs."""
+
     def __init__(
         self,
         *,
@@ -297,9 +340,10 @@ class UpdateDeviceRequest(google.protobuf.message.Message):
         name: builtins.str = ...,
         description: builtins.str = ...,
         topic_aliases: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "device_id", b"device_id", "name", b"name", "topic_aliases", b"topic_aliases", "update_mask", b"update_mask"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "device_id", b"device_id", "labels", b"labels", "name", b"name", "topic_aliases", b"topic_aliases", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateDeviceRequest = UpdateDeviceRequest
 

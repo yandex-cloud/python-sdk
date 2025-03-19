@@ -43,7 +43,7 @@ class _StatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTyp
     STOPPING: _Status.ValueType  # 9
     """Test is being stopped."""
     STOPPED: _Status.ValueType  # 10
-    """Test has been stopped."""
+    """Test has been stopped by user."""
     AUTOSTOPPED: _Status.ValueType  # 11
     """Test has been stopped automatically by satisfying autostop condition."""
     WAITING: _Status.ValueType  # 12
@@ -56,6 +56,8 @@ class _StatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTyp
     Means that either an agent is too busy to send it, got offline, or failed without
     reporting a final status.
     """
+    CANCELLED: _Status.ValueType  # 15
+    """Test has been cancelled."""
 
 class Status(_Status, metaclass=_StatusEnumTypeWrapper): ...
 
@@ -80,7 +82,7 @@ FAILED: Status.ValueType  # 8
 STOPPING: Status.ValueType  # 9
 """Test is being stopped."""
 STOPPED: Status.ValueType  # 10
-"""Test has been stopped."""
+"""Test has been stopped by user."""
 AUTOSTOPPED: Status.ValueType  # 11
 """Test has been stopped automatically by satisfying autostop condition."""
 WAITING: Status.ValueType  # 12
@@ -93,4 +95,6 @@ LOST: Status.ValueType  # 14
 Means that either an agent is too busy to send it, got offline, or failed without
 reporting a final status.
 """
+CANCELLED: Status.ValueType  # 15
+"""Test has been cancelled."""
 global___Status = Status

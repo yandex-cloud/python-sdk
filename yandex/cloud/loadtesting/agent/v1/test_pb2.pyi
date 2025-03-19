@@ -45,6 +45,7 @@ class Test(google.protobuf.message.Message):
         WAITING: Test._Status.ValueType  # 12
         DELETING: Test._Status.ValueType  # 13
         LOST: Test._Status.ValueType  # 14
+        CANCELLED: Test._Status.ValueType  # 15
 
     class Status(_Status, metaclass=_StatusEnumTypeWrapper): ...
     STATUS_UNSPECIFIED: Test.Status.ValueType  # 0
@@ -62,6 +63,7 @@ class Test(google.protobuf.message.Message):
     WAITING: Test.Status.ValueType  # 12
     DELETING: Test.Status.ValueType  # 13
     LOST: Test.Status.ValueType  # 14
+    CANCELLED: Test.Status.ValueType  # 15
 
     class _Generator:
         ValueType = typing.NewType("ValueType", builtins.int)

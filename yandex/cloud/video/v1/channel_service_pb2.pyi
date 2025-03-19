@@ -42,22 +42,26 @@ class ListChannelsRequest(google.protobuf.message.Message):
     organization_id: builtins.str
     """ID of the organization."""
     page_size: builtins.int
-    """The maximum number of the results per page to return. Default value: 100."""
+    """The maximum number of the results per page to return.
+    Default value: 100.
+    """
     page_token: builtins.str
     """Page token for getting the next page of the result."""
     order_by: builtins.str
     """By which column the listing should be ordered and in which direction,
-    format is "createdAt desc". "id asc" if omitted.
-    Possible fields: ["id", "createdAt", "updatedAt"]
+    format is "<field> <order>" (e.g. "createdAt desc").
+    Default: "id asc".
+    Possible fields: ["id", "title", "createdAt", "updatedAt"].
     Both snake_case and camelCase are supported for fields.
     """
     filter: builtins.str
     """Filter expression that filters resources listed in the response.
     Expressions are composed of terms connected by logic operators.
-    Value in quotes: `'` or `"`
-    Example: "key1='value' AND key2='value'"
-    Supported operators: ["AND"].
-    Supported fields: ["title"]
+    If value contains spaces or quotes,
+    it should be in quotes (`'` or `"`) with the inner quotes being backslash escaped.
+    Example: "key1='value' AND key2='value'".
+    Supported operators: ["AND", "OR"].
+    Supported fields: ["id", "title"].
     Both snake_case and camelCase are supported for fields.
     """
     def __init__(
@@ -119,6 +123,7 @@ class CreateChannelRequest(google.protobuf.message.Message):
     TITLE_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
+    SETTINGS_FIELD_NUMBER: builtins.int
     organization_id: builtins.str
     """ID of the organization."""
     title: builtins.str
@@ -129,6 +134,10 @@ class CreateChannelRequest(google.protobuf.message.Message):
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Custom labels as `` key:value `` pairs. Maximum 64 per resource."""
 
+    @property
+    def settings(self) -> yandex.cloud.video.v1.channel_pb2.ChannelSettings:
+        """Channel settings."""
+
     def __init__(
         self,
         *,
@@ -136,8 +145,10 @@ class CreateChannelRequest(google.protobuf.message.Message):
         title: builtins.str = ...,
         description: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        settings: yandex.cloud.video.v1.channel_pb2.ChannelSettings | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "labels", b"labels", "organization_id", b"organization_id", "title", b"title"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["settings", b"settings"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "labels", b"labels", "organization_id", b"organization_id", "settings", b"settings", "title", b"title"]) -> None: ...
 
 global___CreateChannelRequest = CreateChannelRequest
 
@@ -182,6 +193,7 @@ class UpdateChannelRequest(google.protobuf.message.Message):
     TITLE_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
+    SETTINGS_FIELD_NUMBER: builtins.int
     channel_id: builtins.str
     """ID of the channel."""
     title: builtins.str
@@ -196,6 +208,10 @@ class UpdateChannelRequest(google.protobuf.message.Message):
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Custom labels as `` key:value `` pairs. Maximum 64 per resource."""
 
+    @property
+    def settings(self) -> yandex.cloud.video.v1.channel_pb2.ChannelSettings:
+        """Channel settings."""
+
     def __init__(
         self,
         *,
@@ -204,9 +220,10 @@ class UpdateChannelRequest(google.protobuf.message.Message):
         title: builtins.str = ...,
         description: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        settings: yandex.cloud.video.v1.channel_pb2.ChannelSettings | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["field_mask", b"field_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["channel_id", b"channel_id", "description", b"description", "field_mask", b"field_mask", "labels", b"labels", "title", b"title"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["field_mask", b"field_mask", "settings", b"settings"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["channel_id", b"channel_id", "description", b"description", "field_mask", b"field_mask", "labels", b"labels", "settings", b"settings", "title", b"title"]) -> None: ...
 
 global___UpdateChannelRequest = UpdateChannelRequest
 

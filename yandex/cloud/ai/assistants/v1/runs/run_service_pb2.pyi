@@ -344,3 +344,37 @@ class StreamEvent(google.protobuf.message.Message):
     def WhichOneof(self, oneof_group: typing.Literal["EventData", b"EventData"]) -> typing.Literal["error", "partial_message", "completed_message", "tool_call_list"] | None: ...
 
 global___StreamEvent = StreamEvent
+
+@typing.final
+class SubmitToRunRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    RUN_ID_FIELD_NUMBER: builtins.int
+    TOOL_RESULT_LIST_FIELD_NUMBER: builtins.int
+    run_id: builtins.str
+    """ID of the run to submit to."""
+    @property
+    def tool_result_list(self) -> yandex.cloud.ai.assistants.v1.common_pb2.ToolResultList:
+        """A list of tool results to submit to the run, such as the output of a function call."""
+
+    def __init__(
+        self,
+        *,
+        run_id: builtins.str = ...,
+        tool_result_list: yandex.cloud.ai.assistants.v1.common_pb2.ToolResultList | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["Event", b"Event", "tool_result_list", b"tool_result_list"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["Event", b"Event", "run_id", b"run_id", "tool_result_list", b"tool_result_list"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["Event", b"Event"]) -> typing.Literal["tool_result_list"] | None: ...
+
+global___SubmitToRunRequest = SubmitToRunRequest
+
+@typing.final
+class SubmitToRunResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___SubmitToRunResponse = SubmitToRunResponse

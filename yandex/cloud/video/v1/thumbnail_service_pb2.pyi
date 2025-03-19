@@ -7,9 +7,16 @@ import builtins
 import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
+import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
+import sys
 import typing
 import yandex.cloud.video.v1.thumbnail_pb2
+
+if sys.version_info >= (3, 10):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -39,7 +46,9 @@ class ListThumbnailRequest(google.protobuf.message.Message):
     channel_id: builtins.str
     """ID of the channel."""
     page_size: builtins.int
-    """The maximum number of the results per page to return. Default value: 100."""
+    """The maximum number of the results per page to return.
+    Default value: 100.
+    """
     page_token: builtins.str
     """Page token for getting the next page of the result."""
     def __init__(
@@ -151,19 +160,72 @@ global___BatchGenerateDownloadURLsResponse = BatchGenerateDownloadURLsResponse
 class ThumbnailDownloadURL(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    class _ImageFormat:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _ImageFormatEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ThumbnailDownloadURL._ImageFormat.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        IMAGE_FORMAT_UNSPECIFIED: ThumbnailDownloadURL._ImageFormat.ValueType  # 0
+        """Image format unspecified."""
+        JPEG: ThumbnailDownloadURL._ImageFormat.ValueType  # 1
+        """JPEG image format."""
+        WEBP: ThumbnailDownloadURL._ImageFormat.ValueType  # 2
+        """WebP image format."""
+
+    class ImageFormat(_ImageFormat, metaclass=_ImageFormatEnumTypeWrapper): ...
+    IMAGE_FORMAT_UNSPECIFIED: ThumbnailDownloadURL.ImageFormat.ValueType  # 0
+    """Image format unspecified."""
+    JPEG: ThumbnailDownloadURL.ImageFormat.ValueType  # 1
+    """JPEG image format."""
+    WEBP: ThumbnailDownloadURL.ImageFormat.ValueType  # 2
+    """WebP image format."""
+
+    @typing.final
+    class ScaledURL(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        URL_FIELD_NUMBER: builtins.int
+        MAX_WIDTH_FIELD_NUMBER: builtins.int
+        MAX_HEIGHT_FIELD_NUMBER: builtins.int
+        IMAGE_FORMAT_FIELD_NUMBER: builtins.int
+        url: builtins.str
+        """Download url."""
+        max_width: builtins.int
+        """Maximum width of the rectangle to inscribe the thumbnail into."""
+        max_height: builtins.int
+        """Maximum height of the rectangle to inscribe the thumbnail into."""
+        image_format: global___ThumbnailDownloadURL.ImageFormat.ValueType
+        """Image format."""
+        def __init__(
+            self,
+            *,
+            url: builtins.str = ...,
+            max_width: builtins.int = ...,
+            max_height: builtins.int = ...,
+            image_format: global___ThumbnailDownloadURL.ImageFormat.ValueType = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["image_format", b"image_format", "max_height", b"max_height", "max_width", b"max_width", "url", b"url"]) -> None: ...
+
     THUMBNAIL_ID_FIELD_NUMBER: builtins.int
-    DOWNLOAD_URL_FIELD_NUMBER: builtins.int
+    ORIGINAL_URL_FIELD_NUMBER: builtins.int
+    SCALED_URLS_FIELD_NUMBER: builtins.int
     thumbnail_id: builtins.str
     """ID of the thumbnail."""
-    download_url: builtins.str
-    """Download url."""
+    original_url: builtins.str
+    """Original download url."""
+    @property
+    def scaled_urls(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ThumbnailDownloadURL.ScaledURL]:
+        """List of download urls, one per each available image size."""
+
     def __init__(
         self,
         *,
         thumbnail_id: builtins.str = ...,
-        download_url: builtins.str = ...,
+        original_url: builtins.str = ...,
+        scaled_urls: collections.abc.Iterable[global___ThumbnailDownloadURL.ScaledURL] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["download_url", b"download_url", "thumbnail_id", b"thumbnail_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["original_url", b"original_url", "scaled_urls", b"scaled_urls", "thumbnail_id", b"thumbnail_id"]) -> None: ...
 
 global___ThumbnailDownloadURL = ThumbnailDownloadURL
 

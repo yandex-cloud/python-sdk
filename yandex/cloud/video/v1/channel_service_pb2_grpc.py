@@ -90,7 +90,7 @@ class ChannelServiceServicer(object):
     """
 
     def Get(self, request, context):
-        """Returns the specific channel.
+        """Get the specific channel.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -132,21 +132,21 @@ class ChannelServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListAccessBindings(self, request, context):
-        """Lists existing access bindings for the specified channel.
+        """List existing access bindings for the specified channel.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def SetAccessBindings(self, request, context):
-        """Sets access bindings for the channel.
+        """Set access bindings for the channel.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateAccessBindings(self, request, context):
-        """Updates access bindings for the specified channel.
+        """Update access bindings for the specified channel.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

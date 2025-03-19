@@ -64,6 +64,14 @@ class RunServiceStub:
     ]
     """List runs in a specific folder."""
 
+    Submit: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.assistants.v1.runs.run_service_pb2.SubmitToRunRequest,
+        yandex.cloud.ai.assistants.v1.runs.run_service_pb2.SubmitToRunResponse,
+    ]
+    """Submit event to run
+    For example, submit function call results when the run is waiting for user input.
+    """
+
 class RunServiceAsyncStub:
     """RunService provides operations for managing runs."""
 
@@ -108,6 +116,14 @@ class RunServiceAsyncStub:
         yandex.cloud.ai.assistants.v1.runs.run_service_pb2.ListRunsResponse,
     ]
     """List runs in a specific folder."""
+
+    Submit: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.assistants.v1.runs.run_service_pb2.SubmitToRunRequest,
+        yandex.cloud.ai.assistants.v1.runs.run_service_pb2.SubmitToRunResponse,
+    ]
+    """Submit event to run
+    For example, submit function call results when the run is waiting for user input.
+    """
 
 class RunServiceServicer(metaclass=abc.ABCMeta):
     """RunService provides operations for managing runs."""
@@ -165,5 +181,15 @@ class RunServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.ai.assistants.v1.runs.run_service_pb2.ListRunsResponse, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.runs.run_service_pb2.ListRunsResponse]]:
         """List runs in a specific folder."""
+
+    @abc.abstractmethod
+    def Submit(
+        self,
+        request: yandex.cloud.ai.assistants.v1.runs.run_service_pb2.SubmitToRunRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.ai.assistants.v1.runs.run_service_pb2.SubmitToRunResponse, collections.abc.Awaitable[yandex.cloud.ai.assistants.v1.runs.run_service_pb2.SubmitToRunResponse]]:
+        """Submit event to run
+        For example, submit function call results when the run is waiting for user input.
+        """
 
 def add_RunServiceServicer_to_server(servicer: RunServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

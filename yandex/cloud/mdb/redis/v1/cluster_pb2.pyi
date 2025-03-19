@@ -139,12 +139,16 @@ class Cluster(google.protobuf.message.Message):
         """cluster persistence mode on"""
         OFF: Cluster._PersistenceMode.ValueType  # 1
         """cluster persistence mode off"""
+        ON_REPLICAS: Cluster._PersistenceMode.ValueType  # 2
+        """cluster persistence on replicas only"""
 
     class PersistenceMode(_PersistenceMode, metaclass=_PersistenceModeEnumTypeWrapper): ...
     ON: Cluster.PersistenceMode.ValueType  # 0
     """cluster persistence mode on"""
     OFF: Cluster.PersistenceMode.ValueType  # 1
     """cluster persistence mode off"""
+    ON_REPLICAS: Cluster.PersistenceMode.ValueType  # 2
+    """cluster persistence on replicas only"""
 
     @typing.final
     class LabelsEntry(google.protobuf.message.Message):

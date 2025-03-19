@@ -95,6 +95,8 @@ class Permission(google.protobuf.message.Message):
         """Consumer role for the user."""
         ACCESS_ROLE_ADMIN: Permission._AccessRole.ValueType  # 3
         """Admin role for the user."""
+        ACCESS_ROLE_TOPIC_ADMIN: Permission._AccessRole.ValueType  # 4
+        """Admin permissions on topics role for the user."""
 
     class AccessRole(_AccessRole, metaclass=_AccessRoleEnumTypeWrapper): ...
     ACCESS_ROLE_UNSPECIFIED: Permission.AccessRole.ValueType  # 0
@@ -104,6 +106,8 @@ class Permission(google.protobuf.message.Message):
     """Consumer role for the user."""
     ACCESS_ROLE_ADMIN: Permission.AccessRole.ValueType  # 3
     """Admin role for the user."""
+    ACCESS_ROLE_TOPIC_ADMIN: Permission.AccessRole.ValueType  # 4
+    """Admin permissions on topics role for the user."""
 
     TOPIC_NAME_FIELD_NUMBER: builtins.int
     ROLE_FIELD_NUMBER: builtins.int

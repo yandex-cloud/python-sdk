@@ -43,10 +43,32 @@ class Subtitle(google.protobuf.message.Message):
     UPLOADED: Subtitle.SubtitleStatus.ValueType  # 2
     """Uploading is complete."""
 
+    class _SubtitleSourceType:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _SubtitleSourceTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Subtitle._SubtitleSourceType.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        SUBTITLE_SOURCE_TYPE_UNSPECIFIED: Subtitle._SubtitleSourceType.ValueType  # 0
+        """Subtitle source type unspecified."""
+        MANUAL: Subtitle._SubtitleSourceType.ValueType  # 1
+        """Manually uploaded subtitle."""
+        GENERATED: Subtitle._SubtitleSourceType.ValueType  # 2
+        """Automatically generated subtitle."""
+
+    class SubtitleSourceType(_SubtitleSourceType, metaclass=_SubtitleSourceTypeEnumTypeWrapper): ...
+    SUBTITLE_SOURCE_TYPE_UNSPECIFIED: Subtitle.SubtitleSourceType.ValueType  # 0
+    """Subtitle source type unspecified."""
+    MANUAL: Subtitle.SubtitleSourceType.ValueType  # 1
+    """Manually uploaded subtitle."""
+    GENERATED: Subtitle.SubtitleSourceType.ValueType  # 2
+    """Automatically generated subtitle."""
+
     ID_FIELD_NUMBER: builtins.int
     LANGUAGE_FIELD_NUMBER: builtins.int
     LABEL_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
+    SOURCE_TYPE_FIELD_NUMBER: builtins.int
     FILENAME_FIELD_NUMBER: builtins.int
     CREATED_AT_FIELD_NUMBER: builtins.int
     UPDATED_AT_FIELD_NUMBER: builtins.int
@@ -54,11 +76,16 @@ class Subtitle(google.protobuf.message.Message):
     id: builtins.str
     """ID of the subtitle."""
     language: builtins.str
-    """Subtitle language represented as a three-letter ISO 639-3 code."""
+    """Subtitle language in any of the following formats:
+    * three-letter code according to ISO 639-2/T, ISO 639-2/B, or ISO 639-3
+    * two-letter code according to ISO 639-1
+    """
     label: builtins.str
     """Subtitle caption to be displayed on screen during video playback."""
     status: global___Subtitle.SubtitleStatus.ValueType
     """Subtitle status."""
+    source_type: global___Subtitle.SubtitleSourceType.ValueType
+    """Source type."""
     filename: builtins.str
     """Subtitle filename."""
     video_id: builtins.str
@@ -78,13 +105,14 @@ class Subtitle(google.protobuf.message.Message):
         language: builtins.str = ...,
         label: builtins.str = ...,
         status: global___Subtitle.SubtitleStatus.ValueType = ...,
+        source_type: global___Subtitle.SubtitleSourceType.ValueType = ...,
         filename: builtins.str = ...,
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         updated_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         video_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at", "parent_id", b"parent_id", "updated_at", b"updated_at", "video_id", b"video_id"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "filename", b"filename", "id", b"id", "label", b"label", "language", b"language", "parent_id", b"parent_id", "status", b"status", "updated_at", b"updated_at", "video_id", b"video_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "filename", b"filename", "id", b"id", "label", b"label", "language", b"language", "parent_id", b"parent_id", "source_type", b"source_type", "status", b"status", "updated_at", b"updated_at", "video_id", b"video_id"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["parent_id", b"parent_id"]) -> typing.Literal["video_id"] | None: ...
 
 global___Subtitle = Subtitle

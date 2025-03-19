@@ -9,6 +9,7 @@ import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
+import yandex.cloud.ai.foundation_models.v1.batch_inference_task_status_pb2
 import yandex.cloud.ai.foundation_models.v1.text_common_pb2
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
@@ -96,6 +97,92 @@ class CompletionResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["alternatives", b"alternatives", "model_version", b"model_version", "usage", b"usage"]) -> None: ...
 
 global___CompletionResponse = CompletionResponse
+
+@typing.final
+class BatchCompletionRequest(google.protobuf.message.Message):
+    """Request for the service to generate batch text completion."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    MODEL_URI_FIELD_NUMBER: builtins.int
+    COMPLETION_OPTIONS_FIELD_NUMBER: builtins.int
+    SOURCE_DATASET_ID_FIELD_NUMBER: builtins.int
+    model_uri: builtins.str
+    """The [ID of the model](/docs/foundation-models/concepts/yandexgpt/models) to be used for batch completion generation."""
+    source_dataset_id: builtins.str
+    """ID of the dataset containing the context for the completion model."""
+    @property
+    def completion_options(self) -> yandex.cloud.ai.foundation_models.v1.text_common_pb2.CompletionOptions:
+        """Configuration options for completion generation."""
+
+    def __init__(
+        self,
+        *,
+        model_uri: builtins.str = ...,
+        completion_options: yandex.cloud.ai.foundation_models.v1.text_common_pb2.CompletionOptions | None = ...,
+        source_dataset_id: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["completion_options", b"completion_options", "request_format", b"request_format", "source_dataset_id", b"source_dataset_id"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["completion_options", b"completion_options", "model_uri", b"model_uri", "request_format", b"request_format", "source_dataset_id", b"source_dataset_id"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["request_format", b"request_format"]) -> typing.Literal["source_dataset_id"] | None: ...
+
+global___BatchCompletionRequest = BatchCompletionRequest
+
+@typing.final
+class BatchCompletionMetadata(google.protobuf.message.Message):
+    """Metadata of the batch completion operation."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TASK_ID_FIELD_NUMBER: builtins.int
+    TASK_STATUS_FIELD_NUMBER: builtins.int
+    COMPLETED_BATCHES_FIELD_NUMBER: builtins.int
+    TOTAL_BATCHES_FIELD_NUMBER: builtins.int
+    task_id: builtins.str
+    """The ID of the batch completion task."""
+    task_status: yandex.cloud.ai.foundation_models.v1.batch_inference_task_status_pb2.BatchInferenceTaskStatus.ValueType
+    """The status of the batch completion task."""
+    completed_batches: builtins.int
+    """A number of currently completed batches of the completion task."""
+    total_batches: builtins.int
+    """A number of total batches of the completion task."""
+    def __init__(
+        self,
+        *,
+        task_id: builtins.str = ...,
+        task_status: yandex.cloud.ai.foundation_models.v1.batch_inference_task_status_pb2.BatchInferenceTaskStatus.ValueType = ...,
+        completed_batches: builtins.int = ...,
+        total_batches: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["completed_batches", b"completed_batches", "task_id", b"task_id", "task_status", b"task_status", "total_batches", b"total_batches"]) -> None: ...
+
+global___BatchCompletionMetadata = BatchCompletionMetadata
+
+@typing.final
+class BatchCompletionResponse(google.protobuf.message.Message):
+    """Response containing information about completion task."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TASK_ID_FIELD_NUMBER: builtins.int
+    TASK_STATUS_FIELD_NUMBER: builtins.int
+    RESULT_DATASET_ID_FIELD_NUMBER: builtins.int
+    task_id: builtins.str
+    """The ID of the batch completion task."""
+    task_status: yandex.cloud.ai.foundation_models.v1.batch_inference_task_status_pb2.BatchInferenceTaskStatus.ValueType
+    """The status of the batch completion task."""
+    result_dataset_id: builtins.str
+    """The ID of the dataset containing completion results."""
+    def __init__(
+        self,
+        *,
+        task_id: builtins.str = ...,
+        task_status: yandex.cloud.ai.foundation_models.v1.batch_inference_task_status_pb2.BatchInferenceTaskStatus.ValueType = ...,
+        result_dataset_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["result_dataset_id", b"result_dataset_id", "task_id", b"task_id", "task_status", b"task_status"]) -> None: ...
+
+global___BatchCompletionResponse = BatchCompletionResponse
 
 @typing.final
 class TokenizeRequest(google.protobuf.message.Message):
