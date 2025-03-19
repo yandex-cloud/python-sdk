@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## v0.337.0 (2025-03-19)
+
+### Feature
+
+* feat: regenerate proto ([`2828f21`](https://github.com/yandex-cloud/python-sdk/commit/2828f2170f1ede40c466ae1c38a9a19043586286))
+
+### Fix
+
+* fix: no every week releases ([`6eaf014`](https://github.com/yandex-cloud/python-sdk/commit/6eaf0148e451985465f7e5090fdb2c807398ed10))
+
 ## v0.336.0 (2025-03-10)
 
 ### Feature
