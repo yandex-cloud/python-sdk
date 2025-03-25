@@ -5,7 +5,7 @@ from typing import Any, Dict, Tuple
 import grpc
 
 
-class ThrottlingMode(Enum):
+class ThrottlingMode(str, Enum):
     PERSISTENT = "persistent"
     TEMPORARY = "temporary"
 
