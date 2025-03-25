@@ -1,7 +1,13 @@
 import json
+from enum import Enum
 from typing import Tuple
 
 import grpc
+
+
+class ThrottlingMode(Enum):
+    PERSISTENT = "persistent"
+    TEMPORARY = "temporary"
 
 
 class RetryPolicy:
@@ -9,6 +15,7 @@ class RetryPolicy:
         self,
         max_attempts: int = 4,
         status_codes: Tuple["grpc.StatusCode"] = (grpc.StatusCode.UNAVAILABLE,),
+        throttling_mode: ThrottlingMode = ThrottlingMode.TEMPORARY,
     ):
         self.__policy = {
             "methodConfig": [
@@ -21,10 +28,14 @@ class RetryPolicy:
                         "backoffMultiplier": 2,
                         "retryableStatusCodes": [status.name for status in status_codes],
                     },
+                    "waitForReady": True,
                 }
             ],
-            "retryThrottling": {"maxTokens": 100, "tokenRatio": 0.1},
-            "waitForReady": True,
+            "retryThrottling": (
+                {"maxTokens": 100, "tokenRatio": 0.1}
+                if throttling_mode == ThrottlingMode.PERSISTENT
+                else {"maxTokens": 6, "tokenRatio": 0.1}
+            ),
         }
 
     def to_json(self) -> str:

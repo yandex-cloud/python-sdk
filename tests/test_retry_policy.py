@@ -10,7 +10,7 @@ from yandex.cloud.vpc.v1.network_service_pb2_grpc import (
     NetworkServiceStub,
     add_NetworkServiceServicer_to_server,
 )
-from yandexcloud import SDK, RetryPolicy
+from yandexcloud import SDK, RetryPolicy, ThrottlingMode
 from yandexcloud._channels import Channels
 
 INSECURE_SERVICE_PORT = "50051"
@@ -27,7 +27,7 @@ def side_effect_unavailable(_, context):
 
 class VPCServiceMock:
     def __init__(self, fn):
-        self.Get = Mock(return_value=Network(id="12342314"))
+        self.Get = Mock(side_effect=fn)
         self.Create = Mock()
         self.Update = Mock()
         self.Delete = Mock()
@@ -65,7 +65,7 @@ def test_default_retries(mock_channel):
     server, service = grpc_server(side_effect_unavailable)
 
     sdk = SDK(
-        retry_policy=RetryPolicy(),
+        retry_policy=RetryPolicy(throttling_mode=ThrottlingMode.PERSISTENT),
         endpoint=f"localhost:{INSECURE_SERVICE_PORT}",
         endpoints={
             "vpc": SERVICE_ADDR + ":" + INSECURE_SERVICE_PORT,
@@ -98,7 +98,8 @@ def test_custom_retries(mock_channel):
         request = GetNetworkRequest(network_id="asdf")
         network_client.Get(request)
     except grpc.RpcError:
-        assert service.Get.call_count == 4
+        # because of temporary throttling mode by default
+        assert service.Get.call_count == 3
 
     server.stop(0)
 
