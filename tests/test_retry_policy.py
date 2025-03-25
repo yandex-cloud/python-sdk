@@ -61,7 +61,7 @@ def grpc_server(side_effect):
     return server, service
 
 
-def test_default_retries(mock_channel):
+def test_persistent_retries(mock_channel):
     server, service = grpc_server(side_effect_unavailable)
 
     sdk = SDK(

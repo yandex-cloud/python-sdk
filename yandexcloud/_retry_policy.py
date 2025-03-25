@@ -1,6 +1,6 @@
 import json
 from enum import Enum
-from typing import Tuple
+from typing import Any, Dict, Tuple
 
 import grpc
 
@@ -8,6 +8,13 @@ import grpc
 class ThrottlingMode(Enum):
     PERSISTENT = "persistent"
     TEMPORARY = "temporary"
+
+
+def get_throttling_policy(throttling_mode: ThrottlingMode) -> Dict[str, Any]:
+    if throttling_mode == ThrottlingMode.PERSISTENT:
+        return {"maxTokens": 100, "tokenRatio": 0.1}
+
+    return {"maxTokens": 6, "tokenRatio": 0.1}
 
 
 class RetryPolicy:
@@ -31,11 +38,7 @@ class RetryPolicy:
                     "waitForReady": True,
                 }
             ],
-            "retryThrottling": (
-                {"maxTokens": 100, "tokenRatio": 0.1}
-                if throttling_mode == ThrottlingMode.PERSISTENT
-                else {"maxTokens": 6, "tokenRatio": 0.1}
-            ),
+            "retryThrottling": get_throttling_policy(throttling_mode),
         }
 
     def to_json(self) -> str:
