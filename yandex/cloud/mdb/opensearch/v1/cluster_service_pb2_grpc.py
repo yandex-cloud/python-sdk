@@ -163,6 +163,16 @@ class ClusterServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_opensearch_dot_v1_dot_cluster__service__pb2.UpdateAuthSettingsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.RestartOpenSearch = channel.unary_unary(
+                '/yandex.cloud.mdb.opensearch.v1.ClusterService/RestartOpenSearch',
+                request_serializer=yandex_dot_cloud_dot_mdb_dot_opensearch_dot_v1_dot_cluster__service__pb2.RestartOpenSearchRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.SwitchMaster = channel.unary_unary(
+                '/yandex.cloud.mdb.opensearch.v1.ClusterService/SwitchMaster',
+                request_serializer=yandex_dot_cloud_dot_mdb_dot_opensearch_dot_v1_dot_cluster__service__pb2.SwitchMasterRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
 
 
 class ClusterServiceServicer(object):
@@ -264,6 +274,7 @@ class ClusterServiceServicer(object):
 
     def ListLogs(self, request, context):
         """Retrieves logs for the specified OpenSearch cluster.
+        For detailed description, see the [Logs](/yandex-mdb-guide/concepts/logs.html) section in the developer's guide.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -341,6 +352,20 @@ class ClusterServiceServicer(object):
 
     def UpdateAuthSettings(self, request, context):
         """Updates auth settings for specified cluster.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def RestartOpenSearch(self, request, context):
+        """Restarts OpenSearch on specified host.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SwitchMaster(self, request, context):
+        """Switches current master or ensures that master not on specified hosts.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -472,6 +497,16 @@ def add_ClusterServiceServicer_to_server(servicer, server):
             'UpdateAuthSettings': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateAuthSettings,
                     request_deserializer=yandex_dot_cloud_dot_mdb_dot_opensearch_dot_v1_dot_cluster__service__pb2.UpdateAuthSettingsRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'RestartOpenSearch': grpc.unary_unary_rpc_method_handler(
+                    servicer.RestartOpenSearch,
+                    request_deserializer=yandex_dot_cloud_dot_mdb_dot_opensearch_dot_v1_dot_cluster__service__pb2.RestartOpenSearchRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'SwitchMaster': grpc.unary_unary_rpc_method_handler(
+                    servicer.SwitchMaster,
+                    request_deserializer=yandex_dot_cloud_dot_mdb_dot_opensearch_dot_v1_dot_cluster__service__pb2.SwitchMasterRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
@@ -1150,6 +1185,60 @@ class ClusterService(object):
             target,
             '/yandex.cloud.mdb.opensearch.v1.ClusterService/UpdateAuthSettings',
             yandex_dot_cloud_dot_mdb_dot_opensearch_dot_v1_dot_cluster__service__pb2.UpdateAuthSettingsRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def RestartOpenSearch(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.mdb.opensearch.v1.ClusterService/RestartOpenSearch',
+            yandex_dot_cloud_dot_mdb_dot_opensearch_dot_v1_dot_cluster__service__pb2.RestartOpenSearchRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def SwitchMaster(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.mdb.opensearch.v1.ClusterService/SwitchMaster',
+            yandex_dot_cloud_dot_mdb_dot_opensearch_dot_v1_dot_cluster__service__pb2.SwitchMasterRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

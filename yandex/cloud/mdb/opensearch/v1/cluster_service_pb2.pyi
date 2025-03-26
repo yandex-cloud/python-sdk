@@ -1893,3 +1893,89 @@ class UpdateAuthSettingsMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
 
 global___UpdateAuthSettingsMetadata = UpdateAuthSettingsMetadata
+
+@typing.final
+class RestartOpenSearchRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    HOST_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """Required. ID of the OpenSearch cluster."""
+    host: builtins.str
+    """Required. Host to restart OpenSearch service on."""
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        host: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "host", b"host"]) -> None: ...
+
+global___RestartOpenSearchRequest = RestartOpenSearchRequest
+
+@typing.final
+class RestartOpenSearchMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    HOST_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """Required. ID of the OpenSearch cluster."""
+    host: builtins.str
+    """Required. Host where OpenSearch will be restarted."""
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        host: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "host", b"host"]) -> None: ...
+
+global___RestartOpenSearchMetadata = RestartOpenSearchMetadata
+
+@typing.final
+class SwitchMasterRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    FROM_HOSTS_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """Required. ID of the OpenSearch cluster."""
+    @property
+    def from_hosts(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Hosts list which are forbidden to be masters after operation.
+        If no hosts given, then current master will be switched.
+        """
+
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        from_hosts: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "from_hosts", b"from_hosts"]) -> None: ...
+
+global___SwitchMasterRequest = SwitchMasterRequest
+
+@typing.final
+class SwitchMasterMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    FROM_HOSTS_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the OpenSearch cluster."""
+    @property
+    def from_hosts(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Host where masters will be expelled."""
+
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        from_hosts: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "from_hosts", b"from_hosts"]) -> None: ...
+
+global___SwitchMasterMetadata = SwitchMasterMetadata

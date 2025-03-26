@@ -4,7 +4,9 @@ isort:skip_file
 """
 
 import builtins
+import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
 
@@ -29,3 +31,25 @@ class PutEventRequest(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["body", b"body", "bus_id", b"bus_id"]) -> None: ...
 
 global___PutEventRequest = PutEventRequest
+
+@typing.final
+class SendEventsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CONNECTOR_ID_FIELD_NUMBER: builtins.int
+    MESSAGE_FIELD_NUMBER: builtins.int
+    connector_id: builtins.str
+    """ID of the connector to send events."""
+    @property
+    def message(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Batch of events bodies."""
+
+    def __init__(
+        self,
+        *,
+        connector_id: builtins.str = ...,
+        message: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["connector_id", b"connector_id", "message", b"message"]) -> None: ...
+
+global___SendEventsRequest = SendEventsRequest

@@ -109,7 +109,9 @@ class ClusterServiceStub:
         yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.ListClusterLogsRequest,
         yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.ListClusterLogsResponse,
     ]
-    """Retrieves logs for the specified OpenSearch cluster."""
+    """Retrieves logs for the specified OpenSearch cluster.
+    For detailed description, see the [Logs](/yandex-mdb-guide/concepts/logs.html) section in the developer's guide.
+    """
 
     StreamLogs: grpc.UnaryStreamMultiCallable[
         yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.StreamClusterLogsRequest,
@@ -176,6 +178,18 @@ class ClusterServiceStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates auth settings for specified cluster."""
+
+    RestartOpenSearch: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.RestartOpenSearchRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Restarts OpenSearch on specified host."""
+
+    SwitchMaster: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.SwitchMasterRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Switches current master or ensures that master not on specified hosts."""
 
 class ClusterServiceAsyncStub:
     """A set of methods for managing OpenSearch clusters."""
@@ -265,7 +279,9 @@ class ClusterServiceAsyncStub:
         yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.ListClusterLogsRequest,
         yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.ListClusterLogsResponse,
     ]
-    """Retrieves logs for the specified OpenSearch cluster."""
+    """Retrieves logs for the specified OpenSearch cluster.
+    For detailed description, see the [Logs](/yandex-mdb-guide/concepts/logs.html) section in the developer's guide.
+    """
 
     StreamLogs: grpc.aio.UnaryStreamMultiCallable[
         yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.StreamClusterLogsRequest,
@@ -332,6 +348,18 @@ class ClusterServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Updates auth settings for specified cluster."""
+
+    RestartOpenSearch: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.RestartOpenSearchRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Restarts OpenSearch on specified host."""
+
+    SwitchMaster: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.SwitchMasterRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Switches current master or ensures that master not on specified hosts."""
 
 class ClusterServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing OpenSearch clusters."""
@@ -449,7 +477,9 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.ListClusterLogsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.ListClusterLogsResponse, collections.abc.Awaitable[yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.ListClusterLogsResponse]]:
-        """Retrieves logs for the specified OpenSearch cluster."""
+        """Retrieves logs for the specified OpenSearch cluster.
+        For detailed description, see the [Logs](/yandex-mdb-guide/concepts/logs.html) section in the developer's guide.
+        """
 
     @abc.abstractmethod
     def StreamLogs(
@@ -538,5 +568,21 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Updates auth settings for specified cluster."""
+
+    @abc.abstractmethod
+    def RestartOpenSearch(
+        self,
+        request: yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.RestartOpenSearchRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Restarts OpenSearch on specified host."""
+
+    @abc.abstractmethod
+    def SwitchMaster(
+        self,
+        request: yandex.cloud.mdb.opensearch.v1.cluster_service_pb2.SwitchMasterRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Switches current master or ensures that master not on specified hosts."""
 
 def add_ClusterServiceServicer_to_server(servicer: ClusterServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

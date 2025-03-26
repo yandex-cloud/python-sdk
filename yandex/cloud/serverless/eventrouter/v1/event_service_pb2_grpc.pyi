@@ -28,6 +28,12 @@ class EventServiceStub:
     ]
     """Puts event to bus."""
 
+    Send: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.serverless.eventrouter.v1.event_service_pb2.SendEventsRequest,
+        google.protobuf.empty_pb2.Empty,
+    ]
+    """Send events to bus."""
+
 class EventServiceAsyncStub:
     """Service for put events to bus for serverless eventrouter."""
 
@@ -36,6 +42,12 @@ class EventServiceAsyncStub:
         google.protobuf.empty_pb2.Empty,
     ]
     """Puts event to bus."""
+
+    Send: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.serverless.eventrouter.v1.event_service_pb2.SendEventsRequest,
+        google.protobuf.empty_pb2.Empty,
+    ]
+    """Send events to bus."""
 
 class EventServiceServicer(metaclass=abc.ABCMeta):
     """Service for put events to bus for serverless eventrouter."""
@@ -47,5 +59,13 @@ class EventServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[google.protobuf.empty_pb2.Empty, collections.abc.Awaitable[google.protobuf.empty_pb2.Empty]]:
         """Puts event to bus."""
+
+    @abc.abstractmethod
+    def Send(
+        self,
+        request: yandex.cloud.serverless.eventrouter.v1.event_service_pb2.SendEventsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[google.protobuf.empty_pb2.Empty, collections.abc.Awaitable[google.protobuf.empty_pb2.Empty]]:
+        """Send events to bus."""
 
 def add_EventServiceServicer_to_server(servicer: EventServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

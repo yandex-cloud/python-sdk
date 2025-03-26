@@ -73,7 +73,6 @@ class ListKeysRequest(google.protobuf.message.Message):
     """ID of the service account to list key pairs for.
     To get the service account ID, use a [yandex.cloud.iam.v1.ServiceAccountService.List] request.
     If not specified, it defaults to the subject that made the request.
-    use userAccount identity if this not set
     """
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
@@ -138,7 +137,6 @@ class CreateKeyRequest(google.protobuf.message.Message):
     """ID of the service account to create a key pair for.
     To get the service account ID, use a [yandex.cloud.iam.v1.ServiceAccountService.List] request.
     If not specified, it defaults to the subject that made the request.
-    use userAccount identity if this not set
     """
     description: builtins.str
     """Description of the key pair."""
