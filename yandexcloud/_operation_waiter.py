@@ -63,44 +63,42 @@ def get_operation_result(
     operation_result: OperationResult[ResponseType, MetaType] = OperationResult(operation)
     created_at = datetime.fromtimestamp(operation.created_at.seconds)
     message = (
-        "Running Yandex.Cloud operation. ID: {id}. "
-        "Description: {description}. Created at: {created_at}. "
-        "Created by: {created_by}."
+        f"Running Yandex.Cloud operation. ID: {operation.id}. "
+        f"Description: {operation.description}. Created at: {created_at}. "
+        f"Created by: {operation.created_by}."
     )
-    message = message.format(
-        id=operation.id,
-        description=operation.description,
-        created_at=created_at,
-        created_by=operation.created_by,
-    )
+
     if meta_type and meta_type is not Empty:
         unpacked_meta = meta_type()
         operation.metadata.Unpack(unpacked_meta)
         operation_result.meta = unpacked_meta
         message += f" Meta: {unpacked_meta}."
+
     logger.info(message)
+
     result = wait_for_operation(sdk, operation.id, timeout=timeout)
     if result is None:
-        return OperationError(message="Unexpected operation result", operation_result=OperationResult(operation))
+        raise OperationError(message="Unexpected operation result", operation_result=operation_result)
+
     if result.error and result.error.code:
         error_message = (
-            "Error Yandex.Cloud operation. ID: {id}. Error code: {code}. Details: {details}. Message: {message}."
-        )
-        error_message = error_message.format(
-            id=result.id,
-            code=result.error.code,
-            details=result.error.details,
-            message=result.error.message,
+            f"Error Yandex.Cloud operation. ID: {result.id}. "
+            f"Error code: {result.error.code}. "
+            f"Details: {result.error.details}. "
+            f"Message: {result.error.message}. "
+            f"Meta: {operation_result.meta}."
         )
         logger.error(error_message)
-        raise OperationError(message=error_message, operation_result=OperationResult(operation))
+        raise OperationError(message=error_message, operation_result=operation_result)
 
     log_message = f"Done Yandex.Cloud operation. ID: {operation.id}."
     if response_type and response_type is not Empty:
         unpacked_response = response_type()
         result.response.Unpack(unpacked_response)
         operation_result.response = unpacked_response
-        log_message += f" Response: {unpacked_response}."
+        log_message += f" Response: {operation_result.response}."
+        log_message += f" Meta: {operation_result.meta}."
+
     logger.info(log_message)
     return operation_result
 
