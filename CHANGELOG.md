@@ -1,5 +1,29 @@
 # CHANGELOG
 
+## v0.338.0 (2025-04-07)
+
+### Feature
+
+* feat: regenerate proto ([`0b76570`](https://github.com/yandex-cloud/python-sdk/commit/0b765709bc144f855538e6637cde35098fe41569))
+
+* feat(retries): added throttling mode (#139)
+
+* feat(retries): added throttling mode
+
+* feat(retries): after review
+
+* feat(retries): after review more
+
+---------
+
+Co-authored-by: Natan Tolparov &lt;nathankith@yandex-team.ru&gt; ([`5b4dac1`](https://github.com/yandex-cloud/python-sdk/commit/5b4dac164988d9acdb088436fb64cbdc0787960f))
+
+### Unknown
+
+* Operation respone and meta on error ([`c4ec534`](https://github.com/yandex-cloud/python-sdk/commit/c4ec53467c627367a9ab6c4b61697b05d1c43db5))
+
+* dataproc start/stop operations ([`e198801`](https://github.com/yandex-cloud/python-sdk/commit/e1988013d820619c092d23ca74563aab5efeef0f))
+
 ## v0.337.0 (2025-03-19)
 
 ### Feature
