@@ -1,4 +1,5 @@
 [build-system]
+version = "0.338.0"
 requires = ["setuptools>=61.2"]
 build-backend = "setuptools.build_meta"
 
@@ -80,7 +81,10 @@ namespaces = false
 
 [tool.semantic_release]
 version_variables = ["yandexcloud/__init__.py:__version__"]
-version_toml = ["pyproject.toml:project.version"]
+version_toml = [
+    "pyproject.toml:build-system.version",
+    "pyproject.toml:project.version"
+]
 # https://python-semantic-release.readthedocs.io/en/latest/configuration.html#major-on-zero
 major_on_zero = false
 commit_parser = "angular"
