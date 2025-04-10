@@ -3,7 +3,7 @@
 # mypy: ignore-errors
 import logging
 import random
-from typing import Dict, List
+from typing import Dict, List, Optional
 from dataclasses import dataclass
 
 import yandex.cloud.spark.v1.cluster_pb2 as cluster_pb
@@ -87,15 +87,16 @@ class SparkClusterParameters:
         From 1 to 24.
     :type maintenance_hour: int, optional
     """
+
     # pylint: disable=too-many-instance-attributes
 
     folder_id: str
     service_account_id: str
-    name: str | None = None
+    name: Optional[str] = None
     description: str = ""
-    labels: Dict[str, str] | None = None
-    subnet_ids: List[str] | None = None
-    security_group_ids: List[str] | None = None
+    labels: Optional[Dict[str, str]] = None
+    subnet_ids: Optional[List[str]] = None
+    security_group_ids: Optional[List[str]] = None
     deletion_protection: bool = False
     driver_pool_resource_preset: str = ""
     driver_pool_size: int = 0
@@ -106,14 +107,14 @@ class SparkClusterParameters:
     executor_pool_min_size: int = 0
     executor_pool_max_size: int = 0
     logging_enabled: bool = True
-    log_group_id: str | None = None
-    log_folder_id: str | None = None
+    log_group_id: Optional[str] = None
+    log_folder_id: Optional[str] = None
     history_server_enabled: bool = True
-    pip_packages: List[str] | None = None
-    deb_packages: List[str] | None = None
+    pip_packages: Optional[List[str]] = None
+    deb_packages: Optional[List[str]] = None
     metastore_cluster_id: str = ""
-    maintenance_weekday: int | None = None
-    maintenance_hour: int | None = None
+    maintenance_weekday: Optional[int] = None
+    maintenance_hour: Optional[int] = None
 
 
 @dataclass
@@ -152,19 +153,20 @@ class SparkJobParameters:
         dependency conflicts.
     :type exclude_packages: List[str], optional
     """
+
     # pylint: disable=too-many-instance-attributes
 
     name: str = ""
     main_jar_file_uri: str = ""
     main_class: str = ""
-    args: List[str] | None = None
-    properties: Dict[str, str] | None = None
-    packages: List[str] | None = None
-    file_uris: List[str] | None = None
-    jar_file_uris: List[str] | None = None
-    archive_uris: List[str] | None = None
-    repositories: List[str] | None = None
-    exclude_packages: List[str] | None = None
+    args: Optional[List[str]] = None
+    properties: Optional[Dict[str, str]] = None
+    packages: Optional[List[str]] = None
+    file_uris: Optional[List[str]] = None
+    jar_file_uris: Optional[List[str]] = None
+    archive_uris: Optional[List[str]] = None
+    repositories: Optional[List[str]] = None
+    exclude_packages: Optional[List[str]] = None
 
 
 @dataclass
@@ -202,19 +204,20 @@ class PysparkJobParameters:
         dependency conflicts.
     :type exclude_packages: List[str], optional
     """
+
     # pylint: disable=too-many-instance-attributes
 
     name: str = ""
     main_python_file_uri: str = ""
-    args: List[str] | None = None
-    properties: Dict[str, str] | None = None
-    packages: List[str] | None = None
-    file_uris: List[str] | None = None
-    python_file_uris: List[str] | None = None
-    jar_file_uris: List[str] | None = None
-    archive_uris: List[str] | None = None
-    repositories: List[str] | None = None
-    exclude_packages: List[str] | None = None
+    args: Optional[List[str]] = None
+    properties: Optional[Dict[str, str]] = None
+    packages: Optional[List[str]] = None
+    file_uris: Optional[List[str]] = None
+    python_file_uris: Optional[List[str]] = None
+    jar_file_uris: Optional[List[str]] = None
+    archive_uris: Optional[List[str]] = None
+    repositories: Optional[List[str]] = None
+    exclude_packages: Optional[List[str]] = None
 
 
 class Spark:
@@ -245,6 +248,7 @@ class Spark:
         :return: Operation result
         :rtype: OperationResult
         """
+
         # pylint: disable=too-many-branches
 
         if not spec.folder_id:
@@ -380,7 +384,7 @@ class Spark:
         self.cluster_id = result.response.id
         return result
 
-    def delete_cluster(self, cluster_id: str | None = None):
+    def delete_cluster(self, cluster_id: Optional[str] = None):
         """
         Delete cluster.
 
@@ -405,7 +409,7 @@ class Spark:
             meta_type=cluster_service_pb.DeleteClusterMetadata,
         )
 
-    def stop_cluster(self, cluster_id: str | None = None):
+    def stop_cluster(self, cluster_id: Optional[str] = None):
         """
         Stop cluster.
 
@@ -430,7 +434,7 @@ class Spark:
             meta_type=cluster_service_pb.StopClusterMetadata,
         )
 
-    def start_cluster(self, cluster_id: str | None = None):
+    def start_cluster(self, cluster_id: Optional[str] = None):
         """
         Start cluster.
 
@@ -455,7 +459,7 @@ class Spark:
             meta_type=cluster_service_pb.StartClusterMetadata,
         )
 
-    def create_spark_job(self, spec: SparkJobParameters, cluster_id: str | None = None):
+    def create_spark_job(self, spec: SparkJobParameters, cluster_id: Optional[str] = None):
         """
         Run spark job.
 
@@ -498,7 +502,7 @@ class Spark:
             meta_type=job_service_pb.CreateJobMetadata,
         )
 
-    def create_pyspark_job(self, spec: PysparkJobParameters, cluster_id: str | None = None):
+    def create_pyspark_job(self, spec: PysparkJobParameters, cluster_id: Optional[str] = None):
         """
         Run Pyspark job on the cluster.
 
@@ -541,7 +545,7 @@ class Spark:
             meta_type=job_service_pb.CreateJobMetadata,
         )
 
-    def get_job(self, job_id: str, cluster_id: str | None = None):
+    def get_job(self, job_id: str, cluster_id: Optional[str] = None):
         """
         Get job info.
 
@@ -564,7 +568,7 @@ class Spark:
         job = self.sdk.client(job_service_grpc_pb.JobServiceStub).Get(request)
         return job, job_pb.Job.Status.Name(job.status)
 
-    def get_job_log(self, job_id: str, cluster_id: str | None = None):
+    def get_job_log(self, job_id: str, cluster_id: Optional[str] = None):
         """
         Get job log.
 

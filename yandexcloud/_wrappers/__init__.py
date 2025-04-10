@@ -1,9 +1,7 @@
 from typing import TYPE_CHECKING
 
 from yandexcloud._wrappers.dataproc import Dataproc, InitializationAction
-from yandexcloud._wrappers.spark import (
-    Spark, SparkClusterParameters, SparkJobParameters, PysparkJobParameters
-)
+from yandexcloud._wrappers.spark import Spark, SparkClusterParameters, SparkJobParameters, PysparkJobParameters
 
 if TYPE_CHECKING:
     from yandexcloud._sdk import SDK
