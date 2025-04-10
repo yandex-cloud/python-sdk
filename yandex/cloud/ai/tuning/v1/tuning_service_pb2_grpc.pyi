@@ -55,6 +55,26 @@ class TuningServiceStub:
         yandex.cloud.ai.tuning.v1.tuning_service_pb2.ListErrorsResponse,
     ]
 
+    CreateDraft: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.tuning.v1.tuning_service_pb2.CreateTuningDraftRequest,
+        yandex.cloud.ai.tuning.v1.tuning_service_pb2.CreateTuningDraftResponse,
+    ]
+
+    UpdateDraft: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.tuning.v1.tuning_service_pb2.UpdateTuningDraftRequest,
+        yandex.cloud.ai.tuning.v1.tuning_service_pb2.UpdateTuningDraftResponse,
+    ]
+
+    DeleteDraft: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.tuning.v1.tuning_service_pb2.DeleteTuningDraftRequest,
+        yandex.cloud.ai.tuning.v1.tuning_service_pb2.DeleteTuningDraftResponse,
+    ]
+
+    TuneDraft: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.tuning.v1.tuning_service_pb2.TuneDraftRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+
 class TuningServiceAsyncStub:
     Tune: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.tuning.v1.tuning_service_pb2.TuningRequest,
@@ -89,6 +109,26 @@ class TuningServiceAsyncStub:
     ListErrors: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.tuning.v1.tuning_service_pb2.ListErrorsRequest,
         yandex.cloud.ai.tuning.v1.tuning_service_pb2.ListErrorsResponse,
+    ]
+
+    CreateDraft: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.tuning.v1.tuning_service_pb2.CreateTuningDraftRequest,
+        yandex.cloud.ai.tuning.v1.tuning_service_pb2.CreateTuningDraftResponse,
+    ]
+
+    UpdateDraft: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.tuning.v1.tuning_service_pb2.UpdateTuningDraftRequest,
+        yandex.cloud.ai.tuning.v1.tuning_service_pb2.UpdateTuningDraftResponse,
+    ]
+
+    DeleteDraft: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.tuning.v1.tuning_service_pb2.DeleteTuningDraftRequest,
+        yandex.cloud.ai.tuning.v1.tuning_service_pb2.DeleteTuningDraftResponse,
+    ]
+
+    TuneDraft: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.ai.tuning.v1.tuning_service_pb2.TuneDraftRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
     ]
 
 class TuningServiceServicer(metaclass=abc.ABCMeta):
@@ -140,5 +180,33 @@ class TuningServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.ai.tuning.v1.tuning_service_pb2.ListErrorsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.ai.tuning.v1.tuning_service_pb2.ListErrorsResponse, collections.abc.Awaitable[yandex.cloud.ai.tuning.v1.tuning_service_pb2.ListErrorsResponse]]: ...
+
+    @abc.abstractmethod
+    def CreateDraft(
+        self,
+        request: yandex.cloud.ai.tuning.v1.tuning_service_pb2.CreateTuningDraftRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.ai.tuning.v1.tuning_service_pb2.CreateTuningDraftResponse, collections.abc.Awaitable[yandex.cloud.ai.tuning.v1.tuning_service_pb2.CreateTuningDraftResponse]]: ...
+
+    @abc.abstractmethod
+    def UpdateDraft(
+        self,
+        request: yandex.cloud.ai.tuning.v1.tuning_service_pb2.UpdateTuningDraftRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.ai.tuning.v1.tuning_service_pb2.UpdateTuningDraftResponse, collections.abc.Awaitable[yandex.cloud.ai.tuning.v1.tuning_service_pb2.UpdateTuningDraftResponse]]: ...
+
+    @abc.abstractmethod
+    def DeleteDraft(
+        self,
+        request: yandex.cloud.ai.tuning.v1.tuning_service_pb2.DeleteTuningDraftRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.ai.tuning.v1.tuning_service_pb2.DeleteTuningDraftResponse, collections.abc.Awaitable[yandex.cloud.ai.tuning.v1.tuning_service_pb2.DeleteTuningDraftResponse]]: ...
+
+    @abc.abstractmethod
+    def TuneDraft(
+        self,
+        request: yandex.cloud.ai.tuning.v1.tuning_service_pb2.TuneDraftRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
 
 def add_TuningServiceServicer_to_server(servicer: TuningServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

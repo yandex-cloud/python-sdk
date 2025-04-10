@@ -234,6 +234,7 @@ class SearchIndexTool(google.protobuf.message.Message):
 
     SEARCH_INDEX_IDS_FIELD_NUMBER: builtins.int
     MAX_NUM_RESULTS_FIELD_NUMBER: builtins.int
+    REPHRASER_OPTIONS_FIELD_NUMBER: builtins.int
     @property
     def search_index_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """A list of search index IDs that this tool will query. Currently, only a single index ID is supported."""
@@ -245,14 +246,22 @@ class SearchIndexTool(google.protobuf.message.Message):
         This ensures that the combined prompt and search results do not exceed the token constraints.
         """
 
+    @property
+    def rephraser_options(self) -> global___RephraserOptions:
+        """Options for rephrasing user queries.
+        Used to rewrite the last user message for search,
+        incorporating context from the previous conversation.
+        """
+
     def __init__(
         self,
         *,
         search_index_ids: collections.abc.Iterable[builtins.str] | None = ...,
         max_num_results: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        rephraser_options: global___RephraserOptions | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["max_num_results", b"max_num_results"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["max_num_results", b"max_num_results", "search_index_ids", b"search_index_ids"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["max_num_results", b"max_num_results", "rephraser_options", b"rephraser_options"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["max_num_results", b"max_num_results", "rephraser_options", b"rephraser_options", "search_index_ids", b"search_index_ids"]) -> None: ...
 
 global___SearchIndexTool = SearchIndexTool
 
@@ -339,3 +348,21 @@ class FunctionResult(google.protobuf.message.Message):
     def WhichOneof(self, oneof_group: typing.Literal["ContentType", b"ContentType"]) -> typing.Literal["content"] | None: ...
 
 global___FunctionResult = FunctionResult
+
+@typing.final
+class RephraserOptions(google.protobuf.message.Message):
+    """Options for configuring the rephrasing the last user message for search using context from previous conversation."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    REPHRASER_URI_FIELD_NUMBER: builtins.int
+    rephraser_uri: builtins.str
+    """The ID of the model used to rephrase the last user message for search."""
+    def __init__(
+        self,
+        *,
+        rephraser_uri: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["rephraser_uri", b"rephraser_uri"]) -> None: ...
+
+global___RephraserOptions = RephraserOptions

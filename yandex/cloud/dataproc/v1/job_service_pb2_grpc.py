@@ -28,7 +28,7 @@ if _version_not_supported:
 
 
 class JobServiceStub(object):
-    """A set of methods for managing Data Proc jobs.
+    """A set of methods for managing Yandex Data Processing jobs.
     """
 
     def __init__(self, channel):
@@ -65,7 +65,7 @@ class JobServiceStub(object):
 
 
 class JobServiceServicer(object):
-    """A set of methods for managing Data Proc jobs.
+    """A set of methods for managing Yandex Data Processing jobs.
     """
 
     def List(self, request, context):
@@ -97,7 +97,7 @@ class JobServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Cancel(self, request, context):
-        """Cancels the specified Dataproc job.
+        """Cancels the specified Yandex Data Processing job.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -140,7 +140,7 @@ def add_JobServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class JobService(object):
-    """A set of methods for managing Data Proc jobs.
+    """A set of methods for managing Yandex Data Processing jobs.
     """
 
     @staticmethod

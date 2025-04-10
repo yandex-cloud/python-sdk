@@ -356,8 +356,8 @@ class Info(google.protobuf.message.Message):
     LIVY_FIELD_NUMBER: builtins.int
     INIT_ACTS_FIELD_NUMBER: builtins.int
     report_count: builtins.int
-    """Report count is incremented every time report is sent by Dataproc Agent.
-    So Worker can use this property to make sure that Dataproc Agent got data sent by Worker through Dataproc Manager
+    """Report count is incremented every time report is sent by Yandex Data Processing Agent.
+    So Worker can use this property to make sure that Yandex Data Processing Agent got data sent by Worker through Yandex Data Processing Manager
     for synchronization purposes
     """
     @property

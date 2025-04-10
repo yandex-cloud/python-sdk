@@ -472,12 +472,15 @@ class PolicySettings(google.protobuf.message.Message):
                 INCLUDE_LAST_DAY_OF_MONTH_FIELD_NUMBER: builtins.int
                 MONTHS_FIELD_NUMBER: builtins.int
                 TYPE_FIELD_NUMBER: builtins.int
+                RUN_LATER_FIELD_NUMBER: builtins.int
                 include_last_day_of_month: builtins.bool
                 """If set to true, last day of month will activate
                 the policy.
                 """
                 type: global___PolicySettings.RepeatePeriod.ValueType
                 """Possible types: `REPEATE_PERIOD_UNSPECIFIED`, `HOURLY`, `DAILY`, `WEEKLY`, `MONTHLY`."""
+                run_later: builtins.bool
+                """If the machine is off, launch missed tasks on boot up."""
                 @property
                 def weekdays(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[global___PolicySettings.Day.ValueType]:
                     """Days in a week to perform a backup."""
@@ -520,9 +523,10 @@ class PolicySettings(google.protobuf.message.Message):
                     include_last_day_of_month: builtins.bool = ...,
                     months: collections.abc.Iterable[builtins.int] | None = ...,
                     type: global___PolicySettings.RepeatePeriod.ValueType = ...,
+                    run_later: builtins.bool = ...,
                 ) -> None: ...
                 def HasField(self, field_name: typing.Literal["repeat_every", b"repeat_every", "time_from", b"time_from", "time_to", b"time_to"]) -> builtins.bool: ...
-                def ClearField(self, field_name: typing.Literal["include_last_day_of_month", b"include_last_day_of_month", "monthdays", b"monthdays", "months", b"months", "repeat_at", b"repeat_at", "repeat_every", b"repeat_every", "time_from", b"time_from", "time_to", b"time_to", "type", b"type", "weekdays", b"weekdays"]) -> None: ...
+                def ClearField(self, field_name: typing.Literal["include_last_day_of_month", b"include_last_day_of_month", "monthdays", b"monthdays", "months", b"months", "repeat_at", b"repeat_at", "repeat_every", b"repeat_every", "run_later", b"run_later", "time_from", b"time_from", "time_to", b"time_to", "type", b"type", "weekdays", b"weekdays"]) -> None: ...
 
             @typing.final
             class SinceLastExecTime(google.protobuf.message.Message):
@@ -643,14 +647,19 @@ class PolicySettings(google.protobuf.message.Message):
     FAST_BACKUP_ENABLED_FIELD_NUMBER: builtins.int
     QUIESCE_SNAPSHOTTING_ENABLED_FIELD_NUMBER: builtins.int
     FILE_FILTERS_FIELD_NUMBER: builtins.int
+    SECTOR_BY_SECTOR_FIELD_NUMBER: builtins.int
+    VALIDATION_ENABLED_FIELD_NUMBER: builtins.int
+    LVM_SNAPSHOTTING_ENABLED_FIELD_NUMBER: builtins.int
     compression: global___PolicySettings.Compression.ValueType
     """Archive compression level."""
     format: global___Format.ValueType
-    """Format of the Cyberprotect backup archive."""
+    """Format of the Acronis backup archive."""
     multi_volume_snapshotting_enabled: builtins.bool
     """If true, snapshots of multiple volumes will be taken simultaneously."""
     preserve_file_security_settings: builtins.bool
-    """If true, the file security settings will be preserved."""
+    """If true, the file security settings will be preserved.
+    Deprecated.
+    """
     silent_mode_enabled: builtins.bool
     """If true, a user interaction will be avoided when possible. Equals to false if value is not specified."""
     cbt: global___PolicySettings.ChangedBlockTracking.ValueType
@@ -658,7 +667,26 @@ class PolicySettings(google.protobuf.message.Message):
     fast_backup_enabled: builtins.bool
     """If true, determines whether a file has changed by the file size and timestamp. Otherwise, the entire file contents are compared to those stored in the backup."""
     quiesce_snapshotting_enabled: builtins.bool
-    """If true, a quiesced snapshot of the virtual machine will be taken."""
+    """If true, a quiesced snapshot of the virtual machine will be taken.
+    Deprecated.
+    """
+    sector_by_sector: builtins.bool
+    """A sector-by-sector backup of a disk or volume creates a backup copy of all sectors of the disk or volume, 
+    including those that do not contain data.
+    Therefore, the size of such a backup copy will be equal to the size of the original disk or volume. 
+    This method can be used to back up a disk or volume with an unsupported file system.
+    """
+    validation_enabled: builtins.bool
+    """Validation is a time-consuming process, even with incremental or differential backups of small amounts of data. 
+    This is because not only the data physically contained in the backup copy is verified,
+    but all data restored when it is selected. 
+    This option requires access to previously created backup copies.
+    """
+    lvm_snapshotting_enabled: builtins.bool
+    """LVM will be used to create the volume snapshot.
+    If LVM fails to create a snapshot (for example, because there is not enough free space),
+    the software will create the snapshot itself.
+    """
     @property
     def reattempts(self) -> global___PolicySettings.RetriesConfiguration:
         """Configuration of retries on recoverable errors during the backup operations like reconnection to destination. No attempts to fix recoverable errors will be made if retry configuration is not set."""
@@ -715,9 +743,12 @@ class PolicySettings(google.protobuf.message.Message):
         fast_backup_enabled: builtins.bool = ...,
         quiesce_snapshotting_enabled: builtins.bool = ...,
         file_filters: global___PolicySettings.FileFilters | None = ...,
+        sector_by_sector: builtins.bool = ...,
+        validation_enabled: builtins.bool = ...,
+        lvm_snapshotting_enabled: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["archive", b"archive", "file_filters", b"file_filters", "performance_window", b"performance_window", "reattempts", b"reattempts", "retention", b"retention", "scheduling", b"scheduling", "splitting", b"splitting", "vm_snapshot_reattempts", b"vm_snapshot_reattempts", "vss", b"vss"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["archive", b"archive", "cbt", b"cbt", "compression", b"compression", "fast_backup_enabled", b"fast_backup_enabled", "file_filters", b"file_filters", "format", b"format", "multi_volume_snapshotting_enabled", b"multi_volume_snapshotting_enabled", "performance_window", b"performance_window", "preserve_file_security_settings", b"preserve_file_security_settings", "quiesce_snapshotting_enabled", b"quiesce_snapshotting_enabled", "reattempts", b"reattempts", "retention", b"retention", "scheduling", b"scheduling", "silent_mode_enabled", b"silent_mode_enabled", "splitting", b"splitting", "vm_snapshot_reattempts", b"vm_snapshot_reattempts", "vss", b"vss"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["archive", b"archive", "cbt", b"cbt", "compression", b"compression", "fast_backup_enabled", b"fast_backup_enabled", "file_filters", b"file_filters", "format", b"format", "lvm_snapshotting_enabled", b"lvm_snapshotting_enabled", "multi_volume_snapshotting_enabled", b"multi_volume_snapshotting_enabled", "performance_window", b"performance_window", "preserve_file_security_settings", b"preserve_file_security_settings", "quiesce_snapshotting_enabled", b"quiesce_snapshotting_enabled", "reattempts", b"reattempts", "retention", b"retention", "scheduling", b"scheduling", "sector_by_sector", b"sector_by_sector", "silent_mode_enabled", b"silent_mode_enabled", "splitting", b"splitting", "validation_enabled", b"validation_enabled", "vm_snapshot_reattempts", b"vm_snapshot_reattempts", "vss", b"vss"]) -> None: ...
 
 global___PolicySettings = PolicySettings
 

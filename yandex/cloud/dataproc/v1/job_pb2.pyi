@@ -22,7 +22,7 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class Job(google.protobuf.message.Message):
-    """A Data Proc job. For details about the concept, see [documentation](/docs/data-proc/concepts/jobs)."""
+    """A Yandex Data Processing job. For details about the concept, see [documentation](/docs/data-proc/concepts/jobs)."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -81,7 +81,7 @@ class Job(google.protobuf.message.Message):
     id: builtins.str
     """ID of the job. Generated at creation time."""
     cluster_id: builtins.str
-    """ID of the Data Proc cluster that the job belongs to."""
+    """ID of the Yandex Data Processing cluster that the job belongs to."""
     name: builtins.str
     """Name of the job, specified in the [JobService.Create] request."""
     created_by: builtins.str
@@ -222,21 +222,21 @@ class MapreduceJob(google.protobuf.message.Message):
 
     @property
     def jar_file_uris(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """JAR file URIs to add to CLASSPATH of the Data Proc driver and each task."""
+        """JAR file URIs to add to CLASSPATH of the Yandex Data Processing driver and each task."""
 
     @property
     def file_uris(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """URIs of resource files to be copied to the working directory of Data Proc drivers
+        """URIs of resource files to be copied to the working directory of Yandex Data Processing drivers
         and distributed Hadoop tasks.
         """
 
     @property
     def archive_uris(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """URIs of archives to be extracted to the working directory of Data Proc drivers and tasks."""
+        """URIs of archives to be extracted to the working directory of Yandex Data Processing drivers and tasks."""
 
     @property
     def properties(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Property names and values, used to configure Data Proc and MapReduce."""
+        """Property names and values, used to configure Yandex Data Processing and MapReduce."""
 
     def __init__(
         self,
@@ -295,21 +295,21 @@ class SparkJob(google.protobuf.message.Message):
 
     @property
     def jar_file_uris(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """JAR file URIs to add to CLASSPATH of the Data Proc driver and each task."""
+        """JAR file URIs to add to CLASSPATH of the Yandex Data Processing driver and each task."""
 
     @property
     def file_uris(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """URIs of resource files to be copied to the working directory of Data Proc drivers
+        """URIs of resource files to be copied to the working directory of Yandex Data Processing drivers
         and distributed Hadoop tasks.
         """
 
     @property
     def archive_uris(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """URIs of archives to be extracted to the working directory of Data Proc drivers and tasks."""
+        """URIs of archives to be extracted to the working directory of Yandex Data Processing drivers and tasks."""
 
     @property
     def properties(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Property names and values, used to configure Data Proc and Spark."""
+        """Property names and values, used to configure Yandex Data Processing and Spark."""
 
     @property
     def packages(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
@@ -379,21 +379,21 @@ class PysparkJob(google.protobuf.message.Message):
 
     @property
     def jar_file_uris(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """JAR file URIs to add to CLASSPATH of the Data Proc driver and each task."""
+        """JAR file URIs to add to CLASSPATH of the Yandex Data Processing driver and each task."""
 
     @property
     def file_uris(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """URIs of resource files to be copied to the working directory of Data Proc drivers
+        """URIs of resource files to be copied to the working directory of Yandex Data Processing drivers
         and distributed Hadoop tasks.
         """
 
     @property
     def archive_uris(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """URIs of archives to be extracted to the working directory of Data Proc drivers and tasks."""
+        """URIs of archives to be extracted to the working directory of Yandex Data Processing drivers and tasks."""
 
     @property
     def properties(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Property names and values, used to configure Data Proc and PySpark."""
+        """Property names and values, used to configure Yandex Data Processing and PySpark."""
 
     @property
     def python_file_uris(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
@@ -495,7 +495,7 @@ class HiveJob(google.protobuf.message.Message):
     """URI of the script with all the necessary Hive queries."""
     @property
     def properties(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """Property names and values, used to configure Data Proc and Hive."""
+        """Property names and values, used to configure Yandex Data Processing and Hive."""
 
     @property
     def script_variables(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:

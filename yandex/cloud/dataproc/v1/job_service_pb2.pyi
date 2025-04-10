@@ -177,9 +177,9 @@ class CancelJobRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     JOB_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """Required. ID of the Dataproc cluster."""
+    """Required. ID of the Yandex Data Processing cluster."""
     job_id: builtins.str
-    """Required. ID of the Dataproc job to cancel."""
+    """Required. ID of the Yandex Data Processing job to cancel."""
     def __init__(
         self,
         *,
@@ -231,7 +231,7 @@ class ListJobLogResponse(google.protobuf.message.Message):
     CONTENT_FIELD_NUMBER: builtins.int
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     content: builtins.str
-    """Requested part of Data Proc Job log."""
+    """Requested part of Yandex Data Processing Job log."""
     next_page_token: builtins.str
     """This token allows you to get the next page of results for ListLog requests,
     if the number of results is larger than `page_size` specified in the request.

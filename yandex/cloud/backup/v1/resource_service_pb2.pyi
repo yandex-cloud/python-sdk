@@ -76,14 +76,18 @@ class GetResourceRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     COMPUTE_INSTANCE_ID_FIELD_NUMBER: builtins.int
+    INCLUDE_TENANT_INFO_FIELD_NUMBER: builtins.int
     compute_instance_id: builtins.str
     """Compute Cloud instance ID."""
+    include_tenant_info: builtins.bool
+    """If flag is set tenant informantion would be added to the response."""
     def __init__(
         self,
         *,
         compute_instance_id: builtins.str = ...,
+        include_tenant_info: builtins.bool = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["compute_instance_id", b"compute_instance_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["compute_instance_id", b"compute_instance_id", "include_tenant_info", b"include_tenant_info"]) -> None: ...
 
 global___GetResourceRequest = GetResourceRequest
 

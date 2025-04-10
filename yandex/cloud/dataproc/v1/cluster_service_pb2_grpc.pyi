@@ -20,7 +20,7 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class ClusterServiceStub:
-    """A set of methods for managing Data Proc clusters."""
+    """A set of methods for managing Yandex Data Processing clusters."""
 
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Get: grpc.UnaryUnaryMultiCallable[
@@ -84,10 +84,10 @@ class ClusterServiceStub:
         yandex.cloud.dataproc.v1.cluster_service_pb2.ListUILinksRequest,
         yandex.cloud.dataproc.v1.cluster_service_pb2.ListUILinksResponse,
     ]
-    """Retrieves a list of links to web interfaces being proxied by Data Proc UI Proxy."""
+    """Retrieves a list of links to web interfaces being proxied by Yandex Data Processing UI Proxy."""
 
 class ClusterServiceAsyncStub:
-    """A set of methods for managing Data Proc clusters."""
+    """A set of methods for managing Yandex Data Processing clusters."""
 
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.dataproc.v1.cluster_service_pb2.GetClusterRequest,
@@ -150,10 +150,10 @@ class ClusterServiceAsyncStub:
         yandex.cloud.dataproc.v1.cluster_service_pb2.ListUILinksRequest,
         yandex.cloud.dataproc.v1.cluster_service_pb2.ListUILinksResponse,
     ]
-    """Retrieves a list of links to web interfaces being proxied by Data Proc UI Proxy."""
+    """Retrieves a list of links to web interfaces being proxied by Yandex Data Processing UI Proxy."""
 
 class ClusterServiceServicer(metaclass=abc.ABCMeta):
-    """A set of methods for managing Data Proc clusters."""
+    """A set of methods for managing Yandex Data Processing clusters."""
 
     @abc.abstractmethod
     def Get(
@@ -236,6 +236,6 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.dataproc.v1.cluster_service_pb2.ListUILinksRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.dataproc.v1.cluster_service_pb2.ListUILinksResponse, collections.abc.Awaitable[yandex.cloud.dataproc.v1.cluster_service_pb2.ListUILinksResponse]]:
-        """Retrieves a list of links to web interfaces being proxied by Data Proc UI Proxy."""
+        """Retrieves a list of links to web interfaces being proxied by Yandex Data Processing UI Proxy."""
 
 def add_ClusterServiceServicer_to_server(servicer: ClusterServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

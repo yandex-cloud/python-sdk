@@ -253,6 +253,8 @@ class Master(google.protobuf.message.Message):
     MAINTENANCE_POLICY_FIELD_NUMBER: builtins.int
     SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
     MASTER_LOGGING_FIELD_NUMBER: builtins.int
+    RESOURCES_FIELD_NUMBER: builtins.int
+    SCALE_POLICY_FIELD_NUMBER: builtins.int
     etcd_cluster_size: builtins.int
     """Number of etcd nodes in cluster."""
     version: builtins.str
@@ -295,6 +297,14 @@ class Master(google.protobuf.message.Message):
     def master_logging(self) -> global___MasterLogging:
         """Cloud Logging for master components."""
 
+    @property
+    def resources(self) -> global___MasterResources:
+        """Computing resources of each master instance such as the amount of memory and number of cores."""
+
+    @property
+    def scale_policy(self) -> global___MasterScalePolicy:
+        """Scale policy of the master."""
+
     def __init__(
         self,
         *,
@@ -309,9 +319,11 @@ class Master(google.protobuf.message.Message):
         maintenance_policy: global___MasterMaintenancePolicy | None = ...,
         security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         master_logging: global___MasterLogging | None = ...,
+        resources: global___MasterResources | None = ...,
+        scale_policy: global___MasterScalePolicy | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["endpoints", b"endpoints", "maintenance_policy", b"maintenance_policy", "master_auth", b"master_auth", "master_logging", b"master_logging", "master_type", b"master_type", "regional_master", b"regional_master", "version_info", b"version_info", "zonal_master", b"zonal_master"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["endpoints", b"endpoints", "etcd_cluster_size", b"etcd_cluster_size", "locations", b"locations", "maintenance_policy", b"maintenance_policy", "master_auth", b"master_auth", "master_logging", b"master_logging", "master_type", b"master_type", "regional_master", b"regional_master", "security_group_ids", b"security_group_ids", "version", b"version", "version_info", b"version_info", "zonal_master", b"zonal_master"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["endpoints", b"endpoints", "maintenance_policy", b"maintenance_policy", "master_auth", b"master_auth", "master_logging", b"master_logging", "master_type", b"master_type", "regional_master", b"regional_master", "resources", b"resources", "scale_policy", b"scale_policy", "version_info", b"version_info", "zonal_master", b"zonal_master"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["endpoints", b"endpoints", "etcd_cluster_size", b"etcd_cluster_size", "locations", b"locations", "maintenance_policy", b"maintenance_policy", "master_auth", b"master_auth", "master_logging", b"master_logging", "master_type", b"master_type", "regional_master", b"regional_master", "resources", b"resources", "scale_policy", b"scale_policy", "security_group_ids", b"security_group_ids", "version", b"version", "version_info", b"version_info", "zonal_master", b"zonal_master"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["master_type", b"master_type"]) -> typing.Literal["zonal_master", "regional_master"] | None: ...
 
 global___Master = Master
@@ -612,3 +624,83 @@ class Cilium(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["routing_mode", b"routing_mode"]) -> None: ...
 
 global___Cilium = Cilium
+
+@typing.final
+class MasterResources(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CORES_FIELD_NUMBER: builtins.int
+    CORE_FRACTION_FIELD_NUMBER: builtins.int
+    MEMORY_FIELD_NUMBER: builtins.int
+    cores: builtins.int
+    """The number of cores available to each master instance."""
+    core_fraction: builtins.int
+    """Baseline level of CPU performance with the ability to burst performance above that baseline level.
+    This field sets baseline performance for each core.
+    """
+    memory: builtins.int
+    """The amount of memory available to each master instance, specified in bytes."""
+    def __init__(
+        self,
+        *,
+        cores: builtins.int = ...,
+        core_fraction: builtins.int = ...,
+        memory: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["core_fraction", b"core_fraction", "cores", b"cores", "memory", b"memory"]) -> None: ...
+
+global___MasterResources = MasterResources
+
+@typing.final
+class MasterScalePolicy(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class FixedScale(google.protobuf.message.Message):
+        """Fixed master instance resources."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        RESOURCE_PRESET_ID_FIELD_NUMBER: builtins.int
+        resource_preset_id: builtins.str
+        """ID of computing resources preset to be used by master."""
+        def __init__(
+            self,
+            *,
+            resource_preset_id: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["resource_preset_id", b"resource_preset_id"]) -> None: ...
+
+    @typing.final
+    class AutoScale(google.protobuf.message.Message):
+        """Autoscaled master instance resources."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        MIN_RESOURCE_PRESET_ID_FIELD_NUMBER: builtins.int
+        min_resource_preset_id: builtins.str
+        """ID of computing resources preset to be used as lower boundary for scaling."""
+        def __init__(
+            self,
+            *,
+            min_resource_preset_id: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["min_resource_preset_id", b"min_resource_preset_id"]) -> None: ...
+
+    FIXED_SCALE_FIELD_NUMBER: builtins.int
+    AUTO_SCALE_FIELD_NUMBER: builtins.int
+    @property
+    def fixed_scale(self) -> global___MasterScalePolicy.FixedScale: ...
+    @property
+    def auto_scale(self) -> global___MasterScalePolicy.AutoScale: ...
+    def __init__(
+        self,
+        *,
+        fixed_scale: global___MasterScalePolicy.FixedScale | None = ...,
+        auto_scale: global___MasterScalePolicy.AutoScale | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["auto_scale", b"auto_scale", "fixed_scale", b"fixed_scale", "scale_type", b"scale_type"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["auto_scale", b"auto_scale", "fixed_scale", b"fixed_scale", "scale_type", b"scale_type"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["scale_type", b"scale_type"]) -> typing.Literal["fixed_scale", "auto_scale"] | None: ...
+
+global___MasterScalePolicy = MasterScalePolicy

@@ -40,7 +40,7 @@ class _RoleEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeW
     * ZooKeeper
     """
     DATANODE: _Role.ValueType  # 2
-    """The subcluster is a DATANODE in a Data Proc cluster.
+    """The subcluster is a DATANODE in a Yandex Data Processing cluster.
 
     DATANODE can run the following services, depending on the requested components:
     * HDFS DataNode
@@ -49,7 +49,7 @@ class _RoleEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeW
     * Spark libraries
     """
     COMPUTENODE: _Role.ValueType  # 3
-    """The subcluster is a COMPUTENODE in a Data Proc cluster.
+    """The subcluster is a COMPUTENODE in a Yandex Data Processing cluster.
 
     COMPUTENODE can run the following services, depending on the requested components:
     * YARN NodeManager
@@ -72,7 +72,7 @@ Master can run the following services, depending on the requested components:
 * ZooKeeper
 """
 DATANODE: Role.ValueType  # 2
-"""The subcluster is a DATANODE in a Data Proc cluster.
+"""The subcluster is a DATANODE in a Yandex Data Processing cluster.
 
 DATANODE can run the following services, depending on the requested components:
 * HDFS DataNode
@@ -81,7 +81,7 @@ DATANODE can run the following services, depending on the requested components:
 * Spark libraries
 """
 COMPUTENODE: Role.ValueType  # 3
-"""The subcluster is a COMPUTENODE in a Data Proc cluster.
+"""The subcluster is a COMPUTENODE in a Yandex Data Processing cluster.
 
 COMPUTENODE can run the following services, depending on the requested components:
 * YARN NodeManager
@@ -147,7 +147,7 @@ global___AutoscalingConfig = AutoscalingConfig
 
 @typing.final
 class Subcluster(google.protobuf.message.Message):
-    """A Data Proc subcluster. For details about the concept, see [documentation](/docs/data-proc/concepts/)."""
+    """A Yandex Data Processing subcluster. For details about the concept, see [documentation](/docs/data-proc/concepts/)."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -165,7 +165,7 @@ class Subcluster(google.protobuf.message.Message):
     id: builtins.str
     """ID of the subcluster. Generated at creation time."""
     cluster_id: builtins.str
-    """ID of the Data Proc cluster that the subcluster belongs to."""
+    """ID of the Yandex Data Processing cluster that the subcluster belongs to."""
     name: builtins.str
     """Name of the subcluster. The name is unique within the cluster."""
     role: global___Role.ValueType
@@ -212,7 +212,7 @@ global___Subcluster = Subcluster
 
 @typing.final
 class Host(google.protobuf.message.Message):
-    """A Data Proc host. For details about the concept, see [documentation](/docs/data-proc/concepts/)."""
+    """A Yandex Data Processing host. For details about the concept, see [documentation](/docs/data-proc/concepts/)."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -222,16 +222,16 @@ class Host(google.protobuf.message.Message):
     COMPUTE_INSTANCE_ID_FIELD_NUMBER: builtins.int
     ROLE_FIELD_NUMBER: builtins.int
     name: builtins.str
-    """Name of the Data Proc host. The host name is assigned by Data Proc at creation time
-    and cannot be changed. The name is generated to be unique across all Data Proc
+    """Name of the Yandex Data Processing host. The host name is assigned by Yandex Data Processing at creation time
+    and cannot be changed. The name is generated to be unique across all Yandex Data Processing
     hosts that exist on the platform, as it defines the FQDN of the host.
     """
     subcluster_id: builtins.str
-    """ID of the Data Proc subcluster that the host belongs to."""
+    """ID of the Yandex Data Processing subcluster that the host belongs to."""
     health: yandex.cloud.dataproc.v1.common_pb2.Health.ValueType
     """Status code of the aggregated health of the host."""
     compute_instance_id: builtins.str
-    """ID of the Compute virtual machine that is used as the Data Proc host."""
+    """ID of the Compute virtual machine that is used as the Yandex Data Processing host."""
     role: global___Role.ValueType
     """Role of the host in the cluster."""
     def __init__(

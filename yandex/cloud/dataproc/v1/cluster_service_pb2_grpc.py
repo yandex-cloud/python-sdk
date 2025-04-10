@@ -28,7 +28,7 @@ if _version_not_supported:
 
 
 class ClusterServiceStub(object):
-    """A set of methods for managing Data Proc clusters.
+    """A set of methods for managing Yandex Data Processing clusters.
     """
 
     def __init__(self, channel):
@@ -90,7 +90,7 @@ class ClusterServiceStub(object):
 
 
 class ClusterServiceServicer(object):
-    """A set of methods for managing Data Proc clusters.
+    """A set of methods for managing Yandex Data Processing clusters.
     """
 
     def Get(self, request, context):
@@ -159,7 +159,7 @@ class ClusterServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListUILinks(self, request, context):
-        """Retrieves a list of links to web interfaces being proxied by Data Proc UI Proxy.
+        """Retrieves a list of links to web interfaces being proxied by Yandex Data Processing UI Proxy.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -227,7 +227,7 @@ def add_ClusterServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class ClusterService(object):
-    """A set of methods for managing Data Proc clusters.
+    """A set of methods for managing Yandex Data Processing clusters.
     """
 
     @staticmethod

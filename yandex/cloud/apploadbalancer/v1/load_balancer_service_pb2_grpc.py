@@ -112,6 +112,16 @@ class LoadBalancerServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_load__balancer__service__pb2.ListLoadBalancerOperationsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_load__balancer__service__pb2.ListLoadBalancerOperationsResponse.FromString,
                 _registered_method=True)
+        self.StartZonalShift = channel.unary_unary(
+                '/yandex.cloud.apploadbalancer.v1.LoadBalancerService/StartZonalShift',
+                request_serializer=yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_load__balancer__service__pb2.StartZonalShiftRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.CancelZonalShift = channel.unary_unary(
+                '/yandex.cloud.apploadbalancer.v1.LoadBalancerService/CancelZonalShift',
+                request_serializer=yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_load__balancer__service__pb2.CancelZonalShiftRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
 
 
 class LoadBalancerServiceServicer(object):
@@ -233,6 +243,20 @@ class LoadBalancerServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def StartZonalShift(self, request, context):
+        """Start ZonalShift for the specified load balancer.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CancelZonalShift(self, request, context):
+        """Cancel ZonalShift for the specified load balancer.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_LoadBalancerServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -310,6 +334,16 @@ def add_LoadBalancerServiceServicer_to_server(servicer, server):
                     servicer.ListOperations,
                     request_deserializer=yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_load__balancer__service__pb2.ListLoadBalancerOperationsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_load__balancer__service__pb2.ListLoadBalancerOperationsResponse.SerializeToString,
+            ),
+            'StartZonalShift': grpc.unary_unary_rpc_method_handler(
+                    servicer.StartZonalShift,
+                    request_deserializer=yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_load__balancer__service__pb2.StartZonalShiftRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'CancelZonalShift': grpc.unary_unary_rpc_method_handler(
+                    servicer.CancelZonalShift,
+                    request_deserializer=yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_load__balancer__service__pb2.CancelZonalShiftRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -718,6 +752,60 @@ class LoadBalancerService(object):
             '/yandex.cloud.apploadbalancer.v1.LoadBalancerService/ListOperations',
             yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_load__balancer__service__pb2.ListLoadBalancerOperationsRequest.SerializeToString,
             yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_load__balancer__service__pb2.ListLoadBalancerOperationsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def StartZonalShift(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.apploadbalancer.v1.LoadBalancerService/StartZonalShift',
+            yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_load__balancer__service__pb2.StartZonalShiftRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CancelZonalShift(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.apploadbalancer.v1.LoadBalancerService/CancelZonalShift',
+            yandex_dot_cloud_dot_apploadbalancer_dot_v1_dot_load__balancer__service__pb2.CancelZonalShiftRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
             insecure,

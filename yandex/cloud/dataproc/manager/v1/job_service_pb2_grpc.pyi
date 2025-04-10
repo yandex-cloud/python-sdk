@@ -23,7 +23,7 @@ class JobServiceStub:
         yandex.cloud.dataproc.manager.v1.job_service_pb2.ListJobsRequest,
         yandex.cloud.dataproc.manager.v1.job_service_pb2.ListJobsResponse,
     ]
-    """Retrieves a list of jobs for Data Proc cluster."""
+    """Retrieves a list of jobs for Yandex Data Processing cluster."""
 
     UpdateStatus: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.dataproc.manager.v1.job_service_pb2.UpdateJobStatusRequest,
@@ -35,7 +35,7 @@ class JobServiceStub:
         yandex.cloud.dataproc.manager.v1.job_service_pb2.ListJobsRequest,
         yandex.cloud.dataproc.manager.v1.job_service_pb2.ListSupportJobsResponse,
     ]
-    """Retrieves a list of support jobs for Data Proc cluster."""
+    """Retrieves a list of support jobs for Yandex Data Processing cluster."""
 
     UpdateSupportStatus: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.dataproc.manager.v1.job_service_pb2.UpdateSupportJobStatusRequest,
@@ -54,7 +54,7 @@ class JobServiceAsyncStub:
         yandex.cloud.dataproc.manager.v1.job_service_pb2.ListJobsRequest,
         yandex.cloud.dataproc.manager.v1.job_service_pb2.ListJobsResponse,
     ]
-    """Retrieves a list of jobs for Data Proc cluster."""
+    """Retrieves a list of jobs for Yandex Data Processing cluster."""
 
     UpdateStatus: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.dataproc.manager.v1.job_service_pb2.UpdateJobStatusRequest,
@@ -66,7 +66,7 @@ class JobServiceAsyncStub:
         yandex.cloud.dataproc.manager.v1.job_service_pb2.ListJobsRequest,
         yandex.cloud.dataproc.manager.v1.job_service_pb2.ListSupportJobsResponse,
     ]
-    """Retrieves a list of support jobs for Data Proc cluster."""
+    """Retrieves a list of support jobs for Yandex Data Processing cluster."""
 
     UpdateSupportStatus: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.dataproc.manager.v1.job_service_pb2.UpdateSupportJobStatusRequest,
@@ -87,7 +87,7 @@ class JobServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.dataproc.manager.v1.job_service_pb2.ListJobsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.dataproc.manager.v1.job_service_pb2.ListJobsResponse, collections.abc.Awaitable[yandex.cloud.dataproc.manager.v1.job_service_pb2.ListJobsResponse]]:
-        """Retrieves a list of jobs for Data Proc cluster."""
+        """Retrieves a list of jobs for Yandex Data Processing cluster."""
 
     @abc.abstractmethod
     def UpdateStatus(
@@ -103,7 +103,7 @@ class JobServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.dataproc.manager.v1.job_service_pb2.ListJobsRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.dataproc.manager.v1.job_service_pb2.ListSupportJobsResponse, collections.abc.Awaitable[yandex.cloud.dataproc.manager.v1.job_service_pb2.ListSupportJobsResponse]]:
-        """Retrieves a list of support jobs for Data Proc cluster."""
+        """Retrieves a list of support jobs for Yandex Data Processing cluster."""
 
     @abc.abstractmethod
     def UpdateSupportStatus(

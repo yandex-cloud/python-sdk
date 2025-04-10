@@ -128,6 +128,18 @@ class LoadBalancerServiceStub:
     ]
     """Lists operations for the specified application load balancer."""
 
+    StartZonalShift: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.apploadbalancer.v1.load_balancer_service_pb2.StartZonalShiftRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Start ZonalShift for the specified load balancer."""
+
+    CancelZonalShift: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.apploadbalancer.v1.load_balancer_service_pb2.CancelZonalShiftRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Cancel ZonalShift for the specified load balancer."""
+
 class LoadBalancerServiceAsyncStub:
     """A set of methods for managing application load balancers."""
 
@@ -235,6 +247,18 @@ class LoadBalancerServiceAsyncStub:
         yandex.cloud.apploadbalancer.v1.load_balancer_service_pb2.ListLoadBalancerOperationsResponse,
     ]
     """Lists operations for the specified application load balancer."""
+
+    StartZonalShift: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.apploadbalancer.v1.load_balancer_service_pb2.StartZonalShiftRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Start ZonalShift for the specified load balancer."""
+
+    CancelZonalShift: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.apploadbalancer.v1.load_balancer_service_pb2.CancelZonalShiftRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Cancel ZonalShift for the specified load balancer."""
 
 class LoadBalancerServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing application load balancers."""
@@ -373,5 +397,21 @@ class LoadBalancerServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.apploadbalancer.v1.load_balancer_service_pb2.ListLoadBalancerOperationsResponse, collections.abc.Awaitable[yandex.cloud.apploadbalancer.v1.load_balancer_service_pb2.ListLoadBalancerOperationsResponse]]:
         """Lists operations for the specified application load balancer."""
+
+    @abc.abstractmethod
+    def StartZonalShift(
+        self,
+        request: yandex.cloud.apploadbalancer.v1.load_balancer_service_pb2.StartZonalShiftRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Start ZonalShift for the specified load balancer."""
+
+    @abc.abstractmethod
+    def CancelZonalShift(
+        self,
+        request: yandex.cloud.apploadbalancer.v1.load_balancer_service_pb2.CancelZonalShiftRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Cancel ZonalShift for the specified load balancer."""
 
 def add_LoadBalancerServiceServicer_to_server(servicer: LoadBalancerServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

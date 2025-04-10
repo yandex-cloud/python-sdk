@@ -248,6 +248,14 @@ class _UnitFormatEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._Enu
     """Virtual CPU cores based on CPU time (vcpu)"""
     UNIT_MESSAGES_PER_SECOND: _UnitFormat.ValueType  # 90
     """Messages per second (mps)"""
+    UNIT_NANOCORE_CPU: _UnitFormat.ValueType  # 91
+    """== UNIT_VIRTUAL_CPU"""
+    UNIT_MICROCORE_CPU: _UnitFormat.ValueType  # 92
+    """== 1000 UNIT_NANOCORE_CPU"""
+    UNIT_MILLICORE_CPU: _UnitFormat.ValueType  # 93
+    """== 1000 UNIT_MICROCORE_CPU"""
+    UNIT_CORE_CPU: _UnitFormat.ValueType  # 94
+    """== 1000 UNIT_MILLICORE_CPU"""
 
 class UnitFormat(_UnitFormat, metaclass=_UnitFormatEnumTypeWrapper): ...
 
@@ -477,4 +485,12 @@ UNIT_VIRTUAL_CPU: UnitFormat.ValueType  # 89
 """Virtual CPU cores based on CPU time (vcpu)"""
 UNIT_MESSAGES_PER_SECOND: UnitFormat.ValueType  # 90
 """Messages per second (mps)"""
+UNIT_NANOCORE_CPU: UnitFormat.ValueType  # 91
+"""== UNIT_VIRTUAL_CPU"""
+UNIT_MICROCORE_CPU: UnitFormat.ValueType  # 92
+"""== 1000 UNIT_NANOCORE_CPU"""
+UNIT_MILLICORE_CPU: UnitFormat.ValueType  # 93
+"""== 1000 UNIT_MICROCORE_CPU"""
+UNIT_CORE_CPU: UnitFormat.ValueType  # 94
+"""== 1000 UNIT_MILLICORE_CPU"""
 global___UnitFormat = UnitFormat

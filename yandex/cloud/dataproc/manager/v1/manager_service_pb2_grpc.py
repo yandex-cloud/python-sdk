@@ -26,7 +26,7 @@ if _version_not_supported:
 
 
 class DataprocManagerServiceStub(object):
-    """Data Proc manager service definition.
+    """Yandex Data Processing manager service definition.
     """
 
     def __init__(self, channel):
@@ -43,7 +43,7 @@ class DataprocManagerServiceStub(object):
 
 
 class DataprocManagerServiceServicer(object):
-    """Data Proc manager service definition.
+    """Yandex Data Processing manager service definition.
     """
 
     def Report(self, request, context):
@@ -70,7 +70,7 @@ def add_DataprocManagerServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class DataprocManagerService(object):
-    """Data Proc manager service definition.
+    """Yandex Data Processing manager service definition.
     """
 
     @staticmethod

@@ -171,6 +171,7 @@ class UpdateLoadBalancerRequest(google.protobuf.message.Message):
     SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
     AUTO_SCALE_POLICY_FIELD_NUMBER: builtins.int
     LOG_OPTIONS_FIELD_NUMBER: builtins.int
+    ALLOW_ZONAL_SHIFT_FIELD_NUMBER: builtins.int
     load_balancer_id: builtins.str
     """ID of the application load balancer to update.
 
@@ -182,6 +183,8 @@ class UpdateLoadBalancerRequest(google.protobuf.message.Message):
     """
     description: builtins.str
     """New description of the application load balancer."""
+    allow_zonal_shift: builtins.bool
+    """Specifies whether application load balancer is available to zonal shift."""
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which attributes of the application load balancer should be updated."""
@@ -267,9 +270,10 @@ class UpdateLoadBalancerRequest(google.protobuf.message.Message):
         security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         auto_scale_policy: yandex.cloud.apploadbalancer.v1.load_balancer_pb2.AutoScalePolicy | None = ...,
         log_options: yandex.cloud.apploadbalancer.v1.logging_pb2.LogOptions | None = ...,
+        allow_zonal_shift: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["allocation_policy", b"allocation_policy", "auto_scale_policy", b"auto_scale_policy", "log_options", b"log_options", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["allocation_policy", b"allocation_policy", "auto_scale_policy", b"auto_scale_policy", "description", b"description", "labels", b"labels", "listener_specs", b"listener_specs", "load_balancer_id", b"load_balancer_id", "log_options", b"log_options", "name", b"name", "security_group_ids", b"security_group_ids", "update_mask", b"update_mask"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["allocation_policy", b"allocation_policy", "allow_zonal_shift", b"allow_zonal_shift", "auto_scale_policy", b"auto_scale_policy", "description", b"description", "labels", b"labels", "listener_specs", b"listener_specs", "load_balancer_id", b"load_balancer_id", "log_options", b"log_options", "name", b"name", "security_group_ids", b"security_group_ids", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateLoadBalancerRequest = UpdateLoadBalancerRequest
 
@@ -320,6 +324,7 @@ class CreateLoadBalancerRequest(google.protobuf.message.Message):
     SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
     AUTO_SCALE_POLICY_FIELD_NUMBER: builtins.int
     LOG_OPTIONS_FIELD_NUMBER: builtins.int
+    ALLOW_ZONAL_SHIFT_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create an application load balancer in.
 
@@ -338,6 +343,8 @@ class CreateLoadBalancerRequest(google.protobuf.message.Message):
     """
     network_id: builtins.str
     """ID of the network that the application load balancer belongs to."""
+    allow_zonal_shift: builtins.bool
+    """Specifies whether application load balancer is available to zonal shift."""
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Application load balancer labels as `key:value` pairs.
@@ -398,9 +405,10 @@ class CreateLoadBalancerRequest(google.protobuf.message.Message):
         security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         auto_scale_policy: yandex.cloud.apploadbalancer.v1.load_balancer_pb2.AutoScalePolicy | None = ...,
         log_options: yandex.cloud.apploadbalancer.v1.logging_pb2.LogOptions | None = ...,
+        allow_zonal_shift: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["allocation_policy", b"allocation_policy", "auto_scale_policy", b"auto_scale_policy", "log_options", b"log_options"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["allocation_policy", b"allocation_policy", "auto_scale_policy", b"auto_scale_policy", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "listener_specs", b"listener_specs", "log_options", b"log_options", "name", b"name", "network_id", b"network_id", "region_id", b"region_id", "security_group_ids", b"security_group_ids"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["allocation_policy", b"allocation_policy", "allow_zonal_shift", b"allow_zonal_shift", "auto_scale_policy", b"auto_scale_policy", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "listener_specs", b"listener_specs", "log_options", b"log_options", "name", b"name", "network_id", b"network_id", "region_id", b"region_id", "security_group_ids", b"security_group_ids"]) -> None: ...
 
 global___CreateLoadBalancerRequest = CreateLoadBalancerRequest
 
@@ -1071,3 +1079,91 @@ class ListLoadBalancerOperationsResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["next_page_token", b"next_page_token", "operations", b"operations"]) -> None: ...
 
 global___ListLoadBalancerOperationsResponse = ListLoadBalancerOperationsResponse
+
+@typing.final
+class StartZonalShiftRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    LOAD_BALANCER_ID_FIELD_NUMBER: builtins.int
+    ZONE_IDS_FIELD_NUMBER: builtins.int
+    load_balancer_id: builtins.str
+    """ID of the application load balancer to start zonal shift."""
+    @property
+    def zone_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Zone IDs to start zonal shift."""
+
+    def __init__(
+        self,
+        *,
+        load_balancer_id: builtins.str = ...,
+        zone_ids: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["load_balancer_id", b"load_balancer_id", "zone_ids", b"zone_ids"]) -> None: ...
+
+global___StartZonalShiftRequest = StartZonalShiftRequest
+
+@typing.final
+class StartZonalShiftMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    LOAD_BALANCER_ID_FIELD_NUMBER: builtins.int
+    ZONE_IDS_FIELD_NUMBER: builtins.int
+    load_balancer_id: builtins.str
+    """ID of the application load balancer that the zonal shift is being started to."""
+    @property
+    def zone_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Zone IDs where zonal shift was started."""
+
+    def __init__(
+        self,
+        *,
+        load_balancer_id: builtins.str = ...,
+        zone_ids: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["load_balancer_id", b"load_balancer_id", "zone_ids", b"zone_ids"]) -> None: ...
+
+global___StartZonalShiftMetadata = StartZonalShiftMetadata
+
+@typing.final
+class CancelZonalShiftRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    LOAD_BALANCER_ID_FIELD_NUMBER: builtins.int
+    ZONE_IDS_FIELD_NUMBER: builtins.int
+    load_balancer_id: builtins.str
+    """ID of the application load balancer to cancel zonal shift."""
+    @property
+    def zone_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Zone IDs to cancel zonal shift."""
+
+    def __init__(
+        self,
+        *,
+        load_balancer_id: builtins.str = ...,
+        zone_ids: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["load_balancer_id", b"load_balancer_id", "zone_ids", b"zone_ids"]) -> None: ...
+
+global___CancelZonalShiftRequest = CancelZonalShiftRequest
+
+@typing.final
+class CancelZonalShiftMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    LOAD_BALANCER_ID_FIELD_NUMBER: builtins.int
+    ZONE_IDS_FIELD_NUMBER: builtins.int
+    load_balancer_id: builtins.str
+    """ID of the application load balancer that the zonal shift is being canceled to."""
+    @property
+    def zone_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Zone IDs where zonal shift was cancelled."""
+
+    def __init__(
+        self,
+        *,
+        load_balancer_id: builtins.str = ...,
+        zone_ids: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["load_balancer_id", b"load_balancer_id", "zone_ids", b"zone_ids"]) -> None: ...
+
+global___CancelZonalShiftMetadata = CancelZonalShiftMetadata

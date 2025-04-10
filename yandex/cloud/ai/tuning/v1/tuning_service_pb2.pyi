@@ -827,3 +827,223 @@ class ListErrorsResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["tuning_error", b"tuning_error"]) -> None: ...
 
 global___ListErrorsResponse = ListErrorsResponse
+
+@typing.final
+class CreateTuningDraftRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class LabelsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
+    BASE_MODEL_URI_FIELD_NUMBER: builtins.int
+    TRAIN_DATASETS_FIELD_NUMBER: builtins.int
+    VALIDATION_DATASETS_FIELD_NUMBER: builtins.int
+    TEXT_TO_TEXT_COMPLETION_FIELD_NUMBER: builtins.int
+    TEXT_CLASSIFICATION_MULTILABEL_FIELD_NUMBER: builtins.int
+    TEXT_CLASSIFICATION_MULTICLASS_FIELD_NUMBER: builtins.int
+    TEXT_EMBEDDING_PAIR_PARAMS_FIELD_NUMBER: builtins.int
+    TEXT_EMBEDDING_TRIPLET_PARAMS_FIELD_NUMBER: builtins.int
+    NAME_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
+    LABELS_FIELD_NUMBER: builtins.int
+    base_model_uri: builtins.str
+    name: builtins.str
+    description: builtins.str
+    @property
+    def train_datasets(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___TuningRequest.WeightedDataset]: ...
+    @property
+    def validation_datasets(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___TuningRequest.WeightedDataset]: ...
+    @property
+    def text_to_text_completion(self) -> global___TextToTextCompletionTuningParams: ...
+    @property
+    def text_classification_multilabel(self) -> global___TextClassificationMultilabelParams: ...
+    @property
+    def text_classification_multiclass(self) -> global___TextClassificationMulticlassParams: ...
+    @property
+    def text_embedding_pair_params(self) -> global___TextEmbeddingPairParams: ...
+    @property
+    def text_embedding_triplet_params(self) -> global___TextEmbeddingTripletParams: ...
+    @property
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
+    def __init__(
+        self,
+        *,
+        base_model_uri: builtins.str = ...,
+        train_datasets: collections.abc.Iterable[global___TuningRequest.WeightedDataset] | None = ...,
+        validation_datasets: collections.abc.Iterable[global___TuningRequest.WeightedDataset] | None = ...,
+        text_to_text_completion: global___TextToTextCompletionTuningParams | None = ...,
+        text_classification_multilabel: global___TextClassificationMultilabelParams | None = ...,
+        text_classification_multiclass: global___TextClassificationMulticlassParams | None = ...,
+        text_embedding_pair_params: global___TextEmbeddingPairParams | None = ...,
+        text_embedding_triplet_params: global___TextEmbeddingTripletParams | None = ...,
+        name: builtins.str = ...,
+        description: builtins.str = ...,
+        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["text_classification_multiclass", b"text_classification_multiclass", "text_classification_multilabel", b"text_classification_multilabel", "text_embedding_pair_params", b"text_embedding_pair_params", "text_embedding_triplet_params", b"text_embedding_triplet_params", "text_to_text_completion", b"text_to_text_completion", "tuning_params", b"tuning_params"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["base_model_uri", b"base_model_uri", "description", b"description", "labels", b"labels", "name", b"name", "text_classification_multiclass", b"text_classification_multiclass", "text_classification_multilabel", b"text_classification_multilabel", "text_embedding_pair_params", b"text_embedding_pair_params", "text_embedding_triplet_params", b"text_embedding_triplet_params", "text_to_text_completion", b"text_to_text_completion", "train_datasets", b"train_datasets", "tuning_params", b"tuning_params", "validation_datasets", b"validation_datasets"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["tuning_params", b"tuning_params"]) -> typing.Literal["text_to_text_completion", "text_classification_multilabel", "text_classification_multiclass", "text_embedding_pair_params", "text_embedding_triplet_params"] | None: ...
+
+global___CreateTuningDraftRequest = CreateTuningDraftRequest
+
+@typing.final
+class CreateTuningDraftResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TUNING_TASK_ID_FIELD_NUMBER: builtins.int
+    tuning_task_id: builtins.str
+    def __init__(
+        self,
+        *,
+        tuning_task_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["tuning_task_id", b"tuning_task_id"]) -> None: ...
+
+global___CreateTuningDraftResponse = CreateTuningDraftResponse
+
+@typing.final
+class UpdateTuningDraftRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class LabelsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
+    TUNING_TASK_ID_FIELD_NUMBER: builtins.int
+    BASE_MODEL_URI_FIELD_NUMBER: builtins.int
+    TRAIN_DATASETS_FIELD_NUMBER: builtins.int
+    VALIDATION_DATASETS_FIELD_NUMBER: builtins.int
+    TEXT_TO_TEXT_COMPLETION_FIELD_NUMBER: builtins.int
+    TEXT_CLASSIFICATION_MULTILABEL_FIELD_NUMBER: builtins.int
+    TEXT_CLASSIFICATION_MULTICLASS_FIELD_NUMBER: builtins.int
+    TEXT_EMBEDDING_PAIR_PARAMS_FIELD_NUMBER: builtins.int
+    TEXT_EMBEDDING_TRIPLET_PARAMS_FIELD_NUMBER: builtins.int
+    NAME_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
+    LABELS_FIELD_NUMBER: builtins.int
+    tuning_task_id: builtins.str
+    base_model_uri: builtins.str
+    name: builtins.str
+    description: builtins.str
+    @property
+    def train_datasets(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___TuningRequest.WeightedDataset]: ...
+    @property
+    def validation_datasets(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___TuningRequest.WeightedDataset]: ...
+    @property
+    def text_to_text_completion(self) -> global___TextToTextCompletionTuningParams: ...
+    @property
+    def text_classification_multilabel(self) -> global___TextClassificationMultilabelParams: ...
+    @property
+    def text_classification_multiclass(self) -> global___TextClassificationMulticlassParams: ...
+    @property
+    def text_embedding_pair_params(self) -> global___TextEmbeddingPairParams: ...
+    @property
+    def text_embedding_triplet_params(self) -> global___TextEmbeddingTripletParams: ...
+    @property
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
+    def __init__(
+        self,
+        *,
+        tuning_task_id: builtins.str = ...,
+        base_model_uri: builtins.str = ...,
+        train_datasets: collections.abc.Iterable[global___TuningRequest.WeightedDataset] | None = ...,
+        validation_datasets: collections.abc.Iterable[global___TuningRequest.WeightedDataset] | None = ...,
+        text_to_text_completion: global___TextToTextCompletionTuningParams | None = ...,
+        text_classification_multilabel: global___TextClassificationMultilabelParams | None = ...,
+        text_classification_multiclass: global___TextClassificationMulticlassParams | None = ...,
+        text_embedding_pair_params: global___TextEmbeddingPairParams | None = ...,
+        text_embedding_triplet_params: global___TextEmbeddingTripletParams | None = ...,
+        name: builtins.str = ...,
+        description: builtins.str = ...,
+        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["text_classification_multiclass", b"text_classification_multiclass", "text_classification_multilabel", b"text_classification_multilabel", "text_embedding_pair_params", b"text_embedding_pair_params", "text_embedding_triplet_params", b"text_embedding_triplet_params", "text_to_text_completion", b"text_to_text_completion", "tuning_params", b"tuning_params"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["base_model_uri", b"base_model_uri", "description", b"description", "labels", b"labels", "name", b"name", "text_classification_multiclass", b"text_classification_multiclass", "text_classification_multilabel", b"text_classification_multilabel", "text_embedding_pair_params", b"text_embedding_pair_params", "text_embedding_triplet_params", b"text_embedding_triplet_params", "text_to_text_completion", b"text_to_text_completion", "train_datasets", b"train_datasets", "tuning_params", b"tuning_params", "tuning_task_id", b"tuning_task_id", "validation_datasets", b"validation_datasets"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["tuning_params", b"tuning_params"]) -> typing.Literal["text_to_text_completion", "text_classification_multilabel", "text_classification_multiclass", "text_embedding_pair_params", "text_embedding_triplet_params"] | None: ...
+
+global___UpdateTuningDraftRequest = UpdateTuningDraftRequest
+
+@typing.final
+class UpdateTuningDraftResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TUNING_TASK_ID_FIELD_NUMBER: builtins.int
+    tuning_task_id: builtins.str
+    def __init__(
+        self,
+        *,
+        tuning_task_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["tuning_task_id", b"tuning_task_id"]) -> None: ...
+
+global___UpdateTuningDraftResponse = UpdateTuningDraftResponse
+
+@typing.final
+class DeleteTuningDraftRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TUNING_TASK_ID_FIELD_NUMBER: builtins.int
+    tuning_task_id: builtins.str
+    def __init__(
+        self,
+        *,
+        tuning_task_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["tuning_task_id", b"tuning_task_id"]) -> None: ...
+
+global___DeleteTuningDraftRequest = DeleteTuningDraftRequest
+
+@typing.final
+class DeleteTuningDraftResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TUNING_TASK_ID_FIELD_NUMBER: builtins.int
+    tuning_task_id: builtins.str
+    def __init__(
+        self,
+        *,
+        tuning_task_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["tuning_task_id", b"tuning_task_id"]) -> None: ...
+
+global___DeleteTuningDraftResponse = DeleteTuningDraftResponse
+
+@typing.final
+class TuneDraftRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TUNING_TASK_ID_FIELD_NUMBER: builtins.int
+    tuning_task_id: builtins.str
+    def __init__(
+        self,
+        *,
+        tuning_task_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["tuning_task_id", b"tuning_task_id"]) -> None: ...
+
+global___TuneDraftRequest = TuneDraftRequest

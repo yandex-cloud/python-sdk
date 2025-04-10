@@ -23,10 +23,11 @@ _sym_db = _symbol_database.Default()
 
 
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n+yandex/cloud/mdb/opensearch/v1/backup.proto\x12\x1eyandex.cloud.mdb.opensearch.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\x85\x02\n\x06\x42\x61\x63kup\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12\x19\n\x11source_cluster_id\x18\x03 \x01(\t\x12.\n\nstarted_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\ncreated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1a\n\x07indices\x18\x06 \x03(\tB\t\x82\xc8\x31\x05<=100\x12\x1a\n\x12opensearch_version\x18\x07 \x01(\t\x12\x12\n\nsize_bytes\x18\x08 \x01(\x03\x12\x15\n\rindices_total\x18\t \x01(\x03\x42s\n\"yandex.cloud.api.mdb.opensearch.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/opensearch/v1;opensearchb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n+yandex/cloud/mdb/opensearch/v1/backup.proto\x12\x1eyandex.cloud.mdb.opensearch.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1dyandex/cloud/validation.proto\"\x85\x02\n\x06\x42\x61\x63kup\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12\x19\n\x11source_cluster_id\x18\x03 \x01(\t\x12.\n\nstarted_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\ncreated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x1a\n\x07indices\x18\x06 \x03(\tB\t\x82\xc8\x31\x05<=100\x12\x1a\n\x12opensearch_version\x18\x07 \x01(\t\x12\x12\n\nsize_bytes\x18\x08 \x01(\x03\x12\x15\n\rindices_total\x18\t \x01(\x03\"\xa6\x01\n\x12SnapshotManagement\x12K\n\x11snapshot_schedule\x18\x01 \x01(\x0b\x32\x30.yandex.cloud.mdb.opensearch.v1.SnapshotSchedule\x12\x43\n\x15snapshot_max_age_days\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64ValueB\x07\xfa\xc7\x31\x03>=7\"\xb6\x02\n\x10SnapshotSchedule\x12Z\n\x18hourly_snapshot_schedule\x18\x01 \x01(\x0b\x32\x36.yandex.cloud.mdb.opensearch.v1.HourlySnapshotScheduleH\x00\x12X\n\x17\x64\x61ily_snapshot_schedule\x18\x02 \x01(\x0b\x32\x35.yandex.cloud.mdb.opensearch.v1.DailySnapshotScheduleH\x00\x12Z\n\x18weekly_snapshot_schedule\x18\x03 \x01(\x0b\x32\x36.yandex.cloud.mdb.opensearch.v1.WeeklySnapshotScheduleH\x00\x42\x10\n\x08schedule\x12\x04\xc0\xc1\x31\x01\"2\n\x16HourlySnapshotSchedule\x12\x18\n\x06minute\x18\x01 \x01(\x03\x42\x08\xfa\xc7\x31\x04\x30-59\"I\n\x15\x44\x61ilySnapshotSchedule\x12\x16\n\x04hour\x18\x01 \x01(\x03\x42\x08\xfa\xc7\x31\x04\x30-23\x12\x18\n\x06minute\x18\x02 \x01(\x03\x42\x08\xfa\xc7\x31\x04\x30-59\"\xfb\x01\n\x16WeeklySnapshotSchedule\x12K\n\x03\x64\x61y\x18\x01 \x01(\x0e\x32>.yandex.cloud.mdb.opensearch.v1.WeeklySnapshotSchedule.WeekDay\x12\x16\n\x04hour\x18\x02 \x01(\x03\x42\x08\xfa\xc7\x31\x04\x30-23\x12\x18\n\x06minute\x18\x03 \x01(\x03\x42\x08\xfa\xc7\x31\x04\x30-59\"b\n\x07WeekDay\x12\x18\n\x14WEEK_DAY_UNSPECIFIED\x10\x00\x12\x07\n\x03MON\x10\x01\x12\x07\n\x03TUE\x10\x02\x12\x07\n\x03WED\x10\x03\x12\x07\n\x03THU\x10\x04\x12\x07\n\x03\x46RI\x10\x05\x12\x07\n\x03SAT\x10\x06\x12\x07\n\x03SUN\x10\x07\x42s\n\"yandex.cloud.api.mdb.opensearch.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/opensearch/v1;opensearchb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,6 +37,32 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'\n\"yandex.cloud.api.mdb.opensearch.v1ZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/opensearch/v1;opensearch'
   _globals['_BACKUP'].fields_by_name['indices']._loaded_options = None
   _globals['_BACKUP'].fields_by_name['indices']._serialized_options = b'\202\3101\005<=100'
-  _globals['_BACKUP']._serialized_start=144
-  _globals['_BACKUP']._serialized_end=405
+  _globals['_SNAPSHOTMANAGEMENT'].fields_by_name['snapshot_max_age_days']._loaded_options = None
+  _globals['_SNAPSHOTMANAGEMENT'].fields_by_name['snapshot_max_age_days']._serialized_options = b'\372\3071\003>=7'
+  _globals['_SNAPSHOTSCHEDULE'].oneofs_by_name['schedule']._loaded_options = None
+  _globals['_SNAPSHOTSCHEDULE'].oneofs_by_name['schedule']._serialized_options = b'\300\3011\001'
+  _globals['_HOURLYSNAPSHOTSCHEDULE'].fields_by_name['minute']._loaded_options = None
+  _globals['_HOURLYSNAPSHOTSCHEDULE'].fields_by_name['minute']._serialized_options = b'\372\3071\0040-59'
+  _globals['_DAILYSNAPSHOTSCHEDULE'].fields_by_name['hour']._loaded_options = None
+  _globals['_DAILYSNAPSHOTSCHEDULE'].fields_by_name['hour']._serialized_options = b'\372\3071\0040-23'
+  _globals['_DAILYSNAPSHOTSCHEDULE'].fields_by_name['minute']._loaded_options = None
+  _globals['_DAILYSNAPSHOTSCHEDULE'].fields_by_name['minute']._serialized_options = b'\372\3071\0040-59'
+  _globals['_WEEKLYSNAPSHOTSCHEDULE'].fields_by_name['hour']._loaded_options = None
+  _globals['_WEEKLYSNAPSHOTSCHEDULE'].fields_by_name['hour']._serialized_options = b'\372\3071\0040-23'
+  _globals['_WEEKLYSNAPSHOTSCHEDULE'].fields_by_name['minute']._loaded_options = None
+  _globals['_WEEKLYSNAPSHOTSCHEDULE'].fields_by_name['minute']._serialized_options = b'\372\3071\0040-59'
+  _globals['_BACKUP']._serialized_start=176
+  _globals['_BACKUP']._serialized_end=437
+  _globals['_SNAPSHOTMANAGEMENT']._serialized_start=440
+  _globals['_SNAPSHOTMANAGEMENT']._serialized_end=606
+  _globals['_SNAPSHOTSCHEDULE']._serialized_start=609
+  _globals['_SNAPSHOTSCHEDULE']._serialized_end=919
+  _globals['_HOURLYSNAPSHOTSCHEDULE']._serialized_start=921
+  _globals['_HOURLYSNAPSHOTSCHEDULE']._serialized_end=971
+  _globals['_DAILYSNAPSHOTSCHEDULE']._serialized_start=973
+  _globals['_DAILYSNAPSHOTSCHEDULE']._serialized_end=1046
+  _globals['_WEEKLYSNAPSHOTSCHEDULE']._serialized_start=1049
+  _globals['_WEEKLYSNAPSHOTSCHEDULE']._serialized_end=1300
+  _globals['_WEEKLYSNAPSHOTSCHEDULE_WEEKDAY']._serialized_start=1202
+  _globals['_WEEKLYSNAPSHOTSCHEDULE_WEEKDAY']._serialized_end=1300
 # @@protoc_insertion_point(module_scope)

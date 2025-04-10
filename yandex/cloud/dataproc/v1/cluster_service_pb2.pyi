@@ -23,7 +23,7 @@ class GetClusterRequest(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Data Proc cluster.
+    """ID of the Yandex Data Processing cluster.
 
     To get a cluster ID make a [ClusterService.List] request.
     """
@@ -121,7 +121,7 @@ class CreateSubclusterConfigSpec(google.protobuf.message.Message):
     name: builtins.str
     """Name of the subcluster."""
     role: yandex.cloud.dataproc.v1.subcluster_pb2.Role.ValueType
-    """Role of the subcluster in the Data Proc cluster."""
+    """Role of the subcluster in the Yandex Data Processing cluster."""
     subnet_id: builtins.str
     """ID of the VPC subnet used for hosts in the subcluster."""
     hosts_count: builtins.int
@@ -206,7 +206,7 @@ class CreateClusterConfigSpec(google.protobuf.message.Message):
     """
     @property
     def hadoop(self) -> yandex.cloud.dataproc.v1.cluster_pb2.HadoopConfig:
-        """Data Proc specific options."""
+        """Yandex Data Processing specific options."""
 
     @property
     def subclusters_spec(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___CreateSubclusterConfigSpec]:
@@ -290,7 +290,7 @@ class CreateClusterRequest(google.protobuf.message.Message):
     """
     name: builtins.str
     """Name of the cluster. The name must be unique within the folder.
-    The name can't be changed after the Data Proc cluster is created.
+    The name can't be changed after the Yandex Data Processing cluster is created.
     """
     description: builtins.str
     """Description of the cluster."""
@@ -300,9 +300,9 @@ class CreateClusterRequest(google.protobuf.message.Message):
     To get the list of available zones make a [yandex.cloud.compute.v1.ZoneService.List] request.
     """
     service_account_id: builtins.str
-    """ID of the service account to be used by the Data Proc manager agent."""
+    """ID of the service account to be used by the Yandex Data Processing manager agent."""
     bucket: builtins.str
-    """Name of the Object Storage bucket to use for Data Proc jobs."""
+    """Name of the Object Storage bucket to use for Yandex Data Processing jobs."""
     ui_proxy: builtins.bool
     """Enable UI Proxy feature."""
     deletion_protection: builtins.bool
@@ -407,11 +407,11 @@ class UpdateClusterRequest(google.protobuf.message.Message):
     description: builtins.str
     """New description for the cluster."""
     name: builtins.str
-    """New name for the Data Proc cluster. The name must be unique within the folder."""
+    """New name for the Yandex Data Processing cluster. The name must be unique within the folder."""
     service_account_id: builtins.str
-    """ID of the new service account to be used by the Data Proc manager agent."""
+    """ID of the new service account to be used by the Yandex Data Processing manager agent."""
     bucket: builtins.str
-    """Name of the new Object Storage bucket to use for Data Proc jobs."""
+    """Name of the new Object Storage bucket to use for Yandex Data Processing jobs."""
     decommission_timeout: builtins.int
     """Timeout to gracefully decommission nodes. In seconds. Default value: 0"""
     ui_proxy: builtins.bool
@@ -430,7 +430,7 @@ class UpdateClusterRequest(google.protobuf.message.Message):
 
     @property
     def config_spec(self) -> global___UpdateClusterConfigSpec:
-        """Configuration and resources for hosts that should be created with the Data Proc cluster."""
+        """Configuration and resources for hosts that should be created with the Yandex Data Processing cluster."""
 
     @property
     def security_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
@@ -503,7 +503,7 @@ class DeleteClusterMetadata(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Data Proc cluster that is being deleted."""
+    """ID of the Yandex Data Processing cluster that is being deleted."""
     def __init__(
         self,
         *,
@@ -538,7 +538,7 @@ class StartClusterMetadata(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Data Proc cluster that is being started."""
+    """ID of the Yandex Data Processing cluster that is being started."""
     def __init__(
         self,
         *,
@@ -577,7 +577,7 @@ class StopClusterMetadata(google.protobuf.message.Message):
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Data Proc cluster that is being stopped."""
+    """ID of the Yandex Data Processing cluster that is being stopped."""
     def __init__(
         self,
         *,

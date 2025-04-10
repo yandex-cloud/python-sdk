@@ -24,13 +24,14 @@ _sym_db = _symbol_database.Default()
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
+from yandex.cloud.access import access_pb2 as yandex_dot_cloud_dot_access_dot_access__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.iam.v1.workload.oidc import federation_pb2 as yandex_dot_cloud_dot_iam_dot_v1_dot_workload_dot_oidc_dot_federation__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n:yandex/cloud/iam/v1/workload/oidc/federation_service.proto\x12!yandex.cloud.iam.v1.workload.oidc\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a\x32yandex/cloud/iam/v1/workload/oidc/federation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\";\n\x14GetFederationRequest\x12#\n\rfederation_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"x\n\x16ListFederationsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\"v\n\x17ListFederationsResponse\x12\x42\n\x0b\x66\x65\x64\x65rations\x18\x01 \x03(\x0b\x32-.yandex.cloud.iam.v1.workload.oidc.Federation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x93\x03\n\x17\x43reateFederationRequest\x12\x1f\n\tfolder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\x04name\x18\x03 \x01(\tB\'\xe8\xc7\x31\x01\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x10\n\x08\x64isabled\x18\x05 \x01(\x08\x12%\n\taudiences\x18\x06 \x03(\tB\x12\x82\xc8\x31\x05<=100\x8a\xc8\x31\x05<=255\x12\x1e\n\x06issuer\x18\x07 \x01(\tB\x0e\xe8\xc7\x31\x01\x8a\xc8\x31\x06<=8000\x12 \n\x08jwks_url\x18\x08 \x01(\tB\x0e\xe8\xc7\x31\x01\x8a\xc8\x31\x06<=8000\x12V\n\x06labels\x18\t \x03(\x0b\x32\x46.yandex.cloud.iam.v1.workload.oidc.CreateFederationRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"1\n\x18\x43reateFederationMetadata\x12\x15\n\rfederation_id\x18\x01 \x01(\t\"\xa0\x03\n\x17UpdateFederationRequest\x12#\n\rfederation_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x31\n\x04name\x18\x03 \x01(\tB#\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x10\n\x08\x64isabled\x18\x05 \x01(\x08\x12%\n\taudiences\x18\x06 \x03(\tB\x12\x82\xc8\x31\x05<=100\x8a\xc8\x31\x05<=255\x12\x1c\n\x08jwks_url\x18\x07 \x01(\tB\n\x8a\xc8\x31\x06<=8000\x12V\n\x06labels\x18\x08 \x03(\x0b\x32\x46.yandex.cloud.iam.v1.workload.oidc.UpdateFederationRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"1\n\x18UpdateFederationMetadata\x12\x15\n\rfederation_id\x18\x01 \x01(\t\">\n\x17\x44\x65leteFederationRequest\x12#\n\rfederation_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"1\n\x18\x44\x65leteFederationMetadata\x12\x15\n\rfederation_id\x18\x01 \x01(\t2\xd7\x07\n\x11\x46\x65\x64\x65rationService\x12\xa8\x01\n\x03Get\x12\x37.yandex.cloud.iam.v1.workload.oidc.GetFederationRequest\x1a-.yandex.cloud.iam.v1.workload.oidc.Federation\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/iam/v1/workload/oidc/federations/{federation_id}\x12\xa8\x01\n\x04List\x12\x39.yandex.cloud.iam.v1.workload.oidc.ListFederationsRequest\x1a:.yandex.cloud.iam.v1.workload.oidc.ListFederationsResponse\")\x82\xd3\xe4\x93\x02#\x12!/iam/v1/workload/oidc/federations\x12\xbf\x01\n\x06\x43reate\x12:.yandex.cloud.iam.v1.workload.oidc.CreateFederationRequest\x1a!.yandex.cloud.operation.Operation\"V\xb2\xd2*&\n\x18\x43reateFederationMetadata\x12\nFederation\x82\xd3\xe4\x93\x02&\"!/iam/v1/workload/oidc/federations:\x01*\x12\xcf\x01\n\x06Update\x12:.yandex.cloud.iam.v1.workload.oidc.UpdateFederationRequest\x1a!.yandex.cloud.operation.Operation\"f\xb2\xd2*&\n\x18UpdateFederationMetadata\x12\nFederation\x82\xd3\xe4\x93\x02\x36\x32\x31/iam/v1/workload/oidc/federations/{federation_id}:\x01*\x12\xd7\x01\n\x06\x44\x65lete\x12:.yandex.cloud.iam.v1.workload.oidc.DeleteFederationRequest\x1a!.yandex.cloud.operation.Operation\"n\xb2\xd2*1\n\x18\x44\x65leteFederationMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x33*1/iam/v1/workload/oidc/federations/{federation_id}Bs\n%yandex.cloud.api.iam.v1.workload.oidcZJgithub.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1/workload/oidc;oidcb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n:yandex/cloud/iam/v1/workload/oidc/federation_service.proto\x12!yandex.cloud.iam.v1.workload.oidc\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/access/access.proto\x1a yandex/cloud/api/operation.proto\x1a\x32yandex/cloud/iam/v1/workload/oidc/federation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\";\n\x14GetFederationRequest\x12#\n\rfederation_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"x\n\x16ListFederationsRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1e\n\npage_token\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2000\"v\n\x17ListFederationsResponse\x12\x42\n\x0b\x66\x65\x64\x65rations\x18\x01 \x03(\x0b\x32-.yandex.cloud.iam.v1.workload.oidc.Federation\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\x93\x03\n\x17\x43reateFederationRequest\x12\x1f\n\tfolder_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\x04name\x18\x03 \x01(\tB\'\xe8\xc7\x31\x01\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x10\n\x08\x64isabled\x18\x05 \x01(\x08\x12%\n\taudiences\x18\x06 \x03(\tB\x12\x82\xc8\x31\x05<=100\x8a\xc8\x31\x05<=255\x12\x1e\n\x06issuer\x18\x07 \x01(\tB\x0e\xe8\xc7\x31\x01\x8a\xc8\x31\x06<=8000\x12 \n\x08jwks_url\x18\x08 \x01(\tB\x0e\xe8\xc7\x31\x01\x8a\xc8\x31\x06<=8000\x12V\n\x06labels\x18\t \x03(\x0b\x32\x46.yandex.cloud.iam.v1.workload.oidc.CreateFederationRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"1\n\x18\x43reateFederationMetadata\x12\x15\n\rfederation_id\x18\x01 \x01(\t\"\xa0\x03\n\x17UpdateFederationRequest\x12#\n\rfederation_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x12\x31\n\x04name\x18\x03 \x01(\tB#\xf2\xc7\x31\x1f[a-z]([-a-z0-9]{0,61}[a-z0-9])?\x12\x1e\n\x0b\x64\x65scription\x18\x04 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x10\n\x08\x64isabled\x18\x05 \x01(\x08\x12%\n\taudiences\x18\x06 \x03(\tB\x12\x82\xc8\x31\x05<=100\x8a\xc8\x31\x05<=255\x12\x1c\n\x08jwks_url\x18\x07 \x01(\tB\n\x8a\xc8\x31\x06<=8000\x12V\n\x06labels\x18\x08 \x03(\x0b\x32\x46.yandex.cloud.iam.v1.workload.oidc.UpdateFederationRequest.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"1\n\x18UpdateFederationMetadata\x12\x15\n\rfederation_id\x18\x01 \x01(\t\">\n\x17\x44\x65leteFederationRequest\x12#\n\rfederation_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"1\n\x18\x44\x65leteFederationMetadata\x12\x15\n\rfederation_id\x18\x01 \x01(\t2\xad\r\n\x11\x46\x65\x64\x65rationService\x12\xa8\x01\n\x03Get\x12\x37.yandex.cloud.iam.v1.workload.oidc.GetFederationRequest\x1a-.yandex.cloud.iam.v1.workload.oidc.Federation\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/iam/v1/workload/oidc/federations/{federation_id}\x12\xa8\x01\n\x04List\x12\x39.yandex.cloud.iam.v1.workload.oidc.ListFederationsRequest\x1a:.yandex.cloud.iam.v1.workload.oidc.ListFederationsResponse\")\x82\xd3\xe4\x93\x02#\x12!/iam/v1/workload/oidc/federations\x12\xbf\x01\n\x06\x43reate\x12:.yandex.cloud.iam.v1.workload.oidc.CreateFederationRequest\x1a!.yandex.cloud.operation.Operation\"V\xb2\xd2*&\n\x18\x43reateFederationMetadata\x12\nFederation\x82\xd3\xe4\x93\x02&\"!/iam/v1/workload/oidc/federations:\x01*\x12\xcf\x01\n\x06Update\x12:.yandex.cloud.iam.v1.workload.oidc.UpdateFederationRequest\x1a!.yandex.cloud.operation.Operation\"f\xb2\xd2*&\n\x18UpdateFederationMetadata\x12\nFederation\x82\xd3\xe4\x93\x02\x36\x32\x31/iam/v1/workload/oidc/federations/{federation_id}:\x01*\x12\xd7\x01\n\x06\x44\x65lete\x12:.yandex.cloud.iam.v1.workload.oidc.DeleteFederationRequest\x1a!.yandex.cloud.operation.Operation\"n\xb2\xd2*1\n\x18\x44\x65leteFederationMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02\x33*1/iam/v1/workload/oidc/federations/{federation_id}\x12\xc1\x01\n\x12ListAccessBindings\x12..yandex.cloud.access.ListAccessBindingsRequest\x1a/.yandex.cloud.access.ListAccessBindingsResponse\"J\x82\xd3\xe4\x93\x02\x44\x12\x42/iam/v1/workload/oidc/federations/{resource_id}:listAccessBindings\x12\x80\x02\n\x11SetAccessBindings\x12-.yandex.cloud.access.SetAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x98\x01\xb2\xd2*H\n access.SetAccessBindingsMetadata\x12$access.AccessBindingsOperationResult\x82\xd3\xe4\x93\x02\x46\"A/iam/v1/workload/oidc/federations/{resource_id}:setAccessBindings:\x01*\x12\x8c\x02\n\x14UpdateAccessBindings\x12\x30.yandex.cloud.access.UpdateAccessBindingsRequest\x1a!.yandex.cloud.operation.Operation\"\x9e\x01\xb2\xd2*K\n#access.UpdateAccessBindingsMetadata\x12$access.AccessBindingsOperationResult\x82\xd3\xe4\x93\x02I\"D/iam/v1/workload/oidc/federations/{resource_id}:updateAccessBindings:\x01*Bs\n%yandex.cloud.api.iam.v1.workload.oidcZJgithub.com/yandex-cloud/go-genproto/yandex/cloud/iam/v1/workload/oidc;oidcb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -84,28 +85,34 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_FEDERATIONSERVICE'].methods_by_name['Update']._serialized_options = b'\262\322*&\n\030UpdateFederationMetadata\022\nFederation\202\323\344\223\002621/iam/v1/workload/oidc/federations/{federation_id}:\001*'
   _globals['_FEDERATIONSERVICE'].methods_by_name['Delete']._loaded_options = None
   _globals['_FEDERATIONSERVICE'].methods_by_name['Delete']._serialized_options = b'\262\322*1\n\030DeleteFederationMetadata\022\025google.protobuf.Empty\202\323\344\223\0023*1/iam/v1/workload/oidc/federations/{federation_id}'
-  _globals['_GETFEDERATIONREQUEST']._serialized_start=318
-  _globals['_GETFEDERATIONREQUEST']._serialized_end=377
-  _globals['_LISTFEDERATIONSREQUEST']._serialized_start=379
-  _globals['_LISTFEDERATIONSREQUEST']._serialized_end=499
-  _globals['_LISTFEDERATIONSRESPONSE']._serialized_start=501
-  _globals['_LISTFEDERATIONSRESPONSE']._serialized_end=619
-  _globals['_CREATEFEDERATIONREQUEST']._serialized_start=622
-  _globals['_CREATEFEDERATIONREQUEST']._serialized_end=1025
-  _globals['_CREATEFEDERATIONREQUEST_LABELSENTRY']._serialized_start=980
-  _globals['_CREATEFEDERATIONREQUEST_LABELSENTRY']._serialized_end=1025
-  _globals['_CREATEFEDERATIONMETADATA']._serialized_start=1027
-  _globals['_CREATEFEDERATIONMETADATA']._serialized_end=1076
-  _globals['_UPDATEFEDERATIONREQUEST']._serialized_start=1079
-  _globals['_UPDATEFEDERATIONREQUEST']._serialized_end=1495
-  _globals['_UPDATEFEDERATIONREQUEST_LABELSENTRY']._serialized_start=980
-  _globals['_UPDATEFEDERATIONREQUEST_LABELSENTRY']._serialized_end=1025
-  _globals['_UPDATEFEDERATIONMETADATA']._serialized_start=1497
-  _globals['_UPDATEFEDERATIONMETADATA']._serialized_end=1546
-  _globals['_DELETEFEDERATIONREQUEST']._serialized_start=1548
-  _globals['_DELETEFEDERATIONREQUEST']._serialized_end=1610
-  _globals['_DELETEFEDERATIONMETADATA']._serialized_start=1612
-  _globals['_DELETEFEDERATIONMETADATA']._serialized_end=1661
-  _globals['_FEDERATIONSERVICE']._serialized_start=1664
-  _globals['_FEDERATIONSERVICE']._serialized_end=2647
+  _globals['_FEDERATIONSERVICE'].methods_by_name['ListAccessBindings']._loaded_options = None
+  _globals['_FEDERATIONSERVICE'].methods_by_name['ListAccessBindings']._serialized_options = b'\202\323\344\223\002D\022B/iam/v1/workload/oidc/federations/{resource_id}:listAccessBindings'
+  _globals['_FEDERATIONSERVICE'].methods_by_name['SetAccessBindings']._loaded_options = None
+  _globals['_FEDERATIONSERVICE'].methods_by_name['SetAccessBindings']._serialized_options = b'\262\322*H\n access.SetAccessBindingsMetadata\022$access.AccessBindingsOperationResult\202\323\344\223\002F\"A/iam/v1/workload/oidc/federations/{resource_id}:setAccessBindings:\001*'
+  _globals['_FEDERATIONSERVICE'].methods_by_name['UpdateAccessBindings']._loaded_options = None
+  _globals['_FEDERATIONSERVICE'].methods_by_name['UpdateAccessBindings']._serialized_options = b'\262\322*K\n#access.UpdateAccessBindingsMetadata\022$access.AccessBindingsOperationResult\202\323\344\223\002I\"D/iam/v1/workload/oidc/federations/{resource_id}:updateAccessBindings:\001*'
+  _globals['_GETFEDERATIONREQUEST']._serialized_start=352
+  _globals['_GETFEDERATIONREQUEST']._serialized_end=411
+  _globals['_LISTFEDERATIONSREQUEST']._serialized_start=413
+  _globals['_LISTFEDERATIONSREQUEST']._serialized_end=533
+  _globals['_LISTFEDERATIONSRESPONSE']._serialized_start=535
+  _globals['_LISTFEDERATIONSRESPONSE']._serialized_end=653
+  _globals['_CREATEFEDERATIONREQUEST']._serialized_start=656
+  _globals['_CREATEFEDERATIONREQUEST']._serialized_end=1059
+  _globals['_CREATEFEDERATIONREQUEST_LABELSENTRY']._serialized_start=1014
+  _globals['_CREATEFEDERATIONREQUEST_LABELSENTRY']._serialized_end=1059
+  _globals['_CREATEFEDERATIONMETADATA']._serialized_start=1061
+  _globals['_CREATEFEDERATIONMETADATA']._serialized_end=1110
+  _globals['_UPDATEFEDERATIONREQUEST']._serialized_start=1113
+  _globals['_UPDATEFEDERATIONREQUEST']._serialized_end=1529
+  _globals['_UPDATEFEDERATIONREQUEST_LABELSENTRY']._serialized_start=1014
+  _globals['_UPDATEFEDERATIONREQUEST_LABELSENTRY']._serialized_end=1059
+  _globals['_UPDATEFEDERATIONMETADATA']._serialized_start=1531
+  _globals['_UPDATEFEDERATIONMETADATA']._serialized_end=1580
+  _globals['_DELETEFEDERATIONREQUEST']._serialized_start=1582
+  _globals['_DELETEFEDERATIONREQUEST']._serialized_end=1644
+  _globals['_DELETEFEDERATIONMETADATA']._serialized_start=1646
+  _globals['_DELETEFEDERATIONMETADATA']._serialized_end=1695
+  _globals['_FEDERATIONSERVICE']._serialized_start=1698
+  _globals['_FEDERATIONSERVICE']._serialized_end=3407
 # @@protoc_insertion_point(module_scope)

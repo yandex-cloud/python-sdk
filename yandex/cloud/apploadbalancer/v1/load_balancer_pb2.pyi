@@ -97,6 +97,7 @@ class LoadBalancer(google.protobuf.message.Message):
     CREATED_AT_FIELD_NUMBER: builtins.int
     AUTO_SCALE_POLICY_FIELD_NUMBER: builtins.int
     LOG_OPTIONS_FIELD_NUMBER: builtins.int
+    ALLOW_ZONAL_SHIFT_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the application load balancer. Generated at creation time."""
     name: builtins.str
@@ -116,6 +117,8 @@ class LoadBalancer(google.protobuf.message.Message):
 
     The logs can be accessed using a Cloud Functions [trigger for Cloud Logs](/docs/functions/operations/trigger/cloud-logging-trigger-create).
     """
+    allow_zonal_shift: builtins.bool
+    """Specifies whether application load balancer is available to zonal shift."""
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
         """Application load balancer labels as `key:value` pairs.
@@ -182,9 +185,10 @@ class LoadBalancer(google.protobuf.message.Message):
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         auto_scale_policy: global___AutoScalePolicy | None = ...,
         log_options: yandex.cloud.apploadbalancer.v1.logging_pb2.LogOptions | None = ...,
+        allow_zonal_shift: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["allocation_policy", b"allocation_policy", "auto_scale_policy", b"auto_scale_policy", "created_at", b"created_at", "log_options", b"log_options"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["allocation_policy", b"allocation_policy", "auto_scale_policy", b"auto_scale_policy", "created_at", b"created_at", "description", b"description", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "listeners", b"listeners", "log_group_id", b"log_group_id", "log_options", b"log_options", "name", b"name", "network_id", b"network_id", "region_id", b"region_id", "security_group_ids", b"security_group_ids", "status", b"status"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["allocation_policy", b"allocation_policy", "allow_zonal_shift", b"allow_zonal_shift", "auto_scale_policy", b"auto_scale_policy", "created_at", b"created_at", "description", b"description", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "listeners", b"listeners", "log_group_id", b"log_group_id", "log_options", b"log_options", "name", b"name", "network_id", b"network_id", "region_id", b"region_id", "security_group_ids", b"security_group_ids", "status", b"status"]) -> None: ...
 
 global___LoadBalancer = LoadBalancer
 
@@ -295,6 +299,7 @@ class Location(google.protobuf.message.Message):
     ZONE_ID_FIELD_NUMBER: builtins.int
     SUBNET_ID_FIELD_NUMBER: builtins.int
     DISABLE_TRAFFIC_FIELD_NUMBER: builtins.int
+    ZONAL_SHIFT_ACTIVE_FIELD_NUMBER: builtins.int
     zone_id: builtins.str
     """ID of the availability zone where the application load balancer resides.
 
@@ -309,14 +314,17 @@ class Location(google.protobuf.message.Message):
     They still may receive traffic from the load balancer nodes in other availability zones,
     subject to [LoadBalancingConfig.locality_aware_routing_percent] and [LoadBalancingConfig.strict_locality] settings.
     """
+    zonal_shift_active: builtins.bool
+    """Show zonal shift status for the location."""
     def __init__(
         self,
         *,
         zone_id: builtins.str = ...,
         subnet_id: builtins.str = ...,
         disable_traffic: builtins.bool = ...,
+        zonal_shift_active: builtins.bool = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["disable_traffic", b"disable_traffic", "subnet_id", b"subnet_id", "zone_id", b"zone_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["disable_traffic", b"disable_traffic", "subnet_id", b"subnet_id", "zonal_shift_active", b"zonal_shift_active", "zone_id", b"zone_id"]) -> None: ...
 
 global___Location = Location
 

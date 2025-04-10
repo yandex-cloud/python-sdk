@@ -461,6 +461,7 @@ class ListDatasetsRequest(google.protobuf.message.Message):
     TASK_TYPE_FILTER_FIELD_NUMBER: builtins.int
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
+    DATASET_IDS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """Folder ID of the datasets to list."""
     dataset_name_pattern: builtins.str
@@ -483,6 +484,10 @@ class ListDatasetsRequest(google.protobuf.message.Message):
     def task_type_filter(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Task types of the datasets to list. Optional."""
 
+    @property
+    def dataset_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Dataset Id of the datasets to list. Optional."""
+
     def __init__(
         self,
         *,
@@ -492,8 +497,9 @@ class ListDatasetsRequest(google.protobuf.message.Message):
         task_type_filter: collections.abc.Iterable[builtins.str] | None = ...,
         page_size: builtins.int = ...,
         page_token: builtins.str = ...,
+        dataset_ids: collections.abc.Iterable[builtins.str] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["dataset_name_pattern", b"dataset_name_pattern", "folder_id", b"folder_id", "page_size", b"page_size", "page_token", b"page_token", "status", b"status", "task_type_filter", b"task_type_filter"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["dataset_ids", b"dataset_ids", "dataset_name_pattern", b"dataset_name_pattern", "folder_id", b"folder_id", "page_size", b"page_size", "page_token", b"page_token", "status", b"status", "task_type_filter", b"task_type_filter"]) -> None: ...
 
 global___ListDatasetsRequest = ListDatasetsRequest
 

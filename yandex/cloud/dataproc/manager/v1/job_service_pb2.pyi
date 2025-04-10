@@ -22,7 +22,7 @@ class ListJobsRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     FILTER_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """Required. ID of the cluster to list Data Proc jobs of."""
+    """Required. ID of the cluster to list Yandex Data Processing jobs of."""
     page_size: builtins.int
     """The maximum number of results per page that should be returned. If the number of available
     results is larger than `page_size`, the service returns a `next_page_token` that can be used
@@ -62,7 +62,7 @@ class ListJobsResponse(google.protobuf.message.Message):
     """
     @property
     def jobs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.dataproc.manager.v1.job_pb2.Job]:
-        """Requested list of Data Proc jobs."""
+        """Requested list of Yandex Data Processing jobs."""
 
     def __init__(
         self,
@@ -83,9 +83,9 @@ class UpdateJobStatusRequest(google.protobuf.message.Message):
     STATUS_FIELD_NUMBER: builtins.int
     APPLICATION_INFO_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """Required. ID of the Data Proc cluster."""
+    """Required. ID of the Yandex Data Processing cluster."""
     job_id: builtins.str
-    """Required. ID of the Data Proc job to update."""
+    """Required. ID of the Yandex Data Processing job to update."""
     status: yandex.cloud.dataproc.manager.v1.job_pb2.Job.Status.ValueType
     """Required. New status of the job."""
     @property
@@ -130,7 +130,7 @@ class ListSupportJobsResponse(google.protobuf.message.Message):
     """
     @property
     def jobs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.dataproc.manager.v1.job_pb2.SupportJob]:
-        """Requested list of Data Proc jobs."""
+        """Requested list of Yandex Data Processing jobs."""
 
     def __init__(
         self,
@@ -150,9 +150,9 @@ class UpdateSupportJobStatusRequest(google.protobuf.message.Message):
     JOB_ID_FIELD_NUMBER: builtins.int
     STATUS_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """Required. ID of the Data Proc cluster."""
+    """Required. ID of the Yandex Data Processing cluster."""
     job_id: builtins.str
-    """Required. ID of the Data Proc job to update."""
+    """Required. ID of the Yandex Data Processing job to update."""
     status: yandex.cloud.dataproc.manager.v1.job_pb2.SupportJob.Status.ValueType
     """Required. New status of the job."""
     def __init__(

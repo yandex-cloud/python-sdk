@@ -70,6 +70,26 @@ class TuningServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.ListErrorsRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.ListErrorsResponse.FromString,
                 _registered_method=True)
+        self.CreateDraft = channel.unary_unary(
+                '/yandex.cloud.ai.tuning.v1.TuningService/CreateDraft',
+                request_serializer=yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.CreateTuningDraftRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.CreateTuningDraftResponse.FromString,
+                _registered_method=True)
+        self.UpdateDraft = channel.unary_unary(
+                '/yandex.cloud.ai.tuning.v1.TuningService/UpdateDraft',
+                request_serializer=yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.UpdateTuningDraftRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.UpdateTuningDraftResponse.FromString,
+                _registered_method=True)
+        self.DeleteDraft = channel.unary_unary(
+                '/yandex.cloud.ai.tuning.v1.TuningService/DeleteDraft',
+                request_serializer=yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.DeleteTuningDraftRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.DeleteTuningDraftResponse.FromString,
+                _registered_method=True)
+        self.TuneDraft = channel.unary_unary(
+                '/yandex.cloud.ai.tuning.v1.TuningService/TuneDraft',
+                request_serializer=yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.TuneDraftRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
 
 
 class TuningServiceServicer(object):
@@ -117,6 +137,30 @@ class TuningServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def CreateDraft(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateDraft(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteDraft(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def TuneDraft(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_TuningServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -154,6 +198,26 @@ def add_TuningServiceServicer_to_server(servicer, server):
                     servicer.ListErrors,
                     request_deserializer=yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.ListErrorsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.ListErrorsResponse.SerializeToString,
+            ),
+            'CreateDraft': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateDraft,
+                    request_deserializer=yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.CreateTuningDraftRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.CreateTuningDraftResponse.SerializeToString,
+            ),
+            'UpdateDraft': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateDraft,
+                    request_deserializer=yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.UpdateTuningDraftRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.UpdateTuningDraftResponse.SerializeToString,
+            ),
+            'DeleteDraft': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteDraft,
+                    request_deserializer=yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.DeleteTuningDraftRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.DeleteTuningDraftResponse.SerializeToString,
+            ),
+            'TuneDraft': grpc.unary_unary_rpc_method_handler(
+                    servicer.TuneDraft,
+                    request_deserializer=yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.TuneDraftRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -345,6 +409,114 @@ class TuningService(object):
             '/yandex.cloud.ai.tuning.v1.TuningService/ListErrors',
             yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.ListErrorsRequest.SerializeToString,
             yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.ListErrorsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateDraft(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.ai.tuning.v1.TuningService/CreateDraft',
+            yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.CreateTuningDraftRequest.SerializeToString,
+            yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.CreateTuningDraftResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateDraft(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.ai.tuning.v1.TuningService/UpdateDraft',
+            yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.UpdateTuningDraftRequest.SerializeToString,
+            yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.UpdateTuningDraftResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def DeleteDraft(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.ai.tuning.v1.TuningService/DeleteDraft',
+            yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.DeleteTuningDraftRequest.SerializeToString,
+            yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.DeleteTuningDraftResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def TuneDraft(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.ai.tuning.v1.TuningService/TuneDraft',
+            yandex_dot_cloud_dot_ai_dot_tuning_dot_v1_dot_tuning__service__pb2.TuneDraftRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
             insecure,

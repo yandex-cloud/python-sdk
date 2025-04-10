@@ -22,7 +22,7 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class Job(google.protobuf.message.Message):
-    """Data Proc job."""
+    """Yandex Data Processing job."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -79,28 +79,28 @@ class Job(google.protobuf.message.Message):
     HIVE_JOB_FIELD_NUMBER: builtins.int
     APPLICATION_INFO_FIELD_NUMBER: builtins.int
     id: builtins.str
-    """Unique ID of the Data Proc job.
-    This ID is assigned by MDB in the process of creating Data Proc job.
+    """Unique ID of the Yandex Data Processing job.
+    This ID is assigned by MDB in the process of creating Yandex Data Processing job.
     """
     cluster_id: builtins.str
-    """ID of the Data Proc cluster."""
+    """ID of the Yandex Data Processing cluster."""
     name: builtins.str
-    """Name of the Data Proc job."""
+    """Name of the Yandex Data Processing job."""
     created_by: builtins.str
     """The id of the user who created the job"""
     status: global___Job.Status.ValueType
     """Status."""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """The time when the Data Proc job was created."""
+        """The time when the Yandex Data Processing job was created."""
 
     @property
     def started_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """The time when the Data Proc job was started."""
+        """The time when the Yandex Data Processing job was started."""
 
     @property
     def finished_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """The time when the Data Proc job was finished."""
+        """The time when the Yandex Data Processing job was finished."""
 
     @property
     def mapreduce_job(self) -> global___MapreduceJob: ...
@@ -220,15 +220,15 @@ class MapreduceJob(google.protobuf.message.Message):
 
     @property
     def file_uris(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """URIs of files to be copied to the working directory of Data Proc drivers and distributed tasks."""
+        """URIs of files to be copied to the working directory of Yandex Data Processing drivers and distributed tasks."""
 
     @property
     def archive_uris(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """URIs of archives to be extracted in the working directory of Data Proc drivers and tasks."""
+        """URIs of archives to be extracted in the working directory of Yandex Data Processing drivers and tasks."""
 
     @property
     def properties(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """A mapping of property names to values, used to configure Data Proc."""
+        """A mapping of property names to values, used to configure Yandex Data Processing."""
 
     def __init__(
         self,
@@ -287,19 +287,19 @@ class SparkJob(google.protobuf.message.Message):
 
     @property
     def jar_file_uris(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Jar file URIs to add to the CLASSPATHs of the Data Proc driver and tasks."""
+        """Jar file URIs to add to the CLASSPATHs of the Yandex Data Processing driver and tasks."""
 
     @property
     def file_uris(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """URIs of files to be copied to the working directory of Data Proc drivers and distributed tasks."""
+        """URIs of files to be copied to the working directory of Yandex Data Processing drivers and distributed tasks."""
 
     @property
     def archive_uris(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """URIs of archives to be extracted in the working directory of Data Proc drivers and tasks."""
+        """URIs of archives to be extracted in the working directory of Yandex Data Processing drivers and tasks."""
 
     @property
     def properties(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """A mapping of property names to values, used to configure Data Proc."""
+        """A mapping of property names to values, used to configure Yandex Data Processing."""
 
     @property
     def packages(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
@@ -369,19 +369,19 @@ class PysparkJob(google.protobuf.message.Message):
 
     @property
     def jar_file_uris(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """Jar file URIs to add to the CLASSPATHs of the Data Proc driver and tasks."""
+        """Jar file URIs to add to the CLASSPATHs of the Yandex Data Processing driver and tasks."""
 
     @property
     def file_uris(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """URIs of files to be copied to the working directory of Data Proc drivers and distributed tasks."""
+        """URIs of files to be copied to the working directory of Yandex Data Processing drivers and distributed tasks."""
 
     @property
     def archive_uris(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """URIs of archives to be extracted in the working directory of Data Proc drivers and tasks."""
+        """URIs of archives to be extracted in the working directory of Yandex Data Processing drivers and tasks."""
 
     @property
     def properties(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
-        """A mapping of property names to values, used to configure Data Proc."""
+        """A mapping of property names to values, used to configure Yandex Data Processing."""
 
     @property
     def python_file_uris(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
@@ -511,7 +511,7 @@ global___HiveJob = HiveJob
 
 @typing.final
 class SupportJob(google.protobuf.message.Message):
-    """Data Proc support job."""
+    """Yandex Data Processing support job."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -564,11 +564,11 @@ class SupportJob(google.protobuf.message.Message):
     TIMEOUT_FIELD_NUMBER: builtins.int
     CREATED_BY_FIELD_NUMBER: builtins.int
     id: builtins.str
-    """Required. Unique ID of the Data Proc job.
-    This ID is assigned by MDB in the process of creating Data Proc job.
+    """Required. Unique ID of the Yandex Data Processing job.
+    This ID is assigned by MDB in the process of creating Yandex Data Processing job.
     """
     cluster_id: builtins.str
-    """Required. Unique ID of the Data Proc cluster."""
+    """Required. Unique ID of the Yandex Data Processing cluster."""
     status: global___SupportJob.Status.ValueType
     """Status."""
     cmd: builtins.str
@@ -579,15 +579,15 @@ class SupportJob(google.protobuf.message.Message):
     """The id of the user who created the job"""
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """The time when the Data Proc job was created."""
+        """The time when the Yandex Data Processing job was created."""
 
     @property
     def started_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """The time when the Data Proc job was started."""
+        """The time when the Yandex Data Processing job was started."""
 
     @property
     def finished_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
-        """The time when the Data Proc job was finished."""
+        """The time when the Yandex Data Processing job was finished."""
 
     def __init__(
         self,

@@ -23,7 +23,7 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class Cluster(google.protobuf.message.Message):
-    """A Data Proc cluster. For details about the concept, see [documentation](/docs/data-proc/concepts/)."""
+    """A Yandex Data Processing cluster. For details about the concept, see [documentation](/docs/data-proc/concepts/)."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -129,9 +129,9 @@ class Cluster(google.protobuf.message.Message):
     zone_id: builtins.str
     """ID of the availability zone where the cluster resides."""
     service_account_id: builtins.str
-    """ID of service account for the Data Proc manager agent."""
+    """ID of service account for the Yandex Data Processing manager agent."""
     bucket: builtins.str
-    """Object Storage bucket to be used for Data Proc jobs that are run in the cluster."""
+    """Object Storage bucket to be used for Yandex Data Processing jobs that are run in the cluster."""
     ui_proxy: builtins.bool
     """Whether UI Proxy feature is enabled."""
     deletion_protection: builtins.bool
@@ -196,7 +196,7 @@ global___Cluster = Cluster
 
 @typing.final
 class Monitoring(google.protobuf.message.Message):
-    """Metadata of a monitoring system for a Data Proc cluster."""
+    """Metadata of a monitoring system for a Yandex Data Processing cluster."""
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -330,7 +330,7 @@ class ClusterConfig(google.protobuf.message.Message):
     """
     @property
     def hadoop(self) -> global___HadoopConfig:
-        """Data Proc specific configuration options."""
+        """Yandex Data Processing specific configuration options."""
 
     def __init__(
         self,

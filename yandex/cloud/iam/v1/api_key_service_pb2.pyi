@@ -116,7 +116,9 @@ class CreateApiKeyRequest(google.protobuf.message.Message):
     description: builtins.str
     """Description of the API key."""
     scope: builtins.str
-    """Scope of the API key."""
+    """Draft
+    Scope of the API key.
+    """
     @property
     def scopes(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Scopes of the API key."""

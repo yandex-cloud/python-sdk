@@ -12,6 +12,7 @@ import google.protobuf.message
 import google.protobuf.timestamp_pb2
 import sys
 import typing
+import yandex.cloud.mdb.opensearch.v1.backup_pb2
 import yandex.cloud.mdb.opensearch.v1.config.opensearch_pb2
 import yandex.cloud.mdb.opensearch.v1.maintenance_pb2
 
@@ -272,6 +273,7 @@ class ClusterConfig(google.protobuf.message.Message):
     OPENSEARCH_FIELD_NUMBER: builtins.int
     DASHBOARDS_FIELD_NUMBER: builtins.int
     ACCESS_FIELD_NUMBER: builtins.int
+    SNAPSHOT_MANAGEMENT_FIELD_NUMBER: builtins.int
     version: builtins.str
     """Version of the OpenSearch server software."""
     @property
@@ -286,6 +288,10 @@ class ClusterConfig(google.protobuf.message.Message):
     def access(self) -> global___Access:
         """Access policy for external services."""
 
+    @property
+    def snapshot_management(self) -> yandex.cloud.mdb.opensearch.v1.backup_pb2.SnapshotManagement:
+        """Snapshot management configuration"""
+
     def __init__(
         self,
         *,
@@ -293,9 +299,10 @@ class ClusterConfig(google.protobuf.message.Message):
         opensearch: global___OpenSearch | None = ...,
         dashboards: global___Dashboards | None = ...,
         access: global___Access | None = ...,
+        snapshot_management: yandex.cloud.mdb.opensearch.v1.backup_pb2.SnapshotManagement | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access", b"access", "dashboards", b"dashboards", "opensearch", b"opensearch"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access", b"access", "dashboards", b"dashboards", "opensearch", b"opensearch", "version", b"version"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access", b"access", "dashboards", b"dashboards", "opensearch", b"opensearch", "snapshot_management", b"snapshot_management"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access", b"access", "dashboards", b"dashboards", "opensearch", b"opensearch", "snapshot_management", b"snapshot_management", "version", b"version"]) -> None: ...
 
 global___ClusterConfig = ClusterConfig
 

@@ -20,7 +20,7 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class JobServiceStub:
-    """A set of methods for managing Data Proc jobs."""
+    """A set of methods for managing Yandex Data Processing jobs."""
 
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     List: grpc.UnaryUnaryMultiCallable[
@@ -51,10 +51,10 @@ class JobServiceStub:
         yandex.cloud.dataproc.v1.job_service_pb2.CancelJobRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Cancels the specified Dataproc job."""
+    """Cancels the specified Yandex Data Processing job."""
 
 class JobServiceAsyncStub:
-    """A set of methods for managing Data Proc jobs."""
+    """A set of methods for managing Yandex Data Processing jobs."""
 
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.dataproc.v1.job_service_pb2.ListJobsRequest,
@@ -84,10 +84,10 @@ class JobServiceAsyncStub:
         yandex.cloud.dataproc.v1.job_service_pb2.CancelJobRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
-    """Cancels the specified Dataproc job."""
+    """Cancels the specified Yandex Data Processing job."""
 
 class JobServiceServicer(metaclass=abc.ABCMeta):
-    """A set of methods for managing Data Proc jobs."""
+    """A set of methods for managing Yandex Data Processing jobs."""
 
     @abc.abstractmethod
     def List(
@@ -127,6 +127,6 @@ class JobServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.dataproc.v1.job_service_pb2.CancelJobRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
-        """Cancels the specified Dataproc job."""
+        """Cancels the specified Yandex Data Processing job."""
 
 def add_JobServiceServicer_to_server(servicer: JobServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

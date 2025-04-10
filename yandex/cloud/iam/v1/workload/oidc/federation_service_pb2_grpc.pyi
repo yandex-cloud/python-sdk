@@ -8,6 +8,7 @@ import collections.abc
 import grpc
 import grpc.aio
 import typing
+import yandex.cloud.access.access_pb2
 import yandex.cloud.iam.v1.workload.oidc.federation_pb2
 import yandex.cloud.iam.v1.workload.oidc.federation_service_pb2
 import yandex.cloud.operation.operation_pb2
@@ -56,6 +57,24 @@ class FederationServiceStub:
     ]
     """Deletes the specified OIDC workload identity federation."""
 
+    ListAccessBindings: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
+        yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
+    ]
+    """Lists access bindings for the specified OIDC workload identity federation."""
+
+    SetAccessBindings: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Sets access bindings for the specified OIDC workload identity federation."""
+
+    UpdateAccessBindings: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates access bindings for the specified OIDC workload identity federation."""
+
 class FederationServiceAsyncStub:
     """A set of methods for managing OIDC workload identity federations."""
 
@@ -91,6 +110,24 @@ class FederationServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the specified OIDC workload identity federation."""
+
+    ListAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
+        yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
+    ]
+    """Lists access bindings for the specified OIDC workload identity federation."""
+
+    SetAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Sets access bindings for the specified OIDC workload identity federation."""
+
+    UpdateAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates access bindings for the specified OIDC workload identity federation."""
 
 class FederationServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing OIDC workload identity federations."""
@@ -137,5 +174,29 @@ class FederationServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Deletes the specified OIDC workload identity federation."""
+
+    @abc.abstractmethod
+    def ListAccessBindings(
+        self,
+        request: yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.access.access_pb2.ListAccessBindingsResponse, collections.abc.Awaitable[yandex.cloud.access.access_pb2.ListAccessBindingsResponse]]:
+        """Lists access bindings for the specified OIDC workload identity federation."""
+
+    @abc.abstractmethod
+    def SetAccessBindings(
+        self,
+        request: yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Sets access bindings for the specified OIDC workload identity federation."""
+
+    @abc.abstractmethod
+    def UpdateAccessBindings(
+        self,
+        request: yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Updates access bindings for the specified OIDC workload identity federation."""
 
 def add_FederationServiceServicer_to_server(servicer: FederationServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

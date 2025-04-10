@@ -34,7 +34,9 @@ class ApiKey(google.protobuf.message.Message):
     description: builtins.str
     """Description of the API key. 0-256 characters long."""
     scope: builtins.str
-    """Scope of the API key. 0-256 characters long."""
+    """Draft
+    Scope of the API key. 0-256 characters long.
+    """
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
         """Creation timestamp."""

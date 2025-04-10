@@ -40,6 +40,30 @@ BMS: ResourceType.ValueType  # 2
 global___ResourceType = ResourceType
 
 @typing.final
+class TenantInfo(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    PERSONAL_TENANT_ID_FIELD_NUMBER: builtins.int
+    USER_ID_FIELD_NUMBER: builtins.int
+    folder_id: builtins.str
+    """Folder ID"""
+    personal_tenant_id: builtins.str
+    """Personal tenant id from backup provider"""
+    user_id: builtins.str
+    """User id from provider"""
+    def __init__(
+        self,
+        *,
+        folder_id: builtins.str = ...,
+        personal_tenant_id: builtins.str = ...,
+        user_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["folder_id", b"folder_id", "personal_tenant_id", b"personal_tenant_id", "user_id", b"user_id"]) -> None: ...
+
+global___TenantInfo = TenantInfo
+
+@typing.final
 class Resource(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -124,6 +148,7 @@ class Resource(google.protobuf.message.Message):
     INIT_STATUS_FIELD_NUMBER: builtins.int
     METADATA_FIELD_NUMBER: builtins.int
     TYPE_FIELD_NUMBER: builtins.int
+    TENANT_INFO_FIELD_NUMBER: builtins.int
     compute_instance_id: builtins.str
     """Compute Cloud instance ID."""
     online: builtins.bool
@@ -162,6 +187,10 @@ class Resource(google.protobuf.message.Message):
     def last_backup_time(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
     @property
     def next_backup_time(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
+    @property
+    def tenant_info(self) -> global___TenantInfo:
+        """Additional info abount tenant which resource belongs to"""
+
     def __init__(
         self,
         *,
@@ -180,9 +209,10 @@ class Resource(google.protobuf.message.Message):
         init_status: global___Resource.InitStatus.ValueType = ...,
         metadata: builtins.str = ...,
         type: global___ResourceType.ValueType = ...,
+        tenant_info: global___TenantInfo | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "last_backup_time", b"last_backup_time", "next_backup_time", b"next_backup_time", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["compute_instance_id", b"compute_instance_id", "created_at", b"created_at", "enabled", b"enabled", "init_status", b"init_status", "is_active", b"is_active", "last_backup_time", b"last_backup_time", "metadata", b"metadata", "next_backup_time", b"next_backup_time", "online", b"online", "resource_id", b"resource_id", "status", b"status", "status_details", b"status_details", "status_progress", b"status_progress", "type", b"type", "updated_at", b"updated_at"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "last_backup_time", b"last_backup_time", "next_backup_time", b"next_backup_time", "tenant_info", b"tenant_info", "updated_at", b"updated_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["compute_instance_id", b"compute_instance_id", "created_at", b"created_at", "enabled", b"enabled", "init_status", b"init_status", "is_active", b"is_active", "last_backup_time", b"last_backup_time", "metadata", b"metadata", "next_backup_time", b"next_backup_time", "online", b"online", "resource_id", b"resource_id", "status", b"status", "status_details", b"status_details", "status_progress", b"status_progress", "tenant_info", b"tenant_info", "type", b"type", "updated_at", b"updated_at"]) -> None: ...
 
 global___Resource = Resource
 

@@ -65,7 +65,7 @@ class JobServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def ListActive(self, request, context):
-        """Retrieves a list of jobs for Data Proc cluster.
+        """Retrieves a list of jobs for Yandex Data Processing cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -79,7 +79,7 @@ class JobServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListSupportActive(self, request, context):
-        """Retrieves a list of support jobs for Data Proc cluster.
+        """Retrieves a list of support jobs for Yandex Data Processing cluster.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

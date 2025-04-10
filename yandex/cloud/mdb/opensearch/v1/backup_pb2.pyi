@@ -7,9 +7,17 @@ import builtins
 import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
+import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
 import google.protobuf.timestamp_pb2
+import google.protobuf.wrappers_pb2
+import sys
 import typing
+
+if sys.version_info >= (3, 10):
+    import typing as typing_extensions
+else:
+    import typing_extensions
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -67,3 +75,157 @@ class Backup(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["created_at", b"created_at", "folder_id", b"folder_id", "id", b"id", "indices", b"indices", "indices_total", b"indices_total", "opensearch_version", b"opensearch_version", "size_bytes", b"size_bytes", "source_cluster_id", b"source_cluster_id", "started_at", b"started_at"]) -> None: ...
 
 global___Backup = Backup
+
+@typing.final
+class SnapshotManagement(google.protobuf.message.Message):
+    """Snapshot management configuration"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SNAPSHOT_SCHEDULE_FIELD_NUMBER: builtins.int
+    SNAPSHOT_MAX_AGE_DAYS_FIELD_NUMBER: builtins.int
+    @property
+    def snapshot_schedule(self) -> global___SnapshotSchedule:
+        """Snapshot creation schedule"""
+
+    @property
+    def snapshot_max_age_days(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Snapshot max age in days"""
+
+    def __init__(
+        self,
+        *,
+        snapshot_schedule: global___SnapshotSchedule | None = ...,
+        snapshot_max_age_days: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["snapshot_max_age_days", b"snapshot_max_age_days", "snapshot_schedule", b"snapshot_schedule"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["snapshot_max_age_days", b"snapshot_max_age_days", "snapshot_schedule", b"snapshot_schedule"]) -> None: ...
+
+global___SnapshotManagement = SnapshotManagement
+
+@typing.final
+class SnapshotSchedule(google.protobuf.message.Message):
+    """Snapshot creation schedule"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    HOURLY_SNAPSHOT_SCHEDULE_FIELD_NUMBER: builtins.int
+    DAILY_SNAPSHOT_SCHEDULE_FIELD_NUMBER: builtins.int
+    WEEKLY_SNAPSHOT_SCHEDULE_FIELD_NUMBER: builtins.int
+    @property
+    def hourly_snapshot_schedule(self) -> global___HourlySnapshotSchedule:
+        """Hourly based snapshot schedule"""
+
+    @property
+    def daily_snapshot_schedule(self) -> global___DailySnapshotSchedule:
+        """Daily based snapshot schedule"""
+
+    @property
+    def weekly_snapshot_schedule(self) -> global___WeeklySnapshotSchedule:
+        """Weekly based snapshot schedule"""
+
+    def __init__(
+        self,
+        *,
+        hourly_snapshot_schedule: global___HourlySnapshotSchedule | None = ...,
+        daily_snapshot_schedule: global___DailySnapshotSchedule | None = ...,
+        weekly_snapshot_schedule: global___WeeklySnapshotSchedule | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["daily_snapshot_schedule", b"daily_snapshot_schedule", "hourly_snapshot_schedule", b"hourly_snapshot_schedule", "schedule", b"schedule", "weekly_snapshot_schedule", b"weekly_snapshot_schedule"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["daily_snapshot_schedule", b"daily_snapshot_schedule", "hourly_snapshot_schedule", b"hourly_snapshot_schedule", "schedule", b"schedule", "weekly_snapshot_schedule", b"weekly_snapshot_schedule"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["schedule", b"schedule"]) -> typing.Literal["hourly_snapshot_schedule", "daily_snapshot_schedule", "weekly_snapshot_schedule"] | None: ...
+
+global___SnapshotSchedule = SnapshotSchedule
+
+@typing.final
+class HourlySnapshotSchedule(google.protobuf.message.Message):
+    """Hourly based snapshot schedule"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    MINUTE_FIELD_NUMBER: builtins.int
+    minute: builtins.int
+    """The minute of the hour at which the backup should be created."""
+    def __init__(
+        self,
+        *,
+        minute: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["minute", b"minute"]) -> None: ...
+
+global___HourlySnapshotSchedule = HourlySnapshotSchedule
+
+@typing.final
+class DailySnapshotSchedule(google.protobuf.message.Message):
+    """Daily based snapshot schedule"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    HOUR_FIELD_NUMBER: builtins.int
+    MINUTE_FIELD_NUMBER: builtins.int
+    hour: builtins.int
+    """The hour of the day in UTC timezone at which the backup should be created."""
+    minute: builtins.int
+    """The minute of the hour at which the backup should be created."""
+    def __init__(
+        self,
+        *,
+        hour: builtins.int = ...,
+        minute: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["hour", b"hour", "minute", b"minute"]) -> None: ...
+
+global___DailySnapshotSchedule = DailySnapshotSchedule
+
+@typing.final
+class WeeklySnapshotSchedule(google.protobuf.message.Message):
+    """Weekly based snapshot schedule"""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _WeekDay:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _WeekDayEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[WeeklySnapshotSchedule._WeekDay.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        WEEK_DAY_UNSPECIFIED: WeeklySnapshotSchedule._WeekDay.ValueType  # 0
+        MON: WeeklySnapshotSchedule._WeekDay.ValueType  # 1
+        TUE: WeeklySnapshotSchedule._WeekDay.ValueType  # 2
+        WED: WeeklySnapshotSchedule._WeekDay.ValueType  # 3
+        THU: WeeklySnapshotSchedule._WeekDay.ValueType  # 4
+        FRI: WeeklySnapshotSchedule._WeekDay.ValueType  # 5
+        SAT: WeeklySnapshotSchedule._WeekDay.ValueType  # 6
+        SUN: WeeklySnapshotSchedule._WeekDay.ValueType  # 7
+
+    class WeekDay(_WeekDay, metaclass=_WeekDayEnumTypeWrapper):
+        """Day of the week"""
+
+    WEEK_DAY_UNSPECIFIED: WeeklySnapshotSchedule.WeekDay.ValueType  # 0
+    MON: WeeklySnapshotSchedule.WeekDay.ValueType  # 1
+    TUE: WeeklySnapshotSchedule.WeekDay.ValueType  # 2
+    WED: WeeklySnapshotSchedule.WeekDay.ValueType  # 3
+    THU: WeeklySnapshotSchedule.WeekDay.ValueType  # 4
+    FRI: WeeklySnapshotSchedule.WeekDay.ValueType  # 5
+    SAT: WeeklySnapshotSchedule.WeekDay.ValueType  # 6
+    SUN: WeeklySnapshotSchedule.WeekDay.ValueType  # 7
+
+    DAY_FIELD_NUMBER: builtins.int
+    HOUR_FIELD_NUMBER: builtins.int
+    MINUTE_FIELD_NUMBER: builtins.int
+    day: global___WeeklySnapshotSchedule.WeekDay.ValueType
+    """Day of the week"""
+    hour: builtins.int
+    """The hour of the day in UTC timezone at which the backup should be created."""
+    minute: builtins.int
+    """The minute of the hour at which the backup should be created."""
+    def __init__(
+        self,
+        *,
+        day: global___WeeklySnapshotSchedule.WeekDay.ValueType = ...,
+        hour: builtins.int = ...,
+        minute: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["day", b"day", "hour", b"hour", "minute", b"minute"]) -> None: ...
+
+global___WeeklySnapshotSchedule = WeeklySnapshotSchedule

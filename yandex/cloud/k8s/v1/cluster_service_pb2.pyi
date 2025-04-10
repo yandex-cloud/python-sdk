@@ -307,6 +307,7 @@ class MasterUpdateSpec(google.protobuf.message.Message):
     MASTER_LOGGING_FIELD_NUMBER: builtins.int
     LOCATIONS_FIELD_NUMBER: builtins.int
     EXTERNAL_V6_ADDRESS_SPEC_FIELD_NUMBER: builtins.int
+    SCALE_POLICY_FIELD_NUMBER: builtins.int
     @property
     def version(self) -> yandex.cloud.k8s.v1.version_pb2.UpdateVersionSpec:
         """Specification of the master update."""
@@ -331,6 +332,10 @@ class MasterUpdateSpec(google.protobuf.message.Message):
     def external_v6_address_spec(self) -> global___ExternalAddressSpec:
         """Specification of parameters for external IPv6 networking."""
 
+    @property
+    def scale_policy(self) -> global___MasterScalePolicySpec:
+        """Scale policy of the master."""
+
     def __init__(
         self,
         *,
@@ -340,9 +345,10 @@ class MasterUpdateSpec(google.protobuf.message.Message):
         master_logging: yandex.cloud.k8s.v1.cluster_pb2.MasterLogging | None = ...,
         locations: collections.abc.Iterable[global___LocationSpec] | None = ...,
         external_v6_address_spec: global___ExternalAddressSpec | None = ...,
+        scale_policy: global___MasterScalePolicySpec | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["external_v6_address_spec", b"external_v6_address_spec", "maintenance_policy", b"maintenance_policy", "master_logging", b"master_logging", "version", b"version"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["external_v6_address_spec", b"external_v6_address_spec", "locations", b"locations", "maintenance_policy", b"maintenance_policy", "master_logging", b"master_logging", "security_group_ids", b"security_group_ids", "version", b"version"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["external_v6_address_spec", b"external_v6_address_spec", "maintenance_policy", b"maintenance_policy", "master_logging", b"master_logging", "scale_policy", b"scale_policy", "version", b"version"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["external_v6_address_spec", b"external_v6_address_spec", "locations", b"locations", "maintenance_policy", b"maintenance_policy", "master_logging", b"master_logging", "scale_policy", b"scale_policy", "security_group_ids", b"security_group_ids", "version", b"version"]) -> None: ...
 
 global___MasterUpdateSpec = MasterUpdateSpec
 
@@ -702,6 +708,7 @@ class MasterSpec(google.protobuf.message.Message):
     MAINTENANCE_POLICY_FIELD_NUMBER: builtins.int
     SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
     MASTER_LOGGING_FIELD_NUMBER: builtins.int
+    SCALE_POLICY_FIELD_NUMBER: builtins.int
     etcd_cluster_size: builtins.int
     """Number of etcd nodes in cluster.
     Works in conjunction with [locations]. See it's documentation for details.
@@ -747,6 +754,10 @@ class MasterSpec(google.protobuf.message.Message):
     def master_logging(self) -> yandex.cloud.k8s.v1.cluster_pb2.MasterLogging:
         """Cloud Logging for master components."""
 
+    @property
+    def scale_policy(self) -> global___MasterScalePolicySpec:
+        """Scale policy of the master."""
+
     def __init__(
         self,
         *,
@@ -760,9 +771,10 @@ class MasterSpec(google.protobuf.message.Message):
         maintenance_policy: yandex.cloud.k8s.v1.cluster_pb2.MasterMaintenancePolicy | None = ...,
         security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         master_logging: yandex.cloud.k8s.v1.cluster_pb2.MasterLogging | None = ...,
+        scale_policy: global___MasterScalePolicySpec | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["external_v4_address_spec", b"external_v4_address_spec", "external_v6_address_spec", b"external_v6_address_spec", "maintenance_policy", b"maintenance_policy", "master_logging", b"master_logging", "master_type", b"master_type", "regional_master_spec", b"regional_master_spec", "zonal_master_spec", b"zonal_master_spec"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["etcd_cluster_size", b"etcd_cluster_size", "external_v4_address_spec", b"external_v4_address_spec", "external_v6_address_spec", b"external_v6_address_spec", "locations", b"locations", "maintenance_policy", b"maintenance_policy", "master_logging", b"master_logging", "master_type", b"master_type", "regional_master_spec", b"regional_master_spec", "security_group_ids", b"security_group_ids", "version", b"version", "zonal_master_spec", b"zonal_master_spec"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["external_v4_address_spec", b"external_v4_address_spec", "external_v6_address_spec", b"external_v6_address_spec", "maintenance_policy", b"maintenance_policy", "master_logging", b"master_logging", "master_type", b"master_type", "regional_master_spec", b"regional_master_spec", "scale_policy", b"scale_policy", "zonal_master_spec", b"zonal_master_spec"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["etcd_cluster_size", b"etcd_cluster_size", "external_v4_address_spec", b"external_v4_address_spec", "external_v6_address_spec", b"external_v6_address_spec", "locations", b"locations", "maintenance_policy", b"maintenance_policy", "master_logging", b"master_logging", "master_type", b"master_type", "regional_master_spec", b"regional_master_spec", "scale_policy", b"scale_policy", "security_group_ids", b"security_group_ids", "version", b"version", "zonal_master_spec", b"zonal_master_spec"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["master_type", b"master_type"]) -> typing.Literal["zonal_master_spec", "regional_master_spec"] | None: ...
 
 global___MasterSpec = MasterSpec
@@ -947,3 +959,57 @@ class RescheduleMaintenanceMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
 
 global___RescheduleMaintenanceMetadata = RescheduleMaintenanceMetadata
+
+@typing.final
+class MasterScalePolicySpec(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class FixedScale(google.protobuf.message.Message):
+        """Fixed master instance resources."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        RESOURCE_PRESET_ID_FIELD_NUMBER: builtins.int
+        resource_preset_id: builtins.str
+        """Preset of computing resources to be used by master."""
+        def __init__(
+            self,
+            *,
+            resource_preset_id: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["resource_preset_id", b"resource_preset_id"]) -> None: ...
+
+    @typing.final
+    class AutoScale(google.protobuf.message.Message):
+        """Scalable master instance resources."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        MIN_RESOURCE_PRESET_ID_FIELD_NUMBER: builtins.int
+        min_resource_preset_id: builtins.str
+        """Preset of computing resources to be used as lower boundary for scaling."""
+        def __init__(
+            self,
+            *,
+            min_resource_preset_id: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["min_resource_preset_id", b"min_resource_preset_id"]) -> None: ...
+
+    FIXED_SCALE_FIELD_NUMBER: builtins.int
+    AUTO_SCALE_FIELD_NUMBER: builtins.int
+    @property
+    def fixed_scale(self) -> global___MasterScalePolicySpec.FixedScale: ...
+    @property
+    def auto_scale(self) -> global___MasterScalePolicySpec.AutoScale: ...
+    def __init__(
+        self,
+        *,
+        fixed_scale: global___MasterScalePolicySpec.FixedScale | None = ...,
+        auto_scale: global___MasterScalePolicySpec.AutoScale | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["auto_scale", b"auto_scale", "fixed_scale", b"fixed_scale", "scale_type", b"scale_type"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["auto_scale", b"auto_scale", "fixed_scale", b"fixed_scale", "scale_type", b"scale_type"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["scale_type", b"scale_type"]) -> typing.Literal["fixed_scale", "auto_scale"] | None: ...
+
+global___MasterScalePolicySpec = MasterScalePolicySpec

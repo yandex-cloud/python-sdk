@@ -28,7 +28,7 @@ if _version_not_supported:
 
 
 class SubclusterServiceStub(object):
-    """A set of methods for managing Data Proc subclusters.
+    """A set of methods for managing Yandex Data Processing subclusters.
     """
 
     def __init__(self, channel):
@@ -65,7 +65,7 @@ class SubclusterServiceStub(object):
 
 
 class SubclusterServiceServicer(object):
-    """A set of methods for managing Data Proc subclusters.
+    """A set of methods for managing Yandex Data Processing subclusters.
     """
 
     def Get(self, request, context):
@@ -142,7 +142,7 @@ def add_SubclusterServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class SubclusterService(object):
-    """A set of methods for managing Data Proc subclusters.
+    """A set of methods for managing Yandex Data Processing subclusters.
     """
 
     @staticmethod

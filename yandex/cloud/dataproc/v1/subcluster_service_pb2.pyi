@@ -22,7 +22,7 @@ class GetSubclusterRequest(google.protobuf.message.Message):
     CLUSTER_ID_FIELD_NUMBER: builtins.int
     SUBCLUSTER_ID_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Data Proc cluster that the subcluster belongs to."""
+    """ID of the Yandex Data Processing cluster that the subcluster belongs to."""
     subcluster_id: builtins.str
     """ID of the subcluster to return.
 
@@ -47,7 +47,7 @@ class ListSubclustersRequest(google.protobuf.message.Message):
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     FILTER_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Data Proc cluster to list subclusters in."""
+    """ID of the Yandex Data Processing cluster to list subclusters in."""
     page_size: builtins.int
     """The maximum number of results per page to return. If the number of available
     results is larger than [page_size], the service returns a [ListSubclustersResponse.next_page_token]
@@ -118,7 +118,7 @@ class CreateSubclusterRequest(google.protobuf.message.Message):
     HOSTS_COUNT_FIELD_NUMBER: builtins.int
     AUTOSCALING_CONFIG_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
-    """ID of the Data Proc cluster to create a subcluster in.
+    """ID of the Yandex Data Processing cluster to create a subcluster in.
 
     To get a cluster ID, make a [ClusterService.List] request.
     """

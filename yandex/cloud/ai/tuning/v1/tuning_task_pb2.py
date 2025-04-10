@@ -26,7 +26,7 @@ from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n+yandex/cloud/ai/tuning/v1/tuning_task.proto\x12\x19yandex.cloud.ai.tuning.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\x8b\x05\n\nTuningTask\x12\x0f\n\x07task_id\x18\x01 \x01(\t\x12\x14\n\x0coperation_id\x18\x03 \x01(\t\x12<\n\x06status\x18\x04 \x01(\x0e\x32,.yandex.cloud.ai.tuning.v1.TuningTask.Status\x12\x11\n\tfolder_id\x18\x05 \x01(\t\x12\x12\n\ncreated_by\x18\x06 \x01(\t\x12.\n\ncreated_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nstarted_at\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0b\x66inished_at\x18\t \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x18\n\x10source_model_uri\x18\n \x01(\t\x12\x18\n\x10target_model_uri\x18\x0b \x01(\t\x12)\n\x04name\x18\x0c \x01(\tB\x1b\xf2\xc7\x31\x17^[A-Za-z0-9 _-]{3,100}$\x12\x13\n\x0b\x64\x65scription\x18\r \x01(\t\x12\x41\n\x06labels\x18\x0e \x03(\x0b\x32\x31.yandex.cloud.ai.tuning.v1.TuningTask.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"t\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0b\n\x07\x43REATED\x10\x01\x12\x0b\n\x07PENDING\x10\x02\x12\x0f\n\x0bIN_PROGRESS\x10\x03\x12\r\n\tCOMPLETED\x10\x04\x12\n\n\x06\x46\x41ILED\x10\x05\x12\x0c\n\x08\x43\x41NCELED\x10\x06J\x04\x08\x02\x10\x03\x42\x63\n\x1dyandex.cloud.api.ai.tuning.v1ZBgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/tuning/v1;fomob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n+yandex/cloud/ai/tuning/v1/tuning_task.proto\x12\x19yandex.cloud.ai.tuning.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1dyandex/cloud/validation.proto\"\x96\x05\n\nTuningTask\x12\x0f\n\x07task_id\x18\x01 \x01(\t\x12\x14\n\x0coperation_id\x18\x03 \x01(\t\x12<\n\x06status\x18\x04 \x01(\x0e\x32,.yandex.cloud.ai.tuning.v1.TuningTask.Status\x12\x11\n\tfolder_id\x18\x05 \x01(\t\x12\x12\n\ncreated_by\x18\x06 \x01(\t\x12.\n\ncreated_at\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nstarted_at\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0b\x66inished_at\x18\t \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x18\n\x10source_model_uri\x18\n \x01(\t\x12\x18\n\x10target_model_uri\x18\x0b \x01(\t\x12)\n\x04name\x18\x0c \x01(\tB\x1b\xf2\xc7\x31\x17^[A-Za-z0-9 _-]{3,100}$\x12\x13\n\x0b\x64\x65scription\x18\r \x01(\t\x12\x41\n\x06labels\x18\x0e \x03(\x0b\x32\x31.yandex.cloud.ai.tuning.v1.TuningTask.LabelsEntry\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x7f\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0b\n\x07\x43REATED\x10\x01\x12\x0b\n\x07PENDING\x10\x02\x12\x0f\n\x0bIN_PROGRESS\x10\x03\x12\r\n\tCOMPLETED\x10\x04\x12\n\n\x06\x46\x41ILED\x10\x05\x12\x0c\n\x08\x43\x41NCELED\x10\x06\x12\t\n\x05\x44RAFT\x10\x07J\x04\x08\x02\x10\x03\x42\x63\n\x1dyandex.cloud.api.ai.tuning.v1ZBgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/tuning/v1;fomob\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -39,9 +39,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_TUNINGTASK'].fields_by_name['name']._loaded_options = None
   _globals['_TUNINGTASK'].fields_by_name['name']._serialized_options = b'\362\3071\027^[A-Za-z0-9 _-]{3,100}$'
   _globals['_TUNINGTASK']._serialized_start=139
-  _globals['_TUNINGTASK']._serialized_end=790
+  _globals['_TUNINGTASK']._serialized_end=801
   _globals['_TUNINGTASK_LABELSENTRY']._serialized_start=621
   _globals['_TUNINGTASK_LABELSENTRY']._serialized_end=666
   _globals['_TUNINGTASK_STATUS']._serialized_start=668
-  _globals['_TUNINGTASK_STATUS']._serialized_end=784
+  _globals['_TUNINGTASK_STATUS']._serialized_end=795
 # @@protoc_insertion_point(module_scope)

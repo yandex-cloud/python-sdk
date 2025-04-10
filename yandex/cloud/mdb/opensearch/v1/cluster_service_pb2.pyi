@@ -884,6 +884,7 @@ class ConfigCreateSpec(google.protobuf.message.Message):
     OPENSEARCH_SPEC_FIELD_NUMBER: builtins.int
     DASHBOARDS_SPEC_FIELD_NUMBER: builtins.int
     ACCESS_FIELD_NUMBER: builtins.int
+    SNAPSHOT_MANAGEMENT_FIELD_NUMBER: builtins.int
     version: builtins.str
     """OpenSearch version.
     No formal validation, a list of supported versions should suffice.
@@ -902,6 +903,10 @@ class ConfigCreateSpec(google.protobuf.message.Message):
     def access(self) -> yandex.cloud.mdb.opensearch.v1.cluster_pb2.Access:
         """Access policy for external services."""
 
+    @property
+    def snapshot_management(self) -> yandex.cloud.mdb.opensearch.v1.backup_pb2.SnapshotManagement:
+        """Snapshot management configuration"""
+
     def __init__(
         self,
         *,
@@ -910,9 +915,10 @@ class ConfigCreateSpec(google.protobuf.message.Message):
         opensearch_spec: global___OpenSearchCreateSpec | None = ...,
         dashboards_spec: global___DashboardsCreateSpec | None = ...,
         access: yandex.cloud.mdb.opensearch.v1.cluster_pb2.Access | None = ...,
+        snapshot_management: yandex.cloud.mdb.opensearch.v1.backup_pb2.SnapshotManagement | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access", b"access", "dashboards_spec", b"dashboards_spec", "opensearch_spec", b"opensearch_spec"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access", b"access", "admin_password", b"admin_password", "dashboards_spec", b"dashboards_spec", "opensearch_spec", b"opensearch_spec", "version", b"version"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access", b"access", "dashboards_spec", b"dashboards_spec", "opensearch_spec", b"opensearch_spec", "snapshot_management", b"snapshot_management"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access", b"access", "admin_password", b"admin_password", "dashboards_spec", b"dashboards_spec", "opensearch_spec", b"opensearch_spec", "snapshot_management", b"snapshot_management", "version", b"version"]) -> None: ...
 
 global___ConfigCreateSpec = ConfigCreateSpec
 
@@ -1107,6 +1113,7 @@ class ConfigUpdateSpec(google.protobuf.message.Message):
     OPENSEARCH_SPEC_FIELD_NUMBER: builtins.int
     DASHBOARDS_SPEC_FIELD_NUMBER: builtins.int
     ACCESS_FIELD_NUMBER: builtins.int
+    SNAPSHOT_MANAGEMENT_FIELD_NUMBER: builtins.int
     version: builtins.str
     """OpenSearch version.
     No formal validation, a list of supported versions should suffice.
@@ -1125,6 +1132,10 @@ class ConfigUpdateSpec(google.protobuf.message.Message):
     def access(self) -> yandex.cloud.mdb.opensearch.v1.cluster_pb2.Access:
         """Access policy for external services."""
 
+    @property
+    def snapshot_management(self) -> yandex.cloud.mdb.opensearch.v1.backup_pb2.SnapshotManagement:
+        """Snapshot management configuration"""
+
     def __init__(
         self,
         *,
@@ -1133,9 +1144,10 @@ class ConfigUpdateSpec(google.protobuf.message.Message):
         opensearch_spec: global___OpenSearchClusterUpdateSpec | None = ...,
         dashboards_spec: global___DashboardsClusterUpdateSpec | None = ...,
         access: yandex.cloud.mdb.opensearch.v1.cluster_pb2.Access | None = ...,
+        snapshot_management: yandex.cloud.mdb.opensearch.v1.backup_pb2.SnapshotManagement | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access", b"access", "dashboards_spec", b"dashboards_spec", "opensearch_spec", b"opensearch_spec"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access", b"access", "admin_password", b"admin_password", "dashboards_spec", b"dashboards_spec", "opensearch_spec", b"opensearch_spec", "version", b"version"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access", b"access", "dashboards_spec", b"dashboards_spec", "opensearch_spec", b"opensearch_spec", "snapshot_management", b"snapshot_management"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access", b"access", "admin_password", b"admin_password", "dashboards_spec", b"dashboards_spec", "opensearch_spec", b"opensearch_spec", "snapshot_management", b"snapshot_management", "version", b"version"]) -> None: ...
 
 global___ConfigUpdateSpec = ConfigUpdateSpec
 

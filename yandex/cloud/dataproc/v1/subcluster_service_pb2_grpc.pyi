@@ -20,7 +20,7 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class SubclusterServiceStub:
-    """A set of methods for managing Data Proc subclusters."""
+    """A set of methods for managing Yandex Data Processing subclusters."""
 
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Get: grpc.UnaryUnaryMultiCallable[
@@ -57,7 +57,7 @@ class SubclusterServiceStub:
     """Deletes the specified subcluster."""
 
 class SubclusterServiceAsyncStub:
-    """A set of methods for managing Data Proc subclusters."""
+    """A set of methods for managing Yandex Data Processing subclusters."""
 
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.dataproc.v1.subcluster_service_pb2.GetSubclusterRequest,
@@ -93,7 +93,7 @@ class SubclusterServiceAsyncStub:
     """Deletes the specified subcluster."""
 
 class SubclusterServiceServicer(metaclass=abc.ABCMeta):
-    """A set of methods for managing Data Proc subclusters."""
+    """A set of methods for managing Yandex Data Processing subclusters."""
 
     @abc.abstractmethod
     def Get(

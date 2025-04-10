@@ -18,7 +18,7 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class DataprocManagerServiceStub:
-    """Data Proc manager service definition."""
+    """Yandex Data Processing manager service definition."""
 
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Report: grpc.UnaryUnaryMultiCallable[
@@ -28,7 +28,7 @@ class DataprocManagerServiceStub:
     """Sends a status report from a host."""
 
 class DataprocManagerServiceAsyncStub:
-    """Data Proc manager service definition."""
+    """Yandex Data Processing manager service definition."""
 
     Report: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.dataproc.manager.v1.manager_service_pb2.ReportRequest,
@@ -37,7 +37,7 @@ class DataprocManagerServiceAsyncStub:
     """Sends a status report from a host."""
 
 class DataprocManagerServiceServicer(metaclass=abc.ABCMeta):
-    """Data Proc manager service definition."""
+    """Yandex Data Processing manager service definition."""
 
     @abc.abstractmethod
     def Report(
