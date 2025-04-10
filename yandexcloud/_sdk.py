@@ -190,6 +190,7 @@ _supported_modules = [
     ("yandex.cloud.serverless.containers", "serverless-containers"),
     ("yandex.cloud.serverless.functions", "serverless-functions"),
     ("yandex.cloud.serverless.triggers", "serverless-triggers"),
+    ("yandex.cloud.spark", "managed-spark"),
     ("yandex.cloud.storage", "storage-api"),
     ("yandex.cloud.vpc", "vpc"),
     ("yandex.cloud.ydb", "ydb"),
