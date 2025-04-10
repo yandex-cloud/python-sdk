@@ -3,8 +3,8 @@
 # mypy: ignore-errors
 import logging
 import random
-from typing import Dict, List, Optional
 from dataclasses import dataclass
+from typing import Dict, List, Optional
 
 import yandex.cloud.spark.v1.cluster_pb2 as cluster_pb
 import yandex.cloud.spark.v1.cluster_service_pb2 as cluster_service_pb
