@@ -8,8 +8,6 @@ import os
 import yandexcloud
 from yandexcloud.operations import OperationError
 
-USER_AGENT = "ycloud-python-sdk:spark"
-
 
 def parse_cmd():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawTextHelpFormatter)
@@ -46,10 +44,10 @@ def main():
     arguments = parse_cmd()
 
     if arguments.token:
-        sdk = yandexcloud.SDK(token=arguments.token, user_agent=USER_AGENT)
+        sdk = yandexcloud.SDK(token=arguments.token)
     else:
         with open(arguments.sa_json_path) as infile:
-            sdk = yandexcloud.SDK(service_account_key=json.load(infile), user_agent=USER_AGENT)
+            sdk = yandexcloud.SDK(service_account_key=json.load(infile))
 
     spark_client = sdk.wrappers.Spark()
 
