@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## v0.340.0 (2025-04-15)
+
+### Feature
+
+* feat: managed spark wrapper ([`29692e0`](https://github.com/yandex-cloud/python-sdk/commit/29692e035c96ccc2999b0cee9ab12e36910189b4))
+
+* feat: managed spark wrapper, fix ([`400693a`](https://github.com/yandex-cloud/python-sdk/commit/400693a775bfc2c172d7f991e6d39d1d9ef081e9))
+
+* feat: managed spark wrapper ([`5b4351c`](https://github.com/yandex-cloud/python-sdk/commit/5b4351c494e3f55a2c4a462a1afafe8e9fdef34b))
+
+* feat: managed spark wrapper ([`da07dcb`](https://github.com/yandex-cloud/python-sdk/commit/da07dcbeebb9c43186951a9f2860ce63cf1c9867))
+
+* feat: managed spark wrapper ([`89baaff`](https://github.com/yandex-cloud/python-sdk/commit/89baaffddd8999401274ce2d90e91dfc49e6f964))
+
 ## v0.339.0 (2025-04-10)
 
 ### Feature
