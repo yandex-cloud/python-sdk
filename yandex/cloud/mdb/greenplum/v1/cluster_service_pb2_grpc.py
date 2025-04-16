@@ -82,6 +82,11 @@ class ClusterServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_cluster__service__pb2.MoveClusterRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.RescheduleMaintenance = channel.unary_unary(
+                '/yandex.cloud.mdb.greenplum.v1.ClusterService/RescheduleMaintenance',
+                request_serializer=yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_cluster__service__pb2.RescheduleMaintenanceRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
         self.ListOperations = channel.unary_unary(
                 '/yandex.cloud.mdb.greenplum.v1.ClusterService/ListOperations',
                 request_serializer=yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_cluster__service__pb2.ListClusterOperationsRequest.SerializeToString,
@@ -193,6 +198,13 @@ class ClusterServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def RescheduleMaintenance(self, request, context):
+        """Reschedule planned maintenance operation.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListOperations(self, request, context):
         """Retrieves the list of Operation resources for the specified cluster.
         """
@@ -295,6 +307,11 @@ def add_ClusterServiceServicer_to_server(servicer, server):
             'Move': grpc.unary_unary_rpc_method_handler(
                     servicer.Move,
                     request_deserializer=yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_cluster__service__pb2.MoveClusterRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'RescheduleMaintenance': grpc.unary_unary_rpc_method_handler(
+                    servicer.RescheduleMaintenance,
+                    request_deserializer=yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_cluster__service__pb2.RescheduleMaintenanceRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'ListOperations': grpc.unary_unary_rpc_method_handler(
@@ -581,6 +598,33 @@ class ClusterService(object):
             target,
             '/yandex.cloud.mdb.greenplum.v1.ClusterService/Move',
             yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_cluster__service__pb2.MoveClusterRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def RescheduleMaintenance(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.mdb.greenplum.v1.ClusterService/RescheduleMaintenance',
+            yandex_dot_cloud_dot_mdb_dot_greenplum_dot_v1_dot_cluster__service__pb2.RescheduleMaintenanceRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

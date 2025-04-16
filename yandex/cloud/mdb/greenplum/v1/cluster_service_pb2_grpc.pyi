@@ -80,6 +80,12 @@ class ClusterServiceStub:
     ]
     """Moves the specified Greenplum® cluster to the specified folder."""
 
+    RescheduleMaintenance: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.RescheduleMaintenanceRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Reschedule planned maintenance operation."""
+
     ListOperations: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.ListClusterOperationsRequest,
         yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.ListClusterOperationsResponse,
@@ -187,6 +193,12 @@ class ClusterServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Moves the specified Greenplum® cluster to the specified folder."""
+
+    RescheduleMaintenance: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.RescheduleMaintenanceRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Reschedule planned maintenance operation."""
 
     ListOperations: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.ListClusterOperationsRequest,
@@ -313,6 +325,14 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Moves the specified Greenplum® cluster to the specified folder."""
+
+    @abc.abstractmethod
+    def RescheduleMaintenance(
+        self,
+        request: yandex.cloud.mdb.greenplum.v1.cluster_service_pb2.RescheduleMaintenanceRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Reschedule planned maintenance operation."""
 
     @abc.abstractmethod
     def ListOperations(

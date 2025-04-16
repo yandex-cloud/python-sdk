@@ -17,7 +17,7 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 class TextClassificationRequest(google.protobuf.message.Message):
     """Request for the service to classify text with tuned model.
 
-    The names of the classes between which the model will be distributing requests must be specified during model tuning; 
+    The names of the classes between which the model will be distributing requests must be specified during model tuning;
     therefore, they are not provided in the request.
 
     For examples of usage, see [step-by-step guides](/docs/foundation-models/operations/classifier/additionally-trained).
@@ -49,11 +49,14 @@ class TextClassificationResponse(google.protobuf.message.Message):
 
     PREDICTIONS_FIELD_NUMBER: builtins.int
     MODEL_VERSION_FIELD_NUMBER: builtins.int
+    INPUT_TOKENS_FIELD_NUMBER: builtins.int
     model_version: builtins.str
     """The model version changes with each new releases."""
+    input_tokens: builtins.int
+    """Number of input tokens"""
     @property
     def predictions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.ai.foundation_models.v1.text_classification.text_classification_pb2.ClassificationLabel]:
-        """The classification results with the `confidence`` values 
+        """The classification results with the `confidence`` values
         for the probability of classifying the request text into each class.
         """
 
@@ -62,8 +65,9 @@ class TextClassificationResponse(google.protobuf.message.Message):
         *,
         predictions: collections.abc.Iterable[yandex.cloud.ai.foundation_models.v1.text_classification.text_classification_pb2.ClassificationLabel] | None = ...,
         model_version: builtins.str = ...,
+        input_tokens: builtins.int = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["model_version", b"model_version", "predictions", b"predictions"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["input_tokens", b"input_tokens", "model_version", b"model_version", "predictions", b"predictions"]) -> None: ...
 
 global___TextClassificationResponse = TextClassificationResponse
 
@@ -89,7 +93,7 @@ class FewShotTextClassificationRequest(google.protobuf.message.Message):
     @property
     def labels(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """List of available labels for the classification result.
-        Give meaningful names to label classes: this is essential for correct classification results. 
+        Give meaningful names to label classes: this is essential for correct classification results.
         For example, use ``chemistry`` and ``physics`` rather than ``chm`` and ``phs`` for class names.
         """
 
@@ -118,11 +122,14 @@ class FewShotTextClassificationResponse(google.protobuf.message.Message):
 
     PREDICTIONS_FIELD_NUMBER: builtins.int
     MODEL_VERSION_FIELD_NUMBER: builtins.int
+    INPUT_TOKENS_FIELD_NUMBER: builtins.int
     model_version: builtins.str
     """The model version changes with each new releases."""
+    input_tokens: builtins.int
+    """Number of input tokens"""
     @property
     def predictions(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.ai.foundation_models.v1.text_classification.text_classification_pb2.ClassificationLabel]:
-        """The classification results with the `confidence`` values 
+        """The classification results with the `confidence`` values
         for the probability of classifying the request text into each class.
         """
 
@@ -131,7 +138,8 @@ class FewShotTextClassificationResponse(google.protobuf.message.Message):
         *,
         predictions: collections.abc.Iterable[yandex.cloud.ai.foundation_models.v1.text_classification.text_classification_pb2.ClassificationLabel] | None = ...,
         model_version: builtins.str = ...,
+        input_tokens: builtins.int = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["model_version", b"model_version", "predictions", b"predictions"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["input_tokens", b"input_tokens", "model_version", b"model_version", "predictions", b"predictions"]) -> None: ...
 
 global___FewShotTextClassificationResponse = FewShotTextClassificationResponse

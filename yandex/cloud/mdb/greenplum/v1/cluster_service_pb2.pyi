@@ -681,6 +681,73 @@ class MoveClusterMetadata(google.protobuf.message.Message):
 global___MoveClusterMetadata = MoveClusterMetadata
 
 @typing.final
+class RescheduleMaintenanceRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _RescheduleType:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _RescheduleTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[RescheduleMaintenanceRequest._RescheduleType.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        RESCHEDULE_TYPE_UNSPECIFIED: RescheduleMaintenanceRequest._RescheduleType.ValueType  # 0
+        IMMEDIATE: RescheduleMaintenanceRequest._RescheduleType.ValueType  # 1
+        NEXT_AVAILABLE_WINDOW: RescheduleMaintenanceRequest._RescheduleType.ValueType  # 2
+        SPECIFIC_TIME: RescheduleMaintenanceRequest._RescheduleType.ValueType  # 3
+
+    class RescheduleType(_RescheduleType, metaclass=_RescheduleTypeEnumTypeWrapper): ...
+    RESCHEDULE_TYPE_UNSPECIFIED: RescheduleMaintenanceRequest.RescheduleType.ValueType  # 0
+    IMMEDIATE: RescheduleMaintenanceRequest.RescheduleType.ValueType  # 1
+    NEXT_AVAILABLE_WINDOW: RescheduleMaintenanceRequest.RescheduleType.ValueType  # 2
+    SPECIFIC_TIME: RescheduleMaintenanceRequest.RescheduleType.ValueType  # 3
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    RESCHEDULE_TYPE_FIELD_NUMBER: builtins.int
+    DELAYED_UNTIL_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """Required. ID of the Greenplum cluster to maintenance reschedule."""
+    reschedule_type: global___RescheduleMaintenanceRequest.RescheduleType.ValueType
+    """Required. The type of reschedule request."""
+    @property
+    def delayed_until(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """The time for SPECIFIC_TIME reschedule. Limited by two weeks since first time scheduled."""
+
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        reschedule_type: global___RescheduleMaintenanceRequest.RescheduleType.ValueType = ...,
+        delayed_until: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["delayed_until", b"delayed_until"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "delayed_until", b"delayed_until", "reschedule_type", b"reschedule_type"]) -> None: ...
+
+global___RescheduleMaintenanceRequest = RescheduleMaintenanceRequest
+
+@typing.final
+class RescheduleMaintenanceMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    DELAYED_UNTIL_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """Required. ID of the Greenplum cluster."""
+    @property
+    def delayed_until(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Required. New time of the planned maintenance. Can be in the past for rescheduled to "IMMEDIATE"."""
+
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        delayed_until: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["delayed_until", b"delayed_until"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "delayed_until", b"delayed_until"]) -> None: ...
+
+global___RescheduleMaintenanceMetadata = RescheduleMaintenanceMetadata
+
+@typing.final
 class ListClusterOperationsRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

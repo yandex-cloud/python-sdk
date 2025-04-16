@@ -27,7 +27,7 @@ class TextClassificationServiceStub:
     ]
     """RPC method to classify text with tuned model.
 
-    The names of the classes between which the model will be distributing requests 
+    The names of the classes between which the model will be distributing requests
     must be specified during model tuning and are not provided in the request.
     """
 
@@ -35,7 +35,7 @@ class TextClassificationServiceStub:
         yandex.cloud.ai.foundation_models.v1.text_classification.text_classification_service_pb2.FewShotTextClassificationRequest,
         yandex.cloud.ai.foundation_models.v1.text_classification.text_classification_service_pb2.FewShotTextClassificationResponse,
     ]
-    """RPC method for binary and multi-class classification. 
+    """RPC method for binary and multi-class classification.
 
     You can provide up to 20 classes for few-shot text classification
     with optional examples.
@@ -50,7 +50,7 @@ class TextClassificationServiceAsyncStub:
     ]
     """RPC method to classify text with tuned model.
 
-    The names of the classes between which the model will be distributing requests 
+    The names of the classes between which the model will be distributing requests
     must be specified during model tuning and are not provided in the request.
     """
 
@@ -58,7 +58,7 @@ class TextClassificationServiceAsyncStub:
         yandex.cloud.ai.foundation_models.v1.text_classification.text_classification_service_pb2.FewShotTextClassificationRequest,
         yandex.cloud.ai.foundation_models.v1.text_classification.text_classification_service_pb2.FewShotTextClassificationResponse,
     ]
-    """RPC method for binary and multi-class classification. 
+    """RPC method for binary and multi-class classification.
 
     You can provide up to 20 classes for few-shot text classification
     with optional examples.
@@ -75,7 +75,7 @@ class TextClassificationServiceServicer(metaclass=abc.ABCMeta):
     ) -> typing.Union[yandex.cloud.ai.foundation_models.v1.text_classification.text_classification_service_pb2.TextClassificationResponse, collections.abc.Awaitable[yandex.cloud.ai.foundation_models.v1.text_classification.text_classification_service_pb2.TextClassificationResponse]]:
         """RPC method to classify text with tuned model.
 
-        The names of the classes between which the model will be distributing requests 
+        The names of the classes between which the model will be distributing requests
         must be specified during model tuning and are not provided in the request.
         """
 
@@ -85,7 +85,7 @@ class TextClassificationServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.ai.foundation_models.v1.text_classification.text_classification_service_pb2.FewShotTextClassificationRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.ai.foundation_models.v1.text_classification.text_classification_service_pb2.FewShotTextClassificationResponse, collections.abc.Awaitable[yandex.cloud.ai.foundation_models.v1.text_classification.text_classification_service_pb2.FewShotTextClassificationResponse]]:
-        """RPC method for binary and multi-class classification. 
+        """RPC method for binary and multi-class classification.
 
         You can provide up to 20 classes for few-shot text classification
         with optional examples.
