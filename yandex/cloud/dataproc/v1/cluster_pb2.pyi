@@ -285,6 +285,9 @@ class HadoopConfig(google.protobuf.message.Message):
     PROPERTIES_FIELD_NUMBER: builtins.int
     SSH_PUBLIC_KEYS_FIELD_NUMBER: builtins.int
     INITIALIZATION_ACTIONS_FIELD_NUMBER: builtins.int
+    OSLOGIN_ENABLED_FIELD_NUMBER: builtins.int
+    oslogin_enabled: builtins.bool
+    """Oslogin enable on cluster nodes"""
     @property
     def services(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[global___HadoopConfig.Service.ValueType]:
         """Set of services used in the cluster (if empty, the default set is used)."""
@@ -313,8 +316,9 @@ class HadoopConfig(google.protobuf.message.Message):
         properties: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         ssh_public_keys: collections.abc.Iterable[builtins.str] | None = ...,
         initialization_actions: collections.abc.Iterable[global___InitializationAction] | None = ...,
+        oslogin_enabled: builtins.bool = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["initialization_actions", b"initialization_actions", "properties", b"properties", "services", b"services", "ssh_public_keys", b"ssh_public_keys"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["initialization_actions", b"initialization_actions", "oslogin_enabled", b"oslogin_enabled", "properties", b"properties", "services", b"services", "ssh_public_keys", b"ssh_public_keys"]) -> None: ...
 
 global___HadoopConfig = HadoopConfig
 

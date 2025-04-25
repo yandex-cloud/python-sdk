@@ -8,6 +8,7 @@ import collections.abc
 import grpc
 import grpc.aio
 import typing
+import yandex.cloud.access.access_pb2
 import yandex.cloud.k8s.v1.cluster_pb2
 import yandex.cloud.k8s.v1.cluster_service_pb2
 import yandex.cloud.operation.operation_pb2
@@ -92,6 +93,24 @@ class ClusterServiceStub:
     ]
     """Lists cluster's nodes."""
 
+    ListAccessBindings: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
+        yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
+    ]
+    """Lists cluster's access bindings"""
+
+    SetAccessBindings: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Sets cluster's access bindings"""
+
+    UpdateAccessBindings: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates cluster's access bindings"""
+
 class ClusterServiceAsyncStub:
     """A set of methods for managing Kubernetes cluster."""
 
@@ -163,6 +182,24 @@ class ClusterServiceAsyncStub:
         yandex.cloud.k8s.v1.cluster_service_pb2.ListClusterNodesResponse,
     ]
     """Lists cluster's nodes."""
+
+    ListAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
+        yandex.cloud.access.access_pb2.ListAccessBindingsResponse,
+    ]
+    """Lists cluster's access bindings"""
+
+    SetAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Sets cluster's access bindings"""
+
+    UpdateAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates cluster's access bindings"""
 
 class ClusterServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing Kubernetes cluster."""
@@ -257,5 +294,29 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.k8s.v1.cluster_service_pb2.ListClusterNodesResponse, collections.abc.Awaitable[yandex.cloud.k8s.v1.cluster_service_pb2.ListClusterNodesResponse]]:
         """Lists cluster's nodes."""
+
+    @abc.abstractmethod
+    def ListAccessBindings(
+        self,
+        request: yandex.cloud.access.access_pb2.ListAccessBindingsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.access.access_pb2.ListAccessBindingsResponse, collections.abc.Awaitable[yandex.cloud.access.access_pb2.ListAccessBindingsResponse]]:
+        """Lists cluster's access bindings"""
+
+    @abc.abstractmethod
+    def SetAccessBindings(
+        self,
+        request: yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Sets cluster's access bindings"""
+
+    @abc.abstractmethod
+    def UpdateAccessBindings(
+        self,
+        request: yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Updates cluster's access bindings"""
 
 def add_ClusterServiceServicer_to_server(servicer: ClusterServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

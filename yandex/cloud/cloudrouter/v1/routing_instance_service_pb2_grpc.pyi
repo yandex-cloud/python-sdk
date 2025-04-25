@@ -88,6 +88,22 @@ class RoutingInstanceServiceStub:
     Method starts an asynchronous operation that can be cancelled while it is in progress.
     """
 
+    MovePrefix: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.MovePrefixRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Moves the specified prefix between availability zones of the RoutingInstance.
+    Method starts an asynchronous operation that can be cancelled while it is in progress.
+    """
+
+    UpdatePrefixMask: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.UpdatePrefixMaskRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Removes specified PrivateConnection from a RoutingInstance resource.
+    Method starts an asynchronous operation that can be cancelled while it is in progress.
+    """
+
     AddPrivateConnection: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.AddPrivateConnectionRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -183,6 +199,22 @@ class RoutingInstanceServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Removes specified prefixes from a RoutingInstance resource.
+    Method starts an asynchronous operation that can be cancelled while it is in progress.
+    """
+
+    MovePrefix: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.MovePrefixRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Moves the specified prefix between availability zones of the RoutingInstance.
+    Method starts an asynchronous operation that can be cancelled while it is in progress.
+    """
+
+    UpdatePrefixMask: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.UpdatePrefixMaskRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Removes specified PrivateConnection from a RoutingInstance resource.
     Method starts an asynchronous operation that can be cancelled while it is in progress.
     """
 
@@ -297,6 +329,26 @@ class RoutingInstanceServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Removes specified prefixes from a RoutingInstance resource.
+        Method starts an asynchronous operation that can be cancelled while it is in progress.
+        """
+
+    @abc.abstractmethod
+    def MovePrefix(
+        self,
+        request: yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.MovePrefixRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Moves the specified prefix between availability zones of the RoutingInstance.
+        Method starts an asynchronous operation that can be cancelled while it is in progress.
+        """
+
+    @abc.abstractmethod
+    def UpdatePrefixMask(
+        self,
+        request: yandex.cloud.cloudrouter.v1.routing_instance_service_pb2.UpdatePrefixMaskRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Removes specified PrivateConnection from a RoutingInstance resource.
         Method starts an asynchronous operation that can be cancelled while it is in progress.
         """
 

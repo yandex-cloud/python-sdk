@@ -49,6 +49,8 @@ class _GlobalPermissionEnumTypeWrapper(google.protobuf.internal.enum_type_wrappe
     The `SHOW FUNCTION CODE` and `SHOW PROCEDURE CODE` statements.
     The SHOW `FUNCTION STATUS` and `SHOW PROCEDURE STATUS` statements.
     """
+    MDB_ADMIN: _GlobalPermission.ValueType  # 6
+    """Enables use of the KILL command, creating and dropping databases and users, granting privileges to tables and databases."""
 
 class GlobalPermission(_GlobalPermission, metaclass=_GlobalPermissionEnumTypeWrapper): ...
 
@@ -75,6 +77,8 @@ The `SHOW CREATE FUNCTION` and `SHOW CREATE PROCEDURE` statements.
 The `SHOW FUNCTION CODE` and `SHOW PROCEDURE CODE` statements.
 The SHOW `FUNCTION STATUS` and `SHOW PROCEDURE STATUS` statements.
 """
+MDB_ADMIN: GlobalPermission.ValueType  # 6
+"""Enables use of the KILL command, creating and dropping databases and users, granting privileges to tables and databases."""
 global___GlobalPermission = GlobalPermission
 
 class _AuthPlugin:

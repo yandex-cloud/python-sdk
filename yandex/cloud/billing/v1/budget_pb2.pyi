@@ -177,7 +177,7 @@ class CostBudgetSpec(google.protobuf.message.Message):
     """
     @property
     def notification_user_account_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """IDs of the [yandex.cloud.iam.v1.UserAccount].
+        """User account IDs.
         Specified users will be be notified if the budget exceeds.
         """
 
@@ -237,7 +237,7 @@ class ExpenseBudgetSpec(google.protobuf.message.Message):
     """
     @property
     def notification_user_account_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """IDs of the [yandex.cloud.iam.v1.UserAccount].
+        """User account IDs.
         Specified users will be be notified if the budget exceeds.
         """
 
@@ -291,7 +291,7 @@ class BalanceBudgetSpec(google.protobuf.message.Message):
     """
     @property
     def notification_user_account_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """IDs of the [yandex.cloud.iam.v1.UserAccount].
+        """User account IDs.
         Specified users will be be notified if the budget exceeds.
         """
 
@@ -393,7 +393,7 @@ class ThresholdRule(google.protobuf.message.Message):
     """
     @property
     def notification_user_account_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
-        """IDs of the [yandex.cloud.iam.v1.UserAccount].
+        """User account IDs.
         Specified users will be be notified if the threshold exceeds.
         """
 

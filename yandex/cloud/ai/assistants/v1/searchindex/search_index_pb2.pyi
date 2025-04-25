@@ -133,6 +133,9 @@ class TextSearchIndex(google.protobuf.message.Message):
 
     CHUNKING_STRATEGY_FIELD_NUMBER: builtins.int
     NGRAM_TOKENIZER_FIELD_NUMBER: builtins.int
+    STANDARD_TOKENIZER_FIELD_NUMBER: builtins.int
+    STANDARD_ANALYZER_FIELD_NUMBER: builtins.int
+    YANDEX_LEMMER_ANALYZER_FIELD_NUMBER: builtins.int
     @property
     def chunking_strategy(self) -> yandex.cloud.ai.assistants.v1.searchindex.common_pb2.ChunkingStrategy:
         """Chunking strategy used to split text into smaller chunks before indexing.
@@ -143,15 +146,35 @@ class TextSearchIndex(google.protobuf.message.Message):
     def ngram_tokenizer(self) -> yandex.cloud.ai.assistants.v1.searchindex.common_pb2.NgramTokenizer:
         """Tokenizer that generates n-grams."""
 
+    @property
+    def standard_tokenizer(self) -> yandex.cloud.ai.assistants.v1.searchindex.common_pb2.StandardTokenizer:
+        """Tokenizer that generates words."""
+
+    @property
+    def standard_analyzer(self) -> yandex.cloud.ai.assistants.v1.searchindex.common_pb2.StandardAnalyzer:
+        """Standard analyzer that performs common text processing operations to normalize text."""
+
+    @property
+    def yandex_lemmer_analyzer(self) -> yandex.cloud.ai.assistants.v1.searchindex.common_pb2.YandexLemmerAnalyzer:
+        """Specialized analyzer that uses Yandex's lemmatization technology,
+        particularly effective for Russian and other Slavic languages.
+        """
+
     def __init__(
         self,
         *,
         chunking_strategy: yandex.cloud.ai.assistants.v1.searchindex.common_pb2.ChunkingStrategy | None = ...,
         ngram_tokenizer: yandex.cloud.ai.assistants.v1.searchindex.common_pb2.NgramTokenizer | None = ...,
+        standard_tokenizer: yandex.cloud.ai.assistants.v1.searchindex.common_pb2.StandardTokenizer | None = ...,
+        standard_analyzer: yandex.cloud.ai.assistants.v1.searchindex.common_pb2.StandardAnalyzer | None = ...,
+        yandex_lemmer_analyzer: yandex.cloud.ai.assistants.v1.searchindex.common_pb2.YandexLemmerAnalyzer | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["TextTokenizer", b"TextTokenizer", "chunking_strategy", b"chunking_strategy", "ngram_tokenizer", b"ngram_tokenizer"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["TextTokenizer", b"TextTokenizer", "chunking_strategy", b"chunking_strategy", "ngram_tokenizer", b"ngram_tokenizer"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["TextTokenizer", b"TextTokenizer"]) -> typing.Literal["ngram_tokenizer"] | None: ...
+    def HasField(self, field_name: typing.Literal["TextAnalyzer", b"TextAnalyzer", "TextTokenizer", b"TextTokenizer", "chunking_strategy", b"chunking_strategy", "ngram_tokenizer", b"ngram_tokenizer", "standard_analyzer", b"standard_analyzer", "standard_tokenizer", b"standard_tokenizer", "yandex_lemmer_analyzer", b"yandex_lemmer_analyzer"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["TextAnalyzer", b"TextAnalyzer", "TextTokenizer", b"TextTokenizer", "chunking_strategy", b"chunking_strategy", "ngram_tokenizer", b"ngram_tokenizer", "standard_analyzer", b"standard_analyzer", "standard_tokenizer", b"standard_tokenizer", "yandex_lemmer_analyzer", b"yandex_lemmer_analyzer"]) -> None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["TextAnalyzer", b"TextAnalyzer"]) -> typing.Literal["standard_analyzer", "yandex_lemmer_analyzer"] | None: ...
+    @typing.overload
+    def WhichOneof(self, oneof_group: typing.Literal["TextTokenizer", b"TextTokenizer"]) -> typing.Literal["ngram_tokenizer", "standard_tokenizer"] | None: ...
 
 global___TextSearchIndex = TextSearchIndex
 

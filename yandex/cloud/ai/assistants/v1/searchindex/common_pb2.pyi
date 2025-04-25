@@ -222,3 +222,49 @@ class NgramTokenizer(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["max_gram", b"max_gram", "min_gram", b"min_gram"]) -> None: ...
 
 global___NgramTokenizer = NgramTokenizer
+
+@typing.final
+class StandardTokenizer(google.protobuf.message.Message):
+    """A standard tokenizer that splits text on word boundaries and removes punctuation.
+    It follows the Unicode Text Segmentation rules as specified in Unicode Standard Annex #29.
+
+    Example:
+    Input text: `Hello, world! How are you?`
+    Output tokens: `[Hello, world, How, are, you]`
+    """
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___StandardTokenizer = StandardTokenizer
+
+@typing.final
+class StandardAnalyzer(google.protobuf.message.Message):
+    """A standard analyzer that uses StandardTokenizer."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___StandardAnalyzer = StandardAnalyzer
+
+@typing.final
+class YandexLemmerAnalyzer(google.protobuf.message.Message):
+    """A specialized analyzer that uses Yandex's lemmatization technology to reduce words to their base forms.
+    Particularly effective for Russian and other Slavic languages, handling their complex morphology.
+    For more information, see:
+    https://yandex.cloud/en/docs/tutorials/dataplatform/opensearch-yandex-lemmer
+    """
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___YandexLemmerAnalyzer = YandexLemmerAnalyzer

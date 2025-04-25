@@ -1450,3 +1450,19 @@ class DeleteRecognitionRequest(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["operation_id", b"operation_id"]) -> None: ...
 
 global___DeleteRecognitionRequest = DeleteRecognitionRequest
+
+@typing.final
+class StreamingResponseList(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    STREAMING_RESPONSES_FIELD_NUMBER: builtins.int
+    @property
+    def streaming_responses(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___StreamingResponse]: ...
+    def __init__(
+        self,
+        *,
+        streaming_responses: collections.abc.Iterable[global___StreamingResponse] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["streaming_responses", b"streaming_responses"]) -> None: ...
+
+global___StreamingResponseList = StreamingResponseList

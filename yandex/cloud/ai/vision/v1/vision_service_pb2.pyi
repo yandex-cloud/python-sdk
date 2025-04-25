@@ -32,7 +32,7 @@ class BatchAnalyzeRequest(google.protobuf.message.Message):
     FOLDER_ID_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to which you have access.
-    Required for authorization with a user account (see [yandex.cloud.iam.v1.UserAccount] resource).
+    Required for authorization with a user account.
     Don't specify this field if you make the request on behalf of a service account.
     """
     @property

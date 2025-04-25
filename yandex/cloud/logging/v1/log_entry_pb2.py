@@ -28,7 +28,7 @@ from yandex.cloud.logging.v1 import log_resource_pb2 as yandex_dot_cloud_dot_log
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'yandex/cloud/logging/v1/log_entry.proto\x12\x17yandex.cloud.logging.v1\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a*yandex/cloud/logging/v1/log_resource.proto\x1a\x1dyandex/cloud/validation.proto\"\xf9\x02\n\x08LogEntry\x12\x0b\n\x03uid\x18\x01 \x01(\t\x12;\n\x08resource\x18\x02 \x01(\x0b\x32).yandex.cloud.logging.v1.LogEntryResource\x12-\n\ttimestamp\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0bingested_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12,\n\x08saved_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x36\n\x05level\x18\x06 \x01(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.Level\x12\x0f\n\x07message\x18\x07 \x01(\t\x12-\n\x0cjson_payload\x18\x08 \x01(\x0b\x32\x17.google.protobuf.Struct\x12\x1d\n\x0bstream_name\x18\t \x01(\tB\x08\x8a\xc8\x31\x04<=63\"\xf8\x01\n\x10IncomingLogEntry\x12\x33\n\ttimestamp\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12\x36\n\x05level\x18\x02 \x01(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.Level\x12\x1c\n\x07message\x18\x03 \x01(\tB\x0b\xba\xc8\x31\x07<=65536\x12:\n\x0cjson_payload\x18\x04 \x01(\x0b\x32\x17.google.protobuf.StructB\x0b\xba\xc8\x31\x07<=65536\x12\x1d\n\x0bstream_name\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=63\"\xab\x01\n\x10LogEntryDefaults\x12\x36\n\x05level\x18\x02 \x01(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.Level\x12:\n\x0cjson_payload\x18\x04 \x01(\x0b\x32\x17.google.protobuf.StructB\x0b\xba\xc8\x31\x07<=65536\x12\x1d\n\x0bstream_name\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=63J\x04\x08\x03\x10\x04\"\x99\x01\n\x0b\x44\x65stination\x12;\n\x0clog_group_id\x18\x01 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?H\x00\x12\x38\n\tfolder_id\x18\x02 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?H\x00\x42\x13\n\x0b\x64\x65stination\x12\x04\xc0\xc1\x31\x01\"\xa2\x01\n\x08LogLevel\x12\x36\n\x05level\x18\x01 \x01(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.Level\"^\n\x05Level\x12\x15\n\x11LEVEL_UNSPECIFIED\x10\x00\x12\t\n\x05TRACE\x10\x01\x12\t\n\x05\x44\x45\x42UG\x10\x02\x12\x08\n\x04INFO\x10\x03\x12\x08\n\x04WARN\x10\x04\x12\t\n\x05\x45RROR\x10\x05\x12\t\n\x05\x46\x41TAL\x10\x06\x42\x62\n\x1byandex.cloud.api.logging.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/logging/v1;loggingb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'yandex/cloud/logging/v1/log_entry.proto\x12\x17yandex.cloud.logging.v1\x1a\x1cgoogle/protobuf/struct.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a*yandex/cloud/logging/v1/log_resource.proto\x1a\x1dyandex/cloud/validation.proto\"\xf9\x02\n\x08LogEntry\x12\x0b\n\x03uid\x18\x01 \x01(\t\x12;\n\x08resource\x18\x02 \x01(\x0b\x32).yandex.cloud.logging.v1.LogEntryResource\x12-\n\ttimestamp\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0bingested_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12,\n\x08saved_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x36\n\x05level\x18\x06 \x01(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.Level\x12\x0f\n\x07message\x18\x07 \x01(\t\x12-\n\x0cjson_payload\x18\x08 \x01(\x0b\x32\x17.google.protobuf.Struct\x12\x1d\n\x0bstream_name\x18\t \x01(\tB\x08\x8a\xc8\x31\x04<=63\"\xfa\x01\n\x10IncomingLogEntry\x12\x33\n\ttimestamp\x18\x01 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe8\xc7\x31\x01\x12\x36\n\x05level\x18\x02 \x01(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.Level\x12\x1d\n\x07message\x18\x03 \x01(\tB\x0c\xba\xc8\x31\x08<=819200\x12;\n\x0cjson_payload\x18\x04 \x01(\x0b\x32\x17.google.protobuf.StructB\x0c\xba\xc8\x31\x08<=819200\x12\x1d\n\x0bstream_name\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=63\"\xab\x01\n\x10LogEntryDefaults\x12\x36\n\x05level\x18\x02 \x01(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.Level\x12:\n\x0cjson_payload\x18\x04 \x01(\x0b\x32\x17.google.protobuf.StructB\x0b\xba\xc8\x31\x07<=65536\x12\x1d\n\x0bstream_name\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=63J\x04\x08\x03\x10\x04\"\x99\x01\n\x0b\x44\x65stination\x12;\n\x0clog_group_id\x18\x01 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?H\x00\x12\x38\n\tfolder_id\x18\x02 \x01(\tB#\xf2\xc7\x31\x1f([a-zA-Z][-a-zA-Z0-9_.]{0,63})?H\x00\x42\x13\n\x0b\x64\x65stination\x12\x04\xc0\xc1\x31\x01\"\xa2\x01\n\x08LogLevel\x12\x36\n\x05level\x18\x01 \x01(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.Level\"^\n\x05Level\x12\x15\n\x11LEVEL_UNSPECIFIED\x10\x00\x12\t\n\x05TRACE\x10\x01\x12\t\n\x05\x44\x45\x42UG\x10\x02\x12\x08\n\x04INFO\x10\x03\x12\x08\n\x04WARN\x10\x04\x12\t\n\x05\x45RROR\x10\x05\x12\t\n\x05\x46\x41TAL\x10\x06\x42\x62\n\x1byandex.cloud.api.logging.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/logging/v1;loggingb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -41,9 +41,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_INCOMINGLOGENTRY'].fields_by_name['timestamp']._loaded_options = None
   _globals['_INCOMINGLOGENTRY'].fields_by_name['timestamp']._serialized_options = b'\350\3071\001'
   _globals['_INCOMINGLOGENTRY'].fields_by_name['message']._loaded_options = None
-  _globals['_INCOMINGLOGENTRY'].fields_by_name['message']._serialized_options = b'\272\3101\007<=65536'
+  _globals['_INCOMINGLOGENTRY'].fields_by_name['message']._serialized_options = b'\272\3101\010<=819200'
   _globals['_INCOMINGLOGENTRY'].fields_by_name['json_payload']._loaded_options = None
-  _globals['_INCOMINGLOGENTRY'].fields_by_name['json_payload']._serialized_options = b'\272\3101\007<=65536'
+  _globals['_INCOMINGLOGENTRY'].fields_by_name['json_payload']._serialized_options = b'\272\3101\010<=819200'
   _globals['_INCOMINGLOGENTRY'].fields_by_name['stream_name']._loaded_options = None
   _globals['_INCOMINGLOGENTRY'].fields_by_name['stream_name']._serialized_options = b'\212\3101\004<=63'
   _globals['_LOGENTRYDEFAULTS'].fields_by_name['json_payload']._loaded_options = None
@@ -59,13 +59,13 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LOGENTRY']._serialized_start=207
   _globals['_LOGENTRY']._serialized_end=584
   _globals['_INCOMINGLOGENTRY']._serialized_start=587
-  _globals['_INCOMINGLOGENTRY']._serialized_end=835
-  _globals['_LOGENTRYDEFAULTS']._serialized_start=838
-  _globals['_LOGENTRYDEFAULTS']._serialized_end=1009
-  _globals['_DESTINATION']._serialized_start=1012
-  _globals['_DESTINATION']._serialized_end=1165
-  _globals['_LOGLEVEL']._serialized_start=1168
-  _globals['_LOGLEVEL']._serialized_end=1330
-  _globals['_LOGLEVEL_LEVEL']._serialized_start=1236
-  _globals['_LOGLEVEL_LEVEL']._serialized_end=1330
+  _globals['_INCOMINGLOGENTRY']._serialized_end=837
+  _globals['_LOGENTRYDEFAULTS']._serialized_start=840
+  _globals['_LOGENTRYDEFAULTS']._serialized_end=1011
+  _globals['_DESTINATION']._serialized_start=1014
+  _globals['_DESTINATION']._serialized_end=1167
+  _globals['_LOGLEVEL']._serialized_start=1170
+  _globals['_LOGLEVEL']._serialized_end=1332
+  _globals['_LOGLEVEL_LEVEL']._serialized_start=1238
+  _globals['_LOGLEVEL_LEVEL']._serialized_end=1332
 # @@protoc_insertion_point(module_scope)

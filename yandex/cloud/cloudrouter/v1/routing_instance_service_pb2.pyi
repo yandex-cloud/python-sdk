@@ -394,6 +394,78 @@ class VpcAzInfoPrefixes(google.protobuf.message.Message):
 global___VpcAzInfoPrefixes = VpcAzInfoPrefixes
 
 @typing.final
+class MovePrefixRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ROUTING_INSTANCE_ID_FIELD_NUMBER: builtins.int
+    SRC_VPC_NETWORK_ID_FIELD_NUMBER: builtins.int
+    SRC_AZ_ID_FIELD_NUMBER: builtins.int
+    DST_VPC_NETWORK_ID_FIELD_NUMBER: builtins.int
+    DST_AZ_ID_FIELD_NUMBER: builtins.int
+    PREFIX_FIELD_NUMBER: builtins.int
+    routing_instance_id: builtins.str
+    """ID of the RoutingInstance resource."""
+    src_vpc_network_id: builtins.str
+    """ID of the source VpcNetwork."""
+    src_az_id: builtins.str
+    """ID of the AZ in the source VpcNetwork."""
+    dst_vpc_network_id: builtins.str
+    """ID of the destination VpcNetwork."""
+    dst_az_id: builtins.str
+    """ID of the AZ in the destination VpcNetwork."""
+    prefix: builtins.str
+    """Prefix to move."""
+    def __init__(
+        self,
+        *,
+        routing_instance_id: builtins.str = ...,
+        src_vpc_network_id: builtins.str = ...,
+        src_az_id: builtins.str = ...,
+        dst_vpc_network_id: builtins.str = ...,
+        dst_az_id: builtins.str = ...,
+        prefix: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["dst_az_id", b"dst_az_id", "dst_vpc_network_id", b"dst_vpc_network_id", "prefix", b"prefix", "routing_instance_id", b"routing_instance_id", "src_az_id", b"src_az_id", "src_vpc_network_id", b"src_vpc_network_id"]) -> None: ...
+
+global___MovePrefixRequest = MovePrefixRequest
+
+@typing.final
+class UpdatePrefixMaskRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ROUTING_INSTANCE_ID_FIELD_NUMBER: builtins.int
+    VPC_NETWORK_ID_FIELD_NUMBER: builtins.int
+    AZ_ID_FIELD_NUMBER: builtins.int
+    PREFIX_FIELD_NUMBER: builtins.int
+    NEW_MASK_FIELD_NUMBER: builtins.int
+    REMOVE_SUB_PREFIXES_FIELD_NUMBER: builtins.int
+    routing_instance_id: builtins.str
+    """ID of the RoutingInstance resource."""
+    vpc_network_id: builtins.str
+    """ID of the VpcNetwork."""
+    az_id: builtins.str
+    """ID of the AZ"""
+    prefix: builtins.str
+    """Prefix to update mask"""
+    new_mask: builtins.int
+    """The new mask"""
+    remove_sub_prefixes: builtins.bool
+    """Specifies whether existing sub-prefixes covered by the mask should be removed."""
+    def __init__(
+        self,
+        *,
+        routing_instance_id: builtins.str = ...,
+        vpc_network_id: builtins.str = ...,
+        az_id: builtins.str = ...,
+        prefix: builtins.str = ...,
+        new_mask: builtins.int = ...,
+        remove_sub_prefixes: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["az_id", b"az_id", "new_mask", b"new_mask", "prefix", b"prefix", "remove_sub_prefixes", b"remove_sub_prefixes", "routing_instance_id", b"routing_instance_id", "vpc_network_id", b"vpc_network_id"]) -> None: ...
+
+global___UpdatePrefixMaskRequest = UpdatePrefixMaskRequest
+
+@typing.final
 class AddPrivateConnectionRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

@@ -71,7 +71,7 @@ global___YandexPassportUserAccount = YandexPassportUserAccount
 @typing.final
 class SamlUserAccount(google.protobuf.message.Message):
     """A SAML federated user.
-    For more information, see [federations](/docs/iam/concepts/users/saml-federations).
+    For more information, see [federations](/docs/iam/concepts/users/accounts#saml-federation).
     """
 
     DESCRIPTOR: google.protobuf.descriptor.Descriptor

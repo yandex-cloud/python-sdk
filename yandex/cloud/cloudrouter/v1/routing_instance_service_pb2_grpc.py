@@ -77,6 +77,16 @@ class RoutingInstanceServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.RemovePrefixesRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.MovePrefix = channel.unary_unary(
+                '/yandex.cloud.cloudrouter.v1.RoutingInstanceService/MovePrefix',
+                request_serializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.MovePrefixRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.UpdatePrefixMask = channel.unary_unary(
+                '/yandex.cloud.cloudrouter.v1.RoutingInstanceService/UpdatePrefixMask',
+                request_serializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.UpdatePrefixMaskRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
         self.AddPrivateConnection = channel.unary_unary(
                 '/yandex.cloud.cloudrouter.v1.RoutingInstanceService/AddPrivateConnection',
                 request_serializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.AddPrivateConnectionRequest.SerializeToString,
@@ -169,6 +179,22 @@ class RoutingInstanceServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def MovePrefix(self, request, context):
+        """Moves the specified prefix between availability zones of the RoutingInstance.
+        Method starts an asynchronous operation that can be cancelled while it is in progress.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdatePrefixMask(self, request, context):
+        """Removes specified PrivateConnection from a RoutingInstance resource.
+        Method starts an asynchronous operation that can be cancelled while it is in progress.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def AddPrivateConnection(self, request, context):
         """Adds specified PrivateConnection to a RoutingInstance resource.
         Method starts an asynchronous operation that can be cancelled while it is in progress.
@@ -241,6 +267,16 @@ def add_RoutingInstanceServiceServicer_to_server(servicer, server):
             'RemovePrefixes': grpc.unary_unary_rpc_method_handler(
                     servicer.RemovePrefixes,
                     request_deserializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.RemovePrefixesRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'MovePrefix': grpc.unary_unary_rpc_method_handler(
+                    servicer.MovePrefix,
+                    request_deserializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.MovePrefixRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'UpdatePrefixMask': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdatePrefixMask,
+                    request_deserializer=yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.UpdatePrefixMaskRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'AddPrivateConnection': grpc.unary_unary_rpc_method_handler(
@@ -480,6 +516,60 @@ class RoutingInstanceService(object):
             target,
             '/yandex.cloud.cloudrouter.v1.RoutingInstanceService/RemovePrefixes',
             yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.RemovePrefixesRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def MovePrefix(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.cloudrouter.v1.RoutingInstanceService/MovePrefix',
+            yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.MovePrefixRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdatePrefixMask(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.cloudrouter.v1.RoutingInstanceService/UpdatePrefixMask',
+            yandex_dot_cloud_dot_cloudrouter_dot_v1_dot_routing__instance__service__pb2.UpdatePrefixMaskRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

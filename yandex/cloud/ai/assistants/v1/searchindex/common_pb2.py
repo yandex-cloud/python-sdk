@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n6yandex/cloud/ai/assistants/v1/searchindex/common.proto\x12)yandex.cloud.ai.assistants.v1.searchindex\x1a\x1egoogle/protobuf/wrappers.proto\"U\n\x16StaticChunkingStrategy\x12\x1d\n\x15max_chunk_size_tokens\x18\x01 \x01(\x03\x12\x1c\n\x14\x63hunk_overlap_tokens\x18\x02 \x01(\x03\"|\n\x10\x43hunkingStrategy\x12\\\n\x0fstatic_strategy\x18\x01 \x01(\x0b\x32\x41.yandex.cloud.ai.assistants.v1.searchindex.StaticChunkingStrategyH\x00\x42\n\n\x08Strategy\"\x9c\x02\n\x17MeanCombinationStrategy\x12}\n\x19mean_evaluation_technique\x18\x01 \x01(\x0e\x32Z.yandex.cloud.ai.assistants.v1.searchindex.MeanCombinationStrategy.MeanEvaluationTechnique\x12\x0f\n\x07weights\x18\x02 \x03(\x01\"q\n\x17MeanEvaluationTechnique\x12)\n%MEAN_EVALUATION_TECHNIQUE_UNSPECIFIED\x10\x00\x12\x0e\n\nARITHMETIC\x10\x01\x12\r\n\tGEOMETRIC\x10\x02\x12\x0c\n\x08HARMONIC\x10\x03\"Q\n\'ReciprocalRankFusionCombinationStrategy\x12&\n\x01k\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"\xf0\x01\n\x13\x43ombinationStrategy\x12^\n\x10mean_combination\x18\x01 \x01(\x0b\x32\x42.yandex.cloud.ai.assistants.v1.searchindex.MeanCombinationStrategyH\x00\x12m\n\x0frrf_combination\x18\x02 \x01(\x0b\x32R.yandex.cloud.ai.assistants.v1.searchindex.ReciprocalRankFusionCombinationStrategyH\x00\x42\n\n\x08Strategy\"n\n\x0eNgramTokenizer\x12-\n\x08min_gram\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12-\n\x08max_gram\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value*T\n\x15NormalizationStrategy\x12&\n\"NORMALIZATION_STRATEGY_UNSPECIFIED\x10\x00\x12\x0b\n\x07MIN_MAX\x10\x01\x12\x06\n\x02L2\x10\x02\x42\x8a\x01\n-yandex.cloud.api.ai.assistants.v1.searchindexZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/assistants/v1/searchindex;searchindexb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n6yandex/cloud/ai/assistants/v1/searchindex/common.proto\x12)yandex.cloud.ai.assistants.v1.searchindex\x1a\x1egoogle/protobuf/wrappers.proto\"U\n\x16StaticChunkingStrategy\x12\x1d\n\x15max_chunk_size_tokens\x18\x01 \x01(\x03\x12\x1c\n\x14\x63hunk_overlap_tokens\x18\x02 \x01(\x03\"|\n\x10\x43hunkingStrategy\x12\\\n\x0fstatic_strategy\x18\x01 \x01(\x0b\x32\x41.yandex.cloud.ai.assistants.v1.searchindex.StaticChunkingStrategyH\x00\x42\n\n\x08Strategy\"\x9c\x02\n\x17MeanCombinationStrategy\x12}\n\x19mean_evaluation_technique\x18\x01 \x01(\x0e\x32Z.yandex.cloud.ai.assistants.v1.searchindex.MeanCombinationStrategy.MeanEvaluationTechnique\x12\x0f\n\x07weights\x18\x02 \x03(\x01\"q\n\x17MeanEvaluationTechnique\x12)\n%MEAN_EVALUATION_TECHNIQUE_UNSPECIFIED\x10\x00\x12\x0e\n\nARITHMETIC\x10\x01\x12\r\n\tGEOMETRIC\x10\x02\x12\x0c\n\x08HARMONIC\x10\x03\"Q\n\'ReciprocalRankFusionCombinationStrategy\x12&\n\x01k\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"\xf0\x01\n\x13\x43ombinationStrategy\x12^\n\x10mean_combination\x18\x01 \x01(\x0b\x32\x42.yandex.cloud.ai.assistants.v1.searchindex.MeanCombinationStrategyH\x00\x12m\n\x0frrf_combination\x18\x02 \x01(\x0b\x32R.yandex.cloud.ai.assistants.v1.searchindex.ReciprocalRankFusionCombinationStrategyH\x00\x42\n\n\x08Strategy\"n\n\x0eNgramTokenizer\x12-\n\x08min_gram\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\x12-\n\x08max_gram\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int64Value\"\x13\n\x11StandardTokenizer\"\x12\n\x10StandardAnalyzer\"\x16\n\x14YandexLemmerAnalyzer*T\n\x15NormalizationStrategy\x12&\n\"NORMALIZATION_STRATEGY_UNSPECIFIED\x10\x00\x12\x0b\n\x07MIN_MAX\x10\x01\x12\x06\n\x02L2\x10\x02\x42\x8a\x01\n-yandex.cloud.api.ai.assistants.v1.searchindexZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/assistants/v1/searchindex;searchindexb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,8 +33,8 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.ai.assistants.
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n-yandex.cloud.api.ai.assistants.v1.searchindexZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/assistants/v1/searchindex;searchindex'
-  _globals['_NORMALIZATIONSTRATEGY']._serialized_start=1071
-  _globals['_NORMALIZATIONSTRATEGY']._serialized_end=1155
+  _globals['_NORMALIZATIONSTRATEGY']._serialized_start=1136
+  _globals['_NORMALIZATIONSTRATEGY']._serialized_end=1220
   _globals['_STATICCHUNKINGSTRATEGY']._serialized_start=133
   _globals['_STATICCHUNKINGSTRATEGY']._serialized_end=218
   _globals['_CHUNKINGSTRATEGY']._serialized_start=220
@@ -49,4 +49,10 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_COMBINATIONSTRATEGY']._serialized_end=957
   _globals['_NGRAMTOKENIZER']._serialized_start=959
   _globals['_NGRAMTOKENIZER']._serialized_end=1069
+  _globals['_STANDARDTOKENIZER']._serialized_start=1071
+  _globals['_STANDARDTOKENIZER']._serialized_end=1090
+  _globals['_STANDARDANALYZER']._serialized_start=1092
+  _globals['_STANDARDANALYZER']._serialized_end=1110
+  _globals['_YANDEXLEMMERANALYZER']._serialized_start=1112
+  _globals['_YANDEXLEMMERANALYZER']._serialized_end=1134
 # @@protoc_insertion_point(module_scope)

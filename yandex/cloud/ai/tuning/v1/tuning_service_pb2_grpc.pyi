@@ -59,21 +59,25 @@ class TuningServiceStub:
         yandex.cloud.ai.tuning.v1.tuning_service_pb2.CreateTuningDraftRequest,
         yandex.cloud.ai.tuning.v1.tuning_service_pb2.CreateTuningDraftResponse,
     ]
+    """Unimplemented"""
 
     UpdateDraft: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.tuning.v1.tuning_service_pb2.UpdateTuningDraftRequest,
         yandex.cloud.ai.tuning.v1.tuning_service_pb2.UpdateTuningDraftResponse,
     ]
+    """Unimplemented"""
 
     DeleteDraft: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.tuning.v1.tuning_service_pb2.DeleteTuningDraftRequest,
         yandex.cloud.ai.tuning.v1.tuning_service_pb2.DeleteTuningDraftResponse,
     ]
+    """Unimplemented"""
 
     TuneDraft: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.ai.tuning.v1.tuning_service_pb2.TuneDraftRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Unimplemented"""
 
 class TuningServiceAsyncStub:
     Tune: grpc.aio.UnaryUnaryMultiCallable[
@@ -115,21 +119,25 @@ class TuningServiceAsyncStub:
         yandex.cloud.ai.tuning.v1.tuning_service_pb2.CreateTuningDraftRequest,
         yandex.cloud.ai.tuning.v1.tuning_service_pb2.CreateTuningDraftResponse,
     ]
+    """Unimplemented"""
 
     UpdateDraft: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.tuning.v1.tuning_service_pb2.UpdateTuningDraftRequest,
         yandex.cloud.ai.tuning.v1.tuning_service_pb2.UpdateTuningDraftResponse,
     ]
+    """Unimplemented"""
 
     DeleteDraft: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.tuning.v1.tuning_service_pb2.DeleteTuningDraftRequest,
         yandex.cloud.ai.tuning.v1.tuning_service_pb2.DeleteTuningDraftResponse,
     ]
+    """Unimplemented"""
 
     TuneDraft: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.ai.tuning.v1.tuning_service_pb2.TuneDraftRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Unimplemented"""
 
 class TuningServiceServicer(metaclass=abc.ABCMeta):
     @abc.abstractmethod
@@ -186,27 +194,31 @@ class TuningServiceServicer(metaclass=abc.ABCMeta):
         self,
         request: yandex.cloud.ai.tuning.v1.tuning_service_pb2.CreateTuningDraftRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.tuning.v1.tuning_service_pb2.CreateTuningDraftResponse, collections.abc.Awaitable[yandex.cloud.ai.tuning.v1.tuning_service_pb2.CreateTuningDraftResponse]]: ...
+    ) -> typing.Union[yandex.cloud.ai.tuning.v1.tuning_service_pb2.CreateTuningDraftResponse, collections.abc.Awaitable[yandex.cloud.ai.tuning.v1.tuning_service_pb2.CreateTuningDraftResponse]]:
+        """Unimplemented"""
 
     @abc.abstractmethod
     def UpdateDraft(
         self,
         request: yandex.cloud.ai.tuning.v1.tuning_service_pb2.UpdateTuningDraftRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.tuning.v1.tuning_service_pb2.UpdateTuningDraftResponse, collections.abc.Awaitable[yandex.cloud.ai.tuning.v1.tuning_service_pb2.UpdateTuningDraftResponse]]: ...
+    ) -> typing.Union[yandex.cloud.ai.tuning.v1.tuning_service_pb2.UpdateTuningDraftResponse, collections.abc.Awaitable[yandex.cloud.ai.tuning.v1.tuning_service_pb2.UpdateTuningDraftResponse]]:
+        """Unimplemented"""
 
     @abc.abstractmethod
     def DeleteDraft(
         self,
         request: yandex.cloud.ai.tuning.v1.tuning_service_pb2.DeleteTuningDraftRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.ai.tuning.v1.tuning_service_pb2.DeleteTuningDraftResponse, collections.abc.Awaitable[yandex.cloud.ai.tuning.v1.tuning_service_pb2.DeleteTuningDraftResponse]]: ...
+    ) -> typing.Union[yandex.cloud.ai.tuning.v1.tuning_service_pb2.DeleteTuningDraftResponse, collections.abc.Awaitable[yandex.cloud.ai.tuning.v1.tuning_service_pb2.DeleteTuningDraftResponse]]:
+        """Unimplemented"""
 
     @abc.abstractmethod
     def TuneDraft(
         self,
         request: yandex.cloud.ai.tuning.v1.tuning_service_pb2.TuneDraftRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Unimplemented"""
 
 def add_TuningServiceServicer_to_server(servicer: TuningServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

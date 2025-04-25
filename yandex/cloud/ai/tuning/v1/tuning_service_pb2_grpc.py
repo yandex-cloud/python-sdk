@@ -138,25 +138,29 @@ class TuningServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def CreateDraft(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Unimplemented
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateDraft(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Unimplemented
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteDraft(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Unimplemented
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def TuneDraft(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Unimplemented
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
