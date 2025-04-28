@@ -119,6 +119,7 @@ Check `examples` directory for more examples.
 | yandex.cloud.serverless.triggers                                       | serverless-triggers      |
 | yandex.cloud.spark                                                     | managed-spark            |
 | yandex.cloud.storage                                                   | storage-api              |
+| yandex.cloud.trino                                                     | trino                    |
 | yandex.cloud.vpc                                                       | vpc                      |
 | yandex.cloud.ydb                                                       | ydb                      |
 
