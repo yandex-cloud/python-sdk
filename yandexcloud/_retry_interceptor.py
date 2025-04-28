@@ -46,6 +46,7 @@ class RetryInterceptor(grpc.UnaryUnaryClientInterceptor):
         self,
         max_retry_count: int = 0,
         retriable_codes: Iterable["grpc.StatusCode"] = _DEFAULT_RETRIABLE_CODES,
+        non_retriable_codes: Iterable["grpc.StatusCode"] = _NON_RETRIABLE_CODES,
         add_retry_count_to_header: bool = False,
         back_off_func: Optional[Callable[[int], float]] = None,
         per_call_timeout: Optional[float] = None,
@@ -53,6 +54,7 @@ class RetryInterceptor(grpc.UnaryUnaryClientInterceptor):
         # pylint: disable=super-init-not-called
         self.__max_retry_count = max_retry_count
         self.__retriable_codes = retriable_codes
+        self.__non_retriable_codes = non_retriable_codes
         self.__add_retry_count_to_header = add_retry_count_to_header
         self.__back_off_func = back_off_func
         self.__per_call_timeout = per_call_timeout
@@ -94,7 +96,7 @@ class RetryInterceptor(grpc.UnaryUnaryClientInterceptor):
         return time.time() + timeout if timeout is not None else None
 
     def __is_retriable(self, error: "grpc.StatusCode") -> bool:
-        if error in self._NON_RETRIABLE_CODES:
+        if error in self.__non_retriable_codes:
             return False
 
         if error in self.__retriable_codes:

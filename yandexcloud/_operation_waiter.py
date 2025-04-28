@@ -22,23 +22,23 @@ if TYPE_CHECKING:
     from yandexcloud._sdk import SDK
 
 
-def operation_waiter(sdk: "SDK", operation_id: str, timeout: Optional[float]) -> "OperationWaiter":
-    retriable_codes = (
-        grpc.StatusCode.UNAVAILABLE,
-        grpc.StatusCode.RESOURCE_EXHAUSTED,
-        grpc.StatusCode.INTERNAL,
-    )
+def create_operation_interceptor() -> "RetryInterceptor":
     # withstand server downtime for ~3.4 minutes with an exponential backoff
-    retry_interceptor = RetryInterceptor(
+    return RetryInterceptor(
         max_retry_count=13,
         per_call_timeout=30,
         back_off_func=backoff_exponential_jittered_min_interval(),
-        retriable_codes=retriable_codes,
+        retriable_codes=(
+            grpc.StatusCode.UNAVAILABLE,
+            grpc.StatusCode.RESOURCE_EXHAUSTED,
+            grpc.StatusCode.INTERNAL,
+        ),
     )
-    operation_service = sdk.client(
-        OperationServiceStub,
-        interceptor=retry_interceptor,
-    )
+
+
+def operation_waiter(sdk: "SDK", operation_id: str, timeout: Optional[float]) -> "OperationWaiter":
+    operation_interceptor = sdk._operation_interceptor or create_operation_interceptor()
+    operation_service = sdk.client(OperationServiceStub, interceptor=operation_interceptor)
     return OperationWaiter(operation_id, operation_service, timeout)
 
 
