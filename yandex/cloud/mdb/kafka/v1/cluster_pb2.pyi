@@ -531,6 +531,7 @@ class KafkaConfig2_8(google.protobuf.message.Message):
         """Should pre allocate file when create new segment?
 
         This is the global cluster-level setting that can be overridden on a topic level by using the [TopicConfig2_8.preallocate] setting.
+        Deprecated. Feature useless for Yandex Cloud.
         """
 
     @property
@@ -691,6 +692,7 @@ class KafkaConfig3(google.protobuf.message.Message):
         """Should pre allocate file when create new segment?
 
         This is the global cluster-level setting that can be overridden on a topic level by using the [TopicConfig3.preallocate] setting.
+        Deprecated. Feature useless for Yandex Cloud.
         """
 
     @property

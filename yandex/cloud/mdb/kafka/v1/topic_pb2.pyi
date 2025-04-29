@@ -216,6 +216,7 @@ class TopicConfig2_8(google.protobuf.message.Message):
         """True if we should preallocate the file on disk when creating a new log segment.
 
         This setting overrides the cluster-level [KafkaConfig2_8.log_preallocate] setting on the topic level.
+        Deprecated. Feature useless for Yandex Cloud.
         """
 
     def __init__(
@@ -350,6 +351,7 @@ class TopicConfig3(google.protobuf.message.Message):
         """True if we should preallocate the file on disk when creating a new log segment.
 
         This setting overrides the cluster-level [KafkaConfig3.log_preallocate] setting on the topic level.
+        Deprecated. Feature useless for Yandex Cloud.
         """
 
     def __init__(
