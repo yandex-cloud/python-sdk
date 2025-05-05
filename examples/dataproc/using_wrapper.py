@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import argparse
+import grpc
 import json
 import logging
 import os
@@ -14,11 +15,22 @@ USER_AGENT = "ycloud-python-sdk:dataproc.example.using_wrapper"
 def main():
     logging.basicConfig(level=logging.INFO)
     arguments = parse_cmd()
-    if arguments.token:
-        sdk = yandexcloud.SDK(token=arguments.token, user_agent=USER_AGENT)
-    else:
-        with open(arguments.sa_json_path) as infile:
-            sdk = yandexcloud.SDK(service_account_key=json.load(infile), user_agent=USER_AGENT)
+
+    operation_intercepter = yandexcloud.RetryInterceptor(
+        max_retry_count=15,
+        per_call_timeout=30,
+        back_off_func=yandexcloud.backoff_exponential_jittered_min_interval(),
+        retriable_codes=(
+            grpc.StatusCode.UNAVAILABLE,
+            grpc.StatusCode.RESOURCE_EXHAUSTED,
+            grpc.StatusCode.INTERNAL,
+            grpc.StatusCode.CANCELLED,
+            grpc.StatusCode.DEADLINE_EXCEEDED,
+        ),
+        non_retriable_codes=()
+    )
+
+    sdk = yandexcloud.SDK(user_agent=USER_AGENT, operation_interceptor=operation_intercepter, **get_auth(arguments))
     fill_missing_arguments(sdk, arguments)
 
     dataproc = sdk.wrappers.Dataproc(
@@ -190,6 +202,14 @@ def parse_cmd():
     parser.add_argument("--s3-bucket", required=True)
     parser.add_argument("--init-action-url", default=None)
     return parser.parse_args()
+
+
+def get_auth(arguments):
+    if arguments.token:
+        return {'token': arguments.token}
+    with open(arguments.sa_json_path) as infile:
+        sa = json.load(infile)
+        return {'service_account_key': sa}
 
 
 def fill_missing_arguments(sdk, arguments):

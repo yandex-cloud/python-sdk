@@ -40,6 +40,13 @@ class SDK:
         private_key: Optional[bytes] = None,
         certificate_chain: Optional[bytes] = None,
         retry_policy: Optional[_retry_policy.RetryPolicy] = None,
+        operation_interceptor: Union[
+            grpc.UnaryUnaryClientInterceptor,
+            grpc.UnaryStreamClientInterceptor,
+            grpc.StreamUnaryClientInterceptor,
+            grpc.StreamStreamClientInterceptor,
+            None,
+        ] = None,
         **kwargs: str,
     ):
         """
@@ -65,6 +72,7 @@ class SDK:
             **kwargs,
         )
         self._default_interceptor = interceptor
+        self._operation_interceptor = operation_interceptor
         self.helpers = _helpers.Helpers(self)
         self.wrappers = Wrappers(self)
 
