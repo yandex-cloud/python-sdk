@@ -1,5 +1,19 @@
 # CHANGELOG
 
+## v0.342.0 (2025-05-05)
+
+### Feature
+
+* feat: enable trino support ([`b50d19c`](https://github.com/yandex-cloud/python-sdk/commit/b50d19cc01dad94148a365a07ec7cad5880556f0))
+
+* feat: regenerate proto ([`e410bb2`](https://github.com/yandex-cloud/python-sdk/commit/e410bb213da12c14bea95261e8255ac71ac41754))
+
+### Unknown
+
+* Revert &#34;fix: no every week releases&#34;
+
+This reverts commit 6eaf0148e451985465f7e5090fdb2c807398ed10. ([`fd017cc`](https://github.com/yandex-cloud/python-sdk/commit/fd017ccf05dfa02ff46ccf9fd39e8faa53c91dbc))
+
 ## v0.341.0 (2025-04-25)
 
 ### Feature
