@@ -97,6 +97,10 @@ class Permission(google.protobuf.message.Message):
         """Admin role for the user."""
         ACCESS_ROLE_TOPIC_ADMIN: Permission._AccessRole.ValueType  # 4
         """Admin permissions on topics role for the user."""
+        ACCESS_ROLE_TOPIC_PRODUCER: Permission._AccessRole.ValueType  # 5
+        ACCESS_ROLE_TOPIC_CONSUMER: Permission._AccessRole.ValueType  # 6
+        ACCESS_ROLE_SCHEMA_READER: Permission._AccessRole.ValueType  # 7
+        ACCESS_ROLE_SCHEMA_WRITER: Permission._AccessRole.ValueType  # 8
 
     class AccessRole(_AccessRole, metaclass=_AccessRoleEnumTypeWrapper): ...
     ACCESS_ROLE_UNSPECIFIED: Permission.AccessRole.ValueType  # 0
@@ -108,12 +112,17 @@ class Permission(google.protobuf.message.Message):
     """Admin role for the user."""
     ACCESS_ROLE_TOPIC_ADMIN: Permission.AccessRole.ValueType  # 4
     """Admin permissions on topics role for the user."""
+    ACCESS_ROLE_TOPIC_PRODUCER: Permission.AccessRole.ValueType  # 5
+    ACCESS_ROLE_TOPIC_CONSUMER: Permission.AccessRole.ValueType  # 6
+    ACCESS_ROLE_SCHEMA_READER: Permission.AccessRole.ValueType  # 7
+    ACCESS_ROLE_SCHEMA_WRITER: Permission.AccessRole.ValueType  # 8
 
     TOPIC_NAME_FIELD_NUMBER: builtins.int
     ROLE_FIELD_NUMBER: builtins.int
     ALLOW_HOSTS_FIELD_NUMBER: builtins.int
     topic_name: builtins.str
     """Name or prefix-pattern with wildcard for the topic that the permission grants access to.
+    With roles SCHEMA_READER and SCHEMA_WRITER: string that contains set of schema registry subjects, separated by ';'.
 
     To get the topic name, make a [TopicService.List] request.
     """

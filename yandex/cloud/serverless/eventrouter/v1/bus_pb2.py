@@ -27,7 +27,7 @@ from yandex.cloud.logging.v1 import log_entry_pb2 as yandex_dot_cloud_dot_loggin
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n0yandex/cloud/serverless/eventrouter/v1/bus.proto\x12&yandex.cloud.serverless.eventrouter.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\'yandex/cloud/logging/v1/log_entry.proto\x1a\x1dyandex/cloud/validation.proto\"\xc2\x01\n\nLogOptions\x12 \n\x0clog_group_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1d\n\tfolder_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12:\n\tmin_level\x18\x03 \x01(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.Level\x12(\n\x12service_account_id\x18\x04 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50B\r\n\x0b\x64\x65stination\"\x8e\x04\n\x03\x42us\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12\x10\n\x08\x63loud_id\x18\x03 \x01(\t\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x05 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x06 \x01(\t\x12G\n\x06labels\x18\x07 \x03(\x0b\x32\x37.yandex.cloud.serverless.eventrouter.v1.Bus.LabelsEntry\x12\x1b\n\x13\x64\x65letion_protection\x18\x08 \x01(\x08\x12\x42\n\x06status\x18\t \x01(\x0e\x32\x32.yandex.cloud.serverless.eventrouter.v1.Bus.Status\x12\x17\n\x0flogging_enabled\x18\n \x01(\x08\x12G\n\x0blog_options\x18\x0b \x01(\x0b\x32\x32.yandex.cloud.serverless.eventrouter.v1.LogOptions\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"H\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08\x44\x45LETING\x10\x03\x42\x8a\x01\n*yandex.cloud.api.serverless.eventrouter.v1B\x04PERBZVgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/eventrouter/v1;eventrouterb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n0yandex/cloud/serverless/eventrouter/v1/bus.proto\x12&yandex.cloud.serverless.eventrouter.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\'yandex/cloud/logging/v1/log_entry.proto\x1a\x1dyandex/cloud/validation.proto\"\xb4\x01\n\nLogOptions\x12 \n\x0clog_group_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1d\n\tfolder_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12:\n\tmin_level\x18\x03 \x01(\x0e\x32\'.yandex.cloud.logging.v1.LogLevel.Level\x12\x1a\n\x12service_account_id\x18\x04 \x01(\tB\r\n\x0b\x64\x65stination\"\x8e\x04\n\x03\x42us\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tfolder_id\x18\x02 \x01(\t\x12\x10\n\x08\x63loud_id\x18\x03 \x01(\t\x12.\n\ncreated_at\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x0c\n\x04name\x18\x05 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x06 \x01(\t\x12G\n\x06labels\x18\x07 \x03(\x0b\x32\x37.yandex.cloud.serverless.eventrouter.v1.Bus.LabelsEntry\x12\x1b\n\x13\x64\x65letion_protection\x18\x08 \x01(\x08\x12\x42\n\x06status\x18\t \x01(\x0e\x32\x32.yandex.cloud.serverless.eventrouter.v1.Bus.Status\x12\x17\n\x0flogging_enabled\x18\n \x01(\x08\x12G\n\x0blog_options\x18\x0b \x01(\x0b\x32\x32.yandex.cloud.serverless.eventrouter.v1.LogOptions\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"H\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0c\n\x08\x43REATING\x10\x01\x12\n\n\x06\x41\x43TIVE\x10\x02\x12\x0c\n\x08\x44\x45LETING\x10\x03\x42\x8a\x01\n*yandex.cloud.api.serverless.eventrouter.v1B\x04PERBZVgithub.com/yandex-cloud/go-genproto/yandex/cloud/serverless/eventrouter/v1;eventrouterb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -39,16 +39,14 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LOGOPTIONS'].fields_by_name['log_group_id']._serialized_options = b'\212\3101\004<=50'
   _globals['_LOGOPTIONS'].fields_by_name['folder_id']._loaded_options = None
   _globals['_LOGOPTIONS'].fields_by_name['folder_id']._serialized_options = b'\212\3101\004<=50'
-  _globals['_LOGOPTIONS'].fields_by_name['service_account_id']._loaded_options = None
-  _globals['_LOGOPTIONS'].fields_by_name['service_account_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_BUS_LABELSENTRY']._loaded_options = None
   _globals['_BUS_LABELSENTRY']._serialized_options = b'8\001'
   _globals['_LOGOPTIONS']._serialized_start=198
-  _globals['_LOGOPTIONS']._serialized_end=392
-  _globals['_BUS']._serialized_start=395
-  _globals['_BUS']._serialized_end=921
-  _globals['_BUS_LABELSENTRY']._serialized_start=802
-  _globals['_BUS_LABELSENTRY']._serialized_end=847
-  _globals['_BUS_STATUS']._serialized_start=849
-  _globals['_BUS_STATUS']._serialized_end=921
+  _globals['_LOGOPTIONS']._serialized_end=378
+  _globals['_BUS']._serialized_start=381
+  _globals['_BUS']._serialized_end=907
+  _globals['_BUS_LABELSENTRY']._serialized_start=788
+  _globals['_BUS_LABELSENTRY']._serialized_end=833
+  _globals['_BUS_STATUS']._serialized_start=835
+  _globals['_BUS_STATUS']._serialized_end=907
 # @@protoc_insertion_point(module_scope)

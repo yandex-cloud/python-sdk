@@ -22,13 +22,14 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 from yandex.cloud.marketplace.pim.v1.saas import product_instance_pb2 as yandex_dot_cloud_dot_marketplace_dot_pim_dot_v1_dot_saas_dot_product__instance__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nCyandex/cloud/marketplace/pim/v1/saas/product_instance_service.proto\x12$yandex.cloud.marketplace.pim.v1.saas\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a;yandex/cloud/marketplace/pim/v1/saas/product_instance.proto\"F\n\x19GetProductInstanceRequest\x12)\n\x13product_instance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x98\x01\n\x1b\x43laimProductInstanceRequest\x12\x1d\n\x05token\x18\x01 \x01(\tB\x0e\xe8\xc7\x31\x01\x8a\xc8\x31\x06<=1000\x12\x13\n\x0bresource_id\x18\x02 \x01(\t\x12\x45\n\rresource_info\x18\x03 \x01(\x0b\x32..yandex.cloud.marketplace.pim.v1.saas.SaasInfo\"l\n\x1c\x43laimProductInstanceMetadata\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12\x1b\n\x13product_instance_id\x18\x02 \x01(\t\x12\x1b\n\x13license_instance_id\x18\x03 \x01(\t2\xbc\x02\n\x16ProductInstanceService\x12}\n\x03Get\x12?.yandex.cloud.marketplace.pim.v1.saas.GetProductInstanceRequest\x1a\x35.yandex.cloud.marketplace.pim.v1.saas.ProductInstance\x12\xa2\x01\n\x05\x43laim\x12\x41.yandex.cloud.marketplace.pim.v1.saas.ClaimProductInstanceRequest\x1a!.yandex.cloud.operation.Operation\"3\xb2\xd2*/\n\x1c\x43laimProductInstanceMetadata\x12\x0fProductInstanceBy\n(yandex.cloud.api.marketplace.pim.v1.saasZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/marketplace/pim/v1/saas;saasb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nCyandex/cloud/marketplace/pim/v1/saas/product_instance_service.proto\x12$yandex.cloud.marketplace.pim.v1.saas\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a;yandex/cloud/marketplace/pim/v1/saas/product_instance.proto\"F\n\x19GetProductInstanceRequest\x12)\n\x13product_instance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x98\x01\n\x1b\x43laimProductInstanceRequest\x12\x1d\n\x05token\x18\x01 \x01(\tB\x0e\xe8\xc7\x31\x01\x8a\xc8\x31\x06<=1000\x12\x13\n\x0bresource_id\x18\x02 \x01(\t\x12\x45\n\rresource_info\x18\x03 \x01(\x0b\x32..yandex.cloud.marketplace.pim.v1.saas.SaasInfo\"l\n\x1c\x43laimProductInstanceMetadata\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12\x1b\n\x13product_instance_id\x18\x02 \x01(\t\x12\x1b\n\x13license_instance_id\x18\x03 \x01(\t2\xb2\x03\n\x16ProductInstanceService\x12\xbf\x01\n\x03Get\x12?.yandex.cloud.marketplace.pim.v1.saas.GetProductInstanceRequest\x1a\x35.yandex.cloud.marketplace.pim.v1.saas.ProductInstance\"@\x82\xd3\xe4\x93\x02:\x12\x38/marketplace/pim/saas/v1/instances/{product_instance_id}\x12\xd5\x01\n\x05\x43laim\x12\x41.yandex.cloud.marketplace.pim.v1.saas.ClaimProductInstanceRequest\x1a!.yandex.cloud.operation.Operation\"f\xb2\xd2*/\n\x1c\x43laimProductInstanceMetadata\x12\x0fProductInstance\x82\xd3\xe4\x93\x02-\"(/marketplace/pim/saas/v1/instances/claim:\x01*By\n(yandex.cloud.api.marketplace.pim.v1.saasZMgithub.com/yandex-cloud/go-genproto/yandex/cloud/marketplace/pim/v1/saas;saasb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -40,14 +41,16 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETPRODUCTINSTANCEREQUEST'].fields_by_name['product_instance_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_CLAIMPRODUCTINSTANCEREQUEST'].fields_by_name['token']._loaded_options = None
   _globals['_CLAIMPRODUCTINSTANCEREQUEST'].fields_by_name['token']._serialized_options = b'\350\3071\001\212\3101\006<=1000'
+  _globals['_PRODUCTINSTANCESERVICE'].methods_by_name['Get']._loaded_options = None
+  _globals['_PRODUCTINSTANCESERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\002:\0228/marketplace/pim/saas/v1/instances/{product_instance_id}'
   _globals['_PRODUCTINSTANCESERVICE'].methods_by_name['Claim']._loaded_options = None
-  _globals['_PRODUCTINSTANCESERVICE'].methods_by_name['Claim']._serialized_options = b'\262\322*/\n\034ClaimProductInstanceMetadata\022\017ProductInstance'
-  _globals['_GETPRODUCTINSTANCEREQUEST']._serialized_start=275
-  _globals['_GETPRODUCTINSTANCEREQUEST']._serialized_end=345
-  _globals['_CLAIMPRODUCTINSTANCEREQUEST']._serialized_start=348
-  _globals['_CLAIMPRODUCTINSTANCEREQUEST']._serialized_end=500
-  _globals['_CLAIMPRODUCTINSTANCEMETADATA']._serialized_start=502
-  _globals['_CLAIMPRODUCTINSTANCEMETADATA']._serialized_end=610
-  _globals['_PRODUCTINSTANCESERVICE']._serialized_start=613
-  _globals['_PRODUCTINSTANCESERVICE']._serialized_end=929
+  _globals['_PRODUCTINSTANCESERVICE'].methods_by_name['Claim']._serialized_options = b'\262\322*/\n\034ClaimProductInstanceMetadata\022\017ProductInstance\202\323\344\223\002-\"(/marketplace/pim/saas/v1/instances/claim:\001*'
+  _globals['_GETPRODUCTINSTANCEREQUEST']._serialized_start=305
+  _globals['_GETPRODUCTINSTANCEREQUEST']._serialized_end=375
+  _globals['_CLAIMPRODUCTINSTANCEREQUEST']._serialized_start=378
+  _globals['_CLAIMPRODUCTINSTANCEREQUEST']._serialized_end=530
+  _globals['_CLAIMPRODUCTINSTANCEMETADATA']._serialized_start=532
+  _globals['_CLAIMPRODUCTINSTANCEMETADATA']._serialized_end=640
+  _globals['_PRODUCTINSTANCESERVICE']._serialized_start=643
+  _globals['_PRODUCTINSTANCESERVICE']._serialized_end=1077
 # @@protoc_insertion_point(module_scope)

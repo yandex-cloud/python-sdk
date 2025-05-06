@@ -27,6 +27,11 @@ class CertificateContentServiceStub:
     ]
     """Returns chain and private key of the specified certificate."""
 
+    GetEx: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.certificatemanager.v1.certificate_content_service_pb2.GetExCertificateContentRequest,
+        yandex.cloud.certificatemanager.v1.certificate_content_service_pb2.GetExCertificateContentResponse,
+    ]
+
 class CertificateContentServiceAsyncStub:
     """A set of methods for managing certificate content."""
 
@@ -35,6 +40,11 @@ class CertificateContentServiceAsyncStub:
         yandex.cloud.certificatemanager.v1.certificate_content_service_pb2.GetCertificateContentResponse,
     ]
     """Returns chain and private key of the specified certificate."""
+
+    GetEx: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.certificatemanager.v1.certificate_content_service_pb2.GetExCertificateContentRequest,
+        yandex.cloud.certificatemanager.v1.certificate_content_service_pb2.GetExCertificateContentResponse,
+    ]
 
 class CertificateContentServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing certificate content."""
@@ -46,5 +56,12 @@ class CertificateContentServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.certificatemanager.v1.certificate_content_service_pb2.GetCertificateContentResponse, collections.abc.Awaitable[yandex.cloud.certificatemanager.v1.certificate_content_service_pb2.GetCertificateContentResponse]]:
         """Returns chain and private key of the specified certificate."""
+
+    @abc.abstractmethod
+    def GetEx(
+        self,
+        request: yandex.cloud.certificatemanager.v1.certificate_content_service_pb2.GetExCertificateContentRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.certificatemanager.v1.certificate_content_service_pb2.GetExCertificateContentResponse, collections.abc.Awaitable[yandex.cloud.certificatemanager.v1.certificate_content_service_pb2.GetExCertificateContentResponse]]: ...
 
 def add_CertificateContentServiceServicer_to_server(servicer: CertificateContentServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

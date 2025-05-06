@@ -64,6 +64,8 @@ class Registry(google.protobuf.message.Message):
         """Registry kind is docker."""
         NUGET: Registry._Kind.ValueType  # 4
         """Registry kind is nuget."""
+        DEBIAN: Registry._Kind.ValueType  # 5
+        """Registry kind is debian."""
 
     class Kind(_Kind, metaclass=_KindEnumTypeWrapper): ...
     KIND_UNSPECIFIED: Registry.Kind.ValueType  # 0
@@ -75,6 +77,8 @@ class Registry(google.protobuf.message.Message):
     """Registry kind is docker."""
     NUGET: Registry.Kind.ValueType  # 4
     """Registry kind is nuget."""
+    DEBIAN: Registry.Kind.ValueType  # 5
+    """Registry kind is debian."""
 
     class _Type:
         ValueType = typing.NewType("ValueType", builtins.int)

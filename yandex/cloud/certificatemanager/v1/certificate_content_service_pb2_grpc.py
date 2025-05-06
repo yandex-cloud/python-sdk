@@ -40,6 +40,11 @@ class CertificateContentServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_certificatemanager_dot_v1_dot_certificate__content__service__pb2.GetCertificateContentRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_certificatemanager_dot_v1_dot_certificate__content__service__pb2.GetCertificateContentResponse.FromString,
                 _registered_method=True)
+        self.GetEx = channel.unary_unary(
+                '/yandex.cloud.certificatemanager.v1.CertificateContentService/GetEx',
+                request_serializer=yandex_dot_cloud_dot_certificatemanager_dot_v1_dot_certificate__content__service__pb2.GetExCertificateContentRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_certificatemanager_dot_v1_dot_certificate__content__service__pb2.GetExCertificateContentResponse.FromString,
+                _registered_method=True)
 
 
 class CertificateContentServiceServicer(object):
@@ -53,6 +58,12 @@ class CertificateContentServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetEx(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CertificateContentServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -60,6 +71,11 @@ def add_CertificateContentServiceServicer_to_server(servicer, server):
                     servicer.Get,
                     request_deserializer=yandex_dot_cloud_dot_certificatemanager_dot_v1_dot_certificate__content__service__pb2.GetCertificateContentRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_certificatemanager_dot_v1_dot_certificate__content__service__pb2.GetCertificateContentResponse.SerializeToString,
+            ),
+            'GetEx': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetEx,
+                    request_deserializer=yandex_dot_cloud_dot_certificatemanager_dot_v1_dot_certificate__content__service__pb2.GetExCertificateContentRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_certificatemanager_dot_v1_dot_certificate__content__service__pb2.GetExCertificateContentResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -90,6 +106,33 @@ class CertificateContentService(object):
             '/yandex.cloud.certificatemanager.v1.CertificateContentService/Get',
             yandex_dot_cloud_dot_certificatemanager_dot_v1_dot_certificate__content__service__pb2.GetCertificateContentRequest.SerializeToString,
             yandex_dot_cloud_dot_certificatemanager_dot_v1_dot_certificate__content__service__pb2.GetCertificateContentResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetEx(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.certificatemanager.v1.CertificateContentService/GetEx',
+            yandex_dot_cloud_dot_certificatemanager_dot_v1_dot_certificate__content__service__pb2.GetExCertificateContentRequest.SerializeToString,
+            yandex_dot_cloud_dot_certificatemanager_dot_v1_dot_certificate__content__service__pb2.GetExCertificateContentResponse.FromString,
             options,
             channel_credentials,
             insecure,

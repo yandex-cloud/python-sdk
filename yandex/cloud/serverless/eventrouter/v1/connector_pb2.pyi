@@ -146,22 +146,26 @@ class Source(google.protobuf.message.Message):
     DATA_STREAM_FIELD_NUMBER: builtins.int
     MESSAGE_QUEUE_FIELD_NUMBER: builtins.int
     TIMER_FIELD_NUMBER: builtins.int
+    EVENT_SERVICE_SOURCE_FIELD_NUMBER: builtins.int
     @property
     def data_stream(self) -> global___DataStream: ...
     @property
     def message_queue(self) -> global___MessageQueue: ...
     @property
     def timer(self) -> global___Timer: ...
+    @property
+    def event_service_source(self) -> global___EventServiceSource: ...
     def __init__(
         self,
         *,
         data_stream: global___DataStream | None = ...,
         message_queue: global___MessageQueue | None = ...,
         timer: global___Timer | None = ...,
+        event_service_source: global___EventServiceSource | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["data_stream", b"data_stream", "message_queue", b"message_queue", "source", b"source", "timer", b"timer"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["data_stream", b"data_stream", "message_queue", b"message_queue", "source", b"source", "timer", b"timer"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["source", b"source"]) -> typing.Literal["data_stream", "message_queue", "timer"] | None: ...
+    def HasField(self, field_name: typing.Literal["data_stream", b"data_stream", "event_service_source", b"event_service_source", "message_queue", b"message_queue", "source", b"source", "timer", b"timer"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["data_stream", b"data_stream", "event_service_source", b"event_service_source", "message_queue", b"message_queue", "source", b"source", "timer", b"timer"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["source", b"source"]) -> typing.Literal["data_stream", "message_queue", "timer", "event_service_source"] | None: ...
 
 global___Source = Source
 
@@ -233,6 +237,16 @@ class MessageQueue(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["batch_size", b"batch_size", "polling_timeout", b"polling_timeout", "queue_arn", b"queue_arn", "service_account_id", b"service_account_id", "visibility_timeout", b"visibility_timeout"]) -> None: ...
 
 global___MessageQueue = MessageQueue
+
+@typing.final
+class EventServiceSource(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___EventServiceSource = EventServiceSource
 
 @typing.final
 class Timer(google.protobuf.message.Message):

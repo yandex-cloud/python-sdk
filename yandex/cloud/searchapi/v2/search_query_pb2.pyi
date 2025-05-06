@@ -38,6 +38,8 @@ class SearchQuery(google.protobuf.message.Message):
         """Kazakh search type, yandex.kz search domain name will be used."""
         SEARCH_TYPE_BE: SearchQuery._SearchType.ValueType  # 5
         """Belarusian search type, yandex.by search domain name will be used."""
+        SEARCH_TYPE_UZ: SearchQuery._SearchType.ValueType  # 6
+        """Uzbek search type, yandex.uz search domain name will be used."""
 
     class SearchType(_SearchType, metaclass=_SearchTypeEnumTypeWrapper): ...
     SEARCH_TYPE_UNSPECIFIED: SearchQuery.SearchType.ValueType  # 0
@@ -51,6 +53,8 @@ class SearchQuery(google.protobuf.message.Message):
     """Kazakh search type, yandex.kz search domain name will be used."""
     SEARCH_TYPE_BE: SearchQuery.SearchType.ValueType  # 5
     """Belarusian search type, yandex.by search domain name will be used."""
+    SEARCH_TYPE_UZ: SearchQuery.SearchType.ValueType  # 6
+    """Uzbek search type, yandex.uz search domain name will be used."""
 
     class _FamilyMode:
         ValueType = typing.NewType("ValueType", builtins.int)

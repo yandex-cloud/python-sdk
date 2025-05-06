@@ -10,6 +10,7 @@ import google.protobuf.internal.containers
 import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
 import google.protobuf.timestamp_pb2
+import google.rpc.status_pb2
 import sys
 import typing
 import yandex.cloud.ai.batch_inference.v1.inference_options_pb2
@@ -49,6 +50,74 @@ class BatchInferenceTask(google.protobuf.message.Message):
     CANCELED: BatchInferenceTask.Status.ValueType  # 6
 
     @typing.final
+    class ErrorsInfo(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        @typing.final
+        class LineError(google.protobuf.message.Message):
+            DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+            LINE_NUMBER_FIELD_NUMBER: builtins.int
+            MESSAGE_FIELD_NUMBER: builtins.int
+            line_number: builtins.int
+            message: builtins.str
+            def __init__(
+                self,
+                *,
+                line_number: builtins.int = ...,
+                message: builtins.str = ...,
+            ) -> None: ...
+            def ClearField(self, field_name: typing.Literal["line_number", b"line_number", "message", b"message"]) -> None: ...
+
+        @typing.final
+        class BatchError(google.protobuf.message.Message):
+            DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+            BATCH_NUMBER_FIELD_NUMBER: builtins.int
+            FIRST_LINE_FIELD_NUMBER: builtins.int
+            LAST_LINE_FIELD_NUMBER: builtins.int
+            MESSAGE_FIELD_NUMBER: builtins.int
+            batch_number: builtins.int
+            first_line: builtins.int
+            """Range of lines in batch"""
+            last_line: builtins.int
+            message: builtins.str
+            def __init__(
+                self,
+                *,
+                batch_number: builtins.int = ...,
+                first_line: builtins.int = ...,
+                last_line: builtins.int = ...,
+                message: builtins.str = ...,
+            ) -> None: ...
+            def ClearField(self, field_name: typing.Literal["batch_number", b"batch_number", "first_line", b"first_line", "last_line", b"last_line", "message", b"message"]) -> None: ...
+
+        STATUS_FIELD_NUMBER: builtins.int
+        LINE_ERRORS_FIELD_NUMBER: builtins.int
+        BATCH_ERRORS_FIELD_NUMBER: builtins.int
+        @property
+        def status(self) -> google.rpc.status_pb2.Status:
+            """If set and not OK - task failed"""
+
+        @property
+        def line_errors(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___BatchInferenceTask.ErrorsInfo.LineError]:
+            """Errors by lines"""
+
+        @property
+        def batch_errors(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___BatchInferenceTask.ErrorsInfo.BatchError]:
+            """Errors by batches"""
+
+        def __init__(
+            self,
+            *,
+            status: google.rpc.status_pb2.Status | None = ...,
+            line_errors: collections.abc.Iterable[global___BatchInferenceTask.ErrorsInfo.LineError] | None = ...,
+            batch_errors: collections.abc.Iterable[global___BatchInferenceTask.ErrorsInfo.BatchError] | None = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["status", b"status"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["batch_errors", b"batch_errors", "line_errors", b"line_errors", "status", b"status"]) -> None: ...
+
+    @typing.final
     class LabelsEntry(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -77,6 +146,7 @@ class BatchInferenceTask(google.protobuf.message.Message):
     CREATED_AT_FIELD_NUMBER: builtins.int
     STARTED_AT_FIELD_NUMBER: builtins.int
     FINISHED_AT_FIELD_NUMBER: builtins.int
+    ERRORS_FIELD_NUMBER: builtins.int
     task_id: builtins.str
     operation_id: builtins.str
     folder_id: builtins.str
@@ -95,6 +165,8 @@ class BatchInferenceTask(google.protobuf.message.Message):
     def started_at(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
     @property
     def finished_at(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
+    @property
+    def errors(self) -> global___BatchInferenceTask.ErrorsInfo: ...
     def __init__(
         self,
         *,
@@ -111,9 +183,10 @@ class BatchInferenceTask(google.protobuf.message.Message):
         created_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         started_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
         finished_at: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+        errors: global___BatchInferenceTask.ErrorsInfo | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["completion_request", b"completion_request", "created_at", b"created_at", "finished_at", b"finished_at", "request", b"request", "started_at", b"started_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["completion_request", b"completion_request", "created_at", b"created_at", "created_by", b"created_by", "finished_at", b"finished_at", "folder_id", b"folder_id", "labels", b"labels", "model_uri", b"model_uri", "operation_id", b"operation_id", "request", b"request", "result_dataset_id", b"result_dataset_id", "source_dataset_id", b"source_dataset_id", "started_at", b"started_at", "status", b"status", "task_id", b"task_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["completion_request", b"completion_request", "created_at", b"created_at", "errors", b"errors", "finished_at", b"finished_at", "request", b"request", "started_at", b"started_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["completion_request", b"completion_request", "created_at", b"created_at", "created_by", b"created_by", "errors", b"errors", "finished_at", b"finished_at", "folder_id", b"folder_id", "labels", b"labels", "model_uri", b"model_uri", "operation_id", b"operation_id", "request", b"request", "result_dataset_id", b"result_dataset_id", "source_dataset_id", b"source_dataset_id", "started_at", b"started_at", "status", b"status", "task_id", b"task_id"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["request", b"request"]) -> typing.Literal["completion_request"] | None: ...
 
 global___BatchInferenceTask = BatchInferenceTask

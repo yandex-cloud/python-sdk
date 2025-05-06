@@ -212,6 +212,8 @@ class TuningRequest(google.protobuf.message.Message):
     BASE_MODEL_URI_FIELD_NUMBER: builtins.int
     TRAIN_DATASETS_FIELD_NUMBER: builtins.int
     VALIDATION_DATASETS_FIELD_NUMBER: builtins.int
+    VALIDATION_DATASET_FIELD_NUMBER: builtins.int
+    TEST_DATASETS_FIELD_NUMBER: builtins.int
     TEXT_TO_TEXT_COMPLETION_FIELD_NUMBER: builtins.int
     TEXT_CLASSIFICATION_MULTILABEL_FIELD_NUMBER: builtins.int
     TEXT_CLASSIFICATION_MULTICLASS_FIELD_NUMBER: builtins.int
@@ -228,6 +230,10 @@ class TuningRequest(google.protobuf.message.Message):
     def train_datasets(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___TuningRequest.WeightedDataset]: ...
     @property
     def validation_datasets(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___TuningRequest.WeightedDataset]: ...
+    @property
+    def validation_dataset(self) -> global___TuningRequest.WeightedDataset: ...
+    @property
+    def test_datasets(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___TuningRequest.WeightedDataset]: ...
     @property
     def text_to_text_completion(self) -> global___TextToTextCompletionTuningParams: ...
     @property
@@ -250,6 +256,8 @@ class TuningRequest(google.protobuf.message.Message):
         base_model_uri: builtins.str = ...,
         train_datasets: collections.abc.Iterable[global___TuningRequest.WeightedDataset] | None = ...,
         validation_datasets: collections.abc.Iterable[global___TuningRequest.WeightedDataset] | None = ...,
+        validation_dataset: global___TuningRequest.WeightedDataset | None = ...,
+        test_datasets: collections.abc.Iterable[global___TuningRequest.WeightedDataset] | None = ...,
         text_to_text_completion: global___TextToTextCompletionTuningParams | None = ...,
         text_classification_multilabel: global___TextClassificationMultilabelParams | None = ...,
         text_classification_multiclass: global___TextClassificationMulticlassParams | None = ...,
@@ -259,8 +267,8 @@ class TuningRequest(google.protobuf.message.Message):
         description: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["text_classification_multiclass", b"text_classification_multiclass", "text_classification_multilabel", b"text_classification_multilabel", "text_embedding_pair_params", b"text_embedding_pair_params", "text_embedding_triplet_params", b"text_embedding_triplet_params", "text_to_text_completion", b"text_to_text_completion", "tuning_params", b"tuning_params"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["base_model_uri", b"base_model_uri", "description", b"description", "labels", b"labels", "name", b"name", "text_classification_multiclass", b"text_classification_multiclass", "text_classification_multilabel", b"text_classification_multilabel", "text_embedding_pair_params", b"text_embedding_pair_params", "text_embedding_triplet_params", b"text_embedding_triplet_params", "text_to_text_completion", b"text_to_text_completion", "train_datasets", b"train_datasets", "tuning_params", b"tuning_params", "validation_datasets", b"validation_datasets"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["text_classification_multiclass", b"text_classification_multiclass", "text_classification_multilabel", b"text_classification_multilabel", "text_embedding_pair_params", b"text_embedding_pair_params", "text_embedding_triplet_params", b"text_embedding_triplet_params", "text_to_text_completion", b"text_to_text_completion", "tuning_params", b"tuning_params", "validation_dataset", b"validation_dataset"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["base_model_uri", b"base_model_uri", "description", b"description", "labels", b"labels", "name", b"name", "test_datasets", b"test_datasets", "text_classification_multiclass", b"text_classification_multiclass", "text_classification_multilabel", b"text_classification_multilabel", "text_embedding_pair_params", b"text_embedding_pair_params", "text_embedding_triplet_params", b"text_embedding_triplet_params", "text_to_text_completion", b"text_to_text_completion", "train_datasets", b"train_datasets", "tuning_params", b"tuning_params", "validation_dataset", b"validation_dataset", "validation_datasets", b"validation_datasets"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["tuning_params", b"tuning_params"]) -> typing.Literal["text_to_text_completion", "text_classification_multilabel", "text_classification_multiclass", "text_embedding_pair_params", "text_embedding_triplet_params"] | None: ...
 
 global___TuningRequest = TuningRequest

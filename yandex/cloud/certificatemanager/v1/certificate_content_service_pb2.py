@@ -23,9 +23,10 @@ _sym_db = _symbol_database.Default()
 
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
+from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nDyandex/cloud/certificatemanager/v1/certificate_content_service.proto\x12\"yandex.cloud.certificatemanager.v1\x1a\x1cgoogle/api/annotations.proto\"m\n\x1dGetCertificateContentResponse\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\x12\x19\n\x11\x63\x65rtificate_chain\x18\x03 \x03(\t\x12\x13\n\x0bprivate_key\x18\x04 \x01(\tJ\x04\x08\x02\x10\x03\"\x9c\x01\n\x1cGetCertificateContentRequest\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\x12\x12\n\nversion_id\x18\x02 \x01(\t\x12P\n\x12private_key_format\x18\x03 \x01(\x0e\x32\x34.yandex.cloud.certificatemanager.v1.PrivateKeyFormat*L\n\x10PrivateKeyFormat\x12\"\n\x1ePRIVATE_KEY_FORMAT_UNSPECIFIED\x10\x00\x12\t\n\x05PKCS1\x10\x01\x12\t\n\x05PKCS8\x10\x02\x32\xf2\x01\n\x19\x43\x65rtificateContentService\x12\xd4\x01\n\x03Get\x12@.yandex.cloud.certificatemanager.v1.GetCertificateContentRequest\x1a\x41.yandex.cloud.certificatemanager.v1.GetCertificateContentResponse\"H\x82\xd3\xe4\x93\x02\x42\x12@/certificate-manager/v1/certificates/{certificate_id}:getContentB\x83\x01\n&yandex.cloud.api.certificatemanager.v1ZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/certificatemanager/v1;certificatemanagerb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nDyandex/cloud/certificatemanager/v1/certificate_content_service.proto\x12\"yandex.cloud.certificatemanager.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1dyandex/cloud/validation.proto\"m\n\x1dGetCertificateContentResponse\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\x12\x19\n\x11\x63\x65rtificate_chain\x18\x03 \x03(\t\x12\x13\n\x0bprivate_key\x18\x04 \x01(\tJ\x04\x08\x02\x10\x03\"\x9c\x01\n\x1cGetCertificateContentRequest\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\x12\x12\n\nversion_id\x18\x02 \x01(\t\x12P\n\x12private_key_format\x18\x03 \x01(\x0e\x32\x34.yandex.cloud.certificatemanager.v1.PrivateKeyFormat\"\x9c\x02\n\x1eGetExCertificateContentRequest\x12\"\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12L\n\x0f\x66older_and_name\x18\x02 \x01(\x0b\x32\x31.yandex.cloud.certificatemanager.v1.FolderAndNameH\x00\x12\x1c\n\nversion_id\x18\x15 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12P\n\x12private_key_format\x18\x16 \x01(\x0e\x32\x34.yandex.cloud.certificatemanager.v1.PrivateKeyFormatB\x12\n\nidentifier\x12\x04\xc0\xc1\x31\x01J\x04\x08\x03\x10\x15\"}\n\x1fGetExCertificateContentResponse\x12\x16\n\x0e\x63\x65rtificate_id\x18\x01 \x01(\t\x12\x12\n\nversion_id\x18\x02 \x01(\t\x12\x19\n\x11\x63\x65rtificate_chain\x18\x03 \x03(\t\x12\x13\n\x0bprivate_key\x18\x04 \x01(\t\"Y\n\rFolderAndName\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\'\n\x10\x63\x65rtificate_name\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=100*L\n\x10PrivateKeyFormat\x12\"\n\x1ePRIVATE_KEY_FORMAT_UNSPECIFIED\x10\x00\x12\t\n\x05PKCS1\x10\x01\x12\t\n\x05PKCS8\x10\x02\x32\xb9\x03\n\x19\x43\x65rtificateContentService\x12\xd4\x01\n\x03Get\x12@.yandex.cloud.certificatemanager.v1.GetCertificateContentRequest\x1a\x41.yandex.cloud.certificatemanager.v1.GetCertificateContentResponse\"H\x82\xd3\xe4\x93\x02\x42\x12@/certificate-manager/v1/certificates/{certificate_id}:getContent\x12\xc4\x01\n\x05GetEx\x12\x42.yandex.cloud.certificatemanager.v1.GetExCertificateContentRequest\x1a\x43.yandex.cloud.certificatemanager.v1.GetExCertificateContentResponse\"2\x82\xd3\xe4\x93\x02,\x12*/certificate-manager/v1/certificates:getExB\x83\x01\n&yandex.cloud.api.certificatemanager.v1ZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/certificatemanager/v1;certificatemanagerb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,14 +34,32 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.certificateman
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n&yandex.cloud.api.certificatemanager.v1ZYgithub.com/yandex-cloud/go-genproto/yandex/cloud/certificatemanager/v1;certificatemanager'
+  _globals['_GETEXCERTIFICATECONTENTREQUEST'].oneofs_by_name['identifier']._loaded_options = None
+  _globals['_GETEXCERTIFICATECONTENTREQUEST'].oneofs_by_name['identifier']._serialized_options = b'\300\3011\001'
+  _globals['_GETEXCERTIFICATECONTENTREQUEST'].fields_by_name['certificate_id']._loaded_options = None
+  _globals['_GETEXCERTIFICATECONTENTREQUEST'].fields_by_name['certificate_id']._serialized_options = b'\212\3101\004<=50'
+  _globals['_GETEXCERTIFICATECONTENTREQUEST'].fields_by_name['version_id']._loaded_options = None
+  _globals['_GETEXCERTIFICATECONTENTREQUEST'].fields_by_name['version_id']._serialized_options = b'\212\3101\004<=50'
+  _globals['_FOLDERANDNAME'].fields_by_name['folder_id']._loaded_options = None
+  _globals['_FOLDERANDNAME'].fields_by_name['folder_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _globals['_FOLDERANDNAME'].fields_by_name['certificate_name']._loaded_options = None
+  _globals['_FOLDERANDNAME'].fields_by_name['certificate_name']._serialized_options = b'\350\3071\001\212\3101\005<=100'
   _globals['_CERTIFICATECONTENTSERVICE'].methods_by_name['Get']._loaded_options = None
   _globals['_CERTIFICATECONTENTSERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\002B\022@/certificate-manager/v1/certificates/{certificate_id}:getContent'
-  _globals['_PRIVATEKEYFORMAT']._serialized_start=408
-  _globals['_PRIVATEKEYFORMAT']._serialized_end=484
-  _globals['_GETCERTIFICATECONTENTRESPONSE']._serialized_start=138
-  _globals['_GETCERTIFICATECONTENTRESPONSE']._serialized_end=247
-  _globals['_GETCERTIFICATECONTENTREQUEST']._serialized_start=250
-  _globals['_GETCERTIFICATECONTENTREQUEST']._serialized_end=406
-  _globals['_CERTIFICATECONTENTSERVICE']._serialized_start=487
-  _globals['_CERTIFICATECONTENTSERVICE']._serialized_end=729
+  _globals['_CERTIFICATECONTENTSERVICE'].methods_by_name['GetEx']._loaded_options = None
+  _globals['_CERTIFICATECONTENTSERVICE'].methods_by_name['GetEx']._serialized_options = b'\202\323\344\223\002,\022*/certificate-manager/v1/certificates:getEx'
+  _globals['_PRIVATEKEYFORMAT']._serialized_start=944
+  _globals['_PRIVATEKEYFORMAT']._serialized_end=1020
+  _globals['_GETCERTIFICATECONTENTRESPONSE']._serialized_start=169
+  _globals['_GETCERTIFICATECONTENTRESPONSE']._serialized_end=278
+  _globals['_GETCERTIFICATECONTENTREQUEST']._serialized_start=281
+  _globals['_GETCERTIFICATECONTENTREQUEST']._serialized_end=437
+  _globals['_GETEXCERTIFICATECONTENTREQUEST']._serialized_start=440
+  _globals['_GETEXCERTIFICATECONTENTREQUEST']._serialized_end=724
+  _globals['_GETEXCERTIFICATECONTENTRESPONSE']._serialized_start=726
+  _globals['_GETEXCERTIFICATECONTENTRESPONSE']._serialized_end=851
+  _globals['_FOLDERANDNAME']._serialized_start=853
+  _globals['_FOLDERANDNAME']._serialized_end=942
+  _globals['_CERTIFICATECONTENTSERVICE']._serialized_start=1023
+  _globals['_CERTIFICATECONTENTSERVICE']._serialized_end=1464
 # @@protoc_insertion_point(module_scope)

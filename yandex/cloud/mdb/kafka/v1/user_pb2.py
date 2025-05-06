@@ -25,7 +25,7 @@ _sym_db = _symbol_database.Default()
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$yandex/cloud/mdb/kafka/v1/user.proto\x12\x19yandex.cloud.mdb.kafka.v1\x1a\x1dyandex/cloud/validation.proto\"d\n\x04User\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12:\n\x0bpermissions\x18\x03 \x03(\x0b\x32%.yandex.cloud.mdb.kafka.v1.Permission\"\x95\x01\n\x08UserSpec\x12,\n\x04name\x18\x01 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\r[a-zA-Z0-9_]*\x8a\xc8\x31\x05\x31-256\x12\x1f\n\x08password\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x38-128\x12:\n\x0bpermissions\x18\x03 \x03(\x0b\x32%.yandex.cloud.mdb.kafka.v1.Permission\"\x8f\x02\n\nPermission\x12\x12\n\ntopic_name\x18\x01 \x01(\t\x12>\n\x04role\x18\x02 \x01(\x0e\x32\x30.yandex.cloud.mdb.kafka.v1.Permission.AccessRole\x12\x13\n\x0b\x61llow_hosts\x18\x04 \x03(\t\"\x91\x01\n\nAccessRole\x12\x1b\n\x17\x41\x43\x43\x45SS_ROLE_UNSPECIFIED\x10\x00\x12\x18\n\x14\x41\x43\x43\x45SS_ROLE_PRODUCER\x10\x01\x12\x18\n\x14\x41\x43\x43\x45SS_ROLE_CONSUMER\x10\x02\x12\x15\n\x11\x41\x43\x43\x45SS_ROLE_ADMIN\x10\x03\x12\x1b\n\x17\x41\x43\x43\x45SS_ROLE_TOPIC_ADMIN\x10\x04J\x04\x08\x03\x10\x04\x42\x64\n\x1dyandex.cloud.api.mdb.kafka.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/kafka/v1;kafkab\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$yandex/cloud/mdb/kafka/v1/user.proto\x12\x19yandex.cloud.mdb.kafka.v1\x1a\x1dyandex/cloud/validation.proto\"d\n\x04User\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\x12:\n\x0bpermissions\x18\x03 \x03(\x0b\x32%.yandex.cloud.mdb.kafka.v1.Permission\"\x95\x01\n\x08UserSpec\x12,\n\x04name\x18\x01 \x01(\tB\x1e\xe8\xc7\x31\x01\xf2\xc7\x31\r[a-zA-Z0-9_]*\x8a\xc8\x31\x05\x31-256\x12\x1f\n\x08password\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05\x38-128\x12:\n\x0bpermissions\x18\x03 \x03(\x0b\x32%.yandex.cloud.mdb.kafka.v1.Permission\"\x8d\x03\n\nPermission\x12\x12\n\ntopic_name\x18\x01 \x01(\t\x12>\n\x04role\x18\x02 \x01(\x0e\x32\x30.yandex.cloud.mdb.kafka.v1.Permission.AccessRole\x12\x13\n\x0b\x61llow_hosts\x18\x04 \x03(\t\"\x8f\x02\n\nAccessRole\x12\x1b\n\x17\x41\x43\x43\x45SS_ROLE_UNSPECIFIED\x10\x00\x12\x18\n\x14\x41\x43\x43\x45SS_ROLE_PRODUCER\x10\x01\x12\x18\n\x14\x41\x43\x43\x45SS_ROLE_CONSUMER\x10\x02\x12\x15\n\x11\x41\x43\x43\x45SS_ROLE_ADMIN\x10\x03\x12\x1b\n\x17\x41\x43\x43\x45SS_ROLE_TOPIC_ADMIN\x10\x04\x12\x1e\n\x1a\x41\x43\x43\x45SS_ROLE_TOPIC_PRODUCER\x10\x05\x12\x1e\n\x1a\x41\x43\x43\x45SS_ROLE_TOPIC_CONSUMER\x10\x06\x12\x1d\n\x19\x41\x43\x43\x45SS_ROLE_SCHEMA_READER\x10\x07\x12\x1d\n\x19\x41\x43\x43\x45SS_ROLE_SCHEMA_WRITER\x10\x08J\x04\x08\x03\x10\x04\x42\x64\n\x1dyandex.cloud.api.mdb.kafka.v1ZCgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/kafka/v1;kafkab\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -42,7 +42,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_USERSPEC']._serialized_start=201
   _globals['_USERSPEC']._serialized_end=350
   _globals['_PERMISSION']._serialized_start=353
-  _globals['_PERMISSION']._serialized_end=624
+  _globals['_PERMISSION']._serialized_end=750
   _globals['_PERMISSION_ACCESSROLE']._serialized_start=473
-  _globals['_PERMISSION_ACCESSROLE']._serialized_end=618
+  _globals['_PERMISSION_ACCESSROLE']._serialized_end=744
 # @@protoc_insertion_point(module_scope)

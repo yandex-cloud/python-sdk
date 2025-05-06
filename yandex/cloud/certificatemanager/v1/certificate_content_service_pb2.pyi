@@ -85,3 +85,73 @@ class GetCertificateContentRequest(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["certificate_id", b"certificate_id", "private_key_format", b"private_key_format", "version_id", b"version_id"]) -> None: ...
 
 global___GetCertificateContentRequest = GetCertificateContentRequest
+
+@typing.final
+class GetExCertificateContentRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CERTIFICATE_ID_FIELD_NUMBER: builtins.int
+    FOLDER_AND_NAME_FIELD_NUMBER: builtins.int
+    VERSION_ID_FIELD_NUMBER: builtins.int
+    PRIVATE_KEY_FORMAT_FIELD_NUMBER: builtins.int
+    certificate_id: builtins.str
+    version_id: builtins.str
+    private_key_format: global___PrivateKeyFormat.ValueType
+    @property
+    def folder_and_name(self) -> global___FolderAndName: ...
+    def __init__(
+        self,
+        *,
+        certificate_id: builtins.str = ...,
+        folder_and_name: global___FolderAndName | None = ...,
+        version_id: builtins.str = ...,
+        private_key_format: global___PrivateKeyFormat.ValueType = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["certificate_id", b"certificate_id", "folder_and_name", b"folder_and_name", "identifier", b"identifier"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["certificate_id", b"certificate_id", "folder_and_name", b"folder_and_name", "identifier", b"identifier", "private_key_format", b"private_key_format", "version_id", b"version_id"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["identifier", b"identifier"]) -> typing.Literal["certificate_id", "folder_and_name"] | None: ...
+
+global___GetExCertificateContentRequest = GetExCertificateContentRequest
+
+@typing.final
+class GetExCertificateContentResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CERTIFICATE_ID_FIELD_NUMBER: builtins.int
+    VERSION_ID_FIELD_NUMBER: builtins.int
+    CERTIFICATE_CHAIN_FIELD_NUMBER: builtins.int
+    PRIVATE_KEY_FIELD_NUMBER: builtins.int
+    certificate_id: builtins.str
+    version_id: builtins.str
+    private_key: builtins.str
+    @property
+    def certificate_chain(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def __init__(
+        self,
+        *,
+        certificate_id: builtins.str = ...,
+        version_id: builtins.str = ...,
+        certificate_chain: collections.abc.Iterable[builtins.str] | None = ...,
+        private_key: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["certificate_chain", b"certificate_chain", "certificate_id", b"certificate_id", "private_key", b"private_key", "version_id", b"version_id"]) -> None: ...
+
+global___GetExCertificateContentResponse = GetExCertificateContentResponse
+
+@typing.final
+class FolderAndName(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    CERTIFICATE_NAME_FIELD_NUMBER: builtins.int
+    folder_id: builtins.str
+    certificate_name: builtins.str
+    def __init__(
+        self,
+        *,
+        folder_id: builtins.str = ...,
+        certificate_name: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["certificate_name", b"certificate_name", "folder_id", b"folder_id"]) -> None: ...
+
+global___FolderAndName = FolderAndName

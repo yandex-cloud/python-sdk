@@ -23,10 +23,11 @@ _sym_db = _symbol_database.Default()
 
 
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+from google.rpc import status_pb2 as google_dot_rpc_dot_status__pb2
 from yandex.cloud.ai.batch_inference.v1 import inference_options_pb2 as yandex_dot_cloud_dot_ai_dot_batch__inference_dot_v1_dot_inference__options__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n=yandex/cloud/ai/batch_inference/v1/batch_inference_task.proto\x12\"yandex.cloud.ai.batch_inference.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a:yandex/cloud/ai/batch_inference/v1/inference_options.proto\"\xe9\x05\n\x12\x42\x61tchInferenceTask\x12\x0f\n\x07task_id\x18\x01 \x01(\t\x12\x14\n\x0coperation_id\x18\x02 \x01(\t\x12\x11\n\tfolder_id\x18\x03 \x01(\t\x12\x11\n\tmodel_uri\x18\x04 \x01(\t\x12\x19\n\x11source_dataset_id\x18\x05 \x01(\t\x12X\n\x12\x63ompletion_request\x18\x06 \x01(\x0b\x32:.yandex.cloud.ai.batch_inference.v1.BatchCompletionRequestH\x00\x12M\n\x06status\x18\x07 \x01(\x0e\x32=.yandex.cloud.ai.batch_inference.v1.BatchInferenceTask.Status\x12\x19\n\x11result_dataset_id\x18\x08 \x01(\t\x12R\n\x06labels\x18\t \x03(\x0b\x32\x42.yandex.cloud.ai.batch_inference.v1.BatchInferenceTask.LabelsEntry\x12\x12\n\ncreated_by\x18\n \x01(\t\x12.\n\ncreated_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nstarted_at\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0b\x66inished_at\x18\r \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"t\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0b\n\x07\x43REATED\x10\x01\x12\x0b\n\x07PENDING\x10\x02\x12\x0f\n\x0bIN_PROGRESS\x10\x03\x12\r\n\tCOMPLETED\x10\x04\x12\n\n\x06\x46\x41ILED\x10\x05\x12\x0c\n\x08\x43\x41NCELED\x10\x06\x42\t\n\x07requestBu\n&yandex.cloud.api.ai.batch_inference.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/batch_inference/v1;fomob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n=yandex/cloud/ai/batch_inference/v1/batch_inference_task.proto\x12\"yandex.cloud.ai.batch_inference.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17google/rpc/status.proto\x1a:yandex/cloud/ai/batch_inference/v1/inference_options.proto\"\xc4\t\n\x12\x42\x61tchInferenceTask\x12\x0f\n\x07task_id\x18\x01 \x01(\t\x12\x14\n\x0coperation_id\x18\x02 \x01(\t\x12\x11\n\tfolder_id\x18\x03 \x01(\t\x12\x11\n\tmodel_uri\x18\x04 \x01(\t\x12\x19\n\x11source_dataset_id\x18\x05 \x01(\t\x12X\n\x12\x63ompletion_request\x18\x06 \x01(\x0b\x32:.yandex.cloud.ai.batch_inference.v1.BatchCompletionRequestH\x00\x12M\n\x06status\x18\x07 \x01(\x0e\x32=.yandex.cloud.ai.batch_inference.v1.BatchInferenceTask.Status\x12\x19\n\x11result_dataset_id\x18\x08 \x01(\t\x12R\n\x06labels\x18\t \x03(\x0b\x32\x42.yandex.cloud.ai.batch_inference.v1.BatchInferenceTask.LabelsEntry\x12\x12\n\ncreated_by\x18\n \x01(\t\x12.\n\ncreated_at\x18\x0b \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12.\n\nstarted_at\x18\x0c \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0b\x66inished_at\x18\r \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12Q\n\x06\x65rrors\x18\x0e \x01(\x0b\x32\x41.yandex.cloud.ai.batch_inference.v1.BatchInferenceTask.ErrorsInfo\x1a\x85\x03\n\nErrorsInfo\x12\"\n\x06status\x18\x01 \x01(\x0b\x32\x12.google.rpc.Status\x12`\n\x0bline_errors\x18\x02 \x03(\x0b\x32K.yandex.cloud.ai.batch_inference.v1.BatchInferenceTask.ErrorsInfo.LineError\x12\x62\n\x0c\x62\x61tch_errors\x18\x03 \x03(\x0b\x32L.yandex.cloud.ai.batch_inference.v1.BatchInferenceTask.ErrorsInfo.BatchError\x1a\x31\n\tLineError\x12\x13\n\x0bline_number\x18\x01 \x01(\x03\x12\x0f\n\x07message\x18\x02 \x01(\t\x1aZ\n\nBatchError\x12\x14\n\x0c\x62\x61tch_number\x18\x01 \x01(\x03\x12\x12\n\nfirst_line\x18\x02 \x01(\x03\x12\x11\n\tlast_line\x18\x03 \x01(\x03\x12\x0f\n\x07message\x18\x04 \x01(\t\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"t\n\x06Status\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\x0b\n\x07\x43REATED\x10\x01\x12\x0b\n\x07PENDING\x10\x02\x12\x0f\n\x0bIN_PROGRESS\x10\x03\x12\r\n\tCOMPLETED\x10\x04\x12\n\n\x06\x46\x41ILED\x10\x05\x12\x0c\n\x08\x43\x41NCELED\x10\x06\x42\t\n\x07requestBu\n&yandex.cloud.api.ai.batch_inference.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/batch_inference/v1;fomob\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,10 +37,16 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'\n&yandex.cloud.api.ai.batch_inference.v1ZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/batch_inference/v1;fomo'
   _globals['_BATCHINFERENCETASK_LABELSENTRY']._loaded_options = None
   _globals['_BATCHINFERENCETASK_LABELSENTRY']._serialized_options = b'8\001'
-  _globals['_BATCHINFERENCETASK']._serialized_start=195
-  _globals['_BATCHINFERENCETASK']._serialized_end=940
-  _globals['_BATCHINFERENCETASK_LABELSENTRY']._serialized_start=766
-  _globals['_BATCHINFERENCETASK_LABELSENTRY']._serialized_end=811
-  _globals['_BATCHINFERENCETASK_STATUS']._serialized_start=813
-  _globals['_BATCHINFERENCETASK_STATUS']._serialized_end=929
+  _globals['_BATCHINFERENCETASK']._serialized_start=220
+  _globals['_BATCHINFERENCETASK']._serialized_end=1440
+  _globals['_BATCHINFERENCETASK_ERRORSINFO']._serialized_start=875
+  _globals['_BATCHINFERENCETASK_ERRORSINFO']._serialized_end=1264
+  _globals['_BATCHINFERENCETASK_ERRORSINFO_LINEERROR']._serialized_start=1123
+  _globals['_BATCHINFERENCETASK_ERRORSINFO_LINEERROR']._serialized_end=1172
+  _globals['_BATCHINFERENCETASK_ERRORSINFO_BATCHERROR']._serialized_start=1174
+  _globals['_BATCHINFERENCETASK_ERRORSINFO_BATCHERROR']._serialized_end=1264
+  _globals['_BATCHINFERENCETASK_LABELSENTRY']._serialized_start=1266
+  _globals['_BATCHINFERENCETASK_LABELSENTRY']._serialized_end=1311
+  _globals['_BATCHINFERENCETASK_STATUS']._serialized_start=1313
+  _globals['_BATCHINFERENCETASK_STATUS']._serialized_end=1429
 # @@protoc_insertion_point(module_scope)
