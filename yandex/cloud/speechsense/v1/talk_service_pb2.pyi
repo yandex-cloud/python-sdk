@@ -380,3 +380,41 @@ class GetTalkResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["talk", b"talk"]) -> None: ...
 
 global___GetTalkResponse = GetTalkResponse
+
+@typing.final
+class UploadBadgeMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    BADGE_ID_FIELD_NUMBER: builtins.int
+    badge_id: builtins.str
+    """id of uploaded badge"""
+    def __init__(
+        self,
+        *,
+        badge_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["badge_id", b"badge_id"]) -> None: ...
+
+global___UploadBadgeMetadata = UploadBadgeMetadata
+
+@typing.final
+class UploadBadgeResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    BADGE_ID_FIELD_NUMBER: builtins.int
+    TALK_IDS_FIELD_NUMBER: builtins.int
+    badge_id: builtins.str
+    """id of uploaded badge"""
+    @property
+    def talk_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """id of created talks related to badge"""
+
+    def __init__(
+        self,
+        *,
+        badge_id: builtins.str = ...,
+        talk_ids: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["badge_id", b"badge_id", "talk_ids", b"talk_ids"]) -> None: ...
+
+global___UploadBadgeResponse = UploadBadgeResponse

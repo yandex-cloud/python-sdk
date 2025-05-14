@@ -10,6 +10,7 @@ import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
 import yandex.cloud.monitoring.v3.dashboard_pb2
+import yandex.cloud.monitoring.v3.link_item_pb2
 import yandex.cloud.monitoring.v3.parametrization_pb2
 import yandex.cloud.monitoring.v3.timeline_pb2
 import yandex.cloud.monitoring.v3.widget_pb2
@@ -126,6 +127,7 @@ class CreateDashboardRequest(google.protobuf.message.Message):
     MANAGED_BY_FIELD_NUMBER: builtins.int
     MANAGED_LINK_FIELD_NUMBER: builtins.int
     TIMELINE_FIELD_NUMBER: builtins.int
+    LINKS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """Required. Folder ID."""
     name: builtins.str
@@ -158,6 +160,10 @@ class CreateDashboardRequest(google.protobuf.message.Message):
     def timeline(self) -> yandex.cloud.monitoring.v3.timeline_pb2.Timeline:
         """Refresh and time window settings"""
 
+    @property
+    def links(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.monitoring.v3.link_item_pb2.LinkItem]:
+        """Dashboard links"""
+
     def __init__(
         self,
         *,
@@ -171,9 +177,10 @@ class CreateDashboardRequest(google.protobuf.message.Message):
         managed_by: builtins.str = ...,
         managed_link: builtins.str = ...,
         timeline: yandex.cloud.monitoring.v3.timeline_pb2.Timeline | None = ...,
+        links: collections.abc.Iterable[yandex.cloud.monitoring.v3.link_item_pb2.LinkItem] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["container", b"container", "folder_id", b"folder_id", "parametrization", b"parametrization", "timeline", b"timeline"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["container", b"container", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "managed_by", b"managed_by", "managed_link", b"managed_link", "name", b"name", "parametrization", b"parametrization", "timeline", b"timeline", "title", b"title", "widgets", b"widgets"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["container", b"container", "description", b"description", "folder_id", b"folder_id", "labels", b"labels", "links", b"links", "managed_by", b"managed_by", "managed_link", b"managed_link", "name", b"name", "parametrization", b"parametrization", "timeline", b"timeline", "title", b"title", "widgets", b"widgets"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["container", b"container"]) -> typing.Literal["folder_id"] | None: ...
 
 global___CreateDashboardRequest = CreateDashboardRequest
@@ -225,6 +232,7 @@ class UpdateDashboardRequest(google.protobuf.message.Message):
     MANAGED_BY_FIELD_NUMBER: builtins.int
     MANAGED_LINK_FIELD_NUMBER: builtins.int
     TIMELINE_FIELD_NUMBER: builtins.int
+    LINKS_FIELD_NUMBER: builtins.int
     dashboard_id: builtins.str
     """Required. Dashboard ID."""
     name: builtins.str
@@ -262,6 +270,10 @@ class UpdateDashboardRequest(google.protobuf.message.Message):
     def timeline(self) -> yandex.cloud.monitoring.v3.timeline_pb2.Timeline:
         """Refresh and time window settings"""
 
+    @property
+    def links(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.monitoring.v3.link_item_pb2.LinkItem]:
+        """Dashboard links"""
+
     def __init__(
         self,
         *,
@@ -276,9 +288,10 @@ class UpdateDashboardRequest(google.protobuf.message.Message):
         managed_by: builtins.str = ...,
         managed_link: builtins.str = ...,
         timeline: yandex.cloud.monitoring.v3.timeline_pb2.Timeline | None = ...,
+        links: collections.abc.Iterable[yandex.cloud.monitoring.v3.link_item_pb2.LinkItem] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["parametrization", b"parametrization", "timeline", b"timeline"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["dashboard_id", b"dashboard_id", "description", b"description", "etag", b"etag", "labels", b"labels", "managed_by", b"managed_by", "managed_link", b"managed_link", "name", b"name", "parametrization", b"parametrization", "timeline", b"timeline", "title", b"title", "widgets", b"widgets"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["dashboard_id", b"dashboard_id", "description", b"description", "etag", b"etag", "labels", b"labels", "links", b"links", "managed_by", b"managed_by", "managed_link", b"managed_link", "name", b"name", "parametrization", b"parametrization", "timeline", b"timeline", "title", b"title", "widgets", b"widgets"]) -> None: ...
 
 global___UpdateDashboardRequest = UpdateDashboardRequest
 

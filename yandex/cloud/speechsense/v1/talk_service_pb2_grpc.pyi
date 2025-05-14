@@ -8,6 +8,7 @@ import collections.abc
 import grpc
 import grpc.aio
 import typing
+import yandex.cloud.operation.operation_pb2
 import yandex.cloud.speechsense.v1.talk_service_pb2
 
 _T = typing.TypeVar("_T")
@@ -38,6 +39,14 @@ class TalkServiceStub:
         yandex.cloud.speechsense.v1.talk_service_pb2.UploadTextResponse,
     ]
     """rpc for uploading text talk document"""
+
+    UploadBadge: grpc.StreamUnaryMultiCallable[
+        yandex.cloud.speechsense.v1.talk_service_pb2.StreamTalkRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """rpc for streaming document that contains combined talks. First message should contain Talk related metadata,
+    second - audio metadata, others should contain audio bytes in chunks
+    """
 
     Search: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.speechsense.v1.talk_service_pb2.SearchTalkRequest,
@@ -71,6 +80,14 @@ class TalkServiceAsyncStub:
         yandex.cloud.speechsense.v1.talk_service_pb2.UploadTextResponse,
     ]
     """rpc for uploading text talk document"""
+
+    UploadBadge: grpc.aio.StreamUnaryMultiCallable[
+        yandex.cloud.speechsense.v1.talk_service_pb2.StreamTalkRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """rpc for streaming document that contains combined talks. First message should contain Talk related metadata,
+    second - audio metadata, others should contain audio bytes in chunks
+    """
 
     Search: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.speechsense.v1.talk_service_pb2.SearchTalkRequest,
@@ -110,6 +127,16 @@ class TalkServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.speechsense.v1.talk_service_pb2.UploadTextResponse, collections.abc.Awaitable[yandex.cloud.speechsense.v1.talk_service_pb2.UploadTextResponse]]:
         """rpc for uploading text talk document"""
+
+    @abc.abstractmethod
+    def UploadBadge(
+        self,
+        request_iterator: _MaybeAsyncIterator[yandex.cloud.speechsense.v1.talk_service_pb2.StreamTalkRequest],
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """rpc for streaming document that contains combined talks. First message should contain Talk related metadata,
+        second - audio metadata, others should contain audio bytes in chunks
+        """
 
     @abc.abstractmethod
     def Search(

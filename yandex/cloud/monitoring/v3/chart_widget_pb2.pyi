@@ -13,6 +13,7 @@ import google.protobuf.wrappers_pb2
 import sys
 import typing
 import yandex.cloud.monitoring.v3.downsampling_pb2
+import yandex.cloud.monitoring.v3.thresholds_pb2
 import yandex.cloud.monitoring.v3.unit_format_pb2
 
 if sys.version_info >= (3, 10):
@@ -298,10 +299,45 @@ class ChartWidget(google.protobuf.message.Message):
                     self,
                 ) -> None: ...
 
+            @typing.final
+            class ThresholdsColorScheme(google.protobuf.message.Message):
+                DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+                class _Aggregation:
+                    ValueType = typing.NewType("ValueType", builtins.int)
+                    V: typing_extensions.TypeAlias = ValueType
+
+                class _AggregationEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ChartWidget.VisualizationSettings.ColorSchemeSettings.ThresholdsColorScheme._Aggregation.ValueType], builtins.type):
+                    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+                    AGGREGATION_UNSPECIFIED: ChartWidget.VisualizationSettings.ColorSchemeSettings.ThresholdsColorScheme._Aggregation.ValueType  # 0
+                    AGGREGATION_LAST: ChartWidget.VisualizationSettings.ColorSchemeSettings.ThresholdsColorScheme._Aggregation.ValueType  # 1
+                    AGGREGATION_MIN: ChartWidget.VisualizationSettings.ColorSchemeSettings.ThresholdsColorScheme._Aggregation.ValueType  # 2
+                    AGGREGATION_MAX: ChartWidget.VisualizationSettings.ColorSchemeSettings.ThresholdsColorScheme._Aggregation.ValueType  # 3
+                    AGGREGATION_AVG: ChartWidget.VisualizationSettings.ColorSchemeSettings.ThresholdsColorScheme._Aggregation.ValueType  # 4
+                    AGGREGATION_SUM: ChartWidget.VisualizationSettings.ColorSchemeSettings.ThresholdsColorScheme._Aggregation.ValueType  # 5
+
+                class Aggregation(_Aggregation, metaclass=_AggregationEnumTypeWrapper): ...
+                AGGREGATION_UNSPECIFIED: ChartWidget.VisualizationSettings.ColorSchemeSettings.ThresholdsColorScheme.Aggregation.ValueType  # 0
+                AGGREGATION_LAST: ChartWidget.VisualizationSettings.ColorSchemeSettings.ThresholdsColorScheme.Aggregation.ValueType  # 1
+                AGGREGATION_MIN: ChartWidget.VisualizationSettings.ColorSchemeSettings.ThresholdsColorScheme.Aggregation.ValueType  # 2
+                AGGREGATION_MAX: ChartWidget.VisualizationSettings.ColorSchemeSettings.ThresholdsColorScheme.Aggregation.ValueType  # 3
+                AGGREGATION_AVG: ChartWidget.VisualizationSettings.ColorSchemeSettings.ThresholdsColorScheme.Aggregation.ValueType  # 4
+                AGGREGATION_SUM: ChartWidget.VisualizationSettings.ColorSchemeSettings.ThresholdsColorScheme.Aggregation.ValueType  # 5
+
+                AGGREGATION_FIELD_NUMBER: builtins.int
+                aggregation: global___ChartWidget.VisualizationSettings.ColorSchemeSettings.ThresholdsColorScheme.Aggregation.ValueType
+                def __init__(
+                    self,
+                    *,
+                    aggregation: global___ChartWidget.VisualizationSettings.ColorSchemeSettings.ThresholdsColorScheme.Aggregation.ValueType = ...,
+                ) -> None: ...
+                def ClearField(self, field_name: typing.Literal["aggregation", b"aggregation"]) -> None: ...
+
             AUTOMATIC_FIELD_NUMBER: builtins.int
             STANDARD_FIELD_NUMBER: builtins.int
             GRADIENT_FIELD_NUMBER: builtins.int
             HASH_FIELD_NUMBER: builtins.int
+            THRESHOLD_FIELD_NUMBER: builtins.int
             @property
             def automatic(self) -> global___ChartWidget.VisualizationSettings.ColorSchemeSettings.AutomaticColorScheme:
                 """Automatic color scheme."""
@@ -318,6 +354,10 @@ class ChartWidget(google.protobuf.message.Message):
             def hash(self) -> global___ChartWidget.VisualizationSettings.ColorSchemeSettings.HashColorScheme:
                 """Hash color scheme. Based on line name or value."""
 
+            @property
+            def threshold(self) -> global___ChartWidget.VisualizationSettings.ColorSchemeSettings.ThresholdsColorScheme:
+                """Threshold settings color scheme."""
+
             def __init__(
                 self,
                 *,
@@ -325,10 +365,11 @@ class ChartWidget(google.protobuf.message.Message):
                 standard: global___ChartWidget.VisualizationSettings.ColorSchemeSettings.StandardColorScheme | None = ...,
                 gradient: global___ChartWidget.VisualizationSettings.ColorSchemeSettings.GradientColorScheme | None = ...,
                 hash: global___ChartWidget.VisualizationSettings.ColorSchemeSettings.HashColorScheme | None = ...,
+                threshold: global___ChartWidget.VisualizationSettings.ColorSchemeSettings.ThresholdsColorScheme | None = ...,
             ) -> None: ...
-            def HasField(self, field_name: typing.Literal["automatic", b"automatic", "gradient", b"gradient", "hash", b"hash", "scheme", b"scheme", "standard", b"standard"]) -> builtins.bool: ...
-            def ClearField(self, field_name: typing.Literal["automatic", b"automatic", "gradient", b"gradient", "hash", b"hash", "scheme", b"scheme", "standard", b"standard"]) -> None: ...
-            def WhichOneof(self, oneof_group: typing.Literal["scheme", b"scheme"]) -> typing.Literal["automatic", "standard", "gradient", "hash"] | None: ...
+            def HasField(self, field_name: typing.Literal["automatic", b"automatic", "gradient", b"gradient", "hash", b"hash", "scheme", b"scheme", "standard", b"standard", "threshold", b"threshold"]) -> builtins.bool: ...
+            def ClearField(self, field_name: typing.Literal["automatic", b"automatic", "gradient", b"gradient", "hash", b"hash", "scheme", b"scheme", "standard", b"standard", "threshold", b"threshold"]) -> None: ...
+            def WhichOneof(self, oneof_group: typing.Literal["scheme", b"scheme"]) -> typing.Literal["automatic", "standard", "gradient", "hash", "threshold"] | None: ...
 
         @typing.final
         class HeatmapSettings(google.protobuf.message.Message):
@@ -631,6 +672,7 @@ class ChartWidget(google.protobuf.message.Message):
     DISPLAY_LEGEND_FIELD_NUMBER: builtins.int
     FREEZE_FIELD_NUMBER: builtins.int
     REPEAT_FIELD_NUMBER: builtins.int
+    THRESHOLDS_FIELD_NUMBER: builtins.int
     id: builtins.str
     """Required. Chart ID."""
     description: builtins.str
@@ -661,6 +703,10 @@ class ChartWidget(google.protobuf.message.Message):
     def repeat(self) -> global___ChartWidget.RepeatSettings:
         """Setting for repeat panel / repeat row"""
 
+    @property
+    def thresholds(self) -> yandex.cloud.monitoring.v3.thresholds_pb2.Thresholds:
+        """Threshold settings"""
+
     def __init__(
         self,
         *,
@@ -674,8 +720,9 @@ class ChartWidget(google.protobuf.message.Message):
         display_legend: builtins.bool = ...,
         freeze: global___ChartWidget.FreezeDuration.ValueType = ...,
         repeat: global___ChartWidget.RepeatSettings | None = ...,
+        thresholds: yandex.cloud.monitoring.v3.thresholds_pb2.Thresholds | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["name_hiding_settings", b"name_hiding_settings", "queries", b"queries", "repeat", b"repeat", "visualization_settings", b"visualization_settings"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "display_legend", b"display_legend", "freeze", b"freeze", "id", b"id", "name_hiding_settings", b"name_hiding_settings", "queries", b"queries", "repeat", b"repeat", "series_overrides", b"series_overrides", "title", b"title", "visualization_settings", b"visualization_settings"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["name_hiding_settings", b"name_hiding_settings", "queries", b"queries", "repeat", b"repeat", "thresholds", b"thresholds", "visualization_settings", b"visualization_settings"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "display_legend", b"display_legend", "freeze", b"freeze", "id", b"id", "name_hiding_settings", b"name_hiding_settings", "queries", b"queries", "repeat", b"repeat", "series_overrides", b"series_overrides", "thresholds", b"thresholds", "title", b"title", "visualization_settings", b"visualization_settings"]) -> None: ...
 
 global___ChartWidget = ChartWidget

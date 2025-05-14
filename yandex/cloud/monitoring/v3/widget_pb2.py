@@ -26,9 +26,10 @@ from yandex.cloud.monitoring.v3 import chart_widget_pb2 as yandex_dot_cloud_dot_
 from yandex.cloud.monitoring.v3 import text_widget_pb2 as yandex_dot_cloud_dot_monitoring_dot_v3_dot_text__widget__pb2
 from yandex.cloud.monitoring.v3 import title_widget_pb2 as yandex_dot_cloud_dot_monitoring_dot_v3_dot_title__widget__pb2
 from yandex.cloud.monitoring.v3 import multi_source_chart_widget_pb2 as yandex_dot_cloud_dot_monitoring_dot_v3_dot_multi__source__chart__widget__pb2
+from yandex.cloud.monitoring.v3 import link_item_pb2 as yandex_dot_cloud_dot_monitoring_dot_v3_dot_link__item__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'yandex/cloud/monitoring/v3/widget.proto\x12\x1ayandex.cloud.monitoring.v3\x1a-yandex/cloud/monitoring/v3/chart_widget.proto\x1a,yandex/cloud/monitoring/v3/text_widget.proto\x1a-yandex/cloud/monitoring/v3/title_widget.proto\x1a:yandex/cloud/monitoring/v3/multi_source_chart_widget.proto\"\x9f\x03\n\x06Widget\x12\x43\n\x08position\x18\x01 \x01(\x0b\x32\x31.yandex.cloud.monitoring.v3.Widget.LayoutPosition\x12\x36\n\x04text\x18\x02 \x01(\x0b\x32&.yandex.cloud.monitoring.v3.TextWidgetH\x00\x12\x38\n\x05title\x18\x03 \x01(\x0b\x32\'.yandex.cloud.monitoring.v3.TitleWidgetH\x00\x12\x38\n\x05\x63hart\x18\x05 \x01(\x0b\x32\'.yandex.cloud.monitoring.v3.ChartWidgetH\x00\x12P\n\x12multi_source_chart\x18\n \x01(\x0b\x32\x32.yandex.cloud.monitoring.v3.MultiSourceChartWidgetH\x00\x1a<\n\x0eLayoutPosition\x12\t\n\x01x\x18\x01 \x01(\x03\x12\t\n\x01y\x18\x02 \x01(\x03\x12\t\n\x01w\x18\x03 \x01(\x03\x12\t\n\x01h\x18\x04 \x01(\x03\x42\x08\n\x06widgetJ\x04\x08\x04\x10\x05J\x04\x08\x06\x10\nBk\n\x1eyandex.cloud.api.monitoring.v3ZIgithub.com/yandex-cloud/go-genproto/yandex/cloud/monitoring/v3;monitoringb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'yandex/cloud/monitoring/v3/widget.proto\x12\x1ayandex.cloud.monitoring.v3\x1a-yandex/cloud/monitoring/v3/chart_widget.proto\x1a,yandex/cloud/monitoring/v3/text_widget.proto\x1a-yandex/cloud/monitoring/v3/title_widget.proto\x1a:yandex/cloud/monitoring/v3/multi_source_chart_widget.proto\x1a*yandex/cloud/monitoring/v3/link_item.proto\"\xda\x03\n\x06Widget\x12\x43\n\x08position\x18\x01 \x01(\x0b\x32\x31.yandex.cloud.monitoring.v3.Widget.LayoutPosition\x12\x36\n\x04text\x18\x02 \x01(\x0b\x32&.yandex.cloud.monitoring.v3.TextWidgetH\x00\x12\x38\n\x05title\x18\x03 \x01(\x0b\x32\'.yandex.cloud.monitoring.v3.TitleWidgetH\x00\x12\x38\n\x05\x63hart\x18\x05 \x01(\x0b\x32\'.yandex.cloud.monitoring.v3.ChartWidgetH\x00\x12P\n\x12multi_source_chart\x18\n \x01(\x0b\x32\x32.yandex.cloud.monitoring.v3.MultiSourceChartWidgetH\x00\x12\x33\n\x05links\x18\x0c \x03(\x0b\x32$.yandex.cloud.monitoring.v3.LinkItem\x1a<\n\x0eLayoutPosition\x12\t\n\x01x\x18\x01 \x01(\x03\x12\t\n\x01y\x18\x02 \x01(\x03\x12\t\n\x01w\x18\x03 \x01(\x03\x12\t\n\x01h\x18\x04 \x01(\x03\x42\x08\n\x06widgetJ\x04\x08\x04\x10\x05J\x04\x08\x06\x10\nJ\x04\x08\x0b\x10\x0c\x42k\n\x1eyandex.cloud.api.monitoring.v3ZIgithub.com/yandex-cloud/go-genproto/yandex/cloud/monitoring/v3;monitoringb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,8 +37,8 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.monitoring.v3.
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\036yandex.cloud.api.monitoring.v3ZIgithub.com/yandex-cloud/go-genproto/yandex/cloud/monitoring/v3;monitoring'
-  _globals['_WIDGET']._serialized_start=272
-  _globals['_WIDGET']._serialized_end=687
-  _globals['_WIDGET_LAYOUTPOSITION']._serialized_start=605
-  _globals['_WIDGET_LAYOUTPOSITION']._serialized_end=665
+  _globals['_WIDGET']._serialized_start=316
+  _globals['_WIDGET']._serialized_end=790
+  _globals['_WIDGET_LAYOUTPOSITION']._serialized_start=702
+  _globals['_WIDGET_LAYOUTPOSITION']._serialized_end=762
 # @@protoc_insertion_point(module_scope)

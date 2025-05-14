@@ -136,6 +136,9 @@ class CreateBucketRequest(google.protobuf.message.Message):
     ANONYMOUS_ACCESS_FLAGS_FIELD_NUMBER: builtins.int
     ACL_FIELD_NUMBER: builtins.int
     TAGS_FIELD_NUMBER: builtins.int
+    ENCRYPTION_FIELD_NUMBER: builtins.int
+    VERSIONING_FIELD_NUMBER: builtins.int
+    ALLOWED_PRIVATE_ENDPOINTS_FIELD_NUMBER: builtins.int
     name: builtins.str
     """Name of the bucket.
 
@@ -156,6 +159,10 @@ class CreateBucketRequest(google.protobuf.message.Message):
     """Maximum size of the bucket.
     For details, see [documentation](/docs/storage/operations/buckets/limit-max-volume).
     """
+    versioning: yandex.cloud.storage.v1.bucket_pb2.Versioning.ValueType
+    """Bucket versioning status.
+    For details, see [documentation](/docs/storage/concepts/versioning).
+    """
     @property
     def anonymous_access_flags(self) -> yandex.cloud.storage.v1.bucket_pb2.AnonymousAccessFlags:
         """Flags for configuring public (anonymous) access to the bucket's content and settings.
@@ -174,6 +181,18 @@ class CreateBucketRequest(google.protobuf.message.Message):
         For details, see [documentation](/docs/resource-manager/concepts/labels).
         """
 
+    @property
+    def encryption(self) -> yandex.cloud.storage.v1.bucket_pb2.Encryption:
+        """Configuration for bucket's encryption.
+        For details, see [documentation](/docs/storage/concepts/encryption).
+        """
+
+    @property
+    def allowed_private_endpoints(self) -> yandex.cloud.storage.v1.bucket_pb2.BucketAllowedPrivateEndpoints:
+        """Configuration for bucket's allowed private endpoints.
+        requires permission s3:PutBucketAllowedPrivateEndpoints
+        """
+
     def __init__(
         self,
         *,
@@ -184,9 +203,12 @@ class CreateBucketRequest(google.protobuf.message.Message):
         anonymous_access_flags: yandex.cloud.storage.v1.bucket_pb2.AnonymousAccessFlags | None = ...,
         acl: yandex.cloud.storage.v1.bucket_pb2.ACL | None = ...,
         tags: collections.abc.Iterable[yandex.cloud.storage.v1.bucket_pb2.Tag] | None = ...,
+        encryption: yandex.cloud.storage.v1.bucket_pb2.Encryption | None = ...,
+        versioning: yandex.cloud.storage.v1.bucket_pb2.Versioning.ValueType = ...,
+        allowed_private_endpoints: yandex.cloud.storage.v1.bucket_pb2.BucketAllowedPrivateEndpoints | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["acl", b"acl", "anonymous_access_flags", b"anonymous_access_flags"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["acl", b"acl", "anonymous_access_flags", b"anonymous_access_flags", "default_storage_class", b"default_storage_class", "folder_id", b"folder_id", "max_size", b"max_size", "name", b"name", "tags", b"tags"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["acl", b"acl", "allowed_private_endpoints", b"allowed_private_endpoints", "anonymous_access_flags", b"anonymous_access_flags", "encryption", b"encryption"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["acl", b"acl", "allowed_private_endpoints", b"allowed_private_endpoints", "anonymous_access_flags", b"anonymous_access_flags", "default_storage_class", b"default_storage_class", "encryption", b"encryption", "folder_id", b"folder_id", "max_size", b"max_size", "name", b"name", "tags", b"tags", "versioning", b"versioning"]) -> None: ...
 
 global___CreateBucketRequest = CreateBucketRequest
 
@@ -301,8 +323,8 @@ class UpdateBucketRequest(google.protobuf.message.Message):
 
     @property
     def encryption(self) -> yandex.cloud.storage.v1.bucket_pb2.Encryption:
-        """Configuration for bucket's encryption
-        For detauls, see [documentation](/docs/storage/concepts/encryption)
+        """Configuration for bucket's encryption.
+        For details, see [documentation](/docs/storage/concepts/encryption)
         """
 
     @property

@@ -3,6 +3,7 @@
 import grpc
 import warnings
 
+from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 from yandex.cloud.speechsense.v1 import talk_service_pb2 as yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2
 
 GRPC_GENERATED_VERSION = '1.70.0'
@@ -49,6 +50,11 @@ class TalkServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.UploadTextRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.UploadTextResponse.FromString,
                 _registered_method=True)
+        self.UploadBadge = channel.stream_unary(
+                '/yandex.cloud.speechsense.v1.TalkService/UploadBadge',
+                request_serializer=yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.StreamTalkRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
         self.Search = channel.unary_unary(
                 '/yandex.cloud.speechsense.v1.TalkService/Search',
                 request_serializer=yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.SearchTalkRequest.SerializeToString,
@@ -86,6 +92,14 @@ class TalkServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def UploadBadge(self, request_iterator, context):
+        """rpc for streaming document that contains combined talks. First message should contain Talk related metadata,
+        second - audio metadata, others should contain audio bytes in chunks
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def Search(self, request, context):
         """rpc for searching talks. will return ids only
         """
@@ -117,6 +131,11 @@ def add_TalkServiceServicer_to_server(servicer, server):
                     servicer.UploadText,
                     request_deserializer=yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.UploadTextRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.UploadTextResponse.SerializeToString,
+            ),
+            'UploadBadge': grpc.stream_unary_rpc_method_handler(
+                    servicer.UploadBadge,
+                    request_deserializer=yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.StreamTalkRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'Search': grpc.unary_unary_rpc_method_handler(
                     servicer.Search,
@@ -210,6 +229,33 @@ class TalkService(object):
             '/yandex.cloud.speechsense.v1.TalkService/UploadText',
             yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.UploadTextRequest.SerializeToString,
             yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.UploadTextResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UploadBadge(request_iterator,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.stream_unary(
+            request_iterator,
+            target,
+            '/yandex.cloud.speechsense.v1.TalkService/UploadBadge',
+            yandex_dot_cloud_dot_speechsense_dot_v1_dot_talk__service__pb2.StreamTalkRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
             insecure,

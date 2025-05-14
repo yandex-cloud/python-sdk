@@ -4,10 +4,13 @@ isort:skip_file
 """
 
 import builtins
+import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
 import yandex.cloud.monitoring.v3.chart_widget_pb2
+import yandex.cloud.monitoring.v3.link_item_pb2
 import yandex.cloud.monitoring.v3.multi_source_chart_widget_pb2
 import yandex.cloud.monitoring.v3.text_widget_pb2
 import yandex.cloud.monitoring.v3.title_widget_pb2
@@ -53,6 +56,7 @@ class Widget(google.protobuf.message.Message):
     TITLE_FIELD_NUMBER: builtins.int
     CHART_FIELD_NUMBER: builtins.int
     MULTI_SOURCE_CHART_FIELD_NUMBER: builtins.int
+    LINKS_FIELD_NUMBER: builtins.int
     @property
     def position(self) -> global___Widget.LayoutPosition:
         """Required. Widget layout position."""
@@ -73,6 +77,8 @@ class Widget(google.protobuf.message.Message):
     def multi_source_chart(self) -> yandex.cloud.monitoring.v3.multi_source_chart_widget_pb2.MultiSourceChartWidget:
         """Multi-source chart widget."""
 
+    @property
+    def links(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.monitoring.v3.link_item_pb2.LinkItem]: ...
     def __init__(
         self,
         *,
@@ -81,9 +87,10 @@ class Widget(google.protobuf.message.Message):
         title: yandex.cloud.monitoring.v3.title_widget_pb2.TitleWidget | None = ...,
         chart: yandex.cloud.monitoring.v3.chart_widget_pb2.ChartWidget | None = ...,
         multi_source_chart: yandex.cloud.monitoring.v3.multi_source_chart_widget_pb2.MultiSourceChartWidget | None = ...,
+        links: collections.abc.Iterable[yandex.cloud.monitoring.v3.link_item_pb2.LinkItem] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["chart", b"chart", "multi_source_chart", b"multi_source_chart", "position", b"position", "text", b"text", "title", b"title", "widget", b"widget"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["chart", b"chart", "multi_source_chart", b"multi_source_chart", "position", b"position", "text", b"text", "title", b"title", "widget", b"widget"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["chart", b"chart", "links", b"links", "multi_source_chart", b"multi_source_chart", "position", b"position", "text", b"text", "title", b"title", "widget", b"widget"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["widget", b"widget"]) -> typing.Literal["text", "title", "chart", "multi_source_chart"] | None: ...
 
 global___Widget = Widget
