@@ -40,6 +40,11 @@ class SynthesizerStub(object):
                 request_serializer=yandex_dot_cloud_dot_ai_dot_tts_dot_v3_dot_tts__pb2.UtteranceSynthesisRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_ai_dot_tts_dot_v3_dot_tts__pb2.UtteranceSynthesisResponse.FromString,
                 _registered_method=True)
+        self.StreamSynthesis = channel.stream_stream(
+                '/speechkit.tts.v3.Synthesizer/StreamSynthesis',
+                request_serializer=yandex_dot_cloud_dot_ai_dot_tts_dot_v3_dot_tts__pb2.StreamSynthesisRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_ai_dot_tts_dot_v3_dot_tts__pb2.StreamSynthesisResponse.FromString,
+                _registered_method=True)
 
 
 class SynthesizerServicer(object):
@@ -53,6 +58,13 @@ class SynthesizerServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def StreamSynthesis(self, request_iterator, context):
+        """Bidirectional streaming RPC for real-time synthesis.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_SynthesizerServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -60,6 +72,11 @@ def add_SynthesizerServicer_to_server(servicer, server):
                     servicer.UtteranceSynthesis,
                     request_deserializer=yandex_dot_cloud_dot_ai_dot_tts_dot_v3_dot_tts__pb2.UtteranceSynthesisRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_ai_dot_tts_dot_v3_dot_tts__pb2.UtteranceSynthesisResponse.SerializeToString,
+            ),
+            'StreamSynthesis': grpc.stream_stream_rpc_method_handler(
+                    servicer.StreamSynthesis,
+                    request_deserializer=yandex_dot_cloud_dot_ai_dot_tts_dot_v3_dot_tts__pb2.StreamSynthesisRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_ai_dot_tts_dot_v3_dot_tts__pb2.StreamSynthesisResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -90,6 +107,33 @@ class Synthesizer(object):
             '/speechkit.tts.v3.Synthesizer/UtteranceSynthesis',
             yandex_dot_cloud_dot_ai_dot_tts_dot_v3_dot_tts__pb2.UtteranceSynthesisRequest.SerializeToString,
             yandex_dot_cloud_dot_ai_dot_tts_dot_v3_dot_tts__pb2.UtteranceSynthesisResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def StreamSynthesis(request_iterator,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.stream_stream(
+            request_iterator,
+            target,
+            '/speechkit.tts.v3.Synthesizer/StreamSynthesis',
+            yandex_dot_cloud_dot_ai_dot_tts_dot_v3_dot_tts__pb2.StreamSynthesisRequest.SerializeToString,
+            yandex_dot_cloud_dot_ai_dot_tts_dot_v3_dot_tts__pb2.StreamSynthesisResponse.FromString,
             options,
             channel_credentials,
             insecure,

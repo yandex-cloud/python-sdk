@@ -18,6 +18,8 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class ProductUsageServiceStub:
+    """A set of methods for managing product's usage with product instances."""
+
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Write: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.marketplace.metering.v1.product_usage_service_pb2.WriteUsageRequest,
@@ -26,6 +28,8 @@ class ProductUsageServiceStub:
     """Writes product's usage (authenticated by publisher's service account)"""
 
 class ProductUsageServiceAsyncStub:
+    """A set of methods for managing product's usage with product instances."""
+
     Write: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.marketplace.metering.v1.product_usage_service_pb2.WriteUsageRequest,
         yandex.cloud.marketplace.metering.v1.product_usage_service_pb2.WriteUsageResponse,
@@ -33,6 +37,8 @@ class ProductUsageServiceAsyncStub:
     """Writes product's usage (authenticated by publisher's service account)"""
 
 class ProductUsageServiceServicer(metaclass=abc.ABCMeta):
+    """A set of methods for managing product's usage with product instances."""
+
     @abc.abstractmethod
     def Write(
         self,

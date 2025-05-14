@@ -19,6 +19,30 @@ else:
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
+class _LoudnessNormalizationType:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _LoudnessNormalizationTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_LoudnessNormalizationType.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    LOUDNESS_NORMALIZATION_TYPE_UNSPECIFIED: _LoudnessNormalizationType.ValueType  # 0
+    """Unspecified loudness normalization. The default behavior will be used."""
+    MAX_PEAK: _LoudnessNormalizationType.ValueType  # 1
+    """The type of normalization, wherein the gain is changed to bring the highest PCM sample value or analog signal peak to a given level."""
+    LUFS: _LoudnessNormalizationType.ValueType  # 2
+    """The type of normalization based on EBU R 128 recommendation."""
+
+class LoudnessNormalizationType(_LoudnessNormalizationType, metaclass=_LoudnessNormalizationTypeEnumTypeWrapper):
+    """Specifies the loudness normalization algorithm to use when synthesizing audio."""
+
+LOUDNESS_NORMALIZATION_TYPE_UNSPECIFIED: LoudnessNormalizationType.ValueType  # 0
+"""Unspecified loudness normalization. The default behavior will be used."""
+MAX_PEAK: LoudnessNormalizationType.ValueType  # 1
+"""The type of normalization, wherein the gain is changed to bring the highest PCM sample value or analog signal peak to a given level."""
+LUFS: LoudnessNormalizationType.ValueType  # 2
+"""The type of normalization based on EBU R 128 recommendation."""
+global___LoudnessNormalizationType = LoudnessNormalizationType
+
 @typing.final
 class AudioContent(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
@@ -472,3 +496,150 @@ class UtteranceSynthesisRequest(google.protobuf.message.Message):
     def WhichOneof(self, oneof_group: typing.Literal["Utterance", b"Utterance"]) -> typing.Literal["text", "text_template"] | None: ...
 
 global___UtteranceSynthesisRequest = UtteranceSynthesisRequest
+
+@typing.final
+class SynthesisOptions(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    MODEL_FIELD_NUMBER: builtins.int
+    VOICE_FIELD_NUMBER: builtins.int
+    ROLE_FIELD_NUMBER: builtins.int
+    SPEED_FIELD_NUMBER: builtins.int
+    VOLUME_FIELD_NUMBER: builtins.int
+    PITCH_SHIFT_FIELD_NUMBER: builtins.int
+    OUTPUT_AUDIO_SPEC_FIELD_NUMBER: builtins.int
+    LOUDNESS_NORMALIZATION_TYPE_FIELD_NUMBER: builtins.int
+    model: builtins.str
+    """The name of the TTS model to use for synthesis. Currently should be empty. Do not use it."""
+    voice: builtins.str
+    """The voice to use for speech synthesis."""
+    role: builtins.str
+    """The role or speaking style. Can be used to specify pronunciation character for the speaker."""
+    speed: builtins.float
+    """Speed multiplier (default: 1.0)."""
+    volume: builtins.float
+    """Volume adjustment:
+    * For `MAX_PEAK`: range is (0, 1], default 0.7.
+    * For `LUFS`: range is [-145, 0), default -19.
+    """
+    pitch_shift: builtins.float
+    """Pitch adjustment, in Hz, range [-1000, 1000], default 0."""
+    loudness_normalization_type: global___LoudnessNormalizationType.ValueType
+    """Loudness normalization type for output (default: `LUFS`)."""
+    @property
+    def output_audio_spec(self) -> global___AudioFormatOptions:
+        """Specifies output audio format. Default: 22050Hz, linear 16-bit signed little-endian PCM, with WAV header."""
+
+    def __init__(
+        self,
+        *,
+        model: builtins.str = ...,
+        voice: builtins.str = ...,
+        role: builtins.str = ...,
+        speed: builtins.float = ...,
+        volume: builtins.float = ...,
+        pitch_shift: builtins.float = ...,
+        output_audio_spec: global___AudioFormatOptions | None = ...,
+        loudness_normalization_type: global___LoudnessNormalizationType.ValueType = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["output_audio_spec", b"output_audio_spec"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["loudness_normalization_type", b"loudness_normalization_type", "model", b"model", "output_audio_spec", b"output_audio_spec", "pitch_shift", b"pitch_shift", "role", b"role", "speed", b"speed", "voice", b"voice", "volume", b"volume"]) -> None: ...
+
+global___SynthesisOptions = SynthesisOptions
+
+@typing.final
+class SynthesisInput(google.protobuf.message.Message):
+    """The input for synthesis."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    TEXT_FIELD_NUMBER: builtins.int
+    text: builtins.str
+    """The text string to be synthesized."""
+    def __init__(
+        self,
+        *,
+        text: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["text", b"text"]) -> None: ...
+
+global___SynthesisInput = SynthesisInput
+
+@typing.final
+class ForceSynthesisEvent(google.protobuf.message.Message):
+    """Event to forcibly trigger synthesis."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    def __init__(
+        self,
+    ) -> None: ...
+
+global___ForceSynthesisEvent = ForceSynthesisEvent
+
+@typing.final
+class StreamSynthesisRequest(google.protobuf.message.Message):
+    """Sent by client to control or provide data during streaming synthesis."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    OPTIONS_FIELD_NUMBER: builtins.int
+    SYNTHESIS_INPUT_FIELD_NUMBER: builtins.int
+    FORCE_SYNTHESIS_FIELD_NUMBER: builtins.int
+    @property
+    def options(self) -> global___SynthesisOptions:
+        """Synthesis options. Must be provided in the first request of the stream and cannot be updated afterwards."""
+
+    @property
+    def synthesis_input(self) -> global___SynthesisInput:
+        """Input to be synthesized."""
+
+    @property
+    def force_synthesis(self) -> global___ForceSynthesisEvent:
+        """Triggers immediate synthesis of buffered input."""
+
+    def __init__(
+        self,
+        *,
+        options: global___SynthesisOptions | None = ...,
+        synthesis_input: global___SynthesisInput | None = ...,
+        force_synthesis: global___ForceSynthesisEvent | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["Event", b"Event", "force_synthesis", b"force_synthesis", "options", b"options", "synthesis_input", b"synthesis_input"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["Event", b"Event", "force_synthesis", b"force_synthesis", "options", b"options", "synthesis_input", b"synthesis_input"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["Event", b"Event"]) -> typing.Literal["options", "synthesis_input", "force_synthesis"] | None: ...
+
+global___StreamSynthesisRequest = StreamSynthesisRequest
+
+@typing.final
+class StreamSynthesisResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    AUDIO_CHUNK_FIELD_NUMBER: builtins.int
+    TEXT_CHUNK_FIELD_NUMBER: builtins.int
+    START_MS_FIELD_NUMBER: builtins.int
+    LENGTH_MS_FIELD_NUMBER: builtins.int
+    start_ms: builtins.int
+    """Start time of the audio chunk in milliseconds."""
+    length_ms: builtins.int
+    """Length of the audio chunk in milliseconds."""
+    @property
+    def audio_chunk(self) -> global___AudioChunk:
+        """Part of synthesized audio."""
+
+    @property
+    def text_chunk(self) -> global___TextChunk:
+        """Part of synthesized text."""
+
+    def __init__(
+        self,
+        *,
+        audio_chunk: global___AudioChunk | None = ...,
+        text_chunk: global___TextChunk | None = ...,
+        start_ms: builtins.int = ...,
+        length_ms: builtins.int = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["audio_chunk", b"audio_chunk", "text_chunk", b"text_chunk"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["audio_chunk", b"audio_chunk", "length_ms", b"length_ms", "start_ms", b"start_ms", "text_chunk", b"text_chunk"]) -> None: ...
+
+global___StreamSynthesisResponse = StreamSynthesisResponse

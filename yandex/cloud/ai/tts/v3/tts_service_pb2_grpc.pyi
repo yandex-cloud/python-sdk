@@ -27,6 +27,12 @@ class SynthesizerStub:
     ]
     """Synthesizing text into speech."""
 
+    StreamSynthesis: grpc.StreamStreamMultiCallable[
+        yandex.cloud.ai.tts.v3.tts_pb2.StreamSynthesisRequest,
+        yandex.cloud.ai.tts.v3.tts_pb2.StreamSynthesisResponse,
+    ]
+    """Bidirectional streaming RPC for real-time synthesis."""
+
 class SynthesizerAsyncStub:
     """A set of methods for voice synthesis."""
 
@@ -35,6 +41,12 @@ class SynthesizerAsyncStub:
         yandex.cloud.ai.tts.v3.tts_pb2.UtteranceSynthesisResponse,
     ]
     """Synthesizing text into speech."""
+
+    StreamSynthesis: grpc.aio.StreamStreamMultiCallable[
+        yandex.cloud.ai.tts.v3.tts_pb2.StreamSynthesisRequest,
+        yandex.cloud.ai.tts.v3.tts_pb2.StreamSynthesisResponse,
+    ]
+    """Bidirectional streaming RPC for real-time synthesis."""
 
 class SynthesizerServicer(metaclass=abc.ABCMeta):
     """A set of methods for voice synthesis."""
@@ -46,5 +58,13 @@ class SynthesizerServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[collections.abc.Iterator[yandex.cloud.ai.tts.v3.tts_pb2.UtteranceSynthesisResponse], collections.abc.AsyncIterator[yandex.cloud.ai.tts.v3.tts_pb2.UtteranceSynthesisResponse]]:
         """Synthesizing text into speech."""
+
+    @abc.abstractmethod
+    def StreamSynthesis(
+        self,
+        request_iterator: _MaybeAsyncIterator[yandex.cloud.ai.tts.v3.tts_pb2.StreamSynthesisRequest],
+        context: _ServicerContext,
+    ) -> typing.Union[collections.abc.Iterator[yandex.cloud.ai.tts.v3.tts_pb2.StreamSynthesisResponse], collections.abc.AsyncIterator[yandex.cloud.ai.tts.v3.tts_pb2.StreamSynthesisResponse]]:
+        """Bidirectional streaming RPC for real-time synthesis."""
 
 def add_SynthesizerServicer_to_server(servicer: SynthesizerServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

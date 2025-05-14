@@ -26,7 +26,8 @@ if _version_not_supported:
 
 
 class ProductUsageServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing product's usage with product instances.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -42,7 +43,8 @@ class ProductUsageServiceStub(object):
 
 
 class ProductUsageServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing product's usage with product instances.
+    """
 
     def Write(self, request, context):
         """Writes product's usage (authenticated by publisher's service account)
@@ -68,7 +70,8 @@ def add_ProductUsageServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class ProductUsageService(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing product's usage with product instances.
+    """
 
     @staticmethod
     def Write(request,

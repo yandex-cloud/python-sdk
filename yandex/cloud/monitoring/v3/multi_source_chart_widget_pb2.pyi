@@ -439,7 +439,7 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
             STANDARD_FIELD_NUMBER: builtins.int
             GRADIENT_FIELD_NUMBER: builtins.int
             HASH_FIELD_NUMBER: builtins.int
-            THRESHOLD_FIELD_NUMBER: builtins.int
+            THRESHOLDS_FIELD_NUMBER: builtins.int
             @property
             def automatic(self) -> global___MultiSourceChartWidget.VisualizationSettings.ColorSchemeSettings.AutomaticColorScheme:
                 """Automatic color scheme."""
@@ -457,7 +457,7 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
                 """Hash color scheme. Based on line name or value."""
 
             @property
-            def threshold(self) -> global___MultiSourceChartWidget.VisualizationSettings.ColorSchemeSettings.ThresholdsColorScheme:
+            def thresholds(self) -> global___MultiSourceChartWidget.VisualizationSettings.ColorSchemeSettings.ThresholdsColorScheme:
                 """Threshold settings color scheme."""
 
             def __init__(
@@ -467,11 +467,11 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
                 standard: global___MultiSourceChartWidget.VisualizationSettings.ColorSchemeSettings.StandardColorScheme | None = ...,
                 gradient: global___MultiSourceChartWidget.VisualizationSettings.ColorSchemeSettings.GradientColorScheme | None = ...,
                 hash: global___MultiSourceChartWidget.VisualizationSettings.ColorSchemeSettings.HashColorScheme | None = ...,
-                threshold: global___MultiSourceChartWidget.VisualizationSettings.ColorSchemeSettings.ThresholdsColorScheme | None = ...,
+                thresholds: global___MultiSourceChartWidget.VisualizationSettings.ColorSchemeSettings.ThresholdsColorScheme | None = ...,
             ) -> None: ...
-            def HasField(self, field_name: typing.Literal["automatic", b"automatic", "gradient", b"gradient", "hash", b"hash", "scheme", b"scheme", "standard", b"standard", "threshold", b"threshold"]) -> builtins.bool: ...
-            def ClearField(self, field_name: typing.Literal["automatic", b"automatic", "gradient", b"gradient", "hash", b"hash", "scheme", b"scheme", "standard", b"standard", "threshold", b"threshold"]) -> None: ...
-            def WhichOneof(self, oneof_group: typing.Literal["scheme", b"scheme"]) -> typing.Literal["automatic", "standard", "gradient", "hash", "threshold"] | None: ...
+            def HasField(self, field_name: typing.Literal["automatic", b"automatic", "gradient", b"gradient", "hash", b"hash", "scheme", b"scheme", "standard", b"standard", "thresholds", b"thresholds"]) -> builtins.bool: ...
+            def ClearField(self, field_name: typing.Literal["automatic", b"automatic", "gradient", b"gradient", "hash", b"hash", "scheme", b"scheme", "standard", b"standard", "thresholds", b"thresholds"]) -> None: ...
+            def WhichOneof(self, oneof_group: typing.Literal["scheme", b"scheme"]) -> typing.Literal["automatic", "standard", "gradient", "hash", "thresholds"] | None: ...
 
         @typing.final
         class HeatmapSettings(google.protobuf.message.Message):
