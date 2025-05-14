@@ -1,10 +1,12 @@
 import inspect
-from typing import TYPE_CHECKING, Any, Dict, Optional, Type, Union
+from typing import TYPE_CHECKING, Any, Callable, Dict, Optional, Type, TypeVar, Union
 
 import grpc
 
 from yandexcloud import _channels, _helpers, _operation_waiter, _retry_policy
 from yandexcloud._wrappers import Wrappers
+
+Client = TypeVar("Client")
 
 if TYPE_CHECKING:
     import logging
@@ -70,7 +72,7 @@ class SDK:
 
     def client(
         self,
-        stub_ctor: Type,
+        stub_ctor: Callable[[Any], Client],
         interceptor: Union[
             grpc.UnaryUnaryClientInterceptor,
             grpc.UnaryStreamClientInterceptor,
@@ -80,7 +82,7 @@ class SDK:
         ] = None,
         endpoint: Optional[str] = None,
         insecure: bool = False,
-    ) -> Any:
+    ) -> Client:
         service = _service_for_ctor(stub_ctor)
         channel = self._channels.channel(service, endpoint, insecure)
         if interceptor is not None:
