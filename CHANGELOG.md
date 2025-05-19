@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## v0.345.0 (2025-05-19)
+
+### Feature
+
+* feat(CLOUDAPI-1046): Improve client method typing with TypeVar (#148)
+
+Co-authored-by: Islam Alibekov &lt;everest@yandex-team.ru&gt; ([`e68a7fa`](https://github.com/yandex-cloud/python-sdk/commit/e68a7fa6d15405c83a6c9e366b4a12d3633684e9))
+
 ## v0.344.0 (2025-05-14)
 
 ### Feature
