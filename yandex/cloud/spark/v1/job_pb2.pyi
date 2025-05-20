@@ -75,7 +75,6 @@ class Job(google.protobuf.message.Message):
     STATUS_FIELD_NUMBER: builtins.int
     SPARK_JOB_FIELD_NUMBER: builtins.int
     PYSPARK_JOB_FIELD_NUMBER: builtins.int
-    APPLICATION_INFO_FIELD_NUMBER: builtins.int
     UI_URL_FIELD_NUMBER: builtins.int
     id: builtins.str
     """Required. Unique ID of the Spark job.
@@ -107,10 +106,6 @@ class Job(google.protobuf.message.Message):
     def spark_job(self) -> global___SparkJob: ...
     @property
     def pyspark_job(self) -> global___PysparkJob: ...
-    @property
-    def application_info(self) -> global___ApplicationInfo:
-        """Attributes of application."""
-
     def __init__(
         self,
         *,
@@ -124,56 +119,13 @@ class Job(google.protobuf.message.Message):
         status: global___Job.Status.ValueType = ...,
         spark_job: global___SparkJob | None = ...,
         pyspark_job: global___PysparkJob | None = ...,
-        application_info: global___ApplicationInfo | None = ...,
         ui_url: builtins.str = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["application_info", b"application_info", "created_at", b"created_at", "finished_at", b"finished_at", "job_spec", b"job_spec", "pyspark_job", b"pyspark_job", "spark_job", b"spark_job", "started_at", b"started_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["application_info", b"application_info", "cluster_id", b"cluster_id", "created_at", b"created_at", "created_by", b"created_by", "finished_at", b"finished_at", "id", b"id", "job_spec", b"job_spec", "name", b"name", "pyspark_job", b"pyspark_job", "spark_job", b"spark_job", "started_at", b"started_at", "status", b"status", "ui_url", b"ui_url"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "finished_at", b"finished_at", "job_spec", b"job_spec", "pyspark_job", b"pyspark_job", "spark_job", b"spark_job", "started_at", b"started_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "created_at", b"created_at", "created_by", b"created_by", "finished_at", b"finished_at", "id", b"id", "job_spec", b"job_spec", "name", b"name", "pyspark_job", b"pyspark_job", "spark_job", b"spark_job", "started_at", b"started_at", "status", b"status", "ui_url", b"ui_url"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["job_spec", b"job_spec"]) -> typing.Literal["spark_job", "pyspark_job"] | None: ...
 
 global___Job = Job
-
-@typing.final
-class ApplicationAttempt(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    ID_FIELD_NUMBER: builtins.int
-    AM_CONTAINER_ID_FIELD_NUMBER: builtins.int
-    id: builtins.str
-    """ID of application attempt"""
-    am_container_id: builtins.str
-    """ID of Application Master container"""
-    def __init__(
-        self,
-        *,
-        id: builtins.str = ...,
-        am_container_id: builtins.str = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["am_container_id", b"am_container_id", "id", b"id"]) -> None: ...
-
-global___ApplicationAttempt = ApplicationAttempt
-
-@typing.final
-class ApplicationInfo(google.protobuf.message.Message):
-    DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-    ID_FIELD_NUMBER: builtins.int
-    APPLICATION_ATTEMPTS_FIELD_NUMBER: builtins.int
-    id: builtins.str
-    """ID of application"""
-    @property
-    def application_attempts(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ApplicationAttempt]:
-        """Application attempts"""
-
-    def __init__(
-        self,
-        *,
-        id: builtins.str = ...,
-        application_attempts: collections.abc.Iterable[global___ApplicationAttempt] | None = ...,
-    ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["application_attempts", b"application_attempts", "id", b"id"]) -> None: ...
-
-global___ApplicationInfo = ApplicationInfo
 
 @typing.final
 class SparkJob(google.protobuf.message.Message):
@@ -206,7 +158,7 @@ class SparkJob(google.protobuf.message.Message):
     REPOSITORIES_FIELD_NUMBER: builtins.int
     EXCLUDE_PACKAGES_FIELD_NUMBER: builtins.int
     main_jar_file_uri: builtins.str
-    """The HCFS URI of the jar file containing the main class."""
+    """URI of the jar file containing the main class."""
     main_class: builtins.str
     """The name of the driver's main class."""
     @property

@@ -1469,6 +1469,81 @@ class AddClusterHostsMetadata(google.protobuf.message.Message):
 global___AddClusterHostsMetadata = AddClusterHostsMetadata
 
 @typing.final
+class UpdateClusterHostsRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    UPDATE_HOST_SPECS_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the SPQR cluster to update hosts in.
+    To get the SPQR cluster ID, use a [ClusterService.List] request.
+    """
+    @property
+    def update_host_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___UpdateHostSpec]:
+        """New configurations to apply to hosts."""
+
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        update_host_specs: collections.abc.Iterable[global___UpdateHostSpec] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "update_host_specs", b"update_host_specs"]) -> None: ...
+
+global___UpdateClusterHostsRequest = UpdateClusterHostsRequest
+
+@typing.final
+class UpdateClusterHostsMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CLUSTER_ID_FIELD_NUMBER: builtins.int
+    HOST_NAMES_FIELD_NUMBER: builtins.int
+    cluster_id: builtins.str
+    """ID of the SPQR cluster to update hosts in."""
+    @property
+    def host_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Names of hosts that are being updated."""
+
+    def __init__(
+        self,
+        *,
+        cluster_id: builtins.str = ...,
+        host_names: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "host_names", b"host_names"]) -> None: ...
+
+global___UpdateClusterHostsMetadata = UpdateClusterHostsMetadata
+
+@typing.final
+class UpdateHostSpec(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    HOST_NAME_FIELD_NUMBER: builtins.int
+    UPDATE_MASK_FIELD_NUMBER: builtins.int
+    ASSIGN_PUBLIC_IP_FIELD_NUMBER: builtins.int
+    host_name: builtins.str
+    """Name of the host to update.
+    To get the SPQR host name, use a [ClusterService.ListHosts] request.
+    """
+    assign_public_ip: builtins.bool
+    """Whether the host should get a public IP address on creation."""
+    @property
+    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
+        """Field mask that specifies which fields of the SPQR host should be updated."""
+
+    def __init__(
+        self,
+        *,
+        host_name: builtins.str = ...,
+        update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
+        assign_public_ip: builtins.bool = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["assign_public_ip", b"assign_public_ip", "host_name", b"host_name", "update_mask", b"update_mask"]) -> None: ...
+
+global___UpdateHostSpec = UpdateHostSpec
+
+@typing.final
 class DeleteClusterHostsRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 

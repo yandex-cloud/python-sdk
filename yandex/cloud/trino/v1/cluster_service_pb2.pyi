@@ -11,6 +11,7 @@ import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
 import yandex.cloud.operation.operation_pb2
+import yandex.cloud.trino.v1.catalog_pb2
 import yandex.cloud.trino.v1.cluster_pb2
 import yandex.cloud.trino.v1.maintenance_pb2
 
@@ -181,9 +182,16 @@ global___CreateClusterRequest = CreateClusterRequest
 class TrinoConfigSpec(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
+    CATALOGS_FIELD_NUMBER: builtins.int
     COORDINATOR_CONFIG_FIELD_NUMBER: builtins.int
     WORKER_CONFIG_FIELD_NUMBER: builtins.int
     RETRY_POLICY_FIELD_NUMBER: builtins.int
+    @property
+    def catalogs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.trino.v1.catalog_pb2.CatalogSpec]:
+        """List of catalogs that enable integration with various data sources.
+        Each catalog defines a connection to an external data source that Trino can query.
+        """
+
     @property
     def coordinator_config(self) -> yandex.cloud.trino.v1.cluster_pb2.CoordinatorConfig:
         """Configuration for the coordinator, specifying computational resources and other settings."""
@@ -199,12 +207,13 @@ class TrinoConfigSpec(google.protobuf.message.Message):
     def __init__(
         self,
         *,
+        catalogs: collections.abc.Iterable[yandex.cloud.trino.v1.catalog_pb2.CatalogSpec] | None = ...,
         coordinator_config: yandex.cloud.trino.v1.cluster_pb2.CoordinatorConfig | None = ...,
         worker_config: yandex.cloud.trino.v1.cluster_pb2.WorkerConfig | None = ...,
         retry_policy: yandex.cloud.trino.v1.cluster_pb2.RetryPolicyConfig | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["coordinator_config", b"coordinator_config", "retry_policy", b"retry_policy", "worker_config", b"worker_config"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["coordinator_config", b"coordinator_config", "retry_policy", b"retry_policy", "worker_config", b"worker_config"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["catalogs", b"catalogs", "coordinator_config", b"coordinator_config", "retry_policy", b"retry_policy", "worker_config", b"worker_config"]) -> None: ...
 
 global___TrinoConfigSpec = TrinoConfigSpec
 

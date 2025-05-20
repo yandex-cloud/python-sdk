@@ -149,6 +149,12 @@ class ClusterServiceStub:
     ]
     """Creates new hosts for a cluster."""
 
+    UpdateHosts: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.spqr.v1.cluster_service_pb2.UpdateClusterHostsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates the specified hosts."""
+
     DeleteHosts: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.spqr.v1.cluster_service_pb2.DeleteClusterHostsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -318,6 +324,12 @@ class ClusterServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Creates new hosts for a cluster."""
+
+    UpdateHosts: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.mdb.spqr.v1.cluster_service_pb2.UpdateClusterHostsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates the specified hosts."""
 
     DeleteHosts: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.mdb.spqr.v1.cluster_service_pb2.DeleteClusterHostsRequest,
@@ -528,6 +540,14 @@ class ClusterServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Creates new hosts for a cluster."""
+
+    @abc.abstractmethod
+    def UpdateHosts(
+        self,
+        request: yandex.cloud.mdb.spqr.v1.cluster_service_pb2.UpdateClusterHostsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Updates the specified hosts."""
 
     @abc.abstractmethod
     def DeleteHosts(

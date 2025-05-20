@@ -286,23 +286,23 @@ class UpdatePrivateSubnetRequest(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
+    PRIVATE_SUBNET_ID_FIELD_NUMBER: builtins.int
     UPDATE_MASK_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     VRF_OPTIONS_SPEC_FIELD_NUMBER: builtins.int
-    PRIVATE_SUBNET_ID_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
+    private_subnet_id: builtins.str
+    """ID of the PrivateSubnet resource to update.
+
+    To get the private subnet ID, use a [PrivateSubnetService.List] request.
+    """
     name: builtins.str
     """Name of the private subnet.
     The name must be unique within the folder.
     """
     description: builtins.str
     """Description of the private subnet."""
-    private_subnet_id: builtins.str
-    """ID of the PrivateSubnet resource to update.
-
-    To get the private subnet ID, use a [PrivateSubnetService.List] request.
-    """
     @property
     def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
         """Field mask that specifies which fields of the PrivateSubnet resource are going to be updated."""
@@ -321,11 +321,11 @@ class UpdatePrivateSubnetRequest(google.protobuf.message.Message):
     def __init__(
         self,
         *,
+        private_subnet_id: builtins.str = ...,
         update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
         name: builtins.str = ...,
         description: builtins.str = ...,
         vrf_options_spec: global___VrfOptionsSpec | None = ...,
-        private_subnet_id: builtins.str = ...,
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["update_mask", b"update_mask", "vrf_options_spec", b"vrf_options_spec"]) -> builtins.bool: ...

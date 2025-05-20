@@ -280,6 +280,8 @@ class UpdateDesktopGroupRequest(google.protobuf.message.Message):
     LABELS_FIELD_NUMBER: builtins.int
     RESOURCES_SPEC_FIELD_NUMBER: builtins.int
     GROUP_CONFIG_FIELD_NUMBER: builtins.int
+    BOOT_DISK_SPEC_FIELD_NUMBER: builtins.int
+    DATA_DISK_SPEC_FIELD_NUMBER: builtins.int
     desktop_group_id: builtins.str
     desktop_image_id: builtins.str
     name: builtins.str
@@ -294,6 +296,14 @@ class UpdateDesktopGroupRequest(google.protobuf.message.Message):
     def group_config(self) -> yandex.cloud.clouddesktop.v1.desktop_group_pb2.DesktopGroupConfiguration:
         """Configuration of the desktop group."""
 
+    @property
+    def boot_disk_spec(self) -> yandex.cloud.clouddesktop.v1.disk_pb2.DiskSpec:
+        """Boot disk specification of the desktop group."""
+
+    @property
+    def data_disk_spec(self) -> yandex.cloud.clouddesktop.v1.disk_pb2.DiskSpec:
+        """Data disk specification of the desktop group."""
+
     def __init__(
         self,
         *,
@@ -305,9 +315,11 @@ class UpdateDesktopGroupRequest(google.protobuf.message.Message):
         labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
         resources_spec: yandex.cloud.clouddesktop.v1.desktop_group_pb2.ResourcesSpec | None = ...,
         group_config: yandex.cloud.clouddesktop.v1.desktop_group_pb2.DesktopGroupConfiguration | None = ...,
+        boot_disk_spec: yandex.cloud.clouddesktop.v1.disk_pb2.DiskSpec | None = ...,
+        data_disk_spec: yandex.cloud.clouddesktop.v1.disk_pb2.DiskSpec | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["group_config", b"group_config", "resources_spec", b"resources_spec", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "desktop_group_id", b"desktop_group_id", "desktop_image_id", b"desktop_image_id", "group_config", b"group_config", "labels", b"labels", "name", b"name", "resources_spec", b"resources_spec", "update_mask", b"update_mask"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["boot_disk_spec", b"boot_disk_spec", "data_disk_spec", b"data_disk_spec", "group_config", b"group_config", "resources_spec", b"resources_spec", "update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["boot_disk_spec", b"boot_disk_spec", "data_disk_spec", b"data_disk_spec", "description", b"description", "desktop_group_id", b"desktop_group_id", "desktop_image_id", b"desktop_image_id", "group_config", b"group_config", "labels", b"labels", "name", b"name", "resources_spec", b"resources_spec", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateDesktopGroupRequest = UpdateDesktopGroupRequest
 
