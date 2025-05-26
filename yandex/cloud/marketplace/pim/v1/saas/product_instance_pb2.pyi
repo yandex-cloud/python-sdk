@@ -28,19 +28,29 @@ class _StateEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumType
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     STATE_UNSPECIFIED: _State.ValueType  # 0
     ACTIVATED: _State.ValueType  # 1
+    """Product instance is activated."""
     DEACTIVATED: _State.ValueType  # 2
+    """Product instance is deactivated."""
     PENDING_ACTIVATION: _State.ValueType  # 3
+    """Product instance is pending activation."""
     DEPRECATED: _State.ValueType  # 4
+    """Product instance is deprecated."""
     DELETED: _State.ValueType  # 5
+    """Product instance is deleted."""
 
 class State(_State, metaclass=_StateEnumTypeWrapper): ...
 
 STATE_UNSPECIFIED: State.ValueType  # 0
 ACTIVATED: State.ValueType  # 1
+"""Product instance is activated."""
 DEACTIVATED: State.ValueType  # 2
+"""Product instance is deactivated."""
 PENDING_ACTIVATION: State.ValueType  # 3
+"""Product instance is pending activation."""
 DEPRECATED: State.ValueType  # 4
+"""Product instance is deprecated."""
 DELETED: State.ValueType  # 5
+"""Product instance is deleted."""
 global___State = State
 
 class _ResourceType:
@@ -51,17 +61,25 @@ class _ResourceTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._E
     DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
     RESOURCE_TYPE_UNSPECIFIED: _ResourceType.ValueType  # 0
     SAAS: _ResourceType.ValueType  # 1
+    """SaaS resource."""
     K8S: _ResourceType.ValueType  # 2
+    """Kubernetes resource."""
     COMPUTE: _ResourceType.ValueType  # 3
+    """Compute resource."""
     CLOUD_APPS: _ResourceType.ValueType  # 4
+    """Cloud Apps resource."""
 
 class ResourceType(_ResourceType, metaclass=_ResourceTypeEnumTypeWrapper): ...
 
 RESOURCE_TYPE_UNSPECIFIED: ResourceType.ValueType  # 0
 SAAS: ResourceType.ValueType  # 1
+"""SaaS resource."""
 K8S: ResourceType.ValueType  # 2
+"""Kubernetes resource."""
 COMPUTE: ResourceType.ValueType  # 3
+"""Compute resource."""
 CLOUD_APPS: ResourceType.ValueType  # 4
+"""Cloud Apps resource."""
 global___ResourceType = ResourceType
 
 @typing.final
@@ -93,15 +111,25 @@ class ProductInstance(google.protobuf.message.Message):
     UPDATED_AT_FIELD_NUMBER: builtins.int
     SAAS_INFO_FIELD_NUMBER: builtins.int
     id: builtins.str
+    """ID of the product instance."""
     resource_id: builtins.str
+    """ID of the resource."""
     resource_type: global___ResourceType.ValueType
+    """Type of the resource."""
     state: global___State.ValueType
+    """State of the product instance."""
     @property
-    def resource_metadata(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
+    def resource_metadata(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Metadata of the resource; Reserved for future use."""
+
     @property
-    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
+    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Creation timestamp"""
+
     @property
-    def updated_at(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
+    def updated_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Update timestamp"""
+
     @property
     def saas_info(self) -> global___SaasInfo: ...
     def __init__(
@@ -145,8 +173,11 @@ class SaasInfo(google.protobuf.message.Message):
     ID_FIELD_NUMBER: builtins.int
     DATA_FIELD_NUMBER: builtins.int
     id: builtins.str
+    """ID of the SaaS resource."""
     @property
-    def data(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
+    def data(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Additional data about the SaaS resource."""
+
     def __init__(
         self,
         *,

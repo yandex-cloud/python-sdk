@@ -235,6 +235,7 @@ class SearchIndexTool(google.protobuf.message.Message):
     SEARCH_INDEX_IDS_FIELD_NUMBER: builtins.int
     MAX_NUM_RESULTS_FIELD_NUMBER: builtins.int
     REPHRASER_OPTIONS_FIELD_NUMBER: builtins.int
+    CALL_STRATEGY_FIELD_NUMBER: builtins.int
     @property
     def search_index_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """A list of search index IDs that this tool will query. Currently, only a single index ID is supported."""
@@ -253,17 +254,81 @@ class SearchIndexTool(google.protobuf.message.Message):
         incorporating context from the previous conversation.
         """
 
+    @property
+    def call_strategy(self) -> global___CallStrategy:
+        """Defines the strategy for triggering search.
+        Controls whether search results are always included or returned only when
+        the model explicitly calls the tool.
+        """
+
     def __init__(
         self,
         *,
         search_index_ids: collections.abc.Iterable[builtins.str] | None = ...,
         max_num_results: google.protobuf.wrappers_pb2.Int64Value | None = ...,
         rephraser_options: global___RephraserOptions | None = ...,
+        call_strategy: global___CallStrategy | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["max_num_results", b"max_num_results", "rephraser_options", b"rephraser_options"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["max_num_results", b"max_num_results", "rephraser_options", b"rephraser_options", "search_index_ids", b"search_index_ids"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["call_strategy", b"call_strategy", "max_num_results", b"max_num_results", "rephraser_options", b"rephraser_options"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["call_strategy", b"call_strategy", "max_num_results", b"max_num_results", "rephraser_options", b"rephraser_options", "search_index_ids", b"search_index_ids"]) -> None: ...
 
 global___SearchIndexTool = SearchIndexTool
+
+@typing.final
+class CallStrategy(google.protobuf.message.Message):
+    """Defines when the assistant uses the search tool."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class AlwaysCall(google.protobuf.message.Message):
+        """Always includes retrieved search results in the prompt."""
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        def __init__(
+            self,
+        ) -> None: ...
+
+    @typing.final
+    class AutoCall(google.protobuf.message.Message):
+        """Exposes the tool as a callable function.
+        The model decides when to trigger search based on the instruction.
+        """
+
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        NAME_FIELD_NUMBER: builtins.int
+        INSTRUCTION_FIELD_NUMBER: builtins.int
+        name: builtins.str
+        """The name of the tool as exposed to the model."""
+        instruction: builtins.str
+        """Required instruction that helps the model decide when to call the tool."""
+        def __init__(
+            self,
+            *,
+            name: builtins.str = ...,
+            instruction: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["instruction", b"instruction", "name", b"name"]) -> None: ...
+
+    ALWAYS_CALL_FIELD_NUMBER: builtins.int
+    AUTO_CALL_FIELD_NUMBER: builtins.int
+    @property
+    def always_call(self) -> global___CallStrategy.AlwaysCall: ...
+    @property
+    def auto_call(self) -> global___CallStrategy.AutoCall: ...
+    def __init__(
+        self,
+        *,
+        always_call: global___CallStrategy.AlwaysCall | None = ...,
+        auto_call: global___CallStrategy.AutoCall | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["Strategy", b"Strategy", "always_call", b"always_call", "auto_call", b"auto_call"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["Strategy", b"Strategy", "always_call", b"always_call", "auto_call", b"auto_call"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["Strategy", b"Strategy"]) -> typing.Literal["always_call", "auto_call"] | None: ...
+
+global___CallStrategy = CallStrategy
 
 @typing.final
 class FunctionTool(google.protobuf.message.Message):

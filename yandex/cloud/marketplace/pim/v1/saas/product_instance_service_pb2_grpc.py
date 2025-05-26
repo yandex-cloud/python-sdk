@@ -28,7 +28,8 @@ if _version_not_supported:
 
 
 class ProductInstanceServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing product instances.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -49,16 +50,19 @@ class ProductInstanceServiceStub(object):
 
 
 class ProductInstanceServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing product instances.
+    """
 
     def Get(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Returns the specified product instance.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Claim(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Claims a product instance - activates it and optionally locks to subscription
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -85,7 +89,8 @@ def add_ProductInstanceServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class ProductInstanceService(object):
-    """Missing associated documentation comment in .proto file."""
+    """A set of methods for managing product instances.
+    """
 
     @staticmethod
     def Get(request,

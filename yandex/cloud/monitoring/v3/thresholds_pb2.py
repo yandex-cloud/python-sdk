@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n+yandex/cloud/monitoring/v3/thresholds.proto\x12\x1ayandex.cloud.monitoring.v3\"\xf6\x01\n\nThresholds\x12:\n\x05items\x18\x01 \x03(\x0b\x32+.yandex.cloud.monitoring.v3.Thresholds.Item\x12\x42\n\tshow_mode\x18\x02 \x01(\x0e\x32/.yandex.cloud.monitoring.v3.Thresholds.ShowMode\x1a$\n\x04Item\x12\r\n\x05\x63olor\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x01\"B\n\x08ShowMode\x12\x19\n\x15SHOW_MODE_UNSPECIFIED\x10\x00\x12\x1b\n\x17SHOW_MODE_CONSTANT_LINE\x10\x01\x42k\n\x1eyandex.cloud.api.monitoring.v3ZIgithub.com/yandex-cloud/go-genproto/yandex/cloud/monitoring/v3;monitoringb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n+yandex/cloud/monitoring/v3/thresholds.proto\x12\x1ayandex.cloud.monitoring.v3\"\x85\x02\n\nThresholds\x12:\n\x05items\x18\x01 \x03(\x0b\x32+.yandex.cloud.monitoring.v3.Thresholds.Item\x12\x42\n\tshow_mode\x18\x02 \x01(\x0e\x32/.yandex.cloud.monitoring.v3.Thresholds.ShowMode\x1a\x33\n\x04Item\x12\r\n\x05\x63olor\x18\x01 \x01(\t\x12\x12\n\x05value\x18\x02 \x01(\x01H\x00\x88\x01\x01\x42\x08\n\x06_value\"B\n\x08ShowMode\x12\x19\n\x15SHOW_MODE_UNSPECIFIED\x10\x00\x12\x1b\n\x17SHOW_MODE_CONSTANT_LINE\x10\x01\x42k\n\x1eyandex.cloud.api.monitoring.v3ZIgithub.com/yandex-cloud/go-genproto/yandex/cloud/monitoring/v3;monitoringb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,9 +33,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\036yandex.cloud.api.monitoring.v3ZIgithub.com/yandex-cloud/go-genproto/yandex/cloud/monitoring/v3;monitoring'
   _globals['_THRESHOLDS']._serialized_start=76
-  _globals['_THRESHOLDS']._serialized_end=322
+  _globals['_THRESHOLDS']._serialized_end=337
   _globals['_THRESHOLDS_ITEM']._serialized_start=218
-  _globals['_THRESHOLDS_ITEM']._serialized_end=254
-  _globals['_THRESHOLDS_SHOWMODE']._serialized_start=256
-  _globals['_THRESHOLDS_SHOWMODE']._serialized_end=322
+  _globals['_THRESHOLDS_ITEM']._serialized_end=269
+  _globals['_THRESHOLDS_SHOWMODE']._serialized_start=271
+  _globals['_THRESHOLDS_SHOWMODE']._serialized_end=337
 # @@protoc_insertion_point(module_scope)

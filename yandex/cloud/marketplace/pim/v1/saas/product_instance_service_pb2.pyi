@@ -17,6 +17,7 @@ class GetProductInstanceRequest(google.protobuf.message.Message):
 
     PRODUCT_INSTANCE_ID_FIELD_NUMBER: builtins.int
     product_instance_id: builtins.str
+    """ID of the product instance to return."""
     def __init__(
         self,
         *,
@@ -34,9 +35,13 @@ class ClaimProductInstanceRequest(google.protobuf.message.Message):
     RESOURCE_ID_FIELD_NUMBER: builtins.int
     RESOURCE_INFO_FIELD_NUMBER: builtins.int
     token: builtins.str
+    """Signed JWT token which contains information about product instance and subscription."""
     resource_id: builtins.str
+    """ID of the resource to which the product instance will be claimed."""
     @property
-    def resource_info(self) -> yandex.cloud.marketplace.pim.v1.saas.product_instance_pb2.SaasInfo: ...
+    def resource_info(self) -> yandex.cloud.marketplace.pim.v1.saas.product_instance_pb2.SaasInfo:
+        """Additional information about the resource."""
+
     def __init__(
         self,
         *,
@@ -57,8 +62,11 @@ class ClaimProductInstanceMetadata(google.protobuf.message.Message):
     PRODUCT_INSTANCE_ID_FIELD_NUMBER: builtins.int
     LICENSE_INSTANCE_ID_FIELD_NUMBER: builtins.int
     product_id: builtins.str
+    """ID of the product to which the product instance belongs."""
     product_instance_id: builtins.str
+    """ID of the product instance."""
     license_instance_id: builtins.str
+    """ID of the subscription."""
     def __init__(
         self,
         *,

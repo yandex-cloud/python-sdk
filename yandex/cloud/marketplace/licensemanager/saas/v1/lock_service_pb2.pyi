@@ -61,3 +61,23 @@ class GetLockRequest(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["lock_id", b"lock_id"]) -> None: ...
 
 global___GetLockRequest = GetLockRequest
+
+@typing.final
+class GetLockByResourceIDRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    RESOURCE_ID_FIELD_NUMBER: builtins.int
+    INSTANCE_ID_FIELD_NUMBER: builtins.int
+    resource_id: builtins.str
+    """ID of the resource to with subscription is locked."""
+    instance_id: builtins.str
+    """ID of the subscription"""
+    def __init__(
+        self,
+        *,
+        resource_id: builtins.str = ...,
+        instance_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["instance_id", b"instance_id", "resource_id", b"resource_id"]) -> None: ...
+
+global___GetLockByResourceIDRequest = GetLockByResourceIDRequest

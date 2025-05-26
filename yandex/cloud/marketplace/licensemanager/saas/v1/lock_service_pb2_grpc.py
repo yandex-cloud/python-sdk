@@ -47,6 +47,11 @@ class LockServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_saas_dot_v1_dot_lock__service__pb2.GetLockRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_lock__pb2.Lock.FromString,
                 _registered_method=True)
+        self.GetByResourceID = channel.unary_unary(
+                '/yandex.cloud.marketplace.licensemanager.saas.v1.LockService/GetByResourceID',
+                request_serializer=yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_saas_dot_v1_dot_lock__service__pb2.GetLockByResourceIDRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_lock__pb2.Lock.FromString,
+                _registered_method=True)
 
 
 class LockServiceServicer(object):
@@ -68,6 +73,13 @@ class LockServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetByResourceID(self, request, context):
+        """Returns the subscription lock for given resource and subscription.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_LockServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -79,6 +91,11 @@ def add_LockServiceServicer_to_server(servicer, server):
             'Get': grpc.unary_unary_rpc_method_handler(
                     servicer.Get,
                     request_deserializer=yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_saas_dot_v1_dot_lock__service__pb2.GetLockRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_lock__pb2.Lock.SerializeToString,
+            ),
+            'GetByResourceID': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetByResourceID,
+                    request_deserializer=yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_saas_dot_v1_dot_lock__service__pb2.GetLockByResourceIDRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_lock__pb2.Lock.SerializeToString,
             ),
     }
@@ -136,6 +153,33 @@ class LockService(object):
             target,
             '/yandex.cloud.marketplace.licensemanager.saas.v1.LockService/Get',
             yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_saas_dot_v1_dot_lock__service__pb2.GetLockRequest.SerializeToString,
+            yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_lock__pb2.Lock.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetByResourceID(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.marketplace.licensemanager.saas.v1.LockService/GetByResourceID',
+            yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_saas_dot_v1_dot_lock__service__pb2.GetLockByResourceIDRequest.SerializeToString,
             yandex_dot_cloud_dot_marketplace_dot_licensemanager_dot_v1_dot_lock__pb2.Lock.FromString,
             options,
             channel_credentials,

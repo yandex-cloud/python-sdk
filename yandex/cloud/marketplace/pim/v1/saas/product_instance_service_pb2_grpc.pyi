@@ -20,41 +20,53 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class ProductInstanceServiceStub:
+    """A set of methods for managing product instances."""
+
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Get: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.marketplace.pim.v1.saas.product_instance_service_pb2.GetProductInstanceRequest,
         yandex.cloud.marketplace.pim.v1.saas.product_instance_pb2.ProductInstance,
     ]
+    """Returns the specified product instance."""
 
     Claim: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.marketplace.pim.v1.saas.product_instance_service_pb2.ClaimProductInstanceRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Claims a product instance - activates it and optionally locks to subscription"""
 
 class ProductInstanceServiceAsyncStub:
+    """A set of methods for managing product instances."""
+
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.marketplace.pim.v1.saas.product_instance_service_pb2.GetProductInstanceRequest,
         yandex.cloud.marketplace.pim.v1.saas.product_instance_pb2.ProductInstance,
     ]
+    """Returns the specified product instance."""
 
     Claim: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.marketplace.pim.v1.saas.product_instance_service_pb2.ClaimProductInstanceRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Claims a product instance - activates it and optionally locks to subscription"""
 
 class ProductInstanceServiceServicer(metaclass=abc.ABCMeta):
+    """A set of methods for managing product instances."""
+
     @abc.abstractmethod
     def Get(
         self,
         request: yandex.cloud.marketplace.pim.v1.saas.product_instance_service_pb2.GetProductInstanceRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.marketplace.pim.v1.saas.product_instance_pb2.ProductInstance, collections.abc.Awaitable[yandex.cloud.marketplace.pim.v1.saas.product_instance_pb2.ProductInstance]]: ...
+    ) -> typing.Union[yandex.cloud.marketplace.pim.v1.saas.product_instance_pb2.ProductInstance, collections.abc.Awaitable[yandex.cloud.marketplace.pim.v1.saas.product_instance_pb2.ProductInstance]]:
+        """Returns the specified product instance."""
 
     @abc.abstractmethod
     def Claim(
         self,
         request: yandex.cloud.marketplace.pim.v1.saas.product_instance_service_pb2.ClaimProductInstanceRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Claims a product instance - activates it and optionally locks to subscription"""
 
 def add_ProductInstanceServiceServicer_to_server(servicer: ProductInstanceServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

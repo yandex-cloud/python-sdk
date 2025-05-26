@@ -37,6 +37,12 @@ class LockServiceStub:
     ]
     """Returns the specified subscription lock."""
 
+    GetByResourceID: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.marketplace.licensemanager.saas.v1.lock_service_pb2.GetLockByResourceIDRequest,
+        yandex.cloud.marketplace.licensemanager.v1.lock_pb2.Lock,
+    ]
+    """Returns the subscription lock for given resource and subscription."""
+
 class LockServiceAsyncStub:
     """A set of methods for managing subscription locks."""
 
@@ -53,6 +59,12 @@ class LockServiceAsyncStub:
         yandex.cloud.marketplace.licensemanager.v1.lock_pb2.Lock,
     ]
     """Returns the specified subscription lock."""
+
+    GetByResourceID: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.marketplace.licensemanager.saas.v1.lock_service_pb2.GetLockByResourceIDRequest,
+        yandex.cloud.marketplace.licensemanager.v1.lock_pb2.Lock,
+    ]
+    """Returns the subscription lock for given resource and subscription."""
 
 class LockServiceServicer(metaclass=abc.ABCMeta):
     """A set of methods for managing subscription locks."""
@@ -74,5 +86,13 @@ class LockServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.marketplace.licensemanager.v1.lock_pb2.Lock, collections.abc.Awaitable[yandex.cloud.marketplace.licensemanager.v1.lock_pb2.Lock]]:
         """Returns the specified subscription lock."""
+
+    @abc.abstractmethod
+    def GetByResourceID(
+        self,
+        request: yandex.cloud.marketplace.licensemanager.saas.v1.lock_service_pb2.GetLockByResourceIDRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.marketplace.licensemanager.v1.lock_pb2.Lock, collections.abc.Awaitable[yandex.cloud.marketplace.licensemanager.v1.lock_pb2.Lock]]:
+        """Returns the subscription lock for given resource and subscription."""
 
 def add_LockServiceServicer_to_server(servicer: LockServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...
