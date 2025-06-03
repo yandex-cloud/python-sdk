@@ -22,9 +22,11 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
+from yandex.cloud.mdb.spqr.v1 import config_pb2 as yandex_dot_cloud_dot_mdb_dot_spqr_dot_v1_dot_config__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$yandex/cloud/mdb/spqr/v1/shard.proto\x12\x18yandex.cloud.mdb.spqr.v1\")\n\x05Shard\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\tBa\n\x1cyandex.cloud.api.mdb.spqr.v1ZAgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/spqr/v1;spqrb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$yandex/cloud/mdb/spqr/v1/shard.proto\x12\x18yandex.cloud.mdb.spqr.v1\x1a\x1dyandex/cloud/validation.proto\x1a%yandex/cloud/mdb/spqr/v1/config.proto\")\n\x05Shard\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x12\n\ncluster_id\x18\x02 \x01(\t\"\x9c\x01\n\tShardSpec\x12>\n\nshard_name\x18\x01 \x01(\tB*\xe8\xc7\x31\x01\xf2\xc7\x31\x1a^[a-zA-Z0-9][a-zA-Z0-9-]*$\x8a\xc8\x31\x04<=63\x12\x41\n\x0emdb_postgresql\x18\x02 \x01(\x0b\x32\'.yandex.cloud.mdb.spqr.v1.MDBPostgreSQLH\x00\x42\x0c\n\x04Spec\x12\x04\xc0\xc1\x31\x01\x42\x61\n\x1cyandex.cloud.api.mdb.spqr.v1ZAgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/spqr/v1;spqrb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,6 +34,12 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'yandex.cloud.mdb.spqr.v1.sh
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\034yandex.cloud.api.mdb.spqr.v1ZAgithub.com/yandex-cloud/go-genproto/yandex/cloud/mdb/spqr/v1;spqr'
-  _globals['_SHARD']._serialized_start=66
-  _globals['_SHARD']._serialized_end=107
+  _globals['_SHARDSPEC'].oneofs_by_name['Spec']._loaded_options = None
+  _globals['_SHARDSPEC'].oneofs_by_name['Spec']._serialized_options = b'\300\3011\001'
+  _globals['_SHARDSPEC'].fields_by_name['shard_name']._loaded_options = None
+  _globals['_SHARDSPEC'].fields_by_name['shard_name']._serialized_options = b'\350\3071\001\362\3071\032^[a-zA-Z0-9][a-zA-Z0-9-]*$\212\3101\004<=63'
+  _globals['_SHARD']._serialized_start=136
+  _globals['_SHARD']._serialized_end=177
+  _globals['_SHARDSPEC']._serialized_start=180
+  _globals['_SHARDSPEC']._serialized_end=336
 # @@protoc_insertion_point(module_scope)

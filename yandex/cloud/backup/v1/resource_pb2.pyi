@@ -64,6 +64,27 @@ class TenantInfo(google.protobuf.message.Message):
 global___TenantInfo = TenantInfo
 
 @typing.final
+class AgentInfo(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    CURRENT_VERSION_FIELD_NUMBER: builtins.int
+    LATEST_VERSION_FIELD_NUMBER: builtins.int
+    CAN_UPDATE_FIELD_NUMBER: builtins.int
+    current_version: builtins.str
+    latest_version: builtins.str
+    can_update: builtins.bool
+    def __init__(
+        self,
+        *,
+        current_version: builtins.str = ...,
+        latest_version: builtins.str = ...,
+        can_update: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["can_update", b"can_update", "current_version", b"current_version", "latest_version", b"latest_version"]) -> None: ...
+
+global___AgentInfo = AgentInfo
+
+@typing.final
 class Resource(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -81,7 +102,7 @@ class Resource(google.protobuf.message.Message):
         RECOVERING: Resource._Status.ValueType  # 3
         """Compute Cloud instance is currently recovering itself."""
         FAILED: Resource._Status.ValueType  # 4
-        """Compute Cloud instance is in failure state, check content of 
+        """Compute Cloud instance is in failure state, check content of
         `status_details` field for more information.
         """
         OTHER: Resource._Status.ValueType  # 5
@@ -98,7 +119,7 @@ class Resource(google.protobuf.message.Message):
     RECOVERING: Resource.Status.ValueType  # 3
     """Compute Cloud instance is currently recovering itself."""
     FAILED: Resource.Status.ValueType  # 4
-    """Compute Cloud instance is in failure state, check content of 
+    """Compute Cloud instance is in failure state, check content of
     `status_details` field for more information.
     """
     OTHER: Resource.Status.ValueType  # 5
@@ -149,6 +170,7 @@ class Resource(google.protobuf.message.Message):
     METADATA_FIELD_NUMBER: builtins.int
     TYPE_FIELD_NUMBER: builtins.int
     TENANT_INFO_FIELD_NUMBER: builtins.int
+    AGENT_INFO_FIELD_NUMBER: builtins.int
     compute_instance_id: builtins.str
     """Compute Cloud instance ID."""
     online: builtins.bool
@@ -189,7 +211,11 @@ class Resource(google.protobuf.message.Message):
     def next_backup_time(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
     @property
     def tenant_info(self) -> global___TenantInfo:
-        """Additional info abount tenant which resource belongs to"""
+        """Additional info about tenant which resource belongs to"""
+
+    @property
+    def agent_info(self) -> global___AgentInfo:
+        """Additional Info about agent version"""
 
     def __init__(
         self,
@@ -210,9 +236,10 @@ class Resource(google.protobuf.message.Message):
         metadata: builtins.str = ...,
         type: global___ResourceType.ValueType = ...,
         tenant_info: global___TenantInfo | None = ...,
+        agent_info: global___AgentInfo | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "last_backup_time", b"last_backup_time", "next_backup_time", b"next_backup_time", "tenant_info", b"tenant_info", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["compute_instance_id", b"compute_instance_id", "created_at", b"created_at", "enabled", b"enabled", "init_status", b"init_status", "is_active", b"is_active", "last_backup_time", b"last_backup_time", "metadata", b"metadata", "next_backup_time", b"next_backup_time", "online", b"online", "resource_id", b"resource_id", "status", b"status", "status_details", b"status_details", "status_progress", b"status_progress", "tenant_info", b"tenant_info", "type", b"type", "updated_at", b"updated_at"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["agent_info", b"agent_info", "created_at", b"created_at", "last_backup_time", b"last_backup_time", "next_backup_time", b"next_backup_time", "tenant_info", b"tenant_info", "updated_at", b"updated_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["agent_info", b"agent_info", "compute_instance_id", b"compute_instance_id", "created_at", b"created_at", "enabled", b"enabled", "init_status", b"init_status", "is_active", b"is_active", "last_backup_time", b"last_backup_time", "metadata", b"metadata", "next_backup_time", b"next_backup_time", "online", b"online", "resource_id", b"resource_id", "status", b"status", "status_details", b"status_details", "status_progress", b"status_progress", "tenant_info", b"tenant_info", "type", b"type", "updated_at", b"updated_at"]) -> None: ...
 
 global___Resource = Resource
 

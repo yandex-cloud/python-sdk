@@ -98,8 +98,6 @@ class Instance(google.protobuf.message.Message):
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     APPROVAL_RULES_ID_FIELD_NUMBER: builtins.int
     GITLAB_VERSION_FIELD_NUMBER: builtins.int
-    SECURITY_GROUP_FIELD_NUMBER: builtins.int
-    DISK_TYPE_ID_FIELD_NUMBER: builtins.int
     id: builtins.str
     folder_id: builtins.str
     name: builtins.str
@@ -116,8 +114,6 @@ class Instance(google.protobuf.message.Message):
     deletion_protection: builtins.bool
     approval_rules_id: builtins.str
     gitlab_version: builtins.str
-    security_group: builtins.str
-    disk_type_id: builtins.str
     @property
     def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
     @property
@@ -149,10 +145,8 @@ class Instance(google.protobuf.message.Message):
         deletion_protection: builtins.bool = ...,
         approval_rules_id: builtins.str = ...,
         gitlab_version: builtins.str = ...,
-        security_group: builtins.str = ...,
-        disk_type_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at", "planned_operation", b"planned_operation", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["admin_email", b"admin_email", "admin_login", b"admin_login", "approval_rules_id", b"approval_rules_id", "backup_retain_period_days", b"backup_retain_period_days", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "disk_size", b"disk_size", "disk_type_id", b"disk_type_id", "domain", b"domain", "folder_id", b"folder_id", "gitlab_version", b"gitlab_version", "id", b"id", "labels", b"labels", "maintenance_delete_untagged", b"maintenance_delete_untagged", "name", b"name", "planned_operation", b"planned_operation", "resource_preset_id", b"resource_preset_id", "security_group", b"security_group", "status", b"status", "subnet_id", b"subnet_id", "updated_at", b"updated_at"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["admin_email", b"admin_email", "admin_login", b"admin_login", "approval_rules_id", b"approval_rules_id", "backup_retain_period_days", b"backup_retain_period_days", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "disk_size", b"disk_size", "domain", b"domain", "folder_id", b"folder_id", "gitlab_version", b"gitlab_version", "id", b"id", "labels", b"labels", "maintenance_delete_untagged", b"maintenance_delete_untagged", "name", b"name", "planned_operation", b"planned_operation", "resource_preset_id", b"resource_preset_id", "status", b"status", "subnet_id", b"subnet_id", "updated_at", b"updated_at"]) -> None: ...
 
 global___Instance = Instance

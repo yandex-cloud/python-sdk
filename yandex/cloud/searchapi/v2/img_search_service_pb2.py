@@ -24,9 +24,10 @@ _sym_db = _symbol_database.Default()
 
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 from yandex.cloud.searchapi.v2 import search_query_pb2 as yandex_dot_cloud_dot_searchapi_dot_v2_dot_search__query__pb2
+from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2yandex/cloud/searchapi/v2/img_search_service.proto\x12\x19yandex.cloud.searchapi.v2\x1a\x1dyandex/cloud/validation.proto\x1a,yandex/cloud/searchapi/v2/search_query.proto\"\x80\x08\n\tImageSpec\x12@\n\x06\x66ormat\x18\x01 \x01(\x0e\x32\x30.yandex.cloud.searchapi.v2.ImageSpec.ImageFormat\x12<\n\x04size\x18\x02 \x01(\x0e\x32..yandex.cloud.searchapi.v2.ImageSpec.ImageSize\x12J\n\x0borientation\x18\x03 \x01(\x0e\x32\x35.yandex.cloud.searchapi.v2.ImageSpec.ImageOrientation\x12>\n\x05\x63olor\x18\x04 \x01(\x0e\x32/.yandex.cloud.searchapi.v2.ImageSpec.ImageColor\"n\n\x0bImageFormat\x12\x1c\n\x18IMAGE_FORMAT_UNSPECIFIED\x10\x00\x12\x15\n\x11IMAGE_FORMAT_JPEG\x10\x01\x12\x14\n\x10IMAGE_FORMAT_GIF\x10\x02\x12\x14\n\x10IMAGE_FORMAT_PNG\x10\x03\"\x95\x01\n\x10ImageOrientation\x12!\n\x1dIMAGE_ORIENTATION_UNSPECIFIED\x10\x00\x12\x1e\n\x1aIMAGE_ORIENTATION_VERTICAL\x10\x01\x12 \n\x1cIMAGE_ORIENTATION_HORIZONTAL\x10\x02\x12\x1c\n\x18IMAGE_ORIENTATION_SQUARE\x10\x03\"\xb2\x01\n\tImageSize\x12\x1a\n\x16IMAGE_SIZE_UNSPECIFIED\x10\x00\x12\x17\n\x13IMAGE_SIZE_ENORMOUS\x10\x01\x12\x14\n\x10IMAGE_SIZE_LARGE\x10\x02\x12\x15\n\x11IMAGE_SIZE_MEDIUM\x10\x03\x12\x14\n\x10IMAGE_SIZE_SMALL\x10\x04\x12\x13\n\x0fIMAGE_SIZE_TINY\x10\x05\x12\x18\n\x14IMAGE_SIZE_WALLPAPER\x10\x06\"\xa9\x02\n\nImageColor\x12\x1b\n\x17IMAGE_COLOR_UNSPECIFIED\x10\x00\x12\x15\n\x11IMAGE_COLOR_COLOR\x10\x01\x12\x19\n\x15IMAGE_COLOR_GRAYSCALE\x10\x02\x12\x13\n\x0fIMAGE_COLOR_RED\x10\x03\x12\x16\n\x12IMAGE_COLOR_ORANGE\x10\x04\x12\x16\n\x12IMAGE_COLOR_YELLOW\x10\x05\x12\x15\n\x11IMAGE_COLOR_GREEN\x10\x06\x12\x14\n\x10IMAGE_COLOR_CYAN\x10\x07\x12\x14\n\x10IMAGE_COLOR_BLUE\x10\x08\x12\x16\n\x12IMAGE_COLOR_VIOLET\x10\t\x12\x15\n\x11IMAGE_COLOR_WHITE\x10\n\x12\x15\n\x11IMAGE_COLOR_BLACK\x10\x0b\"\xf6\x01\n\x12ImageSearchRequest\x12;\n\x05query\x18\x01 \x01(\x0b\x32&.yandex.cloud.searchapi.v2.SearchQueryB\x04\xe8\xc7\x31\x01\x12\x38\n\nimage_spec\x18\x02 \x01(\x0b\x32$.yandex.cloud.searchapi.v2.ImageSpec\x12\x0c\n\x04site\x18\x03 \x01(\t\x12\x1f\n\x0c\x64ocs_on_page\x18\x04 \x01(\x03\x42\t\xfa\xc7\x31\x05\x31-100\x12\x1b\n\tfolder_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\nuser_agent\x18\x06 \x01(\tB\t\x8a\xc8\x31\x05<=200\"-\n\x13ImageSearchResponse\x12\x16\n\x08raw_data\x18\x01 \x01(\x0c\x42\x04\xe8\xc7\x31\x01\x32\x7f\n\x12ImageSearchService\x12i\n\x06Search\x12-.yandex.cloud.searchapi.v2.ImageSearchRequest\x1a..yandex.cloud.searchapi.v2.ImageSearchResponse\"\x00\x42\x65\n\x1ayandex.cloud.api.search.v2ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/searchapi/v2;searchapib\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n2yandex/cloud/searchapi/v2/img_search_service.proto\x12\x19yandex.cloud.searchapi.v2\x1a\x1dyandex/cloud/validation.proto\x1a,yandex/cloud/searchapi/v2/search_query.proto\x1a\x1cgoogle/api/annotations.proto\"\x80\x08\n\tImageSpec\x12@\n\x06\x66ormat\x18\x01 \x01(\x0e\x32\x30.yandex.cloud.searchapi.v2.ImageSpec.ImageFormat\x12<\n\x04size\x18\x02 \x01(\x0e\x32..yandex.cloud.searchapi.v2.ImageSpec.ImageSize\x12J\n\x0borientation\x18\x03 \x01(\x0e\x32\x35.yandex.cloud.searchapi.v2.ImageSpec.ImageOrientation\x12>\n\x05\x63olor\x18\x04 \x01(\x0e\x32/.yandex.cloud.searchapi.v2.ImageSpec.ImageColor\"n\n\x0bImageFormat\x12\x1c\n\x18IMAGE_FORMAT_UNSPECIFIED\x10\x00\x12\x15\n\x11IMAGE_FORMAT_JPEG\x10\x01\x12\x14\n\x10IMAGE_FORMAT_GIF\x10\x02\x12\x14\n\x10IMAGE_FORMAT_PNG\x10\x03\"\x95\x01\n\x10ImageOrientation\x12!\n\x1dIMAGE_ORIENTATION_UNSPECIFIED\x10\x00\x12\x1e\n\x1aIMAGE_ORIENTATION_VERTICAL\x10\x01\x12 \n\x1cIMAGE_ORIENTATION_HORIZONTAL\x10\x02\x12\x1c\n\x18IMAGE_ORIENTATION_SQUARE\x10\x03\"\xb2\x01\n\tImageSize\x12\x1a\n\x16IMAGE_SIZE_UNSPECIFIED\x10\x00\x12\x17\n\x13IMAGE_SIZE_ENORMOUS\x10\x01\x12\x14\n\x10IMAGE_SIZE_LARGE\x10\x02\x12\x15\n\x11IMAGE_SIZE_MEDIUM\x10\x03\x12\x14\n\x10IMAGE_SIZE_SMALL\x10\x04\x12\x13\n\x0fIMAGE_SIZE_TINY\x10\x05\x12\x18\n\x14IMAGE_SIZE_WALLPAPER\x10\x06\"\xa9\x02\n\nImageColor\x12\x1b\n\x17IMAGE_COLOR_UNSPECIFIED\x10\x00\x12\x15\n\x11IMAGE_COLOR_COLOR\x10\x01\x12\x19\n\x15IMAGE_COLOR_GRAYSCALE\x10\x02\x12\x13\n\x0fIMAGE_COLOR_RED\x10\x03\x12\x16\n\x12IMAGE_COLOR_ORANGE\x10\x04\x12\x16\n\x12IMAGE_COLOR_YELLOW\x10\x05\x12\x15\n\x11IMAGE_COLOR_GREEN\x10\x06\x12\x14\n\x10IMAGE_COLOR_CYAN\x10\x07\x12\x14\n\x10IMAGE_COLOR_BLUE\x10\x08\x12\x16\n\x12IMAGE_COLOR_VIOLET\x10\t\x12\x15\n\x11IMAGE_COLOR_WHITE\x10\n\x12\x15\n\x11IMAGE_COLOR_BLACK\x10\x0b\"\xf6\x01\n\x12ImageSearchRequest\x12;\n\x05query\x18\x01 \x01(\x0b\x32&.yandex.cloud.searchapi.v2.SearchQueryB\x04\xe8\xc7\x31\x01\x12\x38\n\nimage_spec\x18\x02 \x01(\x0b\x32$.yandex.cloud.searchapi.v2.ImageSpec\x12\x0c\n\x04site\x18\x03 \x01(\t\x12\x1f\n\x0c\x64ocs_on_page\x18\x04 \x01(\x03\x42\t\xfa\xc7\x31\x05\x31-100\x12\x1b\n\tfolder_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1d\n\nuser_agent\x18\x06 \x01(\tB\t\x8a\xc8\x31\x05<=200\"-\n\x13ImageSearchResponse\x12\x16\n\x08raw_data\x18\x01 \x01(\x0c\x42\x04\xe8\xc7\x31\x01\x32\x9b\x01\n\x12ImageSearchService\x12\x84\x01\n\x06Search\x12-.yandex.cloud.searchapi.v2.ImageSearchRequest\x1a..yandex.cloud.searchapi.v2.ImageSearchResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\"\x10/v2/image/search:\x01*Be\n\x1ayandex.cloud.api.search.v2ZGgithub.com/yandex-cloud/go-genproto/yandex/cloud/searchapi/v2;searchapib\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -44,20 +45,22 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_IMAGESEARCHREQUEST'].fields_by_name['user_agent']._serialized_options = b'\212\3101\005<=200'
   _globals['_IMAGESEARCHRESPONSE'].fields_by_name['raw_data']._loaded_options = None
   _globals['_IMAGESEARCHRESPONSE'].fields_by_name['raw_data']._serialized_options = b'\350\3071\001'
-  _globals['_IMAGESPEC']._serialized_start=159
-  _globals['_IMAGESPEC']._serialized_end=1183
-  _globals['_IMAGESPEC_IMAGEFORMAT']._serialized_start=440
-  _globals['_IMAGESPEC_IMAGEFORMAT']._serialized_end=550
-  _globals['_IMAGESPEC_IMAGEORIENTATION']._serialized_start=553
-  _globals['_IMAGESPEC_IMAGEORIENTATION']._serialized_end=702
-  _globals['_IMAGESPEC_IMAGESIZE']._serialized_start=705
-  _globals['_IMAGESPEC_IMAGESIZE']._serialized_end=883
-  _globals['_IMAGESPEC_IMAGECOLOR']._serialized_start=886
-  _globals['_IMAGESPEC_IMAGECOLOR']._serialized_end=1183
-  _globals['_IMAGESEARCHREQUEST']._serialized_start=1186
-  _globals['_IMAGESEARCHREQUEST']._serialized_end=1432
-  _globals['_IMAGESEARCHRESPONSE']._serialized_start=1434
-  _globals['_IMAGESEARCHRESPONSE']._serialized_end=1479
-  _globals['_IMAGESEARCHSERVICE']._serialized_start=1481
-  _globals['_IMAGESEARCHSERVICE']._serialized_end=1608
+  _globals['_IMAGESEARCHSERVICE'].methods_by_name['Search']._loaded_options = None
+  _globals['_IMAGESEARCHSERVICE'].methods_by_name['Search']._serialized_options = b'\202\323\344\223\002\025\"\020/v2/image/search:\001*'
+  _globals['_IMAGESPEC']._serialized_start=189
+  _globals['_IMAGESPEC']._serialized_end=1213
+  _globals['_IMAGESPEC_IMAGEFORMAT']._serialized_start=470
+  _globals['_IMAGESPEC_IMAGEFORMAT']._serialized_end=580
+  _globals['_IMAGESPEC_IMAGEORIENTATION']._serialized_start=583
+  _globals['_IMAGESPEC_IMAGEORIENTATION']._serialized_end=732
+  _globals['_IMAGESPEC_IMAGESIZE']._serialized_start=735
+  _globals['_IMAGESPEC_IMAGESIZE']._serialized_end=913
+  _globals['_IMAGESPEC_IMAGECOLOR']._serialized_start=916
+  _globals['_IMAGESPEC_IMAGECOLOR']._serialized_end=1213
+  _globals['_IMAGESEARCHREQUEST']._serialized_start=1216
+  _globals['_IMAGESEARCHREQUEST']._serialized_end=1462
+  _globals['_IMAGESEARCHRESPONSE']._serialized_start=1464
+  _globals['_IMAGESEARCHRESPONSE']._serialized_end=1509
+  _globals['_IMAGESEARCHSERVICE']._serialized_start=1512
+  _globals['_IMAGESEARCHSERVICE']._serialized_end=1667
 # @@protoc_insertion_point(module_scope)

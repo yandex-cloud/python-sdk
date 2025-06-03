@@ -553,6 +553,7 @@ class Access(google.protobuf.message.Message):
     DATA_LENS_FIELD_NUMBER: builtins.int
     WEB_SQL_FIELD_NUMBER: builtins.int
     DATA_TRANSFER_FIELD_NUMBER: builtins.int
+    YANDEX_QUERY_FIELD_NUMBER: builtins.int
     data_lens: builtins.bool
     """Allows access from DataLens.
 
@@ -565,14 +566,17 @@ class Access(google.protobuf.message.Message):
     """
     data_transfer: builtins.bool
     """Allow access for DataTransfer."""
+    yandex_query: builtins.bool
+    """Allow access for YandexQuery."""
     def __init__(
         self,
         *,
         data_lens: builtins.bool = ...,
         web_sql: builtins.bool = ...,
         data_transfer: builtins.bool = ...,
+        yandex_query: builtins.bool = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["data_lens", b"data_lens", "data_transfer", b"data_transfer", "web_sql", b"web_sql"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["data_lens", b"data_lens", "data_transfer", b"data_transfer", "web_sql", b"web_sql", "yandex_query", b"yandex_query"]) -> None: ...
 
 global___Access = Access
 

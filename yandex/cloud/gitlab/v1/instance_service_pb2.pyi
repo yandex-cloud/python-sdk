@@ -101,11 +101,7 @@ class CreateInstanceRequest(google.protobuf.message.Message):
     BACKUP_RETAIN_PERIOD_DAYS_FIELD_NUMBER: builtins.int
     MAINTENANCE_DELETE_UNTAGGED_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
-    GITLAB_TYPE_FIELD_NUMBER: builtins.int
-    GITLAB_VERSION_FIELD_NUMBER: builtins.int
     APPROVAL_RULES_ID_FIELD_NUMBER: builtins.int
-    SECURITY_GROUP_FIELD_NUMBER: builtins.int
-    DISK_TYPE_ID_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     name: builtins.str
     description: builtins.str
@@ -118,11 +114,7 @@ class CreateInstanceRequest(google.protobuf.message.Message):
     backup_retain_period_days: builtins.int
     maintenance_delete_untagged: builtins.bool
     deletion_protection: builtins.bool
-    gitlab_type: builtins.str
-    gitlab_version: builtins.str
     approval_rules_id: builtins.str
-    security_group: builtins.str
-    disk_type_id: builtins.str
     @property
     def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
     def __init__(
@@ -141,13 +133,9 @@ class CreateInstanceRequest(google.protobuf.message.Message):
         backup_retain_period_days: builtins.int = ...,
         maintenance_delete_untagged: builtins.bool = ...,
         deletion_protection: builtins.bool = ...,
-        gitlab_type: builtins.str = ...,
-        gitlab_version: builtins.str = ...,
         approval_rules_id: builtins.str = ...,
-        security_group: builtins.str = ...,
-        disk_type_id: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["admin_email", b"admin_email", "admin_login", b"admin_login", "approval_rules_id", b"approval_rules_id", "backup_retain_period_days", b"backup_retain_period_days", "deletion_protection", b"deletion_protection", "description", b"description", "disk_size", b"disk_size", "disk_type_id", b"disk_type_id", "domain_prefix", b"domain_prefix", "folder_id", b"folder_id", "gitlab_type", b"gitlab_type", "gitlab_version", b"gitlab_version", "labels", b"labels", "maintenance_delete_untagged", b"maintenance_delete_untagged", "name", b"name", "resource_preset_id", b"resource_preset_id", "security_group", b"security_group", "subnet_id", b"subnet_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["admin_email", b"admin_email", "admin_login", b"admin_login", "approval_rules_id", b"approval_rules_id", "backup_retain_period_days", b"backup_retain_period_days", "deletion_protection", b"deletion_protection", "description", b"description", "disk_size", b"disk_size", "domain_prefix", b"domain_prefix", "folder_id", b"folder_id", "labels", b"labels", "maintenance_delete_untagged", b"maintenance_delete_untagged", "name", b"name", "resource_preset_id", b"resource_preset_id", "subnet_id", b"subnet_id"]) -> None: ...
 
 global___CreateInstanceRequest = CreateInstanceRequest
 

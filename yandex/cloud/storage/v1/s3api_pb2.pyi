@@ -1057,3 +1057,106 @@ class S3APICommonPrefix(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["prefix", b"prefix"]) -> None: ...
 
 global___S3APICommonPrefix = S3APICommonPrefix
+
+@typing.final
+class S3APIGetAclResponse(google.protobuf.message.Message):
+    """Represents a response of the get bucket acl or get object acl requests to S3."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class Owner(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        ID_FIELD_NUMBER: builtins.int
+        DISPLAY_NAME_FIELD_NUMBER: builtins.int
+        id: builtins.str
+        display_name: builtins.str
+        def __init__(
+            self,
+            *,
+            id: builtins.str = ...,
+            display_name: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["display_name", b"display_name", "id", b"id"]) -> None: ...
+
+    @typing.final
+    class Grant(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        @typing.final
+        class Grantee(google.protobuf.message.Message):
+            DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+            ID_FIELD_NUMBER: builtins.int
+            TYPE_FIELD_NUMBER: builtins.int
+            URI_FIELD_NUMBER: builtins.int
+            DISPLAY_NAME_FIELD_NUMBER: builtins.int
+            EMAIL_ADDRESS_FIELD_NUMBER: builtins.int
+            id: builtins.str
+            type: builtins.str
+            uri: builtins.str
+            display_name: builtins.str
+            email_address: builtins.str
+            def __init__(
+                self,
+                *,
+                id: builtins.str = ...,
+                type: builtins.str = ...,
+                uri: builtins.str = ...,
+                display_name: builtins.str = ...,
+                email_address: builtins.str = ...,
+            ) -> None: ...
+            def ClearField(self, field_name: typing.Literal["display_name", b"display_name", "email_address", b"email_address", "id", b"id", "type", b"type", "uri", b"uri"]) -> None: ...
+
+        GRANTEE_FIELD_NUMBER: builtins.int
+        PERMISSION_FIELD_NUMBER: builtins.int
+        permission: builtins.str
+        @property
+        def grantee(self) -> global___S3APIGetAclResponse.Grant.Grantee: ...
+        def __init__(
+            self,
+            *,
+            grantee: global___S3APIGetAclResponse.Grant.Grantee | None = ...,
+            permission: builtins.str = ...,
+        ) -> None: ...
+        def HasField(self, field_name: typing.Literal["grantee", b"grantee"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["grantee", b"grantee", "permission", b"permission"]) -> None: ...
+
+    REQUEST_ID_FIELD_NUMBER: builtins.int
+    OWNER_FIELD_NUMBER: builtins.int
+    GRANTS_FIELD_NUMBER: builtins.int
+    request_id: builtins.str
+    @property
+    def owner(self) -> global___S3APIGetAclResponse.Owner: ...
+    @property
+    def grants(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___S3APIGetAclResponse.Grant]: ...
+    def __init__(
+        self,
+        *,
+        request_id: builtins.str = ...,
+        owner: global___S3APIGetAclResponse.Owner | None = ...,
+        grants: collections.abc.Iterable[global___S3APIGetAclResponse.Grant] | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["owner", b"owner"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["grants", b"grants", "owner", b"owner", "request_id", b"request_id"]) -> None: ...
+
+global___S3APIGetAclResponse = S3APIGetAclResponse
+
+@typing.final
+class S3APIPutAclResponse(google.protobuf.message.Message):
+    """Represents a response of the put bucket acl or put object acl requests to S3."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    REQUEST_ID_FIELD_NUMBER: builtins.int
+    request_id: builtins.str
+    """Unique request ID."""
+    def __init__(
+        self,
+        *,
+        request_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["request_id", b"request_id"]) -> None: ...
+
+global___S3APIPutAclResponse = S3APIPutAclResponse

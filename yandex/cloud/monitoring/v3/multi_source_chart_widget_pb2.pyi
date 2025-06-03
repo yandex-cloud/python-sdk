@@ -102,6 +102,7 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
             TEXT_MODE_FIELD_NUMBER: builtins.int
             HIDDEN_FIELD_NUMBER: builtins.int
             NAME_FIELD_NUMBER: builtins.int
+            STEP_FIELD_NUMBER: builtins.int
             data_source_id: builtins.str
             """Required. Data source ID."""
             workspace_id: builtins.str
@@ -114,6 +115,8 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
             """Checks that target is visible or invisible."""
             name: builtins.str
             """Name of the query."""
+            step: builtins.str
+            """Minimal step as raw string."""
             def __init__(
                 self,
                 *,
@@ -123,8 +126,9 @@ class MultiSourceChartWidget(google.protobuf.message.Message):
                 text_mode: builtins.bool = ...,
                 hidden: builtins.bool = ...,
                 name: builtins.str = ...,
+                step: builtins.str = ...,
             ) -> None: ...
-            def ClearField(self, field_name: typing.Literal["data_source_id", b"data_source_id", "hidden", b"hidden", "name", b"name", "query", b"query", "text_mode", b"text_mode", "workspace_id", b"workspace_id"]) -> None: ...
+            def ClearField(self, field_name: typing.Literal["data_source_id", b"data_source_id", "hidden", b"hidden", "name", b"name", "query", b"query", "step", b"step", "text_mode", b"text_mode", "workspace_id", b"workspace_id"]) -> None: ...
 
         MONITORING_TARGET_FIELD_NUMBER: builtins.int
         PROMETHEUS_TARGET_FIELD_NUMBER: builtins.int

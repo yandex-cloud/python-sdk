@@ -7,6 +7,7 @@ import builtins
 import google.protobuf.descriptor
 import google.protobuf.message
 import typing
+import yandex.cloud.mdb.spqr.v1.config_pb2
 
 DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
@@ -29,3 +30,27 @@ class Shard(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "name", b"name"]) -> None: ...
 
 global___Shard = Shard
+
+@typing.final
+class ShardSpec(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SHARD_NAME_FIELD_NUMBER: builtins.int
+    MDB_POSTGRESQL_FIELD_NUMBER: builtins.int
+    shard_name: builtins.str
+    """Name of the SPQR shard to create."""
+    @property
+    def mdb_postgresql(self) -> yandex.cloud.mdb.spqr.v1.config_pb2.MDBPostgreSQL:
+        """Properties of the MDB PostgreSQL cluster"""
+
+    def __init__(
+        self,
+        *,
+        shard_name: builtins.str = ...,
+        mdb_postgresql: yandex.cloud.mdb.spqr.v1.config_pb2.MDBPostgreSQL | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["Spec", b"Spec", "mdb_postgresql", b"mdb_postgresql"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["Spec", b"Spec", "mdb_postgresql", b"mdb_postgresql", "shard_name", b"shard_name"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["Spec", b"Spec"]) -> typing.Literal["mdb_postgresql"] | None: ...
+
+global___ShardSpec = ShardSpec

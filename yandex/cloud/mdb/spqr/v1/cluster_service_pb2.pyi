@@ -172,6 +172,7 @@ class CreateClusterRequest(google.protobuf.message.Message):
     SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     MAINTENANCE_WINDOW_FIELD_NUMBER: builtins.int
+    SHARD_SPECS_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create SPQR cluster in."""
     name: builtins.str
@@ -214,6 +215,10 @@ class CreateClusterRequest(google.protobuf.message.Message):
     def maintenance_window(self) -> yandex.cloud.mdb.spqr.v1.maintenance_pb2.MaintenanceWindow:
         """New maintenance window settings for the cluster."""
 
+    @property
+    def shard_specs(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.mdb.spqr.v1.shard_pb2.ShardSpec]:
+        """Descriptions of shards to be created in the SPQR cluster."""
+
     def __init__(
         self,
         *,
@@ -230,9 +235,10 @@ class CreateClusterRequest(google.protobuf.message.Message):
         security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         deletion_protection: builtins.bool = ...,
         maintenance_window: yandex.cloud.mdb.spqr.v1.maintenance_pb2.MaintenanceWindow | None = ...,
+        shard_specs: collections.abc.Iterable[yandex.cloud.mdb.spqr.v1.shard_pb2.ShardSpec] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["config_spec", b"config_spec", "maintenance_window", b"maintenance_window"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["config_spec", b"config_spec", "database_specs", b"database_specs", "deletion_protection", b"deletion_protection", "description", b"description", "environment", b"environment", "folder_id", b"folder_id", "host_specs", b"host_specs", "labels", b"labels", "maintenance_window", b"maintenance_window", "name", b"name", "network_id", b"network_id", "security_group_ids", b"security_group_ids", "user_specs", b"user_specs"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["config_spec", b"config_spec", "database_specs", b"database_specs", "deletion_protection", b"deletion_protection", "description", b"description", "environment", b"environment", "folder_id", b"folder_id", "host_specs", b"host_specs", "labels", b"labels", "maintenance_window", b"maintenance_window", "name", b"name", "network_id", b"network_id", "security_group_ids", b"security_group_ids", "shard_specs", b"shard_specs", "user_specs", b"user_specs"]) -> None: ...
 
 global___CreateClusterRequest = CreateClusterRequest
 
@@ -1754,26 +1760,23 @@ class AddClusterShardRequest(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
-    SHARD_NAME_FIELD_NUMBER: builtins.int
-    MDB_POSTGRESQL_FIELD_NUMBER: builtins.int
+    SHARD_SPEC_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the SPQR cluster to add a shard to.
     To get the cluster ID, use a [ClusterService.List] request.
     """
-    shard_name: builtins.str
-    """Name of the SPQR shard to create."""
     @property
-    def mdb_postgresql(self) -> yandex.cloud.mdb.spqr.v1.config_pb2.MDBPostgreSQL: ...
+    def shard_spec(self) -> yandex.cloud.mdb.spqr.v1.shard_pb2.ShardSpec:
+        """Properties of the shard to be created."""
+
     def __init__(
         self,
         *,
         cluster_id: builtins.str = ...,
-        shard_name: builtins.str = ...,
-        mdb_postgresql: yandex.cloud.mdb.spqr.v1.config_pb2.MDBPostgreSQL | None = ...,
+        shard_spec: yandex.cloud.mdb.spqr.v1.shard_pb2.ShardSpec | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["ShardSpec", b"ShardSpec", "mdb_postgresql", b"mdb_postgresql"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["ShardSpec", b"ShardSpec", "cluster_id", b"cluster_id", "mdb_postgresql", b"mdb_postgresql", "shard_name", b"shard_name"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["ShardSpec", b"ShardSpec"]) -> typing.Literal["mdb_postgresql"] | None: ...
+    def HasField(self, field_name: typing.Literal["shard_spec", b"shard_spec"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "shard_spec", b"shard_spec"]) -> None: ...
 
 global___AddClusterShardRequest = AddClusterShardRequest
 
