@@ -68,6 +68,7 @@ class Dataproc:
         services=None,
         zone="ru-central1-b",
         service_account_id=None,
+        environment=None,
         masternode_resource_preset=None,
         masternode_disk_size=None,
         masternode_disk_type=None,
@@ -92,6 +93,7 @@ class Dataproc:
         host_group_ids=None,
         security_group_ids=None,
         initialization_actions=None,
+        oslogin_enabled=False,
         labels=None,
     ):
         """
@@ -121,6 +123,8 @@ class Dataproc:
         :param service_account_id: Service account id for the cluster.
                                    Service account can be created inside the folder.
         :type service_account_id: str
+        :param environment: Environment for the cluster. Possible options: PRODUCTION, PRESTABLE.
+        :type environment: str
         :param masternode_resource_preset: Resources preset (CPU+RAM configuration)
                                            for the master node of the cluster.
         :type masternode_resource_preset: str
@@ -182,6 +186,8 @@ class Dataproc:
         :type security_group_ids: Iterable[str] | None
         :param initialization_actions: Set of init-actions to run when cluster starts
         :type initialization_actions: Iterable[InitializationAction] | None
+        :param oslogin_enabled: Enable authorization via OS Login for cluster.
+        :type oslogin_enabled: bool
         :param labels: Cluster labels as key:value pairs. No more than 64 per resource.
         :type labels: Dict[str, str]
 
@@ -208,11 +214,11 @@ class Dataproc:
         if not service_account_id:
             service_account_id = self.sdk.helpers.find_service_account_id(folder_id)
 
-        if not ssh_public_keys:
+        if not ssh_public_keys and not oslogin_enabled:
             if self.default_public_ssh_key:
                 ssh_public_keys = (self.default_public_ssh_key,)
             else:
-                raise RuntimeError("Public ssh keys must be specified.")
+                raise RuntimeError("Public ssh keys must be specified or OS Login must be enabled.")
         elif isinstance(ssh_public_keys, str):
             ssh_public_keys = [ssh_public_keys]
 
@@ -293,11 +299,13 @@ class Dataproc:
                         if initialization_actions
                         else None
                     ),
+                    oslogin_enabled=oslogin_enabled,
                 ),
                 subclusters_spec=subclusters,
             ),
             zone_id=zone,
             service_account_id=service_account_id,
+            environment=environment,
             bucket=s3_bucket,
             ui_proxy=enable_ui_proxy,
             host_group_ids=host_group_ids,
