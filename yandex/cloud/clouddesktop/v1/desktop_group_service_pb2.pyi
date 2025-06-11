@@ -272,8 +272,8 @@ class UpdateDesktopGroupRequest(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
 
-    UPDATE_MASK_FIELD_NUMBER: builtins.int
     DESKTOP_GROUP_ID_FIELD_NUMBER: builtins.int
+    UPDATE_MASK_FIELD_NUMBER: builtins.int
     DESKTOP_IMAGE_ID_FIELD_NUMBER: builtins.int
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
@@ -307,8 +307,8 @@ class UpdateDesktopGroupRequest(google.protobuf.message.Message):
     def __init__(
         self,
         *,
-        update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
         desktop_group_id: builtins.str = ...,
+        update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
         desktop_image_id: builtins.str = ...,
         name: builtins.str = ...,
         description: builtins.str = ...,

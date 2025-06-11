@@ -401,3 +401,97 @@ class ListDashboardOperationsResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["next_page_token", b"next_page_token", "operations", b"operations"]) -> None: ...
 
 global___ListDashboardOperationsResponse = ListDashboardOperationsResponse
+
+@typing.final
+class ListDashboardLabelNamesRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PROJECT_ID_FIELD_NUMBER: builtins.int
+    TEXT_FIELD_NUMBER: builtins.int
+    SELECTORS_FIELD_NUMBER: builtins.int
+    PAGE_SIZE_FIELD_NUMBER: builtins.int
+    project_id: builtins.str
+    text: builtins.str
+    """Contains substring of name(aka key). All label names containing this string will be returned"""
+    selectors: builtins.str
+    """Filters alerts by this selectors."""
+    page_size: builtins.int
+    def __init__(
+        self,
+        *,
+        project_id: builtins.str = ...,
+        text: builtins.str = ...,
+        selectors: builtins.str = ...,
+        page_size: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["page_size", b"page_size", "project_id", b"project_id", "selectors", b"selectors", "text", b"text"]) -> None: ...
+
+global___ListDashboardLabelNamesRequest = ListDashboardLabelNamesRequest
+
+@typing.final
+class ListDashboardLabelNamesResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    LABEL_NAMES_FIELD_NUMBER: builtins.int
+    TRUNCATED_FIELD_NUMBER: builtins.int
+    truncated: builtins.bool
+    @property
+    def label_names(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def __init__(
+        self,
+        *,
+        label_names: collections.abc.Iterable[builtins.str] | None = ...,
+        truncated: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["label_names", b"label_names", "truncated", b"truncated"]) -> None: ...
+
+global___ListDashboardLabelNamesResponse = ListDashboardLabelNamesResponse
+
+@typing.final
+class ListDashboardLabelValuesRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PROJECT_ID_FIELD_NUMBER: builtins.int
+    SELECTORS_FIELD_NUMBER: builtins.int
+    LABEL_NAME_FIELD_NUMBER: builtins.int
+    TEXT_FIELD_NUMBER: builtins.int
+    PAGE_SIZE_FIELD_NUMBER: builtins.int
+    project_id: builtins.str
+    selectors: builtins.str
+    """Filters alerts by this selectors."""
+    label_name: builtins.str
+    """Contains full name (aka key), for which existing values are gathered."""
+    text: builtins.str
+    """Contains substring of value. All label values containing this string will be returned"""
+    page_size: builtins.int
+    def __init__(
+        self,
+        *,
+        project_id: builtins.str = ...,
+        selectors: builtins.str = ...,
+        label_name: builtins.str = ...,
+        text: builtins.str = ...,
+        page_size: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["label_name", b"label_name", "page_size", b"page_size", "project_id", b"project_id", "selectors", b"selectors", "text", b"text"]) -> None: ...
+
+global___ListDashboardLabelValuesRequest = ListDashboardLabelValuesRequest
+
+@typing.final
+class ListDashboardLabelValuesResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    LABEL_VALUES_FIELD_NUMBER: builtins.int
+    TRUNCATED_FIELD_NUMBER: builtins.int
+    truncated: builtins.bool
+    @property
+    def label_values(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]: ...
+    def __init__(
+        self,
+        *,
+        label_values: collections.abc.Iterable[builtins.str] | None = ...,
+        truncated: builtins.bool = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["label_values", b"label_values", "truncated", b"truncated"]) -> None: ...
+
+global___ListDashboardLabelValuesResponse = ListDashboardLabelValuesResponse

@@ -9,6 +9,7 @@ import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
+import google.protobuf.struct_pb2
 import sys
 import typing
 
@@ -427,6 +428,102 @@ class LanguageRestrictionOptions(google.protobuf.message.Message):
 global___LanguageRestrictionOptions = LanguageRestrictionOptions
 
 @typing.final
+class JsonSchema(google.protobuf.message.Message):
+    """Represents the expected structure of the model's response using a JSON Schema."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SCHEMA_FIELD_NUMBER: builtins.int
+    @property
+    def schema(self) -> google.protobuf.struct_pb2.Struct:
+        """The JSON Schema that the model's output must conform to."""
+
+    def __init__(
+        self,
+        *,
+        schema: google.protobuf.struct_pb2.Struct | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["schema", b"schema"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["schema", b"schema"]) -> None: ...
+
+global___JsonSchema = JsonSchema
+
+@typing.final
+class SummarizationProperty(google.protobuf.message.Message):
+    """Represents summarization entry for transcription."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    INSTRUCTION_FIELD_NUMBER: builtins.int
+    JSON_OBJECT_FIELD_NUMBER: builtins.int
+    JSON_SCHEMA_FIELD_NUMBER: builtins.int
+    instruction: builtins.str
+    """Summarization instruction for model."""
+    json_object: builtins.bool
+    """When set to true, the model will respond with a valid JSON object.
+    Be sure to explicitly ask the model for JSON.
+    Otherwise, it may generate excessive whitespace and run indefinitely until it reaches the token limit.
+    """
+    @property
+    def json_schema(self) -> global___JsonSchema:
+        """Enforces a specific JSON structure for the model's response based on a provided schema."""
+
+    def __init__(
+        self,
+        *,
+        instruction: builtins.str = ...,
+        json_object: builtins.bool = ...,
+        json_schema: global___JsonSchema | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["ResponseFormat", b"ResponseFormat", "json_object", b"json_object", "json_schema", b"json_schema"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["ResponseFormat", b"ResponseFormat", "instruction", b"instruction", "json_object", b"json_object", "json_schema", b"json_schema"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["ResponseFormat", b"ResponseFormat"]) -> typing.Literal["json_object", "json_schema"] | None: ...
+
+global___SummarizationProperty = SummarizationProperty
+
+@typing.final
+class SummarizationOptions(google.protobuf.message.Message):
+    """Represents transcription summarization options."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    MODEL_URI_FIELD_NUMBER: builtins.int
+    PROPERTIES_FIELD_NUMBER: builtins.int
+    model_uri: builtins.str
+    """The [ID of the model](/docs/foundation-models/concepts/yandexgpt/models) to be used for completion generation."""
+    @property
+    def properties(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___SummarizationProperty]:
+        """A list of suimmarizations to perform with transcription."""
+
+    def __init__(
+        self,
+        *,
+        model_uri: builtins.str = ...,
+        properties: collections.abc.Iterable[global___SummarizationProperty] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["model_uri", b"model_uri", "properties", b"properties"]) -> None: ...
+
+global___SummarizationOptions = SummarizationOptions
+
+@typing.final
+class SummarizationPropertyResult(google.protobuf.message.Message):
+    """Represents summarization response entry for transcription."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    RESPONSE_FIELD_NUMBER: builtins.int
+    response: builtins.str
+    """Summarization response text."""
+    def __init__(
+        self,
+        *,
+        response: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["response", b"response"]) -> None: ...
+
+global___SummarizationPropertyResult = SummarizationPropertyResult
+
+@typing.final
 class RecognitionModelOptions(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
@@ -530,6 +627,7 @@ class StreamingOptions(google.protobuf.message.Message):
     RECOGNITION_CLASSIFIER_FIELD_NUMBER: builtins.int
     SPEECH_ANALYSIS_FIELD_NUMBER: builtins.int
     SPEAKER_LABELING_FIELD_NUMBER: builtins.int
+    SUMMARIZATION_FIELD_NUMBER: builtins.int
     @property
     def recognition_model(self) -> global___RecognitionModelOptions:
         """Configuration for speech recognition model."""
@@ -550,6 +648,10 @@ class StreamingOptions(google.protobuf.message.Message):
     def speaker_labeling(self) -> global___SpeakerLabelingOptions:
         """Configuration for speaker labeling"""
 
+    @property
+    def summarization(self) -> global___SummarizationOptions:
+        """Summarization options"""
+
     def __init__(
         self,
         *,
@@ -558,9 +660,10 @@ class StreamingOptions(google.protobuf.message.Message):
         recognition_classifier: global___RecognitionClassifierOptions | None = ...,
         speech_analysis: global___SpeechAnalysisOptions | None = ...,
         speaker_labeling: global___SpeakerLabelingOptions | None = ...,
+        summarization: global___SummarizationOptions | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["eou_classifier", b"eou_classifier", "recognition_classifier", b"recognition_classifier", "recognition_model", b"recognition_model", "speaker_labeling", b"speaker_labeling", "speech_analysis", b"speech_analysis"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["eou_classifier", b"eou_classifier", "recognition_classifier", b"recognition_classifier", "recognition_model", b"recognition_model", "speaker_labeling", b"speaker_labeling", "speech_analysis", b"speech_analysis"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["eou_classifier", b"eou_classifier", "recognition_classifier", b"recognition_classifier", "recognition_model", b"recognition_model", "speaker_labeling", b"speaker_labeling", "speech_analysis", b"speech_analysis", "summarization", b"summarization"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["eou_classifier", b"eou_classifier", "recognition_classifier", b"recognition_classifier", "recognition_model", b"recognition_model", "speaker_labeling", b"speaker_labeling", "speech_analysis", b"speech_analysis", "summarization", b"summarization"]) -> None: ...
 
 global___StreamingOptions = StreamingOptions
 
@@ -666,6 +769,7 @@ class RecognizeFileRequest(google.protobuf.message.Message):
     RECOGNITION_CLASSIFIER_FIELD_NUMBER: builtins.int
     SPEECH_ANALYSIS_FIELD_NUMBER: builtins.int
     SPEAKER_LABELING_FIELD_NUMBER: builtins.int
+    SUMMARIZATION_FIELD_NUMBER: builtins.int
     content: builtins.bytes
     """Bytes with data"""
     uri: builtins.str
@@ -686,6 +790,10 @@ class RecognizeFileRequest(google.protobuf.message.Message):
     def speaker_labeling(self) -> global___SpeakerLabelingOptions:
         """Configuration for speaker labeling"""
 
+    @property
+    def summarization(self) -> global___SummarizationOptions:
+        """Summarization options"""
+
     def __init__(
         self,
         *,
@@ -695,9 +803,10 @@ class RecognizeFileRequest(google.protobuf.message.Message):
         recognition_classifier: global___RecognitionClassifierOptions | None = ...,
         speech_analysis: global___SpeechAnalysisOptions | None = ...,
         speaker_labeling: global___SpeakerLabelingOptions | None = ...,
+        summarization: global___SummarizationOptions | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["AudioSource", b"AudioSource", "content", b"content", "recognition_classifier", b"recognition_classifier", "recognition_model", b"recognition_model", "speaker_labeling", b"speaker_labeling", "speech_analysis", b"speech_analysis", "uri", b"uri"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["AudioSource", b"AudioSource", "content", b"content", "recognition_classifier", b"recognition_classifier", "recognition_model", b"recognition_model", "speaker_labeling", b"speaker_labeling", "speech_analysis", b"speech_analysis", "uri", b"uri"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["AudioSource", b"AudioSource", "content", b"content", "recognition_classifier", b"recognition_classifier", "recognition_model", b"recognition_model", "speaker_labeling", b"speaker_labeling", "speech_analysis", b"speech_analysis", "summarization", b"summarization", "uri", b"uri"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["AudioSource", b"AudioSource", "content", b"content", "recognition_classifier", b"recognition_classifier", "recognition_model", b"recognition_model", "speaker_labeling", b"speaker_labeling", "speech_analysis", b"speech_analysis", "summarization", b"summarization", "uri", b"uri"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["AudioSource", b"AudioSource"]) -> typing.Literal["content", "uri"] | None: ...
 
 global___RecognizeFileRequest = RecognizeFileRequest
@@ -1343,6 +1452,57 @@ class ConversationAnalysis(google.protobuf.message.Message):
 global___ConversationAnalysis = ConversationAnalysis
 
 @typing.final
+class ContentUsage(google.protobuf.message.Message):
+    """An object representing the number of content [tokens](/docs/foundation-models/concepts/yandexgpt/tokens) used by the completion model."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    INPUT_TEXT_TOKENS_FIELD_NUMBER: builtins.int
+    COMPLETION_TOKENS_FIELD_NUMBER: builtins.int
+    TOTAL_TOKENS_FIELD_NUMBER: builtins.int
+    input_text_tokens: builtins.int
+    """The number of tokens in the textual part of the model input."""
+    completion_tokens: builtins.int
+    """The number of tokens in the generated completion."""
+    total_tokens: builtins.int
+    """The total number of tokens, including all input tokens and all generated tokens."""
+    def __init__(
+        self,
+        *,
+        input_text_tokens: builtins.int = ...,
+        completion_tokens: builtins.int = ...,
+        total_tokens: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["completion_tokens", b"completion_tokens", "input_text_tokens", b"input_text_tokens", "total_tokens", b"total_tokens"]) -> None: ...
+
+global___ContentUsage = ContentUsage
+
+@typing.final
+class Summarization(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    RESULTS_FIELD_NUMBER: builtins.int
+    CONTENT_USAGE_FIELD_NUMBER: builtins.int
+    @property
+    def results(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___SummarizationPropertyResult]:
+        """A list of summarizations of transcription."""
+
+    @property
+    def content_usage(self) -> global___ContentUsage:
+        """A set of statistics describing the number of content tokens used by the completion model."""
+
+    def __init__(
+        self,
+        *,
+        results: collections.abc.Iterable[global___SummarizationPropertyResult] | None = ...,
+        content_usage: global___ContentUsage | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["content_usage", b"content_usage"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["content_usage", b"content_usage", "results", b"results"]) -> None: ...
+
+global___Summarization = Summarization
+
+@typing.final
 class StreamingResponse(google.protobuf.message.Message):
     """Responses from server.
     Each response contains session uuid
@@ -1363,6 +1523,7 @@ class StreamingResponse(google.protobuf.message.Message):
     CLASSIFIER_UPDATE_FIELD_NUMBER: builtins.int
     SPEAKER_ANALYSIS_FIELD_NUMBER: builtins.int
     CONVERSATION_ANALYSIS_FIELD_NUMBER: builtins.int
+    SUMMARIZATION_FIELD_NUMBER: builtins.int
     CHANNEL_TAG_FIELD_NUMBER: builtins.int
     response_wall_time_ms: builtins.int
     """Wall clock on server side. This is time when server wrote results to stream"""
@@ -1414,6 +1575,10 @@ class StreamingResponse(google.protobuf.message.Message):
     def conversation_analysis(self) -> global___ConversationAnalysis:
         """Conversation statistics"""
 
+    @property
+    def summarization(self) -> global___Summarization:
+        """Summary"""
+
     def __init__(
         self,
         *,
@@ -1428,11 +1593,12 @@ class StreamingResponse(google.protobuf.message.Message):
         classifier_update: global___RecognitionClassifierUpdate | None = ...,
         speaker_analysis: global___SpeakerAnalysis | None = ...,
         conversation_analysis: global___ConversationAnalysis | None = ...,
+        summarization: global___Summarization | None = ...,
         channel_tag: builtins.str = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["Event", b"Event", "audio_cursors", b"audio_cursors", "classifier_update", b"classifier_update", "conversation_analysis", b"conversation_analysis", "eou_update", b"eou_update", "final", b"final", "final_refinement", b"final_refinement", "partial", b"partial", "session_uuid", b"session_uuid", "speaker_analysis", b"speaker_analysis", "status_code", b"status_code"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["Event", b"Event", "audio_cursors", b"audio_cursors", "channel_tag", b"channel_tag", "classifier_update", b"classifier_update", "conversation_analysis", b"conversation_analysis", "eou_update", b"eou_update", "final", b"final", "final_refinement", b"final_refinement", "partial", b"partial", "response_wall_time_ms", b"response_wall_time_ms", "session_uuid", b"session_uuid", "speaker_analysis", b"speaker_analysis", "status_code", b"status_code"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["Event", b"Event"]) -> typing.Literal["partial", "final", "eou_update", "final_refinement", "status_code", "classifier_update", "speaker_analysis", "conversation_analysis"] | None: ...
+    def HasField(self, field_name: typing.Literal["Event", b"Event", "audio_cursors", b"audio_cursors", "classifier_update", b"classifier_update", "conversation_analysis", b"conversation_analysis", "eou_update", b"eou_update", "final", b"final", "final_refinement", b"final_refinement", "partial", b"partial", "session_uuid", b"session_uuid", "speaker_analysis", b"speaker_analysis", "status_code", b"status_code", "summarization", b"summarization"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["Event", b"Event", "audio_cursors", b"audio_cursors", "channel_tag", b"channel_tag", "classifier_update", b"classifier_update", "conversation_analysis", b"conversation_analysis", "eou_update", b"eou_update", "final", b"final", "final_refinement", b"final_refinement", "partial", b"partial", "response_wall_time_ms", b"response_wall_time_ms", "session_uuid", b"session_uuid", "speaker_analysis", b"speaker_analysis", "status_code", b"status_code", "summarization", b"summarization"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["Event", b"Event"]) -> typing.Literal["partial", "final", "eou_update", "final_refinement", "status_code", "classifier_update", "speaker_analysis", "conversation_analysis", "summarization"] | None: ...
 
 global___StreamingResponse = StreamingResponse
 

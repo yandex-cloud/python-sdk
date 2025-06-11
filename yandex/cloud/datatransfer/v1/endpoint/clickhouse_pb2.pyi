@@ -91,6 +91,7 @@ class ClickhouseConnectionOptions(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     ON_PREMISE_FIELD_NUMBER: builtins.int
+    CONNECTION_MANAGER_CONNECTION_FIELD_NUMBER: builtins.int
     MDB_CLUSTER_ID_FIELD_NUMBER: builtins.int
     USER_FIELD_NUMBER: builtins.int
     PASSWORD_FIELD_NUMBER: builtins.int
@@ -102,19 +103,22 @@ class ClickhouseConnectionOptions(google.protobuf.message.Message):
     @property
     def on_premise(self) -> global___OnPremiseClickhouse: ...
     @property
+    def connection_manager_connection(self) -> yandex.cloud.datatransfer.v1.endpoint.common_pb2.ConnectionManagerConnection: ...
+    @property
     def password(self) -> yandex.cloud.datatransfer.v1.endpoint.common_pb2.Secret: ...
     def __init__(
         self,
         *,
         on_premise: global___OnPremiseClickhouse | None = ...,
+        connection_manager_connection: yandex.cloud.datatransfer.v1.endpoint.common_pb2.ConnectionManagerConnection | None = ...,
         mdb_cluster_id: builtins.str = ...,
         user: builtins.str = ...,
         password: yandex.cloud.datatransfer.v1.endpoint.common_pb2.Secret | None = ...,
         database: builtins.str = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["address", b"address", "mdb_cluster_id", b"mdb_cluster_id", "on_premise", b"on_premise", "password", b"password"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["address", b"address", "database", b"database", "mdb_cluster_id", b"mdb_cluster_id", "on_premise", b"on_premise", "password", b"password", "user", b"user"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["address", b"address"]) -> typing.Literal["on_premise", "mdb_cluster_id"] | None: ...
+    def HasField(self, field_name: typing.Literal["address", b"address", "connection_manager_connection", b"connection_manager_connection", "mdb_cluster_id", b"mdb_cluster_id", "on_premise", b"on_premise", "password", b"password"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["address", b"address", "connection_manager_connection", b"connection_manager_connection", "database", b"database", "mdb_cluster_id", b"mdb_cluster_id", "on_premise", b"on_premise", "password", b"password", "user", b"user"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["address", b"address"]) -> typing.Literal["on_premise", "connection_manager_connection", "mdb_cluster_id"] | None: ...
 
 global___ClickhouseConnectionOptions = ClickhouseConnectionOptions
 
@@ -269,10 +273,12 @@ class ClickhouseTarget(google.protobuf.message.Message):
     ALT_NAMES_FIELD_NUMBER: builtins.int
     CLEANUP_POLICY_FIELD_NUMBER: builtins.int
     SHARDING_FIELD_NUMBER: builtins.int
+    IS_SCHEMA_MIGRATION_DISABLED_FIELD_NUMBER: builtins.int
     CLICKHOUSE_CLUSTER_NAME_FIELD_NUMBER: builtins.int
     SECURITY_GROUPS_FIELD_NUMBER: builtins.int
     subnet_id: builtins.str
     cleanup_policy: global___ClickhouseCleanupPolicy.ValueType
+    is_schema_migration_disabled: builtins.bool
     clickhouse_cluster_name: builtins.str
     """Name of the ClickHouse cluster. For Managed ClickHouse that is name of
     ShardGroup.
@@ -295,10 +301,11 @@ class ClickhouseTarget(google.protobuf.message.Message):
         alt_names: collections.abc.Iterable[yandex.cloud.datatransfer.v1.endpoint.common_pb2.AltName] | None = ...,
         cleanup_policy: global___ClickhouseCleanupPolicy.ValueType = ...,
         sharding: global___ClickhouseSharding | None = ...,
+        is_schema_migration_disabled: builtins.bool = ...,
         clickhouse_cluster_name: builtins.str = ...,
         security_groups: collections.abc.Iterable[builtins.str] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["connection", b"connection", "sharding", b"sharding"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["alt_names", b"alt_names", "cleanup_policy", b"cleanup_policy", "clickhouse_cluster_name", b"clickhouse_cluster_name", "connection", b"connection", "security_groups", b"security_groups", "sharding", b"sharding", "subnet_id", b"subnet_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["alt_names", b"alt_names", "cleanup_policy", b"cleanup_policy", "clickhouse_cluster_name", b"clickhouse_cluster_name", "connection", b"connection", "is_schema_migration_disabled", b"is_schema_migration_disabled", "security_groups", b"security_groups", "sharding", b"sharding", "subnet_id", b"subnet_id"]) -> None: ...
 
 global___ClickhouseTarget = ClickhouseTarget

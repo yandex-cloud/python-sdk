@@ -410,6 +410,52 @@ class GrpcRoute(google.protobuf.message.Message):
 global___GrpcRoute = GrpcRoute
 
 @typing.final
+class HttpRouteHeaderMatch(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    NAME_FIELD_NUMBER: builtins.int
+    VALUE_FIELD_NUMBER: builtins.int
+    name: builtins.str
+    """Name of the HTTP Header to be matched."""
+    @property
+    def value(self) -> global___StringMatch:
+        """Value of HTTP Header to be matched."""
+
+    def __init__(
+        self,
+        *,
+        name: builtins.str = ...,
+        value: global___StringMatch | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["value", b"value"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["name", b"name", "value", b"value"]) -> None: ...
+
+global___HttpRouteHeaderMatch = HttpRouteHeaderMatch
+
+@typing.final
+class HttpRouteQueryParamMatch(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    NAME_FIELD_NUMBER: builtins.int
+    VALUE_FIELD_NUMBER: builtins.int
+    name: builtins.str
+    """Name of the HTTP query parameter to be matched."""
+    @property
+    def value(self) -> global___StringMatch:
+        """Value of HTTP query parameter to be matched."""
+
+    def __init__(
+        self,
+        *,
+        name: builtins.str = ...,
+        value: global___StringMatch | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["value", b"value"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["name", b"name", "value", b"value"]) -> None: ...
+
+global___HttpRouteQueryParamMatch = HttpRouteQueryParamMatch
+
+@typing.final
 class HttpRouteMatch(google.protobuf.message.Message):
     """An HTTP route condition (predicate) resource."""
 
@@ -417,6 +463,8 @@ class HttpRouteMatch(google.protobuf.message.Message):
 
     HTTP_METHOD_FIELD_NUMBER: builtins.int
     PATH_FIELD_NUMBER: builtins.int
+    HEADERS_FIELD_NUMBER: builtins.int
+    QUERY_PARAMETERS_FIELD_NUMBER: builtins.int
     @property
     def http_method(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """HTTP method specified in the request."""
@@ -428,14 +476,30 @@ class HttpRouteMatch(google.protobuf.message.Message):
         If not specified, the route matches all paths.
         """
 
+    @property
+    def headers(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___HttpRouteHeaderMatch]:
+        """Headers specify HTTP request header matchers. Multiple match values are
+        ANDed together, meaning, a request must match all the specified headers
+        to select the route. Headers must be unique.
+        """
+
+    @property
+    def query_parameters(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___HttpRouteQueryParamMatch]:
+        """Query Parameters specify HTTP query parameter matchers. Multiple match
+        values are ANDed together, meaning, a request must match all the
+        specified query parameters to select the route. Query parameters must be unique.
+        """
+
     def __init__(
         self,
         *,
         http_method: collections.abc.Iterable[builtins.str] | None = ...,
         path: global___StringMatch | None = ...,
+        headers: collections.abc.Iterable[global___HttpRouteHeaderMatch] | None = ...,
+        query_parameters: collections.abc.Iterable[global___HttpRouteQueryParamMatch] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["path", b"path"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["http_method", b"http_method", "path", b"path"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["headers", b"headers", "http_method", b"http_method", "path", b"path", "query_parameters", b"query_parameters"]) -> None: ...
 
 global___HttpRouteMatch = HttpRouteMatch
 
@@ -685,6 +749,7 @@ class HttpRouteAction(google.protobuf.message.Message):
     PREFIX_REWRITE_FIELD_NUMBER: builtins.int
     UPGRADE_TYPES_FIELD_NUMBER: builtins.int
     RATE_LIMIT_FIELD_NUMBER: builtins.int
+    REGEX_REWRITE_FIELD_NUMBER: builtins.int
     backend_group_id: builtins.str
     """Backend group to forward requests to.
 
@@ -702,6 +767,8 @@ class HttpRouteAction(google.protobuf.message.Message):
     For [StringMatch.exact_match], the whole path is replaced.
 
     If not specified, the path is not changed.
+
+    Only one of regex_rewrite, or prefix_rewrite may be specified.
     """
     @property
     def timeout(self) -> google.protobuf.duration_pb2.Duration:
@@ -734,6 +801,25 @@ class HttpRouteAction(google.protobuf.message.Message):
     def rate_limit(self) -> yandex.cloud.apploadbalancer.v1.rate_limit_pb2.RateLimit:
         """RateLimit is a rate limit configuration applied for route."""
 
+    @property
+    def regex_rewrite(self) -> global___RegexMatchAndSubstitute:
+        """Replacement for portions of the path that match the pattern should be rewritten,
+        even allowing the substitution of capture groups from the pattern into the new path as specified
+        by the rewrite substitution string.
+
+        Only one of regex_rewrite, or prefix_rewrite may be specified.
+
+        Examples of using:
+         - The path pattern ^/service/([^/]+)(/.*)$ paired with a substitution string of \\2/instance/\\1 would transform
+           /service/foo/v1/api into /v1/api/instance/foo.
+         - The pattern one paired with a substitution string of two would transform /xxx/one/yyy/one/zzz
+           into /xxx/two/yyy/two/zzz.
+         - The pattern ^(.*?)one(.*)$ paired with a substitution string of \\1two\\2 would replace only the first
+           occurrence of one, transforming path /xxx/one/yyy/one/zzz into /xxx/two/yyy/one/zzz.
+         - The pattern (?i)/xxx/ paired with a substitution string of /yyy/ would do a case-insensitive match and transform
+           path /aaa/XxX/bbb to /aaa/yyy/bbb.
+        """
+
     def __init__(
         self,
         *,
@@ -745,12 +831,35 @@ class HttpRouteAction(google.protobuf.message.Message):
         prefix_rewrite: builtins.str = ...,
         upgrade_types: collections.abc.Iterable[builtins.str] | None = ...,
         rate_limit: yandex.cloud.apploadbalancer.v1.rate_limit_pb2.RateLimit | None = ...,
+        regex_rewrite: global___RegexMatchAndSubstitute | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["auto_host_rewrite", b"auto_host_rewrite", "host_rewrite", b"host_rewrite", "host_rewrite_specifier", b"host_rewrite_specifier", "idle_timeout", b"idle_timeout", "rate_limit", b"rate_limit", "timeout", b"timeout"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["auto_host_rewrite", b"auto_host_rewrite", "backend_group_id", b"backend_group_id", "host_rewrite", b"host_rewrite", "host_rewrite_specifier", b"host_rewrite_specifier", "idle_timeout", b"idle_timeout", "prefix_rewrite", b"prefix_rewrite", "rate_limit", b"rate_limit", "timeout", b"timeout", "upgrade_types", b"upgrade_types"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["auto_host_rewrite", b"auto_host_rewrite", "host_rewrite", b"host_rewrite", "host_rewrite_specifier", b"host_rewrite_specifier", "idle_timeout", b"idle_timeout", "rate_limit", b"rate_limit", "regex_rewrite", b"regex_rewrite", "timeout", b"timeout"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["auto_host_rewrite", b"auto_host_rewrite", "backend_group_id", b"backend_group_id", "host_rewrite", b"host_rewrite", "host_rewrite_specifier", b"host_rewrite_specifier", "idle_timeout", b"idle_timeout", "prefix_rewrite", b"prefix_rewrite", "rate_limit", b"rate_limit", "regex_rewrite", b"regex_rewrite", "timeout", b"timeout", "upgrade_types", b"upgrade_types"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["host_rewrite_specifier", b"host_rewrite_specifier"]) -> typing.Literal["host_rewrite", "auto_host_rewrite"] | None: ...
 
 global___HttpRouteAction = HttpRouteAction
+
+@typing.final
+class RegexMatchAndSubstitute(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    REGEX_FIELD_NUMBER: builtins.int
+    SUBSTITUTE_FIELD_NUMBER: builtins.int
+    regex: builtins.str
+    """The regular expression used to find portions of a string that should be replaced."""
+    substitute: builtins.str
+    """The string that should be substituted into matching portions of the subject string during a substitution operation
+    to produce a new string.
+    """
+    def __init__(
+        self,
+        *,
+        regex: builtins.str = ...,
+        substitute: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["regex", b"regex", "substitute", b"substitute"]) -> None: ...
+
+global___RegexMatchAndSubstitute = RegexMatchAndSubstitute
 
 @typing.final
 class GrpcRouteAction(google.protobuf.message.Message):

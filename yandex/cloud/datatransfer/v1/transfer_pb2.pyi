@@ -68,6 +68,10 @@ class _TransferStatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper.
     """Transfer copy snapshot"""
     DONE: _TransferStatus.ValueType  # 8
     """Transfer reach terminal phase"""
+    PAUSED: _TransferStatus.ValueType  # 9
+    """Transfer is paused by user - same as stopped, but replication slot is alive"""
+    PREPARING: _TransferStatus.ValueType  # 10
+    """Transfer does some work before replication"""
 
 class TransferStatus(_TransferStatus, metaclass=_TransferStatusEnumTypeWrapper): ...
 
@@ -88,6 +92,10 @@ SNAPSHOTTING: TransferStatus.ValueType  # 7
 """Transfer copy snapshot"""
 DONE: TransferStatus.ValueType  # 8
 """Transfer reach terminal phase"""
+PAUSED: TransferStatus.ValueType  # 9
+"""Transfer is paused by user - same as stopped, but replication slot is alive"""
+PREPARING: TransferStatus.ValueType  # 10
+"""Transfer does some work before replication"""
 global___TransferStatus = TransferStatus
 
 @typing.final

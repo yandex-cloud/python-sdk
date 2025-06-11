@@ -15,6 +15,7 @@ import google.protobuf.wrappers_pb2
 import google.type.timeofday_pb2
 import sys
 import typing
+import yandex.cloud.mdb.operationlog.v1.operation_log_pb2
 import yandex.cloud.mdb.postgresql.v1.backup_pb2
 import yandex.cloud.mdb.postgresql.v1.backup_retention_policy_pb2
 import yandex.cloud.mdb.postgresql.v1.cluster_pb2
@@ -295,14 +296,21 @@ class CreateClusterMetadata(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
+    OPERATION_LOG_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the PostgreSQL cluster that is being created."""
+    @property
+    def operation_log(self) -> yandex.cloud.mdb.operationlog.v1.operation_log_pb2.OperationLog:
+        """Log of actions during operation"""
+
     def __init__(
         self,
         *,
         cluster_id: builtins.str = ...,
+        operation_log: yandex.cloud.mdb.operationlog.v1.operation_log_pb2.OperationLog | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["operation_log", b"operation_log"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "operation_log", b"operation_log"]) -> None: ...
 
 global___CreateClusterMetadata = CreateClusterMetadata
 
@@ -401,14 +409,21 @@ class UpdateClusterMetadata(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     CLUSTER_ID_FIELD_NUMBER: builtins.int
+    OPERATION_LOG_FIELD_NUMBER: builtins.int
     cluster_id: builtins.str
     """ID of the PostgreSQL Cluster resource that is being updated."""
+    @property
+    def operation_log(self) -> yandex.cloud.mdb.operationlog.v1.operation_log_pb2.OperationLog:
+        """Log of actions during operation"""
+
     def __init__(
         self,
         *,
         cluster_id: builtins.str = ...,
+        operation_log: yandex.cloud.mdb.operationlog.v1.operation_log_pb2.OperationLog | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["operation_log", b"operation_log"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cluster_id", b"cluster_id", "operation_log", b"operation_log"]) -> None: ...
 
 global___UpdateClusterMetadata = UpdateClusterMetadata
 

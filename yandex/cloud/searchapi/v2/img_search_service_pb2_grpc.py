@@ -40,6 +40,11 @@ class ImageSearchServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_searchapi_dot_v2_dot_img__search__service__pb2.ImageSearchRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_searchapi_dot_v2_dot_img__search__service__pb2.ImageSearchResponse.FromString,
                 _registered_method=True)
+        self.SearchByImage = channel.unary_unary(
+                '/yandex.cloud.searchapi.v2.ImageSearchService/SearchByImage',
+                request_serializer=yandex_dot_cloud_dot_searchapi_dot_v2_dot_img__search__service__pb2.ImageSearchByImageRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_searchapi_dot_v2_dot_img__search__service__pb2.ImageSearchByImageResponse.FromString,
+                _registered_method=True)
 
 
 class ImageSearchServiceServicer(object):
@@ -52,6 +57,12 @@ class ImageSearchServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def SearchByImage(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ImageSearchServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -59,6 +70,11 @@ def add_ImageSearchServiceServicer_to_server(servicer, server):
                     servicer.Search,
                     request_deserializer=yandex_dot_cloud_dot_searchapi_dot_v2_dot_img__search__service__pb2.ImageSearchRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_searchapi_dot_v2_dot_img__search__service__pb2.ImageSearchResponse.SerializeToString,
+            ),
+            'SearchByImage': grpc.unary_unary_rpc_method_handler(
+                    servicer.SearchByImage,
+                    request_deserializer=yandex_dot_cloud_dot_searchapi_dot_v2_dot_img__search__service__pb2.ImageSearchByImageRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_searchapi_dot_v2_dot_img__search__service__pb2.ImageSearchByImageResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -89,6 +105,33 @@ class ImageSearchService(object):
             '/yandex.cloud.searchapi.v2.ImageSearchService/Search',
             yandex_dot_cloud_dot_searchapi_dot_v2_dot_img__search__service__pb2.ImageSearchRequest.SerializeToString,
             yandex_dot_cloud_dot_searchapi_dot_v2_dot_img__search__service__pb2.ImageSearchResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def SearchByImage(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.searchapi.v2.ImageSearchService/SearchByImage',
+            yandex_dot_cloud_dot_searchapi_dot_v2_dot_img__search__service__pb2.ImageSearchByImageRequest.SerializeToString,
+            yandex_dot_cloud_dot_searchapi_dot_v2_dot_img__search__service__pb2.ImageSearchByImageResponse.FromString,
             options,
             channel_credentials,
             insecure,

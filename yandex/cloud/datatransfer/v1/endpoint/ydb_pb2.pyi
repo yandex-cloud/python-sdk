@@ -115,6 +115,7 @@ class YdbTarget(google.protobuf.message.Message):
     SECURITY_GROUPS_FIELD_NUMBER: builtins.int
     IS_TABLE_COLUMN_ORIENTED_FIELD_NUMBER: builtins.int
     DEFAULT_COMPRESSION_FIELD_NUMBER: builtins.int
+    IS_SCHEMA_MIGRATION_DISABLED_FIELD_NUMBER: builtins.int
     database: builtins.str
     """Path in YDB where to store tables"""
     instance: builtins.str
@@ -134,6 +135,7 @@ class YdbTarget(google.protobuf.message.Message):
     """
     default_compression: global___YdbDefaultCompression.ValueType
     """Compression that will be used for default columns family on YDB table creation"""
+    is_schema_migration_disabled: builtins.bool
     @property
     def security_groups(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Security groups"""
@@ -151,7 +153,8 @@ class YdbTarget(google.protobuf.message.Message):
         security_groups: collections.abc.Iterable[builtins.str] | None = ...,
         is_table_column_oriented: builtins.bool = ...,
         default_compression: global___YdbDefaultCompression.ValueType = ...,
+        is_schema_migration_disabled: builtins.bool = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["cleanup_policy", b"cleanup_policy", "database", b"database", "default_compression", b"default_compression", "instance", b"instance", "is_table_column_oriented", b"is_table_column_oriented", "path", b"path", "sa_key_content", b"sa_key_content", "security_groups", b"security_groups", "service_account_id", b"service_account_id", "subnet_id", b"subnet_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cleanup_policy", b"cleanup_policy", "database", b"database", "default_compression", b"default_compression", "instance", b"instance", "is_schema_migration_disabled", b"is_schema_migration_disabled", "is_table_column_oriented", b"is_table_column_oriented", "path", b"path", "sa_key_content", b"sa_key_content", "security_groups", b"security_groups", "service_account_id", b"service_account_id", "subnet_id", b"subnet_id"]) -> None: ...
 
 global___YdbTarget = YdbTarget

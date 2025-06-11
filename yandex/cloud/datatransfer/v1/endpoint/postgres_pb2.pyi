@@ -121,10 +121,7 @@ class PostgresObjectTransferSettings(google.protobuf.message.Message):
     CREATE MATERIALIZED VIEW ...
     """
     sequence_set: yandex.cloud.datatransfer.v1.endpoint.common_pb2.ObjectTransferStage.ValueType
-    """Sequence sets
-
-    CREATE SEQUENCE ...
-    """
+    """"""
     def __init__(
         self,
         *,
@@ -297,6 +294,7 @@ class PostgresTarget(google.protobuf.message.Message):
     PASSWORD_FIELD_NUMBER: builtins.int
     CLEANUP_POLICY_FIELD_NUMBER: builtins.int
     SECURITY_GROUPS_FIELD_NUMBER: builtins.int
+    IS_SCHEMA_MIGRATION_DISABLED_FIELD_NUMBER: builtins.int
     database: builtins.str
     """Database name"""
     user: builtins.str
@@ -305,6 +303,7 @@ class PostgresTarget(google.protobuf.message.Message):
     """Cleanup policy for activate, reactivate and reupload processes. Default is
     truncate.
     """
+    is_schema_migration_disabled: builtins.bool
     @property
     def connection(self) -> global___PostgresConnection:
         """Database connection settings"""
@@ -326,8 +325,9 @@ class PostgresTarget(google.protobuf.message.Message):
         password: yandex.cloud.datatransfer.v1.endpoint.common_pb2.Secret | None = ...,
         cleanup_policy: yandex.cloud.datatransfer.v1.endpoint.common_pb2.CleanupPolicy.ValueType = ...,
         security_groups: collections.abc.Iterable[builtins.str] | None = ...,
+        is_schema_migration_disabled: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["connection", b"connection", "password", b"password"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cleanup_policy", b"cleanup_policy", "connection", b"connection", "database", b"database", "password", b"password", "security_groups", b"security_groups", "user", b"user"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cleanup_policy", b"cleanup_policy", "connection", b"connection", "database", b"database", "is_schema_migration_disabled", b"is_schema_migration_disabled", "password", b"password", "security_groups", b"security_groups", "user", b"user"]) -> None: ...
 
 global___PostgresTarget = PostgresTarget

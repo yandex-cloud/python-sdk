@@ -171,6 +171,7 @@ class CreateInstanceGroupRequest(google.protobuf.message.Message):
     VARIABLES_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     APPLICATION_LOAD_BALANCER_SPEC_FIELD_NUMBER: builtins.int
+    AUTO_HEALING_POLICY_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     """ID of the folder to create an instance group in.
     To get the folder ID, use a [yandex.cloud.resourcemanager.v1.FolderService.List] request.
@@ -235,6 +236,10 @@ class CreateInstanceGroupRequest(google.protobuf.message.Message):
         and attributed to the instance group.
         """
 
+    @property
+    def auto_healing_policy(self) -> yandex.cloud.compute.v1.instancegroup.instance_group_pb2.AutoHealingPolicy:
+        """AutoHealingPolicy policy of the instance group."""
+
     def __init__(
         self,
         *,
@@ -252,9 +257,10 @@ class CreateInstanceGroupRequest(google.protobuf.message.Message):
         variables: collections.abc.Iterable[yandex.cloud.compute.v1.instancegroup.instance_group_pb2.Variable] | None = ...,
         deletion_protection: builtins.bool = ...,
         application_load_balancer_spec: yandex.cloud.compute.v1.instancegroup.instance_group_pb2.ApplicationLoadBalancerSpec | None = ...,
+        auto_healing_policy: yandex.cloud.compute.v1.instancegroup.instance_group_pb2.AutoHealingPolicy | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["allocation_policy", b"allocation_policy", "application_load_balancer_spec", b"application_load_balancer_spec", "deploy_policy", b"deploy_policy", "health_checks_spec", b"health_checks_spec", "instance_template", b"instance_template", "load_balancer_spec", b"load_balancer_spec", "scale_policy", b"scale_policy"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["allocation_policy", b"allocation_policy", "application_load_balancer_spec", b"application_load_balancer_spec", "deletion_protection", b"deletion_protection", "deploy_policy", b"deploy_policy", "description", b"description", "folder_id", b"folder_id", "health_checks_spec", b"health_checks_spec", "instance_template", b"instance_template", "labels", b"labels", "load_balancer_spec", b"load_balancer_spec", "name", b"name", "scale_policy", b"scale_policy", "service_account_id", b"service_account_id", "variables", b"variables"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["allocation_policy", b"allocation_policy", "application_load_balancer_spec", b"application_load_balancer_spec", "auto_healing_policy", b"auto_healing_policy", "deploy_policy", b"deploy_policy", "health_checks_spec", b"health_checks_spec", "instance_template", b"instance_template", "load_balancer_spec", b"load_balancer_spec", "scale_policy", b"scale_policy"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["allocation_policy", b"allocation_policy", "application_load_balancer_spec", b"application_load_balancer_spec", "auto_healing_policy", b"auto_healing_policy", "deletion_protection", b"deletion_protection", "deploy_policy", b"deploy_policy", "description", b"description", "folder_id", b"folder_id", "health_checks_spec", b"health_checks_spec", "instance_template", b"instance_template", "labels", b"labels", "load_balancer_spec", b"load_balancer_spec", "name", b"name", "scale_policy", b"scale_policy", "service_account_id", b"service_account_id", "variables", b"variables"]) -> None: ...
 
 global___CreateInstanceGroupRequest = CreateInstanceGroupRequest
 
@@ -331,6 +337,7 @@ class UpdateInstanceGroupRequest(google.protobuf.message.Message):
     VARIABLES_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     APPLICATION_LOAD_BALANCER_SPEC_FIELD_NUMBER: builtins.int
+    AUTO_HEALING_POLICY_FIELD_NUMBER: builtins.int
     instance_group_id: builtins.str
     """ID of the instance group to update.
     To get the instance group ID, use a [InstanceGroupService.List] request.
@@ -391,6 +398,10 @@ class UpdateInstanceGroupRequest(google.protobuf.message.Message):
         (OSI model layer 7).
         """
 
+    @property
+    def auto_healing_policy(self) -> yandex.cloud.compute.v1.instancegroup.instance_group_pb2.AutoHealingPolicy:
+        """AutoHealingPolicy policy of the instance group."""
+
     def __init__(
         self,
         *,
@@ -409,9 +420,10 @@ class UpdateInstanceGroupRequest(google.protobuf.message.Message):
         variables: collections.abc.Iterable[yandex.cloud.compute.v1.instancegroup.instance_group_pb2.Variable] | None = ...,
         deletion_protection: builtins.bool = ...,
         application_load_balancer_spec: yandex.cloud.compute.v1.instancegroup.instance_group_pb2.ApplicationLoadBalancerSpec | None = ...,
+        auto_healing_policy: yandex.cloud.compute.v1.instancegroup.instance_group_pb2.AutoHealingPolicy | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["allocation_policy", b"allocation_policy", "application_load_balancer_spec", b"application_load_balancer_spec", "deploy_policy", b"deploy_policy", "health_checks_spec", b"health_checks_spec", "instance_template", b"instance_template", "load_balancer_spec", b"load_balancer_spec", "scale_policy", b"scale_policy", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["allocation_policy", b"allocation_policy", "application_load_balancer_spec", b"application_load_balancer_spec", "deletion_protection", b"deletion_protection", "deploy_policy", b"deploy_policy", "description", b"description", "health_checks_spec", b"health_checks_spec", "instance_group_id", b"instance_group_id", "instance_template", b"instance_template", "labels", b"labels", "load_balancer_spec", b"load_balancer_spec", "name", b"name", "scale_policy", b"scale_policy", "service_account_id", b"service_account_id", "update_mask", b"update_mask", "variables", b"variables"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["allocation_policy", b"allocation_policy", "application_load_balancer_spec", b"application_load_balancer_spec", "auto_healing_policy", b"auto_healing_policy", "deploy_policy", b"deploy_policy", "health_checks_spec", b"health_checks_spec", "instance_template", b"instance_template", "load_balancer_spec", b"load_balancer_spec", "scale_policy", b"scale_policy", "update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["allocation_policy", b"allocation_policy", "application_load_balancer_spec", b"application_load_balancer_spec", "auto_healing_policy", b"auto_healing_policy", "deletion_protection", b"deletion_protection", "deploy_policy", b"deploy_policy", "description", b"description", "health_checks_spec", b"health_checks_spec", "instance_group_id", b"instance_group_id", "instance_template", b"instance_template", "labels", b"labels", "load_balancer_spec", b"load_balancer_spec", "name", b"name", "scale_policy", b"scale_policy", "service_account_id", b"service_account_id", "update_mask", b"update_mask", "variables", b"variables"]) -> None: ...
 
 global___UpdateInstanceGroupRequest = UpdateInstanceGroupRequest
 

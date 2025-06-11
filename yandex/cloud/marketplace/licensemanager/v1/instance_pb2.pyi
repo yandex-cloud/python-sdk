@@ -12,6 +12,7 @@ import google.protobuf.message
 import google.protobuf.timestamp_pb2
 import sys
 import typing
+import yandex.cloud.marketplace.licensemanager.v1.external_instance_pb2
 import yandex.cloud.marketplace.licensemanager.v1.lock_pb2
 import yandex.cloud.marketplace.licensemanager.v1.template_pb2
 
@@ -74,6 +75,7 @@ class Instance(google.protobuf.message.Message):
     STATE_FIELD_NUMBER: builtins.int
     LOCKS_FIELD_NUMBER: builtins.int
     LICENSE_TEMPLATE_FIELD_NUMBER: builtins.int
+    EXTERNAL_INSTANCE_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the subscription instance."""
     cloud_id: builtins.str
@@ -112,6 +114,10 @@ class Instance(google.protobuf.message.Message):
     def license_template(self) -> yandex.cloud.marketplace.licensemanager.v1.template_pb2.Template:
         """Subscription template."""
 
+    @property
+    def external_instance(self) -> yandex.cloud.marketplace.licensemanager.v1.external_instance_pb2.ExternalInstance:
+        """External subscription instance (optional)."""
+
     def __init__(
         self,
         *,
@@ -128,8 +134,9 @@ class Instance(google.protobuf.message.Message):
         state: global___Instance.State.ValueType = ...,
         locks: collections.abc.Iterable[yandex.cloud.marketplace.licensemanager.v1.lock_pb2.Lock] | None = ...,
         license_template: yandex.cloud.marketplace.licensemanager.v1.template_pb2.Template | None = ...,
+        external_instance: yandex.cloud.marketplace.licensemanager.v1.external_instance_pb2.ExternalInstance | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "end_time", b"end_time", "license_template", b"license_template", "start_time", b"start_time", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cloud_id", b"cloud_id", "created_at", b"created_at", "description", b"description", "end_time", b"end_time", "folder_id", b"folder_id", "id", b"id", "license_template", b"license_template", "locks", b"locks", "start_time", b"start_time", "state", b"state", "template_id", b"template_id", "template_version_id", b"template_version_id", "updated_at", b"updated_at"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "end_time", b"end_time", "external_instance", b"external_instance", "license_template", b"license_template", "start_time", b"start_time", "updated_at", b"updated_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["cloud_id", b"cloud_id", "created_at", b"created_at", "description", b"description", "end_time", b"end_time", "external_instance", b"external_instance", "folder_id", b"folder_id", "id", b"id", "license_template", b"license_template", "locks", b"locks", "start_time", b"start_time", "state", b"state", "template_id", b"template_id", "template_version_id", b"template_version_id", "updated_at", b"updated_at"]) -> None: ...
 
 global___Instance = Instance

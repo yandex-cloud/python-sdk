@@ -61,19 +61,23 @@ class ClaimProductInstanceMetadata(google.protobuf.message.Message):
     PRODUCT_ID_FIELD_NUMBER: builtins.int
     PRODUCT_INSTANCE_ID_FIELD_NUMBER: builtins.int
     LICENSE_INSTANCE_ID_FIELD_NUMBER: builtins.int
+    LOCK_ID_FIELD_NUMBER: builtins.int
     product_id: builtins.str
     """ID of the product to which the product instance belongs."""
     product_instance_id: builtins.str
     """ID of the product instance."""
     license_instance_id: builtins.str
     """ID of the subscription."""
+    lock_id: builtins.str
+    """ID of the subscription lock."""
     def __init__(
         self,
         *,
         product_id: builtins.str = ...,
         product_instance_id: builtins.str = ...,
         license_instance_id: builtins.str = ...,
+        lock_id: builtins.str = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["license_instance_id", b"license_instance_id", "product_id", b"product_id", "product_instance_id", b"product_instance_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["license_instance_id", b"license_instance_id", "lock_id", b"lock_id", "product_id", b"product_id", "product_instance_id", b"product_instance_id"]) -> None: ...
 
 global___ClaimProductInstanceMetadata = ClaimProductInstanceMetadata

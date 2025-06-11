@@ -26,12 +26,22 @@ class ImageSearchServiceStub:
         yandex.cloud.searchapi.v2.img_search_service_pb2.ImageSearchResponse,
     ]
 
+    SearchByImage: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.searchapi.v2.img_search_service_pb2.ImageSearchByImageRequest,
+        yandex.cloud.searchapi.v2.img_search_service_pb2.ImageSearchByImageResponse,
+    ]
+
 class ImageSearchServiceAsyncStub:
     """A set of methods for searching of images using the Yandex Images."""
 
     Search: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.searchapi.v2.img_search_service_pb2.ImageSearchRequest,
         yandex.cloud.searchapi.v2.img_search_service_pb2.ImageSearchResponse,
+    ]
+
+    SearchByImage: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.searchapi.v2.img_search_service_pb2.ImageSearchByImageRequest,
+        yandex.cloud.searchapi.v2.img_search_service_pb2.ImageSearchByImageResponse,
     ]
 
 class ImageSearchServiceServicer(metaclass=abc.ABCMeta):
@@ -43,5 +53,12 @@ class ImageSearchServiceServicer(metaclass=abc.ABCMeta):
         request: yandex.cloud.searchapi.v2.img_search_service_pb2.ImageSearchRequest,
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.searchapi.v2.img_search_service_pb2.ImageSearchResponse, collections.abc.Awaitable[yandex.cloud.searchapi.v2.img_search_service_pb2.ImageSearchResponse]]: ...
+
+    @abc.abstractmethod
+    def SearchByImage(
+        self,
+        request: yandex.cloud.searchapi.v2.img_search_service_pb2.ImageSearchByImageRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.searchapi.v2.img_search_service_pb2.ImageSearchByImageResponse, collections.abc.Awaitable[yandex.cloud.searchapi.v2.img_search_service_pb2.ImageSearchByImageResponse]]: ...
 
 def add_ImageSearchServiceServicer_to_server(servicer: ImageSearchServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

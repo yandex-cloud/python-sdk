@@ -198,6 +198,7 @@ class MysqlTarget(google.protobuf.message.Message):
     CLEANUP_POLICY_FIELD_NUMBER: builtins.int
     SERVICE_DATABASE_FIELD_NUMBER: builtins.int
     SECURITY_GROUPS_FIELD_NUMBER: builtins.int
+    IS_SCHEMA_MIGRATION_DISABLED_FIELD_NUMBER: builtins.int
     database: builtins.str
     """Database name
 
@@ -233,6 +234,7 @@ class MysqlTarget(google.protobuf.message.Message):
 
     Default: db name. Here created technical tables (__tm_keeper, __tm_gtid_keeper).
     """
+    is_schema_migration_disabled: builtins.bool
     @property
     def connection(self) -> global___MysqlConnection:
         """Database connection settings"""
@@ -258,8 +260,9 @@ class MysqlTarget(google.protobuf.message.Message):
         cleanup_policy: yandex.cloud.datatransfer.v1.endpoint.common_pb2.CleanupPolicy.ValueType = ...,
         service_database: builtins.str = ...,
         security_groups: collections.abc.Iterable[builtins.str] | None = ...,
+        is_schema_migration_disabled: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["connection", b"connection", "password", b"password"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["cleanup_policy", b"cleanup_policy", "connection", b"connection", "database", b"database", "password", b"password", "security_groups", b"security_groups", "service_database", b"service_database", "skip_constraint_checks", b"skip_constraint_checks", "sql_mode", b"sql_mode", "timezone", b"timezone", "user", b"user"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["cleanup_policy", b"cleanup_policy", "connection", b"connection", "database", b"database", "is_schema_migration_disabled", b"is_schema_migration_disabled", "password", b"password", "security_groups", b"security_groups", "service_database", b"service_database", "skip_constraint_checks", b"skip_constraint_checks", "sql_mode", b"sql_mode", "timezone", b"timezone", "user", b"user"]) -> None: ...
 
 global___MysqlTarget = MysqlTarget

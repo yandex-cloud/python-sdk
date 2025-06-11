@@ -233,7 +233,7 @@ class ClusterConfig(google.protobuf.message.Message):
     PYTHON_VERSION_FIELD_NUMBER: builtins.int
     version_id: builtins.str
     """Version of Apache Airflow that runs on the cluster.
-    Use `airlow_version` instead.
+    Use `airflow_version` instead.
     """
     airflow_version: builtins.str
     """Apache Airflow version. Format: "Major.Minor" """
@@ -481,20 +481,48 @@ class S3Config(google.protobuf.message.Message):
 global___S3Config = S3Config
 
 @typing.final
+class GitSyncConfig(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    REPO_FIELD_NUMBER: builtins.int
+    BRANCH_FIELD_NUMBER: builtins.int
+    SUB_PATH_FIELD_NUMBER: builtins.int
+    SSH_KEY_FIELD_NUMBER: builtins.int
+    repo: builtins.str
+    branch: builtins.str
+    sub_path: builtins.str
+    ssh_key: builtins.str
+    def __init__(
+        self,
+        *,
+        repo: builtins.str = ...,
+        branch: builtins.str = ...,
+        sub_path: builtins.str = ...,
+        ssh_key: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["branch", b"branch", "repo", b"repo", "ssh_key", b"ssh_key", "sub_path", b"sub_path"]) -> None: ...
+
+global___GitSyncConfig = GitSyncConfig
+
+@typing.final
 class CodeSyncConfig(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     S3_FIELD_NUMBER: builtins.int
+    GIT_SYNC_FIELD_NUMBER: builtins.int
     @property
     def s3(self) -> global___S3Config: ...
+    @property
+    def git_sync(self) -> global___GitSyncConfig: ...
     def __init__(
         self,
         *,
         s3: global___S3Config | None = ...,
+        git_sync: global___GitSyncConfig | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["s3", b"s3", "source", b"source"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["s3", b"s3", "source", b"source"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["source", b"source"]) -> typing.Literal["s3"] | None: ...
+    def HasField(self, field_name: typing.Literal["git_sync", b"git_sync", "s3", b"s3", "source", b"source"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["git_sync", b"git_sync", "s3", b"s3", "source", b"source"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["source", b"source"]) -> typing.Literal["s3", "git_sync"] | None: ...
 
 global___CodeSyncConfig = CodeSyncConfig
 

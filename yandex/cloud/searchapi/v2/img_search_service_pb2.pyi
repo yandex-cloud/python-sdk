@@ -4,7 +4,9 @@ isort:skip_file
 """
 
 import builtins
+import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.internal.containers
 import google.protobuf.internal.enum_type_wrapper
 import google.protobuf.message
 import sys
@@ -238,3 +240,113 @@ class ImageSearchResponse(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["raw_data", b"raw_data"]) -> None: ...
 
 global___ImageSearchResponse = ImageSearchResponse
+
+@typing.final
+class ImageSearchByImageRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    SITE_FIELD_NUMBER: builtins.int
+    FOLDER_ID_FIELD_NUMBER: builtins.int
+    URL_FIELD_NUMBER: builtins.int
+    DATA_FIELD_NUMBER: builtins.int
+    ID_FIELD_NUMBER: builtins.int
+    PAGE_FIELD_NUMBER: builtins.int
+    site: builtins.str
+    """Restricts the search to the specific website."""
+    folder_id: builtins.str
+    """ID of the folder."""
+    url: builtins.str
+    """The image url to use for the search."""
+    data: builtins.bytes
+    """The image data to use for the search."""
+    id: builtins.str
+    """CBIR ID of the image to use for the search."""
+    page: builtins.int
+    """The number of a requested page with search results."""
+    def __init__(
+        self,
+        *,
+        site: builtins.str = ...,
+        folder_id: builtins.str = ...,
+        url: builtins.str = ...,
+        data: builtins.bytes = ...,
+        id: builtins.str = ...,
+        page: builtins.int = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["data", b"data", "id", b"id", "image", b"image", "url", b"url"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["data", b"data", "folder_id", b"folder_id", "id", b"id", "image", b"image", "page", b"page", "site", b"site", "url", b"url"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["image", b"image"]) -> typing.Literal["url", "data", "id"] | None: ...
+
+global___ImageSearchByImageRequest = ImageSearchByImageRequest
+
+@typing.final
+class ImageSearchByImageResponse(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class ImageInfo(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        URL_FIELD_NUMBER: builtins.int
+        FORMAT_FIELD_NUMBER: builtins.int
+        WIDTH_FIELD_NUMBER: builtins.int
+        HEIGHT_FIELD_NUMBER: builtins.int
+        PASSAGE_FIELD_NUMBER: builtins.int
+        HOST_FIELD_NUMBER: builtins.int
+        PAGE_TITLE_FIELD_NUMBER: builtins.int
+        PAGE_URL_FIELD_NUMBER: builtins.int
+        url: builtins.str
+        """Image URL."""
+        format: global___ImageSpec.ImageFormat.ValueType
+        """Image format."""
+        width: builtins.int
+        """Image width."""
+        height: builtins.int
+        """Image height."""
+        passage: builtins.str
+        """Text passage."""
+        host: builtins.str
+        """Document host."""
+        page_title: builtins.str
+        """Document title."""
+        page_url: builtins.str
+        """Document URL."""
+        def __init__(
+            self,
+            *,
+            url: builtins.str = ...,
+            format: global___ImageSpec.ImageFormat.ValueType = ...,
+            width: builtins.int = ...,
+            height: builtins.int = ...,
+            passage: builtins.str = ...,
+            host: builtins.str = ...,
+            page_title: builtins.str = ...,
+            page_url: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["format", b"format", "height", b"height", "host", b"host", "page_title", b"page_title", "page_url", b"page_url", "passage", b"passage", "url", b"url", "width", b"width"]) -> None: ...
+
+    IMAGES_FIELD_NUMBER: builtins.int
+    PAGE_FIELD_NUMBER: builtins.int
+    MAX_PAGE_FIELD_NUMBER: builtins.int
+    ID_FIELD_NUMBER: builtins.int
+    page: builtins.int
+    """The number of the page with search results."""
+    max_page: builtins.int
+    """The number of the last page with search results."""
+    id: builtins.str
+    """CBIR ID of the image used for the search."""
+    @property
+    def images(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ImageSearchByImageResponse.ImageInfo]:
+        """The images found."""
+
+    def __init__(
+        self,
+        *,
+        images: collections.abc.Iterable[global___ImageSearchByImageResponse.ImageInfo] | None = ...,
+        page: builtins.int = ...,
+        max_page: builtins.int = ...,
+        id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["id", b"id", "images", b"images", "max_page", b"max_page", "page", b"page"]) -> None: ...
+
+global___ImageSearchByImageResponse = ImageSearchByImageResponse

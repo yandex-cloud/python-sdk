@@ -965,22 +965,6 @@ class MasterScalePolicySpec(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     @typing.final
-    class FixedScale(google.protobuf.message.Message):
-        """Fixed master instance resources."""
-
-        DESCRIPTOR: google.protobuf.descriptor.Descriptor
-
-        RESOURCE_PRESET_ID_FIELD_NUMBER: builtins.int
-        resource_preset_id: builtins.str
-        """Preset of computing resources to be used by master."""
-        def __init__(
-            self,
-            *,
-            resource_preset_id: builtins.str = ...,
-        ) -> None: ...
-        def ClearField(self, field_name: typing.Literal["resource_preset_id", b"resource_preset_id"]) -> None: ...
-
-    @typing.final
     class AutoScale(google.protobuf.message.Message):
         """Scalable master instance resources."""
 
@@ -996,20 +980,16 @@ class MasterScalePolicySpec(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["min_resource_preset_id", b"min_resource_preset_id"]) -> None: ...
 
-    FIXED_SCALE_FIELD_NUMBER: builtins.int
     AUTO_SCALE_FIELD_NUMBER: builtins.int
-    @property
-    def fixed_scale(self) -> global___MasterScalePolicySpec.FixedScale: ...
     @property
     def auto_scale(self) -> global___MasterScalePolicySpec.AutoScale: ...
     def __init__(
         self,
         *,
-        fixed_scale: global___MasterScalePolicySpec.FixedScale | None = ...,
         auto_scale: global___MasterScalePolicySpec.AutoScale | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["auto_scale", b"auto_scale", "fixed_scale", b"fixed_scale", "scale_type", b"scale_type"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["auto_scale", b"auto_scale", "fixed_scale", b"fixed_scale", "scale_type", b"scale_type"]) -> None: ...
-    def WhichOneof(self, oneof_group: typing.Literal["scale_type", b"scale_type"]) -> typing.Literal["fixed_scale", "auto_scale"] | None: ...
+    def HasField(self, field_name: typing.Literal["auto_scale", b"auto_scale", "scale_type", b"scale_type"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["auto_scale", b"auto_scale", "scale_type", b"scale_type"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["scale_type", b"scale_type"]) -> typing.Literal["auto_scale"] | None: ...
 
 global___MasterScalePolicySpec = MasterScalePolicySpec

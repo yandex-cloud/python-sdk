@@ -22,6 +22,7 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
@@ -29,7 +30,7 @@ from yandex.cloud.trino.v1 import catalog_pb2 as yandex_dot_cloud_dot_trino_dot_
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n+yandex/cloud/trino/v1/catalog_service.proto\x12\x15yandex.cloud.trino.v1\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a#yandex/cloud/trino/v1/catalog.proto\x1a\x1dyandex/cloud/validation.proto\"W\n\x11GetCatalogRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12 \n\ncatalog_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x91\x01\n\x13ListCatalogsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"a\n\x14ListCatalogsResponse\x12\x30\n\x08\x63\x61talogs\x18\x01 \x03(\x0b\x32\x1e.yandex.cloud.trino.v1.Catalog\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"s\n\x14\x43reateCatalogRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x39\n\x07\x63\x61talog\x18\x02 \x01(\x0b\x32\".yandex.cloud.trino.v1.CatalogSpecB\x04\xe8\xc7\x31\x01\"?\n\x15\x43reateCatalogMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\ncatalog_id\x18\x02 \x01(\t\"\xd2\x01\n\x14UpdateCatalogRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12 \n\ncatalog_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\x0bupdate_mask\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe8\xc7\x31\x01\x12?\n\x07\x63\x61talog\x18\x04 \x01(\x0b\x32(.yandex.cloud.trino.v1.CatalogUpdateSpecB\x04\xe8\xc7\x31\x01\"?\n\x15UpdateCatalogMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\ncatalog_id\x18\x02 \x01(\t\"Z\n\x14\x44\x65leteCatalogRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12 \n\ncatalog_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"?\n\x15\x44\x65leteCatalogMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\ncatalog_id\x18\x02 \x01(\t2\xd5\x04\n\x0e\x43\x61talogService\x12Q\n\x03Get\x12(.yandex.cloud.trino.v1.GetCatalogRequest\x1a\x1e.yandex.cloud.trino.v1.Catalog\"\x00\x12\x61\n\x04List\x12*.yandex.cloud.trino.v1.ListCatalogsRequest\x1a+.yandex.cloud.trino.v1.ListCatalogsResponse\"\x00\x12~\n\x06\x43reate\x12+.yandex.cloud.trino.v1.CreateCatalogRequest\x1a!.yandex.cloud.operation.Operation\"$\xb2\xd2* \n\x15\x43reateCatalogMetadata\x12\x07\x43\x61talog\x12~\n\x06Update\x12+.yandex.cloud.trino.v1.UpdateCatalogRequest\x1a!.yandex.cloud.operation.Operation\"$\xb2\xd2* \n\x15UpdateCatalogMetadata\x12\x07\x43\x61talog\x12\x8c\x01\n\x06\x44\x65lete\x12+.yandex.cloud.trino.v1.DeleteCatalogRequest\x1a!.yandex.cloud.operation.Operation\"2\xb2\xd2*.\n\x15\x44\x65leteCatalogMetadata\x12\x15google.protobuf.EmptyB\\\n\x19yandex.cloud.api.trino.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/trino/v1;trinob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n+yandex/cloud/trino/v1/catalog_service.proto\x12\x15yandex.cloud.trino.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a#yandex/cloud/trino/v1/catalog.proto\x1a\x1dyandex/cloud/validation.proto\"W\n\x11GetCatalogRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12 \n\ncatalog_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\x91\x01\n\x13ListCatalogsRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06<=1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x1a\n\x06\x66ilter\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=1000\"a\n\x14ListCatalogsResponse\x12\x30\n\x08\x63\x61talogs\x18\x01 \x03(\x0b\x32\x1e.yandex.cloud.trino.v1.Catalog\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"s\n\x14\x43reateCatalogRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x39\n\x07\x63\x61talog\x18\x02 \x01(\x0b\x32\".yandex.cloud.trino.v1.CatalogSpecB\x04\xe8\xc7\x31\x01\"?\n\x15\x43reateCatalogMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\ncatalog_id\x18\x02 \x01(\t\"\xd2\x01\n\x14UpdateCatalogRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12 \n\ncatalog_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x35\n\x0bupdate_mask\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe8\xc7\x31\x01\x12?\n\x07\x63\x61talog\x18\x04 \x01(\x0b\x32(.yandex.cloud.trino.v1.CatalogUpdateSpecB\x04\xe8\xc7\x31\x01\"?\n\x15UpdateCatalogMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\ncatalog_id\x18\x02 \x01(\t\"Z\n\x14\x44\x65leteCatalogRequest\x12 \n\ncluster_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12 \n\ncatalog_id\x18\x02 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"?\n\x15\x44\x65leteCatalogMetadata\x12\x12\n\ncluster_id\x18\x01 \x01(\t\x12\x12\n\ncatalog_id\x18\x02 \x01(\t2\x9e\x07\n\x0e\x43\x61talogService\x12\x96\x01\n\x03Get\x12(.yandex.cloud.trino.v1.GetCatalogRequest\x1a\x1e.yandex.cloud.trino.v1.Catalog\"E\x82\xd3\xe4\x93\x02?\x12=/managed-trino/v1/clusters/{cluster_id}/catalogs/{catalog_id}\x12\x99\x01\n\x04List\x12*.yandex.cloud.trino.v1.ListCatalogsRequest\x1a+.yandex.cloud.trino.v1.ListCatalogsResponse\"8\x82\xd3\xe4\x93\x02\x32\x12\x30/managed-trino/v1/clusters/{cluster_id}/catalogs\x12\xb9\x01\n\x06\x43reate\x12+.yandex.cloud.trino.v1.CreateCatalogRequest\x1a!.yandex.cloud.operation.Operation\"_\xb2\xd2* \n\x15\x43reateCatalogMetadata\x12\x07\x43\x61talog\x82\xd3\xe4\x93\x02\x35\"0/managed-trino/v1/clusters/{cluster_id}/catalogs:\x01*\x12\xc6\x01\n\x06Update\x12+.yandex.cloud.trino.v1.UpdateCatalogRequest\x1a!.yandex.cloud.operation.Operation\"l\xb2\xd2* \n\x15UpdateCatalogMetadata\x12\x07\x43\x61talog\x82\xd3\xe4\x93\x02\x42\x32=/managed-trino/v1/clusters/{cluster_id}/catalogs/{catalog_id}:\x01*\x12\xd1\x01\n\x06\x44\x65lete\x12+.yandex.cloud.trino.v1.DeleteCatalogRequest\x1a!.yandex.cloud.operation.Operation\"w\xb2\xd2*.\n\x15\x44\x65leteCatalogMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02?*=/managed-trino/v1/clusters/{cluster_id}/catalogs/{catalog_id}B\\\n\x19yandex.cloud.api.trino.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/trino/v1;trinob\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -65,30 +66,34 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_DELETECATALOGREQUEST'].fields_by_name['cluster_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
   _globals['_DELETECATALOGREQUEST'].fields_by_name['catalog_id']._loaded_options = None
   _globals['_DELETECATALOGREQUEST'].fields_by_name['catalog_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _globals['_CATALOGSERVICE'].methods_by_name['Get']._loaded_options = None
+  _globals['_CATALOGSERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\002?\022=/managed-trino/v1/clusters/{cluster_id}/catalogs/{catalog_id}'
+  _globals['_CATALOGSERVICE'].methods_by_name['List']._loaded_options = None
+  _globals['_CATALOGSERVICE'].methods_by_name['List']._serialized_options = b'\202\323\344\223\0022\0220/managed-trino/v1/clusters/{cluster_id}/catalogs'
   _globals['_CATALOGSERVICE'].methods_by_name['Create']._loaded_options = None
-  _globals['_CATALOGSERVICE'].methods_by_name['Create']._serialized_options = b'\262\322* \n\025CreateCatalogMetadata\022\007Catalog'
+  _globals['_CATALOGSERVICE'].methods_by_name['Create']._serialized_options = b'\262\322* \n\025CreateCatalogMetadata\022\007Catalog\202\323\344\223\0025\"0/managed-trino/v1/clusters/{cluster_id}/catalogs:\001*'
   _globals['_CATALOGSERVICE'].methods_by_name['Update']._loaded_options = None
-  _globals['_CATALOGSERVICE'].methods_by_name['Update']._serialized_options = b'\262\322* \n\025UpdateCatalogMetadata\022\007Catalog'
+  _globals['_CATALOGSERVICE'].methods_by_name['Update']._serialized_options = b'\262\322* \n\025UpdateCatalogMetadata\022\007Catalog\202\323\344\223\002B2=/managed-trino/v1/clusters/{cluster_id}/catalogs/{catalog_id}:\001*'
   _globals['_CATALOGSERVICE'].methods_by_name['Delete']._loaded_options = None
-  _globals['_CATALOGSERVICE'].methods_by_name['Delete']._serialized_options = b'\262\322*.\n\025DeleteCatalogMetadata\022\025google.protobuf.Empty'
-  _globals['_GETCATALOGREQUEST']._serialized_start=246
-  _globals['_GETCATALOGREQUEST']._serialized_end=333
-  _globals['_LISTCATALOGSREQUEST']._serialized_start=336
-  _globals['_LISTCATALOGSREQUEST']._serialized_end=481
-  _globals['_LISTCATALOGSRESPONSE']._serialized_start=483
-  _globals['_LISTCATALOGSRESPONSE']._serialized_end=580
-  _globals['_CREATECATALOGREQUEST']._serialized_start=582
-  _globals['_CREATECATALOGREQUEST']._serialized_end=697
-  _globals['_CREATECATALOGMETADATA']._serialized_start=699
-  _globals['_CREATECATALOGMETADATA']._serialized_end=762
-  _globals['_UPDATECATALOGREQUEST']._serialized_start=765
-  _globals['_UPDATECATALOGREQUEST']._serialized_end=975
-  _globals['_UPDATECATALOGMETADATA']._serialized_start=977
-  _globals['_UPDATECATALOGMETADATA']._serialized_end=1040
-  _globals['_DELETECATALOGREQUEST']._serialized_start=1042
-  _globals['_DELETECATALOGREQUEST']._serialized_end=1132
-  _globals['_DELETECATALOGMETADATA']._serialized_start=1134
-  _globals['_DELETECATALOGMETADATA']._serialized_end=1197
-  _globals['_CATALOGSERVICE']._serialized_start=1200
-  _globals['_CATALOGSERVICE']._serialized_end=1797
+  _globals['_CATALOGSERVICE'].methods_by_name['Delete']._serialized_options = b'\262\322*.\n\025DeleteCatalogMetadata\022\025google.protobuf.Empty\202\323\344\223\002?*=/managed-trino/v1/clusters/{cluster_id}/catalogs/{catalog_id}'
+  _globals['_GETCATALOGREQUEST']._serialized_start=276
+  _globals['_GETCATALOGREQUEST']._serialized_end=363
+  _globals['_LISTCATALOGSREQUEST']._serialized_start=366
+  _globals['_LISTCATALOGSREQUEST']._serialized_end=511
+  _globals['_LISTCATALOGSRESPONSE']._serialized_start=513
+  _globals['_LISTCATALOGSRESPONSE']._serialized_end=610
+  _globals['_CREATECATALOGREQUEST']._serialized_start=612
+  _globals['_CREATECATALOGREQUEST']._serialized_end=727
+  _globals['_CREATECATALOGMETADATA']._serialized_start=729
+  _globals['_CREATECATALOGMETADATA']._serialized_end=792
+  _globals['_UPDATECATALOGREQUEST']._serialized_start=795
+  _globals['_UPDATECATALOGREQUEST']._serialized_end=1005
+  _globals['_UPDATECATALOGMETADATA']._serialized_start=1007
+  _globals['_UPDATECATALOGMETADATA']._serialized_end=1070
+  _globals['_DELETECATALOGREQUEST']._serialized_start=1072
+  _globals['_DELETECATALOGREQUEST']._serialized_end=1162
+  _globals['_DELETECATALOGMETADATA']._serialized_start=1164
+  _globals['_DELETECATALOGMETADATA']._serialized_end=1227
+  _globals['_CATALOGSERVICE']._serialized_start=1230
+  _globals['_CATALOGSERVICE']._serialized_end=2156
 # @@protoc_insertion_point(module_scope)
