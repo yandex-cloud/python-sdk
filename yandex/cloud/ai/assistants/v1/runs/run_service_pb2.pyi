@@ -54,6 +54,7 @@ class CreateRunRequest(google.protobuf.message.Message):
     CUSTOM_COMPLETION_OPTIONS_FIELD_NUMBER: builtins.int
     STREAM_FIELD_NUMBER: builtins.int
     TOOLS_FIELD_NUMBER: builtins.int
+    CUSTOM_RESPONSE_FORMAT_FIELD_NUMBER: builtins.int
     assistant_id: builtins.str
     """ID of the assistant for which the run is being created"""
     thread_id: builtins.str
@@ -84,6 +85,10 @@ class CreateRunRequest(google.protobuf.message.Message):
     def tools(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.ai.assistants.v1.common_pb2.Tool]:
         """List of tools that are available for the assistant to use in this run."""
 
+    @property
+    def custom_response_format(self) -> yandex.cloud.ai.assistants.v1.common_pb2.ResponseFormat:
+        """Specifies the format of the model's response."""
+
     def __init__(
         self,
         *,
@@ -95,9 +100,10 @@ class CreateRunRequest(google.protobuf.message.Message):
         custom_completion_options: yandex.cloud.ai.assistants.v1.common_pb2.CompletionOptions | None = ...,
         stream: builtins.bool = ...,
         tools: collections.abc.Iterable[yandex.cloud.ai.assistants.v1.common_pb2.Tool] | None = ...,
+        custom_response_format: yandex.cloud.ai.assistants.v1.common_pb2.ResponseFormat | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["custom_completion_options", b"custom_completion_options", "custom_prompt_truncation_options", b"custom_prompt_truncation_options"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["additional_messages", b"additional_messages", "assistant_id", b"assistant_id", "custom_completion_options", b"custom_completion_options", "custom_prompt_truncation_options", b"custom_prompt_truncation_options", "labels", b"labels", "stream", b"stream", "thread_id", b"thread_id", "tools", b"tools"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["custom_completion_options", b"custom_completion_options", "custom_prompt_truncation_options", b"custom_prompt_truncation_options", "custom_response_format", b"custom_response_format"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["additional_messages", b"additional_messages", "assistant_id", b"assistant_id", "custom_completion_options", b"custom_completion_options", "custom_prompt_truncation_options", b"custom_prompt_truncation_options", "custom_response_format", b"custom_response_format", "labels", b"labels", "stream", b"stream", "thread_id", b"thread_id", "tools", b"tools"]) -> None: ...
 
 global___CreateRunRequest = CreateRunRequest
 

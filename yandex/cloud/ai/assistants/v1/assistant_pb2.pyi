@@ -53,6 +53,7 @@ class Assistant(google.protobuf.message.Message):
     PROMPT_TRUNCATION_OPTIONS_FIELD_NUMBER: builtins.int
     COMPLETION_OPTIONS_FIELD_NUMBER: builtins.int
     TOOLS_FIELD_NUMBER: builtins.int
+    RESPONSE_FORMAT_FIELD_NUMBER: builtins.int
     id: builtins.str
     """Unique identifier of the assistant."""
     folder_id: builtins.str
@@ -105,6 +106,10 @@ class Assistant(google.protobuf.message.Message):
         One example is the SearchIndexTool, which is used for Retrieval-Augmented Generation (RAG).
         """
 
+    @property
+    def response_format(self) -> yandex.cloud.ai.assistants.v1.common_pb2.ResponseFormat:
+        """Specifies the format of the model's response."""
+
     def __init__(
         self,
         *,
@@ -124,8 +129,9 @@ class Assistant(google.protobuf.message.Message):
         prompt_truncation_options: yandex.cloud.ai.assistants.v1.common_pb2.PromptTruncationOptions | None = ...,
         completion_options: yandex.cloud.ai.assistants.v1.common_pb2.CompletionOptions | None = ...,
         tools: collections.abc.Iterable[yandex.cloud.ai.assistants.v1.common_pb2.Tool] | None = ...,
+        response_format: yandex.cloud.ai.assistants.v1.common_pb2.ResponseFormat | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["completion_options", b"completion_options", "created_at", b"created_at", "expiration_config", b"expiration_config", "expires_at", b"expires_at", "prompt_truncation_options", b"prompt_truncation_options", "updated_at", b"updated_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["completion_options", b"completion_options", "created_at", b"created_at", "created_by", b"created_by", "description", b"description", "expiration_config", b"expiration_config", "expires_at", b"expires_at", "folder_id", b"folder_id", "id", b"id", "instruction", b"instruction", "labels", b"labels", "model_uri", b"model_uri", "name", b"name", "prompt_truncation_options", b"prompt_truncation_options", "tools", b"tools", "updated_at", b"updated_at", "updated_by", b"updated_by"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["completion_options", b"completion_options", "created_at", b"created_at", "expiration_config", b"expiration_config", "expires_at", b"expires_at", "prompt_truncation_options", b"prompt_truncation_options", "response_format", b"response_format", "updated_at", b"updated_at"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["completion_options", b"completion_options", "created_at", b"created_at", "created_by", b"created_by", "description", b"description", "expiration_config", b"expiration_config", "expires_at", b"expires_at", "folder_id", b"folder_id", "id", b"id", "instruction", b"instruction", "labels", b"labels", "model_uri", b"model_uri", "name", b"name", "prompt_truncation_options", b"prompt_truncation_options", "response_format", b"response_format", "tools", b"tools", "updated_at", b"updated_at", "updated_by", b"updated_by"]) -> None: ...
 
 global___Assistant = Assistant

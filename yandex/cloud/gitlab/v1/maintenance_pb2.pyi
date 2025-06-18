@@ -20,12 +20,19 @@ class MaintenanceOperation(google.protobuf.message.Message):
     LATEST_MAINTENANCE_TIME_FIELD_NUMBER: builtins.int
     NEXT_MAINTENANCE_WINDOW_TIME_FIELD_NUMBER: builtins.int
     info: builtins.str
+    """The description of the operation."""
     @property
-    def delayed_until(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
+    def delayed_until(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Delay time for the maintenance operation."""
+
     @property
-    def latest_maintenance_time(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
+    def latest_maintenance_time(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Time of the last maintenance window."""
+
     @property
-    def next_maintenance_window_time(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
+    def next_maintenance_window_time(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Time of the next maintenance window."""
+
     def __init__(
         self,
         *,

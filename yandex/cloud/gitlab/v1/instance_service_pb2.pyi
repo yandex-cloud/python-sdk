@@ -15,10 +15,13 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class GetInstanceRequest(google.protobuf.message.Message):
+    """Request message for InstanceService.Get"""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     INSTANCE_ID_FIELD_NUMBER: builtins.int
     instance_id: builtins.str
+    """ID of the GitLab instance to return"""
     def __init__(
         self,
         *,
@@ -30,14 +33,24 @@ global___GetInstanceRequest = GetInstanceRequest
 
 @typing.final
 class ListInstancesRequest(google.protobuf.message.Message):
+    """Request message for InstanceService.List."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     FOLDER_ID_FIELD_NUMBER: builtins.int
     PAGE_SIZE_FIELD_NUMBER: builtins.int
     PAGE_TOKEN_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
+    """ID of the folder to list instances in."""
     page_size: builtins.int
+    """The maximum number of results per page to return. If the number of available
+    results is larger than [page_size], the service returns a [ListInstancesRequest.next_page_token]
+    that can be used to get the next page of results in subsequent list requests.
+    """
     page_token: builtins.str
+    """Page token. To get the next page of results, set [page_token] to the [ListInstancesRequest.next_page_token]
+    returned by the previous list request.
+    """
     def __init__(
         self,
         *,
@@ -51,13 +64,22 @@ global___ListInstancesRequest = ListInstancesRequest
 
 @typing.final
 class ListInstancesResponse(google.protobuf.message.Message):
+    """Response message for InstanceService.List."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     INSTANCES_FIELD_NUMBER: builtins.int
     NEXT_PAGE_TOKEN_FIELD_NUMBER: builtins.int
     next_page_token: builtins.str
+    """This token allows you to get the next page of results for list requests. If the number of results
+    is larger than [ListInstancesRequest.page_size], use the [next_page_token] as the value
+    for the [ListInstancesRequest.page_token] parameter in the next list request. Each subsequent
+    list request will have its own [next_page_token] to continue paging through the results.
+    """
     @property
-    def instances(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.gitlab.v1.instance_pb2.Instance]: ...
+    def instances(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.gitlab.v1.instance_pb2.Instance]:
+        """List of GitLab instances."""
+
     def __init__(
         self,
         *,
@@ -70,6 +92,8 @@ global___ListInstancesResponse = ListInstancesResponse
 
 @typing.final
 class CreateInstanceRequest(google.protobuf.message.Message):
+    """Request message for InstanceService.Create."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     @typing.final
@@ -103,20 +127,35 @@ class CreateInstanceRequest(google.protobuf.message.Message):
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     APPROVAL_RULES_ID_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
+    """ID of the folder to create instance in."""
     name: builtins.str
+    """Name of the instance (must be unique within the folder)."""
     description: builtins.str
+    """Description of the instance."""
     resource_preset_id: builtins.str
+    """ID of the resource preset for computational resources."""
     disk_size: builtins.int
+    """Disk size in bytes."""
     admin_login: builtins.str
+    """Admin user login."""
     admin_email: builtins.str
+    """Admin user email."""
     domain_prefix: builtins.str
+    """Domain prefix for the GitLab instance."""
     subnet_id: builtins.str
+    """ID of the subnet where instance will be created."""
     backup_retain_period_days: builtins.int
+    """Number of days to retain backups."""
     maintenance_delete_untagged: builtins.bool
+    """Whether to delete untagged resources during maintenance."""
     deletion_protection: builtins.bool
+    """Whether deletion protection is enabled."""
     approval_rules_id: builtins.str
+    """ID of approval rules for the instance."""
     @property
-    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Custom labels for the instance as `` key:value `` pairs. For example, "env": "prod"."""
+
     def __init__(
         self,
         *,
@@ -141,10 +180,13 @@ global___CreateInstanceRequest = CreateInstanceRequest
 
 @typing.final
 class CreateInstanceMetadata(google.protobuf.message.Message):
+    """Metadata message for InstanceService.Create."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     INSTANCE_ID_FIELD_NUMBER: builtins.int
     instance_id: builtins.str
+    """ID of the GitLab instance being created."""
     def __init__(
         self,
         *,
@@ -156,10 +198,13 @@ global___CreateInstanceMetadata = CreateInstanceMetadata
 
 @typing.final
 class DeleteInstanceRequest(google.protobuf.message.Message):
+    """Request message for InstanceService.Delete."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     INSTANCE_ID_FIELD_NUMBER: builtins.int
     instance_id: builtins.str
+    """ID of the GitLab instance to delete."""
     def __init__(
         self,
         *,
@@ -171,10 +216,13 @@ global___DeleteInstanceRequest = DeleteInstanceRequest
 
 @typing.final
 class DeleteInstanceMetadata(google.protobuf.message.Message):
+    """Metadata message for InstanceService.Delete."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     INSTANCE_ID_FIELD_NUMBER: builtins.int
     instance_id: builtins.str
+    """ID of the GitLab instance being deleted."""
     def __init__(
         self,
         *,
@@ -186,10 +234,13 @@ global___DeleteInstanceMetadata = DeleteInstanceMetadata
 
 @typing.final
 class StartInstanceRequest(google.protobuf.message.Message):
+    """Request message for InstanceService.Start."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     INSTANCE_ID_FIELD_NUMBER: builtins.int
     instance_id: builtins.str
+    """ID of the GitLab instance to start."""
     def __init__(
         self,
         *,
@@ -201,10 +252,13 @@ global___StartInstanceRequest = StartInstanceRequest
 
 @typing.final
 class StartInstanceMetadata(google.protobuf.message.Message):
+    """Metadata message for InstanceService.Start."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     INSTANCE_ID_FIELD_NUMBER: builtins.int
     instance_id: builtins.str
+    """ID of the GitLab instance being started."""
     def __init__(
         self,
         *,
@@ -216,6 +270,8 @@ global___StartInstanceMetadata = StartInstanceMetadata
 
 @typing.final
 class StopInstanceRequest(google.protobuf.message.Message):
+    """Request message for InstanceService.Stop."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     INSTANCE_ID_FIELD_NUMBER: builtins.int
@@ -231,10 +287,13 @@ global___StopInstanceRequest = StopInstanceRequest
 
 @typing.final
 class StopInstanceMetadata(google.protobuf.message.Message):
+    """Metadata message for InstanceService.Stop."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     INSTANCE_ID_FIELD_NUMBER: builtins.int
     instance_id: builtins.str
+    """ID of the GitLab instance being stoped."""
     def __init__(
         self,
         *,

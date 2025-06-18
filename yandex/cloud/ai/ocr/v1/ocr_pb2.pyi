@@ -40,6 +40,39 @@ ANGLE_180: Angle.ValueType  # 3
 ANGLE_270: Angle.ValueType  # 4
 global___Angle = Angle
 
+class _LayoutType:
+    ValueType = typing.NewType("ValueType", builtins.int)
+    V: typing_extensions.TypeAlias = ValueType
+
+class _LayoutTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[_LayoutType.ValueType], builtins.type):
+    DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+    LAYOUT_TYPE_UNSPECIFIED: _LayoutType.ValueType  # 0
+    LAYOUT_TYPE_UNKNOWN: _LayoutType.ValueType  # 1
+    LAYOUT_TYPE_TEXT: _LayoutType.ValueType  # 2
+    LAYOUT_TYPE_HEADER: _LayoutType.ValueType  # 3
+    LAYOUT_TYPE_SECTION_HEADER: _LayoutType.ValueType  # 4
+    LAYOUT_TYPE_FOOTER: _LayoutType.ValueType  # 5
+    LAYOUT_TYPE_FOOTNOTE: _LayoutType.ValueType  # 6
+    LAYOUT_TYPE_PICTURE: _LayoutType.ValueType  # 7
+    LAYOUT_TYPE_CAPTION: _LayoutType.ValueType  # 8
+    LAYOUT_TYPE_TITLE: _LayoutType.ValueType  # 9
+    LAYOUT_TYPE_LIST: _LayoutType.ValueType  # 10
+
+class LayoutType(_LayoutType, metaclass=_LayoutTypeEnumTypeWrapper): ...
+
+LAYOUT_TYPE_UNSPECIFIED: LayoutType.ValueType  # 0
+LAYOUT_TYPE_UNKNOWN: LayoutType.ValueType  # 1
+LAYOUT_TYPE_TEXT: LayoutType.ValueType  # 2
+LAYOUT_TYPE_HEADER: LayoutType.ValueType  # 3
+LAYOUT_TYPE_SECTION_HEADER: LayoutType.ValueType  # 4
+LAYOUT_TYPE_FOOTER: LayoutType.ValueType  # 5
+LAYOUT_TYPE_FOOTNOTE: LayoutType.ValueType  # 6
+LAYOUT_TYPE_PICTURE: LayoutType.ValueType  # 7
+LAYOUT_TYPE_CAPTION: LayoutType.ValueType  # 8
+LAYOUT_TYPE_TITLE: LayoutType.ValueType  # 9
+LAYOUT_TYPE_LIST: LayoutType.ValueType  # 10
+global___LayoutType = LayoutType
+
 @typing.final
 class Polygon(google.protobuf.message.Message):
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
@@ -89,6 +122,8 @@ class TextAnnotation(google.protobuf.message.Message):
     TABLES_FIELD_NUMBER: builtins.int
     FULL_TEXT_FIELD_NUMBER: builtins.int
     ROTATE_FIELD_NUMBER: builtins.int
+    MARKDOWN_FIELD_NUMBER: builtins.int
+    PICTURES_FIELD_NUMBER: builtins.int
     width: builtins.int
     """Page width in pixels."""
     height: builtins.int
@@ -97,6 +132,8 @@ class TextAnnotation(google.protobuf.message.Message):
     """Full text recognized from image."""
     rotate: global___Angle.ValueType
     """Angle of image rotation."""
+    markdown: builtins.str
+    """Full markdown (without pictures inside) from image. Available only in markdown and math-markdown models."""
     @property
     def blocks(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Block]:
         """Recognized text blocks in this page."""
@@ -107,6 +144,10 @@ class TextAnnotation(google.protobuf.message.Message):
 
     @property
     def tables(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Table]: ...
+    @property
+    def pictures(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___Picture]:
+        """List of pictures locations from image."""
+
     def __init__(
         self,
         *,
@@ -117,8 +158,10 @@ class TextAnnotation(google.protobuf.message.Message):
         tables: collections.abc.Iterable[global___Table] | None = ...,
         full_text: builtins.str = ...,
         rotate: global___Angle.ValueType = ...,
+        markdown: builtins.str = ...,
+        pictures: collections.abc.Iterable[global___Picture] | None = ...,
     ) -> None: ...
-    def ClearField(self, field_name: typing.Literal["blocks", b"blocks", "entities", b"entities", "full_text", b"full_text", "height", b"height", "rotate", b"rotate", "tables", b"tables", "width", b"width"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["blocks", b"blocks", "entities", b"entities", "full_text", b"full_text", "height", b"height", "markdown", b"markdown", "pictures", b"pictures", "rotate", b"rotate", "tables", b"tables", "width", b"width"]) -> None: ...
 
 global___TextAnnotation = TextAnnotation
 
@@ -164,6 +207,9 @@ class Block(google.protobuf.message.Message):
     LINES_FIELD_NUMBER: builtins.int
     LANGUAGES_FIELD_NUMBER: builtins.int
     TEXT_SEGMENTS_FIELD_NUMBER: builtins.int
+    LAYOUT_TYPE_FIELD_NUMBER: builtins.int
+    layout_type: global___LayoutType.ValueType
+    """Block layout type."""
     @property
     def bounding_box(self) -> global___Polygon:
         """Area on the page where the text block is located."""
@@ -187,9 +233,10 @@ class Block(google.protobuf.message.Message):
         lines: collections.abc.Iterable[global___Line] | None = ...,
         languages: collections.abc.Iterable[global___Block.DetectedLanguage] | None = ...,
         text_segments: collections.abc.Iterable[global___TextSegments] | None = ...,
+        layout_type: global___LayoutType.ValueType = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["bounding_box", b"bounding_box"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["bounding_box", b"bounding_box", "languages", b"languages", "lines", b"lines", "text_segments", b"text_segments"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["bounding_box", b"bounding_box", "languages", b"languages", "layout_type", b"layout_type", "lines", b"lines", "text_segments", b"text_segments"]) -> None: ...
 
 global___Block = Block
 
@@ -362,3 +409,26 @@ class TableCell(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["bounding_box", b"bounding_box", "column_index", b"column_index", "column_span", b"column_span", "row_index", b"row_index", "row_span", b"row_span", "text", b"text", "text_segments", b"text_segments"]) -> None: ...
 
 global___TableCell = TableCell
+
+@typing.final
+class Picture(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    BOUNDING_BOX_FIELD_NUMBER: builtins.int
+    SCORE_FIELD_NUMBER: builtins.int
+    score: builtins.float
+    """Confidence score of picture location."""
+    @property
+    def bounding_box(self) -> global___Polygon:
+        """Area on the page where the picture is located."""
+
+    def __init__(
+        self,
+        *,
+        bounding_box: global___Polygon | None = ...,
+        score: builtins.float = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["bounding_box", b"bounding_box"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["bounding_box", b"bounding_box", "score", b"score"]) -> None: ...
+
+global___Picture = Picture

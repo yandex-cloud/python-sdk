@@ -56,6 +56,7 @@ class Run(google.protobuf.message.Message):
     CUSTOM_PROMPT_TRUNCATION_OPTIONS_FIELD_NUMBER: builtins.int
     CUSTOM_COMPLETION_OPTIONS_FIELD_NUMBER: builtins.int
     TOOLS_FIELD_NUMBER: builtins.int
+    CUSTOM_RESPONSE_FORMAT_FIELD_NUMBER: builtins.int
     id: builtins.str
     """Unique identifier of the run."""
     assistant_id: builtins.str
@@ -96,6 +97,10 @@ class Run(google.protobuf.message.Message):
     def tools(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.ai.assistants.v1.common_pb2.Tool]:
         """List of tools that are available for the assistant to use in this run."""
 
+    @property
+    def custom_response_format(self) -> yandex.cloud.ai.assistants.v1.common_pb2.ResponseFormat:
+        """Specifies the format of the model's response."""
+
     def __init__(
         self,
         *,
@@ -110,9 +115,10 @@ class Run(google.protobuf.message.Message):
         custom_prompt_truncation_options: yandex.cloud.ai.assistants.v1.common_pb2.PromptTruncationOptions | None = ...,
         custom_completion_options: yandex.cloud.ai.assistants.v1.common_pb2.CompletionOptions | None = ...,
         tools: collections.abc.Iterable[yandex.cloud.ai.assistants.v1.common_pb2.Tool] | None = ...,
+        custom_response_format: yandex.cloud.ai.assistants.v1.common_pb2.ResponseFormat | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "custom_completion_options", b"custom_completion_options", "custom_prompt_truncation_options", b"custom_prompt_truncation_options", "state", b"state", "usage", b"usage"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["assistant_id", b"assistant_id", "created_at", b"created_at", "created_by", b"created_by", "custom_completion_options", b"custom_completion_options", "custom_prompt_truncation_options", b"custom_prompt_truncation_options", "id", b"id", "labels", b"labels", "state", b"state", "thread_id", b"thread_id", "tools", b"tools", "usage", b"usage"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["created_at", b"created_at", "custom_completion_options", b"custom_completion_options", "custom_prompt_truncation_options", b"custom_prompt_truncation_options", "custom_response_format", b"custom_response_format", "state", b"state", "usage", b"usage"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["assistant_id", b"assistant_id", "created_at", b"created_at", "created_by", b"created_by", "custom_completion_options", b"custom_completion_options", "custom_prompt_truncation_options", b"custom_prompt_truncation_options", "custom_response_format", b"custom_response_format", "id", b"id", "labels", b"labels", "state", b"state", "thread_id", b"thread_id", "tools", b"tools", "usage", b"usage"]) -> None: ...
 
 global___Run = Run
 

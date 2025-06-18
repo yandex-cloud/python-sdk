@@ -20,109 +20,133 @@ class _ServicerContext(grpc.ServicerContext, grpc.aio.ServicerContext):  # type:
     ...
 
 class InstanceServiceStub:
+    """InstanceService provides methods for managing GitLab instances."""
+
     def __init__(self, channel: typing.Union[grpc.Channel, grpc.aio.Channel]) -> None: ...
     Get: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.gitlab.v1.instance_service_pb2.GetInstanceRequest,
         yandex.cloud.gitlab.v1.instance_pb2.Instance,
     ]
+    """Returns the specified GitLab instance."""
 
     List: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.gitlab.v1.instance_service_pb2.ListInstancesRequest,
         yandex.cloud.gitlab.v1.instance_service_pb2.ListInstancesResponse,
     ]
+    """Retrieves the list of GitLab instances in the specified folder."""
 
     Create: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.gitlab.v1.instance_service_pb2.CreateInstanceRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Creates a new GitLab instance in the specified folder."""
 
     Delete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.gitlab.v1.instance_service_pb2.DeleteInstanceRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Deletes the specified GitLab instance."""
 
     Start: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.gitlab.v1.instance_service_pb2.StartInstanceRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Starts the specified GitLab instance."""
 
     Stop: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.gitlab.v1.instance_service_pb2.StopInstanceRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Stops the specified GitLab instance."""
 
 class InstanceServiceAsyncStub:
+    """InstanceService provides methods for managing GitLab instances."""
+
     Get: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.gitlab.v1.instance_service_pb2.GetInstanceRequest,
         yandex.cloud.gitlab.v1.instance_pb2.Instance,
     ]
+    """Returns the specified GitLab instance."""
 
     List: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.gitlab.v1.instance_service_pb2.ListInstancesRequest,
         yandex.cloud.gitlab.v1.instance_service_pb2.ListInstancesResponse,
     ]
+    """Retrieves the list of GitLab instances in the specified folder."""
 
     Create: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.gitlab.v1.instance_service_pb2.CreateInstanceRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Creates a new GitLab instance in the specified folder."""
 
     Delete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.gitlab.v1.instance_service_pb2.DeleteInstanceRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Deletes the specified GitLab instance."""
 
     Start: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.gitlab.v1.instance_service_pb2.StartInstanceRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Starts the specified GitLab instance."""
 
     Stop: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.gitlab.v1.instance_service_pb2.StopInstanceRequest,
         yandex.cloud.operation.operation_pb2.Operation,
     ]
+    """Stops the specified GitLab instance."""
 
 class InstanceServiceServicer(metaclass=abc.ABCMeta):
+    """InstanceService provides methods for managing GitLab instances."""
+
     @abc.abstractmethod
     def Get(
         self,
         request: yandex.cloud.gitlab.v1.instance_service_pb2.GetInstanceRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.gitlab.v1.instance_pb2.Instance, collections.abc.Awaitable[yandex.cloud.gitlab.v1.instance_pb2.Instance]]: ...
+    ) -> typing.Union[yandex.cloud.gitlab.v1.instance_pb2.Instance, collections.abc.Awaitable[yandex.cloud.gitlab.v1.instance_pb2.Instance]]:
+        """Returns the specified GitLab instance."""
 
     @abc.abstractmethod
     def List(
         self,
         request: yandex.cloud.gitlab.v1.instance_service_pb2.ListInstancesRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.gitlab.v1.instance_service_pb2.ListInstancesResponse, collections.abc.Awaitable[yandex.cloud.gitlab.v1.instance_service_pb2.ListInstancesResponse]]: ...
+    ) -> typing.Union[yandex.cloud.gitlab.v1.instance_service_pb2.ListInstancesResponse, collections.abc.Awaitable[yandex.cloud.gitlab.v1.instance_service_pb2.ListInstancesResponse]]:
+        """Retrieves the list of GitLab instances in the specified folder."""
 
     @abc.abstractmethod
     def Create(
         self,
         request: yandex.cloud.gitlab.v1.instance_service_pb2.CreateInstanceRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Creates a new GitLab instance in the specified folder."""
 
     @abc.abstractmethod
     def Delete(
         self,
         request: yandex.cloud.gitlab.v1.instance_service_pb2.DeleteInstanceRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Deletes the specified GitLab instance."""
 
     @abc.abstractmethod
     def Start(
         self,
         request: yandex.cloud.gitlab.v1.instance_service_pb2.StartInstanceRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Starts the specified GitLab instance."""
 
     @abc.abstractmethod
     def Stop(
         self,
         request: yandex.cloud.gitlab.v1.instance_service_pb2.StopInstanceRequest,
         context: _ServicerContext,
-    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Stops the specified GitLab instance."""
 
 def add_InstanceServiceServicer_to_server(servicer: InstanceServiceServicer, server: typing.Union[grpc.Server, grpc.aio.Server]) -> None: ...

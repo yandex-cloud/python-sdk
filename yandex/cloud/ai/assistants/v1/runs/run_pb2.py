@@ -28,7 +28,7 @@ from yandex.cloud.ai.assistants.v1.threads import message_pb2 as yandex_dot_clou
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,yandex/cloud/ai/assistants/v1/runs/run.proto\x12\"yandex.cloud.ai.assistants.v1.runs\x1a#yandex/cloud/ai/common/common.proto\x1a*yandex/cloud/ai/assistants/v1/common.proto\x1a\x33yandex/cloud/ai/assistants/v1/threads/message.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xdb\x04\n\x03Run\x12\n\n\x02id\x18\x01 \x01(\t\x12\x14\n\x0c\x61ssistant_id\x18\x02 \x01(\t\x12\x11\n\tthread_id\x18\x03 \x01(\t\x12\x12\n\ncreated_by\x18\x04 \x01(\t\x12.\n\ncreated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x43\n\x06labels\x18\x06 \x03(\x0b\x32\x33.yandex.cloud.ai.assistants.v1.runs.Run.LabelsEntry\x12;\n\x05state\x18\x07 \x01(\x0b\x32,.yandex.cloud.ai.assistants.v1.runs.RunState\x12?\n\x05usage\x18\x08 \x01(\x0b\x32\x30.yandex.cloud.ai.assistants.v1.runs.ContentUsage\x12`\n custom_prompt_truncation_options\x18\t \x01(\x0b\x32\x36.yandex.cloud.ai.assistants.v1.PromptTruncationOptions\x12S\n\x19\x63ustom_completion_options\x18\n \x01(\x0b\x32\x30.yandex.cloud.ai.assistants.v1.CompletionOptions\x12\x32\n\x05tools\x18\x0b \x03(\x0b\x32#.yandex.cloud.ai.assistants.v1.Tool\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x95\x03\n\x08RunState\x12\x46\n\x06status\x18\x01 \x01(\x0e\x32\x36.yandex.cloud.ai.assistants.v1.runs.RunState.RunStatus\x12.\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1d.yandex.cloud.ai.common.ErrorH\x00\x12K\n\x11\x63ompleted_message\x18\x03 \x01(\x0b\x32..yandex.cloud.ai.assistants.v1.threads.MessageH\x00\x12\x45\n\x0etool_call_list\x18\x04 \x01(\x0b\x32+.yandex.cloud.ai.assistants.v1.ToolCallListH\x00\"p\n\tRunStatus\x12\x1a\n\x16RUN_STATUS_UNSPECIFIED\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\x0f\n\x0bIN_PROGRESS\x10\x02\x12\n\n\x06\x46\x41ILED\x10\x03\x12\r\n\tCOMPLETED\x10\x04\x12\x0e\n\nTOOL_CALLS\x10\x05\x42\x0b\n\tStateData\"V\n\x0c\x43ontentUsage\x12\x15\n\rprompt_tokens\x18\x01 \x01(\x03\x12\x19\n\x11\x63ompletion_tokens\x18\x02 \x01(\x03\x12\x14\n\x0ctotal_tokens\x18\x03 \x01(\x03\x42u\n&yandex.cloud.api.ai.assistants.v1.runsZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/assistants/v1/runs;runsb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n,yandex/cloud/ai/assistants/v1/runs/run.proto\x12\"yandex.cloud.ai.assistants.v1.runs\x1a#yandex/cloud/ai/common/common.proto\x1a*yandex/cloud/ai/assistants/v1/common.proto\x1a\x33yandex/cloud/ai/assistants/v1/threads/message.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xaa\x05\n\x03Run\x12\n\n\x02id\x18\x01 \x01(\t\x12\x14\n\x0c\x61ssistant_id\x18\x02 \x01(\t\x12\x11\n\tthread_id\x18\x03 \x01(\t\x12\x12\n\ncreated_by\x18\x04 \x01(\t\x12.\n\ncreated_at\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x43\n\x06labels\x18\x06 \x03(\x0b\x32\x33.yandex.cloud.ai.assistants.v1.runs.Run.LabelsEntry\x12;\n\x05state\x18\x07 \x01(\x0b\x32,.yandex.cloud.ai.assistants.v1.runs.RunState\x12?\n\x05usage\x18\x08 \x01(\x0b\x32\x30.yandex.cloud.ai.assistants.v1.runs.ContentUsage\x12`\n custom_prompt_truncation_options\x18\t \x01(\x0b\x32\x36.yandex.cloud.ai.assistants.v1.PromptTruncationOptions\x12S\n\x19\x63ustom_completion_options\x18\n \x01(\x0b\x32\x30.yandex.cloud.ai.assistants.v1.CompletionOptions\x12\x32\n\x05tools\x18\x0b \x03(\x0b\x32#.yandex.cloud.ai.assistants.v1.Tool\x12M\n\x16\x63ustom_response_format\x18\x0c \x01(\x0b\x32-.yandex.cloud.ai.assistants.v1.ResponseFormat\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x95\x03\n\x08RunState\x12\x46\n\x06status\x18\x01 \x01(\x0e\x32\x36.yandex.cloud.ai.assistants.v1.runs.RunState.RunStatus\x12.\n\x05\x65rror\x18\x02 \x01(\x0b\x32\x1d.yandex.cloud.ai.common.ErrorH\x00\x12K\n\x11\x63ompleted_message\x18\x03 \x01(\x0b\x32..yandex.cloud.ai.assistants.v1.threads.MessageH\x00\x12\x45\n\x0etool_call_list\x18\x04 \x01(\x0b\x32+.yandex.cloud.ai.assistants.v1.ToolCallListH\x00\"p\n\tRunStatus\x12\x1a\n\x16RUN_STATUS_UNSPECIFIED\x10\x00\x12\x0b\n\x07PENDING\x10\x01\x12\x0f\n\x0bIN_PROGRESS\x10\x02\x12\n\n\x06\x46\x41ILED\x10\x03\x12\r\n\tCOMPLETED\x10\x04\x12\x0e\n\nTOOL_CALLS\x10\x05\x42\x0b\n\tStateData\"V\n\x0c\x43ontentUsage\x12\x15\n\rprompt_tokens\x18\x01 \x01(\x03\x12\x19\n\x11\x63ompletion_tokens\x18\x02 \x01(\x03\x12\x14\n\x0ctotal_tokens\x18\x03 \x01(\x03\x42u\n&yandex.cloud.api.ai.assistants.v1.runsZKgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/assistants/v1/runs;runsb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -39,13 +39,13 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_RUN_LABELSENTRY']._loaded_options = None
   _globals['_RUN_LABELSENTRY']._serialized_options = b'8\001'
   _globals['_RUN']._serialized_start=252
-  _globals['_RUN']._serialized_end=855
-  _globals['_RUN_LABELSENTRY']._serialized_start=810
-  _globals['_RUN_LABELSENTRY']._serialized_end=855
-  _globals['_RUNSTATE']._serialized_start=858
-  _globals['_RUNSTATE']._serialized_end=1263
-  _globals['_RUNSTATE_RUNSTATUS']._serialized_start=1138
-  _globals['_RUNSTATE_RUNSTATUS']._serialized_end=1250
-  _globals['_CONTENTUSAGE']._serialized_start=1265
-  _globals['_CONTENTUSAGE']._serialized_end=1351
+  _globals['_RUN']._serialized_end=934
+  _globals['_RUN_LABELSENTRY']._serialized_start=889
+  _globals['_RUN_LABELSENTRY']._serialized_end=934
+  _globals['_RUNSTATE']._serialized_start=937
+  _globals['_RUNSTATE']._serialized_end=1342
+  _globals['_RUNSTATE_RUNSTATUS']._serialized_start=1217
+  _globals['_RUNSTATE_RUNSTATUS']._serialized_end=1329
+  _globals['_CONTENTUSAGE']._serialized_start=1344
+  _globals['_CONTENTUSAGE']._serialized_end=1430
 # @@protoc_insertion_point(module_scope)

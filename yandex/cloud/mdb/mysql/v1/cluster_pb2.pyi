@@ -162,6 +162,7 @@ class Cluster(google.protobuf.message.Message):
     SECURITY_GROUP_IDS_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     HOST_GROUP_IDS_FIELD_NUMBER: builtins.int
+    DISK_ENCRYPTION_KEY_ID_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the cluster.
 
@@ -215,6 +216,10 @@ class Cluster(google.protobuf.message.Message):
     def host_group_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
         """Host groups hosting VMs of the cluster."""
 
+    @property
+    def disk_encryption_key_id(self) -> google.protobuf.wrappers_pb2.StringValue:
+        """ID of the key to encrypt cluster disks."""
+
     def __init__(
         self,
         *,
@@ -235,9 +240,10 @@ class Cluster(google.protobuf.message.Message):
         security_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
         deletion_protection: builtins.bool = ...,
         host_group_ids: collections.abc.Iterable[builtins.str] | None = ...,
+        disk_encryption_key_id: google.protobuf.wrappers_pb2.StringValue | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["config", b"config", "created_at", b"created_at", "maintenance_window", b"maintenance_window", "planned_operation", b"planned_operation"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["config", b"config", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "environment", b"environment", "folder_id", b"folder_id", "health", b"health", "host_group_ids", b"host_group_ids", "id", b"id", "labels", b"labels", "maintenance_window", b"maintenance_window", "monitoring", b"monitoring", "name", b"name", "network_id", b"network_id", "planned_operation", b"planned_operation", "security_group_ids", b"security_group_ids", "status", b"status"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["config", b"config", "created_at", b"created_at", "disk_encryption_key_id", b"disk_encryption_key_id", "maintenance_window", b"maintenance_window", "planned_operation", b"planned_operation"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["config", b"config", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "disk_encryption_key_id", b"disk_encryption_key_id", "environment", b"environment", "folder_id", b"folder_id", "health", b"health", "host_group_ids", b"host_group_ids", "id", b"id", "labels", b"labels", "maintenance_window", b"maintenance_window", "monitoring", b"monitoring", "name", b"name", "network_id", b"network_id", "planned_operation", b"planned_operation", "security_group_ids", b"security_group_ids", "status", b"status"]) -> None: ...
 
 global___Cluster = Cluster
 
@@ -279,6 +285,7 @@ class ClusterConfig(google.protobuf.message.Message):
     ACCESS_FIELD_NUMBER: builtins.int
     PERFORMANCE_DIAGNOSTICS_FIELD_NUMBER: builtins.int
     BACKUP_RETAIN_PERIOD_DAYS_FIELD_NUMBER: builtins.int
+    DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
     version: builtins.str
     """Version of MySQL used in the cluster."""
     @property
@@ -309,6 +316,10 @@ class ClusterConfig(google.protobuf.message.Message):
     def backup_retain_period_days(self) -> google.protobuf.wrappers_pb2.Int64Value:
         """Retention policy of automated backups."""
 
+    @property
+    def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+        """Disk size autoscaling"""
+
     def __init__(
         self,
         *,
@@ -320,9 +331,10 @@ class ClusterConfig(google.protobuf.message.Message):
         access: global___Access | None = ...,
         performance_diagnostics: global___PerformanceDiagnostics | None = ...,
         backup_retain_period_days: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "mysql_config", b"mysql_config", "mysql_config_5_7", b"mysql_config_5_7", "mysql_config_8_0", b"mysql_config_8_0", "performance_diagnostics", b"performance_diagnostics", "resources", b"resources"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "mysql_config", b"mysql_config", "mysql_config_5_7", b"mysql_config_5_7", "mysql_config_8_0", b"mysql_config_8_0", "performance_diagnostics", b"performance_diagnostics", "resources", b"resources", "version", b"version"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "disk_size_autoscaling", b"disk_size_autoscaling", "mysql_config", b"mysql_config", "mysql_config_5_7", b"mysql_config_5_7", "mysql_config_8_0", b"mysql_config_8_0", "performance_diagnostics", b"performance_diagnostics", "resources", b"resources"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["access", b"access", "backup_retain_period_days", b"backup_retain_period_days", "backup_window_start", b"backup_window_start", "disk_size_autoscaling", b"disk_size_autoscaling", "mysql_config", b"mysql_config", "mysql_config_5_7", b"mysql_config_5_7", "mysql_config_8_0", b"mysql_config_8_0", "performance_diagnostics", b"performance_diagnostics", "resources", b"resources", "version", b"version"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["mysql_config", b"mysql_config"]) -> typing.Literal["mysql_config_5_7", "mysql_config_8_0"] | None: ...
 
 global___ClusterConfig = ClusterConfig
@@ -603,3 +615,27 @@ class PerformanceDiagnostics(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["enabled", b"enabled", "sessions_sampling_interval", b"sessions_sampling_interval", "statements_sampling_interval", b"statements_sampling_interval"]) -> None: ...
 
 global___PerformanceDiagnostics = PerformanceDiagnostics
+
+@typing.final
+class DiskSizeAutoscaling(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PLANNED_USAGE_THRESHOLD_FIELD_NUMBER: builtins.int
+    EMERGENCY_USAGE_THRESHOLD_FIELD_NUMBER: builtins.int
+    DISK_SIZE_LIMIT_FIELD_NUMBER: builtins.int
+    planned_usage_threshold: builtins.int
+    """Amount of used storage for automatic disk scaling in the maintenance window, 0 means disabled, in percent."""
+    emergency_usage_threshold: builtins.int
+    """Amount of used storage for immediately  automatic disk scaling, 0 means disabled, in percent."""
+    disk_size_limit: builtins.int
+    """Limit on how large the storage for database instances can automatically grow, in bytes."""
+    def __init__(
+        self,
+        *,
+        planned_usage_threshold: builtins.int = ...,
+        emergency_usage_threshold: builtins.int = ...,
+        disk_size_limit: builtins.int = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["disk_size_limit", b"disk_size_limit", "emergency_usage_threshold", b"emergency_usage_threshold", "planned_usage_threshold", b"planned_usage_threshold"]) -> None: ...
+
+global___DiskSizeAutoscaling = DiskSizeAutoscaling

@@ -23,6 +23,8 @@ DESCRIPTOR: google.protobuf.descriptor.FileDescriptor
 
 @typing.final
 class Instance(google.protobuf.message.Message):
+    """Instance represents a GitLab instance with its configuration and state."""
+
     DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
     class _Status:
@@ -32,35 +34,63 @@ class Instance(google.protobuf.message.Message):
     class _StatusEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[Instance._Status.ValueType], builtins.type):
         DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
         STATUS_UNSPECIFIED: Instance._Status.ValueType  # 0
+        """Default state."""
         CREATING: Instance._Status.ValueType  # 1
+        """Instance is being created."""
         RUNNING: Instance._Status.ValueType  # 2
+        """Instance is running normally."""
         UPDATING: Instance._Status.ValueType  # 3
+        """Instance is being updated."""
         ERROR: Instance._Status.ValueType  # 4
+        """Instance is in error state."""
         DELETING: Instance._Status.ValueType  # 5
+        """Instance is being deleted."""
         BACKUP_CREATING: Instance._Status.ValueType  # 6
+        """Backup is being created."""
         BACKUP_RESTORING: Instance._Status.ValueType  # 7
+        """Backup is being restored."""
         STARTING: Instance._Status.ValueType  # 8
+        """Instance is starting."""
         STOPPING: Instance._Status.ValueType  # 9
+        """Instance is stopping."""
         STOPPED: Instance._Status.ValueType  # 10
+        """Instance is stopped."""
         BACKGROUND_MIGRATIONS: Instance._Status.ValueType  # 11
+        """Background migrations in progress."""
         OBJECT_STORAGE_MIGRATIONS: Instance._Status.ValueType  # 12
+        """Object storage migrations in progress."""
         SNAPSHOT_RESTORING: Instance._Status.ValueType  # 13
+        """Snapshot is being restored."""
 
     class Status(_Status, metaclass=_StatusEnumTypeWrapper): ...
     STATUS_UNSPECIFIED: Instance.Status.ValueType  # 0
+    """Default state."""
     CREATING: Instance.Status.ValueType  # 1
+    """Instance is being created."""
     RUNNING: Instance.Status.ValueType  # 2
+    """Instance is running normally."""
     UPDATING: Instance.Status.ValueType  # 3
+    """Instance is being updated."""
     ERROR: Instance.Status.ValueType  # 4
+    """Instance is in error state."""
     DELETING: Instance.Status.ValueType  # 5
+    """Instance is being deleted."""
     BACKUP_CREATING: Instance.Status.ValueType  # 6
+    """Backup is being created."""
     BACKUP_RESTORING: Instance.Status.ValueType  # 7
+    """Backup is being restored."""
     STARTING: Instance.Status.ValueType  # 8
+    """Instance is starting."""
     STOPPING: Instance.Status.ValueType  # 9
+    """Instance is stopping."""
     STOPPED: Instance.Status.ValueType  # 10
+    """Instance is stopped."""
     BACKGROUND_MIGRATIONS: Instance.Status.ValueType  # 11
+    """Background migrations in progress."""
     OBJECT_STORAGE_MIGRATIONS: Instance.Status.ValueType  # 12
+    """Object storage migrations in progress."""
     SNAPSHOT_RESTORING: Instance.Status.ValueType  # 13
+    """Snapshot is being restored."""
 
     @typing.final
     class LabelsEntry(google.protobuf.message.Message):
@@ -99,29 +129,53 @@ class Instance(google.protobuf.message.Message):
     APPROVAL_RULES_ID_FIELD_NUMBER: builtins.int
     GITLAB_VERSION_FIELD_NUMBER: builtins.int
     id: builtins.str
+    """Unique instance ID."""
     folder_id: builtins.str
+    """Folder ID where instance resides."""
     name: builtins.str
+    """Human-readable name."""
     description: builtins.str
+    """Instance description."""
     resource_preset_id: builtins.str
+    """Resource preset ID."""
     disk_size: builtins.int
+    """Disk size in bytes."""
     status: global___Instance.Status.ValueType
+    """Current instance status."""
     admin_login: builtins.str
+    """Admin username."""
     admin_email: builtins.str
+    """Admin email."""
     domain: builtins.str
+    """Instance domain."""
     subnet_id: builtins.str
+    """Subnet ID."""
     backup_retain_period_days: builtins.int
+    """How long to keep backups (days)."""
     maintenance_delete_untagged: builtins.bool
+    """Delete untagged resources during maintenance."""
     deletion_protection: builtins.bool
+    """Protect from accidental deletion."""
     approval_rules_id: builtins.str
+    """Approval rules ID."""
     gitlab_version: builtins.str
+    """GitLab version of the instance."""
     @property
-    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
+    def created_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Creation timestamp."""
+
     @property
-    def updated_at(self) -> google.protobuf.timestamp_pb2.Timestamp: ...
+    def updated_at(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Last update timestamp."""
+
     @property
-    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Resource labels as key-value pairs."""
+
     @property
-    def planned_operation(self) -> yandex.cloud.gitlab.v1.maintenance_pb2.MaintenanceOperation: ...
+    def planned_operation(self) -> yandex.cloud.gitlab.v1.maintenance_pb2.MaintenanceOperation:
+        """Planned maintenance operation."""
+
     def __init__(
         self,
         *,

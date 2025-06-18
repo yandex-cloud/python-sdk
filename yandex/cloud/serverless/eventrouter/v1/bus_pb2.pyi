@@ -28,7 +28,6 @@ class LogOptions(google.protobuf.message.Message):
     LOG_GROUP_ID_FIELD_NUMBER: builtins.int
     FOLDER_ID_FIELD_NUMBER: builtins.int
     MIN_LEVEL_FIELD_NUMBER: builtins.int
-    SERVICE_ACCOUNT_ID_FIELD_NUMBER: builtins.int
     log_group_id: builtins.str
     """Entry will be written to log group resolved by ID."""
     folder_id: builtins.str
@@ -38,18 +37,15 @@ class LogOptions(google.protobuf.message.Message):
 
     See [LogLevel.Level] for details.
     """
-    service_account_id: builtins.str
-    """Service account, which has permission to write to destination"""
     def __init__(
         self,
         *,
         log_group_id: builtins.str = ...,
         folder_id: builtins.str = ...,
         min_level: yandex.cloud.logging.v1.log_entry_pb2.LogLevel.Level.ValueType = ...,
-        service_account_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["destination", b"destination", "folder_id", b"folder_id", "log_group_id", b"log_group_id"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["destination", b"destination", "folder_id", b"folder_id", "log_group_id", b"log_group_id", "min_level", b"min_level", "service_account_id", b"service_account_id"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["destination", b"destination", "folder_id", b"folder_id", "log_group_id", b"log_group_id", "min_level", b"min_level"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["destination", b"destination"]) -> typing.Literal["log_group_id", "folder_id"] | None: ...
 
 global___LogOptions = LogOptions

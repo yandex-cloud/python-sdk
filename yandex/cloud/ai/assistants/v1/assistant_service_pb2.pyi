@@ -48,6 +48,7 @@ class CreateAssistantRequest(google.protobuf.message.Message):
     PROMPT_TRUNCATION_OPTIONS_FIELD_NUMBER: builtins.int
     COMPLETION_OPTIONS_FIELD_NUMBER: builtins.int
     TOOLS_FIELD_NUMBER: builtins.int
+    RESPONSE_FORMAT_FIELD_NUMBER: builtins.int
     folder_id: builtins.str
     name: builtins.str
     """Name of the assistant."""
@@ -81,6 +82,10 @@ class CreateAssistantRequest(google.protobuf.message.Message):
         One example is the SearchIndexTool, which is used for Retrieval-Augmented Generation (RAG).
         """
 
+    @property
+    def response_format(self) -> yandex.cloud.ai.assistants.v1.common_pb2.ResponseFormat:
+        """Specifies the format of the model's response."""
+
     def __init__(
         self,
         *,
@@ -94,9 +99,10 @@ class CreateAssistantRequest(google.protobuf.message.Message):
         prompt_truncation_options: yandex.cloud.ai.assistants.v1.common_pb2.PromptTruncationOptions | None = ...,
         completion_options: yandex.cloud.ai.assistants.v1.common_pb2.CompletionOptions | None = ...,
         tools: collections.abc.Iterable[yandex.cloud.ai.assistants.v1.common_pb2.Tool] | None = ...,
+        response_format: yandex.cloud.ai.assistants.v1.common_pb2.ResponseFormat | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["completion_options", b"completion_options", "expiration_config", b"expiration_config", "prompt_truncation_options", b"prompt_truncation_options"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["completion_options", b"completion_options", "description", b"description", "expiration_config", b"expiration_config", "folder_id", b"folder_id", "instruction", b"instruction", "labels", b"labels", "model_uri", b"model_uri", "name", b"name", "prompt_truncation_options", b"prompt_truncation_options", "tools", b"tools"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["completion_options", b"completion_options", "expiration_config", b"expiration_config", "prompt_truncation_options", b"prompt_truncation_options", "response_format", b"response_format"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["completion_options", b"completion_options", "description", b"description", "expiration_config", b"expiration_config", "folder_id", b"folder_id", "instruction", b"instruction", "labels", b"labels", "model_uri", b"model_uri", "name", b"name", "prompt_truncation_options", b"prompt_truncation_options", "response_format", b"response_format", "tools", b"tools"]) -> None: ...
 
 global___CreateAssistantRequest = CreateAssistantRequest
 
@@ -151,6 +157,7 @@ class UpdateAssistantRequest(google.protobuf.message.Message):
     PROMPT_TRUNCATION_OPTIONS_FIELD_NUMBER: builtins.int
     COMPLETION_OPTIONS_FIELD_NUMBER: builtins.int
     TOOLS_FIELD_NUMBER: builtins.int
+    RESPONSE_FORMAT_FIELD_NUMBER: builtins.int
     assistant_id: builtins.str
     """ID of the assistant to update."""
     name: builtins.str
@@ -185,6 +192,8 @@ class UpdateAssistantRequest(google.protobuf.message.Message):
     def tools(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[yandex.cloud.ai.assistants.v1.common_pb2.Tool]:
         """New list of tools the assistant can use."""
 
+    @property
+    def response_format(self) -> yandex.cloud.ai.assistants.v1.common_pb2.ResponseFormat: ...
     def __init__(
         self,
         *,
@@ -199,9 +208,10 @@ class UpdateAssistantRequest(google.protobuf.message.Message):
         prompt_truncation_options: yandex.cloud.ai.assistants.v1.common_pb2.PromptTruncationOptions | None = ...,
         completion_options: yandex.cloud.ai.assistants.v1.common_pb2.CompletionOptions | None = ...,
         tools: collections.abc.Iterable[yandex.cloud.ai.assistants.v1.common_pb2.Tool] | None = ...,
+        response_format: yandex.cloud.ai.assistants.v1.common_pb2.ResponseFormat | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["completion_options", b"completion_options", "expiration_config", b"expiration_config", "prompt_truncation_options", b"prompt_truncation_options", "update_mask", b"update_mask"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["assistant_id", b"assistant_id", "completion_options", b"completion_options", "description", b"description", "expiration_config", b"expiration_config", "instruction", b"instruction", "labels", b"labels", "model_uri", b"model_uri", "name", b"name", "prompt_truncation_options", b"prompt_truncation_options", "tools", b"tools", "update_mask", b"update_mask"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["completion_options", b"completion_options", "expiration_config", b"expiration_config", "prompt_truncation_options", b"prompt_truncation_options", "response_format", b"response_format", "update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["assistant_id", b"assistant_id", "completion_options", b"completion_options", "description", b"description", "expiration_config", b"expiration_config", "instruction", b"instruction", "labels", b"labels", "model_uri", b"model_uri", "name", b"name", "prompt_truncation_options", b"prompt_truncation_options", "response_format", b"response_format", "tools", b"tools", "update_mask", b"update_mask"]) -> None: ...
 
 global___UpdateAssistantRequest = UpdateAssistantRequest
 

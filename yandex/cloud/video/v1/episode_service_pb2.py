@@ -33,7 +33,7 @@ from yandex.cloud.video.v1 import episode_pb2 as yandex_dot_cloud_dot_video_dot_
 from yandex.cloud.video.v1 import manifest_pb2 as yandex_dot_cloud_dot_video_dot_v1_dot_manifest__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n+yandex/cloud/video/v1/episode_service.proto\x12\x15yandex.cloud.video.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1egoogle/protobuf/duration.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a#yandex/cloud/video/v1/episode.proto\x1a$yandex/cloud/video/v1/manifest.proto\"5\n\x11GetEpisodeRequest\x12 \n\nepisode_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xd7\x01\n\x13ListEpisodesRequest\x12\x1d\n\tstream_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1b\n\x07line_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x1f\n\npage_token\x18\x65 \x01(\tB\x0b\x8a\xc8\x31\x07<=15000\x12\x10\n\x08order_by\x18\x66 \x01(\t\x12\x1a\n\x06\x66ilter\x18g \x01(\tB\n\x8a\xc8\x31\x06<=1000B\x11\n\tparent_id\x12\x04\xc0\xc1\x31\x01J\x04\x08\x03\x10\x64\"g\n\x14ListEpisodesResponse\x12\x30\n\x08\x65pisodes\x18\x01 \x03(\x0b\x32\x1e.yandex.cloud.video.v1.Episode\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\"c\n\x17\x42\x61tchGetEpisodesRequest\x12 \n\nchannel_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12&\n\x0b\x65pisode_ids\x18\x02 \x03(\tB\x11\x82\xc8\x31\x05\x31-100\x8a\xc8\x31\x04<=50\"L\n\x18\x42\x61tchGetEpisodesResponse\x12\x30\n\x08\x65pisodes\x18\x01 \x03(\x0b\x32\x1e.yandex.cloud.video.v1.Episode\"\xd1\x04\n\x14\x43reateEpisodeRequest\x12\x1d\n\tstream_id\x18\x64 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1b\n\x07line_id\x18\x65 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1d\n\x05title\x18\x02 \x01(\tB\x0e\xe8\xc7\x31\x01\x8a\xc8\x31\x06<=2500\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x1e\n\x0cthumbnail_id\x18\x04 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12.\n\nstart_time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0b\x66inish_time\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x13\n\x0b\x64vr_seconds\x18\x07 \x01(\x03\x12J\n\rpublic_access\x18\xe8\x07 \x01(\x0b\x32\x30.yandex.cloud.video.v1.EpisodePublicAccessParamsH\x01\x12S\n\x12\x61uth_system_access\x18\xea\x07 \x01(\x0b\x32\x34.yandex.cloud.video.v1.EpisodeAuthSystemAccessParamsH\x01\x12M\n\x0fsign_url_access\x18\xeb\x07 \x01(\x0b\x32\x31.yandex.cloud.video.v1.EpisodeSignURLAccessParamsH\x01\x42\x11\n\tparent_id\x12\x04\xc0\xc1\x31\x01\x42\x15\n\raccess_rights\x12\x04\xc0\xc1\x31\x01J\x06\x08\xe9\x07\x10\xea\x07J\x04\x08\x01\x10\x02J\x04\x08\x08\x10\x64J\x05\x08\x66\x10\xe8\x07\"\x1b\n\x19\x45pisodePublicAccessParams\"\x1f\n\x1d\x45pisodeAuthSystemAccessParams\"\x1c\n\x1a\x45pisodeSignURLAccessParams\"+\n\x15\x43reateEpisodeMetadata\x12\x12\n\nepisode_id\x18\x01 \x01(\t\"\xc4\x04\n\x14UpdateEpisodeRequest\x12 \n\nepisode_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x34\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe8\xc7\x31\x01\x12\x19\n\x05title\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=2500\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x1e\n\x0cthumbnail_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12.\n\nstart_time\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0b\x66inish_time\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x13\n\x0b\x64vr_seconds\x18\x08 \x01(\x03\x12J\n\rpublic_access\x18\xe8\x07 \x01(\x0b\x32\x30.yandex.cloud.video.v1.EpisodePublicAccessParamsH\x00\x12S\n\x12\x61uth_system_access\x18\xea\x07 \x01(\x0b\x32\x34.yandex.cloud.video.v1.EpisodeAuthSystemAccessParamsH\x00\x12M\n\x0fsign_url_access\x18\xeb\x07 \x01(\x0b\x32\x31.yandex.cloud.video.v1.EpisodeSignURLAccessParamsH\x00\x42\x0f\n\raccess_rightsJ\x06\x08\xe9\x07\x10\xea\x07J\x05\x08\t\x10\xe8\x07\"+\n\x15UpdateEpisodeMetadata\x12\x12\n\nepisode_id\x18\x01 \x01(\t\"8\n\x14\x44\x65leteEpisodeRequest\x12 \n\nepisode_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x44\x65leteEpisodeMetadata\x12\x12\n\nepisode_id\x18\x01 \x01(\t\"\x92\x01\n\x1a\x42\x61tchDeleteEpisodesRequest\x12\x1d\n\tstream_id\x18\x64 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1b\n\x07line_id\x18\x65 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12&\n\x0b\x65pisode_ids\x18\x01 \x03(\tB\x11\x82\xc8\x31\x05\x31-100\x8a\xc8\x31\x04<=50B\n\n\x02id\x12\x04\xc0\xc1\x31\x01J\x04\x08\x02\x10\x64\"2\n\x1b\x42\x61tchDeleteEpisodesMetadata\x12\x13\n\x0b\x65pisode_ids\x18\x01 \x03(\t\"\xec\x01\n\x1bPerformEpisodeActionRequest\x12 \n\nepisode_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12?\n\x07publish\x18\xea\x07 \x01(\x0b\x32+.yandex.cloud.video.v1.PublishEpisodeActionH\x00\x12\x43\n\tunpublish\x18\xeb\x07 \x01(\x0b\x32-.yandex.cloud.video.v1.UnpublishEpisodeActionH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01J\x06\x08\xe8\x07\x10\xe9\x07J\x06\x08\xe9\x07\x10\xea\x07J\x05\x08\x02\x10\xe8\x07\"\x16\n\x14PublishEpisodeAction\"\x18\n\x16UnpublishEpisodeAction\"2\n\x1cPerformEpisodeActionMetadata\x12\x12\n\nepisode_id\x18\x01 \x01(\t\"\xbd\x01\n\x1aGetEpisodePlayerURLRequest\x12 \n\nepisode_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12:\n\x06params\x18\x02 \x01(\x0b\x32*.yandex.cloud.video.v1.EpisodePlayerParams\x12\x41\n\x1esigned_url_expiration_duration\x18\x03 \x01(\x0b\x32\x19.google.protobuf.Duration\"E\n\x13\x45pisodePlayerParams\x12\x0c\n\x04mute\x18\x01 \x01(\x08\x12\x10\n\x08\x61utoplay\x18\x02 \x01(\x08\x12\x0e\n\x06hidden\x18\x03 \x01(\x08\"?\n\x1bGetEpisodePlayerURLResponse\x12\x12\n\nplayer_url\x18\x01 \x01(\t\x12\x0c\n\x04html\x18\x02 \x01(\t\">\n\x1aGetEpisodeManifestsRequest\x12 \n\nepisode_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"Q\n\x1bGetEpisodeManifestsResponse\x12\x32\n\tmanifests\x18\x01 \x03(\x0b\x32\x1f.yandex.cloud.video.v1.Manifest2\xe6\x0c\n\x0e\x45pisodeService\x12x\n\x03Get\x12(.yandex.cloud.video.v1.GetEpisodeRequest\x1a\x1e.yandex.cloud.video.v1.Episode\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/video/v1/episodes/{episode_id}\x12{\n\x04List\x12*.yandex.cloud.video.v1.ListEpisodesRequest\x1a+.yandex.cloud.video.v1.ListEpisodesResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/video/v1/episodes\x12\x93\x01\n\x08\x42\x61tchGet\x12..yandex.cloud.video.v1.BatchGetEpisodesRequest\x1a/.yandex.cloud.video.v1.BatchGetEpisodesResponse\"&\x82\xd3\xe4\x93\x02 \"\x1b/video/v1/episodes:batchGet:\x01*\x12\x9b\x01\n\x06\x43reate\x12+.yandex.cloud.video.v1.CreateEpisodeRequest\x1a!.yandex.cloud.operation.Operation\"A\xb2\xd2* \n\x15\x43reateEpisodeMetadata\x12\x07\x45pisode\x82\xd3\xe4\x93\x02\x17\"\x12/video/v1/episodes:\x01*\x12\xa8\x01\n\x06Update\x12+.yandex.cloud.video.v1.UpdateEpisodeRequest\x1a!.yandex.cloud.operation.Operation\"N\xb2\xd2* \n\x15UpdateEpisodeMetadata\x12\x07\x45pisode\x82\xd3\xe4\x93\x02$2\x1f/video/v1/episodes/{episode_id}:\x01*\x12\xb3\x01\n\x06\x44\x65lete\x12+.yandex.cloud.video.v1.DeleteEpisodeRequest\x1a!.yandex.cloud.operation.Operation\"Y\xb2\xd2*.\n\x15\x44\x65leteEpisodeMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02!*\x1f/video/v1/episodes/{episode_id}\x12\x9d\x01\n\x0b\x42\x61tchDelete\x12\x31.yandex.cloud.video.v1.BatchDeleteEpisodesRequest\x1a!.yandex.cloud.operation.Operation\"8\xb2\xd2*4\n\x1b\x42\x61tchDeleteEpisodesMetadata\x12\x15google.protobuf.Empty\x12\xcb\x01\n\rPerformAction\x12\x32.yandex.cloud.video.v1.PerformEpisodeActionRequest\x1a!.yandex.cloud.operation.Operation\"c\xb2\xd2*\'\n\x1cPerformEpisodeActionMetadata\x12\x07\x45pisode\x82\xd3\xe4\x93\x02\x32\"-/video/v1/episodes/{episode_id}:performAction:\x01*\x12\xab\x01\n\x0cGetPlayerURL\x12\x31.yandex.cloud.video.v1.GetEpisodePlayerURLRequest\x1a\x32.yandex.cloud.video.v1.GetEpisodePlayerURLResponse\"4\x82\xd3\xe4\x93\x02.\x12,/video/v1/episodes/{episode_id}:getPlayerUrl\x12\xab\x01\n\x0cGetManifests\x12\x31.yandex.cloud.video.v1.GetEpisodeManifestsRequest\x1a\x32.yandex.cloud.video.v1.GetEpisodeManifestsResponse\"4\x82\xd3\xe4\x93\x02.\x12,/video/v1/episodes/{episode_id}:getManifestsB\\\n\x19yandex.cloud.api.video.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/video/v1;videob\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n+yandex/cloud/video/v1/episode_service.proto\x12\x15yandex.cloud.video.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1egoogle/protobuf/duration.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a#yandex/cloud/video/v1/episode.proto\x1a$yandex/cloud/video/v1/manifest.proto\"5\n\x11GetEpisodeRequest\x12 \n\nepisode_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"\xe1\x01\n\x13ListEpisodesRequest\x12\x1d\n\tstream_id\x18\x01 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1b\n\x07line_id\x18\x02 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1c\n\tpage_size\x18\x64 \x01(\x03\x42\t\xfa\xc7\x31\x05<=100\x12\x1f\n\npage_token\x18\x65 \x01(\tB\x0b\x8a\xc8\x31\x07<=15000\x12\x1a\n\x08order_by\x18\x66 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12\x1a\n\x06\x66ilter\x18g \x01(\tB\n\x8a\xc8\x31\x06<=1000B\x11\n\tparent_id\x12\x04\xc0\xc1\x31\x01J\x04\x08\x03\x10\x64\"g\n\x14ListEpisodesResponse\x12\x30\n\x08\x65pisodes\x18\x01 \x03(\x0b\x32\x1e.yandex.cloud.video.v1.Episode\x12\x17\n\x0fnext_page_token\x18\x64 \x01(\tJ\x04\x08\x02\x10\x64\"c\n\x17\x42\x61tchGetEpisodesRequest\x12 \n\nchannel_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12&\n\x0b\x65pisode_ids\x18\x02 \x03(\tB\x11\x82\xc8\x31\x05\x31-100\x8a\xc8\x31\x04<=50\"L\n\x18\x42\x61tchGetEpisodesResponse\x12\x30\n\x08\x65pisodes\x18\x01 \x03(\x0b\x32\x1e.yandex.cloud.video.v1.Episode\"\xdc\x04\n\x14\x43reateEpisodeRequest\x12\x1d\n\tstream_id\x18\x64 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1b\n\x07line_id\x18\x65 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1c\n\x05title\x18\x02 \x01(\tB\r\xe8\xc7\x31\x01\x8a\xc8\x31\x05<=300\x12\x1f\n\x0b\x64\x65scription\x18\x03 \x01(\tB\n\x8a\xc8\x31\x06<=4000\x12\x1e\n\x0cthumbnail_id\x18\x04 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12.\n\nstart_time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0b\x66inish_time\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x13\n\x0b\x64vr_seconds\x18\x07 \x01(\x03\x12J\n\rpublic_access\x18\xe8\x07 \x01(\x0b\x32\x30.yandex.cloud.video.v1.EpisodePublicAccessParamsH\x01\x12S\n\x12\x61uth_system_access\x18\xea\x07 \x01(\x0b\x32\x34.yandex.cloud.video.v1.EpisodeAuthSystemAccessParamsH\x01\x12M\n\x0fsign_url_access\x18\xeb\x07 \x01(\x0b\x32\x31.yandex.cloud.video.v1.EpisodeSignURLAccessParamsH\x01\x42\x11\n\tparent_id\x12\x04\xc0\xc1\x31\x01\x42\x15\n\raccess_rights\x12\x04\xc0\xc1\x31\x01J\x06\x08\xe9\x07\x10\xea\x07J\x04\x08\x01\x10\x02J\x04\x08\x08\x10\x64J\x05\x08\x66\x10\xe8\x07\"\x1b\n\x19\x45pisodePublicAccessParams\"\x1f\n\x1d\x45pisodeAuthSystemAccessParams\"\x1c\n\x1a\x45pisodeSignURLAccessParams\"+\n\x15\x43reateEpisodeMetadata\x12\x12\n\nepisode_id\x18\x01 \x01(\t\"\xcf\x04\n\x14UpdateEpisodeRequest\x12 \n\nepisode_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x34\n\nfield_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe8\xc7\x31\x01\x12\x18\n\x05title\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=300\x12\x1f\n\x0b\x64\x65scription\x18\x04 \x01(\tB\n\x8a\xc8\x31\x06<=4000\x12\x1e\n\x0cthumbnail_id\x18\x05 \x01(\tB\x08\x8a\xc8\x31\x04<=50\x12.\n\nstart_time\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0b\x66inish_time\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12\x13\n\x0b\x64vr_seconds\x18\x08 \x01(\x03\x12J\n\rpublic_access\x18\xe8\x07 \x01(\x0b\x32\x30.yandex.cloud.video.v1.EpisodePublicAccessParamsH\x00\x12S\n\x12\x61uth_system_access\x18\xea\x07 \x01(\x0b\x32\x34.yandex.cloud.video.v1.EpisodeAuthSystemAccessParamsH\x00\x12M\n\x0fsign_url_access\x18\xeb\x07 \x01(\x0b\x32\x31.yandex.cloud.video.v1.EpisodeSignURLAccessParamsH\x00\x42\x0f\n\raccess_rightsJ\x06\x08\xe9\x07\x10\xea\x07J\x05\x08\t\x10\xe8\x07\"+\n\x15UpdateEpisodeMetadata\x12\x12\n\nepisode_id\x18\x01 \x01(\t\"8\n\x14\x44\x65leteEpisodeRequest\x12 \n\nepisode_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"+\n\x15\x44\x65leteEpisodeMetadata\x12\x12\n\nepisode_id\x18\x01 \x01(\t\"\x92\x01\n\x1a\x42\x61tchDeleteEpisodesRequest\x12\x1d\n\tstream_id\x18\x64 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12\x1b\n\x07line_id\x18\x65 \x01(\tB\x08\x8a\xc8\x31\x04<=50H\x00\x12&\n\x0b\x65pisode_ids\x18\x01 \x03(\tB\x11\x82\xc8\x31\x05\x31-100\x8a\xc8\x31\x04<=50B\n\n\x02id\x12\x04\xc0\xc1\x31\x01J\x04\x08\x02\x10\x64\"2\n\x1b\x42\x61tchDeleteEpisodesMetadata\x12\x13\n\x0b\x65pisode_ids\x18\x01 \x03(\t\"\xec\x01\n\x1bPerformEpisodeActionRequest\x12 \n\nepisode_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12?\n\x07publish\x18\xea\x07 \x01(\x0b\x32+.yandex.cloud.video.v1.PublishEpisodeActionH\x00\x12\x43\n\tunpublish\x18\xeb\x07 \x01(\x0b\x32-.yandex.cloud.video.v1.UnpublishEpisodeActionH\x00\x42\x0e\n\x06\x61\x63tion\x12\x04\xc0\xc1\x31\x01J\x06\x08\xe8\x07\x10\xe9\x07J\x06\x08\xe9\x07\x10\xea\x07J\x05\x08\x02\x10\xe8\x07\"\x16\n\x14PublishEpisodeAction\"\x18\n\x16UnpublishEpisodeAction\"2\n\x1cPerformEpisodeActionMetadata\x12\x12\n\nepisode_id\x18\x01 \x01(\t\"\xbd\x01\n\x1aGetEpisodePlayerURLRequest\x12 \n\nepisode_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12:\n\x06params\x18\x02 \x01(\x0b\x32*.yandex.cloud.video.v1.EpisodePlayerParams\x12\x41\n\x1esigned_url_expiration_duration\x18\x03 \x01(\x0b\x32\x19.google.protobuf.Duration\"E\n\x13\x45pisodePlayerParams\x12\x0c\n\x04mute\x18\x01 \x01(\x08\x12\x10\n\x08\x61utoplay\x18\x02 \x01(\x08\x12\x0e\n\x06hidden\x18\x03 \x01(\x08\"?\n\x1bGetEpisodePlayerURLResponse\x12\x12\n\nplayer_url\x18\x01 \x01(\t\x12\x0c\n\x04html\x18\x02 \x01(\t\">\n\x1aGetEpisodeManifestsRequest\x12 \n\nepisode_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"Q\n\x1bGetEpisodeManifestsResponse\x12\x32\n\tmanifests\x18\x01 \x03(\x0b\x32\x1f.yandex.cloud.video.v1.Manifest2\xe6\x0c\n\x0e\x45pisodeService\x12x\n\x03Get\x12(.yandex.cloud.video.v1.GetEpisodeRequest\x1a\x1e.yandex.cloud.video.v1.Episode\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/video/v1/episodes/{episode_id}\x12{\n\x04List\x12*.yandex.cloud.video.v1.ListEpisodesRequest\x1a+.yandex.cloud.video.v1.ListEpisodesResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/video/v1/episodes\x12\x93\x01\n\x08\x42\x61tchGet\x12..yandex.cloud.video.v1.BatchGetEpisodesRequest\x1a/.yandex.cloud.video.v1.BatchGetEpisodesResponse\"&\x82\xd3\xe4\x93\x02 \"\x1b/video/v1/episodes:batchGet:\x01*\x12\x9b\x01\n\x06\x43reate\x12+.yandex.cloud.video.v1.CreateEpisodeRequest\x1a!.yandex.cloud.operation.Operation\"A\xb2\xd2* \n\x15\x43reateEpisodeMetadata\x12\x07\x45pisode\x82\xd3\xe4\x93\x02\x17\"\x12/video/v1/episodes:\x01*\x12\xa8\x01\n\x06Update\x12+.yandex.cloud.video.v1.UpdateEpisodeRequest\x1a!.yandex.cloud.operation.Operation\"N\xb2\xd2* \n\x15UpdateEpisodeMetadata\x12\x07\x45pisode\x82\xd3\xe4\x93\x02$2\x1f/video/v1/episodes/{episode_id}:\x01*\x12\xb3\x01\n\x06\x44\x65lete\x12+.yandex.cloud.video.v1.DeleteEpisodeRequest\x1a!.yandex.cloud.operation.Operation\"Y\xb2\xd2*.\n\x15\x44\x65leteEpisodeMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02!*\x1f/video/v1/episodes/{episode_id}\x12\x9d\x01\n\x0b\x42\x61tchDelete\x12\x31.yandex.cloud.video.v1.BatchDeleteEpisodesRequest\x1a!.yandex.cloud.operation.Operation\"8\xb2\xd2*4\n\x1b\x42\x61tchDeleteEpisodesMetadata\x12\x15google.protobuf.Empty\x12\xcb\x01\n\rPerformAction\x12\x32.yandex.cloud.video.v1.PerformEpisodeActionRequest\x1a!.yandex.cloud.operation.Operation\"c\xb2\xd2*\'\n\x1cPerformEpisodeActionMetadata\x12\x07\x45pisode\x82\xd3\xe4\x93\x02\x32\"-/video/v1/episodes/{episode_id}:performAction:\x01*\x12\xab\x01\n\x0cGetPlayerURL\x12\x31.yandex.cloud.video.v1.GetEpisodePlayerURLRequest\x1a\x32.yandex.cloud.video.v1.GetEpisodePlayerURLResponse\"4\x82\xd3\xe4\x93\x02.\x12,/video/v1/episodes/{episode_id}:getPlayerUrl\x12\xab\x01\n\x0cGetManifests\x12\x31.yandex.cloud.video.v1.GetEpisodeManifestsRequest\x1a\x32.yandex.cloud.video.v1.GetEpisodeManifestsResponse\"4\x82\xd3\xe4\x93\x02.\x12,/video/v1/episodes/{episode_id}:getManifestsB\\\n\x19yandex.cloud.api.video.v1Z?github.com/yandex-cloud/go-genproto/yandex/cloud/video/v1;videob\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -53,6 +53,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LISTEPISODESREQUEST'].fields_by_name['page_size']._serialized_options = b'\372\3071\005<=100'
   _globals['_LISTEPISODESREQUEST'].fields_by_name['page_token']._loaded_options = None
   _globals['_LISTEPISODESREQUEST'].fields_by_name['page_token']._serialized_options = b'\212\3101\007<=15000'
+  _globals['_LISTEPISODESREQUEST'].fields_by_name['order_by']._loaded_options = None
+  _globals['_LISTEPISODESREQUEST'].fields_by_name['order_by']._serialized_options = b'\212\3101\004<=50'
   _globals['_LISTEPISODESREQUEST'].fields_by_name['filter']._loaded_options = None
   _globals['_LISTEPISODESREQUEST'].fields_by_name['filter']._serialized_options = b'\212\3101\006<=1000'
   _globals['_BATCHGETEPISODESREQUEST'].fields_by_name['channel_id']._loaded_options = None
@@ -68,7 +70,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CREATEEPISODEREQUEST'].fields_by_name['line_id']._loaded_options = None
   _globals['_CREATEEPISODEREQUEST'].fields_by_name['line_id']._serialized_options = b'\212\3101\004<=50'
   _globals['_CREATEEPISODEREQUEST'].fields_by_name['title']._loaded_options = None
-  _globals['_CREATEEPISODEREQUEST'].fields_by_name['title']._serialized_options = b'\350\3071\001\212\3101\006<=2500'
+  _globals['_CREATEEPISODEREQUEST'].fields_by_name['title']._serialized_options = b'\350\3071\001\212\3101\005<=300'
+  _globals['_CREATEEPISODEREQUEST'].fields_by_name['description']._loaded_options = None
+  _globals['_CREATEEPISODEREQUEST'].fields_by_name['description']._serialized_options = b'\212\3101\006<=4000'
   _globals['_CREATEEPISODEREQUEST'].fields_by_name['thumbnail_id']._loaded_options = None
   _globals['_CREATEEPISODEREQUEST'].fields_by_name['thumbnail_id']._serialized_options = b'\212\3101\004<=50'
   _globals['_UPDATEEPISODEREQUEST'].fields_by_name['episode_id']._loaded_options = None
@@ -76,7 +80,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_UPDATEEPISODEREQUEST'].fields_by_name['field_mask']._loaded_options = None
   _globals['_UPDATEEPISODEREQUEST'].fields_by_name['field_mask']._serialized_options = b'\350\3071\001'
   _globals['_UPDATEEPISODEREQUEST'].fields_by_name['title']._loaded_options = None
-  _globals['_UPDATEEPISODEREQUEST'].fields_by_name['title']._serialized_options = b'\212\3101\006<=2500'
+  _globals['_UPDATEEPISODEREQUEST'].fields_by_name['title']._serialized_options = b'\212\3101\005<=300'
+  _globals['_UPDATEEPISODEREQUEST'].fields_by_name['description']._loaded_options = None
+  _globals['_UPDATEEPISODEREQUEST'].fields_by_name['description']._serialized_options = b'\212\3101\006<=4000'
   _globals['_UPDATEEPISODEREQUEST'].fields_by_name['thumbnail_id']._loaded_options = None
   _globals['_UPDATEEPISODEREQUEST'].fields_by_name['thumbnail_id']._serialized_options = b'\212\3101\004<=50'
   _globals['_DELETEEPISODEREQUEST'].fields_by_name['episode_id']._loaded_options = None
@@ -120,53 +126,53 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETEPISODEREQUEST']._serialized_start=379
   _globals['_GETEPISODEREQUEST']._serialized_end=432
   _globals['_LISTEPISODESREQUEST']._serialized_start=435
-  _globals['_LISTEPISODESREQUEST']._serialized_end=650
-  _globals['_LISTEPISODESRESPONSE']._serialized_start=652
-  _globals['_LISTEPISODESRESPONSE']._serialized_end=755
-  _globals['_BATCHGETEPISODESREQUEST']._serialized_start=757
-  _globals['_BATCHGETEPISODESREQUEST']._serialized_end=856
-  _globals['_BATCHGETEPISODESRESPONSE']._serialized_start=858
-  _globals['_BATCHGETEPISODESRESPONSE']._serialized_end=934
-  _globals['_CREATEEPISODEREQUEST']._serialized_start=937
-  _globals['_CREATEEPISODEREQUEST']._serialized_end=1530
-  _globals['_EPISODEPUBLICACCESSPARAMS']._serialized_start=1532
-  _globals['_EPISODEPUBLICACCESSPARAMS']._serialized_end=1559
-  _globals['_EPISODEAUTHSYSTEMACCESSPARAMS']._serialized_start=1561
-  _globals['_EPISODEAUTHSYSTEMACCESSPARAMS']._serialized_end=1592
-  _globals['_EPISODESIGNURLACCESSPARAMS']._serialized_start=1594
-  _globals['_EPISODESIGNURLACCESSPARAMS']._serialized_end=1622
-  _globals['_CREATEEPISODEMETADATA']._serialized_start=1624
-  _globals['_CREATEEPISODEMETADATA']._serialized_end=1667
-  _globals['_UPDATEEPISODEREQUEST']._serialized_start=1670
-  _globals['_UPDATEEPISODEREQUEST']._serialized_end=2250
-  _globals['_UPDATEEPISODEMETADATA']._serialized_start=2252
-  _globals['_UPDATEEPISODEMETADATA']._serialized_end=2295
-  _globals['_DELETEEPISODEREQUEST']._serialized_start=2297
-  _globals['_DELETEEPISODEREQUEST']._serialized_end=2353
-  _globals['_DELETEEPISODEMETADATA']._serialized_start=2355
-  _globals['_DELETEEPISODEMETADATA']._serialized_end=2398
-  _globals['_BATCHDELETEEPISODESREQUEST']._serialized_start=2401
-  _globals['_BATCHDELETEEPISODESREQUEST']._serialized_end=2547
-  _globals['_BATCHDELETEEPISODESMETADATA']._serialized_start=2549
-  _globals['_BATCHDELETEEPISODESMETADATA']._serialized_end=2599
-  _globals['_PERFORMEPISODEACTIONREQUEST']._serialized_start=2602
-  _globals['_PERFORMEPISODEACTIONREQUEST']._serialized_end=2838
-  _globals['_PUBLISHEPISODEACTION']._serialized_start=2840
-  _globals['_PUBLISHEPISODEACTION']._serialized_end=2862
-  _globals['_UNPUBLISHEPISODEACTION']._serialized_start=2864
-  _globals['_UNPUBLISHEPISODEACTION']._serialized_end=2888
-  _globals['_PERFORMEPISODEACTIONMETADATA']._serialized_start=2890
-  _globals['_PERFORMEPISODEACTIONMETADATA']._serialized_end=2940
-  _globals['_GETEPISODEPLAYERURLREQUEST']._serialized_start=2943
-  _globals['_GETEPISODEPLAYERURLREQUEST']._serialized_end=3132
-  _globals['_EPISODEPLAYERPARAMS']._serialized_start=3134
-  _globals['_EPISODEPLAYERPARAMS']._serialized_end=3203
-  _globals['_GETEPISODEPLAYERURLRESPONSE']._serialized_start=3205
-  _globals['_GETEPISODEPLAYERURLRESPONSE']._serialized_end=3268
-  _globals['_GETEPISODEMANIFESTSREQUEST']._serialized_start=3270
-  _globals['_GETEPISODEMANIFESTSREQUEST']._serialized_end=3332
-  _globals['_GETEPISODEMANIFESTSRESPONSE']._serialized_start=3334
-  _globals['_GETEPISODEMANIFESTSRESPONSE']._serialized_end=3415
-  _globals['_EPISODESERVICE']._serialized_start=3418
-  _globals['_EPISODESERVICE']._serialized_end=5056
+  _globals['_LISTEPISODESREQUEST']._serialized_end=660
+  _globals['_LISTEPISODESRESPONSE']._serialized_start=662
+  _globals['_LISTEPISODESRESPONSE']._serialized_end=765
+  _globals['_BATCHGETEPISODESREQUEST']._serialized_start=767
+  _globals['_BATCHGETEPISODESREQUEST']._serialized_end=866
+  _globals['_BATCHGETEPISODESRESPONSE']._serialized_start=868
+  _globals['_BATCHGETEPISODESRESPONSE']._serialized_end=944
+  _globals['_CREATEEPISODEREQUEST']._serialized_start=947
+  _globals['_CREATEEPISODEREQUEST']._serialized_end=1551
+  _globals['_EPISODEPUBLICACCESSPARAMS']._serialized_start=1553
+  _globals['_EPISODEPUBLICACCESSPARAMS']._serialized_end=1580
+  _globals['_EPISODEAUTHSYSTEMACCESSPARAMS']._serialized_start=1582
+  _globals['_EPISODEAUTHSYSTEMACCESSPARAMS']._serialized_end=1613
+  _globals['_EPISODESIGNURLACCESSPARAMS']._serialized_start=1615
+  _globals['_EPISODESIGNURLACCESSPARAMS']._serialized_end=1643
+  _globals['_CREATEEPISODEMETADATA']._serialized_start=1645
+  _globals['_CREATEEPISODEMETADATA']._serialized_end=1688
+  _globals['_UPDATEEPISODEREQUEST']._serialized_start=1691
+  _globals['_UPDATEEPISODEREQUEST']._serialized_end=2282
+  _globals['_UPDATEEPISODEMETADATA']._serialized_start=2284
+  _globals['_UPDATEEPISODEMETADATA']._serialized_end=2327
+  _globals['_DELETEEPISODEREQUEST']._serialized_start=2329
+  _globals['_DELETEEPISODEREQUEST']._serialized_end=2385
+  _globals['_DELETEEPISODEMETADATA']._serialized_start=2387
+  _globals['_DELETEEPISODEMETADATA']._serialized_end=2430
+  _globals['_BATCHDELETEEPISODESREQUEST']._serialized_start=2433
+  _globals['_BATCHDELETEEPISODESREQUEST']._serialized_end=2579
+  _globals['_BATCHDELETEEPISODESMETADATA']._serialized_start=2581
+  _globals['_BATCHDELETEEPISODESMETADATA']._serialized_end=2631
+  _globals['_PERFORMEPISODEACTIONREQUEST']._serialized_start=2634
+  _globals['_PERFORMEPISODEACTIONREQUEST']._serialized_end=2870
+  _globals['_PUBLISHEPISODEACTION']._serialized_start=2872
+  _globals['_PUBLISHEPISODEACTION']._serialized_end=2894
+  _globals['_UNPUBLISHEPISODEACTION']._serialized_start=2896
+  _globals['_UNPUBLISHEPISODEACTION']._serialized_end=2920
+  _globals['_PERFORMEPISODEACTIONMETADATA']._serialized_start=2922
+  _globals['_PERFORMEPISODEACTIONMETADATA']._serialized_end=2972
+  _globals['_GETEPISODEPLAYERURLREQUEST']._serialized_start=2975
+  _globals['_GETEPISODEPLAYERURLREQUEST']._serialized_end=3164
+  _globals['_EPISODEPLAYERPARAMS']._serialized_start=3166
+  _globals['_EPISODEPLAYERPARAMS']._serialized_end=3235
+  _globals['_GETEPISODEPLAYERURLRESPONSE']._serialized_start=3237
+  _globals['_GETEPISODEPLAYERURLRESPONSE']._serialized_end=3300
+  _globals['_GETEPISODEMANIFESTSREQUEST']._serialized_start=3302
+  _globals['_GETEPISODEMANIFESTSREQUEST']._serialized_end=3364
+  _globals['_GETEPISODEMANIFESTSRESPONSE']._serialized_start=3366
+  _globals['_GETEPISODEMANIFESTSRESPONSE']._serialized_end=3447
+  _globals['_EPISODESERVICE']._serialized_start=3450
+  _globals['_EPISODESERVICE']._serialized_end=5088
 # @@protoc_insertion_point(module_scope)

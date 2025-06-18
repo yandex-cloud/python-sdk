@@ -83,6 +83,11 @@ class BucketServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_storage_dot_v1_dot_bucket__service__pb2.DeleteBucketHTTPSConfigRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.SetAccessBindings = channel.unary_unary(
+                '/yandex.cloud.storage.v1.BucketService/SetAccessBindings',
+                request_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.SetAccessBindingsRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
         self.UpdateAccessBindings = channel.unary_unary(
                 '/yandex.cloud.storage.v1.BucketService/UpdateAccessBindings',
                 request_serializer=yandex_dot_cloud_dot_access_dot_access__pb2.UpdateAccessBindingsRequest.SerializeToString,
@@ -172,6 +177,12 @@ class BucketServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def SetAccessBindings(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def UpdateAccessBindings(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -230,6 +241,11 @@ def add_BucketServiceServicer_to_server(servicer, server):
             'DeleteHTTPSConfig': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteHTTPSConfig,
                     request_deserializer=yandex_dot_cloud_dot_storage_dot_v1_dot_bucket__service__pb2.DeleteBucketHTTPSConfigRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'SetAccessBindings': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetAccessBindings,
+                    request_deserializer=yandex_dot_cloud_dot_access_dot_access__pb2.SetAccessBindingsRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'UpdateAccessBindings': grpc.unary_unary_rpc_method_handler(
@@ -486,6 +502,33 @@ class BucketService(object):
             target,
             '/yandex.cloud.storage.v1.BucketService/DeleteHTTPSConfig',
             yandex_dot_cloud_dot_storage_dot_v1_dot_bucket__service__pb2.DeleteBucketHTTPSConfigRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def SetAccessBindings(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.storage.v1.BucketService/SetAccessBindings',
+            yandex_dot_cloud_dot_access_dot_access__pb2.SetAccessBindingsRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

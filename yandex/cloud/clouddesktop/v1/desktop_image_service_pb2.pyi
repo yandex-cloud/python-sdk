@@ -137,11 +137,17 @@ class UpdateDesktopImageRequest(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     LABELS_FIELD_NUMBER: builtins.int
     image_id: builtins.str
+    """Id of image to update."""
     name: builtins.str
+    """New desktop image name."""
     @property
-    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask: ...
+    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
+        """Mask of fields that need to be update."""
+
     @property
-    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]: ...
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """New desktop image labels."""
+
     def __init__(
         self,
         *,

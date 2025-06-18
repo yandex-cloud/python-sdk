@@ -92,6 +92,11 @@ class BucketServiceStub:
     ]
     """Deletes the HTTPS configuration for the specified bucket."""
 
+    SetAccessBindings: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+
     UpdateAccessBindings: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -172,6 +177,11 @@ class BucketServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Deletes the HTTPS configuration for the specified bucket."""
+
+    SetAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
 
     UpdateAccessBindings: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.access.access_pb2.UpdateAccessBindingsRequest,
@@ -271,6 +281,13 @@ class BucketServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Deletes the HTTPS configuration for the specified bucket."""
+
+    @abc.abstractmethod
+    def SetAccessBindings(
+        self,
+        request: yandex.cloud.access.access_pb2.SetAccessBindingsRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]: ...
 
     @abc.abstractmethod
     def UpdateAccessBindings(

@@ -28,7 +28,8 @@ if _version_not_supported:
 
 
 class InstanceServiceStub(object):
-    """Missing associated documentation comment in .proto file."""
+    """InstanceService provides methods for managing GitLab instances.
+    """
 
     def __init__(self, channel):
         """Constructor.
@@ -69,40 +70,47 @@ class InstanceServiceStub(object):
 
 
 class InstanceServiceServicer(object):
-    """Missing associated documentation comment in .proto file."""
+    """InstanceService provides methods for managing GitLab instances.
+    """
 
     def Get(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Returns the specified GitLab instance.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def List(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Retrieves the list of GitLab instances in the specified folder.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Create(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Creates a new GitLab instance in the specified folder.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Deletes the specified GitLab instance.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Start(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Starts the specified GitLab instance.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Stop(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Stops the specified GitLab instance.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -149,7 +157,8 @@ def add_InstanceServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class InstanceService(object):
-    """Missing associated documentation comment in .proto file."""
+    """InstanceService provides methods for managing GitLab instances.
+    """
 
     @staticmethod
     def Get(request,

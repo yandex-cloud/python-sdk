@@ -186,6 +186,25 @@ class PolicySettings(google.protobuf.message.Message):
     ENABLE_AND_USE: PolicySettings.ChangedBlockTracking.ValueType  # 2
     DO_NOT_USE: PolicySettings.ChangedBlockTracking.ValueType  # 3
 
+    class _CommandType:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _CommandTypeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[PolicySettings._CommandType.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        COMMAND_TYPE_UNSPECIFIED: PolicySettings._CommandType.ValueType  # 0
+        PRE_COMMAND: PolicySettings._CommandType.ValueType  # 1
+        """Launch command before backup execution"""
+        POST_COMMAND: PolicySettings._CommandType.ValueType  # 2
+        """Launch command after backup execution"""
+
+    class CommandType(_CommandType, metaclass=_CommandTypeEnumTypeWrapper): ...
+    COMMAND_TYPE_UNSPECIFIED: PolicySettings.CommandType.ValueType  # 0
+    PRE_COMMAND: PolicySettings.CommandType.ValueType  # 1
+    """Launch command before backup execution"""
+    POST_COMMAND: PolicySettings.CommandType.ValueType  # 2
+    """Launch command after backup execution"""
+
     @typing.final
     class Interval(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
@@ -630,6 +649,44 @@ class PolicySettings(google.protobuf.message.Message):
         ) -> None: ...
         def ClearField(self, field_name: typing.Literal["exclusion_masks", b"exclusion_masks", "inclusion_masks", b"inclusion_masks"]) -> None: ...
 
+    @typing.final
+    class PrePostCommand(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        CMD_FIELD_NUMBER: builtins.int
+        ARGS_FIELD_NUMBER: builtins.int
+        ENABLED_FIELD_NUMBER: builtins.int
+        STOP_ON_ERROR_FIELD_NUMBER: builtins.int
+        TYPE_FIELD_NUMBER: builtins.int
+        WAIT_FIELD_NUMBER: builtins.int
+        WORKDIR_FIELD_NUMBER: builtins.int
+        cmd: builtins.str
+        """Command to execute"""
+        args: builtins.str
+        """Command args"""
+        enabled: builtins.bool
+        """Is command enabled"""
+        stop_on_error: builtins.bool
+        """Stop backup execution on error"""
+        type: global___PolicySettings.CommandType.ValueType
+        """Type of command: pre or post"""
+        wait: builtins.bool
+        """Wait command finish before launching backup"""
+        workdir: builtins.str
+        """Workdir for command execution"""
+        def __init__(
+            self,
+            *,
+            cmd: builtins.str = ...,
+            args: builtins.str = ...,
+            enabled: builtins.bool = ...,
+            stop_on_error: builtins.bool = ...,
+            type: global___PolicySettings.CommandType.ValueType = ...,
+            wait: builtins.bool = ...,
+            workdir: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["args", b"args", "cmd", b"cmd", "enabled", b"enabled", "stop_on_error", b"stop_on_error", "type", b"type", "wait", b"wait", "workdir", b"workdir"]) -> None: ...
+
     COMPRESSION_FIELD_NUMBER: builtins.int
     FORMAT_FIELD_NUMBER: builtins.int
     MULTI_VOLUME_SNAPSHOTTING_ENABLED_FIELD_NUMBER: builtins.int
@@ -650,6 +707,7 @@ class PolicySettings(google.protobuf.message.Message):
     SECTOR_BY_SECTOR_FIELD_NUMBER: builtins.int
     VALIDATION_ENABLED_FIELD_NUMBER: builtins.int
     LVM_SNAPSHOTTING_ENABLED_FIELD_NUMBER: builtins.int
+    PRE_POST_COMMANDS_FIELD_NUMBER: builtins.int
     compression: global___PolicySettings.Compression.ValueType
     """Archive compression level."""
     format: global___Format.ValueType
@@ -723,6 +781,10 @@ class PolicySettings(google.protobuf.message.Message):
     def file_filters(self) -> global___PolicySettings.FileFilters:
         """File filters to specify masks of files to backup or to exclude of backuping"""
 
+    @property
+    def pre_post_commands(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___PolicySettings.PrePostCommand]:
+        """Commands to launch before or after backup execution"""
+
     def __init__(
         self,
         *,
@@ -746,9 +808,10 @@ class PolicySettings(google.protobuf.message.Message):
         sector_by_sector: builtins.bool = ...,
         validation_enabled: builtins.bool = ...,
         lvm_snapshotting_enabled: builtins.bool = ...,
+        pre_post_commands: collections.abc.Iterable[global___PolicySettings.PrePostCommand] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["archive", b"archive", "file_filters", b"file_filters", "performance_window", b"performance_window", "reattempts", b"reattempts", "retention", b"retention", "scheduling", b"scheduling", "splitting", b"splitting", "vm_snapshot_reattempts", b"vm_snapshot_reattempts", "vss", b"vss"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["archive", b"archive", "cbt", b"cbt", "compression", b"compression", "fast_backup_enabled", b"fast_backup_enabled", "file_filters", b"file_filters", "format", b"format", "lvm_snapshotting_enabled", b"lvm_snapshotting_enabled", "multi_volume_snapshotting_enabled", b"multi_volume_snapshotting_enabled", "performance_window", b"performance_window", "preserve_file_security_settings", b"preserve_file_security_settings", "quiesce_snapshotting_enabled", b"quiesce_snapshotting_enabled", "reattempts", b"reattempts", "retention", b"retention", "scheduling", b"scheduling", "sector_by_sector", b"sector_by_sector", "silent_mode_enabled", b"silent_mode_enabled", "splitting", b"splitting", "validation_enabled", b"validation_enabled", "vm_snapshot_reattempts", b"vm_snapshot_reattempts", "vss", b"vss"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["archive", b"archive", "cbt", b"cbt", "compression", b"compression", "fast_backup_enabled", b"fast_backup_enabled", "file_filters", b"file_filters", "format", b"format", "lvm_snapshotting_enabled", b"lvm_snapshotting_enabled", "multi_volume_snapshotting_enabled", b"multi_volume_snapshotting_enabled", "performance_window", b"performance_window", "pre_post_commands", b"pre_post_commands", "preserve_file_security_settings", b"preserve_file_security_settings", "quiesce_snapshotting_enabled", b"quiesce_snapshotting_enabled", "reattempts", b"reattempts", "retention", b"retention", "scheduling", b"scheduling", "sector_by_sector", b"sector_by_sector", "silent_mode_enabled", b"silent_mode_enabled", "splitting", b"splitting", "validation_enabled", b"validation_enabled", "vm_snapshot_reattempts", b"vm_snapshot_reattempts", "vss", b"vss"]) -> None: ...
 
 global___PolicySettings = PolicySettings
 
