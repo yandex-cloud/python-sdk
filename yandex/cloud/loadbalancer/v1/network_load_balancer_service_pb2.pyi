@@ -6,6 +6,7 @@ isort:skip_file
 import builtins
 import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.duration_pb2
 import google.protobuf.field_mask_pb2
 import google.protobuf.internal.containers
 import google.protobuf.message
@@ -753,3 +754,88 @@ class ListenerSpec(google.protobuf.message.Message):
     def WhichOneof(self, oneof_group: typing.Literal["address", b"address"]) -> typing.Literal["external_address_spec", "internal_address_spec"] | None: ...
 
 global___ListenerSpec = ListenerSpec
+
+@typing.final
+class StartZonalShiftRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    NETWORK_LOAD_BALANCER_ID_FIELD_NUMBER: builtins.int
+    ZONE_IDS_FIELD_NUMBER: builtins.int
+    DURATION_FIELD_NUMBER: builtins.int
+    network_load_balancer_id: builtins.str
+    """ID of the network load balancer to start zonal shift."""
+    @property
+    def zone_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Zone IDs to start zonal shift."""
+
+    @property
+    def duration(self) -> google.protobuf.duration_pb2.Duration:
+        """The interval during which the zones will be shifted. Format 1m-72h.
+        If not set then zone will be shifted until it is removed through a separate call.
+        """
+
+    def __init__(
+        self,
+        *,
+        network_load_balancer_id: builtins.str = ...,
+        zone_ids: collections.abc.Iterable[builtins.str] | None = ...,
+        duration: google.protobuf.duration_pb2.Duration | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["duration", b"duration"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["duration", b"duration", "network_load_balancer_id", b"network_load_balancer_id", "zone_ids", b"zone_ids"]) -> None: ...
+
+global___StartZonalShiftRequest = StartZonalShiftRequest
+
+@typing.final
+class StartZonalShiftMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    NETWORK_LOAD_BALANCER_ID_FIELD_NUMBER: builtins.int
+    network_load_balancer_id: builtins.str
+    """ID of the network load balancer that the zonal shift is being started to."""
+    def __init__(
+        self,
+        *,
+        network_load_balancer_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["network_load_balancer_id", b"network_load_balancer_id"]) -> None: ...
+
+global___StartZonalShiftMetadata = StartZonalShiftMetadata
+
+@typing.final
+class CancelZonalShiftRequest(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    NETWORK_LOAD_BALANCER_ID_FIELD_NUMBER: builtins.int
+    ZONE_IDS_FIELD_NUMBER: builtins.int
+    network_load_balancer_id: builtins.str
+    """ID of the network load balancer to cancel zonal shift."""
+    @property
+    def zone_ids(self) -> google.protobuf.internal.containers.RepeatedScalarFieldContainer[builtins.str]:
+        """Zone IDs to cancel zonal shift."""
+
+    def __init__(
+        self,
+        *,
+        network_load_balancer_id: builtins.str = ...,
+        zone_ids: collections.abc.Iterable[builtins.str] | None = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["network_load_balancer_id", b"network_load_balancer_id", "zone_ids", b"zone_ids"]) -> None: ...
+
+global___CancelZonalShiftRequest = CancelZonalShiftRequest
+
+@typing.final
+class CancelZonalShiftMetadata(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    NETWORK_LOAD_BALANCER_ID_FIELD_NUMBER: builtins.int
+    network_load_balancer_id: builtins.str
+    """ID of the network load balancer that the zonal shift is being canceled to."""
+    def __init__(
+        self,
+        *,
+        network_load_balancer_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["network_load_balancer_id", b"network_load_balancer_id"]) -> None: ...
+
+global___CancelZonalShiftMetadata = CancelZonalShiftMetadata

@@ -52,6 +52,11 @@ class InstanceServiceStub(object):
                 request_serializer=yandex_dot_cloud_dot_gitlab_dot_v1_dot_instance__service__pb2.CreateInstanceRequest.SerializeToString,
                 response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.Update = channel.unary_unary(
+                '/yandex.cloud.gitlab.v1.InstanceService/Update',
+                request_serializer=yandex_dot_cloud_dot_gitlab_dot_v1_dot_instance__service__pb2.UpdateInstanceRequest.SerializeToString,
+                response_deserializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
         self.Delete = channel.unary_unary(
                 '/yandex.cloud.gitlab.v1.InstanceService/Delete',
                 request_serializer=yandex_dot_cloud_dot_gitlab_dot_v1_dot_instance__service__pb2.DeleteInstanceRequest.SerializeToString,
@@ -94,6 +99,13 @@ class InstanceServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Update(self, request, context):
+        """Updates GitLab instance.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def Delete(self, request, context):
         """Deletes the specified GitLab instance.
         """
@@ -131,6 +143,11 @@ def add_InstanceServiceServicer_to_server(servicer, server):
             'Create': grpc.unary_unary_rpc_method_handler(
                     servicer.Create,
                     request_deserializer=yandex_dot_cloud_dot_gitlab_dot_v1_dot_instance__service__pb2.CreateInstanceRequest.FromString,
+                    response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'Update': grpc.unary_unary_rpc_method_handler(
+                    servicer.Update,
+                    request_deserializer=yandex_dot_cloud_dot_gitlab_dot_v1_dot_instance__service__pb2.UpdateInstanceRequest.FromString,
                     response_serializer=yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.SerializeToString,
             ),
             'Delete': grpc.unary_unary_rpc_method_handler(
@@ -230,6 +247,33 @@ class InstanceService(object):
             target,
             '/yandex.cloud.gitlab.v1.InstanceService/Create',
             yandex_dot_cloud_dot_gitlab_dot_v1_dot_instance__service__pb2.CreateInstanceRequest.SerializeToString,
+            yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Update(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/yandex.cloud.gitlab.v1.InstanceService/Update',
+            yandex_dot_cloud_dot_gitlab_dot_v1_dot_instance__service__pb2.UpdateInstanceRequest.SerializeToString,
             yandex_dot_cloud_dot_operation_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,

@@ -6,6 +6,7 @@ isort:skip_file
 import builtins
 import collections.abc
 import google.protobuf.descriptor
+import google.protobuf.field_mask_pb2
 import google.protobuf.internal.containers
 import google.protobuf.message
 import typing
@@ -195,6 +196,107 @@ class CreateInstanceMetadata(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["instance_id", b"instance_id"]) -> None: ...
 
 global___CreateInstanceMetadata = CreateInstanceMetadata
+
+@typing.final
+class UpdateInstanceRequest(google.protobuf.message.Message):
+    """Request message for InstanceService.Update."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    @typing.final
+    class LabelsEntry(google.protobuf.message.Message):
+        DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+        KEY_FIELD_NUMBER: builtins.int
+        VALUE_FIELD_NUMBER: builtins.int
+        key: builtins.str
+        value: builtins.str
+        def __init__(
+            self,
+            *,
+            key: builtins.str = ...,
+            value: builtins.str = ...,
+        ) -> None: ...
+        def ClearField(self, field_name: typing.Literal["key", b"key", "value", b"value"]) -> None: ...
+
+    INSTANCE_ID_FIELD_NUMBER: builtins.int
+    NAME_FIELD_NUMBER: builtins.int
+    DESCRIPTION_FIELD_NUMBER: builtins.int
+    LABELS_FIELD_NUMBER: builtins.int
+    BACKUP_RETAIN_PERIOD_DAYS_FIELD_NUMBER: builtins.int
+    RESOURCE_PRESET_ID_FIELD_NUMBER: builtins.int
+    MAINTENANCE_DELETE_UNTAGGED_FIELD_NUMBER: builtins.int
+    DELETION_PROTECTION_FIELD_NUMBER: builtins.int
+    APPROVAL_RULES_ID_FIELD_NUMBER: builtins.int
+    APPROVAL_RULES_TOKEN_FIELD_NUMBER: builtins.int
+    DISK_SIZE_FIELD_NUMBER: builtins.int
+    UPDATE_MASK_FIELD_NUMBER: builtins.int
+    instance_id: builtins.str
+    """ID of the GitLab instance to update."""
+    name: builtins.str
+    """Name of the instance (must be unique within the folder)."""
+    description: builtins.str
+    """Description of the instance."""
+    backup_retain_period_days: builtins.int
+    """Number of days to retain backups."""
+    resource_preset_id: builtins.str
+    """ID of the resource preset for computational resources."""
+    maintenance_delete_untagged: builtins.bool
+    """Whether to delete untagged resources during maintenance."""
+    deletion_protection: builtins.bool
+    """Whether deletion protection is enabled."""
+    approval_rules_id: builtins.str
+    """ID of approval rules for the instance."""
+    approval_rules_token: builtins.str
+    """Token of approval rules for the instance."""
+    disk_size: builtins.int
+    """Disk size in bytes."""
+    @property
+    def labels(self) -> google.protobuf.internal.containers.ScalarMap[builtins.str, builtins.str]:
+        """Custom labels for the instance as `` key:value `` pairs. For example, "env": "prod" """
+
+    @property
+    def update_mask(self) -> google.protobuf.field_mask_pb2.FieldMask:
+        """Field mask that specifies which attributes of the trail are going to be updated."""
+
+    def __init__(
+        self,
+        *,
+        instance_id: builtins.str = ...,
+        name: builtins.str = ...,
+        description: builtins.str = ...,
+        labels: collections.abc.Mapping[builtins.str, builtins.str] | None = ...,
+        backup_retain_period_days: builtins.int = ...,
+        resource_preset_id: builtins.str = ...,
+        maintenance_delete_untagged: builtins.bool = ...,
+        deletion_protection: builtins.bool = ...,
+        approval_rules_id: builtins.str = ...,
+        approval_rules_token: builtins.str = ...,
+        disk_size: builtins.int = ...,
+        update_mask: google.protobuf.field_mask_pb2.FieldMask | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["update_mask", b"update_mask"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["approval_rules_id", b"approval_rules_id", "approval_rules_token", b"approval_rules_token", "backup_retain_period_days", b"backup_retain_period_days", "deletion_protection", b"deletion_protection", "description", b"description", "disk_size", b"disk_size", "instance_id", b"instance_id", "labels", b"labels", "maintenance_delete_untagged", b"maintenance_delete_untagged", "name", b"name", "resource_preset_id", b"resource_preset_id", "update_mask", b"update_mask"]) -> None: ...
+
+global___UpdateInstanceRequest = UpdateInstanceRequest
+
+@typing.final
+class UpdateInstanceMetadata(google.protobuf.message.Message):
+    """Metadata message for InstanceService.Update."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    INSTANCE_ID_FIELD_NUMBER: builtins.int
+    instance_id: builtins.str
+    """ID of the GitLab instance to update."""
+    def __init__(
+        self,
+        *,
+        instance_id: builtins.str = ...,
+    ) -> None: ...
+    def ClearField(self, field_name: typing.Literal["instance_id", b"instance_id"]) -> None: ...
+
+global___UpdateInstanceMetadata = UpdateInstanceMetadata
 
 @typing.final
 class DeleteInstanceRequest(google.protobuf.message.Message):

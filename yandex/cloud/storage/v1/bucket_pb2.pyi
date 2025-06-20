@@ -104,6 +104,7 @@ class Bucket(google.protobuf.message.Message):
     OBJECT_LOCK_FIELD_NUMBER: builtins.int
     ENCRYPTION_FIELD_NUMBER: builtins.int
     ALLOWED_PRIVATE_ENDPOINTS_FIELD_NUMBER: builtins.int
+    RESOURCE_ID_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the bucket. Always equal to [name], which has priority."""
     name: builtins.str
@@ -127,6 +128,8 @@ class Bucket(google.protobuf.message.Message):
     """Maximum size of the bucket, in bytes.
     For details, see [documentation](/docs/storage/operations/buckets/limit-max-volume).
     """
+    resource_id: builtins.str
+    """ID of the Yandex.Cloud entity that owns the bucket."""
     @property
     def anonymous_access_flags(self) -> global___AnonymousAccessFlags:
         """Flags for configuring public (anonymous) access to the bucket's content and settings.
@@ -209,9 +212,10 @@ class Bucket(google.protobuf.message.Message):
         object_lock: global___ObjectLock | None = ...,
         encryption: global___Encryption | None = ...,
         allowed_private_endpoints: global___BucketAllowedPrivateEndpoints | None = ...,
+        resource_id: builtins.str = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["acl", b"acl", "allowed_private_endpoints", b"allowed_private_endpoints", "anonymous_access_flags", b"anonymous_access_flags", "created_at", b"created_at", "encryption", b"encryption", "object_lock", b"object_lock", "policy", b"policy", "website_settings", b"website_settings"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["acl", b"acl", "allowed_private_endpoints", b"allowed_private_endpoints", "anonymous_access_flags", b"anonymous_access_flags", "cors", b"cors", "created_at", b"created_at", "default_storage_class", b"default_storage_class", "encryption", b"encryption", "folder_id", b"folder_id", "id", b"id", "lifecycle_rules", b"lifecycle_rules", "max_size", b"max_size", "name", b"name", "object_lock", b"object_lock", "policy", b"policy", "tags", b"tags", "versioning", b"versioning", "website_settings", b"website_settings"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["acl", b"acl", "allowed_private_endpoints", b"allowed_private_endpoints", "anonymous_access_flags", b"anonymous_access_flags", "cors", b"cors", "created_at", b"created_at", "default_storage_class", b"default_storage_class", "encryption", b"encryption", "folder_id", b"folder_id", "id", b"id", "lifecycle_rules", b"lifecycle_rules", "max_size", b"max_size", "name", b"name", "object_lock", b"object_lock", "policy", b"policy", "resource_id", b"resource_id", "tags", b"tags", "versioning", b"versioning", "website_settings", b"website_settings"]) -> None: ...
 
 global___Bucket = Bucket
 

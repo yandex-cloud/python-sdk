@@ -164,6 +164,7 @@ class NetworkLoadBalancer(google.protobuf.message.Message):
     ATTACHED_TARGET_GROUPS_FIELD_NUMBER: builtins.int
     DELETION_PROTECTION_FIELD_NUMBER: builtins.int
     ALLOW_ZONAL_SHIFT_FIELD_NUMBER: builtins.int
+    ZONAL_SHIFT_STATUSES_FIELD_NUMBER: builtins.int
     id: builtins.str
     """ID of the network load balancer."""
     folder_id: builtins.str
@@ -200,6 +201,10 @@ class NetworkLoadBalancer(google.protobuf.message.Message):
     def attached_target_groups(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___AttachedTargetGroup]:
         """List of target groups attached to the network load balancer."""
 
+    @property
+    def zonal_shift_statuses(self) -> google.protobuf.internal.containers.RepeatedCompositeFieldContainer[global___ZonalShiftStatus]:
+        """List of shifted zones for the network load balancer."""
+
     def __init__(
         self,
         *,
@@ -217,9 +222,10 @@ class NetworkLoadBalancer(google.protobuf.message.Message):
         attached_target_groups: collections.abc.Iterable[global___AttachedTargetGroup] | None = ...,
         deletion_protection: builtins.bool = ...,
         allow_zonal_shift: builtins.bool = ...,
+        zonal_shift_statuses: collections.abc.Iterable[global___ZonalShiftStatus] | None = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["created_at", b"created_at"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["allow_zonal_shift", b"allow_zonal_shift", "attached_target_groups", b"attached_target_groups", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "listeners", b"listeners", "name", b"name", "region_id", b"region_id", "session_affinity", b"session_affinity", "status", b"status", "type", b"type"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["allow_zonal_shift", b"allow_zonal_shift", "attached_target_groups", b"attached_target_groups", "created_at", b"created_at", "deletion_protection", b"deletion_protection", "description", b"description", "folder_id", b"folder_id", "id", b"id", "labels", b"labels", "listeners", b"listeners", "name", b"name", "region_id", b"region_id", "session_affinity", b"session_affinity", "status", b"status", "type", b"type", "zonal_shift_statuses", b"zonal_shift_statuses"]) -> None: ...
 
 global___NetworkLoadBalancer = NetworkLoadBalancer
 
@@ -366,3 +372,30 @@ class TargetState(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["address", b"address", "status", b"status", "subnet_id", b"subnet_id"]) -> None: ...
 
 global___TargetState = TargetState
+
+@typing.final
+class ZonalShiftStatus(google.protobuf.message.Message):
+    """Status of the shifted zones."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    ZONE_ID_FIELD_NUMBER: builtins.int
+    SHIFTED_UNTIL_FIELD_NUMBER: builtins.int
+    zone_id: builtins.str
+    """ID of zone."""
+    @property
+    def shifted_until(self) -> google.protobuf.timestamp_pb2.Timestamp:
+        """Timestamp until which the zone will be shifted.
+        If not present then zone will be shifted until it is removed through a separate call.
+        """
+
+    def __init__(
+        self,
+        *,
+        zone_id: builtins.str = ...,
+        shifted_until: google.protobuf.timestamp_pb2.Timestamp | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["shifted_until", b"shifted_until"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["shifted_until", b"shifted_until", "zone_id", b"zone_id"]) -> None: ...
+
+global___ZonalShiftStatus = ZonalShiftStatus

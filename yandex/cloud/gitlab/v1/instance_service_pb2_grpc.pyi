@@ -41,6 +41,12 @@ class InstanceServiceStub:
     ]
     """Creates a new GitLab instance in the specified folder."""
 
+    Update: grpc.UnaryUnaryMultiCallable[
+        yandex.cloud.gitlab.v1.instance_service_pb2.UpdateInstanceRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates GitLab instance."""
+
     Delete: grpc.UnaryUnaryMultiCallable[
         yandex.cloud.gitlab.v1.instance_service_pb2.DeleteInstanceRequest,
         yandex.cloud.operation.operation_pb2.Operation,
@@ -79,6 +85,12 @@ class InstanceServiceAsyncStub:
         yandex.cloud.operation.operation_pb2.Operation,
     ]
     """Creates a new GitLab instance in the specified folder."""
+
+    Update: grpc.aio.UnaryUnaryMultiCallable[
+        yandex.cloud.gitlab.v1.instance_service_pb2.UpdateInstanceRequest,
+        yandex.cloud.operation.operation_pb2.Operation,
+    ]
+    """Updates GitLab instance."""
 
     Delete: grpc.aio.UnaryUnaryMultiCallable[
         yandex.cloud.gitlab.v1.instance_service_pb2.DeleteInstanceRequest,
@@ -124,6 +136,14 @@ class InstanceServiceServicer(metaclass=abc.ABCMeta):
         context: _ServicerContext,
     ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
         """Creates a new GitLab instance in the specified folder."""
+
+    @abc.abstractmethod
+    def Update(
+        self,
+        request: yandex.cloud.gitlab.v1.instance_service_pb2.UpdateInstanceRequest,
+        context: _ServicerContext,
+    ) -> typing.Union[yandex.cloud.operation.operation_pb2.Operation, collections.abc.Awaitable[yandex.cloud.operation.operation_pb2.Operation]]:
+        """Updates GitLab instance."""
 
     @abc.abstractmethod
     def Delete(

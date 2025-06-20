@@ -23,13 +23,14 @@ _sym_db = _symbol_database.Default()
 
 
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
+from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
 from yandex.cloud import validation_pb2 as yandex_dot_cloud_dot_validation__pb2
 from yandex.cloud.gitlab.v1 import instance_pb2 as yandex_dot_cloud_dot_gitlab_dot_v1_dot_instance__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n-yandex/cloud/gitlab/v1/instance_service.proto\x12\x16yandex.cloud.gitlab.v1\x1a\x1cgoogle/api/annotations.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a%yandex/cloud/gitlab/v1/instance.proto\"7\n\x12GetInstanceRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"u\n\x14ListInstancesRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"e\n\x15ListInstancesResponse\x12\x33\n\tinstances\x18\x01 \x03(\x0b\x32 .yandex.cloud.gitlab.v1.Instance\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xcf\x05\n\x15\x43reateInstanceRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x33\n\x04name\x18\x02 \x01(\tB%\xe8\xc7\x31\x01\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x86\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x39.yandex.cloud.gitlab.v1.CreateInstanceRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12(\n\x12resource_preset_id\x18\x05 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x11\n\tdisk_size\x18\x06 \x01(\x03\x12!\n\x0b\x61\x64min_login\x18\x07 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x19\n\x0b\x61\x64min_email\x18\x08 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x46\n\rdomain_prefix\x18\t \x01(\tB/\xe8\xc7\x31\x01\xf2\xc7\x31\x1f[a-z0-9][a-z0-9-]{3,48}[a-z0-9]\x8a\xc8\x31\x04<=50\x12\x1f\n\tsubnet_id\x18\n \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\'\n\x19\x62\x61\x63kup_retain_period_days\x18\x0c \x01(\x03\x42\x04\xe8\xc7\x31\x00\x12#\n\x1bmaintenance_delete_untagged\x18\x0e \x01(\x08\x12\x1b\n\x13\x64\x65letion_protection\x18\x0f \x01(\x08\x12\'\n\x11\x61pproval_rules_id\x18\x13 \x01(\tB\x0c\xe8\xc7\x31\x00\x8a\xc8\x31\x04<=30\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x0b\x10\x0cJ\x04\x08\r\x10\x0eJ\x04\x08\x10\x10\x13\"-\n\x16\x43reateInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\",\n\x15\x44\x65leteInstanceRequest\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"-\n\x16\x44\x65leteInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"+\n\x14StartInstanceRequest\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\",\n\x15StartInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"*\n\x13StopInstanceRequest\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"+\n\x14StopInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t2\xd6\x07\n\x0fInstanceService\x12\x7f\n\x03Get\x12*.yandex.cloud.gitlab.v1.GetInstanceRequest\x1a .yandex.cloud.gitlab.v1.Instance\"*\x82\xd3\xe4\x93\x02$\x12\"/gitlab/v1/instances/{instance_id}\x12\x81\x01\n\x04List\x12,.yandex.cloud.gitlab.v1.ListInstancesRequest\x1a-.yandex.cloud.gitlab.v1.ListInstancesResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/gitlab/v1/instances\x12\xa1\x01\n\x06\x43reate\x12-.yandex.cloud.gitlab.v1.CreateInstanceRequest\x1a!.yandex.cloud.operation.Operation\"E\xb2\xd2*\"\n\x16\x43reateInstanceMetadata\x12\x08Instance\x82\xd3\xe4\x93\x02\x19\"\x14/gitlab/v1/instances:\x01*\x12\xb9\x01\n\x06\x44\x65lete\x12-.yandex.cloud.gitlab.v1.DeleteInstanceRequest\x1a!.yandex.cloud.operation.Operation\"]\xb2\xd2*/\n\x16\x44\x65leteInstanceMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02$*\"/gitlab/v1/instances/{instance_id}\x12\xaf\x01\n\x05Start\x12,.yandex.cloud.gitlab.v1.StartInstanceRequest\x1a!.yandex.cloud.operation.Operation\"U\xb2\xd2*!\n\x15StartInstanceMetadata\x12\x08Instance\x82\xd3\xe4\x93\x02*\"(/gitlab/v1/instances/{instance_id}:start\x12\xab\x01\n\x04Stop\x12+.yandex.cloud.gitlab.v1.StopInstanceRequest\x1a!.yandex.cloud.operation.Operation\"S\xb2\xd2* \n\x14StopInstanceMetadata\x12\x08Instance\x82\xd3\xe4\x93\x02)\"\'/gitlab/v1/instances/{instance_id}:stopBd\n\x1ayandex.cloud.api.gitlab.v1B\x03GISZAgithub.com/yandex-cloud/go-genproto/yandex/cloud/gitlab/v1;gitlabb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n-yandex/cloud/gitlab/v1/instance_service.proto\x12\x16yandex.cloud.gitlab.v1\x1a\x1cgoogle/api/annotations.proto\x1a google/protobuf/field_mask.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1dyandex/cloud/validation.proto\x1a%yandex/cloud/gitlab/v1/instance.proto\"7\n\x12GetInstanceRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\"u\n\x14ListInstancesRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x1d\n\tpage_size\x18\x02 \x01(\x03\x42\n\xfa\xc7\x31\x06\x30-1000\x12\x1d\n\npage_token\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=100\"e\n\x15ListInstancesResponse\x12\x33\n\tinstances\x18\x01 \x03(\x0b\x32 .yandex.cloud.gitlab.v1.Instance\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t\"\xcf\x05\n\x15\x43reateInstanceRequest\x12\x1f\n\tfolder_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x33\n\x04name\x18\x02 \x01(\tB%\xe8\xc7\x31\x01\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x86\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x39.yandex.cloud.gitlab.v1.CreateInstanceRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12(\n\x12resource_preset_id\x18\x05 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x11\n\tdisk_size\x18\x06 \x01(\x03\x12!\n\x0b\x61\x64min_login\x18\x07 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\x19\n\x0b\x61\x64min_email\x18\x08 \x01(\tB\x04\xe8\xc7\x31\x01\x12\x46\n\rdomain_prefix\x18\t \x01(\tB/\xe8\xc7\x31\x01\xf2\xc7\x31\x1f[a-z0-9][a-z0-9-]{3,48}[a-z0-9]\x8a\xc8\x31\x04<=50\x12\x1f\n\tsubnet_id\x18\n \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12\'\n\x19\x62\x61\x63kup_retain_period_days\x18\x0c \x01(\x03\x42\x04\xe8\xc7\x31\x00\x12#\n\x1bmaintenance_delete_untagged\x18\x0e \x01(\x08\x12\x1b\n\x13\x64\x65letion_protection\x18\x0f \x01(\x08\x12\'\n\x11\x61pproval_rules_id\x18\x13 \x01(\tB\x0c\xe8\xc7\x31\x00\x8a\xc8\x31\x04<=30\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x0b\x10\x0cJ\x04\x08\r\x10\x0eJ\x04\x08\x10\x10\x13\"-\n\x16\x43reateInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"\xee\x04\n\x15UpdateInstanceRequest\x12!\n\x0binstance_id\x18\x01 \x01(\tB\x0c\xe8\xc7\x31\x01\x8a\xc8\x31\x04<=50\x12/\n\x04name\x18\x02 \x01(\tB!\xf2\xc7\x31\x1d|[a-z][-a-z0-9]{1,61}[a-z0-9]\x12\x1e\n\x0b\x64\x65scription\x18\x03 \x01(\tB\t\x8a\xc8\x31\x05<=256\x12\x86\x01\n\x06labels\x18\x04 \x03(\x0b\x32\x39.yandex.cloud.gitlab.v1.UpdateInstanceRequest.LabelsEntryB;\xf2\xc7\x31\x0b[-_0-9a-z]*\x82\xc8\x31\x04<=64\x8a\xc8\x31\x04<=63\xb2\xc8\x31\x18\x12\x10[a-z][-_0-9a-z]*\x1a\x04\x31-63\x12!\n\x19\x62\x61\x63kup_retain_period_days\x18\x06 \x01(\x03\x12\x1a\n\x12resource_preset_id\x18\x07 \x01(\t\x12#\n\x1bmaintenance_delete_untagged\x18\n \x01(\x08\x12\x1b\n\x13\x64\x65letion_protection\x18\x0b \x01(\x08\x12#\n\x11\x61pproval_rules_id\x18\x0c \x01(\tB\x08\x8a\xc8\x31\x04<=30\x12\'\n\x14\x61pproval_rules_token\x18\r \x01(\tB\t\x8a\xc8\x31\x05<=100\x12\x11\n\tdisk_size\x18\x15 \x01(\x03\x12/\n\x0bupdate_mask\x18\x18 \x01(\x0b\x32\x1a.google.protobuf.FieldMask\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01J\x04\x08\x05\x10\x06J\x04\x08\x08\x10\nJ\x04\x08\x0e\x10\x15J\x04\x08\x16\x10\x18\"-\n\x16UpdateInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\",\n\x15\x44\x65leteInstanceRequest\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"-\n\x16\x44\x65leteInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"+\n\x14StartInstanceRequest\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\",\n\x15StartInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"*\n\x13StopInstanceRequest\x12\x13\n\x0binstance_id\x18\x01 \x01(\t\"+\n\x14StopInstanceMetadata\x12\x13\n\x0binstance_id\x18\x01 \x01(\t2\x88\t\n\x0fInstanceService\x12\x7f\n\x03Get\x12*.yandex.cloud.gitlab.v1.GetInstanceRequest\x1a .yandex.cloud.gitlab.v1.Instance\"*\x82\xd3\xe4\x93\x02$\x12\"/gitlab/v1/instances/{instance_id}\x12\x81\x01\n\x04List\x12,.yandex.cloud.gitlab.v1.ListInstancesRequest\x1a-.yandex.cloud.gitlab.v1.ListInstancesResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/gitlab/v1/instances\x12\xa1\x01\n\x06\x43reate\x12-.yandex.cloud.gitlab.v1.CreateInstanceRequest\x1a!.yandex.cloud.operation.Operation\"E\xb2\xd2*\"\n\x16\x43reateInstanceMetadata\x12\x08Instance\x82\xd3\xe4\x93\x02\x19\"\x14/gitlab/v1/instances:\x01*\x12\xaf\x01\n\x06Update\x12-.yandex.cloud.gitlab.v1.UpdateInstanceRequest\x1a!.yandex.cloud.operation.Operation\"S\xb2\xd2*\"\n\x16UpdateInstanceMetadata\x12\x08Instance\x82\xd3\xe4\x93\x02\'2\"/gitlab/v1/instances/{instance_id}:\x01*\x12\xb9\x01\n\x06\x44\x65lete\x12-.yandex.cloud.gitlab.v1.DeleteInstanceRequest\x1a!.yandex.cloud.operation.Operation\"]\xb2\xd2*/\n\x16\x44\x65leteInstanceMetadata\x12\x15google.protobuf.Empty\x82\xd3\xe4\x93\x02$*\"/gitlab/v1/instances/{instance_id}\x12\xaf\x01\n\x05Start\x12,.yandex.cloud.gitlab.v1.StartInstanceRequest\x1a!.yandex.cloud.operation.Operation\"U\xb2\xd2*!\n\x15StartInstanceMetadata\x12\x08Instance\x82\xd3\xe4\x93\x02*\"(/gitlab/v1/instances/{instance_id}:start\x12\xab\x01\n\x04Stop\x12+.yandex.cloud.gitlab.v1.StopInstanceRequest\x1a!.yandex.cloud.operation.Operation\"S\xb2\xd2* \n\x14StopInstanceMetadata\x12\x08Instance\x82\xd3\xe4\x93\x02)\"\'/gitlab/v1/instances/{instance_id}:stopBd\n\x1ayandex.cloud.api.gitlab.v1B\x03GISZAgithub.com/yandex-cloud/go-genproto/yandex/cloud/gitlab/v1;gitlabb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -69,42 +70,64 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CREATEINSTANCEREQUEST'].fields_by_name['backup_retain_period_days']._serialized_options = b'\350\3071\000'
   _globals['_CREATEINSTANCEREQUEST'].fields_by_name['approval_rules_id']._loaded_options = None
   _globals['_CREATEINSTANCEREQUEST'].fields_by_name['approval_rules_id']._serialized_options = b'\350\3071\000\212\3101\004<=30'
+  _globals['_UPDATEINSTANCEREQUEST_LABELSENTRY']._loaded_options = None
+  _globals['_UPDATEINSTANCEREQUEST_LABELSENTRY']._serialized_options = b'8\001'
+  _globals['_UPDATEINSTANCEREQUEST'].fields_by_name['instance_id']._loaded_options = None
+  _globals['_UPDATEINSTANCEREQUEST'].fields_by_name['instance_id']._serialized_options = b'\350\3071\001\212\3101\004<=50'
+  _globals['_UPDATEINSTANCEREQUEST'].fields_by_name['name']._loaded_options = None
+  _globals['_UPDATEINSTANCEREQUEST'].fields_by_name['name']._serialized_options = b'\362\3071\035|[a-z][-a-z0-9]{1,61}[a-z0-9]'
+  _globals['_UPDATEINSTANCEREQUEST'].fields_by_name['description']._loaded_options = None
+  _globals['_UPDATEINSTANCEREQUEST'].fields_by_name['description']._serialized_options = b'\212\3101\005<=256'
+  _globals['_UPDATEINSTANCEREQUEST'].fields_by_name['labels']._loaded_options = None
+  _globals['_UPDATEINSTANCEREQUEST'].fields_by_name['labels']._serialized_options = b'\362\3071\013[-_0-9a-z]*\202\3101\004<=64\212\3101\004<=63\262\3101\030\022\020[a-z][-_0-9a-z]*\032\0041-63'
+  _globals['_UPDATEINSTANCEREQUEST'].fields_by_name['approval_rules_id']._loaded_options = None
+  _globals['_UPDATEINSTANCEREQUEST'].fields_by_name['approval_rules_id']._serialized_options = b'\212\3101\004<=30'
+  _globals['_UPDATEINSTANCEREQUEST'].fields_by_name['approval_rules_token']._loaded_options = None
+  _globals['_UPDATEINSTANCEREQUEST'].fields_by_name['approval_rules_token']._serialized_options = b'\212\3101\005<=100'
   _globals['_INSTANCESERVICE'].methods_by_name['Get']._loaded_options = None
   _globals['_INSTANCESERVICE'].methods_by_name['Get']._serialized_options = b'\202\323\344\223\002$\022\"/gitlab/v1/instances/{instance_id}'
   _globals['_INSTANCESERVICE'].methods_by_name['List']._loaded_options = None
   _globals['_INSTANCESERVICE'].methods_by_name['List']._serialized_options = b'\202\323\344\223\002\026\022\024/gitlab/v1/instances'
   _globals['_INSTANCESERVICE'].methods_by_name['Create']._loaded_options = None
   _globals['_INSTANCESERVICE'].methods_by_name['Create']._serialized_options = b'\262\322*\"\n\026CreateInstanceMetadata\022\010Instance\202\323\344\223\002\031\"\024/gitlab/v1/instances:\001*'
+  _globals['_INSTANCESERVICE'].methods_by_name['Update']._loaded_options = None
+  _globals['_INSTANCESERVICE'].methods_by_name['Update']._serialized_options = b'\262\322*\"\n\026UpdateInstanceMetadata\022\010Instance\202\323\344\223\002\'2\"/gitlab/v1/instances/{instance_id}:\001*'
   _globals['_INSTANCESERVICE'].methods_by_name['Delete']._loaded_options = None
   _globals['_INSTANCESERVICE'].methods_by_name['Delete']._serialized_options = b'\262\322*/\n\026DeleteInstanceMetadata\022\025google.protobuf.Empty\202\323\344\223\002$*\"/gitlab/v1/instances/{instance_id}'
   _globals['_INSTANCESERVICE'].methods_by_name['Start']._loaded_options = None
   _globals['_INSTANCESERVICE'].methods_by_name['Start']._serialized_options = b'\262\322*!\n\025StartInstanceMetadata\022\010Instance\202\323\344\223\002*\"(/gitlab/v1/instances/{instance_id}:start'
   _globals['_INSTANCESERVICE'].methods_by_name['Stop']._loaded_options = None
   _globals['_INSTANCESERVICE'].methods_by_name['Stop']._serialized_options = b'\262\322* \n\024StopInstanceMetadata\022\010Instance\202\323\344\223\002)\"\'/gitlab/v1/instances/{instance_id}:stop'
-  _globals['_GETINSTANCEREQUEST']._serialized_start=247
-  _globals['_GETINSTANCEREQUEST']._serialized_end=302
-  _globals['_LISTINSTANCESREQUEST']._serialized_start=304
-  _globals['_LISTINSTANCESREQUEST']._serialized_end=421
-  _globals['_LISTINSTANCESRESPONSE']._serialized_start=423
-  _globals['_LISTINSTANCESRESPONSE']._serialized_end=524
-  _globals['_CREATEINSTANCEREQUEST']._serialized_start=527
-  _globals['_CREATEINSTANCEREQUEST']._serialized_end=1246
-  _globals['_CREATEINSTANCEREQUEST_LABELSENTRY']._serialized_start=1183
-  _globals['_CREATEINSTANCEREQUEST_LABELSENTRY']._serialized_end=1228
-  _globals['_CREATEINSTANCEMETADATA']._serialized_start=1248
-  _globals['_CREATEINSTANCEMETADATA']._serialized_end=1293
-  _globals['_DELETEINSTANCEREQUEST']._serialized_start=1295
-  _globals['_DELETEINSTANCEREQUEST']._serialized_end=1339
-  _globals['_DELETEINSTANCEMETADATA']._serialized_start=1341
-  _globals['_DELETEINSTANCEMETADATA']._serialized_end=1386
-  _globals['_STARTINSTANCEREQUEST']._serialized_start=1388
-  _globals['_STARTINSTANCEREQUEST']._serialized_end=1431
-  _globals['_STARTINSTANCEMETADATA']._serialized_start=1433
-  _globals['_STARTINSTANCEMETADATA']._serialized_end=1477
-  _globals['_STOPINSTANCEREQUEST']._serialized_start=1479
-  _globals['_STOPINSTANCEREQUEST']._serialized_end=1521
-  _globals['_STOPINSTANCEMETADATA']._serialized_start=1523
-  _globals['_STOPINSTANCEMETADATA']._serialized_end=1566
-  _globals['_INSTANCESERVICE']._serialized_start=1569
-  _globals['_INSTANCESERVICE']._serialized_end=2551
+  _globals['_GETINSTANCEREQUEST']._serialized_start=281
+  _globals['_GETINSTANCEREQUEST']._serialized_end=336
+  _globals['_LISTINSTANCESREQUEST']._serialized_start=338
+  _globals['_LISTINSTANCESREQUEST']._serialized_end=455
+  _globals['_LISTINSTANCESRESPONSE']._serialized_start=457
+  _globals['_LISTINSTANCESRESPONSE']._serialized_end=558
+  _globals['_CREATEINSTANCEREQUEST']._serialized_start=561
+  _globals['_CREATEINSTANCEREQUEST']._serialized_end=1280
+  _globals['_CREATEINSTANCEREQUEST_LABELSENTRY']._serialized_start=1217
+  _globals['_CREATEINSTANCEREQUEST_LABELSENTRY']._serialized_end=1262
+  _globals['_CREATEINSTANCEMETADATA']._serialized_start=1282
+  _globals['_CREATEINSTANCEMETADATA']._serialized_end=1327
+  _globals['_UPDATEINSTANCEREQUEST']._serialized_start=1330
+  _globals['_UPDATEINSTANCEREQUEST']._serialized_end=1952
+  _globals['_UPDATEINSTANCEREQUEST_LABELSENTRY']._serialized_start=1217
+  _globals['_UPDATEINSTANCEREQUEST_LABELSENTRY']._serialized_end=1262
+  _globals['_UPDATEINSTANCEMETADATA']._serialized_start=1954
+  _globals['_UPDATEINSTANCEMETADATA']._serialized_end=1999
+  _globals['_DELETEINSTANCEREQUEST']._serialized_start=2001
+  _globals['_DELETEINSTANCEREQUEST']._serialized_end=2045
+  _globals['_DELETEINSTANCEMETADATA']._serialized_start=2047
+  _globals['_DELETEINSTANCEMETADATA']._serialized_end=2092
+  _globals['_STARTINSTANCEREQUEST']._serialized_start=2094
+  _globals['_STARTINSTANCEREQUEST']._serialized_end=2137
+  _globals['_STARTINSTANCEMETADATA']._serialized_start=2139
+  _globals['_STARTINSTANCEMETADATA']._serialized_end=2183
+  _globals['_STOPINSTANCEREQUEST']._serialized_start=2185
+  _globals['_STOPINSTANCEREQUEST']._serialized_end=2227
+  _globals['_STOPINSTANCEMETADATA']._serialized_start=2229
+  _globals['_STOPINSTANCEMETADATA']._serialized_end=2272
+  _globals['_INSTANCESERVICE']._serialized_start=2275
+  _globals['_INSTANCESERVICE']._serialized_end=3435
 # @@protoc_insertion_point(module_scope)
