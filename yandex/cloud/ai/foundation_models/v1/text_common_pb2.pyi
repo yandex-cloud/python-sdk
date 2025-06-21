@@ -314,10 +314,13 @@ class FunctionTool(google.protobuf.message.Message):
     NAME_FIELD_NUMBER: builtins.int
     DESCRIPTION_FIELD_NUMBER: builtins.int
     PARAMETERS_FIELD_NUMBER: builtins.int
+    STRICT_FIELD_NUMBER: builtins.int
     name: builtins.str
     """The name of the function."""
     description: builtins.str
     """A description of the function's purpose or behavior."""
+    strict: builtins.bool
+    """Enforces strict adherence to the function schema, ensuring only defined parameters are used."""
     @property
     def parameters(self) -> google.protobuf.struct_pb2.Struct:
         """A JSON Schema that defines the expected parameters for the function.
@@ -330,9 +333,10 @@ class FunctionTool(google.protobuf.message.Message):
         name: builtins.str = ...,
         description: builtins.str = ...,
         parameters: google.protobuf.struct_pb2.Struct | None = ...,
+        strict: builtins.bool = ...,
     ) -> None: ...
     def HasField(self, field_name: typing.Literal["parameters", b"parameters"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["description", b"description", "name", b"name", "parameters", b"parameters"]) -> None: ...
+    def ClearField(self, field_name: typing.Literal["description", b"description", "name", b"name", "parameters", b"parameters", "strict", b"strict"]) -> None: ...
 
 global___FunctionTool = FunctionTool
 
@@ -493,3 +497,60 @@ class JsonSchema(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["schema", b"schema"]) -> None: ...
 
 global___JsonSchema = JsonSchema
+
+@typing.final
+class ToolChoice(google.protobuf.message.Message):
+    """Specifies how the model should select which tool (or tools) to use when generating a response."""
+
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    class _ToolChoiceMode:
+        ValueType = typing.NewType("ValueType", builtins.int)
+        V: typing_extensions.TypeAlias = ValueType
+
+    class _ToolChoiceModeEnumTypeWrapper(google.protobuf.internal.enum_type_wrapper._EnumTypeWrapper[ToolChoice._ToolChoiceMode.ValueType], builtins.type):
+        DESCRIPTOR: google.protobuf.descriptor.EnumDescriptor
+        TOOL_CHOICE_MODE_UNSPECIFIED: ToolChoice._ToolChoiceMode.ValueType  # 0
+        """The server will choose the default behavior, which is AUTO."""
+        NONE: ToolChoice._ToolChoiceMode.ValueType  # 1
+        """The model will not call any tool and will generate a standard text response."""
+        AUTO: ToolChoice._ToolChoiceMode.ValueType  # 2
+        """The model can choose between generating a text response or calling one or more tools.
+        This is the default behavior.
+        """
+        REQUIRED: ToolChoice._ToolChoiceMode.ValueType  # 3
+        """The model is required to call one or more tools."""
+
+    class ToolChoiceMode(_ToolChoiceMode, metaclass=_ToolChoiceModeEnumTypeWrapper):
+        """Defines the different modes for tool calling."""
+
+    TOOL_CHOICE_MODE_UNSPECIFIED: ToolChoice.ToolChoiceMode.ValueType  # 0
+    """The server will choose the default behavior, which is AUTO."""
+    NONE: ToolChoice.ToolChoiceMode.ValueType  # 1
+    """The model will not call any tool and will generate a standard text response."""
+    AUTO: ToolChoice.ToolChoiceMode.ValueType  # 2
+    """The model can choose between generating a text response or calling one or more tools.
+    This is the default behavior.
+    """
+    REQUIRED: ToolChoice.ToolChoiceMode.ValueType  # 3
+    """The model is required to call one or more tools."""
+
+    MODE_FIELD_NUMBER: builtins.int
+    FUNCTION_NAME_FIELD_NUMBER: builtins.int
+    mode: global___ToolChoice.ToolChoiceMode.ValueType
+    """Specifies the overall tool-calling mode."""
+    function_name: builtins.str
+    """Forces the model to call a specific function.
+    The provided string must match the name of a function in the API request.
+    """
+    def __init__(
+        self,
+        *,
+        mode: global___ToolChoice.ToolChoiceMode.ValueType = ...,
+        function_name: builtins.str = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["ToolChoice", b"ToolChoice", "function_name", b"function_name", "mode", b"mode"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["ToolChoice", b"ToolChoice", "function_name", b"function_name", "mode", b"mode"]) -> None: ...
+    def WhichOneof(self, oneof_group: typing.Literal["ToolChoice", b"ToolChoice"]) -> typing.Literal["mode", "function_name"] | None: ...
+
+global___ToolChoice = ToolChoice

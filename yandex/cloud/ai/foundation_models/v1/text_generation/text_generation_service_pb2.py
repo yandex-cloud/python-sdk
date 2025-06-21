@@ -27,9 +27,10 @@ from yandex.cloud.ai.foundation_models.v1 import text_common_pb2 as yandex_dot_c
 from yandex.cloud.ai.foundation_models.v1 import batch_inference_task_status_pb2 as yandex_dot_cloud_dot_ai_dot_foundation__models_dot_v1_dot_batch__inference__task__status__pb2
 from yandex.cloud.api import operation_pb2 as yandex_dot_cloud_dot_api_dot_operation__pb2
 from yandex.cloud.operation import operation_pb2 as yandex_dot_cloud_dot_operation_dot_operation__pb2
+from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nRyandex/cloud/ai/foundation_models/v1/text_generation/text_generation_service.proto\x12$yandex.cloud.ai.foundation_models.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x36yandex/cloud/ai/foundation_models/v1/text_common.proto\x1a\x46yandex/cloud/ai/foundation_models/v1/batch_inference_task_status.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\"\xe9\x02\n\x11\x43ompletionRequest\x12\x11\n\tmodel_uri\x18\x01 \x01(\t\x12S\n\x12\x63ompletion_options\x18\x02 \x01(\x0b\x32\x37.yandex.cloud.ai.foundation_models.v1.CompletionOptions\x12?\n\x08messages\x18\x03 \x03(\x0b\x32-.yandex.cloud.ai.foundation_models.v1.Message\x12\x39\n\x05tools\x18\x04 \x03(\x0b\x32*.yandex.cloud.ai.foundation_models.v1.Tool\x12\x15\n\x0bjson_object\x18\x05 \x01(\x08H\x00\x12G\n\x0bjson_schema\x18\x06 \x01(\x0b\x32\x30.yandex.cloud.ai.foundation_models.v1.JsonSchemaH\x00\x42\x10\n\x0eResponseFormat\"\xb7\x01\n\x12\x43ompletionResponse\x12G\n\x0c\x61lternatives\x18\x01 \x03(\x0b\x32\x31.yandex.cloud.ai.foundation_models.v1.Alternative\x12\x41\n\x05usage\x18\x02 \x01(\x0b\x32\x32.yandex.cloud.ai.foundation_models.v1.ContentUsage\x12\x15\n\rmodel_version\x18\x03 \x01(\t\"\xaf\x01\n\x16\x42\x61tchCompletionRequest\x12\x11\n\tmodel_uri\x18\x01 \x01(\t\x12S\n\x12\x63ompletion_options\x18\x02 \x01(\x0b\x32\x37.yandex.cloud.ai.foundation_models.v1.CompletionOptions\x12\x1b\n\x11source_dataset_id\x18\x03 \x01(\tH\x00\x42\x10\n\x0erequest_format\"\xb1\x01\n\x17\x42\x61tchCompletionMetadata\x12\x0f\n\x07task_id\x18\x01 \x01(\t\x12S\n\x0btask_status\x18\x02 \x01(\x0e\x32>.yandex.cloud.ai.foundation_models.v1.BatchInferenceTaskStatus\x12\x19\n\x11\x63ompleted_batches\x18\x03 \x01(\x03\x12\x15\n\rtotal_batches\x18\x04 \x01(\x03\"\x9a\x01\n\x17\x42\x61tchCompletionResponse\x12\x0f\n\x07task_id\x18\x01 \x01(\t\x12S\n\x0btask_status\x18\x02 \x01(\x0e\x32>.yandex.cloud.ai.foundation_models.v1.BatchInferenceTaskStatus\x12\x19\n\x11result_dataset_id\x18\x03 \x01(\t\"2\n\x0fTokenizeRequest\x12\x11\n\tmodel_uri\x18\x01 \x01(\t\x12\x0c\n\x04text\x18\x02 \x01(\t\"f\n\x10TokenizeResponse\x12;\n\x06tokens\x18\x01 \x03(\x0b\x32+.yandex.cloud.ai.foundation_models.v1.Token\x12\x15\n\rmodel_version\x18\x02 \x01(\t2\xc7\x01\n\x15TextGenerationService\x12\xad\x01\n\nCompletion\x12\x37.yandex.cloud.ai.foundation_models.v1.CompletionRequest\x1a\x38.yandex.cloud.ai.foundation_models.v1.CompletionResponse\"*\x82\xd3\xe4\x93\x02$\"\x1f/foundationModels/v1/completion:\x01*0\x01\x32\xd0\x01\n\x1aTextGenerationAsyncService\x12\xb1\x01\n\nCompletion\x12\x37.yandex.cloud.ai.foundation_models.v1.CompletionRequest\x1a!.yandex.cloud.operation.Operation\"G\xb2\xd2*\x14\x12\x12\x43ompletionResponse\x82\xd3\xe4\x93\x02)\"$/foundationModels/v1/completionAsync:\x01*2\xf3\x01\n\x1aTextGenerationBatchService\x12\xd4\x01\n\nCompletion\x12<.yandex.cloud.ai.foundation_models.v1.BatchCompletionRequest\x1a!.yandex.cloud.operation.Operation\"e\xb2\xd2*2\n\x17\x42\x61tchCompletionMetadata\x12\x17\x42\x61tchCompletionResponse\x82\xd3\xe4\x93\x02)\"$/foundationModels/v1/completionBatch:\x01*2\xf4\x02\n\x10TokenizerService\x12\xa3\x01\n\x08Tokenize\x12\x35.yandex.cloud.ai.foundation_models.v1.TokenizeRequest\x1a\x36.yandex.cloud.ai.foundation_models.v1.TokenizeResponse\"(\x82\xd3\xe4\x93\x02\"\"\x1d/foundationModels/v1/tokenize:\x01*\x12\xb9\x01\n\x12TokenizeCompletion\x12\x37.yandex.cloud.ai.foundation_models.v1.CompletionRequest\x1a\x36.yandex.cloud.ai.foundation_models.v1.TokenizeResponse\"2\x82\xd3\xe4\x93\x02,\"\'/foundationModels/v1/tokenizeCompletion:\x01*B\x96\x01\n(yandex.cloud.api.ai.foundation_models.v1Zjgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/foundation_models/v1/text_generation;foundation_modelsb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nRyandex/cloud/ai/foundation_models/v1/text_generation/text_generation_service.proto\x12$yandex.cloud.ai.foundation_models.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x36yandex/cloud/ai/foundation_models/v1/text_common.proto\x1a\x46yandex/cloud/ai/foundation_models/v1/batch_inference_task_status.proto\x1a yandex/cloud/api/operation.proto\x1a&yandex/cloud/operation/operation.proto\x1a\x1egoogle/protobuf/wrappers.proto\"\xe9\x03\n\x11\x43ompletionRequest\x12\x11\n\tmodel_uri\x18\x01 \x01(\t\x12S\n\x12\x63ompletion_options\x18\x02 \x01(\x0b\x32\x37.yandex.cloud.ai.foundation_models.v1.CompletionOptions\x12?\n\x08messages\x18\x03 \x03(\x0b\x32-.yandex.cloud.ai.foundation_models.v1.Message\x12\x39\n\x05tools\x18\x04 \x03(\x0b\x32*.yandex.cloud.ai.foundation_models.v1.Tool\x12\x15\n\x0bjson_object\x18\x05 \x01(\x08H\x00\x12G\n\x0bjson_schema\x18\x06 \x01(\x0b\x32\x30.yandex.cloud.ai.foundation_models.v1.JsonSchemaH\x00\x12\x37\n\x13parallel_tool_calls\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.BoolValue\x12\x45\n\x0btool_choice\x18\x08 \x01(\x0b\x32\x30.yandex.cloud.ai.foundation_models.v1.ToolChoiceB\x10\n\x0eResponseFormat\"\xb7\x01\n\x12\x43ompletionResponse\x12G\n\x0c\x61lternatives\x18\x01 \x03(\x0b\x32\x31.yandex.cloud.ai.foundation_models.v1.Alternative\x12\x41\n\x05usage\x18\x02 \x01(\x0b\x32\x32.yandex.cloud.ai.foundation_models.v1.ContentUsage\x12\x15\n\rmodel_version\x18\x03 \x01(\t\"\xaf\x01\n\x16\x42\x61tchCompletionRequest\x12\x11\n\tmodel_uri\x18\x01 \x01(\t\x12S\n\x12\x63ompletion_options\x18\x02 \x01(\x0b\x32\x37.yandex.cloud.ai.foundation_models.v1.CompletionOptions\x12\x1b\n\x11source_dataset_id\x18\x03 \x01(\tH\x00\x42\x10\n\x0erequest_format\"\xb1\x01\n\x17\x42\x61tchCompletionMetadata\x12\x0f\n\x07task_id\x18\x01 \x01(\t\x12S\n\x0btask_status\x18\x02 \x01(\x0e\x32>.yandex.cloud.ai.foundation_models.v1.BatchInferenceTaskStatus\x12\x19\n\x11\x63ompleted_batches\x18\x03 \x01(\x03\x12\x15\n\rtotal_batches\x18\x04 \x01(\x03\"\x9a\x01\n\x17\x42\x61tchCompletionResponse\x12\x0f\n\x07task_id\x18\x01 \x01(\t\x12S\n\x0btask_status\x18\x02 \x01(\x0e\x32>.yandex.cloud.ai.foundation_models.v1.BatchInferenceTaskStatus\x12\x19\n\x11result_dataset_id\x18\x03 \x01(\t\"2\n\x0fTokenizeRequest\x12\x11\n\tmodel_uri\x18\x01 \x01(\t\x12\x0c\n\x04text\x18\x02 \x01(\t\"f\n\x10TokenizeResponse\x12;\n\x06tokens\x18\x01 \x03(\x0b\x32+.yandex.cloud.ai.foundation_models.v1.Token\x12\x15\n\rmodel_version\x18\x02 \x01(\t2\xc7\x01\n\x15TextGenerationService\x12\xad\x01\n\nCompletion\x12\x37.yandex.cloud.ai.foundation_models.v1.CompletionRequest\x1a\x38.yandex.cloud.ai.foundation_models.v1.CompletionResponse\"*\x82\xd3\xe4\x93\x02$\"\x1f/foundationModels/v1/completion:\x01*0\x01\x32\xd0\x01\n\x1aTextGenerationAsyncService\x12\xb1\x01\n\nCompletion\x12\x37.yandex.cloud.ai.foundation_models.v1.CompletionRequest\x1a!.yandex.cloud.operation.Operation\"G\xb2\xd2*\x14\x12\x12\x43ompletionResponse\x82\xd3\xe4\x93\x02)\"$/foundationModels/v1/completionAsync:\x01*2\xf3\x01\n\x1aTextGenerationBatchService\x12\xd4\x01\n\nCompletion\x12<.yandex.cloud.ai.foundation_models.v1.BatchCompletionRequest\x1a!.yandex.cloud.operation.Operation\"e\xb2\xd2*2\n\x17\x42\x61tchCompletionMetadata\x12\x17\x42\x61tchCompletionResponse\x82\xd3\xe4\x93\x02)\"$/foundationModels/v1/completionBatch:\x01*2\xf4\x02\n\x10TokenizerService\x12\xa3\x01\n\x08Tokenize\x12\x35.yandex.cloud.ai.foundation_models.v1.TokenizeRequest\x1a\x36.yandex.cloud.ai.foundation_models.v1.TokenizeResponse\"(\x82\xd3\xe4\x93\x02\"\"\x1d/foundationModels/v1/tokenize:\x01*\x12\xb9\x01\n\x12TokenizeCompletion\x12\x37.yandex.cloud.ai.foundation_models.v1.CompletionRequest\x1a\x36.yandex.cloud.ai.foundation_models.v1.TokenizeResponse\"2\x82\xd3\xe4\x93\x02,\"\'/foundationModels/v1/tokenizeCompletion:\x01*B\x96\x01\n(yandex.cloud.api.ai.foundation_models.v1Zjgithub.com/yandex-cloud/go-genproto/yandex/cloud/ai/foundation_models/v1/text_generation;foundation_modelsb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -47,26 +48,26 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_TOKENIZERSERVICE'].methods_by_name['Tokenize']._serialized_options = b'\202\323\344\223\002\"\"\035/foundationModels/v1/tokenize:\001*'
   _globals['_TOKENIZERSERVICE'].methods_by_name['TokenizeCompletion']._loaded_options = None
   _globals['_TOKENIZERSERVICE'].methods_by_name['TokenizeCompletion']._serialized_options = b'\202\323\344\223\002,\"\'/foundationModels/v1/tokenizeCompletion:\001*'
-  _globals['_COMPLETIONREQUEST']._serialized_start=357
-  _globals['_COMPLETIONREQUEST']._serialized_end=718
-  _globals['_COMPLETIONRESPONSE']._serialized_start=721
-  _globals['_COMPLETIONRESPONSE']._serialized_end=904
-  _globals['_BATCHCOMPLETIONREQUEST']._serialized_start=907
-  _globals['_BATCHCOMPLETIONREQUEST']._serialized_end=1082
-  _globals['_BATCHCOMPLETIONMETADATA']._serialized_start=1085
-  _globals['_BATCHCOMPLETIONMETADATA']._serialized_end=1262
-  _globals['_BATCHCOMPLETIONRESPONSE']._serialized_start=1265
-  _globals['_BATCHCOMPLETIONRESPONSE']._serialized_end=1419
-  _globals['_TOKENIZEREQUEST']._serialized_start=1421
-  _globals['_TOKENIZEREQUEST']._serialized_end=1471
-  _globals['_TOKENIZERESPONSE']._serialized_start=1473
-  _globals['_TOKENIZERESPONSE']._serialized_end=1575
-  _globals['_TEXTGENERATIONSERVICE']._serialized_start=1578
-  _globals['_TEXTGENERATIONSERVICE']._serialized_end=1777
-  _globals['_TEXTGENERATIONASYNCSERVICE']._serialized_start=1780
-  _globals['_TEXTGENERATIONASYNCSERVICE']._serialized_end=1988
-  _globals['_TEXTGENERATIONBATCHSERVICE']._serialized_start=1991
-  _globals['_TEXTGENERATIONBATCHSERVICE']._serialized_end=2234
-  _globals['_TOKENIZERSERVICE']._serialized_start=2237
-  _globals['_TOKENIZERSERVICE']._serialized_end=2609
+  _globals['_COMPLETIONREQUEST']._serialized_start=389
+  _globals['_COMPLETIONREQUEST']._serialized_end=878
+  _globals['_COMPLETIONRESPONSE']._serialized_start=881
+  _globals['_COMPLETIONRESPONSE']._serialized_end=1064
+  _globals['_BATCHCOMPLETIONREQUEST']._serialized_start=1067
+  _globals['_BATCHCOMPLETIONREQUEST']._serialized_end=1242
+  _globals['_BATCHCOMPLETIONMETADATA']._serialized_start=1245
+  _globals['_BATCHCOMPLETIONMETADATA']._serialized_end=1422
+  _globals['_BATCHCOMPLETIONRESPONSE']._serialized_start=1425
+  _globals['_BATCHCOMPLETIONRESPONSE']._serialized_end=1579
+  _globals['_TOKENIZEREQUEST']._serialized_start=1581
+  _globals['_TOKENIZEREQUEST']._serialized_end=1631
+  _globals['_TOKENIZERESPONSE']._serialized_start=1633
+  _globals['_TOKENIZERESPONSE']._serialized_end=1735
+  _globals['_TEXTGENERATIONSERVICE']._serialized_start=1738
+  _globals['_TEXTGENERATIONSERVICE']._serialized_end=1937
+  _globals['_TEXTGENERATIONASYNCSERVICE']._serialized_start=1940
+  _globals['_TEXTGENERATIONASYNCSERVICE']._serialized_end=2148
+  _globals['_TEXTGENERATIONBATCHSERVICE']._serialized_start=2151
+  _globals['_TEXTGENERATIONBATCHSERVICE']._serialized_end=2394
+  _globals['_TOKENIZERSERVICE']._serialized_start=2397
+  _globals['_TOKENIZERSERVICE']._serialized_end=2769
 # @@protoc_insertion_point(module_scope)

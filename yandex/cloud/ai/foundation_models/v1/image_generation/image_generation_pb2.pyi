@@ -21,7 +21,7 @@ class Message(google.protobuf.message.Message):
     text: builtins.str
     """Text describing the image."""
     weight: builtins.float
-    """Message weight. Negative values indicate negative messages."""
+    """Message weight. Negative values indicate negative messages. Note: Currently not supported."""
     def __init__(
         self,
         *,
@@ -64,7 +64,7 @@ class ImageGenerationOptions(google.protobuf.message.Message):
     For possible specifications, see [documentation](/docs/foundation-models/concepts).
     """
     seed: builtins.int
-    """Seed for image generation. It serves as a starting point for image generation from noise."""
+    """Seed for image generation. It serves as a starting point for image generation from noise. If set to 0 or not provided, a randomly generated value will be used."""
     @property
     def aspect_ratio(self) -> global___AspectRatio:
         """Aspect ratio of generated image."""

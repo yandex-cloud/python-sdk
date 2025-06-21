@@ -278,6 +278,7 @@ class ClusterConfig(google.protobuf.message.Message):
 
         CONFIG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config(self) -> yandex.cloud.mdb.clickhouse.v1.config.clickhouse_pb2.ClickhouseConfigSet:
             """Configuration settings of a ClickHouse server."""
@@ -286,31 +287,42 @@ class ClusterConfig(google.protobuf.message.Message):
         def resources(self) -> global___Resources:
             """Resources allocated to ClickHouse hosts."""
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings."""
+
         def __init__(
             self,
             *,
             config: yandex.cloud.mdb.clickhouse.v1.config.clickhouse_pb2.ClickhouseConfigSet | None = ...,
             resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     @typing.final
     class Zookeeper(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def resources(self) -> global___Resources:
             """Resources allocated to ZooKeeper hosts."""
+
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings."""
 
         def __init__(
             self,
             *,
             resources: global___Resources | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     VERSION_FIELD_NUMBER: builtins.int
     CLICKHOUSE_FIELD_NUMBER: builtins.int
@@ -461,6 +473,7 @@ class ShardConfig(google.protobuf.message.Message):
         CONFIG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
         WEIGHT_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config(self) -> yandex.cloud.mdb.clickhouse.v1.config.clickhouse_pb2.ClickhouseConfigSet:
             """ClickHouse settings for a shard."""
@@ -475,15 +488,20 @@ class ShardConfig(google.protobuf.message.Message):
             For details, see [ClickHouse documentation](https://clickhouse.com/docs/en/operations/table_engines/distributed/).
             """
 
+        @property
+        def disk_size_autoscaling(self) -> global___DiskSizeAutoscaling:
+            """Disk size autoscaling settings."""
+
         def __init__(
             self,
             *,
             config: yandex.cloud.mdb.clickhouse.v1.config.clickhouse_pb2.ClickhouseConfigSet | None = ...,
             resources: global___Resources | None = ...,
             weight: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+            disk_size_autoscaling: global___DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config", b"config", "resources", b"resources", "weight", b"weight"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config", b"config", "resources", b"resources", "weight", b"weight"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources", "weight", b"weight"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources", "weight", b"weight"]) -> None: ...
 
     CLICKHOUSE_FIELD_NUMBER: builtins.int
     @property
@@ -773,3 +791,34 @@ class CloudStorage(google.protobuf.message.Message):
     def ClearField(self, field_name: typing.Literal["data_cache_enabled", b"data_cache_enabled", "data_cache_max_size", b"data_cache_max_size", "enabled", b"enabled", "move_factor", b"move_factor", "prefer_not_to_merge", b"prefer_not_to_merge"]) -> None: ...
 
 global___CloudStorage = CloudStorage
+
+@typing.final
+class DiskSizeAutoscaling(google.protobuf.message.Message):
+    DESCRIPTOR: google.protobuf.descriptor.Descriptor
+
+    PLANNED_USAGE_THRESHOLD_FIELD_NUMBER: builtins.int
+    EMERGENCY_USAGE_THRESHOLD_FIELD_NUMBER: builtins.int
+    DISK_SIZE_LIMIT_FIELD_NUMBER: builtins.int
+    @property
+    def planned_usage_threshold(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Amount of used storage for automatic disk scaling in the maintenance window, 0 means disabled, in percent."""
+
+    @property
+    def emergency_usage_threshold(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Amount of used storage for immediately  automatic disk scaling, 0 means disabled, in percent."""
+
+    @property
+    def disk_size_limit(self) -> google.protobuf.wrappers_pb2.Int64Value:
+        """Limit on how large the storage for database instances can automatically grow, in bytes."""
+
+    def __init__(
+        self,
+        *,
+        planned_usage_threshold: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        emergency_usage_threshold: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+        disk_size_limit: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+    ) -> None: ...
+    def HasField(self, field_name: typing.Literal["disk_size_limit", b"disk_size_limit", "emergency_usage_threshold", b"emergency_usage_threshold", "planned_usage_threshold", b"planned_usage_threshold"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["disk_size_limit", b"disk_size_limit", "emergency_usage_threshold", b"emergency_usage_threshold", "planned_usage_threshold", b"planned_usage_threshold"]) -> None: ...
+
+global___DiskSizeAutoscaling = DiskSizeAutoscaling

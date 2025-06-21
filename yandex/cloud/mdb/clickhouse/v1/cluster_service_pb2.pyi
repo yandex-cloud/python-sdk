@@ -2272,6 +2272,7 @@ class ConfigSpec(google.protobuf.message.Message):
 
         CONFIG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config(self) -> yandex.cloud.mdb.clickhouse.v1.config.clickhouse_pb2.ClickhouseConfig:
             """Configuration for a ClickHouse server."""
@@ -2280,33 +2281,44 @@ class ConfigSpec(google.protobuf.message.Message):
         def resources(self) -> yandex.cloud.mdb.clickhouse.v1.cluster_pb2.Resources:
             """Resources allocated to ClickHouse hosts."""
 
+        @property
+        def disk_size_autoscaling(self) -> yandex.cloud.mdb.clickhouse.v1.cluster_pb2.DiskSizeAutoscaling:
+            """Disk size autoscaling settings."""
+
         def __init__(
             self,
             *,
             config: yandex.cloud.mdb.clickhouse.v1.config.clickhouse_pb2.ClickhouseConfig | None = ...,
             resources: yandex.cloud.mdb.clickhouse.v1.cluster_pb2.Resources | None = ...,
+            disk_size_autoscaling: yandex.cloud.mdb.clickhouse.v1.cluster_pb2.DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config", b"config", "resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     @typing.final
     class Zookeeper(google.protobuf.message.Message):
         DESCRIPTOR: google.protobuf.descriptor.Descriptor
 
         RESOURCES_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def resources(self) -> yandex.cloud.mdb.clickhouse.v1.cluster_pb2.Resources:
             """Resources allocated to ZooKeeper hosts. If not set, minimal available resources will be used.
             All available resource presets can be retrieved with a [ResourcePresetService.List] request.
             """
 
+        @property
+        def disk_size_autoscaling(self) -> yandex.cloud.mdb.clickhouse.v1.cluster_pb2.DiskSizeAutoscaling:
+            """Disk size autoscaling settings."""
+
         def __init__(
             self,
             *,
             resources: yandex.cloud.mdb.clickhouse.v1.cluster_pb2.Resources | None = ...,
+            disk_size_autoscaling: yandex.cloud.mdb.clickhouse.v1.cluster_pb2.DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["resources", b"resources"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["resources", b"resources"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources"]) -> None: ...
 
     VERSION_FIELD_NUMBER: builtins.int
     CLICKHOUSE_FIELD_NUMBER: builtins.int
@@ -2391,6 +2403,7 @@ class ShardConfigSpec(google.protobuf.message.Message):
         CONFIG_FIELD_NUMBER: builtins.int
         RESOURCES_FIELD_NUMBER: builtins.int
         WEIGHT_FIELD_NUMBER: builtins.int
+        DISK_SIZE_AUTOSCALING_FIELD_NUMBER: builtins.int
         @property
         def config(self) -> yandex.cloud.mdb.clickhouse.v1.config.clickhouse_pb2.ClickhouseConfig:
             """ClickHouse settings for the shard."""
@@ -2405,15 +2418,20 @@ class ShardConfigSpec(google.protobuf.message.Message):
             For details, see [ClickHouse documentation](https://clickhouse.com/docs/en/operations/table_engines/distributed/).
             """
 
+        @property
+        def disk_size_autoscaling(self) -> yandex.cloud.mdb.clickhouse.v1.cluster_pb2.DiskSizeAutoscaling:
+            """Disk size autoscaling settings."""
+
         def __init__(
             self,
             *,
             config: yandex.cloud.mdb.clickhouse.v1.config.clickhouse_pb2.ClickhouseConfig | None = ...,
             resources: yandex.cloud.mdb.clickhouse.v1.cluster_pb2.Resources | None = ...,
             weight: google.protobuf.wrappers_pb2.Int64Value | None = ...,
+            disk_size_autoscaling: yandex.cloud.mdb.clickhouse.v1.cluster_pb2.DiskSizeAutoscaling | None = ...,
         ) -> None: ...
-        def HasField(self, field_name: typing.Literal["config", b"config", "resources", b"resources", "weight", b"weight"]) -> builtins.bool: ...
-        def ClearField(self, field_name: typing.Literal["config", b"config", "resources", b"resources", "weight", b"weight"]) -> None: ...
+        def HasField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources", "weight", b"weight"]) -> builtins.bool: ...
+        def ClearField(self, field_name: typing.Literal["config", b"config", "disk_size_autoscaling", b"disk_size_autoscaling", "resources", b"resources", "weight", b"weight"]) -> None: ...
 
     CLICKHOUSE_FIELD_NUMBER: builtins.int
     @property

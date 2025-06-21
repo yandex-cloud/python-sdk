@@ -8,6 +8,7 @@ import collections.abc
 import google.protobuf.descriptor
 import google.protobuf.internal.containers
 import google.protobuf.message
+import google.protobuf.wrappers_pb2
 import typing
 import yandex.cloud.ai.foundation_models.v1.batch_inference_task_status_pb2
 import yandex.cloud.ai.foundation_models.v1.text_common_pb2
@@ -26,6 +27,8 @@ class CompletionRequest(google.protobuf.message.Message):
     TOOLS_FIELD_NUMBER: builtins.int
     JSON_OBJECT_FIELD_NUMBER: builtins.int
     JSON_SCHEMA_FIELD_NUMBER: builtins.int
+    PARALLEL_TOOL_CALLS_FIELD_NUMBER: builtins.int
+    TOOL_CHOICE_FIELD_NUMBER: builtins.int
     model_uri: builtins.str
     """The [ID of the model](/docs/foundation-models/concepts/yandexgpt/models) to be used for completion generation."""
     json_object: builtins.bool
@@ -51,6 +54,14 @@ class CompletionRequest(google.protobuf.message.Message):
     def json_schema(self) -> yandex.cloud.ai.foundation_models.v1.text_common_pb2.JsonSchema:
         """Enforces a specific JSON structure for the model's response based on a provided schema."""
 
+    @property
+    def parallel_tool_calls(self) -> google.protobuf.wrappers_pb2.BoolValue:
+        """Controls whether the model can generate multiple tool calls in a single response. Defaults to true."""
+
+    @property
+    def tool_choice(self) -> yandex.cloud.ai.foundation_models.v1.text_common_pb2.ToolChoice:
+        """Specifies how the model should select which tool (or tools) to use when generating a response."""
+
     def __init__(
         self,
         *,
@@ -60,9 +71,11 @@ class CompletionRequest(google.protobuf.message.Message):
         tools: collections.abc.Iterable[yandex.cloud.ai.foundation_models.v1.text_common_pb2.Tool] | None = ...,
         json_object: builtins.bool = ...,
         json_schema: yandex.cloud.ai.foundation_models.v1.text_common_pb2.JsonSchema | None = ...,
+        parallel_tool_calls: google.protobuf.wrappers_pb2.BoolValue | None = ...,
+        tool_choice: yandex.cloud.ai.foundation_models.v1.text_common_pb2.ToolChoice | None = ...,
     ) -> None: ...
-    def HasField(self, field_name: typing.Literal["ResponseFormat", b"ResponseFormat", "completion_options", b"completion_options", "json_object", b"json_object", "json_schema", b"json_schema"]) -> builtins.bool: ...
-    def ClearField(self, field_name: typing.Literal["ResponseFormat", b"ResponseFormat", "completion_options", b"completion_options", "json_object", b"json_object", "json_schema", b"json_schema", "messages", b"messages", "model_uri", b"model_uri", "tools", b"tools"]) -> None: ...
+    def HasField(self, field_name: typing.Literal["ResponseFormat", b"ResponseFormat", "completion_options", b"completion_options", "json_object", b"json_object", "json_schema", b"json_schema", "parallel_tool_calls", b"parallel_tool_calls", "tool_choice", b"tool_choice"]) -> builtins.bool: ...
+    def ClearField(self, field_name: typing.Literal["ResponseFormat", b"ResponseFormat", "completion_options", b"completion_options", "json_object", b"json_object", "json_schema", b"json_schema", "messages", b"messages", "model_uri", b"model_uri", "parallel_tool_calls", b"parallel_tool_calls", "tool_choice", b"tool_choice", "tools", b"tools"]) -> None: ...
     def WhichOneof(self, oneof_group: typing.Literal["ResponseFormat", b"ResponseFormat"]) -> typing.Literal["json_object", "json_schema"] | None: ...
 
 global___CompletionRequest = CompletionRequest

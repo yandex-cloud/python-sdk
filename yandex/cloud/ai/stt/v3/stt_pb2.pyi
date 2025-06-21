@@ -849,7 +849,7 @@ class LanguageEstimation(google.protobuf.message.Message):
     LANGUAGE_CODE_FIELD_NUMBER: builtins.int
     PROBABILITY_FIELD_NUMBER: builtins.int
     language_code: builtins.str
-    """Language code in ISO 639-1 format."""
+    """Language tag in IETF BCP 47 format, consisting of ISO 639-1 language code and ISO 3166-1 country code (e.g., en-US, ru-RU)."""
     probability: builtins.float
     """Estimation of language probability."""
     def __init__(
