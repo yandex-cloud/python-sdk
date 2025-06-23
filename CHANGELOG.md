@@ -1,5 +1,25 @@
 # CHANGELOG
 
+## v0.350.0 (2025-06-23)
+
+### Feature
+
+* feat: regenerate proto ([`49468c4`](https://github.com/yandex-cloud/python-sdk/commit/49468c411ea07855599ac8d6db20c32efe644bcb))
+
+* feat: regenerate proto ([`a912990`](https://github.com/yandex-cloud/python-sdk/commit/a912990f265a88000609eccdd2f4bfe9b34e929d))
+
+* feat: regenerate proto ([`60ae684`](https://github.com/yandex-cloud/python-sdk/commit/60ae684d6380d67f7a0094dcdb9f0991280c643c))
+
+### Unknown
+
+* Merge pull request #149 from yandex-cloud/oslogin-and-enviroment-fields-dataproc
+
+feat: actualized fields in dataproc wrapper ([`6003b81`](https://github.com/yandex-cloud/python-sdk/commit/6003b811970ff5490c215a3c24c62b8da159fec3))
+
+* Add OS Login and enviroment fields to dataproc create cluster wrapper.
+
+  Committer: Egor Ermolov egorkvantorium@gmail.com ([`b1824b2`](https://github.com/yandex-cloud/python-sdk/commit/b1824b23f558ff3cf1375f5506d836fb6a1c107a))
+
 ## v0.349.0 (2025-06-16)
 
 ### Feature
